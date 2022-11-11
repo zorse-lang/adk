@@ -1,0 +1,84 @@
+{
+  "name": "adk",
+  "version": "1.0.0",
+  "description": "Atmosphere Development Kit: mixed multi-cloud infrastructure as code.",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm-run-all install:*:*",
+    "install:dependencies:git": "git-dependency install",
+    "install:dependencies:npm": "npm install --prefix=git_modules/gdm-generator-util --ignore-scripts",
+    "install:patch:npm": "patch-package",
+    "install:patch:git": "sh patches/generator-patches.sh",
+    "generate": "npm-run-all generate:*",
+    "generate:arm": "npx tsx gen/arm.ts",
+    "generate:cfn": "npx tsx gen/cfn.ts",
+    "generate:gdm": "npx tsx gen/gdm.ts",
+    "generate:ros": "npx tsx gen/ros.ts",
+    "generate:format": "npm run cosmetics",
+    "cosmetics": "npm-run-all cosmetics:*",
+    "cosmetics:format": "rome format --write --skip-errors .gen gen src test",
+    "build": "webpack --progress",
+    "test": "jest --runInBand --ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zorse-lang/adk.git"
+  },
+  "keywords": [
+    "cloud",
+    "orchestration",
+    "assembly",
+    "stateless",
+    "cloud-formation",
+    "resource-manager",
+    "deployment-manager"
+  ],
+  "author": "Sepehr Laal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zorse-lang/adk/issues"
+  },
+  "homepage": "https://github.com/zorse-lang/adk#readme",
+  "directories": {
+    "gitDependencies": "git_modules"
+  },
+  "gitDependencies": {
+    "gdm-generator-util": "https://github.com/Maxim-Mazurok/google-api-typings-generator.git#f9dcd23",
+    "arm-generator-util": "https://github.com/Azure/bicep-types-az.git#776bea8",
+    "cfn-generator-util": "https://github.com/aws/aws-cdk.git#30f1ae4"
+  },
+  "devDependencies": {
+    "@alicloud/ros-cdk-spec": "^1.0.13",
+    "@aws-cdk/cfnspec": "^2.55.1",
+    "@aws-cdk/core": "^1.183.0",
+    "@types/glob": "^8.0.0",
+    "@types/jest": "^29.2.4",
+    "@types/js-yaml": "^4.0.5",
+    "@types/lodash": "^4.14.191",
+    "@types/marked": "^4.0.8",
+    "@types/node": "^18.11.17",
+    "@types/pluralize": "^0.0.29",
+    "@types/unzipper": "^0.10.5",
+    "axios-cache-adapter": "^2.7.3",
+    "axios-cache-adapter-fs": "^0.1.2",
+    "change-case": "^4.1.2",
+    "cheerio": "^1.0.0-rc.12",
+    "codemaker": "^1.72.0",
+    "git-dependency": "^0.1.0",
+    "glob": "^8.0.3",
+    "json-schema": "^0.4.0",
+    "lodash": "^4.17.21",
+    "marked": "^4.2.4",
+    "npm-run-all": "^4.1.5",
+    "patch-package": "^6.5.0",
+    "pluralize": "^8.0.0",
+    "rome": "^11.0.0",
+    "ts-jest": "^29.0.3",
+    "ts-loader": "^9.4.2",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
+    "tsx": "^3.12.1",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

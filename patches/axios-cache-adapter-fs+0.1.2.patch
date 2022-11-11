@@ -1,0 +1,30 @@
+diff --git a/node_modules/axios-cache-adapter-fs/lib/index.js b/node_modules/axios-cache-adapter-fs/lib/index.js
+index 2fe34c3..7bf65f9 100644
+--- a/node_modules/axios-cache-adapter-fs/lib/index.js
++++ b/node_modules/axios-cache-adapter-fs/lib/index.js
+@@ -38,17 +38,14 @@ class FileStore {
+         })();
+     }
+     async getItem(key) {
+-        console.log(key);
+         const item = (await fs_1.promises.readFile("cache/" + getHashCode(key))) || null;
+         return JSON.parse(item === null || item === void 0 ? void 0 : item.toString());
+     }
+     async setItem(key, value) {
+-        console.log(key);
+         await fs_1.promises.writeFile("cache/" + getHashCode(key), JSON.stringify(value));
+         return value;
+     }
+     async removeItem(key) {
+-        console.log(key);
+         await fs_1.promises.unlink("cache/" + getHashCode(key));
+     }
+     async clear() {
+@@ -56,7 +53,6 @@ class FileStore {
+     }
+     async length() {
+         const files = await fs_1.promises.readdir("cache");
+-        console.log(files.length);
+         return files.length;
+     }
+     async iterate(fn) {

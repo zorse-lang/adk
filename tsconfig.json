@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es6",
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@zorse/adk/core": ["src/core"],
+      "@zorse/adk/core/*": ["src/core/*"],
+      "@zorse/adk/L1/gdm": [".gen/gdm"],
+      "@zorse/adk/L1/gdm/*": [".gen/gdm/*"],
+      "@zorse/adk/L1/arm": [".gen/arm"],
+      "@zorse/adk/L1/arm/*": [".gen/arm/*"],
+      "@zorse/adk/L1/cfn": [".gen/cfn"],
+      "@zorse/adk/L1/cfn/*": [".gen/cfn/*"],
+      "@zorse/adk/L1/ros": [".gen/ros"],
+      "@zorse/adk/L1/ros/*": [".gen/ros/*"]
+    }
+  },
+  "include": ["src/**/*", "test/**/*"]
+}
