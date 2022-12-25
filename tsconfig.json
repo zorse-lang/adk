@@ -9,16 +9,8 @@
     "baseUrl": ".",
     "paths": {
       "@zorse/adk/core": ["src/core"],
-      "@zorse/adk/core/*": ["src/core/*"],
-      "@zorse/adk/L1/gdm": [".gen/gdm"],
-      "@zorse/adk/L1/gdm/*": [".gen/gdm/*"],
-      "@zorse/adk/L1/arm": [".gen/arm"],
-      "@zorse/adk/L1/arm/*": [".gen/arm/*"],
-      "@zorse/adk/L1/cfn": [".gen/cfn"],
-      "@zorse/adk/L1/cfn/*": [".gen/cfn/*"],
-      "@zorse/adk/L1/ros": [".gen/ros"],
-      "@zorse/adk/L1/ros/*": [".gen/ros/*"]
+      "@zorse/adk/core/*": ["src/core/*"]
     }
   },
-  "include": ["src/**/*", "test/**/*"]
+  "include": ["src/**/*", "test/**/*", "docs/**/*"]
 }

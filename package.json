@@ -19,7 +19,7 @@
     "cosmetics:format": "rome format --write --skip-errors .gen gen src test",
     "build": "webpack --progress",
     "test": "jest --runInBand --ci",
-    "docs": "typedoc --out docs src/core/index.ts"
+    "docs": "rm -rf docs && typedoc --out docs src/core/index.ts"
   },
   "repository": {
     "type": "git",
