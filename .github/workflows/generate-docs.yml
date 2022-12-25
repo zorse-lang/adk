@@ -2,7 +2,7 @@ name: Generate documentation
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 permissions:
   contents: write
@@ -19,4 +19,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
+          branch: gh-pages
           folder: docs
