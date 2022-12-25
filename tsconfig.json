@@ -12,5 +12,5 @@
       "@zorse/adk/core/*": ["src/core/*"]
     }
   },
-  "include": ["src/**/*", "test/**/*", "docs/**/*"]
+  "include": ["src/**/*", "test/**/*"]
 }

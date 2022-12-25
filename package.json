@@ -19,7 +19,7 @@
     "cosmetics:format": "rome format --write --skip-errors .gen gen src test",
     "build": "webpack --progress",
     "test": "jest --runInBand --ci",
-    "docs": "rm -rf docs && typedoc --out docs src/core/index.ts"
+    "docs": "typedoc --cleanOutputDir --titleLink 'https://zorse-lang.github.io/adk' --out docs src/core/index.ts"
   },
   "repository": {
     "type": "git",
@@ -39,7 +39,7 @@
   "bugs": {
     "url": "https://github.com/zorse-lang/adk/issues"
   },
-  "homepage": "https://github.com/zorse-lang/adk#readme",
+  "homepage": "https://zorse-lang.github.io/adk",
   "directories": {
     "gitDependencies": "git_modules"
   },
