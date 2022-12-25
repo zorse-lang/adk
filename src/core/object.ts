@@ -101,15 +101,14 @@ export class Entity {
 	public readonly components = new Array<Component>();
 	public constructor(parent: Entity | System, name?: string) {
 		const type = this.constructor.name;
+		const parentEntity: Entity = parent instanceof Entity ? parent : parent.root;
 		if (name) {
 			this.name = name;
 		} else {
-			const count = [...(parent as Entity).children].filter((c) => c.constructor.name === type).length;
+			const count = [...parentEntity.children].filter((c) => c.constructor.name === type).length;
 			this.name = `${type}${count === 0 ? "" : count + 1}`;
 		}
-		if (parent instanceof Entity) {
-			parent.children.add(this);
-		}
+		parentEntity?.children.add(this);
 		this.parent = parent;
 	}
 	public root(): System {
