@@ -2,7 +2,7 @@
   "name": "adk",
   "version": "1.0.0",
   "description": "Atmosphere Development Kit: mixed multi-cloud infrastructure as code.",
-  "main": "index.js",
+  "main": "src/code/index.ts",
   "scripts": {
     "install": "npm-run-all install:*:*",
     "install:dependencies:git": "git-dependency install",
@@ -18,7 +18,8 @@
     "cosmetics": "npm-run-all cosmetics:*",
     "cosmetics:format": "rome format --write --skip-errors .gen gen src test",
     "build": "webpack --progress",
-    "test": "jest --runInBand --ci"
+    "test": "jest --runInBand --ci",
+    "docs": "typedoc --out docs src/core/index.ts"
   },
   "repository": {
     "type": "git",
@@ -77,6 +78,7 @@
     "ts-loader": "^9.4.2",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "tsx": "^3.12.1",
+    "typedoc": "^0.23.23",
     "typescript": "^4.9.4",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"

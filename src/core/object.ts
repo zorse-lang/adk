@@ -38,7 +38,7 @@ export abstract class Component {
 	}
 }
 
-class ComponentHandle {
+export class ComponentHandle {
 	constructor(private readonly component: Component, readonly parent: Entity) {}
 	public readonly update = this.component[ComponentSymbolUpdate].bind(this.component);
 	public readonly render = this.component[ComponentSymbolRender].bind(this.component);

@@ -31,7 +31,7 @@ system.scenes.add(new adk.AlibabaCloudResourceOrchestrationServiceScene());
 // ...
 
 // step 3: add entities
-const entity = new adk.Entity(system.root);
+const entity = new adk.Entity(system);
 
 // step 4: add components
 new adk.AWSComponentType1(entity, { ...props1 });

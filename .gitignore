@@ -111,3 +111,6 @@ gcp-types-beta.json
 
 # Git dependencies
 /git_modules
+
+# Documentation
+docs
