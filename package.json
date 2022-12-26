@@ -19,7 +19,7 @@
     "cosmetics:format": "rome format --write --skip-errors .gen gen src test",
     "build": "webpack --progress",
     "test": "jest --runInBand --ci",
-    "docs": "typedoc --cleanOutputDir --titleLink 'https://zorse-lang.github.io/adk' --out docs src/core/index.ts"
+    "docs": "typedoc"
   },
   "repository": {
     "type": "git",
@@ -79,6 +79,8 @@
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "tsx": "^3.12.1",
     "typedoc": "^0.23.23",
+    "typedoc-plugin-mdn-links": "^2.0.2",
+    "typedoc-plugin-mermaid": "^1.9.0",
     "typescript": "^4.9.4",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"

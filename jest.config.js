@@ -7,15 +7,7 @@ module.exports = {
   maxConcurrency: 1,
   maxWorkers: 1,
   testMatch: ["**/*.test.ts"],
-  testPathIgnorePatterns: [
-    "node_modules",
-    "git_modules",
-    "cache",
-    "dist",
-    ".gen",
-    "gen",
-    "src",
-  ],
+  testPathIgnorePatterns: ["node_modules", "git_modules", "cache", "dist", ".gen", "gen", "src"],
   testTimeout: 10000,
   verbose: true,
   moduleNameMapper: {
@@ -37,7 +29,7 @@ module.exports = {
   coverageThreshold: {
     global: {
       lines: 100,
-      branches: 100,
+      branches: 95,
       functions: 100,
       statements: 100,
     },

@@ -14,11 +14,11 @@ class DebugComponent extends ECS.Component {
 	constructor(parent: ECS.Entity, public readonly properties: any = {}) {
 		super(parent);
 	}
-	[ECS.ComponentSymbolRender](output: any) {
+	[ECS.Symbols.ComponentRender](output: any) {
 		if (!output.Components) {
 			output.Components = [];
 		}
-		output.Components.push(this[ECS.ComponentSymbolHandle].serialize());
+		output.Components.push(this[ECS.Symbols.ComponentHandle].serialize());
 	}
 }
 

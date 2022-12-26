@@ -1,4 +1,4 @@
-export class BaseError extends Error {
+export class Exception extends Error {
 	constructor(...args: any[]) {
 		super();
 		this.name = this.constructor.name;
@@ -6,7 +6,7 @@ export class BaseError extends Error {
 		Object.assign(this, { additionalData: args });
 	}
 }
-function ok<errT extends BaseError, condT = boolean>(
+function ok<errT extends Exception, condT = boolean>(
 	errFactory: new (
 		...args: any[]
 	) => errT,
@@ -17,7 +17,7 @@ function ok<errT extends BaseError, condT = boolean>(
 		throw new errFactory(...args);
 	}
 }
-function no<errT extends BaseError, condT = boolean>(
+function no<errT extends Exception, condT = boolean>(
 	errFactory: new (
 		...args: any[]
 	) => errT,
@@ -30,10 +30,10 @@ function no<errT extends BaseError, condT = boolean>(
 }
 export const assert = { true: ok, false: no };
 export namespace errors {
-	export class InvalidTokenName extends BaseError {}
-	export class CyclicComponentTokenPair extends BaseError {}
-	export class CyclicDependencyResolver extends BaseError {}
-	export class NonDirectionalSceneViolation extends BaseError {}
-	export class UniDirectionalSceneViolation extends BaseError {}
-	export class ComponentVerificationViolation extends BaseError {}
+	export class InvalidTokenName extends Exception {}
+	export class CyclicComponentTokenPair extends Exception {}
+	export class CyclicDependencyResolver extends Exception {}
+	export class NonDirectionalSceneViolation extends Exception {}
+	export class UniDirectionalSceneViolation extends Exception {}
+	export class ComponentVerificationViolation extends Exception {}
 }

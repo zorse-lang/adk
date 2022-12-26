@@ -1,19 +1,41 @@
 import { Resolver, Token, assert, errors } from "@zorse/adk/core";
 
-export const ComponentSymbolHandle = Symbol("ADK/Component/handle");
-export const ComponentSymbolUpdate = Symbol("ADK/Component/update");
-export const ComponentSymbolRender = Symbol("ADK/Component/render");
-export const ComponentSymbolVerify = Symbol("ADK/Component/verify");
-export const ComponentNameSeparator = "/";
+/**
+ * Symbols that represent methods after Component {@link Component.constructor}
+ * is called. These are Symbols so they do not show up in `JSON.stringify()`.
+ */
+export class Symbols {
+	/** Handle property symbol of a Component. @see Components's {@link Component.Handle} */
+	public static readonly ComponentHandle: unique symbol = Symbol("ADK/Component/handle");
+	/** Update method symbol of a Component. @see Components's {@link Component.Handle.update} */
+	public static readonly ComponentUpdate: unique symbol = Symbol("ADK/Component/update");
+	/** Render method symbol of a Component. @see Components's {@link Component.Handle.render} */
+	public static readonly ComponentRender: unique symbol = Symbol("ADK/Component/render");
+	/** Verify method symbol of a Component. @see Components's {@link Component.Handle.verify} */
+	public static readonly ComponentVerify: unique symbol = Symbol("ADK/Component/verify");
+}
 
+/**
+ * Components are single rendering units. Components are the lowest moving parts
+ * in the entire Object model. Components are always attached to an Entity. No
+ * Assumptions are ever made about Components except they subclass the abstract
+ * class `Component` and implement the {@link Symbols.ComponentRender}`()`.
+ *
+ * Components render into an opaque object with type `any`. This design allows a
+ * `Component` to stay as portable as possible. The `Component` is not aware of
+ * the rendering context it is being rendered into. This property is used in the
+ * process of rendering into multiple {@link Scene}s through a {@link System}.
+ *
+ * @see {@link System} for detail on how Components are rendered.
+ */
 export abstract class Component {
-	public readonly [ComponentSymbolHandle]: ComponentHandle;
+	public readonly [Symbols.ComponentHandle]: Component.Handle;
 	constructor(parent: Entity) {
 		parent.components.push(this);
-		this[ComponentSymbolHandle] = new ComponentHandle(this, parent);
+		this[Symbols.ComponentHandle] = new Component.Handle(this, parent);
 		return new Token({
 			name: () => {
-				const entity = this[ComponentSymbolHandle].parent;
+				const entity = this[Symbols.ComponentHandle].parent;
 				const type = this.constructor.name;
 				const index = entity.components.length;
 				const name = `${type}${index === 1 ? "" : index}`;
@@ -22,9 +44,9 @@ export abstract class Component {
 			wrap: this,
 		}) as any;
 	}
-	public async [ComponentSymbolUpdate](): Promise<void> {
+	public async [Symbols.ComponentUpdate](): Promise<void> {
 		const mappings: Array<{ token: Token; v: any; k: string }> = [];
-		this[ComponentSymbolHandle].walk((token, v, k) => {
+		this[Symbols.ComponentHandle].walk((token, v, k) => {
 			mappings.push({ token, v, k });
 		});
 		for (const mapping of mappings) {
@@ -32,65 +54,94 @@ export abstract class Component {
 			v[k] = await token.resolver();
 		}
 	}
-	public abstract [ComponentSymbolRender](out: any): void;
-	public async [ComponentSymbolVerify](): Promise<boolean> {
+	public abstract [Symbols.ComponentRender](out: any): void;
+	public async [Symbols.ComponentVerify](): Promise<boolean> {
 		return true;
 	}
 }
 
-export class ComponentHandle {
-	constructor(private readonly component: Component, readonly parent: Entity) {}
-	public readonly update = this.component[ComponentSymbolUpdate].bind(this.component);
-	public readonly render = this.component[ComponentSymbolRender].bind(this.component);
-	public readonly verify = this.component[ComponentSymbolVerify].bind(this.component);
-	public dependencies(): Set<Component> {
-		const dependencies = new Set<Component>();
-		this._dependencies(dependencies);
-		return dependencies;
-	}
-	private _dependencies(out: Set<Component>): void {
-		const tokens = this.tokens();
-		for (const token of tokens) {
-			if (token.data instanceof Component) {
-				assert.false(errors.CyclicComponentTokenPair, token.data === this.component, this.component);
-				const dependencyComponent = token.data as Component;
-				if (out.has(dependencyComponent)) {
-					continue;
+/** @see {@link Component.constructor} */
+export namespace Component {
+	/** A Handle object to expose utility API over a Component */
+	export class Handle {
+		/**
+		 * @param component Component to create a Handle for
+		 * @param parent Entity that owns the Component
+		 */
+		constructor(private readonly component: Component, readonly parent: Entity) {}
+		/**
+		 * Convenient wrapper for the update symbol on a Component.
+		 * Calling this resolves all the {@link Token}s currently inside the `Component`, recursively.
+		 */
+		public readonly update: () => Promise<void> = this.component[Symbols.ComponentUpdate].bind(this.component);
+		/**
+		 * Convenient wrapper for the render symbol on a Component.
+		 * This is synchronous to ensure deterministic rendering into output.
+		 * @param out The output object to render into, type of this depends on Scene's {@link Scene.cleared} return value.
+		 */
+		public readonly render: (out: any) => void = this.component[Symbols.ComponentRender].bind(this.component);
+		/**
+		 * Convenient wrapper for the verify symbol on a Component.
+		 * @returns `true` if the Component is valid, `false` otherwise.
+		 */
+		public readonly verify: () => Promise<boolean> = this.component[Symbols.ComponentVerify].bind(this.component);
+		/** Recursively returns all other components that this component have a dependency on */
+		public dependencies(): Set<Component> {
+			const dependencies = new Set<Component>();
+			this._dependencies(dependencies);
+			return dependencies;
+		}
+		private _dependencies(out: Set<Component>): void {
+			const tokens = this.tokens();
+			for (const token of tokens) {
+				if (token.data instanceof Component) {
+					assert.false(errors.CyclicComponentTokenPair, token.data === this.component, this.component);
+					const dependencyComponent = token.data as Component;
+					if (out.has(dependencyComponent)) {
+						continue;
+					}
+					out.add(dependencyComponent);
+					const dependencyHandle = dependencyComponent[Symbols.ComponentHandle];
+					dependencyHandle._dependencies(out);
 				}
-				out.add(dependencyComponent);
-				const dependencyHandle = dependencyComponent[ComponentSymbolHandle];
-				dependencyHandle._dependencies(out);
 			}
 		}
-	}
-	public tokens(): Set<Token> {
-		const tokens = new Set<Token>();
-		this.walk((token) => tokens.add(token));
-		return tokens;
-	}
-	public walk(observe: (token: Token, v: any, k: string) => void) {
-		_walk(this.component);
-		function _walk(v: any): void {
-			for (const k in v) {
-				if (Token.IsToken(v[k]) && !(v[k] instanceof Component)) {
-					observe(v[k], v, k);
-				} else if (typeof v[k] === "object" || Array.isArray(v[k])) {
-					_walk(v[k]);
+		/** Returns all tokens currently inside the current Component (`this`) */
+		public tokens(): Set<Token> {
+			const tokens = new Set<Token>();
+			this.walk((token) => tokens.add(token));
+			return tokens;
+		}
+		/**
+		 * Walk and observe all tokens inside the current Component (`this`) recursively.
+		 * @param observe Callback to observe tokens. Called with the token, the object it is inside, and the key it is from
+		 * @note You can use `v[k] = ...` to mutate the `Component`'s state.
+		 */
+		public walk(observe: (token: Token, v: any, k: string) => void) {
+			_walk(this.component);
+			function _walk(v: any): void {
+				for (const k in v) {
+					if (Token.IsToken(v[k]) && !(v[k] instanceof Component)) {
+						observe(v[k], v, k);
+					} else if (typeof v[k] === "object" || Array.isArray(v[k])) {
+						_walk(v[k]);
+					}
 				}
 			}
 		}
-	}
-	public serialize(): any {
-		return JSON.parse(
-			JSON.stringify(this.component, (_key, value) => {
-				if (value && Token.IsToken(value)) {
-					const token = value as Token;
-					return token.toString();
-				} else {
-					return value;
-				}
-			}),
-		);
+		/** Extension of `JSON.stringify` where it understands {@link Token}s. */
+		public serialize(): any {
+			return JSON.parse(
+				JSON.stringify(this.component, (_key, value) => {
+					if (value && Token.IsToken(value)) {
+						const token = value as Token;
+						return token.toString();
+					} else {
+						return value;
+					}
+				}),
+			);
+		}
 	}
 }
 
@@ -125,11 +176,11 @@ export class Entity {
 			path.push(iterator.name);
 			iterator = iterator.parent;
 		}
-		return path.reverse().concat(suffix).filter(Boolean).join(ComponentNameSeparator);
+		return path.reverse().concat(suffix).filter(Boolean).join("/");
 	}
 	public async update(): Promise<void> {
 		for (const component of this.components) {
-			await component[ComponentSymbolHandle].update();
+			await component[Symbols.ComponentHandle].update();
 		}
 		for (const child of this.children) {
 			await child.update();
@@ -150,6 +201,22 @@ export class Entity {
 	}
 }
 
+/**
+ * @mermaid Render Pipeline
+ * stateDiagram
+ *     [*] --> System.compose(): Entities, Components, and Scenes are inputs to System
+ *     System.compose() --> Entity.update(): Begin Entity level rendering
+ *     Entity.update() --> Entity.render(): Resolve Tokens if possible
+ *     Entity.render() --> Scene.accepts(Component): Flatten Entity-Component tree into Scenes
+ *     Scene.accepts(Component) --> Scene.replace(Token): Let Scenes handle unresolved Tokens
+ *     Scene.replace(Token) --> View.render(): Create a "shadow" Component with replaced Tokens
+ *     View.render() --> Component.update(): Begin Component level rendering
+ *     Component.update() --> Component.verify(): Resolve replaced Tokens
+ *     Component.verify() --> Component.render(): Render the ShadowComponent
+ *     Component.render() --> Scene.cluster(): Cluster Views based on Scene limits
+ *     Scene.cluster() --> Composition: Wrap Views for user consumption
+ *     Composition --> [*]: Independent Views as outputs
+ */
 export class System {
 	public readonly root = new Entity(this, "<system>");
 	public readonly scenes = new Set<Scene>();
@@ -168,7 +235,7 @@ export class System {
 					const mapping = { scene, component };
 					sceneComponentPairs.push(mapping);
 					resolver.addIsolated(mapping);
-					for (const dep of component[ComponentSymbolHandle].dependencies()) {
+					for (const dep of component[Symbols.ComponentHandle].dependencies()) {
 						Array.from(this.scenes)
 							.filter((s) => s !== scene && s.accepts(dep))
 							.forEach((depScene) => {
@@ -188,7 +255,7 @@ export class System {
 			}
 		}
 		for (const mapping of sceneComponentPairs) {
-			const handle = mapping.component[ComponentSymbolHandle];
+			const handle = mapping.component[Symbols.ComponentHandle];
 			for (const dep of handle.dependencies()) {
 				const depMappings = findMappings(dep);
 				for (const depMapping of depMappings) {
@@ -234,13 +301,13 @@ export abstract class Scene {
 	public gizmos(): any {
 		const output: { Components: any[] } = { Components: [] };
 		for (const component of this.components) {
-			const handle = component[ComponentSymbolHandle];
+			const handle = component[Symbols.ComponentHandle];
 			output.Components.push(handle.serialize());
 		}
 		return output;
 	}
 }
-/* istanbul ignore next */
+
 export namespace Scene {
 	export enum Type {
 		Bidirectional,
@@ -256,7 +323,7 @@ export class View {
 	public async render(): Promise<void> {
 		for (const component of this.components) {
 			const shadowComponent = Object.create(component) as Component;
-			const shadowHandle = shadowComponent[ComponentSymbolHandle];
+			const shadowHandle = shadowComponent[Symbols.ComponentHandle];
 			shadowHandle.walk((token) => this.scene.replace(token));
 			await shadowHandle.update();
 			const verified = await shadowHandle.verify();
@@ -267,7 +334,7 @@ export class View {
 	public gizmos(): any {
 		const output: { Components: any[] } = { Components: [] };
 		for (const component of this.components) {
-			const handle = component[ComponentSymbolHandle];
+			const handle = component[Symbols.ComponentHandle];
 			output.Components.push(handle.serialize());
 		}
 		return output;

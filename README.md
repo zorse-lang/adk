@@ -1,6 +1,6 @@
-# adk
+# Atmosphere Development Kit
 
-Atmosphere Development Kit: mixed multi-cloud infrastructure as code.
+Mixed multi-cloud infrastructure as code automation and framework.
 
 Currently supported providers:
 
