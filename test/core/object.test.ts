@@ -3,7 +3,6 @@ import * as ECS from "@zorse/adk/core/object";
 import { Token, errors } from "@zorse/adk/core";
 
 class DebugScene extends ECS.Scene {
-	public readonly type: ECS.Scene.Type = ECS.Scene.Type.Bidirectional;
 	accepts(component: ECS.Component): boolean {
 		return component instanceof DebugComponent;
 	}
@@ -116,73 +115,15 @@ describe("Object model tests", () => {
 		expect(component1.properties.existing).toBe(235);
 	});
 
-	it("should throw on Nondirectional violation", async () => {
-		class DebugComponent1 extends DebugComponent {}
-		class DebugComponent2 extends DebugComponent {}
-		class Scene1 extends ECS.Scene {
-			public readonly type: ECS.Scene.Type = ECS.Scene.Type.Unidirectional;
-			accepts(component: ECS.Component): boolean {
-				return component instanceof DebugComponent1;
-			}
-		}
-		class Scene2 extends ECS.Scene {
-			public readonly type: ECS.Scene.Type = ECS.Scene.Type.Nondirectional;
-			accepts(component: ECS.Component): boolean {
-				return component instanceof DebugComponent2;
-			}
-		}
-		const system = new ECS.System();
-		const entity = new ECS.Entity(system);
-		const component1 = new DebugComponent1(entity);
-		new DebugComponent2(entity, { hello: component1.someFictionalProperty });
-		const scene1 = new Scene1();
-		const scene2 = new Scene2();
-		system.scenes.add(scene1);
-		system.scenes.add(scene2);
-		expect(system.compose()).rejects.toThrow(errors.NonDirectionalSceneViolation);
-	});
-
-	it("should throw on Unidirectional violation", async () => {
-		class DebugComponent1 extends DebugComponent {}
-		class DebugComponent2 extends DebugComponent {}
-		class DebugComponent3 extends DebugComponent {}
-		class Scene1 extends ECS.Scene {
-			public readonly type: ECS.Scene.Type = ECS.Scene.Type.Unidirectional;
-			accepts(component: ECS.Component): boolean {
-				return component instanceof DebugComponent1;
-			}
-		}
-		class Scene2 extends ECS.Scene {
-			public readonly type: ECS.Scene.Type = ECS.Scene.Type.Unidirectional;
-			accepts(component: ECS.Component): boolean {
-				return component instanceof DebugComponent2;
-			}
-		}
-		const system = new ECS.System();
-		const entity = new ECS.Entity(system);
-		const component1A = new DebugComponent1(entity);
-		const component1B = new DebugComponent1(entity);
-		const component2 = new DebugComponent2(entity);
-		component1A.someFictionalProperty = component2.someFictionalProperty;
-		component2.moreFictionalProperty = component1B.someFictionalProperty;
-		const scene1 = new Scene1();
-		const scene2 = new Scene2();
-		system.scenes.add(scene1);
-		system.scenes.add(scene2);
-		expect(system.compose()).rejects.toThrow(errors.UniDirectionalSceneViolation);
-	});
-
 	it("should throw on cyclic scenes", async () => {
 		class DebugComponent1 extends DebugComponent {}
 		class DebugComponent2 extends DebugComponent {}
 		class Scene1 extends ECS.Scene {
-			public readonly type: ECS.Scene.Type = ECS.Scene.Type.Bidirectional;
 			accepts(component: ECS.Component): boolean {
 				return component instanceof DebugComponent1;
 			}
 		}
 		class Scene2 extends ECS.Scene {
-			public readonly type: ECS.Scene.Type = ECS.Scene.Type.Bidirectional;
 			accepts(component: ECS.Component): boolean {
 				return component instanceof DebugComponent2;
 			}
@@ -201,7 +142,6 @@ describe("Object model tests", () => {
 
 	it("should be able to compose Bidirectional scenes", async () => {
 		class Scene1 extends ECS.Scene {
-			public readonly type: ECS.Scene.Type = ECS.Scene.Type.Bidirectional;
 			accepts(component: ECS.Component): boolean {
 				return (
 					component instanceof Component_A ||
@@ -219,7 +159,6 @@ describe("Object model tests", () => {
 		}
 
 		class Scene2 extends ECS.Scene {
-			public readonly type: ECS.Scene.Type = ECS.Scene.Type.Bidirectional;
 			accepts(component: ECS.Component): boolean {
 				return (
 					component instanceof Component_a ||
@@ -237,7 +176,6 @@ describe("Object model tests", () => {
 		}
 
 		class Scene3 extends ECS.Scene {
-			public readonly type: ECS.Scene.Type = ECS.Scene.Type.Bidirectional;
 			accepts(component: ECS.Component): boolean {
 				return (
 					component instanceof Component_0 ||

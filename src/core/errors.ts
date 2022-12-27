@@ -1,3 +1,4 @@
+/** Base Error class of anything thrown in the code */
 export class Exception extends Error {
 	constructor(...args: any[]) {
 		super();
@@ -24,16 +25,13 @@ function no<errT extends Exception, condT = boolean>(
 	condition: condT,
 	...args: any[]
 ) {
-	if (!!condition) {
-		throw new errFactory(...args);
-	}
+	ok(errFactory, !condition, ...args);
 }
 export const assert = { true: ok, false: no };
 export namespace errors {
 	export class InvalidTokenName extends Exception {}
 	export class CyclicComponentTokenPair extends Exception {}
 	export class CyclicDependencyResolver extends Exception {}
-	export class NonDirectionalSceneViolation extends Exception {}
-	export class UniDirectionalSceneViolation extends Exception {}
+	export class SceneVerificationViolation extends Exception {}
 	export class ComponentVerificationViolation extends Exception {}
 }

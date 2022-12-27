@@ -1,7 +1,6 @@
-// This file contains the implementation of the "Token-Tech".
-// This implementation heavily relies on JavaScript's Proxy mechanic which was
-// introduced in ES6. As a result of using Proxies, the implementation is light.
-// This implementation heavily relies on TypeScript's type system for safety.
+// This file contains the implementation of the "Token-Tech". This implementation heavily relies on JavaScript's Proxy
+// mechanic which was introduced in ES6. As a result of using Proxies, the implementation is light. This implementation
+// heavily relies on TypeScript's type system for safety.
 
 import { assert, errors } from "@zorse/adk/core";
 
@@ -31,11 +30,14 @@ export namespace Token {
 	}
 }
 
+/** A Token is a value that's not available yet, but has an async resolver that can potentially resolve it later. */
 export class Token<ConcreteType = any, UserDataType = any> {
 	public readonly data: UserDataType;
 	public readonly resolver: Token.Resolver<ConcreteType>;
 	public readonly name: () => string;
+	/** Wrap an existing Object and return Tokens wherever its properties are missing (a.k.a Tokenizing the Object) */
 	public constructor(opts: Token.WrapOptions<ConcreteType>);
+	/** Create a new Token object directly */
 	public constructor(opts?: Token.MakeOptions<ConcreteType, UserDataType>);
 	public constructor(opts?: Token.Options) {
 		const _opts = opts ? opts : {};
@@ -101,4 +103,5 @@ export class Token<ConcreteType = any, UserDataType = any> {
 		const tokens = text.matchAll(new RegExp(TOKEN_FULL_REGEXP, "g"));
 		return new Set([...tokens].map((match) => match[1]));
 	}
+	public static Resolve(text: string) {}
 }
