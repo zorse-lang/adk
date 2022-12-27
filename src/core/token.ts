@@ -103,5 +103,4 @@ export class Token<ConcreteType = any, UserDataType = any> {
 		const tokens = text.matchAll(new RegExp(TOKEN_FULL_REGEXP, "g"));
 		return new Set([...tokens].map((match) => match[1]));
 	}
-	public static Resolve(text: string) {}
 }
