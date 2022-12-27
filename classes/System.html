@@ -57,56 +57,67 @@ body.dark, :root[data-theme="dark"] {
 <li><a href="System.html">System</a></li></ul>
 <h1>Class System</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography">
-<h3>Mermaid</h3>
-<a href="#render-pipeline" id="render-pipeline" style="color: inherit; text-decoration: none;">
-  <h4>Render Pipeline</h4>
-</a>
+<div class="tsd-comment tsd-typography"><p>The Object model in ADK is inspired by Unity3D&#39;s GameObject from an API consumer perspective, however the Object
+model in ADK is much more sophisticated.</p>
+<p>The Object model is designed as an <a href="Entity.html">Entity</a> <a href="Component-1.html">Component</a> <a href="System.html">System</a>. Individual
+Components are able to render to multiple <a href="Scene.html">Scene</a>s simultaneously. Components can also cross reference
+each other across Scenes.</p>
+<p>This design is often times referred to as a &quot;Multi-Headed Renderer&quot;.</p>
+<p>The <a href="System.html">System</a> class is the entry point to the Object model. The System is responsible for orchestrating
+the entire rendering process.</p>
+<p>System manages a set of <a href="Scene.html">Scene</a>s and a root <a href="Entity.html">Entity</a>.
+The root Entity can be used to attach other Entities to the System.
+Each Entity can have multiple <a href="Component-1.html">Component</a>s attached to it.
+Each Component can be rendered into multiple <a href="Scene.html">Scene</a>s simultaneously.
+Calling the <a href="System.html#compose">compose</a> method will orchestrate the &quot;Render Pipeline&quot; shown below:</p>
 <div class="mermaid-block"><div class="mermaid dark">%%{init:{"theme":"dark"}}%%
 stateDiagram
     [*] --&gt; System.compose(): Entities, Components, and Scenes are inputs to System
     System.compose() --&gt; Entity.update(): Begin Entity level rendering
     Entity.update() --&gt; Entity.render(): Resolve Tokens if possible
     Entity.render() --&gt; Scene.accepts(Component): Flatten Entity-Component tree into Scenes
-    Scene.accepts(Component) --&gt; Scene.replace(Token): Let Scenes handle unresolved Tokens
-    Scene.replace(Token) --&gt; View.render(): Create a &quot;shadow&quot; Component with replaced Tokens
+    Scene.accepts(Component) --&gt; Scene.update(Token): Let Scenes handle unresolved Tokens and per-scene updates
+    Scene.update(Token) --&gt; View.render(): Create a &quot;shadow&quot; Component with updated Tokens
     View.render() --&gt; Component.update(): Begin Component level rendering
-    Component.update() --&gt; Component.verify(): Resolve replaced Tokens
+    Component.update() --&gt; Component.verify(): Resolve updated Tokens
     Component.verify() --&gt; Component.render(): Render the ShadowComponent
     Component.render() --&gt; Scene.cluster(): Cluster Views based on Scene limits
-    Scene.cluster() --&gt; Composition: Wrap Views for user consumption
+    Scene.cluster() --&gt; Scene.verify(View): Verify Views are within Scene constraints
+    Scene.verify(View) --&gt; Composition: Wrap Views for user consumption
     Composition --&gt; [*]: Independent Views as outputs</div><div class="mermaid light">%%{init:{"theme":"default"}}%%
 stateDiagram
     [*] --&gt; System.compose(): Entities, Components, and Scenes are inputs to System
     System.compose() --&gt; Entity.update(): Begin Entity level rendering
     Entity.update() --&gt; Entity.render(): Resolve Tokens if possible
     Entity.render() --&gt; Scene.accepts(Component): Flatten Entity-Component tree into Scenes
-    Scene.accepts(Component) --&gt; Scene.replace(Token): Let Scenes handle unresolved Tokens
-    Scene.replace(Token) --&gt; View.render(): Create a &quot;shadow&quot; Component with replaced Tokens
+    Scene.accepts(Component) --&gt; Scene.update(Token): Let Scenes handle unresolved Tokens and per-scene updates
+    Scene.update(Token) --&gt; View.render(): Create a &quot;shadow&quot; Component with updated Tokens
     View.render() --&gt; Component.update(): Begin Component level rendering
-    Component.update() --&gt; Component.verify(): Resolve replaced Tokens
+    Component.update() --&gt; Component.verify(): Resolve updated Tokens
     Component.verify() --&gt; Component.render(): Render the ShadowComponent
     Component.render() --&gt; Scene.cluster(): Cluster Views based on Scene limits
-    Scene.cluster() --&gt; Composition: Wrap Views for user consumption
+    Scene.cluster() --&gt; Scene.verify(View): Verify Views are within Scene constraints
+    Scene.verify(View) --&gt; Composition: Wrap Views for user consumption
     Composition --&gt; [*]: Independent Views as outputs</div><pre><code class="language-mermaid">stateDiagram
     [*] --&gt; System.compose(): Entities, Components, and Scenes are inputs to System
     System.compose() --&gt; Entity.update(): Begin Entity level rendering
     Entity.update() --&gt; Entity.render(): Resolve Tokens if possible
     Entity.render() --&gt; Scene.accepts(Component): Flatten Entity-Component tree into Scenes
-    Scene.accepts(Component) --&gt; Scene.replace(Token): Let Scenes handle unresolved Tokens
-    Scene.replace(Token) --&gt; View.render(): Create a &quot;shadow&quot; Component with replaced Tokens
+    Scene.accepts(Component) --&gt; Scene.update(Token): Let Scenes handle unresolved Tokens and per-scene updates
+    Scene.update(Token) --&gt; View.render(): Create a &quot;shadow&quot; Component with updated Tokens
     View.render() --&gt; Component.update(): Begin Component level rendering
-    Component.update() --&gt; Component.verify(): Resolve replaced Tokens
+    Component.update() --&gt; Component.verify(): Resolve updated Tokens
     Component.verify() --&gt; Component.render(): Render the ShadowComponent
     Component.render() --&gt; Scene.cluster(): Cluster Views based on Scene limits
-    Scene.cluster() --&gt; Composition: Wrap Views for user consumption
+    Scene.cluster() --&gt; Scene.verify(View): Verify Views are within Scene constraints
+    Scene.verify(View) --&gt; Composition: Wrap Views for user consumption
     Composition --&gt; [*]: Independent Views as outputs</code></pre></div></div></section>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
 <li><span class="target">System</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/e47c4ca/src/core/object.ts#L220">src/core/object.ts:220</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/1a7a406/src/core/object.ts#L265">src/core/object.ts:265</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -137,14 +148,18 @@ stateDiagram
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="root" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>root</span><a href="#root" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">root<span class="tsd-signature-symbol">:</span> <a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
+<div class="tsd-signature">root<span class="tsd-signature-symbol">:</span> <a href="Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol"> = ...</span></div>
+<div class="tsd-comment tsd-typography"><p>Root <a href="Entity.html">Entity</a> of the System</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/e47c4ca/src/core/object.ts#L221">src/core/object.ts:221</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/1a7a406/src/core/object.ts#L267">src/core/object.ts:267</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="scenes" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>scenes</span><a href="#scenes" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">scenes<span class="tsd-signature-symbol">:</span> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" class="tsd-signature-type external" target="_blank">Set</a><span class="tsd-signature-symbol">&lt;</span><a href="Scene-1.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
+<div class="tsd-signature">scenes<span class="tsd-signature-symbol">:</span> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" class="tsd-signature-type external" target="_blank">Set</a><span class="tsd-signature-symbol">&lt;</span><a href="Scene.html" class="tsd-signature-type" data-tsd-kind="Class">Scene</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
+<div class="tsd-comment tsd-typography"><p><a href="Scene.html">Scene</a> managed by the System</p>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/e47c4ca/src/core/object.ts#L222">src/core/object.ts:222</a></li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/1a7a406/src/core/object.ts#L269">src/core/object.ts:269</a></li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="compose" class="tsd-anchor"></a>
@@ -152,9 +167,15 @@ stateDiagram
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="compose.compose-1">compose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="tsd-signature-type external" target="_blank">Promise</a><span class="tsd-signature-symbol">&lt;</span><a href="Composition.html" class="tsd-signature-type" data-tsd-kind="Class">Composition</a><span class="tsd-signature-symbol">&gt;</span><a href="#compose.compose-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Orchestrates and executes the Render Pipeline.</p>
+
+<h3>See</h3><p><a href="System.html">System</a> for more details.</p>
+
+<h3>Returns</h3><p>A <a href="Composition.html">Composition</a> of <a href="View.html">View</a>s to be presented to the user.</p>
+</div>
 <h4 class="tsd-returns-title">Returns <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="tsd-signature-type external" target="_blank">Promise</a><span class="tsd-signature-symbol">&lt;</span><a href="Composition.html" class="tsd-signature-type" data-tsd-kind="Class">Composition</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/e47c4ca/src/core/object.ts#L223">src/core/object.ts:223</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/1a7a406/src/core/object.ts#L275">src/core/object.ts:275</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -177,7 +198,6 @@ stateDiagram
 <li><a href="../modules.html">ADK -<wbr/> v1.0.0</a>
 <ul>
 <li class="tsd-kind-namespace"><a href="../modules/Component.html">Component</a></li>
-<li class="tsd-kind-namespace"><a href="../modules/Scene.html">Scene</a></li>
 <li class="tsd-kind-namespace"><a href="../modules/Token.html">Token</a></li>
 <li class="tsd-kind-namespace"><a href="../modules/errors.html">errors</a></li></ul></li></ul></div></details></nav>
 <nav class="tsd-navigation secondary menu-sticky">
