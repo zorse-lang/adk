@@ -46,7 +46,7 @@ export abstract class Component {
 		}
 	}
 	/** @see {@link Component.Handle.render} */
-	public abstract [Symbols.ComponentRender](out: any): void;
+	public abstract [Symbols.ComponentRender](out: any): void | Promise<void>;
 
 	/** @see {@link Component.Handle.verify} */
 	public async [Symbols.ComponentVerify](): Promise<boolean> {
@@ -94,10 +94,9 @@ export namespace Component {
 		public readonly update: () => Promise<void> = this.component[Symbols.ComponentUpdate].bind(this.component);
 		/**
 		 * Convenient wrapper for the render symbol on a Component.
-		 * This is synchronous to ensure deterministic rendering into output.
-		 * @param out The output object to render into, type of this depends on {@link Scene:class}'s {@link Scene.empty} return value.
+		 * @param out Output to render into. Type of this depends on {@link Scene:class}'s {@link Scene.empty} return value.
 		 */
-		public readonly render: (out: any) => void = this.component[Symbols.ComponentRender].bind(this.component);
+		public readonly render: (out: any) => Promise<void> = this.component[Symbols.ComponentRender].bind(this.component);
 		/**
 		 * Convenient wrapper for the verify symbol on a Component.
 		 * @returns `true` if the Component is valid, `false` otherwise.
@@ -270,8 +269,8 @@ export class Entity {
  *     Scene.update(Token) --> View.render(): Create a "shadow" Component with updated Tokens
  *     View.render() --> Component.update(): Begin Component level rendering
  *     Component.update() --> Component.verify(): Resolve updated Tokens
- *     Component.verify() --> Component.render(): Render the ShadowComponent
- *     Component.render() --> Scene.cluster(): Cluster Views based on Scene limits
+ *     Component.verify() --> Component.render(Scene): Render the ShadowComponent
+ *     Component.render(Scene) --> Scene.cluster(): Cluster Views based on Scene limits
  *     Scene.cluster() --> Scene.verify(View): Verify Views are within Scene constraints
  *     Scene.verify(View) --> Composition: Wrap Views for user consumption
  *     Composition --> [*]: Independent Views as outputs
@@ -425,7 +424,7 @@ export class View {
 			await shadowHandle.update();
 			const verified = await shadowHandle.verify();
 			assert.true(errors.ComponentVerificationViolation, verified, component);
-			shadowHandle.render(this.output);
+			await shadowHandle.render(this.output);
 		}
 	}
 	/** Serializes the View into a portable format, mostly for internal use. */
