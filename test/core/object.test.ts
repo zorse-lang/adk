@@ -7,7 +7,7 @@ class DebugScene extends ECS.Scene {
 		return component instanceof DebugComponent;
 	}
 }
-class DebugComponent extends ECS.Component {
+class DebugComponent extends ECS.Component.Resolvable {
 	public someFictionalProperty?: string;
 	public moreFictionalProperty?: string;
 	constructor(parent: ECS.Entity, public readonly properties: any = {}) {

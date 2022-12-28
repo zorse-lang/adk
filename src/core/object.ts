@@ -33,17 +33,6 @@ export abstract class Component {
 	constructor(parent: Entity) {
 		parent.components.push(this);
 		this[Symbols.ComponentHandle] = new Component.Handle(this, parent);
-		return new Token({
-			issuer: parent.system.issuer,
-			name: () => {
-				const entity = this[Symbols.ComponentHandle].parent;
-				const type = this.constructor.name;
-				const index = entity.components.length;
-				const name = `${type}${index === 1 ? "" : index}`;
-				return entity.path(name);
-			},
-			wrap: this,
-		}) as any;
 	}
 	/** @see {@link Component.Handle.update} */
 	public async [Symbols.ComponentUpdate](): Promise<void> {
@@ -62,6 +51,30 @@ export abstract class Component {
 	/** @see {@link Component.Handle.verify} */
 	public async [Symbols.ComponentVerify](): Promise<boolean> {
 		return true;
+	}
+}
+
+export namespace Component {
+	/**
+	 * The "Tokenized" variant of {@link Component:class}.
+	 * All "undefined" member accesses return other nested {@link Token}s recursively.
+	 * This variant of Component can have its {@link Token}s resolved by the {@link System:class}.
+	 */
+	export abstract class Resolvable extends Component {
+		constructor(parent: Entity) {
+			super(parent);
+			return new Token({
+				issuer: parent.system.issuer,
+				wrap: this,
+				name: () => {
+					const entity = this[Symbols.ComponentHandle].parent;
+					const type = this.constructor.name;
+					const index = entity.components.length;
+					const name = `${type}${index === 1 ? "" : index}`;
+					return entity.path(name);
+				},
+			}) as any;
+		}
 	}
 }
 
