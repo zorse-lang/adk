@@ -34,6 +34,7 @@ export abstract class Component {
 		parent.components.push(this);
 		this[Symbols.ComponentHandle] = new Component.Handle(this, parent);
 		return new Token({
+			issuer: parent.system.issuer,
 			name: () => {
 				const entity = this[Symbols.ComponentHandle].parent;
 				const type = this.constructor.name;
@@ -52,7 +53,7 @@ export abstract class Component {
 		});
 		for (const mapping of mappings) {
 			const { token, v, k } = mapping;
-			v[k] = await token.resolver();
+			v[k] = await this[Symbols.ComponentHandle].parent.system.issuer.resolve(token);
 		}
 	}
 	/** @see {@link Component.Handle.render} */
@@ -159,6 +160,8 @@ export namespace Component {
 export class Entity {
 	/** Name of the entity, does not need to be unique */
 	public readonly name: string;
+	/** The {@link System:class} this Entity is attached to */
+	public readonly system: System;
 	/** The top-most parent is always the {@link System:class} this Entity is attached to */
 	public readonly parent: Entity | System;
 	/** Children of this Entity (other Entities) */
@@ -169,7 +172,7 @@ export class Entity {
 	 * @param parent Parent Entity or System to attach this Entity to
 	 * @param name Optional name of the Entity, defaults to `Entity${count}` of the same type in the parent Entity
 	 * @note Token names are used when {@link Token:class} {@link Token.resolver}
-	 * is called and `userData` attached to the token is a {@link Component:class}
+	 * is called and `userData` attached to the Token is a {@link Component:class}
 	 */
 	public constructor(parent: Entity | System, name?: string) {
 		const type = this.constructor.name;
@@ -182,14 +185,14 @@ export class Entity {
 		}
 		parentEntity?.children.add(this);
 		this.parent = parent;
-	}
-	/** Returns the top-most parent of this Entity, which is always the {@link System:class} */
-	public system(): System {
-		let iterator = this.parent;
-		while (iterator instanceof Entity) {
-			iterator = iterator.parent;
-		}
-		return iterator;
+		const _findSystem = (): System => {
+			let iterator = this.parent;
+			while (iterator instanceof Entity) {
+				iterator = iterator.parent;
+			}
+			return iterator as System;
+		};
+		this.system = _findSystem();
 	}
 	/** Returns the path of this Entity, which is the path of its parent Entity slash its own name */
 	public path(suffix?: string): string {
@@ -212,9 +215,8 @@ export class Entity {
 	}
 	/** Entity render works with {@link System:class} to assign {@link Component:class}s to {@link Scene:class}s. */
 	public render(): void {
-		const system = this.system();
 		for (const component of this.components) {
-			Array.from(system.scenes)
+			Array.from(this.system.scenes)
 				.filter((scene) => scene.accepts(component))
 				.forEach((scene) => {
 					scene.components.add(component);
@@ -263,6 +265,8 @@ export class Entity {
  * ```
  */
 export class System {
+	/** {@link Token:class}{@link Token.issuer} used in serialization and token lookups */
+	public readonly issuer = new Token.Issuer();
 	/** Root {@link Entity:class} of the System */
 	public readonly root = new Entity(this, "<system>");
 	/** {@link Scene:class} managed by the System */

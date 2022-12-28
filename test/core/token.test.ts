@@ -58,22 +58,27 @@ describe("Token-Tech tests", () => {
 		});
 	});
 
-	describe("Token.PraseNames tests", () => {
-		it("should parse if the whole string is the token itself", () => {
-			const token = new Token({ name: "hello" });
-			const parsed = Token.ParseNames(token.toString());
-			expect(parsed.values().next().value).toBe(token.name());
+	describe("Token.Issuer resolve tests", () => {
+		it("should resolve when the entire string is Token's serialized name", async () => {
+			const issuer = new Token.Issuer();
+			const expected = { some: "data" };
+			const token = new Token({ issuer, resolver: () => expected });
+			const resolved = await issuer.resolve(`${token}`);
+			expect(resolved).toBe(expected);
 		});
-		it("should parse if tokens are embedded inside the string", () => {
-			const token1 = new Token({ name: "token1" });
-			const token2 = new Token({ name: () => "token2" });
-			const token3 = new Token();
-			const combined = `this is ${token1} combined with ${token2} and ${token3} in a string.`;
-			const parsed = Token.ParseNames(combined);
-			expect(parsed.size).toBe(3);
-			expect(parsed.has(token1.name())).toBe(true);
-			expect(parsed.has(token2.name())).toBe(true);
-			expect(parsed.has(token3.name())).toBe(true);
+		it("should resolve when nested in a string", async () => {
+			const issuer = new Token.Issuer();
+			const expected = { some: "data" };
+			const token = new Token({ issuer, resolver: () => expected });
+			const resolved = await issuer.resolve(`some string: ${token}`);
+			expect(resolved).toBe("some string: [object Object]");
+		});
+		it("should resolve Tokens it does not recognize as-is", async () => {
+			const issuer = new Token.Issuer();
+			const expected = { some: "data" };
+			const token = new Token({ resolver: () => expected });
+			const resolved = await issuer.resolve(`${token}`);
+			expect(resolved).toBe(token.serialize());
 		});
 	});
 });
