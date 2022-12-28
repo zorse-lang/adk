@@ -1,53 +1,79 @@
 import { Component, Entity, Scene, Symbols } from "@zorse/adk/core";
 
+/** Alias to platform's "fs" API (Node's "fs" API) */
 export type FileSystem = typeof import("fs");
-export abstract class FileSystemComponent extends Component {}
 
-export interface FileBaseOptions {
+/** Base options to create a FileSystem {@link core.Component:class} with */
+export interface FileSystemBaseOptions {
+	/** The directory this {@link core.Component:class} is located in on the physical file system. @defaultValue `"."` */
 	readonly directory?: string;
+	/** The name of this {@link core.Component:class} on the physical file system, with the extension */
 	readonly name: string;
 }
-export interface TextFileOptions extends FileBaseOptions {
-	readonly lines?: string[];
+
+/** Represents "something on the disk". At minimum it has a name and a directory it's located in */
+export abstract class FileSystemComponent extends Component {
+	/** Name of the "thing" on disk */
+	public name: string;
+	/** Directory the "thing" is located in on disk @defaultValue `"."` */
+	public directory: string;
+	public constructor(parent: Entity, options: FileSystemBaseOptions) {
+		super(parent);
+		this.name = options.name;
+		this.directory = options.directory ?? ".";
+	}
 }
-export interface JsonFileOptions extends FileBaseOptions {
+
+/** Options to create a {@link ground.TextFile:class} with */
+export interface TextFileOptions extends FileSystemBaseOptions {
+	/** The content of the file @defaultValue `""` */
+	readonly content?: string;
+}
+
+/** Options to create a {@link ground.JsonFile:class} with */
+export interface JsonFileOptions extends FileSystemBaseOptions {
+	/** The data to serialize to JSON @defaultValue `{}` */
 	readonly data?: any;
 }
-export interface FolderOptions {
-	readonly directory?: string;
-	readonly name: string;
+
+/** Options to create a {@link ground.Folder:class} with */
+export interface FolderOptions extends FileSystemBaseOptions {
+	/** Whether to create a `.gitkeep` file in the folder @defaultValue `false` */
+	readonly gitkeep?: boolean;
 }
 
+/** A text file on the disk. When this {@link core.Component:class} is rendered, a physical file appears */
 export abstract class TextFile extends FileSystemComponent {
-	protected name: string;
-	protected directory: string;
-	protected lines: string[];
+	/** The content of the file */
+	public content: string;
 	public constructor(parent: Entity, options: TextFileOptions) {
-		super(parent);
-		this.name = options.name;
-		this.lines = options.lines ?? [];
-		this.directory = options.directory ?? ".";
+		super(parent, options);
+		this.content = options.content ?? "";
 	}
+	/**
+	 * Renders this {@link core.Component:class} to the physical file system.
+	 * @param out The platform's "fs" API (Node's "fs" API)
+	 */
 	public async [Symbols.ComponentRender](out: FileSystem) {
 		const { promises: fs } = out;
-		if (!(await fs.stat(this.directory)).isDirectory()) {
-			await fs.mkdir(this.directory, { recursive: true });
-		}
+		await fs.mkdir(this.directory, { recursive: true });
 		const path = `${this.directory}/${this.name}`;
-		await fs.writeFile(path, this.lines.join("\n"), "utf8");
+		await fs.writeFile(path, this.content, "utf8");
 	}
 }
 
+/** A JSON file on the disk. When this {@link core.Component:class} is rendered, a physical JSON file appears */
 export abstract class JsonFile extends FileSystemComponent {
-	protected name: string;
-	protected directory: string;
-	protected data: any;
+	/** The data to serialize to JSON */
+	public data: any;
 	public constructor(parent: Entity, options: JsonFileOptions) {
-		super(parent);
-		this.name = options.name;
+		super(parent, options);
 		this.data = options.data ?? {};
-		this.directory = options.directory ?? ".";
 	}
+	/**
+	 * Renders this {@link core.Component:class} to the physical file system.
+	 * @param out The platform's "fs" API (Node's "fs" API)
+	 */
 	public async [Symbols.ComponentRender](out: FileSystem) {
 		const { promises: fs } = out;
 		await fs.mkdir(this.directory, { recursive: true });
@@ -56,18 +82,25 @@ export abstract class JsonFile extends FileSystemComponent {
 	}
 }
 
+/** A folder on the disk. When this {@link core.Component:class} is rendered, a physical folder appears */
 export abstract class Folder extends FileSystemComponent {
-	protected name: string;
-	protected directory: string;
+	/** Whether to create a `.gitkeep` file in the folder */
+	public gitkeep: boolean;
 	public constructor(parent: Entity, options: FolderOptions) {
-		super(parent);
-		this.name = options.name;
-		this.directory = options.directory ?? ".";
+		super(parent, options);
+		this.gitkeep = options.gitkeep ?? false;
 	}
+	/**
+	 * Renders this {@link core.Component:class} to the physical file system.
+	 * @param out The platform's "fs" API (Node's "fs" API)
+	 */
 	public async [Symbols.ComponentRender](out: FileSystem) {
 		const { promises: fs } = out;
 		const path = `${this.directory}/${this.name}`;
 		await fs.mkdir(path, { recursive: true });
+		if (this.gitkeep) {
+			await fs.writeFile(`${path}/.gitkeep`, "", "utf8");
+		}
 	}
 }
 
