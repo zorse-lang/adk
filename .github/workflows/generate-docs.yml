@@ -16,7 +16,7 @@ jobs:
       - name: Generate documentation
         run: npm run docs
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: docs
