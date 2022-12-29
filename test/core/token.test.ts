@@ -22,12 +22,12 @@ describe("Token-Tech tests", () => {
 	describe("Make constructor tests", () => {
 		it("should resolve to the same token if there is no resolver", async () => {
 			const token = new Token({ name: () => "sample usage" });
-			const resolved = await token.resolver();
+			const resolved = await token.resolve();
 			expect(resolved).toBe(token);
 		});
 		it("should resolve to the concrete value if resolver exists", async () => {
 			const token = new Token({ name: "hello", resolver: () => "world" });
-			const resolved = await token.resolver();
+			const resolved = await token.resolve();
 			expect(resolved).toBe("world");
 		});
 		it("should resolve recursively when a child token is resolved", async () => {
@@ -35,7 +35,7 @@ describe("Token-Tech tests", () => {
 			const token = new Token({ resolver: (): ComplexType => ({ nested: "value" }) });
 			const nested = (token as unknown as ComplexType).nested;
 			expect(nested).toBeInstanceOf(Token);
-			const resolved = await (nested as unknown as Token).resolver();
+			const resolved = await (nested as unknown as Token).resolve();
 			expect(resolved).toBe("value");
 		});
 	});
@@ -53,7 +53,7 @@ describe("Token-Tech tests", () => {
 			expect(token.deep.arr[2]).toBe(3);
 			const nested = token.nested;
 			expect(nested).toBeInstanceOf(Token);
-			const resolved = await (nested as unknown as Token).resolver();
+			const resolved = await (nested as unknown as Token).resolve();
 			expect(resolved).toBe(nested);
 		});
 	});
