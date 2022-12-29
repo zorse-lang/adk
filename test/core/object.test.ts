@@ -3,11 +3,11 @@ import * as ECS from "@zorse/adk/core/object";
 import { Token, errors } from "@zorse/adk/core";
 
 class DebugScene extends ECS.Scene {
-	accepts(component: ECS.Component): boolean {
+	filter(component: ECS.Component): boolean {
 		return component instanceof DebugComponent;
 	}
 }
-class DebugComponent extends ECS.Component {
+class DebugComponent extends ECS.Component.Resolvable {
 	public someFictionalProperty?: string;
 	public moreFictionalProperty?: string;
 	constructor(parent: ECS.Entity, public readonly properties: any = {}) {
@@ -104,13 +104,13 @@ describe("Object model tests", () => {
 		const value1 = (component1 as any).random;
 		expect(value1).toBeInstanceOf(Token);
 		expect(value1.name()).toBe('Entity/DebugComponent["random"]');
-		const resolved1 = await (value1 as Token).resolver();
+		const resolved1 = await (value1 as Token).resolve();
 		expect(resolved1).toBe(value1);
 		const component2 = new DebugComponent(entity, { other: { value: "example" } });
 		const value2 = (component2 as any).other.random[0];
 		expect(value2.name()).toBe('Entity/DebugComponent2["other"]["random"]["0"]');
 		expect(value2).toBeInstanceOf(Token);
-		const resolved2 = await (value2 as Token).resolver();
+		const resolved2 = await (value2 as Token).resolve();
 		expect(`${resolved2}`).toBe(`${value2}`);
 		expect(component1.properties.existing).toBe(235);
 	});
@@ -119,12 +119,12 @@ describe("Object model tests", () => {
 		class DebugComponent1 extends DebugComponent {}
 		class DebugComponent2 extends DebugComponent {}
 		class Scene1 extends ECS.Scene {
-			accepts(component: ECS.Component): boolean {
+			filter(component: ECS.Component): boolean {
 				return component instanceof DebugComponent1;
 			}
 		}
 		class Scene2 extends ECS.Scene {
-			accepts(component: ECS.Component): boolean {
+			filter(component: ECS.Component): boolean {
 				return component instanceof DebugComponent2;
 			}
 		}
@@ -142,7 +142,7 @@ describe("Object model tests", () => {
 
 	it("should be able to compose Bidirectional scenes", async () => {
 		class Scene1 extends ECS.Scene {
-			accepts(component: ECS.Component): boolean {
+			filter(component: ECS.Component): boolean {
 				return (
 					component instanceof Component_A ||
 					component instanceof Component_B ||
@@ -159,7 +159,7 @@ describe("Object model tests", () => {
 		}
 
 		class Scene2 extends ECS.Scene {
-			accepts(component: ECS.Component): boolean {
+			filter(component: ECS.Component): boolean {
 				return (
 					component instanceof Component_a ||
 					component instanceof Component_b ||
@@ -176,7 +176,7 @@ describe("Object model tests", () => {
 		}
 
 		class Scene3 extends ECS.Scene {
-			accepts(component: ECS.Component): boolean {
+			filter(component: ECS.Component): boolean {
 				return (
 					component instanceof Component_0 ||
 					component instanceof Component_1 ||

@@ -9,7 +9,11 @@
     "baseUrl": ".",
     "paths": {
       "@zorse/adk/core": ["src/core"],
-      "@zorse/adk/core/*": ["src/core/*"]
+      "@zorse/adk/core/*": ["src/core/*"],
+      "@zorse/adk/ground": ["src/ground"],
+      "@zorse/adk/ground/*": ["src/ground/*"],
+      "@zorse/adk/cloud": ["src/cloud"],
+      "@zorse/adk/cloud/*": ["src/cloud/*"]
     }
   },
   "include": ["src/**/*", "test/**/*"]

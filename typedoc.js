@@ -6,15 +6,20 @@ fs.rmSync(DOCS_FOLDER, { recursive: true, force: true });
 /** @type {import('typedoc').TypeDocOptions} */
 module.exports = {
   name: "ADK",
-  entryPoints: ["./src/core/index.ts"],
-  customCss: path.join(__dirname, "typedoc.css"),
+  theme: "hierarchy",
+  entryPoints: ["./src/core/index.ts", "./src/ground/index.ts", "./src/cloud/index.ts"],
+  entryPointStrategy: "expand",
   cleanOutputDir: true,
   titleLink: homepage,
   out: DOCS_FOLDER,
   includeVersion: true,
   hideGenerator: true,
-  navigationLinks: {
-    "GitHub Repository": repository.url,
+  navigationLinks: { "GitHub Repository": repository.url.split("+").pop() },
+  plugin: ["typedoc-theme-hierarchy", "typedoc-plugin-mermaid", "typedoc-plugin-mdn-links", "typedoc-umlclass"],
+  sort: "static-first",
+  umlClassDiagram: {
+    type: "detailed",
+    location: "local",
+    format: "svg",
   },
-  plugin: ["typedoc-plugin-mermaid", "typedoc-plugin-mdn-links"],
 };

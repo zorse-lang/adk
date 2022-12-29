@@ -19,7 +19,7 @@
     "cosmetics:format": "rome format --write --skip-errors .gen gen src test",
     "build": "webpack --progress",
     "test": "jest --runInBand --ci",
-    "docs": "typedoc"
+    "docs": "typedoc && sed -i 's@<head>@<head><script>let k=`opened-path-state`;localStorage.setItem(k,localStorage.getItem(k)||`[\\\"root-src\\\"]`)</script>@g' docs/index.html"
   },
   "repository": {
     "type": "git",
@@ -81,6 +81,8 @@
     "typedoc": "^0.23.23",
     "typedoc-plugin-mdn-links": "^2.0.2",
     "typedoc-plugin-mermaid": "^1.9.0",
+    "typedoc-theme-hierarchy": "^3.0.2",
+    "typedoc-umlclass": "^0.7.0",
     "typescript": "^4.9.4",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"

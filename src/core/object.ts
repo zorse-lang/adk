@@ -33,17 +33,6 @@ export abstract class Component {
 	constructor(parent: Entity) {
 		parent.components.push(this);
 		this[Symbols.ComponentHandle] = new Component.Handle(this, parent);
-		return new Token({
-			issuer: parent.system.issuer,
-			name: () => {
-				const entity = this[Symbols.ComponentHandle].parent;
-				const type = this.constructor.name;
-				const index = entity.components.length;
-				const name = `${type}${index === 1 ? "" : index}`;
-				return entity.path(name);
-			},
-			wrap: this,
-		}) as any;
 	}
 	/** @see {@link Component.Handle.update} */
 	public async [Symbols.ComponentUpdate](): Promise<void> {
@@ -57,7 +46,7 @@ export abstract class Component {
 		}
 	}
 	/** @see {@link Component.Handle.render} */
-	public abstract [Symbols.ComponentRender](out: any): void;
+	public abstract [Symbols.ComponentRender](out: any): void | Promise<void>;
 
 	/** @see {@link Component.Handle.verify} */
 	public async [Symbols.ComponentVerify](): Promise<boolean> {
@@ -67,6 +56,28 @@ export abstract class Component {
 
 /** @see {@link Component:class} */
 export namespace Component {
+	/**
+	 * The "Tokenized" variant of {@link Component:class}.
+	 * All "undefined" member accesses return other nested {@link Token}s recursively.
+	 * This variant of Component can have its {@link Token}s resolved by the {@link System:class}.
+	 */
+	export abstract class Resolvable extends Component {
+		constructor(parent: Entity) {
+			super(parent);
+			return new Token({
+				issuer: parent.system.issuer,
+				wrap: this,
+				name: () => {
+					const entity = this[Symbols.ComponentHandle].parent;
+					const type = this.constructor.name;
+					const index = entity.components.length;
+					const name = `${type}${index === 1 ? "" : index}`;
+					return entity.path(name);
+				},
+			}) as any;
+		}
+	}
+
 	/** A Handle object to expose utility API over a {@link Component:class} */
 	export class Handle {
 		/**
@@ -81,10 +92,9 @@ export namespace Component {
 		public readonly update: () => Promise<void> = this.component[Symbols.ComponentUpdate].bind(this.component);
 		/**
 		 * Convenient wrapper for the render symbol on a Component.
-		 * This is synchronous to ensure deterministic rendering into output.
-		 * @param out The output object to render into, type of this depends on {@link Scene:class}'s {@link Scene.empty} return value.
+		 * @param out Output to render into. Type of this depends on {@link Scene:class}'s {@link Scene.empty} return value.
 		 */
-		public readonly render: (out: any) => void = this.component[Symbols.ComponentRender].bind(this.component);
+		public readonly render: (out: any) => Promise<void> = this.component[Symbols.ComponentRender].bind(this.component);
 		/**
 		 * Convenient wrapper for the verify symbol on a Component.
 		 * @returns `true` if the Component is valid, `false` otherwise.
@@ -215,11 +225,14 @@ export class Entity {
 	}
 	/** Entity render works with {@link System:class} to assign {@link Component:class}s to {@link Scene:class}s. */
 	public render(): void {
+		const consumed = new Set<Component>();
 		for (const component of this.components) {
 			Array.from(this.system.scenes)
-				.filter((scene) => scene.accepts(component))
+				.filter((scene) => scene.filter(component))
 				.forEach((scene) => {
+					assert.false(errors.DuplicateComponentScenePair, consumed.has(component));
 					scene.components.add(component);
+					consumed.add(component);
 				});
 		}
 		for (const child of this.children) {
@@ -252,16 +265,16 @@ export class Entity {
  *     [*] --> System.compose(): Entities, Components, and Scenes are inputs to System
  *     System.compose() --> Entity.update(): Begin Entity level rendering
  *     Entity.update() --> Entity.render(): Resolve Tokens if possible
- *     Entity.render() --> Scene.accepts(Component): Flatten Entity-Component tree into Scenes
- *     Scene.accepts(Component) --> Scene.update(Token): Let Scenes handle unresolved Tokens and per-scene updates
+ *     Entity.render() --> Scene.filter(Component): Flatten Entity-Component tree into Scenes
+ *     Scene.filter(Component) --> Scene.update(Token): Let Scenes handle unresolved Tokens and per-scene updates
  *     Scene.update(Token) --> View.render(): Create a "shadow" Component with updated Tokens
  *     View.render() --> Component.update(): Begin Component level rendering
  *     Component.update() --> Component.verify(): Resolve updated Tokens
- *     Component.verify() --> Component.render(): Render the ShadowComponent
- *     Component.render() --> Scene.cluster(): Cluster Views based on Scene limits
+ *     Component.verify() --> Component.render(Scene): Render the ShadowComponent
+ *     Component.render(Scene) --> Scene.cluster(): Cluster Views based on Scene limits
  *     Scene.cluster() --> Scene.verify(View): Verify Views are within Scene constraints
- *     Scene.verify(View) --> Composition: Wrap Views for user consumption
- *     Composition --> [*]: Independent Views as outputs
+ *     Scene.verify(View) --> Scene.consume(Composition): Send Views for Scene consumption in order
+ *     Scene.consume(Composition)--> [*]: System output is a Composition of Views
  * ```
  */
 export class System {
@@ -293,7 +306,7 @@ export class System {
 					resolver.addIsolated(mapping);
 					for (const dep of component[Symbols.ComponentHandle].dependencies()) {
 						Array.from(this.scenes)
-							.filter((s) => s !== scene && s.accepts(dep))
+							.filter((s) => s !== scene && s.filter(dep))
 							.forEach((depScene) => {
 								sceneDependencies.get(scene).add(depScene);
 							});
@@ -324,9 +337,6 @@ export class System {
 				}
 			}
 		}
-		for (const view of views) {
-			await view.render();
-		}
 		const clusteredViews = views.flatMap((view) => view.scene.cluster(view));
 		for (const scene of this.scenes) {
 			const orderedSceneViews = clusteredViews.filter((view) => view.scene === scene);
@@ -337,6 +347,18 @@ export class System {
 				clusteredViews,
 				scene,
 			);
+		}
+		const clusteredViewsGroupedByScene = clusteredViews.reduce((acc, view) => {
+			const views = acc.get(view.scene) ?? [];
+			views.push(view);
+			acc.set(view.scene, views);
+			return acc;
+		}, new Map<Scene, View[]>());
+		for (const [scene, views] of clusteredViewsGroupedByScene) {
+			for (const view of views) {
+				await view.render();
+			}
+			await scene.consume(new Composition(views));
 		}
 		return new Composition(clusteredViews);
 	}
@@ -353,7 +375,12 @@ export abstract class Scene {
 	 * Checks if a {@link Component:class} can be rendered into this Scene.
 	 * @param component Component to check if it can be rendered into this Scene.
 	 */
-	public abstract accepts(component: Component): boolean;
+	public abstract filter(component: Component): boolean;
+	/**
+	 * Consumes independent {@link Composition}s of {@link View:class}s per Scene.
+	 * @param _composition Composition of {@link View:class}s to be consumed by the Scene as independent units of work.
+	 */
+	public async consume(_composition: Composition): Promise<void> {}
 	/**
 	 * The initial state of the Scene. Can be of any type.
 	 * It is expected of {@link Component:class}s to know how to handle the type.
@@ -362,8 +389,8 @@ export abstract class Scene {
 		return {};
 	}
 	/** Gives the Scene a chance to do per-scene {@link Token:class} updates. */
-	public update(token: Token): Token {
-		return token;
+	public update(delta: Scene.UpdateDelta): Token {
+		return delta.token;
 	}
 	/**
 	 * Lets the Scene to re-arrange a {@link View:class} into multiple
@@ -390,6 +417,17 @@ export abstract class Scene {
 	}
 }
 
+/** @see {@link Scene:class} */
+export namespace Scene {
+	/** Data passed to {@link Scene:class}'s {@link Scene.update} method */
+	export interface UpdateDelta {
+		/** Token to update */
+		readonly token: Token;
+		/** Scene requesting the update */
+		readonly owner?: Scene;
+	}
+}
+
 /**
  * Views are the lowest level of rendering unit in the Object model. Views are
  * what {@link Component:class}s in each scene eventually render into.
@@ -408,11 +446,30 @@ export class View {
 		for (const component of this.components) {
 			const shadowComponent = Object.create(component) as Component;
 			const shadowHandle = shadowComponent[Symbols.ComponentHandle];
-			shadowHandle.walk((token) => this.scene.update(token));
+			shadowHandle.walk((token, v, k) => {
+				if (token.data instanceof Component) {
+					if (this.scene.components.has(token.data)) {
+						v[k] = this.scene.update({ token, owner: this.scene });
+					} else {
+						const otherComponent = token.data as Component;
+						const otherHandle = otherComponent[Symbols.ComponentHandle];
+						const otherScenes = [...otherHandle.parent.system.scenes].filter(
+							(scene) => scene !== this.scene && scene.components.has(otherComponent),
+						);
+						const otherUpdates = otherScenes
+							.map((scene) => scene.update({ token, owner: this.scene }))
+							.filter((v) => v !== token);
+						assert.true(errors.AmbiguousCrossSceneReference, otherUpdates.length <= 1, otherComponent);
+						v[k] = otherUpdates.pop() || token;
+					}
+				} else {
+					v[k] = this.scene.update({ token });
+				}
+			});
 			await shadowHandle.update();
 			const verified = await shadowHandle.verify();
 			assert.true(errors.ComponentVerificationViolation, verified, component);
-			shadowHandle.render(this.output);
+			await shadowHandle.render(this.output);
 		}
 	}
 	/** Serializes the View into a portable format, mostly for internal use. */

@@ -20,8 +20,8 @@ const normalizeTokenName = (name?: Token.Name): (() => string) => {
  * Token design is inspired by the AWS CDK Token/Lazy system.
  */
 export class Token<ConcreteType = any, UserDataType = any> {
+	private readonly _resolver: Token.Resolver<ConcreteType>;
 	public readonly data: UserDataType;
-	public readonly resolver: Token.Resolver<ConcreteType>;
 	public readonly name: () => string;
 	/** Wrap an existing Object and return Tokens wherever its properties are missing (a.k.a Tokenizing the Object) */
 	public constructor(opts: Token.WrapOptions<ConcreteType>);
@@ -46,7 +46,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 			}) as any;
 		} else {
 			this.data = opts.data;
-			this.resolver = opts.resolver ? opts.resolver : (): ConcreteType => proxy;
+			this._resolver = opts.resolver ? opts.resolver : (): ConcreteType => proxy;
 			const proxy: any = new Proxy(this, {
 				get(target, prop, receiver) {
 					if (prop === Symbol.toPrimitive) {
@@ -59,7 +59,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 					assert.true(errors.InvalidTokenName, TOKEN_NAME_REGEXP.test(name), TOKEN_NAME_REGEXP.source, name);
 					const nestedTokenName = `${name}["${prop}"]`;
 					const nestedTokenResolver = async () => {
-						const rootValue: any = await target.resolver();
+						const rootValue: any = await target.resolve();
 						return rootValue[prop];
 					};
 					return new Token({
@@ -73,6 +73,9 @@ export class Token<ConcreteType = any, UserDataType = any> {
 			opts.issuer?.add(proxy);
 			return proxy;
 		}
+	}
+	public async resolve(): Promise<ConcreteType> {
+		return await this._resolver(this);
 	}
 	public toString(): string {
 		return this.serialize();
@@ -94,7 +97,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 export namespace Token {
 	export type Name = string | (() => string);
 	export type Options = MakeOptions | WrapOptions;
-	export type Resolver<ConcreteType = any> = () => ConcreteType | Promise<ConcreteType>;
+	export type Resolver<ConcreteType = any> = (token: Token) => ConcreteType | Promise<ConcreteType>;
 	export interface BaseOptions<ConcreteType> {
 		resolver?: Resolver<ConcreteType>;
 		issuer?: Issuer;
@@ -138,14 +141,14 @@ export namespace Token {
 				for (const name of allTokensNames) {
 					const token = this.find(name);
 					if (token) {
-						const resolved = await token.resolver();
+						const resolved = await token.resolve();
 						text = text.replace(new RegExp(`${TOKEN_TAG_OPENING}${name}${TOKEN_TAG_CLOSING}`, "g"), resolved);
 					}
 				}
 				return text;
 			};
 			const _resolveToken = async (token: Token): Promise<Token | any> => {
-				const val = await token.resolver();
+				const val = await token.resolve();
 				if (typeof val === "string") {
 					return await _resolveString(val);
 				} else {
