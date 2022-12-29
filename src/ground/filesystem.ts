@@ -111,7 +111,7 @@ export class NodeFileSystemScene extends Scene {
 	public empty(): FileSystem {
 		return this.fs;
 	}
-	public accepts(component: Component): boolean {
+	public filter(component: Component): boolean {
 		return component instanceof FileSystemComponent;
 	}
 }

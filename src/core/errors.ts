@@ -27,11 +27,21 @@ function no<errT extends Exception, condT = boolean>(
 ) {
 	ok(errFactory, !condition, ...args);
 }
+/** tiny assertion helper */
 export const assert = { true: ok, false: no };
 export namespace errors {
+	/** Thrown when Token names are invalid */
 	export class InvalidTokenName extends Exception {}
+	/** Thrown when a Component points to itself through Token chains */
 	export class CyclicComponentTokenPair extends Exception {}
+	/** Thrown when a Component has a cyclic dependency chain through Tokens */
 	export class CyclicDependencyResolver extends Exception {}
+	/** Thrown when Scene verify() method fails */
 	export class SceneVerificationViolation extends Exception {}
+	/** Thrown when Component verify() method fails */
 	export class ComponentVerificationViolation extends Exception {}
+	/** Thrown when Component backing a Token shared across scenes has multiple Scenes filtering it */
+	export class AmbiguousCrossSceneReference extends Exception {}
+	/** Thrown when Component shared across Scenes has multiple Scenes filtering it */
+	export class DuplicateComponentScenePair extends Exception {}
 }
