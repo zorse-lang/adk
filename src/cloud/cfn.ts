@@ -1,8 +1,14 @@
 import { Component, Entity, Symbols } from "@zorse/adk/core";
 
-// syntax is from:
-// https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-reference.html
-export abstract class CfnBaseResource<PropsType> extends Component.Resolvable {
+/** Base class for AWS CloudFormation {@link core.Component:class}s. */
+export abstract class AWSCloudFormationComponent<PropsType> extends Component.Resolvable {
+	/**
+	 * @param entity The {@link core.Entity:class} this component is attached to.
+	 * @param LogicalId The logical ID of the resource.
+	 * @param Type The resource type.
+	 * @param Properties The resource properties.
+	 * @see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-reference.html
+	 */
 	constructor(entity: Entity, LogicalId: string, Type: string, Properties?: PropsType) {
 		super(entity);
 		(this as any)[LogicalId] = {

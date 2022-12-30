@@ -16,7 +16,7 @@ module.exports = {
   hideGenerator: true,
   navigationLinks: { "GitHub Repository": repository.url.split("+").pop() },
   plugin: ["typedoc-theme-hierarchy", "typedoc-plugin-mermaid", "typedoc-plugin-mdn-links", "typedoc-umlclass"],
-  sort: "static-first",
+  sort: "kind",
   umlClassDiagram: {
     type: "detailed",
     location: "local",

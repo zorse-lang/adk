@@ -1,8 +1,14 @@
 import { Component, Entity, Symbols } from "@zorse/adk/core";
 
-// syntax is from:
-// https://www.alibabacloud.com/help/en/resource-orchestration-service/latest/resources
-export abstract class RosBaseResource<PropsType> extends Component.Resolvable {
+/** Base class for Alibaba ResourceOrchestrationService {@link core.Component:class}s. */
+export abstract class AlibabaResourceOrchestrationServiceComponent<PropsType> extends Component.Resolvable {
+	/**
+	 * @param entity The {@link core.Entity:class} this component is attached to.
+	 * @param name The name of the resource.
+	 * @param type The resource type.
+	 * @param properties The resource properties.
+	 * @see https://www.alibabacloud.com/help/en/resource-orchestration-service/latest/resources
+	 */
 	constructor(entity: Entity, LogicalId: string, Type: string, Properties?: PropsType) {
 		super(entity);
 		(this as any)[LogicalId] = {

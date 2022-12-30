@@ -292,29 +292,38 @@ describe("Object model tests", () => {
 		const expected = [
 			{
 				Components: [
+					{ properties: { hello: '@@{Entity_789/Component_83["moreFictionalProperty"]}@@' } },
+					{ properties: { hello: '@@{Entity_789/Component_73["someFictionalProperty"]}@@' } },
 					{ properties: {} },
 					{ properties: {} },
 					{ properties: {} },
 					{ properties: {} },
-					{
-						properties: {
-							hello: '@@{Entity_ABC/Component_A3["someFictionalProperty"]}@@',
-							world: '@@{Entity_ABC/Component_C3["someFictionalProperty"]}@@',
-						},
-						someFictionalProperty: '@@{Entity_bcdef/Component_b5["moreFictionalProperty"]}@@',
-					},
+					{ properties: {} },
 				],
 			},
 			{
 				Components: [
-					{ properties: { hello: '@@{Entity_bcdef/Component_c5["someFictionalProperty"]}@@' } },
-					{ properties: { hello: '@@{Entity_bcdef/Component_d5["someFictionalProperty"]}@@' } },
-					{ properties: { hello: '@@{Entity_bcdef/Component_e5["someFictionalProperty"]}@@' } },
-					{ properties: { hello: '@@{Entity_bcdef/Component_f5["someFictionalProperty"]}@@' } },
+					{ properties: {} },
+					{ properties: {} },
+					{ properties: {} },
+					{ properties: {}, moreFictionalProperty: '@@{Entity_789/Component_93["someFictionalProperty"]}@@' },
+				],
+			},
+			{
+				Components: [
 					{
-						properties: {},
-						moreFictionalProperty: '@@{Entity_EFGHI/Component_F5["someFictionalProperty"]}@@',
+						properties: {
+							hello: '@@{Entity_012/Component_13["someFictionalProperty"]}@@',
+							world: '@@{Entity_012/Component_23["someFictionalProperty"]}@@',
+						},
 					},
+					{ properties: {} },
+					{ properties: {} },
+				],
+			},
+			{
+				Components: [
+					{ properties: {}, someFictionalProperty: '@@{Entity_012/Component_03["moreFictionalProperty"]}@@' },
 				],
 			},
 			{
@@ -338,42 +347,30 @@ describe("Object model tests", () => {
 			},
 			{
 				Components: [
-					{ properties: {}, someFictionalProperty: '@@{Entity_012/Component_03["moreFictionalProperty"]}@@' },
+					{ properties: { hello: '@@{Entity_bcdef/Component_c5["someFictionalProperty"]}@@' } },
+					{ properties: { hello: '@@{Entity_bcdef/Component_d5["someFictionalProperty"]}@@' } },
+					{ properties: { hello: '@@{Entity_bcdef/Component_e5["someFictionalProperty"]}@@' } },
+					{ properties: { hello: '@@{Entity_bcdef/Component_f5["someFictionalProperty"]}@@' } },
+					{ properties: {}, moreFictionalProperty: '@@{Entity_EFGHI/Component_F5["someFictionalProperty"]}@@' },
 				],
 			},
 			{
 				Components: [
+					{ properties: {} },
+					{ properties: {} },
+					{ properties: {} },
+					{ properties: {} },
 					{
 						properties: {
-							hello: '@@{Entity_012/Component_13["someFictionalProperty"]}@@',
-							world: '@@{Entity_012/Component_23["someFictionalProperty"]}@@',
+							hello: '@@{Entity_ABC/Component_A3["someFictionalProperty"]}@@',
+							world: '@@{Entity_ABC/Component_C3["someFictionalProperty"]}@@',
 						},
+						someFictionalProperty: '@@{Entity_bcdef/Component_b5["moreFictionalProperty"]}@@',
 					},
-					{ properties: {} },
-					{ properties: {} },
-				],
-			},
-			{
-				Components: [
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {}, moreFictionalProperty: '@@{Entity_789/Component_93["someFictionalProperty"]}@@' },
-				],
-			},
-			{
-				Components: [
-					{ properties: { hello: '@@{Entity_789/Component_83["moreFictionalProperty"]}@@' } },
-					{ properties: { hello: '@@{Entity_789/Component_73["someFictionalProperty"]}@@' } },
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {} },
 				],
 			},
 		];
-		expect(composition.scenes).toEqual([scene1, scene2, scene3]);
+		expect(composition.scenes).toEqual([scene3, scene2, scene1]);
 		expect(composition.gizmos()).toEqual(expected);
 	});
 });
