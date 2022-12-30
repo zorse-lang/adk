@@ -49,9 +49,7 @@ export abstract class Component {
 	public abstract [Symbols.ComponentRender](out: any): void | Promise<void>;
 
 	/** @see {@link Component.Handle.verify} */
-	public async [Symbols.ComponentVerify](): Promise<boolean> {
-		return true;
-	}
+	public [Symbols.ComponentVerify](): void | Promise<void> {}
 }
 
 /** @see {@link Component:class} */
@@ -95,11 +93,8 @@ export namespace Component {
 		 * @param out Output to render into. Type of this depends on {@link Scene:class}'s {@link Scene.empty} return value.
 		 */
 		public readonly render: (out: any) => Promise<void> = this.component[Symbols.ComponentRender].bind(this.component);
-		/**
-		 * Convenient wrapper for the verify symbol on a Component.
-		 * @returns `true` if the Component is valid, `false` otherwise.
-		 */
-		public readonly verify: () => Promise<boolean> = this.component[Symbols.ComponentVerify].bind(this.component);
+		/** Convenient wrapper for the verify symbol on a Component. */
+		public readonly verify: () => Promise<void> = this.component[Symbols.ComponentVerify].bind(this.component);
 		/** Recursively returns all other components that this component have a dependency on */
 		public dependencies(): Set<Component> {
 			const dependencies = new Set<Component>();
@@ -269,12 +264,12 @@ export class Entity {
  *     Scene.filter(Component) --> Scene.update(Token): Let Scenes handle unresolved Tokens and per-scene updates
  *     Scene.update(Token) --> View.render(): Create a "shadow" Component with updated Tokens
  *     View.render() --> Component.update(): Begin Component level rendering
- *     Component.update() --> Component.verify(): Resolve updated Tokens
- *     Component.verify() --> Component.render(Scene): Render the ShadowComponent
- *     Component.render(Scene) --> Scene.cluster(): Cluster Views based on Scene limits
- *     Scene.cluster() --> Scene.verify(View): Verify Views are within Scene constraints
- *     Scene.verify(View) --> Scene.consume(Composition): Send Views for Scene consumption in order
- *     Scene.consume(Composition)--> [*]: System output is a Composition of Views
+ *     Component.update() --> Component.render(Scene): Resolve updated Tokens
+ *     Component.render(Scene) --> Component.verify(): Render and Verify the ShadowComponent
+ *     Component.verify() --> Scene.cluster(View): Cluster Views based on Scene limits
+ *     Scene.cluster(View) --> Scene.verify(View): Verify Views are within Scene constraints
+ *     Scene.verify(View) --> Scene.render(View): Send Views for Scene consumption in order
+ *     Scene.render(View)--> [*]: System output is a Composition of Views
  * ```
  */
 export class System {
@@ -337,28 +332,11 @@ export class System {
 				}
 			}
 		}
-		const clusteredViews = views.flatMap((view) => view.scene.cluster(view));
-		for (const scene of this.scenes) {
-			const orderedSceneViews = clusteredViews.filter((view) => view.scene === scene);
-			assert.true(
-				errors.SceneVerificationViolation,
-				scene.verify(orderedSceneViews),
-				orderedSceneViews,
-				clusteredViews,
-				scene,
-			);
-		}
-		const clusteredViewsGroupedByScene = clusteredViews.reduce((acc, view) => {
-			const views = acc.get(view.scene) ?? [];
-			views.push(view);
-			acc.set(view.scene, views);
-			return acc;
-		}, new Map<Scene, View[]>());
-		for (const [scene, views] of clusteredViewsGroupedByScene) {
-			for (const view of views) {
-				await view.render();
-			}
-			await scene.consume(new Composition(views));
+		const clusteredViews = views.flatMap((view) => view.scene.cluster(view)).reverse();
+		for (const view of clusteredViews) {
+			await view.render();
+			await view.scene.render(view);
+			await view.scene.verify(view);
 		}
 		return new Composition(clusteredViews);
 	}
@@ -377,10 +355,10 @@ export abstract class Scene {
 	 */
 	public abstract filter(component: Component): boolean;
 	/**
-	 * Consumes independent {@link Composition}s of {@link View:class}s per Scene.
-	 * @param _composition Composition of {@link View:class}s to be consumed by the Scene as independent units of work.
+	 * Renders an independent {@link View:class} per Scene.
+	 * @param view a {@link View:class} to be consumed by the Scene as an independent unit of work.
 	 */
-	public async consume(_composition: Composition): Promise<void> {}
+	public async render(view: View): Promise<void> {}
 	/**
 	 * The initial state of the Scene. Can be of any type.
 	 * It is expected of {@link Component:class}s to know how to handle the type.
@@ -401,11 +379,9 @@ export abstract class Scene {
 	}
 	/**
 	 * Lets the Scene to verify a View is within its internal constraints
-	 * @param views View to verify. These Views are in-order and clustered by the System and the Scene already.
+	 * @param view View to verify. These Views are in-order and clustered by the System and the Scene already.
 	 */
-	public verify(views: View[]): boolean {
-		return views !== undefined;
-	}
+	public verify(view: View): void | Promise<void> {}
 	/** Serializes the Scene into a portable format, mostly for internal use. */
 	public gizmos(): any {
 		const output: { Components: any[] } = { Components: [] };
@@ -467,9 +443,8 @@ export class View {
 				}
 			});
 			await shadowHandle.update();
-			const verified = await shadowHandle.verify();
-			assert.true(errors.ComponentVerificationViolation, verified, component);
 			await shadowHandle.render(this.output);
+			await shadowHandle.verify();
 		}
 	}
 	/** Serializes the View into a portable format, mostly for internal use. */
