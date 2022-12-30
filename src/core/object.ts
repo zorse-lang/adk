@@ -1,40 +1,40 @@
 import { Resolver, Token, assert, errors } from "@zorse/adk/core";
 
 /**
- * Symbols that represent methods after Component {@link Component.constructor} is called. These are Symbols so they do
+ * Symbols that represent methods of {@link core.Component:class} is called. These are Symbols so they do
  * not show up in `JSON.stringify()`.
  */
 export class Symbols {
-	/** Handle property symbol of a Component. @see Components's {@link Component.Handle} */
+	/** Handle property symbol of a Component. @see Components's {@link core.Component.Handle} */
 	public static readonly ComponentHandle: unique symbol = Symbol("ADK/Component/handle");
-	/** Update method symbol of a Component. @see Components's {@link Component.Handle.update} */
+	/** Update method symbol of a Component. @see Components's {@link core.Component.Handle.update} */
 	public static readonly ComponentUpdate: unique symbol = Symbol("ADK/Component/update");
-	/** Render method symbol of a Component. @see Components's {@link Component.Handle.render} */
+	/** Render method symbol of a Component. @see Components's {@link core.Component.Handle.render} */
 	public static readonly ComponentRender: unique symbol = Symbol("ADK/Component/render");
-	/** Verify method symbol of a Component. @see Components's {@link Component.Handle.verify} */
+	/** Verify method symbol of a Component. @see Components's {@link core.Component.Handle.verify} */
 	public static readonly ComponentVerify: unique symbol = Symbol("ADK/Component/verify");
 }
 
 /**
  * Components are single rendering units. Components are the lowest moving parts in the entire Object model. Components
  * are always attached to an Entity. No Assumptions are ever made about Components except they subclass the abstract
- * class `Component` and implement {@link Symbols.ComponentRender}`()`.
+ * class `Component` and implement {@link core.Symbols.ComponentRender}`()`.
  *
  * Components render into an opaque object with type `any`. This design allows a `Component` to stay as portable as
  * possible. The `Component` is not aware of the rendering context it is being rendered into. This property is used in
- * the process of rendering into multiple {@link Scene:class}s through a {@link System:class}.
+ * the process of rendering into multiple {@link core.Scene:class}s through a {@link core.System:class}.
  *
- * @see {@link System} for detail on how Components are rendered.
+ * @see {@link core.System:class} for detail on how Components are rendered.
  */
 export abstract class Component {
-	/** @see {@link Component.Handle} */
+	/** @see {@link core.Component.Handle} */
 	public readonly [Symbols.ComponentHandle]: Component.Handle;
 	/** @param parent the parent Entity this Component is attached to. */
 	constructor(parent: Entity) {
 		parent.components.push(this);
 		this[Symbols.ComponentHandle] = new Component.Handle(this, parent);
 	}
-	/** @see {@link Component.Handle.update} */
+	/** @see {@link core.Component.Handle.update} */
 	public async [Symbols.ComponentUpdate](): Promise<void> {
 		const mappings: Array<{ token: Token; v: any; k: string }> = [];
 		this[Symbols.ComponentHandle].walk((token, v, k) => {
@@ -45,19 +45,19 @@ export abstract class Component {
 			v[k] = await this[Symbols.ComponentHandle].parent.system.issuer.resolve(token);
 		}
 	}
-	/** @see {@link Component.Handle.render} */
+	/** @see {@link core.Component.Handle.render} */
 	public abstract [Symbols.ComponentRender](out: any): void | Promise<void>;
 
-	/** @see {@link Component.Handle.verify} */
+	/** @see {@link core.Component.Handle.verify} */
 	public [Symbols.ComponentVerify](): void | Promise<void> {}
 }
 
-/** @see {@link Component:class} */
+/** @see {@link core.Component:class} */
 export namespace Component {
 	/**
-	 * The "Tokenized" variant of {@link Component:class}.
-	 * All "undefined" member accesses return other nested {@link Token}s recursively.
-	 * This variant of Component can have its {@link Token}s resolved by the {@link System:class}.
+	 * The "Tokenized" variant of {@link core.Component:class}.
+	 * All "undefined" member accesses return other nested {@link core.Token:class}s recursively.
+	 * This variant of Component can have its {@link core.Token:class}s resolved by the {@link core.System:class}.
 	 */
 	export abstract class Resolvable extends Component {
 		constructor(parent: Entity) {
@@ -76,7 +76,7 @@ export namespace Component {
 		}
 	}
 
-	/** A Handle object to expose utility API over a {@link Component:class} */
+	/** A Handle object to expose utility API over a {@link core.Component:class} */
 	export class Handle {
 		/**
 		 * @param component Component to create a Handle for
@@ -85,12 +85,12 @@ export namespace Component {
 		constructor(private readonly component: Component, readonly parent: Entity) {}
 		/**
 		 * Convenient wrapper for the update symbol on a Component.
-		 * Calling this resolves all the {@link Token}s currently inside the `Component`, recursively.
+		 * Calling this resolves all the {@link core.Token:class}s currently inside the `Component`, recursively.
 		 */
 		public readonly update: () => Promise<void> = this.component[Symbols.ComponentUpdate].bind(this.component);
 		/**
 		 * Convenient wrapper for the render symbol on a Component.
-		 * @param out Output to render into. Type of this depends on {@link Scene:class}'s {@link Scene.empty} return value.
+		 * @param out Output to render into. Type of this depends on {@link core.Scene:class}'s {@link core.Scene.empty} return value.
 		 */
 		public readonly render: (out: any) => Promise<void> = this.component[Symbols.ComponentRender].bind(this.component);
 		/** Convenient wrapper for the verify symbol on a Component. */
@@ -116,14 +116,14 @@ export namespace Component {
 				}
 			}
 		}
-		/** Returns all {@link Token:class}s currently inside the current Component (`this`) */
+		/** Returns all {@link core.Token:class}s currently inside the current Component (`this`) */
 		public tokens(): Set<Token> {
 			const tokens = new Set<Token>();
 			this.walk((token) => tokens.add(token));
 			return tokens;
 		}
 		/**
-		 * Walk and observe all {@link Token:class}s inside the current Component (`this`) recursively.
+		 * Walk and observe all {@link core.Token:class}s inside the current Component (`this`) recursively.
 		 * @param observe Callback to observe tokens. Called with the token, the object it is inside, and the key it is from
 		 * @note You can use `v[k] = ...` to mutate the `Component`'s state.
 		 */
@@ -139,7 +139,7 @@ export namespace Component {
 				}
 			}
 		}
-		/** Extension of `JSON.stringify` where it understands {@link Token:class}s. */
+		/** Extension of `JSON.stringify` where it understands {@link core.Token:class}s. */
 		public serialize(): any {
 			return JSON.parse(
 				JSON.stringify(this.component, (_key, value) => {
@@ -157,17 +157,17 @@ export namespace Component {
 
 /**
  * Entities are logical groupings of Components for end user application.
- * Entities orchestrate their child Components to render into multiple {@link Scene:class}s.
- * {@link Component:class}s are the building blocks of an Entity and describe the state of the Entity.
+ * Entities orchestrate their child Components to render into multiple {@link core.Scene:class}s.
+ * {@link core.Component:class}s are the building blocks of an Entity and describe the state of the Entity.
  *
- * @see {@link System:class} for detail on how Entities are rendered.
+ * @see {@link core.System:class} for detail on how Entities are rendered.
  */
 export class Entity {
 	/** Name of the entity, does not need to be unique */
 	public readonly name: string;
-	/** The {@link System:class} this Entity is attached to */
+	/** The {@link core.System:class} this Entity is attached to */
 	public readonly system: System;
-	/** The top-most parent is always the {@link System:class} this Entity is attached to */
+	/** The top-most parent is always the {@link core.System:class} this Entity is attached to */
 	public readonly parent: Entity | System;
 	/** Children of this Entity (other Entities) */
 	public readonly children = new Set<Entity>();
@@ -176,8 +176,8 @@ export class Entity {
 	/**
 	 * @param parent Parent Entity or System to attach this Entity to
 	 * @param name Optional name of the Entity, defaults to `Entity${count}` of the same type in the parent Entity
-	 * @note Token names are used when {@link Token:class} {@link Token.resolver}
-	 * is called and `userData` attached to the Token is a {@link Component:class}
+	 * @note Token names are used when {@link core.Token:class} {@link core.Token.resolve}
+	 * is called and `userData` attached to the Token is a {@link core.Component:class}
 	 */
 	public constructor(parent: Entity | System, name?: string) {
 		const type = this.constructor.name;
@@ -209,7 +209,7 @@ export class Entity {
 		}
 		return path.reverse().concat(suffix).filter(Boolean).join("/");
 	}
-	/** Entity update calls {@link Component.Handle.update} on all attached {@link Component:class}s plus its children. */
+	/** Entity update calls {@link core.Component.Handle.update} on all attached {@link core.Component:class}s plus its children. */
 	public async update(): Promise<void> {
 		for (const component of this.components) {
 			await component[Symbols.ComponentHandle].update();
@@ -218,7 +218,7 @@ export class Entity {
 			await child.update();
 		}
 	}
-	/** Entity render works with {@link System:class} to assign {@link Component:class}s to {@link Scene:class}s. */
+	/** Entity render works with {@link core.System:class} to assign {@link core.Component:class}s to {@link core.Scene:class}s. */
 	public render(): void {
 		const consumed = new Set<Component>();
 		for (const component of this.components) {
@@ -240,20 +240,20 @@ export class Entity {
  * The Object model in ADK is inspired by Unity3D's GameObject from an API consumer perspective, however the Object
  * model in ADK is much more sophisticated.
  *
- * The Object model is designed as an {@link Entity:class} {@link Component:class} {@link System:class}. Individual
- * Components are able to render to multiple {@link Scene:class}s simultaneously. Components can also cross reference
+ * The Object model is designed as an {@link core.Entity:class} {@link core.Component:class} {@link core.System:class}. Individual
+ * Components are able to render to multiple {@link core.Scene:class}s simultaneously. Components can also cross reference
  * each other across Scenes.
  *
  * This design is often times referred to as a "Multi-Headed Renderer".
  *
- * The {@link System:class} class is the entry point to the Object model. The System is responsible for orchestrating
+ * The {@link core.System:class} class is the entry point to the Object model. The System is responsible for orchestrating
  * the entire rendering process.
  *
- * System manages a set of {@link Scene:class}s and a root {@link Entity:class}.
+ * System manages a set of {@link core.Scene:class}s and a root {@link core.Entity:class}.
  * The root Entity can be used to attach other Entities to the System.
- * Each Entity can have multiple {@link Component:class}s attached to it.
- * Each Component can be rendered into multiple {@link Scene:class}s simultaneously.
- * Calling the {@link System.compose} method will orchestrate the "Render Pipeline" shown below:
+ * Each Entity can have multiple {@link core.Component:class}s attached to it.
+ * Each Component can be rendered into multiple {@link core.Scene:class}s simultaneously.
+ * Calling the {@link core.System.compose} method will orchestrate the "Render Pipeline" shown below:
  *
  * ```mermaid
  * stateDiagram
@@ -273,16 +273,16 @@ export class Entity {
  * ```
  */
 export class System {
-	/** {@link Token:class}{@link Token.issuer} used in serialization and token lookups */
+	/** {@link core.Token:class}{@link core.Token.Issuer} used in serialization and token lookups */
 	public readonly issuer = new Token.Issuer();
-	/** Root {@link Entity:class} of the System */
+	/** Root {@link core.Entity:class} of the System */
 	public readonly root = new Entity(this, "<system>");
-	/** {@link Scene:class} managed by the System */
+	/** {@link core.Scene:class} managed by the System */
 	public readonly scenes = new Set<Scene>();
 	/**
 	 * Orchestrates and executes the Render Pipeline.
-	 * @see {@link System:class} for more details.
-	 * @returns A {@link Composition:class} of {@link View:class}s to be presented to the user.
+	 * @see {@link core.System:class} for more details.
+	 * @returns A {@link core.Composition:class} of {@link core.View:class}s to be presented to the user.
 	 */
 	public async compose(): Promise<Composition> {
 		await this.root.update();
@@ -343,36 +343,36 @@ export class System {
 }
 
 /**
- * Scenes are what Entities render their {@link Component:class}s into. Scenes are made of {@link View:class}s. Think of
- * Scenes as a blank notebook and {@link View:class}s as pages in the notebook.
+ * Scenes are what Entities render their {@link core.Component:class}s into. Scenes are made of {@link core.View:class}s. Think of
+ * Scenes as a blank notebook and {@link core.View:class}s as pages in the notebook.
  */
 export abstract class Scene {
-	/** {@link Component:class}s rendered (flattened) into this Scene. */
+	/** {@link core.Component:class}s rendered (flattened) into this Scene. */
 	public readonly components = new Set<Component>();
 	/**
-	 * Checks if a {@link Component:class} can be rendered into this Scene.
+	 * Checks if a {@link core.Component:class} can be rendered into this Scene.
 	 * @param component Component to check if it can be rendered into this Scene.
 	 */
 	public abstract filter(component: Component): boolean;
 	/**
-	 * Renders an independent {@link View:class} per Scene.
-	 * @param view a {@link View:class} to be consumed by the Scene as an independent unit of work.
+	 * Renders an independent {@link core.View:class} per Scene.
+	 * @param view a {@link core.View:class} to be consumed by the Scene as an independent unit of work.
 	 */
 	public async render(view: View): Promise<void> {}
 	/**
 	 * The initial state of the Scene. Can be of any type.
-	 * It is expected of {@link Component:class}s to know how to handle the type.
+	 * It is expected of {@link core.Component:class}s to know how to handle the type.
 	 */
 	public empty(): any {
 		return {};
 	}
-	/** Gives the Scene a chance to do per-scene {@link Token:class} updates. */
+	/** Gives the Scene a chance to do per-scene {@link core.Token:class} updates. */
 	public update(delta: Scene.UpdateDelta): Token {
 		return delta.token;
 	}
 	/**
-	 * Lets the Scene to re-arrange a {@link View:class} into multiple
-	 * {@link View:class}s based on its internal constraints.
+	 * Lets the Scene to re-arrange a {@link core.View:class} into multiple
+	 * {@link core.View:class}s based on its internal constraints.
 	 */
 	public cluster(view: View): View[] {
 		return [view];
@@ -393,9 +393,9 @@ export abstract class Scene {
 	}
 }
 
-/** @see {@link Scene:class} */
+/** @see {@link core.Scene:class} */
 export namespace Scene {
-	/** Data passed to {@link Scene:class}'s {@link Scene.update} method */
+	/** Data passed to {@link core.Scene:class}'s {@link core.Scene.update} method */
 	export interface UpdateDelta {
 		/** Token to update */
 		readonly token: Token;
@@ -406,18 +406,18 @@ export namespace Scene {
 
 /**
  * Views are the lowest level of rendering unit in the Object model. Views are
- * what {@link Component:class}s in each scene eventually render into.
+ * what {@link core.Component:class}s in each scene eventually render into.
  */
 export class View {
-	/** {@link Component:class}s rendered (flattened) into this View. */
+	/** {@link core.Component:class}s rendered (flattened) into this View. */
 	public readonly components = new Set<Component>();
 	/**
-	 * A View always belongs to a {@link Scene:class}. View could be seen as a subset of a {@link Scene:class} as well.
-	 * @param scene {@link Scene:class} this View belongs to.
-	 * @param output Output of the View. Can be of any type. @see {@link Scene.empty}
+	 * A View always belongs to a {@link core.Scene:class}. View could be seen as a subset of a {@link core.Scene:class} as well.
+	 * @param scene {@link core.Scene:class} this View belongs to.
+	 * @param output Output of the View. Can be of any type. @see {@link core.Scene.empty}
 	 */
 	public constructor(public readonly scene: Scene, public readonly output: any = scene.empty()) {}
-	/** Renders the {@link Component:class}s into View's output through creation of shadow {@link Component:class}s. */
+	/** Renders the {@link core.Component:class}s into View's output through creation of shadow {@link core.Component:class}s. */
 	public async render(): Promise<void> {
 		for (const component of this.components) {
 			const shadowComponent = Object.create(component) as Component;
@@ -460,12 +460,12 @@ export class View {
 
 /**
  * Compositions are the final output of the Object model. Compositions are ordered collection of independent
- * {@link View:class}s that can be consumed by the end user.
+ * {@link core.View:class}s that can be consumed by the end user.
  */
 export class Composition {
-	/** @param views {@link View:class}s in the order they are supposed to be presented */
+	/** @param views {@link core.View:class}s in the order they are supposed to be presented */
 	public constructor(public readonly views: View[]) {}
-	/** Returns all the {@link Scene:class}s associated with the composition of all member {@link View:class}s */
+	/** Returns all the {@link core.Scene:class}s associated with the composition of all member {@link core.View:class}s */
 	public get scenes(): Scene[] {
 		const uniqueScenes = new Set<Scene>(this.views.map((view) => view.scene));
 		return Array.from(uniqueScenes);
