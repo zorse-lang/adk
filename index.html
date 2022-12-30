@@ -105,14 +105,42 @@ stateDiagram
         }
       }
     }
-
-<pre><code><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Scene_2</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_4</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">a</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_6</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Entity_bcdef</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-0">b</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">c</span><br/><span class="hl-1">      </span><span class="hl-0">c</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">d</span><br/><span class="hl-1">      </span><span class="hl-0">c</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">e</span><br/><span class="hl-1">      </span><span class="hl-0">e</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">f</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_2</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">g</span><span class="hl-1"> </span><span class="hl-0">h</span><span class="hl-1"> </span><span class="hl-0">i</span><span class="hl-1"> </span><span class="hl-0">j</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Scene_3</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_3</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Entity_012</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">0</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">1</span><br/><span class="hl-1">      </span><span class="hl-2">0</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">2</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_1</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-2">3</span><span class="hl-1"> </span><span class="hl-2">4</span><span class="hl-1"> </span><span class="hl-2">5</span><span class="hl-1"> </span><span class="hl-2">6</span><br/><span class="hl-1">    </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Entity_789</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">9</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">7</span><br/><span class="hl-1">      </span><span class="hl-2">9</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">8</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
-</code></pre>
-<p>  }</p>
-<p>  B --&gt; b
+    state Scene_2 {
+      state View_4 {
+        a
+      }
+      state View_6 {
+        state Entity_bcdef {
+          b --&gt; c
+          c --&gt; d
+          c --&gt; e
+          e --&gt; f
+        }
+      }
+      state View_2 {
+        g h i j
+      }
+    }
+    state Scene_3 {
+      state View_3 {
+        state Entity_012 {
+          0 --&gt; 1
+          0 --&gt; 2
+        }
+      }
+      state View_1 {
+        3 4 5 6
+        state Entity_789 {
+          9 --&gt; 7
+          9 --&gt; 8
+        }
+      }
+    }
+  }
+  B --&gt; b
   a --&gt; 0
   j --&gt; 9
-  f --&gt; F</div><div class="mermaid light">%%{init:{&quot;theme&quot;:&quot;default&quot;}}%%
+  f --&gt; F</div><div class="mermaid light">%%{init:{"theme":"default"}}%%
 stateDiagram
   state System {
     state Scene_1 {
@@ -131,11 +159,40 @@ stateDiagram
           F --&gt; G
         }
       }
-    }</p>
-<pre><code><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Scene_2</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_4</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">a</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_6</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Entity_bcdef</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-0">b</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">c</span><br/><span class="hl-1">      </span><span class="hl-0">c</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">d</span><br/><span class="hl-1">      </span><span class="hl-0">c</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">e</span><br/><span class="hl-1">      </span><span class="hl-0">e</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">f</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_2</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">g</span><span class="hl-1"> </span><span class="hl-0">h</span><span class="hl-1"> </span><span class="hl-0">i</span><span class="hl-1"> </span><span class="hl-0">j</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Scene_3</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_3</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Entity_012</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">0</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">1</span><br/><span class="hl-1">      </span><span class="hl-2">0</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">2</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_1</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-2">3</span><span class="hl-1"> </span><span class="hl-2">4</span><span class="hl-1"> </span><span class="hl-2">5</span><span class="hl-1"> </span><span class="hl-2">6</span><br/><span class="hl-1">    </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Entity_789</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">9</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">7</span><br/><span class="hl-1">      </span><span class="hl-2">9</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">8</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
-</code></pre>
-<p>  }</p>
-<p>  B --&gt; b
+    }
+    state Scene_2 {
+      state View_4 {
+        a
+      }
+      state View_6 {
+        state Entity_bcdef {
+          b --&gt; c
+          c --&gt; d
+          c --&gt; e
+          e --&gt; f
+        }
+      }
+      state View_2 {
+        g h i j
+      }
+    }
+    state Scene_3 {
+      state View_3 {
+        state Entity_012 {
+          0 --&gt; 1
+          0 --&gt; 2
+        }
+      }
+      state View_1 {
+        3 4 5 6
+        state Entity_789 {
+          9 --&gt; 7
+          9 --&gt; 8
+        }
+      }
+    }
+  }
+  B --&gt; b
   a --&gt; 0
   j --&gt; 9
   f --&gt; F</div><pre><code class="language-mermaid">stateDiagram
@@ -156,14 +213,44 @@ stateDiagram
           F --&gt; G
         }
       }
-    }</p>
-<pre><code><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Scene_2</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_4</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">a</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_6</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Entity_bcdef</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-0">b</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">c</span><br/><span class="hl-1">      </span><span class="hl-0">c</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">d</span><br/><span class="hl-1">      </span><span class="hl-0">c</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">e</span><br/><span class="hl-1">      </span><span class="hl-0">e</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-0">f</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_2</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">g</span><span class="hl-1"> </span><span class="hl-0">h</span><span class="hl-1"> </span><span class="hl-0">i</span><span class="hl-1"> </span><span class="hl-0">j</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Scene_3</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_3</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Entity_012</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">0</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">1</span><br/><span class="hl-1">      </span><span class="hl-2">0</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">2</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">  </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">View_1</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-2">3</span><span class="hl-1"> </span><span class="hl-2">4</span><span class="hl-1"> </span><span class="hl-2">5</span><span class="hl-1"> </span><span class="hl-2">6</span><br/><span class="hl-1">    </span><span class="hl-0">state</span><span class="hl-1"> </span><span class="hl-0">Entity_789</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">9</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">7</span><br/><span class="hl-1">      </span><span class="hl-2">9</span><span class="hl-1"> --&amp;</span><span class="hl-0">gt</span><span class="hl-1">; </span><span class="hl-2">8</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
-</code></pre>
-<p>  }</p>
-<p>  B --&gt; b
+    }
+    state Scene_2 {
+      state View_4 {
+        a
+      }
+      state View_6 {
+        state Entity_bcdef {
+          b --&gt; c
+          c --&gt; d
+          c --&gt; e
+          e --&gt; f
+        }
+      }
+      state View_2 {
+        g h i j
+      }
+    }
+    state Scene_3 {
+      state View_3 {
+        state Entity_012 {
+          0 --&gt; 1
+          0 --&gt; 2
+        }
+      }
+      state View_1 {
+        3 4 5 6
+        state Entity_789 {
+          9 --&gt; 7
+          9 --&gt; 8
+        }
+      }
+    }
+  }
+  B --&gt; b
   a --&gt; 0
   j --&gt; 9
-  f --&gt; F</code></pre></div></p>
+  f --&gt; F</code></pre></div>
+
 <p>The System took the tree structure of the entity component system and broke down
 the tree into flattened Views, while respecting Component dependency hierarchy.</p>
 <p>If you are a fellow game engine developer, you may immediately recognize this as
