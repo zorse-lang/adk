@@ -54,7 +54,6 @@ stateDiagram
         }
       }
     }
-
     state Scene_2 {
       state View_4 {
         a
@@ -71,7 +70,6 @@ stateDiagram
         g h i j
       }
     }
-
     state Scene_3 {
       state View_3 {
         state Entity_012 {
@@ -88,7 +86,6 @@ stateDiagram
       }
     }
   }
-
   B --> b
   a --> 0
   j --> 9
