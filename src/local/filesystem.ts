@@ -26,19 +26,19 @@ export abstract class FileSystemComponent extends Component.Resolvable {
 	}
 }
 
-/** Options to create a {@link ground.TextFile:class} with */
+/** Options to create a {@link local.TextFile:class} with */
 export interface TextFileOptions extends FileSystemBaseOptions {
 	/** The content of the file @defaultValue `""` */
 	readonly content?: string;
 }
 
-/** Options to create a {@link ground.JsonFile:class} with */
+/** Options to create a {@link local.JsonFile:class} with */
 export interface JsonFileOptions extends FileSystemBaseOptions {
 	/** The data to serialize to JSON @defaultValue `{}` */
 	readonly data?: any;
 }
 
-/** Options to create a {@link ground.Folder:class} with */
+/** Options to create a {@link local.Folder:class} with */
 export interface FolderOptions extends FileSystemBaseOptions {
 	/** Whether to create a `.gitkeep` file in the folder @defaultValue `false` */
 	readonly gitkeep?: boolean;
