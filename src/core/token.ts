@@ -37,7 +37,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 					} else {
 						return new Token({
 							name: () => `${this.name()}["${prop}"]`,
-							issuer: opts.issuer,
+							tracker: opts.tracker,
 							resolver: opts.resolver,
 							data: opts.wrap,
 						});
@@ -64,13 +64,13 @@ export class Token<ConcreteType = any, UserDataType = any> {
 					};
 					return new Token({
 						name: nestedTokenName,
-						issuer: opts.issuer,
+						tracker: opts.tracker,
 						resolver: nestedTokenResolver,
 						data: opts.data,
 					});
 				},
 			});
-			opts.issuer?.add(proxy);
+			opts.tracker?.add(proxy);
 			return proxy;
 		}
 	}
@@ -80,8 +80,14 @@ export class Token<ConcreteType = any, UserDataType = any> {
 	public toString(): string {
 		return this.serialize();
 	}
+	public toJSON(): string {
+		return this.serialize();
+	}
 	public serialize(): string {
 		return `${TOKEN_TAG_OPENING}${this.name()}${TOKEN_TAG_CLOSING}`;
+	}
+	public path(): string {
+		return [...this.name().matchAll(/\[[^\]]+\]+/g)].join("");
 	}
 	public static IsToken(serialized: string): boolean;
 	public static IsToken(any: any): boolean;
@@ -100,7 +106,7 @@ export namespace Token {
 	export type Resolver<ConcreteType = any> = (token: Token) => ConcreteType | Promise<ConcreteType>;
 	export interface BaseOptions<ConcreteType> {
 		resolver?: Resolver<ConcreteType>;
-		issuer?: Issuer;
+		tracker?: Tracker;
 		name?: Name;
 	}
 	export interface MakeOptions<ConcreteType = any, UserDataType = any> extends BaseOptions<ConcreteType> {
@@ -111,10 +117,10 @@ export namespace Token {
 	}
 
 	/**
-	 * Optional Token Issuer to keep track of created Tokens in a given context.
-	 * Token Issuer can also be used to recursively resolve Tokens and strings associated with them.
+	 * Optional Token Tracker to keep track of created Tokens in a given context.
+	 * Token Tracker can also be used to recursively resolve Tokens and strings associated with them.
 	 */
-	export class Issuer {
+	export class Tracker {
 		private readonly tokens: Set<Token> = new Set();
 		public add(token: Token): void {
 			this.tokens.add(token);

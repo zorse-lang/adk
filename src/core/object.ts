@@ -42,7 +42,7 @@ export abstract class Component {
 		});
 		for (const mapping of mappings) {
 			const { token, v, k } = mapping;
-			v[k] = await this[Symbols.ComponentHandle].parent.system.issuer.resolve(token);
+			v[k] = await this[Symbols.ComponentHandle].parent.system.tracker.resolve(token);
 		}
 	}
 	/** @see {@link core.Component.Handle.render} */
@@ -63,7 +63,7 @@ export namespace Component {
 		constructor(parent: Entity) {
 			super(parent);
 			return new Token({
-				issuer: parent.system.issuer,
+				tracker: parent.system.tracker,
 				wrap: this,
 				name: () => {
 					const entity = this[Symbols.ComponentHandle].parent;
@@ -127,7 +127,7 @@ export namespace Component {
 		 * @param observe Callback to observe tokens. Called with the token, the object it is inside, and the key it is from
 		 * @note You can use `v[k] = ...` to mutate the `Component`'s state.
 		 */
-		public walk(observe: (token: Token, v: any, k: string) => void) {
+		public walk(observe: (token: Token, v: any, k: string) => void): void {
 			_walk(this.component);
 			function _walk(v: any): void {
 				for (const k in v) {
@@ -273,8 +273,8 @@ export class Entity {
  * ```
  */
 export class System {
-	/** {@link core.Token:class}{@link core.Token.Issuer} used in serialization and token lookups */
-	public readonly issuer = new Token.Issuer();
+	/** {@link core.Token:class}{@link core.Token.Tracker} used in serialization and token lookups */
+	public readonly tracker = new Token.Tracker();
 	/** Root {@link core.Entity:class} of the System */
 	public readonly root = new Entity(this, "<system>");
 	/** {@link core.Scene:class} managed by the System */
@@ -287,10 +287,10 @@ export class System {
 	public async compose(): Promise<Composition> {
 		await this.root.update();
 		this.root.render();
-		type SceneComponentPair = { component: Component; scene: Scene };
-		const resolver = new Resolver<SceneComponentPair>();
-		const sceneComponentPairs: SceneComponentPair[] = [];
-		const findMappings = (c: Component): SceneComponentPair[] => sceneComponentPairs.filter((m) => m.component === c);
+		type Frame = { component: Component; scene: Scene };
+		const resolver = new Resolver<Frame>();
+		const sceneComponentPairs: Frame[] = [];
+		const findMappings = (c: Component): Frame[] => sceneComponentPairs.filter((m) => m.component === c);
 		const sceneDependencies = new Map<Scene, Set<Scene>>();
 		for (const scene of this.scenes) {
 			sceneDependencies.set(scene, new Set<Scene>());
@@ -358,7 +358,7 @@ export abstract class Scene {
 	 * Renders an independent {@link core.View:class} per Scene.
 	 * @param view a {@link core.View:class} to be consumed by the Scene as an independent unit of work.
 	 */
-	public async render(view: View): Promise<void> {}
+	public render(view: View): void | Promise<void> {}
 	/**
 	 * The initial state of the Scene. Can be of any type.
 	 * It is expected of {@link core.Component:class}s to know how to handle the type.
@@ -367,8 +367,8 @@ export abstract class Scene {
 		return {};
 	}
 	/** Gives the Scene a chance to do per-scene {@link core.Token:class} updates. */
-	public update(delta: Scene.UpdateDelta): Token {
-		return delta.token;
+	public update(token: Token): Token {
+		return token;
 	}
 	/**
 	 * Lets the Scene to re-arrange a {@link core.View:class} into multiple
@@ -393,17 +393,6 @@ export abstract class Scene {
 	}
 }
 
-/** @see {@link core.Scene:class} */
-export namespace Scene {
-	/** Data passed to {@link core.Scene:class}'s {@link core.Scene.update} method */
-	export interface UpdateDelta {
-		/** Token to update */
-		readonly token: Token;
-		/** Scene requesting the update */
-		readonly owner?: Scene;
-	}
-}
-
 /**
  * Views are the lowest level of rendering unit in the Object model. Views are
  * what {@link core.Component:class}s in each scene eventually render into.
@@ -425,21 +414,19 @@ export class View {
 			shadowHandle.walk((token, v, k) => {
 				if (token.data instanceof Component) {
 					if (this.scene.components.has(token.data)) {
-						v[k] = this.scene.update({ token, owner: this.scene });
+						v[k] = this.scene.update(token);
 					} else {
 						const otherComponent = token.data as Component;
 						const otherHandle = otherComponent[Symbols.ComponentHandle];
 						const otherScenes = [...otherHandle.parent.system.scenes].filter(
 							(scene) => scene !== this.scene && scene.components.has(otherComponent),
 						);
-						const otherUpdates = otherScenes
-							.map((scene) => scene.update({ token, owner: this.scene }))
-							.filter((v) => v !== token);
+						const otherUpdates = otherScenes.map((scene) => scene.update(token)).filter((v) => v !== token);
 						assert.true(errors.AmbiguousCrossSceneReference, otherUpdates.length <= 1, otherComponent);
 						v[k] = otherUpdates.pop() || token;
 					}
 				} else {
-					v[k] = this.scene.update({ token });
+					v[k] = this.scene.update(token);
 				}
 			});
 			await shadowHandle.update();

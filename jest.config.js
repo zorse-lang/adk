@@ -14,8 +14,8 @@ module.exports = {
   moduleNameMapper: {
     "@zorse/adk/core": "<rootDir>/src/core",
     "@zorse/adk/core/(.*)": "<rootDir>/src/core/$1",
-    "@zorse/adk/ground": "<rootDir>/src/ground",
-    "@zorse/adk/ground/(.*)": "<rootDir>/src/ground/$1",
+    "@zorse/adk/local": "<rootDir>/src/local",
+    "@zorse/adk/local/(.*)": "<rootDir>/src/local/$1",
     "@zorse/adk/cloud": "<rootDir>/src/cloud",
     "@zorse/adk/cloud/(.*)": "<rootDir>/src/cloud/$1",
   },
