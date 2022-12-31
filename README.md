@@ -2,7 +2,7 @@
 
 Mixed and multi provider infrastructure as code automation and framework.
 
-## Scene Providers
+## Builtin Scenes
 
 - [x] Local Filesystem
 - [x] AWS CloudFormation
@@ -111,7 +111,7 @@ If you are an Ops Engineer, the following terminology mapping might help you:
 | Token       | Deploy-Time Variable         |
 
 Example use cases of such a renderer would be making Views that depend on other
-Views. For example:
+Views asynchronously. For example:
 
 - A config file that its content includes the output of a CloudFormation stack.
 - A CloudFormation stack that depends on a Kubernetes deployment.

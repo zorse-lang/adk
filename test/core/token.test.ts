@@ -58,26 +58,26 @@ describe("Token-Tech tests", () => {
 		});
 	});
 
-	describe("Token.Issuer resolve tests", () => {
+	describe("Token.Tracker resolve tests", () => {
 		it("should resolve when the entire string is Token's serialized name", async () => {
-			const issuer = new Token.Issuer();
+			const tracker = new Token.Tracker();
 			const expected = { some: "data" };
-			const token = new Token({ issuer, resolver: () => expected });
-			const resolved = await issuer.resolve(`${token}`);
+			const token = new Token({ tracker: tracker, resolver: () => expected });
+			const resolved = await tracker.resolve(`${token}`);
 			expect(resolved).toBe(expected);
 		});
 		it("should resolve when nested in a string", async () => {
-			const issuer = new Token.Issuer();
+			const tracker = new Token.Tracker();
 			const expected = { some: "data" };
-			const token = new Token({ issuer, resolver: () => expected });
-			const resolved = await issuer.resolve(`some string: ${token}`);
+			const token = new Token({ tracker: tracker, resolver: () => expected });
+			const resolved = await tracker.resolve(`some string: ${token}`);
 			expect(resolved).toBe("some string: [object Object]");
 		});
 		it("should resolve Tokens it does not recognize as-is", async () => {
-			const issuer = new Token.Issuer();
+			const tracker = new Token.Tracker();
 			const expected = { some: "data" };
 			const token = new Token({ resolver: () => expected });
-			const resolved = await issuer.resolve(`${token}`);
+			const resolved = await tracker.resolve(`${token}`);
 			expect(resolved).toBe(token.serialize());
 		});
 	});
