@@ -1,0 +1,18 @@
+import { GdmResource, Entity as ADKEntity } from "@zorse/adk";
+
+export class ProjectsAggregatedUsableSubnetworks
+	extends GdmResource<ProjectsAggregatedUsableSubnetworksComponentInputs>
+	implements ProjectsAggregatedUsableSubnetworksComponentOutputs
+{
+	constructor(entity: ADKEntity, options: ProjectsAggregatedUsableSubnetworksComponentInputs) {
+		super(entity, options.name, "container.v1beta1.ProjectsAggregatedUsableSubnetworks", options);
+	}
+}
+export interface ProjectsAggregatedUsableSubnetworksComponentOutputs {}
+export interface ProjectsAggregatedUsableSubnetworksComponentInputs {
+	readonly type: string;
+	readonly name: string;
+}
+export default {
+	ProjectsAggregatedUsableSubnetworks: ProjectsAggregatedUsableSubnetworks,
+};

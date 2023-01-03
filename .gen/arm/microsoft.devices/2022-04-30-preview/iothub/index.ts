@@ -1,0 +1,406 @@
+import { ArmResource, Entity as ADKEntity } from "@zorse/adk";
+
+export class IotHubs extends ArmResource<IotHubsComponentInputs> implements IotHubsComponentOutputs {
+	constructor(entity: ADKEntity, options: IotHubsComponentInputs) {
+		super(entity, options.name, "Microsoft.Devices/IotHubs", "2022-04-30-preview", options);
+	}
+	public readonly apiVersion: "2022-04-30-preview";
+	public readonly id: string;
+	public readonly type: "Microsoft.Devices/IotHubs";
+}
+export interface IotHubsComponentOutputs {
+	readonly apiVersion: "2022-04-30-preview";
+	readonly id: string;
+	readonly type: "Microsoft.Devices/IotHubs";
+}
+export interface IotHubsComponentInputs {
+	readonly etag?: string | undefined;
+	readonly identity?: ArmIdentity | undefined;
+	readonly location: string;
+	readonly name: string;
+	readonly properties?: IotHubProperties | undefined;
+	readonly sku: IotHubSkuInfo;
+	readonly systemData?: SystemData | undefined;
+	readonly tags?: ResourceTags | undefined;
+}
+export class IotHubs_certificates
+	extends ArmResource<IotHubs_certificatesComponentInputs>
+	implements IotHubs_certificatesComponentOutputs
+{
+	constructor(entity: ADKEntity, options: IotHubs_certificatesComponentInputs) {
+		super(entity, options.name, "Microsoft.Devices/IotHubs/certificates", "2022-04-30-preview", options);
+	}
+	public readonly apiVersion: "2022-04-30-preview";
+	public readonly id: string;
+	public readonly type: "Microsoft.Devices/IotHubs/certificates";
+}
+export interface IotHubs_certificatesComponentOutputs {
+	readonly apiVersion: "2022-04-30-preview";
+	readonly id: string;
+	readonly type: "Microsoft.Devices/IotHubs/certificates";
+}
+export interface IotHubs_certificatesComponentInputs {
+	readonly etag?: string | undefined;
+	readonly name: string;
+	readonly properties?: CertificateProperties | undefined;
+}
+export class IotHubs_eventHubEndpoints_ConsumerGroups
+	extends ArmResource<IotHubs_eventHubEndpoints_ConsumerGroupsComponentInputs>
+	implements IotHubs_eventHubEndpoints_ConsumerGroupsComponentOutputs
+{
+	constructor(entity: ADKEntity, options: IotHubs_eventHubEndpoints_ConsumerGroupsComponentInputs) {
+		super(
+			entity,
+			options.name,
+			"Microsoft.Devices/IotHubs/eventHubEndpoints/ConsumerGroups",
+			"2022-04-30-preview",
+			options,
+		);
+	}
+	public readonly apiVersion: "2022-04-30-preview";
+	public readonly id: string;
+	public readonly type: "Microsoft.Devices/IotHubs/eventHubEndpoints/ConsumerGroups";
+}
+export interface IotHubs_eventHubEndpoints_ConsumerGroupsComponentOutputs {
+	readonly apiVersion: "2022-04-30-preview";
+	readonly id: string;
+	readonly type: "Microsoft.Devices/IotHubs/eventHubEndpoints/ConsumerGroups";
+}
+export interface IotHubs_eventHubEndpoints_ConsumerGroupsComponentInputs {
+	readonly etag?: string | undefined;
+	readonly name: string;
+	readonly properties: EventHubConsumerGroupNameOrEventHubConsumerGroupInfoProperties;
+}
+export class iotHubs_privateEndpointConnections
+	extends ArmResource<iotHubs_privateEndpointConnectionsComponentInputs>
+	implements iotHubs_privateEndpointConnectionsComponentOutputs
+{
+	constructor(entity: ADKEntity, options: iotHubs_privateEndpointConnectionsComponentInputs) {
+		super(entity, options.name, "Microsoft.Devices/iotHubs/privateEndpointConnections", "2022-04-30-preview", options);
+	}
+	public readonly apiVersion: "2022-04-30-preview";
+	public readonly id: string;
+	public readonly type: "Microsoft.Devices/iotHubs/privateEndpointConnections";
+}
+export interface iotHubs_privateEndpointConnectionsComponentOutputs {
+	readonly apiVersion: "2022-04-30-preview";
+	readonly id: string;
+	readonly type: "Microsoft.Devices/iotHubs/privateEndpointConnections";
+}
+export interface iotHubs_privateEndpointConnectionsComponentInputs {
+	readonly name: string;
+	readonly properties: PrivateEndpointConnectionProperties;
+}
+export function listkeys(resource: IotHubs): SharedAccessSignatureAuthorizationRuleListResult {
+	if (resource.apiVersion !== "2022-04-30-preview") {
+		throw new Error(`listkeys is not available for api version ${resource.apiVersion}`);
+	}
+	if (resource.type !== "Microsoft.Devices/IotHubs") {
+		throw new Error(`listkeys is not available for resource type ${resource.type}`);
+	}
+	throw new Error("not implemented");
+}
+export interface ArmIdentity {
+	readonly principalId?: string | undefined;
+	readonly tenantId?: string | undefined;
+	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
+	readonly userAssignedIdentities?: ArmIdentityUserAssignedIdentities | undefined;
+}
+export interface ArmIdentityUserAssignedIdentities {
+	readonly "[ key: string ]"?: ArmUserIdentity | undefined;
+}
+export interface ArmUserIdentity {
+	readonly clientId?: string | undefined;
+	readonly principalId?: string | undefined;
+}
+export interface CertificateProperties {
+	readonly certificate?: string | undefined;
+	readonly created?: string | undefined;
+	readonly expiry?: string | undefined;
+	readonly isVerified?: boolean | undefined;
+	readonly subject?: string | undefined;
+	readonly thumbprint?: string | undefined;
+	readonly updated?: string | undefined;
+}
+export interface CloudToDeviceProperties {
+	readonly defaultTtlAsIso8601?: string | undefined;
+	readonly feedback?: FeedbackProperties | undefined;
+	readonly maxDeliveryCount?: number | undefined;
+}
+export interface EncryptionPropertiesDescription {
+	readonly keySource?: string | undefined;
+	readonly keyVaultProperties?: KeyVaultKeyProperties[] | undefined;
+}
+export interface EnrichmentProperties {
+	readonly endpointNames: string[];
+	readonly key: string;
+	readonly value: string;
+}
+export interface EventHubConsumerGroupNameOrEventHubConsumerGroupInfoProperties {
+	readonly name: string;
+}
+export interface EventHubProperties {
+	readonly endpoint?: string | undefined;
+	readonly partitionCount?: number | undefined;
+	readonly partitionIds?: string[] | undefined;
+	readonly path?: string | undefined;
+	readonly retentionTimeInDays?: number | undefined;
+}
+export interface FallbackRouteProperties {
+	readonly condition?: string | undefined;
+	readonly endpointNames: string[];
+	readonly isEnabled: boolean;
+	readonly name?: string | undefined;
+	readonly source:
+		| "DeviceConnectionStateEvents"
+		| "DeviceJobLifecycleEvents"
+		| "DeviceLifecycleEvents"
+		| "DeviceMessages"
+		| "DigitalTwinChangeEvents"
+		| "Invalid"
+		| "MqttBrokerMessages"
+		| "TwinChangeEvents";
+}
+export interface FeedbackProperties {
+	readonly lockDurationAsIso8601?: string | undefined;
+	readonly maxDeliveryCount?: number | undefined;
+	readonly ttlAsIso8601?: string | undefined;
+}
+export interface IotHubLocationDescription {
+	readonly location?: string | undefined;
+	readonly role?: ("primary" | "secondary") | undefined;
+}
+export interface IotHubProperties {
+	readonly allowedFqdnList?: string[] | undefined;
+	readonly authorizationPolicies?: SharedAccessSignatureAuthorizationRule[] | undefined;
+	readonly cloudToDevice?: CloudToDeviceProperties | undefined;
+	readonly comments?: string | undefined;
+	readonly deviceStreams?: IotHubPropertiesDeviceStreams | undefined;
+	readonly disableDeviceSAS?: boolean | undefined;
+	readonly disableLocalAuth?: boolean | undefined;
+	readonly disableModuleSAS?: boolean | undefined;
+	readonly enableDataResidency?: boolean | undefined;
+	readonly enableFileUploadNotifications?: boolean | undefined;
+	readonly encryption?: EncryptionPropertiesDescription | undefined;
+	readonly eventHubEndpoints?: IotHubPropertiesEventHubEndpoints | undefined;
+	readonly features?: ("DeviceManagement" | "None") | undefined;
+	readonly hostName?: string | undefined;
+	readonly ipFilterRules?: IpFilterRule[] | undefined;
+	readonly locations?: IotHubLocationDescription[] | undefined;
+	readonly messagingEndpoints?: IotHubPropertiesMessagingEndpoints | undefined;
+	readonly minTlsVersion?: string | undefined;
+	readonly networkRuleSets?: NetworkRuleSetProperties | undefined;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
+	readonly provisioningState?: string | undefined;
+	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly restrictOutboundNetworkAccess?: boolean | undefined;
+	readonly rootCertificate?: RootCertificateProperties | undefined;
+	readonly routing?: RoutingProperties | undefined;
+	readonly state?: string | undefined;
+	readonly storageEndpoints?: IotHubPropertiesStorageEndpoints | undefined;
+}
+export interface IotHubPropertiesDeviceStreams {
+	readonly streamingEndpoints?: string[] | undefined;
+}
+export interface IotHubPropertiesEventHubEndpoints {
+	readonly "[ key: string ]"?: EventHubProperties | undefined;
+}
+export interface IotHubPropertiesMessagingEndpoints {
+	readonly "[ key: string ]"?: MessagingEndpointProperties | undefined;
+}
+export interface IotHubPropertiesStorageEndpoints {
+	readonly "[ key: string ]"?: StorageEndpointProperties | undefined;
+}
+export interface IotHubSkuInfo {
+	readonly capacity?: number | undefined;
+	readonly name: "B1" | "B2" | "B3" | "F1" | "S1" | "S2" | "S3";
+	readonly tier?: ("Basic" | "Free") | undefined;
+}
+export interface IpFilterRule {
+	readonly action: "Accept";
+	readonly filterName: string;
+	readonly ipMask: string;
+}
+export interface KeyVaultKeyProperties {
+	readonly identity?: ManagedIdentity | undefined;
+	readonly keyIdentifier?: string | undefined;
+}
+export interface ManagedIdentity {
+	readonly userAssignedIdentity?: string | undefined;
+}
+export interface MessagingEndpointProperties {
+	readonly lockDurationAsIso8601?: string | undefined;
+	readonly maxDeliveryCount?: number | undefined;
+	readonly ttlAsIso8601?: string | undefined;
+}
+export interface NetworkRuleSetIpRule {
+	readonly action?: "Allow" | undefined;
+	readonly filterName: string;
+	readonly ipMask: string;
+}
+export interface NetworkRuleSetProperties {
+	readonly applyToBuiltInEventHubEndpoint: boolean;
+	readonly defaultAction?: ("Allow" | "Deny") | undefined;
+	readonly ipRules: NetworkRuleSetIpRule[];
+}
+export interface PrivateEndpoint {
+	readonly id?: string | undefined;
+}
+export interface PrivateEndpointConnection {
+	readonly id?: string | undefined;
+	readonly name?: string | undefined;
+	readonly properties: PrivateEndpointConnectionProperties;
+	readonly type?: string | undefined;
+}
+export interface PrivateEndpointConnectionProperties {
+	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
+}
+export interface PrivateLinkServiceConnectionState {
+	readonly actionsRequired?: string | undefined;
+	readonly description: string;
+	readonly status: "Approved" | "Disconnected" | "Pending" | "Rejected";
+}
+export interface ResourceTags {
+	readonly "[ key: string ]"?: string | undefined;
+}
+export interface RootCertificateProperties {
+	readonly enableRootCertificateV2?: boolean | undefined;
+	readonly lastUpdatedTimeUtc?: string | undefined;
+}
+export interface RouteProperties {
+	readonly condition?: string | undefined;
+	readonly endpointNames: string[];
+	readonly isEnabled: boolean;
+	readonly name: string;
+	readonly source:
+		| "DeviceConnectionStateEvents"
+		| "DeviceJobLifecycleEvents"
+		| "DeviceLifecycleEvents"
+		| "DeviceMessages"
+		| "DigitalTwinChangeEvents"
+		| "Invalid"
+		| "MqttBrokerMessages"
+		| "TwinChangeEvents";
+}
+export interface RoutingCosmosDBSqlApiProperties {
+	readonly authenticationType?: ("identityBased" | "keyBased") | undefined;
+	readonly collectionName: string;
+	readonly databaseName: string;
+	readonly endpointUri: string;
+	readonly id?: string | undefined;
+	readonly identity?: ManagedIdentity | undefined;
+	readonly name: string;
+	readonly partitionKeyName?: string | undefined;
+	readonly partitionKeyTemplate?: string | undefined;
+	readonly primaryKey?: string | undefined;
+	readonly resourceGroup?: string | undefined;
+	readonly secondaryKey?: string | undefined;
+	readonly subscriptionId?: string | undefined;
+}
+export interface RoutingEndpoints {
+	readonly cosmosDBSqlCollections?: RoutingCosmosDBSqlApiProperties[] | undefined;
+	readonly eventHubs?: RoutingEventHubProperties[] | undefined;
+	readonly serviceBusQueues?: RoutingServiceBusQueueEndpointProperties[] | undefined;
+	readonly serviceBusTopics?: RoutingServiceBusTopicEndpointProperties[] | undefined;
+	readonly storageContainers?: RoutingStorageContainerProperties[] | undefined;
+}
+export interface RoutingEventHubProperties {
+	readonly authenticationType?: ("identityBased" | "keyBased") | undefined;
+	readonly connectionString?: string | undefined;
+	readonly endpointUri?: string | undefined;
+	readonly entityPath?: string | undefined;
+	readonly id?: string | undefined;
+	readonly identity?: ManagedIdentity | undefined;
+	readonly name: string;
+	readonly resourceGroup?: string | undefined;
+	readonly subscriptionId?: string | undefined;
+}
+export interface RoutingProperties {
+	readonly endpoints?: RoutingEndpoints | undefined;
+	readonly enrichments?: EnrichmentProperties[] | undefined;
+	readonly fallbackRoute?: FallbackRouteProperties | undefined;
+	readonly routes?: RouteProperties[] | undefined;
+}
+export interface RoutingServiceBusQueueEndpointProperties {
+	readonly authenticationType?: ("identityBased" | "keyBased") | undefined;
+	readonly connectionString?: string | undefined;
+	readonly endpointUri?: string | undefined;
+	readonly entityPath?: string | undefined;
+	readonly id?: string | undefined;
+	readonly identity?: ManagedIdentity | undefined;
+	readonly name: string;
+	readonly resourceGroup?: string | undefined;
+	readonly subscriptionId?: string | undefined;
+}
+export interface RoutingServiceBusTopicEndpointProperties {
+	readonly authenticationType?: ("identityBased" | "keyBased") | undefined;
+	readonly connectionString?: string | undefined;
+	readonly endpointUri?: string | undefined;
+	readonly entityPath?: string | undefined;
+	readonly id?: string | undefined;
+	readonly identity?: ManagedIdentity | undefined;
+	readonly name: string;
+	readonly resourceGroup?: string | undefined;
+	readonly subscriptionId?: string | undefined;
+}
+export interface RoutingStorageContainerProperties {
+	readonly authenticationType?: ("identityBased" | "keyBased") | undefined;
+	readonly batchFrequencyInSeconds?: number | undefined;
+	readonly connectionString?: string | undefined;
+	readonly containerName: string;
+	readonly encoding?: ("Avro" | "AvroDeflate" | "JSON") | undefined;
+	readonly endpointUri?: string | undefined;
+	readonly fileNameFormat?: string | undefined;
+	readonly id?: string | undefined;
+	readonly identity?: ManagedIdentity | undefined;
+	readonly maxChunkSizeInBytes?: number | undefined;
+	readonly name: string;
+	readonly resourceGroup?: string | undefined;
+	readonly subscriptionId?: string | undefined;
+}
+export interface SharedAccessSignatureAuthorizationRule {
+	readonly keyName: string;
+	readonly primaryKey?: string | undefined;
+	readonly rights:
+		| "DeviceConnect"
+		| "RegistryRead"
+		| "RegistryRead, DeviceConnect"
+		| "RegistryRead, RegistryWrite"
+		| "RegistryRead, RegistryWrite, DeviceConnect"
+		| "RegistryRead, RegistryWrite, ServiceConnect"
+		| "RegistryRead, RegistryWrite, ServiceConnect, DeviceConnect"
+		| "RegistryRead, ServiceConnect"
+		| "RegistryRead, ServiceConnect, DeviceConnect"
+		| "RegistryWrite"
+		| "RegistryWrite, DeviceConnect"
+		| "RegistryWrite, ServiceConnect"
+		| "RegistryWrite, ServiceConnect, DeviceConnect"
+		| "ServiceConnect";
+	readonly secondaryKey?: string | undefined;
+}
+export interface SharedAccessSignatureAuthorizationRuleListResult {
+	readonly nextLink?: string | undefined;
+	readonly value?: SharedAccessSignatureAuthorizationRule[] | undefined;
+}
+export interface StorageEndpointProperties {
+	readonly authenticationType?: ("identityBased" | "keyBased") | undefined;
+	readonly connectionString: string;
+	readonly containerName: string;
+	readonly identity?: ManagedIdentity | undefined;
+	readonly sasTtlAsIso8601?: string | undefined;
+}
+export interface SystemData {
+	readonly createdAt?: string | undefined;
+	readonly createdBy?: string | undefined;
+	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly lastModifiedAt?: string | undefined;
+	readonly lastModifiedBy?: string | undefined;
+	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+}
+export default {
+	IotHubs: IotHubs,
+	"IotHubs/certificates": IotHubs_certificates,
+	"IotHubs/eventHubEndpoints/ConsumerGroups": IotHubs_eventHubEndpoints_ConsumerGroups,
+	"iotHubs/privateEndpointConnections": iotHubs_privateEndpointConnections,
+};
