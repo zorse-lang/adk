@@ -20,8 +20,9 @@ const normalizeTokenName = (name?: Token.Name): (() => string) => {
  * Token design is inspired by the AWS CDK Token/Lazy system.
  */
 export class Token<ConcreteType = any, UserDataType = any> {
-	private readonly _resolver: Token.Resolver<ConcreteType>;
-	public readonly data: UserDataType;
+	private _root: Token;
+	private _data: UserDataType;
+	private _resolver: Token.Resolver<ConcreteType>;
 	public readonly name: () => string;
 	/** Wrap an existing Object and return Tokens wherever its properties are missing (a.k.a Tokenizing the Object) */
 	public constructor(opts: Token.WrapOptions<ConcreteType>);
@@ -37,15 +38,20 @@ export class Token<ConcreteType = any, UserDataType = any> {
 					} else {
 						return new Token({
 							name: () => `${this.name()}["${prop}"]`,
-							tracker: opts.tracker,
+							registry: opts.registry,
 							resolver: opts.resolver,
 							data: opts.wrap,
+							root: this,
 						});
 					}
 				},
 			}) as any;
 		} else {
-			this.data = opts.data;
+			if (opts.registry?.find(this.name())) {
+				return opts.registry.find(this.name()) as any;
+			}
+			this._root = opts.root;
+			this._data = opts.data;
 			this._resolver = opts.resolver ? opts.resolver : (): ConcreteType => proxy;
 			const proxy: any = new Proxy(this, {
 				get(target, prop, receiver) {
@@ -64,16 +70,30 @@ export class Token<ConcreteType = any, UserDataType = any> {
 					};
 					return new Token({
 						name: nestedTokenName,
-						tracker: opts.tracker,
+						registry: opts.registry,
 						resolver: nestedTokenResolver,
 						data: opts.data,
+						root: target,
 					});
 				},
 			});
-			opts.tracker?.add(proxy);
+			opts.registry?.add(proxy);
 			return proxy;
 		}
 	}
+	/** Returns the root Token this Token is originated from or "this" */
+	public get root(): Token {
+		return this._root;
+	}
+	/** Returns the user data associated with this Token */
+	public get data(): UserDataType {
+		return this._data;
+	}
+	/** Resets the resolver of this Token */
+	public reset(resolver: Token.Resolver<ConcreteType>): void {
+		this._resolver = resolver;
+	}
+	/** Resolves this Token and returns the concrete value or the same Token if it cannot be resolved yet */
 	public async resolve(): Promise<ConcreteType> {
 		return await this._resolver(this);
 	}
@@ -83,13 +103,13 @@ export class Token<ConcreteType = any, UserDataType = any> {
 	public toJSON(): string {
 		return this.serialize();
 	}
+	/** Format is `@@{<name>/child/nested["<string or number>"]...}@@` */
 	public serialize(): string {
 		return `${TOKEN_TAG_OPENING}${this.name()}${TOKEN_TAG_CLOSING}`;
 	}
-	public path(): string {
-		return [...this.name().matchAll(/\[[^\]]+\]+/g)].join("");
-	}
+	/** Returns `true` if the entire string is a serialized Token */
 	public static IsToken(serialized: string): boolean;
+	/** Returns `true` if the entire object itself is an instance of a Token */
 	public static IsToken(any: any): boolean;
 	public static IsToken(any: any): any {
 		const maybeSerialized = any;
@@ -97,6 +117,30 @@ export class Token<ConcreteType = any, UserDataType = any> {
 			(typeof maybeSerialized === "object" && maybeSerialized instanceof Token) ||
 			(typeof maybeSerialized === "string" && TOKEN_LINE_REGEXP.test(maybeSerialized))
 		);
+	}
+	/**
+	 * Helper function that returns `true` if a certain path can be resolved by this token or its child tokens.
+	 * You can use this in your {@link core.Scene:class}s to do per-{@link core.Scene:class} updates of Tokens.
+	 * @example
+	 * ```typescript
+	 * token.resolves<ComponentType>((c) => c.tokenProperty)
+	 * ```
+	 */
+	public resolves<T = any>(cb?: (obj: T) => void): boolean {
+		// neat trick picked up from:
+		// https://github.com/PinkChampagne17/ts-nameof-proxy
+		const names: string[] = [];
+		const handler: ProxyHandler<Object> = {
+			get(_target, property) {
+				assert.false(errors.InvalidTokenName, typeof property === "symbol", "Symbol");
+				names.push(`"${property as string}"`);
+				return new Proxy({}, handler);
+			},
+		};
+		const proxy = new Proxy({}, handler);
+		cb(proxy as T);
+		const accessors = [...this.name().matchAll(/\[[^\]]+\]+/g)].map((match) => match[0].slice(1, -1));
+		return accessors.join("/").startsWith(names.join("/"));
 	}
 }
 
@@ -106,7 +150,8 @@ export namespace Token {
 	export type Resolver<ConcreteType = any> = (token: Token) => ConcreteType | Promise<ConcreteType>;
 	export interface BaseOptions<ConcreteType> {
 		resolver?: Resolver<ConcreteType>;
-		tracker?: Tracker;
+		registry?: Registry;
+		root?: Token;
 		name?: Name;
 	}
 	export interface MakeOptions<ConcreteType = any, UserDataType = any> extends BaseOptions<ConcreteType> {
@@ -117,10 +162,10 @@ export namespace Token {
 	}
 
 	/**
-	 * Optional Token Tracker to keep track of created Tokens in a given context.
-	 * Token Tracker can also be used to recursively resolve Tokens and strings associated with them.
+	 * Optional Token Registry to keep track of created Tokens in a given context.
+	 * Token Registry can also be used to recursively resolve Tokens and strings associated with them.
 	 */
-	export class Tracker {
+	export class Registry {
 		private readonly tokens: Set<Token> = new Set();
 		public add(token: Token): void {
 			this.tokens.add(token);

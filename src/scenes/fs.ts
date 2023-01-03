@@ -1,4 +1,4 @@
-import { Component, Entity, Scene, Symbols, Token, View } from "@zorse/adk/core";
+import { Component, Entity, Scene, Symbols, System, Token, View } from "@zorse/adk/core";
 import { dirname, resolve } from "path";
 
 /** Base options to create a FileSystem {@link core.Component:class} with */
@@ -10,7 +10,7 @@ export interface FileSystemBaseOptions {
 }
 
 /** Represents "something on the disk". At minimum it has a name and a directory it's located in */
-export abstract class FileSystemComponent extends Component.Resolvable {
+export abstract class FileSystemComponent extends Component {
 	/** Name of the "thing" on disk */
 	public name: string;
 	/** Directory the "thing" is located in on disk @defaultValue `"."` */
@@ -91,8 +91,8 @@ export class Folder extends FileSystemComponent {
 export class FileSystemScene extends Scene {
 	private readonly _output = new Map<string, string>();
 	/** @param _fs Filesystem FS object that implements Node FS API */
-	public constructor(private readonly _fs: typeof import("fs")) {
-		super();
+	public constructor(system: System, private readonly _fs: typeof import("fs")) {
+		super(system);
 	}
 	public empty(): Map<string, string> {
 		this._output.clear();
@@ -107,16 +107,11 @@ export class FileSystemScene extends Scene {
 			await this._fs.promises.writeFile(_out[0], _out[1]);
 		}
 	}
-	public update(token: Token): Token {
-		let maybeUpdated: Token = super.update(token);
+	public update(token: Token): void {
 		if (token.data instanceof TextFile) {
-			const accessor = token.path();
-			if (accessor.startsWith('["lines"]')) {
-				const lines = token.data.content.split("\n");
-				const value = eval(`lines${accessor.replace('["lines"]', "")}`);
-				maybeUpdated = new Token({ resolver: () => value, data: lines });
+			if (token.resolves<TextFile>((c) => c.lines)) {
+				token.root.reset(() => token.data.content.split("\n"));
 			}
 		}
-		return maybeUpdated;
 	}
 }

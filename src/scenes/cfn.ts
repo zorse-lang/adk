@@ -1,7 +1,7 @@
 import { Component, Entity, Symbols } from "@zorse/adk/core";
 
 /** Base class for AWS CloudFormation {@link core.Component:class}s. */
-export abstract class AWSCloudFormationComponent<PropsType> extends Component.Resolvable {
+export abstract class AWSCloudFormationComponent<PropsType> extends Component {
 	/**
 	 * @param entity The {@link core.Entity:class} this component is attached to.
 	 * @param LogicalId The logical ID of the resource.
