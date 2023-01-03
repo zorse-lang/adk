@@ -104,7 +104,6 @@ dist
 .tern-port
 
 # Generated files
-.gen
 cache
 gcp-types-base.json
 gcp-types-beta.json

@@ -19,7 +19,13 @@ function $sym(name: string): string {
 	if (name === "cdk.IResolvable") {
 		return "(any /* cdk.IResolvable */)"; // TODO: fix this
 	}
+	if (name.includes("AnyDict")) {
+		return "any";
+	}
 	name = name.replace("Any", "any");
+	if (name.includes("{ [key: string]: (Function) }") || name.startsWith("Function[]") || name === "Function") {
+		name = name.replace("Function", "FunctionInstance");
+	}
 	const isArray = name.endsWith("[]");
 	const isOptional = name.endsWith("?");
 	const baseName = isArray ? name.slice(0, -2) : isOptional ? name.slice(0, -1) : name;
@@ -35,9 +41,9 @@ function $sym(name: string): string {
 		return name;
 	}
 	if (SYMBOLS.has(name)) {
-		return SYMBOLS.get(name)!;
+		return SYMBOLS.get(name) as string;
 	}
-	const sanitized = baseName.replace(/[^a-zA-Z0-9_]/g, "_");
+	const sanitized = baseName.replace(/[^a-zA-Z0-9_[\]]/g, "_");
 	const symbol = `${sanitized}${isArray ? "[]" : ""}${isOptional ? "?" : ""}`;
 	SYMBOLS.set(name, symbol);
 	return symbol;
@@ -50,19 +56,21 @@ function writeInterface(opts: GeneratedModule, code: CodeMaker, iface: Generated
 		const { name, type, required } = prop;
 		const optionality = required ? "" : " | undefined";
 		const question = required ? "" : "?";
-		code.line(`readonly "${name}"${question}: (${$sym(type)})${optionality};`);
+		const nameQuoted = name === "*" ? "[ key: string ]" : `"${name}"`;
+		const typeWrapped = name === "*" ? "any" : $sym(type);
+		code.line(`readonly ${nameQuoted}${question}: (${typeWrapped})${optionality};`);
 	}
 	code.closeBlock();
 }
 
 function writeConstruct(opts: GeneratedModule, code: CodeMaker, klass: GeneratedConstruct) {
 	const { name } = klass;
-	const InputType = $sym(`${klass.name}Input`);
-	const OutputType = $sym(`${klass.name}Output`);
+	const InputType = $sym(`${klass.name}ComponentInputs`);
+	const OutputType = $sym(`${klass.name}ComponentOutputs`);
 	code.openBlock(`export class ${$sym(name)} extends ${opts.baseResource}<${InputType}> implements ${OutputType}`);
 	const inputRequired = klass.properties.some((p) => p.required);
 	const optionality = inputRequired ? "" : " | undefined";
-	code.openBlock(`constructor(entity: Entity, options: ${InputType}${optionality})`);
+	code.openBlock(`constructor(entity: ADKEntity, options: ${InputType}${optionality})`);
 	code.line(klass.initializer);
 	code.closeBlock();
 	const input = klass.properties.filter((p) => p.kind === PropertyKind.Input);
@@ -99,7 +107,7 @@ function writeFunction(opts: GeneratedModule, code: CodeMaker, func: GeneratedFu
 
 export function write(opts: GeneratedModule): CodeMaker {
 	opts.code.openFile(opts.fileName);
-	opts.code.line(`import { ${opts.baseResource}, Entity } from "@zorse/adk/core";`);
+	opts.code.line(`import { ${opts.baseResource}, Entity as ADKEntity } from "@zorse/adk";`);
 	opts.code.line();
 	const remaps = new Set<string>();
 	for (const construct of _.uniqBy(opts.constructs, (c) => c.name)) {

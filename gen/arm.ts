@@ -125,6 +125,13 @@ function emit($: CheerioAPI, mod: GeneratedModule) {
 		const $typeHeading = $(typeHeading);
 		const typeNameInfo = $typeHeading.text();
 		const $data = $typeHeading.nextUntil("h2");
+		const _fixNameField = (props: GeneratedProperty[]): GeneratedProperty[] => {
+			const nameField = props.find((x) => x.name === "name");
+			if (nameField) {
+				nameField.type = "string";
+			}
+			return props;
+		};
 
 		if (typeNameInfo.startsWith("Resource ")) {
 			const fullName = typeNameInfo.replace(/@[^@]+/g, "").replace("Resource ", "").replace(`${namespace}/`, "");
@@ -156,7 +163,7 @@ function emit($: CheerioAPI, mod: GeneratedModule) {
 					unionTypes.push(unionTypeName);
 					mod.constructs.push({
 						name: unionTypeName,
-						properties: [...baseProperties, ...subProperties],
+						properties: _fixNameField([...baseProperties, ...subProperties]),
 						initializer: `super(entity, options.name, '${namespace}/${fullName}', '${version}', options);`,
 					});
 				}
@@ -167,7 +174,7 @@ function emit($: CheerioAPI, mod: GeneratedModule) {
 			} else {
 				mod.constructs.push({
 					name: fullName,
-					properties: getProps($data),
+					properties: _fixNameField(getProps($data)),
 					initializer: `super(entity, options.name, '${namespace}/${fullName}', '${version}', options);`,
 				});
 			}
@@ -189,7 +196,7 @@ function emit($: CheerioAPI, mod: GeneratedModule) {
 			const parameters = [
 				{
 					name: "resource",
-					type: mod.constructs.find((c) => c.name === resourceType)?.name || "ArmBaseResource",
+					type: mod.constructs.find((c) => c.name === resourceType)?.name || "ArmResource",
 				},
 			];
 			if (Input) {
@@ -219,8 +226,9 @@ function emit($: CheerioAPI, mod: GeneratedModule) {
 			);
 			const baseProperties = getProperties($data.filter("h3").first());
 			if ($subTypes.empty()) {
+				const name = typeNameInfo === "Function" ? "FunctionInstance" : typeNameInfo;
 				mod.interfaces.push({
-					name: typeNameInfo,
+					name,
 					properties: [...baseProperties],
 				});
 			} else {
@@ -263,7 +271,7 @@ async function processMarkdown(data: SchemaData) {
 	const code = new CodeMaker({ indentationLevel: 2 });
 	const mod: GeneratedModule = {
 		code,
-		baseResource: "ArmBaseResource",
+		baseResource: "ArmResource",
 		fileName: genName,
 		constructs: [],
 		interfaces: [],

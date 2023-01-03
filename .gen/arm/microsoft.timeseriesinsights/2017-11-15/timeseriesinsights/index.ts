@@ -1,0 +1,222 @@
+import { ArmResource, Entity as ADKEntity } from "@zorse/adk";
+
+export class environments extends ArmResource<environmentsComponentInputs> implements environmentsComponentOutputs {
+	constructor(entity: ADKEntity, options: environmentsComponentInputs) {
+		super(entity, options.name, "Microsoft.TimeSeriesInsights/environments", "2017-11-15", options);
+	}
+	public readonly apiVersion: "2017-11-15";
+	public readonly id: string;
+	public readonly type: "Microsoft.TimeSeriesInsights/environments";
+}
+export interface environmentsComponentOutputs {
+	readonly apiVersion: "2017-11-15";
+	readonly id: string;
+	readonly type: "Microsoft.TimeSeriesInsights/environments";
+}
+export interface environmentsComponentInputs {
+	readonly location: string;
+	readonly name: string;
+	readonly properties: EnvironmentCreationPropertiesOrEnvironmentResourceProperties;
+	readonly sku: Sku;
+	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags | undefined;
+}
+export class environments_accessPolicies
+	extends ArmResource<environments_accessPoliciesComponentInputs>
+	implements environments_accessPoliciesComponentOutputs
+{
+	constructor(entity: ADKEntity, options: environments_accessPoliciesComponentInputs) {
+		super(entity, options.name, "Microsoft.TimeSeriesInsights/environments/accessPolicies", "2017-11-15", options);
+	}
+	public readonly apiVersion: "2017-11-15";
+	public readonly id: string;
+	public readonly type: "Microsoft.TimeSeriesInsights/environments/accessPolicies";
+}
+export interface environments_accessPoliciesComponentOutputs {
+	readonly apiVersion: "2017-11-15";
+	readonly id: string;
+	readonly type: "Microsoft.TimeSeriesInsights/environments/accessPolicies";
+}
+export interface environments_accessPoliciesComponentInputs {
+	readonly name: string;
+	readonly properties: AccessPolicyResourceProperties;
+}
+export class environments_eventSources_Microsoft_EventHub
+	extends ArmResource<environments_eventSources_Microsoft_EventHubComponentInputs>
+	implements environments_eventSources_Microsoft_EventHubComponentOutputs
+{
+	constructor(entity: ADKEntity, options: environments_eventSources_Microsoft_EventHubComponentInputs) {
+		super(entity, options.name, "Microsoft.TimeSeriesInsights/environments/eventSources", "2017-11-15", options);
+	}
+	public readonly apiVersion: "2017-11-15";
+	public readonly id: string;
+	public readonly type: "Microsoft.TimeSeriesInsights/environments/eventSources";
+}
+export interface environments_eventSources_Microsoft_EventHubComponentOutputs {
+	readonly apiVersion: "2017-11-15";
+	readonly id: string;
+	readonly type: "Microsoft.TimeSeriesInsights/environments/eventSources";
+}
+export interface environments_eventSources_Microsoft_EventHubComponentInputs {
+	readonly location: string;
+	readonly name: string;
+	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags | undefined;
+	readonly kind: "Microsoft.EventHub";
+	readonly properties: EventHubEventSourceCreationPropertiesOrEventHubEventSourceResourceProperties;
+}
+export class environments_eventSources_Microsoft_IoTHub
+	extends ArmResource<environments_eventSources_Microsoft_IoTHubComponentInputs>
+	implements environments_eventSources_Microsoft_IoTHubComponentOutputs
+{
+	constructor(entity: ADKEntity, options: environments_eventSources_Microsoft_IoTHubComponentInputs) {
+		super(entity, options.name, "Microsoft.TimeSeriesInsights/environments/eventSources", "2017-11-15", options);
+	}
+	public readonly apiVersion: "2017-11-15";
+	public readonly id: string;
+	public readonly type: "Microsoft.TimeSeriesInsights/environments/eventSources";
+}
+export interface environments_eventSources_Microsoft_IoTHubComponentOutputs {
+	readonly apiVersion: "2017-11-15";
+	readonly id: string;
+	readonly type: "Microsoft.TimeSeriesInsights/environments/eventSources";
+}
+export interface environments_eventSources_Microsoft_IoTHubComponentInputs {
+	readonly location: string;
+	readonly name: string;
+	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags | undefined;
+	readonly kind: "Microsoft.IoTHub";
+	readonly properties: IoTHubEventSourceCreationProperties;
+}
+export class environments_eventSources_Microsoft_IotHub
+	extends ArmResource<environments_eventSources_Microsoft_IotHubComponentInputs>
+	implements environments_eventSources_Microsoft_IotHubComponentOutputs
+{
+	constructor(entity: ADKEntity, options: environments_eventSources_Microsoft_IotHubComponentInputs) {
+		super(entity, options.name, "Microsoft.TimeSeriesInsights/environments/eventSources", "2017-11-15", options);
+	}
+	public readonly apiVersion: "2017-11-15";
+	public readonly id: string;
+	public readonly type: "Microsoft.TimeSeriesInsights/environments/eventSources";
+}
+export interface environments_eventSources_Microsoft_IotHubComponentOutputs {
+	readonly apiVersion: "2017-11-15";
+	readonly id: string;
+	readonly type: "Microsoft.TimeSeriesInsights/environments/eventSources";
+}
+export interface environments_eventSources_Microsoft_IotHubComponentInputs {
+	readonly location: string;
+	readonly name: string;
+	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags | undefined;
+	readonly kind: "Microsoft.IotHub";
+	readonly properties?: IoTHubEventSourceResourceProperties | undefined;
+}
+export class environments_referenceDataSets
+	extends ArmResource<environments_referenceDataSetsComponentInputs>
+	implements environments_referenceDataSetsComponentOutputs
+{
+	constructor(entity: ADKEntity, options: environments_referenceDataSetsComponentInputs) {
+		super(entity, options.name, "Microsoft.TimeSeriesInsights/environments/referenceDataSets", "2017-11-15", options);
+	}
+	public readonly apiVersion: "2017-11-15";
+	public readonly id: string;
+	public readonly type: "Microsoft.TimeSeriesInsights/environments/referenceDataSets";
+}
+export interface environments_referenceDataSetsComponentOutputs {
+	readonly apiVersion: "2017-11-15";
+	readonly id: string;
+	readonly type: "Microsoft.TimeSeriesInsights/environments/referenceDataSets";
+}
+export interface environments_referenceDataSetsComponentInputs {
+	readonly location: string;
+	readonly name: string;
+	readonly properties: ReferenceDataSetCreationPropertiesOrReferenceDataSetResourceProperties;
+	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags | undefined;
+}
+export interface AccessPolicyResourceProperties {
+	readonly description?: string | undefined;
+	readonly principalObjectId?: string | undefined;
+	readonly roles?: "Contributor"[] | undefined;
+}
+export interface CreateOrUpdateTrackedResourcePropertiesTags {
+	readonly "[ key: string ]"?: string | undefined;
+}
+export interface EnvironmentCreationPropertiesOrEnvironmentResourceProperties {
+	readonly creationTime?: string | undefined;
+	readonly dataAccessFqdn?: string | undefined;
+	readonly dataAccessId?: string | undefined;
+	readonly dataRetentionTime: string;
+	readonly partitionKeyProperties?: PartitionKeyProperty[] | undefined;
+	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly status?: EnvironmentStatus | undefined;
+	readonly storageLimitExceededBehavior?: "PauseIngress" | undefined;
+}
+export interface EnvironmentStateDetails {
+	readonly code?: string | undefined;
+	readonly message?: string | undefined;
+}
+export interface EnvironmentStatus {
+	readonly ingress?: IngressEnvironmentStatus | undefined;
+}
+export interface EventHubEventSourceCreationPropertiesOrEventHubEventSourceResourceProperties {
+	readonly consumerGroupName: string;
+	readonly creationTime?: string | undefined;
+	readonly eventHubName: string;
+	readonly eventSourceResourceId: string;
+	readonly keyName: string;
+	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly serviceBusNamespace: string;
+	readonly sharedAccessKey: string;
+	readonly timestampPropertyName?: string | undefined;
+}
+export interface IngressEnvironmentStatus {
+	readonly state?: ("Disabled" | "Paused" | "Ready" | "Running") | undefined;
+	readonly stateDetails?: EnvironmentStateDetails | undefined;
+}
+export interface IoTHubEventSourceCreationProperties {
+	readonly consumerGroupName: string;
+	readonly creationTime?: string | undefined;
+	readonly eventSourceResourceId: string;
+	readonly iotHubName: string;
+	readonly keyName: string;
+	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly sharedAccessKey: string;
+	readonly timestampPropertyName?: string | undefined;
+}
+export interface IoTHubEventSourceResourceProperties {
+	readonly consumerGroupName: string;
+	readonly creationTime?: string | undefined;
+	readonly eventSourceResourceId: string;
+	readonly iotHubName: string;
+	readonly keyName: string;
+	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly timestampPropertyName?: string | undefined;
+}
+export interface PartitionKeyProperty {
+	readonly name?: string | undefined;
+	readonly type?: "String" | undefined;
+}
+export interface ReferenceDataSetCreationPropertiesOrReferenceDataSetResourceProperties {
+	readonly creationTime?: string | undefined;
+	readonly dataStringComparisonBehavior?: "Ordinal" | undefined;
+	readonly keyProperties: ReferenceDataSetKeyProperty[];
+	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+}
+export interface ReferenceDataSetKeyProperty {
+	readonly name?: string | undefined;
+	readonly type?: ("Bool" | "DateTime" | "Double") | undefined;
+}
+export interface Sku {
+	readonly capacity: number;
+	readonly name: "S1";
+}
+export type environments_eventSources =
+	| environments_eventSources_Microsoft_EventHub
+	| environments_eventSources_Microsoft_IoTHub
+	| environments_eventSources_Microsoft_IotHub;
+export default {
+	environments: environments,
+	"environments/accessPolicies": environments_accessPolicies,
+	"environments/eventSources/Microsoft.EventHub": environments_eventSources_Microsoft_EventHub,
+	"environments/eventSources/Microsoft.IoTHub": environments_eventSources_Microsoft_IoTHub,
+	"environments/eventSources/Microsoft.IotHub": environments_eventSources_Microsoft_IotHub,
+	"environments/referenceDataSets": environments_referenceDataSets,
+};

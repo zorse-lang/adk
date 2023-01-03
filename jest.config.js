@@ -12,10 +12,8 @@ module.exports = {
   testTimeout: 10000,
   verbose: true,
   moduleNameMapper: {
-    "@zorse/adk/core": "<rootDir>/src/core",
-    "@zorse/adk/core/(.*)": "<rootDir>/src/core/$1",
-    "@zorse/adk/scenes": "<rootDir>/src/scenes",
-    "@zorse/adk/scenes/(.*)": "<rootDir>/src/scenes/$1",
+    "@zorse/adk": "<rootDir>/src",
+    "@zorse/adk/(.*)": "<rootDir>/src/$1",
   },
   transform: {
     "^.+\\.tsx?$": [

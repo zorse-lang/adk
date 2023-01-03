@@ -8,7 +8,7 @@ async function main() {
 		// "ROSTemplateFormatVersion":
 		// https://www.alibabacloud.com/help/en/resource-orchestration-service/latest/api-operation-examples-template-operations
 		const out = `.gen/ros/${ns.replace(/::/g, ".").toLowerCase()}/2015-09-01`;
-		await generate(rosSpec, ns, out, "RosBaseResource");
+		await generate(rosSpec, ns, out, "RosResource");
 	}
 }
 
