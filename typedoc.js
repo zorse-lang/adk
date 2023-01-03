@@ -7,7 +7,7 @@ fs.rmSync(DOCS_FOLDER, { recursive: true, force: true });
 module.exports = {
   name: "ADK",
   theme: "hierarchy",
-  entryPoints: ["./src/core/index.ts", "./src/local/index.ts", "./src/cloud/index.ts"],
+  entryPoints: ["./src/core/index.ts", "./src/scenes/index.ts"],
   entryPointStrategy: "expand",
   cleanOutputDir: true,
   titleLink: homepage,

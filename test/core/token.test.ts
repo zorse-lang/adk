@@ -60,21 +60,21 @@ describe("Token-Tech tests", () => {
 
 	describe("Token.Tracker resolve tests", () => {
 		it("should resolve when the entire string is Token's serialized name", async () => {
-			const tracker = new Token.Tracker();
+			const tracker = new Token.Registry();
 			const expected = { some: "data" };
-			const token = new Token({ tracker: tracker, resolver: () => expected });
+			const token = new Token({ registry: tracker, resolver: () => expected });
 			const resolved = await tracker.resolve(`${token}`);
 			expect(resolved).toBe(expected);
 		});
 		it("should resolve when nested in a string", async () => {
-			const tracker = new Token.Tracker();
+			const tracker = new Token.Registry();
 			const expected = { some: "data" };
-			const token = new Token({ tracker: tracker, resolver: () => expected });
+			const token = new Token({ registry: tracker, resolver: () => expected });
 			const resolved = await tracker.resolve(`some string: ${token}`);
 			expect(resolved).toBe("some string: [object Object]");
 		});
 		it("should resolve Tokens it does not recognize as-is", async () => {
-			const tracker = new Token.Tracker();
+			const tracker = new Token.Registry();
 			const expected = { some: "data" };
 			const token = new Token({ resolver: () => expected });
 			const resolved = await tracker.resolve(`${token}`);

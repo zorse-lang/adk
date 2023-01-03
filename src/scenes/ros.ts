@@ -1,7 +1,7 @@
 import { Component, Entity, Symbols } from "@zorse/adk/core";
 
 /** Base class for Alibaba ResourceOrchestrationService {@link core.Component:class}s. */
-export abstract class AlibabaResourceOrchestrationServiceComponent<PropsType> extends Component.Resolvable {
+export abstract class AlibabaResourceOrchestrationServiceComponent<PropsType> extends Component {
 	/**
 	 * @param entity The {@link core.Entity:class} this component is attached to.
 	 * @param name The name of the resource.

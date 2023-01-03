@@ -7,7 +7,7 @@ class DebugScene extends ECS.Scene {
 		return component instanceof DebugComponent;
 	}
 }
-class DebugComponent extends ECS.Component.Resolvable {
+class DebugComponent extends ECS.Component {
 	public someFictionalProperty?: string;
 	public moreFictionalProperty?: string;
 	constructor(parent: ECS.Entity, public readonly properties: any = {}) {
@@ -30,8 +30,7 @@ describe("Object model tests", () => {
 		const otherEntity = new ECS.Entity(system);
 		new DebugComponent(otherEntity, { hello: "world" });
 		new DebugComponent(otherEntity, { hello: "sample" });
-		const scene = new DebugScene();
-		system.scenes.add(scene);
+		const scene = new DebugScene(system);
 		await system.compose();
 		expect(scene.gizmos()).toEqual({
 			Components: [
@@ -47,8 +46,7 @@ describe("Object model tests", () => {
 		const system = new ECS.System();
 		const entity = new ECS.Entity(system);
 		new DebugComponent(entity, { token: new Token({ name: "TokenName" }) });
-		const scene = new DebugScene();
-		system.scenes.add(scene);
+		const scene = new DebugScene(system);
 		await system.compose();
 		expect(scene.gizmos()).toEqual({
 			Components: [{ properties: { token: "@@{TokenName}@@" } }],
@@ -67,8 +65,7 @@ describe("Object model tests", () => {
 		new DebugComponent(entity, {
 			token: new Token({ name: "unresolved" }),
 		});
-		const scene = new DebugScene();
-		system.scenes.add(scene);
+		const scene = new DebugScene(system);
 		await system.compose();
 		expect(scene.gizmos()).toEqual({
 			Components: [{ properties: { token: "some value" } }, { properties: { token: "@@{unresolved}@@" } }],
@@ -79,8 +76,7 @@ describe("Object model tests", () => {
 		const system = new ECS.System();
 		const entity = new ECS.Entity(system);
 		const nested = new ECS.Entity(entity);
-		const scene = new DebugScene();
-		system.scenes.add(scene);
+		new DebugScene(system);
 		await system.compose();
 		expect(nested.path()).toEqual("Entity/Entity");
 	});
@@ -91,8 +87,7 @@ describe("Object model tests", () => {
 		const system = new ECS.System();
 		const entity = new CustomEntity1(system);
 		const nested = new CustomEntity2(entity);
-		const scene = new DebugScene();
-		system.scenes.add(scene);
+		new DebugScene(system);
 		await system.compose();
 		expect(nested.path()).toEqual("CustomEntity1/CustomEntity2");
 	});
@@ -133,10 +128,8 @@ describe("Object model tests", () => {
 		const component1 = new DebugComponent1(entity);
 		const component2 = new DebugComponent2(entity, { hello: component1.someFictionalProperty });
 		component1.properties.hello = component2.someFictionalProperty;
-		const scene1 = new Scene1();
-		const scene2 = new Scene2();
-		system.scenes.add(scene1);
-		system.scenes.add(scene2);
+		new Scene1(system);
+		new Scene2(system);
 		expect(system.compose()).rejects.toThrow(errors.CyclicDependencyResolver);
 	});
 
@@ -281,12 +274,9 @@ describe("Object model tests", () => {
 		c_f.moreFictionalProperty = c_F.someFictionalProperty;
 		c_j.moreFictionalProperty = c_9.someFictionalProperty;
 
-		const scene1 = new Scene1();
-		const scene2 = new Scene2();
-		const scene3 = new Scene3();
-		system.scenes.add(scene1);
-		system.scenes.add(scene2);
-		system.scenes.add(scene3);
+		const scene1 = new Scene1(system);
+		const scene2 = new Scene2(system);
+		const scene3 = new Scene3(system);
 
 		const composition = await system.compose();
 		const expected = [

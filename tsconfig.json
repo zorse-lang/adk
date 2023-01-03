@@ -10,10 +10,8 @@
     "paths": {
       "@zorse/adk/core": ["src/core"],
       "@zorse/adk/core/*": ["src/core/*"],
-      "@zorse/adk/local": ["src/local"],
-      "@zorse/adk/local/*": ["src/local/*"],
-      "@zorse/adk/cloud": ["src/cloud"],
-      "@zorse/adk/cloud/*": ["src/cloud/*"]
+      "@zorse/adk/scenes": ["src/scenes"],
+      "@zorse/adk/scenes/*": ["src/scenes/*"]
     }
   },
   "include": ["src/**/*", "test/**/*"]

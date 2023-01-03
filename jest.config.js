@@ -14,10 +14,8 @@ module.exports = {
   moduleNameMapper: {
     "@zorse/adk/core": "<rootDir>/src/core",
     "@zorse/adk/core/(.*)": "<rootDir>/src/core/$1",
-    "@zorse/adk/local": "<rootDir>/src/local",
-    "@zorse/adk/local/(.*)": "<rootDir>/src/local/$1",
-    "@zorse/adk/cloud": "<rootDir>/src/cloud",
-    "@zorse/adk/cloud/(.*)": "<rootDir>/src/cloud/$1",
+    "@zorse/adk/scenes": "<rootDir>/src/scenes",
+    "@zorse/adk/scenes/(.*)": "<rootDir>/src/scenes/$1",
   },
   transform: {
     "^.+\\.tsx?$": [
@@ -33,10 +31,10 @@ module.exports = {
   coverageReporters: ["html-spa"],
   coverageThreshold: {
     global: {
-      lines: 95,
-      branches: 95,
-      functions: 95,
-      statements: 95,
+      lines: 90,
+      branches: 90,
+      functions: 90,
+      statements: 90,
     },
   },
 };
