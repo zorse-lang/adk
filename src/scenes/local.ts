@@ -2,7 +2,7 @@ import { Component, Entity, Scene, Symbols, System, Token, View } from "@zorse/a
 import { dirname, resolve } from "path";
 
 /** Base options to create a FileSystem {@link core.Component:class} with */
-export interface FileSystemBaseOptions {
+export interface FileSystemOptions {
 	/** The directory this {@link core.Component:class} is located in on the physical file system. @defaultValue `"."` */
 	readonly directory?: string;
 	/** The name of this {@link core.Component:class} on the physical file system, with the extension */
@@ -15,7 +15,7 @@ export abstract class FileSystemComponent extends Component {
 	public name: string;
 	/** Directory the "thing" is located in on disk @defaultValue `"."` */
 	public directory: string;
-	public constructor(parent: Entity, options: FileSystemBaseOptions) {
+	public constructor(parent: Entity, options: FileSystemOptions) {
 		super(parent);
 		this.name = options.name;
 		this.directory = options.directory ?? ".";
@@ -26,20 +26,20 @@ export abstract class FileSystemComponent extends Component {
 	}
 }
 
-/** Options to create a {@link local.TextFile:class} with */
-export interface TextFileOptions extends FileSystemBaseOptions {
+/** Options to create a {@link scenes.TextFile:class} with */
+export interface TextFileOptions extends FileSystemOptions {
 	/** The content of the file @defaultValue `""` */
 	readonly content?: string;
 }
 
-/** Options to create a {@link local.JsonFile:class} with */
-export interface JsonFileOptions extends FileSystemBaseOptions {
+/** Options to create a {@link scenes.JsonFile:class} with */
+export interface JsonFileOptions extends FileSystemOptions {
 	/** The data to serialize to JSON @defaultValue `{}` */
 	readonly data?: any;
 }
 
-/** Options to create a {@link local.Folder:class} with */
-export interface FolderOptions extends FileSystemBaseOptions {
+/** Options to create a {@link scenes.Folder:class} with */
+export interface FolderOptions extends FileSystemOptions {
 	/** Whether to create a `.gitkeep` file in the folder @defaultValue `false` */
 	readonly gitkeep?: boolean;
 }
