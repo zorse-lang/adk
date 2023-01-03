@@ -1,5 +1,9 @@
   if (Object.keys(spec).length === 1 && 'Description' in spec) {
     attrType = 'any';
+  } else if ('Type' in spec && 'ItemType' in spec && spec.Type === 'List') {
+    attrType = `Map<string, ${spec.ItemType === "Tag" ? "any" : spec.ItemType}>`;
+  } else if (JSON.stringify(spec) === "{}") {
+    attrType = 'any';
   } else if ('PrimitiveType' in spec && spec.PrimitiveType === 'Boolean') {
     attrType = 'boolean';
   } else if ('PrimitiveType' in spec && spec.PrimitiveType === 'Json') {

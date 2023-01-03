@@ -87,7 +87,20 @@ process.on("unhandledRejection", (reason: Error) => {
 	console.error(reason);
 });
 
-// @ts-expect-error
+function findAllRefs(apiDoc: any, schema: any, refs: Set<string>) {
+	const refRegExp = /"\$ref":\s*"([^"]+)"/g;
+	let refMatch: any;
+	while (null != (refMatch = refRegExp.exec(JSON.stringify(schema)))) {
+		const ref = refMatch[1];
+		if (refs.has(ref)) {
+			continue;
+		}
+		refs.add(ref);
+		findAllRefs(apiDoc, apiDoc.schemas[ref], refs);
+	}
+}
+
+// @ts-expect-error hook into the gdm-generator-util package
 App.prototype.processApi = async function (destinationDirectory: string, restDescription: any) {
 	await fs.promises.rm(destinationDirectory, { recursive: true, force: true });
 	destinationDirectory = destinationDirectory.split("/").slice(0, -1).join("/");
@@ -95,7 +108,7 @@ App.prototype.processApi = async function (destinationDirectory: string, restDes
 	const { category, version, name: typeName } = writerData.type;
 
 	const mod: GeneratedModule = {
-		baseResource: "GdmBaseResource",
+		baseResource: "GdmResource",
 		code: new CodeMaker({ indentationLevel: 2 }),
 		fileName: "index.ts",
 		constructs: [],
@@ -140,7 +153,20 @@ App.prototype.processApi = async function (destinationDirectory: string, restDes
 		}
 
 		if (isConstruct) {
-			// make sure the "name" property is required
+			const propertiesProperty = properties.find((p) => ["properties"].includes(p.name));
+			if (propertiesProperty) properties.splice(properties.indexOf(propertiesProperty), 1);
+			const typeProperty = properties.find((p) => ["type"].includes(p.name));
+			if (typeProperty) {
+				typeProperty.required = true;
+				typeProperty.kind = PropertyKind.Input;
+			} else {
+				properties.push({
+					name: "type",
+					type: "string",
+					required: true,
+					kind: PropertyKind.Input,
+				});
+			}
 			const nameProperty = properties.find((p) => ["name"].includes(p.name));
 			if (nameProperty) {
 				nameProperty.required = true;
@@ -231,7 +257,7 @@ async function main() {
 				schemas,
 			};
 			const bannedTypes = [];
-			// @ts-expect-error
+			// @ts-expect-error this is passed to the generator package
 			bannedTypes.writerData = {
 				type: { category, version, name: schema.name },
 				apiDoc,
@@ -276,22 +302,10 @@ async function main() {
 			continue;
 		}
 		const refs: Set<string> = new Set();
-		function findAllRefs(schema) {
-			const refRegExp = /"\$ref":\s*"([^"]+)"/g;
-			let refMatch: any;
-			while (null != (refMatch = refRegExp.exec(JSON.stringify(schema)))) {
-				const ref = refMatch[1];
-				if (refs.has(ref)) {
-					continue;
-				}
-				refs.add(ref);
-				findAllRefs(apiDoc.schemas[ref]);
-			}
-		}
-		findAllRefs(schema);
+		findAllRefs(apiDoc, schema, refs);
 		const allSchemas = apiDoc.schemas;
 		const bannedTypes = [];
-		// @ts-expect-error
+		// @ts-expect-error this is passed to the generator package
 		bannedTypes.writerData = {
 			type,
 			apiDoc,

@@ -8,11 +8,9 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "@zorse/adk/core": ["src/core"],
-      "@zorse/adk/core/*": ["src/core/*"],
-      "@zorse/adk/scenes": ["src/scenes"],
-      "@zorse/adk/scenes/*": ["src/scenes/*"]
+      "@zorse/adk": ["src"],
+      "@zorse/adk/*": ["src/*"]
     }
   },
-  "include": ["src/**/*", "test/**/*"]
+  "include": ["src/**/*", "test/**/*", ".gen/**/*"]
 }

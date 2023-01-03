@@ -6,7 +6,7 @@ import { assert, errors } from "@zorse/adk/core";
 
 const TOKEN_TAG_OPENING = "@@{";
 const TOKEN_TAG_CLOSING = "}@@";
-const TOKEN_NAME_REGEXP = /[^\}]+/;
+const TOKEN_NAME_REGEXP = /[^}]+/;
 const TOKEN_FULL_REGEXP = new RegExp(`${TOKEN_TAG_OPENING}(${TOKEN_NAME_REGEXP.source})${TOKEN_TAG_CLOSING}`);
 const TOKEN_LINE_REGEXP = new RegExp(`^${TOKEN_FULL_REGEXP.source}$`);
 
@@ -130,7 +130,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 		// neat trick picked up from:
 		// https://github.com/PinkChampagne17/ts-nameof-proxy
 		const names: string[] = [];
-		const handler: ProxyHandler<Object> = {
+		const handler: ProxyHandler<object> = {
 			get(_target, property) {
 				assert.false(errors.InvalidTokenName, typeof property === "symbol", "Symbol");
 				names.push(`"${property as string}"`);

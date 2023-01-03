@@ -28,7 +28,7 @@ export async function generate(
 	spec: CfnOrRosSpec,
 	scopes: string | string[],
 	outPath: string,
-	base: string = "CfnBaseResource",
+	base = "CfnResource",
 ): Promise<void> {
 	fs.mkdirSync(outPath, { recursive: true });
 	if (typeof scopes === "string") {
@@ -62,7 +62,7 @@ function computeAffix(scope: string, allScopes: string[]): string {
 }
 
 function uncdkify(name: string): string {
-	name = name.replace(/^Cfn/, "").replace(/^attr/, "").replace(/([^\(])Property(\)|\[|\s|$)/, "$1$2");
+	name = name.replace(/^Cfn/, "").replace(/^attr/, "").replace(/([^(])Property(\)|\[|\s|$)/, "$1$2");
 	return name;
 }
 
@@ -110,9 +110,8 @@ export default class CodeGenerator {
 			const cfnName = PropertyAttributeName.parse(name);
 			const propTypeName = genspec.CodeName.forPropertyType(cfnName, resourceClass);
 			const type = this.spec.PropertyTypes[name];
-			// @ts-expect-error
-			if (this.cfnOrRosSpec.schema.isRecordType(type)) {
-				this.emitPropertyType(resourceClass, propTypeName, type);
+			if (this.cfnOrRosSpec.schema.isRecordType(type as any)) {
+				this.emitPropertyType(resourceClass, propTypeName, type as any);
 			}
 		}
 	}
@@ -186,7 +185,7 @@ export default class CodeGenerator {
 		resourceName: genspec.CodeName,
 		spec: cfnSpec.schema.ResourceType | rosSpec.schema.ResourceType,
 	): void {
-		const cfnName = resourceName.specName!.fqn;
+		const cfnName = resourceName.specName?.fqn || resourceName.className;
 		const props = this.emitPropsType(resourceName, spec) || [];
 		props.push({
 			name: "LogicalId",
@@ -241,8 +240,19 @@ export default class CodeGenerator {
 		typeName: genspec.CodeName,
 		propTypeSpec: cfnSpec.schema.RecordProperty | rosSpec.schema.RecordProperty,
 	): void {
+		let name = uncdkify(typeName.className);
+		name = resourceContext.packageName === "frauddetector" && name === "EntityType" ? "EntityTypeOptions" : name;
+		name = resourceContext.packageName === "frauddetector" && name === "EventType" ? "EventTypeOptions" : name;
+		name = resourceContext.packageName === "frauddetector" && name === "Outcome" ? "OutcomeOptions" : name;
+		name = resourceContext.packageName === "frauddetector" && name === "Label" ? "LabelOptions" : name;
+		name = resourceContext.packageName === "wafv2" && name === "Label" ? "LabelOptions" : name;
+		name = resourceContext.packageName === "eks" && name === "Label" ? "LabelOptions" : name;
+		name = resourceContext.packageName === "glue" && name === "Registry" ? "RegistryOptions" : name;
+		name = resourceContext.packageName === "lightsail" && name === "Disk" ? "DiskOptions" : name;
+		name = name.endsWith("Property") && name !== "Property" ? name.replace("Property", "") : name;
+		name = name === "Function" ? "FunctionInstance" : name;
 		this.mod.interfaces.push({
-			name: uncdkify(typeName.className),
+			name,
 			properties: Object.keys(propTypeSpec.Properties).map((propName) => {
 				const propSpec = propTypeSpec.Properties[propName];
 				const { type } = this.emitProperty({
@@ -250,12 +260,17 @@ export default class CodeGenerator {
 					propName,
 					spec: propSpec,
 				} as EmitPropertyProps);
-				return {
+				const p = {
 					kind: PropertyKind.Input,
 					name: propName,
 					type: uncdkify(type),
 					required: !!propSpec.Required,
 				};
+				if (resourceContext.packageName === "eks" && name === "Selector" && p.name === "Labels")
+					p.type = "LabelOptions[]";
+				if (resourceContext.packageName === "wafv2" && name === "Rule" && p.name === "RuleLabels")
+					p.type = "LabelOptions[]";
+				return p;
 			}),
 		});
 	}
@@ -266,13 +281,11 @@ export default class CodeGenerator {
 	): string {
 		const alternatives: string[] = [];
 
-		// @ts-expect-error
-		if (this.cfnOrRosSpec.schema.isCollectionProperty(propSpec)) {
+		if (this.cfnOrRosSpec.schema.isCollectionProperty(propSpec as any)) {
 			const itemTypes = genspec.specTypesToCodeTypes(resourceContext, itemTypeNames(propSpec as any));
 			const union = this.renderTypeUnion(resourceContext, itemTypes);
 
-			// @ts-expect-error
-			if (this.cfnOrRosSpec.schema.isMapProperty(propSpec)) {
+			if (this.cfnOrRosSpec.schema.isMapProperty(propSpec as any)) {
 				alternatives.push(`{ [key: string]: (${union}) }`);
 			} else {
 				// To make TSLint happy, we have to either emit: SingleType[] or Array<Alt1 | Alt2>
@@ -285,8 +298,7 @@ export default class CodeGenerator {
 		}
 
 		// Yes, some types can be both collection and scalar. Looking at you, SAM.
-		// @ts-expect-error
-		if (this.cfnOrRosSpec.schema.isScalarProperty(propSpec)) {
+		if (this.cfnOrRosSpec.schema.isScalarProperty(propSpec as any)) {
 			// Scalar type
 			const typeNames = scalarTypeNames(propSpec as any);
 			const types = genspec.specTypesToCodeTypes(resourceContext, typeNames);
@@ -294,7 +306,7 @@ export default class CodeGenerator {
 		}
 
 		const nativeType = alternatives
-			.map((a) => (a.includes(".") ? a.replace(/[^\.\(\<]+\./g, "") : a))
+			.map((a) => (a.includes(".") ? a.replace(/[^.(<]+\./g, "") : a))
 			.map((a) => a.replace("CfnTag", "{ key: string, value: string }"))
 			.join(" | ");
 		return nativeType;
@@ -306,8 +318,7 @@ export default class CodeGenerator {
 	private renderCodeName(context: genspec.CodeName, type: genspec.CodeName): string {
 		const rel = type.relativeTo(context);
 		const specType = rel.specName && this.spec.PropertyTypes[rel.specName.fqn];
-		// @ts-expect-error
-		if (!specType || this.cfnOrRosSpec.schema.isRecordType(specType)) {
+		if (!specType || this.cfnOrRosSpec.schema.isRecordType(specType as any)) {
 			return rel.fqn;
 		}
 		return this.findNativeType(context, specType);
