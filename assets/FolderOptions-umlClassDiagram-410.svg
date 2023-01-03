@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="225px" preserveAspectRatio="none" style="width:165px;height:225px;background:#00000000;" version="1.1" viewBox="0 0 165 225" width="165px" zoomAndPan="magnify"><defs><filter height="300%" id="fro0s1ykzmt5b" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[05b5d61bde9cdc4ecb8c601afeb69303]
+class FolderOptions--><rect codeLine="4" fill="#FEFECE" filter="url(#fro0s1ykzmt5b)" height="78.4141" id="FolderOptions" style="stroke:#A80036;stroke-width:1.5;" width="124" x="17" y="133"/><ellipse cx="35.15" cy="149" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M31.0719,144.7656 L31.0719,142.6094 L38.4625,142.6094 L38.4625,144.7656 L35.9938,144.7656 L35.9938,152.8438 L38.4625,152.8438 L38.4625,155 L31.0719,155 L31.0719,152.8438 L33.5406,152.8438 L33.5406,144.7656 L31.0719,144.7656 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="85" x="49.85" y="153.1543">FolderOptions</text><line style="stroke:#A80036;stroke-width:1.5;" x1="18" x2="140" y1="165" y2="165"/><ellipse cx="28" cy="176" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="95" x="37" y="179.2104">directory : string</text><ellipse cx="28" cy="188.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="37" y="192.0151">gitkeep : boolean</text><ellipse cx="28" cy="201.6094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="37" y="204.8198">name : string</text><!--MD5=[0c171e237ff83db24e9f100ecdf7129c]
+class FileSystemOptions--><rect codeLine="9" fill="#FEFECE" filter="url(#fro0s1ykzmt5b)" height="65.6094" id="FileSystemOptions" style="stroke:#A80036;stroke-width:1.5;" width="144" x="7" y="7"/><ellipse cx="22" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M17.9219,18.7656 L17.9219,16.6094 L25.3125,16.6094 L25.3125,18.7656 L22.8438,18.7656 L22.8438,26.8438 L25.3125,26.8438 L25.3125,29 L17.9219,29 L17.9219,26.8438 L20.3906,26.8438 L20.3906,18.7656 L17.9219,18.7656 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="112" x="36" y="27.1543">FileSystemOptions</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="150" y1="39" y2="39"/><ellipse cx="18" cy="50" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="95" x="27" y="53.2104">directory : string</text><ellipse cx="18" cy="62.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="27" y="66.0151">name : string</text><!--MD5=[c4640d7746db37bfa77834f7106c726a]
+reverse link FileSystemOptions to FolderOptions--><path codeLine="13" d="M79,93.51 C79,106.64 79,120.47 79,132.76 " fill="none" id="FileSystemOptions-backto-FolderOptions" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="72,93.13,79,73.13,86,93.13,72,93.13" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[558256867af8fb83d2d8d8079abc4981]
+@startuml
+skinparam BackgroundColor transparent
+hide empty methods
+hide empty fields
+interface "FolderOptions" {
+    +directory : string
+    +gitkeep : boolean
+    +name : string
+}
+interface "FileSystemOptions" {
+    +directory : string
+    +name : string
+}
+"FileSystemOptions" <|- - "FolderOptions"
+@enduml
+
+PlantUML version 1.2021.14(Fri Nov 12 16:46:50 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
