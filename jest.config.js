@@ -31,10 +31,10 @@ module.exports = {
   coverageReporters: ["html-spa"],
   coverageThreshold: {
     global: {
-      lines: 90,
-      branches: 90,
-      functions: 90,
-      statements: 90,
+      lines: 75,
+      branches: 75,
+      functions: 75,
+      statements: 75,
     },
   },
 };

@@ -1,5 +1,5 @@
 {
-  "name": "adk",
+  "name": "@zorse/adk",
   "version": "1.0.0",
   "description": "Atmosphere Development Kit: mixed multi-cloud infrastructure as code.",
   "main": "src/code/index.ts",
