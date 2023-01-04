@@ -3,7 +3,7 @@ import * as memfs from "memfs";
 
 import { FileSystemScene, Folder, JsonFile, TextFile } from "@zorse/adk/scenes";
 
-describe("FileSystem Scene tests", () => {
+describe("Local Scene tests", () => {
 	it("should be able to write a JSON file that contains line of another text file", async () => {
 		const fs = new memfs.Volume();
 		const system = new ECS.System();

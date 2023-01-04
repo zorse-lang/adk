@@ -1,6 +1,12 @@
 import { Component, Entity, Scene, Symbols, System, Token, View } from "@zorse/adk/core";
 import { dirname, resolve } from "path";
 
+/** Base class for local {@link core.Component:class}s */
+export abstract class LocalComponent extends Component {}
+
+/** Base class for local {@link core.Scene:class}s */
+export abstract class LocalScene extends Scene {}
+
 /** Base options to create a FileSystem {@link core.Component:class} with */
 export interface FileSystemOptions {
 	/** The directory this {@link core.Component:class} is located in on the physical file system. @defaultValue `"."` */
@@ -10,7 +16,7 @@ export interface FileSystemOptions {
 }
 
 /** Represents "something on the disk". At minimum it has a name and a directory it's located in */
-export abstract class FileSystemComponent extends Component {
+export abstract class FileSystemComponent extends LocalComponent {
 	/** Name of the "thing" on disk */
 	public name: string;
 	/** Directory the "thing" is located in on disk @defaultValue `"."` */
@@ -87,8 +93,8 @@ export class Folder extends FileSystemComponent {
 	}
 }
 
-/** A basic file system scene implementation, it blindly overwrites on disk. */
-export class FileSystemScene extends Scene {
+/** A basic file system {@link core.Scene:class} implementation, it blindly overwrites on disk. */
+export class FileSystemScene extends LocalScene {
 	private readonly _output = new Map<string, string>();
 	/** @param _fs Filesystem FS object that implements Node FS API */
 	public constructor(system: System, private readonly _fs: typeof import("fs")) {
