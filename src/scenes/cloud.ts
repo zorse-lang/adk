@@ -1,18 +1,21 @@
-import { Component, Entity, Scene, Symbols, System, Token, View } from "@zorse/adk/core";
+import { Component, Entity, Scene, Symbols } from "@zorse/adk/core";
 
-/** Base class for cloud components */
+/** Base class for cloud {@link core.Component:class}s */
 export abstract class CloudComponent extends Component {}
 
-/** Base class for Azure components */
+/** Base class for cloud {@link core.Scene:class}s */
+export abstract class CloudScene extends Scene {}
+
+/** Base class for Azure {@link core.Component:class}s */
 export abstract class ArmComponent extends CloudComponent {}
-/** Base class for AWS components */
+/** Base class for AWS {@link core.Component:class}s */
 export abstract class CfnComponent extends CloudComponent {}
-/** Base class for Google components */
+/** Base class for Google {@link core.Component:class}s */
 export abstract class GdmComponent extends CloudComponent {}
-/** Base class for Alibaba components */
+/** Base class for Alibaba {@link core.Component:class}s */
 export abstract class RosComponent extends CloudComponent {}
 
-/** Base class for Azure Resource Manager resources. */
+/** Base class for Azure Resource Manager (ARM) resources. */
 export abstract class ArmResource<PropsType = void> extends ArmComponent {
 	/**
 	 * @param entity The {@link core.Entity:class} this component is attached to.
@@ -36,7 +39,7 @@ export abstract class ArmResource<PropsType = void> extends ArmComponent {
 	}
 }
 
-/** Base class for Google Deployment Manager resources. */
+/** Base class for Google Deployment Manager (GDM) resources. */
 export abstract class GdmResource<PropsType = void> extends GdmComponent {
 	/**
 	 * @param entity The {@link core.Entity:class} this component is attached to.
@@ -58,7 +61,7 @@ export abstract class GdmResource<PropsType = void> extends GdmComponent {
 	}
 }
 
-/** Base class for AWS Cloud Formation resources. */
+/** Base class for AWS Cloud Formation (CFN) resources. */
 export abstract class CfnResource<PropsType = void> extends CfnComponent {
 	/**
 	 * @param entity The {@link core.Entity:class} this component is attached to.
@@ -76,7 +79,7 @@ export abstract class CfnResource<PropsType = void> extends CfnComponent {
 	}
 }
 
-/** Base class for Alibaba Resource Orchestration Service resources. */
+/** Base class for Alibaba Resource Orchestration Service (ROS) resources. */
 export abstract class RosResource<PropsType = void> extends RosComponent {
 	/**
 	 * @param entity The {@link core.Entity:class} this component is attached to.
@@ -95,7 +98,7 @@ export abstract class RosResource<PropsType = void> extends RosComponent {
 }
 
 /** Azure Resource Manager {@link core.Scene:class} implementation. */
-export class AwsScene extends Scene {
+export class AwsScene extends CloudScene {
 	private readonly _output: AwsScene.Template = { Resources: [] };
 	public empty(): AwsScene.Template {
 		this._output.Resources.length = 0;
@@ -114,7 +117,7 @@ export namespace AwsScene {
 }
 
 /** Alibaba Resource Orchestration Service {@link core.Scene:class} implementation. */
-export class RosScene extends Scene {
+export class RosScene extends CloudScene {
 	private readonly _output: RosScene.Template = { Resources: [] };
 	public empty(): RosScene.Template {
 		this._output.Resources.length = 0;
@@ -133,7 +136,7 @@ export namespace RosScene {
 }
 
 /** Google Deployment Manager {@link core.Scene:class} implementation. */
-export class GdmScene extends Scene {
+export class GdmScene extends CloudScene {
 	private readonly _output: GdmScene.Template = new Map();
 	public empty(): GdmScene.Template {
 		this._output.clear();
@@ -150,7 +153,7 @@ export namespace GdmScene {
 }
 
 /** Azure Resource Manager {@link core.Scene:class} implementation. */
-export class ArmScene extends Scene {
+export class ArmScene extends CloudScene {
 	private readonly _output: ArmScene.Template = new Map();
 	public empty(): ArmScene.Template {
 		this._output.clear();
