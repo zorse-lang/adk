@@ -95,20 +95,18 @@ export class Folder extends FileSystemComponent {
 
 /** A basic file system {@link core.Scene:class} implementation, it blindly overwrites on disk. */
 export class FileSystemScene extends LocalScene {
-	private readonly _output = new Map<string, string>();
 	/** @param _fs Filesystem FS object that implements Node FS API */
 	public constructor(system: System, private readonly _fs: typeof import("fs")) {
 		super(system);
 	}
 	public empty(): Map<string, string> {
-		this._output.clear();
-		return this._output;
+		return new Map();
 	}
 	public filter(component: Component): boolean {
 		return component instanceof FileSystemComponent;
 	}
 	public async render(view: View): Promise<void> {
-		for (const _out of this._output) {
+		for (const _out of view.output as Map<string, string>) {
 			await this._fs.promises.mkdir(dirname(_out[0]), { recursive: true });
 			await this._fs.promises.writeFile(_out[0], _out[1]);
 		}
