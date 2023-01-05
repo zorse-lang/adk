@@ -4,11 +4,17 @@
 
 import { assert, errors } from "@zorse/adk/core";
 
+const TOKEN_WRAP_SYMBOL = Symbol();
 const TOKEN_TAG_OPENING = "@@{";
 const TOKEN_TAG_CLOSING = "}@@";
 const TOKEN_NAME_REGEXP = /[^}]+/;
 const TOKEN_FULL_REGEXP = new RegExp(`${TOKEN_TAG_OPENING}(${TOKEN_NAME_REGEXP.source})${TOKEN_TAG_CLOSING}`);
 const TOKEN_LINE_REGEXP = new RegExp(`^${TOKEN_FULL_REGEXP.source}$`);
+const _wrappable = (value: any) =>
+	value &&
+	(typeof value === "object" || Array.isArray(value)) &&
+	!Token.IsToken(value) &&
+	!(TOKEN_WRAP_SYMBOL in value);
 
 /**
  * A Token is a value that's not available yet, but has an async resolver that can potentially resolve it later.
@@ -62,12 +68,8 @@ export class Token<ConcreteType = any, UserDataType = any> {
 	 * @returns The same object with all its properties wrapped in Tokens
 	 */
 	public static Wrap(value: any, opts?: Token.Options, root?: Token): any {
-		// TODO
-		const _sym = Symbol.for("ADK/Token.Wrapped");
-		const _shouldWrap = (value: any) =>
-			value && (typeof value === "object" || Array.isArray(value)) && !Token.IsToken(value) && !(_sym in value);
-		if (_shouldWrap(value)) {
-			Object.defineProperty(value, _sym, { value: true });
+		if (_wrappable(value)) {
+			Object.defineProperty(value, TOKEN_WRAP_SYMBOL, { value: true });
 			return new Proxy(value, {
 				get(target, prop, receiver) {
 					if (typeof prop === "symbol" || prop in target) {
@@ -198,7 +200,8 @@ export namespace Token {
 				const tokens = this.parse(text);
 				for (const token of tokens) {
 					const resolved = await token.resolve();
-					text = text.replace(new RegExp(`${TOKEN_TAG_OPENING}${token.name}${TOKEN_TAG_CLOSING}`, "g"), resolved);
+					const replaceTag = `${TOKEN_TAG_OPENING}${token.name}${TOKEN_TAG_CLOSING}`;
+					text = text.split(replaceTag).join(resolved);
 				}
 				return text;
 			};

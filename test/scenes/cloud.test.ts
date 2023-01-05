@@ -115,7 +115,7 @@ describe("Cloud Scene tests", () => {
 			location: "westus",
 			sku: { name: "Standard_LRS" },
 			kind: "BlobStorage",
-			tags: { "test-tag": bucket1.name },
+			tags: { "test-tag": `tag-${bucket1.id}` },
 		});
 		const composition = await system.compose();
 		const result = composition.gizmos();
@@ -137,7 +137,7 @@ describe("Cloud Scene tests", () => {
 							location: "westus",
 							sku: { name: "Standard_LRS" },
 							kind: "BlobStorage",
-							tags: { "test-tag": "Bucket1" },
+							tags: { "test-tag": "tag-[reference(resourceId('Microsoft.Storage/storageAccounts', 'Bucket1')).id]" },
 						},
 					},
 				],
