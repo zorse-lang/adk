@@ -21,7 +21,7 @@ describe("Token-Tech tests", () => {
 
 	describe("Token general tests", () => {
 		it("should resolve to the same token if there is no resolver", async () => {
-			const token = new Token({ name: () => "sample usage" });
+			const token = new Token({ name: "sample usage" });
 			const resolved = await token.resolve();
 			expect(resolved).toBe(token);
 		});

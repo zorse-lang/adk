@@ -10,11 +10,6 @@ const TOKEN_NAME_REGEXP = /[^}]+/;
 const TOKEN_FULL_REGEXP = new RegExp(`${TOKEN_TAG_OPENING}(${TOKEN_NAME_REGEXP.source})${TOKEN_TAG_CLOSING}`);
 const TOKEN_LINE_REGEXP = new RegExp(`^${TOKEN_FULL_REGEXP.source}$`);
 
-const normalizeTokenName = (name?: Token.Name): (() => string) => {
-	const getName = name ? (typeof name === "function" ? name : () => name as string) : () => "<token>";
-	return () => getName();
-};
-
 /**
  * A Token is a value that's not available yet, but has an async resolver that can potentially resolve it later.
  * Token design is inspired by the AWS CDK Token/Lazy system.
@@ -23,11 +18,11 @@ export class Token<ConcreteType = any, UserDataType = any> {
 	private _data: UserDataType;
 	private _parent?: Token;
 	private _resolver: Token.Resolver<ConcreteType>;
-	public readonly name: () => string;
+	public readonly name: string;
 	public constructor(opts: Token.Options<ConcreteType, UserDataType> = {}) {
-		this.name = normalizeTokenName(opts.name);
-		if (opts.registry?.find(this.name())) {
-			return opts.registry.find(this.name()) as any;
+		this.name = opts.name || "<token>";
+		if (opts.registry?.find(this.name)) {
+			return opts.registry.find(this.name) as any;
 		}
 		this._data = opts.data;
 		this._parent = opts.parent;
@@ -40,7 +35,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 				if (typeof prop === "symbol" || prop in target) {
 					return Token.Wrap(Reflect.get(target, prop, receiver), opts, target);
 				}
-				const name: string = target.name();
+				const name: string = target.name;
 				assert.true(errors.InvalidTokenName, TOKEN_NAME_REGEXP.test(name), TOKEN_NAME_REGEXP.source, name);
 				const nestedTokenName = `${name}["${prop}"]`;
 				const nestedTokenResolver = async () => {
@@ -67,6 +62,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 	 * @returns The same object with all its properties wrapped in Tokens
 	 */
 	public static Wrap(value: any, opts?: Token.Options, root?: Token): any {
+		// TODO
 		const _sym = Symbol.for("ADK/Token.Wrapped");
 		const _shouldWrap = (value: any) =>
 			value && (typeof value === "object" || Array.isArray(value)) && !Token.IsToken(value) && !(_sym in value);
@@ -79,7 +75,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 					} else {
 						return new Token({
 							...opts,
-							name: () => `${root?.name() ?? ""}["${prop}"]`,
+							name: `${root?.name ?? ""}["${prop}"]`,
 						});
 					}
 				},
@@ -115,11 +111,11 @@ export class Token<ConcreteType = any, UserDataType = any> {
 	}
 	/** Format is `@@{<name>/child/nested["<string or number>"]...}@@` */
 	public serialize(): string {
-		return `${TOKEN_TAG_OPENING}${this.name()}${TOKEN_TAG_CLOSING}`;
+		return `${TOKEN_TAG_OPENING}${this.name}${TOKEN_TAG_CLOSING}`;
 	}
 	/** Returns the accessors part of this Token's name */
 	public accessors(sep = "/"): string {
-		const accessors = [...this.name().matchAll(/\[[^\]]+\]+/g)].map((match) => JSON.parse(match[0].slice(1, -1)));
+		const accessors = [...this.name.matchAll(/\[[^\]]+\]+/g)].map((match) => JSON.parse(match[0].slice(1, -1)));
 		return accessors.join(sep);
 	}
 	/** Returns `true` if the entire string is a serialized Token */
@@ -159,13 +155,12 @@ export class Token<ConcreteType = any, UserDataType = any> {
 }
 
 export namespace Token {
-	export type Name = string | (() => string);
 	export type Resolver<ConcreteType = any> = (token: Token) => ConcreteType | Promise<ConcreteType>;
 	export interface Options<ConcreteType = any, UserDataType = any> {
 		resolver?: Resolver<ConcreteType>;
 		registry?: Registry;
 		parent?: Token;
-		name?: Name;
+		name?: string;
 		data?: UserDataType;
 	}
 
@@ -174,12 +169,12 @@ export namespace Token {
 	 * Token Registry can also be used to recursively resolve Tokens and strings associated with them.
 	 */
 	export class Registry {
-		private readonly tokens: Set<Token> = new Set();
+		private readonly tokens = new Map<string, Token>();
 		public add(token: Token): void {
-			this.tokens.add(token);
+			this.tokens.set(token.name, token);
 		}
 		public find(name: string): Token | undefined {
-			return [...this.tokens].find((token) => token.name() === name);
+			return this.tokens.get(name);
 		}
 		public parse(encoded: string): Token[] {
 			const allTokensTags = encoded.matchAll(new RegExp(TOKEN_FULL_REGEXP, "g"));
@@ -203,7 +198,7 @@ export namespace Token {
 				const tokens = this.parse(text);
 				for (const token of tokens) {
 					const resolved = await token.resolve();
-					text = text.replace(new RegExp(`${TOKEN_TAG_OPENING}${token.name()}${TOKEN_TAG_CLOSING}`, "g"), resolved);
+					text = text.replace(new RegExp(`${TOKEN_TAG_OPENING}${token.name}${TOKEN_TAG_CLOSING}`, "g"), resolved);
 				}
 				return text;
 			};

@@ -31,22 +31,12 @@ export abstract class Component {
 	public readonly [Symbols.ComponentHandle]: Component.Handle;
 	/** @param parent the parent Entity this Component is attached to. */
 	constructor(parent: Entity) {
-		const wrapped: any = Token.Wrap(
-			this,
-			{
-				registry: parent.system.registry,
-				data: this,
-			},
-			new Token({
-				name: () => {
-					const entity = this[Symbols.ComponentHandle].parent;
-					const type = this.constructor.name;
-					const index = entity.components.length;
-					const name = `${type}${index === 1 ? "" : index}`;
-					return entity.path(name);
-				},
-			}),
-		);
+		const type = this.constructor.name;
+		const index = parent.components.filter((c) => c.constructor.name === type).length;
+		const name = `${type}${index === 0 ? "" : index + 1}`;
+		const _name = parent.path(name);
+		const opts = { registry: parent.system.registry, data: this };
+		const wrapped: any = Token.Wrap(this, opts, new Token({ name: _name, ...opts }));
 		parent.components.push(this);
 		this[Symbols.ComponentHandle] = new Component.Handle(this, parent);
 		return wrapped;
