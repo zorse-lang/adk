@@ -14,7 +14,7 @@ export interface DatasetComponentInputs {
 	readonly DatasetType: string;
 	readonly Name: string;
 	readonly SchemaArn: string;
-	readonly DatasetImportJob?: (DatasetImportJob | undefined) | undefined;
+	readonly DatasetImportJob?: DatasetImportJob | undefined;
 	readonly LogicalId: string;
 }
 export class DatasetGroup extends CfnResource<DatasetGroupComponentInputs> implements DatasetGroupComponentOutputs {
@@ -28,9 +28,9 @@ export interface DatasetGroupComponentOutputs {
 }
 export interface DatasetGroupComponentInputs {
 	readonly Name: string;
-	readonly Domain?: (string | undefined) | undefined;
-	readonly KmsKeyArn?: (string | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
+	readonly Domain?: string | undefined;
+	readonly KmsKeyArn?: string | undefined;
+	readonly RoleArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Schema extends CfnResource<SchemaComponentInputs> implements SchemaComponentOutputs {
@@ -45,7 +45,7 @@ export interface SchemaComponentOutputs {
 export interface SchemaComponentInputs {
 	readonly Name: string;
 	readonly Schema: string;
-	readonly Domain?: (string | undefined) | undefined;
+	readonly Domain?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Solution extends CfnResource<SolutionComponentInputs> implements SolutionComponentOutputs {
@@ -60,66 +60,66 @@ export interface SolutionComponentOutputs {
 export interface SolutionComponentInputs {
 	readonly DatasetGroupArn: string;
 	readonly Name: string;
-	readonly EventType?: (string | undefined) | undefined;
-	readonly PerformAutoML?: (boolean | undefined) | undefined;
-	readonly PerformHPO?: (boolean | undefined) | undefined;
-	readonly RecipeArn?: (string | undefined) | undefined;
-	readonly SolutionConfig?: (SolutionConfig | undefined) | undefined;
+	readonly EventType?: string | undefined;
+	readonly PerformAutoML?: boolean | undefined;
+	readonly PerformHPO?: boolean | undefined;
+	readonly RecipeArn?: string | undefined;
+	readonly SolutionConfig?: SolutionConfig | undefined;
 	readonly LogicalId: string;
 }
 export interface DataSource {
-	readonly DataLocation?: (string | undefined) | undefined;
+	readonly DataLocation?: string | undefined;
 }
 export interface DatasetImportJob {
-	readonly DataSource?: (DataSource | undefined) | undefined;
-	readonly DatasetArn?: (string | undefined) | undefined;
-	readonly DatasetImportJobArn?: (string | undefined) | undefined;
-	readonly JobName?: (string | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
+	readonly DataSource?: DataSource | undefined;
+	readonly DatasetArn?: string | undefined;
+	readonly DatasetImportJobArn?: string | undefined;
+	readonly JobName?: string | undefined;
+	readonly RoleArn?: string | undefined;
 }
 export interface AlgorithmHyperParameterRanges {
-	readonly CategoricalHyperParameterRanges?: (CategoricalHyperParameterRange[] | undefined) | undefined;
-	readonly ContinuousHyperParameterRanges?: (ContinuousHyperParameterRange[] | undefined) | undefined;
-	readonly IntegerHyperParameterRanges?: (IntegerHyperParameterRange[] | undefined) | undefined;
+	readonly CategoricalHyperParameterRanges?: CategoricalHyperParameterRange[] | undefined;
+	readonly ContinuousHyperParameterRanges?: ContinuousHyperParameterRange[] | undefined;
+	readonly IntegerHyperParameterRanges?: IntegerHyperParameterRange[] | undefined;
 }
 export interface AutoMLConfig {
-	readonly MetricName?: (string | undefined) | undefined;
-	readonly RecipeList?: (string[] | undefined) | undefined;
+	readonly MetricName?: string | undefined;
+	readonly RecipeList?: string[] | undefined;
 }
 export interface CategoricalHyperParameterRange {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Values?: (string[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Values?: string[] | undefined;
 }
 export interface ContinuousHyperParameterRange {
-	readonly MaxValue?: (number | undefined) | undefined;
-	readonly MinValue?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly MaxValue?: number | undefined;
+	readonly MinValue?: number | undefined;
+	readonly Name?: string | undefined;
 }
 export interface HpoConfig {
-	readonly AlgorithmHyperParameterRanges?: (AlgorithmHyperParameterRanges | undefined) | undefined;
-	readonly HpoObjective?: (HpoObjective | undefined) | undefined;
-	readonly HpoResourceConfig?: (HpoResourceConfig | undefined) | undefined;
+	readonly AlgorithmHyperParameterRanges?: AlgorithmHyperParameterRanges | undefined;
+	readonly HpoObjective?: HpoObjective | undefined;
+	readonly HpoResourceConfig?: HpoResourceConfig | undefined;
 }
 export interface HpoObjective {
-	readonly MetricName?: (string | undefined) | undefined;
-	readonly MetricRegex?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly MetricName?: string | undefined;
+	readonly MetricRegex?: string | undefined;
+	readonly Type?: string | undefined;
 }
 export interface HpoResourceConfig {
-	readonly MaxNumberOfTrainingJobs?: (string | undefined) | undefined;
-	readonly MaxParallelTrainingJobs?: (string | undefined) | undefined;
+	readonly MaxNumberOfTrainingJobs?: string | undefined;
+	readonly MaxParallelTrainingJobs?: string | undefined;
 }
 export interface IntegerHyperParameterRange {
-	readonly MaxValue?: (number | undefined) | undefined;
-	readonly MinValue?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly MaxValue?: number | undefined;
+	readonly MinValue?: number | undefined;
+	readonly Name?: string | undefined;
 }
 export interface SolutionConfig {
-	readonly AlgorithmHyperParameters?: ({ [key: string]: string } | undefined) | undefined;
-	readonly AutoMLConfig?: (AutoMLConfig | undefined) | undefined;
-	readonly EventValueThreshold?: (string | undefined) | undefined;
-	readonly FeatureTransformationParameters?: ({ [key: string]: string } | undefined) | undefined;
-	readonly HpoConfig?: (HpoConfig | undefined) | undefined;
+	readonly AlgorithmHyperParameters?: { [key: string]: string } | undefined;
+	readonly AutoMLConfig?: AutoMLConfig | undefined;
+	readonly EventValueThreshold?: string | undefined;
+	readonly FeatureTransformationParameters?: { [key: string]: string } | undefined;
+	readonly HpoConfig?: HpoConfig | undefined;
 }
 export default {
 	Dataset: Dataset,

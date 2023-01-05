@@ -19,10 +19,10 @@ export interface AcceleratorComponentOutputs {
 }
 export interface AcceleratorComponentInputs {
 	readonly Name: string;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly IpAddresses?: (string[] | undefined) | undefined;
-	readonly IpAddressType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly IpAddresses?: string[] | undefined;
+	readonly IpAddressType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class EndpointGroup extends CfnResource<EndpointGroupComponentInputs> implements EndpointGroupComponentOutputs {
@@ -37,14 +37,14 @@ export interface EndpointGroupComponentOutputs {
 export interface EndpointGroupComponentInputs {
 	readonly EndpointGroupRegion: string;
 	readonly ListenerArn: string;
-	readonly EndpointConfigurations?: (EndpointConfiguration[] | undefined) | undefined;
-	readonly HealthCheckIntervalSeconds?: (number | undefined) | undefined;
-	readonly HealthCheckPath?: (string | undefined) | undefined;
-	readonly HealthCheckPort?: (number | undefined) | undefined;
-	readonly HealthCheckProtocol?: (string | undefined) | undefined;
-	readonly PortOverrides?: (PortOverride[] | undefined) | undefined;
-	readonly ThresholdCount?: (number | undefined) | undefined;
-	readonly TrafficDialPercentage?: (number | undefined) | undefined;
+	readonly EndpointConfigurations?: EndpointConfiguration[] | undefined;
+	readonly HealthCheckIntervalSeconds?: number | undefined;
+	readonly HealthCheckPath?: string | undefined;
+	readonly HealthCheckPort?: number | undefined;
+	readonly HealthCheckProtocol?: string | undefined;
+	readonly PortOverrides?: PortOverride[] | undefined;
+	readonly ThresholdCount?: number | undefined;
+	readonly TrafficDialPercentage?: number | undefined;
 	readonly LogicalId: string;
 }
 export class Listener extends CfnResource<ListenerComponentInputs> implements ListenerComponentOutputs {
@@ -60,13 +60,13 @@ export interface ListenerComponentInputs {
 	readonly AcceleratorArn: string;
 	readonly PortRanges: PortRange[];
 	readonly Protocol: string;
-	readonly ClientAffinity?: (string | undefined) | undefined;
+	readonly ClientAffinity?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface EndpointConfiguration {
-	readonly ClientIPPreservationEnabled?: (boolean | undefined) | undefined;
+	readonly ClientIPPreservationEnabled?: boolean | undefined;
 	readonly EndpointId: string;
-	readonly Weight?: (number | undefined) | undefined;
+	readonly Weight?: number | undefined;
 }
 export interface PortOverride {
 	readonly EndpointPort: number;

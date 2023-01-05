@@ -7,7 +7,6 @@ export class ProjectsZones extends GdmResource<ProjectsZonesComponentInputs> imp
 }
 export interface ProjectsZonesComponentOutputs {}
 export interface ProjectsZonesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

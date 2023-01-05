@@ -10,27 +10,26 @@ export class ProjectsNotificationChannelDescriptors
 }
 export interface ProjectsNotificationChannelDescriptorsComponentOutputs {}
 export interface ProjectsNotificationChannelDescriptorsComponentInputs {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly labels?: LabelDescriptor[] | undefined;
-	readonly launchStage?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly labels?: LabelDescriptor[];
+	readonly launchStage?: string;
 	readonly name: string;
-	readonly supportedTiers?: string[] | undefined;
-	readonly type: string;
+	readonly supportedTiers?: string[];
 }
 export interface LabelDescriptor {
-	readonly description?: string | undefined;
-	readonly key?: string | undefined;
-	readonly valueType?: string | undefined;
+	readonly description?: string;
+	readonly key?: string;
+	readonly valueType?: string;
 }
 export interface NotificationChannelDescriptor {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly labels?: LabelDescriptor[] | undefined;
-	readonly launchStage?: string | undefined;
-	readonly name?: string | undefined;
-	readonly supportedTiers?: string[] | undefined;
-	readonly type?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly labels?: LabelDescriptor[];
+	readonly launchStage?: string;
+	readonly name?: string;
+	readonly supportedTiers?: string[];
+	readonly type?: string;
 }
 export default {
 	ProjectsNotificationChannelDescriptors: ProjectsNotificationChannelDescriptors,

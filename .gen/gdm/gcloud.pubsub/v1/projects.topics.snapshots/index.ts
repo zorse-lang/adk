@@ -10,7 +10,6 @@ export class ProjectsTopicsSnapshots
 }
 export interface ProjectsTopicsSnapshotsComponentOutputs {}
 export interface ProjectsTopicsSnapshotsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

@@ -4,57 +4,56 @@ export class Subscription extends GdmResource<SubscriptionComponentInputs> imple
 	constructor(entity: ADKEntity, options: SubscriptionComponentInputs) {
 		super(entity, options.name, "pubsub.v1.subscription", options);
 	}
-	public readonly state?: string | undefined;
-	public readonly topicMessageRetentionDuration?: string | undefined;
+	public readonly state?: string;
+	public readonly topicMessageRetentionDuration?: string;
 }
 export interface SubscriptionComponentOutputs {
-	readonly state?: string | undefined;
-	readonly topicMessageRetentionDuration?: string | undefined;
+	readonly state?: string;
+	readonly topicMessageRetentionDuration?: string;
 }
 export interface SubscriptionComponentInputs {
-	readonly ackDeadlineSeconds?: number | undefined;
-	readonly bigqueryConfig?: BigQueryConfig | undefined;
-	readonly deadLetterPolicy?: DeadLetterPolicy | undefined;
-	readonly detached?: boolean | undefined;
-	readonly enableExactlyOnceDelivery?: boolean | undefined;
-	readonly enableMessageOrdering?: boolean | undefined;
-	readonly expirationPolicy?: ExpirationPolicy | undefined;
-	readonly filter?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly messageRetentionDuration?: string | undefined;
+	readonly ackDeadlineSeconds?: number;
+	readonly bigqueryConfig?: BigQueryConfig;
+	readonly deadLetterPolicy?: DeadLetterPolicy;
+	readonly detached?: boolean;
+	readonly enableExactlyOnceDelivery?: boolean;
+	readonly enableMessageOrdering?: boolean;
+	readonly expirationPolicy?: ExpirationPolicy;
+	readonly filter?: string;
+	readonly labels?: { [P in string]: string };
+	readonly messageRetentionDuration?: string;
 	readonly name: string;
-	readonly pushConfig?: PushConfig | undefined;
-	readonly retainAckedMessages?: boolean | undefined;
-	readonly retryPolicy?: RetryPolicy | undefined;
+	readonly pushConfig?: PushConfig;
+	readonly retainAckedMessages?: boolean;
+	readonly retryPolicy?: RetryPolicy;
 	readonly topic: string;
-	readonly type: string;
 }
 export interface BigQueryConfig {
-	readonly dropUnknownFields?: boolean | undefined;
-	readonly state?: string | undefined;
-	readonly table?: string | undefined;
-	readonly useTopicSchema?: boolean | undefined;
-	readonly writeMetadata?: boolean | undefined;
+	readonly dropUnknownFields?: boolean;
+	readonly state?: string;
+	readonly table?: string;
+	readonly useTopicSchema?: boolean;
+	readonly writeMetadata?: boolean;
 }
 export interface DeadLetterPolicy {
-	readonly deadLetterTopic?: string | undefined;
-	readonly maxDeliveryAttempts?: number | undefined;
+	readonly deadLetterTopic?: string;
+	readonly maxDeliveryAttempts?: number;
 }
 export interface ExpirationPolicy {
-	readonly ttl?: string | undefined;
+	readonly ttl?: string;
 }
 export interface OidcToken {
-	readonly audience?: string | undefined;
-	readonly serviceAccountEmail?: string | undefined;
+	readonly audience?: string;
+	readonly serviceAccountEmail?: string;
 }
 export interface PushConfig {
-	readonly attributes?: { [P in string]: string } | undefined;
-	readonly oidcToken?: OidcToken | undefined;
-	readonly pushEndpoint?: string | undefined;
+	readonly attributes?: { [P in string]: string };
+	readonly oidcToken?: OidcToken;
+	readonly pushEndpoint?: string;
 }
 export interface RetryPolicy {
-	readonly maximumBackoff?: string | undefined;
-	readonly minimumBackoff?: string | undefined;
+	readonly maximumBackoff?: string;
+	readonly minimumBackoff?: string;
 }
 export default {
 	Subscription: Subscription,

@@ -19,9 +19,9 @@ export interface workspaces_sqlDatabasesComponentOutputs {
 export interface workspaces_sqlDatabasesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SqlDatabaseProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SqlDatabaseProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_sqlPools
 	extends ArmResource<workspaces_sqlPoolsComponentInputs>
@@ -40,87 +40,81 @@ export interface workspaces_sqlPoolsComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/sqlPools";
 }
 export interface workspaces_sqlPoolsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SqlPoolProperties | undefined;
-	readonly sku?: SkuV3 | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SqlPoolProperties;
+	readonly sku?: SkuV3;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface SkuV3 {
 	readonly name: string;
-	readonly tier?: string | undefined;
+	readonly tier?: string;
 }
 export interface SqlDatabaseDataRetention {
-	readonly dropRetentionPeriod?: string | undefined;
-	readonly retentionPeriod?: string | undefined;
+	readonly dropRetentionPeriod?: string;
+	readonly retentionPeriod?: string;
 }
 export interface SqlDatabaseProperties {
-	readonly collation?: string | undefined;
-	readonly databaseGuid?: string | undefined;
-	readonly dataRetention?: SqlDatabaseDataRetention | undefined;
+	readonly collation?: string;
+	readonly databaseGuid?: string;
+	readonly dataRetention?: SqlDatabaseDataRetention;
 	readonly status?:
-		| (
-				| "AutoClosed"
-				| "Copying"
-				| "Creating"
-				| "Disabled"
-				| "EmergencyMode"
-				| "Inaccessible"
-				| "Offline"
-				| "OfflineChangingDwPerformanceTiers"
-				| "OfflineSecondary"
-				| "Online"
-				| "OnlineChangingDwPerformanceTiers"
-				| "Paused"
-				| "Pausing"
-				| "Recovering"
-				| "RecoveryPending"
-				| "Restoring"
-				| "Resuming"
-				| "Scaling"
-				| "Shutdown"
-				| "Standby"
-				| "Suspect"
-		  )
-		| undefined;
-	readonly storageRedundancy?: ("Geo" | "GeoZone" | "Local" | "Zone") | undefined;
+		| "AutoClosed"
+		| "Copying"
+		| "Creating"
+		| "Disabled"
+		| "EmergencyMode"
+		| "Inaccessible"
+		| "Offline"
+		| "OfflineChangingDwPerformanceTiers"
+		| "OfflineSecondary"
+		| "Online"
+		| "OnlineChangingDwPerformanceTiers"
+		| "Paused"
+		| "Pausing"
+		| "Recovering"
+		| "RecoveryPending"
+		| "Restoring"
+		| "Resuming"
+		| "Scaling"
+		| "Shutdown"
+		| "Standby"
+		| "Suspect";
+	readonly storageRedundancy?: "Geo" | "GeoZone" | "Local" | "Zone";
 }
 export interface SqlPoolProperties {
-	readonly autoPauseTimer?: number | undefined;
-	readonly autoResume?: boolean | undefined;
-	readonly currentServiceObjectiveName?: string | undefined;
-	readonly maxServiceObjectiveName?: string | undefined;
-	readonly requestedServiceObjectiveName?: string | undefined;
-	readonly sqlPoolGuid?: string | undefined;
+	readonly autoPauseTimer?: number;
+	readonly autoResume?: boolean;
+	readonly currentServiceObjectiveName?: string;
+	readonly maxServiceObjectiveName?: string;
+	readonly requestedServiceObjectiveName?: string;
+	readonly sqlPoolGuid?: string;
 	readonly status?:
-		| (
-				| "Creating"
-				| "Dropping"
-				| "Error"
-				| "Inaccessible"
-				| "Invisible"
-				| "Offline"
-				| "Online"
-				| "Paused"
-				| "Pausing"
-				| "Resuming"
-				| "Scaling"
-				| "Unknown"
-		  )
-		| undefined;
+		| "Creating"
+		| "Dropping"
+		| "Error"
+		| "Inaccessible"
+		| "Invisible"
+		| "Offline"
+		| "Online"
+		| "Paused"
+		| "Pausing"
+		| "Resuming"
+		| "Scaling"
+		| "Unknown";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	"workspaces/sqlDatabases": workspaces_sqlDatabases,

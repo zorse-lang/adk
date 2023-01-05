@@ -7,42 +7,41 @@ export class ExternalVpnGateways
 	constructor(entity: ADKEntity, options: ExternalVpnGatewaysComponentInputs) {
 		super(entity, options.name, "compute.beta.ExternalVpnGateways", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly selfLink?: string;
 }
 export interface ExternalVpnGatewaysComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly selfLink?: string;
 }
 export interface ExternalVpnGatewaysComponentInputs {
-	readonly description?: string | undefined;
-	readonly interfaces?: ExternalVpnGatewayInterface[] | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly description?: string;
+	readonly interfaces?: ExternalVpnGatewayInterface[];
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
-	readonly redundancyType?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly type: string;
+	readonly redundancyType?: string;
+	readonly requestId?: string;
 }
 export interface ExternalVpnGateway {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly interfaces?: ExternalVpnGatewayInterface[] | undefined;
-	readonly kind?: string | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly redundancyType?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly interfaces?: ExternalVpnGatewayInterface[];
+	readonly kind?: string;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly redundancyType?: string;
+	readonly selfLink?: string;
 }
 export interface ExternalVpnGatewayInterface {
-	readonly id?: number | undefined;
-	readonly ipAddress?: string | undefined;
+	readonly id?: number;
+	readonly ipAddress?: string;
 }
 export default {
 	ExternalVpnGateways: ExternalVpnGateways,

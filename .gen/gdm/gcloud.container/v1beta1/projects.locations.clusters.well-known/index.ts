@@ -10,7 +10,6 @@ export class ProjectsLocationsClustersWellKnown
 }
 export interface ProjectsLocationsClustersWellKnownComponentOutputs {}
 export interface ProjectsLocationsClustersWellKnownComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

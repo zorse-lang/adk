@@ -10,31 +10,30 @@ export class ProjectsHmacKeys
 }
 export interface ProjectsHmacKeysComponentOutputs {}
 export interface ProjectsHmacKeysComponentInputs {
-	readonly accessId?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly projectId?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly serviceAccountEmail?: string | undefined;
-	readonly state?: string | undefined;
-	readonly timeCreated?: string | undefined;
-	readonly updated?: string | undefined;
-	readonly userProject?: string | undefined;
-	readonly type: string;
+	readonly accessId?: string;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly projectId?: string;
+	readonly selfLink?: string;
+	readonly serviceAccountEmail?: string;
+	readonly state?: string;
+	readonly timeCreated?: string;
+	readonly updated?: string;
+	readonly userProject?: string;
 	readonly name: string;
 }
 export interface HmacKeyMetadata {
-	readonly accessId?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly projectId?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly serviceAccountEmail?: string | undefined;
-	readonly state?: string | undefined;
-	readonly timeCreated?: string | undefined;
-	readonly updated?: string | undefined;
+	readonly accessId?: string;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly projectId?: string;
+	readonly selfLink?: string;
+	readonly serviceAccountEmail?: string;
+	readonly state?: string;
+	readonly timeCreated?: string;
+	readonly updated?: string;
 }
 export default {
 	ProjectsHmacKeys: ProjectsHmacKeys,

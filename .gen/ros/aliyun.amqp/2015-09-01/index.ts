@@ -29,7 +29,7 @@ export interface ExchangeComponentInputs {
 	readonly InstanceId: string;
 	readonly Internal: boolean;
 	readonly VirtualHost: string;
-	readonly AlternateExchange?: (string | undefined) | undefined;
+	readonly AlternateExchange?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Instance extends RosResource<InstanceComponentInputs> implements InstanceComponentOutputs {
@@ -46,15 +46,15 @@ export interface InstanceComponentInputs {
 	readonly MaxTps: number;
 	readonly QueueCapacity: number;
 	readonly StorageSize: number;
-	readonly InstanceName?: (string | undefined) | undefined;
-	readonly MaxEipTps?: (number | undefined) | undefined;
-	readonly OrderNum?: (number | undefined) | undefined;
-	readonly PayType?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly SupportEip?: (string | undefined) | undefined;
-	readonly SupportTracing?: (string | undefined) | undefined;
-	readonly TracingStorageTime?: (number | undefined) | undefined;
+	readonly InstanceName?: string | undefined;
+	readonly MaxEipTps?: number | undefined;
+	readonly OrderNum?: number | undefined;
+	readonly PayType?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly SupportEip?: string | undefined;
+	readonly SupportTracing?: string | undefined;
+	readonly TracingStorageTime?: number | undefined;
 	readonly LogicalId: string;
 }
 export class Queue extends RosResource<QueueComponentInputs> implements QueueComponentOutputs {
@@ -67,14 +67,14 @@ export interface QueueComponentInputs {
 	readonly InstanceId: string;
 	readonly QueueName: any | string;
 	readonly VirtualHost: string;
-	readonly AutoDeleteState?: (boolean | undefined) | undefined;
-	readonly AutoExpireState?: (number | undefined) | undefined;
-	readonly DeadLetterExchange?: (string | undefined) | undefined;
-	readonly DeadLetterRoutingKey?: (string | undefined) | undefined;
-	readonly ExclusiveState?: (boolean | undefined) | undefined;
-	readonly MaximumPriority?: (number | undefined) | undefined;
-	readonly MaxLength?: (number | undefined) | undefined;
-	readonly MessageTTL?: (number | undefined) | undefined;
+	readonly AutoDeleteState?: boolean | undefined;
+	readonly AutoExpireState?: number | undefined;
+	readonly DeadLetterExchange?: string | undefined;
+	readonly DeadLetterRoutingKey?: string | undefined;
+	readonly ExclusiveState?: boolean | undefined;
+	readonly MaximumPriority?: number | undefined;
+	readonly MaxLength?: number | undefined;
+	readonly MessageTTL?: number | undefined;
 	readonly LogicalId: string;
 }
 export class VirtualHost extends RosResource<VirtualHostComponentInputs> implements VirtualHostComponentOutputs {

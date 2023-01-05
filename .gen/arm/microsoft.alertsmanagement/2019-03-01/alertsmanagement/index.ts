@@ -18,7 +18,7 @@ export interface Microsoft_AlertsManagement_alertsComponentOutputs {
 }
 export interface Microsoft_AlertsManagement_alertsComponentInputs {
 	readonly name: string;
-	readonly properties?: AlertProperties | undefined;
+	readonly properties?: AlertProperties;
 }
 export class smartDetectorAlertRules
 	extends ArmResource<smartDetectorAlertRulesComponentInputs>
@@ -38,83 +38,80 @@ export interface smartDetectorAlertRulesComponentOutputs {
 }
 export interface smartDetectorAlertRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: AlertRuleProperties | undefined;
+	readonly properties?: AlertRuleProperties;
 }
 export interface ActionGroupsInformation {
-	readonly customEmailSubject?: string | undefined;
-	readonly customWebhookPayload?: string | undefined;
+	readonly customEmailSubject?: string;
+	readonly customWebhookPayload?: string;
 	readonly groupIds: string[];
 }
 export interface ActionStatus {
-	readonly isSuppressed?: boolean | undefined;
+	readonly isSuppressed?: boolean;
 }
 export interface AlertProperties {
-	readonly context?: any | undefined;
-	readonly egressConfig?: any | undefined;
-	readonly essentials?: Essentials | undefined;
+	readonly context?: any;
+	readonly egressConfig?: any;
+	readonly essentials?: Essentials;
 }
 export interface AlertRuleProperties {
 	readonly actionGroups: ActionGroupsInformation;
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly detector: Detector;
 	readonly frequency: string;
 	readonly scope: string[];
 	readonly severity: "Sev0" | "Sev1" | "Sev2" | "Sev3" | "Sev4";
 	readonly state: "Disabled" | "Enabled";
-	readonly throttling?: ThrottlingInformation | undefined;
+	readonly throttling?: ThrottlingInformation;
 }
 export interface Detector {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly id: string;
-	readonly imagePaths?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly parameters?: DetectorParameters | undefined;
-	readonly supportedResourceTypes?: string[] | undefined;
+	readonly imagePaths?: string[];
+	readonly name?: string;
+	readonly parameters?: DetectorParameters;
+	readonly supportedResourceTypes?: string[];
 }
 export interface DetectorParameters {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface Essentials {
-	readonly actionStatus?: ActionStatus | undefined;
-	readonly alertRule?: string | undefined;
-	readonly alertState?: ("Acknowledged" | "Closed" | "New") | undefined;
-	readonly description?: string | undefined;
-	readonly lastModifiedDateTime?: string | undefined;
-	readonly lastModifiedUserName?: string | undefined;
-	readonly monitorCondition?: ("Fired" | "Resolved") | undefined;
-	readonly monitorConditionResolvedDateTime?: string | undefined;
+	readonly actionStatus?: ActionStatus;
+	readonly alertRule?: string;
+	readonly alertState?: "Acknowledged" | "Closed" | "New";
+	readonly description?: string;
+	readonly lastModifiedDateTime?: string;
+	readonly lastModifiedUserName?: string;
+	readonly monitorCondition?: "Fired" | "Resolved";
+	readonly monitorConditionResolvedDateTime?: string;
 	readonly monitorService?:
-		| (
-				| "ActivityLog Administrative"
-				| "ActivityLog Autoscale"
-				| "ActivityLog Policy"
-				| "ActivityLog Recommendation"
-				| "ActivityLog Security"
-				| "Application Insights"
-				| "Log Analytics"
-				| "Nagios"
-				| "Platform"
-				| "Resource Health"
-				| "SCOM"
-				| "ServiceHealth"
-				| "SmartDetector"
-				| "VM Insights"
-				| "Zabbix"
-		  )
-		| undefined;
-	readonly severity?: ("Sev0" | "Sev1" | "Sev2" | "Sev3" | "Sev4") | undefined;
-	readonly signalType?: ("Log" | "Metric" | "Unknown") | undefined;
-	readonly smartGroupId?: string | undefined;
-	readonly smartGroupingReason?: string | undefined;
-	readonly sourceCreatedId?: string | undefined;
-	readonly startDateTime?: string | undefined;
-	readonly targetResource?: string | undefined;
-	readonly targetResourceGroup?: string | undefined;
-	readonly targetResourceName?: string | undefined;
-	readonly targetResourceType?: string | undefined;
+		| "ActivityLog Administrative"
+		| "ActivityLog Autoscale"
+		| "ActivityLog Policy"
+		| "ActivityLog Recommendation"
+		| "ActivityLog Security"
+		| "Application Insights"
+		| "Log Analytics"
+		| "Nagios"
+		| "Platform"
+		| "Resource Health"
+		| "SCOM"
+		| "ServiceHealth"
+		| "SmartDetector"
+		| "VM Insights"
+		| "Zabbix";
+	readonly severity?: "Sev0" | "Sev1" | "Sev2" | "Sev3" | "Sev4";
+	readonly signalType?: "Log" | "Metric" | "Unknown";
+	readonly smartGroupId?: string;
+	readonly smartGroupingReason?: string;
+	readonly sourceCreatedId?: string;
+	readonly startDateTime?: string;
+	readonly targetResource?: string;
+	readonly targetResourceGroup?: string;
+	readonly targetResourceName?: string;
+	readonly targetResourceType?: string;
 }
 export interface ThrottlingInformation {
-	readonly duration?: string | undefined;
+	readonly duration?: string;
 }
 export default {
 	"Microsoft.AlertsManagement/alerts": Microsoft_AlertsManagement_alerts,

@@ -21,19 +21,19 @@ export interface InstanceComponentInputs {
 	readonly Period: any | number;
 	readonly Quantity: any | number;
 	readonly SystemDiskSize: any | number;
-	readonly AutoRenew?: (any | string) | undefined;
-	readonly AutoRenewPeriod?: (any | number) | undefined;
-	readonly HostName?: (any | string) | undefined;
-	readonly InstanceName?: (any | string) | undefined;
-	readonly InternetChargeType?: (any | string) | undefined;
-	readonly IpType?: (any | string) | undefined;
-	readonly KeyPairName?: (any | string) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly PaymentType?: (any | string) | undefined;
-	readonly PrivateIpAddress?: (any | string) | undefined;
-	readonly UniqueSuffix?: (any | boolean) | undefined;
-	readonly UserData?: (any | string) | undefined;
-	readonly VSwitchId?: (any | string) | undefined;
+	readonly AutoRenew?: any | string;
+	readonly AutoRenewPeriod?: any | number;
+	readonly HostName?: any | string;
+	readonly InstanceName?: any | string;
+	readonly InternetChargeType?: any | string;
+	readonly IpType?: any | string;
+	readonly KeyPairName?: any | string;
+	readonly Password?: string | undefined;
+	readonly PaymentType?: any | string;
+	readonly PrivateIpAddress?: any | string;
+	readonly UniqueSuffix?: any | boolean;
+	readonly UserData?: any | string;
+	readonly VSwitchId?: any | string;
 	readonly LogicalId: string;
 }
 export default {

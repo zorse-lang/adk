@@ -14,12 +14,12 @@ export interface farmBeatsComponentOutputs {
 	readonly type: "Microsoft.AgFoodPlatform/farmBeats";
 }
 export interface farmBeatsComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: FarmBeatsProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: FarmBeatsProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class farmBeats_extensions
 	extends ArmResource<farmBeats_extensionsComponentInputs>
@@ -38,12 +38,12 @@ export interface farmBeats_extensionsComponentOutputs {
 	readonly type: "Microsoft.AgFoodPlatform/farmBeats/extensions";
 }
 export interface farmBeats_extensionsComponentInputs {
-	readonly additionalApiProperties?: ExtensionInstallationRequestAdditionalApiProperties | undefined;
-	readonly eTag?: string | undefined;
-	readonly extensionVersion?: string | undefined;
+	readonly additionalApiProperties?: ExtensionInstallationRequestAdditionalApiProperties;
+	readonly eTag?: string;
+	readonly extensionVersion?: string;
 	readonly name: string;
-	readonly properties?: ExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ExtensionProperties;
+	readonly systemData?: SystemData;
 }
 export class farmBeats_privateEndpointConnections
 	extends ArmResource<farmBeats_privateEndpointConnectionsComponentInputs>
@@ -69,8 +69,8 @@ export interface farmBeats_privateEndpointConnectionsComponentOutputs {
 }
 export interface farmBeats_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class farmBeats_privateLinkResources
 	extends ArmResource<farmBeats_privateLinkResourcesComponentInputs>
@@ -96,8 +96,8 @@ export interface farmBeats_privateLinkResourcesComponentOutputs {
 }
 export interface farmBeats_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class farmBeatsExtensionDefinitions
 	extends ArmResource<farmBeatsExtensionDefinitionsComponentInputs>
@@ -123,112 +123,112 @@ export interface farmBeatsExtensionDefinitionsComponentOutputs {
 }
 export interface farmBeatsExtensionDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: FarmBeatsExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: FarmBeatsExtensionProperties;
+	readonly systemData?: SystemData;
 }
 export interface ApiProperties {
-	readonly apiFreshnessWindowInMinutes?: number | undefined;
+	readonly apiFreshnessWindowInMinutes?: number;
 }
 export interface DetailedInformation {
-	readonly apiInputParameters?: string[] | undefined;
-	readonly apiName?: string | undefined;
-	readonly customParameters?: string[] | undefined;
-	readonly platformParameters?: string[] | undefined;
-	readonly unitsSupported?: UnitSystemsInfo | undefined;
+	readonly apiInputParameters?: string[];
+	readonly apiName?: string;
+	readonly customParameters?: string[];
+	readonly platformParameters?: string[];
+	readonly unitsSupported?: UnitSystemsInfo;
 }
 export interface ErrorAdditionalInfo {
-	readonly info?: any | undefined;
-	readonly type?: string | undefined;
+	readonly info?: any;
+	readonly type?: string;
 }
 export interface ErrorDetail {
-	readonly additionalInfo?: ErrorAdditionalInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ErrorDetail[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: ErrorAdditionalInfo[];
+	readonly code?: string;
+	readonly details?: ErrorDetail[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface ErrorResponse {
-	readonly error?: ErrorDetail | undefined;
+	readonly error?: ErrorDetail;
 }
 export interface ExtensionInstallationRequestAdditionalApiProperties {
-	readonly "[ key: string ]"?: ApiProperties | undefined;
+	readonly [key: string]: ApiProperties;
 }
 export interface ExtensionProperties {
-	readonly additionalApiProperties?: ExtensionPropertiesAdditionalApiProperties | undefined;
-	readonly extensionApiDocsLink?: string | undefined;
-	readonly extensionAuthLink?: string | undefined;
-	readonly extensionCategory?: string | undefined;
-	readonly extensionId?: string | undefined;
-	readonly installedExtensionVersion?: string | undefined;
+	readonly additionalApiProperties?: ExtensionPropertiesAdditionalApiProperties;
+	readonly extensionApiDocsLink?: string;
+	readonly extensionAuthLink?: string;
+	readonly extensionCategory?: string;
+	readonly extensionId?: string;
+	readonly installedExtensionVersion?: string;
 }
 export interface ExtensionPropertiesAdditionalApiProperties {
-	readonly "[ key: string ]"?: ApiProperties | undefined;
+	readonly [key: string]: ApiProperties;
 }
 export interface FarmBeatsExtensionProperties {
-	readonly description?: string | undefined;
-	readonly detailedInformation?: DetailedInformation[] | undefined;
-	readonly extensionApiDocsLink?: string | undefined;
-	readonly extensionAuthLink?: string | undefined;
-	readonly extensionCategory?: string | undefined;
-	readonly farmBeatsExtensionId?: string | undefined;
-	readonly farmBeatsExtensionName?: string | undefined;
-	readonly farmBeatsExtensionVersion?: string | undefined;
-	readonly publisherId?: string | undefined;
-	readonly targetResourceType?: string | undefined;
+	readonly description?: string;
+	readonly detailedInformation?: DetailedInformation[];
+	readonly extensionApiDocsLink?: string;
+	readonly extensionAuthLink?: string;
+	readonly extensionCategory?: string;
+	readonly farmBeatsExtensionId?: string;
+	readonly farmBeatsExtensionName?: string;
+	readonly farmBeatsExtensionVersion?: string;
+	readonly publisherId?: string;
+	readonly targetResourceType?: string;
 }
 export interface FarmBeatsProperties {
-	readonly instanceUri?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicNetworkAccess?: ("Enabled" | "Hybrid") | undefined;
-	readonly sensorIntegration?: SensorIntegration | undefined;
+	readonly instanceUri?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicNetworkAccess?: "Enabled" | "Hybrid";
+	readonly sensorIntegration?: SensorIntegration;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly groupIds?: string[];
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface SensorIntegration {
-	readonly enabled?: string | undefined;
-	readonly provisioningInfo?: ErrorResponse | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly enabled?: string;
+	readonly provisioningInfo?: ErrorResponse;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UnitSystemsInfo {
 	readonly key: string;

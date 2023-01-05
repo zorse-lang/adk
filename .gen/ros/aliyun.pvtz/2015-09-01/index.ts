@@ -11,10 +11,10 @@ export class UserVpcAuthorization
 export interface UserVpcAuthorizationComponentOutputs {}
 export interface UserVpcAuthorizationComponentInputs {
 	readonly AuthorizedUserId: any | string;
-	readonly AuthChannel?: (string | undefined) | undefined;
-	readonly AuthCode?: (string | undefined) | undefined;
-	readonly AuthType?: (any | string) | undefined;
-	readonly IgnoreDeletionForbidden?: (boolean | undefined) | undefined;
+	readonly AuthChannel?: string | undefined;
+	readonly AuthCode?: string | undefined;
+	readonly AuthType?: any | string;
+	readonly IgnoreDeletionForbidden?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class Zone extends RosResource<ZoneComponentInputs> implements ZoneComponentOutputs {
@@ -28,13 +28,13 @@ export interface ZoneComponentOutputs {
 }
 export interface ZoneComponentInputs {
 	readonly ZoneName: any | string;
-	readonly IgnoredStackTagKeys?: (string[] | undefined) | undefined;
-	readonly ProxyPattern?: (string | undefined) | undefined;
-	readonly Remark?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly ZoneTag?: (any | string) | undefined;
-	readonly ZoneType?: (any | string) | undefined;
+	readonly IgnoredStackTagKeys?: string[] | undefined;
+	readonly ProxyPattern?: string | undefined;
+	readonly Remark?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly ZoneTag?: any | string;
+	readonly ZoneType?: any | string;
 	readonly LogicalId: string;
 }
 export class ZoneRecord extends RosResource<ZoneRecordComponentInputs> implements ZoneRecordComponentOutputs {
@@ -54,8 +54,8 @@ export interface ZoneRecordComponentInputs {
 	readonly Type: string;
 	readonly Value: string;
 	readonly ZoneId: any | string;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly Ttl?: (number | undefined) | undefined;
+	readonly Priority?: number | undefined;
+	readonly Ttl?: number | undefined;
 	readonly LogicalId: string;
 }
 export class ZoneVpcBinder extends RosResource<ZoneVpcBinderComponentInputs> implements ZoneVpcBinderComponentOutputs {
@@ -70,7 +70,7 @@ export interface ZoneVpcBinderComponentInputs {
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface Vpcs {

@@ -25,11 +25,11 @@ export interface DetectorComponentInputs {
 	readonly DetectorId: string;
 	readonly EventType: EventType;
 	readonly Rules: Rule[];
-	readonly AssociatedModels?: (Model[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DetectorVersionStatus?: (string | undefined) | undefined;
-	readonly RuleExecutionMode?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssociatedModels?: Model[] | undefined;
+	readonly Description?: string | undefined;
+	readonly DetectorVersionStatus?: string | undefined;
+	readonly RuleExecutionMode?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class EntityType extends CfnResource<EntityTypeComponentInputs> implements EntityTypeComponentOutputs {
@@ -47,8 +47,8 @@ export interface EntityTypeComponentOutputs {
 }
 export interface EntityTypeComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class EventType extends CfnResource<EventTypeComponentInputs> implements EventTypeComponentOutputs {
@@ -69,8 +69,8 @@ export interface EventTypeComponentInputs {
 	readonly EventVariables: EventVariable[];
 	readonly Labels: Label[];
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Label extends CfnResource<LabelComponentInputs> implements LabelComponentOutputs {
@@ -88,8 +88,8 @@ export interface LabelComponentOutputs {
 }
 export interface LabelComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Outcome extends CfnResource<OutcomeComponentInputs> implements OutcomeComponentOutputs {
@@ -107,8 +107,8 @@ export interface OutcomeComponentOutputs {
 }
 export interface OutcomeComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Variable extends CfnResource<VariableComponentInputs> implements VariableComponentOutputs {
@@ -129,78 +129,78 @@ export interface VariableComponentInputs {
 	readonly DataType: string;
 	readonly DefaultValue: string;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VariableType?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VariableType?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface EntityTypeOptions {
-	readonly Arn?: (string | undefined) | undefined;
-	readonly CreatedTime?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Inline?: (boolean | undefined) | undefined;
-	readonly LastUpdatedTime?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Arn?: string | undefined;
+	readonly CreatedTime?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Inline?: boolean | undefined;
+	readonly LastUpdatedTime?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 }
 export interface EventTypeOptions {
-	readonly Arn?: (string | undefined) | undefined;
-	readonly CreatedTime?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EntityTypes?: (EntityType[] | undefined) | undefined;
-	readonly EventVariables?: (EventVariable[] | undefined) | undefined;
-	readonly Inline?: (boolean | undefined) | undefined;
-	readonly Labels?: (Label[] | undefined) | undefined;
-	readonly LastUpdatedTime?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Arn?: string | undefined;
+	readonly CreatedTime?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly EntityTypes?: EntityType[] | undefined;
+	readonly EventVariables?: EventVariable[] | undefined;
+	readonly Inline?: boolean | undefined;
+	readonly Labels?: Label[] | undefined;
+	readonly LastUpdatedTime?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 }
 export interface EventVariable {
-	readonly Arn?: (string | undefined) | undefined;
-	readonly CreatedTime?: (string | undefined) | undefined;
-	readonly DataSource?: (string | undefined) | undefined;
-	readonly DataType?: (string | undefined) | undefined;
-	readonly DefaultValue?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Inline?: (boolean | undefined) | undefined;
-	readonly LastUpdatedTime?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VariableType?: (string | undefined) | undefined;
+	readonly Arn?: string | undefined;
+	readonly CreatedTime?: string | undefined;
+	readonly DataSource?: string | undefined;
+	readonly DataType?: string | undefined;
+	readonly DefaultValue?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Inline?: boolean | undefined;
+	readonly LastUpdatedTime?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VariableType?: string | undefined;
 }
 export interface LabelOptions {
-	readonly Arn?: (string | undefined) | undefined;
-	readonly CreatedTime?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Inline?: (boolean | undefined) | undefined;
-	readonly LastUpdatedTime?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Arn?: string | undefined;
+	readonly CreatedTime?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Inline?: boolean | undefined;
+	readonly LastUpdatedTime?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 }
 export interface Model {
-	readonly Arn?: (string | undefined) | undefined;
+	readonly Arn?: string | undefined;
 }
 export interface OutcomeOptions {
-	readonly Arn?: (string | undefined) | undefined;
-	readonly CreatedTime?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Inline?: (boolean | undefined) | undefined;
-	readonly LastUpdatedTime?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Arn?: string | undefined;
+	readonly CreatedTime?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Inline?: boolean | undefined;
+	readonly LastUpdatedTime?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 }
 export interface Rule {
-	readonly Arn?: (string | undefined) | undefined;
-	readonly CreatedTime?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DetectorId?: (string | undefined) | undefined;
-	readonly Expression?: (string | undefined) | undefined;
-	readonly Language?: (string | undefined) | undefined;
-	readonly LastUpdatedTime?: (string | undefined) | undefined;
-	readonly Outcomes?: (Outcome[] | undefined) | undefined;
-	readonly RuleId?: (string | undefined) | undefined;
-	readonly RuleVersion?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Arn?: string | undefined;
+	readonly CreatedTime?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DetectorId?: string | undefined;
+	readonly Expression?: string | undefined;
+	readonly Language?: string | undefined;
+	readonly LastUpdatedTime?: string | undefined;
+	readonly Outcomes?: Outcome[] | undefined;
+	readonly RuleId?: string | undefined;
+	readonly RuleVersion?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 }
 export default {
 	Detector: Detector,

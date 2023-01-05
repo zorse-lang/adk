@@ -10,67 +10,66 @@ export class ServicesConsumerQuotaMetrics
 }
 export interface ServicesConsumerQuotaMetricsComponentOutputs {}
 export interface ServicesConsumerQuotaMetricsComponentInputs {
-	readonly consumerQuotaLimits?: ConsumerQuotaLimit[] | undefined;
-	readonly descendantConsumerQuotaLimits?: ConsumerQuotaLimit[] | undefined;
-	readonly displayName?: string | undefined;
-	readonly metric?: string | undefined;
+	readonly consumerQuotaLimits?: ConsumerQuotaLimit[];
+	readonly descendantConsumerQuotaLimits?: ConsumerQuotaLimit[];
+	readonly displayName?: string;
+	readonly metric?: string;
 	readonly name: string;
-	readonly unit?: string | undefined;
-	readonly type: string;
+	readonly unit?: string;
 }
 export interface AdminQuotaPolicy {
-	readonly container?: string | undefined;
-	readonly dimensions?: { [P in string]: string } | undefined;
-	readonly metric?: string | undefined;
-	readonly name?: string | undefined;
-	readonly policyValue?: string | undefined;
-	readonly unit?: string | undefined;
+	readonly container?: string;
+	readonly dimensions?: { [P in string]: string };
+	readonly metric?: string;
+	readonly name?: string;
+	readonly policyValue?: string;
+	readonly unit?: string;
 }
 export interface ConsumerQuotaLimit {
-	readonly allowsAdminOverrides?: boolean | undefined;
-	readonly allowsQuotaIncreaseRequest?: boolean | undefined;
-	readonly isConcurrent?: boolean | undefined;
-	readonly isPrecise?: boolean | undefined;
-	readonly metric?: string | undefined;
-	readonly name?: string | undefined;
-	readonly quotaBuckets?: QuotaBucket[] | undefined;
-	readonly supportedLocations?: string[] | undefined;
-	readonly unit?: string | undefined;
+	readonly allowsAdminOverrides?: boolean;
+	readonly allowsQuotaIncreaseRequest?: boolean;
+	readonly isConcurrent?: boolean;
+	readonly isPrecise?: boolean;
+	readonly metric?: string;
+	readonly name?: string;
+	readonly quotaBuckets?: QuotaBucket[];
+	readonly supportedLocations?: string[];
+	readonly unit?: string;
 }
 export interface ConsumerQuotaMetric {
-	readonly consumerQuotaLimits?: ConsumerQuotaLimit[] | undefined;
-	readonly descendantConsumerQuotaLimits?: ConsumerQuotaLimit[] | undefined;
-	readonly displayName?: string | undefined;
-	readonly metric?: string | undefined;
-	readonly name?: string | undefined;
-	readonly unit?: string | undefined;
+	readonly consumerQuotaLimits?: ConsumerQuotaLimit[];
+	readonly descendantConsumerQuotaLimits?: ConsumerQuotaLimit[];
+	readonly displayName?: string;
+	readonly metric?: string;
+	readonly name?: string;
+	readonly unit?: string;
 }
 export interface ProducerQuotaPolicy {
-	readonly container?: string | undefined;
-	readonly dimensions?: { [P in string]: string } | undefined;
-	readonly metric?: string | undefined;
-	readonly name?: string | undefined;
-	readonly policyValue?: string | undefined;
-	readonly unit?: string | undefined;
+	readonly container?: string;
+	readonly dimensions?: { [P in string]: string };
+	readonly metric?: string;
+	readonly name?: string;
+	readonly policyValue?: string;
+	readonly unit?: string;
 }
 export interface QuotaBucket {
-	readonly adminOverride?: QuotaOverride | undefined;
-	readonly adminQuotaPolicy?: AdminQuotaPolicy | undefined;
-	readonly consumerOverride?: QuotaOverride | undefined;
-	readonly defaultLimit?: string | undefined;
-	readonly dimensions?: { [P in string]: string } | undefined;
-	readonly effectiveLimit?: string | undefined;
-	readonly maxAdminOverride?: string | undefined;
-	readonly producerOverride?: QuotaOverride | undefined;
-	readonly producerQuotaPolicy?: ProducerQuotaPolicy | undefined;
+	readonly adminOverride?: QuotaOverride;
+	readonly adminQuotaPolicy?: AdminQuotaPolicy;
+	readonly consumerOverride?: QuotaOverride;
+	readonly defaultLimit?: string;
+	readonly dimensions?: { [P in string]: string };
+	readonly effectiveLimit?: string;
+	readonly maxAdminOverride?: string;
+	readonly producerOverride?: QuotaOverride;
+	readonly producerQuotaPolicy?: ProducerQuotaPolicy;
 }
 export interface QuotaOverride {
-	readonly adminOverrideAncestor?: string | undefined;
-	readonly dimensions?: { [P in string]: string } | undefined;
-	readonly metric?: string | undefined;
-	readonly name?: string | undefined;
-	readonly overrideValue?: string | undefined;
-	readonly unit?: string | undefined;
+	readonly adminOverrideAncestor?: string;
+	readonly dimensions?: { [P in string]: string };
+	readonly metric?: string;
+	readonly name?: string;
+	readonly overrideValue?: string;
+	readonly unit?: string;
 }
 export default {
 	ServicesConsumerQuotaMetrics: ServicesConsumerQuotaMetrics,

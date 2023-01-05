@@ -11,7 +11,7 @@ export class AcceptedPortfolioShare
 export interface AcceptedPortfolioShareComponentOutputs {}
 export interface AcceptedPortfolioShareComponentInputs {
 	readonly PortfolioId: string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
 	readonly LogicalId: string;
 }
 export class CloudFormationProduct
@@ -34,14 +34,14 @@ export interface CloudFormationProductComponentInputs {
 	readonly Name: string;
 	readonly Owner: string;
 	readonly ProvisioningArtifactParameters: ProvisioningArtifactProperties[];
-	readonly AcceptLanguage?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Distributor?: (string | undefined) | undefined;
-	readonly ReplaceProvisioningArtifacts?: (boolean | undefined) | undefined;
-	readonly SupportDescription?: (string | undefined) | undefined;
-	readonly SupportEmail?: (string | undefined) | undefined;
-	readonly SupportUrl?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Distributor?: string | undefined;
+	readonly ReplaceProvisioningArtifacts?: boolean | undefined;
+	readonly SupportDescription?: string | undefined;
+	readonly SupportEmail?: string | undefined;
+	readonly SupportUrl?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class CloudFormationProvisionedProduct
@@ -63,18 +63,18 @@ export interface CloudFormationProvisionedProductComponentOutputs {
 	readonly RecordId: string;
 }
 export interface CloudFormationProvisionedProductComponentInputs {
-	readonly AcceptLanguage?: (string | undefined) | undefined;
-	readonly NotificationArns?: (string[] | undefined) | undefined;
-	readonly PathId?: (string | undefined) | undefined;
-	readonly PathName?: (string | undefined) | undefined;
-	readonly ProductId?: (string | undefined) | undefined;
-	readonly ProductName?: (string | undefined) | undefined;
-	readonly ProvisionedProductName?: (string | undefined) | undefined;
-	readonly ProvisioningArtifactId?: (string | undefined) | undefined;
-	readonly ProvisioningArtifactName?: (string | undefined) | undefined;
-	readonly ProvisioningParameters?: (ProvisioningParameter[] | undefined) | undefined;
-	readonly ProvisioningPreferences?: (ProvisioningPreferences | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
+	readonly NotificationArns?: string[] | undefined;
+	readonly PathId?: string | undefined;
+	readonly PathName?: string | undefined;
+	readonly ProductId?: string | undefined;
+	readonly ProductName?: string | undefined;
+	readonly ProvisionedProductName?: string | undefined;
+	readonly ProvisioningArtifactId?: string | undefined;
+	readonly ProvisioningArtifactName?: string | undefined;
+	readonly ProvisioningParameters?: ProvisioningParameter[] | undefined;
+	readonly ProvisioningPreferences?: ProvisioningPreferences | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LaunchNotificationConstraint
@@ -90,8 +90,8 @@ export interface LaunchNotificationConstraintComponentInputs {
 	readonly NotificationArns: string[];
 	readonly PortfolioId: string;
 	readonly ProductId: string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LaunchRoleConstraint
@@ -106,10 +106,10 @@ export interface LaunchRoleConstraintComponentOutputs {}
 export interface LaunchRoleConstraintComponentInputs {
 	readonly PortfolioId: string;
 	readonly ProductId: string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly LocalRoleName?: (string | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly LocalRoleName?: string | undefined;
+	readonly RoleArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LaunchTemplateConstraint
@@ -125,8 +125,8 @@ export interface LaunchTemplateConstraintComponentInputs {
 	readonly PortfolioId: string;
 	readonly ProductId: string;
 	readonly Rules: string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Portfolio extends CfnResource<PortfolioComponentInputs> implements PortfolioComponentOutputs {
@@ -141,9 +141,9 @@ export interface PortfolioComponentOutputs {
 export interface PortfolioComponentInputs {
 	readonly DisplayName: string;
 	readonly ProviderName: string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class PortfolioPrincipalAssociation
@@ -159,7 +159,7 @@ export interface PortfolioPrincipalAssociationComponentInputs {
 	readonly PortfolioId: string;
 	readonly PrincipalARN: string;
 	readonly PrincipalType: string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
 	readonly LogicalId: string;
 }
 export class PortfolioProductAssociation
@@ -174,8 +174,8 @@ export interface PortfolioProductAssociationComponentOutputs {}
 export interface PortfolioProductAssociationComponentInputs {
 	readonly PortfolioId: string;
 	readonly ProductId: string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
-	readonly SourcePortfolioId?: (string | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
+	readonly SourcePortfolioId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class PortfolioShare extends CfnResource<PortfolioShareComponentInputs> implements PortfolioShareComponentOutputs {
@@ -187,8 +187,8 @@ export interface PortfolioShareComponentOutputs {}
 export interface PortfolioShareComponentInputs {
 	readonly AccountId: string;
 	readonly PortfolioId: string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
-	readonly ShareTagOptions?: (boolean | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
+	readonly ShareTagOptions?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class ResourceUpdateConstraint
@@ -204,8 +204,8 @@ export interface ResourceUpdateConstraintComponentInputs {
 	readonly PortfolioId: string;
 	readonly ProductId: string;
 	readonly TagUpdateOnProvisionedProduct: string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ServiceAction extends CfnResource<ServiceActionComponentInputs> implements ServiceActionComponentOutputs {
@@ -221,8 +221,8 @@ export interface ServiceActionComponentInputs {
 	readonly Definition: DefinitionParameter[];
 	readonly DefinitionType: string;
 	readonly Name: string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ServiceActionAssociation
@@ -258,7 +258,7 @@ export interface StackSetConstraintComponentInputs {
 	readonly ProductId: string;
 	readonly RegionList: string[];
 	readonly StackInstanceControl: string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
+	readonly AcceptLanguage?: string | undefined;
 	readonly LogicalId: string;
 }
 export class TagOption extends CfnResource<TagOptionComponentInputs> implements TagOptionComponentOutputs {
@@ -270,7 +270,7 @@ export interface TagOptionComponentOutputs {}
 export interface TagOptionComponentInputs {
 	readonly Key: string;
 	readonly Value: string;
-	readonly Active?: (boolean | undefined) | undefined;
+	readonly Active?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class TagOptionAssociation
@@ -288,23 +288,23 @@ export interface TagOptionAssociationComponentInputs {
 	readonly LogicalId: string;
 }
 export interface ProvisioningArtifactProperties {
-	readonly Description?: (string | undefined) | undefined;
-	readonly DisableTemplateValidation?: (boolean | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DisableTemplateValidation?: boolean | undefined;
 	readonly Info: any;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
 }
 export interface ProvisioningParameter {
 	readonly Key: string;
 	readonly Value: string;
 }
 export interface ProvisioningPreferences {
-	readonly StackSetAccounts?: (string[] | undefined) | undefined;
-	readonly StackSetFailureToleranceCount?: (number | undefined) | undefined;
-	readonly StackSetFailureTolerancePercentage?: (number | undefined) | undefined;
-	readonly StackSetMaxConcurrencyCount?: (number | undefined) | undefined;
-	readonly StackSetMaxConcurrencyPercentage?: (number | undefined) | undefined;
-	readonly StackSetOperationType?: (string | undefined) | undefined;
-	readonly StackSetRegions?: (string[] | undefined) | undefined;
+	readonly StackSetAccounts?: string[] | undefined;
+	readonly StackSetFailureToleranceCount?: number | undefined;
+	readonly StackSetFailureTolerancePercentage?: number | undefined;
+	readonly StackSetMaxConcurrencyCount?: number | undefined;
+	readonly StackSetMaxConcurrencyPercentage?: number | undefined;
+	readonly StackSetOperationType?: string | undefined;
+	readonly StackSetRegions?: string[] | undefined;
 }
 export interface DefinitionParameter {
 	readonly Key: string;

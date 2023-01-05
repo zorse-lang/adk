@@ -17,41 +17,41 @@ export interface customLocationsComponentOutputs {
 	readonly type: "Microsoft.ExtendedLocation/customLocations";
 }
 export interface customLocationsComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CustomLocationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: CustomLocationProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface CustomLocationProperties {
-	readonly authentication?: CustomLocationPropertiesAuthentication | undefined;
-	readonly clusterExtensionIds?: string[] | undefined;
-	readonly displayName?: string | undefined;
-	readonly hostResourceId?: string | undefined;
-	readonly hostType?: "Kubernetes" | undefined;
-	readonly namespace?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly authentication?: CustomLocationPropertiesAuthentication;
+	readonly clusterExtensionIds?: string[];
+	readonly displayName?: string;
+	readonly hostResourceId?: string;
+	readonly hostType?: "Kubernetes";
+	readonly namespace?: string;
+	readonly provisioningState?: string;
 }
 export interface CustomLocationPropertiesAuthentication {
-	readonly type?: string | undefined;
-	readonly value?: string | undefined;
+	readonly type?: string;
+	readonly value?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	customLocations: customLocations,

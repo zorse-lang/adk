@@ -14,31 +14,31 @@ export interface exportsComponentOutputs {
 	readonly type: "Microsoft.CostManagement/exports";
 }
 export interface exportsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: ExportProperties | undefined;
+	readonly properties?: ExportProperties;
 }
 export interface CommonExportProperties {
 	readonly definition: ExportDefinition;
 	readonly deliveryInfo: ExportDeliveryInfo;
-	readonly format?: "Csv" | undefined;
-	readonly nextRunTimeEstimate?: string | undefined;
-	readonly partitionData?: boolean | undefined;
-	readonly runHistory?: ExportExecutionListResult | undefined;
+	readonly format?: "Csv";
+	readonly nextRunTimeEstimate?: string;
+	readonly partitionData?: boolean;
+	readonly runHistory?: ExportExecutionListResult;
 }
 export interface ErrorDetails {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface ExportDataset {
-	readonly configuration?: ExportDatasetConfiguration | undefined;
-	readonly granularity?: "Daily" | undefined;
+	readonly configuration?: ExportDatasetConfiguration;
+	readonly granularity?: "Daily";
 }
 export interface ExportDatasetConfiguration {
-	readonly columns?: string[] | undefined;
+	readonly columns?: string[];
 }
 export interface ExportDefinition {
-	readonly dataSet?: ExportDataset | undefined;
+	readonly dataSet?: ExportDataset;
 	readonly timeframe:
 		| "BillingMonthToDate"
 		| "Custom"
@@ -46,59 +46,64 @@ export interface ExportDefinition {
 		| "TheLastBillingMonth"
 		| "TheLastMonth"
 		| "WeekToDate";
-	readonly timePeriod?: ExportTimePeriod | undefined;
+	readonly timePeriod?: ExportTimePeriod;
 	readonly type: "ActualCost" | "AmortizedCost" | "Usage";
 }
 export interface ExportDeliveryDestination {
 	readonly container: string;
-	readonly resourceId?: string | undefined;
-	readonly rootFolderPath?: string | undefined;
-	readonly sasToken?: string | undefined;
-	readonly storageAccount?: string | undefined;
+	readonly resourceId?: string;
+	readonly rootFolderPath?: string;
+	readonly sasToken?: string;
+	readonly storageAccount?: string;
 }
 export interface ExportDeliveryInfo {
 	readonly destination: ExportDeliveryDestination;
 }
 export interface ExportExecution {
-	readonly eTag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ExportExecutionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly eTag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ExportExecutionProperties;
+	readonly type?: string;
 }
 export interface ExportExecutionListResult {
-	readonly value?: ExportExecution[] | undefined;
+	readonly value?: ExportExecution[];
 }
 export interface ExportExecutionProperties {
-	readonly error?: ErrorDetails | undefined;
-	readonly executionType?: ("OnDemand" | "Scheduled") | undefined;
-	readonly fileName?: string | undefined;
-	readonly processingEndTime?: string | undefined;
-	readonly processingStartTime?: string | undefined;
-	readonly runSettings?: CommonExportProperties | undefined;
+	readonly error?: ErrorDetails;
+	readonly executionType?: "OnDemand" | "Scheduled";
+	readonly fileName?: string;
+	readonly processingEndTime?: string;
+	readonly processingStartTime?: string;
+	readonly runSettings?: CommonExportProperties;
 	readonly status?:
-		| ("Completed" | "DataNotAvailable" | "Failed" | "InProgress" | "NewDataNotAvailable" | "Queued" | "Timeout")
-		| undefined;
-	readonly submittedBy?: string | undefined;
-	readonly submittedTime?: string | undefined;
+		| "Completed"
+		| "DataNotAvailable"
+		| "Failed"
+		| "InProgress"
+		| "NewDataNotAvailable"
+		| "Queued"
+		| "Timeout";
+	readonly submittedBy?: string;
+	readonly submittedTime?: string;
 }
 export interface ExportProperties {
 	readonly definition: ExportDefinition;
 	readonly deliveryInfo: ExportDeliveryInfo;
-	readonly format?: "Csv" | undefined;
-	readonly nextRunTimeEstimate?: string | undefined;
-	readonly partitionData?: boolean | undefined;
-	readonly runHistory?: ExportExecutionListResult | undefined;
-	readonly schedule?: ExportSchedule | undefined;
+	readonly format?: "Csv";
+	readonly nextRunTimeEstimate?: string;
+	readonly partitionData?: boolean;
+	readonly runHistory?: ExportExecutionListResult;
+	readonly schedule?: ExportSchedule;
 }
 export interface ExportRecurrencePeriod {
 	readonly from: string;
-	readonly to?: string | undefined;
+	readonly to?: string;
 }
 export interface ExportSchedule {
-	readonly recurrence?: ("Annually" | "Daily" | "Monthly" | "Weekly") | undefined;
-	readonly recurrencePeriod?: ExportRecurrencePeriod | undefined;
-	readonly status?: ("Active" | "Inactive") | undefined;
+	readonly recurrence?: "Annually" | "Daily" | "Monthly" | "Weekly";
+	readonly recurrencePeriod?: ExportRecurrencePeriod;
+	readonly status?: "Active" | "Inactive";
 }
 export interface ExportTimePeriod {
 	readonly from: string;

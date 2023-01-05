@@ -17,11 +17,11 @@ export interface automationAccounts_python2PackagesComponentOutputs {
 	readonly type: "Microsoft.Automation/automationAccounts/python2Packages";
 }
 export interface automationAccounts_python2PackagesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: PythonPackageCreatePropertiesOrModuleProperties;
-	readonly tags?: PythonPackageCreateParametersTags | undefined;
+	readonly tags?: PythonPackageCreateParametersTags;
 }
 export class automationAccounts_runbooks
 	extends ArmResource<automationAccounts_runbooksComponentInputs>
@@ -40,11 +40,11 @@ export interface automationAccounts_runbooksComponentOutputs {
 	readonly type: "Microsoft.Automation/automationAccounts/runbooks";
 }
 export interface automationAccounts_runbooksComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: RunbookCreateOrUpdatePropertiesOrRunbookProperties;
-	readonly tags?: RunbookCreateOrUpdateParametersTags | undefined;
+	readonly tags?: RunbookCreateOrUpdateParametersTags;
 }
 export class automationAccounts_runbooks_draft_content
 	extends ArmResource<automationAccounts_runbooks_draft_contentComponentInputs>
@@ -82,83 +82,80 @@ export interface automationAccounts_runbooks_draft_testJobComponentOutputs {
 	readonly type: "Microsoft.Automation/automationAccounts/runbooks/draft";
 }
 export interface automationAccounts_runbooks_draft_testJobComponentInputs {
-	readonly creationTime?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly exception?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly lastStatusModifiedTime?: string | undefined;
-	readonly logActivityTrace?: number | undefined;
+	readonly creationTime?: string;
+	readonly endTime?: string;
+	readonly exception?: string;
+	readonly lastModifiedTime?: string;
+	readonly lastStatusModifiedTime?: string;
+	readonly logActivityTrace?: number;
 	readonly name: string;
-	readonly parameters?: TestJobCreateParameters | undefined;
-	readonly runOn?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusDetails?: string | undefined;
+	readonly parameters?: TestJobCreateParameters;
+	readonly runOn?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly statusDetails?: string;
 }
 export interface ContentHash {
 	readonly algorithm: string;
 	readonly value: string;
 }
 export interface ContentLink {
-	readonly contentHash?: ContentHash | undefined;
-	readonly uri?: string | undefined;
-	readonly version?: string | undefined;
+	readonly contentHash?: ContentHash;
+	readonly uri?: string;
+	readonly version?: string;
 }
 export interface ModuleErrorInfo {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface PythonPackageCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PythonPackageCreatePropertiesOrModuleProperties {
-	readonly activityCount?: number | undefined;
+	readonly activityCount?: number;
 	readonly contentLink: ContentLink;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly error?: ModuleErrorInfo | undefined;
-	readonly isComposite?: boolean | undefined;
-	readonly isGlobal?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly error?: ModuleErrorInfo;
+	readonly isComposite?: boolean;
+	readonly isGlobal?: boolean;
+	readonly lastModifiedTime?: string;
 	readonly provisioningState?:
-		| (
-				| "ActivitiesStored"
-				| "Cancelled"
-				| "ConnectionTypeImported"
-				| "ContentDownloaded"
-				| "ContentRetrieved"
-				| "ContentStored"
-				| "ContentValidated"
-				| "Created"
-				| "Creating"
-				| "Failed"
-				| "ModuleDataStored"
-				| "ModuleImportRunbookComplete"
-				| "RunningImportModuleRunbook"
-				| "StartingImportModuleRunbook"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly sizeInBytes?: number | undefined;
-	readonly version?: string | undefined;
+		| "ActivitiesStored"
+		| "Cancelled"
+		| "ConnectionTypeImported"
+		| "ContentDownloaded"
+		| "ContentRetrieved"
+		| "ContentStored"
+		| "ContentValidated"
+		| "Created"
+		| "Creating"
+		| "Failed"
+		| "ModuleDataStored"
+		| "ModuleImportRunbookComplete"
+		| "RunningImportModuleRunbook"
+		| "StartingImportModuleRunbook"
+		| "Succeeded";
+	readonly sizeInBytes?: number;
+	readonly version?: string;
 }
 export interface RunbookCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RunbookCreateOrUpdatePropertiesOrRunbookProperties {
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly draft?: RunbookDraft | undefined;
-	readonly jobCount?: number | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly logActivityTrace?: number | undefined;
-	readonly logProgress?: boolean | undefined;
-	readonly logVerbose?: boolean | undefined;
-	readonly outputTypes?: string[] | undefined;
-	readonly parameters?: RunbookPropertiesParameters | undefined;
-	readonly provisioningState?: "Succeeded" | undefined;
-	readonly publishContentLink?: ContentLink | undefined;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly draft?: RunbookDraft;
+	readonly jobCount?: number;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedTime?: string;
+	readonly logActivityTrace?: number;
+	readonly logProgress?: boolean;
+	readonly logVerbose?: boolean;
+	readonly outputTypes?: string[];
+	readonly parameters?: RunbookPropertiesParameters;
+	readonly provisioningState?: "Succeeded";
+	readonly publishContentLink?: ContentLink;
 	readonly runbookType:
 		| "Graph"
 		| "GraphPowerShell"
@@ -168,30 +165,30 @@ export interface RunbookCreateOrUpdatePropertiesOrRunbookProperties {
 		| "Python2"
 		| "Python3"
 		| "Script";
-	readonly state?: ("Edit" | "New" | "Published") | undefined;
+	readonly state?: "Edit" | "New" | "Published";
 }
 export interface RunbookDraft {
-	readonly creationTime?: string | undefined;
-	readonly draftContentLink?: ContentLink | undefined;
-	readonly inEdit?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly outputTypes?: string[] | undefined;
-	readonly parameters?: RunbookDraftParameters | undefined;
+	readonly creationTime?: string;
+	readonly draftContentLink?: ContentLink;
+	readonly inEdit?: boolean;
+	readonly lastModifiedTime?: string;
+	readonly outputTypes?: string[];
+	readonly parameters?: RunbookDraftParameters;
 }
 export interface RunbookDraftParameters {
-	readonly "[ key: string ]"?: RunbookParameter | undefined;
+	readonly [key: string]: RunbookParameter;
 }
 export interface RunbookParameter {
-	readonly defaultValue?: string | undefined;
-	readonly isMandatory?: boolean | undefined;
-	readonly position?: number | undefined;
-	readonly type?: string | undefined;
+	readonly defaultValue?: string;
+	readonly isMandatory?: boolean;
+	readonly position?: number;
+	readonly type?: string;
 }
 export interface RunbookPropertiesParameters {
-	readonly "[ key: string ]"?: RunbookParameter | undefined;
+	readonly [key: string]: RunbookParameter;
 }
 export interface TestJobCreateParameters {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export type automationAccounts_runbooks_draft =
 	| automationAccounts_runbooks_draft_content

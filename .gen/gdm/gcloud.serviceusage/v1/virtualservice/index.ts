@@ -7,1006 +7,1005 @@ export class VirtualService extends GdmResource<VirtualServiceComponentInputs> i
 }
 export interface VirtualServiceComponentOutputs {}
 export interface VirtualServiceComponentInputs {
-	readonly config?: GoogleApiServiceusageV1ServiceConfig | undefined;
-	readonly dependencyConfig?: DependencyConfig | undefined;
-	readonly ignoreCurrentState?: boolean | undefined;
+	readonly config?: GoogleApiServiceusageV1ServiceConfig;
+	readonly dependencyConfig?: DependencyConfig;
+	readonly ignoreCurrentState?: boolean;
 	readonly name: string;
-	readonly parent?: string | undefined;
-	readonly serviceAccounts?: ServiceAccount[] | undefined;
-	readonly state?: string | undefined;
-	readonly type: string;
+	readonly parent?: string;
+	readonly serviceAccounts?: ServiceAccount[];
+	readonly state?: string;
 }
 export interface Api {
-	readonly methods?: Method[] | undefined;
-	readonly mixins?: Mixin[] | undefined;
-	readonly name?: string | undefined;
-	readonly options?: Option[] | undefined;
-	readonly sourceContext?: SourceContext | undefined;
-	readonly syntax?: string | undefined;
-	readonly version?: string | undefined;
+	readonly methods?: Method[];
+	readonly mixins?: Mixin[];
+	readonly name?: string;
+	readonly options?: Option[];
+	readonly sourceContext?: SourceContext;
+	readonly syntax?: string;
+	readonly version?: string;
 }
 export interface Authentication {
-	readonly enableMtls?: boolean | undefined;
-	readonly environment?: string | undefined;
-	readonly gaiaService?: string | undefined;
-	readonly peerDelegationMode?: string | undefined;
-	readonly providers?: AuthProvider[] | undefined;
-	readonly rules?: AuthenticationRule[] | undefined;
+	readonly enableMtls?: boolean;
+	readonly environment?: string;
+	readonly gaiaService?: string;
+	readonly peerDelegationMode?: string;
+	readonly providers?: AuthProvider[];
+	readonly rules?: AuthenticationRule[];
 }
 export interface AuthenticationRule {
-	readonly allowAuthServerFailOpen?: boolean | undefined;
-	readonly allowWithoutCredential?: boolean | undefined;
-	readonly basicAuth?: BasicAuthRequirements | undefined;
-	readonly browserFirstPartyAuth?: BrowserFirstPartyAuthRequirements | undefined;
-	readonly endUserCreds?: EndUserCredsRequirements | undefined;
-	readonly loas?: LoasRequirements | undefined;
-	readonly oauth?: OAuthRequirements | undefined;
-	readonly requirements?: AuthRequirement[] | undefined;
-	readonly selector?: string | undefined;
-	readonly uberMint?: UberMintRequirements | undefined;
-	readonly uberproxyAuth?: UberProxyAuthRequirements | undefined;
-	readonly useRpcSecurityPolicy?: string | undefined;
+	readonly allowAuthServerFailOpen?: boolean;
+	readonly allowWithoutCredential?: boolean;
+	readonly basicAuth?: BasicAuthRequirements;
+	readonly browserFirstPartyAuth?: BrowserFirstPartyAuthRequirements;
+	readonly endUserCreds?: EndUserCredsRequirements;
+	readonly loas?: LoasRequirements;
+	readonly oauth?: OAuthRequirements;
+	readonly requirements?: AuthRequirement[];
+	readonly selector?: string;
+	readonly uberMint?: UberMintRequirements;
+	readonly uberproxyAuth?: UberProxyAuthRequirements;
+	readonly useRpcSecurityPolicy?: string;
 }
 export interface AuthProvider {
-	readonly audiences?: string | undefined;
-	readonly authorizationUrl?: string | undefined;
-	readonly id?: string | undefined;
-	readonly issuer?: string | undefined;
-	readonly jwksUri?: string | undefined;
-	readonly jwtLocations?: JwtLocation[] | undefined;
+	readonly audiences?: string;
+	readonly authorizationUrl?: string;
+	readonly id?: string;
+	readonly issuer?: string;
+	readonly jwksUri?: string;
+	readonly jwtLocations?: JwtLocation[];
 }
 export interface AuthRequirement {
-	readonly audiences?: string | undefined;
-	readonly providerId?: string | undefined;
+	readonly audiences?: string;
+	readonly providerId?: string;
 }
 export interface BackendProtoTranslation {
-	readonly rules?: BackendProtoTranslationRule[] | undefined;
-	readonly templates?: TemplateReference[] | undefined;
+	readonly rules?: BackendProtoTranslationRule[];
+	readonly templates?: TemplateReference[];
 }
 export interface BackendProtoTranslationRule {
-	readonly enablePartialResponse?: boolean | undefined;
-	readonly requestTemplates?: TemplateInvocation[] | undefined;
-	readonly responseTemplates?: TemplateInvocation[] | undefined;
-	readonly selector?: string | undefined;
+	readonly enablePartialResponse?: boolean;
+	readonly requestTemplates?: TemplateInvocation[];
+	readonly responseTemplates?: TemplateInvocation[];
+	readonly selector?: string;
 }
 export interface BasicAuthRequirements {
-	readonly enableProgrammaticClientToken?: boolean | undefined;
-	readonly scopeCodes?: string | undefined;
+	readonly enableProgrammaticClientToken?: boolean;
+	readonly scopeCodes?: string;
 }
 export interface BoqSettings {
-	readonly controlPlaneConfig?: string | undefined;
+	readonly controlPlaneConfig?: string;
 }
 export interface BrowserFirstPartyAuthRequirements {
-	readonly allowMissingActiveSession?: boolean | undefined;
-	readonly ignoreInvalidCredentials?: boolean | undefined;
-	readonly scopeCodes?: string | undefined;
+	readonly allowMissingActiveSession?: boolean;
+	readonly ignoreInvalidCredentials?: boolean;
+	readonly scopeCodes?: string;
 }
 export interface ControlPlaneMigration {
-	readonly migrating?: boolean | undefined;
+	readonly migrating?: boolean;
 }
 export interface DependencyConfig {
-	readonly dependsOn?: string[] | undefined;
-	readonly directlyDependsOn?: string[] | undefined;
-	readonly directlyRequiredBy?: string[] | undefined;
-	readonly requiredBy?: string[] | undefined;
+	readonly dependsOn?: string[];
+	readonly directlyDependsOn?: string[];
+	readonly directlyRequiredBy?: string[];
+	readonly requiredBy?: string[];
 }
 export interface DescriptorProto {
-	readonly enumType?: EnumDescriptorProto[] | undefined;
-	readonly extension?: FieldDescriptorProto[] | undefined;
-	readonly extensionRange?: ExtensionRange[] | undefined;
-	readonly field?: FieldDescriptorProto[] | undefined;
-	readonly name?: string | undefined;
-	readonly nestedType?: DescriptorProto[] | undefined;
-	readonly oneofDecl?: OneofDescriptorProto[] | undefined;
-	readonly options?: MessageOptions | undefined;
-	readonly reservedName?: string[] | undefined;
-	readonly reservedRange?: ReservedRange[] | undefined;
+	readonly enumType?: EnumDescriptorProto[];
+	readonly extension?: FieldDescriptorProto[];
+	readonly extensionRange?: ExtensionRange[];
+	readonly field?: FieldDescriptorProto[];
+	readonly name?: string;
+	readonly nestedType?: DescriptorProto[];
+	readonly oneofDecl?: OneofDescriptorProto[];
+	readonly options?: MessageOptions;
+	readonly reservedName?: string[];
+	readonly reservedRange?: ReservedRange[];
 }
 export interface Devconsole {
-	readonly consoleApi?: string | undefined;
-	readonly exampleUrl?: string | undefined;
-	readonly learnmoreUrl?: string | undefined;
-	readonly pricingLink?: string | undefined;
-	readonly requestQuotaUrl?: string | undefined;
+	readonly consoleApi?: string;
+	readonly exampleUrl?: string;
+	readonly learnmoreUrl?: string;
+	readonly pricingLink?: string;
+	readonly requestQuotaUrl?: string;
 }
 export interface Discovery {
-	readonly apiName?: string | undefined;
-	readonly batchPath?: string | undefined;
+	readonly apiName?: string;
+	readonly batchPath?: string;
 	readonly canonicalName: string;
-	readonly discoveryPerVersion?: Discovery[] | undefined;
-	readonly exponentialBackoffDefault?: boolean | undefined;
-	readonly launchStage?: string | undefined;
-	readonly pathPrefixes?: string[] | undefined;
-	readonly publicDirectory?: boolean | undefined;
-	readonly publicDiscovery?: boolean | undefined;
-	readonly rootUrl?: string | undefined;
-	readonly rules?: JsonSchemaRule[] | undefined;
-	readonly schemaNameTemplate?: string | undefined;
-	readonly supportedSchemas?: string[] | undefined;
-	readonly version?: string | undefined;
+	readonly discoveryPerVersion?: Discovery[];
+	readonly exponentialBackoffDefault?: boolean;
+	readonly launchStage?: string;
+	readonly pathPrefixes?: string[];
+	readonly publicDirectory?: boolean;
+	readonly publicDiscovery?: boolean;
+	readonly rootUrl?: string;
+	readonly rules?: JsonSchemaRule[];
+	readonly schemaNameTemplate?: string;
+	readonly supportedSchemas?: string[];
+	readonly version?: string;
 }
 export interface DiscoveryConfig {
-	readonly allowBatchPathOverride?: boolean | undefined;
-	readonly allowDiscoverableUserIpSystemParameter?: boolean | undefined;
-	readonly allowSchemaInlineMessages?: boolean | undefined;
-	readonly deriveCollectionFromDiscoveryPerVersion?: boolean | undefined;
-	readonly deriveCollectionFromMultiLevels?: boolean | undefined;
-	readonly enableTopLevelMethods?: boolean | undefined;
-	readonly iconUrlOverrides?: IconUrlOverrides | undefined;
-	readonly packagePath?: string | undefined;
-	readonly propagateLowerCamelEnumsFlags?: boolean | undefined;
-	readonly propagateUseLegacyJsonMapFormatFlags?: boolean | undefined;
-	readonly servicePaths?: { [P in string]: string } | undefined;
-	readonly skipServiceControlForLegacyDiscoveryUrl?: boolean | undefined;
-	readonly sortRequiredQueryParams?: boolean | undefined;
-	readonly suppressEmptyParameterOrder?: boolean | undefined;
-	readonly useProtoToApiaryMethodNames?: boolean | undefined;
-	readonly warnForPropagationConflicts?: boolean | undefined;
+	readonly allowBatchPathOverride?: boolean;
+	readonly allowDiscoverableUserIpSystemParameter?: boolean;
+	readonly allowSchemaInlineMessages?: boolean;
+	readonly deriveCollectionFromDiscoveryPerVersion?: boolean;
+	readonly deriveCollectionFromMultiLevels?: boolean;
+	readonly enableTopLevelMethods?: boolean;
+	readonly iconUrlOverrides?: IconUrlOverrides;
+	readonly packagePath?: string;
+	readonly propagateLowerCamelEnumsFlags?: boolean;
+	readonly propagateUseLegacyJsonMapFormatFlags?: boolean;
+	readonly servicePaths?: { [P in string]: string };
+	readonly skipServiceControlForLegacyDiscoveryUrl?: boolean;
+	readonly sortRequiredQueryParams?: boolean;
+	readonly suppressEmptyParameterOrder?: boolean;
+	readonly useProtoToApiaryMethodNames?: boolean;
+	readonly warnForPropagationConflicts?: boolean;
 }
 export interface DiscoveryMessageConfig {
-	readonly hideEmptySchema?: boolean | undefined;
-	readonly inlineMessage?: boolean | undefined;
-	readonly shallowInlineMessage?: boolean | undefined;
-	readonly useProtoForOuterMessageName?: boolean | undefined;
+	readonly hideEmptySchema?: boolean;
+	readonly inlineMessage?: boolean;
+	readonly shallowInlineMessage?: boolean;
+	readonly useProtoForOuterMessageName?: boolean;
 }
 export interface Documentation {
-	readonly documentationPerVersion?: DocumentationPerVersion[] | undefined;
-	readonly documentationRootUrl?: string | undefined;
-	readonly overview?: string | undefined;
-	readonly pages?: Page[] | undefined;
-	readonly rules?: DocumentationRule[] | undefined;
-	readonly serviceRootUrl?: string | undefined;
-	readonly summary?: string | undefined;
-	readonly unattachedTypeBehaviors?: string | undefined;
+	readonly documentationPerVersion?: DocumentationPerVersion[];
+	readonly documentationRootUrl?: string;
+	readonly overview?: string;
+	readonly pages?: Page[];
+	readonly rules?: DocumentationRule[];
+	readonly serviceRootUrl?: string;
+	readonly summary?: string;
+	readonly unattachedTypeBehaviors?: string;
 }
 export interface DocumentationPerVersion {
-	readonly additionalTypeNames?: string[] | undefined;
-	readonly version?: string | undefined;
+	readonly additionalTypeNames?: string[];
+	readonly version?: string;
 }
 export interface DocumentationRule {
-	readonly deprecationDescription?: string | undefined;
-	readonly description?: string | undefined;
-	readonly selector?: string | undefined;
+	readonly deprecationDescription?: string;
+	readonly description?: string;
+	readonly selector?: string;
 }
 export interface EnableServiceRequest {
-	readonly ignoreCurrentState?: boolean | undefined;
+	readonly ignoreCurrentState?: boolean;
 }
 export interface Endpoint {
-	readonly aliases?: string[] | undefined;
-	readonly allowCors?: boolean | undefined;
-	readonly features?: string[] | undefined;
-	readonly launchStage?: string | undefined;
-	readonly name?: string | undefined;
-	readonly target?: string | undefined;
-	readonly urlMap?: string | undefined;
+	readonly aliases?: string[];
+	readonly allowCors?: boolean;
+	readonly features?: string[];
+	readonly launchStage?: string;
+	readonly name?: string;
+	readonly target?: string;
+	readonly urlMap?: string;
 }
 export interface EndUserCredsRequirements {
-	readonly scopeCodes?: string | undefined;
+	readonly scopeCodes?: string;
 }
 export interface EnumDescriptorProto {
-	readonly name?: string | undefined;
-	readonly options?: EnumOptions | undefined;
-	readonly reservedName?: string[] | undefined;
-	readonly reservedRange?: EnumReservedRange[] | undefined;
-	readonly value?: EnumValueDescriptorProto[] | undefined;
+	readonly name?: string;
+	readonly options?: EnumOptions;
+	readonly reservedName?: string[];
+	readonly reservedRange?: EnumReservedRange[];
+	readonly value?: EnumValueDescriptorProto[];
 }
 export interface EnumOptions {
-	readonly allowAlias?: boolean | undefined;
-	readonly deprecated?: boolean | undefined;
-	readonly proto1Name?: string | undefined;
-	readonly uninterpretedOption?: UninterpretedOption[] | undefined;
+	readonly allowAlias?: boolean;
+	readonly deprecated?: boolean;
+	readonly proto1Name?: string;
+	readonly uninterpretedOption?: UninterpretedOption[];
 }
 export interface EnumReservedRange {
-	readonly end?: number | undefined;
-	readonly start?: number | undefined;
+	readonly end?: number;
+	readonly start?: number;
 }
 export interface EnumValueDescriptorProto {
-	readonly name?: string | undefined;
-	readonly number?: number | undefined;
-	readonly options?: EnumValueOptions | undefined;
+	readonly name?: string;
+	readonly number?: number;
+	readonly options?: EnumValueOptions;
 }
 export interface EnumValueOptions {
-	readonly deprecated?: boolean | undefined;
-	readonly uninterpretedOption?: UninterpretedOption[] | undefined;
+	readonly deprecated?: boolean;
+	readonly uninterpretedOption?: UninterpretedOption[];
 }
 export interface ErrorDefinition {
-	readonly domain?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly extendedHelp?: string | undefined;
-	readonly externalName?: string | undefined;
-	readonly httpErrorHeaders?: { [P in string]: string } | undefined;
-	readonly location?: string | undefined;
-	readonly predicate?: ErrorPredicate | undefined;
-	readonly reason?: string | undefined;
+	readonly domain?: string;
+	readonly errorMessage?: string;
+	readonly extendedHelp?: string;
+	readonly externalName?: string;
+	readonly httpErrorHeaders?: { [P in string]: string };
+	readonly location?: string;
+	readonly predicate?: ErrorPredicate;
+	readonly reason?: string;
 }
 export interface ErrorDefinitions {
-	readonly definitions?: ErrorDefinition[] | undefined;
+	readonly definitions?: ErrorDefinition[];
 }
 export interface ErrorDomain {
-	readonly errorDefinitions?: { [P in string]: ErrorDefinitions } | undefined;
+	readonly errorDefinitions?: { [P in string]: ErrorDefinitions };
 }
 export interface ErrorFallbackConfig {
-	readonly forwardingHttpserviceAddress?: string | undefined;
+	readonly forwardingHttpserviceAddress?: string;
 }
 export interface ErrorFilter {
-	readonly errorCodePattern?: string | undefined;
-	readonly subcodes?: SubcodeConfig[] | undefined;
+	readonly errorCodePattern?: string;
+	readonly subcodes?: SubcodeConfig[];
 }
 export interface ErrorPredicate {
-	readonly location?: string | undefined;
-	readonly method?: string | undefined;
+	readonly location?: string;
+	readonly method?: string;
 }
 export interface ESFGwsLogConfig {
-	readonly disableGrantedScope?: boolean | undefined;
-	readonly enableLogErrorOnly?: boolean | undefined;
-	readonly enableLogFrontlineTlsProtocolNegotiation?: boolean | undefined;
-	readonly enableLogGrpcAutobahnStreamCloseLatency?: boolean | undefined;
-	readonly enableLogTaskInfo?: boolean | undefined;
-	readonly logType?: string | undefined;
+	readonly disableGrantedScope?: boolean;
+	readonly enableLogErrorOnly?: boolean;
+	readonly enableLogFrontlineTlsProtocolNegotiation?: boolean;
+	readonly enableLogGrpcAutobahnStreamCloseLatency?: boolean;
+	readonly enableLogTaskInfo?: boolean;
+	readonly logType?: string;
 }
 export interface ETag {
-	readonly rules?: ETagRule[] | undefined;
+	readonly rules?: ETagRule[];
 }
 export interface ETagRule {
-	readonly enabled?: boolean | undefined;
-	readonly etagFormat?: string | undefined;
-	readonly passStarToBackend?: boolean | undefined;
-	readonly selector?: string | undefined;
-	readonly sourceField?: string | undefined;
-	readonly suppressHeader?: boolean | undefined;
-	readonly useBodyResourceEtag?: boolean | undefined;
+	readonly enabled?: boolean;
+	readonly etagFormat?: string;
+	readonly passStarToBackend?: boolean;
+	readonly selector?: string;
+	readonly sourceField?: string;
+	readonly suppressHeader?: boolean;
+	readonly useBodyResourceEtag?: boolean;
 }
 export interface ExtensionRange {
-	readonly end?: number | undefined;
-	readonly options?: ExtensionRangeOptions | undefined;
-	readonly start?: number | undefined;
+	readonly end?: number;
+	readonly options?: ExtensionRangeOptions;
+	readonly start?: number;
 }
 export interface ExtensionRangeOptions {
-	readonly metadata?: Metadata | undefined;
-	readonly uninterpretedOption?: UninterpretedOption[] | undefined;
+	readonly metadata?: Metadata;
+	readonly uninterpretedOption?: UninterpretedOption[];
 }
 export interface FieldConstraintConfig {
-	readonly defaultValue?: string | undefined;
-	readonly description?: string | undefined;
-	readonly isRequired?: boolean | undefined;
-	readonly maxValue?: string | undefined;
-	readonly minValue?: string | undefined;
-	readonly pattern?: string | undefined;
+	readonly defaultValue?: string;
+	readonly description?: string;
+	readonly isRequired?: boolean;
+	readonly maxValue?: string;
+	readonly minValue?: string;
+	readonly pattern?: string;
 }
 export interface FieldDescriptorProto {
-	readonly defaultValue?: string | undefined;
-	readonly extendee?: string | undefined;
-	readonly jsonName?: string | undefined;
-	readonly label?: string | undefined;
-	readonly name?: string | undefined;
-	readonly number?: number | undefined;
-	readonly oneofIndex?: number | undefined;
-	readonly options?: FieldOptions | undefined;
-	readonly proto3Optional?: boolean | undefined;
-	readonly type?: string | undefined;
-	readonly typeName?: string | undefined;
+	readonly defaultValue?: string;
+	readonly extendee?: string;
+	readonly jsonName?: string;
+	readonly label?: string;
+	readonly name?: string;
+	readonly number?: number;
+	readonly oneofIndex?: number;
+	readonly options?: FieldOptions;
+	readonly proto3Optional?: boolean;
+	readonly type?: string;
+	readonly typeName?: string;
 }
 export interface FieldOptions {
-	readonly ccOpenEnum?: boolean | undefined;
-	readonly ctype?: string | undefined;
-	readonly deprecated?: boolean | undefined;
-	readonly deprecatedRawMessage?: boolean | undefined;
-	readonly enforceUtf8?: boolean | undefined;
-	readonly jstype?: string | undefined;
-	readonly lazy?: boolean | undefined;
-	readonly packed?: boolean | undefined;
-	readonly uninterpretedOption?: UninterpretedOption[] | undefined;
-	readonly unverifiedLazy?: boolean | undefined;
-	readonly upgradedOption?: UpgradedOption[] | undefined;
-	readonly weak?: boolean | undefined;
+	readonly ccOpenEnum?: boolean;
+	readonly ctype?: string;
+	readonly deprecated?: boolean;
+	readonly deprecatedRawMessage?: boolean;
+	readonly enforceUtf8?: boolean;
+	readonly jstype?: string;
+	readonly lazy?: boolean;
+	readonly packed?: boolean;
+	readonly uninterpretedOption?: UninterpretedOption[];
+	readonly unverifiedLazy?: boolean;
+	readonly upgradedOption?: UpgradedOption[];
+	readonly weak?: boolean;
 }
 export interface FieldReplacementRule {
-	readonly inlineSchema?: boolean | undefined;
-	readonly schema?: string | undefined;
-	readonly selector?: string | undefined;
+	readonly inlineSchema?: boolean;
+	readonly schema?: string;
+	readonly selector?: string;
 }
 export interface FileDescriptorProto {
-	readonly dependency?: string[] | undefined;
-	readonly edition?: string | undefined;
-	readonly enumType?: EnumDescriptorProto[] | undefined;
-	readonly extension?: FieldDescriptorProto[] | undefined;
-	readonly messageType?: DescriptorProto[] | undefined;
-	readonly name?: string | undefined;
-	readonly options?: FileOptions | undefined;
-	readonly package?: string | undefined;
-	readonly publicDependency?: number[] | undefined;
-	readonly service?: ServiceDescriptorProto[] | undefined;
-	readonly sourceCodeInfo?: SourceCodeInfo | undefined;
-	readonly syntax?: string | undefined;
-	readonly weakDependency?: number[] | undefined;
+	readonly dependency?: string[];
+	readonly edition?: string;
+	readonly enumType?: EnumDescriptorProto[];
+	readonly extension?: FieldDescriptorProto[];
+	readonly messageType?: DescriptorProto[];
+	readonly name?: string;
+	readonly options?: FileOptions;
+	readonly package?: string;
+	readonly publicDependency?: number[];
+	readonly service?: ServiceDescriptorProto[];
+	readonly sourceCodeInfo?: SourceCodeInfo;
+	readonly syntax?: string;
+	readonly weakDependency?: number[];
 }
 export interface FileDescriptorSet {
-	readonly file?: FileDescriptorProto[] | undefined;
+	readonly file?: FileDescriptorProto[];
 }
 export interface FileOptions {
-	readonly ccApiVersion?: number | undefined;
-	readonly ccEnableArenas?: boolean | undefined;
-	readonly ccEnableMethodHandles?: boolean | undefined;
-	readonly ccGenericServices?: boolean | undefined;
-	readonly ccUtf8Verification?: boolean | undefined;
-	readonly csharpNamespace?: string | undefined;
-	readonly deprecated?: boolean | undefined;
-	readonly goApiFlag?: string | undefined;
-	readonly goPackage?: string | undefined;
-	readonly javaAltApiPackage?: string | undefined;
-	readonly javaApiVersion?: number | undefined;
-	readonly javaEnableDualGenerateMutableApi?: boolean | undefined;
-	readonly javaGenericServices?: boolean | undefined;
-	readonly javaJava5Enums?: boolean | undefined;
-	readonly javaMultipleFiles?: boolean | undefined;
-	readonly javaMultipleFilesMutablePackage?: string | undefined;
-	readonly javaMutableApi?: boolean | undefined;
-	readonly javaOuterClassname?: string | undefined;
-	readonly javaPackage?: string | undefined;
-	readonly javascriptPackage?: string | undefined;
-	readonly javaStringCheckUtf8?: boolean | undefined;
-	readonly javaUseJavaproto2?: boolean | undefined;
-	readonly jspbUseCorrectProto2Semantics?: boolean | undefined;
-	readonly objcClassPrefix?: string | undefined;
-	readonly optimizeFor?: string | undefined;
-	readonly phpClassPrefix?: string | undefined;
-	readonly phpGenericServices?: boolean | undefined;
-	readonly phpMetadataNamespace?: string | undefined;
-	readonly phpNamespace?: string | undefined;
-	readonly pyGenericServices?: boolean | undefined;
-	readonly rubyPackage?: string | undefined;
-	readonly swiftPrefix?: string | undefined;
-	readonly szlApiVersion?: number | undefined;
-	readonly uninterpretedOption?: UninterpretedOption[] | undefined;
-	readonly useJavaStubbyLibrary?: boolean | undefined;
+	readonly ccApiVersion?: number;
+	readonly ccEnableArenas?: boolean;
+	readonly ccEnableMethodHandles?: boolean;
+	readonly ccGenericServices?: boolean;
+	readonly ccUtf8Verification?: boolean;
+	readonly csharpNamespace?: string;
+	readonly deprecated?: boolean;
+	readonly goApiFlag?: string;
+	readonly goPackage?: string;
+	readonly javaAltApiPackage?: string;
+	readonly javaApiVersion?: number;
+	readonly javaEnableDualGenerateMutableApi?: boolean;
+	readonly javaGenericServices?: boolean;
+	readonly javaJava5Enums?: boolean;
+	readonly javaMultipleFiles?: boolean;
+	readonly javaMultipleFilesMutablePackage?: string;
+	readonly javaMutableApi?: boolean;
+	readonly javaOuterClassname?: string;
+	readonly javaPackage?: string;
+	readonly javascriptPackage?: string;
+	readonly javaStringCheckUtf8?: boolean;
+	readonly javaUseJavaproto2?: boolean;
+	readonly jspbUseCorrectProto2Semantics?: boolean;
+	readonly objcClassPrefix?: string;
+	readonly optimizeFor?: string;
+	readonly phpClassPrefix?: string;
+	readonly phpGenericServices?: boolean;
+	readonly phpMetadataNamespace?: string;
+	readonly phpNamespace?: string;
+	readonly pyGenericServices?: boolean;
+	readonly rubyPackage?: string;
+	readonly swiftPrefix?: string;
+	readonly szlApiVersion?: number;
+	readonly uninterpretedOption?: UninterpretedOption[];
+	readonly useJavaStubbyLibrary?: boolean;
 }
 export interface GfeRedirectConfig {
-	readonly enabledOnRequestFlow?: boolean | undefined;
-	readonly enabledOnResponseFlow?: boolean | undefined;
-	readonly enableInnerBatchErrorFallback?: boolean | undefined;
-	readonly enableProjectOverrides?: boolean | undefined;
-	readonly errorCodePattern?: string[] | undefined;
-	readonly errorFilters?: ErrorFilter[] | undefined;
+	readonly enabledOnRequestFlow?: boolean;
+	readonly enabledOnResponseFlow?: boolean;
+	readonly enableInnerBatchErrorFallback?: boolean;
+	readonly enableProjectOverrides?: boolean;
+	readonly errorCodePattern?: string[];
+	readonly errorFilters?: ErrorFilter[];
 }
 export interface GoogleApiServiceIdentity {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly serviceAccountParent?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly serviceAccountParent?: string;
 }
 export interface GoogleApiServiceusageV1Service {
-	readonly config?: GoogleApiServiceusageV1ServiceConfig | undefined;
-	readonly dependencyConfig?: DependencyConfig | undefined;
-	readonly name?: string | undefined;
-	readonly parent?: string | undefined;
-	readonly serviceAccounts?: ServiceAccount[] | undefined;
-	readonly state?: string | undefined;
+	readonly config?: GoogleApiServiceusageV1ServiceConfig;
+	readonly dependencyConfig?: DependencyConfig;
+	readonly name?: string;
+	readonly parent?: string;
+	readonly serviceAccounts?: ServiceAccount[];
+	readonly state?: string;
 }
 export interface GoogleApiServiceusageV1ServiceConfig {
-	readonly apis?: Api[] | undefined;
-	readonly authentication?: Authentication | undefined;
-	readonly discovery?: Discovery | undefined;
-	readonly documentation?: Documentation | undefined;
-	readonly endpoints?: Endpoint[] | undefined;
-	readonly features?: string[] | undefined;
-	readonly legacy?: Legacy | undefined;
-	readonly metrics?: MetricDescriptor[] | undefined;
-	readonly migration?: Migration | undefined;
-	readonly monitoredResources?: MonitoredResourceDescriptor[] | undefined;
-	readonly monitoring?: Monitoring | undefined;
-	readonly name?: string | undefined;
-	readonly quota?: Quota | undefined;
-	readonly title?: string | undefined;
-	readonly usage?: Usage | undefined;
+	readonly apis?: Api[];
+	readonly authentication?: Authentication;
+	readonly discovery?: Discovery;
+	readonly documentation?: Documentation;
+	readonly endpoints?: Endpoint[];
+	readonly features?: string[];
+	readonly legacy?: Legacy;
+	readonly metrics?: MetricDescriptor[];
+	readonly migration?: Migration;
+	readonly monitoredResources?: MonitoredResourceDescriptor[];
+	readonly monitoring?: Monitoring;
+	readonly name?: string;
+	readonly quota?: Quota;
+	readonly title?: string;
+	readonly usage?: Usage;
 }
 export interface IconUrlOverrides {
-	readonly x16?: string | undefined;
-	readonly x32?: string | undefined;
+	readonly x16?: string;
+	readonly x32?: string;
 }
 export interface Impersonation {
-	readonly allowedOauthClientIds?: string[] | undefined;
-	readonly allowFirstPartyAuth?: boolean | undefined;
-	readonly allowOauth?: boolean | undefined;
+	readonly allowedOauthClientIds?: string[];
+	readonly allowFirstPartyAuth?: boolean;
+	readonly allowOauth?: boolean;
 }
 export interface JsonFixupConfig {
-	readonly enableJsonFixup?: boolean | undefined;
+	readonly enableJsonFixup?: boolean;
 }
 export interface JsonSchema {
-	readonly $ref?: string | undefined;
-	readonly additionalPropertiesAllowed?: boolean | undefined;
-	readonly additionalPropertyRestrictions?: JsonSchema | undefined;
-	readonly annotations?: JsonSchemaAnnotations | undefined;
-	readonly default?: string | undefined;
-	readonly description?: string | undefined;
-	readonly format?: string | undefined;
-	readonly id?: string | undefined;
-	readonly items?: JsonSchema | undefined;
-	readonly maximum?: string | undefined;
-	readonly minimum?: string | undefined;
-	readonly pattern?: string | undefined;
-	readonly properties?: { [P in string]: JsonSchema } | undefined;
-	readonly readOnly?: boolean | undefined;
-	readonly required?: string | undefined;
-	readonly type?: string | undefined;
+	readonly $ref?: string;
+	readonly additionalPropertiesAllowed?: boolean;
+	readonly additionalPropertyRestrictions?: JsonSchema;
+	readonly annotations?: JsonSchemaAnnotations;
+	readonly default?: string;
+	readonly description?: string;
+	readonly format?: string;
+	readonly id?: string;
+	readonly items?: JsonSchema;
+	readonly maximum?: string;
+	readonly minimum?: string;
+	readonly pattern?: string;
+	readonly properties?: { [P in string]: JsonSchema };
+	readonly readOnly?: boolean;
+	readonly required?: string;
+	readonly type?: string;
 }
 export interface JsonSchemaAnnotations {
-	readonly required?: string[] | undefined;
+	readonly required?: string[];
 }
 export interface JsonSchemaProperties {
-	readonly hideFromSchemas?: string[] | undefined;
-	readonly version?: string | undefined;
+	readonly hideFromSchemas?: string[];
+	readonly version?: string;
 }
 export interface JsonSchemaRule {
-	readonly excluded?: boolean | undefined;
-	readonly schemaNameTemplate?: string | undefined;
+	readonly excluded?: boolean;
+	readonly schemaNameTemplate?: string;
 	readonly selector: string;
 }
 export interface JwtLocation {
-	readonly cookie?: string | undefined;
-	readonly header?: string | undefined;
-	readonly query?: string | undefined;
-	readonly valuePrefix?: string | undefined;
+	readonly cookie?: string;
+	readonly header?: string;
+	readonly query?: string;
+	readonly valuePrefix?: string;
 }
 export interface LabelDescriptor {
-	readonly description?: string | undefined;
-	readonly key?: string | undefined;
-	readonly valueType?: string | undefined;
+	readonly description?: string;
+	readonly key?: string;
+	readonly valueType?: string;
 }
 export interface LabelMapping {
-	readonly destinationMetricLabel?: string | undefined;
-	readonly destinationResourceLabel?: string | undefined;
-	readonly sourceLabel?: string | undefined;
+	readonly destinationMetricLabel?: string;
+	readonly destinationResourceLabel?: string;
+	readonly sourceLabel?: string;
 }
 export interface Legacy {
-	readonly apiV1Name?: string | undefined;
-	readonly boqSettings?: BoqSettings | undefined;
-	readonly bugComponentId?: string | undefined;
-	readonly bugId?: string | undefined;
-	readonly controlPlaneMigration?: ControlPlaneMigration | undefined;
-	readonly devconsole?: Devconsole | undefined;
-	readonly disableQuotaProjectOverride?: boolean | undefined;
-	readonly doNotSendQuotaOverridesToQuotaserver?: boolean | undefined;
-	readonly email?: string | undefined;
-	readonly enableDirectPathForGrpc?: boolean | undefined;
-	readonly enableOrgQuotaForAllConsumers?: boolean | undefined;
-	readonly excludedVersionsInPackagePath?: string[] | undefined;
-	readonly forwardJwtKnownIssuers?: boolean | undefined;
-	readonly gwslog?: ESFGwsLogConfig | undefined;
-	readonly healthz?: string | undefined;
-	readonly hiddenFromList?: boolean | undefined;
-	readonly includeDebugTrackingId?: boolean | undefined;
-	readonly mdb?: string | undefined;
-	readonly oncall?: string | undefined;
-	readonly restrictedQuotaBucketTrustedTesters?: { [P in string]: TrustedTesterList } | undefined;
-	readonly rules?: LegacyRule[] | undefined;
-	readonly support?: string | undefined;
-	readonly taxonomyId?: string | undefined;
-	readonly useLoasProjectWithProjectlessCredentials?: boolean | undefined;
-	readonly usesApiaryProxy?: boolean | undefined;
+	readonly apiV1Name?: string;
+	readonly boqSettings?: BoqSettings;
+	readonly bugComponentId?: string;
+	readonly bugId?: string;
+	readonly controlPlaneMigration?: ControlPlaneMigration;
+	readonly devconsole?: Devconsole;
+	readonly disableQuotaProjectOverride?: boolean;
+	readonly doNotSendQuotaOverridesToQuotaserver?: boolean;
+	readonly email?: string;
+	readonly enableDirectPathForGrpc?: boolean;
+	readonly enableOrgQuotaForAllConsumers?: boolean;
+	readonly excludedVersionsInPackagePath?: string[];
+	readonly forwardJwtKnownIssuers?: boolean;
+	readonly gwslog?: ESFGwsLogConfig;
+	readonly healthz?: string;
+	readonly hiddenFromList?: boolean;
+	readonly includeDebugTrackingId?: boolean;
+	readonly mdb?: string;
+	readonly oncall?: string;
+	readonly restrictedQuotaBucketTrustedTesters?: { [P in string]: TrustedTesterList };
+	readonly rules?: LegacyRule[];
+	readonly support?: string;
+	readonly taxonomyId?: string;
+	readonly useLoasProjectWithProjectlessCredentials?: boolean;
+	readonly usesApiaryProxy?: boolean;
 }
 export interface LegacyRule {
-	readonly disableEsfUserAgentDetection?: boolean | undefined;
-	readonly enableEsfChecksum?: boolean | undefined;
-	readonly enableEsfFastPath?: boolean | undefined;
-	readonly enableEsfSherlog?: boolean | undefined;
-	readonly selector?: string | undefined;
+	readonly disableEsfUserAgentDetection?: boolean;
+	readonly enableEsfChecksum?: boolean;
+	readonly enableEsfFastPath?: boolean;
+	readonly enableEsfSherlog?: boolean;
+	readonly selector?: string;
 }
 export interface LoasRequirements {
-	readonly allowServiceAccount?: boolean | undefined;
+	readonly allowServiceAccount?: boolean;
 }
 export interface Location {
-	readonly leadingComments?: string | undefined;
-	readonly leadingDetachedComments?: string[] | undefined;
-	readonly path?: number[] | undefined;
-	readonly span?: number[] | undefined;
-	readonly trailingComments?: string | undefined;
+	readonly leadingComments?: string;
+	readonly leadingDetachedComments?: string[];
+	readonly path?: number[];
+	readonly span?: number[];
+	readonly trailingComments?: string;
 }
 export interface MessageOptions {
-	readonly deprecated?: boolean | undefined;
-	readonly goApiFlag?: string | undefined;
-	readonly mapEntry?: boolean | undefined;
-	readonly messageSetWireFormat?: boolean | undefined;
-	readonly noStandardDescriptorAccessor?: boolean | undefined;
-	readonly uninterpretedOption?: UninterpretedOption[] | undefined;
+	readonly deprecated?: boolean;
+	readonly goApiFlag?: string;
+	readonly mapEntry?: boolean;
+	readonly messageSetWireFormat?: boolean;
+	readonly noStandardDescriptorAccessor?: boolean;
+	readonly uninterpretedOption?: UninterpretedOption[];
 }
 export interface Metadata {
-	readonly isRepeated?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly isRepeated?: boolean;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface Method {
-	readonly name?: string | undefined;
-	readonly options?: Option[] | undefined;
-	readonly requestStreaming?: boolean | undefined;
-	readonly requestTypeUrl?: string | undefined;
-	readonly responseStreaming?: boolean | undefined;
-	readonly responseTypeUrl?: string | undefined;
-	readonly syntax?: string | undefined;
+	readonly name?: string;
+	readonly options?: Option[];
+	readonly requestStreaming?: boolean;
+	readonly requestTypeUrl?: string;
+	readonly responseStreaming?: boolean;
+	readonly responseTypeUrl?: string;
+	readonly syntax?: string;
 }
 export interface MethodDescriptorProto {
-	readonly clientStreaming?: boolean | undefined;
-	readonly inputType?: string | undefined;
-	readonly name?: string | undefined;
-	readonly options?: MethodOptions | undefined;
-	readonly outputType?: string | undefined;
-	readonly serverStreaming?: boolean | undefined;
+	readonly clientStreaming?: boolean;
+	readonly inputType?: string;
+	readonly name?: string;
+	readonly options?: MethodOptions;
+	readonly outputType?: string;
+	readonly serverStreaming?: boolean;
 }
 export interface MethodOptions {
-	readonly clientLogging?: number | undefined;
-	readonly clientStreaming?: boolean | undefined;
-	readonly deadline?: number | undefined;
-	readonly deprecated?: boolean | undefined;
-	readonly duplicateSuppression?: boolean | undefined;
-	readonly endUserCredsRequested?: boolean | undefined;
-	readonly failFast?: boolean | undefined;
-	readonly goLegacyChannelApi?: boolean | undefined;
-	readonly idempotencyLevel?: string | undefined;
-	readonly legacyClientInitialTokens?: string | undefined;
-	readonly legacyResultType?: string | undefined;
-	readonly legacyServerInitialTokens?: string | undefined;
-	readonly legacyStreamType?: string | undefined;
-	readonly legacyTokenUnit?: string | undefined;
-	readonly logLevel?: string | undefined;
-	readonly protocol?: string | undefined;
-	readonly requestFormat?: string | undefined;
-	readonly responseFormat?: string | undefined;
-	readonly securityLabel?: string | undefined;
-	readonly securityLevel?: string | undefined;
-	readonly serverLogging?: number | undefined;
-	readonly serverRequiredSecurityLevel?: string | undefined;
-	readonly serverStreaming?: boolean | undefined;
-	readonly uninterpretedOption?: UninterpretedOption[] | undefined;
+	readonly clientLogging?: number;
+	readonly clientStreaming?: boolean;
+	readonly deadline?: number;
+	readonly deprecated?: boolean;
+	readonly duplicateSuppression?: boolean;
+	readonly endUserCredsRequested?: boolean;
+	readonly failFast?: boolean;
+	readonly goLegacyChannelApi?: boolean;
+	readonly idempotencyLevel?: string;
+	readonly legacyClientInitialTokens?: string;
+	readonly legacyResultType?: string;
+	readonly legacyServerInitialTokens?: string;
+	readonly legacyStreamType?: string;
+	readonly legacyTokenUnit?: string;
+	readonly logLevel?: string;
+	readonly protocol?: string;
+	readonly requestFormat?: string;
+	readonly responseFormat?: string;
+	readonly securityLabel?: string;
+	readonly securityLevel?: string;
+	readonly serverLogging?: number;
+	readonly serverRequiredSecurityLevel?: string;
+	readonly serverStreaming?: boolean;
+	readonly uninterpretedOption?: UninterpretedOption[];
 }
 export interface MethodParameterRule {
-	readonly parameters?: ParameterConfig[] | undefined;
-	readonly selector?: string | undefined;
+	readonly parameters?: ParameterConfig[];
+	readonly selector?: string;
 }
 export interface MethodReplacementRule {
-	readonly hideRequestBodyFromDiscovery?: boolean | undefined;
-	readonly hideResponseBodyFromDiscovery?: boolean | undefined;
-	readonly inlineRequestSchema?: boolean | undefined;
-	readonly inlineResponseSchema?: boolean | undefined;
-	readonly parameterOrder?: string[] | undefined;
-	readonly requestParameterName?: string | undefined;
-	readonly requestSchema?: string | undefined;
-	readonly responseSchema?: string | undefined;
-	readonly selector?: string | undefined;
-	readonly supportsSubscription?: boolean | undefined;
+	readonly hideRequestBodyFromDiscovery?: boolean;
+	readonly hideResponseBodyFromDiscovery?: boolean;
+	readonly inlineRequestSchema?: boolean;
+	readonly inlineResponseSchema?: boolean;
+	readonly parameterOrder?: string[];
+	readonly requestParameterName?: string;
+	readonly requestSchema?: string;
+	readonly responseSchema?: string;
+	readonly selector?: string;
+	readonly supportsSubscription?: boolean;
 }
 export interface MetricDescriptor {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly labels?: LabelDescriptor[] | undefined;
-	readonly launchStage?: string | undefined;
-	readonly metadata?: MetricDescriptorMetadata | undefined;
-	readonly metricKind?: string | undefined;
-	readonly monitoredResourceTypes?: string[] | undefined;
-	readonly monitoringMigration?: MonitoringMigration | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
-	readonly unit?: string | undefined;
-	readonly valueType?: string | undefined;
-	readonly visibilityRestriction?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly labels?: LabelDescriptor[];
+	readonly launchStage?: string;
+	readonly metadata?: MetricDescriptorMetadata;
+	readonly metricKind?: string;
+	readonly monitoredResourceTypes?: string[];
+	readonly monitoringMigration?: MonitoringMigration;
+	readonly name?: string;
+	readonly type?: string;
+	readonly unit?: string;
+	readonly valueType?: string;
+	readonly visibilityRestriction?: string;
 }
 export interface MetricDescriptorMetadata {
-	readonly ingestDelay?: string | undefined;
-	readonly launchStage?: string | undefined;
-	readonly samplePeriod?: string | undefined;
+	readonly ingestDelay?: string;
+	readonly launchStage?: string;
+	readonly samplePeriod?: string;
 }
 export interface MetricMapping {
-	readonly labelMappings?: LabelMapping[] | undefined;
-	readonly metric?: string | undefined;
-	readonly monitoredResource?: string | undefined;
+	readonly labelMappings?: LabelMapping[];
+	readonly metric?: string;
+	readonly monitoredResource?: string;
 }
 export interface MetricRule {
-	readonly dynamicMetricCosts?: { [P in string]: string } | undefined;
-	readonly metricCosts?: { [P in string]: string } | undefined;
-	readonly selector?: string | undefined;
+	readonly dynamicMetricCosts?: { [P in string]: string };
+	readonly metricCosts?: { [P in string]: string };
+	readonly selector?: string;
 }
 export interface Migration {
-	readonly allowBackendBatchRequestWithoutContentId?: boolean | undefined;
-	readonly allowBatchInnerPathWithoutLeadingSlash?: boolean | undefined;
-	readonly allowCredentialProjectFallbackForMalformedApiKey?: boolean | undefined;
-	readonly apiaryDiscoveryName?: string | undefined;
-	readonly apiRules?: MigrationApiRule[] | undefined;
-	readonly batchInnerRequestsCountSoftLimit?: number | undefined;
-	readonly batchRedirectConfig?: GfeRedirectConfig | undefined;
-	readonly disableApiaryMethodNamesCheck?: boolean | undefined;
-	readonly discoveryConfig?: DiscoveryConfig | undefined;
-	readonly enableDomainRestriction?: boolean | undefined;
-	readonly enumRules?: MigrationEnumRule[] | undefined;
-	readonly enumValueRules?: MigrationEnumValueRule[] | undefined;
-	readonly errorFallbackConfig?: ErrorFallbackConfig | undefined;
-	readonly errors?: { [P in string]: ErrorDomain } | undefined;
-	readonly fieldReplacementRules?: FieldReplacementRule[] | undefined;
-	readonly fieldRules?: MigrationFieldRule[] | undefined;
-	readonly forceAlternativeServiceHeader?: string | undefined;
-	readonly messageRules?: MigrationMessageRule[] | undefined;
-	readonly methodParameterRules?: MethodParameterRule[] | undefined;
-	readonly methodReplacementRules?: MethodReplacementRule[] | undefined;
-	readonly preferDistribDiscovery?: boolean | undefined;
-	readonly protoToApiaryMethodNames?: { [P in string]: string } | undefined;
-	readonly quotaUserOverride?: QuotaUserOverrideConfig | undefined;
-	readonly retryForUnavailableRetriableErr?: boolean | undefined;
-	readonly return403ForBatchQuotaErrors?: boolean | undefined;
-	readonly rules?: MigrationRule[] | undefined;
-	readonly schemaPropertiesPerVersion?: JsonSchemaProperties[] | undefined;
-	readonly schemas?: { [P in string]: JsonSchema } | undefined;
-	readonly serviceSuspendedEnforcementId?: number | undefined;
-	readonly tex?: Tex | undefined;
-	readonly usageManagerConfig?: UsageManagerConfig | undefined;
-	readonly useApiaryBatchResponseHeaderAllowlist?: boolean | undefined;
-	readonly useApiaryStyleDiscoveryUrl?: boolean | undefined;
+	readonly allowBackendBatchRequestWithoutContentId?: boolean;
+	readonly allowBatchInnerPathWithoutLeadingSlash?: boolean;
+	readonly allowCredentialProjectFallbackForMalformedApiKey?: boolean;
+	readonly apiaryDiscoveryName?: string;
+	readonly apiRules?: MigrationApiRule[];
+	readonly batchInnerRequestsCountSoftLimit?: number;
+	readonly batchRedirectConfig?: GfeRedirectConfig;
+	readonly disableApiaryMethodNamesCheck?: boolean;
+	readonly discoveryConfig?: DiscoveryConfig;
+	readonly enableDomainRestriction?: boolean;
+	readonly enumRules?: MigrationEnumRule[];
+	readonly enumValueRules?: MigrationEnumValueRule[];
+	readonly errorFallbackConfig?: ErrorFallbackConfig;
+	readonly errors?: { [P in string]: ErrorDomain };
+	readonly fieldReplacementRules?: FieldReplacementRule[];
+	readonly fieldRules?: MigrationFieldRule[];
+	readonly forceAlternativeServiceHeader?: string;
+	readonly messageRules?: MigrationMessageRule[];
+	readonly methodParameterRules?: MethodParameterRule[];
+	readonly methodReplacementRules?: MethodReplacementRule[];
+	readonly preferDistribDiscovery?: boolean;
+	readonly protoToApiaryMethodNames?: { [P in string]: string };
+	readonly quotaUserOverride?: QuotaUserOverrideConfig;
+	readonly retryForUnavailableRetriableErr?: boolean;
+	readonly return403ForBatchQuotaErrors?: boolean;
+	readonly rules?: MigrationRule[];
+	readonly schemaPropertiesPerVersion?: JsonSchemaProperties[];
+	readonly schemas?: { [P in string]: JsonSchema };
+	readonly serviceSuspendedEnforcementId?: number;
+	readonly tex?: Tex;
+	readonly usageManagerConfig?: UsageManagerConfig;
+	readonly useApiaryBatchResponseHeaderAllowlist?: boolean;
+	readonly useApiaryStyleDiscoveryUrl?: boolean;
 }
 export interface MigrationApiRule {
-	readonly disableApiPackageVersionConsistencyCheck?: boolean | undefined;
-	readonly selector?: string | undefined;
+	readonly disableApiPackageVersionConsistencyCheck?: boolean;
+	readonly selector?: string;
 }
 export interface MigrationEnumRule {
-	readonly discoverySortEnumValues?: boolean | undefined;
-	readonly hideFromDiscovery?: boolean | undefined;
-	readonly lowerCamelEnums?: boolean | undefined;
-	readonly protoToJsonValueNames?: { [P in string]: string } | undefined;
-	readonly selector?: string | undefined;
+	readonly discoverySortEnumValues?: boolean;
+	readonly hideFromDiscovery?: boolean;
+	readonly lowerCamelEnums?: boolean;
+	readonly protoToJsonValueNames?: { [P in string]: string };
+	readonly selector?: string;
 }
 export interface MigrationEnumValueRule {
-	readonly hideFromDiscovery?: boolean | undefined;
-	readonly selector?: string | undefined;
+	readonly hideFromDiscovery?: boolean;
+	readonly selector?: string;
 }
 export interface MigrationFieldRule {
-	readonly alternativeFieldName?: string | undefined;
-	readonly alwaysOutput?: boolean | undefined;
-	readonly constraintConfig?: FieldConstraintConfig | undefined;
-	readonly defaultValue?: string | undefined;
-	readonly disableInlining?: boolean | undefined;
-	readonly enableDiscoveryFieldMaskPathsQueryParam?: boolean | undefined;
-	readonly hideFromDiscovery?: boolean | undefined;
-	readonly httpParam?: boolean | undefined;
-	readonly mapKey?: boolean | undefined;
-	readonly pattern?: string | undefined;
-	readonly requiringMethods?: string[] | undefined;
-	readonly selector?: string | undefined;
+	readonly alternativeFieldName?: string;
+	readonly alwaysOutput?: boolean;
+	readonly constraintConfig?: FieldConstraintConfig;
+	readonly defaultValue?: string;
+	readonly disableInlining?: boolean;
+	readonly enableDiscoveryFieldMaskPathsQueryParam?: boolean;
+	readonly hideFromDiscovery?: boolean;
+	readonly httpParam?: boolean;
+	readonly mapKey?: boolean;
+	readonly pattern?: string;
+	readonly requiringMethods?: string[];
+	readonly selector?: string;
 }
 export interface MigrationMessageRule {
-	readonly discoveryHideEmptySchema?: boolean | undefined;
-	readonly discoveryMessageConfig?: DiscoveryMessageConfig | undefined;
-	readonly discoveryUseProtoForOuterMessageName?: boolean | undefined;
-	readonly hideFromDiscovery?: boolean | undefined;
-	readonly schemaNameOverride?: string | undefined;
-	readonly selector?: string | undefined;
+	readonly discoveryHideEmptySchema?: boolean;
+	readonly discoveryMessageConfig?: DiscoveryMessageConfig;
+	readonly discoveryUseProtoForOuterMessageName?: boolean;
+	readonly hideFromDiscovery?: boolean;
+	readonly schemaNameOverride?: string;
+	readonly selector?: string;
 }
 export interface MigrationRule {
-	readonly allowAuthSub?: boolean | undefined;
-	readonly allowFirstPartyAuthV1?: boolean | undefined;
-	readonly allowHttpMultipartFormData?: boolean | undefined;
-	readonly allowIntToStringConversion?: boolean | undefined;
-	readonly allowLiberalUnsignedParsing?: boolean | undefined;
-	readonly allowPrimitiveTypeConversion?: boolean | undefined;
-	readonly allowScottyDownloadUseHttpHead?: boolean | undefined;
-	readonly allowUnregisteredRequests?: boolean | undefined;
-	readonly alwaysOutputEmptyRepeatedFields?: boolean | undefined;
-	readonly apiaryMethodName?: string | undefined;
-	readonly apiaryRpcErrorFilter?: string | undefined;
-	readonly chemistIsSourceOfTruthInDualCheckMode?: boolean | undefined;
-	readonly clearJsonBodyForBackend204Response?: boolean | undefined;
-	readonly concatRepeatedHttpHeadersInContext?: boolean | undefined;
-	readonly defaultAltType?: string | undefined;
-	readonly defaultFieldMask?: string | undefined;
-	readonly disableImplicitList?: boolean | undefined;
-	readonly doNotRequireWildcardForMapKeyField?: boolean | undefined;
-	readonly dropJsonPrimitiveTypeDataToMessageField?: boolean | undefined;
-	readonly enableAlternativeFieldForJsonArrayDeserialization?: boolean | undefined;
-	readonly enableProjectBlacklistRedirection?: boolean | undefined;
-	readonly enableQuotaUserOverride?: boolean | undefined;
-	readonly gaiaMintOptions?: string[] | undefined;
-	readonly gfeRedirectConfig?: GfeRedirectConfig | undefined;
-	readonly hideAdditionalBindingsFromDiscovery?: boolean | undefined;
-	readonly hideFromDiscovery?: boolean | undefined;
-	readonly ignoreAccessToken?: boolean | undefined;
-	readonly ignoreAnonymousCredentialProjects?: boolean | undefined;
-	readonly ignoreFieldMask?: boolean | undefined;
-	readonly ignoreFieldsMaskForHttpbodyResponse?: boolean | undefined;
-	readonly ignoreInvalidEnums?: boolean | undefined;
-	readonly ignoreNonMessageJsonPayload?: boolean | undefined;
-	readonly ignoreNullValueMapEntry?: boolean | undefined;
-	readonly ignorePseudoAnonymousCredentialProjects?: boolean | undefined;
-	readonly ignoreRequestPayload?: boolean | undefined;
-	readonly ignoreRequestPayloadIfContentTypeIsEmpty?: boolean | undefined;
-	readonly ignoreSpatula?: boolean | undefined;
-	readonly ignoreUnknownFields?: boolean | undefined;
-	readonly ignoreUnknownQueryParams?: boolean | undefined;
-	readonly impersonation?: Impersonation | undefined;
-	readonly jsonFixupConfig?: JsonFixupConfig | undefined;
-	readonly lowerCamelEnums?: boolean | undefined;
-	readonly passThroughAccessToken?: boolean | undefined;
-	readonly respectRootWildcardInFieldMask?: boolean | undefined;
-	readonly return204ForEmptyResponse?: boolean | undefined;
-	readonly return401ForSessionError?: boolean | undefined;
-	readonly return403ForQuotaErrors?: boolean | undefined;
-	readonly return500ForClientError?: boolean | undefined;
-	readonly returnEmptyResponseForEmptyFieldMask?: boolean | undefined;
-	readonly selector?: string | undefined;
-	readonly skipActivationCheck?: boolean | undefined;
-	readonly supportedAltTypes?: string[] | undefined;
-	readonly suppressEmptyObjectInJsonResponse?: boolean | undefined;
-	readonly suppressEmptyRepeatedFields?: boolean | undefined;
-	readonly treatInvalidBooleanStringAsFalse?: boolean | undefined;
-	readonly useApiaryFieldsParameterSyntax?: boolean | undefined;
-	readonly useApiaryMethodNameForGwsLog?: boolean | undefined;
-	readonly useApiaryMethodNameForReporting?: boolean | undefined;
-	readonly useBackendCanonicalErrorReason?: boolean | undefined;
-	readonly useClientIpAsQuotaUser?: boolean | undefined;
-	readonly useDefaultAltIfInferredAltUnsupported?: boolean | undefined;
-	readonly useGdataErrorCodeForV1LegacyError?: boolean | undefined;
-	readonly useIntsForEnums?: boolean | undefined;
-	readonly useLegacyJsonMapFormat?: boolean | undefined;
-	readonly useLocationFromGdataError?: boolean | undefined;
-	readonly useResourceProjectOverride?: boolean | undefined;
-	readonly useV1ErrorFormat?: boolean | undefined;
-	readonly useV1ErrorLegacyFormat?: boolean | undefined;
-	readonly useWebSafeBase64ForByteFields?: boolean | undefined;
+	readonly allowAuthSub?: boolean;
+	readonly allowFirstPartyAuthV1?: boolean;
+	readonly allowHttpMultipartFormData?: boolean;
+	readonly allowIntToStringConversion?: boolean;
+	readonly allowLiberalUnsignedParsing?: boolean;
+	readonly allowPrimitiveTypeConversion?: boolean;
+	readonly allowScottyDownloadUseHttpHead?: boolean;
+	readonly allowUnregisteredRequests?: boolean;
+	readonly alwaysOutputEmptyRepeatedFields?: boolean;
+	readonly apiaryMethodName?: string;
+	readonly apiaryRpcErrorFilter?: string;
+	readonly chemistIsSourceOfTruthInDualCheckMode?: boolean;
+	readonly clearJsonBodyForBackend204Response?: boolean;
+	readonly concatRepeatedHttpHeadersInContext?: boolean;
+	readonly defaultAltType?: string;
+	readonly defaultFieldMask?: string;
+	readonly disableImplicitList?: boolean;
+	readonly doNotRequireWildcardForMapKeyField?: boolean;
+	readonly dropJsonPrimitiveTypeDataToMessageField?: boolean;
+	readonly enableAlternativeFieldForJsonArrayDeserialization?: boolean;
+	readonly enableProjectBlacklistRedirection?: boolean;
+	readonly enableQuotaUserOverride?: boolean;
+	readonly gaiaMintOptions?: string[];
+	readonly gfeRedirectConfig?: GfeRedirectConfig;
+	readonly hideAdditionalBindingsFromDiscovery?: boolean;
+	readonly hideFromDiscovery?: boolean;
+	readonly ignoreAccessToken?: boolean;
+	readonly ignoreAnonymousCredentialProjects?: boolean;
+	readonly ignoreFieldMask?: boolean;
+	readonly ignoreFieldsMaskForHttpbodyResponse?: boolean;
+	readonly ignoreInvalidEnums?: boolean;
+	readonly ignoreNonMessageJsonPayload?: boolean;
+	readonly ignoreNullValueMapEntry?: boolean;
+	readonly ignorePseudoAnonymousCredentialProjects?: boolean;
+	readonly ignoreRequestPayload?: boolean;
+	readonly ignoreRequestPayloadIfContentTypeIsEmpty?: boolean;
+	readonly ignoreSpatula?: boolean;
+	readonly ignoreUnknownFields?: boolean;
+	readonly ignoreUnknownQueryParams?: boolean;
+	readonly impersonation?: Impersonation;
+	readonly jsonFixupConfig?: JsonFixupConfig;
+	readonly lowerCamelEnums?: boolean;
+	readonly passThroughAccessToken?: boolean;
+	readonly respectRootWildcardInFieldMask?: boolean;
+	readonly return204ForEmptyResponse?: boolean;
+	readonly return401ForSessionError?: boolean;
+	readonly return403ForQuotaErrors?: boolean;
+	readonly return500ForClientError?: boolean;
+	readonly returnEmptyResponseForEmptyFieldMask?: boolean;
+	readonly selector?: string;
+	readonly skipActivationCheck?: boolean;
+	readonly supportedAltTypes?: string[];
+	readonly suppressEmptyObjectInJsonResponse?: boolean;
+	readonly suppressEmptyRepeatedFields?: boolean;
+	readonly treatInvalidBooleanStringAsFalse?: boolean;
+	readonly useApiaryFieldsParameterSyntax?: boolean;
+	readonly useApiaryMethodNameForGwsLog?: boolean;
+	readonly useApiaryMethodNameForReporting?: boolean;
+	readonly useBackendCanonicalErrorReason?: boolean;
+	readonly useClientIpAsQuotaUser?: boolean;
+	readonly useDefaultAltIfInferredAltUnsupported?: boolean;
+	readonly useGdataErrorCodeForV1LegacyError?: boolean;
+	readonly useIntsForEnums?: boolean;
+	readonly useLegacyJsonMapFormat?: boolean;
+	readonly useLocationFromGdataError?: boolean;
+	readonly useResourceProjectOverride?: boolean;
+	readonly useV1ErrorFormat?: boolean;
+	readonly useV1ErrorLegacyFormat?: boolean;
+	readonly useWebSafeBase64ForByteFields?: boolean;
 }
 export interface Mixin {
-	readonly name?: string | undefined;
-	readonly root?: string | undefined;
+	readonly name?: string;
+	readonly root?: string;
 }
 export interface MonitoredResourceDescriptor {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly labelExtractor?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly labelExtractor?: string;
 	readonly labels: LabelDescriptor[];
-	readonly launchStage?: string | undefined;
-	readonly monitoringMigration?: MonitoringMigration | undefined;
-	readonly name?: string | undefined;
+	readonly launchStage?: string;
+	readonly monitoringMigration?: MonitoringMigration;
+	readonly name?: string;
 	readonly type: string;
 }
 export interface Monitoring {
-	readonly consumerDestinations?: MonitoringDestination[] | undefined;
-	readonly producerDestinations?: MonitoringDestination[] | undefined;
+	readonly consumerDestinations?: MonitoringDestination[];
+	readonly producerDestinations?: MonitoringDestination[];
 }
 export interface MonitoringDestination {
-	readonly aggregationType?: string | undefined;
-	readonly metrics?: string[] | undefined;
-	readonly monitoredResource?: string | undefined;
-	readonly precomputationFlags?: string | undefined;
-	readonly queryOptimizations?: QueryOptimization[] | undefined;
+	readonly aggregationType?: string;
+	readonly metrics?: string[];
+	readonly monitoredResource?: string;
+	readonly precomputationFlags?: string;
+	readonly queryOptimizations?: QueryOptimization[];
 }
 export interface MonitoringMigration {
-	readonly metricMappings?: MetricMapping | undefined;
-	readonly monitoringBackend?: string | undefined;
+	readonly metricMappings?: MetricMapping;
+	readonly monitoringBackend?: string;
 }
 export interface NamePart {
-	readonly isExtension?: boolean | undefined;
-	readonly namePart?: string | undefined;
+	readonly isExtension?: boolean;
+	readonly namePart?: string;
 }
 export interface OAuthRequirements {
-	readonly allowAnyScope?: boolean | undefined;
-	readonly canonicalScopes?: string | undefined;
+	readonly allowAnyScope?: boolean;
+	readonly canonicalScopes?: string;
 }
 export interface OneofDescriptorProto {
-	readonly name?: string | undefined;
-	readonly options?: OneofOptions | undefined;
+	readonly name?: string;
+	readonly options?: OneofOptions;
 }
 export interface OneofOptions {
-	readonly uninterpretedOption?: UninterpretedOption[] | undefined;
+	readonly uninterpretedOption?: UninterpretedOption[];
 }
 export interface Option {
-	readonly name?: string | undefined;
-	readonly value?: { [P in string]: any } | undefined;
+	readonly name?: string;
+	readonly value?: { [P in string]: any };
 }
 export interface Page {
-	readonly content?: string | undefined;
-	readonly name?: string | undefined;
-	readonly subpages?: Page[] | undefined;
+	readonly content?: string;
+	readonly name?: string;
+	readonly subpages?: Page[];
 }
 export interface Parameter {
-	readonly defaultValue?: string | undefined;
-	readonly maxValue?: string | undefined;
-	readonly minValue?: string | undefined;
-	readonly path?: string | undefined;
-	readonly pattern?: string | undefined;
-	readonly repeated?: boolean | undefined;
-	readonly required?: boolean | undefined;
-	readonly type?: string | undefined;
+	readonly defaultValue?: string;
+	readonly maxValue?: string;
+	readonly minValue?: string;
+	readonly path?: string;
+	readonly pattern?: string;
+	readonly repeated?: boolean;
+	readonly required?: boolean;
+	readonly type?: string;
 }
 export interface ParameterConfig {
-	readonly constraintConfig?: FieldConstraintConfig | undefined;
-	readonly isRepeated?: boolean | undefined;
-	readonly isRequired?: boolean | undefined;
-	readonly paramName?: string | undefined;
-	readonly type?: string | undefined;
+	readonly constraintConfig?: FieldConstraintConfig;
+	readonly isRepeated?: boolean;
+	readonly isRequired?: boolean;
+	readonly paramName?: string;
+	readonly type?: string;
 }
 export interface ParameterRule {
-	readonly parameters?: Parameter[] | undefined;
-	readonly selector?: string | undefined;
+	readonly parameters?: Parameter[];
+	readonly selector?: string;
 }
 export interface QueryOptimization {
-	readonly aggregatedLabels?: string[] | undefined;
-	readonly flags?: string | undefined;
+	readonly aggregatedLabels?: string[];
+	readonly flags?: string;
 }
 export interface Quota {
-	readonly groups?: QuotaGroup[] | undefined;
-	readonly limits?: QuotaLimit[] | undefined;
-	readonly metricRules?: MetricRule[] | undefined;
-	readonly rules?: QuotaRule[] | undefined;
-	readonly supportedLocations?: string | undefined;
-	readonly supportedRegions?: string | undefined;
+	readonly groups?: QuotaGroup[];
+	readonly limits?: QuotaLimit[];
+	readonly metricRules?: MetricRule[];
+	readonly rules?: QuotaRule[];
+	readonly supportedLocations?: string;
+	readonly supportedRegions?: string;
 }
 export interface QuotaGroup {
-	readonly billable?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly limits?: QuotaLimit[] | undefined;
-	readonly name?: string | undefined;
+	readonly billable?: boolean;
+	readonly description?: string;
+	readonly limits?: QuotaLimit[];
+	readonly name?: string;
 }
 export interface QuotaGroupMapping {
-	readonly cost?: number | undefined;
-	readonly group?: string | undefined;
+	readonly cost?: number;
+	readonly group?: string;
 }
 export interface QuotaLimit {
-	readonly defaultLimit?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly duration?: string | undefined;
-	readonly enablePerCellRateLimiting?: boolean | undefined;
-	readonly freeTier?: string | undefined;
-	readonly isConcurrent?: boolean | undefined;
-	readonly isFixed?: boolean | undefined;
-	readonly isPrecise?: boolean | undefined;
-	readonly launchStage?: string | undefined;
-	readonly limitBy?: string | undefined;
-	readonly maxLimit?: string | undefined;
-	readonly metric?: string | undefined;
-	readonly name?: string | undefined;
-	readonly supportedLocations?: string | undefined;
-	readonly supportedRegions?: string | undefined;
-	readonly unit?: string | undefined;
-	readonly values?: { [P in string]: string } | undefined;
-	readonly visibilityRestriction?: string | undefined;
+	readonly defaultLimit?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly duration?: string;
+	readonly enablePerCellRateLimiting?: boolean;
+	readonly freeTier?: string;
+	readonly isConcurrent?: boolean;
+	readonly isFixed?: boolean;
+	readonly isPrecise?: boolean;
+	readonly launchStage?: string;
+	readonly limitBy?: string;
+	readonly maxLimit?: string;
+	readonly metric?: string;
+	readonly name?: string;
+	readonly supportedLocations?: string;
+	readonly supportedRegions?: string;
+	readonly unit?: string;
+	readonly values?: { [P in string]: string };
+	readonly visibilityRestriction?: string;
 }
 export interface QuotaRule {
-	readonly disableQuota?: boolean | undefined;
-	readonly groups?: QuotaGroupMapping[] | undefined;
-	readonly selector?: string | undefined;
+	readonly disableQuota?: boolean;
+	readonly groups?: QuotaGroupMapping[];
+	readonly selector?: string;
 }
 export interface QuotaUserOverrideConfig {
-	readonly allowedProjects?: string[] | undefined;
-	readonly deniedProjects?: string[] | undefined;
+	readonly allowedProjects?: string[];
+	readonly deniedProjects?: string[];
 }
 export interface ReservedRange {
-	readonly end?: number | undefined;
-	readonly start?: number | undefined;
+	readonly end?: number;
+	readonly start?: number;
 }
 export interface ServiceAccount {
-	readonly email?: string | undefined;
-	readonly role?: string | undefined;
-	readonly tag?: string | undefined;
+	readonly email?: string;
+	readonly role?: string;
+	readonly tag?: string;
 }
 export interface ServiceDescriptorProto {
-	readonly method?: MethodDescriptorProto[] | undefined;
-	readonly name?: string | undefined;
-	readonly options?: ServiceOptions | undefined;
-	readonly stream?: StreamDescriptorProto[] | undefined;
+	readonly method?: MethodDescriptorProto[];
+	readonly name?: string;
+	readonly options?: ServiceOptions;
+	readonly stream?: StreamDescriptorProto[];
 }
 export interface ServiceOptions {
-	readonly ccDefaultInvocableApi?: boolean | undefined;
-	readonly deprecated?: boolean | undefined;
-	readonly failureDetectionDelay?: number | undefined;
-	readonly multicastStub?: boolean | undefined;
-	readonly uninterpretedOption?: UninterpretedOption[] | undefined;
+	readonly ccDefaultInvocableApi?: boolean;
+	readonly deprecated?: boolean;
+	readonly failureDetectionDelay?: number;
+	readonly multicastStub?: boolean;
+	readonly uninterpretedOption?: UninterpretedOption[];
 }
 export interface SourceCodeInfo {
-	readonly location?: Location[] | undefined;
+	readonly location?: Location[];
 }
 export interface SourceContext {
-	readonly fileName?: string | undefined;
+	readonly fileName?: string;
 }
 export interface StreamDescriptorProto {
-	readonly clientMessageType?: string | undefined;
-	readonly name?: string | undefined;
-	readonly options?: StreamOptions | undefined;
-	readonly serverMessageType?: string | undefined;
+	readonly clientMessageType?: string;
+	readonly name?: string;
+	readonly options?: StreamOptions;
+	readonly serverMessageType?: string;
 }
 export interface StreamOptions {
-	readonly clientInitialTokens?: string | undefined;
-	readonly clientLogging?: number | undefined;
-	readonly deadline?: number | undefined;
-	readonly deprecated?: boolean | undefined;
-	readonly endUserCredsRequested?: boolean | undefined;
-	readonly failFast?: boolean | undefined;
-	readonly logLevel?: string | undefined;
-	readonly securityLabel?: string | undefined;
-	readonly securityLevel?: string | undefined;
-	readonly serverInitialTokens?: string | undefined;
-	readonly serverLogging?: number | undefined;
-	readonly tokenUnit?: string | undefined;
-	readonly uninterpretedOption?: UninterpretedOption[] | undefined;
+	readonly clientInitialTokens?: string;
+	readonly clientLogging?: number;
+	readonly deadline?: number;
+	readonly deprecated?: boolean;
+	readonly endUserCredsRequested?: boolean;
+	readonly failFast?: boolean;
+	readonly logLevel?: string;
+	readonly securityLabel?: string;
+	readonly securityLevel?: string;
+	readonly serverInitialTokens?: string;
+	readonly serverLogging?: number;
+	readonly tokenUnit?: string;
+	readonly uninterpretedOption?: UninterpretedOption[];
 }
 export interface StrictParsingRule {
-	readonly hideMergeConflictValues?: boolean | undefined;
-	readonly resolveMultipleValuesForSingularFields?: boolean | undefined;
-	readonly selector?: string | undefined;
-	readonly strictParsingChecks?: string[] | undefined;
+	readonly hideMergeConflictValues?: boolean;
+	readonly resolveMultipleValuesForSingularFields?: boolean;
+	readonly selector?: string;
+	readonly strictParsingChecks?: string[];
 }
 export interface SubcodeConfig {
-	readonly fractionRedirected?: number | undefined;
-	readonly subcode?: string | undefined;
+	readonly fractionRedirected?: number;
+	readonly subcode?: string;
 }
 export interface TemplateInfo {
-	readonly assignmentDirection?: string | undefined;
-	readonly path?: string | undefined;
+	readonly assignmentDirection?: string;
+	readonly path?: string;
 }
 export interface TemplateInvocation {
-	readonly args?: string[] | undefined;
-	readonly output?: string | undefined;
-	readonly template?: string | undefined;
+	readonly args?: string[];
+	readonly output?: string;
+	readonly template?: string;
 }
 export interface TemplateReference {
-	readonly info?: { [P in string]: TemplateInfo } | undefined;
-	readonly name?: string | undefined;
+	readonly info?: { [P in string]: TemplateInfo };
+	readonly name?: string;
 }
 export interface TemplateSource {
-	readonly content?: string | undefined;
-	readonly path?: string | undefined;
+	readonly content?: string;
+	readonly path?: string;
 }
 export interface Tex {
-	readonly backendProtoDescriptors?: FileDescriptorSet | undefined;
-	readonly backendProtoTranslation?: BackendProtoTranslation | undefined;
-	readonly etag?: ETag | undefined;
-	readonly frontendProtoDescriptors?: FileDescriptorSet | undefined;
-	readonly parameters?: ParameterRule[] | undefined;
-	readonly strictParsingRules?: StrictParsingRule[] | undefined;
-	readonly templateSources?: TemplateSource[] | undefined;
+	readonly backendProtoDescriptors?: FileDescriptorSet;
+	readonly backendProtoTranslation?: BackendProtoTranslation;
+	readonly etag?: ETag;
+	readonly frontendProtoDescriptors?: FileDescriptorSet;
+	readonly parameters?: ParameterRule[];
+	readonly strictParsingRules?: StrictParsingRule[];
+	readonly templateSources?: TemplateSource[];
 }
 export interface TrustedTesterList {
-	readonly gaiaGroupIds?: string[] | undefined;
+	readonly gaiaGroupIds?: string[];
 }
 export interface UberMintRequirements {
-	readonly mode?: string | undefined;
-	readonly rolloutRatio?: number | undefined;
+	readonly mode?: string;
+	readonly rolloutRatio?: number;
 }
 export interface UberProxyAuthRequirements {
-	readonly mode?: string | undefined;
-	readonly uptickDatPolicy?: string | undefined;
+	readonly mode?: string;
+	readonly uptickDatPolicy?: string;
 }
 export interface UninterpretedOption {
-	readonly aggregateValue?: string | undefined;
-	readonly doubleValue?: number | undefined;
-	readonly identifierValue?: string | undefined;
-	readonly name?: NamePart[] | undefined;
-	readonly negativeIntValue?: string | undefined;
-	readonly positiveIntValue?: string | undefined;
-	readonly stringValue?: string | undefined;
+	readonly aggregateValue?: string;
+	readonly doubleValue?: number;
+	readonly identifierValue?: string;
+	readonly name?: NamePart[];
+	readonly negativeIntValue?: string;
+	readonly positiveIntValue?: string;
+	readonly stringValue?: string;
 }
 export interface UpgradedOption {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface Usage {
-	readonly activationHooks?: string[] | undefined;
-	readonly deactivationHooks?: string[] | undefined;
-	readonly dependsOnServices?: string[] | undefined;
-	readonly producerNotificationChannel?: string | undefined;
-	readonly requirements?: string[] | undefined;
-	readonly rules?: UsageRule[] | undefined;
-	readonly serviceAccess?: string | undefined;
-	readonly serviceIdentity?: GoogleApiServiceIdentity | undefined;
+	readonly activationHooks?: string[];
+	readonly deactivationHooks?: string[];
+	readonly dependsOnServices?: string[];
+	readonly producerNotificationChannel?: string;
+	readonly requirements?: string[];
+	readonly rules?: UsageRule[];
+	readonly serviceAccess?: string;
+	readonly serviceIdentity?: GoogleApiServiceIdentity;
 }
 export interface UsageManagerConfig {
-	readonly apiName?: string | undefined;
-	readonly rules?: UsageManagerConfigRule[] | undefined;
+	readonly apiName?: string;
+	readonly rules?: UsageManagerConfigRule[];
 }
 export interface UsageManagerConfigRule {
-	readonly address?: string | undefined;
-	readonly apiVersion?: string | undefined;
-	readonly quotaBucketName?: string | undefined;
-	readonly selector?: string | undefined;
+	readonly address?: string;
+	readonly apiVersion?: string;
+	readonly quotaBucketName?: string;
+	readonly selector?: string;
 }
 export interface UsageRule {
-	readonly allowUnregisteredCalls?: boolean | undefined;
-	readonly defaultApiKey?: string | undefined;
-	readonly selector?: string | undefined;
-	readonly skipServiceControl?: boolean | undefined;
-	readonly skipServiceControlForStubby?: boolean | undefined;
-	readonly skipStreamingApiMetrics?: boolean | undefined;
+	readonly allowUnregisteredCalls?: boolean;
+	readonly defaultApiKey?: string;
+	readonly selector?: string;
+	readonly skipServiceControl?: boolean;
+	readonly skipServiceControlForStubby?: boolean;
+	readonly skipStreamingApiMetrics?: boolean;
 }
 export default {
 	VirtualService: VirtualService,

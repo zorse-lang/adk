@@ -22,11 +22,11 @@ export interface GroupComponentInputs {
 	readonly PlayDomain: string;
 	readonly PushDomain: string;
 	readonly Region: string;
-	readonly App?: (string | undefined) | undefined;
-	readonly Callback?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly LazyPull?: (boolean | undefined) | undefined;
+	readonly App?: string | undefined;
+	readonly Callback?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly LazyPull?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export default {

@@ -17,8 +17,8 @@ export interface addressesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: AddressProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class locations_orders
 	extends ArmResource<locations_ordersComponentInputs>
@@ -38,8 +38,8 @@ export interface locations_ordersComponentOutputs {
 }
 export interface locations_ordersComponentInputs {
 	readonly name: string;
-	readonly properties?: OrderProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: OrderProperties;
+	readonly systemData?: SystemData;
 }
 export class orderItems extends ArmResource<orderItemsComponentInputs> implements orderItemsComponentOutputs {
 	constructor(entity: ADKEntity, options: orderItemsComponentInputs) {
@@ -58,8 +58,8 @@ export interface orderItemsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: OrderItemProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AdditionalConfiguration {
 	readonly hierarchyInformation: HierarchyInformation;
@@ -67,167 +67,164 @@ export interface AdditionalConfiguration {
 }
 export interface AddressDetails {
 	readonly forwardAddress: AddressProperties;
-	readonly returnAddress?: AddressProperties | undefined;
+	readonly returnAddress?: AddressProperties;
 }
 export interface AddressProperties {
-	readonly addressValidationStatus?: ("Ambiguous" | "Invalid" | "Valid") | undefined;
+	readonly addressValidationStatus?: "Ambiguous" | "Invalid" | "Valid";
 	readonly contactDetails: ContactDetails;
-	readonly shippingAddress?: ShippingAddress | undefined;
+	readonly shippingAddress?: ShippingAddress;
 }
 export interface ConfigurationDeviceDetails {
-	readonly deviceDetails?: DeviceDetails[] | undefined;
-	readonly displayInfo?: DisplayInfo | undefined;
-	readonly hierarchyInformation?: HierarchyInformation | undefined;
-	readonly identificationType?: ("NotSupported" | "SerialNumber") | undefined;
-	readonly quantity?: number | undefined;
+	readonly deviceDetails?: DeviceDetails[];
+	readonly displayInfo?: DisplayInfo;
+	readonly hierarchyInformation?: HierarchyInformation;
+	readonly identificationType?: "NotSupported" | "SerialNumber";
+	readonly quantity?: number;
 }
 export interface ContactDetails {
 	readonly contactName: string;
 	readonly emailList: string[];
-	readonly mobile?: string | undefined;
+	readonly mobile?: string;
 	readonly phone: string;
-	readonly phoneExtension?: string | undefined;
+	readonly phoneExtension?: string;
 }
 export interface DeviceDetails {
-	readonly managementResourceId?: string | undefined;
-	readonly managementResourceTenantId?: string | undefined;
-	readonly serialNumber?: string | undefined;
+	readonly managementResourceId?: string;
+	readonly managementResourceTenantId?: string;
+	readonly serialNumber?: string;
 }
 export interface DisplayInfo {
-	readonly configurationDisplayName?: string | undefined;
-	readonly productFamilyDisplayName?: string | undefined;
+	readonly configurationDisplayName?: string;
+	readonly productFamilyDisplayName?: string;
 }
 export interface EncryptionPreferences {
-	readonly doubleEncryptionStatus?: ("Disabled" | "Enabled") | undefined;
+	readonly doubleEncryptionStatus?: "Disabled" | "Enabled";
 }
 export interface ErrorAdditionalInfo {
-	readonly info?: any | undefined;
-	readonly type?: string | undefined;
+	readonly info?: any;
+	readonly type?: string;
 }
 export interface ErrorDetail {
-	readonly additionalInfo?: ErrorAdditionalInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ErrorDetail[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: ErrorAdditionalInfo[];
+	readonly code?: string;
+	readonly details?: ErrorDetail[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface ForwardShippingDetails {
-	readonly carrierDisplayName?: string | undefined;
-	readonly carrierName?: string | undefined;
-	readonly trackingId?: string | undefined;
-	readonly trackingUrl?: string | undefined;
+	readonly carrierDisplayName?: string;
+	readonly carrierName?: string;
+	readonly trackingId?: string;
+	readonly trackingUrl?: string;
 }
 export interface HierarchyInformation {
-	readonly configurationName?: string | undefined;
-	readonly productFamilyName?: string | undefined;
-	readonly productLineName?: string | undefined;
-	readonly productName?: string | undefined;
+	readonly configurationName?: string;
+	readonly productFamilyName?: string;
+	readonly productLineName?: string;
+	readonly productName?: string;
 }
 export interface ManagementResourcePreferences {
-	readonly preferredManagementResourceId?: string | undefined;
+	readonly preferredManagementResourceId?: string;
 }
 export interface NotificationPreference {
 	readonly sendNotification: boolean;
 	readonly stageName: "Delivered" | "Shipped";
 }
 export interface OrderItemDetails {
-	readonly cancellationReason?: string | undefined;
-	readonly cancellationStatus?: ("Cancellable" | "CancellableWithFee" | "NotCancellable") | undefined;
-	readonly currentStage?: StageDetails | undefined;
-	readonly deletionStatus?: ("Allowed" | "NotAllowed") | undefined;
-	readonly error?: ErrorDetail | undefined;
-	readonly forwardShippingDetails?: ForwardShippingDetails | undefined;
-	readonly managementRpDetailsList?: ResourceProviderDetails[] | undefined;
-	readonly notificationEmailList?: string[] | undefined;
-	readonly orderItemMode?: ("Default" | "DoNotFulfill") | undefined;
-	readonly orderItemStageHistory?: StageDetails[] | undefined;
+	readonly cancellationReason?: string;
+	readonly cancellationStatus?: "Cancellable" | "CancellableWithFee" | "NotCancellable";
+	readonly currentStage?: StageDetails;
+	readonly deletionStatus?: "Allowed" | "NotAllowed";
+	readonly error?: ErrorDetail;
+	readonly forwardShippingDetails?: ForwardShippingDetails;
+	readonly managementRpDetailsList?: ResourceProviderDetails[];
+	readonly notificationEmailList?: string[];
+	readonly orderItemMode?: "Default" | "DoNotFulfill";
+	readonly orderItemStageHistory?: StageDetails[];
 	readonly orderItemType: "Purchase" | "Rental";
-	readonly preferences?: Preferences | undefined;
+	readonly preferences?: Preferences;
 	readonly productDetails: ProductDetails;
-	readonly returnReason?: string | undefined;
-	readonly returnStatus?: ("NotReturnable" | "Returnable" | "ReturnableWithFee") | undefined;
-	readonly reverseShippingDetails?: ReverseShippingDetails | undefined;
+	readonly returnReason?: string;
+	readonly returnStatus?: "NotReturnable" | "Returnable" | "ReturnableWithFee";
+	readonly reverseShippingDetails?: ReverseShippingDetails;
 }
 export interface OrderItemProperties {
 	readonly addressDetails: AddressDetails;
 	readonly orderId: string;
 	readonly orderItemDetails: OrderItemDetails;
-	readonly startTime?: string | undefined;
+	readonly startTime?: string;
 }
 export interface OrderProperties {
-	readonly currentStage?: StageDetails | undefined;
-	readonly orderItemIds?: string[] | undefined;
-	readonly orderMode?: ("Default" | "DoNotFulfill") | undefined;
-	readonly orderStageHistory?: StageDetails[] | undefined;
+	readonly currentStage?: StageDetails;
+	readonly orderItemIds?: string[];
+	readonly orderMode?: "Default" | "DoNotFulfill";
+	readonly orderStageHistory?: StageDetails[];
 }
 export interface Preferences {
-	readonly encryptionPreferences?: EncryptionPreferences | undefined;
-	readonly managementResourcePreferences?: ManagementResourcePreferences | undefined;
-	readonly notificationPreferences?: NotificationPreference[] | undefined;
-	readonly transportPreferences?: TransportPreferences | undefined;
+	readonly encryptionPreferences?: EncryptionPreferences;
+	readonly managementResourcePreferences?: ManagementResourcePreferences;
+	readonly notificationPreferences?: NotificationPreference[];
+	readonly transportPreferences?: TransportPreferences;
 }
 export interface ProductDetails {
-	readonly childConfigurationDeviceDetails?: ConfigurationDeviceDetails[] | undefined;
-	readonly displayInfo?: DisplayInfo | undefined;
+	readonly childConfigurationDeviceDetails?: ConfigurationDeviceDetails[];
+	readonly displayInfo?: DisplayInfo;
 	readonly hierarchyInformation: HierarchyInformation;
-	readonly identificationType?: ("NotSupported" | "SerialNumber") | undefined;
-	readonly optInAdditionalConfigurations?: AdditionalConfiguration[] | undefined;
-	readonly parentDeviceDetails?: DeviceDetails | undefined;
-	readonly productDoubleEncryptionStatus?: ("Disabled" | "Enabled") | undefined;
+	readonly identificationType?: "NotSupported" | "SerialNumber";
+	readonly optInAdditionalConfigurations?: AdditionalConfiguration[];
+	readonly parentDeviceDetails?: DeviceDetails;
+	readonly productDoubleEncryptionStatus?: "Disabled" | "Enabled";
 }
 export interface ResourceProviderDetails {
-	readonly resourceProviderNamespace?: string | undefined;
+	readonly resourceProviderNamespace?: string;
 }
 export interface ReverseShippingDetails {
-	readonly carrierDisplayName?: string | undefined;
-	readonly carrierName?: string | undefined;
-	readonly sasKeyForLabel?: string | undefined;
-	readonly trackingId?: string | undefined;
-	readonly trackingUrl?: string | undefined;
+	readonly carrierDisplayName?: string;
+	readonly carrierName?: string;
+	readonly sasKeyForLabel?: string;
+	readonly trackingId?: string;
+	readonly trackingUrl?: string;
 }
 export interface ShippingAddress {
-	readonly addressType?: ("Commercial" | "None" | "Residential") | undefined;
-	readonly city?: string | undefined;
-	readonly companyName?: string | undefined;
+	readonly addressType?: "Commercial" | "None" | "Residential";
+	readonly city?: string;
+	readonly companyName?: string;
 	readonly country: string;
-	readonly postalCode?: string | undefined;
-	readonly stateOrProvince?: string | undefined;
+	readonly postalCode?: string;
+	readonly stateOrProvince?: string;
 	readonly streetAddress1: string;
-	readonly streetAddress2?: string | undefined;
-	readonly streetAddress3?: string | undefined;
-	readonly zipExtendedCode?: string | undefined;
+	readonly streetAddress2?: string;
+	readonly streetAddress3?: string;
+	readonly zipExtendedCode?: string;
 }
 export interface StageDetails {
-	readonly displayName?: string | undefined;
+	readonly displayName?: string;
 	readonly stageName?:
-		| (
-				| "Cancelled"
-				| "Confirmed"
-				| "Delivered"
-				| "InReview"
-				| "InUse"
-				| "Placed"
-				| "ReadyToShip"
-				| "ReturnCompleted"
-				| "ReturnInitiated"
-				| "ReturnPickedUp"
-				| "ReturnedToMicrosoft"
-				| "Shipped"
-		  )
-		| undefined;
-	readonly stageStatus?: ("Cancelled" | "Cancelling" | "Failed" | "InProgress" | "None" | "Succeeded") | undefined;
-	readonly startTime?: string | undefined;
+		| "Cancelled"
+		| "Confirmed"
+		| "Delivered"
+		| "InReview"
+		| "InUse"
+		| "Placed"
+		| "ReadyToShip"
+		| "ReturnCompleted"
+		| "ReturnInitiated"
+		| "ReturnPickedUp"
+		| "ReturnedToMicrosoft"
+		| "Shipped";
+	readonly stageStatus?: "Cancelled" | "Cancelling" | "Failed" | "InProgress" | "None" | "Succeeded";
+	readonly startTime?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TransportPreferences {
 	readonly preferredShipmentType: "CustomerManaged" | "MicrosoftManaged";

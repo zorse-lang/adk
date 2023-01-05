@@ -14,29 +14,29 @@ export interface iotAppsComponentOutputs {
 	readonly type: "Microsoft.IoTCentral/iotApps";
 }
 export interface iotAppsComponentInputs {
-	readonly identity?: SystemAssignedServiceIdentity | undefined;
+	readonly identity?: SystemAssignedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AppProperties | undefined;
+	readonly properties?: AppProperties;
 	readonly sku: AppSkuInfo;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export interface AppProperties {
-	readonly applicationId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly state?: ("created" | "suspended") | undefined;
-	readonly subdomain?: string | undefined;
-	readonly template?: string | undefined;
+	readonly applicationId?: string;
+	readonly displayName?: string;
+	readonly state?: "created" | "suspended";
+	readonly subdomain?: string;
+	readonly template?: string;
 }
 export interface AppSkuInfo {
 	readonly name: "ST0" | "ST1" | "ST2";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SystemAssignedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned";
 }
 export default {

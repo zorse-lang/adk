@@ -14,11 +14,11 @@ export interface dnszonesComponentOutputs {
 	readonly type: "Microsoft.Network/dnszones";
 }
 export interface dnszonesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ZoneProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ZoneProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class dnszones_A extends ArmResource<dnszones_AComponentInputs> implements dnszones_AComponentOutputs {
 	constructor(entity: ADKEntity, options: dnszones_AComponentInputs) {
@@ -34,9 +34,9 @@ export interface dnszones_AComponentOutputs {
 	readonly type: "Microsoft.Network/dnszones/A";
 }
 export interface dnszones_AComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class dnszones_AAAA extends ArmResource<dnszones_AAAAComponentInputs> implements dnszones_AAAAComponentOutputs {
 	constructor(entity: ADKEntity, options: dnszones_AAAAComponentInputs) {
@@ -52,9 +52,9 @@ export interface dnszones_AAAAComponentOutputs {
 	readonly type: "Microsoft.Network/dnszones/AAAA";
 }
 export interface dnszones_AAAAComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class dnszones_CNAME extends ArmResource<dnszones_CNAMEComponentInputs> implements dnszones_CNAMEComponentOutputs {
 	constructor(entity: ADKEntity, options: dnszones_CNAMEComponentInputs) {
@@ -70,9 +70,9 @@ export interface dnszones_CNAMEComponentOutputs {
 	readonly type: "Microsoft.Network/dnszones/CNAME";
 }
 export interface dnszones_CNAMEComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class dnszones_MX extends ArmResource<dnszones_MXComponentInputs> implements dnszones_MXComponentOutputs {
 	constructor(entity: ADKEntity, options: dnszones_MXComponentInputs) {
@@ -88,9 +88,9 @@ export interface dnszones_MXComponentOutputs {
 	readonly type: "Microsoft.Network/dnszones/MX";
 }
 export interface dnszones_MXComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class dnszones_NS extends ArmResource<dnszones_NSComponentInputs> implements dnszones_NSComponentOutputs {
 	constructor(entity: ADKEntity, options: dnszones_NSComponentInputs) {
@@ -106,9 +106,9 @@ export interface dnszones_NSComponentOutputs {
 	readonly type: "Microsoft.Network/dnszones/NS";
 }
 export interface dnszones_NSComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class dnszones_PTR extends ArmResource<dnszones_PTRComponentInputs> implements dnszones_PTRComponentOutputs {
 	constructor(entity: ADKEntity, options: dnszones_PTRComponentInputs) {
@@ -124,9 +124,9 @@ export interface dnszones_PTRComponentOutputs {
 	readonly type: "Microsoft.Network/dnszones/PTR";
 }
 export interface dnszones_PTRComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class dnszones_SOA extends ArmResource<dnszones_SOAComponentInputs> implements dnszones_SOAComponentOutputs {
 	constructor(entity: ADKEntity, options: dnszones_SOAComponentInputs) {
@@ -142,9 +142,9 @@ export interface dnszones_SOAComponentOutputs {
 	readonly type: "Microsoft.Network/dnszones/SOA";
 }
 export interface dnszones_SOAComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class dnszones_SRV extends ArmResource<dnszones_SRVComponentInputs> implements dnszones_SRVComponentOutputs {
 	constructor(entity: ADKEntity, options: dnszones_SRVComponentInputs) {
@@ -160,9 +160,9 @@ export interface dnszones_SRVComponentOutputs {
 	readonly type: "Microsoft.Network/dnszones/SRV";
 }
 export interface dnszones_SRVComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class dnszones_TXT extends ArmResource<dnszones_TXTComponentInputs> implements dnszones_TXTComponentOutputs {
 	constructor(entity: ADKEntity, options: dnszones_TXTComponentInputs) {
@@ -178,67 +178,67 @@ export interface dnszones_TXTComponentOutputs {
 	readonly type: "Microsoft.Network/dnszones/TXT";
 }
 export interface dnszones_TXTComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export interface AaaaRecord {
-	readonly ipv6Address?: string | undefined;
+	readonly ipv6Address?: string;
 }
 export interface ARecord {
-	readonly ipv4Address?: string | undefined;
+	readonly ipv4Address?: string;
 }
 export interface CnameRecord {
-	readonly cname?: string | undefined;
+	readonly cname?: string;
 }
 export interface MxRecord {
-	readonly exchange?: string | undefined;
-	readonly preference?: number | undefined;
+	readonly exchange?: string;
+	readonly preference?: number;
 }
 export interface NsRecord {
-	readonly nsdname?: string | undefined;
+	readonly nsdname?: string;
 }
 export interface PtrRecord {
-	readonly ptrdname?: string | undefined;
+	readonly ptrdname?: string;
 }
 export interface RecordSetProperties {
-	readonly AAAARecords?: AaaaRecord[] | undefined;
-	readonly ARecords?: ARecord[] | undefined;
-	readonly CNAMERecord?: CnameRecord | undefined;
-	readonly fqdn?: string | undefined;
-	readonly MXRecords?: MxRecord[] | undefined;
-	readonly NSRecords?: NsRecord[] | undefined;
-	readonly PTRRecords?: PtrRecord[] | undefined;
-	readonly SOARecord?: SoaRecord | undefined;
-	readonly SRVRecords?: SrvRecord[] | undefined;
-	readonly TTL?: number | undefined;
-	readonly TXTRecords?: TxtRecord[] | undefined;
+	readonly AAAARecords?: AaaaRecord[];
+	readonly ARecords?: ARecord[];
+	readonly CNAMERecord?: CnameRecord;
+	readonly fqdn?: string;
+	readonly MXRecords?: MxRecord[];
+	readonly NSRecords?: NsRecord[];
+	readonly PTRRecords?: PtrRecord[];
+	readonly SOARecord?: SoaRecord;
+	readonly SRVRecords?: SrvRecord[];
+	readonly TTL?: number;
+	readonly TXTRecords?: TxtRecord[];
 }
 export interface SoaRecord {
-	readonly email?: string | undefined;
-	readonly expireTime?: number | undefined;
-	readonly host?: string | undefined;
-	readonly minimumTTL?: number | undefined;
-	readonly refreshTime?: number | undefined;
-	readonly retryTime?: number | undefined;
-	readonly serialNumber?: number | undefined;
+	readonly email?: string;
+	readonly expireTime?: number;
+	readonly host?: string;
+	readonly minimumTTL?: number;
+	readonly refreshTime?: number;
+	readonly retryTime?: number;
+	readonly serialNumber?: number;
 }
 export interface SrvRecord {
-	readonly port?: number | undefined;
-	readonly priority?: number | undefined;
-	readonly target?: string | undefined;
-	readonly weight?: number | undefined;
+	readonly port?: number;
+	readonly priority?: number;
+	readonly target?: string;
+	readonly weight?: number;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TxtRecord {
-	readonly value?: string[] | undefined;
+	readonly value?: string[];
 }
 export interface ZoneProperties {
-	readonly maxNumberOfRecordSets?: number | undefined;
-	readonly maxNumberOfRecordsPerRecordSet?: number | undefined;
-	readonly numberOfRecordSets?: number | undefined;
+	readonly maxNumberOfRecordSets?: number;
+	readonly maxNumberOfRecordsPerRecordSet?: number;
+	readonly numberOfRecordSets?: number;
 }
 export default {
 	dnszones: dnszones,

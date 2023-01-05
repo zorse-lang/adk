@@ -14,13 +14,13 @@ export interface registriesComponentOutputs {
 	readonly type: "Microsoft.ContainerRegistry/registries";
 }
 export interface registriesComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
+	readonly identity?: IdentityProperties;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RegistryProperties | undefined;
+	readonly properties?: RegistryProperties;
 	readonly sku: Sku;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class registries_exportPipelines
 	extends ArmResource<registries_exportPipelinesComponentInputs>
@@ -45,11 +45,11 @@ export interface registries_exportPipelinesComponentOutputs {
 	readonly type: "Microsoft.ContainerRegistry/registries/exportPipelines";
 }
 export interface registries_exportPipelinesComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: IdentityProperties;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ExportPipelineProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ExportPipelineProperties;
+	readonly systemData?: SystemData;
 }
 export class registries_importPipelines
 	extends ArmResource<registries_importPipelinesComponentInputs>
@@ -74,11 +74,11 @@ export interface registries_importPipelinesComponentOutputs {
 	readonly type: "Microsoft.ContainerRegistry/registries/importPipelines";
 }
 export interface registries_importPipelinesComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: IdentityProperties;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ImportPipelineProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ImportPipelineProperties;
+	readonly systemData?: SystemData;
 }
 export class registries_pipelineRuns
 	extends ArmResource<registries_pipelineRunsComponentInputs>
@@ -98,8 +98,8 @@ export interface registries_pipelineRunsComponentOutputs {
 }
 export interface registries_pipelineRunsComponentInputs {
 	readonly name: string;
-	readonly properties?: PipelineRunProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PipelineRunProperties;
+	readonly systemData?: SystemData;
 }
 export class registries_privateEndpointConnections
 	extends ArmResource<registries_privateEndpointConnectionsComponentInputs>
@@ -125,8 +125,8 @@ export interface registries_privateEndpointConnectionsComponentOutputs {
 }
 export interface registries_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class registries_replications
 	extends ArmResource<registries_replicationsComponentInputs>
@@ -147,9 +147,9 @@ export interface registries_replicationsComponentOutputs {
 export interface registries_replicationsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ReplicationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ReplicationProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class registries_webhooks
 	extends ArmResource<registries_webhooksComponentInputs>
@@ -170,9 +170,9 @@ export interface registries_webhooksComponentOutputs {
 export interface registries_webhooksComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WebhookPropertiesCreateParametersOrWebhookProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: WebhookCreateParametersTags | undefined;
+	readonly properties?: WebhookPropertiesCreateParametersOrWebhookProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: WebhookCreateParametersTags;
 }
 export function listCredentials(resource: registries): RegistryListCredentialsResult {
 	if (resource.apiVersion !== "2019-12-01-preview") {
@@ -193,276 +193,272 @@ export function listEvents(resource: registries_webhooks): EventListResult {
 	throw new Error("not implemented");
 }
 export interface Actor {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface EncryptionProperty {
-	readonly keyVaultProperties?: KeyVaultProperties | undefined;
-	readonly status?: ("disabled" | "enabled") | undefined;
+	readonly keyVaultProperties?: KeyVaultProperties;
+	readonly status?: "disabled" | "enabled";
 }
 export interface Event {
-	readonly eventRequestMessage?: EventRequestMessage | undefined;
-	readonly eventResponseMessage?: EventResponseMessage | undefined;
-	readonly id?: string | undefined;
+	readonly eventRequestMessage?: EventRequestMessage;
+	readonly eventResponseMessage?: EventResponseMessage;
+	readonly id?: string;
 }
 export interface EventContent {
-	readonly action?: string | undefined;
-	readonly actor?: Actor | undefined;
-	readonly id?: string | undefined;
-	readonly request?: Request | undefined;
-	readonly source?: Source | undefined;
-	readonly target?: Target | undefined;
-	readonly timestamp?: string | undefined;
+	readonly action?: string;
+	readonly actor?: Actor;
+	readonly id?: string;
+	readonly request?: Request;
+	readonly source?: Source;
+	readonly target?: Target;
+	readonly timestamp?: string;
 }
 export interface EventListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: Event[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: Event[];
 }
 export interface EventRequestMessage {
-	readonly content?: EventContent | undefined;
-	readonly headers?: EventRequestMessageHeaders | undefined;
-	readonly method?: string | undefined;
-	readonly requestUri?: string | undefined;
-	readonly version?: string | undefined;
+	readonly content?: EventContent;
+	readonly headers?: EventRequestMessageHeaders;
+	readonly method?: string;
+	readonly requestUri?: string;
+	readonly version?: string;
 }
 export interface EventRequestMessageHeaders {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface EventResponseMessage {
-	readonly content?: string | undefined;
-	readonly headers?: EventResponseMessageHeaders | undefined;
-	readonly reasonPhrase?: string | undefined;
-	readonly statusCode?: string | undefined;
-	readonly version?: string | undefined;
+	readonly content?: string;
+	readonly headers?: EventResponseMessageHeaders;
+	readonly reasonPhrase?: string;
+	readonly statusCode?: string;
+	readonly version?: string;
 }
 export interface EventResponseMessageHeaders {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ExportPipelineProperties {
-	readonly options?:
-		| ("ContinueOnErrors" | "DeleteSourceBlobOnSuccess" | "OverwriteBlobs" | "OverwriteTags"[])
-		| undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly options?: "ContinueOnErrors" | "DeleteSourceBlobOnSuccess" | "OverwriteBlobs" | "OverwriteTags"[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly target: ExportPipelineTargetProperties;
 }
 export interface ExportPipelineTargetProperties {
 	readonly keyVaultUri: string;
-	readonly type?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly type?: string;
+	readonly uri?: string;
 }
 export interface IdentityProperties {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: IdentityPropertiesUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: IdentityPropertiesUserAssignedIdentities;
 }
 export interface IdentityPropertiesUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserIdentityProperties | undefined;
+	readonly [key: string]: UserIdentityProperties;
 }
 export interface ImportPipelineProperties {
-	readonly options?:
-		| ("ContinueOnErrors" | "DeleteSourceBlobOnSuccess" | "OverwriteBlobs" | "OverwriteTags"[])
-		| undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly options?: "ContinueOnErrors" | "DeleteSourceBlobOnSuccess" | "OverwriteBlobs" | "OverwriteTags"[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly source: ImportPipelineSourceProperties;
-	readonly trigger?: PipelineTriggerProperties | undefined;
+	readonly trigger?: PipelineTriggerProperties;
 }
 export interface ImportPipelineSourceProperties {
 	readonly keyVaultUri: string;
-	readonly type?: "AzureStorageBlobContainer" | undefined;
-	readonly uri?: string | undefined;
+	readonly type?: "AzureStorageBlobContainer";
+	readonly uri?: string;
 }
 export interface IPRule {
-	readonly action?: "Allow" | undefined;
+	readonly action?: "Allow";
 	readonly value: string;
 }
 export interface KeyVaultProperties {
-	readonly identity?: string | undefined;
-	readonly keyIdentifier?: string | undefined;
-	readonly keyRotationEnabled?: boolean | undefined;
-	readonly lastKeyRotationTimestamp?: string | undefined;
-	readonly versionedKeyIdentifier?: string | undefined;
+	readonly identity?: string;
+	readonly keyIdentifier?: string;
+	readonly keyRotationEnabled?: boolean;
+	readonly lastKeyRotationTimestamp?: string;
+	readonly versionedKeyIdentifier?: string;
 }
 export interface NetworkRuleSet {
 	readonly defaultAction: "Allow" | "Deny";
-	readonly ipRules?: IPRule[] | undefined;
-	readonly virtualNetworkRules?: VirtualNetworkRule[] | undefined;
+	readonly ipRules?: IPRule[];
+	readonly virtualNetworkRules?: VirtualNetworkRule[];
 }
 export interface PipelineRunProperties {
-	readonly forceUpdateTag?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly request?: PipelineRunRequest | undefined;
-	readonly response?: PipelineRunResponse | undefined;
+	readonly forceUpdateTag?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly request?: PipelineRunRequest;
+	readonly response?: PipelineRunResponse;
 }
 export interface PipelineRunRequest {
-	readonly artifacts?: string[] | undefined;
-	readonly catalogDigest?: string | undefined;
-	readonly pipelineResourceId?: string | undefined;
-	readonly source?: PipelineRunSourceProperties | undefined;
-	readonly target?: PipelineRunTargetProperties | undefined;
+	readonly artifacts?: string[];
+	readonly catalogDigest?: string;
+	readonly pipelineResourceId?: string;
+	readonly source?: PipelineRunSourceProperties;
+	readonly target?: PipelineRunTargetProperties;
 }
 export interface PipelineRunResponse {
-	readonly catalogDigest?: string | undefined;
-	readonly finishTime?: string | undefined;
-	readonly importedArtifacts?: string[] | undefined;
-	readonly pipelineRunErrorMessage?: string | undefined;
-	readonly progress?: ProgressProperties | undefined;
-	readonly source?: ImportPipelineSourceProperties | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly target?: ExportPipelineTargetProperties | undefined;
-	readonly trigger?: PipelineTriggerDescriptor | undefined;
+	readonly catalogDigest?: string;
+	readonly finishTime?: string;
+	readonly importedArtifacts?: string[];
+	readonly pipelineRunErrorMessage?: string;
+	readonly progress?: ProgressProperties;
+	readonly source?: ImportPipelineSourceProperties;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly target?: ExportPipelineTargetProperties;
+	readonly trigger?: PipelineTriggerDescriptor;
 }
 export interface PipelineRunSourceProperties {
-	readonly name?: string | undefined;
-	readonly type?: "AzureStorageBlob" | undefined;
+	readonly name?: string;
+	readonly type?: "AzureStorageBlob";
 }
 export interface PipelineRunTargetProperties {
-	readonly name?: string | undefined;
-	readonly type?: "AzureStorageBlob" | undefined;
+	readonly name?: string;
+	readonly type?: "AzureStorageBlob";
 }
 export interface PipelineSourceTriggerDescriptor {
-	readonly timestamp?: string | undefined;
+	readonly timestamp?: string;
 }
 export interface PipelineSourceTriggerProperties {
 	readonly status: "Disabled" | "Enabled";
 }
 export interface PipelineTriggerDescriptor {
-	readonly sourceTrigger?: PipelineSourceTriggerDescriptor | undefined;
+	readonly sourceTrigger?: PipelineSourceTriggerDescriptor;
 }
 export interface PipelineTriggerProperties {
-	readonly sourceTrigger?: PipelineSourceTriggerProperties | undefined;
+	readonly sourceTrigger?: PipelineSourceTriggerProperties;
 }
 export interface Policies {
-	readonly quarantinePolicy?: QuarantinePolicy | undefined;
-	readonly retentionPolicy?: RetentionPolicy | undefined;
-	readonly trustPolicy?: TrustPolicy | undefined;
+	readonly quarantinePolicy?: QuarantinePolicy;
+	readonly retentionPolicy?: RetentionPolicy;
+	readonly trustPolicy?: TrustPolicy;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: ("None" | "Recreate") | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: "None" | "Recreate";
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface ProgressProperties {
-	readonly percentage?: string | undefined;
+	readonly percentage?: string;
 }
 export interface QuarantinePolicy {
-	readonly status?: ("disabled" | "enabled") | undefined;
+	readonly status?: "disabled" | "enabled";
 }
 export interface RegistryListCredentialsResult {
-	readonly passwords?: RegistryPassword[] | undefined;
-	readonly username?: string | undefined;
+	readonly passwords?: RegistryPassword[];
+	readonly username?: string;
 }
 export interface RegistryPassword {
-	readonly name?: "password" | undefined;
-	readonly value?: string | undefined;
+	readonly name?: "password";
+	readonly value?: string;
 }
 export interface RegistryProperties {
-	readonly adminUserEnabled?: boolean | undefined;
-	readonly creationDate?: string | undefined;
-	readonly dataEndpointEnabled?: boolean | undefined;
-	readonly dataEndpointHostNames?: string[] | undefined;
-	readonly encryption?: EncryptionProperty | undefined;
-	readonly loginServer?: string | undefined;
-	readonly networkRuleBypassOptions?: ("AzureServices" | "None") | undefined;
-	readonly networkRuleSet?: NetworkRuleSet | undefined;
-	readonly policies?: Policies | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly status?: Status | undefined;
+	readonly adminUserEnabled?: boolean;
+	readonly creationDate?: string;
+	readonly dataEndpointEnabled?: boolean;
+	readonly dataEndpointHostNames?: string[];
+	readonly encryption?: EncryptionProperty;
+	readonly loginServer?: string;
+	readonly networkRuleBypassOptions?: "AzureServices" | "None";
+	readonly networkRuleSet?: NetworkRuleSet;
+	readonly policies?: Policies;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly status?: Status;
 }
 export interface ReplicationProperties {
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly regionEndpointEnabled?: boolean | undefined;
-	readonly status?: Status | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly regionEndpointEnabled?: boolean;
+	readonly status?: Status;
 }
 export interface Request {
-	readonly addr?: string | undefined;
-	readonly host?: string | undefined;
-	readonly id?: string | undefined;
-	readonly method?: string | undefined;
-	readonly useragent?: string | undefined;
+	readonly addr?: string;
+	readonly host?: string;
+	readonly id?: string;
+	readonly method?: string;
+	readonly useragent?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RetentionPolicy {
-	readonly days?: number | undefined;
-	readonly lastUpdatedTime?: string | undefined;
-	readonly status?: ("disabled" | "enabled") | undefined;
+	readonly days?: number;
+	readonly lastUpdatedTime?: string;
+	readonly status?: "disabled" | "enabled";
 }
 export interface Sku {
 	readonly name: "Basic" | "Classic" | "Premium" | "Standard";
-	readonly tier?: ("Basic" | "Classic" | "Premium" | "Standard") | undefined;
+	readonly tier?: "Basic" | "Classic" | "Premium" | "Standard";
 }
 export interface Source {
-	readonly addr?: string | undefined;
-	readonly instanceID?: string | undefined;
+	readonly addr?: string;
+	readonly instanceID?: string;
 }
 export interface Status {
-	readonly displayStatus?: string | undefined;
-	readonly message?: string | undefined;
-	readonly timestamp?: string | undefined;
+	readonly displayStatus?: string;
+	readonly message?: string;
+	readonly timestamp?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Target {
-	readonly digest?: string | undefined;
-	readonly length?: number | undefined;
-	readonly mediaType?: string | undefined;
-	readonly name?: string | undefined;
-	readonly repository?: string | undefined;
-	readonly size?: number | undefined;
-	readonly tag?: string | undefined;
-	readonly url?: string | undefined;
-	readonly version?: string | undefined;
+	readonly digest?: string;
+	readonly length?: number;
+	readonly mediaType?: string;
+	readonly name?: string;
+	readonly repository?: string;
+	readonly size?: number;
+	readonly tag?: string;
+	readonly url?: string;
+	readonly version?: string;
 }
 export interface TrustPolicy {
-	readonly status?: ("disabled" | "enabled") | undefined;
-	readonly type?: "Notary" | undefined;
+	readonly status?: "disabled" | "enabled";
+	readonly type?: "Notary";
 }
 export interface UserIdentityProperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface VirtualNetworkRule {
-	readonly action?: "Allow" | undefined;
+	readonly action?: "Allow";
 	readonly id: string;
 }
 export interface WebhookCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WebhookPropertiesCreateParametersCustomHeaders {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WebhookPropertiesCreateParametersOrWebhookProperties {
 	readonly actions: "chart_delete" | "chart_push" | "delete" | "push" | "quarantine"[];
-	readonly customHeaders?: WebhookPropertiesCreateParametersCustomHeaders | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly scope?: string | undefined;
+	readonly customHeaders?: WebhookPropertiesCreateParametersCustomHeaders;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly scope?: string;
 	readonly serviceUri: string;
-	readonly status?: ("disabled" | "enabled") | undefined;
+	readonly status?: "disabled" | "enabled";
 }
 export default {
 	registries: registries,

@@ -13,22 +13,22 @@ export interface RestoreTaskComponentInputs {
 	readonly BackupPlanId: string;
 	readonly DestinationEndpointInstanceType: string;
 	readonly RestoreTaskName: string;
-	readonly BackupGatewayId?: (number | undefined) | undefined;
-	readonly BackupSetId?: (string | undefined) | undefined;
-	readonly DestinationEndpointDatabaseName?: (string | undefined) | undefined;
-	readonly DestinationEndpointInstanceID?: (string | undefined) | undefined;
-	readonly DestinationEndpointIP?: (string | undefined) | undefined;
-	readonly DestinationEndpointOracleSID?: (string | undefined) | undefined;
-	readonly DestinationEndpointPassword?: (string | undefined) | undefined;
-	readonly DestinationEndpointPort?: (number | undefined) | undefined;
-	readonly DestinationEndpointRegion?: (string | undefined) | undefined;
-	readonly DestinationEndpointUserName?: (string | undefined) | undefined;
-	readonly DuplicateConflict?: (string | undefined) | undefined;
-	readonly RestoreDir?: (string | undefined) | undefined;
-	readonly RestoreHome?: (string | undefined) | undefined;
-	readonly RestoreObjects?: (string | undefined) | undefined;
-	readonly RestoreTime?: (number | undefined) | undefined;
-	readonly StartTask?: (boolean | undefined) | undefined;
+	readonly BackupGatewayId?: number | undefined;
+	readonly BackupSetId?: string | undefined;
+	readonly DestinationEndpointDatabaseName?: string | undefined;
+	readonly DestinationEndpointInstanceID?: string | undefined;
+	readonly DestinationEndpointIP?: string | undefined;
+	readonly DestinationEndpointOracleSID?: string | undefined;
+	readonly DestinationEndpointPassword?: string | undefined;
+	readonly DestinationEndpointPort?: number | undefined;
+	readonly DestinationEndpointRegion?: string | undefined;
+	readonly DestinationEndpointUserName?: string | undefined;
+	readonly DuplicateConflict?: string | undefined;
+	readonly RestoreDir?: string | undefined;
+	readonly RestoreHome?: string | undefined;
+	readonly RestoreObjects?: string | undefined;
+	readonly RestoreTime?: number | undefined;
+	readonly StartTask?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export default {

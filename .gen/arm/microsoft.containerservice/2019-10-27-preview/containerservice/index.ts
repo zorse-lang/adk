@@ -19,24 +19,24 @@ export interface openShiftManagedClustersComponentOutputs {
 export interface openShiftManagedClustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly plan?: PurchasePlan | undefined;
-	readonly properties?: OpenShiftManagedClusterProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly plan?: PurchasePlan;
+	readonly properties?: OpenShiftManagedClusterProperties;
+	readonly tags?: ResourceTags;
 }
 export interface NetworkProfile {
-	readonly managementSubnetCidr?: string | undefined;
-	readonly vnetCidr?: string | undefined;
-	readonly vnetId?: string | undefined;
+	readonly managementSubnetCidr?: string;
+	readonly vnetCidr?: string;
+	readonly vnetId?: string;
 }
 export interface OpenShiftAPIProperties {
-	readonly privateApiServer?: boolean | undefined;
+	readonly privateApiServer?: boolean;
 }
 export interface OpenShiftManagedClusterAgentPoolProfile {
 	readonly count: number;
 	readonly name: string;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly role?: ("compute" | "infra") | undefined;
-	readonly subnetCidr?: string | undefined;
+	readonly osType?: "Linux" | "Windows";
+	readonly role?: "compute" | "infra";
+	readonly subnetCidr?: string;
 	readonly vmSize:
 		| "Standard_D16s_v3"
 		| "Standard_D2s_v3"
@@ -73,17 +73,17 @@ export interface OpenShiftManagedClusterAgentPoolProfile {
 		| "Standard_L8s";
 }
 export interface OpenShiftManagedClusterAuthProfile {
-	readonly identityProviders?: OpenShiftManagedClusterIdentityProvider[] | undefined;
+	readonly identityProviders?: OpenShiftManagedClusterIdentityProvider[];
 }
 export interface OpenShiftManagedClusterBaseIdentityProvider {}
 export interface OpenShiftManagedClusterIdentityProvider {
-	readonly name?: string | undefined;
-	readonly provider?: OpenShiftManagedClusterBaseIdentityProvider | undefined;
+	readonly name?: string;
+	readonly provider?: OpenShiftManagedClusterBaseIdentityProvider;
 }
 export interface OpenShiftManagedClusterMasterPoolProfile {
-	readonly apiProperties?: OpenShiftAPIProperties | undefined;
+	readonly apiProperties?: OpenShiftAPIProperties;
 	readonly count: number;
-	readonly subnetCidr?: string | undefined;
+	readonly subnetCidr?: string;
 	readonly vmSize:
 		| "Standard_D16s_v3"
 		| "Standard_D2s_v3"
@@ -120,36 +120,36 @@ export interface OpenShiftManagedClusterMasterPoolProfile {
 		| "Standard_L8s";
 }
 export interface OpenShiftManagedClusterMonitorProfile {
-	readonly enabled?: boolean | undefined;
-	readonly workspaceResourceID?: string | undefined;
+	readonly enabled?: boolean;
+	readonly workspaceResourceID?: string;
 }
 export interface OpenShiftManagedClusterProperties {
-	readonly agentPoolProfiles?: OpenShiftManagedClusterAgentPoolProfile[] | undefined;
-	readonly authProfile?: OpenShiftManagedClusterAuthProfile | undefined;
-	readonly clusterVersion?: string | undefined;
-	readonly fqdn?: string | undefined;
-	readonly masterPoolProfile?: OpenShiftManagedClusterMasterPoolProfile | undefined;
-	readonly monitorProfile?: OpenShiftManagedClusterMonitorProfile | undefined;
-	readonly networkProfile?: NetworkProfile | undefined;
+	readonly agentPoolProfiles?: OpenShiftManagedClusterAgentPoolProfile[];
+	readonly authProfile?: OpenShiftManagedClusterAuthProfile;
+	readonly clusterVersion?: string;
+	readonly fqdn?: string;
+	readonly masterPoolProfile?: OpenShiftManagedClusterMasterPoolProfile;
+	readonly monitorProfile?: OpenShiftManagedClusterMonitorProfile;
+	readonly networkProfile?: NetworkProfile;
 	readonly openShiftVersion: string;
-	readonly provisioningState?: string | undefined;
-	readonly publicHostname?: string | undefined;
-	readonly refreshCluster?: boolean | undefined;
-	readonly routerProfiles?: OpenShiftRouterProfile[] | undefined;
+	readonly provisioningState?: string;
+	readonly publicHostname?: string;
+	readonly refreshCluster?: boolean;
+	readonly routerProfiles?: OpenShiftRouterProfile[];
 }
 export interface OpenShiftRouterProfile {
-	readonly fqdn?: string | undefined;
-	readonly name?: string | undefined;
-	readonly publicSubdomain?: string | undefined;
+	readonly fqdn?: string;
+	readonly name?: string;
+	readonly publicSubdomain?: string;
 }
 export interface PurchasePlan {
-	readonly name?: string | undefined;
-	readonly product?: string | undefined;
-	readonly promotionCode?: string | undefined;
-	readonly publisher?: string | undefined;
+	readonly name?: string;
+	readonly product?: string;
+	readonly promotionCode?: string;
+	readonly publisher?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	openShiftManagedClusters: openShiftManagedClusters,

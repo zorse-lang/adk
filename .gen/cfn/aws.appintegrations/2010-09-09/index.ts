@@ -19,8 +19,8 @@ export interface DataIntegrationComponentInputs {
 	readonly Name: string;
 	readonly ScheduleConfig: ScheduleConfig;
 	readonly SourceURI: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class EventIntegration
@@ -41,8 +41,8 @@ export interface EventIntegrationComponentInputs {
 	readonly EventBridgeBus: string;
 	readonly EventFilter: EventFilter;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface ScheduleConfig {
@@ -54,11 +54,11 @@ export interface EventFilter {
 	readonly Source: string;
 }
 export interface EventIntegrationAssociation {
-	readonly ClientAssociationMetadata?: (Metadata[] | undefined) | undefined;
-	readonly ClientId?: (string | undefined) | undefined;
-	readonly EventBridgeRuleName?: (string | undefined) | undefined;
-	readonly EventIntegrationAssociationArn?: (string | undefined) | undefined;
-	readonly EventIntegrationAssociationId?: (string | undefined) | undefined;
+	readonly ClientAssociationMetadata?: Metadata[] | undefined;
+	readonly ClientId?: string | undefined;
+	readonly EventBridgeRuleName?: string | undefined;
+	readonly EventIntegrationAssociationArn?: string | undefined;
+	readonly EventIntegrationAssociationId?: string | undefined;
 }
 export interface Metadata {
 	readonly Key: string;

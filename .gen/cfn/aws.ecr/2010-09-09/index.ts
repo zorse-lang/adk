@@ -13,10 +13,10 @@ export interface PublicRepositoryComponentOutputs {
 	readonly Arn: string;
 }
 export interface PublicRepositoryComponentInputs {
-	readonly RepositoryCatalogData?: (RepositoryCatalogData | undefined) | undefined;
-	readonly RepositoryName?: (string | undefined) | undefined;
-	readonly RepositoryPolicyText?: (any | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly RepositoryCatalogData?: RepositoryCatalogData | undefined;
+	readonly RepositoryName?: string | undefined;
+	readonly RepositoryPolicyText?: any | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class PullThroughCacheRule
@@ -29,8 +29,8 @@ export class PullThroughCacheRule
 }
 export interface PullThroughCacheRuleComponentOutputs {}
 export interface PullThroughCacheRuleComponentInputs {
-	readonly EcrRepositoryPrefix?: (string | undefined) | undefined;
-	readonly UpstreamRegistryUrl?: (string | undefined) | undefined;
+	readonly EcrRepositoryPrefix?: string | undefined;
+	readonly UpstreamRegistryUrl?: string | undefined;
 	readonly LogicalId: string;
 }
 export class RegistryPolicy extends CfnResource<RegistryPolicyComponentInputs> implements RegistryPolicyComponentOutputs {
@@ -74,21 +74,21 @@ export interface RepositoryComponentOutputs {
 	readonly RepositoryUri: string;
 }
 export interface RepositoryComponentInputs {
-	readonly EncryptionConfiguration?: (EncryptionConfiguration | undefined) | undefined;
-	readonly ImageScanningConfiguration?: (ImageScanningConfiguration | undefined) | undefined;
-	readonly ImageTagMutability?: (string | undefined) | undefined;
-	readonly LifecyclePolicy?: (LifecyclePolicy | undefined) | undefined;
-	readonly RepositoryName?: (string | undefined) | undefined;
-	readonly RepositoryPolicyText?: (any | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly EncryptionConfiguration?: EncryptionConfiguration | undefined;
+	readonly ImageScanningConfiguration?: ImageScanningConfiguration | undefined;
+	readonly ImageTagMutability?: string | undefined;
+	readonly LifecyclePolicy?: LifecyclePolicy | undefined;
+	readonly RepositoryName?: string | undefined;
+	readonly RepositoryPolicyText?: any | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface RepositoryCatalogData {
-	readonly AboutText?: (string | undefined) | undefined;
-	readonly Architectures?: (string[] | undefined) | undefined;
-	readonly OperatingSystems?: (string[] | undefined) | undefined;
-	readonly RepositoryDescription?: (string | undefined) | undefined;
-	readonly UsageText?: (string | undefined) | undefined;
+	readonly AboutText?: string | undefined;
+	readonly Architectures?: string[] | undefined;
+	readonly OperatingSystems?: string[] | undefined;
+	readonly RepositoryDescription?: string | undefined;
+	readonly UsageText?: string | undefined;
 }
 export interface ReplicationConfiguration {
 	readonly Rules: ReplicationRule[];
@@ -99,7 +99,7 @@ export interface ReplicationDestination {
 }
 export interface ReplicationRule {
 	readonly Destinations: ReplicationDestination[];
-	readonly RepositoryFilters?: (RepositoryFilter[] | undefined) | undefined;
+	readonly RepositoryFilters?: RepositoryFilter[] | undefined;
 }
 export interface RepositoryFilter {
 	readonly Filter: string;
@@ -107,14 +107,14 @@ export interface RepositoryFilter {
 }
 export interface EncryptionConfiguration {
 	readonly EncryptionType: string;
-	readonly KmsKey?: (string | undefined) | undefined;
+	readonly KmsKey?: string | undefined;
 }
 export interface ImageScanningConfiguration {
-	readonly ScanOnPush?: (boolean | undefined) | undefined;
+	readonly ScanOnPush?: boolean | undefined;
 }
 export interface LifecyclePolicy {
-	readonly LifecyclePolicyText?: (string | undefined) | undefined;
-	readonly RegistryId?: (string | undefined) | undefined;
+	readonly LifecyclePolicyText?: string | undefined;
+	readonly RegistryId?: string | undefined;
 }
 export default {
 	PublicRepository: PublicRepository,

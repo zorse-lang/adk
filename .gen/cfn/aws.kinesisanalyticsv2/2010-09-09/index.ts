@@ -9,13 +9,13 @@ export interface ApplicationComponentOutputs {}
 export interface ApplicationComponentInputs {
 	readonly RuntimeEnvironment: string;
 	readonly ServiceExecutionRole: string;
-	readonly ApplicationConfiguration?: (ApplicationConfiguration | undefined) | undefined;
-	readonly ApplicationDescription?: (string | undefined) | undefined;
-	readonly ApplicationMaintenanceConfiguration?: (ApplicationMaintenanceConfiguration | undefined) | undefined;
-	readonly ApplicationMode?: (string | undefined) | undefined;
-	readonly ApplicationName?: (string | undefined) | undefined;
-	readonly RunConfiguration?: (RunConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ApplicationConfiguration?: ApplicationConfiguration | undefined;
+	readonly ApplicationDescription?: string | undefined;
+	readonly ApplicationMaintenanceConfiguration?: ApplicationMaintenanceConfiguration | undefined;
+	readonly ApplicationMode?: string | undefined;
+	readonly ApplicationName?: string | undefined;
+	readonly RunConfiguration?: RunConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ApplicationCloudWatchLoggingOption
@@ -65,20 +65,20 @@ export interface ApplicationCodeConfiguration {
 	readonly CodeContentType: string;
 }
 export interface ApplicationConfiguration {
-	readonly ApplicationCodeConfiguration?: (ApplicationCodeConfiguration | undefined) | undefined;
-	readonly ApplicationSnapshotConfiguration?: (ApplicationSnapshotConfiguration | undefined) | undefined;
-	readonly EnvironmentProperties?: (EnvironmentProperties | undefined) | undefined;
-	readonly FlinkApplicationConfiguration?: (FlinkApplicationConfiguration | undefined) | undefined;
-	readonly SqlApplicationConfiguration?: (SqlApplicationConfiguration | undefined) | undefined;
-	readonly VpcConfigurations?: (VpcConfiguration[] | undefined) | undefined;
-	readonly ZeppelinApplicationConfiguration?: (ZeppelinApplicationConfiguration | undefined) | undefined;
+	readonly ApplicationCodeConfiguration?: ApplicationCodeConfiguration | undefined;
+	readonly ApplicationSnapshotConfiguration?: ApplicationSnapshotConfiguration | undefined;
+	readonly EnvironmentProperties?: EnvironmentProperties | undefined;
+	readonly FlinkApplicationConfiguration?: FlinkApplicationConfiguration | undefined;
+	readonly SqlApplicationConfiguration?: SqlApplicationConfiguration | undefined;
+	readonly VpcConfigurations?: VpcConfiguration[] | undefined;
+	readonly ZeppelinApplicationConfiguration?: ZeppelinApplicationConfiguration | undefined;
 }
 export interface ApplicationMaintenanceConfiguration {
 	readonly ApplicationMaintenanceWindowStartTime: string;
 }
 export interface ApplicationRestoreConfiguration {
 	readonly ApplicationRestoreType: string;
-	readonly SnapshotName?: (string | undefined) | undefined;
+	readonly SnapshotName?: string | undefined;
 }
 export interface ApplicationSnapshotConfiguration {
 	readonly SnapshotsEnabled: boolean;
@@ -88,61 +88,61 @@ export interface CSVMappingParameters {
 	readonly RecordRowDelimiter: string;
 }
 export interface CatalogConfiguration {
-	readonly GlueDataCatalogConfiguration?: (GlueDataCatalogConfiguration | undefined) | undefined;
+	readonly GlueDataCatalogConfiguration?: GlueDataCatalogConfiguration | undefined;
 }
 export interface CheckpointConfiguration {
-	readonly CheckpointInterval?: (number | undefined) | undefined;
-	readonly CheckpointingEnabled?: (boolean | undefined) | undefined;
+	readonly CheckpointInterval?: number | undefined;
+	readonly CheckpointingEnabled?: boolean | undefined;
 	readonly ConfigurationType: string;
-	readonly MinPauseBetweenCheckpoints?: (number | undefined) | undefined;
+	readonly MinPauseBetweenCheckpoints?: number | undefined;
 }
 export interface CodeContent {
-	readonly S3ContentLocation?: (S3ContentLocation | undefined) | undefined;
-	readonly TextContent?: (string | undefined) | undefined;
-	readonly ZipFileContent?: (string | undefined) | undefined;
+	readonly S3ContentLocation?: S3ContentLocation | undefined;
+	readonly TextContent?: string | undefined;
+	readonly ZipFileContent?: string | undefined;
 }
 export interface CustomArtifactConfiguration {
 	readonly ArtifactType: string;
-	readonly MavenReference?: (MavenReference | undefined) | undefined;
-	readonly S3ContentLocation?: (S3ContentLocation | undefined) | undefined;
+	readonly MavenReference?: MavenReference | undefined;
+	readonly S3ContentLocation?: S3ContentLocation | undefined;
 }
 export interface DeployAsApplicationConfiguration {
 	readonly S3ContentLocation: S3ContentBaseLocation;
 }
 export interface EnvironmentProperties {
-	readonly PropertyGroups?: (PropertyGroup[] | undefined) | undefined;
+	readonly PropertyGroups?: PropertyGroup[] | undefined;
 }
 export interface FlinkApplicationConfiguration {
-	readonly CheckpointConfiguration?: (CheckpointConfiguration | undefined) | undefined;
-	readonly MonitoringConfiguration?: (MonitoringConfiguration | undefined) | undefined;
-	readonly ParallelismConfiguration?: (ParallelismConfiguration | undefined) | undefined;
+	readonly CheckpointConfiguration?: CheckpointConfiguration | undefined;
+	readonly MonitoringConfiguration?: MonitoringConfiguration | undefined;
+	readonly ParallelismConfiguration?: ParallelismConfiguration | undefined;
 }
 export interface FlinkRunConfiguration {
-	readonly AllowNonRestoredState?: (boolean | undefined) | undefined;
+	readonly AllowNonRestoredState?: boolean | undefined;
 }
 export interface GlueDataCatalogConfiguration {
-	readonly DatabaseARN?: (string | undefined) | undefined;
+	readonly DatabaseARN?: string | undefined;
 }
 export interface Input {
-	readonly InputParallelism?: (InputParallelism | undefined) | undefined;
-	readonly InputProcessingConfiguration?: (InputProcessingConfiguration | undefined) | undefined;
+	readonly InputParallelism?: InputParallelism | undefined;
+	readonly InputProcessingConfiguration?: InputProcessingConfiguration | undefined;
 	readonly InputSchema: InputSchema;
-	readonly KinesisFirehoseInput?: (KinesisFirehoseInput | undefined) | undefined;
-	readonly KinesisStreamsInput?: (KinesisStreamsInput | undefined) | undefined;
+	readonly KinesisFirehoseInput?: KinesisFirehoseInput | undefined;
+	readonly KinesisStreamsInput?: KinesisStreamsInput | undefined;
 	readonly NamePrefix: string;
 }
 export interface InputLambdaProcessor {
 	readonly ResourceARN: string;
 }
 export interface InputParallelism {
-	readonly Count?: (number | undefined) | undefined;
+	readonly Count?: number | undefined;
 }
 export interface InputProcessingConfiguration {
-	readonly InputLambdaProcessor?: (InputLambdaProcessor | undefined) | undefined;
+	readonly InputLambdaProcessor?: InputLambdaProcessor | undefined;
 }
 export interface InputSchema {
 	readonly RecordColumns: RecordColumn[];
-	readonly RecordEncoding?: (string | undefined) | undefined;
+	readonly RecordEncoding?: string | undefined;
 	readonly RecordFormat: RecordFormat;
 }
 export interface JSONMappingParameters {
@@ -155,8 +155,8 @@ export interface KinesisStreamsInput {
 	readonly ResourceARN: string;
 }
 export interface MappingParameters {
-	readonly CSVMappingParameters?: (CSVMappingParameters | undefined) | undefined;
-	readonly JSONMappingParameters?: (JSONMappingParameters | undefined) | undefined;
+	readonly CSVMappingParameters?: CSVMappingParameters | undefined;
+	readonly JSONMappingParameters?: JSONMappingParameters | undefined;
 }
 export interface MavenReference {
 	readonly ArtifactId: string;
@@ -165,62 +165,62 @@ export interface MavenReference {
 }
 export interface MonitoringConfiguration {
 	readonly ConfigurationType: string;
-	readonly LogLevel?: (string | undefined) | undefined;
-	readonly MetricsLevel?: (string | undefined) | undefined;
+	readonly LogLevel?: string | undefined;
+	readonly MetricsLevel?: string | undefined;
 }
 export interface ParallelismConfiguration {
-	readonly AutoScalingEnabled?: (boolean | undefined) | undefined;
+	readonly AutoScalingEnabled?: boolean | undefined;
 	readonly ConfigurationType: string;
-	readonly Parallelism?: (number | undefined) | undefined;
-	readonly ParallelismPerKPU?: (number | undefined) | undefined;
+	readonly Parallelism?: number | undefined;
+	readonly ParallelismPerKPU?: number | undefined;
 }
 export interface PropertyGroup {
-	readonly PropertyGroupId?: (string | undefined) | undefined;
-	readonly PropertyMap?: ({ [key: string]: string } | undefined) | undefined;
+	readonly PropertyGroupId?: string | undefined;
+	readonly PropertyMap?: { [key: string]: string } | undefined;
 }
 export interface RecordColumn {
-	readonly Mapping?: (string | undefined) | undefined;
+	readonly Mapping?: string | undefined;
 	readonly Name: string;
 	readonly SqlType: string;
 }
 export interface RecordFormat {
-	readonly MappingParameters?: (MappingParameters | undefined) | undefined;
+	readonly MappingParameters?: MappingParameters | undefined;
 	readonly RecordFormatType: string;
 }
 export interface RunConfiguration {
-	readonly ApplicationRestoreConfiguration?: (ApplicationRestoreConfiguration | undefined) | undefined;
-	readonly FlinkRunConfiguration?: (FlinkRunConfiguration | undefined) | undefined;
+	readonly ApplicationRestoreConfiguration?: ApplicationRestoreConfiguration | undefined;
+	readonly FlinkRunConfiguration?: FlinkRunConfiguration | undefined;
 }
 export interface S3ContentBaseLocation {
-	readonly BasePath?: (string | undefined) | undefined;
+	readonly BasePath?: string | undefined;
 	readonly BucketARN: string;
 }
 export interface S3ContentLocation {
 	readonly BucketARN: string;
 	readonly FileKey: string;
-	readonly ObjectVersion?: (string | undefined) | undefined;
+	readonly ObjectVersion?: string | undefined;
 }
 export interface SqlApplicationConfiguration {
-	readonly Inputs?: (Input[] | undefined) | undefined;
+	readonly Inputs?: Input[] | undefined;
 }
 export interface VpcConfiguration {
 	readonly SecurityGroupIds: string[];
 	readonly SubnetIds: string[];
 }
 export interface ZeppelinApplicationConfiguration {
-	readonly CatalogConfiguration?: (CatalogConfiguration | undefined) | undefined;
-	readonly CustomArtifactsConfiguration?: (CustomArtifactConfiguration[] | undefined) | undefined;
-	readonly DeployAsApplicationConfiguration?: (DeployAsApplicationConfiguration | undefined) | undefined;
-	readonly MonitoringConfiguration?: (ZeppelinMonitoringConfiguration | undefined) | undefined;
+	readonly CatalogConfiguration?: CatalogConfiguration | undefined;
+	readonly CustomArtifactsConfiguration?: CustomArtifactConfiguration[] | undefined;
+	readonly DeployAsApplicationConfiguration?: DeployAsApplicationConfiguration | undefined;
+	readonly MonitoringConfiguration?: ZeppelinMonitoringConfiguration | undefined;
 }
 export interface ZeppelinMonitoringConfiguration {
-	readonly LogLevel?: (string | undefined) | undefined;
+	readonly LogLevel?: string | undefined;
 }
 export interface CloudWatchLoggingOption {
 	readonly LogStreamARN: string;
 }
 export interface DestinationSchema {
-	readonly RecordFormatType?: (string | undefined) | undefined;
+	readonly RecordFormatType?: string | undefined;
 }
 export interface KinesisFirehoseOutput {
 	readonly ResourceARN: string;
@@ -233,19 +233,19 @@ export interface LambdaOutput {
 }
 export interface Output {
 	readonly DestinationSchema: DestinationSchema;
-	readonly KinesisFirehoseOutput?: (KinesisFirehoseOutput | undefined) | undefined;
-	readonly KinesisStreamsOutput?: (KinesisStreamsOutput | undefined) | undefined;
-	readonly LambdaOutput?: (LambdaOutput | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly KinesisFirehoseOutput?: KinesisFirehoseOutput | undefined;
+	readonly KinesisStreamsOutput?: KinesisStreamsOutput | undefined;
+	readonly LambdaOutput?: LambdaOutput | undefined;
+	readonly Name?: string | undefined;
 }
 export interface ReferenceDataSource {
 	readonly ReferenceSchema: ReferenceSchema;
-	readonly S3ReferenceDataSource?: (S3ReferenceDataSource | undefined) | undefined;
-	readonly TableName?: (string | undefined) | undefined;
+	readonly S3ReferenceDataSource?: S3ReferenceDataSource | undefined;
+	readonly TableName?: string | undefined;
 }
 export interface ReferenceSchema {
 	readonly RecordColumns: RecordColumn[];
-	readonly RecordEncoding?: (string | undefined) | undefined;
+	readonly RecordEncoding?: string | undefined;
 	readonly RecordFormat: RecordFormat;
 }
 export interface S3ReferenceDataSource {

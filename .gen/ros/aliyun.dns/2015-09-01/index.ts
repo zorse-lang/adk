@@ -17,9 +17,9 @@ export interface DomainComponentOutputs {
 }
 export interface DomainComponentInputs {
 	readonly DomainName: any | string;
-	readonly GroupId?: (any | string) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly GroupId?: any | string;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class DomainGroup extends RosResource<DomainGroupComponentInputs> implements DomainGroupComponentOutputs {
@@ -49,13 +49,13 @@ export interface DomainRecordComponentInputs {
 	readonly RR: string;
 	readonly Type: string;
 	readonly Value: string;
-	readonly Line?: (string | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly TTL?: (number | undefined) | undefined;
+	readonly Line?: string | undefined;
+	readonly Priority?: number | undefined;
+	readonly TTL?: number | undefined;
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export default {

@@ -14,9 +14,9 @@ export interface alertsComponentOutputs {
 	readonly type: "Microsoft.CostManagement/alerts";
 }
 export interface alertsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: AlertProperties | undefined;
+	readonly properties?: AlertProperties;
 }
 export class exports extends ArmResource<exportsComponentInputs> implements exportsComponentOutputs {
 	constructor(entity: ADKEntity, options: exportsComponentInputs) {
@@ -32,9 +32,9 @@ export interface exportsComponentOutputs {
 	readonly type: "Microsoft.CostManagement/exports";
 }
 export interface exportsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: ExportProperties | undefined;
+	readonly properties?: ExportProperties;
 }
 export class views extends ArmResource<viewsComponentInputs> implements viewsComponentOutputs {
 	constructor(entity: ADKEntity, options: viewsComponentInputs) {
@@ -50,94 +50,94 @@ export interface viewsComponentOutputs {
 	readonly type: "Microsoft.CostManagement/views";
 }
 export interface viewsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: ViewProperties | undefined;
+	readonly properties?: ViewProperties;
 }
 export interface AlertProperties {
-	readonly closeTime?: string | undefined;
-	readonly costEntityId?: string | undefined;
-	readonly creationTime?: string | undefined;
-	readonly definition?: AlertPropertiesDefinition | undefined;
-	readonly description?: string | undefined;
-	readonly details?: AlertPropertiesDetails | undefined;
-	readonly modificationTime?: string | undefined;
-	readonly source?: ("Preset" | "User") | undefined;
-	readonly status?: ("Active" | "Dismissed" | "None" | "Overridden" | "Resolved") | undefined;
-	readonly statusModificationTime?: string | undefined;
-	readonly statusModificationUserName?: string | undefined;
+	readonly closeTime?: string;
+	readonly costEntityId?: string;
+	readonly creationTime?: string;
+	readonly definition?: AlertPropertiesDefinition;
+	readonly description?: string;
+	readonly details?: AlertPropertiesDetails;
+	readonly modificationTime?: string;
+	readonly source?: "Preset" | "User";
+	readonly status?: "Active" | "Dismissed" | "None" | "Overridden" | "Resolved";
+	readonly statusModificationTime?: string;
+	readonly statusModificationUserName?: string;
 }
 export interface AlertPropertiesDefinition {
-	readonly category?: ("Billing" | "Cost" | "System" | "Usage") | undefined;
+	readonly category?: "Billing" | "Cost" | "System" | "Usage";
 	readonly criteria?:
-		| (
-				| "CostThresholdExceeded"
-				| "CreditThresholdApproaching"
-				| "CreditThresholdReached"
-				| "CrossCloudCollectionError"
-				| "CrossCloudNewDataAvailable"
-				| "ForecastCostThresholdExceeded"
-				| "ForecastUsageThresholdExceeded"
-				| "GeneralThresholdError"
-				| "InvoiceDueDateApproaching"
-				| "InvoiceDueDateReached"
-				| "MultiCurrency"
-				| "QuotaThresholdApproaching"
-				| "QuotaThresholdReached"
-				| "UsageThresholdExceeded"
-		  )
-		| undefined;
-	readonly type?: ("Budget" | "BudgetForecast" | "Credit" | "General" | "Invoice" | "Quota" | "xCloud") | undefined;
+		| "CostThresholdExceeded"
+		| "CreditThresholdApproaching"
+		| "CreditThresholdReached"
+		| "CrossCloudCollectionError"
+		| "CrossCloudNewDataAvailable"
+		| "ForecastCostThresholdExceeded"
+		| "ForecastUsageThresholdExceeded"
+		| "GeneralThresholdError"
+		| "InvoiceDueDateApproaching"
+		| "InvoiceDueDateReached"
+		| "MultiCurrency"
+		| "QuotaThresholdApproaching"
+		| "QuotaThresholdReached"
+		| "UsageThresholdExceeded";
+	readonly type?: "Budget" | "BudgetForecast" | "Credit" | "General" | "Invoice" | "Quota" | "xCloud";
 }
 export interface AlertPropertiesDetails {
-	readonly amount?: number | undefined;
-	readonly companyName?: string | undefined;
-	readonly contactEmails?: string[] | undefined;
-	readonly contactGroups?: string[] | undefined;
-	readonly contactRoles?: string[] | undefined;
-	readonly currentSpend?: number | undefined;
-	readonly departmentName?: string | undefined;
-	readonly enrollmentEndDate?: string | undefined;
-	readonly enrollmentNumber?: string | undefined;
-	readonly enrollmentStartDate?: string | undefined;
-	readonly invoicingThreshold?: number | undefined;
-	readonly meterFilter?: any[] | undefined;
-	readonly operator?:
-		| ("EqualTo" | "GreaterThan" | "GreaterThanOrEqualTo" | "LessThan" | "LessThanOrEqualTo" | "None")
-		| undefined;
-	readonly overridingAlert?: string | undefined;
-	readonly periodStartDate?: string | undefined;
-	readonly resourceFilter?: any[] | undefined;
-	readonly resourceGroupFilter?: any[] | undefined;
-	readonly tagFilter?: any | undefined;
-	readonly threshold?: number | undefined;
+	readonly amount?: number;
+	readonly companyName?: string;
+	readonly contactEmails?: string[];
+	readonly contactGroups?: string[];
+	readonly contactRoles?: string[];
+	readonly currentSpend?: number;
+	readonly departmentName?: string;
+	readonly enrollmentEndDate?: string;
+	readonly enrollmentNumber?: string;
+	readonly enrollmentStartDate?: string;
+	readonly invoicingThreshold?: number;
+	readonly meterFilter?: any[];
+	readonly operator?: "EqualTo" | "GreaterThan" | "GreaterThanOrEqualTo" | "LessThan" | "LessThanOrEqualTo" | "None";
+	readonly overridingAlert?: string;
+	readonly periodStartDate?: string;
+	readonly resourceFilter?: any[];
+	readonly resourceGroupFilter?: any[];
+	readonly tagFilter?: any;
+	readonly threshold?: number;
 	readonly timeGrainType?:
-		| ("Annually" | "BillingAnnual" | "BillingMonth" | "BillingQuarter" | "Monthly" | "None" | "Quarterly")
-		| undefined;
-	readonly triggeredBy?: string | undefined;
-	readonly unit?: string | undefined;
+		| "Annually"
+		| "BillingAnnual"
+		| "BillingMonth"
+		| "BillingQuarter"
+		| "Monthly"
+		| "None"
+		| "Quarterly";
+	readonly triggeredBy?: string;
+	readonly unit?: string;
 }
 export interface CommonExportProperties {
 	readonly definition: ExportDefinition;
 	readonly deliveryInfo: ExportDeliveryInfo;
-	readonly format?: "Csv" | undefined;
-	readonly nextRunTimeEstimate?: string | undefined;
-	readonly partitionData?: boolean | undefined;
-	readonly runHistory?: ExportExecutionListResult | undefined;
+	readonly format?: "Csv";
+	readonly nextRunTimeEstimate?: string;
+	readonly partitionData?: boolean;
+	readonly runHistory?: ExportExecutionListResult;
 }
 export interface ErrorDetails {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface ExportDataset {
-	readonly configuration?: ExportDatasetConfiguration | undefined;
-	readonly granularity?: "Daily" | undefined;
+	readonly configuration?: ExportDatasetConfiguration;
+	readonly granularity?: "Daily";
 }
 export interface ExportDatasetConfiguration {
-	readonly columns?: string[] | undefined;
+	readonly columns?: string[];
 }
 export interface ExportDefinition {
-	readonly dataSet?: ExportDataset | undefined;
+	readonly dataSet?: ExportDataset;
 	readonly timeframe:
 		| "BillingMonthToDate"
 		| "Custom"
@@ -145,72 +145,77 @@ export interface ExportDefinition {
 		| "TheLastBillingMonth"
 		| "TheLastMonth"
 		| "WeekToDate";
-	readonly timePeriod?: ExportTimePeriod | undefined;
+	readonly timePeriod?: ExportTimePeriod;
 	readonly type: "ActualCost" | "AmortizedCost" | "Usage";
 }
 export interface ExportDeliveryDestination {
 	readonly container: string;
-	readonly resourceId?: string | undefined;
-	readonly rootFolderPath?: string | undefined;
-	readonly sasToken?: string | undefined;
-	readonly storageAccount?: string | undefined;
+	readonly resourceId?: string;
+	readonly rootFolderPath?: string;
+	readonly sasToken?: string;
+	readonly storageAccount?: string;
 }
 export interface ExportDeliveryInfo {
 	readonly destination: ExportDeliveryDestination;
 }
 export interface ExportExecution {
-	readonly eTag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ExportExecutionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly eTag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ExportExecutionProperties;
+	readonly type?: string;
 }
 export interface ExportExecutionListResult {
-	readonly value?: ExportExecution[] | undefined;
+	readonly value?: ExportExecution[];
 }
 export interface ExportExecutionProperties {
-	readonly error?: ErrorDetails | undefined;
-	readonly executionType?: ("OnDemand" | "Scheduled") | undefined;
-	readonly fileName?: string | undefined;
-	readonly processingEndTime?: string | undefined;
-	readonly processingStartTime?: string | undefined;
-	readonly runSettings?: CommonExportProperties | undefined;
+	readonly error?: ErrorDetails;
+	readonly executionType?: "OnDemand" | "Scheduled";
+	readonly fileName?: string;
+	readonly processingEndTime?: string;
+	readonly processingStartTime?: string;
+	readonly runSettings?: CommonExportProperties;
 	readonly status?:
-		| ("Completed" | "DataNotAvailable" | "Failed" | "InProgress" | "NewDataNotAvailable" | "Queued" | "Timeout")
-		| undefined;
-	readonly submittedBy?: string | undefined;
-	readonly submittedTime?: string | undefined;
+		| "Completed"
+		| "DataNotAvailable"
+		| "Failed"
+		| "InProgress"
+		| "NewDataNotAvailable"
+		| "Queued"
+		| "Timeout";
+	readonly submittedBy?: string;
+	readonly submittedTime?: string;
 }
 export interface ExportProperties {
 	readonly definition: ExportDefinition;
 	readonly deliveryInfo: ExportDeliveryInfo;
-	readonly format?: "Csv" | undefined;
-	readonly nextRunTimeEstimate?: string | undefined;
-	readonly partitionData?: boolean | undefined;
-	readonly runHistory?: ExportExecutionListResult | undefined;
-	readonly schedule?: ExportSchedule | undefined;
+	readonly format?: "Csv";
+	readonly nextRunTimeEstimate?: string;
+	readonly partitionData?: boolean;
+	readonly runHistory?: ExportExecutionListResult;
+	readonly schedule?: ExportSchedule;
 }
 export interface ExportRecurrencePeriod {
 	readonly from: string;
-	readonly to?: string | undefined;
+	readonly to?: string;
 }
 export interface ExportSchedule {
-	readonly recurrence?: ("Annually" | "Daily" | "Monthly" | "Weekly") | undefined;
-	readonly recurrencePeriod?: ExportRecurrencePeriod | undefined;
-	readonly status?: ("Active" | "Inactive") | undefined;
+	readonly recurrence?: "Annually" | "Daily" | "Monthly" | "Weekly";
+	readonly recurrencePeriod?: ExportRecurrencePeriod;
+	readonly status?: "Active" | "Inactive";
 }
 export interface ExportTimePeriod {
 	readonly from: string;
 	readonly to: string;
 }
 export interface KpiProperties {
-	readonly enabled?: boolean | undefined;
-	readonly id?: string | undefined;
-	readonly type?: ("Budget" | "Forecast") | undefined;
+	readonly enabled?: boolean;
+	readonly id?: string;
+	readonly type?: "Budget" | "Forecast";
 }
 export interface PivotProperties {
-	readonly name?: string | undefined;
-	readonly type?: ("Dimension" | "TagKey") | undefined;
+	readonly name?: string;
+	readonly type?: "Dimension" | "TagKey";
 }
 export interface ReportConfigAggregation {
 	readonly function: "Sum";
@@ -222,38 +227,38 @@ export interface ReportConfigComparisonExpression {
 	readonly values: string[];
 }
 export interface ReportConfigDataset {
-	readonly aggregation?: ReportConfigDatasetAggregation | undefined;
-	readonly configuration?: ReportConfigDatasetConfiguration | undefined;
-	readonly filter?: ReportConfigFilter | undefined;
-	readonly granularity?: ("Daily" | "Monthly") | undefined;
-	readonly grouping?: ReportConfigGrouping[] | undefined;
-	readonly sorting?: ReportConfigSorting[] | undefined;
+	readonly aggregation?: ReportConfigDatasetAggregation;
+	readonly configuration?: ReportConfigDatasetConfiguration;
+	readonly filter?: ReportConfigFilter;
+	readonly granularity?: "Daily" | "Monthly";
+	readonly grouping?: ReportConfigGrouping[];
+	readonly sorting?: ReportConfigSorting[];
 }
 export interface ReportConfigDatasetAggregation {
-	readonly "[ key: string ]"?: ReportConfigAggregation | undefined;
+	readonly [key: string]: ReportConfigAggregation;
 }
 export interface ReportConfigDatasetConfiguration {
-	readonly columns?: string[] | undefined;
+	readonly columns?: string[];
 }
 export interface ReportConfigDefinition {
-	readonly dataSet?: ReportConfigDataset | undefined;
-	readonly includeMonetaryCommitment?: boolean | undefined;
+	readonly dataSet?: ReportConfigDataset;
+	readonly includeMonetaryCommitment?: boolean;
 	readonly timeframe: "Custom" | "MonthToDate" | "WeekToDate" | "YearToDate";
-	readonly timePeriod?: ReportConfigTimePeriod | undefined;
+	readonly timePeriod?: ReportConfigTimePeriod;
 	readonly type: "Usage";
 }
 export interface ReportConfigFilter {
-	readonly and?: ReportConfigFilter[] | undefined;
-	readonly dimensions?: ReportConfigComparisonExpression | undefined;
-	readonly or?: ReportConfigFilter[] | undefined;
-	readonly tags?: ReportConfigComparisonExpression | undefined;
+	readonly and?: ReportConfigFilter[];
+	readonly dimensions?: ReportConfigComparisonExpression;
+	readonly or?: ReportConfigFilter[];
+	readonly tags?: ReportConfigComparisonExpression;
 }
 export interface ReportConfigGrouping {
 	readonly name: string;
 	readonly type: "Dimension" | "Tag";
 }
 export interface ReportConfigSorting {
-	readonly direction?: ("Ascending" | "Descending") | undefined;
+	readonly direction?: "Ascending" | "Descending";
 	readonly name: string;
 }
 export interface ReportConfigTimePeriod {
@@ -261,18 +266,18 @@ export interface ReportConfigTimePeriod {
 	readonly to: string;
 }
 export interface ViewProperties {
-	readonly accumulated?: ("false" | "true") | undefined;
-	readonly chart?: ("Area" | "GroupedColumn" | "Line" | "StackedColumn" | "Table") | undefined;
-	readonly createdOn?: string | undefined;
-	readonly currency?: string | undefined;
-	readonly dateRange?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly kpis?: KpiProperties[] | undefined;
-	readonly metric?: ("AHUB" | "ActualCost" | "AmortizedCost") | undefined;
-	readonly modifiedOn?: string | undefined;
-	readonly pivots?: PivotProperties[] | undefined;
-	readonly query?: ReportConfigDefinition | undefined;
-	readonly scope?: string | undefined;
+	readonly accumulated?: "false" | "true";
+	readonly chart?: "Area" | "GroupedColumn" | "Line" | "StackedColumn" | "Table";
+	readonly createdOn?: string;
+	readonly currency?: string;
+	readonly dateRange?: string;
+	readonly displayName?: string;
+	readonly kpis?: KpiProperties[];
+	readonly metric?: "AHUB" | "ActualCost" | "AmortizedCost";
+	readonly modifiedOn?: string;
+	readonly pivots?: PivotProperties[];
+	readonly query?: ReportConfigDefinition;
+	readonly scope?: string;
 }
 export default {
 	alerts: alerts,

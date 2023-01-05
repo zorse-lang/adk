@@ -9,8 +9,8 @@ export interface GroupComponentOutputs {}
 export interface GroupComponentInputs {
 	readonly GroupId: any | string;
 	readonly InstanceId: any | string;
-	readonly GroupType?: (any | string) | undefined;
-	readonly Remark?: (string | undefined) | undefined;
+	readonly GroupType?: any | string;
+	readonly Remark?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Instance extends RosResource<InstanceComponentInputs> implements InstanceComponentOutputs {
@@ -34,8 +34,8 @@ export interface InstanceComponentOutputs {
 }
 export interface InstanceComponentInputs {
 	readonly InstanceName: any | string;
-	readonly Remark?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Remark?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class Topic extends RosResource<TopicComponentInputs> implements TopicComponentOutputs {
@@ -48,11 +48,11 @@ export interface TopicComponentInputs {
 	readonly InstanceId: any | string;
 	readonly MessageType: any | number;
 	readonly Topic: any | string;
-	readonly Remark?: (string | undefined) | undefined;
+	readonly Remark?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export default {

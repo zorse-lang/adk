@@ -16,59 +16,53 @@ export interface serversComponentOutputs {
 export interface serversComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AnalysisServicesServerProperties | undefined;
+	readonly properties?: AnalysisServicesServerProperties;
 	readonly sku: ResourceSku;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export interface AnalysisServicesServerProperties {
-	readonly asAdministrators?: ServerAdministrators | undefined;
-	readonly backupBlobContainerUri?: string | undefined;
-	readonly managedMode?: number | undefined;
+	readonly asAdministrators?: ServerAdministrators;
+	readonly backupBlobContainerUri?: string;
+	readonly managedMode?: number;
 	readonly provisioningState?:
-		| (
-				| "Deleting"
-				| "Failed"
-				| "Paused"
-				| "Pausing"
-				| "Preparing"
-				| "Provisioning"
-				| "Resuming"
-				| "Scaling"
-				| "Succeeded"
-				| "Suspended"
-				| "Suspending"
-				| "Updating"
-		  )
-		| undefined;
-	readonly serverFullName?: string | undefined;
-	readonly serverMonitorMode?: number | undefined;
+		| "Deleting"
+		| "Failed"
+		| "Paused"
+		| "Pausing"
+		| "Preparing"
+		| "Provisioning"
+		| "Resuming"
+		| "Scaling"
+		| "Succeeded"
+		| "Suspended"
+		| "Suspending"
+		| "Updating";
+	readonly serverFullName?: string;
+	readonly serverMonitorMode?: number;
 	readonly state?:
-		| (
-				| "Deleting"
-				| "Failed"
-				| "Paused"
-				| "Pausing"
-				| "Preparing"
-				| "Provisioning"
-				| "Resuming"
-				| "Scaling"
-				| "Succeeded"
-				| "Suspended"
-				| "Suspending"
-				| "Updating"
-		  )
-		| undefined;
+		| "Deleting"
+		| "Failed"
+		| "Paused"
+		| "Pausing"
+		| "Preparing"
+		| "Provisioning"
+		| "Resuming"
+		| "Scaling"
+		| "Succeeded"
+		| "Suspended"
+		| "Suspending"
+		| "Updating";
 }
 export interface ResourceSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name: string;
-	readonly tier?: ("Basic" | "Development" | "Standard") | undefined;
+	readonly tier?: "Basic" | "Development" | "Standard";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ServerAdministrators {
-	readonly members?: string[] | undefined;
+	readonly members?: string[];
 }
 export default {
 	servers: servers,

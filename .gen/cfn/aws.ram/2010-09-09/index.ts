@@ -11,11 +11,11 @@ export interface ResourceShareComponentOutputs {
 }
 export interface ResourceShareComponentInputs {
 	readonly Name: string;
-	readonly AllowExternalPrincipals?: (boolean | undefined) | undefined;
-	readonly PermissionArns?: (string[] | undefined) | undefined;
-	readonly Principals?: (string[] | undefined) | undefined;
-	readonly ResourceArns?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AllowExternalPrincipals?: boolean | undefined;
+	readonly PermissionArns?: string[] | undefined;
+	readonly Principals?: string[] | undefined;
+	readonly ResourceArns?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export default {

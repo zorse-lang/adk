@@ -15,7 +15,7 @@ export interface peerAsnsComponentOutputs {
 }
 export interface peerAsnsComponentInputs {
 	readonly name: string;
-	readonly properties?: PeerAsnProperties | undefined;
+	readonly properties?: PeerAsnProperties;
 }
 export class peerings extends ArmResource<peeringsComponentInputs> implements peeringsComponentOutputs {
 	constructor(entity: ADKEntity, options: peeringsComponentInputs) {
@@ -34,9 +34,9 @@ export interface peeringsComponentInputs {
 	readonly kind: "Direct" | "Exchange";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: PeeringProperties | undefined;
+	readonly properties?: PeeringProperties;
 	readonly sku: PeeringSku;
-	readonly tags?: PeeringTags | undefined;
+	readonly tags?: PeeringTags;
 }
 export class peerings_registeredAsns
 	extends ArmResource<peerings_registeredAsnsComponentInputs>
@@ -56,7 +56,7 @@ export interface peerings_registeredAsnsComponentOutputs {
 }
 export interface peerings_registeredAsnsComponentInputs {
 	readonly name: string;
-	readonly properties?: PeeringRegisteredAsnProperties | undefined;
+	readonly properties?: PeeringRegisteredAsnProperties;
 }
 export class peerings_registeredPrefixes
 	extends ArmResource<peerings_registeredPrefixesComponentInputs>
@@ -76,7 +76,7 @@ export interface peerings_registeredPrefixesComponentOutputs {
 }
 export interface peerings_registeredPrefixesComponentInputs {
 	readonly name: string;
-	readonly properties?: PeeringRegisteredPrefixProperties | undefined;
+	readonly properties?: PeeringRegisteredPrefixProperties;
 }
 export class peeringServices
 	extends ArmResource<peeringServicesComponentInputs>
@@ -97,9 +97,9 @@ export interface peeringServicesComponentOutputs {
 export interface peeringServicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: PeeringServiceProperties | undefined;
-	readonly sku?: PeeringServiceSku | undefined;
-	readonly tags?: PeeringServiceTags | undefined;
+	readonly properties?: PeeringServiceProperties;
+	readonly sku?: PeeringServiceSku;
+	readonly tags?: PeeringServiceTags;
 }
 export class peeringServices_prefixes
 	extends ArmResource<peeringServices_prefixesComponentInputs>
@@ -119,171 +119,155 @@ export interface peeringServices_prefixesComponentOutputs {
 }
 export interface peeringServices_prefixesComponentInputs {
 	readonly name: string;
-	readonly properties?: PeeringServicePrefixProperties | undefined;
+	readonly properties?: PeeringServicePrefixProperties;
 }
 export interface BgpSession {
-	readonly maxPrefixesAdvertisedV4?: number | undefined;
-	readonly maxPrefixesAdvertisedV6?: number | undefined;
-	readonly md5AuthenticationKey?: string | undefined;
-	readonly microsoftSessionIPv4Address?: string | undefined;
-	readonly microsoftSessionIPv6Address?: string | undefined;
-	readonly peerSessionIPv4Address?: string | undefined;
-	readonly peerSessionIPv6Address?: string | undefined;
-	readonly sessionPrefixV4?: string | undefined;
-	readonly sessionPrefixV6?: string | undefined;
+	readonly maxPrefixesAdvertisedV4?: number;
+	readonly maxPrefixesAdvertisedV6?: number;
+	readonly md5AuthenticationKey?: string;
+	readonly microsoftSessionIPv4Address?: string;
+	readonly microsoftSessionIPv6Address?: string;
+	readonly peerSessionIPv4Address?: string;
+	readonly peerSessionIPv6Address?: string;
+	readonly sessionPrefixV4?: string;
+	readonly sessionPrefixV6?: string;
 	readonly sessionStateV4?:
-		| (
-				| "Active"
-				| "Connect"
-				| "Established"
-				| "Idle"
-				| "None"
-				| "OpenConfirm"
-				| "OpenReceived"
-				| "OpenSent"
-				| "PendingAdd"
-				| "PendingRemove"
-				| "PendingUpdate"
-		  )
-		| undefined;
+		| "Active"
+		| "Connect"
+		| "Established"
+		| "Idle"
+		| "None"
+		| "OpenConfirm"
+		| "OpenReceived"
+		| "OpenSent"
+		| "PendingAdd"
+		| "PendingRemove"
+		| "PendingUpdate";
 	readonly sessionStateV6?:
-		| (
-				| "Active"
-				| "Connect"
-				| "Established"
-				| "Idle"
-				| "None"
-				| "OpenConfirm"
-				| "OpenReceived"
-				| "OpenSent"
-				| "PendingAdd"
-				| "PendingRemove"
-				| "PendingUpdate"
-		  )
-		| undefined;
+		| "Active"
+		| "Connect"
+		| "Established"
+		| "Idle"
+		| "None"
+		| "OpenConfirm"
+		| "OpenReceived"
+		| "OpenSent"
+		| "PendingAdd"
+		| "PendingRemove"
+		| "PendingUpdate";
 }
 export interface ContactDetail {
-	readonly email?: string | undefined;
-	readonly phone?: string | undefined;
-	readonly role?: ("Noc" | "Other" | "Policy" | "Service" | "Technical") | undefined;
+	readonly email?: string;
+	readonly phone?: string;
+	readonly role?: "Noc" | "Other" | "Policy" | "Service" | "Technical";
 }
 export interface DirectConnection {
-	readonly bandwidthInMbps?: number | undefined;
-	readonly bgpSession?: BgpSession | undefined;
-	readonly connectionIdentifier?: string | undefined;
+	readonly bandwidthInMbps?: number;
+	readonly bgpSession?: BgpSession;
+	readonly connectionIdentifier?: string;
 	readonly connectionState?:
-		| (
-				| "Active"
-				| "Approved"
-				| "None"
-				| "PendingApproval"
-				| "ProvisioningCompleted"
-				| "ProvisioningFailed"
-				| "ProvisioningStarted"
-				| "Validating"
-		  )
-		| undefined;
-	readonly errorMessage?: string | undefined;
-	readonly peeringDBFacilityId?: number | undefined;
-	readonly provisionedBandwidthInMbps?: number | undefined;
-	readonly sessionAddressProvider?: ("Microsoft" | "Peer") | undefined;
-	readonly useForPeeringService?: boolean | undefined;
+		| "Active"
+		| "Approved"
+		| "None"
+		| "PendingApproval"
+		| "ProvisioningCompleted"
+		| "ProvisioningFailed"
+		| "ProvisioningStarted"
+		| "Validating";
+	readonly errorMessage?: string;
+	readonly peeringDBFacilityId?: number;
+	readonly provisionedBandwidthInMbps?: number;
+	readonly sessionAddressProvider?: "Microsoft" | "Peer";
+	readonly useForPeeringService?: boolean;
 }
 export interface ExchangeConnection {
-	readonly bgpSession?: BgpSession | undefined;
-	readonly connectionIdentifier?: string | undefined;
+	readonly bgpSession?: BgpSession;
+	readonly connectionIdentifier?: string;
 	readonly connectionState?:
-		| (
-				| "Active"
-				| "Approved"
-				| "None"
-				| "PendingApproval"
-				| "ProvisioningCompleted"
-				| "ProvisioningFailed"
-				| "ProvisioningStarted"
-				| "Validating"
-		  )
-		| undefined;
-	readonly errorMessage?: string | undefined;
-	readonly peeringDBFacilityId?: number | undefined;
+		| "Active"
+		| "Approved"
+		| "None"
+		| "PendingApproval"
+		| "ProvisioningCompleted"
+		| "ProvisioningFailed"
+		| "ProvisioningStarted"
+		| "Validating";
+	readonly errorMessage?: string;
+	readonly peeringDBFacilityId?: number;
 }
 export interface PeerAsnProperties {
-	readonly errorMessage?: string | undefined;
-	readonly peerAsn?: number | undefined;
-	readonly peerContactDetail?: ContactDetail[] | undefined;
-	readonly peerName?: string | undefined;
-	readonly validationState?: ("Approved" | "Failed" | "None" | "Pending") | undefined;
+	readonly errorMessage?: string;
+	readonly peerAsn?: number;
+	readonly peerContactDetail?: ContactDetail[];
+	readonly peerName?: string;
+	readonly validationState?: "Approved" | "Failed" | "None" | "Pending";
 }
 export interface PeeringProperties {
-	readonly direct?: PeeringPropertiesDirect | undefined;
-	readonly exchange?: PeeringPropertiesExchange | undefined;
-	readonly peeringLocation?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly direct?: PeeringPropertiesDirect;
+	readonly exchange?: PeeringPropertiesExchange;
+	readonly peeringLocation?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PeeringPropertiesDirect {
-	readonly connections?: DirectConnection[] | undefined;
-	readonly directPeeringType?: ("Cdn" | "Edge" | "Internal" | "Ix" | "IxRs" | "Transit") | undefined;
-	readonly peerAsn?: SubResource | undefined;
-	readonly useForPeeringService?: boolean | undefined;
+	readonly connections?: DirectConnection[];
+	readonly directPeeringType?: "Cdn" | "Edge" | "Internal" | "Ix" | "IxRs" | "Transit";
+	readonly peerAsn?: SubResource;
+	readonly useForPeeringService?: boolean;
 }
 export interface PeeringPropertiesExchange {
-	readonly connections?: ExchangeConnection[] | undefined;
-	readonly peerAsn?: SubResource | undefined;
+	readonly connections?: ExchangeConnection[];
+	readonly peerAsn?: SubResource;
 }
 export interface PeeringRegisteredAsnProperties {
-	readonly asn?: number | undefined;
-	readonly peeringServicePrefixKey?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly asn?: number;
+	readonly peeringServicePrefixKey?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PeeringRegisteredPrefixProperties {
-	readonly errorMessage?: string | undefined;
-	readonly peeringServicePrefixKey?: string | undefined;
-	readonly prefix?: string | undefined;
-	readonly prefixValidationState?:
-		| ("Failed" | "Invalid" | "None" | "Pending" | "Unknown" | "Verified" | "Warning")
-		| undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly errorMessage?: string;
+	readonly peeringServicePrefixKey?: string;
+	readonly prefix?: string;
+	readonly prefixValidationState?: "Failed" | "Invalid" | "None" | "Pending" | "Unknown" | "Verified" | "Warning";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PeeringServicePrefixEvent {
-	readonly eventDescription?: string | undefined;
-	readonly eventLevel?: string | undefined;
-	readonly eventSummary?: string | undefined;
-	readonly eventTimestamp?: string | undefined;
-	readonly eventType?: string | undefined;
+	readonly eventDescription?: string;
+	readonly eventLevel?: string;
+	readonly eventSummary?: string;
+	readonly eventTimestamp?: string;
+	readonly eventType?: string;
 }
 export interface PeeringServicePrefixProperties {
-	readonly errorMessage?: string | undefined;
-	readonly events?: PeeringServicePrefixEvent[] | undefined;
-	readonly learnedType?: ("None" | "ViaServiceProvider" | "ViaSession") | undefined;
-	readonly peeringServicePrefixKey?: string | undefined;
-	readonly prefix?: string | undefined;
-	readonly prefixValidationState?:
-		| ("Failed" | "Invalid" | "None" | "Pending" | "Unknown" | "Verified" | "Warning")
-		| undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly errorMessage?: string;
+	readonly events?: PeeringServicePrefixEvent[];
+	readonly learnedType?: "None" | "ViaServiceProvider" | "ViaSession";
+	readonly peeringServicePrefixKey?: string;
+	readonly prefix?: string;
+	readonly prefixValidationState?: "Failed" | "Invalid" | "None" | "Pending" | "Unknown" | "Verified" | "Warning";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PeeringServiceProperties {
-	readonly peeringServiceLocation?: string | undefined;
-	readonly peeringServiceProvider?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly peeringServiceLocation?: string;
+	readonly peeringServiceProvider?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PeeringServiceSku {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface PeeringServiceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PeeringSku {
-	readonly family?: ("Direct" | "Exchange") | undefined;
-	readonly name?: string | undefined;
-	readonly size?: ("Free" | "Metered" | "Unlimited") | undefined;
-	readonly tier?: ("Basic" | "Premium") | undefined;
+	readonly family?: "Direct" | "Exchange";
+	readonly name?: string;
+	readonly size?: "Free" | "Metered" | "Unlimited";
+	readonly tier?: "Basic" | "Premium";
 }
 export interface PeeringTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SubResource {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export default {
 	peerAsns: peerAsns,

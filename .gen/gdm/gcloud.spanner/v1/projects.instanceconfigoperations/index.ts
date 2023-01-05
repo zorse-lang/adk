@@ -10,7 +10,6 @@ export class ProjectsInstanceConfigOperations
 }
 export interface ProjectsInstanceConfigOperationsComponentOutputs {}
 export interface ProjectsInstanceConfigOperationsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

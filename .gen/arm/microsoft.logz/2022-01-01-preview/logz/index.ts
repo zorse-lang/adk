@@ -14,12 +14,12 @@ export interface monitorsComponentOutputs {
 	readonly type: "Microsoft.Logz/monitors";
 }
 export interface monitorsComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
+	readonly identity?: IdentityProperties;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MonitorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: LogzMonitorResourceTags | undefined;
+	readonly properties?: MonitorProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: LogzMonitorResourceTags;
 }
 export class monitors_accounts
 	extends ArmResource<monitors_accountsComponentInputs>
@@ -38,12 +38,12 @@ export interface monitors_accountsComponentOutputs {
 	readonly type: "Microsoft.Logz/monitors/accounts";
 }
 export interface monitors_accountsComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
+	readonly identity?: IdentityProperties;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MonitorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: LogzMonitorResourceTags | undefined;
+	readonly properties?: MonitorProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: LogzMonitorResourceTags;
 }
 export class monitors_accounts_tagRules
 	extends ArmResource<monitors_accounts_tagRulesComponentInputs>
@@ -63,8 +63,8 @@ export interface monitors_accounts_tagRulesComponentOutputs {
 }
 export interface monitors_accounts_tagRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: MonitoringTagRulesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: MonitoringTagRulesProperties;
+	readonly systemData?: SystemData;
 }
 export class monitors_metricsSource
 	extends ArmResource<monitors_metricsSourceComponentInputs>
@@ -83,12 +83,12 @@ export interface monitors_metricsSourceComponentOutputs {
 	readonly type: "Microsoft.Logz/monitors/metricsSource";
 }
 export interface monitors_metricsSourceComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
+	readonly identity?: IdentityProperties;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MonitorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: LogzMonitorResourceTags | undefined;
+	readonly properties?: MonitorProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: LogzMonitorResourceTags;
 }
 export class monitors_metricsSource_tagRules
 	extends ArmResource<monitors_metricsSource_tagRulesComponentInputs>
@@ -108,8 +108,8 @@ export interface monitors_metricsSource_tagRulesComponentOutputs {
 }
 export interface monitors_metricsSource_tagRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: MetricsTagRulesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: MetricsTagRulesProperties;
+	readonly systemData?: SystemData;
 }
 export class monitors_singleSignOnConfigurations
 	extends ArmResource<monitors_singleSignOnConfigurationsComponentInputs>
@@ -129,8 +129,8 @@ export interface monitors_singleSignOnConfigurationsComponentOutputs {
 }
 export interface monitors_singleSignOnConfigurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: LogzSingleSignOnProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: LogzSingleSignOnProperties;
+	readonly systemData?: SystemData;
 }
 export class monitors_tagRules
 	extends ArmResource<monitors_tagRulesComponentInputs>
@@ -150,8 +150,8 @@ export interface monitors_tagRulesComponentOutputs {
 }
 export interface monitors_tagRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: MonitoringTagRulesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: MonitoringTagRulesProperties;
+	readonly systemData?: SystemData;
 }
 export function listMonitoredResources(resource: monitors): MonitoredResourceListResponse {
 	if (resource.apiVersion !== "2022-01-01-preview") {
@@ -181,158 +181,146 @@ export function listVMHosts(resource: monitors): VMResourcesListResponse {
 	throw new Error("not implemented");
 }
 export interface FilteringTag {
-	readonly action?: ("Exclude" | "Include") | undefined;
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly action?: "Exclude" | "Include";
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface IdentityProperties {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("SystemAssigned" | "UserAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned" | "UserAssigned";
 }
 export interface LogRules {
-	readonly filteringTags?: FilteringTag[] | undefined;
-	readonly sendAadLogs?: boolean | undefined;
-	readonly sendActivityLogs?: boolean | undefined;
-	readonly sendSubscriptionLogs?: boolean | undefined;
+	readonly filteringTags?: FilteringTag[];
+	readonly sendAadLogs?: boolean;
+	readonly sendActivityLogs?: boolean;
+	readonly sendSubscriptionLogs?: boolean;
 }
 export interface LogzMonitorResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface LogzOrganizationProperties {
-	readonly companyName?: string | undefined;
-	readonly enterpriseAppId?: string | undefined;
-	readonly id?: string | undefined;
-	readonly singleSignOnUrl?: string | undefined;
+	readonly companyName?: string;
+	readonly enterpriseAppId?: string;
+	readonly id?: string;
+	readonly singleSignOnUrl?: string;
 }
 export interface LogzSingleSignOnProperties {
-	readonly enterpriseAppId?: string | undefined;
+	readonly enterpriseAppId?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly singleSignOnState?: ("Disable" | "Enable" | "Existing" | "Initial") | undefined;
-	readonly singleSignOnUrl?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
+	readonly singleSignOnState?: "Disable" | "Enable" | "Existing" | "Initial";
+	readonly singleSignOnUrl?: string;
 }
 export interface MetricRules {
-	readonly filteringTags?: FilteringTag[] | undefined;
-	readonly subscriptionId?: string | undefined;
+	readonly filteringTags?: FilteringTag[];
+	readonly subscriptionId?: string;
 }
 export interface MetricsTagRulesProperties {
-	readonly metricRules?: MetricRules[] | undefined;
+	readonly metricRules?: MetricRules[];
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly sendMetrics?: boolean | undefined;
-	readonly systemData?: SystemData | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
+	readonly sendMetrics?: boolean;
+	readonly systemData?: SystemData;
 }
 export interface MonitoredResource {
-	readonly id?: string | undefined;
-	readonly reasonForLogsStatus?: string | undefined;
-	readonly reasonForMetricsStatus?: string | undefined;
-	readonly sendingLogs?: boolean | undefined;
-	readonly sendingMetrics?: boolean | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly id?: string;
+	readonly reasonForLogsStatus?: string;
+	readonly reasonForMetricsStatus?: string;
+	readonly sendingLogs?: boolean;
+	readonly sendingMetrics?: boolean;
+	readonly systemData?: SystemData;
 }
 export interface MonitoredResourceListResponse {
-	readonly nextLink?: string | undefined;
-	readonly value?: MonitoredResource[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: MonitoredResource[];
 }
 export interface MonitoringTagRulesProperties {
-	readonly logRules?: LogRules | undefined;
+	readonly logRules?: LogRules;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly systemData?: SystemData | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
+	readonly systemData?: SystemData;
 }
 export interface MonitorProperties {
-	readonly liftrResourceCategory?: ("MonitorLogs" | "Unknown") | undefined;
-	readonly liftrResourcePreference?: number | undefined;
-	readonly logzOrganizationProperties?: LogzOrganizationProperties | undefined;
-	readonly marketplaceSubscriptionStatus?: ("Active" | "Suspended") | undefined;
-	readonly monitoringStatus?: ("Disabled" | "Enabled") | undefined;
-	readonly planData?: PlanData | undefined;
+	readonly liftrResourceCategory?: "MonitorLogs" | "Unknown";
+	readonly liftrResourcePreference?: number;
+	readonly logzOrganizationProperties?: LogzOrganizationProperties;
+	readonly marketplaceSubscriptionStatus?: "Active" | "Suspended";
+	readonly monitoringStatus?: "Disabled" | "Enabled";
+	readonly planData?: PlanData;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly userInfo?: UserInfo | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
+	readonly userInfo?: UserInfo;
 }
 export interface PlanData {
-	readonly billingCycle?: string | undefined;
-	readonly effectiveDate?: string | undefined;
-	readonly planDetails?: string | undefined;
-	readonly usageType?: string | undefined;
+	readonly billingCycle?: string;
+	readonly effectiveDate?: string;
+	readonly planDetails?: string;
+	readonly usageType?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface UserInfo {
-	readonly emailAddress?: string | undefined;
-	readonly firstName?: string | undefined;
-	readonly lastName?: string | undefined;
-	readonly phoneNumber?: string | undefined;
+	readonly emailAddress?: string;
+	readonly firstName?: string;
+	readonly lastName?: string;
+	readonly phoneNumber?: string;
 }
 export interface UserRoleListResponse {
-	readonly nextLink?: string | undefined;
-	readonly value?: UserRoleResponse[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: UserRoleResponse[];
 }
 export interface UserRoleRequest {
-	readonly emailAddress?: string | undefined;
+	readonly emailAddress?: string;
 }
 export interface UserRoleResponse {
-	readonly role?: ("Admin" | "None" | "User") | undefined;
+	readonly role?: "Admin" | "None" | "User";
 }
 export interface VMResources {
-	readonly agentVersion?: string | undefined;
-	readonly id?: string | undefined;
+	readonly agentVersion?: string;
+	readonly id?: string;
 }
 export interface VMResourcesListResponse {
-	readonly nextLink?: string | undefined;
-	readonly value?: VMResources[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: VMResources[];
 }
 export default {
 	monitors: monitors,

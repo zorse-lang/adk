@@ -7,27 +7,26 @@ export class ProjectsConfigsVariables
 	constructor(entity: ADKEntity, options: ProjectsConfigsVariablesComponentInputs) {
 		super(entity, options.name, "runtimeconfig.v1beta1.ProjectsConfigsVariables", options);
 	}
-	public readonly state?: string | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly state?: string;
+	public readonly updateTime?: string;
 }
 export interface ProjectsConfigsVariablesComponentOutputs {
-	readonly state?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly state?: string;
+	readonly updateTime?: string;
 }
 export interface ProjectsConfigsVariablesComponentInputs {
 	readonly name: string;
 	readonly parent: string;
-	readonly requestId?: string | undefined;
-	readonly text?: string | undefined;
-	readonly value?: string | undefined;
-	readonly type: string;
+	readonly requestId?: string;
+	readonly text?: string;
+	readonly value?: string;
 }
 export interface Variable {
-	readonly name?: string | undefined;
-	readonly state?: string | undefined;
-	readonly text?: string | undefined;
-	readonly updateTime?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly state?: string;
+	readonly text?: string;
+	readonly updateTime?: string;
+	readonly value?: string;
 }
 export default {
 	ProjectsConfigsVariables: ProjectsConfigsVariables,

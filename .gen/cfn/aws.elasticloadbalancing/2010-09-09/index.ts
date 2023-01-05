@@ -19,28 +19,28 @@ export interface LoadBalancerComponentOutputs {
 }
 export interface LoadBalancerComponentInputs {
 	readonly Listeners: Listeners[];
-	readonly AccessLoggingPolicy?: (AccessLoggingPolicy | undefined) | undefined;
-	readonly AppCookieStickinessPolicy?: (AppCookieStickinessPolicy[] | undefined) | undefined;
-	readonly AvailabilityZones?: (string[] | undefined) | undefined;
-	readonly ConnectionDrainingPolicy?: (ConnectionDrainingPolicy | undefined) | undefined;
-	readonly ConnectionSettings?: (ConnectionSettings | undefined) | undefined;
-	readonly CrossZone?: (boolean | undefined) | undefined;
-	readonly HealthCheck?: (HealthCheck | undefined) | undefined;
-	readonly Instances?: (string[] | undefined) | undefined;
-	readonly LBCookieStickinessPolicy?: (LBCookieStickinessPolicy[] | undefined) | undefined;
-	readonly LoadBalancerName?: (string | undefined) | undefined;
-	readonly Policies?: (Policies[] | undefined) | undefined;
-	readonly Scheme?: (string | undefined) | undefined;
-	readonly SecurityGroups?: (string[] | undefined) | undefined;
-	readonly Subnets?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AccessLoggingPolicy?: AccessLoggingPolicy | undefined;
+	readonly AppCookieStickinessPolicy?: AppCookieStickinessPolicy[] | undefined;
+	readonly AvailabilityZones?: string[] | undefined;
+	readonly ConnectionDrainingPolicy?: ConnectionDrainingPolicy | undefined;
+	readonly ConnectionSettings?: ConnectionSettings | undefined;
+	readonly CrossZone?: boolean | undefined;
+	readonly HealthCheck?: HealthCheck | undefined;
+	readonly Instances?: string[] | undefined;
+	readonly LBCookieStickinessPolicy?: LBCookieStickinessPolicy[] | undefined;
+	readonly LoadBalancerName?: string | undefined;
+	readonly Policies?: Policies[] | undefined;
+	readonly Scheme?: string | undefined;
+	readonly SecurityGroups?: string[] | undefined;
+	readonly Subnets?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface AccessLoggingPolicy {
-	readonly EmitInterval?: (number | undefined) | undefined;
+	readonly EmitInterval?: number | undefined;
 	readonly Enabled: boolean;
 	readonly S3BucketName: string;
-	readonly S3BucketPrefix?: (string | undefined) | undefined;
+	readonly S3BucketPrefix?: string | undefined;
 }
 export interface AppCookieStickinessPolicy {
 	readonly CookieName: string;
@@ -48,7 +48,7 @@ export interface AppCookieStickinessPolicy {
 }
 export interface ConnectionDrainingPolicy {
 	readonly Enabled: boolean;
-	readonly Timeout?: (number | undefined) | undefined;
+	readonly Timeout?: number | undefined;
 }
 export interface ConnectionSettings {
 	readonly IdleTimeout: number;
@@ -61,21 +61,21 @@ export interface HealthCheck {
 	readonly UnhealthyThreshold: string;
 }
 export interface LBCookieStickinessPolicy {
-	readonly CookieExpirationPeriod?: (string | undefined) | undefined;
-	readonly PolicyName?: (string | undefined) | undefined;
+	readonly CookieExpirationPeriod?: string | undefined;
+	readonly PolicyName?: string | undefined;
 }
 export interface Listeners {
 	readonly InstancePort: string;
-	readonly InstanceProtocol?: (string | undefined) | undefined;
+	readonly InstanceProtocol?: string | undefined;
 	readonly LoadBalancerPort: string;
-	readonly PolicyNames?: (string[] | undefined) | undefined;
+	readonly PolicyNames?: string[] | undefined;
 	readonly Protocol: string;
-	readonly SSLCertificateId?: (string | undefined) | undefined;
+	readonly SSLCertificateId?: string | undefined;
 }
 export interface Policies {
 	readonly Attributes: any[];
-	readonly InstancePorts?: (string[] | undefined) | undefined;
-	readonly LoadBalancerPorts?: (string[] | undefined) | undefined;
+	readonly InstancePorts?: string[] | undefined;
+	readonly LoadBalancerPorts?: string[] | undefined;
 	readonly PolicyName: string;
 	readonly PolicyType: string;
 }

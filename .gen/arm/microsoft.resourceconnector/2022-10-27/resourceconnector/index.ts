@@ -14,12 +14,12 @@ export interface appliancesComponentOutputs {
 	readonly type: "Microsoft.ResourceConnector/appliances";
 }
 export interface appliancesComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ApplianceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ApplianceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export function listClusterUserCredential(resource: appliances): ApplianceListCredentialResults {
 	if (resource.apiVersion !== "2022-10-27") {
@@ -40,96 +40,93 @@ export function listkeys(resource: appliances): ApplianceListKeysResults {
 	throw new Error("not implemented");
 }
 export interface ApplianceCredentialKubeconfig {
-	readonly name?: ("clusterCustomerUser" | "clusterUser") | undefined;
-	readonly value?: string | undefined;
+	readonly name?: "clusterCustomerUser" | "clusterUser";
+	readonly value?: string;
 }
 export interface ApplianceListCredentialResults {
-	readonly hybridConnectionConfig?: HybridConnectionConfig | undefined;
-	readonly kubeconfigs?: ApplianceCredentialKubeconfig[] | undefined;
+	readonly hybridConnectionConfig?: HybridConnectionConfig;
+	readonly kubeconfigs?: ApplianceCredentialKubeconfig[];
 }
 export interface ApplianceListKeysResults {
-	readonly artifactProfiles?: ApplianceListKeysResultsArtifactProfiles | undefined;
-	readonly kubeconfigs?: ApplianceCredentialKubeconfig[] | undefined;
-	readonly sshKeys?: ApplianceListKeysResultsSshKeys | undefined;
+	readonly artifactProfiles?: ApplianceListKeysResultsArtifactProfiles;
+	readonly kubeconfigs?: ApplianceCredentialKubeconfig[];
+	readonly sshKeys?: ApplianceListKeysResultsSshKeys;
 }
 export interface ApplianceListKeysResultsArtifactProfiles {
-	readonly "[ key: string ]"?: ArtifactProfile | undefined;
+	readonly [key: string]: ArtifactProfile;
 }
 export interface ApplianceListKeysResultsSshKeys {
-	readonly "[ key: string ]"?: SSHKey | undefined;
+	readonly [key: string]: SSHKey;
 }
 export interface ApplianceProperties {
-	readonly distro?: "AKSEdge" | undefined;
-	readonly infrastructureConfig?: AppliancePropertiesInfrastructureConfig | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicKey?: string | undefined;
+	readonly distro?: "AKSEdge";
+	readonly infrastructureConfig?: AppliancePropertiesInfrastructureConfig;
+	readonly provisioningState?: string;
+	readonly publicKey?: string;
 	readonly status?:
-		| (
-				| "Connected"
-				| "Connecting"
-				| "ImageDeprovisioning"
-				| "ImageDownloaded"
-				| "ImageDownloading"
-				| "ImagePending"
-				| "ImageProvisioned"
-				| "ImageProvisioning"
-				| "ImageUnknown"
-				| "None"
-				| "Offline"
-				| "PostUpgrade"
-				| "PreUpgrade"
-				| "PreparingForUpgrade"
-				| "Running"
-				| "UpdatingCAPI"
-				| "UpdatingCloudOperator"
-				| "UpdatingCluster"
-				| "UpgradeClusterExtensionFailedToDelete"
-				| "UpgradeComplete"
-				| "UpgradeFailed"
-				| "UpgradePrerequisitesCompleted"
-				| "UpgradingKVAIO"
-				| "Validating"
-				| "WaitingForCloudOperator"
-				| "WaitingForHeartbeat"
-				| "WaitingForKVAIO"
-		  )
-		| undefined;
-	readonly version?: string | undefined;
+		| "Connected"
+		| "Connecting"
+		| "ImageDeprovisioning"
+		| "ImageDownloaded"
+		| "ImageDownloading"
+		| "ImagePending"
+		| "ImageProvisioned"
+		| "ImageProvisioning"
+		| "ImageUnknown"
+		| "None"
+		| "Offline"
+		| "PostUpgrade"
+		| "PreUpgrade"
+		| "PreparingForUpgrade"
+		| "Running"
+		| "UpdatingCAPI"
+		| "UpdatingCloudOperator"
+		| "UpdatingCluster"
+		| "UpgradeClusterExtensionFailedToDelete"
+		| "UpgradeComplete"
+		| "UpgradeFailed"
+		| "UpgradePrerequisitesCompleted"
+		| "UpgradingKVAIO"
+		| "Validating"
+		| "WaitingForCloudOperator"
+		| "WaitingForHeartbeat"
+		| "WaitingForKVAIO";
+	readonly version?: string;
 }
 export interface AppliancePropertiesInfrastructureConfig {
-	readonly provider?: ("HCI" | "KubeVirt" | "OpenStack" | "SCVMM" | "VMWare") | undefined;
+	readonly provider?: "HCI" | "KubeVirt" | "OpenStack" | "SCVMM" | "VMWare";
 }
 export interface ArtifactProfile {
-	readonly endpoint?: string | undefined;
+	readonly endpoint?: string;
 }
 export interface HybridConnectionConfig {
-	readonly expirationTime?: number | undefined;
-	readonly hybridConnectionName?: string | undefined;
-	readonly relay?: string | undefined;
-	readonly token?: string | undefined;
+	readonly expirationTime?: number;
+	readonly hybridConnectionName?: string;
+	readonly relay?: string;
+	readonly token?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
 }
 export interface SSHKey {
-	readonly certificate?: string | undefined;
-	readonly creationTimeStamp?: number | undefined;
-	readonly expirationTimeStamp?: number | undefined;
-	readonly privateKey?: string | undefined;
-	readonly publicKey?: string | undefined;
+	readonly certificate?: string;
+	readonly creationTimeStamp?: number;
+	readonly expirationTimeStamp?: number;
+	readonly privateKey?: string;
+	readonly publicKey?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	appliances: appliances,

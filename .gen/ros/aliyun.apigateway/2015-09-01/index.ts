@@ -17,20 +17,20 @@ export interface ApiComponentInputs {
 	readonly ResultType: string;
 	readonly ServiceConfig: ServiceConfig;
 	readonly Visibility: string;
-	readonly AppCodeAuthType?: (string | undefined) | undefined;
-	readonly AuthType?: (string | undefined) | undefined;
-	readonly ConstParameters?: (ConstParameters[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DisableInternet?: (boolean | undefined) | undefined;
-	readonly ErrorCodeSamples?: (ErrorCodeSamples[] | undefined) | undefined;
-	readonly FailResultSample?: (string | undefined) | undefined;
-	readonly ForceNonceCheck?: (boolean | undefined) | undefined;
-	readonly OpenIdConnectConfig?: (OpenIdConnectConfig | undefined) | undefined;
-	readonly RequestParameters?: (RequestParameters[] | undefined) | undefined;
-	readonly ServiceParameters?: (ServiceParameters[] | undefined) | undefined;
-	readonly ServiceParametersMap?: (ServiceParametersMap[] | undefined) | undefined;
-	readonly SystemParameters?: (SystemParameters[] | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly AppCodeAuthType?: string | undefined;
+	readonly AuthType?: string | undefined;
+	readonly ConstParameters?: ConstParameters[] | undefined;
+	readonly Description?: string | undefined;
+	readonly DisableInternet?: boolean | undefined;
+	readonly ErrorCodeSamples?: ErrorCodeSamples[] | undefined;
+	readonly FailResultSample?: string | undefined;
+	readonly ForceNonceCheck?: boolean | undefined;
+	readonly OpenIdConnectConfig?: OpenIdConnectConfig | undefined;
+	readonly RequestParameters?: RequestParameters[] | undefined;
+	readonly ServiceParameters?: ServiceParameters[] | undefined;
+	readonly ServiceParametersMap?: ServiceParametersMap[] | undefined;
+	readonly SystemParameters?: SystemParameters[] | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class App extends RosResource<AppComponentInputs> implements AppComponentOutputs {
@@ -48,8 +48,8 @@ export interface AppComponentOutputs {
 }
 export interface AppComponentInputs {
 	readonly AppName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | any) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: Tags[] | any;
 	readonly LogicalId: string;
 }
 export class Authorization extends RosResource<AuthorizationComponentInputs> implements AuthorizationComponentOutputs {
@@ -63,7 +63,7 @@ export interface AuthorizationComponentInputs {
 	readonly AppIds: any[];
 	readonly GroupId: string;
 	readonly StageName: string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class CustomDomain extends RosResource<CustomDomainComponentInputs> implements CustomDomainComponentOutputs {
@@ -78,9 +78,9 @@ export interface CustomDomainComponentOutputs {
 export interface CustomDomainComponentInputs {
 	readonly DomainName: string;
 	readonly GroupId: string;
-	readonly CertificateBody?: (string | undefined) | undefined;
-	readonly CertificateName?: (string | undefined) | undefined;
-	readonly CertificatePrivateKey?: (string | undefined) | undefined;
+	readonly CertificateBody?: string | undefined;
+	readonly CertificateName?: string | undefined;
+	readonly CertificatePrivateKey?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Deployment extends RosResource<DeploymentComponentInputs> implements DeploymentComponentOutputs {
@@ -93,8 +93,8 @@ export interface DeploymentComponentInputs {
 	readonly ApiId: string;
 	readonly GroupId: string;
 	readonly StageName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly HistoryVersion?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly HistoryVersion?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Group extends RosResource<GroupComponentInputs> implements GroupComponentOutputs {
@@ -110,12 +110,12 @@ export interface GroupComponentOutputs {
 }
 export interface GroupComponentInputs {
 	readonly GroupName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InstanceId?: (string | undefined) | undefined;
-	readonly InternetEnable?: (boolean | undefined) | undefined;
-	readonly PassthroughHeaders?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | any) | undefined;
-	readonly VpcIntranetEnable?: (boolean | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly InstanceId?: string | undefined;
+	readonly InternetEnable?: boolean | undefined;
+	readonly PassthroughHeaders?: string | undefined;
+	readonly Tags?: Tags[] | any;
+	readonly VpcIntranetEnable?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class Instance extends RosResource<InstanceComponentInputs> implements InstanceComponentOutputs {
@@ -146,12 +146,12 @@ export interface InstanceComponentInputs {
 	readonly InstanceName: string;
 	readonly InstanceSpec: string;
 	readonly ZoneId: string;
-	readonly AutoPay?: (boolean | undefined) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly Duration?: (number | undefined) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly AutoPay?: boolean | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly Duration?: number | undefined;
+	readonly PricingCycle?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class LogConfig extends RosResource<LogConfigComponentInputs> implements LogConfigComponentOutputs {
@@ -178,8 +178,8 @@ export interface PluginComponentInputs {
 	readonly PluginData: any | string;
 	readonly PluginName: any | string;
 	readonly PluginType: any | string;
-	readonly Description?: (any | string) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Description?: any | string;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class PluginAttachment
@@ -253,10 +253,10 @@ export interface TrafficControlComponentInputs {
 	readonly ApiDefault: number;
 	readonly TrafficControlName: string;
 	readonly TrafficControlUnit: string;
-	readonly AppDefault?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Special?: (Special[] | undefined) | undefined;
-	readonly UserDefault?: (string | undefined) | undefined;
+	readonly AppDefault?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Special?: Special[] | undefined;
+	readonly UserDefault?: string | undefined;
 	readonly LogicalId: string;
 }
 export class TrafficControlBinding
@@ -293,28 +293,28 @@ export interface VpcAccessConfigComponentInputs {
 }
 export interface ConstParameters {
 	readonly ConstValue: string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly ServiceParameterName: string;
 	readonly Location: string;
 }
 export interface ErrorCodeSamples {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly Message: string;
 	readonly Code: string;
 }
 export interface FunctionComputeConfig {
-	readonly Path?: (string | undefined) | undefined;
-	readonly FunctionName?: (string | undefined) | undefined;
-	readonly ContentTypeValue?: (string | undefined) | undefined;
-	readonly ServiceName?: (string | undefined) | undefined;
-	readonly FcType?: (string | undefined) | undefined;
-	readonly Qualifier?: (string | undefined) | undefined;
-	readonly Method?: (string | undefined) | undefined;
-	readonly OnlyBusinessPath?: (boolean | undefined) | undefined;
-	readonly FcRegionId?: (string | undefined) | undefined;
-	readonly ContentTypeCatagory?: (string | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly FcBaseUrl?: (string | undefined) | undefined;
+	readonly Path?: string | undefined;
+	readonly FunctionName?: string | undefined;
+	readonly ContentTypeValue?: string | undefined;
+	readonly ServiceName?: string | undefined;
+	readonly FcType?: string | undefined;
+	readonly Qualifier?: string | undefined;
+	readonly Method?: string | undefined;
+	readonly OnlyBusinessPath?: boolean | undefined;
+	readonly FcRegionId?: string | undefined;
+	readonly ContentTypeCatagory?: string | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly FcBaseUrl?: string | undefined;
 }
 export interface MockHeaders {
 	readonly HeaderValue: string;
@@ -322,51 +322,51 @@ export interface MockHeaders {
 }
 export interface OpenIdConnectConfig {
 	readonly OpenIdApiType: string;
-	readonly PublicKey?: (string | undefined) | undefined;
-	readonly PublicKeyId?: (string | undefined) | undefined;
-	readonly IdTokenParamName?: (string | undefined) | undefined;
+	readonly PublicKey?: string | undefined;
+	readonly PublicKeyId?: string | undefined;
+	readonly IdTokenParamName?: string | undefined;
 }
 export interface RequestConfig {
 	readonly RequestPath: string;
 	readonly RequestMode: string;
 	readonly RequestProtocol: string;
 	readonly RequestHttpMethod: string;
-	readonly PostBodyDescription?: (string | undefined) | undefined;
-	readonly BodyFormat?: (string | undefined) | undefined;
+	readonly PostBodyDescription?: string | undefined;
+	readonly BodyFormat?: string | undefined;
 }
 export interface RequestParameters {
-	readonly RegularExpression?: (string | undefined) | undefined;
+	readonly RegularExpression?: string | undefined;
 	readonly ParameterType: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly JsonScheme?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly JsonScheme?: string | undefined;
 	readonly ApiParameterName: string;
-	readonly EnumValue?: (string | undefined) | undefined;
-	readonly MinLength?: (number | undefined) | undefined;
-	readonly MaxValue?: (number | undefined) | undefined;
-	readonly MaxLength?: (number | undefined) | undefined;
-	readonly DemoValue?: (string | undefined) | undefined;
-	readonly DefaultValue?: (string | undefined) | undefined;
+	readonly EnumValue?: string | undefined;
+	readonly MinLength?: number | undefined;
+	readonly MaxValue?: number | undefined;
+	readonly MaxLength?: number | undefined;
+	readonly DemoValue?: string | undefined;
+	readonly DefaultValue?: string | undefined;
 	readonly Required: string;
-	readonly DocOrder?: (number | undefined) | undefined;
-	readonly MinValue?: (number | undefined) | undefined;
-	readonly DocShow?: (string | undefined) | undefined;
+	readonly DocOrder?: number | undefined;
+	readonly MinValue?: number | undefined;
+	readonly DocShow?: string | undefined;
 	readonly Location: string;
 }
 export interface ServiceConfig {
-	readonly ServiceAddress?: (string | undefined) | undefined;
-	readonly FunctionComputeConfig?: (FunctionComputeConfig | undefined) | undefined;
-	readonly MockResult?: (string | undefined) | undefined;
-	readonly ContentTypeValue?: (string | undefined) | undefined;
-	readonly VpcConfig?: (VpcConfig | undefined) | undefined;
-	readonly ServiceVpcEnable?: (string | undefined) | undefined;
-	readonly MockStatusCode?: (number | undefined) | undefined;
-	readonly MockHeaders?: (MockHeaders[] | undefined) | undefined;
-	readonly ServiceHttpMethod?: (string | undefined) | undefined;
-	readonly ServicePath?: (string | undefined) | undefined;
-	readonly Mock?: (string | undefined) | undefined;
-	readonly ServiceTimeOut?: (number | undefined) | undefined;
-	readonly ServiceProtocol?: (string | undefined) | undefined;
-	readonly ContentTypeCatagory?: (string | undefined) | undefined;
+	readonly ServiceAddress?: string | undefined;
+	readonly FunctionComputeConfig?: FunctionComputeConfig | undefined;
+	readonly MockResult?: string | undefined;
+	readonly ContentTypeValue?: string | undefined;
+	readonly VpcConfig?: VpcConfig | undefined;
+	readonly ServiceVpcEnable?: string | undefined;
+	readonly MockStatusCode?: number | undefined;
+	readonly MockHeaders?: MockHeaders[] | undefined;
+	readonly ServiceHttpMethod?: string | undefined;
+	readonly ServicePath?: string | undefined;
+	readonly Mock?: string | undefined;
+	readonly ServiceTimeOut?: number | undefined;
+	readonly ServiceProtocol?: string | undefined;
+	readonly ContentTypeCatagory?: string | undefined;
 }
 export interface ServiceParameters {
 	readonly ParameterType: string;
@@ -378,14 +378,14 @@ export interface ServiceParametersMap {
 	readonly ServiceParameterName: string;
 }
 export interface SystemParameters {
-	readonly DemoValue?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly DemoValue?: string | undefined;
+	readonly Description?: string | undefined;
 	readonly ParameterName: string;
 	readonly ServiceParameterName: string;
 	readonly Location: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface VpcConfig {

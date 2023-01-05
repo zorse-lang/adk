@@ -16,14 +16,14 @@ export interface azureADMetricsComponentOutputs {
 export interface azureADMetricsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AzureADMetricsPropertiesFormat | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: AzureADMetricsPropertiesFormat;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AzureADMetricsPropertiesFormat {
-	readonly provisioningState?: ("Created" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Created" | "Failed" | "Succeeded";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	azureADMetrics: azureADMetrics,

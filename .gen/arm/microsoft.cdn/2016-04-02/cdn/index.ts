@@ -16,9 +16,9 @@ export interface profilesComponentOutputs {
 export interface profilesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ProfileProperties | undefined;
+	readonly properties?: ProfileProperties;
 	readonly sku: Sku;
-	readonly tags?: ProfileCreateParametersTags | undefined;
+	readonly tags?: ProfileCreateParametersTags;
 }
 export class profiles_endpoints
 	extends ArmResource<profiles_endpointsComponentInputs>
@@ -39,8 +39,8 @@ export interface profiles_endpointsComponentOutputs {
 export interface profiles_endpointsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: EndpointPropertiesCreateParametersOrEndpointProperties | undefined;
-	readonly tags?: EndpointCreateParametersTags | undefined;
+	readonly properties?: EndpointPropertiesCreateParametersOrEndpointProperties;
+	readonly tags?: EndpointCreateParametersTags;
 }
 export class profiles_endpoints_customDomains
 	extends ArmResource<profiles_endpoints_customDomainsComponentInputs>
@@ -60,7 +60,7 @@ export interface profiles_endpoints_customDomainsComponentOutputs {
 }
 export interface profiles_endpoints_customDomainsComponentInputs {
 	readonly name: string;
-	readonly properties?: CustomDomainPropertiesParametersOrCustomDomainProperties | undefined;
+	readonly properties?: CustomDomainPropertiesParametersOrCustomDomainProperties;
 }
 export class profiles_endpoints_origins
 	extends ArmResource<profiles_endpoints_originsComponentInputs>
@@ -80,54 +80,54 @@ export interface profiles_endpoints_originsComponentOutputs {
 }
 export interface profiles_endpoints_originsComponentInputs {
 	readonly name: string;
-	readonly properties?: OriginPropertiesParametersOrOriginProperties | undefined;
+	readonly properties?: OriginPropertiesParametersOrOriginProperties;
 }
 export interface CustomDomainPropertiesParametersOrCustomDomainProperties {
 	readonly hostName: string;
-	readonly provisioningState?: ("Creating" | "Failed") | undefined;
-	readonly resourceState?: ("Active" | "Creating") | undefined;
+	readonly provisioningState?: "Creating" | "Failed";
+	readonly resourceState?: "Active" | "Creating";
 }
 export interface DeepCreatedOrigin {
 	readonly name: string;
-	readonly properties?: DeepCreatedOriginProperties | undefined;
+	readonly properties?: DeepCreatedOriginProperties;
 }
 export interface DeepCreatedOriginProperties {
 	readonly hostName: string;
-	readonly httpPort?: number | undefined;
-	readonly httpsPort?: number | undefined;
+	readonly httpPort?: number;
+	readonly httpsPort?: number;
 }
 export interface EndpointCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface EndpointPropertiesCreateParametersOrEndpointProperties {
-	readonly contentTypesToCompress?: string[] | undefined;
-	readonly hostName?: string | undefined;
-	readonly isCompressionEnabled?: boolean | undefined;
-	readonly isHttpAllowed?: boolean | undefined;
-	readonly isHttpsAllowed?: boolean | undefined;
-	readonly originHostHeader?: string | undefined;
-	readonly originPath?: string | undefined;
+	readonly contentTypesToCompress?: string[];
+	readonly hostName?: string;
+	readonly isCompressionEnabled?: boolean;
+	readonly isHttpAllowed?: boolean;
+	readonly isHttpsAllowed?: boolean;
+	readonly originHostHeader?: string;
+	readonly originPath?: string;
 	readonly origins: DeepCreatedOrigin[];
-	readonly provisioningState?: ("Creating" | "Failed") | undefined;
-	readonly queryStringCachingBehavior?: ("BypassCaching" | "IgnoreQueryString" | "NotSet") | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Running" | "Starting" | "Stopped") | undefined;
+	readonly provisioningState?: "Creating" | "Failed";
+	readonly queryStringCachingBehavior?: "BypassCaching" | "IgnoreQueryString" | "NotSet";
+	readonly resourceState?: "Creating" | "Deleting" | "Running" | "Starting" | "Stopped";
 }
 export interface OriginPropertiesParametersOrOriginProperties {
 	readonly hostName: string;
-	readonly httpPort?: number | undefined;
-	readonly httpsPort?: number | undefined;
-	readonly provisioningState?: ("Creating" | "Failed") | undefined;
-	readonly resourceState?: ("Active" | "Creating") | undefined;
+	readonly httpPort?: number;
+	readonly httpsPort?: number;
+	readonly provisioningState?: "Creating" | "Failed";
+	readonly resourceState?: "Active" | "Creating";
 }
 export interface ProfileCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ProfileProperties {
-	readonly provisioningState?: ("Creating" | "Failed") | undefined;
-	readonly resourceState?: ("Active" | "Creating" | "Deleting") | undefined;
+	readonly provisioningState?: "Creating" | "Failed";
+	readonly resourceState?: "Active" | "Creating" | "Deleting";
 }
 export interface Sku {
-	readonly name?: ("Custom_Verizon" | "Premium_Verizon" | "Standard_Akamai") | undefined;
+	readonly name?: "Custom_Verizon" | "Premium_Verizon" | "Standard_Akamai";
 }
 export default {
 	profiles: profiles,

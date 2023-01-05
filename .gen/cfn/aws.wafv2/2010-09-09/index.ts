@@ -15,9 +15,9 @@ export interface IPSetComponentInputs {
 	readonly Addresses: string[];
 	readonly IPAddressVersion: string;
 	readonly Scope: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LoggingConfiguration
@@ -35,8 +35,8 @@ export interface LoggingConfigurationComponentOutputs {
 export interface LoggingConfigurationComponentInputs {
 	readonly LogDestinationConfigs: string[];
 	readonly ResourceArn: string;
-	readonly LoggingFilter?: (LoggingFilter | undefined) | undefined;
-	readonly RedactedFields?: (FieldToMatch[] | undefined) | undefined;
+	readonly LoggingFilter?: LoggingFilter | undefined;
+	readonly RedactedFields?: FieldToMatch[] | undefined;
 	readonly LogicalId: string;
 }
 export class RegexPatternSet
@@ -56,9 +56,9 @@ export interface RegexPatternSetComponentOutputs {
 export interface RegexPatternSetComponentInputs {
 	readonly RegularExpressionList: string[];
 	readonly Scope: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class RuleGroup extends CfnResource<RuleGroupComponentInputs> implements RuleGroupComponentOutputs {
@@ -82,11 +82,11 @@ export interface RuleGroupComponentInputs {
 	readonly Capacity: number;
 	readonly Scope: string;
 	readonly VisibilityConfig: VisibilityConfig;
-	readonly CustomResponseBodies?: ({ [key: string]: CustomResponseBody } | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Rules?: (Rule[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CustomResponseBodies?: { [key: string]: CustomResponseBody } | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Rules?: Rule[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class WebACL extends CfnResource<WebACLComponentInputs> implements WebACLComponentOutputs {
@@ -108,12 +108,12 @@ export interface WebACLComponentInputs {
 	readonly DefaultAction: DefaultAction;
 	readonly Scope: string;
 	readonly VisibilityConfig: VisibilityConfig;
-	readonly CaptchaConfig?: (CaptchaConfig | undefined) | undefined;
-	readonly CustomResponseBodies?: ({ [key: string]: CustomResponseBody } | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Rules?: (Rule[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CaptchaConfig?: CaptchaConfig | undefined;
+	readonly CustomResponseBodies?: { [key: string]: CustomResponseBody } | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Rules?: Rule[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class WebACLAssociation
@@ -134,15 +134,15 @@ export interface ActionCondition {
 	readonly Action: string;
 }
 export interface Condition {
-	readonly ActionCondition?: (ActionCondition | undefined) | undefined;
-	readonly LabelNameCondition?: (LabelNameCondition | undefined) | undefined;
+	readonly ActionCondition?: ActionCondition | undefined;
+	readonly LabelNameCondition?: LabelNameCondition | undefined;
 }
 export interface FieldToMatch {
-	readonly JsonBody?: (JsonBody | undefined) | undefined;
-	readonly Method?: (any | undefined) | undefined;
-	readonly QueryString?: (any | undefined) | undefined;
-	readonly SingleHeader?: (SingleHeader | undefined) | undefined;
-	readonly UriPath?: (any | undefined) | undefined;
+	readonly JsonBody?: JsonBody | undefined;
+	readonly Method?: any | undefined;
+	readonly QueryString?: any | undefined;
+	readonly SingleHeader?: SingleHeader | undefined;
+	readonly UriPath?: any | undefined;
 }
 export interface Filter {
 	readonly Behavior: string;
@@ -150,7 +150,7 @@ export interface Filter {
 	readonly Requirement: string;
 }
 export interface JsonBody {
-	readonly InvalidFallbackBehavior?: (string | undefined) | undefined;
+	readonly InvalidFallbackBehavior?: string | undefined;
 	readonly MatchPattern: MatchPattern;
 	readonly MatchScope: string;
 }
@@ -162,41 +162,41 @@ export interface LoggingFilter {
 	readonly Filters: Filter[];
 }
 export interface MatchPattern {
-	readonly All?: (any | undefined) | undefined;
-	readonly IncludedPaths?: (string[] | undefined) | undefined;
+	readonly All?: any | undefined;
+	readonly IncludedPaths?: string[] | undefined;
 }
 export interface SingleHeader {
 	readonly Name: string;
 }
 export interface Allow {
-	readonly CustomRequestHandling?: (CustomRequestHandling | undefined) | undefined;
+	readonly CustomRequestHandling?: CustomRequestHandling | undefined;
 }
 export interface AndStatement {
 	readonly Statements: Statement[];
 }
 export interface Block {
-	readonly CustomResponse?: (CustomResponse | undefined) | undefined;
+	readonly CustomResponse?: CustomResponse | undefined;
 }
 export interface Body {
-	readonly OversizeHandling?: (string | undefined) | undefined;
+	readonly OversizeHandling?: string | undefined;
 }
 export interface ByteMatchStatement {
 	readonly FieldToMatch: FieldToMatch;
 	readonly PositionalConstraint: string;
-	readonly SearchString?: (string | undefined) | undefined;
-	readonly SearchStringBase64?: (string | undefined) | undefined;
+	readonly SearchString?: string | undefined;
+	readonly SearchStringBase64?: string | undefined;
 	readonly TextTransformations: TextTransformation[];
 }
 export interface Captcha {
-	readonly CustomRequestHandling?: (CustomRequestHandling | undefined) | undefined;
+	readonly CustomRequestHandling?: CustomRequestHandling | undefined;
 }
 export interface CaptchaConfig {
-	readonly ImmunityTimeProperty?: (ImmunityTime | undefined) | undefined;
+	readonly ImmunityTimeProperty?: ImmunityTime | undefined;
 }
 export interface CookieMatchPattern {
-	readonly All?: (any | undefined) | undefined;
-	readonly ExcludedCookies?: (string[] | undefined) | undefined;
-	readonly IncludedCookies?: (string[] | undefined) | undefined;
+	readonly All?: any | undefined;
+	readonly ExcludedCookies?: string[] | undefined;
+	readonly IncludedCookies?: string[] | undefined;
 }
 export interface Cookies {
 	readonly MatchPattern: CookieMatchPattern;
@@ -204,7 +204,7 @@ export interface Cookies {
 	readonly OversizeHandling: string;
 }
 export interface Count {
-	readonly CustomRequestHandling?: (CustomRequestHandling | undefined) | undefined;
+	readonly CustomRequestHandling?: CustomRequestHandling | undefined;
 }
 export interface CustomHTTPHeader {
 	readonly Name: string;
@@ -214,9 +214,9 @@ export interface CustomRequestHandling {
 	readonly InsertHeaders: CustomHTTPHeader[];
 }
 export interface CustomResponse {
-	readonly CustomResponseBodyKey?: (string | undefined) | undefined;
+	readonly CustomResponseBodyKey?: string | undefined;
 	readonly ResponseCode: number;
-	readonly ResponseHeaders?: (CustomHTTPHeader[] | undefined) | undefined;
+	readonly ResponseHeaders?: CustomHTTPHeader[] | undefined;
 }
 export interface CustomResponseBody {
 	readonly Content: string;
@@ -227,13 +227,13 @@ export interface ForwardedIPConfiguration {
 	readonly HeaderName: string;
 }
 export interface GeoMatchStatement {
-	readonly CountryCodes?: (string[] | undefined) | undefined;
-	readonly ForwardedIPConfig?: (ForwardedIPConfiguration | undefined) | undefined;
+	readonly CountryCodes?: string[] | undefined;
+	readonly ForwardedIPConfig?: ForwardedIPConfiguration | undefined;
 }
 export interface HeaderMatchPattern {
-	readonly All?: (any | undefined) | undefined;
-	readonly ExcludedHeaders?: (string[] | undefined) | undefined;
-	readonly IncludedHeaders?: (string[] | undefined) | undefined;
+	readonly All?: any | undefined;
+	readonly ExcludedHeaders?: string[] | undefined;
+	readonly IncludedHeaders?: string[] | undefined;
 }
 export interface Headers {
 	readonly MatchPattern: HeaderMatchPattern;
@@ -247,14 +247,14 @@ export interface IPSetForwardedIPConfiguration {
 }
 export interface IPSetReferenceStatement {
 	readonly Arn: string;
-	readonly IPSetForwardedIPConfig?: (IPSetForwardedIPConfiguration | undefined) | undefined;
+	readonly IPSetForwardedIPConfig?: IPSetForwardedIPConfiguration | undefined;
 }
 export interface ImmunityTime {
 	readonly ImmunityTime: number;
 }
 export interface JsonMatchPattern {
-	readonly All?: (any | undefined) | undefined;
-	readonly IncludedPaths?: (string[] | undefined) | undefined;
+	readonly All?: any | undefined;
+	readonly IncludedPaths?: string[] | undefined;
 }
 export interface LabelOptions {
 	readonly Name: string;
@@ -264,7 +264,7 @@ export interface LabelMatchStatement {
 	readonly Scope: string;
 }
 export interface LabelSummary {
-	readonly Name?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
 }
 export interface NotStatement {
 	readonly Statement: Statement;
@@ -274,9 +274,9 @@ export interface OrStatement {
 }
 export interface RateBasedStatement {
 	readonly AggregateKeyType: string;
-	readonly ForwardedIPConfig?: (ForwardedIPConfiguration | undefined) | undefined;
+	readonly ForwardedIPConfig?: ForwardedIPConfiguration | undefined;
 	readonly Limit: number;
-	readonly ScopeDownStatement?: (Statement | undefined) | undefined;
+	readonly ScopeDownStatement?: Statement | undefined;
 }
 export interface RegexMatchStatement {
 	readonly FieldToMatch: FieldToMatch;
@@ -289,19 +289,19 @@ export interface RegexPatternSetReferenceStatement {
 	readonly TextTransformations: TextTransformation[];
 }
 export interface Rule {
-	readonly Action?: (RuleAction | undefined) | undefined;
-	readonly CaptchaConfig?: (CaptchaConfig | undefined) | undefined;
+	readonly Action?: RuleAction | undefined;
+	readonly CaptchaConfig?: CaptchaConfig | undefined;
 	readonly Name: string;
 	readonly Priority: number;
-	readonly RuleLabels?: LabelOptions[] | undefined;
+	readonly RuleLabels?: LabelOptions[];
 	readonly Statement: Statement;
 	readonly VisibilityConfig: VisibilityConfig;
 }
 export interface RuleAction {
-	readonly Allow?: (Allow | undefined) | undefined;
-	readonly Block?: (Block | undefined) | undefined;
-	readonly Captcha?: (Captcha | undefined) | undefined;
-	readonly Count?: (Count | undefined) | undefined;
+	readonly Allow?: Allow | undefined;
+	readonly Block?: Block | undefined;
+	readonly Captcha?: Captcha | undefined;
+	readonly Count?: Count | undefined;
 }
 export interface SingleQueryArgument {
 	readonly Name: string;
@@ -314,23 +314,23 @@ export interface SizeConstraintStatement {
 }
 export interface SqliMatchStatement {
 	readonly FieldToMatch: FieldToMatch;
-	readonly SensitivityLevel?: (string | undefined) | undefined;
+	readonly SensitivityLevel?: string | undefined;
 	readonly TextTransformations: TextTransformation[];
 }
 export interface Statement {
-	readonly AndStatement?: (AndStatement | undefined) | undefined;
-	readonly ByteMatchStatement?: (ByteMatchStatement | undefined) | undefined;
-	readonly GeoMatchStatement?: (GeoMatchStatement | undefined) | undefined;
-	readonly IPSetReferenceStatement?: (IPSetReferenceStatement | undefined) | undefined;
-	readonly LabelMatchStatement?: (LabelMatchStatement | undefined) | undefined;
-	readonly NotStatement?: (NotStatement | undefined) | undefined;
-	readonly OrStatement?: (OrStatement | undefined) | undefined;
-	readonly RateBasedStatement?: (RateBasedStatement | undefined) | undefined;
-	readonly RegexMatchStatement?: (RegexMatchStatement | undefined) | undefined;
-	readonly RegexPatternSetReferenceStatement?: (RegexPatternSetReferenceStatement | undefined) | undefined;
-	readonly SizeConstraintStatement?: (SizeConstraintStatement | undefined) | undefined;
-	readonly SqliMatchStatement?: (SqliMatchStatement | undefined) | undefined;
-	readonly XssMatchStatement?: (XssMatchStatement | undefined) | undefined;
+	readonly AndStatement?: AndStatement | undefined;
+	readonly ByteMatchStatement?: ByteMatchStatement | undefined;
+	readonly GeoMatchStatement?: GeoMatchStatement | undefined;
+	readonly IPSetReferenceStatement?: IPSetReferenceStatement | undefined;
+	readonly LabelMatchStatement?: LabelMatchStatement | undefined;
+	readonly NotStatement?: NotStatement | undefined;
+	readonly OrStatement?: OrStatement | undefined;
+	readonly RateBasedStatement?: RateBasedStatement | undefined;
+	readonly RegexMatchStatement?: RegexMatchStatement | undefined;
+	readonly RegexPatternSetReferenceStatement?: RegexPatternSetReferenceStatement | undefined;
+	readonly SizeConstraintStatement?: SizeConstraintStatement | undefined;
+	readonly SqliMatchStatement?: SqliMatchStatement | undefined;
+	readonly XssMatchStatement?: XssMatchStatement | undefined;
 }
 export interface TextTransformation {
 	readonly Priority: number;
@@ -346,20 +346,20 @@ export interface XssMatchStatement {
 	readonly TextTransformations: TextTransformation[];
 }
 export interface AllowAction {
-	readonly CustomRequestHandling?: (CustomRequestHandling | undefined) | undefined;
+	readonly CustomRequestHandling?: CustomRequestHandling | undefined;
 }
 export interface BlockAction {
-	readonly CustomResponse?: (CustomResponse | undefined) | undefined;
+	readonly CustomResponse?: CustomResponse | undefined;
 }
 export interface CaptchaAction {
-	readonly CustomRequestHandling?: (CustomRequestHandling | undefined) | undefined;
+	readonly CustomRequestHandling?: CustomRequestHandling | undefined;
 }
 export interface CountAction {
-	readonly CustomRequestHandling?: (CustomRequestHandling | undefined) | undefined;
+	readonly CustomRequestHandling?: CustomRequestHandling | undefined;
 }
 export interface DefaultAction {
-	readonly Allow?: (AllowAction | undefined) | undefined;
-	readonly Block?: (BlockAction | undefined) | undefined;
+	readonly Allow?: AllowAction | undefined;
+	readonly Block?: BlockAction | undefined;
 }
 export interface ExcludedRule {
 	readonly Name: string;
@@ -368,26 +368,26 @@ export interface FieldIdentifier {
 	readonly Identifier: string;
 }
 export interface ManagedRuleGroupConfig {
-	readonly LoginPath?: (string | undefined) | undefined;
-	readonly PasswordField?: (FieldIdentifier | undefined) | undefined;
-	readonly PayloadType?: (string | undefined) | undefined;
-	readonly UsernameField?: (FieldIdentifier | undefined) | undefined;
+	readonly LoginPath?: string | undefined;
+	readonly PasswordField?: FieldIdentifier | undefined;
+	readonly PayloadType?: string | undefined;
+	readonly UsernameField?: FieldIdentifier | undefined;
 }
 export interface ManagedRuleGroupStatement {
-	readonly ExcludedRules?: (ExcludedRule[] | undefined) | undefined;
-	readonly ManagedRuleGroupConfigs?: (ManagedRuleGroupConfig[] | undefined) | undefined;
+	readonly ExcludedRules?: ExcludedRule[] | undefined;
+	readonly ManagedRuleGroupConfigs?: ManagedRuleGroupConfig[] | undefined;
 	readonly Name: string;
-	readonly ScopeDownStatement?: (Statement | undefined) | undefined;
+	readonly ScopeDownStatement?: Statement | undefined;
 	readonly VendorName: string;
-	readonly Version?: (string | undefined) | undefined;
+	readonly Version?: string | undefined;
 }
 export interface OverrideAction {
-	readonly Count?: (any | undefined) | undefined;
-	readonly None?: (any | undefined) | undefined;
+	readonly Count?: any | undefined;
+	readonly None?: any | undefined;
 }
 export interface RuleGroupReferenceStatement {
 	readonly Arn: string;
-	readonly ExcludedRules?: (ExcludedRule[] | undefined) | undefined;
+	readonly ExcludedRules?: ExcludedRule[] | undefined;
 }
 export default {
 	IPSet: IPSet,

@@ -16,9 +16,9 @@ export interface profilesComponentOutputs {
 export interface profilesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ProfileProperties | undefined;
+	readonly properties?: ProfileProperties;
 	readonly sku: Sku;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class profiles_endpoints
 	extends ArmResource<profiles_endpointsComponentInputs>
@@ -39,8 +39,8 @@ export interface profiles_endpointsComponentOutputs {
 export interface profiles_endpointsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: EndpointProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: EndpointProperties;
+	readonly tags?: ResourceTags;
 }
 export class profiles_endpoints_customDomains
 	extends ArmResource<profiles_endpoints_customDomainsComponentInputs>
@@ -59,10 +59,10 @@ export interface profiles_endpoints_customDomainsComponentOutputs {
 	readonly type: "Microsoft.Cdn/profiles/endpoints/customDomains";
 }
 export interface profiles_endpoints_customDomainsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: CustomDomainPropertiesParametersOrCustomDomainProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: CustomDomainPropertiesParametersOrCustomDomainProperties;
+	readonly tags?: ResourceTags;
 }
 export class profiles_endpoints_origins
 	extends ArmResource<profiles_endpoints_originsComponentInputs>
@@ -81,49 +81,46 @@ export interface profiles_endpoints_originsComponentOutputs {
 	readonly type: "Microsoft.Cdn/profiles/endpoints/origins";
 }
 export interface profiles_endpoints_originsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: OriginProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: OriginProperties;
+	readonly tags?: ResourceTags;
 }
 export interface CustomDomainPropertiesParametersOrCustomDomainProperties {
-	readonly customHttpsProvisioningState?: ("Disabled" | "Disabling" | "Enabled" | "Enabling" | "Failed") | undefined;
+	readonly customHttpsProvisioningState?: "Disabled" | "Disabling" | "Enabled" | "Enabling" | "Failed";
 	readonly hostName: string;
-	readonly provisioningState?: string | undefined;
-	readonly resourceState?: ("Active" | "Creating" | "Deleting") | undefined;
-	readonly validationData?: string | undefined;
+	readonly provisioningState?: string;
+	readonly resourceState?: "Active" | "Creating" | "Deleting";
+	readonly validationData?: string;
 }
 export interface DeepCreatedOrigin {
 	readonly name: string;
-	readonly properties?: DeepCreatedOriginProperties | undefined;
+	readonly properties?: DeepCreatedOriginProperties;
 }
 export interface DeepCreatedOriginProperties {
 	readonly hostName: string;
-	readonly httpPort?: number | undefined;
-	readonly httpsPort?: number | undefined;
+	readonly httpPort?: number;
+	readonly httpsPort?: number;
 }
 export interface EndpointProperties {
-	readonly contentTypesToCompress?: string[] | undefined;
-	readonly geoFilters?: GeoFilter[] | undefined;
-	readonly hostName?: string | undefined;
-	readonly isCompressionEnabled?: boolean | undefined;
-	readonly isHttpAllowed?: boolean | undefined;
-	readonly isHttpsAllowed?: boolean | undefined;
+	readonly contentTypesToCompress?: string[];
+	readonly geoFilters?: GeoFilter[];
+	readonly hostName?: string;
+	readonly isCompressionEnabled?: boolean;
+	readonly isHttpAllowed?: boolean;
+	readonly isHttpsAllowed?: boolean;
 	readonly optimizationType?:
-		| (
-				| "DynamicSiteAcceleration"
-				| "GeneralMediaStreaming"
-				| "GeneralWebDelivery"
-				| "LargeFileDownload"
-				| "VideoOnDemandMediaStreaming"
-		  )
-		| undefined;
-	readonly originHostHeader?: string | undefined;
-	readonly originPath?: string | undefined;
+		| "DynamicSiteAcceleration"
+		| "GeneralMediaStreaming"
+		| "GeneralWebDelivery"
+		| "LargeFileDownload"
+		| "VideoOnDemandMediaStreaming";
+	readonly originHostHeader?: string;
+	readonly originPath?: string;
 	readonly origins: DeepCreatedOrigin[];
-	readonly provisioningState?: string | undefined;
-	readonly queryStringCachingBehavior?: ("BypassCaching" | "IgnoreQueryString" | "NotSet") | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Running" | "Starting" | "Stopped" | "Stopping") | undefined;
+	readonly provisioningState?: string;
+	readonly queryStringCachingBehavior?: "BypassCaching" | "IgnoreQueryString" | "NotSet";
+	readonly resourceState?: "Creating" | "Deleting" | "Running" | "Starting" | "Stopped" | "Stopping";
 }
 export interface GeoFilter {
 	readonly action: "Allow";
@@ -132,22 +129,20 @@ export interface GeoFilter {
 }
 export interface OriginProperties {
 	readonly hostName: string;
-	readonly httpPort?: number | undefined;
-	readonly httpsPort?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceState?: ("Active" | "Creating" | "Deleting") | undefined;
+	readonly httpPort?: number;
+	readonly httpsPort?: number;
+	readonly provisioningState?: string;
+	readonly resourceState?: "Active" | "Creating" | "Deleting";
 }
 export interface ProfileProperties {
-	readonly provisioningState?: string | undefined;
-	readonly resourceState?: ("Active" | "Creating" | "Deleting" | "Disabled") | undefined;
+	readonly provisioningState?: string;
+	readonly resourceState?: "Active" | "Creating" | "Deleting" | "Disabled";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
-	readonly name?:
-		| ("Custom_Verizon" | "Premium_Verizon" | "Standard_Akamai" | "Standard_ChinaCdn" | "Standard_Verizon")
-		| undefined;
+	readonly name?: "Custom_Verizon" | "Premium_Verizon" | "Standard_Akamai" | "Standard_ChinaCdn" | "Standard_Verizon";
 }
 export default {
 	profiles: profiles,

@@ -7,59 +7,58 @@ export class ProjectsInstancesBackups
 	constructor(entity: ADKEntity, options: ProjectsInstancesBackupsComponentInputs) {
 		super(entity, options.name, "spanner.v1.ProjectsInstancesBackups", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly databaseDialect?: string | undefined;
-	public readonly encryptionInfo?: EncryptionInfo | undefined;
-	public readonly maxExpireTime?: string | undefined;
-	public readonly referencingBackups?: string[] | undefined;
-	public readonly referencingDatabases?: string[] | undefined;
-	public readonly sizeBytes?: string | undefined;
-	public readonly state?: string | undefined;
+	public readonly createTime?: string;
+	public readonly databaseDialect?: string;
+	public readonly encryptionInfo?: EncryptionInfo;
+	public readonly maxExpireTime?: string;
+	public readonly referencingBackups?: string[];
+	public readonly referencingDatabases?: string[];
+	public readonly sizeBytes?: string;
+	public readonly state?: string;
 }
 export interface ProjectsInstancesBackupsComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly databaseDialect?: string | undefined;
-	readonly encryptionInfo?: EncryptionInfo | undefined;
-	readonly maxExpireTime?: string | undefined;
-	readonly referencingBackups?: string[] | undefined;
-	readonly referencingDatabases?: string[] | undefined;
-	readonly sizeBytes?: string | undefined;
-	readonly state?: string | undefined;
+	readonly createTime?: string;
+	readonly databaseDialect?: string;
+	readonly encryptionInfo?: EncryptionInfo;
+	readonly maxExpireTime?: string;
+	readonly referencingBackups?: string[];
+	readonly referencingDatabases?: string[];
+	readonly sizeBytes?: string;
+	readonly state?: string;
 }
 export interface ProjectsInstancesBackupsComponentInputs {
 	readonly backupId: string;
 	readonly database: string;
 	readonly encryptionConfig_encryptionType: string;
-	readonly encryptionConfig_kmsKeyName?: string | undefined;
+	readonly encryptionConfig_kmsKeyName?: string;
 	readonly expireTime: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly versionTime?: string | undefined;
-	readonly type: string;
+	readonly versionTime?: string;
 }
 export interface Backup {
-	readonly createTime?: string | undefined;
+	readonly createTime?: string;
 	readonly database: string;
-	readonly databaseDialect?: string | undefined;
-	readonly encryptionInfo?: EncryptionInfo | undefined;
+	readonly databaseDialect?: string;
+	readonly encryptionInfo?: EncryptionInfo;
 	readonly expireTime: string;
-	readonly maxExpireTime?: string | undefined;
-	readonly name?: string | undefined;
-	readonly referencingBackups?: string[] | undefined;
-	readonly referencingDatabases?: string[] | undefined;
-	readonly sizeBytes?: string | undefined;
-	readonly state?: string | undefined;
-	readonly versionTime?: string | undefined;
+	readonly maxExpireTime?: string;
+	readonly name?: string;
+	readonly referencingBackups?: string[];
+	readonly referencingDatabases?: string[];
+	readonly sizeBytes?: string;
+	readonly state?: string;
+	readonly versionTime?: string;
 }
 export interface EncryptionInfo {
-	readonly encryptionStatus?: Status | undefined;
-	readonly encryptionType?: string | undefined;
-	readonly kmsKeyVersion?: string | undefined;
+	readonly encryptionStatus?: Status;
+	readonly encryptionType?: string;
+	readonly kmsKeyVersion?: string;
 }
 export interface Status {
-	readonly code?: number | undefined;
-	readonly details?: Array<{ [P in string]: any }> | undefined;
-	readonly message?: string | undefined;
+	readonly code?: number;
+	readonly details?: Array<{ [P in string]: any }>;
+	readonly message?: string;
 }
 export default {
 	ProjectsInstancesBackups: ProjectsInstancesBackups,

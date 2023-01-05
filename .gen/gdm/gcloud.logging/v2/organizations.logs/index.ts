@@ -10,7 +10,6 @@ export class OrganizationsLogs
 }
 export interface OrganizationsLogsComponentOutputs {}
 export interface OrganizationsLogsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

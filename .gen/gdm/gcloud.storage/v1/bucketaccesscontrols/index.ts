@@ -10,33 +10,32 @@ export class BucketAccessControls
 }
 export interface BucketAccessControlsComponentOutputs {}
 export interface BucketAccessControlsComponentInputs {
-	readonly bucket?: string | undefined;
-	readonly domain?: string | undefined;
-	readonly email?: string | undefined;
-	readonly entity?: string | undefined;
-	readonly entityId?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly projectTeam?: { projectNumber?: string; team?: string } | undefined;
-	readonly role?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly userProject?: string | undefined;
-	readonly type: string;
+	readonly bucket?: string;
+	readonly domain?: string;
+	readonly email?: string;
+	readonly entity?: string;
+	readonly entityId?: string;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly projectTeam?: { projectNumber?: string; team?: string };
+	readonly role?: string;
+	readonly selfLink?: string;
+	readonly userProject?: string;
 	readonly name: string;
 }
 export interface BucketAccessControl {
-	readonly bucket?: string | undefined;
-	readonly domain?: string | undefined;
-	readonly email?: string | undefined;
-	readonly entity?: string | undefined;
-	readonly entityId?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly projectTeam?: { projectNumber?: string; team?: string } | undefined;
-	readonly role?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly bucket?: string;
+	readonly domain?: string;
+	readonly email?: string;
+	readonly entity?: string;
+	readonly entityId?: string;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly projectTeam?: { projectNumber?: string; team?: string };
+	readonly role?: string;
+	readonly selfLink?: string;
 }
 export default {
 	BucketAccessControls: BucketAccessControls,

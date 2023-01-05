@@ -18,11 +18,11 @@ export interface FirewallComponentInputs {
 	readonly FirewallPolicyArn: string;
 	readonly SubnetMappings: SubnetMapping[];
 	readonly VpcId: string;
-	readonly DeleteProtection?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly FirewallPolicyChangeProtection?: (boolean | undefined) | undefined;
-	readonly SubnetChangeProtection?: (boolean | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DeleteProtection?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly FirewallPolicyChangeProtection?: boolean | undefined;
+	readonly SubnetChangeProtection?: boolean | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class FirewallPolicy extends CfnResource<FirewallPolicyComponentInputs> implements FirewallPolicyComponentOutputs {
@@ -39,8 +39,8 @@ export interface FirewallPolicyComponentOutputs {
 export interface FirewallPolicyComponentInputs {
 	readonly FirewallPolicy: FirewallPolicy;
 	readonly FirewallPolicyName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LoggingConfiguration
@@ -55,7 +55,7 @@ export interface LoggingConfigurationComponentOutputs {}
 export interface LoggingConfigurationComponentInputs {
 	readonly FirewallArn: string;
 	readonly LoggingConfiguration: LoggingConfiguration;
-	readonly FirewallName?: (string | undefined) | undefined;
+	readonly FirewallName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class RuleGroup extends CfnResource<RuleGroupComponentInputs> implements RuleGroupComponentOutputs {
@@ -73,16 +73,16 @@ export interface RuleGroupComponentInputs {
 	readonly Capacity: number;
 	readonly RuleGroupName: string;
 	readonly Type: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly RuleGroup?: (RuleGroup | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly RuleGroup?: RuleGroup | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface SubnetMapping {
 	readonly SubnetId: string;
 }
 export interface ActionDefinition {
-	readonly PublishMetricAction?: (PublishMetricAction | undefined) | undefined;
+	readonly PublishMetricAction?: PublishMetricAction | undefined;
 }
 export interface CustomAction {
 	readonly ActionDefinition: ActionDefinition;
@@ -92,26 +92,26 @@ export interface Dimension {
 	readonly Value: string;
 }
 export interface FirewallPolicy {
-	readonly StatefulDefaultActions?: (string[] | undefined) | undefined;
-	readonly StatefulEngineOptions?: (StatefulEngineOptions | undefined) | undefined;
-	readonly StatefulRuleGroupReferences?: (StatefulRuleGroupReference[] | undefined) | undefined;
-	readonly StatelessCustomActions?: (CustomAction[] | undefined) | undefined;
+	readonly StatefulDefaultActions?: string[] | undefined;
+	readonly StatefulEngineOptions?: StatefulEngineOptions | undefined;
+	readonly StatefulRuleGroupReferences?: StatefulRuleGroupReference[] | undefined;
+	readonly StatelessCustomActions?: CustomAction[] | undefined;
 	readonly StatelessDefaultActions: string[];
 	readonly StatelessFragmentDefaultActions: string[];
-	readonly StatelessRuleGroupReferences?: (StatelessRuleGroupReference[] | undefined) | undefined;
+	readonly StatelessRuleGroupReferences?: StatelessRuleGroupReference[] | undefined;
 }
 export interface PublishMetricAction {
 	readonly Dimensions: Dimension[];
 }
 export interface StatefulEngineOptions {
-	readonly RuleOrder?: (string | undefined) | undefined;
+	readonly RuleOrder?: string | undefined;
 }
 export interface StatefulRuleGroupOverride {
-	readonly Action?: (string | undefined) | undefined;
+	readonly Action?: string | undefined;
 }
 export interface StatefulRuleGroupReference {
-	readonly Override?: (StatefulRuleGroupOverride | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
+	readonly Override?: StatefulRuleGroupOverride | undefined;
+	readonly Priority?: number | undefined;
 	readonly ResourceArn: string;
 }
 export interface StatelessRuleGroupReference {
@@ -138,45 +138,45 @@ export interface Header {
 	readonly SourcePort: string;
 }
 export interface IPSet {
-	readonly Definition?: (string[] | undefined) | undefined;
+	readonly Definition?: string[] | undefined;
 }
 export interface MatchAttributes {
-	readonly DestinationPorts?: (PortRange[] | undefined) | undefined;
-	readonly Destinations?: (Address[] | undefined) | undefined;
-	readonly Protocols?: (number[] | undefined) | undefined;
-	readonly SourcePorts?: (PortRange[] | undefined) | undefined;
-	readonly Sources?: (Address[] | undefined) | undefined;
-	readonly TCPFlags?: (TCPFlagField[] | undefined) | undefined;
+	readonly DestinationPorts?: PortRange[] | undefined;
+	readonly Destinations?: Address[] | undefined;
+	readonly Protocols?: number[] | undefined;
+	readonly SourcePorts?: PortRange[] | undefined;
+	readonly Sources?: Address[] | undefined;
+	readonly TCPFlags?: TCPFlagField[] | undefined;
 }
 export interface PortRange {
 	readonly FromPort: number;
 	readonly ToPort: number;
 }
 export interface PortSet {
-	readonly Definition?: (string[] | undefined) | undefined;
+	readonly Definition?: string[] | undefined;
 }
 export interface RuleDefinition {
 	readonly Actions: string[];
 	readonly MatchAttributes: MatchAttributes;
 }
 export interface RuleGroup {
-	readonly RuleVariables?: (RuleVariables | undefined) | undefined;
+	readonly RuleVariables?: RuleVariables | undefined;
 	readonly RulesSource: RulesSource;
-	readonly StatefulRuleOptions?: (StatefulRuleOptions | undefined) | undefined;
+	readonly StatefulRuleOptions?: StatefulRuleOptions | undefined;
 }
 export interface RuleOption {
 	readonly Keyword: string;
-	readonly Settings?: (string[] | undefined) | undefined;
+	readonly Settings?: string[] | undefined;
 }
 export interface RuleVariables {
-	readonly IPSets?: ({ [key: string]: IPSet } | undefined) | undefined;
-	readonly PortSets?: ({ [key: string]: PortSet } | undefined) | undefined;
+	readonly IPSets?: { [key: string]: IPSet } | undefined;
+	readonly PortSets?: { [key: string]: PortSet } | undefined;
 }
 export interface RulesSource {
-	readonly RulesSourceList?: (RulesSourceList | undefined) | undefined;
-	readonly RulesString?: (string | undefined) | undefined;
-	readonly StatefulRules?: (StatefulRule[] | undefined) | undefined;
-	readonly StatelessRulesAndCustomActions?: (StatelessRulesAndCustomActions | undefined) | undefined;
+	readonly RulesSourceList?: RulesSourceList | undefined;
+	readonly RulesString?: string | undefined;
+	readonly StatefulRules?: StatefulRule[] | undefined;
+	readonly StatelessRulesAndCustomActions?: StatelessRulesAndCustomActions | undefined;
 }
 export interface RulesSourceList {
 	readonly GeneratedRulesType: string;
@@ -189,19 +189,19 @@ export interface StatefulRule {
 	readonly RuleOptions: RuleOption[];
 }
 export interface StatefulRuleOptions {
-	readonly RuleOrder?: (string | undefined) | undefined;
+	readonly RuleOrder?: string | undefined;
 }
 export interface StatelessRule {
 	readonly Priority: number;
 	readonly RuleDefinition: RuleDefinition;
 }
 export interface StatelessRulesAndCustomActions {
-	readonly CustomActions?: (CustomAction[] | undefined) | undefined;
+	readonly CustomActions?: CustomAction[] | undefined;
 	readonly StatelessRules: StatelessRule[];
 }
 export interface TCPFlagField {
 	readonly Flags: string[];
-	readonly Masks?: (string[] | undefined) | undefined;
+	readonly Masks?: string[] | undefined;
 }
 export default {
 	Firewall: Firewall,

@@ -4,136 +4,135 @@ export class Routers extends GdmResource<RoutersComponentInputs> implements Rout
 	constructor(entity: ADKEntity, options: RoutersComponentInputs) {
 		super(entity, options.name, "compute.v1.Routers", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
 }
 export interface RoutersComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export interface RoutersComponentInputs {
-	readonly bgp?: RouterBgp | undefined;
-	readonly bgpPeers?: RouterBgpPeer[] | undefined;
-	readonly description?: string | undefined;
-	readonly encryptedInterconnectRouter?: boolean | undefined;
-	readonly interfaces?: RouterInterface[] | undefined;
-	readonly md5AuthenticationKeys?: RouterMd5AuthenticationKey[] | undefined;
+	readonly bgp?: RouterBgp;
+	readonly bgpPeers?: RouterBgpPeer[];
+	readonly description?: string;
+	readonly encryptedInterconnectRouter?: boolean;
+	readonly interfaces?: RouterInterface[];
+	readonly md5AuthenticationKeys?: RouterMd5AuthenticationKey[];
 	readonly name: string;
-	readonly nats?: RouterNat[] | undefined;
-	readonly network?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly type: string;
+	readonly nats?: RouterNat[];
+	readonly network?: string;
+	readonly requestId?: string;
 }
 export interface Router {
-	readonly bgp?: RouterBgp | undefined;
-	readonly bgpPeers?: RouterBgpPeer[] | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly encryptedInterconnectRouter?: boolean | undefined;
-	readonly id?: string | undefined;
-	readonly interfaces?: RouterInterface[] | undefined;
-	readonly kind?: string | undefined;
-	readonly md5AuthenticationKeys?: RouterMd5AuthenticationKey[] | undefined;
-	readonly name?: string | undefined;
-	readonly nats?: RouterNat[] | undefined;
-	readonly network?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly bgp?: RouterBgp;
+	readonly bgpPeers?: RouterBgpPeer[];
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly encryptedInterconnectRouter?: boolean;
+	readonly id?: string;
+	readonly interfaces?: RouterInterface[];
+	readonly kind?: string;
+	readonly md5AuthenticationKeys?: RouterMd5AuthenticationKey[];
+	readonly name?: string;
+	readonly nats?: RouterNat[];
+	readonly network?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export interface RouterAdvertisedIpRange {
-	readonly description?: string | undefined;
-	readonly range?: string | undefined;
+	readonly description?: string;
+	readonly range?: string;
 }
 export interface RouterBgp {
-	readonly advertisedGroups?: string[] | undefined;
-	readonly advertisedIpRanges?: RouterAdvertisedIpRange[] | undefined;
-	readonly advertiseMode?: string | undefined;
-	readonly asn?: number | undefined;
-	readonly keepaliveInterval?: number | undefined;
+	readonly advertisedGroups?: string[];
+	readonly advertisedIpRanges?: RouterAdvertisedIpRange[];
+	readonly advertiseMode?: string;
+	readonly asn?: number;
+	readonly keepaliveInterval?: number;
 }
 export interface RouterBgpPeer {
-	readonly advertisedGroups?: string[] | undefined;
-	readonly advertisedIpRanges?: RouterAdvertisedIpRange[] | undefined;
-	readonly advertisedRoutePriority?: number | undefined;
-	readonly advertiseMode?: string | undefined;
-	readonly bfd?: RouterBgpPeerBfd | undefined;
-	readonly enable?: string | undefined;
-	readonly enableIpv6?: boolean | undefined;
-	readonly interfaceName?: string | undefined;
-	readonly ipAddress?: string | undefined;
-	readonly ipv6NexthopAddress?: string | undefined;
-	readonly managementType?: string | undefined;
-	readonly md5AuthenticationKeyName?: string | undefined;
-	readonly name?: string | undefined;
-	readonly peerAsn?: number | undefined;
-	readonly peerIpAddress?: string | undefined;
-	readonly peerIpv6NexthopAddress?: string | undefined;
-	readonly routerApplianceInstance?: string | undefined;
+	readonly advertisedGroups?: string[];
+	readonly advertisedIpRanges?: RouterAdvertisedIpRange[];
+	readonly advertisedRoutePriority?: number;
+	readonly advertiseMode?: string;
+	readonly bfd?: RouterBgpPeerBfd;
+	readonly enable?: string;
+	readonly enableIpv6?: boolean;
+	readonly interfaceName?: string;
+	readonly ipAddress?: string;
+	readonly ipv6NexthopAddress?: string;
+	readonly managementType?: string;
+	readonly md5AuthenticationKeyName?: string;
+	readonly name?: string;
+	readonly peerAsn?: number;
+	readonly peerIpAddress?: string;
+	readonly peerIpv6NexthopAddress?: string;
+	readonly routerApplianceInstance?: string;
 }
 export interface RouterBgpPeerBfd {
-	readonly minReceiveInterval?: number | undefined;
-	readonly minTransmitInterval?: number | undefined;
-	readonly multiplier?: number | undefined;
-	readonly sessionInitializationMode?: string | undefined;
+	readonly minReceiveInterval?: number;
+	readonly minTransmitInterval?: number;
+	readonly multiplier?: number;
+	readonly sessionInitializationMode?: string;
 }
 export interface RouterInterface {
-	readonly ipRange?: string | undefined;
-	readonly linkedInterconnectAttachment?: string | undefined;
-	readonly linkedVpnTunnel?: string | undefined;
-	readonly managementType?: string | undefined;
-	readonly name?: string | undefined;
-	readonly privateIpAddress?: string | undefined;
-	readonly redundantInterface?: string | undefined;
-	readonly subnetwork?: string | undefined;
+	readonly ipRange?: string;
+	readonly linkedInterconnectAttachment?: string;
+	readonly linkedVpnTunnel?: string;
+	readonly managementType?: string;
+	readonly name?: string;
+	readonly privateIpAddress?: string;
+	readonly redundantInterface?: string;
+	readonly subnetwork?: string;
 }
 export interface RouterMd5AuthenticationKey {
-	readonly key?: string | undefined;
-	readonly name?: string | undefined;
+	readonly key?: string;
+	readonly name?: string;
 }
 export interface RouterNat {
-	readonly drainNatIps?: string[] | undefined;
-	readonly enableDynamicPortAllocation?: boolean | undefined;
-	readonly enableEndpointIndependentMapping?: boolean | undefined;
-	readonly endpointTypes?: string[] | undefined;
-	readonly icmpIdleTimeoutSec?: number | undefined;
-	readonly logConfig?: RouterNatLogConfig | undefined;
-	readonly maxPortsPerVm?: number | undefined;
-	readonly minPortsPerVm?: number | undefined;
-	readonly name?: string | undefined;
-	readonly natIpAllocateOption?: string | undefined;
-	readonly natIps?: string[] | undefined;
-	readonly rules?: RouterNatRule[] | undefined;
-	readonly sourceSubnetworkIpRangesToNat?: string | undefined;
-	readonly subnetworks?: RouterNatSubnetworkToNat[] | undefined;
-	readonly tcpEstablishedIdleTimeoutSec?: number | undefined;
-	readonly tcpTimeWaitTimeoutSec?: number | undefined;
-	readonly tcpTransitoryIdleTimeoutSec?: number | undefined;
-	readonly udpIdleTimeoutSec?: number | undefined;
+	readonly drainNatIps?: string[];
+	readonly enableDynamicPortAllocation?: boolean;
+	readonly enableEndpointIndependentMapping?: boolean;
+	readonly endpointTypes?: string[];
+	readonly icmpIdleTimeoutSec?: number;
+	readonly logConfig?: RouterNatLogConfig;
+	readonly maxPortsPerVm?: number;
+	readonly minPortsPerVm?: number;
+	readonly name?: string;
+	readonly natIpAllocateOption?: string;
+	readonly natIps?: string[];
+	readonly rules?: RouterNatRule[];
+	readonly sourceSubnetworkIpRangesToNat?: string;
+	readonly subnetworks?: RouterNatSubnetworkToNat[];
+	readonly tcpEstablishedIdleTimeoutSec?: number;
+	readonly tcpTimeWaitTimeoutSec?: number;
+	readonly tcpTransitoryIdleTimeoutSec?: number;
+	readonly udpIdleTimeoutSec?: number;
 }
 export interface RouterNatLogConfig {
-	readonly enable?: boolean | undefined;
-	readonly filter?: string | undefined;
+	readonly enable?: boolean;
+	readonly filter?: string;
 }
 export interface RouterNatRule {
-	readonly action?: RouterNatRuleAction | undefined;
-	readonly description?: string | undefined;
-	readonly match?: string | undefined;
-	readonly ruleNumber?: number | undefined;
+	readonly action?: RouterNatRuleAction;
+	readonly description?: string;
+	readonly match?: string;
+	readonly ruleNumber?: number;
 }
 export interface RouterNatRuleAction {
-	readonly sourceNatActiveIps?: string[] | undefined;
-	readonly sourceNatDrainIps?: string[] | undefined;
+	readonly sourceNatActiveIps?: string[];
+	readonly sourceNatDrainIps?: string[];
 }
 export interface RouterNatSubnetworkToNat {
-	readonly name?: string | undefined;
-	readonly secondaryIpRangeNames?: string[] | undefined;
-	readonly sourceIpRangesToNat?: string[] | undefined;
+	readonly name?: string;
+	readonly secondaryIpRangeNames?: string[];
+	readonly sourceIpRangesToNat?: string[];
 }
 export default {
 	Routers: Routers,

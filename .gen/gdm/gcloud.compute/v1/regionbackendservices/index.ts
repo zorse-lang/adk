@@ -7,219 +7,218 @@ export class RegionBackendServices
 	constructor(entity: ADKEntity, options: RegionBackendServicesComponentInputs) {
 		super(entity, options.name, "compute.v1.RegionBackendServices", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly edgeSecurityPolicy?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly securityPolicy?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly edgeSecurityPolicy?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly securityPolicy?: string;
+	public readonly selfLink?: string;
 }
 export interface RegionBackendServicesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly edgeSecurityPolicy?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly securityPolicy?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly edgeSecurityPolicy?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly securityPolicy?: string;
+	readonly selfLink?: string;
 }
 export interface RegionBackendServicesComponentInputs {
-	readonly affinityCookieTtlSec?: number | undefined;
-	readonly backends?: Backend[] | undefined;
-	readonly cdnPolicy?: BackendServiceCdnPolicy | undefined;
-	readonly circuitBreakers?: CircuitBreakers | undefined;
-	readonly compressionMode?: string | undefined;
-	readonly connectionDraining?: ConnectionDraining | undefined;
-	readonly connectionTrackingPolicy?: BackendServiceConnectionTrackingPolicy | undefined;
-	readonly consistentHash?: ConsistentHashLoadBalancerSettings | undefined;
-	readonly customRequestHeaders?: string[] | undefined;
-	readonly customResponseHeaders?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly enableCDN?: boolean | undefined;
-	readonly failoverPolicy?: BackendServiceFailoverPolicy | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly healthChecks?: string[] | undefined;
-	readonly iap?: BackendServiceIAP | undefined;
-	readonly loadBalancingScheme?: string | undefined;
-	readonly localityLbPolicies?: BackendServiceLocalityLoadBalancingPolicyConfig[] | undefined;
-	readonly localityLbPolicy?: string | undefined;
-	readonly logConfig?: BackendServiceLogConfig | undefined;
-	readonly maxStreamDuration?: Duration | undefined;
+	readonly affinityCookieTtlSec?: number;
+	readonly backends?: Backend[];
+	readonly cdnPolicy?: BackendServiceCdnPolicy;
+	readonly circuitBreakers?: CircuitBreakers;
+	readonly compressionMode?: string;
+	readonly connectionDraining?: ConnectionDraining;
+	readonly connectionTrackingPolicy?: BackendServiceConnectionTrackingPolicy;
+	readonly consistentHash?: ConsistentHashLoadBalancerSettings;
+	readonly customRequestHeaders?: string[];
+	readonly customResponseHeaders?: string[];
+	readonly description?: string;
+	readonly enableCDN?: boolean;
+	readonly failoverPolicy?: BackendServiceFailoverPolicy;
+	readonly fingerprint?: string;
+	readonly healthChecks?: string[];
+	readonly iap?: BackendServiceIAP;
+	readonly loadBalancingScheme?: string;
+	readonly localityLbPolicies?: BackendServiceLocalityLoadBalancingPolicyConfig[];
+	readonly localityLbPolicy?: string;
+	readonly logConfig?: BackendServiceLogConfig;
+	readonly maxStreamDuration?: Duration;
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly outlierDetection?: OutlierDetection | undefined;
-	readonly port?: number | undefined;
-	readonly portName?: string | undefined;
-	readonly protocol?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly securitySettings?: SecuritySettings | undefined;
-	readonly serviceBindings?: string[] | undefined;
-	readonly sessionAffinity?: string | undefined;
-	readonly subsetting?: Subsetting | undefined;
-	readonly timeoutSec?: number | undefined;
-	readonly type: string;
+	readonly network?: string;
+	readonly outlierDetection?: OutlierDetection;
+	readonly port?: number;
+	readonly portName?: string;
+	readonly protocol?: string;
+	readonly requestId?: string;
+	readonly securitySettings?: SecuritySettings;
+	readonly serviceBindings?: string[];
+	readonly sessionAffinity?: string;
+	readonly subsetting?: Subsetting;
+	readonly timeoutSec?: number;
 }
 export interface Backend {
-	readonly balancingMode?: string | undefined;
-	readonly capacityScaler?: number | undefined;
-	readonly description?: string | undefined;
-	readonly failover?: boolean | undefined;
-	readonly group?: string | undefined;
-	readonly maxConnections?: number | undefined;
-	readonly maxConnectionsPerEndpoint?: number | undefined;
-	readonly maxConnectionsPerInstance?: number | undefined;
-	readonly maxRate?: number | undefined;
-	readonly maxRatePerEndpoint?: number | undefined;
-	readonly maxRatePerInstance?: number | undefined;
-	readonly maxUtilization?: number | undefined;
+	readonly balancingMode?: string;
+	readonly capacityScaler?: number;
+	readonly description?: string;
+	readonly failover?: boolean;
+	readonly group?: string;
+	readonly maxConnections?: number;
+	readonly maxConnectionsPerEndpoint?: number;
+	readonly maxConnectionsPerInstance?: number;
+	readonly maxRate?: number;
+	readonly maxRatePerEndpoint?: number;
+	readonly maxRatePerInstance?: number;
+	readonly maxUtilization?: number;
 }
 export interface BackendService {
-	readonly affinityCookieTtlSec?: number | undefined;
-	readonly backends?: Backend[] | undefined;
-	readonly cdnPolicy?: BackendServiceCdnPolicy | undefined;
-	readonly circuitBreakers?: CircuitBreakers | undefined;
-	readonly compressionMode?: string | undefined;
-	readonly connectionDraining?: ConnectionDraining | undefined;
-	readonly connectionTrackingPolicy?: BackendServiceConnectionTrackingPolicy | undefined;
-	readonly consistentHash?: ConsistentHashLoadBalancerSettings | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly customRequestHeaders?: string[] | undefined;
-	readonly customResponseHeaders?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly edgeSecurityPolicy?: string | undefined;
-	readonly enableCDN?: boolean | undefined;
-	readonly failoverPolicy?: BackendServiceFailoverPolicy | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly healthChecks?: string[] | undefined;
-	readonly iap?: BackendServiceIAP | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly loadBalancingScheme?: string | undefined;
-	readonly localityLbPolicies?: BackendServiceLocalityLoadBalancingPolicyConfig[] | undefined;
-	readonly localityLbPolicy?: string | undefined;
-	readonly logConfig?: BackendServiceLogConfig | undefined;
-	readonly maxStreamDuration?: Duration | undefined;
-	readonly name?: string | undefined;
-	readonly network?: string | undefined;
-	readonly outlierDetection?: OutlierDetection | undefined;
-	readonly port?: number | undefined;
-	readonly portName?: string | undefined;
-	readonly protocol?: string | undefined;
-	readonly region?: string | undefined;
-	readonly securityPolicy?: string | undefined;
-	readonly securitySettings?: SecuritySettings | undefined;
-	readonly selfLink?: string | undefined;
-	readonly serviceBindings?: string[] | undefined;
-	readonly sessionAffinity?: string | undefined;
-	readonly subsetting?: Subsetting | undefined;
-	readonly timeoutSec?: number | undefined;
+	readonly affinityCookieTtlSec?: number;
+	readonly backends?: Backend[];
+	readonly cdnPolicy?: BackendServiceCdnPolicy;
+	readonly circuitBreakers?: CircuitBreakers;
+	readonly compressionMode?: string;
+	readonly connectionDraining?: ConnectionDraining;
+	readonly connectionTrackingPolicy?: BackendServiceConnectionTrackingPolicy;
+	readonly consistentHash?: ConsistentHashLoadBalancerSettings;
+	readonly creationTimestamp?: string;
+	readonly customRequestHeaders?: string[];
+	readonly customResponseHeaders?: string[];
+	readonly description?: string;
+	readonly edgeSecurityPolicy?: string;
+	readonly enableCDN?: boolean;
+	readonly failoverPolicy?: BackendServiceFailoverPolicy;
+	readonly fingerprint?: string;
+	readonly healthChecks?: string[];
+	readonly iap?: BackendServiceIAP;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly loadBalancingScheme?: string;
+	readonly localityLbPolicies?: BackendServiceLocalityLoadBalancingPolicyConfig[];
+	readonly localityLbPolicy?: string;
+	readonly logConfig?: BackendServiceLogConfig;
+	readonly maxStreamDuration?: Duration;
+	readonly name?: string;
+	readonly network?: string;
+	readonly outlierDetection?: OutlierDetection;
+	readonly port?: number;
+	readonly portName?: string;
+	readonly protocol?: string;
+	readonly region?: string;
+	readonly securityPolicy?: string;
+	readonly securitySettings?: SecuritySettings;
+	readonly selfLink?: string;
+	readonly serviceBindings?: string[];
+	readonly sessionAffinity?: string;
+	readonly subsetting?: Subsetting;
+	readonly timeoutSec?: number;
 }
 export interface BackendServiceCdnPolicy {
-	readonly bypassCacheOnRequestHeaders?: BackendServiceCdnPolicyBypassCacheOnRequestHeader[] | undefined;
-	readonly cacheKeyPolicy?: CacheKeyPolicy | undefined;
-	readonly cacheMode?: string | undefined;
-	readonly clientTtl?: number | undefined;
-	readonly defaultTtl?: number | undefined;
-	readonly maxTtl?: number | undefined;
-	readonly negativeCaching?: boolean | undefined;
-	readonly negativeCachingPolicy?: BackendServiceCdnPolicyNegativeCachingPolicy[] | undefined;
-	readonly requestCoalescing?: boolean | undefined;
-	readonly serveWhileStale?: number | undefined;
-	readonly signedUrlCacheMaxAgeSec?: string | undefined;
-	readonly signedUrlKeyNames?: string[] | undefined;
+	readonly bypassCacheOnRequestHeaders?: BackendServiceCdnPolicyBypassCacheOnRequestHeader[];
+	readonly cacheKeyPolicy?: CacheKeyPolicy;
+	readonly cacheMode?: string;
+	readonly clientTtl?: number;
+	readonly defaultTtl?: number;
+	readonly maxTtl?: number;
+	readonly negativeCaching?: boolean;
+	readonly negativeCachingPolicy?: BackendServiceCdnPolicyNegativeCachingPolicy[];
+	readonly requestCoalescing?: boolean;
+	readonly serveWhileStale?: number;
+	readonly signedUrlCacheMaxAgeSec?: string;
+	readonly signedUrlKeyNames?: string[];
 }
 export interface BackendServiceCdnPolicyBypassCacheOnRequestHeader {
-	readonly headerName?: string | undefined;
+	readonly headerName?: string;
 }
 export interface BackendServiceCdnPolicyNegativeCachingPolicy {
-	readonly code?: number | undefined;
-	readonly ttl?: number | undefined;
+	readonly code?: number;
+	readonly ttl?: number;
 }
 export interface BackendServiceConnectionTrackingPolicy {
-	readonly connectionPersistenceOnUnhealthyBackends?: string | undefined;
-	readonly enableStrongAffinity?: boolean | undefined;
-	readonly idleTimeoutSec?: number | undefined;
-	readonly trackingMode?: string | undefined;
+	readonly connectionPersistenceOnUnhealthyBackends?: string;
+	readonly enableStrongAffinity?: boolean;
+	readonly idleTimeoutSec?: number;
+	readonly trackingMode?: string;
 }
 export interface BackendServiceFailoverPolicy {
-	readonly disableConnectionDrainOnFailover?: boolean | undefined;
-	readonly dropTrafficIfUnhealthy?: boolean | undefined;
-	readonly failoverRatio?: number | undefined;
+	readonly disableConnectionDrainOnFailover?: boolean;
+	readonly dropTrafficIfUnhealthy?: boolean;
+	readonly failoverRatio?: number;
 }
 export interface BackendServiceIAP {
-	readonly enabled?: boolean | undefined;
-	readonly oauth2ClientId?: string | undefined;
-	readonly oauth2ClientSecret?: string | undefined;
-	readonly oauth2ClientSecretSha256?: string | undefined;
+	readonly enabled?: boolean;
+	readonly oauth2ClientId?: string;
+	readonly oauth2ClientSecret?: string;
+	readonly oauth2ClientSecretSha256?: string;
 }
 export interface BackendServiceLocalityLoadBalancingPolicyConfig {
-	readonly customPolicy?: BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy | undefined;
-	readonly policy?: BackendServiceLocalityLoadBalancingPolicyConfigPolicy | undefined;
+	readonly customPolicy?: BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy;
+	readonly policy?: BackendServiceLocalityLoadBalancingPolicyConfigPolicy;
 }
 export interface BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy {
-	readonly data?: string | undefined;
-	readonly name?: string | undefined;
+	readonly data?: string;
+	readonly name?: string;
 }
 export interface BackendServiceLocalityLoadBalancingPolicyConfigPolicy {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface BackendServiceLogConfig {
-	readonly enable?: boolean | undefined;
-	readonly sampleRate?: number | undefined;
+	readonly enable?: boolean;
+	readonly sampleRate?: number;
 }
 export interface CacheKeyPolicy {
-	readonly includeHost?: boolean | undefined;
-	readonly includeHttpHeaders?: string[] | undefined;
-	readonly includeNamedCookies?: string[] | undefined;
-	readonly includeProtocol?: boolean | undefined;
-	readonly includeQueryString?: boolean | undefined;
-	readonly queryStringBlacklist?: string[] | undefined;
-	readonly queryStringWhitelist?: string[] | undefined;
+	readonly includeHost?: boolean;
+	readonly includeHttpHeaders?: string[];
+	readonly includeNamedCookies?: string[];
+	readonly includeProtocol?: boolean;
+	readonly includeQueryString?: boolean;
+	readonly queryStringBlacklist?: string[];
+	readonly queryStringWhitelist?: string[];
 }
 export interface CircuitBreakers {
-	readonly maxConnections?: number | undefined;
-	readonly maxPendingRequests?: number | undefined;
-	readonly maxRequests?: number | undefined;
-	readonly maxRequestsPerConnection?: number | undefined;
-	readonly maxRetries?: number | undefined;
+	readonly maxConnections?: number;
+	readonly maxPendingRequests?: number;
+	readonly maxRequests?: number;
+	readonly maxRequestsPerConnection?: number;
+	readonly maxRetries?: number;
 }
 export interface ConnectionDraining {
-	readonly drainingTimeoutSec?: number | undefined;
+	readonly drainingTimeoutSec?: number;
 }
 export interface ConsistentHashLoadBalancerSettings {
-	readonly httpCookie?: ConsistentHashLoadBalancerSettingsHttpCookie | undefined;
-	readonly httpHeaderName?: string | undefined;
-	readonly minimumRingSize?: string | undefined;
+	readonly httpCookie?: ConsistentHashLoadBalancerSettingsHttpCookie;
+	readonly httpHeaderName?: string;
+	readonly minimumRingSize?: string;
 }
 export interface ConsistentHashLoadBalancerSettingsHttpCookie {
-	readonly name?: string | undefined;
-	readonly path?: string | undefined;
-	readonly ttl?: Duration | undefined;
+	readonly name?: string;
+	readonly path?: string;
+	readonly ttl?: Duration;
 }
 export interface Duration {
-	readonly nanos?: number | undefined;
-	readonly seconds?: string | undefined;
+	readonly nanos?: number;
+	readonly seconds?: string;
 }
 export interface OutlierDetection {
-	readonly baseEjectionTime?: Duration | undefined;
-	readonly consecutiveErrors?: number | undefined;
-	readonly consecutiveGatewayFailure?: number | undefined;
-	readonly enforcingConsecutiveErrors?: number | undefined;
-	readonly enforcingConsecutiveGatewayFailure?: number | undefined;
-	readonly enforcingSuccessRate?: number | undefined;
-	readonly interval?: Duration | undefined;
-	readonly maxEjectionPercent?: number | undefined;
-	readonly successRateMinimumHosts?: number | undefined;
-	readonly successRateRequestVolume?: number | undefined;
-	readonly successRateStdevFactor?: number | undefined;
+	readonly baseEjectionTime?: Duration;
+	readonly consecutiveErrors?: number;
+	readonly consecutiveGatewayFailure?: number;
+	readonly enforcingConsecutiveErrors?: number;
+	readonly enforcingConsecutiveGatewayFailure?: number;
+	readonly enforcingSuccessRate?: number;
+	readonly interval?: Duration;
+	readonly maxEjectionPercent?: number;
+	readonly successRateMinimumHosts?: number;
+	readonly successRateRequestVolume?: number;
+	readonly successRateStdevFactor?: number;
 }
 export interface SecuritySettings {
-	readonly clientTlsPolicy?: string | undefined;
-	readonly subjectAltNames?: string[] | undefined;
+	readonly clientTlsPolicy?: string;
+	readonly subjectAltNames?: string[];
 }
 export interface Subsetting {
-	readonly policy?: string | undefined;
+	readonly policy?: string;
 }
 export default {
 	RegionBackendServices: RegionBackendServices,

@@ -7,44 +7,43 @@ export class ProjectsGithubEnterpriseConfigs
 	constructor(entity: ADKEntity, options: ProjectsGithubEnterpriseConfigsComponentInputs) {
 		super(entity, options.name, "cloudbuild.v1.ProjectsGithubEnterpriseConfigs", options);
 	}
-	public readonly createTime?: string | undefined;
+	public readonly createTime?: string;
 }
 export interface ProjectsGithubEnterpriseConfigsComponentOutputs {
-	readonly createTime?: string | undefined;
+	readonly createTime?: string;
 }
 export interface ProjectsGithubEnterpriseConfigsComponentInputs {
 	readonly appId: string;
-	readonly displayName?: string | undefined;
-	readonly gheConfigId?: string | undefined;
-	readonly hostUrl?: string | undefined;
+	readonly displayName?: string;
+	readonly gheConfigId?: string;
+	readonly hostUrl?: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly peeredNetwork?: string | undefined;
-	readonly secrets?: GitHubEnterpriseSecrets | undefined;
-	readonly sslCa?: string | undefined;
-	readonly webhookKey?: string | undefined;
-	readonly type: string;
+	readonly peeredNetwork?: string;
+	readonly secrets?: GitHubEnterpriseSecrets;
+	readonly sslCa?: string;
+	readonly webhookKey?: string;
 }
 export interface GitHubEnterpriseConfig {
 	readonly appId: string;
-	readonly createTime?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly hostUrl?: string | undefined;
-	readonly name?: string | undefined;
-	readonly peeredNetwork?: string | undefined;
-	readonly secrets?: GitHubEnterpriseSecrets | undefined;
-	readonly sslCa?: string | undefined;
-	readonly webhookKey?: string | undefined;
+	readonly createTime?: string;
+	readonly displayName?: string;
+	readonly hostUrl?: string;
+	readonly name?: string;
+	readonly peeredNetwork?: string;
+	readonly secrets?: GitHubEnterpriseSecrets;
+	readonly sslCa?: string;
+	readonly webhookKey?: string;
 }
 export interface GitHubEnterpriseSecrets {
-	readonly oauthClientIdName?: string | undefined;
-	readonly oauthClientIdVersionName?: string | undefined;
-	readonly oauthSecretName?: string | undefined;
-	readonly oauthSecretVersionName?: string | undefined;
-	readonly privateKeyName?: string | undefined;
-	readonly privateKeyVersionName?: string | undefined;
-	readonly webhookSecretName?: string | undefined;
-	readonly webhookSecretVersionName?: string | undefined;
+	readonly oauthClientIdName?: string;
+	readonly oauthClientIdVersionName?: string;
+	readonly oauthSecretName?: string;
+	readonly oauthSecretVersionName?: string;
+	readonly privateKeyName?: string;
+	readonly privateKeyVersionName?: string;
+	readonly webhookSecretName?: string;
+	readonly webhookSecretVersionName?: string;
 }
 export default {
 	ProjectsGithubEnterpriseConfigs: ProjectsGithubEnterpriseConfigs,

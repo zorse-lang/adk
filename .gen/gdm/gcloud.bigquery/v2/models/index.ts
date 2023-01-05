@@ -4,276 +4,275 @@ export class Models extends GdmResource<ModelsComponentInputs> implements Models
 	constructor(entity: ADKEntity, options: ModelsComponentInputs) {
 		super(entity, options.name, "bigquery.v2.Models", options);
 	}
-	public readonly creationTime?: string | undefined;
-	public readonly defaultTrialId?: string | undefined;
-	public readonly etag?: string | undefined;
-	public readonly featureColumns?: StandardSqlField[] | undefined;
-	public readonly hparamSearchSpaces?: HparamSearchSpaces | undefined;
-	public readonly hparamTrials?: HparamTuningTrial[] | undefined;
-	public readonly labelColumns?: StandardSqlField[] | undefined;
-	public readonly lastModifiedTime?: string | undefined;
-	public readonly location?: string | undefined;
-	public readonly modelType?: string | undefined;
-	public readonly optimalTrialIds?: string[] | undefined;
+	public readonly creationTime?: string;
+	public readonly defaultTrialId?: string;
+	public readonly etag?: string;
+	public readonly featureColumns?: StandardSqlField[];
+	public readonly hparamSearchSpaces?: HparamSearchSpaces;
+	public readonly hparamTrials?: HparamTuningTrial[];
+	public readonly labelColumns?: StandardSqlField[];
+	public readonly lastModifiedTime?: string;
+	public readonly location?: string;
+	public readonly modelType?: string;
+	public readonly optimalTrialIds?: string[];
 }
 export interface ModelsComponentOutputs {
-	readonly creationTime?: string | undefined;
-	readonly defaultTrialId?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly featureColumns?: StandardSqlField[] | undefined;
-	readonly hparamSearchSpaces?: HparamSearchSpaces | undefined;
-	readonly hparamTrials?: HparamTuningTrial[] | undefined;
-	readonly labelColumns?: StandardSqlField[] | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly location?: string | undefined;
-	readonly modelType?: string | undefined;
-	readonly optimalTrialIds?: string[] | undefined;
+	readonly creationTime?: string;
+	readonly defaultTrialId?: string;
+	readonly etag?: string;
+	readonly featureColumns?: StandardSqlField[];
+	readonly hparamSearchSpaces?: HparamSearchSpaces;
+	readonly hparamTrials?: HparamTuningTrial[];
+	readonly labelColumns?: StandardSqlField[];
+	readonly lastModifiedTime?: string;
+	readonly location?: string;
+	readonly modelType?: string;
+	readonly optimalTrialIds?: string[];
 }
 export interface ModelsComponentInputs {
-	readonly bestTrialId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly encryptionConfiguration?: EncryptionConfiguration | undefined;
-	readonly expirationTime?: string | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly bestTrialId?: string;
+	readonly description?: string;
+	readonly encryptionConfiguration?: EncryptionConfiguration;
+	readonly expirationTime?: string;
+	readonly friendlyName?: string;
+	readonly labels?: { [P in string]: string };
 	readonly modelReference: ModelReference;
-	readonly trainingRuns?: TrainingRun[] | undefined;
-	readonly type: string;
+	readonly trainingRuns?: TrainingRun[];
 	readonly name: string;
 }
 export interface AggregateClassificationMetrics {
-	readonly accuracy?: number | undefined;
-	readonly f1Score?: number | undefined;
-	readonly logLoss?: number | undefined;
-	readonly precision?: number | undefined;
-	readonly recall?: number | undefined;
-	readonly rocAuc?: number | undefined;
-	readonly threshold?: number | undefined;
+	readonly accuracy?: number;
+	readonly f1Score?: number;
+	readonly logLoss?: number;
+	readonly precision?: number;
+	readonly recall?: number;
+	readonly rocAuc?: number;
+	readonly threshold?: number;
 }
 export interface ArimaCoefficients {
-	readonly autoRegressiveCoefficients?: number[] | undefined;
-	readonly interceptCoefficient?: number | undefined;
-	readonly movingAverageCoefficients?: number[] | undefined;
+	readonly autoRegressiveCoefficients?: number[];
+	readonly interceptCoefficient?: number;
+	readonly movingAverageCoefficients?: number[];
 }
 export interface ArimaFittingMetrics {
-	readonly aic?: number | undefined;
-	readonly logLikelihood?: number | undefined;
-	readonly variance?: number | undefined;
+	readonly aic?: number;
+	readonly logLikelihood?: number;
+	readonly variance?: number;
 }
 export interface ArimaForecastingMetrics {
-	readonly arimaFittingMetrics?: ArimaFittingMetrics[] | undefined;
-	readonly arimaSingleModelForecastingMetrics?: ArimaSingleModelForecastingMetrics[] | undefined;
-	readonly hasDrift?: boolean[] | undefined;
-	readonly nonSeasonalOrder?: ArimaOrder[] | undefined;
-	readonly seasonalPeriods?: string[] | undefined;
-	readonly timeSeriesId?: string[] | undefined;
+	readonly arimaFittingMetrics?: ArimaFittingMetrics[];
+	readonly arimaSingleModelForecastingMetrics?: ArimaSingleModelForecastingMetrics[];
+	readonly hasDrift?: boolean[];
+	readonly nonSeasonalOrder?: ArimaOrder[];
+	readonly seasonalPeriods?: string[];
+	readonly timeSeriesId?: string[];
 }
 export interface ArimaModelInfo {
-	readonly arimaCoefficients?: ArimaCoefficients | undefined;
-	readonly arimaFittingMetrics?: ArimaFittingMetrics | undefined;
-	readonly hasDrift?: boolean | undefined;
-	readonly hasHolidayEffect?: boolean | undefined;
-	readonly hasSpikesAndDips?: boolean | undefined;
-	readonly hasStepChanges?: boolean | undefined;
-	readonly nonSeasonalOrder?: ArimaOrder | undefined;
-	readonly seasonalPeriods?: string[] | undefined;
-	readonly timeSeriesId?: string | undefined;
-	readonly timeSeriesIds?: string[] | undefined;
+	readonly arimaCoefficients?: ArimaCoefficients;
+	readonly arimaFittingMetrics?: ArimaFittingMetrics;
+	readonly hasDrift?: boolean;
+	readonly hasHolidayEffect?: boolean;
+	readonly hasSpikesAndDips?: boolean;
+	readonly hasStepChanges?: boolean;
+	readonly nonSeasonalOrder?: ArimaOrder;
+	readonly seasonalPeriods?: string[];
+	readonly timeSeriesId?: string;
+	readonly timeSeriesIds?: string[];
 }
 export interface ArimaOrder {
-	readonly d?: string | undefined;
-	readonly p?: string | undefined;
-	readonly q?: string | undefined;
+	readonly d?: string;
+	readonly p?: string;
+	readonly q?: string;
 }
 export interface ArimaResult {
-	readonly arimaModelInfo?: ArimaModelInfo[] | undefined;
-	readonly seasonalPeriods?: string[] | undefined;
+	readonly arimaModelInfo?: ArimaModelInfo[];
+	readonly seasonalPeriods?: string[];
 }
 export interface ArimaSingleModelForecastingMetrics {
-	readonly arimaFittingMetrics?: ArimaFittingMetrics | undefined;
-	readonly hasDrift?: boolean | undefined;
-	readonly hasHolidayEffect?: boolean | undefined;
-	readonly hasSpikesAndDips?: boolean | undefined;
-	readonly hasStepChanges?: boolean | undefined;
-	readonly nonSeasonalOrder?: ArimaOrder | undefined;
-	readonly seasonalPeriods?: string[] | undefined;
-	readonly timeSeriesId?: string | undefined;
-	readonly timeSeriesIds?: string[] | undefined;
+	readonly arimaFittingMetrics?: ArimaFittingMetrics;
+	readonly hasDrift?: boolean;
+	readonly hasHolidayEffect?: boolean;
+	readonly hasSpikesAndDips?: boolean;
+	readonly hasStepChanges?: boolean;
+	readonly nonSeasonalOrder?: ArimaOrder;
+	readonly seasonalPeriods?: string[];
+	readonly timeSeriesId?: string;
+	readonly timeSeriesIds?: string[];
 }
 export interface BinaryClassificationMetrics {
-	readonly aggregateClassificationMetrics?: AggregateClassificationMetrics | undefined;
-	readonly binaryConfusionMatrixList?: BinaryConfusionMatrix[] | undefined;
-	readonly negativeLabel?: string | undefined;
-	readonly positiveLabel?: string | undefined;
+	readonly aggregateClassificationMetrics?: AggregateClassificationMetrics;
+	readonly binaryConfusionMatrixList?: BinaryConfusionMatrix[];
+	readonly negativeLabel?: string;
+	readonly positiveLabel?: string;
 }
 export interface BinaryConfusionMatrix {
-	readonly accuracy?: number | undefined;
-	readonly f1Score?: number | undefined;
-	readonly falseNegatives?: string | undefined;
-	readonly falsePositives?: string | undefined;
-	readonly positiveClassThreshold?: number | undefined;
-	readonly precision?: number | undefined;
-	readonly recall?: number | undefined;
-	readonly trueNegatives?: string | undefined;
-	readonly truePositives?: string | undefined;
+	readonly accuracy?: number;
+	readonly f1Score?: number;
+	readonly falseNegatives?: string;
+	readonly falsePositives?: string;
+	readonly positiveClassThreshold?: number;
+	readonly precision?: number;
+	readonly recall?: number;
+	readonly trueNegatives?: string;
+	readonly truePositives?: string;
 }
 export interface CategoricalValue {
-	readonly categoryCounts?: CategoryCount[] | undefined;
+	readonly categoryCounts?: CategoryCount[];
 }
 export interface CategoryCount {
-	readonly category?: string | undefined;
-	readonly count?: string | undefined;
+	readonly category?: string;
+	readonly count?: string;
 }
 export interface Cluster {
-	readonly centroidId?: string | undefined;
-	readonly count?: string | undefined;
-	readonly featureValues?: FeatureValue[] | undefined;
+	readonly centroidId?: string;
+	readonly count?: string;
+	readonly featureValues?: FeatureValue[];
 }
 export interface ClusterInfo {
-	readonly centroidId?: string | undefined;
-	readonly clusterRadius?: number | undefined;
-	readonly clusterSize?: string | undefined;
+	readonly centroidId?: string;
+	readonly clusterRadius?: number;
+	readonly clusterSize?: string;
 }
 export interface ClusteringMetrics {
-	readonly clusters?: Cluster[] | undefined;
-	readonly daviesBouldinIndex?: number | undefined;
-	readonly meanSquaredDistance?: number | undefined;
+	readonly clusters?: Cluster[];
+	readonly daviesBouldinIndex?: number;
+	readonly meanSquaredDistance?: number;
 }
 export interface ConfusionMatrix {
-	readonly confidenceThreshold?: number | undefined;
-	readonly rows?: Row[] | undefined;
+	readonly confidenceThreshold?: number;
+	readonly rows?: Row[];
 }
 export interface DataSplitResult {
-	readonly evaluationTable?: TableReference | undefined;
-	readonly testTable?: TableReference | undefined;
-	readonly trainingTable?: TableReference | undefined;
+	readonly evaluationTable?: TableReference;
+	readonly testTable?: TableReference;
+	readonly trainingTable?: TableReference;
 }
 export interface DimensionalityReductionMetrics {
-	readonly totalExplainedVarianceRatio?: number | undefined;
+	readonly totalExplainedVarianceRatio?: number;
 }
 export interface DoubleCandidates {
-	readonly candidates?: number[] | undefined;
+	readonly candidates?: number[];
 }
 export interface DoubleHparamSearchSpace {
-	readonly candidates?: DoubleCandidates | undefined;
-	readonly range?: DoubleRange | undefined;
+	readonly candidates?: DoubleCandidates;
+	readonly range?: DoubleRange;
 }
 export interface DoubleRange {
-	readonly max?: number | undefined;
-	readonly min?: number | undefined;
+	readonly max?: number;
+	readonly min?: number;
 }
 export interface EncryptionConfiguration {
-	readonly kmsKeyName?: string | undefined;
+	readonly kmsKeyName?: string;
 }
 export interface Entry {
-	readonly itemCount?: string | undefined;
-	readonly predictedLabel?: string | undefined;
+	readonly itemCount?: string;
+	readonly predictedLabel?: string;
 }
 export interface EvaluationMetrics {
-	readonly arimaForecastingMetrics?: ArimaForecastingMetrics | undefined;
-	readonly binaryClassificationMetrics?: BinaryClassificationMetrics | undefined;
-	readonly clusteringMetrics?: ClusteringMetrics | undefined;
-	readonly dimensionalityReductionMetrics?: DimensionalityReductionMetrics | undefined;
-	readonly multiClassClassificationMetrics?: MultiClassClassificationMetrics | undefined;
-	readonly rankingMetrics?: RankingMetrics | undefined;
-	readonly regressionMetrics?: RegressionMetrics | undefined;
+	readonly arimaForecastingMetrics?: ArimaForecastingMetrics;
+	readonly binaryClassificationMetrics?: BinaryClassificationMetrics;
+	readonly clusteringMetrics?: ClusteringMetrics;
+	readonly dimensionalityReductionMetrics?: DimensionalityReductionMetrics;
+	readonly multiClassClassificationMetrics?: MultiClassClassificationMetrics;
+	readonly rankingMetrics?: RankingMetrics;
+	readonly regressionMetrics?: RegressionMetrics;
 }
 export interface Explanation {
-	readonly attribution?: number | undefined;
-	readonly featureName?: string | undefined;
+	readonly attribution?: number;
+	readonly featureName?: string;
 }
 export interface FeatureValue {
-	readonly categoricalValue?: CategoricalValue | undefined;
-	readonly featureColumn?: string | undefined;
-	readonly numericalValue?: number | undefined;
+	readonly categoricalValue?: CategoricalValue;
+	readonly featureColumn?: string;
+	readonly numericalValue?: number;
 }
 export interface GlobalExplanation {
-	readonly classLabel?: string | undefined;
-	readonly explanations?: Explanation[] | undefined;
+	readonly classLabel?: string;
+	readonly explanations?: Explanation[];
 }
 export interface HparamSearchSpaces {
-	readonly activationFn?: StringHparamSearchSpace | undefined;
-	readonly batchSize?: IntHparamSearchSpace | undefined;
-	readonly boosterType?: StringHparamSearchSpace | undefined;
-	readonly colsampleBylevel?: DoubleHparamSearchSpace | undefined;
-	readonly colsampleBynode?: DoubleHparamSearchSpace | undefined;
-	readonly colsampleBytree?: DoubleHparamSearchSpace | undefined;
-	readonly dartNormalizeType?: StringHparamSearchSpace | undefined;
-	readonly dropout?: DoubleHparamSearchSpace | undefined;
-	readonly hiddenUnits?: IntArrayHparamSearchSpace | undefined;
-	readonly l1Reg?: DoubleHparamSearchSpace | undefined;
-	readonly l2Reg?: DoubleHparamSearchSpace | undefined;
-	readonly learnRate?: DoubleHparamSearchSpace | undefined;
-	readonly maxTreeDepth?: IntHparamSearchSpace | undefined;
-	readonly minSplitLoss?: DoubleHparamSearchSpace | undefined;
-	readonly minTreeChildWeight?: IntHparamSearchSpace | undefined;
-	readonly numClusters?: IntHparamSearchSpace | undefined;
-	readonly numFactors?: IntHparamSearchSpace | undefined;
-	readonly numParallelTree?: IntHparamSearchSpace | undefined;
-	readonly optimizer?: StringHparamSearchSpace | undefined;
-	readonly subsample?: DoubleHparamSearchSpace | undefined;
-	readonly treeMethod?: StringHparamSearchSpace | undefined;
-	readonly walsAlpha?: DoubleHparamSearchSpace | undefined;
+	readonly activationFn?: StringHparamSearchSpace;
+	readonly batchSize?: IntHparamSearchSpace;
+	readonly boosterType?: StringHparamSearchSpace;
+	readonly colsampleBylevel?: DoubleHparamSearchSpace;
+	readonly colsampleBynode?: DoubleHparamSearchSpace;
+	readonly colsampleBytree?: DoubleHparamSearchSpace;
+	readonly dartNormalizeType?: StringHparamSearchSpace;
+	readonly dropout?: DoubleHparamSearchSpace;
+	readonly hiddenUnits?: IntArrayHparamSearchSpace;
+	readonly l1Reg?: DoubleHparamSearchSpace;
+	readonly l2Reg?: DoubleHparamSearchSpace;
+	readonly learnRate?: DoubleHparamSearchSpace;
+	readonly maxTreeDepth?: IntHparamSearchSpace;
+	readonly minSplitLoss?: DoubleHparamSearchSpace;
+	readonly minTreeChildWeight?: IntHparamSearchSpace;
+	readonly numClusters?: IntHparamSearchSpace;
+	readonly numFactors?: IntHparamSearchSpace;
+	readonly numParallelTree?: IntHparamSearchSpace;
+	readonly optimizer?: StringHparamSearchSpace;
+	readonly subsample?: DoubleHparamSearchSpace;
+	readonly treeMethod?: StringHparamSearchSpace;
+	readonly walsAlpha?: DoubleHparamSearchSpace;
 }
 export interface HparamTuningTrial {
-	readonly endTimeMs?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly evalLoss?: number | undefined;
-	readonly evaluationMetrics?: EvaluationMetrics | undefined;
-	readonly hparams?: TrainingOptions | undefined;
-	readonly hparamTuningEvaluationMetrics?: EvaluationMetrics | undefined;
-	readonly startTimeMs?: string | undefined;
-	readonly status?: string | undefined;
-	readonly trainingLoss?: number | undefined;
-	readonly trialId?: string | undefined;
+	readonly endTimeMs?: string;
+	readonly errorMessage?: string;
+	readonly evalLoss?: number;
+	readonly evaluationMetrics?: EvaluationMetrics;
+	readonly hparams?: TrainingOptions;
+	readonly hparamTuningEvaluationMetrics?: EvaluationMetrics;
+	readonly startTimeMs?: string;
+	readonly status?: string;
+	readonly trainingLoss?: number;
+	readonly trialId?: string;
 }
 export interface IntArray {
-	readonly elements?: string[] | undefined;
+	readonly elements?: string[];
 }
 export interface IntArrayHparamSearchSpace {
-	readonly candidates?: IntArray[] | undefined;
+	readonly candidates?: IntArray[];
 }
 export interface IntCandidates {
-	readonly candidates?: string[] | undefined;
+	readonly candidates?: string[];
 }
 export interface IntHparamSearchSpace {
-	readonly candidates?: IntCandidates | undefined;
-	readonly range?: IntRange | undefined;
+	readonly candidates?: IntCandidates;
+	readonly range?: IntRange;
 }
 export interface IntRange {
-	readonly max?: string | undefined;
-	readonly min?: string | undefined;
+	readonly max?: string;
+	readonly min?: string;
 }
 export interface IterationResult {
-	readonly arimaResult?: ArimaResult | undefined;
-	readonly clusterInfos?: ClusterInfo[] | undefined;
-	readonly durationMs?: string | undefined;
-	readonly evalLoss?: number | undefined;
-	readonly index?: number | undefined;
-	readonly learnRate?: number | undefined;
-	readonly principalComponentInfos?: PrincipalComponentInfo[] | undefined;
-	readonly trainingLoss?: number | undefined;
+	readonly arimaResult?: ArimaResult;
+	readonly clusterInfos?: ClusterInfo[];
+	readonly durationMs?: string;
+	readonly evalLoss?: number;
+	readonly index?: number;
+	readonly learnRate?: number;
+	readonly principalComponentInfos?: PrincipalComponentInfo[];
+	readonly trainingLoss?: number;
 }
 export interface Model {
-	readonly bestTrialId?: string | undefined;
-	readonly creationTime?: string | undefined;
-	readonly defaultTrialId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly encryptionConfiguration?: EncryptionConfiguration | undefined;
-	readonly etag?: string | undefined;
-	readonly expirationTime?: string | undefined;
-	readonly featureColumns?: StandardSqlField[] | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly hparamSearchSpaces?: HparamSearchSpaces | undefined;
-	readonly hparamTrials?: HparamTuningTrial[] | undefined;
-	readonly labelColumns?: StandardSqlField[] | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly location?: string | undefined;
+	readonly bestTrialId?: string;
+	readonly creationTime?: string;
+	readonly defaultTrialId?: string;
+	readonly description?: string;
+	readonly encryptionConfiguration?: EncryptionConfiguration;
+	readonly etag?: string;
+	readonly expirationTime?: string;
+	readonly featureColumns?: StandardSqlField[];
+	readonly friendlyName?: string;
+	readonly hparamSearchSpaces?: HparamSearchSpaces;
+	readonly hparamTrials?: HparamTuningTrial[];
+	readonly labelColumns?: StandardSqlField[];
+	readonly labels?: { [P in string]: string };
+	readonly lastModifiedTime?: string;
+	readonly location?: string;
 	readonly modelReference: ModelReference;
-	readonly modelType?: string | undefined;
-	readonly optimalTrialIds?: string[] | undefined;
-	readonly trainingRuns?: TrainingRun[] | undefined;
+	readonly modelType?: string;
+	readonly optimalTrialIds?: string[];
+	readonly trainingRuns?: TrainingRun[];
 }
 export interface ModelReference {
 	readonly datasetId: string;
@@ -281,46 +280,46 @@ export interface ModelReference {
 	readonly projectId: string;
 }
 export interface MultiClassClassificationMetrics {
-	readonly aggregateClassificationMetrics?: AggregateClassificationMetrics | undefined;
-	readonly confusionMatrixList?: ConfusionMatrix[] | undefined;
+	readonly aggregateClassificationMetrics?: AggregateClassificationMetrics;
+	readonly confusionMatrixList?: ConfusionMatrix[];
 }
 export interface PrincipalComponentInfo {
-	readonly cumulativeExplainedVarianceRatio?: number | undefined;
-	readonly explainedVariance?: number | undefined;
-	readonly explainedVarianceRatio?: number | undefined;
-	readonly principalComponentId?: string | undefined;
+	readonly cumulativeExplainedVarianceRatio?: number;
+	readonly explainedVariance?: number;
+	readonly explainedVarianceRatio?: number;
+	readonly principalComponentId?: string;
 }
 export interface RankingMetrics {
-	readonly averageRank?: number | undefined;
-	readonly meanAveragePrecision?: number | undefined;
-	readonly meanSquaredError?: number | undefined;
-	readonly normalizedDiscountedCumulativeGain?: number | undefined;
+	readonly averageRank?: number;
+	readonly meanAveragePrecision?: number;
+	readonly meanSquaredError?: number;
+	readonly normalizedDiscountedCumulativeGain?: number;
 }
 export interface RegressionMetrics {
-	readonly meanAbsoluteError?: number | undefined;
-	readonly meanSquaredError?: number | undefined;
-	readonly meanSquaredLogError?: number | undefined;
-	readonly medianAbsoluteError?: number | undefined;
-	readonly rSquared?: number | undefined;
+	readonly meanAbsoluteError?: number;
+	readonly meanSquaredError?: number;
+	readonly meanSquaredLogError?: number;
+	readonly medianAbsoluteError?: number;
+	readonly rSquared?: number;
 }
 export interface Row {
-	readonly actualLabel?: string | undefined;
-	readonly entries?: Entry[] | undefined;
+	readonly actualLabel?: string;
+	readonly entries?: Entry[];
 }
 export interface StandardSqlDataType {
-	readonly arrayElementType?: StandardSqlDataType | undefined;
-	readonly structType?: StandardSqlStructType | undefined;
+	readonly arrayElementType?: StandardSqlDataType;
+	readonly structType?: StandardSqlStructType;
 	readonly typeKind: string;
 }
 export interface StandardSqlField {
-	readonly name?: string | undefined;
-	readonly type?: StandardSqlDataType | undefined;
+	readonly name?: string;
+	readonly type?: StandardSqlDataType;
 }
 export interface StandardSqlStructType {
-	readonly fields?: StandardSqlField[] | undefined;
+	readonly fields?: StandardSqlField[];
 }
 export interface StringHparamSearchSpace {
-	readonly candidates?: string[] | undefined;
+	readonly candidates?: string[];
 }
 export interface TableReference {
 	readonly datasetId: string;
@@ -328,85 +327,85 @@ export interface TableReference {
 	readonly tableId: string;
 }
 export interface TrainingOptions {
-	readonly adjustStepChanges?: boolean | undefined;
-	readonly autoArima?: boolean | undefined;
-	readonly autoArimaMaxOrder?: string | undefined;
-	readonly batchSize?: string | undefined;
-	readonly boosterType?: string | undefined;
-	readonly calculatePValues?: boolean | undefined;
-	readonly cleanSpikesAndDips?: boolean | undefined;
-	readonly colorSpace?: string | undefined;
-	readonly colsampleBylevel?: number | undefined;
-	readonly colsampleBynode?: number | undefined;
-	readonly colsampleBytree?: number | undefined;
-	readonly dartNormalizeType?: string | undefined;
-	readonly dataFrequency?: string | undefined;
-	readonly dataSplitColumn?: string | undefined;
-	readonly dataSplitEvalFraction?: number | undefined;
-	readonly dataSplitMethod?: string | undefined;
-	readonly decomposeTimeSeries?: boolean | undefined;
-	readonly distanceType?: string | undefined;
-	readonly dropout?: number | undefined;
-	readonly earlyStop?: boolean | undefined;
-	readonly enableGlobalExplain?: boolean | undefined;
-	readonly feedbackType?: string | undefined;
-	readonly hiddenUnits?: string[] | undefined;
-	readonly holidayRegion?: string | undefined;
-	readonly horizon?: string | undefined;
-	readonly hparamTuningObjectives?: string[] | undefined;
-	readonly includeDrift?: boolean | undefined;
-	readonly initialLearnRate?: number | undefined;
-	readonly inputLabelColumns?: string[] | undefined;
-	readonly integratedGradientsNumSteps?: string | undefined;
-	readonly itemColumn?: string | undefined;
-	readonly kmeansInitializationColumn?: string | undefined;
-	readonly kmeansInitializationMethod?: string | undefined;
-	readonly l1Regularization?: number | undefined;
-	readonly l2Regularization?: number | undefined;
-	readonly labelClassWeights?: { [P in string]: number } | undefined;
-	readonly learnRate?: number | undefined;
-	readonly learnRateStrategy?: string | undefined;
-	readonly lossType?: string | undefined;
-	readonly maxIterations?: string | undefined;
-	readonly maxParallelTrials?: string | undefined;
-	readonly maxTimeSeriesLength?: string | undefined;
-	readonly maxTreeDepth?: string | undefined;
-	readonly minRelativeProgress?: number | undefined;
-	readonly minSplitLoss?: number | undefined;
-	readonly minTimeSeriesLength?: string | undefined;
-	readonly minTreeChildWeight?: string | undefined;
-	readonly modelUri?: string | undefined;
-	readonly nonSeasonalOrder?: ArimaOrder | undefined;
-	readonly numClusters?: string | undefined;
-	readonly numFactors?: string | undefined;
-	readonly numParallelTree?: string | undefined;
-	readonly numTrials?: string | undefined;
-	readonly optimizationStrategy?: string | undefined;
-	readonly preserveInputStructs?: boolean | undefined;
-	readonly sampledShapleyNumPaths?: string | undefined;
-	readonly subsample?: number | undefined;
-	readonly timeSeriesDataColumn?: string | undefined;
-	readonly timeSeriesIdColumn?: string | undefined;
-	readonly timeSeriesIdColumns?: string[] | undefined;
-	readonly timeSeriesLengthFraction?: number | undefined;
-	readonly timeSeriesTimestampColumn?: string | undefined;
-	readonly treeMethod?: string | undefined;
-	readonly trendSmoothingWindowSize?: string | undefined;
-	readonly userColumn?: string | undefined;
-	readonly walsAlpha?: number | undefined;
-	readonly warmStart?: boolean | undefined;
+	readonly adjustStepChanges?: boolean;
+	readonly autoArima?: boolean;
+	readonly autoArimaMaxOrder?: string;
+	readonly batchSize?: string;
+	readonly boosterType?: string;
+	readonly calculatePValues?: boolean;
+	readonly cleanSpikesAndDips?: boolean;
+	readonly colorSpace?: string;
+	readonly colsampleBylevel?: number;
+	readonly colsampleBynode?: number;
+	readonly colsampleBytree?: number;
+	readonly dartNormalizeType?: string;
+	readonly dataFrequency?: string;
+	readonly dataSplitColumn?: string;
+	readonly dataSplitEvalFraction?: number;
+	readonly dataSplitMethod?: string;
+	readonly decomposeTimeSeries?: boolean;
+	readonly distanceType?: string;
+	readonly dropout?: number;
+	readonly earlyStop?: boolean;
+	readonly enableGlobalExplain?: boolean;
+	readonly feedbackType?: string;
+	readonly hiddenUnits?: string[];
+	readonly holidayRegion?: string;
+	readonly horizon?: string;
+	readonly hparamTuningObjectives?: string[];
+	readonly includeDrift?: boolean;
+	readonly initialLearnRate?: number;
+	readonly inputLabelColumns?: string[];
+	readonly integratedGradientsNumSteps?: string;
+	readonly itemColumn?: string;
+	readonly kmeansInitializationColumn?: string;
+	readonly kmeansInitializationMethod?: string;
+	readonly l1Regularization?: number;
+	readonly l2Regularization?: number;
+	readonly labelClassWeights?: { [P in string]: number };
+	readonly learnRate?: number;
+	readonly learnRateStrategy?: string;
+	readonly lossType?: string;
+	readonly maxIterations?: string;
+	readonly maxParallelTrials?: string;
+	readonly maxTimeSeriesLength?: string;
+	readonly maxTreeDepth?: string;
+	readonly minRelativeProgress?: number;
+	readonly minSplitLoss?: number;
+	readonly minTimeSeriesLength?: string;
+	readonly minTreeChildWeight?: string;
+	readonly modelUri?: string;
+	readonly nonSeasonalOrder?: ArimaOrder;
+	readonly numClusters?: string;
+	readonly numFactors?: string;
+	readonly numParallelTree?: string;
+	readonly numTrials?: string;
+	readonly optimizationStrategy?: string;
+	readonly preserveInputStructs?: boolean;
+	readonly sampledShapleyNumPaths?: string;
+	readonly subsample?: number;
+	readonly timeSeriesDataColumn?: string;
+	readonly timeSeriesIdColumn?: string;
+	readonly timeSeriesIdColumns?: string[];
+	readonly timeSeriesLengthFraction?: number;
+	readonly timeSeriesTimestampColumn?: string;
+	readonly treeMethod?: string;
+	readonly trendSmoothingWindowSize?: string;
+	readonly userColumn?: string;
+	readonly walsAlpha?: number;
+	readonly warmStart?: boolean;
 }
 export interface TrainingRun {
-	readonly classLevelGlobalExplanations?: GlobalExplanation[] | undefined;
-	readonly dataSplitResult?: DataSplitResult | undefined;
-	readonly evaluationMetrics?: EvaluationMetrics | undefined;
-	readonly modelLevelGlobalExplanation?: GlobalExplanation | undefined;
-	readonly results?: IterationResult[] | undefined;
-	readonly startTime?: string | undefined;
-	readonly trainingOptions?: TrainingOptions | undefined;
-	readonly trainingStartTime?: string | undefined;
-	readonly vertexAiModelId?: string | undefined;
-	readonly vertexAiModelVersion?: string | undefined;
+	readonly classLevelGlobalExplanations?: GlobalExplanation[];
+	readonly dataSplitResult?: DataSplitResult;
+	readonly evaluationMetrics?: EvaluationMetrics;
+	readonly modelLevelGlobalExplanation?: GlobalExplanation;
+	readonly results?: IterationResult[];
+	readonly startTime?: string;
+	readonly trainingOptions?: TrainingOptions;
+	readonly trainingStartTime?: string;
+	readonly vertexAiModelId?: string;
+	readonly vertexAiModelVersion?: string;
 }
 export default {
 	Models: Models,

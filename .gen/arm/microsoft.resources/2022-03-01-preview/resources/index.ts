@@ -15,30 +15,30 @@ export interface changesComponentOutputs {
 }
 export interface changesComponentInputs {
 	readonly name: string;
-	readonly properties?: ChangeProperties | undefined;
+	readonly properties?: ChangeProperties;
 }
 export interface ChangeAttributes {
-	readonly changesCount?: number | undefined;
-	readonly correlationId?: string | undefined;
-	readonly newResourceSnapshotId?: string | undefined;
-	readonly previousResourceSnapshotId?: string | undefined;
-	readonly timestamp?: string | undefined;
+	readonly changesCount?: number;
+	readonly correlationId?: string;
+	readonly newResourceSnapshotId?: string;
+	readonly previousResourceSnapshotId?: string;
+	readonly timestamp?: string;
 }
 export interface ChangeBase {
-	readonly changeCategory?: ("Create" | "System") | undefined;
-	readonly newValue?: string | undefined;
-	readonly previousValue?: string | undefined;
-	readonly propertyChangeType?: ("Insert" | "Remove") | undefined;
+	readonly changeCategory?: "Create" | "System";
+	readonly newValue?: string;
+	readonly previousValue?: string;
+	readonly propertyChangeType?: "Insert" | "Remove";
 }
 export interface ChangeProperties {
-	readonly changeAttributes?: ChangeAttributes | undefined;
-	readonly changes?: ChangesDictionary | undefined;
-	readonly changeType?: ("Create" | "Delete") | undefined;
-	readonly targetResourceId?: string | undefined;
-	readonly targetResourceType?: string | undefined;
+	readonly changeAttributes?: ChangeAttributes;
+	readonly changes?: ChangesDictionary;
+	readonly changeType?: "Create" | "Delete";
+	readonly targetResourceId?: string;
+	readonly targetResourceType?: string;
 }
 export interface ChangesDictionary {
-	readonly "[ key: string ]"?: ChangeBase | undefined;
+	readonly [key: string]: ChangeBase;
 }
 export default {
 	changes: changes,

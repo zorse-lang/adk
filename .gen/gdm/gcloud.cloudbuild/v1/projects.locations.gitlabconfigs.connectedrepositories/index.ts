@@ -10,7 +10,6 @@ export class ProjectsLocationsGitLabConfigsConnectedRepositories
 }
 export interface ProjectsLocationsGitLabConfigsConnectedRepositoriesComponentOutputs {}
 export interface ProjectsLocationsGitLabConfigsConnectedRepositoriesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

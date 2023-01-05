@@ -14,12 +14,12 @@ export interface ChannelComponentOutputs {
 	readonly PlaybackUrl: string;
 }
 export interface ChannelComponentInputs {
-	readonly Authorized?: (boolean | undefined) | undefined;
-	readonly LatencyMode?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly RecordingConfigurationArn?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Authorized?: boolean | undefined;
+	readonly LatencyMode?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly RecordingConfigurationArn?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Type?: string | undefined;
 	readonly LogicalId: string;
 }
 export class PlaybackKeyPair
@@ -37,9 +37,9 @@ export interface PlaybackKeyPairComponentOutputs {
 	readonly Fingerprint: string;
 }
 export interface PlaybackKeyPairComponentInputs {
-	readonly Name?: (string | undefined) | undefined;
-	readonly PublicKeyMaterial?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly PublicKeyMaterial?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class RecordingConfiguration
@@ -58,10 +58,10 @@ export interface RecordingConfigurationComponentOutputs {
 }
 export interface RecordingConfigurationComponentInputs {
 	readonly DestinationConfiguration: DestinationConfiguration;
-	readonly Name?: (string | undefined) | undefined;
-	readonly RecordingReconnectWindowSeconds?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly ThumbnailConfiguration?: (ThumbnailConfiguration | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly RecordingReconnectWindowSeconds?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly ThumbnailConfiguration?: ThumbnailConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export class StreamKey extends CfnResource<StreamKeyComponentInputs> implements StreamKeyComponentOutputs {
@@ -77,7 +77,7 @@ export interface StreamKeyComponentOutputs {
 }
 export interface StreamKeyComponentInputs {
 	readonly ChannelArn: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface DestinationConfiguration {
@@ -88,7 +88,7 @@ export interface S3DestinationConfiguration {
 }
 export interface ThumbnailConfiguration {
 	readonly RecordingMode: string;
-	readonly TargetIntervalSeconds?: (number | undefined) | undefined;
+	readonly TargetIntervalSeconds?: number | undefined;
 }
 export default {
 	Channel: Channel,

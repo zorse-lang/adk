@@ -24,49 +24,49 @@ export interface PlaybackConfigurationComponentInputs {
 	readonly AdDecisionServerUrl: string;
 	readonly Name: string;
 	readonly VideoContentSourceUrl: string;
-	readonly AvailSuppression?: (AvailSuppression | undefined) | undefined;
-	readonly Bumper?: (Bumper | undefined) | undefined;
-	readonly CdnConfiguration?: (CdnConfiguration | undefined) | undefined;
-	readonly ConfigurationAliases?: ({ [key: string]: any } | undefined) | undefined;
-	readonly DashConfiguration?: (DashConfiguration | undefined) | undefined;
-	readonly HlsConfiguration?: (HlsConfiguration | undefined) | undefined;
-	readonly LivePreRollConfiguration?: (LivePreRollConfiguration | undefined) | undefined;
-	readonly ManifestProcessingRules?: (ManifestProcessingRules | undefined) | undefined;
-	readonly PersonalizationThresholdSeconds?: (number | undefined) | undefined;
-	readonly SlateAdUrl?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TranscodeProfileName?: (string | undefined) | undefined;
+	readonly AvailSuppression?: AvailSuppression | undefined;
+	readonly Bumper?: Bumper | undefined;
+	readonly CdnConfiguration?: CdnConfiguration | undefined;
+	readonly ConfigurationAliases?: { [key: string]: any } | undefined;
+	readonly DashConfiguration?: DashConfiguration | undefined;
+	readonly HlsConfiguration?: HlsConfiguration | undefined;
+	readonly LivePreRollConfiguration?: LivePreRollConfiguration | undefined;
+	readonly ManifestProcessingRules?: ManifestProcessingRules | undefined;
+	readonly PersonalizationThresholdSeconds?: number | undefined;
+	readonly SlateAdUrl?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TranscodeProfileName?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface AdMarkerPassthrough {
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
 }
 export interface AvailSuppression {
-	readonly Mode?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Mode?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface Bumper {
-	readonly EndUrl?: (string | undefined) | undefined;
-	readonly StartUrl?: (string | undefined) | undefined;
+	readonly EndUrl?: string | undefined;
+	readonly StartUrl?: string | undefined;
 }
 export interface CdnConfiguration {
-	readonly AdSegmentUrlPrefix?: (string | undefined) | undefined;
-	readonly ContentSegmentUrlPrefix?: (string | undefined) | undefined;
+	readonly AdSegmentUrlPrefix?: string | undefined;
+	readonly ContentSegmentUrlPrefix?: string | undefined;
 }
 export interface DashConfiguration {
-	readonly ManifestEndpointPrefix?: (string | undefined) | undefined;
-	readonly MpdLocation?: (string | undefined) | undefined;
-	readonly OriginManifestType?: (string | undefined) | undefined;
+	readonly ManifestEndpointPrefix?: string | undefined;
+	readonly MpdLocation?: string | undefined;
+	readonly OriginManifestType?: string | undefined;
 }
 export interface HlsConfiguration {
-	readonly ManifestEndpointPrefix?: (string | undefined) | undefined;
+	readonly ManifestEndpointPrefix?: string | undefined;
 }
 export interface LivePreRollConfiguration {
-	readonly AdDecisionServerUrl?: (string | undefined) | undefined;
-	readonly MaxDurationSeconds?: (number | undefined) | undefined;
+	readonly AdDecisionServerUrl?: string | undefined;
+	readonly MaxDurationSeconds?: number | undefined;
 }
 export interface ManifestProcessingRules {
-	readonly AdMarkerPassthrough?: (AdMarkerPassthrough | undefined) | undefined;
+	readonly AdMarkerPassthrough?: AdMarkerPassthrough | undefined;
 }
 export default {
 	PlaybackConfiguration: PlaybackConfiguration,

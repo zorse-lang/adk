@@ -7,28 +7,27 @@ export class ProjectsExclusions
 	constructor(entity: ADKEntity, options: ProjectsExclusionsComponentInputs) {
 		super(entity, options.name, "logging.v2.ProjectsExclusions", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly createTime?: string;
+	public readonly updateTime?: string;
 }
 export interface ProjectsExclusionsComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly updateTime?: string;
 }
 export interface ProjectsExclusionsComponentInputs {
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
+	readonly description?: string;
+	readonly disabled?: boolean;
 	readonly filter: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly type: string;
 }
 export interface LogExclusion {
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly disabled?: boolean;
 	readonly filter: string;
 	readonly name: string;
-	readonly updateTime?: string | undefined;
+	readonly updateTime?: string;
 }
 export default {
 	ProjectsExclusions: ProjectsExclusions,

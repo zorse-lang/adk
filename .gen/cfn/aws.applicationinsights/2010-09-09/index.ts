@@ -11,70 +11,70 @@ export interface ApplicationComponentOutputs {
 }
 export interface ApplicationComponentInputs {
 	readonly ResourceGroupName: string;
-	readonly AutoConfigurationEnabled?: (boolean | undefined) | undefined;
-	readonly ComponentMonitoringSettings?: (ComponentMonitoringSetting[] | undefined) | undefined;
-	readonly CustomComponents?: (CustomComponent[] | undefined) | undefined;
-	readonly CWEMonitorEnabled?: (boolean | undefined) | undefined;
-	readonly GroupingType?: (string | undefined) | undefined;
-	readonly LogPatternSets?: (LogPatternSet[] | undefined) | undefined;
-	readonly OpsCenterEnabled?: (boolean | undefined) | undefined;
-	readonly OpsItemSNSTopicArn?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AutoConfigurationEnabled?: boolean | undefined;
+	readonly ComponentMonitoringSettings?: ComponentMonitoringSetting[] | undefined;
+	readonly CustomComponents?: CustomComponent[] | undefined;
+	readonly CWEMonitorEnabled?: boolean | undefined;
+	readonly GroupingType?: string | undefined;
+	readonly LogPatternSets?: LogPatternSet[] | undefined;
+	readonly OpsCenterEnabled?: boolean | undefined;
+	readonly OpsItemSNSTopicArn?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface Alarm {
 	readonly AlarmName: string;
-	readonly Severity?: (string | undefined) | undefined;
+	readonly Severity?: string | undefined;
 }
 export interface AlarmMetric {
 	readonly AlarmMetricName: string;
 }
 export interface ComponentConfiguration {
-	readonly ConfigurationDetails?: (ConfigurationDetails | undefined) | undefined;
-	readonly SubComponentTypeConfigurations?: (SubComponentTypeConfiguration[] | undefined) | undefined;
+	readonly ConfigurationDetails?: ConfigurationDetails | undefined;
+	readonly SubComponentTypeConfigurations?: SubComponentTypeConfiguration[] | undefined;
 }
 export interface ComponentMonitoringSetting {
-	readonly ComponentARN?: (string | undefined) | undefined;
+	readonly ComponentARN?: string | undefined;
 	readonly ComponentConfigurationMode: string;
-	readonly ComponentName?: (string | undefined) | undefined;
-	readonly CustomComponentConfiguration?: (ComponentConfiguration | undefined) | undefined;
-	readonly DefaultOverwriteComponentConfiguration?: (ComponentConfiguration | undefined) | undefined;
+	readonly ComponentName?: string | undefined;
+	readonly CustomComponentConfiguration?: ComponentConfiguration | undefined;
+	readonly DefaultOverwriteComponentConfiguration?: ComponentConfiguration | undefined;
 	readonly Tier: string;
 }
 export interface ConfigurationDetails {
-	readonly AlarmMetrics?: (AlarmMetric[] | undefined) | undefined;
-	readonly Alarms?: (Alarm[] | undefined) | undefined;
-	readonly HAClusterPrometheusExporter?: (HAClusterPrometheusExporter | undefined) | undefined;
-	readonly HANAPrometheusExporter?: (HANAPrometheusExporter | undefined) | undefined;
-	readonly JMXPrometheusExporter?: (JMXPrometheusExporter | undefined) | undefined;
-	readonly Logs?: (Log[] | undefined) | undefined;
-	readonly WindowsEvents?: (WindowsEvent[] | undefined) | undefined;
+	readonly AlarmMetrics?: AlarmMetric[] | undefined;
+	readonly Alarms?: Alarm[] | undefined;
+	readonly HAClusterPrometheusExporter?: HAClusterPrometheusExporter | undefined;
+	readonly HANAPrometheusExporter?: HANAPrometheusExporter | undefined;
+	readonly JMXPrometheusExporter?: JMXPrometheusExporter | undefined;
+	readonly Logs?: Log[] | undefined;
+	readonly WindowsEvents?: WindowsEvent[] | undefined;
 }
 export interface CustomComponent {
 	readonly ComponentName: string;
 	readonly ResourceList: string[];
 }
 export interface HAClusterPrometheusExporter {
-	readonly PrometheusPort?: (string | undefined) | undefined;
+	readonly PrometheusPort?: string | undefined;
 }
 export interface HANAPrometheusExporter {
 	readonly AgreeToInstallHANADBClient: boolean;
 	readonly HANAPort: string;
 	readonly HANASID: string;
 	readonly HANASecretName: string;
-	readonly PrometheusPort?: (string | undefined) | undefined;
+	readonly PrometheusPort?: string | undefined;
 }
 export interface JMXPrometheusExporter {
-	readonly HostPort?: (string | undefined) | undefined;
-	readonly JMXURL?: (string | undefined) | undefined;
-	readonly PrometheusPort?: (string | undefined) | undefined;
+	readonly HostPort?: string | undefined;
+	readonly JMXURL?: string | undefined;
+	readonly PrometheusPort?: string | undefined;
 }
 export interface Log {
-	readonly Encoding?: (string | undefined) | undefined;
-	readonly LogGroupName?: (string | undefined) | undefined;
-	readonly LogPath?: (string | undefined) | undefined;
+	readonly Encoding?: string | undefined;
+	readonly LogGroupName?: string | undefined;
+	readonly LogPath?: string | undefined;
 	readonly LogType: string;
-	readonly PatternSet?: (string | undefined) | undefined;
+	readonly PatternSet?: string | undefined;
 }
 export interface LogPattern {
 	readonly Pattern: string;
@@ -86,9 +86,9 @@ export interface LogPatternSet {
 	readonly PatternSetName: string;
 }
 export interface SubComponentConfigurationDetails {
-	readonly AlarmMetrics?: (AlarmMetric[] | undefined) | undefined;
-	readonly Logs?: (Log[] | undefined) | undefined;
-	readonly WindowsEvents?: (WindowsEvent[] | undefined) | undefined;
+	readonly AlarmMetrics?: AlarmMetric[] | undefined;
+	readonly Logs?: Log[] | undefined;
+	readonly WindowsEvents?: WindowsEvent[] | undefined;
 }
 export interface SubComponentTypeConfiguration {
 	readonly SubComponentConfigurationDetails: SubComponentConfigurationDetails;
@@ -98,7 +98,7 @@ export interface WindowsEvent {
 	readonly EventLevels: string[];
 	readonly EventName: string;
 	readonly LogGroupName: string;
-	readonly PatternSet?: (string | undefined) | undefined;
+	readonly PatternSet?: string | undefined;
 }
 export default {
 	Application: Application,

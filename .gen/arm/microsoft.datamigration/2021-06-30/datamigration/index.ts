@@ -14,14 +14,14 @@ export interface servicesComponentOutputs {
 	readonly type: "Microsoft.DataMigration/services";
 }
 export interface servicesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DataMigrationServiceProperties | undefined;
-	readonly sku?: ServiceSku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DataMigrationServiceProperties;
+	readonly sku?: ServiceSku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class services_projects
 	extends ArmResource<services_projectsComponentInputs>
@@ -42,9 +42,9 @@ export interface services_projectsComponentOutputs {
 export interface services_projectsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ProjectProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ProjectProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class services_projects_files
 	extends ArmResource<services_projects_filesComponentInputs>
@@ -63,10 +63,10 @@ export interface services_projects_filesComponentOutputs {
 	readonly type: "Microsoft.DataMigration/services/projects/files";
 }
 export interface services_projects_filesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ProjectFileProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ProjectFileProperties;
+	readonly systemData?: SystemData;
 }
 export class services_projects_tasks
 	extends ArmResource<services_projects_tasksComponentInputs>
@@ -85,10 +85,10 @@ export interface services_projects_tasksComponentOutputs {
 	readonly type: "Microsoft.DataMigration/services/projects/tasks";
 }
 export interface services_projects_tasksComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ProjectTaskProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ProjectTaskProperties;
+	readonly systemData?: SystemData;
 }
 export class services_serviceTasks
 	extends ArmResource<services_serviceTasksComponentInputs>
@@ -107,10 +107,10 @@ export interface services_serviceTasksComponentOutputs {
 	readonly type: "Microsoft.DataMigration/services/serviceTasks";
 }
 export interface services_serviceTasksComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ProjectTaskProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ProjectTaskProperties;
+	readonly systemData?: SystemData;
 }
 export interface AzureActiveDirectoryApp {
 	readonly appKey: string;
@@ -118,138 +118,133 @@ export interface AzureActiveDirectoryApp {
 	readonly tenantId: string;
 }
 export interface BackupFileInfo {
-	readonly familySequenceNumber?: number | undefined;
-	readonly fileLocation?: string | undefined;
-	readonly status?:
-		| ("Arrived" | "Cancelled" | "Queued" | "Restored" | "Restoring" | "Uploaded" | "Uploading")
-		| undefined;
+	readonly familySequenceNumber?: number;
+	readonly fileLocation?: string;
+	readonly status?: "Arrived" | "Cancelled" | "Queued" | "Restored" | "Restoring" | "Uploaded" | "Uploading";
 }
 export interface BackupSetInfo {
-	readonly backupFinishedDate?: string | undefined;
-	readonly backupSetId?: string | undefined;
-	readonly backupStartDate?: string | undefined;
+	readonly backupFinishedDate?: string;
+	readonly backupSetId?: string;
+	readonly backupStartDate?: string;
 	readonly backupType?:
-		| (
-				| "Database"
-				| "DifferentialDatabase"
-				| "DifferentialFile"
-				| "DifferentialPartial"
-				| "File"
-				| "Partial"
-				| "TransactionLog"
-		  )
-		| undefined;
-	readonly databaseName?: string | undefined;
-	readonly firstLsn?: string | undefined;
-	readonly isBackupRestored?: boolean | undefined;
-	readonly lastLsn?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly listOfBackupFiles?: BackupFileInfo[] | undefined;
+		| "Database"
+		| "DifferentialDatabase"
+		| "DifferentialFile"
+		| "DifferentialPartial"
+		| "File"
+		| "Partial"
+		| "TransactionLog";
+	readonly databaseName?: string;
+	readonly firstLsn?: string;
+	readonly isBackupRestored?: boolean;
+	readonly lastLsn?: string;
+	readonly lastModifiedTime?: string;
+	readonly listOfBackupFiles?: BackupFileInfo[];
 }
 export interface BlobShare {
 	readonly sasUri: string;
 }
 export interface CheckOCIDriverTaskInput {
-	readonly serverVersion?: string | undefined;
+	readonly serverVersion?: string;
 }
 export interface CheckOCIDriverTaskOutput {
-	readonly installedDriver?: OracleOCIDriverInfo | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly installedDriver?: OracleOCIDriverInfo;
+	readonly validationErrors?: ReportableException[];
 }
 export interface CommandProperties {
-	readonly errors?: ODataError[] | undefined;
-	readonly state?: ("Accepted" | "Failed" | "Running" | "Succeeded" | "Unknown") | undefined;
+	readonly errors?: ODataError[];
+	readonly state?: "Accepted" | "Failed" | "Running" | "Succeeded" | "Unknown";
 }
 export interface ConnectionInfo {
-	readonly password?: string | undefined;
-	readonly userName?: string | undefined;
+	readonly password?: string;
+	readonly userName?: string;
 }
 export interface ConnectToSourceMySqlTaskInput {
 	readonly checkPermissionsGroup?:
-		| ("Default" | "MigrationFromMySQLToAzureDBForMySQL" | "MigrationFromSqlServerToAzureDB")
-		| undefined;
-	readonly isOfflineMigration?: boolean | undefined;
+		| "Default"
+		| "MigrationFromMySQLToAzureDBForMySQL"
+		| "MigrationFromSqlServerToAzureDB";
+	readonly isOfflineMigration?: boolean;
 	readonly sourceConnectionInfo: MySqlConnectionInfo;
-	readonly targetPlatform?: ("AzureDbForMySQL" | "SqlServer") | undefined;
+	readonly targetPlatform?: "AzureDbForMySQL" | "SqlServer";
 }
 export interface ConnectToSourceNonSqlTaskOutput {
-	readonly databases?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly serverProperties?: ServerProperties | undefined;
-	readonly sourceServerBrandVersion?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly databases?: string[];
+	readonly id?: string;
+	readonly serverProperties?: ServerProperties;
+	readonly sourceServerBrandVersion?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface ConnectToSourceOracleSyncTaskInput {
 	readonly sourceConnectionInfo: OracleConnectionInfo;
 }
 export interface ConnectToSourceOracleSyncTaskOutput {
-	readonly databases?: string[] | undefined;
-	readonly sourceServerBrandVersion?: string | undefined;
-	readonly sourceServerVersion?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly databases?: string[];
+	readonly sourceServerBrandVersion?: string;
+	readonly sourceServerVersion?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface ConnectToSourcePostgreSqlSyncTaskInput {
 	readonly sourceConnectionInfo: PostgreSqlConnectionInfo;
 }
 export interface ConnectToSourcePostgreSqlSyncTaskOutput {
-	readonly databases?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly sourceServerBrandVersion?: string | undefined;
-	readonly sourceServerVersion?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly databases?: string[];
+	readonly id?: string;
+	readonly sourceServerBrandVersion?: string;
+	readonly sourceServerVersion?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface ConnectToSourceSqlServerTaskInput {
 	readonly checkPermissionsGroup?:
-		| ("Default" | "MigrationFromMySQLToAzureDBForMySQL" | "MigrationFromSqlServerToAzureDB")
-		| undefined;
-	readonly collectAgentJobs?: boolean | undefined;
-	readonly collectDatabases?: boolean | undefined;
-	readonly collectLogins?: boolean | undefined;
-	readonly collectTdeCertificateInfo?: boolean | undefined;
+		| "Default"
+		| "MigrationFromMySQLToAzureDBForMySQL"
+		| "MigrationFromSqlServerToAzureDB";
+	readonly collectAgentJobs?: boolean;
+	readonly collectDatabases?: boolean;
+	readonly collectLogins?: boolean;
+	readonly collectTdeCertificateInfo?: boolean;
 	readonly sourceConnectionInfo: SqlConnectionInfo;
-	readonly validateSsisCatalogOnly?: boolean | undefined;
+	readonly validateSsisCatalogOnly?: boolean;
 }
 export interface ConnectToSourceSqlServerTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ConnectToTargetAzureDbForMySqlTaskInput {
-	readonly isOfflineMigration?: boolean | undefined;
+	readonly isOfflineMigration?: boolean;
 	readonly sourceConnectionInfo: MySqlConnectionInfo;
 	readonly targetConnectionInfo: MySqlConnectionInfo;
 }
 export interface ConnectToTargetAzureDbForMySqlTaskOutput {
-	readonly databases?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly serverVersion?: string | undefined;
-	readonly targetServerBrandVersion?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly databases?: string[];
+	readonly id?: string;
+	readonly serverVersion?: string;
+	readonly targetServerBrandVersion?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface ConnectToTargetAzureDbForPostgreSqlSyncTaskInput {
 	readonly sourceConnectionInfo: PostgreSqlConnectionInfo;
 	readonly targetConnectionInfo: PostgreSqlConnectionInfo;
 }
 export interface ConnectToTargetAzureDbForPostgreSqlSyncTaskOutput {
-	readonly databases?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly targetServerBrandVersion?: string | undefined;
-	readonly targetServerVersion?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly databases?: string[];
+	readonly id?: string;
+	readonly targetServerBrandVersion?: string;
+	readonly targetServerVersion?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface ConnectToTargetOracleAzureDbForPostgreSqlSyncTaskInput {
 	readonly targetConnectionInfo: PostgreSqlConnectionInfo;
 }
 export interface ConnectToTargetOracleAzureDbForPostgreSqlSyncTaskOutput {
-	readonly databases?: string[] | undefined;
-	readonly databaseSchemaMap?:
-		| ConnectToTargetOracleAzureDbForPostgreSqlSyncTaskOutputDatabaseSchemaMapItem[]
-		| undefined;
-	readonly targetServerBrandVersion?: string | undefined;
-	readonly targetServerVersion?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly databases?: string[];
+	readonly databaseSchemaMap?: ConnectToTargetOracleAzureDbForPostgreSqlSyncTaskOutputDatabaseSchemaMapItem[];
+	readonly targetServerBrandVersion?: string;
+	readonly targetServerVersion?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface ConnectToTargetOracleAzureDbForPostgreSqlSyncTaskOutputDatabaseSchemaMapItem {
-	readonly database?: string | undefined;
-	readonly schemas?: string[] | undefined;
+	readonly database?: string;
+	readonly schemas?: string[];
 }
 export interface ConnectToTargetSqlDbSyncTaskInput {
 	readonly sourceConnectionInfo: SqlConnectionInfo;
@@ -259,111 +254,105 @@ export interface ConnectToTargetSqlDbTaskInput {
 	readonly targetConnectionInfo: SqlConnectionInfo;
 }
 export interface ConnectToTargetSqlDbTaskOutput {
-	readonly databases?: string | undefined;
-	readonly id?: string | undefined;
-	readonly targetServerBrandVersion?: string | undefined;
-	readonly targetServerVersion?: string | undefined;
+	readonly databases?: string;
+	readonly id?: string;
+	readonly targetServerBrandVersion?: string;
+	readonly targetServerVersion?: string;
 }
 export interface ConnectToTargetSqlMISyncTaskInput {
 	readonly azureApp: AzureActiveDirectoryApp;
 	readonly targetConnectionInfo: MiSqlConnectionInfo;
 }
 export interface ConnectToTargetSqlMISyncTaskOutput {
-	readonly targetServerBrandVersion?: string | undefined;
-	readonly targetServerVersion?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly targetServerBrandVersion?: string;
+	readonly targetServerVersion?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface ConnectToTargetSqlMITaskInput {
-	readonly collectAgentJobs?: boolean | undefined;
-	readonly collectLogins?: boolean | undefined;
+	readonly collectAgentJobs?: boolean;
+	readonly collectLogins?: boolean;
 	readonly targetConnectionInfo: SqlConnectionInfo;
-	readonly validateSsisCatalogOnly?: boolean | undefined;
+	readonly validateSsisCatalogOnly?: boolean;
 }
 export interface ConnectToTargetSqlMITaskOutput {
-	readonly agentJobs?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly logins?: string[] | undefined;
-	readonly targetServerBrandVersion?: string | undefined;
-	readonly targetServerVersion?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly agentJobs?: string[];
+	readonly id?: string;
+	readonly logins?: string[];
+	readonly targetServerBrandVersion?: string;
+	readonly targetServerVersion?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface DatabaseBackupInfo {
-	readonly backupFiles?: string[] | undefined;
-	readonly backupFinishDate?: string | undefined;
+	readonly backupFiles?: string[];
+	readonly backupFinishDate?: string;
 	readonly backupType?:
-		| (
-				| "Database"
-				| "DifferentialDatabase"
-				| "DifferentialFile"
-				| "DifferentialPartial"
-				| "File"
-				| "Partial"
-				| "TransactionLog"
-		  )
-		| undefined;
-	readonly databaseName?: string | undefined;
-	readonly familyCount?: number | undefined;
-	readonly isCompressed?: boolean | undefined;
-	readonly isDamaged?: boolean | undefined;
-	readonly position?: number | undefined;
+		| "Database"
+		| "DifferentialDatabase"
+		| "DifferentialFile"
+		| "DifferentialPartial"
+		| "File"
+		| "Partial"
+		| "TransactionLog";
+	readonly databaseName?: string;
+	readonly familyCount?: number;
+	readonly isCompressed?: boolean;
+	readonly isDamaged?: boolean;
+	readonly position?: number;
 }
 export interface DatabaseFileInfo {
-	readonly databaseName?: string | undefined;
-	readonly fileType?: ("Filestream" | "Fulltext" | "Log" | "NotSupported" | "Rows") | undefined;
-	readonly id?: string | undefined;
-	readonly logicalName?: string | undefined;
-	readonly physicalFullName?: string | undefined;
-	readonly restoreFullName?: string | undefined;
-	readonly sizeMB?: number | undefined;
+	readonly databaseName?: string;
+	readonly fileType?: "Filestream" | "Fulltext" | "Log" | "NotSupported" | "Rows";
+	readonly id?: string;
+	readonly logicalName?: string;
+	readonly physicalFullName?: string;
+	readonly restoreFullName?: string;
+	readonly sizeMB?: number;
 }
 export interface DatabaseInfo {
 	readonly sourceDatabaseName: string;
 }
 export interface DatabaseTable {
-	readonly hasRows?: boolean | undefined;
-	readonly name?: string | undefined;
+	readonly hasRows?: boolean;
+	readonly name?: string;
 }
 export interface DataIntegrityValidationResult {
-	readonly failedObjects?: DataIntegrityValidationResultFailedObjects | undefined;
-	readonly validationErrors?: ValidationError | undefined;
+	readonly failedObjects?: DataIntegrityValidationResultFailedObjects;
+	readonly validationErrors?: ValidationError;
 }
 export interface DataIntegrityValidationResultFailedObjects {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DataMigrationServiceProperties {
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Deleting"
-				| "Deploying"
-				| "Failed"
-				| "FailedToStart"
-				| "FailedToStop"
-				| "Starting"
-				| "Stopped"
-				| "Stopping"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly publicKey?: string | undefined;
-	readonly virtualNicId?: string | undefined;
+		| "Accepted"
+		| "Deleting"
+		| "Deploying"
+		| "Failed"
+		| "FailedToStart"
+		| "FailedToStop"
+		| "Starting"
+		| "Stopped"
+		| "Stopping"
+		| "Succeeded";
+	readonly publicKey?: string;
+	readonly virtualNicId?: string;
 	readonly virtualSubnetId: string;
 }
 export interface ExecutionStatistics {
-	readonly cpuTimeMs?: number | undefined;
-	readonly elapsedTimeMs?: number | undefined;
-	readonly executionCount?: number | undefined;
-	readonly hasErrors?: boolean | undefined;
-	readonly sqlErrors?: string[] | undefined;
-	readonly waitStats?: ExecutionStatisticsWaitStats | undefined;
+	readonly cpuTimeMs?: number;
+	readonly elapsedTimeMs?: number;
+	readonly executionCount?: number;
+	readonly hasErrors?: boolean;
+	readonly sqlErrors?: string[];
+	readonly waitStats?: ExecutionStatisticsWaitStats;
 }
 export interface ExecutionStatisticsWaitStats {
-	readonly "[ key: string ]"?: WaitStatistics | undefined;
+	readonly [key: string]: WaitStatistics;
 }
 export interface FileShare {
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly path: string;
-	readonly userName?: string | undefined;
+	readonly userName?: string;
 }
 export interface GetTdeCertificatesSqlTaskInput {
 	readonly backupFileShare: FileShare;
@@ -371,35 +360,35 @@ export interface GetTdeCertificatesSqlTaskInput {
 	readonly selectedCertificates: SelectedCertificateInput[];
 }
 export interface GetTdeCertificatesSqlTaskOutput {
-	readonly base64EncodedCertificates?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly base64EncodedCertificates?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface GetUserTablesMySqlTaskInput {
 	readonly connectionInfo: MySqlConnectionInfo;
 	readonly selectedDatabases: string[];
 }
 export interface GetUserTablesMySqlTaskOutput {
-	readonly databasesToTables?: string | undefined;
-	readonly id?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly databasesToTables?: string;
+	readonly id?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface GetUserTablesOracleTaskInput {
 	readonly connectionInfo: OracleConnectionInfo;
 	readonly selectedSchemas: string[];
 }
 export interface GetUserTablesOracleTaskOutput {
-	readonly schemaName?: string | undefined;
-	readonly tables?: DatabaseTable[] | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly schemaName?: string;
+	readonly tables?: DatabaseTable[];
+	readonly validationErrors?: ReportableException[];
 }
 export interface GetUserTablesPostgreSqlTaskInput {
 	readonly connectionInfo: PostgreSqlConnectionInfo;
 	readonly selectedDatabases: string[];
 }
 export interface GetUserTablesPostgreSqlTaskOutput {
-	readonly databaseName?: string | undefined;
-	readonly tables?: DatabaseTable[] | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly databaseName?: string;
+	readonly tables?: DatabaseTable[];
+	readonly validationErrors?: ReportableException[];
 }
 export interface GetUserTablesSqlSyncTaskInput {
 	readonly selectedSourceDatabases: string[];
@@ -408,73 +397,73 @@ export interface GetUserTablesSqlSyncTaskInput {
 	readonly targetConnectionInfo: SqlConnectionInfo;
 }
 export interface GetUserTablesSqlSyncTaskOutput {
-	readonly databasesToSourceTables?: string | undefined;
-	readonly databasesToTargetTables?: string | undefined;
-	readonly tableValidationErrors?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly databasesToSourceTables?: string;
+	readonly databasesToTargetTables?: string;
+	readonly tableValidationErrors?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface GetUserTablesSqlTaskInput {
 	readonly connectionInfo: SqlConnectionInfo;
 	readonly selectedDatabases: string[];
 }
 export interface GetUserTablesSqlTaskOutput {
-	readonly databasesToTables?: string | undefined;
-	readonly id?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly databasesToTables?: string;
+	readonly id?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface InstallOCIDriverTaskInput {
-	readonly driverPackageName?: string | undefined;
+	readonly driverPackageName?: string;
 }
 export interface InstallOCIDriverTaskOutput {
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly validationErrors?: ReportableException[];
 }
 export interface MigrateMISyncCompleteCommandInput {
 	readonly sourceDatabaseName: string;
 }
 export interface MigrateMISyncCompleteCommandOutput {
-	readonly errors?: ReportableException[] | undefined;
+	readonly errors?: ReportableException[];
 }
 export interface MigrateMySqlAzureDbForMySqlOfflineDatabaseInput {
-	readonly name?: string | undefined;
-	readonly tableMap?: MigrateMySqlAzureDbForMySqlOfflineDatabaseInputTableMap | undefined;
-	readonly targetDatabaseName?: string | undefined;
+	readonly name?: string;
+	readonly tableMap?: MigrateMySqlAzureDbForMySqlOfflineDatabaseInputTableMap;
+	readonly targetDatabaseName?: string;
 }
 export interface MigrateMySqlAzureDbForMySqlOfflineDatabaseInputTableMap {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateMySqlAzureDbForMySqlOfflineTaskInput {
-	readonly makeSourceServerReadOnly?: boolean | undefined;
-	readonly optionalAgentSettings?: MigrateMySqlAzureDbForMySqlOfflineTaskInputOptionalAgentSettings | undefined;
+	readonly makeSourceServerReadOnly?: boolean;
+	readonly optionalAgentSettings?: MigrateMySqlAzureDbForMySqlOfflineTaskInputOptionalAgentSettings;
 	readonly selectedDatabases: MigrateMySqlAzureDbForMySqlOfflineDatabaseInput[];
 	readonly sourceConnectionInfo: MySqlConnectionInfo;
-	readonly startedOn?: string | undefined;
+	readonly startedOn?: string;
 	readonly targetConnectionInfo: MySqlConnectionInfo;
 }
 export interface MigrateMySqlAzureDbForMySqlOfflineTaskInputOptionalAgentSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateMySqlAzureDbForMySqlOfflineTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MigrateMySqlAzureDbForMySqlSyncDatabaseInput {
-	readonly migrationSetting?: MigrateMySqlAzureDbForMySqlSyncDatabaseInputMigrationSetting | undefined;
-	readonly name?: string | undefined;
-	readonly sourceSetting?: MigrateMySqlAzureDbForMySqlSyncDatabaseInputSourceSetting | undefined;
-	readonly tableMap?: MigrateMySqlAzureDbForMySqlSyncDatabaseInputTableMap | undefined;
-	readonly targetDatabaseName?: string | undefined;
-	readonly targetSetting?: MigrateMySqlAzureDbForMySqlSyncDatabaseInputTargetSetting | undefined;
+	readonly migrationSetting?: MigrateMySqlAzureDbForMySqlSyncDatabaseInputMigrationSetting;
+	readonly name?: string;
+	readonly sourceSetting?: MigrateMySqlAzureDbForMySqlSyncDatabaseInputSourceSetting;
+	readonly tableMap?: MigrateMySqlAzureDbForMySqlSyncDatabaseInputTableMap;
+	readonly targetDatabaseName?: string;
+	readonly targetSetting?: MigrateMySqlAzureDbForMySqlSyncDatabaseInputTargetSetting;
 }
 export interface MigrateMySqlAzureDbForMySqlSyncDatabaseInputMigrationSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateMySqlAzureDbForMySqlSyncDatabaseInputSourceSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateMySqlAzureDbForMySqlSyncDatabaseInputTableMap {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateMySqlAzureDbForMySqlSyncDatabaseInputTargetSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateMySqlAzureDbForMySqlSyncTaskInput {
 	readonly selectedDatabases: MigrateMySqlAzureDbForMySqlSyncDatabaseInput[];
@@ -482,29 +471,29 @@ export interface MigrateMySqlAzureDbForMySqlSyncTaskInput {
 	readonly targetConnectionInfo: MySqlConnectionInfo;
 }
 export interface MigrateMySqlAzureDbForMySqlSyncTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MigrateOracleAzureDbPostgreSqlSyncDatabaseInput {
-	readonly caseManipulation?: string | undefined;
-	readonly migrationSetting?: MigrateOracleAzureDbPostgreSqlSyncDatabaseInputMigrationSetting | undefined;
-	readonly name?: string | undefined;
-	readonly schemaName?: string | undefined;
-	readonly sourceSetting?: MigrateOracleAzureDbPostgreSqlSyncDatabaseInputSourceSetting | undefined;
-	readonly tableMap?: MigrateOracleAzureDbPostgreSqlSyncDatabaseInputTableMap | undefined;
-	readonly targetDatabaseName?: string | undefined;
-	readonly targetSetting?: MigrateOracleAzureDbPostgreSqlSyncDatabaseInputTargetSetting | undefined;
+	readonly caseManipulation?: string;
+	readonly migrationSetting?: MigrateOracleAzureDbPostgreSqlSyncDatabaseInputMigrationSetting;
+	readonly name?: string;
+	readonly schemaName?: string;
+	readonly sourceSetting?: MigrateOracleAzureDbPostgreSqlSyncDatabaseInputSourceSetting;
+	readonly tableMap?: MigrateOracleAzureDbPostgreSqlSyncDatabaseInputTableMap;
+	readonly targetDatabaseName?: string;
+	readonly targetSetting?: MigrateOracleAzureDbPostgreSqlSyncDatabaseInputTargetSetting;
 }
 export interface MigrateOracleAzureDbPostgreSqlSyncDatabaseInputMigrationSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateOracleAzureDbPostgreSqlSyncDatabaseInputSourceSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateOracleAzureDbPostgreSqlSyncDatabaseInputTableMap {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateOracleAzureDbPostgreSqlSyncDatabaseInputTargetSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateOracleAzureDbPostgreSqlSyncTaskInput {
 	readonly selectedDatabases: MigrateOracleAzureDbPostgreSqlSyncDatabaseInput[];
@@ -512,27 +501,27 @@ export interface MigrateOracleAzureDbPostgreSqlSyncTaskInput {
 	readonly targetConnectionInfo: PostgreSqlConnectionInfo;
 }
 export interface MigrateOracleAzureDbPostgreSqlSyncTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseInput {
-	readonly migrationSetting?: MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseInputMigrationSetting | undefined;
-	readonly name?: string | undefined;
-	readonly selectedTables?: MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseTableInput[] | undefined;
-	readonly sourceSetting?: MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseInputSourceSetting | undefined;
-	readonly targetDatabaseName?: string | undefined;
-	readonly targetSetting?: MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseInputTargetSetting | undefined;
+	readonly migrationSetting?: MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseInputMigrationSetting;
+	readonly name?: string;
+	readonly selectedTables?: MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseTableInput[];
+	readonly sourceSetting?: MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseInputSourceSetting;
+	readonly targetDatabaseName?: string;
+	readonly targetSetting?: MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseInputTargetSetting;
 }
 export interface MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseInputMigrationSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseInputSourceSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseInputTargetSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseTableInput {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface MigratePostgreSqlAzureDbForPostgreSqlSyncTaskInput {
 	readonly selectedDatabases: MigratePostgreSqlAzureDbForPostgreSqlSyncDatabaseInput[];
@@ -540,12 +529,12 @@ export interface MigratePostgreSqlAzureDbForPostgreSqlSyncTaskInput {
 	readonly targetConnectionInfo: PostgreSqlConnectionInfo;
 }
 export interface MigratePostgreSqlAzureDbForPostgreSqlSyncTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MigrateSchemaSqlServerSqlDbDatabaseInput {
-	readonly name?: string | undefined;
-	readonly schemaSetting?: SchemaMigrationSetting | undefined;
-	readonly targetDatabaseName?: string | undefined;
+	readonly name?: string;
+	readonly schemaSetting?: SchemaMigrationSetting;
+	readonly targetDatabaseName?: string;
 }
 export interface MigrateSchemaSqlServerSqlDbTaskInput {
 	readonly selectedDatabases: MigrateSchemaSqlServerSqlDbDatabaseInput[];
@@ -553,87 +542,87 @@ export interface MigrateSchemaSqlServerSqlDbTaskInput {
 	readonly targetConnectionInfo: SqlConnectionInfo;
 }
 export interface MigrateSchemaSqlServerSqlDbTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MigrateSqlServerSqlDbDatabaseInput {
-	readonly makeSourceDbReadOnly?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly tableMap?: MigrateSqlServerSqlDbDatabaseInputTableMap | undefined;
-	readonly targetDatabaseName?: string | undefined;
+	readonly makeSourceDbReadOnly?: boolean;
+	readonly name?: string;
+	readonly tableMap?: MigrateSqlServerSqlDbDatabaseInputTableMap;
+	readonly targetDatabaseName?: string;
 }
 export interface MigrateSqlServerSqlDbDatabaseInputTableMap {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateSqlServerSqlDbSyncDatabaseInput {
-	readonly id?: string | undefined;
-	readonly migrationSetting?: MigrateSqlServerSqlDbSyncDatabaseInputMigrationSetting | undefined;
-	readonly name?: string | undefined;
-	readonly schemaName?: string | undefined;
-	readonly sourceSetting?: MigrateSqlServerSqlDbSyncDatabaseInputSourceSetting | undefined;
-	readonly tableMap?: MigrateSqlServerSqlDbSyncDatabaseInputTableMap | undefined;
-	readonly targetDatabaseName?: string | undefined;
-	readonly targetSetting?: MigrateSqlServerSqlDbSyncDatabaseInputTargetSetting | undefined;
+	readonly id?: string;
+	readonly migrationSetting?: MigrateSqlServerSqlDbSyncDatabaseInputMigrationSetting;
+	readonly name?: string;
+	readonly schemaName?: string;
+	readonly sourceSetting?: MigrateSqlServerSqlDbSyncDatabaseInputSourceSetting;
+	readonly tableMap?: MigrateSqlServerSqlDbSyncDatabaseInputTableMap;
+	readonly targetDatabaseName?: string;
+	readonly targetSetting?: MigrateSqlServerSqlDbSyncDatabaseInputTargetSetting;
 }
 export interface MigrateSqlServerSqlDbSyncDatabaseInputMigrationSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateSqlServerSqlDbSyncDatabaseInputSourceSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateSqlServerSqlDbSyncDatabaseInputTableMap {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateSqlServerSqlDbSyncDatabaseInputTargetSetting {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateSqlServerSqlDbSyncTaskInput {
 	readonly selectedDatabases: MigrateSqlServerSqlDbSyncDatabaseInput[];
 	readonly sourceConnectionInfo: SqlConnectionInfo;
 	readonly targetConnectionInfo: SqlConnectionInfo;
-	readonly validationOptions?: MigrationValidationOptions | undefined;
+	readonly validationOptions?: MigrationValidationOptions;
 }
 export interface MigrateSqlServerSqlDbSyncTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MigrateSqlServerSqlDbTaskInput {
 	readonly selectedDatabases: MigrateSqlServerSqlDbDatabaseInput[];
 	readonly sourceConnectionInfo: SqlConnectionInfo;
 	readonly targetConnectionInfo: SqlConnectionInfo;
-	readonly validationOptions?: MigrationValidationOptions | undefined;
+	readonly validationOptions?: MigrationValidationOptions;
 }
 export interface MigrateSqlServerSqlDbTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MigrateSqlServerSqlMIDatabaseInput {
-	readonly backupFilePaths?: string[] | undefined;
-	readonly backupFileShare?: FileShare | undefined;
+	readonly backupFilePaths?: string[];
+	readonly backupFileShare?: FileShare;
 	readonly name: string;
 	readonly restoreDatabaseName: string;
 }
 export interface MigrateSqlServerSqlMISyncTaskInput {
 	readonly azureApp: AzureActiveDirectoryApp;
-	readonly backupFileShare?: FileShare | undefined;
+	readonly backupFileShare?: FileShare;
 	readonly selectedDatabases: MigrateSqlServerSqlMIDatabaseInput[];
 	readonly sourceConnectionInfo: SqlConnectionInfo;
 	readonly storageResourceId: string;
 	readonly targetConnectionInfo: MiSqlConnectionInfo;
 }
 export interface MigrateSqlServerSqlMISyncTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MigrateSqlServerSqlMITaskInput {
-	readonly aadDomainName?: string | undefined;
+	readonly aadDomainName?: string;
 	readonly backupBlobShare: BlobShare;
-	readonly backupFileShare?: FileShare | undefined;
-	readonly backupMode?: ("CreateBackup" | "ExistingBackup") | undefined;
-	readonly selectedAgentJobs?: string[] | undefined;
+	readonly backupFileShare?: FileShare;
+	readonly backupMode?: "CreateBackup" | "ExistingBackup";
+	readonly selectedAgentJobs?: string[];
 	readonly selectedDatabases: MigrateSqlServerSqlMIDatabaseInput[];
-	readonly selectedLogins?: string[] | undefined;
+	readonly selectedLogins?: string[];
 	readonly sourceConnectionInfo: SqlConnectionInfo;
 	readonly targetConnectionInfo: SqlConnectionInfo;
 }
 export interface MigrateSqlServerSqlMITaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MigrateSsisTaskInput {
 	readonly sourceConnectionInfo: SqlConnectionInfo;
@@ -641,74 +630,68 @@ export interface MigrateSsisTaskInput {
 	readonly targetConnectionInfo: SqlConnectionInfo;
 }
 export interface MigrateSsisTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MigrateSyncCompleteCommandInput {
-	readonly commitTimeStamp?: string | undefined;
+	readonly commitTimeStamp?: string;
 	readonly databaseName: string;
 }
 export interface MigrateSyncCompleteCommandOutput {
-	readonly errors?: ReportableException[] | undefined;
-	readonly id?: string | undefined;
+	readonly errors?: ReportableException[];
+	readonly id?: string;
 }
 export interface MigrationEligibilityInfo {
-	readonly isEligibleForMigration?: boolean | undefined;
-	readonly validationMessages?: string[] | undefined;
+	readonly isEligibleForMigration?: boolean;
+	readonly validationMessages?: string[];
 }
 export interface MigrationReportResult {
-	readonly id?: string | undefined;
-	readonly reportUrl?: string | undefined;
+	readonly id?: string;
+	readonly reportUrl?: string;
 }
 export interface MigrationValidationDatabaseSummaryResult {
-	readonly endedOn?: string | undefined;
-	readonly id?: string | undefined;
-	readonly migrationId?: string | undefined;
-	readonly sourceDatabaseName?: string | undefined;
-	readonly startedOn?: string | undefined;
+	readonly endedOn?: string;
+	readonly id?: string;
+	readonly migrationId?: string;
+	readonly sourceDatabaseName?: string;
+	readonly startedOn?: string;
 	readonly status?:
-		| (
-				| "Completed"
-				| "CompletedWithIssues"
-				| "Default"
-				| "Failed"
-				| "InProgress"
-				| "Initialized"
-				| "NotStarted"
-				| "Stopped"
-		  )
-		| undefined;
-	readonly targetDatabaseName?: string | undefined;
+		| "Completed"
+		| "CompletedWithIssues"
+		| "Default"
+		| "Failed"
+		| "InProgress"
+		| "Initialized"
+		| "NotStarted"
+		| "Stopped";
+	readonly targetDatabaseName?: string;
 }
 export interface MigrationValidationOptions {
-	readonly enableDataIntegrityValidation?: boolean | undefined;
-	readonly enableQueryAnalysisValidation?: boolean | undefined;
-	readonly enableSchemaValidation?: boolean | undefined;
+	readonly enableDataIntegrityValidation?: boolean;
+	readonly enableQueryAnalysisValidation?: boolean;
+	readonly enableSchemaValidation?: boolean;
 }
 export interface MigrationValidationResult {
-	readonly id?: string | undefined;
-	readonly migrationId?: string | undefined;
+	readonly id?: string;
+	readonly migrationId?: string;
 	readonly status?:
-		| (
-				| "Completed"
-				| "CompletedWithIssues"
-				| "Default"
-				| "Failed"
-				| "InProgress"
-				| "Initialized"
-				| "NotStarted"
-				| "Stopped"
-		  )
-		| undefined;
-	readonly summaryResults?: MigrationValidationResultSummaryResults | undefined;
+		| "Completed"
+		| "CompletedWithIssues"
+		| "Default"
+		| "Failed"
+		| "InProgress"
+		| "Initialized"
+		| "NotStarted"
+		| "Stopped";
+	readonly summaryResults?: MigrationValidationResultSummaryResults;
 }
 export interface MigrationValidationResultSummaryResults {
-	readonly "[ key: string ]"?: MigrationValidationDatabaseSummaryResult | undefined;
+	readonly [key: string]: MigrationValidationDatabaseSummaryResult;
 }
 export interface MiSqlConnectionInfo {
 	readonly managedInstanceResourceId: string;
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly type: string;
-	readonly userName?: string | undefined;
+	readonly userName?: string;
 }
 export interface MongoDbClusterInfo {
 	readonly databases: MongoDbDatabaseInfo[];
@@ -726,9 +709,9 @@ export interface MongoDbCollectionInfo {
 	readonly isView: boolean;
 	readonly name: string;
 	readonly qualifiedName: string;
-	readonly shardKey?: MongoDbShardKeyInfo | undefined;
+	readonly shardKey?: MongoDbShardKeyInfo;
 	readonly supportsSharding: boolean;
-	readonly viewOf?: string | undefined;
+	readonly viewOf?: string;
 }
 export interface MongoDbCollectionProgress {
 	readonly bytesCopied: number;
@@ -737,10 +720,10 @@ export interface MongoDbCollectionProgress {
 	readonly errors: MongoDbProgressErrors;
 	readonly eventsPending: number;
 	readonly eventsReplayed: number;
-	readonly lastEventTime?: string | undefined;
-	readonly lastReplayTime?: string | undefined;
-	readonly name?: string | undefined;
-	readonly qualifiedName?: string | undefined;
+	readonly lastEventTime?: string;
+	readonly lastReplayTime?: string;
+	readonly name?: string;
+	readonly qualifiedName?: string;
 	readonly resultType: "Collection" | "Database" | "Migration";
 	readonly state:
 		| "Canceled"
@@ -758,18 +741,18 @@ export interface MongoDbCollectionProgress {
 	readonly totalDocuments: number;
 }
 export interface MongoDbCollectionSettings {
-	readonly canDelete?: boolean | undefined;
-	readonly shardKey?: MongoDbShardKeySetting | undefined;
-	readonly targetRUs?: number | undefined;
+	readonly canDelete?: boolean;
+	readonly shardKey?: MongoDbShardKeySetting;
+	readonly targetRUs?: number;
 }
 export interface MongoDbCommandInput {
-	readonly objectName?: string | undefined;
+	readonly objectName?: string;
 }
 export interface MongoDbConnectionInfo {
 	readonly connectionString: string;
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly type: string;
-	readonly userName?: string | undefined;
+	readonly userName?: string;
 }
 export interface MongoDbDatabaseInfo {
 	readonly averageDocumentSize: number;
@@ -782,16 +765,16 @@ export interface MongoDbDatabaseInfo {
 }
 export interface MongoDbDatabaseProgress {
 	readonly bytesCopied: number;
-	readonly collections?: MongoDbDatabaseProgressCollections | undefined;
+	readonly collections?: MongoDbDatabaseProgressCollections;
 	readonly documentsCopied: number;
 	readonly elapsedTime: string;
 	readonly errors: MongoDbProgressErrors;
 	readonly eventsPending: number;
 	readonly eventsReplayed: number;
-	readonly lastEventTime?: string | undefined;
-	readonly lastReplayTime?: string | undefined;
-	readonly name?: string | undefined;
-	readonly qualifiedName?: string | undefined;
+	readonly lastEventTime?: string;
+	readonly lastReplayTime?: string;
+	readonly name?: string;
+	readonly qualifiedName?: string;
 	readonly resultType: "Collection" | "Database" | "Migration";
 	readonly state:
 		| "Canceled"
@@ -809,37 +792,37 @@ export interface MongoDbDatabaseProgress {
 	readonly totalDocuments: number;
 }
 export interface MongoDbDatabaseProgressCollections {
-	readonly "[ key: string ]"?: MongoDbCollectionProgress | undefined;
+	readonly [key: string]: MongoDbCollectionProgress;
 }
 export interface MongoDbDatabaseSettings {
 	readonly collections: MongoDbDatabaseSettingsCollections;
-	readonly targetRUs?: number | undefined;
+	readonly targetRUs?: number;
 }
 export interface MongoDbDatabaseSettingsCollections {
-	readonly "[ key: string ]"?: MongoDbCollectionSettings | undefined;
+	readonly [key: string]: MongoDbCollectionSettings;
 }
 export interface MongoDbError {
-	readonly code?: string | undefined;
-	readonly count?: number | undefined;
-	readonly message?: string | undefined;
-	readonly type?: ("Error" | "ValidationError" | "Warning") | undefined;
+	readonly code?: string;
+	readonly count?: number;
+	readonly message?: string;
+	readonly type?: "Error" | "ValidationError" | "Warning";
 }
 export interface MongoDbFinishCommandInput {
 	readonly immediate: boolean;
-	readonly objectName?: string | undefined;
+	readonly objectName?: string;
 }
 export interface MongoDbMigrationProgress {
 	readonly bytesCopied: number;
-	readonly databases?: MongoDbMigrationProgressDatabases | undefined;
+	readonly databases?: MongoDbMigrationProgressDatabases;
 	readonly documentsCopied: number;
 	readonly elapsedTime: string;
 	readonly errors: MongoDbProgressErrors;
 	readonly eventsPending: number;
 	readonly eventsReplayed: number;
-	readonly lastEventTime?: string | undefined;
-	readonly lastReplayTime?: string | undefined;
-	readonly name?: string | undefined;
-	readonly qualifiedName?: string | undefined;
+	readonly lastEventTime?: string;
+	readonly lastReplayTime?: string;
+	readonly name?: string;
+	readonly qualifiedName?: string;
 	readonly resultType: "Collection" | "Database" | "Migration";
 	readonly state:
 		| "Canceled"
@@ -857,18 +840,18 @@ export interface MongoDbMigrationProgress {
 	readonly totalDocuments: number;
 }
 export interface MongoDbMigrationProgressDatabases {
-	readonly "[ key: string ]"?: MongoDbDatabaseProgress | undefined;
+	readonly [key: string]: MongoDbDatabaseProgress;
 }
 export interface MongoDbMigrationSettings {
-	readonly boostRUs?: number | undefined;
+	readonly boostRUs?: number;
 	readonly databases: MongoDbMigrationSettingsDatabases;
-	readonly replication?: ("Continuous" | "Disabled" | "OneTime") | undefined;
+	readonly replication?: "Continuous" | "Disabled" | "OneTime";
 	readonly source: MongoDbConnectionInfo;
 	readonly target: MongoDbConnectionInfo;
-	readonly throttling?: MongoDbThrottlingSettings | undefined;
+	readonly throttling?: MongoDbThrottlingSettings;
 }
 export interface MongoDbMigrationSettingsDatabases {
-	readonly "[ key: string ]"?: MongoDbDatabaseSettings | undefined;
+	readonly [key: string]: MongoDbDatabaseSettings;
 }
 export interface MongoDbProgress {
 	readonly bytesCopied: number;
@@ -877,10 +860,10 @@ export interface MongoDbProgress {
 	readonly errors: MongoDbProgressErrors;
 	readonly eventsPending: number;
 	readonly eventsReplayed: number;
-	readonly lastEventTime?: string | undefined;
-	readonly lastReplayTime?: string | undefined;
-	readonly name?: string | undefined;
-	readonly qualifiedName?: string | undefined;
+	readonly lastEventTime?: string;
+	readonly lastReplayTime?: string;
+	readonly name?: string;
+	readonly qualifiedName?: string;
 	readonly state:
 		| "Canceled"
 		| "Complete"
@@ -897,7 +880,7 @@ export interface MongoDbProgress {
 	readonly totalDocuments: number;
 }
 export interface MongoDbProgressErrors {
-	readonly "[ key: string ]"?: MongoDbError | undefined;
+	readonly [key: string]: MongoDbError;
 }
 export interface MongoDbShardKeyField {
 	readonly name: string;
@@ -912,211 +895,220 @@ export interface MongoDbShardKeySetting {
 	readonly isUnique: boolean;
 }
 export interface MongoDbThrottlingSettings {
-	readonly maxParallelism?: number | undefined;
-	readonly minFreeCpu?: number | undefined;
-	readonly minFreeMemoryMb?: number | undefined;
+	readonly maxParallelism?: number;
+	readonly minFreeCpu?: number;
+	readonly minFreeMemoryMb?: number;
 }
 export interface MySqlConnectionInfo {
-	readonly encryptConnection?: boolean | undefined;
-	readonly password?: string | undefined;
+	readonly encryptConnection?: boolean;
+	readonly password?: string;
 	readonly port: number;
 	readonly serverName: string;
 	readonly type: string;
-	readonly userName?: string | undefined;
+	readonly userName?: string;
 }
 export interface ODataError {
-	readonly code?: string | undefined;
-	readonly details?: ODataError[] | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly details?: ODataError[];
+	readonly message?: string;
 }
 export interface OracleConnectionInfo {
 	readonly dataSource: string;
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly type: string;
-	readonly userName?: string | undefined;
+	readonly userName?: string;
 }
 export interface OracleOCIDriverInfo {
-	readonly archiveChecksum?: string | undefined;
-	readonly assemblyVersion?: string | undefined;
-	readonly driverName?: string | undefined;
-	readonly driverSize?: string | undefined;
-	readonly oracleChecksum?: string | undefined;
-	readonly supportedOracleVersions?: string[] | undefined;
+	readonly archiveChecksum?: string;
+	readonly assemblyVersion?: string;
+	readonly driverName?: string;
+	readonly driverSize?: string;
+	readonly oracleChecksum?: string;
+	readonly supportedOracleVersions?: string[];
 }
 export interface OrphanedUserInfo {
-	readonly databaseName?: string | undefined;
-	readonly name?: string | undefined;
+	readonly databaseName?: string;
+	readonly name?: string;
 }
 export interface PostgreSqlConnectionInfo {
-	readonly databaseName?: string | undefined;
-	readonly encryptConnection?: boolean | undefined;
-	readonly password?: string | undefined;
+	readonly databaseName?: string;
+	readonly encryptConnection?: boolean;
+	readonly password?: string;
 	readonly port: number;
 	readonly serverName: string;
-	readonly trustServerCertificate?: boolean | undefined;
+	readonly trustServerCertificate?: boolean;
 	readonly type: string;
-	readonly userName?: string | undefined;
+	readonly userName?: string;
 }
 export interface ProjectFileProperties {
-	readonly extension?: string | undefined;
-	readonly filePath?: string | undefined;
-	readonly lastModified?: string | undefined;
-	readonly mediaType?: string | undefined;
-	readonly size?: number | undefined;
+	readonly extension?: string;
+	readonly filePath?: string;
+	readonly lastModified?: string;
+	readonly mediaType?: string;
+	readonly size?: number;
 }
 export interface ProjectProperties {
-	readonly creationTime?: string | undefined;
-	readonly databasesInfo?: DatabaseInfo[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Succeeded") | undefined;
-	readonly sourceConnectionInfo?: ConnectionInfo | undefined;
+	readonly creationTime?: string;
+	readonly databasesInfo?: DatabaseInfo[];
+	readonly provisioningState?: "Deleting" | "Succeeded";
+	readonly sourceConnectionInfo?: ConnectionInfo;
 	readonly sourcePlatform: "MongoDb" | "MySQL" | "PostgreSql" | "SQL" | "Unknown";
-	readonly targetConnectionInfo?: ConnectionInfo | undefined;
+	readonly targetConnectionInfo?: ConnectionInfo;
 	readonly targetPlatform: "AzureDbForMySql" | "AzureDbForPostgreSql" | "MongoDb" | "SQLDB" | "SQLMI" | "Unknown";
 }
 export interface ProjectTaskProperties {
-	readonly clientData?: ProjectTaskPropertiesClientData | undefined;
-	readonly commands?: CommandProperties[] | undefined;
-	readonly errors?: ODataError[] | undefined;
+	readonly clientData?: ProjectTaskPropertiesClientData;
+	readonly commands?: CommandProperties[];
+	readonly errors?: ODataError[];
 	readonly state?:
-		| ("Canceled" | "Failed" | "FailedInputValidation" | "Faulted" | "Queued" | "Running" | "Succeeded" | "Unknown")
-		| undefined;
+		| "Canceled"
+		| "Failed"
+		| "FailedInputValidation"
+		| "Faulted"
+		| "Queued"
+		| "Running"
+		| "Succeeded"
+		| "Unknown";
 }
 export interface ProjectTaskPropertiesClientData {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface QueryAnalysisValidationResult {
-	readonly queryResults?: QueryExecutionResult | undefined;
-	readonly validationErrors?: ValidationError | undefined;
+	readonly queryResults?: QueryExecutionResult;
+	readonly validationErrors?: ValidationError;
 }
 export interface QueryExecutionResult {
-	readonly queryText?: string | undefined;
-	readonly sourceResult?: ExecutionStatistics | undefined;
-	readonly statementsInBatch?: number | undefined;
-	readonly targetResult?: ExecutionStatistics | undefined;
+	readonly queryText?: string;
+	readonly sourceResult?: ExecutionStatistics;
+	readonly statementsInBatch?: number;
+	readonly targetResult?: ExecutionStatistics;
 }
 export interface ReportableException {
-	readonly actionableMessage?: string | undefined;
-	readonly filePath?: string | undefined;
-	readonly hResult?: number | undefined;
-	readonly lineNumber?: string | undefined;
-	readonly message?: string | undefined;
-	readonly stackTrace?: string | undefined;
+	readonly actionableMessage?: string;
+	readonly filePath?: string;
+	readonly hResult?: number;
+	readonly lineNumber?: string;
+	readonly message?: string;
+	readonly stackTrace?: string;
 }
 export interface SchemaComparisonValidationResult {
-	readonly schemaDifferences?: SchemaComparisonValidationResultType | undefined;
-	readonly sourceDatabaseObjectCount?: SchemaComparisonValidationResultSourceDatabaseObjectCount | undefined;
-	readonly targetDatabaseObjectCount?: SchemaComparisonValidationResultTargetDatabaseObjectCount | undefined;
-	readonly validationErrors?: ValidationError | undefined;
+	readonly schemaDifferences?: SchemaComparisonValidationResultType;
+	readonly sourceDatabaseObjectCount?: SchemaComparisonValidationResultSourceDatabaseObjectCount;
+	readonly targetDatabaseObjectCount?: SchemaComparisonValidationResultTargetDatabaseObjectCount;
+	readonly validationErrors?: ValidationError;
 }
 export interface SchemaComparisonValidationResultSourceDatabaseObjectCount {
-	readonly "[ key: string ]"?: number | undefined;
+	readonly [key: string]: number;
 }
 export interface SchemaComparisonValidationResultTargetDatabaseObjectCount {
-	readonly "[ key: string ]"?: number | undefined;
+	readonly [key: string]: number;
 }
 export interface SchemaComparisonValidationResultType {
-	readonly objectName?: string | undefined;
-	readonly objectType?: ("Function" | "StoredProcedures" | "Table" | "User" | "View") | undefined;
-	readonly updateAction?: ("AddedOnTarget" | "ChangedOnTarget" | "DeletedOnTarget") | undefined;
+	readonly objectName?: string;
+	readonly objectType?: "Function" | "StoredProcedures" | "Table" | "User" | "View";
+	readonly updateAction?: "AddedOnTarget" | "ChangedOnTarget" | "DeletedOnTarget";
 }
 export interface SchemaMigrationSetting {
-	readonly fileId?: string | undefined;
-	readonly schemaOption?: ("ExtractFromSource" | "None" | "UseStorageFile") | undefined;
+	readonly fileId?: string;
+	readonly schemaOption?: "ExtractFromSource" | "None" | "UseStorageFile";
 }
 export interface SelectedCertificateInput {
 	readonly certificateName: string;
 	readonly password: string;
 }
 export interface ServerProperties {
-	readonly serverDatabaseCount?: number | undefined;
-	readonly serverEdition?: string | undefined;
-	readonly serverName?: string | undefined;
-	readonly serverOperatingSystemVersion?: string | undefined;
-	readonly serverPlatform?: string | undefined;
-	readonly serverVersion?: string | undefined;
+	readonly serverDatabaseCount?: number;
+	readonly serverEdition?: string;
+	readonly serverName?: string;
+	readonly serverOperatingSystemVersion?: string;
+	readonly serverPlatform?: string;
+	readonly serverVersion?: string;
 }
 export interface ServiceSku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
-	readonly name?: string | undefined;
-	readonly size?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
+	readonly name?: string;
+	readonly size?: string;
+	readonly tier?: string;
 }
 export interface SqlConnectionInfo {
-	readonly additionalSettings?: string | undefined;
+	readonly additionalSettings?: string;
 	readonly authentication?:
-		| ("ActiveDirectoryIntegrated" | "ActiveDirectoryPassword" | "None" | "SqlAuthentication" | "WindowsAuthentication")
-		| undefined;
+		| "ActiveDirectoryIntegrated"
+		| "ActiveDirectoryPassword"
+		| "None"
+		| "SqlAuthentication"
+		| "WindowsAuthentication";
 	readonly dataSource: string;
-	readonly encryptConnection?: boolean | undefined;
-	readonly password?: string | undefined;
-	readonly platform?: "SqlOnPrem" | undefined;
-	readonly trustServerCertificate?: boolean | undefined;
+	readonly encryptConnection?: boolean;
+	readonly password?: string;
+	readonly platform?: "SqlOnPrem";
+	readonly trustServerCertificate?: boolean;
 	readonly type: string;
-	readonly userName?: string | undefined;
+	readonly userName?: string;
 }
 export interface SsisMigrationInfo {
-	readonly environmentOverwriteOption?: ("Ignore" | "Overwrite") | undefined;
-	readonly projectOverwriteOption?: ("Ignore" | "Overwrite") | undefined;
-	readonly ssisStoreType?: "SsisCatalog" | undefined;
+	readonly environmentOverwriteOption?: "Ignore" | "Overwrite";
+	readonly projectOverwriteOption?: "Ignore" | "Overwrite";
+	readonly ssisStoreType?: "SsisCatalog";
 }
 export interface SyncMigrationDatabaseErrorEvent {
-	readonly eventText?: string | undefined;
-	readonly eventTypeString?: string | undefined;
-	readonly timestampString?: string | undefined;
+	readonly eventText?: string;
+	readonly eventTypeString?: string;
+	readonly timestampString?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UploadOCIDriverTaskInput {
-	readonly driverShare?: FileShare | undefined;
+	readonly driverShare?: FileShare;
 }
 export interface UploadOCIDriverTaskOutput {
-	readonly driverPackageName?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly driverPackageName?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface ValidateMigrationInputSqlServerSqlMISyncTaskInput {
 	readonly azureApp: AzureActiveDirectoryApp;
-	readonly backupFileShare?: FileShare | undefined;
+	readonly backupFileShare?: FileShare;
 	readonly selectedDatabases: MigrateSqlServerSqlMIDatabaseInput[];
 	readonly sourceConnectionInfo: SqlConnectionInfo;
 	readonly storageResourceId: string;
 	readonly targetConnectionInfo: MiSqlConnectionInfo;
 }
 export interface ValidateMigrationInputSqlServerSqlMISyncTaskOutput {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface ValidateMigrationInputSqlServerSqlMITaskInput {
 	readonly backupBlobShare: BlobShare;
-	readonly backupFileShare?: FileShare | undefined;
-	readonly backupMode?: ("CreateBackup" | "ExistingBackup") | undefined;
+	readonly backupFileShare?: FileShare;
+	readonly backupMode?: "CreateBackup" | "ExistingBackup";
 	readonly selectedDatabases: MigrateSqlServerSqlMIDatabaseInput[];
-	readonly selectedLogins?: string[] | undefined;
+	readonly selectedLogins?: string[];
 	readonly sourceConnectionInfo: SqlConnectionInfo;
 	readonly targetConnectionInfo: SqlConnectionInfo;
 }
 export interface ValidateMigrationInputSqlServerSqlMITaskOutput {
-	readonly backupFolderErrors?: ReportableException[] | undefined;
-	readonly backupShareCredentialsErrors?: ReportableException[] | undefined;
-	readonly backupStorageAccountErrors?: ReportableException[] | undefined;
-	readonly databaseBackupInfo?: DatabaseBackupInfo | undefined;
-	readonly existingBackupErrors?: ReportableException[] | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly restoreDatabaseNameErrors?: ReportableException[] | undefined;
+	readonly backupFolderErrors?: ReportableException[];
+	readonly backupShareCredentialsErrors?: ReportableException[];
+	readonly backupStorageAccountErrors?: ReportableException[];
+	readonly databaseBackupInfo?: DatabaseBackupInfo;
+	readonly existingBackupErrors?: ReportableException[];
+	readonly id?: string;
+	readonly name?: string;
+	readonly restoreDatabaseNameErrors?: ReportableException[];
 }
 export interface ValidateOracleAzureDbPostgreSqlSyncTaskOutput {
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly validationErrors?: ReportableException[];
 }
 export interface ValidateSyncMigrationInputSqlServerTaskInput {
 	readonly selectedDatabases: MigrateSqlServerSqlDbSyncDatabaseInput[];
@@ -1124,18 +1116,18 @@ export interface ValidateSyncMigrationInputSqlServerTaskInput {
 	readonly targetConnectionInfo: SqlConnectionInfo;
 }
 export interface ValidateSyncMigrationInputSqlServerTaskOutput {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface ValidationError {
-	readonly severity?: ("Error" | "Message" | "Warning") | undefined;
-	readonly text?: string | undefined;
+	readonly severity?: "Error" | "Message" | "Warning";
+	readonly text?: string;
 }
 export interface WaitStatistics {
-	readonly waitCount?: number | undefined;
-	readonly waitTimeMs?: number | undefined;
-	readonly waitType?: string | undefined;
+	readonly waitCount?: number;
+	readonly waitTimeMs?: number;
+	readonly waitType?: string;
 }
 export default {
 	services: services,

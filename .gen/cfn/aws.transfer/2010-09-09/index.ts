@@ -17,9 +17,9 @@ export interface AgreementComponentInputs {
 	readonly LocalProfileId: string;
 	readonly PartnerProfileId: string;
 	readonly ServerId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Status?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Certificate extends CfnResource<CertificateComponentInputs> implements CertificateComponentOutputs {
@@ -46,12 +46,12 @@ export interface CertificateComponentOutputs {
 export interface CertificateComponentInputs {
 	readonly Certificate: string;
 	readonly Usage: string;
-	readonly ActiveDate?: (string | undefined) | undefined;
-	readonly CertificateChain?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InactiveDate?: (string | undefined) | undefined;
-	readonly PrivateKey?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ActiveDate?: string | undefined;
+	readonly CertificateChain?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly InactiveDate?: string | undefined;
+	readonly PrivateKey?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Connector extends CfnResource<ConnectorComponentInputs> implements ConnectorComponentOutputs {
@@ -69,8 +69,8 @@ export interface ConnectorComponentInputs {
 	readonly AccessRole: string;
 	readonly As2Config: As2Config;
 	readonly Url: string;
-	readonly LoggingRole?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly LoggingRole?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Profile extends CfnResource<ProfileComponentInputs> implements ProfileComponentOutputs {
@@ -87,8 +87,8 @@ export interface ProfileComponentOutputs {
 export interface ProfileComponentInputs {
 	readonly As2Id: string;
 	readonly ProfileType: string;
-	readonly CertificateIds?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CertificateIds?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Server extends CfnResource<ServerComponentInputs> implements ServerComponentOutputs {
@@ -103,20 +103,20 @@ export interface ServerComponentOutputs {
 	readonly ServerId: string;
 }
 export interface ServerComponentInputs {
-	readonly Certificate?: (string | undefined) | undefined;
-	readonly Domain?: (string | undefined) | undefined;
-	readonly EndpointDetails?: (EndpointDetails | undefined) | undefined;
-	readonly EndpointType?: (string | undefined) | undefined;
-	readonly IdentityProviderDetails?: (IdentityProviderDetails | undefined) | undefined;
-	readonly IdentityProviderType?: (string | undefined) | undefined;
-	readonly LoggingRole?: (string | undefined) | undefined;
-	readonly PostAuthenticationLoginBanner?: (string | undefined) | undefined;
-	readonly PreAuthenticationLoginBanner?: (string | undefined) | undefined;
-	readonly ProtocolDetails?: (ProtocolDetails | undefined) | undefined;
-	readonly Protocols?: (string[] | undefined) | undefined;
-	readonly SecurityPolicyName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly WorkflowDetails?: (WorkflowDetails | undefined) | undefined;
+	readonly Certificate?: string | undefined;
+	readonly Domain?: string | undefined;
+	readonly EndpointDetails?: EndpointDetails | undefined;
+	readonly EndpointType?: string | undefined;
+	readonly IdentityProviderDetails?: IdentityProviderDetails | undefined;
+	readonly IdentityProviderType?: string | undefined;
+	readonly LoggingRole?: string | undefined;
+	readonly PostAuthenticationLoginBanner?: string | undefined;
+	readonly PreAuthenticationLoginBanner?: string | undefined;
+	readonly ProtocolDetails?: ProtocolDetails | undefined;
+	readonly Protocols?: string[] | undefined;
+	readonly SecurityPolicyName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly WorkflowDetails?: WorkflowDetails | undefined;
 	readonly LogicalId: string;
 }
 export class User extends CfnResource<UserComponentInputs> implements UserComponentOutputs {
@@ -136,13 +136,13 @@ export interface UserComponentInputs {
 	readonly Role: string;
 	readonly ServerId: string;
 	readonly UserName: string;
-	readonly HomeDirectory?: (string | undefined) | undefined;
-	readonly HomeDirectoryMappings?: (HomeDirectoryMapEntry[] | undefined) | undefined;
-	readonly HomeDirectoryType?: (string | undefined) | undefined;
-	readonly Policy?: (string | undefined) | undefined;
-	readonly PosixProfile?: (PosixProfile | undefined) | undefined;
-	readonly SshPublicKeys?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly HomeDirectory?: string | undefined;
+	readonly HomeDirectoryMappings?: HomeDirectoryMapEntry[] | undefined;
+	readonly HomeDirectoryType?: string | undefined;
+	readonly Policy?: string | undefined;
+	readonly PosixProfile?: PosixProfile | undefined;
+	readonly SshPublicKeys?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Workflow extends CfnResource<WorkflowComponentInputs> implements WorkflowComponentOutputs {
@@ -158,47 +158,47 @@ export interface WorkflowComponentOutputs {
 }
 export interface WorkflowComponentInputs {
 	readonly Steps: WorkflowStep[];
-	readonly Description?: (string | undefined) | undefined;
-	readonly OnExceptionSteps?: (WorkflowStep[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly OnExceptionSteps?: WorkflowStep[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface As2Config {
-	readonly Compression?: (string | undefined) | undefined;
-	readonly EncryptionAlgorithm?: (string | undefined) | undefined;
-	readonly LocalProfileId?: (string | undefined) | undefined;
-	readonly MdnResponse?: (string | undefined) | undefined;
-	readonly MdnSigningAlgorithm?: (string | undefined) | undefined;
-	readonly MessageSubject?: (string | undefined) | undefined;
-	readonly PartnerProfileId?: (string | undefined) | undefined;
-	readonly SigningAlgorithm?: (string | undefined) | undefined;
+	readonly Compression?: string | undefined;
+	readonly EncryptionAlgorithm?: string | undefined;
+	readonly LocalProfileId?: string | undefined;
+	readonly MdnResponse?: string | undefined;
+	readonly MdnSigningAlgorithm?: string | undefined;
+	readonly MessageSubject?: string | undefined;
+	readonly PartnerProfileId?: string | undefined;
+	readonly SigningAlgorithm?: string | undefined;
 }
 export interface EndpointDetails {
-	readonly AddressAllocationIds?: (string[] | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SubnetIds?: (string[] | undefined) | undefined;
-	readonly VpcEndpointId?: (string | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
+	readonly AddressAllocationIds?: string[] | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SubnetIds?: string[] | undefined;
+	readonly VpcEndpointId?: string | undefined;
+	readonly VpcId?: string | undefined;
 }
 export interface IdentityProviderDetails {
-	readonly DirectoryId?: (string | undefined) | undefined;
-	readonly Function?: (string | undefined) | undefined;
-	readonly InvocationRole?: (string | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
+	readonly DirectoryId?: string | undefined;
+	readonly Function?: string | undefined;
+	readonly InvocationRole?: string | undefined;
+	readonly Url?: string | undefined;
 }
 export interface ProtocolDetails {
-	readonly As2Transports?: (string[] | undefined) | undefined;
-	readonly PassiveIp?: (string | undefined) | undefined;
-	readonly SetStatOption?: (string | undefined) | undefined;
-	readonly TlsSessionResumptionMode?: (string | undefined) | undefined;
+	readonly As2Transports?: string[] | undefined;
+	readonly PassiveIp?: string | undefined;
+	readonly SetStatOption?: string | undefined;
+	readonly TlsSessionResumptionMode?: string | undefined;
 }
 export interface WorkflowDetail {
 	readonly ExecutionRole: string;
 	readonly WorkflowId: string;
 }
 export interface WorkflowDetails {
-	readonly OnPartialUpload?: (WorkflowDetail[] | undefined) | undefined;
-	readonly OnUpload?: (WorkflowDetail[] | undefined) | undefined;
+	readonly OnPartialUpload?: WorkflowDetail[] | undefined;
+	readonly OnUpload?: WorkflowDetail[] | undefined;
 }
 export interface HomeDirectoryMapEntry {
 	readonly Entry: string;
@@ -206,47 +206,47 @@ export interface HomeDirectoryMapEntry {
 }
 export interface PosixProfile {
 	readonly Gid: number;
-	readonly SecondaryGids?: (number[] | undefined) | undefined;
+	readonly SecondaryGids?: number[] | undefined;
 	readonly Uid: number;
 }
 export interface CopyStepDetails {
-	readonly DestinationFileLocation?: (InputFileLocation | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly OverwriteExisting?: (string | undefined) | undefined;
-	readonly SourceFileLocation?: (string | undefined) | undefined;
+	readonly DestinationFileLocation?: InputFileLocation | undefined;
+	readonly Name?: string | undefined;
+	readonly OverwriteExisting?: string | undefined;
+	readonly SourceFileLocation?: string | undefined;
 }
 export interface CustomStepDetails {
-	readonly Name?: (string | undefined) | undefined;
-	readonly SourceFileLocation?: (string | undefined) | undefined;
-	readonly Target?: (string | undefined) | undefined;
-	readonly TimeoutSeconds?: (number | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly SourceFileLocation?: string | undefined;
+	readonly Target?: string | undefined;
+	readonly TimeoutSeconds?: number | undefined;
 }
 export interface DeleteStepDetails {
-	readonly Name?: (string | undefined) | undefined;
-	readonly SourceFileLocation?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly SourceFileLocation?: string | undefined;
 }
 export interface InputFileLocation {
-	readonly S3FileLocation?: (S3InputFileLocation | undefined) | undefined;
+	readonly S3FileLocation?: S3InputFileLocation | undefined;
 }
 export interface S3InputFileLocation {
-	readonly Bucket?: (string | undefined) | undefined;
-	readonly Key?: (string | undefined) | undefined;
+	readonly Bucket?: string | undefined;
+	readonly Key?: string | undefined;
 }
 export interface S3Tag {
 	readonly Key: string;
 	readonly Value: string;
 }
 export interface TagStepDetails {
-	readonly Name?: (string | undefined) | undefined;
-	readonly SourceFileLocation?: (string | undefined) | undefined;
-	readonly Tags?: (S3Tag[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly SourceFileLocation?: string | undefined;
+	readonly Tags?: S3Tag[] | undefined;
 }
 export interface WorkflowStep {
-	readonly CopyStepDetails?: (CopyStepDetails | undefined) | undefined;
-	readonly CustomStepDetails?: (CustomStepDetails | undefined) | undefined;
-	readonly DeleteStepDetails?: (DeleteStepDetails | undefined) | undefined;
-	readonly TagStepDetails?: (TagStepDetails | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly CopyStepDetails?: CopyStepDetails | undefined;
+	readonly CustomStepDetails?: CustomStepDetails | undefined;
+	readonly DeleteStepDetails?: DeleteStepDetails | undefined;
+	readonly TagStepDetails?: TagStepDetails | undefined;
+	readonly Type?: string | undefined;
 }
 export default {
 	Agreement: Agreement,

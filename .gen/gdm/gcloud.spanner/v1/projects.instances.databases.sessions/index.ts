@@ -7,30 +7,29 @@ export class ProjectsInstancesDatabasesSessions
 	constructor(entity: ADKEntity, options: ProjectsInstancesDatabasesSessionsComponentInputs) {
 		super(entity, options.name, "spanner.v1.ProjectsInstancesDatabasesSessions", options);
 	}
-	public readonly approximateLastUseTime?: string | undefined;
-	public readonly createTime?: string | undefined;
+	public readonly approximateLastUseTime?: string;
+	public readonly createTime?: string;
 }
 export interface ProjectsInstancesDatabasesSessionsComponentOutputs {
-	readonly approximateLastUseTime?: string | undefined;
-	readonly createTime?: string | undefined;
+	readonly approximateLastUseTime?: string;
+	readonly createTime?: string;
 }
 export interface ProjectsInstancesDatabasesSessionsComponentInputs {
-	readonly creatorRole?: string | undefined;
+	readonly creatorRole?: string;
 	readonly database: string;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
 	readonly session: Session;
-	readonly type: string;
 }
 export interface CreateSessionRequest {
 	readonly session: Session;
 }
 export interface Session {
-	readonly approximateLastUseTime?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly creatorRole?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
+	readonly approximateLastUseTime?: string;
+	readonly createTime?: string;
+	readonly creatorRole?: string;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
 }
 export default {
 	ProjectsInstancesDatabasesSessions: ProjectsInstancesDatabasesSessions,

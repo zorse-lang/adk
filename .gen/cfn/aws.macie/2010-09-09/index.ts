@@ -16,8 +16,8 @@ export interface AllowListComponentOutputs {
 export interface AllowListComponentInputs {
 	readonly Criteria: Criteria;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class CustomDataIdentifier
@@ -37,10 +37,10 @@ export interface CustomDataIdentifierComponentOutputs {
 export interface CustomDataIdentifierComponentInputs {
 	readonly Name: string;
 	readonly Regex: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly IgnoreWords?: (string[] | undefined) | undefined;
-	readonly Keywords?: (string[] | undefined) | undefined;
-	readonly MaximumMatchDistance?: (number | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly IgnoreWords?: string[] | undefined;
+	readonly Keywords?: string[] | undefined;
+	readonly MaximumMatchDistance?: number | undefined;
 	readonly LogicalId: string;
 }
 export class FindingsFilter extends CfnResource<FindingsFilterComponentInputs> implements FindingsFilterComponentOutputs {
@@ -59,9 +59,9 @@ export interface FindingsFilterComponentOutputs {
 export interface FindingsFilterComponentInputs {
 	readonly FindingCriteria: FindingCriteria;
 	readonly Name: string;
-	readonly Action?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Position?: (number | undefined) | undefined;
+	readonly Action?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Position?: number | undefined;
 	readonly LogicalId: string;
 }
 export class Session extends CfnResource<SessionComponentInputs> implements SessionComponentOutputs {
@@ -76,32 +76,32 @@ export interface SessionComponentOutputs {
 	readonly ServiceRole: string;
 }
 export interface SessionComponentInputs {
-	readonly FindingPublishingFrequency?: (string | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
+	readonly FindingPublishingFrequency?: string | undefined;
+	readonly Status?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Criteria {
-	readonly Regex?: (string | undefined) | undefined;
-	readonly S3WordsList?: (S3WordsList | undefined) | undefined;
+	readonly Regex?: string | undefined;
+	readonly S3WordsList?: S3WordsList | undefined;
 }
 export interface S3WordsList {
 	readonly BucketName: string;
 	readonly ObjectKey: string;
 }
 export interface CriterionAdditionalProperties {
-	readonly eq?: (string[] | undefined) | undefined;
-	readonly gt?: (number | undefined) | undefined;
-	readonly gte?: (number | undefined) | undefined;
-	readonly lt?: (number | undefined) | undefined;
-	readonly lte?: (number | undefined) | undefined;
-	readonly neq?: (string[] | undefined) | undefined;
+	readonly eq?: string[] | undefined;
+	readonly gt?: number | undefined;
+	readonly gte?: number | undefined;
+	readonly lt?: number | undefined;
+	readonly lte?: number | undefined;
+	readonly neq?: string[] | undefined;
 }
 export interface FindingCriteria {
-	readonly Criterion?: ({ [key: string]: CriterionAdditionalProperties } | undefined) | undefined;
+	readonly Criterion?: { [key: string]: CriterionAdditionalProperties } | undefined;
 }
 export interface FindingsFilterListItem {
-	readonly Id?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Id?: string | undefined;
+	readonly Name?: string | undefined;
 }
 export default {
 	AllowList: AllowList,

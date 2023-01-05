@@ -23,12 +23,12 @@ export interface locations_videoAnalyzerOperationResultsComponentOutputs {
 	readonly type: "Microsoft.Media/locations/videoAnalyzerOperationResults";
 }
 export interface locations_videoAnalyzerOperationResultsComponentInputs {
-	readonly identity?: VideoAnalyzerIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: VideoAnalyzerIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VideoAnalyzerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VideoAnalyzerProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class videoAnalyzers extends ArmResource<videoAnalyzersComponentInputs> implements videoAnalyzersComponentOutputs {
 	constructor(entity: ADKEntity, options: videoAnalyzersComponentInputs) {
@@ -44,12 +44,12 @@ export interface videoAnalyzersComponentOutputs {
 	readonly type: "Microsoft.Media/videoAnalyzers";
 }
 export interface videoAnalyzersComponentInputs {
-	readonly identity?: VideoAnalyzerIdentity | undefined;
+	readonly identity?: VideoAnalyzerIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VideoAnalyzerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VideoAnalyzerProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class videoAnalyzers_accessPolicies
 	extends ArmResource<videoAnalyzers_accessPoliciesComponentInputs>
@@ -69,8 +69,8 @@ export interface videoAnalyzers_accessPoliciesComponentOutputs {
 }
 export interface videoAnalyzers_accessPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: AccessPolicyProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AccessPolicyProperties;
+	readonly systemData?: SystemData;
 }
 export class videoAnalyzers_edgeModules
 	extends ArmResource<videoAnalyzers_edgeModulesComponentInputs>
@@ -90,8 +90,8 @@ export interface videoAnalyzers_edgeModulesComponentOutputs {
 }
 export interface videoAnalyzers_edgeModulesComponentInputs {
 	readonly name: string;
-	readonly properties?: EdgeModuleProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EdgeModuleProperties;
+	readonly systemData?: SystemData;
 }
 export class videoAnalyzers_livePipelines
 	extends ArmResource<videoAnalyzers_livePipelinesComponentInputs>
@@ -111,8 +111,8 @@ export interface videoAnalyzers_livePipelinesComponentOutputs {
 }
 export interface videoAnalyzers_livePipelinesComponentInputs {
 	readonly name: string;
-	readonly properties?: LivePipelineProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: LivePipelineProperties;
+	readonly systemData?: SystemData;
 }
 export class videoAnalyzers_pipelineJobs
 	extends ArmResource<videoAnalyzers_pipelineJobsComponentInputs>
@@ -132,8 +132,8 @@ export interface videoAnalyzers_pipelineJobsComponentOutputs {
 }
 export interface videoAnalyzers_pipelineJobsComponentInputs {
 	readonly name: string;
-	readonly properties?: PipelineJobProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PipelineJobProperties;
+	readonly systemData?: SystemData;
 }
 export class videoAnalyzers_pipelineTopologies
 	extends ArmResource<videoAnalyzers_pipelineTopologiesComponentInputs>
@@ -154,9 +154,9 @@ export interface videoAnalyzers_pipelineTopologiesComponentOutputs {
 export interface videoAnalyzers_pipelineTopologiesComponentInputs {
 	readonly kind: "Batch" | "Live";
 	readonly name: string;
-	readonly properties?: PipelineTopologyProperties | undefined;
+	readonly properties?: PipelineTopologyProperties;
 	readonly sku: Sku;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class videoAnalyzers_privateEndpointConnections
 	extends ArmResource<videoAnalyzers_privateEndpointConnectionsComponentInputs>
@@ -182,8 +182,8 @@ export interface videoAnalyzers_privateEndpointConnectionsComponentOutputs {
 }
 export interface videoAnalyzers_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class videoAnalyzers_privateEndpointConnections_operationResults
 	extends ArmResource<videoAnalyzers_privateEndpointConnections_operationResultsComponentInputs>
@@ -209,8 +209,8 @@ export interface videoAnalyzers_privateEndpointConnections_operationResultsCompo
 }
 export interface videoAnalyzers_privateEndpointConnections_operationResultsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class videoAnalyzers_privateLinkResources
 	extends ArmResource<videoAnalyzers_privateLinkResourcesComponentInputs>
@@ -230,8 +230,8 @@ export interface videoAnalyzers_privateLinkResourcesComponentOutputs {
 }
 export interface videoAnalyzers_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class videoAnalyzers_videos
 	extends ArmResource<videoAnalyzers_videosComponentInputs>
@@ -251,8 +251,8 @@ export interface videoAnalyzers_videosComponentOutputs {
 }
 export interface videoAnalyzers_videosComponentInputs {
 	readonly name: string;
-	readonly properties?: VideoProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: VideoProperties;
+	readonly systemData?: SystemData;
 }
 export function listContentToken(resource: videoAnalyzers_videos): VideoContentToken {
 	if (resource.apiVersion !== "2021-11-01-preview") {
@@ -276,48 +276,48 @@ export function listProvisioningToken(
 	throw new Error("not implemented");
 }
 export interface AccessPolicyProperties {
-	readonly authentication?: AuthenticationBase | undefined;
-	readonly role?: "Reader" | undefined;
+	readonly authentication?: AuthenticationBase;
+	readonly role?: "Reader";
 }
 export interface AccountEncryption {
-	readonly identity?: ResourceIdentity | undefined;
-	readonly keyVaultProperties?: KeyVaultProperties | undefined;
-	readonly status?: string | undefined;
+	readonly identity?: ResourceIdentity;
+	readonly keyVaultProperties?: KeyVaultProperties;
+	readonly status?: string;
 	readonly type: "CustomerKey" | "SystemKey";
 }
 export interface AudioEncoderBase {
-	readonly bitrateKbps?: string | undefined;
+	readonly bitrateKbps?: string;
 }
 export interface AuthenticationBase {}
 export interface CertificateSource {}
 export interface CredentialsBase {}
 export interface EdgeModuleProperties {
-	readonly edgeModuleId?: string | undefined;
+	readonly edgeModuleId?: string;
 }
 export interface EdgeModuleProvisioningToken {
-	readonly expirationDate?: string | undefined;
-	readonly token?: string | undefined;
+	readonly expirationDate?: string;
+	readonly token?: string;
 }
 export interface EncoderPresetBase {}
 export interface Endpoint {
-	readonly endpointUrl?: string | undefined;
+	readonly endpointUrl?: string;
 	readonly type: "ClientApi";
 }
 export interface EndpointBase {
 	readonly credentials: CredentialsBase;
-	readonly tunnel?: TunnelBase | undefined;
+	readonly tunnel?: TunnelBase;
 	readonly url: string;
 }
 export interface GroupLevelAccessControl {
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface IotHub {
 	readonly id: string;
 	readonly identity: ResourceIdentity;
-	readonly status?: string | undefined;
+	readonly status?: string;
 }
 export interface KeyVaultProperties {
-	readonly currentKeyIdentifier?: string | undefined;
+	readonly currentKeyIdentifier?: string;
 	readonly keyIdentifier: string;
 }
 export interface ListProvisioningTokenInput {
@@ -325,72 +325,72 @@ export interface ListProvisioningTokenInput {
 }
 export interface LivePipelineProperties {
 	readonly bitrateKbps: number;
-	readonly description?: string | undefined;
-	readonly parameters?: ParameterDefinition[] | undefined;
-	readonly state?: ("Activating" | "Active" | "Deactivating" | "Inactive") | undefined;
+	readonly description?: string;
+	readonly parameters?: ParameterDefinition[];
+	readonly state?: "Activating" | "Active" | "Deactivating" | "Inactive";
 	readonly topologyName: string;
 }
 export interface NetworkAccessControl {
-	readonly consumption?: GroupLevelAccessControl | undefined;
-	readonly ingestion?: GroupLevelAccessControl | undefined;
-	readonly integration?: GroupLevelAccessControl | undefined;
+	readonly consumption?: GroupLevelAccessControl;
+	readonly ingestion?: GroupLevelAccessControl;
+	readonly integration?: GroupLevelAccessControl;
 }
 export interface NodeInput {
 	readonly nodeName: string;
 }
 export interface ParameterDeclaration {
-	readonly default?: string | undefined;
-	readonly description?: string | undefined;
+	readonly default?: string;
+	readonly description?: string;
 	readonly name: string;
 	readonly type: "Bool" | "Double" | "Int" | "SecretString" | "String";
 }
 export interface ParameterDefinition {
 	readonly name: string;
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface PipelineJobError {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface PipelineJobProperties {
-	readonly description?: string | undefined;
-	readonly error?: PipelineJobError | undefined;
-	readonly expiration?: string | undefined;
-	readonly parameters?: ParameterDefinition[] | undefined;
-	readonly state?: ("Canceled" | "Completed" | "Failed" | "Processing") | undefined;
+	readonly description?: string;
+	readonly error?: PipelineJobError;
+	readonly expiration?: string;
+	readonly parameters?: ParameterDefinition[];
+	readonly state?: "Canceled" | "Completed" | "Failed" | "Processing";
 	readonly topologyName: string;
 }
 export interface PipelineTopologyProperties {
-	readonly description?: string | undefined;
-	readonly parameters?: ParameterDeclaration[] | undefined;
-	readonly processors?: ProcessorNodeBase[] | undefined;
+	readonly description?: string;
+	readonly parameters?: ParameterDeclaration[];
+	readonly processors?: ProcessorNodeBase[];
 	readonly sinks: SinkNodeBase[];
 	readonly sources: SourceNodeBase[];
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface ProcessorNodeBase {
 	readonly inputs: NodeInput[];
@@ -405,28 +405,28 @@ export interface SinkNodeBase {
 }
 export interface Sku {
 	readonly name: "Batch_S1" | "Live_S1";
-	readonly tier?: "Standard" | undefined;
+	readonly tier?: "Standard";
 }
 export interface SourceNodeBase {
 	readonly name: string;
 }
 export interface StorageAccount {
 	readonly id: string;
-	readonly identity?: ResourceIdentity | undefined;
-	readonly status?: string | undefined;
+	readonly identity?: ResourceIdentity;
+	readonly status?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TimeSequenceBase {}
 export interface TlsValidationOptions {
-	readonly ignoreHostname?: string | undefined;
-	readonly ignoreSignature?: string | undefined;
+	readonly ignoreHostname?: string;
+	readonly ignoreSignature?: string;
 }
 export interface TokenClaim {
 	readonly name: string;
@@ -436,53 +436,53 @@ export interface TokenKey {
 	readonly kid: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TunnelBase {}
 export interface UserAssignedManagedIdentities {
-	readonly "[ key: string ]"?: UserAssignedManagedIdentity | undefined;
+	readonly [key: string]: UserAssignedManagedIdentity;
 }
 export interface UserAssignedManagedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface VideoAnalyzerIdentity {
 	readonly type: string;
-	readonly userAssignedIdentities?: UserAssignedManagedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedManagedIdentities;
 }
 export interface VideoAnalyzerProperties {
-	readonly encryption?: AccountEncryption | undefined;
-	readonly endpoints?: Endpoint[] | undefined;
-	readonly iotHubs?: IotHub[] | undefined;
-	readonly networkAccessControl?: NetworkAccessControl | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly encryption?: AccountEncryption;
+	readonly endpoints?: Endpoint[];
+	readonly iotHubs?: IotHub[];
+	readonly networkAccessControl?: NetworkAccessControl;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "Failed" | "InProgress" | "Succeeded";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 	readonly storageAccounts: StorageAccount[];
 }
 export interface VideoArchival {
-	readonly retentionPeriod?: string | undefined;
+	readonly retentionPeriod?: string;
 }
 export interface VideoContentToken {
-	readonly expirationDate?: string | undefined;
-	readonly token?: string | undefined;
+	readonly expirationDate?: string;
+	readonly token?: string;
 }
 export interface VideoContentUrls {
-	readonly archiveBaseUrl?: string | undefined;
-	readonly downloadUrl?: string | undefined;
-	readonly previewImageUrls?: VideoPreviewImageUrls | undefined;
-	readonly rtspTunnelUrl?: string | undefined;
+	readonly archiveBaseUrl?: string;
+	readonly downloadUrl?: string;
+	readonly previewImageUrls?: VideoPreviewImageUrls;
+	readonly rtspTunnelUrl?: string;
 }
 export interface VideoCreationProperties {
-	readonly description?: string | undefined;
-	readonly retentionPeriod?: string | undefined;
-	readonly segmentLength?: string | undefined;
-	readonly title?: string | undefined;
+	readonly description?: string;
+	readonly retentionPeriod?: string;
+	readonly segmentLength?: string;
+	readonly title?: string;
 }
 export interface VideoEncoderBase {
-	readonly bitrateKbps?: string | undefined;
-	readonly frameRate?: string | undefined;
-	readonly scale?: VideoScale | undefined;
+	readonly bitrateKbps?: string;
+	readonly frameRate?: string;
+	readonly scale?: VideoScale;
 }
 export interface VideoFlags {
 	readonly canStream: boolean;
@@ -490,30 +490,30 @@ export interface VideoFlags {
 	readonly isInUse: boolean;
 }
 export interface VideoMediaInfo {
-	readonly segmentLength?: string | undefined;
+	readonly segmentLength?: string;
 }
 export interface VideoPreviewImageUrls {
-	readonly large?: string | undefined;
-	readonly medium?: string | undefined;
-	readonly small?: string | undefined;
+	readonly large?: string;
+	readonly medium?: string;
+	readonly small?: string;
 }
 export interface VideoProperties {
-	readonly archival?: VideoArchival | undefined;
-	readonly contentUrls?: VideoContentUrls | undefined;
-	readonly description?: string | undefined;
-	readonly flags?: VideoFlags | undefined;
-	readonly mediaInfo?: VideoMediaInfo | undefined;
-	readonly title?: string | undefined;
-	readonly type?: ("Archive" | "File") | undefined;
+	readonly archival?: VideoArchival;
+	readonly contentUrls?: VideoContentUrls;
+	readonly description?: string;
+	readonly flags?: VideoFlags;
+	readonly mediaInfo?: VideoMediaInfo;
+	readonly title?: string;
+	readonly type?: "Archive" | "File";
 }
 export interface VideoPublishingOptions {
-	readonly disableArchive?: string | undefined;
-	readonly disableRtspPublishing?: string | undefined;
+	readonly disableArchive?: string;
+	readonly disableRtspPublishing?: string;
 }
 export interface VideoScale {
-	readonly height?: string | undefined;
-	readonly mode?: ("Pad" | "PreserveAspectRatio" | "Stretch") | undefined;
-	readonly width?: string | undefined;
+	readonly height?: string;
+	readonly mode?: "Pad" | "PreserveAspectRatio" | "Stretch";
+	readonly width?: string;
 }
 export default {
 	"locations/videoAnalyzerOperationResults": locations_videoAnalyzerOperationResults,

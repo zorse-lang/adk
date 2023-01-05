@@ -10,8 +10,8 @@ export interface AclRuleComponentInputs {
 	readonly Domain: string;
 	readonly InstanceId: string;
 	readonly Rules: string;
-	readonly Region?: (string | undefined) | undefined;
-	readonly RuleId?: (number | undefined) | undefined;
+	readonly Region?: string | undefined;
+	readonly RuleId?: number | undefined;
 	readonly LogicalId: string;
 }
 export class Domain extends RosResource<DomainComponentInputs> implements DomainComponentOutputs {
@@ -30,18 +30,18 @@ export interface DomainComponentInputs {
 	readonly InstanceId: any | string;
 	readonly IsAccessProduct: any | string;
 	readonly SourceIps: any | string[];
-	readonly ClusterType?: (any | string) | undefined;
-	readonly ConnectionTime?: (number | undefined) | undefined;
-	readonly Http2Port?: (any | string[]) | undefined;
-	readonly HttpPort?: (any | string[]) | undefined;
-	readonly HttpsPort?: (any | string[]) | undefined;
-	readonly HttpsRedirect?: (any | string) | undefined;
-	readonly HttpToUserIp?: (any | string) | undefined;
-	readonly LoadBalancing?: (any | string) | undefined;
-	readonly LogHeaders?: (LogHeaders[] | any) | undefined;
-	readonly ReadTime?: (number | undefined) | undefined;
-	readonly ResourceGroupId?: (any | string) | undefined;
-	readonly WriteTime?: (number | undefined) | undefined;
+	readonly ClusterType?: any | string;
+	readonly ConnectionTime?: number | undefined;
+	readonly Http2Port?: any | string[];
+	readonly HttpPort?: any | string[];
+	readonly HttpsPort?: any | string[];
+	readonly HttpsRedirect?: any | string;
+	readonly HttpToUserIp?: any | string;
+	readonly LoadBalancing?: any | string;
+	readonly LogHeaders?: LogHeaders[] | any;
+	readonly ReadTime?: number | undefined;
+	readonly ResourceGroupId?: any | string;
+	readonly WriteTime?: number | undefined;
 	readonly LogicalId: string;
 }
 export class DomainConfig extends RosResource<DomainConfigComponentInputs> implements DomainConfigComponentOutputs {
@@ -60,14 +60,14 @@ export interface DomainConfigComponentInputs {
 	readonly InstanceId: string;
 	readonly IsAccessProduct: number;
 	readonly Protocols: string;
-	readonly HttpPort?: (string | undefined) | undefined;
-	readonly HttpsPort?: (string | undefined) | undefined;
-	readonly HttpsRedirect?: (number | undefined) | undefined;
-	readonly HttpToUserIp?: (number | undefined) | undefined;
-	readonly LoadBalancing?: (number | undefined) | undefined;
-	readonly Region?: (string | undefined) | undefined;
-	readonly RsType?: (number | undefined) | undefined;
-	readonly SourceIps?: (string | undefined) | undefined;
+	readonly HttpPort?: string | undefined;
+	readonly HttpsPort?: string | undefined;
+	readonly HttpsRedirect?: number | undefined;
+	readonly HttpToUserIp?: number | undefined;
+	readonly LoadBalancing?: number | undefined;
+	readonly Region?: string | undefined;
+	readonly RsType?: number | undefined;
+	readonly SourceIps?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Instance extends RosResource<InstanceComponentInputs> implements InstanceComponentOutputs {
@@ -98,9 +98,9 @@ export interface InstanceComponentInputs {
 	readonly PrefessionalService: string;
 	readonly SubscriptionType: any | string;
 	readonly WafLog: string;
-	readonly Period?: (string | undefined) | undefined;
-	readonly RenewalStatus?: (string | undefined) | undefined;
-	readonly RenewPeriod?: (string | undefined) | undefined;
+	readonly Period?: string | undefined;
+	readonly RenewalStatus?: string | undefined;
+	readonly RenewPeriod?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LogServiceEnable
@@ -127,12 +127,12 @@ export interface WafSwitchComponentInputs {
 	readonly Domain: string;
 	readonly InstanceId: string;
 	readonly ServiceOn: number;
-	readonly Region?: (string | undefined) | undefined;
+	readonly Region?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface LogHeaders {
-	readonly V?: (string | undefined) | undefined;
-	readonly K?: (string | undefined) | undefined;
+	readonly V?: string | undefined;
+	readonly K?: string | undefined;
 }
 export default {
 	AclRule: AclRule,

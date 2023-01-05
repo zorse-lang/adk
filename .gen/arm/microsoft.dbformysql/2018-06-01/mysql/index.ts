@@ -18,7 +18,7 @@ export interface servers_advisorsComponentOutputs {
 }
 export interface servers_advisorsComponentInputs {
 	readonly name: string;
-	readonly properties?: any | undefined;
+	readonly properties?: any;
 }
 export class servers_advisors_recommendedActions
 	extends ArmResource<servers_advisors_recommendedActionsComponentInputs>
@@ -38,7 +38,7 @@ export interface servers_advisors_recommendedActionsComponentOutputs {
 }
 export interface servers_advisors_recommendedActionsComponentInputs {
 	readonly name: string;
-	readonly properties?: RecommendationActionProperties | undefined;
+	readonly properties?: RecommendationActionProperties;
 }
 export class servers_privateEndpointConnections
 	extends ArmResource<servers_privateEndpointConnectionsComponentInputs>
@@ -58,7 +58,7 @@ export interface servers_privateEndpointConnectionsComponentOutputs {
 }
 export interface servers_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class servers_privateLinkResources
 	extends ArmResource<servers_privateLinkResourcesComponentInputs>
@@ -78,7 +78,7 @@ export interface servers_privateLinkResourcesComponentOutputs {
 }
 export interface servers_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export class servers_queryTexts
 	extends ArmResource<servers_queryTextsComponentInputs>
@@ -98,7 +98,7 @@ export interface servers_queryTextsComponentOutputs {
 }
 export interface servers_queryTextsComponentInputs {
 	readonly name: string;
-	readonly properties?: QueryTextProperties | undefined;
+	readonly properties?: QueryTextProperties;
 }
 export class servers_topQueryStatistics
 	extends ArmResource<servers_topQueryStatisticsComponentInputs>
@@ -118,7 +118,7 @@ export interface servers_topQueryStatisticsComponentOutputs {
 }
 export interface servers_topQueryStatisticsComponentInputs {
 	readonly name: string;
-	readonly properties?: QueryStatisticProperties | undefined;
+	readonly properties?: QueryStatisticProperties;
 }
 export class servers_waitStatistics
 	extends ArmResource<servers_waitStatisticsComponentInputs>
@@ -138,64 +138,64 @@ export interface servers_waitStatisticsComponentOutputs {
 }
 export interface servers_waitStatisticsComponentInputs {
 	readonly name: string;
-	readonly properties?: WaitStatisticProperties | undefined;
+	readonly properties?: WaitStatisticProperties;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpointProperty | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly privateEndpoint?: PrivateEndpointProperty;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty;
+	readonly provisioningState?: string;
 }
 export interface PrivateEndpointProperty {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
 }
 export interface PrivateLinkServiceConnectionStateProperty {
-	readonly actionsRequired?: string | undefined;
+	readonly actionsRequired?: string;
 	readonly description: string;
 	readonly status: string;
 }
 export interface QueryStatisticProperties {
-	readonly aggregationFunction?: string | undefined;
-	readonly databaseNames?: string[] | undefined;
-	readonly endTime?: string | undefined;
-	readonly metricDisplayName?: string | undefined;
-	readonly metricName?: string | undefined;
-	readonly metricValue?: number | undefined;
-	readonly metricValueUnit?: string | undefined;
-	readonly queryExecutionCount?: number | undefined;
-	readonly queryId?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly aggregationFunction?: string;
+	readonly databaseNames?: string[];
+	readonly endTime?: string;
+	readonly metricDisplayName?: string;
+	readonly metricName?: string;
+	readonly metricValue?: number;
+	readonly metricValueUnit?: string;
+	readonly queryExecutionCount?: number;
+	readonly queryId?: string;
+	readonly startTime?: string;
 }
 export interface QueryTextProperties {
-	readonly queryId?: string | undefined;
-	readonly queryText?: string | undefined;
+	readonly queryId?: string;
+	readonly queryText?: string;
 }
 export interface RecommendationActionProperties {
-	readonly actionId?: number | undefined;
-	readonly advisorName?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly details?: RecommendationActionPropertiesDetails | undefined;
-	readonly expirationTime?: string | undefined;
-	readonly reason?: string | undefined;
-	readonly recommendationType?: string | undefined;
-	readonly sessionId?: string | undefined;
+	readonly actionId?: number;
+	readonly advisorName?: string;
+	readonly createdTime?: string;
+	readonly details?: RecommendationActionPropertiesDetails;
+	readonly expirationTime?: string;
+	readonly reason?: string;
+	readonly recommendationType?: string;
+	readonly sessionId?: string;
 }
 export interface RecommendationActionPropertiesDetails {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WaitStatisticProperties {
-	readonly count?: number | undefined;
-	readonly databaseName?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly eventName?: string | undefined;
-	readonly eventTypeName?: string | undefined;
-	readonly queryId?: number | undefined;
-	readonly startTime?: string | undefined;
-	readonly totalTimeInMs?: number | undefined;
-	readonly userId?: number | undefined;
+	readonly count?: number;
+	readonly databaseName?: string;
+	readonly endTime?: string;
+	readonly eventName?: string;
+	readonly eventTypeName?: string;
+	readonly queryId?: number;
+	readonly startTime?: string;
+	readonly totalTimeInMs?: number;
+	readonly userId?: number;
 }
 export default {
 	"servers/advisors": servers_advisors,

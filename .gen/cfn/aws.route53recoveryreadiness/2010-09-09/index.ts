@@ -12,9 +12,9 @@ export interface CellComponentOutputs {
 	readonly ParentReadinessScopes: string[];
 }
 export interface CellComponentInputs {
-	readonly CellName?: (string | undefined) | undefined;
-	readonly Cells?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CellName?: string | undefined;
+	readonly Cells?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ReadinessCheck extends CfnResource<ReadinessCheckComponentInputs> implements ReadinessCheckComponentOutputs {
@@ -27,9 +27,9 @@ export interface ReadinessCheckComponentOutputs {
 	readonly ReadinessCheckArn: string;
 }
 export interface ReadinessCheckComponentInputs {
-	readonly ReadinessCheckName?: (string | undefined) | undefined;
-	readonly ResourceSetName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ReadinessCheckName?: string | undefined;
+	readonly ResourceSetName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class RecoveryGroup extends CfnResource<RecoveryGroupComponentInputs> implements RecoveryGroupComponentOutputs {
@@ -42,9 +42,9 @@ export interface RecoveryGroupComponentOutputs {
 	readonly RecoveryGroupArn: string;
 }
 export interface RecoveryGroupComponentInputs {
-	readonly Cells?: (string[] | undefined) | undefined;
-	readonly RecoveryGroupName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Cells?: string[] | undefined;
+	readonly RecoveryGroupName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ResourceSet extends CfnResource<ResourceSetComponentInputs> implements ResourceSetComponentOutputs {
@@ -59,33 +59,33 @@ export interface ResourceSetComponentOutputs {
 export interface ResourceSetComponentInputs {
 	readonly Resources: Resource[];
 	readonly ResourceSetType: string;
-	readonly ResourceSetName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ResourceSetName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface DNSTargetResource {
-	readonly DomainName?: (string | undefined) | undefined;
-	readonly HostedZoneArn?: (string | undefined) | undefined;
-	readonly RecordSetId?: (string | undefined) | undefined;
-	readonly RecordType?: (string | undefined) | undefined;
-	readonly TargetResource?: (TargetResource | undefined) | undefined;
+	readonly DomainName?: string | undefined;
+	readonly HostedZoneArn?: string | undefined;
+	readonly RecordSetId?: string | undefined;
+	readonly RecordType?: string | undefined;
+	readonly TargetResource?: TargetResource | undefined;
 }
 export interface NLBResource {
-	readonly Arn?: (string | undefined) | undefined;
+	readonly Arn?: string | undefined;
 }
 export interface R53ResourceRecord {
-	readonly DomainName?: (string | undefined) | undefined;
-	readonly RecordSetId?: (string | undefined) | undefined;
+	readonly DomainName?: string | undefined;
+	readonly RecordSetId?: string | undefined;
 }
 export interface Resource {
-	readonly ComponentId?: (string | undefined) | undefined;
-	readonly DnsTargetResource?: (DNSTargetResource | undefined) | undefined;
-	readonly ReadinessScopes?: (string[] | undefined) | undefined;
-	readonly ResourceArn?: (string | undefined) | undefined;
+	readonly ComponentId?: string | undefined;
+	readonly DnsTargetResource?: DNSTargetResource | undefined;
+	readonly ReadinessScopes?: string[] | undefined;
+	readonly ResourceArn?: string | undefined;
 }
 export interface TargetResource {
-	readonly NLBResource?: (NLBResource | undefined) | undefined;
-	readonly R53Resource?: (R53ResourceRecord | undefined) | undefined;
+	readonly NLBResource?: NLBResource | undefined;
+	readonly R53Resource?: R53ResourceRecord | undefined;
 }
 export default {
 	Cell: Cell,

@@ -14,12 +14,12 @@ export interface HyperVSitesComponentOutputs {
 	readonly type: "Microsoft.OffAzure/HyperVSites";
 }
 export interface HyperVSitesComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SiteProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: HyperVSiteTags | undefined;
+	readonly properties?: SiteProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: HyperVSiteTags;
 }
 export class HyperVSites_clusters
 	extends ArmResource<HyperVSites_clustersComponentInputs>
@@ -39,7 +39,7 @@ export interface HyperVSites_clustersComponentOutputs {
 }
 export interface HyperVSites_clustersComponentInputs {
 	readonly name: string;
-	readonly properties?: HyperVClusterProperties | undefined;
+	readonly properties?: HyperVClusterProperties;
 }
 export class HyperVSites_hosts
 	extends ArmResource<HyperVSites_hostsComponentInputs>
@@ -59,7 +59,7 @@ export interface HyperVSites_hostsComponentOutputs {
 }
 export interface HyperVSites_hostsComponentInputs {
 	readonly name: string;
-	readonly properties?: HyperVHostProperties | undefined;
+	readonly properties?: HyperVHostProperties;
 }
 export class MasterSites extends ArmResource<MasterSitesComponentInputs> implements MasterSitesComponentOutputs {
 	constructor(entity: ADKEntity, options: MasterSitesComponentInputs) {
@@ -75,11 +75,11 @@ export interface MasterSitesComponentOutputs {
 	readonly type: "Microsoft.OffAzure/MasterSites";
 }
 export interface MasterSitesComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: MasterSiteProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: MasterSiteProperties;
+	readonly systemData?: SystemData;
 }
 export class masterSites_privateEndpointConnections
 	extends ArmResource<masterSites_privateEndpointConnectionsComponentInputs>
@@ -98,10 +98,10 @@ export interface masterSites_privateEndpointConnectionsComponentOutputs {
 	readonly type: "Microsoft.OffAzure/masterSites/privateEndpointConnections";
 }
 export interface masterSites_privateEndpointConnectionsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class VMwareSites extends ArmResource<VMwareSitesComponentInputs> implements VMwareSitesComponentOutputs {
 	constructor(entity: ADKEntity, options: VMwareSitesComponentInputs) {
@@ -117,12 +117,12 @@ export interface VMwareSitesComponentOutputs {
 	readonly type: "Microsoft.OffAzure/VMwareSites";
 }
 export interface VMwareSitesComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SiteProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: VMwareSiteTags | undefined;
+	readonly properties?: SiteProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: VMwareSiteTags;
 }
 export class VMwareSites_vCenters
 	extends ArmResource<VMwareSites_vCentersComponentInputs>
@@ -142,114 +142,114 @@ export interface VMwareSites_vCentersComponentOutputs {
 }
 export interface VMwareSites_vCentersComponentInputs {
 	readonly name: string;
-	readonly properties?: VCenterProperties | undefined;
+	readonly properties?: VCenterProperties;
 }
 export interface HealthErrorDetails {
-	readonly code?: string | undefined;
-	readonly id?: number | undefined;
-	readonly message?: string | undefined;
-	readonly messageParameters?: HealthErrorDetailsMessageParameters | undefined;
-	readonly possibleCauses?: string | undefined;
-	readonly recommendedAction?: string | undefined;
-	readonly severity?: string | undefined;
-	readonly source?: string | undefined;
-	readonly summaryMessage?: string | undefined;
+	readonly code?: string;
+	readonly id?: number;
+	readonly message?: string;
+	readonly messageParameters?: HealthErrorDetailsMessageParameters;
+	readonly possibleCauses?: string;
+	readonly recommendedAction?: string;
+	readonly severity?: string;
+	readonly source?: string;
+	readonly summaryMessage?: string;
 }
 export interface HealthErrorDetailsMessageParameters {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface HyperVClusterProperties {
-	readonly createdTimestamp?: string | undefined;
-	readonly errors?: HealthErrorDetails[] | undefined;
-	readonly fqdn?: string | undefined;
-	readonly functionalLevel?: number | undefined;
-	readonly hostFqdnList?: string[] | undefined;
-	readonly runAsAccountId?: string | undefined;
-	readonly status?: string | undefined;
-	readonly updatedTimestamp?: string | undefined;
+	readonly createdTimestamp?: string;
+	readonly errors?: HealthErrorDetails[];
+	readonly fqdn?: string;
+	readonly functionalLevel?: number;
+	readonly hostFqdnList?: string[];
+	readonly runAsAccountId?: string;
+	readonly status?: string;
+	readonly updatedTimestamp?: string;
 }
 export interface HyperVHostProperties {
-	readonly createdTimestamp?: string | undefined;
-	readonly errors?: HealthErrorDetails[] | undefined;
-	readonly fqdn?: string | undefined;
-	readonly runAsAccountId?: string | undefined;
-	readonly updatedTimestamp?: string | undefined;
-	readonly version?: string | undefined;
+	readonly createdTimestamp?: string;
+	readonly errors?: HealthErrorDetails[];
+	readonly fqdn?: string;
+	readonly runAsAccountId?: string;
+	readonly updatedTimestamp?: string;
+	readonly version?: string;
 }
 export interface HyperVSiteTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MasterSiteProperties {
-	readonly allowMultipleSites?: boolean | undefined;
-	readonly customerStorageAccountArmId?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled" | "NotSpecified") | undefined;
-	readonly sites?: string[] | undefined;
+	readonly allowMultipleSites?: boolean;
+	readonly customerStorageAccountArmId?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly publicNetworkAccess?: "Disabled" | "Enabled" | "NotSpecified";
+	readonly sites?: string[];
 }
 export interface PrivateEndpointConnection {
-	readonly eTag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly eTag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: ResourceId | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Accepted" | "Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly privateEndpoint?: ResourceId;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Accepted" | "Failed" | "InProgress" | "Succeeded";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface ResourceId {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface SiteAgentProperties {
-	readonly id?: string | undefined;
-	readonly keyVaultId?: string | undefined;
-	readonly keyVaultUri?: string | undefined;
-	readonly lastHeartBeatUtc?: string | undefined;
-	readonly version?: string | undefined;
+	readonly id?: string;
+	readonly keyVaultId?: string;
+	readonly keyVaultUri?: string;
+	readonly lastHeartBeatUtc?: string;
+	readonly version?: string;
 }
 export interface SiteProperties {
-	readonly agentDetails?: SiteAgentProperties | undefined;
-	readonly applianceName?: string | undefined;
-	readonly discoverySolutionId?: string | undefined;
-	readonly serviceEndpoint?: string | undefined;
-	readonly servicePrincipalIdentityDetails?: SiteSpnProperties | undefined;
+	readonly agentDetails?: SiteAgentProperties;
+	readonly applianceName?: string;
+	readonly discoverySolutionId?: string;
+	readonly serviceEndpoint?: string;
+	readonly servicePrincipalIdentityDetails?: SiteSpnProperties;
 }
 export interface SiteSpnProperties {
-	readonly aadAuthority?: string | undefined;
-	readonly applicationId?: string | undefined;
-	readonly audience?: string | undefined;
-	readonly objectId?: string | undefined;
-	readonly rawCertData?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly aadAuthority?: string;
+	readonly applicationId?: string;
+	readonly audience?: string;
+	readonly objectId?: string;
+	readonly rawCertData?: string;
+	readonly tenantId?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface VCenterProperties {
-	readonly createdTimestamp?: string | undefined;
-	readonly errors?: HealthErrorDetails[] | undefined;
-	readonly fqdn?: string | undefined;
-	readonly instanceUuid?: string | undefined;
-	readonly perfStatisticsLevel?: string | undefined;
-	readonly port?: string | undefined;
-	readonly runAsAccountId?: string | undefined;
-	readonly updatedTimestamp?: string | undefined;
-	readonly version?: string | undefined;
+	readonly createdTimestamp?: string;
+	readonly errors?: HealthErrorDetails[];
+	readonly fqdn?: string;
+	readonly instanceUuid?: string;
+	readonly perfStatisticsLevel?: string;
+	readonly port?: string;
+	readonly runAsAccountId?: string;
+	readonly updatedTimestamp?: string;
+	readonly version?: string;
 }
 export interface VMwareSiteTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	HyperVSites: HyperVSites,

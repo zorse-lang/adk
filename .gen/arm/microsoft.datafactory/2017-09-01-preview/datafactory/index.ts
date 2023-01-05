@@ -14,11 +14,11 @@ export interface factoriesComponentOutputs {
 	readonly type: "Microsoft.DataFactory/factories";
 }
 export interface factoriesComponentInputs {
-	readonly identity?: FactoryIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: FactoryIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: FactoryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: FactoryProperties;
+	readonly tags?: ResourceTags;
 }
 export class factories_datasets
 	extends ArmResource<factories_datasetsComponentInputs>
@@ -37,7 +37,7 @@ export interface factories_datasetsComponentOutputs {
 	readonly type: "Microsoft.DataFactory/factories/datasets";
 }
 export interface factories_datasetsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly properties: Dataset;
 }
@@ -58,7 +58,7 @@ export interface factories_integrationRuntimesComponentOutputs {
 	readonly type: "Microsoft.DataFactory/factories/integrationRuntimes";
 }
 export interface factories_integrationRuntimesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly properties: IntegrationRuntime;
 }
@@ -79,7 +79,7 @@ export interface factories_linkedservicesComponentOutputs {
 	readonly type: "Microsoft.DataFactory/factories/linkedservices";
 }
 export interface factories_linkedservicesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly properties: LinkedService;
 }
@@ -100,7 +100,7 @@ export interface factories_pipelinesComponentOutputs {
 	readonly type: "Microsoft.DataFactory/factories/pipelines";
 }
 export interface factories_pipelinesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly properties: Pipeline;
 }
@@ -121,7 +121,7 @@ export interface factories_triggersComponentOutputs {
 	readonly type: "Microsoft.DataFactory/factories/triggers";
 }
 export interface factories_triggersComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly properties: Trigger;
 }
@@ -135,134 +135,134 @@ export function listAuthKeys(resource: factories_integrationRuntimes): Integrati
 	throw new Error("not implemented");
 }
 export interface Activity {
-	readonly dependsOn?: ActivityDependency[] | undefined;
-	readonly description?: string | undefined;
+	readonly dependsOn?: ActivityDependency[];
+	readonly description?: string;
 	readonly name: string;
 }
 export interface ActivityDependency {
 	readonly activity: string;
 	readonly dependencyConditions: "Completed" | "Failed" | "Skipped" | "Succeeded"[];
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ActivityPolicy {
-	readonly retry?: any | undefined;
-	readonly retryIntervalInSeconds?: number | undefined;
-	readonly secureOutput?: boolean | undefined;
-	readonly timeout?: any | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly retry?: any;
+	readonly retryIntervalInSeconds?: number;
+	readonly secureOutput?: boolean;
+	readonly timeout?: any;
+	readonly [key: string]: any;
 }
 export interface AmazonMWSLinkedServiceTypeProperties {
 	readonly accessKeyId: any;
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 	readonly endpoint: any;
 	readonly marketplaceID: any;
-	readonly mwsAuthToken?: SecretBase | undefined;
-	readonly secretKey?: SecretBase | undefined;
+	readonly mwsAuthToken?: SecretBase;
+	readonly secretKey?: SecretBase;
 	readonly sellerID: any;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 }
 export interface AmazonRedshiftLinkedServiceTypeProperties {
 	readonly database: any;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
+	readonly port?: any;
 	readonly server: any;
-	readonly username?: any | undefined;
+	readonly username?: any;
 }
 export interface AmazonS3DatasetTypeProperties {
 	readonly bucketName: any;
-	readonly compression?: DatasetCompression | undefined;
-	readonly format?: DatasetStorageFormat | undefined;
-	readonly key?: any | undefined;
-	readonly prefix?: any | undefined;
-	readonly version?: any | undefined;
+	readonly compression?: DatasetCompression;
+	readonly format?: DatasetStorageFormat;
+	readonly key?: any;
+	readonly prefix?: any;
+	readonly version?: any;
 }
 export interface AmazonS3LinkedServiceTypeProperties {
-	readonly accessKeyId?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly secretAccessKey?: SecretBase | undefined;
+	readonly accessKeyId?: any;
+	readonly encryptedCredential?: any;
+	readonly secretAccessKey?: SecretBase;
 }
 export interface AzureBatchLinkedServiceTypeProperties {
-	readonly accessKey?: SecretBase | undefined;
+	readonly accessKey?: SecretBase;
 	readonly accountName: any;
 	readonly batchUri: any;
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 	readonly linkedServiceName: LinkedServiceReference;
 	readonly poolName: any;
 }
 export interface AzureBlobDatasetTypeProperties {
-	readonly compression?: DatasetCompression | undefined;
-	readonly fileName?: any | undefined;
-	readonly folderPath?: any | undefined;
-	readonly format?: DatasetStorageFormat | undefined;
-	readonly tableRootLocation?: any | undefined;
+	readonly compression?: DatasetCompression;
+	readonly fileName?: any;
+	readonly folderPath?: any;
+	readonly format?: DatasetStorageFormat;
+	readonly tableRootLocation?: any;
 }
 export interface AzureDatabricksLinkedServiceTypeProperties {
 	readonly accessToken: SecretBase;
 	readonly domain: any;
-	readonly encryptedCredential?: any | undefined;
-	readonly existingClusterId?: any | undefined;
-	readonly newClusterNodeType?: any | undefined;
-	readonly newClusterNumOfWorker?: any | undefined;
-	readonly newClusterSparkConf?: AzureDatabricksLinkedServiceTypePropertiesNewClusterSparkConf | undefined;
-	readonly newClusterVersion?: any | undefined;
+	readonly encryptedCredential?: any;
+	readonly existingClusterId?: any;
+	readonly newClusterNodeType?: any;
+	readonly newClusterNumOfWorker?: any;
+	readonly newClusterSparkConf?: AzureDatabricksLinkedServiceTypePropertiesNewClusterSparkConf;
+	readonly newClusterVersion?: any;
 }
 export interface AzureDatabricksLinkedServiceTypePropertiesNewClusterSparkConf {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface AzureDataLakeAnalyticsLinkedServiceTypeProperties {
 	readonly accountName: any;
-	readonly dataLakeAnalyticsUri?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly resourceGroupName?: any | undefined;
-	readonly servicePrincipalId?: any | undefined;
-	readonly servicePrincipalKey?: SecretBase | undefined;
-	readonly subscriptionId?: any | undefined;
+	readonly dataLakeAnalyticsUri?: any;
+	readonly encryptedCredential?: any;
+	readonly resourceGroupName?: any;
+	readonly servicePrincipalId?: any;
+	readonly servicePrincipalKey?: SecretBase;
+	readonly subscriptionId?: any;
 	readonly tenant: any;
 }
 export interface AzureDataLakeStoreDatasetTypeProperties {
-	readonly compression?: DatasetCompression | undefined;
-	readonly fileName?: any | undefined;
+	readonly compression?: DatasetCompression;
+	readonly fileName?: any;
 	readonly folderPath: any;
-	readonly format?: DatasetStorageFormat | undefined;
+	readonly format?: DatasetStorageFormat;
 }
 export interface AzureDataLakeStoreLinkedServiceTypeProperties {
-	readonly accountName?: any | undefined;
+	readonly accountName?: any;
 	readonly dataLakeStoreUri: any;
-	readonly encryptedCredential?: any | undefined;
-	readonly resourceGroupName?: any | undefined;
-	readonly servicePrincipalId?: any | undefined;
-	readonly servicePrincipalKey?: SecretBase | undefined;
-	readonly subscriptionId?: any | undefined;
-	readonly tenant?: any | undefined;
+	readonly encryptedCredential?: any;
+	readonly resourceGroupName?: any;
+	readonly servicePrincipalId?: any;
+	readonly servicePrincipalKey?: SecretBase;
+	readonly subscriptionId?: any;
+	readonly tenant?: any;
 }
 export interface AzureKeyVaultLinkedServiceTypeProperties {
 	readonly baseUrl: any;
 }
 export interface AzureMLBatchExecutionActivityTypeProperties {
-	readonly globalParameters?: AzureMLBatchExecutionActivityTypePropertiesGlobalParameters | undefined;
-	readonly webServiceInputs?: AzureMLBatchExecutionActivityTypePropertiesWebServiceInputs | undefined;
-	readonly webServiceOutputs?: AzureMLBatchExecutionActivityTypePropertiesWebServiceOutputs | undefined;
+	readonly globalParameters?: AzureMLBatchExecutionActivityTypePropertiesGlobalParameters;
+	readonly webServiceInputs?: AzureMLBatchExecutionActivityTypePropertiesWebServiceInputs;
+	readonly webServiceOutputs?: AzureMLBatchExecutionActivityTypePropertiesWebServiceOutputs;
 }
 export interface AzureMLBatchExecutionActivityTypePropertiesGlobalParameters {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface AzureMLBatchExecutionActivityTypePropertiesWebServiceInputs {
-	readonly "[ key: string ]"?: AzureMLWebServiceFile | undefined;
+	readonly [key: string]: AzureMLWebServiceFile;
 }
 export interface AzureMLBatchExecutionActivityTypePropertiesWebServiceOutputs {
-	readonly "[ key: string ]"?: AzureMLWebServiceFile | undefined;
+	readonly [key: string]: AzureMLWebServiceFile;
 }
 export interface AzureMLLinkedServiceTypeProperties {
 	readonly apiKey: SecretBase;
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 	readonly mlEndpoint: any;
-	readonly servicePrincipalId?: any | undefined;
-	readonly servicePrincipalKey?: SecretBase | undefined;
-	readonly tenant?: any | undefined;
-	readonly updateResourceEndpoint?: any | undefined;
+	readonly servicePrincipalId?: any;
+	readonly servicePrincipalKey?: SecretBase;
+	readonly tenant?: any;
+	readonly updateResourceEndpoint?: any;
 }
 export interface AzureMLUpdateResourceActivityTypeProperties {
 	readonly trainedModelFilePath: any;
@@ -275,36 +275,36 @@ export interface AzureMLWebServiceFile {
 }
 export interface AzureMySqlLinkedServiceTypeProperties {
 	readonly connectionString: any;
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 }
 export interface AzureMySqlTableDatasetTypeProperties {
-	readonly tableName?: any | undefined;
+	readonly tableName?: any;
 }
 export interface AzurePostgreSqlLinkedServiceTypeProperties {
-	readonly connectionString?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly connectionString?: any;
+	readonly encryptedCredential?: any;
 }
 export interface AzureSearchIndexDatasetTypeProperties {
 	readonly indexName: any;
 }
 export interface AzureSearchLinkedServiceTypeProperties {
-	readonly encryptedCredential?: any | undefined;
-	readonly key?: SecretBase | undefined;
+	readonly encryptedCredential?: any;
+	readonly key?: SecretBase;
 	readonly url: any;
 }
 export interface AzureSqlDatabaseLinkedServiceTypeProperties {
 	readonly connectionString: any;
-	readonly encryptedCredential?: any | undefined;
-	readonly servicePrincipalId?: any | undefined;
-	readonly servicePrincipalKey?: SecretBase | undefined;
-	readonly tenant?: any | undefined;
+	readonly encryptedCredential?: any;
+	readonly servicePrincipalId?: any;
+	readonly servicePrincipalKey?: SecretBase;
+	readonly tenant?: any;
 }
 export interface AzureSqlDWLinkedServiceTypeProperties {
 	readonly connectionString: any;
-	readonly encryptedCredential?: any | undefined;
-	readonly servicePrincipalId?: any | undefined;
-	readonly servicePrincipalKey?: SecretBase | undefined;
-	readonly tenant?: any | undefined;
+	readonly encryptedCredential?: any;
+	readonly servicePrincipalId?: any;
+	readonly servicePrincipalKey?: SecretBase;
+	readonly tenant?: any;
 }
 export interface AzureSqlDWTableDatasetTypeProperties {
 	readonly tableName: any;
@@ -313,225 +313,225 @@ export interface AzureSqlTableDatasetTypeProperties {
 	readonly tableName: any;
 }
 export interface AzureStorageLinkedServiceTypeProperties {
-	readonly connectionString?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly sasUri?: SecretBase | undefined;
+	readonly connectionString?: any;
+	readonly encryptedCredential?: any;
+	readonly sasUri?: SecretBase;
 }
 export interface AzureTableDatasetTypeProperties {
 	readonly tableName: any;
 }
 export interface CassandraLinkedServiceTypeProperties {
-	readonly authenticationType?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly authenticationType?: any;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
-	readonly username?: any | undefined;
+	readonly password?: SecretBase;
+	readonly port?: any;
+	readonly username?: any;
 }
 export interface CassandraTableDatasetTypeProperties {
-	readonly keyspace?: any | undefined;
-	readonly tableName?: any | undefined;
+	readonly keyspace?: any;
+	readonly tableName?: any;
 }
 export interface ConcurLinkedServiceTypeProperties {
 	readonly clientId: any;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 	readonly username: any;
 }
 export interface CopyActivityTypeProperties {
-	readonly cloudDataMovementUnits?: any | undefined;
-	readonly enableSkipIncompatibleRow?: any | undefined;
-	readonly enableStaging?: any | undefined;
-	readonly parallelCopies?: any | undefined;
-	readonly redirectIncompatibleRowSettings?: RedirectIncompatibleRowSettings | undefined;
+	readonly cloudDataMovementUnits?: any;
+	readonly enableSkipIncompatibleRow?: any;
+	readonly enableStaging?: any;
+	readonly parallelCopies?: any;
+	readonly redirectIncompatibleRowSettings?: RedirectIncompatibleRowSettings;
 	readonly sink: CopySink;
 	readonly source: CopySource;
-	readonly stagingSettings?: StagingSettings | undefined;
-	readonly translator?: any | undefined;
+	readonly stagingSettings?: StagingSettings;
+	readonly translator?: any;
 }
 export interface CopySink {
-	readonly sinkRetryCount?: any | undefined;
-	readonly sinkRetryWait?: any | undefined;
-	readonly writeBatchSize?: any | undefined;
-	readonly writeBatchTimeout?: any | undefined;
+	readonly sinkRetryCount?: any;
+	readonly sinkRetryWait?: any;
+	readonly writeBatchSize?: any;
+	readonly writeBatchTimeout?: any;
 }
 export interface CopySource {
-	readonly sourceRetryCount?: any | undefined;
-	readonly sourceRetryWait?: any | undefined;
+	readonly sourceRetryCount?: any;
+	readonly sourceRetryWait?: any;
 }
 export interface CosmosDbLinkedServiceTypeProperties {
 	readonly connectionString: any;
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 }
 export interface CouchbaseLinkedServiceTypeProperties {
-	readonly connectionString?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly connectionString?: any;
+	readonly encryptedCredential?: any;
 }
 export interface CustomActivityReferenceObject {
-	readonly datasets?: DatasetReference[] | undefined;
-	readonly linkedServices?: LinkedServiceReference[] | undefined;
+	readonly datasets?: DatasetReference[];
+	readonly linkedServices?: LinkedServiceReference[];
 }
 export interface CustomActivityTypeProperties {
 	readonly command: any;
-	readonly extendedProperties?: CustomActivityTypePropertiesExtendedProperties | undefined;
-	readonly folderPath?: any | undefined;
-	readonly referenceObjects?: CustomActivityReferenceObject | undefined;
-	readonly resourceLinkedService?: LinkedServiceReference | undefined;
+	readonly extendedProperties?: CustomActivityTypePropertiesExtendedProperties;
+	readonly folderPath?: any;
+	readonly referenceObjects?: CustomActivityReferenceObject;
+	readonly resourceLinkedService?: LinkedServiceReference;
 }
 export interface CustomActivityTypePropertiesExtendedProperties {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface DatabricksNotebookActivityTypeProperties {
-	readonly baseParameters?: DatabricksNotebookActivityTypePropertiesBaseParameters | undefined;
+	readonly baseParameters?: DatabricksNotebookActivityTypePropertiesBaseParameters;
 	readonly notebookPath: any;
 }
 export interface DatabricksNotebookActivityTypePropertiesBaseParameters {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface DataLakeAnalyticsUsqlActivityTypeProperties {
-	readonly compilationMode?: any | undefined;
-	readonly degreeOfParallelism?: any | undefined;
-	readonly parameters?: DataLakeAnalyticsUsqlActivityTypePropertiesParameters | undefined;
-	readonly priority?: any | undefined;
-	readonly runtimeVersion?: any | undefined;
+	readonly compilationMode?: any;
+	readonly degreeOfParallelism?: any;
+	readonly parameters?: DataLakeAnalyticsUsqlActivityTypePropertiesParameters;
+	readonly priority?: any;
+	readonly runtimeVersion?: any;
 	readonly scriptLinkedService: LinkedServiceReference;
 	readonly scriptPath: any;
 }
 export interface DataLakeAnalyticsUsqlActivityTypePropertiesParameters {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface Dataset {
-	readonly annotations?: any[] | undefined;
-	readonly description?: string | undefined;
+	readonly annotations?: any[];
+	readonly description?: string;
 	readonly linkedServiceName: LinkedServiceReference;
-	readonly parameters?: ParameterDefinitionSpecification | undefined;
-	readonly structure?: any | undefined;
+	readonly parameters?: ParameterDefinitionSpecification;
+	readonly structure?: any;
 }
 export interface DatasetCompression {}
 export interface DatasetReference {
-	readonly parameters?: ParameterValueSpecification | undefined;
+	readonly parameters?: ParameterValueSpecification;
 	readonly referenceName: string;
 	readonly type: "DatasetReference";
 }
 export interface DatasetStorageFormat {
-	readonly deserializer?: any | undefined;
-	readonly serializer?: any | undefined;
+	readonly deserializer?: any;
+	readonly serializer?: any;
 }
 export interface Db2LinkedServiceTypeProperties {
-	readonly authenticationType?: "Basic" | undefined;
+	readonly authenticationType?: "Basic";
 	readonly database: any;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
 	readonly server: any;
-	readonly username?: any | undefined;
+	readonly username?: any;
 }
 export interface DocumentDbCollectionDatasetTypeProperties {
 	readonly collectionName: any;
 }
 export interface DrillLinkedServiceTypeProperties {
-	readonly connectionString?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly connectionString?: any;
+	readonly encryptedCredential?: any;
 }
 export interface DynamicsEntityDatasetTypeProperties {
-	readonly entityName?: any | undefined;
+	readonly entityName?: any;
 }
 export interface DynamicsLinkedServiceTypeProperties {
 	readonly authenticationType: "Ifd" | "Office365";
 	readonly deploymentType: "OnPremisesWithIfd" | "Online";
-	readonly encryptedCredential?: any | undefined;
-	readonly hostName?: any | undefined;
-	readonly organizationName?: any | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
-	readonly serviceUri?: any | undefined;
+	readonly encryptedCredential?: any;
+	readonly hostName?: any;
+	readonly organizationName?: any;
+	readonly password?: SecretBase;
+	readonly port?: any;
+	readonly serviceUri?: any;
 	readonly username: any;
 }
 export interface EloquaLinkedServiceTypeProperties {
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 	readonly endpoint: any;
-	readonly password?: SecretBase | undefined;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly password?: SecretBase;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 	readonly username: any;
 }
 export interface EntityReference {
-	readonly referenceName?: string | undefined;
-	readonly type?: ("IntegrationRuntimeReference" | "LinkedServiceReference") | undefined;
+	readonly referenceName?: string;
+	readonly type?: "IntegrationRuntimeReference" | "LinkedServiceReference";
 }
 export interface ExecutePipelineActivityTypeProperties {
-	readonly parameters?: ParameterValueSpecification | undefined;
+	readonly parameters?: ParameterValueSpecification;
 	readonly pipeline: PipelineReference;
-	readonly waitOnCompletion?: boolean | undefined;
+	readonly waitOnCompletion?: boolean;
 }
 export interface ExecuteSsisPackageActivityTypeProperties {
 	readonly connectVia: IntegrationRuntimeReference;
-	readonly environmentPath?: any | undefined;
-	readonly executionCredential?: SsisExecutionCredential | undefined;
-	readonly loggingLevel?: any | undefined;
-	readonly logLocation?: SsisLogLocation | undefined;
-	readonly packageConnectionManagers?: ExecuteSsisPackageActivityTypePropertiesPackageConnectionManagers | undefined;
+	readonly environmentPath?: any;
+	readonly executionCredential?: SsisExecutionCredential;
+	readonly loggingLevel?: any;
+	readonly logLocation?: SsisLogLocation;
+	readonly packageConnectionManagers?: ExecuteSsisPackageActivityTypePropertiesPackageConnectionManagers;
 	readonly packageLocation: SsisPackageLocation;
-	readonly packageParameters?: ExecuteSsisPackageActivityTypePropertiesPackageParameters | undefined;
-	readonly projectConnectionManagers?: ExecuteSsisPackageActivityTypePropertiesProjectConnectionManagers | undefined;
-	readonly projectParameters?: ExecuteSsisPackageActivityTypePropertiesProjectParameters | undefined;
-	readonly propertyOverrides?: ExecuteSsisPackageActivityTypePropertiesPropertyOverrides | undefined;
-	readonly runtime?: any | undefined;
+	readonly packageParameters?: ExecuteSsisPackageActivityTypePropertiesPackageParameters;
+	readonly projectConnectionManagers?: ExecuteSsisPackageActivityTypePropertiesProjectConnectionManagers;
+	readonly projectParameters?: ExecuteSsisPackageActivityTypePropertiesProjectParameters;
+	readonly propertyOverrides?: ExecuteSsisPackageActivityTypePropertiesPropertyOverrides;
+	readonly runtime?: any;
 }
 export interface ExecuteSsisPackageActivityTypePropertiesPackageConnectionManagers {
-	readonly "[ key: string ]"?: SsisConnectionManager | undefined;
+	readonly [key: string]: SsisConnectionManager;
 }
 export interface ExecuteSsisPackageActivityTypePropertiesPackageParameters {
-	readonly "[ key: string ]"?: SsisExecutionParameter | undefined;
+	readonly [key: string]: SsisExecutionParameter;
 }
 export interface ExecuteSsisPackageActivityTypePropertiesProjectConnectionManagers {
-	readonly "[ key: string ]"?: SsisConnectionManager | undefined;
+	readonly [key: string]: SsisConnectionManager;
 }
 export interface ExecuteSsisPackageActivityTypePropertiesProjectParameters {
-	readonly "[ key: string ]"?: SsisExecutionParameter | undefined;
+	readonly [key: string]: SsisExecutionParameter;
 }
 export interface ExecuteSsisPackageActivityTypePropertiesPropertyOverrides {
-	readonly "[ key: string ]"?: SsisPropertyOverride | undefined;
+	readonly [key: string]: SsisPropertyOverride;
 }
 export interface Expression {
 	readonly type: "Expression";
 	readonly value: string;
 }
 export interface FactoryIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "SystemAssigned";
 }
 export interface FactoryProperties {
-	readonly createTime?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly version?: string | undefined;
-	readonly vstsConfiguration?: FactoryVstsConfiguration | undefined;
+	readonly createTime?: string;
+	readonly provisioningState?: string;
+	readonly version?: string;
+	readonly vstsConfiguration?: FactoryVstsConfiguration;
 }
 export interface FactoryVstsConfiguration {
-	readonly accountName?: string | undefined;
-	readonly collaborationBranch?: string | undefined;
-	readonly lastCommitId?: string | undefined;
-	readonly projectName?: string | undefined;
-	readonly repositoryName?: string | undefined;
-	readonly rootFolder?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly accountName?: string;
+	readonly collaborationBranch?: string;
+	readonly lastCommitId?: string;
+	readonly projectName?: string;
+	readonly repositoryName?: string;
+	readonly rootFolder?: string;
+	readonly tenantId?: string;
 }
 export interface FileServerLinkedServiceTypeProperties {
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly password?: SecretBase | undefined;
-	readonly userId?: any | undefined;
+	readonly password?: SecretBase;
+	readonly userId?: any;
 }
 export interface FileShareDatasetTypeProperties {
-	readonly compression?: DatasetCompression | undefined;
-	readonly fileFilter?: any | undefined;
-	readonly fileName?: any | undefined;
-	readonly folderPath?: any | undefined;
-	readonly format?: DatasetStorageFormat | undefined;
+	readonly compression?: DatasetCompression;
+	readonly fileFilter?: any;
+	readonly fileName?: any;
+	readonly folderPath?: any;
+	readonly format?: DatasetStorageFormat;
 }
 export interface FilterActivityTypeProperties {
 	readonly condition: Expression;
@@ -539,448 +539,448 @@ export interface FilterActivityTypeProperties {
 }
 export interface ForEachActivityTypeProperties {
 	readonly activities: Activity[];
-	readonly batchCount?: number | undefined;
-	readonly isSequential?: boolean | undefined;
+	readonly batchCount?: number;
+	readonly isSequential?: boolean;
 	readonly items: Expression;
 }
 export interface FtpServerLinkedServiceTypeProperties {
-	readonly authenticationType?: ("Anonymous" | "Basic") | undefined;
-	readonly enableServerCertificateValidation?: any | undefined;
-	readonly enableSsl?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly authenticationType?: "Anonymous" | "Basic";
+	readonly enableServerCertificateValidation?: any;
+	readonly enableSsl?: any;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
-	readonly userName?: any | undefined;
+	readonly password?: SecretBase;
+	readonly port?: any;
+	readonly userName?: any;
 }
 export interface GetMetadataActivityTypeProperties {
 	readonly dataset: DatasetReference;
-	readonly fieldList?: any[] | undefined;
+	readonly fieldList?: any[];
 }
 export interface GoogleBigQueryLinkedServiceTypeProperties {
-	readonly additionalProjects?: any | undefined;
+	readonly additionalProjects?: any;
 	readonly authenticationType: "ServiceAuthentication" | "UserAuthentication";
-	readonly clientId?: SecretBase | undefined;
-	readonly clientSecret?: SecretBase | undefined;
-	readonly email?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly keyFilePath?: any | undefined;
+	readonly clientId?: SecretBase;
+	readonly clientSecret?: SecretBase;
+	readonly email?: any;
+	readonly encryptedCredential?: any;
+	readonly keyFilePath?: any;
 	readonly project: any;
-	readonly refreshToken?: SecretBase | undefined;
-	readonly requestGoogleDriveScope?: any | undefined;
-	readonly trustedCertPath?: any | undefined;
-	readonly useSystemTrustStore?: any | undefined;
+	readonly refreshToken?: SecretBase;
+	readonly requestGoogleDriveScope?: any;
+	readonly trustedCertPath?: any;
+	readonly useSystemTrustStore?: any;
 }
 export interface GreenplumLinkedServiceTypeProperties {
-	readonly connectionString?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly connectionString?: any;
+	readonly encryptedCredential?: any;
 }
 export interface HBaseLinkedServiceTypeProperties {
-	readonly allowHostNameCNMismatch?: any | undefined;
-	readonly allowSelfSignedServerCert?: any | undefined;
+	readonly allowHostNameCNMismatch?: any;
+	readonly allowSelfSignedServerCert?: any;
 	readonly authenticationType: "Anonymous" | "Basic";
-	readonly enableSsl?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly enableSsl?: any;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly httpPath?: any | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
-	readonly trustedCertPath?: any | undefined;
-	readonly username?: any | undefined;
+	readonly httpPath?: any;
+	readonly password?: SecretBase;
+	readonly port?: any;
+	readonly trustedCertPath?: any;
+	readonly username?: any;
 }
 export interface HdfsLinkedServiceTypeProperties {
-	readonly authenticationType?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
+	readonly authenticationType?: any;
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
 	readonly url: any;
-	readonly userName?: any | undefined;
+	readonly userName?: any;
 }
 export interface HDInsightHiveActivityTypeProperties {
-	readonly arguments?: any[] | undefined;
-	readonly defines?: HDInsightHiveActivityTypePropertiesDefines | undefined;
-	readonly getDebugInfo?: ("Always" | "Failure" | "None") | undefined;
-	readonly scriptLinkedService?: LinkedServiceReference | undefined;
-	readonly scriptPath?: any | undefined;
-	readonly storageLinkedServices?: LinkedServiceReference[] | undefined;
+	readonly arguments?: any[];
+	readonly defines?: HDInsightHiveActivityTypePropertiesDefines;
+	readonly getDebugInfo?: "Always" | "Failure" | "None";
+	readonly scriptLinkedService?: LinkedServiceReference;
+	readonly scriptPath?: any;
+	readonly storageLinkedServices?: LinkedServiceReference[];
 }
 export interface HDInsightHiveActivityTypePropertiesDefines {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface HDInsightLinkedServiceTypeProperties {
 	readonly clusterUri: any;
-	readonly encryptedCredential?: any | undefined;
-	readonly hcatalogLinkedServiceName?: LinkedServiceReference | undefined;
-	readonly linkedServiceName?: LinkedServiceReference | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly userName?: any | undefined;
+	readonly encryptedCredential?: any;
+	readonly hcatalogLinkedServiceName?: LinkedServiceReference;
+	readonly linkedServiceName?: LinkedServiceReference;
+	readonly password?: SecretBase;
+	readonly userName?: any;
 }
 export interface HDInsightMapReduceActivityTypeProperties {
-	readonly arguments?: any[] | undefined;
+	readonly arguments?: any[];
 	readonly className: any;
-	readonly defines?: HDInsightMapReduceActivityTypePropertiesDefines | undefined;
-	readonly getDebugInfo?: ("Always" | "Failure" | "None") | undefined;
+	readonly defines?: HDInsightMapReduceActivityTypePropertiesDefines;
+	readonly getDebugInfo?: "Always" | "Failure" | "None";
 	readonly jarFilePath: any;
-	readonly jarLibs?: any[] | undefined;
-	readonly jarLinkedService?: LinkedServiceReference | undefined;
-	readonly storageLinkedServices?: LinkedServiceReference[] | undefined;
+	readonly jarLibs?: any[];
+	readonly jarLinkedService?: LinkedServiceReference;
+	readonly storageLinkedServices?: LinkedServiceReference[];
 }
 export interface HDInsightMapReduceActivityTypePropertiesDefines {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface HDInsightOnDemandLinkedServiceTypeProperties {
-	readonly additionalLinkedServiceNames?: LinkedServiceReference[] | undefined;
-	readonly clusterNamePrefix?: any | undefined;
-	readonly clusterPassword?: SecretBase | undefined;
+	readonly additionalLinkedServiceNames?: LinkedServiceReference[];
+	readonly clusterNamePrefix?: any;
+	readonly clusterPassword?: SecretBase;
 	readonly clusterResourceGroup: any;
 	readonly clusterSize: any;
-	readonly clusterSshPassword?: SecretBase | undefined;
-	readonly clusterSshUserName?: any | undefined;
-	readonly clusterType?: any | undefined;
-	readonly clusterUserName?: any | undefined;
-	readonly coreConfiguration?: any | undefined;
-	readonly dataNodeSize?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly hBaseConfiguration?: any | undefined;
-	readonly hcatalogLinkedServiceName?: LinkedServiceReference | undefined;
-	readonly hdfsConfiguration?: any | undefined;
-	readonly headNodeSize?: any | undefined;
-	readonly hiveConfiguration?: any | undefined;
+	readonly clusterSshPassword?: SecretBase;
+	readonly clusterSshUserName?: any;
+	readonly clusterType?: any;
+	readonly clusterUserName?: any;
+	readonly coreConfiguration?: any;
+	readonly dataNodeSize?: any;
+	readonly encryptedCredential?: any;
+	readonly hBaseConfiguration?: any;
+	readonly hcatalogLinkedServiceName?: LinkedServiceReference;
+	readonly hdfsConfiguration?: any;
+	readonly headNodeSize?: any;
+	readonly hiveConfiguration?: any;
 	readonly hostSubscriptionId: any;
 	readonly linkedServiceName: LinkedServiceReference;
-	readonly mapReduceConfiguration?: any | undefined;
-	readonly oozieConfiguration?: any | undefined;
-	readonly servicePrincipalId?: any | undefined;
-	readonly servicePrincipalKey?: SecretBase | undefined;
-	readonly sparkVersion?: any | undefined;
-	readonly stormConfiguration?: any | undefined;
+	readonly mapReduceConfiguration?: any;
+	readonly oozieConfiguration?: any;
+	readonly servicePrincipalId?: any;
+	readonly servicePrincipalKey?: SecretBase;
+	readonly sparkVersion?: any;
+	readonly stormConfiguration?: any;
 	readonly tenant: any;
 	readonly timeToLive: any;
 	readonly version: any;
-	readonly yarnConfiguration?: any | undefined;
-	readonly zookeeperNodeSize?: any | undefined;
+	readonly yarnConfiguration?: any;
+	readonly zookeeperNodeSize?: any;
 }
 export interface HDInsightPigActivityTypeProperties {
-	readonly arguments?: any[] | undefined;
-	readonly defines?: HDInsightPigActivityTypePropertiesDefines | undefined;
-	readonly getDebugInfo?: ("Always" | "Failure" | "None") | undefined;
-	readonly scriptLinkedService?: LinkedServiceReference | undefined;
-	readonly scriptPath?: any | undefined;
-	readonly storageLinkedServices?: LinkedServiceReference[] | undefined;
+	readonly arguments?: any[];
+	readonly defines?: HDInsightPigActivityTypePropertiesDefines;
+	readonly getDebugInfo?: "Always" | "Failure" | "None";
+	readonly scriptLinkedService?: LinkedServiceReference;
+	readonly scriptPath?: any;
+	readonly storageLinkedServices?: LinkedServiceReference[];
 }
 export interface HDInsightPigActivityTypePropertiesDefines {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface HDInsightSparkActivityTypeProperties {
-	readonly arguments?: any[] | undefined;
-	readonly className?: string | undefined;
+	readonly arguments?: any[];
+	readonly className?: string;
 	readonly entryFilePath: any;
-	readonly getDebugInfo?: ("Always" | "Failure" | "None") | undefined;
-	readonly proxyUser?: any | undefined;
+	readonly getDebugInfo?: "Always" | "Failure" | "None";
+	readonly proxyUser?: any;
 	readonly rootPath: any;
-	readonly sparkConfig?: HDInsightSparkActivityTypePropertiesSparkConfig | undefined;
-	readonly sparkJobLinkedService?: LinkedServiceReference | undefined;
+	readonly sparkConfig?: HDInsightSparkActivityTypePropertiesSparkConfig;
+	readonly sparkJobLinkedService?: LinkedServiceReference;
 }
 export interface HDInsightSparkActivityTypePropertiesSparkConfig {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface HDInsightStreamingActivityTypeProperties {
-	readonly arguments?: any[] | undefined;
-	readonly combiner?: any | undefined;
-	readonly commandEnvironment?: any[] | undefined;
-	readonly defines?: HDInsightStreamingActivityTypePropertiesDefines | undefined;
-	readonly fileLinkedService?: LinkedServiceReference | undefined;
+	readonly arguments?: any[];
+	readonly combiner?: any;
+	readonly commandEnvironment?: any[];
+	readonly defines?: HDInsightStreamingActivityTypePropertiesDefines;
+	readonly fileLinkedService?: LinkedServiceReference;
 	readonly filePaths: any[];
-	readonly getDebugInfo?: ("Always" | "Failure" | "None") | undefined;
+	readonly getDebugInfo?: "Always" | "Failure" | "None";
 	readonly input: any;
 	readonly mapper: any;
 	readonly output: any;
 	readonly reducer: any;
-	readonly storageLinkedServices?: LinkedServiceReference[] | undefined;
+	readonly storageLinkedServices?: LinkedServiceReference[];
 }
 export interface HDInsightStreamingActivityTypePropertiesDefines {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface HiveLinkedServiceTypeProperties {
-	readonly allowHostNameCNMismatch?: any | undefined;
-	readonly allowSelfSignedServerCert?: any | undefined;
+	readonly allowHostNameCNMismatch?: any;
+	readonly allowSelfSignedServerCert?: any;
 	readonly authenticationType: "Anonymous" | "Username" | "UsernameAndPassword" | "WindowsAzureHDInsightService";
-	readonly enableSsl?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly enableSsl?: any;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly httpPath?: any | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
-	readonly serverType?: ("HiveServer1" | "HiveServer2" | "HiveThriftServer") | undefined;
-	readonly serviceDiscoveryMode?: any | undefined;
-	readonly thriftTransportProtocol?: ("Binary" | "HTTP" | "SASL") | undefined;
-	readonly trustedCertPath?: any | undefined;
-	readonly useNativeQuery?: any | undefined;
-	readonly username?: any | undefined;
-	readonly useSystemTrustStore?: any | undefined;
-	readonly zooKeeperNameSpace?: any | undefined;
+	readonly httpPath?: any;
+	readonly password?: SecretBase;
+	readonly port?: any;
+	readonly serverType?: "HiveServer1" | "HiveServer2" | "HiveThriftServer";
+	readonly serviceDiscoveryMode?: any;
+	readonly thriftTransportProtocol?: "Binary" | "HTTP" | "SASL";
+	readonly trustedCertPath?: any;
+	readonly useNativeQuery?: any;
+	readonly username?: any;
+	readonly useSystemTrustStore?: any;
+	readonly zooKeeperNameSpace?: any;
 }
 export interface HttpDatasetTypeProperties {
-	readonly additionalHeaders?: any | undefined;
-	readonly compression?: DatasetCompression | undefined;
-	readonly format?: DatasetStorageFormat | undefined;
-	readonly relativeUrl?: any | undefined;
-	readonly requestBody?: any | undefined;
-	readonly requestMethod?: any | undefined;
+	readonly additionalHeaders?: any;
+	readonly compression?: DatasetCompression;
+	readonly format?: DatasetStorageFormat;
+	readonly relativeUrl?: any;
+	readonly requestBody?: any;
+	readonly requestMethod?: any;
 }
 export interface HttpLinkedServiceTypeProperties {
-	readonly authenticationType?: ("Anonymous" | "Basic" | "ClientCertificate" | "Digest" | "Windows") | undefined;
-	readonly certThumbprint?: any | undefined;
-	readonly embeddedCertData?: any | undefined;
-	readonly enableServerCertificateValidation?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
+	readonly authenticationType?: "Anonymous" | "Basic" | "ClientCertificate" | "Digest" | "Windows";
+	readonly certThumbprint?: any;
+	readonly embeddedCertData?: any;
+	readonly enableServerCertificateValidation?: any;
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
 	readonly url: any;
-	readonly userName?: any | undefined;
+	readonly userName?: any;
 }
 export interface HubspotLinkedServiceTypeProperties {
-	readonly accessToken?: SecretBase | undefined;
+	readonly accessToken?: SecretBase;
 	readonly clientId: any;
-	readonly clientSecret?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly refreshToken?: SecretBase | undefined;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly clientSecret?: SecretBase;
+	readonly encryptedCredential?: any;
+	readonly refreshToken?: SecretBase;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 }
 export interface IfConditionActivityTypeProperties {
 	readonly expression: Expression;
-	readonly ifFalseActivities?: Activity[] | undefined;
-	readonly ifTrueActivities?: Activity[] | undefined;
+	readonly ifFalseActivities?: Activity[];
+	readonly ifTrueActivities?: Activity[];
 }
 export interface ImpalaLinkedServiceTypeProperties {
-	readonly allowHostNameCNMismatch?: any | undefined;
-	readonly allowSelfSignedServerCert?: any | undefined;
+	readonly allowHostNameCNMismatch?: any;
+	readonly allowSelfSignedServerCert?: any;
 	readonly authenticationType: "Anonymous" | "SASLUsername" | "UsernameAndPassword";
-	readonly enableSsl?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly enableSsl?: any;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
-	readonly trustedCertPath?: any | undefined;
-	readonly username?: any | undefined;
-	readonly useSystemTrustStore?: any | undefined;
+	readonly password?: SecretBase;
+	readonly port?: any;
+	readonly trustedCertPath?: any;
+	readonly username?: any;
+	readonly useSystemTrustStore?: any;
 }
 export interface IntegrationRuntime {
-	readonly description?: string | undefined;
+	readonly description?: string;
 }
 export interface IntegrationRuntimeAuthKeys {
-	readonly authKey1?: string | undefined;
-	readonly authKey2?: string | undefined;
+	readonly authKey1?: string;
+	readonly authKey2?: string;
 }
 export interface IntegrationRuntimeComputeProperties {
-	readonly location?: string | undefined;
-	readonly maxParallelExecutionsPerNode?: number | undefined;
-	readonly nodeSize?: string | undefined;
-	readonly numberOfNodes?: number | undefined;
-	readonly vNetProperties?: IntegrationRuntimeVNetProperties | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly location?: string;
+	readonly maxParallelExecutionsPerNode?: number;
+	readonly nodeSize?: string;
+	readonly numberOfNodes?: number;
+	readonly vNetProperties?: IntegrationRuntimeVNetProperties;
+	readonly [key: string]: any;
 }
 export interface IntegrationRuntimeCustomSetupScriptProperties {
-	readonly blobContainerUri?: string | undefined;
-	readonly sasToken?: SecureString | undefined;
+	readonly blobContainerUri?: string;
+	readonly sasToken?: SecureString;
 }
 export interface IntegrationRuntimeDataProxyProperties {
-	readonly connectVia?: EntityReference | undefined;
-	readonly path?: string | undefined;
-	readonly stagingLinkedService?: EntityReference | undefined;
+	readonly connectVia?: EntityReference;
+	readonly path?: string;
+	readonly stagingLinkedService?: EntityReference;
 }
 export interface IntegrationRuntimeReference {
-	readonly parameters?: ParameterValueSpecification | undefined;
+	readonly parameters?: ParameterValueSpecification;
 	readonly referenceName: string;
 	readonly type: "IntegrationRuntimeReference";
 }
 export interface IntegrationRuntimeSsisCatalogInfo {
-	readonly catalogAdminPassword?: SecureString | undefined;
-	readonly catalogAdminUserName?: string | undefined;
-	readonly catalogPricingTier?: string | undefined;
-	readonly catalogServerEndpoint?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly catalogAdminPassword?: SecureString;
+	readonly catalogAdminUserName?: string;
+	readonly catalogPricingTier?: string;
+	readonly catalogServerEndpoint?: string;
+	readonly [key: string]: any;
 }
 export interface IntegrationRuntimeSsisProperties {
-	readonly catalogInfo?: IntegrationRuntimeSsisCatalogInfo | undefined;
-	readonly customSetupScriptProperties?: IntegrationRuntimeCustomSetupScriptProperties | undefined;
-	readonly dataProxyProperties?: IntegrationRuntimeDataProxyProperties | undefined;
-	readonly edition?: ("Enterprise" | "Standard") | undefined;
-	readonly licenseType?: ("BasePrice" | "LicenseIncluded") | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly catalogInfo?: IntegrationRuntimeSsisCatalogInfo;
+	readonly customSetupScriptProperties?: IntegrationRuntimeCustomSetupScriptProperties;
+	readonly dataProxyProperties?: IntegrationRuntimeDataProxyProperties;
+	readonly edition?: "Enterprise" | "Standard";
+	readonly licenseType?: "BasePrice" | "LicenseIncluded";
+	readonly [key: string]: any;
 }
 export interface IntegrationRuntimeVNetProperties {
-	readonly subnet?: string | undefined;
-	readonly vNetId?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly subnet?: string;
+	readonly vNetId?: string;
+	readonly [key: string]: any;
 }
 export interface JiraLinkedServiceTypeProperties {
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly password?: SecretBase;
+	readonly port?: any;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 	readonly username: any;
 }
 export interface LinkedIntegrationRuntimeProperties {}
 export interface LinkedIntegrationRuntimeTypeProperties {
-	readonly linkedInfo?: LinkedIntegrationRuntimeProperties | undefined;
+	readonly linkedInfo?: LinkedIntegrationRuntimeProperties;
 }
 export interface LinkedService {
-	readonly annotations?: any[] | undefined;
-	readonly connectVia?: IntegrationRuntimeReference | undefined;
-	readonly description?: string | undefined;
-	readonly parameters?: ParameterDefinitionSpecification | undefined;
+	readonly annotations?: any[];
+	readonly connectVia?: IntegrationRuntimeReference;
+	readonly description?: string;
+	readonly parameters?: ParameterDefinitionSpecification;
 }
 export interface LinkedServiceReference {
-	readonly parameters?: ParameterValueSpecification | undefined;
+	readonly parameters?: ParameterValueSpecification;
 	readonly referenceName: string;
 	readonly type: "LinkedServiceReference";
 }
 export interface LookupActivityTypeProperties {
 	readonly dataset: DatasetReference;
-	readonly firstRowOnly?: any | undefined;
+	readonly firstRowOnly?: any;
 	readonly source: CopySource;
 }
 export interface MagentoLinkedServiceTypeProperties {
-	readonly accessToken?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly accessToken?: SecretBase;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 }
 export interface ManagedIntegrationRuntimeTypeProperties {
-	readonly computeProperties?: IntegrationRuntimeComputeProperties | undefined;
-	readonly ssisProperties?: IntegrationRuntimeSsisProperties | undefined;
+	readonly computeProperties?: IntegrationRuntimeComputeProperties;
+	readonly ssisProperties?: IntegrationRuntimeSsisProperties;
 }
 export interface MariaDBLinkedServiceTypeProperties {
-	readonly connectionString?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly connectionString?: any;
+	readonly encryptedCredential?: any;
 }
 export interface MarketoLinkedServiceTypeProperties {
 	readonly clientId: any;
-	readonly clientSecret?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly clientSecret?: SecretBase;
+	readonly encryptedCredential?: any;
 	readonly endpoint: any;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 }
 export interface MongoDbCollectionDatasetTypeProperties {
 	readonly collectionName: any;
 }
 export interface MongoDbLinkedServiceTypeProperties {
-	readonly allowSelfSignedServerCert?: any | undefined;
-	readonly authenticationType?: ("Anonymous" | "Basic") | undefined;
-	readonly authSource?: any | undefined;
+	readonly allowSelfSignedServerCert?: any;
+	readonly authenticationType?: "Anonymous" | "Basic";
+	readonly authSource?: any;
 	readonly databaseName: any;
-	readonly enableSsl?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
+	readonly enableSsl?: any;
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
+	readonly port?: any;
 	readonly server: any;
-	readonly username?: any | undefined;
+	readonly username?: any;
 }
 export interface MySqlLinkedServiceTypeProperties {
 	readonly connectionString: SecretBase;
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 }
 export interface NetezzaLinkedServiceTypeProperties {
-	readonly connectionString?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly connectionString?: any;
+	readonly encryptedCredential?: any;
 }
 export interface ODataLinkedServiceTypeProperties {
-	readonly authenticationType?: ("Anonymous" | "Basic") | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
+	readonly authenticationType?: "Anonymous" | "Basic";
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
 	readonly url: any;
-	readonly userName?: any | undefined;
+	readonly userName?: any;
 }
 export interface ODataResourceDatasetTypeProperties {
-	readonly path?: any | undefined;
+	readonly path?: any;
 }
 export interface OdbcLinkedServiceTypeProperties {
-	readonly authenticationType?: any | undefined;
+	readonly authenticationType?: any;
 	readonly connectionString: any;
-	readonly credential?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly userName?: any | undefined;
+	readonly credential?: SecretBase;
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
+	readonly userName?: any;
 }
 export interface OracleLinkedServiceTypeProperties {
 	readonly connectionString: any;
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 }
 export interface OracleTableDatasetTypeProperties {
 	readonly tableName: any;
 }
 export interface ParameterDefinitionSpecification {
-	readonly "[ key: string ]"?: ParameterSpecification | undefined;
+	readonly [key: string]: ParameterSpecification;
 }
 export interface ParameterSpecification {
-	readonly defaultValue?: any | undefined;
+	readonly defaultValue?: any;
 	readonly type: "Array" | "Bool" | "Float" | "Int" | "Object" | "SecureString" | "String";
 }
 export interface ParameterValueSpecification {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface PaypalLinkedServiceTypeProperties {
 	readonly clientId: any;
-	readonly clientSecret?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly clientSecret?: SecretBase;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 }
 export interface PhoenixLinkedServiceTypeProperties {
-	readonly allowHostNameCNMismatch?: any | undefined;
-	readonly allowSelfSignedServerCert?: any | undefined;
+	readonly allowHostNameCNMismatch?: any;
+	readonly allowSelfSignedServerCert?: any;
 	readonly authenticationType: "Anonymous" | "UsernameAndPassword" | "WindowsAzureHDInsightService";
-	readonly enableSsl?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly enableSsl?: any;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly httpPath?: any | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
-	readonly trustedCertPath?: any | undefined;
-	readonly username?: any | undefined;
-	readonly useSystemTrustStore?: any | undefined;
+	readonly httpPath?: any;
+	readonly password?: SecretBase;
+	readonly port?: any;
+	readonly trustedCertPath?: any;
+	readonly username?: any;
+	readonly useSystemTrustStore?: any;
 }
 export interface Pipeline {
-	readonly activities?: Activity[] | undefined;
-	readonly annotations?: any[] | undefined;
-	readonly concurrency?: number | undefined;
-	readonly description?: string | undefined;
-	readonly parameters?: ParameterDefinitionSpecification | undefined;
+	readonly activities?: Activity[];
+	readonly annotations?: any[];
+	readonly concurrency?: number;
+	readonly description?: string;
+	readonly parameters?: ParameterDefinitionSpecification;
 }
 export interface PipelineReference {
-	readonly name?: string | undefined;
+	readonly name?: string;
 	readonly referenceName: string;
 	readonly type: "PipelineReference";
 }
 export interface PostgreSqlLinkedServiceTypeProperties {
 	readonly connectionString: SecretBase;
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 }
 export interface PrestoLinkedServiceTypeProperties {
-	readonly allowHostNameCNMismatch?: any | undefined;
-	readonly allowSelfSignedServerCert?: any | undefined;
+	readonly allowHostNameCNMismatch?: any;
+	readonly allowSelfSignedServerCert?: any;
 	readonly authenticationType: "Anonymous" | "LDAP";
 	readonly catalog: any;
-	readonly enableSsl?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly enableSsl?: any;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
+	readonly password?: SecretBase;
+	readonly port?: any;
 	readonly serverVersion: any;
-	readonly timeZoneID?: any | undefined;
-	readonly trustedCertPath?: any | undefined;
-	readonly username?: any | undefined;
-	readonly useSystemTrustStore?: any | undefined;
+	readonly timeZoneID?: any;
+	readonly trustedCertPath?: any;
+	readonly username?: any;
+	readonly useSystemTrustStore?: any;
 }
 export interface QuickBooksLinkedServiceTypeProperties {
 	readonly accessToken: SecretBase;
@@ -988,80 +988,80 @@ export interface QuickBooksLinkedServiceTypeProperties {
 	readonly companyId: any;
 	readonly consumerKey: any;
 	readonly consumerSecret: SecretBase;
-	readonly encryptedCredential?: any | undefined;
+	readonly encryptedCredential?: any;
 	readonly endpoint: any;
-	readonly useEncryptedEndpoints?: any | undefined;
+	readonly useEncryptedEndpoints?: any;
 }
 export interface RedirectIncompatibleRowSettings {
 	readonly linkedServiceName: any;
-	readonly path?: any | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly path?: any;
+	readonly [key: string]: any;
 }
 export interface RelationalTableDatasetTypeProperties {
-	readonly tableName?: any | undefined;
+	readonly tableName?: any;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResponsysLinkedServiceTypeProperties {
 	readonly clientId: any;
-	readonly clientSecret?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly clientSecret?: SecretBase;
+	readonly encryptedCredential?: any;
 	readonly endpoint: any;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 }
 export interface SalesforceLinkedServiceTypeProperties {
-	readonly encryptedCredential?: any | undefined;
-	readonly environmentUrl?: any | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly securityToken?: SecretBase | undefined;
-	readonly username?: any | undefined;
+	readonly encryptedCredential?: any;
+	readonly environmentUrl?: any;
+	readonly password?: SecretBase;
+	readonly securityToken?: SecretBase;
+	readonly username?: any;
 }
 export interface SalesforceMarketingCloudLinkedServiceTypeProperties {
 	readonly clientId: any;
-	readonly clientSecret?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly clientSecret?: SecretBase;
+	readonly encryptedCredential?: any;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 }
 export interface SalesforceObjectDatasetTypeProperties {
-	readonly objectApiName?: any | undefined;
+	readonly objectApiName?: any;
 }
 export interface SapBWLinkedServiceTypeProperties {
 	readonly clientId: any;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
 	readonly server: any;
 	readonly systemNumber: any;
-	readonly userName?: any | undefined;
+	readonly userName?: any;
 }
 export interface SapCloudForCustomerLinkedServiceTypeProperties {
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
 	readonly url: any;
-	readonly username?: any | undefined;
+	readonly username?: any;
 }
 export interface SapCloudForCustomerResourceDatasetTypeProperties {
 	readonly path: any;
 }
 export interface SapEccLinkedServiceTypeProperties {
-	readonly encryptedCredential?: string | undefined;
-	readonly password?: SecretBase | undefined;
+	readonly encryptedCredential?: string;
+	readonly password?: SecretBase;
 	readonly url: string;
-	readonly username?: string | undefined;
+	readonly username?: string;
 }
 export interface SapEccResourceDatasetTypeProperties {
 	readonly path: any;
 }
 export interface SapHanaLinkedServiceProperties {
-	readonly authenticationType?: ("Basic" | "Windows") | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
+	readonly authenticationType?: "Basic" | "Windows";
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
 	readonly server: any;
-	readonly userName?: any | undefined;
+	readonly userName?: any;
 }
 export interface SecretBase {}
 export interface SecureString {
@@ -1070,80 +1070,78 @@ export interface SecureString {
 }
 export interface ServiceNowLinkedServiceTypeProperties {
 	readonly authenticationType: "Basic" | "OAuth2";
-	readonly clientId?: any | undefined;
-	readonly clientSecret?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly clientId?: any;
+	readonly clientSecret?: SecretBase;
+	readonly encryptedCredential?: any;
 	readonly endpoint: any;
-	readonly password?: SecretBase | undefined;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
-	readonly username?: any | undefined;
+	readonly password?: SecretBase;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
+	readonly username?: any;
 }
 export interface SftpServerLinkedServiceTypeProperties {
-	readonly authenticationType?: ("Basic" | "SshPublicKey") | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly authenticationType?: "Basic" | "SshPublicKey";
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly hostKeyFingerprint?: any | undefined;
-	readonly passPhrase?: SecretBase | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly port?: any | undefined;
-	readonly privateKeyContent?: SecretBase | undefined;
-	readonly privateKeyPath?: any | undefined;
-	readonly skipHostKeyValidation?: any | undefined;
-	readonly userName?: any | undefined;
+	readonly hostKeyFingerprint?: any;
+	readonly passPhrase?: SecretBase;
+	readonly password?: SecretBase;
+	readonly port?: any;
+	readonly privateKeyContent?: SecretBase;
+	readonly privateKeyPath?: any;
+	readonly skipHostKeyValidation?: any;
+	readonly userName?: any;
 }
 export interface ShopifyLinkedServiceTypeProperties {
-	readonly accessToken?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly accessToken?: SecretBase;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 }
 export interface SparkLinkedServiceTypeProperties {
-	readonly allowHostNameCNMismatch?: any | undefined;
-	readonly allowSelfSignedServerCert?: any | undefined;
+	readonly allowHostNameCNMismatch?: any;
+	readonly allowSelfSignedServerCert?: any;
 	readonly authenticationType: "Anonymous" | "Username" | "UsernameAndPassword" | "WindowsAzureHDInsightService";
-	readonly enableSsl?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly enableSsl?: any;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly httpPath?: any | undefined;
-	readonly password?: SecretBase | undefined;
+	readonly httpPath?: any;
+	readonly password?: SecretBase;
 	readonly port: any;
-	readonly serverType?: ("SharkServer" | "SharkServer2" | "SparkThriftServer") | undefined;
-	readonly thriftTransportProtocol?: ("Binary" | "HTTP" | "SASL") | undefined;
-	readonly trustedCertPath?: any | undefined;
-	readonly username?: any | undefined;
-	readonly useSystemTrustStore?: any | undefined;
+	readonly serverType?: "SharkServer" | "SharkServer2" | "SparkThriftServer";
+	readonly thriftTransportProtocol?: "Binary" | "HTTP" | "SASL";
+	readonly trustedCertPath?: any;
+	readonly username?: any;
+	readonly useSystemTrustStore?: any;
 }
 export interface SqlServerLinkedServiceTypeProperties {
 	readonly connectionString: any;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly userName?: any | undefined;
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
+	readonly userName?: any;
 }
 export interface SqlServerStoredProcedureActivityTypeProperties {
 	readonly storedProcedureName: any;
-	readonly storedProcedureParameters?:
-		| SqlServerStoredProcedureActivityTypePropertiesStoredProcedureParameters
-		| undefined;
+	readonly storedProcedureParameters?: SqlServerStoredProcedureActivityTypePropertiesStoredProcedureParameters;
 }
 export interface SqlServerStoredProcedureActivityTypePropertiesStoredProcedureParameters {
-	readonly "[ key: string ]"?: StoredProcedureParameter | undefined;
+	readonly [key: string]: StoredProcedureParameter;
 }
 export interface SqlServerTableDatasetTypeProperties {
 	readonly tableName: any;
 }
 export interface SquareLinkedServiceTypeProperties {
 	readonly clientId: any;
-	readonly clientSecret?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly clientSecret?: SecretBase;
+	readonly encryptedCredential?: any;
 	readonly host: any;
 	readonly redirectUri: any;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 }
 export interface SsisAccessCredential {
 	readonly domain: any;
@@ -1151,7 +1149,7 @@ export interface SsisAccessCredential {
 	readonly userName: any;
 }
 export interface SsisConnectionManager {
-	readonly "[ key: string ]"?: SsisExecutionParameter | undefined;
+	readonly [key: string]: SsisExecutionParameter;
 }
 export interface SsisExecutionCredential {
 	readonly domain: any;
@@ -1167,83 +1165,83 @@ export interface SsisLogLocation {
 	readonly typeProperties: SsisLogLocationTypeProperties;
 }
 export interface SsisLogLocationTypeProperties {
-	readonly accessCredential?: SsisAccessCredential | undefined;
-	readonly logRefreshInterval?: any | undefined;
+	readonly accessCredential?: SsisAccessCredential;
+	readonly logRefreshInterval?: any;
 }
 export interface SsisPackageLocation {
 	readonly packagePath: any;
-	readonly type?: ("File" | "SSISDB") | undefined;
-	readonly typeProperties?: SsisPackageLocationTypeProperties | undefined;
+	readonly type?: "File" | "SSISDB";
+	readonly typeProperties?: SsisPackageLocationTypeProperties;
 }
 export interface SsisPackageLocationTypeProperties {
-	readonly accessCredential?: SsisAccessCredential | undefined;
-	readonly configurationPath?: any | undefined;
-	readonly packagePassword?: SecretBase | undefined;
+	readonly accessCredential?: SsisAccessCredential;
+	readonly configurationPath?: any;
+	readonly packagePassword?: SecretBase;
 }
 export interface SsisPropertyOverride {
-	readonly isSensitive?: boolean | undefined;
+	readonly isSensitive?: boolean;
 	readonly value: any;
 }
 export interface StagingSettings {
-	readonly enableCompression?: any | undefined;
+	readonly enableCompression?: any;
 	readonly linkedServiceName: LinkedServiceReference;
-	readonly path?: any | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly path?: any;
+	readonly [key: string]: any;
 }
 export interface StoredProcedureParameter {
-	readonly type?: ("Boolean" | "Date" | "Decimal" | "Guid" | "Int" | "Int64" | "String") | undefined;
+	readonly type?: "Boolean" | "Date" | "Decimal" | "Guid" | "Int" | "Int64" | "String";
 	readonly value: any;
 }
 export interface SybaseLinkedServiceTypeProperties {
-	readonly authenticationType?: ("Basic" | "Windows") | undefined;
+	readonly authenticationType?: "Basic" | "Windows";
 	readonly database: any;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
-	readonly schema?: any | undefined;
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
+	readonly schema?: any;
 	readonly server: any;
-	readonly username?: any | undefined;
+	readonly username?: any;
 }
 export interface TeradataLinkedServiceTypeProperties {
-	readonly authenticationType?: ("Basic" | "Windows") | undefined;
-	readonly encryptedCredential?: any | undefined;
-	readonly password?: SecretBase | undefined;
+	readonly authenticationType?: "Basic" | "Windows";
+	readonly encryptedCredential?: any;
+	readonly password?: SecretBase;
 	readonly server: any;
-	readonly username?: any | undefined;
+	readonly username?: any;
 }
 export interface Trigger {
-	readonly description?: string | undefined;
-	readonly runtimeState?: ("Disabled" | "Started" | "Stopped") | undefined;
+	readonly description?: string;
+	readonly runtimeState?: "Disabled" | "Started" | "Stopped";
 }
 export interface TriggerPipelineReference {
-	readonly parameters?: ParameterValueSpecification | undefined;
-	readonly pipelineReference?: PipelineReference | undefined;
+	readonly parameters?: ParameterValueSpecification;
+	readonly pipelineReference?: PipelineReference;
 }
 export interface UntilActivityTypeProperties {
 	readonly activities: Activity[];
 	readonly expression: Expression;
-	readonly timeout?: any | undefined;
+	readonly timeout?: any;
 }
 export interface VerticaLinkedServiceTypeProperties {
-	readonly connectionString?: any | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly connectionString?: any;
+	readonly encryptedCredential?: any;
 }
 export interface WaitActivityTypeProperties {
 	readonly waitTimeInSeconds: number;
 }
 export interface WebActivityAuthentication {
-	readonly password?: SecureString | undefined;
-	readonly pfx?: SecureString | undefined;
-	readonly resource?: string | undefined;
+	readonly password?: SecureString;
+	readonly pfx?: SecureString;
+	readonly resource?: string;
 	readonly type: string;
-	readonly username?: string | undefined;
+	readonly username?: string;
 }
 export interface WebActivityTypeProperties {
-	readonly authentication?: WebActivityAuthentication | undefined;
-	readonly body?: any | undefined;
-	readonly datasets?: DatasetReference[] | undefined;
-	readonly disableCertValidation?: boolean | undefined;
-	readonly headers?: any | undefined;
-	readonly linkedServices?: LinkedServiceReference[] | undefined;
+	readonly authentication?: WebActivityAuthentication;
+	readonly body?: any;
+	readonly datasets?: DatasetReference[];
+	readonly disableCertValidation?: boolean;
+	readonly headers?: any;
+	readonly linkedServices?: LinkedServiceReference[];
 	readonly method: "DELETE" | "GET" | "POST" | "PUT";
 	readonly url: any;
 }
@@ -1252,24 +1250,24 @@ export interface WebLinkedServiceTypeProperties {
 }
 export interface WebTableDatasetTypeProperties {
 	readonly index: any;
-	readonly path?: any | undefined;
+	readonly path?: any;
 }
 export interface XeroLinkedServiceTypeProperties {
-	readonly consumerKey?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly consumerKey?: SecretBase;
+	readonly encryptedCredential?: any;
 	readonly host: any;
-	readonly privateKey?: SecretBase | undefined;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly privateKey?: SecretBase;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 }
 export interface ZohoLinkedServiceTypeProperties {
-	readonly accessToken?: SecretBase | undefined;
-	readonly encryptedCredential?: any | undefined;
+	readonly accessToken?: SecretBase;
+	readonly encryptedCredential?: any;
 	readonly endpoint: any;
-	readonly useEncryptedEndpoints?: any | undefined;
-	readonly useHostVerification?: any | undefined;
-	readonly usePeerVerification?: any | undefined;
+	readonly useEncryptedEndpoints?: any;
+	readonly useHostVerification?: any;
+	readonly usePeerVerification?: any;
 }
 export default {
 	factories: factories,

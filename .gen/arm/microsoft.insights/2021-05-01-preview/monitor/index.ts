@@ -20,8 +20,8 @@ export interface autoscalesettingsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: AutoscaleSetting;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: AutoscaleSettingResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: AutoscaleSettingResourceTags;
 }
 export class diagnosticSettings
 	extends ArmResource<diagnosticSettingsComponentInputs>
@@ -41,8 +41,8 @@ export interface diagnosticSettingsComponentOutputs {
 }
 export interface diagnosticSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: DiagnosticSettings | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DiagnosticSettings;
+	readonly systemData?: SystemData;
 }
 export class diagnosticSettingsCategories
 	extends ArmResource<diagnosticSettingsCategoriesComponentInputs>
@@ -62,71 +62,71 @@ export interface diagnosticSettingsCategoriesComponentOutputs {
 }
 export interface diagnosticSettingsCategoriesComponentInputs {
 	readonly name: string;
-	readonly properties?: DiagnosticSettingsCategory | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DiagnosticSettingsCategory;
+	readonly systemData?: SystemData;
 }
 export interface AutoscaleNotification {
-	readonly email?: EmailNotification | undefined;
+	readonly email?: EmailNotification;
 	readonly operation: "Scale";
-	readonly webhooks?: WebhookNotification[] | undefined;
+	readonly webhooks?: WebhookNotification[];
 }
 export interface AutoscaleProfile {
 	readonly capacity: ScaleCapacity;
-	readonly fixedDate?: TimeWindow | undefined;
+	readonly fixedDate?: TimeWindow;
 	readonly name: string;
-	readonly recurrence?: Recurrence | undefined;
+	readonly recurrence?: Recurrence;
 	readonly rules: ScaleRule[];
 }
 export interface AutoscaleSetting {
-	readonly enabled?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly notifications?: AutoscaleNotification[] | undefined;
-	readonly predictiveAutoscalePolicy?: PredictiveAutoscalePolicy | undefined;
+	readonly enabled?: boolean;
+	readonly name?: string;
+	readonly notifications?: AutoscaleNotification[];
+	readonly predictiveAutoscalePolicy?: PredictiveAutoscalePolicy;
 	readonly profiles: AutoscaleProfile[];
-	readonly targetResourceLocation?: string | undefined;
-	readonly targetResourceUri?: string | undefined;
+	readonly targetResourceLocation?: string;
+	readonly targetResourceUri?: string;
 }
 export interface AutoscaleSettingResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DiagnosticSettings {
-	readonly eventHubAuthorizationRuleId?: string | undefined;
-	readonly eventHubName?: string | undefined;
-	readonly logAnalyticsDestinationType?: string | undefined;
-	readonly logs?: LogSettings[] | undefined;
-	readonly marketplacePartnerId?: string | undefined;
-	readonly metrics?: MetricSettings[] | undefined;
-	readonly serviceBusRuleId?: string | undefined;
-	readonly storageAccountId?: string | undefined;
-	readonly workspaceId?: string | undefined;
+	readonly eventHubAuthorizationRuleId?: string;
+	readonly eventHubName?: string;
+	readonly logAnalyticsDestinationType?: string;
+	readonly logs?: LogSettings[];
+	readonly marketplacePartnerId?: string;
+	readonly metrics?: MetricSettings[];
+	readonly serviceBusRuleId?: string;
+	readonly storageAccountId?: string;
+	readonly workspaceId?: string;
 }
 export interface DiagnosticSettingsCategory {
-	readonly categoryGroups?: string[] | undefined;
-	readonly categoryType?: ("Logs" | "Metrics") | undefined;
+	readonly categoryGroups?: string[];
+	readonly categoryType?: "Logs" | "Metrics";
 }
 export interface EmailNotification {
-	readonly customEmails?: string[] | undefined;
-	readonly sendToSubscriptionAdministrator?: boolean | undefined;
-	readonly sendToSubscriptionCoAdministrators?: boolean | undefined;
+	readonly customEmails?: string[];
+	readonly sendToSubscriptionAdministrator?: boolean;
+	readonly sendToSubscriptionCoAdministrators?: boolean;
 }
 export interface LogSettings {
-	readonly category?: string | undefined;
-	readonly categoryGroup?: string | undefined;
+	readonly category?: string;
+	readonly categoryGroup?: string;
 	readonly enabled: boolean;
-	readonly retentionPolicy?: RetentionPolicy | undefined;
+	readonly retentionPolicy?: RetentionPolicy;
 }
 export interface MetricSettings {
-	readonly category?: string | undefined;
+	readonly category?: string;
 	readonly enabled: boolean;
-	readonly retentionPolicy?: RetentionPolicy | undefined;
-	readonly timeGrain?: string | undefined;
+	readonly retentionPolicy?: RetentionPolicy;
+	readonly timeGrain?: string;
 }
 export interface MetricTrigger {
-	readonly dimensions?: ScaleRuleMetricDimension[] | undefined;
-	readonly dividePerInstance?: boolean | undefined;
+	readonly dimensions?: ScaleRuleMetricDimension[];
+	readonly dividePerInstance?: boolean;
 	readonly metricName: string;
-	readonly metricNamespace?: string | undefined;
-	readonly metricResourceLocation?: string | undefined;
+	readonly metricNamespace?: string;
+	readonly metricResourceLocation?: string;
 	readonly metricResourceUri: string;
 	readonly operator: "Equals" | "GreaterThan" | "GreaterThanOrEqual" | "LessThan" | "LessThanOrEqual";
 	readonly statistic: "Average" | "Count" | "Max" | "Min";
@@ -136,7 +136,7 @@ export interface MetricTrigger {
 	readonly timeWindow: string;
 }
 export interface PredictiveAutoscalePolicy {
-	readonly scaleLookAheadTime?: string | undefined;
+	readonly scaleLookAheadTime?: string;
 	readonly scaleMode: "Disabled" | "Enabled";
 }
 export interface Recurrence {
@@ -157,7 +157,7 @@ export interface ScaleAction {
 	readonly cooldown: string;
 	readonly direction: "Decrease" | "Increase";
 	readonly type: "ChangeCount" | "ExactCount" | "PercentChangeCount";
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface ScaleCapacity {
 	readonly default: string;
@@ -174,24 +174,24 @@ export interface ScaleRuleMetricDimension {
 	readonly Values: string[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TimeWindow {
 	readonly end: string;
 	readonly start: string;
-	readonly timeZone?: string | undefined;
+	readonly timeZone?: string;
 }
 export interface WebhookNotification {
-	readonly properties?: WebhookNotificationProperties | undefined;
-	readonly serviceUri?: string | undefined;
+	readonly properties?: WebhookNotificationProperties;
+	readonly serviceUri?: string;
 }
 export interface WebhookNotificationProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	autoscalesettings: autoscalesettings,

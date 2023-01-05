@@ -18,16 +18,16 @@ export interface components_pricingPlansComponentOutputs {
 }
 export interface components_pricingPlansComponentInputs {
 	readonly name: string;
-	readonly properties?: PricingPlanProperties | undefined;
+	readonly properties?: PricingPlanProperties;
 }
 export interface PricingPlanProperties {
-	readonly cap?: number | undefined;
-	readonly maxHistoryCap?: number | undefined;
-	readonly planType?: string | undefined;
-	readonly resetHour?: number | undefined;
-	readonly stopSendNotificationWhenHitCap?: boolean | undefined;
-	readonly stopSendNotificationWhenHitThreshold?: boolean | undefined;
-	readonly warningThreshold?: number | undefined;
+	readonly cap?: number;
+	readonly maxHistoryCap?: number;
+	readonly planType?: string;
+	readonly resetHour?: number;
+	readonly stopSendNotificationWhenHitCap?: boolean;
+	readonly stopSendNotificationWhenHitThreshold?: boolean;
+	readonly warningThreshold?: number;
 }
 export default {
 	"components/pricingPlans": components_pricingPlans,

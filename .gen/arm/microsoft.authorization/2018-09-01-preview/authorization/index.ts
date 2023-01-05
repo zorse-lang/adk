@@ -21,11 +21,11 @@ export interface roleAssignmentsComponentInputs {
 	readonly properties: RoleAssignmentPropertiesOrRoleAssignmentPropertiesWithScope;
 }
 export interface RoleAssignmentPropertiesOrRoleAssignmentPropertiesWithScope {
-	readonly canDelegate?: boolean | undefined;
+	readonly canDelegate?: boolean;
 	readonly principalId: string;
-	readonly principalType?: ("ForeignGroup" | "Group" | "ServicePrincipal" | "User") | undefined;
+	readonly principalType?: "ForeignGroup" | "Group" | "ServicePrincipal" | "User";
 	readonly roleDefinitionId: string;
-	readonly scope?: string | undefined;
+	readonly scope?: string;
 }
 export default {
 	roleAssignments: roleAssignments,

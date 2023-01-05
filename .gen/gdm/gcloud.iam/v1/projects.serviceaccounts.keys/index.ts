@@ -10,33 +10,32 @@ export class ProjectsServiceAccountsKeys
 }
 export interface ProjectsServiceAccountsKeysComponentOutputs {}
 export interface ProjectsServiceAccountsKeysComponentInputs {
-	readonly disabled?: boolean | undefined;
-	readonly keyAlgorithm?: string | undefined;
-	readonly keyOrigin?: string | undefined;
-	readonly keyType?: string | undefined;
+	readonly disabled?: boolean;
+	readonly keyAlgorithm?: string;
+	readonly keyOrigin?: string;
+	readonly keyType?: string;
 	readonly name: string;
-	readonly privateKeyData?: string | undefined;
-	readonly privateKeyType?: string | undefined;
-	readonly publicKeyData?: string | undefined;
-	readonly validAfterTime?: string | undefined;
-	readonly validBeforeTime?: string | undefined;
-	readonly type: string;
+	readonly privateKeyData?: string;
+	readonly privateKeyType?: string;
+	readonly publicKeyData?: string;
+	readonly validAfterTime?: string;
+	readonly validBeforeTime?: string;
 }
 export interface CreateServiceAccountKeyRequest {
-	readonly keyAlgorithm?: string | undefined;
-	readonly privateKeyType?: string | undefined;
+	readonly keyAlgorithm?: string;
+	readonly privateKeyType?: string;
 }
 export interface ServiceAccountKey {
-	readonly disabled?: boolean | undefined;
-	readonly keyAlgorithm?: string | undefined;
-	readonly keyOrigin?: string | undefined;
-	readonly keyType?: string | undefined;
-	readonly name?: string | undefined;
-	readonly privateKeyData?: string | undefined;
-	readonly privateKeyType?: string | undefined;
-	readonly publicKeyData?: string | undefined;
-	readonly validAfterTime?: string | undefined;
-	readonly validBeforeTime?: string | undefined;
+	readonly disabled?: boolean;
+	readonly keyAlgorithm?: string;
+	readonly keyOrigin?: string;
+	readonly keyType?: string;
+	readonly name?: string;
+	readonly privateKeyData?: string;
+	readonly privateKeyType?: string;
+	readonly publicKeyData?: string;
+	readonly validAfterTime?: string;
+	readonly validBeforeTime?: string;
 }
 export default {
 	ProjectsServiceAccountsKeys: ProjectsServiceAccountsKeys,

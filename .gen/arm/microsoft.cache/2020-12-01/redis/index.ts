@@ -17,8 +17,8 @@ export interface redisComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: RedisCreatePropertiesOrRedisProperties;
-	readonly tags?: RedisCreateParametersTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly tags?: RedisCreateParametersTags;
+	readonly zones?: string[];
 }
 export class redis_firewallRules
 	extends ArmResource<redis_firewallRulesComponentInputs>
@@ -77,7 +77,7 @@ export interface redis_patchSchedulesComponentOutputs {
 	readonly type: "Microsoft.Cache/redis/patchSchedules";
 }
 export interface redis_patchSchedulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ScheduleEntries;
 }
@@ -99,7 +99,7 @@ export interface redis_privateEndpointConnectionsComponentOutputs {
 }
 export interface redis_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export function listKeys(resource: redis): RedisAccessKeys {
 	if (resource.apiVersion !== "2020-12-01") {
@@ -111,107 +111,104 @@ export function listKeys(resource: redis): RedisAccessKeys {
 	throw new Error("not implemented");
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface RedisAccessKeys {
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface RedisCommonPropertiesRedisConfiguration {
-	readonly "aof-backup-enabled"?: string | undefined;
-	readonly "aof-storage-connection-string-0"?: string | undefined;
-	readonly "aof-storage-connection-string-1"?: string | undefined;
-	readonly authnotrequired?: string | undefined;
-	readonly maxclients?: string | undefined;
-	readonly "maxfragmentationmemory-reserved"?: string | undefined;
-	readonly "maxmemory-delta"?: string | undefined;
-	readonly "maxmemory-policy"?: string | undefined;
-	readonly "maxmemory-reserved"?: string | undefined;
-	readonly "rdb-backup-enabled"?: string | undefined;
-	readonly "rdb-backup-frequency"?: string | undefined;
-	readonly "rdb-backup-max-snapshot-count"?: string | undefined;
-	readonly "rdb-storage-connection-string"?: string | undefined;
-	readonly "zonal-configuration"?: string | undefined;
-	readonly "[ key: string ]"?: string | undefined;
+	readonly "aof-backup-enabled"?: string;
+	readonly "aof-storage-connection-string-0"?: string;
+	readonly "aof-storage-connection-string-1"?: string;
+	readonly authnotrequired?: string;
+	readonly maxclients?: string;
+	readonly "maxfragmentationmemory-reserved"?: string;
+	readonly "maxmemory-delta"?: string;
+	readonly "maxmemory-policy"?: string;
+	readonly "maxmemory-reserved"?: string;
+	readonly "rdb-backup-enabled"?: string;
+	readonly "rdb-backup-frequency"?: string;
+	readonly "rdb-backup-max-snapshot-count"?: string;
+	readonly "rdb-storage-connection-string"?: string;
+	readonly "zonal-configuration"?: string;
+	readonly [key: string]: any;
 }
 export interface RedisCommonPropertiesTenantSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RedisCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RedisCreatePropertiesOrRedisProperties {
-	readonly accessKeys?: RedisAccessKeys | undefined;
-	readonly enableNonSslPort?: boolean | undefined;
-	readonly hostName?: string | undefined;
-	readonly instances?: RedisInstanceDetails[] | undefined;
-	readonly linkedServers?: RedisLinkedServer[] | undefined;
-	readonly minimumTlsVersion?: ("1.0" | "1.1" | "1.2") | undefined;
-	readonly port?: number | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
+	readonly accessKeys?: RedisAccessKeys;
+	readonly enableNonSslPort?: boolean;
+	readonly hostName?: string;
+	readonly instances?: RedisInstanceDetails[];
+	readonly linkedServers?: RedisLinkedServer[];
+	readonly minimumTlsVersion?: "1.0" | "1.1" | "1.2";
+	readonly port?: number;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
 	readonly provisioningState?:
-		| (
-				| "Creating"
-				| "Deleting"
-				| "Disabled"
-				| "Failed"
-				| "Linking"
-				| "Provisioning"
-				| "RecoveringScaleFailure"
-				| "Scaling"
-				| "Succeeded"
-				| "Unlinking"
-				| "Unprovisioning"
-				| "Updating"
-		  )
-		| undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly redisConfiguration?: RedisCommonPropertiesRedisConfiguration | undefined;
-	readonly redisVersion?: string | undefined;
-	readonly replicasPerMaster?: number | undefined;
-	readonly replicasPerPrimary?: number | undefined;
-	readonly shardCount?: number | undefined;
+		| "Creating"
+		| "Deleting"
+		| "Disabled"
+		| "Failed"
+		| "Linking"
+		| "Provisioning"
+		| "RecoveringScaleFailure"
+		| "Scaling"
+		| "Succeeded"
+		| "Unlinking"
+		| "Unprovisioning"
+		| "Updating";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly redisConfiguration?: RedisCommonPropertiesRedisConfiguration;
+	readonly redisVersion?: string;
+	readonly replicasPerMaster?: number;
+	readonly replicasPerPrimary?: number;
+	readonly shardCount?: number;
 	readonly sku: Sku;
-	readonly sslPort?: number | undefined;
-	readonly staticIP?: string | undefined;
-	readonly subnetId?: string | undefined;
-	readonly tenantSettings?: RedisCommonPropertiesTenantSettings | undefined;
+	readonly sslPort?: number;
+	readonly staticIP?: string;
+	readonly subnetId?: string;
+	readonly tenantSettings?: RedisCommonPropertiesTenantSettings;
 }
 export interface RedisFirewallRuleProperties {
 	readonly endIP: string;
 	readonly startIP: string;
 }
 export interface RedisInstanceDetails {
-	readonly isMaster?: boolean | undefined;
-	readonly isPrimary?: boolean | undefined;
-	readonly nonSslPort?: number | undefined;
-	readonly shardId?: number | undefined;
-	readonly sslPort?: number | undefined;
-	readonly zone?: string | undefined;
+	readonly isMaster?: boolean;
+	readonly isPrimary?: boolean;
+	readonly nonSslPort?: number;
+	readonly shardId?: number;
+	readonly sslPort?: number;
+	readonly zone?: string;
 }
 export interface RedisLinkedServer {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface RedisLinkedServerCreatePropertiesOrRedisLinkedServerProperties {
 	readonly linkedRedisCacheId: string;
 	readonly linkedRedisCacheLocation: string;
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 	readonly serverRole: "Primary";
 }
 export interface ScheduleEntries {
@@ -219,7 +216,7 @@ export interface ScheduleEntries {
 }
 export interface ScheduleEntry {
 	readonly dayOfWeek: "Everyday" | "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday";
-	readonly maintenanceWindow?: string | undefined;
+	readonly maintenanceWindow?: string;
 	readonly startHourUtc: number;
 }
 export interface Sku {

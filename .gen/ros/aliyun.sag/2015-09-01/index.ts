@@ -42,12 +42,12 @@ export interface ACLRuleComponentInputs {
 	readonly Policy: string;
 	readonly SourceCidr: string;
 	readonly SourcePortRange: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DpiGroupIds?: (string[] | undefined) | undefined;
-	readonly DpiSignatureIds?: (string[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DpiGroupIds?: string[] | undefined;
+	readonly DpiSignatureIds?: string[] | undefined;
+	readonly Name?: string | undefined;
+	readonly Priority?: number | undefined;
+	readonly Type?: string | undefined;
 	readonly LogicalId: string;
 }
 export class App extends RosResource<AppComponentInputs> implements AppComponentOutputs {
@@ -66,7 +66,7 @@ export interface AppComponentInputs {
 	readonly DataPlan: number;
 	readonly Period: number;
 	readonly UserCount: number;
-	readonly ChargeType?: (string | undefined) | undefined;
+	readonly ChargeType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class AppUser extends RosResource<AppUserComponentInputs> implements AppUserComponentOutputs {
@@ -82,10 +82,10 @@ export interface AppUserComponentInputs {
 	readonly Bandwidth: number;
 	readonly SmartAGId: string;
 	readonly UserMail: string;
-	readonly ClientIp?: (string | undefined) | undefined;
-	readonly Disable?: (boolean | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly UserName?: (any | string) | undefined;
+	readonly ClientIp?: string | undefined;
+	readonly Disable?: boolean | undefined;
+	readonly Password?: string | undefined;
+	readonly UserName?: any | string;
 	readonly LogicalId: string;
 }
 export class CloudConnectNetwork
@@ -101,10 +101,10 @@ export interface CloudConnectNetworkComponentOutputs {
 	readonly CcnId: any;
 }
 export interface CloudConnectNetworkComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly IsDefault?: (boolean | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly IsDefault?: boolean | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class GrantCcnToCen extends RosResource<GrantCcnToCenComponentInputs> implements GrantCcnToCenComponentOutputs {
@@ -130,7 +130,7 @@ export interface QosComponentOutputs {
 }
 export interface QosComponentInputs {
 	readonly QosName: string;
-	readonly QosDescription?: (string | undefined) | undefined;
+	readonly QosDescription?: string | undefined;
 	readonly LogicalId: string;
 }
 export class QosAssociation extends RosResource<QosAssociationComponentInputs> implements QosAssociationComponentOutputs {
@@ -160,13 +160,13 @@ export interface QosCarComponentInputs {
 	readonly LimitType: string;
 	readonly Priority: number;
 	readonly QosId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly MaxBandwidthAbs?: (number | undefined) | undefined;
-	readonly MaxBandwidthPercent?: (number | undefined) | undefined;
-	readonly MinBandwidthAbs?: (number | undefined) | undefined;
-	readonly MinBandwidthPercent?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly PercentSourceType?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly MaxBandwidthAbs?: number | undefined;
+	readonly MaxBandwidthPercent?: number | undefined;
+	readonly MinBandwidthAbs?: number | undefined;
+	readonly MinBandwidthPercent?: number | undefined;
+	readonly Name?: string | undefined;
+	readonly PercentSourceType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class QosPolicy extends RosResource<QosPolicyComponentInputs> implements QosPolicyComponentOutputs {
@@ -186,12 +186,12 @@ export interface QosPolicyComponentInputs {
 	readonly QosId: string;
 	readonly SourceCidr: string;
 	readonly SourcePortRange: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DpiGroupIds?: (string[] | undefined) | undefined;
-	readonly DpiSignatureIds?: (string[] | undefined) | undefined;
-	readonly EndTime?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly StartTime?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DpiGroupIds?: string[] | undefined;
+	readonly DpiSignatureIds?: string[] | undefined;
+	readonly EndTime?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly StartTime?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SerialNumberBinding
@@ -242,15 +242,15 @@ export interface SmartAccessGatewayComponentInputs {
 	readonly ReceiverState: string;
 	readonly ReceiverTown: string;
 	readonly ReceiverZip: string;
-	readonly Activate?: (boolean | undefined) | undefined;
-	readonly AlreadyHaveSag?: (boolean | undefined) | undefined;
-	readonly AutoPay?: (boolean | undefined) | undefined;
-	readonly CidrBlock?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly ReceiverPhone?: (string | undefined) | undefined;
-	readonly RoutingStrategy?: (string | undefined) | undefined;
-	readonly SecurityLockThreshold?: (number | undefined) | undefined;
+	readonly Activate?: boolean | undefined;
+	readonly AlreadyHaveSag?: boolean | undefined;
+	readonly AutoPay?: boolean | undefined;
+	readonly CidrBlock?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly ReceiverPhone?: string | undefined;
+	readonly RoutingStrategy?: string | undefined;
+	readonly SecurityLockThreshold?: number | undefined;
 	readonly LogicalId: string;
 }
 export class SmartAccessGatewayBinding
@@ -271,7 +271,7 @@ export interface SmartAccessGatewayBindingComponentInputs {
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export default {

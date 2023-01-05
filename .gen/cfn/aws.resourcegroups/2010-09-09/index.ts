@@ -11,33 +11,33 @@ export interface GroupComponentOutputs {
 }
 export interface GroupComponentInputs {
 	readonly Name: string;
-	readonly Configuration?: (ConfigurationItem[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ResourceQuery?: (ResourceQuery | undefined) | undefined;
-	readonly Resources?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Configuration?: ConfigurationItem[] | undefined;
+	readonly Description?: string | undefined;
+	readonly ResourceQuery?: ResourceQuery | undefined;
+	readonly Resources?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface ConfigurationItem {
-	readonly Parameters?: (ConfigurationParameter[] | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Parameters?: ConfigurationParameter[] | undefined;
+	readonly Type?: string | undefined;
 }
 export interface ConfigurationParameter {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Values?: (string[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Values?: string[] | undefined;
 }
 export interface Query {
-	readonly ResourceTypeFilters?: (string[] | undefined) | undefined;
-	readonly StackIdentifier?: (string | undefined) | undefined;
-	readonly TagFilters?: (TagFilter[] | undefined) | undefined;
+	readonly ResourceTypeFilters?: string[] | undefined;
+	readonly StackIdentifier?: string | undefined;
+	readonly TagFilters?: TagFilter[] | undefined;
 }
 export interface ResourceQuery {
-	readonly Query?: (Query | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Query?: Query | undefined;
+	readonly Type?: string | undefined;
 }
 export interface TagFilter {
-	readonly Key?: (string | undefined) | undefined;
-	readonly Values?: (string[] | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Values?: string[] | undefined;
 }
 export default {
 	Group: Group,

@@ -24,44 +24,44 @@ export interface sourceControlConfigurationsComponentOutputs {
 }
 export interface sourceControlConfigurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: SourceControlConfigurationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SourceControlConfigurationProperties;
+	readonly systemData?: SystemData;
 }
 export interface ComplianceStatus {
-	readonly complianceState?: ("Compliant" | "Failed" | "Installed" | "Noncompliant" | "Pending") | undefined;
-	readonly lastConfigApplied?: string | undefined;
-	readonly message?: string | undefined;
-	readonly messageLevel?: ("Error" | "Information" | "Warning") | undefined;
+	readonly complianceState?: "Compliant" | "Failed" | "Installed" | "Noncompliant" | "Pending";
+	readonly lastConfigApplied?: string;
+	readonly message?: string;
+	readonly messageLevel?: "Error" | "Information" | "Warning";
 }
 export interface ConfigurationProtectedSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface HelmOperatorProperties {
-	readonly chartValues?: string | undefined;
-	readonly chartVersion?: string | undefined;
+	readonly chartValues?: string;
+	readonly chartVersion?: string;
 }
 export interface SourceControlConfigurationProperties {
-	readonly complianceStatus?: ComplianceStatus | undefined;
-	readonly configurationProtectedSettings?: ConfigurationProtectedSettings | undefined;
-	readonly enableHelmOperator?: boolean | undefined;
-	readonly helmOperatorProperties?: HelmOperatorProperties | undefined;
-	readonly operatorInstanceName?: string | undefined;
-	readonly operatorNamespace?: string | undefined;
-	readonly operatorParams?: string | undefined;
-	readonly operatorScope?: ("cluster" | "namespace") | undefined;
-	readonly operatorType?: "Flux" | undefined;
-	readonly provisioningState?: ("Accepted" | "Deleting" | "Failed" | "Running" | "Succeeded") | undefined;
-	readonly repositoryPublicKey?: string | undefined;
-	readonly repositoryUrl?: string | undefined;
-	readonly sshKnownHostsContents?: string | undefined;
+	readonly complianceStatus?: ComplianceStatus;
+	readonly configurationProtectedSettings?: ConfigurationProtectedSettings;
+	readonly enableHelmOperator?: boolean;
+	readonly helmOperatorProperties?: HelmOperatorProperties;
+	readonly operatorInstanceName?: string;
+	readonly operatorNamespace?: string;
+	readonly operatorParams?: string;
+	readonly operatorScope?: "cluster" | "namespace";
+	readonly operatorType?: "Flux";
+	readonly provisioningState?: "Accepted" | "Deleting" | "Failed" | "Running" | "Succeeded";
+	readonly repositoryPublicKey?: string;
+	readonly repositoryUrl?: string;
+	readonly sshKnownHostsContents?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: string | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: string | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: string;
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: string;
 }
 export default {
 	sourceControlConfigurations: sourceControlConfigurations,

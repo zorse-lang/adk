@@ -7,7 +7,6 @@ export class IamPolicies extends GdmResource<IamPoliciesComponentInputs> impleme
 }
 export interface IamPoliciesComponentOutputs {}
 export interface IamPoliciesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

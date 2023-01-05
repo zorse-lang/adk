@@ -11,9 +11,9 @@ export interface MemberComponentOutputs {
 }
 export interface MemberComponentInputs {
 	readonly MemberConfiguration: MemberConfiguration;
-	readonly InvitationId?: (string | undefined) | undefined;
-	readonly NetworkConfiguration?: (NetworkConfiguration | undefined) | undefined;
-	readonly NetworkId?: string | undefined;
+	readonly InvitationId?: string | undefined;
+	readonly NetworkConfiguration?: NetworkConfiguration | undefined;
+	readonly NetworkId?: string;
 	readonly LogicalId: string;
 }
 export class Node extends CfnResource<NodeComponentInputs> implements NodeComponentOutputs {
@@ -32,17 +32,17 @@ export interface NodeComponentOutputs {
 export interface NodeComponentInputs {
 	readonly NetworkId: string;
 	readonly NodeConfiguration: NodeConfiguration;
-	readonly MemberId?: string | undefined;
+	readonly MemberId?: string;
 	readonly LogicalId: string;
 }
 export interface ApprovalThresholdPolicy {
-	readonly ProposalDurationInHours?: (number | undefined) | undefined;
-	readonly ThresholdComparator?: (string | undefined) | undefined;
-	readonly ThresholdPercentage?: (number | undefined) | undefined;
+	readonly ProposalDurationInHours?: number | undefined;
+	readonly ThresholdComparator?: string | undefined;
+	readonly ThresholdPercentage?: number | undefined;
 }
 export interface MemberConfiguration {
-	readonly Description?: (string | undefined) | undefined;
-	readonly MemberFrameworkConfiguration?: (MemberFrameworkConfiguration | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly MemberFrameworkConfiguration?: MemberFrameworkConfiguration | undefined;
 	readonly Name: string;
 }
 export interface MemberFabricConfiguration {
@@ -50,24 +50,24 @@ export interface MemberFabricConfiguration {
 	readonly AdminUsername: string;
 }
 export interface MemberFrameworkConfiguration {
-	readonly MemberFabricConfiguration?: (MemberFabricConfiguration | undefined) | undefined;
+	readonly MemberFabricConfiguration?: MemberFabricConfiguration | undefined;
 }
 export interface NetworkConfiguration {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly Framework: string;
 	readonly FrameworkVersion: string;
 	readonly Name: string;
-	readonly NetworkFrameworkConfiguration?: (NetworkFrameworkConfiguration | undefined) | undefined;
+	readonly NetworkFrameworkConfiguration?: NetworkFrameworkConfiguration | undefined;
 	readonly VotingPolicy: VotingPolicy;
 }
 export interface NetworkFabricConfiguration {
 	readonly Edition: string;
 }
 export interface NetworkFrameworkConfiguration {
-	readonly NetworkFabricConfiguration?: (NetworkFabricConfiguration | undefined) | undefined;
+	readonly NetworkFabricConfiguration?: NetworkFabricConfiguration | undefined;
 }
 export interface VotingPolicy {
-	readonly ApprovalThresholdPolicy?: (ApprovalThresholdPolicy | undefined) | undefined;
+	readonly ApprovalThresholdPolicy?: ApprovalThresholdPolicy | undefined;
 }
 export interface NodeConfiguration {
 	readonly AvailabilityZone: string;

@@ -7,79 +7,78 @@ export class ProjectsTriggers
 	constructor(entity: ADKEntity, options: ProjectsTriggersComponentInputs) {
 		super(entity, options.name, "cloudbuild.v1.ProjectsTriggers", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly id?: string | undefined;
+	public readonly createTime?: string;
+	public readonly id?: string;
 }
 export interface ProjectsTriggersComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly id?: string | undefined;
+	readonly createTime?: string;
+	readonly id?: string;
 }
 export interface ProjectsTriggersComponentInputs {
-	readonly approvalConfig?: ApprovalConfig | undefined;
-	readonly autodetect?: boolean | undefined;
-	readonly bitbucketServerTriggerConfig?: BitbucketServerTriggerConfig | undefined;
-	readonly build?: Build | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly eventType?: string | undefined;
-	readonly filename?: string | undefined;
-	readonly filter?: string | undefined;
-	readonly gitFileSource?: GitFileSource | undefined;
-	readonly github?: GitHubEventsConfig | undefined;
-	readonly gitlabEnterpriseEventsConfig?: GitLabEventsConfig | undefined;
-	readonly ignoredFiles?: string[] | undefined;
-	readonly includeBuildLogs?: string | undefined;
-	readonly includedFiles?: string[] | undefined;
+	readonly approvalConfig?: ApprovalConfig;
+	readonly autodetect?: boolean;
+	readonly bitbucketServerTriggerConfig?: BitbucketServerTriggerConfig;
+	readonly build?: Build;
+	readonly description?: string;
+	readonly disabled?: boolean;
+	readonly eventType?: string;
+	readonly filename?: string;
+	readonly filter?: string;
+	readonly gitFileSource?: GitFileSource;
+	readonly github?: GitHubEventsConfig;
+	readonly gitlabEnterpriseEventsConfig?: GitLabEventsConfig;
+	readonly ignoredFiles?: string[];
+	readonly includeBuildLogs?: string;
+	readonly includedFiles?: string[];
 	readonly name: string;
-	readonly parent?: string | undefined;
-	readonly pubsubConfig?: PubsubConfig | undefined;
-	readonly repositoryEventConfig?: RepositoryEventConfig | undefined;
-	readonly resourceName?: string | undefined;
-	readonly serviceAccount?: string | undefined;
-	readonly sourceToBuild?: GitRepoSource | undefined;
-	readonly substitutions?: { [P in string]: string } | undefined;
-	readonly tags?: string[] | undefined;
-	readonly triggerTemplate?: RepoSource | undefined;
-	readonly webhookConfig?: WebhookConfig | undefined;
-	readonly type: string;
+	readonly parent?: string;
+	readonly pubsubConfig?: PubsubConfig;
+	readonly repositoryEventConfig?: RepositoryEventConfig;
+	readonly resourceName?: string;
+	readonly serviceAccount?: string;
+	readonly sourceToBuild?: GitRepoSource;
+	readonly substitutions?: { [P in string]: string };
+	readonly tags?: string[];
+	readonly triggerTemplate?: RepoSource;
+	readonly webhookConfig?: WebhookConfig;
 }
 export interface ApprovalConfig {
-	readonly approvalRequired?: boolean | undefined;
+	readonly approvalRequired?: boolean;
 }
 export interface ApprovalResult {
-	readonly approvalTime?: string | undefined;
-	readonly approverAccount?: string | undefined;
-	readonly comment?: string | undefined;
+	readonly approvalTime?: string;
+	readonly approverAccount?: string;
+	readonly comment?: string;
 	readonly decision: string;
-	readonly url?: string | undefined;
+	readonly url?: string;
 }
 export interface ArtifactObjects {
-	readonly location?: string | undefined;
-	readonly paths?: string[] | undefined;
-	readonly timing?: TimeSpan | undefined;
+	readonly location?: string;
+	readonly paths?: string[];
+	readonly timing?: TimeSpan;
 }
 export interface Artifacts {
-	readonly images?: string[] | undefined;
-	readonly mavenArtifacts?: MavenArtifact[] | undefined;
-	readonly objects?: ArtifactObjects | undefined;
-	readonly pythonPackages?: PythonPackage[] | undefined;
+	readonly images?: string[];
+	readonly mavenArtifacts?: MavenArtifact[];
+	readonly objects?: ArtifactObjects;
+	readonly pythonPackages?: PythonPackage[];
 }
 export interface BitbucketServerConfig {
 	readonly apiKey: string;
-	readonly connectedRepositories?: BitbucketServerRepositoryId[] | undefined;
-	readonly createTime?: string | undefined;
+	readonly connectedRepositories?: BitbucketServerRepositoryId[];
+	readonly createTime?: string;
 	readonly hostUri: string;
-	readonly name?: string | undefined;
-	readonly peeredNetwork?: string | undefined;
+	readonly name?: string;
+	readonly peeredNetwork?: string;
 	readonly secrets: BitbucketServerSecrets;
-	readonly sslCa?: string | undefined;
-	readonly username?: string | undefined;
-	readonly webhookKey?: string | undefined;
+	readonly sslCa?: string;
+	readonly username?: string;
+	readonly webhookKey?: string;
 }
 export interface BitbucketServerRepositoryId {
 	readonly projectKey: string;
 	readonly repoSlug: string;
-	readonly webhookId?: number | undefined;
+	readonly webhookId?: number;
 }
 export interface BitbucketServerSecrets {
 	readonly adminAccessTokenVersionName: string;
@@ -87,164 +86,164 @@ export interface BitbucketServerSecrets {
 	readonly webhookSecretVersionName: string;
 }
 export interface BitbucketServerTriggerConfig {
-	readonly bitbucketServerConfig?: BitbucketServerConfig | undefined;
+	readonly bitbucketServerConfig?: BitbucketServerConfig;
 	readonly bitbucketServerConfigResource: string;
 	readonly projectKey: string;
-	readonly pullRequest?: PullRequestFilter | undefined;
-	readonly push?: PushFilter | undefined;
+	readonly pullRequest?: PullRequestFilter;
+	readonly push?: PushFilter;
 	readonly repoSlug: string;
 }
 export interface Build {
-	readonly approval?: BuildApproval | undefined;
-	readonly artifacts?: Artifacts | undefined;
-	readonly availableSecrets?: Secrets | undefined;
-	readonly buildTriggerId?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly failureInfo?: FailureInfo | undefined;
-	readonly finishTime?: string | undefined;
-	readonly id?: string | undefined;
-	readonly images?: string[] | undefined;
-	readonly logsBucket?: string | undefined;
-	readonly logUrl?: string | undefined;
-	readonly name?: string | undefined;
-	readonly options?: BuildOptions | undefined;
-	readonly projectId?: string | undefined;
-	readonly queueTtl?: string | undefined;
-	readonly results?: Results | undefined;
-	readonly secrets?: Secret[] | undefined;
-	readonly serviceAccount?: string | undefined;
-	readonly source?: Source | undefined;
-	readonly sourceProvenance?: SourceProvenance | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusDetail?: string | undefined;
+	readonly approval?: BuildApproval;
+	readonly artifacts?: Artifacts;
+	readonly availableSecrets?: Secrets;
+	readonly buildTriggerId?: string;
+	readonly createTime?: string;
+	readonly failureInfo?: FailureInfo;
+	readonly finishTime?: string;
+	readonly id?: string;
+	readonly images?: string[];
+	readonly logsBucket?: string;
+	readonly logUrl?: string;
+	readonly name?: string;
+	readonly options?: BuildOptions;
+	readonly projectId?: string;
+	readonly queueTtl?: string;
+	readonly results?: Results;
+	readonly secrets?: Secret[];
+	readonly serviceAccount?: string;
+	readonly source?: Source;
+	readonly sourceProvenance?: SourceProvenance;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly statusDetail?: string;
 	readonly steps: BuildStep[];
-	readonly substitutions?: { [P in string]: string } | undefined;
-	readonly tags?: string[] | undefined;
-	readonly timeout?: string | undefined;
-	readonly timing?: { [P in string]: TimeSpan } | undefined;
-	readonly warnings?: Warning[] | undefined;
+	readonly substitutions?: { [P in string]: string };
+	readonly tags?: string[];
+	readonly timeout?: string;
+	readonly timing?: { [P in string]: TimeSpan };
+	readonly warnings?: Warning[];
 }
 export interface BuildApproval {
-	readonly config?: ApprovalConfig | undefined;
-	readonly result?: ApprovalResult | undefined;
-	readonly state?: string | undefined;
+	readonly config?: ApprovalConfig;
+	readonly result?: ApprovalResult;
+	readonly state?: string;
 }
 export interface BuildOptions {
-	readonly diskSizeGb?: string | undefined;
-	readonly dynamicSubstitutions?: boolean | undefined;
-	readonly env?: string[] | undefined;
-	readonly logging?: string | undefined;
-	readonly logStreamingOption?: string | undefined;
-	readonly machineType?: string | undefined;
-	readonly pool?: PoolOption | undefined;
-	readonly requestedVerifyOption?: string | undefined;
-	readonly secretEnv?: string[] | undefined;
-	readonly sourceProvenanceHash?: string[] | undefined;
-	readonly substitutionOption?: string | undefined;
-	readonly volumes?: Volume[] | undefined;
-	readonly workerPool?: string | undefined;
+	readonly diskSizeGb?: string;
+	readonly dynamicSubstitutions?: boolean;
+	readonly env?: string[];
+	readonly logging?: string;
+	readonly logStreamingOption?: string;
+	readonly machineType?: string;
+	readonly pool?: PoolOption;
+	readonly requestedVerifyOption?: string;
+	readonly secretEnv?: string[];
+	readonly sourceProvenanceHash?: string[];
+	readonly substitutionOption?: string;
+	readonly volumes?: Volume[];
+	readonly workerPool?: string;
 }
 export interface BuildStep {
-	readonly allowExitCodes?: number[] | undefined;
-	readonly allowFailure?: boolean | undefined;
-	readonly args?: string[] | undefined;
-	readonly dir?: string | undefined;
-	readonly entrypoint?: string | undefined;
-	readonly env?: string[] | undefined;
-	readonly exitCode?: number | undefined;
-	readonly id?: string | undefined;
+	readonly allowExitCodes?: number[];
+	readonly allowFailure?: boolean;
+	readonly args?: string[];
+	readonly dir?: string;
+	readonly entrypoint?: string;
+	readonly env?: string[];
+	readonly exitCode?: number;
+	readonly id?: string;
 	readonly name: string;
-	readonly pullTiming?: TimeSpan | undefined;
-	readonly script?: string | undefined;
-	readonly secretEnv?: string[] | undefined;
-	readonly status?: string | undefined;
-	readonly timeout?: string | undefined;
-	readonly timing?: TimeSpan | undefined;
-	readonly volumes?: Volume[] | undefined;
-	readonly waitFor?: string[] | undefined;
+	readonly pullTiming?: TimeSpan;
+	readonly script?: string;
+	readonly secretEnv?: string[];
+	readonly status?: string;
+	readonly timeout?: string;
+	readonly timing?: TimeSpan;
+	readonly volumes?: Volume[];
+	readonly waitFor?: string[];
 }
 export interface BuildTrigger {
-	readonly approvalConfig?: ApprovalConfig | undefined;
-	readonly autodetect?: boolean | undefined;
-	readonly bitbucketServerTriggerConfig?: BitbucketServerTriggerConfig | undefined;
-	readonly build?: Build | undefined;
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly eventType?: string | undefined;
-	readonly filename?: string | undefined;
-	readonly filter?: string | undefined;
-	readonly gitFileSource?: GitFileSource | undefined;
-	readonly github?: GitHubEventsConfig | undefined;
-	readonly gitlabEnterpriseEventsConfig?: GitLabEventsConfig | undefined;
-	readonly id?: string | undefined;
-	readonly ignoredFiles?: string[] | undefined;
-	readonly includeBuildLogs?: string | undefined;
-	readonly includedFiles?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly pubsubConfig?: PubsubConfig | undefined;
-	readonly repositoryEventConfig?: RepositoryEventConfig | undefined;
-	readonly resourceName?: string | undefined;
-	readonly serviceAccount?: string | undefined;
-	readonly sourceToBuild?: GitRepoSource | undefined;
-	readonly substitutions?: { [P in string]: string } | undefined;
-	readonly tags?: string[] | undefined;
-	readonly triggerTemplate?: RepoSource | undefined;
-	readonly webhookConfig?: WebhookConfig | undefined;
+	readonly approvalConfig?: ApprovalConfig;
+	readonly autodetect?: boolean;
+	readonly bitbucketServerTriggerConfig?: BitbucketServerTriggerConfig;
+	readonly build?: Build;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly disabled?: boolean;
+	readonly eventType?: string;
+	readonly filename?: string;
+	readonly filter?: string;
+	readonly gitFileSource?: GitFileSource;
+	readonly github?: GitHubEventsConfig;
+	readonly gitlabEnterpriseEventsConfig?: GitLabEventsConfig;
+	readonly id?: string;
+	readonly ignoredFiles?: string[];
+	readonly includeBuildLogs?: string;
+	readonly includedFiles?: string[];
+	readonly name?: string;
+	readonly pubsubConfig?: PubsubConfig;
+	readonly repositoryEventConfig?: RepositoryEventConfig;
+	readonly resourceName?: string;
+	readonly serviceAccount?: string;
+	readonly sourceToBuild?: GitRepoSource;
+	readonly substitutions?: { [P in string]: string };
+	readonly tags?: string[];
+	readonly triggerTemplate?: RepoSource;
+	readonly webhookConfig?: WebhookConfig;
 }
 export interface BuiltImage {
-	readonly digest?: string | undefined;
-	readonly name?: string | undefined;
-	readonly pushTiming?: TimeSpan | undefined;
+	readonly digest?: string;
+	readonly name?: string;
+	readonly pushTiming?: TimeSpan;
 }
 export interface FailureInfo {
-	readonly detail?: string | undefined;
-	readonly type?: string | undefined;
+	readonly detail?: string;
+	readonly type?: string;
 }
 export interface FileHashes {
-	readonly fileHash?: Hash[] | undefined;
+	readonly fileHash?: Hash[];
 }
 export interface GitFileSource {
-	readonly bitbucketServerConfig?: string | undefined;
-	readonly githubEnterpriseConfig?: string | undefined;
-	readonly path?: string | undefined;
-	readonly repoType?: string | undefined;
-	readonly revision?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly bitbucketServerConfig?: string;
+	readonly githubEnterpriseConfig?: string;
+	readonly path?: string;
+	readonly repoType?: string;
+	readonly revision?: string;
+	readonly uri?: string;
 }
 export interface GitHubEventsConfig {
-	readonly enterpriseConfigResourceName?: string | undefined;
-	readonly installationId?: string | undefined;
-	readonly name?: string | undefined;
-	readonly owner?: string | undefined;
-	readonly pullRequest?: PullRequestFilter | undefined;
-	readonly push?: PushFilter | undefined;
+	readonly enterpriseConfigResourceName?: string;
+	readonly installationId?: string;
+	readonly name?: string;
+	readonly owner?: string;
+	readonly pullRequest?: PullRequestFilter;
+	readonly push?: PushFilter;
 }
 export interface GitLabConfig {
-	readonly connectedRepositories?: GitLabRepositoryId[] | undefined;
-	readonly createTime?: string | undefined;
-	readonly enterpriseConfig?: GitLabEnterpriseConfig | undefined;
-	readonly name?: string | undefined;
+	readonly connectedRepositories?: GitLabRepositoryId[];
+	readonly createTime?: string;
+	readonly enterpriseConfig?: GitLabEnterpriseConfig;
+	readonly name?: string;
 	readonly secrets: GitLabSecrets;
-	readonly username?: string | undefined;
-	readonly webhookKey?: string | undefined;
+	readonly username?: string;
+	readonly webhookKey?: string;
 }
 export interface GitLabEnterpriseConfig {
-	readonly hostUri?: string | undefined;
-	readonly serviceDirectoryConfig?: ServiceDirectoryConfig | undefined;
-	readonly sslCa?: string | undefined;
+	readonly hostUri?: string;
+	readonly serviceDirectoryConfig?: ServiceDirectoryConfig;
+	readonly sslCa?: string;
 }
 export interface GitLabEventsConfig {
-	readonly gitlabConfig?: GitLabConfig | undefined;
-	readonly gitlabConfigResource?: string | undefined;
-	readonly projectNamespace?: string | undefined;
-	readonly pullRequest?: PullRequestFilter | undefined;
-	readonly push?: PushFilter | undefined;
+	readonly gitlabConfig?: GitLabConfig;
+	readonly gitlabConfigResource?: string;
+	readonly projectNamespace?: string;
+	readonly pullRequest?: PullRequestFilter;
+	readonly push?: PushFilter;
 }
 export interface GitLabRepositoryId {
 	readonly id: string;
-	readonly webhookId?: number | undefined;
+	readonly webhookId?: number;
 }
 export interface GitLabSecrets {
 	readonly apiAccessTokenVersion: string;
@@ -253,137 +252,137 @@ export interface GitLabSecrets {
 	readonly webhookSecretVersion: string;
 }
 export interface GitRepoSource {
-	readonly bitbucketServerConfig?: string | undefined;
-	readonly githubEnterpriseConfig?: string | undefined;
-	readonly ref?: string | undefined;
-	readonly repoType?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly bitbucketServerConfig?: string;
+	readonly githubEnterpriseConfig?: string;
+	readonly ref?: string;
+	readonly repoType?: string;
+	readonly uri?: string;
 }
 export interface Hash {
-	readonly type?: string | undefined;
-	readonly value?: string | undefined;
+	readonly type?: string;
+	readonly value?: string;
 }
 export interface InlineSecret {
-	readonly envMap?: { [P in string]: string } | undefined;
-	readonly kmsKeyName?: string | undefined;
+	readonly envMap?: { [P in string]: string };
+	readonly kmsKeyName?: string;
 }
 export interface MavenArtifact {
-	readonly artifactId?: string | undefined;
-	readonly groupId?: string | undefined;
-	readonly path?: string | undefined;
-	readonly repository?: string | undefined;
-	readonly version?: string | undefined;
+	readonly artifactId?: string;
+	readonly groupId?: string;
+	readonly path?: string;
+	readonly repository?: string;
+	readonly version?: string;
 }
 export interface PoolOption {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface PubsubConfig {
-	readonly serviceAccountEmail?: string | undefined;
-	readonly state?: string | undefined;
-	readonly subscription?: string | undefined;
-	readonly topic?: string | undefined;
+	readonly serviceAccountEmail?: string;
+	readonly state?: string;
+	readonly subscription?: string;
+	readonly topic?: string;
 }
 export interface PullRequestFilter {
-	readonly branch?: string | undefined;
-	readonly commentControl?: string | undefined;
-	readonly invertRegex?: boolean | undefined;
+	readonly branch?: string;
+	readonly commentControl?: string;
+	readonly invertRegex?: boolean;
 }
 export interface PushFilter {
-	readonly branch?: string | undefined;
-	readonly invertRegex?: boolean | undefined;
-	readonly tag?: string | undefined;
+	readonly branch?: string;
+	readonly invertRegex?: boolean;
+	readonly tag?: string;
 }
 export interface PythonPackage {
-	readonly paths?: string[] | undefined;
-	readonly repository?: string | undefined;
+	readonly paths?: string[];
+	readonly repository?: string;
 }
 export interface RepositoryEventConfig {
-	readonly pullRequest?: PullRequestFilter | undefined;
-	readonly push?: PushFilter | undefined;
-	readonly repository?: string | undefined;
-	readonly repositoryType?: string | undefined;
+	readonly pullRequest?: PullRequestFilter;
+	readonly push?: PushFilter;
+	readonly repository?: string;
+	readonly repositoryType?: string;
 }
 export interface RepoSource {
-	readonly branchName?: string | undefined;
-	readonly commitSha?: string | undefined;
-	readonly dir?: string | undefined;
-	readonly invertRegex?: boolean | undefined;
-	readonly projectId?: string | undefined;
-	readonly repoName?: string | undefined;
-	readonly substitutions?: { [P in string]: string } | undefined;
-	readonly tagName?: string | undefined;
+	readonly branchName?: string;
+	readonly commitSha?: string;
+	readonly dir?: string;
+	readonly invertRegex?: boolean;
+	readonly projectId?: string;
+	readonly repoName?: string;
+	readonly substitutions?: { [P in string]: string };
+	readonly tagName?: string;
 }
 export interface Results {
-	readonly artifactManifest?: string | undefined;
-	readonly artifactTiming?: TimeSpan | undefined;
-	readonly buildStepImages?: string[] | undefined;
-	readonly buildStepOutputs?: string[] | undefined;
-	readonly images?: BuiltImage[] | undefined;
-	readonly mavenArtifacts?: UploadedMavenArtifact[] | undefined;
-	readonly numArtifacts?: string | undefined;
-	readonly pythonPackages?: UploadedPythonPackage[] | undefined;
+	readonly artifactManifest?: string;
+	readonly artifactTiming?: TimeSpan;
+	readonly buildStepImages?: string[];
+	readonly buildStepOutputs?: string[];
+	readonly images?: BuiltImage[];
+	readonly mavenArtifacts?: UploadedMavenArtifact[];
+	readonly numArtifacts?: string;
+	readonly pythonPackages?: UploadedPythonPackage[];
 }
 export interface Secret {
-	readonly kmsKeyName?: string | undefined;
-	readonly secretEnv?: { [P in string]: string } | undefined;
+	readonly kmsKeyName?: string;
+	readonly secretEnv?: { [P in string]: string };
 }
 export interface SecretManagerSecret {
-	readonly env?: string | undefined;
-	readonly versionName?: string | undefined;
+	readonly env?: string;
+	readonly versionName?: string;
 }
 export interface Secrets {
-	readonly inline?: InlineSecret[] | undefined;
-	readonly secretManager?: SecretManagerSecret[] | undefined;
+	readonly inline?: InlineSecret[];
+	readonly secretManager?: SecretManagerSecret[];
 }
 export interface ServiceDirectoryConfig {
-	readonly service?: string | undefined;
+	readonly service?: string;
 }
 export interface Source {
-	readonly repoSource?: RepoSource | undefined;
-	readonly storageSource?: StorageSource | undefined;
-	readonly storageSourceManifest?: StorageSourceManifest | undefined;
+	readonly repoSource?: RepoSource;
+	readonly storageSource?: StorageSource;
+	readonly storageSourceManifest?: StorageSourceManifest;
 }
 export interface SourceProvenance {
-	readonly fileHashes?: { [P in string]: FileHashes } | undefined;
-	readonly resolvedRepoSource?: RepoSource | undefined;
-	readonly resolvedStorageSource?: StorageSource | undefined;
-	readonly resolvedStorageSourceManifest?: StorageSourceManifest | undefined;
+	readonly fileHashes?: { [P in string]: FileHashes };
+	readonly resolvedRepoSource?: RepoSource;
+	readonly resolvedStorageSource?: StorageSource;
+	readonly resolvedStorageSourceManifest?: StorageSourceManifest;
 }
 export interface StorageSource {
-	readonly bucket?: string | undefined;
-	readonly generation?: string | undefined;
-	readonly object?: string | undefined;
+	readonly bucket?: string;
+	readonly generation?: string;
+	readonly object?: string;
 }
 export interface StorageSourceManifest {
-	readonly bucket?: string | undefined;
-	readonly generation?: string | undefined;
-	readonly object?: string | undefined;
+	readonly bucket?: string;
+	readonly generation?: string;
+	readonly object?: string;
 }
 export interface TimeSpan {
-	readonly endTime?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly endTime?: string;
+	readonly startTime?: string;
 }
 export interface UploadedMavenArtifact {
-	readonly fileHashes?: FileHashes | undefined;
-	readonly pushTiming?: TimeSpan | undefined;
-	readonly uri?: string | undefined;
+	readonly fileHashes?: FileHashes;
+	readonly pushTiming?: TimeSpan;
+	readonly uri?: string;
 }
 export interface UploadedPythonPackage {
-	readonly fileHashes?: FileHashes | undefined;
-	readonly pushTiming?: TimeSpan | undefined;
-	readonly uri?: string | undefined;
+	readonly fileHashes?: FileHashes;
+	readonly pushTiming?: TimeSpan;
+	readonly uri?: string;
 }
 export interface Volume {
-	readonly name?: string | undefined;
-	readonly path?: string | undefined;
+	readonly name?: string;
+	readonly path?: string;
 }
 export interface Warning {
-	readonly priority?: string | undefined;
-	readonly text?: string | undefined;
+	readonly priority?: string;
+	readonly text?: string;
 }
 export interface WebhookConfig {
 	readonly secret: string;
-	readonly state?: string | undefined;
+	readonly state?: string;
 }
 export default {
 	ProjectsTriggers: ProjectsTriggers,

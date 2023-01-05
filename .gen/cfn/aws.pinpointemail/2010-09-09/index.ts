@@ -11,11 +11,11 @@ export class ConfigurationSet
 export interface ConfigurationSetComponentOutputs {}
 export interface ConfigurationSetComponentInputs {
 	readonly Name: string;
-	readonly DeliveryOptions?: (DeliveryOptions | undefined) | undefined;
-	readonly ReputationOptions?: (ReputationOptions | undefined) | undefined;
-	readonly SendingOptions?: (SendingOptions | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly TrackingOptions?: (TrackingOptions | undefined) | undefined;
+	readonly DeliveryOptions?: DeliveryOptions | undefined;
+	readonly ReputationOptions?: ReputationOptions | undefined;
+	readonly SendingOptions?: SendingOptions | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly TrackingOptions?: TrackingOptions | undefined;
 	readonly LogicalId: string;
 }
 export class ConfigurationSetEventDestination
@@ -30,7 +30,7 @@ export interface ConfigurationSetEventDestinationComponentOutputs {}
 export interface ConfigurationSetEventDestinationComponentInputs {
 	readonly ConfigurationSetName: string;
 	readonly EventDestinationName: string;
-	readonly EventDestination?: (EventDestination | undefined) | undefined;
+	readonly EventDestination?: EventDestination | undefined;
 	readonly LogicalId: string;
 }
 export class DedicatedIpPool
@@ -43,8 +43,8 @@ export class DedicatedIpPool
 }
 export interface DedicatedIpPoolComponentOutputs {}
 export interface DedicatedIpPoolComponentInputs {
-	readonly PoolName?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly PoolName?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class Identity extends CfnResource<IdentityComponentInputs> implements IdentityComponentOutputs {
@@ -68,30 +68,30 @@ export interface IdentityComponentOutputs {
 }
 export interface IdentityComponentInputs {
 	readonly Name: string;
-	readonly DkimSigningEnabled?: (boolean | undefined) | undefined;
-	readonly FeedbackForwardingEnabled?: (boolean | undefined) | undefined;
-	readonly MailFromAttributes?: (MailFromAttributes | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly DkimSigningEnabled?: boolean | undefined;
+	readonly FeedbackForwardingEnabled?: boolean | undefined;
+	readonly MailFromAttributes?: MailFromAttributes | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export interface DeliveryOptions {
-	readonly SendingPoolName?: (string | undefined) | undefined;
+	readonly SendingPoolName?: string | undefined;
 }
 export interface ReputationOptions {
-	readonly ReputationMetricsEnabled?: (boolean | undefined) | undefined;
+	readonly ReputationMetricsEnabled?: boolean | undefined;
 }
 export interface SendingOptions {
-	readonly SendingEnabled?: (boolean | undefined) | undefined;
+	readonly SendingEnabled?: boolean | undefined;
 }
 export interface Tags {
-	readonly Key?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface TrackingOptions {
-	readonly CustomRedirectDomain?: (string | undefined) | undefined;
+	readonly CustomRedirectDomain?: string | undefined;
 }
 export interface CloudWatchDestination {
-	readonly DimensionConfigurations?: (DimensionConfiguration[] | undefined) | undefined;
+	readonly DimensionConfigurations?: DimensionConfiguration[] | undefined;
 }
 export interface DimensionConfiguration {
 	readonly DefaultDimensionValue: string;
@@ -99,26 +99,26 @@ export interface DimensionConfiguration {
 	readonly DimensionValueSource: string;
 }
 export interface EventDestination {
-	readonly CloudWatchDestination?: (CloudWatchDestination | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly KinesisFirehoseDestination?: (KinesisFirehoseDestination | undefined) | undefined;
+	readonly CloudWatchDestination?: CloudWatchDestination | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly KinesisFirehoseDestination?: KinesisFirehoseDestination | undefined;
 	readonly MatchingEventTypes: string[];
-	readonly PinpointDestination?: (PinpointDestination | undefined) | undefined;
-	readonly SnsDestination?: (SnsDestination | undefined) | undefined;
+	readonly PinpointDestination?: PinpointDestination | undefined;
+	readonly SnsDestination?: SnsDestination | undefined;
 }
 export interface KinesisFirehoseDestination {
 	readonly DeliveryStreamArn: string;
 	readonly IamRoleArn: string;
 }
 export interface PinpointDestination {
-	readonly ApplicationArn?: (string | undefined) | undefined;
+	readonly ApplicationArn?: string | undefined;
 }
 export interface SnsDestination {
 	readonly TopicArn: string;
 }
 export interface MailFromAttributes {
-	readonly BehaviorOnMxFailure?: (string | undefined) | undefined;
-	readonly MailFromDomain?: (string | undefined) | undefined;
+	readonly BehaviorOnMxFailure?: string | undefined;
+	readonly MailFromDomain?: string | undefined;
 }
 export default {
 	ConfigurationSet: ConfigurationSet,

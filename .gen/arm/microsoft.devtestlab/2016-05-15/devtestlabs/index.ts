@@ -14,10 +14,10 @@ export interface labsComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs";
 }
 export interface labsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: LabProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: LabProperties;
+	readonly tags?: ResourceTags;
 }
 export class labs_artifactsources
 	extends ArmResource<labs_artifactsourcesComponentInputs>
@@ -36,10 +36,10 @@ export interface labs_artifactsourcesComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/artifactsources";
 }
 export interface labs_artifactsourcesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ArtifactSourceProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_artifactsources_armtemplates
 	extends ArmResource<labs_artifactsources_armtemplatesComponentInputs>
@@ -58,10 +58,10 @@ export interface labs_artifactsources_armtemplatesComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/artifactsources/armtemplates";
 }
 export interface labs_artifactsources_armtemplatesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ArmTemplateProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ArmTemplateProperties;
+	readonly tags?: ResourceTags;
 }
 export class labs_artifactsources_artifacts
 	extends ArmResource<labs_artifactsources_artifactsComponentInputs>
@@ -80,10 +80,10 @@ export interface labs_artifactsources_artifactsComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/artifactsources/artifacts";
 }
 export interface labs_artifactsources_artifactsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ArtifactProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ArtifactProperties;
+	readonly tags?: ResourceTags;
 }
 export class labs_costs extends ArmResource<labs_costsComponentInputs> implements labs_costsComponentOutputs {
 	constructor(entity: ADKEntity, options: labs_costsComponentInputs) {
@@ -99,10 +99,10 @@ export interface labs_costsComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/costs";
 }
 export interface labs_costsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: LabCostProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_customimages
 	extends ArmResource<labs_customimagesComponentInputs>
@@ -121,10 +121,10 @@ export interface labs_customimagesComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/customimages";
 }
 export interface labs_customimagesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: CustomImageProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_formulas extends ArmResource<labs_formulasComponentInputs> implements labs_formulasComponentOutputs {
 	constructor(entity: ADKEntity, options: labs_formulasComponentInputs) {
@@ -140,10 +140,10 @@ export interface labs_formulasComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/formulas";
 }
 export interface labs_formulasComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: FormulaProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_notificationchannels
 	extends ArmResource<labs_notificationchannelsComponentInputs>
@@ -162,10 +162,10 @@ export interface labs_notificationchannelsComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/notificationchannels";
 }
 export interface labs_notificationchannelsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: NotificationChannelProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_policysets_policies
 	extends ArmResource<labs_policysets_policiesComponentInputs>
@@ -184,10 +184,10 @@ export interface labs_policysets_policiesComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/policysets/policies";
 }
 export interface labs_policysets_policiesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: PolicyProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_schedules extends ArmResource<labs_schedulesComponentInputs> implements labs_schedulesComponentOutputs {
 	constructor(entity: ADKEntity, options: labs_schedulesComponentInputs) {
@@ -203,10 +203,10 @@ export interface labs_schedulesComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/schedules";
 }
 export interface labs_schedulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ScheduleProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_servicerunners
 	extends ArmResource<labs_servicerunnersComponentInputs>
@@ -225,10 +225,10 @@ export interface labs_servicerunnersComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/servicerunners";
 }
 export interface labs_servicerunnersComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: IdentityProperties;
+	readonly location?: string;
 	readonly name: string;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_users extends ArmResource<labs_usersComponentInputs> implements labs_usersComponentOutputs {
 	constructor(entity: ADKEntity, options: labs_usersComponentInputs) {
@@ -244,10 +244,10 @@ export interface labs_usersComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/users";
 }
 export interface labs_usersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: UserProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: UserProperties;
+	readonly tags?: ResourceTags;
 }
 export class labs_users_disks
 	extends ArmResource<labs_users_disksComponentInputs>
@@ -266,10 +266,10 @@ export interface labs_users_disksComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/users/disks";
 }
 export interface labs_users_disksComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: DiskProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_users_environments
 	extends ArmResource<labs_users_environmentsComponentInputs>
@@ -288,10 +288,10 @@ export interface labs_users_environmentsComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/users/environments";
 }
 export interface labs_users_environmentsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: EnvironmentProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_users_secrets
 	extends ArmResource<labs_users_secretsComponentInputs>
@@ -310,10 +310,10 @@ export interface labs_users_secretsComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/users/secrets";
 }
 export interface labs_users_secretsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: SecretProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_virtualmachines
 	extends ArmResource<labs_virtualmachinesComponentInputs>
@@ -332,10 +332,10 @@ export interface labs_virtualmachinesComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/virtualmachines";
 }
 export interface labs_virtualmachinesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: LabVirtualMachineProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_virtualmachines_schedules
 	extends ArmResource<labs_virtualmachines_schedulesComponentInputs>
@@ -354,10 +354,10 @@ export interface labs_virtualmachines_schedulesComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/virtualmachines/schedules";
 }
 export interface labs_virtualmachines_schedulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ScheduleProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class labs_virtualnetworks
 	extends ArmResource<labs_virtualnetworksComponentInputs>
@@ -376,10 +376,10 @@ export interface labs_virtualnetworksComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/labs/virtualnetworks";
 }
 export interface labs_virtualnetworksComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VirtualNetworkProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VirtualNetworkProperties;
+	readonly tags?: ResourceTags;
 }
 export class schedules extends ArmResource<schedulesComponentInputs> implements schedulesComponentOutputs {
 	constructor(entity: ADKEntity, options: schedulesComponentInputs) {
@@ -395,10 +395,10 @@ export interface schedulesComponentOutputs {
 	readonly type: "Microsoft.DevTestLab/schedules";
 }
 export interface schedulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ScheduleProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export function listApplicable(resource: labs_schedules): ResponseWithContinuationSchedule {
 	if (resource.apiVersion !== "2016-05-15") {
@@ -428,467 +428,464 @@ export function listVhds(resource: labs): ResponseWithContinuationLabVhd {
 	throw new Error("not implemented");
 }
 export interface ApplicableSchedule {
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
 	readonly properties: ApplicableScheduleProperties;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ApplicableScheduleProperties {
-	readonly labVmsShutdown?: Schedule | undefined;
-	readonly labVmsStartup?: Schedule | undefined;
+	readonly labVmsShutdown?: Schedule;
+	readonly labVmsStartup?: Schedule;
 }
 export interface ArmTemplateParameterProperties {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface ArmTemplateProperties {
-	readonly contents?: any | undefined;
-	readonly createdDate?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly icon?: string | undefined;
-	readonly parametersValueFilesInfo?: ParametersValueFileInfo[] | undefined;
-	readonly publisher?: string | undefined;
+	readonly contents?: any;
+	readonly createdDate?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly icon?: string;
+	readonly parametersValueFilesInfo?: ParametersValueFileInfo[];
+	readonly publisher?: string;
 }
 export interface ArtifactDeploymentStatusProperties {
-	readonly artifactsApplied?: number | undefined;
-	readonly deploymentStatus?: string | undefined;
-	readonly totalArtifacts?: number | undefined;
+	readonly artifactsApplied?: number;
+	readonly deploymentStatus?: string;
+	readonly totalArtifacts?: number;
 }
 export interface ArtifactInstallProperties {
-	readonly artifactId?: string | undefined;
-	readonly deploymentStatusMessage?: string | undefined;
-	readonly installTime?: string | undefined;
-	readonly parameters?: ArtifactParameterProperties[] | undefined;
-	readonly status?: string | undefined;
-	readonly vmExtensionStatusMessage?: string | undefined;
+	readonly artifactId?: string;
+	readonly deploymentStatusMessage?: string;
+	readonly installTime?: string;
+	readonly parameters?: ArtifactParameterProperties[];
+	readonly status?: string;
+	readonly vmExtensionStatusMessage?: string;
 }
 export interface ArtifactParameterProperties {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface ArtifactProperties {
-	readonly createdDate?: string | undefined;
-	readonly description?: string | undefined;
-	readonly filePath?: string | undefined;
-	readonly icon?: string | undefined;
-	readonly parameters?: any | undefined;
-	readonly publisher?: string | undefined;
-	readonly targetOsType?: string | undefined;
-	readonly title?: string | undefined;
+	readonly createdDate?: string;
+	readonly description?: string;
+	readonly filePath?: string;
+	readonly icon?: string;
+	readonly parameters?: any;
+	readonly publisher?: string;
+	readonly targetOsType?: string;
+	readonly title?: string;
 }
 export interface ArtifactSourceProperties {
-	readonly armTemplateFolderPath?: string | undefined;
-	readonly branchRef?: string | undefined;
-	readonly createdDate?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly folderPath?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly securityToken?: string | undefined;
-	readonly sourceType?: ("GitHub" | "VsoGit") | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly uniqueIdentifier?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly armTemplateFolderPath?: string;
+	readonly branchRef?: string;
+	readonly createdDate?: string;
+	readonly displayName?: string;
+	readonly folderPath?: string;
+	readonly provisioningState?: string;
+	readonly securityToken?: string;
+	readonly sourceType?: "GitHub" | "VsoGit";
+	readonly status?: "Disabled" | "Enabled";
+	readonly uniqueIdentifier?: string;
+	readonly uri?: string;
 }
 export interface BulkCreationParameters {
-	readonly instanceCount?: number | undefined;
+	readonly instanceCount?: number;
 }
 export interface ComputeDataDisk {
-	readonly diskSizeGiB?: number | undefined;
-	readonly diskUri?: string | undefined;
-	readonly managedDiskId?: string | undefined;
-	readonly name?: string | undefined;
+	readonly diskSizeGiB?: number;
+	readonly diskUri?: string;
+	readonly managedDiskId?: string;
+	readonly name?: string;
 }
 export interface ComputeVmInstanceViewStatus {
-	readonly code?: string | undefined;
-	readonly displayStatus?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly displayStatus?: string;
+	readonly message?: string;
 }
 export interface ComputeVmProperties {
-	readonly dataDiskIds?: string[] | undefined;
-	readonly dataDisks?: ComputeDataDisk[] | undefined;
-	readonly networkInterfaceId?: string | undefined;
-	readonly osDiskId?: string | undefined;
-	readonly osType?: string | undefined;
-	readonly statuses?: ComputeVmInstanceViewStatus[] | undefined;
-	readonly vmSize?: string | undefined;
+	readonly dataDiskIds?: string[];
+	readonly dataDisks?: ComputeDataDisk[];
+	readonly networkInterfaceId?: string;
+	readonly osDiskId?: string;
+	readonly osType?: string;
+	readonly statuses?: ComputeVmInstanceViewStatus[];
+	readonly vmSize?: string;
 }
 export interface CostThresholdProperties {
-	readonly displayOnChart?: ("Disabled" | "Enabled") | undefined;
-	readonly notificationSent?: string | undefined;
-	readonly percentageThreshold?: PercentageCostThresholdProperties | undefined;
-	readonly sendNotificationWhenExceeded?: ("Disabled" | "Enabled") | undefined;
-	readonly thresholdId?: string | undefined;
+	readonly displayOnChart?: "Disabled" | "Enabled";
+	readonly notificationSent?: string;
+	readonly percentageThreshold?: PercentageCostThresholdProperties;
+	readonly sendNotificationWhenExceeded?: "Disabled" | "Enabled";
+	readonly thresholdId?: string;
 }
 export interface CustomImageProperties {
-	readonly author?: string | undefined;
-	readonly creationDate?: string | undefined;
-	readonly description?: string | undefined;
-	readonly managedImageId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
-	readonly vhd?: CustomImagePropertiesCustom | undefined;
-	readonly vm?: CustomImagePropertiesFromVm | undefined;
+	readonly author?: string;
+	readonly creationDate?: string;
+	readonly description?: string;
+	readonly managedImageId?: string;
+	readonly provisioningState?: string;
+	readonly uniqueIdentifier?: string;
+	readonly vhd?: CustomImagePropertiesCustom;
+	readonly vm?: CustomImagePropertiesFromVm;
 }
 export interface CustomImagePropertiesCustom {
-	readonly imageName?: string | undefined;
+	readonly imageName?: string;
 	readonly osType: "Linux" | "None" | "Windows";
-	readonly sysPrep?: boolean | undefined;
+	readonly sysPrep?: boolean;
 }
 export interface CustomImagePropertiesFromVm {
-	readonly linuxOsInfo?: LinuxOsInfo | undefined;
-	readonly sourceVmId?: string | undefined;
-	readonly windowsOsInfo?: WindowsOsInfo | undefined;
+	readonly linuxOsInfo?: LinuxOsInfo;
+	readonly sourceVmId?: string;
+	readonly windowsOsInfo?: WindowsOsInfo;
 }
 export interface DayDetails {
-	readonly time?: string | undefined;
+	readonly time?: string;
 }
 export interface DiskProperties {
-	readonly createdDate?: string | undefined;
-	readonly diskBlobName?: string | undefined;
-	readonly diskSizeGiB?: number | undefined;
-	readonly diskType?: ("Premium" | "Standard") | undefined;
-	readonly diskUri?: string | undefined;
-	readonly hostCaching?: string | undefined;
-	readonly leasedByLabVmId?: string | undefined;
-	readonly managedDiskId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
+	readonly createdDate?: string;
+	readonly diskBlobName?: string;
+	readonly diskSizeGiB?: number;
+	readonly diskType?: "Premium" | "Standard";
+	readonly diskUri?: string;
+	readonly hostCaching?: string;
+	readonly leasedByLabVmId?: string;
+	readonly managedDiskId?: string;
+	readonly provisioningState?: string;
+	readonly uniqueIdentifier?: string;
 }
 export interface EnvironmentDeploymentProperties {
-	readonly armTemplateId?: string | undefined;
-	readonly parameters?: ArmTemplateParameterProperties[] | undefined;
+	readonly armTemplateId?: string;
+	readonly parameters?: ArmTemplateParameterProperties[];
 }
 export interface EnvironmentProperties {
-	readonly armTemplateDisplayName?: string | undefined;
-	readonly createdByUser?: string | undefined;
-	readonly deploymentProperties?: EnvironmentDeploymentProperties | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceGroupId?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
+	readonly armTemplateDisplayName?: string;
+	readonly createdByUser?: string;
+	readonly deploymentProperties?: EnvironmentDeploymentProperties;
+	readonly provisioningState?: string;
+	readonly resourceGroupId?: string;
+	readonly uniqueIdentifier?: string;
 }
 export interface Event {
-	readonly eventName?: ("AutoShutdown" | "Cost") | undefined;
+	readonly eventName?: "AutoShutdown" | "Cost";
 }
 export interface ExternalSubnet {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
 }
 export interface FormulaProperties {
-	readonly author?: string | undefined;
-	readonly creationDate?: string | undefined;
-	readonly description?: string | undefined;
-	readonly formulaContent?: LabVirtualMachineCreationParameter | undefined;
-	readonly osType?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
-	readonly vm?: FormulaPropertiesFromVm | undefined;
+	readonly author?: string;
+	readonly creationDate?: string;
+	readonly description?: string;
+	readonly formulaContent?: LabVirtualMachineCreationParameter;
+	readonly osType?: string;
+	readonly provisioningState?: string;
+	readonly uniqueIdentifier?: string;
+	readonly vm?: FormulaPropertiesFromVm;
 }
 export interface FormulaPropertiesFromVm {
-	readonly labVmId?: string | undefined;
+	readonly labVmId?: string;
 }
 export interface GalleryImageReference {
-	readonly offer?: string | undefined;
-	readonly osType?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly sku?: string | undefined;
-	readonly version?: string | undefined;
+	readonly offer?: string;
+	readonly osType?: string;
+	readonly publisher?: string;
+	readonly sku?: string;
+	readonly version?: string;
 }
 export interface HourDetails {
-	readonly minute?: number | undefined;
+	readonly minute?: number;
 }
 export interface IdentityProperties {
-	readonly clientSecretUrl?: string | undefined;
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: string | undefined;
+	readonly clientSecretUrl?: string;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: string;
 }
 export interface InboundNatRule {
-	readonly backendPort?: number | undefined;
-	readonly frontendPort?: number | undefined;
-	readonly transportProtocol?: ("Tcp" | "Udp") | undefined;
+	readonly backendPort?: number;
+	readonly frontendPort?: number;
+	readonly transportProtocol?: "Tcp" | "Udp";
 }
 export interface LabCostDetailsProperties {
-	readonly cost?: number | undefined;
-	readonly costType?: ("Projected" | "Reported" | "Unavailable") | undefined;
-	readonly date?: string | undefined;
+	readonly cost?: number;
+	readonly costType?: "Projected" | "Reported" | "Unavailable";
+	readonly date?: string;
 }
 export interface LabCostProperties {
-	readonly createdDate?: string | undefined;
-	readonly currencyCode?: string | undefined;
-	readonly endDateTime?: string | undefined;
-	readonly labCostDetails?: LabCostDetailsProperties[] | undefined;
-	readonly labCostSummary?: LabCostSummaryProperties | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceCosts?: LabResourceCostProperties[] | undefined;
-	readonly startDateTime?: string | undefined;
-	readonly targetCost?: TargetCostProperties | undefined;
-	readonly uniqueIdentifier?: string | undefined;
+	readonly createdDate?: string;
+	readonly currencyCode?: string;
+	readonly endDateTime?: string;
+	readonly labCostDetails?: LabCostDetailsProperties[];
+	readonly labCostSummary?: LabCostSummaryProperties;
+	readonly provisioningState?: string;
+	readonly resourceCosts?: LabResourceCostProperties[];
+	readonly startDateTime?: string;
+	readonly targetCost?: TargetCostProperties;
+	readonly uniqueIdentifier?: string;
 }
 export interface LabCostSummaryProperties {
-	readonly estimatedLabCost?: number | undefined;
+	readonly estimatedLabCost?: number;
 }
 export interface LabProperties {
-	readonly artifactsStorageAccount?: string | undefined;
-	readonly createdDate?: string | undefined;
-	readonly defaultPremiumStorageAccount?: string | undefined;
-	readonly defaultStorageAccount?: string | undefined;
-	readonly labStorageType?: ("Premium" | "Standard") | undefined;
-	readonly premiumDataDisks?: ("Disabled" | "Enabled") | undefined;
-	readonly premiumDataDiskStorageAccount?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
-	readonly vaultName?: string | undefined;
+	readonly artifactsStorageAccount?: string;
+	readonly createdDate?: string;
+	readonly defaultPremiumStorageAccount?: string;
+	readonly defaultStorageAccount?: string;
+	readonly labStorageType?: "Premium" | "Standard";
+	readonly premiumDataDisks?: "Disabled" | "Enabled";
+	readonly premiumDataDiskStorageAccount?: string;
+	readonly provisioningState?: string;
+	readonly uniqueIdentifier?: string;
+	readonly vaultName?: string;
 }
 export interface LabResourceCostProperties {
-	readonly externalResourceId?: string | undefined;
-	readonly resourceCost?: number | undefined;
-	readonly resourceId?: string | undefined;
-	readonly resourcename?: string | undefined;
-	readonly resourceOwner?: string | undefined;
-	readonly resourcePricingTier?: string | undefined;
-	readonly resourceStatus?: string | undefined;
-	readonly resourceType?: string | undefined;
-	readonly resourceUId?: string | undefined;
+	readonly externalResourceId?: string;
+	readonly resourceCost?: number;
+	readonly resourceId?: string;
+	readonly resourcename?: string;
+	readonly resourceOwner?: string;
+	readonly resourcePricingTier?: string;
+	readonly resourceStatus?: string;
+	readonly resourceType?: string;
+	readonly resourceUId?: string;
 }
 export interface LabVhd {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface LabVirtualMachineCreationParameter {
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: LabVirtualMachineCreationParameterProperties | undefined;
-	readonly tags?: LabVirtualMachineCreationParameterTags | undefined;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: LabVirtualMachineCreationParameterProperties;
+	readonly tags?: LabVirtualMachineCreationParameterTags;
 }
 export interface LabVirtualMachineCreationParameterProperties {
-	readonly allowClaim?: boolean | undefined;
-	readonly applicableSchedule?: ApplicableSchedule | undefined;
-	readonly artifactDeploymentStatus?: ArtifactDeploymentStatusProperties | undefined;
-	readonly artifacts?: ArtifactInstallProperties[] | undefined;
-	readonly bulkCreationParameters?: BulkCreationParameters | undefined;
-	readonly computeVm?: ComputeVmProperties | undefined;
-	readonly createdByUser?: string | undefined;
-	readonly createdByUserId?: string | undefined;
-	readonly createdDate?: string | undefined;
-	readonly customImageId?: string | undefined;
-	readonly disallowPublicIpAddress?: boolean | undefined;
-	readonly environmentId?: string | undefined;
-	readonly expirationDate?: string | undefined;
-	readonly fqdn?: string | undefined;
-	readonly galleryImageReference?: GalleryImageReference | undefined;
-	readonly isAuthenticationWithSshKey?: boolean | undefined;
-	readonly labSubnetName?: string | undefined;
-	readonly labVirtualNetworkId?: string | undefined;
-	readonly networkInterface?: NetworkInterfaceProperties | undefined;
-	readonly notes?: string | undefined;
-	readonly osType?: string | undefined;
-	readonly ownerObjectId?: string | undefined;
-	readonly ownerUserPrincipalName?: string | undefined;
-	readonly password?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly size?: string | undefined;
-	readonly sshKey?: string | undefined;
-	readonly storageType?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
-	readonly userName?: string | undefined;
-	readonly virtualMachineCreationSource?: ("FromCustomImage" | "FromGalleryImage") | undefined;
+	readonly allowClaim?: boolean;
+	readonly applicableSchedule?: ApplicableSchedule;
+	readonly artifactDeploymentStatus?: ArtifactDeploymentStatusProperties;
+	readonly artifacts?: ArtifactInstallProperties[];
+	readonly bulkCreationParameters?: BulkCreationParameters;
+	readonly computeVm?: ComputeVmProperties;
+	readonly createdByUser?: string;
+	readonly createdByUserId?: string;
+	readonly createdDate?: string;
+	readonly customImageId?: string;
+	readonly disallowPublicIpAddress?: boolean;
+	readonly environmentId?: string;
+	readonly expirationDate?: string;
+	readonly fqdn?: string;
+	readonly galleryImageReference?: GalleryImageReference;
+	readonly isAuthenticationWithSshKey?: boolean;
+	readonly labSubnetName?: string;
+	readonly labVirtualNetworkId?: string;
+	readonly networkInterface?: NetworkInterfaceProperties;
+	readonly notes?: string;
+	readonly osType?: string;
+	readonly ownerObjectId?: string;
+	readonly ownerUserPrincipalName?: string;
+	readonly password?: string;
+	readonly provisioningState?: string;
+	readonly size?: string;
+	readonly sshKey?: string;
+	readonly storageType?: string;
+	readonly uniqueIdentifier?: string;
+	readonly userName?: string;
+	readonly virtualMachineCreationSource?: "FromCustomImage" | "FromGalleryImage";
 }
 export interface LabVirtualMachineCreationParameterTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface LabVirtualMachineProperties {
-	readonly allowClaim?: boolean | undefined;
-	readonly applicableSchedule?: ApplicableSchedule | undefined;
-	readonly artifactDeploymentStatus?: ArtifactDeploymentStatusProperties | undefined;
-	readonly artifacts?: ArtifactInstallProperties[] | undefined;
-	readonly computeId?: string | undefined;
-	readonly computeVm?: ComputeVmProperties | undefined;
-	readonly createdByUser?: string | undefined;
-	readonly createdByUserId?: string | undefined;
-	readonly createdDate?: string | undefined;
-	readonly customImageId?: string | undefined;
-	readonly disallowPublicIpAddress?: boolean | undefined;
-	readonly environmentId?: string | undefined;
-	readonly expirationDate?: string | undefined;
-	readonly fqdn?: string | undefined;
-	readonly galleryImageReference?: GalleryImageReference | undefined;
-	readonly isAuthenticationWithSshKey?: boolean | undefined;
-	readonly labSubnetName?: string | undefined;
-	readonly labVirtualNetworkId?: string | undefined;
-	readonly networkInterface?: NetworkInterfaceProperties | undefined;
-	readonly notes?: string | undefined;
-	readonly osType?: string | undefined;
-	readonly ownerObjectId?: string | undefined;
-	readonly ownerUserPrincipalName?: string | undefined;
-	readonly password?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly size?: string | undefined;
-	readonly sshKey?: string | undefined;
-	readonly storageType?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
-	readonly userName?: string | undefined;
-	readonly virtualMachineCreationSource?: ("FromCustomImage" | "FromGalleryImage") | undefined;
+	readonly allowClaim?: boolean;
+	readonly applicableSchedule?: ApplicableSchedule;
+	readonly artifactDeploymentStatus?: ArtifactDeploymentStatusProperties;
+	readonly artifacts?: ArtifactInstallProperties[];
+	readonly computeId?: string;
+	readonly computeVm?: ComputeVmProperties;
+	readonly createdByUser?: string;
+	readonly createdByUserId?: string;
+	readonly createdDate?: string;
+	readonly customImageId?: string;
+	readonly disallowPublicIpAddress?: boolean;
+	readonly environmentId?: string;
+	readonly expirationDate?: string;
+	readonly fqdn?: string;
+	readonly galleryImageReference?: GalleryImageReference;
+	readonly isAuthenticationWithSshKey?: boolean;
+	readonly labSubnetName?: string;
+	readonly labVirtualNetworkId?: string;
+	readonly networkInterface?: NetworkInterfaceProperties;
+	readonly notes?: string;
+	readonly osType?: string;
+	readonly ownerObjectId?: string;
+	readonly ownerUserPrincipalName?: string;
+	readonly password?: string;
+	readonly provisioningState?: string;
+	readonly size?: string;
+	readonly sshKey?: string;
+	readonly storageType?: string;
+	readonly uniqueIdentifier?: string;
+	readonly userName?: string;
+	readonly virtualMachineCreationSource?: "FromCustomImage" | "FromGalleryImage";
 }
 export interface LinuxOsInfo {
-	readonly linuxOsState?: ("DeprovisionApplied" | "DeprovisionRequested" | "NonDeprovisioned") | undefined;
+	readonly linuxOsState?: "DeprovisionApplied" | "DeprovisionRequested" | "NonDeprovisioned";
 }
 export interface NetworkInterfaceProperties {
-	readonly dnsName?: string | undefined;
-	readonly privateIpAddress?: string | undefined;
-	readonly publicIpAddress?: string | undefined;
-	readonly publicIpAddressId?: string | undefined;
-	readonly rdpAuthority?: string | undefined;
-	readonly sharedPublicIpAddressConfiguration?: SharedPublicIpAddressConfiguration | undefined;
-	readonly sshAuthority?: string | undefined;
-	readonly subnetId?: string | undefined;
-	readonly virtualNetworkId?: string | undefined;
+	readonly dnsName?: string;
+	readonly privateIpAddress?: string;
+	readonly publicIpAddress?: string;
+	readonly publicIpAddressId?: string;
+	readonly rdpAuthority?: string;
+	readonly sharedPublicIpAddressConfiguration?: SharedPublicIpAddressConfiguration;
+	readonly sshAuthority?: string;
+	readonly subnetId?: string;
+	readonly virtualNetworkId?: string;
 }
 export interface NotificationChannelProperties {
-	readonly createdDate?: string | undefined;
-	readonly description?: string | undefined;
-	readonly events?: Event[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
-	readonly webHookUrl?: string | undefined;
+	readonly createdDate?: string;
+	readonly description?: string;
+	readonly events?: Event[];
+	readonly provisioningState?: string;
+	readonly uniqueIdentifier?: string;
+	readonly webHookUrl?: string;
 }
 export interface NotificationSettings {
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly timeInMinutes?: number | undefined;
-	readonly webhookUrl?: string | undefined;
+	readonly status?: "Disabled" | "Enabled";
+	readonly timeInMinutes?: number;
+	readonly webhookUrl?: string;
 }
 export interface ParametersValueFileInfo {
-	readonly fileName?: string | undefined;
-	readonly parametersValueInfo?: any | undefined;
+	readonly fileName?: string;
+	readonly parametersValueInfo?: any;
 }
 export interface PercentageCostThresholdProperties {
-	readonly thresholdValue?: number | undefined;
+	readonly thresholdValue?: number;
 }
 export interface PolicyProperties {
-	readonly createdDate?: string | undefined;
-	readonly description?: string | undefined;
-	readonly evaluatorType?: ("AllowedValuesPolicy" | "MaxValuePolicy") | undefined;
-	readonly factData?: string | undefined;
+	readonly createdDate?: string;
+	readonly description?: string;
+	readonly evaluatorType?: "AllowedValuesPolicy" | "MaxValuePolicy";
+	readonly factData?: string;
 	readonly factName?:
-		| (
-				| "GalleryImage"
-				| "LabPremiumVmCount"
-				| "LabTargetCost"
-				| "LabVmCount"
-				| "LabVmSize"
-				| "UserOwnedLabPremiumVmCount"
-				| "UserOwnedLabVmCount"
-				| "UserOwnedLabVmCountInSubnet"
-		  )
-		| undefined;
-	readonly provisioningState?: string | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly threshold?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
+		| "GalleryImage"
+		| "LabPremiumVmCount"
+		| "LabTargetCost"
+		| "LabVmCount"
+		| "LabVmSize"
+		| "UserOwnedLabPremiumVmCount"
+		| "UserOwnedLabVmCount"
+		| "UserOwnedLabVmCountInSubnet";
+	readonly provisioningState?: string;
+	readonly status?: "Disabled" | "Enabled";
+	readonly threshold?: string;
+	readonly uniqueIdentifier?: string;
 }
 export interface Port {
-	readonly backendPort?: number | undefined;
-	readonly transportProtocol?: ("Tcp" | "Udp") | undefined;
+	readonly backendPort?: number;
+	readonly transportProtocol?: "Tcp" | "Udp";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResponseWithContinuationLabVhd {
-	readonly nextLink?: string | undefined;
-	readonly value?: LabVhd[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: LabVhd[];
 }
 export interface ResponseWithContinuationSchedule {
-	readonly nextLink?: string | undefined;
-	readonly value?: Schedule[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: Schedule[];
 }
 export interface Schedule {
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
 	readonly properties: ScheduleProperties;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ScheduleProperties {
-	readonly createdDate?: string | undefined;
-	readonly dailyRecurrence?: DayDetails | undefined;
-	readonly hourlyRecurrence?: HourDetails | undefined;
-	readonly notificationSettings?: NotificationSettings | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly targetResourceId?: string | undefined;
-	readonly taskType?: string | undefined;
-	readonly timeZoneId?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
-	readonly weeklyRecurrence?: WeekDetails | undefined;
+	readonly createdDate?: string;
+	readonly dailyRecurrence?: DayDetails;
+	readonly hourlyRecurrence?: HourDetails;
+	readonly notificationSettings?: NotificationSettings;
+	readonly provisioningState?: string;
+	readonly status?: "Disabled" | "Enabled";
+	readonly targetResourceId?: string;
+	readonly taskType?: string;
+	readonly timeZoneId?: string;
+	readonly uniqueIdentifier?: string;
+	readonly weeklyRecurrence?: WeekDetails;
 }
 export interface SecretProperties {
-	readonly provisioningState?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
-	readonly value?: string | undefined;
+	readonly provisioningState?: string;
+	readonly uniqueIdentifier?: string;
+	readonly value?: string;
 }
 export interface SharedPublicIpAddressConfiguration {
-	readonly inboundNatRules?: InboundNatRule[] | undefined;
+	readonly inboundNatRules?: InboundNatRule[];
 }
 export interface Subnet {
-	readonly allowPublicIp?: ("Allow" | "Default" | "Deny") | undefined;
-	readonly labSubnetName?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly allowPublicIp?: "Allow" | "Default" | "Deny";
+	readonly labSubnetName?: string;
+	readonly resourceId?: string;
 }
 export interface SubnetOverride {
-	readonly labSubnetName?: string | undefined;
-	readonly resourceId?: string | undefined;
-	readonly sharedPublicIpAddressConfiguration?: SubnetSharedPublicIpAddressConfiguration | undefined;
-	readonly useInVmCreationPermission?: ("Allow" | "Default" | "Deny") | undefined;
-	readonly usePublicIpAddressPermission?: ("Allow" | "Default" | "Deny") | undefined;
-	readonly virtualNetworkPoolName?: string | undefined;
+	readonly labSubnetName?: string;
+	readonly resourceId?: string;
+	readonly sharedPublicIpAddressConfiguration?: SubnetSharedPublicIpAddressConfiguration;
+	readonly useInVmCreationPermission?: "Allow" | "Default" | "Deny";
+	readonly usePublicIpAddressPermission?: "Allow" | "Default" | "Deny";
+	readonly virtualNetworkPoolName?: string;
 }
 export interface SubnetSharedPublicIpAddressConfiguration {
-	readonly allowedPorts?: Port[] | undefined;
+	readonly allowedPorts?: Port[];
 }
 export interface TargetCostProperties {
-	readonly costThresholds?: CostThresholdProperties[] | undefined;
-	readonly cycleEndDateTime?: string | undefined;
-	readonly cycleStartDateTime?: string | undefined;
-	readonly cycleType?: ("CalendarMonth" | "Custom") | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly target?: number | undefined;
+	readonly costThresholds?: CostThresholdProperties[];
+	readonly cycleEndDateTime?: string;
+	readonly cycleStartDateTime?: string;
+	readonly cycleType?: "CalendarMonth" | "Custom";
+	readonly status?: "Disabled" | "Enabled";
+	readonly target?: number;
 }
 export interface UserIdentity {
-	readonly appId?: string | undefined;
-	readonly objectId?: string | undefined;
-	readonly principalId?: string | undefined;
-	readonly principalName?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly appId?: string;
+	readonly objectId?: string;
+	readonly principalId?: string;
+	readonly principalName?: string;
+	readonly tenantId?: string;
 }
 export interface UserProperties {
-	readonly createdDate?: string | undefined;
-	readonly identity?: UserIdentity | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly secretStore?: UserSecretStore | undefined;
-	readonly uniqueIdentifier?: string | undefined;
+	readonly createdDate?: string;
+	readonly identity?: UserIdentity;
+	readonly provisioningState?: string;
+	readonly secretStore?: UserSecretStore;
+	readonly uniqueIdentifier?: string;
 }
 export interface UserSecretStore {
-	readonly keyVaultId?: string | undefined;
-	readonly keyVaultUri?: string | undefined;
+	readonly keyVaultId?: string;
+	readonly keyVaultUri?: string;
 }
 export interface VirtualNetworkProperties {
-	readonly allowedSubnets?: Subnet[] | undefined;
-	readonly createdDate?: string | undefined;
-	readonly description?: string | undefined;
-	readonly externalProviderResourceId?: string | undefined;
-	readonly externalSubnets?: ExternalSubnet[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly subnetOverrides?: SubnetOverride[] | undefined;
-	readonly uniqueIdentifier?: string | undefined;
+	readonly allowedSubnets?: Subnet[];
+	readonly createdDate?: string;
+	readonly description?: string;
+	readonly externalProviderResourceId?: string;
+	readonly externalSubnets?: ExternalSubnet[];
+	readonly provisioningState?: string;
+	readonly subnetOverrides?: SubnetOverride[];
+	readonly uniqueIdentifier?: string;
 }
 export interface WeekDetails {
-	readonly time?: string | undefined;
-	readonly weekdays?: string[] | undefined;
+	readonly time?: string;
+	readonly weekdays?: string[];
 }
 export interface WindowsOsInfo {
-	readonly windowsOsState?: ("NonSysprepped" | "SysprepApplied" | "SysprepRequested") | undefined;
+	readonly windowsOsState?: "NonSysprepped" | "SysprepApplied" | "SysprepRequested";
 }
 export default {
 	labs: labs,

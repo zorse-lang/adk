@@ -15,8 +15,8 @@ export interface CompliancePackComponentInputs {
 	readonly CompliancePackName: any | string;
 	readonly Description: any | string;
 	readonly RiskLevel: any | number;
-	readonly CompliancePackTemplateId?: (any | string) | undefined;
-	readonly ConfigRules?: (ConfigRules[] | undefined) | undefined;
+	readonly CompliancePackTemplateId?: any | string;
+	readonly ConfigRules?: ConfigRules[] | undefined;
 	readonly LogicalId: string;
 }
 export class DeliveryChannel
@@ -35,9 +35,9 @@ export interface DeliveryChannelComponentInputs {
 	readonly DeliveryChannelAssumeRoleArn: string;
 	readonly DeliveryChannelTargetArn: string;
 	readonly DeliveryChannelType: string;
-	readonly DeliveryChannelCondition?: (string | undefined) | undefined;
-	readonly DeliveryChannelName?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly DeliveryChannelCondition?: string | undefined;
+	readonly DeliveryChannelName?: string | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Rule extends RosResource<RuleComponentInputs> implements RuleComponentOutputs {
@@ -60,27 +60,27 @@ export interface RuleComponentInputs {
 	readonly RuleName: any | string;
 	readonly SourceIdentifier: any | string;
 	readonly SourceOwner: any | string;
-	readonly Description?: (any | string) | undefined;
-	readonly ExcludeResourceIdsScope?: (any | string) | undefined;
-	readonly InputParameters?: (any | { [key: string]: any }) | undefined;
-	readonly MaximumExecutionFrequency?: (any | string) | undefined;
-	readonly RegionIdsScope?: (any | string) | undefined;
-	readonly ResourceGroupIdsScope?: (any | string) | undefined;
-	readonly TagKeyLogicScope?: (string | undefined) | undefined;
-	readonly TagKeyScope?: (any | string) | undefined;
-	readonly TagValueScope?: (any | string) | undefined;
+	readonly Description?: any | string;
+	readonly ExcludeResourceIdsScope?: any | string;
+	readonly InputParameters?: any | { [key: string]: any };
+	readonly MaximumExecutionFrequency?: any | string;
+	readonly RegionIdsScope?: any | string;
+	readonly ResourceGroupIdsScope?: any | string;
+	readonly TagKeyLogicScope?: string | undefined;
+	readonly TagKeyScope?: any | string;
+	readonly TagValueScope?: any | string;
 	readonly LogicalId: string;
 }
 export interface ConfigRuleParameters {
-	readonly ParameterValue?: (string | undefined) | undefined;
-	readonly Required?: (boolean | undefined) | undefined;
-	readonly ParameterName?: (string | undefined) | undefined;
+	readonly ParameterValue?: string | undefined;
+	readonly Required?: boolean | undefined;
+	readonly ParameterName?: string | undefined;
 }
 export interface ConfigRules {
-	readonly ConfigRuleId?: (string | undefined) | undefined;
-	readonly ConfigRuleName?: (string | undefined) | undefined;
-	readonly ManagedRuleIdentifier?: (string | undefined) | undefined;
-	readonly ConfigRuleParameters?: (ConfigRuleParameters[] | undefined) | undefined;
+	readonly ConfigRuleId?: string | undefined;
+	readonly ConfigRuleName?: string | undefined;
+	readonly ManagedRuleIdentifier?: string | undefined;
+	readonly ConfigRuleParameters?: ConfigRuleParameters[] | undefined;
 }
 export default {
 	CompliancePack: CompliancePack,

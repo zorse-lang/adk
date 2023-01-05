@@ -17,13 +17,13 @@ export interface automationAccountsComponentOutputs {
 	readonly type: "Microsoft.Automation/automationAccounts";
 }
 export interface automationAccountsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AutomationAccountCreateOrUpdatePropertiesOrAutomationAccountProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: AutomationAccountCreateOrUpdateParametersTags | undefined;
+	readonly properties?: AutomationAccountCreateOrUpdatePropertiesOrAutomationAccountProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: AutomationAccountCreateOrUpdateParametersTags;
 }
 export class automationAccounts_hybridRunbookWorkerGroups
 	extends ArmResource<automationAccounts_hybridRunbookWorkerGroupsComponentInputs>
@@ -48,11 +48,11 @@ export interface automationAccounts_hybridRunbookWorkerGroupsComponentOutputs {
 	readonly type: "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups";
 }
 export interface automationAccounts_hybridRunbookWorkerGroupsComponentInputs {
-	readonly credential?: RunAsCredentialAssociationProperty | undefined;
-	readonly groupType?: ("System" | "User") | undefined;
-	readonly hybridRunbookWorkers?: HybridRunbookWorkerLegacy[] | undefined;
+	readonly credential?: RunAsCredentialAssociationProperty;
+	readonly groupType?: "System" | "User";
+	readonly hybridRunbookWorkers?: HybridRunbookWorkerLegacy[];
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class automationAccounts_hybridRunbookWorkerGroups_hybridRunbookWorkers
 	extends ArmResource<automationAccounts_hybridRunbookWorkerGroups_hybridRunbookWorkersComponentInputs>
@@ -82,7 +82,7 @@ export interface automationAccounts_hybridRunbookWorkerGroups_hybridRunbookWorke
 export interface automationAccounts_hybridRunbookWorkerGroups_hybridRunbookWorkersComponentInputs {
 	readonly name: string;
 	readonly properties: HybridRunbookWorkerCreateOrUpdateParametersOrHybridRunbookWorkerProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export function listKeys(resource: automationAccounts): KeyListResult {
 	if (resource.apiVersion !== "2021-06-22") {
@@ -94,105 +94,103 @@ export function listKeys(resource: automationAccounts): KeyListResult {
 	throw new Error("not implemented");
 }
 export interface AutomationAccountCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AutomationAccountCreateOrUpdatePropertiesOrAutomationAccountProperties {
-	readonly automationHybridServiceUrl?: string | undefined;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly encryption?: EncryptionProperties | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly publicNetworkAccess?: boolean | undefined;
-	readonly sku?: Sku | undefined;
-	readonly state?: ("Ok" | "Suspended" | "Unavailable") | undefined;
+	readonly automationHybridServiceUrl?: string;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly disableLocalAuth?: boolean;
+	readonly encryption?: EncryptionProperties;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedTime?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly publicNetworkAccess?: boolean;
+	readonly sku?: Sku;
+	readonly state?: "Ok" | "Suspended" | "Unavailable";
 }
 export interface ComponentsSgqdofSchemasIdentityPropertiesUserassignedidentitiesAdditionalproperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface EncryptionProperties {
-	readonly identity?: EncryptionPropertiesIdentity | undefined;
-	readonly keySource?: "Microsoft.Automation" | undefined;
-	readonly keyVaultProperties?: KeyVaultProperties | undefined;
+	readonly identity?: EncryptionPropertiesIdentity;
+	readonly keySource?: "Microsoft.Automation";
+	readonly keyVaultProperties?: KeyVaultProperties;
 }
 export interface EncryptionPropertiesIdentity {
-	readonly userAssignedIdentity?: any | undefined;
+	readonly userAssignedIdentity?: any;
 }
 export interface HybridRunbookWorkerCreateOrUpdateParametersOrHybridRunbookWorkerProperties {
-	readonly ip?: string | undefined;
-	readonly lastSeenDateTime?: string | undefined;
-	readonly registeredDateTime?: string | undefined;
-	readonly vmResourceId?: string | undefined;
-	readonly workerName?: string | undefined;
-	readonly workerType?: ("HybridV1" | "HybridV2") | undefined;
+	readonly ip?: string;
+	readonly lastSeenDateTime?: string;
+	readonly registeredDateTime?: string;
+	readonly vmResourceId?: string;
+	readonly workerName?: string;
+	readonly workerType?: "HybridV1" | "HybridV2";
 }
 export interface HybridRunbookWorkerLegacy {
-	readonly ip?: string | undefined;
-	readonly lastSeenDateTime?: string | undefined;
-	readonly name?: string | undefined;
-	readonly registrationTime?: string | undefined;
+	readonly ip?: string;
+	readonly lastSeenDateTime?: string;
+	readonly name?: string;
+	readonly registrationTime?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: IdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: IdentityUserAssignedIdentities;
 }
 export interface IdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?:
-		| ComponentsSgqdofSchemasIdentityPropertiesUserassignedidentitiesAdditionalproperties
-		| undefined;
+	readonly [key: string]: ComponentsSgqdofSchemasIdentityPropertiesUserassignedidentitiesAdditionalproperties;
 }
 export interface Key {
-	readonly KeyName?: ("Primary" | "Secondary") | undefined;
-	readonly Permissions?: ("Full" | "Read") | undefined;
-	readonly Value?: string | undefined;
+	readonly KeyName?: "Primary" | "Secondary";
+	readonly Permissions?: "Full" | "Read";
+	readonly Value?: string;
 }
 export interface KeyListResult {
-	readonly keys?: Key[] | undefined;
+	readonly keys?: Key[];
 }
 export interface KeyVaultProperties {
-	readonly keyName?: string | undefined;
-	readonly keyvaultUri?: string | undefined;
-	readonly keyVersion?: string | undefined;
+	readonly keyName?: string;
+	readonly keyvaultUri?: string;
+	readonly keyVersion?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateEndpoint?: PrivateEndpointProperty | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty | undefined;
+	readonly groupIds?: string[];
+	readonly privateEndpoint?: PrivateEndpointProperty;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty;
 }
 export interface PrivateEndpointProperty {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateLinkServiceConnectionStateProperty {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: string | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: string;
 }
 export interface RunAsCredentialAssociationProperty {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
 	readonly name: "Basic" | "Free";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	automationAccounts: automationAccounts,

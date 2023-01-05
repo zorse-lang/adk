@@ -14,10 +14,10 @@ export interface identitiesComponentOutputs {
 	readonly type: "Microsoft.ManagedIdentity/identities";
 }
 export interface identitiesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: IdentityProperties | undefined;
-	readonly tags?: SystemAssignedIdentityTags | undefined;
+	readonly properties?: IdentityProperties;
+	readonly tags?: SystemAssignedIdentityTags;
 }
 export class userAssignedIdentities
 	extends ArmResource<userAssignedIdentitiesComponentInputs>
@@ -38,20 +38,20 @@ export interface userAssignedIdentitiesComponentOutputs {
 export interface userAssignedIdentitiesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: IdentityProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: IdentityProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface IdentityProperties {
-	readonly clientId?: string | undefined;
-	readonly clientSecretUrl?: string | undefined;
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly clientId?: string;
+	readonly clientSecretUrl?: string;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 }
 export interface SystemAssignedIdentityTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	identities: identities,

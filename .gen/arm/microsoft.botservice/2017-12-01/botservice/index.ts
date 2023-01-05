@@ -14,13 +14,13 @@ export interface botServicesComponentOutputs {
 	readonly type: "Microsoft.BotService/botServices";
 }
 export interface botServicesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: ("bot" | "designer" | "function" | "sdk") | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: "bot" | "designer" | "function" | "sdk";
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: BotProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: BotProperties;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export class botServices_channels
 	extends ArmResource<botServices_channelsComponentInputs>
@@ -39,13 +39,13 @@ export interface botServices_channelsComponentOutputs {
 	readonly type: "Microsoft.BotService/botServices/channels";
 }
 export interface botServices_channelsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: ("bot" | "designer" | "function" | "sdk") | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: "bot" | "designer" | "function" | "sdk";
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: Channel | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: Channel;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export class botServices_Connections
 	extends ArmResource<botServices_ConnectionsComponentInputs>
@@ -64,13 +64,13 @@ export interface botServices_ConnectionsComponentOutputs {
 	readonly type: "Microsoft.BotService/botServices/Connections";
 }
 export interface botServices_ConnectionsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: ("bot" | "designer" | "function" | "sdk") | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: "bot" | "designer" | "function" | "sdk";
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ConnectionSettingProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ConnectionSettingProperties;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export function listChannelWithKeys(resource: botServices_channels): BotChannel {
 	if (resource.apiVersion !== "2017-12-01") {
@@ -91,66 +91,66 @@ export function listWithSecrets(resource: botServices_Connections): ConnectionSe
 	throw new Error("not implemented");
 }
 export interface BotChannel {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: ("bot" | "designer" | "function" | "sdk") | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: Channel | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly kind?: "bot" | "designer" | "function" | "sdk";
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: Channel;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface BotProperties {
-	readonly configuredChannels?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly developerAppInsightKey?: string | undefined;
-	readonly developerAppInsightsApiKey?: string | undefined;
-	readonly developerAppInsightsApplicationId?: string | undefined;
+	readonly configuredChannels?: string[];
+	readonly description?: string;
+	readonly developerAppInsightKey?: string;
+	readonly developerAppInsightsApiKey?: string;
+	readonly developerAppInsightsApplicationId?: string;
 	readonly displayName: string;
-	readonly enabledChannels?: string[] | undefined;
+	readonly enabledChannels?: string[];
 	readonly endpoint: string;
-	readonly endpointVersion?: string | undefined;
-	readonly iconUrl?: string | undefined;
-	readonly luisAppIds?: string[] | undefined;
-	readonly luisKey?: string | undefined;
+	readonly endpointVersion?: string;
+	readonly iconUrl?: string;
+	readonly luisAppIds?: string[];
+	readonly luisKey?: string;
 	readonly msaAppId: string;
 }
 export interface Channel {}
 export interface ConnectionSetting {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: ("bot" | "designer" | "function" | "sdk") | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ConnectionSettingProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly kind?: "bot" | "designer" | "function" | "sdk";
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: ConnectionSettingProperties;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ConnectionSettingParameter {
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface ConnectionSettingProperties {
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
-	readonly parameters?: ConnectionSettingParameter[] | undefined;
-	readonly scopes?: string | undefined;
-	readonly serviceProviderDisplayName?: string | undefined;
-	readonly serviceProviderId?: string | undefined;
-	readonly settingId?: string | undefined;
+	readonly clientId?: string;
+	readonly clientSecret?: string;
+	readonly parameters?: ConnectionSettingParameter[];
+	readonly scopes?: string;
+	readonly serviceProviderDisplayName?: string;
+	readonly serviceProviderId?: string;
+	readonly settingId?: string;
 }
 export interface DirectLineChannelProperties {
-	readonly sites?: DirectLineSite[] | undefined;
+	readonly sites?: DirectLineSite[];
 }
 export interface DirectLineSite {
 	readonly isEnabled: boolean;
 	readonly isV1Enabled: boolean;
 	readonly isV3Enabled: boolean;
-	readonly key?: string | undefined;
-	readonly key2?: string | undefined;
-	readonly siteId?: string | undefined;
+	readonly key?: string;
+	readonly key2?: string;
+	readonly siteId?: string;
 	readonly siteName: string;
 }
 export interface EmailChannelProperties {
@@ -161,10 +161,10 @@ export interface EmailChannelProperties {
 export interface FacebookChannelProperties {
 	readonly appId: string;
 	readonly appSecret: string;
-	readonly callbackUrl?: string | undefined;
+	readonly callbackUrl?: string;
 	readonly isEnabled: boolean;
-	readonly pages?: FacebookPage[] | undefined;
-	readonly verifyToken?: string | undefined;
+	readonly pages?: FacebookPage[];
+	readonly verifyToken?: string;
 }
 export interface FacebookPage {
 	readonly accessToken: string;
@@ -173,68 +173,68 @@ export interface FacebookPage {
 export interface KikChannelProperties {
 	readonly apiKey: string;
 	readonly isEnabled: boolean;
-	readonly isValidated?: boolean | undefined;
+	readonly isValidated?: boolean;
 	readonly userName: string;
 }
 export interface MsTeamsChannelProperties {
-	readonly callMode?: string | undefined;
-	readonly enableCalling?: boolean | undefined;
-	readonly enableMediaCards?: boolean | undefined;
-	readonly enableMessaging?: boolean | undefined;
-	readonly enableVideo?: boolean | undefined;
+	readonly callMode?: string;
+	readonly enableCalling?: boolean;
+	readonly enableMediaCards?: boolean;
+	readonly enableMessaging?: boolean;
+	readonly enableVideo?: boolean;
 	readonly isEnabled: boolean;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
 	readonly name: "F0" | "S1";
-	readonly tier?: ("Free" | "Standard") | undefined;
+	readonly tier?: "Free" | "Standard";
 }
 export interface SkypeChannelProperties {
-	readonly callingWebHook?: string | undefined;
-	readonly enableCalling?: boolean | undefined;
-	readonly enableGroups?: boolean | undefined;
-	readonly enableMediaCards?: boolean | undefined;
-	readonly enableMessaging?: boolean | undefined;
-	readonly enableScreenSharing?: boolean | undefined;
-	readonly enableVideo?: boolean | undefined;
-	readonly groupsMode?: string | undefined;
+	readonly callingWebHook?: string;
+	readonly enableCalling?: boolean;
+	readonly enableGroups?: boolean;
+	readonly enableMediaCards?: boolean;
+	readonly enableMessaging?: boolean;
+	readonly enableScreenSharing?: boolean;
+	readonly enableVideo?: boolean;
+	readonly groupsMode?: string;
 	readonly isEnabled: boolean;
 }
 export interface SlackChannelProperties {
 	readonly clientId: string;
 	readonly clientSecret: string;
 	readonly isEnabled: boolean;
-	readonly isValidated?: boolean | undefined;
-	readonly landingPageUrl?: string | undefined;
-	readonly lastSubmissionId?: string | undefined;
-	readonly redirectAction?: string | undefined;
-	readonly registerBeforeOAuthFlow?: boolean | undefined;
+	readonly isValidated?: boolean;
+	readonly landingPageUrl?: string;
+	readonly lastSubmissionId?: string;
+	readonly redirectAction?: string;
+	readonly registerBeforeOAuthFlow?: boolean;
 	readonly verificationToken: string;
 }
 export interface SmsChannelProperties {
 	readonly accountSID: string;
 	readonly authToken: string;
 	readonly isEnabled: boolean;
-	readonly isValidated?: boolean | undefined;
+	readonly isValidated?: boolean;
 	readonly phone: string;
 }
 export interface TelegramChannelProperties {
 	readonly accessToken: string;
 	readonly isEnabled: boolean;
-	readonly isValidated?: boolean | undefined;
+	readonly isValidated?: boolean;
 }
 export interface WebChatChannelProperties {
-	readonly sites?: WebChatSite[] | undefined;
-	readonly webChatEmbedCode?: string | undefined;
+	readonly sites?: WebChatSite[];
+	readonly webChatEmbedCode?: string;
 }
 export interface WebChatSite {
 	readonly enablePreview: boolean;
 	readonly isEnabled: boolean;
-	readonly key?: string | undefined;
-	readonly key2?: string | undefined;
-	readonly siteId?: string | undefined;
+	readonly key?: string;
+	readonly key2?: string;
+	readonly siteId?: string;
 	readonly siteName: string;
 }
 export default {

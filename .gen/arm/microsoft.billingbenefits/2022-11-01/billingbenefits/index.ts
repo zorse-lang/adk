@@ -17,11 +17,11 @@ export interface reservationOrderAliasesComponentOutputs {
 	readonly type: "Microsoft.BillingBenefits/reservationOrderAliases";
 }
 export interface reservationOrderAliasesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ReservationOrderAliasRequestPropertiesOrReservationOrderAliasResponseProperties | undefined;
+	readonly properties?: ReservationOrderAliasRequestPropertiesOrReservationOrderAliasResponseProperties;
 	readonly sku: Sku;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class savingsPlanOrderAliases
 	extends ArmResource<savingsPlanOrderAliasesComponentInputs>
@@ -40,11 +40,11 @@ export interface savingsPlanOrderAliasesComponentOutputs {
 	readonly type: "Microsoft.BillingBenefits/savingsPlanOrderAliases";
 }
 export interface savingsPlanOrderAliasesComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly properties?: SavingsPlanOrderAliasProperties | undefined;
+	readonly properties?: SavingsPlanOrderAliasProperties;
 	readonly sku: Sku;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class savingsPlanOrders
 	extends ArmResource<savingsPlanOrdersComponentInputs>
@@ -64,9 +64,9 @@ export interface savingsPlanOrdersComponentOutputs {
 }
 export interface savingsPlanOrdersComponentInputs {
 	readonly name: string;
-	readonly properties?: SavingsPlanOrderModelProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SavingsPlanOrderModelProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
 }
 export class savingsPlanOrders_savingsPlans
 	extends ArmResource<savingsPlanOrders_savingsPlansComponentInputs>
@@ -86,225 +86,208 @@ export interface savingsPlanOrders_savingsPlansComponentOutputs {
 }
 export interface savingsPlanOrders_savingsPlansComponentInputs {
 	readonly name: string;
-	readonly properties?: SavingsPlanModelProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SavingsPlanModelProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
 }
 export interface AppliedScopeProperties {
-	readonly displayName?: string | undefined;
-	readonly managementGroupId?: string | undefined;
-	readonly resourceGroupId?: string | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly displayName?: string;
+	readonly managementGroupId?: string;
+	readonly resourceGroupId?: string;
+	readonly subscriptionId?: string;
+	readonly tenantId?: string;
 }
 export interface BillingPlanInformation {
-	readonly nextPaymentDueDate?: string | undefined;
-	readonly pricingCurrencyTotal?: Price | undefined;
-	readonly startDate?: string | undefined;
-	readonly transactions?: PaymentDetail[] | undefined;
+	readonly nextPaymentDueDate?: string;
+	readonly pricingCurrencyTotal?: Price;
+	readonly startDate?: string;
+	readonly transactions?: PaymentDetail[];
 }
 export interface Commitment {
-	readonly amount?: number | undefined;
-	readonly currencyCode?: string | undefined;
-	readonly grain?: "Hourly" | undefined;
+	readonly amount?: number;
+	readonly currencyCode?: string;
+	readonly grain?: "Hourly";
 }
 export interface ExtendedStatusInfo {
-	readonly message?: string | undefined;
-	readonly statusCode?: string | undefined;
+	readonly message?: string;
+	readonly statusCode?: string;
 }
 export interface PaymentDetail {
-	readonly billingAccount?: string | undefined;
-	readonly billingCurrencyTotal?: Price | undefined;
-	readonly dueDate?: string | undefined;
-	readonly extendedStatusInfo?: ExtendedStatusInfo | undefined;
-	readonly paymentDate?: string | undefined;
-	readonly pricingCurrencyTotal?: Price | undefined;
-	readonly status?: ("Cancelled" | "Failed" | "Scheduled" | "Succeeded") | undefined;
+	readonly billingAccount?: string;
+	readonly billingCurrencyTotal?: Price;
+	readonly dueDate?: string;
+	readonly extendedStatusInfo?: ExtendedStatusInfo;
+	readonly paymentDate?: string;
+	readonly pricingCurrencyTotal?: Price;
+	readonly status?: "Cancelled" | "Failed" | "Scheduled" | "Succeeded";
 }
 export interface Price {
-	readonly amount?: number | undefined;
-	readonly currencyCode?: string | undefined;
+	readonly amount?: number;
+	readonly currencyCode?: string;
 }
 export interface PurchaseRequest {
-	readonly properties?: PurchaseRequestProperties | undefined;
-	readonly sku?: Sku | undefined;
+	readonly properties?: PurchaseRequestProperties;
+	readonly sku?: Sku;
 }
 export interface PurchaseRequestProperties {
-	readonly appliedScopeProperties?: AppliedScopeProperties | undefined;
-	readonly appliedScopeType?: ("ManagementGroup" | "Shared" | "Single") | undefined;
-	readonly billingPlan?: "P1M" | undefined;
-	readonly billingScopeId?: string | undefined;
-	readonly commitment?: Commitment | undefined;
-	readonly displayName?: string | undefined;
-	readonly effectiveDateTime?: string | undefined;
-	readonly renew?: boolean | undefined;
-	readonly term?: ("P1Y" | "P3Y" | "P5Y") | undefined;
+	readonly appliedScopeProperties?: AppliedScopeProperties;
+	readonly appliedScopeType?: "ManagementGroup" | "Shared" | "Single";
+	readonly billingPlan?: "P1M";
+	readonly billingScopeId?: string;
+	readonly commitment?: Commitment;
+	readonly displayName?: string;
+	readonly effectiveDateTime?: string;
+	readonly renew?: boolean;
+	readonly term?: "P1Y" | "P3Y" | "P5Y";
 }
 export interface ReservationOrderAliasRequestPropertiesOrReservationOrderAliasResponseProperties {
-	readonly appliedScopeProperties?: AppliedScopeProperties | undefined;
-	readonly appliedScopeType?: ("ManagementGroup" | "Shared" | "Single") | undefined;
-	readonly billingPlan?: "P1M" | undefined;
-	readonly billingScopeId?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly appliedScopeProperties?: AppliedScopeProperties;
+	readonly appliedScopeType?: "ManagementGroup" | "Shared" | "Single";
+	readonly billingPlan?: "P1M";
+	readonly billingScopeId?: string;
+	readonly displayName?: string;
 	readonly provisioningState?:
-		| (
-				| "Cancelled"
-				| "ConfirmedBilling"
-				| "Created"
-				| "Creating"
-				| "Expired"
-				| "Failed"
-				| "PendingBilling"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly quantity?: number | undefined;
-	readonly renew?: boolean | undefined;
-	readonly reservationOrderId?: string | undefined;
-	readonly reservedResourceProperties?:
-		| ReservationOrderAliasRequestPropertiesReservedResourcePropertiesOrReservationOrderAliasResponsePropertiesReservedResourceProperties
-		| undefined;
+		| "Cancelled"
+		| "ConfirmedBilling"
+		| "Created"
+		| "Creating"
+		| "Expired"
+		| "Failed"
+		| "PendingBilling"
+		| "Succeeded";
+	readonly quantity?: number;
+	readonly renew?: boolean;
+	readonly reservationOrderId?: string;
+	readonly reservedResourceProperties?: ReservationOrderAliasRequestPropertiesReservedResourcePropertiesOrReservationOrderAliasResponsePropertiesReservedResourceProperties;
 	readonly reservedResourceType?:
-		| (
-				| "AVS"
-				| "AppService"
-				| "AzureDataExplorer"
-				| "AzureFiles"
-				| "BlockBlob"
-				| "CosmosDb"
-				| "DataFactory"
-				| "Databricks"
-				| "DedicatedHost"
-				| "ManagedDisk"
-				| "MariaDb"
-				| "MySql"
-				| "NetAppStorage"
-				| "PostgreSql"
-				| "RedHat"
-				| "RedHatOsa"
-				| "RedisCache"
-				| "SapHana"
-				| "SqlAzureHybridBenefit"
-				| "SqlDataWarehouse"
-				| "SqlDatabases"
-				| "SqlEdge"
-				| "SuseLinux"
-				| "VMwareCloudSimple"
-				| "VirtualMachineSoftware"
-				| "VirtualMachines"
-		  )
-		| undefined;
-	readonly reviewDateTime?: string | undefined;
-	readonly term?: ("P1Y" | "P3Y" | "P5Y") | undefined;
+		| "AVS"
+		| "AppService"
+		| "AzureDataExplorer"
+		| "AzureFiles"
+		| "BlockBlob"
+		| "CosmosDb"
+		| "DataFactory"
+		| "Databricks"
+		| "DedicatedHost"
+		| "ManagedDisk"
+		| "MariaDb"
+		| "MySql"
+		| "NetAppStorage"
+		| "PostgreSql"
+		| "RedHat"
+		| "RedHatOsa"
+		| "RedisCache"
+		| "SapHana"
+		| "SqlAzureHybridBenefit"
+		| "SqlDataWarehouse"
+		| "SqlDatabases"
+		| "SqlEdge"
+		| "SuseLinux"
+		| "VMwareCloudSimple"
+		| "VirtualMachineSoftware"
+		| "VirtualMachines";
+	readonly reviewDateTime?: string;
+	readonly term?: "P1Y" | "P3Y" | "P5Y";
 }
 export interface ReservationOrderAliasRequestPropertiesReservedResourcePropertiesOrReservationOrderAliasResponsePropertiesReservedResourceProperties {
-	readonly instanceFlexibility?: ("Off" | "On") | undefined;
+	readonly instanceFlexibility?: "Off" | "On";
 }
 export interface SavingsPlanModelProperties {
-	readonly appliedScopeProperties?: AppliedScopeProperties | undefined;
-	readonly appliedScopeType?: ("ManagementGroup" | "Shared" | "Single") | undefined;
-	readonly benefitStartTime?: string | undefined;
-	readonly billingAccountId?: string | undefined;
-	readonly billingPlan?: "P1M" | undefined;
-	readonly billingProfileId?: string | undefined;
-	readonly billingScopeId?: string | undefined;
-	readonly commitment?: Commitment | undefined;
-	readonly customerId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly displayProvisioningState?: string | undefined;
-	readonly effectiveDateTime?: string | undefined;
-	readonly expiryDateTime?: string | undefined;
-	readonly extendedStatusInfo?: ExtendedStatusInfo | undefined;
+	readonly appliedScopeProperties?: AppliedScopeProperties;
+	readonly appliedScopeType?: "ManagementGroup" | "Shared" | "Single";
+	readonly benefitStartTime?: string;
+	readonly billingAccountId?: string;
+	readonly billingPlan?: "P1M";
+	readonly billingProfileId?: string;
+	readonly billingScopeId?: string;
+	readonly commitment?: Commitment;
+	readonly customerId?: string;
+	readonly displayName?: string;
+	readonly displayProvisioningState?: string;
+	readonly effectiveDateTime?: string;
+	readonly expiryDateTime?: string;
+	readonly extendedStatusInfo?: ExtendedStatusInfo;
 	readonly provisioningState?:
-		| (
-				| "Cancelled"
-				| "ConfirmedBilling"
-				| "Created"
-				| "Creating"
-				| "Expired"
-				| "Failed"
-				| "PendingBilling"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly purchaseDateTime?: string | undefined;
-	readonly renew?: boolean | undefined;
-	readonly renewProperties?: SavingsPlanModelPropertiesRenewProperties | undefined;
-	readonly term?: ("P1Y" | "P3Y" | "P5Y") | undefined;
-	readonly userFriendlyAppliedScopeType?: string | undefined;
-	readonly utilization?: Utilization | undefined;
+		| "Cancelled"
+		| "ConfirmedBilling"
+		| "Created"
+		| "Creating"
+		| "Expired"
+		| "Failed"
+		| "PendingBilling"
+		| "Succeeded";
+	readonly purchaseDateTime?: string;
+	readonly renew?: boolean;
+	readonly renewProperties?: SavingsPlanModelPropertiesRenewProperties;
+	readonly term?: "P1Y" | "P3Y" | "P5Y";
+	readonly userFriendlyAppliedScopeType?: string;
+	readonly utilization?: Utilization;
 }
 export interface SavingsPlanModelPropertiesRenewProperties {
-	readonly purchaseProperties?: PurchaseRequest | undefined;
+	readonly purchaseProperties?: PurchaseRequest;
 }
 export interface SavingsPlanOrderAliasProperties {
-	readonly appliedScopeProperties?: AppliedScopeProperties | undefined;
-	readonly appliedScopeType?: ("ManagementGroup" | "Shared" | "Single") | undefined;
-	readonly billingPlan?: "P1M" | undefined;
-	readonly billingScopeId?: string | undefined;
-	readonly commitment?: Commitment | undefined;
-	readonly displayName?: string | undefined;
+	readonly appliedScopeProperties?: AppliedScopeProperties;
+	readonly appliedScopeType?: "ManagementGroup" | "Shared" | "Single";
+	readonly billingPlan?: "P1M";
+	readonly billingScopeId?: string;
+	readonly commitment?: Commitment;
+	readonly displayName?: string;
 	readonly provisioningState?:
-		| (
-				| "Cancelled"
-				| "ConfirmedBilling"
-				| "Created"
-				| "Creating"
-				| "Expired"
-				| "Failed"
-				| "PendingBilling"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly savingsPlanOrderId?: string | undefined;
-	readonly term?: ("P1Y" | "P3Y" | "P5Y") | undefined;
+		| "Cancelled"
+		| "ConfirmedBilling"
+		| "Created"
+		| "Creating"
+		| "Expired"
+		| "Failed"
+		| "PendingBilling"
+		| "Succeeded";
+	readonly savingsPlanOrderId?: string;
+	readonly term?: "P1Y" | "P3Y" | "P5Y";
 }
 export interface SavingsPlanOrderModelProperties {
-	readonly benefitStartTime?: string | undefined;
-	readonly billingAccountId?: string | undefined;
-	readonly billingPlan?: "P1M" | undefined;
-	readonly billingProfileId?: string | undefined;
-	readonly billingScopeId?: string | undefined;
-	readonly customerId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly expiryDateTime?: string | undefined;
-	readonly extendedStatusInfo?: ExtendedStatusInfo | undefined;
-	readonly planInformation?: BillingPlanInformation | undefined;
+	readonly benefitStartTime?: string;
+	readonly billingAccountId?: string;
+	readonly billingPlan?: "P1M";
+	readonly billingProfileId?: string;
+	readonly billingScopeId?: string;
+	readonly customerId?: string;
+	readonly displayName?: string;
+	readonly expiryDateTime?: string;
+	readonly extendedStatusInfo?: ExtendedStatusInfo;
+	readonly planInformation?: BillingPlanInformation;
 	readonly provisioningState?:
-		| (
-				| "Cancelled"
-				| "ConfirmedBilling"
-				| "Created"
-				| "Creating"
-				| "Expired"
-				| "Failed"
-				| "PendingBilling"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly savingsPlans?: string[] | undefined;
-	readonly term?: ("P1Y" | "P3Y" | "P5Y") | undefined;
+		| "Cancelled"
+		| "ConfirmedBilling"
+		| "Created"
+		| "Creating"
+		| "Expired"
+		| "Failed"
+		| "PendingBilling"
+		| "Succeeded";
+	readonly savingsPlans?: string[];
+	readonly term?: "P1Y" | "P3Y" | "P5Y";
 }
 export interface Sku {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Utilization {
-	readonly aggregates?: UtilizationAggregates[] | undefined;
-	readonly trend?: string | undefined;
+	readonly aggregates?: UtilizationAggregates[];
+	readonly trend?: string;
 }
 export interface UtilizationAggregates {
-	readonly grain?: number | undefined;
-	readonly grainUnit?: string | undefined;
-	readonly value?: number | undefined;
-	readonly valueUnit?: string | undefined;
+	readonly grain?: number;
+	readonly grainUnit?: string;
+	readonly value?: number;
+	readonly valueUnit?: string;
 }
 export default {
 	reservationOrderAliases: reservationOrderAliases,

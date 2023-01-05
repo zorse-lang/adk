@@ -14,12 +14,12 @@ export interface searchServicesComponentOutputs {
 	readonly type: "Microsoft.Search/searchServices";
 }
 export interface searchServicesComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SearchServiceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SearchServiceProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class searchServices_privateEndpointConnections
 	extends ArmResource<searchServices_privateEndpointConnectionsComponentInputs>
@@ -45,7 +45,7 @@ export interface searchServices_privateEndpointConnectionsComponentOutputs {
 }
 export interface searchServices_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class searchServices_sharedPrivateLinkResources
 	extends ArmResource<searchServices_sharedPrivateLinkResourcesComponentInputs>
@@ -71,7 +71,7 @@ export interface searchServices_sharedPrivateLinkResourcesComponentOutputs {
 }
 export interface searchServices_sharedPrivateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: SharedPrivateLinkResourceProperties | undefined;
+	readonly properties?: SharedPrivateLinkResourceProperties;
 }
 export function listAdminKeys(resource: searchServices): AdminKeyResult {
 	if (resource.apiVersion !== "2020-08-01-preview") {
@@ -92,79 +92,77 @@ export function listQueryKeys(resource: searchServices): ListQueryKeysResult {
 	throw new Error("not implemented");
 }
 export interface AdminKeyResult {
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None";
 }
 export interface IpRule {
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface ListQueryKeysResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: QueryKey[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: QueryKey[];
 }
 export interface NetworkRuleSet {
-	readonly ipRules?: IpRule[] | undefined;
+	readonly ipRules?: IpRule[];
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpointConnectionPropertiesPrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?:
-		| PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState
-		| undefined;
+	readonly privateEndpoint?: PrivateEndpointConnectionPropertiesPrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState;
 }
 export interface PrivateEndpointConnectionPropertiesPrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending";
 }
 export interface QueryKey {
-	readonly key?: string | undefined;
-	readonly name?: string | undefined;
+	readonly key?: string;
+	readonly name?: string;
 }
 export interface SearchServiceProperties {
-	readonly hostingMode?: "default" | undefined;
-	readonly networkRuleSet?: NetworkRuleSet | undefined;
-	readonly partitionCount?: number | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("failed" | "provisioning") | undefined;
-	readonly publicNetworkAccess?: "disabled" | undefined;
-	readonly replicaCount?: number | undefined;
-	readonly sharedPrivateLinkResources?: SharedPrivateLinkResource[] | undefined;
-	readonly status?: ("degraded" | "deleting" | "disabled" | "error" | "provisioning") | undefined;
-	readonly statusDetails?: string | undefined;
+	readonly hostingMode?: "default";
+	readonly networkRuleSet?: NetworkRuleSet;
+	readonly partitionCount?: number;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "failed" | "provisioning";
+	readonly publicNetworkAccess?: "disabled";
+	readonly replicaCount?: number;
+	readonly sharedPrivateLinkResources?: SharedPrivateLinkResource[];
+	readonly status?: "degraded" | "deleting" | "disabled" | "error" | "provisioning";
+	readonly statusDetails?: string;
 }
 export interface SharedPrivateLinkResource {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: SharedPrivateLinkResourceProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: SharedPrivateLinkResourceProperties;
+	readonly type?: string;
 }
 export interface SharedPrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly privateLinkResourceId?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Incomplete" | "Succeeded") | undefined;
-	readonly requestMessage?: string | undefined;
-	readonly resourceRegion?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending") | undefined;
+	readonly groupId?: string;
+	readonly privateLinkResourceId?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Incomplete" | "Succeeded";
+	readonly requestMessage?: string;
+	readonly resourceRegion?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending";
 }
 export interface Sku {
-	readonly name?: ("basic" | "free" | "standard" | "standard2" | "standard3" | "storage_optimized_l1") | undefined;
+	readonly name?: "basic" | "free" | "standard" | "standard2" | "standard3" | "storage_optimized_l1";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	searchServices: searchServices,

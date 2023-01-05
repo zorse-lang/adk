@@ -19,37 +19,35 @@ export interface policyExemptionsComponentOutputs {
 export interface policyExemptionsComponentInputs {
 	readonly name: string;
 	readonly properties: PolicyExemptionProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export interface PolicyExemptionProperties {
-	readonly assignmentScopeValidation?: ("Default" | "DoNotValidate") | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly assignmentScopeValidation?: "Default" | "DoNotValidate";
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly exemptionCategory: "Mitigated" | "Waiver";
-	readonly expiresOn?: string | undefined;
-	readonly metadata?: any | undefined;
+	readonly expiresOn?: string;
+	readonly metadata?: any;
 	readonly policyAssignmentId: string;
-	readonly policyDefinitionReferenceIds?: string[] | undefined;
-	readonly resourceSelectors?: ResourceSelector[] | undefined;
+	readonly policyDefinitionReferenceIds?: string[];
+	readonly resourceSelectors?: ResourceSelector[];
 }
 export interface ResourceSelector {
-	readonly name?: string | undefined;
-	readonly selectors?: Selector[] | undefined;
+	readonly name?: string;
+	readonly selectors?: Selector[];
 }
 export interface Selector {
-	readonly in?: string[] | undefined;
-	readonly kind?:
-		| ("policyDefinitionReferenceId" | "resourceLocation" | "resourceType" | "resourceWithoutLocation")
-		| undefined;
-	readonly notIn?: string[] | undefined;
+	readonly in?: string[];
+	readonly kind?: "policyDefinitionReferenceId" | "resourceLocation" | "resourceType" | "resourceWithoutLocation";
+	readonly notIn?: string[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	policyExemptions: policyExemptions,

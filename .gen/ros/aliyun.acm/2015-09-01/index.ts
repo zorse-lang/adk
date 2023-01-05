@@ -10,11 +10,11 @@ export interface ConfigurationComponentInputs {
 	readonly Content: string;
 	readonly DataId: any | string;
 	readonly NamespaceId: any | string;
-	readonly AppName?: (string | undefined) | undefined;
-	readonly Desc?: (string | undefined) | undefined;
-	readonly Group?: (any | string) | undefined;
-	readonly Tags?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly AppName?: string | undefined;
+	readonly Desc?: string | undefined;
+	readonly Group?: any | string;
+	readonly Tags?: string | undefined;
+	readonly Type?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Namespace extends RosResource<NamespaceComponentInputs> implements NamespaceComponentOutputs {

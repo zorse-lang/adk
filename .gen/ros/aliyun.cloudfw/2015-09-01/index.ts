@@ -13,11 +13,11 @@ export interface AddressBookComponentInputs {
 	readonly Description: string;
 	readonly GroupName: string;
 	readonly GroupType: string;
-	readonly AddressList?: (string | undefined) | undefined;
-	readonly AutoAddTagEcs?: (boolean | undefined) | undefined;
-	readonly RegionId?: (string | undefined) | undefined;
-	readonly TagList?: (TagList[] | undefined) | undefined;
-	readonly TagRelation?: (string | undefined) | undefined;
+	readonly AddressList?: string | undefined;
+	readonly AutoAddTagEcs?: boolean | undefined;
+	readonly RegionId?: string | undefined;
+	readonly TagList?: TagList[] | undefined;
+	readonly TagRelation?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ControlPolicy extends RosResource<ControlPolicyComponentInputs> implements ControlPolicyComponentOutputs {
@@ -40,10 +40,10 @@ export interface ControlPolicyComponentInputs {
 	readonly Proto: string;
 	readonly Source: string;
 	readonly SourceType: string;
-	readonly DestPort?: (string | undefined) | undefined;
-	readonly DestPortGroup?: (string | undefined) | undefined;
-	readonly DestPortType?: (string | undefined) | undefined;
-	readonly RegionId?: (string | undefined) | undefined;
+	readonly DestPort?: string | undefined;
+	readonly DestPortGroup?: string | undefined;
+	readonly DestPortType?: string | undefined;
+	readonly RegionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VpcFirewallControlPolicy
@@ -69,16 +69,16 @@ export interface VpcFirewallControlPolicyComponentInputs {
 	readonly Source: string;
 	readonly SourceType: string;
 	readonly VpcFirewallId: string;
-	readonly DestPort?: (string | undefined) | undefined;
-	readonly DestPortGroup?: (string | undefined) | undefined;
-	readonly DestPortType?: (string | undefined) | undefined;
-	readonly Lang?: (string | undefined) | undefined;
-	readonly RegionId?: (string | undefined) | undefined;
+	readonly DestPort?: string | undefined;
+	readonly DestPortGroup?: string | undefined;
+	readonly DestPortType?: string | undefined;
+	readonly Lang?: string | undefined;
+	readonly RegionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface TagList {
-	readonly TagKey?: (string | undefined) | undefined;
-	readonly TagValue?: (string | undefined) | undefined;
+	readonly TagKey?: string | undefined;
+	readonly TagValue?: string | undefined;
 }
 export default {
 	AddressBook: AddressBook,

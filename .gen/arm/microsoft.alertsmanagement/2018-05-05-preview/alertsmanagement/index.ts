@@ -15,7 +15,7 @@ export interface alertsComponentOutputs {
 }
 export interface alertsComponentInputs {
 	readonly name: string;
-	readonly properties?: AlertProperties | undefined;
+	readonly properties?: AlertProperties;
 }
 export class smartGroups extends ArmResource<smartGroupsComponentInputs> implements smartGroupsComponentOutputs {
 	constructor(entity: ADKEntity, options: smartGroupsComponentInputs) {
@@ -32,68 +32,65 @@ export interface smartGroupsComponentOutputs {
 }
 export interface smartGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: SmartGroupProperties | undefined;
+	readonly properties?: SmartGroupProperties;
 }
 export interface ActionStatus {
-	readonly isSuppressed?: boolean | undefined;
+	readonly isSuppressed?: boolean;
 }
 export interface AlertProperties {
-	readonly actionStatus?: ActionStatus | undefined;
-	readonly alertRule?: string | undefined;
-	readonly alertState?: ("Acknowledged" | "Closed" | "New") | undefined;
-	readonly description?: string | undefined;
-	readonly lastModifiedDateTime?: string | undefined;
-	readonly lastModifiedUserName?: string | undefined;
-	readonly monitorCondition?: ("Fired" | "Resolved") | undefined;
+	readonly actionStatus?: ActionStatus;
+	readonly alertRule?: string;
+	readonly alertState?: "Acknowledged" | "Closed" | "New";
+	readonly description?: string;
+	readonly lastModifiedDateTime?: string;
+	readonly lastModifiedUserName?: string;
+	readonly monitorCondition?: "Fired" | "Resolved";
 	readonly monitorService?:
-		| (
-				| "ActivityLog Administrative"
-				| "ActivityLog Autoscale"
-				| "ActivityLog Policy"
-				| "ActivityLog Recommendation"
-				| "ActivityLog Security"
-				| "Application Insights"
-				| "Infrastructure Insights"
-				| "Log Analytics"
-				| "Nagios"
-				| "Platform"
-				| "SCOM"
-				| "ServiceHealth"
-				| "SmartDetector"
-				| "Zabbix"
-		  )
-		| undefined;
-	readonly payload?: any | undefined;
-	readonly severity?: ("Sev0" | "Sev1" | "Sev2" | "Sev3" | "Sev4") | undefined;
-	readonly signalType?: ("Log" | "Metric" | "Unknown") | undefined;
-	readonly smartGroupId?: string | undefined;
-	readonly smartGroupingReason?: string | undefined;
-	readonly sourceCreatedId?: string | undefined;
-	readonly startDateTime?: string | undefined;
-	readonly targetResource?: string | undefined;
-	readonly targetResourceGroup?: string | undefined;
-	readonly targetResourceName?: string | undefined;
-	readonly targetResourceType?: string | undefined;
+		| "ActivityLog Administrative"
+		| "ActivityLog Autoscale"
+		| "ActivityLog Policy"
+		| "ActivityLog Recommendation"
+		| "ActivityLog Security"
+		| "Application Insights"
+		| "Infrastructure Insights"
+		| "Log Analytics"
+		| "Nagios"
+		| "Platform"
+		| "SCOM"
+		| "ServiceHealth"
+		| "SmartDetector"
+		| "Zabbix";
+	readonly payload?: any;
+	readonly severity?: "Sev0" | "Sev1" | "Sev2" | "Sev3" | "Sev4";
+	readonly signalType?: "Log" | "Metric" | "Unknown";
+	readonly smartGroupId?: string;
+	readonly smartGroupingReason?: string;
+	readonly sourceCreatedId?: string;
+	readonly startDateTime?: string;
+	readonly targetResource?: string;
+	readonly targetResourceGroup?: string;
+	readonly targetResourceName?: string;
+	readonly targetResourceType?: string;
 }
 export interface SmartGroupAggregatedProperty {
-	readonly count?: number | undefined;
-	readonly name?: string | undefined;
+	readonly count?: number;
+	readonly name?: string;
 }
 export interface SmartGroupProperties {
-	readonly alertsCount?: number | undefined;
-	readonly alertSeverities?: SmartGroupAggregatedProperty[] | undefined;
-	readonly alertStates?: SmartGroupAggregatedProperty[] | undefined;
-	readonly lastModifiedDateTime?: string | undefined;
-	readonly lastModifiedUserName?: string | undefined;
-	readonly monitorConditions?: SmartGroupAggregatedProperty[] | undefined;
-	readonly monitorServices?: SmartGroupAggregatedProperty[] | undefined;
-	readonly nextLink?: string | undefined;
-	readonly resourceGroups?: SmartGroupAggregatedProperty[] | undefined;
-	readonly resources?: SmartGroupAggregatedProperty[] | undefined;
-	readonly resourceTypes?: SmartGroupAggregatedProperty[] | undefined;
-	readonly severity?: ("Sev0" | "Sev1" | "Sev2" | "Sev3" | "Sev4") | undefined;
-	readonly smartGroupState?: ("Acknowledged" | "Closed" | "New") | undefined;
-	readonly startDateTime?: string | undefined;
+	readonly alertsCount?: number;
+	readonly alertSeverities?: SmartGroupAggregatedProperty[];
+	readonly alertStates?: SmartGroupAggregatedProperty[];
+	readonly lastModifiedDateTime?: string;
+	readonly lastModifiedUserName?: string;
+	readonly monitorConditions?: SmartGroupAggregatedProperty[];
+	readonly monitorServices?: SmartGroupAggregatedProperty[];
+	readonly nextLink?: string;
+	readonly resourceGroups?: SmartGroupAggregatedProperty[];
+	readonly resources?: SmartGroupAggregatedProperty[];
+	readonly resourceTypes?: SmartGroupAggregatedProperty[];
+	readonly severity?: "Sev0" | "Sev1" | "Sev2" | "Sev3" | "Sev4";
+	readonly smartGroupState?: "Acknowledged" | "Closed" | "New";
+	readonly startDateTime?: string;
 }
 export default {
 	alerts: alerts,

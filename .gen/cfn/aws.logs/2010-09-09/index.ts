@@ -13,7 +13,7 @@ export interface DestinationComponentInputs {
 	readonly DestinationName: string;
 	readonly RoleArn: string;
 	readonly TargetArn: string;
-	readonly DestinationPolicy?: (string | undefined) | undefined;
+	readonly DestinationPolicy?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LogGroup extends CfnResource<LogGroupComponentInputs> implements LogGroupComponentOutputs {
@@ -26,11 +26,11 @@ export interface LogGroupComponentOutputs {
 	readonly Arn: string;
 }
 export interface LogGroupComponentInputs {
-	readonly DataProtectionPolicy?: (any | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly LogGroupName?: (string | undefined) | undefined;
-	readonly RetentionInDays?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DataProtectionPolicy?: any | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly LogGroupName?: string | undefined;
+	readonly RetentionInDays?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LogStream extends CfnResource<LogStreamComponentInputs> implements LogStreamComponentOutputs {
@@ -41,7 +41,7 @@ export class LogStream extends CfnResource<LogStreamComponentInputs> implements 
 export interface LogStreamComponentOutputs {}
 export interface LogStreamComponentInputs {
 	readonly LogGroupName: string;
-	readonly LogStreamName?: (string | undefined) | undefined;
+	readonly LogStreamName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class MetricFilter extends CfnResource<MetricFilterComponentInputs> implements MetricFilterComponentOutputs {
@@ -54,7 +54,7 @@ export interface MetricFilterComponentInputs {
 	readonly FilterPattern: string;
 	readonly LogGroupName: string;
 	readonly MetricTransformations: MetricTransformation[];
-	readonly FilterName?: (string | undefined) | undefined;
+	readonly FilterName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class QueryDefinition
@@ -72,7 +72,7 @@ export interface QueryDefinitionComponentOutputs {
 export interface QueryDefinitionComponentInputs {
 	readonly Name: string;
 	readonly QueryString: string;
-	readonly LogGroupNames?: (string[] | undefined) | undefined;
+	readonly LogGroupNames?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class ResourcePolicy extends CfnResource<ResourcePolicyComponentInputs> implements ResourcePolicyComponentOutputs {
@@ -102,7 +102,7 @@ export interface SubscriptionFilterComponentInputs {
 	readonly DestinationArn: string;
 	readonly FilterPattern: string;
 	readonly LogGroupName: string;
-	readonly RoleArn?: (string | undefined) | undefined;
+	readonly RoleArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Dimension {
@@ -110,12 +110,12 @@ export interface Dimension {
 	readonly Value: string;
 }
 export interface MetricTransformation {
-	readonly DefaultValue?: (number | undefined) | undefined;
-	readonly Dimensions?: (Dimension[] | undefined) | undefined;
+	readonly DefaultValue?: number | undefined;
+	readonly Dimensions?: Dimension[] | undefined;
 	readonly MetricName: string;
 	readonly MetricNamespace: string;
 	readonly MetricValue: string;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly Unit?: string | undefined;
 }
 export default {
 	Destination: Destination,

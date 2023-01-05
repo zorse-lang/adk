@@ -16,9 +16,9 @@ export interface accountsComponentOutputs {
 export interface accountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MapsAccountProperties | undefined;
+	readonly properties?: MapsAccountProperties;
 	readonly sku: Sku;
-	readonly tags?: MapsAccountCreateParametersTags | undefined;
+	readonly tags?: MapsAccountCreateParametersTags;
 }
 export function listKeys(resource: accounts): MapsAccountKeys {
 	if (resource.apiVersion !== "2018-05-01") {
@@ -30,19 +30,19 @@ export function listKeys(resource: accounts): MapsAccountKeys {
 	throw new Error("not implemented");
 }
 export interface MapsAccountCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MapsAccountKeys {
-	readonly id?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly id?: string;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface MapsAccountProperties {
-	readonly "x-ms-client-id"?: string | undefined;
+	readonly "x-ms-client-id"?: string;
 }
 export interface Sku {
 	readonly name: string;
-	readonly tier?: string | undefined;
+	readonly tier?: string;
 }
 export default {
 	accounts: accounts,

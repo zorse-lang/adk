@@ -11,28 +11,27 @@ export class AppsDomainMappings
 export interface AppsDomainMappingsComponentOutputs {}
 export interface AppsDomainMappingsComponentInputs {
 	readonly appsId: string;
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
-	readonly overrideStrategy?: string | undefined;
-	readonly resourceRecords?: ResourceRecord[] | undefined;
-	readonly sslSettings?: SslSettings | undefined;
-	readonly type: string;
+	readonly overrideStrategy?: string;
+	readonly resourceRecords?: ResourceRecord[];
+	readonly sslSettings?: SslSettings;
 }
 export interface DomainMapping {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly resourceRecords?: ResourceRecord[] | undefined;
-	readonly sslSettings?: SslSettings | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly resourceRecords?: ResourceRecord[];
+	readonly sslSettings?: SslSettings;
 }
 export interface ResourceRecord {
-	readonly name?: string | undefined;
-	readonly rrdata?: string | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly rrdata?: string;
+	readonly type?: string;
 }
 export interface SslSettings {
-	readonly certificateId?: string | undefined;
-	readonly pendingManagedCertificateId?: string | undefined;
-	readonly sslManagementType?: string | undefined;
+	readonly certificateId?: string;
+	readonly pendingManagedCertificateId?: string;
+	readonly sslManagementType?: string;
 }
 export default {
 	AppsDomainMappings: AppsDomainMappings,

@@ -14,8 +14,8 @@ export interface AssignIpv6AddressesComponentOutputs {
 }
 export interface AssignIpv6AddressesComponentInputs {
 	readonly NetworkInterfaceId: any | string;
-	readonly Ipv6AddressCount?: (number | undefined) | undefined;
-	readonly Ipv6Addresses?: (any[] | any) | undefined;
+	readonly Ipv6AddressCount?: number | undefined;
+	readonly Ipv6Addresses?: any[] | any;
 	readonly LogicalId: string;
 }
 export class AssignPrivateIpAddresses
@@ -29,8 +29,8 @@ export class AssignPrivateIpAddresses
 export interface AssignPrivateIpAddressesComponentOutputs {}
 export interface AssignPrivateIpAddressesComponentInputs {
 	readonly NetworkInterfaceId: any | string;
-	readonly PrivateIpAddresses?: (any[] | any) | undefined;
-	readonly SecondaryPrivateIpAddressCount?: (number | undefined) | undefined;
+	readonly PrivateIpAddresses?: any[] | any;
+	readonly SecondaryPrivateIpAddressCount?: number | undefined;
 	readonly LogicalId: string;
 }
 export class AutoProvisioningGroup
@@ -47,27 +47,27 @@ export interface AutoProvisioningGroupComponentOutputs {
 }
 export interface AutoProvisioningGroupComponentInputs {
 	readonly TotalTargetCapacity: string;
-	readonly AutoProvisioningGroupName?: (any | string) | undefined;
-	readonly AutoProvisioningGroupType?: (string | undefined) | undefined;
-	readonly CheckExecutionStatus?: (boolean | undefined) | undefined;
-	readonly DefaultTargetCapacityType?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ExcessCapacityTerminationPolicy?: (string | undefined) | undefined;
-	readonly LaunchConfiguration?: (LaunchConfiguration | undefined) | undefined;
-	readonly LaunchTemplateConfig?: (LaunchTemplateConfig[] | undefined) | undefined;
-	readonly LaunchTemplateId?: (string | undefined) | undefined;
-	readonly LaunchTemplateVersion?: (string | undefined) | undefined;
-	readonly MaxSpotPrice?: (number | undefined) | undefined;
-	readonly PayAsYouGoAllocationStrategy?: (string | undefined) | undefined;
-	readonly PayAsYouGoTargetCapacity?: (string | undefined) | undefined;
-	readonly SpotAllocationStrategy?: (string | undefined) | undefined;
-	readonly SpotInstanceInterruptionBehavior?: (string | undefined) | undefined;
-	readonly SpotInstancePoolsToUseCount?: (number | undefined) | undefined;
-	readonly SpotTargetCapacity?: (string | undefined) | undefined;
-	readonly TerminateInstances?: (boolean | undefined) | undefined;
-	readonly TerminateInstancesWithExpiration?: (boolean | undefined) | undefined;
-	readonly ValidFrom?: (string | undefined) | undefined;
-	readonly ValidUntil?: (string | undefined) | undefined;
+	readonly AutoProvisioningGroupName?: any | string;
+	readonly AutoProvisioningGroupType?: string | undefined;
+	readonly CheckExecutionStatus?: boolean | undefined;
+	readonly DefaultTargetCapacityType?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly ExcessCapacityTerminationPolicy?: string | undefined;
+	readonly LaunchConfiguration?: LaunchConfiguration | undefined;
+	readonly LaunchTemplateConfig?: LaunchTemplateConfig[] | undefined;
+	readonly LaunchTemplateId?: string | undefined;
+	readonly LaunchTemplateVersion?: string | undefined;
+	readonly MaxSpotPrice?: number | undefined;
+	readonly PayAsYouGoAllocationStrategy?: string | undefined;
+	readonly PayAsYouGoTargetCapacity?: string | undefined;
+	readonly SpotAllocationStrategy?: string | undefined;
+	readonly SpotInstanceInterruptionBehavior?: string | undefined;
+	readonly SpotInstancePoolsToUseCount?: number | undefined;
+	readonly SpotTargetCapacity?: string | undefined;
+	readonly TerminateInstances?: boolean | undefined;
+	readonly TerminateInstancesWithExpiration?: boolean | undefined;
+	readonly ValidFrom?: string | undefined;
+	readonly ValidUntil?: string | undefined;
 	readonly LogicalId: string;
 }
 export class AutoSnapshotPolicy
@@ -86,10 +86,10 @@ export interface AutoSnapshotPolicyComponentInputs {
 	readonly RepeatWeekdays: number[];
 	readonly RetentionDays: number;
 	readonly TimePoints: any[];
-	readonly AutoSnapshotPolicyName?: (string | undefined) | undefined;
-	readonly DiskIds?: (string[] | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly AutoSnapshotPolicyName?: string | undefined;
+	readonly DiskIds?: string[] | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class Command extends RosResource<CommandComponentInputs> implements CommandComponentOutputs {
@@ -103,12 +103,12 @@ export interface CommandComponentOutputs {
 }
 export interface CommandComponentInputs {
 	readonly Type: string;
-	readonly CommandContent?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnableParameter?: (boolean | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
-	readonly WorkingDir?: (string | undefined) | undefined;
+	readonly CommandContent?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly EnableParameter?: boolean | undefined;
+	readonly Name?: string | undefined;
+	readonly Timeout?: number | undefined;
+	readonly WorkingDir?: string | undefined;
 	readonly LogicalId: string;
 }
 export class CopyImage extends RosResource<CopyImageComponentInputs> implements CopyImageComponentOutputs {
@@ -120,13 +120,13 @@ export interface CopyImageComponentOutputs {}
 export interface CopyImageComponentInputs {
 	readonly DestinationRegionId: any | string;
 	readonly ImageId: any | string;
-	readonly DestinationDescription?: (string | undefined) | undefined;
-	readonly DestinationImageName?: (string | undefined) | undefined;
-	readonly Encrypted?: (boolean | undefined) | undefined;
-	readonly KMSKeyId?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SourceRegionId?: (any | string) | undefined;
-	readonly Tag?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DestinationDescription?: string | undefined;
+	readonly DestinationImageName?: string | undefined;
+	readonly Encrypted?: boolean | undefined;
+	readonly KMSKeyId?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SourceRegionId?: any | string;
+	readonly Tag?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class CustomImage extends RosResource<CustomImageComponentInputs> implements CustomImageComponentOutputs {
@@ -139,17 +139,17 @@ export interface CustomImageComponentOutputs {
 	readonly ImageId: any;
 }
 export interface CustomImageComponentInputs {
-	readonly Architecture?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DiskDeviceMapping?: (DiskDeviceMapping[] | undefined) | undefined;
-	readonly ImageFamily?: (string | undefined) | undefined;
-	readonly ImageName?: (string | undefined) | undefined;
-	readonly InstanceId?: (string | undefined) | undefined;
-	readonly Platform?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SnapshotId?: (string | undefined) | undefined;
-	readonly SourceRegionId?: (any | string) | undefined;
-	readonly Tag?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Architecture?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DiskDeviceMapping?: DiskDeviceMapping[] | undefined;
+	readonly ImageFamily?: string | undefined;
+	readonly ImageName?: string | undefined;
+	readonly InstanceId?: string | undefined;
+	readonly Platform?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SnapshotId?: string | undefined;
+	readonly SourceRegionId?: any | string;
+	readonly Tag?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DedicatedHost extends RosResource<DedicatedHostComponentInputs> implements DedicatedHostComponentOutputs {
@@ -165,22 +165,22 @@ export interface DedicatedHostComponentOutputs {
 }
 export interface DedicatedHostComponentInputs {
 	readonly DedicatedHostType: string;
-	readonly ActionOnMaintenance?: (string | undefined) | undefined;
-	readonly AutoPlacement?: (string | undefined) | undefined;
-	readonly AutoReleaseTime?: (string | undefined) | undefined;
-	readonly AutoRenew?: (string | undefined) | undefined;
-	readonly AutoRenewPeriod?: (number | undefined) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly DedicatedHostName?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly NetworkAttributesSlbUdpTimeout?: (number | undefined) | undefined;
-	readonly NetworkAttributesUdpTimeout?: (number | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly Quantity?: (number | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly ActionOnMaintenance?: string | undefined;
+	readonly AutoPlacement?: string | undefined;
+	readonly AutoReleaseTime?: string | undefined;
+	readonly AutoRenew?: string | undefined;
+	readonly AutoRenewPeriod?: number | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly DedicatedHostName?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly NetworkAttributesSlbUdpTimeout?: number | undefined;
+	readonly NetworkAttributesUdpTimeout?: number | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly Quantity?: number | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DeploymentSet extends RosResource<DeploymentSetComponentInputs> implements DeploymentSetComponentOutputs {
@@ -193,9 +193,9 @@ export interface DeploymentSetComponentOutputs {
 	readonly DeploymentSetId: any;
 }
 export interface DeploymentSetComponentInputs {
-	readonly DeploymentSetName?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly OnUnableToRedeployFailedInstance?: (string | undefined) | undefined;
+	readonly DeploymentSetName?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly OnUnableToRedeployFailedInstance?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Disk extends RosResource<DiskComponentInputs> implements DiskComponentOutputs {
@@ -211,22 +211,22 @@ export interface DiskComponentOutputs {
 }
 export interface DiskComponentInputs {
 	readonly ZoneId: string;
-	readonly AutoSnapshotPolicyId?: (string | undefined) | undefined;
-	readonly BurstingEnabled?: (boolean | undefined) | undefined;
-	readonly DeleteAutoSnapshot?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DiskCategory?: (string | undefined) | undefined;
-	readonly DiskName?: (string | undefined) | undefined;
-	readonly Encrypted?: (boolean | undefined) | undefined;
-	readonly KMSKeyId?: (string | undefined) | undefined;
-	readonly PerformanceLevel?: (string | undefined) | undefined;
-	readonly ProvisionedIops?: (number | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Size?: (number | undefined) | undefined;
-	readonly SnapshotId?: (string | undefined) | undefined;
-	readonly StorageSetId?: (string | undefined) | undefined;
-	readonly StorageSetPartitionNumber?: (number | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly AutoSnapshotPolicyId?: string | undefined;
+	readonly BurstingEnabled?: boolean | undefined;
+	readonly DeleteAutoSnapshot?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly DiskCategory?: string | undefined;
+	readonly DiskName?: string | undefined;
+	readonly Encrypted?: boolean | undefined;
+	readonly KMSKeyId?: string | undefined;
+	readonly PerformanceLevel?: string | undefined;
+	readonly ProvisionedIops?: number | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Size?: number | undefined;
+	readonly SnapshotId?: string | undefined;
+	readonly StorageSetId?: string | undefined;
+	readonly StorageSetPartitionNumber?: number | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class DiskAttachment extends RosResource<DiskAttachmentComponentInputs> implements DiskAttachmentComponentOutputs {
@@ -241,9 +241,9 @@ export interface DiskAttachmentComponentOutputs {
 export interface DiskAttachmentComponentInputs {
 	readonly DiskId: any | string;
 	readonly InstanceId: string;
-	readonly DeleteAutoSnapshot?: (boolean | undefined) | undefined;
-	readonly DeleteWithInstance?: (boolean | undefined) | undefined;
-	readonly Device?: (any | string) | undefined;
+	readonly DeleteAutoSnapshot?: boolean | undefined;
+	readonly DeleteWithInstance?: boolean | undefined;
+	readonly Device?: any | string;
 	readonly LogicalId: string;
 }
 export class ForwardEntry extends RosResource<ForwardEntryComponentInputs> implements ForwardEntryComponentOutputs {
@@ -262,8 +262,8 @@ export interface ForwardEntryComponentInputs {
 	readonly InternalIp: string;
 	readonly InternalPort: string;
 	readonly IpProtocol: string;
-	readonly ForwardEntryName?: (string | undefined) | undefined;
-	readonly PortBreak?: (boolean | undefined) | undefined;
+	readonly ForwardEntryName?: string | undefined;
+	readonly PortBreak?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class HpcCluster extends RosResource<HpcClusterComponentInputs> implements HpcClusterComponentOutputs {
@@ -277,7 +277,7 @@ export interface HpcClusterComponentOutputs {
 }
 export interface HpcClusterComponentInputs {
 	readonly Name: any | string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Instance extends RosResource<InstanceComponentInputs> implements InstanceComponentOutputs {
@@ -300,47 +300,47 @@ export interface InstanceComponentOutputs {
 export interface InstanceComponentInputs {
 	readonly ImageId: string;
 	readonly InstanceType: string;
-	readonly AllocatePublicIP?: (boolean | undefined) | undefined;
-	readonly AutoRenew?: (string | undefined) | undefined;
-	readonly AutoRenewPeriod?: (number | undefined) | undefined;
-	readonly DedicatedHostId?: (string | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly DeploymentSetId?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DiskMappings?: (DiskMappings[] | undefined) | undefined;
-	readonly HostName?: (any | string) | undefined;
-	readonly HpcClusterId?: (string | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly InstanceName?: (string | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly InternetMaxBandwidthOut?: (number | undefined) | undefined;
-	readonly IoOptimized?: (string | undefined) | undefined;
-	readonly KeyPairName?: (string | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly PasswordInherit?: (boolean | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
-	readonly RamRoleName?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecurityEnhancementStrategy?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (any | string[]) | undefined;
-	readonly SpotDuration?: (number | undefined) | undefined;
-	readonly SpotInterruptionBehavior?: (string | undefined) | undefined;
-	readonly SpotPriceLimit?: (string | undefined) | undefined;
-	readonly SpotStrategy?: (string | undefined) | undefined;
-	readonly SystemDiskCategory?: (string | undefined) | undefined;
-	readonly SystemDiskDescription?: (string | undefined) | undefined;
-	readonly SystemDiskDiskName?: (string | undefined) | undefined;
-	readonly SystemDiskPerformanceLevel?: (string | undefined) | undefined;
-	readonly SystemDiskSize?: (number | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
-	readonly ZoneId?: (any | string) | undefined;
-	readonly ZoneIds?: (string[] | undefined) | undefined;
+	readonly AllocatePublicIP?: boolean | undefined;
+	readonly AutoRenew?: string | undefined;
+	readonly AutoRenewPeriod?: number | undefined;
+	readonly DedicatedHostId?: string | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly DeploymentSetId?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DiskMappings?: DiskMappings[] | undefined;
+	readonly HostName?: any | string;
+	readonly HpcClusterId?: string | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly InstanceName?: string | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly InternetMaxBandwidthOut?: number | undefined;
+	readonly IoOptimized?: string | undefined;
+	readonly KeyPairName?: string | undefined;
+	readonly Password?: string | undefined;
+	readonly PasswordInherit?: boolean | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly PrivateIpAddress?: string | undefined;
+	readonly RamRoleName?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecurityEnhancementStrategy?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SecurityGroupIds?: any | string[];
+	readonly SpotDuration?: number | undefined;
+	readonly SpotInterruptionBehavior?: string | undefined;
+	readonly SpotPriceLimit?: string | undefined;
+	readonly SpotStrategy?: string | undefined;
+	readonly SystemDiskCategory?: string | undefined;
+	readonly SystemDiskDescription?: string | undefined;
+	readonly SystemDiskDiskName?: string | undefined;
+	readonly SystemDiskPerformanceLevel?: string | undefined;
+	readonly SystemDiskSize?: number | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly UserData?: string | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VSwitchId?: string | undefined;
+	readonly ZoneId?: any | string;
+	readonly ZoneIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class InstanceClone extends RosResource<InstanceCloneComponentInputs> implements InstanceCloneComponentOutputs {
@@ -366,25 +366,25 @@ export interface InstanceCloneComponentOutputs {
 }
 export interface InstanceCloneComponentInputs {
 	readonly SourceInstanceId: string;
-	readonly BackendServerWeight?: (number | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DiskMappings?: (DiskMappings[] | undefined) | undefined;
-	readonly ImageId?: (string | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly InstanceName?: (string | undefined) | undefined;
-	readonly InternetMaxBandwidthIn?: (number | undefined) | undefined;
-	readonly KeyPairName?: (string | undefined) | undefined;
-	readonly LoadBalancerIdToAttach?: (string | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly RamRoleName?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SpotPriceLimit?: (string | undefined) | undefined;
-	readonly SpotStrategy?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly ZoneId?: (any | string) | undefined;
+	readonly BackendServerWeight?: number | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly DiskMappings?: DiskMappings[] | undefined;
+	readonly ImageId?: string | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly InstanceName?: string | undefined;
+	readonly InternetMaxBandwidthIn?: number | undefined;
+	readonly KeyPairName?: string | undefined;
+	readonly LoadBalancerIdToAttach?: string | undefined;
+	readonly Password?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly RamRoleName?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SpotPriceLimit?: string | undefined;
+	readonly SpotStrategy?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly ZoneId?: any | string;
 	readonly LogicalId: string;
 }
 export class InstanceGroup extends RosResource<InstanceGroupComponentInputs> implements InstanceGroupComponentOutputs {
@@ -412,58 +412,58 @@ export interface InstanceGroupComponentInputs {
 	readonly ImageId: string;
 	readonly InstanceType: string;
 	readonly MaxAmount: number;
-	readonly AllocatePublicIP?: (boolean | undefined) | undefined;
-	readonly AutoReleaseTime?: (string | undefined) | undefined;
-	readonly AutoRenew?: (string | undefined) | undefined;
-	readonly AutoRenewPeriod?: (number | undefined) | undefined;
-	readonly DedicatedHostId?: (string | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly DeploymentSetId?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DiskMappings?: (DiskMappings[] | undefined) | undefined;
-	readonly EniMappings?: (EniMappings[] | undefined) | undefined;
-	readonly HostName?: (string | undefined) | undefined;
-	readonly HpcClusterId?: (string | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly InstanceName?: (string | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly InternetMaxBandwidthOut?: (number | undefined) | undefined;
-	readonly IoOptimized?: (string | undefined) | undefined;
-	readonly Ipv6AddressCount?: (number | undefined) | undefined;
-	readonly Ipv6Addresses?: (any[] | any) | undefined;
-	readonly KeyPairName?: (string | undefined) | undefined;
-	readonly LaunchTemplateId?: (string | undefined) | undefined;
-	readonly LaunchTemplateName?: (string | undefined) | undefined;
-	readonly LaunchTemplateVersion?: (string | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly PasswordInherit?: (boolean | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
-	readonly RamRoleName?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecurityEnhancementStrategy?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (any[] | undefined) | undefined;
-	readonly SpotDuration?: (number | undefined) | undefined;
-	readonly SpotInterruptionBehavior?: (string | undefined) | undefined;
-	readonly SpotPriceLimit?: (string | undefined) | undefined;
-	readonly SpotStrategy?: (string | undefined) | undefined;
-	readonly SystemDiskAutoSnapshotPolicyId?: (string | undefined) | undefined;
-	readonly SystemDiskBurstingEnabled?: (boolean | undefined) | undefined;
-	readonly SystemDiskCategory?: (string | undefined) | undefined;
-	readonly SystemDiskDescription?: (string | undefined) | undefined;
-	readonly SystemDiskDiskName?: (string | undefined) | undefined;
-	readonly SystemDiskPerformanceLevel?: (string | undefined) | undefined;
-	readonly SystemDiskProvisionedIops?: (number | undefined) | undefined;
-	readonly SystemDiskSize?: (number | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
-	readonly ZoneIds?: (any | string[]) | undefined;
+	readonly AllocatePublicIP?: boolean | undefined;
+	readonly AutoReleaseTime?: string | undefined;
+	readonly AutoRenew?: string | undefined;
+	readonly AutoRenewPeriod?: number | undefined;
+	readonly DedicatedHostId?: string | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly DeploymentSetId?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DiskMappings?: DiskMappings[] | undefined;
+	readonly EniMappings?: EniMappings[] | undefined;
+	readonly HostName?: string | undefined;
+	readonly HpcClusterId?: string | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly InstanceName?: string | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly InternetMaxBandwidthOut?: number | undefined;
+	readonly IoOptimized?: string | undefined;
+	readonly Ipv6AddressCount?: number | undefined;
+	readonly Ipv6Addresses?: any[] | any;
+	readonly KeyPairName?: string | undefined;
+	readonly LaunchTemplateId?: string | undefined;
+	readonly LaunchTemplateName?: string | undefined;
+	readonly LaunchTemplateVersion?: string | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly Password?: string | undefined;
+	readonly PasswordInherit?: boolean | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly PrivateIpAddress?: string | undefined;
+	readonly RamRoleName?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecurityEnhancementStrategy?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SecurityGroupIds?: any[] | undefined;
+	readonly SpotDuration?: number | undefined;
+	readonly SpotInterruptionBehavior?: string | undefined;
+	readonly SpotPriceLimit?: string | undefined;
+	readonly SpotStrategy?: string | undefined;
+	readonly SystemDiskAutoSnapshotPolicyId?: string | undefined;
+	readonly SystemDiskBurstingEnabled?: boolean | undefined;
+	readonly SystemDiskCategory?: string | undefined;
+	readonly SystemDiskDescription?: string | undefined;
+	readonly SystemDiskDiskName?: string | undefined;
+	readonly SystemDiskPerformanceLevel?: string | undefined;
+	readonly SystemDiskProvisionedIops?: number | undefined;
+	readonly SystemDiskSize?: number | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly UserData?: string | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VSwitchId?: string | undefined;
+	readonly ZoneId?: string | undefined;
+	readonly ZoneIds?: any | string[];
 	readonly LogicalId: string;
 }
 export class InstanceGroupClone
@@ -495,45 +495,45 @@ export interface InstanceGroupCloneComponentOutputs {
 export interface InstanceGroupCloneComponentInputs {
 	readonly MaxAmount: number;
 	readonly SourceInstanceId: string;
-	readonly AutoReleaseTime?: (string | undefined) | undefined;
-	readonly AutoRenew?: (string | undefined) | undefined;
-	readonly AutoRenewPeriod?: (number | undefined) | undefined;
-	readonly BackendServerWeight?: (number | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly DeploymentSetId?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DiskMappings?: (DiskMappings[] | undefined) | undefined;
-	readonly EniMappings?: (EniMappings[] | undefined) | undefined;
-	readonly HpcClusterId?: (string | undefined) | undefined;
-	readonly ImageId?: (string | undefined) | undefined;
-	readonly InstanceName?: (string | undefined) | undefined;
-	readonly InternetMaxBandwidthIn?: (number | undefined) | undefined;
-	readonly InternetMaxBandwidthOut?: (number | undefined) | undefined;
-	readonly Ipv6AddressCount?: (number | undefined) | undefined;
-	readonly Ipv6Addresses?: (any[] | any) | undefined;
-	readonly KeyPairName?: (string | undefined) | undefined;
-	readonly LaunchTemplateId?: (string | undefined) | undefined;
-	readonly LaunchTemplateName?: (string | undefined) | undefined;
-	readonly LaunchTemplateVersion?: (string | undefined) | undefined;
-	readonly LoadBalancerIdToAttach?: (string | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly PasswordInherit?: (boolean | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly RamRoleName?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (any[] | undefined) | undefined;
-	readonly SpotPriceLimit?: (string | undefined) | undefined;
-	readonly SpotStrategy?: (string | undefined) | undefined;
-	readonly SystemDiskAutoSnapshotPolicyId?: (string | undefined) | undefined;
-	readonly SystemDiskBurstingEnabled?: (boolean | undefined) | undefined;
-	readonly SystemDiskCategory?: (string | undefined) | undefined;
-	readonly SystemDiskDescription?: (string | undefined) | undefined;
-	readonly SystemDiskDiskName?: (string | undefined) | undefined;
-	readonly SystemDiskProvisionedIops?: (number | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly AutoReleaseTime?: string | undefined;
+	readonly AutoRenew?: string | undefined;
+	readonly AutoRenewPeriod?: number | undefined;
+	readonly BackendServerWeight?: number | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly DeploymentSetId?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DiskMappings?: DiskMappings[] | undefined;
+	readonly EniMappings?: EniMappings[] | undefined;
+	readonly HpcClusterId?: string | undefined;
+	readonly ImageId?: string | undefined;
+	readonly InstanceName?: string | undefined;
+	readonly InternetMaxBandwidthIn?: number | undefined;
+	readonly InternetMaxBandwidthOut?: number | undefined;
+	readonly Ipv6AddressCount?: number | undefined;
+	readonly Ipv6Addresses?: any[] | any;
+	readonly KeyPairName?: string | undefined;
+	readonly LaunchTemplateId?: string | undefined;
+	readonly LaunchTemplateName?: string | undefined;
+	readonly LaunchTemplateVersion?: string | undefined;
+	readonly LoadBalancerIdToAttach?: string | undefined;
+	readonly Password?: string | undefined;
+	readonly PasswordInherit?: boolean | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly RamRoleName?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SecurityGroupIds?: any[] | undefined;
+	readonly SpotPriceLimit?: string | undefined;
+	readonly SpotStrategy?: string | undefined;
+	readonly SystemDiskAutoSnapshotPolicyId?: string | undefined;
+	readonly SystemDiskBurstingEnabled?: boolean | undefined;
+	readonly SystemDiskCategory?: string | undefined;
+	readonly SystemDiskDescription?: string | undefined;
+	readonly SystemDiskDiskName?: string | undefined;
+	readonly SystemDiskProvisionedIops?: number | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Invocation extends RosResource<InvocationComponentInputs> implements InvocationComponentOutputs {
@@ -550,10 +550,10 @@ export interface InvocationComponentOutputs {
 export interface InvocationComponentInputs {
 	readonly CommandId: string;
 	readonly InstanceIds: any[];
-	readonly Frequency?: (string | undefined) | undefined;
-	readonly Parameters?: ({ [key: string]: any } | undefined) | undefined;
-	readonly Sync?: (boolean | undefined) | undefined;
-	readonly Timed?: (boolean | undefined) | undefined;
+	readonly Frequency?: string | undefined;
+	readonly Parameters?: { [key: string]: any } | undefined;
+	readonly Sync?: boolean | undefined;
+	readonly Timed?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class JoinSecurityGroup
@@ -567,9 +567,9 @@ export class JoinSecurityGroup
 export interface JoinSecurityGroupComponentOutputs {}
 export interface JoinSecurityGroupComponentInputs {
 	readonly SecurityGroupId: string;
-	readonly InstanceId?: (string | undefined) | undefined;
-	readonly InstanceIdList?: (any[] | undefined) | undefined;
-	readonly NetworkInterfaceList?: (any[] | undefined) | undefined;
+	readonly InstanceId?: string | undefined;
+	readonly InstanceIdList?: any[] | undefined;
+	readonly NetworkInterfaceList?: any[] | undefined;
 	readonly LogicalId: string;
 }
 export class LaunchTemplate extends RosResource<LaunchTemplateComponentInputs> implements LaunchTemplateComponentOutputs {
@@ -587,47 +587,47 @@ export interface LaunchTemplateComponentOutputs {
 }
 export interface LaunchTemplateComponentInputs {
 	readonly LaunchTemplateName: any | string;
-	readonly AutoReleaseTime?: (string | undefined) | undefined;
-	readonly DeploymentSetId?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DiskMappings?: (DiskMappings[] | undefined) | undefined;
-	readonly HostName?: (string | undefined) | undefined;
-	readonly ImageId?: (string | undefined) | undefined;
-	readonly ImageOwnerAlias?: (string | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly InstanceName?: (string | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly InternetMaxBandwidthOut?: (number | undefined) | undefined;
-	readonly IoOptimized?: (string | undefined) | undefined;
-	readonly Ipv6AddressCount?: (number | undefined) | undefined;
-	readonly KeyPairName?: (string | undefined) | undefined;
-	readonly NetworkInterfaces?: (NetworkInterfaces[] | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly PasswordInherit?: (boolean | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
-	readonly RamRoleName?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecurityEnhancementStrategy?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SpotDuration?: (number | undefined) | undefined;
-	readonly SpotPriceLimit?: (string | undefined) | undefined;
-	readonly SpotStrategy?: (string | undefined) | undefined;
-	readonly SystemDiskCategory?: (string | undefined) | undefined;
-	readonly SystemDiskDeleteWithInstance?: (boolean | undefined) | undefined;
-	readonly SystemDiskDescription?: (string | undefined) | undefined;
-	readonly SystemDiskDiskName?: (string | undefined) | undefined;
-	readonly SystemDiskPerformanceLevel?: (string | undefined) | undefined;
-	readonly SystemDiskSize?: (number | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly TemplateResourceGroupId?: (string | undefined) | undefined;
-	readonly TemplateTags?: (TemplateTags[] | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
-	readonly VersionDescription?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly AutoReleaseTime?: string | undefined;
+	readonly DeploymentSetId?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DiskMappings?: DiskMappings[] | undefined;
+	readonly HostName?: string | undefined;
+	readonly ImageId?: string | undefined;
+	readonly ImageOwnerAlias?: string | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly InstanceName?: string | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly InternetMaxBandwidthOut?: number | undefined;
+	readonly IoOptimized?: string | undefined;
+	readonly Ipv6AddressCount?: number | undefined;
+	readonly KeyPairName?: string | undefined;
+	readonly NetworkInterfaces?: NetworkInterfaces[] | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly PasswordInherit?: boolean | undefined;
+	readonly Period?: number | undefined;
+	readonly PrivateIpAddress?: string | undefined;
+	readonly RamRoleName?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecurityEnhancementStrategy?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SpotDuration?: number | undefined;
+	readonly SpotPriceLimit?: string | undefined;
+	readonly SpotStrategy?: string | undefined;
+	readonly SystemDiskCategory?: string | undefined;
+	readonly SystemDiskDeleteWithInstance?: boolean | undefined;
+	readonly SystemDiskDescription?: string | undefined;
+	readonly SystemDiskDiskName?: string | undefined;
+	readonly SystemDiskPerformanceLevel?: string | undefined;
+	readonly SystemDiskSize?: number | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly TemplateResourceGroupId?: string | undefined;
+	readonly TemplateTags?: TemplateTags[] | undefined;
+	readonly UserData?: string | undefined;
+	readonly VersionDescription?: string | undefined;
+	readonly VSwitchId?: string | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkInterface
@@ -650,15 +650,15 @@ export interface NetworkInterfaceComponentOutputs {
 }
 export interface NetworkInterfaceComponentInputs {
 	readonly VSwitchId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly NetworkInterfaceName?: (string | undefined) | undefined;
-	readonly PrimaryIpAddress?: (string | undefined) | undefined;
-	readonly PrivateIpAddresses?: (string[] | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecondaryPrivateIpAddressCount?: (number | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly NetworkInterfaceName?: string | undefined;
+	readonly PrimaryIpAddress?: string | undefined;
+	readonly PrivateIpAddresses?: string[] | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecondaryPrivateIpAddressCount?: number | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkInterfaceAttachment
@@ -673,7 +673,7 @@ export interface NetworkInterfaceAttachmentComponentOutputs {}
 export interface NetworkInterfaceAttachmentComponentInputs {
 	readonly InstanceId: any | string;
 	readonly NetworkInterfaceId: any | string;
-	readonly TrunkNetworkInstanceId?: (any | string) | undefined;
+	readonly TrunkNetworkInstanceId?: any | string;
 	readonly LogicalId: string;
 }
 export class NetworkInterfacePermission
@@ -707,8 +707,8 @@ export interface PrefixListComponentInputs {
 	readonly AddressFamily: string;
 	readonly MaxEntries: number;
 	readonly PrefixListName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Entries?: (Entries[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Entries?: Entries[] | undefined;
 	readonly LogicalId: string;
 }
 export class Route extends RosResource<RouteComponentInputs> implements RouteComponentOutputs {
@@ -720,9 +720,9 @@ export interface RouteComponentOutputs {}
 export interface RouteComponentInputs {
 	readonly DestinationCidrBlock: string;
 	readonly RouteTableId: string;
-	readonly NextHopId?: (string | undefined) | undefined;
-	readonly NextHopList?: (NextHopList[] | undefined) | undefined;
-	readonly NextHopType?: (string | undefined) | undefined;
+	readonly NextHopId?: string | undefined;
+	readonly NextHopList?: NextHopList[] | undefined;
+	readonly NextHopType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class RunCommand extends RosResource<RunCommandComponentInputs> implements RunCommandComponentOutputs {
@@ -742,17 +742,17 @@ export interface RunCommandComponentInputs {
 	readonly CommandContent: string;
 	readonly InstanceIds: string[];
 	readonly Type: string;
-	readonly ContentEncoding?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnableParameter?: (boolean | undefined) | undefined;
-	readonly Frequency?: (string | undefined) | undefined;
-	readonly KeepCommand?: (boolean | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Parameters?: ({ [key: string]: any } | undefined) | undefined;
-	readonly Sync?: (boolean | undefined) | undefined;
-	readonly Timed?: (boolean | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
-	readonly WorkingDir?: (string | undefined) | undefined;
+	readonly ContentEncoding?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly EnableParameter?: boolean | undefined;
+	readonly Frequency?: string | undefined;
+	readonly KeepCommand?: boolean | undefined;
+	readonly Name?: string | undefined;
+	readonly Parameters?: { [key: string]: any } | undefined;
+	readonly Sync?: boolean | undefined;
+	readonly Timed?: boolean | undefined;
+	readonly Timeout?: number | undefined;
+	readonly WorkingDir?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SNatEntry extends RosResource<SNatEntryComponentInputs> implements SNatEntryComponentOutputs {
@@ -767,9 +767,9 @@ export interface SNatEntryComponentOutputs {
 export interface SNatEntryComponentInputs {
 	readonly SNatIp: string;
 	readonly SNatTableId: string;
-	readonly SnatEntryName?: (string | undefined) | undefined;
-	readonly SourceCIDR?: (string | undefined) | undefined;
-	readonly SourceVSwitchId?: (string | undefined) | undefined;
+	readonly SnatEntryName?: string | undefined;
+	readonly SourceCIDR?: string | undefined;
+	readonly SourceVSwitchId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SSHKeyPair extends RosResource<SSHKeyPairComponentInputs> implements SSHKeyPairComponentOutputs {
@@ -785,9 +785,9 @@ export interface SSHKeyPairComponentOutputs {
 }
 export interface SSHKeyPairComponentInputs {
 	readonly KeyPairName: any | string;
-	readonly PublicKeyBody?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly PublicKeyBody?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class SSHKeyPairAttachment
@@ -814,14 +814,14 @@ export interface SecurityGroupComponentOutputs {
 	readonly SecurityGroupId: any;
 }
 export interface SecurityGroupComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecurityGroupEgress?: (SecurityGroupEgress[] | undefined) | undefined;
-	readonly SecurityGroupIngress?: (SecurityGroupIngress[] | undefined) | undefined;
-	readonly SecurityGroupName?: (any | string) | undefined;
-	readonly SecurityGroupType?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecurityGroupEgress?: SecurityGroupEgress[] | undefined;
+	readonly SecurityGroupIngress?: SecurityGroupIngress[] | undefined;
+	readonly SecurityGroupName?: any | string;
+	readonly SecurityGroupType?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly VpcId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityGroupClone
@@ -838,13 +838,13 @@ export interface SecurityGroupCloneComponentOutputs {
 }
 export interface SecurityGroupCloneComponentInputs {
 	readonly SourceSecurityGroupId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DestinationRegionId?: (string | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecurityGroupName?: (string | undefined) | undefined;
-	readonly SecurityGroupType?: (string | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DestinationRegionId?: string | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecurityGroupName?: string | undefined;
+	readonly SecurityGroupType?: string | undefined;
+	readonly VpcId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityGroupEgress
@@ -859,16 +859,16 @@ export interface SecurityGroupEgressComponentOutputs {}
 export interface SecurityGroupEgressComponentInputs {
 	readonly IpProtocol: string;
 	readonly PortRange: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DestCidrIp?: (string | undefined) | undefined;
-	readonly DestGroupId?: (string | undefined) | undefined;
-	readonly DestGroupOwnerId?: (string | undefined) | undefined;
-	readonly DestPrefixListId?: (string | undefined) | undefined;
-	readonly Ipv6DestCidrIp?: (string | undefined) | undefined;
-	readonly NicType?: (string | undefined) | undefined;
-	readonly Policy?: (string | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DestCidrIp?: string | undefined;
+	readonly DestGroupId?: string | undefined;
+	readonly DestGroupOwnerId?: string | undefined;
+	readonly DestPrefixListId?: string | undefined;
+	readonly Ipv6DestCidrIp?: string | undefined;
+	readonly NicType?: string | undefined;
+	readonly Policy?: string | undefined;
+	readonly Priority?: number | undefined;
+	readonly SecurityGroupId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityGroupIngress
@@ -883,17 +883,17 @@ export interface SecurityGroupIngressComponentOutputs {}
 export interface SecurityGroupIngressComponentInputs {
 	readonly IpProtocol: string;
 	readonly PortRange: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Ipv6SourceCidrIp?: (string | undefined) | undefined;
-	readonly NicType?: (string | undefined) | undefined;
-	readonly Policy?: (string | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SourceCidrIp?: (string | undefined) | undefined;
-	readonly SourceGroupId?: (string | undefined) | undefined;
-	readonly SourceGroupOwnerId?: (string | undefined) | undefined;
-	readonly SourcePortRange?: (string | undefined) | undefined;
-	readonly SourcePrefixListId?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Ipv6SourceCidrIp?: string | undefined;
+	readonly NicType?: string | undefined;
+	readonly Policy?: string | undefined;
+	readonly Priority?: number | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SourceCidrIp?: string | undefined;
+	readonly SourceGroupId?: string | undefined;
+	readonly SourceGroupOwnerId?: string | undefined;
+	readonly SourcePortRange?: string | undefined;
+	readonly SourcePrefixListId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Snapshot extends RosResource<SnapshotComponentInputs> implements SnapshotComponentOutputs {
@@ -907,13 +907,13 @@ export interface SnapshotComponentOutputs {
 }
 export interface SnapshotComponentInputs {
 	readonly DiskId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InstantAccess?: (boolean | undefined) | undefined;
-	readonly InstantAccessRetentionDays?: (number | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SnapshotName?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly InstantAccess?: boolean | undefined;
+	readonly InstantAccessRetentionDays?: number | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SnapshotName?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly Timeout?: number | undefined;
 	readonly LogicalId: string;
 }
 export class VPC extends RosResource<VPCComponentInputs> implements VPCComponentOutputs {
@@ -930,16 +930,16 @@ export interface VPCComponentOutputs {
 	readonly VpcId: any;
 }
 export interface VPCComponentInputs {
-	readonly CidrBlock?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnableIpv6?: (boolean | undefined) | undefined;
-	readonly Ipv6CidrBlock?: (string | undefined) | undefined;
-	readonly Ipv6Isp?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecondaryCidrBlock?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly UserCidr?: (string | undefined) | undefined;
-	readonly VpcName?: (string | undefined) | undefined;
+	readonly CidrBlock?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly EnableIpv6?: boolean | undefined;
+	readonly Ipv6CidrBlock?: string | undefined;
+	readonly Ipv6Isp?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecondaryCidrBlock?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly UserCidr?: string | undefined;
+	readonly VpcName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VSwitch extends RosResource<VSwitchComponentInputs> implements VSwitchComponentOutputs {
@@ -955,134 +955,134 @@ export interface VSwitchComponentInputs {
 	readonly CidrBlock: any | string;
 	readonly VpcId: string;
 	readonly ZoneId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Ipv6CidrBlock?: (any | number) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VpcIpv6CidrBlock?: (string | undefined) | undefined;
-	readonly VSwitchName?: (string | undefined) | undefined;
-	readonly ZoneType?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Ipv6CidrBlock?: any | number;
+	readonly Tags?: Tags[] | undefined;
+	readonly VpcIpv6CidrBlock?: string | undefined;
+	readonly VSwitchName?: string | undefined;
+	readonly ZoneType?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface DataDisk {
-	readonly SnapshotId?: (string | undefined) | undefined;
-	readonly Category?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly Encrypted?: (boolean | undefined) | undefined;
-	readonly PerformanceLevel?: (string | undefined) | undefined;
-	readonly Size?: (number | undefined) | undefined;
-	readonly DeleteWithInstance?: (boolean | undefined) | undefined;
-	readonly DiskName?: (string | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
+	readonly SnapshotId?: string | undefined;
+	readonly Category?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly Encrypted?: boolean | undefined;
+	readonly PerformanceLevel?: string | undefined;
+	readonly Size?: number | undefined;
+	readonly DeleteWithInstance?: boolean | undefined;
+	readonly DiskName?: string | undefined;
+	readonly InternetChargeType?: string | undefined;
 }
 export interface LaunchConfiguration {
-	readonly KeyPairName?: (string | undefined) | undefined;
-	readonly IoOptimized?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SystemDiskSize?: (number | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
-	readonly SystemDiskDescription?: (string | undefined) | undefined;
+	readonly KeyPairName?: string | undefined;
+	readonly IoOptimized?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SystemDiskSize?: number | undefined;
+	readonly UserData?: string | undefined;
+	readonly SystemDiskDescription?: string | undefined;
 	readonly SecurityGroupId: string;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly SystemDiskCategory?: (string | undefined) | undefined;
-	readonly InstanceName?: (string | undefined) | undefined;
-	readonly SystemDiskName?: (string | undefined) | undefined;
-	readonly DataDisk?: (DataDisk[] | undefined) | undefined;
-	readonly RamRoleName?: (string | undefined) | undefined;
-	readonly InternetMaxBandwidthOut?: (number | undefined) | undefined;
-	readonly SystemDiskPerformanceLevel?: (string | undefined) | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly SystemDiskCategory?: string | undefined;
+	readonly InstanceName?: string | undefined;
+	readonly SystemDiskName?: string | undefined;
+	readonly DataDisk?: DataDisk[] | undefined;
+	readonly RamRoleName?: string | undefined;
+	readonly InternetMaxBandwidthOut?: number | undefined;
+	readonly SystemDiskPerformanceLevel?: string | undefined;
 	readonly ImageId: string;
-	readonly InstanceDescription?: (string | undefined) | undefined;
-	readonly Tag?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly HostName?: (string | undefined) | undefined;
-	readonly CreditSpecification?: (string | undefined) | undefined;
-	readonly SecurityEnhancementStrategy?: (string | undefined) | undefined;
-	readonly PasswordInherit?: (boolean | undefined) | undefined;
+	readonly InstanceDescription?: string | undefined;
+	readonly Tag?: { key: string; value: string }[] | undefined;
+	readonly HostName?: string | undefined;
+	readonly CreditSpecification?: string | undefined;
+	readonly SecurityEnhancementStrategy?: string | undefined;
+	readonly PasswordInherit?: boolean | undefined;
 }
 export interface LaunchTemplateConfig {
-	readonly WeightedCapacity?: (number | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
+	readonly WeightedCapacity?: number | undefined;
+	readonly Priority?: number | undefined;
 	readonly VSwitchId: string;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly MaxPrice?: (number | undefined) | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly MaxPrice?: number | undefined;
 }
 export interface Tag {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface DiskDeviceMapping {
-	readonly DiskType?: (string | undefined) | undefined;
-	readonly SnapshotId?: (string | undefined) | undefined;
-	readonly Device?: (string | undefined) | undefined;
-	readonly Size?: (number | undefined) | undefined;
+	readonly DiskType?: string | undefined;
+	readonly SnapshotId?: string | undefined;
+	readonly Device?: string | undefined;
+	readonly Size?: number | undefined;
 }
 export interface DiskMappings {
-	readonly SnapshotId?: (string | undefined) | undefined;
-	readonly Category?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Device?: (string | undefined) | undefined;
-	readonly PerformanceLevel?: (string | undefined) | undefined;
+	readonly SnapshotId?: string | undefined;
+	readonly Category?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Device?: string | undefined;
+	readonly PerformanceLevel?: string | undefined;
 	readonly Size: string;
-	readonly DiskName?: (string | undefined) | undefined;
+	readonly DiskName?: string | undefined;
 }
 export interface EniMappings {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly SecurityGroupId: string;
 	readonly VSwitchId: string;
-	readonly NetworkInterfaceName?: (string | undefined) | undefined;
-	readonly PrimaryIpAddress?: (string | undefined) | undefined;
+	readonly NetworkInterfaceName?: string | undefined;
+	readonly PrimaryIpAddress?: string | undefined;
 }
 export interface NetworkInterfaces {
-	readonly Description?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
-	readonly NetworkInterfaceName?: (string | undefined) | undefined;
-	readonly PrimaryIpAddress?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly VSwitchId?: string | undefined;
+	readonly NetworkInterfaceName?: string | undefined;
+	readonly PrimaryIpAddress?: string | undefined;
 }
 export interface TemplateTags {
-	readonly Value?: (string | undefined) | undefined;
-	readonly Key?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
+	readonly Key?: string | undefined;
 }
 export interface Entries {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly Cidr: string;
 }
 export interface NextHopList {
-	readonly NextHopType?: (string | undefined) | undefined;
+	readonly NextHopType?: string | undefined;
 	readonly NextHopId: string;
 }
 export interface SecurityGroupEgress {
-	readonly Policy?: (string | undefined) | undefined;
+	readonly Policy?: string | undefined;
 	readonly PortRange: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DestPrefixListId?: (string | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly DestGroupOwnerId?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DestPrefixListId?: string | undefined;
+	readonly Priority?: number | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly DestGroupOwnerId?: string | undefined;
 	readonly IpProtocol: string;
-	readonly DestCidrIp?: (string | undefined) | undefined;
-	readonly NicType?: (string | undefined) | undefined;
-	readonly Ipv6DestCidrIp?: (string | undefined) | undefined;
-	readonly DestGroupId?: (string | undefined) | undefined;
+	readonly DestCidrIp?: string | undefined;
+	readonly NicType?: string | undefined;
+	readonly Ipv6DestCidrIp?: string | undefined;
+	readonly DestGroupId?: string | undefined;
 }
 export interface SecurityGroupIngress {
-	readonly SourceGroupId?: (string | undefined) | undefined;
-	readonly Policy?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly SourcePortRange?: (string | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SourceGroupOwnerId?: (string | undefined) | undefined;
-	readonly Ipv6SourceCidrIp?: (string | undefined) | undefined;
-	readonly NicType?: (string | undefined) | undefined;
+	readonly SourceGroupId?: string | undefined;
+	readonly Policy?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly SourcePortRange?: string | undefined;
+	readonly Priority?: number | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SourceGroupOwnerId?: string | undefined;
+	readonly Ipv6SourceCidrIp?: string | undefined;
+	readonly NicType?: string | undefined;
 	readonly PortRange: string;
-	readonly SourceCidrIp?: (string | undefined) | undefined;
+	readonly SourceCidrIp?: string | undefined;
 	readonly IpProtocol: string;
-	readonly SourcePrefixListId?: (string | undefined) | undefined;
+	readonly SourcePrefixListId?: string | undefined;
 }
 export default {
 	AssignIpv6Addresses: AssignIpv6Addresses,

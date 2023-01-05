@@ -7,51 +7,50 @@ export class PublicAdvertisedPrefixes
 	constructor(entity: ADKEntity, options: PublicAdvertisedPrefixesComponentInputs) {
 		super(entity, options.name, "compute.v1.PublicAdvertisedPrefixes", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly publicDelegatedPrefixs?: PublicAdvertisedPrefixPublicDelegatedPrefix[] | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly sharedSecret?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly publicDelegatedPrefixs?: PublicAdvertisedPrefixPublicDelegatedPrefix[];
+	public readonly selfLink?: string;
+	public readonly sharedSecret?: string;
 }
 export interface PublicAdvertisedPrefixesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly publicDelegatedPrefixs?: PublicAdvertisedPrefixPublicDelegatedPrefix[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly sharedSecret?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly publicDelegatedPrefixs?: PublicAdvertisedPrefixPublicDelegatedPrefix[];
+	readonly selfLink?: string;
+	readonly sharedSecret?: string;
 }
 export interface PublicAdvertisedPrefixesComponentInputs {
-	readonly description?: string | undefined;
-	readonly dnsVerificationIp?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly ipCidrRange?: string | undefined;
+	readonly description?: string;
+	readonly dnsVerificationIp?: string;
+	readonly fingerprint?: string;
+	readonly ipCidrRange?: string;
 	readonly name: string;
-	readonly requestId?: string | undefined;
-	readonly status?: string | undefined;
-	readonly type: string;
+	readonly requestId?: string;
+	readonly status?: string;
 }
 export interface PublicAdvertisedPrefix {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly dnsVerificationIp?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly ipCidrRange?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly publicDelegatedPrefixs?: PublicAdvertisedPrefixPublicDelegatedPrefix[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly sharedSecret?: string | undefined;
-	readonly status?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly dnsVerificationIp?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly ipCidrRange?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly publicDelegatedPrefixs?: PublicAdvertisedPrefixPublicDelegatedPrefix[];
+	readonly selfLink?: string;
+	readonly sharedSecret?: string;
+	readonly status?: string;
 }
 export interface PublicAdvertisedPrefixPublicDelegatedPrefix {
-	readonly ipRange?: string | undefined;
-	readonly name?: string | undefined;
-	readonly project?: string | undefined;
-	readonly region?: string | undefined;
-	readonly status?: string | undefined;
+	readonly ipRange?: string;
+	readonly name?: string;
+	readonly project?: string;
+	readonly region?: string;
+	readonly status?: string;
 }
 export default {
 	PublicAdvertisedPrefixes: PublicAdvertisedPrefixes,

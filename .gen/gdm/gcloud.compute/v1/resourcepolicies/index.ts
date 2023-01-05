@@ -7,104 +7,103 @@ export class ResourcePolicies
 	constructor(entity: ADKEntity, options: ResourcePoliciesComponentInputs) {
 		super(entity, options.name, "compute.v1.ResourcePolicies", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly resourceStatus?: ResourcePolicyResourceStatus | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly status?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly resourceStatus?: ResourcePolicyResourceStatus;
+	public readonly selfLink?: string;
+	public readonly status?: string;
 }
 export interface ResourcePoliciesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly resourceStatus?: ResourcePolicyResourceStatus | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly resourceStatus?: ResourcePolicyResourceStatus;
+	readonly selfLink?: string;
+	readonly status?: string;
 }
 export interface ResourcePoliciesComponentInputs {
-	readonly description?: string | undefined;
-	readonly groupPlacementPolicy?: ResourcePolicyGroupPlacementPolicy | undefined;
-	readonly instanceSchedulePolicy?: ResourcePolicyInstanceSchedulePolicy | undefined;
+	readonly description?: string;
+	readonly groupPlacementPolicy?: ResourcePolicyGroupPlacementPolicy;
+	readonly instanceSchedulePolicy?: ResourcePolicyInstanceSchedulePolicy;
 	readonly name: string;
-	readonly region?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly snapshotSchedulePolicy?: ResourcePolicySnapshotSchedulePolicy | undefined;
-	readonly type: string;
+	readonly region?: string;
+	readonly requestId?: string;
+	readonly snapshotSchedulePolicy?: ResourcePolicySnapshotSchedulePolicy;
 }
 export interface ResourcePolicy {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly groupPlacementPolicy?: ResourcePolicyGroupPlacementPolicy | undefined;
-	readonly id?: string | undefined;
-	readonly instanceSchedulePolicy?: ResourcePolicyInstanceSchedulePolicy | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly region?: string | undefined;
-	readonly resourceStatus?: ResourcePolicyResourceStatus | undefined;
-	readonly selfLink?: string | undefined;
-	readonly snapshotSchedulePolicy?: ResourcePolicySnapshotSchedulePolicy | undefined;
-	readonly status?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly groupPlacementPolicy?: ResourcePolicyGroupPlacementPolicy;
+	readonly id?: string;
+	readonly instanceSchedulePolicy?: ResourcePolicyInstanceSchedulePolicy;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly region?: string;
+	readonly resourceStatus?: ResourcePolicyResourceStatus;
+	readonly selfLink?: string;
+	readonly snapshotSchedulePolicy?: ResourcePolicySnapshotSchedulePolicy;
+	readonly status?: string;
 }
 export interface ResourcePolicyDailyCycle {
-	readonly daysInCycle?: number | undefined;
-	readonly duration?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly daysInCycle?: number;
+	readonly duration?: string;
+	readonly startTime?: string;
 }
 export interface ResourcePolicyGroupPlacementPolicy {
-	readonly availabilityDomainCount?: number | undefined;
-	readonly collocation?: string | undefined;
-	readonly vmCount?: number | undefined;
+	readonly availabilityDomainCount?: number;
+	readonly collocation?: string;
+	readonly vmCount?: number;
 }
 export interface ResourcePolicyHourlyCycle {
-	readonly duration?: string | undefined;
-	readonly hoursInCycle?: number | undefined;
-	readonly startTime?: string | undefined;
+	readonly duration?: string;
+	readonly hoursInCycle?: number;
+	readonly startTime?: string;
 }
 export interface ResourcePolicyInstanceSchedulePolicy {
-	readonly expirationTime?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly timeZone?: string | undefined;
-	readonly vmStartSchedule?: ResourcePolicyInstanceSchedulePolicySchedule | undefined;
-	readonly vmStopSchedule?: ResourcePolicyInstanceSchedulePolicySchedule | undefined;
+	readonly expirationTime?: string;
+	readonly startTime?: string;
+	readonly timeZone?: string;
+	readonly vmStartSchedule?: ResourcePolicyInstanceSchedulePolicySchedule;
+	readonly vmStopSchedule?: ResourcePolicyInstanceSchedulePolicySchedule;
 }
 export interface ResourcePolicyInstanceSchedulePolicySchedule {
-	readonly schedule?: string | undefined;
+	readonly schedule?: string;
 }
 export interface ResourcePolicyResourceStatus {
-	readonly instanceSchedulePolicy?: ResourcePolicyResourceStatusInstanceSchedulePolicyStatus | undefined;
+	readonly instanceSchedulePolicy?: ResourcePolicyResourceStatusInstanceSchedulePolicyStatus;
 }
 export interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatus {
-	readonly lastRunStartTime?: string | undefined;
-	readonly nextRunStartTime?: string | undefined;
+	readonly lastRunStartTime?: string;
+	readonly nextRunStartTime?: string;
 }
 export interface ResourcePolicySnapshotSchedulePolicy {
-	readonly retentionPolicy?: ResourcePolicySnapshotSchedulePolicyRetentionPolicy | undefined;
-	readonly schedule?: ResourcePolicySnapshotSchedulePolicySchedule | undefined;
-	readonly snapshotProperties?: ResourcePolicySnapshotSchedulePolicySnapshotProperties | undefined;
+	readonly retentionPolicy?: ResourcePolicySnapshotSchedulePolicyRetentionPolicy;
+	readonly schedule?: ResourcePolicySnapshotSchedulePolicySchedule;
+	readonly snapshotProperties?: ResourcePolicySnapshotSchedulePolicySnapshotProperties;
 }
 export interface ResourcePolicySnapshotSchedulePolicyRetentionPolicy {
-	readonly maxRetentionDays?: number | undefined;
-	readonly onSourceDiskDelete?: string | undefined;
+	readonly maxRetentionDays?: number;
+	readonly onSourceDiskDelete?: string;
 }
 export interface ResourcePolicySnapshotSchedulePolicySchedule {
-	readonly dailySchedule?: ResourcePolicyDailyCycle | undefined;
-	readonly hourlySchedule?: ResourcePolicyHourlyCycle | undefined;
-	readonly weeklySchedule?: ResourcePolicyWeeklyCycle | undefined;
+	readonly dailySchedule?: ResourcePolicyDailyCycle;
+	readonly hourlySchedule?: ResourcePolicyHourlyCycle;
+	readonly weeklySchedule?: ResourcePolicyWeeklyCycle;
 }
 export interface ResourcePolicySnapshotSchedulePolicySnapshotProperties {
-	readonly chainName?: string | undefined;
-	readonly guestFlush?: boolean | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly storageLocations?: string[] | undefined;
+	readonly chainName?: string;
+	readonly guestFlush?: boolean;
+	readonly labels?: { [P in string]: string };
+	readonly storageLocations?: string[];
 }
 export interface ResourcePolicyWeeklyCycle {
-	readonly dayOfWeeks?: ResourcePolicyWeeklyCycleDayOfWeek[] | undefined;
+	readonly dayOfWeeks?: ResourcePolicyWeeklyCycleDayOfWeek[];
 }
 export interface ResourcePolicyWeeklyCycleDayOfWeek {
-	readonly day?: string | undefined;
-	readonly duration?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly day?: string;
+	readonly duration?: string;
+	readonly startTime?: string;
 }
 export default {
 	ResourcePolicies: ResourcePolicies,

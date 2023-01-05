@@ -18,10 +18,10 @@ export interface DataRepositoryAssociationComponentInputs {
 	readonly DataRepositoryPath: string;
 	readonly FileSystemId: string;
 	readonly FileSystemPath: string;
-	readonly BatchImportMetaDataOnCreate?: (boolean | undefined) | undefined;
-	readonly ImportedFileChunkSize?: (number | undefined) | undefined;
-	readonly S3?: (S3 | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly BatchImportMetaDataOnCreate?: boolean | undefined;
+	readonly ImportedFileChunkSize?: number | undefined;
+	readonly S3?: S3 | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class FileSystem extends CfnResource<FileSystemComponentInputs> implements FileSystemComponentOutputs {
@@ -40,17 +40,17 @@ export interface FileSystemComponentOutputs {
 export interface FileSystemComponentInputs {
 	readonly FileSystemType: string;
 	readonly SubnetIds: string[];
-	readonly BackupId?: (string | undefined) | undefined;
-	readonly FileSystemTypeVersion?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly LustreConfiguration?: (LustreConfiguration | undefined) | undefined;
-	readonly OntapConfiguration?: (OntapConfiguration | undefined) | undefined;
-	readonly OpenZFSConfiguration?: (OpenZFSConfiguration | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly StorageCapacity?: (number | undefined) | undefined;
-	readonly StorageType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly WindowsConfiguration?: (WindowsConfiguration | undefined) | undefined;
+	readonly BackupId?: string | undefined;
+	readonly FileSystemTypeVersion?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly LustreConfiguration?: LustreConfiguration | undefined;
+	readonly OntapConfiguration?: OntapConfiguration | undefined;
+	readonly OpenZFSConfiguration?: OpenZFSConfiguration | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly StorageCapacity?: number | undefined;
+	readonly StorageType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly WindowsConfiguration?: WindowsConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export class Snapshot extends CfnResource<SnapshotComponentInputs> implements SnapshotComponentOutputs {
@@ -65,7 +65,7 @@ export interface SnapshotComponentOutputs {
 export interface SnapshotComponentInputs {
 	readonly Name: string;
 	readonly VolumeId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class StorageVirtualMachine
@@ -87,10 +87,10 @@ export interface StorageVirtualMachineComponentOutputs {
 export interface StorageVirtualMachineComponentInputs {
 	readonly FileSystemId: string;
 	readonly Name: string;
-	readonly ActiveDirectoryConfiguration?: (ActiveDirectoryConfiguration | undefined) | undefined;
-	readonly RootVolumeSecurityStyle?: (string | undefined) | undefined;
-	readonly SvmAdminPassword?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ActiveDirectoryConfiguration?: ActiveDirectoryConfiguration | undefined;
+	readonly RootVolumeSecurityStyle?: string | undefined;
+	readonly SvmAdminPassword?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Volume extends CfnResource<VolumeComponentInputs> implements VolumeComponentOutputs {
@@ -108,11 +108,11 @@ export interface VolumeComponentOutputs {
 }
 export interface VolumeComponentInputs {
 	readonly Name: string;
-	readonly BackupId?: (string | undefined) | undefined;
-	readonly OntapConfiguration?: (OntapConfiguration | undefined) | undefined;
-	readonly OpenZFSConfiguration?: (OpenZFSConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VolumeType?: (string | undefined) | undefined;
+	readonly BackupId?: string | undefined;
+	readonly OntapConfiguration?: OntapConfiguration | undefined;
+	readonly OpenZFSConfiguration?: OpenZFSConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VolumeType?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface AutoExportPolicy {
@@ -122,108 +122,108 @@ export interface AutoImportPolicy {
 	readonly Events: string[];
 }
 export interface S3 {
-	readonly AutoExportPolicy?: (AutoExportPolicy | undefined) | undefined;
-	readonly AutoImportPolicy?: (AutoImportPolicy | undefined) | undefined;
+	readonly AutoExportPolicy?: AutoExportPolicy | undefined;
+	readonly AutoImportPolicy?: AutoImportPolicy | undefined;
 }
 export interface AuditLogConfiguration {
-	readonly AuditLogDestination?: (string | undefined) | undefined;
+	readonly AuditLogDestination?: string | undefined;
 	readonly FileAccessAuditLogLevel: string;
 	readonly FileShareAccessAuditLogLevel: string;
 }
 export interface ClientConfigurations {
-	readonly Clients?: (string | undefined) | undefined;
-	readonly Options?: (string[] | undefined) | undefined;
+	readonly Clients?: string | undefined;
+	readonly Options?: string[] | undefined;
 }
 export interface DiskIopsConfiguration {
-	readonly Iops?: (number | undefined) | undefined;
-	readonly Mode?: (string | undefined) | undefined;
+	readonly Iops?: number | undefined;
+	readonly Mode?: string | undefined;
 }
 export interface LustreConfiguration {
-	readonly AutoImportPolicy?: (string | undefined) | undefined;
-	readonly AutomaticBackupRetentionDays?: (number | undefined) | undefined;
-	readonly CopyTagsToBackups?: (boolean | undefined) | undefined;
-	readonly DailyAutomaticBackupStartTime?: (string | undefined) | undefined;
-	readonly DataCompressionType?: (string | undefined) | undefined;
-	readonly DeploymentType?: (string | undefined) | undefined;
-	readonly DriveCacheType?: (string | undefined) | undefined;
-	readonly ExportPath?: (string | undefined) | undefined;
-	readonly ImportPath?: (string | undefined) | undefined;
-	readonly ImportedFileChunkSize?: (number | undefined) | undefined;
-	readonly PerUnitStorageThroughput?: (number | undefined) | undefined;
-	readonly WeeklyMaintenanceStartTime?: (string | undefined) | undefined;
+	readonly AutoImportPolicy?: string | undefined;
+	readonly AutomaticBackupRetentionDays?: number | undefined;
+	readonly CopyTagsToBackups?: boolean | undefined;
+	readonly DailyAutomaticBackupStartTime?: string | undefined;
+	readonly DataCompressionType?: string | undefined;
+	readonly DeploymentType?: string | undefined;
+	readonly DriveCacheType?: string | undefined;
+	readonly ExportPath?: string | undefined;
+	readonly ImportPath?: string | undefined;
+	readonly ImportedFileChunkSize?: number | undefined;
+	readonly PerUnitStorageThroughput?: number | undefined;
+	readonly WeeklyMaintenanceStartTime?: string | undefined;
 }
 export interface NfsExports {
-	readonly ClientConfigurations?: (ClientConfigurations[] | undefined) | undefined;
+	readonly ClientConfigurations?: ClientConfigurations[] | undefined;
 }
 export interface OntapConfiguration {
-	readonly AutomaticBackupRetentionDays?: (number | undefined) | undefined;
-	readonly DailyAutomaticBackupStartTime?: (string | undefined) | undefined;
+	readonly AutomaticBackupRetentionDays?: number | undefined;
+	readonly DailyAutomaticBackupStartTime?: string | undefined;
 	readonly DeploymentType: string;
-	readonly DiskIopsConfiguration?: (DiskIopsConfiguration | undefined) | undefined;
-	readonly EndpointIpAddressRange?: (string | undefined) | undefined;
-	readonly FsxAdminPassword?: (string | undefined) | undefined;
-	readonly PreferredSubnetId?: (string | undefined) | undefined;
-	readonly RouteTableIds?: (string[] | undefined) | undefined;
-	readonly ThroughputCapacity?: (number | undefined) | undefined;
-	readonly WeeklyMaintenanceStartTime?: (string | undefined) | undefined;
+	readonly DiskIopsConfiguration?: DiskIopsConfiguration | undefined;
+	readonly EndpointIpAddressRange?: string | undefined;
+	readonly FsxAdminPassword?: string | undefined;
+	readonly PreferredSubnetId?: string | undefined;
+	readonly RouteTableIds?: string[] | undefined;
+	readonly ThroughputCapacity?: number | undefined;
+	readonly WeeklyMaintenanceStartTime?: string | undefined;
 }
 export interface OpenZFSConfiguration {
-	readonly AutomaticBackupRetentionDays?: (number | undefined) | undefined;
-	readonly CopyTagsToBackups?: (boolean | undefined) | undefined;
-	readonly CopyTagsToVolumes?: (boolean | undefined) | undefined;
-	readonly DailyAutomaticBackupStartTime?: (string | undefined) | undefined;
+	readonly AutomaticBackupRetentionDays?: number | undefined;
+	readonly CopyTagsToBackups?: boolean | undefined;
+	readonly CopyTagsToVolumes?: boolean | undefined;
+	readonly DailyAutomaticBackupStartTime?: string | undefined;
 	readonly DeploymentType: string;
-	readonly DiskIopsConfiguration?: (DiskIopsConfiguration | undefined) | undefined;
-	readonly Options?: (string[] | undefined) | undefined;
-	readonly RootVolumeConfiguration?: (RootVolumeConfiguration | undefined) | undefined;
-	readonly ThroughputCapacity?: (number | undefined) | undefined;
-	readonly WeeklyMaintenanceStartTime?: (string | undefined) | undefined;
+	readonly DiskIopsConfiguration?: DiskIopsConfiguration | undefined;
+	readonly Options?: string[] | undefined;
+	readonly RootVolumeConfiguration?: RootVolumeConfiguration | undefined;
+	readonly ThroughputCapacity?: number | undefined;
+	readonly WeeklyMaintenanceStartTime?: string | undefined;
 }
 export interface RootVolumeConfiguration {
-	readonly CopyTagsToSnapshots?: (boolean | undefined) | undefined;
-	readonly DataCompressionType?: (string | undefined) | undefined;
-	readonly NfsExports?: (NfsExports[] | undefined) | undefined;
-	readonly ReadOnly?: (boolean | undefined) | undefined;
-	readonly RecordSizeKiB?: (number | undefined) | undefined;
-	readonly UserAndGroupQuotas?: (UserAndGroupQuotas[] | undefined) | undefined;
+	readonly CopyTagsToSnapshots?: boolean | undefined;
+	readonly DataCompressionType?: string | undefined;
+	readonly NfsExports?: NfsExports[] | undefined;
+	readonly ReadOnly?: boolean | undefined;
+	readonly RecordSizeKiB?: number | undefined;
+	readonly UserAndGroupQuotas?: UserAndGroupQuotas[] | undefined;
 }
 export interface SelfManagedActiveDirectoryConfiguration {
-	readonly DnsIps?: (string[] | undefined) | undefined;
-	readonly DomainName?: (string | undefined) | undefined;
-	readonly FileSystemAdministratorsGroup?: (string | undefined) | undefined;
-	readonly OrganizationalUnitDistinguishedName?: (string | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly UserName?: (string | undefined) | undefined;
+	readonly DnsIps?: string[] | undefined;
+	readonly DomainName?: string | undefined;
+	readonly FileSystemAdministratorsGroup?: string | undefined;
+	readonly OrganizationalUnitDistinguishedName?: string | undefined;
+	readonly Password?: string | undefined;
+	readonly UserName?: string | undefined;
 }
 export interface UserAndGroupQuotas {
-	readonly Id?: (number | undefined) | undefined;
-	readonly StorageCapacityQuotaGiB?: (number | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Id?: number | undefined;
+	readonly StorageCapacityQuotaGiB?: number | undefined;
+	readonly Type?: string | undefined;
 }
 export interface WindowsConfiguration {
-	readonly ActiveDirectoryId?: (string | undefined) | undefined;
-	readonly Aliases?: (string[] | undefined) | undefined;
-	readonly AuditLogConfiguration?: (AuditLogConfiguration | undefined) | undefined;
-	readonly AutomaticBackupRetentionDays?: (number | undefined) | undefined;
-	readonly CopyTagsToBackups?: (boolean | undefined) | undefined;
-	readonly DailyAutomaticBackupStartTime?: (string | undefined) | undefined;
-	readonly DeploymentType?: (string | undefined) | undefined;
-	readonly PreferredSubnetId?: (string | undefined) | undefined;
-	readonly SelfManagedActiveDirectoryConfiguration?: (SelfManagedActiveDirectoryConfiguration | undefined) | undefined;
+	readonly ActiveDirectoryId?: string | undefined;
+	readonly Aliases?: string[] | undefined;
+	readonly AuditLogConfiguration?: AuditLogConfiguration | undefined;
+	readonly AutomaticBackupRetentionDays?: number | undefined;
+	readonly CopyTagsToBackups?: boolean | undefined;
+	readonly DailyAutomaticBackupStartTime?: string | undefined;
+	readonly DeploymentType?: string | undefined;
+	readonly PreferredSubnetId?: string | undefined;
+	readonly SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryConfiguration | undefined;
 	readonly ThroughputCapacity: number;
-	readonly WeeklyMaintenanceStartTime?: (string | undefined) | undefined;
+	readonly WeeklyMaintenanceStartTime?: string | undefined;
 }
 export interface ActiveDirectoryConfiguration {
-	readonly NetBiosName?: (string | undefined) | undefined;
-	readonly SelfManagedActiveDirectoryConfiguration?: (SelfManagedActiveDirectoryConfiguration | undefined) | undefined;
+	readonly NetBiosName?: string | undefined;
+	readonly SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryConfiguration | undefined;
 }
 export interface OriginSnapshot {
 	readonly CopyStrategy: string;
 	readonly SnapshotARN: string;
 }
 export interface TieringPolicy {
-	readonly CoolingPeriod?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly CoolingPeriod?: number | undefined;
+	readonly Name?: string | undefined;
 }
 export default {
 	DataRepositoryAssociation: DataRepositoryAssociation,

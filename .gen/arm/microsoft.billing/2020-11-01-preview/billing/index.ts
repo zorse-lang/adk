@@ -14,22 +14,22 @@ export interface promotionsComponentOutputs {
 	readonly type: "Microsoft.Billing/promotions";
 }
 export interface promotionsComponentInputs {
-	readonly etag?: number | undefined;
+	readonly etag?: number;
 	readonly name: string;
-	readonly properties?: PromotionCreateRequestPropertiesOrPromotionResponseProperties | undefined;
-	readonly sku?: PromotionCreateSkuNameRequestProperties | undefined;
+	readonly properties?: PromotionCreateRequestPropertiesOrPromotionResponseProperties;
+	readonly sku?: PromotionCreateSkuNameRequestProperties;
 }
 export interface PromotionCreateRequestPropertiesOrPromotionResponseProperties {
-	readonly appliedScopes?: string[] | undefined;
-	readonly displayName?: string | undefined;
-	readonly effectiveDateTime?: string | undefined;
-	readonly expiryDate?: string | undefined;
-	readonly lastUpdatedDateTime?: string | undefined;
-	readonly orderId?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly appliedScopes?: string[];
+	readonly displayName?: string;
+	readonly effectiveDateTime?: string;
+	readonly expiryDate?: string;
+	readonly lastUpdatedDateTime?: string;
+	readonly orderId?: string;
+	readonly provisioningState?: string;
 }
 export interface PromotionCreateSkuNameRequestProperties {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export default {
 	promotions: promotions,

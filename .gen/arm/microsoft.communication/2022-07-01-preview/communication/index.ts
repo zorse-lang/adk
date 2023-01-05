@@ -19,9 +19,9 @@ export interface communicationServicesComponentOutputs {
 export interface communicationServicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CommunicationServiceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: CommunicationServiceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class emailServices extends ArmResource<emailServicesComponentInputs> implements emailServicesComponentOutputs {
 	constructor(entity: ADKEntity, options: emailServicesComponentInputs) {
@@ -39,9 +39,9 @@ export interface emailServicesComponentOutputs {
 export interface emailServicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: EmailServiceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: EmailServiceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class emailServices_domains
 	extends ArmResource<emailServices_domainsComponentInputs>
@@ -62,9 +62,9 @@ export interface emailServices_domainsComponentOutputs {
 export interface emailServices_domainsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DomainProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DomainProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export function listKeys(resource: communicationServices): CommunicationServiceKeys {
 	if (resource.apiVersion !== "2022-07-01-preview") {
@@ -76,87 +76,105 @@ export function listKeys(resource: communicationServices): CommunicationServiceK
 	throw new Error("not implemented");
 }
 export interface CommunicationServiceKeys {
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface CommunicationServiceProperties {
 	readonly dataLocation: string;
-	readonly hostName?: string | undefined;
-	readonly immutableResourceId?: string | undefined;
-	readonly linkedDomains?: string[] | undefined;
-	readonly notificationHubId?: string | undefined;
+	readonly hostName?: string;
+	readonly immutableResourceId?: string;
+	readonly linkedDomains?: string[];
+	readonly notificationHubId?: string;
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
-	readonly version?: string | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "Running"
+		| "Succeeded"
+		| "Unknown"
+		| "Updating";
+	readonly version?: string;
 }
 export interface DnsRecord {
-	readonly name?: string | undefined;
-	readonly ttl?: number | undefined;
-	readonly type?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly ttl?: number;
+	readonly type?: string;
+	readonly value?: string;
 }
 export interface DomainProperties {
-	readonly dataLocation?: string | undefined;
+	readonly dataLocation?: string;
 	readonly domainManagement: "AzureManaged" | "CustomerManaged" | "CustomerManagedInExchangeOnline";
-	readonly fromSenderDomain?: string | undefined;
-	readonly mailFromSenderDomain?: string | undefined;
+	readonly fromSenderDomain?: string;
+	readonly mailFromSenderDomain?: string;
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
-	readonly userEngagementTracking?: ("Disabled" | "Enabled") | undefined;
-	readonly validSenderUsernames?: ValidSenderUsernameCollection | undefined;
-	readonly verificationRecords?: DomainPropertiesVerificationRecords | undefined;
-	readonly verificationStates?: DomainPropertiesVerificationStates | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "Running"
+		| "Succeeded"
+		| "Unknown"
+		| "Updating";
+	readonly userEngagementTracking?: "Disabled" | "Enabled";
+	readonly validSenderUsernames?: ValidSenderUsernameCollection;
+	readonly verificationRecords?: DomainPropertiesVerificationRecords;
+	readonly verificationStates?: DomainPropertiesVerificationStates;
 }
 export interface DomainPropertiesVerificationRecords {
-	readonly DKIM?: DnsRecord | undefined;
-	readonly DKIM2?: DnsRecord | undefined;
-	readonly DMARC?: DnsRecord | undefined;
-	readonly Domain?: DnsRecord | undefined;
-	readonly SPF?: DnsRecord | undefined;
+	readonly DKIM?: DnsRecord;
+	readonly DKIM2?: DnsRecord;
+	readonly DMARC?: DnsRecord;
+	readonly Domain?: DnsRecord;
+	readonly SPF?: DnsRecord;
 }
 export interface DomainPropertiesVerificationStates {
-	readonly DKIM?: VerificationStatusRecord | undefined;
-	readonly DKIM2?: VerificationStatusRecord | undefined;
-	readonly DMARC?: VerificationStatusRecord | undefined;
-	readonly Domain?: VerificationStatusRecord | undefined;
-	readonly SPF?: VerificationStatusRecord | undefined;
+	readonly DKIM?: VerificationStatusRecord;
+	readonly DKIM2?: VerificationStatusRecord;
+	readonly DMARC?: VerificationStatusRecord;
+	readonly Domain?: VerificationStatusRecord;
+	readonly SPF?: VerificationStatusRecord;
 }
 export interface EmailServiceProperties {
 	readonly dataLocation: string;
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "Running"
+		| "Succeeded"
+		| "Unknown"
+		| "Updating";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ValidSenderUsernameCollection {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VerificationStatusRecord {
-	readonly errorCode?: string | undefined;
+	readonly errorCode?: string;
 	readonly status?:
-		| (
-				| "CancellationRequested"
-				| "NotStarted"
-				| "VerificationFailed"
-				| "VerificationInProgress"
-				| "VerificationRequested"
-				| "Verified"
-		  )
-		| undefined;
+		| "CancellationRequested"
+		| "NotStarted"
+		| "VerificationFailed"
+		| "VerificationInProgress"
+		| "VerificationRequested"
+		| "Verified";
 }
 export default {
 	communicationServices: communicationServices,

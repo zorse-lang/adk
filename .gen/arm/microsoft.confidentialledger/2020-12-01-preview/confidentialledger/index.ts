@@ -14,44 +14,42 @@ export interface ledgersComponentOutputs {
 	readonly type: "Microsoft.ConfidentialLedger/ledgers";
 }
 export interface ledgersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: LedgerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: LedgerProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: Tags;
 }
 export interface AADBasedSecurityPrincipal {
-	readonly ledgerRoleName?: ("Administrator" | "Contributor" | "Reader") | undefined;
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly ledgerRoleName?: "Administrator" | "Contributor" | "Reader";
+	readonly principalId?: string;
+	readonly tenantId?: string;
 }
 export interface CertBasedSecurityPrincipal {
-	readonly cert?: string | undefined;
-	readonly ledgerRoleName?: ("Administrator" | "Contributor" | "Reader") | undefined;
+	readonly cert?: string;
+	readonly ledgerRoleName?: "Administrator" | "Contributor" | "Reader";
 }
 export interface LedgerProperties {
-	readonly aadBasedSecurityPrincipals?: AADBasedSecurityPrincipal[] | undefined;
-	readonly certBasedSecurityPrincipals?: CertBasedSecurityPrincipal[] | undefined;
-	readonly identityServiceUri?: string | undefined;
-	readonly ledgerInternalNamespace?: string | undefined;
-	readonly ledgerName?: string | undefined;
-	readonly ledgerStorageAccount?: string | undefined;
-	readonly ledgerType?: ("Private" | "Public" | "Unknown") | undefined;
-	readonly ledgerUri?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
+	readonly aadBasedSecurityPrincipals?: AADBasedSecurityPrincipal[];
+	readonly certBasedSecurityPrincipals?: CertBasedSecurityPrincipal[];
+	readonly identityServiceUri?: string;
+	readonly ledgerInternalNamespace?: string;
+	readonly ledgerName?: string;
+	readonly ledgerStorageAccount?: string;
+	readonly ledgerType?: "Private" | "Public" | "Unknown";
+	readonly ledgerUri?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Tags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	ledgers: ledgers,

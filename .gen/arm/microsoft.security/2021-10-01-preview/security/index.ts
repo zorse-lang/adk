@@ -15,11 +15,11 @@ export interface mdeOnboardingsComponentOutputs {
 }
 export interface mdeOnboardingsComponentInputs {
 	readonly name: string;
-	readonly properties?: MdeOnboardingDataProperties | undefined;
+	readonly properties?: MdeOnboardingDataProperties;
 }
 export interface MdeOnboardingDataProperties {
-	readonly onboardingPackageLinux?: any | undefined;
-	readonly onboardingPackageWindows?: any | undefined;
+	readonly onboardingPackageLinux?: any;
+	readonly onboardingPackageWindows?: any;
 }
 export default {
 	mdeOnboardings: mdeOnboardings,

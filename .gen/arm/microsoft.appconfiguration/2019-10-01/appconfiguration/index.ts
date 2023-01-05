@@ -17,12 +17,12 @@ export interface configurationStoresComponentOutputs {
 	readonly type: "Microsoft.AppConfiguration/configurationStores";
 }
 export interface configurationStoresComponentInputs {
-	readonly identity?: ResourceIdentity | undefined;
+	readonly identity?: ResourceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ConfigurationStoreProperties | undefined;
+	readonly properties?: ConfigurationStoreProperties;
 	readonly sku: Sku;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export function listKeys(resource: configurationStores): ApiKeyListResult {
 	if (resource.apiVersion !== "2019-10-01") {
@@ -43,57 +43,57 @@ export function listKeyValue(resource: configurationStores, input: ListKeyValueP
 	throw new Error("not implemented");
 }
 export interface ApiKey {
-	readonly connectionString?: string | undefined;
-	readonly id?: string | undefined;
-	readonly lastModified?: string | undefined;
-	readonly name?: string | undefined;
-	readonly readOnly?: boolean | undefined;
-	readonly value?: string | undefined;
+	readonly connectionString?: string;
+	readonly id?: string;
+	readonly lastModified?: string;
+	readonly name?: string;
+	readonly readOnly?: boolean;
+	readonly value?: string;
 }
 export interface ApiKeyListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: ApiKey[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: ApiKey[];
 }
 export interface ConfigurationStoreProperties {
-	readonly creationDate?: string | undefined;
-	readonly endpoint?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly creationDate?: string;
+	readonly endpoint?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface KeyValue {
-	readonly contentType?: string | undefined;
-	readonly eTag?: string | undefined;
-	readonly key?: string | undefined;
-	readonly label?: string | undefined;
-	readonly lastModified?: string | undefined;
-	readonly locked?: boolean | undefined;
-	readonly tags?: KeyValueTags | undefined;
-	readonly value?: string | undefined;
+	readonly contentType?: string;
+	readonly eTag?: string;
+	readonly key?: string;
+	readonly label?: string;
+	readonly lastModified?: string;
+	readonly locked?: boolean;
+	readonly tags?: KeyValueTags;
+	readonly value?: string;
 }
 export interface KeyValueTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ListKeyValueParameters {
 	readonly key: string;
-	readonly label?: string | undefined;
+	readonly label?: string;
 }
 export interface ResourceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned" | "UserAssigned") | undefined;
-	readonly userAssignedIdentities?: ResourceIdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned" | "UserAssigned";
+	readonly userAssignedIdentities?: ResourceIdentityUserAssignedIdentities;
 }
 export interface ResourceIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserIdentity | undefined;
+	readonly [key: string]: UserIdentity;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
 	readonly name: string;
 }
 export interface UserIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	configurationStores: configurationStores,

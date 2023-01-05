@@ -25,15 +25,15 @@ export interface CapacityReservationComponentInputs {
 	readonly InstanceCount: number;
 	readonly InstancePlatform: string;
 	readonly InstanceType: string;
-	readonly EbsOptimized?: (boolean | undefined) | undefined;
-	readonly EndDate?: (string | undefined) | undefined;
-	readonly EndDateType?: (string | undefined) | undefined;
-	readonly EphemeralStorage?: (boolean | undefined) | undefined;
-	readonly InstanceMatchCriteria?: (string | undefined) | undefined;
-	readonly OutPostArn?: (string | undefined) | undefined;
-	readonly PlacementGroupArn?: (string | undefined) | undefined;
-	readonly TagSpecifications?: (TagSpecification[] | undefined) | undefined;
-	readonly Tenancy?: string | undefined;
+	readonly EbsOptimized?: boolean | undefined;
+	readonly EndDate?: string | undefined;
+	readonly EndDateType?: string | undefined;
+	readonly EphemeralStorage?: boolean | undefined;
+	readonly InstanceMatchCriteria?: string | undefined;
+	readonly OutPostArn?: string | undefined;
+	readonly PlacementGroupArn?: string | undefined;
+	readonly TagSpecifications?: TagSpecification[] | undefined;
+	readonly Tenancy?: string;
 	readonly LogicalId: string;
 }
 export class CapacityReservationFleet
@@ -49,15 +49,15 @@ export interface CapacityReservationFleetComponentOutputs {
 	readonly CapacityReservationFleetId: string;
 }
 export interface CapacityReservationFleetComponentInputs {
-	readonly AllocationStrategy?: (string | undefined) | undefined;
-	readonly EndDate?: (string | undefined) | undefined;
-	readonly InstanceMatchCriteria?: (string | undefined) | undefined;
-	readonly InstanceTypeSpecifications?: (InstanceTypeSpecification[] | undefined) | undefined;
-	readonly NoRemoveEndDate?: (boolean | undefined) | undefined;
-	readonly RemoveEndDate?: (boolean | undefined) | undefined;
-	readonly TagSpecifications?: (TagSpecification[] | undefined) | undefined;
-	readonly Tenancy?: (string | undefined) | undefined;
-	readonly TotalTargetCapacity?: (number | undefined) | undefined;
+	readonly AllocationStrategy?: string | undefined;
+	readonly EndDate?: string | undefined;
+	readonly InstanceMatchCriteria?: string | undefined;
+	readonly InstanceTypeSpecifications?: InstanceTypeSpecification[] | undefined;
+	readonly NoRemoveEndDate?: boolean | undefined;
+	readonly RemoveEndDate?: boolean | undefined;
+	readonly TagSpecifications?: TagSpecification[] | undefined;
+	readonly Tenancy?: string | undefined;
+	readonly TotalTargetCapacity?: number | undefined;
 	readonly LogicalId: string;
 }
 export class CarrierGateway extends CfnResource<CarrierGatewayComponentInputs> implements CarrierGatewayComponentOutputs {
@@ -75,7 +75,7 @@ export interface CarrierGatewayComponentOutputs {
 }
 export interface CarrierGatewayComponentInputs {
 	readonly VpcId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ClientVpnAuthorizationRule
@@ -90,9 +90,9 @@ export interface ClientVpnAuthorizationRuleComponentOutputs {}
 export interface ClientVpnAuthorizationRuleComponentInputs {
 	readonly ClientVpnEndpointId: string;
 	readonly TargetNetworkCidr: string;
-	readonly AccessGroupId?: (string | undefined) | undefined;
-	readonly AuthorizeAllGroups?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly AccessGroupId?: string | undefined;
+	readonly AuthorizeAllGroups?: boolean | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ClientVpnEndpoint
@@ -109,18 +109,18 @@ export interface ClientVpnEndpointComponentInputs {
 	readonly ClientCidrBlock: string;
 	readonly ConnectionLogOptions: ConnectionLogOptions;
 	readonly ServerCertificateArn: string;
-	readonly ClientConnectOptions?: (ClientConnectOptions | undefined) | undefined;
-	readonly ClientLoginBannerOptions?: (ClientLoginBannerOptions | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DnsServers?: (string[] | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SelfServicePortal?: (string | undefined) | undefined;
-	readonly SessionTimeoutHours?: (number | undefined) | undefined;
-	readonly SplitTunnel?: (boolean | undefined) | undefined;
-	readonly TagSpecifications?: (TagSpecification[] | undefined) | undefined;
-	readonly TransportProtocol?: (string | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VpnPort?: (number | undefined) | undefined;
+	readonly ClientConnectOptions?: ClientConnectOptions | undefined;
+	readonly ClientLoginBannerOptions?: ClientLoginBannerOptions | undefined;
+	readonly Description?: string | undefined;
+	readonly DnsServers?: string[] | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SelfServicePortal?: string | undefined;
+	readonly SessionTimeoutHours?: number | undefined;
+	readonly SplitTunnel?: boolean | undefined;
+	readonly TagSpecifications?: TagSpecification[] | undefined;
+	readonly TransportProtocol?: string | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VpnPort?: number | undefined;
 	readonly LogicalId: string;
 }
 export class ClientVpnRoute extends CfnResource<ClientVpnRouteComponentInputs> implements ClientVpnRouteComponentOutputs {
@@ -133,7 +133,7 @@ export interface ClientVpnRouteComponentInputs {
 	readonly ClientVpnEndpointId: string;
 	readonly DestinationCidrBlock: string;
 	readonly TargetVpcSubnetId: string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ClientVpnTargetNetworkAssociation
@@ -166,7 +166,7 @@ export interface CustomerGatewayComponentInputs {
 	readonly BgpAsn: number;
 	readonly IpAddress: string;
 	readonly Type: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DHCPOptions extends CfnResource<DHCPOptionsComponentInputs> implements DHCPOptionsComponentOutputs {
@@ -179,12 +179,12 @@ export interface DHCPOptionsComponentOutputs {
 	readonly DhcpOptionsId: string;
 }
 export interface DHCPOptionsComponentInputs {
-	readonly DomainName?: (string | undefined) | undefined;
-	readonly DomainNameServers?: (string[] | undefined) | undefined;
-	readonly NetbiosNameServers?: (string[] | undefined) | undefined;
-	readonly NetbiosNodeType?: (number | undefined) | undefined;
-	readonly NtpServers?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DomainName?: string | undefined;
+	readonly DomainNameServers?: string[] | undefined;
+	readonly NetbiosNameServers?: string[] | undefined;
+	readonly NetbiosNodeType?: number | undefined;
+	readonly NtpServers?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class EC2Fleet extends CfnResource<EC2FleetComponentInputs> implements EC2FleetComponentOutputs {
@@ -199,16 +199,16 @@ export interface EC2FleetComponentOutputs {
 export interface EC2FleetComponentInputs {
 	readonly LaunchTemplateConfigs: FleetLaunchTemplateConfigRequest[];
 	readonly TargetCapacitySpecification: TargetCapacitySpecificationRequest;
-	readonly Context?: (string | undefined) | undefined;
-	readonly ExcessCapacityTerminationPolicy?: (string | undefined) | undefined;
-	readonly OnDemandOptions?: (OnDemandOptionsRequest | undefined) | undefined;
-	readonly ReplaceUnhealthyInstances?: (boolean | undefined) | undefined;
-	readonly SpotOptions?: (SpotOptionsRequest | undefined) | undefined;
-	readonly TagSpecifications?: (TagSpecification[] | undefined) | undefined;
-	readonly TerminateInstancesWithExpiration?: (boolean | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
-	readonly ValidFrom?: (string | undefined) | undefined;
-	readonly ValidUntil?: (string | undefined) | undefined;
+	readonly Context?: string | undefined;
+	readonly ExcessCapacityTerminationPolicy?: string | undefined;
+	readonly OnDemandOptions?: OnDemandOptionsRequest | undefined;
+	readonly ReplaceUnhealthyInstances?: boolean | undefined;
+	readonly SpotOptions?: SpotOptionsRequest | undefined;
+	readonly TagSpecifications?: TagSpecification[] | undefined;
+	readonly TerminateInstancesWithExpiration?: boolean | undefined;
+	readonly Type?: string | undefined;
+	readonly ValidFrom?: string | undefined;
+	readonly ValidUntil?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EIP extends CfnResource<EIPComponentInputs> implements EIPComponentOutputs {
@@ -223,12 +223,12 @@ export interface EIPComponentOutputs {
 	readonly PublicIp: string;
 }
 export interface EIPComponentInputs {
-	readonly Domain?: (string | undefined) | undefined;
-	readonly InstanceId?: (string | undefined) | undefined;
-	readonly NetworkBorderGroup?: (string | undefined) | undefined;
-	readonly PublicIpv4Pool?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TransferAddress?: (string | undefined) | undefined;
+	readonly Domain?: string | undefined;
+	readonly InstanceId?: string | undefined;
+	readonly NetworkBorderGroup?: string | undefined;
+	readonly PublicIpv4Pool?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TransferAddress?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EIPAssociation extends CfnResource<EIPAssociationComponentInputs> implements EIPAssociationComponentOutputs {
@@ -238,11 +238,11 @@ export class EIPAssociation extends CfnResource<EIPAssociationComponentInputs> i
 }
 export interface EIPAssociationComponentOutputs {}
 export interface EIPAssociationComponentInputs {
-	readonly AllocationId?: (string | undefined) | undefined;
-	readonly EIP?: (string | undefined) | undefined;
-	readonly InstanceId?: (string | undefined) | undefined;
-	readonly NetworkInterfaceId?: (string | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
+	readonly AllocationId?: string | undefined;
+	readonly EIP?: string | undefined;
+	readonly InstanceId?: string | undefined;
+	readonly NetworkInterfaceId?: string | undefined;
+	readonly PrivateIpAddress?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EgressOnlyInternetGateway
@@ -294,15 +294,15 @@ export interface FlowLogComponentOutputs {
 export interface FlowLogComponentInputs {
 	readonly ResourceId: string;
 	readonly ResourceType: string;
-	readonly DeliverLogsPermissionArn?: (string | undefined) | undefined;
-	readonly DestinationOptions?: (DestinationOptions | undefined) | undefined;
-	readonly LogDestination?: (string | undefined) | undefined;
-	readonly LogDestinationType?: (string | undefined) | undefined;
-	readonly LogFormat?: (string | undefined) | undefined;
-	readonly LogGroupName?: (string | undefined) | undefined;
-	readonly MaxAggregationInterval?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TrafficType?: (string | undefined) | undefined;
+	readonly DeliverLogsPermissionArn?: string | undefined;
+	readonly DestinationOptions?: DestinationOptions | undefined;
+	readonly LogDestination?: string | undefined;
+	readonly LogDestinationType?: string | undefined;
+	readonly LogFormat?: string | undefined;
+	readonly LogGroupName?: string | undefined;
+	readonly MaxAggregationInterval?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TrafficType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class GatewayRouteTableAssociation
@@ -333,11 +333,11 @@ export interface HostComponentOutputs {
 }
 export interface HostComponentInputs {
 	readonly AvailabilityZone: string;
-	readonly AutoPlacement?: (string | undefined) | undefined;
-	readonly HostRecovery?: (string | undefined) | undefined;
-	readonly InstanceFamily?: (string | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly OutpostArn?: (string | undefined) | undefined;
+	readonly AutoPlacement?: string | undefined;
+	readonly HostRecovery?: string | undefined;
+	readonly InstanceFamily?: string | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly OutpostArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class IPAM extends CfnResource<IPAMComponentInputs> implements IPAMComponentOutputs {
@@ -358,9 +358,9 @@ export interface IPAMComponentOutputs {
 	readonly ScopeCount: number;
 }
 export interface IPAMComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly OperatingRegions?: (IpamOperatingRegion[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly OperatingRegions?: IpamOperatingRegion[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class IPAMAllocation extends CfnResource<IPAMAllocationComponentInputs> implements IPAMAllocationComponentOutputs {
@@ -374,9 +374,9 @@ export interface IPAMAllocationComponentOutputs {
 }
 export interface IPAMAllocationComponentInputs {
 	readonly IpamPoolId: string;
-	readonly Cidr?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly NetmaskLength?: (number | undefined) | undefined;
+	readonly Cidr?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly NetmaskLength?: number | undefined;
 	readonly LogicalId: string;
 }
 export class IPAMPool extends CfnResource<IPAMPoolComponentInputs> implements IPAMPoolComponentOutputs {
@@ -405,18 +405,18 @@ export interface IPAMPoolComponentOutputs {
 export interface IPAMPoolComponentInputs {
 	readonly AddressFamily: string;
 	readonly IpamScopeId: string;
-	readonly AllocationDefaultNetmaskLength?: (number | undefined) | undefined;
-	readonly AllocationMaxNetmaskLength?: (number | undefined) | undefined;
-	readonly AllocationMinNetmaskLength?: (number | undefined) | undefined;
-	readonly AllocationResourceTags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly AutoImport?: (boolean | undefined) | undefined;
-	readonly AwsService?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Locale?: (string | undefined) | undefined;
-	readonly ProvisionedCidrs?: (ProvisionedCidr[] | undefined) | undefined;
-	readonly PubliclyAdvertisable?: (boolean | undefined) | undefined;
-	readonly SourceIpamPoolId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AllocationDefaultNetmaskLength?: number | undefined;
+	readonly AllocationMaxNetmaskLength?: number | undefined;
+	readonly AllocationMinNetmaskLength?: number | undefined;
+	readonly AllocationResourceTags?: { key: string; value: string }[] | undefined;
+	readonly AutoImport?: boolean | undefined;
+	readonly AwsService?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Locale?: string | undefined;
+	readonly ProvisionedCidrs?: ProvisionedCidr[] | undefined;
+	readonly PubliclyAdvertisable?: boolean | undefined;
+	readonly SourceIpamPoolId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class IPAMScope extends CfnResource<IPAMScopeComponentInputs> implements IPAMScopeComponentOutputs {
@@ -440,8 +440,8 @@ export interface IPAMScopeComponentOutputs {
 }
 export interface IPAMScopeComponentInputs {
 	readonly IpamId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Instance extends CfnResource<InstanceComponentInputs> implements InstanceComponentOutputs {
@@ -460,46 +460,46 @@ export interface InstanceComponentOutputs {
 	readonly PublicIp: string;
 }
 export interface InstanceComponentInputs {
-	readonly AdditionalInfo?: (string | undefined) | undefined;
-	readonly Affinity?: (string | undefined) | undefined;
-	readonly AvailabilityZone?: string | undefined;
-	readonly BlockDeviceMappings?: (BlockDeviceMapping[] | undefined) | undefined;
-	readonly CpuOptions?: (CpuOptions | undefined) | undefined;
-	readonly CreditSpecification?: (CreditSpecification | undefined) | undefined;
-	readonly DisableApiTermination?: (boolean | undefined) | undefined;
-	readonly EbsOptimized?: (boolean | undefined) | undefined;
-	readonly ElasticGpuSpecifications?: (ElasticGpuSpecification[] | undefined) | undefined;
-	readonly ElasticInferenceAccelerators?: (ElasticInferenceAccelerator[] | undefined) | undefined;
-	readonly EnclaveOptions?: (EnclaveOptions | undefined) | undefined;
-	readonly HibernationOptions?: (HibernationOptions | undefined) | undefined;
-	readonly HostId?: (string | undefined) | undefined;
-	readonly HostResourceGroupArn?: (string | undefined) | undefined;
-	readonly IamInstanceProfile?: (string | undefined) | undefined;
-	readonly ImageId?: (string | undefined) | undefined;
-	readonly InstanceInitiatedShutdownBehavior?: (string | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly Ipv6AddressCount?: (number | undefined) | undefined;
-	readonly Ipv6Addresses?: (InstanceIpv6Address[] | undefined) | undefined;
-	readonly KernelId?: (string | undefined) | undefined;
-	readonly KeyName?: (string | undefined) | undefined;
-	readonly LaunchTemplate?: (LaunchTemplateSpecification | undefined) | undefined;
-	readonly LicenseSpecifications?: (LicenseSpecification[] | undefined) | undefined;
-	readonly Monitoring?: (boolean | undefined) | undefined;
-	readonly NetworkInterfaces?: (NetworkInterface[] | undefined) | undefined;
-	readonly PlacementGroupName?: (string | undefined) | undefined;
-	readonly PrivateDnsNameOptions?: (PrivateDnsNameOptions | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
-	readonly PropagateTagsToVolumeOnCreation?: (boolean | undefined) | undefined;
-	readonly RamdiskId?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SecurityGroups?: (string[] | undefined) | undefined;
-	readonly SourceDestCheck?: (boolean | undefined) | undefined;
-	readonly SsmAssociations?: (SsmAssociation[] | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Tenancy?: (string | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
-	readonly Volumes?: (Volume[] | undefined) | undefined;
+	readonly AdditionalInfo?: string | undefined;
+	readonly Affinity?: string | undefined;
+	readonly AvailabilityZone?: string;
+	readonly BlockDeviceMappings?: BlockDeviceMapping[] | undefined;
+	readonly CpuOptions?: CpuOptions | undefined;
+	readonly CreditSpecification?: CreditSpecification | undefined;
+	readonly DisableApiTermination?: boolean | undefined;
+	readonly EbsOptimized?: boolean | undefined;
+	readonly ElasticGpuSpecifications?: ElasticGpuSpecification[] | undefined;
+	readonly ElasticInferenceAccelerators?: ElasticInferenceAccelerator[] | undefined;
+	readonly EnclaveOptions?: EnclaveOptions | undefined;
+	readonly HibernationOptions?: HibernationOptions | undefined;
+	readonly HostId?: string | undefined;
+	readonly HostResourceGroupArn?: string | undefined;
+	readonly IamInstanceProfile?: string | undefined;
+	readonly ImageId?: string | undefined;
+	readonly InstanceInitiatedShutdownBehavior?: string | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly Ipv6AddressCount?: number | undefined;
+	readonly Ipv6Addresses?: InstanceIpv6Address[] | undefined;
+	readonly KernelId?: string | undefined;
+	readonly KeyName?: string | undefined;
+	readonly LaunchTemplate?: LaunchTemplateSpecification | undefined;
+	readonly LicenseSpecifications?: LicenseSpecification[] | undefined;
+	readonly Monitoring?: boolean | undefined;
+	readonly NetworkInterfaces?: NetworkInterface[] | undefined;
+	readonly PlacementGroupName?: string | undefined;
+	readonly PrivateDnsNameOptions?: PrivateDnsNameOptions | undefined;
+	readonly PrivateIpAddress?: string | undefined;
+	readonly PropagateTagsToVolumeOnCreation?: boolean | undefined;
+	readonly RamdiskId?: string | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SecurityGroups?: string[] | undefined;
+	readonly SourceDestCheck?: boolean | undefined;
+	readonly SsmAssociations?: SsmAssociation[] | undefined;
+	readonly SubnetId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Tenancy?: string | undefined;
+	readonly UserData?: string | undefined;
+	readonly Volumes?: Volume[] | undefined;
 	readonly LogicalId: string;
 }
 export class InternetGateway
@@ -515,7 +515,7 @@ export interface InternetGatewayComponentOutputs {
 	readonly InternetGatewayId: string;
 }
 export interface InternetGatewayComponentInputs {
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class KeyPair extends CfnResource<KeyPairComponentInputs> implements KeyPairComponentOutputs {
@@ -531,9 +531,9 @@ export interface KeyPairComponentOutputs {
 }
 export interface KeyPairComponentInputs {
 	readonly KeyName: string;
-	readonly KeyType?: (string | undefined) | undefined;
-	readonly PublicKeyMaterial?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly KeyType?: string | undefined;
+	readonly PublicKeyMaterial?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LaunchTemplate extends CfnResource<LaunchTemplateComponentInputs> implements LaunchTemplateComponentOutputs {
@@ -549,9 +549,9 @@ export interface LaunchTemplateComponentOutputs {
 }
 export interface LaunchTemplateComponentInputs {
 	readonly LaunchTemplateData: LaunchTemplateData;
-	readonly LaunchTemplateName?: (string | undefined) | undefined;
-	readonly TagSpecifications?: (LaunchTemplateTagSpecification[] | undefined) | undefined;
-	readonly VersionDescription?: (string | undefined) | undefined;
+	readonly LaunchTemplateName?: string | undefined;
+	readonly TagSpecifications?: LaunchTemplateTagSpecification[] | undefined;
+	readonly VersionDescription?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LocalGatewayRoute
@@ -571,8 +571,8 @@ export interface LocalGatewayRouteComponentOutputs {
 export interface LocalGatewayRouteComponentInputs {
 	readonly DestinationCidrBlock: string;
 	readonly LocalGatewayRouteTableId: string;
-	readonly LocalGatewayVirtualInterfaceGroupId?: (string | undefined) | undefined;
-	readonly NetworkInterfaceId?: (string | undefined) | undefined;
+	readonly LocalGatewayVirtualInterfaceGroupId?: string | undefined;
+	readonly NetworkInterfaceId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LocalGatewayRouteTableVPCAssociation
@@ -594,7 +594,7 @@ export interface LocalGatewayRouteTableVPCAssociationComponentOutputs {
 export interface LocalGatewayRouteTableVPCAssociationComponentInputs {
 	readonly LocalGatewayRouteTableId: string;
 	readonly VpcId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class NatGateway extends CfnResource<NatGatewayComponentInputs> implements NatGatewayComponentOutputs {
@@ -608,10 +608,10 @@ export interface NatGatewayComponentOutputs {
 }
 export interface NatGatewayComponentInputs {
 	readonly SubnetId: string;
-	readonly AllocationId?: (string | undefined) | undefined;
-	readonly ConnectivityType?: (string | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AllocationId?: string | undefined;
+	readonly ConnectivityType?: string | undefined;
+	readonly PrivateIpAddress?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkAcl extends CfnResource<NetworkAclComponentInputs> implements NetworkAclComponentOutputs {
@@ -625,7 +625,7 @@ export interface NetworkAclComponentOutputs {
 }
 export interface NetworkAclComponentInputs {
 	readonly VpcId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkAclEntry
@@ -645,11 +645,11 @@ export interface NetworkAclEntryComponentInputs {
 	readonly Protocol: number;
 	readonly RuleAction: string;
 	readonly RuleNumber: number;
-	readonly CidrBlock?: (string | undefined) | undefined;
-	readonly Egress?: (boolean | undefined) | undefined;
-	readonly Icmp?: (Icmp | undefined) | undefined;
-	readonly Ipv6CidrBlock?: (string | undefined) | undefined;
-	readonly PortRange?: (PortRange | undefined) | undefined;
+	readonly CidrBlock?: string | undefined;
+	readonly Egress?: boolean | undefined;
+	readonly Icmp?: Icmp | undefined;
+	readonly Ipv6CidrBlock?: string | undefined;
+	readonly PortRange?: PortRange | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkInsightsAccessScope
@@ -671,9 +671,9 @@ export interface NetworkInsightsAccessScopeComponentOutputs {
 	readonly UpdatedDate: string;
 }
 export interface NetworkInsightsAccessScopeComponentInputs {
-	readonly ExcludePaths?: (AccessScopePathRequest[] | undefined) | undefined;
-	readonly MatchPaths?: (AccessScopePathRequest[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ExcludePaths?: AccessScopePathRequest[] | undefined;
+	readonly MatchPaths?: AccessScopePathRequest[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkInsightsAccessScopeAnalysis
@@ -704,7 +704,7 @@ export interface NetworkInsightsAccessScopeAnalysisComponentOutputs {
 }
 export interface NetworkInsightsAccessScopeAnalysisComponentInputs {
 	readonly NetworkInsightsAccessScopeId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkInsightsAnalysis
@@ -741,9 +741,9 @@ export interface NetworkInsightsAnalysisComponentOutputs {
 }
 export interface NetworkInsightsAnalysisComponentInputs {
 	readonly NetworkInsightsPathId: string;
-	readonly AdditionalAccounts?: (string[] | undefined) | undefined;
-	readonly FilterInArns?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AdditionalAccounts?: string[] | undefined;
+	readonly FilterInArns?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkInsightsPath
@@ -770,10 +770,10 @@ export interface NetworkInsightsPathComponentInputs {
 	readonly Destination: string;
 	readonly Protocol: string;
 	readonly Source: string;
-	readonly DestinationIp?: (string | undefined) | undefined;
-	readonly DestinationPort?: (number | undefined) | undefined;
-	readonly SourceIp?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DestinationIp?: string | undefined;
+	readonly DestinationPort?: number | undefined;
+	readonly SourceIp?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkInterface
@@ -794,16 +794,16 @@ export interface NetworkInterfaceComponentOutputs {
 }
 export interface NetworkInterfaceComponentInputs {
 	readonly SubnetId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly GroupSet?: (string[] | undefined) | undefined;
-	readonly InterfaceType?: (string | undefined) | undefined;
-	readonly Ipv6AddressCount?: (number | undefined) | undefined;
-	readonly Ipv6Addresses?: (InstanceIpv6Address[] | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
-	readonly PrivateIpAddresses?: (PrivateIpAddressSpecification[] | undefined) | undefined;
-	readonly SecondaryPrivateIpAddressCount?: (number | undefined) | undefined;
-	readonly SourceDestCheck?: (boolean | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly GroupSet?: string[] | undefined;
+	readonly InterfaceType?: string | undefined;
+	readonly Ipv6AddressCount?: number | undefined;
+	readonly Ipv6Addresses?: InstanceIpv6Address[] | undefined;
+	readonly PrivateIpAddress?: string | undefined;
+	readonly PrivateIpAddresses?: PrivateIpAddressSpecification[] | undefined;
+	readonly SecondaryPrivateIpAddressCount?: number | undefined;
+	readonly SourceDestCheck?: boolean | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkInterfaceAttachment
@@ -819,7 +819,7 @@ export interface NetworkInterfaceAttachmentComponentInputs {
 	readonly DeviceIndex: string;
 	readonly InstanceId: string;
 	readonly NetworkInterfaceId: string;
-	readonly DeleteOnTermination?: (boolean | undefined) | undefined;
+	readonly DeleteOnTermination?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkInterfacePermission
@@ -863,8 +863,8 @@ export interface PlacementGroupComponentOutputs {
 	readonly GroupName: string;
 }
 export interface PlacementGroupComponentInputs {
-	readonly SpreadLevel?: (string | undefined) | undefined;
-	readonly Strategy?: (string | undefined) | undefined;
+	readonly SpreadLevel?: string | undefined;
+	readonly Strategy?: string | undefined;
 	readonly LogicalId: string;
 }
 export class PrefixList extends CfnResource<PrefixListComponentInputs> implements PrefixListComponentOutputs {
@@ -886,8 +886,8 @@ export interface PrefixListComponentInputs {
 	readonly AddressFamily: string;
 	readonly MaxEntries: number;
 	readonly PrefixListName: string;
-	readonly Entries?: (Entry[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Entries?: Entry[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Route extends CfnResource<RouteComponentInputs> implements RouteComponentOutputs {
@@ -898,18 +898,18 @@ export class Route extends CfnResource<RouteComponentInputs> implements RouteCom
 export interface RouteComponentOutputs {}
 export interface RouteComponentInputs {
 	readonly RouteTableId: string;
-	readonly CarrierGatewayId?: (string | undefined) | undefined;
-	readonly DestinationCidrBlock?: (string | undefined) | undefined;
-	readonly DestinationIpv6CidrBlock?: (string | undefined) | undefined;
-	readonly EgressOnlyInternetGatewayId?: (string | undefined) | undefined;
-	readonly GatewayId?: (string | undefined) | undefined;
-	readonly InstanceId?: (string | undefined) | undefined;
-	readonly LocalGatewayId?: (string | undefined) | undefined;
-	readonly NatGatewayId?: (string | undefined) | undefined;
-	readonly NetworkInterfaceId?: (string | undefined) | undefined;
-	readonly TransitGatewayId?: (string | undefined) | undefined;
-	readonly VpcEndpointId?: (string | undefined) | undefined;
-	readonly VpcPeeringConnectionId?: (string | undefined) | undefined;
+	readonly CarrierGatewayId?: string | undefined;
+	readonly DestinationCidrBlock?: string | undefined;
+	readonly DestinationIpv6CidrBlock?: string | undefined;
+	readonly EgressOnlyInternetGatewayId?: string | undefined;
+	readonly GatewayId?: string | undefined;
+	readonly InstanceId?: string | undefined;
+	readonly LocalGatewayId?: string | undefined;
+	readonly NatGatewayId?: string | undefined;
+	readonly NetworkInterfaceId?: string | undefined;
+	readonly TransitGatewayId?: string | undefined;
+	readonly VpcEndpointId?: string | undefined;
+	readonly VpcPeeringConnectionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class RouteTable extends CfnResource<RouteTableComponentInputs> implements RouteTableComponentOutputs {
@@ -923,7 +923,7 @@ export interface RouteTableComponentOutputs {
 }
 export interface RouteTableComponentInputs {
 	readonly VpcId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityGroup extends CfnResource<SecurityGroupComponentInputs> implements SecurityGroupComponentOutputs {
@@ -937,11 +937,11 @@ export interface SecurityGroupComponentOutputs {
 }
 export interface SecurityGroupComponentInputs {
 	readonly GroupDescription: string;
-	readonly GroupName?: (string | undefined) | undefined;
-	readonly SecurityGroupEgress?: (Egress[] | undefined) | undefined;
-	readonly SecurityGroupIngress?: (Ingress[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VpcId?: string | undefined;
+	readonly GroupName?: string | undefined;
+	readonly SecurityGroupEgress?: Egress[] | undefined;
+	readonly SecurityGroupIngress?: Ingress[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VpcId?: string;
 	readonly LogicalId: string;
 }
 export class SecurityGroupEgress
@@ -956,13 +956,13 @@ export interface SecurityGroupEgressComponentOutputs {}
 export interface SecurityGroupEgressComponentInputs {
 	readonly GroupId: string;
 	readonly IpProtocol: string;
-	readonly CidrIp?: (string | undefined) | undefined;
-	readonly CidrIpv6?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DestinationPrefixListId?: (string | undefined) | undefined;
-	readonly DestinationSecurityGroupId?: (string | undefined) | undefined;
-	readonly FromPort?: (number | undefined) | undefined;
-	readonly ToPort?: (number | undefined) | undefined;
+	readonly CidrIp?: string | undefined;
+	readonly CidrIpv6?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DestinationPrefixListId?: string | undefined;
+	readonly DestinationSecurityGroupId?: string | undefined;
+	readonly FromPort?: number | undefined;
+	readonly ToPort?: number | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityGroupIngress
@@ -976,17 +976,17 @@ export class SecurityGroupIngress
 export interface SecurityGroupIngressComponentOutputs {}
 export interface SecurityGroupIngressComponentInputs {
 	readonly IpProtocol: string;
-	readonly CidrIp?: (string | undefined) | undefined;
-	readonly CidrIpv6?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly FromPort?: (number | undefined) | undefined;
-	readonly GroupId?: (string | undefined) | undefined;
-	readonly GroupName?: (string | undefined) | undefined;
-	readonly SourcePrefixListId?: (string | undefined) | undefined;
-	readonly SourceSecurityGroupId?: (string | undefined) | undefined;
-	readonly SourceSecurityGroupName?: (string | undefined) | undefined;
-	readonly SourceSecurityGroupOwnerId?: (string | undefined) | undefined;
-	readonly ToPort?: (number | undefined) | undefined;
+	readonly CidrIp?: string | undefined;
+	readonly CidrIpv6?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly FromPort?: number | undefined;
+	readonly GroupId?: string | undefined;
+	readonly GroupName?: string | undefined;
+	readonly SourcePrefixListId?: string | undefined;
+	readonly SourceSecurityGroupId?: string | undefined;
+	readonly SourceSecurityGroupName?: string | undefined;
+	readonly SourceSecurityGroupOwnerId?: string | undefined;
+	readonly ToPort?: number | undefined;
 	readonly LogicalId: string;
 }
 export class SpotFleet extends CfnResource<SpotFleetComponentInputs> implements SpotFleetComponentOutputs {
@@ -1019,17 +1019,17 @@ export interface SubnetComponentOutputs {
 }
 export interface SubnetComponentInputs {
 	readonly VpcId: string;
-	readonly AssignIpv6AddressOnCreation?: (boolean | undefined) | undefined;
-	readonly AvailabilityZone?: string | undefined;
-	readonly AvailabilityZoneId?: (string | undefined) | undefined;
-	readonly CidrBlock?: (string | undefined) | undefined;
-	readonly EnableDns64?: (boolean | undefined) | undefined;
-	readonly Ipv6CidrBlock?: (string | undefined) | undefined;
-	readonly Ipv6Native?: (boolean | undefined) | undefined;
-	readonly MapPublicIpOnLaunch?: (boolean | undefined) | undefined;
-	readonly OutpostArn?: string | undefined;
-	readonly PrivateDnsNameOptionsOnLaunch?: (PrivateDnsNameOptionsOnLaunch | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssignIpv6AddressOnCreation?: boolean | undefined;
+	readonly AvailabilityZone?: string;
+	readonly AvailabilityZoneId?: string | undefined;
+	readonly CidrBlock?: string | undefined;
+	readonly EnableDns64?: boolean | undefined;
+	readonly Ipv6CidrBlock?: string | undefined;
+	readonly Ipv6Native?: boolean | undefined;
+	readonly MapPublicIpOnLaunch?: boolean | undefined;
+	readonly OutpostArn?: string;
+	readonly PrivateDnsNameOptionsOnLaunch?: PrivateDnsNameOptionsOnLaunch | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class SubnetCidrBlock
@@ -1090,9 +1090,9 @@ export class TrafficMirrorFilter
 }
 export interface TrafficMirrorFilterComponentOutputs {}
 export interface TrafficMirrorFilterComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly NetworkServices?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly NetworkServices?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class TrafficMirrorFilterRule
@@ -1111,10 +1111,10 @@ export interface TrafficMirrorFilterRuleComponentInputs {
 	readonly SourceCidrBlock: string;
 	readonly TrafficDirection: string;
 	readonly TrafficMirrorFilterId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DestinationPortRange?: (TrafficMirrorPortRange | undefined) | undefined;
-	readonly Protocol?: (number | undefined) | undefined;
-	readonly SourcePortRange?: (TrafficMirrorPortRange | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DestinationPortRange?: TrafficMirrorPortRange | undefined;
+	readonly Protocol?: number | undefined;
+	readonly SourcePortRange?: TrafficMirrorPortRange | undefined;
 	readonly LogicalId: string;
 }
 export class TrafficMirrorSession
@@ -1131,10 +1131,10 @@ export interface TrafficMirrorSessionComponentInputs {
 	readonly SessionNumber: number;
 	readonly TrafficMirrorFilterId: string;
 	readonly TrafficMirrorTargetId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly PacketLength?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VirtualNetworkId?: (number | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly PacketLength?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VirtualNetworkId?: number | undefined;
 	readonly LogicalId: string;
 }
 export class TrafficMirrorTarget
@@ -1147,11 +1147,11 @@ export class TrafficMirrorTarget
 }
 export interface TrafficMirrorTargetComponentOutputs {}
 export interface TrafficMirrorTargetComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly GatewayLoadBalancerEndpointId?: (string | undefined) | undefined;
-	readonly NetworkInterfaceId?: (string | undefined) | undefined;
-	readonly NetworkLoadBalancerArn?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly GatewayLoadBalancerEndpointId?: string | undefined;
+	readonly NetworkInterfaceId?: string | undefined;
+	readonly NetworkLoadBalancerArn?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class TransitGateway extends CfnResource<TransitGatewayComponentInputs> implements TransitGatewayComponentOutputs {
@@ -1164,18 +1164,18 @@ export interface TransitGatewayComponentOutputs {
 	readonly Id: string;
 }
 export interface TransitGatewayComponentInputs {
-	readonly AmazonSideAsn?: (number | undefined) | undefined;
-	readonly AssociationDefaultRouteTableId?: (string | undefined) | undefined;
-	readonly AutoAcceptSharedAttachments?: (string | undefined) | undefined;
-	readonly DefaultRouteTableAssociation?: (string | undefined) | undefined;
-	readonly DefaultRouteTablePropagation?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DnsSupport?: (string | undefined) | undefined;
-	readonly MulticastSupport?: (string | undefined) | undefined;
-	readonly PropagationDefaultRouteTableId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TransitGatewayCidrBlocks?: (string[] | undefined) | undefined;
-	readonly VpnEcmpSupport?: (string | undefined) | undefined;
+	readonly AmazonSideAsn?: number | undefined;
+	readonly AssociationDefaultRouteTableId?: string | undefined;
+	readonly AutoAcceptSharedAttachments?: string | undefined;
+	readonly DefaultRouteTableAssociation?: string | undefined;
+	readonly DefaultRouteTablePropagation?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DnsSupport?: string | undefined;
+	readonly MulticastSupport?: string | undefined;
+	readonly PropagationDefaultRouteTableId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TransitGatewayCidrBlocks?: string[] | undefined;
+	readonly VpnEcmpSupport?: string | undefined;
 	readonly LogicalId: string;
 }
 export class TransitGatewayAttachment
@@ -1194,8 +1194,8 @@ export interface TransitGatewayAttachmentComponentInputs {
 	readonly SubnetIds: string[];
 	readonly TransitGatewayId: string;
 	readonly VpcId: string;
-	readonly Options?: (Options | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Options?: Options | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class TransitGatewayConnect
@@ -1219,7 +1219,7 @@ export interface TransitGatewayConnectComponentOutputs {
 export interface TransitGatewayConnectComponentInputs {
 	readonly Options: TransitGatewayConnectOptions;
 	readonly TransportTransitGatewayAttachmentId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class TransitGatewayMulticastDomain
@@ -1242,8 +1242,8 @@ export interface TransitGatewayMulticastDomainComponentOutputs {
 }
 export interface TransitGatewayMulticastDomainComponentInputs {
 	readonly TransitGatewayId: string;
-	readonly Options?: (Options | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Options?: Options | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class TransitGatewayMulticastDomainAssociation
@@ -1357,7 +1357,7 @@ export interface TransitGatewayPeeringAttachmentComponentInputs {
 	readonly PeerRegion: string;
 	readonly PeerTransitGatewayId: string;
 	readonly TransitGatewayId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class TransitGatewayRoute
@@ -1371,9 +1371,9 @@ export class TransitGatewayRoute
 export interface TransitGatewayRouteComponentOutputs {}
 export interface TransitGatewayRouteComponentInputs {
 	readonly TransitGatewayRouteTableId: string;
-	readonly Blackhole?: (boolean | undefined) | undefined;
-	readonly DestinationCidrBlock?: (string | undefined) | undefined;
-	readonly TransitGatewayAttachmentId?: (string | undefined) | undefined;
+	readonly Blackhole?: boolean | undefined;
+	readonly DestinationCidrBlock?: string | undefined;
+	readonly TransitGatewayAttachmentId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class TransitGatewayRouteTable
@@ -1387,7 +1387,7 @@ export class TransitGatewayRouteTable
 export interface TransitGatewayRouteTableComponentOutputs {}
 export interface TransitGatewayRouteTableComponentInputs {
 	readonly TransitGatewayId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class TransitGatewayRouteTableAssociation
@@ -1434,10 +1434,10 @@ export interface TransitGatewayVpcAttachmentComponentInputs {
 	readonly SubnetIds: string[];
 	readonly TransitGatewayId: string;
 	readonly VpcId: string;
-	readonly AddSubnetIds?: (string[] | undefined) | undefined;
-	readonly Options?: (Options | undefined) | undefined;
-	readonly RemoveSubnetIds?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AddSubnetIds?: string[] | undefined;
+	readonly Options?: Options | undefined;
+	readonly RemoveSubnetIds?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class VPC extends CfnResource<VPCComponentInputs> implements VPCComponentOutputs {
@@ -1458,13 +1458,13 @@ export interface VPCComponentOutputs {
 	readonly VpcId: string;
 }
 export interface VPCComponentInputs {
-	readonly CidrBlock?: string | undefined;
-	readonly EnableDnsHostnames?: (boolean | undefined) | undefined;
-	readonly EnableDnsSupport?: (boolean | undefined) | undefined;
-	readonly InstanceTenancy?: (string | undefined) | undefined;
-	readonly Ipv4IpamPoolId?: (string | undefined) | undefined;
-	readonly Ipv4NetmaskLength?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CidrBlock?: string;
+	readonly EnableDnsHostnames?: boolean | undefined;
+	readonly EnableDnsSupport?: boolean | undefined;
+	readonly InstanceTenancy?: string | undefined;
+	readonly Ipv4IpamPoolId?: string | undefined;
+	readonly Ipv4NetmaskLength?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class VPCCidrBlock extends CfnResource<VPCCidrBlockComponentInputs> implements VPCCidrBlockComponentOutputs {
@@ -1475,14 +1475,14 @@ export class VPCCidrBlock extends CfnResource<VPCCidrBlockComponentInputs> imple
 export interface VPCCidrBlockComponentOutputs {}
 export interface VPCCidrBlockComponentInputs {
 	readonly VpcId: string;
-	readonly AmazonProvidedIpv6CidrBlock?: (boolean | undefined) | undefined;
-	readonly CidrBlock?: (string | undefined) | undefined;
-	readonly Ipv4IpamPoolId?: (string | undefined) | undefined;
-	readonly Ipv4NetmaskLength?: (number | undefined) | undefined;
-	readonly Ipv6CidrBlock?: (string | undefined) | undefined;
-	readonly Ipv6IpamPoolId?: (string | undefined) | undefined;
-	readonly Ipv6NetmaskLength?: (number | undefined) | undefined;
-	readonly Ipv6Pool?: (string | undefined) | undefined;
+	readonly AmazonProvidedIpv6CidrBlock?: boolean | undefined;
+	readonly CidrBlock?: string | undefined;
+	readonly Ipv4IpamPoolId?: string | undefined;
+	readonly Ipv4NetmaskLength?: number | undefined;
+	readonly Ipv6CidrBlock?: string | undefined;
+	readonly Ipv6IpamPoolId?: string | undefined;
+	readonly Ipv6NetmaskLength?: number | undefined;
+	readonly Ipv6Pool?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VPCDHCPOptionsAssociation
@@ -1518,12 +1518,12 @@ export interface VPCEndpointComponentOutputs {
 export interface VPCEndpointComponentInputs {
 	readonly ServiceName: string;
 	readonly VpcId: string;
-	readonly PolicyDocument?: (any | undefined) | undefined;
-	readonly PrivateDnsEnabled?: (boolean | undefined) | undefined;
-	readonly RouteTableIds?: (string[] | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SubnetIds?: (string[] | undefined) | undefined;
-	readonly VpcEndpointType?: (string | undefined) | undefined;
+	readonly PolicyDocument?: any | undefined;
+	readonly PrivateDnsEnabled?: boolean | undefined;
+	readonly RouteTableIds?: string[] | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SubnetIds?: string[] | undefined;
+	readonly VpcEndpointType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VPCEndpointConnectionNotification
@@ -1538,8 +1538,8 @@ export interface VPCEndpointConnectionNotificationComponentOutputs {}
 export interface VPCEndpointConnectionNotificationComponentInputs {
 	readonly ConnectionEvents: string[];
 	readonly ConnectionNotificationArn: string;
-	readonly ServiceId?: (string | undefined) | undefined;
-	readonly VPCEndpointId?: (string | undefined) | undefined;
+	readonly ServiceId?: string | undefined;
+	readonly VPCEndpointId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VPCEndpointService
@@ -1552,11 +1552,11 @@ export class VPCEndpointService
 }
 export interface VPCEndpointServiceComponentOutputs {}
 export interface VPCEndpointServiceComponentInputs {
-	readonly AcceptanceRequired?: (boolean | undefined) | undefined;
-	readonly ContributorInsightsEnabled?: (boolean | undefined) | undefined;
-	readonly GatewayLoadBalancerArns?: (string[] | undefined) | undefined;
-	readonly NetworkLoadBalancerArns?: (string[] | undefined) | undefined;
-	readonly PayerResponsibility?: (string | undefined) | undefined;
+	readonly AcceptanceRequired?: boolean | undefined;
+	readonly ContributorInsightsEnabled?: boolean | undefined;
+	readonly GatewayLoadBalancerArns?: string[] | undefined;
+	readonly NetworkLoadBalancerArns?: string[] | undefined;
+	readonly PayerResponsibility?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VPCEndpointServicePermissions
@@ -1570,7 +1570,7 @@ export class VPCEndpointServicePermissions
 export interface VPCEndpointServicePermissionsComponentOutputs {}
 export interface VPCEndpointServicePermissionsComponentInputs {
 	readonly ServiceId: string;
-	readonly AllowedPrincipals?: (string[] | undefined) | undefined;
+	readonly AllowedPrincipals?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class VPCGatewayAttachment
@@ -1584,8 +1584,8 @@ export class VPCGatewayAttachment
 export interface VPCGatewayAttachmentComponentOutputs {}
 export interface VPCGatewayAttachmentComponentInputs {
 	readonly VpcId: string;
-	readonly InternetGatewayId?: (string | undefined) | undefined;
-	readonly VpnGatewayId?: (string | undefined) | undefined;
+	readonly InternetGatewayId?: string | undefined;
+	readonly VpnGatewayId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VPCPeeringConnection
@@ -1603,10 +1603,10 @@ export interface VPCPeeringConnectionComponentOutputs {
 export interface VPCPeeringConnectionComponentInputs {
 	readonly PeerVpcId: string;
 	readonly VpcId: string;
-	readonly PeerOwnerId?: (string | undefined) | undefined;
-	readonly PeerRegion?: (string | undefined) | undefined;
-	readonly PeerRoleArn?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly PeerOwnerId?: string | undefined;
+	readonly PeerRegion?: string | undefined;
+	readonly PeerRoleArn?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class VPNConnection extends CfnResource<VPNConnectionComponentInputs> implements VPNConnectionComponentOutputs {
@@ -1621,11 +1621,11 @@ export interface VPNConnectionComponentOutputs {
 export interface VPNConnectionComponentInputs {
 	readonly CustomerGatewayId: string;
 	readonly Type: string;
-	readonly StaticRoutesOnly?: (boolean | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TransitGatewayId?: (string | undefined) | undefined;
-	readonly VpnGatewayId?: (string | undefined) | undefined;
-	readonly VpnTunnelOptionsSpecifications?: (VpnTunnelOptionsSpecification[] | undefined) | undefined;
+	readonly StaticRoutesOnly?: boolean | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TransitGatewayId?: string | undefined;
+	readonly VpnGatewayId?: string | undefined;
+	readonly VpnTunnelOptionsSpecifications?: VpnTunnelOptionsSpecification[] | undefined;
 	readonly LogicalId: string;
 }
 export class VPNConnectionRoute
@@ -1653,8 +1653,8 @@ export interface VPNGatewayComponentOutputs {
 }
 export interface VPNGatewayComponentInputs {
 	readonly Type: string;
-	readonly AmazonSideAsn?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AmazonSideAsn?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class VPNGatewayRoutePropagation
@@ -1682,17 +1682,17 @@ export class Volume extends CfnResource<VolumeComponentInputs> implements Volume
 export interface VolumeComponentOutputs {}
 export interface VolumeComponentInputs {
 	readonly AvailabilityZone: string;
-	readonly AutoEnableIO?: (boolean | undefined) | undefined;
-	readonly Encrypted?: (boolean | undefined) | undefined;
-	readonly Iops?: (number | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly MultiAttachEnabled?: (boolean | undefined) | undefined;
-	readonly OutpostArn?: (string | undefined) | undefined;
-	readonly Size?: (number | undefined) | undefined;
-	readonly SnapshotId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Throughput?: (number | undefined) | undefined;
-	readonly VolumeType?: (string | undefined) | undefined;
+	readonly AutoEnableIO?: boolean | undefined;
+	readonly Encrypted?: boolean | undefined;
+	readonly Iops?: number | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly MultiAttachEnabled?: boolean | undefined;
+	readonly OutpostArn?: string | undefined;
+	readonly Size?: number | undefined;
+	readonly SnapshotId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Throughput?: number | undefined;
+	readonly VolumeType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VolumeAttachment
@@ -1711,38 +1711,38 @@ export interface VolumeAttachmentComponentInputs {
 	readonly LogicalId: string;
 }
 export interface TagSpecification {
-	readonly ResourceType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ResourceType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 }
 export interface InstanceTypeSpecification {
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly AvailabilityZoneId?: (string | undefined) | undefined;
-	readonly EbsOptimized?: (boolean | undefined) | undefined;
-	readonly InstancePlatform?: (string | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly Weight?: (number | undefined) | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly AvailabilityZoneId?: string | undefined;
+	readonly EbsOptimized?: boolean | undefined;
+	readonly InstancePlatform?: string | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly Priority?: number | undefined;
+	readonly Weight?: number | undefined;
 }
 export interface CertificateAuthenticationRequest {
 	readonly ClientRootCertificateChainArn: string;
 }
 export interface ClientAuthenticationRequest {
-	readonly ActiveDirectory?: (DirectoryServiceAuthenticationRequest | undefined) | undefined;
-	readonly FederatedAuthentication?: (FederatedAuthenticationRequest | undefined) | undefined;
-	readonly MutualAuthentication?: (CertificateAuthenticationRequest | undefined) | undefined;
+	readonly ActiveDirectory?: DirectoryServiceAuthenticationRequest | undefined;
+	readonly FederatedAuthentication?: FederatedAuthenticationRequest | undefined;
+	readonly MutualAuthentication?: CertificateAuthenticationRequest | undefined;
 	readonly Type: string;
 }
 export interface ClientConnectOptions {
 	readonly Enabled: boolean;
-	readonly LambdaFunctionArn?: (string | undefined) | undefined;
+	readonly LambdaFunctionArn?: string | undefined;
 }
 export interface ClientLoginBannerOptions {
-	readonly BannerText?: (string | undefined) | undefined;
+	readonly BannerText?: string | undefined;
 	readonly Enabled: boolean;
 }
 export interface ConnectionLogOptions {
-	readonly CloudwatchLogGroup?: (string | undefined) | undefined;
-	readonly CloudwatchLogStream?: (string | undefined) | undefined;
+	readonly CloudwatchLogGroup?: string | undefined;
+	readonly CloudwatchLogStream?: string | undefined;
 	readonly Enabled: boolean;
 }
 export interface DirectoryServiceAuthenticationRequest {
@@ -1750,132 +1750,132 @@ export interface DirectoryServiceAuthenticationRequest {
 }
 export interface FederatedAuthenticationRequest {
 	readonly SAMLProviderArn: string;
-	readonly SelfServiceSAMLProviderArn?: (string | undefined) | undefined;
+	readonly SelfServiceSAMLProviderArn?: string | undefined;
 }
 export interface AcceleratorCountRequest {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface AcceleratorTotalMemoryMiBRequest {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface BaselineEbsBandwidthMbpsRequest {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface CapacityRebalance {
-	readonly ReplacementStrategy?: (string | undefined) | undefined;
-	readonly TerminationDelay?: (number | undefined) | undefined;
+	readonly ReplacementStrategy?: string | undefined;
+	readonly TerminationDelay?: number | undefined;
 }
 export interface CapacityReservationOptionsRequest {
-	readonly UsageStrategy?: (string | undefined) | undefined;
+	readonly UsageStrategy?: string | undefined;
 }
 export interface FleetLaunchTemplateConfigRequest {
-	readonly LaunchTemplateSpecification?: (FleetLaunchTemplateSpecificationRequest | undefined) | undefined;
-	readonly Overrides?: (FleetLaunchTemplateOverridesRequest[] | undefined) | undefined;
+	readonly LaunchTemplateSpecification?: FleetLaunchTemplateSpecificationRequest | undefined;
+	readonly Overrides?: FleetLaunchTemplateOverridesRequest[] | undefined;
 }
 export interface FleetLaunchTemplateOverridesRequest {
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly InstanceRequirements?: (InstanceRequirementsRequest | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly MaxPrice?: (string | undefined) | undefined;
-	readonly Placement?: (Placement | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
-	readonly WeightedCapacity?: (number | undefined) | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly InstanceRequirements?: InstanceRequirementsRequest | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly MaxPrice?: string | undefined;
+	readonly Placement?: Placement | undefined;
+	readonly Priority?: number | undefined;
+	readonly SubnetId?: string | undefined;
+	readonly WeightedCapacity?: number | undefined;
 }
 export interface FleetLaunchTemplateSpecificationRequest {
-	readonly LaunchTemplateId?: (string | undefined) | undefined;
-	readonly LaunchTemplateName?: (string | undefined) | undefined;
+	readonly LaunchTemplateId?: string | undefined;
+	readonly LaunchTemplateName?: string | undefined;
 	readonly Version: string;
 }
 export interface InstanceRequirementsRequest {
-	readonly AcceleratorCount?: (AcceleratorCountRequest | undefined) | undefined;
-	readonly AcceleratorManufacturers?: (string[] | undefined) | undefined;
-	readonly AcceleratorNames?: (string[] | undefined) | undefined;
-	readonly AcceleratorTotalMemoryMiB?: (AcceleratorTotalMemoryMiBRequest | undefined) | undefined;
-	readonly AcceleratorTypes?: (string[] | undefined) | undefined;
-	readonly AllowedInstanceTypes?: (string[] | undefined) | undefined;
-	readonly BareMetal?: (string | undefined) | undefined;
-	readonly BaselineEbsBandwidthMbps?: (BaselineEbsBandwidthMbpsRequest | undefined) | undefined;
-	readonly BurstablePerformance?: (string | undefined) | undefined;
-	readonly CpuManufacturers?: (string[] | undefined) | undefined;
-	readonly ExcludedInstanceTypes?: (string[] | undefined) | undefined;
-	readonly InstanceGenerations?: (string[] | undefined) | undefined;
-	readonly LocalStorage?: (string | undefined) | undefined;
-	readonly LocalStorageTypes?: (string[] | undefined) | undefined;
-	readonly MemoryGiBPerVCpu?: (MemoryGiBPerVCpuRequest | undefined) | undefined;
-	readonly MemoryMiB?: (MemoryMiBRequest | undefined) | undefined;
-	readonly NetworkBandwidthGbps?: (NetworkBandwidthGbpsRequest | undefined) | undefined;
-	readonly NetworkInterfaceCount?: (NetworkInterfaceCountRequest | undefined) | undefined;
-	readonly OnDemandMaxPricePercentageOverLowestPrice?: (number | undefined) | undefined;
-	readonly RequireHibernateSupport?: (boolean | undefined) | undefined;
-	readonly SpotMaxPricePercentageOverLowestPrice?: (number | undefined) | undefined;
-	readonly TotalLocalStorageGB?: (TotalLocalStorageGBRequest | undefined) | undefined;
-	readonly VCpuCount?: (VCpuCountRangeRequest | undefined) | undefined;
+	readonly AcceleratorCount?: AcceleratorCountRequest | undefined;
+	readonly AcceleratorManufacturers?: string[] | undefined;
+	readonly AcceleratorNames?: string[] | undefined;
+	readonly AcceleratorTotalMemoryMiB?: AcceleratorTotalMemoryMiBRequest | undefined;
+	readonly AcceleratorTypes?: string[] | undefined;
+	readonly AllowedInstanceTypes?: string[] | undefined;
+	readonly BareMetal?: string | undefined;
+	readonly BaselineEbsBandwidthMbps?: BaselineEbsBandwidthMbpsRequest | undefined;
+	readonly BurstablePerformance?: string | undefined;
+	readonly CpuManufacturers?: string[] | undefined;
+	readonly ExcludedInstanceTypes?: string[] | undefined;
+	readonly InstanceGenerations?: string[] | undefined;
+	readonly LocalStorage?: string | undefined;
+	readonly LocalStorageTypes?: string[] | undefined;
+	readonly MemoryGiBPerVCpu?: MemoryGiBPerVCpuRequest | undefined;
+	readonly MemoryMiB?: MemoryMiBRequest | undefined;
+	readonly NetworkBandwidthGbps?: NetworkBandwidthGbpsRequest | undefined;
+	readonly NetworkInterfaceCount?: NetworkInterfaceCountRequest | undefined;
+	readonly OnDemandMaxPricePercentageOverLowestPrice?: number | undefined;
+	readonly RequireHibernateSupport?: boolean | undefined;
+	readonly SpotMaxPricePercentageOverLowestPrice?: number | undefined;
+	readonly TotalLocalStorageGB?: TotalLocalStorageGBRequest | undefined;
+	readonly VCpuCount?: VCpuCountRangeRequest | undefined;
 }
 export interface MaintenanceStrategies {
-	readonly CapacityRebalance?: (CapacityRebalance | undefined) | undefined;
+	readonly CapacityRebalance?: CapacityRebalance | undefined;
 }
 export interface MemoryGiBPerVCpuRequest {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface MemoryMiBRequest {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface NetworkBandwidthGbpsRequest {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface NetworkInterfaceCountRequest {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface OnDemandOptionsRequest {
-	readonly AllocationStrategy?: (string | undefined) | undefined;
-	readonly CapacityReservationOptions?: (CapacityReservationOptionsRequest | undefined) | undefined;
-	readonly MaxTotalPrice?: (string | undefined) | undefined;
-	readonly MinTargetCapacity?: (number | undefined) | undefined;
-	readonly SingleAvailabilityZone?: (boolean | undefined) | undefined;
-	readonly SingleInstanceType?: (boolean | undefined) | undefined;
+	readonly AllocationStrategy?: string | undefined;
+	readonly CapacityReservationOptions?: CapacityReservationOptionsRequest | undefined;
+	readonly MaxTotalPrice?: string | undefined;
+	readonly MinTargetCapacity?: number | undefined;
+	readonly SingleAvailabilityZone?: boolean | undefined;
+	readonly SingleInstanceType?: boolean | undefined;
 }
 export interface Placement {
-	readonly Affinity?: (string | undefined) | undefined;
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly GroupName?: (string | undefined) | undefined;
-	readonly HostId?: (string | undefined) | undefined;
-	readonly HostResourceGroupArn?: (string | undefined) | undefined;
-	readonly PartitionNumber?: (number | undefined) | undefined;
-	readonly SpreadDomain?: (string | undefined) | undefined;
-	readonly Tenancy?: (string | undefined) | undefined;
+	readonly Affinity?: string | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly GroupName?: string | undefined;
+	readonly HostId?: string | undefined;
+	readonly HostResourceGroupArn?: string | undefined;
+	readonly PartitionNumber?: number | undefined;
+	readonly SpreadDomain?: string | undefined;
+	readonly Tenancy?: string | undefined;
 }
 export interface SpotOptionsRequest {
-	readonly AllocationStrategy?: (string | undefined) | undefined;
-	readonly InstanceInterruptionBehavior?: (string | undefined) | undefined;
-	readonly InstancePoolsToUseCount?: (number | undefined) | undefined;
-	readonly MaintenanceStrategies?: (MaintenanceStrategies | undefined) | undefined;
-	readonly MaxTotalPrice?: (string | undefined) | undefined;
-	readonly MinTargetCapacity?: (number | undefined) | undefined;
-	readonly SingleAvailabilityZone?: (boolean | undefined) | undefined;
-	readonly SingleInstanceType?: (boolean | undefined) | undefined;
+	readonly AllocationStrategy?: string | undefined;
+	readonly InstanceInterruptionBehavior?: string | undefined;
+	readonly InstancePoolsToUseCount?: number | undefined;
+	readonly MaintenanceStrategies?: MaintenanceStrategies | undefined;
+	readonly MaxTotalPrice?: string | undefined;
+	readonly MinTargetCapacity?: number | undefined;
+	readonly SingleAvailabilityZone?: boolean | undefined;
+	readonly SingleInstanceType?: boolean | undefined;
 }
 export interface TargetCapacitySpecificationRequest {
-	readonly DefaultTargetCapacityType?: (string | undefined) | undefined;
-	readonly OnDemandTargetCapacity?: (number | undefined) | undefined;
-	readonly SpotTargetCapacity?: (number | undefined) | undefined;
-	readonly TargetCapacityUnitType?: (string | undefined) | undefined;
+	readonly DefaultTargetCapacityType?: string | undefined;
+	readonly OnDemandTargetCapacity?: number | undefined;
+	readonly SpotTargetCapacity?: number | undefined;
+	readonly TargetCapacityUnitType?: string | undefined;
 	readonly TotalTargetCapacity: number;
 }
 export interface TotalLocalStorageGBRequest {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface VCpuCountRangeRequest {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface DestinationOptions {
 	readonly FileFormat: string;
@@ -1894,77 +1894,77 @@ export interface AssociationParameter {
 }
 export interface BlockDeviceMapping {
 	readonly DeviceName: string;
-	readonly Ebs?: (Ebs | undefined) | undefined;
-	readonly NoDevice?: (NoDevice | undefined) | undefined;
-	readonly VirtualName?: (string | undefined) | undefined;
+	readonly Ebs?: Ebs | undefined;
+	readonly NoDevice?: NoDevice | undefined;
+	readonly VirtualName?: string | undefined;
 }
 export interface CpuOptions {
-	readonly CoreCount?: (number | undefined) | undefined;
-	readonly ThreadsPerCore?: (number | undefined) | undefined;
+	readonly CoreCount?: number | undefined;
+	readonly ThreadsPerCore?: number | undefined;
 }
 export interface CreditSpecification {
-	readonly CPUCredits?: (string | undefined) | undefined;
+	readonly CPUCredits?: string | undefined;
 }
 export interface Ebs {
-	readonly DeleteOnTermination?: (boolean | undefined) | undefined;
-	readonly Encrypted?: (boolean | undefined) | undefined;
-	readonly Iops?: (number | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly SnapshotId?: (string | undefined) | undefined;
-	readonly VolumeSize?: (number | undefined) | undefined;
-	readonly VolumeType?: (string | undefined) | undefined;
+	readonly DeleteOnTermination?: boolean | undefined;
+	readonly Encrypted?: boolean | undefined;
+	readonly Iops?: number | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly SnapshotId?: string | undefined;
+	readonly VolumeSize?: number | undefined;
+	readonly VolumeType?: string | undefined;
 }
 export interface ElasticGpuSpecification {
 	readonly Type: string;
 }
 export interface ElasticInferenceAccelerator {
-	readonly Count?: (number | undefined) | undefined;
+	readonly Count?: number | undefined;
 	readonly Type: string;
 }
 export interface EnclaveOptions {
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
 }
 export interface HibernationOptions {
-	readonly Configured?: (boolean | undefined) | undefined;
+	readonly Configured?: boolean | undefined;
 }
 export interface InstanceIpv6Address {
 	readonly Ipv6Address: string;
 }
 export interface LaunchTemplateSpecification {
-	readonly LaunchTemplateId?: (string | undefined) | undefined;
-	readonly LaunchTemplateName?: (string | undefined) | undefined;
+	readonly LaunchTemplateId?: string | undefined;
+	readonly LaunchTemplateName?: string | undefined;
 	readonly Version: string;
 }
 export interface LicenseSpecification {
 	readonly LicenseConfigurationArn: string;
 }
 export interface NetworkInterface {
-	readonly AssociateCarrierIpAddress?: (boolean | undefined) | undefined;
-	readonly AssociatePublicIpAddress?: (boolean | undefined) | undefined;
-	readonly DeleteOnTermination?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly AssociateCarrierIpAddress?: boolean | undefined;
+	readonly AssociatePublicIpAddress?: boolean | undefined;
+	readonly DeleteOnTermination?: boolean | undefined;
+	readonly Description?: string | undefined;
 	readonly DeviceIndex: string;
-	readonly GroupSet?: (string[] | undefined) | undefined;
-	readonly Ipv6AddressCount?: (number | undefined) | undefined;
-	readonly Ipv6Addresses?: (InstanceIpv6Address[] | undefined) | undefined;
-	readonly NetworkInterfaceId?: (string | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
-	readonly PrivateIpAddresses?: (PrivateIpAddressSpecification[] | undefined) | undefined;
-	readonly SecondaryPrivateIpAddressCount?: (number | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
+	readonly GroupSet?: string[] | undefined;
+	readonly Ipv6AddressCount?: number | undefined;
+	readonly Ipv6Addresses?: InstanceIpv6Address[] | undefined;
+	readonly NetworkInterfaceId?: string | undefined;
+	readonly PrivateIpAddress?: string | undefined;
+	readonly PrivateIpAddresses?: PrivateIpAddressSpecification[] | undefined;
+	readonly SecondaryPrivateIpAddressCount?: number | undefined;
+	readonly SubnetId?: string | undefined;
 }
 export interface NoDevice {}
 export interface PrivateDnsNameOptions {
-	readonly EnableResourceNameDnsAAAARecord?: (boolean | undefined) | undefined;
-	readonly EnableResourceNameDnsARecord?: (boolean | undefined) | undefined;
-	readonly HostnameType?: (string | undefined) | undefined;
+	readonly EnableResourceNameDnsAAAARecord?: boolean | undefined;
+	readonly EnableResourceNameDnsARecord?: boolean | undefined;
+	readonly HostnameType?: string | undefined;
 }
 export interface PrivateIpAddressSpecification {
 	readonly Primary: boolean;
 	readonly PrivateIpAddress: string;
 }
 export interface SsmAssociation {
-	readonly AssociationParameters?: (AssociationParameter[] | undefined) | undefined;
+	readonly AssociationParameters?: AssociationParameter[] | undefined;
 	readonly DocumentName: string;
 }
 export interface Volume {
@@ -1972,352 +1972,352 @@ export interface Volume {
 	readonly VolumeId: string;
 }
 export interface AcceleratorCount {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface AcceleratorTotalMemoryMiB {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface BaselineEbsBandwidthMbps {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface CapacityReservationSpecification {
-	readonly CapacityReservationPreference?: (string | undefined) | undefined;
-	readonly CapacityReservationTarget?: (CapacityReservationTarget | undefined) | undefined;
+	readonly CapacityReservationPreference?: string | undefined;
+	readonly CapacityReservationTarget?: CapacityReservationTarget | undefined;
 }
 export interface CapacityReservationTarget {
-	readonly CapacityReservationId?: (string | undefined) | undefined;
-	readonly CapacityReservationResourceGroupArn?: (string | undefined) | undefined;
+	readonly CapacityReservationId?: string | undefined;
+	readonly CapacityReservationResourceGroupArn?: string | undefined;
 }
 export interface IamInstanceProfile {
-	readonly Arn?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Arn?: string | undefined;
+	readonly Name?: string | undefined;
 }
 export interface InstanceMarketOptions {
-	readonly MarketType?: (string | undefined) | undefined;
-	readonly SpotOptions?: (SpotOptions | undefined) | undefined;
+	readonly MarketType?: string | undefined;
+	readonly SpotOptions?: SpotOptions | undefined;
 }
 export interface InstanceRequirements {
-	readonly AcceleratorCount?: (AcceleratorCount | undefined) | undefined;
-	readonly AcceleratorManufacturers?: (string[] | undefined) | undefined;
-	readonly AcceleratorNames?: (string[] | undefined) | undefined;
-	readonly AcceleratorTotalMemoryMiB?: (AcceleratorTotalMemoryMiB | undefined) | undefined;
-	readonly AcceleratorTypes?: (string[] | undefined) | undefined;
-	readonly AllowedInstanceTypes?: (string[] | undefined) | undefined;
-	readonly BareMetal?: (string | undefined) | undefined;
-	readonly BaselineEbsBandwidthMbps?: (BaselineEbsBandwidthMbps | undefined) | undefined;
-	readonly BurstablePerformance?: (string | undefined) | undefined;
-	readonly CpuManufacturers?: (string[] | undefined) | undefined;
-	readonly ExcludedInstanceTypes?: (string[] | undefined) | undefined;
-	readonly InstanceGenerations?: (string[] | undefined) | undefined;
-	readonly LocalStorage?: (string | undefined) | undefined;
-	readonly LocalStorageTypes?: (string[] | undefined) | undefined;
-	readonly MemoryGiBPerVCpu?: (MemoryGiBPerVCpu | undefined) | undefined;
-	readonly MemoryMiB?: (MemoryMiB | undefined) | undefined;
-	readonly NetworkBandwidthGbps?: (NetworkBandwidthGbps | undefined) | undefined;
-	readonly NetworkInterfaceCount?: (NetworkInterfaceCount | undefined) | undefined;
-	readonly OnDemandMaxPricePercentageOverLowestPrice?: (number | undefined) | undefined;
-	readonly RequireHibernateSupport?: (boolean | undefined) | undefined;
-	readonly SpotMaxPricePercentageOverLowestPrice?: (number | undefined) | undefined;
-	readonly TotalLocalStorageGB?: (TotalLocalStorageGB | undefined) | undefined;
-	readonly VCpuCount?: (VCpuCount | undefined) | undefined;
+	readonly AcceleratorCount?: AcceleratorCount | undefined;
+	readonly AcceleratorManufacturers?: string[] | undefined;
+	readonly AcceleratorNames?: string[] | undefined;
+	readonly AcceleratorTotalMemoryMiB?: AcceleratorTotalMemoryMiB | undefined;
+	readonly AcceleratorTypes?: string[] | undefined;
+	readonly AllowedInstanceTypes?: string[] | undefined;
+	readonly BareMetal?: string | undefined;
+	readonly BaselineEbsBandwidthMbps?: BaselineEbsBandwidthMbps | undefined;
+	readonly BurstablePerformance?: string | undefined;
+	readonly CpuManufacturers?: string[] | undefined;
+	readonly ExcludedInstanceTypes?: string[] | undefined;
+	readonly InstanceGenerations?: string[] | undefined;
+	readonly LocalStorage?: string | undefined;
+	readonly LocalStorageTypes?: string[] | undefined;
+	readonly MemoryGiBPerVCpu?: MemoryGiBPerVCpu | undefined;
+	readonly MemoryMiB?: MemoryMiB | undefined;
+	readonly NetworkBandwidthGbps?: NetworkBandwidthGbps | undefined;
+	readonly NetworkInterfaceCount?: NetworkInterfaceCount | undefined;
+	readonly OnDemandMaxPricePercentageOverLowestPrice?: number | undefined;
+	readonly RequireHibernateSupport?: boolean | undefined;
+	readonly SpotMaxPricePercentageOverLowestPrice?: number | undefined;
+	readonly TotalLocalStorageGB?: TotalLocalStorageGB | undefined;
+	readonly VCpuCount?: VCpuCount | undefined;
 }
 export interface Ipv4PrefixSpecification {
-	readonly Ipv4Prefix?: (string | undefined) | undefined;
+	readonly Ipv4Prefix?: string | undefined;
 }
 export interface Ipv6Add {
-	readonly Ipv6Address?: (string | undefined) | undefined;
+	readonly Ipv6Address?: string | undefined;
 }
 export interface Ipv6PrefixSpecification {
-	readonly Ipv6Prefix?: (string | undefined) | undefined;
+	readonly Ipv6Prefix?: string | undefined;
 }
 export interface LaunchTemplateData {
-	readonly BlockDeviceMappings?: (BlockDeviceMapping[] | undefined) | undefined;
-	readonly CapacityReservationSpecification?: (CapacityReservationSpecification | undefined) | undefined;
-	readonly CpuOptions?: (CpuOptions | undefined) | undefined;
-	readonly CreditSpecification?: (CreditSpecification | undefined) | undefined;
-	readonly DisableApiStop?: (boolean | undefined) | undefined;
-	readonly DisableApiTermination?: (boolean | undefined) | undefined;
-	readonly EbsOptimized?: (boolean | undefined) | undefined;
-	readonly ElasticGpuSpecifications?: (ElasticGpuSpecification[] | undefined) | undefined;
-	readonly ElasticInferenceAccelerators?: (LaunchTemplateElasticInferenceAccelerator[] | undefined) | undefined;
-	readonly EnclaveOptions?: (EnclaveOptions | undefined) | undefined;
-	readonly HibernationOptions?: (HibernationOptions | undefined) | undefined;
-	readonly IamInstanceProfile?: (IamInstanceProfile | undefined) | undefined;
-	readonly ImageId?: (string | undefined) | undefined;
-	readonly InstanceInitiatedShutdownBehavior?: (string | undefined) | undefined;
-	readonly InstanceMarketOptions?: (InstanceMarketOptions | undefined) | undefined;
-	readonly InstanceRequirements?: (InstanceRequirements | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly KernelId?: (string | undefined) | undefined;
-	readonly KeyName?: (string | undefined) | undefined;
-	readonly LicenseSpecifications?: (LicenseSpecification[] | undefined) | undefined;
-	readonly MaintenanceOptions?: (MaintenanceOptions | undefined) | undefined;
-	readonly MetadataOptions?: (MetadataOptions | undefined) | undefined;
-	readonly Monitoring?: (Monitoring | undefined) | undefined;
-	readonly NetworkInterfaces?: (NetworkInterface[] | undefined) | undefined;
-	readonly Placement?: (Placement | undefined) | undefined;
-	readonly PrivateDnsNameOptions?: (PrivateDnsNameOptions | undefined) | undefined;
-	readonly RamDiskId?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SecurityGroups?: (string[] | undefined) | undefined;
-	readonly TagSpecifications?: (TagSpecification[] | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
+	readonly BlockDeviceMappings?: BlockDeviceMapping[] | undefined;
+	readonly CapacityReservationSpecification?: CapacityReservationSpecification | undefined;
+	readonly CpuOptions?: CpuOptions | undefined;
+	readonly CreditSpecification?: CreditSpecification | undefined;
+	readonly DisableApiStop?: boolean | undefined;
+	readonly DisableApiTermination?: boolean | undefined;
+	readonly EbsOptimized?: boolean | undefined;
+	readonly ElasticGpuSpecifications?: ElasticGpuSpecification[] | undefined;
+	readonly ElasticInferenceAccelerators?: LaunchTemplateElasticInferenceAccelerator[] | undefined;
+	readonly EnclaveOptions?: EnclaveOptions | undefined;
+	readonly HibernationOptions?: HibernationOptions | undefined;
+	readonly IamInstanceProfile?: IamInstanceProfile | undefined;
+	readonly ImageId?: string | undefined;
+	readonly InstanceInitiatedShutdownBehavior?: string | undefined;
+	readonly InstanceMarketOptions?: InstanceMarketOptions | undefined;
+	readonly InstanceRequirements?: InstanceRequirements | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly KernelId?: string | undefined;
+	readonly KeyName?: string | undefined;
+	readonly LicenseSpecifications?: LicenseSpecification[] | undefined;
+	readonly MaintenanceOptions?: MaintenanceOptions | undefined;
+	readonly MetadataOptions?: MetadataOptions | undefined;
+	readonly Monitoring?: Monitoring | undefined;
+	readonly NetworkInterfaces?: NetworkInterface[] | undefined;
+	readonly Placement?: Placement | undefined;
+	readonly PrivateDnsNameOptions?: PrivateDnsNameOptions | undefined;
+	readonly RamDiskId?: string | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SecurityGroups?: string[] | undefined;
+	readonly TagSpecifications?: TagSpecification[] | undefined;
+	readonly UserData?: string | undefined;
 }
 export interface LaunchTemplateElasticInferenceAccelerator {
-	readonly Count?: (number | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Count?: number | undefined;
+	readonly Type?: string | undefined;
 }
 export interface LaunchTemplateTagSpecification {
-	readonly ResourceType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ResourceType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 }
 export interface MaintenanceOptions {
-	readonly AutoRecovery?: (string | undefined) | undefined;
+	readonly AutoRecovery?: string | undefined;
 }
 export interface MemoryGiBPerVCpu {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface MemoryMiB {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface MetadataOptions {
-	readonly HttpEndpoint?: (string | undefined) | undefined;
-	readonly HttpProtocolIpv6?: (string | undefined) | undefined;
-	readonly HttpPutResponseHopLimit?: (number | undefined) | undefined;
-	readonly HttpTokens?: (string | undefined) | undefined;
-	readonly InstanceMetadataTags?: (string | undefined) | undefined;
+	readonly HttpEndpoint?: string | undefined;
+	readonly HttpProtocolIpv6?: string | undefined;
+	readonly HttpPutResponseHopLimit?: number | undefined;
+	readonly HttpTokens?: string | undefined;
+	readonly InstanceMetadataTags?: string | undefined;
 }
 export interface Monitoring {
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
 }
 export interface NetworkBandwidthGbps {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface NetworkInterfaceCount {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface PrivateIpAdd {
-	readonly Primary?: (boolean | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
+	readonly Primary?: boolean | undefined;
+	readonly PrivateIpAddress?: string | undefined;
 }
 export interface SpotOptions {
-	readonly BlockDurationMinutes?: (number | undefined) | undefined;
-	readonly InstanceInterruptionBehavior?: (string | undefined) | undefined;
-	readonly MaxPrice?: (string | undefined) | undefined;
-	readonly SpotInstanceType?: (string | undefined) | undefined;
-	readonly ValidUntil?: (string | undefined) | undefined;
+	readonly BlockDurationMinutes?: number | undefined;
+	readonly InstanceInterruptionBehavior?: string | undefined;
+	readonly MaxPrice?: string | undefined;
+	readonly SpotInstanceType?: string | undefined;
+	readonly ValidUntil?: string | undefined;
 }
 export interface TotalLocalStorageGB {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface VCpuCount {
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
 }
 export interface Icmp {
-	readonly Code?: (number | undefined) | undefined;
-	readonly Type?: (number | undefined) | undefined;
+	readonly Code?: number | undefined;
+	readonly Type?: number | undefined;
 }
 export interface PortRange {
-	readonly From?: (number | undefined) | undefined;
-	readonly To?: (number | undefined) | undefined;
+	readonly From?: number | undefined;
+	readonly To?: number | undefined;
 }
 export interface AccessScopePathRequest {
-	readonly Destination?: (PathStatementRequest | undefined) | undefined;
-	readonly Source?: (PathStatementRequest | undefined) | undefined;
-	readonly ThroughResources?: (ThroughResourcesStatementRequest[] | undefined) | undefined;
+	readonly Destination?: PathStatementRequest | undefined;
+	readonly Source?: PathStatementRequest | undefined;
+	readonly ThroughResources?: ThroughResourcesStatementRequest[] | undefined;
 }
 export interface PacketHeaderStatementRequest {
-	readonly DestinationAddresses?: (string[] | undefined) | undefined;
-	readonly DestinationPorts?: (string[] | undefined) | undefined;
-	readonly DestinationPrefixLists?: (string[] | undefined) | undefined;
-	readonly Protocols?: (string[] | undefined) | undefined;
-	readonly SourceAddresses?: (string[] | undefined) | undefined;
-	readonly SourcePorts?: (string[] | undefined) | undefined;
-	readonly SourcePrefixLists?: (string[] | undefined) | undefined;
+	readonly DestinationAddresses?: string[] | undefined;
+	readonly DestinationPorts?: string[] | undefined;
+	readonly DestinationPrefixLists?: string[] | undefined;
+	readonly Protocols?: string[] | undefined;
+	readonly SourceAddresses?: string[] | undefined;
+	readonly SourcePorts?: string[] | undefined;
+	readonly SourcePrefixLists?: string[] | undefined;
 }
 export interface PathStatementRequest {
-	readonly PacketHeaderStatement?: (PacketHeaderStatementRequest | undefined) | undefined;
-	readonly ResourceStatement?: (ResourceStatementRequest | undefined) | undefined;
+	readonly PacketHeaderStatement?: PacketHeaderStatementRequest | undefined;
+	readonly ResourceStatement?: ResourceStatementRequest | undefined;
 }
 export interface ResourceStatementRequest {
-	readonly ResourceTypes?: (string[] | undefined) | undefined;
-	readonly Resources?: (string[] | undefined) | undefined;
+	readonly ResourceTypes?: string[] | undefined;
+	readonly Resources?: string[] | undefined;
 }
 export interface ThroughResourcesStatementRequest {
-	readonly ResourceStatement?: (ResourceStatementRequest | undefined) | undefined;
+	readonly ResourceStatement?: ResourceStatementRequest | undefined;
 }
 export interface AdditionalDetail {
-	readonly AdditionalDetailType?: (string | undefined) | undefined;
-	readonly Component?: (AnalysisComponent | undefined) | undefined;
+	readonly AdditionalDetailType?: string | undefined;
+	readonly Component?: AnalysisComponent | undefined;
 }
 export interface AlternatePathHint {
-	readonly ComponentArn?: (string | undefined) | undefined;
-	readonly ComponentId?: (string | undefined) | undefined;
+	readonly ComponentArn?: string | undefined;
+	readonly ComponentId?: string | undefined;
 }
 export interface AnalysisAclRule {
-	readonly Cidr?: (string | undefined) | undefined;
-	readonly Egress?: (boolean | undefined) | undefined;
-	readonly PortRange?: (PortRange | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
-	readonly RuleAction?: (string | undefined) | undefined;
-	readonly RuleNumber?: (number | undefined) | undefined;
+	readonly Cidr?: string | undefined;
+	readonly Egress?: boolean | undefined;
+	readonly PortRange?: PortRange | undefined;
+	readonly Protocol?: string | undefined;
+	readonly RuleAction?: string | undefined;
+	readonly RuleNumber?: number | undefined;
 }
 export interface AnalysisComponent {
-	readonly Arn?: (string | undefined) | undefined;
-	readonly Id?: (string | undefined) | undefined;
+	readonly Arn?: string | undefined;
+	readonly Id?: string | undefined;
 }
 export interface AnalysisLoadBalancerListener {
-	readonly InstancePort?: (number | undefined) | undefined;
-	readonly LoadBalancerPort?: (number | undefined) | undefined;
+	readonly InstancePort?: number | undefined;
+	readonly LoadBalancerPort?: number | undefined;
 }
 export interface AnalysisLoadBalancerTarget {
-	readonly Address?: (string | undefined) | undefined;
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly Instance?: (AnalysisComponent | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
+	readonly Address?: string | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly Instance?: AnalysisComponent | undefined;
+	readonly Port?: number | undefined;
 }
 export interface AnalysisPacketHeader {
-	readonly DestinationAddresses?: (string[] | undefined) | undefined;
-	readonly DestinationPortRanges?: (PortRange[] | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
-	readonly SourceAddresses?: (string[] | undefined) | undefined;
-	readonly SourcePortRanges?: (PortRange[] | undefined) | undefined;
+	readonly DestinationAddresses?: string[] | undefined;
+	readonly DestinationPortRanges?: PortRange[] | undefined;
+	readonly Protocol?: string | undefined;
+	readonly SourceAddresses?: string[] | undefined;
+	readonly SourcePortRanges?: PortRange[] | undefined;
 }
 export interface AnalysisRouteTableRoute {
-	readonly NatGatewayId?: (string | undefined) | undefined;
-	readonly NetworkInterfaceId?: (string | undefined) | undefined;
-	readonly Origin?: (string | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
-	readonly TransitGatewayId?: (string | undefined) | undefined;
-	readonly VpcPeeringConnectionId?: (string | undefined) | undefined;
-	readonly destinationCidr?: (string | undefined) | undefined;
-	readonly destinationPrefixListId?: (string | undefined) | undefined;
-	readonly egressOnlyInternetGatewayId?: (string | undefined) | undefined;
-	readonly gatewayId?: (string | undefined) | undefined;
-	readonly instanceId?: (string | undefined) | undefined;
+	readonly NatGatewayId?: string | undefined;
+	readonly NetworkInterfaceId?: string | undefined;
+	readonly Origin?: string | undefined;
+	readonly State?: string | undefined;
+	readonly TransitGatewayId?: string | undefined;
+	readonly VpcPeeringConnectionId?: string | undefined;
+	readonly destinationCidr?: string | undefined;
+	readonly destinationPrefixListId?: string | undefined;
+	readonly egressOnlyInternetGatewayId?: string | undefined;
+	readonly gatewayId?: string | undefined;
+	readonly instanceId?: string | undefined;
 }
 export interface AnalysisSecurityGroupRule {
-	readonly Cidr?: (string | undefined) | undefined;
-	readonly Direction?: (string | undefined) | undefined;
-	readonly PortRange?: (PortRange | undefined) | undefined;
-	readonly PrefixListId?: (string | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
+	readonly Cidr?: string | undefined;
+	readonly Direction?: string | undefined;
+	readonly PortRange?: PortRange | undefined;
+	readonly PrefixListId?: string | undefined;
+	readonly Protocol?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
 }
 export interface Explanation {
-	readonly Acl?: (AnalysisComponent | undefined) | undefined;
-	readonly AclRule?: (AnalysisAclRule | undefined) | undefined;
-	readonly Address?: (string | undefined) | undefined;
-	readonly Addresses?: (string[] | undefined) | undefined;
-	readonly AttachedTo?: (AnalysisComponent | undefined) | undefined;
-	readonly AvailabilityZones?: (string[] | undefined) | undefined;
-	readonly Cidrs?: (string[] | undefined) | undefined;
-	readonly ClassicLoadBalancerListener?: (AnalysisLoadBalancerListener | undefined) | undefined;
-	readonly Component?: (AnalysisComponent | undefined) | undefined;
-	readonly ComponentAccount?: (string | undefined) | undefined;
-	readonly ComponentRegion?: (string | undefined) | undefined;
-	readonly CustomerGateway?: (AnalysisComponent | undefined) | undefined;
-	readonly Destination?: (AnalysisComponent | undefined) | undefined;
-	readonly DestinationVpc?: (AnalysisComponent | undefined) | undefined;
-	readonly Direction?: (string | undefined) | undefined;
-	readonly ElasticLoadBalancerListener?: (AnalysisComponent | undefined) | undefined;
-	readonly ExplanationCode?: (string | undefined) | undefined;
-	readonly IngressRouteTable?: (AnalysisComponent | undefined) | undefined;
-	readonly InternetGateway?: (AnalysisComponent | undefined) | undefined;
-	readonly LoadBalancerArn?: (string | undefined) | undefined;
-	readonly LoadBalancerListenerPort?: (number | undefined) | undefined;
-	readonly LoadBalancerTarget?: (AnalysisLoadBalancerTarget | undefined) | undefined;
-	readonly LoadBalancerTargetGroup?: (AnalysisComponent | undefined) | undefined;
-	readonly LoadBalancerTargetGroups?: (AnalysisComponent[] | undefined) | undefined;
-	readonly LoadBalancerTargetPort?: (number | undefined) | undefined;
-	readonly MissingComponent?: (string | undefined) | undefined;
-	readonly NatGateway?: (AnalysisComponent | undefined) | undefined;
-	readonly NetworkInterface?: (AnalysisComponent | undefined) | undefined;
-	readonly PacketField?: (string | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly PortRanges?: (PortRange[] | undefined) | undefined;
-	readonly PrefixList?: (AnalysisComponent | undefined) | undefined;
-	readonly Protocols?: (string[] | undefined) | undefined;
-	readonly RouteTable?: (AnalysisComponent | undefined) | undefined;
-	readonly RouteTableRoute?: (AnalysisRouteTableRoute | undefined) | undefined;
-	readonly SecurityGroup?: (AnalysisComponent | undefined) | undefined;
-	readonly SecurityGroupRule?: (AnalysisSecurityGroupRule | undefined) | undefined;
-	readonly SecurityGroups?: (AnalysisComponent[] | undefined) | undefined;
-	readonly SourceVpc?: (AnalysisComponent | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
-	readonly Subnet?: (AnalysisComponent | undefined) | undefined;
-	readonly SubnetRouteTable?: (AnalysisComponent | undefined) | undefined;
-	readonly TransitGateway?: (AnalysisComponent | undefined) | undefined;
-	readonly TransitGatewayAttachment?: (AnalysisComponent | undefined) | undefined;
-	readonly TransitGatewayRouteTable?: (AnalysisComponent | undefined) | undefined;
-	readonly TransitGatewayRouteTableRoute?: (TransitGatewayRouteTableRoute | undefined) | undefined;
-	readonly Vpc?: (AnalysisComponent | undefined) | undefined;
-	readonly VpcPeeringConnection?: (AnalysisComponent | undefined) | undefined;
-	readonly VpnConnection?: (AnalysisComponent | undefined) | undefined;
-	readonly VpnGateway?: (AnalysisComponent | undefined) | undefined;
-	readonly vpcEndpoint?: (AnalysisComponent | undefined) | undefined;
+	readonly Acl?: AnalysisComponent | undefined;
+	readonly AclRule?: AnalysisAclRule | undefined;
+	readonly Address?: string | undefined;
+	readonly Addresses?: string[] | undefined;
+	readonly AttachedTo?: AnalysisComponent | undefined;
+	readonly AvailabilityZones?: string[] | undefined;
+	readonly Cidrs?: string[] | undefined;
+	readonly ClassicLoadBalancerListener?: AnalysisLoadBalancerListener | undefined;
+	readonly Component?: AnalysisComponent | undefined;
+	readonly ComponentAccount?: string | undefined;
+	readonly ComponentRegion?: string | undefined;
+	readonly CustomerGateway?: AnalysisComponent | undefined;
+	readonly Destination?: AnalysisComponent | undefined;
+	readonly DestinationVpc?: AnalysisComponent | undefined;
+	readonly Direction?: string | undefined;
+	readonly ElasticLoadBalancerListener?: AnalysisComponent | undefined;
+	readonly ExplanationCode?: string | undefined;
+	readonly IngressRouteTable?: AnalysisComponent | undefined;
+	readonly InternetGateway?: AnalysisComponent | undefined;
+	readonly LoadBalancerArn?: string | undefined;
+	readonly LoadBalancerListenerPort?: number | undefined;
+	readonly LoadBalancerTarget?: AnalysisLoadBalancerTarget | undefined;
+	readonly LoadBalancerTargetGroup?: AnalysisComponent | undefined;
+	readonly LoadBalancerTargetGroups?: AnalysisComponent[] | undefined;
+	readonly LoadBalancerTargetPort?: number | undefined;
+	readonly MissingComponent?: string | undefined;
+	readonly NatGateway?: AnalysisComponent | undefined;
+	readonly NetworkInterface?: AnalysisComponent | undefined;
+	readonly PacketField?: string | undefined;
+	readonly Port?: number | undefined;
+	readonly PortRanges?: PortRange[] | undefined;
+	readonly PrefixList?: AnalysisComponent | undefined;
+	readonly Protocols?: string[] | undefined;
+	readonly RouteTable?: AnalysisComponent | undefined;
+	readonly RouteTableRoute?: AnalysisRouteTableRoute | undefined;
+	readonly SecurityGroup?: AnalysisComponent | undefined;
+	readonly SecurityGroupRule?: AnalysisSecurityGroupRule | undefined;
+	readonly SecurityGroups?: AnalysisComponent[] | undefined;
+	readonly SourceVpc?: AnalysisComponent | undefined;
+	readonly State?: string | undefined;
+	readonly Subnet?: AnalysisComponent | undefined;
+	readonly SubnetRouteTable?: AnalysisComponent | undefined;
+	readonly TransitGateway?: AnalysisComponent | undefined;
+	readonly TransitGatewayAttachment?: AnalysisComponent | undefined;
+	readonly TransitGatewayRouteTable?: AnalysisComponent | undefined;
+	readonly TransitGatewayRouteTableRoute?: TransitGatewayRouteTableRoute | undefined;
+	readonly Vpc?: AnalysisComponent | undefined;
+	readonly VpcPeeringConnection?: AnalysisComponent | undefined;
+	readonly VpnConnection?: AnalysisComponent | undefined;
+	readonly VpnGateway?: AnalysisComponent | undefined;
+	readonly vpcEndpoint?: AnalysisComponent | undefined;
 }
 export interface PathComponent {
-	readonly AclRule?: (AnalysisAclRule | undefined) | undefined;
-	readonly AdditionalDetails?: (AdditionalDetail[] | undefined) | undefined;
-	readonly Component?: (AnalysisComponent | undefined) | undefined;
-	readonly DestinationVpc?: (AnalysisComponent | undefined) | undefined;
-	readonly ElasticLoadBalancerListener?: (AnalysisComponent | undefined) | undefined;
-	readonly Explanations?: (Explanation[] | undefined) | undefined;
-	readonly InboundHeader?: (AnalysisPacketHeader | undefined) | undefined;
-	readonly OutboundHeader?: (AnalysisPacketHeader | undefined) | undefined;
-	readonly RouteTableRoute?: (AnalysisRouteTableRoute | undefined) | undefined;
-	readonly SecurityGroupRule?: (AnalysisSecurityGroupRule | undefined) | undefined;
-	readonly SequenceNumber?: (number | undefined) | undefined;
-	readonly SourceVpc?: (AnalysisComponent | undefined) | undefined;
-	readonly Subnet?: (AnalysisComponent | undefined) | undefined;
-	readonly TransitGateway?: (AnalysisComponent | undefined) | undefined;
-	readonly TransitGatewayRouteTableRoute?: (TransitGatewayRouteTableRoute | undefined) | undefined;
-	readonly Vpc?: (AnalysisComponent | undefined) | undefined;
+	readonly AclRule?: AnalysisAclRule | undefined;
+	readonly AdditionalDetails?: AdditionalDetail[] | undefined;
+	readonly Component?: AnalysisComponent | undefined;
+	readonly DestinationVpc?: AnalysisComponent | undefined;
+	readonly ElasticLoadBalancerListener?: AnalysisComponent | undefined;
+	readonly Explanations?: Explanation[] | undefined;
+	readonly InboundHeader?: AnalysisPacketHeader | undefined;
+	readonly OutboundHeader?: AnalysisPacketHeader | undefined;
+	readonly RouteTableRoute?: AnalysisRouteTableRoute | undefined;
+	readonly SecurityGroupRule?: AnalysisSecurityGroupRule | undefined;
+	readonly SequenceNumber?: number | undefined;
+	readonly SourceVpc?: AnalysisComponent | undefined;
+	readonly Subnet?: AnalysisComponent | undefined;
+	readonly TransitGateway?: AnalysisComponent | undefined;
+	readonly TransitGatewayRouteTableRoute?: TransitGatewayRouteTableRoute | undefined;
+	readonly Vpc?: AnalysisComponent | undefined;
 }
 export interface TransitGatewayRouteTableRoute {
-	readonly AttachmentId?: (string | undefined) | undefined;
-	readonly DestinationCidr?: (string | undefined) | undefined;
-	readonly PrefixListId?: (string | undefined) | undefined;
-	readonly ResourceId?: (string | undefined) | undefined;
-	readonly ResourceType?: (string | undefined) | undefined;
-	readonly RouteOrigin?: (string | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
+	readonly AttachmentId?: string | undefined;
+	readonly DestinationCidr?: string | undefined;
+	readonly PrefixListId?: string | undefined;
+	readonly ResourceId?: string | undefined;
+	readonly ResourceType?: string | undefined;
+	readonly RouteOrigin?: string | undefined;
+	readonly State?: string | undefined;
 }
 export interface Entry {
 	readonly Cidr: string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 }
 export interface Egress {
-	readonly CidrIp?: (string | undefined) | undefined;
-	readonly CidrIpv6?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DestinationPrefixListId?: (string | undefined) | undefined;
-	readonly DestinationSecurityGroupId?: (string | undefined) | undefined;
-	readonly FromPort?: (number | undefined) | undefined;
+	readonly CidrIp?: string | undefined;
+	readonly CidrIpv6?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DestinationPrefixListId?: string | undefined;
+	readonly DestinationSecurityGroupId?: string | undefined;
+	readonly FromPort?: number | undefined;
 	readonly IpProtocol: string;
-	readonly ToPort?: (number | undefined) | undefined;
+	readonly ToPort?: number | undefined;
 }
 export interface Ingress {
-	readonly CidrIp?: (string | undefined) | undefined;
-	readonly CidrIpv6?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly FromPort?: (number | undefined) | undefined;
+	readonly CidrIp?: string | undefined;
+	readonly CidrIpv6?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly FromPort?: number | undefined;
 	readonly IpProtocol: string;
-	readonly SourcePrefixListId?: (string | undefined) | undefined;
-	readonly SourceSecurityGroupId?: (string | undefined) | undefined;
-	readonly SourceSecurityGroupName?: (string | undefined) | undefined;
-	readonly SourceSecurityGroupOwnerId?: (string | undefined) | undefined;
-	readonly ToPort?: (number | undefined) | undefined;
+	readonly SourcePrefixListId?: string | undefined;
+	readonly SourceSecurityGroupId?: string | undefined;
+	readonly SourceSecurityGroupName?: string | undefined;
+	readonly SourceSecurityGroupOwnerId?: string | undefined;
+	readonly ToPort?: number | undefined;
 }
 export interface ClassicLoadBalancer {
 	readonly Name: string;
@@ -2326,117 +2326,117 @@ export interface ClassicLoadBalancersConfig {
 	readonly ClassicLoadBalancers: ClassicLoadBalancer[];
 }
 export interface EbsBlockDevice {
-	readonly DeleteOnTermination?: (boolean | undefined) | undefined;
-	readonly Encrypted?: (boolean | undefined) | undefined;
-	readonly Iops?: (number | undefined) | undefined;
-	readonly SnapshotId?: (string | undefined) | undefined;
-	readonly VolumeSize?: (number | undefined) | undefined;
-	readonly VolumeType?: (string | undefined) | undefined;
+	readonly DeleteOnTermination?: boolean | undefined;
+	readonly Encrypted?: boolean | undefined;
+	readonly Iops?: number | undefined;
+	readonly SnapshotId?: string | undefined;
+	readonly VolumeSize?: number | undefined;
+	readonly VolumeType?: string | undefined;
 }
 export interface FleetLaunchTemplateSpecification {
-	readonly LaunchTemplateId?: (string | undefined) | undefined;
-	readonly LaunchTemplateName?: (string | undefined) | undefined;
+	readonly LaunchTemplateId?: string | undefined;
+	readonly LaunchTemplateName?: string | undefined;
 	readonly Version: string;
 }
 export interface GroupIdentifier {
 	readonly GroupId: string;
 }
 export interface IamInstanceProfileSpecification {
-	readonly Arn?: (string | undefined) | undefined;
+	readonly Arn?: string | undefined;
 }
 export interface InstanceNetworkInterfaceSpecification {
-	readonly AssociatePublicIpAddress?: (boolean | undefined) | undefined;
-	readonly DeleteOnTermination?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DeviceIndex?: (number | undefined) | undefined;
-	readonly Groups?: (string[] | undefined) | undefined;
-	readonly Ipv6AddressCount?: (number | undefined) | undefined;
-	readonly Ipv6Addresses?: (InstanceIpv6Address[] | undefined) | undefined;
-	readonly NetworkInterfaceId?: (string | undefined) | undefined;
-	readonly PrivateIpAddresses?: (PrivateIpAddressSpecification[] | undefined) | undefined;
-	readonly SecondaryPrivateIpAddressCount?: (number | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
+	readonly AssociatePublicIpAddress?: boolean | undefined;
+	readonly DeleteOnTermination?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly DeviceIndex?: number | undefined;
+	readonly Groups?: string[] | undefined;
+	readonly Ipv6AddressCount?: number | undefined;
+	readonly Ipv6Addresses?: InstanceIpv6Address[] | undefined;
+	readonly NetworkInterfaceId?: string | undefined;
+	readonly PrivateIpAddresses?: PrivateIpAddressSpecification[] | undefined;
+	readonly SecondaryPrivateIpAddressCount?: number | undefined;
+	readonly SubnetId?: string | undefined;
 }
 export interface LaunchTemplateConfig {
-	readonly LaunchTemplateSpecification?: (FleetLaunchTemplateSpecification | undefined) | undefined;
-	readonly Overrides?: (LaunchTemplateOverrides[] | undefined) | undefined;
+	readonly LaunchTemplateSpecification?: FleetLaunchTemplateSpecification | undefined;
+	readonly Overrides?: LaunchTemplateOverrides[] | undefined;
 }
 export interface LaunchTemplateOverrides {
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly InstanceRequirements?: (InstanceRequirementsRequest | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly SpotPrice?: (string | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
-	readonly WeightedCapacity?: (number | undefined) | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly InstanceRequirements?: InstanceRequirementsRequest | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly Priority?: number | undefined;
+	readonly SpotPrice?: string | undefined;
+	readonly SubnetId?: string | undefined;
+	readonly WeightedCapacity?: number | undefined;
 }
 export interface LoadBalancersConfig {
-	readonly ClassicLoadBalancersConfig?: (ClassicLoadBalancersConfig | undefined) | undefined;
-	readonly TargetGroupsConfig?: (TargetGroupsConfig | undefined) | undefined;
+	readonly ClassicLoadBalancersConfig?: ClassicLoadBalancersConfig | undefined;
+	readonly TargetGroupsConfig?: TargetGroupsConfig | undefined;
 }
 export interface SpotCapacityRebalance {
-	readonly ReplacementStrategy?: (string | undefined) | undefined;
-	readonly TerminationDelay?: (number | undefined) | undefined;
+	readonly ReplacementStrategy?: string | undefined;
+	readonly TerminationDelay?: number | undefined;
 }
 export interface SpotFleetLaunchSpecification {
-	readonly BlockDeviceMappings?: (BlockDeviceMapping[] | undefined) | undefined;
-	readonly EbsOptimized?: (boolean | undefined) | undefined;
-	readonly IamInstanceProfile?: (IamInstanceProfileSpecification | undefined) | undefined;
+	readonly BlockDeviceMappings?: BlockDeviceMapping[] | undefined;
+	readonly EbsOptimized?: boolean | undefined;
+	readonly IamInstanceProfile?: IamInstanceProfileSpecification | undefined;
 	readonly ImageId: string;
-	readonly InstanceRequirements?: (InstanceRequirementsRequest | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly KernelId?: (string | undefined) | undefined;
-	readonly KeyName?: (string | undefined) | undefined;
-	readonly Monitoring?: (SpotFleetMonitoring | undefined) | undefined;
-	readonly NetworkInterfaces?: (InstanceNetworkInterfaceSpecification[] | undefined) | undefined;
-	readonly Placement?: (SpotPlacement | undefined) | undefined;
-	readonly RamdiskId?: (string | undefined) | undefined;
-	readonly SecurityGroups?: (GroupIdentifier[] | undefined) | undefined;
-	readonly SpotPrice?: (string | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
-	readonly TagSpecifications?: (SpotFleetTagSpecification[] | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
-	readonly WeightedCapacity?: (number | undefined) | undefined;
+	readonly InstanceRequirements?: InstanceRequirementsRequest | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly KernelId?: string | undefined;
+	readonly KeyName?: string | undefined;
+	readonly Monitoring?: SpotFleetMonitoring | undefined;
+	readonly NetworkInterfaces?: InstanceNetworkInterfaceSpecification[] | undefined;
+	readonly Placement?: SpotPlacement | undefined;
+	readonly RamdiskId?: string | undefined;
+	readonly SecurityGroups?: GroupIdentifier[] | undefined;
+	readonly SpotPrice?: string | undefined;
+	readonly SubnetId?: string | undefined;
+	readonly TagSpecifications?: SpotFleetTagSpecification[] | undefined;
+	readonly UserData?: string | undefined;
+	readonly WeightedCapacity?: number | undefined;
 }
 export interface SpotFleetMonitoring {
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
 }
 export interface SpotFleetRequestConfigData {
-	readonly AllocationStrategy?: (string | undefined) | undefined;
-	readonly Context?: (string | undefined) | undefined;
-	readonly ExcessCapacityTerminationPolicy?: (string | undefined) | undefined;
+	readonly AllocationStrategy?: string | undefined;
+	readonly Context?: string | undefined;
+	readonly ExcessCapacityTerminationPolicy?: string | undefined;
 	readonly IamFleetRole: string;
-	readonly InstanceInterruptionBehavior?: (string | undefined) | undefined;
-	readonly InstancePoolsToUseCount?: (number | undefined) | undefined;
-	readonly LaunchSpecifications?: (SpotFleetLaunchSpecification[] | undefined) | undefined;
-	readonly LaunchTemplateConfigs?: (LaunchTemplateConfig[] | undefined) | undefined;
-	readonly LoadBalancersConfig?: (LoadBalancersConfig | undefined) | undefined;
-	readonly OnDemandAllocationStrategy?: (string | undefined) | undefined;
-	readonly OnDemandMaxTotalPrice?: (string | undefined) | undefined;
-	readonly OnDemandTargetCapacity?: (number | undefined) | undefined;
-	readonly ReplaceUnhealthyInstances?: (boolean | undefined) | undefined;
-	readonly SpotMaintenanceStrategies?: (SpotMaintenanceStrategies | undefined) | undefined;
-	readonly SpotMaxTotalPrice?: (string | undefined) | undefined;
-	readonly SpotPrice?: (string | undefined) | undefined;
-	readonly TagSpecifications?: (SpotFleetTagSpecification[] | undefined) | undefined;
+	readonly InstanceInterruptionBehavior?: string | undefined;
+	readonly InstancePoolsToUseCount?: number | undefined;
+	readonly LaunchSpecifications?: SpotFleetLaunchSpecification[] | undefined;
+	readonly LaunchTemplateConfigs?: LaunchTemplateConfig[] | undefined;
+	readonly LoadBalancersConfig?: LoadBalancersConfig | undefined;
+	readonly OnDemandAllocationStrategy?: string | undefined;
+	readonly OnDemandMaxTotalPrice?: string | undefined;
+	readonly OnDemandTargetCapacity?: number | undefined;
+	readonly ReplaceUnhealthyInstances?: boolean | undefined;
+	readonly SpotMaintenanceStrategies?: SpotMaintenanceStrategies | undefined;
+	readonly SpotMaxTotalPrice?: string | undefined;
+	readonly SpotPrice?: string | undefined;
+	readonly TagSpecifications?: SpotFleetTagSpecification[] | undefined;
 	readonly TargetCapacity: number;
-	readonly TargetCapacityUnitType?: (string | undefined) | undefined;
-	readonly TerminateInstancesWithExpiration?: (boolean | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
-	readonly ValidFrom?: (string | undefined) | undefined;
-	readonly ValidUntil?: (string | undefined) | undefined;
+	readonly TargetCapacityUnitType?: string | undefined;
+	readonly TerminateInstancesWithExpiration?: boolean | undefined;
+	readonly Type?: string | undefined;
+	readonly ValidFrom?: string | undefined;
+	readonly ValidUntil?: string | undefined;
 }
 export interface SpotFleetTagSpecification {
-	readonly ResourceType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ResourceType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 }
 export interface SpotMaintenanceStrategies {
-	readonly CapacityRebalance?: (SpotCapacityRebalance | undefined) | undefined;
+	readonly CapacityRebalance?: SpotCapacityRebalance | undefined;
 }
 export interface SpotPlacement {
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly GroupName?: (string | undefined) | undefined;
-	readonly Tenancy?: (string | undefined) | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly GroupName?: string | undefined;
+	readonly Tenancy?: string | undefined;
 }
 export interface TargetGroup {
 	readonly Arn: string;
@@ -2445,29 +2445,29 @@ export interface TargetGroupsConfig {
 	readonly TargetGroups: TargetGroup[];
 }
 export interface PrivateDnsNameOptionsOnLaunch {
-	readonly EnableResourceNameDnsAAAARecord?: (boolean | undefined) | undefined;
-	readonly EnableResourceNameDnsARecord?: (boolean | undefined) | undefined;
-	readonly HostnameType?: (string | undefined) | undefined;
+	readonly EnableResourceNameDnsAAAARecord?: boolean | undefined;
+	readonly EnableResourceNameDnsARecord?: boolean | undefined;
+	readonly HostnameType?: string | undefined;
 }
 export interface TrafficMirrorPortRange {
 	readonly FromPort: number;
 	readonly ToPort: number;
 }
 export interface Options {
-	readonly ApplianceModeSupport?: (string | undefined) | undefined;
-	readonly DnsSupport?: (string | undefined) | undefined;
-	readonly Ipv6Support?: (string | undefined) | undefined;
+	readonly ApplianceModeSupport?: string | undefined;
+	readonly DnsSupport?: string | undefined;
+	readonly Ipv6Support?: string | undefined;
 }
 export interface TransitGatewayConnectOptions {
-	readonly Protocol?: (string | undefined) | undefined;
+	readonly Protocol?: string | undefined;
 }
 export interface PeeringAttachmentStatus {
-	readonly Code?: (string | undefined) | undefined;
-	readonly Message?: (string | undefined) | undefined;
+	readonly Code?: string | undefined;
+	readonly Message?: string | undefined;
 }
 export interface VpnTunnelOptionsSpecification {
-	readonly PreSharedKey?: (string | undefined) | undefined;
-	readonly TunnelInsideCidr?: (string | undefined) | undefined;
+	readonly PreSharedKey?: string | undefined;
+	readonly TunnelInsideCidr?: string | undefined;
 }
 export default {
 	CapacityReservation: CapacityReservation,

@@ -19,25 +19,25 @@ export interface activityLogAlertsComponentOutputs {
 export interface activityLogAlertsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ActivityLogAlert | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ActivityLogAlert;
+	readonly tags?: ResourceTags;
 }
 export interface ActivityLogAlert {
 	readonly actions: ActivityLogAlertActionList;
 	readonly condition: ActivityLogAlertAllOfCondition;
-	readonly description?: string | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly description?: string;
+	readonly enabled?: boolean;
 	readonly scopes: string[];
 }
 export interface ActivityLogAlertActionGroup {
 	readonly actionGroupId: string;
-	readonly webhookProperties?: ActivityLogAlertActionGroupWebhookProperties | undefined;
+	readonly webhookProperties?: ActivityLogAlertActionGroupWebhookProperties;
 }
 export interface ActivityLogAlertActionGroupWebhookProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ActivityLogAlertActionList {
-	readonly actionGroups?: ActivityLogAlertActionGroup[] | undefined;
+	readonly actionGroups?: ActivityLogAlertActionGroup[];
 }
 export interface ActivityLogAlertAllOfCondition {
 	readonly allOf: ActivityLogAlertLeafCondition[];
@@ -47,7 +47,7 @@ export interface ActivityLogAlertLeafCondition {
 	readonly field: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	activityLogAlerts: activityLogAlerts,

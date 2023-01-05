@@ -14,10 +14,10 @@ export interface searchServicesComponentOutputs {
 	readonly type: "Microsoft.Search/searchServices";
 }
 export interface searchServicesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SearchServiceProperties | undefined;
-	readonly tags?: SearchServiceCreateOrUpdateParametersTags | undefined;
+	readonly properties?: SearchServiceProperties;
+	readonly tags?: SearchServiceCreateOrUpdateParametersTags;
 }
 export function listAdminKeys(resource: searchServices): AdminKeyResult {
 	if (resource.apiVersion !== "2015-02-28") {
@@ -29,19 +29,19 @@ export function listAdminKeys(resource: searchServices): AdminKeyResult {
 	throw new Error("not implemented");
 }
 export interface AdminKeyResult {
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface SearchServiceCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SearchServiceProperties {
-	readonly partitionCount?: number | undefined;
-	readonly replicaCount?: number | undefined;
-	readonly sku?: Sku | undefined;
+	readonly partitionCount?: number;
+	readonly replicaCount?: number;
+	readonly sku?: Sku;
 }
 export interface Sku {
-	readonly name?: ("free" | "standard") | undefined;
+	readonly name?: "free" | "standard";
 }
 export default {
 	searchServices: searchServices,

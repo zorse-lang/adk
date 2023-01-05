@@ -23,33 +23,30 @@ export interface vaults_backupFabrics_backupProtectionIntentComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/backupFabrics/backupProtectionIntent";
 }
 export interface vaults_backupFabrics_backupProtectionIntentComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProtectionIntent | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ProtectionIntent;
+	readonly tags?: ResourceTags;
 }
 export interface ProtectionIntent {
 	readonly backupManagementType?:
-		| (
-				| "AzureBackupServer"
-				| "AzureIaasVM"
-				| "AzureSql"
-				| "AzureStorage"
-				| "AzureWorkload"
-				| "DPM"
-				| "DefaultBackup"
-				| "Invalid"
-				| "MAB"
-		  )
-		| undefined;
-	readonly itemId?: string | undefined;
-	readonly policyId?: string | undefined;
-	readonly protectionState?: ("Invalid" | "NotProtected" | "Protected" | "Protecting" | "ProtectionFailed") | undefined;
-	readonly sourceResourceId?: string | undefined;
+		| "AzureBackupServer"
+		| "AzureIaasVM"
+		| "AzureSql"
+		| "AzureStorage"
+		| "AzureWorkload"
+		| "DPM"
+		| "DefaultBackup"
+		| "Invalid"
+		| "MAB";
+	readonly itemId?: string;
+	readonly policyId?: string;
+	readonly protectionState?: "Invalid" | "NotProtected" | "Protected" | "Protecting" | "ProtectionFailed";
+	readonly sourceResourceId?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	"vaults/backupFabrics/backupProtectionIntent": vaults_backupFabrics_backupProtectionIntent,

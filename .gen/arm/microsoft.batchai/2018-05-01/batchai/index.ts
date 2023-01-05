@@ -16,8 +16,8 @@ export interface workspacesComponentOutputs {
 export interface workspacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WorkspaceProperties | undefined;
-	readonly tags?: WorkspaceCreateParametersTags | undefined;
+	readonly properties?: WorkspaceProperties;
+	readonly tags?: WorkspaceCreateParametersTags;
 }
 export class workspaces_clusters
 	extends ArmResource<workspaces_clustersComponentInputs>
@@ -37,7 +37,7 @@ export interface workspaces_clustersComponentOutputs {
 }
 export interface workspaces_clustersComponentInputs {
 	readonly name: string;
-	readonly properties?: ClusterBaseProperties | undefined;
+	readonly properties?: ClusterBaseProperties;
 }
 export class workspaces_experiments
 	extends ArmResource<workspaces_experimentsComponentInputs>
@@ -57,7 +57,7 @@ export interface workspaces_experimentsComponentOutputs {
 }
 export interface workspaces_experimentsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExperimentProperties | undefined;
+	readonly properties?: ExperimentProperties;
 }
 export class workspaces_experiments_jobs
 	extends ArmResource<workspaces_experiments_jobsComponentInputs>
@@ -77,7 +77,7 @@ export interface workspaces_experiments_jobsComponentOutputs {
 }
 export interface workspaces_experiments_jobsComponentInputs {
 	readonly name: string;
-	readonly properties?: JobBaseProperties | undefined;
+	readonly properties?: JobBaseProperties;
 }
 export class workspaces_fileServers
 	extends ArmResource<workspaces_fileServersComponentInputs>
@@ -97,63 +97,63 @@ export interface workspaces_fileServersComponentOutputs {
 }
 export interface workspaces_fileServersComponentInputs {
 	readonly name: string;
-	readonly properties?: FileServerBaseProperties | undefined;
+	readonly properties?: FileServerBaseProperties;
 }
 export interface WorkspaceProperties {
-	readonly creationTime?: string | undefined;
-	readonly provisioningState?: ("creating" | "deleting" | "failed") | undefined;
-	readonly provisioningStateTransitionTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly provisioningState?: "creating" | "deleting" | "failed";
+	readonly provisioningStateTransitionTime?: string;
 }
 export interface WorkspaceCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ClusterBaseProperties {
-	readonly allocationState?: "resizing" | undefined;
-	readonly allocationStateTransitionTime?: string | undefined;
-	readonly creationTime?: string | undefined;
-	readonly currentNodeCount?: number | undefined;
-	readonly errors?: BatchAIError[] | undefined;
-	readonly nodeSetup?: NodeSetup | undefined;
-	readonly nodeStateCounts?: NodeStateCounts | undefined;
-	readonly provisioningState?: ("creating" | "deleting" | "failed") | undefined;
-	readonly provisioningStateTransitionTime?: string | undefined;
-	readonly scaleSettings?: ScaleSettings | undefined;
-	readonly subnet?: ResourceId | undefined;
+	readonly allocationState?: "resizing";
+	readonly allocationStateTransitionTime?: string;
+	readonly creationTime?: string;
+	readonly currentNodeCount?: number;
+	readonly errors?: BatchAIError[];
+	readonly nodeSetup?: NodeSetup;
+	readonly nodeStateCounts?: NodeStateCounts;
+	readonly provisioningState?: "creating" | "deleting" | "failed";
+	readonly provisioningStateTransitionTime?: string;
+	readonly scaleSettings?: ScaleSettings;
+	readonly subnet?: ResourceId;
 	readonly userAccountSettings: UserAccountSettings;
-	readonly virtualMachineConfiguration?: VirtualMachineConfiguration | undefined;
-	readonly vmPriority?: "dedicated" | undefined;
+	readonly virtualMachineConfiguration?: VirtualMachineConfiguration;
+	readonly vmPriority?: "dedicated";
 	readonly vmSize: string;
 }
 export interface BatchAIError {
-	readonly code?: string | undefined;
-	readonly details?: NameValuePair[] | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly details?: NameValuePair[];
+	readonly message?: string;
 }
 export interface NameValuePair {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface NodeSetup {
-	readonly mountVolumes?: MountVolumes | undefined;
-	readonly performanceCountersSettings?: PerformanceCountersSettings | undefined;
-	readonly setupTask?: SetupTask | undefined;
+	readonly mountVolumes?: MountVolumes;
+	readonly performanceCountersSettings?: PerformanceCountersSettings;
+	readonly setupTask?: SetupTask;
 }
 export interface MountVolumes {
-	readonly azureBlobFileSystems?: AzureBlobFileSystemReference[] | undefined;
-	readonly azureFileShares?: AzureFileShareReference[] | undefined;
-	readonly fileServers?: FileServerReference[] | undefined;
-	readonly unmanagedFileSystems?: UnmanagedFileSystemReference[] | undefined;
+	readonly azureBlobFileSystems?: AzureBlobFileSystemReference[];
+	readonly azureFileShares?: AzureFileShareReference[];
+	readonly fileServers?: FileServerReference[];
+	readonly unmanagedFileSystems?: UnmanagedFileSystemReference[];
 }
 export interface AzureBlobFileSystemReference {
 	readonly accountName: string;
 	readonly containerName: string;
 	readonly credentials: AzureStorageCredentialsInfo;
-	readonly mountOptions?: string | undefined;
+	readonly mountOptions?: string;
 	readonly relativeMountPath: string;
 }
 export interface AzureStorageCredentialsInfo {
-	readonly accountKey?: string | undefined;
-	readonly accountKeySecretReference?: KeyVaultSecretReference | undefined;
+	readonly accountKey?: string;
+	readonly accountKeySecretReference?: KeyVaultSecretReference;
 }
 export interface KeyVaultSecretReference {
 	readonly secretUrl: string;
@@ -166,15 +166,15 @@ export interface AzureFileShareReference {
 	readonly accountName: string;
 	readonly azureFileUrl: string;
 	readonly credentials: AzureStorageCredentialsInfo;
-	readonly directoryMode?: string | undefined;
-	readonly fileMode?: string | undefined;
+	readonly directoryMode?: string;
+	readonly fileMode?: string;
 	readonly relativeMountPath: string;
 }
 export interface FileServerReference {
 	readonly fileServer: ResourceId;
-	readonly mountOptions?: string | undefined;
+	readonly mountOptions?: string;
 	readonly relativeMountPath: string;
-	readonly sourceDirectory?: string | undefined;
+	readonly sourceDirectory?: string;
 }
 export interface UnmanagedFileSystemReference {
 	readonly mountCommand: string;
@@ -185,15 +185,15 @@ export interface PerformanceCountersSettings {
 }
 export interface AppInsightsReference {
 	readonly component: ResourceId;
-	readonly instrumentationKey?: string | undefined;
-	readonly instrumentationKeySecretReference?: KeyVaultSecretReference | undefined;
+	readonly instrumentationKey?: string;
+	readonly instrumentationKeySecretReference?: KeyVaultSecretReference;
 }
 export interface SetupTask {
 	readonly commandLine: string;
-	readonly environmentVariables?: EnvironmentVariable[] | undefined;
-	readonly secrets?: EnvironmentVariableWithSecretValue[] | undefined;
+	readonly environmentVariables?: EnvironmentVariable[];
+	readonly secrets?: EnvironmentVariableWithSecretValue[];
 	readonly stdOutErrPathPrefix: string;
-	readonly stdOutErrPathSuffix?: string | undefined;
+	readonly stdOutErrPathSuffix?: string;
 }
 export interface EnvironmentVariable {
 	readonly name: string;
@@ -201,140 +201,140 @@ export interface EnvironmentVariable {
 }
 export interface EnvironmentVariableWithSecretValue {
 	readonly name: string;
-	readonly value?: string | undefined;
-	readonly valueSecretReference?: KeyVaultSecretReference | undefined;
+	readonly value?: string;
+	readonly valueSecretReference?: KeyVaultSecretReference;
 }
 export interface NodeStateCounts {
-	readonly idleNodeCount?: number | undefined;
-	readonly leavingNodeCount?: number | undefined;
-	readonly preparingNodeCount?: number | undefined;
-	readonly runningNodeCount?: number | undefined;
-	readonly unusableNodeCount?: number | undefined;
+	readonly idleNodeCount?: number;
+	readonly leavingNodeCount?: number;
+	readonly preparingNodeCount?: number;
+	readonly runningNodeCount?: number;
+	readonly unusableNodeCount?: number;
 }
 export interface ScaleSettings {
-	readonly autoScale?: AutoScaleSettings | undefined;
-	readonly manual?: ManualScaleSettings | undefined;
+	readonly autoScale?: AutoScaleSettings;
+	readonly manual?: ManualScaleSettings;
 }
 export interface AutoScaleSettings {
-	readonly initialNodeCount?: number | undefined;
+	readonly initialNodeCount?: number;
 	readonly maximumNodeCount: number;
 	readonly minimumNodeCount: number;
 }
 export interface ManualScaleSettings {
-	readonly nodeDeallocationOption?: ("requeue" | "terminate") | undefined;
+	readonly nodeDeallocationOption?: "requeue" | "terminate";
 	readonly targetNodeCount: number;
 }
 export interface UserAccountSettings {
 	readonly adminUserName: string;
-	readonly adminUserPassword?: string | undefined;
-	readonly adminUserSshPublicKey?: string | undefined;
+	readonly adminUserPassword?: string;
+	readonly adminUserSshPublicKey?: string;
 }
 export interface VirtualMachineConfiguration {
-	readonly imageReference?: ImageReference | undefined;
+	readonly imageReference?: ImageReference;
 }
 export interface ImageReference {
 	readonly offer: string;
 	readonly publisher: string;
 	readonly sku: string;
-	readonly version?: string | undefined;
-	readonly virtualMachineImageId?: string | undefined;
+	readonly version?: string;
+	readonly virtualMachineImageId?: string;
 }
 export interface ExperimentProperties {
-	readonly creationTime?: string | undefined;
-	readonly provisioningState?: ("creating" | "deleting" | "failed") | undefined;
-	readonly provisioningStateTransitionTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly provisioningState?: "creating" | "deleting" | "failed";
+	readonly provisioningStateTransitionTime?: string;
 }
 export interface JobBaseProperties {
-	readonly caffe2Settings?: Caffe2Settings | undefined;
-	readonly caffeSettings?: CaffeSettings | undefined;
-	readonly chainerSettings?: ChainerSettings | undefined;
+	readonly caffe2Settings?: Caffe2Settings;
+	readonly caffeSettings?: CaffeSettings;
+	readonly chainerSettings?: ChainerSettings;
 	readonly cluster: ResourceId;
-	readonly cntkSettings?: CNTKsettings | undefined;
-	readonly constraints?: JobBasePropertiesConstraints | undefined;
-	readonly containerSettings?: ContainerSettings | undefined;
-	readonly creationTime?: string | undefined;
-	readonly customMpiSettings?: CustomMpiSettings | undefined;
-	readonly customToolkitSettings?: CustomToolkitSettings | undefined;
-	readonly environmentVariables?: EnvironmentVariable[] | undefined;
-	readonly executionInfo?: JobPropertiesExecutionInfo | undefined;
-	readonly executionState?: ("failed" | "queued" | "running" | "succeeded") | undefined;
-	readonly executionStateTransitionTime?: string | undefined;
-	readonly horovodSettings?: HorovodSettings | undefined;
-	readonly inputDirectories?: InputDirectory[] | undefined;
-	readonly jobOutputDirectoryPathSegment?: string | undefined;
-	readonly jobPreparation?: JobPreparation | undefined;
-	readonly mountVolumes?: MountVolumes | undefined;
+	readonly cntkSettings?: CNTKsettings;
+	readonly constraints?: JobBasePropertiesConstraints;
+	readonly containerSettings?: ContainerSettings;
+	readonly creationTime?: string;
+	readonly customMpiSettings?: CustomMpiSettings;
+	readonly customToolkitSettings?: CustomToolkitSettings;
+	readonly environmentVariables?: EnvironmentVariable[];
+	readonly executionInfo?: JobPropertiesExecutionInfo;
+	readonly executionState?: "failed" | "queued" | "running" | "succeeded";
+	readonly executionStateTransitionTime?: string;
+	readonly horovodSettings?: HorovodSettings;
+	readonly inputDirectories?: InputDirectory[];
+	readonly jobOutputDirectoryPathSegment?: string;
+	readonly jobPreparation?: JobPreparation;
+	readonly mountVolumes?: MountVolumes;
 	readonly nodeCount: number;
-	readonly outputDirectories?: OutputDirectory[] | undefined;
-	readonly provisioningState?: ("creating" | "deleting" | "failed") | undefined;
-	readonly provisioningStateTransitionTime?: string | undefined;
-	readonly pyTorchSettings?: PyTorchSettings | undefined;
-	readonly schedulingPriority?: ("high" | "low") | undefined;
-	readonly secrets?: EnvironmentVariableWithSecretValue[] | undefined;
+	readonly outputDirectories?: OutputDirectory[];
+	readonly provisioningState?: "creating" | "deleting" | "failed";
+	readonly provisioningStateTransitionTime?: string;
+	readonly pyTorchSettings?: PyTorchSettings;
+	readonly schedulingPriority?: "high" | "low";
+	readonly secrets?: EnvironmentVariableWithSecretValue[];
 	readonly stdOutErrPathPrefix: string;
-	readonly tensorFlowSettings?: TensorFlowSettings | undefined;
-	readonly toolType?: ("caffe" | "caffe2" | "chainer" | "cntk" | "custom" | "custommpi" | "horovod") | undefined;
+	readonly tensorFlowSettings?: TensorFlowSettings;
+	readonly toolType?: "caffe" | "caffe2" | "chainer" | "cntk" | "custom" | "custommpi" | "horovod";
 }
 export interface Caffe2Settings {
-	readonly commandLineArgs?: string | undefined;
-	readonly pythonInterpreterPath?: string | undefined;
+	readonly commandLineArgs?: string;
+	readonly pythonInterpreterPath?: string;
 	readonly pythonScriptFilePath: string;
 }
 export interface CaffeSettings {
-	readonly commandLineArgs?: string | undefined;
-	readonly configFilePath?: string | undefined;
-	readonly processCount?: number | undefined;
-	readonly pythonInterpreterPath?: string | undefined;
-	readonly pythonScriptFilePath?: string | undefined;
+	readonly commandLineArgs?: string;
+	readonly configFilePath?: string;
+	readonly processCount?: number;
+	readonly pythonInterpreterPath?: string;
+	readonly pythonScriptFilePath?: string;
 }
 export interface ChainerSettings {
-	readonly commandLineArgs?: string | undefined;
-	readonly processCount?: number | undefined;
-	readonly pythonInterpreterPath?: string | undefined;
+	readonly commandLineArgs?: string;
+	readonly processCount?: number;
+	readonly pythonInterpreterPath?: string;
 	readonly pythonScriptFilePath: string;
 }
 export interface CNTKsettings {
-	readonly commandLineArgs?: string | undefined;
-	readonly configFilePath?: string | undefined;
-	readonly languageType?: string | undefined;
-	readonly processCount?: number | undefined;
-	readonly pythonInterpreterPath?: string | undefined;
-	readonly pythonScriptFilePath?: string | undefined;
+	readonly commandLineArgs?: string;
+	readonly configFilePath?: string;
+	readonly languageType?: string;
+	readonly processCount?: number;
+	readonly pythonInterpreterPath?: string;
+	readonly pythonScriptFilePath?: string;
 }
 export interface JobBasePropertiesConstraints {
-	readonly maxWallClockTime?: string | undefined;
+	readonly maxWallClockTime?: string;
 }
 export interface ContainerSettings {
 	readonly imageSourceRegistry: ImageSourceRegistry;
-	readonly shmSize?: string | undefined;
+	readonly shmSize?: string;
 }
 export interface ImageSourceRegistry {
-	readonly credentials?: PrivateRegistryCredentials | undefined;
+	readonly credentials?: PrivateRegistryCredentials;
 	readonly image: string;
-	readonly serverUrl?: string | undefined;
+	readonly serverUrl?: string;
 }
 export interface PrivateRegistryCredentials {
-	readonly password?: string | undefined;
-	readonly passwordSecretReference?: KeyVaultSecretReference | undefined;
+	readonly password?: string;
+	readonly passwordSecretReference?: KeyVaultSecretReference;
 	readonly username: string;
 }
 export interface CustomMpiSettings {
 	readonly commandLine: string;
-	readonly processCount?: number | undefined;
+	readonly processCount?: number;
 }
 export interface CustomToolkitSettings {
-	readonly commandLine?: string | undefined;
+	readonly commandLine?: string;
 }
 export interface JobPropertiesExecutionInfo {
-	readonly endTime?: string | undefined;
-	readonly errors?: BatchAIError[] | undefined;
-	readonly exitCode?: number | undefined;
-	readonly startTime?: string | undefined;
+	readonly endTime?: string;
+	readonly errors?: BatchAIError[];
+	readonly exitCode?: number;
+	readonly startTime?: string;
 }
 export interface HorovodSettings {
-	readonly commandLineArgs?: string | undefined;
-	readonly processCount?: number | undefined;
-	readonly pythonInterpreterPath?: string | undefined;
+	readonly commandLineArgs?: string;
+	readonly processCount?: number;
+	readonly pythonInterpreterPath?: string;
 	readonly pythonScriptFilePath: string;
 }
 export interface InputDirectory {
@@ -347,38 +347,38 @@ export interface JobPreparation {
 export interface OutputDirectory {
 	readonly id: string;
 	readonly pathPrefix: string;
-	readonly pathSuffix?: string | undefined;
+	readonly pathSuffix?: string;
 }
 export interface PyTorchSettings {
-	readonly commandLineArgs?: string | undefined;
-	readonly communicationBackend?: string | undefined;
-	readonly processCount?: number | undefined;
-	readonly pythonInterpreterPath?: string | undefined;
+	readonly commandLineArgs?: string;
+	readonly communicationBackend?: string;
+	readonly processCount?: number;
+	readonly pythonInterpreterPath?: string;
 	readonly pythonScriptFilePath: string;
 }
 export interface TensorFlowSettings {
-	readonly masterCommandLineArgs?: string | undefined;
-	readonly parameterServerCommandLineArgs?: string | undefined;
-	readonly parameterServerCount?: number | undefined;
-	readonly pythonInterpreterPath?: string | undefined;
+	readonly masterCommandLineArgs?: string;
+	readonly parameterServerCommandLineArgs?: string;
+	readonly parameterServerCount?: number;
+	readonly pythonInterpreterPath?: string;
 	readonly pythonScriptFilePath: string;
-	readonly workerCommandLineArgs?: string | undefined;
-	readonly workerCount?: number | undefined;
+	readonly workerCommandLineArgs?: string;
+	readonly workerCount?: number;
 }
 export interface FileServerBaseProperties {
 	readonly dataDisks: DataDisks;
 	readonly sshConfiguration: SshConfiguration;
-	readonly subnet?: ResourceId | undefined;
+	readonly subnet?: ResourceId;
 	readonly vmSize: string;
 }
 export interface DataDisks {
-	readonly cachingType?: ("none" | "readonly") | undefined;
+	readonly cachingType?: "none" | "readonly";
 	readonly diskCount: number;
 	readonly diskSizeInGB: number;
 	readonly storageAccountType: "Premium_LRS";
 }
 export interface SshConfiguration {
-	readonly publicIPsToAllow?: string[] | undefined;
+	readonly publicIPsToAllow?: string[];
 	readonly userAccountSettings: UserAccountSettings;
 }
 export default {

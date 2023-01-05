@@ -14,26 +14,26 @@ export interface catalogsComponentOutputs {
 	readonly type: "Microsoft.DataCatalog/catalogs";
 }
 export interface catalogsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ADCCatalogProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ADCCatalogProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ADCCatalogProperties {
-	readonly admins?: Principals[] | undefined;
-	readonly enableAutomaticUnitAdjustment?: boolean | undefined;
-	readonly sku?: ("Free" | "Standard") | undefined;
-	readonly successfullyProvisioned?: boolean | undefined;
-	readonly units?: number | undefined;
-	readonly users?: Principals[] | undefined;
+	readonly admins?: Principals[];
+	readonly enableAutomaticUnitAdjustment?: boolean;
+	readonly sku?: "Free" | "Standard";
+	readonly successfullyProvisioned?: boolean;
+	readonly units?: number;
+	readonly users?: Principals[];
 }
 export interface Principals {
-	readonly objectId?: string | undefined;
-	readonly upn?: string | undefined;
+	readonly objectId?: string;
+	readonly upn?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	catalogs: catalogs,

@@ -7,7 +7,6 @@ export class Entries extends GdmResource<EntriesComponentInputs> implements Entr
 }
 export interface EntriesComponentOutputs {}
 export interface EntriesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

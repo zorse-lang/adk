@@ -20,7 +20,7 @@ export interface applicationGroupsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ApplicationGroupProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class applicationGroups_applications
 	extends ArmResource<applicationGroups_applicationsComponentInputs>
@@ -72,7 +72,7 @@ export interface applicationGroups_desktopsComponentOutputs {
 }
 export interface applicationGroups_desktopsComponentInputs {
 	readonly name: string;
-	readonly properties?: DesktopProperties | undefined;
+	readonly properties?: DesktopProperties;
 }
 export class hostPools extends ArmResource<hostPoolsComponentInputs> implements hostPoolsComponentOutputs {
 	constructor(entity: ADKEntity, options: hostPoolsComponentInputs) {
@@ -91,7 +91,7 @@ export interface hostPoolsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: HostPoolProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class hostPools_msixPackages
 	extends ArmResource<hostPools_msixPackagesComponentInputs>
@@ -143,7 +143,7 @@ export interface hostPools_sessionHostsComponentOutputs {
 }
 export interface hostPools_sessionHostsComponentInputs {
 	readonly name: string;
-	readonly properties?: SessionHostProperties | undefined;
+	readonly properties?: SessionHostProperties;
 }
 export class hostPools_sessionHosts_userSessions
 	extends ArmResource<hostPools_sessionHosts_userSessionsComponentInputs>
@@ -169,7 +169,7 @@ export interface hostPools_sessionHosts_userSessionsComponentOutputs {
 }
 export interface hostPools_sessionHosts_userSessionsComponentInputs {
 	readonly name: string;
-	readonly properties?: UserSessionProperties | undefined;
+	readonly properties?: UserSessionProperties;
 }
 export class workspaces extends ArmResource<workspacesComponentInputs> implements workspacesComponentOutputs {
 	constructor(entity: ADKEntity, options: workspacesComponentInputs) {
@@ -187,119 +187,115 @@ export interface workspacesComponentOutputs {
 export interface workspacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WorkspaceProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: WorkspaceProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface ApplicationGroupProperties {
 	readonly applicationGroupType: "Desktop" | "RemoteApp";
-	readonly description?: string | undefined;
-	readonly friendlyName?: string | undefined;
+	readonly description?: string;
+	readonly friendlyName?: string;
 	readonly hostPoolArmPath: string;
-	readonly workspaceArmPath?: string | undefined;
+	readonly workspaceArmPath?: string;
 }
 export interface ApplicationProperties {
-	readonly applicationType?: ("InBuilt" | "MsixApplication") | undefined;
-	readonly commandLineArguments?: string | undefined;
+	readonly applicationType?: "InBuilt" | "MsixApplication";
+	readonly commandLineArguments?: string;
 	readonly commandLineSetting: "Allow" | "DoNotAllow" | "Require";
-	readonly description?: string | undefined;
-	readonly filePath?: string | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly iconContent?: any | undefined;
-	readonly iconHash?: string | undefined;
-	readonly iconIndex?: number | undefined;
-	readonly iconPath?: string | undefined;
-	readonly msixPackageApplicationId?: string | undefined;
-	readonly msixPackageFamilyName?: string | undefined;
-	readonly showInPortal?: boolean | undefined;
+	readonly description?: string;
+	readonly filePath?: string;
+	readonly friendlyName?: string;
+	readonly iconContent?: any;
+	readonly iconHash?: string;
+	readonly iconIndex?: number;
+	readonly iconPath?: string;
+	readonly msixPackageApplicationId?: string;
+	readonly msixPackageFamilyName?: string;
+	readonly showInPortal?: boolean;
 }
 export interface DesktopProperties {
-	readonly description?: string | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly iconContent?: any | undefined;
-	readonly iconHash?: string | undefined;
+	readonly description?: string;
+	readonly friendlyName?: string;
+	readonly iconContent?: any;
+	readonly iconHash?: string;
 }
 export interface HostPoolProperties {
-	readonly applicationGroupReferences?: string[] | undefined;
-	readonly customRdpProperty?: string | undefined;
-	readonly description?: string | undefined;
-	readonly friendlyName?: string | undefined;
+	readonly applicationGroupReferences?: string[];
+	readonly customRdpProperty?: string;
+	readonly description?: string;
+	readonly friendlyName?: string;
 	readonly hostPoolType: "Personal" | "Pooled";
 	readonly loadBalancerType: "BreadthFirst" | "DepthFirst" | "Persistent";
-	readonly maxSessionLimit?: number | undefined;
-	readonly personalDesktopAssignmentType?: ("Automatic" | "Direct") | undefined;
+	readonly maxSessionLimit?: number;
+	readonly personalDesktopAssignmentType?: "Automatic" | "Direct";
 	readonly preferredAppGroupType: "Desktop" | "None" | "RailApplications";
-	readonly registrationInfo?: RegistrationInfo | undefined;
-	readonly ring?: number | undefined;
-	readonly ssoContext?: string | undefined;
-	readonly validationEnvironment?: boolean | undefined;
-	readonly vmTemplate?: string | undefined;
+	readonly registrationInfo?: RegistrationInfo;
+	readonly ring?: number;
+	readonly ssoContext?: string;
+	readonly validationEnvironment?: boolean;
+	readonly vmTemplate?: string;
 }
 export interface MsixPackageApplications {
-	readonly appId?: string | undefined;
-	readonly appUserModelID?: string | undefined;
-	readonly description?: string | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly iconImageName?: string | undefined;
-	readonly rawIcon?: any | undefined;
-	readonly rawPng?: any | undefined;
+	readonly appId?: string;
+	readonly appUserModelID?: string;
+	readonly description?: string;
+	readonly friendlyName?: string;
+	readonly iconImageName?: string;
+	readonly rawIcon?: any;
+	readonly rawPng?: any;
 }
 export interface MsixPackageDependencies {
-	readonly dependencyName?: string | undefined;
-	readonly minVersion?: string | undefined;
-	readonly publisher?: string | undefined;
+	readonly dependencyName?: string;
+	readonly minVersion?: string;
+	readonly publisher?: string;
 }
 export interface MsixPackageProperties {
-	readonly displayName?: string | undefined;
-	readonly imagePath?: string | undefined;
-	readonly isActive?: boolean | undefined;
-	readonly isRegularRegistration?: boolean | undefined;
-	readonly lastUpdated?: string | undefined;
-	readonly packageApplications?: MsixPackageApplications[] | undefined;
-	readonly packageDependencies?: MsixPackageDependencies[] | undefined;
-	readonly packageFamilyName?: string | undefined;
-	readonly packageName?: string | undefined;
-	readonly packageRelativePath?: string | undefined;
-	readonly version?: string | undefined;
+	readonly displayName?: string;
+	readonly imagePath?: string;
+	readonly isActive?: boolean;
+	readonly isRegularRegistration?: boolean;
+	readonly lastUpdated?: string;
+	readonly packageApplications?: MsixPackageApplications[];
+	readonly packageDependencies?: MsixPackageDependencies[];
+	readonly packageFamilyName?: string;
+	readonly packageName?: string;
+	readonly packageRelativePath?: string;
+	readonly version?: string;
 }
 export interface RegistrationInfo {
-	readonly expirationTime?: string | undefined;
-	readonly registrationTokenOperation?: ("Delete" | "None" | "Update") | undefined;
-	readonly token?: string | undefined;
+	readonly expirationTime?: string;
+	readonly registrationTokenOperation?: "Delete" | "None" | "Update";
+	readonly token?: string;
 }
 export interface SessionHostProperties {
-	readonly agentVersion?: string | undefined;
-	readonly allowNewSession?: boolean | undefined;
-	readonly assignedUser?: string | undefined;
-	readonly lastHeartBeat?: string | undefined;
-	readonly lastUpdateTime?: string | undefined;
-	readonly osVersion?: string | undefined;
-	readonly resourceId?: string | undefined;
-	readonly sessions?: number | undefined;
-	readonly status?:
-		| ("Available" | "Disconnected" | "Shutdown" | "Unavailable" | "UpgradeFailed" | "Upgrading")
-		| undefined;
-	readonly statusTimestamp?: string | undefined;
-	readonly sxSStackVersion?: string | undefined;
-	readonly updateErrorMessage?: string | undefined;
-	readonly updateState?: ("Failed" | "Initial" | "Pending" | "Started" | "Succeeded") | undefined;
-	readonly virtualMachineId?: string | undefined;
+	readonly agentVersion?: string;
+	readonly allowNewSession?: boolean;
+	readonly assignedUser?: string;
+	readonly lastHeartBeat?: string;
+	readonly lastUpdateTime?: string;
+	readonly osVersion?: string;
+	readonly resourceId?: string;
+	readonly sessions?: number;
+	readonly status?: "Available" | "Disconnected" | "Shutdown" | "Unavailable" | "UpgradeFailed" | "Upgrading";
+	readonly statusTimestamp?: string;
+	readonly sxSStackVersion?: string;
+	readonly updateErrorMessage?: string;
+	readonly updateState?: "Failed" | "Initial" | "Pending" | "Started" | "Succeeded";
+	readonly virtualMachineId?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserSessionProperties {
-	readonly activeDirectoryUserName?: string | undefined;
-	readonly applicationType?: ("Desktop" | "RemoteApp") | undefined;
-	readonly createTime?: string | undefined;
-	readonly sessionState?:
-		| ("Active" | "Disconnected" | "LogOff" | "Pending" | "Unknown" | "UserProfileDiskMounted")
-		| undefined;
-	readonly userPrincipalName?: string | undefined;
+	readonly activeDirectoryUserName?: string;
+	readonly applicationType?: "Desktop" | "RemoteApp";
+	readonly createTime?: string;
+	readonly sessionState?: "Active" | "Disconnected" | "LogOff" | "Pending" | "Unknown" | "UserProfileDiskMounted";
+	readonly userPrincipalName?: string;
 }
 export interface WorkspaceProperties {
-	readonly applicationGroupReferences?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly friendlyName?: string | undefined;
+	readonly applicationGroupReferences?: string[];
+	readonly description?: string;
+	readonly friendlyName?: string;
 }
 export default {
 	applicationGroups: applicationGroups,

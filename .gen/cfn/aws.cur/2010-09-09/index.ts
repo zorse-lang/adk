@@ -19,9 +19,9 @@ export interface ReportDefinitionComponentInputs {
 	readonly S3Prefix: string;
 	readonly S3Region: string;
 	readonly TimeUnit: string;
-	readonly AdditionalArtifacts?: (string[] | undefined) | undefined;
-	readonly AdditionalSchemaElements?: (string[] | undefined) | undefined;
-	readonly BillingViewArn?: (string | undefined) | undefined;
+	readonly AdditionalArtifacts?: string[] | undefined;
+	readonly AdditionalSchemaElements?: string[] | undefined;
+	readonly BillingViewArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export default {

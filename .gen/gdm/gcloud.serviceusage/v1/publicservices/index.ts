@@ -7,7 +7,6 @@ export class PublicServices extends GdmResource<PublicServicesComponentInputs> i
 }
 export interface PublicServicesComponentOutputs {}
 export interface PublicServicesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

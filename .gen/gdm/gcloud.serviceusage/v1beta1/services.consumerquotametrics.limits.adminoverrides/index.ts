@@ -10,24 +10,23 @@ export class ServicesConsumerQuotaMetricsLimitsAdminOverrides
 }
 export interface ServicesConsumerQuotaMetricsLimitsAdminOverridesComponentOutputs {}
 export interface ServicesConsumerQuotaMetricsLimitsAdminOverridesComponentInputs {
-	readonly adminOverrideAncestor?: string | undefined;
-	readonly dimensions?: { [P in string]: string } | undefined;
-	readonly force?: boolean | undefined;
-	readonly forceOnly?: (string | string[]) | undefined;
-	readonly metric?: string | undefined;
+	readonly adminOverrideAncestor?: string;
+	readonly dimensions?: { [P in string]: string };
+	readonly force?: boolean;
+	readonly forceOnly?: string | string[];
+	readonly metric?: string;
 	readonly name: string;
-	readonly overrideValue?: string | undefined;
+	readonly overrideValue?: string;
 	readonly parent: string;
-	readonly unit?: string | undefined;
-	readonly type: string;
+	readonly unit?: string;
 }
 export interface QuotaOverride {
-	readonly adminOverrideAncestor?: string | undefined;
-	readonly dimensions?: { [P in string]: string } | undefined;
-	readonly metric?: string | undefined;
-	readonly name?: string | undefined;
-	readonly overrideValue?: string | undefined;
-	readonly unit?: string | undefined;
+	readonly adminOverrideAncestor?: string;
+	readonly dimensions?: { [P in string]: string };
+	readonly metric?: string;
+	readonly name?: string;
+	readonly overrideValue?: string;
+	readonly unit?: string;
 }
 export default {
 	ServicesConsumerQuotaMetricsLimitsAdminOverrides: ServicesConsumerQuotaMetricsLimitsAdminOverrides,

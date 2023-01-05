@@ -17,11 +17,11 @@ export interface remoteRenderingAccountsComponentOutputs {
 	readonly type: "Microsoft.MixedReality/remoteRenderingAccounts";
 }
 export interface remoteRenderingAccountsComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MixedRealityAccountProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: MixedRealityAccountProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class spatialAnchorsAccounts
 	extends ArmResource<spatialAnchorsAccountsComponentInputs>
@@ -40,23 +40,23 @@ export interface spatialAnchorsAccountsComponentOutputs {
 	readonly type: "Microsoft.MixedReality/spatialAnchorsAccounts";
 }
 export interface spatialAnchorsAccountsComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MixedRealityAccountProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: MixedRealityAccountProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface MixedRealityAccountProperties {
-	readonly accountDomain?: string | undefined;
-	readonly accountId?: string | undefined;
+	readonly accountDomain?: string;
+	readonly accountId?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	remoteRenderingAccounts: remoteRenderingAccounts,

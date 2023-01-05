@@ -18,13 +18,13 @@ export interface roleAssignmentsComponentOutputs {
 }
 export interface roleAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: RoleAssignmentPropertiesOrRoleAssignmentPropertiesWithScope | undefined;
+	readonly properties?: RoleAssignmentPropertiesOrRoleAssignmentPropertiesWithScope;
 }
 export interface RoleAssignmentPropertiesOrRoleAssignmentPropertiesWithScope {
-	readonly canDelegate?: boolean | undefined;
-	readonly principalId?: string | undefined;
-	readonly roleDefinitionId?: string | undefined;
-	readonly scope?: string | undefined;
+	readonly canDelegate?: boolean;
+	readonly principalId?: string;
+	readonly roleDefinitionId?: string;
+	readonly scope?: string;
 }
 export default {
 	roleAssignments: roleAssignments,

@@ -17,7 +17,7 @@ export interface alertrulesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: AlertRule;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class logprofiles extends ArmResource<logprofilesComponentInputs> implements logprofilesComponentOutputs {
 	constructor(entity: ADKEntity, options: logprofilesComponentInputs) {
@@ -36,32 +36,32 @@ export interface logprofilesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: LogProfileProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export interface AlertRule {
-	readonly action?: RuleAction | undefined;
-	readonly actions?: RuleAction[] | undefined;
+	readonly action?: RuleAction;
+	readonly actions?: RuleAction[];
 	readonly condition: RuleCondition;
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly isEnabled: boolean;
-	readonly lastUpdatedTime?: string | undefined;
+	readonly lastUpdatedTime?: string;
 	readonly name: string;
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface LogProfileProperties {
 	readonly categories: string[];
 	readonly locations: string[];
 	readonly retentionPolicy: RetentionPolicy;
-	readonly serviceBusRuleId?: string | undefined;
-	readonly storageAccountId?: string | undefined;
+	readonly serviceBusRuleId?: string;
+	readonly storageAccountId?: string;
 }
 export interface ManagementEventAggregationCondition {
-	readonly operator?: ("GreaterThan" | "GreaterThanOrEqual" | "LessThan") | undefined;
-	readonly threshold?: number | undefined;
-	readonly windowSize?: string | undefined;
+	readonly operator?: "GreaterThan" | "GreaterThanOrEqual" | "LessThan";
+	readonly threshold?: number;
+	readonly windowSize?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RetentionPolicy {
 	readonly days: number;
@@ -69,19 +69,19 @@ export interface RetentionPolicy {
 }
 export interface RuleAction {}
 export interface RuleCondition {
-	readonly dataSource?: RuleDataSource | undefined;
+	readonly dataSource?: RuleDataSource;
 }
 export interface RuleDataSource {
-	readonly legacyResourceId?: string | undefined;
-	readonly metricNamespace?: string | undefined;
-	readonly resourceLocation?: string | undefined;
-	readonly resourceUri?: string | undefined;
+	readonly legacyResourceId?: string;
+	readonly metricNamespace?: string;
+	readonly resourceLocation?: string;
+	readonly resourceUri?: string;
 }
 export interface RuleManagementEventClaimsDataSource {
-	readonly emailAddress?: string | undefined;
+	readonly emailAddress?: string;
 }
 export interface RuleWebhookActionProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	alertrules: alertrules,

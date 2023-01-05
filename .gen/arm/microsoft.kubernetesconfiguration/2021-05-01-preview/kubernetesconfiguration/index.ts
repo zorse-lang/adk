@@ -14,10 +14,10 @@ export interface extensionsComponentOutputs {
 	readonly type: "Microsoft.KubernetesConfiguration/extensions";
 }
 export interface extensionsComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly name: string;
-	readonly properties?: ExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ExtensionProperties;
+	readonly systemData?: SystemData;
 }
 export class sourceControlConfigurations
 	extends ArmResource<sourceControlConfigurationsComponentInputs>
@@ -43,100 +43,100 @@ export interface sourceControlConfigurationsComponentOutputs {
 }
 export interface sourceControlConfigurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: SourceControlConfigurationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SourceControlConfigurationProperties;
+	readonly systemData?: SystemData;
 }
 export interface ComplianceStatus {
-	readonly complianceState?: ("Compliant" | "Failed" | "Installed" | "Noncompliant" | "Pending") | undefined;
-	readonly lastConfigApplied?: string | undefined;
-	readonly message?: string | undefined;
-	readonly messageLevel?: ("Error" | "Information" | "Warning") | undefined;
+	readonly complianceState?: "Compliant" | "Failed" | "Installed" | "Noncompliant" | "Pending";
+	readonly lastConfigApplied?: string;
+	readonly message?: string;
+	readonly messageLevel?: "Error" | "Information" | "Warning";
 }
 export interface ConfigurationProtectedSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ErrorAdditionalInfo {
-	readonly info?: any | undefined;
-	readonly type?: string | undefined;
+	readonly info?: any;
+	readonly type?: string;
 }
 export interface ErrorDetail {
-	readonly additionalInfo?: ErrorAdditionalInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ErrorDetail[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: ErrorAdditionalInfo[];
+	readonly code?: string;
+	readonly details?: ErrorDetail[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface ExtensionProperties {
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly configurationProtectedSettings?: ExtensionPropertiesConfigurationProtectedSettings | undefined;
-	readonly configurationSettings?: ExtensionPropertiesConfigurationSettings | undefined;
-	readonly customLocationSettings?: ExtensionPropertiesCustomLocationSettings | undefined;
-	readonly errorInfo?: ErrorDetail | undefined;
-	readonly extensionType?: string | undefined;
-	readonly packageUri?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly releaseTrain?: string | undefined;
-	readonly scope?: Scope | undefined;
-	readonly statuses?: ExtensionStatus[] | undefined;
-	readonly version?: string | undefined;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly configurationProtectedSettings?: ExtensionPropertiesConfigurationProtectedSettings;
+	readonly configurationSettings?: ExtensionPropertiesConfigurationSettings;
+	readonly customLocationSettings?: ExtensionPropertiesCustomLocationSettings;
+	readonly errorInfo?: ErrorDetail;
+	readonly extensionType?: string;
+	readonly packageUri?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly releaseTrain?: string;
+	readonly scope?: Scope;
+	readonly statuses?: ExtensionStatus[];
+	readonly version?: string;
 }
 export interface ExtensionPropertiesConfigurationProtectedSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ExtensionPropertiesConfigurationSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ExtensionPropertiesCustomLocationSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ExtensionStatus {
-	readonly code?: string | undefined;
-	readonly displayStatus?: string | undefined;
-	readonly level?: ("Error" | "Information" | "Warning") | undefined;
-	readonly message?: string | undefined;
-	readonly time?: string | undefined;
+	readonly code?: string;
+	readonly displayStatus?: string;
+	readonly level?: "Error" | "Information" | "Warning";
+	readonly message?: string;
+	readonly time?: string;
 }
 export interface HelmOperatorProperties {
-	readonly chartValues?: string | undefined;
-	readonly chartVersion?: string | undefined;
+	readonly chartValues?: string;
+	readonly chartVersion?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface Scope {
-	readonly cluster?: ScopeCluster | undefined;
-	readonly namespace?: ScopeNamespace | undefined;
+	readonly cluster?: ScopeCluster;
+	readonly namespace?: ScopeNamespace;
 }
 export interface ScopeCluster {
-	readonly releaseNamespace?: string | undefined;
+	readonly releaseNamespace?: string;
 }
 export interface ScopeNamespace {
-	readonly targetNamespace?: string | undefined;
+	readonly targetNamespace?: string;
 }
 export interface SourceControlConfigurationProperties {
-	readonly complianceStatus?: ComplianceStatus | undefined;
-	readonly configurationProtectedSettings?: ConfigurationProtectedSettings | undefined;
-	readonly enableHelmOperator?: boolean | undefined;
-	readonly helmOperatorProperties?: HelmOperatorProperties | undefined;
-	readonly operatorInstanceName?: string | undefined;
-	readonly operatorNamespace?: string | undefined;
-	readonly operatorParams?: string | undefined;
-	readonly operatorScope?: ("cluster" | "namespace") | undefined;
-	readonly operatorType?: "Flux" | undefined;
-	readonly provisioningState?: ("Accepted" | "Deleting" | "Failed" | "Running" | "Succeeded") | undefined;
-	readonly repositoryPublicKey?: string | undefined;
-	readonly repositoryUrl?: string | undefined;
-	readonly sshKnownHostsContents?: string | undefined;
+	readonly complianceStatus?: ComplianceStatus;
+	readonly configurationProtectedSettings?: ConfigurationProtectedSettings;
+	readonly enableHelmOperator?: boolean;
+	readonly helmOperatorProperties?: HelmOperatorProperties;
+	readonly operatorInstanceName?: string;
+	readonly operatorNamespace?: string;
+	readonly operatorParams?: string;
+	readonly operatorScope?: "cluster" | "namespace";
+	readonly operatorType?: "Flux";
+	readonly provisioningState?: "Accepted" | "Deleting" | "Failed" | "Running" | "Succeeded";
+	readonly repositoryPublicKey?: string;
+	readonly repositoryUrl?: string;
+	readonly sshKnownHostsContents?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	extensions: extensions,

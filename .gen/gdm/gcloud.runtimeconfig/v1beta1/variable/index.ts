@@ -4,18 +4,17 @@ export class Variable extends GdmResource<VariableComponentInputs> implements Va
 	constructor(entity: ADKEntity, options: VariableComponentInputs) {
 		super(entity, options.name, "runtimeconfig.v1beta1.variable", options);
 	}
-	public readonly state?: string | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly state?: string;
+	public readonly updateTime?: string;
 }
 export interface VariableComponentOutputs {
-	readonly state?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly state?: string;
+	readonly updateTime?: string;
 }
 export interface VariableComponentInputs {
 	readonly name: string;
-	readonly text?: string | undefined;
-	readonly value?: string | undefined;
-	readonly type: string;
+	readonly text?: string;
+	readonly value?: string;
 }
 export default {
 	Variable: Variable,

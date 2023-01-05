@@ -16,9 +16,9 @@ export interface registriesComponentOutputs {
 export interface registriesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RegistryPropertiesCreateParametersOrRegistryProperties | undefined;
+	readonly properties?: RegistryPropertiesCreateParametersOrRegistryProperties;
 	readonly sku: Sku;
-	readonly tags?: RegistryCreateParametersTags | undefined;
+	readonly tags?: RegistryCreateParametersTags;
 }
 export function listCredentials(resource: registries): RegistryListCredentialsResult {
 	if (resource.apiVersion !== "2017-03-01") {
@@ -30,26 +30,26 @@ export function listCredentials(resource: registries): RegistryListCredentialsRe
 	throw new Error("not implemented");
 }
 export interface RegistryCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RegistryListCredentialsResult {
-	readonly passwords?: RegistryPassword[] | undefined;
-	readonly username?: string | undefined;
+	readonly passwords?: RegistryPassword[];
+	readonly username?: string;
 }
 export interface RegistryPassword {
-	readonly name?: "password" | undefined;
-	readonly value?: string | undefined;
+	readonly name?: "password";
+	readonly value?: string;
 }
 export interface RegistryPropertiesCreateParametersOrRegistryProperties {
-	readonly adminUserEnabled?: boolean | undefined;
-	readonly creationDate?: string | undefined;
-	readonly loginServer?: string | undefined;
-	readonly provisioningState?: "Creating" | undefined;
+	readonly adminUserEnabled?: boolean;
+	readonly creationDate?: string;
+	readonly loginServer?: string;
+	readonly provisioningState?: "Creating";
 	readonly storageAccount: StorageAccountParametersOrStorageAccountProperties;
 }
 export interface Sku {
 	readonly name: string;
-	readonly tier?: "Basic" | undefined;
+	readonly tier?: "Basic";
 }
 export interface StorageAccountParametersOrStorageAccountProperties {
 	readonly accessKey: string;

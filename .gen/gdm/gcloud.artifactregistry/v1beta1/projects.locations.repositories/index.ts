@@ -7,35 +7,34 @@ export class ProjectsLocationsRepositories
 	constructor(entity: ADKEntity, options: ProjectsLocationsRepositoriesComponentInputs) {
 		super(entity, options.name, "artifactregistry.v1beta1.ProjectsLocationsRepositories", options);
 	}
-	public readonly satisfiesPzs?: boolean | undefined;
-	public readonly sizeBytes?: string | undefined;
+	public readonly satisfiesPzs?: boolean;
+	public readonly sizeBytes?: string;
 }
 export interface ProjectsLocationsRepositoriesComponentOutputs {
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly sizeBytes?: string | undefined;
+	readonly satisfiesPzs?: boolean;
+	readonly sizeBytes?: string;
 }
 export interface ProjectsLocationsRepositoriesComponentInputs {
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly format?: string | undefined;
-	readonly kmsKeyName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly format?: string;
+	readonly kmsKeyName?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
 	readonly parent: string;
-	readonly repositoryId?: string | undefined;
-	readonly updateTime?: string | undefined;
-	readonly type: string;
+	readonly repositoryId?: string;
+	readonly updateTime?: string;
 }
 export interface Repository {
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly format?: string | undefined;
-	readonly kmsKeyName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly sizeBytes?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly format?: string;
+	readonly kmsKeyName?: string;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly satisfiesPzs?: boolean;
+	readonly sizeBytes?: string;
+	readonly updateTime?: string;
 }
 export default {
 	ProjectsLocationsRepositories: ProjectsLocationsRepositories,

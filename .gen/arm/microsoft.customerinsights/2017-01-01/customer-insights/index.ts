@@ -14,10 +14,10 @@ export interface hubsComponentOutputs {
 	readonly type: "Microsoft.CustomerInsights/hubs";
 }
 export interface hubsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: HubPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: HubPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class hubs_authorizationPolicies
 	extends ArmResource<hubs_authorizationPoliciesComponentInputs>
@@ -37,7 +37,7 @@ export interface hubs_authorizationPoliciesComponentOutputs {
 }
 export interface hubs_authorizationPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: AuthorizationPolicy | undefined;
+	readonly properties?: AuthorizationPolicy;
 }
 export class hubs_connectors
 	extends ArmResource<hubs_connectorsComponentInputs>
@@ -57,7 +57,7 @@ export interface hubs_connectorsComponentOutputs {
 }
 export interface hubs_connectorsComponentInputs {
 	readonly name: string;
-	readonly properties?: Connector | undefined;
+	readonly properties?: Connector;
 }
 export class hubs_connectors_mappings
 	extends ArmResource<hubs_connectors_mappingsComponentInputs>
@@ -77,7 +77,7 @@ export interface hubs_connectors_mappingsComponentOutputs {
 }
 export interface hubs_connectors_mappingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConnectorMapping | undefined;
+	readonly properties?: ConnectorMapping;
 }
 export class hubs_interactions
 	extends ArmResource<hubs_interactionsComponentInputs>
@@ -97,7 +97,7 @@ export interface hubs_interactionsComponentOutputs {
 }
 export interface hubs_interactionsComponentInputs {
 	readonly name: string;
-	readonly properties?: InteractionTypeDefinition | undefined;
+	readonly properties?: InteractionTypeDefinition;
 }
 export class hubs_kpi extends ArmResource<hubs_kpiComponentInputs> implements hubs_kpiComponentOutputs {
 	constructor(entity: ADKEntity, options: hubs_kpiComponentInputs) {
@@ -114,7 +114,7 @@ export interface hubs_kpiComponentOutputs {
 }
 export interface hubs_kpiComponentInputs {
 	readonly name: string;
-	readonly properties?: KpiDefinition | undefined;
+	readonly properties?: KpiDefinition;
 }
 export class hubs_links extends ArmResource<hubs_linksComponentInputs> implements hubs_linksComponentOutputs {
 	constructor(entity: ADKEntity, options: hubs_linksComponentInputs) {
@@ -131,7 +131,7 @@ export interface hubs_linksComponentOutputs {
 }
 export interface hubs_linksComponentInputs {
 	readonly name: string;
-	readonly properties?: LinkDefinition | undefined;
+	readonly properties?: LinkDefinition;
 }
 export class hubs_profiles extends ArmResource<hubs_profilesComponentInputs> implements hubs_profilesComponentOutputs {
 	constructor(entity: ADKEntity, options: hubs_profilesComponentInputs) {
@@ -148,7 +148,7 @@ export interface hubs_profilesComponentOutputs {
 }
 export interface hubs_profilesComponentInputs {
 	readonly name: string;
-	readonly properties?: ProfileTypeDefinition | undefined;
+	readonly properties?: ProfileTypeDefinition;
 }
 export class hubs_relationshipLinks
 	extends ArmResource<hubs_relationshipLinksComponentInputs>
@@ -168,7 +168,7 @@ export interface hubs_relationshipLinksComponentOutputs {
 }
 export interface hubs_relationshipLinksComponentInputs {
 	readonly name: string;
-	readonly properties?: RelationshipLinkDefinition | undefined;
+	readonly properties?: RelationshipLinkDefinition;
 }
 export class hubs_relationships
 	extends ArmResource<hubs_relationshipsComponentInputs>
@@ -188,7 +188,7 @@ export interface hubs_relationshipsComponentOutputs {
 }
 export interface hubs_relationshipsComponentInputs {
 	readonly name: string;
-	readonly properties?: RelationshipDefinition | undefined;
+	readonly properties?: RelationshipDefinition;
 }
 export class hubs_roleAssignments
 	extends ArmResource<hubs_roleAssignmentsComponentInputs>
@@ -208,7 +208,7 @@ export interface hubs_roleAssignmentsComponentOutputs {
 }
 export interface hubs_roleAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: RoleAssignment | undefined;
+	readonly properties?: RoleAssignment;
 }
 export class hubs_views extends ArmResource<hubs_viewsComponentInputs> implements hubs_viewsComponentOutputs {
 	constructor(entity: ADKEntity, options: hubs_viewsComponentInputs) {
@@ -225,7 +225,7 @@ export interface hubs_viewsComponentOutputs {
 }
 export interface hubs_viewsComponentInputs {
 	readonly name: string;
-	readonly properties?: View | undefined;
+	readonly properties?: View;
 }
 export class hubs_widgetTypes
 	extends ArmResource<hubs_widgetTypesComponentInputs>
@@ -245,188 +245,184 @@ export interface hubs_widgetTypesComponentOutputs {
 }
 export interface hubs_widgetTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: WidgetType | undefined;
+	readonly properties?: WidgetType;
 }
 export interface AssignmentPrincipal {
 	readonly principalId: string;
-	readonly principalMetadata?: AssignmentPrincipalMetadata | undefined;
+	readonly principalMetadata?: AssignmentPrincipalMetadata;
 	readonly principalType: string;
 }
 export interface AssignmentPrincipalMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AuthorizationPolicy {
 	readonly permissions: "Manage" | "Read"[];
-	readonly policyName?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly policyName?: string;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface Connector {
-	readonly connectorId?: number | undefined;
-	readonly connectorName?: string | undefined;
+	readonly connectorId?: number;
+	readonly connectorName?: string;
 	readonly connectorProperties: ConnectorProperties;
 	readonly connectorType: "AzureBlob" | "CRM" | "ExchangeOnline" | "None" | "Outbound" | "Salesforce";
-	readonly created?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly isInternal?: boolean | undefined;
-	readonly lastModified?: string | undefined;
-	readonly state?: ("Created" | "Creating" | "Deleting" | "Expiring" | "Failed") | undefined;
-	readonly tenantId?: string | undefined;
+	readonly created?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly isInternal?: boolean;
+	readonly lastModified?: string;
+	readonly state?: "Created" | "Creating" | "Deleting" | "Expiring" | "Failed";
+	readonly tenantId?: string;
 }
 export interface ConnectorMapping {
-	readonly connectorMappingName?: string | undefined;
-	readonly connectorName?: string | undefined;
-	readonly connectorType?: ("AzureBlob" | "CRM" | "ExchangeOnline" | "None" | "Outbound" | "Salesforce") | undefined;
-	readonly created?: string | undefined;
-	readonly dataFormatId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly connectorMappingName?: string;
+	readonly connectorName?: string;
+	readonly connectorType?: "AzureBlob" | "CRM" | "ExchangeOnline" | "None" | "Outbound" | "Salesforce";
+	readonly created?: string;
+	readonly dataFormatId?: string;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly entityType: "Interaction" | "None" | "Profile";
 	readonly entityTypeName: string;
-	readonly lastModified?: string | undefined;
+	readonly lastModified?: string;
 	readonly mappingProperties: ConnectorMappingProperties;
-	readonly nextRunTime?: string | undefined;
-	readonly runId?: string | undefined;
-	readonly state?: ("Created" | "Creating" | "Expiring" | "Failed" | "Ready" | "Running") | undefined;
-	readonly tenantId?: string | undefined;
+	readonly nextRunTime?: string;
+	readonly runId?: string;
+	readonly state?: "Created" | "Creating" | "Expiring" | "Failed" | "Ready" | "Running";
+	readonly tenantId?: string;
 }
 export interface ConnectorMappingAvailability {
-	readonly frequency?: ("Day" | "Hour" | "Minute" | "Month") | undefined;
+	readonly frequency?: "Day" | "Hour" | "Minute" | "Month";
 	readonly interval: number;
 }
 export interface ConnectorMappingCompleteOperation {
-	readonly completionOperationType?: ("DeleteFile" | "DoNothing") | undefined;
-	readonly destinationFolder?: string | undefined;
+	readonly completionOperationType?: "DeleteFile" | "DoNothing";
+	readonly destinationFolder?: string;
 }
 export interface ConnectorMappingErrorManagement {
-	readonly errorLimit?: number | undefined;
+	readonly errorLimit?: number;
 	readonly errorManagementType: "RejectAndContinue" | "RejectUntilLimit";
 }
 export interface ConnectorMappingFormat {
-	readonly acceptLanguage?: string | undefined;
-	readonly arraySeparator?: string | undefined;
-	readonly columnDelimiter?: string | undefined;
+	readonly acceptLanguage?: string;
+	readonly arraySeparator?: string;
+	readonly columnDelimiter?: string;
 	readonly formatType: "TextFormat";
-	readonly quoteCharacter?: string | undefined;
-	readonly quoteEscapeCharacter?: string | undefined;
+	readonly quoteCharacter?: string;
+	readonly quoteEscapeCharacter?: string;
 }
 export interface ConnectorMappingProperties {
 	readonly availability: ConnectorMappingAvailability;
 	readonly completeOperation: ConnectorMappingCompleteOperation;
 	readonly errorManagement: ConnectorMappingErrorManagement;
-	readonly fileFilter?: string | undefined;
-	readonly folderPath?: string | undefined;
+	readonly fileFilter?: string;
+	readonly folderPath?: string;
 	readonly format: ConnectorMappingFormat;
-	readonly hasHeader?: boolean | undefined;
+	readonly hasHeader?: boolean;
 	readonly structure: ConnectorMappingStructure[];
 }
 export interface ConnectorMappingStructure {
 	readonly columnName: string;
-	readonly customFormatSpecifier?: string | undefined;
-	readonly isEncrypted?: boolean | undefined;
+	readonly customFormatSpecifier?: string;
+	readonly isEncrypted?: boolean;
 	readonly propertyName: string;
 }
 export interface ConnectorProperties {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface DataSource {
-	readonly dataSourceReferenceId?: string | undefined;
-	readonly dataSourceType?: ("Connector" | "LinkInteraction" | "SystemDefault") | undefined;
-	readonly id?: number | undefined;
-	readonly name?: string | undefined;
-	readonly status?: ("Active" | "Deleted" | "None") | undefined;
+	readonly dataSourceReferenceId?: string;
+	readonly dataSourceType?: "Connector" | "LinkInteraction" | "SystemDefault";
+	readonly id?: number;
+	readonly name?: string;
+	readonly status?: "Active" | "Deleted" | "None";
 }
 export interface DataSourcePrecedence {
-	readonly dataSource?: DataSource | undefined;
-	readonly precedence?: number | undefined;
+	readonly dataSource?: DataSource;
+	readonly precedence?: number;
 }
 export interface DictionaryOfString {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface HubBillingInfoFormat {
-	readonly maxUnits?: number | undefined;
-	readonly minUnits?: number | undefined;
-	readonly skuName?: string | undefined;
+	readonly maxUnits?: number;
+	readonly minUnits?: number;
+	readonly skuName?: string;
 }
 export interface HubPropertiesFormat {
-	readonly apiEndpoint?: string | undefined;
-	readonly hubBillingInfo?: HubBillingInfoFormat | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly tenantFeatures?: number | undefined;
-	readonly webEndpoint?: string | undefined;
+	readonly apiEndpoint?: string;
+	readonly hubBillingInfo?: HubBillingInfoFormat;
+	readonly provisioningState?: string;
+	readonly tenantFeatures?: number;
+	readonly webEndpoint?: string;
 }
 export interface InteractionTypeDefinition {
-	readonly apiEntitySetName?: string | undefined;
-	readonly attributes?: MetadataDefinitionBaseAttributes | undefined;
-	readonly dataSourcePrecedenceRules?: DataSourcePrecedence[] | undefined;
-	readonly defaultDataSource?: DataSource | undefined;
-	readonly description?: MetadataDefinitionBaseDescription | undefined;
-	readonly displayName?: MetadataDefinitionBaseDisplayName | undefined;
-	readonly entityType?: ("Interaction" | "None" | "Profile") | undefined;
-	readonly fields?: PropertyDefinition[] | undefined;
-	readonly idPropertyNames?: string[] | undefined;
-	readonly instancesCount?: number | undefined;
-	readonly isActivity?: boolean | undefined;
-	readonly largeImage?: string | undefined;
-	readonly lastChangedUtc?: string | undefined;
-	readonly localizedAttributes?: MetadataDefinitionBaseLocalizedAttributes | undefined;
-	readonly mediumImage?: string | undefined;
-	readonly participantProfiles?: Participant[] | undefined;
-	readonly primaryParticipantProfilePropertyName?: string | undefined;
-	readonly provisioningState?:
-		| ("Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded")
-		| undefined;
-	readonly schemaItemTypeLink?: string | undefined;
-	readonly smallImage?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly timestampFieldName?: string | undefined;
-	readonly typeName?: string | undefined;
+	readonly apiEntitySetName?: string;
+	readonly attributes?: MetadataDefinitionBaseAttributes;
+	readonly dataSourcePrecedenceRules?: DataSourcePrecedence[];
+	readonly defaultDataSource?: DataSource;
+	readonly description?: MetadataDefinitionBaseDescription;
+	readonly displayName?: MetadataDefinitionBaseDisplayName;
+	readonly entityType?: "Interaction" | "None" | "Profile";
+	readonly fields?: PropertyDefinition[];
+	readonly idPropertyNames?: string[];
+	readonly instancesCount?: number;
+	readonly isActivity?: boolean;
+	readonly largeImage?: string;
+	readonly lastChangedUtc?: string;
+	readonly localizedAttributes?: MetadataDefinitionBaseLocalizedAttributes;
+	readonly mediumImage?: string;
+	readonly participantProfiles?: Participant[];
+	readonly primaryParticipantProfilePropertyName?: string;
+	readonly provisioningState?: "Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded";
+	readonly schemaItemTypeLink?: string;
+	readonly smallImage?: string;
+	readonly tenantId?: string;
+	readonly timestampFieldName?: string;
+	readonly typeName?: string;
 }
 export interface KpiAlias {
 	readonly aliasName: string;
 	readonly expression: string;
 }
 export interface KpiDefinition {
-	readonly aliases?: KpiAlias[] | undefined;
+	readonly aliases?: KpiAlias[];
 	readonly calculationWindow: "Day" | "Hour" | "Lifetime" | "Month";
-	readonly calculationWindowFieldName?: string | undefined;
-	readonly description?: KpiDefinitionDescription | undefined;
-	readonly displayName?: KpiDefinitionDisplayName | undefined;
+	readonly calculationWindowFieldName?: string;
+	readonly description?: KpiDefinitionDescription;
+	readonly displayName?: KpiDefinitionDisplayName;
 	readonly entityType: "Interaction" | "None" | "Profile";
 	readonly entityTypeName: string;
 	readonly expression: string;
-	readonly extracts?: KpiExtract[] | undefined;
-	readonly filter?: string | undefined;
+	readonly extracts?: KpiExtract[];
+	readonly filter?: string;
 	readonly function: "Avg" | "Count" | "CountDistinct" | "Last" | "Max" | "Min" | "None";
-	readonly groupBy?: string[] | undefined;
-	readonly groupByMetadata?: KpiGroupByMetadata[] | undefined;
-	readonly kpiName?: string | undefined;
-	readonly participantProfilesMetadata?: KpiParticipantProfilesMetadata[] | undefined;
-	readonly provisioningState?:
-		| ("Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded")
-		| undefined;
-	readonly tenantId?: string | undefined;
-	readonly thresHolds?: KpiThresholds | undefined;
-	readonly unit?: string | undefined;
+	readonly groupBy?: string[];
+	readonly groupByMetadata?: KpiGroupByMetadata[];
+	readonly kpiName?: string;
+	readonly participantProfilesMetadata?: KpiParticipantProfilesMetadata[];
+	readonly provisioningState?: "Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded";
+	readonly tenantId?: string;
+	readonly thresHolds?: KpiThresholds;
+	readonly unit?: string;
 }
 export interface KpiDefinitionDescription {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface KpiDefinitionDisplayName {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface KpiExtract {
 	readonly expression: string;
 	readonly extractName: string;
 }
 export interface KpiGroupByMetadata {
-	readonly displayName?: KpiGroupByMetadataDisplayName | undefined;
-	readonly fieldName?: string | undefined;
-	readonly fieldType?: string | undefined;
+	readonly displayName?: KpiGroupByMetadataDisplayName;
+	readonly fieldName?: string;
+	readonly fieldType?: string;
 }
 export interface KpiGroupByMetadataDisplayName {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface KpiParticipantProfilesMetadata {
 	readonly typeName: string;
@@ -437,149 +433,141 @@ export interface KpiThresholds {
 	readonly upperLimit: number;
 }
 export interface LinkDefinition {
-	readonly description?: LinkDefinitionDescription | undefined;
-	readonly displayName?: LinkDefinitionDisplayName | undefined;
-	readonly linkName?: string | undefined;
-	readonly mappings?: TypePropertiesMapping[] | undefined;
-	readonly operationType?: "Delete" | undefined;
+	readonly description?: LinkDefinitionDescription;
+	readonly displayName?: LinkDefinitionDisplayName;
+	readonly linkName?: string;
+	readonly mappings?: TypePropertiesMapping[];
+	readonly operationType?: "Delete";
 	readonly participantPropertyReferences: ParticipantPropertyReference[];
-	readonly provisioningState?:
-		| ("Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded")
-		| undefined;
-	readonly referenceOnly?: boolean | undefined;
+	readonly provisioningState?: "Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded";
+	readonly referenceOnly?: boolean;
 	readonly sourceInteractionType: string;
 	readonly targetProfileType: string;
-	readonly tenantId?: string | undefined;
+	readonly tenantId?: string;
 }
 export interface LinkDefinitionDescription {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface LinkDefinitionDisplayName {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MetadataDefinitionBaseAttributes {
-	readonly "[ key: string ]"?: string[] | undefined;
+	readonly [key: string]: string[];
 }
 export interface MetadataDefinitionBaseDescription {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MetadataDefinitionBaseDisplayName {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MetadataDefinitionBaseLocalizedAttributes {
-	readonly "[ key: string ]"?: DictionaryOfString | undefined;
+	readonly [key: string]: DictionaryOfString;
 }
 export interface Participant {
-	readonly description?: ParticipantDescription | undefined;
-	readonly displayName?: ParticipantDisplayName | undefined;
+	readonly description?: ParticipantDescription;
+	readonly displayName?: ParticipantDisplayName;
 	readonly participantName: string;
 	readonly participantPropertyReferences: ParticipantPropertyReference[];
 	readonly profileTypeName: string;
-	readonly role?: string | undefined;
+	readonly role?: string;
 }
 export interface ParticipantDescription {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ParticipantDisplayName {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ParticipantPropertyReference {
 	readonly interactionPropertyName: string;
 	readonly profilePropertyName: string;
 }
 export interface ProfileEnumValidValuesFormat {
-	readonly localizedValueNames?: ProfileEnumValidValuesFormatLocalizedValueNames | undefined;
-	readonly value?: number | undefined;
+	readonly localizedValueNames?: ProfileEnumValidValuesFormatLocalizedValueNames;
+	readonly value?: number;
 }
 export interface ProfileEnumValidValuesFormatLocalizedValueNames {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ProfileTypeDefinition {
-	readonly apiEntitySetName?: string | undefined;
-	readonly attributes?: MetadataDefinitionBaseAttributes | undefined;
-	readonly description?: MetadataDefinitionBaseDescription | undefined;
-	readonly displayName?: MetadataDefinitionBaseDisplayName | undefined;
-	readonly entityType?: ("Interaction" | "None" | "Profile") | undefined;
-	readonly fields?: PropertyDefinition[] | undefined;
-	readonly instancesCount?: number | undefined;
-	readonly largeImage?: string | undefined;
-	readonly lastChangedUtc?: string | undefined;
-	readonly localizedAttributes?: MetadataDefinitionBaseLocalizedAttributes | undefined;
-	readonly mediumImage?: string | undefined;
-	readonly provisioningState?:
-		| ("Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded")
-		| undefined;
-	readonly schemaItemTypeLink?: string | undefined;
-	readonly smallImage?: string | undefined;
-	readonly strongIds?: StrongId[] | undefined;
-	readonly tenantId?: string | undefined;
-	readonly timestampFieldName?: string | undefined;
-	readonly typeName?: string | undefined;
+	readonly apiEntitySetName?: string;
+	readonly attributes?: MetadataDefinitionBaseAttributes;
+	readonly description?: MetadataDefinitionBaseDescription;
+	readonly displayName?: MetadataDefinitionBaseDisplayName;
+	readonly entityType?: "Interaction" | "None" | "Profile";
+	readonly fields?: PropertyDefinition[];
+	readonly instancesCount?: number;
+	readonly largeImage?: string;
+	readonly lastChangedUtc?: string;
+	readonly localizedAttributes?: MetadataDefinitionBaseLocalizedAttributes;
+	readonly mediumImage?: string;
+	readonly provisioningState?: "Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded";
+	readonly schemaItemTypeLink?: string;
+	readonly smallImage?: string;
+	readonly strongIds?: StrongId[];
+	readonly tenantId?: string;
+	readonly timestampFieldName?: string;
+	readonly typeName?: string;
 }
 export interface PropertyDefinition {
-	readonly arrayValueSeparator?: string | undefined;
-	readonly dataSourcePrecedenceRules?: DataSourcePrecedence[] | undefined;
-	readonly enumValidValues?: ProfileEnumValidValuesFormat[] | undefined;
+	readonly arrayValueSeparator?: string;
+	readonly dataSourcePrecedenceRules?: DataSourcePrecedence[];
+	readonly enumValidValues?: ProfileEnumValidValuesFormat[];
 	readonly fieldName: string;
 	readonly fieldType: string;
-	readonly isArray?: boolean | undefined;
-	readonly isAvailableInGraph?: boolean | undefined;
-	readonly isEnum?: boolean | undefined;
-	readonly isFlagEnum?: boolean | undefined;
-	readonly isImage?: boolean | undefined;
-	readonly isLocalizedString?: boolean | undefined;
-	readonly isName?: boolean | undefined;
-	readonly isRequired?: boolean | undefined;
-	readonly maxLength?: number | undefined;
-	readonly propertyId?: string | undefined;
-	readonly schemaItemPropLink?: string | undefined;
+	readonly isArray?: boolean;
+	readonly isAvailableInGraph?: boolean;
+	readonly isEnum?: boolean;
+	readonly isFlagEnum?: boolean;
+	readonly isImage?: boolean;
+	readonly isLocalizedString?: boolean;
+	readonly isName?: boolean;
+	readonly isRequired?: boolean;
+	readonly maxLength?: number;
+	readonly propertyId?: string;
+	readonly schemaItemPropLink?: string;
 }
 export interface RelationshipDefinition {
-	readonly cardinality?: ("ManyToMany" | "OneToMany") | undefined;
-	readonly description?: RelationshipDefinitionDescription | undefined;
-	readonly displayName?: RelationshipDefinitionDisplayName | undefined;
-	readonly expiryDateTimeUtc?: string | undefined;
-	readonly fields?: PropertyDefinition[] | undefined;
-	readonly lookupMappings?: RelationshipTypeMapping[] | undefined;
+	readonly cardinality?: "ManyToMany" | "OneToMany";
+	readonly description?: RelationshipDefinitionDescription;
+	readonly displayName?: RelationshipDefinitionDisplayName;
+	readonly expiryDateTimeUtc?: string;
+	readonly fields?: PropertyDefinition[];
+	readonly lookupMappings?: RelationshipTypeMapping[];
 	readonly profileType: string;
-	readonly provisioningState?:
-		| ("Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded")
-		| undefined;
+	readonly provisioningState?: "Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded";
 	readonly relatedProfileType: string;
-	readonly relationshipGuidId?: string | undefined;
-	readonly relationshipName?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly relationshipGuidId?: string;
+	readonly relationshipName?: string;
+	readonly tenantId?: string;
 }
 export interface RelationshipDefinitionDescription {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RelationshipDefinitionDisplayName {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RelationshipLinkDefinition {
-	readonly description?: RelationshipLinkDefinitionDescription | undefined;
-	readonly displayName?: RelationshipLinkDefinitionDisplayName | undefined;
+	readonly description?: RelationshipLinkDefinitionDescription;
+	readonly displayName?: RelationshipLinkDefinitionDisplayName;
 	readonly interactionType: string;
-	readonly linkName?: string | undefined;
-	readonly mappings?: RelationshipLinkFieldMapping[] | undefined;
+	readonly linkName?: string;
+	readonly mappings?: RelationshipLinkFieldMapping[];
 	readonly profilePropertyReferences: ParticipantPropertyReference[];
-	readonly provisioningState?:
-		| ("Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded")
-		| undefined;
+	readonly provisioningState?: "Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded";
 	readonly relatedProfilePropertyReferences: ParticipantPropertyReference[];
-	readonly relationshipGuidId?: string | undefined;
+	readonly relationshipGuidId?: string;
 	readonly relationshipName: string;
-	readonly tenantId?: string | undefined;
+	readonly tenantId?: string;
 }
 export interface RelationshipLinkDefinitionDescription {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RelationshipLinkDefinitionDisplayName {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RelationshipLinkFieldMapping {
 	readonly interactionFieldName: string;
-	readonly linkType?: "CopyIfNull" | undefined;
+	readonly linkType?: "CopyIfNull";
 	readonly relationshipFieldName: string;
 }
 export interface RelationshipTypeFieldMapping {
@@ -590,85 +578,83 @@ export interface RelationshipTypeMapping {
 	readonly fieldMappings: RelationshipTypeFieldMapping[];
 }
 export interface ResourceSetDescription {
-	readonly elements?: string[] | undefined;
-	readonly exceptions?: string[] | undefined;
+	readonly elements?: string[];
+	readonly exceptions?: string[];
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RoleAssignment {
-	readonly assignmentName?: string | undefined;
-	readonly conflationPolicies?: ResourceSetDescription | undefined;
-	readonly connectors?: ResourceSetDescription | undefined;
-	readonly description?: RoleAssignmentDescription | undefined;
-	readonly displayName?: RoleAssignmentDisplayName | undefined;
-	readonly interactions?: ResourceSetDescription | undefined;
-	readonly kpis?: ResourceSetDescription | undefined;
-	readonly links?: ResourceSetDescription | undefined;
+	readonly assignmentName?: string;
+	readonly conflationPolicies?: ResourceSetDescription;
+	readonly connectors?: ResourceSetDescription;
+	readonly description?: RoleAssignmentDescription;
+	readonly displayName?: RoleAssignmentDisplayName;
+	readonly interactions?: ResourceSetDescription;
+	readonly kpis?: ResourceSetDescription;
+	readonly links?: ResourceSetDescription;
 	readonly principals: AssignmentPrincipal[];
-	readonly profiles?: ResourceSetDescription | undefined;
-	readonly provisioningState?:
-		| ("Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded")
-		| undefined;
-	readonly relationshipLinks?: ResourceSetDescription | undefined;
-	readonly relationships?: ResourceSetDescription | undefined;
+	readonly profiles?: ResourceSetDescription;
+	readonly provisioningState?: "Deleting" | "Expiring" | "Failed" | "HumanIntervention" | "Provisioning" | "Succeeded";
+	readonly relationshipLinks?: ResourceSetDescription;
+	readonly relationships?: ResourceSetDescription;
 	readonly role: "Admin" | "DataAdmin" | "DataReader" | "ManageAdmin" | "ManageReader";
-	readonly roleAssignments?: ResourceSetDescription | undefined;
-	readonly sasPolicies?: ResourceSetDescription | undefined;
-	readonly segments?: ResourceSetDescription | undefined;
-	readonly tenantId?: string | undefined;
-	readonly views?: ResourceSetDescription | undefined;
-	readonly widgetTypes?: ResourceSetDescription | undefined;
+	readonly roleAssignments?: ResourceSetDescription;
+	readonly sasPolicies?: ResourceSetDescription;
+	readonly segments?: ResourceSetDescription;
+	readonly tenantId?: string;
+	readonly views?: ResourceSetDescription;
+	readonly widgetTypes?: ResourceSetDescription;
 }
 export interface RoleAssignmentDescription {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RoleAssignmentDisplayName {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StrongId {
-	readonly description?: StrongIdDescription | undefined;
-	readonly displayName?: StrongIdDisplayName | undefined;
+	readonly description?: StrongIdDescription;
+	readonly displayName?: StrongIdDisplayName;
 	readonly keyPropertyNames: string[];
 	readonly strongIdName: string;
 }
 export interface StrongIdDescription {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StrongIdDisplayName {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TypePropertiesMapping {
 	readonly interactionTypePropertyName: string;
-	readonly isProfileTypeId?: boolean | undefined;
-	readonly linkType?: "CopyIfNull" | undefined;
+	readonly isProfileTypeId?: boolean;
+	readonly linkType?: "CopyIfNull";
 	readonly profileTypePropertyName: string;
 }
 export interface View {
-	readonly changed?: string | undefined;
-	readonly created?: string | undefined;
+	readonly changed?: string;
+	readonly created?: string;
 	readonly definition: string;
-	readonly displayName?: ViewDisplayName | undefined;
-	readonly tenantId?: string | undefined;
-	readonly userId?: string | undefined;
-	readonly viewName?: string | undefined;
+	readonly displayName?: ViewDisplayName;
+	readonly tenantId?: string;
+	readonly userId?: string;
+	readonly viewName?: string;
 }
 export interface ViewDisplayName {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WidgetType {
-	readonly changed?: string | undefined;
-	readonly created?: string | undefined;
+	readonly changed?: string;
+	readonly created?: string;
 	readonly definition: string;
-	readonly description?: string | undefined;
-	readonly displayName?: WidgetTypeDisplayName | undefined;
-	readonly imageUrl?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly widgetTypeName?: string | undefined;
-	readonly widgetVersion?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: WidgetTypeDisplayName;
+	readonly imageUrl?: string;
+	readonly tenantId?: string;
+	readonly widgetTypeName?: string;
+	readonly widgetVersion?: string;
 }
 export interface WidgetTypeDisplayName {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	hubs: hubs,

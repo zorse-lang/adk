@@ -16,49 +16,49 @@ export interface AssessmentComponentOutputs {
 	readonly Delegations: Map<string, Delegation>;
 }
 export interface AssessmentComponentInputs {
-	readonly AssessmentReportsDestination?: (AssessmentReportsDestination | undefined) | undefined;
-	readonly AwsAccount?: (AWSAccount | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly FrameworkId?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Roles?: (Role[] | undefined) | undefined;
-	readonly Scope?: (Scope | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssessmentReportsDestination?: AssessmentReportsDestination | undefined;
+	readonly AwsAccount?: AWSAccount | undefined;
+	readonly Description?: string | undefined;
+	readonly FrameworkId?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Roles?: Role[] | undefined;
+	readonly Scope?: Scope | undefined;
+	readonly Status?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface AWSAccount {
-	readonly EmailAddress?: (string | undefined) | undefined;
-	readonly Id?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly EmailAddress?: string | undefined;
+	readonly Id?: string | undefined;
+	readonly Name?: string | undefined;
 }
 export interface AWSService {
-	readonly ServiceName?: (string | undefined) | undefined;
+	readonly ServiceName?: string | undefined;
 }
 export interface AssessmentReportsDestination {
-	readonly Destination?: (string | undefined) | undefined;
-	readonly DestinationType?: (string | undefined) | undefined;
+	readonly Destination?: string | undefined;
+	readonly DestinationType?: string | undefined;
 }
 export interface Delegation {
-	readonly AssessmentId?: (string | undefined) | undefined;
-	readonly AssessmentName?: (string | undefined) | undefined;
-	readonly Comment?: (string | undefined) | undefined;
-	readonly ControlSetId?: (string | undefined) | undefined;
-	readonly CreatedBy?: (string | undefined) | undefined;
-	readonly CreationTime?: (number | undefined) | undefined;
-	readonly Id?: (string | undefined) | undefined;
-	readonly LastUpdated?: (number | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly RoleType?: (string | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
+	readonly AssessmentId?: string | undefined;
+	readonly AssessmentName?: string | undefined;
+	readonly Comment?: string | undefined;
+	readonly ControlSetId?: string | undefined;
+	readonly CreatedBy?: string | undefined;
+	readonly CreationTime?: number | undefined;
+	readonly Id?: string | undefined;
+	readonly LastUpdated?: number | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly RoleType?: string | undefined;
+	readonly Status?: string | undefined;
 }
 export interface Role {
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly RoleType?: (string | undefined) | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly RoleType?: string | undefined;
 }
 export interface Scope {
-	readonly AwsAccounts?: (AWSAccount[] | undefined) | undefined;
-	readonly AwsServices?: (AWSService[] | undefined) | undefined;
+	readonly AwsAccounts?: AWSAccount[] | undefined;
+	readonly AwsServices?: AWSService[] | undefined;
 }
 export default {
 	Assessment: Assessment,

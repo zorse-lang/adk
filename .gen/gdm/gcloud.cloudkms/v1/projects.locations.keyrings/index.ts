@@ -7,20 +7,19 @@ export class ProjectsLocationsKeyRings
 	constructor(entity: ADKEntity, options: ProjectsLocationsKeyRingsComponentInputs) {
 		super(entity, options.name, "cloudkms.v1.ProjectsLocationsKeyRings", options);
 	}
-	public readonly createTime?: string | undefined;
+	public readonly createTime?: string;
 }
 export interface ProjectsLocationsKeyRingsComponentOutputs {
-	readonly createTime?: string | undefined;
+	readonly createTime?: string;
 }
 export interface ProjectsLocationsKeyRingsComponentInputs {
 	readonly keyRingId: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly type: string;
 }
 export interface KeyRing {
-	readonly createTime?: string | undefined;
-	readonly name?: string | undefined;
+	readonly createTime?: string;
+	readonly name?: string;
 }
 export default {
 	ProjectsLocationsKeyRings: ProjectsLocationsKeyRings,

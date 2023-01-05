@@ -10,8 +10,8 @@ export interface FleetComponentOutputs {
 	readonly Arn: string;
 }
 export interface FleetComponentInputs {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class Robot extends CfnResource<RobotComponentInputs> implements RobotComponentOutputs {
@@ -26,9 +26,9 @@ export interface RobotComponentOutputs {
 export interface RobotComponentInputs {
 	readonly Architecture: string;
 	readonly GreengrassGroupId: string;
-	readonly Fleet?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Fleet?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class RobotApplication
@@ -45,11 +45,11 @@ export interface RobotApplicationComponentOutputs {
 }
 export interface RobotApplicationComponentInputs {
 	readonly RobotSoftwareSuite: RobotSoftwareSuite;
-	readonly CurrentRevisionId?: string | undefined;
-	readonly Environment?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Sources?: (SourceConfig[] | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly CurrentRevisionId?: string;
+	readonly Environment?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Sources?: SourceConfig[] | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class RobotApplicationVersion
@@ -68,7 +68,7 @@ export interface RobotApplicationVersionComponentOutputs {
 }
 export interface RobotApplicationVersionComponentInputs {
 	readonly Application: string;
-	readonly CurrentRevisionId?: (string | undefined) | undefined;
+	readonly CurrentRevisionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SimulationApplication
@@ -86,12 +86,12 @@ export interface SimulationApplicationComponentOutputs {
 export interface SimulationApplicationComponentInputs {
 	readonly RobotSoftwareSuite: RobotSoftwareSuite;
 	readonly SimulationSoftwareSuite: SimulationSoftwareSuite;
-	readonly CurrentRevisionId?: string | undefined;
-	readonly Environment?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly RenderingEngine?: (RenderingEngine | undefined) | undefined;
-	readonly Sources?: (SourceConfig[] | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly CurrentRevisionId?: string;
+	readonly Environment?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly RenderingEngine?: RenderingEngine | undefined;
+	readonly Sources?: SourceConfig[] | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class SimulationApplicationVersion
@@ -110,12 +110,12 @@ export interface SimulationApplicationVersionComponentOutputs {
 }
 export interface SimulationApplicationVersionComponentInputs {
 	readonly Application: string;
-	readonly CurrentRevisionId?: (string | undefined) | undefined;
+	readonly CurrentRevisionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface RobotSoftwareSuite {
 	readonly Name: string;
-	readonly Version?: (string | undefined) | undefined;
+	readonly Version?: string | undefined;
 }
 export interface SourceConfig {
 	readonly Architecture: string;
@@ -128,7 +128,7 @@ export interface RenderingEngine {
 }
 export interface SimulationSoftwareSuite {
 	readonly Name: string;
-	readonly Version?: (string | undefined) | undefined;
+	readonly Version?: string | undefined;
 }
 export default {
 	Fleet: Fleet,

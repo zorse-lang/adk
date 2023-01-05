@@ -14,8 +14,8 @@ export interface DestinationComponentInputs {
 	readonly ExpressionType: string;
 	readonly Name: string;
 	readonly RoleArn: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DeviceProfile extends CfnResource<DeviceProfileComponentInputs> implements DeviceProfileComponentOutputs {
@@ -30,9 +30,9 @@ export interface DeviceProfileComponentOutputs {
 	readonly Id: string;
 }
 export interface DeviceProfileComponentInputs {
-	readonly LoRaWAN?: (LoRaWANDeviceProfile | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly LoRaWAN?: LoRaWANDeviceProfile | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class FuotaTask extends CfnResource<FuotaTaskComponentInputs> implements FuotaTaskComponentOutputs {
@@ -54,13 +54,13 @@ export interface FuotaTaskComponentInputs {
 	readonly FirmwareUpdateImage: string;
 	readonly FirmwareUpdateRole: string;
 	readonly LoRaWAN: LoRaWAN;
-	readonly AssociateMulticastGroup?: (string | undefined) | undefined;
-	readonly AssociateWirelessDevice?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DisassociateMulticastGroup?: (string | undefined) | undefined;
-	readonly DisassociateWirelessDevice?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssociateMulticastGroup?: string | undefined;
+	readonly AssociateWirelessDevice?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DisassociateMulticastGroup?: string | undefined;
+	readonly DisassociateWirelessDevice?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class MulticastGroup extends CfnResource<MulticastGroupComponentInputs> implements MulticastGroupComponentOutputs {
@@ -82,11 +82,11 @@ export interface MulticastGroupComponentOutputs {
 }
 export interface MulticastGroupComponentInputs {
 	readonly LoRaWAN: LoRaWAN;
-	readonly AssociateWirelessDevice?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DisassociateWirelessDevice?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssociateWirelessDevice?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DisassociateWirelessDevice?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkAnalyzerConfiguration
@@ -103,11 +103,11 @@ export interface NetworkAnalyzerConfigurationComponentOutputs {
 }
 export interface NetworkAnalyzerConfigurationComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TraceContent?: (TraceContent | undefined) | undefined;
-	readonly WirelessDevices?: (string[] | undefined) | undefined;
-	readonly WirelessGateways?: (string[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TraceContent?: TraceContent | undefined;
+	readonly WirelessDevices?: string[] | undefined;
+	readonly WirelessGateways?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class PartnerAccount extends CfnResource<PartnerAccountComponentInputs> implements PartnerAccountComponentOutputs {
@@ -126,13 +126,13 @@ export interface PartnerAccountComponentOutputs {
 	readonly SidewalkResponseFingerprint: string;
 }
 export interface PartnerAccountComponentInputs {
-	readonly AccountLinked?: (boolean | undefined) | undefined;
-	readonly Fingerprint?: (string | undefined) | undefined;
-	readonly PartnerAccountId?: (string | undefined) | undefined;
-	readonly PartnerType?: (string | undefined) | undefined;
-	readonly Sidewalk?: (SidewalkAccountInfo | undefined) | undefined;
-	readonly SidewalkUpdate?: (SidewalkUpdateAccount | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AccountLinked?: boolean | undefined;
+	readonly Fingerprint?: string | undefined;
+	readonly PartnerAccountId?: string | undefined;
+	readonly PartnerType?: string | undefined;
+	readonly Sidewalk?: SidewalkAccountInfo | undefined;
+	readonly SidewalkUpdate?: SidewalkUpdateAccount | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ServiceProfile extends CfnResource<ServiceProfileComponentInputs> implements ServiceProfileComponentOutputs {
@@ -185,9 +185,9 @@ export interface ServiceProfileComponentOutputs {
 	readonly LoRaWanResponse: Map<string, string>;
 }
 export interface ServiceProfileComponentInputs {
-	readonly LoRaWAN?: (LoRaWANServiceProfile | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly LoRaWAN?: LoRaWANServiceProfile | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class TaskDefinition extends CfnResource<TaskDefinitionComponentInputs> implements TaskDefinitionComponentOutputs {
@@ -203,11 +203,11 @@ export interface TaskDefinitionComponentOutputs {
 }
 export interface TaskDefinitionComponentInputs {
 	readonly AutoCreateTasks: boolean;
-	readonly LoRaWANUpdateGatewayTaskEntry?: (LoRaWANUpdateGatewayTaskEntry | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TaskDefinitionType?: (string | undefined) | undefined;
-	readonly Update?: (UpdateWirelessGatewayTaskCreate | undefined) | undefined;
+	readonly LoRaWANUpdateGatewayTaskEntry?: LoRaWANUpdateGatewayTaskEntry | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TaskDefinitionType?: string | undefined;
+	readonly Update?: UpdateWirelessGatewayTaskCreate | undefined;
 	readonly LogicalId: string;
 }
 export class WirelessDevice extends CfnResource<WirelessDeviceComponentInputs> implements WirelessDeviceComponentOutputs {
@@ -226,12 +226,12 @@ export interface WirelessDeviceComponentOutputs {
 export interface WirelessDeviceComponentInputs {
 	readonly DestinationName: string;
 	readonly Type: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly LastUplinkReceivedAt?: (string | undefined) | undefined;
-	readonly LoRaWAN?: (LoRaWANDevice | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly ThingArn?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly LastUplinkReceivedAt?: string | undefined;
+	readonly LoRaWAN?: LoRaWANDevice | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly ThingArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class WirelessGateway
@@ -250,94 +250,94 @@ export interface WirelessGatewayComponentOutputs {
 }
 export interface WirelessGatewayComponentInputs {
 	readonly LoRaWAN: LoRaWANGateway;
-	readonly Description?: (string | undefined) | undefined;
-	readonly LastUplinkReceivedAt?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly ThingArn?: (string | undefined) | undefined;
-	readonly ThingName?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly LastUplinkReceivedAt?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly ThingArn?: string | undefined;
+	readonly ThingName?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface LoRaWANDeviceProfile {
-	readonly ClassBTimeout?: (number | undefined) | undefined;
-	readonly ClassCTimeout?: (number | undefined) | undefined;
-	readonly FactoryPresetFreqsList?: (number[] | undefined) | undefined;
-	readonly MacVersion?: (string | undefined) | undefined;
-	readonly MaxDutyCycle?: (number | undefined) | undefined;
-	readonly MaxEirp?: (number | undefined) | undefined;
-	readonly PingSlotDr?: (number | undefined) | undefined;
-	readonly PingSlotFreq?: (number | undefined) | undefined;
-	readonly PingSlotPeriod?: (number | undefined) | undefined;
-	readonly RegParamsRevision?: (string | undefined) | undefined;
-	readonly RfRegion?: (string | undefined) | undefined;
-	readonly RxDataRate2?: (number | undefined) | undefined;
-	readonly RxDelay1?: (number | undefined) | undefined;
-	readonly RxDrOffset1?: (number | undefined) | undefined;
-	readonly RxFreq2?: (number | undefined) | undefined;
-	readonly Supports32BitFCnt?: (boolean | undefined) | undefined;
-	readonly SupportsClassB?: (boolean | undefined) | undefined;
-	readonly SupportsClassC?: (boolean | undefined) | undefined;
-	readonly SupportsJoin?: (boolean | undefined) | undefined;
+	readonly ClassBTimeout?: number | undefined;
+	readonly ClassCTimeout?: number | undefined;
+	readonly FactoryPresetFreqsList?: number[] | undefined;
+	readonly MacVersion?: string | undefined;
+	readonly MaxDutyCycle?: number | undefined;
+	readonly MaxEirp?: number | undefined;
+	readonly PingSlotDr?: number | undefined;
+	readonly PingSlotFreq?: number | undefined;
+	readonly PingSlotPeriod?: number | undefined;
+	readonly RegParamsRevision?: string | undefined;
+	readonly RfRegion?: string | undefined;
+	readonly RxDataRate2?: number | undefined;
+	readonly RxDelay1?: number | undefined;
+	readonly RxDrOffset1?: number | undefined;
+	readonly RxFreq2?: number | undefined;
+	readonly Supports32BitFCnt?: boolean | undefined;
+	readonly SupportsClassB?: boolean | undefined;
+	readonly SupportsClassC?: boolean | undefined;
+	readonly SupportsJoin?: boolean | undefined;
 }
 export interface LoRaWAN {
 	readonly RfRegion: string;
-	readonly StartTime?: (string | undefined) | undefined;
+	readonly StartTime?: string | undefined;
 }
 export interface TraceContent {
-	readonly LogLevel?: (string | undefined) | undefined;
-	readonly WirelessDeviceFrameInfo?: (string | undefined) | undefined;
+	readonly LogLevel?: string | undefined;
+	readonly WirelessDeviceFrameInfo?: string | undefined;
 }
 export interface SidewalkAccountInfo {
 	readonly AppServerPrivateKey: string;
 }
 export interface SidewalkAccountInfoWithFingerprint {
-	readonly AmazonId?: (string | undefined) | undefined;
-	readonly Arn?: (string | undefined) | undefined;
-	readonly Fingerprint?: (string | undefined) | undefined;
+	readonly AmazonId?: string | undefined;
+	readonly Arn?: string | undefined;
+	readonly Fingerprint?: string | undefined;
 }
 export interface SidewalkUpdateAccount {
-	readonly AppServerPrivateKey?: (string | undefined) | undefined;
+	readonly AppServerPrivateKey?: string | undefined;
 }
 export interface LoRaWANServiceProfile {
-	readonly AddGwMetadata?: (boolean | undefined) | undefined;
-	readonly ChannelMask?: (string | undefined) | undefined;
-	readonly DevStatusReqFreq?: (number | undefined) | undefined;
-	readonly DlBucketSize?: (number | undefined) | undefined;
-	readonly DlRate?: (number | undefined) | undefined;
-	readonly DlRatePolicy?: (string | undefined) | undefined;
-	readonly DrMax?: (number | undefined) | undefined;
-	readonly DrMin?: (number | undefined) | undefined;
-	readonly HrAllowed?: (boolean | undefined) | undefined;
-	readonly MinGwDiversity?: (number | undefined) | undefined;
-	readonly NwkGeoLoc?: (boolean | undefined) | undefined;
-	readonly PrAllowed?: (boolean | undefined) | undefined;
-	readonly RaAllowed?: (boolean | undefined) | undefined;
-	readonly ReportDevStatusBattery?: (boolean | undefined) | undefined;
-	readonly ReportDevStatusMargin?: (boolean | undefined) | undefined;
-	readonly TargetPer?: (number | undefined) | undefined;
-	readonly UlBucketSize?: (number | undefined) | undefined;
-	readonly UlRate?: (number | undefined) | undefined;
-	readonly UlRatePolicy?: (string | undefined) | undefined;
+	readonly AddGwMetadata?: boolean | undefined;
+	readonly ChannelMask?: string | undefined;
+	readonly DevStatusReqFreq?: number | undefined;
+	readonly DlBucketSize?: number | undefined;
+	readonly DlRate?: number | undefined;
+	readonly DlRatePolicy?: string | undefined;
+	readonly DrMax?: number | undefined;
+	readonly DrMin?: number | undefined;
+	readonly HrAllowed?: boolean | undefined;
+	readonly MinGwDiversity?: number | undefined;
+	readonly NwkGeoLoc?: boolean | undefined;
+	readonly PrAllowed?: boolean | undefined;
+	readonly RaAllowed?: boolean | undefined;
+	readonly ReportDevStatusBattery?: boolean | undefined;
+	readonly ReportDevStatusMargin?: boolean | undefined;
+	readonly TargetPer?: number | undefined;
+	readonly UlBucketSize?: number | undefined;
+	readonly UlRate?: number | undefined;
+	readonly UlRatePolicy?: string | undefined;
 }
 export interface LoRaWANGatewayVersion {
-	readonly Model?: (string | undefined) | undefined;
-	readonly PackageVersion?: (string | undefined) | undefined;
-	readonly Station?: (string | undefined) | undefined;
+	readonly Model?: string | undefined;
+	readonly PackageVersion?: string | undefined;
+	readonly Station?: string | undefined;
 }
 export interface LoRaWANUpdateGatewayTaskCreate {
-	readonly CurrentVersion?: (LoRaWANGatewayVersion | undefined) | undefined;
-	readonly SigKeyCrc?: (number | undefined) | undefined;
-	readonly UpdateSignature?: (string | undefined) | undefined;
-	readonly UpdateVersion?: (LoRaWANGatewayVersion | undefined) | undefined;
+	readonly CurrentVersion?: LoRaWANGatewayVersion | undefined;
+	readonly SigKeyCrc?: number | undefined;
+	readonly UpdateSignature?: string | undefined;
+	readonly UpdateVersion?: LoRaWANGatewayVersion | undefined;
 }
 export interface LoRaWANUpdateGatewayTaskEntry {
-	readonly CurrentVersion?: (LoRaWANGatewayVersion | undefined) | undefined;
-	readonly UpdateVersion?: (LoRaWANGatewayVersion | undefined) | undefined;
+	readonly CurrentVersion?: LoRaWANGatewayVersion | undefined;
+	readonly UpdateVersion?: LoRaWANGatewayVersion | undefined;
 }
 export interface UpdateWirelessGatewayTaskCreate {
-	readonly LoRaWAN?: (LoRaWANUpdateGatewayTaskCreate | undefined) | undefined;
-	readonly UpdateDataRole?: (string | undefined) | undefined;
-	readonly UpdateDataSource?: (string | undefined) | undefined;
+	readonly LoRaWAN?: LoRaWANUpdateGatewayTaskCreate | undefined;
+	readonly UpdateDataRole?: string | undefined;
+	readonly UpdateDataSource?: string | undefined;
 }
 export interface AbpV10x {
 	readonly DevAddr: string;
@@ -348,13 +348,13 @@ export interface AbpV11 {
 	readonly SessionKeys: SessionKeysAbpV11;
 }
 export interface LoRaWANDevice {
-	readonly AbpV10x?: (AbpV10x | undefined) | undefined;
-	readonly AbpV11?: (AbpV11 | undefined) | undefined;
-	readonly DevEui?: (string | undefined) | undefined;
-	readonly DeviceProfileId?: (string | undefined) | undefined;
-	readonly OtaaV10x?: (OtaaV10x | undefined) | undefined;
-	readonly OtaaV11?: (OtaaV11 | undefined) | undefined;
-	readonly ServiceProfileId?: (string | undefined) | undefined;
+	readonly AbpV10x?: AbpV10x | undefined;
+	readonly AbpV11?: AbpV11 | undefined;
+	readonly DevEui?: string | undefined;
+	readonly DeviceProfileId?: string | undefined;
+	readonly OtaaV10x?: OtaaV10x | undefined;
+	readonly OtaaV11?: OtaaV11 | undefined;
+	readonly ServiceProfileId?: string | undefined;
 }
 export interface OtaaV10x {
 	readonly AppEui: string;

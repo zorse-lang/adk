@@ -8,7 +8,7 @@ export class Project extends RosResource<ProjectComponentInputs> implements Proj
 export interface ProjectComponentOutputs {}
 export interface ProjectComponentInputs {
 	readonly Project: any | string;
-	readonly ServiceRole?: (string | undefined) | undefined;
+	readonly ServiceRole?: string | undefined;
 	readonly LogicalId: string;
 }
 export default {

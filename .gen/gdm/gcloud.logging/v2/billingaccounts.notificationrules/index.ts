@@ -7,45 +7,44 @@ export class BillingAccountsNotificationRules
 	constructor(entity: ADKEntity, options: BillingAccountsNotificationRulesComponentInputs) {
 		super(entity, options.name, "logging.v2.BillingAccountsNotificationRules", options);
 	}
-	public readonly senderIdentity?: string | undefined;
+	public readonly senderIdentity?: string;
 }
 export interface BillingAccountsNotificationRulesComponentOutputs {
-	readonly senderIdentity?: string | undefined;
+	readonly senderIdentity?: string;
 }
 export interface BillingAccountsNotificationRulesComponentInputs {
-	readonly alertPolicyDetails?: LogAlertPolicyDetails | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly displayName?: string | undefined;
+	readonly alertPolicyDetails?: LogAlertPolicyDetails;
+	readonly description?: string;
+	readonly disabled?: boolean;
+	readonly displayName?: string;
 	readonly filter: string;
-	readonly includeChildren?: boolean | undefined;
+	readonly includeChildren?: boolean;
 	readonly name: string;
-	readonly notificationChannels?: string[] | undefined;
+	readonly notificationChannels?: string[];
 	readonly notificationRuleId: string;
 	readonly parent: string;
-	readonly resetDuration?: string | undefined;
-	readonly resourceNames?: string[] | undefined;
-	readonly valueExtractors?: { [P in string]: string } | undefined;
-	readonly type: string;
+	readonly resetDuration?: string;
+	readonly resourceNames?: string[];
+	readonly valueExtractors?: { [P in string]: string };
 }
 export interface LogAlertPolicyDetails {
-	readonly condition?: string | undefined;
-	readonly userLabels?: { [P in string]: string } | undefined;
-	readonly verbosityLabels?: { [P in string]: string } | undefined;
+	readonly condition?: string;
+	readonly userLabels?: { [P in string]: string };
+	readonly verbosityLabels?: { [P in string]: string };
 }
 export interface LogNotificationRule {
-	readonly alertPolicyDetails?: LogAlertPolicyDetails | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly displayName?: string | undefined;
+	readonly alertPolicyDetails?: LogAlertPolicyDetails;
+	readonly description?: string;
+	readonly disabled?: boolean;
+	readonly displayName?: string;
 	readonly filter: string;
-	readonly includeChildren?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly notificationChannels?: string[] | undefined;
-	readonly resetDuration?: string | undefined;
-	readonly resourceNames?: string[] | undefined;
-	readonly senderIdentity?: string | undefined;
-	readonly valueExtractors?: { [P in string]: string } | undefined;
+	readonly includeChildren?: boolean;
+	readonly name?: string;
+	readonly notificationChannels?: string[];
+	readonly resetDuration?: string;
+	readonly resourceNames?: string[];
+	readonly senderIdentity?: string;
+	readonly valueExtractors?: { [P in string]: string };
 }
 export default {
 	BillingAccountsNotificationRules: BillingAccountsNotificationRules,

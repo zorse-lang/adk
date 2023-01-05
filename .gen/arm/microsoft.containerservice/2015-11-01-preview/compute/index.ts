@@ -19,106 +19,103 @@ export interface containerServicesComponentOutputs {
 export interface containerServicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ContainerServiceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ContainerServiceProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ContainerServiceAgentPoolProfile {
-	readonly count?: number | undefined;
+	readonly count?: number;
 	readonly dnsPrefix: string;
-	readonly fqdn?: string | undefined;
+	readonly fqdn?: string;
 	readonly name: string;
 	readonly vmSize?:
-		| (
-				| "Standard_A0"
-				| "Standard_A1"
-				| "Standard_A10"
-				| "Standard_A11"
-				| "Standard_A2"
-				| "Standard_A3"
-				| "Standard_A4"
-				| "Standard_A5"
-				| "Standard_A6"
-				| "Standard_A7"
-				| "Standard_A8"
-				| "Standard_A9"
-				| "Standard_D1"
-				| "Standard_D11"
-				| "Standard_D11_v2"
-				| "Standard_D12"
-				| "Standard_D12_v2"
-				| "Standard_D13"
-				| "Standard_D13_v2"
-				| "Standard_D14"
-				| "Standard_D14_v2"
-				| "Standard_D1_v2"
-				| "Standard_D2"
-				| "Standard_D2_v2"
-				| "Standard_D3"
-				| "Standard_D3_v2"
-				| "Standard_D4"
-				| "Standard_D4_v2"
-				| "Standard_D5_v2"
-				| "Standard_DS1"
-				| "Standard_DS11"
-				| "Standard_DS12"
-				| "Standard_DS13"
-				| "Standard_DS14"
-				| "Standard_DS2"
-				| "Standard_DS3"
-				| "Standard_DS4"
-				| "Standard_G1"
-				| "Standard_G2"
-				| "Standard_G3"
-				| "Standard_G4"
-				| "Standard_G5"
-				| "Standard_GS1"
-				| "Standard_GS2"
-				| "Standard_GS3"
-				| "Standard_GS4"
-				| "Standard_GS5"
-		  )
-		| undefined;
+		| "Standard_A0"
+		| "Standard_A1"
+		| "Standard_A10"
+		| "Standard_A11"
+		| "Standard_A2"
+		| "Standard_A3"
+		| "Standard_A4"
+		| "Standard_A5"
+		| "Standard_A6"
+		| "Standard_A7"
+		| "Standard_A8"
+		| "Standard_A9"
+		| "Standard_D1"
+		| "Standard_D11"
+		| "Standard_D11_v2"
+		| "Standard_D12"
+		| "Standard_D12_v2"
+		| "Standard_D13"
+		| "Standard_D13_v2"
+		| "Standard_D14"
+		| "Standard_D14_v2"
+		| "Standard_D1_v2"
+		| "Standard_D2"
+		| "Standard_D2_v2"
+		| "Standard_D3"
+		| "Standard_D3_v2"
+		| "Standard_D4"
+		| "Standard_D4_v2"
+		| "Standard_D5_v2"
+		| "Standard_DS1"
+		| "Standard_DS11"
+		| "Standard_DS12"
+		| "Standard_DS13"
+		| "Standard_DS14"
+		| "Standard_DS2"
+		| "Standard_DS3"
+		| "Standard_DS4"
+		| "Standard_G1"
+		| "Standard_G2"
+		| "Standard_G3"
+		| "Standard_G4"
+		| "Standard_G5"
+		| "Standard_GS1"
+		| "Standard_GS2"
+		| "Standard_GS3"
+		| "Standard_GS4"
+		| "Standard_GS5";
 }
 export interface ContainerServiceDiagnosticsProfile {
-	readonly vmDiagnostics?: ContainerServiceVMDiagnostics | undefined;
+	readonly vmDiagnostics?: ContainerServiceVMDiagnostics;
 }
 export interface ContainerServiceLinuxProfile {
 	readonly adminUsername: string;
 	readonly ssh: ContainerServiceSshConfiguration;
 }
 export interface ContainerServiceMasterProfile {
-	readonly count?: number | undefined;
+	readonly count?: number;
 	readonly dnsPrefix: string;
-	readonly fqdn?: string | undefined;
+	readonly fqdn?: string;
 }
 export interface ContainerServiceOrchestratorProfile {
-	readonly orchestratorType?: ("DCOS" | "Mesos") | undefined;
+	readonly orchestratorType?: "DCOS" | "Mesos";
 }
 export interface ContainerServiceProperties {
 	readonly agentPoolProfiles: ContainerServiceAgentPoolProfile[];
-	readonly diagnosticsProfile?: ContainerServiceDiagnosticsProfile | undefined;
+	readonly diagnosticsProfile?: ContainerServiceDiagnosticsProfile;
 	readonly linuxProfile: ContainerServiceLinuxProfile;
 	readonly masterProfile: ContainerServiceMasterProfile;
-	readonly orchestratorProfile?: ContainerServiceOrchestratorProfile | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly windowsProfile?: ContainerServiceWindowsProfile | undefined;
+	readonly orchestratorProfile?: ContainerServiceOrchestratorProfile;
+	readonly provisioningState?: string;
+	readonly windowsProfile?: ContainerServiceWindowsProfile;
 }
 export interface ContainerServiceSshConfiguration {
-	readonly publicKeys?: ContainerServiceSshPublicKey[] | undefined;
+	readonly publicKeys?: ContainerServiceSshPublicKey[];
 }
 export interface ContainerServiceSshPublicKey {
 	readonly keyData: string;
 }
 export interface ContainerServiceVMDiagnostics {
-	readonly enabled?: boolean | undefined;
-	readonly storageUri?: string | undefined;
+	readonly enabled?: boolean;
+	readonly storageUri?: string;
 }
 export interface ContainerServiceWindowsProfile {
 	readonly adminPassword: string;
 	readonly adminUsername: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	containerServices: containerServices,

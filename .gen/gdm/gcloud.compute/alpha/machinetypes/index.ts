@@ -4,79 +4,78 @@ export class MachineTypes extends GdmResource<MachineTypesComponentInputs> imple
 	constructor(entity: ADKEntity, options: MachineTypesComponentInputs) {
 		super(entity, options.name, "compute.alpha.MachineTypes", options);
 	}
-	public readonly accelerators?: Array<{ guestAcceleratorCount?: number; guestAcceleratorType?: string }> | undefined;
-	public readonly architecture?: string | undefined;
-	public readonly bundledLocalSsds?: BundledLocalSsds | undefined;
-	public readonly creationTimestamp?: string | undefined;
-	public readonly deprecated?: DeprecationStatus | undefined;
-	public readonly description?: string | undefined;
-	public readonly guestCpus?: number | undefined;
-	public readonly id?: string | undefined;
-	public readonly isSharedCpu?: boolean | undefined;
-	public readonly kind?: string | undefined;
-	public readonly maximumPersistentDisks?: number | undefined;
-	public readonly maximumPersistentDisksSizeGb?: string | undefined;
-	public readonly memoryMb?: number | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly zone?: string | undefined;
+	public readonly accelerators?: Array<{ guestAcceleratorCount?: number; guestAcceleratorType?: string }>;
+	public readonly architecture?: string;
+	public readonly bundledLocalSsds?: BundledLocalSsds;
+	public readonly creationTimestamp?: string;
+	public readonly deprecated?: DeprecationStatus;
+	public readonly description?: string;
+	public readonly guestCpus?: number;
+	public readonly id?: string;
+	public readonly isSharedCpu?: boolean;
+	public readonly kind?: string;
+	public readonly maximumPersistentDisks?: number;
+	public readonly maximumPersistentDisksSizeGb?: string;
+	public readonly memoryMb?: number;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly zone?: string;
 }
 export interface MachineTypesComponentOutputs {
-	readonly accelerators?: Array<{ guestAcceleratorCount?: number; guestAcceleratorType?: string }> | undefined;
-	readonly architecture?: string | undefined;
-	readonly bundledLocalSsds?: BundledLocalSsds | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly deprecated?: DeprecationStatus | undefined;
-	readonly description?: string | undefined;
-	readonly guestCpus?: number | undefined;
-	readonly id?: string | undefined;
-	readonly isSharedCpu?: boolean | undefined;
-	readonly kind?: string | undefined;
-	readonly maximumPersistentDisks?: number | undefined;
-	readonly maximumPersistentDisksSizeGb?: string | undefined;
-	readonly memoryMb?: number | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly accelerators?: Array<{ guestAcceleratorCount?: number; guestAcceleratorType?: string }>;
+	readonly architecture?: string;
+	readonly bundledLocalSsds?: BundledLocalSsds;
+	readonly creationTimestamp?: string;
+	readonly deprecated?: DeprecationStatus;
+	readonly description?: string;
+	readonly guestCpus?: number;
+	readonly id?: string;
+	readonly isSharedCpu?: boolean;
+	readonly kind?: string;
+	readonly maximumPersistentDisks?: number;
+	readonly maximumPersistentDisksSizeGb?: string;
+	readonly memoryMb?: number;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly zone?: string;
 }
 export interface MachineTypesComponentInputs {
 	readonly name: string;
-	readonly type: string;
 }
 export interface BundledLocalSsds {
-	readonly defaultInterface?: string | undefined;
-	readonly partitionCount?: number | undefined;
+	readonly defaultInterface?: string;
+	readonly partitionCount?: number;
 }
 export interface DeprecationStatus {
-	readonly deleted?: string | undefined;
-	readonly deprecated?: string | undefined;
-	readonly obsolete?: string | undefined;
-	readonly replacement?: string | undefined;
-	readonly state?: string | undefined;
-	readonly stateOverride?: RolloutPolicy | undefined;
+	readonly deleted?: string;
+	readonly deprecated?: string;
+	readonly obsolete?: string;
+	readonly replacement?: string;
+	readonly state?: string;
+	readonly stateOverride?: RolloutPolicy;
 }
 export interface MachineType {
-	readonly accelerators?: Array<{ guestAcceleratorCount?: number; guestAcceleratorType?: string }> | undefined;
-	readonly architecture?: string | undefined;
-	readonly bundledLocalSsds?: BundledLocalSsds | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly deprecated?: DeprecationStatus | undefined;
-	readonly description?: string | undefined;
-	readonly guestCpus?: number | undefined;
-	readonly id?: string | undefined;
-	readonly isSharedCpu?: boolean | undefined;
-	readonly kind?: string | undefined;
-	readonly maximumPersistentDisks?: number | undefined;
-	readonly maximumPersistentDisksSizeGb?: string | undefined;
-	readonly memoryMb?: number | undefined;
-	readonly name?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly accelerators?: Array<{ guestAcceleratorCount?: number; guestAcceleratorType?: string }>;
+	readonly architecture?: string;
+	readonly bundledLocalSsds?: BundledLocalSsds;
+	readonly creationTimestamp?: string;
+	readonly deprecated?: DeprecationStatus;
+	readonly description?: string;
+	readonly guestCpus?: number;
+	readonly id?: string;
+	readonly isSharedCpu?: boolean;
+	readonly kind?: string;
+	readonly maximumPersistentDisks?: number;
+	readonly maximumPersistentDisksSizeGb?: string;
+	readonly memoryMb?: number;
+	readonly name?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly zone?: string;
 }
 export interface RolloutPolicy {
-	readonly defaultRolloutTime?: string | undefined;
-	readonly locationRolloutPolicies?: { [P in string]: string } | undefined;
+	readonly defaultRolloutTime?: string;
+	readonly locationRolloutPolicies?: { [P in string]: string };
 }
 export default {
 	MachineTypes: MachineTypes,

@@ -7,168 +7,167 @@ export class Instances extends GdmResource<InstancesComponentInputs> implements 
 }
 export interface InstancesComponentOutputs {}
 export interface InstancesComponentInputs {
-	readonly backendType?: string | undefined;
-	readonly connectionName?: string | undefined;
-	readonly currentDiskSize?: string | undefined;
-	readonly databaseVersion?: string | undefined;
-	readonly diskEncryptionConfiguration?: DiskEncryptionConfiguration | undefined;
-	readonly diskEncryptionStatus?: DiskEncryptionStatus | undefined;
-	readonly etag?: string | undefined;
-	readonly failoverReplica?: { available?: boolean; name?: string } | undefined;
-	readonly gceZone?: string | undefined;
-	readonly instanceType?: string | undefined;
-	readonly ipAddresses?: IpMapping[] | undefined;
-	readonly ipv6Address?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly masterInstanceName?: string | undefined;
-	readonly maxDiskSize?: string | undefined;
+	readonly backendType?: string;
+	readonly connectionName?: string;
+	readonly currentDiskSize?: string;
+	readonly databaseVersion?: string;
+	readonly diskEncryptionConfiguration?: DiskEncryptionConfiguration;
+	readonly diskEncryptionStatus?: DiskEncryptionStatus;
+	readonly etag?: string;
+	readonly failoverReplica?: { available?: boolean; name?: string };
+	readonly gceZone?: string;
+	readonly instanceType?: string;
+	readonly ipAddresses?: IpMapping[];
+	readonly ipv6Address?: string;
+	readonly kind?: string;
+	readonly masterInstanceName?: string;
+	readonly maxDiskSize?: string;
 	readonly name: string;
-	readonly onPremisesConfiguration?: OnPremisesConfiguration | undefined;
-	readonly project?: string | undefined;
-	readonly region?: string | undefined;
-	readonly replicaConfiguration?: ReplicaConfiguration | undefined;
-	readonly replicaNames?: string[] | undefined;
-	readonly rootPassword?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly serverCaCert?: SslCert | undefined;
-	readonly serviceAccountEmailAddress?: string | undefined;
-	readonly settings?: Settings | undefined;
-	readonly state?: string | undefined;
-	readonly suspensionReason?: string[] | undefined;
-	readonly type: string;
+	readonly onPremisesConfiguration?: OnPremisesConfiguration;
+	readonly project?: string;
+	readonly region?: string;
+	readonly replicaConfiguration?: ReplicaConfiguration;
+	readonly replicaNames?: string[];
+	readonly rootPassword?: string;
+	readonly selfLink?: string;
+	readonly serverCaCert?: SslCert;
+	readonly serviceAccountEmailAddress?: string;
+	readonly settings?: Settings;
+	readonly state?: string;
+	readonly suspensionReason?: string[];
 }
 export interface AclEntry {
-	readonly expirationTime?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly expirationTime?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface BackupConfiguration {
-	readonly binaryLogEnabled?: boolean | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
-	readonly replicationLogArchivingEnabled?: boolean | undefined;
-	readonly startTime?: string | undefined;
+	readonly binaryLogEnabled?: boolean;
+	readonly enabled?: boolean;
+	readonly kind?: string;
+	readonly location?: string;
+	readonly replicationLogArchivingEnabled?: boolean;
+	readonly startTime?: string;
 }
 export interface DatabaseFlags {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface DatabaseInstance {
-	readonly backendType?: string | undefined;
-	readonly connectionName?: string | undefined;
-	readonly currentDiskSize?: string | undefined;
-	readonly databaseVersion?: string | undefined;
-	readonly diskEncryptionConfiguration?: DiskEncryptionConfiguration | undefined;
-	readonly diskEncryptionStatus?: DiskEncryptionStatus | undefined;
-	readonly etag?: string | undefined;
-	readonly failoverReplica?: { available?: boolean; name?: string } | undefined;
-	readonly gceZone?: string | undefined;
-	readonly instanceType?: string | undefined;
-	readonly ipAddresses?: IpMapping[] | undefined;
-	readonly ipv6Address?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly masterInstanceName?: string | undefined;
-	readonly maxDiskSize?: string | undefined;
-	readonly name?: string | undefined;
-	readonly onPremisesConfiguration?: OnPremisesConfiguration | undefined;
-	readonly project?: string | undefined;
-	readonly region?: string | undefined;
-	readonly replicaConfiguration?: ReplicaConfiguration | undefined;
-	readonly replicaNames?: string[] | undefined;
-	readonly rootPassword?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly serverCaCert?: SslCert | undefined;
-	readonly serviceAccountEmailAddress?: string | undefined;
-	readonly settings?: Settings | undefined;
-	readonly state?: string | undefined;
-	readonly suspensionReason?: string[] | undefined;
+	readonly backendType?: string;
+	readonly connectionName?: string;
+	readonly currentDiskSize?: string;
+	readonly databaseVersion?: string;
+	readonly diskEncryptionConfiguration?: DiskEncryptionConfiguration;
+	readonly diskEncryptionStatus?: DiskEncryptionStatus;
+	readonly etag?: string;
+	readonly failoverReplica?: { available?: boolean; name?: string };
+	readonly gceZone?: string;
+	readonly instanceType?: string;
+	readonly ipAddresses?: IpMapping[];
+	readonly ipv6Address?: string;
+	readonly kind?: string;
+	readonly masterInstanceName?: string;
+	readonly maxDiskSize?: string;
+	readonly name?: string;
+	readonly onPremisesConfiguration?: OnPremisesConfiguration;
+	readonly project?: string;
+	readonly region?: string;
+	readonly replicaConfiguration?: ReplicaConfiguration;
+	readonly replicaNames?: string[];
+	readonly rootPassword?: string;
+	readonly selfLink?: string;
+	readonly serverCaCert?: SslCert;
+	readonly serviceAccountEmailAddress?: string;
+	readonly settings?: Settings;
+	readonly state?: string;
+	readonly suspensionReason?: string[];
 }
 export interface DiskEncryptionConfiguration {
-	readonly kind?: string | undefined;
-	readonly kmsKeyName?: string | undefined;
+	readonly kind?: string;
+	readonly kmsKeyName?: string;
 }
 export interface DiskEncryptionStatus {
-	readonly kind?: string | undefined;
-	readonly kmsKeyVersionName?: string | undefined;
+	readonly kind?: string;
+	readonly kmsKeyVersionName?: string;
 }
 export interface IpConfiguration {
-	readonly authorizedNetworks?: AclEntry[] | undefined;
-	readonly ipv4Enabled?: boolean | undefined;
-	readonly privateNetwork?: string | undefined;
-	readonly requireSsl?: boolean | undefined;
+	readonly authorizedNetworks?: AclEntry[];
+	readonly ipv4Enabled?: boolean;
+	readonly privateNetwork?: string;
+	readonly requireSsl?: boolean;
 }
 export interface IpMapping {
-	readonly ipAddress?: string | undefined;
-	readonly timeToRetire?: string | undefined;
-	readonly type?: string | undefined;
+	readonly ipAddress?: string;
+	readonly timeToRetire?: string;
+	readonly type?: string;
 }
 export interface LocationPreference {
-	readonly followGaeApplication?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly followGaeApplication?: string;
+	readonly kind?: string;
+	readonly zone?: string;
 }
 export interface MaintenanceWindow {
-	readonly day?: number | undefined;
-	readonly hour?: number | undefined;
-	readonly kind?: string | undefined;
-	readonly updateTrack?: string | undefined;
+	readonly day?: number;
+	readonly hour?: number;
+	readonly kind?: string;
+	readonly updateTrack?: string;
 }
 export interface MySqlReplicaConfiguration {
-	readonly caCertificate?: string | undefined;
-	readonly clientCertificate?: string | undefined;
-	readonly clientKey?: string | undefined;
-	readonly connectRetryInterval?: number | undefined;
-	readonly dumpFilePath?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly masterHeartbeatPeriod?: string | undefined;
-	readonly password?: string | undefined;
-	readonly sslCipher?: string | undefined;
-	readonly username?: string | undefined;
-	readonly verifyServerCertificate?: boolean | undefined;
+	readonly caCertificate?: string;
+	readonly clientCertificate?: string;
+	readonly clientKey?: string;
+	readonly connectRetryInterval?: number;
+	readonly dumpFilePath?: string;
+	readonly kind?: string;
+	readonly masterHeartbeatPeriod?: string;
+	readonly password?: string;
+	readonly sslCipher?: string;
+	readonly username?: string;
+	readonly verifyServerCertificate?: boolean;
 }
 export interface OnPremisesConfiguration {
-	readonly hostPort?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly hostPort?: string;
+	readonly kind?: string;
 }
 export interface ReplicaConfiguration {
-	readonly failoverTarget?: boolean | undefined;
-	readonly kind?: string | undefined;
-	readonly mysqlReplicaConfiguration?: MySqlReplicaConfiguration | undefined;
+	readonly failoverTarget?: boolean;
+	readonly kind?: string;
+	readonly mysqlReplicaConfiguration?: MySqlReplicaConfiguration;
 }
 export interface Settings {
-	readonly activationPolicy?: string | undefined;
-	readonly authorizedGaeApplications?: string[] | undefined;
-	readonly availabilityType?: string | undefined;
-	readonly backupConfiguration?: BackupConfiguration | undefined;
-	readonly crashSafeReplicationEnabled?: boolean | undefined;
-	readonly databaseFlags?: DatabaseFlags[] | undefined;
-	readonly databaseReplicationEnabled?: boolean | undefined;
-	readonly dataDiskSizeGb?: string | undefined;
-	readonly dataDiskType?: string | undefined;
-	readonly ipConfiguration?: IpConfiguration | undefined;
-	readonly kind?: string | undefined;
-	readonly locationPreference?: LocationPreference | undefined;
-	readonly maintenanceWindow?: MaintenanceWindow | undefined;
-	readonly pricingPlan?: string | undefined;
-	readonly replicationType?: string | undefined;
-	readonly settingsVersion?: string | undefined;
-	readonly storageAutoResize?: boolean | undefined;
-	readonly storageAutoResizeLimit?: string | undefined;
-	readonly tier?: string | undefined;
-	readonly userLabels?: { [P in string]: string } | undefined;
+	readonly activationPolicy?: string;
+	readonly authorizedGaeApplications?: string[];
+	readonly availabilityType?: string;
+	readonly backupConfiguration?: BackupConfiguration;
+	readonly crashSafeReplicationEnabled?: boolean;
+	readonly databaseFlags?: DatabaseFlags[];
+	readonly databaseReplicationEnabled?: boolean;
+	readonly dataDiskSizeGb?: string;
+	readonly dataDiskType?: string;
+	readonly ipConfiguration?: IpConfiguration;
+	readonly kind?: string;
+	readonly locationPreference?: LocationPreference;
+	readonly maintenanceWindow?: MaintenanceWindow;
+	readonly pricingPlan?: string;
+	readonly replicationType?: string;
+	readonly settingsVersion?: string;
+	readonly storageAutoResize?: boolean;
+	readonly storageAutoResizeLimit?: string;
+	readonly tier?: string;
+	readonly userLabels?: { [P in string]: string };
 }
 export interface SslCert {
-	readonly cert?: string | undefined;
-	readonly certSerialNumber?: string | undefined;
-	readonly commonName?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly expirationTime?: string | undefined;
-	readonly instance?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly sha1Fingerprint?: string | undefined;
+	readonly cert?: string;
+	readonly certSerialNumber?: string;
+	readonly commonName?: string;
+	readonly createTime?: string;
+	readonly expirationTime?: string;
+	readonly instance?: string;
+	readonly kind?: string;
+	readonly selfLink?: string;
+	readonly sha1Fingerprint?: string;
 }
 export default {
 	Instances: Instances,

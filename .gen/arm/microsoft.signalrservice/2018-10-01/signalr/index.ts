@@ -16,9 +16,9 @@ export interface signalRComponentOutputs {
 export interface signalRComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SignalRCreateOrUpdatePropertiesOrSignalRProperties | undefined;
-	readonly sku?: ResourceSku | undefined;
-	readonly tags?: SignalRUpdateParametersTags | undefined;
+	readonly properties?: SignalRCreateOrUpdatePropertiesOrSignalRProperties;
+	readonly sku?: ResourceSku;
+	readonly tags?: SignalRUpdateParametersTags;
 }
 export function listKeys(resource: ArmResource): SignalRKeys {
 	if (resource.apiVersion !== "2018-10-01") {
@@ -30,30 +30,30 @@ export function listKeys(resource: ArmResource): SignalRKeys {
 	throw new Error("not implemented");
 }
 export interface ResourceSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 }
 export interface SignalRCorsSettings {
-	readonly allowedOrigins?: string[] | undefined;
+	readonly allowedOrigins?: string[];
 }
 export interface SignalRCreateOrUpdatePropertiesOrSignalRProperties {
-	readonly cors?: SignalRCorsSettings | undefined;
-	readonly externalIP?: string | undefined;
-	readonly features?: SignalRFeature[] | undefined;
+	readonly cors?: SignalRCorsSettings;
+	readonly externalIP?: string;
+	readonly features?: SignalRFeature[];
 }
 export interface SignalRFeature {
 	readonly flag: "EnableConnectivityLogs" | "ServiceMode";
 }
 export interface SignalRFeatureProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SignalRKeys {
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface SignalRUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	signalR: signalR,

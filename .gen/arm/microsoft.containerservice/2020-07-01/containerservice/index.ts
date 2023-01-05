@@ -17,12 +17,12 @@ export interface managedClustersComponentOutputs {
 	readonly type: "Microsoft.ContainerService/managedClusters";
 }
 export interface managedClustersComponentInputs {
-	readonly identity?: ManagedClusterIdentity | undefined;
+	readonly identity?: ManagedClusterIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagedClusterProperties | undefined;
-	readonly sku?: ManagedClusterSKU | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ManagedClusterProperties;
+	readonly sku?: ManagedClusterSKU;
+	readonly tags?: ResourceTags;
 }
 export class managedClusters_agentPools
 	extends ArmResource<managedClusters_agentPoolsComponentInputs>
@@ -42,7 +42,7 @@ export interface managedClusters_agentPoolsComponentOutputs {
 }
 export interface managedClusters_agentPoolsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedClusterAgentPoolProfileProperties | undefined;
+	readonly properties?: ManagedClusterAgentPoolProfileProperties;
 }
 export class managedClusters_privateEndpointConnections
 	extends ArmResource<managedClusters_privateEndpointConnectionsComponentInputs>
@@ -68,7 +68,7 @@ export interface managedClusters_privateEndpointConnectionsComponentOutputs {
 }
 export interface managedClusters_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export function listClusterAdminCredential(resource: managedClusters): CredentialResults {
 	if (resource.apiVersion !== "2020-07-01") {
@@ -107,26 +107,26 @@ export function listCredential(resource: ArmResource): ManagedClusterAccessProfi
 	throw new Error("not implemented");
 }
 export interface AccessProfile {
-	readonly kubeConfig?: any | undefined;
+	readonly kubeConfig?: any;
 }
 export interface AgentPoolUpgradeSettings {
-	readonly maxSurge?: string | undefined;
+	readonly maxSurge?: string;
 }
 export interface ContainerServiceLinuxProfile {
 	readonly adminUsername: string;
 	readonly ssh: ContainerServiceSshConfiguration;
 }
 export interface ContainerServiceNetworkProfile {
-	readonly dnsServiceIP?: string | undefined;
-	readonly dockerBridgeCidr?: string | undefined;
-	readonly loadBalancerProfile?: ManagedClusterLoadBalancerProfile | undefined;
-	readonly loadBalancerSku?: ("basic" | "standard") | undefined;
-	readonly networkMode?: ("bridge" | "transparent") | undefined;
-	readonly networkPlugin?: ("azure" | "kubenet") | undefined;
-	readonly networkPolicy?: ("azure" | "calico") | undefined;
-	readonly outboundType?: ("loadBalancer" | "userDefinedRouting") | undefined;
-	readonly podCidr?: string | undefined;
-	readonly serviceCidr?: string | undefined;
+	readonly dnsServiceIP?: string;
+	readonly dockerBridgeCidr?: string;
+	readonly loadBalancerProfile?: ManagedClusterLoadBalancerProfile;
+	readonly loadBalancerSku?: "basic" | "standard";
+	readonly networkMode?: "bridge" | "transparent";
+	readonly networkPlugin?: "azure" | "kubenet";
+	readonly networkPolicy?: "azure" | "calico";
+	readonly outboundType?: "loadBalancer" | "userDefinedRouting";
+	readonly podCidr?: string;
+	readonly serviceCidr?: string;
 }
 export interface ContainerServiceSshConfiguration {
 	readonly publicKeys: ContainerServiceSshPublicKey[];
@@ -135,563 +135,557 @@ export interface ContainerServiceSshPublicKey {
 	readonly keyData: string;
 }
 export interface CredentialResult {
-	readonly name?: string | undefined;
-	readonly value?: any | undefined;
+	readonly name?: string;
+	readonly value?: any;
 }
 export interface CredentialResults {
-	readonly kubeconfigs?: CredentialResult[] | undefined;
+	readonly kubeconfigs?: CredentialResult[];
 }
 export interface ManagedClusterAADProfile {
-	readonly adminGroupObjectIDs?: string[] | undefined;
-	readonly clientAppID?: string | undefined;
-	readonly enableAzureRBAC?: boolean | undefined;
-	readonly managed?: boolean | undefined;
-	readonly serverAppID?: string | undefined;
-	readonly serverAppSecret?: string | undefined;
-	readonly tenantID?: string | undefined;
+	readonly adminGroupObjectIDs?: string[];
+	readonly clientAppID?: string;
+	readonly enableAzureRBAC?: boolean;
+	readonly managed?: boolean;
+	readonly serverAppID?: string;
+	readonly serverAppSecret?: string;
+	readonly tenantID?: string;
 }
 export interface ManagedClusterAccessProfile {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: AccessProfile | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: AccessProfile;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ManagedClusterAddonProfile {
-	readonly config?: ManagedClusterAddonProfileConfig | undefined;
+	readonly config?: ManagedClusterAddonProfileConfig;
 	readonly enabled: boolean;
-	readonly identity?: ManagedClusterAddonProfileIdentity | undefined;
+	readonly identity?: ManagedClusterAddonProfileIdentity;
 }
 export interface ManagedClusterAddonProfileConfig {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ManagedClusterAddonProfileIdentity {
-	readonly clientId?: string | undefined;
-	readonly objectId?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly clientId?: string;
+	readonly objectId?: string;
+	readonly resourceId?: string;
 }
 export interface ManagedClusterAgentPoolProfile {
-	readonly availabilityZones?: string[] | undefined;
-	readonly count?: number | undefined;
-	readonly enableAutoScaling?: boolean | undefined;
-	readonly enableNodePublicIP?: boolean | undefined;
-	readonly maxCount?: number | undefined;
-	readonly maxPods?: number | undefined;
-	readonly minCount?: number | undefined;
-	readonly mode?: ("System" | "User") | undefined;
+	readonly availabilityZones?: string[];
+	readonly count?: number;
+	readonly enableAutoScaling?: boolean;
+	readonly enableNodePublicIP?: boolean;
+	readonly maxCount?: number;
+	readonly maxPods?: number;
+	readonly minCount?: number;
+	readonly mode?: "System" | "User";
 	readonly name: string;
-	readonly nodeImageVersion?: string | undefined;
-	readonly nodeLabels?: ManagedClusterAgentPoolProfilePropertiesNodeLabels | undefined;
-	readonly nodeTaints?: string[] | undefined;
-	readonly orchestratorVersion?: string | undefined;
-	readonly osDiskSizeGB?: number | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly proximityPlacementGroupID?: string | undefined;
-	readonly scaleSetEvictionPolicy?: ("Deallocate" | "Delete") | undefined;
-	readonly scaleSetPriority?: ("Regular" | "Spot") | undefined;
-	readonly spotMaxPrice?: number | undefined;
-	readonly tags?: ManagedClusterAgentPoolProfilePropertiesTags | undefined;
-	readonly type?: ("AvailabilitySet" | "VirtualMachineScaleSets") | undefined;
-	readonly upgradeSettings?: AgentPoolUpgradeSettings | undefined;
+	readonly nodeImageVersion?: string;
+	readonly nodeLabels?: ManagedClusterAgentPoolProfilePropertiesNodeLabels;
+	readonly nodeTaints?: string[];
+	readonly orchestratorVersion?: string;
+	readonly osDiskSizeGB?: number;
+	readonly osType?: "Linux" | "Windows";
+	readonly provisioningState?: string;
+	readonly proximityPlacementGroupID?: string;
+	readonly scaleSetEvictionPolicy?: "Deallocate" | "Delete";
+	readonly scaleSetPriority?: "Regular" | "Spot";
+	readonly spotMaxPrice?: number;
+	readonly tags?: ManagedClusterAgentPoolProfilePropertiesTags;
+	readonly type?: "AvailabilitySet" | "VirtualMachineScaleSets";
+	readonly upgradeSettings?: AgentPoolUpgradeSettings;
 	readonly vmSize?:
-		| (
-				| "Standard_A1"
-				| "Standard_A10"
-				| "Standard_A11"
-				| "Standard_A1_v2"
-				| "Standard_A2"
-				| "Standard_A2_v2"
-				| "Standard_A2m_v2"
-				| "Standard_A3"
-				| "Standard_A4"
-				| "Standard_A4_v2"
-				| "Standard_A4m_v2"
-				| "Standard_A5"
-				| "Standard_A6"
-				| "Standard_A7"
-				| "Standard_A8"
-				| "Standard_A8_v2"
-				| "Standard_A8m_v2"
-				| "Standard_A9"
-				| "Standard_B2ms"
-				| "Standard_B2s"
-				| "Standard_B4ms"
-				| "Standard_B8ms"
-				| "Standard_D1"
-				| "Standard_D11"
-				| "Standard_D11_v2"
-				| "Standard_D11_v2_Promo"
-				| "Standard_D12"
-				| "Standard_D12_v2"
-				| "Standard_D12_v2_Promo"
-				| "Standard_D13"
-				| "Standard_D13_v2"
-				| "Standard_D13_v2_Promo"
-				| "Standard_D14"
-				| "Standard_D14_v2"
-				| "Standard_D14_v2_Promo"
-				| "Standard_D15_v2"
-				| "Standard_D16_v3"
-				| "Standard_D16s_v3"
-				| "Standard_D1_v2"
-				| "Standard_D2"
-				| "Standard_D2_v2"
-				| "Standard_D2_v2_Promo"
-				| "Standard_D2_v3"
-				| "Standard_D2s_v3"
-				| "Standard_D3"
-				| "Standard_D32_v3"
-				| "Standard_D32s_v3"
-				| "Standard_D3_v2"
-				| "Standard_D3_v2_Promo"
-				| "Standard_D4"
-				| "Standard_D4_v2"
-				| "Standard_D4_v2_Promo"
-				| "Standard_D4_v3"
-				| "Standard_D4s_v3"
-				| "Standard_D5_v2"
-				| "Standard_D5_v2_Promo"
-				| "Standard_D64_v3"
-				| "Standard_D64s_v3"
-				| "Standard_D8_v3"
-				| "Standard_D8s_v3"
-				| "Standard_DS1"
-				| "Standard_DS11"
-				| "Standard_DS11_v2"
-				| "Standard_DS11_v2_Promo"
-				| "Standard_DS12"
-				| "Standard_DS12_v2"
-				| "Standard_DS12_v2_Promo"
-				| "Standard_DS13"
-				| "Standard_DS13-2_v2"
-				| "Standard_DS13-4_v2"
-				| "Standard_DS13_v2"
-				| "Standard_DS13_v2_Promo"
-				| "Standard_DS14"
-				| "Standard_DS14-4_v2"
-				| "Standard_DS14-8_v2"
-				| "Standard_DS14_v2"
-				| "Standard_DS14_v2_Promo"
-				| "Standard_DS15_v2"
-				| "Standard_DS1_v2"
-				| "Standard_DS2"
-				| "Standard_DS2_v2"
-				| "Standard_DS2_v2_Promo"
-				| "Standard_DS3"
-				| "Standard_DS3_v2"
-				| "Standard_DS3_v2_Promo"
-				| "Standard_DS4"
-				| "Standard_DS4_v2"
-				| "Standard_DS4_v2_Promo"
-				| "Standard_DS5_v2"
-				| "Standard_DS5_v2_Promo"
-				| "Standard_E16_v3"
-				| "Standard_E16s_v3"
-				| "Standard_E2_v3"
-				| "Standard_E2s_v3"
-				| "Standard_E32-16s_v3"
-				| "Standard_E32-8s_v3"
-				| "Standard_E32_v3"
-				| "Standard_E32s_v3"
-				| "Standard_E4_v3"
-				| "Standard_E4s_v3"
-				| "Standard_E64-16s_v3"
-				| "Standard_E64-32s_v3"
-				| "Standard_E64_v3"
-				| "Standard_E64s_v3"
-				| "Standard_E8_v3"
-				| "Standard_E8s_v3"
-				| "Standard_F1"
-				| "Standard_F16"
-				| "Standard_F16s"
-				| "Standard_F16s_v2"
-				| "Standard_F1s"
-				| "Standard_F2"
-				| "Standard_F2s"
-				| "Standard_F2s_v2"
-				| "Standard_F32s_v2"
-				| "Standard_F4"
-				| "Standard_F4s"
-				| "Standard_F4s_v2"
-				| "Standard_F64s_v2"
-				| "Standard_F72s_v2"
-				| "Standard_F8"
-				| "Standard_F8s"
-				| "Standard_F8s_v2"
-				| "Standard_G1"
-				| "Standard_G2"
-				| "Standard_G3"
-				| "Standard_G4"
-				| "Standard_G5"
-				| "Standard_GS1"
-				| "Standard_GS2"
-				| "Standard_GS3"
-				| "Standard_GS4"
-				| "Standard_GS4-4"
-				| "Standard_GS4-8"
-				| "Standard_GS5"
-				| "Standard_GS5-16"
-				| "Standard_GS5-8"
-				| "Standard_H16"
-				| "Standard_H16m"
-				| "Standard_H16mr"
-				| "Standard_H16r"
-				| "Standard_H8"
-				| "Standard_H8m"
-				| "Standard_L16s"
-				| "Standard_L32s"
-				| "Standard_L4s"
-				| "Standard_L8s"
-				| "Standard_M128-32ms"
-				| "Standard_M128-64ms"
-				| "Standard_M128ms"
-				| "Standard_M128s"
-				| "Standard_M64-16ms"
-				| "Standard_M64-32ms"
-				| "Standard_M64ms"
-				| "Standard_M64s"
-				| "Standard_NC12"
-				| "Standard_NC12s_v2"
-				| "Standard_NC12s_v3"
-				| "Standard_NC24"
-				| "Standard_NC24r"
-				| "Standard_NC24rs_v2"
-				| "Standard_NC24rs_v3"
-				| "Standard_NC24s_v2"
-				| "Standard_NC24s_v3"
-				| "Standard_NC6"
-				| "Standard_NC6s_v2"
-				| "Standard_NC6s_v3"
-				| "Standard_ND12s"
-				| "Standard_ND24rs"
-				| "Standard_ND24s"
-				| "Standard_ND6s"
-				| "Standard_NV12"
-				| "Standard_NV24"
-				| "Standard_NV6"
-		  )
-		| undefined;
-	readonly vnetSubnetID?: string | undefined;
+		| "Standard_A1"
+		| "Standard_A10"
+		| "Standard_A11"
+		| "Standard_A1_v2"
+		| "Standard_A2"
+		| "Standard_A2_v2"
+		| "Standard_A2m_v2"
+		| "Standard_A3"
+		| "Standard_A4"
+		| "Standard_A4_v2"
+		| "Standard_A4m_v2"
+		| "Standard_A5"
+		| "Standard_A6"
+		| "Standard_A7"
+		| "Standard_A8"
+		| "Standard_A8_v2"
+		| "Standard_A8m_v2"
+		| "Standard_A9"
+		| "Standard_B2ms"
+		| "Standard_B2s"
+		| "Standard_B4ms"
+		| "Standard_B8ms"
+		| "Standard_D1"
+		| "Standard_D11"
+		| "Standard_D11_v2"
+		| "Standard_D11_v2_Promo"
+		| "Standard_D12"
+		| "Standard_D12_v2"
+		| "Standard_D12_v2_Promo"
+		| "Standard_D13"
+		| "Standard_D13_v2"
+		| "Standard_D13_v2_Promo"
+		| "Standard_D14"
+		| "Standard_D14_v2"
+		| "Standard_D14_v2_Promo"
+		| "Standard_D15_v2"
+		| "Standard_D16_v3"
+		| "Standard_D16s_v3"
+		| "Standard_D1_v2"
+		| "Standard_D2"
+		| "Standard_D2_v2"
+		| "Standard_D2_v2_Promo"
+		| "Standard_D2_v3"
+		| "Standard_D2s_v3"
+		| "Standard_D3"
+		| "Standard_D32_v3"
+		| "Standard_D32s_v3"
+		| "Standard_D3_v2"
+		| "Standard_D3_v2_Promo"
+		| "Standard_D4"
+		| "Standard_D4_v2"
+		| "Standard_D4_v2_Promo"
+		| "Standard_D4_v3"
+		| "Standard_D4s_v3"
+		| "Standard_D5_v2"
+		| "Standard_D5_v2_Promo"
+		| "Standard_D64_v3"
+		| "Standard_D64s_v3"
+		| "Standard_D8_v3"
+		| "Standard_D8s_v3"
+		| "Standard_DS1"
+		| "Standard_DS11"
+		| "Standard_DS11_v2"
+		| "Standard_DS11_v2_Promo"
+		| "Standard_DS12"
+		| "Standard_DS12_v2"
+		| "Standard_DS12_v2_Promo"
+		| "Standard_DS13"
+		| "Standard_DS13-2_v2"
+		| "Standard_DS13-4_v2"
+		| "Standard_DS13_v2"
+		| "Standard_DS13_v2_Promo"
+		| "Standard_DS14"
+		| "Standard_DS14-4_v2"
+		| "Standard_DS14-8_v2"
+		| "Standard_DS14_v2"
+		| "Standard_DS14_v2_Promo"
+		| "Standard_DS15_v2"
+		| "Standard_DS1_v2"
+		| "Standard_DS2"
+		| "Standard_DS2_v2"
+		| "Standard_DS2_v2_Promo"
+		| "Standard_DS3"
+		| "Standard_DS3_v2"
+		| "Standard_DS3_v2_Promo"
+		| "Standard_DS4"
+		| "Standard_DS4_v2"
+		| "Standard_DS4_v2_Promo"
+		| "Standard_DS5_v2"
+		| "Standard_DS5_v2_Promo"
+		| "Standard_E16_v3"
+		| "Standard_E16s_v3"
+		| "Standard_E2_v3"
+		| "Standard_E2s_v3"
+		| "Standard_E32-16s_v3"
+		| "Standard_E32-8s_v3"
+		| "Standard_E32_v3"
+		| "Standard_E32s_v3"
+		| "Standard_E4_v3"
+		| "Standard_E4s_v3"
+		| "Standard_E64-16s_v3"
+		| "Standard_E64-32s_v3"
+		| "Standard_E64_v3"
+		| "Standard_E64s_v3"
+		| "Standard_E8_v3"
+		| "Standard_E8s_v3"
+		| "Standard_F1"
+		| "Standard_F16"
+		| "Standard_F16s"
+		| "Standard_F16s_v2"
+		| "Standard_F1s"
+		| "Standard_F2"
+		| "Standard_F2s"
+		| "Standard_F2s_v2"
+		| "Standard_F32s_v2"
+		| "Standard_F4"
+		| "Standard_F4s"
+		| "Standard_F4s_v2"
+		| "Standard_F64s_v2"
+		| "Standard_F72s_v2"
+		| "Standard_F8"
+		| "Standard_F8s"
+		| "Standard_F8s_v2"
+		| "Standard_G1"
+		| "Standard_G2"
+		| "Standard_G3"
+		| "Standard_G4"
+		| "Standard_G5"
+		| "Standard_GS1"
+		| "Standard_GS2"
+		| "Standard_GS3"
+		| "Standard_GS4"
+		| "Standard_GS4-4"
+		| "Standard_GS4-8"
+		| "Standard_GS5"
+		| "Standard_GS5-16"
+		| "Standard_GS5-8"
+		| "Standard_H16"
+		| "Standard_H16m"
+		| "Standard_H16mr"
+		| "Standard_H16r"
+		| "Standard_H8"
+		| "Standard_H8m"
+		| "Standard_L16s"
+		| "Standard_L32s"
+		| "Standard_L4s"
+		| "Standard_L8s"
+		| "Standard_M128-32ms"
+		| "Standard_M128-64ms"
+		| "Standard_M128ms"
+		| "Standard_M128s"
+		| "Standard_M64-16ms"
+		| "Standard_M64-32ms"
+		| "Standard_M64ms"
+		| "Standard_M64s"
+		| "Standard_NC12"
+		| "Standard_NC12s_v2"
+		| "Standard_NC12s_v3"
+		| "Standard_NC24"
+		| "Standard_NC24r"
+		| "Standard_NC24rs_v2"
+		| "Standard_NC24rs_v3"
+		| "Standard_NC24s_v2"
+		| "Standard_NC24s_v3"
+		| "Standard_NC6"
+		| "Standard_NC6s_v2"
+		| "Standard_NC6s_v3"
+		| "Standard_ND12s"
+		| "Standard_ND24rs"
+		| "Standard_ND24s"
+		| "Standard_ND6s"
+		| "Standard_NV12"
+		| "Standard_NV24"
+		| "Standard_NV6";
+	readonly vnetSubnetID?: string;
 }
 export interface ManagedClusterAgentPoolProfileProperties {
-	readonly availabilityZones?: string[] | undefined;
-	readonly count?: number | undefined;
-	readonly enableAutoScaling?: boolean | undefined;
-	readonly enableNodePublicIP?: boolean | undefined;
-	readonly maxCount?: number | undefined;
-	readonly maxPods?: number | undefined;
-	readonly minCount?: number | undefined;
-	readonly mode?: ("System" | "User") | undefined;
-	readonly nodeImageVersion?: string | undefined;
-	readonly nodeLabels?: ManagedClusterAgentPoolProfilePropertiesNodeLabels | undefined;
-	readonly nodeTaints?: string[] | undefined;
-	readonly orchestratorVersion?: string | undefined;
-	readonly osDiskSizeGB?: number | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly proximityPlacementGroupID?: string | undefined;
-	readonly scaleSetEvictionPolicy?: ("Deallocate" | "Delete") | undefined;
-	readonly scaleSetPriority?: ("Regular" | "Spot") | undefined;
-	readonly spotMaxPrice?: number | undefined;
-	readonly tags?: ManagedClusterAgentPoolProfilePropertiesTags | undefined;
-	readonly type?: ("AvailabilitySet" | "VirtualMachineScaleSets") | undefined;
-	readonly upgradeSettings?: AgentPoolUpgradeSettings | undefined;
+	readonly availabilityZones?: string[];
+	readonly count?: number;
+	readonly enableAutoScaling?: boolean;
+	readonly enableNodePublicIP?: boolean;
+	readonly maxCount?: number;
+	readonly maxPods?: number;
+	readonly minCount?: number;
+	readonly mode?: "System" | "User";
+	readonly nodeImageVersion?: string;
+	readonly nodeLabels?: ManagedClusterAgentPoolProfilePropertiesNodeLabels;
+	readonly nodeTaints?: string[];
+	readonly orchestratorVersion?: string;
+	readonly osDiskSizeGB?: number;
+	readonly osType?: "Linux" | "Windows";
+	readonly provisioningState?: string;
+	readonly proximityPlacementGroupID?: string;
+	readonly scaleSetEvictionPolicy?: "Deallocate" | "Delete";
+	readonly scaleSetPriority?: "Regular" | "Spot";
+	readonly spotMaxPrice?: number;
+	readonly tags?: ManagedClusterAgentPoolProfilePropertiesTags;
+	readonly type?: "AvailabilitySet" | "VirtualMachineScaleSets";
+	readonly upgradeSettings?: AgentPoolUpgradeSettings;
 	readonly vmSize?:
-		| (
-				| "Standard_A1"
-				| "Standard_A10"
-				| "Standard_A11"
-				| "Standard_A1_v2"
-				| "Standard_A2"
-				| "Standard_A2_v2"
-				| "Standard_A2m_v2"
-				| "Standard_A3"
-				| "Standard_A4"
-				| "Standard_A4_v2"
-				| "Standard_A4m_v2"
-				| "Standard_A5"
-				| "Standard_A6"
-				| "Standard_A7"
-				| "Standard_A8"
-				| "Standard_A8_v2"
-				| "Standard_A8m_v2"
-				| "Standard_A9"
-				| "Standard_B2ms"
-				| "Standard_B2s"
-				| "Standard_B4ms"
-				| "Standard_B8ms"
-				| "Standard_D1"
-				| "Standard_D11"
-				| "Standard_D11_v2"
-				| "Standard_D11_v2_Promo"
-				| "Standard_D12"
-				| "Standard_D12_v2"
-				| "Standard_D12_v2_Promo"
-				| "Standard_D13"
-				| "Standard_D13_v2"
-				| "Standard_D13_v2_Promo"
-				| "Standard_D14"
-				| "Standard_D14_v2"
-				| "Standard_D14_v2_Promo"
-				| "Standard_D15_v2"
-				| "Standard_D16_v3"
-				| "Standard_D16s_v3"
-				| "Standard_D1_v2"
-				| "Standard_D2"
-				| "Standard_D2_v2"
-				| "Standard_D2_v2_Promo"
-				| "Standard_D2_v3"
-				| "Standard_D2s_v3"
-				| "Standard_D3"
-				| "Standard_D32_v3"
-				| "Standard_D32s_v3"
-				| "Standard_D3_v2"
-				| "Standard_D3_v2_Promo"
-				| "Standard_D4"
-				| "Standard_D4_v2"
-				| "Standard_D4_v2_Promo"
-				| "Standard_D4_v3"
-				| "Standard_D4s_v3"
-				| "Standard_D5_v2"
-				| "Standard_D5_v2_Promo"
-				| "Standard_D64_v3"
-				| "Standard_D64s_v3"
-				| "Standard_D8_v3"
-				| "Standard_D8s_v3"
-				| "Standard_DS1"
-				| "Standard_DS11"
-				| "Standard_DS11_v2"
-				| "Standard_DS11_v2_Promo"
-				| "Standard_DS12"
-				| "Standard_DS12_v2"
-				| "Standard_DS12_v2_Promo"
-				| "Standard_DS13"
-				| "Standard_DS13-2_v2"
-				| "Standard_DS13-4_v2"
-				| "Standard_DS13_v2"
-				| "Standard_DS13_v2_Promo"
-				| "Standard_DS14"
-				| "Standard_DS14-4_v2"
-				| "Standard_DS14-8_v2"
-				| "Standard_DS14_v2"
-				| "Standard_DS14_v2_Promo"
-				| "Standard_DS15_v2"
-				| "Standard_DS1_v2"
-				| "Standard_DS2"
-				| "Standard_DS2_v2"
-				| "Standard_DS2_v2_Promo"
-				| "Standard_DS3"
-				| "Standard_DS3_v2"
-				| "Standard_DS3_v2_Promo"
-				| "Standard_DS4"
-				| "Standard_DS4_v2"
-				| "Standard_DS4_v2_Promo"
-				| "Standard_DS5_v2"
-				| "Standard_DS5_v2_Promo"
-				| "Standard_E16_v3"
-				| "Standard_E16s_v3"
-				| "Standard_E2_v3"
-				| "Standard_E2s_v3"
-				| "Standard_E32-16s_v3"
-				| "Standard_E32-8s_v3"
-				| "Standard_E32_v3"
-				| "Standard_E32s_v3"
-				| "Standard_E4_v3"
-				| "Standard_E4s_v3"
-				| "Standard_E64-16s_v3"
-				| "Standard_E64-32s_v3"
-				| "Standard_E64_v3"
-				| "Standard_E64s_v3"
-				| "Standard_E8_v3"
-				| "Standard_E8s_v3"
-				| "Standard_F1"
-				| "Standard_F16"
-				| "Standard_F16s"
-				| "Standard_F16s_v2"
-				| "Standard_F1s"
-				| "Standard_F2"
-				| "Standard_F2s"
-				| "Standard_F2s_v2"
-				| "Standard_F32s_v2"
-				| "Standard_F4"
-				| "Standard_F4s"
-				| "Standard_F4s_v2"
-				| "Standard_F64s_v2"
-				| "Standard_F72s_v2"
-				| "Standard_F8"
-				| "Standard_F8s"
-				| "Standard_F8s_v2"
-				| "Standard_G1"
-				| "Standard_G2"
-				| "Standard_G3"
-				| "Standard_G4"
-				| "Standard_G5"
-				| "Standard_GS1"
-				| "Standard_GS2"
-				| "Standard_GS3"
-				| "Standard_GS4"
-				| "Standard_GS4-4"
-				| "Standard_GS4-8"
-				| "Standard_GS5"
-				| "Standard_GS5-16"
-				| "Standard_GS5-8"
-				| "Standard_H16"
-				| "Standard_H16m"
-				| "Standard_H16mr"
-				| "Standard_H16r"
-				| "Standard_H8"
-				| "Standard_H8m"
-				| "Standard_L16s"
-				| "Standard_L32s"
-				| "Standard_L4s"
-				| "Standard_L8s"
-				| "Standard_M128-32ms"
-				| "Standard_M128-64ms"
-				| "Standard_M128ms"
-				| "Standard_M128s"
-				| "Standard_M64-16ms"
-				| "Standard_M64-32ms"
-				| "Standard_M64ms"
-				| "Standard_M64s"
-				| "Standard_NC12"
-				| "Standard_NC12s_v2"
-				| "Standard_NC12s_v3"
-				| "Standard_NC24"
-				| "Standard_NC24r"
-				| "Standard_NC24rs_v2"
-				| "Standard_NC24rs_v3"
-				| "Standard_NC24s_v2"
-				| "Standard_NC24s_v3"
-				| "Standard_NC6"
-				| "Standard_NC6s_v2"
-				| "Standard_NC6s_v3"
-				| "Standard_ND12s"
-				| "Standard_ND24rs"
-				| "Standard_ND24s"
-				| "Standard_ND6s"
-				| "Standard_NV12"
-				| "Standard_NV24"
-				| "Standard_NV6"
-		  )
-		| undefined;
-	readonly vnetSubnetID?: string | undefined;
+		| "Standard_A1"
+		| "Standard_A10"
+		| "Standard_A11"
+		| "Standard_A1_v2"
+		| "Standard_A2"
+		| "Standard_A2_v2"
+		| "Standard_A2m_v2"
+		| "Standard_A3"
+		| "Standard_A4"
+		| "Standard_A4_v2"
+		| "Standard_A4m_v2"
+		| "Standard_A5"
+		| "Standard_A6"
+		| "Standard_A7"
+		| "Standard_A8"
+		| "Standard_A8_v2"
+		| "Standard_A8m_v2"
+		| "Standard_A9"
+		| "Standard_B2ms"
+		| "Standard_B2s"
+		| "Standard_B4ms"
+		| "Standard_B8ms"
+		| "Standard_D1"
+		| "Standard_D11"
+		| "Standard_D11_v2"
+		| "Standard_D11_v2_Promo"
+		| "Standard_D12"
+		| "Standard_D12_v2"
+		| "Standard_D12_v2_Promo"
+		| "Standard_D13"
+		| "Standard_D13_v2"
+		| "Standard_D13_v2_Promo"
+		| "Standard_D14"
+		| "Standard_D14_v2"
+		| "Standard_D14_v2_Promo"
+		| "Standard_D15_v2"
+		| "Standard_D16_v3"
+		| "Standard_D16s_v3"
+		| "Standard_D1_v2"
+		| "Standard_D2"
+		| "Standard_D2_v2"
+		| "Standard_D2_v2_Promo"
+		| "Standard_D2_v3"
+		| "Standard_D2s_v3"
+		| "Standard_D3"
+		| "Standard_D32_v3"
+		| "Standard_D32s_v3"
+		| "Standard_D3_v2"
+		| "Standard_D3_v2_Promo"
+		| "Standard_D4"
+		| "Standard_D4_v2"
+		| "Standard_D4_v2_Promo"
+		| "Standard_D4_v3"
+		| "Standard_D4s_v3"
+		| "Standard_D5_v2"
+		| "Standard_D5_v2_Promo"
+		| "Standard_D64_v3"
+		| "Standard_D64s_v3"
+		| "Standard_D8_v3"
+		| "Standard_D8s_v3"
+		| "Standard_DS1"
+		| "Standard_DS11"
+		| "Standard_DS11_v2"
+		| "Standard_DS11_v2_Promo"
+		| "Standard_DS12"
+		| "Standard_DS12_v2"
+		| "Standard_DS12_v2_Promo"
+		| "Standard_DS13"
+		| "Standard_DS13-2_v2"
+		| "Standard_DS13-4_v2"
+		| "Standard_DS13_v2"
+		| "Standard_DS13_v2_Promo"
+		| "Standard_DS14"
+		| "Standard_DS14-4_v2"
+		| "Standard_DS14-8_v2"
+		| "Standard_DS14_v2"
+		| "Standard_DS14_v2_Promo"
+		| "Standard_DS15_v2"
+		| "Standard_DS1_v2"
+		| "Standard_DS2"
+		| "Standard_DS2_v2"
+		| "Standard_DS2_v2_Promo"
+		| "Standard_DS3"
+		| "Standard_DS3_v2"
+		| "Standard_DS3_v2_Promo"
+		| "Standard_DS4"
+		| "Standard_DS4_v2"
+		| "Standard_DS4_v2_Promo"
+		| "Standard_DS5_v2"
+		| "Standard_DS5_v2_Promo"
+		| "Standard_E16_v3"
+		| "Standard_E16s_v3"
+		| "Standard_E2_v3"
+		| "Standard_E2s_v3"
+		| "Standard_E32-16s_v3"
+		| "Standard_E32-8s_v3"
+		| "Standard_E32_v3"
+		| "Standard_E32s_v3"
+		| "Standard_E4_v3"
+		| "Standard_E4s_v3"
+		| "Standard_E64-16s_v3"
+		| "Standard_E64-32s_v3"
+		| "Standard_E64_v3"
+		| "Standard_E64s_v3"
+		| "Standard_E8_v3"
+		| "Standard_E8s_v3"
+		| "Standard_F1"
+		| "Standard_F16"
+		| "Standard_F16s"
+		| "Standard_F16s_v2"
+		| "Standard_F1s"
+		| "Standard_F2"
+		| "Standard_F2s"
+		| "Standard_F2s_v2"
+		| "Standard_F32s_v2"
+		| "Standard_F4"
+		| "Standard_F4s"
+		| "Standard_F4s_v2"
+		| "Standard_F64s_v2"
+		| "Standard_F72s_v2"
+		| "Standard_F8"
+		| "Standard_F8s"
+		| "Standard_F8s_v2"
+		| "Standard_G1"
+		| "Standard_G2"
+		| "Standard_G3"
+		| "Standard_G4"
+		| "Standard_G5"
+		| "Standard_GS1"
+		| "Standard_GS2"
+		| "Standard_GS3"
+		| "Standard_GS4"
+		| "Standard_GS4-4"
+		| "Standard_GS4-8"
+		| "Standard_GS5"
+		| "Standard_GS5-16"
+		| "Standard_GS5-8"
+		| "Standard_H16"
+		| "Standard_H16m"
+		| "Standard_H16mr"
+		| "Standard_H16r"
+		| "Standard_H8"
+		| "Standard_H8m"
+		| "Standard_L16s"
+		| "Standard_L32s"
+		| "Standard_L4s"
+		| "Standard_L8s"
+		| "Standard_M128-32ms"
+		| "Standard_M128-64ms"
+		| "Standard_M128ms"
+		| "Standard_M128s"
+		| "Standard_M64-16ms"
+		| "Standard_M64-32ms"
+		| "Standard_M64ms"
+		| "Standard_M64s"
+		| "Standard_NC12"
+		| "Standard_NC12s_v2"
+		| "Standard_NC12s_v3"
+		| "Standard_NC24"
+		| "Standard_NC24r"
+		| "Standard_NC24rs_v2"
+		| "Standard_NC24rs_v3"
+		| "Standard_NC24s_v2"
+		| "Standard_NC24s_v3"
+		| "Standard_NC6"
+		| "Standard_NC6s_v2"
+		| "Standard_NC6s_v3"
+		| "Standard_ND12s"
+		| "Standard_ND24rs"
+		| "Standard_ND24s"
+		| "Standard_ND6s"
+		| "Standard_NV12"
+		| "Standard_NV24"
+		| "Standard_NV6";
+	readonly vnetSubnetID?: string;
 }
 export interface ManagedClusterAgentPoolProfilePropertiesNodeLabels {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ManagedClusterAgentPoolProfilePropertiesTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ManagedClusterAPIServerAccessProfile {
-	readonly authorizedIPRanges?: string[] | undefined;
-	readonly enablePrivateCluster?: boolean | undefined;
+	readonly authorizedIPRanges?: string[];
+	readonly enablePrivateCluster?: boolean;
 }
 export interface ManagedClusterIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
-	readonly userAssignedIdentities?: ManagedClusterIdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
+	readonly userAssignedIdentities?: ManagedClusterIdentityUserAssignedIdentities;
 }
 export interface ManagedClusterIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: ManagedClusterIdentityUserAssignedIdentitiesValue | undefined;
+	readonly [key: string]: ManagedClusterIdentityUserAssignedIdentitiesValue;
 }
 export interface ManagedClusterIdentityUserAssignedIdentitiesValue {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface ManagedClusterLoadBalancerProfile {
-	readonly allocatedOutboundPorts?: number | undefined;
-	readonly effectiveOutboundIPs?: ResourceReference[] | undefined;
-	readonly idleTimeoutInMinutes?: number | undefined;
-	readonly managedOutboundIPs?: ManagedClusterLoadBalancerProfileManagedOutboundIPs | undefined;
-	readonly outboundIPPrefixes?: ManagedClusterLoadBalancerProfileOutboundIPPrefixes | undefined;
-	readonly outboundIPs?: ManagedClusterLoadBalancerProfileOutboundIPs | undefined;
+	readonly allocatedOutboundPorts?: number;
+	readonly effectiveOutboundIPs?: ResourceReference[];
+	readonly idleTimeoutInMinutes?: number;
+	readonly managedOutboundIPs?: ManagedClusterLoadBalancerProfileManagedOutboundIPs;
+	readonly outboundIPPrefixes?: ManagedClusterLoadBalancerProfileOutboundIPPrefixes;
+	readonly outboundIPs?: ManagedClusterLoadBalancerProfileOutboundIPs;
 }
 export interface ManagedClusterLoadBalancerProfileManagedOutboundIPs {
-	readonly count?: number | undefined;
+	readonly count?: number;
 }
 export interface ManagedClusterLoadBalancerProfileOutboundIPPrefixes {
-	readonly publicIPPrefixes?: ResourceReference[] | undefined;
+	readonly publicIPPrefixes?: ResourceReference[];
 }
 export interface ManagedClusterLoadBalancerProfileOutboundIPs {
-	readonly publicIPs?: ResourceReference[] | undefined;
+	readonly publicIPs?: ResourceReference[];
 }
 export interface ManagedClusterProperties {
-	readonly aadProfile?: ManagedClusterAADProfile | undefined;
-	readonly addonProfiles?: ManagedClusterPropertiesAddonProfiles | undefined;
-	readonly agentPoolProfiles?: ManagedClusterAgentPoolProfile[] | undefined;
-	readonly apiServerAccessProfile?: ManagedClusterAPIServerAccessProfile | undefined;
-	readonly autoScalerProfile?: ManagedClusterPropertiesAutoScalerProfile | undefined;
-	readonly diskEncryptionSetID?: string | undefined;
-	readonly dnsPrefix?: string | undefined;
-	readonly enablePodSecurityPolicy?: boolean | undefined;
-	readonly enableRBAC?: boolean | undefined;
-	readonly fqdn?: string | undefined;
-	readonly identityProfile?: ManagedClusterPropertiesIdentityProfile | undefined;
-	readonly kubernetesVersion?: string | undefined;
-	readonly linuxProfile?: ContainerServiceLinuxProfile | undefined;
-	readonly maxAgentPools?: number | undefined;
-	readonly networkProfile?: ContainerServiceNetworkProfile | undefined;
-	readonly nodeResourceGroup?: string | undefined;
-	readonly privateFQDN?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly servicePrincipalProfile?: ManagedClusterServicePrincipalProfile | undefined;
-	readonly windowsProfile?: ManagedClusterWindowsProfile | undefined;
+	readonly aadProfile?: ManagedClusterAADProfile;
+	readonly addonProfiles?: ManagedClusterPropertiesAddonProfiles;
+	readonly agentPoolProfiles?: ManagedClusterAgentPoolProfile[];
+	readonly apiServerAccessProfile?: ManagedClusterAPIServerAccessProfile;
+	readonly autoScalerProfile?: ManagedClusterPropertiesAutoScalerProfile;
+	readonly diskEncryptionSetID?: string;
+	readonly dnsPrefix?: string;
+	readonly enablePodSecurityPolicy?: boolean;
+	readonly enableRBAC?: boolean;
+	readonly fqdn?: string;
+	readonly identityProfile?: ManagedClusterPropertiesIdentityProfile;
+	readonly kubernetesVersion?: string;
+	readonly linuxProfile?: ContainerServiceLinuxProfile;
+	readonly maxAgentPools?: number;
+	readonly networkProfile?: ContainerServiceNetworkProfile;
+	readonly nodeResourceGroup?: string;
+	readonly privateFQDN?: string;
+	readonly provisioningState?: string;
+	readonly servicePrincipalProfile?: ManagedClusterServicePrincipalProfile;
+	readonly windowsProfile?: ManagedClusterWindowsProfile;
 }
 export interface ManagedClusterPropertiesAddonProfiles {
-	readonly "[ key: string ]"?: ManagedClusterAddonProfile | undefined;
+	readonly [key: string]: ManagedClusterAddonProfile;
 }
 export interface ManagedClusterPropertiesAutoScalerProfile {
-	readonly "balance-similar-node-groups"?: string | undefined;
-	readonly "max-graceful-termination-sec"?: string | undefined;
-	readonly "scale-down-delay-after-add"?: string | undefined;
-	readonly "scale-down-delay-after-delete"?: string | undefined;
-	readonly "scale-down-delay-after-failure"?: string | undefined;
-	readonly "scale-down-unneeded-time"?: string | undefined;
-	readonly "scale-down-unready-time"?: string | undefined;
-	readonly "scale-down-utilization-threshold"?: string | undefined;
-	readonly "scan-interval"?: string | undefined;
+	readonly "balance-similar-node-groups"?: string;
+	readonly "max-graceful-termination-sec"?: string;
+	readonly "scale-down-delay-after-add"?: string;
+	readonly "scale-down-delay-after-delete"?: string;
+	readonly "scale-down-delay-after-failure"?: string;
+	readonly "scale-down-unneeded-time"?: string;
+	readonly "scale-down-unready-time"?: string;
+	readonly "scale-down-utilization-threshold"?: string;
+	readonly "scan-interval"?: string;
 }
 export interface ManagedClusterPropertiesIdentityProfile {
-	readonly "[ key: string ]"?: ManagedClusterPropertiesIdentityProfileValue | undefined;
+	readonly [key: string]: ManagedClusterPropertiesIdentityProfileValue;
 }
 export interface ManagedClusterPropertiesIdentityProfileValue {
-	readonly clientId?: string | undefined;
-	readonly objectId?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly clientId?: string;
+	readonly objectId?: string;
+	readonly resourceId?: string;
 }
 export interface ManagedClusterServicePrincipalProfile {
 	readonly clientId: string;
-	readonly secret?: string | undefined;
+	readonly secret?: string;
 }
 export interface ManagedClusterSKU {
-	readonly name?: "Basic" | undefined;
-	readonly tier?: ("Free" | "Paid") | undefined;
+	readonly name?: "Basic";
+	readonly tier?: "Free" | "Paid";
 }
 export interface ManagedClusterWindowsProfile {
-	readonly adminPassword?: string | undefined;
+	readonly adminPassword?: string;
 	readonly adminUsername: string;
-	readonly licenseType?: ("None" | "Windows_Server") | undefined;
+	readonly licenseType?: "None" | "Windows_Server";
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface ResourceReference {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	managedClusters: managedClusters,

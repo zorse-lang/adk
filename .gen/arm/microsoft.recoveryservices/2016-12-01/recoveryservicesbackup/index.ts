@@ -17,11 +17,11 @@ export interface vaults_backupEnginesComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/backupEngines";
 }
 export interface vaults_backupEnginesComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: BackupEngineBase | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: BackupEngineBase;
+	readonly tags?: ResourceTags;
 }
 export class vaults_backupFabrics_protectionContainers
 	extends ArmResource<vaults_backupFabrics_protectionContainersComponentInputs>
@@ -46,11 +46,11 @@ export interface vaults_backupFabrics_protectionContainersComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers";
 }
 export interface vaults_backupFabrics_protectionContainersComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProtectionContainer | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ProtectionContainer;
+	readonly tags?: ResourceTags;
 }
 export class vaults_backupFabrics_protectionContainers_operationResults
 	extends ArmResource<vaults_backupFabrics_protectionContainers_operationResultsComponentInputs>
@@ -75,11 +75,11 @@ export interface vaults_backupFabrics_protectionContainers_operationResultsCompo
 	readonly type: "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/operationResults";
 }
 export interface vaults_backupFabrics_protectionContainers_operationResultsComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProtectionContainer | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ProtectionContainer;
+	readonly tags?: ResourceTags;
 }
 export class vaults_backupstorageconfig
 	extends ArmResource<vaults_backupstorageconfigComponentInputs>
@@ -98,151 +98,142 @@ export interface vaults_backupstorageconfigComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/backupstorageconfig";
 }
 export interface vaults_backupstorageconfigComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: BackupResourceConfig | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: BackupResourceConfig;
+	readonly tags?: ResourceTags;
 }
 export interface AzureWorkloadContainerExtendedInfo {
-	readonly hostServerName?: string | undefined;
-	readonly inquiryInfo?: InquiryInfo | undefined;
-	readonly nodesList?: DistributedNodesInfo[] | undefined;
+	readonly hostServerName?: string;
+	readonly inquiryInfo?: InquiryInfo;
+	readonly nodesList?: DistributedNodesInfo[];
 }
 export interface BackupEngineBase {
-	readonly azureBackupAgentVersion?: string | undefined;
-	readonly backupEngineId?: string | undefined;
-	readonly backupEngineState?: string | undefined;
+	readonly azureBackupAgentVersion?: string;
+	readonly backupEngineId?: string;
+	readonly backupEngineState?: string;
 	readonly backupManagementType?:
-		| (
-				| "AzureBackupServer"
-				| "AzureIaasVM"
-				| "AzureSql"
-				| "AzureStorage"
-				| "AzureWorkload"
-				| "DPM"
-				| "DefaultBackup"
-				| "Invalid"
-				| "MAB"
-		  )
-		| undefined;
-	readonly canReRegister?: boolean | undefined;
-	readonly dpmVersion?: string | undefined;
-	readonly extendedInfo?: BackupEngineExtendedInfo | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly healthStatus?: string | undefined;
-	readonly isAzureBackupAgentUpgradeAvailable?: boolean | undefined;
-	readonly isDpmUpgradeAvailable?: boolean | undefined;
-	readonly registrationStatus?: string | undefined;
+		| "AzureBackupServer"
+		| "AzureIaasVM"
+		| "AzureSql"
+		| "AzureStorage"
+		| "AzureWorkload"
+		| "DPM"
+		| "DefaultBackup"
+		| "Invalid"
+		| "MAB";
+	readonly canReRegister?: boolean;
+	readonly dpmVersion?: string;
+	readonly extendedInfo?: BackupEngineExtendedInfo;
+	readonly friendlyName?: string;
+	readonly healthStatus?: string;
+	readonly isAzureBackupAgentUpgradeAvailable?: boolean;
+	readonly isDpmUpgradeAvailable?: boolean;
+	readonly registrationStatus?: string;
 }
 export interface BackupEngineExtendedInfo {
-	readonly availableDiskSpace?: number | undefined;
-	readonly azureProtectedInstances?: number | undefined;
-	readonly databaseName?: string | undefined;
-	readonly diskCount?: number | undefined;
-	readonly protectedItemsCount?: number | undefined;
-	readonly protectedServersCount?: number | undefined;
-	readonly refreshedAt?: string | undefined;
-	readonly usedDiskSpace?: number | undefined;
+	readonly availableDiskSpace?: number;
+	readonly azureProtectedInstances?: number;
+	readonly databaseName?: string;
+	readonly diskCount?: number;
+	readonly protectedItemsCount?: number;
+	readonly protectedServersCount?: number;
+	readonly refreshedAt?: string;
+	readonly usedDiskSpace?: number;
 }
 export interface BackupResourceConfig {
-	readonly storageModelType?: ("GeoRedundant" | "Invalid" | "LocallyRedundant") | undefined;
-	readonly storageType?: ("GeoRedundant" | "Invalid" | "LocallyRedundant") | undefined;
-	readonly storageTypeState?: ("Invalid" | "Locked" | "Unlocked") | undefined;
+	readonly storageModelType?: "GeoRedundant" | "Invalid" | "LocallyRedundant";
+	readonly storageType?: "GeoRedundant" | "Invalid" | "LocallyRedundant";
+	readonly storageTypeState?: "Invalid" | "Locked" | "Unlocked";
 }
 export interface ContainerIdentityInfo {
-	readonly aadTenantId?: string | undefined;
-	readonly audience?: string | undefined;
-	readonly servicePrincipalClientId?: string | undefined;
-	readonly uniqueName?: string | undefined;
+	readonly aadTenantId?: string;
+	readonly audience?: string;
+	readonly servicePrincipalClientId?: string;
+	readonly uniqueName?: string;
 }
 export interface DistributedNodesInfo {
-	readonly errorDetail?: ErrorDetail | undefined;
-	readonly nodeName?: string | undefined;
-	readonly status?: string | undefined;
+	readonly errorDetail?: ErrorDetail;
+	readonly nodeName?: string;
+	readonly status?: string;
 }
 export interface DPMContainerExtendedInfo {
-	readonly lastRefreshedAt?: string | undefined;
+	readonly lastRefreshedAt?: string;
 }
 export interface ErrorDetail {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
-	readonly recommendations?: string[] | undefined;
+	readonly code?: string;
+	readonly message?: string;
+	readonly recommendations?: string[];
 }
 export interface GenericContainerExtendedInfo {
-	readonly containerIdentityInfo?: ContainerIdentityInfo | undefined;
-	readonly rawCertData?: string | undefined;
-	readonly serviceEndpoints?: GenericContainerExtendedInfoServiceEndpoints | undefined;
+	readonly containerIdentityInfo?: ContainerIdentityInfo;
+	readonly rawCertData?: string;
+	readonly serviceEndpoints?: GenericContainerExtendedInfoServiceEndpoints;
 }
 export interface GenericContainerExtendedInfoServiceEndpoints {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface InquiryInfo {
-	readonly errorDetail?: ErrorDetail | undefined;
-	readonly inquiryDetails?: WorkloadInquiryDetails[] | undefined;
-	readonly status?: string | undefined;
+	readonly errorDetail?: ErrorDetail;
+	readonly inquiryDetails?: WorkloadInquiryDetails[];
+	readonly status?: string;
 }
 export interface InquiryValidation {
-	readonly additionalDetail?: string | undefined;
-	readonly errorDetail?: ErrorDetail | undefined;
-	readonly status?: string | undefined;
+	readonly additionalDetail?: string;
+	readonly errorDetail?: ErrorDetail;
+	readonly status?: string;
 }
 export interface MabContainerExtendedInfo {
-	readonly backupItems?: string[] | undefined;
+	readonly backupItems?: string[];
 	readonly backupItemType?:
-		| (
-				| "AzureFileShare"
-				| "AzureSqlDb"
-				| "Client"
-				| "Exchange"
-				| "FileFolder"
-				| "GenericDataSource"
-				| "Invalid"
-				| "SAPAseDatabase"
-				| "SAPHanaDatabase"
-				| "SQLDB"
-				| "SQLDataBase"
-				| "Sharepoint"
-				| "SystemState"
-				| "VM"
-				| "VMwareVM"
-		  )
-		| undefined;
-	readonly lastBackupStatus?: string | undefined;
-	readonly lastRefreshedAt?: string | undefined;
-	readonly policyName?: string | undefined;
+		| "AzureFileShare"
+		| "AzureSqlDb"
+		| "Client"
+		| "Exchange"
+		| "FileFolder"
+		| "GenericDataSource"
+		| "Invalid"
+		| "SAPAseDatabase"
+		| "SAPHanaDatabase"
+		| "SQLDB"
+		| "SQLDataBase"
+		| "Sharepoint"
+		| "SystemState"
+		| "VM"
+		| "VMwareVM";
+	readonly lastBackupStatus?: string;
+	readonly lastRefreshedAt?: string;
+	readonly policyName?: string;
 }
 export interface MABContainerHealthDetails {
-	readonly code?: number | undefined;
-	readonly message?: string | undefined;
-	readonly recommendations?: string[] | undefined;
-	readonly title?: string | undefined;
+	readonly code?: number;
+	readonly message?: string;
+	readonly recommendations?: string[];
+	readonly title?: string;
 }
 export interface ProtectionContainer {
 	readonly backupManagementType?:
-		| (
-				| "AzureBackupServer"
-				| "AzureIaasVM"
-				| "AzureSql"
-				| "AzureStorage"
-				| "AzureWorkload"
-				| "DPM"
-				| "DefaultBackup"
-				| "Invalid"
-				| "MAB"
-		  )
-		| undefined;
-	readonly friendlyName?: string | undefined;
-	readonly healthStatus?: string | undefined;
-	readonly registrationStatus?: string | undefined;
+		| "AzureBackupServer"
+		| "AzureIaasVM"
+		| "AzureSql"
+		| "AzureStorage"
+		| "AzureWorkload"
+		| "DPM"
+		| "DefaultBackup"
+		| "Invalid"
+		| "MAB";
+	readonly friendlyName?: string;
+	readonly healthStatus?: string;
+	readonly registrationStatus?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WorkloadInquiryDetails {
-	readonly inquiryValidation?: InquiryValidation | undefined;
-	readonly itemCount?: number | undefined;
-	readonly type?: string | undefined;
+	readonly inquiryValidation?: InquiryValidation;
+	readonly itemCount?: number;
+	readonly type?: string;
 }
 export default {
 	"vaults/backupEngines": vaults_backupEngines,

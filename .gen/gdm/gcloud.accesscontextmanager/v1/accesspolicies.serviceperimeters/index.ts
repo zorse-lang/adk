@@ -10,74 +10,73 @@ export class AccessPoliciesServicePerimeters
 }
 export interface AccessPoliciesServicePerimetersComponentOutputs {}
 export interface AccessPoliciesServicePerimetersComponentInputs {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly perimeterType?: string | undefined;
-	readonly spec?: ServicePerimeterConfig | undefined;
-	readonly status?: ServicePerimeterConfig | undefined;
-	readonly title?: string | undefined;
-	readonly useExplicitDryRunSpec?: boolean | undefined;
-	readonly type: string;
+	readonly perimeterType?: string;
+	readonly spec?: ServicePerimeterConfig;
+	readonly status?: ServicePerimeterConfig;
+	readonly title?: string;
+	readonly useExplicitDryRunSpec?: boolean;
 }
 export interface ApiOperation {
-	readonly methodSelectors?: MethodSelector[] | undefined;
-	readonly serviceName?: string | undefined;
+	readonly methodSelectors?: MethodSelector[];
+	readonly serviceName?: string;
 }
 export interface EgressFrom {
-	readonly identities?: string[] | undefined;
-	readonly identityType?: string | undefined;
+	readonly identities?: string[];
+	readonly identityType?: string;
 }
 export interface EgressPolicy {
-	readonly egressFrom?: EgressFrom | undefined;
-	readonly egressTo?: EgressTo | undefined;
+	readonly egressFrom?: EgressFrom;
+	readonly egressTo?: EgressTo;
 }
 export interface EgressTo {
-	readonly externalResources?: string[] | undefined;
-	readonly operations?: ApiOperation[] | undefined;
-	readonly resources?: string[] | undefined;
+	readonly externalResources?: string[];
+	readonly operations?: ApiOperation[];
+	readonly resources?: string[];
 }
 export interface IngressFrom {
-	readonly identities?: string[] | undefined;
-	readonly identityType?: string | undefined;
-	readonly sources?: IngressSource[] | undefined;
+	readonly identities?: string[];
+	readonly identityType?: string;
+	readonly sources?: IngressSource[];
 }
 export interface IngressPolicy {
-	readonly ingressFrom?: IngressFrom | undefined;
-	readonly ingressTo?: IngressTo | undefined;
+	readonly ingressFrom?: IngressFrom;
+	readonly ingressTo?: IngressTo;
 }
 export interface IngressSource {
-	readonly accessLevel?: string | undefined;
-	readonly resource?: string | undefined;
+	readonly accessLevel?: string;
+	readonly resource?: string;
 }
 export interface IngressTo {
-	readonly operations?: ApiOperation[] | undefined;
-	readonly resources?: string[] | undefined;
+	readonly operations?: ApiOperation[];
+	readonly resources?: string[];
 }
 export interface MethodSelector {
-	readonly method?: string | undefined;
-	readonly permission?: string | undefined;
+	readonly method?: string;
+	readonly permission?: string;
 }
 export interface ServicePerimeter {
-	readonly description?: string | undefined;
-	readonly name?: string | undefined;
-	readonly perimeterType?: string | undefined;
-	readonly spec?: ServicePerimeterConfig | undefined;
-	readonly status?: ServicePerimeterConfig | undefined;
-	readonly title?: string | undefined;
-	readonly useExplicitDryRunSpec?: boolean | undefined;
+	readonly description?: string;
+	readonly name?: string;
+	readonly perimeterType?: string;
+	readonly spec?: ServicePerimeterConfig;
+	readonly status?: ServicePerimeterConfig;
+	readonly title?: string;
+	readonly useExplicitDryRunSpec?: boolean;
 }
 export interface ServicePerimeterConfig {
-	readonly accessLevels?: string[] | undefined;
-	readonly egressPolicies?: EgressPolicy[] | undefined;
-	readonly ingressPolicies?: IngressPolicy[] | undefined;
-	readonly resources?: string[] | undefined;
-	readonly restrictedServices?: string[] | undefined;
-	readonly vpcAccessibleServices?: VpcAccessibleServices | undefined;
+	readonly accessLevels?: string[];
+	readonly egressPolicies?: EgressPolicy[];
+	readonly ingressPolicies?: IngressPolicy[];
+	readonly resources?: string[];
+	readonly restrictedServices?: string[];
+	readonly vpcAccessibleServices?: VpcAccessibleServices;
 }
 export interface VpcAccessibleServices {
-	readonly allowedServices?: string[] | undefined;
-	readonly enableRestriction?: boolean | undefined;
+	readonly allowedServices?: string[];
+	readonly enableRestriction?: boolean;
 }
 export default {
 	AccessPoliciesServicePerimeters: AccessPoliciesServicePerimeters,

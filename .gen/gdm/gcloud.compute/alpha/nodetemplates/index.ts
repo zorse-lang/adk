@@ -4,73 +4,72 @@ export class NodeTemplates extends GdmResource<NodeTemplatesComponentInputs> imp
 	constructor(entity: ADKEntity, options: NodeTemplatesComponentInputs) {
 		super(entity, options.name, "compute.alpha.NodeTemplates", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly statusMessage?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly status?: string;
+	public readonly statusMessage?: string;
 }
 export interface NodeTemplatesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly status?: string;
+	readonly statusMessage?: string;
 }
 export interface NodeTemplatesComponentInputs {
-	readonly accelerators?: AcceleratorConfig[] | undefined;
-	readonly cpuOvercommitType?: string | undefined;
-	readonly description?: string | undefined;
-	readonly disks?: LocalDisk[] | undefined;
+	readonly accelerators?: AcceleratorConfig[];
+	readonly cpuOvercommitType?: string;
+	readonly description?: string;
+	readonly disks?: LocalDisk[];
 	readonly name: string;
-	readonly nodeAffinityLabels?: { [P in string]: string } | undefined;
-	readonly nodeType?: string | undefined;
-	readonly nodeTypeFlexibility?: NodeTemplateNodeTypeFlexibility | undefined;
-	readonly requestId?: string | undefined;
-	readonly serverBinding?: ServerBinding | undefined;
-	readonly type: string;
+	readonly nodeAffinityLabels?: { [P in string]: string };
+	readonly nodeType?: string;
+	readonly nodeTypeFlexibility?: NodeTemplateNodeTypeFlexibility;
+	readonly requestId?: string;
+	readonly serverBinding?: ServerBinding;
 }
 export interface AcceleratorConfig {
-	readonly acceleratorCount?: number | undefined;
-	readonly acceleratorType?: string | undefined;
+	readonly acceleratorCount?: number;
+	readonly acceleratorType?: string;
 }
 export interface LocalDisk {
-	readonly diskCount?: number | undefined;
-	readonly diskSizeGb?: number | undefined;
-	readonly diskType?: string | undefined;
+	readonly diskCount?: number;
+	readonly diskSizeGb?: number;
+	readonly diskType?: string;
 }
 export interface NodeTemplate {
-	readonly accelerators?: AcceleratorConfig[] | undefined;
-	readonly cpuOvercommitType?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly disks?: LocalDisk[] | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly nodeAffinityLabels?: { [P in string]: string } | undefined;
-	readonly nodeType?: string | undefined;
-	readonly nodeTypeFlexibility?: NodeTemplateNodeTypeFlexibility | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly serverBinding?: ServerBinding | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
+	readonly accelerators?: AcceleratorConfig[];
+	readonly cpuOvercommitType?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly disks?: LocalDisk[];
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly nodeAffinityLabels?: { [P in string]: string };
+	readonly nodeType?: string;
+	readonly nodeTypeFlexibility?: NodeTemplateNodeTypeFlexibility;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly serverBinding?: ServerBinding;
+	readonly status?: string;
+	readonly statusMessage?: string;
 }
 export interface NodeTemplateNodeTypeFlexibility {
-	readonly cpus?: string | undefined;
-	readonly localSsd?: string | undefined;
-	readonly memory?: string | undefined;
+	readonly cpus?: string;
+	readonly localSsd?: string;
+	readonly memory?: string;
 }
 export interface ServerBinding {
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export default {
 	NodeTemplates: NodeTemplates,

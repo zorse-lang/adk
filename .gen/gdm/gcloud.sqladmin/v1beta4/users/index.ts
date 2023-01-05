@@ -7,22 +7,21 @@ export class Users extends GdmResource<UsersComponentInputs> implements UsersCom
 }
 export interface UsersComponentOutputs {}
 export interface UsersComponentInputs {
-	readonly etag?: string | undefined;
-	readonly host?: string | undefined;
+	readonly etag?: string;
+	readonly host?: string;
 	readonly instance: string;
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly password?: string | undefined;
-	readonly type: string;
+	readonly password?: string;
 }
 export interface User {
-	readonly etag?: string | undefined;
-	readonly host?: string | undefined;
-	readonly instance?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly password?: string | undefined;
-	readonly project?: string | undefined;
+	readonly etag?: string;
+	readonly host?: string;
+	readonly instance?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly password?: string;
+	readonly project?: string;
 }
 export default {
 	Users: Users,

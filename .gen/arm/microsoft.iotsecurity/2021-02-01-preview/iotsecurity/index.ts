@@ -18,7 +18,7 @@ export interface defenderSettingsComponentOutputs {
 }
 export interface defenderSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: DefenderSettingsProperties | undefined;
+	readonly properties?: DefenderSettingsProperties;
 }
 export class locations extends ArmResource<locationsComponentInputs> implements locationsComponentOutputs {
 	constructor(entity: ADKEntity, options: locationsComponentInputs) {
@@ -35,8 +35,8 @@ export interface locationsComponentOutputs {
 }
 export interface locationsComponentInputs {
 	readonly name: string;
-	readonly properties?: any | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: any;
+	readonly systemData?: SystemData;
 }
 export class locations_deviceGroups
 	extends ArmResource<locations_deviceGroupsComponentInputs>
@@ -56,8 +56,8 @@ export interface locations_deviceGroupsComponentOutputs {
 }
 export interface locations_deviceGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: any | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: any;
+	readonly systemData?: SystemData;
 }
 export class locations_deviceGroups_devices
 	extends ArmResource<locations_deviceGroups_devicesComponentInputs>
@@ -77,8 +77,8 @@ export interface locations_deviceGroups_devicesComponentOutputs {
 }
 export interface locations_deviceGroups_devicesComponentInputs {
 	readonly name: string;
-	readonly properties?: DeviceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DeviceProperties;
+	readonly systemData?: SystemData;
 }
 export class onPremiseSensors
 	extends ArmResource<onPremiseSensorsComponentInputs>
@@ -98,8 +98,8 @@ export interface onPremiseSensorsComponentOutputs {
 }
 export interface onPremiseSensorsComponentInputs {
 	readonly name: string;
-	readonly properties?: any | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: any;
+	readonly systemData?: SystemData;
 }
 export class sensors extends ArmResource<sensorsComponentInputs> implements sensorsComponentOutputs {
 	constructor(entity: ADKEntity, options: sensorsComponentInputs) {
@@ -116,8 +116,8 @@ export interface sensorsComponentOutputs {
 }
 export interface sensorsComponentInputs {
 	readonly name: string;
-	readonly properties?: SensorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SensorProperties;
+	readonly systemData?: SystemData;
 }
 export class sites extends ArmResource<sitesComponentInputs> implements sitesComponentOutputs {
 	constructor(entity: ADKEntity, options: sitesComponentInputs) {
@@ -134,12 +134,12 @@ export interface sitesComponentOutputs {
 }
 export interface sitesComponentInputs {
 	readonly name: string;
-	readonly properties?: SiteProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SiteProperties;
+	readonly systemData?: SystemData;
 }
 export interface DefenderSettingsProperties {
 	readonly deviceQuota: number;
-	readonly evaluationEndTime?: string | undefined;
+	readonly evaluationEndTime?: string;
 	readonly mdeIntegration: DefenderSettingsPropertiesMdeIntegration;
 	readonly onboardingKind: "Default" | "Evaluation" | "MigratedToAzure" | "Purchased";
 	readonly sentinelWorkspaceResourceIds: string[];
@@ -148,128 +148,128 @@ export interface DefenderSettingsPropertiesMdeIntegration {
 	readonly status: "Disabled" | "Enabled";
 }
 export interface DeviceProperties {
-	readonly additionalFields?: any | undefined;
-	readonly authorizedState?: ("Authorized" | "Unauthorized") | undefined;
-	readonly businessFunction?: string | undefined;
-	readonly cpes?: string[] | undefined;
-	readonly criticality?: ("High" | "Low" | "Normal") | undefined;
-	readonly deviceCategoryDisplayName?: string | undefined;
-	readonly deviceCategoryId?: number | undefined;
-	readonly deviceDataSource?: ("CorpSensor" | "Mde" | "MicroAgent" | "OtSensor" | "Other") | undefined;
-	readonly deviceName?: string | undefined;
-	readonly deviceStatus?: ("Active" | "Deleted" | "Inactive" | "Removed") | undefined;
-	readonly deviceSubTypeDisplayName?: string | undefined;
-	readonly deviceSubTypeId?: number | undefined;
-	readonly deviceTags?: string[] | undefined;
-	readonly deviceTypeDisplayName?: string | undefined;
-	readonly deviceTypeId?: number | undefined;
-	readonly firmwares?: Firmware[] | undefined;
-	readonly firstSeen?: string | undefined;
-	readonly hardware?: Hardware | undefined;
-	readonly lastProgrammingTime?: string | undefined;
-	readonly lastSeen?: string | undefined;
-	readonly lastUpdated?: string | undefined;
-	readonly mergedDevices?: MergedDevice[] | undefined;
-	readonly mergedToDeviceId?: string | undefined;
-	readonly nics?: Nic[] | undefined;
-	readonly onboardingStatus?: ("InsufficientInfo" | "NotOnboarded" | "NotSupported" | "Onboarded") | undefined;
-	readonly operatingSystem?: OperatingSystem | undefined;
-	readonly packages?: Package[] | undefined;
-	readonly parentDeviceId?: string | undefined;
-	readonly parentRackNumber?: number | undefined;
-	readonly parentSlotNumber?: number | undefined;
-	readonly profilingConfidence?: number | undefined;
-	readonly programmingState?: ("NotProgrammingDevice" | "ProgrammingDevice") | undefined;
-	readonly purdueLevel?: ("Enterprise" | "ProcessControl" | "Supervisory") | undefined;
-	readonly riskScore?: number | undefined;
-	readonly schemaVersion?: string | undefined;
-	readonly sensor?: Sensor | undefined;
-	readonly slots?: Slot[] | undefined;
+	readonly additionalFields?: any;
+	readonly authorizedState?: "Authorized" | "Unauthorized";
+	readonly businessFunction?: string;
+	readonly cpes?: string[];
+	readonly criticality?: "High" | "Low" | "Normal";
+	readonly deviceCategoryDisplayName?: string;
+	readonly deviceCategoryId?: number;
+	readonly deviceDataSource?: "CorpSensor" | "Mde" | "MicroAgent" | "OtSensor" | "Other";
+	readonly deviceName?: string;
+	readonly deviceStatus?: "Active" | "Deleted" | "Inactive" | "Removed";
+	readonly deviceSubTypeDisplayName?: string;
+	readonly deviceSubTypeId?: number;
+	readonly deviceTags?: string[];
+	readonly deviceTypeDisplayName?: string;
+	readonly deviceTypeId?: number;
+	readonly firmwares?: Firmware[];
+	readonly firstSeen?: string;
+	readonly hardware?: Hardware;
+	readonly lastProgrammingTime?: string;
+	readonly lastSeen?: string;
+	readonly lastUpdated?: string;
+	readonly mergedDevices?: MergedDevice[];
+	readonly mergedToDeviceId?: string;
+	readonly nics?: Nic[];
+	readonly onboardingStatus?: "InsufficientInfo" | "NotOnboarded" | "NotSupported" | "Onboarded";
+	readonly operatingSystem?: OperatingSystem;
+	readonly packages?: Package[];
+	readonly parentDeviceId?: string;
+	readonly parentRackNumber?: number;
+	readonly parentSlotNumber?: number;
+	readonly profilingConfidence?: number;
+	readonly programmingState?: "NotProgrammingDevice" | "ProgrammingDevice";
+	readonly purdueLevel?: "Enterprise" | "ProcessControl" | "Supervisory";
+	readonly riskScore?: number;
+	readonly schemaVersion?: string;
+	readonly sensor?: Sensor;
+	readonly slots?: Slot[];
 }
 export interface Firmware {
-	readonly additionalFields?: any | undefined;
-	readonly moduleAddress?: string | undefined;
-	readonly name?: string | undefined;
-	readonly serial?: string | undefined;
-	readonly vendor?: string | undefined;
-	readonly version?: string | undefined;
+	readonly additionalFields?: any;
+	readonly moduleAddress?: string;
+	readonly name?: string;
+	readonly serial?: string;
+	readonly vendor?: string;
+	readonly version?: string;
 }
 export interface Hardware {
-	readonly model?: string | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly vendor?: string | undefined;
+	readonly model?: string;
+	readonly serialNumber?: string;
+	readonly vendor?: string;
 }
 export interface MergedDevice {
-	readonly deviceDataSource?: ("CorpSensor" | "Mde" | "MicroAgent" | "OtSensor" | "Other") | undefined;
-	readonly id?: string | undefined;
-	readonly sensor?: Sensor | undefined;
+	readonly deviceDataSource?: "CorpSensor" | "Mde" | "MicroAgent" | "OtSensor" | "Other";
+	readonly id?: string;
+	readonly sensor?: Sensor;
 }
 export interface Nic {
-	readonly ipv4Address?: string | undefined;
-	readonly ipv6Address?: string | undefined;
-	readonly lastSeen?: string | undefined;
-	readonly macAddress?: string | undefined;
-	readonly macCertainty?: ("Certain" | "Guess") | undefined;
-	readonly networkAdapterVendor?: string | undefined;
-	readonly vlans?: string[] | undefined;
+	readonly ipv4Address?: string;
+	readonly ipv6Address?: string;
+	readonly lastSeen?: string;
+	readonly macAddress?: string;
+	readonly macCertainty?: "Certain" | "Guess";
+	readonly networkAdapterVendor?: string;
+	readonly vlans?: string[];
 }
 export interface OperatingSystem {
-	readonly architecture?: string | undefined;
-	readonly build?: string | undefined;
-	readonly distribution?: string | undefined;
-	readonly platform?: string | undefined;
-	readonly version?: string | undefined;
+	readonly architecture?: string;
+	readonly build?: string;
+	readonly distribution?: string;
+	readonly platform?: string;
+	readonly version?: string;
 }
 export interface Package {
-	readonly name?: string | undefined;
-	readonly version?: string | undefined;
+	readonly name?: string;
+	readonly version?: string;
 }
 export interface Sensor {
-	readonly name?: string | undefined;
-	readonly site?: string | undefined;
-	readonly type?: ("Enterprise" | "Ot") | undefined;
-	readonly zone?: string | undefined;
+	readonly name?: string;
+	readonly site?: string;
+	readonly type?: "Enterprise" | "Ot";
+	readonly zone?: string;
 }
 export interface SensorProperties {
-	readonly connectivityTime?: string | undefined;
-	readonly dynamicLearning?: boolean | undefined;
-	readonly learningMode?: boolean | undefined;
-	readonly sensorStatus?: ("Disconnected" | "Ok" | "Unavailable") | undefined;
-	readonly sensorType?: ("Enterprise" | "Ot") | undefined;
-	readonly sensorVersion?: string | undefined;
-	readonly tiAutomaticUpdates?: boolean | undefined;
-	readonly tiStatus?: ("Failed" | "InProgress" | "Ok" | "UpdateAvailable") | undefined;
-	readonly tiVersion?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly connectivityTime?: string;
+	readonly dynamicLearning?: boolean;
+	readonly learningMode?: boolean;
+	readonly sensorStatus?: "Disconnected" | "Ok" | "Unavailable";
+	readonly sensorType?: "Enterprise" | "Ot";
+	readonly sensorVersion?: string;
+	readonly tiAutomaticUpdates?: boolean;
+	readonly tiStatus?: "Failed" | "InProgress" | "Ok" | "UpdateAvailable";
+	readonly tiVersion?: string;
+	readonly zone?: string;
 }
 export interface SiteProperties {
 	readonly displayName: string;
-	readonly tags?: SitePropertiesTags | undefined;
+	readonly tags?: SitePropertiesTags;
 }
 export interface SitePropertiesTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Slot {
-	readonly additionalData?: any | undefined;
-	readonly cpes?: string[] | undefined;
-	readonly firmwareVersion?: string | undefined;
-	readonly hardwareRevision?: string | undefined;
-	readonly hardwareVendor?: string | undefined;
-	readonly model?: string | undefined;
-	readonly moduleVersion?: string | undefined;
-	readonly productCode?: string | undefined;
-	readonly rackNumber?: number | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly slotNumber?: number | undefined;
-	readonly slotType?: ("AnalogIO" | "CommAdapter" | "Cpu" | "DigitalIO" | "Generic" | "Hmi" | "Supply") | undefined;
+	readonly additionalData?: any;
+	readonly cpes?: string[];
+	readonly firmwareVersion?: string;
+	readonly hardwareRevision?: string;
+	readonly hardwareVendor?: string;
+	readonly model?: string;
+	readonly moduleVersion?: string;
+	readonly productCode?: string;
+	readonly rackNumber?: number;
+	readonly serialNumber?: string;
+	readonly slotNumber?: number;
+	readonly slotType?: "AnalogIO" | "CommAdapter" | "Cpu" | "DigitalIO" | "Generic" | "Hmi" | "Supply";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	defenderSettings: defenderSettings,

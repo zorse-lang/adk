@@ -11,7 +11,7 @@ export interface BackupClientsComponentOutputs {
 }
 export interface BackupClientsComponentInputs {
 	readonly InstanceIds: any | string[];
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class DbAgent extends RosResource<DbAgentComponentInputs> implements DbAgentComponentOutputs {
@@ -59,16 +59,16 @@ export interface DbPlanComponentInputs {
 	readonly HostUuid: any | string;
 	readonly SourceType: any | string;
 	readonly VaultId: any | string;
-	readonly ContinuousPlan?: (any | string) | undefined;
-	readonly CumulativePlan?: (any | string) | undefined;
-	readonly FullPlan?: (any | string) | undefined;
-	readonly IncPlan?: (any | string) | undefined;
-	readonly InstanceUuid?: (any | string) | undefined;
-	readonly LogPlan?: (any | string) | undefined;
-	readonly MaxRateLimit?: (any | number) | undefined;
-	readonly MaxRetrySeconds?: (any | number) | undefined;
-	readonly Options?: (any | string) | undefined;
-	readonly Source?: (Source | undefined) | undefined;
+	readonly ContinuousPlan?: any | string;
+	readonly CumulativePlan?: any | string;
+	readonly FullPlan?: any | string;
+	readonly IncPlan?: any | string;
+	readonly InstanceUuid?: any | string;
+	readonly LogPlan?: any | string;
+	readonly MaxRateLimit?: any | number;
+	readonly MaxRetrySeconds?: any | number;
+	readonly Options?: any | string;
+	readonly Source?: Source | undefined;
 	readonly LogicalId: string;
 }
 export class DbVault extends RosResource<DbVaultComponentInputs> implements DbVaultComponentOutputs {
@@ -84,8 +84,8 @@ export interface DbVaultComponentInputs {
 	readonly RetentionDays: any | number;
 	readonly VaultName: any | string;
 	readonly VaultRegionId: any | string;
-	readonly Description?: (any | string) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Description?: any | string;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class RestoreJob extends RosResource<RestoreJobComponentInputs> implements RestoreJobComponentOutputs {
@@ -114,18 +114,18 @@ export interface RestoreJobComponentInputs {
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface InstanceInfo {
-	readonly UserName?: (string | undefined) | undefined;
+	readonly UserName?: string | undefined;
 	readonly InstanceId: string;
 	readonly SourceType: string;
-	readonly Password?: (string | undefined) | undefined;
-	readonly AuthenticationType?: (string | undefined) | undefined;
+	readonly Password?: string | undefined;
+	readonly AuthenticationType?: string | undefined;
 }
 export interface Source {
-	readonly Entries?: (string[] | undefined) | undefined;
+	readonly Entries?: string[] | undefined;
 }
 export default {
 	BackupClients: BackupClients,

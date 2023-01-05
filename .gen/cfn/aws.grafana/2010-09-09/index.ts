@@ -24,43 +24,43 @@ export interface WorkspaceComponentOutputs {
 	readonly Status: string;
 }
 export interface WorkspaceComponentInputs {
-	readonly AccountAccessType?: (string | undefined) | undefined;
-	readonly AuthenticationProviders?: (string[] | undefined) | undefined;
-	readonly ClientToken?: (string | undefined) | undefined;
-	readonly DataSources?: (string[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly NotificationDestinations?: (string[] | undefined) | undefined;
-	readonly OrganizationalUnits?: (string[] | undefined) | undefined;
-	readonly OrganizationRoleName?: (string | undefined) | undefined;
-	readonly PermissionType?: (string | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly SamlConfiguration?: (SamlConfiguration | undefined) | undefined;
-	readonly StackSetName?: (string | undefined) | undefined;
+	readonly AccountAccessType?: string | undefined;
+	readonly AuthenticationProviders?: string[] | undefined;
+	readonly ClientToken?: string | undefined;
+	readonly DataSources?: string[] | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly NotificationDestinations?: string[] | undefined;
+	readonly OrganizationalUnits?: string[] | undefined;
+	readonly OrganizationRoleName?: string | undefined;
+	readonly PermissionType?: string | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly SamlConfiguration?: SamlConfiguration | undefined;
+	readonly StackSetName?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface AssertionAttributes {
-	readonly Email?: (string | undefined) | undefined;
-	readonly Groups?: (string | undefined) | undefined;
-	readonly Login?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Org?: (string | undefined) | undefined;
-	readonly Role?: (string | undefined) | undefined;
+	readonly Email?: string | undefined;
+	readonly Groups?: string | undefined;
+	readonly Login?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Org?: string | undefined;
+	readonly Role?: string | undefined;
 }
 export interface IdpMetadata {
-	readonly Url?: (string | undefined) | undefined;
-	readonly Xml?: (string | undefined) | undefined;
+	readonly Url?: string | undefined;
+	readonly Xml?: string | undefined;
 }
 export interface RoleValues {
-	readonly Admin?: (string[] | undefined) | undefined;
-	readonly Editor?: (string[] | undefined) | undefined;
+	readonly Admin?: string[] | undefined;
+	readonly Editor?: string[] | undefined;
 }
 export interface SamlConfiguration {
-	readonly AllowedOrganizations?: (string[] | undefined) | undefined;
-	readonly AssertionAttributes?: (AssertionAttributes | undefined) | undefined;
+	readonly AllowedOrganizations?: string[] | undefined;
+	readonly AssertionAttributes?: AssertionAttributes | undefined;
 	readonly IdpMetadata: IdpMetadata;
-	readonly LoginValidityDuration?: (number | undefined) | undefined;
-	readonly RoleValues?: (RoleValues | undefined) | undefined;
+	readonly LoginValidityDuration?: number | undefined;
+	readonly RoleValues?: RoleValues | undefined;
 }
 export default {
 	Workspace: Workspace,

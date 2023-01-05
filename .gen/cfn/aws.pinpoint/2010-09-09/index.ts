@@ -10,7 +10,7 @@ export interface ADMChannelComponentInputs {
 	readonly ApplicationId: string;
 	readonly ClientId: string;
 	readonly ClientSecret: string;
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class APNSChannel extends CfnResource<APNSChannelComponentInputs> implements APNSChannelComponentOutputs {
@@ -21,14 +21,14 @@ export class APNSChannel extends CfnResource<APNSChannelComponentInputs> impleme
 export interface APNSChannelComponentOutputs {}
 export interface APNSChannelComponentInputs {
 	readonly ApplicationId: string;
-	readonly BundleId?: (string | undefined) | undefined;
-	readonly Certificate?: (string | undefined) | undefined;
-	readonly DefaultAuthenticationMethod?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly PrivateKey?: (string | undefined) | undefined;
-	readonly TeamId?: (string | undefined) | undefined;
-	readonly TokenKey?: (string | undefined) | undefined;
-	readonly TokenKeyId?: (string | undefined) | undefined;
+	readonly BundleId?: string | undefined;
+	readonly Certificate?: string | undefined;
+	readonly DefaultAuthenticationMethod?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly PrivateKey?: string | undefined;
+	readonly TeamId?: string | undefined;
+	readonly TokenKey?: string | undefined;
+	readonly TokenKeyId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class APNSSandboxChannel
@@ -42,14 +42,14 @@ export class APNSSandboxChannel
 export interface APNSSandboxChannelComponentOutputs {}
 export interface APNSSandboxChannelComponentInputs {
 	readonly ApplicationId: string;
-	readonly BundleId?: (string | undefined) | undefined;
-	readonly Certificate?: (string | undefined) | undefined;
-	readonly DefaultAuthenticationMethod?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly PrivateKey?: (string | undefined) | undefined;
-	readonly TeamId?: (string | undefined) | undefined;
-	readonly TokenKey?: (string | undefined) | undefined;
-	readonly TokenKeyId?: (string | undefined) | undefined;
+	readonly BundleId?: string | undefined;
+	readonly Certificate?: string | undefined;
+	readonly DefaultAuthenticationMethod?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly PrivateKey?: string | undefined;
+	readonly TeamId?: string | undefined;
+	readonly TokenKey?: string | undefined;
+	readonly TokenKeyId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class APNSVoipChannel
@@ -63,14 +63,14 @@ export class APNSVoipChannel
 export interface APNSVoipChannelComponentOutputs {}
 export interface APNSVoipChannelComponentInputs {
 	readonly ApplicationId: string;
-	readonly BundleId?: (string | undefined) | undefined;
-	readonly Certificate?: (string | undefined) | undefined;
-	readonly DefaultAuthenticationMethod?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly PrivateKey?: (string | undefined) | undefined;
-	readonly TeamId?: (string | undefined) | undefined;
-	readonly TokenKey?: (string | undefined) | undefined;
-	readonly TokenKeyId?: (string | undefined) | undefined;
+	readonly BundleId?: string | undefined;
+	readonly Certificate?: string | undefined;
+	readonly DefaultAuthenticationMethod?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly PrivateKey?: string | undefined;
+	readonly TeamId?: string | undefined;
+	readonly TokenKey?: string | undefined;
+	readonly TokenKeyId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class APNSVoipSandboxChannel
@@ -84,14 +84,14 @@ export class APNSVoipSandboxChannel
 export interface APNSVoipSandboxChannelComponentOutputs {}
 export interface APNSVoipSandboxChannelComponentInputs {
 	readonly ApplicationId: string;
-	readonly BundleId?: (string | undefined) | undefined;
-	readonly Certificate?: (string | undefined) | undefined;
-	readonly DefaultAuthenticationMethod?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly PrivateKey?: (string | undefined) | undefined;
-	readonly TeamId?: (string | undefined) | undefined;
-	readonly TokenKey?: (string | undefined) | undefined;
-	readonly TokenKeyId?: (string | undefined) | undefined;
+	readonly BundleId?: string | undefined;
+	readonly Certificate?: string | undefined;
+	readonly DefaultAuthenticationMethod?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly PrivateKey?: string | undefined;
+	readonly TeamId?: string | undefined;
+	readonly TokenKey?: string | undefined;
+	readonly TokenKeyId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class App extends CfnResource<AppComponentInputs> implements AppComponentOutputs {
@@ -105,7 +105,7 @@ export interface AppComponentOutputs {
 }
 export interface AppComponentInputs {
 	readonly Name: string;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class ApplicationSettings
@@ -119,10 +119,10 @@ export class ApplicationSettings
 export interface ApplicationSettingsComponentOutputs {}
 export interface ApplicationSettingsComponentInputs {
 	readonly ApplicationId: string;
-	readonly CampaignHook?: (CampaignHook | undefined) | undefined;
-	readonly CloudWatchMetricsEnabled?: (boolean | undefined) | undefined;
-	readonly Limits?: (Limits | undefined) | undefined;
-	readonly QuietTime?: (QuietTime | undefined) | undefined;
+	readonly CampaignHook?: CampaignHook | undefined;
+	readonly CloudWatchMetricsEnabled?: boolean | undefined;
+	readonly Limits?: Limits | undefined;
+	readonly QuietTime?: QuietTime | undefined;
 	readonly LogicalId: string;
 }
 export class BaiduChannel extends CfnResource<BaiduChannelComponentInputs> implements BaiduChannelComponentOutputs {
@@ -135,7 +135,7 @@ export interface BaiduChannelComponentInputs {
 	readonly ApiKey: string;
 	readonly ApplicationId: string;
 	readonly SecretKey: string;
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class Campaign extends CfnResource<CampaignComponentInputs> implements CampaignComponentOutputs {
@@ -154,20 +154,20 @@ export interface CampaignComponentInputs {
 	readonly Name: string;
 	readonly Schedule: Schedule;
 	readonly SegmentId: string;
-	readonly AdditionalTreatments?: (WriteTreatmentResource[] | undefined) | undefined;
-	readonly CampaignHook?: (CampaignHook | undefined) | undefined;
-	readonly CustomDeliveryConfiguration?: (CustomDeliveryConfiguration | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly HoldoutPercent?: (number | undefined) | undefined;
-	readonly IsPaused?: (boolean | undefined) | undefined;
-	readonly Limits?: (Limits | undefined) | undefined;
-	readonly MessageConfiguration?: (MessageConfiguration | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly SegmentVersion?: (number | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly TemplateConfiguration?: (TemplateConfiguration | undefined) | undefined;
-	readonly TreatmentDescription?: (string | undefined) | undefined;
-	readonly TreatmentName?: (string | undefined) | undefined;
+	readonly AdditionalTreatments?: WriteTreatmentResource[] | undefined;
+	readonly CampaignHook?: CampaignHook | undefined;
+	readonly CustomDeliveryConfiguration?: CustomDeliveryConfiguration | undefined;
+	readonly Description?: string | undefined;
+	readonly HoldoutPercent?: number | undefined;
+	readonly IsPaused?: boolean | undefined;
+	readonly Limits?: Limits | undefined;
+	readonly MessageConfiguration?: MessageConfiguration | undefined;
+	readonly Priority?: number | undefined;
+	readonly SegmentVersion?: number | undefined;
+	readonly Tags?: any | undefined;
+	readonly TemplateConfiguration?: TemplateConfiguration | undefined;
+	readonly TreatmentDescription?: string | undefined;
+	readonly TreatmentName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EmailChannel extends CfnResource<EmailChannelComponentInputs> implements EmailChannelComponentOutputs {
@@ -180,9 +180,9 @@ export interface EmailChannelComponentInputs {
 	readonly ApplicationId: string;
 	readonly FromAddress: string;
 	readonly Identity: string;
-	readonly ConfigurationSet?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
+	readonly ConfigurationSet?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly RoleArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EmailTemplate extends CfnResource<EmailTemplateComponentInputs> implements EmailTemplateComponentOutputs {
@@ -197,11 +197,11 @@ export interface EmailTemplateComponentOutputs {
 export interface EmailTemplateComponentInputs {
 	readonly Subject: string;
 	readonly TemplateName: string;
-	readonly DefaultSubstitutions?: (string | undefined) | undefined;
-	readonly HtmlPart?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly TemplateDescription?: (string | undefined) | undefined;
-	readonly TextPart?: (string | undefined) | undefined;
+	readonly DefaultSubstitutions?: string | undefined;
+	readonly HtmlPart?: string | undefined;
+	readonly Tags?: any | undefined;
+	readonly TemplateDescription?: string | undefined;
+	readonly TextPart?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EventStream extends CfnResource<EventStreamComponentInputs> implements EventStreamComponentOutputs {
@@ -225,7 +225,7 @@ export interface GCMChannelComponentOutputs {}
 export interface GCMChannelComponentInputs {
 	readonly ApiKey: string;
 	readonly ApplicationId: string;
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class InAppTemplate extends CfnResource<InAppTemplateComponentInputs> implements InAppTemplateComponentOutputs {
@@ -239,11 +239,11 @@ export interface InAppTemplateComponentOutputs {
 }
 export interface InAppTemplateComponentInputs {
 	readonly TemplateName: string;
-	readonly Content?: (InAppMessageContent[] | undefined) | undefined;
-	readonly CustomConfig?: (any | undefined) | undefined;
-	readonly Layout?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly TemplateDescription?: (string | undefined) | undefined;
+	readonly Content?: InAppMessageContent[] | undefined;
+	readonly CustomConfig?: any | undefined;
+	readonly Layout?: string | undefined;
+	readonly Tags?: any | undefined;
+	readonly TemplateDescription?: string | undefined;
 	readonly LogicalId: string;
 }
 export class PushTemplate extends CfnResource<PushTemplateComponentInputs> implements PushTemplateComponentOutputs {
@@ -257,14 +257,14 @@ export interface PushTemplateComponentOutputs {
 }
 export interface PushTemplateComponentInputs {
 	readonly TemplateName: string;
-	readonly ADM?: (AndroidPushNotificationTemplate | undefined) | undefined;
-	readonly APNS?: (APNSPushNotificationTemplate | undefined) | undefined;
-	readonly Baidu?: (AndroidPushNotificationTemplate | undefined) | undefined;
-	readonly Default?: (DefaultPushNotificationTemplate | undefined) | undefined;
-	readonly DefaultSubstitutions?: (string | undefined) | undefined;
-	readonly GCM?: (AndroidPushNotificationTemplate | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly TemplateDescription?: (string | undefined) | undefined;
+	readonly ADM?: AndroidPushNotificationTemplate | undefined;
+	readonly APNS?: APNSPushNotificationTemplate | undefined;
+	readonly Baidu?: AndroidPushNotificationTemplate | undefined;
+	readonly Default?: DefaultPushNotificationTemplate | undefined;
+	readonly DefaultSubstitutions?: string | undefined;
+	readonly GCM?: AndroidPushNotificationTemplate | undefined;
+	readonly Tags?: any | undefined;
+	readonly TemplateDescription?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SMSChannel extends CfnResource<SMSChannelComponentInputs> implements SMSChannelComponentOutputs {
@@ -275,9 +275,9 @@ export class SMSChannel extends CfnResource<SMSChannelComponentInputs> implement
 export interface SMSChannelComponentOutputs {}
 export interface SMSChannelComponentInputs {
 	readonly ApplicationId: string;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly SenderId?: (string | undefined) | undefined;
-	readonly ShortCode?: (string | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly SenderId?: string | undefined;
+	readonly ShortCode?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Segment extends CfnResource<SegmentComponentInputs> implements SegmentComponentOutputs {
@@ -294,9 +294,9 @@ export interface SegmentComponentOutputs {
 export interface SegmentComponentInputs {
 	readonly ApplicationId: string;
 	readonly Name: string;
-	readonly Dimensions?: (SegmentDimensions | undefined) | undefined;
-	readonly SegmentGroups?: (SegmentGroups | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly Dimensions?: SegmentDimensions | undefined;
+	readonly SegmentGroups?: SegmentGroups | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class SmsTemplate extends CfnResource<SmsTemplateComponentInputs> implements SmsTemplateComponentOutputs {
@@ -311,9 +311,9 @@ export interface SmsTemplateComponentOutputs {
 export interface SmsTemplateComponentInputs {
 	readonly Body: string;
 	readonly TemplateName: string;
-	readonly DefaultSubstitutions?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly TemplateDescription?: (string | undefined) | undefined;
+	readonly DefaultSubstitutions?: string | undefined;
+	readonly Tags?: any | undefined;
+	readonly TemplateDescription?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VoiceChannel extends CfnResource<VoiceChannelComponentInputs> implements VoiceChannelComponentOutputs {
@@ -324,249 +324,249 @@ export class VoiceChannel extends CfnResource<VoiceChannelComponentInputs> imple
 export interface VoiceChannelComponentOutputs {}
 export interface VoiceChannelComponentInputs {
 	readonly ApplicationId: string;
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export interface CampaignHook {
-	readonly LambdaFunctionName?: (string | undefined) | undefined;
-	readonly Mode?: (string | undefined) | undefined;
-	readonly WebUrl?: (string | undefined) | undefined;
+	readonly LambdaFunctionName?: string | undefined;
+	readonly Mode?: string | undefined;
+	readonly WebUrl?: string | undefined;
 }
 export interface Limits {
-	readonly Daily?: (number | undefined) | undefined;
-	readonly MaximumDuration?: (number | undefined) | undefined;
-	readonly MessagesPerSecond?: (number | undefined) | undefined;
-	readonly Total?: (number | undefined) | undefined;
+	readonly Daily?: number | undefined;
+	readonly MaximumDuration?: number | undefined;
+	readonly MessagesPerSecond?: number | undefined;
+	readonly Total?: number | undefined;
 }
 export interface QuietTime {
 	readonly End: string;
 	readonly Start: string;
 }
 export interface AttributeDimension {
-	readonly AttributeType?: (string | undefined) | undefined;
-	readonly Values?: (string[] | undefined) | undefined;
+	readonly AttributeType?: string | undefined;
+	readonly Values?: string[] | undefined;
 }
 export interface CampaignCustomMessage {
-	readonly Data?: (string | undefined) | undefined;
+	readonly Data?: string | undefined;
 }
 export interface CampaignEmailMessage {
-	readonly Body?: (string | undefined) | undefined;
-	readonly FromAddress?: (string | undefined) | undefined;
-	readonly HtmlBody?: (string | undefined) | undefined;
-	readonly Title?: (string | undefined) | undefined;
+	readonly Body?: string | undefined;
+	readonly FromAddress?: string | undefined;
+	readonly HtmlBody?: string | undefined;
+	readonly Title?: string | undefined;
 }
 export interface CampaignEventFilter {
-	readonly Dimensions?: (EventDimensions | undefined) | undefined;
-	readonly FilterType?: (string | undefined) | undefined;
+	readonly Dimensions?: EventDimensions | undefined;
+	readonly FilterType?: string | undefined;
 }
 export interface CampaignInAppMessage {
-	readonly Content?: (InAppMessageContent[] | undefined) | undefined;
-	readonly CustomConfig?: (any | undefined) | undefined;
-	readonly Layout?: (string | undefined) | undefined;
+	readonly Content?: InAppMessageContent[] | undefined;
+	readonly CustomConfig?: any | undefined;
+	readonly Layout?: string | undefined;
 }
 export interface CampaignSmsMessage {
-	readonly Body?: (string | undefined) | undefined;
-	readonly EntityId?: (string | undefined) | undefined;
-	readonly MessageType?: (string | undefined) | undefined;
-	readonly OriginationNumber?: (string | undefined) | undefined;
-	readonly SenderId?: (string | undefined) | undefined;
-	readonly TemplateId?: (string | undefined) | undefined;
+	readonly Body?: string | undefined;
+	readonly EntityId?: string | undefined;
+	readonly MessageType?: string | undefined;
+	readonly OriginationNumber?: string | undefined;
+	readonly SenderId?: string | undefined;
+	readonly TemplateId?: string | undefined;
 }
 export interface CustomDeliveryConfiguration {
-	readonly DeliveryUri?: (string | undefined) | undefined;
-	readonly EndpointTypes?: (string[] | undefined) | undefined;
+	readonly DeliveryUri?: string | undefined;
+	readonly EndpointTypes?: string[] | undefined;
 }
 export interface DefaultButtonConfiguration {
-	readonly BackgroundColor?: (string | undefined) | undefined;
-	readonly BorderRadius?: (number | undefined) | undefined;
-	readonly ButtonAction?: (string | undefined) | undefined;
-	readonly Link?: (string | undefined) | undefined;
-	readonly Text?: (string | undefined) | undefined;
-	readonly TextColor?: (string | undefined) | undefined;
+	readonly BackgroundColor?: string | undefined;
+	readonly BorderRadius?: number | undefined;
+	readonly ButtonAction?: string | undefined;
+	readonly Link?: string | undefined;
+	readonly Text?: string | undefined;
+	readonly TextColor?: string | undefined;
 }
 export interface EventDimensions {
-	readonly Attributes?: (any | undefined) | undefined;
-	readonly EventType?: (SetDimension | undefined) | undefined;
-	readonly Metrics?: (any | undefined) | undefined;
+	readonly Attributes?: any | undefined;
+	readonly EventType?: SetDimension | undefined;
+	readonly Metrics?: any | undefined;
 }
 export interface InAppMessageBodyConfig {
-	readonly Alignment?: (string | undefined) | undefined;
-	readonly Body?: (string | undefined) | undefined;
-	readonly TextColor?: (string | undefined) | undefined;
+	readonly Alignment?: string | undefined;
+	readonly Body?: string | undefined;
+	readonly TextColor?: string | undefined;
 }
 export interface InAppMessageButton {
-	readonly Android?: (OverrideButtonConfiguration | undefined) | undefined;
-	readonly DefaultConfig?: (DefaultButtonConfiguration | undefined) | undefined;
-	readonly IOS?: (OverrideButtonConfiguration | undefined) | undefined;
-	readonly Web?: (OverrideButtonConfiguration | undefined) | undefined;
+	readonly Android?: OverrideButtonConfiguration | undefined;
+	readonly DefaultConfig?: DefaultButtonConfiguration | undefined;
+	readonly IOS?: OverrideButtonConfiguration | undefined;
+	readonly Web?: OverrideButtonConfiguration | undefined;
 }
 export interface InAppMessageContent {
-	readonly BackgroundColor?: (string | undefined) | undefined;
-	readonly BodyConfig?: (InAppMessageBodyConfig | undefined) | undefined;
-	readonly HeaderConfig?: (InAppMessageHeaderConfig | undefined) | undefined;
-	readonly ImageUrl?: (string | undefined) | undefined;
-	readonly PrimaryBtn?: (InAppMessageButton | undefined) | undefined;
-	readonly SecondaryBtn?: (InAppMessageButton | undefined) | undefined;
+	readonly BackgroundColor?: string | undefined;
+	readonly BodyConfig?: InAppMessageBodyConfig | undefined;
+	readonly HeaderConfig?: InAppMessageHeaderConfig | undefined;
+	readonly ImageUrl?: string | undefined;
+	readonly PrimaryBtn?: InAppMessageButton | undefined;
+	readonly SecondaryBtn?: InAppMessageButton | undefined;
 }
 export interface InAppMessageHeaderConfig {
-	readonly Alignment?: (string | undefined) | undefined;
-	readonly Header?: (string | undefined) | undefined;
-	readonly TextColor?: (string | undefined) | undefined;
+	readonly Alignment?: string | undefined;
+	readonly Header?: string | undefined;
+	readonly TextColor?: string | undefined;
 }
 export interface Message {
-	readonly Action?: (string | undefined) | undefined;
-	readonly Body?: (string | undefined) | undefined;
-	readonly ImageIconUrl?: (string | undefined) | undefined;
-	readonly ImageSmallIconUrl?: (string | undefined) | undefined;
-	readonly ImageUrl?: (string | undefined) | undefined;
-	readonly JsonBody?: (string | undefined) | undefined;
-	readonly MediaUrl?: (string | undefined) | undefined;
-	readonly RawContent?: (string | undefined) | undefined;
-	readonly SilentPush?: (boolean | undefined) | undefined;
-	readonly TimeToLive?: (number | undefined) | undefined;
-	readonly Title?: (string | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
+	readonly Action?: string | undefined;
+	readonly Body?: string | undefined;
+	readonly ImageIconUrl?: string | undefined;
+	readonly ImageSmallIconUrl?: string | undefined;
+	readonly ImageUrl?: string | undefined;
+	readonly JsonBody?: string | undefined;
+	readonly MediaUrl?: string | undefined;
+	readonly RawContent?: string | undefined;
+	readonly SilentPush?: boolean | undefined;
+	readonly TimeToLive?: number | undefined;
+	readonly Title?: string | undefined;
+	readonly Url?: string | undefined;
 }
 export interface MessageConfiguration {
-	readonly ADMMessage?: (Message | undefined) | undefined;
-	readonly APNSMessage?: (Message | undefined) | undefined;
-	readonly BaiduMessage?: (Message | undefined) | undefined;
-	readonly CustomMessage?: (CampaignCustomMessage | undefined) | undefined;
-	readonly DefaultMessage?: (Message | undefined) | undefined;
-	readonly EmailMessage?: (CampaignEmailMessage | undefined) | undefined;
-	readonly GCMMessage?: (Message | undefined) | undefined;
-	readonly InAppMessage?: (CampaignInAppMessage | undefined) | undefined;
-	readonly SMSMessage?: (CampaignSmsMessage | undefined) | undefined;
+	readonly ADMMessage?: Message | undefined;
+	readonly APNSMessage?: Message | undefined;
+	readonly BaiduMessage?: Message | undefined;
+	readonly CustomMessage?: CampaignCustomMessage | undefined;
+	readonly DefaultMessage?: Message | undefined;
+	readonly EmailMessage?: CampaignEmailMessage | undefined;
+	readonly GCMMessage?: Message | undefined;
+	readonly InAppMessage?: CampaignInAppMessage | undefined;
+	readonly SMSMessage?: CampaignSmsMessage | undefined;
 }
 export interface MetricDimension {
-	readonly ComparisonOperator?: (string | undefined) | undefined;
-	readonly Value?: (number | undefined) | undefined;
+	readonly ComparisonOperator?: string | undefined;
+	readonly Value?: number | undefined;
 }
 export interface OverrideButtonConfiguration {
-	readonly ButtonAction?: (string | undefined) | undefined;
-	readonly Link?: (string | undefined) | undefined;
+	readonly ButtonAction?: string | undefined;
+	readonly Link?: string | undefined;
 }
 export interface Schedule {
-	readonly EndTime?: (string | undefined) | undefined;
-	readonly EventFilter?: (CampaignEventFilter | undefined) | undefined;
-	readonly Frequency?: (string | undefined) | undefined;
-	readonly IsLocalTime?: (boolean | undefined) | undefined;
-	readonly QuietTime?: (QuietTime | undefined) | undefined;
-	readonly StartTime?: (string | undefined) | undefined;
-	readonly TimeZone?: (string | undefined) | undefined;
+	readonly EndTime?: string | undefined;
+	readonly EventFilter?: CampaignEventFilter | undefined;
+	readonly Frequency?: string | undefined;
+	readonly IsLocalTime?: boolean | undefined;
+	readonly QuietTime?: QuietTime | undefined;
+	readonly StartTime?: string | undefined;
+	readonly TimeZone?: string | undefined;
 }
 export interface SetDimension {
-	readonly DimensionType?: (string | undefined) | undefined;
-	readonly Values?: (string[] | undefined) | undefined;
+	readonly DimensionType?: string | undefined;
+	readonly Values?: string[] | undefined;
 }
 export interface Template {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Version?: string | undefined;
 }
 export interface TemplateConfiguration {
-	readonly EmailTemplate?: (Template | undefined) | undefined;
-	readonly PushTemplate?: (Template | undefined) | undefined;
-	readonly SMSTemplate?: (Template | undefined) | undefined;
-	readonly VoiceTemplate?: (Template | undefined) | undefined;
+	readonly EmailTemplate?: Template | undefined;
+	readonly PushTemplate?: Template | undefined;
+	readonly SMSTemplate?: Template | undefined;
+	readonly VoiceTemplate?: Template | undefined;
 }
 export interface WriteTreatmentResource {
-	readonly CustomDeliveryConfiguration?: (CustomDeliveryConfiguration | undefined) | undefined;
-	readonly MessageConfiguration?: (MessageConfiguration | undefined) | undefined;
-	readonly Schedule?: (Schedule | undefined) | undefined;
-	readonly SizePercent?: (number | undefined) | undefined;
-	readonly TemplateConfiguration?: (TemplateConfiguration | undefined) | undefined;
-	readonly TreatmentDescription?: (string | undefined) | undefined;
-	readonly TreatmentName?: (string | undefined) | undefined;
+	readonly CustomDeliveryConfiguration?: CustomDeliveryConfiguration | undefined;
+	readonly MessageConfiguration?: MessageConfiguration | undefined;
+	readonly Schedule?: Schedule | undefined;
+	readonly SizePercent?: number | undefined;
+	readonly TemplateConfiguration?: TemplateConfiguration | undefined;
+	readonly TreatmentDescription?: string | undefined;
+	readonly TreatmentName?: string | undefined;
 }
 export interface BodyConfig {
-	readonly Alignment?: (string | undefined) | undefined;
-	readonly Body?: (string | undefined) | undefined;
-	readonly TextColor?: (string | undefined) | undefined;
+	readonly Alignment?: string | undefined;
+	readonly Body?: string | undefined;
+	readonly TextColor?: string | undefined;
 }
 export interface ButtonConfig {
-	readonly Android?: (OverrideButtonConfiguration | undefined) | undefined;
-	readonly DefaultConfig?: (DefaultButtonConfiguration | undefined) | undefined;
-	readonly IOS?: (OverrideButtonConfiguration | undefined) | undefined;
-	readonly Web?: (OverrideButtonConfiguration | undefined) | undefined;
+	readonly Android?: OverrideButtonConfiguration | undefined;
+	readonly DefaultConfig?: DefaultButtonConfiguration | undefined;
+	readonly IOS?: OverrideButtonConfiguration | undefined;
+	readonly Web?: OverrideButtonConfiguration | undefined;
 }
 export interface HeaderConfig {
-	readonly Alignment?: (string | undefined) | undefined;
-	readonly Header?: (string | undefined) | undefined;
-	readonly TextColor?: (string | undefined) | undefined;
+	readonly Alignment?: string | undefined;
+	readonly Header?: string | undefined;
+	readonly TextColor?: string | undefined;
 }
 export interface APNSPushNotificationTemplate {
-	readonly Action?: (string | undefined) | undefined;
-	readonly Body?: (string | undefined) | undefined;
-	readonly MediaUrl?: (string | undefined) | undefined;
-	readonly Sound?: (string | undefined) | undefined;
-	readonly Title?: (string | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
+	readonly Action?: string | undefined;
+	readonly Body?: string | undefined;
+	readonly MediaUrl?: string | undefined;
+	readonly Sound?: string | undefined;
+	readonly Title?: string | undefined;
+	readonly Url?: string | undefined;
 }
 export interface AndroidPushNotificationTemplate {
-	readonly Action?: (string | undefined) | undefined;
-	readonly Body?: (string | undefined) | undefined;
-	readonly ImageIconUrl?: (string | undefined) | undefined;
-	readonly ImageUrl?: (string | undefined) | undefined;
-	readonly SmallImageIconUrl?: (string | undefined) | undefined;
-	readonly Sound?: (string | undefined) | undefined;
-	readonly Title?: (string | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
+	readonly Action?: string | undefined;
+	readonly Body?: string | undefined;
+	readonly ImageIconUrl?: string | undefined;
+	readonly ImageUrl?: string | undefined;
+	readonly SmallImageIconUrl?: string | undefined;
+	readonly Sound?: string | undefined;
+	readonly Title?: string | undefined;
+	readonly Url?: string | undefined;
 }
 export interface DefaultPushNotificationTemplate {
-	readonly Action?: (string | undefined) | undefined;
-	readonly Body?: (string | undefined) | undefined;
-	readonly Sound?: (string | undefined) | undefined;
-	readonly Title?: (string | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
+	readonly Action?: string | undefined;
+	readonly Body?: string | undefined;
+	readonly Sound?: string | undefined;
+	readonly Title?: string | undefined;
+	readonly Url?: string | undefined;
 }
 export interface Behavior {
-	readonly Recency?: (Recency | undefined) | undefined;
+	readonly Recency?: Recency | undefined;
 }
 export interface Coordinates {
 	readonly Latitude: number;
 	readonly Longitude: number;
 }
 export interface Demographic {
-	readonly AppVersion?: (SetDimension | undefined) | undefined;
-	readonly Channel?: (SetDimension | undefined) | undefined;
-	readonly DeviceType?: (SetDimension | undefined) | undefined;
-	readonly Make?: (SetDimension | undefined) | undefined;
-	readonly Model?: (SetDimension | undefined) | undefined;
-	readonly Platform?: (SetDimension | undefined) | undefined;
+	readonly AppVersion?: SetDimension | undefined;
+	readonly Channel?: SetDimension | undefined;
+	readonly DeviceType?: SetDimension | undefined;
+	readonly Make?: SetDimension | undefined;
+	readonly Model?: SetDimension | undefined;
+	readonly Platform?: SetDimension | undefined;
 }
 export interface GPSPoint {
 	readonly Coordinates: Coordinates;
 	readonly RangeInKilometers: number;
 }
 export interface Groups {
-	readonly Dimensions?: (SegmentDimensions[] | undefined) | undefined;
-	readonly SourceSegments?: (SourceSegments[] | undefined) | undefined;
-	readonly SourceType?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Dimensions?: SegmentDimensions[] | undefined;
+	readonly SourceSegments?: SourceSegments[] | undefined;
+	readonly SourceType?: string | undefined;
+	readonly Type?: string | undefined;
 }
 export interface Location {
-	readonly Country?: (SetDimension | undefined) | undefined;
-	readonly GPSPoint?: (GPSPoint | undefined) | undefined;
+	readonly Country?: SetDimension | undefined;
+	readonly GPSPoint?: GPSPoint | undefined;
 }
 export interface Recency {
 	readonly Duration: string;
 	readonly RecencyType: string;
 }
 export interface SegmentDimensions {
-	readonly Attributes?: (any | undefined) | undefined;
-	readonly Behavior?: (Behavior | undefined) | undefined;
-	readonly Demographic?: (Demographic | undefined) | undefined;
-	readonly Location?: (Location | undefined) | undefined;
-	readonly Metrics?: (any | undefined) | undefined;
-	readonly UserAttributes?: (any | undefined) | undefined;
+	readonly Attributes?: any | undefined;
+	readonly Behavior?: Behavior | undefined;
+	readonly Demographic?: Demographic | undefined;
+	readonly Location?: Location | undefined;
+	readonly Metrics?: any | undefined;
+	readonly UserAttributes?: any | undefined;
 }
 export interface SegmentGroups {
-	readonly Groups?: (Groups[] | undefined) | undefined;
-	readonly Include?: (string | undefined) | undefined;
+	readonly Groups?: Groups[] | undefined;
+	readonly Include?: string | undefined;
 }
 export interface SourceSegments {
 	readonly Id: string;
-	readonly Version?: (number | undefined) | undefined;
+	readonly Version?: number | undefined;
 }
 export default {
 	ADMChannel: ADMChannel,

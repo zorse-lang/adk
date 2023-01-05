@@ -11,8 +11,8 @@ export interface ApiCacheComponentInputs {
 	readonly ApiId: string;
 	readonly Ttl: number;
 	readonly Type: string;
-	readonly AtRestEncryptionEnabled?: (boolean | undefined) | undefined;
-	readonly TransitEncryptionEnabled?: (boolean | undefined) | undefined;
+	readonly AtRestEncryptionEnabled?: boolean | undefined;
+	readonly TransitEncryptionEnabled?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class ApiKey extends CfnResource<ApiKeyComponentInputs> implements ApiKeyComponentOutputs {
@@ -28,9 +28,9 @@ export interface ApiKeyComponentOutputs {
 }
 export interface ApiKeyComponentInputs {
 	readonly ApiId: string;
-	readonly ApiKeyId?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Expires?: (number | undefined) | undefined;
+	readonly ApiKeyId?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Expires?: number | undefined;
 	readonly LogicalId: string;
 }
 export class DataSource extends CfnResource<DataSourceComponentInputs> implements DataSourceComponentOutputs {
@@ -48,14 +48,14 @@ export interface DataSourceComponentInputs {
 	readonly ApiId: string;
 	readonly Name: string;
 	readonly Type: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DynamoDBConfig?: (DynamoDBConfig | undefined) | undefined;
-	readonly ElasticsearchConfig?: (ElasticsearchConfig | undefined) | undefined;
-	readonly HttpConfig?: (HttpConfig | undefined) | undefined;
-	readonly LambdaConfig?: (LambdaConfig | undefined) | undefined;
-	readonly OpenSearchServiceConfig?: (OpenSearchServiceConfig | undefined) | undefined;
-	readonly RelationalDatabaseConfig?: (RelationalDatabaseConfig | undefined) | undefined;
-	readonly ServiceRoleArn?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DynamoDBConfig?: DynamoDBConfig | undefined;
+	readonly ElasticsearchConfig?: ElasticsearchConfig | undefined;
+	readonly HttpConfig?: HttpConfig | undefined;
+	readonly LambdaConfig?: LambdaConfig | undefined;
+	readonly OpenSearchServiceConfig?: OpenSearchServiceConfig | undefined;
+	readonly RelationalDatabaseConfig?: RelationalDatabaseConfig | undefined;
+	readonly ServiceRoleArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DomainName extends CfnResource<DomainNameComponentInputs> implements DomainNameComponentOutputs {
@@ -74,7 +74,7 @@ export interface DomainNameComponentOutputs {
 export interface DomainNameComponentInputs {
 	readonly CertificateArn: string;
 	readonly DomainName: string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DomainNameApiAssociation
@@ -116,17 +116,17 @@ export interface FunctionConfigurationComponentInputs {
 	readonly ApiId: string;
 	readonly DataSourceName: string;
 	readonly Name: string;
-	readonly Code?: (string | undefined) | undefined;
-	readonly CodeS3Location?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly FunctionVersion?: (string | undefined) | undefined;
-	readonly MaxBatchSize?: (number | undefined) | undefined;
-	readonly RequestMappingTemplate?: (string | undefined) | undefined;
-	readonly RequestMappingTemplateS3Location?: (string | undefined) | undefined;
-	readonly ResponseMappingTemplate?: (string | undefined) | undefined;
-	readonly ResponseMappingTemplateS3Location?: (string | undefined) | undefined;
-	readonly Runtime?: (AppSyncRuntime | undefined) | undefined;
-	readonly SyncConfig?: (SyncConfig | undefined) | undefined;
+	readonly Code?: string | undefined;
+	readonly CodeS3Location?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly FunctionVersion?: string | undefined;
+	readonly MaxBatchSize?: number | undefined;
+	readonly RequestMappingTemplate?: string | undefined;
+	readonly RequestMappingTemplateS3Location?: string | undefined;
+	readonly ResponseMappingTemplate?: string | undefined;
+	readonly ResponseMappingTemplateS3Location?: string | undefined;
+	readonly Runtime?: AppSyncRuntime | undefined;
+	readonly SyncConfig?: SyncConfig | undefined;
 	readonly LogicalId: string;
 }
 export class GraphQLApi extends CfnResource<GraphQLApiComponentInputs> implements GraphQLApiComponentOutputs {
@@ -145,13 +145,13 @@ export interface GraphQLApiComponentOutputs {
 export interface GraphQLApiComponentInputs {
 	readonly AuthenticationType: string;
 	readonly Name: string;
-	readonly AdditionalAuthenticationProviders?: (AdditionalAuthenticationProvider[] | undefined) | undefined;
-	readonly LambdaAuthorizerConfig?: (LambdaAuthorizerConfig | undefined) | undefined;
-	readonly LogConfig?: (LogConfig | undefined) | undefined;
-	readonly OpenIDConnectConfig?: (OpenIDConnectConfig | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly UserPoolConfig?: (UserPoolConfig | undefined) | undefined;
-	readonly XrayEnabled?: (boolean | undefined) | undefined;
+	readonly AdditionalAuthenticationProviders?: AdditionalAuthenticationProvider[] | undefined;
+	readonly LambdaAuthorizerConfig?: LambdaAuthorizerConfig | undefined;
+	readonly LogConfig?: LogConfig | undefined;
+	readonly OpenIDConnectConfig?: OpenIDConnectConfig | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly UserPoolConfig?: UserPoolConfig | undefined;
+	readonly XrayEnabled?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class GraphQLSchema extends CfnResource<GraphQLSchemaComponentInputs> implements GraphQLSchemaComponentOutputs {
@@ -162,8 +162,8 @@ export class GraphQLSchema extends CfnResource<GraphQLSchemaComponentInputs> imp
 export interface GraphQLSchemaComponentOutputs {}
 export interface GraphQLSchemaComponentInputs {
 	readonly ApiId: string;
-	readonly Definition?: (string | undefined) | undefined;
-	readonly DefinitionS3Location?: (string | undefined) | undefined;
+	readonly Definition?: string | undefined;
+	readonly DefinitionS3Location?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Resolver extends CfnResource<ResolverComponentInputs> implements ResolverComponentOutputs {
@@ -183,28 +183,28 @@ export interface ResolverComponentInputs {
 	readonly ApiId: string;
 	readonly FieldName: string;
 	readonly TypeName: string;
-	readonly CachingConfig?: (CachingConfig | undefined) | undefined;
-	readonly Code?: (string | undefined) | undefined;
-	readonly CodeS3Location?: (string | undefined) | undefined;
-	readonly DataSourceName?: (string | undefined) | undefined;
-	readonly Kind?: (string | undefined) | undefined;
-	readonly MaxBatchSize?: (number | undefined) | undefined;
-	readonly PipelineConfig?: (PipelineConfig | undefined) | undefined;
-	readonly RequestMappingTemplate?: (string | undefined) | undefined;
-	readonly RequestMappingTemplateS3Location?: (string | undefined) | undefined;
-	readonly ResponseMappingTemplate?: (string | undefined) | undefined;
-	readonly ResponseMappingTemplateS3Location?: (string | undefined) | undefined;
-	readonly Runtime?: (AppSyncRuntime | undefined) | undefined;
-	readonly SyncConfig?: (SyncConfig | undefined) | undefined;
+	readonly CachingConfig?: CachingConfig | undefined;
+	readonly Code?: string | undefined;
+	readonly CodeS3Location?: string | undefined;
+	readonly DataSourceName?: string | undefined;
+	readonly Kind?: string | undefined;
+	readonly MaxBatchSize?: number | undefined;
+	readonly PipelineConfig?: PipelineConfig | undefined;
+	readonly RequestMappingTemplate?: string | undefined;
+	readonly RequestMappingTemplateS3Location?: string | undefined;
+	readonly ResponseMappingTemplate?: string | undefined;
+	readonly ResponseMappingTemplateS3Location?: string | undefined;
+	readonly Runtime?: AppSyncRuntime | undefined;
+	readonly SyncConfig?: SyncConfig | undefined;
 	readonly LogicalId: string;
 }
 export interface AuthorizationConfig {
 	readonly AuthorizationType: string;
-	readonly AwsIamConfig?: (AwsIamConfig | undefined) | undefined;
+	readonly AwsIamConfig?: AwsIamConfig | undefined;
 }
 export interface AwsIamConfig {
-	readonly SigningRegion?: (string | undefined) | undefined;
-	readonly SigningServiceName?: (string | undefined) | undefined;
+	readonly SigningRegion?: string | undefined;
+	readonly SigningServiceName?: string | undefined;
 }
 export interface DeltaSyncConfig {
 	readonly BaseTableTTL: string;
@@ -213,17 +213,17 @@ export interface DeltaSyncConfig {
 }
 export interface DynamoDBConfig {
 	readonly AwsRegion: string;
-	readonly DeltaSyncConfig?: (DeltaSyncConfig | undefined) | undefined;
+	readonly DeltaSyncConfig?: DeltaSyncConfig | undefined;
 	readonly TableName: string;
-	readonly UseCallerCredentials?: (boolean | undefined) | undefined;
-	readonly Versioned?: (boolean | undefined) | undefined;
+	readonly UseCallerCredentials?: boolean | undefined;
+	readonly Versioned?: boolean | undefined;
 }
 export interface ElasticsearchConfig {
 	readonly AwsRegion: string;
 	readonly Endpoint: string;
 }
 export interface HttpConfig {
-	readonly AuthorizationConfig?: (AuthorizationConfig | undefined) | undefined;
+	readonly AuthorizationConfig?: AuthorizationConfig | undefined;
 	readonly Endpoint: string;
 }
 export interface LambdaConfig {
@@ -236,12 +236,12 @@ export interface OpenSearchServiceConfig {
 export interface RdsHttpEndpointConfig {
 	readonly AwsRegion: string;
 	readonly AwsSecretStoreArn: string;
-	readonly DatabaseName?: (string | undefined) | undefined;
+	readonly DatabaseName?: string | undefined;
 	readonly DbClusterIdentifier: string;
-	readonly Schema?: (string | undefined) | undefined;
+	readonly Schema?: string | undefined;
 }
 export interface RelationalDatabaseConfig {
-	readonly RdsHttpEndpointConfig?: (RdsHttpEndpointConfig | undefined) | undefined;
+	readonly RdsHttpEndpointConfig?: RdsHttpEndpointConfig | undefined;
 	readonly RelationalDatabaseSourceType: string;
 }
 export interface AppSyncRuntime {
@@ -249,52 +249,52 @@ export interface AppSyncRuntime {
 	readonly RuntimeVersion: string;
 }
 export interface LambdaConflictHandlerConfig {
-	readonly LambdaConflictHandlerArn?: (string | undefined) | undefined;
+	readonly LambdaConflictHandlerArn?: string | undefined;
 }
 export interface SyncConfig {
 	readonly ConflictDetection: string;
-	readonly ConflictHandler?: (string | undefined) | undefined;
-	readonly LambdaConflictHandlerConfig?: (LambdaConflictHandlerConfig | undefined) | undefined;
+	readonly ConflictHandler?: string | undefined;
+	readonly LambdaConflictHandlerConfig?: LambdaConflictHandlerConfig | undefined;
 }
 export interface AdditionalAuthenticationProvider {
 	readonly AuthenticationType: string;
-	readonly LambdaAuthorizerConfig?: (LambdaAuthorizerConfig | undefined) | undefined;
-	readonly OpenIDConnectConfig?: (OpenIDConnectConfig | undefined) | undefined;
-	readonly UserPoolConfig?: (CognitoUserPoolConfig | undefined) | undefined;
+	readonly LambdaAuthorizerConfig?: LambdaAuthorizerConfig | undefined;
+	readonly OpenIDConnectConfig?: OpenIDConnectConfig | undefined;
+	readonly UserPoolConfig?: CognitoUserPoolConfig | undefined;
 }
 export interface CognitoUserPoolConfig {
-	readonly AppIdClientRegex?: (string | undefined) | undefined;
-	readonly AwsRegion?: (string | undefined) | undefined;
-	readonly UserPoolId?: (string | undefined) | undefined;
+	readonly AppIdClientRegex?: string | undefined;
+	readonly AwsRegion?: string | undefined;
+	readonly UserPoolId?: string | undefined;
 }
 export interface LambdaAuthorizerConfig {
-	readonly AuthorizerResultTtlInSeconds?: (number | undefined) | undefined;
-	readonly AuthorizerUri?: (string | undefined) | undefined;
-	readonly IdentityValidationExpression?: (string | undefined) | undefined;
+	readonly AuthorizerResultTtlInSeconds?: number | undefined;
+	readonly AuthorizerUri?: string | undefined;
+	readonly IdentityValidationExpression?: string | undefined;
 }
 export interface LogConfig {
-	readonly CloudWatchLogsRoleArn?: (string | undefined) | undefined;
-	readonly ExcludeVerboseContent?: (boolean | undefined) | undefined;
-	readonly FieldLogLevel?: (string | undefined) | undefined;
+	readonly CloudWatchLogsRoleArn?: string | undefined;
+	readonly ExcludeVerboseContent?: boolean | undefined;
+	readonly FieldLogLevel?: string | undefined;
 }
 export interface OpenIDConnectConfig {
-	readonly AuthTTL?: (number | undefined) | undefined;
-	readonly ClientId?: (string | undefined) | undefined;
-	readonly IatTTL?: (number | undefined) | undefined;
-	readonly Issuer?: (string | undefined) | undefined;
+	readonly AuthTTL?: number | undefined;
+	readonly ClientId?: string | undefined;
+	readonly IatTTL?: number | undefined;
+	readonly Issuer?: string | undefined;
 }
 export interface UserPoolConfig {
-	readonly AppIdClientRegex?: (string | undefined) | undefined;
-	readonly AwsRegion?: (string | undefined) | undefined;
-	readonly DefaultAction?: (string | undefined) | undefined;
-	readonly UserPoolId?: (string | undefined) | undefined;
+	readonly AppIdClientRegex?: string | undefined;
+	readonly AwsRegion?: string | undefined;
+	readonly DefaultAction?: string | undefined;
+	readonly UserPoolId?: string | undefined;
 }
 export interface CachingConfig {
-	readonly CachingKeys?: (string[] | undefined) | undefined;
+	readonly CachingKeys?: string[] | undefined;
 	readonly Ttl: number;
 }
 export interface PipelineConfig {
-	readonly Functions?: (string[] | undefined) | undefined;
+	readonly Functions?: string[] | undefined;
 }
 export default {
 	ApiCache: ApiCache,

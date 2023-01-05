@@ -13,8 +13,8 @@ export interface HttpNamespaceComponentOutputs {
 }
 export interface HttpNamespaceComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Instance extends CfnResource<InstanceComponentInputs> implements InstanceComponentOutputs {
@@ -26,7 +26,7 @@ export interface InstanceComponentOutputs {}
 export interface InstanceComponentInputs {
 	readonly InstanceAttributes: any;
 	readonly ServiceId: string;
-	readonly InstanceId?: (string | undefined) | undefined;
+	readonly InstanceId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class PrivateDnsNamespace
@@ -48,9 +48,9 @@ export interface PrivateDnsNamespaceComponentOutputs {
 export interface PrivateDnsNamespaceComponentInputs {
 	readonly Name: string;
 	readonly Vpc: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Properties?: (Properties | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Properties?: Properties | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class PublicDnsNamespace
@@ -71,9 +71,9 @@ export interface PublicDnsNamespaceComponentOutputs {
 }
 export interface PublicDnsNamespaceComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Properties?: (Properties | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Properties?: Properties | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Service extends CfnResource<ServiceComponentInputs> implements ServiceComponentOutputs {
@@ -88,44 +88,44 @@ export interface ServiceComponentOutputs {
 	readonly Id: string;
 }
 export interface ServiceComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly DnsConfig?: (DnsConfig | undefined) | undefined;
-	readonly HealthCheckConfig?: (HealthCheckConfig | undefined) | undefined;
-	readonly HealthCheckCustomConfig?: (HealthCheckCustomConfig | undefined) | undefined;
-	readonly Name?: string | undefined;
-	readonly NamespaceId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DnsConfig?: DnsConfig | undefined;
+	readonly HealthCheckConfig?: HealthCheckConfig | undefined;
+	readonly HealthCheckCustomConfig?: HealthCheckCustomConfig | undefined;
+	readonly Name?: string;
+	readonly NamespaceId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Type?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface PrivateDnsPropertiesMutable {
-	readonly SOA?: (SOA | undefined) | undefined;
+	readonly SOA?: SOA | undefined;
 }
 export interface Properties {
-	readonly DnsProperties?: (PrivateDnsPropertiesMutable | undefined) | undefined;
+	readonly DnsProperties?: PrivateDnsPropertiesMutable | undefined;
 }
 export interface SOA {
-	readonly TTL?: (number | undefined) | undefined;
+	readonly TTL?: number | undefined;
 }
 export interface PublicDnsPropertiesMutable {
-	readonly SOA?: (SOA | undefined) | undefined;
+	readonly SOA?: SOA | undefined;
 }
 export interface DnsConfig {
 	readonly DnsRecords: DnsRecord[];
-	readonly NamespaceId?: (string | undefined) | undefined;
-	readonly RoutingPolicy?: (string | undefined) | undefined;
+	readonly NamespaceId?: string | undefined;
+	readonly RoutingPolicy?: string | undefined;
 }
 export interface DnsRecord {
 	readonly TTL: number;
 	readonly Type: string;
 }
 export interface HealthCheckConfig {
-	readonly FailureThreshold?: (number | undefined) | undefined;
-	readonly ResourcePath?: (string | undefined) | undefined;
+	readonly FailureThreshold?: number | undefined;
+	readonly ResourcePath?: string | undefined;
 	readonly Type: string;
 }
 export interface HealthCheckCustomConfig {
-	readonly FailureThreshold?: (number | undefined) | undefined;
+	readonly FailureThreshold?: number | undefined;
 }
 export default {
 	HttpNamespace: HttpNamespace,

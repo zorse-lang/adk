@@ -10,40 +10,39 @@ export class ProjectsMetricDescriptors
 }
 export interface ProjectsMetricDescriptorsComponentOutputs {}
 export interface ProjectsMetricDescriptorsComponentInputs {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly labels?: LabelDescriptor[] | undefined;
-	readonly launchStage?: string | undefined;
-	readonly metadata?: MetricDescriptorMetadata | undefined;
-	readonly metricKind?: string | undefined;
-	readonly monitoredResourceTypes?: string[] | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly labels?: LabelDescriptor[];
+	readonly launchStage?: string;
+	readonly metadata?: MetricDescriptorMetadata;
+	readonly metricKind?: string;
+	readonly monitoredResourceTypes?: string[];
 	readonly name: string;
-	readonly type: string;
-	readonly unit?: string | undefined;
-	readonly valueType?: string | undefined;
+	readonly unit?: string;
+	readonly valueType?: string;
 }
 export interface LabelDescriptor {
-	readonly description?: string | undefined;
-	readonly key?: string | undefined;
-	readonly valueType?: string | undefined;
+	readonly description?: string;
+	readonly key?: string;
+	readonly valueType?: string;
 }
 export interface MetricDescriptor {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly labels?: LabelDescriptor[] | undefined;
-	readonly launchStage?: string | undefined;
-	readonly metadata?: MetricDescriptorMetadata | undefined;
-	readonly metricKind?: string | undefined;
-	readonly monitoredResourceTypes?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
-	readonly unit?: string | undefined;
-	readonly valueType?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly labels?: LabelDescriptor[];
+	readonly launchStage?: string;
+	readonly metadata?: MetricDescriptorMetadata;
+	readonly metricKind?: string;
+	readonly monitoredResourceTypes?: string[];
+	readonly name?: string;
+	readonly type?: string;
+	readonly unit?: string;
+	readonly valueType?: string;
 }
 export interface MetricDescriptorMetadata {
-	readonly ingestDelay?: string | undefined;
-	readonly launchStage?: string | undefined;
-	readonly samplePeriod?: string | undefined;
+	readonly ingestDelay?: string;
+	readonly launchStage?: string;
+	readonly samplePeriod?: string;
 }
 export default {
 	ProjectsMetricDescriptors: ProjectsMetricDescriptors,

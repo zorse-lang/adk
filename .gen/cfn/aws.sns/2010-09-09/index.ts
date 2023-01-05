@@ -9,13 +9,13 @@ export interface SubscriptionComponentOutputs {}
 export interface SubscriptionComponentInputs {
 	readonly Protocol: string;
 	readonly TopicArn: string;
-	readonly DeliveryPolicy?: (any | undefined) | undefined;
-	readonly Endpoint?: (string | undefined) | undefined;
-	readonly FilterPolicy?: (any | undefined) | undefined;
-	readonly RawMessageDelivery?: (boolean | undefined) | undefined;
-	readonly RedrivePolicy?: (any | undefined) | undefined;
-	readonly Region?: (string | undefined) | undefined;
-	readonly SubscriptionRoleArn?: (string | undefined) | undefined;
+	readonly DeliveryPolicy?: any | undefined;
+	readonly Endpoint?: string | undefined;
+	readonly FilterPolicy?: any | undefined;
+	readonly RawMessageDelivery?: boolean | undefined;
+	readonly RedrivePolicy?: any | undefined;
+	readonly Region?: string | undefined;
+	readonly SubscriptionRoleArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Topic extends CfnResource<TopicComponentInputs> implements TopicComponentOutputs {
@@ -28,15 +28,15 @@ export interface TopicComponentOutputs {
 	readonly TopicArn: string;
 }
 export interface TopicComponentInputs {
-	readonly ContentBasedDeduplication?: (boolean | undefined) | undefined;
-	readonly DataProtectionPolicy?: (any | undefined) | undefined;
-	readonly DisplayName?: (string | undefined) | undefined;
-	readonly FifoTopic?: (boolean | undefined) | undefined;
-	readonly KmsMasterKeyId?: (string | undefined) | undefined;
-	readonly SignatureVersion?: (string | undefined) | undefined;
-	readonly Subscription?: (Subscription[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TopicName?: string | undefined;
+	readonly ContentBasedDeduplication?: boolean | undefined;
+	readonly DataProtectionPolicy?: any | undefined;
+	readonly DisplayName?: string | undefined;
+	readonly FifoTopic?: boolean | undefined;
+	readonly KmsMasterKeyId?: string | undefined;
+	readonly SignatureVersion?: string | undefined;
+	readonly Subscription?: Subscription[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TopicName?: string;
 	readonly LogicalId: string;
 }
 export class TopicPolicy extends CfnResource<TopicPolicyComponentInputs> implements TopicPolicyComponentOutputs {

@@ -4,62 +4,61 @@ export class Routines extends GdmResource<RoutinesComponentInputs> implements Ro
 	constructor(entity: ADKEntity, options: RoutinesComponentInputs) {
 		super(entity, options.name, "bigquery.v2.Routines", options);
 	}
-	public readonly creationTime?: string | undefined;
-	public readonly etag?: string | undefined;
-	public readonly lastModifiedTime?: string | undefined;
+	public readonly creationTime?: string;
+	public readonly etag?: string;
+	public readonly lastModifiedTime?: string;
 }
 export interface RoutinesComponentOutputs {
-	readonly creationTime?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly etag?: string;
+	readonly lastModifiedTime?: string;
 }
 export interface RoutinesComponentInputs {
-	readonly arguments?: Argument[] | undefined;
+	readonly arguments?: Argument[];
 	readonly datasetId: string;
 	readonly definitionBody: string;
-	readonly description?: string | undefined;
-	readonly determinismLevel?: string | undefined;
-	readonly importedLibraries?: string[] | undefined;
-	readonly language?: string | undefined;
-	readonly remoteFunctionOptions?: RemoteFunctionOptions | undefined;
-	readonly returnTableType?: StandardSqlTableType | undefined;
-	readonly returnType?: StandardSqlDataType | undefined;
+	readonly description?: string;
+	readonly determinismLevel?: string;
+	readonly importedLibraries?: string[];
+	readonly language?: string;
+	readonly remoteFunctionOptions?: RemoteFunctionOptions;
+	readonly returnTableType?: StandardSqlTableType;
+	readonly returnType?: StandardSqlDataType;
 	readonly routineReference: RoutineReference;
 	readonly routineType: string;
-	readonly sparkOptions?: SparkOptions | undefined;
-	readonly strictMode?: boolean | undefined;
-	readonly type: string;
+	readonly sparkOptions?: SparkOptions;
+	readonly strictMode?: boolean;
 	readonly name: string;
 }
 export interface Argument {
-	readonly argumentKind?: string | undefined;
+	readonly argumentKind?: string;
 	readonly dataType: StandardSqlDataType;
-	readonly mode?: string | undefined;
-	readonly name?: string | undefined;
+	readonly mode?: string;
+	readonly name?: string;
 }
 export interface RemoteFunctionOptions {
-	readonly connection?: string | undefined;
-	readonly endpoint?: string | undefined;
-	readonly maxBatchingRows?: string | undefined;
-	readonly userDefinedContext?: { [P in string]: string } | undefined;
+	readonly connection?: string;
+	readonly endpoint?: string;
+	readonly maxBatchingRows?: string;
+	readonly userDefinedContext?: { [P in string]: string };
 }
 export interface Routine {
-	readonly arguments?: Argument[] | undefined;
-	readonly creationTime?: string | undefined;
+	readonly arguments?: Argument[];
+	readonly creationTime?: string;
 	readonly definitionBody: string;
-	readonly description?: string | undefined;
-	readonly determinismLevel?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly importedLibraries?: string[] | undefined;
-	readonly language?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly remoteFunctionOptions?: RemoteFunctionOptions | undefined;
-	readonly returnTableType?: StandardSqlTableType | undefined;
-	readonly returnType?: StandardSqlDataType | undefined;
+	readonly description?: string;
+	readonly determinismLevel?: string;
+	readonly etag?: string;
+	readonly importedLibraries?: string[];
+	readonly language?: string;
+	readonly lastModifiedTime?: string;
+	readonly remoteFunctionOptions?: RemoteFunctionOptions;
+	readonly returnTableType?: StandardSqlTableType;
+	readonly returnType?: StandardSqlDataType;
 	readonly routineReference: RoutineReference;
 	readonly routineType: string;
-	readonly sparkOptions?: SparkOptions | undefined;
-	readonly strictMode?: boolean | undefined;
+	readonly sparkOptions?: SparkOptions;
+	readonly strictMode?: boolean;
 }
 export interface RoutineReference {
 	readonly datasetId: string;
@@ -67,30 +66,30 @@ export interface RoutineReference {
 	readonly routineId: string;
 }
 export interface SparkOptions {
-	readonly archiveUris?: string[] | undefined;
-	readonly connection?: string | undefined;
-	readonly containerImage?: string | undefined;
-	readonly fileUris?: string[] | undefined;
-	readonly jarUris?: string[] | undefined;
-	readonly mainFileUri?: string | undefined;
-	readonly properties?: { [P in string]: string } | undefined;
-	readonly pyFileUris?: string[] | undefined;
-	readonly runtimeVersion?: string | undefined;
+	readonly archiveUris?: string[];
+	readonly connection?: string;
+	readonly containerImage?: string;
+	readonly fileUris?: string[];
+	readonly jarUris?: string[];
+	readonly mainFileUri?: string;
+	readonly properties?: { [P in string]: string };
+	readonly pyFileUris?: string[];
+	readonly runtimeVersion?: string;
 }
 export interface StandardSqlDataType {
-	readonly arrayElementType?: StandardSqlDataType | undefined;
-	readonly structType?: StandardSqlStructType | undefined;
+	readonly arrayElementType?: StandardSqlDataType;
+	readonly structType?: StandardSqlStructType;
 	readonly typeKind: string;
 }
 export interface StandardSqlField {
-	readonly name?: string | undefined;
-	readonly type?: StandardSqlDataType | undefined;
+	readonly name?: string;
+	readonly type?: StandardSqlDataType;
 }
 export interface StandardSqlStructType {
-	readonly fields?: StandardSqlField[] | undefined;
+	readonly fields?: StandardSqlField[];
 }
 export interface StandardSqlTableType {
-	readonly columns?: StandardSqlField[] | undefined;
+	readonly columns?: StandardSqlField[];
 }
 export default {
 	Routines: Routines,

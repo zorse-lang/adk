@@ -14,43 +14,43 @@ export interface machinesComponentOutputs {
 	readonly type: "Microsoft.HybridCompute/machines";
 }
 export interface machinesComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MachineProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: MachineProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ErrorDetail {
 	readonly code: string;
-	readonly details?: ErrorDetail[] | undefined;
+	readonly details?: ErrorDetail[];
 	readonly message: string;
-	readonly target?: string | undefined;
+	readonly target?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: string;
 }
 export interface MachineProperties {
-	readonly agentVersion?: string | undefined;
-	readonly clientPublicKey?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly errorDetails?: ErrorDetail[] | undefined;
-	readonly lastStatusChange?: string | undefined;
-	readonly machineFqdn?: string | undefined;
-	readonly osName?: string | undefined;
-	readonly osProfile?: OSProfile | undefined;
-	readonly osVersion?: string | undefined;
-	readonly physicalLocation?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly status?: ("Connected" | "Disconnected") | undefined;
-	readonly vmId?: string | undefined;
+	readonly agentVersion?: string;
+	readonly clientPublicKey?: string;
+	readonly displayName?: string;
+	readonly errorDetails?: ErrorDetail[];
+	readonly lastStatusChange?: string;
+	readonly machineFqdn?: string;
+	readonly osName?: string;
+	readonly osProfile?: OSProfile;
+	readonly osVersion?: string;
+	readonly physicalLocation?: string;
+	readonly provisioningState?: string;
+	readonly status?: "Connected" | "Disconnected";
+	readonly vmId?: string;
 }
 export interface OSProfile {
-	readonly computerName?: string | undefined;
+	readonly computerName?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	machines: machines,

@@ -15,8 +15,8 @@ export interface eventsComponentOutputs {
 }
 export interface eventsComponentInputs {
 	readonly name: string;
-	readonly properties?: EventProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EventProperties;
+	readonly systemData?: SystemData;
 }
 export class events_impactedResources
 	extends ArmResource<events_impactedResourcesComponentInputs>
@@ -36,104 +36,108 @@ export interface events_impactedResourcesComponentOutputs {
 }
 export interface events_impactedResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: EventImpactedResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EventImpactedResourceProperties;
+	readonly systemData?: SystemData;
 }
 export interface EventImpactedResourceProperties {
-	readonly info?: KeyValueItem[] | undefined;
-	readonly targetRegion?: string | undefined;
-	readonly targetResourceId?: string | undefined;
-	readonly targetResourceType?: string | undefined;
+	readonly info?: KeyValueItem[];
+	readonly targetRegion?: string;
+	readonly targetResourceId?: string;
+	readonly targetResourceType?: string;
 }
 export interface EventProperties {
-	readonly additionalInformation?: EventPropertiesAdditionalInformation | undefined;
-	readonly article?: EventPropertiesArticle | undefined;
-	readonly description?: string | undefined;
-	readonly duration?: number | undefined;
-	readonly enableChatWithUs?: boolean | undefined;
-	readonly enableMicrosoftSupport?: boolean | undefined;
-	readonly eventLevel?: ("Critical" | "Error" | "Informational" | "Warning") | undefined;
-	readonly eventSource?: ("ResourceHealth" | "ServiceHealth") | undefined;
+	readonly additionalInformation?: EventPropertiesAdditionalInformation;
+	readonly article?: EventPropertiesArticle;
+	readonly description?: string;
+	readonly duration?: number;
+	readonly enableChatWithUs?: boolean;
+	readonly enableMicrosoftSupport?: boolean;
+	readonly eventLevel?: "Critical" | "Error" | "Informational" | "Warning";
+	readonly eventSource?: "ResourceHealth" | "ServiceHealth";
 	readonly eventType?:
-		| ("EmergingIssues" | "HealthAdvisory" | "PlannedMaintenance" | "RCA" | "SecurityAdvisory" | "ServiceIssue")
-		| undefined;
-	readonly externalIncidentId?: string | undefined;
-	readonly faqs?: Faq[] | undefined;
-	readonly header?: string | undefined;
-	readonly hirStage?: string | undefined;
-	readonly impact?: Impact[] | undefined;
-	readonly impactMitigationTime?: string | undefined;
-	readonly impactStartTime?: string | undefined;
-	readonly impactType?: string | undefined;
-	readonly isHIR?: boolean | undefined;
-	readonly lastUpdateTime?: string | undefined;
-	readonly level?: ("Critical" | "Warning") | undefined;
-	readonly links?: Link[] | undefined;
-	readonly platformInitiated?: boolean | undefined;
-	readonly priority?: number | undefined;
-	readonly recommendedActions?: EventPropertiesRecommendedActions | undefined;
-	readonly status?: ("Active" | "Resolved") | undefined;
-	readonly summary?: string | undefined;
-	readonly title?: string | undefined;
+		| "EmergingIssues"
+		| "HealthAdvisory"
+		| "PlannedMaintenance"
+		| "RCA"
+		| "SecurityAdvisory"
+		| "ServiceIssue";
+	readonly externalIncidentId?: string;
+	readonly faqs?: Faq[];
+	readonly header?: string;
+	readonly hirStage?: string;
+	readonly impact?: Impact[];
+	readonly impactMitigationTime?: string;
+	readonly impactStartTime?: string;
+	readonly impactType?: string;
+	readonly isHIR?: boolean;
+	readonly lastUpdateTime?: string;
+	readonly level?: "Critical" | "Warning";
+	readonly links?: Link[];
+	readonly platformInitiated?: boolean;
+	readonly priority?: number;
+	readonly recommendedActions?: EventPropertiesRecommendedActions;
+	readonly status?: "Active" | "Resolved";
+	readonly summary?: string;
+	readonly title?: string;
 }
 export interface EventPropertiesAdditionalInformation {
-	readonly message?: string | undefined;
+	readonly message?: string;
 }
 export interface EventPropertiesArticle {
-	readonly articleContent?: string | undefined;
+	readonly articleContent?: string;
 }
 export interface EventPropertiesRecommendedActions {
-	readonly actions?: EventPropertiesRecommendedActionsItem[] | undefined;
-	readonly localeCode?: string | undefined;
-	readonly message?: string | undefined;
+	readonly actions?: EventPropertiesRecommendedActionsItem[];
+	readonly localeCode?: string;
+	readonly message?: string;
 }
 export interface EventPropertiesRecommendedActionsItem {
-	readonly actionText?: string | undefined;
-	readonly groupId?: number | undefined;
+	readonly actionText?: string;
+	readonly groupId?: number;
 }
 export interface Faq {
-	readonly answer?: string | undefined;
-	readonly localeCode?: string | undefined;
-	readonly question?: string | undefined;
+	readonly answer?: string;
+	readonly localeCode?: string;
+	readonly question?: string;
 }
 export interface Impact {
-	readonly impactedRegions?: ImpactedServiceRegion[] | undefined;
-	readonly impactedService?: string | undefined;
+	readonly impactedRegions?: ImpactedServiceRegion[];
+	readonly impactedService?: string;
 }
 export interface ImpactedServiceRegion {
-	readonly impactedRegion?: string | undefined;
-	readonly impactedSubscriptions?: string[] | undefined;
-	readonly impactedTenants?: string[] | undefined;
-	readonly lastUpdateTime?: string | undefined;
-	readonly status?: ("Active" | "Resolved") | undefined;
-	readonly updates?: Update[] | undefined;
+	readonly impactedRegion?: string;
+	readonly impactedSubscriptions?: string[];
+	readonly impactedTenants?: string[];
+	readonly lastUpdateTime?: string;
+	readonly status?: "Active" | "Resolved";
+	readonly updates?: Update[];
 }
 export interface KeyValueItem {
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface Link {
-	readonly bladeName?: string | undefined;
-	readonly displayText?: LinkDisplayText | undefined;
-	readonly extensionName?: string | undefined;
-	readonly parameters?: any | undefined;
-	readonly type?: ("Button" | "Hyperlink") | undefined;
+	readonly bladeName?: string;
+	readonly displayText?: LinkDisplayText;
+	readonly extensionName?: string;
+	readonly parameters?: any;
+	readonly type?: "Button" | "Hyperlink";
 }
 export interface LinkDisplayText {
-	readonly localizedValue?: string | undefined;
-	readonly value?: string | undefined;
+	readonly localizedValue?: string;
+	readonly value?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Update {
-	readonly summary?: string | undefined;
-	readonly updateDateTime?: string | undefined;
+	readonly summary?: string;
+	readonly updateDateTime?: string;
 }
 export default {
 	events: events,

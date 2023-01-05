@@ -16,10 +16,10 @@ export interface namespacesComponentOutputs {
 export interface namespacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RelayNamespaceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: RelayNamespaceProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class namespaces_authorizationRules
 	extends ArmResource<namespaces_authorizationRulesComponentInputs>
@@ -38,10 +38,10 @@ export interface namespaces_authorizationRulesComponentOutputs {
 	readonly type: "Microsoft.Relay/namespaces/authorizationRules";
 }
 export interface namespaces_authorizationRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AuthorizationRuleProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AuthorizationRuleProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_hybridConnections
 	extends ArmResource<namespaces_hybridConnectionsComponentInputs>
@@ -60,10 +60,10 @@ export interface namespaces_hybridConnectionsComponentOutputs {
 	readonly type: "Microsoft.Relay/namespaces/hybridConnections";
 }
 export interface namespaces_hybridConnectionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: HybridConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: HybridConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_hybridConnections_authorizationRules
 	extends ArmResource<namespaces_hybridConnections_authorizationRulesComponentInputs>
@@ -88,10 +88,10 @@ export interface namespaces_hybridConnections_authorizationRulesComponentOutputs
 	readonly type: "Microsoft.Relay/namespaces/hybridConnections/authorizationRules";
 }
 export interface namespaces_hybridConnections_authorizationRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AuthorizationRuleProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AuthorizationRuleProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_networkRuleSets
 	extends ArmResource<namespaces_networkRuleSetsComponentInputs>
@@ -111,8 +111,8 @@ export interface namespaces_networkRuleSetsComponentOutputs {
 }
 export interface namespaces_networkRuleSetsComponentInputs {
 	readonly name: string;
-	readonly properties?: NetworkRuleSetProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: NetworkRuleSetProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_privateEndpointConnections
 	extends ArmResource<namespaces_privateEndpointConnectionsComponentInputs>
@@ -131,10 +131,10 @@ export interface namespaces_privateEndpointConnectionsComponentOutputs {
 	readonly type: "Microsoft.Relay/namespaces/privateEndpointConnections";
 }
 export interface namespaces_privateEndpointConnectionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_wcfRelays
 	extends ArmResource<namespaces_wcfRelaysComponentInputs>
@@ -153,10 +153,10 @@ export interface namespaces_wcfRelaysComponentOutputs {
 	readonly type: "Microsoft.Relay/namespaces/wcfRelays";
 }
 export interface namespaces_wcfRelaysComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WcfRelayProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: WcfRelayProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_wcfRelays_authorizationRules
 	extends ArmResource<namespaces_wcfRelays_authorizationRulesComponentInputs>
@@ -175,10 +175,10 @@ export interface namespaces_wcfRelays_authorizationRulesComponentOutputs {
 	readonly type: "Microsoft.Relay/namespaces/wcfRelays/authorizationRules";
 }
 export interface namespaces_wcfRelays_authorizationRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AuthorizationRuleProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AuthorizationRuleProperties;
+	readonly systemData?: SystemData;
 }
 export function listKeys(resource: namespaces_authorizationRules): AccessKeys {
 	if (resource.apiVersion !== "2021-11-01") {
@@ -190,85 +190,85 @@ export function listKeys(resource: namespaces_authorizationRules): AccessKeys {
 	throw new Error("not implemented");
 }
 export interface AccessKeys {
-	readonly keyName?: string | undefined;
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly keyName?: string;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface AuthorizationRuleProperties {
 	readonly rights: "Listen" | "Manage" | "Send"[];
 }
 export interface ConnectionState {
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface HybridConnectionProperties {
-	readonly createdAt?: string | undefined;
-	readonly listenerCount?: number | undefined;
-	readonly requiresClientAuthorization?: boolean | undefined;
-	readonly updatedAt?: string | undefined;
-	readonly userMetadata?: string | undefined;
+	readonly createdAt?: string;
+	readonly listenerCount?: number;
+	readonly requiresClientAuthorization?: boolean;
+	readonly updatedAt?: string;
+	readonly userMetadata?: string;
 }
 export interface NetworkRuleSetProperties {
-	readonly defaultAction?: ("Allow" | "Deny") | undefined;
-	readonly ipRules?: NWRuleSetIpRules[] | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled" | "SecuredByPerimeter") | undefined;
+	readonly defaultAction?: "Allow" | "Deny";
+	readonly ipRules?: NWRuleSetIpRules[];
+	readonly publicNetworkAccess?: "Disabled" | "Enabled" | "SecuredByPerimeter";
 }
 export interface NWRuleSetIpRules {
-	readonly action?: "Allow" | undefined;
-	readonly ipMask?: string | undefined;
+	readonly action?: "Allow";
+	readonly ipMask?: string;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: ConnectionState | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: ConnectionState;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface RelayNamespaceProperties {
-	readonly createdAt?: string | undefined;
-	readonly metricId?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled" | "SecuredByPerimeter") | undefined;
-	readonly serviceBusEndpoint?: string | undefined;
-	readonly status?: string | undefined;
-	readonly updatedAt?: string | undefined;
+	readonly createdAt?: string;
+	readonly metricId?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: string;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled" | "SecuredByPerimeter";
+	readonly serviceBusEndpoint?: string;
+	readonly status?: string;
+	readonly updatedAt?: string;
 }
 export interface Sku {
 	readonly name: "Standard";
-	readonly tier?: "Standard" | undefined;
+	readonly tier?: "Standard";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WcfRelayProperties {
-	readonly createdAt?: string | undefined;
-	readonly isDynamic?: boolean | undefined;
-	readonly listenerCount?: number | undefined;
-	readonly relayType?: "Http" | undefined;
-	readonly requiresClientAuthorization?: boolean | undefined;
-	readonly requiresTransportSecurity?: boolean | undefined;
-	readonly updatedAt?: string | undefined;
-	readonly userMetadata?: string | undefined;
+	readonly createdAt?: string;
+	readonly isDynamic?: boolean;
+	readonly listenerCount?: number;
+	readonly relayType?: "Http";
+	readonly requiresClientAuthorization?: boolean;
+	readonly requiresTransportSecurity?: boolean;
+	readonly updatedAt?: string;
+	readonly userMetadata?: string;
 }
 export default {
 	namespaces: namespaces,

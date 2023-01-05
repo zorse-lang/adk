@@ -14,12 +14,12 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.DeviceUpdate/accounts";
 }
 export interface accountsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
+	readonly identity?: ManagedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AccountProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: AccountProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class accounts_instances
 	extends ArmResource<accounts_instancesComponentInputs>
@@ -41,8 +41,8 @@ export interface accounts_instancesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: InstanceProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class accounts_privateEndpointConnectionProxies
 	extends ArmResource<accounts_privateEndpointConnectionProxiesComponentInputs>
@@ -67,12 +67,12 @@ export interface accounts_privateEndpointConnectionProxiesComponentOutputs {
 	readonly type: "Microsoft.DeviceUpdate/accounts/privateEndpointConnectionProxies";
 }
 export interface accounts_privateEndpointConnectionProxiesComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProxyProperties | undefined;
-	readonly remotePrivateEndpoint?: RemotePrivateEndpoint | undefined;
-	readonly status?: string | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProxyProperties;
+	readonly remotePrivateEndpoint?: RemotePrivateEndpoint;
+	readonly status?: string;
+	readonly systemData?: SystemData;
 }
 export class accounts_privateEndpointConnections
 	extends ArmResource<accounts_privateEndpointConnectionsComponentInputs>
@@ -99,7 +99,7 @@ export interface accounts_privateEndpointConnectionsComponentOutputs {
 export interface accounts_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
 	readonly properties: PrivateEndpointConnectionProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class accounts_privateLinkResources
 	extends ArmResource<accounts_privateLinkResourcesComponentInputs>
@@ -119,125 +119,125 @@ export interface accounts_privateLinkResourcesComponentOutputs {
 }
 export interface accounts_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: GroupInformationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: GroupInformationProperties;
+	readonly systemData?: SystemData;
 }
 export interface AccountProperties {
-	readonly hostName?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Creating" | "Deleted" | "Failed" | "Succeeded") | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly hostName?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Creating" | "Deleted" | "Failed" | "Succeeded";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface ConnectionDetails {
-	readonly groupId?: string | undefined;
-	readonly id?: string | undefined;
-	readonly linkIdentifier?: string | undefined;
-	readonly memberName?: string | undefined;
-	readonly privateIpAddress?: string | undefined;
+	readonly groupId?: string;
+	readonly id?: string;
+	readonly linkIdentifier?: string;
+	readonly memberName?: string;
+	readonly privateIpAddress?: string;
 }
 export interface DiagnosticStorageProperties {
 	readonly authenticationType: "KeyBased";
-	readonly connectionString?: string | undefined;
+	readonly connectionString?: string;
 	readonly resourceId: string;
 }
 export interface GroupConnectivityInformation {
-	readonly customerVisibleFqdns?: string[] | undefined;
-	readonly groupId?: string | undefined;
-	readonly internalFqdn?: string | undefined;
-	readonly memberName?: string | undefined;
-	readonly privateLinkServiceArmRegion?: string | undefined;
-	readonly redirectMapId?: string | undefined;
+	readonly customerVisibleFqdns?: string[];
+	readonly groupId?: string;
+	readonly internalFqdn?: string;
+	readonly memberName?: string;
+	readonly privateLinkServiceArmRegion?: string;
+	readonly redirectMapId?: string;
 }
 export interface GroupInformationProperties {
-	readonly groupId?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface InstanceProperties {
-	readonly accountName?: string | undefined;
-	readonly diagnosticStorageProperties?: DiagnosticStorageProperties | undefined;
-	readonly enableDiagnostics?: boolean | undefined;
-	readonly iotHubs?: IotHubSettings[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Creating" | "Deleted" | "Failed" | "Succeeded") | undefined;
+	readonly accountName?: string;
+	readonly diagnosticStorageProperties?: DiagnosticStorageProperties;
+	readonly enableDiagnostics?: boolean;
+	readonly iotHubs?: IotHubSettings[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Creating" | "Deleted" | "Failed" | "Succeeded";
 }
 export interface IotHubSettings {
-	readonly eventHubConnectionString?: string | undefined;
-	readonly ioTHubConnectionString?: string | undefined;
+	readonly eventHubConnectionString?: string;
+	readonly ioTHubConnectionString?: string;
 	readonly resourceId: string;
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: UserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedIdentities;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
 	readonly properties: PrivateEndpointConnectionProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly groupIds?: string[];
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateEndpointConnectionProxyProperties {
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkServiceConnection {
-	readonly groupIds?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly requestMessage?: string | undefined;
+	readonly groupIds?: string[];
+	readonly name?: string;
+	readonly requestMessage?: string;
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface PrivateLinkServiceProxy {
-	readonly groupConnectivityInformation?: GroupConnectivityInformation[] | undefined;
-	readonly id?: string | undefined;
-	readonly remotePrivateEndpointConnection?: PrivateLinkServiceProxyRemotePrivateEndpointConnection | undefined;
-	readonly remotePrivateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
+	readonly groupConnectivityInformation?: GroupConnectivityInformation[];
+	readonly id?: string;
+	readonly remotePrivateEndpointConnection?: PrivateLinkServiceProxyRemotePrivateEndpointConnection;
+	readonly remotePrivateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
 }
 export interface PrivateLinkServiceProxyRemotePrivateEndpointConnection {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface RemotePrivateEndpoint {
-	readonly connectionDetails?: ConnectionDetails[] | undefined;
-	readonly id?: string | undefined;
-	readonly immutableResourceId?: string | undefined;
-	readonly immutableSubscriptionId?: string | undefined;
-	readonly location?: string | undefined;
-	readonly manualPrivateLinkServiceConnections?: PrivateLinkServiceConnection[] | undefined;
-	readonly privateLinkServiceConnections?: PrivateLinkServiceConnection[] | undefined;
-	readonly privateLinkServiceProxies?: PrivateLinkServiceProxy[] | undefined;
-	readonly vnetTrafficTag?: string | undefined;
+	readonly connectionDetails?: ConnectionDetails[];
+	readonly id?: string;
+	readonly immutableResourceId?: string;
+	readonly immutableSubscriptionId?: string;
+	readonly location?: string;
+	readonly manualPrivateLinkServiceConnections?: PrivateLinkServiceConnection[];
+	readonly privateLinkServiceConnections?: PrivateLinkServiceConnection[];
+	readonly privateLinkServiceProxies?: PrivateLinkServiceProxy[];
+	readonly vnetTrafficTag?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	accounts: accounts,

@@ -7,25 +7,24 @@ export class Databases extends GdmResource<DatabasesComponentInputs> implements 
 }
 export interface DatabasesComponentOutputs {}
 export interface DatabasesComponentInputs {
-	readonly charset?: string | undefined;
-	readonly collation?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly instance?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly charset?: string;
+	readonly collation?: string;
+	readonly etag?: string;
+	readonly instance?: string;
+	readonly kind?: string;
 	readonly name: string;
-	readonly project?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly type: string;
+	readonly project?: string;
+	readonly selfLink?: string;
 }
 export interface Database {
-	readonly charset?: string | undefined;
-	readonly collation?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly instance?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly project?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly charset?: string;
+	readonly collation?: string;
+	readonly etag?: string;
+	readonly instance?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly project?: string;
+	readonly selfLink?: string;
 }
 export default {
 	Databases: Databases,

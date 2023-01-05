@@ -14,14 +14,14 @@ export interface servicesComponentOutputs {
 	readonly type: "Microsoft.HealthcareApis/services";
 }
 export interface servicesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ServicesResourceIdentity | undefined;
+	readonly etag?: string;
+	readonly identity?: ServicesResourceIdentity;
 	readonly kind: "fhir" | "fhir-R4";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServicesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ServicesResourceTags | undefined;
+	readonly properties?: ServicesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ServicesResourceTags;
 }
 export class services_privateEndpointConnections
 	extends ArmResource<services_privateEndpointConnectionsComponentInputs>
@@ -41,8 +41,8 @@ export interface services_privateEndpointConnectionsComponentOutputs {
 }
 export interface services_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class services_privateLinkResources
 	extends ArmResource<services_privateLinkResourcesComponentInputs>
@@ -62,96 +62,93 @@ export interface services_privateLinkResourcesComponentOutputs {
 }
 export interface services_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface ServiceAccessPolicyEntry {
 	readonly objectId: string;
 }
 export interface ServiceAcrConfigurationInfo {
-	readonly loginServers?: string[] | undefined;
+	readonly loginServers?: string[];
 }
 export interface ServiceAuthenticationConfigurationInfo {
-	readonly audience?: string | undefined;
-	readonly authority?: string | undefined;
-	readonly smartProxyEnabled?: boolean | undefined;
+	readonly audience?: string;
+	readonly authority?: string;
+	readonly smartProxyEnabled?: boolean;
 }
 export interface ServiceCorsConfigurationInfo {
-	readonly allowCredentials?: boolean | undefined;
-	readonly headers?: string[] | undefined;
-	readonly maxAge?: number | undefined;
-	readonly methods?: string[] | undefined;
-	readonly origins?: string[] | undefined;
+	readonly allowCredentials?: boolean;
+	readonly headers?: string[];
+	readonly maxAge?: number;
+	readonly methods?: string[];
+	readonly origins?: string[];
 }
 export interface ServiceCosmosDbConfigurationInfo {
-	readonly keyVaultKeyUri?: string | undefined;
-	readonly offerThroughput?: number | undefined;
+	readonly keyVaultKeyUri?: string;
+	readonly offerThroughput?: number;
 }
 export interface ServiceExportConfigurationInfo {
-	readonly storageAccountName?: string | undefined;
+	readonly storageAccountName?: string;
 }
 export interface ServicesProperties {
-	readonly accessPolicies?: ServiceAccessPolicyEntry[] | undefined;
-	readonly acrConfiguration?: ServiceAcrConfigurationInfo | undefined;
-	readonly authenticationConfiguration?: ServiceAuthenticationConfigurationInfo | undefined;
-	readonly corsConfiguration?: ServiceCorsConfigurationInfo | undefined;
-	readonly cosmosDbConfiguration?: ServiceCosmosDbConfigurationInfo | undefined;
-	readonly exportConfiguration?: ServiceExportConfigurationInfo | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
+	readonly accessPolicies?: ServiceAccessPolicyEntry[];
+	readonly acrConfiguration?: ServiceAcrConfigurationInfo;
+	readonly authenticationConfiguration?: ServiceAuthenticationConfigurationInfo;
+	readonly corsConfiguration?: ServiceCorsConfigurationInfo;
+	readonly cosmosDbConfiguration?: ServiceCosmosDbConfigurationInfo;
+	readonly exportConfiguration?: ServiceExportConfigurationInfo;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleting"
-				| "Deprovisioned"
-				| "Failed"
-				| "Succeeded"
-				| "Updating"
-				| "Verifying"
-		  )
-		| undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Deprovisioned"
+		| "Failed"
+		| "Succeeded"
+		| "Updating"
+		| "Verifying";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface ServicesResourceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
 }
 export interface ServicesResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	services: services,

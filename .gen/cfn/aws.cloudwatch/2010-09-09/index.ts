@@ -12,25 +12,25 @@ export interface AlarmComponentOutputs {
 export interface AlarmComponentInputs {
 	readonly ComparisonOperator: string;
 	readonly EvaluationPeriods: number;
-	readonly ActionsEnabled?: (boolean | undefined) | undefined;
-	readonly AlarmActions?: (string[] | undefined) | undefined;
-	readonly AlarmDescription?: (string | undefined) | undefined;
-	readonly AlarmName?: (string | undefined) | undefined;
-	readonly DatapointsToAlarm?: (number | undefined) | undefined;
-	readonly Dimensions?: (Dimension[] | undefined) | undefined;
-	readonly EvaluateLowSampleCountPercentile?: (string | undefined) | undefined;
-	readonly ExtendedStatistic?: (string | undefined) | undefined;
-	readonly InsufficientDataActions?: (string[] | undefined) | undefined;
-	readonly MetricName?: (string | undefined) | undefined;
-	readonly Metrics?: (MetricDataQuery[] | undefined) | undefined;
-	readonly Namespace?: (string | undefined) | undefined;
-	readonly OKActions?: (string[] | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly Statistic?: (string | undefined) | undefined;
-	readonly Threshold?: (number | undefined) | undefined;
-	readonly ThresholdMetricId?: (string | undefined) | undefined;
-	readonly TreatMissingData?: (string | undefined) | undefined;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly ActionsEnabled?: boolean | undefined;
+	readonly AlarmActions?: string[] | undefined;
+	readonly AlarmDescription?: string | undefined;
+	readonly AlarmName?: string | undefined;
+	readonly DatapointsToAlarm?: number | undefined;
+	readonly Dimensions?: Dimension[] | undefined;
+	readonly EvaluateLowSampleCountPercentile?: string | undefined;
+	readonly ExtendedStatistic?: string | undefined;
+	readonly InsufficientDataActions?: string[] | undefined;
+	readonly MetricName?: string | undefined;
+	readonly Metrics?: MetricDataQuery[] | undefined;
+	readonly Namespace?: string | undefined;
+	readonly OKActions?: string[] | undefined;
+	readonly Period?: number | undefined;
+	readonly Statistic?: string | undefined;
+	readonly Threshold?: number | undefined;
+	readonly ThresholdMetricId?: string | undefined;
+	readonly TreatMissingData?: string | undefined;
+	readonly Unit?: string | undefined;
 	readonly LogicalId: string;
 }
 export class AnomalyDetector
@@ -43,13 +43,13 @@ export class AnomalyDetector
 }
 export interface AnomalyDetectorComponentOutputs {}
 export interface AnomalyDetectorComponentInputs {
-	readonly Configuration?: (Configuration | undefined) | undefined;
-	readonly Dimensions?: (Dimension[] | undefined) | undefined;
-	readonly MetricMathAnomalyDetector?: (MetricMathAnomalyDetector | undefined) | undefined;
-	readonly MetricName?: (string | undefined) | undefined;
-	readonly Namespace?: (string | undefined) | undefined;
-	readonly SingleMetricAnomalyDetector?: (SingleMetricAnomalyDetector | undefined) | undefined;
-	readonly Stat?: (string | undefined) | undefined;
+	readonly Configuration?: Configuration | undefined;
+	readonly Dimensions?: Dimension[] | undefined;
+	readonly MetricMathAnomalyDetector?: MetricMathAnomalyDetector | undefined;
+	readonly MetricName?: string | undefined;
+	readonly Namespace?: string | undefined;
+	readonly SingleMetricAnomalyDetector?: SingleMetricAnomalyDetector | undefined;
+	readonly Stat?: string | undefined;
 	readonly LogicalId: string;
 }
 export class CompositeAlarm extends CfnResource<CompositeAlarmComponentInputs> implements CompositeAlarmComponentOutputs {
@@ -63,15 +63,15 @@ export interface CompositeAlarmComponentOutputs {
 }
 export interface CompositeAlarmComponentInputs {
 	readonly AlarmRule: string;
-	readonly ActionsEnabled?: (boolean | undefined) | undefined;
-	readonly ActionsSuppressor?: (string | undefined) | undefined;
-	readonly ActionsSuppressorExtensionPeriod?: (number | undefined) | undefined;
-	readonly ActionsSuppressorWaitPeriod?: (number | undefined) | undefined;
-	readonly AlarmActions?: (string[] | undefined) | undefined;
-	readonly AlarmDescription?: (string | undefined) | undefined;
-	readonly AlarmName?: (string | undefined) | undefined;
-	readonly InsufficientDataActions?: (string[] | undefined) | undefined;
-	readonly OKActions?: (string[] | undefined) | undefined;
+	readonly ActionsEnabled?: boolean | undefined;
+	readonly ActionsSuppressor?: string | undefined;
+	readonly ActionsSuppressorExtensionPeriod?: number | undefined;
+	readonly ActionsSuppressorWaitPeriod?: number | undefined;
+	readonly AlarmActions?: string[] | undefined;
+	readonly AlarmDescription?: string | undefined;
+	readonly AlarmName?: string | undefined;
+	readonly InsufficientDataActions?: string[] | undefined;
+	readonly OKActions?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class Dashboard extends CfnResource<DashboardComponentInputs> implements DashboardComponentOutputs {
@@ -82,7 +82,7 @@ export class Dashboard extends CfnResource<DashboardComponentInputs> implements 
 export interface DashboardComponentOutputs {}
 export interface DashboardComponentInputs {
 	readonly DashboardBody: string;
-	readonly DashboardName?: (string | undefined) | undefined;
+	readonly DashboardName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class InsightRule extends CfnResource<InsightRuleComponentInputs> implements InsightRuleComponentOutputs {
@@ -100,7 +100,7 @@ export interface InsightRuleComponentInputs {
 	readonly RuleBody: string;
 	readonly RuleName: string;
 	readonly RuleState: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class MetricStream extends CfnResource<MetricStreamComponentInputs> implements MetricStreamComponentOutputs {
@@ -122,11 +122,11 @@ export interface MetricStreamComponentInputs {
 	readonly FirehoseArn: string;
 	readonly OutputFormat: string;
 	readonly RoleArn: string;
-	readonly ExcludeFilters?: (MetricStreamFilter[] | undefined) | undefined;
-	readonly IncludeFilters?: (MetricStreamFilter[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly StatisticsConfigurations?: (MetricStreamStatisticsConfiguration[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ExcludeFilters?: MetricStreamFilter[] | undefined;
+	readonly IncludeFilters?: MetricStreamFilter[] | undefined;
+	readonly Name?: string | undefined;
+	readonly StatisticsConfigurations?: MetricStreamStatisticsConfiguration[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface Dimension {
@@ -134,41 +134,41 @@ export interface Dimension {
 	readonly Value: string;
 }
 export interface Metric {
-	readonly Dimensions?: (Dimension[] | undefined) | undefined;
-	readonly MetricName?: (string | undefined) | undefined;
-	readonly Namespace?: (string | undefined) | undefined;
+	readonly Dimensions?: Dimension[] | undefined;
+	readonly MetricName?: string | undefined;
+	readonly Namespace?: string | undefined;
 }
 export interface MetricDataQuery {
-	readonly AccountId?: (string | undefined) | undefined;
-	readonly Expression?: (string | undefined) | undefined;
+	readonly AccountId?: string | undefined;
+	readonly Expression?: string | undefined;
 	readonly Id: string;
-	readonly Label?: (string | undefined) | undefined;
-	readonly MetricStat?: (MetricStat | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly ReturnData?: (boolean | undefined) | undefined;
+	readonly Label?: string | undefined;
+	readonly MetricStat?: MetricStat | undefined;
+	readonly Period?: number | undefined;
+	readonly ReturnData?: boolean | undefined;
 }
 export interface MetricStat {
 	readonly Metric: Metric;
 	readonly Period: number;
 	readonly Stat: string;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly Unit?: string | undefined;
 }
 export interface Configuration {
-	readonly ExcludedTimeRanges?: (Range[] | undefined) | undefined;
-	readonly MetricTimeZone?: (string | undefined) | undefined;
+	readonly ExcludedTimeRanges?: Range[] | undefined;
+	readonly MetricTimeZone?: string | undefined;
 }
 export interface MetricMathAnomalyDetector {
-	readonly MetricDataQueries?: (MetricDataQuery[] | undefined) | undefined;
+	readonly MetricDataQueries?: MetricDataQuery[] | undefined;
 }
 export interface Range {
 	readonly EndTime: string;
 	readonly StartTime: string;
 }
 export interface SingleMetricAnomalyDetector {
-	readonly Dimensions?: (Dimension[] | undefined) | undefined;
-	readonly MetricName?: (string | undefined) | undefined;
-	readonly Namespace?: (string | undefined) | undefined;
-	readonly Stat?: (string | undefined) | undefined;
+	readonly Dimensions?: Dimension[] | undefined;
+	readonly MetricName?: string | undefined;
+	readonly Namespace?: string | undefined;
+	readonly Stat?: string | undefined;
 }
 export interface MetricStreamFilter {
 	readonly Namespace: string;

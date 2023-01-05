@@ -17,11 +17,11 @@ export interface diskEncryptionSetsComponentOutputs {
 	readonly type: "Microsoft.Compute/diskEncryptionSets";
 }
 export interface diskEncryptionSetsComponentInputs {
-	readonly identity?: EncryptionSetIdentity | undefined;
+	readonly identity?: EncryptionSetIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: EncryptionSetProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: EncryptionSetProperties;
+	readonly tags?: ResourceTags;
 }
 export class disks extends ArmResource<disksComponentInputs> implements disksComponentOutputs {
 	constructor(entity: ADKEntity, options: disksComponentInputs) {
@@ -38,13 +38,13 @@ export interface disksComponentOutputs {
 }
 export interface disksComponentInputs {
 	readonly location: string;
-	readonly managedBy?: string | undefined;
-	readonly managedByExtended?: string[] | undefined;
+	readonly managedBy?: string;
+	readonly managedByExtended?: string[];
 	readonly name: string;
-	readonly properties?: DiskProperties | undefined;
-	readonly sku?: DiskSku | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly properties?: DiskProperties;
+	readonly sku?: DiskSku;
+	readonly tags?: ResourceTags;
+	readonly zones?: string[];
 }
 export class snapshots extends ArmResource<snapshotsComponentInputs> implements snapshotsComponentOutputs {
 	constructor(entity: ADKEntity, options: snapshotsComponentInputs) {
@@ -61,73 +61,71 @@ export interface snapshotsComponentOutputs {
 }
 export interface snapshotsComponentInputs {
 	readonly location: string;
-	readonly managedBy?: string | undefined;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly properties?: SnapshotProperties | undefined;
-	readonly sku?: SnapshotSku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SnapshotProperties;
+	readonly sku?: SnapshotSku;
+	readonly tags?: ResourceTags;
 }
 export interface CreationData {
 	readonly createOption: "Attach" | "Copy" | "Empty" | "FromImage" | "Import" | "Restore" | "Upload";
-	readonly galleryImageReference?: ImageDiskReference | undefined;
-	readonly imageReference?: ImageDiskReference | undefined;
-	readonly sourceResourceId?: string | undefined;
-	readonly sourceUniqueId?: string | undefined;
-	readonly sourceUri?: string | undefined;
-	readonly storageAccountId?: string | undefined;
-	readonly uploadSizeBytes?: number | undefined;
+	readonly galleryImageReference?: ImageDiskReference;
+	readonly imageReference?: ImageDiskReference;
+	readonly sourceResourceId?: string;
+	readonly sourceUniqueId?: string;
+	readonly sourceUri?: string;
+	readonly storageAccountId?: string;
+	readonly uploadSizeBytes?: number;
 }
 export interface DiskProperties {
 	readonly creationData: CreationData;
-	readonly diskIOPSReadOnly?: number | undefined;
-	readonly diskIOPSReadWrite?: number | undefined;
-	readonly diskMBpsReadOnly?: number | undefined;
-	readonly diskMBpsReadWrite?: number | undefined;
-	readonly diskSizeBytes?: number | undefined;
-	readonly diskSizeGB?: number | undefined;
-	readonly diskState?:
-		| ("ActiveSAS" | "ActiveUpload" | "Attached" | "ReadyToUpload" | "Reserved" | "Unattached")
-		| undefined;
-	readonly encryption?: Encryption | undefined;
-	readonly encryptionSettingsCollection?: EncryptionSettingsCollection | undefined;
-	readonly hyperVGeneration?: ("V1" | "V2") | undefined;
-	readonly maxShares?: number | undefined;
-	readonly osType?: "Linux" | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly shareInfo?: ShareInfoElement[] | undefined;
-	readonly timeCreated?: string | undefined;
-	readonly uniqueId?: string | undefined;
+	readonly diskIOPSReadOnly?: number;
+	readonly diskIOPSReadWrite?: number;
+	readonly diskMBpsReadOnly?: number;
+	readonly diskMBpsReadWrite?: number;
+	readonly diskSizeBytes?: number;
+	readonly diskSizeGB?: number;
+	readonly diskState?: "ActiveSAS" | "ActiveUpload" | "Attached" | "ReadyToUpload" | "Reserved" | "Unattached";
+	readonly encryption?: Encryption;
+	readonly encryptionSettingsCollection?: EncryptionSettingsCollection;
+	readonly hyperVGeneration?: "V1" | "V2";
+	readonly maxShares?: number;
+	readonly osType?: "Linux";
+	readonly provisioningState?: string;
+	readonly shareInfo?: ShareInfoElement[];
+	readonly timeCreated?: string;
+	readonly uniqueId?: string;
 }
 export interface DiskSku {
-	readonly name?: ("Premium_LRS" | "StandardSSD_LRS" | "Standard_LRS" | "UltraSSD_LRS") | undefined;
-	readonly tier?: string | undefined;
+	readonly name?: "Premium_LRS" | "StandardSSD_LRS" | "Standard_LRS" | "UltraSSD_LRS";
+	readonly tier?: string;
 }
 export interface Encryption {
-	readonly diskEncryptionSetId?: string | undefined;
-	readonly type?: ("EncryptionAtRestWithCustomerKey" | "EncryptionAtRestWithPlatformKey") | undefined;
+	readonly diskEncryptionSetId?: string;
+	readonly type?: "EncryptionAtRestWithCustomerKey" | "EncryptionAtRestWithPlatformKey";
 }
 export interface EncryptionSetIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface EncryptionSetProperties {
-	readonly activeKey?: KeyVaultAndKeyReference | undefined;
-	readonly previousKeys?: KeyVaultAndKeyReference[] | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly activeKey?: KeyVaultAndKeyReference;
+	readonly previousKeys?: KeyVaultAndKeyReference[];
+	readonly provisioningState?: string;
 }
 export interface EncryptionSettingsCollection {
 	readonly enabled: boolean;
-	readonly encryptionSettings?: EncryptionSettingsElement[] | undefined;
-	readonly encryptionSettingsVersion?: string | undefined;
+	readonly encryptionSettings?: EncryptionSettingsElement[];
+	readonly encryptionSettingsVersion?: string;
 }
 export interface EncryptionSettingsElement {
-	readonly diskEncryptionKey?: KeyVaultAndSecretReference | undefined;
-	readonly keyEncryptionKey?: KeyVaultAndKeyReference | undefined;
+	readonly diskEncryptionKey?: KeyVaultAndSecretReference;
+	readonly keyEncryptionKey?: KeyVaultAndKeyReference;
 }
 export interface ImageDiskReference {
 	readonly id: string;
-	readonly lun?: number | undefined;
+	readonly lun?: number;
 }
 export interface KeyVaultAndKeyReference {
 	readonly keyUrl: string;
@@ -138,30 +136,30 @@ export interface KeyVaultAndSecretReference {
 	readonly sourceVault: SourceVault;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ShareInfoElement {
-	readonly vmUri?: string | undefined;
+	readonly vmUri?: string;
 }
 export interface SnapshotProperties {
 	readonly creationData: CreationData;
-	readonly diskSizeBytes?: number | undefined;
-	readonly diskSizeGB?: number | undefined;
-	readonly encryption?: Encryption | undefined;
-	readonly encryptionSettingsCollection?: EncryptionSettingsCollection | undefined;
-	readonly hyperVGeneration?: ("V1" | "V2") | undefined;
-	readonly incremental?: boolean | undefined;
-	readonly osType?: "Linux" | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly timeCreated?: string | undefined;
-	readonly uniqueId?: string | undefined;
+	readonly diskSizeBytes?: number;
+	readonly diskSizeGB?: number;
+	readonly encryption?: Encryption;
+	readonly encryptionSettingsCollection?: EncryptionSettingsCollection;
+	readonly hyperVGeneration?: "V1" | "V2";
+	readonly incremental?: boolean;
+	readonly osType?: "Linux";
+	readonly provisioningState?: string;
+	readonly timeCreated?: string;
+	readonly uniqueId?: string;
 }
 export interface SnapshotSku {
-	readonly name?: ("Premium_LRS" | "Standard_LRS" | "Standard_ZRS") | undefined;
-	readonly tier?: string | undefined;
+	readonly name?: "Premium_LRS" | "Standard_LRS" | "Standard_ZRS";
+	readonly tier?: string;
 }
 export interface SourceVault {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export default {
 	diskEncryptionSets: diskEncryptionSets,

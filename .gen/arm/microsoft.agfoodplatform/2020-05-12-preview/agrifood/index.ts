@@ -16,10 +16,10 @@ export interface farmBeatsComponentOutputs {
 export interface farmBeatsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: FarmBeatsProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: FarmBeatsProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class farmBeats_extensions
 	extends ArmResource<farmBeats_extensionsComponentInputs>
@@ -38,10 +38,10 @@ export interface farmBeats_extensionsComponentOutputs {
 	readonly type: "Microsoft.AgFoodPlatform/farmBeats/extensions";
 }
 export interface farmBeats_extensionsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: ExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ExtensionProperties;
+	readonly systemData?: SystemData;
 }
 export class farmBeatsExtensionDefinitions
 	extends ArmResource<farmBeatsExtensionDefinitionsComponentInputs>
@@ -67,56 +67,56 @@ export interface farmBeatsExtensionDefinitionsComponentOutputs {
 }
 export interface farmBeatsExtensionDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: FarmBeatsExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: FarmBeatsExtensionProperties;
+	readonly systemData?: SystemData;
 }
 export interface DetailedInformation {
-	readonly apiInputParameters?: string[] | undefined;
-	readonly apiName?: string | undefined;
-	readonly customParameters?: string[] | undefined;
-	readonly platformParameters?: string[] | undefined;
-	readonly unitsSupported?: UnitSystemsInfo | undefined;
+	readonly apiInputParameters?: string[];
+	readonly apiName?: string;
+	readonly customParameters?: string[];
+	readonly platformParameters?: string[];
+	readonly unitsSupported?: UnitSystemsInfo;
 }
 export interface ExtensionProperties {
-	readonly extensionApiDocsLink?: string | undefined;
-	readonly extensionAuthLink?: string | undefined;
-	readonly extensionCategory?: string | undefined;
-	readonly extensionId?: string | undefined;
-	readonly installedExtensionVersion?: string | undefined;
+	readonly extensionApiDocsLink?: string;
+	readonly extensionAuthLink?: string;
+	readonly extensionCategory?: string;
+	readonly extensionId?: string;
+	readonly installedExtensionVersion?: string;
 }
 export interface FarmBeatsExtensionProperties {
-	readonly description?: string | undefined;
-	readonly detailedInformation?: DetailedInformation[] | undefined;
-	readonly extensionApiDocsLink?: string | undefined;
-	readonly extensionAuthLink?: string | undefined;
-	readonly extensionCategory?: string | undefined;
-	readonly farmBeatsExtensionId?: string | undefined;
-	readonly farmBeatsExtensionName?: string | undefined;
-	readonly farmBeatsExtensionVersion?: string | undefined;
-	readonly publisherId?: string | undefined;
-	readonly targetResourceType?: string | undefined;
+	readonly description?: string;
+	readonly detailedInformation?: DetailedInformation[];
+	readonly extensionApiDocsLink?: string;
+	readonly extensionAuthLink?: string;
+	readonly extensionCategory?: string;
+	readonly farmBeatsExtensionId?: string;
+	readonly farmBeatsExtensionName?: string;
+	readonly farmBeatsExtensionVersion?: string;
+	readonly publisherId?: string;
+	readonly targetResourceType?: string;
 }
 export interface FarmBeatsProperties {
-	readonly instanceUri?: string | undefined;
-	readonly provisioningState?: ("Failed" | "Succeeded") | undefined;
+	readonly instanceUri?: string;
+	readonly provisioningState?: "Failed" | "Succeeded";
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
 	readonly name: string;
-	readonly size?: string | undefined;
-	readonly tier?: ("Basic" | "Free" | "Premium") | undefined;
+	readonly size?: string;
+	readonly tier?: "Basic" | "Free" | "Premium";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UnitSystemsInfo {
 	readonly key: string;

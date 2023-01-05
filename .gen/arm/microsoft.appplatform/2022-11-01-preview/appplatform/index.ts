@@ -14,12 +14,12 @@ export interface SpringComponentOutputs {
 	readonly type: "Microsoft.AppPlatform/Spring";
 }
 export interface SpringComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ClusterResourceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ClusterResourceProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class Spring_apiPortals
 	extends ArmResource<Spring_apiPortalsComponentInputs>
@@ -39,9 +39,9 @@ export interface Spring_apiPortalsComponentOutputs {
 }
 export interface Spring_apiPortalsComponentInputs {
 	readonly name: string;
-	readonly properties?: ApiPortalProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ApiPortalProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
 }
 export class Spring_apiPortals_domains
 	extends ArmResource<Spring_apiPortals_domainsComponentInputs>
@@ -61,8 +61,8 @@ export interface Spring_apiPortals_domainsComponentOutputs {
 }
 export interface Spring_apiPortals_domainsComponentInputs {
 	readonly name: string;
-	readonly properties?: ApiPortalCustomDomainProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ApiPortalCustomDomainProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_applicationAccelerators
 	extends ArmResource<Spring_applicationAcceleratorsComponentInputs>
@@ -82,9 +82,9 @@ export interface Spring_applicationAcceleratorsComponentOutputs {
 }
 export interface Spring_applicationAcceleratorsComponentInputs {
 	readonly name: string;
-	readonly properties?: ApplicationAcceleratorProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ApplicationAcceleratorProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
 }
 export class Spring_applicationAccelerators_customizedAccelerators
 	extends ArmResource<Spring_applicationAccelerators_customizedAcceleratorsComponentInputs>
@@ -110,9 +110,9 @@ export interface Spring_applicationAccelerators_customizedAcceleratorsComponentO
 }
 export interface Spring_applicationAccelerators_customizedAcceleratorsComponentInputs {
 	readonly name: string;
-	readonly properties?: CustomizedAcceleratorProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CustomizedAcceleratorProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
 }
 export class Spring_applicationAccelerators_predefinedAccelerators
 	extends ArmResource<Spring_applicationAccelerators_predefinedAcceleratorsComponentInputs>
@@ -138,9 +138,9 @@ export interface Spring_applicationAccelerators_predefinedAcceleratorsComponentO
 }
 export interface Spring_applicationAccelerators_predefinedAcceleratorsComponentInputs {
 	readonly name: string;
-	readonly properties?: PredefinedAcceleratorProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PredefinedAcceleratorProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
 }
 export class Spring_applicationLiveViews
 	extends ArmResource<Spring_applicationLiveViewsComponentInputs>
@@ -160,8 +160,8 @@ export interface Spring_applicationLiveViewsComponentOutputs {
 }
 export interface Spring_applicationLiveViewsComponentInputs {
 	readonly name: string;
-	readonly properties?: ApplicationLiveViewProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ApplicationLiveViewProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_apps extends ArmResource<Spring_appsComponentInputs> implements Spring_appsComponentOutputs {
 	constructor(entity: ADKEntity, options: Spring_appsComponentInputs) {
@@ -177,11 +177,11 @@ export interface Spring_appsComponentOutputs {
 	readonly type: "Microsoft.AppPlatform/Spring/apps";
 }
 export interface Spring_appsComponentInputs {
-	readonly identity?: ManagedIdentityProperties | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedIdentityProperties;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AppResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AppResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_apps_bindings
 	extends ArmResource<Spring_apps_bindingsComponentInputs>
@@ -201,8 +201,8 @@ export interface Spring_apps_bindingsComponentOutputs {
 }
 export interface Spring_apps_bindingsComponentInputs {
 	readonly name: string;
-	readonly properties?: BindingResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: BindingResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_apps_deployments
 	extends ArmResource<Spring_apps_deploymentsComponentInputs>
@@ -222,9 +222,9 @@ export interface Spring_apps_deploymentsComponentOutputs {
 }
 export interface Spring_apps_deploymentsComponentInputs {
 	readonly name: string;
-	readonly properties?: DeploymentResourceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DeploymentResourceProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
 }
 export class Spring_apps_domains
 	extends ArmResource<Spring_apps_domainsComponentInputs>
@@ -244,8 +244,8 @@ export interface Spring_apps_domainsComponentOutputs {
 }
 export interface Spring_apps_domainsComponentInputs {
 	readonly name: string;
-	readonly properties?: CustomDomainProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CustomDomainProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_buildServices
 	extends ArmResource<Spring_buildServicesComponentInputs>
@@ -265,8 +265,8 @@ export interface Spring_buildServicesComponentOutputs {
 }
 export interface Spring_buildServicesComponentInputs {
 	readonly name: string;
-	readonly properties?: BuildServiceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: BuildServiceProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_buildServices_agentPools
 	extends ArmResource<Spring_buildServices_agentPoolsComponentInputs>
@@ -286,8 +286,8 @@ export interface Spring_buildServices_agentPoolsComponentOutputs {
 }
 export interface Spring_buildServices_agentPoolsComponentInputs {
 	readonly name: string;
-	readonly properties?: BuildServiceAgentPoolProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: BuildServiceAgentPoolProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_buildServices_builders
 	extends ArmResource<Spring_buildServices_buildersComponentInputs>
@@ -307,8 +307,8 @@ export interface Spring_buildServices_buildersComponentOutputs {
 }
 export interface Spring_buildServices_buildersComponentInputs {
 	readonly name: string;
-	readonly properties?: BuilderProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: BuilderProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_buildServices_builders_buildpackBindings
 	extends ArmResource<Spring_buildServices_builders_buildpackBindingsComponentInputs>
@@ -334,8 +334,8 @@ export interface Spring_buildServices_builders_buildpackBindingsComponentOutputs
 }
 export interface Spring_buildServices_builders_buildpackBindingsComponentInputs {
 	readonly name: string;
-	readonly properties?: BuildpackBindingProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: BuildpackBindingProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_buildServices_builds
 	extends ArmResource<Spring_buildServices_buildsComponentInputs>
@@ -355,8 +355,8 @@ export interface Spring_buildServices_buildsComponentOutputs {
 }
 export interface Spring_buildServices_buildsComponentInputs {
 	readonly name: string;
-	readonly properties?: BuildProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: BuildProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_buildServices_builds_results
 	extends ArmResource<Spring_buildServices_builds_resultsComponentInputs>
@@ -382,8 +382,8 @@ export interface Spring_buildServices_builds_resultsComponentOutputs {
 }
 export interface Spring_buildServices_builds_resultsComponentInputs {
 	readonly name: string;
-	readonly properties?: BuildResultProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: BuildResultProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_buildServices_supportedBuildpacks
 	extends ArmResource<Spring_buildServices_supportedBuildpacksComponentInputs>
@@ -409,8 +409,8 @@ export interface Spring_buildServices_supportedBuildpacksComponentOutputs {
 }
 export interface Spring_buildServices_supportedBuildpacksComponentInputs {
 	readonly name: string;
-	readonly properties?: SupportedBuildpackResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SupportedBuildpackResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_buildServices_supportedStacks
 	extends ArmResource<Spring_buildServices_supportedStacksComponentInputs>
@@ -436,8 +436,8 @@ export interface Spring_buildServices_supportedStacksComponentOutputs {
 }
 export interface Spring_buildServices_supportedStacksComponentInputs {
 	readonly name: string;
-	readonly properties?: SupportedStackResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SupportedStackResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_certificates
 	extends ArmResource<Spring_certificatesComponentInputs>
@@ -457,8 +457,8 @@ export interface Spring_certificatesComponentOutputs {
 }
 export interface Spring_certificatesComponentInputs {
 	readonly name: string;
-	readonly properties?: CertificateProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CertificateProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_configServers
 	extends ArmResource<Spring_configServersComponentInputs>
@@ -478,8 +478,8 @@ export interface Spring_configServersComponentOutputs {
 }
 export interface Spring_configServersComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfigServerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConfigServerProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_configurationServices
 	extends ArmResource<Spring_configurationServicesComponentInputs>
@@ -499,8 +499,8 @@ export interface Spring_configurationServicesComponentOutputs {
 }
 export interface Spring_configurationServicesComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfigurationServiceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConfigurationServiceProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_DevToolPortals
 	extends ArmResource<Spring_DevToolPortalsComponentInputs>
@@ -520,8 +520,8 @@ export interface Spring_DevToolPortalsComponentOutputs {
 }
 export interface Spring_DevToolPortalsComponentInputs {
 	readonly name: string;
-	readonly properties?: DevToolPortalProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DevToolPortalProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_gateways
 	extends ArmResource<Spring_gatewaysComponentInputs>
@@ -541,9 +541,9 @@ export interface Spring_gatewaysComponentOutputs {
 }
 export interface Spring_gatewaysComponentInputs {
 	readonly name: string;
-	readonly properties?: GatewayProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: GatewayProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
 }
 export class Spring_gateways_domains
 	extends ArmResource<Spring_gateways_domainsComponentInputs>
@@ -563,8 +563,8 @@ export interface Spring_gateways_domainsComponentOutputs {
 }
 export interface Spring_gateways_domainsComponentInputs {
 	readonly name: string;
-	readonly properties?: GatewayCustomDomainProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: GatewayCustomDomainProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_gateways_routeConfigs
 	extends ArmResource<Spring_gateways_routeConfigsComponentInputs>
@@ -584,8 +584,8 @@ export interface Spring_gateways_routeConfigsComponentOutputs {
 }
 export interface Spring_gateways_routeConfigsComponentInputs {
 	readonly name: string;
-	readonly properties?: GatewayRouteConfigProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: GatewayRouteConfigProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_monitoringSettings
 	extends ArmResource<Spring_monitoringSettingsComponentInputs>
@@ -605,8 +605,8 @@ export interface Spring_monitoringSettingsComponentOutputs {
 }
 export interface Spring_monitoringSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: MonitoringSettingProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: MonitoringSettingProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_serviceRegistries
 	extends ArmResource<Spring_serviceRegistriesComponentInputs>
@@ -626,8 +626,8 @@ export interface Spring_serviceRegistriesComponentOutputs {
 }
 export interface Spring_serviceRegistriesComponentInputs {
 	readonly name: string;
-	readonly properties?: ServiceRegistryProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ServiceRegistryProperties;
+	readonly systemData?: SystemData;
 }
 export class Spring_storages
 	extends ArmResource<Spring_storagesComponentInputs>
@@ -647,8 +647,8 @@ export interface Spring_storagesComponentOutputs {
 }
 export interface Spring_storagesComponentInputs {
 	readonly name: string;
-	readonly properties?: StorageProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: StorageProperties;
+	readonly systemData?: SystemData;
 }
 export function listEnvSecrets(resource: Spring_gateways): GatewayEnvSecrets {
 	if (resource.apiVersion !== "2022-11-01-preview") {
@@ -680,648 +680,642 @@ export function listUsingDeployments(resource: Spring_buildServices_builders): D
 export interface AcceleratorAuthSetting {}
 export interface AcceleratorGitRepository {
 	readonly authSetting: AcceleratorAuthSetting;
-	readonly branch?: string | undefined;
-	readonly commit?: string | undefined;
-	readonly gitTag?: string | undefined;
-	readonly intervalInSeconds?: number | undefined;
+	readonly branch?: string;
+	readonly commit?: string;
+	readonly gitTag?: string;
+	readonly intervalInSeconds?: number;
 	readonly url: string;
 }
 export interface AddonProfile {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ApiPortalCustomDomainProperties {
-	readonly thumbprint?: string | undefined;
+	readonly thumbprint?: string;
 }
 export interface ApiPortalInstance {
-	readonly name?: string | undefined;
-	readonly status?: string | undefined;
+	readonly name?: string;
+	readonly status?: string;
 }
 export interface ApiPortalProperties {
-	readonly gatewayIds?: string[] | undefined;
-	readonly httpsOnly?: boolean | undefined;
-	readonly instances?: ApiPortalInstance[] | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly public?: boolean | undefined;
-	readonly resourceRequests?: ApiPortalResourceRequests | undefined;
-	readonly sourceUrls?: string[] | undefined;
-	readonly ssoProperties?: SsoProperties | undefined;
-	readonly url?: string | undefined;
+	readonly gatewayIds?: string[];
+	readonly httpsOnly?: boolean;
+	readonly instances?: ApiPortalInstance[];
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly public?: boolean;
+	readonly resourceRequests?: ApiPortalResourceRequests;
+	readonly sourceUrls?: string[];
+	readonly ssoProperties?: SsoProperties;
+	readonly url?: string;
 }
 export interface ApiPortalResourceRequests {
-	readonly cpu?: string | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: string;
+	readonly memory?: string;
 }
 export interface ApplicationAcceleratorComponent {
-	readonly instances?: ApplicationAcceleratorInstance[] | undefined;
-	readonly name?: string | undefined;
-	readonly resourceRequests?: ApplicationAcceleratorResourceRequests | undefined;
+	readonly instances?: ApplicationAcceleratorInstance[];
+	readonly name?: string;
+	readonly resourceRequests?: ApplicationAcceleratorResourceRequests;
 }
 export interface ApplicationAcceleratorInstance {
-	readonly name?: string | undefined;
-	readonly status?: string | undefined;
+	readonly name?: string;
+	readonly status?: string;
 }
 export interface ApplicationAcceleratorProperties {
-	readonly components?: ApplicationAcceleratorComponent[] | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly components?: ApplicationAcceleratorComponent[];
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ApplicationAcceleratorResourceRequests {
-	readonly cpu?: string | undefined;
-	readonly instanceCount?: number | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: string;
+	readonly instanceCount?: number;
+	readonly memory?: string;
 }
 export interface ApplicationInsightsAgentVersions {
-	readonly java?: string | undefined;
+	readonly java?: string;
 }
 export interface ApplicationLiveViewComponent {
-	readonly instances?: ApplicationLiveViewInstance[] | undefined;
-	readonly name?: any | undefined;
-	readonly resourceRequests?: ApplicationLiveViewResourceRequests | undefined;
+	readonly instances?: ApplicationLiveViewInstance[];
+	readonly name?: any;
+	readonly resourceRequests?: ApplicationLiveViewResourceRequests;
 }
 export interface ApplicationLiveViewInstance {
-	readonly name?: string | undefined;
-	readonly status?: string | undefined;
+	readonly name?: string;
+	readonly status?: string;
 }
 export interface ApplicationLiveViewProperties {
-	readonly components?: ApplicationLiveViewComponent[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly components?: ApplicationLiveViewComponent[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ApplicationLiveViewResourceRequests {
-	readonly cpu?: string | undefined;
-	readonly instanceCount?: number | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: string;
+	readonly instanceCount?: number;
+	readonly memory?: string;
 }
 export interface AppResourceProperties {
-	readonly addonConfigs?: AppResourcePropertiesAddonConfigs | undefined;
-	readonly customPersistentDisks?: CustomPersistentDiskResource[] | undefined;
-	readonly enableEndToEndTLS?: boolean | undefined;
-	readonly fqdn?: string | undefined;
-	readonly httpsOnly?: boolean | undefined;
-	readonly ingressSettings?: IngressSettings | undefined;
-	readonly loadedCertificates?: LoadedCertificate[] | undefined;
-	readonly persistentDisk?: PersistentDisk | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly public?: boolean | undefined;
-	readonly temporaryDisk?: TemporaryDisk | undefined;
-	readonly url?: string | undefined;
-	readonly vnetAddons?: AppVNetAddons | undefined;
+	readonly addonConfigs?: AppResourcePropertiesAddonConfigs;
+	readonly customPersistentDisks?: CustomPersistentDiskResource[];
+	readonly enableEndToEndTLS?: boolean;
+	readonly fqdn?: string;
+	readonly httpsOnly?: boolean;
+	readonly ingressSettings?: IngressSettings;
+	readonly loadedCertificates?: LoadedCertificate[];
+	readonly persistentDisk?: PersistentDisk;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly public?: boolean;
+	readonly temporaryDisk?: TemporaryDisk;
+	readonly url?: string;
+	readonly vnetAddons?: AppVNetAddons;
 }
 export interface AppResourcePropertiesAddonConfigs {
-	readonly "[ key: string ]"?: AddonProfile | undefined;
+	readonly [key: string]: AddonProfile;
 }
 export interface AppVNetAddons {
-	readonly publicEndpoint?: boolean | undefined;
-	readonly publicEndpointUrl?: string | undefined;
+	readonly publicEndpoint?: boolean;
+	readonly publicEndpointUrl?: string;
 }
 export interface BindingResourceProperties {
-	readonly bindingParameters?: BindingResourcePropertiesBindingParameters | undefined;
-	readonly createdAt?: string | undefined;
-	readonly generatedProperties?: string | undefined;
-	readonly key?: string | undefined;
-	readonly resourceId?: string | undefined;
-	readonly resourceName?: string | undefined;
-	readonly resourceType?: string | undefined;
-	readonly updatedAt?: string | undefined;
+	readonly bindingParameters?: BindingResourcePropertiesBindingParameters;
+	readonly createdAt?: string;
+	readonly generatedProperties?: string;
+	readonly key?: string;
+	readonly resourceId?: string;
+	readonly resourceName?: string;
+	readonly resourceType?: string;
+	readonly updatedAt?: string;
 }
 export interface BindingResourcePropertiesBindingParameters {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface BuilderProperties {
-	readonly buildpackGroups?: BuildpacksGroupProperties[] | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly stack?: StackProperties | undefined;
+	readonly buildpackGroups?: BuildpacksGroupProperties[];
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly stack?: StackProperties;
 }
 export interface BuildpackBindingLaunchProperties {
-	readonly properties?: BuildpackBindingLaunchProperties | undefined;
-	readonly secrets?: BuildpackBindingLaunchPropertiesSecrets | undefined;
+	readonly properties?: BuildpackBindingLaunchProperties;
+	readonly secrets?: BuildpackBindingLaunchPropertiesSecrets;
 }
 export interface BuildpackBindingLaunchPropertiesSecrets {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface BuildpackBindingProperties {
 	readonly bindingType?:
-		| (
-				| "ApacheSkyWalking"
-				| "AppDynamics"
-				| "ApplicationInsights"
-				| "CACertificates"
-				| "Dynatrace"
-				| "ElasticAPM"
-				| "NewRelic"
-		  )
-		| undefined;
-	readonly launchProperties?: BuildpackBindingLaunchProperties | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+		| "ApacheSkyWalking"
+		| "AppDynamics"
+		| "ApplicationInsights"
+		| "CACertificates"
+		| "Dynatrace"
+		| "ElasticAPM"
+		| "NewRelic";
+	readonly launchProperties?: BuildpackBindingLaunchProperties;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface BuildpackProperties {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface BuildpacksGroupProperties {
-	readonly buildpacks?: BuildpackProperties[] | undefined;
-	readonly name?: string | undefined;
+	readonly buildpacks?: BuildpackProperties[];
+	readonly name?: string;
 }
 export interface BuildProperties {
-	readonly agentPool?: string | undefined;
-	readonly builder?: string | undefined;
-	readonly env?: BuildPropertiesEnv | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly relativePath?: string | undefined;
-	readonly resourceRequests?: BuildResourceRequests | undefined;
-	readonly triggeredBuildResult?: TriggeredBuildResult | undefined;
+	readonly agentPool?: string;
+	readonly builder?: string;
+	readonly env?: BuildPropertiesEnv;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly relativePath?: string;
+	readonly resourceRequests?: BuildResourceRequests;
+	readonly triggeredBuildResult?: TriggeredBuildResult;
 }
 export interface BuildPropertiesEnv {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface BuildResourceRequests {
-	readonly cpu?: string | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: string;
+	readonly memory?: string;
 }
 export interface BuildResultProperties {
-	readonly buildPodName?: string | undefined;
-	readonly buildStages?: BuildStageProperties[] | undefined;
-	readonly error?: Error | undefined;
-	readonly name?: string | undefined;
-	readonly provisioningState?: ("Building" | "Deleting" | "Failed" | "Queuing" | "Succeeded") | undefined;
+	readonly buildPodName?: string;
+	readonly buildStages?: BuildStageProperties[];
+	readonly error?: Error;
+	readonly name?: string;
+	readonly provisioningState?: "Building" | "Deleting" | "Failed" | "Queuing" | "Succeeded";
 }
 export interface BuildServiceAgentPoolProperties {
-	readonly poolSize?: BuildServiceAgentPoolSizeProperties | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly poolSize?: BuildServiceAgentPoolSizeProperties;
+	readonly provisioningState?: string;
 }
 export interface BuildServiceAgentPoolSizeProperties {
-	readonly cpu?: string | undefined;
-	readonly memory?: string | undefined;
-	readonly name?: string | undefined;
+	readonly cpu?: string;
+	readonly memory?: string;
+	readonly name?: string;
 }
 export interface BuildServiceProperties {
-	readonly kPackVersion?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceRequests?: BuildServicePropertiesResourceRequests | undefined;
+	readonly kPackVersion?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceRequests?: BuildServicePropertiesResourceRequests;
 }
 export interface BuildServicePropertiesResourceRequests {
-	readonly cpu?: string | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: string;
+	readonly memory?: string;
 }
 export interface BuildStageProperties {
-	readonly exitCode?: string | undefined;
-	readonly name?: string | undefined;
-	readonly reason?: string | undefined;
-	readonly status?: ("Failed" | "NotStarted" | "Running" | "Succeeded") | undefined;
+	readonly exitCode?: string;
+	readonly name?: string;
+	readonly reason?: string;
+	readonly status?: "Failed" | "NotStarted" | "Running" | "Succeeded";
 }
 export interface CertificateProperties {
-	readonly activateDate?: string | undefined;
-	readonly dnsNames?: string[] | undefined;
-	readonly expirationDate?: string | undefined;
-	readonly issuedDate?: string | undefined;
-	readonly issuer?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly subjectName?: string | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly activateDate?: string;
+	readonly dnsNames?: string[];
+	readonly expirationDate?: string;
+	readonly issuedDate?: string;
+	readonly issuer?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly subjectName?: string;
+	readonly thumbprint?: string;
 }
 export interface ClusterResourceProperties {
-	readonly fqdn?: string | undefined;
-	readonly marketplaceResource?: MarketplaceResource | undefined;
-	readonly networkProfile?: NetworkProfile | undefined;
-	readonly powerState?: ("Running" | "Stopped") | undefined;
+	readonly fqdn?: string;
+	readonly marketplaceResource?: MarketplaceResource;
+	readonly networkProfile?: NetworkProfile;
+	readonly powerState?: "Running" | "Stopped";
 	readonly provisioningState?:
-		| (
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "MoveFailed"
-				| "Moved"
-				| "Moving"
-				| "Starting"
-				| "Stopping"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly serviceId?: string | undefined;
-	readonly version?: number | undefined;
-	readonly vnetAddons?: ServiceVNetAddons | undefined;
-	readonly zoneRedundant?: boolean | undefined;
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "MoveFailed"
+		| "Moved"
+		| "Moving"
+		| "Starting"
+		| "Stopping"
+		| "Succeeded"
+		| "Updating";
+	readonly serviceId?: string;
+	readonly version?: number;
+	readonly vnetAddons?: ServiceVNetAddons;
+	readonly zoneRedundant?: boolean;
 }
 export interface ConfigServerGitProperty {
-	readonly hostKey?: string | undefined;
-	readonly hostKeyAlgorithm?: string | undefined;
-	readonly label?: string | undefined;
-	readonly password?: string | undefined;
-	readonly privateKey?: string | undefined;
-	readonly repositories?: GitPatternRepository[] | undefined;
-	readonly searchPaths?: string[] | undefined;
-	readonly strictHostKeyChecking?: boolean | undefined;
+	readonly hostKey?: string;
+	readonly hostKeyAlgorithm?: string;
+	readonly label?: string;
+	readonly password?: string;
+	readonly privateKey?: string;
+	readonly repositories?: GitPatternRepository[];
+	readonly searchPaths?: string[];
+	readonly strictHostKeyChecking?: boolean;
 	readonly uri: string;
-	readonly username?: string | undefined;
+	readonly username?: string;
 }
 export interface ConfigServerProperties {
-	readonly configServer?: ConfigServerSettings | undefined;
-	readonly error?: Error | undefined;
-	readonly provisioningState?: ("Deleted" | "Failed" | "NotAvailable" | "Succeeded" | "Updating") | undefined;
+	readonly configServer?: ConfigServerSettings;
+	readonly error?: Error;
+	readonly provisioningState?: "Deleted" | "Failed" | "NotAvailable" | "Succeeded" | "Updating";
 }
 export interface ConfigServerSettings {
-	readonly gitProperty?: ConfigServerGitProperty | undefined;
+	readonly gitProperty?: ConfigServerGitProperty;
 }
 export interface ConfigurationServiceGitProperty {
-	readonly repositories?: ConfigurationServiceGitRepository[] | undefined;
+	readonly repositories?: ConfigurationServiceGitRepository[];
 }
 export interface ConfigurationServiceGitRepository {
-	readonly hostKey?: string | undefined;
-	readonly hostKeyAlgorithm?: string | undefined;
+	readonly hostKey?: string;
+	readonly hostKeyAlgorithm?: string;
 	readonly label: string;
 	readonly name: string;
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly patterns: string[];
-	readonly privateKey?: string | undefined;
-	readonly searchPaths?: string[] | undefined;
-	readonly strictHostKeyChecking?: boolean | undefined;
+	readonly privateKey?: string;
+	readonly searchPaths?: string[];
+	readonly strictHostKeyChecking?: boolean;
 	readonly uri: string;
-	readonly username?: string | undefined;
+	readonly username?: string;
 }
 export interface ConfigurationServiceInstance {
-	readonly name?: string | undefined;
-	readonly status?: string | undefined;
+	readonly name?: string;
+	readonly status?: string;
 }
 export interface ConfigurationServiceProperties {
-	readonly instances?: ConfigurationServiceInstance[] | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceRequests?: ConfigurationServiceResourceRequests | undefined;
-	readonly settings?: ConfigurationServiceSettings | undefined;
+	readonly instances?: ConfigurationServiceInstance[];
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceRequests?: ConfigurationServiceResourceRequests;
+	readonly settings?: ConfigurationServiceSettings;
 }
 export interface ConfigurationServiceResourceRequests {
-	readonly cpu?: string | undefined;
-	readonly instanceCount?: number | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: string;
+	readonly instanceCount?: number;
+	readonly memory?: string;
 }
 export interface ConfigurationServiceSettings {
-	readonly gitProperty?: ConfigurationServiceGitProperty | undefined;
+	readonly gitProperty?: ConfigurationServiceGitProperty;
 }
 export interface ContainerProbeSettings {
-	readonly disableProbe?: boolean | undefined;
+	readonly disableProbe?: boolean;
 }
 export interface CustomContainer {
-	readonly args?: string[] | undefined;
-	readonly command?: string[] | undefined;
-	readonly containerImage?: string | undefined;
-	readonly imageRegistryCredential?: ImageRegistryCredential | undefined;
-	readonly languageFramework?: string | undefined;
-	readonly server?: string | undefined;
+	readonly args?: string[];
+	readonly command?: string[];
+	readonly containerImage?: string;
+	readonly imageRegistryCredential?: ImageRegistryCredential;
+	readonly languageFramework?: string;
+	readonly server?: string;
 }
 export interface CustomDomainProperties {
-	readonly appName?: string | undefined;
-	readonly certName?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly appName?: string;
+	readonly certName?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly thumbprint?: string;
 }
 export interface CustomizedAcceleratorProperties {
-	readonly acceleratorTags?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly acceleratorTags?: string[];
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly gitRepository: AcceleratorGitRepository;
-	readonly iconUrl?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly iconUrl?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface CustomPersistentDiskProperties {
-	readonly mountOptions?: string[] | undefined;
+	readonly mountOptions?: string[];
 	readonly mountPath: string;
-	readonly readOnly?: boolean | undefined;
+	readonly readOnly?: boolean;
 }
 export interface CustomPersistentDiskResource {
-	readonly customPersistentDiskProperties?: CustomPersistentDiskProperties | undefined;
+	readonly customPersistentDiskProperties?: CustomPersistentDiskProperties;
 	readonly storageId: string;
 }
 export interface DeploymentInstance {
-	readonly discoveryStatus?: string | undefined;
-	readonly name?: string | undefined;
-	readonly reason?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly discoveryStatus?: string;
+	readonly name?: string;
+	readonly reason?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly zone?: string;
 }
 export interface DeploymentList {
-	readonly deployments?: string[] | undefined;
+	readonly deployments?: string[];
 }
 export interface DeploymentResourceProperties {
-	readonly active?: boolean | undefined;
-	readonly deploymentSettings?: DeploymentSettings | undefined;
-	readonly instances?: DeploymentInstance[] | undefined;
-	readonly provisioningState?: ("Creating" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly source?: UserSourceInfo | undefined;
-	readonly status?: ("Running" | "Stopped") | undefined;
+	readonly active?: boolean;
+	readonly deploymentSettings?: DeploymentSettings;
+	readonly instances?: DeploymentInstance[];
+	readonly provisioningState?: "Creating" | "Failed" | "Succeeded" | "Updating";
+	readonly source?: UserSourceInfo;
+	readonly status?: "Running" | "Stopped";
 }
 export interface DeploymentSettings {
-	readonly addonConfigs?: DeploymentSettingsAddonConfigs | undefined;
-	readonly containerProbeSettings?: ContainerProbeSettings | undefined;
-	readonly environmentVariables?: DeploymentSettingsEnvironmentVariables | undefined;
-	readonly livenessProbe?: Probe | undefined;
-	readonly readinessProbe?: Probe | undefined;
-	readonly resourceRequests?: ResourceRequests | undefined;
-	readonly startupProbe?: Probe | undefined;
-	readonly terminationGracePeriodSeconds?: number | undefined;
+	readonly addonConfigs?: DeploymentSettingsAddonConfigs;
+	readonly containerProbeSettings?: ContainerProbeSettings;
+	readonly environmentVariables?: DeploymentSettingsEnvironmentVariables;
+	readonly livenessProbe?: Probe;
+	readonly readinessProbe?: Probe;
+	readonly resourceRequests?: ResourceRequests;
+	readonly startupProbe?: Probe;
+	readonly terminationGracePeriodSeconds?: number;
 }
 export interface DeploymentSettingsAddonConfigs {
-	readonly "[ key: string ]"?: AddonProfile | undefined;
+	readonly [key: string]: AddonProfile;
 }
 export interface DeploymentSettingsEnvironmentVariables {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DevToolPortalFeatureDetail {
-	readonly route?: string | undefined;
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly route?: string;
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface DevToolPortalFeatureSettings {
-	readonly applicationAccelerator?: DevToolPortalFeatureDetail | undefined;
-	readonly applicationLiveView?: DevToolPortalFeatureDetail | undefined;
+	readonly applicationAccelerator?: DevToolPortalFeatureDetail;
+	readonly applicationLiveView?: DevToolPortalFeatureDetail;
 }
 export interface DevToolPortalInstance {
-	readonly name?: string | undefined;
-	readonly status?: string | undefined;
+	readonly name?: string;
+	readonly status?: string;
 }
 export interface DevToolPortalProperties {
-	readonly features?: DevToolPortalFeatureSettings | undefined;
-	readonly instances?: DevToolPortalInstance[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly public?: boolean | undefined;
-	readonly resourceRequests?: DevToolPortalResourceRequests | undefined;
-	readonly ssoProperties?: DevToolPortalSsoProperties | undefined;
-	readonly url?: string | undefined;
+	readonly features?: DevToolPortalFeatureSettings;
+	readonly instances?: DevToolPortalInstance[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly public?: boolean;
+	readonly resourceRequests?: DevToolPortalResourceRequests;
+	readonly ssoProperties?: DevToolPortalSsoProperties;
+	readonly url?: string;
 }
 export interface DevToolPortalResourceRequests {
-	readonly cpu?: string | undefined;
-	readonly instanceCount?: number | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: string;
+	readonly instanceCount?: number;
+	readonly memory?: string;
 }
 export interface DevToolPortalSsoProperties {
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
-	readonly metadataUrl?: string | undefined;
-	readonly scopes?: string[] | undefined;
+	readonly clientId?: string;
+	readonly clientSecret?: string;
+	readonly metadataUrl?: string;
+	readonly scopes?: string[];
 }
 export interface Error {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface GatewayApiMetadataProperties {
-	readonly description?: string | undefined;
-	readonly documentation?: string | undefined;
-	readonly serverUrl?: string | undefined;
-	readonly title?: string | undefined;
-	readonly version?: string | undefined;
+	readonly description?: string;
+	readonly documentation?: string;
+	readonly serverUrl?: string;
+	readonly title?: string;
+	readonly version?: string;
 }
 export interface GatewayApiRoute {
-	readonly description?: string | undefined;
-	readonly filters?: string[] | undefined;
-	readonly order?: number | undefined;
-	readonly predicates?: string[] | undefined;
-	readonly ssoEnabled?: boolean | undefined;
-	readonly tags?: string[] | undefined;
-	readonly title?: string | undefined;
-	readonly tokenRelay?: boolean | undefined;
-	readonly uri?: string | undefined;
+	readonly description?: string;
+	readonly filters?: string[];
+	readonly order?: number;
+	readonly predicates?: string[];
+	readonly ssoEnabled?: boolean;
+	readonly tags?: string[];
+	readonly title?: string;
+	readonly tokenRelay?: boolean;
+	readonly uri?: string;
 }
 export interface GatewayCorsProperties {
-	readonly allowCredentials?: boolean | undefined;
-	readonly allowedHeaders?: string[] | undefined;
-	readonly allowedMethods?: string[] | undefined;
-	readonly allowedOrigins?: string[] | undefined;
-	readonly exposedHeaders?: string[] | undefined;
-	readonly maxAge?: number | undefined;
+	readonly allowCredentials?: boolean;
+	readonly allowedHeaders?: string[];
+	readonly allowedMethods?: string[];
+	readonly allowedOrigins?: string[];
+	readonly exposedHeaders?: string[];
+	readonly maxAge?: number;
 }
 export interface GatewayCustomDomainProperties {
-	readonly thumbprint?: string | undefined;
+	readonly thumbprint?: string;
 }
 export interface GatewayEnvSecrets {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface GatewayInstance {
-	readonly name?: string | undefined;
-	readonly status?: string | undefined;
+	readonly name?: string;
+	readonly status?: string;
 }
 export interface GatewayOperatorProperties {
-	readonly instances?: GatewayInstance[] | undefined;
-	readonly resourceRequests?: GatewayOperatorResourceRequests | undefined;
+	readonly instances?: GatewayInstance[];
+	readonly resourceRequests?: GatewayOperatorResourceRequests;
 }
 export interface GatewayOperatorResourceRequests {
-	readonly cpu?: string | undefined;
-	readonly instanceCount?: number | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: string;
+	readonly instanceCount?: number;
+	readonly memory?: string;
 }
 export interface GatewayProperties {
-	readonly apiMetadataProperties?: GatewayApiMetadataProperties | undefined;
-	readonly apmTypes?: ("AppDynamics" | "ApplicationInsights" | "Dynatrace" | "ElasticAPM" | "NewRelic"[]) | undefined;
-	readonly corsProperties?: GatewayCorsProperties | undefined;
-	readonly environmentVariables?: GatewayPropertiesEnvironmentVariables | undefined;
-	readonly httpsOnly?: boolean | undefined;
-	readonly instances?: GatewayInstance[] | undefined;
-	readonly operatorProperties?: GatewayOperatorProperties | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly public?: boolean | undefined;
-	readonly resourceRequests?: GatewayResourceRequests | undefined;
-	readonly ssoProperties?: SsoProperties | undefined;
-	readonly url?: string | undefined;
+	readonly apiMetadataProperties?: GatewayApiMetadataProperties;
+	readonly apmTypes?: "AppDynamics" | "ApplicationInsights" | "Dynatrace" | "ElasticAPM" | "NewRelic"[];
+	readonly corsProperties?: GatewayCorsProperties;
+	readonly environmentVariables?: GatewayPropertiesEnvironmentVariables;
+	readonly httpsOnly?: boolean;
+	readonly instances?: GatewayInstance[];
+	readonly operatorProperties?: GatewayOperatorProperties;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly public?: boolean;
+	readonly resourceRequests?: GatewayResourceRequests;
+	readonly ssoProperties?: SsoProperties;
+	readonly url?: string;
 }
 export interface GatewayPropertiesEnvironmentVariables {
-	readonly properties?: GatewayPropertiesEnvironmentVariablesProperties | undefined;
-	readonly secrets?: GatewayPropertiesEnvironmentVariablesSecrets | undefined;
+	readonly properties?: GatewayPropertiesEnvironmentVariablesProperties;
+	readonly secrets?: GatewayPropertiesEnvironmentVariablesSecrets;
 }
 export interface GatewayPropertiesEnvironmentVariablesProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface GatewayPropertiesEnvironmentVariablesSecrets {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface GatewayResourceRequests {
-	readonly cpu?: string | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: string;
+	readonly memory?: string;
 }
 export interface GatewayRouteConfigOpenApiProperties {
-	readonly uri?: string | undefined;
+	readonly uri?: string;
 }
 export interface GatewayRouteConfigProperties {
-	readonly appResourceId?: string | undefined;
-	readonly filters?: string[] | undefined;
-	readonly openApi?: GatewayRouteConfigOpenApiProperties | undefined;
-	readonly predicates?: string[] | undefined;
-	readonly protocol?: ("HTTP" | "HTTPS") | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly routes?: GatewayApiRoute[] | undefined;
-	readonly ssoEnabled?: boolean | undefined;
+	readonly appResourceId?: string;
+	readonly filters?: string[];
+	readonly openApi?: GatewayRouteConfigOpenApiProperties;
+	readonly predicates?: string[];
+	readonly protocol?: "HTTP" | "HTTPS";
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly routes?: GatewayApiRoute[];
+	readonly ssoEnabled?: boolean;
 }
 export interface GitPatternRepository {
-	readonly hostKey?: string | undefined;
-	readonly hostKeyAlgorithm?: string | undefined;
-	readonly label?: string | undefined;
+	readonly hostKey?: string;
+	readonly hostKeyAlgorithm?: string;
+	readonly label?: string;
 	readonly name: string;
-	readonly password?: string | undefined;
-	readonly pattern?: string[] | undefined;
-	readonly privateKey?: string | undefined;
-	readonly searchPaths?: string[] | undefined;
-	readonly strictHostKeyChecking?: boolean | undefined;
+	readonly password?: string;
+	readonly pattern?: string[];
+	readonly privateKey?: string;
+	readonly searchPaths?: string[];
+	readonly strictHostKeyChecking?: boolean;
 	readonly uri: string;
-	readonly username?: string | undefined;
+	readonly username?: string;
 }
 export interface ImageRegistryCredential {
-	readonly password?: string | undefined;
-	readonly username?: string | undefined;
+	readonly password?: string;
+	readonly username?: string;
 }
 export interface IngressConfig {
-	readonly readTimeoutInSeconds?: number | undefined;
+	readonly readTimeoutInSeconds?: number;
 }
 export interface IngressSettings {
-	readonly backendProtocol?: ("Default" | "GRPC") | undefined;
-	readonly clientAuth?: IngressSettingsClientAuth | undefined;
-	readonly readTimeoutInSeconds?: number | undefined;
-	readonly sendTimeoutInSeconds?: number | undefined;
-	readonly sessionAffinity?: ("Cookie" | "None") | undefined;
-	readonly sessionCookieMaxAge?: number | undefined;
+	readonly backendProtocol?: "Default" | "GRPC";
+	readonly clientAuth?: IngressSettingsClientAuth;
+	readonly readTimeoutInSeconds?: number;
+	readonly sendTimeoutInSeconds?: number;
+	readonly sessionAffinity?: "Cookie" | "None";
+	readonly sessionCookieMaxAge?: number;
 }
 export interface IngressSettingsClientAuth {
-	readonly certificates?: string[] | undefined;
+	readonly certificates?: string[];
 }
 export interface LoadedCertificate {
-	readonly loadTrustStore?: boolean | undefined;
+	readonly loadTrustStore?: boolean;
 	readonly resourceId: string;
 }
 export interface ManagedIdentityProperties {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned") | undefined;
-	readonly userAssignedIdentities?: UserAssignedManagedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned";
+	readonly userAssignedIdentities?: UserAssignedManagedIdentities;
 }
 export interface MarketplaceResource {
-	readonly plan?: string | undefined;
-	readonly product?: string | undefined;
-	readonly publisher?: string | undefined;
+	readonly plan?: string;
+	readonly product?: string;
+	readonly publisher?: string;
 }
 export interface MonitoringSettingProperties {
-	readonly appInsightsAgentVersions?: ApplicationInsightsAgentVersions | undefined;
-	readonly appInsightsInstrumentationKey?: string | undefined;
-	readonly appInsightsSamplingRate?: number | undefined;
-	readonly error?: Error | undefined;
-	readonly provisioningState?: ("Failed" | "NotAvailable" | "Succeeded" | "Updating") | undefined;
-	readonly traceEnabled?: boolean | undefined;
+	readonly appInsightsAgentVersions?: ApplicationInsightsAgentVersions;
+	readonly appInsightsInstrumentationKey?: string;
+	readonly appInsightsSamplingRate?: number;
+	readonly error?: Error;
+	readonly provisioningState?: "Failed" | "NotAvailable" | "Succeeded" | "Updating";
+	readonly traceEnabled?: boolean;
 }
 export interface NetworkProfile {
-	readonly appNetworkResourceGroup?: string | undefined;
-	readonly appSubnetId?: string | undefined;
-	readonly ingressConfig?: IngressConfig | undefined;
-	readonly outboundIPs?: NetworkProfileOutboundIPs | undefined;
-	readonly outboundType?: string | undefined;
-	readonly requiredTraffics?: RequiredTraffic[] | undefined;
-	readonly serviceCidr?: string | undefined;
-	readonly serviceRuntimeNetworkResourceGroup?: string | undefined;
-	readonly serviceRuntimeSubnetId?: string | undefined;
+	readonly appNetworkResourceGroup?: string;
+	readonly appSubnetId?: string;
+	readonly ingressConfig?: IngressConfig;
+	readonly outboundIPs?: NetworkProfileOutboundIPs;
+	readonly outboundType?: string;
+	readonly requiredTraffics?: RequiredTraffic[];
+	readonly serviceCidr?: string;
+	readonly serviceRuntimeNetworkResourceGroup?: string;
+	readonly serviceRuntimeSubnetId?: string;
 }
 export interface NetworkProfileOutboundIPs {
-	readonly publicIPs?: string[] | undefined;
+	readonly publicIPs?: string[];
 }
 export interface PersistentDisk {
-	readonly mountPath?: string | undefined;
-	readonly sizeInGB?: number | undefined;
-	readonly usedInGB?: number | undefined;
+	readonly mountPath?: string;
+	readonly sizeInGB?: number;
+	readonly usedInGB?: number;
 }
 export interface PredefinedAcceleratorProperties {
-	readonly acceleratorTags?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly iconUrl?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly acceleratorTags?: string[];
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly iconUrl?: string;
+	readonly provisioningState?: "Creating" | "Failed" | "Succeeded" | "Updating";
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface Probe {
 	readonly disableProbe: boolean;
-	readonly failureThreshold?: number | undefined;
-	readonly initialDelaySeconds?: number | undefined;
-	readonly periodSeconds?: number | undefined;
-	readonly probeAction?: ProbeAction | undefined;
-	readonly successThreshold?: number | undefined;
-	readonly timeoutSeconds?: number | undefined;
+	readonly failureThreshold?: number;
+	readonly initialDelaySeconds?: number;
+	readonly periodSeconds?: number;
+	readonly probeAction?: ProbeAction;
+	readonly successThreshold?: number;
+	readonly timeoutSeconds?: number;
 }
 export interface ProbeAction {}
 export interface RequiredTraffic {
-	readonly direction?: ("Inbound" | "Outbound") | undefined;
-	readonly fqdns?: string[] | undefined;
-	readonly ips?: string[] | undefined;
-	readonly port?: number | undefined;
-	readonly protocol?: string | undefined;
+	readonly direction?: "Inbound" | "Outbound";
+	readonly fqdns?: string[];
+	readonly ips?: string[];
+	readonly port?: number;
+	readonly protocol?: string;
 }
 export interface ResourceRequests {
-	readonly cpu?: string | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: string;
+	readonly memory?: string;
 }
 export interface ServiceRegistryInstance {
-	readonly name?: string | undefined;
-	readonly status?: string | undefined;
+	readonly name?: string;
+	readonly status?: string;
 }
 export interface ServiceRegistryProperties {
-	readonly instances?: ServiceRegistryInstance[] | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceRequests?: ServiceRegistryResourceRequests | undefined;
+	readonly instances?: ServiceRegistryInstance[];
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceRequests?: ServiceRegistryResourceRequests;
 }
 export interface ServiceRegistryResourceRequests {
-	readonly cpu?: string | undefined;
-	readonly instanceCount?: number | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: string;
+	readonly instanceCount?: number;
+	readonly memory?: string;
 }
 export interface ServiceVNetAddons {
-	readonly logStreamPublicEndpoint?: boolean | undefined;
+	readonly logStreamPublicEndpoint?: boolean;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly name?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly capacity?: number;
+	readonly name?: string;
+	readonly tier?: string;
 }
 export interface SsoProperties {
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
-	readonly issuerUri?: string | undefined;
-	readonly scope?: string[] | undefined;
+	readonly clientId?: string;
+	readonly clientSecret?: string;
+	readonly issuerUri?: string;
+	readonly scope?: string[];
 }
 export interface StackProperties {
-	readonly id?: string | undefined;
-	readonly version?: string | undefined;
+	readonly id?: string;
+	readonly version?: string;
 }
 export interface StorageProperties {}
 export interface SupportedBuildpackResourceProperties {
-	readonly buildpackId?: string | undefined;
+	readonly buildpackId?: string;
 }
 export interface SupportedStackResourceProperties {
-	readonly stackId?: string | undefined;
-	readonly version?: string | undefined;
+	readonly stackId?: string;
+	readonly version?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TemporaryDisk {
-	readonly mountPath?: string | undefined;
-	readonly sizeInGB?: number | undefined;
+	readonly mountPath?: string;
+	readonly sizeInGB?: number;
 }
 export interface TestKeys {
-	readonly enabled?: boolean | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly primaryTestEndpoint?: string | undefined;
-	readonly secondaryKey?: string | undefined;
-	readonly secondaryTestEndpoint?: string | undefined;
+	readonly enabled?: boolean;
+	readonly primaryKey?: string;
+	readonly primaryTestEndpoint?: string;
+	readonly secondaryKey?: string;
+	readonly secondaryTestEndpoint?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TriggeredBuildResult {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface UserAssignedManagedIdentities {
-	readonly "[ key: string ]"?: UserAssignedManagedIdentity | undefined;
+	readonly [key: string]: UserAssignedManagedIdentity;
 }
 export interface UserAssignedManagedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface UserSourceInfo {
-	readonly version?: string | undefined;
+	readonly version?: string;
 }
 export default {
 	Spring: Spring,

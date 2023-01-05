@@ -14,48 +14,46 @@ export interface componentsComponentOutputs {
 	readonly type: "Microsoft.Insights/components";
 }
 export interface componentsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly kind: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ApplicationInsightsComponentProperties | undefined;
-	readonly tags?: ComponentsResourceTags | undefined;
+	readonly properties?: ApplicationInsightsComponentProperties;
+	readonly tags?: ComponentsResourceTags;
 }
 export interface ApplicationInsightsComponentProperties {
-	readonly AppId?: string | undefined;
+	readonly AppId?: string;
 	readonly Application_Type: "other" | "web";
-	readonly ApplicationId?: string | undefined;
-	readonly ConnectionString?: string | undefined;
-	readonly CreationDate?: string | undefined;
-	readonly DisableIpMasking?: boolean | undefined;
-	readonly DisableLocalAuth?: boolean | undefined;
-	readonly Flow_Type?: "Bluefield" | undefined;
-	readonly ForceCustomerStorageForProfiler?: boolean | undefined;
-	readonly HockeyAppId?: string | undefined;
-	readonly HockeyAppToken?: string | undefined;
-	readonly ImmediatePurgeDataOn30Days?: boolean | undefined;
-	readonly IngestionMode?:
-		| ("ApplicationInsights" | "ApplicationInsightsWithDiagnosticSettings" | "LogAnalytics")
-		| undefined;
-	readonly InstrumentationKey?: string | undefined;
-	readonly LaMigrationDate?: string | undefined;
-	readonly Name?: string | undefined;
-	readonly PrivateLinkScopedResources?: PrivateLinkScopedResource[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicNetworkAccessForIngestion?: ("Disabled" | "Enabled") | undefined;
-	readonly publicNetworkAccessForQuery?: ("Disabled" | "Enabled") | undefined;
-	readonly Request_Source?: "rest" | undefined;
-	readonly RetentionInDays?: number | undefined;
-	readonly SamplingPercentage?: number | undefined;
-	readonly TenantId?: string | undefined;
-	readonly WorkspaceResourceId?: string | undefined;
+	readonly ApplicationId?: string;
+	readonly ConnectionString?: string;
+	readonly CreationDate?: string;
+	readonly DisableIpMasking?: boolean;
+	readonly DisableLocalAuth?: boolean;
+	readonly Flow_Type?: "Bluefield";
+	readonly ForceCustomerStorageForProfiler?: boolean;
+	readonly HockeyAppId?: string;
+	readonly HockeyAppToken?: string;
+	readonly ImmediatePurgeDataOn30Days?: boolean;
+	readonly IngestionMode?: "ApplicationInsights" | "ApplicationInsightsWithDiagnosticSettings" | "LogAnalytics";
+	readonly InstrumentationKey?: string;
+	readonly LaMigrationDate?: string;
+	readonly Name?: string;
+	readonly PrivateLinkScopedResources?: PrivateLinkScopedResource[];
+	readonly provisioningState?: string;
+	readonly publicNetworkAccessForIngestion?: "Disabled" | "Enabled";
+	readonly publicNetworkAccessForQuery?: "Disabled" | "Enabled";
+	readonly Request_Source?: "rest";
+	readonly RetentionInDays?: number;
+	readonly SamplingPercentage?: number;
+	readonly TenantId?: string;
+	readonly WorkspaceResourceId?: string;
 }
 export interface ComponentsResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PrivateLinkScopedResource {
-	readonly ResourceId?: string | undefined;
-	readonly ScopeId?: string | undefined;
+	readonly ResourceId?: string;
+	readonly ScopeId?: string;
 }
 export default {
 	components: components,

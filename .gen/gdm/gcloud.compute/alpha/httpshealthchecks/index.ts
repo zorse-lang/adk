@@ -7,46 +7,45 @@ export class HttpsHealthChecks
 	constructor(entity: ADKEntity, options: HttpsHealthChecksComponentInputs) {
 		super(entity, options.name, "compute.alpha.HttpsHealthChecks", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
 }
 export interface HttpsHealthChecksComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
 }
 export interface HttpsHealthChecksComponentInputs {
-	readonly checkIntervalSec?: number | undefined;
-	readonly description?: string | undefined;
-	readonly healthyThreshold?: number | undefined;
-	readonly host?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly checkIntervalSec?: number;
+	readonly description?: string;
+	readonly healthyThreshold?: number;
+	readonly host?: string;
+	readonly kind?: string;
 	readonly name: string;
-	readonly port?: number | undefined;
-	readonly requestId?: string | undefined;
-	readonly requestPath?: string | undefined;
-	readonly timeoutSec?: number | undefined;
-	readonly unhealthyThreshold?: number | undefined;
-	readonly type: string;
+	readonly port?: number;
+	readonly requestId?: string;
+	readonly requestPath?: string;
+	readonly timeoutSec?: number;
+	readonly unhealthyThreshold?: number;
 }
 export interface HttpsHealthCheck {
-	readonly checkIntervalSec?: number | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly healthyThreshold?: number | undefined;
-	readonly host?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly port?: number | undefined;
-	readonly requestPath?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly timeoutSec?: number | undefined;
-	readonly unhealthyThreshold?: number | undefined;
+	readonly checkIntervalSec?: number;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly healthyThreshold?: number;
+	readonly host?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly port?: number;
+	readonly requestPath?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly timeoutSec?: number;
+	readonly unhealthyThreshold?: number;
 }
 export default {
 	HttpsHealthChecks: HttpsHealthChecks,

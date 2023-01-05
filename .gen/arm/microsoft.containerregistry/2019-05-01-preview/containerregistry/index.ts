@@ -18,8 +18,8 @@ export interface registries_scopeMapsComponentOutputs {
 }
 export interface registries_scopeMapsComponentInputs {
 	readonly name: string;
-	readonly properties?: ScopeMapProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ScopeMapProperties;
+	readonly systemData?: SystemData;
 }
 export class registries_tokens
 	extends ArmResource<registries_tokensComponentInputs>
@@ -39,51 +39,51 @@ export interface registries_tokensComponentOutputs {
 }
 export interface registries_tokensComponentInputs {
 	readonly name: string;
-	readonly properties?: TokenProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: TokenProperties;
+	readonly systemData?: SystemData;
 }
 export interface ActiveDirectoryObject {
-	readonly objectId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly objectId?: string;
+	readonly tenantId?: string;
 }
 export interface ScopeMapProperties {
 	readonly actions: string[];
-	readonly creationDate?: string | undefined;
-	readonly description?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly type?: string | undefined;
+	readonly creationDate?: string;
+	readonly description?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly type?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TokenCertificate {
-	readonly encodedPemCertificate?: string | undefined;
-	readonly expiry?: string | undefined;
-	readonly name?: ("certificate1" | "certificate2") | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly encodedPemCertificate?: string;
+	readonly expiry?: string;
+	readonly name?: "certificate1" | "certificate2";
+	readonly thumbprint?: string;
 }
 export interface TokenCredentialsProperties {
-	readonly activeDirectoryObject?: ActiveDirectoryObject | undefined;
-	readonly certificates?: TokenCertificate[] | undefined;
-	readonly passwords?: TokenPassword[] | undefined;
+	readonly activeDirectoryObject?: ActiveDirectoryObject;
+	readonly certificates?: TokenCertificate[];
+	readonly passwords?: TokenPassword[];
 }
 export interface TokenPassword {
-	readonly creationTime?: string | undefined;
-	readonly expiry?: string | undefined;
-	readonly name?: ("password1" | "password2") | undefined;
-	readonly value?: string | undefined;
+	readonly creationTime?: string;
+	readonly expiry?: string;
+	readonly name?: "password1" | "password2";
+	readonly value?: string;
 }
 export interface TokenProperties {
-	readonly creationDate?: string | undefined;
-	readonly credentials?: TokenCredentialsProperties | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly scopeMapId?: string | undefined;
-	readonly status?: ("disabled" | "enabled") | undefined;
+	readonly creationDate?: string;
+	readonly credentials?: TokenCredentialsProperties;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly scopeMapId?: string;
+	readonly status?: "disabled" | "enabled";
 }
 export default {
 	"registries/scopeMaps": registries_scopeMaps,

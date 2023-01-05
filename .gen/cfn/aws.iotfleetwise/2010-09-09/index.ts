@@ -21,17 +21,17 @@ export interface CampaignComponentInputs {
 	readonly Name: string;
 	readonly SignalCatalogArn: string;
 	readonly TargetArn: string;
-	readonly Compression?: (string | undefined) | undefined;
-	readonly DataExtraDimensions?: (string[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DiagnosticsMode?: (string | undefined) | undefined;
-	readonly ExpiryTime?: (string | undefined) | undefined;
-	readonly PostTriggerCollectionDuration?: (number | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly SignalsToCollect?: (SignalInformation[] | undefined) | undefined;
-	readonly SpoolingMode?: (string | undefined) | undefined;
-	readonly StartTime?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Compression?: string | undefined;
+	readonly DataExtraDimensions?: string[] | undefined;
+	readonly Description?: string | undefined;
+	readonly DiagnosticsMode?: string | undefined;
+	readonly ExpiryTime?: string | undefined;
+	readonly PostTriggerCollectionDuration?: number | undefined;
+	readonly Priority?: number | undefined;
+	readonly SignalsToCollect?: SignalInformation[] | undefined;
+	readonly SpoolingMode?: string | undefined;
+	readonly StartTime?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DecoderManifest
@@ -53,11 +53,11 @@ export interface DecoderManifestComponentOutputs {
 export interface DecoderManifestComponentInputs {
 	readonly ModelManifestArn: string;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly NetworkInterfaces?: (NetworkInterfacesItems[] | undefined) | undefined;
-	readonly SignalDecoders?: (SignalDecodersItems[] | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly NetworkInterfaces?: NetworkInterfacesItems[] | undefined;
+	readonly SignalDecoders?: SignalDecodersItems[] | undefined;
+	readonly Status?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Fleet extends CfnResource<FleetComponentInputs> implements FleetComponentOutputs {
@@ -76,8 +76,8 @@ export interface FleetComponentOutputs {
 export interface FleetComponentInputs {
 	readonly Id: string;
 	readonly SignalCatalogArn: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ModelManifest extends CfnResource<ModelManifestComponentInputs> implements ModelManifestComponentOutputs {
@@ -96,10 +96,10 @@ export interface ModelManifestComponentOutputs {
 export interface ModelManifestComponentInputs {
 	readonly Name: string;
 	readonly SignalCatalogArn: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Nodes?: (string[] | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Nodes?: string[] | undefined;
+	readonly Status?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class SignalCatalog extends CfnResource<SignalCatalogComponentInputs> implements SignalCatalogComponentOutputs {
@@ -126,11 +126,11 @@ export interface SignalCatalogComponentOutputs {
 	readonly NodeCountsTotalSensors: number;
 }
 export interface SignalCatalogComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly NodeCounts?: (NodeCounts | undefined) | undefined;
-	readonly Nodes?: (Node[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly NodeCounts?: NodeCounts | undefined;
+	readonly Nodes?: Node[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Vehicle extends CfnResource<VehicleComponentInputs> implements VehicleComponentOutputs {
@@ -150,24 +150,24 @@ export interface VehicleComponentInputs {
 	readonly DecoderManifestArn: string;
 	readonly ModelManifestArn: string;
 	readonly Name: string;
-	readonly AssociationBehavior?: (string | undefined) | undefined;
-	readonly Attributes?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssociationBehavior?: string | undefined;
+	readonly Attributes?: { [key: string]: string } | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface CollectionScheme {
-	readonly ConditionBasedCollectionScheme?: (ConditionBasedCollectionScheme | undefined) | undefined;
-	readonly TimeBasedCollectionScheme?: (TimeBasedCollectionScheme | undefined) | undefined;
+	readonly ConditionBasedCollectionScheme?: ConditionBasedCollectionScheme | undefined;
+	readonly TimeBasedCollectionScheme?: TimeBasedCollectionScheme | undefined;
 }
 export interface ConditionBasedCollectionScheme {
-	readonly ConditionLanguageVersion?: (number | undefined) | undefined;
+	readonly ConditionLanguageVersion?: number | undefined;
 	readonly Expression: string;
-	readonly MinimumTriggerIntervalMs?: (number | undefined) | undefined;
-	readonly TriggerMode?: (string | undefined) | undefined;
+	readonly MinimumTriggerIntervalMs?: number | undefined;
+	readonly TriggerMode?: string | undefined;
 }
 export interface SignalInformation {
-	readonly MaxSampleCount?: (number | undefined) | undefined;
-	readonly MinimumSamplingIntervalMs?: (number | undefined) | undefined;
+	readonly MaxSampleCount?: number | undefined;
+	readonly MinimumSamplingIntervalMs?: number | undefined;
 	readonly Name: string;
 }
 export interface TimeBasedCollectionScheme {
@@ -175,8 +175,8 @@ export interface TimeBasedCollectionScheme {
 }
 export interface CanInterface {
 	readonly Name: string;
-	readonly ProtocolName?: (string | undefined) | undefined;
-	readonly ProtocolVersion?: (string | undefined) | undefined;
+	readonly ProtocolName?: string | undefined;
+	readonly ProtocolVersion?: string | undefined;
 }
 export interface CanSignal {
 	readonly Factor: string;
@@ -184,28 +184,28 @@ export interface CanSignal {
 	readonly IsSigned: string;
 	readonly Length: string;
 	readonly MessageId: string;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
 	readonly Offset: string;
 	readonly StartBit: string;
 }
 export interface NetworkInterfacesItems {
-	readonly CanInterface?: (CanInterface | undefined) | undefined;
+	readonly CanInterface?: CanInterface | undefined;
 	readonly InterfaceId: string;
-	readonly ObdInterface?: (ObdInterface | undefined) | undefined;
+	readonly ObdInterface?: ObdInterface | undefined;
 	readonly Type: string;
 }
 export interface ObdInterface {
-	readonly DtcRequestIntervalSeconds?: (string | undefined) | undefined;
-	readonly HasTransmissionEcu?: (string | undefined) | undefined;
+	readonly DtcRequestIntervalSeconds?: string | undefined;
+	readonly HasTransmissionEcu?: string | undefined;
 	readonly Name: string;
-	readonly ObdStandard?: (string | undefined) | undefined;
-	readonly PidRequestIntervalSeconds?: (string | undefined) | undefined;
+	readonly ObdStandard?: string | undefined;
+	readonly PidRequestIntervalSeconds?: string | undefined;
 	readonly RequestMessageId: string;
-	readonly UseExtendedIds?: (string | undefined) | undefined;
+	readonly UseExtendedIds?: string | undefined;
 }
 export interface ObdSignal {
-	readonly BitMaskLength?: (string | undefined) | undefined;
-	readonly BitRightShift?: (string | undefined) | undefined;
+	readonly BitMaskLength?: string | undefined;
+	readonly BitRightShift?: string | undefined;
 	readonly ByteLength: string;
 	readonly Offset: string;
 	readonly Pid: string;
@@ -215,58 +215,58 @@ export interface ObdSignal {
 	readonly StartByte: string;
 }
 export interface SignalDecodersItems {
-	readonly CanSignal?: (CanSignal | undefined) | undefined;
+	readonly CanSignal?: CanSignal | undefined;
 	readonly FullyQualifiedName: string;
 	readonly InterfaceId: string;
-	readonly ObdSignal?: (ObdSignal | undefined) | undefined;
+	readonly ObdSignal?: ObdSignal | undefined;
 	readonly Type: string;
 }
 export interface Actuator {
-	readonly AllowedValues?: (string[] | undefined) | undefined;
-	readonly AssignedValue?: (string | undefined) | undefined;
+	readonly AllowedValues?: string[] | undefined;
+	readonly AssignedValue?: string | undefined;
 	readonly DataType: string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly FullyQualifiedName: string;
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
+	readonly Unit?: string | undefined;
 }
 export interface Attribute {
-	readonly AllowedValues?: (string[] | undefined) | undefined;
-	readonly AssignedValue?: (string | undefined) | undefined;
+	readonly AllowedValues?: string[] | undefined;
+	readonly AssignedValue?: string | undefined;
 	readonly DataType: string;
-	readonly DefaultValue?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly DefaultValue?: string | undefined;
+	readonly Description?: string | undefined;
 	readonly FullyQualifiedName: string;
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
+	readonly Unit?: string | undefined;
 }
 export interface Branch {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly FullyQualifiedName: string;
 }
 export interface Node {
-	readonly Actuator?: (Actuator | undefined) | undefined;
-	readonly Attribute?: (Attribute | undefined) | undefined;
-	readonly Branch?: (Branch | undefined) | undefined;
-	readonly Sensor?: (Sensor | undefined) | undefined;
+	readonly Actuator?: Actuator | undefined;
+	readonly Attribute?: Attribute | undefined;
+	readonly Branch?: Branch | undefined;
+	readonly Sensor?: Sensor | undefined;
 }
 export interface NodeCounts {
-	readonly TotalActuators?: (number | undefined) | undefined;
-	readonly TotalAttributes?: (number | undefined) | undefined;
-	readonly TotalBranches?: (number | undefined) | undefined;
-	readonly TotalNodes?: (number | undefined) | undefined;
-	readonly TotalSensors?: (number | undefined) | undefined;
+	readonly TotalActuators?: number | undefined;
+	readonly TotalAttributes?: number | undefined;
+	readonly TotalBranches?: number | undefined;
+	readonly TotalNodes?: number | undefined;
+	readonly TotalSensors?: number | undefined;
 }
 export interface Sensor {
-	readonly AllowedValues?: (string[] | undefined) | undefined;
+	readonly AllowedValues?: string[] | undefined;
 	readonly DataType: string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly FullyQualifiedName: string;
-	readonly Max?: (number | undefined) | undefined;
-	readonly Min?: (number | undefined) | undefined;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly Max?: number | undefined;
+	readonly Min?: number | undefined;
+	readonly Unit?: string | undefined;
 }
 export default {
 	Campaign: Campaign,

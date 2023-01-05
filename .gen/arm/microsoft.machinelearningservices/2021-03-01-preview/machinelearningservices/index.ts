@@ -14,13 +14,13 @@ export interface workspacesComponentOutputs {
 	readonly type: "Microsoft.MachineLearningServices/workspaces";
 }
 export interface workspacesComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WorkspaceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: WorkspaceTags | undefined;
+	readonly properties?: WorkspaceProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: WorkspaceTags;
 }
 export class workspaces_batchEndpoints
 	extends ArmResource<workspaces_batchEndpointsComponentInputs>
@@ -45,13 +45,13 @@ export interface workspaces_batchEndpointsComponentOutputs {
 	readonly type: "Microsoft.MachineLearningServices/workspaces/batchEndpoints";
 }
 export interface workspaces_batchEndpointsComponentInputs {
-	readonly identity?: ResourceIdentity | undefined;
-	readonly kind?: string | undefined;
+	readonly identity?: ResourceIdentity;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: BatchEndpoint;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_batchEndpoints_deployments
 	extends ArmResource<workspaces_batchEndpoints_deploymentsComponentInputs>
@@ -76,13 +76,13 @@ export interface workspaces_batchEndpoints_deploymentsComponentOutputs {
 	readonly type: "Microsoft.MachineLearningServices/workspaces/batchEndpoints/deployments";
 }
 export interface workspaces_batchEndpoints_deploymentsComponentInputs {
-	readonly identity?: ResourceIdentity | undefined;
-	readonly kind?: string | undefined;
+	readonly identity?: ResourceIdentity;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: BatchDeployment;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_codes
 	extends ArmResource<workspaces_codesComponentInputs>
@@ -103,7 +103,7 @@ export interface workspaces_codesComponentOutputs {
 export interface workspaces_codesComponentInputs {
 	readonly name: string;
 	readonly properties: CodeContainer;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class workspaces_codes_versions
 	extends ArmResource<workspaces_codes_versionsComponentInputs>
@@ -130,7 +130,7 @@ export interface workspaces_codes_versionsComponentOutputs {
 export interface workspaces_codes_versionsComponentInputs {
 	readonly name: string;
 	readonly properties: CodeVersion;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class workspaces_computes
 	extends ArmResource<workspaces_computesComponentInputs>
@@ -149,13 +149,13 @@ export interface workspaces_computesComponentOutputs {
 	readonly type: "Microsoft.MachineLearningServices/workspaces/computes";
 }
 export interface workspaces_computesComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: Compute | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ComputeResourceTags | undefined;
+	readonly properties?: Compute;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: ComputeResourceTags;
 }
 export class workspaces_connections
 	extends ArmResource<workspaces_connectionsComponentInputs>
@@ -181,7 +181,7 @@ export interface workspaces_connectionsComponentOutputs {
 }
 export interface workspaces_connectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkspaceConnectionProps | undefined;
+	readonly properties?: WorkspaceConnectionProps;
 }
 export class workspaces_data
 	extends ArmResource<workspaces_dataComponentInputs>
@@ -202,7 +202,7 @@ export interface workspaces_dataComponentOutputs {
 export interface workspaces_dataComponentInputs {
 	readonly name: string;
 	readonly properties: DataContainer;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class workspaces_data_versions
 	extends ArmResource<workspaces_data_versionsComponentInputs>
@@ -229,7 +229,7 @@ export interface workspaces_data_versionsComponentOutputs {
 export interface workspaces_data_versionsComponentInputs {
 	readonly name: string;
 	readonly properties: DataVersion;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class workspaces_datastores
 	extends ArmResource<workspaces_datastoresComponentInputs>
@@ -256,7 +256,7 @@ export interface workspaces_datastoresComponentOutputs {
 export interface workspaces_datastoresComponentInputs {
 	readonly name: string;
 	readonly properties: DatastoreProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class workspaces_environments
 	extends ArmResource<workspaces_environmentsComponentInputs>
@@ -283,7 +283,7 @@ export interface workspaces_environmentsComponentOutputs {
 export interface workspaces_environmentsComponentInputs {
 	readonly name: string;
 	readonly properties: EnvironmentContainer;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class workspaces_environments_versions
 	extends ArmResource<workspaces_environments_versionsComponentInputs>
@@ -310,7 +310,7 @@ export interface workspaces_environments_versionsComponentOutputs {
 export interface workspaces_environments_versionsComponentInputs {
 	readonly name: string;
 	readonly properties: EnvironmentSpecificationVersion;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class workspaces_jobs
 	extends ArmResource<workspaces_jobsComponentInputs>
@@ -331,7 +331,7 @@ export interface workspaces_jobsComponentOutputs {
 export interface workspaces_jobsComponentInputs {
 	readonly name: string;
 	readonly properties: JobBase;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class workspaces_labelingJobs
 	extends ArmResource<workspaces_labelingJobsComponentInputs>
@@ -358,7 +358,7 @@ export interface workspaces_labelingJobsComponentOutputs {
 export interface workspaces_labelingJobsComponentInputs {
 	readonly name: string;
 	readonly properties: LabelingJob;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class workspaces_models
 	extends ArmResource<workspaces_modelsComponentInputs>
@@ -379,7 +379,7 @@ export interface workspaces_modelsComponentOutputs {
 export interface workspaces_modelsComponentInputs {
 	readonly name: string;
 	readonly properties: ModelContainer;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class workspaces_models_versions
 	extends ArmResource<workspaces_models_versionsComponentInputs>
@@ -406,7 +406,7 @@ export interface workspaces_models_versionsComponentOutputs {
 export interface workspaces_models_versionsComponentInputs {
 	readonly name: string;
 	readonly properties: ModelVersion;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class workspaces_onlineEndpoints
 	extends ArmResource<workspaces_onlineEndpointsComponentInputs>
@@ -431,13 +431,13 @@ export interface workspaces_onlineEndpointsComponentOutputs {
 	readonly type: "Microsoft.MachineLearningServices/workspaces/onlineEndpoints";
 }
 export interface workspaces_onlineEndpointsComponentInputs {
-	readonly identity?: ResourceIdentity | undefined;
-	readonly kind?: string | undefined;
+	readonly identity?: ResourceIdentity;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: OnlineEndpoint;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_onlineEndpoints_deployments
 	extends ArmResource<workspaces_onlineEndpoints_deploymentsComponentInputs>
@@ -462,13 +462,13 @@ export interface workspaces_onlineEndpoints_deploymentsComponentOutputs {
 	readonly type: "Microsoft.MachineLearningServices/workspaces/onlineEndpoints/deployments";
 }
 export interface workspaces_onlineEndpoints_deploymentsComponentInputs {
-	readonly identity?: ResourceIdentity | undefined;
-	readonly kind?: string | undefined;
+	readonly identity?: ResourceIdentity;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: OnlineDeployment;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_privateEndpointConnections
 	extends ArmResource<workspaces_privateEndpointConnectionsComponentInputs>
@@ -493,13 +493,13 @@ export interface workspaces_privateEndpointConnectionsComponentOutputs {
 	readonly type: "Microsoft.MachineLearningServices/workspaces/privateEndpointConnections";
 }
 export interface workspaces_privateEndpointConnectionsComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: PrivateEndpointConnectionTags | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: PrivateEndpointConnectionTags;
 }
 export function listKeys(resource: workspaces): ListWorkspaceKeysResult {
 	if (resource.apiVersion !== "2021-03-01-preview") {
@@ -565,33 +565,33 @@ export function listStorageAccountKeys(resource: workspaces): ListStorageAccount
 	throw new Error("not implemented");
 }
 export interface AccountKeyDatastoreSecrets {
-	readonly key?: string | undefined;
+	readonly key?: string;
 	readonly secretsType: "AccountKey" | "Certificate" | "None" | "Sas" | "ServicePrincipal" | "SqlAdmin";
 }
 export interface AksNetworkingConfiguration {
-	readonly dnsServiceIP?: string | undefined;
-	readonly dockerBridgeCidr?: string | undefined;
-	readonly serviceCidr?: string | undefined;
-	readonly subnetId?: string | undefined;
+	readonly dnsServiceIP?: string;
+	readonly dockerBridgeCidr?: string;
+	readonly serviceCidr?: string;
+	readonly subnetId?: string;
 }
 export interface AKSProperties {
-	readonly agentCount?: number | undefined;
-	readonly agentVmSize?: string | undefined;
-	readonly aksNetworkingConfiguration?: AksNetworkingConfiguration | undefined;
-	readonly clusterFqdn?: string | undefined;
-	readonly clusterPurpose?: ("DenseProd" | "DevTest" | "FastProd") | undefined;
-	readonly loadBalancerSubnet?: string | undefined;
-	readonly loadBalancerType?: ("InternalLoadBalancer" | "PublicIp") | undefined;
-	readonly sslConfiguration?: SslConfiguration | undefined;
-	readonly systemServices?: SystemService[] | undefined;
+	readonly agentCount?: number;
+	readonly agentVmSize?: string;
+	readonly aksNetworkingConfiguration?: AksNetworkingConfiguration;
+	readonly clusterFqdn?: string;
+	readonly clusterPurpose?: "DenseProd" | "DevTest" | "FastProd";
+	readonly loadBalancerSubnet?: string;
+	readonly loadBalancerType?: "InternalLoadBalancer" | "PublicIp";
+	readonly sslConfiguration?: SslConfiguration;
+	readonly systemServices?: SystemService[];
 }
 export interface AmlComputeNodeInformation {
-	readonly nodeId?: string | undefined;
-	readonly nodeState?: ("idle" | "leaving" | "preempted" | "preparing" | "running" | "unusable") | undefined;
-	readonly port?: number | undefined;
-	readonly privateIpAddress?: string | undefined;
-	readonly publicIpAddress?: string | undefined;
-	readonly runId?: string | undefined;
+	readonly nodeId?: string;
+	readonly nodeState?: "idle" | "leaving" | "preempted" | "preparing" | "running" | "unusable";
+	readonly port?: number;
+	readonly privateIpAddress?: string;
+	readonly publicIpAddress?: string;
+	readonly runId?: string;
 }
 export interface AmlComputeNodesInformation {
 	readonly computeType:
@@ -604,26 +604,26 @@ export interface AmlComputeNodesInformation {
 		| "HDInsight"
 		| "SynapseSpark"
 		| "VirtualMachine";
-	readonly nextLink?: string | undefined;
-	readonly nodes?: AmlComputeNodeInformation[] | undefined;
+	readonly nextLink?: string;
+	readonly nodes?: AmlComputeNodeInformation[];
 }
 export interface AmlComputeProperties {
-	readonly allocationState?: ("Resizing" | "Steady") | undefined;
-	readonly allocationStateTransitionTime?: string | undefined;
-	readonly currentNodeCount?: number | undefined;
-	readonly enableNodePublicIp?: boolean | undefined;
-	readonly errors?: ErrorResponse[] | undefined;
-	readonly isolatedNetwork?: boolean | undefined;
-	readonly nodeStateCounts?: NodeStateCounts | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly remoteLoginPortPublicAccess?: ("Disabled" | "Enabled" | "NotSpecified") | undefined;
-	readonly scaleSettings?: ScaleSettings | undefined;
-	readonly subnet?: ResourceId | undefined;
-	readonly targetNodeCount?: number | undefined;
-	readonly userAccountCredentials?: UserAccountCredentials | undefined;
-	readonly virtualMachineImage?: VirtualMachineImage | undefined;
-	readonly vmPriority?: ("Dedicated" | "LowPriority") | undefined;
-	readonly vmSize?: string | undefined;
+	readonly allocationState?: "Resizing" | "Steady";
+	readonly allocationStateTransitionTime?: string;
+	readonly currentNodeCount?: number;
+	readonly enableNodePublicIp?: boolean;
+	readonly errors?: ErrorResponse[];
+	readonly isolatedNetwork?: boolean;
+	readonly nodeStateCounts?: NodeStateCounts;
+	readonly osType?: "Linux" | "Windows";
+	readonly remoteLoginPortPublicAccess?: "Disabled" | "Enabled" | "NotSpecified";
+	readonly scaleSettings?: ScaleSettings;
+	readonly subnet?: ResourceId;
+	readonly targetNodeCount?: number;
+	readonly userAccountCredentials?: UserAccountCredentials;
+	readonly virtualMachineImage?: VirtualMachineImage;
+	readonly vmPriority?: "Dedicated" | "LowPriority";
+	readonly vmSize?: string;
 }
 export interface AssetReferenceBase {}
 export interface AssignedUser {
@@ -631,874 +631,871 @@ export interface AssignedUser {
 	readonly tenantId: string;
 }
 export interface AutoPauseProperties {
-	readonly delayInMinutes?: number | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly delayInMinutes?: number;
+	readonly enabled?: boolean;
 }
 export interface AutoScaleProperties {
-	readonly enabled?: boolean | undefined;
-	readonly maxNodeCount?: number | undefined;
-	readonly minNodeCount?: number | undefined;
+	readonly enabled?: boolean;
+	readonly maxNodeCount?: number;
+	readonly minNodeCount?: number;
 }
 export interface BatchDeployment {
-	readonly codeConfiguration?: CodeConfiguration | undefined;
-	readonly compute?: ComputeConfiguration | undefined;
-	readonly description?: string | undefined;
-	readonly environmentId?: string | undefined;
-	readonly environmentVariables?: BatchDeploymentEnvironmentVariables | undefined;
-	readonly errorThreshold?: number | undefined;
-	readonly loggingLevel?: ("Debug" | "Info" | "Warning") | undefined;
-	readonly miniBatchSize?: number | undefined;
-	readonly model?: AssetReferenceBase | undefined;
-	readonly outputConfiguration?: BatchOutputConfiguration | undefined;
-	readonly partitionKeys?: string[] | undefined;
-	readonly properties?: BatchDeploymentProperties | undefined;
-	readonly retrySettings?: BatchRetrySettings | undefined;
+	readonly codeConfiguration?: CodeConfiguration;
+	readonly compute?: ComputeConfiguration;
+	readonly description?: string;
+	readonly environmentId?: string;
+	readonly environmentVariables?: BatchDeploymentEnvironmentVariables;
+	readonly errorThreshold?: number;
+	readonly loggingLevel?: "Debug" | "Info" | "Warning";
+	readonly miniBatchSize?: number;
+	readonly model?: AssetReferenceBase;
+	readonly outputConfiguration?: BatchOutputConfiguration;
+	readonly partitionKeys?: string[];
+	readonly properties?: BatchDeploymentProperties;
+	readonly retrySettings?: BatchRetrySettings;
 }
 export interface BatchDeploymentEnvironmentVariables {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface BatchDeploymentProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface BatchEndpoint {
-	readonly authMode?: ("AADToken" | "AMLToken" | "Key") | undefined;
-	readonly description?: string | undefined;
-	readonly keys?: EndpointAuthKeys | undefined;
-	readonly properties?: BatchEndpointProperties | undefined;
-	readonly scoringUri?: string | undefined;
-	readonly swaggerUri?: string | undefined;
-	readonly traffic?: BatchEndpointTraffic | undefined;
+	readonly authMode?: "AADToken" | "AMLToken" | "Key";
+	readonly description?: string;
+	readonly keys?: EndpointAuthKeys;
+	readonly properties?: BatchEndpointProperties;
+	readonly scoringUri?: string;
+	readonly swaggerUri?: string;
+	readonly traffic?: BatchEndpointTraffic;
 }
 export interface BatchEndpointProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface BatchEndpointTraffic {
-	readonly "[ key: string ]"?: number | undefined;
+	readonly [key: string]: number;
 }
 export interface BatchOutputConfiguration {
-	readonly appendRowFileName?: string | undefined;
-	readonly outputAction?: ("AppendRow" | "SummaryOnly") | undefined;
+	readonly appendRowFileName?: string;
+	readonly outputAction?: "AppendRow" | "SummaryOnly";
 }
 export interface BatchRetrySettings {
-	readonly maxRetries?: number | undefined;
-	readonly timeout?: string | undefined;
+	readonly maxRetries?: number;
+	readonly timeout?: string;
 }
 export interface CertificateDatastoreSecrets {
-	readonly certificate?: string | undefined;
+	readonly certificate?: string;
 	readonly secretsType: "AccountKey" | "Certificate" | "None" | "Sas" | "ServicePrincipal" | "SqlAdmin";
 }
 export interface CodeConfiguration {
-	readonly codeId?: string | undefined;
+	readonly codeId?: string;
 	readonly scoringScript: string;
 }
 export interface CodeContainer {
-	readonly description?: string | undefined;
-	readonly properties?: CodeContainerProperties | undefined;
-	readonly tags?: CodeContainerTags | undefined;
+	readonly description?: string;
+	readonly properties?: CodeContainerProperties;
+	readonly tags?: CodeContainerTags;
 }
 export interface CodeContainerProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CodeContainerTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CodeVersion {
-	readonly datastoreId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly isAnonymous?: boolean | undefined;
+	readonly datastoreId?: string;
+	readonly description?: string;
+	readonly isAnonymous?: boolean;
 	readonly path: string;
-	readonly properties?: CodeVersionProperties | undefined;
-	readonly tags?: CodeVersionTags | undefined;
+	readonly properties?: CodeVersionProperties;
+	readonly tags?: CodeVersionTags;
 }
 export interface CodeVersionProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CodeVersionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CommandJobEnvironmentVariables {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CommandJobInputDataBindings {
-	readonly "[ key: string ]"?: InputDataBinding | undefined;
+	readonly [key: string]: InputDataBinding;
 }
 export interface CommandJobOutputDataBindings {
-	readonly "[ key: string ]"?: OutputDataBinding | undefined;
+	readonly [key: string]: OutputDataBinding;
 }
 export interface CommandJobParameters {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface Compute {
-	readonly computeLocation?: string | undefined;
-	readonly createdOn?: string | undefined;
-	readonly description?: string | undefined;
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly isAttachedCompute?: boolean | undefined;
-	readonly modifiedOn?: string | undefined;
-	readonly provisioningErrors?: ErrorResponse[] | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
-	readonly resourceId?: string | undefined;
+	readonly computeLocation?: string;
+	readonly createdOn?: string;
+	readonly description?: string;
+	readonly disableLocalAuth?: boolean;
+	readonly isAttachedCompute?: boolean;
+	readonly modifiedOn?: string;
+	readonly provisioningErrors?: ErrorResponse[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating";
+	readonly resourceId?: string;
 }
 export interface ComputeConfiguration {
-	readonly instanceCount?: number | undefined;
-	readonly instanceType?: string | undefined;
-	readonly isLocal?: boolean | undefined;
-	readonly location?: string | undefined;
-	readonly properties?: ComputeConfigurationProperties | undefined;
-	readonly target?: string | undefined;
+	readonly instanceCount?: number;
+	readonly instanceType?: string;
+	readonly isLocal?: boolean;
+	readonly location?: string;
+	readonly properties?: ComputeConfigurationProperties;
+	readonly target?: string;
 }
 export interface ComputeConfigurationProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ComputeInstanceApplication {
-	readonly displayName?: string | undefined;
-	readonly endpointUri?: string | undefined;
+	readonly displayName?: string;
+	readonly endpointUri?: string;
 }
 export interface ComputeInstanceConnectivityEndpoints {
-	readonly privateIpAddress?: string | undefined;
-	readonly publicIpAddress?: string | undefined;
+	readonly privateIpAddress?: string;
+	readonly publicIpAddress?: string;
 }
 export interface ComputeInstanceCreatedBy {
-	readonly userId?: string | undefined;
-	readonly userName?: string | undefined;
-	readonly userOrgId?: string | undefined;
+	readonly userId?: string;
+	readonly userName?: string;
+	readonly userOrgId?: string;
 }
 export interface ComputeInstanceLastOperation {
-	readonly operationName?: ("Create" | "Delete" | "Reimage" | "Restart" | "Start" | "Stop") | undefined;
+	readonly operationName?: "Create" | "Delete" | "Reimage" | "Restart" | "Start" | "Stop";
 	readonly operationStatus?:
-		| (
-				| "CreateFailed"
-				| "DeleteFailed"
-				| "InProgress"
-				| "ReimageFailed"
-				| "RestartFailed"
-				| "StartFailed"
-				| "StopFailed"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly operationTime?: string | undefined;
+		| "CreateFailed"
+		| "DeleteFailed"
+		| "InProgress"
+		| "ReimageFailed"
+		| "RestartFailed"
+		| "StartFailed"
+		| "StopFailed"
+		| "Succeeded";
+	readonly operationTime?: string;
 }
 export interface ComputeInstanceProperties {
-	readonly applications?: ComputeInstanceApplication[] | undefined;
-	readonly applicationSharingPolicy?: ("Personal" | "Shared") | undefined;
-	readonly computeInstanceAuthorizationType?: "personal" | undefined;
-	readonly connectivityEndpoints?: ComputeInstanceConnectivityEndpoints | undefined;
-	readonly createdBy?: ComputeInstanceCreatedBy | undefined;
-	readonly enableNodePublicIp?: boolean | undefined;
-	readonly errors?: ErrorResponse[] | undefined;
-	readonly lastOperation?: ComputeInstanceLastOperation | undefined;
-	readonly personalComputeInstanceSettings?: PersonalComputeInstanceSettings | undefined;
-	readonly schedules?: ComputeSchedules | undefined;
-	readonly setupScripts?: SetupScripts | undefined;
-	readonly sshSettings?: ComputeInstanceSshSettings | undefined;
+	readonly applications?: ComputeInstanceApplication[];
+	readonly applicationSharingPolicy?: "Personal" | "Shared";
+	readonly computeInstanceAuthorizationType?: "personal";
+	readonly connectivityEndpoints?: ComputeInstanceConnectivityEndpoints;
+	readonly createdBy?: ComputeInstanceCreatedBy;
+	readonly enableNodePublicIp?: boolean;
+	readonly errors?: ErrorResponse[];
+	readonly lastOperation?: ComputeInstanceLastOperation;
+	readonly personalComputeInstanceSettings?: PersonalComputeInstanceSettings;
+	readonly schedules?: ComputeSchedules;
+	readonly setupScripts?: SetupScripts;
+	readonly sshSettings?: ComputeInstanceSshSettings;
 	readonly state?:
-		| (
-				| "CreateFailed"
-				| "Creating"
-				| "Deleting"
-				| "JobRunning"
-				| "Restarting"
-				| "Running"
-				| "SettingUp"
-				| "SetupFailed"
-				| "Starting"
-				| "Stopped"
-				| "Stopping"
-				| "Unknown"
-				| "Unusable"
-				| "UserSettingUp"
-				| "UserSetupFailed"
-		  )
-		| undefined;
-	readonly subnet?: ResourceId | undefined;
-	readonly vmSize?: string | undefined;
+		| "CreateFailed"
+		| "Creating"
+		| "Deleting"
+		| "JobRunning"
+		| "Restarting"
+		| "Running"
+		| "SettingUp"
+		| "SetupFailed"
+		| "Starting"
+		| "Stopped"
+		| "Stopping"
+		| "Unknown"
+		| "Unusable"
+		| "UserSettingUp"
+		| "UserSetupFailed";
+	readonly subnet?: ResourceId;
+	readonly vmSize?: string;
 }
 export interface ComputeInstanceSshSettings {
-	readonly adminPublicKey?: string | undefined;
-	readonly adminUserName?: string | undefined;
-	readonly sshPort?: number | undefined;
-	readonly sshPublicAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly adminPublicKey?: string;
+	readonly adminUserName?: string;
+	readonly sshPort?: number;
+	readonly sshPublicAccess?: "Disabled" | "Enabled";
 }
 export interface ComputeResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ComputeSchedules {
-	readonly computeStartStop?: ComputeStartStopSchedule[] | undefined;
+	readonly computeStartStop?: ComputeStartStopSchedule[];
 }
 export interface ComputeSecrets {}
 export interface ComputeStartStopSchedule {
-	readonly action?: ("Start" | "Stop") | undefined;
-	readonly cron?: Cron | undefined;
-	readonly id?: string | undefined;
-	readonly provisioningStatus?: ("Completed" | "Failed" | "Provisioning") | undefined;
-	readonly recurrence?: Recurrence | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly triggerType?: ("Cron" | "Recurrence") | undefined;
+	readonly action?: "Start" | "Stop";
+	readonly cron?: Cron;
+	readonly id?: string;
+	readonly provisioningStatus?: "Completed" | "Failed" | "Provisioning";
+	readonly recurrence?: Recurrence;
+	readonly status?: "Disabled" | "Enabled";
+	readonly triggerType?: "Cron" | "Recurrence";
 }
 export interface ContainerResourceRequirements {
-	readonly cpu?: number | undefined;
-	readonly cpuLimit?: number | undefined;
-	readonly fpga?: number | undefined;
-	readonly gpu?: number | undefined;
-	readonly memoryInGB?: number | undefined;
-	readonly memoryInGBLimit?: number | undefined;
+	readonly cpu?: number;
+	readonly cpuLimit?: number;
+	readonly fpga?: number;
+	readonly gpu?: number;
+	readonly memoryInGB?: number;
+	readonly memoryInGBLimit?: number;
 }
 export interface CosmosDbSettings {
-	readonly collectionsThroughput?: number | undefined;
+	readonly collectionsThroughput?: number;
 }
 export interface Cron {
-	readonly expression?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly timeZone?: string | undefined;
+	readonly expression?: string;
+	readonly startTime?: string;
+	readonly timeZone?: string;
 }
 export interface DatabricksProperties {
-	readonly databricksAccessToken?: string | undefined;
-	readonly workspaceUrl?: string | undefined;
+	readonly databricksAccessToken?: string;
+	readonly workspaceUrl?: string;
 }
 export interface DataContainer {
-	readonly description?: string | undefined;
-	readonly properties?: DataContainerProperties | undefined;
-	readonly tags?: DataContainerTags | undefined;
+	readonly description?: string;
+	readonly properties?: DataContainerProperties;
+	readonly tags?: DataContainerTags;
 }
 export interface DataContainerProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DataContainerTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DataLakeAnalyticsProperties {
-	readonly dataLakeStoreAccountName?: string | undefined;
+	readonly dataLakeStoreAccountName?: string;
 }
 export interface DatastoreContents {}
 export interface DatastoreCredentials {}
 export interface DatastoreProperties {
 	readonly contents: DatastoreContents;
-	readonly description?: string | undefined;
-	readonly hasBeenValidated?: boolean | undefined;
-	readonly isDefault?: boolean | undefined;
-	readonly linkedInfo?: LinkedInfo | undefined;
-	readonly properties?: DatastoreProperties | undefined;
-	readonly tags?: DatastorePropertiesTags | undefined;
+	readonly description?: string;
+	readonly hasBeenValidated?: boolean;
+	readonly isDefault?: boolean;
+	readonly linkedInfo?: LinkedInfo;
+	readonly properties?: DatastoreProperties;
+	readonly tags?: DatastorePropertiesTags;
 }
 export interface DatastorePropertiesTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DatastoreSecrets {}
 export interface DataVersion {
-	readonly datasetType?: ("Dataflow" | "Simple") | undefined;
-	readonly datastoreId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly isAnonymous?: boolean | undefined;
+	readonly datasetType?: "Dataflow" | "Simple";
+	readonly datastoreId?: string;
+	readonly description?: string;
+	readonly isAnonymous?: boolean;
 	readonly path: string;
-	readonly properties?: DataVersionProperties | undefined;
-	readonly tags?: DataVersionTags | undefined;
+	readonly properties?: DataVersionProperties;
+	readonly tags?: DataVersionTags;
 }
 export interface DataVersionProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DataVersionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DistributionConfiguration {}
 export interface DockerImagePlatform {
-	readonly operatingSystemType?: ("Linux" | "Windows") | undefined;
+	readonly operatingSystemType?: "Linux" | "Windows";
 }
 export interface DockerSpecification {
-	readonly platform?: DockerImagePlatform | undefined;
+	readonly platform?: DockerImagePlatform;
 }
 export interface EarlyTerminationPolicy {
-	readonly delayEvaluation?: number | undefined;
-	readonly evaluationInterval?: number | undefined;
+	readonly delayEvaluation?: number;
+	readonly evaluationInterval?: number;
 }
 export interface EncryptionProperty {
-	readonly identity?: IdentityForCmk | undefined;
+	readonly identity?: IdentityForCmk;
 	readonly keyVaultProperties: KeyVaultProperties;
 	readonly status: "Disabled" | "Enabled";
 }
 export interface EndpointAuthKeys {
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface EnvironmentContainer {
-	readonly description?: string | undefined;
-	readonly properties?: EnvironmentContainerProperties | undefined;
-	readonly tags?: EnvironmentContainerTags | undefined;
+	readonly description?: string;
+	readonly properties?: EnvironmentContainerProperties;
+	readonly tags?: EnvironmentContainerTags;
 }
 export interface EnvironmentContainerProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface EnvironmentContainerTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface EnvironmentSpecificationVersion {
-	readonly condaFile?: string | undefined;
-	readonly description?: string | undefined;
-	readonly docker?: DockerSpecification | undefined;
-	readonly environmentSpecificationType?: ("Curated" | "UserCreated") | undefined;
-	readonly inferenceContainerProperties?: InferenceContainerProperties | undefined;
-	readonly isAnonymous?: boolean | undefined;
-	readonly properties?: EnvironmentSpecificationVersionProperties | undefined;
-	readonly tags?: EnvironmentSpecificationVersionTags | undefined;
+	readonly condaFile?: string;
+	readonly description?: string;
+	readonly docker?: DockerSpecification;
+	readonly environmentSpecificationType?: "Curated" | "UserCreated";
+	readonly inferenceContainerProperties?: InferenceContainerProperties;
+	readonly isAnonymous?: boolean;
+	readonly properties?: EnvironmentSpecificationVersionProperties;
+	readonly tags?: EnvironmentSpecificationVersionTags;
 }
 export interface EnvironmentSpecificationVersionProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface EnvironmentSpecificationVersionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ErrorAdditionalInfo {
-	readonly info?: any | undefined;
-	readonly type?: string | undefined;
+	readonly info?: any;
+	readonly type?: string;
 }
 export interface ErrorDetail {
-	readonly additionalInfo?: ErrorAdditionalInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ErrorDetail[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: ErrorAdditionalInfo[];
+	readonly code?: string;
+	readonly details?: ErrorDetail[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface ErrorResponse {
-	readonly error?: ErrorDetail | undefined;
+	readonly error?: ErrorDetail;
 }
 export interface FlavorData {
-	readonly data?: FlavorData | undefined;
+	readonly data?: FlavorData;
 }
 export interface HDInsightProperties {
-	readonly address?: string | undefined;
-	readonly administratorAccount?: VirtualMachineSshCredentials | undefined;
-	readonly sshPort?: number | undefined;
+	readonly address?: string;
+	readonly administratorAccount?: VirtualMachineSshCredentials;
+	readonly sshPort?: number;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned,UserAssigned") | undefined;
-	readonly userAssignedIdentities?: UserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned";
+	readonly userAssignedIdentities?: UserAssignedIdentities;
 }
 export interface IdentityConfiguration {}
 export interface IdentityForCmk {
-	readonly userAssignedIdentity?: string | undefined;
+	readonly userAssignedIdentity?: string;
 }
 export interface InferenceContainerProperties {
-	readonly livenessRoute?: Route | undefined;
-	readonly readinessRoute?: Route | undefined;
-	readonly scoringRoute?: Route | undefined;
+	readonly livenessRoute?: Route;
+	readonly readinessRoute?: Route;
+	readonly scoringRoute?: Route;
 }
 export interface InputDataBinding {
-	readonly dataId?: string | undefined;
+	readonly dataId?: string;
 	readonly mode?:
-		| ("Direct" | "Download" | "EvalDownload" | "EvalMount" | "Mount" | "ReadOnlyMount" | "ReadWriteMount" | "Upload")
-		| undefined;
-	readonly pathOnCompute?: string | undefined;
+		| "Direct"
+		| "Download"
+		| "EvalDownload"
+		| "EvalMount"
+		| "Mount"
+		| "ReadOnlyMount"
+		| "ReadWriteMount"
+		| "Upload";
+	readonly pathOnCompute?: string;
 }
 export interface JobBase {
-	readonly description?: string | undefined;
-	readonly interactionEndpoints?: JobBaseInteractionEndpoints | undefined;
-	readonly properties?: JobBaseProperties | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly tags?: JobBaseTags | undefined;
+	readonly description?: string;
+	readonly interactionEndpoints?: JobBaseInteractionEndpoints;
+	readonly properties?: JobBaseProperties;
+	readonly provisioningState?: "Canceled" | "Failed" | "InProgress" | "Succeeded";
+	readonly tags?: JobBaseTags;
 }
 export interface JobBaseInteractionEndpoints {
-	readonly "[ key: string ]"?: JobEndpoint | undefined;
+	readonly [key: string]: JobEndpoint;
 }
 export interface JobBaseProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface JobBaseTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface JobEndpoint {
-	readonly endpoint?: string | undefined;
-	readonly jobEndpointType?: string | undefined;
-	readonly port?: number | undefined;
-	readonly properties?: JobEndpointProperties | undefined;
+	readonly endpoint?: string;
+	readonly jobEndpointType?: string;
+	readonly port?: number;
+	readonly properties?: JobEndpointProperties;
 }
 export interface JobEndpointProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface JobOutput {
-	readonly datastoreId?: string | undefined;
-	readonly path?: string | undefined;
+	readonly datastoreId?: string;
+	readonly path?: string;
 }
 export interface KeyVaultProperties {
-	readonly identityClientId?: string | undefined;
+	readonly identityClientId?: string;
 	readonly keyIdentifier: string;
 	readonly keyVaultArmId: string;
 }
 export interface LabelCategory {
-	readonly allowMultiSelect?: boolean | undefined;
-	readonly classes?: LabelCategoryClasses | undefined;
-	readonly displayName?: string | undefined;
+	readonly allowMultiSelect?: boolean;
+	readonly classes?: LabelCategoryClasses;
+	readonly displayName?: string;
 }
 export interface LabelCategoryClasses {
-	readonly "[ key: string ]"?: LabelClass | undefined;
+	readonly [key: string]: LabelClass;
 }
 export interface LabelClass {
-	readonly displayName?: string | undefined;
-	readonly subclasses?: LabelClassSubclasses | undefined;
+	readonly displayName?: string;
+	readonly subclasses?: LabelClassSubclasses;
 }
 export interface LabelClassSubclasses {
-	readonly "[ key: string ]"?: LabelClass | undefined;
+	readonly [key: string]: LabelClass;
 }
 export interface LabelingDatasetConfiguration {
-	readonly assetName?: string | undefined;
-	readonly datasetVersion?: string | undefined;
-	readonly incrementalDatasetRefreshEnabled?: boolean | undefined;
+	readonly assetName?: string;
+	readonly datasetVersion?: string;
+	readonly incrementalDatasetRefreshEnabled?: boolean;
 }
 export interface LabelingJob {
-	readonly createdTimeUtc?: string | undefined;
-	readonly datasetConfiguration?: LabelingDatasetConfiguration | undefined;
-	readonly description?: string | undefined;
-	readonly interactionEndpoints?: LabelingJobInteractionEndpoints | undefined;
-	readonly jobInstructions?: LabelingJobInstructions | undefined;
+	readonly createdTimeUtc?: string;
+	readonly datasetConfiguration?: LabelingDatasetConfiguration;
+	readonly description?: string;
+	readonly interactionEndpoints?: LabelingJobInteractionEndpoints;
+	readonly jobInstructions?: LabelingJobInstructions;
 	readonly jobType: "Command" | "Labeling" | "Sweep";
-	readonly labelCategories?: LabelingJobLabelCategories | undefined;
-	readonly labelingJobMediaProperties?: LabelingJobMediaProperties | undefined;
-	readonly mlAssistConfiguration?: MLAssistConfiguration | undefined;
-	readonly progressMetrics?: ProgressMetrics | undefined;
-	readonly projectId?: string | undefined;
-	readonly properties?: LabelingJobProperties | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly labelCategories?: LabelingJobLabelCategories;
+	readonly labelingJobMediaProperties?: LabelingJobMediaProperties;
+	readonly mlAssistConfiguration?: MLAssistConfiguration;
+	readonly progressMetrics?: ProgressMetrics;
+	readonly projectId?: string;
+	readonly properties?: LabelingJobProperties;
+	readonly provisioningState?: "Canceled" | "Failed" | "InProgress" | "Succeeded";
 	readonly status?:
-		| (
-				| "CancelRequested"
-				| "Canceled"
-				| "Completed"
-				| "Failed"
-				| "Finalizing"
-				| "NotResponding"
-				| "NotStarted"
-				| "Paused"
-				| "Preparing"
-				| "Provisioning"
-				| "Queued"
-				| "Running"
-				| "Starting"
-				| "Unknown"
-		  )
-		| undefined;
-	readonly statusMessages?: StatusMessage[] | undefined;
-	readonly tags?: LabelingJobTags | undefined;
+		| "CancelRequested"
+		| "Canceled"
+		| "Completed"
+		| "Failed"
+		| "Finalizing"
+		| "NotResponding"
+		| "NotStarted"
+		| "Paused"
+		| "Preparing"
+		| "Provisioning"
+		| "Queued"
+		| "Running"
+		| "Starting"
+		| "Unknown";
+	readonly statusMessages?: StatusMessage[];
+	readonly tags?: LabelingJobTags;
 }
 export interface LabelingJobInstructions {
-	readonly uri?: string | undefined;
+	readonly uri?: string;
 }
 export interface LabelingJobInteractionEndpoints {
-	readonly "[ key: string ]"?: JobEndpoint | undefined;
+	readonly [key: string]: JobEndpoint;
 }
 export interface LabelingJobLabelCategories {
-	readonly "[ key: string ]"?: LabelCategory | undefined;
+	readonly [key: string]: LabelCategory;
 }
 export interface LabelingJobMediaProperties {}
 export interface LabelingJobProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface LabelingJobTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface LinkedInfo {
-	readonly linkedId?: string | undefined;
-	readonly linkedResourceName?: string | undefined;
-	readonly origin?: "Synapse" | undefined;
+	readonly linkedId?: string;
+	readonly linkedResourceName?: string;
+	readonly origin?: "Synapse";
 }
 export interface ListNotebookKeysResult {
-	readonly primaryAccessKey?: string | undefined;
-	readonly secondaryAccessKey?: string | undefined;
+	readonly primaryAccessKey?: string;
+	readonly secondaryAccessKey?: string;
 }
 export interface ListStorageAccountKeysResult {
-	readonly userStorageKey?: string | undefined;
+	readonly userStorageKey?: string;
 }
 export interface ListWorkspaceKeysResult {
-	readonly appInsightsInstrumentationKey?: string | undefined;
-	readonly containerRegistryCredentials?: RegistryListCredentialsResult | undefined;
-	readonly notebookAccessKeys?: ListNotebookKeysResult | undefined;
-	readonly userStorageKey?: string | undefined;
-	readonly userStorageResourceId?: string | undefined;
+	readonly appInsightsInstrumentationKey?: string;
+	readonly containerRegistryCredentials?: RegistryListCredentialsResult;
+	readonly notebookAccessKeys?: ListNotebookKeysResult;
+	readonly userStorageKey?: string;
+	readonly userStorageResourceId?: string;
 }
 export interface MLAssistConfiguration {
-	readonly inferencingComputeBinding?: ComputeConfiguration | undefined;
-	readonly mlAssistEnabled?: boolean | undefined;
-	readonly trainingComputeBinding?: ComputeConfiguration | undefined;
+	readonly inferencingComputeBinding?: ComputeConfiguration;
+	readonly mlAssistEnabled?: boolean;
+	readonly trainingComputeBinding?: ComputeConfiguration;
 }
 export interface ModelContainer {
-	readonly description?: string | undefined;
-	readonly properties?: ModelContainerProperties | undefined;
-	readonly tags?: ModelContainerTags | undefined;
+	readonly description?: string;
+	readonly properties?: ModelContainerProperties;
+	readonly tags?: ModelContainerTags;
 }
 export interface ModelContainerProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ModelContainerTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ModelVersion {
-	readonly datastoreId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly flavors?: ModelVersionFlavors | undefined;
-	readonly isAnonymous?: boolean | undefined;
+	readonly datastoreId?: string;
+	readonly description?: string;
+	readonly flavors?: ModelVersionFlavors;
+	readonly isAnonymous?: boolean;
 	readonly path: string;
-	readonly properties?: ModelVersionProperties | undefined;
-	readonly tags?: ModelVersionTags | undefined;
+	readonly properties?: ModelVersionProperties;
+	readonly tags?: ModelVersionTags;
 }
 export interface ModelVersionFlavors {
-	readonly "[ key: string ]"?: FlavorData | undefined;
+	readonly [key: string]: FlavorData;
 }
 export interface ModelVersionProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ModelVersionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NodeStateCounts {
-	readonly idleNodeCount?: number | undefined;
-	readonly leavingNodeCount?: number | undefined;
-	readonly preemptedNodeCount?: number | undefined;
-	readonly preparingNodeCount?: number | undefined;
-	readonly runningNodeCount?: number | undefined;
-	readonly unusableNodeCount?: number | undefined;
+	readonly idleNodeCount?: number;
+	readonly leavingNodeCount?: number;
+	readonly preemptedNodeCount?: number;
+	readonly preparingNodeCount?: number;
+	readonly runningNodeCount?: number;
+	readonly unusableNodeCount?: number;
 }
 export interface NoneDatastoreSecrets {
 	readonly secretsType: "AccountKey" | "Certificate" | "None" | "Sas" | "ServicePrincipal" | "SqlAdmin";
 }
 export interface NotebookAccessTokenResult {
-	readonly accessToken?: string | undefined;
-	readonly expiresIn?: number | undefined;
-	readonly hostName?: string | undefined;
-	readonly notebookResourceId?: string | undefined;
-	readonly publicDns?: string | undefined;
-	readonly refreshToken?: string | undefined;
-	readonly scope?: string | undefined;
-	readonly tokenType?: string | undefined;
+	readonly accessToken?: string;
+	readonly expiresIn?: number;
+	readonly hostName?: string;
+	readonly notebookResourceId?: string;
+	readonly publicDns?: string;
+	readonly refreshToken?: string;
+	readonly scope?: string;
+	readonly tokenType?: string;
 }
 export interface NotebookPreparationError {
-	readonly errorMessage?: string | undefined;
-	readonly statusCode?: number | undefined;
+	readonly errorMessage?: string;
+	readonly statusCode?: number;
 }
 export interface NotebookResourceInfo {
-	readonly fqdn?: string | undefined;
-	readonly notebookPreparationError?: NotebookPreparationError | undefined;
-	readonly resourceId?: string | undefined;
+	readonly fqdn?: string;
+	readonly notebookPreparationError?: NotebookPreparationError;
+	readonly resourceId?: string;
 }
 export interface Objective {
 	readonly goal: "Maximize" | "Minimize";
 	readonly primaryMetric: string;
 }
 export interface OnlineDeployment {
-	readonly appInsightsEnabled?: boolean | undefined;
-	readonly codeConfiguration?: CodeConfiguration | undefined;
-	readonly description?: string | undefined;
-	readonly environmentId?: string | undefined;
-	readonly environmentVariables?: OnlineDeploymentEnvironmentVariables | undefined;
-	readonly livenessProbe?: ProbeSettings | undefined;
-	readonly model?: AssetReferenceBase | undefined;
-	readonly properties?: OnlineDeploymentProperties | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Scaling" | "Succeeded" | "Updating")
-		| undefined;
-	readonly requestSettings?: OnlineRequestSettings | undefined;
-	readonly scaleSettings?: OnlineScaleSettings | undefined;
+	readonly appInsightsEnabled?: boolean;
+	readonly codeConfiguration?: CodeConfiguration;
+	readonly description?: string;
+	readonly environmentId?: string;
+	readonly environmentVariables?: OnlineDeploymentEnvironmentVariables;
+	readonly livenessProbe?: ProbeSettings;
+	readonly model?: AssetReferenceBase;
+	readonly properties?: OnlineDeploymentProperties;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Scaling" | "Succeeded" | "Updating";
+	readonly requestSettings?: OnlineRequestSettings;
+	readonly scaleSettings?: OnlineScaleSettings;
 }
 export interface OnlineDeploymentEnvironmentVariables {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface OnlineDeploymentProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface OnlineEndpoint {
 	readonly authMode: "AADToken" | "AMLToken" | "Key";
-	readonly description?: string | undefined;
-	readonly keys?: EndpointAuthKeys | undefined;
-	readonly properties?: OnlineEndpointProperties | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly scoringUri?: string | undefined;
-	readonly swaggerUri?: string | undefined;
-	readonly target?: string | undefined;
-	readonly traffic?: OnlineEndpointTraffic | undefined;
+	readonly description?: string;
+	readonly keys?: EndpointAuthKeys;
+	readonly properties?: OnlineEndpointProperties;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly scoringUri?: string;
+	readonly swaggerUri?: string;
+	readonly target?: string;
+	readonly traffic?: OnlineEndpointTraffic;
 }
 export interface OnlineEndpointProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface OnlineEndpointTraffic {
-	readonly "[ key: string ]"?: number | undefined;
+	readonly [key: string]: number;
 }
 export interface OnlineRequestSettings {
-	readonly maxConcurrentRequestsPerInstance?: number | undefined;
-	readonly maxQueueWait?: string | undefined;
-	readonly requestTimeout?: string | undefined;
+	readonly maxConcurrentRequestsPerInstance?: number;
+	readonly maxQueueWait?: string;
+	readonly requestTimeout?: string;
 }
 export interface OnlineScaleSettings {
-	readonly maxInstances?: number | undefined;
-	readonly minInstances?: number | undefined;
+	readonly maxInstances?: number;
+	readonly minInstances?: number;
 }
 export interface OutputDataBinding {
-	readonly datastoreId?: string | undefined;
+	readonly datastoreId?: string;
 	readonly mode?:
-		| ("Direct" | "Download" | "EvalDownload" | "EvalMount" | "Mount" | "ReadOnlyMount" | "ReadWriteMount" | "Upload")
-		| undefined;
-	readonly pathOnCompute?: string | undefined;
-	readonly pathOnDatastore?: string | undefined;
+		| "Direct"
+		| "Download"
+		| "EvalDownload"
+		| "EvalMount"
+		| "Mount"
+		| "ReadOnlyMount"
+		| "ReadWriteMount"
+		| "Upload";
+	readonly pathOnCompute?: string;
+	readonly pathOnDatastore?: string;
 }
 export interface Password {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface PersonalComputeInstanceSettings {
-	readonly assignedUser?: AssignedUser | undefined;
+	readonly assignedUser?: AssignedUser;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
-	readonly subnetArmId?: string | undefined;
+	readonly id?: string;
+	readonly subnetArmId?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: PrivateEndpointConnectionTags | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly identity?: Identity;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: PrivateEndpointConnectionTags;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateEndpointConnectionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout";
 }
 export interface ProbeSettings {
-	readonly failureThreshold?: number | undefined;
-	readonly initialDelay?: string | undefined;
-	readonly period?: string | undefined;
-	readonly successThreshold?: number | undefined;
-	readonly timeout?: string | undefined;
+	readonly failureThreshold?: number;
+	readonly initialDelay?: string;
+	readonly period?: string;
+	readonly successThreshold?: number;
+	readonly timeout?: string;
 }
 export interface ProgressMetrics {
-	readonly completedDatapointCount?: number | undefined;
-	readonly incrementalDatasetLastRefreshTime?: string | undefined;
-	readonly skippedDatapointCount?: number | undefined;
-	readonly totalDatapointCount?: number | undefined;
+	readonly completedDatapointCount?: number;
+	readonly incrementalDatasetLastRefreshTime?: string;
+	readonly skippedDatapointCount?: number;
+	readonly totalDatapointCount?: number;
 }
 export interface Recurrence {
-	readonly frequency?: ("Day" | "Hour" | "Minute" | "Month" | "NotSpecified" | "Second" | "Week" | "Year") | undefined;
-	readonly interval?: number | undefined;
-	readonly schedule?: RecurrenceSchedule | undefined;
-	readonly startTime?: string | undefined;
-	readonly timeZone?: string | undefined;
+	readonly frequency?: "Day" | "Hour" | "Minute" | "Month" | "NotSpecified" | "Second" | "Week" | "Year";
+	readonly interval?: number;
+	readonly schedule?: RecurrenceSchedule;
+	readonly startTime?: string;
+	readonly timeZone?: string;
 }
 export interface RecurrenceSchedule {
-	readonly hours?: number[] | undefined;
-	readonly minutes?: number[] | undefined;
-	readonly weekDays?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[]) | undefined;
+	readonly hours?: number[];
+	readonly minutes?: number[];
+	readonly weekDays?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[];
 }
 export interface RegistryListCredentialsResult {
-	readonly location?: string | undefined;
-	readonly passwords?: Password[] | undefined;
-	readonly username?: string | undefined;
+	readonly location?: string;
+	readonly passwords?: Password[];
+	readonly username?: string;
 }
 export interface ResourceId {
 	readonly id: string;
 }
 export interface ResourceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned") | undefined;
-	readonly userAssignedIdentities?: ResourceIdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned";
+	readonly userAssignedIdentities?: ResourceIdentityUserAssignedIdentities;
 }
 export interface ResourceIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentityMeta | undefined;
+	readonly [key: string]: UserAssignedIdentityMeta;
 }
 export interface Route {
 	readonly path: string;
 	readonly port: number;
 }
 export interface SasDatastoreSecrets {
-	readonly sasToken?: string | undefined;
+	readonly sasToken?: string;
 	readonly secretsType: "AccountKey" | "Certificate" | "None" | "Sas" | "ServicePrincipal" | "SqlAdmin";
 }
 export interface ScaleSettings {
 	readonly maxNodeCount: number;
-	readonly minNodeCount?: number | undefined;
-	readonly nodeIdleTimeBeforeScaleDown?: string | undefined;
+	readonly minNodeCount?: number;
+	readonly nodeIdleTimeBeforeScaleDown?: string;
 }
 export interface ScriptReference {
-	readonly scriptArguments?: string | undefined;
-	readonly scriptData?: string | undefined;
-	readonly scriptSource?: string | undefined;
-	readonly timeout?: string | undefined;
+	readonly scriptArguments?: string;
+	readonly scriptData?: string;
+	readonly scriptSource?: string;
+	readonly timeout?: string;
 }
 export interface ScriptsToExecute {
-	readonly creationScript?: ScriptReference | undefined;
-	readonly startupScript?: ScriptReference | undefined;
+	readonly creationScript?: ScriptReference;
+	readonly startupScript?: ScriptReference;
 }
 export interface ServiceManagedResourcesSettings {
-	readonly cosmosDb?: CosmosDbSettings | undefined;
+	readonly cosmosDb?: CosmosDbSettings;
 }
 export interface ServicePrincipalDatastoreSecrets {
-	readonly clientSecret?: string | undefined;
+	readonly clientSecret?: string;
 	readonly secretsType: "AccountKey" | "Certificate" | "None" | "Sas" | "ServicePrincipal" | "SqlAdmin";
 }
 export interface SetupScripts {
-	readonly scripts?: ScriptsToExecute | undefined;
+	readonly scripts?: ScriptsToExecute;
 }
 export interface SharedPrivateLinkResource {
-	readonly name?: string | undefined;
-	readonly properties?: SharedPrivateLinkResourceProperty | undefined;
+	readonly name?: string;
+	readonly properties?: SharedPrivateLinkResourceProperty;
 }
 export interface SharedPrivateLinkResourceProperty {
-	readonly groupId?: string | undefined;
-	readonly privateLinkResourceId?: string | undefined;
-	readonly requestMessage?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout") | undefined;
+	readonly groupId?: string;
+	readonly privateLinkResourceId?: string;
+	readonly requestMessage?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout";
 }
 export interface Sku {
-	readonly name?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly name?: string;
+	readonly tier?: string;
 }
 export interface SqlAdminDatastoreSecrets {
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly secretsType: "AccountKey" | "Certificate" | "None" | "Sas" | "ServicePrincipal" | "SqlAdmin";
 }
 export interface SslConfiguration {
-	readonly cert?: string | undefined;
-	readonly cname?: string | undefined;
-	readonly key?: string | undefined;
-	readonly leafDomainLabel?: string | undefined;
-	readonly overwriteExistingDomain?: boolean | undefined;
-	readonly status?: ("Auto" | "Disabled" | "Enabled") | undefined;
+	readonly cert?: string;
+	readonly cname?: string;
+	readonly key?: string;
+	readonly leafDomainLabel?: string;
+	readonly overwriteExistingDomain?: boolean;
+	readonly status?: "Auto" | "Disabled" | "Enabled";
 }
 export interface StatusMessage {
-	readonly code?: string | undefined;
-	readonly createdTimeUtc?: string | undefined;
-	readonly level?: ("Error" | "Information" | "Warning") | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly createdTimeUtc?: string;
+	readonly level?: "Error" | "Information" | "Warning";
+	readonly message?: string;
 }
 export interface SweepJobSearchSpace {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface SynapseSparkPoolPropertiesProperties {
-	readonly autoPauseProperties?: AutoPauseProperties | undefined;
-	readonly autoScaleProperties?: AutoScaleProperties | undefined;
-	readonly nodeCount?: number | undefined;
-	readonly nodeSize?: string | undefined;
-	readonly nodeSizeFamily?: string | undefined;
-	readonly poolName?: string | undefined;
-	readonly resourceGroup?: string | undefined;
-	readonly sparkVersion?: string | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly workspaceName?: string | undefined;
+	readonly autoPauseProperties?: AutoPauseProperties;
+	readonly autoScaleProperties?: AutoScaleProperties;
+	readonly nodeCount?: number;
+	readonly nodeSize?: string;
+	readonly nodeSizeFamily?: string;
+	readonly poolName?: string;
+	readonly resourceGroup?: string;
+	readonly sparkVersion?: string;
+	readonly subscriptionId?: string;
+	readonly workspaceName?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface SystemService {
-	readonly publicIpAddress?: string | undefined;
-	readonly systemServiceType?: string | undefined;
-	readonly version?: string | undefined;
+	readonly publicIpAddress?: string;
+	readonly systemServiceType?: string;
+	readonly version?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrialComponent {
-	readonly codeId?: string | undefined;
+	readonly codeId?: string;
 	readonly command: string;
-	readonly distribution?: DistributionConfiguration | undefined;
-	readonly environmentId?: string | undefined;
-	readonly environmentVariables?: TrialComponentEnvironmentVariables | undefined;
-	readonly inputDataBindings?: TrialComponentInputDataBindings | undefined;
-	readonly outputDataBindings?: TrialComponentOutputDataBindings | undefined;
-	readonly timeout?: string | undefined;
+	readonly distribution?: DistributionConfiguration;
+	readonly environmentId?: string;
+	readonly environmentVariables?: TrialComponentEnvironmentVariables;
+	readonly inputDataBindings?: TrialComponentInputDataBindings;
+	readonly outputDataBindings?: TrialComponentOutputDataBindings;
+	readonly timeout?: string;
 }
 export interface TrialComponentEnvironmentVariables {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrialComponentInputDataBindings {
-	readonly "[ key: string ]"?: InputDataBinding | undefined;
+	readonly [key: string]: InputDataBinding;
 }
 export interface TrialComponentOutputDataBindings {
-	readonly "[ key: string ]"?: OutputDataBinding | undefined;
+	readonly [key: string]: OutputDataBinding;
 }
 export interface UserAccountCredentials {
 	readonly adminUserName: string;
-	readonly adminUserPassword?: string | undefined;
-	readonly adminUserSshPublicKey?: string | undefined;
+	readonly adminUserPassword?: string;
+	readonly adminUserSshPublicKey?: string;
 }
 export interface UserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 }
 export interface UserAssignedIdentityMeta {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface VirtualMachineImage {
 	readonly id: string;
 }
 export interface VirtualMachineProperties {
-	readonly address?: string | undefined;
-	readonly administratorAccount?: VirtualMachineSshCredentials | undefined;
-	readonly isNotebookInstanceCompute?: boolean | undefined;
-	readonly sshPort?: number | undefined;
-	readonly virtualMachineSize?: string | undefined;
+	readonly address?: string;
+	readonly administratorAccount?: VirtualMachineSshCredentials;
+	readonly isNotebookInstanceCompute?: boolean;
+	readonly sshPort?: number;
+	readonly virtualMachineSize?: string;
 }
 export interface VirtualMachineSshCredentials {
-	readonly password?: string | undefined;
-	readonly privateKeyData?: string | undefined;
-	readonly publicKeyData?: string | undefined;
-	readonly username?: string | undefined;
+	readonly password?: string;
+	readonly privateKeyData?: string;
+	readonly publicKeyData?: string;
+	readonly username?: string;
 }
 export interface WorkspaceConnectionProps {
-	readonly authType?: string | undefined;
-	readonly category?: string | undefined;
-	readonly target?: string | undefined;
-	readonly value?: string | undefined;
-	readonly valueFormat?: "JSON" | undefined;
+	readonly authType?: string;
+	readonly category?: string;
+	readonly target?: string;
+	readonly value?: string;
+	readonly valueFormat?: "JSON";
 }
 export interface WorkspaceProperties {
-	readonly allowPublicAccessWhenBehindVnet?: boolean | undefined;
-	readonly applicationInsights?: string | undefined;
-	readonly containerRegistry?: string | undefined;
-	readonly description?: string | undefined;
-	readonly discoveryUrl?: string | undefined;
-	readonly encryption?: EncryptionProperty | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly hbiWorkspace?: boolean | undefined;
-	readonly imageBuildCompute?: string | undefined;
-	readonly keyVault?: string | undefined;
-	readonly notebookInfo?: NotebookResourceInfo | undefined;
-	readonly primaryUserAssignedIdentity?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly privateLinkCount?: number | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
-	readonly serviceManagedResourcesSettings?: ServiceManagedResourcesSettings | undefined;
-	readonly serviceProvisionedResourceGroup?: string | undefined;
-	readonly sharedPrivateLinkResources?: SharedPrivateLinkResource[] | undefined;
-	readonly storageAccount?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly workspaceId?: string | undefined;
+	readonly allowPublicAccessWhenBehindVnet?: boolean;
+	readonly applicationInsights?: string;
+	readonly containerRegistry?: string;
+	readonly description?: string;
+	readonly discoveryUrl?: string;
+	readonly encryption?: EncryptionProperty;
+	readonly friendlyName?: string;
+	readonly hbiWorkspace?: boolean;
+	readonly imageBuildCompute?: string;
+	readonly keyVault?: string;
+	readonly notebookInfo?: NotebookResourceInfo;
+	readonly primaryUserAssignedIdentity?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly privateLinkCount?: number;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating";
+	readonly serviceManagedResourcesSettings?: ServiceManagedResourcesSettings;
+	readonly serviceProvisionedResourceGroup?: string;
+	readonly sharedPrivateLinkResources?: SharedPrivateLinkResource[];
+	readonly storageAccount?: string;
+	readonly tenantId?: string;
+	readonly workspaceId?: string;
 }
 export interface WorkspaceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	workspaces: workspaces,

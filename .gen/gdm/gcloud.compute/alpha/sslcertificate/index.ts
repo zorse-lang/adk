@@ -4,42 +4,41 @@ export class SslCertificate extends GdmResource<SslCertificateComponentInputs> i
 	constructor(entity: ADKEntity, options: SslCertificateComponentInputs) {
 		super(entity, options.name, "compute.alpha.sslCertificate", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly expireTime?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly subjectAlternativeNames?: string[] | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly expireTime?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly subjectAlternativeNames?: string[];
 }
 export interface SslCertificateComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly expireTime?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly subjectAlternativeNames?: string[] | undefined;
+	readonly creationTimestamp?: string;
+	readonly expireTime?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly subjectAlternativeNames?: string[];
 }
 export interface SslCertificateComponentInputs {
-	readonly certificate?: string | undefined;
-	readonly description?: string | undefined;
-	readonly managed?: SslCertificateManagedSslCertificate | undefined;
+	readonly certificate?: string;
+	readonly description?: string;
+	readonly managed?: SslCertificateManagedSslCertificate;
 	readonly name: string;
-	readonly privateKey?: string | undefined;
-	readonly selfManaged?: SslCertificateSelfManagedSslCertificate | undefined;
-	readonly type: string;
+	readonly privateKey?: string;
+	readonly selfManaged?: SslCertificateSelfManagedSslCertificate;
 }
 export interface SslCertificateManagedSslCertificate {
-	readonly domains?: string[] | undefined;
-	readonly domainStatus?: { [P in string]: string } | undefined;
-	readonly status?: string | undefined;
+	readonly domains?: string[];
+	readonly domainStatus?: { [P in string]: string };
+	readonly status?: string;
 }
 export interface SslCertificateSelfManagedSslCertificate {
-	readonly certificate?: string | undefined;
-	readonly privateKey?: string | undefined;
+	readonly certificate?: string;
+	readonly privateKey?: string;
 }
 export default {
 	SslCertificate: SslCertificate,

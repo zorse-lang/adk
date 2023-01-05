@@ -15,9 +15,9 @@ export interface ConnectionComponentOutputs {
 }
 export interface ConnectionComponentInputs {
 	readonly ConnectionName: string;
-	readonly HostArn?: (string | undefined) | undefined;
-	readonly ProviderType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly HostArn?: string | undefined;
+	readonly ProviderType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export default {

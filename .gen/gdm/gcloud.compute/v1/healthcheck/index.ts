@@ -4,85 +4,84 @@ export class HealthCheck extends GdmResource<HealthCheckComponentInputs> impleme
 	constructor(entity: ADKEntity, options: HealthCheckComponentInputs) {
 		super(entity, options.name, "compute.v1.healthCheck", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
 }
 export interface HealthCheckComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export interface HealthCheckComponentInputs {
-	readonly checkIntervalSec?: number | undefined;
-	readonly description?: string | undefined;
-	readonly grpcHealthCheck?: GRPCHealthCheck | undefined;
-	readonly healthyThreshold?: number | undefined;
-	readonly http2HealthCheck?: HTTP2HealthCheck | undefined;
-	readonly httpHealthCheck?: HTTPHealthCheck | undefined;
-	readonly httpsHealthCheck?: HTTPSHealthCheck | undefined;
-	readonly kind?: string | undefined;
-	readonly logConfig?: HealthCheckLogConfig | undefined;
+	readonly checkIntervalSec?: number;
+	readonly description?: string;
+	readonly grpcHealthCheck?: GRPCHealthCheck;
+	readonly healthyThreshold?: number;
+	readonly http2HealthCheck?: HTTP2HealthCheck;
+	readonly httpHealthCheck?: HTTPHealthCheck;
+	readonly httpsHealthCheck?: HTTPSHealthCheck;
+	readonly kind?: string;
+	readonly logConfig?: HealthCheckLogConfig;
 	readonly name: string;
-	readonly sslHealthCheck?: SSLHealthCheck | undefined;
-	readonly tcpHealthCheck?: TCPHealthCheck | undefined;
-	readonly timeoutSec?: number | undefined;
-	readonly type: string;
-	readonly unhealthyThreshold?: number | undefined;
+	readonly sslHealthCheck?: SSLHealthCheck;
+	readonly tcpHealthCheck?: TCPHealthCheck;
+	readonly timeoutSec?: number;
+	readonly unhealthyThreshold?: number;
 }
 export interface GRPCHealthCheck {
-	readonly grpcServiceName?: string | undefined;
-	readonly port?: number | undefined;
-	readonly portName?: string | undefined;
-	readonly portSpecification?: string | undefined;
+	readonly grpcServiceName?: string;
+	readonly port?: number;
+	readonly portName?: string;
+	readonly portSpecification?: string;
 }
 export interface HealthCheckLogConfig {
-	readonly enable?: boolean | undefined;
+	readonly enable?: boolean;
 }
 export interface HTTP2HealthCheck {
-	readonly host?: string | undefined;
-	readonly port?: number | undefined;
-	readonly portName?: string | undefined;
-	readonly portSpecification?: string | undefined;
-	readonly proxyHeader?: string | undefined;
-	readonly requestPath?: string | undefined;
-	readonly response?: string | undefined;
+	readonly host?: string;
+	readonly port?: number;
+	readonly portName?: string;
+	readonly portSpecification?: string;
+	readonly proxyHeader?: string;
+	readonly requestPath?: string;
+	readonly response?: string;
 }
 export interface HTTPHealthCheck {
-	readonly host?: string | undefined;
-	readonly port?: number | undefined;
-	readonly portName?: string | undefined;
-	readonly portSpecification?: string | undefined;
-	readonly proxyHeader?: string | undefined;
-	readonly requestPath?: string | undefined;
-	readonly response?: string | undefined;
+	readonly host?: string;
+	readonly port?: number;
+	readonly portName?: string;
+	readonly portSpecification?: string;
+	readonly proxyHeader?: string;
+	readonly requestPath?: string;
+	readonly response?: string;
 }
 export interface HTTPSHealthCheck {
-	readonly host?: string | undefined;
-	readonly port?: number | undefined;
-	readonly portName?: string | undefined;
-	readonly portSpecification?: string | undefined;
-	readonly proxyHeader?: string | undefined;
-	readonly requestPath?: string | undefined;
-	readonly response?: string | undefined;
+	readonly host?: string;
+	readonly port?: number;
+	readonly portName?: string;
+	readonly portSpecification?: string;
+	readonly proxyHeader?: string;
+	readonly requestPath?: string;
+	readonly response?: string;
 }
 export interface SSLHealthCheck {
-	readonly port?: number | undefined;
-	readonly portName?: string | undefined;
-	readonly portSpecification?: string | undefined;
-	readonly proxyHeader?: string | undefined;
-	readonly request?: string | undefined;
-	readonly response?: string | undefined;
+	readonly port?: number;
+	readonly portName?: string;
+	readonly portSpecification?: string;
+	readonly proxyHeader?: string;
+	readonly request?: string;
+	readonly response?: string;
 }
 export interface TCPHealthCheck {
-	readonly port?: number | undefined;
-	readonly portName?: string | undefined;
-	readonly portSpecification?: string | undefined;
-	readonly proxyHeader?: string | undefined;
-	readonly request?: string | undefined;
-	readonly response?: string | undefined;
+	readonly port?: number;
+	readonly portName?: string;
+	readonly portSpecification?: string;
+	readonly proxyHeader?: string;
+	readonly request?: string;
+	readonly response?: string;
 }
 export default {
 	HealthCheck: HealthCheck,

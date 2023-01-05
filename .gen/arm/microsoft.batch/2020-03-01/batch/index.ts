@@ -16,8 +16,8 @@ export interface batchAccountsComponentOutputs {
 export interface batchAccountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: BatchAccountCreatePropertiesOrBatchAccountProperties | undefined;
-	readonly tags?: BatchAccountCreateParametersTags | undefined;
+	readonly properties?: BatchAccountCreatePropertiesOrBatchAccountProperties;
+	readonly tags?: BatchAccountCreateParametersTags;
 }
 export class batchAccounts_applications
 	extends ArmResource<batchAccounts_applicationsComponentInputs>
@@ -36,9 +36,9 @@ export interface batchAccounts_applicationsComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/applications";
 }
 export interface batchAccounts_applicationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ApplicationProperties | undefined;
+	readonly properties?: ApplicationProperties;
 }
 export class batchAccounts_applications_versions
 	extends ArmResource<batchAccounts_applications_versionsComponentInputs>
@@ -57,9 +57,9 @@ export interface batchAccounts_applications_versionsComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/applications/versions";
 }
 export interface batchAccounts_applications_versionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ApplicationPackageProperties | undefined;
+	readonly properties?: ApplicationPackageProperties;
 }
 export class batchAccounts_certificates
 	extends ArmResource<batchAccounts_certificatesComponentInputs>
@@ -78,9 +78,9 @@ export interface batchAccounts_certificatesComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/certificates";
 }
 export interface batchAccounts_certificatesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: CertificateCreateOrUpdatePropertiesOrCertificateProperties | undefined;
+	readonly properties?: CertificateCreateOrUpdatePropertiesOrCertificateProperties;
 }
 export class batchAccounts_pools
 	extends ArmResource<batchAccounts_poolsComponentInputs>
@@ -99,9 +99,9 @@ export interface batchAccounts_poolsComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/pools";
 }
 export interface batchAccounts_poolsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: PoolProperties | undefined;
+	readonly properties?: PoolProperties;
 }
 export class batchAccounts_privateEndpointConnections
 	extends ArmResource<batchAccounts_privateEndpointConnectionsComponentInputs>
@@ -120,9 +120,9 @@ export interface batchAccounts_privateEndpointConnectionsComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/privateEndpointConnections";
 }
 export interface batchAccounts_privateEndpointConnectionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class batchAccounts_privateLinkResources
 	extends ArmResource<batchAccounts_privateLinkResourcesComponentInputs>
@@ -141,9 +141,9 @@ export interface batchAccounts_privateLinkResourcesComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/privateLinkResources";
 }
 export interface batchAccounts_privateLinkResourcesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export function listKeys(resource: batchAccounts): BatchAccountKeys {
 	if (resource.apiVersion !== "2020-03-01") {
@@ -155,103 +155,103 @@ export function listKeys(resource: batchAccounts): BatchAccountKeys {
 	throw new Error("not implemented");
 }
 export interface ApplicationPackageProperties {
-	readonly format?: string | undefined;
-	readonly lastActivationTime?: string | undefined;
-	readonly state?: "Active" | undefined;
-	readonly storageUrl?: string | undefined;
-	readonly storageUrlExpiry?: string | undefined;
+	readonly format?: string;
+	readonly lastActivationTime?: string;
+	readonly state?: "Active";
+	readonly storageUrl?: string;
+	readonly storageUrlExpiry?: string;
 }
 export interface ApplicationPackageReference {
 	readonly id: string;
-	readonly version?: string | undefined;
+	readonly version?: string;
 }
 export interface ApplicationProperties {
-	readonly allowUpdates?: boolean | undefined;
-	readonly defaultVersion?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly allowUpdates?: boolean;
+	readonly defaultVersion?: string;
+	readonly displayName?: string;
 }
 export interface AutoScaleRun {
-	readonly error?: AutoScaleRunError | undefined;
+	readonly error?: AutoScaleRunError;
 	readonly evaluationTime: string;
-	readonly results?: string | undefined;
+	readonly results?: string;
 }
 export interface AutoScaleRunError {
 	readonly code: string;
-	readonly details?: AutoScaleRunError[] | undefined;
+	readonly details?: AutoScaleRunError[];
 	readonly message: string;
 }
 export interface AutoScaleSettings {
-	readonly evaluationInterval?: string | undefined;
+	readonly evaluationInterval?: string;
 	readonly formula: string;
 }
 export interface AutoStorageBasePropertiesOrAutoStorageProperties {
-	readonly lastKeySync?: string | undefined;
+	readonly lastKeySync?: string;
 	readonly storageAccountId: string;
 }
 export interface AutoUserSpecification {
-	readonly elevationLevel?: "Admin" | undefined;
-	readonly scope?: "Pool" | undefined;
+	readonly elevationLevel?: "Admin";
+	readonly scope?: "Pool";
 }
 export interface AzureBlobFileSystemConfiguration {
-	readonly accountKey?: string | undefined;
+	readonly accountKey?: string;
 	readonly accountName: string;
-	readonly blobfuseOptions?: string | undefined;
+	readonly blobfuseOptions?: string;
 	readonly containerName: string;
 	readonly relativeMountPath: string;
-	readonly sasKey?: string | undefined;
+	readonly sasKey?: string;
 }
 export interface AzureFileShareConfiguration {
 	readonly accountKey: string;
 	readonly accountName: string;
 	readonly azureFileUrl: string;
-	readonly mountOptions?: string | undefined;
+	readonly mountOptions?: string;
 	readonly relativeMountPath: string;
 }
 export interface BatchAccountCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface BatchAccountCreatePropertiesOrBatchAccountProperties {
-	readonly accountEndpoint?: string | undefined;
-	readonly activeJobAndJobScheduleQuota?: number | undefined;
-	readonly autoStorage?: AutoStorageBasePropertiesOrAutoStorageProperties | undefined;
-	readonly dedicatedCoreQuota?: number | undefined;
-	readonly dedicatedCoreQuotaPerVMFamily?: VirtualMachineFamilyCoreQuota[] | undefined;
-	readonly dedicatedCoreQuotaPerVMFamilyEnforced?: boolean | undefined;
-	readonly encryption?: EncryptionProperties | undefined;
-	readonly keyVaultReference?: KeyVaultReference | undefined;
-	readonly lowPriorityCoreQuota?: number | undefined;
-	readonly poolAllocationMode?: "BatchService" | undefined;
-	readonly poolQuota?: number | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("Cancelled" | "Creating" | "Deleting" | "Failed" | "Invalid") | undefined;
-	readonly publicNetworkAccess?: "Disabled" | undefined;
+	readonly accountEndpoint?: string;
+	readonly activeJobAndJobScheduleQuota?: number;
+	readonly autoStorage?: AutoStorageBasePropertiesOrAutoStorageProperties;
+	readonly dedicatedCoreQuota?: number;
+	readonly dedicatedCoreQuotaPerVMFamily?: VirtualMachineFamilyCoreQuota[];
+	readonly dedicatedCoreQuotaPerVMFamilyEnforced?: boolean;
+	readonly encryption?: EncryptionProperties;
+	readonly keyVaultReference?: KeyVaultReference;
+	readonly lowPriorityCoreQuota?: number;
+	readonly poolAllocationMode?: "BatchService";
+	readonly poolQuota?: number;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "Cancelled" | "Creating" | "Deleting" | "Failed" | "Invalid";
+	readonly publicNetworkAccess?: "Disabled";
 }
 export interface BatchAccountKeys {
-	readonly accountName?: string | undefined;
-	readonly primary?: string | undefined;
-	readonly secondary?: string | undefined;
+	readonly accountName?: string;
+	readonly primary?: string;
+	readonly secondary?: string;
 }
 export interface CertificateCreateOrUpdatePropertiesOrCertificateProperties {
 	readonly data: string;
-	readonly deleteCertificateError?: DeleteCertificateError | undefined;
-	readonly format?: "Cer" | undefined;
-	readonly password?: string | undefined;
-	readonly previousProvisioningState?: ("Deleting" | "Failed") | undefined;
-	readonly previousProvisioningStateTransitionTime?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed") | undefined;
-	readonly provisioningStateTransitionTime?: string | undefined;
-	readonly publicData?: string | undefined;
-	readonly thumbprint?: string | undefined;
-	readonly thumbprintAlgorithm?: string | undefined;
+	readonly deleteCertificateError?: DeleteCertificateError;
+	readonly format?: "Cer";
+	readonly password?: string;
+	readonly previousProvisioningState?: "Deleting" | "Failed";
+	readonly previousProvisioningStateTransitionTime?: string;
+	readonly provisioningState?: "Deleting" | "Failed";
+	readonly provisioningStateTransitionTime?: string;
+	readonly publicData?: string;
+	readonly thumbprint?: string;
+	readonly thumbprintAlgorithm?: string;
 }
 export interface CertificateReference {
 	readonly id: string;
-	readonly storeLocation?: "CurrentUser" | undefined;
-	readonly storeName?: string | undefined;
-	readonly visibility?: ("RemoteUser" | "StartTask"[]) | undefined;
+	readonly storeLocation?: "CurrentUser";
+	readonly storeName?: string;
+	readonly visibility?: "RemoteUser" | "StartTask"[];
 }
 export interface CifsMountConfiguration {
-	readonly mountOptions?: string | undefined;
+	readonly mountOptions?: string;
 	readonly password: string;
 	readonly relativeMountPath: string;
 	readonly source: string;
@@ -259,98 +259,98 @@ export interface CifsMountConfiguration {
 }
 export interface CloudServiceConfiguration {
 	readonly osFamily: string;
-	readonly osVersion?: string | undefined;
+	readonly osVersion?: string;
 }
 export interface ContainerConfiguration {
-	readonly containerImageNames?: string[] | undefined;
-	readonly containerRegistries?: ContainerRegistry[] | undefined;
+	readonly containerImageNames?: string[];
+	readonly containerRegistries?: ContainerRegistry[];
 	readonly type: "DockerCompatible";
 }
 export interface ContainerRegistry {
 	readonly password: string;
-	readonly registryServer?: string | undefined;
+	readonly registryServer?: string;
 	readonly username: string;
 }
 export interface DataDisk {
-	readonly caching?: ("None" | "ReadOnly") | undefined;
+	readonly caching?: "None" | "ReadOnly";
 }
 export interface DeleteCertificateError {
 	readonly code: string;
-	readonly details?: DeleteCertificateError[] | undefined;
+	readonly details?: DeleteCertificateError[];
 	readonly message: string;
-	readonly target?: string | undefined;
+	readonly target?: string;
 }
 export interface DeploymentConfiguration {
-	readonly cloudServiceConfiguration?: CloudServiceConfiguration | undefined;
-	readonly virtualMachineConfiguration?: VirtualMachineConfiguration | undefined;
+	readonly cloudServiceConfiguration?: CloudServiceConfiguration;
+	readonly virtualMachineConfiguration?: VirtualMachineConfiguration;
 }
 export interface DiskEncryptionConfiguration {
-	readonly targets?: "OsDisk"[] | undefined;
+	readonly targets?: "OsDisk"[];
 }
 export interface EncryptionProperties {
-	readonly keySource?: "Microsoft.Batch" | undefined;
-	readonly keyVaultProperties?: KeyVaultProperties | undefined;
+	readonly keySource?: "Microsoft.Batch";
+	readonly keyVaultProperties?: KeyVaultProperties;
 }
 export interface EnvironmentSetting {
 	readonly name: string;
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface FixedScaleSettings {
-	readonly nodeDeallocationOption?: ("Requeue" | "RetainedData" | "TaskCompletion") | undefined;
-	readonly resizeTimeout?: string | undefined;
-	readonly targetDedicatedNodes?: number | undefined;
-	readonly targetLowPriorityNodes?: number | undefined;
+	readonly nodeDeallocationOption?: "Requeue" | "RetainedData" | "TaskCompletion";
+	readonly resizeTimeout?: string;
+	readonly targetDedicatedNodes?: number;
+	readonly targetLowPriorityNodes?: number;
 }
 export interface ImageReference {
-	readonly id?: string | undefined;
-	readonly offer?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly sku?: string | undefined;
-	readonly version?: string | undefined;
+	readonly id?: string;
+	readonly offer?: string;
+	readonly publisher?: string;
+	readonly sku?: string;
+	readonly version?: string;
 }
 export interface InboundNatPool {
 	readonly backendPort: number;
 	readonly frontendPortRangeEnd: number;
 	readonly frontendPortRangeStart: number;
 	readonly name: string;
-	readonly networkSecurityGroupRules?: NetworkSecurityGroupRule[] | undefined;
+	readonly networkSecurityGroupRules?: NetworkSecurityGroupRule[];
 	readonly protocol: "TCP";
 }
 export interface KeyVaultProperties {
-	readonly keyIdentifier?: string | undefined;
+	readonly keyIdentifier?: string;
 }
 export interface KeyVaultReference {
 	readonly id: string;
 	readonly url: string;
 }
 export interface LinuxUserConfiguration {
-	readonly gid?: number | undefined;
-	readonly sshPrivateKey?: string | undefined;
-	readonly uid?: number | undefined;
+	readonly gid?: number;
+	readonly sshPrivateKey?: string;
+	readonly uid?: number;
 }
 export interface MetadataItem {
 	readonly name: string;
 	readonly value: string;
 }
 export interface MountConfiguration {
-	readonly azureBlobFileSystemConfiguration?: AzureBlobFileSystemConfiguration | undefined;
-	readonly azureFileShareConfiguration?: AzureFileShareConfiguration | undefined;
-	readonly cifsMountConfiguration?: CifsMountConfiguration | undefined;
-	readonly nfsMountConfiguration?: NFSMountConfiguration | undefined;
+	readonly azureBlobFileSystemConfiguration?: AzureBlobFileSystemConfiguration;
+	readonly azureFileShareConfiguration?: AzureFileShareConfiguration;
+	readonly cifsMountConfiguration?: CifsMountConfiguration;
+	readonly nfsMountConfiguration?: NFSMountConfiguration;
 }
 export interface NetworkConfiguration {
-	readonly endpointConfiguration?: PoolEndpointConfiguration | undefined;
-	readonly publicIPAddressConfiguration?: PublicIPAddressConfiguration | undefined;
-	readonly subnetId?: string | undefined;
+	readonly endpointConfiguration?: PoolEndpointConfiguration;
+	readonly publicIPAddressConfiguration?: PublicIPAddressConfiguration;
+	readonly subnetId?: string;
 }
 export interface NetworkSecurityGroupRule {
 	readonly access: "Allow";
 	readonly priority: number;
 	readonly sourceAddressPrefix: string;
-	readonly sourcePortRanges?: string[] | undefined;
+	readonly sourcePortRanges?: string[];
 }
 export interface NFSMountConfiguration {
-	readonly mountOptions?: string | undefined;
+	readonly mountOptions?: string;
 	readonly relativeMountPath: string;
 	readonly source: string;
 }
@@ -358,131 +358,131 @@ export interface PoolEndpointConfiguration {
 	readonly inboundNatPools: InboundNatPool[];
 }
 export interface PoolProperties {
-	readonly allocationState?: ("Resizing" | "Steady") | undefined;
-	readonly allocationStateTransitionTime?: string | undefined;
-	readonly applicationLicenses?: string[] | undefined;
-	readonly applicationPackages?: ApplicationPackageReference[] | undefined;
-	readonly autoScaleRun?: AutoScaleRun | undefined;
-	readonly certificates?: CertificateReference[] | undefined;
-	readonly creationTime?: string | undefined;
-	readonly currentDedicatedNodes?: number | undefined;
-	readonly currentLowPriorityNodes?: number | undefined;
-	readonly deploymentConfiguration?: DeploymentConfiguration | undefined;
-	readonly displayName?: string | undefined;
-	readonly interNodeCommunication?: "Disabled" | undefined;
-	readonly lastModified?: string | undefined;
-	readonly maxTasksPerNode?: number | undefined;
-	readonly metadata?: MetadataItem[] | undefined;
-	readonly mountConfiguration?: MountConfiguration[] | undefined;
-	readonly networkConfiguration?: NetworkConfiguration | undefined;
-	readonly provisioningState?: "Deleting" | undefined;
-	readonly provisioningStateTransitionTime?: string | undefined;
-	readonly resizeOperationStatus?: ResizeOperationStatus | undefined;
-	readonly scaleSettings?: ScaleSettings | undefined;
-	readonly startTask?: StartTask | undefined;
-	readonly taskSchedulingPolicy?: TaskSchedulingPolicy | undefined;
-	readonly userAccounts?: UserAccount[] | undefined;
-	readonly vmSize?: string | undefined;
+	readonly allocationState?: "Resizing" | "Steady";
+	readonly allocationStateTransitionTime?: string;
+	readonly applicationLicenses?: string[];
+	readonly applicationPackages?: ApplicationPackageReference[];
+	readonly autoScaleRun?: AutoScaleRun;
+	readonly certificates?: CertificateReference[];
+	readonly creationTime?: string;
+	readonly currentDedicatedNodes?: number;
+	readonly currentLowPriorityNodes?: number;
+	readonly deploymentConfiguration?: DeploymentConfiguration;
+	readonly displayName?: string;
+	readonly interNodeCommunication?: "Disabled";
+	readonly lastModified?: string;
+	readonly maxTasksPerNode?: number;
+	readonly metadata?: MetadataItem[];
+	readonly mountConfiguration?: MountConfiguration[];
+	readonly networkConfiguration?: NetworkConfiguration;
+	readonly provisioningState?: "Deleting";
+	readonly provisioningStateTransitionTime?: string;
+	readonly resizeOperationStatus?: ResizeOperationStatus;
+	readonly scaleSettings?: ScaleSettings;
+	readonly startTask?: StartTask;
+	readonly taskSchedulingPolicy?: TaskSchedulingPolicy;
+	readonly userAccounts?: UserAccount[];
+	readonly vmSize?: string;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Failed" | "Succeeded") | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Failed" | "Succeeded";
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionRequired?: string | undefined;
-	readonly description?: string | undefined;
+	readonly actionRequired?: string;
+	readonly description?: string;
 	readonly status: "Approved" | "Disconnected" | "Pending";
 }
 export interface PublicIPAddressConfiguration {
-	readonly ipAddressIds?: string[] | undefined;
-	readonly provision?: ("BatchManaged" | "NoPublicIPAddresses") | undefined;
+	readonly ipAddressIds?: string[];
+	readonly provision?: "BatchManaged" | "NoPublicIPAddresses";
 }
 export interface ResizeError {
 	readonly code: string;
-	readonly details?: ResizeError[] | undefined;
+	readonly details?: ResizeError[];
 	readonly message: string;
 }
 export interface ResizeOperationStatus {
-	readonly errors?: ResizeError[] | undefined;
-	readonly nodeDeallocationOption?: ("Requeue" | "RetainedData" | "TaskCompletion") | undefined;
-	readonly resizeTimeout?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly targetDedicatedNodes?: number | undefined;
-	readonly targetLowPriorityNodes?: number | undefined;
+	readonly errors?: ResizeError[];
+	readonly nodeDeallocationOption?: "Requeue" | "RetainedData" | "TaskCompletion";
+	readonly resizeTimeout?: string;
+	readonly startTime?: string;
+	readonly targetDedicatedNodes?: number;
+	readonly targetLowPriorityNodes?: number;
 }
 export interface ResourceFile {
-	readonly autoStorageContainerName?: string | undefined;
-	readonly blobPrefix?: string | undefined;
-	readonly fileMode?: string | undefined;
-	readonly filePath?: string | undefined;
-	readonly httpUrl?: string | undefined;
-	readonly storageContainerUrl?: string | undefined;
+	readonly autoStorageContainerName?: string;
+	readonly blobPrefix?: string;
+	readonly fileMode?: string;
+	readonly filePath?: string;
+	readonly httpUrl?: string;
+	readonly storageContainerUrl?: string;
 }
 export interface ScaleSettings {
-	readonly autoScale?: AutoScaleSettings | undefined;
-	readonly fixedScale?: FixedScaleSettings | undefined;
+	readonly autoScale?: AutoScaleSettings;
+	readonly fixedScale?: FixedScaleSettings;
 }
 export interface StartTask {
-	readonly commandLine?: string | undefined;
-	readonly containerSettings?: TaskContainerSettings | undefined;
-	readonly environmentSettings?: EnvironmentSetting[] | undefined;
-	readonly maxTaskRetryCount?: number | undefined;
-	readonly resourceFiles?: ResourceFile[] | undefined;
-	readonly userIdentity?: UserIdentity | undefined;
-	readonly waitForSuccess?: boolean | undefined;
+	readonly commandLine?: string;
+	readonly containerSettings?: TaskContainerSettings;
+	readonly environmentSettings?: EnvironmentSetting[];
+	readonly maxTaskRetryCount?: number;
+	readonly resourceFiles?: ResourceFile[];
+	readonly userIdentity?: UserIdentity;
+	readonly waitForSuccess?: boolean;
 }
 export interface TaskContainerSettings {
-	readonly containerRunOptions?: string | undefined;
+	readonly containerRunOptions?: string;
 	readonly imageName: string;
-	readonly registry?: ContainerRegistry | undefined;
-	readonly workingDirectory?: "ContainerImageDefault" | undefined;
+	readonly registry?: ContainerRegistry;
+	readonly workingDirectory?: "ContainerImageDefault";
 }
 export interface TaskSchedulingPolicy {
 	readonly nodeFillType: "Pack";
 }
 export interface UserAccount {
-	readonly elevationLevel?: "Admin" | undefined;
-	readonly linuxUserConfiguration?: LinuxUserConfiguration | undefined;
+	readonly elevationLevel?: "Admin";
+	readonly linuxUserConfiguration?: LinuxUserConfiguration;
 	readonly name: string;
 	readonly password: string;
-	readonly windowsUserConfiguration?: WindowsUserConfiguration | undefined;
+	readonly windowsUserConfiguration?: WindowsUserConfiguration;
 }
 export interface UserIdentity {
-	readonly autoUser?: AutoUserSpecification | undefined;
-	readonly userName?: string | undefined;
+	readonly autoUser?: AutoUserSpecification;
+	readonly userName?: string;
 }
 export interface VirtualMachineConfiguration {
-	readonly containerConfiguration?: ContainerConfiguration | undefined;
-	readonly dataDisks?: DataDisk[] | undefined;
-	readonly diskEncryptionConfiguration?: DiskEncryptionConfiguration | undefined;
+	readonly containerConfiguration?: ContainerConfiguration;
+	readonly dataDisks?: DataDisk[];
+	readonly diskEncryptionConfiguration?: DiskEncryptionConfiguration;
 	readonly imageReference: ImageReference;
-	readonly licenseType?: string | undefined;
+	readonly licenseType?: string;
 }
 export interface VirtualMachineFamilyCoreQuota {
-	readonly coreQuota?: number | undefined;
-	readonly name?: string | undefined;
+	readonly coreQuota?: number;
+	readonly name?: string;
 }
 export interface WindowsConfiguration {
-	readonly enableAutomaticUpdates?: boolean | undefined;
+	readonly enableAutomaticUpdates?: boolean;
 }
 export interface WindowsUserConfiguration {
-	readonly loginMode?: "Batch" | undefined;
+	readonly loginMode?: "Batch";
 }
 export default {
 	batchAccounts: batchAccounts,

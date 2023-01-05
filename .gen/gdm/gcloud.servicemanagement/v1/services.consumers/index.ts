@@ -10,7 +10,6 @@ export class ServicesConsumers
 }
 export interface ServicesConsumersComponentOutputs {}
 export interface ServicesConsumersComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

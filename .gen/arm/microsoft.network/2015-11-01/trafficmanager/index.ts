@@ -17,47 +17,47 @@ export interface trafficmanagerprofilesComponentOutputs {
 	readonly type: "Microsoft.Network/trafficmanagerprofiles";
 }
 export interface trafficmanagerprofilesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProfileProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ProfileProperties;
+	readonly tags?: ResourceTags;
 }
 export interface DnsConfig {
-	readonly fqdn?: string | undefined;
-	readonly relativeName?: string | undefined;
-	readonly ttl?: number | undefined;
+	readonly fqdn?: string;
+	readonly relativeName?: string;
+	readonly ttl?: number;
 }
 export interface Endpoint {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: EndpointProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: EndpointProperties;
+	readonly type?: string;
 }
 export interface EndpointProperties {
-	readonly endpointLocation?: string | undefined;
-	readonly endpointMonitorStatus?: string | undefined;
-	readonly endpointStatus?: string | undefined;
-	readonly minChildEndpoints?: number | undefined;
-	readonly priority?: number | undefined;
-	readonly target?: string | undefined;
-	readonly targetResourceId?: string | undefined;
-	readonly weight?: number | undefined;
+	readonly endpointLocation?: string;
+	readonly endpointMonitorStatus?: string;
+	readonly endpointStatus?: string;
+	readonly minChildEndpoints?: number;
+	readonly priority?: number;
+	readonly target?: string;
+	readonly targetResourceId?: string;
+	readonly weight?: number;
 }
 export interface MonitorConfig {
-	readonly path?: string | undefined;
-	readonly port?: number | undefined;
-	readonly profileMonitorStatus?: string | undefined;
-	readonly protocol?: string | undefined;
+	readonly path?: string;
+	readonly port?: number;
+	readonly profileMonitorStatus?: string;
+	readonly protocol?: string;
 }
 export interface ProfileProperties {
-	readonly dnsConfig?: DnsConfig | undefined;
-	readonly endpoints?: Endpoint[] | undefined;
-	readonly monitorConfig?: MonitorConfig | undefined;
-	readonly profileStatus?: string | undefined;
-	readonly trafficRoutingMethod?: string | undefined;
+	readonly dnsConfig?: DnsConfig;
+	readonly endpoints?: Endpoint[];
+	readonly monitorConfig?: MonitorConfig;
+	readonly profileStatus?: string;
+	readonly trafficRoutingMethod?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	trafficmanagerprofiles: trafficmanagerprofiles,

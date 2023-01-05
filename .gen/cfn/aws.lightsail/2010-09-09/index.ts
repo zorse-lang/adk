@@ -18,11 +18,11 @@ export interface AlarmComponentInputs {
 	readonly MetricName: string;
 	readonly MonitoredResourceName: string;
 	readonly Threshold: number;
-	readonly ContactProtocols?: (string[] | undefined) | undefined;
-	readonly DatapointsToAlarm?: (number | undefined) | undefined;
-	readonly NotificationEnabled?: (boolean | undefined) | undefined;
-	readonly NotificationTriggers?: (string[] | undefined) | undefined;
-	readonly TreatMissingData?: (string | undefined) | undefined;
+	readonly ContactProtocols?: string[] | undefined;
+	readonly DatapointsToAlarm?: number | undefined;
+	readonly NotificationEnabled?: boolean | undefined;
+	readonly NotificationTriggers?: string[] | undefined;
+	readonly TreatMissingData?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Bucket extends CfnResource<BucketComponentInputs> implements BucketComponentOutputs {
@@ -41,11 +41,11 @@ export interface BucketComponentOutputs {
 export interface BucketComponentInputs {
 	readonly BucketName: string;
 	readonly BundleId: string;
-	readonly AccessRules?: (AccessRules | undefined) | undefined;
-	readonly ObjectVersioning?: (boolean | undefined) | undefined;
-	readonly ReadOnlyAccessAccounts?: (string[] | undefined) | undefined;
-	readonly ResourcesReceivingAccess?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AccessRules?: AccessRules | undefined;
+	readonly ObjectVersioning?: boolean | undefined;
+	readonly ReadOnlyAccessAccounts?: string[] | undefined;
+	readonly ResourcesReceivingAccess?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Certificate extends CfnResource<CertificateComponentInputs> implements CertificateComponentOutputs {
@@ -62,8 +62,8 @@ export interface CertificateComponentOutputs {
 export interface CertificateComponentInputs {
 	readonly CertificateName: string;
 	readonly DomainName: string;
-	readonly SubjectAlternativeNames?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly SubjectAlternativeNames?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Container extends CfnResource<ContainerComponentInputs> implements ContainerComponentOutputs {
@@ -81,10 +81,10 @@ export interface ContainerComponentInputs {
 	readonly Power: string;
 	readonly Scale: number;
 	readonly ServiceName: string;
-	readonly ContainerServiceDeployment?: (ContainerServiceDeployment | undefined) | undefined;
-	readonly IsDisabled?: (boolean | undefined) | undefined;
-	readonly PublicDomainNames?: (PublicDomainName[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ContainerServiceDeployment?: ContainerServiceDeployment | undefined;
+	readonly IsDisabled?: boolean | undefined;
+	readonly PublicDomainNames?: PublicDomainName[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Database extends CfnResource<DatabaseComponentInputs> implements DatabaseComponentOutputs {
@@ -102,16 +102,16 @@ export interface DatabaseComponentInputs {
 	readonly RelationalDatabaseBlueprintId: string;
 	readonly RelationalDatabaseBundleId: string;
 	readonly RelationalDatabaseName: string;
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly BackupRetention?: (boolean | undefined) | undefined;
-	readonly CaCertificateIdentifier?: (string | undefined) | undefined;
-	readonly MasterUserPassword?: (string | undefined) | undefined;
-	readonly PreferredBackupWindow?: (string | undefined) | undefined;
-	readonly PreferredMaintenanceWindow?: (string | undefined) | undefined;
-	readonly PubliclyAccessible?: (boolean | undefined) | undefined;
-	readonly RelationalDatabaseParameters?: (RelationalDatabaseParameter[] | undefined) | undefined;
-	readonly RotateMasterUserPassword?: (boolean | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly BackupRetention?: boolean | undefined;
+	readonly CaCertificateIdentifier?: string | undefined;
+	readonly MasterUserPassword?: string | undefined;
+	readonly PreferredBackupWindow?: string | undefined;
+	readonly PreferredMaintenanceWindow?: string | undefined;
+	readonly PubliclyAccessible?: boolean | undefined;
+	readonly RelationalDatabaseParameters?: RelationalDatabaseParameter[] | undefined;
+	readonly RotateMasterUserPassword?: boolean | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Disk extends CfnResource<DiskComponentInputs> implements DiskComponentOutputs {
@@ -146,9 +146,9 @@ export interface DiskComponentOutputs {
 export interface DiskComponentInputs {
 	readonly DiskName: string;
 	readonly SizeInGb: number;
-	readonly AddOns?: (AddOn[] | undefined) | undefined;
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AddOns?: AddOn[] | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Distribution extends CfnResource<DistributionComponentInputs> implements DistributionComponentOutputs {
@@ -169,12 +169,12 @@ export interface DistributionComponentInputs {
 	readonly DefaultCacheBehavior: CacheBehavior;
 	readonly DistributionName: string;
 	readonly Origin: InputOrigin;
-	readonly CacheBehaviors?: (CacheBehaviorPerPath[] | undefined) | undefined;
-	readonly CacheBehaviorSettings?: (CacheSettings | undefined) | undefined;
-	readonly CertificateName?: (string | undefined) | undefined;
-	readonly IpAddressType?: (string | undefined) | undefined;
-	readonly IsEnabled?: (boolean | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CacheBehaviors?: CacheBehaviorPerPath[] | undefined;
+	readonly CacheBehaviorSettings?: CacheSettings | undefined;
+	readonly CertificateName?: string | undefined;
+	readonly IpAddressType?: string | undefined;
+	readonly IsEnabled?: boolean | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Instance extends CfnResource<InstanceComponentInputs> implements InstanceComponentOutputs {
@@ -218,15 +218,15 @@ export interface InstanceComponentInputs {
 	readonly BlueprintId: string;
 	readonly BundleId: string;
 	readonly InstanceName: string;
-	readonly AddOns?: (AddOn[] | undefined) | undefined;
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly Hardware?: (Hardware | undefined) | undefined;
-	readonly KeyPairName?: (string | undefined) | undefined;
-	readonly Location?: (Location | undefined) | undefined;
-	readonly Networking?: (Networking | undefined) | undefined;
-	readonly State?: (State | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
+	readonly AddOns?: AddOn[] | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly Hardware?: Hardware | undefined;
+	readonly KeyPairName?: string | undefined;
+	readonly Location?: Location | undefined;
+	readonly Networking?: Networking | undefined;
+	readonly State?: State | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly UserData?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LoadBalancer extends CfnResource<LoadBalancerComponentInputs> implements LoadBalancerComponentOutputs {
@@ -241,13 +241,13 @@ export interface LoadBalancerComponentOutputs {
 export interface LoadBalancerComponentInputs {
 	readonly InstancePort: number;
 	readonly LoadBalancerName: string;
-	readonly AttachedInstances?: (string[] | undefined) | undefined;
-	readonly HealthCheckPath?: (string | undefined) | undefined;
-	readonly IpAddressType?: (string | undefined) | undefined;
-	readonly SessionStickinessEnabled?: (boolean | undefined) | undefined;
-	readonly SessionStickinessLBCookieDurationSeconds?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TlsPolicyName?: (string | undefined) | undefined;
+	readonly AttachedInstances?: string[] | undefined;
+	readonly HealthCheckPath?: string | undefined;
+	readonly IpAddressType?: string | undefined;
+	readonly SessionStickinessEnabled?: boolean | undefined;
+	readonly SessionStickinessLBCookieDurationSeconds?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TlsPolicyName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LoadBalancerTlsCertificate
@@ -268,9 +268,9 @@ export interface LoadBalancerTlsCertificateComponentInputs {
 	readonly CertificateDomainName: string;
 	readonly CertificateName: string;
 	readonly LoadBalancerName: string;
-	readonly CertificateAlternativeNames?: (string[] | undefined) | undefined;
-	readonly HttpsRedirectionEnabled?: (boolean | undefined) | undefined;
-	readonly IsAttached?: (boolean | undefined) | undefined;
+	readonly CertificateAlternativeNames?: string[] | undefined;
+	readonly HttpsRedirectionEnabled?: boolean | undefined;
+	readonly IsAttached?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class StaticIp extends CfnResource<StaticIpComponentInputs> implements StaticIpComponentOutputs {
@@ -288,141 +288,141 @@ export interface StaticIpComponentOutputs {
 }
 export interface StaticIpComponentInputs {
 	readonly StaticIpName: string;
-	readonly AttachedTo?: (string | undefined) | undefined;
+	readonly AttachedTo?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface AccessRules {
-	readonly AllowPublicOverrides?: (boolean | undefined) | undefined;
-	readonly GetObject?: (string | undefined) | undefined;
+	readonly AllowPublicOverrides?: boolean | undefined;
+	readonly GetObject?: string | undefined;
 }
 export interface Container {
-	readonly Command?: (string[] | undefined) | undefined;
-	readonly ContainerName?: (string | undefined) | undefined;
-	readonly Environment?: (EnvironmentVariable[] | undefined) | undefined;
-	readonly Image?: (string | undefined) | undefined;
-	readonly Ports?: (PortInfo[] | undefined) | undefined;
+	readonly Command?: string[] | undefined;
+	readonly ContainerName?: string | undefined;
+	readonly Environment?: EnvironmentVariable[] | undefined;
+	readonly Image?: string | undefined;
+	readonly Ports?: PortInfo[] | undefined;
 }
 export interface ContainerServiceDeployment {
-	readonly Containers?: (Container[] | undefined) | undefined;
-	readonly PublicEndpoint?: (PublicEndpoint | undefined) | undefined;
+	readonly Containers?: Container[] | undefined;
+	readonly PublicEndpoint?: PublicEndpoint | undefined;
 }
 export interface EnvironmentVariable {
-	readonly Value?: (string | undefined) | undefined;
-	readonly Variable?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
+	readonly Variable?: string | undefined;
 }
 export interface HealthCheckConfig {
-	readonly HealthyThreshold?: (number | undefined) | undefined;
-	readonly IntervalSeconds?: (number | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
-	readonly SuccessCodes?: (string | undefined) | undefined;
-	readonly TimeoutSeconds?: (number | undefined) | undefined;
-	readonly UnhealthyThreshold?: (number | undefined) | undefined;
+	readonly HealthyThreshold?: number | undefined;
+	readonly IntervalSeconds?: number | undefined;
+	readonly Path?: string | undefined;
+	readonly SuccessCodes?: string | undefined;
+	readonly TimeoutSeconds?: number | undefined;
+	readonly UnhealthyThreshold?: number | undefined;
 }
 export interface PortInfo {
-	readonly Port?: (string | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
+	readonly Port?: string | undefined;
+	readonly Protocol?: string | undefined;
 }
 export interface PublicDomainName {
-	readonly CertificateName?: (string | undefined) | undefined;
-	readonly DomainNames?: (string[] | undefined) | undefined;
+	readonly CertificateName?: string | undefined;
+	readonly DomainNames?: string[] | undefined;
 }
 export interface PublicEndpoint {
-	readonly ContainerName?: (string | undefined) | undefined;
-	readonly ContainerPort?: (number | undefined) | undefined;
-	readonly HealthCheckConfig?: (HealthCheckConfig | undefined) | undefined;
+	readonly ContainerName?: string | undefined;
+	readonly ContainerPort?: number | undefined;
+	readonly HealthCheckConfig?: HealthCheckConfig | undefined;
 }
 export interface RelationalDatabaseParameter {
-	readonly AllowedValues?: (string | undefined) | undefined;
-	readonly ApplyMethod?: (string | undefined) | undefined;
-	readonly ApplyType?: (string | undefined) | undefined;
-	readonly DataType?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly IsModifiable?: (boolean | undefined) | undefined;
-	readonly ParameterName?: (string | undefined) | undefined;
-	readonly ParameterValue?: (string | undefined) | undefined;
+	readonly AllowedValues?: string | undefined;
+	readonly ApplyMethod?: string | undefined;
+	readonly ApplyType?: string | undefined;
+	readonly DataType?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly IsModifiable?: boolean | undefined;
+	readonly ParameterName?: string | undefined;
+	readonly ParameterValue?: string | undefined;
 }
 export interface AddOn {
 	readonly AddOnType: string;
-	readonly AutoSnapshotAddOnRequest?: (AutoSnapshotAddOn | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
+	readonly AutoSnapshotAddOnRequest?: AutoSnapshotAddOn | undefined;
+	readonly Status?: string | undefined;
 }
 export interface AutoSnapshotAddOn {
-	readonly SnapshotTimeOfDay?: (string | undefined) | undefined;
+	readonly SnapshotTimeOfDay?: string | undefined;
 }
 export interface Location {
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly RegionName?: (string | undefined) | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly RegionName?: string | undefined;
 }
 export interface CacheBehavior {
-	readonly Behavior?: (string | undefined) | undefined;
+	readonly Behavior?: string | undefined;
 }
 export interface CacheBehaviorPerPath {
-	readonly Behavior?: (string | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
+	readonly Behavior?: string | undefined;
+	readonly Path?: string | undefined;
 }
 export interface CacheSettings {
-	readonly AllowedHTTPMethods?: (string | undefined) | undefined;
-	readonly CachedHTTPMethods?: (string | undefined) | undefined;
-	readonly DefaultTTL?: (number | undefined) | undefined;
-	readonly ForwardedCookies?: (CookieObject | undefined) | undefined;
-	readonly ForwardedHeaders?: (HeaderObject | undefined) | undefined;
-	readonly ForwardedQueryStrings?: (QueryStringObject | undefined) | undefined;
-	readonly MaximumTTL?: (number | undefined) | undefined;
-	readonly MinimumTTL?: (number | undefined) | undefined;
+	readonly AllowedHTTPMethods?: string | undefined;
+	readonly CachedHTTPMethods?: string | undefined;
+	readonly DefaultTTL?: number | undefined;
+	readonly ForwardedCookies?: CookieObject | undefined;
+	readonly ForwardedHeaders?: HeaderObject | undefined;
+	readonly ForwardedQueryStrings?: QueryStringObject | undefined;
+	readonly MaximumTTL?: number | undefined;
+	readonly MinimumTTL?: number | undefined;
 }
 export interface CookieObject {
-	readonly CookiesAllowList?: (string[] | undefined) | undefined;
-	readonly Option?: (string | undefined) | undefined;
+	readonly CookiesAllowList?: string[] | undefined;
+	readonly Option?: string | undefined;
 }
 export interface HeaderObject {
-	readonly HeadersAllowList?: (string[] | undefined) | undefined;
-	readonly Option?: (string | undefined) | undefined;
+	readonly HeadersAllowList?: string[] | undefined;
+	readonly Option?: string | undefined;
 }
 export interface InputOrigin {
-	readonly Name?: (string | undefined) | undefined;
-	readonly ProtocolPolicy?: (string | undefined) | undefined;
-	readonly RegionName?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly ProtocolPolicy?: string | undefined;
+	readonly RegionName?: string | undefined;
 }
 export interface QueryStringObject {
-	readonly Option?: (boolean | undefined) | undefined;
-	readonly QueryStringsAllowList?: (string[] | undefined) | undefined;
+	readonly Option?: boolean | undefined;
+	readonly QueryStringsAllowList?: string[] | undefined;
 }
 export interface DiskOptions {
-	readonly AttachedTo?: (string | undefined) | undefined;
-	readonly AttachmentState?: (string | undefined) | undefined;
+	readonly AttachedTo?: string | undefined;
+	readonly AttachmentState?: string | undefined;
 	readonly DiskName: string;
-	readonly IOPS?: (number | undefined) | undefined;
-	readonly IsSystemDisk?: (boolean | undefined) | undefined;
+	readonly IOPS?: number | undefined;
+	readonly IsSystemDisk?: boolean | undefined;
 	readonly Path: string;
-	readonly SizeInGb?: (string | undefined) | undefined;
+	readonly SizeInGb?: string | undefined;
 }
 export interface Hardware {
-	readonly CpuCount?: (number | undefined) | undefined;
-	readonly Disks?: (Disk[] | undefined) | undefined;
-	readonly RamSizeInGb?: (number | undefined) | undefined;
+	readonly CpuCount?: number | undefined;
+	readonly Disks?: Disk[] | undefined;
+	readonly RamSizeInGb?: number | undefined;
 }
 export interface MonthlyTransfer {
-	readonly GbPerMonthAllocated?: (string | undefined) | undefined;
+	readonly GbPerMonthAllocated?: string | undefined;
 }
 export interface Networking {
-	readonly MonthlyTransfer?: (number | undefined) | undefined;
+	readonly MonthlyTransfer?: number | undefined;
 	readonly Ports: Port[];
 }
 export interface Port {
-	readonly AccessDirection?: (string | undefined) | undefined;
-	readonly AccessFrom?: (string | undefined) | undefined;
-	readonly AccessType?: (string | undefined) | undefined;
-	readonly CidrListAliases?: (string[] | undefined) | undefined;
-	readonly Cidrs?: (string[] | undefined) | undefined;
-	readonly CommonName?: (string | undefined) | undefined;
-	readonly FromPort?: (number | undefined) | undefined;
-	readonly Ipv6Cidrs?: (string[] | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
-	readonly ToPort?: (number | undefined) | undefined;
+	readonly AccessDirection?: string | undefined;
+	readonly AccessFrom?: string | undefined;
+	readonly AccessType?: string | undefined;
+	readonly CidrListAliases?: string[] | undefined;
+	readonly Cidrs?: string[] | undefined;
+	readonly CommonName?: string | undefined;
+	readonly FromPort?: number | undefined;
+	readonly Ipv6Cidrs?: string[] | undefined;
+	readonly Protocol?: string | undefined;
+	readonly ToPort?: number | undefined;
 }
 export interface State {
-	readonly Code?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Code?: number | undefined;
+	readonly Name?: string | undefined;
 }
 export default {
 	Alarm: Alarm,

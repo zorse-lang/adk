@@ -14,13 +14,13 @@ export interface namespacesComponentOutputs {
 	readonly type: "Microsoft.ServiceBus/namespaces";
 }
 export interface namespacesComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SBNamespaceProperties | undefined;
-	readonly sku?: SBSku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SBNamespaceProperties;
+	readonly sku?: SBSku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class namespaces_AuthorizationRules
 	extends ArmResource<namespaces_AuthorizationRulesComponentInputs>
@@ -40,8 +40,8 @@ export interface namespaces_AuthorizationRulesComponentOutputs {
 }
 export interface namespaces_AuthorizationRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: SBAuthorizationRuleProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SBAuthorizationRuleProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_disasterRecoveryConfigs
 	extends ArmResource<namespaces_disasterRecoveryConfigsComponentInputs>
@@ -67,8 +67,8 @@ export interface namespaces_disasterRecoveryConfigsComponentOutputs {
 }
 export interface namespaces_disasterRecoveryConfigsComponentInputs {
 	readonly name: string;
-	readonly properties?: ArmDisasterRecoveryProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ArmDisasterRecoveryProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_disasterRecoveryConfigs_authorizationRules
 	extends ArmResource<namespaces_disasterRecoveryConfigs_authorizationRulesComponentInputs>
@@ -94,8 +94,8 @@ export interface namespaces_disasterRecoveryConfigs_authorizationRulesComponentO
 }
 export interface namespaces_disasterRecoveryConfigs_authorizationRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: SBAuthorizationRuleProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SBAuthorizationRuleProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_migrationConfigurations
 	extends ArmResource<namespaces_migrationConfigurationsComponentInputs>
@@ -121,8 +121,8 @@ export interface namespaces_migrationConfigurationsComponentOutputs {
 }
 export interface namespaces_migrationConfigurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: MigrationConfigPropertiesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: MigrationConfigPropertiesProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_networkRuleSets
 	extends ArmResource<namespaces_networkRuleSetsComponentInputs>
@@ -142,8 +142,8 @@ export interface namespaces_networkRuleSetsComponentOutputs {
 }
 export interface namespaces_networkRuleSetsComponentInputs {
 	readonly name: string;
-	readonly properties?: NetworkRuleSetProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: NetworkRuleSetProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_privateEndpointConnections
 	extends ArmResource<namespaces_privateEndpointConnectionsComponentInputs>
@@ -169,8 +169,8 @@ export interface namespaces_privateEndpointConnectionsComponentOutputs {
 }
 export interface namespaces_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_queues
 	extends ArmResource<namespaces_queuesComponentInputs>
@@ -190,8 +190,8 @@ export interface namespaces_queuesComponentOutputs {
 }
 export interface namespaces_queuesComponentInputs {
 	readonly name: string;
-	readonly properties?: SBQueueProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SBQueueProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_queues_authorizationRules
 	extends ArmResource<namespaces_queues_authorizationRulesComponentInputs>
@@ -217,8 +217,8 @@ export interface namespaces_queues_authorizationRulesComponentOutputs {
 }
 export interface namespaces_queues_authorizationRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: SBAuthorizationRuleProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SBAuthorizationRuleProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_topics
 	extends ArmResource<namespaces_topicsComponentInputs>
@@ -238,8 +238,8 @@ export interface namespaces_topicsComponentOutputs {
 }
 export interface namespaces_topicsComponentInputs {
 	readonly name: string;
-	readonly properties?: SBTopicProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SBTopicProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_topics_authorizationRules
 	extends ArmResource<namespaces_topics_authorizationRulesComponentInputs>
@@ -265,8 +265,8 @@ export interface namespaces_topics_authorizationRulesComponentOutputs {
 }
 export interface namespaces_topics_authorizationRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: SBAuthorizationRuleProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SBAuthorizationRuleProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_topics_subscriptions
 	extends ArmResource<namespaces_topics_subscriptionsComponentInputs>
@@ -286,8 +286,8 @@ export interface namespaces_topics_subscriptionsComponentOutputs {
 }
 export interface namespaces_topics_subscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: SBSubscriptionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SBSubscriptionProperties;
+	readonly systemData?: SystemData;
 }
 export class namespaces_topics_subscriptions_rules
 	extends ArmResource<namespaces_topics_subscriptions_rulesComponentInputs>
@@ -313,8 +313,8 @@ export interface namespaces_topics_subscriptions_rulesComponentOutputs {
 }
 export interface namespaces_topics_subscriptions_rulesComponentInputs {
 	readonly name: string;
-	readonly properties?: Ruleproperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: Ruleproperties;
+	readonly systemData?: SystemData;
 }
 export function listKeys(resource: namespaces_AuthorizationRules): AccessKeys {
 	if (resource.apiVersion !== "2021-06-01-preview") {
@@ -326,235 +326,253 @@ export function listKeys(resource: namespaces_AuthorizationRules): AccessKeys {
 	throw new Error("not implemented");
 }
 export interface AccessKeys {
-	readonly aliasPrimaryConnectionString?: string | undefined;
-	readonly aliasSecondaryConnectionString?: string | undefined;
-	readonly keyName?: string | undefined;
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly aliasPrimaryConnectionString?: string;
+	readonly aliasSecondaryConnectionString?: string;
+	readonly keyName?: string;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface Action {
-	readonly compatibilityLevel?: number | undefined;
-	readonly requiresPreprocessing?: boolean | undefined;
-	readonly sqlExpression?: string | undefined;
+	readonly compatibilityLevel?: number;
+	readonly requiresPreprocessing?: boolean;
+	readonly sqlExpression?: string;
 }
 export interface ArmDisasterRecoveryProperties {
-	readonly alternateName?: string | undefined;
-	readonly partnerNamespace?: string | undefined;
-	readonly pendingReplicationOperationsCount?: number | undefined;
-	readonly provisioningState?: ("Accepted" | "Failed") | undefined;
-	readonly role?: ("Primary" | "PrimaryNotReplicating") | undefined;
+	readonly alternateName?: string;
+	readonly partnerNamespace?: string;
+	readonly pendingReplicationOperationsCount?: number;
+	readonly provisioningState?: "Accepted" | "Failed";
+	readonly role?: "Primary" | "PrimaryNotReplicating";
 }
 export interface ConnectionState {
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface CorrelationFilter {
-	readonly contentType?: string | undefined;
-	readonly correlationId?: string | undefined;
-	readonly label?: string | undefined;
-	readonly messageId?: string | undefined;
-	readonly properties?: CorrelationFilterProperties | undefined;
-	readonly replyTo?: string | undefined;
-	readonly replyToSessionId?: string | undefined;
-	readonly requiresPreprocessing?: boolean | undefined;
-	readonly sessionId?: string | undefined;
-	readonly to?: string | undefined;
+	readonly contentType?: string;
+	readonly correlationId?: string;
+	readonly label?: string;
+	readonly messageId?: string;
+	readonly properties?: CorrelationFilterProperties;
+	readonly replyTo?: string;
+	readonly replyToSessionId?: string;
+	readonly requiresPreprocessing?: boolean;
+	readonly sessionId?: string;
+	readonly to?: string;
 }
 export interface CorrelationFilterProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Encryption {
-	readonly keySource?: "Microsoft.KeyVault" | undefined;
-	readonly keyVaultProperties?: KeyVaultProperties[] | undefined;
-	readonly requireInfrastructureEncryption?: boolean | undefined;
+	readonly keySource?: "Microsoft.KeyVault";
+	readonly keyVaultProperties?: KeyVaultProperties[];
+	readonly requireInfrastructureEncryption?: boolean;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: IdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: IdentityUserAssignedIdentities;
 }
 export interface IdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface KeyVaultProperties {
-	readonly identity?: UserAssignedIdentityProperties | undefined;
-	readonly keyName?: string | undefined;
-	readonly keyVaultUri?: string | undefined;
-	readonly keyVersion?: string | undefined;
+	readonly identity?: UserAssignedIdentityProperties;
+	readonly keyName?: string;
+	readonly keyVaultUri?: string;
+	readonly keyVersion?: string;
 }
 export interface MessageCountDetails {
-	readonly activeMessageCount?: number | undefined;
-	readonly deadLetterMessageCount?: number | undefined;
-	readonly scheduledMessageCount?: number | undefined;
-	readonly transferDeadLetterMessageCount?: number | undefined;
-	readonly transferMessageCount?: number | undefined;
+	readonly activeMessageCount?: number;
+	readonly deadLetterMessageCount?: number;
+	readonly scheduledMessageCount?: number;
+	readonly transferDeadLetterMessageCount?: number;
+	readonly transferMessageCount?: number;
 }
 export interface MigrationConfigPropertiesProperties {
-	readonly migrationState?: string | undefined;
-	readonly pendingReplicationOperationsCount?: number | undefined;
+	readonly migrationState?: string;
+	readonly pendingReplicationOperationsCount?: number;
 	readonly postMigrationName: string;
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 	readonly targetNamespace: string;
 }
 export interface NetworkRuleSetProperties {
-	readonly defaultAction?: ("Allow" | "Deny") | undefined;
-	readonly ipRules?: NWRuleSetIpRules[] | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly trustedServiceAccessEnabled?: boolean | undefined;
-	readonly virtualNetworkRules?: NWRuleSetVirtualNetworkRules[] | undefined;
+	readonly defaultAction?: "Allow" | "Deny";
+	readonly ipRules?: NWRuleSetIpRules[];
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly trustedServiceAccessEnabled?: boolean;
+	readonly virtualNetworkRules?: NWRuleSetVirtualNetworkRules[];
 }
 export interface NWRuleSetIpRules {
-	readonly action?: "Allow" | undefined;
-	readonly ipMask?: string | undefined;
+	readonly action?: "Allow";
+	readonly ipMask?: string;
 }
 export interface NWRuleSetVirtualNetworkRules {
-	readonly ignoreMissingVnetServiceEndpoint?: boolean | undefined;
-	readonly subnet?: Subnet | undefined;
+	readonly ignoreMissingVnetServiceEndpoint?: boolean;
+	readonly subnet?: Subnet;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: ConnectionState | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: ConnectionState;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface Ruleproperties {
-	readonly action?: Action | undefined;
-	readonly correlationFilter?: CorrelationFilter | undefined;
-	readonly filterType?: "CorrelationFilter" | undefined;
-	readonly sqlFilter?: SqlFilter | undefined;
+	readonly action?: Action;
+	readonly correlationFilter?: CorrelationFilter;
+	readonly filterType?: "CorrelationFilter";
+	readonly sqlFilter?: SqlFilter;
 }
 export interface SBAuthorizationRuleProperties {
 	readonly rights: "Listen" | "Manage"[];
 }
 export interface SBClientAffineProperties {
-	readonly clientId?: string | undefined;
-	readonly isDurable?: boolean | undefined;
-	readonly isShared?: boolean | undefined;
+	readonly clientId?: string;
+	readonly isDurable?: boolean;
+	readonly isShared?: boolean;
 }
 export interface SBNamespaceProperties {
-	readonly createdAt?: string | undefined;
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly encryption?: Encryption | undefined;
-	readonly metricId?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceBusEndpoint?: string | undefined;
-	readonly status?: string | undefined;
-	readonly updatedAt?: string | undefined;
-	readonly zoneRedundant?: boolean | undefined;
+	readonly createdAt?: string;
+	readonly disableLocalAuth?: boolean;
+	readonly encryption?: Encryption;
+	readonly metricId?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: string;
+	readonly serviceBusEndpoint?: string;
+	readonly status?: string;
+	readonly updatedAt?: string;
+	readonly zoneRedundant?: boolean;
 }
 export interface SBQueueProperties {
-	readonly accessedAt?: string | undefined;
-	readonly autoDeleteOnIdle?: string | undefined;
-	readonly countDetails?: MessageCountDetails | undefined;
-	readonly createdAt?: string | undefined;
-	readonly deadLetteringOnMessageExpiration?: boolean | undefined;
-	readonly defaultMessageTimeToLive?: string | undefined;
-	readonly duplicateDetectionHistoryTimeWindow?: string | undefined;
-	readonly enableBatchedOperations?: boolean | undefined;
-	readonly enableExpress?: boolean | undefined;
-	readonly enablePartitioning?: boolean | undefined;
-	readonly forwardDeadLetteredMessagesTo?: string | undefined;
-	readonly forwardTo?: string | undefined;
-	readonly lockDuration?: string | undefined;
-	readonly maxDeliveryCount?: number | undefined;
-	readonly maxMessageSizeInKilobytes?: number | undefined;
-	readonly maxSizeInMegabytes?: number | undefined;
-	readonly messageCount?: number | undefined;
-	readonly requiresDuplicateDetection?: boolean | undefined;
-	readonly requiresSession?: boolean | undefined;
-	readonly sizeInBytes?: number | undefined;
+	readonly accessedAt?: string;
+	readonly autoDeleteOnIdle?: string;
+	readonly countDetails?: MessageCountDetails;
+	readonly createdAt?: string;
+	readonly deadLetteringOnMessageExpiration?: boolean;
+	readonly defaultMessageTimeToLive?: string;
+	readonly duplicateDetectionHistoryTimeWindow?: string;
+	readonly enableBatchedOperations?: boolean;
+	readonly enableExpress?: boolean;
+	readonly enablePartitioning?: boolean;
+	readonly forwardDeadLetteredMessagesTo?: string;
+	readonly forwardTo?: string;
+	readonly lockDuration?: string;
+	readonly maxDeliveryCount?: number;
+	readonly maxMessageSizeInKilobytes?: number;
+	readonly maxSizeInMegabytes?: number;
+	readonly messageCount?: number;
+	readonly requiresDuplicateDetection?: boolean;
+	readonly requiresSession?: boolean;
+	readonly sizeInBytes?: number;
 	readonly status?:
-		| ("Active" | "Creating" | "Deleting" | "Disabled" | "ReceiveDisabled" | "Renaming" | "Restoring" | "SendDisabled")
-		| undefined;
-	readonly updatedAt?: string | undefined;
+		| "Active"
+		| "Creating"
+		| "Deleting"
+		| "Disabled"
+		| "ReceiveDisabled"
+		| "Renaming"
+		| "Restoring"
+		| "SendDisabled";
+	readonly updatedAt?: string;
 }
 export interface SBSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name: "Basic" | "Premium";
-	readonly tier?: ("Basic" | "Premium") | undefined;
+	readonly tier?: "Basic" | "Premium";
 }
 export interface SBSubscriptionProperties {
-	readonly accessedAt?: string | undefined;
-	readonly autoDeleteOnIdle?: string | undefined;
-	readonly clientAffineProperties?: SBClientAffineProperties | undefined;
-	readonly countDetails?: MessageCountDetails | undefined;
-	readonly createdAt?: string | undefined;
-	readonly deadLetteringOnFilterEvaluationExceptions?: boolean | undefined;
-	readonly deadLetteringOnMessageExpiration?: boolean | undefined;
-	readonly defaultMessageTimeToLive?: string | undefined;
-	readonly duplicateDetectionHistoryTimeWindow?: string | undefined;
-	readonly enableBatchedOperations?: boolean | undefined;
-	readonly forwardDeadLetteredMessagesTo?: string | undefined;
-	readonly forwardTo?: string | undefined;
-	readonly isClientAffine?: boolean | undefined;
-	readonly lockDuration?: string | undefined;
-	readonly maxDeliveryCount?: number | undefined;
-	readonly messageCount?: number | undefined;
-	readonly requiresSession?: boolean | undefined;
+	readonly accessedAt?: string;
+	readonly autoDeleteOnIdle?: string;
+	readonly clientAffineProperties?: SBClientAffineProperties;
+	readonly countDetails?: MessageCountDetails;
+	readonly createdAt?: string;
+	readonly deadLetteringOnFilterEvaluationExceptions?: boolean;
+	readonly deadLetteringOnMessageExpiration?: boolean;
+	readonly defaultMessageTimeToLive?: string;
+	readonly duplicateDetectionHistoryTimeWindow?: string;
+	readonly enableBatchedOperations?: boolean;
+	readonly forwardDeadLetteredMessagesTo?: string;
+	readonly forwardTo?: string;
+	readonly isClientAffine?: boolean;
+	readonly lockDuration?: string;
+	readonly maxDeliveryCount?: number;
+	readonly messageCount?: number;
+	readonly requiresSession?: boolean;
 	readonly status?:
-		| ("Active" | "Creating" | "Deleting" | "Disabled" | "ReceiveDisabled" | "Renaming" | "Restoring" | "SendDisabled")
-		| undefined;
-	readonly updatedAt?: string | undefined;
+		| "Active"
+		| "Creating"
+		| "Deleting"
+		| "Disabled"
+		| "ReceiveDisabled"
+		| "Renaming"
+		| "Restoring"
+		| "SendDisabled";
+	readonly updatedAt?: string;
 }
 export interface SBTopicProperties {
-	readonly accessedAt?: string | undefined;
-	readonly autoDeleteOnIdle?: string | undefined;
-	readonly countDetails?: MessageCountDetails | undefined;
-	readonly createdAt?: string | undefined;
-	readonly defaultMessageTimeToLive?: string | undefined;
-	readonly duplicateDetectionHistoryTimeWindow?: string | undefined;
-	readonly enableBatchedOperations?: boolean | undefined;
-	readonly enableExpress?: boolean | undefined;
-	readonly enablePartitioning?: boolean | undefined;
-	readonly maxMessageSizeInKilobytes?: number | undefined;
-	readonly maxSizeInMegabytes?: number | undefined;
-	readonly requiresDuplicateDetection?: boolean | undefined;
-	readonly sizeInBytes?: number | undefined;
+	readonly accessedAt?: string;
+	readonly autoDeleteOnIdle?: string;
+	readonly countDetails?: MessageCountDetails;
+	readonly createdAt?: string;
+	readonly defaultMessageTimeToLive?: string;
+	readonly duplicateDetectionHistoryTimeWindow?: string;
+	readonly enableBatchedOperations?: boolean;
+	readonly enableExpress?: boolean;
+	readonly enablePartitioning?: boolean;
+	readonly maxMessageSizeInKilobytes?: number;
+	readonly maxSizeInMegabytes?: number;
+	readonly requiresDuplicateDetection?: boolean;
+	readonly sizeInBytes?: number;
 	readonly status?:
-		| ("Active" | "Creating" | "Deleting" | "Disabled" | "ReceiveDisabled" | "Renaming" | "Restoring" | "SendDisabled")
-		| undefined;
-	readonly subscriptionCount?: number | undefined;
-	readonly supportOrdering?: boolean | undefined;
-	readonly updatedAt?: string | undefined;
+		| "Active"
+		| "Creating"
+		| "Deleting"
+		| "Disabled"
+		| "ReceiveDisabled"
+		| "Renaming"
+		| "Restoring"
+		| "SendDisabled";
+	readonly subscriptionCount?: number;
+	readonly supportOrdering?: boolean;
+	readonly updatedAt?: string;
 }
 export interface SqlFilter {
-	readonly compatibilityLevel?: number | undefined;
-	readonly requiresPreprocessing?: boolean | undefined;
-	readonly sqlExpression?: string | undefined;
+	readonly compatibilityLevel?: number;
+	readonly requiresPreprocessing?: boolean;
+	readonly sqlExpression?: string;
 }
 export interface Subnet {
 	readonly id: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface UserAssignedIdentityProperties {
-	readonly userAssignedIdentity?: string | undefined;
+	readonly userAssignedIdentity?: string;
 }
 export default {
 	namespaces: namespaces,

@@ -14,12 +14,12 @@ export interface devcentersComponentOutputs {
 	readonly type: "Microsoft.DevCenter/devcenters";
 }
 export interface devcentersComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
+	readonly identity?: ManagedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DevCenterProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DevCenterProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class devcenters_attachednetworks
 	extends ArmResource<devcenters_attachednetworksComponentInputs>
@@ -39,8 +39,8 @@ export interface devcenters_attachednetworksComponentOutputs {
 }
 export interface devcenters_attachednetworksComponentInputs {
 	readonly name: string;
-	readonly properties?: AttachedNetworkConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AttachedNetworkConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class devcenters_catalogs
 	extends ArmResource<devcenters_catalogsComponentInputs>
@@ -60,8 +60,8 @@ export interface devcenters_catalogsComponentOutputs {
 }
 export interface devcenters_catalogsComponentInputs {
 	readonly name: string;
-	readonly properties?: CatalogProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CatalogProperties;
+	readonly systemData?: SystemData;
 }
 export class devcenters_devboxdefinitions
 	extends ArmResource<devcenters_devboxdefinitionsComponentInputs>
@@ -82,9 +82,9 @@ export interface devcenters_devboxdefinitionsComponentOutputs {
 export interface devcenters_devboxdefinitionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DevBoxDefinitionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DevBoxDefinitionProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class devcenters_environmentTypes
 	extends ArmResource<devcenters_environmentTypesComponentInputs>
@@ -104,9 +104,9 @@ export interface devcenters_environmentTypesComponentOutputs {
 }
 export interface devcenters_environmentTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: EnvironmentTypeProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: EnvironmentTypeProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: Tags;
 }
 export class devcenters_galleries
 	extends ArmResource<devcenters_galleriesComponentInputs>
@@ -126,8 +126,8 @@ export interface devcenters_galleriesComponentOutputs {
 }
 export interface devcenters_galleriesComponentInputs {
 	readonly name: string;
-	readonly properties?: GalleryProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: GalleryProperties;
+	readonly systemData?: SystemData;
 }
 export class devcenters_galleries_images
 	extends ArmResource<devcenters_galleries_imagesComponentInputs>
@@ -147,8 +147,8 @@ export interface devcenters_galleries_imagesComponentOutputs {
 }
 export interface devcenters_galleries_imagesComponentInputs {
 	readonly name: string;
-	readonly properties?: ImageProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ImageProperties;
+	readonly systemData?: SystemData;
 }
 export class devcenters_galleries_images_versions
 	extends ArmResource<devcenters_galleries_images_versionsComponentInputs>
@@ -174,8 +174,8 @@ export interface devcenters_galleries_images_versionsComponentOutputs {
 }
 export interface devcenters_galleries_images_versionsComponentInputs {
 	readonly name: string;
-	readonly properties?: ImageVersionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ImageVersionProperties;
+	readonly systemData?: SystemData;
 }
 export class networkConnections
 	extends ArmResource<networkConnectionsComponentInputs>
@@ -196,9 +196,9 @@ export interface networkConnectionsComponentOutputs {
 export interface networkConnectionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: NetworkProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: NetworkProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class networkConnections_healthChecks
 	extends ArmResource<networkConnections_healthChecksComponentInputs>
@@ -218,8 +218,8 @@ export interface networkConnections_healthChecksComponentOutputs {
 }
 export interface networkConnections_healthChecksComponentInputs {
 	readonly name: string;
-	readonly properties?: HealthCheckStatusDetailsProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: HealthCheckStatusDetailsProperties;
+	readonly systemData?: SystemData;
 }
 export class projects extends ArmResource<projectsComponentInputs> implements projectsComponentOutputs {
 	constructor(entity: ADKEntity, options: projectsComponentInputs) {
@@ -237,9 +237,9 @@ export interface projectsComponentOutputs {
 export interface projectsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ProjectProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ProjectProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class projects_allowedEnvironmentTypes
 	extends ArmResource<projects_allowedEnvironmentTypesComponentInputs>
@@ -259,8 +259,8 @@ export interface projects_allowedEnvironmentTypesComponentOutputs {
 }
 export interface projects_allowedEnvironmentTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: AllowedEnvironmentTypeProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AllowedEnvironmentTypeProperties;
+	readonly systemData?: SystemData;
 }
 export class projects_attachednetworks
 	extends ArmResource<projects_attachednetworksComponentInputs>
@@ -280,8 +280,8 @@ export interface projects_attachednetworksComponentOutputs {
 }
 export interface projects_attachednetworksComponentInputs {
 	readonly name: string;
-	readonly properties?: AttachedNetworkConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AttachedNetworkConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class projects_devboxdefinitions
 	extends ArmResource<projects_devboxdefinitionsComponentInputs>
@@ -300,11 +300,11 @@ export interface projects_devboxdefinitionsComponentOutputs {
 	readonly type: "Microsoft.DevCenter/projects/devboxdefinitions";
 }
 export interface projects_devboxdefinitionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DevBoxDefinitionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DevBoxDefinitionProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class projects_environmentTypes
 	extends ArmResource<projects_environmentTypesComponentInputs>
@@ -323,12 +323,12 @@ export interface projects_environmentTypesComponentOutputs {
 	readonly type: "Microsoft.DevCenter/projects/environmentTypes";
 }
 export interface projects_environmentTypesComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProjectEnvironmentTypeProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: ProjectEnvironmentTypeProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: Tags;
 }
 export class projects_pools extends ArmResource<projects_poolsComponentInputs> implements projects_poolsComponentOutputs {
 	constructor(entity: ADKEntity, options: projects_poolsComponentInputs) {
@@ -346,9 +346,9 @@ export interface projects_poolsComponentOutputs {
 export interface projects_poolsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: PoolProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: PoolProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class projects_pools_schedules
 	extends ArmResource<projects_pools_schedulesComponentInputs>
@@ -368,189 +368,189 @@ export interface projects_pools_schedulesComponentOutputs {
 }
 export interface projects_pools_schedulesComponentInputs {
 	readonly name: string;
-	readonly properties?: ScheduleProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ScheduleProperties;
+	readonly systemData?: SystemData;
 }
 export interface AllowedEnvironmentTypeProperties {
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface AttachedNetworkConnectionProperties {
-	readonly domainJoinType?: ("AzureADJoin" | "HybridAzureADJoin") | undefined;
-	readonly healthCheckStatus?: ("Failed" | "Passed" | "Pending" | "Running" | "Unknown" | "Warning") | undefined;
+	readonly domainJoinType?: "AzureADJoin" | "HybridAzureADJoin";
+	readonly healthCheckStatus?: "Failed" | "Passed" | "Pending" | "Running" | "Unknown" | "Warning";
 	readonly networkConnectionId: string;
-	readonly networkConnectionLocation?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly networkConnectionLocation?: string;
+	readonly provisioningState?: string;
 }
 export interface CatalogProperties {
-	readonly adoGit?: GitCatalog | undefined;
-	readonly gitHub?: GitCatalog | undefined;
-	readonly lastSyncTime?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly syncState?: ("Canceled" | "Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly adoGit?: GitCatalog;
+	readonly gitHub?: GitCatalog;
+	readonly lastSyncTime?: string;
+	readonly provisioningState?: string;
+	readonly syncState?: "Canceled" | "Failed" | "InProgress" | "Succeeded";
 }
 export interface DevBoxDefinitionProperties {
-	readonly activeImageReference?: ImageReference | undefined;
-	readonly imageReference?: ImageReference | undefined;
-	readonly imageValidationErrorDetails?: ImageValidationErrorDetails | undefined;
-	readonly imageValidationStatus?: ("Failed" | "Pending" | "Succeeded" | "TimedOut" | "Unknown") | undefined;
-	readonly osStorageType?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly sku?: Sku | undefined;
+	readonly activeImageReference?: ImageReference;
+	readonly imageReference?: ImageReference;
+	readonly imageValidationErrorDetails?: ImageValidationErrorDetails;
+	readonly imageValidationStatus?: "Failed" | "Pending" | "Succeeded" | "TimedOut" | "Unknown";
+	readonly osStorageType?: string;
+	readonly provisioningState?: string;
+	readonly sku?: Sku;
 }
 export interface DevCenterProperties {
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface EnvironmentRole {
-	readonly description?: string | undefined;
-	readonly roleName?: string | undefined;
+	readonly description?: string;
+	readonly roleName?: string;
 }
 export interface EnvironmentTypeProperties {
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface GalleryProperties {
 	readonly galleryResourceId: string;
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface GitCatalog {
-	readonly branch?: string | undefined;
-	readonly path?: string | undefined;
-	readonly secretIdentifier?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly branch?: string;
+	readonly path?: string;
+	readonly secretIdentifier?: string;
+	readonly uri?: string;
 }
 export interface HealthCheck {
-	readonly additionalDetails?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly endDateTime?: string | undefined;
-	readonly errorType?: string | undefined;
-	readonly recommendedAction?: string | undefined;
-	readonly startDateTime?: string | undefined;
-	readonly status?: ("Failed" | "Passed" | "Pending" | "Running" | "Unknown" | "Warning") | undefined;
+	readonly additionalDetails?: string;
+	readonly displayName?: string;
+	readonly endDateTime?: string;
+	readonly errorType?: string;
+	readonly recommendedAction?: string;
+	readonly startDateTime?: string;
+	readonly status?: "Failed" | "Passed" | "Pending" | "Running" | "Unknown" | "Warning";
 }
 export interface HealthCheckStatusDetailsProperties {
-	readonly endDateTime?: string | undefined;
-	readonly healthChecks?: HealthCheck[] | undefined;
-	readonly startDateTime?: string | undefined;
+	readonly endDateTime?: string;
+	readonly healthChecks?: HealthCheck[];
+	readonly startDateTime?: string;
 }
 export interface ImageProperties {
-	readonly description?: string | undefined;
-	readonly offer?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly recommendedMachineConfiguration?: RecommendedMachineConfiguration | undefined;
-	readonly sku?: string | undefined;
+	readonly description?: string;
+	readonly offer?: string;
+	readonly provisioningState?: string;
+	readonly publisher?: string;
+	readonly recommendedMachineConfiguration?: RecommendedMachineConfiguration;
+	readonly sku?: string;
 }
 export interface ImageReference {
-	readonly exactVersion?: string | undefined;
-	readonly id?: string | undefined;
-	readonly offer?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly sku?: string | undefined;
+	readonly exactVersion?: string;
+	readonly id?: string;
+	readonly offer?: string;
+	readonly publisher?: string;
+	readonly sku?: string;
 }
 export interface ImageValidationErrorDetails {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface ImageVersionProperties {
-	readonly excludeFromLatest?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly osDiskImageSizeInGb?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publishedDate?: string | undefined;
+	readonly excludeFromLatest?: boolean;
+	readonly name?: string;
+	readonly osDiskImageSizeInGb?: number;
+	readonly provisioningState?: string;
+	readonly publishedDate?: string;
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: UserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedIdentities;
 }
 export interface NetworkProperties {
 	readonly domainJoinType: "AzureADJoin" | "HybridAzureADJoin";
-	readonly domainName?: string | undefined;
-	readonly domainPassword?: string | undefined;
-	readonly domainUsername?: string | undefined;
-	readonly healthCheckStatus?: ("Failed" | "Passed" | "Pending" | "Running" | "Unknown" | "Warning") | undefined;
-	readonly networkingResourceGroupName?: string | undefined;
-	readonly organizationUnit?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly subnetId?: string | undefined;
+	readonly domainName?: string;
+	readonly domainPassword?: string;
+	readonly domainUsername?: string;
+	readonly healthCheckStatus?: "Failed" | "Passed" | "Pending" | "Running" | "Unknown" | "Warning";
+	readonly networkingResourceGroupName?: string;
+	readonly organizationUnit?: string;
+	readonly provisioningState?: string;
+	readonly subnetId?: string;
 }
 export interface PoolProperties {
-	readonly devBoxDefinitionName?: string | undefined;
-	readonly licenseType?: "Windows_Client" | undefined;
-	readonly localAdministrator?: ("Disabled" | "Enabled") | undefined;
-	readonly networkConnectionName?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly devBoxDefinitionName?: string;
+	readonly licenseType?: "Windows_Client";
+	readonly localAdministrator?: "Disabled" | "Enabled";
+	readonly networkConnectionName?: string;
+	readonly provisioningState?: string;
 }
 export interface ProjectEnvironmentTypeProperties {
-	readonly creatorRoleAssignment?: ProjectEnvironmentTypeUpdatePropertiesCreatorRoleAssignment | undefined;
-	readonly deploymentTargetId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly userRoleAssignments?: ProjectEnvironmentTypeUpdatePropertiesUserRoleAssignments | undefined;
+	readonly creatorRoleAssignment?: ProjectEnvironmentTypeUpdatePropertiesCreatorRoleAssignment;
+	readonly deploymentTargetId?: string;
+	readonly provisioningState?: string;
+	readonly status?: "Disabled" | "Enabled";
+	readonly userRoleAssignments?: ProjectEnvironmentTypeUpdatePropertiesUserRoleAssignments;
 }
 export interface ProjectEnvironmentTypeUpdatePropertiesCreatorRoleAssignment {
-	readonly roles?: ProjectEnvironmentTypeUpdatePropertiesCreatorRoleAssignmentRoles | undefined;
+	readonly roles?: ProjectEnvironmentTypeUpdatePropertiesCreatorRoleAssignmentRoles;
 }
 export interface ProjectEnvironmentTypeUpdatePropertiesCreatorRoleAssignmentRoles {
-	readonly "[ key: string ]"?: EnvironmentRole | undefined;
+	readonly [key: string]: EnvironmentRole;
 }
 export interface ProjectEnvironmentTypeUpdatePropertiesUserRoleAssignments {
-	readonly "[ key: string ]"?: UserRoleAssignmentValue | undefined;
+	readonly [key: string]: UserRoleAssignmentValue;
 }
 export interface ProjectProperties {
-	readonly description?: string | undefined;
-	readonly devCenterId?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly description?: string;
+	readonly devCenterId?: string;
+	readonly provisioningState?: string;
 }
 export interface RecommendedMachineConfiguration {
-	readonly memory?: ResourceRange | undefined;
-	readonly vCPUs?: ResourceRange | undefined;
+	readonly memory?: ResourceRange;
+	readonly vCPUs?: ResourceRange;
 }
 export interface ResourceRange {
-	readonly max?: number | undefined;
-	readonly min?: number | undefined;
+	readonly max?: number;
+	readonly min?: number;
 }
 export interface ScheduleProperties {
-	readonly frequency?: "Daily" | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly state?: ("Disabled" | "Enabled") | undefined;
-	readonly time?: string | undefined;
-	readonly timeZone?: string | undefined;
-	readonly type?: "StopDevBox" | undefined;
+	readonly frequency?: "Daily";
+	readonly provisioningState?: string;
+	readonly state?: "Disabled" | "Enabled";
+	readonly time?: string;
+	readonly timeZone?: string;
+	readonly type?: "StopDevBox";
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
 	readonly name: string;
-	readonly size?: string | undefined;
-	readonly tier?: ("Basic" | "Free" | "Premium") | undefined;
+	readonly size?: string;
+	readonly tier?: "Basic" | "Free" | "Premium";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Tags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface UserRoleAssignmentRoles {
-	readonly "[ key: string ]"?: EnvironmentRole | undefined;
+	readonly [key: string]: EnvironmentRole;
 }
 export interface UserRoleAssignmentValue {
-	readonly roles?: UserRoleAssignmentRoles | undefined;
+	readonly roles?: UserRoleAssignmentRoles;
 }
 export default {
 	devcenters: devcenters,

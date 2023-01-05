@@ -14,11 +14,11 @@ export interface elasticSansComponentOutputs {
 	readonly type: "Microsoft.ElasticSan/elasticSans";
 }
 export interface elasticSansComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ElasticSanProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class elasticSans_volumegroups
 	extends ArmResource<elasticSans_volumegroupsComponentInputs>
@@ -38,9 +38,9 @@ export interface elasticSans_volumegroupsComponentOutputs {
 }
 export interface elasticSans_volumegroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: VolumeGroupProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VolumeGroupProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class elasticSans_volumegroups_volumes
 	extends ArmResource<elasticSans_volumegroups_volumesComponentInputs>
@@ -60,75 +60,99 @@ export interface elasticSans_volumegroups_volumesComponentOutputs {
 }
 export interface elasticSans_volumegroups_volumesComponentInputs {
 	readonly name: string;
-	readonly properties?: VolumeProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VolumeProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export interface ElasticSanProperties {
-	readonly availabilityZones?: string[] | undefined;
+	readonly availabilityZones?: string[];
 	readonly baseSizeTiB: number;
 	readonly extendedCapacitySizeTiB: number;
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Invalid" | "Pending" | "Succeeded" | "Updating")
-		| undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Invalid"
+		| "Pending"
+		| "Succeeded"
+		| "Updating";
 	readonly sku: Sku;
-	readonly totalIops?: number | undefined;
-	readonly totalMBps?: number | undefined;
-	readonly totalSizeTiB?: number | undefined;
-	readonly totalVolumeSizeGiB?: number | undefined;
-	readonly volumeGroupCount?: number | undefined;
+	readonly totalIops?: number;
+	readonly totalMBps?: number;
+	readonly totalSizeTiB?: number;
+	readonly totalVolumeSizeGiB?: number;
+	readonly volumeGroupCount?: number;
 }
 export interface IscsiTargetInfo {
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Invalid" | "Pending" | "Succeeded" | "Updating")
-		| undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Invalid"
+		| "Pending"
+		| "Succeeded"
+		| "Updating";
 	readonly status?:
-		| ("Healthy" | "Invalid" | "Running" | "Stopped (deallocated)" | "Stopped" | "Unhealthy" | "Unknown" | "Updating")
-		| undefined;
-	readonly targetIqn?: string | undefined;
-	readonly targetPortalHostname?: string | undefined;
-	readonly targetPortalPort?: number | undefined;
+		| "Healthy"
+		| "Invalid"
+		| "Running"
+		| "Stopped (deallocated)"
+		| "Stopped"
+		| "Unhealthy"
+		| "Unknown"
+		| "Updating";
+	readonly targetIqn?: string;
+	readonly targetPortalHostname?: string;
+	readonly targetPortalPort?: number;
 }
 export interface NetworkRuleSet {
-	readonly virtualNetworkRules?: VirtualNetworkRule[] | undefined;
+	readonly virtualNetworkRules?: VirtualNetworkRule[];
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
 	readonly name: "Premium_LRS" | "Premium_ZRS";
-	readonly tier?: "Premium" | undefined;
+	readonly tier?: "Premium";
 }
 export interface SourceCreationData {
-	readonly createSource?: "None" | undefined;
-	readonly sourceUri?: string | undefined;
+	readonly createSource?: "None";
+	readonly sourceUri?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface VirtualNetworkRule {
-	readonly action?: "Allow" | undefined;
+	readonly action?: "Allow";
 	readonly id: string;
-	readonly state?: ("deprovisioning" | "failed" | "networkSourceDeleted" | "provisioning") | undefined;
+	readonly state?: "deprovisioning" | "failed" | "networkSourceDeleted" | "provisioning";
 }
 export interface VolumeGroupProperties {
-	readonly encryption?: "EncryptionAtRestWithPlatformKey" | undefined;
-	readonly networkAcls?: NetworkRuleSet | undefined;
-	readonly protocolType?: ("Iscsi" | "None") | undefined;
+	readonly encryption?: "EncryptionAtRestWithPlatformKey";
+	readonly networkAcls?: NetworkRuleSet;
+	readonly protocolType?: "Iscsi" | "None";
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Invalid" | "Pending" | "Succeeded" | "Updating")
-		| undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Invalid"
+		| "Pending"
+		| "Succeeded"
+		| "Updating";
 }
 export interface VolumeProperties {
-	readonly creationData?: SourceCreationData | undefined;
-	readonly sizeGiB?: number | undefined;
-	readonly storageTarget?: IscsiTargetInfo | undefined;
-	readonly volumeId?: string | undefined;
+	readonly creationData?: SourceCreationData;
+	readonly sizeGiB?: number;
+	readonly storageTarget?: IscsiTargetInfo;
+	readonly volumeId?: string;
 }
 export default {
 	elasticSans: elasticSans,

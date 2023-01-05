@@ -7,60 +7,59 @@ export class TargetHttpsProxies
 	constructor(entity: ADKEntity, options: TargetHttpsProxiesComponentInputs) {
 		super(entity, options.name, "compute.alpha.TargetHttpsProxies", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
 }
 export interface TargetHttpsProxiesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
 }
 export interface TargetHttpsProxiesComponentInputs {
-	readonly authentication?: string | undefined;
-	readonly authorization?: string | undefined;
-	readonly authorizationPolicy?: string | undefined;
-	readonly certificateMap?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly httpFilters?: string[] | undefined;
+	readonly authentication?: string;
+	readonly authorization?: string;
+	readonly authorizationPolicy?: string;
+	readonly certificateMap?: string;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly httpFilters?: string[];
 	readonly name: string;
-	readonly proxyBind?: boolean | undefined;
-	readonly quicOverride?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly serverTlsPolicy?: string | undefined;
-	readonly sslCertificates?: string[] | undefined;
-	readonly sslPolicy?: string | undefined;
-	readonly urlMap?: string | undefined;
-	readonly type: string;
+	readonly proxyBind?: boolean;
+	readonly quicOverride?: string;
+	readonly requestId?: string;
+	readonly serverTlsPolicy?: string;
+	readonly sslCertificates?: string[];
+	readonly sslPolicy?: string;
+	readonly urlMap?: string;
 }
 export interface TargetHttpsProxy {
-	readonly authentication?: string | undefined;
-	readonly authorization?: string | undefined;
-	readonly authorizationPolicy?: string | undefined;
-	readonly certificateMap?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly httpFilters?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly proxyBind?: boolean | undefined;
-	readonly quicOverride?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly serverTlsPolicy?: string | undefined;
-	readonly sslCertificates?: string[] | undefined;
-	readonly sslPolicy?: string | undefined;
-	readonly urlMap?: string | undefined;
+	readonly authentication?: string;
+	readonly authorization?: string;
+	readonly authorizationPolicy?: string;
+	readonly certificateMap?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly httpFilters?: string[];
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly proxyBind?: boolean;
+	readonly quicOverride?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly serverTlsPolicy?: string;
+	readonly sslCertificates?: string[];
+	readonly sslPolicy?: string;
+	readonly urlMap?: string;
 }
 export default {
 	TargetHttpsProxies: TargetHttpsProxies,

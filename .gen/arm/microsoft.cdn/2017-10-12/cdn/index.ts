@@ -16,9 +16,9 @@ export interface profilesComponentOutputs {
 export interface profilesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ProfileProperties | undefined;
+	readonly properties?: ProfileProperties;
 	readonly sku: Sku;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class profiles_endpoints
 	extends ArmResource<profiles_endpointsComponentInputs>
@@ -39,8 +39,8 @@ export interface profiles_endpointsComponentOutputs {
 export interface profiles_endpointsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: EndpointProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: EndpointProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class profiles_endpoints_customDomains
 	extends ArmResource<profiles_endpoints_customDomainsComponentInputs>
@@ -60,7 +60,7 @@ export interface profiles_endpoints_customDomainsComponentOutputs {
 }
 export interface profiles_endpoints_customDomainsComponentInputs {
 	readonly name: string;
-	readonly properties?: CustomDomainPropertiesParametersOrCustomDomainProperties | undefined;
+	readonly properties?: CustomDomainPropertiesParametersOrCustomDomainProperties;
 }
 export class profiles_endpoints_origins
 	extends ArmResource<profiles_endpoints_originsComponentInputs>
@@ -79,81 +79,75 @@ export interface profiles_endpoints_originsComponentOutputs {
 	readonly type: "Microsoft.Cdn/profiles/endpoints/origins";
 }
 export interface profiles_endpoints_originsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: OriginProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: OriginProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface CacheExpirationActionParameters {
 	readonly "@odata.type": "Microsoft.Azure.Cdn.Models.DeliveryRuleCacheExpirationActionParameters";
 	readonly cacheBehavior: "BypassCache" | "Override" | "SetIfMissing";
-	readonly cacheDuration?: string | undefined;
+	readonly cacheDuration?: string;
 	readonly cacheType: "All";
 }
 export interface CustomDomainPropertiesParametersOrCustomDomainProperties {
-	readonly customHttpsProvisioningState?: ("Disabled" | "Disabling" | "Enabled" | "Enabling" | "Failed") | undefined;
+	readonly customHttpsProvisioningState?: "Disabled" | "Disabling" | "Enabled" | "Enabling" | "Failed";
 	readonly customHttpsProvisioningSubstate?:
-		| (
-				| "CertificateDeleted"
-				| "CertificateDeployed"
-				| "DeletingCertificate"
-				| "DeployingCertificate"
-				| "DomainControlValidationRequestApproved"
-				| "DomainControlValidationRequestRejected"
-				| "DomainControlValidationRequestTimedOut"
-				| "IssuingCertificate"
-				| "PendingDomainControlValidationREquestApproval"
-				| "SubmittingDomainControlValidationRequest"
-		  )
-		| undefined;
+		| "CertificateDeleted"
+		| "CertificateDeployed"
+		| "DeletingCertificate"
+		| "DeployingCertificate"
+		| "DomainControlValidationRequestApproved"
+		| "DomainControlValidationRequestRejected"
+		| "DomainControlValidationRequestTimedOut"
+		| "IssuingCertificate"
+		| "PendingDomainControlValidationREquestApproval"
+		| "SubmittingDomainControlValidationRequest";
 	readonly hostName: string;
-	readonly provisioningState?: string | undefined;
-	readonly resourceState?: ("Active" | "Creating" | "Deleting") | undefined;
-	readonly validationData?: string | undefined;
+	readonly provisioningState?: string;
+	readonly resourceState?: "Active" | "Creating" | "Deleting";
+	readonly validationData?: string;
 }
 export interface DeepCreatedOrigin {
 	readonly name: string;
-	readonly properties?: DeepCreatedOriginProperties | undefined;
+	readonly properties?: DeepCreatedOriginProperties;
 }
 export interface DeepCreatedOriginProperties {
 	readonly hostName: string;
-	readonly httpPort?: number | undefined;
-	readonly httpsPort?: number | undefined;
+	readonly httpPort?: number;
+	readonly httpsPort?: number;
 }
 export interface DeliveryRule {
 	readonly actions: DeliveryRuleAction[];
-	readonly conditions?: DeliveryRuleCondition[] | undefined;
+	readonly conditions?: DeliveryRuleCondition[];
 	readonly order: number;
 }
 export interface DeliveryRuleAction {}
 export interface DeliveryRuleCondition {}
 export interface EndpointProperties {
-	readonly contentTypesToCompress?: string[] | undefined;
-	readonly deliveryPolicy?: EndpointPropertiesUpdateParametersDeliveryPolicy | undefined;
-	readonly geoFilters?: GeoFilter[] | undefined;
-	readonly hostName?: string | undefined;
-	readonly isCompressionEnabled?: boolean | undefined;
-	readonly isHttpAllowed?: boolean | undefined;
-	readonly isHttpsAllowed?: boolean | undefined;
+	readonly contentTypesToCompress?: string[];
+	readonly deliveryPolicy?: EndpointPropertiesUpdateParametersDeliveryPolicy;
+	readonly geoFilters?: GeoFilter[];
+	readonly hostName?: string;
+	readonly isCompressionEnabled?: boolean;
+	readonly isHttpAllowed?: boolean;
+	readonly isHttpsAllowed?: boolean;
 	readonly optimizationType?:
-		| (
-				| "DynamicSiteAcceleration"
-				| "GeneralMediaStreaming"
-				| "GeneralWebDelivery"
-				| "LargeFileDownload"
-				| "VideoOnDemandMediaStreaming"
-		  )
-		| undefined;
-	readonly originHostHeader?: string | undefined;
-	readonly originPath?: string | undefined;
+		| "DynamicSiteAcceleration"
+		| "GeneralMediaStreaming"
+		| "GeneralWebDelivery"
+		| "LargeFileDownload"
+		| "VideoOnDemandMediaStreaming";
+	readonly originHostHeader?: string;
+	readonly originPath?: string;
 	readonly origins: DeepCreatedOrigin[];
-	readonly probePath?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly queryStringCachingBehavior?: ("BypassCaching" | "IgnoreQueryString" | "NotSet") | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Running" | "Starting" | "Stopped" | "Stopping") | undefined;
+	readonly probePath?: string;
+	readonly provisioningState?: string;
+	readonly queryStringCachingBehavior?: "BypassCaching" | "IgnoreQueryString" | "NotSet";
+	readonly resourceState?: "Creating" | "Deleting" | "Running" | "Starting" | "Stopped" | "Stopping";
 }
 export interface EndpointPropertiesUpdateParametersDeliveryPolicy {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly rules: DeliveryRule[];
 }
 export interface GeoFilter {
@@ -163,30 +157,27 @@ export interface GeoFilter {
 }
 export interface OriginProperties {
 	readonly hostName: string;
-	readonly httpPort?: number | undefined;
-	readonly httpsPort?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceState?: ("Active" | "Creating" | "Deleting") | undefined;
+	readonly httpPort?: number;
+	readonly httpsPort?: number;
+	readonly provisioningState?: string;
+	readonly resourceState?: "Active" | "Creating" | "Deleting";
 }
 export interface ProfileProperties {
-	readonly provisioningState?: string | undefined;
-	readonly resourceState?: ("Active" | "Creating" | "Deleting" | "Disabled") | undefined;
+	readonly provisioningState?: string;
+	readonly resourceState?: "Active" | "Creating" | "Deleting" | "Disabled";
 }
 export interface Sku {
 	readonly name?:
-		| (
-				| "Custom_Verizon"
-				| "Premium_ChinaCdn"
-				| "Premium_Verizon"
-				| "Standard_Akamai"
-				| "Standard_ChinaCdn"
-				| "Standard_Microsoft"
-				| "Standard_Verizon"
-		  )
-		| undefined;
+		| "Custom_Verizon"
+		| "Premium_ChinaCdn"
+		| "Premium_Verizon"
+		| "Standard_Akamai"
+		| "Standard_ChinaCdn"
+		| "Standard_Microsoft"
+		| "Standard_Verizon";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UrlFileExtensionConditionParameters {
 	readonly "@odata.type": "Microsoft.Azure.Cdn.Models.DeliveryRuleUrlFileExtensionConditionParameters";

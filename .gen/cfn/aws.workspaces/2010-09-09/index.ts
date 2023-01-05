@@ -18,7 +18,7 @@ export interface ConnectionAliasComponentOutputs {
 }
 export interface ConnectionAliasComponentInputs {
 	readonly ConnectionString: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Workspace extends CfnResource<WorkspaceComponentInputs> implements WorkspaceComponentOutputs {
@@ -31,25 +31,25 @@ export interface WorkspaceComponentInputs {
 	readonly BundleId: string;
 	readonly DirectoryId: string;
 	readonly UserName: string;
-	readonly RootVolumeEncryptionEnabled?: (boolean | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly UserVolumeEncryptionEnabled?: (boolean | undefined) | undefined;
-	readonly VolumeEncryptionKey?: (string | undefined) | undefined;
-	readonly WorkspaceProperties?: (WorkspaceProperties | undefined) | undefined;
+	readonly RootVolumeEncryptionEnabled?: boolean | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly UserVolumeEncryptionEnabled?: boolean | undefined;
+	readonly VolumeEncryptionKey?: string | undefined;
+	readonly WorkspaceProperties?: WorkspaceProperties | undefined;
 	readonly LogicalId: string;
 }
 export interface ConnectionAliasAssociation {
-	readonly AssociatedAccountId?: (string | undefined) | undefined;
-	readonly AssociationStatus?: (string | undefined) | undefined;
-	readonly ConnectionIdentifier?: (string | undefined) | undefined;
-	readonly ResourceId?: (string | undefined) | undefined;
+	readonly AssociatedAccountId?: string | undefined;
+	readonly AssociationStatus?: string | undefined;
+	readonly ConnectionIdentifier?: string | undefined;
+	readonly ResourceId?: string | undefined;
 }
 export interface WorkspaceProperties {
-	readonly ComputeTypeName?: (string | undefined) | undefined;
-	readonly RootVolumeSizeGib?: (number | undefined) | undefined;
-	readonly RunningMode?: (string | undefined) | undefined;
-	readonly RunningModeAutoStopTimeoutInMinutes?: (number | undefined) | undefined;
-	readonly UserVolumeSizeGib?: (number | undefined) | undefined;
+	readonly ComputeTypeName?: string | undefined;
+	readonly RootVolumeSizeGib?: number | undefined;
+	readonly RunningMode?: string | undefined;
+	readonly RunningModeAutoStopTimeoutInMinutes?: number | undefined;
+	readonly UserVolumeSizeGib?: number | undefined;
 }
 export default {
 	ConnectionAlias: ConnectionAlias,

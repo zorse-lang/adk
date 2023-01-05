@@ -14,8 +14,8 @@ export interface AppComponentInputs {
 	readonly AppType: string;
 	readonly DomainId: string;
 	readonly UserProfileName: string;
-	readonly ResourceSpec?: (ResourceSpec | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ResourceSpec?: ResourceSpec | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class AppImageConfig extends CfnResource<AppImageConfigComponentInputs> implements AppImageConfigComponentOutputs {
@@ -29,8 +29,8 @@ export interface AppImageConfigComponentOutputs {
 }
 export interface AppImageConfigComponentInputs {
 	readonly AppImageConfigName: string;
-	readonly KernelGatewayImageConfig?: (KernelGatewayImageConfig | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly KernelGatewayImageConfig?: KernelGatewayImageConfig | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class CodeRepository extends CfnResource<CodeRepositoryComponentInputs> implements CodeRepositoryComponentOutputs {
@@ -41,8 +41,8 @@ export class CodeRepository extends CfnResource<CodeRepositoryComponentInputs> i
 export interface CodeRepositoryComponentOutputs {}
 export interface CodeRepositoryComponentInputs {
 	readonly GitConfig: GitConfig;
-	readonly CodeRepositoryName?: string | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CodeRepositoryName?: string;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DataQualityJobDefinition
@@ -65,12 +65,12 @@ export interface DataQualityJobDefinitionComponentInputs {
 	readonly DataQualityJobOutputConfig: MonitoringOutputConfig;
 	readonly JobResources: MonitoringResources;
 	readonly RoleArn: string;
-	readonly DataQualityBaselineConfig?: (DataQualityBaselineConfig | undefined) | undefined;
-	readonly EndpointName?: (string | undefined) | undefined;
-	readonly JobDefinitionName?: (string | undefined) | undefined;
-	readonly NetworkConfig?: (NetworkConfig | undefined) | undefined;
-	readonly StoppingCondition?: (StoppingCondition | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DataQualityBaselineConfig?: DataQualityBaselineConfig | undefined;
+	readonly EndpointName?: string | undefined;
+	readonly JobDefinitionName?: string | undefined;
+	readonly NetworkConfig?: NetworkConfig | undefined;
+	readonly StoppingCondition?: StoppingCondition | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Device extends CfnResource<DeviceComponentInputs> implements DeviceComponentOutputs {
@@ -81,8 +81,8 @@ export class Device extends CfnResource<DeviceComponentInputs> implements Device
 export interface DeviceComponentOutputs {}
 export interface DeviceComponentInputs {
 	readonly DeviceFleetName: string;
-	readonly Device?: (Device | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Device?: Device | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DeviceFleet extends CfnResource<DeviceFleetComponentInputs> implements DeviceFleetComponentOutputs {
@@ -95,8 +95,8 @@ export interface DeviceFleetComponentInputs {
 	readonly DeviceFleetName: string;
 	readonly OutputConfig: EdgeOutputConfig;
 	readonly RoleArn: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Domain extends CfnResource<DomainComponentInputs> implements DomainComponentOutputs {
@@ -124,11 +124,11 @@ export interface DomainComponentInputs {
 	readonly DomainName: string;
 	readonly SubnetIds: string[];
 	readonly VpcId: string;
-	readonly AppNetworkAccessType?: (string | undefined) | undefined;
-	readonly AppSecurityGroupManagement?: (string | undefined) | undefined;
-	readonly DomainSettings?: (DomainSettings | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AppNetworkAccessType?: string | undefined;
+	readonly AppSecurityGroupManagement?: string | undefined;
+	readonly DomainSettings?: DomainSettings | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Endpoint extends CfnResource<EndpointComponentInputs> implements EndpointComponentOutputs {
@@ -139,12 +139,12 @@ export class Endpoint extends CfnResource<EndpointComponentInputs> implements En
 export interface EndpointComponentOutputs {}
 export interface EndpointComponentInputs {
 	readonly EndpointConfigName: string;
-	readonly DeploymentConfig?: (DeploymentConfig | undefined) | undefined;
-	readonly EndpointName?: string | undefined;
-	readonly ExcludeRetainedVariantProperties?: (Variant[] | undefined) | undefined;
-	readonly RetainAllVariantProperties?: (boolean | undefined) | undefined;
-	readonly RetainDeploymentConfig?: (boolean | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DeploymentConfig?: DeploymentConfig | undefined;
+	readonly EndpointName?: string;
+	readonly ExcludeRetainedVariantProperties?: Variant[] | undefined;
+	readonly RetainAllVariantProperties?: boolean | undefined;
+	readonly RetainDeploymentConfig?: boolean | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class EndpointConfig extends CfnResource<EndpointConfigComponentInputs> implements EndpointConfigComponentOutputs {
@@ -155,13 +155,13 @@ export class EndpointConfig extends CfnResource<EndpointConfigComponentInputs> i
 export interface EndpointConfigComponentOutputs {}
 export interface EndpointConfigComponentInputs {
 	readonly ProductionVariants: ProductionVariant[];
-	readonly AsyncInferenceConfig?: (AsyncInferenceConfig | undefined) | undefined;
-	readonly DataCaptureConfig?: (DataCaptureConfig | undefined) | undefined;
-	readonly EndpointConfigName?: string | undefined;
-	readonly ExplainerConfig?: (ExplainerConfig | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly ShadowProductionVariants?: (ProductionVariant[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AsyncInferenceConfig?: AsyncInferenceConfig | undefined;
+	readonly DataCaptureConfig?: DataCaptureConfig | undefined;
+	readonly EndpointConfigName?: string;
+	readonly ExplainerConfig?: ExplainerConfig | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly ShadowProductionVariants?: ProductionVariant[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class FeatureGroup extends CfnResource<FeatureGroupComponentInputs> implements FeatureGroupComponentOutputs {
@@ -175,11 +175,11 @@ export interface FeatureGroupComponentInputs {
 	readonly FeatureDefinitions: FeatureDefinition[];
 	readonly FeatureGroupName: string;
 	readonly RecordIdentifierFeatureName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly OfflineStoreConfig?: (OfflineStoreConfig | undefined) | undefined;
-	readonly OnlineStoreConfig?: (OnlineStoreConfig | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly OfflineStoreConfig?: OfflineStoreConfig | undefined;
+	readonly OnlineStoreConfig?: OnlineStoreConfig | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Image extends CfnResource<ImageComponentInputs> implements ImageComponentOutputs {
@@ -194,9 +194,9 @@ export interface ImageComponentOutputs {
 export interface ImageComponentInputs {
 	readonly ImageName: string;
 	readonly ImageRoleArn: string;
-	readonly ImageDescription?: (string | undefined) | undefined;
-	readonly ImageDisplayName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ImageDescription?: string | undefined;
+	readonly ImageDisplayName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ImageVersion extends CfnResource<ImageVersionComponentInputs> implements ImageVersionComponentOutputs {
@@ -227,13 +227,13 @@ export class Model extends CfnResource<ModelComponentInputs> implements ModelCom
 export interface ModelComponentOutputs {}
 export interface ModelComponentInputs {
 	readonly ExecutionRoleArn: string;
-	readonly Containers?: (ContainerDefinition[] | undefined) | undefined;
-	readonly EnableNetworkIsolation?: (boolean | undefined) | undefined;
-	readonly InferenceExecutionConfig?: (InferenceExecutionConfig | undefined) | undefined;
-	readonly ModelName?: string | undefined;
-	readonly PrimaryContainer?: (ContainerDefinition | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VpcConfig?: (VpcConfig | undefined) | undefined;
+	readonly Containers?: ContainerDefinition[] | undefined;
+	readonly EnableNetworkIsolation?: boolean | undefined;
+	readonly InferenceExecutionConfig?: InferenceExecutionConfig | undefined;
+	readonly ModelName?: string;
+	readonly PrimaryContainer?: ContainerDefinition | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VpcConfig?: VpcConfig | undefined;
 	readonly LogicalId: string;
 }
 export class ModelBiasJobDefinition
@@ -256,12 +256,12 @@ export interface ModelBiasJobDefinitionComponentInputs {
 	readonly ModelBiasJobInput: ModelBiasJobInput;
 	readonly ModelBiasJobOutputConfig: MonitoringOutputConfig;
 	readonly RoleArn: string;
-	readonly EndpointName?: (string | undefined) | undefined;
-	readonly JobDefinitionName?: (string | undefined) | undefined;
-	readonly ModelBiasBaselineConfig?: (ModelBiasBaselineConfig | undefined) | undefined;
-	readonly NetworkConfig?: (NetworkConfig | undefined) | undefined;
-	readonly StoppingCondition?: (StoppingCondition | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly EndpointName?: string | undefined;
+	readonly JobDefinitionName?: string | undefined;
+	readonly ModelBiasBaselineConfig?: ModelBiasBaselineConfig | undefined;
+	readonly NetworkConfig?: NetworkConfig | undefined;
+	readonly StoppingCondition?: StoppingCondition | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ModelExplainabilityJobDefinition
@@ -284,12 +284,12 @@ export interface ModelExplainabilityJobDefinitionComponentInputs {
 	readonly ModelExplainabilityJobInput: ModelExplainabilityJobInput;
 	readonly ModelExplainabilityJobOutputConfig: MonitoringOutputConfig;
 	readonly RoleArn: string;
-	readonly EndpointName?: (string | undefined) | undefined;
-	readonly JobDefinitionName?: (string | undefined) | undefined;
-	readonly ModelExplainabilityBaselineConfig?: (ModelExplainabilityBaselineConfig | undefined) | undefined;
-	readonly NetworkConfig?: (NetworkConfig | undefined) | undefined;
-	readonly StoppingCondition?: (StoppingCondition | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly EndpointName?: string | undefined;
+	readonly JobDefinitionName?: string | undefined;
+	readonly ModelExplainabilityBaselineConfig?: ModelExplainabilityBaselineConfig | undefined;
+	readonly NetworkConfig?: NetworkConfig | undefined;
+	readonly StoppingCondition?: StoppingCondition | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ModelPackage extends CfnResource<ModelPackageComponentInputs> implements ModelPackageComponentOutputs {
@@ -306,38 +306,34 @@ export interface ModelPackageComponentOutputs {
 	readonly ModelPackageStatus: string;
 }
 export interface ModelPackageComponentInputs {
-	readonly AdditionalInferenceSpecificationDefinition?:
-		| (AdditionalInferenceSpecificationDefinition | undefined)
-		| undefined;
-	readonly AdditionalInferenceSpecifications?: (AdditionalInferenceSpecificationDefinition[] | undefined) | undefined;
-	readonly AdditionalInferenceSpecificationsToAdd?:
-		| (AdditionalInferenceSpecificationDefinition[] | undefined)
-		| undefined;
-	readonly ApprovalDescription?: (string | undefined) | undefined;
-	readonly CertifyForMarketplace?: (boolean | undefined) | undefined;
-	readonly ClientToken?: (string | undefined) | undefined;
-	readonly CreatedBy?: (UserContext | undefined) | undefined;
-	readonly CustomerMetadataProperties?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Domain?: (string | undefined) | undefined;
-	readonly DriftCheckBaselines?: (DriftCheckBaselines | undefined) | undefined;
-	readonly Environment?: ({ [key: string]: string } | undefined) | undefined;
-	readonly InferenceSpecification?: (InferenceSpecification | undefined) | undefined;
-	readonly LastModifiedBy?: (UserContext | undefined) | undefined;
-	readonly LastModifiedTime?: (string | undefined) | undefined;
-	readonly MetadataProperties?: (MetadataProperties | undefined) | undefined;
-	readonly ModelApprovalStatus?: (string | undefined) | undefined;
-	readonly ModelMetrics?: (ModelMetrics | undefined) | undefined;
-	readonly ModelPackageDescription?: (string | undefined) | undefined;
-	readonly ModelPackageGroupName?: (string | undefined) | undefined;
-	readonly ModelPackageName?: (string | undefined) | undefined;
-	readonly ModelPackageStatusDetails?: (ModelPackageStatusDetails | undefined) | undefined;
-	readonly ModelPackageStatusItem?: (ModelPackageStatusItem | undefined) | undefined;
-	readonly ModelPackageVersion?: (number | undefined) | undefined;
-	readonly SamplePayloadUrl?: (string | undefined) | undefined;
-	readonly SourceAlgorithmSpecification?: (SourceAlgorithmSpecification | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Task?: (string | undefined) | undefined;
-	readonly ValidationSpecification?: (ValidationSpecification | undefined) | undefined;
+	readonly AdditionalInferenceSpecificationDefinition?: AdditionalInferenceSpecificationDefinition | undefined;
+	readonly AdditionalInferenceSpecifications?: AdditionalInferenceSpecificationDefinition[] | undefined;
+	readonly AdditionalInferenceSpecificationsToAdd?: AdditionalInferenceSpecificationDefinition[] | undefined;
+	readonly ApprovalDescription?: string | undefined;
+	readonly CertifyForMarketplace?: boolean | undefined;
+	readonly ClientToken?: string | undefined;
+	readonly CreatedBy?: UserContext | undefined;
+	readonly CustomerMetadataProperties?: { [key: string]: string } | undefined;
+	readonly Domain?: string | undefined;
+	readonly DriftCheckBaselines?: DriftCheckBaselines | undefined;
+	readonly Environment?: { [key: string]: string } | undefined;
+	readonly InferenceSpecification?: InferenceSpecification | undefined;
+	readonly LastModifiedBy?: UserContext | undefined;
+	readonly LastModifiedTime?: string | undefined;
+	readonly MetadataProperties?: MetadataProperties | undefined;
+	readonly ModelApprovalStatus?: string | undefined;
+	readonly ModelMetrics?: ModelMetrics | undefined;
+	readonly ModelPackageDescription?: string | undefined;
+	readonly ModelPackageGroupName?: string | undefined;
+	readonly ModelPackageName?: string | undefined;
+	readonly ModelPackageStatusDetails?: ModelPackageStatusDetails | undefined;
+	readonly ModelPackageStatusItem?: ModelPackageStatusItem | undefined;
+	readonly ModelPackageVersion?: number | undefined;
+	readonly SamplePayloadUrl?: string | undefined;
+	readonly SourceAlgorithmSpecification?: SourceAlgorithmSpecification | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Task?: string | undefined;
+	readonly ValidationSpecification?: ValidationSpecification | undefined;
 	readonly LogicalId: string;
 }
 export class ModelPackageGroup
@@ -358,9 +354,9 @@ export interface ModelPackageGroupComponentOutputs {
 }
 export interface ModelPackageGroupComponentInputs {
 	readonly ModelPackageGroupName: string;
-	readonly ModelPackageGroupDescription?: (string | undefined) | undefined;
-	readonly ModelPackageGroupPolicy?: (any | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ModelPackageGroupDescription?: string | undefined;
+	readonly ModelPackageGroupPolicy?: any | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ModelQualityJobDefinition
@@ -383,12 +379,12 @@ export interface ModelQualityJobDefinitionComponentInputs {
 	readonly ModelQualityJobInput: ModelQualityJobInput;
 	readonly ModelQualityJobOutputConfig: MonitoringOutputConfig;
 	readonly RoleArn: string;
-	readonly EndpointName?: (string | undefined) | undefined;
-	readonly JobDefinitionName?: (string | undefined) | undefined;
-	readonly ModelQualityBaselineConfig?: (ModelQualityBaselineConfig | undefined) | undefined;
-	readonly NetworkConfig?: (NetworkConfig | undefined) | undefined;
-	readonly StoppingCondition?: (StoppingCondition | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly EndpointName?: string | undefined;
+	readonly JobDefinitionName?: string | undefined;
+	readonly ModelQualityBaselineConfig?: ModelQualityBaselineConfig | undefined;
+	readonly NetworkConfig?: NetworkConfig | undefined;
+	readonly StoppingCondition?: StoppingCondition | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class MonitoringSchedule
@@ -410,11 +406,11 @@ export interface MonitoringScheduleComponentOutputs {
 export interface MonitoringScheduleComponentInputs {
 	readonly MonitoringScheduleConfig: MonitoringScheduleConfig;
 	readonly MonitoringScheduleName: string;
-	readonly EndpointName?: (string | undefined) | undefined;
-	readonly FailureReason?: (string | undefined) | undefined;
-	readonly LastMonitoringExecutionSummary?: (MonitoringExecutionSummary | undefined) | undefined;
-	readonly MonitoringScheduleStatus?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly EndpointName?: string | undefined;
+	readonly FailureReason?: string | undefined;
+	readonly LastMonitoringExecutionSummary?: MonitoringExecutionSummary | undefined;
+	readonly MonitoringScheduleStatus?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class NotebookInstance
@@ -429,20 +425,20 @@ export interface NotebookInstanceComponentOutputs {}
 export interface NotebookInstanceComponentInputs {
 	readonly InstanceType: string;
 	readonly RoleArn: string;
-	readonly AcceleratorTypes?: (string[] | undefined) | undefined;
-	readonly AdditionalCodeRepositories?: (string[] | undefined) | undefined;
-	readonly DefaultCodeRepository?: (string | undefined) | undefined;
-	readonly DirectInternetAccess?: (string | undefined) | undefined;
-	readonly InstanceMetadataServiceConfiguration?: (InstanceMetadataServiceConfiguration | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly LifecycleConfigName?: (string | undefined) | undefined;
-	readonly NotebookInstanceName?: string | undefined;
-	readonly PlatformIdentifier?: (string | undefined) | undefined;
-	readonly RootAccess?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VolumeSizeInGB?: (number | undefined) | undefined;
+	readonly AcceleratorTypes?: string[] | undefined;
+	readonly AdditionalCodeRepositories?: string[] | undefined;
+	readonly DefaultCodeRepository?: string | undefined;
+	readonly DirectInternetAccess?: string | undefined;
+	readonly InstanceMetadataServiceConfiguration?: InstanceMetadataServiceConfiguration | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly LifecycleConfigName?: string | undefined;
+	readonly NotebookInstanceName?: string;
+	readonly PlatformIdentifier?: string | undefined;
+	readonly RootAccess?: string | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SubnetId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VolumeSizeInGB?: number | undefined;
 	readonly LogicalId: string;
 }
 export class NotebookInstanceLifecycleConfig
@@ -455,9 +451,9 @@ export class NotebookInstanceLifecycleConfig
 }
 export interface NotebookInstanceLifecycleConfigComponentOutputs {}
 export interface NotebookInstanceLifecycleConfigComponentInputs {
-	readonly NotebookInstanceLifecycleConfigName?: string | undefined;
-	readonly OnCreate?: (NotebookInstanceLifecycleHook[] | undefined) | undefined;
-	readonly OnStart?: (NotebookInstanceLifecycleHook[] | undefined) | undefined;
+	readonly NotebookInstanceLifecycleConfigName?: string;
+	readonly OnCreate?: NotebookInstanceLifecycleHook[] | undefined;
+	readonly OnStart?: NotebookInstanceLifecycleHook[] | undefined;
 	readonly LogicalId: string;
 }
 export class Pipeline extends CfnResource<PipelineComponentInputs> implements PipelineComponentOutputs {
@@ -470,10 +466,10 @@ export interface PipelineComponentInputs {
 	readonly PipelineDefinition: PipelineDefinition;
 	readonly PipelineName: string;
 	readonly RoleArn: string;
-	readonly ParallelismConfiguration?: (ParallelismConfiguration | undefined) | undefined;
-	readonly PipelineDescription?: (string | undefined) | undefined;
-	readonly PipelineDisplayName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ParallelismConfiguration?: ParallelismConfiguration | undefined;
+	readonly PipelineDescription?: string | undefined;
+	readonly PipelineDisplayName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Project extends CfnResource<ProjectComponentInputs> implements ProjectComponentOutputs {
@@ -498,8 +494,8 @@ export interface ProjectComponentOutputs {
 export interface ProjectComponentInputs {
 	readonly ProjectName: string;
 	readonly ServiceCatalogProvisioningDetails: ServiceCatalogProvisioningDetails;
-	readonly ProjectDescription?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ProjectDescription?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class UserProfile extends CfnResource<UserProfileComponentInputs> implements UserProfileComponentOutputs {
@@ -514,10 +510,10 @@ export interface UserProfileComponentOutputs {
 export interface UserProfileComponentInputs {
 	readonly DomainId: string;
 	readonly UserProfileName: string;
-	readonly SingleSignOnUserIdentifier?: (string | undefined) | undefined;
-	readonly SingleSignOnUserValue?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly UserSettings?: (UserSettings | undefined) | undefined;
+	readonly SingleSignOnUserIdentifier?: string | undefined;
+	readonly SingleSignOnUserValue?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly UserSettings?: UserSettings | undefined;
 	readonly LogicalId: string;
 }
 export class Workteam extends CfnResource<WorkteamComponentInputs> implements WorkteamComponentOutputs {
@@ -527,109 +523,109 @@ export class Workteam extends CfnResource<WorkteamComponentInputs> implements Wo
 }
 export interface WorkteamComponentOutputs {}
 export interface WorkteamComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly MemberDefinitions?: (MemberDefinition[] | undefined) | undefined;
-	readonly NotificationConfiguration?: (NotificationConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly WorkforceName?: (string | undefined) | undefined;
-	readonly WorkteamName?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly MemberDefinitions?: MemberDefinition[] | undefined;
+	readonly NotificationConfiguration?: NotificationConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly WorkforceName?: string | undefined;
+	readonly WorkteamName?: string;
 	readonly LogicalId: string;
 }
 export interface ResourceSpec {
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly SageMakerImageArn?: (string | undefined) | undefined;
-	readonly SageMakerImageVersionArn?: (string | undefined) | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly SageMakerImageArn?: string | undefined;
+	readonly SageMakerImageVersionArn?: string | undefined;
 }
 export interface FileSystemConfig {
-	readonly DefaultGid?: (number | undefined) | undefined;
-	readonly DefaultUid?: (number | undefined) | undefined;
-	readonly MountPath?: (string | undefined) | undefined;
+	readonly DefaultGid?: number | undefined;
+	readonly DefaultUid?: number | undefined;
+	readonly MountPath?: string | undefined;
 }
 export interface KernelGatewayImageConfig {
-	readonly FileSystemConfig?: (FileSystemConfig | undefined) | undefined;
+	readonly FileSystemConfig?: FileSystemConfig | undefined;
 	readonly KernelSpecs: KernelSpec[];
 }
 export interface KernelSpec {
-	readonly DisplayName?: (string | undefined) | undefined;
+	readonly DisplayName?: string | undefined;
 	readonly Name: string;
 }
 export interface GitConfig {
-	readonly Branch?: (string | undefined) | undefined;
+	readonly Branch?: string | undefined;
 	readonly RepositoryUrl: string;
-	readonly SecretArn?: (string | undefined) | undefined;
+	readonly SecretArn?: string | undefined;
 }
 export interface BatchTransformInput {
 	readonly DataCapturedDestinationS3Uri: string;
 	readonly DatasetFormat: DatasetFormat;
 	readonly LocalPath: string;
-	readonly S3DataDistributionType?: (string | undefined) | undefined;
-	readonly S3InputMode?: (string | undefined) | undefined;
+	readonly S3DataDistributionType?: string | undefined;
+	readonly S3InputMode?: string | undefined;
 }
 export interface ClusterConfig {
 	readonly InstanceCount: number;
 	readonly InstanceType: string;
-	readonly VolumeKmsKeyId?: (string | undefined) | undefined;
+	readonly VolumeKmsKeyId?: string | undefined;
 	readonly VolumeSizeInGB: number;
 }
 export interface ConstraintsResource {
-	readonly S3Uri?: (string | undefined) | undefined;
+	readonly S3Uri?: string | undefined;
 }
 export interface Csv {
-	readonly Header?: (boolean | undefined) | undefined;
+	readonly Header?: boolean | undefined;
 }
 export interface DataQualityAppSpecification {
-	readonly ContainerArguments?: (string[] | undefined) | undefined;
-	readonly ContainerEntrypoint?: (string[] | undefined) | undefined;
-	readonly Environment?: ({ [key: string]: string } | undefined) | undefined;
+	readonly ContainerArguments?: string[] | undefined;
+	readonly ContainerEntrypoint?: string[] | undefined;
+	readonly Environment?: { [key: string]: string } | undefined;
 	readonly ImageUri: string;
-	readonly PostAnalyticsProcessorSourceUri?: (string | undefined) | undefined;
-	readonly RecordPreprocessorSourceUri?: (string | undefined) | undefined;
+	readonly PostAnalyticsProcessorSourceUri?: string | undefined;
+	readonly RecordPreprocessorSourceUri?: string | undefined;
 }
 export interface DataQualityBaselineConfig {
-	readonly BaseliningJobName?: (string | undefined) | undefined;
-	readonly ConstraintsResource?: (ConstraintsResource | undefined) | undefined;
-	readonly StatisticsResource?: (StatisticsResource | undefined) | undefined;
+	readonly BaseliningJobName?: string | undefined;
+	readonly ConstraintsResource?: ConstraintsResource | undefined;
+	readonly StatisticsResource?: StatisticsResource | undefined;
 }
 export interface DataQualityJobInput {
-	readonly BatchTransformInput?: (BatchTransformInput | undefined) | undefined;
-	readonly EndpointInput?: (EndpointInput | undefined) | undefined;
+	readonly BatchTransformInput?: BatchTransformInput | undefined;
+	readonly EndpointInput?: EndpointInput | undefined;
 }
 export interface DatasetFormat {
-	readonly Csv?: (Csv | undefined) | undefined;
-	readonly Json?: (any | undefined) | undefined;
-	readonly Parquet?: (boolean | undefined) | undefined;
+	readonly Csv?: Csv | undefined;
+	readonly Json?: any | undefined;
+	readonly Parquet?: boolean | undefined;
 }
 export interface EndpointInput {
 	readonly EndpointName: string;
 	readonly LocalPath: string;
-	readonly S3DataDistributionType?: (string | undefined) | undefined;
-	readonly S3InputMode?: (string | undefined) | undefined;
+	readonly S3DataDistributionType?: string | undefined;
+	readonly S3InputMode?: string | undefined;
 }
 export interface Json {
-	readonly Line?: (boolean | undefined) | undefined;
+	readonly Line?: boolean | undefined;
 }
 export interface MonitoringOutput {
 	readonly S3Output: S3Output;
 }
 export interface MonitoringOutputConfig {
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
 	readonly MonitoringOutputs: MonitoringOutput[];
 }
 export interface MonitoringResources {
 	readonly ClusterConfig: ClusterConfig;
 }
 export interface NetworkConfig {
-	readonly EnableInterContainerTrafficEncryption?: (boolean | undefined) | undefined;
-	readonly EnableNetworkIsolation?: (boolean | undefined) | undefined;
-	readonly VpcConfig?: (VpcConfig | undefined) | undefined;
+	readonly EnableInterContainerTrafficEncryption?: boolean | undefined;
+	readonly EnableNetworkIsolation?: boolean | undefined;
+	readonly VpcConfig?: VpcConfig | undefined;
 }
 export interface S3Output {
 	readonly LocalPath: string;
-	readonly S3UploadMode?: (string | undefined) | undefined;
+	readonly S3UploadMode?: string | undefined;
 	readonly S3Uri: string;
 }
 export interface StatisticsResource {
-	readonly S3Uri?: (string | undefined) | undefined;
+	readonly S3Uri?: string | undefined;
 }
 export interface StoppingCondition {
 	readonly MaxRuntimeInSeconds: number;
@@ -639,57 +635,57 @@ export interface VpcConfig {
 	readonly Subnets: string[];
 }
 export interface Device {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly DeviceName: string;
-	readonly IotThingName?: (string | undefined) | undefined;
+	readonly IotThingName?: string | undefined;
 }
 export interface EdgeOutputConfig {
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
 	readonly S3OutputLocation: string;
 }
 export interface CustomImage {
 	readonly AppImageConfigName: string;
 	readonly ImageName: string;
-	readonly ImageVersionNumber?: (number | undefined) | undefined;
+	readonly ImageVersionNumber?: number | undefined;
 }
 export interface DomainSettings {
-	readonly RStudioServerProDomainSettings?: (RStudioServerProDomainSettings | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
+	readonly RStudioServerProDomainSettings?: RStudioServerProDomainSettings | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
 }
 export interface JupyterServerAppSettings {
-	readonly DefaultResourceSpec?: (ResourceSpec | undefined) | undefined;
+	readonly DefaultResourceSpec?: ResourceSpec | undefined;
 }
 export interface KernelGatewayAppSettings {
-	readonly CustomImages?: (CustomImage[] | undefined) | undefined;
-	readonly DefaultResourceSpec?: (ResourceSpec | undefined) | undefined;
+	readonly CustomImages?: CustomImage[] | undefined;
+	readonly DefaultResourceSpec?: ResourceSpec | undefined;
 }
 export interface RSessionAppSettings {
-	readonly CustomImages?: (CustomImage[] | undefined) | undefined;
-	readonly DefaultResourceSpec?: (ResourceSpec | undefined) | undefined;
+	readonly CustomImages?: CustomImage[] | undefined;
+	readonly DefaultResourceSpec?: ResourceSpec | undefined;
 }
 export interface RStudioServerProAppSettings {
-	readonly AccessStatus?: (string | undefined) | undefined;
-	readonly UserGroup?: (string | undefined) | undefined;
+	readonly AccessStatus?: string | undefined;
+	readonly UserGroup?: string | undefined;
 }
 export interface RStudioServerProDomainSettings {
-	readonly DefaultResourceSpec?: (ResourceSpec | undefined) | undefined;
+	readonly DefaultResourceSpec?: ResourceSpec | undefined;
 	readonly DomainExecutionRoleArn: string;
-	readonly RStudioConnectUrl?: (string | undefined) | undefined;
-	readonly RStudioPackageManagerUrl?: (string | undefined) | undefined;
+	readonly RStudioConnectUrl?: string | undefined;
+	readonly RStudioPackageManagerUrl?: string | undefined;
 }
 export interface SharingSettings {
-	readonly NotebookOutputOption?: (string | undefined) | undefined;
-	readonly S3KmsKeyId?: (string | undefined) | undefined;
-	readonly S3OutputPath?: (string | undefined) | undefined;
+	readonly NotebookOutputOption?: string | undefined;
+	readonly S3KmsKeyId?: string | undefined;
+	readonly S3OutputPath?: string | undefined;
 }
 export interface UserSettings {
-	readonly ExecutionRole?: (string | undefined) | undefined;
-	readonly JupyterServerAppSettings?: (JupyterServerAppSettings | undefined) | undefined;
-	readonly KernelGatewayAppSettings?: (KernelGatewayAppSettings | undefined) | undefined;
-	readonly RSessionAppSettings?: (RSessionAppSettings | undefined) | undefined;
-	readonly RStudioServerProAppSettings?: (RStudioServerProAppSettings | undefined) | undefined;
-	readonly SecurityGroups?: (string[] | undefined) | undefined;
-	readonly SharingSettings?: (SharingSettings | undefined) | undefined;
+	readonly ExecutionRole?: string | undefined;
+	readonly JupyterServerAppSettings?: JupyterServerAppSettings | undefined;
+	readonly KernelGatewayAppSettings?: KernelGatewayAppSettings | undefined;
+	readonly RSessionAppSettings?: RSessionAppSettings | undefined;
+	readonly RStudioServerProAppSettings?: RStudioServerProAppSettings | undefined;
+	readonly SecurityGroups?: string[] | undefined;
+	readonly SharingSettings?: SharingSettings | undefined;
 }
 export interface Alarm {
 	readonly AlarmName: string;
@@ -698,8 +694,8 @@ export interface AutoRollbackConfig {
 	readonly Alarms: Alarm[];
 }
 export interface BlueGreenUpdatePolicy {
-	readonly MaximumExecutionTimeoutInSeconds?: (number | undefined) | undefined;
-	readonly TerminationWaitInSeconds?: (number | undefined) | undefined;
+	readonly MaximumExecutionTimeoutInSeconds?: number | undefined;
+	readonly TerminationWaitInSeconds?: number | undefined;
 	readonly TrafficRoutingConfiguration: TrafficRoutingConfig;
 }
 export interface CapacitySize {
@@ -707,97 +703,97 @@ export interface CapacitySize {
 	readonly Value: number;
 }
 export interface DeploymentConfig {
-	readonly AutoRollbackConfiguration?: (AutoRollbackConfig | undefined) | undefined;
+	readonly AutoRollbackConfiguration?: AutoRollbackConfig | undefined;
 	readonly BlueGreenUpdatePolicy: BlueGreenUpdatePolicy;
 }
 export interface TrafficRoutingConfig {
-	readonly CanarySize?: (CapacitySize | undefined) | undefined;
-	readonly LinearStepSize?: (CapacitySize | undefined) | undefined;
+	readonly CanarySize?: CapacitySize | undefined;
+	readonly LinearStepSize?: CapacitySize | undefined;
 	readonly Type: string;
-	readonly WaitIntervalInSeconds?: (number | undefined) | undefined;
+	readonly WaitIntervalInSeconds?: number | undefined;
 }
 export interface Variant {
-	readonly VariantPropertyType?: (string | undefined) | undefined;
+	readonly VariantPropertyType?: string | undefined;
 }
 export interface AsyncInferenceClientConfig {
-	readonly MaxConcurrentInvocationsPerInstance?: (number | undefined) | undefined;
+	readonly MaxConcurrentInvocationsPerInstance?: number | undefined;
 }
 export interface AsyncInferenceConfig {
-	readonly ClientConfig?: (AsyncInferenceClientConfig | undefined) | undefined;
+	readonly ClientConfig?: AsyncInferenceClientConfig | undefined;
 	readonly OutputConfig: AsyncInferenceOutputConfig;
 }
 export interface AsyncInferenceNotificationConfig {
-	readonly ErrorTopic?: (string | undefined) | undefined;
-	readonly SuccessTopic?: (string | undefined) | undefined;
+	readonly ErrorTopic?: string | undefined;
+	readonly SuccessTopic?: string | undefined;
 }
 export interface AsyncInferenceOutputConfig {
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly NotificationConfig?: (AsyncInferenceNotificationConfig | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly NotificationConfig?: AsyncInferenceNotificationConfig | undefined;
 	readonly S3OutputPath: string;
 }
 export interface CaptureContentTypeHeader {
-	readonly CsvContentTypes?: (string[] | undefined) | undefined;
-	readonly JsonContentTypes?: (string[] | undefined) | undefined;
+	readonly CsvContentTypes?: string[] | undefined;
+	readonly JsonContentTypes?: string[] | undefined;
 }
 export interface CaptureOption {
 	readonly CaptureMode: string;
 }
 export interface ClarifyExplainerConfig {
-	readonly EnableExplanations?: (string | undefined) | undefined;
-	readonly InferenceConfig?: (ClarifyInferenceConfig | undefined) | undefined;
+	readonly EnableExplanations?: string | undefined;
+	readonly InferenceConfig?: ClarifyInferenceConfig | undefined;
 	readonly ShapConfig: ClarifyShapConfig;
 }
 export interface ClarifyInferenceConfig {
-	readonly ContentTemplate?: (string | undefined) | undefined;
-	readonly FeatureHeaders?: (string[] | undefined) | undefined;
-	readonly FeatureTypes?: (string[] | undefined) | undefined;
-	readonly FeaturesAttribute?: (string | undefined) | undefined;
-	readonly LabelAttribute?: (string | undefined) | undefined;
-	readonly LabelHeaders?: (string[] | undefined) | undefined;
-	readonly LabelIndex?: (number | undefined) | undefined;
-	readonly MaxPayloadInMB?: (number | undefined) | undefined;
-	readonly MaxRecordCount?: (number | undefined) | undefined;
-	readonly ProbabilityAttribute?: (string | undefined) | undefined;
-	readonly ProbabilityIndex?: (number | undefined) | undefined;
+	readonly ContentTemplate?: string | undefined;
+	readonly FeatureHeaders?: string[] | undefined;
+	readonly FeatureTypes?: string[] | undefined;
+	readonly FeaturesAttribute?: string | undefined;
+	readonly LabelAttribute?: string | undefined;
+	readonly LabelHeaders?: string[] | undefined;
+	readonly LabelIndex?: number | undefined;
+	readonly MaxPayloadInMB?: number | undefined;
+	readonly MaxRecordCount?: number | undefined;
+	readonly ProbabilityAttribute?: string | undefined;
+	readonly ProbabilityIndex?: number | undefined;
 }
 export interface ClarifyShapBaselineConfig {
-	readonly MimeType?: (string | undefined) | undefined;
-	readonly ShapBaseline?: (string | undefined) | undefined;
-	readonly ShapBaselineUri?: (string | undefined) | undefined;
+	readonly MimeType?: string | undefined;
+	readonly ShapBaseline?: string | undefined;
+	readonly ShapBaselineUri?: string | undefined;
 }
 export interface ClarifyShapConfig {
-	readonly NumberOfSamples?: (number | undefined) | undefined;
-	readonly Seed?: (number | undefined) | undefined;
+	readonly NumberOfSamples?: number | undefined;
+	readonly Seed?: number | undefined;
 	readonly ShapBaselineConfig: ClarifyShapBaselineConfig;
-	readonly TextConfig?: (ClarifyTextConfig | undefined) | undefined;
-	readonly UseLogit?: (boolean | undefined) | undefined;
+	readonly TextConfig?: ClarifyTextConfig | undefined;
+	readonly UseLogit?: boolean | undefined;
 }
 export interface ClarifyTextConfig {
 	readonly Granularity: string;
 	readonly Language: string;
 }
 export interface DataCaptureConfig {
-	readonly CaptureContentTypeHeader?: (CaptureContentTypeHeader | undefined) | undefined;
+	readonly CaptureContentTypeHeader?: CaptureContentTypeHeader | undefined;
 	readonly CaptureOptions: CaptureOption[];
 	readonly DestinationS3Uri: string;
-	readonly EnableCapture?: (boolean | undefined) | undefined;
+	readonly EnableCapture?: boolean | undefined;
 	readonly InitialSamplingPercentage: number;
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
 }
 export interface ExplainerConfig {
-	readonly ClarifyExplainerConfig?: (ClarifyExplainerConfig | undefined) | undefined;
+	readonly ClarifyExplainerConfig?: ClarifyExplainerConfig | undefined;
 }
 export interface ProductionVariant {
-	readonly AcceleratorType?: (string | undefined) | undefined;
-	readonly ContainerStartupHealthCheckTimeoutInSeconds?: (number | undefined) | undefined;
-	readonly InitialInstanceCount?: (number | undefined) | undefined;
+	readonly AcceleratorType?: string | undefined;
+	readonly ContainerStartupHealthCheckTimeoutInSeconds?: number | undefined;
+	readonly InitialInstanceCount?: number | undefined;
 	readonly InitialVariantWeight: number;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly ModelDataDownloadTimeoutInSeconds?: (number | undefined) | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly ModelDataDownloadTimeoutInSeconds?: number | undefined;
 	readonly ModelName: string;
-	readonly ServerlessConfig?: (ServerlessConfig | undefined) | undefined;
+	readonly ServerlessConfig?: ServerlessConfig | undefined;
 	readonly VariantName: string;
-	readonly VolumeSizeInGB?: (number | undefined) | undefined;
+	readonly VolumeSizeInGB?: number | undefined;
 }
 export interface ServerlessConfig {
 	readonly MaxConcurrency: number;
@@ -813,58 +809,58 @@ export interface FeatureDefinition {
 	readonly FeatureType: string;
 }
 export interface OfflineStoreConfig {
-	readonly DataCatalogConfig?: (DataCatalogConfig | undefined) | undefined;
-	readonly DisableGlueTableCreation?: (boolean | undefined) | undefined;
+	readonly DataCatalogConfig?: DataCatalogConfig | undefined;
+	readonly DisableGlueTableCreation?: boolean | undefined;
 	readonly S3StorageConfig: S3StorageConfig;
-	readonly TableFormat?: (string | undefined) | undefined;
+	readonly TableFormat?: string | undefined;
 }
 export interface OnlineStoreConfig {
-	readonly EnableOnlineStore?: (boolean | undefined) | undefined;
-	readonly SecurityConfig?: (OnlineStoreSecurityConfig | undefined) | undefined;
+	readonly EnableOnlineStore?: boolean | undefined;
+	readonly SecurityConfig?: OnlineStoreSecurityConfig | undefined;
 }
 export interface OnlineStoreSecurityConfig {
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
 }
 export interface S3StorageConfig {
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
 	readonly S3Uri: string;
 }
 export interface ContainerDefinition {
-	readonly ContainerHostname?: (string | undefined) | undefined;
-	readonly Environment?: (any | undefined) | undefined;
-	readonly Image?: (string | undefined) | undefined;
-	readonly ImageConfig?: (ImageConfig | undefined) | undefined;
-	readonly InferenceSpecificationName?: (string | undefined) | undefined;
-	readonly Mode?: (string | undefined) | undefined;
-	readonly ModelDataUrl?: (string | undefined) | undefined;
-	readonly ModelPackageName?: (string | undefined) | undefined;
-	readonly MultiModelConfig?: (MultiModelConfig | undefined) | undefined;
+	readonly ContainerHostname?: string | undefined;
+	readonly Environment?: any | undefined;
+	readonly Image?: string | undefined;
+	readonly ImageConfig?: ImageConfig | undefined;
+	readonly InferenceSpecificationName?: string | undefined;
+	readonly Mode?: string | undefined;
+	readonly ModelDataUrl?: string | undefined;
+	readonly ModelPackageName?: string | undefined;
+	readonly MultiModelConfig?: MultiModelConfig | undefined;
 }
 export interface ImageConfig {
 	readonly RepositoryAccessMode: string;
-	readonly RepositoryAuthConfig?: (RepositoryAuthConfig | undefined) | undefined;
+	readonly RepositoryAuthConfig?: RepositoryAuthConfig | undefined;
 }
 export interface InferenceExecutionConfig {
 	readonly Mode: string;
 }
 export interface MultiModelConfig {
-	readonly ModelCacheSetting?: (string | undefined) | undefined;
+	readonly ModelCacheSetting?: string | undefined;
 }
 export interface RepositoryAuthConfig {
 	readonly RepositoryCredentialsProviderArn: string;
 }
 export interface ModelBiasAppSpecification {
 	readonly ConfigUri: string;
-	readonly Environment?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Environment?: { [key: string]: string } | undefined;
 	readonly ImageUri: string;
 }
 export interface ModelBiasBaselineConfig {
-	readonly BaseliningJobName?: (string | undefined) | undefined;
-	readonly ConstraintsResource?: (ConstraintsResource | undefined) | undefined;
+	readonly BaseliningJobName?: string | undefined;
+	readonly ConstraintsResource?: ConstraintsResource | undefined;
 }
 export interface ModelBiasJobInput {
-	readonly BatchTransformInput?: (BatchTransformInput | undefined) | undefined;
-	readonly EndpointInput?: (EndpointInput | undefined) | undefined;
+	readonly BatchTransformInput?: BatchTransformInput | undefined;
+	readonly EndpointInput?: EndpointInput | undefined;
 	readonly GroundTruthS3Input: MonitoringGroundTruthS3Input;
 }
 export interface MonitoringGroundTruthS3Input {
@@ -872,120 +868,120 @@ export interface MonitoringGroundTruthS3Input {
 }
 export interface ModelExplainabilityAppSpecification {
 	readonly ConfigUri: string;
-	readonly Environment?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Environment?: { [key: string]: string } | undefined;
 	readonly ImageUri: string;
 }
 export interface ModelExplainabilityBaselineConfig {
-	readonly BaseliningJobName?: (string | undefined) | undefined;
-	readonly ConstraintsResource?: (ConstraintsResource | undefined) | undefined;
+	readonly BaseliningJobName?: string | undefined;
+	readonly ConstraintsResource?: ConstraintsResource | undefined;
 }
 export interface ModelExplainabilityJobInput {
-	readonly BatchTransformInput?: (BatchTransformInput | undefined) | undefined;
-	readonly EndpointInput?: (EndpointInput | undefined) | undefined;
+	readonly BatchTransformInput?: BatchTransformInput | undefined;
+	readonly EndpointInput?: EndpointInput | undefined;
 }
 export interface AdditionalInferenceSpecificationDefinition {
 	readonly Containers: ModelPackageContainerDefinition[];
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly Name: string;
-	readonly SupportedContentTypes?: (string[] | undefined) | undefined;
-	readonly SupportedRealtimeInferenceInstanceTypes?: (string[] | undefined) | undefined;
-	readonly SupportedResponseMIMETypes?: (string[] | undefined) | undefined;
-	readonly SupportedTransformInstanceTypes?: (string[] | undefined) | undefined;
+	readonly SupportedContentTypes?: string[] | undefined;
+	readonly SupportedRealtimeInferenceInstanceTypes?: string[] | undefined;
+	readonly SupportedResponseMIMETypes?: string[] | undefined;
+	readonly SupportedTransformInstanceTypes?: string[] | undefined;
 }
 export interface Bias {
-	readonly PostTrainingReport?: (MetricsSource | undefined) | undefined;
-	readonly PreTrainingReport?: (MetricsSource | undefined) | undefined;
-	readonly Report?: (MetricsSource | undefined) | undefined;
+	readonly PostTrainingReport?: MetricsSource | undefined;
+	readonly PreTrainingReport?: MetricsSource | undefined;
+	readonly Report?: MetricsSource | undefined;
 }
 export interface DataSource {
 	readonly S3DataSource: S3DataSource;
 }
 export interface DriftCheckBaselines {
-	readonly Bias?: (DriftCheckBias | undefined) | undefined;
-	readonly Explainability?: (DriftCheckExplainability | undefined) | undefined;
-	readonly ModelDataQuality?: (DriftCheckModelDataQuality | undefined) | undefined;
-	readonly ModelQuality?: (DriftCheckModelQuality | undefined) | undefined;
+	readonly Bias?: DriftCheckBias | undefined;
+	readonly Explainability?: DriftCheckExplainability | undefined;
+	readonly ModelDataQuality?: DriftCheckModelDataQuality | undefined;
+	readonly ModelQuality?: DriftCheckModelQuality | undefined;
 }
 export interface DriftCheckBias {
-	readonly ConfigFile?: (FileSource | undefined) | undefined;
-	readonly PostTrainingConstraints?: (MetricsSource | undefined) | undefined;
-	readonly PreTrainingConstraints?: (MetricsSource | undefined) | undefined;
+	readonly ConfigFile?: FileSource | undefined;
+	readonly PostTrainingConstraints?: MetricsSource | undefined;
+	readonly PreTrainingConstraints?: MetricsSource | undefined;
 }
 export interface DriftCheckExplainability {
-	readonly ConfigFile?: (FileSource | undefined) | undefined;
-	readonly Constraints?: (MetricsSource | undefined) | undefined;
+	readonly ConfigFile?: FileSource | undefined;
+	readonly Constraints?: MetricsSource | undefined;
 }
 export interface DriftCheckModelDataQuality {
-	readonly Constraints?: (MetricsSource | undefined) | undefined;
-	readonly Statistics?: (MetricsSource | undefined) | undefined;
+	readonly Constraints?: MetricsSource | undefined;
+	readonly Statistics?: MetricsSource | undefined;
 }
 export interface DriftCheckModelQuality {
-	readonly Constraints?: (MetricsSource | undefined) | undefined;
-	readonly Statistics?: (MetricsSource | undefined) | undefined;
+	readonly Constraints?: MetricsSource | undefined;
+	readonly Statistics?: MetricsSource | undefined;
 }
 export interface Explainability {
-	readonly Report?: (MetricsSource | undefined) | undefined;
+	readonly Report?: MetricsSource | undefined;
 }
 export interface FileSource {
-	readonly ContentDigest?: (string | undefined) | undefined;
-	readonly ContentType?: (string | undefined) | undefined;
+	readonly ContentDigest?: string | undefined;
+	readonly ContentType?: string | undefined;
 	readonly S3Uri: string;
 }
 export interface InferenceSpecification {
 	readonly Containers: ModelPackageContainerDefinition[];
 	readonly SupportedContentTypes: string[];
-	readonly SupportedRealtimeInferenceInstanceTypes?: (string[] | undefined) | undefined;
+	readonly SupportedRealtimeInferenceInstanceTypes?: string[] | undefined;
 	readonly SupportedResponseMIMETypes: string[];
-	readonly SupportedTransformInstanceTypes?: (string[] | undefined) | undefined;
+	readonly SupportedTransformInstanceTypes?: string[] | undefined;
 }
 export interface MetadataProperties {
-	readonly CommitId?: (string | undefined) | undefined;
-	readonly GeneratedBy?: (string | undefined) | undefined;
-	readonly ProjectId?: (string | undefined) | undefined;
-	readonly Repository?: (string | undefined) | undefined;
+	readonly CommitId?: string | undefined;
+	readonly GeneratedBy?: string | undefined;
+	readonly ProjectId?: string | undefined;
+	readonly Repository?: string | undefined;
 }
 export interface MetricsSource {
-	readonly ContentDigest?: (string | undefined) | undefined;
+	readonly ContentDigest?: string | undefined;
 	readonly ContentType: string;
 	readonly S3Uri: string;
 }
 export interface ModelDataQuality {
-	readonly Constraints?: (MetricsSource | undefined) | undefined;
-	readonly Statistics?: (MetricsSource | undefined) | undefined;
+	readonly Constraints?: MetricsSource | undefined;
+	readonly Statistics?: MetricsSource | undefined;
 }
 export interface ModelInput {
 	readonly DataInputConfig: string;
 }
 export interface ModelMetrics {
-	readonly Bias?: (Bias | undefined) | undefined;
-	readonly Explainability?: (Explainability | undefined) | undefined;
-	readonly ModelDataQuality?: (ModelDataQuality | undefined) | undefined;
-	readonly ModelQuality?: (ModelQuality | undefined) | undefined;
+	readonly Bias?: Bias | undefined;
+	readonly Explainability?: Explainability | undefined;
+	readonly ModelDataQuality?: ModelDataQuality | undefined;
+	readonly ModelQuality?: ModelQuality | undefined;
 }
 export interface ModelPackageContainerDefinition {
-	readonly ContainerHostname?: (string | undefined) | undefined;
-	readonly Environment?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Framework?: (string | undefined) | undefined;
-	readonly FrameworkVersion?: (string | undefined) | undefined;
+	readonly ContainerHostname?: string | undefined;
+	readonly Environment?: { [key: string]: string } | undefined;
+	readonly Framework?: string | undefined;
+	readonly FrameworkVersion?: string | undefined;
 	readonly Image: string;
-	readonly ImageDigest?: (string | undefined) | undefined;
-	readonly ModelDataUrl?: (string | undefined) | undefined;
-	readonly ModelInput?: (ModelInput | undefined) | undefined;
-	readonly NearestModelName?: (string | undefined) | undefined;
-	readonly ProductId?: (string | undefined) | undefined;
+	readonly ImageDigest?: string | undefined;
+	readonly ModelDataUrl?: string | undefined;
+	readonly ModelInput?: ModelInput | undefined;
+	readonly NearestModelName?: string | undefined;
+	readonly ProductId?: string | undefined;
 }
 export interface ModelPackageStatusDetails {
-	readonly ImageScanStatuses?: (ModelPackageStatusItem[] | undefined) | undefined;
+	readonly ImageScanStatuses?: ModelPackageStatusItem[] | undefined;
 	readonly ValidationStatuses: ModelPackageStatusItem[];
 }
 export interface ModelPackageStatusItem {
-	readonly FailureReason?: (string | undefined) | undefined;
+	readonly FailureReason?: string | undefined;
 	readonly Name: string;
 	readonly Status: string;
 }
 export interface ModelQuality {
-	readonly Constraints?: (MetricsSource | undefined) | undefined;
-	readonly Statistics?: (MetricsSource | undefined) | undefined;
+	readonly Constraints?: MetricsSource | undefined;
+	readonly Statistics?: MetricsSource | undefined;
 }
 export interface S3DataSource {
 	readonly S3DataType: string;
@@ -993,41 +989,41 @@ export interface S3DataSource {
 }
 export interface SourceAlgorithm {
 	readonly AlgorithmName: string;
-	readonly ModelDataUrl?: (string | undefined) | undefined;
+	readonly ModelDataUrl?: string | undefined;
 }
 export interface SourceAlgorithmSpecification {
 	readonly SourceAlgorithms: SourceAlgorithm[];
 }
 export interface TransformInput {
-	readonly CompressionType?: (string | undefined) | undefined;
-	readonly ContentType?: (string | undefined) | undefined;
+	readonly CompressionType?: string | undefined;
+	readonly ContentType?: string | undefined;
 	readonly DataSource: DataSource;
-	readonly SplitType?: (string | undefined) | undefined;
+	readonly SplitType?: string | undefined;
 }
 export interface TransformJobDefinition {
-	readonly BatchStrategy?: (string | undefined) | undefined;
-	readonly Environment?: ({ [key: string]: string } | undefined) | undefined;
-	readonly MaxConcurrentTransforms?: (number | undefined) | undefined;
-	readonly MaxPayloadInMB?: (number | undefined) | undefined;
+	readonly BatchStrategy?: string | undefined;
+	readonly Environment?: { [key: string]: string } | undefined;
+	readonly MaxConcurrentTransforms?: number | undefined;
+	readonly MaxPayloadInMB?: number | undefined;
 	readonly TransformInput: TransformInput;
 	readonly TransformOutput: TransformOutput;
 	readonly TransformResources: TransformResources;
 }
 export interface TransformOutput {
-	readonly Accept?: (string | undefined) | undefined;
-	readonly AssembleWith?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly Accept?: string | undefined;
+	readonly AssembleWith?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
 	readonly S3OutputPath: string;
 }
 export interface TransformResources {
 	readonly InstanceCount: number;
 	readonly InstanceType: string;
-	readonly VolumeKmsKeyId?: (string | undefined) | undefined;
+	readonly VolumeKmsKeyId?: string | undefined;
 }
 export interface UserContext {
-	readonly DomainId?: (string | undefined) | undefined;
-	readonly UserProfileArn?: (string | undefined) | undefined;
-	readonly UserProfileName?: (string | undefined) | undefined;
+	readonly DomainId?: string | undefined;
+	readonly UserProfileArn?: string | undefined;
+	readonly UserProfileName?: string | undefined;
 }
 export interface ValidationProfile {
 	readonly ProfileName: string;
@@ -1038,64 +1034,64 @@ export interface ValidationSpecification {
 	readonly ValidationRole: string;
 }
 export interface ModelQualityAppSpecification {
-	readonly ContainerArguments?: (string[] | undefined) | undefined;
-	readonly ContainerEntrypoint?: (string[] | undefined) | undefined;
-	readonly Environment?: ({ [key: string]: string } | undefined) | undefined;
+	readonly ContainerArguments?: string[] | undefined;
+	readonly ContainerEntrypoint?: string[] | undefined;
+	readonly Environment?: { [key: string]: string } | undefined;
 	readonly ImageUri: string;
-	readonly PostAnalyticsProcessorSourceUri?: (string | undefined) | undefined;
+	readonly PostAnalyticsProcessorSourceUri?: string | undefined;
 	readonly ProblemType: string;
-	readonly RecordPreprocessorSourceUri?: (string | undefined) | undefined;
+	readonly RecordPreprocessorSourceUri?: string | undefined;
 }
 export interface ModelQualityBaselineConfig {
-	readonly BaseliningJobName?: (string | undefined) | undefined;
-	readonly ConstraintsResource?: (ConstraintsResource | undefined) | undefined;
+	readonly BaseliningJobName?: string | undefined;
+	readonly ConstraintsResource?: ConstraintsResource | undefined;
 }
 export interface ModelQualityJobInput {
-	readonly BatchTransformInput?: (BatchTransformInput | undefined) | undefined;
-	readonly EndpointInput?: (EndpointInput | undefined) | undefined;
+	readonly BatchTransformInput?: BatchTransformInput | undefined;
+	readonly EndpointInput?: EndpointInput | undefined;
 	readonly GroundTruthS3Input: MonitoringGroundTruthS3Input;
 }
 export interface BaselineConfig {
-	readonly ConstraintsResource?: (ConstraintsResource | undefined) | undefined;
-	readonly StatisticsResource?: (StatisticsResource | undefined) | undefined;
+	readonly ConstraintsResource?: ConstraintsResource | undefined;
+	readonly StatisticsResource?: StatisticsResource | undefined;
 }
 export interface MonitoringAppSpecification {
-	readonly ContainerArguments?: (string[] | undefined) | undefined;
-	readonly ContainerEntrypoint?: (string[] | undefined) | undefined;
+	readonly ContainerArguments?: string[] | undefined;
+	readonly ContainerEntrypoint?: string[] | undefined;
 	readonly ImageUri: string;
-	readonly PostAnalyticsProcessorSourceUri?: (string | undefined) | undefined;
-	readonly RecordPreprocessorSourceUri?: (string | undefined) | undefined;
+	readonly PostAnalyticsProcessorSourceUri?: string | undefined;
+	readonly RecordPreprocessorSourceUri?: string | undefined;
 }
 export interface MonitoringExecutionSummary {
 	readonly CreationTime: string;
-	readonly EndpointName?: (string | undefined) | undefined;
-	readonly FailureReason?: (string | undefined) | undefined;
+	readonly EndpointName?: string | undefined;
+	readonly FailureReason?: string | undefined;
 	readonly LastModifiedTime: string;
 	readonly MonitoringExecutionStatus: string;
 	readonly MonitoringScheduleName: string;
-	readonly ProcessingJobArn?: (string | undefined) | undefined;
+	readonly ProcessingJobArn?: string | undefined;
 	readonly ScheduledTime: string;
 }
 export interface MonitoringInput {
-	readonly BatchTransformInput?: (BatchTransformInput | undefined) | undefined;
-	readonly EndpointInput?: (EndpointInput | undefined) | undefined;
+	readonly BatchTransformInput?: BatchTransformInput | undefined;
+	readonly EndpointInput?: EndpointInput | undefined;
 }
 export interface MonitoringJobDefinition {
-	readonly BaselineConfig?: (BaselineConfig | undefined) | undefined;
-	readonly Environment?: ({ [key: string]: string } | undefined) | undefined;
+	readonly BaselineConfig?: BaselineConfig | undefined;
+	readonly Environment?: { [key: string]: string } | undefined;
 	readonly MonitoringAppSpecification: MonitoringAppSpecification;
 	readonly MonitoringInputs: MonitoringInput[];
 	readonly MonitoringOutputConfig: MonitoringOutputConfig;
 	readonly MonitoringResources: MonitoringResources;
-	readonly NetworkConfig?: (NetworkConfig | undefined) | undefined;
+	readonly NetworkConfig?: NetworkConfig | undefined;
 	readonly RoleArn: string;
-	readonly StoppingCondition?: (StoppingCondition | undefined) | undefined;
+	readonly StoppingCondition?: StoppingCondition | undefined;
 }
 export interface MonitoringScheduleConfig {
-	readonly MonitoringJobDefinition?: (MonitoringJobDefinition | undefined) | undefined;
-	readonly MonitoringJobDefinitionName?: (string | undefined) | undefined;
-	readonly MonitoringType?: (string | undefined) | undefined;
-	readonly ScheduleConfig?: (ScheduleConfig | undefined) | undefined;
+	readonly MonitoringJobDefinition?: MonitoringJobDefinition | undefined;
+	readonly MonitoringJobDefinitionName?: string | undefined;
+	readonly MonitoringType?: string | undefined;
+	readonly ScheduleConfig?: ScheduleConfig | undefined;
 }
 export interface ScheduleConfig {
 	readonly ScheduleExpression: string;
@@ -1104,34 +1100,34 @@ export interface InstanceMetadataServiceConfiguration {
 	readonly MinimumInstanceMetadataServiceVersion: string;
 }
 export interface NotebookInstanceLifecycleHook {
-	readonly Content?: (string | undefined) | undefined;
+	readonly Content?: string | undefined;
 }
 export interface ParallelismConfiguration {
 	readonly MaxParallelExecutionSteps: number;
 }
 export interface PipelineDefinition {
-	readonly PipelineDefinitionBody?: (string | undefined) | undefined;
-	readonly PipelineDefinitionS3Location?: (S3Location | undefined) | undefined;
+	readonly PipelineDefinitionBody?: string | undefined;
+	readonly PipelineDefinitionS3Location?: S3Location | undefined;
 }
 export interface S3Location {
 	readonly Bucket: string;
-	readonly ETag?: (string | undefined) | undefined;
+	readonly ETag?: string | undefined;
 	readonly Key: string;
-	readonly Version?: (string | undefined) | undefined;
+	readonly Version?: string | undefined;
 }
 export interface ProvisioningParameter {
 	readonly Key: string;
 	readonly Value: string;
 }
 export interface ServiceCatalogProvisionedProductDetails {
-	readonly ProvisionedProductId?: (string | undefined) | undefined;
-	readonly ProvisionedProductStatusMessage?: (string | undefined) | undefined;
+	readonly ProvisionedProductId?: string | undefined;
+	readonly ProvisionedProductStatusMessage?: string | undefined;
 }
 export interface ServiceCatalogProvisioningDetails {
-	readonly PathId?: (string | undefined) | undefined;
+	readonly PathId?: string | undefined;
 	readonly ProductId: string;
-	readonly ProvisioningArtifactId?: (string | undefined) | undefined;
-	readonly ProvisioningParameters?: (ProvisioningParameter[] | undefined) | undefined;
+	readonly ProvisioningArtifactId?: string | undefined;
+	readonly ProvisioningParameters?: ProvisioningParameter[] | undefined;
 }
 export interface CognitoMemberDefinition {
 	readonly CognitoClientId: string;
@@ -1139,8 +1135,8 @@ export interface CognitoMemberDefinition {
 	readonly CognitoUserPool: string;
 }
 export interface MemberDefinition {
-	readonly CognitoMemberDefinition?: (CognitoMemberDefinition | undefined) | undefined;
-	readonly OidcMemberDefinition?: (OidcMemberDefinition | undefined) | undefined;
+	readonly CognitoMemberDefinition?: CognitoMemberDefinition | undefined;
+	readonly OidcMemberDefinition?: OidcMemberDefinition | undefined;
 }
 export interface NotificationConfiguration {
 	readonly NotificationTopicArn: string;

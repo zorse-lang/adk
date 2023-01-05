@@ -16,9 +16,9 @@ export interface serversComponentOutputs {
 export interface serversComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AnalysisServicesServerProperties | undefined;
+	readonly properties?: AnalysisServicesServerProperties;
 	readonly sku: ResourceSku;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export function listGatewayStatus(resource: servers): GatewayListStatusLive {
 	if (resource.apiVersion !== "2017-07-14") {
@@ -30,62 +30,56 @@ export function listGatewayStatus(resource: servers): GatewayListStatusLive {
 	throw new Error("not implemented");
 }
 export interface AnalysisServicesServerProperties {
-	readonly asAdministrators?: ServerAdministrators | undefined;
-	readonly backupBlobContainerUri?: string | undefined;
-	readonly gatewayDetails?: GatewayDetails | undefined;
-	readonly managedMode?: number | undefined;
+	readonly asAdministrators?: ServerAdministrators;
+	readonly backupBlobContainerUri?: string;
+	readonly gatewayDetails?: GatewayDetails;
+	readonly managedMode?: number;
 	readonly provisioningState?:
-		| (
-				| "Deleting"
-				| "Failed"
-				| "Paused"
-				| "Pausing"
-				| "Preparing"
-				| "Provisioning"
-				| "Resuming"
-				| "Scaling"
-				| "Succeeded"
-				| "Suspended"
-				| "Suspending"
-				| "Updating"
-		  )
-		| undefined;
-	readonly serverFullName?: string | undefined;
-	readonly serverMonitorMode?: number | undefined;
+		| "Deleting"
+		| "Failed"
+		| "Paused"
+		| "Pausing"
+		| "Preparing"
+		| "Provisioning"
+		| "Resuming"
+		| "Scaling"
+		| "Succeeded"
+		| "Suspended"
+		| "Suspending"
+		| "Updating";
+	readonly serverFullName?: string;
+	readonly serverMonitorMode?: number;
 	readonly state?:
-		| (
-				| "Deleting"
-				| "Failed"
-				| "Paused"
-				| "Pausing"
-				| "Preparing"
-				| "Provisioning"
-				| "Resuming"
-				| "Scaling"
-				| "Succeeded"
-				| "Suspended"
-				| "Suspending"
-				| "Updating"
-		  )
-		| undefined;
+		| "Deleting"
+		| "Failed"
+		| "Paused"
+		| "Pausing"
+		| "Preparing"
+		| "Provisioning"
+		| "Resuming"
+		| "Scaling"
+		| "Succeeded"
+		| "Suspended"
+		| "Suspending"
+		| "Updating";
 }
 export interface GatewayDetails {
-	readonly dmtsClusterUri?: string | undefined;
-	readonly gatewayObjectId?: string | undefined;
-	readonly gatewayResourceId?: string | undefined;
+	readonly dmtsClusterUri?: string;
+	readonly gatewayObjectId?: string;
+	readonly gatewayResourceId?: string;
 }
 export interface GatewayListStatusLive {
-	readonly status?: "0" | undefined;
+	readonly status?: "0";
 }
 export interface ResourceSku {
 	readonly name: string;
-	readonly tier?: ("Basic" | "Development" | "Standard") | undefined;
+	readonly tier?: "Basic" | "Development" | "Standard";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ServerAdministrators {
-	readonly members?: string[] | undefined;
+	readonly members?: string[];
 }
 export default {
 	servers: servers,

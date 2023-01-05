@@ -18,23 +18,23 @@ export interface InstanceGroupComponentInputs {
 	readonly InstanceType: string;
 	readonly SecurityGroupId: string;
 	readonly VSwitchId: string;
-	readonly Amount?: (number | undefined) | undefined;
-	readonly AutoPay?: (boolean | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EipBandwidth?: (number | undefined) | undefined;
-	readonly InstanceName?: (string | undefined) | undefined;
-	readonly KeyPairName?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly Resolution?: (string | undefined) | undefined;
-	readonly Tag?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VncPassword?: (string | undefined) | undefined;
+	readonly Amount?: number | undefined;
+	readonly AutoPay?: boolean | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly EipBandwidth?: number | undefined;
+	readonly InstanceName?: string | undefined;
+	readonly KeyPairName?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly Resolution?: string | undefined;
+	readonly Tag?: { key: string; value: string }[] | undefined;
+	readonly VncPassword?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Tag {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export default {

@@ -12,12 +12,11 @@ export interface ProjectsTimeSeriesComponentOutputs {}
 export interface ProjectsTimeSeriesComponentInputs {
 	readonly name: string;
 	readonly timeSeries: TimeSeries[];
-	readonly type: string;
 }
 export interface BucketOptions {
-	readonly explicitBuckets?: Explicit | undefined;
-	readonly exponentialBuckets?: Exponential | undefined;
-	readonly linearBuckets?: Linear | undefined;
+	readonly explicitBuckets?: Explicit;
+	readonly exponentialBuckets?: Exponential;
+	readonly linearBuckets?: Linear;
 }
 export interface CreateTimeSeriesRequest {
 	readonly timeSeries: TimeSeries[];
@@ -25,33 +24,33 @@ export interface CreateTimeSeriesRequest {
 export interface Distribution {
 	readonly bucketCounts: string[];
 	readonly bucketOptions: BucketOptions;
-	readonly count?: string | undefined;
-	readonly exemplars?: Exemplar[] | undefined;
-	readonly mean?: number | undefined;
-	readonly range?: Range | undefined;
-	readonly sumOfSquaredDeviation?: number | undefined;
+	readonly count?: string;
+	readonly exemplars?: Exemplar[];
+	readonly mean?: number;
+	readonly range?: Range;
+	readonly sumOfSquaredDeviation?: number;
 }
 export interface Exemplar {
-	readonly attachments?: Array<{ [P in string]: any }> | undefined;
-	readonly timestamp?: string | undefined;
-	readonly value?: number | undefined;
+	readonly attachments?: Array<{ [P in string]: any }>;
+	readonly timestamp?: string;
+	readonly value?: number;
 }
 export interface Explicit {
-	readonly bounds?: number[] | undefined;
+	readonly bounds?: number[];
 }
 export interface Exponential {
-	readonly growthFactor?: number | undefined;
-	readonly numFiniteBuckets?: number | undefined;
-	readonly scale?: number | undefined;
+	readonly growthFactor?: number;
+	readonly numFiniteBuckets?: number;
+	readonly scale?: number;
 }
 export interface Linear {
-	readonly numFiniteBuckets?: number | undefined;
-	readonly offset?: number | undefined;
-	readonly width?: number | undefined;
+	readonly numFiniteBuckets?: number;
+	readonly offset?: number;
+	readonly width?: number;
 }
 export interface Metric {
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly type?: string | undefined;
+	readonly labels?: { [P in string]: string };
+	readonly type?: string;
 }
 export interface MonitoredResource {
 	readonly labels: { [P in string]: string };
@@ -59,31 +58,31 @@ export interface MonitoredResource {
 }
 export interface MonitoredResourceMetadata {}
 export interface Point {
-	readonly interval?: TimeInterval | undefined;
-	readonly value?: TypedValue | undefined;
+	readonly interval?: TimeInterval;
+	readonly value?: TypedValue;
 }
 export interface Range {
-	readonly max?: number | undefined;
-	readonly min?: number | undefined;
+	readonly max?: number;
+	readonly min?: number;
 }
 export interface TimeInterval {
 	readonly endTime: string;
-	readonly startTime?: string | undefined;
+	readonly startTime?: string;
 }
 export interface TimeSeries {
-	readonly metric?: Metric | undefined;
-	readonly metricKind?: string | undefined;
-	readonly points?: Point[] | undefined;
-	readonly resource?: MonitoredResource | undefined;
-	readonly unit?: string | undefined;
-	readonly valueType?: string | undefined;
+	readonly metric?: Metric;
+	readonly metricKind?: string;
+	readonly points?: Point[];
+	readonly resource?: MonitoredResource;
+	readonly unit?: string;
+	readonly valueType?: string;
 }
 export interface TypedValue {
-	readonly boolValue?: boolean | undefined;
-	readonly distributionValue?: Distribution | undefined;
-	readonly doubleValue?: number | undefined;
-	readonly int64Value?: string | undefined;
-	readonly stringValue?: string | undefined;
+	readonly boolValue?: boolean;
+	readonly distributionValue?: Distribution;
+	readonly doubleValue?: number;
+	readonly int64Value?: string;
+	readonly stringValue?: string;
 }
 export default {
 	ProjectsTimeSeries: ProjectsTimeSeries,

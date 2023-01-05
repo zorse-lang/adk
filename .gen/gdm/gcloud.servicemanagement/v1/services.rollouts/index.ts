@@ -10,61 +10,60 @@ export class ServicesRollouts
 }
 export interface ServicesRolloutsComponentOutputs {}
 export interface ServicesRolloutsComponentInputs {
-	readonly baseRolloutId?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly deleteServiceStrategy?: any | undefined;
-	readonly exclusive?: boolean | undefined;
-	readonly force?: boolean | undefined;
-	readonly managedRolloutStrategy?: ManagedRolloutStrategy | undefined;
-	readonly rolloutId?: string | undefined;
-	readonly serviceName?: string | undefined;
-	readonly serviceSelectionStrategy?: ServiceSelectionStrategy | undefined;
-	readonly status?: string | undefined;
-	readonly trafficPercentStrategy?: TrafficPercentStrategy | undefined;
-	readonly validateOnly?: boolean | undefined;
-	readonly type: string;
+	readonly baseRolloutId?: string;
+	readonly createdBy?: string;
+	readonly createTime?: string;
+	readonly deleteServiceStrategy?: any;
+	readonly exclusive?: boolean;
+	readonly force?: boolean;
+	readonly managedRolloutStrategy?: ManagedRolloutStrategy;
+	readonly rolloutId?: string;
+	readonly serviceName?: string;
+	readonly serviceSelectionStrategy?: ServiceSelectionStrategy;
+	readonly status?: string;
+	readonly trafficPercentStrategy?: TrafficPercentStrategy;
+	readonly validateOnly?: boolean;
 	readonly name: string;
 }
 export interface ConfigFile {
-	readonly fileContents?: string | undefined;
-	readonly filePath?: string | undefined;
-	readonly fileType?: string | undefined;
+	readonly fileContents?: string;
+	readonly filePath?: string;
+	readonly fileType?: string;
 }
 export interface ConfigOptions {
-	readonly experiments?: string[] | undefined;
+	readonly experiments?: string[];
 }
 export interface ConfigSource {
-	readonly files?: ConfigFile[] | undefined;
-	readonly id?: string | undefined;
-	readonly options?: ConfigOptions | undefined;
+	readonly files?: ConfigFile[];
+	readonly id?: string;
+	readonly options?: ConfigOptions;
 }
 export interface DeleteServiceStrategy {}
 export interface ManagedRolloutStrategy {
 	readonly configSource: ConfigSource;
-	readonly serviceConfigIds?: string[] | undefined;
+	readonly serviceConfigIds?: string[];
 }
 export interface Rollout {
-	readonly createdBy?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly deleteServiceStrategy?: any | undefined;
-	readonly managedRolloutStrategy?: ManagedRolloutStrategy | undefined;
-	readonly rolloutId?: string | undefined;
-	readonly serviceName?: string | undefined;
-	readonly serviceSelectionStrategy?: ServiceSelectionStrategy | undefined;
-	readonly status?: string | undefined;
-	readonly trafficPercentStrategy?: TrafficPercentStrategy | undefined;
+	readonly createdBy?: string;
+	readonly createTime?: string;
+	readonly deleteServiceStrategy?: any;
+	readonly managedRolloutStrategy?: ManagedRolloutStrategy;
+	readonly rolloutId?: string;
+	readonly serviceName?: string;
+	readonly serviceSelectionStrategy?: ServiceSelectionStrategy;
+	readonly status?: string;
+	readonly trafficPercentStrategy?: TrafficPercentStrategy;
 }
 export interface RolloutGroup {
-	readonly name?: string | undefined;
-	readonly serviceConfigIds?: string[] | undefined;
+	readonly name?: string;
+	readonly serviceConfigIds?: string[];
 }
 export interface ServiceSelectionStrategy {
-	readonly groups?: RolloutGroup[] | undefined;
-	readonly serviceConfigIds?: string[] | undefined;
+	readonly groups?: RolloutGroup[];
+	readonly serviceConfigIds?: string[];
 }
 export interface TrafficPercentStrategy {
-	readonly percentages?: { [P in string]: number } | undefined;
+	readonly percentages?: { [P in string]: number };
 }
 export default {
 	ServicesRollouts: ServicesRollouts,

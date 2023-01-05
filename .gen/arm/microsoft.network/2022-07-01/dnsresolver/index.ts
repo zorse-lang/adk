@@ -17,12 +17,12 @@ export interface dnsForwardingRulesetsComponentOutputs {
 	readonly type: "Microsoft.Network/dnsForwardingRulesets";
 }
 export interface dnsForwardingRulesetsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: DnsForwardingRulesetProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class dnsForwardingRulesets_forwardingRules
 	extends ArmResource<dnsForwardingRulesets_forwardingRulesComponentInputs>
@@ -41,10 +41,10 @@ export interface dnsForwardingRulesets_forwardingRulesComponentOutputs {
 	readonly type: "Microsoft.Network/dnsForwardingRulesets/forwardingRules";
 }
 export interface dnsForwardingRulesets_forwardingRulesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly properties: ForwardingRuleProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class dnsForwardingRulesets_virtualNetworkLinks
 	extends ArmResource<dnsForwardingRulesets_virtualNetworkLinksComponentInputs>
@@ -63,10 +63,10 @@ export interface dnsForwardingRulesets_virtualNetworkLinksComponentOutputs {
 	readonly type: "Microsoft.Network/dnsForwardingRulesets/virtualNetworkLinks";
 }
 export interface dnsForwardingRulesets_virtualNetworkLinksComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly properties: VirtualNetworkLinkProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class dnsResolvers extends ArmResource<dnsResolversComponentInputs> implements dnsResolversComponentOutputs {
 	constructor(entity: ADKEntity, options: dnsResolversComponentInputs) {
@@ -82,12 +82,12 @@ export interface dnsResolversComponentOutputs {
 	readonly type: "Microsoft.Network/dnsResolvers";
 }
 export interface dnsResolversComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: DnsResolverProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class dnsResolvers_inboundEndpoints
 	extends ArmResource<dnsResolvers_inboundEndpointsComponentInputs>
@@ -106,12 +106,12 @@ export interface dnsResolvers_inboundEndpointsComponentOutputs {
 	readonly type: "Microsoft.Network/dnsResolvers/inboundEndpoints";
 }
 export interface dnsResolvers_inboundEndpointsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: InboundEndpointProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class dnsResolvers_outboundEndpoints
 	extends ArmResource<dnsResolvers_outboundEndpointsComponentInputs>
@@ -130,12 +130,12 @@ export interface dnsResolvers_outboundEndpointsComponentOutputs {
 	readonly type: "Microsoft.Network/dnsResolvers/outboundEndpoints";
 }
 export interface dnsResolvers_outboundEndpointsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: OutboundEndpointProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export function listDnsForwardingRulesets(resource: ArmResource): VirtualNetworkDnsForwardingRulesetListResult {
 	if (resource.apiVersion !== "2022-07-01") {
@@ -157,80 +157,80 @@ export function listDnsResolvers(resource: ArmResource): SubResourceListResult {
 }
 export interface DnsForwardingRulesetProperties {
 	readonly dnsResolverOutboundEndpoints: SubResource[];
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
 }
 export interface DnsResolverProperties {
-	readonly dnsResolverState?: ("Connected" | "Disconnected") | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly dnsResolverState?: "Connected" | "Disconnected";
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
 	readonly virtualNetwork: SubResource;
 }
 export interface ForwardingRuleProperties {
 	readonly domainName: string;
-	readonly forwardingRuleState?: ("Disabled" | "Enabled") | undefined;
-	readonly metadata?: ForwardingRulePropertiesMetadata | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly forwardingRuleState?: "Disabled" | "Enabled";
+	readonly metadata?: ForwardingRulePropertiesMetadata;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly targetDnsServers: TargetDnsServer[];
 }
 export interface ForwardingRulePropertiesMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface InboundEndpointProperties {
 	readonly ipConfigurations: IpConfiguration[];
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
 }
 export interface IpConfiguration {
-	readonly privateIpAddress?: string | undefined;
-	readonly privateIpAllocationMethod?: ("Dynamic" | "Static") | undefined;
+	readonly privateIpAddress?: string;
+	readonly privateIpAllocationMethod?: "Dynamic" | "Static";
 	readonly subnet: SubResource;
 }
 export interface OutboundEndpointProperties {
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
 	readonly subnet: SubResource;
 }
 export interface SubResource {
 	readonly id: string;
 }
 export interface SubResourceListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: SubResource[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: SubResource[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TargetDnsServer {
 	readonly ipAddress: string;
-	readonly port?: number | undefined;
+	readonly port?: number;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualNetworkDnsForwardingRuleset {
-	readonly id?: string | undefined;
-	readonly properties?: VirtualNetworkLinkSubResourceProperties | undefined;
+	readonly id?: string;
+	readonly properties?: VirtualNetworkLinkSubResourceProperties;
 }
 export interface VirtualNetworkDnsForwardingRulesetListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: VirtualNetworkDnsForwardingRuleset[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: VirtualNetworkDnsForwardingRuleset[];
 }
 export interface VirtualNetworkLinkProperties {
-	readonly metadata?: VirtualNetworkLinkPropertiesMetadata | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly metadata?: VirtualNetworkLinkPropertiesMetadata;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly virtualNetwork: SubResource;
 }
 export interface VirtualNetworkLinkPropertiesMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualNetworkLinkSubResourceProperties {
-	readonly virtualNetworkLink?: SubResource | undefined;
+	readonly virtualNetworkLink?: SubResource;
 }
 export default {
 	dnsForwardingRulesets: dnsForwardingRulesets,

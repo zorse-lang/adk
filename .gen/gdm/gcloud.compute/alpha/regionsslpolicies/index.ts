@@ -7,101 +7,94 @@ export class RegionSslPolicies
 	constructor(entity: ADKEntity, options: RegionSslPoliciesComponentInputs) {
 		super(entity, options.name, "compute.alpha.RegionSslPolicies", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly enabledFeatures?: string[] | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly warnings?:
-		| Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>
-		| undefined;
+	public readonly creationTimestamp?: string;
+	public readonly enabledFeatures?: string[];
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly warnings?: Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>;
 }
 export interface RegionSslPoliciesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly enabledFeatures?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly warnings?:
-		| Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>
-		| undefined;
+	readonly creationTimestamp?: string;
+	readonly enabledFeatures?: string[];
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly warnings?: Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>;
 }
 export interface RegionSslPoliciesComponentInputs {
-	readonly customFeatures?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly minTlsVersion?: string | undefined;
+	readonly customFeatures?: string[];
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly minTlsVersion?: string;
 	readonly name: string;
-	readonly profile?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly tlsSettings?: ServerTlsSettings | undefined;
-	readonly type: string;
+	readonly profile?: string;
+	readonly requestId?: string;
+	readonly tlsSettings?: ServerTlsSettings;
 }
 export interface CallCredentials {
-	readonly callCredentialType?: string | undefined;
-	readonly fromPlugin?: MetadataCredentialsFromPlugin | undefined;
+	readonly callCredentialType?: string;
+	readonly fromPlugin?: MetadataCredentialsFromPlugin;
 }
 export interface ChannelCredentials {
-	readonly certificates?: TlsCertificatePaths | undefined;
-	readonly channelCredentialType?: string | undefined;
+	readonly certificates?: TlsCertificatePaths;
+	readonly channelCredentialType?: string;
 }
 export interface GrpcServiceConfig {
-	readonly callCredentials?: CallCredentials | undefined;
-	readonly channelCredentials?: ChannelCredentials | undefined;
-	readonly targetUri?: string | undefined;
+	readonly callCredentials?: CallCredentials;
+	readonly channelCredentials?: ChannelCredentials;
+	readonly targetUri?: string;
 }
 export interface MetadataCredentialsFromPlugin {
-	readonly name?: string | undefined;
-	readonly structConfig?: string | undefined;
+	readonly name?: string;
+	readonly structConfig?: string;
 }
 export interface SdsConfig {
-	readonly grpcServiceConfig?: GrpcServiceConfig | undefined;
+	readonly grpcServiceConfig?: GrpcServiceConfig;
 }
 export interface ServerTlsSettings {
-	readonly proxyTlsContext?: TlsContext | undefined;
-	readonly subjectAltNames?: string[] | undefined;
-	readonly tlsMode?: string | undefined;
+	readonly proxyTlsContext?: TlsContext;
+	readonly subjectAltNames?: string[];
+	readonly tlsMode?: string;
 }
 export interface SslPolicy {
-	readonly creationTimestamp?: string | undefined;
-	readonly customFeatures?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly enabledFeatures?: string[] | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly minTlsVersion?: string | undefined;
-	readonly name?: string | undefined;
-	readonly profile?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly tlsSettings?: ServerTlsSettings | undefined;
-	readonly warnings?:
-		| Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>
-		| undefined;
+	readonly creationTimestamp?: string;
+	readonly customFeatures?: string[];
+	readonly description?: string;
+	readonly enabledFeatures?: string[];
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly minTlsVersion?: string;
+	readonly name?: string;
+	readonly profile?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly tlsSettings?: ServerTlsSettings;
+	readonly warnings?: Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>;
 }
 export interface TlsCertificateContext {
-	readonly certificatePaths?: TlsCertificatePaths | undefined;
-	readonly certificateSource?: string | undefined;
-	readonly sdsConfig?: SdsConfig | undefined;
+	readonly certificatePaths?: TlsCertificatePaths;
+	readonly certificateSource?: string;
+	readonly sdsConfig?: SdsConfig;
 }
 export interface TlsCertificatePaths {
-	readonly certificatePath?: string | undefined;
-	readonly privateKeyPath?: string | undefined;
+	readonly certificatePath?: string;
+	readonly privateKeyPath?: string;
 }
 export interface TlsContext {
-	readonly certificateContext?: TlsCertificateContext | undefined;
-	readonly validationContext?: TlsValidationContext | undefined;
+	readonly certificateContext?: TlsCertificateContext;
+	readonly validationContext?: TlsValidationContext;
 }
 export interface TlsValidationContext {
-	readonly certificatePath?: string | undefined;
-	readonly sdsConfig?: SdsConfig | undefined;
-	readonly validationSource?: string | undefined;
+	readonly certificatePath?: string;
+	readonly sdsConfig?: SdsConfig;
+	readonly validationSource?: string;
 }
 export default {
 	RegionSslPolicies: RegionSslPolicies,

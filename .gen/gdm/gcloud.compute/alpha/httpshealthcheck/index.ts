@@ -10,15 +10,14 @@ export class HTTPSHealthCheck
 }
 export interface HTTPSHealthCheckComponentOutputs {}
 export interface HTTPSHealthCheckComponentInputs {
-	readonly host?: string | undefined;
-	readonly port?: number | undefined;
-	readonly portName?: string | undefined;
-	readonly portSpecification?: string | undefined;
-	readonly proxyHeader?: string | undefined;
-	readonly requestPath?: string | undefined;
-	readonly response?: string | undefined;
-	readonly weightReportMode?: string | undefined;
-	readonly type: string;
+	readonly host?: string;
+	readonly port?: number;
+	readonly portName?: string;
+	readonly portSpecification?: string;
+	readonly proxyHeader?: string;
+	readonly requestPath?: string;
+	readonly response?: string;
+	readonly weightReportMode?: string;
 	readonly name: string;
 }
 export default {

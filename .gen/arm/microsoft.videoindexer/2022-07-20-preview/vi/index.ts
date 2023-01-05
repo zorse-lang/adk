@@ -14,50 +14,48 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.VideoIndexer/accounts";
 }
 export interface accountsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
+	readonly identity?: ManagedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AccountPropertiesForPutRequest | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: AccountPropertiesForPutRequest;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AccountPropertiesForPutRequest {
-	readonly accountId?: string | undefined;
-	readonly accountName?: string | undefined;
-	readonly mediaServices?: MediaServicesForPutRequest | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleting" | "Failed" | "Provisioning" | "Succeeded")
-		| undefined;
-	readonly tenantId?: string | undefined;
-	readonly totalSecondsIndexed?: number | undefined;
+	readonly accountId?: string;
+	readonly accountName?: string;
+	readonly mediaServices?: MediaServicesForPutRequest;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleting" | "Failed" | "Provisioning" | "Succeeded";
+	readonly tenantId?: string;
+	readonly totalSecondsIndexed?: number;
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: UserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedIdentities;
 }
 export interface MediaServicesForPutRequest {
-	readonly resourceId?: string | undefined;
-	readonly userAssignedIdentity?: string | undefined;
+	readonly resourceId?: string;
+	readonly userAssignedIdentity?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	accounts: accounts,

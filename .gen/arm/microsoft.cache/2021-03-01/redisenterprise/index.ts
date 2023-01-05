@@ -19,10 +19,10 @@ export interface redisEnterpriseComponentOutputs {
 export interface redisEnterpriseComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
+	readonly properties?: ClusterProperties;
 	readonly sku: Sku;
-	readonly tags?: TrackedResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly tags?: TrackedResourceTags;
+	readonly zones?: string[];
 }
 export class redisEnterprise_databases
 	extends ArmResource<redisEnterprise_databasesComponentInputs>
@@ -42,7 +42,7 @@ export interface redisEnterprise_databasesComponentOutputs {
 }
 export interface redisEnterprise_databasesComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseProperties | undefined;
+	readonly properties?: DatabaseProperties;
 }
 export class redisEnterprise_privateEndpointConnections
 	extends ArmResource<redisEnterprise_privateEndpointConnectionsComponentInputs>
@@ -62,7 +62,7 @@ export interface redisEnterprise_privateEndpointConnectionsComponentOutputs {
 }
 export interface redisEnterprise_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export function listKeys(resource: redisEnterprise_databases): AccessKeys {
 	if (resource.apiVersion !== "2021-03-01") {
@@ -74,100 +74,91 @@ export function listKeys(resource: redisEnterprise_databases): AccessKeys {
 	throw new Error("not implemented");
 }
 export interface AccessKeys {
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface ClusterProperties {
-	readonly hostName?: string | undefined;
-	readonly minimumTlsVersion?: ("1.0" | "1.1" | "1.2") | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly redisVersion?: string | undefined;
+	readonly hostName?: string;
+	readonly minimumTlsVersion?: "1.0" | "1.1" | "1.2";
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly redisVersion?: string;
 	readonly resourceState?:
-		| (
-				| "CreateFailed"
-				| "Creating"
-				| "DeleteFailed"
-				| "Deleting"
-				| "DisableFailed"
-				| "Disabled"
-				| "Disabling"
-				| "EnableFailed"
-				| "Enabling"
-				| "Running"
-				| "UpdateFailed"
-				| "Updating"
-		  )
-		| undefined;
+		| "CreateFailed"
+		| "Creating"
+		| "DeleteFailed"
+		| "Deleting"
+		| "DisableFailed"
+		| "Disabled"
+		| "Disabling"
+		| "EnableFailed"
+		| "Enabling"
+		| "Running"
+		| "UpdateFailed"
+		| "Updating";
 }
 export interface DatabaseProperties {
-	readonly clientProtocol?: ("Encrypted" | "Plaintext") | undefined;
-	readonly clusteringPolicy?: ("EnterpriseCluster" | "OSSCluster") | undefined;
+	readonly clientProtocol?: "Encrypted" | "Plaintext";
+	readonly clusteringPolicy?: "EnterpriseCluster" | "OSSCluster";
 	readonly evictionPolicy?:
-		| (
-				| "AllKeysLFU"
-				| "AllKeysLRU"
-				| "AllKeysRandom"
-				| "NoEviction"
-				| "VolatileLFU"
-				| "VolatileLRU"
-				| "VolatileRandom"
-				| "VolatileTTL"
-		  )
-		| undefined;
-	readonly modules?: Module[] | undefined;
-	readonly persistence?: Persistence | undefined;
-	readonly port?: number | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+		| "AllKeysLFU"
+		| "AllKeysLRU"
+		| "AllKeysRandom"
+		| "NoEviction"
+		| "VolatileLFU"
+		| "VolatileLRU"
+		| "VolatileRandom"
+		| "VolatileTTL";
+	readonly modules?: Module[];
+	readonly persistence?: Persistence;
+	readonly port?: number;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly resourceState?:
-		| (
-				| "CreateFailed"
-				| "Creating"
-				| "DeleteFailed"
-				| "Deleting"
-				| "DisableFailed"
-				| "Disabled"
-				| "Disabling"
-				| "EnableFailed"
-				| "Enabling"
-				| "Running"
-				| "UpdateFailed"
-				| "Updating"
-		  )
-		| undefined;
+		| "CreateFailed"
+		| "Creating"
+		| "DeleteFailed"
+		| "Deleting"
+		| "DisableFailed"
+		| "Disabled"
+		| "Disabling"
+		| "EnableFailed"
+		| "Enabling"
+		| "Running"
+		| "UpdateFailed"
+		| "Updating";
 }
 export interface Module {
-	readonly args?: string | undefined;
+	readonly args?: string;
 	readonly name: string;
-	readonly version?: string | undefined;
+	readonly version?: string;
 }
 export interface Persistence {
-	readonly aofEnabled?: boolean | undefined;
-	readonly aofFrequency?: ("1s" | "always") | undefined;
-	readonly rdbEnabled?: boolean | undefined;
-	readonly rdbFrequency?: ("12h" | "1h" | "6h") | undefined;
+	readonly aofEnabled?: boolean;
+	readonly aofFrequency?: "1s" | "always";
+	readonly rdbEnabled?: boolean;
+	readonly rdbFrequency?: "12h" | "1h" | "6h";
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name:
 		| "EnterpriseFlash_F1500"
 		| "EnterpriseFlash_F300"
@@ -178,7 +169,7 @@ export interface Sku {
 		| "Enterprise_E50";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	redisEnterprise: redisEnterprise,

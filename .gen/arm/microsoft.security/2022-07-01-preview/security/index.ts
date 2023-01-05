@@ -15,12 +15,12 @@ export interface applicationsComponentOutputs {
 }
 export interface applicationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ApplicationProperties | undefined;
+	readonly properties?: ApplicationProperties;
 }
 export interface ApplicationProperties {
 	readonly conditionSets: any[];
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly sourceResourceType: "Assessments";
 }
 export default {

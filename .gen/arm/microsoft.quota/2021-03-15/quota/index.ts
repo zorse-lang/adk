@@ -15,21 +15,21 @@ export interface quotaLimitsComponentOutputs {
 }
 export interface quotaLimitsComponentInputs {
 	readonly name: string;
-	readonly properties?: QuotaProperties | undefined;
+	readonly properties?: QuotaProperties;
 }
 export interface QuotaProperties {
-	readonly currentValue?: number | undefined;
-	readonly isQuotaApplicable?: boolean | undefined;
-	readonly limit?: number | undefined;
-	readonly name?: ResourceName | undefined;
-	readonly properties?: any | undefined;
-	readonly quotaPeriod?: string | undefined;
-	readonly resourceType?: ("dedicated" | "lowPriority" | "serviceSpecific" | "shared" | "standard") | undefined;
-	readonly unit?: string | undefined;
+	readonly currentValue?: number;
+	readonly isQuotaApplicable?: boolean;
+	readonly limit?: number;
+	readonly name?: ResourceName;
+	readonly properties?: any;
+	readonly quotaPeriod?: string;
+	readonly resourceType?: "dedicated" | "lowPriority" | "serviceSpecific" | "shared" | "standard";
+	readonly unit?: string;
 }
 export interface ResourceName {
-	readonly localizedValue?: string | undefined;
-	readonly value?: string | undefined;
+	readonly localizedValue?: string;
+	readonly value?: string;
 }
 export default {
 	quotaLimits: quotaLimits,

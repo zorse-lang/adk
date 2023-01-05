@@ -12,37 +12,37 @@ export interface ServiceMeshComponentOutputs {
 export interface ServiceMeshComponentInputs {
 	readonly VpcId: string;
 	readonly VSwitches: any[];
-	readonly ApiServerPublicEip?: (boolean | undefined) | undefined;
-	readonly AuditProject?: (string | undefined) | undefined;
-	readonly CustomizedZipkin?: (boolean | undefined) | undefined;
-	readonly EnableAudit?: (boolean | undefined) | undefined;
-	readonly IncludeIPRanges?: (string | undefined) | undefined;
-	readonly IstioVersion?: (string | undefined) | undefined;
-	readonly LocalityLoadBalancing?: (boolean | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly OPA?: (OPA | undefined) | undefined;
-	readonly OutboundTrafficPolicy?: (string | undefined) | undefined;
-	readonly PilotPublicEip?: (boolean | undefined) | undefined;
-	readonly Proxy?: (Proxy | undefined) | undefined;
-	readonly Telemetry?: (boolean | undefined) | undefined;
-	readonly TraceSampling?: (number | undefined) | undefined;
-	readonly Tracing?: (boolean | undefined) | undefined;
+	readonly ApiServerPublicEip?: boolean | undefined;
+	readonly AuditProject?: string | undefined;
+	readonly CustomizedZipkin?: boolean | undefined;
+	readonly EnableAudit?: boolean | undefined;
+	readonly IncludeIPRanges?: string | undefined;
+	readonly IstioVersion?: string | undefined;
+	readonly LocalityLoadBalancing?: boolean | undefined;
+	readonly Name?: string | undefined;
+	readonly OPA?: OPA | undefined;
+	readonly OutboundTrafficPolicy?: string | undefined;
+	readonly PilotPublicEip?: boolean | undefined;
+	readonly Proxy?: Proxy | undefined;
+	readonly Telemetry?: boolean | undefined;
+	readonly TraceSampling?: number | undefined;
+	readonly Tracing?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export interface OPA {
-	readonly OPARequestCPU?: (string | undefined) | undefined;
-	readonly OpenAgentPolicy?: (boolean | undefined) | undefined;
-	readonly OPALogLevel?: (string | undefined) | undefined;
-	readonly OPALimitCPU?: (string | undefined) | undefined;
-	readonly OPALimitMemory?: (string | undefined) | undefined;
-	readonly OPARequestMemory?: (string | undefined) | undefined;
+	readonly OPARequestCPU?: string | undefined;
+	readonly OpenAgentPolicy?: boolean | undefined;
+	readonly OPALogLevel?: string | undefined;
+	readonly OPALimitCPU?: string | undefined;
+	readonly OPALimitMemory?: string | undefined;
+	readonly OPARequestMemory?: string | undefined;
 }
 export interface Proxy {
-	readonly ClusterDomain?: (string | undefined) | undefined;
-	readonly ProxyLimitCPU?: (string | undefined) | undefined;
-	readonly ProxyLimitMemory?: (string | undefined) | undefined;
-	readonly ProxyRequestCPU?: (string | undefined) | undefined;
-	readonly ProxyRequestMemory?: (string | undefined) | undefined;
+	readonly ClusterDomain?: string | undefined;
+	readonly ProxyLimitCPU?: string | undefined;
+	readonly ProxyLimitMemory?: string | undefined;
+	readonly ProxyRequestCPU?: string | undefined;
+	readonly ProxyRequestMemory?: string | undefined;
 }
 export default {
 	ServiceMesh: ServiceMesh,

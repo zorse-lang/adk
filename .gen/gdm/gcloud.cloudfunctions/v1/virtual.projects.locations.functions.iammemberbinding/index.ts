@@ -10,88 +10,87 @@ export class VirtualProjectsLocationsFunctionsIamMemberBinding
 }
 export interface VirtualProjectsLocationsFunctionsIamMemberBindingComponentOutputs {}
 export interface VirtualProjectsLocationsFunctionsIamMemberBindingComponentInputs {
-	readonly auditConfigs?: AuditConfig[] | undefined;
-	readonly bindings?: Binding[] | undefined;
-	readonly etag?: string | undefined;
+	readonly auditConfigs?: AuditConfig[];
+	readonly bindings?: Binding[];
+	readonly etag?: string;
 	readonly policy: Policy;
 	readonly resource: string;
-	readonly rules?: Rule[] | undefined;
-	readonly updateMask?: string | undefined;
-	readonly version?: number | undefined;
-	readonly type: string;
+	readonly rules?: Rule[];
+	readonly updateMask?: string;
+	readonly version?: number;
 	readonly name: string;
 }
 export interface AuditConfig {
-	readonly auditLogConfigs?: AuditLogConfig[] | undefined;
-	readonly service?: string | undefined;
+	readonly auditLogConfigs?: AuditLogConfig[];
+	readonly service?: string;
 }
 export interface AuditLogConfig {
-	readonly exemptedMembers?: string[] | undefined;
-	readonly ignoreChildExemptions?: boolean | undefined;
-	readonly logType?: string | undefined;
+	readonly exemptedMembers?: string[];
+	readonly ignoreChildExemptions?: boolean;
+	readonly logType?: string;
 }
 export interface AuthorizationLoggingOptions {
-	readonly permissionType?: string | undefined;
+	readonly permissionType?: string;
 }
 export interface Binding {
-	readonly bindingId?: string | undefined;
-	readonly condition?: Expr | undefined;
-	readonly members?: string[] | undefined;
-	readonly role?: string | undefined;
+	readonly bindingId?: string;
+	readonly condition?: Expr;
+	readonly members?: string[];
+	readonly role?: string;
 }
 export interface CloudAuditOptions {
-	readonly authorizationLoggingOptions?: AuthorizationLoggingOptions | undefined;
-	readonly logName?: string | undefined;
+	readonly authorizationLoggingOptions?: AuthorizationLoggingOptions;
+	readonly logName?: string;
 }
 export interface Condition {
-	readonly iam?: string | undefined;
-	readonly op?: string | undefined;
-	readonly svc?: string | undefined;
-	readonly sys?: string | undefined;
-	readonly values?: string[] | undefined;
+	readonly iam?: string;
+	readonly op?: string;
+	readonly svc?: string;
+	readonly sys?: string;
+	readonly values?: string[];
 }
 export interface CounterOptions {
-	readonly customFields?: CustomField[] | undefined;
-	readonly field?: string | undefined;
-	readonly metric?: string | undefined;
+	readonly customFields?: CustomField[];
+	readonly field?: string;
+	readonly metric?: string;
 }
 export interface CustomField {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface DataAccessOptions {
-	readonly logMode?: string | undefined;
+	readonly logMode?: string;
 }
 export interface Expr {
-	readonly description?: string | undefined;
-	readonly expression?: string | undefined;
-	readonly location?: string | undefined;
-	readonly title?: string | undefined;
+	readonly description?: string;
+	readonly expression?: string;
+	readonly location?: string;
+	readonly title?: string;
 }
 export interface LogConfig {
-	readonly cloudAudit?: CloudAuditOptions | undefined;
-	readonly counter?: CounterOptions | undefined;
-	readonly dataAccess?: DataAccessOptions | undefined;
+	readonly cloudAudit?: CloudAuditOptions;
+	readonly counter?: CounterOptions;
+	readonly dataAccess?: DataAccessOptions;
 }
 export interface Policy {
-	readonly auditConfigs?: AuditConfig[] | undefined;
-	readonly bindings?: Binding[] | undefined;
-	readonly etag?: string | undefined;
-	readonly rules?: Rule[] | undefined;
-	readonly version?: number | undefined;
+	readonly auditConfigs?: AuditConfig[];
+	readonly bindings?: Binding[];
+	readonly etag?: string;
+	readonly rules?: Rule[];
+	readonly version?: number;
 }
 export interface Rule {
 	readonly action: string;
-	readonly conditions?: Condition[] | undefined;
-	readonly description?: string | undefined;
-	readonly in?: string[] | undefined;
-	readonly logConfig?: LogConfig[] | undefined;
-	readonly notIn?: string[] | undefined;
-	readonly permissions?: string[] | undefined;
+	readonly conditions?: Condition[];
+	readonly description?: string;
+	readonly in?: string[];
+	readonly logConfig?: LogConfig[];
+	readonly notIn?: string[];
+	readonly permissions?: string[];
 }
 export interface SetIamPolicyRequest {
 	readonly policy: Policy;
-	readonly updateMask?: string | undefined;
+	readonly updateMask?: string;
 }
 export default {
 	VirtualProjectsLocationsFunctionsIamMemberBinding: VirtualProjectsLocationsFunctionsIamMemberBinding,

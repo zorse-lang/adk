@@ -15,7 +15,7 @@ export interface connectorsComponentOutputs {
 }
 export interface connectorsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConnectorSettingProperties | undefined;
+	readonly properties?: ConnectorSettingProperties;
 }
 export class secureScores extends ArmResource<secureScoresComponentInputs> implements secureScoresComponentOutputs {
 	constructor(entity: ADKEntity, options: secureScoresComponentInputs) {
@@ -32,7 +32,7 @@ export interface secureScoresComponentOutputs {
 }
 export interface secureScoresComponentInputs {
 	readonly name: string;
-	readonly properties?: SecureScoreItemProperties | undefined;
+	readonly properties?: SecureScoreItemProperties;
 }
 export class securityContacts
 	extends ArmResource<securityContactsComponentInputs>
@@ -52,62 +52,59 @@ export interface securityContactsComponentOutputs {
 }
 export interface securityContactsComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityContactProperties | undefined;
+	readonly properties?: SecurityContactProperties;
 }
 export interface AuthenticationDetailsProperties {
-	readonly authenticationProvisioningState?: ("Expired" | "IncorrectPolicy" | "Invalid" | "Valid") | undefined;
+	readonly authenticationProvisioningState?: "Expired" | "IncorrectPolicy" | "Invalid" | "Valid";
 	readonly grantedPermissions?:
-		| (
-				| "AWS::AWSSecurityHubReadOnlyAccess"
-				| "AWS::AmazonSSMAutomationRole"
-				| "AWS::SecurityAudit"
-				| "GCP::Security Center Admin Viewer"[]
-		  )
-		| undefined;
+		| "AWS::AWSSecurityHubReadOnlyAccess"
+		| "AWS::AmazonSSMAutomationRole"
+		| "AWS::SecurityAudit"
+		| "GCP::Security Center Admin Viewer"[];
 }
 export interface ConnectorSettingProperties {
-	readonly authenticationDetails?: AuthenticationDetailsProperties | undefined;
-	readonly hybridComputeSettings?: HybridComputeSettingsProperties | undefined;
+	readonly authenticationDetails?: AuthenticationDetailsProperties;
+	readonly hybridComputeSettings?: HybridComputeSettingsProperties;
 }
 export interface HybridComputeSettingsProperties {
 	readonly autoProvision: "Off" | "On";
-	readonly hybridComputeProvisioningState?: ("Expired" | "Invalid" | "Valid") | undefined;
-	readonly proxyServer?: ProxyServerProperties | undefined;
-	readonly region?: string | undefined;
-	readonly resourceGroupName?: string | undefined;
-	readonly servicePrincipal?: ServicePrincipalProperties | undefined;
+	readonly hybridComputeProvisioningState?: "Expired" | "Invalid" | "Valid";
+	readonly proxyServer?: ProxyServerProperties;
+	readonly region?: string;
+	readonly resourceGroupName?: string;
+	readonly servicePrincipal?: ServicePrincipalProperties;
 }
 export interface ProxyServerProperties {
-	readonly ip?: string | undefined;
-	readonly port?: string | undefined;
+	readonly ip?: string;
+	readonly port?: string;
 }
 export interface ScoreDetails {
-	readonly current?: number | undefined;
-	readonly max?: number | undefined;
-	readonly percentage?: number | undefined;
+	readonly current?: number;
+	readonly max?: number;
+	readonly percentage?: number;
 }
 export interface SecureScoreItemProperties {
-	readonly displayName?: string | undefined;
-	readonly score?: ScoreDetails | undefined;
-	readonly weight?: number | undefined;
+	readonly displayName?: string;
+	readonly score?: ScoreDetails;
+	readonly weight?: number;
 }
 export interface SecurityContactProperties {
-	readonly alertNotifications?: SecurityContactPropertiesAlertNotifications | undefined;
-	readonly emails?: string | undefined;
-	readonly notificationsByRole?: SecurityContactPropertiesNotificationsByRole | undefined;
-	readonly phone?: string | undefined;
+	readonly alertNotifications?: SecurityContactPropertiesAlertNotifications;
+	readonly emails?: string;
+	readonly notificationsByRole?: SecurityContactPropertiesNotificationsByRole;
+	readonly phone?: string;
 }
 export interface SecurityContactPropertiesAlertNotifications {
-	readonly minimalSeverity?: ("High" | "Low" | "Medium") | undefined;
-	readonly state?: ("Off" | "On") | undefined;
+	readonly minimalSeverity?: "High" | "Low" | "Medium";
+	readonly state?: "Off" | "On";
 }
 export interface SecurityContactPropertiesNotificationsByRole {
-	readonly roles?: ("AccountAdmin" | "Contributor" | "Owner" | "ServiceAdmin"[]) | undefined;
-	readonly state?: ("Off" | "On") | undefined;
+	readonly roles?: "AccountAdmin" | "Contributor" | "Owner" | "ServiceAdmin"[];
+	readonly state?: "Off" | "On";
 }
 export interface ServicePrincipalProperties {
-	readonly applicationId?: string | undefined;
-	readonly secret?: string | undefined;
+	readonly applicationId?: string;
+	readonly secret?: string;
 }
 export default {
 	connectors: connectors,

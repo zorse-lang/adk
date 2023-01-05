@@ -27,10 +27,10 @@ export interface SlackChannelConfigurationComponentInputs {
 	readonly ChannelRoleArn: string;
 	readonly NotifyOnCaseSeverity: string;
 	readonly TeamId: string;
-	readonly ChannelName?: (string | undefined) | undefined;
-	readonly NotifyOnAddCorrespondenceToCase?: (boolean | undefined) | undefined;
-	readonly NotifyOnCreateOrReopenCase?: (boolean | undefined) | undefined;
-	readonly NotifyOnResolveCase?: (boolean | undefined) | undefined;
+	readonly ChannelName?: string | undefined;
+	readonly NotifyOnAddCorrespondenceToCase?: boolean | undefined;
+	readonly NotifyOnCreateOrReopenCase?: boolean | undefined;
+	readonly NotifyOnResolveCase?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class SlackWorkspaceConfiguration
@@ -44,7 +44,7 @@ export class SlackWorkspaceConfiguration
 export interface SlackWorkspaceConfigurationComponentOutputs {}
 export interface SlackWorkspaceConfigurationComponentInputs {
 	readonly TeamId: string;
-	readonly VersionId?: (string | undefined) | undefined;
+	readonly VersionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export default {

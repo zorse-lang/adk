@@ -17,12 +17,12 @@ export interface reservationOrdersComponentOutputs {
 	readonly type: "Microsoft.Capacity/reservationOrders";
 }
 export interface reservationOrdersComponentInputs {
-	readonly etag?: number | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: number;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PurchaseRequestPropertiesOrReservationOrderProperties | undefined;
-	readonly sku?: SkuName | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PurchaseRequestPropertiesOrReservationOrderProperties;
+	readonly sku?: SkuName;
+	readonly systemData?: SystemData;
 }
 export class reservationOrders_reservations
 	extends ArmResource<reservationOrders_reservationsComponentInputs>
@@ -41,288 +41,270 @@ export interface reservationOrders_reservationsComponentOutputs {
 	readonly type: "Microsoft.Capacity/reservationOrders/reservations";
 }
 export interface reservationOrders_reservationsComponentInputs {
-	readonly etag?: number | undefined;
-	readonly kind?: "Microsoft.Compute" | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: number;
+	readonly kind?: "Microsoft.Compute";
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ReservationsProperties | undefined;
-	readonly sku?: SkuName | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ReservationsProperties;
+	readonly sku?: SkuName;
+	readonly systemData?: SystemData;
 }
 export interface ExtendedStatusInfo {
-	readonly message?: string | undefined;
+	readonly message?: string;
 	readonly statusCode?:
-		| (
-				| "Active"
-				| "Expired"
-				| "Merged"
-				| "None"
-				| "PaymentInstrumentError"
-				| "Pending"
-				| "Processing"
-				| "PurchaseError"
-				| "Split"
-				| "Succeeded"
-		  )
-		| undefined;
+		| "Active"
+		| "Expired"
+		| "Merged"
+		| "None"
+		| "PaymentInstrumentError"
+		| "Pending"
+		| "Processing"
+		| "PurchaseError"
+		| "Split"
+		| "Succeeded";
 }
 export interface PaymentDetail {
-	readonly billingAccount?: string | undefined;
-	readonly billingCurrencyTotal?: Price | undefined;
-	readonly dueDate?: string | undefined;
-	readonly extendedStatusInfo?: ExtendedStatusInfo | undefined;
-	readonly paymentDate?: string | undefined;
-	readonly pricingCurrencyTotal?: Price | undefined;
-	readonly status?: ("Cancelled" | "Failed" | "Scheduled" | "Succeeded") | undefined;
+	readonly billingAccount?: string;
+	readonly billingCurrencyTotal?: Price;
+	readonly dueDate?: string;
+	readonly extendedStatusInfo?: ExtendedStatusInfo;
+	readonly paymentDate?: string;
+	readonly pricingCurrencyTotal?: Price;
+	readonly status?: "Cancelled" | "Failed" | "Scheduled" | "Succeeded";
 }
 export interface Price {
-	readonly amount?: number | undefined;
-	readonly currencyCode?: string | undefined;
+	readonly amount?: number;
+	readonly currencyCode?: string;
 }
 export interface PurchaseRequest {
-	readonly location?: string | undefined;
-	readonly properties?: PurchaseRequestProperties | undefined;
-	readonly sku?: SkuName | undefined;
+	readonly location?: string;
+	readonly properties?: PurchaseRequestProperties;
+	readonly sku?: SkuName;
 }
 export interface PurchaseRequestProperties {
-	readonly appliedScopes?: string[] | undefined;
-	readonly appliedScopeType?: ("Shared" | "Single") | undefined;
-	readonly billingPlan?: ("Monthly" | "Upfront") | undefined;
-	readonly billingScopeId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly quantity?: number | undefined;
-	readonly renew?: boolean | undefined;
-	readonly reservedResourceProperties?: PurchaseRequestPropertiesReservedResourceProperties | undefined;
+	readonly appliedScopes?: string[];
+	readonly appliedScopeType?: "Shared" | "Single";
+	readonly billingPlan?: "Monthly" | "Upfront";
+	readonly billingScopeId?: string;
+	readonly displayName?: string;
+	readonly quantity?: number;
+	readonly renew?: boolean;
+	readonly reservedResourceProperties?: PurchaseRequestPropertiesReservedResourceProperties;
 	readonly reservedResourceType?:
-		| (
-				| "AVS"
-				| "AppService"
-				| "AzureDataExplorer"
-				| "AzureFiles"
-				| "BlockBlob"
-				| "CosmosDb"
-				| "DataFactory"
-				| "Databricks"
-				| "DedicatedHost"
-				| "ManagedDisk"
-				| "MariaDb"
-				| "MySql"
-				| "NetAppStorage"
-				| "PostgreSql"
-				| "RedHat"
-				| "RedHatOsa"
-				| "RedisCache"
-				| "SapHana"
-				| "SqlAzureHybridBenefit"
-				| "SqlDataWarehouse"
-				| "SqlDatabases"
-				| "SqlEdge"
-				| "SuseLinux"
-				| "VMwareCloudSimple"
-				| "VirtualMachines"
-		  )
-		| undefined;
-	readonly term?: ("P1Y" | "P3Y" | "P5Y") | undefined;
+		| "AVS"
+		| "AppService"
+		| "AzureDataExplorer"
+		| "AzureFiles"
+		| "BlockBlob"
+		| "CosmosDb"
+		| "DataFactory"
+		| "Databricks"
+		| "DedicatedHost"
+		| "ManagedDisk"
+		| "MariaDb"
+		| "MySql"
+		| "NetAppStorage"
+		| "PostgreSql"
+		| "RedHat"
+		| "RedHatOsa"
+		| "RedisCache"
+		| "SapHana"
+		| "SqlAzureHybridBenefit"
+		| "SqlDataWarehouse"
+		| "SqlDatabases"
+		| "SqlEdge"
+		| "SuseLinux"
+		| "VMwareCloudSimple"
+		| "VirtualMachines";
+	readonly term?: "P1Y" | "P3Y" | "P5Y";
 }
 export interface PurchaseRequestPropertiesOrReservationOrderProperties {
-	readonly appliedScopes?: string[] | undefined;
-	readonly appliedScopeType?: ("Shared" | "Single") | undefined;
-	readonly billingPlan?: ("Monthly" | "Upfront") | undefined;
-	readonly billingScopeId?: string | undefined;
-	readonly createdDateTime?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly expiryDate?: string | undefined;
-	readonly originalQuantity?: number | undefined;
-	readonly planInformation?: ReservationOrderBillingPlanInformation | undefined;
+	readonly appliedScopes?: string[];
+	readonly appliedScopeType?: "Shared" | "Single";
+	readonly billingPlan?: "Monthly" | "Upfront";
+	readonly billingScopeId?: string;
+	readonly createdDateTime?: string;
+	readonly displayName?: string;
+	readonly expiryDate?: string;
+	readonly originalQuantity?: number;
+	readonly planInformation?: ReservationOrderBillingPlanInformation;
 	readonly provisioningState?:
-		| (
-				| "BillingFailed"
-				| "Cancelled"
-				| "ConfirmedBilling"
-				| "ConfirmedResourceHold"
-				| "Created"
-				| "Creating"
-				| "Expired"
-				| "Failed"
-				| "Merged"
-				| "PendingBilling"
-				| "PendingResourceHold"
-				| "Split"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly quantity?: number | undefined;
-	readonly renew?: boolean | undefined;
-	readonly requestDateTime?: string | undefined;
-	readonly reservations?: ReservationResponse[] | undefined;
-	readonly reservedResourceProperties?: PurchaseRequestPropertiesReservedResourceProperties | undefined;
+		| "BillingFailed"
+		| "Cancelled"
+		| "ConfirmedBilling"
+		| "ConfirmedResourceHold"
+		| "Created"
+		| "Creating"
+		| "Expired"
+		| "Failed"
+		| "Merged"
+		| "PendingBilling"
+		| "PendingResourceHold"
+		| "Split"
+		| "Succeeded";
+	readonly quantity?: number;
+	readonly renew?: boolean;
+	readonly requestDateTime?: string;
+	readonly reservations?: ReservationResponse[];
+	readonly reservedResourceProperties?: PurchaseRequestPropertiesReservedResourceProperties;
 	readonly reservedResourceType?:
-		| (
-				| "AVS"
-				| "AppService"
-				| "AzureDataExplorer"
-				| "AzureFiles"
-				| "BlockBlob"
-				| "CosmosDb"
-				| "DataFactory"
-				| "Databricks"
-				| "DedicatedHost"
-				| "ManagedDisk"
-				| "MariaDb"
-				| "MySql"
-				| "NetAppStorage"
-				| "PostgreSql"
-				| "RedHat"
-				| "RedHatOsa"
-				| "RedisCache"
-				| "SapHana"
-				| "SqlAzureHybridBenefit"
-				| "SqlDataWarehouse"
-				| "SqlDatabases"
-				| "SqlEdge"
-				| "SuseLinux"
-				| "VMwareCloudSimple"
-				| "VirtualMachines"
-		  )
-		| undefined;
-	readonly term?: ("P1Y" | "P3Y" | "P5Y") | undefined;
+		| "AVS"
+		| "AppService"
+		| "AzureDataExplorer"
+		| "AzureFiles"
+		| "BlockBlob"
+		| "CosmosDb"
+		| "DataFactory"
+		| "Databricks"
+		| "DedicatedHost"
+		| "ManagedDisk"
+		| "MariaDb"
+		| "MySql"
+		| "NetAppStorage"
+		| "PostgreSql"
+		| "RedHat"
+		| "RedHatOsa"
+		| "RedisCache"
+		| "SapHana"
+		| "SqlAzureHybridBenefit"
+		| "SqlDataWarehouse"
+		| "SqlDatabases"
+		| "SqlEdge"
+		| "SuseLinux"
+		| "VMwareCloudSimple"
+		| "VirtualMachines";
+	readonly term?: "P1Y" | "P3Y" | "P5Y";
 }
 export interface PurchaseRequestPropertiesReservedResourceProperties {
-	readonly instanceFlexibility?: ("Off" | "On") | undefined;
+	readonly instanceFlexibility?: "Off" | "On";
 }
 export interface RenewPropertiesResponse {
-	readonly billingCurrencyTotal?: RenewPropertiesResponseBillingCurrencyTotal | undefined;
-	readonly pricingCurrencyTotal?: RenewPropertiesResponsePricingCurrencyTotal | undefined;
-	readonly purchaseProperties?: PurchaseRequest | undefined;
+	readonly billingCurrencyTotal?: RenewPropertiesResponseBillingCurrencyTotal;
+	readonly pricingCurrencyTotal?: RenewPropertiesResponsePricingCurrencyTotal;
+	readonly purchaseProperties?: PurchaseRequest;
 }
 export interface RenewPropertiesResponseBillingCurrencyTotal {
-	readonly amount?: number | undefined;
-	readonly currencyCode?: string | undefined;
+	readonly amount?: number;
+	readonly currencyCode?: string;
 }
 export interface RenewPropertiesResponsePricingCurrencyTotal {
-	readonly amount?: number | undefined;
-	readonly currencyCode?: string | undefined;
+	readonly amount?: number;
+	readonly currencyCode?: string;
 }
 export interface ReservationMergeProperties {
-	readonly mergeDestination?: string | undefined;
-	readonly mergeSources?: string[] | undefined;
+	readonly mergeDestination?: string;
+	readonly mergeSources?: string[];
 }
 export interface ReservationOrderBillingPlanInformation {
-	readonly nextPaymentDueDate?: string | undefined;
-	readonly pricingCurrencyTotal?: Price | undefined;
-	readonly startDate?: string | undefined;
-	readonly transactions?: PaymentDetail[] | undefined;
+	readonly nextPaymentDueDate?: string;
+	readonly pricingCurrencyTotal?: Price;
+	readonly startDate?: string;
+	readonly transactions?: PaymentDetail[];
 }
 export interface ReservationResponse {
-	readonly etag?: number | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: "Microsoft.Compute" | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ReservationsProperties | undefined;
-	readonly sku?: SkuName | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: number;
+	readonly id?: string;
+	readonly kind?: "Microsoft.Compute";
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: ReservationsProperties;
+	readonly sku?: SkuName;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface ReservationSplitProperties {
-	readonly splitDestinations?: string[] | undefined;
-	readonly splitSource?: string | undefined;
+	readonly splitDestinations?: string[];
+	readonly splitSource?: string;
 }
 export interface ReservationsProperties {
-	readonly appliedScopes?: string[] | undefined;
-	readonly appliedScopeType?: ("Shared" | "Single") | undefined;
-	readonly archived?: boolean | undefined;
-	readonly billingPlan?: ("Monthly" | "Upfront") | undefined;
-	readonly billingScopeId?: string | undefined;
-	readonly capabilities?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly displayProvisioningState?: string | undefined;
-	readonly effectiveDateTime?: string | undefined;
-	readonly expiryDate?: string | undefined;
-	readonly extendedStatusInfo?: ExtendedStatusInfo | undefined;
-	readonly instanceFlexibility?: ("Off" | "On") | undefined;
-	readonly lastUpdatedDateTime?: string | undefined;
-	readonly mergeProperties?: ReservationMergeProperties | undefined;
+	readonly appliedScopes?: string[];
+	readonly appliedScopeType?: "Shared" | "Single";
+	readonly archived?: boolean;
+	readonly billingPlan?: "Monthly" | "Upfront";
+	readonly billingScopeId?: string;
+	readonly capabilities?: string;
+	readonly displayName?: string;
+	readonly displayProvisioningState?: string;
+	readonly effectiveDateTime?: string;
+	readonly expiryDate?: string;
+	readonly extendedStatusInfo?: ExtendedStatusInfo;
+	readonly instanceFlexibility?: "Off" | "On";
+	readonly lastUpdatedDateTime?: string;
+	readonly mergeProperties?: ReservationMergeProperties;
 	readonly provisioningState?:
-		| (
-				| "BillingFailed"
-				| "Cancelled"
-				| "ConfirmedBilling"
-				| "ConfirmedResourceHold"
-				| "Created"
-				| "Creating"
-				| "Expired"
-				| "Failed"
-				| "Merged"
-				| "PendingBilling"
-				| "PendingResourceHold"
-				| "Split"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly provisioningSubState?: string | undefined;
-	readonly purchaseDate?: string | undefined;
-	readonly quantity?: number | undefined;
-	readonly renew?: boolean | undefined;
-	readonly renewDestination?: string | undefined;
-	readonly renewProperties?: RenewPropertiesResponse | undefined;
-	readonly renewSource?: string | undefined;
+		| "BillingFailed"
+		| "Cancelled"
+		| "ConfirmedBilling"
+		| "ConfirmedResourceHold"
+		| "Created"
+		| "Creating"
+		| "Expired"
+		| "Failed"
+		| "Merged"
+		| "PendingBilling"
+		| "PendingResourceHold"
+		| "Split"
+		| "Succeeded";
+	readonly provisioningSubState?: string;
+	readonly purchaseDate?: string;
+	readonly quantity?: number;
+	readonly renew?: boolean;
+	readonly renewDestination?: string;
+	readonly renewProperties?: RenewPropertiesResponse;
+	readonly renewSource?: string;
 	readonly reservedResourceType?:
-		| (
-				| "AVS"
-				| "AppService"
-				| "AzureDataExplorer"
-				| "AzureFiles"
-				| "BlockBlob"
-				| "CosmosDb"
-				| "DataFactory"
-				| "Databricks"
-				| "DedicatedHost"
-				| "ManagedDisk"
-				| "MariaDb"
-				| "MySql"
-				| "NetAppStorage"
-				| "PostgreSql"
-				| "RedHat"
-				| "RedHatOsa"
-				| "RedisCache"
-				| "SapHana"
-				| "SqlAzureHybridBenefit"
-				| "SqlDataWarehouse"
-				| "SqlDatabases"
-				| "SqlEdge"
-				| "SuseLinux"
-				| "VMwareCloudSimple"
-				| "VirtualMachines"
-		  )
-		| undefined;
-	readonly skuDescription?: string | undefined;
-	readonly splitProperties?: ReservationSplitProperties | undefined;
-	readonly term?: ("P1Y" | "P3Y" | "P5Y") | undefined;
-	readonly userFriendlyAppliedScopeType?: string | undefined;
-	readonly userFriendlyRenewState?: string | undefined;
-	readonly utilization?: ReservationsPropertiesUtilization | undefined;
+		| "AVS"
+		| "AppService"
+		| "AzureDataExplorer"
+		| "AzureFiles"
+		| "BlockBlob"
+		| "CosmosDb"
+		| "DataFactory"
+		| "Databricks"
+		| "DedicatedHost"
+		| "ManagedDisk"
+		| "MariaDb"
+		| "MySql"
+		| "NetAppStorage"
+		| "PostgreSql"
+		| "RedHat"
+		| "RedHatOsa"
+		| "RedisCache"
+		| "SapHana"
+		| "SqlAzureHybridBenefit"
+		| "SqlDataWarehouse"
+		| "SqlDatabases"
+		| "SqlEdge"
+		| "SuseLinux"
+		| "VMwareCloudSimple"
+		| "VirtualMachines";
+	readonly skuDescription?: string;
+	readonly splitProperties?: ReservationSplitProperties;
+	readonly term?: "P1Y" | "P3Y" | "P5Y";
+	readonly userFriendlyAppliedScopeType?: string;
+	readonly userFriendlyRenewState?: string;
+	readonly utilization?: ReservationsPropertiesUtilization;
 }
 export interface ReservationsPropertiesUtilization {
-	readonly aggregates?: ReservationUtilizationAggregates[] | undefined;
-	readonly trend?: string | undefined;
+	readonly aggregates?: ReservationUtilizationAggregates[];
+	readonly trend?: string;
 }
 export interface ReservationUtilizationAggregates {
-	readonly grain?: number | undefined;
-	readonly grainUnit?: string | undefined;
-	readonly value?: number | undefined;
-	readonly valueUnit?: string | undefined;
+	readonly grain?: number;
+	readonly grainUnit?: string;
+	readonly value?: number;
+	readonly valueUnit?: string;
 }
 export interface SkuName {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	reservationOrders: reservationOrders,

@@ -10,7 +10,6 @@ export class OrganizationsTimeSeries
 }
 export interface OrganizationsTimeSeriesComponentOutputs {}
 export interface OrganizationsTimeSeriesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

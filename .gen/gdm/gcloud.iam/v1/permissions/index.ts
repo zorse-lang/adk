@@ -7,7 +7,6 @@ export class Permissions extends GdmResource<PermissionsComponentInputs> impleme
 }
 export interface PermissionsComponentOutputs {}
 export interface PermissionsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

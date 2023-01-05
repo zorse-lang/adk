@@ -15,11 +15,11 @@ export interface locksComponentOutputs {
 }
 export interface locksComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagementLockProperties | undefined;
+	readonly properties?: ManagementLockProperties;
 }
 export interface ManagementLockProperties {
-	readonly level?: ("CanNotDelete" | "NotSpecified" | "ReadOnly") | undefined;
-	readonly notes?: string | undefined;
+	readonly level?: "CanNotDelete" | "NotSpecified" | "ReadOnly";
+	readonly notes?: string;
 }
 export default {
 	locks: locks,

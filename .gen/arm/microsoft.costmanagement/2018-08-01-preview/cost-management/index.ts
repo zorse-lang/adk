@@ -14,11 +14,11 @@ export interface connectorsComponentOutputs {
 	readonly type: "Microsoft.CostManagement/connectors";
 }
 export interface connectorsComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ConnectorProperties | undefined;
-	readonly tags?: ConnectorDefinitionTags | undefined;
+	readonly properties?: ConnectorProperties;
+	readonly tags?: ConnectorDefinitionTags;
 }
 export class reports extends ArmResource<reportsComponentInputs> implements reportsComponentOutputs {
 	constructor(entity: ADKEntity, options: reportsComponentInputs) {
@@ -35,33 +35,33 @@ export interface reportsComponentOutputs {
 }
 export interface reportsComponentInputs {
 	readonly name: string;
-	readonly properties?: ReportProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ReportProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ConnectorCollectionErrorInfo {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly errorStartTime?: string | undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
+	readonly errorStartTime?: string;
 }
 export interface ConnectorCollectionInfo {
-	readonly error?: ConnectorCollectionErrorInfo | undefined;
-	readonly lastRun?: string | undefined;
-	readonly lastUpdated?: string | undefined;
-	readonly sourceLastUpdated?: string | undefined;
+	readonly error?: ConnectorCollectionErrorInfo;
+	readonly lastRun?: string;
+	readonly lastUpdated?: string;
+	readonly sourceLastUpdated?: string;
 }
 export interface ConnectorDefinitionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ConnectorProperties {
-	readonly collection?: ConnectorCollectionInfo | undefined;
-	readonly createdOn?: string | undefined;
-	readonly credentialsKey?: string | undefined;
-	readonly credentialsSecret?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly modifiedOn?: string | undefined;
-	readonly providerAccountId?: string | undefined;
-	readonly reportId?: string | undefined;
-	readonly status?: ("active" | "error" | "suspended") | undefined;
+	readonly collection?: ConnectorCollectionInfo;
+	readonly createdOn?: string;
+	readonly credentialsKey?: string;
+	readonly credentialsSecret?: string;
+	readonly displayName?: string;
+	readonly modifiedOn?: string;
+	readonly providerAccountId?: string;
+	readonly reportId?: string;
+	readonly status?: "active" | "error" | "suspended";
 }
 export interface ReportAggregation {
 	readonly function: "Sum";
@@ -73,38 +73,38 @@ export interface ReportComparisonExpression {
 	readonly values: string[];
 }
 export interface ReportDataset {
-	readonly aggregation?: ReportDatasetAggregation | undefined;
-	readonly configuration?: ReportDatasetConfiguration | undefined;
-	readonly filter?: ReportFilter | undefined;
-	readonly granularity?: ("Daily" | "Hourly") | undefined;
-	readonly grouping?: ReportGrouping[] | undefined;
+	readonly aggregation?: ReportDatasetAggregation;
+	readonly configuration?: ReportDatasetConfiguration;
+	readonly filter?: ReportFilter;
+	readonly granularity?: "Daily" | "Hourly";
+	readonly grouping?: ReportGrouping[];
 }
 export interface ReportDatasetAggregation {
-	readonly "[ key: string ]"?: ReportAggregation | undefined;
+	readonly [key: string]: ReportAggregation;
 }
 export interface ReportDatasetConfiguration {
-	readonly columns?: string[] | undefined;
+	readonly columns?: string[];
 }
 export interface ReportDefinition {
-	readonly dataset?: ReportDataset | undefined;
+	readonly dataset?: ReportDataset;
 	readonly timeframe: "Custom" | "MonthToDate" | "WeekToDate";
-	readonly timePeriod?: ReportTimePeriod | undefined;
+	readonly timePeriod?: ReportTimePeriod;
 	readonly type: "Usage";
 }
 export interface ReportDeliveryDestination {
 	readonly container: string;
 	readonly resourceId: string;
-	readonly rootFolderPath?: string | undefined;
+	readonly rootFolderPath?: string;
 }
 export interface ReportDeliveryInfo {
 	readonly destination: ReportDeliveryDestination;
 }
 export interface ReportFilter {
-	readonly and?: ReportFilter[] | undefined;
-	readonly dimension?: ReportComparisonExpression | undefined;
-	readonly not?: ReportFilter | undefined;
-	readonly or?: ReportFilter[] | undefined;
-	readonly tag?: ReportComparisonExpression | undefined;
+	readonly and?: ReportFilter[];
+	readonly dimension?: ReportComparisonExpression;
+	readonly not?: ReportFilter;
+	readonly or?: ReportFilter[];
+	readonly tag?: ReportComparisonExpression;
 }
 export interface ReportGrouping {
 	readonly name: string;
@@ -113,24 +113,24 @@ export interface ReportGrouping {
 export interface ReportProperties {
 	readonly definition: ReportDefinition;
 	readonly deliveryInfo: ReportDeliveryInfo;
-	readonly format?: "Csv" | undefined;
-	readonly schedule?: ReportSchedule | undefined;
+	readonly format?: "Csv";
+	readonly schedule?: ReportSchedule;
 }
 export interface ReportRecurrencePeriod {
 	readonly from: string;
-	readonly to?: string | undefined;
+	readonly to?: string;
 }
 export interface ReportSchedule {
 	readonly recurrence: "Annually" | "Daily" | "Monthly" | "Weekly";
-	readonly recurrencePeriod?: ReportRecurrencePeriod | undefined;
-	readonly status?: ("Active" | "Inactive") | undefined;
+	readonly recurrencePeriod?: ReportRecurrencePeriod;
+	readonly status?: "Active" | "Inactive";
 }
 export interface ReportTimePeriod {
 	readonly from: string;
 	readonly to: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	connectors: connectors,

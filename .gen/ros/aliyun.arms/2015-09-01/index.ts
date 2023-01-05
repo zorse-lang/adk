@@ -11,12 +11,12 @@ export interface AlertContactComponentOutputs {
 }
 export interface AlertContactComponentInputs {
 	readonly ContactName: string;
-	readonly DingRobotWebhookUrl?: (string | undefined) | undefined;
-	readonly Email?: (string | undefined) | undefined;
-	readonly PhoneNum?: (string | undefined) | undefined;
-	readonly ProxyUserId?: (string | undefined) | undefined;
-	readonly RegionId?: (string | undefined) | undefined;
-	readonly SystemNoc?: (boolean | undefined) | undefined;
+	readonly DingRobotWebhookUrl?: string | undefined;
+	readonly Email?: string | undefined;
+	readonly PhoneNum?: string | undefined;
+	readonly ProxyUserId?: string | undefined;
+	readonly RegionId?: string | undefined;
+	readonly SystemNoc?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class AlertContactGroup
@@ -34,8 +34,8 @@ export interface AlertContactGroupComponentOutputs {
 export interface AlertContactGroupComponentInputs {
 	readonly ContactGroupName: string;
 	readonly ContactIds: number[];
-	readonly ProxyUserId?: (string | undefined) | undefined;
-	readonly RegionId?: (string | undefined) | undefined;
+	readonly ProxyUserId?: string | undefined;
+	readonly RegionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class RetcodeApp extends RosResource<RetcodeAppComponentInputs> implements RetcodeAppComponentOutputs {

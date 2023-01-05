@@ -14,10 +14,10 @@ export interface labaccountsComponentOutputs {
 	readonly type: "Microsoft.LabServices/labaccounts";
 }
 export interface labaccountsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: LabAccountProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: LabAccountProperties;
+	readonly tags?: ResourceTags;
 }
 export class labaccounts_galleryimages
 	extends ArmResource<labaccounts_galleryimagesComponentInputs>
@@ -36,10 +36,10 @@ export interface labaccounts_galleryimagesComponentOutputs {
 	readonly type: "Microsoft.LabServices/labaccounts/galleryimages";
 }
 export interface labaccounts_galleryimagesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: GalleryImageProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: GalleryImageProperties;
+	readonly tags?: ResourceTags;
 }
 export class labaccounts_labs
 	extends ArmResource<labaccounts_labsComponentInputs>
@@ -58,10 +58,10 @@ export interface labaccounts_labsComponentOutputs {
 	readonly type: "Microsoft.LabServices/labaccounts/labs";
 }
 export interface labaccounts_labsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: LabProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: LabProperties;
+	readonly tags?: ResourceTags;
 }
 export class labaccounts_labs_environmentsettings
 	extends ArmResource<labaccounts_labs_environmentsettingsComponentInputs>
@@ -80,10 +80,10 @@ export interface labaccounts_labs_environmentsettingsComponentOutputs {
 	readonly type: "Microsoft.LabServices/labaccounts/labs/environmentsettings";
 }
 export interface labaccounts_labs_environmentsettingsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: EnvironmentSettingProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: EnvironmentSettingProperties;
+	readonly tags?: ResourceTags;
 }
 export class labaccounts_labs_environmentsettings_environments
 	extends ArmResource<labaccounts_labs_environmentsettings_environmentsComponentInputs>
@@ -108,10 +108,10 @@ export interface labaccounts_labs_environmentsettings_environmentsComponentOutpu
 	readonly type: "Microsoft.LabServices/labaccounts/labs/environmentsettings/environments";
 }
 export interface labaccounts_labs_environmentsettings_environmentsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: EnvironmentProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: EnvironmentProperties;
+	readonly tags?: ResourceTags;
 }
 export class labaccounts_labs_users
 	extends ArmResource<labaccounts_labs_usersComponentInputs>
@@ -130,10 +130,10 @@ export interface labaccounts_labs_usersComponentOutputs {
 	readonly type: "Microsoft.LabServices/labaccounts/labs/users";
 }
 export interface labaccounts_labs_usersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: UserProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: UserProperties;
+	readonly tags?: ResourceTags;
 }
 export function listEnvironments(resource: ArmResource, input: ListEnvironmentsPayload): ListEnvironmentsResponse {
 	if (resource.apiVersion !== "2018-10-15") {
@@ -154,172 +154,172 @@ export function listLabs(resource: ArmResource): ListLabsResponse {
 	throw new Error("not implemented");
 }
 export interface EnvironmentDetails {
-	readonly description?: string | undefined;
-	readonly environmentState?: string | undefined;
-	readonly id?: string | undefined;
-	readonly latestOperationResult?: LatestOperationResult | undefined;
-	readonly name?: string | undefined;
-	readonly passwordLastReset?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly totalUsage?: string | undefined;
-	readonly virtualMachineDetails?: VirtualMachineDetails | undefined;
+	readonly description?: string;
+	readonly environmentState?: string;
+	readonly id?: string;
+	readonly latestOperationResult?: LatestOperationResult;
+	readonly name?: string;
+	readonly passwordLastReset?: string;
+	readonly provisioningState?: string;
+	readonly totalUsage?: string;
+	readonly virtualMachineDetails?: VirtualMachineDetails;
 }
 export interface EnvironmentProperties {
-	readonly claimedByUserName?: string | undefined;
-	readonly claimedByUserObjectId?: string | undefined;
-	readonly claimedByUserPrincipalId?: string | undefined;
-	readonly isClaimed?: boolean | undefined;
-	readonly lastKnownPowerState?: string | undefined;
-	readonly latestOperationResult?: LatestOperationResult | undefined;
-	readonly networkInterface?: NetworkInterface | undefined;
-	readonly passwordLastReset?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceSets?: ResourceSet | undefined;
-	readonly totalUsage?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
+	readonly claimedByUserName?: string;
+	readonly claimedByUserObjectId?: string;
+	readonly claimedByUserPrincipalId?: string;
+	readonly isClaimed?: boolean;
+	readonly lastKnownPowerState?: string;
+	readonly latestOperationResult?: LatestOperationResult;
+	readonly networkInterface?: NetworkInterface;
+	readonly passwordLastReset?: string;
+	readonly provisioningState?: string;
+	readonly resourceSets?: ResourceSet;
+	readonly totalUsage?: string;
+	readonly uniqueIdentifier?: string;
 }
 export interface EnvironmentSettingProperties {
-	readonly configurationState?: ("Completed" | "NotApplicable") | undefined;
-	readonly description?: string | undefined;
-	readonly lastChanged?: string | undefined;
-	readonly lastPublished?: string | undefined;
-	readonly latestOperationResult?: LatestOperationResult | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publishingState?: ("Draft" | "PublishFailed" | "Published" | "Publishing" | "Scaling") | undefined;
+	readonly configurationState?: "Completed" | "NotApplicable";
+	readonly description?: string;
+	readonly lastChanged?: string;
+	readonly lastPublished?: string;
+	readonly latestOperationResult?: LatestOperationResult;
+	readonly provisioningState?: string;
+	readonly publishingState?: "Draft" | "PublishFailed" | "Published" | "Publishing" | "Scaling";
 	readonly resourceSettings: ResourceSettings;
-	readonly title?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
+	readonly title?: string;
+	readonly uniqueIdentifier?: string;
 }
 export interface EnvironmentSize {
-	readonly maxPrice?: number | undefined;
-	readonly minMemory?: number | undefined;
-	readonly minNumberOfCores?: number | undefined;
-	readonly name?: ("Basic" | "Performance" | "Standard") | undefined;
-	readonly vmSizes?: SizeInfo[] | undefined;
+	readonly maxPrice?: number;
+	readonly minMemory?: number;
+	readonly minNumberOfCores?: number;
+	readonly name?: "Basic" | "Performance" | "Standard";
+	readonly vmSizes?: SizeInfo[];
 }
 export interface GalleryImageProperties {
-	readonly author?: string | undefined;
-	readonly createdDate?: string | undefined;
-	readonly description?: string | undefined;
-	readonly icon?: string | undefined;
-	readonly imageReference?: GalleryImageReference | undefined;
-	readonly isEnabled?: boolean | undefined;
-	readonly isOverride?: boolean | undefined;
-	readonly isPlanAuthorized?: boolean | undefined;
-	readonly latestOperationResult?: LatestOperationResult | undefined;
-	readonly planId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
+	readonly author?: string;
+	readonly createdDate?: string;
+	readonly description?: string;
+	readonly icon?: string;
+	readonly imageReference?: GalleryImageReference;
+	readonly isEnabled?: boolean;
+	readonly isOverride?: boolean;
+	readonly isPlanAuthorized?: boolean;
+	readonly latestOperationResult?: LatestOperationResult;
+	readonly planId?: string;
+	readonly provisioningState?: string;
+	readonly uniqueIdentifier?: string;
 }
 export interface GalleryImageReference {
-	readonly offer?: string | undefined;
-	readonly osType?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly sku?: string | undefined;
-	readonly version?: string | undefined;
+	readonly offer?: string;
+	readonly osType?: string;
+	readonly publisher?: string;
+	readonly sku?: string;
+	readonly version?: string;
 }
 export interface LabAccountProperties {
-	readonly enabledRegionSelection?: boolean | undefined;
-	readonly latestOperationResult?: LatestOperationResult | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly sizeConfiguration?: SizeConfigurationProperties | undefined;
-	readonly uniqueIdentifier?: string | undefined;
+	readonly enabledRegionSelection?: boolean;
+	readonly latestOperationResult?: LatestOperationResult;
+	readonly provisioningState?: string;
+	readonly sizeConfiguration?: SizeConfigurationProperties;
+	readonly uniqueIdentifier?: string;
 }
 export interface LabDetails {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly usageQuota?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly provisioningState?: string;
+	readonly usageQuota?: string;
 }
 export interface LabProperties {
-	readonly createdByObjectId?: string | undefined;
-	readonly createdByUserPrincipalName?: string | undefined;
-	readonly createdDate?: string | undefined;
-	readonly invitationCode?: string | undefined;
-	readonly latestOperationResult?: LatestOperationResult | undefined;
-	readonly maxUsersInLab?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
-	readonly usageQuota?: string | undefined;
-	readonly userAccessMode?: ("Open" | "Restricted") | undefined;
-	readonly userQuota?: number | undefined;
+	readonly createdByObjectId?: string;
+	readonly createdByUserPrincipalName?: string;
+	readonly createdDate?: string;
+	readonly invitationCode?: string;
+	readonly latestOperationResult?: LatestOperationResult;
+	readonly maxUsersInLab?: number;
+	readonly provisioningState?: string;
+	readonly uniqueIdentifier?: string;
+	readonly usageQuota?: string;
+	readonly userAccessMode?: "Open" | "Restricted";
+	readonly userQuota?: number;
 }
 export interface LatestOperationResult {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly httpMethod?: string | undefined;
-	readonly operationUrl?: string | undefined;
-	readonly requestUri?: string | undefined;
-	readonly status?: string | undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
+	readonly httpMethod?: string;
+	readonly operationUrl?: string;
+	readonly requestUri?: string;
+	readonly status?: string;
 }
 export interface ListEnvironmentsPayload {
-	readonly labId?: string | undefined;
+	readonly labId?: string;
 }
 export interface ListEnvironmentsResponse {
-	readonly environments?: EnvironmentDetails[] | undefined;
+	readonly environments?: EnvironmentDetails[];
 }
 export interface ListLabsResponse {
-	readonly labs?: LabDetails[] | undefined;
+	readonly labs?: LabDetails[];
 }
 export interface NetworkInterface {
-	readonly privateIpAddress?: string | undefined;
-	readonly rdpAuthority?: string | undefined;
-	readonly sshAuthority?: string | undefined;
-	readonly username?: string | undefined;
+	readonly privateIpAddress?: string;
+	readonly rdpAuthority?: string;
+	readonly sshAuthority?: string;
+	readonly username?: string;
 }
 export interface ReferenceVm {
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly userName: string;
-	readonly vmResourceId?: string | undefined;
-	readonly vmStateDetails?: VmStateDetails | undefined;
+	readonly vmResourceId?: string;
+	readonly vmStateDetails?: VmStateDetails;
 }
 export interface ResourceSet {
-	readonly resourceSettingId?: string | undefined;
-	readonly vmResourceId?: string | undefined;
+	readonly resourceSettingId?: string;
+	readonly vmResourceId?: string;
 }
 export interface ResourceSettings {
-	readonly cores?: number | undefined;
-	readonly galleryImageResourceId?: string | undefined;
-	readonly id?: string | undefined;
-	readonly imageName?: string | undefined;
+	readonly cores?: number;
+	readonly galleryImageResourceId?: string;
+	readonly id?: string;
+	readonly imageName?: string;
 	readonly referenceVm: ReferenceVm;
-	readonly size?: ("Basic" | "Performance" | "Standard") | undefined;
+	readonly size?: "Basic" | "Performance" | "Standard";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SizeConfigurationProperties {
-	readonly environmentSizes?: EnvironmentSize[] | undefined;
+	readonly environmentSizes?: EnvironmentSize[];
 }
 export interface SizeInfo {
-	readonly computeSize?: string | undefined;
-	readonly memory?: number | undefined;
-	readonly numberOfCores?: number | undefined;
-	readonly price?: number | undefined;
+	readonly computeSize?: string;
+	readonly memory?: number;
+	readonly numberOfCores?: number;
+	readonly price?: number;
 }
 export interface UserProperties {
-	readonly email?: string | undefined;
-	readonly familyName?: string | undefined;
-	readonly givenName?: string | undefined;
-	readonly latestOperationResult?: LatestOperationResult | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly totalUsage?: string | undefined;
-	readonly uniqueIdentifier?: string | undefined;
+	readonly email?: string;
+	readonly familyName?: string;
+	readonly givenName?: string;
+	readonly latestOperationResult?: LatestOperationResult;
+	readonly provisioningState?: string;
+	readonly tenantId?: string;
+	readonly totalUsage?: string;
+	readonly uniqueIdentifier?: string;
 }
 export interface VirtualMachineDetails {
-	readonly lastKnownPowerState?: string | undefined;
-	readonly privateIpAddress?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly rdpAuthority?: string | undefined;
-	readonly sshAuthority?: string | undefined;
-	readonly userName?: string | undefined;
+	readonly lastKnownPowerState?: string;
+	readonly privateIpAddress?: string;
+	readonly provisioningState?: string;
+	readonly rdpAuthority?: string;
+	readonly sshAuthority?: string;
+	readonly userName?: string;
 }
 export interface VmStateDetails {
-	readonly lastKnownPowerState?: string | undefined;
-	readonly powerState?: string | undefined;
-	readonly rdpAuthority?: string | undefined;
-	readonly sshAuthority?: string | undefined;
+	readonly lastKnownPowerState?: string;
+	readonly powerState?: string;
+	readonly rdpAuthority?: string;
+	readonly sshAuthority?: string;
 }
 export default {
 	labaccounts: labaccounts,

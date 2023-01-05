@@ -7,40 +7,39 @@ export class ProjectsLocationsInstancesShares
 	constructor(entity: ADKEntity, options: ProjectsLocationsInstancesSharesComponentInputs) {
 		super(entity, options.name, "file.v1beta1.ProjectsLocationsInstancesShares", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly state?: string | undefined;
+	public readonly createTime?: string;
+	public readonly state?: string;
 }
 export interface ProjectsLocationsInstancesSharesComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly state?: string | undefined;
+	readonly createTime?: string;
+	readonly state?: string;
 }
 export interface ProjectsLocationsInstancesSharesComponentInputs {
-	readonly capacityGb?: string | undefined;
-	readonly description?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly mountName?: string | undefined;
+	readonly capacityGb?: string;
+	readonly description?: string;
+	readonly labels?: { [P in string]: string };
+	readonly mountName?: string;
 	readonly name: string;
-	readonly nfsExportOptions?: NfsExportOptions[] | undefined;
+	readonly nfsExportOptions?: NfsExportOptions[];
 	readonly parent: string;
 	readonly shareId: string;
-	readonly type: string;
 }
 export interface NfsExportOptions {
-	readonly accessMode?: string | undefined;
-	readonly anonGid?: string | undefined;
-	readonly anonUid?: string | undefined;
-	readonly ipRanges?: string[] | undefined;
-	readonly squashMode?: string | undefined;
+	readonly accessMode?: string;
+	readonly anonGid?: string;
+	readonly anonUid?: string;
+	readonly ipRanges?: string[];
+	readonly squashMode?: string;
 }
 export interface Share {
-	readonly capacityGb?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly mountName?: string | undefined;
-	readonly name?: string | undefined;
-	readonly nfsExportOptions?: NfsExportOptions[] | undefined;
-	readonly state?: string | undefined;
+	readonly capacityGb?: string;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly labels?: { [P in string]: string };
+	readonly mountName?: string;
+	readonly name?: string;
+	readonly nfsExportOptions?: NfsExportOptions[];
+	readonly state?: string;
 }
 export default {
 	ProjectsLocationsInstancesShares: ProjectsLocationsInstancesShares,

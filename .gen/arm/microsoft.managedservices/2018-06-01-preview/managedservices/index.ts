@@ -18,7 +18,7 @@ export interface registrationAssignmentsComponentOutputs {
 }
 export interface registrationAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: RegistrationAssignmentProperties | undefined;
+	readonly properties?: RegistrationAssignmentProperties;
 }
 export class registrationDefinitions
 	extends ArmResource<registrationDefinitionsComponentInputs>
@@ -38,13 +38,13 @@ export interface registrationDefinitionsComponentOutputs {
 }
 export interface registrationDefinitionsComponentInputs {
 	readonly name: string;
-	readonly plan?: Plan | undefined;
-	readonly properties?: RegistrationDefinitionProperties | undefined;
+	readonly plan?: Plan;
+	readonly properties?: RegistrationDefinitionProperties;
 }
 export interface Authorization {
-	readonly delegatedRoleDefinitionIds?: string[] | undefined;
+	readonly delegatedRoleDefinitionIds?: string[];
 	readonly principalId: string;
-	readonly principalIdDisplayName?: string | undefined;
+	readonly principalIdDisplayName?: string;
 	readonly roleDefinitionId: string;
 }
 export interface Plan {
@@ -55,75 +55,66 @@ export interface Plan {
 }
 export interface RegistrationAssignmentProperties {
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly registrationDefinition?: RegistrationAssignmentPropertiesRegistrationDefinition | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Ready"
+		| "Running"
+		| "Succeeded";
+	readonly registrationDefinition?: RegistrationAssignmentPropertiesRegistrationDefinition;
 	readonly registrationDefinitionId: string;
 }
 export interface RegistrationAssignmentPropertiesRegistrationDefinition {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly plan?: Plan | undefined;
-	readonly properties?: RegistrationAssignmentPropertiesRegistrationDefinitionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly plan?: Plan;
+	readonly properties?: RegistrationAssignmentPropertiesRegistrationDefinitionProperties;
+	readonly type?: string;
 }
 export interface RegistrationAssignmentPropertiesRegistrationDefinitionProperties {
-	readonly authorizations?: Authorization[] | undefined;
-	readonly description?: string | undefined;
-	readonly managedByTenantId?: string | undefined;
-	readonly managedByTenantName?: string | undefined;
-	readonly manageeTenantId?: string | undefined;
-	readonly manageeTenantName?: string | undefined;
+	readonly authorizations?: Authorization[];
+	readonly description?: string;
+	readonly managedByTenantId?: string;
+	readonly managedByTenantName?: string;
+	readonly manageeTenantId?: string;
+	readonly manageeTenantName?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly registrationDefinitionName?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Ready"
+		| "Running"
+		| "Succeeded";
+	readonly registrationDefinitionName?: string;
 }
 export interface RegistrationDefinitionProperties {
 	readonly authorizations: Authorization[];
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly managedByTenantId: string;
-	readonly managedByTenantName?: string | undefined;
+	readonly managedByTenantName?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly registrationDefinitionName?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Ready"
+		| "Running"
+		| "Succeeded";
+	readonly registrationDefinitionName?: string;
 }
 export default {
 	registrationAssignments: registrationAssignments,

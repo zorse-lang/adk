@@ -10,18 +10,17 @@ export class BucketAccessControl
 }
 export interface BucketAccessControlComponentOutputs {}
 export interface BucketAccessControlComponentInputs {
-	readonly bucket?: string | undefined;
-	readonly domain?: string | undefined;
-	readonly email?: string | undefined;
-	readonly entity?: string | undefined;
-	readonly entityId?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly projectTeam?: { projectNumber?: string; team?: string } | undefined;
-	readonly role?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly type: string;
+	readonly bucket?: string;
+	readonly domain?: string;
+	readonly email?: string;
+	readonly entity?: string;
+	readonly entityId?: string;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly projectTeam?: { projectNumber?: string; team?: string };
+	readonly role?: string;
+	readonly selfLink?: string;
 	readonly name: string;
 }
 export default {

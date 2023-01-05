@@ -21,14 +21,14 @@ export interface KeyComponentOutputs {
 	readonly KeyId: any;
 }
 export interface KeyComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly Enable?: (boolean | undefined) | undefined;
-	readonly EnableAutomaticRotation?: (boolean | undefined) | undefined;
-	readonly KeySpec?: (string | undefined) | undefined;
-	readonly KeyUsage?: (string | undefined) | undefined;
-	readonly PendingWindowInDays?: (number | undefined) | undefined;
-	readonly ProtectionLevel?: (string | undefined) | undefined;
-	readonly RotationInterval?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Enable?: boolean | undefined;
+	readonly EnableAutomaticRotation?: boolean | undefined;
+	readonly KeySpec?: string | undefined;
+	readonly KeyUsage?: string | undefined;
+	readonly PendingWindowInDays?: number | undefined;
+	readonly ProtectionLevel?: string | undefined;
+	readonly RotationInterval?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Secret extends RosResource<SecretComponentInputs> implements SecretComponentOutputs {
@@ -44,12 +44,12 @@ export interface SecretComponentInputs {
 	readonly SecretData: string;
 	readonly SecretName: any | string;
 	readonly VersionId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EncryptionKeyId?: (string | undefined) | undefined;
-	readonly ForceDeleteWithoutRecovery?: (boolean | undefined) | undefined;
-	readonly RecoveryWindowInDays?: (number | undefined) | undefined;
-	readonly SecretDataType?: (string | undefined) | undefined;
-	readonly VersionStages?: (string[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly EncryptionKeyId?: string | undefined;
+	readonly ForceDeleteWithoutRecovery?: boolean | undefined;
+	readonly RecoveryWindowInDays?: number | undefined;
+	readonly SecretDataType?: string | undefined;
+	readonly VersionStages?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export default {

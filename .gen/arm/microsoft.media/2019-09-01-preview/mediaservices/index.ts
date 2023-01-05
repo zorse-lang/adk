@@ -18,15 +18,15 @@ export interface mediaServices_mediaGraphsComponentOutputs {
 }
 export interface mediaServices_mediaGraphsComponentInputs {
 	readonly name: string;
-	readonly properties?: MediaGraphProperties | undefined;
+	readonly properties?: MediaGraphProperties;
 }
 export interface MediaGraphProperties {
-	readonly created?: string | undefined;
-	readonly description?: string | undefined;
-	readonly lastModified?: string | undefined;
+	readonly created?: string;
+	readonly description?: string;
+	readonly lastModified?: string;
 	readonly sinks: MediaGraphSink[];
 	readonly sources: MediaGraphSource[];
-	readonly state?: ("Running" | "Starting" | "Stopped" | "Stopping") | undefined;
+	readonly state?: "Running" | "Starting" | "Stopped" | "Stopping";
 }
 export interface MediaGraphSink {
 	readonly inputs: string[];

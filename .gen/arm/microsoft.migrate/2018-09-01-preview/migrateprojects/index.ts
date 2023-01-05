@@ -17,11 +17,11 @@ export interface migrateProjectsComponentOutputs {
 	readonly type: "Microsoft.Migrate/migrateProjects";
 }
 export interface migrateProjectsComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: MigrateProjectProperties | undefined;
-	readonly tags?: MigrateProjectTags | undefined;
+	readonly properties?: MigrateProjectProperties;
+	readonly tags?: MigrateProjectTags;
 }
 export class migrateProjects_solutions
 	extends ArmResource<migrateProjects_solutionsComponentInputs>
@@ -40,77 +40,71 @@ export interface migrateProjects_solutionsComponentOutputs {
 	readonly type: "Microsoft.Migrate/migrateProjects/solutions";
 }
 export interface migrateProjects_solutionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: SolutionProperties | undefined;
+	readonly properties?: SolutionProperties;
 }
 export interface MigrateProjectProperties {
-	readonly lastSummaryRefreshedTime?: string | undefined;
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
-	readonly refreshSummaryState?: ("Completed" | "Failed" | "InProgress" | "Started") | undefined;
+	readonly lastSummaryRefreshedTime?: string;
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
+	readonly refreshSummaryState?: "Completed" | "Failed" | "InProgress" | "Started";
 	readonly registeredTools?:
-		| (
-				| "Carbonite"
-				| "Cloudamize"
-				| "CorentTech"
-				| "DataMigrationAssistant"
-				| "DatabaseMigrationService"
-				| "ServerAssessment"
-				| "ServerAssessmentV1"
-				| "ServerDiscovery"
-				| "ServerMigration"
-				| "ServerMigration_Replication"
-				| "Turbonomic"
-				| "Zerto"[]
-		  )
-		| undefined;
-	readonly summary?: MigrateProjectPropertiesSummary | undefined;
+		| "Carbonite"
+		| "Cloudamize"
+		| "CorentTech"
+		| "DataMigrationAssistant"
+		| "DatabaseMigrationService"
+		| "ServerAssessment"
+		| "ServerAssessmentV1"
+		| "ServerDiscovery"
+		| "ServerMigration"
+		| "ServerMigration_Replication"
+		| "Turbonomic"
+		| "Zerto"[];
+	readonly summary?: MigrateProjectPropertiesSummary;
 }
 export interface MigrateProjectPropertiesSummary {
-	readonly "[ key: string ]"?: ProjectSummary | undefined;
+	readonly [key: string]: ProjectSummary;
 }
 export interface MigrateProjectTags {
-	readonly additionalProperties?: string | undefined;
+	readonly additionalProperties?: string;
 }
 export interface ProjectSummary {
-	readonly extendedSummary?: ProjectSummaryExtendedSummary | undefined;
-	readonly lastSummaryRefreshedTime?: string | undefined;
-	readonly refreshSummaryState?: ("Completed" | "Failed" | "InProgress" | "Started") | undefined;
+	readonly extendedSummary?: ProjectSummaryExtendedSummary;
+	readonly lastSummaryRefreshedTime?: string;
+	readonly refreshSummaryState?: "Completed" | "Failed" | "InProgress" | "Started";
 }
 export interface ProjectSummaryExtendedSummary {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SolutionDetails {
-	readonly assessmentCount?: number | undefined;
-	readonly extendedDetails?: SolutionDetailsExtendedDetails | undefined;
-	readonly groupCount?: number | undefined;
+	readonly assessmentCount?: number;
+	readonly extendedDetails?: SolutionDetailsExtendedDetails;
+	readonly groupCount?: number;
 }
 export interface SolutionDetailsExtendedDetails {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SolutionProperties {
-	readonly cleanupState?: ("Completed" | "Failed" | "InProgress" | "None" | "Started") | undefined;
-	readonly details?: SolutionDetails | undefined;
-	readonly goal?: ("Databases" | "Servers") | undefined;
-	readonly purpose?: ("Assessment" | "Discovery" | "Migration") | undefined;
-	readonly status?: ("Active" | "Inactive") | undefined;
-	readonly summary?: SolutionSummary | undefined;
+	readonly cleanupState?: "Completed" | "Failed" | "InProgress" | "None" | "Started";
+	readonly details?: SolutionDetails;
+	readonly goal?: "Databases" | "Servers";
+	readonly purpose?: "Assessment" | "Discovery" | "Migration";
+	readonly status?: "Active" | "Inactive";
+	readonly summary?: SolutionSummary;
 	readonly tool?:
-		| (
-				| "Carbonite"
-				| "Cloudamize"
-				| "CorentTech"
-				| "DataMigrationAssistant"
-				| "DatabaseMigrationService"
-				| "ServerAssessment"
-				| "ServerAssessmentV1"
-				| "ServerDiscovery"
-				| "ServerMigration"
-				| "ServerMigration_Replication"
-				| "Turbonomic"
-				| "Zerto"
-		  )
-		| undefined;
+		| "Carbonite"
+		| "Cloudamize"
+		| "CorentTech"
+		| "DataMigrationAssistant"
+		| "DatabaseMigrationService"
+		| "ServerAssessment"
+		| "ServerAssessmentV1"
+		| "ServerDiscovery"
+		| "ServerMigration"
+		| "ServerMigration_Replication"
+		| "Turbonomic"
+		| "Zerto";
 }
 export interface SolutionSummary {}
 export default {

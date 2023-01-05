@@ -17,11 +17,11 @@ export interface blockchainMembersComponentOutputs {
 	readonly type: "Microsoft.Blockchain/blockchainMembers";
 }
 export interface blockchainMembersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: BlockchainMemberProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: BlockchainMemberProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class blockchainMembers_transactionNodes
 	extends ArmResource<blockchainMembers_transactionNodesComponentInputs>
@@ -46,9 +46,9 @@ export interface blockchainMembers_transactionNodesComponentOutputs {
 	readonly type: "Microsoft.Blockchain/blockchainMembers/transactionNodes";
 }
 export interface blockchainMembers_transactionNodesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: TransactionNodeProperties | undefined;
+	readonly properties?: TransactionNodeProperties;
 }
 export function listApiKeys(resource: blockchainMembers): ApiKeyCollection {
 	if (resource.apiVersion !== "2018-06-01-preview") {
@@ -69,59 +69,57 @@ export function listConsortiums(resource: ArmResource): ConsortiumCollection {
 	throw new Error("not implemented");
 }
 export interface ApiKey {
-	readonly keyName?: string | undefined;
-	readonly value?: string | undefined;
+	readonly keyName?: string;
+	readonly value?: string;
 }
 export interface ApiKeyCollection {
-	readonly keys?: ApiKey[] | undefined;
+	readonly keys?: ApiKey[];
 }
 export interface BlockchainMemberNodesSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 }
 export interface BlockchainMemberProperties {
-	readonly consortium?: string | undefined;
-	readonly consortiumManagementAccountAddress?: string | undefined;
-	readonly consortiumManagementAccountPassword?: string | undefined;
-	readonly consortiumMemberDisplayName?: string | undefined;
-	readonly consortiumRole?: string | undefined;
-	readonly dns?: string | undefined;
-	readonly firewallRules?: FirewallRule[] | undefined;
-	readonly password?: string | undefined;
-	readonly protocol?: ("Corda" | "NotSpecified" | "Parity" | "Quorum") | undefined;
-	readonly provisioningState?:
-		| ("Deleting" | "Failed" | "NotSpecified" | "Stale" | "Succeeded" | "Updating")
-		| undefined;
-	readonly publicKey?: string | undefined;
-	readonly rootContractAddress?: string | undefined;
-	readonly userName?: string | undefined;
-	readonly validatorNodesSku?: BlockchainMemberNodesSku | undefined;
+	readonly consortium?: string;
+	readonly consortiumManagementAccountAddress?: string;
+	readonly consortiumManagementAccountPassword?: string;
+	readonly consortiumMemberDisplayName?: string;
+	readonly consortiumRole?: string;
+	readonly dns?: string;
+	readonly firewallRules?: FirewallRule[];
+	readonly password?: string;
+	readonly protocol?: "Corda" | "NotSpecified" | "Parity" | "Quorum";
+	readonly provisioningState?: "Deleting" | "Failed" | "NotSpecified" | "Stale" | "Succeeded" | "Updating";
+	readonly publicKey?: string;
+	readonly rootContractAddress?: string;
+	readonly userName?: string;
+	readonly validatorNodesSku?: BlockchainMemberNodesSku;
 }
 export interface Consortium {
-	readonly name?: string | undefined;
-	readonly protocol?: ("Corda" | "NotSpecified" | "Parity" | "Quorum") | undefined;
+	readonly name?: string;
+	readonly protocol?: "Corda" | "NotSpecified" | "Parity" | "Quorum";
 }
 export interface ConsortiumCollection {
-	readonly value?: Consortium[] | undefined;
+	readonly value?: Consortium[];
 }
 export interface FirewallRule {
-	readonly endIpAddress?: string | undefined;
-	readonly ruleName?: string | undefined;
-	readonly startIpAddress?: string | undefined;
+	readonly endIpAddress?: string;
+	readonly ruleName?: string;
+	readonly startIpAddress?: string;
 }
 export interface Sku {
-	readonly name?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly name?: string;
+	readonly tier?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TransactionNodeProperties {
-	readonly dns?: string | undefined;
-	readonly firewallRules?: FirewallRule[] | undefined;
-	readonly password?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "NotSpecified" | "Succeeded" | "Updating") | undefined;
-	readonly publicKey?: string | undefined;
-	readonly userName?: string | undefined;
+	readonly dns?: string;
+	readonly firewallRules?: FirewallRule[];
+	readonly password?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "NotSpecified" | "Succeeded" | "Updating";
+	readonly publicKey?: string;
+	readonly userName?: string;
 }
 export default {
 	blockchainMembers: blockchainMembers,

@@ -20,7 +20,7 @@ export interface environments_LongTermComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly sku: Sku;
-	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags | undefined;
+	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags;
 	readonly kind: "LongTerm";
 	readonly properties: LongTermEnvironmentCreationPropertiesOrLongTermEnvironmentResourceProperties;
 }
@@ -44,7 +44,7 @@ export interface environments_StandardComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly sku: Sku;
-	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags | undefined;
+	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags;
 	readonly kind: "Standard";
 	readonly properties: StandardEnvironmentCreationPropertiesOrStandardEnvironmentResourceProperties;
 }
@@ -97,10 +97,10 @@ export interface environments_eventSources_Microsoft_EventHubComponentOutputs {
 	readonly type: "Microsoft.TimeSeriesInsights/environments/eventSources";
 }
 export interface environments_eventSources_Microsoft_EventHubComponentInputs {
-	readonly localTimestamp?: LocalTimestamp | undefined;
+	readonly localTimestamp?: LocalTimestamp;
 	readonly location: string;
 	readonly name: string;
-	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags | undefined;
+	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags;
 	readonly kind: "Microsoft.EventHub";
 	readonly properties: EventHubEventSourceCreationPropertiesOrEventHubEventSourceResourceProperties;
 }
@@ -127,10 +127,10 @@ export interface environments_eventSources_Microsoft_IoTHubComponentOutputs {
 	readonly type: "Microsoft.TimeSeriesInsights/environments/eventSources";
 }
 export interface environments_eventSources_Microsoft_IoTHubComponentInputs {
-	readonly localTimestamp?: LocalTimestamp | undefined;
+	readonly localTimestamp?: LocalTimestamp;
 	readonly location: string;
 	readonly name: string;
-	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags | undefined;
+	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags;
 	readonly kind: "Microsoft.IoTHub";
 	readonly properties: IoTHubEventSourceCreationPropertiesOrIoTHubEventSourceResourceProperties;
 }
@@ -160,108 +160,108 @@ export interface environments_referenceDataSetsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ReferenceDataSetCreationPropertiesOrReferenceDataSetResourceProperties;
-	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags | undefined;
+	readonly tags?: CreateOrUpdateTrackedResourcePropertiesTags;
 }
 export interface AccessPolicyResourceProperties {
-	readonly description?: string | undefined;
-	readonly principalObjectId?: string | undefined;
-	readonly roles?: ("Contributor" | "Reader"[]) | undefined;
+	readonly description?: string;
+	readonly principalObjectId?: string;
+	readonly roles?: "Contributor" | "Reader"[];
 }
 export interface CreateOrUpdateTrackedResourcePropertiesTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface EnvironmentStateDetails {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface EnvironmentStatus {
-	readonly ingress?: IngressEnvironmentStatus | undefined;
-	readonly warmStorage?: WarmStorageEnvironmentStatus | undefined;
+	readonly ingress?: IngressEnvironmentStatus;
+	readonly warmStorage?: WarmStorageEnvironmentStatus;
 }
 export interface EventHubEventSourceCreationPropertiesOrEventHubEventSourceResourceProperties {
 	readonly consumerGroupName: string;
-	readonly creationTime?: string | undefined;
+	readonly creationTime?: string;
 	readonly eventHubName: string;
 	readonly eventSourceResourceId: string;
 	readonly keyName: string;
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly serviceBusNamespace: string;
 	readonly sharedAccessKey: string;
-	readonly timestampPropertyName?: string | undefined;
+	readonly timestampPropertyName?: string;
 }
 export interface IngressEnvironmentStatus {
-	readonly state?: ("Disabled" | "Paused" | "Ready" | "Running" | "Unknown") | undefined;
-	readonly stateDetails?: EnvironmentStateDetails | undefined;
+	readonly state?: "Disabled" | "Paused" | "Ready" | "Running" | "Unknown";
+	readonly stateDetails?: EnvironmentStateDetails;
 }
 export interface IoTHubEventSourceCreationPropertiesOrIoTHubEventSourceResourceProperties {
 	readonly consumerGroupName: string;
-	readonly creationTime?: string | undefined;
+	readonly creationTime?: string;
 	readonly eventSourceResourceId: string;
 	readonly iotHubName: string;
 	readonly keyName: string;
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly sharedAccessKey: string;
-	readonly timestampPropertyName?: string | undefined;
+	readonly timestampPropertyName?: string;
 }
 export interface LocalTimestamp {
-	readonly format?: "Embedded" | undefined;
-	readonly timeZoneOffset?: LocalTimestampTimeZoneOffset | undefined;
+	readonly format?: "Embedded";
+	readonly timeZoneOffset?: LocalTimestampTimeZoneOffset;
 }
 export interface LocalTimestampTimeZoneOffset {
-	readonly propertyName?: string | undefined;
+	readonly propertyName?: string;
 }
 export interface LongTermEnvironmentCreationPropertiesOrLongTermEnvironmentResourceProperties {
-	readonly creationTime?: string | undefined;
-	readonly dataAccessFqdn?: string | undefined;
-	readonly dataAccessId?: string | undefined;
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly status?: EnvironmentStatus | undefined;
+	readonly creationTime?: string;
+	readonly dataAccessFqdn?: string;
+	readonly dataAccessId?: string;
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly status?: EnvironmentStatus;
 	readonly storageConfiguration: LongTermStorageConfigurationInputOrLongTermStorageConfigurationOutput;
 	readonly timeSeriesIdProperties: TimeSeriesIdProperty[];
-	readonly warmStoreConfiguration?: WarmStoreConfigurationProperties | undefined;
+	readonly warmStoreConfiguration?: WarmStoreConfigurationProperties;
 }
 export interface LongTermStorageConfigurationInputOrLongTermStorageConfigurationOutput {
 	readonly accountName: string;
 	readonly managementKey: string;
 }
 export interface ReferenceDataSetCreationPropertiesOrReferenceDataSetResourceProperties {
-	readonly creationTime?: string | undefined;
-	readonly dataStringComparisonBehavior?: ("Ordinal" | "OrdinalIgnoreCase") | undefined;
+	readonly creationTime?: string;
+	readonly dataStringComparisonBehavior?: "Ordinal" | "OrdinalIgnoreCase";
 	readonly keyProperties: ReferenceDataSetKeyProperty[];
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ReferenceDataSetKeyProperty {
-	readonly name?: string | undefined;
-	readonly type?: ("Bool" | "DateTime" | "Double" | "String") | undefined;
+	readonly name?: string;
+	readonly type?: "Bool" | "DateTime" | "Double" | "String";
 }
 export interface Sku {
 	readonly capacity: number;
 	readonly name: "L1" | "P1" | "S1" | "S2";
 }
 export interface StandardEnvironmentCreationPropertiesOrStandardEnvironmentResourceProperties {
-	readonly creationTime?: string | undefined;
-	readonly dataAccessFqdn?: string | undefined;
-	readonly dataAccessId?: string | undefined;
+	readonly creationTime?: string;
+	readonly dataAccessFqdn?: string;
+	readonly dataAccessId?: string;
 	readonly dataRetentionTime: string;
-	readonly partitionKeyProperties?: TimeSeriesIdProperty[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly status?: EnvironmentStatus | undefined;
-	readonly storageLimitExceededBehavior?: ("PauseIngress" | "PurgeOldData") | undefined;
+	readonly partitionKeyProperties?: TimeSeriesIdProperty[];
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly status?: EnvironmentStatus;
+	readonly storageLimitExceededBehavior?: "PauseIngress" | "PurgeOldData";
 }
 export interface TimeSeriesIdProperty {
-	readonly name?: string | undefined;
-	readonly type?: "String" | undefined;
+	readonly name?: string;
+	readonly type?: "String";
 }
 export interface WarmStorageEnvironmentStatus {
-	readonly propertiesUsage?: WarmStoragePropertiesUsage | undefined;
+	readonly propertiesUsage?: WarmStoragePropertiesUsage;
 }
 export interface WarmStoragePropertiesUsage {
-	readonly state?: ("Error" | "Ok" | "Unknown") | undefined;
-	readonly stateDetails?: WarmStoragePropertiesUsageStateDetails | undefined;
+	readonly state?: "Error" | "Ok" | "Unknown";
+	readonly stateDetails?: WarmStoragePropertiesUsageStateDetails;
 }
 export interface WarmStoragePropertiesUsageStateDetails {
-	readonly currentCount?: number | undefined;
-	readonly maxCount?: number | undefined;
+	readonly currentCount?: number;
+	readonly maxCount?: number;
 }
 export interface WarmStoreConfigurationProperties {
 	readonly dataRetention: string;

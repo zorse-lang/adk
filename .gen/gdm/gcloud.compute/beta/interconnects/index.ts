@@ -4,93 +4,92 @@ export class Interconnects extends GdmResource<InterconnectsComponentInputs> imp
 	constructor(entity: ADKEntity, options: InterconnectsComponentInputs) {
 		super(entity, options.name, "compute.beta.Interconnects", options);
 	}
-	public readonly circuitInfos?: InterconnectCircuitInfo[] | undefined;
-	public readonly creationTimestamp?: string | undefined;
-	public readonly expectedOutages?: InterconnectOutageNotification[] | undefined;
-	public readonly googleIpAddress?: string | undefined;
-	public readonly googleReferenceId?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly interconnectAttachments?: string[] | undefined;
-	public readonly kind?: string | undefined;
-	public readonly operationalStatus?: string | undefined;
-	public readonly peerIpAddress?: string | undefined;
-	public readonly provisionedLinkCount?: number | undefined;
-	public readonly satisfiesPzs?: boolean | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly state?: string | undefined;
+	public readonly circuitInfos?: InterconnectCircuitInfo[];
+	public readonly creationTimestamp?: string;
+	public readonly expectedOutages?: InterconnectOutageNotification[];
+	public readonly googleIpAddress?: string;
+	public readonly googleReferenceId?: string;
+	public readonly id?: string;
+	public readonly interconnectAttachments?: string[];
+	public readonly kind?: string;
+	public readonly operationalStatus?: string;
+	public readonly peerIpAddress?: string;
+	public readonly provisionedLinkCount?: number;
+	public readonly satisfiesPzs?: boolean;
+	public readonly selfLink?: string;
+	public readonly state?: string;
 }
 export interface InterconnectsComponentOutputs {
-	readonly circuitInfos?: InterconnectCircuitInfo[] | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly expectedOutages?: InterconnectOutageNotification[] | undefined;
-	readonly googleIpAddress?: string | undefined;
-	readonly googleReferenceId?: string | undefined;
-	readonly id?: string | undefined;
-	readonly interconnectAttachments?: string[] | undefined;
-	readonly kind?: string | undefined;
-	readonly operationalStatus?: string | undefined;
-	readonly peerIpAddress?: string | undefined;
-	readonly provisionedLinkCount?: number | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly selfLink?: string | undefined;
-	readonly state?: string | undefined;
+	readonly circuitInfos?: InterconnectCircuitInfo[];
+	readonly creationTimestamp?: string;
+	readonly expectedOutages?: InterconnectOutageNotification[];
+	readonly googleIpAddress?: string;
+	readonly googleReferenceId?: string;
+	readonly id?: string;
+	readonly interconnectAttachments?: string[];
+	readonly kind?: string;
+	readonly operationalStatus?: string;
+	readonly peerIpAddress?: string;
+	readonly provisionedLinkCount?: number;
+	readonly satisfiesPzs?: boolean;
+	readonly selfLink?: string;
+	readonly state?: string;
 }
 export interface InterconnectsComponentInputs {
-	readonly adminEnabled?: boolean | undefined;
-	readonly customerName?: string | undefined;
-	readonly description?: string | undefined;
-	readonly interconnectType?: string | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly linkType?: string | undefined;
-	readonly location?: string | undefined;
+	readonly adminEnabled?: boolean;
+	readonly customerName?: string;
+	readonly description?: string;
+	readonly interconnectType?: string;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
+	readonly linkType?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly nocContactEmail?: string | undefined;
-	readonly requestedLinkCount?: number | undefined;
-	readonly requestId?: string | undefined;
-	readonly type: string;
+	readonly nocContactEmail?: string;
+	readonly requestedLinkCount?: number;
+	readonly requestId?: string;
 }
 export interface Interconnect {
-	readonly adminEnabled?: boolean | undefined;
-	readonly circuitInfos?: InterconnectCircuitInfo[] | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly customerName?: string | undefined;
-	readonly description?: string | undefined;
-	readonly expectedOutages?: InterconnectOutageNotification[] | undefined;
-	readonly googleIpAddress?: string | undefined;
-	readonly googleReferenceId?: string | undefined;
-	readonly id?: string | undefined;
-	readonly interconnectAttachments?: string[] | undefined;
-	readonly interconnectType?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly linkType?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly nocContactEmail?: string | undefined;
-	readonly operationalStatus?: string | undefined;
-	readonly peerIpAddress?: string | undefined;
-	readonly provisionedLinkCount?: number | undefined;
-	readonly requestedLinkCount?: number | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly selfLink?: string | undefined;
-	readonly state?: string | undefined;
+	readonly adminEnabled?: boolean;
+	readonly circuitInfos?: InterconnectCircuitInfo[];
+	readonly creationTimestamp?: string;
+	readonly customerName?: string;
+	readonly description?: string;
+	readonly expectedOutages?: InterconnectOutageNotification[];
+	readonly googleIpAddress?: string;
+	readonly googleReferenceId?: string;
+	readonly id?: string;
+	readonly interconnectAttachments?: string[];
+	readonly interconnectType?: string;
+	readonly kind?: string;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
+	readonly linkType?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly nocContactEmail?: string;
+	readonly operationalStatus?: string;
+	readonly peerIpAddress?: string;
+	readonly provisionedLinkCount?: number;
+	readonly requestedLinkCount?: number;
+	readonly satisfiesPzs?: boolean;
+	readonly selfLink?: string;
+	readonly state?: string;
 }
 export interface InterconnectCircuitInfo {
-	readonly customerDemarcId?: string | undefined;
-	readonly googleCircuitId?: string | undefined;
-	readonly googleDemarcId?: string | undefined;
+	readonly customerDemarcId?: string;
+	readonly googleCircuitId?: string;
+	readonly googleDemarcId?: string;
 }
 export interface InterconnectOutageNotification {
-	readonly affectedCircuits?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly issueType?: string | undefined;
-	readonly name?: string | undefined;
-	readonly source?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly state?: string | undefined;
+	readonly affectedCircuits?: string[];
+	readonly description?: string;
+	readonly endTime?: string;
+	readonly issueType?: string;
+	readonly name?: string;
+	readonly source?: string;
+	readonly startTime?: string;
+	readonly state?: string;
 }
 export default {
 	Interconnects: Interconnects,

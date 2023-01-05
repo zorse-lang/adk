@@ -27,12 +27,12 @@ export interface HiTSDBInstanceComponentInputs {
 	readonly VPCId: string;
 	readonly VSwitchId: string;
 	readonly ZoneId: string;
-	readonly DiskCategory?: (string | undefined) | undefined;
-	readonly Duration?: (number | undefined) | undefined;
-	readonly InstanceAlias?: (string | undefined) | undefined;
-	readonly PayType?: (string | undefined) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
-	readonly SecurityIpList?: (string[] | undefined) | undefined;
+	readonly DiskCategory?: string | undefined;
+	readonly Duration?: number | undefined;
+	readonly InstanceAlias?: string | undefined;
+	readonly PayType?: string | undefined;
+	readonly PricingCycle?: string | undefined;
+	readonly SecurityIpList?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class InfluxDBDatabase
@@ -63,7 +63,7 @@ export interface InfluxDBUserComponentInputs {
 	readonly Password: string;
 	readonly UserName: any | string;
 	readonly UserType: any | string;
-	readonly DatabasePermissions?: (DatabasePermissions[] | undefined) | undefined;
+	readonly DatabasePermissions?: DatabasePermissions[] | undefined;
 	readonly LogicalId: string;
 }
 export interface DatabasePermissions {

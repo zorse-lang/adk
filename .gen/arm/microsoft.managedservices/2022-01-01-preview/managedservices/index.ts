@@ -24,8 +24,8 @@ export interface marketplaceRegistrationDefinitionsComponentOutputs {
 }
 export interface marketplaceRegistrationDefinitionsComponentInputs {
 	readonly name: string;
-	readonly plan?: Plan | undefined;
-	readonly properties?: MarketplaceRegistrationDefinitionProperties | undefined;
+	readonly plan?: Plan;
+	readonly properties?: MarketplaceRegistrationDefinitionProperties;
 }
 export class registrationAssignments
 	extends ArmResource<registrationAssignmentsComponentInputs>
@@ -45,8 +45,8 @@ export interface registrationAssignmentsComponentOutputs {
 }
 export interface registrationAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: RegistrationAssignmentProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: RegistrationAssignmentProperties;
+	readonly systemData?: SystemData;
 }
 export class registrationDefinitions
 	extends ArmResource<registrationDefinitionsComponentInputs>
@@ -66,38 +66,38 @@ export interface registrationDefinitionsComponentOutputs {
 }
 export interface registrationDefinitionsComponentInputs {
 	readonly name: string;
-	readonly plan?: Plan | undefined;
-	readonly properties?: RegistrationDefinitionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly plan?: Plan;
+	readonly properties?: RegistrationDefinitionProperties;
+	readonly systemData?: SystemData;
 }
 export interface Authorization {
-	readonly delegatedRoleDefinitionIds?: string[] | undefined;
+	readonly delegatedRoleDefinitionIds?: string[];
 	readonly principalId: string;
-	readonly principalIdDisplayName?: string | undefined;
+	readonly principalIdDisplayName?: string;
 	readonly roleDefinitionId: string;
 }
 export interface EligibleApprover {
 	readonly principalId: string;
-	readonly principalIdDisplayName?: string | undefined;
+	readonly principalIdDisplayName?: string;
 }
 export interface EligibleAuthorization {
-	readonly justInTimeAccessPolicy?: JustInTimeAccessPolicy | undefined;
+	readonly justInTimeAccessPolicy?: JustInTimeAccessPolicy;
 	readonly principalId: string;
-	readonly principalIdDisplayName?: string | undefined;
+	readonly principalIdDisplayName?: string;
 	readonly roleDefinitionId: string;
 }
 export interface JustInTimeAccessPolicy {
-	readonly managedByTenantApprovers?: EligibleApprover[] | undefined;
-	readonly maximumActivationDuration?: string | undefined;
+	readonly managedByTenantApprovers?: EligibleApprover[];
+	readonly maximumActivationDuration?: string;
 	readonly multiFactorAuthProvider: "Azure" | "None";
 }
 export interface MarketplaceRegistrationDefinitionProperties {
 	readonly authorizations: Authorization[];
-	readonly eligibleAuthorizations?: EligibleAuthorization[] | undefined;
+	readonly eligibleAuthorizations?: EligibleAuthorization[];
 	readonly managedByTenantId: string;
-	readonly offerDisplayName?: string | undefined;
-	readonly planDisplayName?: string | undefined;
-	readonly publisherDisplayName?: string | undefined;
+	readonly offerDisplayName?: string;
+	readonly planDisplayName?: string;
+	readonly publisherDisplayName?: string;
 }
 export interface Plan {
 	readonly name: string;
@@ -107,91 +107,82 @@ export interface Plan {
 }
 export interface RegistrationAssignmentProperties {
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly registrationDefinition?: RegistrationAssignmentPropertiesRegistrationDefinition | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Ready"
+		| "Running"
+		| "Succeeded"
+		| "Updating";
+	readonly registrationDefinition?: RegistrationAssignmentPropertiesRegistrationDefinition;
 	readonly registrationDefinitionId: string;
 }
 export interface RegistrationAssignmentPropertiesRegistrationDefinition {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly plan?: Plan | undefined;
-	readonly properties?: RegistrationAssignmentPropertiesRegistrationDefinitionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly plan?: Plan;
+	readonly properties?: RegistrationAssignmentPropertiesRegistrationDefinitionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface RegistrationAssignmentPropertiesRegistrationDefinitionProperties {
-	readonly authorizations?: Authorization[] | undefined;
-	readonly description?: string | undefined;
-	readonly eligibleAuthorizations?: EligibleAuthorization[] | undefined;
-	readonly managedByTenantId?: string | undefined;
-	readonly managedByTenantName?: string | undefined;
-	readonly manageeTenantId?: string | undefined;
-	readonly manageeTenantName?: string | undefined;
+	readonly authorizations?: Authorization[];
+	readonly description?: string;
+	readonly eligibleAuthorizations?: EligibleAuthorization[];
+	readonly managedByTenantId?: string;
+	readonly managedByTenantName?: string;
+	readonly manageeTenantId?: string;
+	readonly manageeTenantName?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly registrationDefinitionName?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Ready"
+		| "Running"
+		| "Succeeded"
+		| "Updating";
+	readonly registrationDefinitionName?: string;
 }
 export interface RegistrationDefinitionProperties {
 	readonly authorizations: Authorization[];
-	readonly description?: string | undefined;
-	readonly eligibleAuthorizations?: EligibleAuthorization[] | undefined;
+	readonly description?: string;
+	readonly eligibleAuthorizations?: EligibleAuthorization[];
 	readonly managedByTenantId: string;
-	readonly managedByTenantName?: string | undefined;
-	readonly manageeTenantId?: string | undefined;
-	readonly manageeTenantName?: string | undefined;
+	readonly managedByTenantName?: string;
+	readonly manageeTenantId?: string;
+	readonly manageeTenantName?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly registrationDefinitionName?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Ready"
+		| "Running"
+		| "Succeeded"
+		| "Updating";
+	readonly registrationDefinitionName?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	marketplaceRegistrationDefinitions: marketplaceRegistrationDefinitions,

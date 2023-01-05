@@ -17,11 +17,11 @@ export interface communicationServicesComponentOutputs {
 	readonly type: "Microsoft.Communication/communicationServices";
 }
 export interface communicationServicesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: CommunicationServiceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TaggedResourceTags | undefined;
+	readonly properties?: CommunicationServiceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TaggedResourceTags;
 }
 export function listKeys(resource: communicationServices): CommunicationServiceKeys {
 	if (resource.apiVersion !== "2020-08-20") {
@@ -33,31 +33,38 @@ export function listKeys(resource: communicationServices): CommunicationServiceK
 	throw new Error("not implemented");
 }
 export interface CommunicationServiceKeys {
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface CommunicationServiceProperties {
 	readonly dataLocation: string;
-	readonly hostName?: string | undefined;
-	readonly immutableResourceId?: string | undefined;
-	readonly notificationHubId?: string | undefined;
+	readonly hostName?: string;
+	readonly immutableResourceId?: string;
+	readonly notificationHubId?: string;
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
-	readonly version?: string | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "Running"
+		| "Succeeded"
+		| "Unknown"
+		| "Updating";
+	readonly version?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TaggedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	communicationServices: communicationServices,

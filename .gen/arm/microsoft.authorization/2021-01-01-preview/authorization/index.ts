@@ -18,7 +18,7 @@ export interface roleAssignmentApprovalsComponentOutputs {
 }
 export interface roleAssignmentApprovalsComponentInputs {
 	readonly name: string;
-	readonly properties?: RoleAssignmentApprovalProperties | undefined;
+	readonly properties?: RoleAssignmentApprovalProperties;
 }
 export class roleAssignmentApprovals_stages
 	extends ArmResource<roleAssignmentApprovals_stagesComponentInputs>
@@ -43,61 +43,55 @@ export interface roleAssignmentApprovals_stagesComponentOutputs {
 	readonly type: "Microsoft.Authorization/roleAssignmentApprovals/stages";
 }
 export interface roleAssignmentApprovals_stagesComponentInputs {
-	readonly assignedToMe?: boolean | undefined;
-	readonly displayName?: string | undefined;
-	readonly justification?: string | undefined;
+	readonly assignedToMe?: boolean;
+	readonly displayName?: string;
+	readonly justification?: string;
 	readonly name: string;
-	readonly properties?: RoleAssignmentApprovalStepProperties | undefined;
-	readonly reviewedBy?: RoleAssignmentApprovalActorIdentity | undefined;
-	readonly reviewedDateTime?: string | undefined;
-	readonly reviewResult?: ("Approve" | "Deny" | "NotReviewed") | undefined;
+	readonly properties?: RoleAssignmentApprovalStepProperties;
+	readonly reviewedBy?: RoleAssignmentApprovalActorIdentity;
+	readonly reviewedDateTime?: string;
+	readonly reviewResult?: "Approve" | "Deny" | "NotReviewed";
 	readonly status?:
-		| (
-				| "Completed"
-				| "Completing"
-				| "Escalated"
-				| "Escalating"
-				| "Expired"
-				| "InProgress"
-				| "Initializing"
-				| "NotStarted"
-		  )
-		| undefined;
+		| "Completed"
+		| "Completing"
+		| "Escalated"
+		| "Escalating"
+		| "Expired"
+		| "InProgress"
+		| "Initializing"
+		| "NotStarted";
 }
 export interface RoleAssignmentApprovalActorIdentity {
-	readonly principalId?: string | undefined;
-	readonly principalName?: string | undefined;
-	readonly principalType?: ("servicePrincipal" | "user") | undefined;
-	readonly userPrincipalName?: string | undefined;
+	readonly principalId?: string;
+	readonly principalName?: string;
+	readonly principalType?: "servicePrincipal" | "user";
+	readonly userPrincipalName?: string;
 }
 export interface RoleAssignmentApprovalProperties {
-	readonly stages?: RoleAssignmentApprovalStep[] | undefined;
+	readonly stages?: RoleAssignmentApprovalStep[];
 }
 export interface RoleAssignmentApprovalStep {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: RoleAssignmentApprovalStepProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: RoleAssignmentApprovalStepProperties;
+	readonly type?: string;
 }
 export interface RoleAssignmentApprovalStepProperties {
-	readonly assignedToMe?: boolean | undefined;
-	readonly displayName?: string | undefined;
-	readonly justification?: string | undefined;
-	readonly reviewedBy?: RoleAssignmentApprovalActorIdentity | undefined;
-	readonly reviewedDateTime?: string | undefined;
-	readonly reviewResult?: ("Approve" | "Deny" | "NotReviewed") | undefined;
+	readonly assignedToMe?: boolean;
+	readonly displayName?: string;
+	readonly justification?: string;
+	readonly reviewedBy?: RoleAssignmentApprovalActorIdentity;
+	readonly reviewedDateTime?: string;
+	readonly reviewResult?: "Approve" | "Deny" | "NotReviewed";
 	readonly status?:
-		| (
-				| "Completed"
-				| "Completing"
-				| "Escalated"
-				| "Escalating"
-				| "Expired"
-				| "InProgress"
-				| "Initializing"
-				| "NotStarted"
-		  )
-		| undefined;
+		| "Completed"
+		| "Completing"
+		| "Escalated"
+		| "Escalating"
+		| "Expired"
+		| "InProgress"
+		| "Initializing"
+		| "NotStarted";
 }
 export default {
 	roleAssignmentApprovals: roleAssignmentApprovals,

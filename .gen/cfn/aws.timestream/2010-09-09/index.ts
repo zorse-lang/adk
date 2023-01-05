@@ -10,9 +10,9 @@ export interface DatabaseComponentOutputs {
 	readonly Arn: string;
 }
 export interface DatabaseComponentInputs {
-	readonly DatabaseName?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DatabaseName?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ScheduledQuery extends CfnResource<ScheduledQueryComponentInputs> implements ScheduledQueryComponentOutputs {
@@ -46,11 +46,11 @@ export interface ScheduledQueryComponentInputs {
 	readonly QueryString: string;
 	readonly ScheduleConfiguration: ScheduleConfiguration;
 	readonly ScheduledQueryExecutionRoleArn: string;
-	readonly ClientToken?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly ScheduledQueryName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TargetConfiguration?: (TargetConfiguration | undefined) | undefined;
+	readonly ClientToken?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly ScheduledQueryName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TargetConfiguration?: TargetConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export class Table extends CfnResource<TableComponentInputs> implements TableComponentOutputs {
@@ -66,10 +66,10 @@ export interface TableComponentOutputs {
 }
 export interface TableComponentInputs {
 	readonly DatabaseName: string;
-	readonly MagneticStoreWriteProperties?: (MagneticStoreWriteProperties | undefined) | undefined;
-	readonly RetentionProperties?: (RetentionProperties | undefined) | undefined;
-	readonly TableName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly MagneticStoreWriteProperties?: MagneticStoreWriteProperties | undefined;
+	readonly RetentionProperties?: RetentionProperties | undefined;
+	readonly TableName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface DimensionMapping {
@@ -80,28 +80,28 @@ export interface ErrorReportConfiguration {
 	readonly S3Configuration: S3Configuration;
 }
 export interface MixedMeasureMapping {
-	readonly MeasureName?: (string | undefined) | undefined;
+	readonly MeasureName?: string | undefined;
 	readonly MeasureValueType: string;
-	readonly MultiMeasureAttributeMappings?: (MultiMeasureAttributeMapping[] | undefined) | undefined;
-	readonly SourceColumn?: (string | undefined) | undefined;
-	readonly TargetMeasureName?: (string | undefined) | undefined;
+	readonly MultiMeasureAttributeMappings?: MultiMeasureAttributeMapping[] | undefined;
+	readonly SourceColumn?: string | undefined;
+	readonly TargetMeasureName?: string | undefined;
 }
 export interface MultiMeasureAttributeMapping {
 	readonly MeasureValueType: string;
 	readonly SourceColumn: string;
-	readonly TargetMultiMeasureAttributeName?: (string | undefined) | undefined;
+	readonly TargetMultiMeasureAttributeName?: string | undefined;
 }
 export interface MultiMeasureMappings {
 	readonly MultiMeasureAttributeMappings: MultiMeasureAttributeMapping[];
-	readonly TargetMultiMeasureName?: (string | undefined) | undefined;
+	readonly TargetMultiMeasureName?: string | undefined;
 }
 export interface NotificationConfiguration {
 	readonly SnsConfiguration: SnsConfiguration;
 }
 export interface S3Configuration {
 	readonly BucketName: string;
-	readonly EncryptionOption?: (string | undefined) | undefined;
-	readonly ObjectKeyPrefix?: (string | undefined) | undefined;
+	readonly EncryptionOption?: string | undefined;
+	readonly ObjectKeyPrefix?: string | undefined;
 }
 export interface ScheduleConfiguration {
 	readonly ScheduleExpression: string;
@@ -115,22 +115,22 @@ export interface TargetConfiguration {
 export interface TimestreamConfiguration {
 	readonly DatabaseName: string;
 	readonly DimensionMappings: DimensionMapping[];
-	readonly MeasureNameColumn?: (string | undefined) | undefined;
-	readonly MixedMeasureMappings?: (MixedMeasureMapping[] | undefined) | undefined;
-	readonly MultiMeasureMappings?: (MultiMeasureMappings | undefined) | undefined;
+	readonly MeasureNameColumn?: string | undefined;
+	readonly MixedMeasureMappings?: MixedMeasureMapping[] | undefined;
+	readonly MultiMeasureMappings?: MultiMeasureMappings | undefined;
 	readonly TableName: string;
 	readonly TimeColumn: string;
 }
 export interface MagneticStoreRejectedDataLocation {
-	readonly S3Configuration?: (S3Configuration | undefined) | undefined;
+	readonly S3Configuration?: S3Configuration | undefined;
 }
 export interface MagneticStoreWriteProperties {
 	readonly EnableMagneticStoreWrites: boolean;
-	readonly MagneticStoreRejectedDataLocation?: (MagneticStoreRejectedDataLocation | undefined) | undefined;
+	readonly MagneticStoreRejectedDataLocation?: MagneticStoreRejectedDataLocation | undefined;
 }
 export interface RetentionProperties {
-	readonly MagneticStoreRetentionPeriodInDays?: (string | undefined) | undefined;
-	readonly MemoryStoreRetentionPeriodInHours?: (string | undefined) | undefined;
+	readonly MagneticStoreRetentionPeriodInDays?: string | undefined;
+	readonly MemoryStoreRetentionPeriodInHours?: string | undefined;
 }
 export default {
 	Database: Database,

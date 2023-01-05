@@ -10,7 +10,6 @@ export class RowAccessPolicies
 }
 export interface RowAccessPoliciesComponentOutputs {}
 export interface RowAccessPoliciesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

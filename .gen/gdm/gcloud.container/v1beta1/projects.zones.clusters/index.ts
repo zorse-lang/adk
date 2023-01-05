@@ -7,679 +7,678 @@ export class ProjectsZonesClusters
 	constructor(entity: ADKEntity, options: ProjectsZonesClustersComponentInputs) {
 		super(entity, options.name, "container.v1beta1.ProjectsZonesClusters", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly currentMasterVersion?: string | undefined;
-	public readonly currentNodeCount?: number | undefined;
-	public readonly currentNodeVersion?: string | undefined;
-	public readonly endpoint?: string | undefined;
-	public readonly expireTime?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly location?: string | undefined;
-	public readonly nodeIpv4CidrSize?: number | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly servicesIpv4Cidr?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly statusMessage?: string | undefined;
-	public readonly tpuIpv4CidrBlock?: string | undefined;
-	public readonly zone?: string | undefined;
+	public readonly createTime?: string;
+	public readonly currentMasterVersion?: string;
+	public readonly currentNodeCount?: number;
+	public readonly currentNodeVersion?: string;
+	public readonly endpoint?: string;
+	public readonly expireTime?: string;
+	public readonly id?: string;
+	public readonly location?: string;
+	public readonly nodeIpv4CidrSize?: number;
+	public readonly selfLink?: string;
+	public readonly servicesIpv4Cidr?: string;
+	public readonly status?: string;
+	public readonly statusMessage?: string;
+	public readonly tpuIpv4CidrBlock?: string;
+	public readonly zone?: string;
 }
 export interface ProjectsZonesClustersComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly currentMasterVersion?: string | undefined;
-	readonly currentNodeCount?: number | undefined;
-	readonly currentNodeVersion?: string | undefined;
-	readonly endpoint?: string | undefined;
-	readonly expireTime?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly nodeIpv4CidrSize?: number | undefined;
-	readonly selfLink?: string | undefined;
-	readonly servicesIpv4Cidr?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly tpuIpv4CidrBlock?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly createTime?: string;
+	readonly currentMasterVersion?: string;
+	readonly currentNodeCount?: number;
+	readonly currentNodeVersion?: string;
+	readonly endpoint?: string;
+	readonly expireTime?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly nodeIpv4CidrSize?: number;
+	readonly selfLink?: string;
+	readonly servicesIpv4Cidr?: string;
+	readonly status?: string;
+	readonly statusMessage?: string;
+	readonly tpuIpv4CidrBlock?: string;
+	readonly zone?: string;
 }
 export interface ProjectsZonesClustersComponentInputs {
-	readonly addonsConfig?: AddonsConfig | undefined;
-	readonly authenticatorGroupsConfig?: AuthenticatorGroupsConfig | undefined;
-	readonly autopilot?: Autopilot | undefined;
-	readonly autoscaling?: ClusterAutoscaling | undefined;
-	readonly binaryAuthorization?: BinaryAuthorization | undefined;
+	readonly addonsConfig?: AddonsConfig;
+	readonly authenticatorGroupsConfig?: AuthenticatorGroupsConfig;
+	readonly autopilot?: Autopilot;
+	readonly autoscaling?: ClusterAutoscaling;
+	readonly binaryAuthorization?: BinaryAuthorization;
 	readonly cluster: Cluster;
-	readonly clusterIpv4Cidr?: string | undefined;
-	readonly clusterTelemetry?: ClusterTelemetry | undefined;
-	readonly conditions?: StatusCondition[] | undefined;
-	readonly confidentialNodes?: ConfidentialNodes | undefined;
-	readonly costManagementConfig?: CostManagementConfig | undefined;
-	readonly databaseEncryption?: DatabaseEncryption | undefined;
-	readonly defaultMaxPodsConstraint?: MaxPodsConstraint | undefined;
-	readonly description?: string | undefined;
-	readonly enableKubernetesAlpha?: boolean | undefined;
-	readonly enableTpu?: boolean | undefined;
-	readonly etag?: string | undefined;
-	readonly identityServiceConfig?: IdentityServiceConfig | undefined;
-	readonly initialClusterVersion?: string | undefined;
-	readonly initialNodeCount?: number | undefined;
-	readonly instanceGroupUrls?: string[] | undefined;
-	readonly ipAllocationPolicy?: IPAllocationPolicy | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly legacyAbac?: LegacyAbac | undefined;
-	readonly locations?: string[] | undefined;
-	readonly loggingConfig?: LoggingConfig | undefined;
-	readonly loggingService?: string | undefined;
-	readonly maintenancePolicy?: MaintenancePolicy | undefined;
-	readonly master?: any | undefined;
-	readonly masterAuth?: MasterAuth | undefined;
-	readonly masterAuthorizedNetworksConfig?: MasterAuthorizedNetworksConfig | undefined;
-	readonly masterIpv4CidrBlock?: string | undefined;
-	readonly meshCertificates?: MeshCertificates | undefined;
-	readonly monitoringConfig?: MonitoringConfig | undefined;
-	readonly monitoringService?: string | undefined;
+	readonly clusterIpv4Cidr?: string;
+	readonly clusterTelemetry?: ClusterTelemetry;
+	readonly conditions?: StatusCondition[];
+	readonly confidentialNodes?: ConfidentialNodes;
+	readonly costManagementConfig?: CostManagementConfig;
+	readonly databaseEncryption?: DatabaseEncryption;
+	readonly defaultMaxPodsConstraint?: MaxPodsConstraint;
+	readonly description?: string;
+	readonly enableKubernetesAlpha?: boolean;
+	readonly enableTpu?: boolean;
+	readonly etag?: string;
+	readonly identityServiceConfig?: IdentityServiceConfig;
+	readonly initialClusterVersion?: string;
+	readonly initialNodeCount?: number;
+	readonly instanceGroupUrls?: string[];
+	readonly ipAllocationPolicy?: IPAllocationPolicy;
+	readonly labelFingerprint?: string;
+	readonly legacyAbac?: LegacyAbac;
+	readonly locations?: string[];
+	readonly loggingConfig?: LoggingConfig;
+	readonly loggingService?: string;
+	readonly maintenancePolicy?: MaintenancePolicy;
+	readonly master?: any;
+	readonly masterAuth?: MasterAuth;
+	readonly masterAuthorizedNetworksConfig?: MasterAuthorizedNetworksConfig;
+	readonly masterIpv4CidrBlock?: string;
+	readonly meshCertificates?: MeshCertificates;
+	readonly monitoringConfig?: MonitoringConfig;
+	readonly monitoringService?: string;
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly networkConfig?: NetworkConfig | undefined;
-	readonly networkPolicy?: NetworkPolicy | undefined;
-	readonly nodeConfig?: NodeConfig | undefined;
-	readonly nodePoolAutoConfig?: NodePoolAutoConfig | undefined;
-	readonly nodePoolDefaults?: NodePoolDefaults | undefined;
-	readonly nodePools?: NodePool[] | undefined;
-	readonly notificationConfig?: NotificationConfig | undefined;
-	readonly parent?: string | undefined;
-	readonly podSecurityPolicyConfig?: PodSecurityPolicyConfig | undefined;
-	readonly privateCluster?: boolean | undefined;
-	readonly privateClusterConfig?: PrivateClusterConfig | undefined;
-	readonly protectConfig?: ProtectConfig | undefined;
-	readonly releaseChannel?: ReleaseChannel | undefined;
-	readonly resourceLabels?: { [P in string]: string } | undefined;
-	readonly resourceUsageExportConfig?: ResourceUsageExportConfig | undefined;
-	readonly shieldedNodes?: ShieldedNodes | undefined;
-	readonly subnetwork?: string | undefined;
-	readonly tpuConfig?: TpuConfig | undefined;
-	readonly verticalPodAutoscaling?: VerticalPodAutoscaling | undefined;
-	readonly workloadAltsConfig?: WorkloadALTSConfig | undefined;
-	readonly workloadCertificates?: WorkloadCertificates | undefined;
-	readonly workloadIdentityConfig?: WorkloadIdentityConfig | undefined;
-	readonly type: string;
+	readonly network?: string;
+	readonly networkConfig?: NetworkConfig;
+	readonly networkPolicy?: NetworkPolicy;
+	readonly nodeConfig?: NodeConfig;
+	readonly nodePoolAutoConfig?: NodePoolAutoConfig;
+	readonly nodePoolDefaults?: NodePoolDefaults;
+	readonly nodePools?: NodePool[];
+	readonly notificationConfig?: NotificationConfig;
+	readonly parent?: string;
+	readonly podSecurityPolicyConfig?: PodSecurityPolicyConfig;
+	readonly privateCluster?: boolean;
+	readonly privateClusterConfig?: PrivateClusterConfig;
+	readonly protectConfig?: ProtectConfig;
+	readonly releaseChannel?: ReleaseChannel;
+	readonly resourceLabels?: { [P in string]: string };
+	readonly resourceUsageExportConfig?: ResourceUsageExportConfig;
+	readonly shieldedNodes?: ShieldedNodes;
+	readonly subnetwork?: string;
+	readonly tpuConfig?: TpuConfig;
+	readonly verticalPodAutoscaling?: VerticalPodAutoscaling;
+	readonly workloadAltsConfig?: WorkloadALTSConfig;
+	readonly workloadCertificates?: WorkloadCertificates;
+	readonly workloadIdentityConfig?: WorkloadIdentityConfig;
 }
 export interface AcceleratorConfig {
-	readonly acceleratorCount?: string | undefined;
-	readonly acceleratorType?: string | undefined;
-	readonly gpuPartitionSize?: string | undefined;
-	readonly gpuSharingConfig?: GPUSharingConfig | undefined;
-	readonly maxTimeSharedClientsPerGpu?: string | undefined;
+	readonly acceleratorCount?: string;
+	readonly acceleratorType?: string;
+	readonly gpuPartitionSize?: string;
+	readonly gpuSharingConfig?: GPUSharingConfig;
+	readonly maxTimeSharedClientsPerGpu?: string;
 }
 export interface AddonsConfig {
-	readonly cloudRunConfig?: CloudRunConfig | undefined;
-	readonly configConnectorConfig?: ConfigConnectorConfig | undefined;
-	readonly dnsCacheConfig?: DnsCacheConfig | undefined;
-	readonly gcePersistentDiskCsiDriverConfig?: GcePersistentDiskCsiDriverConfig | undefined;
-	readonly gcpFilestoreCsiDriverConfig?: GcpFilestoreCsiDriverConfig | undefined;
-	readonly gkeBackupAgentConfig?: GkeBackupAgentConfig | undefined;
-	readonly horizontalPodAutoscaling?: HorizontalPodAutoscaling | undefined;
-	readonly httpLoadBalancing?: HttpLoadBalancing | undefined;
-	readonly istioConfig?: IstioConfig | undefined;
-	readonly kalmConfig?: KalmConfig | undefined;
-	readonly kubernetesDashboard?: KubernetesDashboard | undefined;
-	readonly networkPolicyConfig?: NetworkPolicyConfig | undefined;
+	readonly cloudRunConfig?: CloudRunConfig;
+	readonly configConnectorConfig?: ConfigConnectorConfig;
+	readonly dnsCacheConfig?: DnsCacheConfig;
+	readonly gcePersistentDiskCsiDriverConfig?: GcePersistentDiskCsiDriverConfig;
+	readonly gcpFilestoreCsiDriverConfig?: GcpFilestoreCsiDriverConfig;
+	readonly gkeBackupAgentConfig?: GkeBackupAgentConfig;
+	readonly horizontalPodAutoscaling?: HorizontalPodAutoscaling;
+	readonly httpLoadBalancing?: HttpLoadBalancing;
+	readonly istioConfig?: IstioConfig;
+	readonly kalmConfig?: KalmConfig;
+	readonly kubernetesDashboard?: KubernetesDashboard;
+	readonly networkPolicyConfig?: NetworkPolicyConfig;
 }
 export interface AdvancedMachineFeatures {
-	readonly threadsPerCore?: string | undefined;
+	readonly threadsPerCore?: string;
 }
 export interface AuthenticatorGroupsConfig {
-	readonly enabled?: boolean | undefined;
-	readonly securityGroup?: string | undefined;
+	readonly enabled?: boolean;
+	readonly securityGroup?: string;
 }
 export interface Autopilot {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface AutoprovisioningNodePoolDefaults {
-	readonly bootDiskKmsKey?: string | undefined;
-	readonly diskSizeGb?: number | undefined;
-	readonly diskType?: string | undefined;
-	readonly imageType?: string | undefined;
-	readonly management?: NodeManagement | undefined;
-	readonly minCpuPlatform?: string | undefined;
-	readonly oauthScopes?: string[] | undefined;
-	readonly serviceAccount?: string | undefined;
-	readonly shieldedInstanceConfig?: ShieldedInstanceConfig | undefined;
-	readonly upgradeSettings?: UpgradeSettings | undefined;
+	readonly bootDiskKmsKey?: string;
+	readonly diskSizeGb?: number;
+	readonly diskType?: string;
+	readonly imageType?: string;
+	readonly management?: NodeManagement;
+	readonly minCpuPlatform?: string;
+	readonly oauthScopes?: string[];
+	readonly serviceAccount?: string;
+	readonly shieldedInstanceConfig?: ShieldedInstanceConfig;
+	readonly upgradeSettings?: UpgradeSettings;
 }
 export interface AutoUpgradeOptions {
-	readonly autoUpgradeStartTime?: string | undefined;
-	readonly description?: string | undefined;
+	readonly autoUpgradeStartTime?: string;
+	readonly description?: string;
 }
 export interface BigQueryDestination {
-	readonly datasetId?: string | undefined;
+	readonly datasetId?: string;
 }
 export interface BinaryAuthorization {
-	readonly enabled?: boolean | undefined;
-	readonly evaluationMode?: string | undefined;
+	readonly enabled?: boolean;
+	readonly evaluationMode?: string;
 }
 export interface BlueGreenInfo {
-	readonly blueInstanceGroupUrls?: string[] | undefined;
-	readonly bluePoolDeletionStartTime?: string | undefined;
-	readonly greenInstanceGroupUrls?: string[] | undefined;
-	readonly greenPoolVersion?: string | undefined;
-	readonly phase?: string | undefined;
+	readonly blueInstanceGroupUrls?: string[];
+	readonly bluePoolDeletionStartTime?: string;
+	readonly greenInstanceGroupUrls?: string[];
+	readonly greenPoolVersion?: string;
+	readonly phase?: string;
 }
 export interface BlueGreenSettings {
-	readonly nodePoolSoakDuration?: string | undefined;
-	readonly standardRolloutPolicy?: StandardRolloutPolicy | undefined;
+	readonly nodePoolSoakDuration?: string;
+	readonly standardRolloutPolicy?: StandardRolloutPolicy;
 }
 export interface CidrBlock {
-	readonly cidrBlock?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly cidrBlock?: string;
+	readonly displayName?: string;
 }
 export interface ClientCertificateConfig {
-	readonly issueClientCertificate?: boolean | undefined;
+	readonly issueClientCertificate?: boolean;
 }
 export interface CloudRunConfig {
-	readonly disabled?: boolean | undefined;
-	readonly loadBalancerType?: string | undefined;
+	readonly disabled?: boolean;
+	readonly loadBalancerType?: string;
 }
 export interface Cluster {
-	readonly addonsConfig?: AddonsConfig | undefined;
-	readonly authenticatorGroupsConfig?: AuthenticatorGroupsConfig | undefined;
-	readonly autopilot?: Autopilot | undefined;
-	readonly autoscaling?: ClusterAutoscaling | undefined;
-	readonly binaryAuthorization?: BinaryAuthorization | undefined;
-	readonly clusterIpv4Cidr?: string | undefined;
-	readonly clusterTelemetry?: ClusterTelemetry | undefined;
-	readonly conditions?: StatusCondition[] | undefined;
-	readonly confidentialNodes?: ConfidentialNodes | undefined;
-	readonly costManagementConfig?: CostManagementConfig | undefined;
-	readonly createTime?: string | undefined;
-	readonly currentMasterVersion?: string | undefined;
-	readonly currentNodeCount?: number | undefined;
-	readonly currentNodeVersion?: string | undefined;
-	readonly databaseEncryption?: DatabaseEncryption | undefined;
-	readonly defaultMaxPodsConstraint?: MaxPodsConstraint | undefined;
-	readonly description?: string | undefined;
-	readonly enableKubernetesAlpha?: boolean | undefined;
-	readonly enableTpu?: boolean | undefined;
-	readonly endpoint?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly expireTime?: string | undefined;
-	readonly id?: string | undefined;
-	readonly identityServiceConfig?: IdentityServiceConfig | undefined;
-	readonly initialClusterVersion?: string | undefined;
-	readonly initialNodeCount?: number | undefined;
-	readonly instanceGroupUrls?: string[] | undefined;
-	readonly ipAllocationPolicy?: IPAllocationPolicy | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly legacyAbac?: LegacyAbac | undefined;
-	readonly location?: string | undefined;
-	readonly locations?: string[] | undefined;
-	readonly loggingConfig?: LoggingConfig | undefined;
-	readonly loggingService?: string | undefined;
-	readonly maintenancePolicy?: MaintenancePolicy | undefined;
-	readonly master?: any | undefined;
-	readonly masterAuth?: MasterAuth | undefined;
-	readonly masterAuthorizedNetworksConfig?: MasterAuthorizedNetworksConfig | undefined;
-	readonly masterIpv4CidrBlock?: string | undefined;
-	readonly meshCertificates?: MeshCertificates | undefined;
-	readonly monitoringConfig?: MonitoringConfig | undefined;
-	readonly monitoringService?: string | undefined;
-	readonly name?: string | undefined;
-	readonly network?: string | undefined;
-	readonly networkConfig?: NetworkConfig | undefined;
-	readonly networkPolicy?: NetworkPolicy | undefined;
-	readonly nodeConfig?: NodeConfig | undefined;
-	readonly nodeIpv4CidrSize?: number | undefined;
-	readonly nodePoolAutoConfig?: NodePoolAutoConfig | undefined;
-	readonly nodePoolDefaults?: NodePoolDefaults | undefined;
-	readonly nodePools?: NodePool[] | undefined;
-	readonly notificationConfig?: NotificationConfig | undefined;
-	readonly podSecurityPolicyConfig?: PodSecurityPolicyConfig | undefined;
-	readonly privateCluster?: boolean | undefined;
-	readonly privateClusterConfig?: PrivateClusterConfig | undefined;
-	readonly protectConfig?: ProtectConfig | undefined;
-	readonly releaseChannel?: ReleaseChannel | undefined;
-	readonly resourceLabels?: { [P in string]: string } | undefined;
-	readonly resourceUsageExportConfig?: ResourceUsageExportConfig | undefined;
-	readonly selfLink?: string | undefined;
-	readonly servicesIpv4Cidr?: string | undefined;
-	readonly shieldedNodes?: ShieldedNodes | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly subnetwork?: string | undefined;
-	readonly tpuConfig?: TpuConfig | undefined;
-	readonly tpuIpv4CidrBlock?: string | undefined;
-	readonly verticalPodAutoscaling?: VerticalPodAutoscaling | undefined;
-	readonly workloadAltsConfig?: WorkloadALTSConfig | undefined;
-	readonly workloadCertificates?: WorkloadCertificates | undefined;
-	readonly workloadIdentityConfig?: WorkloadIdentityConfig | undefined;
-	readonly zone?: string | undefined;
+	readonly addonsConfig?: AddonsConfig;
+	readonly authenticatorGroupsConfig?: AuthenticatorGroupsConfig;
+	readonly autopilot?: Autopilot;
+	readonly autoscaling?: ClusterAutoscaling;
+	readonly binaryAuthorization?: BinaryAuthorization;
+	readonly clusterIpv4Cidr?: string;
+	readonly clusterTelemetry?: ClusterTelemetry;
+	readonly conditions?: StatusCondition[];
+	readonly confidentialNodes?: ConfidentialNodes;
+	readonly costManagementConfig?: CostManagementConfig;
+	readonly createTime?: string;
+	readonly currentMasterVersion?: string;
+	readonly currentNodeCount?: number;
+	readonly currentNodeVersion?: string;
+	readonly databaseEncryption?: DatabaseEncryption;
+	readonly defaultMaxPodsConstraint?: MaxPodsConstraint;
+	readonly description?: string;
+	readonly enableKubernetesAlpha?: boolean;
+	readonly enableTpu?: boolean;
+	readonly endpoint?: string;
+	readonly etag?: string;
+	readonly expireTime?: string;
+	readonly id?: string;
+	readonly identityServiceConfig?: IdentityServiceConfig;
+	readonly initialClusterVersion?: string;
+	readonly initialNodeCount?: number;
+	readonly instanceGroupUrls?: string[];
+	readonly ipAllocationPolicy?: IPAllocationPolicy;
+	readonly labelFingerprint?: string;
+	readonly legacyAbac?: LegacyAbac;
+	readonly location?: string;
+	readonly locations?: string[];
+	readonly loggingConfig?: LoggingConfig;
+	readonly loggingService?: string;
+	readonly maintenancePolicy?: MaintenancePolicy;
+	readonly master?: any;
+	readonly masterAuth?: MasterAuth;
+	readonly masterAuthorizedNetworksConfig?: MasterAuthorizedNetworksConfig;
+	readonly masterIpv4CidrBlock?: string;
+	readonly meshCertificates?: MeshCertificates;
+	readonly monitoringConfig?: MonitoringConfig;
+	readonly monitoringService?: string;
+	readonly name?: string;
+	readonly network?: string;
+	readonly networkConfig?: NetworkConfig;
+	readonly networkPolicy?: NetworkPolicy;
+	readonly nodeConfig?: NodeConfig;
+	readonly nodeIpv4CidrSize?: number;
+	readonly nodePoolAutoConfig?: NodePoolAutoConfig;
+	readonly nodePoolDefaults?: NodePoolDefaults;
+	readonly nodePools?: NodePool[];
+	readonly notificationConfig?: NotificationConfig;
+	readonly podSecurityPolicyConfig?: PodSecurityPolicyConfig;
+	readonly privateCluster?: boolean;
+	readonly privateClusterConfig?: PrivateClusterConfig;
+	readonly protectConfig?: ProtectConfig;
+	readonly releaseChannel?: ReleaseChannel;
+	readonly resourceLabels?: { [P in string]: string };
+	readonly resourceUsageExportConfig?: ResourceUsageExportConfig;
+	readonly selfLink?: string;
+	readonly servicesIpv4Cidr?: string;
+	readonly shieldedNodes?: ShieldedNodes;
+	readonly status?: string;
+	readonly statusMessage?: string;
+	readonly subnetwork?: string;
+	readonly tpuConfig?: TpuConfig;
+	readonly tpuIpv4CidrBlock?: string;
+	readonly verticalPodAutoscaling?: VerticalPodAutoscaling;
+	readonly workloadAltsConfig?: WorkloadALTSConfig;
+	readonly workloadCertificates?: WorkloadCertificates;
+	readonly workloadIdentityConfig?: WorkloadIdentityConfig;
+	readonly zone?: string;
 }
 export interface ClusterAutoscaling {
-	readonly autoprovisioningLocations?: string[] | undefined;
-	readonly autoprovisioningNodePoolDefaults?: AutoprovisioningNodePoolDefaults | undefined;
-	readonly autoscalingProfile?: string | undefined;
-	readonly enableNodeAutoprovisioning?: boolean | undefined;
-	readonly resourceLimits?: ResourceLimit[] | undefined;
+	readonly autoprovisioningLocations?: string[];
+	readonly autoprovisioningNodePoolDefaults?: AutoprovisioningNodePoolDefaults;
+	readonly autoscalingProfile?: string;
+	readonly enableNodeAutoprovisioning?: boolean;
+	readonly resourceLimits?: ResourceLimit[];
 }
 export interface ClusterTelemetry {
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface ConfidentialNodes {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface ConfigConnectorConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface ConsumptionMeteringConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface CostManagementConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface CreateClusterRequest {
 	readonly cluster: Cluster;
-	readonly parent?: string | undefined;
+	readonly parent?: string;
 	readonly projectId: string;
 	readonly zone: string;
 }
 export interface DailyMaintenanceWindow {
-	readonly duration?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly duration?: string;
+	readonly startTime?: string;
 }
 export interface DatabaseEncryption {
-	readonly keyName?: string | undefined;
-	readonly state?: string | undefined;
+	readonly keyName?: string;
+	readonly state?: string;
 }
 export interface DefaultSnatStatus {
-	readonly disabled?: boolean | undefined;
+	readonly disabled?: boolean;
 }
 export interface DnsCacheConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface DNSConfig {
-	readonly clusterDns?: string | undefined;
-	readonly clusterDnsDomain?: string | undefined;
-	readonly clusterDnsScope?: string | undefined;
+	readonly clusterDns?: string;
+	readonly clusterDnsDomain?: string;
+	readonly clusterDnsScope?: string;
 }
 export interface EphemeralStorageConfig {
-	readonly localSsdCount?: number | undefined;
+	readonly localSsdCount?: number;
 }
 export interface EphemeralStorageLocalSsdConfig {
-	readonly localSsdCount?: number | undefined;
+	readonly localSsdCount?: number;
 }
 export interface FastSocket {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface Filter {
-	readonly eventType?: string[] | undefined;
+	readonly eventType?: string[];
 }
 export interface GatewayAPIConfig {
-	readonly channel?: string | undefined;
+	readonly channel?: string;
 }
 export interface GcePersistentDiskCsiDriverConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface GcfsConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface GcpFilestoreCsiDriverConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface GkeBackupAgentConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface GPUSharingConfig {
-	readonly gpuSharingStrategy?: string | undefined;
-	readonly maxSharedClientsPerGpu?: string | undefined;
+	readonly gpuSharingStrategy?: string;
+	readonly maxSharedClientsPerGpu?: string;
 }
 export interface HorizontalPodAutoscaling {
-	readonly disabled?: boolean | undefined;
+	readonly disabled?: boolean;
 }
 export interface HttpLoadBalancing {
-	readonly disabled?: boolean | undefined;
+	readonly disabled?: boolean;
 }
 export interface IdentityServiceConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface IPAllocationPolicy {
-	readonly allowRouteOverlap?: boolean | undefined;
-	readonly clusterIpv4Cidr?: string | undefined;
-	readonly clusterIpv4CidrBlock?: string | undefined;
-	readonly clusterSecondaryRangeName?: string | undefined;
-	readonly createSubnetwork?: boolean | undefined;
-	readonly ipv6AccessType?: string | undefined;
-	readonly nodeIpv4Cidr?: string | undefined;
-	readonly nodeIpv4CidrBlock?: string | undefined;
-	readonly servicesIpv4Cidr?: string | undefined;
-	readonly servicesIpv4CidrBlock?: string | undefined;
-	readonly servicesIpv6CidrBlock?: string | undefined;
-	readonly servicesSecondaryRangeName?: string | undefined;
-	readonly stackType?: string | undefined;
-	readonly subnetIpv6CidrBlock?: string | undefined;
-	readonly subnetworkName?: string | undefined;
-	readonly tpuIpv4CidrBlock?: string | undefined;
-	readonly useIpAliases?: boolean | undefined;
-	readonly useRoutes?: boolean | undefined;
+	readonly allowRouteOverlap?: boolean;
+	readonly clusterIpv4Cidr?: string;
+	readonly clusterIpv4CidrBlock?: string;
+	readonly clusterSecondaryRangeName?: string;
+	readonly createSubnetwork?: boolean;
+	readonly ipv6AccessType?: string;
+	readonly nodeIpv4Cidr?: string;
+	readonly nodeIpv4CidrBlock?: string;
+	readonly servicesIpv4Cidr?: string;
+	readonly servicesIpv4CidrBlock?: string;
+	readonly servicesIpv6CidrBlock?: string;
+	readonly servicesSecondaryRangeName?: string;
+	readonly stackType?: string;
+	readonly subnetIpv6CidrBlock?: string;
+	readonly subnetworkName?: string;
+	readonly tpuIpv4CidrBlock?: string;
+	readonly useIpAliases?: boolean;
+	readonly useRoutes?: boolean;
 }
 export interface IstioConfig {
-	readonly auth?: string | undefined;
-	readonly disabled?: boolean | undefined;
+	readonly auth?: string;
+	readonly disabled?: boolean;
 }
 export interface KalmConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface KubernetesDashboard {
-	readonly disabled?: boolean | undefined;
+	readonly disabled?: boolean;
 }
 export interface LegacyAbac {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface LinuxNodeConfig {
-	readonly cgroupMode?: string | undefined;
-	readonly sysctls?: { [P in string]: string } | undefined;
+	readonly cgroupMode?: string;
+	readonly sysctls?: { [P in string]: string };
 }
 export interface LocalNvmeSsdBlockConfig {
-	readonly localSsdCount?: number | undefined;
+	readonly localSsdCount?: number;
 }
 export interface LoggingComponentConfig {
-	readonly enableComponents?: string[] | undefined;
+	readonly enableComponents?: string[];
 }
 export interface LoggingConfig {
-	readonly componentConfig?: LoggingComponentConfig | undefined;
+	readonly componentConfig?: LoggingComponentConfig;
 }
 export interface LoggingVariantConfig {
-	readonly variant?: string | undefined;
+	readonly variant?: string;
 }
 export interface MaintenanceExclusionOptions {
-	readonly scope?: string | undefined;
+	readonly scope?: string;
 }
 export interface MaintenancePolicy {
-	readonly resourceVersion?: string | undefined;
-	readonly window?: MaintenanceWindow | undefined;
+	readonly resourceVersion?: string;
+	readonly window?: MaintenanceWindow;
 }
 export interface MaintenanceWindow {
-	readonly dailyMaintenanceWindow?: DailyMaintenanceWindow | undefined;
-	readonly maintenanceExclusions?: { [P in string]: TimeWindow } | undefined;
-	readonly recurringWindow?: RecurringTimeWindow | undefined;
+	readonly dailyMaintenanceWindow?: DailyMaintenanceWindow;
+	readonly maintenanceExclusions?: { [P in string]: TimeWindow };
+	readonly recurringWindow?: RecurringTimeWindow;
 }
 export interface ManagedPrometheusConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface Master {}
 export interface MasterAuth {
-	readonly clientCertificate?: string | undefined;
-	readonly clientCertificateConfig?: ClientCertificateConfig | undefined;
-	readonly clientKey?: string | undefined;
-	readonly clusterCaCertificate?: string | undefined;
-	readonly password?: string | undefined;
-	readonly username?: string | undefined;
+	readonly clientCertificate?: string;
+	readonly clientCertificateConfig?: ClientCertificateConfig;
+	readonly clientKey?: string;
+	readonly clusterCaCertificate?: string;
+	readonly password?: string;
+	readonly username?: string;
 }
 export interface MasterAuthorizedNetworksConfig {
-	readonly cidrBlocks?: CidrBlock[] | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly gcpPublicCidrsAccessEnabled?: boolean | undefined;
+	readonly cidrBlocks?: CidrBlock[];
+	readonly enabled?: boolean;
+	readonly gcpPublicCidrsAccessEnabled?: boolean;
 }
 export interface MaxPodsConstraint {
-	readonly maxPodsPerNode?: string | undefined;
+	readonly maxPodsPerNode?: string;
 }
 export interface MeshCertificates {
-	readonly enableCertificates?: boolean | undefined;
+	readonly enableCertificates?: boolean;
 }
 export interface MonitoringComponentConfig {
-	readonly enableComponents?: string[] | undefined;
+	readonly enableComponents?: string[];
 }
 export interface MonitoringConfig {
-	readonly componentConfig?: MonitoringComponentConfig | undefined;
-	readonly managedPrometheusConfig?: ManagedPrometheusConfig | undefined;
+	readonly componentConfig?: MonitoringComponentConfig;
+	readonly managedPrometheusConfig?: ManagedPrometheusConfig;
 }
 export interface NetworkConfig {
-	readonly datapathProvider?: string | undefined;
-	readonly defaultSnatStatus?: DefaultSnatStatus | undefined;
-	readonly dnsConfig?: DNSConfig | undefined;
-	readonly enableIntraNodeVisibility?: boolean | undefined;
-	readonly enableL4ilbSubsetting?: boolean | undefined;
-	readonly gatewayApiConfig?: GatewayAPIConfig | undefined;
-	readonly network?: string | undefined;
-	readonly privateIpv6GoogleAccess?: string | undefined;
-	readonly serviceExternalIpsConfig?: ServiceExternalIPsConfig | undefined;
-	readonly subnetwork?: string | undefined;
+	readonly datapathProvider?: string;
+	readonly defaultSnatStatus?: DefaultSnatStatus;
+	readonly dnsConfig?: DNSConfig;
+	readonly enableIntraNodeVisibility?: boolean;
+	readonly enableL4ilbSubsetting?: boolean;
+	readonly gatewayApiConfig?: GatewayAPIConfig;
+	readonly network?: string;
+	readonly privateIpv6GoogleAccess?: string;
+	readonly serviceExternalIpsConfig?: ServiceExternalIPsConfig;
+	readonly subnetwork?: string;
 }
 export interface NetworkPerformanceConfig {
-	readonly externalIpEgressBandwidthTier?: string | undefined;
-	readonly totalEgressBandwidthTier?: string | undefined;
+	readonly externalIpEgressBandwidthTier?: string;
+	readonly totalEgressBandwidthTier?: string;
 }
 export interface NetworkPolicy {
-	readonly enabled?: boolean | undefined;
-	readonly provider?: string | undefined;
+	readonly enabled?: boolean;
+	readonly provider?: string;
 }
 export interface NetworkPolicyConfig {
-	readonly disabled?: boolean | undefined;
+	readonly disabled?: boolean;
 }
 export interface NetworkTags {
-	readonly tags?: string[] | undefined;
+	readonly tags?: string[];
 }
 export interface NodeConfig {
-	readonly accelerators?: AcceleratorConfig[] | undefined;
-	readonly advancedMachineFeatures?: AdvancedMachineFeatures | undefined;
-	readonly bootDiskKmsKey?: string | undefined;
-	readonly confidentialNodes?: ConfidentialNodes | undefined;
-	readonly diskSizeGb?: number | undefined;
-	readonly diskType?: string | undefined;
-	readonly ephemeralStorageConfig?: EphemeralStorageConfig | undefined;
-	readonly ephemeralStorageLocalSsdConfig?: EphemeralStorageLocalSsdConfig | undefined;
-	readonly fastSocket?: FastSocket | undefined;
-	readonly gcfsConfig?: GcfsConfig | undefined;
-	readonly gvnic?: VirtualNIC | undefined;
-	readonly imageType?: string | undefined;
-	readonly kubeletConfig?: NodeKubeletConfig | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly linuxNodeConfig?: LinuxNodeConfig | undefined;
-	readonly localNvmeSsdBlockConfig?: LocalNvmeSsdBlockConfig | undefined;
-	readonly localSsdCount?: number | undefined;
-	readonly loggingConfig?: NodePoolLoggingConfig | undefined;
-	readonly machineType?: string | undefined;
-	readonly metadata?: { [P in string]: string } | undefined;
-	readonly minCpuPlatform?: string | undefined;
-	readonly nodeGroup?: string | undefined;
-	readonly oauthScopes?: string[] | undefined;
-	readonly preemptible?: boolean | undefined;
-	readonly reservationAffinity?: ReservationAffinity | undefined;
-	readonly resourceLabels?: { [P in string]: string } | undefined;
-	readonly sandboxConfig?: SandboxConfig | undefined;
-	readonly serviceAccount?: string | undefined;
-	readonly shieldedInstanceConfig?: ShieldedInstanceConfig | undefined;
-	readonly spot?: boolean | undefined;
-	readonly tags?: string[] | undefined;
-	readonly taints?: NodeTaint[] | undefined;
-	readonly windowsNodeConfig?: WindowsNodeConfig | undefined;
-	readonly workloadMetadataConfig?: WorkloadMetadataConfig | undefined;
+	readonly accelerators?: AcceleratorConfig[];
+	readonly advancedMachineFeatures?: AdvancedMachineFeatures;
+	readonly bootDiskKmsKey?: string;
+	readonly confidentialNodes?: ConfidentialNodes;
+	readonly diskSizeGb?: number;
+	readonly diskType?: string;
+	readonly ephemeralStorageConfig?: EphemeralStorageConfig;
+	readonly ephemeralStorageLocalSsdConfig?: EphemeralStorageLocalSsdConfig;
+	readonly fastSocket?: FastSocket;
+	readonly gcfsConfig?: GcfsConfig;
+	readonly gvnic?: VirtualNIC;
+	readonly imageType?: string;
+	readonly kubeletConfig?: NodeKubeletConfig;
+	readonly labels?: { [P in string]: string };
+	readonly linuxNodeConfig?: LinuxNodeConfig;
+	readonly localNvmeSsdBlockConfig?: LocalNvmeSsdBlockConfig;
+	readonly localSsdCount?: number;
+	readonly loggingConfig?: NodePoolLoggingConfig;
+	readonly machineType?: string;
+	readonly metadata?: { [P in string]: string };
+	readonly minCpuPlatform?: string;
+	readonly nodeGroup?: string;
+	readonly oauthScopes?: string[];
+	readonly preemptible?: boolean;
+	readonly reservationAffinity?: ReservationAffinity;
+	readonly resourceLabels?: { [P in string]: string };
+	readonly sandboxConfig?: SandboxConfig;
+	readonly serviceAccount?: string;
+	readonly shieldedInstanceConfig?: ShieldedInstanceConfig;
+	readonly spot?: boolean;
+	readonly tags?: string[];
+	readonly taints?: NodeTaint[];
+	readonly windowsNodeConfig?: WindowsNodeConfig;
+	readonly workloadMetadataConfig?: WorkloadMetadataConfig;
 }
 export interface NodeConfigDefaults {
-	readonly gcfsConfig?: GcfsConfig | undefined;
-	readonly loggingConfig?: NodePoolLoggingConfig | undefined;
+	readonly gcfsConfig?: GcfsConfig;
+	readonly loggingConfig?: NodePoolLoggingConfig;
 }
 export interface NodeKubeletConfig {
-	readonly cpuCfsQuota?: boolean | undefined;
-	readonly cpuCfsQuotaPeriod?: string | undefined;
-	readonly cpuManagerPolicy?: string | undefined;
-	readonly podPidsLimit?: string | undefined;
+	readonly cpuCfsQuota?: boolean;
+	readonly cpuCfsQuotaPeriod?: string;
+	readonly cpuManagerPolicy?: string;
+	readonly podPidsLimit?: string;
 }
 export interface NodeManagement {
-	readonly autoRepair?: boolean | undefined;
-	readonly autoUpgrade?: boolean | undefined;
-	readonly upgradeOptions?: AutoUpgradeOptions | undefined;
+	readonly autoRepair?: boolean;
+	readonly autoUpgrade?: boolean;
+	readonly upgradeOptions?: AutoUpgradeOptions;
 }
 export interface NodeNetworkConfig {
-	readonly createPodRange?: boolean | undefined;
-	readonly enablePrivateNodes?: boolean | undefined;
-	readonly networkPerformanceConfig?: NetworkPerformanceConfig | undefined;
-	readonly podIpv4CidrBlock?: string | undefined;
-	readonly podRange?: string | undefined;
+	readonly createPodRange?: boolean;
+	readonly enablePrivateNodes?: boolean;
+	readonly networkPerformanceConfig?: NetworkPerformanceConfig;
+	readonly podIpv4CidrBlock?: string;
+	readonly podRange?: string;
 }
 export interface NodePool {
-	readonly autoscaling?: NodePoolAutoscaling | undefined;
-	readonly conditions?: StatusCondition[] | undefined;
-	readonly config?: NodeConfig | undefined;
-	readonly etag?: string | undefined;
-	readonly initialNodeCount?: number | undefined;
-	readonly instanceGroupUrls?: string[] | undefined;
-	readonly locations?: string[] | undefined;
-	readonly management?: NodeManagement | undefined;
-	readonly maxPodsConstraint?: MaxPodsConstraint | undefined;
-	readonly name?: string | undefined;
-	readonly networkConfig?: NodeNetworkConfig | undefined;
-	readonly placementPolicy?: PlacementPolicy | undefined;
-	readonly podIpv4CidrSize?: number | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly updateInfo?: UpdateInfo | undefined;
-	readonly upgradeSettings?: UpgradeSettings | undefined;
-	readonly version?: string | undefined;
+	readonly autoscaling?: NodePoolAutoscaling;
+	readonly conditions?: StatusCondition[];
+	readonly config?: NodeConfig;
+	readonly etag?: string;
+	readonly initialNodeCount?: number;
+	readonly instanceGroupUrls?: string[];
+	readonly locations?: string[];
+	readonly management?: NodeManagement;
+	readonly maxPodsConstraint?: MaxPodsConstraint;
+	readonly name?: string;
+	readonly networkConfig?: NodeNetworkConfig;
+	readonly placementPolicy?: PlacementPolicy;
+	readonly podIpv4CidrSize?: number;
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly statusMessage?: string;
+	readonly updateInfo?: UpdateInfo;
+	readonly upgradeSettings?: UpgradeSettings;
+	readonly version?: string;
 }
 export interface NodePoolAutoConfig {
-	readonly networkTags?: NetworkTags | undefined;
+	readonly networkTags?: NetworkTags;
 }
 export interface NodePoolAutoscaling {
-	readonly autoprovisioned?: boolean | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly locationPolicy?: string | undefined;
-	readonly maxNodeCount?: number | undefined;
-	readonly minNodeCount?: number | undefined;
-	readonly totalMaxNodeCount?: number | undefined;
-	readonly totalMinNodeCount?: number | undefined;
+	readonly autoprovisioned?: boolean;
+	readonly enabled?: boolean;
+	readonly locationPolicy?: string;
+	readonly maxNodeCount?: number;
+	readonly minNodeCount?: number;
+	readonly totalMaxNodeCount?: number;
+	readonly totalMinNodeCount?: number;
 }
 export interface NodePoolDefaults {
-	readonly nodeConfigDefaults?: NodeConfigDefaults | undefined;
+	readonly nodeConfigDefaults?: NodeConfigDefaults;
 }
 export interface NodePoolLoggingConfig {
-	readonly variantConfig?: LoggingVariantConfig | undefined;
+	readonly variantConfig?: LoggingVariantConfig;
 }
 export interface NodeTaint {
-	readonly effect?: string | undefined;
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly effect?: string;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface NotificationConfig {
-	readonly pubsub?: PubSub | undefined;
+	readonly pubsub?: PubSub;
 }
 export interface PlacementPolicy {
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface PodSecurityPolicyConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface PrivateClusterConfig {
-	readonly enablePrivateEndpoint?: boolean | undefined;
-	readonly enablePrivateNodes?: boolean | undefined;
-	readonly masterGlobalAccessConfig?: PrivateClusterMasterGlobalAccessConfig | undefined;
-	readonly masterIpv4CidrBlock?: string | undefined;
-	readonly peeringName?: string | undefined;
-	readonly privateEndpoint?: string | undefined;
-	readonly privateEndpointSubnetwork?: string | undefined;
-	readonly publicEndpoint?: string | undefined;
+	readonly enablePrivateEndpoint?: boolean;
+	readonly enablePrivateNodes?: boolean;
+	readonly masterGlobalAccessConfig?: PrivateClusterMasterGlobalAccessConfig;
+	readonly masterIpv4CidrBlock?: string;
+	readonly peeringName?: string;
+	readonly privateEndpoint?: string;
+	readonly privateEndpointSubnetwork?: string;
+	readonly publicEndpoint?: string;
 }
 export interface PrivateClusterMasterGlobalAccessConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface ProtectConfig {
-	readonly workloadConfig?: WorkloadConfig | undefined;
-	readonly workloadVulnerabilityMode?: string | undefined;
+	readonly workloadConfig?: WorkloadConfig;
+	readonly workloadVulnerabilityMode?: string;
 }
 export interface PubSub {
-	readonly enabled?: boolean | undefined;
-	readonly filter?: Filter | undefined;
-	readonly topic?: string | undefined;
+	readonly enabled?: boolean;
+	readonly filter?: Filter;
+	readonly topic?: string;
 }
 export interface RecurringTimeWindow {
-	readonly recurrence?: string | undefined;
-	readonly window?: TimeWindow | undefined;
+	readonly recurrence?: string;
+	readonly window?: TimeWindow;
 }
 export interface ReleaseChannel {
-	readonly channel?: string | undefined;
+	readonly channel?: string;
 }
 export interface ReservationAffinity {
-	readonly consumeReservationType?: string | undefined;
-	readonly key?: string | undefined;
-	readonly values?: string[] | undefined;
+	readonly consumeReservationType?: string;
+	readonly key?: string;
+	readonly values?: string[];
 }
 export interface ResourceLimit {
-	readonly maximum?: string | undefined;
-	readonly minimum?: string | undefined;
-	readonly resourceType?: string | undefined;
+	readonly maximum?: string;
+	readonly minimum?: string;
+	readonly resourceType?: string;
 }
 export interface ResourceUsageExportConfig {
-	readonly bigqueryDestination?: BigQueryDestination | undefined;
-	readonly consumptionMeteringConfig?: ConsumptionMeteringConfig | undefined;
-	readonly enableNetworkEgressMetering?: boolean | undefined;
+	readonly bigqueryDestination?: BigQueryDestination;
+	readonly consumptionMeteringConfig?: ConsumptionMeteringConfig;
+	readonly enableNetworkEgressMetering?: boolean;
 }
 export interface SandboxConfig {
-	readonly sandboxType?: string | undefined;
-	readonly type?: string | undefined;
+	readonly sandboxType?: string;
+	readonly type?: string;
 }
 export interface ServiceExternalIPsConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface ShieldedInstanceConfig {
-	readonly enableIntegrityMonitoring?: boolean | undefined;
-	readonly enableSecureBoot?: boolean | undefined;
+	readonly enableIntegrityMonitoring?: boolean;
+	readonly enableSecureBoot?: boolean;
 }
 export interface ShieldedNodes {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface StandardRolloutPolicy {
-	readonly batchNodeCount?: number | undefined;
-	readonly batchPercentage?: number | undefined;
-	readonly batchSoakDuration?: string | undefined;
+	readonly batchNodeCount?: number;
+	readonly batchPercentage?: number;
+	readonly batchSoakDuration?: string;
 }
 export interface StatusCondition {
-	readonly canonicalCode?: string | undefined;
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly canonicalCode?: string;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface TimeWindow {
-	readonly endTime?: string | undefined;
-	readonly maintenanceExclusionOptions?: MaintenanceExclusionOptions | undefined;
-	readonly startTime?: string | undefined;
+	readonly endTime?: string;
+	readonly maintenanceExclusionOptions?: MaintenanceExclusionOptions;
+	readonly startTime?: string;
 }
 export interface TpuConfig {
-	readonly enabled?: boolean | undefined;
-	readonly ipv4CidrBlock?: string | undefined;
-	readonly useServiceNetworking?: boolean | undefined;
+	readonly enabled?: boolean;
+	readonly ipv4CidrBlock?: string;
+	readonly useServiceNetworking?: boolean;
 }
 export interface UpdateInfo {
-	readonly blueGreenInfo?: BlueGreenInfo | undefined;
+	readonly blueGreenInfo?: BlueGreenInfo;
 }
 export interface UpgradeSettings {
-	readonly blueGreenSettings?: BlueGreenSettings | undefined;
-	readonly maxSurge?: number | undefined;
-	readonly maxUnavailable?: number | undefined;
-	readonly strategy?: string | undefined;
+	readonly blueGreenSettings?: BlueGreenSettings;
+	readonly maxSurge?: number;
+	readonly maxUnavailable?: number;
+	readonly strategy?: string;
 }
 export interface VerticalPodAutoscaling {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface VirtualNIC {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface WindowsNodeConfig {
-	readonly osVersion?: string | undefined;
+	readonly osVersion?: string;
 }
 export interface WorkloadALTSConfig {
-	readonly enableAlts?: boolean | undefined;
+	readonly enableAlts?: boolean;
 }
 export interface WorkloadCertificates {
-	readonly enableCertificates?: boolean | undefined;
+	readonly enableCertificates?: boolean;
 }
 export interface WorkloadConfig {
-	readonly auditMode?: string | undefined;
+	readonly auditMode?: string;
 }
 export interface WorkloadIdentityConfig {
-	readonly identityNamespace?: string | undefined;
-	readonly identityProvider?: string | undefined;
-	readonly workloadPool?: string | undefined;
+	readonly identityNamespace?: string;
+	readonly identityProvider?: string;
+	readonly workloadPool?: string;
 }
 export interface WorkloadMetadataConfig {
-	readonly mode?: string | undefined;
-	readonly nodeMetadata?: string | undefined;
+	readonly mode?: string;
+	readonly nodeMetadata?: string;
 }
 export default {
 	ProjectsZonesClusters: ProjectsZonesClusters,

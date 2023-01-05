@@ -7,32 +7,31 @@ export class TargetHttpsProxy
 	constructor(entity: ADKEntity, options: TargetHttpsProxyComponentInputs) {
 		super(entity, options.name, "compute.v1.targetHttpsProxy", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
 }
 export interface TargetHttpsProxyComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export interface TargetHttpsProxyComponentInputs {
-	readonly authorizationPolicy?: string | undefined;
-	readonly certificateMap?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
+	readonly authorizationPolicy?: string;
+	readonly certificateMap?: string;
+	readonly description?: string;
+	readonly fingerprint?: string;
 	readonly name: string;
-	readonly proxyBind?: boolean | undefined;
-	readonly quicOverride?: string | undefined;
-	readonly serverTlsPolicy?: string | undefined;
-	readonly sslCertificates?: string[] | undefined;
-	readonly sslPolicy?: string | undefined;
-	readonly urlMap?: string | undefined;
-	readonly type: string;
+	readonly proxyBind?: boolean;
+	readonly quicOverride?: string;
+	readonly serverTlsPolicy?: string;
+	readonly sslCertificates?: string[];
+	readonly sslPolicy?: string;
+	readonly urlMap?: string;
 }
 export default {
 	TargetHttpsProxy: TargetHttpsProxy,

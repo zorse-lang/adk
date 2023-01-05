@@ -10,32 +10,31 @@ export class ProjectsNotificationChannels
 }
 export interface ProjectsNotificationChannelsComponentOutputs {}
 export interface ProjectsNotificationChannelsComponentInputs {
-	readonly creationRecord?: MutationRecord | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly mutationRecords?: MutationRecord[] | undefined;
+	readonly creationRecord?: MutationRecord;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly enabled?: boolean;
+	readonly labels?: { [P in string]: string };
+	readonly mutationRecords?: MutationRecord[];
 	readonly name: string;
-	readonly type: string;
-	readonly userLabels?: { [P in string]: string } | undefined;
-	readonly verificationStatus?: string | undefined;
+	readonly userLabels?: { [P in string]: string };
+	readonly verificationStatus?: string;
 }
 export interface MutationRecord {
-	readonly mutatedBy?: string | undefined;
-	readonly mutateTime?: string | undefined;
+	readonly mutatedBy?: string;
+	readonly mutateTime?: string;
 }
 export interface NotificationChannel {
-	readonly creationRecord?: MutationRecord | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly mutationRecords?: MutationRecord[] | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
-	readonly userLabels?: { [P in string]: string } | undefined;
-	readonly verificationStatus?: string | undefined;
+	readonly creationRecord?: MutationRecord;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly enabled?: boolean;
+	readonly labels?: { [P in string]: string };
+	readonly mutationRecords?: MutationRecord[];
+	readonly name?: string;
+	readonly type?: string;
+	readonly userLabels?: { [P in string]: string };
+	readonly verificationStatus?: string;
 }
 export default {
 	ProjectsNotificationChannels: ProjectsNotificationChannels,

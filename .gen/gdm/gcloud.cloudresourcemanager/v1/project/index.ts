@@ -7,18 +7,17 @@ export class Project extends GdmResource<ProjectComponentInputs> implements Proj
 }
 export interface ProjectComponentOutputs {}
 export interface ProjectComponentInputs {
-	readonly createTime?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly lifecycleState?: string | undefined;
+	readonly createTime?: string;
+	readonly labels?: { [P in string]: string };
+	readonly lifecycleState?: string;
 	readonly name: string;
-	readonly parent?: ResourceId | undefined;
-	readonly projectId?: string | undefined;
-	readonly projectNumber?: string | undefined;
-	readonly type: string;
+	readonly parent?: ResourceId;
+	readonly projectId?: string;
+	readonly projectNumber?: string;
 }
 export interface ResourceId {
-	readonly id?: string | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly type?: string;
 }
 export default {
 	Project: Project,

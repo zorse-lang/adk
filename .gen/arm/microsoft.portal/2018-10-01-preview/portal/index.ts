@@ -16,49 +16,49 @@ export interface dashboardsComponentOutputs {
 export interface dashboardsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DashboardProperties | undefined;
-	readonly tags?: DashboardTags | undefined;
+	readonly properties?: DashboardProperties;
+	readonly tags?: DashboardTags;
 }
 export interface DashboardLens {
-	readonly metadata?: DashboardLensMetadata | undefined;
+	readonly metadata?: DashboardLensMetadata;
 	readonly order: number;
 	readonly parts: DashboardLensParts;
 }
 export interface DashboardLensMetadata {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface DashboardLensParts {
-	readonly "[ key: string ]"?: DashboardParts | undefined;
+	readonly [key: string]: DashboardParts;
 }
 export interface DashboardPartMetadata {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface DashboardParts {
-	readonly metadata?: DashboardPartMetadata | undefined;
+	readonly metadata?: DashboardPartMetadata;
 	readonly position: DashboardPartsPosition;
 }
 export interface DashboardPartsPosition {
 	readonly colSpan: number;
-	readonly metadata?: DashboardPartsPositionMetadata | undefined;
+	readonly metadata?: DashboardPartsPositionMetadata;
 	readonly rowSpan: number;
 	readonly x: number;
 	readonly y: number;
 }
 export interface DashboardPartsPositionMetadata {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface DashboardProperties {
-	readonly lenses?: DashboardPropertiesLenses | undefined;
-	readonly metadata?: DashboardPropertiesMetadata | undefined;
+	readonly lenses?: DashboardPropertiesLenses;
+	readonly metadata?: DashboardPropertiesMetadata;
 }
 export interface DashboardPropertiesLenses {
-	readonly "[ key: string ]"?: DashboardLens | undefined;
+	readonly [key: string]: DashboardLens;
 }
 export interface DashboardPropertiesMetadata {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface DashboardTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	dashboards: dashboards,

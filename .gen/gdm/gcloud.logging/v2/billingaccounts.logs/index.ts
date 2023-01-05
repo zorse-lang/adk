@@ -10,7 +10,6 @@ export class BillingAccountsLogs
 }
 export interface BillingAccountsLogsComponentOutputs {}
 export interface BillingAccountsLogsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

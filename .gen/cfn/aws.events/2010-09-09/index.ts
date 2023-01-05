@@ -13,9 +13,9 @@ export interface ApiDestinationComponentInputs {
 	readonly ConnectionArn: string;
 	readonly HttpMethod: string;
 	readonly InvocationEndpoint: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InvocationRateLimitPerSecond?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly InvocationRateLimitPerSecond?: number | undefined;
+	readonly Name?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Archive extends CfnResource<ArchiveComponentInputs> implements ArchiveComponentOutputs {
@@ -29,10 +29,10 @@ export interface ArchiveComponentOutputs {
 }
 export interface ArchiveComponentInputs {
 	readonly SourceArn: string;
-	readonly ArchiveName?: string | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EventPattern?: (any | undefined) | undefined;
-	readonly RetentionDays?: (number | undefined) | undefined;
+	readonly ArchiveName?: string;
+	readonly Description?: string | undefined;
+	readonly EventPattern?: any | undefined;
+	readonly RetentionDays?: number | undefined;
 	readonly LogicalId: string;
 }
 export class Connection extends CfnResource<ConnectionComponentInputs> implements ConnectionComponentOutputs {
@@ -49,8 +49,8 @@ export interface ConnectionComponentOutputs {
 export interface ConnectionComponentInputs {
 	readonly AuthorizationType: string;
 	readonly AuthParameters: AuthParameters;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Endpoint extends CfnResource<EndpointComponentInputs> implements EndpointComponentOutputs {
@@ -74,9 +74,9 @@ export interface EndpointComponentInputs {
 	readonly EventBuses: EndpointEventBus[];
 	readonly Name: string;
 	readonly RoutingConfig: RoutingConfig;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ReplicationConfig?: (ReplicationConfig | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly ReplicationConfig?: ReplicationConfig | undefined;
+	readonly RoleArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EventBus extends CfnResource<EventBusComponentInputs> implements EventBusComponentOutputs {
@@ -94,8 +94,8 @@ export interface EventBusComponentOutputs {
 }
 export interface EventBusComponentInputs {
 	readonly Name: string;
-	readonly EventSourceName?: (string | undefined) | undefined;
-	readonly Tags?: (TagEntry[] | undefined) | undefined;
+	readonly EventSourceName?: string | undefined;
+	readonly Tags?: TagEntry[] | undefined;
 	readonly LogicalId: string;
 }
 export class EventBusPolicy extends CfnResource<EventBusPolicyComponentInputs> implements EventBusPolicyComponentOutputs {
@@ -106,11 +106,11 @@ export class EventBusPolicy extends CfnResource<EventBusPolicyComponentInputs> i
 export interface EventBusPolicyComponentOutputs {}
 export interface EventBusPolicyComponentInputs {
 	readonly StatementId: string;
-	readonly Action?: (string | undefined) | undefined;
-	readonly Condition?: (Condition | undefined) | undefined;
-	readonly EventBusName?: (string | undefined) | undefined;
-	readonly Principal?: (string | undefined) | undefined;
-	readonly Statement?: (any | undefined) | undefined;
+	readonly Action?: string | undefined;
+	readonly Condition?: Condition | undefined;
+	readonly EventBusName?: string | undefined;
+	readonly Principal?: string | undefined;
+	readonly Statement?: any | undefined;
 	readonly LogicalId: string;
 }
 export class Rule extends CfnResource<RuleComponentInputs> implements RuleComponentOutputs {
@@ -123,14 +123,14 @@ export interface RuleComponentOutputs {
 	readonly Arn: string;
 }
 export interface RuleComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly EventBusName?: (string | undefined) | undefined;
-	readonly EventPattern?: (any | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly ScheduleExpression?: (string | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
-	readonly Targets?: (Target[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly EventBusName?: string | undefined;
+	readonly EventPattern?: any | undefined;
+	readonly Name?: string | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly ScheduleExpression?: string | undefined;
+	readonly State?: string | undefined;
+	readonly Targets?: Target[] | undefined;
 	readonly LogicalId: string;
 }
 export interface ApiKeyAuthParameters {
@@ -138,10 +138,10 @@ export interface ApiKeyAuthParameters {
 	readonly ApiKeyValue: string;
 }
 export interface AuthParameters {
-	readonly ApiKeyAuthParameters?: (ApiKeyAuthParameters | undefined) | undefined;
-	readonly BasicAuthParameters?: (BasicAuthParameters | undefined) | undefined;
-	readonly InvocationHttpParameters?: (ConnectionHttpParameters | undefined) | undefined;
-	readonly OAuthParameters?: (OAuthParameters | undefined) | undefined;
+	readonly ApiKeyAuthParameters?: ApiKeyAuthParameters | undefined;
+	readonly BasicAuthParameters?: BasicAuthParameters | undefined;
+	readonly InvocationHttpParameters?: ConnectionHttpParameters | undefined;
+	readonly OAuthParameters?: OAuthParameters | undefined;
 }
 export interface BasicAuthParameters {
 	readonly Password: string;
@@ -152,18 +152,18 @@ export interface ClientParameters {
 	readonly ClientSecret: string;
 }
 export interface ConnectionHttpParameters {
-	readonly BodyParameters?: (Parameter[] | undefined) | undefined;
-	readonly HeaderParameters?: (Parameter[] | undefined) | undefined;
-	readonly QueryStringParameters?: (Parameter[] | undefined) | undefined;
+	readonly BodyParameters?: Parameter[] | undefined;
+	readonly HeaderParameters?: Parameter[] | undefined;
+	readonly QueryStringParameters?: Parameter[] | undefined;
 }
 export interface OAuthParameters {
 	readonly AuthorizationEndpoint: string;
 	readonly ClientParameters: ClientParameters;
 	readonly HttpMethod: string;
-	readonly OAuthHttpParameters?: (ConnectionHttpParameters | undefined) | undefined;
+	readonly OAuthHttpParameters?: ConnectionHttpParameters | undefined;
 }
 export interface Parameter {
-	readonly IsValueSecret?: (boolean | undefined) | undefined;
+	readonly IsValueSecret?: boolean | undefined;
 	readonly Key: string;
 	readonly Value: string;
 }
@@ -191,85 +191,85 @@ export interface TagEntry {
 	readonly Value: string;
 }
 export interface Condition {
-	readonly Key?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Type?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface AwsVpcConfiguration {
-	readonly AssignPublicIp?: (string | undefined) | undefined;
-	readonly SecurityGroups?: (string[] | undefined) | undefined;
+	readonly AssignPublicIp?: string | undefined;
+	readonly SecurityGroups?: string[] | undefined;
 	readonly Subnets: string[];
 }
 export interface BatchArrayProperties {
-	readonly Size?: (number | undefined) | undefined;
+	readonly Size?: number | undefined;
 }
 export interface BatchParameters {
-	readonly ArrayProperties?: (BatchArrayProperties | undefined) | undefined;
+	readonly ArrayProperties?: BatchArrayProperties | undefined;
 	readonly JobDefinition: string;
 	readonly JobName: string;
-	readonly RetryStrategy?: (BatchRetryStrategy | undefined) | undefined;
+	readonly RetryStrategy?: BatchRetryStrategy | undefined;
 }
 export interface BatchRetryStrategy {
-	readonly Attempts?: (number | undefined) | undefined;
+	readonly Attempts?: number | undefined;
 }
 export interface CapacityProviderStrategyItem {
-	readonly Base?: (number | undefined) | undefined;
+	readonly Base?: number | undefined;
 	readonly CapacityProvider: string;
-	readonly Weight?: (number | undefined) | undefined;
+	readonly Weight?: number | undefined;
 }
 export interface DeadLetterConfig {
-	readonly Arn?: (string | undefined) | undefined;
+	readonly Arn?: string | undefined;
 }
 export interface EcsParameters {
-	readonly CapacityProviderStrategy?: (CapacityProviderStrategyItem[] | undefined) | undefined;
-	readonly EnableECSManagedTags?: (boolean | undefined) | undefined;
-	readonly EnableExecuteCommand?: (boolean | undefined) | undefined;
-	readonly Group?: (string | undefined) | undefined;
-	readonly LaunchType?: (string | undefined) | undefined;
-	readonly NetworkConfiguration?: (NetworkConfiguration | undefined) | undefined;
-	readonly PlacementConstraints?: (PlacementConstraint[] | undefined) | undefined;
-	readonly PlacementStrategies?: (PlacementStrategy[] | undefined) | undefined;
-	readonly PlatformVersion?: (string | undefined) | undefined;
-	readonly PropagateTags?: (string | undefined) | undefined;
-	readonly ReferenceId?: (string | undefined) | undefined;
-	readonly TagList?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TaskCount?: (number | undefined) | undefined;
+	readonly CapacityProviderStrategy?: CapacityProviderStrategyItem[] | undefined;
+	readonly EnableECSManagedTags?: boolean | undefined;
+	readonly EnableExecuteCommand?: boolean | undefined;
+	readonly Group?: string | undefined;
+	readonly LaunchType?: string | undefined;
+	readonly NetworkConfiguration?: NetworkConfiguration | undefined;
+	readonly PlacementConstraints?: PlacementConstraint[] | undefined;
+	readonly PlacementStrategies?: PlacementStrategy[] | undefined;
+	readonly PlatformVersion?: string | undefined;
+	readonly PropagateTags?: string | undefined;
+	readonly ReferenceId?: string | undefined;
+	readonly TagList?: { key: string; value: string }[] | undefined;
+	readonly TaskCount?: number | undefined;
 	readonly TaskDefinitionArn: string;
 }
 export interface HttpParameters {
-	readonly HeaderParameters?: ({ [key: string]: string } | undefined) | undefined;
-	readonly PathParameterValues?: (string[] | undefined) | undefined;
-	readonly QueryStringParameters?: ({ [key: string]: string } | undefined) | undefined;
+	readonly HeaderParameters?: { [key: string]: string } | undefined;
+	readonly PathParameterValues?: string[] | undefined;
+	readonly QueryStringParameters?: { [key: string]: string } | undefined;
 }
 export interface InputTransformer {
-	readonly InputPathsMap?: ({ [key: string]: string } | undefined) | undefined;
+	readonly InputPathsMap?: { [key: string]: string } | undefined;
 	readonly InputTemplate: string;
 }
 export interface KinesisParameters {
 	readonly PartitionKeyPath: string;
 }
 export interface NetworkConfiguration {
-	readonly AwsVpcConfiguration?: (AwsVpcConfiguration | undefined) | undefined;
+	readonly AwsVpcConfiguration?: AwsVpcConfiguration | undefined;
 }
 export interface PlacementConstraint {
-	readonly Expression?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Expression?: string | undefined;
+	readonly Type?: string | undefined;
 }
 export interface PlacementStrategy {
-	readonly Field?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Field?: string | undefined;
+	readonly Type?: string | undefined;
 }
 export interface RedshiftDataParameters {
 	readonly Database: string;
-	readonly DbUser?: (string | undefined) | undefined;
-	readonly SecretManagerArn?: (string | undefined) | undefined;
+	readonly DbUser?: string | undefined;
+	readonly SecretManagerArn?: string | undefined;
 	readonly Sql: string;
-	readonly StatementName?: (string | undefined) | undefined;
-	readonly WithEvent?: (boolean | undefined) | undefined;
+	readonly StatementName?: string | undefined;
+	readonly WithEvent?: boolean | undefined;
 }
 export interface RetryPolicy {
-	readonly MaximumEventAgeInSeconds?: (number | undefined) | undefined;
-	readonly MaximumRetryAttempts?: (number | undefined) | undefined;
+	readonly MaximumEventAgeInSeconds?: number | undefined;
+	readonly MaximumRetryAttempts?: number | undefined;
 }
 export interface RunCommandParameters {
 	readonly RunCommandTargets: RunCommandTarget[];
@@ -283,32 +283,32 @@ export interface SageMakerPipelineParameter {
 	readonly Value: string;
 }
 export interface SageMakerPipelineParameters {
-	readonly PipelineParameterList?: (SageMakerPipelineParameter[] | undefined) | undefined;
+	readonly PipelineParameterList?: SageMakerPipelineParameter[] | undefined;
 }
 export interface SqsParameters {
 	readonly MessageGroupId: string;
 }
 export interface Tag {
-	readonly Key?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface Target {
 	readonly Arn: string;
-	readonly BatchParameters?: (BatchParameters | undefined) | undefined;
-	readonly DeadLetterConfig?: (DeadLetterConfig | undefined) | undefined;
-	readonly EcsParameters?: (EcsParameters | undefined) | undefined;
-	readonly HttpParameters?: (HttpParameters | undefined) | undefined;
+	readonly BatchParameters?: BatchParameters | undefined;
+	readonly DeadLetterConfig?: DeadLetterConfig | undefined;
+	readonly EcsParameters?: EcsParameters | undefined;
+	readonly HttpParameters?: HttpParameters | undefined;
 	readonly Id: string;
-	readonly Input?: (string | undefined) | undefined;
-	readonly InputPath?: (string | undefined) | undefined;
-	readonly InputTransformer?: (InputTransformer | undefined) | undefined;
-	readonly KinesisParameters?: (KinesisParameters | undefined) | undefined;
-	readonly RedshiftDataParameters?: (RedshiftDataParameters | undefined) | undefined;
-	readonly RetryPolicy?: (RetryPolicy | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly RunCommandParameters?: (RunCommandParameters | undefined) | undefined;
-	readonly SageMakerPipelineParameters?: (SageMakerPipelineParameters | undefined) | undefined;
-	readonly SqsParameters?: (SqsParameters | undefined) | undefined;
+	readonly Input?: string | undefined;
+	readonly InputPath?: string | undefined;
+	readonly InputTransformer?: InputTransformer | undefined;
+	readonly KinesisParameters?: KinesisParameters | undefined;
+	readonly RedshiftDataParameters?: RedshiftDataParameters | undefined;
+	readonly RetryPolicy?: RetryPolicy | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly RunCommandParameters?: RunCommandParameters | undefined;
+	readonly SageMakerPipelineParameters?: SageMakerPipelineParameters | undefined;
+	readonly SqsParameters?: SqsParameters | undefined;
 }
 export default {
 	ApiDestination: ApiDestination,

@@ -7,62 +7,59 @@ export class Dataset extends GdmResource<DatasetComponentInputs> implements Data
 }
 export interface DatasetComponentOutputs {}
 export interface DatasetComponentInputs {
-	readonly access?:
-		| Array<{
-				dataset?: DatasetAccessEntry;
-				domain?: string;
-				groupByEmail?: string;
-				iamMember?: string;
-				role?: string;
-				routine?: RoutineReference;
-				specialGroup?: string;
-				userByEmail?: string;
-				view?: TableReference;
-		  }>
-		| undefined;
-	readonly creationTime?: string | undefined;
-	readonly datasetReference?: DatasetReference | undefined;
-	readonly defaultCollation?: string | undefined;
-	readonly defaultEncryptionConfiguration?: EncryptionConfiguration | undefined;
-	readonly defaultPartitionExpirationMs?: string | undefined;
-	readonly defaultTableExpirationMs?: string | undefined;
-	readonly description?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly id?: string | undefined;
-	readonly isCaseInsensitive?: boolean | undefined;
-	readonly kind?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly location?: string | undefined;
-	readonly maxTimeTravelHours?: string | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly selfLink?: string | undefined;
-	readonly storageBillingModel?: string | undefined;
-	readonly tags?: Array<{ tagKey?: string; tagValue?: string }> | undefined;
-	readonly type: string;
+	readonly access?: Array<{
+		dataset?: DatasetAccessEntry;
+		domain?: string;
+		groupByEmail?: string;
+		iamMember?: string;
+		role?: string;
+		routine?: RoutineReference;
+		specialGroup?: string;
+		userByEmail?: string;
+		view?: TableReference;
+	}>;
+	readonly creationTime?: string;
+	readonly datasetReference?: DatasetReference;
+	readonly defaultCollation?: string;
+	readonly defaultEncryptionConfiguration?: EncryptionConfiguration;
+	readonly defaultPartitionExpirationMs?: string;
+	readonly defaultTableExpirationMs?: string;
+	readonly description?: string;
+	readonly etag?: string;
+	readonly friendlyName?: string;
+	readonly id?: string;
+	readonly isCaseInsensitive?: boolean;
+	readonly kind?: string;
+	readonly labels?: { [P in string]: string };
+	readonly lastModifiedTime?: string;
+	readonly location?: string;
+	readonly maxTimeTravelHours?: string;
+	readonly satisfiesPzs?: boolean;
+	readonly selfLink?: string;
+	readonly storageBillingModel?: string;
+	readonly tags?: Array<{ tagKey?: string; tagValue?: string }>;
 	readonly name: string;
 }
 export interface DatasetAccessEntry {
-	readonly dataset?: DatasetReference | undefined;
-	readonly targetTypes?: string[] | undefined;
+	readonly dataset?: DatasetReference;
+	readonly targetTypes?: string[];
 }
 export interface DatasetReference {
-	readonly datasetId?: string | undefined;
-	readonly projectId?: string | undefined;
+	readonly datasetId?: string;
+	readonly projectId?: string;
 }
 export interface EncryptionConfiguration {
-	readonly kmsKeyName?: string | undefined;
+	readonly kmsKeyName?: string;
 }
 export interface RoutineReference {
-	readonly datasetId?: string | undefined;
-	readonly projectId?: string | undefined;
-	readonly routineId?: string | undefined;
+	readonly datasetId?: string;
+	readonly projectId?: string;
+	readonly routineId?: string;
 }
 export interface TableReference {
-	readonly datasetId?: string | undefined;
-	readonly projectId?: string | undefined;
-	readonly tableId?: string | undefined;
+	readonly datasetId?: string;
+	readonly projectId?: string;
+	readonly tableId?: string;
 }
 export default {
 	Dataset: Dataset,

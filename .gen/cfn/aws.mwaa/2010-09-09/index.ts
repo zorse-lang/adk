@@ -23,42 +23,42 @@ export interface EnvironmentComponentOutputs {
 }
 export interface EnvironmentComponentInputs {
 	readonly Name: string;
-	readonly AirflowConfigurationOptions?: (any | undefined) | undefined;
-	readonly AirflowVersion?: (string | undefined) | undefined;
-	readonly DagS3Path?: (string | undefined) | undefined;
-	readonly EnvironmentClass?: (string | undefined) | undefined;
-	readonly ExecutionRoleArn?: (string | undefined) | undefined;
-	readonly KmsKey?: (string | undefined) | undefined;
-	readonly LoggingConfiguration?: (LoggingConfiguration | undefined) | undefined;
-	readonly MaxWorkers?: (number | undefined) | undefined;
-	readonly MinWorkers?: (number | undefined) | undefined;
-	readonly NetworkConfiguration?: (NetworkConfiguration | undefined) | undefined;
-	readonly PluginsS3ObjectVersion?: (string | undefined) | undefined;
-	readonly PluginsS3Path?: (string | undefined) | undefined;
-	readonly RequirementsS3ObjectVersion?: (string | undefined) | undefined;
-	readonly RequirementsS3Path?: (string | undefined) | undefined;
-	readonly Schedulers?: (number | undefined) | undefined;
-	readonly SourceBucketArn?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly WebserverAccessMode?: (string | undefined) | undefined;
-	readonly WeeklyMaintenanceWindowStart?: (string | undefined) | undefined;
+	readonly AirflowConfigurationOptions?: any | undefined;
+	readonly AirflowVersion?: string | undefined;
+	readonly DagS3Path?: string | undefined;
+	readonly EnvironmentClass?: string | undefined;
+	readonly ExecutionRoleArn?: string | undefined;
+	readonly KmsKey?: string | undefined;
+	readonly LoggingConfiguration?: LoggingConfiguration | undefined;
+	readonly MaxWorkers?: number | undefined;
+	readonly MinWorkers?: number | undefined;
+	readonly NetworkConfiguration?: NetworkConfiguration | undefined;
+	readonly PluginsS3ObjectVersion?: string | undefined;
+	readonly PluginsS3Path?: string | undefined;
+	readonly RequirementsS3ObjectVersion?: string | undefined;
+	readonly RequirementsS3Path?: string | undefined;
+	readonly Schedulers?: number | undefined;
+	readonly SourceBucketArn?: string | undefined;
+	readonly Tags?: any | undefined;
+	readonly WebserverAccessMode?: string | undefined;
+	readonly WeeklyMaintenanceWindowStart?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface LoggingConfiguration {
-	readonly DagProcessingLogs?: (ModuleLoggingConfiguration | undefined) | undefined;
-	readonly SchedulerLogs?: (ModuleLoggingConfiguration | undefined) | undefined;
-	readonly TaskLogs?: (ModuleLoggingConfiguration | undefined) | undefined;
-	readonly WebserverLogs?: (ModuleLoggingConfiguration | undefined) | undefined;
-	readonly WorkerLogs?: (ModuleLoggingConfiguration | undefined) | undefined;
+	readonly DagProcessingLogs?: ModuleLoggingConfiguration | undefined;
+	readonly SchedulerLogs?: ModuleLoggingConfiguration | undefined;
+	readonly TaskLogs?: ModuleLoggingConfiguration | undefined;
+	readonly WebserverLogs?: ModuleLoggingConfiguration | undefined;
+	readonly WorkerLogs?: ModuleLoggingConfiguration | undefined;
 }
 export interface ModuleLoggingConfiguration {
-	readonly CloudWatchLogGroupArn?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly LogLevel?: (string | undefined) | undefined;
+	readonly CloudWatchLogGroupArn?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly LogLevel?: string | undefined;
 }
 export interface NetworkConfiguration {
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SubnetIds?: (string[] | undefined) | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SubnetIds?: string[] | undefined;
 }
 export default {
 	Environment: Environment,

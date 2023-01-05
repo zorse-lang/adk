@@ -27,11 +27,11 @@ export interface MigrationJobComponentOutputs {
 }
 export interface MigrationJobComponentInputs {
 	readonly MigrationJobClass: string;
-	readonly DestinationEndpoint?: (DestinationEndpoint | undefined) | undefined;
-	readonly MigrationJobName?: (string | undefined) | undefined;
-	readonly MigrationMode?: (MigrationMode | undefined) | undefined;
-	readonly MigrationObject?: (MigrationObject[] | undefined) | undefined;
-	readonly SourceEndpoint?: (SourceEndpoint | undefined) | undefined;
+	readonly DestinationEndpoint?: DestinationEndpoint | undefined;
+	readonly MigrationJobName?: string | undefined;
+	readonly MigrationMode?: MigrationMode | undefined;
+	readonly MigrationObject?: MigrationObject[] | undefined;
+	readonly SourceEndpoint?: SourceEndpoint | undefined;
 	readonly LogicalId: string;
 }
 export class SubscriptionInstance
@@ -55,12 +55,12 @@ export interface SubscriptionInstanceComponentOutputs {
 	readonly VpcHost: any;
 }
 export interface SubscriptionInstanceComponentInputs {
-	readonly Configuration?: (Configuration | undefined) | undefined;
-	readonly PayType?: (string | undefined) | undefined;
-	readonly Period?: (string | undefined) | undefined;
-	readonly SourceEndpointInstanceType?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly UsedTime?: (number | undefined) | undefined;
+	readonly Configuration?: Configuration | undefined;
+	readonly PayType?: string | undefined;
+	readonly Period?: string | undefined;
+	readonly SourceEndpointInstanceType?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly UsedTime?: number | undefined;
 	readonly LogicalId: string;
 }
 export class SynchronizationJob
@@ -81,79 +81,79 @@ export interface SynchronizationJobComponentInputs {
 	readonly SourceEndpoint: SourceEndpoint;
 	readonly SourceRegion: string;
 	readonly SynchronizationJobClass: string;
-	readonly DataInitialization?: (boolean | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly PayType?: (string | undefined) | undefined;
-	readonly Period?: (string | undefined) | undefined;
-	readonly StructureInitialization?: (boolean | undefined) | undefined;
-	readonly SynchronizationObjects?: (SynchronizationObjects[] | undefined) | undefined;
-	readonly Topology?: (string | undefined) | undefined;
-	readonly UsedTime?: (number | undefined) | undefined;
+	readonly DataInitialization?: boolean | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly PayType?: string | undefined;
+	readonly Period?: string | undefined;
+	readonly StructureInitialization?: boolean | undefined;
+	readonly SynchronizationObjects?: SynchronizationObjects[] | undefined;
+	readonly Topology?: string | undefined;
+	readonly UsedTime?: number | undefined;
 	readonly LogicalId: string;
 }
 export interface ColumnExcludes {
-	readonly ColumnName?: (string | undefined) | undefined;
+	readonly ColumnName?: string | undefined;
 }
 export interface ColumnIncludes {
-	readonly NewColumnName?: (string | undefined) | undefined;
-	readonly ColumnName?: (string | undefined) | undefined;
+	readonly NewColumnName?: string | undefined;
+	readonly ColumnName?: string | undefined;
 }
 export interface DestinationEndpoint {
-	readonly Role?: (string | undefined) | undefined;
+	readonly Role?: string | undefined;
 	readonly UserName: string;
-	readonly InstanceID?: (string | undefined) | undefined;
-	readonly IP?: (string | undefined) | undefined;
-	readonly Port?: (string | undefined) | undefined;
-	readonly DatabaseName?: (string | undefined) | undefined;
+	readonly InstanceID?: string | undefined;
+	readonly IP?: string | undefined;
+	readonly Port?: string | undefined;
+	readonly DatabaseName?: string | undefined;
 	readonly Region: string;
 	readonly InstanceType: string;
-	readonly EngineName?: (string | undefined) | undefined;
+	readonly EngineName?: string | undefined;
 	readonly Password: string;
 }
 export interface MigrationMode {
-	readonly StructureIntialization?: (boolean | undefined) | undefined;
-	readonly DataSynchronization?: (boolean | undefined) | undefined;
-	readonly DataIntialization?: (boolean | undefined) | undefined;
+	readonly StructureIntialization?: boolean | undefined;
+	readonly DataSynchronization?: boolean | undefined;
+	readonly DataIntialization?: boolean | undefined;
 }
 export interface MigrationObject {
-	readonly TableIncludes?: (TableIncludes[] | undefined) | undefined;
-	readonly DBName?: (string | undefined) | undefined;
-	readonly TableExcludes?: (TableExcludes[] | undefined) | undefined;
-	readonly SchemaName?: (string | undefined) | undefined;
-	readonly NewSchemaName?: (string | undefined) | undefined;
-	readonly NewDBName?: (string | undefined) | undefined;
+	readonly TableIncludes?: TableIncludes[] | undefined;
+	readonly DBName?: string | undefined;
+	readonly TableExcludes?: TableExcludes[] | undefined;
+	readonly SchemaName?: string | undefined;
+	readonly NewSchemaName?: string | undefined;
+	readonly NewDBName?: string | undefined;
 }
 export interface SourceEndpoint {
-	readonly Role?: (string | undefined) | undefined;
-	readonly OracleSID?: (string | undefined) | undefined;
+	readonly Role?: string | undefined;
+	readonly OracleSID?: string | undefined;
 	readonly UserName: string;
-	readonly OwnerID?: (string | undefined) | undefined;
-	readonly InstanceID?: (string | undefined) | undefined;
-	readonly IP?: (string | undefined) | undefined;
-	readonly Port?: (string | undefined) | undefined;
-	readonly DatabaseName?: (string | undefined) | undefined;
+	readonly OwnerID?: string | undefined;
+	readonly InstanceID?: string | undefined;
+	readonly IP?: string | undefined;
+	readonly Port?: string | undefined;
+	readonly DatabaseName?: string | undefined;
 	readonly Region: string;
 	readonly InstanceType: string;
-	readonly EngineName?: (string | undefined) | undefined;
+	readonly EngineName?: string | undefined;
 	readonly Password: string;
 }
 export interface TableExcludes {
-	readonly TableName?: (string | undefined) | undefined;
+	readonly TableName?: string | undefined;
 }
 export interface TableIncludes {
-	readonly TableName?: (string | undefined) | undefined;
-	readonly FilterCondition?: (string | undefined) | undefined;
-	readonly ColumnExcludes?: (ColumnExcludes[] | undefined) | undefined;
-	readonly ColumnIncludes?: (ColumnIncludes[] | undefined) | undefined;
-	readonly NewTableName?: (string | undefined) | undefined;
+	readonly TableName?: string | undefined;
+	readonly FilterCondition?: string | undefined;
+	readonly ColumnExcludes?: ColumnExcludes[] | undefined;
+	readonly ColumnIncludes?: ColumnIncludes[] | undefined;
+	readonly NewTableName?: string | undefined;
 }
 export interface Configuration {
 	readonly SubscriptionDataType: SubscriptionDataType;
-	readonly SubscriptionInstanceName?: (string | undefined) | undefined;
-	readonly SubscriptionInstance?: (SubscriptionInstance | undefined) | undefined;
+	readonly SubscriptionInstanceName?: string | undefined;
+	readonly SubscriptionInstance?: SubscriptionInstance | undefined;
 	readonly SourceEndpoint: SourceEndpoint;
-	readonly DbList?: ({ [key: string]: any } | undefined) | undefined;
-	readonly SubscriptionInstanceNetworkType?: (string | undefined) | undefined;
+	readonly DbList?: { [key: string]: any } | undefined;
+	readonly SubscriptionInstanceNetworkType?: string | undefined;
 }
 export interface SubscriptionDataType {
 	readonly DML: boolean;
@@ -164,16 +164,16 @@ export interface SubscriptionInstance {
 	readonly VSwitchId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface SynchronizationObjects {
-	readonly TableIncludes?: (TableIncludes[] | undefined) | undefined;
-	readonly DBName?: (string | undefined) | undefined;
-	readonly TableExcludes?: (TableExcludes[] | undefined) | undefined;
-	readonly SchemaName?: (string | undefined) | undefined;
-	readonly NewSchemaName?: (string | undefined) | undefined;
-	readonly NewDBName?: (string | undefined) | undefined;
+	readonly TableIncludes?: TableIncludes[] | undefined;
+	readonly DBName?: string | undefined;
+	readonly TableExcludes?: TableExcludes[] | undefined;
+	readonly SchemaName?: string | undefined;
+	readonly NewSchemaName?: string | undefined;
+	readonly NewDBName?: string | undefined;
 }
 export default {
 	ConsumerGroup: ConsumerGroup,

@@ -26,13 +26,13 @@ export interface ComponentTypeComponentOutputs {
 export interface ComponentTypeComponentInputs {
 	readonly ComponentTypeId: string;
 	readonly WorkspaceId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ExtendsFrom?: (string[] | undefined) | undefined;
-	readonly Functions?: ({ [key: string]: FunctionInstance } | undefined) | undefined;
-	readonly IsSingleton?: (boolean | undefined) | undefined;
-	readonly PropertyDefinitions?: ({ [key: string]: PropertyDefinition } | undefined) | undefined;
-	readonly PropertyGroups?: ({ [key: string]: PropertyGroup } | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly ExtendsFrom?: string[] | undefined;
+	readonly Functions?: { [key: string]: FunctionInstance } | undefined;
+	readonly IsSingleton?: boolean | undefined;
+	readonly PropertyDefinitions?: { [key: string]: PropertyDefinition } | undefined;
+	readonly PropertyGroups?: { [key: string]: PropertyGroup } | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class Entity extends CfnResource<EntityComponentInputs> implements EntityComponentOutputs {
@@ -59,11 +59,11 @@ export interface EntityComponentOutputs {
 export interface EntityComponentInputs {
 	readonly EntityName: string;
 	readonly WorkspaceId: string;
-	readonly Components?: ({ [key: string]: Component } | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EntityId?: (string | undefined) | undefined;
-	readonly ParentEntityId?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Components?: { [key: string]: Component } | undefined;
+	readonly Description?: string | undefined;
+	readonly EntityId?: string | undefined;
+	readonly ParentEntityId?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class Scene extends CfnResource<SceneComponentInputs> implements SceneComponentOutputs {
@@ -83,9 +83,9 @@ export interface SceneComponentInputs {
 	readonly ContentLocation: string;
 	readonly SceneId: string;
 	readonly WorkspaceId: string;
-	readonly Capabilities?: (string[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Capabilities?: string[] | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class Workspace extends CfnResource<WorkspaceComponentInputs> implements WorkspaceComponentOutputs {
@@ -105,93 +105,93 @@ export interface WorkspaceComponentInputs {
 	readonly Role: string;
 	readonly S3Location: string;
 	readonly WorkspaceId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export interface DataConnector {
-	readonly IsNative?: (boolean | undefined) | undefined;
-	readonly Lambda?: (LambdaFunction | undefined) | undefined;
+	readonly IsNative?: boolean | undefined;
+	readonly Lambda?: LambdaFunction | undefined;
 }
 export interface DataType {
-	readonly AllowedValues?: (DataValue[] | undefined) | undefined;
-	readonly NestedType?: (DataType | undefined) | undefined;
-	readonly Relationship?: (Relationship | undefined) | undefined;
+	readonly AllowedValues?: DataValue[] | undefined;
+	readonly NestedType?: DataType | undefined;
+	readonly Relationship?: Relationship | undefined;
 	readonly Type: string;
-	readonly UnitOfMeasure?: (string | undefined) | undefined;
+	readonly UnitOfMeasure?: string | undefined;
 }
 export interface DataValue {
-	readonly BooleanValue?: (boolean | undefined) | undefined;
-	readonly DoubleValue?: (number | undefined) | undefined;
-	readonly Expression?: (string | undefined) | undefined;
-	readonly IntegerValue?: (number | undefined) | undefined;
-	readonly ListValue?: (DataValue[] | undefined) | undefined;
-	readonly LongValue?: (number | undefined) | undefined;
-	readonly MapValue?: ({ [key: string]: DataValue } | undefined) | undefined;
-	readonly RelationshipValue?: (RelationshipValue | undefined) | undefined;
-	readonly StringValue?: (string | undefined) | undefined;
+	readonly BooleanValue?: boolean | undefined;
+	readonly DoubleValue?: number | undefined;
+	readonly Expression?: string | undefined;
+	readonly IntegerValue?: number | undefined;
+	readonly ListValue?: DataValue[] | undefined;
+	readonly LongValue?: number | undefined;
+	readonly MapValue?: { [key: string]: DataValue } | undefined;
+	readonly RelationshipValue?: RelationshipValue | undefined;
+	readonly StringValue?: string | undefined;
 }
 export interface Error {
-	readonly Code?: (string | undefined) | undefined;
-	readonly Message?: (string | undefined) | undefined;
+	readonly Code?: string | undefined;
+	readonly Message?: string | undefined;
 }
 export interface FunctionInstance {
-	readonly ImplementedBy?: (DataConnector | undefined) | undefined;
-	readonly RequiredProperties?: (string[] | undefined) | undefined;
-	readonly Scope?: (string | undefined) | undefined;
+	readonly ImplementedBy?: DataConnector | undefined;
+	readonly RequiredProperties?: string[] | undefined;
+	readonly Scope?: string | undefined;
 }
 export interface LambdaFunction {
 	readonly Arn: string;
 }
 export interface PropertyDefinition {
-	readonly Configurations?: ({ [key: string]: string } | undefined) | undefined;
-	readonly DataType?: (DataType | undefined) | undefined;
-	readonly DefaultValue?: (DataValue | undefined) | undefined;
-	readonly IsExternalId?: (boolean | undefined) | undefined;
-	readonly IsRequiredInEntity?: (boolean | undefined) | undefined;
-	readonly IsStoredExternally?: (boolean | undefined) | undefined;
-	readonly IsTimeSeries?: (boolean | undefined) | undefined;
+	readonly Configurations?: { [key: string]: string } | undefined;
+	readonly DataType?: DataType | undefined;
+	readonly DefaultValue?: DataValue | undefined;
+	readonly IsExternalId?: boolean | undefined;
+	readonly IsRequiredInEntity?: boolean | undefined;
+	readonly IsStoredExternally?: boolean | undefined;
+	readonly IsTimeSeries?: boolean | undefined;
 }
 export interface PropertyGroup {
-	readonly GroupType?: (string | undefined) | undefined;
-	readonly PropertyNames?: (string[] | undefined) | undefined;
+	readonly GroupType?: string | undefined;
+	readonly PropertyNames?: string[] | undefined;
 }
 export interface Relationship {
-	readonly RelationshipType?: (string | undefined) | undefined;
-	readonly TargetComponentTypeId?: (string | undefined) | undefined;
+	readonly RelationshipType?: string | undefined;
+	readonly TargetComponentTypeId?: string | undefined;
 }
 export interface RelationshipValue {
-	readonly TargetComponentName?: (string | undefined) | undefined;
-	readonly TargetEntityId?: (string | undefined) | undefined;
+	readonly TargetComponentName?: string | undefined;
+	readonly TargetEntityId?: string | undefined;
 }
 export interface Status {
-	readonly Error?: (Error | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
+	readonly Error?: Error | undefined;
+	readonly State?: string | undefined;
 }
 export interface Component {
-	readonly ComponentName?: (string | undefined) | undefined;
-	readonly ComponentTypeId?: (string | undefined) | undefined;
-	readonly DefinedIn?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Properties?: ({ [key: string]: Property } | undefined) | undefined;
-	readonly PropertyGroups?: ({ [key: string]: PropertyGroup } | undefined) | undefined;
-	readonly Status?: (Status | undefined) | undefined;
+	readonly ComponentName?: string | undefined;
+	readonly ComponentTypeId?: string | undefined;
+	readonly DefinedIn?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Properties?: { [key: string]: Property } | undefined;
+	readonly PropertyGroups?: { [key: string]: PropertyGroup } | undefined;
+	readonly Status?: Status | undefined;
 }
 export interface Definition {
-	readonly Configuration?: ({ [key: string]: string } | undefined) | undefined;
-	readonly DataType?: (DataType | undefined) | undefined;
-	readonly DefaultValue?: (DataValue | undefined) | undefined;
-	readonly IsExternalId?: (boolean | undefined) | undefined;
-	readonly IsFinal?: (boolean | undefined) | undefined;
-	readonly IsImported?: (boolean | undefined) | undefined;
-	readonly IsInherited?: (boolean | undefined) | undefined;
-	readonly IsRequiredInEntity?: (boolean | undefined) | undefined;
-	readonly IsStoredExternally?: (boolean | undefined) | undefined;
-	readonly IsTimeSeries?: (boolean | undefined) | undefined;
+	readonly Configuration?: { [key: string]: string } | undefined;
+	readonly DataType?: DataType | undefined;
+	readonly DefaultValue?: DataValue | undefined;
+	readonly IsExternalId?: boolean | undefined;
+	readonly IsFinal?: boolean | undefined;
+	readonly IsImported?: boolean | undefined;
+	readonly IsInherited?: boolean | undefined;
+	readonly IsRequiredInEntity?: boolean | undefined;
+	readonly IsStoredExternally?: boolean | undefined;
+	readonly IsTimeSeries?: boolean | undefined;
 }
 export interface Property {
-	readonly Definition?: (Definition | undefined) | undefined;
-	readonly Value?: (DataValue | undefined) | undefined;
+	readonly Definition?: Definition | undefined;
+	readonly Value?: DataValue | undefined;
 }
 export default {
 	ComponentType: ComponentType,

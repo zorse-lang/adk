@@ -10,19 +10,18 @@ export class OrganizationsLocations
 }
 export interface OrganizationsLocationsComponentOutputs {}
 export interface OrganizationsLocationsComponentInputs {
-	readonly displayName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly locationId?: string | undefined;
-	readonly metadata?: { [P in string]: any } | undefined;
+	readonly displayName?: string;
+	readonly labels?: { [P in string]: string };
+	readonly locationId?: string;
+	readonly metadata?: { [P in string]: any };
 	readonly name: string;
-	readonly type: string;
 }
 export interface Location {
-	readonly displayName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly locationId?: string | undefined;
-	readonly metadata?: { [P in string]: any } | undefined;
-	readonly name?: string | undefined;
+	readonly displayName?: string;
+	readonly labels?: { [P in string]: string };
+	readonly locationId?: string;
+	readonly metadata?: { [P in string]: any };
+	readonly name?: string;
 }
 export default {
 	OrganizationsLocations: OrganizationsLocations,

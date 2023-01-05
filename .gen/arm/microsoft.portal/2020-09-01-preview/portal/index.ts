@@ -16,8 +16,8 @@ export interface dashboardsComponentOutputs {
 export interface dashboardsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DashboardProperties | undefined;
-	readonly tags?: DashboardTags | undefined;
+	readonly properties?: DashboardProperties;
+	readonly tags?: DashboardTags;
 }
 export class tenantConfigurations
 	extends ArmResource<tenantConfigurationsComponentInputs>
@@ -37,56 +37,56 @@ export interface tenantConfigurationsComponentOutputs {
 }
 export interface tenantConfigurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfigurationProperties | undefined;
+	readonly properties?: ConfigurationProperties;
 }
 export interface ConfigurationProperties {
-	readonly enforcePrivateMarkdownStorage?: boolean | undefined;
+	readonly enforcePrivateMarkdownStorage?: boolean;
 }
 export interface DashboardLens {
-	readonly metadata?: DashboardLensMetadata | undefined;
+	readonly metadata?: DashboardLensMetadata;
 	readonly order: number;
 	readonly parts: DashboardParts[];
 }
 export interface DashboardLensMetadata {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface DashboardPartMetadata {}
 export interface DashboardParts {
-	readonly metadata?: DashboardPartMetadata | undefined;
+	readonly metadata?: DashboardPartMetadata;
 	readonly position: DashboardPartsPosition;
 }
 export interface DashboardPartsPosition {
 	readonly colSpan: number;
-	readonly metadata?: DashboardPartsPositionMetadata | undefined;
+	readonly metadata?: DashboardPartsPositionMetadata;
 	readonly rowSpan: number;
 	readonly x: number;
 	readonly y: number;
 }
 export interface DashboardPartsPositionMetadata {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface DashboardProperties {
-	readonly lenses?: DashboardLens[] | undefined;
-	readonly metadata?: DashboardPropertiesMetadata | undefined;
+	readonly lenses?: DashboardLens[];
+	readonly metadata?: DashboardPropertiesMetadata;
 }
 export interface DashboardPropertiesMetadata {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface DashboardTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MarkdownPartMetadataSettings {
-	readonly content?: MarkdownPartMetadataSettingsContent | undefined;
+	readonly content?: MarkdownPartMetadataSettingsContent;
 }
 export interface MarkdownPartMetadataSettingsContent {
-	readonly settings?: MarkdownPartMetadataSettingsContentSettings | undefined;
+	readonly settings?: MarkdownPartMetadataSettingsContentSettings;
 }
 export interface MarkdownPartMetadataSettingsContentSettings {
-	readonly content?: string | undefined;
-	readonly markdownSource?: number | undefined;
-	readonly markdownUri?: string | undefined;
-	readonly subtitle?: string | undefined;
-	readonly title?: string | undefined;
+	readonly content?: string;
+	readonly markdownSource?: number;
+	readonly markdownUri?: string;
+	readonly subtitle?: string;
+	readonly title?: string;
 }
 export default {
 	dashboards: dashboards,

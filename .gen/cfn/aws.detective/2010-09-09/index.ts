@@ -10,7 +10,7 @@ export interface GraphComponentOutputs {
 	readonly Arn: string;
 }
 export interface GraphComponentInputs {
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class MemberInvitation
@@ -26,8 +26,8 @@ export interface MemberInvitationComponentInputs {
 	readonly GraphArn: string;
 	readonly MemberEmailAddress: string;
 	readonly MemberId: string;
-	readonly DisableEmailNotification?: (boolean | undefined) | undefined;
-	readonly Message?: (string | undefined) | undefined;
+	readonly DisableEmailNotification?: boolean | undefined;
+	readonly Message?: string | undefined;
 	readonly LogicalId: string;
 }
 export default {

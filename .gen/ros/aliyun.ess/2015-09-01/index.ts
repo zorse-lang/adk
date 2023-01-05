@@ -14,15 +14,15 @@ export interface AlarmTaskComponentInputs {
 	readonly MetricName: string;
 	readonly ScalingGroupId: string;
 	readonly Threshold: number;
-	readonly ComparisonOperator?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Dimensions?: (Dimensions[] | undefined) | undefined;
-	readonly EvaluationCount?: (number | undefined) | undefined;
-	readonly GroupId?: (number | undefined) | undefined;
-	readonly MetricType?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly Statistics?: (string | undefined) | undefined;
+	readonly ComparisonOperator?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Dimensions?: Dimensions[] | undefined;
+	readonly EvaluationCount?: number | undefined;
+	readonly GroupId?: number | undefined;
+	readonly MetricType?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly Statistics?: string | undefined;
 	readonly LogicalId: string;
 }
 export class AlarmTaskEnable
@@ -51,11 +51,11 @@ export interface LifecycleHookComponentOutputs {
 export interface LifecycleHookComponentInputs {
 	readonly LifecycleTransition: string;
 	readonly ScalingGroupId: string;
-	readonly DefaultResult?: (string | undefined) | undefined;
-	readonly HeartbeatTimeout?: (number | undefined) | undefined;
-	readonly LifecycleHookName?: (string | undefined) | undefined;
-	readonly NotificationArn?: (string | undefined) | undefined;
-	readonly NotificationMetadata?: (string | undefined) | undefined;
+	readonly DefaultResult?: string | undefined;
+	readonly HeartbeatTimeout?: number | undefined;
+	readonly LifecycleHookName?: string | undefined;
+	readonly NotificationArn?: string | undefined;
+	readonly NotificationMetadata?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ScalingConfiguration
@@ -72,37 +72,37 @@ export interface ScalingConfigurationComponentOutputs {
 }
 export interface ScalingConfigurationComponentInputs {
 	readonly ScalingGroupId: string;
-	readonly CreditSpecification?: (string | undefined) | undefined;
-	readonly DeploymentSetId?: (string | undefined) | undefined;
-	readonly DiskMappings?: (DiskMappings[] | undefined) | undefined;
-	readonly HpcClusterId?: (string | undefined) | undefined;
-	readonly ImageFamily?: (string | undefined) | undefined;
-	readonly ImageId?: (string | undefined) | undefined;
-	readonly InstanceId?: (string | undefined) | undefined;
-	readonly InstanceName?: (string | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly InstanceTypes?: (any[] | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly InternetMaxBandwidthIn?: (number | undefined) | undefined;
-	readonly InternetMaxBandwidthOut?: (number | undefined) | undefined;
-	readonly IoOptimized?: (string | undefined) | undefined;
-	readonly Ipv6AddressCount?: (number | undefined) | undefined;
-	readonly KeyPairName?: (string | undefined) | undefined;
-	readonly LoadBalancerWeight?: (number | undefined) | undefined;
-	readonly PasswordInherit?: (boolean | undefined) | undefined;
-	readonly RamRoleName?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly ScalingConfigurationName?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SpotPriceLimit?: (number | undefined) | undefined;
-	readonly SpotPriceLimitForInstanceType?: ({ [key: string]: any } | undefined) | undefined;
-	readonly SpotStrategy?: (string | undefined) | undefined;
-	readonly SystemDiskAutoSnapshotPolicyId?: (string | undefined) | undefined;
-	readonly SystemDiskCategory?: (string | undefined) | undefined;
-	readonly SystemDiskPerformanceLevel?: (string | undefined) | undefined;
-	readonly SystemDiskSize?: (number | undefined) | undefined;
-	readonly TagList?: (TagList[] | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
+	readonly CreditSpecification?: string | undefined;
+	readonly DeploymentSetId?: string | undefined;
+	readonly DiskMappings?: DiskMappings[] | undefined;
+	readonly HpcClusterId?: string | undefined;
+	readonly ImageFamily?: string | undefined;
+	readonly ImageId?: string | undefined;
+	readonly InstanceId?: string | undefined;
+	readonly InstanceName?: string | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly InstanceTypes?: any[] | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly InternetMaxBandwidthIn?: number | undefined;
+	readonly InternetMaxBandwidthOut?: number | undefined;
+	readonly IoOptimized?: string | undefined;
+	readonly Ipv6AddressCount?: number | undefined;
+	readonly KeyPairName?: string | undefined;
+	readonly LoadBalancerWeight?: number | undefined;
+	readonly PasswordInherit?: boolean | undefined;
+	readonly RamRoleName?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly ScalingConfigurationName?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SpotPriceLimit?: number | undefined;
+	readonly SpotPriceLimitForInstanceType?: { [key: string]: any } | undefined;
+	readonly SpotStrategy?: string | undefined;
+	readonly SystemDiskAutoSnapshotPolicyId?: string | undefined;
+	readonly SystemDiskCategory?: string | undefined;
+	readonly SystemDiskPerformanceLevel?: string | undefined;
+	readonly SystemDiskSize?: number | undefined;
+	readonly TagList?: TagList[] | undefined;
+	readonly UserData?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ScalingGroup extends RosResource<ScalingGroupComponentInputs> implements ScalingGroupComponentOutputs {
@@ -117,32 +117,32 @@ export interface ScalingGroupComponentOutputs {
 export interface ScalingGroupComponentInputs {
 	readonly MaxSize: number;
 	readonly MinSize: number;
-	readonly CompensateWithOnDemand?: (boolean | undefined) | undefined;
-	readonly ContainerGroupId?: (string | undefined) | undefined;
-	readonly DBInstanceIds?: (any[] | undefined) | undefined;
-	readonly DefaultCooldown?: (number | undefined) | undefined;
-	readonly DesiredCapacity?: (number | undefined) | undefined;
-	readonly GroupDeletionProtection?: (boolean | undefined) | undefined;
-	readonly GroupType?: (string | undefined) | undefined;
-	readonly HealthCheckType?: (string | undefined) | undefined;
-	readonly InstanceId?: (string | undefined) | undefined;
-	readonly LaunchTemplateId?: (string | undefined) | undefined;
-	readonly LaunchTemplateVersion?: (string | undefined) | undefined;
-	readonly LoadBalancerIds?: (any[] | undefined) | undefined;
-	readonly MultiAZPolicy?: (string | undefined) | undefined;
-	readonly NotificationConfigurations?: (NotificationConfigurations[] | undefined) | undefined;
-	readonly OnDemandBaseCapacity?: (number | undefined) | undefined;
-	readonly OnDemandPercentageAboveBaseCapacity?: (number | undefined) | undefined;
-	readonly ProtectedInstances?: (any[] | undefined) | undefined;
-	readonly RemovalPolicys?: (any[] | undefined) | undefined;
-	readonly ScalingGroupName?: (any | string) | undefined;
-	readonly ScalingPolicy?: (string | undefined) | undefined;
-	readonly SpotInstancePools?: (number | undefined) | undefined;
-	readonly SpotInstanceRemedy?: (boolean | undefined) | undefined;
-	readonly StandbyInstances?: (any[] | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
-	readonly VSwitchIds?: (any[] | undefined) | undefined;
+	readonly CompensateWithOnDemand?: boolean | undefined;
+	readonly ContainerGroupId?: string | undefined;
+	readonly DBInstanceIds?: any[] | undefined;
+	readonly DefaultCooldown?: number | undefined;
+	readonly DesiredCapacity?: number | undefined;
+	readonly GroupDeletionProtection?: boolean | undefined;
+	readonly GroupType?: string | undefined;
+	readonly HealthCheckType?: string | undefined;
+	readonly InstanceId?: string | undefined;
+	readonly LaunchTemplateId?: string | undefined;
+	readonly LaunchTemplateVersion?: string | undefined;
+	readonly LoadBalancerIds?: any[] | undefined;
+	readonly MultiAZPolicy?: string | undefined;
+	readonly NotificationConfigurations?: NotificationConfigurations[] | undefined;
+	readonly OnDemandBaseCapacity?: number | undefined;
+	readonly OnDemandPercentageAboveBaseCapacity?: number | undefined;
+	readonly ProtectedInstances?: any[] | undefined;
+	readonly RemovalPolicys?: any[] | undefined;
+	readonly ScalingGroupName?: any | string;
+	readonly ScalingPolicy?: string | undefined;
+	readonly SpotInstancePools?: number | undefined;
+	readonly SpotInstanceRemedy?: boolean | undefined;
+	readonly StandbyInstances?: any[] | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly VSwitchId?: string | undefined;
+	readonly VSwitchIds?: any[] | undefined;
 	readonly LogicalId: string;
 }
 export class ScalingGroupEnable
@@ -171,11 +171,11 @@ export interface ScalingGroupEnableComponentOutputs {
 }
 export interface ScalingGroupEnableComponentInputs {
 	readonly ScalingGroupId: any | string;
-	readonly InstanceIds?: (any[] | undefined) | undefined;
-	readonly RemoveInstanceIds?: (any[] | undefined) | undefined;
-	readonly ScalingConfigurationId?: (string | undefined) | undefined;
-	readonly ScalingRuleAris?: (any[] | undefined) | undefined;
-	readonly ScalingRuleArisExecuteVersion?: (number | undefined) | undefined;
+	readonly InstanceIds?: any[] | undefined;
+	readonly RemoveInstanceIds?: any[] | undefined;
+	readonly ScalingConfigurationId?: string | undefined;
+	readonly ScalingRuleAris?: any[] | undefined;
+	readonly ScalingRuleArisExecuteVersion?: number | undefined;
 	readonly LogicalId: string;
 }
 export class ScalingRule extends RosResource<ScalingRuleComponentInputs> implements ScalingRuleComponentOutputs {
@@ -191,24 +191,24 @@ export interface ScalingRuleComponentOutputs {
 }
 export interface ScalingRuleComponentInputs {
 	readonly ScalingGroupId: string;
-	readonly AdjustmentType?: (string | undefined) | undefined;
-	readonly AdjustmentValue?: (number | undefined) | undefined;
-	readonly Cooldown?: (number | undefined) | undefined;
-	readonly DisableScaleIn?: (boolean | undefined) | undefined;
-	readonly EstimatedInstanceWarmup?: (number | undefined) | undefined;
-	readonly InitialMaxSize?: (number | undefined) | undefined;
-	readonly MetricName?: (string | undefined) | undefined;
-	readonly MinAdjustmentMagnitude?: (number | undefined) | undefined;
-	readonly PredictiveScalingMode?: (string | undefined) | undefined;
-	readonly PredictiveTaskBufferTime?: (number | undefined) | undefined;
-	readonly PredictiveValueBehavior?: (string | undefined) | undefined;
-	readonly PredictiveValueBuffer?: (number | undefined) | undefined;
-	readonly ScaleInEvaluationCount?: (number | undefined) | undefined;
-	readonly ScaleOutEvaluationCount?: (number | undefined) | undefined;
-	readonly ScalingRuleName?: (string | undefined) | undefined;
-	readonly ScalingRuleType?: (string | undefined) | undefined;
-	readonly StepAdjustment?: (StepAdjustment[] | undefined) | undefined;
-	readonly TargetValue?: (number | undefined) | undefined;
+	readonly AdjustmentType?: string | undefined;
+	readonly AdjustmentValue?: number | undefined;
+	readonly Cooldown?: number | undefined;
+	readonly DisableScaleIn?: boolean | undefined;
+	readonly EstimatedInstanceWarmup?: number | undefined;
+	readonly InitialMaxSize?: number | undefined;
+	readonly MetricName?: string | undefined;
+	readonly MinAdjustmentMagnitude?: number | undefined;
+	readonly PredictiveScalingMode?: string | undefined;
+	readonly PredictiveTaskBufferTime?: number | undefined;
+	readonly PredictiveValueBehavior?: string | undefined;
+	readonly PredictiveValueBuffer?: number | undefined;
+	readonly ScaleInEvaluationCount?: number | undefined;
+	readonly ScaleOutEvaluationCount?: number | undefined;
+	readonly ScalingRuleName?: string | undefined;
+	readonly ScalingRuleType?: string | undefined;
+	readonly StepAdjustment?: StepAdjustment[] | undefined;
+	readonly TargetValue?: number | undefined;
 	readonly LogicalId: string;
 }
 export class ScheduledTask extends RosResource<ScheduledTaskComponentInputs> implements ScheduledTaskComponentOutputs {
@@ -223,13 +223,13 @@ export interface ScheduledTaskComponentOutputs {
 export interface ScheduledTaskComponentInputs {
 	readonly LaunchTime: string;
 	readonly ScheduledAction: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly LaunchExpirationTime?: (number | undefined) | undefined;
-	readonly RecurrenceEndTime?: (string | undefined) | undefined;
-	readonly RecurrenceType?: (string | undefined) | undefined;
-	readonly RecurrenceValue?: (string | undefined) | undefined;
-	readonly ScheduledTaskName?: (string | undefined) | undefined;
-	readonly TaskEnabled?: (boolean | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly LaunchExpirationTime?: number | undefined;
+	readonly RecurrenceEndTime?: string | undefined;
+	readonly RecurrenceType?: string | undefined;
+	readonly RecurrenceValue?: string | undefined;
+	readonly ScheduledTaskName?: string | undefined;
+	readonly TaskEnabled?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export interface Dimensions {
@@ -237,19 +237,19 @@ export interface Dimensions {
 	readonly DimensionKey: string;
 }
 export interface DiskMappings {
-	readonly SnapshotId?: (string | undefined) | undefined;
-	readonly Category?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly KMSKeyId?: (string | undefined) | undefined;
-	readonly Encrypted?: (string | undefined) | undefined;
-	readonly Device?: (string | undefined) | undefined;
-	readonly PerformanceLevel?: (string | undefined) | undefined;
-	readonly Size?: (string | undefined) | undefined;
-	readonly AutoSnapshotPolicyId?: (string | undefined) | undefined;
-	readonly DiskName?: (string | undefined) | undefined;
+	readonly SnapshotId?: string | undefined;
+	readonly Category?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly KMSKeyId?: string | undefined;
+	readonly Encrypted?: string | undefined;
+	readonly Device?: string | undefined;
+	readonly PerformanceLevel?: string | undefined;
+	readonly Size?: string | undefined;
+	readonly AutoSnapshotPolicyId?: string | undefined;
+	readonly DiskName?: string | undefined;
 }
 export interface TagList {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface NotificationConfigurations {
@@ -257,13 +257,13 @@ export interface NotificationConfigurations {
 	readonly NotificationTypes: any[];
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface StepAdjustment {
-	readonly MetricIntervalUpperBound?: (number | undefined) | undefined;
-	readonly MetricIntervalLowerBound?: (number | undefined) | undefined;
-	readonly ScalingAdjustment?: (number | undefined) | undefined;
+	readonly MetricIntervalUpperBound?: number | undefined;
+	readonly MetricIntervalLowerBound?: number | undefined;
+	readonly ScalingAdjustment?: number | undefined;
 }
 export default {
 	AlarmTask: AlarmTask,

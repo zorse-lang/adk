@@ -17,33 +17,33 @@ export interface scheduledQueryRulesComponentOutputs {
 	readonly type: "Microsoft.Insights/scheduledQueryRules";
 }
 export interface scheduledQueryRulesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ScheduledQueryRuleProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export interface Action {
-	readonly actionGroupId?: string | undefined;
-	readonly webHookProperties?: ActionWebHookProperties | undefined;
+	readonly actionGroupId?: string;
+	readonly webHookProperties?: ActionWebHookProperties;
 }
 export interface ActionWebHookProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Condition {
-	readonly dimensions?: Dimension[] | undefined;
-	readonly failingPeriods?: ConditionFailingPeriods | undefined;
-	readonly metricMeasureColumn?: string | undefined;
+	readonly dimensions?: Dimension[];
+	readonly failingPeriods?: ConditionFailingPeriods;
+	readonly metricMeasureColumn?: string;
 	readonly operator: "Equals" | "GreaterThan" | "GreaterThanOrEqual" | "LessThan" | "LessThanOrEqual";
-	readonly query?: string | undefined;
-	readonly resourceIdColumn?: string | undefined;
+	readonly query?: string;
+	readonly resourceIdColumn?: string;
 	readonly threshold: number;
 	readonly timeAggregation: "Average" | "Count" | "Maximum" | "Minimum" | "Total";
 }
 export interface ConditionFailingPeriods {
-	readonly minFailingPeriodsToAlert?: number | undefined;
-	readonly numberOfEvaluationPeriods?: number | undefined;
+	readonly minFailingPeriodsToAlert?: number;
+	readonly numberOfEvaluationPeriods?: number;
 }
 export interface Dimension {
 	readonly name: string;
@@ -51,26 +51,26 @@ export interface Dimension {
 	readonly values: string[];
 }
 export interface ScheduledQueryRuleCriteria {
-	readonly allOf?: Condition[] | undefined;
+	readonly allOf?: Condition[];
 }
 export interface ScheduledQueryRuleProperties {
-	readonly actions?: Action[] | undefined;
-	readonly createdWithApiVersion?: string | undefined;
-	readonly criteria?: ScheduledQueryRuleCriteria | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly evaluationFrequency?: string | undefined;
-	readonly isLegacyLogAnalyticsRule?: boolean | undefined;
-	readonly muteActionsDuration?: string | undefined;
-	readonly overrideQueryTimeRange?: string | undefined;
-	readonly scopes?: string[] | undefined;
-	readonly severity?: number | undefined;
-	readonly targetResourceTypes?: string[] | undefined;
-	readonly windowSize?: string | undefined;
+	readonly actions?: Action[];
+	readonly createdWithApiVersion?: string;
+	readonly criteria?: ScheduledQueryRuleCriteria;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly enabled?: boolean;
+	readonly evaluationFrequency?: string;
+	readonly isLegacyLogAnalyticsRule?: boolean;
+	readonly muteActionsDuration?: string;
+	readonly overrideQueryTimeRange?: string;
+	readonly scopes?: string[];
+	readonly severity?: number;
+	readonly targetResourceTypes?: string[];
+	readonly windowSize?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	scheduledQueryRules: scheduledQueryRules,

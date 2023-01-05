@@ -17,12 +17,12 @@ export interface contactProfilesComponentOutputs {
 	readonly type: "Microsoft.Orbital/contactProfiles";
 }
 export interface contactProfilesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ContactProfileProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ContactProfileProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class spacecrafts extends ArmResource<spacecraftsComponentInputs> implements spacecraftsComponentOutputs {
 	constructor(entity: ADKEntity, options: spacecraftsComponentInputs) {
@@ -38,12 +38,12 @@ export interface spacecraftsComponentOutputs {
 	readonly type: "Microsoft.Orbital/spacecrafts";
 }
 export interface spacecraftsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SpacecraftsProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SpacecraftsProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class spacecrafts_contacts
 	extends ArmResource<spacecrafts_contactsComponentInputs>
@@ -62,10 +62,10 @@ export interface spacecrafts_contactsComponentOutputs {
 	readonly type: "Microsoft.Orbital/spacecrafts/contacts";
 }
 export interface spacecrafts_contactsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ContactsProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ContactsProperties;
+	readonly systemData?: SystemData;
 }
 export function listAvailableContacts(resource: spacecrafts, input: ContactParameters): AvailableContactsListResult {
 	if (resource.apiVersion !== "2022-03-01") {
@@ -77,31 +77,31 @@ export function listAvailableContacts(resource: spacecrafts, input: ContactParam
 	throw new Error("not implemented");
 }
 export interface AuthorizedGroundstation {
-	readonly expirationDate?: string | undefined;
-	readonly groundStation?: string | undefined;
+	readonly expirationDate?: string;
+	readonly groundStation?: string;
 }
 export interface AvailableContacts {
-	readonly groundStationName?: string | undefined;
-	readonly properties?: AvailableContactsProperties | undefined;
-	readonly spacecraft?: AvailableContactsSpacecraft | undefined;
+	readonly groundStationName?: string;
+	readonly properties?: AvailableContactsProperties;
+	readonly spacecraft?: AvailableContactsSpacecraft;
 }
 export interface AvailableContactsListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: AvailableContacts[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: AvailableContacts[];
 }
 export interface AvailableContactsProperties {
-	readonly endAzimuthDegrees?: number | undefined;
-	readonly endElevationDegrees?: number | undefined;
-	readonly maximumElevationDegrees?: number | undefined;
-	readonly rxEndTime?: string | undefined;
-	readonly rxStartTime?: string | undefined;
-	readonly startAzimuthDegrees?: number | undefined;
-	readonly startElevationDegrees?: number | undefined;
-	readonly txEndTime?: string | undefined;
-	readonly txStartTime?: string | undefined;
+	readonly endAzimuthDegrees?: number;
+	readonly endElevationDegrees?: number;
+	readonly maximumElevationDegrees?: number;
+	readonly rxEndTime?: string;
+	readonly rxStartTime?: string;
+	readonly startAzimuthDegrees?: number;
+	readonly startElevationDegrees?: number;
+	readonly txEndTime?: string;
+	readonly txStartTime?: string;
 }
 export interface AvailableContactsSpacecraft {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ContactParameters {
 	readonly contactProfile: ContactParametersContactProfile;
@@ -110,63 +110,63 @@ export interface ContactParameters {
 	readonly startTime: string;
 }
 export interface ContactParametersContactProfile {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ContactProfileLink {
 	readonly channels: ContactProfileLinkChannel[];
 	readonly direction: "downlink" | "uplink";
-	readonly eirpdBW?: number | undefined;
-	readonly gainOverTemperature?: number | undefined;
+	readonly eirpdBW?: number;
+	readonly gainOverTemperature?: number;
 	readonly name: string;
 	readonly polarization: "LHCP" | "RHCP" | "linearHorizontal" | "linearVertical";
 }
 export interface ContactProfileLinkChannel {
 	readonly bandwidthMHz: number;
 	readonly centerFrequencyMHz: number;
-	readonly decodingConfiguration?: string | undefined;
-	readonly demodulationConfiguration?: string | undefined;
-	readonly encodingConfiguration?: string | undefined;
+	readonly decodingConfiguration?: string;
+	readonly demodulationConfiguration?: string;
+	readonly encodingConfiguration?: string;
 	readonly endPoint: EndPoint;
-	readonly modulationConfiguration?: string | undefined;
+	readonly modulationConfiguration?: string;
 	readonly name: string;
 }
 export interface ContactProfileProperties {
-	readonly autoTrackingConfiguration?: ("disabled" | "sBand") | undefined;
-	readonly eventHubUri?: string | undefined;
+	readonly autoTrackingConfiguration?: "disabled" | "sBand";
+	readonly eventHubUri?: string;
 	readonly links: ContactProfileLink[];
-	readonly minimumElevationDegrees?: number | undefined;
-	readonly minimumViableContactDuration?: string | undefined;
+	readonly minimumElevationDegrees?: number;
+	readonly minimumViableContactDuration?: string;
 	readonly networkConfiguration: ContactProfilesPropertiesNetworkConfiguration;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ContactProfilesPropertiesNetworkConfiguration {
 	readonly subnetId: string;
 }
 export interface ContactsProperties {
-	readonly antennaConfiguration?: ContactsPropertiesAntennaConfiguration | undefined;
+	readonly antennaConfiguration?: ContactsPropertiesAntennaConfiguration;
 	readonly contactProfile: ContactsPropertiesContactProfile;
-	readonly endAzimuthDegrees?: number | undefined;
-	readonly endElevationDegrees?: number | undefined;
-	readonly errorMessage?: string | undefined;
+	readonly endAzimuthDegrees?: number;
+	readonly endElevationDegrees?: number;
+	readonly errorMessage?: string;
 	readonly groundStationName: string;
-	readonly maximumElevationDegrees?: number | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly maximumElevationDegrees?: number;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly reservationEndTime: string;
 	readonly reservationStartTime: string;
-	readonly rxEndTime?: string | undefined;
-	readonly rxStartTime?: string | undefined;
-	readonly startAzimuthDegrees?: number | undefined;
-	readonly startElevationDegrees?: number | undefined;
-	readonly status?: ("cancelled" | "failed" | "providerCancelled" | "scheduled" | "succeeded") | undefined;
-	readonly txEndTime?: string | undefined;
-	readonly txStartTime?: string | undefined;
+	readonly rxEndTime?: string;
+	readonly rxStartTime?: string;
+	readonly startAzimuthDegrees?: number;
+	readonly startElevationDegrees?: number;
+	readonly status?: "cancelled" | "failed" | "providerCancelled" | "scheduled" | "succeeded";
+	readonly txEndTime?: string;
+	readonly txStartTime?: string;
 }
 export interface ContactsPropertiesAntennaConfiguration {
-	readonly destinationIp?: string | undefined;
-	readonly sourceIps?: string[] | undefined;
+	readonly destinationIp?: string;
+	readonly sourceIps?: string[];
 }
 export interface ContactsPropertiesContactProfile {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface EndPoint {
 	readonly endPointName: string;
@@ -175,7 +175,7 @@ export interface EndPoint {
 	readonly protocol: "TCP" | "UDP";
 }
 export interface SpacecraftLink {
-	readonly authorizations?: AuthorizedGroundstation[] | undefined;
+	readonly authorizations?: AuthorizedGroundstation[];
 	readonly bandwidthMHz: number;
 	readonly centerFrequencyMHz: number;
 	readonly direction: "downlink" | "uplink";
@@ -183,23 +183,23 @@ export interface SpacecraftLink {
 	readonly polarization: "LHCP" | "RHCP" | "linearHorizontal" | "linearVertical";
 }
 export interface SpacecraftsProperties {
-	readonly links?: SpacecraftLink[] | undefined;
+	readonly links?: SpacecraftLink[];
 	readonly noradId: string;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly titleLine?: string | undefined;
-	readonly tleLine1?: string | undefined;
-	readonly tleLine2?: string | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly titleLine?: string;
+	readonly tleLine1?: string;
+	readonly tleLine2?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	contactProfiles: contactProfiles,

@@ -15,7 +15,7 @@ export interface applyUpdatesComponentOutputs {
 }
 export interface applyUpdatesComponentInputs {
 	readonly name: string;
-	readonly properties?: ApplyUpdateProperties | undefined;
+	readonly properties?: ApplyUpdateProperties;
 }
 export class configurationAssignments
 	extends ArmResource<configurationAssignmentsComponentInputs>
@@ -34,9 +34,9 @@ export interface configurationAssignmentsComponentOutputs {
 	readonly type: "Microsoft.Maintenance/configurationAssignments";
 }
 export interface configurationAssignmentsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ConfigurationAssignmentProperties | undefined;
+	readonly properties?: ConfigurationAssignmentProperties;
 }
 export class maintenanceConfigurations
 	extends ArmResource<maintenanceConfigurationsComponentInputs>
@@ -55,30 +55,30 @@ export interface maintenanceConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Maintenance/maintenanceConfigurations";
 }
 export interface maintenanceConfigurationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: MaintenanceConfigurationProperties | undefined;
-	readonly tags?: MaintenanceConfigurationTags | undefined;
+	readonly properties?: MaintenanceConfigurationProperties;
+	readonly tags?: MaintenanceConfigurationTags;
 }
 export interface ApplyUpdateProperties {
-	readonly lastUpdateTime?: string | undefined;
-	readonly resourceId?: string | undefined;
-	readonly status?: ("Completed" | "InProgress" | "Pending" | "RetryLater" | "RetryNow") | undefined;
+	readonly lastUpdateTime?: string;
+	readonly resourceId?: string;
+	readonly status?: "Completed" | "InProgress" | "Pending" | "RetryLater" | "RetryNow";
 }
 export interface ConfigurationAssignmentProperties {
-	readonly maintenanceConfigurationId?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly maintenanceConfigurationId?: string;
+	readonly resourceId?: string;
 }
 export interface MaintenanceConfigurationProperties {
-	readonly extensionProperties?: MaintenanceConfigurationPropertiesExtensionProperties | undefined;
-	readonly maintenanceScope?: ("All" | "Host" | "InResource" | "Resource") | undefined;
-	readonly namespace?: string | undefined;
+	readonly extensionProperties?: MaintenanceConfigurationPropertiesExtensionProperties;
+	readonly maintenanceScope?: "All" | "Host" | "InResource" | "Resource";
+	readonly namespace?: string;
 }
 export interface MaintenanceConfigurationPropertiesExtensionProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MaintenanceConfigurationTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	applyUpdates: applyUpdates,

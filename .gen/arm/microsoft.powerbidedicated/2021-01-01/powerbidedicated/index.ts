@@ -19,10 +19,10 @@ export interface autoScaleVCoresComponentOutputs {
 export interface autoScaleVCoresComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AutoScaleVCoreProperties | undefined;
+	readonly properties?: AutoScaleVCoreProperties;
 	readonly sku: AutoScaleVCoreSku;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class capacities extends ArmResource<capacitiesComponentInputs> implements capacitiesComponentOutputs {
 	constructor(entity: ADKEntity, options: capacitiesComponentInputs) {
@@ -40,77 +40,71 @@ export interface capacitiesComponentOutputs {
 export interface capacitiesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DedicatedCapacityProperties | undefined;
+	readonly properties?: DedicatedCapacityProperties;
 	readonly sku: CapacitySku;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export interface AutoScaleVCoreProperties {
-	readonly capacityLimit?: number | undefined;
-	readonly capacityObjectId?: string | undefined;
-	readonly provisioningState?: "Succeeded" | undefined;
+	readonly capacityLimit?: number;
+	readonly capacityObjectId?: string;
+	readonly provisioningState?: "Succeeded";
 }
 export interface AutoScaleVCoreSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name: string;
-	readonly tier?: "AutoScale" | undefined;
+	readonly tier?: "AutoScale";
 }
 export interface CapacitySku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name: string;
-	readonly tier?: ("AutoPremiumHost" | "PBIE_Azure" | "Premium") | undefined;
+	readonly tier?: "AutoPremiumHost" | "PBIE_Azure" | "Premium";
 }
 export interface DedicatedCapacityAdministrators {
-	readonly members?: string[] | undefined;
+	readonly members?: string[];
 }
 export interface DedicatedCapacityProperties {
-	readonly administration?: DedicatedCapacityAdministrators | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly mode?: ("Gen1" | "Gen2") | undefined;
+	readonly administration?: DedicatedCapacityAdministrators;
+	readonly friendlyName?: string;
+	readonly mode?: "Gen1" | "Gen2";
 	readonly provisioningState?:
-		| (
-				| "Deleting"
-				| "Failed"
-				| "Paused"
-				| "Pausing"
-				| "Preparing"
-				| "Provisioning"
-				| "Resuming"
-				| "Scaling"
-				| "Succeeded"
-				| "Suspended"
-				| "Suspending"
-				| "Updating"
-		  )
-		| undefined;
+		| "Deleting"
+		| "Failed"
+		| "Paused"
+		| "Pausing"
+		| "Preparing"
+		| "Provisioning"
+		| "Resuming"
+		| "Scaling"
+		| "Succeeded"
+		| "Suspended"
+		| "Suspending"
+		| "Updating";
 	readonly state?:
-		| (
-				| "Deleting"
-				| "Failed"
-				| "Paused"
-				| "Pausing"
-				| "Preparing"
-				| "Provisioning"
-				| "Resuming"
-				| "Scaling"
-				| "Succeeded"
-				| "Suspended"
-				| "Suspending"
-				| "Updating"
-		  )
-		| undefined;
-	readonly tenantId?: string | undefined;
+		| "Deleting"
+		| "Failed"
+		| "Paused"
+		| "Pausing"
+		| "Preparing"
+		| "Provisioning"
+		| "Resuming"
+		| "Scaling"
+		| "Succeeded"
+		| "Suspended"
+		| "Suspending"
+		| "Updating";
+	readonly tenantId?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	autoScaleVCores: autoScaleVCores,

@@ -18,7 +18,7 @@ export interface policyAssignmentsComponentOutputs {
 }
 export interface policyAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyAssignmentProperties | undefined;
+	readonly properties?: PolicyAssignmentProperties;
 }
 export class policyDefinitions
 	extends ArmResource<policyDefinitionsComponentInputs>
@@ -38,23 +38,23 @@ export interface policyDefinitionsComponentOutputs {
 }
 export interface policyDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyDefinitionProperties | undefined;
+	readonly properties?: PolicyDefinitionProperties;
 }
 export interface PolicyAssignmentProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly parameters?: any | undefined;
-	readonly policyDefinitionId?: string | undefined;
-	readonly scope?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly parameters?: any;
+	readonly policyDefinitionId?: string;
+	readonly scope?: string;
 }
 export interface PolicyDefinitionProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly mode?: ("All" | "Indexed" | "NotSpecified") | undefined;
-	readonly parameters?: any | undefined;
-	readonly policyRule?: any | undefined;
-	readonly policyType?: ("BuiltIn" | "Custom" | "NotSpecified") | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly metadata?: any;
+	readonly mode?: "All" | "Indexed" | "NotSpecified";
+	readonly parameters?: any;
+	readonly policyRule?: any;
+	readonly policyType?: "BuiltIn" | "Custom" | "NotSpecified";
 }
 export default {
 	policyAssignments: policyAssignments,

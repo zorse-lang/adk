@@ -14,11 +14,11 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.DataLakeStore/accounts";
 }
 export interface accountsComponentInputs {
-	readonly identity?: EncryptionIdentity | undefined;
+	readonly identity?: EncryptionIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CreateDataLakeStoreAccountPropertiesOrDataLakeStoreAccountProperties | undefined;
-	readonly tags?: CreateDataLakeStoreAccountParametersTags | undefined;
+	readonly properties?: CreateDataLakeStoreAccountPropertiesOrDataLakeStoreAccountProperties;
+	readonly tags?: CreateDataLakeStoreAccountParametersTags;
 }
 export class accounts_firewallRules
 	extends ArmResource<accounts_firewallRulesComponentInputs>
@@ -81,64 +81,55 @@ export interface accounts_virtualNetworkRulesComponentInputs {
 	readonly properties: CreateOrUpdateVirtualNetworkRulePropertiesOrVirtualNetworkRuleProperties;
 }
 export interface CreateDataLakeStoreAccountParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CreateDataLakeStoreAccountPropertiesOrDataLakeStoreAccountProperties {
-	readonly accountId?: string | undefined;
-	readonly creationTime?: string | undefined;
+	readonly accountId?: string;
+	readonly creationTime?: string;
 	readonly currentTier?:
-		| (
-				| "Commitment_100TB"
-				| "Commitment_10TB"
-				| "Commitment_1PB"
-				| "Commitment_1TB"
-				| "Commitment_500TB"
-				| "Commitment_5PB"
-		  )
-		| undefined;
-	readonly defaultGroup?: string | undefined;
-	readonly encryptionConfig?: EncryptionConfig | undefined;
-	readonly encryptionProvisioningState?: "Creating" | undefined;
-	readonly encryptionState?: "Disabled" | undefined;
-	readonly endpoint?: string | undefined;
-	readonly firewallAllowAzureIps?: "Disabled" | undefined;
-	readonly firewallRules?: CreateFirewallRuleWithAccountParametersOrFirewallRule[] | undefined;
-	readonly firewallState?: "Disabled" | undefined;
-	readonly lastModifiedTime?: string | undefined;
+		| "Commitment_100TB"
+		| "Commitment_10TB"
+		| "Commitment_1PB"
+		| "Commitment_1TB"
+		| "Commitment_500TB"
+		| "Commitment_5PB";
+	readonly defaultGroup?: string;
+	readonly encryptionConfig?: EncryptionConfig;
+	readonly encryptionProvisioningState?: "Creating";
+	readonly encryptionState?: "Disabled";
+	readonly endpoint?: string;
+	readonly firewallAllowAzureIps?: "Disabled";
+	readonly firewallRules?: CreateFirewallRuleWithAccountParametersOrFirewallRule[];
+	readonly firewallState?: "Disabled";
+	readonly lastModifiedTime?: string;
 	readonly newTier?:
-		| (
-				| "Commitment_100TB"
-				| "Commitment_10TB"
-				| "Commitment_1PB"
-				| "Commitment_1TB"
-				| "Commitment_500TB"
-				| "Commitment_5PB"
-		  )
-		| undefined;
+		| "Commitment_100TB"
+		| "Commitment_10TB"
+		| "Commitment_1PB"
+		| "Commitment_1TB"
+		| "Commitment_500TB"
+		| "Commitment_5PB";
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "Patching"
-				| "Resuming"
-				| "Running"
-				| "Succeeded"
-				| "Suspending"
-		  )
-		| undefined;
-	readonly state?: "Active" | undefined;
-	readonly trustedIdProviders?: CreateTrustedIdProviderWithAccountParametersOrTrustedIdProvider[] | undefined;
-	readonly trustedIdProviderState?: "Disabled" | undefined;
-	readonly virtualNetworkRules?: CreateVirtualNetworkRuleWithAccountParametersOrVirtualNetworkRule[] | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "Patching"
+		| "Resuming"
+		| "Running"
+		| "Succeeded"
+		| "Suspending";
+	readonly state?: "Active";
+	readonly trustedIdProviders?: CreateTrustedIdProviderWithAccountParametersOrTrustedIdProvider[];
+	readonly trustedIdProviderState?: "Disabled";
+	readonly virtualNetworkRules?: CreateVirtualNetworkRuleWithAccountParametersOrVirtualNetworkRule[];
 }
 export interface CreateFirewallRuleWithAccountParametersOrFirewallRule {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
 	readonly properties: CreateOrUpdateFirewallRulePropertiesOrFirewallRuleProperties;
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface CreateOrUpdateFirewallRulePropertiesOrFirewallRuleProperties {
 	readonly endIpAddress: string;
@@ -151,24 +142,24 @@ export interface CreateOrUpdateVirtualNetworkRulePropertiesOrVirtualNetworkRuleP
 	readonly subnetId: string;
 }
 export interface CreateTrustedIdProviderWithAccountParametersOrTrustedIdProvider {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
 	readonly properties: CreateOrUpdateTrustedIdProviderPropertiesOrTrustedIdProviderProperties;
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface CreateVirtualNetworkRuleWithAccountParametersOrVirtualNetworkRule {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
 	readonly properties: CreateOrUpdateVirtualNetworkRulePropertiesOrVirtualNetworkRuleProperties;
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface EncryptionConfig {
-	readonly keyVaultMetaInfo?: KeyVaultMetaInfo | undefined;
+	readonly keyVaultMetaInfo?: KeyVaultMetaInfo;
 	readonly type: "ServiceManaged";
 }
 export interface EncryptionIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "SystemAssigned";
 }
 export interface KeyVaultMetaInfo {

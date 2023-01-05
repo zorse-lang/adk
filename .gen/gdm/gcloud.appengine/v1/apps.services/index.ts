@@ -7,26 +7,25 @@ export class AppsServices extends GdmResource<AppsServicesComponentInputs> imple
 }
 export interface AppsServicesComponentOutputs {}
 export interface AppsServicesComponentInputs {
-	readonly id?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly id?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
-	readonly networkSettings?: NetworkSettings | undefined;
-	readonly split?: TrafficSplit | undefined;
-	readonly type: string;
+	readonly networkSettings?: NetworkSettings;
+	readonly split?: TrafficSplit;
 }
 export interface NetworkSettings {
-	readonly ingressTrafficAllowed?: string | undefined;
+	readonly ingressTrafficAllowed?: string;
 }
 export interface Service {
-	readonly id?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly networkSettings?: NetworkSettings | undefined;
-	readonly split?: TrafficSplit | undefined;
+	readonly id?: string;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly networkSettings?: NetworkSettings;
+	readonly split?: TrafficSplit;
 }
 export interface TrafficSplit {
-	readonly allocations?: { [P in string]: number } | undefined;
-	readonly shardBy?: string | undefined;
+	readonly allocations?: { [P in string]: number };
+	readonly shardBy?: string;
 }
 export default {
 	AppsServices: AppsServices,

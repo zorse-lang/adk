@@ -7,137 +7,136 @@ export class ProjectsLocationsFunctions
 	constructor(entity: ADKEntity, options: ProjectsLocationsFunctionsComponentInputs) {
 		super(entity, options.name, "cloudfunctions.v1.ProjectsLocationsFunctions", options);
 	}
-	public readonly buildId?: string | undefined;
-	public readonly buildName?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly updateTime?: string | undefined;
-	public readonly versionId?: string | undefined;
+	public readonly buildId?: string;
+	public readonly buildName?: string;
+	public readonly status?: string;
+	public readonly updateTime?: string;
+	public readonly versionId?: string;
 }
 export interface ProjectsLocationsFunctionsComponentOutputs {
-	readonly buildId?: string | undefined;
-	readonly buildName?: string | undefined;
-	readonly status?: string | undefined;
-	readonly updateTime?: string | undefined;
-	readonly versionId?: string | undefined;
+	readonly buildId?: string;
+	readonly buildName?: string;
+	readonly status?: string;
+	readonly updateTime?: string;
+	readonly versionId?: string;
 }
 export interface ProjectsLocationsFunctionsComponentInputs {
-	readonly availableMemoryMb?: number | undefined;
-	readonly buildDockerfile?: string | undefined;
-	readonly buildEnvironmentVariables?: { [P in string]: string } | undefined;
-	readonly buildpackStack?: string | undefined;
-	readonly buildWorkerPool?: string | undefined;
-	readonly corsPolicy?: CorsPolicy | undefined;
-	readonly customStackUri?: string | undefined;
-	readonly description?: string | undefined;
-	readonly dockerRegistry?: string | undefined;
-	readonly dockerRepository?: string | undefined;
-	readonly entryPoint?: string | undefined;
-	readonly environmentVariables?: { [P in string]: string } | undefined;
-	readonly eventTrigger?: EventTrigger | undefined;
-	readonly httpsTrigger?: HttpsTrigger | undefined;
-	readonly ingressSettings?: string | undefined;
-	readonly kmsKeyName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly availableMemoryMb?: number;
+	readonly buildDockerfile?: string;
+	readonly buildEnvironmentVariables?: { [P in string]: string };
+	readonly buildpackStack?: string;
+	readonly buildWorkerPool?: string;
+	readonly corsPolicy?: CorsPolicy;
+	readonly customStackUri?: string;
+	readonly description?: string;
+	readonly dockerRegistry?: string;
+	readonly dockerRepository?: string;
+	readonly entryPoint?: string;
+	readonly environmentVariables?: { [P in string]: string };
+	readonly eventTrigger?: EventTrigger;
+	readonly httpsTrigger?: HttpsTrigger;
+	readonly ingressSettings?: string;
+	readonly kmsKeyName?: string;
+	readonly labels?: { [P in string]: string };
 	readonly location: string;
-	readonly maxInstances?: number | undefined;
-	readonly minInstances?: number | undefined;
+	readonly maxInstances?: number;
+	readonly minInstances?: number;
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly runDockerfile?: string | undefined;
-	readonly runtime?: string | undefined;
-	readonly secretEnvironmentVariables?: SecretEnvVar[] | undefined;
-	readonly secretVolumes?: SecretVolume[] | undefined;
-	readonly serviceAccountEmail?: string | undefined;
-	readonly sourceArchiveUrl?: string | undefined;
-	readonly sourceRepository?: SourceRepository | undefined;
-	readonly sourceToken?: string | undefined;
-	readonly sourceUploadUrl?: string | undefined;
-	readonly timeout?: string | undefined;
-	readonly vpcConnector?: string | undefined;
-	readonly vpcConnectorEgressSettings?: string | undefined;
-	readonly type: string;
+	readonly network?: string;
+	readonly runDockerfile?: string;
+	readonly runtime?: string;
+	readonly secretEnvironmentVariables?: SecretEnvVar[];
+	readonly secretVolumes?: SecretVolume[];
+	readonly serviceAccountEmail?: string;
+	readonly sourceArchiveUrl?: string;
+	readonly sourceRepository?: SourceRepository;
+	readonly sourceToken?: string;
+	readonly sourceUploadUrl?: string;
+	readonly timeout?: string;
+	readonly vpcConnector?: string;
+	readonly vpcConnectorEgressSettings?: string;
 }
 export interface CloudFunction {
-	readonly availableMemoryMb?: number | undefined;
-	readonly buildDockerfile?: string | undefined;
-	readonly buildEnvironmentVariables?: { [P in string]: string } | undefined;
-	readonly buildId?: string | undefined;
-	readonly buildName?: string | undefined;
-	readonly buildpackStack?: string | undefined;
-	readonly buildWorkerPool?: string | undefined;
-	readonly corsPolicy?: CorsPolicy | undefined;
-	readonly customStackUri?: string | undefined;
-	readonly description?: string | undefined;
-	readonly dockerRegistry?: string | undefined;
-	readonly dockerRepository?: string | undefined;
-	readonly entryPoint?: string | undefined;
-	readonly environmentVariables?: { [P in string]: string } | undefined;
-	readonly eventTrigger?: EventTrigger | undefined;
-	readonly httpsTrigger?: HttpsTrigger | undefined;
-	readonly ingressSettings?: string | undefined;
-	readonly kmsKeyName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly maxInstances?: number | undefined;
-	readonly minInstances?: number | undefined;
-	readonly name?: string | undefined;
-	readonly network?: string | undefined;
-	readonly runDockerfile?: string | undefined;
-	readonly runtime?: string | undefined;
-	readonly secretEnvironmentVariables?: SecretEnvVar[] | undefined;
-	readonly secretVolumes?: SecretVolume[] | undefined;
-	readonly serviceAccountEmail?: string | undefined;
-	readonly sourceArchiveUrl?: string | undefined;
-	readonly sourceRepository?: SourceRepository | undefined;
-	readonly sourceToken?: string | undefined;
-	readonly sourceUploadUrl?: string | undefined;
-	readonly status?: string | undefined;
-	readonly timeout?: string | undefined;
-	readonly updateTime?: string | undefined;
-	readonly versionId?: string | undefined;
-	readonly vpcConnector?: string | undefined;
-	readonly vpcConnectorEgressSettings?: string | undefined;
+	readonly availableMemoryMb?: number;
+	readonly buildDockerfile?: string;
+	readonly buildEnvironmentVariables?: { [P in string]: string };
+	readonly buildId?: string;
+	readonly buildName?: string;
+	readonly buildpackStack?: string;
+	readonly buildWorkerPool?: string;
+	readonly corsPolicy?: CorsPolicy;
+	readonly customStackUri?: string;
+	readonly description?: string;
+	readonly dockerRegistry?: string;
+	readonly dockerRepository?: string;
+	readonly entryPoint?: string;
+	readonly environmentVariables?: { [P in string]: string };
+	readonly eventTrigger?: EventTrigger;
+	readonly httpsTrigger?: HttpsTrigger;
+	readonly ingressSettings?: string;
+	readonly kmsKeyName?: string;
+	readonly labels?: { [P in string]: string };
+	readonly maxInstances?: number;
+	readonly minInstances?: number;
+	readonly name?: string;
+	readonly network?: string;
+	readonly runDockerfile?: string;
+	readonly runtime?: string;
+	readonly secretEnvironmentVariables?: SecretEnvVar[];
+	readonly secretVolumes?: SecretVolume[];
+	readonly serviceAccountEmail?: string;
+	readonly sourceArchiveUrl?: string;
+	readonly sourceRepository?: SourceRepository;
+	readonly sourceToken?: string;
+	readonly sourceUploadUrl?: string;
+	readonly status?: string;
+	readonly timeout?: string;
+	readonly updateTime?: string;
+	readonly versionId?: string;
+	readonly vpcConnector?: string;
+	readonly vpcConnectorEgressSettings?: string;
 }
 export interface CorsPolicy {
-	readonly allowCredentials?: boolean | undefined;
-	readonly allowHeaders?: string[] | undefined;
-	readonly allowMethods?: string[] | undefined;
-	readonly allowOrigin?: string[] | undefined;
-	readonly exposeHeaders?: string[] | undefined;
-	readonly maxAge?: string | undefined;
+	readonly allowCredentials?: boolean;
+	readonly allowHeaders?: string[];
+	readonly allowMethods?: string[];
+	readonly allowOrigin?: string[];
+	readonly exposeHeaders?: string[];
+	readonly maxAge?: string;
 }
 export interface EventTrigger {
 	readonly eventType: string;
-	readonly failurePolicy?: FailurePolicy | undefined;
+	readonly failurePolicy?: FailurePolicy;
 	readonly resource: string;
-	readonly service?: string | undefined;
+	readonly service?: string;
 }
 export interface FailurePolicy {
-	readonly retry?: any | undefined;
+	readonly retry?: any;
 }
 export interface HttpsTrigger {
-	readonly securityLevel?: string | undefined;
-	readonly url?: string | undefined;
+	readonly securityLevel?: string;
+	readonly url?: string;
 }
 export interface Retry {}
 export interface SecretEnvVar {
-	readonly key?: string | undefined;
-	readonly projectId?: string | undefined;
-	readonly secret?: string | undefined;
-	readonly version?: string | undefined;
+	readonly key?: string;
+	readonly projectId?: string;
+	readonly secret?: string;
+	readonly version?: string;
 }
 export interface SecretVersion {
-	readonly path?: string | undefined;
-	readonly version?: string | undefined;
+	readonly path?: string;
+	readonly version?: string;
 }
 export interface SecretVolume {
-	readonly mountPath?: string | undefined;
-	readonly projectId?: string | undefined;
-	readonly secret?: string | undefined;
-	readonly versions?: SecretVersion[] | undefined;
+	readonly mountPath?: string;
+	readonly projectId?: string;
+	readonly secret?: string;
+	readonly versions?: SecretVersion[];
 }
 export interface SourceRepository {
-	readonly deployedUrl?: string | undefined;
-	readonly url?: string | undefined;
+	readonly deployedUrl?: string;
+	readonly url?: string;
 }
 export default {
 	ProjectsLocationsFunctions: ProjectsLocationsFunctions,

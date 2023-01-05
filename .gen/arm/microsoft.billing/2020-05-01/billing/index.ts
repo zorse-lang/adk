@@ -18,7 +18,7 @@ export interface billingAccountsComponentOutputs {
 }
 export interface billingAccountsComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingAccountProperties | undefined;
+	readonly properties?: BillingAccountProperties;
 }
 export class billingAccounts_agreements
 	extends ArmResource<billingAccounts_agreementsComponentInputs>
@@ -38,7 +38,7 @@ export interface billingAccounts_agreementsComponentOutputs {
 }
 export interface billingAccounts_agreementsComponentInputs {
 	readonly name: string;
-	readonly properties?: AgreementProperties | undefined;
+	readonly properties?: AgreementProperties;
 }
 export class billingAccounts_billingProfiles
 	extends ArmResource<billingAccounts_billingProfilesComponentInputs>
@@ -58,7 +58,7 @@ export interface billingAccounts_billingProfilesComponentOutputs {
 }
 export interface billingAccounts_billingProfilesComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingProfileProperties | undefined;
+	readonly properties?: BillingProfileProperties;
 }
 export class billingAccounts_billingProfiles_availableBalance
 	extends ArmResource<billingAccounts_billingProfiles_availableBalanceComponentInputs>
@@ -84,7 +84,7 @@ export interface billingAccounts_billingProfiles_availableBalanceComponentOutput
 }
 export interface billingAccounts_billingProfiles_availableBalanceComponentInputs {
 	readonly name: string;
-	readonly properties?: AvailableBalanceProperties | undefined;
+	readonly properties?: AvailableBalanceProperties;
 }
 export class billingAccounts_billingProfiles_billingRoleAssignments
 	extends ArmResource<billingAccounts_billingProfiles_billingRoleAssignmentsComponentInputs>
@@ -110,7 +110,7 @@ export interface billingAccounts_billingProfiles_billingRoleAssignmentsComponent
 }
 export interface billingAccounts_billingProfiles_billingRoleAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingRoleAssignmentProperties | undefined;
+	readonly properties?: BillingRoleAssignmentProperties;
 }
 export class billingAccounts_billingProfiles_billingRoleDefinitions
 	extends ArmResource<billingAccounts_billingProfiles_billingRoleDefinitionsComponentInputs>
@@ -136,7 +136,7 @@ export interface billingAccounts_billingProfiles_billingRoleDefinitionsComponent
 }
 export interface billingAccounts_billingProfiles_billingRoleDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingRoleDefinitionProperties | undefined;
+	readonly properties?: BillingRoleDefinitionProperties;
 }
 export class billingAccounts_billingProfiles_instructions
 	extends ArmResource<billingAccounts_billingProfiles_instructionsComponentInputs>
@@ -162,7 +162,7 @@ export interface billingAccounts_billingProfiles_instructionsComponentOutputs {
 }
 export interface billingAccounts_billingProfiles_instructionsComponentInputs {
 	readonly name: string;
-	readonly properties?: InstructionProperties | undefined;
+	readonly properties?: InstructionProperties;
 }
 export class billingAccounts_billingProfiles_invoiceSections
 	extends ArmResource<billingAccounts_billingProfiles_invoiceSectionsComponentInputs>
@@ -188,7 +188,7 @@ export interface billingAccounts_billingProfiles_invoiceSectionsComponentOutputs
 }
 export interface billingAccounts_billingProfiles_invoiceSectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: InvoiceSectionProperties | undefined;
+	readonly properties?: InvoiceSectionProperties;
 }
 export class billingAccounts_billingProfiles_invoiceSections_billingRoleAssignments
 	extends ArmResource<billingAccounts_billingProfiles_invoiceSections_billingRoleAssignmentsComponentInputs>
@@ -217,7 +217,7 @@ export interface billingAccounts_billingProfiles_invoiceSections_billingRoleAssi
 }
 export interface billingAccounts_billingProfiles_invoiceSections_billingRoleAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingRoleAssignmentProperties | undefined;
+	readonly properties?: BillingRoleAssignmentProperties;
 }
 export class billingAccounts_billingProfiles_invoiceSections_billingRoleDefinitions
 	extends ArmResource<billingAccounts_billingProfiles_invoiceSections_billingRoleDefinitionsComponentInputs>
@@ -246,7 +246,7 @@ export interface billingAccounts_billingProfiles_invoiceSections_billingRoleDefi
 }
 export interface billingAccounts_billingProfiles_invoiceSections_billingRoleDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingRoleDefinitionProperties | undefined;
+	readonly properties?: BillingRoleDefinitionProperties;
 }
 export class billingAccounts_billingProfiles_policies
 	extends ArmResource<billingAccounts_billingProfiles_policiesComponentInputs>
@@ -266,7 +266,7 @@ export interface billingAccounts_billingProfiles_policiesComponentOutputs {
 }
 export interface billingAccounts_billingProfiles_policiesComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyProperties | undefined;
+	readonly properties?: PolicyProperties;
 }
 export class billingAccounts_billingRoleAssignments
 	extends ArmResource<billingAccounts_billingRoleAssignmentsComponentInputs>
@@ -286,7 +286,7 @@ export interface billingAccounts_billingRoleAssignmentsComponentOutputs {
 }
 export interface billingAccounts_billingRoleAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingRoleAssignmentProperties | undefined;
+	readonly properties?: BillingRoleAssignmentProperties;
 }
 export class billingAccounts_billingRoleDefinitions
 	extends ArmResource<billingAccounts_billingRoleDefinitionsComponentInputs>
@@ -306,7 +306,7 @@ export interface billingAccounts_billingRoleDefinitionsComponentOutputs {
 }
 export interface billingAccounts_billingRoleDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingRoleDefinitionProperties | undefined;
+	readonly properties?: BillingRoleDefinitionProperties;
 }
 export class billingAccounts_billingSubscriptions
 	extends ArmResource<billingAccounts_billingSubscriptionsComponentInputs>
@@ -326,7 +326,7 @@ export interface billingAccounts_billingSubscriptionsComponentOutputs {
 }
 export interface billingAccounts_billingSubscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingSubscriptionProperties | undefined;
+	readonly properties?: BillingSubscriptionProperties;
 }
 export class billingAccounts_billingSubscriptions_invoices
 	extends ArmResource<billingAccounts_billingSubscriptions_invoicesComponentInputs>
@@ -352,7 +352,7 @@ export interface billingAccounts_billingSubscriptions_invoicesComponentOutputs {
 }
 export interface billingAccounts_billingSubscriptions_invoicesComponentInputs {
 	readonly name: string;
-	readonly properties?: InvoiceProperties | undefined;
+	readonly properties?: InvoiceProperties;
 }
 export class billingAccounts_customers
 	extends ArmResource<billingAccounts_customersComponentInputs>
@@ -372,7 +372,7 @@ export interface billingAccounts_customersComponentOutputs {
 }
 export interface billingAccounts_customersComponentInputs {
 	readonly name: string;
-	readonly properties?: CustomerProperties | undefined;
+	readonly properties?: CustomerProperties;
 }
 export class billingAccounts_customers_policies
 	extends ArmResource<billingAccounts_customers_policiesComponentInputs>
@@ -392,7 +392,7 @@ export interface billingAccounts_customers_policiesComponentOutputs {
 }
 export interface billingAccounts_customers_policiesComponentInputs {
 	readonly name: string;
-	readonly properties?: CustomerPolicyProperties | undefined;
+	readonly properties?: CustomerPolicyProperties;
 }
 export class billingAccounts_invoices
 	extends ArmResource<billingAccounts_invoicesComponentInputs>
@@ -412,7 +412,7 @@ export interface billingAccounts_invoicesComponentOutputs {
 }
 export interface billingAccounts_invoicesComponentInputs {
 	readonly name: string;
-	readonly properties?: InvoiceProperties | undefined;
+	readonly properties?: InvoiceProperties;
 }
 export class billingAccounts_products
 	extends ArmResource<billingAccounts_productsComponentInputs>
@@ -432,7 +432,7 @@ export interface billingAccounts_productsComponentOutputs {
 }
 export interface billingAccounts_productsComponentInputs {
 	readonly name: string;
-	readonly properties?: ProductProperties | undefined;
+	readonly properties?: ProductProperties;
 }
 export class billingProperty
 	extends ArmResource<billingPropertyComponentInputs>
@@ -452,7 +452,7 @@ export interface billingPropertyComponentOutputs {
 }
 export interface billingPropertyComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingPropertyProperties | undefined;
+	readonly properties?: BillingPropertyProperties;
 }
 export function listInvoiceSectionsWithCreateSubscriptionPermission(
 	resource: billingAccounts,
@@ -471,350 +471,343 @@ export function listInvoiceSectionsWithCreateSubscriptionPermission(
 }
 export interface AddressDetails {
 	readonly addressLine1: string;
-	readonly addressLine2?: string | undefined;
-	readonly addressLine3?: string | undefined;
-	readonly city?: string | undefined;
-	readonly companyName?: string | undefined;
+	readonly addressLine2?: string;
+	readonly addressLine3?: string;
+	readonly city?: string;
+	readonly companyName?: string;
 	readonly country: string;
-	readonly district?: string | undefined;
-	readonly email?: string | undefined;
-	readonly firstName?: string | undefined;
-	readonly lastName?: string | undefined;
-	readonly middleName?: string | undefined;
-	readonly phoneNumber?: string | undefined;
-	readonly postalCode?: string | undefined;
-	readonly region?: string | undefined;
+	readonly district?: string;
+	readonly email?: string;
+	readonly firstName?: string;
+	readonly lastName?: string;
+	readonly middleName?: string;
+	readonly phoneNumber?: string;
+	readonly postalCode?: string;
+	readonly region?: string;
 }
 export interface AgreementProperties {
-	readonly acceptanceMode?: ("ClickToAccept" | "ESignEmbedded" | "ESignOffline") | undefined;
-	readonly agreementLink?: string | undefined;
-	readonly billingProfileInfo?: BillingProfileInfo | undefined;
-	readonly category?: ("AffiliatePurchaseTerms" | "MicrosoftCustomerAgreement" | "Other") | undefined;
-	readonly effectiveDate?: string | undefined;
-	readonly expirationDate?: string | undefined;
-	readonly participants?: Participants[] | undefined;
-	readonly status?: string | undefined;
+	readonly acceptanceMode?: "ClickToAccept" | "ESignEmbedded" | "ESignOffline";
+	readonly agreementLink?: string;
+	readonly billingProfileInfo?: BillingProfileInfo;
+	readonly category?: "AffiliatePurchaseTerms" | "MicrosoftCustomerAgreement" | "Other";
+	readonly effectiveDate?: string;
+	readonly expirationDate?: string;
+	readonly participants?: Participants[];
+	readonly status?: string;
 }
 export interface Amount {
-	readonly currency?: string | undefined;
-	readonly value?: number | undefined;
+	readonly currency?: string;
+	readonly value?: number;
 }
 export interface AvailableBalanceProperties {
-	readonly amount?: Amount | undefined;
+	readonly amount?: Amount;
 }
 export interface AzurePlan {
-	readonly skuDescription?: string | undefined;
-	readonly skuId?: string | undefined;
+	readonly skuDescription?: string;
+	readonly skuId?: string;
 }
 export interface BillingAccountProperties {
-	readonly accountStatus?:
-		| ("Active" | "Deleted" | "Disabled" | "Expired" | "Extended" | "Terminated" | "Transferred")
-		| undefined;
-	readonly accountType?: ("Enterprise" | "Individual" | "Partner") | undefined;
+	readonly accountStatus?: "Active" | "Deleted" | "Disabled" | "Expired" | "Extended" | "Terminated" | "Transferred";
+	readonly accountType?: "Enterprise" | "Individual" | "Partner";
 	readonly agreementType?:
-		| (
-				| "EnterpriseAgreement"
-				| "MicrosoftCustomerAgreement"
-				| "MicrosoftOnlineServicesProgram"
-				| "MicrosoftPartnerAgreement"
-		  )
-		| undefined;
-	readonly billingProfiles?: BillingProfilesOnExpand | undefined;
-	readonly departments?: Department[] | undefined;
-	readonly displayName?: string | undefined;
-	readonly enrollmentAccounts?: EnrollmentAccount[] | undefined;
-	readonly enrollmentDetails?: Enrollment | undefined;
-	readonly hasReadAccess?: boolean | undefined;
-	readonly notificationEmailAddress?: string | undefined;
-	readonly soldTo?: AddressDetails | undefined;
+		| "EnterpriseAgreement"
+		| "MicrosoftCustomerAgreement"
+		| "MicrosoftOnlineServicesProgram"
+		| "MicrosoftPartnerAgreement";
+	readonly billingProfiles?: BillingProfilesOnExpand;
+	readonly departments?: Department[];
+	readonly displayName?: string;
+	readonly enrollmentAccounts?: EnrollmentAccount[];
+	readonly enrollmentDetails?: Enrollment;
+	readonly hasReadAccess?: boolean;
+	readonly notificationEmailAddress?: string;
+	readonly soldTo?: AddressDetails;
 }
 export interface BillingPermissionsProperties {
-	readonly actions?: string[] | undefined;
-	readonly notActions?: string[] | undefined;
+	readonly actions?: string[];
+	readonly notActions?: string[];
 }
 export interface BillingProfile {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: BillingProfileProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: BillingProfileProperties;
+	readonly type?: string;
 }
 export interface BillingProfileInfo {
-	readonly billingProfileDisplayName?: string | undefined;
-	readonly billingProfileId?: string | undefined;
-	readonly indirectRelationshipOrganizationName?: string | undefined;
+	readonly billingProfileDisplayName?: string;
+	readonly billingProfileId?: string;
+	readonly indirectRelationshipOrganizationName?: string;
 }
 export interface BillingProfileProperties {
-	readonly billingRelationshipType?: ("CSPPartner" | "Direct" | "IndirectCustomer" | "IndirectPartner") | undefined;
-	readonly billTo?: AddressDetails | undefined;
-	readonly currency?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enabledAzurePlans?: AzurePlan[] | undefined;
-	readonly hasReadAccess?: boolean | undefined;
-	readonly indirectRelationshipInfo?: IndirectRelationshipInfo | undefined;
-	readonly invoiceDay?: number | undefined;
-	readonly invoiceEmailOptIn?: boolean | undefined;
-	readonly invoiceSections?: InvoiceSectionsOnExpand | undefined;
-	readonly poNumber?: string | undefined;
-	readonly spendingLimit?: ("Off" | "On") | undefined;
-	readonly status?: ("Active" | "Disabled" | "Warned") | undefined;
-	readonly statusReasonCode?: ("PastDue" | "SpendingLimitExpired" | "SpendingLimitReached") | undefined;
-	readonly systemId?: string | undefined;
-	readonly tags?: BillingProfilePropertiesTags | undefined;
-	readonly targetClouds?: ("USGov" | "USNat" | "USSec"[]) | undefined;
+	readonly billingRelationshipType?: "CSPPartner" | "Direct" | "IndirectCustomer" | "IndirectPartner";
+	readonly billTo?: AddressDetails;
+	readonly currency?: string;
+	readonly displayName?: string;
+	readonly enabledAzurePlans?: AzurePlan[];
+	readonly hasReadAccess?: boolean;
+	readonly indirectRelationshipInfo?: IndirectRelationshipInfo;
+	readonly invoiceDay?: number;
+	readonly invoiceEmailOptIn?: boolean;
+	readonly invoiceSections?: InvoiceSectionsOnExpand;
+	readonly poNumber?: string;
+	readonly spendingLimit?: "Off" | "On";
+	readonly status?: "Active" | "Disabled" | "Warned";
+	readonly statusReasonCode?: "PastDue" | "SpendingLimitExpired" | "SpendingLimitReached";
+	readonly systemId?: string;
+	readonly tags?: BillingProfilePropertiesTags;
+	readonly targetClouds?: "USGov" | "USNat" | "USSec"[];
 }
 export interface BillingProfilePropertiesTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface BillingProfilesOnExpand {
-	readonly hasMoreResults?: boolean | undefined;
-	readonly value?: BillingProfile[] | undefined;
+	readonly hasMoreResults?: boolean;
+	readonly value?: BillingProfile[];
 }
 export interface BillingPropertyProperties {
-	readonly accountAdminNotificationEmailAddress?: string | undefined;
-	readonly billingAccountDisplayName?: string | undefined;
-	readonly billingAccountId?: string | undefined;
-	readonly billingProfileDisplayName?: string | undefined;
-	readonly billingProfileId?: string | undefined;
-	readonly billingProfileSpendingLimit?: ("Off" | "On") | undefined;
-	readonly billingProfileStatus?: ("Active" | "Disabled" | "Warned") | undefined;
-	readonly billingProfileStatusReasonCode?: ("PastDue" | "SpendingLimitExpired" | "SpendingLimitReached") | undefined;
-	readonly billingTenantId?: string | undefined;
-	readonly costCenter?: string | undefined;
-	readonly invoiceSectionDisplayName?: string | undefined;
-	readonly invoiceSectionId?: string | undefined;
-	readonly isAccountAdmin?: boolean | undefined;
-	readonly productId?: string | undefined;
-	readonly productName?: string | undefined;
-	readonly skuDescription?: string | undefined;
-	readonly skuId?: string | undefined;
+	readonly accountAdminNotificationEmailAddress?: string;
+	readonly billingAccountDisplayName?: string;
+	readonly billingAccountId?: string;
+	readonly billingProfileDisplayName?: string;
+	readonly billingProfileId?: string;
+	readonly billingProfileSpendingLimit?: "Off" | "On";
+	readonly billingProfileStatus?: "Active" | "Disabled" | "Warned";
+	readonly billingProfileStatusReasonCode?: "PastDue" | "SpendingLimitExpired" | "SpendingLimitReached";
+	readonly billingTenantId?: string;
+	readonly costCenter?: string;
+	readonly invoiceSectionDisplayName?: string;
+	readonly invoiceSectionId?: string;
+	readonly isAccountAdmin?: boolean;
+	readonly productId?: string;
+	readonly productName?: string;
+	readonly skuDescription?: string;
+	readonly skuId?: string;
 }
 export interface BillingRoleAssignmentProperties {
-	readonly createdByPrincipalId?: string | undefined;
-	readonly createdByPrincipalTenantId?: string | undefined;
-	readonly createdByUserEmailAddress?: string | undefined;
-	readonly createdOn?: string | undefined;
-	readonly principalId?: string | undefined;
-	readonly principalTenantId?: string | undefined;
-	readonly roleDefinitionId?: string | undefined;
-	readonly scope?: string | undefined;
-	readonly userAuthenticationType?: string | undefined;
-	readonly userEmailAddress?: string | undefined;
+	readonly createdByPrincipalId?: string;
+	readonly createdByPrincipalTenantId?: string;
+	readonly createdByUserEmailAddress?: string;
+	readonly createdOn?: string;
+	readonly principalId?: string;
+	readonly principalTenantId?: string;
+	readonly roleDefinitionId?: string;
+	readonly scope?: string;
+	readonly userAuthenticationType?: string;
+	readonly userEmailAddress?: string;
 }
 export interface BillingRoleDefinitionProperties {
-	readonly description?: string | undefined;
-	readonly permissions?: BillingPermissionsProperties[] | undefined;
-	readonly roleName?: string | undefined;
+	readonly description?: string;
+	readonly permissions?: BillingPermissionsProperties[];
+	readonly roleName?: string;
 }
 export interface BillingSubscriptionProperties {
-	readonly billingProfileDisplayName?: string | undefined;
-	readonly billingProfileId?: string | undefined;
-	readonly costCenter?: string | undefined;
-	readonly customerDisplayName?: string | undefined;
-	readonly customerId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly invoiceSectionDisplayName?: string | undefined;
-	readonly invoiceSectionId?: string | undefined;
-	readonly lastMonthCharges?: Amount | undefined;
-	readonly monthToDateCharges?: Amount | undefined;
-	readonly reseller?: Reseller | undefined;
-	readonly skuDescription?: string | undefined;
-	readonly skuId?: string | undefined;
-	readonly subscriptionBillingStatus?: ("Abandoned" | "Active" | "Deleted" | "Inactive" | "Warning") | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly suspensionReasons?: string[] | undefined;
+	readonly billingProfileDisplayName?: string;
+	readonly billingProfileId?: string;
+	readonly costCenter?: string;
+	readonly customerDisplayName?: string;
+	readonly customerId?: string;
+	readonly displayName?: string;
+	readonly invoiceSectionDisplayName?: string;
+	readonly invoiceSectionId?: string;
+	readonly lastMonthCharges?: Amount;
+	readonly monthToDateCharges?: Amount;
+	readonly reseller?: Reseller;
+	readonly skuDescription?: string;
+	readonly skuId?: string;
+	readonly subscriptionBillingStatus?: "Abandoned" | "Active" | "Deleted" | "Inactive" | "Warning";
+	readonly subscriptionId?: string;
+	readonly suspensionReasons?: string[];
 }
 export interface CustomerPolicyProperties {
-	readonly viewCharges?: ("Allowed" | "NotAllowed") | undefined;
+	readonly viewCharges?: "Allowed" | "NotAllowed";
 }
 export interface CustomerProperties {
-	readonly billingProfileDisplayName?: string | undefined;
-	readonly billingProfileId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enabledAzurePlans?: AzurePlan[] | undefined;
-	readonly resellers?: Reseller[] | undefined;
+	readonly billingProfileDisplayName?: string;
+	readonly billingProfileId?: string;
+	readonly displayName?: string;
+	readonly enabledAzurePlans?: AzurePlan[];
+	readonly resellers?: Reseller[];
 }
 export interface Department {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: DepartmentProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: DepartmentProperties;
+	readonly type?: string;
 }
 export interface DepartmentProperties {
-	readonly costCenter?: string | undefined;
-	readonly departmentName?: string | undefined;
-	readonly enrollmentAccounts?: EnrollmentAccount[] | undefined;
-	readonly status?: string | undefined;
+	readonly costCenter?: string;
+	readonly departmentName?: string;
+	readonly enrollmentAccounts?: EnrollmentAccount[];
+	readonly status?: string;
 }
 export interface Document {
-	readonly kind?: ("CreditNote" | "Invoice" | "TaxReceipt" | "VoidNote") | undefined;
-	readonly source?: ("DRS" | "ENF") | undefined;
-	readonly url?: string | undefined;
+	readonly kind?: "CreditNote" | "Invoice" | "TaxReceipt" | "VoidNote";
+	readonly source?: "DRS" | "ENF";
+	readonly url?: string;
 }
 export interface Enrollment {
-	readonly billingCycle?: string | undefined;
-	readonly channel?: string | undefined;
-	readonly countryCode?: string | undefined;
-	readonly currency?: string | undefined;
-	readonly endDate?: string | undefined;
-	readonly language?: string | undefined;
-	readonly policies?: EnrollmentPolicies | undefined;
-	readonly startDate?: string | undefined;
-	readonly status?: string | undefined;
+	readonly billingCycle?: string;
+	readonly channel?: string;
+	readonly countryCode?: string;
+	readonly currency?: string;
+	readonly endDate?: string;
+	readonly language?: string;
+	readonly policies?: EnrollmentPolicies;
+	readonly startDate?: string;
+	readonly status?: string;
 }
 export interface EnrollmentAccount {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: EnrollmentAccountProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: EnrollmentAccountProperties;
+	readonly type?: string;
 }
 export interface EnrollmentAccountProperties {
-	readonly accountName?: string | undefined;
-	readonly accountOwner?: string | undefined;
-	readonly accountOwnerEmail?: string | undefined;
-	readonly costCenter?: string | undefined;
-	readonly department?: Department | undefined;
-	readonly endDate?: string | undefined;
-	readonly startDate?: string | undefined;
-	readonly status?: string | undefined;
+	readonly accountName?: string;
+	readonly accountOwner?: string;
+	readonly accountOwnerEmail?: string;
+	readonly costCenter?: string;
+	readonly department?: Department;
+	readonly endDate?: string;
+	readonly startDate?: string;
+	readonly status?: string;
 }
 export interface EnrollmentPolicies {
-	readonly accountOwnerViewCharges?: boolean | undefined;
-	readonly departmentAdminViewCharges?: boolean | undefined;
-	readonly marketplaceEnabled?: boolean | undefined;
-	readonly reservedInstancesEnabled?: boolean | undefined;
+	readonly accountOwnerViewCharges?: boolean;
+	readonly departmentAdminViewCharges?: boolean;
+	readonly marketplaceEnabled?: boolean;
+	readonly reservedInstancesEnabled?: boolean;
 }
 export interface IndirectRelationshipInfo {
-	readonly billingAccountName?: string | undefined;
-	readonly billingProfileName?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly billingAccountName?: string;
+	readonly billingProfileName?: string;
+	readonly displayName?: string;
 }
 export interface InstructionProperties {
 	readonly amount: number;
-	readonly creationDate?: string | undefined;
+	readonly creationDate?: string;
 	readonly endDate: string;
 	readonly startDate: string;
 }
 export interface InvoiceProperties {
-	readonly amountDue?: Amount | undefined;
-	readonly azurePrepaymentApplied?: Amount | undefined;
-	readonly billedAmount?: Amount | undefined;
-	readonly billedDocumentId?: string | undefined;
-	readonly billingProfileDisplayName?: string | undefined;
-	readonly billingProfileId?: string | undefined;
-	readonly creditAmount?: Amount | undefined;
-	readonly creditForDocumentId?: string | undefined;
-	readonly documents?: Document[] | undefined;
-	readonly documentType?: ("CreditNote" | "Invoice") | undefined;
-	readonly dueDate?: string | undefined;
-	readonly freeAzureCreditApplied?: Amount | undefined;
-	readonly invoiceDate?: string | undefined;
-	readonly invoicePeriodEndDate?: string | undefined;
-	readonly invoicePeriodStartDate?: string | undefined;
-	readonly invoiceType?: ("AzureMarketplace" | "AzureService" | "AzureSupport") | undefined;
-	readonly isMonthlyInvoice?: boolean | undefined;
-	readonly payments?: PaymentProperties[] | undefined;
-	readonly purchaseOrderNumber?: string | undefined;
-	readonly rebillDetails?: InvoicePropertiesRebillDetails | undefined;
-	readonly status?: ("Due" | "OverDue" | "Paid" | "Void") | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly subTotal?: Amount | undefined;
-	readonly taxAmount?: Amount | undefined;
-	readonly totalAmount?: Amount | undefined;
+	readonly amountDue?: Amount;
+	readonly azurePrepaymentApplied?: Amount;
+	readonly billedAmount?: Amount;
+	readonly billedDocumentId?: string;
+	readonly billingProfileDisplayName?: string;
+	readonly billingProfileId?: string;
+	readonly creditAmount?: Amount;
+	readonly creditForDocumentId?: string;
+	readonly documents?: Document[];
+	readonly documentType?: "CreditNote" | "Invoice";
+	readonly dueDate?: string;
+	readonly freeAzureCreditApplied?: Amount;
+	readonly invoiceDate?: string;
+	readonly invoicePeriodEndDate?: string;
+	readonly invoicePeriodStartDate?: string;
+	readonly invoiceType?: "AzureMarketplace" | "AzureService" | "AzureSupport";
+	readonly isMonthlyInvoice?: boolean;
+	readonly payments?: PaymentProperties[];
+	readonly purchaseOrderNumber?: string;
+	readonly rebillDetails?: InvoicePropertiesRebillDetails;
+	readonly status?: "Due" | "OverDue" | "Paid" | "Void";
+	readonly subscriptionId?: string;
+	readonly subTotal?: Amount;
+	readonly taxAmount?: Amount;
+	readonly totalAmount?: Amount;
 }
 export interface InvoicePropertiesRebillDetails {
-	readonly "[ key: string ]"?: RebillDetails | undefined;
+	readonly [key: string]: RebillDetails;
 }
 export interface InvoiceSection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: InvoiceSectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: InvoiceSectionProperties;
+	readonly type?: string;
 }
 export interface InvoiceSectionListWithCreateSubPermissionResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: InvoiceSectionWithCreateSubPermission[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: InvoiceSectionWithCreateSubPermission[];
 }
 export interface InvoiceSectionProperties {
-	readonly displayName?: string | undefined;
-	readonly labels?: InvoiceSectionPropertiesLabels | undefined;
-	readonly state?: ("Active" | "Restricted") | undefined;
-	readonly systemId?: string | undefined;
-	readonly tags?: InvoiceSectionPropertiesTags | undefined;
-	readonly targetCloud?: ("USGov" | "USNat" | "USSec") | undefined;
+	readonly displayName?: string;
+	readonly labels?: InvoiceSectionPropertiesLabels;
+	readonly state?: "Active" | "Restricted";
+	readonly systemId?: string;
+	readonly tags?: InvoiceSectionPropertiesTags;
+	readonly targetCloud?: "USGov" | "USNat" | "USSec";
 }
 export interface InvoiceSectionPropertiesLabels {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface InvoiceSectionPropertiesTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface InvoiceSectionsOnExpand {
-	readonly hasMoreResults?: boolean | undefined;
-	readonly value?: InvoiceSection[] | undefined;
+	readonly hasMoreResults?: boolean;
+	readonly value?: InvoiceSection[];
 }
 export interface InvoiceSectionWithCreateSubPermission {
-	readonly billingProfileDisplayName?: string | undefined;
-	readonly billingProfileId?: string | undefined;
-	readonly billingProfileSpendingLimit?: ("Off" | "On") | undefined;
-	readonly billingProfileStatus?: ("Active" | "Disabled" | "Warned") | undefined;
-	readonly billingProfileStatusReasonCode?: ("PastDue" | "SpendingLimitExpired" | "SpendingLimitReached") | undefined;
-	readonly billingProfileSystemId?: string | undefined;
-	readonly enabledAzurePlans?: AzurePlan[] | undefined;
-	readonly invoiceSectionDisplayName?: string | undefined;
-	readonly invoiceSectionId?: string | undefined;
-	readonly invoiceSectionSystemId?: string | undefined;
+	readonly billingProfileDisplayName?: string;
+	readonly billingProfileId?: string;
+	readonly billingProfileSpendingLimit?: "Off" | "On";
+	readonly billingProfileStatus?: "Active" | "Disabled" | "Warned";
+	readonly billingProfileStatusReasonCode?: "PastDue" | "SpendingLimitExpired" | "SpendingLimitReached";
+	readonly billingProfileSystemId?: string;
+	readonly enabledAzurePlans?: AzurePlan[];
+	readonly invoiceSectionDisplayName?: string;
+	readonly invoiceSectionId?: string;
+	readonly invoiceSectionSystemId?: string;
 }
 export interface Participants {
-	readonly email?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusDate?: string | undefined;
+	readonly email?: string;
+	readonly status?: string;
+	readonly statusDate?: string;
 }
 export interface PaymentProperties {
-	readonly amount?: Amount | undefined;
-	readonly date?: string | undefined;
-	readonly paymentMethodFamily?: ("CheckWire" | "CreditCard" | "Credits" | "None") | undefined;
-	readonly paymentMethodType?: string | undefined;
-	readonly paymentType?: string | undefined;
+	readonly amount?: Amount;
+	readonly date?: string;
+	readonly paymentMethodFamily?: "CheckWire" | "CreditCard" | "Credits" | "None";
+	readonly paymentMethodType?: string;
+	readonly paymentType?: string;
 }
 export interface PolicyProperties {
-	readonly marketplacePurchases?: ("AllAllowed" | "NotAllowed" | "OnlyFreeAllowed") | undefined;
-	readonly reservationPurchases?: ("Allowed" | "NotAllowed") | undefined;
-	readonly viewCharges?: ("Allowed" | "NotAllowed") | undefined;
+	readonly marketplacePurchases?: "AllAllowed" | "NotAllowed" | "OnlyFreeAllowed";
+	readonly reservationPurchases?: "Allowed" | "NotAllowed";
+	readonly viewCharges?: "Allowed" | "NotAllowed";
 }
 export interface ProductProperties {
-	readonly autoRenew?: ("Off" | "On") | undefined;
-	readonly availabilityId?: string | undefined;
-	readonly billingFrequency?: ("Monthly" | "OneTime" | "UsageBased") | undefined;
-	readonly billingProfileDisplayName?: string | undefined;
-	readonly billingProfileId?: string | undefined;
-	readonly customerDisplayName?: string | undefined;
-	readonly customerId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly endDate?: string | undefined;
-	readonly invoiceSectionDisplayName?: string | undefined;
-	readonly invoiceSectionId?: string | undefined;
-	readonly lastCharge?: Amount | undefined;
-	readonly lastChargeDate?: string | undefined;
-	readonly productType?: string | undefined;
-	readonly productTypeId?: string | undefined;
-	readonly purchaseDate?: string | undefined;
-	readonly quantity?: number | undefined;
-	readonly reseller?: Reseller | undefined;
-	readonly skuDescription?: string | undefined;
-	readonly skuId?: string | undefined;
-	readonly status?:
-		| ("Active" | "AutoRenew" | "Cancelled" | "Disabled" | "Expired" | "Expiring" | "Inactive" | "PastDue")
-		| undefined;
-	readonly tenantId?: string | undefined;
+	readonly autoRenew?: "Off" | "On";
+	readonly availabilityId?: string;
+	readonly billingFrequency?: "Monthly" | "OneTime" | "UsageBased";
+	readonly billingProfileDisplayName?: string;
+	readonly billingProfileId?: string;
+	readonly customerDisplayName?: string;
+	readonly customerId?: string;
+	readonly displayName?: string;
+	readonly endDate?: string;
+	readonly invoiceSectionDisplayName?: string;
+	readonly invoiceSectionId?: string;
+	readonly lastCharge?: Amount;
+	readonly lastChargeDate?: string;
+	readonly productType?: string;
+	readonly productTypeId?: string;
+	readonly purchaseDate?: string;
+	readonly quantity?: number;
+	readonly reseller?: Reseller;
+	readonly skuDescription?: string;
+	readonly skuId?: string;
+	readonly status?: "Active" | "AutoRenew" | "Cancelled" | "Disabled" | "Expired" | "Expiring" | "Inactive" | "PastDue";
+	readonly tenantId?: string;
 }
 export interface RebillDetails {
-	readonly creditNoteDocumentId?: string | undefined;
-	readonly invoiceDocumentId?: string | undefined;
-	readonly rebillDetails?: RebillDetails | undefined;
+	readonly creditNoteDocumentId?: string;
+	readonly invoiceDocumentId?: string;
+	readonly rebillDetails?: RebillDetails;
 }
 export interface Reseller {
-	readonly description?: string | undefined;
-	readonly resellerId?: string | undefined;
+	readonly description?: string;
+	readonly resellerId?: string;
 }
 export default {
 	billingAccounts: billingAccounts,

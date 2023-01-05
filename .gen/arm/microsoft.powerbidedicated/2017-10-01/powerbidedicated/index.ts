@@ -16,58 +16,52 @@ export interface capacitiesComponentOutputs {
 export interface capacitiesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DedicatedCapacityProperties | undefined;
+	readonly properties?: DedicatedCapacityProperties;
 	readonly sku: ResourceSku;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export interface DedicatedCapacityAdministrators {
-	readonly members?: string[] | undefined;
+	readonly members?: string[];
 }
 export interface DedicatedCapacityProperties {
-	readonly administration?: DedicatedCapacityAdministrators | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly mode?: string | undefined;
+	readonly administration?: DedicatedCapacityAdministrators;
+	readonly friendlyName?: string;
+	readonly mode?: string;
 	readonly provisioningState?:
-		| (
-				| "Deleting"
-				| "Failed"
-				| "Paused"
-				| "Pausing"
-				| "Preparing"
-				| "Provisioning"
-				| "Resuming"
-				| "Scaling"
-				| "Succeeded"
-				| "Suspended"
-				| "Suspending"
-				| "Updating"
-		  )
-		| undefined;
+		| "Deleting"
+		| "Failed"
+		| "Paused"
+		| "Pausing"
+		| "Preparing"
+		| "Provisioning"
+		| "Resuming"
+		| "Scaling"
+		| "Succeeded"
+		| "Suspended"
+		| "Suspending"
+		| "Updating";
 	readonly state?:
-		| (
-				| "Deleting"
-				| "Failed"
-				| "Paused"
-				| "Pausing"
-				| "Preparing"
-				| "Provisioning"
-				| "Resuming"
-				| "Scaling"
-				| "Succeeded"
-				| "Suspended"
-				| "Suspending"
-				| "Updating"
-		  )
-		| undefined;
-	readonly tenantId?: string | undefined;
+		| "Deleting"
+		| "Failed"
+		| "Paused"
+		| "Pausing"
+		| "Preparing"
+		| "Provisioning"
+		| "Resuming"
+		| "Scaling"
+		| "Succeeded"
+		| "Suspended"
+		| "Suspending"
+		| "Updating";
+	readonly tenantId?: string;
 }
 export interface ResourceSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name: string;
-	readonly tier?: "PBIE_Azure" | undefined;
+	readonly tier?: "PBIE_Azure";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	capacities: capacities,

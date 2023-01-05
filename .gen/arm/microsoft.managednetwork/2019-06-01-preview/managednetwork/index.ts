@@ -17,10 +17,10 @@ export interface managedNetworksComponentOutputs {
 	readonly type: "Microsoft.ManagedNetwork/managedNetworks";
 }
 export interface managedNetworksComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ManagedNetworkProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ManagedNetworkProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class managedNetworks_managedNetworkGroups
 	extends ArmResource<managedNetworks_managedNetworkGroupsComponentInputs>
@@ -45,10 +45,10 @@ export interface managedNetworks_managedNetworkGroupsComponentOutputs {
 	readonly type: "Microsoft.ManagedNetwork/managedNetworks/managedNetworkGroups";
 }
 export interface managedNetworks_managedNetworkGroupsComponentInputs {
-	readonly kind?: "Connectivity" | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: "Connectivity";
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ManagedNetworkGroupProperties | undefined;
+	readonly properties?: ManagedNetworkGroupProperties;
 }
 export class managedNetworks_managedNetworkPeeringPolicies
 	extends ArmResource<managedNetworks_managedNetworkPeeringPoliciesComponentInputs>
@@ -73,9 +73,9 @@ export interface managedNetworks_managedNetworkPeeringPoliciesComponentOutputs {
 	readonly type: "Microsoft.ManagedNetwork/managedNetworks/managedNetworkPeeringPolicies";
 }
 export interface managedNetworks_managedNetworkPeeringPoliciesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ManagedNetworkPeeringPolicyProperties | undefined;
+	readonly properties?: ManagedNetworkPeeringPolicyProperties;
 }
 export class scopeAssignments
 	extends ArmResource<scopeAssignmentsComponentInputs>
@@ -94,67 +94,67 @@ export interface scopeAssignmentsComponentOutputs {
 	readonly type: "Microsoft.ManagedNetwork/scopeAssignments";
 }
 export interface scopeAssignmentsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ScopeAssignmentProperties | undefined;
+	readonly properties?: ScopeAssignmentProperties;
 }
 export interface ConnectivityCollection {
-	readonly groups?: ManagedNetworkGroup[] | undefined;
-	readonly peerings?: ManagedNetworkPeeringPolicy[] | undefined;
+	readonly groups?: ManagedNetworkGroup[];
+	readonly peerings?: ManagedNetworkPeeringPolicy[];
 }
 export interface ManagedNetworkGroup {
-	readonly id?: string | undefined;
-	readonly kind?: "Connectivity" | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ManagedNetworkGroupProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly kind?: "Connectivity";
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: ManagedNetworkGroupProperties;
+	readonly type?: string;
 }
 export interface ManagedNetworkGroupProperties {
-	readonly etag?: string | undefined;
-	readonly managementGroups?: ResourceId[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly subnets?: ResourceId[] | undefined;
-	readonly subscriptions?: ResourceId[] | undefined;
-	readonly virtualNetworks?: ResourceId[] | undefined;
+	readonly etag?: string;
+	readonly managementGroups?: ResourceId[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly subnets?: ResourceId[];
+	readonly subscriptions?: ResourceId[];
+	readonly virtualNetworks?: ResourceId[];
 }
 export interface ManagedNetworkPeeringPolicy {
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ManagedNetworkPeeringPolicyProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: ManagedNetworkPeeringPolicyProperties;
+	readonly type?: string;
 }
 export interface ManagedNetworkPeeringPolicyProperties {
-	readonly etag?: string | undefined;
-	readonly hub?: ResourceId | undefined;
-	readonly mesh?: ResourceId[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly spokes?: ResourceId[] | undefined;
+	readonly etag?: string;
+	readonly hub?: ResourceId;
+	readonly mesh?: ResourceId[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly spokes?: ResourceId[];
 	readonly type: "HubAndSpokeTopology" | "MeshTopology";
 }
 export interface ManagedNetworkProperties {
-	readonly connectivity?: ConnectivityCollection | undefined;
-	readonly etag?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly scope?: Scope | undefined;
+	readonly connectivity?: ConnectivityCollection;
+	readonly etag?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly scope?: Scope;
 }
 export interface ResourceId {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface Scope {
-	readonly managementGroups?: ResourceId[] | undefined;
-	readonly subnets?: ResourceId[] | undefined;
-	readonly subscriptions?: ResourceId[] | undefined;
-	readonly virtualNetworks?: ResourceId[] | undefined;
+	readonly managementGroups?: ResourceId[];
+	readonly subnets?: ResourceId[];
+	readonly subscriptions?: ResourceId[];
+	readonly virtualNetworks?: ResourceId[];
 }
 export interface ScopeAssignmentProperties {
-	readonly assignedManagedNetwork?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly assignedManagedNetwork?: string;
+	readonly etag?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	managedNetworks: managedNetworks,

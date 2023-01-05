@@ -4,64 +4,63 @@ export class Projects extends GdmResource<ProjectsComponentInputs> implements Pr
 	constructor(entity: ADKEntity, options: ProjectsComponentInputs) {
 		super(entity, options.name, "compute.alpha.Projects", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly defaultServiceAccount?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly quotas?: Quota[] | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly vmDnsSetting?: string | undefined;
-	public readonly xpnProjectStatus?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly defaultServiceAccount?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly quotas?: Quota[];
+	public readonly selfLink?: string;
+	public readonly vmDnsSetting?: string;
+	public readonly xpnProjectStatus?: string;
 }
 export interface ProjectsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly defaultServiceAccount?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly quotas?: Quota[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly vmDnsSetting?: string | undefined;
-	readonly xpnProjectStatus?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly defaultServiceAccount?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly quotas?: Quota[];
+	readonly selfLink?: string;
+	readonly vmDnsSetting?: string;
+	readonly xpnProjectStatus?: string;
 }
 export interface ProjectsComponentInputs {
-	readonly commonInstanceMetadata?: Metadata | undefined;
-	readonly defaultNetworkTier?: string | undefined;
-	readonly description?: string | undefined;
-	readonly enabledFeatures?: string[] | undefined;
+	readonly commonInstanceMetadata?: Metadata;
+	readonly defaultNetworkTier?: string;
+	readonly description?: string;
+	readonly enabledFeatures?: string[];
 	readonly name: string;
-	readonly usageExportLocation?: UsageExportLocation | undefined;
-	readonly type: string;
+	readonly usageExportLocation?: UsageExportLocation;
 }
 export interface Metadata {
-	readonly fingerprint?: string | undefined;
-	readonly items?: Array<{ key?: string; value?: string }> | undefined;
-	readonly kind?: string | undefined;
+	readonly fingerprint?: string;
+	readonly items?: Array<{ key?: string; value?: string }>;
+	readonly kind?: string;
 }
 export interface Project {
-	readonly commonInstanceMetadata?: Metadata | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly defaultNetworkTier?: string | undefined;
-	readonly defaultServiceAccount?: string | undefined;
-	readonly description?: string | undefined;
-	readonly enabledFeatures?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly quotas?: Quota[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly usageExportLocation?: UsageExportLocation | undefined;
-	readonly vmDnsSetting?: string | undefined;
-	readonly xpnProjectStatus?: string | undefined;
+	readonly commonInstanceMetadata?: Metadata;
+	readonly creationTimestamp?: string;
+	readonly defaultNetworkTier?: string;
+	readonly defaultServiceAccount?: string;
+	readonly description?: string;
+	readonly enabledFeatures?: string[];
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly quotas?: Quota[];
+	readonly selfLink?: string;
+	readonly usageExportLocation?: UsageExportLocation;
+	readonly vmDnsSetting?: string;
+	readonly xpnProjectStatus?: string;
 }
 export interface Quota {
-	readonly limit?: number | undefined;
-	readonly metric?: string | undefined;
-	readonly owner?: string | undefined;
-	readonly usage?: number | undefined;
+	readonly limit?: number;
+	readonly metric?: string;
+	readonly owner?: string;
+	readonly usage?: number;
 }
 export interface UsageExportLocation {
-	readonly bucketName?: string | undefined;
-	readonly reportNamePrefix?: string | undefined;
+	readonly bucketName?: string;
+	readonly reportNamePrefix?: string;
 }
 export default {
 	Projects: Projects,

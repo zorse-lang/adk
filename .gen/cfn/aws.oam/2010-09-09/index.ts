@@ -15,7 +15,7 @@ export interface LinkComponentInputs {
 	readonly LabelTemplate: string;
 	readonly ResourceTypes: string[];
 	readonly SinkIdentifier: string;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class Sink extends CfnResource<SinkComponentInputs> implements SinkComponentOutputs {
@@ -29,8 +29,8 @@ export interface SinkComponentOutputs {
 }
 export interface SinkComponentInputs {
 	readonly Name: string;
-	readonly Policy?: (any | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Policy?: any | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export default {

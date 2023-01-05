@@ -10,12 +10,12 @@ export interface StreamComponentOutputs {
 	readonly Arn: string;
 }
 export interface StreamComponentInputs {
-	readonly Name?: (string | undefined) | undefined;
-	readonly RetentionPeriodHours?: (number | undefined) | undefined;
-	readonly ShardCount?: (number | undefined) | undefined;
-	readonly StreamEncryption?: (StreamEncryption | undefined) | undefined;
-	readonly StreamModeDetails?: (StreamModeDetails | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly RetentionPeriodHours?: number | undefined;
+	readonly ShardCount?: number | undefined;
+	readonly StreamEncryption?: StreamEncryption | undefined;
+	readonly StreamModeDetails?: StreamModeDetails | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class StreamConsumer extends CfnResource<StreamConsumerComponentInputs> implements StreamConsumerComponentOutputs {

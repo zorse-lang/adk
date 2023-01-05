@@ -7,100 +7,99 @@ export class ProjectsMetrics
 	constructor(entity: ADKEntity, options: ProjectsMetricsComponentInputs) {
 		super(entity, options.name, "logging.v2.ProjectsMetrics", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly metricDescriptor?: MetricDescriptor | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly createTime?: string;
+	public readonly metricDescriptor?: MetricDescriptor;
+	public readonly updateTime?: string;
 }
 export interface ProjectsMetricsComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly metricDescriptor?: MetricDescriptor | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly metricDescriptor?: MetricDescriptor;
+	readonly updateTime?: string;
 }
 export interface ProjectsMetricsComponentInputs {
-	readonly bucketName?: string | undefined;
-	readonly bucketOptions?: BucketOptions | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
+	readonly bucketName?: string;
+	readonly bucketOptions?: BucketOptions;
+	readonly description?: string;
+	readonly disabled?: boolean;
 	readonly filter: string;
-	readonly labelExtractors?: { [P in string]: string } | undefined;
+	readonly labelExtractors?: { [P in string]: string };
 	readonly name: string;
 	readonly parent: string;
-	readonly resolution?: string | undefined;
-	readonly valueExtractor?: string | undefined;
-	readonly version?: string | undefined;
-	readonly type: string;
+	readonly resolution?: string;
+	readonly valueExtractor?: string;
+	readonly version?: string;
 }
 export interface BucketOptions {
-	readonly explicitBuckets?: Explicit | undefined;
-	readonly exponentialBuckets?: Exponential | undefined;
-	readonly linearBuckets?: Linear | undefined;
+	readonly explicitBuckets?: Explicit;
+	readonly exponentialBuckets?: Exponential;
+	readonly linearBuckets?: Linear;
 }
 export interface Explicit {
-	readonly bounds?: number[] | undefined;
+	readonly bounds?: number[];
 }
 export interface Exponential {
-	readonly growthFactor?: number | undefined;
-	readonly numFiniteBuckets?: number | undefined;
-	readonly scale?: number | undefined;
+	readonly growthFactor?: number;
+	readonly numFiniteBuckets?: number;
+	readonly scale?: number;
 }
 export interface LabelDescriptor {
-	readonly description?: string | undefined;
-	readonly key?: string | undefined;
-	readonly valueType?: string | undefined;
+	readonly description?: string;
+	readonly key?: string;
+	readonly valueType?: string;
 }
 export interface LabelMapping {
-	readonly destinationMetricLabel?: string | undefined;
-	readonly destinationResourceLabel?: string | undefined;
-	readonly sourceLabel?: string | undefined;
+	readonly destinationMetricLabel?: string;
+	readonly destinationResourceLabel?: string;
+	readonly sourceLabel?: string;
 }
 export interface Linear {
-	readonly numFiniteBuckets?: number | undefined;
-	readonly offset?: number | undefined;
-	readonly width?: number | undefined;
+	readonly numFiniteBuckets?: number;
+	readonly offset?: number;
+	readonly width?: number;
 }
 export interface LogMetric {
-	readonly bucketName?: string | undefined;
-	readonly bucketOptions?: BucketOptions | undefined;
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
+	readonly bucketName?: string;
+	readonly bucketOptions?: BucketOptions;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly disabled?: boolean;
 	readonly filter: string;
-	readonly labelExtractors?: { [P in string]: string } | undefined;
-	readonly metricDescriptor?: MetricDescriptor | undefined;
+	readonly labelExtractors?: { [P in string]: string };
+	readonly metricDescriptor?: MetricDescriptor;
 	readonly name: string;
-	readonly resolution?: string | undefined;
-	readonly updateTime?: string | undefined;
-	readonly valueExtractor?: string | undefined;
-	readonly version?: string | undefined;
+	readonly resolution?: string;
+	readonly updateTime?: string;
+	readonly valueExtractor?: string;
+	readonly version?: string;
 }
 export interface MetricDescriptor {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly labels?: LabelDescriptor[] | undefined;
-	readonly launchStage?: string | undefined;
-	readonly metadata?: MetricDescriptorMetadata | undefined;
-	readonly metricKind?: string | undefined;
-	readonly monitoredResourceTypes?: string[] | undefined;
-	readonly monitoringMigration?: MonitoringMigration | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
-	readonly unit?: string | undefined;
-	readonly valueType?: string | undefined;
-	readonly visibilityRestriction?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly labels?: LabelDescriptor[];
+	readonly launchStage?: string;
+	readonly metadata?: MetricDescriptorMetadata;
+	readonly metricKind?: string;
+	readonly monitoredResourceTypes?: string[];
+	readonly monitoringMigration?: MonitoringMigration;
+	readonly name?: string;
+	readonly type?: string;
+	readonly unit?: string;
+	readonly valueType?: string;
+	readonly visibilityRestriction?: string;
 }
 export interface MetricDescriptorMetadata {
-	readonly ingestDelay?: string | undefined;
-	readonly launchStage?: string | undefined;
-	readonly samplePeriod?: string | undefined;
+	readonly ingestDelay?: string;
+	readonly launchStage?: string;
+	readonly samplePeriod?: string;
 }
 export interface MetricMapping {
-	readonly labelMappings?: LabelMapping[] | undefined;
-	readonly metric?: string | undefined;
-	readonly monitoredResource?: string | undefined;
+	readonly labelMappings?: LabelMapping[];
+	readonly metric?: string;
+	readonly monitoredResource?: string;
 }
 export interface MonitoringMigration {
-	readonly metricMappings?: MetricMapping | undefined;
-	readonly monitoringBackend?: string | undefined;
+	readonly metricMappings?: MetricMapping;
+	readonly monitoringBackend?: string;
 }
 export default {
 	ProjectsMetrics: ProjectsMetrics,

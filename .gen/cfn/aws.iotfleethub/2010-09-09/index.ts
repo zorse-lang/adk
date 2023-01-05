@@ -26,8 +26,8 @@ export interface ApplicationComponentOutputs {
 export interface ApplicationComponentInputs {
 	readonly ApplicationName: string;
 	readonly RoleArn: string;
-	readonly ApplicationDescription?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ApplicationDescription?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export default {

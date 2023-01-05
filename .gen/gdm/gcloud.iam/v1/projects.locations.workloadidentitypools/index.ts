@@ -7,26 +7,25 @@ export class ProjectsLocationsWorkloadIdentityPools
 	constructor(entity: ADKEntity, options: ProjectsLocationsWorkloadIdentityPoolsComponentInputs) {
 		super(entity, options.name, "iam.v1.ProjectsLocationsWorkloadIdentityPools", options);
 	}
-	public readonly state?: string | undefined;
+	public readonly state?: string;
 }
 export interface ProjectsLocationsWorkloadIdentityPoolsComponentOutputs {
-	readonly state?: string | undefined;
+	readonly state?: string;
 }
 export interface ProjectsLocationsWorkloadIdentityPoolsComponentInputs {
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly disabled?: boolean;
+	readonly displayName?: string;
 	readonly name: string;
 	readonly parent: string;
 	readonly workloadIdentityPoolId: string;
-	readonly type: string;
 }
 export interface WorkloadIdentityPool {
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly displayName?: string | undefined;
-	readonly name?: string | undefined;
-	readonly state?: string | undefined;
+	readonly description?: string;
+	readonly disabled?: boolean;
+	readonly displayName?: string;
+	readonly name?: string;
+	readonly state?: string;
 }
 export default {
 	ProjectsLocationsWorkloadIdentityPools: ProjectsLocationsWorkloadIdentityPools,

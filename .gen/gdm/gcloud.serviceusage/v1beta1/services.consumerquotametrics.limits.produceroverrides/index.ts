@@ -10,7 +10,6 @@ export class ServicesConsumerQuotaMetricsLimitsProducerOverrides
 }
 export interface ServicesConsumerQuotaMetricsLimitsProducerOverridesComponentOutputs {}
 export interface ServicesConsumerQuotaMetricsLimitsProducerOverridesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

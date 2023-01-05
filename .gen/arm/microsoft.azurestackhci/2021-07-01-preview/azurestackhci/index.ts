@@ -14,12 +14,12 @@ export interface galleryimagesComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/galleryimages";
 }
 export interface galleryimagesComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: GalleryimagesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: GalleryimagesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class networkinterfaces
 	extends ArmResource<networkinterfacesComponentInputs>
@@ -38,12 +38,12 @@ export interface networkinterfacesComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/networkinterfaces";
 }
 export interface networkinterfacesComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: NetworkinterfacesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: NetworkinterfacesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class virtualharddisks
 	extends ArmResource<virtualharddisksComponentInputs>
@@ -62,12 +62,12 @@ export interface virtualharddisksComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/virtualharddisks";
 }
 export interface virtualharddisksComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VirtualharddisksProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VirtualharddisksProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class virtualmachines
 	extends ArmResource<virtualmachinesComponentInputs>
@@ -86,12 +86,12 @@ export interface virtualmachinesComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/virtualmachines";
 }
 export interface virtualmachinesComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VirtualmachinesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VirtualmachinesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class virtualnetworks
 	extends ArmResource<virtualnetworksComponentInputs>
@@ -110,222 +110,221 @@ export interface virtualnetworksComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/virtualnetworks";
 }
 export interface virtualnetworksComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VirtualnetworksProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VirtualnetworksProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface ComponentsL15GkaSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetable {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?:
-		| ComponentsOycd2YSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetableProperties
-		| undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ComponentsOycd2YSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetableProperties;
+	readonly type?: string;
 }
 export interface ComponentsOycd2YSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetableProperties {
-	readonly routes?: VirtualnetworksPropertiesSubnetsPropertiesItemsItem[] | undefined;
+	readonly routes?: VirtualnetworksPropertiesSubnetsPropertiesItemsItem[];
 }
 export interface ComponentsVqks9HSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesIpconfigurationreferencesItems {
-	readonly ID?: string | undefined;
+	readonly ID?: string;
 }
 export interface ExtendedLocation {
-	readonly name?: string | undefined;
-	readonly type?: "CustomLocation" | undefined;
+	readonly name?: string;
+	readonly type?: "CustomLocation";
 }
 export interface GalleryimagesProperties {
-	readonly containerName?: string | undefined;
-	readonly imagePath?: string | undefined;
-	readonly osType?: "Linux" | undefined;
-	readonly provisioningState?: ("Accepted" | "Deleting" | "Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly resourceName?: string | undefined;
-	readonly status?: GalleryImageStatus | undefined;
+	readonly containerName?: string;
+	readonly imagePath?: string;
+	readonly osType?: "Linux";
+	readonly provisioningState?: "Accepted" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly resourceName?: string;
+	readonly status?: GalleryImageStatus;
 }
 export interface GalleryImageStatus {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
 }
 export interface InterfaceDNSSettings {
-	readonly dnsServers?: string[] | undefined;
+	readonly dnsServers?: string[];
 }
 export interface IpConfiguration {
-	readonly name?: string | undefined;
-	readonly properties?: IpConfigurationProperties | undefined;
+	readonly name?: string;
+	readonly properties?: IpConfigurationProperties;
 }
 export interface IpConfigurationProperties {
-	readonly gateway?: string | undefined;
-	readonly prefixLength?: string | undefined;
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly subnet?: IpConfigurationPropertiesSubnet | undefined;
+	readonly gateway?: string;
+	readonly prefixLength?: string;
+	readonly privateIPAddress?: string;
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly subnet?: IpConfigurationPropertiesSubnet;
 }
 export interface IpConfigurationPropertiesSubnet {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface IPPool {
-	readonly end?: string | undefined;
-	readonly info?: IPPoolInfo | undefined;
-	readonly ipPoolType?: "vippool" | undefined;
-	readonly start?: string | undefined;
+	readonly end?: string;
+	readonly info?: IPPoolInfo;
+	readonly ipPoolType?: "vippool";
+	readonly start?: string;
 }
 export interface IPPoolInfo {
-	readonly available?: string | undefined;
-	readonly used?: string | undefined;
+	readonly available?: string;
+	readonly used?: string;
 }
 export interface NetworkinterfacesProperties {
-	readonly dnsSettings?: InterfaceDNSSettings | undefined;
-	readonly ipConfigurations?: IpConfiguration[] | undefined;
-	readonly macAddress?: string | undefined;
-	readonly provisioningState?: ("Accepted" | "Deleting" | "Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly resourceName?: string | undefined;
-	readonly status?: NetworkInterfaceStatus | undefined;
+	readonly dnsSettings?: InterfaceDNSSettings;
+	readonly ipConfigurations?: IpConfiguration[];
+	readonly macAddress?: string;
+	readonly provisioningState?: "Accepted" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly resourceName?: string;
+	readonly status?: NetworkInterfaceStatus;
 }
 export interface NetworkInterfaceStatus {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualharddisksProperties {
-	readonly blockSizeBytes?: number | undefined;
-	readonly diskSizeBytes?: number | undefined;
-	readonly dynamic?: boolean | undefined;
-	readonly logicalSectorBytes?: number | undefined;
-	readonly physicalSectorBytes?: number | undefined;
-	readonly provisioningState?: ("Accepted" | "Deleting" | "Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly resourceName?: string | undefined;
-	readonly status?: VirtualHardDiskStatus | undefined;
+	readonly blockSizeBytes?: number;
+	readonly diskSizeBytes?: number;
+	readonly dynamic?: boolean;
+	readonly logicalSectorBytes?: number;
+	readonly physicalSectorBytes?: number;
+	readonly provisioningState?: "Accepted" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly resourceName?: string;
+	readonly status?: VirtualHardDiskStatus;
 }
 export interface VirtualHardDiskStatus {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
 }
 export interface VirtualmachinesProperties {
-	readonly hardwareProfile?: VirtualmachinesPropertiesHardwareProfile | undefined;
-	readonly networkProfile?: VirtualmachinesPropertiesNetworkProfile | undefined;
-	readonly osProfile?: VirtualmachinesPropertiesOsProfile | undefined;
-	readonly provisioningState?: ("Accepted" | "Deleting" | "Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly resourceName?: string | undefined;
-	readonly securityProfile?: VirtualmachinesPropertiesSecurityProfile | undefined;
-	readonly status?: VirtualMachineStatus | undefined;
-	readonly storageProfile?: VirtualmachinesPropertiesStorageProfile | undefined;
+	readonly hardwareProfile?: VirtualmachinesPropertiesHardwareProfile;
+	readonly networkProfile?: VirtualmachinesPropertiesNetworkProfile;
+	readonly osProfile?: VirtualmachinesPropertiesOsProfile;
+	readonly provisioningState?: "Accepted" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly resourceName?: string;
+	readonly securityProfile?: VirtualmachinesPropertiesSecurityProfile;
+	readonly status?: VirtualMachineStatus;
+	readonly storageProfile?: VirtualmachinesPropertiesStorageProfile;
 }
 export interface VirtualmachinesPropertiesHardwareProfile {
-	readonly dynamicMemoryConfig?: VirtualmachinesPropertiesHardwareProfileDynamicMemoryConfig | undefined;
-	readonly memoryGB?: number | undefined;
-	readonly processors?: number | undefined;
-	readonly vmSize?: string | undefined;
+	readonly dynamicMemoryConfig?: VirtualmachinesPropertiesHardwareProfileDynamicMemoryConfig;
+	readonly memoryGB?: number;
+	readonly processors?: number;
+	readonly vmSize?: string;
 }
 export interface VirtualmachinesPropertiesHardwareProfileDynamicMemoryConfig {
-	readonly maximumMemoryGB?: number | undefined;
-	readonly minimumMemoryGB?: number | undefined;
-	readonly targetMemoryBuffer?: number | undefined;
+	readonly maximumMemoryGB?: number;
+	readonly minimumMemoryGB?: number;
+	readonly targetMemoryBuffer?: number;
 }
 export interface VirtualmachinesPropertiesNetworkProfile {
-	readonly networkInterfaces?: VirtualmachinesPropertiesNetworkProfileNetworkInterfacesItem[] | undefined;
+	readonly networkInterfaces?: VirtualmachinesPropertiesNetworkProfileNetworkInterfacesItem[];
 }
 export interface VirtualmachinesPropertiesNetworkProfileNetworkInterfacesItem {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface VirtualmachinesPropertiesOsProfile {
-	readonly adminPassword?: string | undefined;
-	readonly adminUsername?: string | undefined;
-	readonly computerName?: string | undefined;
-	readonly linuxConfiguration?: VirtualmachinesPropertiesOsProfileLinuxConfiguration | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly windowsConfiguration?: VirtualmachinesPropertiesOsProfileWindowsConfiguration | undefined;
+	readonly adminPassword?: string;
+	readonly adminUsername?: string;
+	readonly computerName?: string;
+	readonly linuxConfiguration?: VirtualmachinesPropertiesOsProfileLinuxConfiguration;
+	readonly osType?: "Linux" | "Windows";
+	readonly windowsConfiguration?: VirtualmachinesPropertiesOsProfileWindowsConfiguration;
 }
 export interface VirtualmachinesPropertiesOsProfileLinuxConfiguration {
-	readonly disablePasswordAuthentication?: boolean | undefined;
-	readonly ssh?: VirtualmachinesPropertiesOsProfileLinuxConfigurationSsh | undefined;
+	readonly disablePasswordAuthentication?: boolean;
+	readonly ssh?: VirtualmachinesPropertiesOsProfileLinuxConfigurationSsh;
 }
 export interface VirtualmachinesPropertiesOsProfileLinuxConfigurationSsh {
-	readonly publicKeys?: VirtualmachinesPropertiesOsProfileLinuxConfigurationSshPublicKeysItem[] | undefined;
+	readonly publicKeys?: VirtualmachinesPropertiesOsProfileLinuxConfigurationSshPublicKeysItem[];
 }
 export interface VirtualmachinesPropertiesOsProfileLinuxConfigurationSshPublicKeysItem {
-	readonly keyData?: string | undefined;
-	readonly path?: string | undefined;
+	readonly keyData?: string;
+	readonly path?: string;
 }
 export interface VirtualmachinesPropertiesOsProfileWindowsConfiguration {
-	readonly enableAutomaticUpdates?: boolean | undefined;
-	readonly ssh?: VirtualmachinesPropertiesOsProfileWindowsConfigurationSsh | undefined;
-	readonly timeZone?: string | undefined;
+	readonly enableAutomaticUpdates?: boolean;
+	readonly ssh?: VirtualmachinesPropertiesOsProfileWindowsConfigurationSsh;
+	readonly timeZone?: string;
 }
 export interface VirtualmachinesPropertiesOsProfileWindowsConfigurationSsh {
-	readonly publicKeys?: VirtualmachinesPropertiesOsProfileWindowsConfigurationSshPublicKeysItem[] | undefined;
+	readonly publicKeys?: VirtualmachinesPropertiesOsProfileWindowsConfigurationSshPublicKeysItem[];
 }
 export interface VirtualmachinesPropertiesOsProfileWindowsConfigurationSshPublicKeysItem {
-	readonly keyData?: string | undefined;
-	readonly path?: string | undefined;
+	readonly keyData?: string;
+	readonly path?: string;
 }
 export interface VirtualmachinesPropertiesSecurityProfile {
-	readonly enableTPM?: boolean | undefined;
+	readonly enableTPM?: boolean;
 }
 export interface VirtualmachinesPropertiesStorageProfile {
-	readonly dataDisks?: VirtualmachinesPropertiesStorageProfileDataDisksItem[] | undefined;
-	readonly imageReference?: VirtualmachinesPropertiesStorageProfileImageReference | undefined;
+	readonly dataDisks?: VirtualmachinesPropertiesStorageProfileDataDisksItem[];
+	readonly imageReference?: VirtualmachinesPropertiesStorageProfileImageReference;
 }
 export interface VirtualmachinesPropertiesStorageProfileDataDisksItem {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface VirtualmachinesPropertiesStorageProfileImageReference {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface VirtualMachineStatus {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly powerState?:
-		| ("Deallocated" | "Deallocating" | "Running" | "Starting" | "Stopped" | "Stopping" | "Unknown")
-		| undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
+	readonly powerState?: "Deallocated" | "Deallocating" | "Running" | "Starting" | "Stopped" | "Stopping" | "Unknown";
 }
 export interface VirtualnetworksProperties {
 	readonly networkType?:
-		| ("ICS" | "Internal" | "L2Bridge" | "L2Tunnel" | "Mirrored" | "NAT" | "Overlay" | "Private" | "Transparent")
-		| undefined;
-	readonly provisioningState?: ("Accepted" | "Deleting" | "Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly resourceName?: string | undefined;
-	readonly status?: VirtualNetworkStatus | undefined;
-	readonly subnets?: VirtualnetworksPropertiesSubnetsItem[] | undefined;
+		| "ICS"
+		| "Internal"
+		| "L2Bridge"
+		| "L2Tunnel"
+		| "Mirrored"
+		| "NAT"
+		| "Overlay"
+		| "Private"
+		| "Transparent";
+	readonly provisioningState?: "Accepted" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly resourceName?: string;
+	readonly status?: VirtualNetworkStatus;
+	readonly subnets?: VirtualnetworksPropertiesSubnetsItem[];
 }
 export interface VirtualnetworksPropertiesSubnetsItem {
-	readonly name?: string | undefined;
-	readonly properties?: VirtualnetworksPropertiesSubnetsItemAutoGenerated | undefined;
+	readonly name?: string;
+	readonly properties?: VirtualnetworksPropertiesSubnetsItemAutoGenerated;
 }
 export interface VirtualnetworksPropertiesSubnetsItemAutoGenerated {
-	readonly addressPrefix?: string | undefined;
-	readonly addressPrefixes?: string[] | undefined;
-	readonly ipAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly ipConfigurationReferences?:
-		| ComponentsVqks9HSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesIpconfigurationreferencesItems[]
-		| undefined;
-	readonly ipPools?: IPPool[] | undefined;
-	readonly routeTable?:
-		| ComponentsL15GkaSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetable
-		| undefined;
-	readonly vlan?: number | undefined;
+	readonly addressPrefix?: string;
+	readonly addressPrefixes?: string[];
+	readonly ipAllocationMethod?: "Dynamic" | "Static";
+	readonly ipConfigurationReferences?: ComponentsVqks9HSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesIpconfigurationreferencesItems[];
+	readonly ipPools?: IPPool[];
+	readonly routeTable?: ComponentsL15GkaSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetable;
+	readonly vlan?: number;
 }
 export interface VirtualnetworksPropertiesSubnetsItemRouteTableRoutesItem {
-	readonly addressPrefix?: string | undefined;
-	readonly nextHopIpAddress?: string | undefined;
+	readonly addressPrefix?: string;
+	readonly nextHopIpAddress?: string;
 }
 export interface VirtualnetworksPropertiesSubnetsPropertiesItemsItem {
-	readonly name?: string | undefined;
-	readonly properties?: VirtualnetworksPropertiesSubnetsItemRouteTableRoutesItem | undefined;
+	readonly name?: string;
+	readonly properties?: VirtualnetworksPropertiesSubnetsItemRouteTableRoutesItem;
 }
 export interface VirtualNetworkStatus {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
 }
 export default {
 	galleryimages: galleryimages,

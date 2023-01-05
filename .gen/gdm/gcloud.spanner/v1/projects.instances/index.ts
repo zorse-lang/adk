@@ -7,52 +7,51 @@ export class ProjectsInstances
 	constructor(entity: ADKEntity, options: ProjectsInstancesComponentInputs) {
 		super(entity, options.name, "spanner.v1.ProjectsInstances", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly state?: string | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly createTime?: string;
+	public readonly state?: string;
+	public readonly updateTime?: string;
 }
 export interface ProjectsInstancesComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly state?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly state?: string;
+	readonly updateTime?: string;
 }
 export interface ProjectsInstancesComponentInputs {
 	readonly config: string;
 	readonly displayName: string;
-	readonly endpointUris?: string[] | undefined;
-	readonly freeInstanceMetadata?: FreeInstanceMetadata | undefined;
+	readonly endpointUris?: string[];
+	readonly freeInstanceMetadata?: FreeInstanceMetadata;
 	readonly instance: Instance;
 	readonly instanceId: string;
-	readonly instanceType?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly instanceType?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
-	readonly nodeCount?: number | undefined;
+	readonly nodeCount?: number;
 	readonly parent: string;
-	readonly processingUnits?: number | undefined;
-	readonly type: string;
+	readonly processingUnits?: number;
 }
 export interface CreateInstanceRequest {
 	readonly instance: Instance;
 	readonly instanceId: string;
 }
 export interface FreeInstanceMetadata {
-	readonly expireBehavior?: string | undefined;
-	readonly expireTime?: string | undefined;
-	readonly upgradeTime?: string | undefined;
+	readonly expireBehavior?: string;
+	readonly expireTime?: string;
+	readonly upgradeTime?: string;
 }
 export interface Instance {
 	readonly config: string;
-	readonly createTime?: string | undefined;
+	readonly createTime?: string;
 	readonly displayName: string;
-	readonly endpointUris?: string[] | undefined;
-	readonly freeInstanceMetadata?: FreeInstanceMetadata | undefined;
-	readonly instanceType?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly endpointUris?: string[];
+	readonly freeInstanceMetadata?: FreeInstanceMetadata;
+	readonly instanceType?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
-	readonly nodeCount?: number | undefined;
-	readonly processingUnits?: number | undefined;
-	readonly state?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly nodeCount?: number;
+	readonly processingUnits?: number;
+	readonly state?: string;
+	readonly updateTime?: string;
 }
 export default {
 	ProjectsInstances: ProjectsInstances,

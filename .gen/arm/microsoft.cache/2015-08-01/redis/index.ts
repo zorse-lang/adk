@@ -17,7 +17,7 @@ export interface RedisComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: RedisPropertiesOrRedisReadableProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export function listKeys(resource: Redis): RedisListKeysResult {
 	if (resource.apiVersion !== "2015-08-01") {
@@ -29,32 +29,32 @@ export function listKeys(resource: Redis): RedisListKeysResult {
 	throw new Error("not implemented");
 }
 export interface RedisListKeysResult {
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface RedisPropertiesOrRedisReadableProperties {
-	readonly enableNonSslPort?: boolean | undefined;
-	readonly hostName?: string | undefined;
-	readonly port?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly redisConfiguration?: RedisPropertiesRedisConfiguration | undefined;
-	readonly redisVersion?: string | undefined;
-	readonly shardCount?: number | undefined;
+	readonly enableNonSslPort?: boolean;
+	readonly hostName?: string;
+	readonly port?: number;
+	readonly provisioningState?: string;
+	readonly redisConfiguration?: RedisPropertiesRedisConfiguration;
+	readonly redisVersion?: string;
+	readonly shardCount?: number;
 	readonly sku: Sku;
-	readonly sslPort?: number | undefined;
-	readonly staticIP?: string | undefined;
-	readonly subnet?: string | undefined;
-	readonly tenantSettings?: RedisPropertiesTenantSettings | undefined;
-	readonly virtualNetwork?: string | undefined;
+	readonly sslPort?: number;
+	readonly staticIP?: string;
+	readonly subnet?: string;
+	readonly tenantSettings?: RedisPropertiesTenantSettings;
+	readonly virtualNetwork?: string;
 }
 export interface RedisPropertiesRedisConfiguration {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RedisPropertiesTenantSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
 	readonly capacity: number;

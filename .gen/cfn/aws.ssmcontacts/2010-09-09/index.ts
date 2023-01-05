@@ -30,7 +30,7 @@ export interface ContactChannelComponentInputs {
 	readonly ChannelName: string;
 	readonly ChannelType: string;
 	readonly ContactId: string;
-	readonly DeferActivation?: (boolean | undefined) | undefined;
+	readonly DeferActivation?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export interface ChannelTargetInfo {
@@ -43,11 +43,11 @@ export interface ContactTargetInfo {
 }
 export interface Stage {
 	readonly DurationInMinutes: number;
-	readonly Targets?: (Targets[] | undefined) | undefined;
+	readonly Targets?: Targets[] | undefined;
 }
 export interface Targets {
-	readonly ChannelTargetInfo?: (ChannelTargetInfo | undefined) | undefined;
-	readonly ContactTargetInfo?: (ContactTargetInfo | undefined) | undefined;
+	readonly ChannelTargetInfo?: ChannelTargetInfo | undefined;
+	readonly ContactTargetInfo?: ContactTargetInfo | undefined;
 }
 export default {
 	Contact: Contact,

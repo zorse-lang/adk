@@ -14,26 +14,26 @@ export interface ClusterComponentInputs {
 	readonly JobFlowRole: string;
 	readonly Name: string;
 	readonly ServiceRole: string;
-	readonly AdditionalInfo?: (any | undefined) | undefined;
-	readonly Applications?: (Application[] | undefined) | undefined;
-	readonly AutoScalingRole?: (string | undefined) | undefined;
-	readonly AutoTerminationPolicy?: (AutoTerminationPolicy | undefined) | undefined;
-	readonly BootstrapActions?: (BootstrapActionConfig[] | undefined) | undefined;
-	readonly Configurations?: (Configuration[] | undefined) | undefined;
-	readonly CustomAmiId?: (string | undefined) | undefined;
-	readonly EbsRootVolumeSize?: (number | undefined) | undefined;
-	readonly KerberosAttributes?: (KerberosAttributes | undefined) | undefined;
-	readonly LogEncryptionKmsKeyId?: (string | undefined) | undefined;
-	readonly LogUri?: (string | undefined) | undefined;
-	readonly ManagedScalingPolicy?: (ManagedScalingPolicy | undefined) | undefined;
-	readonly OSReleaseLabel?: (string | undefined) | undefined;
-	readonly ReleaseLabel?: (string | undefined) | undefined;
-	readonly ScaleDownBehavior?: (string | undefined) | undefined;
-	readonly SecurityConfiguration?: (string | undefined) | undefined;
-	readonly StepConcurrencyLevel?: (number | undefined) | undefined;
-	readonly Steps?: (StepConfig[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VisibleToAllUsers?: (boolean | undefined) | undefined;
+	readonly AdditionalInfo?: any | undefined;
+	readonly Applications?: Application[] | undefined;
+	readonly AutoScalingRole?: string | undefined;
+	readonly AutoTerminationPolicy?: AutoTerminationPolicy | undefined;
+	readonly BootstrapActions?: BootstrapActionConfig[] | undefined;
+	readonly Configurations?: Configuration[] | undefined;
+	readonly CustomAmiId?: string | undefined;
+	readonly EbsRootVolumeSize?: number | undefined;
+	readonly KerberosAttributes?: KerberosAttributes | undefined;
+	readonly LogEncryptionKmsKeyId?: string | undefined;
+	readonly LogUri?: string | undefined;
+	readonly ManagedScalingPolicy?: ManagedScalingPolicy | undefined;
+	readonly OSReleaseLabel?: string | undefined;
+	readonly ReleaseLabel?: string | undefined;
+	readonly ScaleDownBehavior?: string | undefined;
+	readonly SecurityConfiguration?: string | undefined;
+	readonly StepConcurrencyLevel?: number | undefined;
+	readonly Steps?: StepConfig[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VisibleToAllUsers?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class InstanceFleetConfig
@@ -48,11 +48,11 @@ export interface InstanceFleetConfigComponentOutputs {}
 export interface InstanceFleetConfigComponentInputs {
 	readonly ClusterId: string;
 	readonly InstanceFleetType: string;
-	readonly InstanceTypeConfigs?: (InstanceTypeConfig[] | undefined) | undefined;
-	readonly LaunchSpecifications?: (InstanceFleetProvisioningSpecifications | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly TargetOnDemandCapacity?: (number | undefined) | undefined;
-	readonly TargetSpotCapacity?: (number | undefined) | undefined;
+	readonly InstanceTypeConfigs?: InstanceTypeConfig[] | undefined;
+	readonly LaunchSpecifications?: InstanceFleetProvisioningSpecifications | undefined;
+	readonly Name?: string | undefined;
+	readonly TargetOnDemandCapacity?: number | undefined;
+	readonly TargetSpotCapacity?: number | undefined;
 	readonly LogicalId: string;
 }
 export class InstanceGroupConfig
@@ -69,13 +69,13 @@ export interface InstanceGroupConfigComponentInputs {
 	readonly InstanceRole: string;
 	readonly InstanceType: string;
 	readonly JobFlowId: string;
-	readonly AutoScalingPolicy?: (AutoScalingPolicy | undefined) | undefined;
-	readonly BidPrice?: (string | undefined) | undefined;
-	readonly Configurations?: (Configuration[] | undefined) | undefined;
-	readonly CustomAmiId?: (string | undefined) | undefined;
-	readonly EbsConfiguration?: (EbsConfiguration | undefined) | undefined;
-	readonly Market?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly AutoScalingPolicy?: AutoScalingPolicy | undefined;
+	readonly BidPrice?: string | undefined;
+	readonly Configurations?: Configuration[] | undefined;
+	readonly CustomAmiId?: string | undefined;
+	readonly EbsConfiguration?: EbsConfiguration | undefined;
+	readonly Market?: string | undefined;
+	readonly Name?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityConfiguration
@@ -89,7 +89,7 @@ export class SecurityConfiguration
 export interface SecurityConfigurationComponentOutputs {}
 export interface SecurityConfigurationComponentInputs {
 	readonly SecurityConfiguration: any;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Step extends CfnResource<StepComponentInputs> implements StepComponentOutputs {
@@ -127,11 +127,11 @@ export interface StudioComponentInputs {
 	readonly SubnetIds: string[];
 	readonly VpcId: string;
 	readonly WorkspaceSecurityGroupId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly IdpAuthUrl?: (string | undefined) | undefined;
-	readonly IdpRelayStateParameterName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly UserRole?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly IdpAuthUrl?: string | undefined;
+	readonly IdpRelayStateParameterName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly UserRole?: string | undefined;
 	readonly LogicalId: string;
 }
 export class StudioSessionMapping
@@ -151,17 +151,17 @@ export interface StudioSessionMappingComponentInputs {
 	readonly LogicalId: string;
 }
 export interface Application {
-	readonly AdditionalInfo?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Args?: (string[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly AdditionalInfo?: { [key: string]: string } | undefined;
+	readonly Args?: string[] | undefined;
+	readonly Name?: string | undefined;
+	readonly Version?: string | undefined;
 }
 export interface AutoScalingPolicy {
 	readonly Constraints: ScalingConstraints;
 	readonly Rules: ScalingRule[];
 }
 export interface AutoTerminationPolicy {
-	readonly IdleTimeout?: (number | undefined) | undefined;
+	readonly IdleTimeout?: number | undefined;
 }
 export interface BootstrapActionConfig {
 	readonly Name: string;
@@ -169,105 +169,105 @@ export interface BootstrapActionConfig {
 }
 export interface CloudWatchAlarmDefinition {
 	readonly ComparisonOperator: string;
-	readonly Dimensions?: (MetricDimension[] | undefined) | undefined;
-	readonly EvaluationPeriods?: (number | undefined) | undefined;
+	readonly Dimensions?: MetricDimension[] | undefined;
+	readonly EvaluationPeriods?: number | undefined;
 	readonly MetricName: string;
-	readonly Namespace?: (string | undefined) | undefined;
+	readonly Namespace?: string | undefined;
 	readonly Period: number;
-	readonly Statistic?: (string | undefined) | undefined;
+	readonly Statistic?: string | undefined;
 	readonly Threshold: number;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly Unit?: string | undefined;
 }
 export interface ComputeLimits {
 	readonly MaximumCapacityUnits: number;
-	readonly MaximumCoreCapacityUnits?: (number | undefined) | undefined;
-	readonly MaximumOnDemandCapacityUnits?: (number | undefined) | undefined;
+	readonly MaximumCoreCapacityUnits?: number | undefined;
+	readonly MaximumOnDemandCapacityUnits?: number | undefined;
 	readonly MinimumCapacityUnits: number;
 	readonly UnitType: string;
 }
 export interface Configuration {
-	readonly Classification?: (string | undefined) | undefined;
-	readonly ConfigurationProperties?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Configurations?: (Configuration[] | undefined) | undefined;
+	readonly Classification?: string | undefined;
+	readonly ConfigurationProperties?: { [key: string]: string } | undefined;
+	readonly Configurations?: Configuration[] | undefined;
 }
 export interface EbsBlockDeviceConfig {
 	readonly VolumeSpecification: VolumeSpecification;
-	readonly VolumesPerInstance?: (number | undefined) | undefined;
+	readonly VolumesPerInstance?: number | undefined;
 }
 export interface EbsConfiguration {
-	readonly EbsBlockDeviceConfigs?: (EbsBlockDeviceConfig[] | undefined) | undefined;
-	readonly EbsOptimized?: (boolean | undefined) | undefined;
+	readonly EbsBlockDeviceConfigs?: EbsBlockDeviceConfig[] | undefined;
+	readonly EbsOptimized?: boolean | undefined;
 }
 export interface HadoopJarStepConfig {
-	readonly Args?: (string[] | undefined) | undefined;
+	readonly Args?: string[] | undefined;
 	readonly Jar: string;
-	readonly MainClass?: (string | undefined) | undefined;
-	readonly StepProperties?: (KeyValue[] | undefined) | undefined;
+	readonly MainClass?: string | undefined;
+	readonly StepProperties?: KeyValue[] | undefined;
 }
 export interface InstanceFleetConfig {
-	readonly InstanceTypeConfigs?: (InstanceTypeConfig[] | undefined) | undefined;
-	readonly LaunchSpecifications?: (InstanceFleetProvisioningSpecifications | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly TargetOnDemandCapacity?: (number | undefined) | undefined;
-	readonly TargetSpotCapacity?: (number | undefined) | undefined;
+	readonly InstanceTypeConfigs?: InstanceTypeConfig[] | undefined;
+	readonly LaunchSpecifications?: InstanceFleetProvisioningSpecifications | undefined;
+	readonly Name?: string | undefined;
+	readonly TargetOnDemandCapacity?: number | undefined;
+	readonly TargetSpotCapacity?: number | undefined;
 }
 export interface InstanceFleetProvisioningSpecifications {
-	readonly OnDemandSpecification?: (OnDemandProvisioningSpecification | undefined) | undefined;
-	readonly SpotSpecification?: (SpotProvisioningSpecification | undefined) | undefined;
+	readonly OnDemandSpecification?: OnDemandProvisioningSpecification | undefined;
+	readonly SpotSpecification?: SpotProvisioningSpecification | undefined;
 }
 export interface InstanceGroupConfig {
-	readonly AutoScalingPolicy?: (AutoScalingPolicy | undefined) | undefined;
-	readonly BidPrice?: (string | undefined) | undefined;
-	readonly Configurations?: (Configuration[] | undefined) | undefined;
-	readonly CustomAmiId?: (string | undefined) | undefined;
-	readonly EbsConfiguration?: (EbsConfiguration | undefined) | undefined;
+	readonly AutoScalingPolicy?: AutoScalingPolicy | undefined;
+	readonly BidPrice?: string | undefined;
+	readonly Configurations?: Configuration[] | undefined;
+	readonly CustomAmiId?: string | undefined;
+	readonly EbsConfiguration?: EbsConfiguration | undefined;
 	readonly InstanceCount: number;
 	readonly InstanceType: string;
-	readonly Market?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Market?: string | undefined;
+	readonly Name?: string | undefined;
 }
 export interface InstanceTypeConfig {
-	readonly BidPrice?: (string | undefined) | undefined;
-	readonly BidPriceAsPercentageOfOnDemandPrice?: (number | undefined) | undefined;
-	readonly Configurations?: (Configuration[] | undefined) | undefined;
-	readonly CustomAmiId?: (string | undefined) | undefined;
-	readonly EbsConfiguration?: (EbsConfiguration | undefined) | undefined;
+	readonly BidPrice?: string | undefined;
+	readonly BidPriceAsPercentageOfOnDemandPrice?: number | undefined;
+	readonly Configurations?: Configuration[] | undefined;
+	readonly CustomAmiId?: string | undefined;
+	readonly EbsConfiguration?: EbsConfiguration | undefined;
 	readonly InstanceType: string;
-	readonly WeightedCapacity?: (number | undefined) | undefined;
+	readonly WeightedCapacity?: number | undefined;
 }
 export interface JobFlowInstancesConfig {
-	readonly AdditionalMasterSecurityGroups?: (string[] | undefined) | undefined;
-	readonly AdditionalSlaveSecurityGroups?: (string[] | undefined) | undefined;
-	readonly CoreInstanceFleet?: (InstanceFleetConfig | undefined) | undefined;
-	readonly CoreInstanceGroup?: (InstanceGroupConfig | undefined) | undefined;
-	readonly Ec2KeyName?: (string | undefined) | undefined;
-	readonly Ec2SubnetId?: (string | undefined) | undefined;
-	readonly Ec2SubnetIds?: (string[] | undefined) | undefined;
-	readonly EmrManagedMasterSecurityGroup?: (string | undefined) | undefined;
-	readonly EmrManagedSlaveSecurityGroup?: (string | undefined) | undefined;
-	readonly HadoopVersion?: (string | undefined) | undefined;
-	readonly KeepJobFlowAliveWhenNoSteps?: (boolean | undefined) | undefined;
-	readonly MasterInstanceFleet?: (InstanceFleetConfig | undefined) | undefined;
-	readonly MasterInstanceGroup?: (InstanceGroupConfig | undefined) | undefined;
-	readonly Placement?: (PlacementType | undefined) | undefined;
-	readonly ServiceAccessSecurityGroup?: (string | undefined) | undefined;
-	readonly TaskInstanceFleets?: (InstanceFleetConfig[] | undefined) | undefined;
-	readonly TaskInstanceGroups?: (InstanceGroupConfig[] | undefined) | undefined;
-	readonly TerminationProtected?: (boolean | undefined) | undefined;
+	readonly AdditionalMasterSecurityGroups?: string[] | undefined;
+	readonly AdditionalSlaveSecurityGroups?: string[] | undefined;
+	readonly CoreInstanceFleet?: InstanceFleetConfig | undefined;
+	readonly CoreInstanceGroup?: InstanceGroupConfig | undefined;
+	readonly Ec2KeyName?: string | undefined;
+	readonly Ec2SubnetId?: string | undefined;
+	readonly Ec2SubnetIds?: string[] | undefined;
+	readonly EmrManagedMasterSecurityGroup?: string | undefined;
+	readonly EmrManagedSlaveSecurityGroup?: string | undefined;
+	readonly HadoopVersion?: string | undefined;
+	readonly KeepJobFlowAliveWhenNoSteps?: boolean | undefined;
+	readonly MasterInstanceFleet?: InstanceFleetConfig | undefined;
+	readonly MasterInstanceGroup?: InstanceGroupConfig | undefined;
+	readonly Placement?: PlacementType | undefined;
+	readonly ServiceAccessSecurityGroup?: string | undefined;
+	readonly TaskInstanceFleets?: InstanceFleetConfig[] | undefined;
+	readonly TaskInstanceGroups?: InstanceGroupConfig[] | undefined;
+	readonly TerminationProtected?: boolean | undefined;
 }
 export interface KerberosAttributes {
-	readonly ADDomainJoinPassword?: (string | undefined) | undefined;
-	readonly ADDomainJoinUser?: (string | undefined) | undefined;
-	readonly CrossRealmTrustPrincipalPassword?: (string | undefined) | undefined;
+	readonly ADDomainJoinPassword?: string | undefined;
+	readonly ADDomainJoinUser?: string | undefined;
+	readonly CrossRealmTrustPrincipalPassword?: string | undefined;
 	readonly KdcAdminPassword: string;
 	readonly Realm: string;
 }
 export interface KeyValue {
-	readonly Key?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface ManagedScalingPolicy {
-	readonly ComputeLimits?: (ComputeLimits | undefined) | undefined;
+	readonly ComputeLimits?: ComputeLimits | undefined;
 }
 export interface MetricDimension {
 	readonly Key: string;
@@ -280,7 +280,7 @@ export interface PlacementType {
 	readonly AvailabilityZone: string;
 }
 export interface ScalingAction {
-	readonly Market?: (string | undefined) | undefined;
+	readonly Market?: string | undefined;
 	readonly SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration;
 }
 export interface ScalingConstraints {
@@ -289,7 +289,7 @@ export interface ScalingConstraints {
 }
 export interface ScalingRule {
 	readonly Action: ScalingAction;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly Name: string;
 	readonly Trigger: ScalingTrigger;
 }
@@ -297,27 +297,27 @@ export interface ScalingTrigger {
 	readonly CloudWatchAlarmDefinition: CloudWatchAlarmDefinition;
 }
 export interface ScriptBootstrapActionConfig {
-	readonly Args?: (string[] | undefined) | undefined;
+	readonly Args?: string[] | undefined;
 	readonly Path: string;
 }
 export interface SimpleScalingPolicyConfiguration {
-	readonly AdjustmentType?: (string | undefined) | undefined;
-	readonly CoolDown?: (number | undefined) | undefined;
+	readonly AdjustmentType?: string | undefined;
+	readonly CoolDown?: number | undefined;
 	readonly ScalingAdjustment: number;
 }
 export interface SpotProvisioningSpecification {
-	readonly AllocationStrategy?: (string | undefined) | undefined;
-	readonly BlockDurationMinutes?: (number | undefined) | undefined;
+	readonly AllocationStrategy?: string | undefined;
+	readonly BlockDurationMinutes?: number | undefined;
 	readonly TimeoutAction: string;
 	readonly TimeoutDurationMinutes: number;
 }
 export interface StepConfig {
-	readonly ActionOnFailure?: (string | undefined) | undefined;
+	readonly ActionOnFailure?: string | undefined;
 	readonly HadoopJarStep: HadoopJarStepConfig;
 	readonly Name: string;
 }
 export interface VolumeSpecification {
-	readonly Iops?: (number | undefined) | undefined;
+	readonly Iops?: number | undefined;
 	readonly SizeInGB: number;
 	readonly VolumeType: string;
 }

@@ -7,56 +7,55 @@ export class ProjectsInstanceConfigs
 	constructor(entity: ADKEntity, options: ProjectsInstanceConfigsComponentInputs) {
 		super(entity, options.name, "spanner.v1.ProjectsInstanceConfigs", options);
 	}
-	public readonly configType?: string | undefined;
-	public readonly freeInstanceAvailability?: string | undefined;
-	public readonly optionalReplicas?: ReplicaInfo[] | undefined;
-	public readonly reconciling?: boolean | undefined;
-	public readonly state?: string | undefined;
+	public readonly configType?: string;
+	public readonly freeInstanceAvailability?: string;
+	public readonly optionalReplicas?: ReplicaInfo[];
+	public readonly reconciling?: boolean;
+	public readonly state?: string;
 }
 export interface ProjectsInstanceConfigsComponentOutputs {
-	readonly configType?: string | undefined;
-	readonly freeInstanceAvailability?: string | undefined;
-	readonly optionalReplicas?: ReplicaInfo[] | undefined;
-	readonly reconciling?: boolean | undefined;
-	readonly state?: string | undefined;
+	readonly configType?: string;
+	readonly freeInstanceAvailability?: string;
+	readonly optionalReplicas?: ReplicaInfo[];
+	readonly reconciling?: boolean;
+	readonly state?: string;
 }
 export interface ProjectsInstanceConfigsComponentInputs {
-	readonly baseConfig?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly etag?: string | undefined;
+	readonly baseConfig?: string;
+	readonly displayName?: string;
+	readonly etag?: string;
 	readonly instanceConfig: InstanceConfig;
 	readonly instanceConfigId: string;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly leaderOptions?: string[] | undefined;
+	readonly labels?: { [P in string]: string };
+	readonly leaderOptions?: string[];
 	readonly name: string;
 	readonly parent: string;
-	readonly replicas?: ReplicaInfo[] | undefined;
-	readonly validateOnly?: boolean | undefined;
-	readonly type: string;
+	readonly replicas?: ReplicaInfo[];
+	readonly validateOnly?: boolean;
 }
 export interface CreateInstanceConfigRequest {
 	readonly instanceConfig: InstanceConfig;
 	readonly instanceConfigId: string;
-	readonly validateOnly?: boolean | undefined;
+	readonly validateOnly?: boolean;
 }
 export interface InstanceConfig {
-	readonly baseConfig?: string | undefined;
-	readonly configType?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly freeInstanceAvailability?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly leaderOptions?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly optionalReplicas?: ReplicaInfo[] | undefined;
-	readonly reconciling?: boolean | undefined;
-	readonly replicas?: ReplicaInfo[] | undefined;
-	readonly state?: string | undefined;
+	readonly baseConfig?: string;
+	readonly configType?: string;
+	readonly displayName?: string;
+	readonly etag?: string;
+	readonly freeInstanceAvailability?: string;
+	readonly labels?: { [P in string]: string };
+	readonly leaderOptions?: string[];
+	readonly name?: string;
+	readonly optionalReplicas?: ReplicaInfo[];
+	readonly reconciling?: boolean;
+	readonly replicas?: ReplicaInfo[];
+	readonly state?: string;
 }
 export interface ReplicaInfo {
-	readonly defaultLeaderLocation?: boolean | undefined;
-	readonly location?: string | undefined;
-	readonly type?: string | undefined;
+	readonly defaultLeaderLocation?: boolean;
+	readonly location?: string;
+	readonly type?: string;
 }
 export default {
 	ProjectsInstanceConfigs: ProjectsInstanceConfigs,

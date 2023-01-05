@@ -13,8 +13,8 @@ export interface AssessmentTargetComponentOutputs {
 	readonly Arn: string;
 }
 export interface AssessmentTargetComponentInputs {
-	readonly AssessmentTargetName?: (string | undefined) | undefined;
-	readonly ResourceGroupArn?: (string | undefined) | undefined;
+	readonly AssessmentTargetName?: string | undefined;
+	readonly ResourceGroupArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class AssessmentTemplate
@@ -33,8 +33,8 @@ export interface AssessmentTemplateComponentInputs {
 	readonly AssessmentTargetArn: string;
 	readonly DurationInSeconds: number;
 	readonly RulesPackageArns: string[];
-	readonly AssessmentTemplateName?: (string | undefined) | undefined;
-	readonly UserAttributesForFindings?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssessmentTemplateName?: string | undefined;
+	readonly UserAttributesForFindings?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ResourceGroup extends CfnResource<ResourceGroupComponentInputs> implements ResourceGroupComponentOutputs {

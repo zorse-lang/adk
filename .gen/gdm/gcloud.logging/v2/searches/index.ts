@@ -7,7 +7,6 @@ export class Searches extends GdmResource<SearchesComponentInputs> implements Se
 }
 export interface SearchesComponentOutputs {}
 export interface SearchesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

@@ -7,115 +7,114 @@ export class RegionCommitments
 	constructor(entity: ADKEntity, options: RegionCommitmentsComponentInputs) {
 		super(entity, options.name, "compute.v1.RegionCommitments", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly endTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly startTimestamp?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly statusMessage?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly endTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly startTimestamp?: string;
+	public readonly status?: string;
+	public readonly statusMessage?: string;
 }
 export interface RegionCommitmentsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly endTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly startTimestamp?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly endTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly startTimestamp?: string;
+	readonly status?: string;
+	readonly statusMessage?: string;
 }
 export interface RegionCommitmentsComponentInputs {
-	readonly autoRenew?: boolean | undefined;
-	readonly category?: string | undefined;
-	readonly description?: string | undefined;
-	readonly licenseResource?: LicenseResourceCommitment | undefined;
-	readonly mergeSourceCommitments?: string[] | undefined;
+	readonly autoRenew?: boolean;
+	readonly category?: string;
+	readonly description?: string;
+	readonly licenseResource?: LicenseResourceCommitment;
+	readonly mergeSourceCommitments?: string[];
 	readonly name: string;
-	readonly plan?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly reservations?: Reservation[] | undefined;
-	readonly resources?: ResourceCommitment[] | undefined;
-	readonly splitSourceCommitment?: string | undefined;
-	readonly type: string;
+	readonly plan?: string;
+	readonly requestId?: string;
+	readonly reservations?: Reservation[];
+	readonly resources?: ResourceCommitment[];
+	readonly splitSourceCommitment?: string;
 }
 export interface AcceleratorConfig {
-	readonly acceleratorCount?: number | undefined;
-	readonly acceleratorType?: string | undefined;
+	readonly acceleratorCount?: number;
+	readonly acceleratorType?: string;
 }
 export interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk {
-	readonly diskSizeGb?: string | undefined;
-	readonly interface?: string | undefined;
+	readonly diskSizeGb?: string;
+	readonly interface?: string;
 }
 export interface AllocationSpecificSKUAllocationReservedInstanceProperties {
-	readonly guestAccelerators?: AcceleratorConfig[] | undefined;
-	readonly localSsds?: AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk[] | undefined;
-	readonly locationHint?: string | undefined;
-	readonly machineType?: string | undefined;
-	readonly minCpuPlatform?: string | undefined;
+	readonly guestAccelerators?: AcceleratorConfig[];
+	readonly localSsds?: AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk[];
+	readonly locationHint?: string;
+	readonly machineType?: string;
+	readonly minCpuPlatform?: string;
 }
 export interface AllocationSpecificSKUReservation {
-	readonly assuredCount?: string | undefined;
-	readonly count?: string | undefined;
-	readonly instanceProperties?: AllocationSpecificSKUAllocationReservedInstanceProperties | undefined;
-	readonly inUseCount?: string | undefined;
+	readonly assuredCount?: string;
+	readonly count?: string;
+	readonly instanceProperties?: AllocationSpecificSKUAllocationReservedInstanceProperties;
+	readonly inUseCount?: string;
 }
 export interface Commitment {
-	readonly autoRenew?: boolean | undefined;
-	readonly category?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly endTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly licenseResource?: LicenseResourceCommitment | undefined;
-	readonly mergeSourceCommitments?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly plan?: string | undefined;
-	readonly region?: string | undefined;
-	readonly reservations?: Reservation[] | undefined;
-	readonly resources?: ResourceCommitment[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly splitSourceCommitment?: string | undefined;
-	readonly startTimestamp?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly type?: string | undefined;
+	readonly autoRenew?: boolean;
+	readonly category?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly endTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly licenseResource?: LicenseResourceCommitment;
+	readonly mergeSourceCommitments?: string[];
+	readonly name?: string;
+	readonly plan?: string;
+	readonly region?: string;
+	readonly reservations?: Reservation[];
+	readonly resources?: ResourceCommitment[];
+	readonly selfLink?: string;
+	readonly splitSourceCommitment?: string;
+	readonly startTimestamp?: string;
+	readonly status?: string;
+	readonly statusMessage?: string;
+	readonly type?: string;
 }
 export interface LicenseResourceCommitment {
-	readonly amount?: string | undefined;
-	readonly coresPerLicense?: string | undefined;
-	readonly license?: string | undefined;
+	readonly amount?: string;
+	readonly coresPerLicense?: string;
+	readonly license?: string;
 }
 export interface Reservation {
-	readonly commitment?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly selfLink?: string | undefined;
-	readonly shareSettings?: ShareSettings | undefined;
-	readonly specificReservation?: AllocationSpecificSKUReservation | undefined;
-	readonly specificReservationRequired?: boolean | undefined;
-	readonly status?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly commitment?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly satisfiesPzs?: boolean;
+	readonly selfLink?: string;
+	readonly shareSettings?: ShareSettings;
+	readonly specificReservation?: AllocationSpecificSKUReservation;
+	readonly specificReservationRequired?: boolean;
+	readonly status?: string;
+	readonly zone?: string;
 }
 export interface ResourceCommitment {
-	readonly acceleratorType?: string | undefined;
-	readonly amount?: string | undefined;
-	readonly type?: string | undefined;
+	readonly acceleratorType?: string;
+	readonly amount?: string;
+	readonly type?: string;
 }
 export interface ShareSettings {
-	readonly projectMap?: { [P in string]: ShareSettingsProjectConfig } | undefined;
-	readonly shareType?: string | undefined;
+	readonly projectMap?: { [P in string]: ShareSettingsProjectConfig };
+	readonly shareType?: string;
 }
 export interface ShareSettingsProjectConfig {
-	readonly projectId?: string | undefined;
+	readonly projectId?: string;
 }
 export default {
 	RegionCommitments: RegionCommitments,

@@ -7,7 +7,6 @@ export class ProjectsLogs extends GdmResource<ProjectsLogsComponentInputs> imple
 }
 export interface ProjectsLogsComponentOutputs {}
 export interface ProjectsLogsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

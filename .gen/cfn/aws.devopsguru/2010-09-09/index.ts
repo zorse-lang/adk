@@ -33,26 +33,26 @@ export interface ResourceCollectionComponentInputs {
 	readonly LogicalId: string;
 }
 export interface NotificationChannelConfig {
-	readonly Filters?: (NotificationFilterConfig | undefined) | undefined;
-	readonly Sns?: (SnsChannelConfig | undefined) | undefined;
+	readonly Filters?: NotificationFilterConfig | undefined;
+	readonly Sns?: SnsChannelConfig | undefined;
 }
 export interface NotificationFilterConfig {
-	readonly MessageTypes?: (string[] | undefined) | undefined;
-	readonly Severities?: (string[] | undefined) | undefined;
+	readonly MessageTypes?: string[] | undefined;
+	readonly Severities?: string[] | undefined;
 }
 export interface SnsChannelConfig {
-	readonly TopicArn?: (string | undefined) | undefined;
+	readonly TopicArn?: string | undefined;
 }
 export interface CloudFormationCollectionFilter {
-	readonly StackNames?: (string[] | undefined) | undefined;
+	readonly StackNames?: string[] | undefined;
 }
 export interface ResourceCollectionFilter {
-	readonly CloudFormation?: (CloudFormationCollectionFilter | undefined) | undefined;
-	readonly Tags?: (TagCollection[] | undefined) | undefined;
+	readonly CloudFormation?: CloudFormationCollectionFilter | undefined;
+	readonly Tags?: TagCollection[] | undefined;
 }
 export interface TagCollection {
-	readonly AppBoundaryKey?: (string | undefined) | undefined;
-	readonly TagValues?: (string[] | undefined) | undefined;
+	readonly AppBoundaryKey?: string | undefined;
+	readonly TagValues?: string[] | undefined;
 }
 export default {
 	NotificationChannel: NotificationChannel,

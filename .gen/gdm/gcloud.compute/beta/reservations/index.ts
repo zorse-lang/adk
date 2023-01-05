@@ -4,80 +4,79 @@ export class Reservations extends GdmResource<ReservationsComponentInputs> imple
 	constructor(entity: ADKEntity, options: ReservationsComponentInputs) {
 		super(entity, options.name, "compute.beta.Reservations", options);
 	}
-	public readonly commitment?: string | undefined;
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly satisfiesPzs?: boolean | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly status?: string | undefined;
+	public readonly commitment?: string;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly satisfiesPzs?: boolean;
+	public readonly selfLink?: string;
+	public readonly status?: string;
 }
 export interface ReservationsComponentOutputs {
-	readonly commitment?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
+	readonly commitment?: string;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly satisfiesPzs?: boolean;
+	readonly selfLink?: string;
+	readonly status?: string;
 }
 export interface ReservationsComponentInputs {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly name: string;
-	readonly requestId?: string | undefined;
-	readonly resourcePolicies?: { [P in string]: string } | undefined;
-	readonly shareSettings?: ShareSettings | undefined;
-	readonly specificReservation?: AllocationSpecificSKUReservation | undefined;
-	readonly specificReservationRequired?: boolean | undefined;
-	readonly zone?: string | undefined;
-	readonly type: string;
+	readonly requestId?: string;
+	readonly resourcePolicies?: { [P in string]: string };
+	readonly shareSettings?: ShareSettings;
+	readonly specificReservation?: AllocationSpecificSKUReservation;
+	readonly specificReservationRequired?: boolean;
+	readonly zone?: string;
 }
 export interface AcceleratorConfig {
-	readonly acceleratorCount?: number | undefined;
-	readonly acceleratorType?: string | undefined;
+	readonly acceleratorCount?: number;
+	readonly acceleratorType?: string;
 }
 export interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk {
-	readonly diskSizeGb?: string | undefined;
-	readonly interface?: string | undefined;
+	readonly diskSizeGb?: string;
+	readonly interface?: string;
 }
 export interface AllocationSpecificSKUAllocationReservedInstanceProperties {
-	readonly guestAccelerators?: AcceleratorConfig[] | undefined;
-	readonly localSsds?: AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk[] | undefined;
-	readonly locationHint?: string | undefined;
-	readonly machineType?: string | undefined;
-	readonly maintenanceFreezeDurationHours?: number | undefined;
-	readonly maintenanceInterval?: string | undefined;
-	readonly minCpuPlatform?: string | undefined;
+	readonly guestAccelerators?: AcceleratorConfig[];
+	readonly localSsds?: AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk[];
+	readonly locationHint?: string;
+	readonly machineType?: string;
+	readonly maintenanceFreezeDurationHours?: number;
+	readonly maintenanceInterval?: string;
+	readonly minCpuPlatform?: string;
 }
 export interface AllocationSpecificSKUReservation {
-	readonly assuredCount?: string | undefined;
-	readonly count?: string | undefined;
-	readonly instanceProperties?: AllocationSpecificSKUAllocationReservedInstanceProperties | undefined;
-	readonly inUseCount?: string | undefined;
+	readonly assuredCount?: string;
+	readonly count?: string;
+	readonly instanceProperties?: AllocationSpecificSKUAllocationReservedInstanceProperties;
+	readonly inUseCount?: string;
 }
 export interface Reservation {
-	readonly commitment?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly resourcePolicies?: { [P in string]: string } | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly selfLink?: string | undefined;
-	readonly shareSettings?: ShareSettings | undefined;
-	readonly specificReservation?: AllocationSpecificSKUReservation | undefined;
-	readonly specificReservationRequired?: boolean | undefined;
-	readonly status?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly commitment?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly resourcePolicies?: { [P in string]: string };
+	readonly satisfiesPzs?: boolean;
+	readonly selfLink?: string;
+	readonly shareSettings?: ShareSettings;
+	readonly specificReservation?: AllocationSpecificSKUReservation;
+	readonly specificReservationRequired?: boolean;
+	readonly status?: string;
+	readonly zone?: string;
 }
 export interface ShareSettings {
-	readonly projectMap?: { [P in string]: ShareSettingsProjectConfig } | undefined;
-	readonly projects?: string[] | undefined;
-	readonly shareType?: string | undefined;
+	readonly projectMap?: { [P in string]: ShareSettingsProjectConfig };
+	readonly projects?: string[];
+	readonly shareType?: string;
 }
 export interface ShareSettingsProjectConfig {
-	readonly projectId?: string | undefined;
+	readonly projectId?: string;
 }
 export default {
 	Reservations: Reservations,

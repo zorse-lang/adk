@@ -14,12 +14,11 @@ export interface OrganizationsGcpUserAccessBindingsComponentInputs {
 	readonly groupKey: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly type: string;
 }
 export interface GcpUserAccessBinding {
 	readonly accessLevels: string[];
 	readonly groupKey: string;
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export default {
 	OrganizationsGcpUserAccessBindings: OrganizationsGcpUserAccessBindings,

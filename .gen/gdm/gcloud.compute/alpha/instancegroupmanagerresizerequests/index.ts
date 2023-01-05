@@ -7,95 +7,92 @@ export class InstanceGroupManagerResizeRequests
 	constructor(entity: ADKEntity, options: InstanceGroupManagerResizeRequestsComponentInputs) {
 		super(entity, options.name, "compute.alpha.InstanceGroupManagerResizeRequests", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly state?: string | undefined;
-	public readonly status?: InstanceGroupManagerResizeRequestStatus | undefined;
-	public readonly zone?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly state?: string;
+	public readonly status?: InstanceGroupManagerResizeRequestStatus;
+	public readonly zone?: string;
 }
 export interface InstanceGroupManagerResizeRequestsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly state?: string | undefined;
-	readonly status?: InstanceGroupManagerResizeRequestStatus | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly state?: string;
+	readonly status?: InstanceGroupManagerResizeRequestStatus;
+	readonly zone?: string;
 }
 export interface InstanceGroupManagerResizeRequestsComponentInputs {
-	readonly count?: number | undefined;
-	readonly description?: string | undefined;
+	readonly count?: number;
+	readonly description?: string;
 	readonly instanceGroupManager: string;
 	readonly name: string;
-	readonly queuingPolicy?: QueuingPolicy | undefined;
-	readonly requestId?: string | undefined;
-	readonly type: string;
+	readonly queuingPolicy?: QueuingPolicy;
+	readonly requestId?: string;
 }
 export interface Duration {
-	readonly nanos?: number | undefined;
-	readonly seconds?: string | undefined;
+	readonly nanos?: number;
+	readonly seconds?: string;
 }
 export interface ErrorInfo {
-	readonly domain?: string | undefined;
-	readonly metadatas?: { [P in string]: string } | undefined;
-	readonly reason?: string | undefined;
+	readonly domain?: string;
+	readonly metadatas?: { [P in string]: string };
+	readonly reason?: string;
 }
 export interface Help {
-	readonly links?: HelpLink[] | undefined;
+	readonly links?: HelpLink[];
 }
 export interface HelpLink {
-	readonly description?: string | undefined;
-	readonly url?: string | undefined;
+	readonly description?: string;
+	readonly url?: string;
 }
 export interface InstanceGroupManagerResizeRequest {
-	readonly count?: number | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly queuingPolicy?: QueuingPolicy | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly state?: string | undefined;
-	readonly status?: InstanceGroupManagerResizeRequestStatus | undefined;
-	readonly zone?: string | undefined;
+	readonly count?: number;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly queuingPolicy?: QueuingPolicy;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly state?: string;
+	readonly status?: InstanceGroupManagerResizeRequestStatus;
+	readonly zone?: string;
 }
 export interface InstanceGroupManagerResizeRequestStatus {
-	readonly error?:
-		| {
-				errors?: Array<{
-					code?: string;
-					errorDetails?: Array<{
-						errorInfo?: ErrorInfo;
-						help?: Help;
-						localizedMessage?: LocalizedMessage;
-						quotaInfo?: QuotaExceededInfo;
-					}>;
-					location?: string;
-					message?: string;
-				}>;
-		  }
-		| undefined;
-	readonly queuingPolicy?: QueuingPolicy | undefined;
+	readonly error?: {
+		errors?: Array<{
+			code?: string;
+			errorDetails?: Array<{
+				errorInfo?: ErrorInfo;
+				help?: Help;
+				localizedMessage?: LocalizedMessage;
+				quotaInfo?: QuotaExceededInfo;
+			}>;
+			location?: string;
+			message?: string;
+		}>;
+	};
+	readonly queuingPolicy?: QueuingPolicy;
 }
 export interface LocalizedMessage {
-	readonly locale?: string | undefined;
-	readonly message?: string | undefined;
+	readonly locale?: string;
+	readonly message?: string;
 }
 export interface QueuingPolicy {
-	readonly validUntilDuration?: Duration | undefined;
-	readonly validUntilTime?: string | undefined;
+	readonly validUntilDuration?: Duration;
+	readonly validUntilTime?: string;
 }
 export interface QuotaExceededInfo {
-	readonly dimensions?: { [P in string]: string } | undefined;
-	readonly limit?: number | undefined;
-	readonly limitName?: string | undefined;
-	readonly metricName?: string | undefined;
+	readonly dimensions?: { [P in string]: string };
+	readonly limit?: number;
+	readonly limitName?: string;
+	readonly metricName?: string;
 }
 export default {
 	InstanceGroupManagerResizeRequests: InstanceGroupManagerResizeRequests,

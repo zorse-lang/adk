@@ -18,7 +18,7 @@ export interface registries_buildsComponentOutputs {
 }
 export interface registries_buildsComponentInputs {
 	readonly name: string;
-	readonly properties?: BuildProperties | undefined;
+	readonly properties?: BuildProperties;
 }
 export class registries_buildTasks
 	extends ArmResource<registries_buildTasksComponentInputs>
@@ -39,8 +39,8 @@ export interface registries_buildTasksComponentOutputs {
 export interface registries_buildTasksComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: BuildTaskProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: BuildTaskProperties;
+	readonly tags?: ResourceTags;
 }
 export class registries_buildTasks_steps
 	extends ArmResource<registries_buildTasks_stepsComponentInputs>
@@ -66,7 +66,7 @@ export interface registries_buildTasks_stepsComponentOutputs {
 }
 export interface registries_buildTasks_stepsComponentInputs {
 	readonly name: string;
-	readonly properties?: BuildStepProperties | undefined;
+	readonly properties?: BuildStepProperties;
 }
 export function listBuildArguments(resource: registries_buildTasks_steps): BuildArgumentList {
 	if (resource.apiVersion !== "2018-02-01-preview") {
@@ -87,88 +87,86 @@ export function listSourceRepositoryProperties(resource: registries_buildTasks):
 	throw new Error("not implemented");
 }
 export interface BaseImageDependency {
-	readonly digest?: string | undefined;
-	readonly registry?: string | undefined;
-	readonly repository?: string | undefined;
-	readonly tag?: string | undefined;
-	readonly type?: ("BuildTime" | "RunTime") | undefined;
+	readonly digest?: string;
+	readonly registry?: string;
+	readonly repository?: string;
+	readonly tag?: string;
+	readonly type?: "BuildTime" | "RunTime";
 }
 export interface BuildArgument {
-	readonly isSecret?: boolean | undefined;
+	readonly isSecret?: boolean;
 	readonly name: string;
 	readonly type: "DockerBuildArgument";
 	readonly value: string;
 }
 export interface BuildArgumentList {
-	readonly nextLink?: string | undefined;
-	readonly value?: BuildArgument[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: BuildArgument[];
 }
 export interface BuildProperties {
-	readonly buildId?: string | undefined;
-	readonly buildTask?: string | undefined;
-	readonly buildType?: ("AutoBuild" | "QuickBuild") | undefined;
-	readonly createTime?: string | undefined;
-	readonly finishTime?: string | undefined;
-	readonly gitCommitTrigger?: GitCommitTrigger | undefined;
-	readonly imageUpdateTrigger?: ImageUpdateTrigger | undefined;
-	readonly isArchiveEnabled?: boolean | undefined;
-	readonly lastUpdatedTime?: string | undefined;
-	readonly outputImages?: ImageDescriptor[] | undefined;
-	readonly platform?: PlatformProperties | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?:
-		| ("Canceled" | "Error" | "Failed" | "Queued" | "Running" | "Started" | "Succeeded" | "Timeout")
-		| undefined;
+	readonly buildId?: string;
+	readonly buildTask?: string;
+	readonly buildType?: "AutoBuild" | "QuickBuild";
+	readonly createTime?: string;
+	readonly finishTime?: string;
+	readonly gitCommitTrigger?: GitCommitTrigger;
+	readonly imageUpdateTrigger?: ImageUpdateTrigger;
+	readonly isArchiveEnabled?: boolean;
+	readonly lastUpdatedTime?: string;
+	readonly outputImages?: ImageDescriptor[];
+	readonly platform?: PlatformProperties;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly startTime?: string;
+	readonly status?: "Canceled" | "Error" | "Failed" | "Queued" | "Running" | "Started" | "Succeeded" | "Timeout";
 }
 export interface BuildStepProperties {
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface BuildTaskProperties {
 	readonly alias: string;
-	readonly creationDate?: string | undefined;
+	readonly creationDate?: string;
 	readonly platform: PlatformProperties;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly sourceRepository: SourceRepositoryProperties;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly timeout?: number | undefined;
+	readonly status?: "Disabled" | "Enabled";
+	readonly timeout?: number;
 }
 export interface GitCommitTrigger {
-	readonly branchName?: string | undefined;
-	readonly commitId?: string | undefined;
-	readonly id?: string | undefined;
-	readonly providerType?: string | undefined;
-	readonly repositoryUrl?: string | undefined;
+	readonly branchName?: string;
+	readonly commitId?: string;
+	readonly id?: string;
+	readonly providerType?: string;
+	readonly repositoryUrl?: string;
 }
 export interface ImageDescriptor {
-	readonly digest?: string | undefined;
-	readonly registry?: string | undefined;
-	readonly repository?: string | undefined;
-	readonly tag?: string | undefined;
+	readonly digest?: string;
+	readonly registry?: string;
+	readonly repository?: string;
+	readonly tag?: string;
 }
 export interface ImageUpdateTrigger {
-	readonly id?: string | undefined;
-	readonly images?: ImageDescriptor[] | undefined;
-	readonly timestamp?: string | undefined;
+	readonly id?: string;
+	readonly images?: ImageDescriptor[];
+	readonly timestamp?: string;
 }
 export interface PlatformProperties {
-	readonly cpu?: number | undefined;
+	readonly cpu?: number;
 	readonly osType: "Linux" | "Windows";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SourceControlAuthInfo {
-	readonly expiresIn?: number | undefined;
-	readonly refreshToken?: string | undefined;
-	readonly scope?: string | undefined;
+	readonly expiresIn?: number;
+	readonly refreshToken?: string;
+	readonly scope?: string;
 	readonly token: string;
-	readonly tokenType?: ("OAuth" | "PAT") | undefined;
+	readonly tokenType?: "OAuth" | "PAT";
 }
 export interface SourceRepositoryProperties {
-	readonly isCommitTriggerEnabled?: boolean | undefined;
+	readonly isCommitTriggerEnabled?: boolean;
 	readonly repositoryUrl: string;
-	readonly sourceControlAuthProperties?: SourceControlAuthInfo | undefined;
+	readonly sourceControlAuthProperties?: SourceControlAuthInfo;
 	readonly sourceControlType: "Github" | "VisualStudioTeamService";
 }
 export default {

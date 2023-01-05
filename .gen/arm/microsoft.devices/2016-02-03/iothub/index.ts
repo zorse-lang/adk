@@ -14,14 +14,14 @@ export interface IotHubsComponentOutputs {
 	readonly type: "Microsoft.Devices/IotHubs";
 }
 export interface IotHubsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: IotHubProperties | undefined;
+	readonly properties?: IotHubProperties;
 	readonly resourcegroup: string;
 	readonly sku: IotHubSkuInfo;
 	readonly subscriptionid: string;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class IotHubs_eventHubEndpoints_ConsumerGroups
 	extends ArmResource<IotHubs_eventHubEndpoints_ConsumerGroupsComponentInputs>
@@ -41,7 +41,7 @@ export interface IotHubs_eventHubEndpoints_ConsumerGroupsComponentOutputs {
 }
 export interface IotHubs_eventHubEndpoints_ConsumerGroupsComponentInputs {
 	readonly name: string;
-	readonly tags?: EventHubConsumerGroupInfoTags | undefined;
+	readonly tags?: EventHubConsumerGroupInfoTags;
 }
 export function listkeys(resource: IotHubs): SharedAccessSignatureAuthorizationRuleListResult {
 	if (resource.apiVersion !== "2016-02-03") {
@@ -53,52 +53,52 @@ export function listkeys(resource: IotHubs): SharedAccessSignatureAuthorizationR
 	throw new Error("not implemented");
 }
 export interface CloudToDeviceProperties {
-	readonly defaultTtlAsIso8601?: string | undefined;
-	readonly feedback?: FeedbackProperties | undefined;
-	readonly maxDeliveryCount?: number | undefined;
+	readonly defaultTtlAsIso8601?: string;
+	readonly feedback?: FeedbackProperties;
+	readonly maxDeliveryCount?: number;
 }
 export interface EventHubConsumerGroupInfoTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface EventHubProperties {
-	readonly endpoint?: string | undefined;
-	readonly partitionCount?: number | undefined;
-	readonly partitionIds?: string[] | undefined;
-	readonly path?: string | undefined;
-	readonly retentionTimeInDays?: number | undefined;
+	readonly endpoint?: string;
+	readonly partitionCount?: number;
+	readonly partitionIds?: string[];
+	readonly path?: string;
+	readonly retentionTimeInDays?: number;
 }
 export interface FeedbackProperties {
-	readonly lockDurationAsIso8601?: string | undefined;
-	readonly maxDeliveryCount?: number | undefined;
-	readonly ttlAsIso8601?: string | undefined;
+	readonly lockDurationAsIso8601?: string;
+	readonly maxDeliveryCount?: number;
+	readonly ttlAsIso8601?: string;
 }
 export interface IotHubProperties {
-	readonly authorizationPolicies?: SharedAccessSignatureAuthorizationRule[] | undefined;
-	readonly cloudToDevice?: CloudToDeviceProperties | undefined;
-	readonly comments?: string | undefined;
-	readonly enableFileUploadNotifications?: boolean | undefined;
-	readonly eventHubEndpoints?: IotHubPropertiesEventHubEndpoints | undefined;
-	readonly features?: ("DeviceManagement" | "None") | undefined;
-	readonly hostName?: string | undefined;
-	readonly ipFilterRules?: IpFilterRule[] | undefined;
-	readonly messagingEndpoints?: IotHubPropertiesMessagingEndpoints | undefined;
-	readonly operationsMonitoringProperties?: OperationsMonitoringProperties | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly storageEndpoints?: IotHubPropertiesStorageEndpoints | undefined;
+	readonly authorizationPolicies?: SharedAccessSignatureAuthorizationRule[];
+	readonly cloudToDevice?: CloudToDeviceProperties;
+	readonly comments?: string;
+	readonly enableFileUploadNotifications?: boolean;
+	readonly eventHubEndpoints?: IotHubPropertiesEventHubEndpoints;
+	readonly features?: "DeviceManagement" | "None";
+	readonly hostName?: string;
+	readonly ipFilterRules?: IpFilterRule[];
+	readonly messagingEndpoints?: IotHubPropertiesMessagingEndpoints;
+	readonly operationsMonitoringProperties?: OperationsMonitoringProperties;
+	readonly provisioningState?: string;
+	readonly storageEndpoints?: IotHubPropertiesStorageEndpoints;
 }
 export interface IotHubPropertiesEventHubEndpoints {
-	readonly "[ key: string ]"?: EventHubProperties | undefined;
+	readonly [key: string]: EventHubProperties;
 }
 export interface IotHubPropertiesMessagingEndpoints {
-	readonly "[ key: string ]"?: MessagingEndpointProperties | undefined;
+	readonly [key: string]: MessagingEndpointProperties;
 }
 export interface IotHubPropertiesStorageEndpoints {
-	readonly "[ key: string ]"?: StorageEndpointProperties | undefined;
+	readonly [key: string]: StorageEndpointProperties;
 }
 export interface IotHubSkuInfo {
 	readonly capacity: number;
 	readonly name: "F1" | "S1" | "S2" | "S3";
-	readonly tier?: "Free" | undefined;
+	readonly tier?: "Free";
 }
 export interface IpFilterRule {
 	readonly action: "Accept";
@@ -106,22 +106,22 @@ export interface IpFilterRule {
 	readonly ipMask: string;
 }
 export interface MessagingEndpointProperties {
-	readonly lockDurationAsIso8601?: string | undefined;
-	readonly maxDeliveryCount?: number | undefined;
-	readonly ttlAsIso8601?: string | undefined;
+	readonly lockDurationAsIso8601?: string;
+	readonly maxDeliveryCount?: number;
+	readonly ttlAsIso8601?: string;
 }
 export interface OperationsMonitoringProperties {
-	readonly events?: OperationsMonitoringPropertiesEvents | undefined;
+	readonly events?: OperationsMonitoringPropertiesEvents;
 }
 export interface OperationsMonitoringPropertiesEvents {
-	readonly "[ key: string ]"?: ("Error" | "Error, Information" | "Information" | "None") | undefined;
+	readonly [key: string]: "Error" | "Error, Information" | "Information" | "None";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SharedAccessSignatureAuthorizationRule {
 	readonly keyName: string;
-	readonly primaryKey?: string | undefined;
+	readonly primaryKey?: string;
 	readonly rights:
 		| "DeviceConnect"
 		| "RegistryRead"
@@ -137,16 +137,16 @@ export interface SharedAccessSignatureAuthorizationRule {
 		| "RegistryWrite, ServiceConnect"
 		| "RegistryWrite, ServiceConnect, DeviceConnect"
 		| "ServiceConnect";
-	readonly secondaryKey?: string | undefined;
+	readonly secondaryKey?: string;
 }
 export interface SharedAccessSignatureAuthorizationRuleListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: SharedAccessSignatureAuthorizationRule[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: SharedAccessSignatureAuthorizationRule[];
 }
 export interface StorageEndpointProperties {
 	readonly connectionString: string;
 	readonly containerName: string;
-	readonly sasTtlAsIso8601?: string | undefined;
+	readonly sasTtlAsIso8601?: string;
 }
 export default {
 	IotHubs: IotHubs,

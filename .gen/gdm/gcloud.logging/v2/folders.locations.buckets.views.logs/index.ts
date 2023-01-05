@@ -10,7 +10,6 @@ export class FoldersLocationsBucketsViewsLogs
 }
 export interface FoldersLocationsBucketsViewsLogsComponentOutputs {}
 export interface FoldersLocationsBucketsViewsLogsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

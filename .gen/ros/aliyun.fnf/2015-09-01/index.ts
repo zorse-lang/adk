@@ -16,9 +16,9 @@ export interface FlowComponentOutputs {
 export interface FlowComponentInputs {
 	readonly Definition: string;
 	readonly Name: any | string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly RequestId?: (string | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly RequestId?: string | undefined;
+	readonly RoleArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Schedule extends RosResource<ScheduleComponentInputs> implements ScheduleComponentOutputs {
@@ -34,9 +34,9 @@ export interface ScheduleComponentInputs {
 	readonly CronExpression: string;
 	readonly FlowName: any | string;
 	readonly ScheduleName: any | string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Enable?: (boolean | undefined) | undefined;
-	readonly Payload?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Enable?: boolean | undefined;
+	readonly Payload?: string | undefined;
 	readonly LogicalId: string;
 }
 export default {

@@ -17,10 +17,10 @@ export interface applicationGatewayAvailableSslOptionsComponentOutputs {
 	readonly type: "Microsoft.Network/applicationGatewayAvailableSslOptions";
 }
 export interface applicationGatewayAvailableSslOptionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ApplicationGatewayAvailableSslOptionsPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ApplicationGatewayAvailableSslOptionsPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class applicationGatewayAvailableSslOptions_predefinedPolicies
 	extends ArmResource<applicationGatewayAvailableSslOptions_predefinedPoliciesComponentInputs>
@@ -46,7 +46,7 @@ export interface applicationGatewayAvailableSslOptions_predefinedPoliciesCompone
 }
 export interface applicationGatewayAvailableSslOptions_predefinedPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: ApplicationGatewaySslPredefinedPolicyPropertiesFormat | undefined;
+	readonly properties?: ApplicationGatewaySslPredefinedPolicyPropertiesFormat;
 }
 export class applicationGateways
 	extends ArmResource<applicationGatewaysComponentInputs>
@@ -65,13 +65,13 @@ export interface applicationGatewaysComponentOutputs {
 	readonly type: "Microsoft.Network/applicationGateways";
 }
 export interface applicationGatewaysComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ApplicationGatewayPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly properties?: ApplicationGatewayPropertiesFormat;
+	readonly tags?: ResourceTags;
+	readonly zones?: string[];
 }
 export class applicationGateways_privateEndpointConnections
 	extends ArmResource<applicationGateways_privateEndpointConnectionsComponentInputs>
@@ -96,9 +96,9 @@ export interface applicationGateways_privateEndpointConnectionsComponentOutputs 
 	readonly type: "Microsoft.Network/applicationGateways/privateEndpointConnections";
 }
 export interface applicationGateways_privateEndpointConnectionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ApplicationGatewayPrivateEndpointConnectionProperties | undefined;
+	readonly properties?: ApplicationGatewayPrivateEndpointConnectionProperties;
 }
 export class ApplicationGatewayWebApplicationFirewallPolicies
 	extends ArmResource<ApplicationGatewayWebApplicationFirewallPoliciesComponentInputs>
@@ -123,11 +123,11 @@ export interface ApplicationGatewayWebApplicationFirewallPoliciesComponentOutput
 	readonly type: "Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies";
 }
 export interface ApplicationGatewayWebApplicationFirewallPoliciesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WebApplicationFirewallPolicyPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WebApplicationFirewallPolicyPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class applicationSecurityGroups
 	extends ArmResource<applicationSecurityGroupsComponentInputs>
@@ -146,11 +146,11 @@ export interface applicationSecurityGroupsComponentOutputs {
 	readonly type: "Microsoft.Network/applicationSecurityGroups";
 }
 export interface applicationSecurityGroupsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ApplicationSecurityGroupPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ApplicationSecurityGroupPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class azureFirewalls extends ArmResource<azureFirewallsComponentInputs> implements azureFirewallsComponentOutputs {
 	constructor(entity: ADKEntity, options: azureFirewallsComponentInputs) {
@@ -166,12 +166,12 @@ export interface azureFirewallsComponentOutputs {
 	readonly type: "Microsoft.Network/azureFirewalls";
 }
 export interface azureFirewallsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AzureFirewallPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly properties?: AzureFirewallPropertiesFormat;
+	readonly tags?: ResourceTags;
+	readonly zones?: string[];
 }
 export class bastionHosts extends ArmResource<bastionHostsComponentInputs> implements bastionHostsComponentOutputs {
 	constructor(entity: ADKEntity, options: bastionHostsComponentInputs) {
@@ -187,11 +187,11 @@ export interface bastionHostsComponentOutputs {
 	readonly type: "Microsoft.Network/bastionHosts";
 }
 export interface bastionHostsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: BastionHostPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: BastionHostPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class connections extends ArmResource<connectionsComponentInputs> implements connectionsComponentOutputs {
 	constructor(entity: ADKEntity, options: connectionsComponentInputs) {
@@ -207,11 +207,11 @@ export interface connectionsComponentOutputs {
 	readonly type: "Microsoft.Network/connections";
 }
 export interface connectionsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: VirtualNetworkGatewayConnectionPropertiesFormat;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class customIpPrefixes
 	extends ArmResource<customIpPrefixesComponentInputs>
@@ -230,13 +230,13 @@ export interface customIpPrefixesComponentOutputs {
 	readonly type: "Microsoft.Network/customIpPrefixes";
 }
 export interface customIpPrefixesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: CustomIpPrefixPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly properties?: CustomIpPrefixPropertiesFormat;
+	readonly tags?: ResourceTags;
+	readonly zones?: string[];
 }
 export class ddosCustomPolicies
 	extends ArmResource<ddosCustomPoliciesComponentInputs>
@@ -255,11 +255,11 @@ export interface ddosCustomPoliciesComponentOutputs {
 	readonly type: "Microsoft.Network/ddosCustomPolicies";
 }
 export interface ddosCustomPoliciesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DdosCustomPolicyPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: DdosCustomPolicyPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class ddosProtectionPlans
 	extends ArmResource<ddosProtectionPlansComponentInputs>
@@ -278,11 +278,11 @@ export interface ddosProtectionPlansComponentOutputs {
 	readonly type: "Microsoft.Network/ddosProtectionPlans";
 }
 export interface ddosProtectionPlansComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DdosProtectionPlanPropertiesFormat | undefined;
-	readonly tags?: DdosProtectionPlanTags | undefined;
+	readonly properties?: DdosProtectionPlanPropertiesFormat;
+	readonly tags?: DdosProtectionPlanTags;
 }
 export class dscpConfigurations
 	extends ArmResource<dscpConfigurationsComponentInputs>
@@ -301,11 +301,11 @@ export interface dscpConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Network/dscpConfigurations";
 }
 export interface dscpConfigurationsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DscpConfigurationPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: DscpConfigurationPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class expressRouteCircuits
 	extends ArmResource<expressRouteCircuitsComponentInputs>
@@ -324,12 +324,12 @@ export interface expressRouteCircuitsComponentOutputs {
 	readonly type: "Microsoft.Network/expressRouteCircuits";
 }
 export interface expressRouteCircuitsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ExpressRouteCircuitPropertiesFormat | undefined;
-	readonly sku?: ExpressRouteCircuitSku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ExpressRouteCircuitPropertiesFormat;
+	readonly sku?: ExpressRouteCircuitSku;
+	readonly tags?: ResourceTags;
 }
 export class expressRouteCircuits_authorizations
 	extends ArmResource<expressRouteCircuits_authorizationsComponentInputs>
@@ -348,9 +348,9 @@ export interface expressRouteCircuits_authorizationsComponentOutputs {
 	readonly type: "Microsoft.Network/expressRouteCircuits/authorizations";
 }
 export interface expressRouteCircuits_authorizationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: AuthorizationPropertiesFormat | undefined;
+	readonly properties?: AuthorizationPropertiesFormat;
 }
 export class expressRouteCircuits_peerings
 	extends ArmResource<expressRouteCircuits_peeringsComponentInputs>
@@ -369,9 +369,9 @@ export interface expressRouteCircuits_peeringsComponentOutputs {
 	readonly type: "Microsoft.Network/expressRouteCircuits/peerings";
 }
 export interface expressRouteCircuits_peeringsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ExpressRouteCircuitPeeringPropertiesFormat | undefined;
+	readonly properties?: ExpressRouteCircuitPeeringPropertiesFormat;
 }
 export class expressRouteCircuits_peerings_connections
 	extends ArmResource<expressRouteCircuits_peerings_connectionsComponentInputs>
@@ -390,9 +390,9 @@ export interface expressRouteCircuits_peerings_connectionsComponentOutputs {
 	readonly type: "Microsoft.Network/expressRouteCircuits/peerings/connections";
 }
 export interface expressRouteCircuits_peerings_connectionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ExpressRouteCircuitConnectionPropertiesFormat | undefined;
+	readonly properties?: ExpressRouteCircuitConnectionPropertiesFormat;
 }
 export class expressRouteCircuits_peerings_peerConnections
 	extends ArmResource<expressRouteCircuits_peerings_peerConnectionsComponentInputs>
@@ -417,9 +417,9 @@ export interface expressRouteCircuits_peerings_peerConnectionsComponentOutputs {
 	readonly type: "Microsoft.Network/expressRouteCircuits/peerings/peerConnections";
 }
 export interface expressRouteCircuits_peerings_peerConnectionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: PeerExpressRouteCircuitConnectionPropertiesFormat | undefined;
+	readonly properties?: PeerExpressRouteCircuitConnectionPropertiesFormat;
 }
 export class expressRouteCrossConnections
 	extends ArmResource<expressRouteCrossConnectionsComponentInputs>
@@ -438,11 +438,11 @@ export interface expressRouteCrossConnectionsComponentOutputs {
 	readonly type: "Microsoft.Network/expressRouteCrossConnections";
 }
 export interface expressRouteCrossConnectionsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ExpressRouteCrossConnectionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ExpressRouteCrossConnectionProperties;
+	readonly tags?: ResourceTags;
 }
 export class expressRouteCrossConnections_peerings
 	extends ArmResource<expressRouteCrossConnections_peeringsComponentInputs>
@@ -461,9 +461,9 @@ export interface expressRouteCrossConnections_peeringsComponentOutputs {
 	readonly type: "Microsoft.Network/expressRouteCrossConnections/peerings";
 }
 export interface expressRouteCrossConnections_peeringsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ExpressRouteCrossConnectionPeeringProperties | undefined;
+	readonly properties?: ExpressRouteCrossConnectionPeeringProperties;
 }
 export class expressRouteGateways
 	extends ArmResource<expressRouteGatewaysComponentInputs>
@@ -482,11 +482,11 @@ export interface expressRouteGatewaysComponentOutputs {
 	readonly type: "Microsoft.Network/expressRouteGateways";
 }
 export interface expressRouteGatewaysComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ExpressRouteGatewayProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ExpressRouteGatewayProperties;
+	readonly tags?: ResourceTags;
 }
 export class expressRouteGateways_expressRouteConnections
 	extends ArmResource<expressRouteGateways_expressRouteConnectionsComponentInputs>
@@ -512,7 +512,7 @@ export interface expressRouteGateways_expressRouteConnectionsComponentOutputs {
 }
 export interface expressRouteGateways_expressRouteConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExpressRouteConnectionProperties | undefined;
+	readonly properties?: ExpressRouteConnectionProperties;
 }
 export class ExpressRoutePorts
 	extends ArmResource<ExpressRoutePortsComponentInputs>
@@ -531,12 +531,12 @@ export interface ExpressRoutePortsComponentOutputs {
 	readonly type: "Microsoft.Network/ExpressRoutePorts";
 }
 export interface ExpressRoutePortsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ExpressRoutePortPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ExpressRoutePortPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class ExpressRoutePorts_links
 	extends ArmResource<ExpressRoutePorts_linksComponentInputs>
@@ -555,9 +555,9 @@ export interface ExpressRoutePorts_linksComponentOutputs {
 	readonly type: "Microsoft.Network/ExpressRoutePorts/links";
 }
 export interface ExpressRoutePorts_linksComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ExpressRouteLinkPropertiesFormat | undefined;
+	readonly properties?: ExpressRouteLinkPropertiesFormat;
 }
 export class ExpressRoutePortsLocations
 	extends ArmResource<ExpressRoutePortsLocationsComponentInputs>
@@ -576,10 +576,10 @@ export interface ExpressRoutePortsLocationsComponentOutputs {
 	readonly type: "Microsoft.Network/ExpressRoutePortsLocations";
 }
 export interface ExpressRoutePortsLocationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ExpressRoutePortsLocationPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ExpressRoutePortsLocationPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class firewallPolicies
 	extends ArmResource<firewallPoliciesComponentInputs>
@@ -598,12 +598,12 @@ export interface firewallPoliciesComponentOutputs {
 	readonly type: "Microsoft.Network/firewallPolicies";
 }
 export interface firewallPoliciesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: FirewallPolicyPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: FirewallPolicyPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class firewallPolicies_ruleCollectionGroups
 	extends ArmResource<firewallPolicies_ruleCollectionGroupsComponentInputs>
@@ -622,9 +622,9 @@ export interface firewallPolicies_ruleCollectionGroupsComponentOutputs {
 	readonly type: "Microsoft.Network/firewallPolicies/ruleCollectionGroups";
 }
 export interface firewallPolicies_ruleCollectionGroupsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: FirewallPolicyRuleCollectionGroupProperties | undefined;
+	readonly properties?: FirewallPolicyRuleCollectionGroupProperties;
 }
 export class IpAllocations extends ArmResource<IpAllocationsComponentInputs> implements IpAllocationsComponentOutputs {
 	constructor(entity: ADKEntity, options: IpAllocationsComponentInputs) {
@@ -640,11 +640,11 @@ export interface IpAllocationsComponentOutputs {
 	readonly type: "Microsoft.Network/IpAllocations";
 }
 export interface IpAllocationsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: IpAllocationPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: IpAllocationPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class ipGroups extends ArmResource<ipGroupsComponentInputs> implements ipGroupsComponentOutputs {
 	constructor(entity: ADKEntity, options: ipGroupsComponentInputs) {
@@ -660,11 +660,11 @@ export interface ipGroupsComponentOutputs {
 	readonly type: "Microsoft.Network/ipGroups";
 }
 export interface ipGroupsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: IpGroupPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: IpGroupPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class loadBalancers extends ArmResource<loadBalancersComponentInputs> implements loadBalancersComponentOutputs {
 	constructor(entity: ADKEntity, options: loadBalancersComponentInputs) {
@@ -680,13 +680,13 @@ export interface loadBalancersComponentOutputs {
 	readonly type: "Microsoft.Network/loadBalancers";
 }
 export interface loadBalancersComponentInputs {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: LoadBalancerPropertiesFormat | undefined;
-	readonly sku?: LoadBalancerSku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: LoadBalancerPropertiesFormat;
+	readonly sku?: LoadBalancerSku;
+	readonly tags?: ResourceTags;
 }
 export class loadBalancers_backendAddressPools
 	extends ArmResource<loadBalancers_backendAddressPoolsComponentInputs>
@@ -705,9 +705,9 @@ export interface loadBalancers_backendAddressPoolsComponentOutputs {
 	readonly type: "Microsoft.Network/loadBalancers/backendAddressPools";
 }
 export interface loadBalancers_backendAddressPoolsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: BackendAddressPoolPropertiesFormat | undefined;
+	readonly properties?: BackendAddressPoolPropertiesFormat;
 }
 export class loadBalancers_frontendIPConfigurations
 	extends ArmResource<loadBalancers_frontendIPConfigurationsComponentInputs>
@@ -726,10 +726,10 @@ export interface loadBalancers_frontendIPConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Network/loadBalancers/frontendIPConfigurations";
 }
 export interface loadBalancers_frontendIPConfigurationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: FrontendIPConfigurationPropertiesFormat | undefined;
-	readonly zones?: string[] | undefined;
+	readonly properties?: FrontendIPConfigurationPropertiesFormat;
+	readonly zones?: string[];
 }
 export class loadBalancers_inboundNatRules
 	extends ArmResource<loadBalancers_inboundNatRulesComponentInputs>
@@ -748,9 +748,9 @@ export interface loadBalancers_inboundNatRulesComponentOutputs {
 	readonly type: "Microsoft.Network/loadBalancers/inboundNatRules";
 }
 export interface loadBalancers_inboundNatRulesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: InboundNatRulePropertiesFormat | undefined;
+	readonly properties?: InboundNatRulePropertiesFormat;
 }
 export class loadBalancers_loadBalancingRules
 	extends ArmResource<loadBalancers_loadBalancingRulesComponentInputs>
@@ -769,9 +769,9 @@ export interface loadBalancers_loadBalancingRulesComponentOutputs {
 	readonly type: "Microsoft.Network/loadBalancers/loadBalancingRules";
 }
 export interface loadBalancers_loadBalancingRulesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: LoadBalancingRulePropertiesFormat | undefined;
+	readonly properties?: LoadBalancingRulePropertiesFormat;
 }
 export class loadBalancers_outboundRules
 	extends ArmResource<loadBalancers_outboundRulesComponentInputs>
@@ -790,9 +790,9 @@ export interface loadBalancers_outboundRulesComponentOutputs {
 	readonly type: "Microsoft.Network/loadBalancers/outboundRules";
 }
 export interface loadBalancers_outboundRulesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: OutboundRulePropertiesFormat | undefined;
+	readonly properties?: OutboundRulePropertiesFormat;
 }
 export class loadBalancers_probes
 	extends ArmResource<loadBalancers_probesComponentInputs>
@@ -811,9 +811,9 @@ export interface loadBalancers_probesComponentOutputs {
 	readonly type: "Microsoft.Network/loadBalancers/probes";
 }
 export interface loadBalancers_probesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ProbePropertiesFormat | undefined;
+	readonly properties?: ProbePropertiesFormat;
 }
 export class localNetworkGateways
 	extends ArmResource<localNetworkGatewaysComponentInputs>
@@ -832,11 +832,11 @@ export interface localNetworkGatewaysComponentOutputs {
 	readonly type: "Microsoft.Network/localNetworkGateways";
 }
 export interface localNetworkGatewaysComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: LocalNetworkGatewayPropertiesFormat;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class natGateways extends ArmResource<natGatewaysComponentInputs> implements natGatewaysComponentOutputs {
 	constructor(entity: ADKEntity, options: natGatewaysComponentInputs) {
@@ -852,13 +852,13 @@ export interface natGatewaysComponentOutputs {
 	readonly type: "Microsoft.Network/natGateways";
 }
 export interface natGatewaysComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NatGatewayPropertiesFormat | undefined;
-	readonly sku?: NatGatewaySku | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly properties?: NatGatewayPropertiesFormat;
+	readonly sku?: NatGatewaySku;
+	readonly tags?: ResourceTags;
+	readonly zones?: string[];
 }
 export class networkInterfaces
 	extends ArmResource<networkInterfacesComponentInputs>
@@ -877,12 +877,12 @@ export interface networkInterfacesComponentOutputs {
 	readonly type: "Microsoft.Network/networkInterfaces";
 }
 export interface networkInterfacesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkInterfacePropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkInterfacePropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class networkInterfaces_ipConfigurations
 	extends ArmResource<networkInterfaces_ipConfigurationsComponentInputs>
@@ -901,9 +901,9 @@ export interface networkInterfaces_ipConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Network/networkInterfaces/ipConfigurations";
 }
 export interface networkInterfaces_ipConfigurationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: NetworkInterfaceIPConfigurationPropertiesFormat | undefined;
+	readonly properties?: NetworkInterfaceIPConfigurationPropertiesFormat;
 }
 export class networkInterfaces_tapConfigurations
 	extends ArmResource<networkInterfaces_tapConfigurationsComponentInputs>
@@ -922,9 +922,9 @@ export interface networkInterfaces_tapConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Network/networkInterfaces/tapConfigurations";
 }
 export interface networkInterfaces_tapConfigurationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: NetworkInterfaceTapConfigurationPropertiesFormat | undefined;
+	readonly properties?: NetworkInterfaceTapConfigurationPropertiesFormat;
 }
 export class networkProfiles
 	extends ArmResource<networkProfilesComponentInputs>
@@ -943,11 +943,11 @@ export interface networkProfilesComponentOutputs {
 	readonly type: "Microsoft.Network/networkProfiles";
 }
 export interface networkProfilesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkProfilePropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkProfilePropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class networkSecurityGroups
 	extends ArmResource<networkSecurityGroupsComponentInputs>
@@ -966,11 +966,11 @@ export interface networkSecurityGroupsComponentOutputs {
 	readonly type: "Microsoft.Network/networkSecurityGroups";
 }
 export interface networkSecurityGroupsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkSecurityGroupPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkSecurityGroupPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class networkSecurityGroups_defaultSecurityRules
 	extends ArmResource<networkSecurityGroups_defaultSecurityRulesComponentInputs>
@@ -989,9 +989,9 @@ export interface networkSecurityGroups_defaultSecurityRulesComponentOutputs {
 	readonly type: "Microsoft.Network/networkSecurityGroups/defaultSecurityRules";
 }
 export interface networkSecurityGroups_defaultSecurityRulesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: SecurityRulePropertiesFormat | undefined;
+	readonly properties?: SecurityRulePropertiesFormat;
 }
 export class networkSecurityGroups_securityRules
 	extends ArmResource<networkSecurityGroups_securityRulesComponentInputs>
@@ -1010,9 +1010,9 @@ export interface networkSecurityGroups_securityRulesComponentOutputs {
 	readonly type: "Microsoft.Network/networkSecurityGroups/securityRules";
 }
 export interface networkSecurityGroups_securityRulesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: SecurityRulePropertiesFormat | undefined;
+	readonly properties?: SecurityRulePropertiesFormat;
 }
 export class networkVirtualAppliances
 	extends ArmResource<networkVirtualAppliancesComponentInputs>
@@ -1031,12 +1031,12 @@ export interface networkVirtualAppliancesComponentOutputs {
 	readonly type: "Microsoft.Network/networkVirtualAppliances";
 }
 export interface networkVirtualAppliancesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkVirtualAppliancePropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkVirtualAppliancePropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class networkVirtualAppliances_inboundSecurityRules
 	extends ArmResource<networkVirtualAppliances_inboundSecurityRulesComponentInputs>
@@ -1061,9 +1061,9 @@ export interface networkVirtualAppliances_inboundSecurityRulesComponentOutputs {
 	readonly type: "Microsoft.Network/networkVirtualAppliances/inboundSecurityRules";
 }
 export interface networkVirtualAppliances_inboundSecurityRulesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: InboundSecurityRuleProperties | undefined;
+	readonly properties?: InboundSecurityRuleProperties;
 }
 export class networkVirtualAppliances_virtualApplianceSites
 	extends ArmResource<networkVirtualAppliances_virtualApplianceSitesComponentInputs>
@@ -1088,9 +1088,9 @@ export interface networkVirtualAppliances_virtualApplianceSitesComponentOutputs 
 	readonly type: "Microsoft.Network/networkVirtualAppliances/virtualApplianceSites";
 }
 export interface networkVirtualAppliances_virtualApplianceSitesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: VirtualApplianceSiteProperties | undefined;
+	readonly properties?: VirtualApplianceSiteProperties;
 }
 export class networkVirtualApplianceSkus
 	extends ArmResource<networkVirtualApplianceSkusComponentInputs>
@@ -1109,11 +1109,11 @@ export interface networkVirtualApplianceSkusComponentOutputs {
 	readonly type: "Microsoft.Network/networkVirtualApplianceSkus";
 }
 export interface networkVirtualApplianceSkusComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkVirtualApplianceSkuPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkVirtualApplianceSkuPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class networkWatchers
 	extends ArmResource<networkWatchersComponentInputs>
@@ -1132,11 +1132,11 @@ export interface networkWatchersComponentOutputs {
 	readonly type: "Microsoft.Network/networkWatchers";
 }
 export interface networkWatchersComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkWatcherPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkWatcherPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class networkWatchers_connectionMonitors
 	extends ArmResource<networkWatchers_connectionMonitorsComponentInputs>
@@ -1155,11 +1155,11 @@ export interface networkWatchers_connectionMonitorsComponentOutputs {
 	readonly type: "Microsoft.Network/networkWatchers/connectionMonitors";
 }
 export interface networkWatchers_connectionMonitorsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ConnectionMonitorParametersOrConnectionMonitorResultProperties;
-	readonly tags?: ConnectionMonitorTags | undefined;
+	readonly tags?: ConnectionMonitorTags;
 }
 export class networkWatchers_flowLogs
 	extends ArmResource<networkWatchers_flowLogsComponentInputs>
@@ -1178,11 +1178,11 @@ export interface networkWatchers_flowLogsComponentOutputs {
 	readonly type: "Microsoft.Network/networkWatchers/flowLogs";
 }
 export interface networkWatchers_flowLogsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: FlowLogPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: FlowLogPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class networkWatchers_packetCaptures
 	extends ArmResource<networkWatchers_packetCapturesComponentInputs>
@@ -1201,7 +1201,7 @@ export interface networkWatchers_packetCapturesComponentOutputs {
 	readonly type: "Microsoft.Network/networkWatchers/packetCaptures";
 }
 export interface networkWatchers_packetCapturesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly properties: PacketCaptureParametersOrPacketCaptureResultProperties;
 }
@@ -1219,11 +1219,11 @@ export interface p2svpnGatewaysComponentOutputs {
 	readonly type: "Microsoft.Network/p2svpnGateways";
 }
 export interface p2svpnGatewaysComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: P2SVpnGatewayProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: P2SVpnGatewayProperties;
+	readonly tags?: ResourceTags;
 }
 export class privateEndpoints
 	extends ArmResource<privateEndpointsComponentInputs>
@@ -1242,12 +1242,12 @@ export interface privateEndpointsComponentOutputs {
 	readonly type: "Microsoft.Network/privateEndpoints";
 }
 export interface privateEndpointsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PrivateEndpointProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: PrivateEndpointProperties;
+	readonly tags?: ResourceTags;
 }
 export class privateEndpoints_privateDnsZoneGroups
 	extends ArmResource<privateEndpoints_privateDnsZoneGroupsComponentInputs>
@@ -1266,9 +1266,9 @@ export interface privateEndpoints_privateDnsZoneGroupsComponentOutputs {
 	readonly type: "Microsoft.Network/privateEndpoints/privateDnsZoneGroups";
 }
 export interface privateEndpoints_privateDnsZoneGroupsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: PrivateDnsZoneGroupPropertiesFormat | undefined;
+	readonly properties?: PrivateDnsZoneGroupPropertiesFormat;
 }
 export class privateLinkServices
 	extends ArmResource<privateLinkServicesComponentInputs>
@@ -1287,12 +1287,12 @@ export interface privateLinkServicesComponentOutputs {
 	readonly type: "Microsoft.Network/privateLinkServices";
 }
 export interface privateLinkServicesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PrivateLinkServiceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: PrivateLinkServiceProperties;
+	readonly tags?: ResourceTags;
 }
 export class privateLinkServices_privateEndpointConnections
 	extends ArmResource<privateLinkServices_privateEndpointConnectionsComponentInputs>
@@ -1317,9 +1317,9 @@ export interface privateLinkServices_privateEndpointConnectionsComponentOutputs 
 	readonly type: "Microsoft.Network/privateLinkServices/privateEndpointConnections";
 }
 export interface privateLinkServices_privateEndpointConnectionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class publicIPAddresses
 	extends ArmResource<publicIPAddressesComponentInputs>
@@ -1338,14 +1338,14 @@ export interface publicIPAddressesComponentOutputs {
 	readonly type: "Microsoft.Network/publicIPAddresses";
 }
 export interface publicIPAddressesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PublicIPAddressPropertiesFormat | undefined;
-	readonly sku?: PublicIPAddressSku | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly properties?: PublicIPAddressPropertiesFormat;
+	readonly sku?: PublicIPAddressSku;
+	readonly tags?: ResourceTags;
+	readonly zones?: string[];
 }
 export class publicIPPrefixes
 	extends ArmResource<publicIPPrefixesComponentInputs>
@@ -1364,14 +1364,14 @@ export interface publicIPPrefixesComponentOutputs {
 	readonly type: "Microsoft.Network/publicIPPrefixes";
 }
 export interface publicIPPrefixesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PublicIPPrefixPropertiesFormat | undefined;
-	readonly sku?: PublicIPPrefixSku | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly properties?: PublicIPPrefixPropertiesFormat;
+	readonly sku?: PublicIPPrefixSku;
+	readonly tags?: ResourceTags;
+	readonly zones?: string[];
 }
 export class routeFilters extends ArmResource<routeFiltersComponentInputs> implements routeFiltersComponentOutputs {
 	constructor(entity: ADKEntity, options: routeFiltersComponentInputs) {
@@ -1387,11 +1387,11 @@ export interface routeFiltersComponentOutputs {
 	readonly type: "Microsoft.Network/routeFilters";
 }
 export interface routeFiltersComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RouteFilterPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: RouteFilterPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class routeFilters_routeFilterRules
 	extends ArmResource<routeFilters_routeFilterRulesComponentInputs>
@@ -1410,10 +1410,10 @@ export interface routeFilters_routeFilterRulesComponentOutputs {
 	readonly type: "Microsoft.Network/routeFilters/routeFilterRules";
 }
 export interface routeFilters_routeFilterRulesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RouteFilterRulePropertiesFormat | undefined;
+	readonly properties?: RouteFilterRulePropertiesFormat;
 }
 export class routeTables extends ArmResource<routeTablesComponentInputs> implements routeTablesComponentOutputs {
 	constructor(entity: ADKEntity, options: routeTablesComponentInputs) {
@@ -1429,11 +1429,11 @@ export interface routeTablesComponentOutputs {
 	readonly type: "Microsoft.Network/routeTables";
 }
 export interface routeTablesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RouteTablePropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: RouteTablePropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class routeTables_routes
 	extends ArmResource<routeTables_routesComponentInputs>
@@ -1452,9 +1452,9 @@ export interface routeTables_routesComponentOutputs {
 	readonly type: "Microsoft.Network/routeTables/routes";
 }
 export interface routeTables_routesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RoutePropertiesFormat | undefined;
+	readonly properties?: RoutePropertiesFormat;
 }
 export class securityPartnerProviders
 	extends ArmResource<securityPartnerProvidersComponentInputs>
@@ -1473,11 +1473,11 @@ export interface securityPartnerProvidersComponentOutputs {
 	readonly type: "Microsoft.Network/securityPartnerProviders";
 }
 export interface securityPartnerProvidersComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SecurityPartnerProviderPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SecurityPartnerProviderPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class serviceEndpointPolicies
 	extends ArmResource<serviceEndpointPoliciesComponentInputs>
@@ -1496,11 +1496,11 @@ export interface serviceEndpointPoliciesComponentOutputs {
 	readonly type: "Microsoft.Network/serviceEndpointPolicies";
 }
 export interface serviceEndpointPoliciesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ServiceEndpointPolicyPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ServiceEndpointPolicyPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class serviceEndpointPolicies_serviceEndpointPolicyDefinitions
 	extends ArmResource<serviceEndpointPolicies_serviceEndpointPolicyDefinitionsComponentInputs>
@@ -1525,9 +1525,9 @@ export interface serviceEndpointPolicies_serviceEndpointPolicyDefinitionsCompone
 	readonly type: "Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions";
 }
 export interface serviceEndpointPolicies_serviceEndpointPolicyDefinitionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ServiceEndpointPolicyDefinitionPropertiesFormat | undefined;
+	readonly properties?: ServiceEndpointPolicyDefinitionPropertiesFormat;
 }
 export class virtualHubs extends ArmResource<virtualHubsComponentInputs> implements virtualHubsComponentOutputs {
 	constructor(entity: ADKEntity, options: virtualHubsComponentInputs) {
@@ -1543,11 +1543,11 @@ export interface virtualHubsComponentOutputs {
 	readonly type: "Microsoft.Network/virtualHubs";
 }
 export interface virtualHubsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VirtualHubProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VirtualHubProperties;
+	readonly tags?: ResourceTags;
 }
 export class virtualHubs_bgpConnections
 	extends ArmResource<virtualHubs_bgpConnectionsComponentInputs>
@@ -1566,9 +1566,9 @@ export interface virtualHubs_bgpConnectionsComponentOutputs {
 	readonly type: "Microsoft.Network/virtualHubs/bgpConnections";
 }
 export interface virtualHubs_bgpConnectionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: BgpConnectionProperties | undefined;
+	readonly properties?: BgpConnectionProperties;
 }
 export class virtualHubs_hubRouteTables
 	extends ArmResource<virtualHubs_hubRouteTablesComponentInputs>
@@ -1587,9 +1587,9 @@ export interface virtualHubs_hubRouteTablesComponentOutputs {
 	readonly type: "Microsoft.Network/virtualHubs/hubRouteTables";
 }
 export interface virtualHubs_hubRouteTablesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: HubRouteTableProperties | undefined;
+	readonly properties?: HubRouteTableProperties;
 }
 export class virtualHubs_hubVirtualNetworkConnections
 	extends ArmResource<virtualHubs_hubVirtualNetworkConnectionsComponentInputs>
@@ -1608,9 +1608,9 @@ export interface virtualHubs_hubVirtualNetworkConnectionsComponentOutputs {
 	readonly type: "Microsoft.Network/virtualHubs/hubVirtualNetworkConnections";
 }
 export interface virtualHubs_hubVirtualNetworkConnectionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: HubVirtualNetworkConnectionProperties | undefined;
+	readonly properties?: HubVirtualNetworkConnectionProperties;
 }
 export class virtualHubs_ipConfigurations
 	extends ArmResource<virtualHubs_ipConfigurationsComponentInputs>
@@ -1629,9 +1629,9 @@ export interface virtualHubs_ipConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Network/virtualHubs/ipConfigurations";
 }
 export interface virtualHubs_ipConfigurationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: HubIPConfigurationPropertiesFormat | undefined;
+	readonly properties?: HubIPConfigurationPropertiesFormat;
 }
 export class virtualHubs_routeTables
 	extends ArmResource<virtualHubs_routeTablesComponentInputs>
@@ -1650,9 +1650,9 @@ export interface virtualHubs_routeTablesComponentOutputs {
 	readonly type: "Microsoft.Network/virtualHubs/routeTables";
 }
 export interface virtualHubs_routeTablesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: VirtualHubRouteTableV2Properties | undefined;
+	readonly properties?: VirtualHubRouteTableV2Properties;
 }
 export class virtualNetworkGateways
 	extends ArmResource<virtualNetworkGatewaysComponentInputs>
@@ -1671,12 +1671,12 @@ export interface virtualNetworkGatewaysComponentOutputs {
 	readonly type: "Microsoft.Network/virtualNetworkGateways";
 }
 export interface virtualNetworkGatewaysComponentInputs {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: VirtualNetworkGatewayPropertiesFormat;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class virtualNetworks
 	extends ArmResource<virtualNetworksComponentInputs>
@@ -1695,12 +1695,12 @@ export interface virtualNetworksComponentOutputs {
 	readonly type: "Microsoft.Network/virtualNetworks";
 }
 export interface virtualNetworksComponentInputs {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VirtualNetworkPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VirtualNetworkPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class virtualNetworks_subnets
 	extends ArmResource<virtualNetworks_subnetsComponentInputs>
@@ -1719,9 +1719,9 @@ export interface virtualNetworks_subnetsComponentOutputs {
 	readonly type: "Microsoft.Network/virtualNetworks/subnets";
 }
 export interface virtualNetworks_subnetsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: SubnetPropertiesFormat | undefined;
+	readonly properties?: SubnetPropertiesFormat;
 }
 export class virtualNetworks_virtualNetworkPeerings
 	extends ArmResource<virtualNetworks_virtualNetworkPeeringsComponentInputs>
@@ -1740,9 +1740,9 @@ export interface virtualNetworks_virtualNetworkPeeringsComponentOutputs {
 	readonly type: "Microsoft.Network/virtualNetworks/virtualNetworkPeerings";
 }
 export interface virtualNetworks_virtualNetworkPeeringsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: VirtualNetworkPeeringPropertiesFormat | undefined;
+	readonly properties?: VirtualNetworkPeeringPropertiesFormat;
 }
 export class virtualNetworkTaps
 	extends ArmResource<virtualNetworkTapsComponentInputs>
@@ -1761,11 +1761,11 @@ export interface virtualNetworkTapsComponentOutputs {
 	readonly type: "Microsoft.Network/virtualNetworkTaps";
 }
 export interface virtualNetworkTapsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VirtualNetworkTapPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VirtualNetworkTapPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class virtualRouters extends ArmResource<virtualRoutersComponentInputs> implements virtualRoutersComponentOutputs {
 	constructor(entity: ADKEntity, options: virtualRoutersComponentInputs) {
@@ -1781,11 +1781,11 @@ export interface virtualRoutersComponentOutputs {
 	readonly type: "Microsoft.Network/virtualRouters";
 }
 export interface virtualRoutersComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VirtualRouterPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VirtualRouterPropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export class virtualRouters_peerings
 	extends ArmResource<virtualRouters_peeringsComponentInputs>
@@ -1804,9 +1804,9 @@ export interface virtualRouters_peeringsComponentOutputs {
 	readonly type: "Microsoft.Network/virtualRouters/peerings";
 }
 export interface virtualRouters_peeringsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: VirtualRouterPeeringProperties | undefined;
+	readonly properties?: VirtualRouterPeeringProperties;
 }
 export class virtualWans extends ArmResource<virtualWansComponentInputs> implements virtualWansComponentOutputs {
 	constructor(entity: ADKEntity, options: virtualWansComponentInputs) {
@@ -1822,11 +1822,11 @@ export interface virtualWansComponentOutputs {
 	readonly type: "Microsoft.Network/virtualWans";
 }
 export interface virtualWansComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VirtualWanProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VirtualWanProperties;
+	readonly tags?: ResourceTags;
 }
 export class vpnGateways extends ArmResource<vpnGatewaysComponentInputs> implements vpnGatewaysComponentOutputs {
 	constructor(entity: ADKEntity, options: vpnGatewaysComponentInputs) {
@@ -1842,11 +1842,11 @@ export interface vpnGatewaysComponentOutputs {
 	readonly type: "Microsoft.Network/vpnGateways";
 }
 export interface vpnGatewaysComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VpnGatewayProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VpnGatewayProperties;
+	readonly tags?: ResourceTags;
 }
 export class vpnGateways_natRules
 	extends ArmResource<vpnGateways_natRulesComponentInputs>
@@ -1865,9 +1865,9 @@ export interface vpnGateways_natRulesComponentOutputs {
 	readonly type: "Microsoft.Network/vpnGateways/natRules";
 }
 export interface vpnGateways_natRulesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: VpnGatewayNatRuleProperties | undefined;
+	readonly properties?: VpnGatewayNatRuleProperties;
 }
 export class vpnGateways_vpnConnections
 	extends ArmResource<vpnGateways_vpnConnectionsComponentInputs>
@@ -1886,9 +1886,9 @@ export interface vpnGateways_vpnConnectionsComponentOutputs {
 	readonly type: "Microsoft.Network/vpnGateways/vpnConnections";
 }
 export interface vpnGateways_vpnConnectionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: VpnConnectionProperties | undefined;
+	readonly properties?: VpnConnectionProperties;
 }
 export class vpnGateways_vpnConnections_vpnLinkConnections
 	extends ArmResource<vpnGateways_vpnConnections_vpnLinkConnectionsComponentInputs>
@@ -1913,9 +1913,9 @@ export interface vpnGateways_vpnConnections_vpnLinkConnectionsComponentOutputs {
 	readonly type: "Microsoft.Network/vpnGateways/vpnConnections/vpnLinkConnections";
 }
 export interface vpnGateways_vpnConnections_vpnLinkConnectionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: VpnSiteLinkConnectionProperties | undefined;
+	readonly properties?: VpnSiteLinkConnectionProperties;
 }
 export class vpnServerConfigurations
 	extends ArmResource<vpnServerConfigurationsComponentInputs>
@@ -1934,11 +1934,11 @@ export interface vpnServerConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Network/vpnServerConfigurations";
 }
 export interface vpnServerConfigurationsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VpnServerConfigurationProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VpnServerConfigurationProperties;
+	readonly tags?: ResourceTags;
 }
 export class vpnSites extends ArmResource<vpnSitesComponentInputs> implements vpnSitesComponentOutputs {
 	constructor(entity: ADKEntity, options: vpnSitesComponentInputs) {
@@ -1954,11 +1954,11 @@ export interface vpnSitesComponentOutputs {
 	readonly type: "Microsoft.Network/vpnSites";
 }
 export interface vpnSitesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VpnSiteProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VpnSiteProperties;
+	readonly tags?: ResourceTags;
 }
 export class vpnSites_vpnSiteLinks
 	extends ArmResource<vpnSites_vpnSiteLinksComponentInputs>
@@ -1977,136 +1977,131 @@ export interface vpnSites_vpnSiteLinksComponentOutputs {
 	readonly type: "Microsoft.Network/vpnSites/vpnSiteLinks";
 }
 export interface vpnSites_vpnSiteLinksComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: VpnSiteLinkProperties | undefined;
+	readonly properties?: VpnSiteLinkProperties;
 }
 export interface AadAuthenticationParameters {
-	readonly aadAudience?: string | undefined;
-	readonly aadIssuer?: string | undefined;
-	readonly aadTenant?: string | undefined;
+	readonly aadAudience?: string;
+	readonly aadIssuer?: string;
+	readonly aadTenant?: string;
 }
 export interface AddressSpace {
-	readonly addressPrefixes?: string[] | undefined;
+	readonly addressPrefixes?: string[];
 }
 export interface ApplicationGateway {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
-	readonly zones?: string[] | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayPropertiesFormat;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
+	readonly zones?: string[];
 }
 export interface ApplicationGatewayAuthenticationCertificate {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayAuthenticationCertificatePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayAuthenticationCertificatePropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayAuthenticationCertificatePropertiesFormat {
-	readonly data?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly data?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ApplicationGatewayAutoscaleConfiguration {
-	readonly maxCapacity?: number | undefined;
+	readonly maxCapacity?: number;
 	readonly minCapacity: number;
 }
 export interface ApplicationGatewayAvailableSslOptionsPropertiesFormat {
 	readonly availableCipherSuites?:
-		| (
-				| "TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA"
-				| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA"
-				| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA256"
-				| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA"
-				| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA256"
-				| "TLS_DHE_RSA_WITH_AES_128_CBC_SHA"
-				| "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_DHE_RSA_WITH_AES_256_CBC_SHA"
-				| "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384"
-				| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA"
-				| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256"
-				| "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA"
-				| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384"
-				| "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
-				| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA"
-				| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"
-				| "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA"
-				| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
-				| "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
-				| "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
-				| "TLS_RSA_WITH_AES_128_CBC_SHA"
-				| "TLS_RSA_WITH_AES_128_CBC_SHA256"
-				| "TLS_RSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_RSA_WITH_AES_256_CBC_SHA"
-				| "TLS_RSA_WITH_AES_256_CBC_SHA256"
-				| "TLS_RSA_WITH_AES_256_GCM_SHA384"[]
-		  )
-		| undefined;
-	readonly availableProtocols?: ("TLSv1_0" | "TLSv1_1" | "TLSv1_2"[]) | undefined;
-	readonly defaultPolicy?:
-		| ("AppGwSslPolicy20150501" | "AppGwSslPolicy20170401" | "AppGwSslPolicy20170401S")
-		| undefined;
-	readonly predefinedPolicies?: SubResource[] | undefined;
+		| "TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA"
+		| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA"
+		| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA256"
+		| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA"
+		| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA256"
+		| "TLS_DHE_RSA_WITH_AES_128_CBC_SHA"
+		| "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_DHE_RSA_WITH_AES_256_CBC_SHA"
+		| "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384"
+		| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA"
+		| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256"
+		| "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA"
+		| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384"
+		| "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+		| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA"
+		| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"
+		| "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA"
+		| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
+		| "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+		| "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+		| "TLS_RSA_WITH_AES_128_CBC_SHA"
+		| "TLS_RSA_WITH_AES_128_CBC_SHA256"
+		| "TLS_RSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_RSA_WITH_AES_256_CBC_SHA"
+		| "TLS_RSA_WITH_AES_256_CBC_SHA256"
+		| "TLS_RSA_WITH_AES_256_GCM_SHA384"[];
+	readonly availableProtocols?: "TLSv1_0" | "TLSv1_1" | "TLSv1_2"[];
+	readonly defaultPolicy?: "AppGwSslPolicy20150501" | "AppGwSslPolicy20170401" | "AppGwSslPolicy20170401S";
+	readonly predefinedPolicies?: SubResource[];
 }
 export interface ApplicationGatewayBackendAddress {
-	readonly fqdn?: string | undefined;
-	readonly ipAddress?: string | undefined;
+	readonly fqdn?: string;
+	readonly ipAddress?: string;
 }
 export interface ApplicationGatewayBackendAddressPool {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayBackendAddressPoolPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayBackendAddressPoolPropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayBackendAddressPoolPropertiesFormat {
-	readonly backendAddresses?: ApplicationGatewayBackendAddress[] | undefined;
-	readonly backendIPConfigurations?: NetworkInterfaceIPConfiguration[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly backendAddresses?: ApplicationGatewayBackendAddress[];
+	readonly backendIPConfigurations?: NetworkInterfaceIPConfiguration[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ApplicationGatewayBackendHttpSettings {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayBackendHttpSettingsPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayBackendHttpSettingsPropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayBackendHttpSettingsPropertiesFormat {
-	readonly affinityCookieName?: string | undefined;
-	readonly authenticationCertificates?: SubResource[] | undefined;
-	readonly connectionDraining?: ApplicationGatewayConnectionDraining | undefined;
-	readonly cookieBasedAffinity?: ("Disabled" | "Enabled") | undefined;
-	readonly hostName?: string | undefined;
-	readonly path?: string | undefined;
-	readonly pickHostNameFromBackendAddress?: boolean | undefined;
-	readonly port?: number | undefined;
-	readonly probe?: SubResource | undefined;
-	readonly probeEnabled?: boolean | undefined;
-	readonly protocol?: ("Http" | "Https") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly requestTimeout?: number | undefined;
-	readonly trustedRootCertificates?: SubResource[] | undefined;
+	readonly affinityCookieName?: string;
+	readonly authenticationCertificates?: SubResource[];
+	readonly connectionDraining?: ApplicationGatewayConnectionDraining;
+	readonly cookieBasedAffinity?: "Disabled" | "Enabled";
+	readonly hostName?: string;
+	readonly path?: string;
+	readonly pickHostNameFromBackendAddress?: boolean;
+	readonly port?: number;
+	readonly probe?: SubResource;
+	readonly probeEnabled?: boolean;
+	readonly protocol?: "Http" | "Https";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly requestTimeout?: number;
+	readonly trustedRootCertificates?: SubResource[];
 }
 export interface ApplicationGatewayClientAuthConfiguration {
-	readonly verifyClientCertIssuerDN?: boolean | undefined;
+	readonly verifyClientCertIssuerDN?: boolean;
 }
 export interface ApplicationGatewayConnectionDraining {
 	readonly drainTimeoutInSec: number;
 	readonly enabled: boolean;
 }
 export interface ApplicationGatewayCustomError {
-	readonly customErrorPageUrl?: string | undefined;
-	readonly statusCode?: ("HttpStatus403" | "HttpStatus502") | undefined;
+	readonly customErrorPageUrl?: string;
+	readonly statusCode?: "HttpStatus403" | "HttpStatus502";
 }
 export interface ApplicationGatewayFirewallDisabledRuleGroup {
 	readonly ruleGroupName: string;
-	readonly rules?: number[] | undefined;
+	readonly rules?: number[];
 }
 export interface ApplicationGatewayFirewallExclusion {
 	readonly matchVariable: string;
@@ -2114,1143 +2109,1144 @@ export interface ApplicationGatewayFirewallExclusion {
 	readonly selectorMatchOperator: string;
 }
 export interface ApplicationGatewayFrontendIPConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayFrontendIPConfigurationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayFrontendIPConfigurationPropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayFrontendIPConfigurationPropertiesFormat {
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly privateLinkConfiguration?: SubResource | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIPAddress?: SubResource | undefined;
-	readonly subnet?: SubResource | undefined;
+	readonly privateIPAddress?: string;
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly privateLinkConfiguration?: SubResource;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIPAddress?: SubResource;
+	readonly subnet?: SubResource;
 }
 export interface ApplicationGatewayFrontendPort {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayFrontendPortPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayFrontendPortPropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayFrontendPortPropertiesFormat {
-	readonly port?: number | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly port?: number;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ApplicationGatewayHeaderConfiguration {
-	readonly headerName?: string | undefined;
-	readonly headerValue?: string | undefined;
+	readonly headerName?: string;
+	readonly headerValue?: string;
 }
 export interface ApplicationGatewayHttpListener {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayHttpListenerPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayHttpListenerPropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayHttpListenerPropertiesFormat {
-	readonly customErrorConfigurations?: ApplicationGatewayCustomError[] | undefined;
-	readonly firewallPolicy?: SubResource | undefined;
-	readonly frontendIPConfiguration?: SubResource | undefined;
-	readonly frontendPort?: SubResource | undefined;
-	readonly hostName?: string | undefined;
-	readonly hostNames?: string[] | undefined;
-	readonly protocol?: ("Http" | "Https") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly requireServerNameIndication?: boolean | undefined;
-	readonly sslCertificate?: SubResource | undefined;
-	readonly sslProfile?: SubResource | undefined;
+	readonly customErrorConfigurations?: ApplicationGatewayCustomError[];
+	readonly firewallPolicy?: SubResource;
+	readonly frontendIPConfiguration?: SubResource;
+	readonly frontendPort?: SubResource;
+	readonly hostName?: string;
+	readonly hostNames?: string[];
+	readonly protocol?: "Http" | "Https";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly requireServerNameIndication?: boolean;
+	readonly sslCertificate?: SubResource;
+	readonly sslProfile?: SubResource;
 }
 export interface ApplicationGatewayIPConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayIPConfigurationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayIPConfigurationPropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayIPConfigurationPropertiesFormat {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly subnet?: SubResource | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly subnet?: SubResource;
 }
 export interface ApplicationGatewayPathRule {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayPathRulePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayPathRulePropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayPathRulePropertiesFormat {
-	readonly backendAddressPool?: SubResource | undefined;
-	readonly backendHttpSettings?: SubResource | undefined;
-	readonly firewallPolicy?: SubResource | undefined;
-	readonly paths?: string[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly redirectConfiguration?: SubResource | undefined;
-	readonly rewriteRuleSet?: SubResource | undefined;
+	readonly backendAddressPool?: SubResource;
+	readonly backendHttpSettings?: SubResource;
+	readonly firewallPolicy?: SubResource;
+	readonly paths?: string[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly redirectConfiguration?: SubResource;
+	readonly rewriteRuleSet?: SubResource;
 }
 export interface ApplicationGatewayPrivateEndpointConnection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayPrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayPrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface ApplicationGatewayPrivateEndpointConnectionProperties {
-	readonly linkIdentifier?: string | undefined;
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly linkIdentifier?: string;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ApplicationGatewayPrivateLinkConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayPrivateLinkConfigurationProperties | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayPrivateLinkConfigurationProperties;
+	readonly type?: string;
 }
 export interface ApplicationGatewayPrivateLinkConfigurationProperties {
-	readonly ipConfigurations?: ApplicationGatewayPrivateLinkIpConfiguration[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly ipConfigurations?: ApplicationGatewayPrivateLinkIpConfiguration[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ApplicationGatewayPrivateLinkIpConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayPrivateLinkIpConfigurationProperties | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayPrivateLinkIpConfigurationProperties;
+	readonly type?: string;
 }
 export interface ApplicationGatewayPrivateLinkIpConfigurationProperties {
-	readonly primary?: boolean | undefined;
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly subnet?: SubResource | undefined;
+	readonly primary?: boolean;
+	readonly privateIPAddress?: string;
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly subnet?: SubResource;
 }
 export interface ApplicationGatewayProbe {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayProbePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayProbePropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayProbeHealthResponseMatch {
-	readonly body?: string | undefined;
-	readonly statusCodes?: string[] | undefined;
+	readonly body?: string;
+	readonly statusCodes?: string[];
 }
 export interface ApplicationGatewayProbePropertiesFormat {
-	readonly host?: string | undefined;
-	readonly interval?: number | undefined;
-	readonly match?: ApplicationGatewayProbeHealthResponseMatch | undefined;
-	readonly minServers?: number | undefined;
-	readonly path?: string | undefined;
-	readonly pickHostNameFromBackendHttpSettings?: boolean | undefined;
-	readonly port?: number | undefined;
-	readonly protocol?: ("Http" | "Https") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly timeout?: number | undefined;
-	readonly unhealthyThreshold?: number | undefined;
+	readonly host?: string;
+	readonly interval?: number;
+	readonly match?: ApplicationGatewayProbeHealthResponseMatch;
+	readonly minServers?: number;
+	readonly path?: string;
+	readonly pickHostNameFromBackendHttpSettings?: boolean;
+	readonly port?: number;
+	readonly protocol?: "Http" | "Https";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly timeout?: number;
+	readonly unhealthyThreshold?: number;
 }
 export interface ApplicationGatewayPropertiesFormat {
-	readonly authenticationCertificates?: ApplicationGatewayAuthenticationCertificate[] | undefined;
-	readonly autoscaleConfiguration?: ApplicationGatewayAutoscaleConfiguration | undefined;
-	readonly backendAddressPools?: ApplicationGatewayBackendAddressPool[] | undefined;
-	readonly backendHttpSettingsCollection?: ApplicationGatewayBackendHttpSettings[] | undefined;
-	readonly customErrorConfigurations?: ApplicationGatewayCustomError[] | undefined;
-	readonly enableFips?: boolean | undefined;
-	readonly enableHttp2?: boolean | undefined;
-	readonly firewallPolicy?: SubResource | undefined;
-	readonly forceFirewallPolicyAssociation?: boolean | undefined;
-	readonly frontendIPConfigurations?: ApplicationGatewayFrontendIPConfiguration[] | undefined;
-	readonly frontendPorts?: ApplicationGatewayFrontendPort[] | undefined;
-	readonly gatewayIPConfigurations?: ApplicationGatewayIPConfiguration[] | undefined;
-	readonly httpListeners?: ApplicationGatewayHttpListener[] | undefined;
-	readonly operationalState?: ("Running" | "Starting" | "Stopped" | "Stopping") | undefined;
-	readonly privateEndpointConnections?: ApplicationGatewayPrivateEndpointConnection[] | undefined;
-	readonly privateLinkConfigurations?: ApplicationGatewayPrivateLinkConfiguration[] | undefined;
-	readonly probes?: ApplicationGatewayProbe[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly redirectConfigurations?: ApplicationGatewayRedirectConfiguration[] | undefined;
-	readonly requestRoutingRules?: ApplicationGatewayRequestRoutingRule[] | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly rewriteRuleSets?: ApplicationGatewayRewriteRuleSet[] | undefined;
-	readonly sku?: ApplicationGatewaySku | undefined;
-	readonly sslCertificates?: ApplicationGatewaySslCertificate[] | undefined;
-	readonly sslPolicy?: ApplicationGatewaySslPolicy | undefined;
-	readonly sslProfiles?: ApplicationGatewaySslProfile[] | undefined;
-	readonly trustedClientCertificates?: ApplicationGatewayTrustedClientCertificate[] | undefined;
-	readonly trustedRootCertificates?: ApplicationGatewayTrustedRootCertificate[] | undefined;
-	readonly urlPathMaps?: ApplicationGatewayUrlPathMap[] | undefined;
-	readonly webApplicationFirewallConfiguration?: ApplicationGatewayWebApplicationFirewallConfiguration | undefined;
+	readonly authenticationCertificates?: ApplicationGatewayAuthenticationCertificate[];
+	readonly autoscaleConfiguration?: ApplicationGatewayAutoscaleConfiguration;
+	readonly backendAddressPools?: ApplicationGatewayBackendAddressPool[];
+	readonly backendHttpSettingsCollection?: ApplicationGatewayBackendHttpSettings[];
+	readonly customErrorConfigurations?: ApplicationGatewayCustomError[];
+	readonly enableFips?: boolean;
+	readonly enableHttp2?: boolean;
+	readonly firewallPolicy?: SubResource;
+	readonly forceFirewallPolicyAssociation?: boolean;
+	readonly frontendIPConfigurations?: ApplicationGatewayFrontendIPConfiguration[];
+	readonly frontendPorts?: ApplicationGatewayFrontendPort[];
+	readonly gatewayIPConfigurations?: ApplicationGatewayIPConfiguration[];
+	readonly httpListeners?: ApplicationGatewayHttpListener[];
+	readonly operationalState?: "Running" | "Starting" | "Stopped" | "Stopping";
+	readonly privateEndpointConnections?: ApplicationGatewayPrivateEndpointConnection[];
+	readonly privateLinkConfigurations?: ApplicationGatewayPrivateLinkConfiguration[];
+	readonly probes?: ApplicationGatewayProbe[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly redirectConfigurations?: ApplicationGatewayRedirectConfiguration[];
+	readonly requestRoutingRules?: ApplicationGatewayRequestRoutingRule[];
+	readonly resourceGuid?: string;
+	readonly rewriteRuleSets?: ApplicationGatewayRewriteRuleSet[];
+	readonly sku?: ApplicationGatewaySku;
+	readonly sslCertificates?: ApplicationGatewaySslCertificate[];
+	readonly sslPolicy?: ApplicationGatewaySslPolicy;
+	readonly sslProfiles?: ApplicationGatewaySslProfile[];
+	readonly trustedClientCertificates?: ApplicationGatewayTrustedClientCertificate[];
+	readonly trustedRootCertificates?: ApplicationGatewayTrustedRootCertificate[];
+	readonly urlPathMaps?: ApplicationGatewayUrlPathMap[];
+	readonly webApplicationFirewallConfiguration?: ApplicationGatewayWebApplicationFirewallConfiguration;
 }
 export interface ApplicationGatewayRedirectConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayRedirectConfigurationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayRedirectConfigurationPropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayRedirectConfigurationPropertiesFormat {
-	readonly includePath?: boolean | undefined;
-	readonly includeQueryString?: boolean | undefined;
-	readonly pathRules?: SubResource[] | undefined;
-	readonly redirectType?: ("Found" | "Permanent" | "SeeOther" | "Temporary") | undefined;
-	readonly requestRoutingRules?: SubResource[] | undefined;
-	readonly targetListener?: SubResource | undefined;
-	readonly targetUrl?: string | undefined;
-	readonly urlPathMaps?: SubResource[] | undefined;
+	readonly includePath?: boolean;
+	readonly includeQueryString?: boolean;
+	readonly pathRules?: SubResource[];
+	readonly redirectType?: "Found" | "Permanent" | "SeeOther" | "Temporary";
+	readonly requestRoutingRules?: SubResource[];
+	readonly targetListener?: SubResource;
+	readonly targetUrl?: string;
+	readonly urlPathMaps?: SubResource[];
 }
 export interface ApplicationGatewayRequestRoutingRule {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayRequestRoutingRulePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayRequestRoutingRulePropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayRequestRoutingRulePropertiesFormat {
-	readonly backendAddressPool?: SubResource | undefined;
-	readonly backendHttpSettings?: SubResource | undefined;
-	readonly httpListener?: SubResource | undefined;
-	readonly priority?: number | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly redirectConfiguration?: SubResource | undefined;
-	readonly rewriteRuleSet?: SubResource | undefined;
-	readonly ruleType?: ("Basic" | "PathBasedRouting") | undefined;
-	readonly urlPathMap?: SubResource | undefined;
+	readonly backendAddressPool?: SubResource;
+	readonly backendHttpSettings?: SubResource;
+	readonly httpListener?: SubResource;
+	readonly priority?: number;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly redirectConfiguration?: SubResource;
+	readonly rewriteRuleSet?: SubResource;
+	readonly ruleType?: "Basic" | "PathBasedRouting";
+	readonly urlPathMap?: SubResource;
 }
 export interface ApplicationGatewayRewriteRule {
-	readonly actionSet?: ApplicationGatewayRewriteRuleActionSet | undefined;
-	readonly conditions?: ApplicationGatewayRewriteRuleCondition[] | undefined;
-	readonly name?: string | undefined;
-	readonly ruleSequence?: number | undefined;
+	readonly actionSet?: ApplicationGatewayRewriteRuleActionSet;
+	readonly conditions?: ApplicationGatewayRewriteRuleCondition[];
+	readonly name?: string;
+	readonly ruleSequence?: number;
 }
 export interface ApplicationGatewayRewriteRuleActionSet {
-	readonly requestHeaderConfigurations?: ApplicationGatewayHeaderConfiguration[] | undefined;
-	readonly responseHeaderConfigurations?: ApplicationGatewayHeaderConfiguration[] | undefined;
-	readonly urlConfiguration?: ApplicationGatewayUrlConfiguration | undefined;
+	readonly requestHeaderConfigurations?: ApplicationGatewayHeaderConfiguration[];
+	readonly responseHeaderConfigurations?: ApplicationGatewayHeaderConfiguration[];
+	readonly urlConfiguration?: ApplicationGatewayUrlConfiguration;
 }
 export interface ApplicationGatewayRewriteRuleCondition {
-	readonly ignoreCase?: boolean | undefined;
-	readonly negate?: boolean | undefined;
-	readonly pattern?: string | undefined;
-	readonly variable?: string | undefined;
+	readonly ignoreCase?: boolean;
+	readonly negate?: boolean;
+	readonly pattern?: string;
+	readonly variable?: string;
 }
 export interface ApplicationGatewayRewriteRuleSet {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayRewriteRuleSetPropertiesFormat | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayRewriteRuleSetPropertiesFormat;
 }
 export interface ApplicationGatewayRewriteRuleSetPropertiesFormat {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly rewriteRules?: ApplicationGatewayRewriteRule[] | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly rewriteRules?: ApplicationGatewayRewriteRule[];
 }
 export interface ApplicationGatewaySku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name?:
-		| ("Standard_Large" | "Standard_Medium" | "Standard_Small" | "Standard_v2" | "WAF_Large" | "WAF_Medium" | "WAF_v2")
-		| undefined;
-	readonly tier?: ("Standard" | "Standard_v2" | "WAF" | "WAF_v2") | undefined;
+		| "Standard_Large"
+		| "Standard_Medium"
+		| "Standard_Small"
+		| "Standard_v2"
+		| "WAF_Large"
+		| "WAF_Medium"
+		| "WAF_v2";
+	readonly tier?: "Standard" | "Standard_v2" | "WAF" | "WAF_v2";
 }
 export interface ApplicationGatewaySslCertificate {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewaySslCertificatePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewaySslCertificatePropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewaySslCertificatePropertiesFormat {
-	readonly data?: string | undefined;
-	readonly keyVaultSecretId?: string | undefined;
-	readonly password?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicCertData?: string | undefined;
+	readonly data?: string;
+	readonly keyVaultSecretId?: string;
+	readonly password?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicCertData?: string;
 }
 export interface ApplicationGatewaySslPolicy {
 	readonly cipherSuites?:
-		| (
-				| "TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA"
-				| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA"
-				| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA256"
-				| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA"
-				| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA256"
-				| "TLS_DHE_RSA_WITH_AES_128_CBC_SHA"
-				| "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_DHE_RSA_WITH_AES_256_CBC_SHA"
-				| "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384"
-				| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA"
-				| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256"
-				| "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA"
-				| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384"
-				| "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
-				| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA"
-				| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"
-				| "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA"
-				| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
-				| "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
-				| "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
-				| "TLS_RSA_WITH_AES_128_CBC_SHA"
-				| "TLS_RSA_WITH_AES_128_CBC_SHA256"
-				| "TLS_RSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_RSA_WITH_AES_256_CBC_SHA"
-				| "TLS_RSA_WITH_AES_256_CBC_SHA256"
-				| "TLS_RSA_WITH_AES_256_GCM_SHA384"[]
-		  )
-		| undefined;
-	readonly disabledSslProtocols?: ("TLSv1_0" | "TLSv1_1" | "TLSv1_2"[]) | undefined;
-	readonly minProtocolVersion?: ("TLSv1_0" | "TLSv1_1" | "TLSv1_2") | undefined;
-	readonly policyName?: ("AppGwSslPolicy20150501" | "AppGwSslPolicy20170401" | "AppGwSslPolicy20170401S") | undefined;
-	readonly policyType?: ("Custom" | "Predefined") | undefined;
+		| "TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA"
+		| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA"
+		| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA256"
+		| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA"
+		| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA256"
+		| "TLS_DHE_RSA_WITH_AES_128_CBC_SHA"
+		| "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_DHE_RSA_WITH_AES_256_CBC_SHA"
+		| "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384"
+		| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA"
+		| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256"
+		| "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA"
+		| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384"
+		| "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+		| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA"
+		| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"
+		| "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA"
+		| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
+		| "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+		| "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+		| "TLS_RSA_WITH_AES_128_CBC_SHA"
+		| "TLS_RSA_WITH_AES_128_CBC_SHA256"
+		| "TLS_RSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_RSA_WITH_AES_256_CBC_SHA"
+		| "TLS_RSA_WITH_AES_256_CBC_SHA256"
+		| "TLS_RSA_WITH_AES_256_GCM_SHA384"[];
+	readonly disabledSslProtocols?: "TLSv1_0" | "TLSv1_1" | "TLSv1_2"[];
+	readonly minProtocolVersion?: "TLSv1_0" | "TLSv1_1" | "TLSv1_2";
+	readonly policyName?: "AppGwSslPolicy20150501" | "AppGwSslPolicy20170401" | "AppGwSslPolicy20170401S";
+	readonly policyType?: "Custom" | "Predefined";
 }
 export interface ApplicationGatewaySslPredefinedPolicyPropertiesFormat {
 	readonly cipherSuites?:
-		| (
-				| "TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA"
-				| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA"
-				| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA256"
-				| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA"
-				| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA256"
-				| "TLS_DHE_RSA_WITH_AES_128_CBC_SHA"
-				| "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_DHE_RSA_WITH_AES_256_CBC_SHA"
-				| "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384"
-				| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA"
-				| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256"
-				| "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA"
-				| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384"
-				| "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
-				| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA"
-				| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"
-				| "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA"
-				| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
-				| "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
-				| "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
-				| "TLS_RSA_WITH_AES_128_CBC_SHA"
-				| "TLS_RSA_WITH_AES_128_CBC_SHA256"
-				| "TLS_RSA_WITH_AES_128_GCM_SHA256"
-				| "TLS_RSA_WITH_AES_256_CBC_SHA"
-				| "TLS_RSA_WITH_AES_256_CBC_SHA256"
-				| "TLS_RSA_WITH_AES_256_GCM_SHA384"[]
-		  )
-		| undefined;
-	readonly minProtocolVersion?: ("TLSv1_0" | "TLSv1_1" | "TLSv1_2") | undefined;
+		| "TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA"
+		| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA"
+		| "TLS_DHE_DSS_WITH_AES_128_CBC_SHA256"
+		| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA"
+		| "TLS_DHE_DSS_WITH_AES_256_CBC_SHA256"
+		| "TLS_DHE_RSA_WITH_AES_128_CBC_SHA"
+		| "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_DHE_RSA_WITH_AES_256_CBC_SHA"
+		| "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384"
+		| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA"
+		| "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256"
+		| "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA"
+		| "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384"
+		| "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+		| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA"
+		| "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"
+		| "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA"
+		| "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
+		| "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+		| "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+		| "TLS_RSA_WITH_AES_128_CBC_SHA"
+		| "TLS_RSA_WITH_AES_128_CBC_SHA256"
+		| "TLS_RSA_WITH_AES_128_GCM_SHA256"
+		| "TLS_RSA_WITH_AES_256_CBC_SHA"
+		| "TLS_RSA_WITH_AES_256_CBC_SHA256"
+		| "TLS_RSA_WITH_AES_256_GCM_SHA384"[];
+	readonly minProtocolVersion?: "TLSv1_0" | "TLSv1_1" | "TLSv1_2";
 }
 export interface ApplicationGatewaySslProfile {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewaySslProfilePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewaySslProfilePropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewaySslProfilePropertiesFormat {
-	readonly clientAuthConfiguration?: ApplicationGatewayClientAuthConfiguration | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly sslPolicy?: ApplicationGatewaySslPolicy | undefined;
-	readonly trustedClientCertificates?: SubResource[] | undefined;
+	readonly clientAuthConfiguration?: ApplicationGatewayClientAuthConfiguration;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly sslPolicy?: ApplicationGatewaySslPolicy;
+	readonly trustedClientCertificates?: SubResource[];
 }
 export interface ApplicationGatewayTrustedClientCertificate {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayTrustedClientCertificatePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayTrustedClientCertificatePropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayTrustedClientCertificatePropertiesFormat {
-	readonly data?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly data?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ApplicationGatewayTrustedRootCertificate {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayTrustedRootCertificatePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayTrustedRootCertificatePropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayTrustedRootCertificatePropertiesFormat {
-	readonly data?: string | undefined;
-	readonly keyVaultSecretId?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly data?: string;
+	readonly keyVaultSecretId?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ApplicationGatewayUrlConfiguration {
-	readonly modifiedPath?: string | undefined;
-	readonly modifiedQueryString?: string | undefined;
-	readonly reroute?: boolean | undefined;
+	readonly modifiedPath?: string;
+	readonly modifiedQueryString?: string;
+	readonly reroute?: boolean;
 }
 export interface ApplicationGatewayUrlPathMap {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationGatewayUrlPathMapPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationGatewayUrlPathMapPropertiesFormat;
+	readonly type?: string;
 }
 export interface ApplicationGatewayUrlPathMapPropertiesFormat {
-	readonly defaultBackendAddressPool?: SubResource | undefined;
-	readonly defaultBackendHttpSettings?: SubResource | undefined;
-	readonly defaultRedirectConfiguration?: SubResource | undefined;
-	readonly defaultRewriteRuleSet?: SubResource | undefined;
-	readonly pathRules?: ApplicationGatewayPathRule[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly defaultBackendAddressPool?: SubResource;
+	readonly defaultBackendHttpSettings?: SubResource;
+	readonly defaultRedirectConfiguration?: SubResource;
+	readonly defaultRewriteRuleSet?: SubResource;
+	readonly pathRules?: ApplicationGatewayPathRule[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ApplicationGatewayWebApplicationFirewallConfiguration {
-	readonly disabledRuleGroups?: ApplicationGatewayFirewallDisabledRuleGroup[] | undefined;
+	readonly disabledRuleGroups?: ApplicationGatewayFirewallDisabledRuleGroup[];
 	readonly enabled: boolean;
-	readonly exclusions?: ApplicationGatewayFirewallExclusion[] | undefined;
-	readonly fileUploadLimitInMb?: number | undefined;
+	readonly exclusions?: ApplicationGatewayFirewallExclusion[];
+	readonly fileUploadLimitInMb?: number;
 	readonly firewallMode: "Detection" | "Prevention";
-	readonly maxRequestBodySize?: number | undefined;
-	readonly maxRequestBodySizeInKb?: number | undefined;
-	readonly requestBodyCheck?: boolean | undefined;
+	readonly maxRequestBodySize?: number;
+	readonly maxRequestBodySizeInKb?: number;
+	readonly requestBodyCheck?: boolean;
 	readonly ruleSetType: string;
 	readonly ruleSetVersion: string;
 }
 export interface ApplicationSecurityGroup {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ApplicationSecurityGroupPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: ApplicationSecurityGroupPropertiesFormat;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ApplicationSecurityGroupPropertiesFormat {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
 }
 export interface AuthorizationPropertiesFormat {
-	readonly authorizationKey?: string | undefined;
-	readonly authorizationUseStatus?: ("Available" | "InUse") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly authorizationKey?: string;
+	readonly authorizationUseStatus?: "Available" | "InUse";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface AzureFirewallAdditionalProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AzureFirewallApplicationRule {
-	readonly description?: string | undefined;
-	readonly fqdnTags?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly protocols?: AzureFirewallApplicationRuleProtocol[] | undefined;
-	readonly sourceAddresses?: string[] | undefined;
-	readonly sourceIpGroups?: string[] | undefined;
-	readonly targetFqdns?: string[] | undefined;
+	readonly description?: string;
+	readonly fqdnTags?: string[];
+	readonly name?: string;
+	readonly protocols?: AzureFirewallApplicationRuleProtocol[];
+	readonly sourceAddresses?: string[];
+	readonly sourceIpGroups?: string[];
+	readonly targetFqdns?: string[];
 }
 export interface AzureFirewallApplicationRuleCollection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: AzureFirewallApplicationRuleCollectionPropertiesFormat | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: AzureFirewallApplicationRuleCollectionPropertiesFormat;
 }
 export interface AzureFirewallApplicationRuleCollectionPropertiesFormat {
-	readonly action?: AzureFirewallRCAction | undefined;
-	readonly priority?: number | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly rules?: AzureFirewallApplicationRule[] | undefined;
+	readonly action?: AzureFirewallRCAction;
+	readonly priority?: number;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly rules?: AzureFirewallApplicationRule[];
 }
 export interface AzureFirewallApplicationRuleProtocol {
-	readonly port?: number | undefined;
-	readonly protocolType?: ("Http" | "Https" | "Mssql") | undefined;
+	readonly port?: number;
+	readonly protocolType?: "Http" | "Https" | "Mssql";
 }
 export interface AzureFirewallIPConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: AzureFirewallIPConfigurationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: AzureFirewallIPConfigurationPropertiesFormat;
+	readonly type?: string;
 }
 export interface AzureFirewallIPConfigurationPropertiesFormat {
-	readonly privateIPAddress?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIPAddress?: SubResource | undefined;
-	readonly subnet?: SubResource | undefined;
+	readonly privateIPAddress?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIPAddress?: SubResource;
+	readonly subnet?: SubResource;
 }
 export interface AzureFirewallIpGroups {
-	readonly changeNumber?: string | undefined;
-	readonly id?: string | undefined;
+	readonly changeNumber?: string;
+	readonly id?: string;
 }
 export interface AzureFirewallNatRCAction {
-	readonly type?: ("Dnat" | "Snat") | undefined;
+	readonly type?: "Dnat" | "Snat";
 }
 export interface AzureFirewallNatRule {
-	readonly description?: string | undefined;
-	readonly destinationAddresses?: string[] | undefined;
-	readonly destinationPorts?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly protocols?: ("any" | "ICMP" | "TCP" | "UDP"[]) | undefined;
-	readonly sourceAddresses?: string[] | undefined;
-	readonly sourceIpGroups?: string[] | undefined;
-	readonly translatedAddress?: string | undefined;
-	readonly translatedFqdn?: string | undefined;
-	readonly translatedPort?: string | undefined;
+	readonly description?: string;
+	readonly destinationAddresses?: string[];
+	readonly destinationPorts?: string[];
+	readonly name?: string;
+	readonly protocols?: "any" | "ICMP" | "TCP" | "UDP"[];
+	readonly sourceAddresses?: string[];
+	readonly sourceIpGroups?: string[];
+	readonly translatedAddress?: string;
+	readonly translatedFqdn?: string;
+	readonly translatedPort?: string;
 }
 export interface AzureFirewallNatRuleCollection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: AzureFirewallNatRuleCollectionProperties | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: AzureFirewallNatRuleCollectionProperties;
 }
 export interface AzureFirewallNatRuleCollectionProperties {
-	readonly action?: AzureFirewallNatRCAction | undefined;
-	readonly priority?: number | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly rules?: AzureFirewallNatRule[] | undefined;
+	readonly action?: AzureFirewallNatRCAction;
+	readonly priority?: number;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly rules?: AzureFirewallNatRule[];
 }
 export interface AzureFirewallNetworkRule {
-	readonly description?: string | undefined;
-	readonly destinationAddresses?: string[] | undefined;
-	readonly destinationFqdns?: string[] | undefined;
-	readonly destinationIpGroups?: string[] | undefined;
-	readonly destinationPorts?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly protocols?: ("any" | "ICMP" | "TCP" | "UDP"[]) | undefined;
-	readonly sourceAddresses?: string[] | undefined;
-	readonly sourceIpGroups?: string[] | undefined;
+	readonly description?: string;
+	readonly destinationAddresses?: string[];
+	readonly destinationFqdns?: string[];
+	readonly destinationIpGroups?: string[];
+	readonly destinationPorts?: string[];
+	readonly name?: string;
+	readonly protocols?: "any" | "ICMP" | "TCP" | "UDP"[];
+	readonly sourceAddresses?: string[];
+	readonly sourceIpGroups?: string[];
 }
 export interface AzureFirewallNetworkRuleCollection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: AzureFirewallNetworkRuleCollectionPropertiesFormat | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: AzureFirewallNetworkRuleCollectionPropertiesFormat;
 }
 export interface AzureFirewallNetworkRuleCollectionPropertiesFormat {
-	readonly action?: AzureFirewallRCAction | undefined;
-	readonly priority?: number | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly rules?: AzureFirewallNetworkRule[] | undefined;
+	readonly action?: AzureFirewallRCAction;
+	readonly priority?: number;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly rules?: AzureFirewallNetworkRule[];
 }
 export interface AzureFirewallPropertiesFormat {
-	readonly additionalProperties?: AzureFirewallAdditionalProperties | undefined;
-	readonly applicationRuleCollections?: AzureFirewallApplicationRuleCollection[] | undefined;
-	readonly firewallPolicy?: SubResource | undefined;
-	readonly hubIPAddresses?: HubIPAddresses | undefined;
-	readonly ipConfigurations?: AzureFirewallIPConfiguration[] | undefined;
-	readonly ipGroups?: AzureFirewallIpGroups[] | undefined;
-	readonly managementIpConfiguration?: AzureFirewallIPConfiguration | undefined;
-	readonly natRuleCollections?: AzureFirewallNatRuleCollection[] | undefined;
-	readonly networkRuleCollections?: AzureFirewallNetworkRuleCollection[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly sku?: AzureFirewallSku | undefined;
-	readonly threatIntelMode?: ("Alert" | "Deny" | "Off") | undefined;
-	readonly virtualHub?: SubResource | undefined;
+	readonly additionalProperties?: AzureFirewallAdditionalProperties;
+	readonly applicationRuleCollections?: AzureFirewallApplicationRuleCollection[];
+	readonly firewallPolicy?: SubResource;
+	readonly hubIPAddresses?: HubIPAddresses;
+	readonly ipConfigurations?: AzureFirewallIPConfiguration[];
+	readonly ipGroups?: AzureFirewallIpGroups[];
+	readonly managementIpConfiguration?: AzureFirewallIPConfiguration;
+	readonly natRuleCollections?: AzureFirewallNatRuleCollection[];
+	readonly networkRuleCollections?: AzureFirewallNetworkRuleCollection[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly sku?: AzureFirewallSku;
+	readonly threatIntelMode?: "Alert" | "Deny" | "Off";
+	readonly virtualHub?: SubResource;
 }
 export interface AzureFirewallPublicIPAddress {
-	readonly address?: string | undefined;
+	readonly address?: string;
 }
 export interface AzureFirewallRCAction {
-	readonly type?: ("Allow" | "Deny") | undefined;
+	readonly type?: "Allow" | "Deny";
 }
 export interface AzureFirewallSku {
-	readonly name?: ("AZFW_Hub" | "AZFW_VNet") | undefined;
-	readonly tier?: ("Premium" | "Standard") | undefined;
+	readonly name?: "AZFW_Hub" | "AZFW_VNet";
+	readonly tier?: "Premium" | "Standard";
 }
 export interface BackendAddressPool {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: BackendAddressPoolPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: BackendAddressPoolPropertiesFormat;
+	readonly type?: string;
 }
 export interface BackendAddressPoolPropertiesFormat {
-	readonly backendIPConfigurations?: NetworkInterfaceIPConfiguration[] | undefined;
-	readonly loadBalancerBackendAddresses?: LoadBalancerBackendAddress[] | undefined;
-	readonly loadBalancingRules?: SubResource[] | undefined;
-	readonly location?: string | undefined;
-	readonly outboundRule?: SubResource | undefined;
-	readonly outboundRules?: SubResource[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly backendIPConfigurations?: NetworkInterfaceIPConfiguration[];
+	readonly loadBalancerBackendAddresses?: LoadBalancerBackendAddress[];
+	readonly loadBalancingRules?: SubResource[];
+	readonly location?: string;
+	readonly outboundRule?: SubResource;
+	readonly outboundRules?: SubResource[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface BastionHostIPConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: BastionHostIPConfigurationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: BastionHostIPConfigurationPropertiesFormat;
+	readonly type?: string;
 }
 export interface BastionHostIPConfigurationPropertiesFormat {
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly publicIPAddress: SubResource;
 	readonly subnet: SubResource;
 }
 export interface BastionHostPropertiesFormat {
-	readonly dnsName?: string | undefined;
-	readonly ipConfigurations?: BastionHostIPConfiguration[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly dnsName?: string;
+	readonly ipConfigurations?: BastionHostIPConfiguration[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface BgpConnectionProperties {
-	readonly connectionState?: ("Connected" | "Connecting" | "NotConnected" | "Unknown") | undefined;
-	readonly peerAsn?: number | undefined;
-	readonly peerIp?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly connectionState?: "Connected" | "Connecting" | "NotConnected" | "Unknown";
+	readonly peerAsn?: number;
+	readonly peerIp?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface BgpSettings {
-	readonly asn?: number | undefined;
-	readonly bgpPeeringAddress?: string | undefined;
-	readonly bgpPeeringAddresses?: IPConfigurationBgpPeeringAddress[] | undefined;
-	readonly peerWeight?: number | undefined;
+	readonly asn?: number;
+	readonly bgpPeeringAddress?: string;
+	readonly bgpPeeringAddresses?: IPConfigurationBgpPeeringAddress[];
+	readonly peerWeight?: number;
 }
 export interface BreakOutCategoryPolicies {
-	readonly allow?: boolean | undefined;
-	readonly default?: boolean | undefined;
-	readonly optimize?: boolean | undefined;
+	readonly allow?: boolean;
+	readonly default?: boolean;
+	readonly optimize?: boolean;
 }
 export interface Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface ConnectionMonitorDestination {
-	readonly address?: string | undefined;
-	readonly port?: number | undefined;
-	readonly resourceId?: string | undefined;
+	readonly address?: string;
+	readonly port?: number;
+	readonly resourceId?: string;
 }
 export interface ConnectionMonitorEndpoint {
-	readonly address?: string | undefined;
-	readonly coverageLevel?: ("AboveAverage" | "Average" | "BelowAverage" | "Default" | "Full" | "Low") | undefined;
-	readonly filter?: ConnectionMonitorEndpointFilter | undefined;
+	readonly address?: string;
+	readonly coverageLevel?: "AboveAverage" | "Average" | "BelowAverage" | "Default" | "Full" | "Low";
+	readonly filter?: ConnectionMonitorEndpointFilter;
 	readonly name: string;
-	readonly resourceId?: string | undefined;
-	readonly scope?: ConnectionMonitorEndpointScope | undefined;
+	readonly resourceId?: string;
+	readonly scope?: ConnectionMonitorEndpointScope;
 	readonly type?:
-		| ("AzureSubnet" | "AzureVM" | "AzureVNet" | "ExternalAddress" | "MMAWorkspaceMachine" | "MMAWorkspaceNetwork")
-		| undefined;
+		| "AzureSubnet"
+		| "AzureVM"
+		| "AzureVNet"
+		| "ExternalAddress"
+		| "MMAWorkspaceMachine"
+		| "MMAWorkspaceNetwork";
 }
 export interface ConnectionMonitorEndpointFilter {
-	readonly items?: ConnectionMonitorEndpointFilterItem[] | undefined;
-	readonly type?: "Include" | undefined;
+	readonly items?: ConnectionMonitorEndpointFilterItem[];
+	readonly type?: "Include";
 }
 export interface ConnectionMonitorEndpointFilterItem {
-	readonly address?: string | undefined;
-	readonly type?: "AgentAddress" | undefined;
+	readonly address?: string;
+	readonly type?: "AgentAddress";
 }
 export interface ConnectionMonitorEndpointScope {
-	readonly exclude?: ConnectionMonitorEndpointScopeItem[] | undefined;
-	readonly include?: ConnectionMonitorEndpointScopeItem[] | undefined;
+	readonly exclude?: ConnectionMonitorEndpointScopeItem[];
+	readonly include?: ConnectionMonitorEndpointScopeItem[];
 }
 export interface ConnectionMonitorEndpointScopeItem {
-	readonly address?: string | undefined;
+	readonly address?: string;
 }
 export interface ConnectionMonitorHttpConfiguration {
-	readonly method?: ("Get" | "Post") | undefined;
-	readonly path?: string | undefined;
-	readonly port?: number | undefined;
-	readonly preferHTTPS?: boolean | undefined;
-	readonly requestHeaders?: HttpHeader[] | undefined;
-	readonly validStatusCodeRanges?: string[] | undefined;
+	readonly method?: "Get" | "Post";
+	readonly path?: string;
+	readonly port?: number;
+	readonly preferHTTPS?: boolean;
+	readonly requestHeaders?: HttpHeader[];
+	readonly validStatusCodeRanges?: string[];
 }
 export interface ConnectionMonitorIcmpConfiguration {
-	readonly disableTraceRoute?: boolean | undefined;
+	readonly disableTraceRoute?: boolean;
 }
 export interface ConnectionMonitorOutput {
-	readonly type?: "Workspace" | undefined;
-	readonly workspaceSettings?: ConnectionMonitorWorkspaceSettings | undefined;
+	readonly type?: "Workspace";
+	readonly workspaceSettings?: ConnectionMonitorWorkspaceSettings;
 }
 export interface ConnectionMonitorParametersOrConnectionMonitorResultProperties {
-	readonly autoStart?: boolean | undefined;
-	readonly connectionMonitorType?: ("MultiEndpoint" | "SingleSourceDestination") | undefined;
-	readonly destination?: ConnectionMonitorDestination | undefined;
-	readonly endpoints?: ConnectionMonitorEndpoint[] | undefined;
-	readonly monitoringIntervalInSeconds?: number | undefined;
-	readonly monitoringStatus?: string | undefined;
-	readonly notes?: string | undefined;
-	readonly outputs?: ConnectionMonitorOutput[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly source?: ConnectionMonitorSource | undefined;
-	readonly startTime?: string | undefined;
-	readonly testConfigurations?: ConnectionMonitorTestConfiguration[] | undefined;
-	readonly testGroups?: ConnectionMonitorTestGroup[] | undefined;
+	readonly autoStart?: boolean;
+	readonly connectionMonitorType?: "MultiEndpoint" | "SingleSourceDestination";
+	readonly destination?: ConnectionMonitorDestination;
+	readonly endpoints?: ConnectionMonitorEndpoint[];
+	readonly monitoringIntervalInSeconds?: number;
+	readonly monitoringStatus?: string;
+	readonly notes?: string;
+	readonly outputs?: ConnectionMonitorOutput[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly source?: ConnectionMonitorSource;
+	readonly startTime?: string;
+	readonly testConfigurations?: ConnectionMonitorTestConfiguration[];
+	readonly testGroups?: ConnectionMonitorTestGroup[];
 }
 export interface ConnectionMonitorSource {
-	readonly port?: number | undefined;
+	readonly port?: number;
 	readonly resourceId: string;
 }
 export interface ConnectionMonitorSuccessThreshold {
-	readonly checksFailedPercent?: number | undefined;
-	readonly roundTripTimeMs?: number | undefined;
+	readonly checksFailedPercent?: number;
+	readonly roundTripTimeMs?: number;
 }
 export interface ConnectionMonitorTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ConnectionMonitorTcpConfiguration {
-	readonly destinationPortBehavior?: ("ListenIfAvailable" | "None") | undefined;
-	readonly disableTraceRoute?: boolean | undefined;
-	readonly port?: number | undefined;
+	readonly destinationPortBehavior?: "ListenIfAvailable" | "None";
+	readonly disableTraceRoute?: boolean;
+	readonly port?: number;
 }
 export interface ConnectionMonitorTestConfiguration {
-	readonly httpConfiguration?: ConnectionMonitorHttpConfiguration | undefined;
-	readonly icmpConfiguration?: ConnectionMonitorIcmpConfiguration | undefined;
+	readonly httpConfiguration?: ConnectionMonitorHttpConfiguration;
+	readonly icmpConfiguration?: ConnectionMonitorIcmpConfiguration;
 	readonly name: string;
-	readonly preferredIPVersion?: ("IPv4" | "IPv6") | undefined;
+	readonly preferredIPVersion?: "IPv4" | "IPv6";
 	readonly protocol: "Http" | "Icmp" | "Tcp";
-	readonly successThreshold?: ConnectionMonitorSuccessThreshold | undefined;
-	readonly tcpConfiguration?: ConnectionMonitorTcpConfiguration | undefined;
-	readonly testFrequencySec?: number | undefined;
+	readonly successThreshold?: ConnectionMonitorSuccessThreshold;
+	readonly tcpConfiguration?: ConnectionMonitorTcpConfiguration;
+	readonly testFrequencySec?: number;
 }
 export interface ConnectionMonitorTestGroup {
 	readonly destinations: string[];
-	readonly disable?: boolean | undefined;
+	readonly disable?: boolean;
 	readonly name: string;
 	readonly sources: string[];
 	readonly testConfigurations: string[];
 }
 export interface ConnectionMonitorWorkspaceSettings {
-	readonly workspaceResourceId?: string | undefined;
+	readonly workspaceResourceId?: string;
 }
 export interface Container {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ContainerNetworkInterface {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ContainerNetworkInterfacePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ContainerNetworkInterfacePropertiesFormat;
+	readonly type?: string;
 }
 export interface ContainerNetworkInterfaceConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ContainerNetworkInterfaceConfigurationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ContainerNetworkInterfaceConfigurationPropertiesFormat;
+	readonly type?: string;
 }
 export interface ContainerNetworkInterfaceConfigurationPropertiesFormat {
-	readonly containerNetworkInterfaces?: SubResource[] | undefined;
-	readonly ipConfigurations?: IPConfigurationProfile[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly containerNetworkInterfaces?: SubResource[];
+	readonly ipConfigurations?: IPConfigurationProfile[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ContainerNetworkInterfaceIpConfiguration {
-	readonly etag?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ContainerNetworkInterfaceIpConfigurationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly name?: string;
+	readonly properties?: ContainerNetworkInterfaceIpConfigurationPropertiesFormat;
+	readonly type?: string;
 }
 export interface ContainerNetworkInterfaceIpConfigurationPropertiesFormat {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ContainerNetworkInterfacePropertiesFormat {
-	readonly container?: Container | undefined;
-	readonly containerNetworkInterfaceConfiguration?: ContainerNetworkInterfaceConfiguration | undefined;
-	readonly ipConfigurations?: ContainerNetworkInterfaceIpConfiguration[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly container?: Container;
+	readonly containerNetworkInterfaceConfiguration?: ContainerNetworkInterfaceConfiguration;
+	readonly ipConfigurations?: ContainerNetworkInterfaceIpConfiguration[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface CustomDnsConfigPropertiesFormat {
-	readonly fqdn?: string | undefined;
-	readonly ipAddresses?: string[] | undefined;
+	readonly fqdn?: string;
+	readonly ipAddresses?: string[];
 }
 export interface CustomIpPrefixPropertiesFormat {
-	readonly cidr?: string | undefined;
+	readonly cidr?: string;
 	readonly commissionedState?:
-		| ("Commissioned" | "Commissioning" | "Decommissioning" | "Deprovisioning" | "Provisioned" | "Provisioning")
-		| undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIpPrefixes?: SubResource[] | undefined;
-	readonly resourceGuid?: string | undefined;
+		| "Commissioned"
+		| "Commissioning"
+		| "Decommissioning"
+		| "Deprovisioning"
+		| "Provisioned"
+		| "Provisioning";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIpPrefixes?: SubResource[];
+	readonly resourceGuid?: string;
 }
 export interface DdosCustomPolicyPropertiesFormat {
-	readonly protocolCustomSettings?: ProtocolCustomSettingsFormat[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIPAddresses?: SubResource[] | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly protocolCustomSettings?: ProtocolCustomSettingsFormat[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIPAddresses?: SubResource[];
+	readonly resourceGuid?: string;
 }
 export interface DdosProtectionPlanPropertiesFormat {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly virtualNetworks?: SubResource[] | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
+	readonly virtualNetworks?: SubResource[];
 }
 export interface DdosProtectionPlanTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DdosSettings {
-	readonly ddosCustomPolicy?: SubResource | undefined;
-	readonly protectedIP?: boolean | undefined;
-	readonly protectionCoverage?: ("Basic" | "Standard") | undefined;
+	readonly ddosCustomPolicy?: SubResource;
+	readonly protectedIP?: boolean;
+	readonly protectionCoverage?: "Basic" | "Standard";
 }
 export interface Delegation {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ServiceDelegationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ServiceDelegationPropertiesFormat;
+	readonly type?: string;
 }
 export interface DeviceProperties {
-	readonly deviceModel?: string | undefined;
-	readonly deviceVendor?: string | undefined;
-	readonly linkSpeedInMbps?: number | undefined;
+	readonly deviceModel?: string;
+	readonly deviceVendor?: string;
+	readonly linkSpeedInMbps?: number;
 }
 export interface DhcpOptions {
-	readonly dnsServers?: string[] | undefined;
+	readonly dnsServers?: string[];
 }
 export interface DnsSettings {
-	readonly enableProxy?: boolean | undefined;
-	readonly requireProxyForNetworkRules?: boolean | undefined;
-	readonly servers?: string[] | undefined;
+	readonly enableProxy?: boolean;
+	readonly requireProxyForNetworkRules?: boolean;
+	readonly servers?: string[];
 }
 export interface DscpConfigurationPropertiesFormat {
-	readonly associatedNetworkInterfaces?: NetworkInterface[] | undefined;
-	readonly destinationIpRanges?: QosIpRange[] | undefined;
-	readonly destinationPortRanges?: QosPortRange[] | undefined;
-	readonly markings?: number[] | undefined;
-	readonly protocol?: ("Ah" | "All" | "DoNotUse" | "Esp" | "Gre" | "Icmp" | "Tcp" | "Udp" | "Vxlan") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly qosCollectionId?: string | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly sourceIpRanges?: QosIpRange[] | undefined;
-	readonly sourcePortRanges?: QosPortRange[] | undefined;
+	readonly associatedNetworkInterfaces?: NetworkInterface[];
+	readonly destinationIpRanges?: QosIpRange[];
+	readonly destinationPortRanges?: QosPortRange[];
+	readonly markings?: number[];
+	readonly protocol?: "Ah" | "All" | "DoNotUse" | "Esp" | "Gre" | "Icmp" | "Tcp" | "Udp" | "Vxlan";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly qosCollectionId?: string;
+	readonly resourceGuid?: string;
+	readonly sourceIpRanges?: QosIpRange[];
+	readonly sourcePortRanges?: QosPortRange[];
 }
 export interface ExpressRouteCircuitAuthorization {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: AuthorizationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: AuthorizationPropertiesFormat;
+	readonly type?: string;
 }
 export interface ExpressRouteCircuitConnection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ExpressRouteCircuitConnectionPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ExpressRouteCircuitConnectionPropertiesFormat;
+	readonly type?: string;
 }
 export interface ExpressRouteCircuitConnectionPropertiesFormat {
-	readonly addressPrefix?: string | undefined;
-	readonly authorizationKey?: string | undefined;
-	readonly circuitConnectionStatus?: ("Connected" | "Connecting" | "Disconnected") | undefined;
-	readonly expressRouteCircuitPeering?: SubResource | undefined;
-	readonly ipv6CircuitConnectionConfig?: Ipv6CircuitConnectionConfig | undefined;
-	readonly peerExpressRouteCircuitPeering?: SubResource | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly addressPrefix?: string;
+	readonly authorizationKey?: string;
+	readonly circuitConnectionStatus?: "Connected" | "Connecting" | "Disconnected";
+	readonly expressRouteCircuitPeering?: SubResource;
+	readonly ipv6CircuitConnectionConfig?: Ipv6CircuitConnectionConfig;
+	readonly peerExpressRouteCircuitPeering?: SubResource;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ExpressRouteCircuitPeering {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ExpressRouteCircuitPeeringPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ExpressRouteCircuitPeeringPropertiesFormat;
+	readonly type?: string;
 }
 export interface ExpressRouteCircuitPeeringConfig {
-	readonly advertisedCommunities?: string[] | undefined;
-	readonly advertisedPublicPrefixes?: string[] | undefined;
-	readonly advertisedPublicPrefixesState?:
-		| ("Configured" | "Configuring" | "NotConfigured" | "ValidationNeeded")
-		| undefined;
-	readonly customerASN?: number | undefined;
-	readonly legacyMode?: number | undefined;
-	readonly routingRegistryName?: string | undefined;
+	readonly advertisedCommunities?: string[];
+	readonly advertisedPublicPrefixes?: string[];
+	readonly advertisedPublicPrefixesState?: "Configured" | "Configuring" | "NotConfigured" | "ValidationNeeded";
+	readonly customerASN?: number;
+	readonly legacyMode?: number;
+	readonly routingRegistryName?: string;
 }
 export interface ExpressRouteCircuitPeeringId {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ExpressRouteCircuitPeeringPropertiesFormat {
-	readonly azureASN?: number | undefined;
-	readonly connections?: ExpressRouteCircuitConnection[] | undefined;
-	readonly expressRouteConnection?: ExpressRouteConnectionId | undefined;
-	readonly gatewayManagerEtag?: string | undefined;
-	readonly ipv6PeeringConfig?: Ipv6ExpressRouteCircuitPeeringConfig | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly microsoftPeeringConfig?: ExpressRouteCircuitPeeringConfig | undefined;
-	readonly peerASN?: number | undefined;
-	readonly peeredConnections?: PeerExpressRouteCircuitConnection[] | undefined;
-	readonly peeringType?: ("AzurePrivatePeering" | "AzurePublicPeering" | "MicrosoftPeering") | undefined;
-	readonly primaryAzurePort?: string | undefined;
-	readonly primaryPeerAddressPrefix?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly routeFilter?: SubResource | undefined;
-	readonly secondaryAzurePort?: string | undefined;
-	readonly secondaryPeerAddressPrefix?: string | undefined;
-	readonly sharedKey?: string | undefined;
-	readonly state?: ("Disabled" | "Enabled") | undefined;
-	readonly stats?: ExpressRouteCircuitStats | undefined;
-	readonly vlanId?: number | undefined;
+	readonly azureASN?: number;
+	readonly connections?: ExpressRouteCircuitConnection[];
+	readonly expressRouteConnection?: ExpressRouteConnectionId;
+	readonly gatewayManagerEtag?: string;
+	readonly ipv6PeeringConfig?: Ipv6ExpressRouteCircuitPeeringConfig;
+	readonly lastModifiedBy?: string;
+	readonly microsoftPeeringConfig?: ExpressRouteCircuitPeeringConfig;
+	readonly peerASN?: number;
+	readonly peeredConnections?: PeerExpressRouteCircuitConnection[];
+	readonly peeringType?: "AzurePrivatePeering" | "AzurePublicPeering" | "MicrosoftPeering";
+	readonly primaryAzurePort?: string;
+	readonly primaryPeerAddressPrefix?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly routeFilter?: SubResource;
+	readonly secondaryAzurePort?: string;
+	readonly secondaryPeerAddressPrefix?: string;
+	readonly sharedKey?: string;
+	readonly state?: "Disabled" | "Enabled";
+	readonly stats?: ExpressRouteCircuitStats;
+	readonly vlanId?: number;
 }
 export interface ExpressRouteCircuitPropertiesFormat {
-	readonly allowClassicOperations?: boolean | undefined;
-	readonly authorizations?: ExpressRouteCircuitAuthorization[] | undefined;
-	readonly bandwidthInGbps?: number | undefined;
-	readonly circuitProvisioningState?: string | undefined;
-	readonly expressRoutePort?: SubResource | undefined;
-	readonly gatewayManagerEtag?: string | undefined;
-	readonly globalReachEnabled?: boolean | undefined;
-	readonly peerings?: ExpressRouteCircuitPeering[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly serviceKey?: string | undefined;
-	readonly serviceProviderNotes?: string | undefined;
-	readonly serviceProviderProperties?: ExpressRouteCircuitServiceProviderProperties | undefined;
-	readonly serviceProviderProvisioningState?:
-		| ("Deprovisioning" | "NotProvisioned" | "Provisioned" | "Provisioning")
-		| undefined;
-	readonly stag?: number | undefined;
+	readonly allowClassicOperations?: boolean;
+	readonly authorizations?: ExpressRouteCircuitAuthorization[];
+	readonly bandwidthInGbps?: number;
+	readonly circuitProvisioningState?: string;
+	readonly expressRoutePort?: SubResource;
+	readonly gatewayManagerEtag?: string;
+	readonly globalReachEnabled?: boolean;
+	readonly peerings?: ExpressRouteCircuitPeering[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly serviceKey?: string;
+	readonly serviceProviderNotes?: string;
+	readonly serviceProviderProperties?: ExpressRouteCircuitServiceProviderProperties;
+	readonly serviceProviderProvisioningState?: "Deprovisioning" | "NotProvisioned" | "Provisioned" | "Provisioning";
+	readonly stag?: number;
 }
 export interface ExpressRouteCircuitReference {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ExpressRouteCircuitServiceProviderProperties {
-	readonly bandwidthInMbps?: number | undefined;
-	readonly peeringLocation?: string | undefined;
-	readonly serviceProviderName?: string | undefined;
+	readonly bandwidthInMbps?: number;
+	readonly peeringLocation?: string;
+	readonly serviceProviderName?: string;
 }
 export interface ExpressRouteCircuitSku {
-	readonly family?: ("MeteredData" | "UnlimitedData") | undefined;
-	readonly name?: string | undefined;
-	readonly tier?: ("Basic" | "Local" | "Premium" | "Standard") | undefined;
+	readonly family?: "MeteredData" | "UnlimitedData";
+	readonly name?: string;
+	readonly tier?: "Basic" | "Local" | "Premium" | "Standard";
 }
 export interface ExpressRouteCircuitStats {
-	readonly primarybytesIn?: number | undefined;
-	readonly primarybytesOut?: number | undefined;
-	readonly secondarybytesIn?: number | undefined;
-	readonly secondarybytesOut?: number | undefined;
+	readonly primarybytesIn?: number;
+	readonly primarybytesOut?: number;
+	readonly secondarybytesIn?: number;
+	readonly secondarybytesOut?: number;
 }
 export interface ExpressRouteConnection {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
-	readonly properties?: ExpressRouteConnectionProperties | undefined;
+	readonly properties?: ExpressRouteConnectionProperties;
 }
 export interface ExpressRouteConnectionId {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ExpressRouteConnectionProperties {
-	readonly authorizationKey?: string | undefined;
-	readonly enableInternetSecurity?: boolean | undefined;
+	readonly authorizationKey?: string;
+	readonly enableInternetSecurity?: boolean;
 	readonly expressRouteCircuitPeering: ExpressRouteCircuitPeeringId;
-	readonly expressRouteGatewayBypass?: boolean | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly routingConfiguration?: RoutingConfiguration | undefined;
-	readonly routingWeight?: number | undefined;
+	readonly expressRouteGatewayBypass?: boolean;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly routingConfiguration?: RoutingConfiguration;
+	readonly routingWeight?: number;
 }
 export interface ExpressRouteCrossConnectionPeering {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ExpressRouteCrossConnectionPeeringProperties | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ExpressRouteCrossConnectionPeeringProperties;
 }
 export interface ExpressRouteCrossConnectionPeeringProperties {
-	readonly azureASN?: number | undefined;
-	readonly gatewayManagerEtag?: string | undefined;
-	readonly ipv6PeeringConfig?: Ipv6ExpressRouteCircuitPeeringConfig | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly microsoftPeeringConfig?: ExpressRouteCircuitPeeringConfig | undefined;
-	readonly peerASN?: number | undefined;
-	readonly peeringType?: ("AzurePrivatePeering" | "AzurePublicPeering" | "MicrosoftPeering") | undefined;
-	readonly primaryAzurePort?: string | undefined;
-	readonly primaryPeerAddressPrefix?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly secondaryAzurePort?: string | undefined;
-	readonly secondaryPeerAddressPrefix?: string | undefined;
-	readonly sharedKey?: string | undefined;
-	readonly state?: ("Disabled" | "Enabled") | undefined;
-	readonly vlanId?: number | undefined;
+	readonly azureASN?: number;
+	readonly gatewayManagerEtag?: string;
+	readonly ipv6PeeringConfig?: Ipv6ExpressRouteCircuitPeeringConfig;
+	readonly lastModifiedBy?: string;
+	readonly microsoftPeeringConfig?: ExpressRouteCircuitPeeringConfig;
+	readonly peerASN?: number;
+	readonly peeringType?: "AzurePrivatePeering" | "AzurePublicPeering" | "MicrosoftPeering";
+	readonly primaryAzurePort?: string;
+	readonly primaryPeerAddressPrefix?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly secondaryAzurePort?: string;
+	readonly secondaryPeerAddressPrefix?: string;
+	readonly sharedKey?: string;
+	readonly state?: "Disabled" | "Enabled";
+	readonly vlanId?: number;
 }
 export interface ExpressRouteCrossConnectionProperties {
-	readonly bandwidthInMbps?: number | undefined;
-	readonly expressRouteCircuit?: ExpressRouteCircuitReference | undefined;
-	readonly peeringLocation?: string | undefined;
-	readonly peerings?: ExpressRouteCrossConnectionPeering[] | undefined;
-	readonly primaryAzurePort?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly secondaryAzurePort?: string | undefined;
-	readonly serviceProviderNotes?: string | undefined;
-	readonly serviceProviderProvisioningState?:
-		| ("Deprovisioning" | "NotProvisioned" | "Provisioned" | "Provisioning")
-		| undefined;
-	readonly sTag?: number | undefined;
+	readonly bandwidthInMbps?: number;
+	readonly expressRouteCircuit?: ExpressRouteCircuitReference;
+	readonly peeringLocation?: string;
+	readonly peerings?: ExpressRouteCrossConnectionPeering[];
+	readonly primaryAzurePort?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly secondaryAzurePort?: string;
+	readonly serviceProviderNotes?: string;
+	readonly serviceProviderProvisioningState?: "Deprovisioning" | "NotProvisioned" | "Provisioned" | "Provisioning";
+	readonly sTag?: number;
 }
 export interface ExpressRouteGatewayProperties {
-	readonly autoScaleConfiguration?: ExpressRouteGatewayPropertiesAutoScaleConfiguration | undefined;
-	readonly expressRouteConnections?: ExpressRouteConnection[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly autoScaleConfiguration?: ExpressRouteGatewayPropertiesAutoScaleConfiguration;
+	readonly expressRouteConnections?: ExpressRouteConnection[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly virtualHub: VirtualHubId;
 }
 export interface ExpressRouteGatewayPropertiesAutoScaleConfiguration {
-	readonly bounds?: ExpressRouteGatewayPropertiesAutoScaleConfigurationBounds | undefined;
+	readonly bounds?: ExpressRouteGatewayPropertiesAutoScaleConfigurationBounds;
 }
 export interface ExpressRouteGatewayPropertiesAutoScaleConfigurationBounds {
-	readonly max?: number | undefined;
-	readonly min?: number | undefined;
+	readonly max?: number;
+	readonly min?: number;
 }
 export interface ExpressRouteLink {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ExpressRouteLinkPropertiesFormat | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ExpressRouteLinkPropertiesFormat;
 }
 export interface ExpressRouteLinkMacSecConfig {
-	readonly cakSecretIdentifier?: string | undefined;
-	readonly cipher?: ("GcmAes128" | "GcmAes256" | "GcmAesXpn128" | "GcmAesXpn256") | undefined;
-	readonly cknSecretIdentifier?: string | undefined;
-	readonly sciState?: ("Disabled" | "Enabled") | undefined;
+	readonly cakSecretIdentifier?: string;
+	readonly cipher?: "GcmAes128" | "GcmAes256" | "GcmAesXpn128" | "GcmAesXpn256";
+	readonly cknSecretIdentifier?: string;
+	readonly sciState?: "Disabled" | "Enabled";
 }
 export interface ExpressRouteLinkPropertiesFormat {
-	readonly adminState?: ("Disabled" | "Enabled") | undefined;
-	readonly connectorType?: ("LC" | "SC") | undefined;
-	readonly interfaceName?: string | undefined;
-	readonly macSecConfig?: ExpressRouteLinkMacSecConfig | undefined;
-	readonly patchPanelId?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly rackId?: string | undefined;
-	readonly routerName?: string | undefined;
+	readonly adminState?: "Disabled" | "Enabled";
+	readonly connectorType?: "LC" | "SC";
+	readonly interfaceName?: string;
+	readonly macSecConfig?: ExpressRouteLinkMacSecConfig;
+	readonly patchPanelId?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly rackId?: string;
+	readonly routerName?: string;
 }
 export interface ExpressRoutePortPropertiesFormat {
-	readonly allocationDate?: string | undefined;
-	readonly bandwidthInGbps?: number | undefined;
-	readonly circuits?: SubResource[] | undefined;
-	readonly encapsulation?: ("Dot1Q" | "QinQ") | undefined;
-	readonly etherType?: string | undefined;
-	readonly links?: ExpressRouteLink[] | undefined;
-	readonly mtu?: string | undefined;
-	readonly peeringLocation?: string | undefined;
-	readonly provisionedBandwidthInGbps?: number | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly allocationDate?: string;
+	readonly bandwidthInGbps?: number;
+	readonly circuits?: SubResource[];
+	readonly encapsulation?: "Dot1Q" | "QinQ";
+	readonly etherType?: string;
+	readonly links?: ExpressRouteLink[];
+	readonly mtu?: string;
+	readonly peeringLocation?: string;
+	readonly provisionedBandwidthInGbps?: number;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
 }
 export interface ExpressRoutePortsLocationBandwidths {
-	readonly offerName?: string | undefined;
-	readonly valueInGbps?: number | undefined;
+	readonly offerName?: string;
+	readonly valueInGbps?: number;
 }
 export interface ExpressRoutePortsLocationPropertiesFormat {
-	readonly address?: string | undefined;
-	readonly availableBandwidths?: ExpressRoutePortsLocationBandwidths[] | undefined;
-	readonly contact?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly address?: string;
+	readonly availableBandwidths?: ExpressRoutePortsLocationBandwidths[];
+	readonly contact?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ExtendedLocation {
 	readonly name: string;
 	readonly type: "EdgeZone";
 }
 export interface FirewallPolicyCertificateAuthority {
-	readonly keyVaultSecretId?: string | undefined;
-	readonly name?: string | undefined;
+	readonly keyVaultSecretId?: string;
+	readonly name?: string;
 }
 export interface FirewallPolicyFilterRuleCollectionAction {
-	readonly type?: ("Allow" | "Deny") | undefined;
+	readonly type?: "Allow" | "Deny";
 }
 export interface FirewallPolicyIntrusionDetection {
-	readonly configuration?: FirewallPolicyIntrusionDetectionConfiguration | undefined;
-	readonly mode?: ("Alert" | "Deny" | "Off") | undefined;
+	readonly configuration?: FirewallPolicyIntrusionDetectionConfiguration;
+	readonly mode?: "Alert" | "Deny" | "Off";
 }
 export interface FirewallPolicyIntrusionDetectionBypassTrafficSpecifications {
-	readonly description?: string | undefined;
-	readonly destinationAddresses?: string[] | undefined;
-	readonly destinationIpGroups?: string[] | undefined;
-	readonly destinationPorts?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly protocol?: ("ANY" | "ICMP" | "TCP" | "UDP") | undefined;
-	readonly sourceAddresses?: string[] | undefined;
-	readonly sourceIpGroups?: string[] | undefined;
+	readonly description?: string;
+	readonly destinationAddresses?: string[];
+	readonly destinationIpGroups?: string[];
+	readonly destinationPorts?: string[];
+	readonly name?: string;
+	readonly protocol?: "ANY" | "ICMP" | "TCP" | "UDP";
+	readonly sourceAddresses?: string[];
+	readonly sourceIpGroups?: string[];
 }
 export interface FirewallPolicyIntrusionDetectionConfiguration {
-	readonly bypassTrafficSettings?: FirewallPolicyIntrusionDetectionBypassTrafficSpecifications[] | undefined;
-	readonly signatureOverrides?: FirewallPolicyIntrusionDetectionSignatureSpecification[] | undefined;
+	readonly bypassTrafficSettings?: FirewallPolicyIntrusionDetectionBypassTrafficSpecifications[];
+	readonly signatureOverrides?: FirewallPolicyIntrusionDetectionSignatureSpecification[];
 }
 export interface FirewallPolicyIntrusionDetectionSignatureSpecification {
-	readonly id?: string | undefined;
-	readonly mode?: ("Alert" | "Deny" | "Off") | undefined;
+	readonly id?: string;
+	readonly mode?: "Alert" | "Deny" | "Off";
 }
 export interface FirewallPolicyNatRuleCollectionAction {
-	readonly type?: "DNAT" | undefined;
+	readonly type?: "DNAT";
 }
 export interface FirewallPolicyPropertiesFormat {
-	readonly basePolicy?: SubResource | undefined;
-	readonly childPolicies?: SubResource[] | undefined;
-	readonly dnsSettings?: DnsSettings | undefined;
-	readonly firewalls?: SubResource[] | undefined;
-	readonly intrusionDetection?: FirewallPolicyIntrusionDetection | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly ruleCollectionGroups?: SubResource[] | undefined;
-	readonly sku?: FirewallPolicySku | undefined;
-	readonly threatIntelMode?: ("Alert" | "Deny" | "Off") | undefined;
-	readonly threatIntelWhitelist?: FirewallPolicyThreatIntelWhitelist | undefined;
-	readonly transportSecurity?: FirewallPolicyTransportSecurity | undefined;
+	readonly basePolicy?: SubResource;
+	readonly childPolicies?: SubResource[];
+	readonly dnsSettings?: DnsSettings;
+	readonly firewalls?: SubResource[];
+	readonly intrusionDetection?: FirewallPolicyIntrusionDetection;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly ruleCollectionGroups?: SubResource[];
+	readonly sku?: FirewallPolicySku;
+	readonly threatIntelMode?: "Alert" | "Deny" | "Off";
+	readonly threatIntelWhitelist?: FirewallPolicyThreatIntelWhitelist;
+	readonly transportSecurity?: FirewallPolicyTransportSecurity;
 }
 export interface FirewallPolicyRule {
-	readonly description?: string | undefined;
-	readonly name?: string | undefined;
+	readonly description?: string;
+	readonly name?: string;
 }
 export interface FirewallPolicyRuleApplicationProtocol {
-	readonly port?: number | undefined;
-	readonly protocolType?: ("Http" | "Https") | undefined;
+	readonly port?: number;
+	readonly protocolType?: "Http" | "Https";
 }
 export interface FirewallPolicyRuleCollection {
-	readonly name?: string | undefined;
-	readonly priority?: number | undefined;
+	readonly name?: string;
+	readonly priority?: number;
 }
 export interface FirewallPolicyRuleCollectionGroupProperties {
-	readonly priority?: number | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly ruleCollections?: FirewallPolicyRuleCollection[] | undefined;
+	readonly priority?: number;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly ruleCollections?: FirewallPolicyRuleCollection[];
 }
 export interface FirewallPolicySku {
-	readonly tier?: ("Premium" | "Standard") | undefined;
+	readonly tier?: "Premium" | "Standard";
 }
 export interface FirewallPolicyThreatIntelWhitelist {
-	readonly fqdns?: string[] | undefined;
-	readonly ipAddresses?: string[] | undefined;
+	readonly fqdns?: string[];
+	readonly ipAddresses?: string[];
 }
 export interface FirewallPolicyTransportSecurity {
-	readonly certificateAuthority?: FirewallPolicyCertificateAuthority | undefined;
+	readonly certificateAuthority?: FirewallPolicyCertificateAuthority;
 }
 export interface FlowLog {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: FlowLogPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: FlowLogPropertiesFormat;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface FlowLogFormatParameters {
-	readonly type?: "JSON" | undefined;
-	readonly version?: number | undefined;
+	readonly type?: "JSON";
+	readonly version?: number;
 }
 export interface FlowLogPropertiesFormat {
-	readonly enabled?: boolean | undefined;
-	readonly flowAnalyticsConfiguration?: TrafficAnalyticsProperties | undefined;
-	readonly format?: FlowLogFormatParameters | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly retentionPolicy?: RetentionPolicyParameters | undefined;
+	readonly enabled?: boolean;
+	readonly flowAnalyticsConfiguration?: TrafficAnalyticsProperties;
+	readonly format?: FlowLogFormatParameters;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly retentionPolicy?: RetentionPolicyParameters;
 	readonly storageId: string;
-	readonly targetResourceGuid?: string | undefined;
+	readonly targetResourceGuid?: string;
 	readonly targetResourceId: string;
 }
 export interface FrontendIPConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: FrontendIPConfigurationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
-	readonly zones?: string[] | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: FrontendIPConfigurationPropertiesFormat;
+	readonly type?: string;
+	readonly zones?: string[];
 }
 export interface FrontendIPConfigurationPropertiesFormat {
-	readonly inboundNatPools?: SubResource[] | undefined;
-	readonly inboundNatRules?: SubResource[] | undefined;
-	readonly loadBalancingRules?: SubResource[] | undefined;
-	readonly outboundRules?: SubResource[] | undefined;
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAddressVersion?: ("IPv4" | "IPv6") | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIPAddress?: PublicIPAddress | undefined;
-	readonly publicIPPrefix?: SubResource | undefined;
-	readonly subnet?: Subnet | undefined;
+	readonly inboundNatPools?: SubResource[];
+	readonly inboundNatRules?: SubResource[];
+	readonly loadBalancingRules?: SubResource[];
+	readonly outboundRules?: SubResource[];
+	readonly privateIPAddress?: string;
+	readonly privateIPAddressVersion?: "IPv4" | "IPv6";
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIPAddress?: PublicIPAddress;
+	readonly publicIPPrefix?: SubResource;
+	readonly subnet?: Subnet;
 }
 export interface HttpHeader {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface HubIPAddresses {
-	readonly privateIPAddress?: string | undefined;
-	readonly publicIPs?: HubPublicIPAddresses | undefined;
+	readonly privateIPAddress?: string;
+	readonly publicIPs?: HubPublicIPAddresses;
 }
 export interface HubIPConfigurationPropertiesFormat {
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIPAddress?: PublicIPAddress | undefined;
-	readonly subnet?: Subnet | undefined;
+	readonly privateIPAddress?: string;
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIPAddress?: PublicIPAddress;
+	readonly subnet?: Subnet;
 }
 export interface HubPublicIPAddresses {
-	readonly addresses?: AzureFirewallPublicIPAddress[] | undefined;
-	readonly count?: number | undefined;
+	readonly addresses?: AzureFirewallPublicIPAddress[];
+	readonly count?: number;
 }
 export interface HubRoute {
 	readonly destinations: string[];
@@ -3260,113 +3256,113 @@ export interface HubRoute {
 	readonly nextHopType: string;
 }
 export interface HubRouteTableProperties {
-	readonly associatedConnections?: string[] | undefined;
-	readonly labels?: string[] | undefined;
-	readonly propagatingConnections?: string[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly routes?: HubRoute[] | undefined;
+	readonly associatedConnections?: string[];
+	readonly labels?: string[];
+	readonly propagatingConnections?: string[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly routes?: HubRoute[];
 }
 export interface HubVirtualNetworkConnectionProperties {
-	readonly allowHubToRemoteVnetTransit?: boolean | undefined;
-	readonly allowRemoteVnetToUseHubVnetGateways?: boolean | undefined;
-	readonly enableInternetSecurity?: boolean | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly remoteVirtualNetwork?: SubResource | undefined;
-	readonly routingConfiguration?: RoutingConfiguration | undefined;
+	readonly allowHubToRemoteVnetTransit?: boolean;
+	readonly allowRemoteVnetToUseHubVnetGateways?: boolean;
+	readonly enableInternetSecurity?: boolean;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly remoteVirtualNetwork?: SubResource;
+	readonly routingConfiguration?: RoutingConfiguration;
 }
 export interface InboundNatPool {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: InboundNatPoolPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: InboundNatPoolPropertiesFormat;
+	readonly type?: string;
 }
 export interface InboundNatPoolPropertiesFormat {
 	readonly backendPort: number;
-	readonly enableFloatingIP?: boolean | undefined;
-	readonly enableTcpReset?: boolean | undefined;
-	readonly frontendIPConfiguration?: SubResource | undefined;
+	readonly enableFloatingIP?: boolean;
+	readonly enableTcpReset?: boolean;
+	readonly frontendIPConfiguration?: SubResource;
 	readonly frontendPortRangeEnd: number;
 	readonly frontendPortRangeStart: number;
-	readonly idleTimeoutInMinutes?: number | undefined;
+	readonly idleTimeoutInMinutes?: number;
 	readonly protocol: "All" | "Tcp" | "Udp";
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface InboundNatRule {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: InboundNatRulePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: InboundNatRulePropertiesFormat;
+	readonly type?: string;
 }
 export interface InboundNatRulePropertiesFormat {
-	readonly backendIPConfiguration?: NetworkInterfaceIPConfiguration | undefined;
-	readonly backendPort?: number | undefined;
-	readonly enableFloatingIP?: boolean | undefined;
-	readonly enableTcpReset?: boolean | undefined;
-	readonly frontendIPConfiguration?: SubResource | undefined;
-	readonly frontendPort?: number | undefined;
-	readonly idleTimeoutInMinutes?: number | undefined;
-	readonly protocol?: ("All" | "Tcp" | "Udp") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly backendIPConfiguration?: NetworkInterfaceIPConfiguration;
+	readonly backendPort?: number;
+	readonly enableFloatingIP?: boolean;
+	readonly enableTcpReset?: boolean;
+	readonly frontendIPConfiguration?: SubResource;
+	readonly frontendPort?: number;
+	readonly idleTimeoutInMinutes?: number;
+	readonly protocol?: "All" | "Tcp" | "Udp";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface InboundSecurityRuleProperties {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly rules?: InboundSecurityRules[] | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly rules?: InboundSecurityRules[];
 }
 export interface InboundSecurityRules {
-	readonly destinationPortRange?: number | undefined;
-	readonly protocol?: ("TCP" | "UDP") | undefined;
-	readonly sourceAddressPrefix?: string | undefined;
+	readonly destinationPortRange?: number;
+	readonly protocol?: "TCP" | "UDP";
+	readonly sourceAddressPrefix?: string;
 }
 export interface IpAllocationPropertiesFormat {
-	readonly allocationTags?: IpAllocationPropertiesFormatAllocationTags | undefined;
-	readonly ipamAllocationId?: string | undefined;
-	readonly prefix?: string | undefined;
-	readonly prefixLength?: number | undefined;
-	readonly prefixType?: ("IPv4" | "IPv6") | undefined;
-	readonly subnet?: SubResource | undefined;
-	readonly type?: ("Hypernet" | "Undefined") | undefined;
-	readonly virtualNetwork?: SubResource | undefined;
+	readonly allocationTags?: IpAllocationPropertiesFormatAllocationTags;
+	readonly ipamAllocationId?: string;
+	readonly prefix?: string;
+	readonly prefixLength?: number;
+	readonly prefixType?: "IPv4" | "IPv6";
+	readonly subnet?: SubResource;
+	readonly type?: "Hypernet" | "Undefined";
+	readonly virtualNetwork?: SubResource;
 }
 export interface IpAllocationPropertiesFormatAllocationTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface IPConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: IPConfigurationPropertiesFormat | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: IPConfigurationPropertiesFormat;
 }
 export interface IPConfigurationBgpPeeringAddress {
-	readonly customBgpIpAddresses?: string[] | undefined;
-	readonly defaultBgpIpAddresses?: string[] | undefined;
-	readonly ipconfigurationId?: string | undefined;
-	readonly tunnelIpAddresses?: string[] | undefined;
+	readonly customBgpIpAddresses?: string[];
+	readonly defaultBgpIpAddresses?: string[];
+	readonly ipconfigurationId?: string;
+	readonly tunnelIpAddresses?: string[];
 }
 export interface IPConfigurationProfile {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: IPConfigurationProfilePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: IPConfigurationProfilePropertiesFormat;
+	readonly type?: string;
 }
 export interface IPConfigurationProfilePropertiesFormat {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly subnet?: Subnet | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly subnet?: Subnet;
 }
 export interface IPConfigurationPropertiesFormat {
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIPAddress?: PublicIPAddress | undefined;
-	readonly subnet?: Subnet | undefined;
+	readonly privateIPAddress?: string;
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIPAddress?: PublicIPAddress;
+	readonly subnet?: Subnet;
 }
 export interface IpGroupPropertiesFormat {
-	readonly firewallPolicies?: SubResource[] | undefined;
-	readonly firewalls?: SubResource[] | undefined;
-	readonly ipAddresses?: string[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly firewallPolicies?: SubResource[];
+	readonly firewalls?: SubResource[];
+	readonly ipAddresses?: string[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface IpsecPolicy {
 	readonly dhGroup: "DHGroup1" | "DHGroup14" | "DHGroup2" | "DHGroup2048" | "DHGroup24" | "ECP256" | "ECP384" | "None";
@@ -3388,115 +3384,113 @@ export interface IpsecPolicy {
 	readonly saLifeTimeSeconds: number;
 }
 export interface IpTag {
-	readonly ipTagType?: string | undefined;
-	readonly tag?: string | undefined;
+	readonly ipTagType?: string;
+	readonly tag?: string;
 }
 export interface Ipv6CircuitConnectionConfig {
-	readonly addressPrefix?: string | undefined;
-	readonly circuitConnectionStatus?: ("Connected" | "Connecting" | "Disconnected") | undefined;
+	readonly addressPrefix?: string;
+	readonly circuitConnectionStatus?: "Connected" | "Connecting" | "Disconnected";
 }
 export interface Ipv6ExpressRouteCircuitPeeringConfig {
-	readonly microsoftPeeringConfig?: ExpressRouteCircuitPeeringConfig | undefined;
-	readonly primaryPeerAddressPrefix?: string | undefined;
-	readonly routeFilter?: SubResource | undefined;
-	readonly secondaryPeerAddressPrefix?: string | undefined;
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly microsoftPeeringConfig?: ExpressRouteCircuitPeeringConfig;
+	readonly primaryPeerAddressPrefix?: string;
+	readonly routeFilter?: SubResource;
+	readonly secondaryPeerAddressPrefix?: string;
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface LoadBalancerBackendAddress {
-	readonly name?: string | undefined;
-	readonly properties?: LoadBalancerBackendAddressPropertiesFormat | undefined;
+	readonly name?: string;
+	readonly properties?: LoadBalancerBackendAddressPropertiesFormat;
 }
 export interface LoadBalancerBackendAddressPropertiesFormat {
-	readonly ipAddress?: string | undefined;
-	readonly loadBalancerFrontendIPConfiguration?: SubResource | undefined;
-	readonly networkInterfaceIPConfiguration?: SubResource | undefined;
-	readonly virtualNetwork?: SubResource | undefined;
+	readonly ipAddress?: string;
+	readonly loadBalancerFrontendIPConfiguration?: SubResource;
+	readonly networkInterfaceIPConfiguration?: SubResource;
+	readonly virtualNetwork?: SubResource;
 }
 export interface LoadBalancerPropertiesFormat {
-	readonly backendAddressPools?: BackendAddressPool[] | undefined;
-	readonly frontendIPConfigurations?: FrontendIPConfiguration[] | undefined;
-	readonly inboundNatPools?: InboundNatPool[] | undefined;
-	readonly inboundNatRules?: InboundNatRule[] | undefined;
-	readonly loadBalancingRules?: LoadBalancingRule[] | undefined;
-	readonly outboundRules?: OutboundRule[] | undefined;
-	readonly probes?: Probe[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly backendAddressPools?: BackendAddressPool[];
+	readonly frontendIPConfigurations?: FrontendIPConfiguration[];
+	readonly inboundNatPools?: InboundNatPool[];
+	readonly inboundNatRules?: InboundNatRule[];
+	readonly loadBalancingRules?: LoadBalancingRule[];
+	readonly outboundRules?: OutboundRule[];
+	readonly probes?: Probe[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
 }
 export interface LoadBalancerSku {
-	readonly name?: ("Basic" | "Standard") | undefined;
-	readonly tier?: ("Global" | "Regional") | undefined;
+	readonly name?: "Basic" | "Standard";
+	readonly tier?: "Global" | "Regional";
 }
 export interface LoadBalancingRule {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: LoadBalancingRulePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: LoadBalancingRulePropertiesFormat;
+	readonly type?: string;
 }
 export interface LoadBalancingRulePropertiesFormat {
-	readonly backendAddressPool?: SubResource | undefined;
-	readonly backendPort?: number | undefined;
-	readonly disableOutboundSnat?: boolean | undefined;
-	readonly enableFloatingIP?: boolean | undefined;
-	readonly enableTcpReset?: boolean | undefined;
-	readonly frontendIPConfiguration?: SubResource | undefined;
+	readonly backendAddressPool?: SubResource;
+	readonly backendPort?: number;
+	readonly disableOutboundSnat?: boolean;
+	readonly enableFloatingIP?: boolean;
+	readonly enableTcpReset?: boolean;
+	readonly frontendIPConfiguration?: SubResource;
 	readonly frontendPort: number;
-	readonly idleTimeoutInMinutes?: number | undefined;
-	readonly loadDistribution?: ("Default" | "SourceIP" | "SourceIPProtocol") | undefined;
-	readonly probe?: SubResource | undefined;
+	readonly idleTimeoutInMinutes?: number;
+	readonly loadDistribution?: "Default" | "SourceIP" | "SourceIPProtocol";
+	readonly probe?: SubResource;
 	readonly protocol: "All" | "Tcp" | "Udp";
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface LocalNetworkGateway {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
 	readonly properties: LocalNetworkGatewayPropertiesFormat;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface LocalNetworkGatewayPropertiesFormat {
-	readonly bgpSettings?: BgpSettings | undefined;
-	readonly fqdn?: string | undefined;
-	readonly gatewayIpAddress?: string | undefined;
-	readonly localNetworkAddressSpace?: AddressSpace | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly bgpSettings?: BgpSettings;
+	readonly fqdn?: string;
+	readonly gatewayIpAddress?: string;
+	readonly localNetworkAddressSpace?: AddressSpace;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
 }
 export interface ManagedRuleGroupOverride {
 	readonly ruleGroupName: string;
-	readonly rules?: ManagedRuleOverride[] | undefined;
+	readonly rules?: ManagedRuleOverride[];
 }
 export interface ManagedRuleOverride {
 	readonly ruleId: string;
-	readonly state?: "Disabled" | undefined;
+	readonly state?: "Disabled";
 }
 export interface ManagedRulesDefinition {
-	readonly exclusions?: OwaspCrsExclusionEntry[] | undefined;
+	readonly exclusions?: OwaspCrsExclusionEntry[];
 	readonly managedRuleSets: ManagedRuleSet[];
 }
 export interface ManagedRuleSet {
-	readonly ruleGroupOverrides?: ManagedRuleGroupOverride[] | undefined;
+	readonly ruleGroupOverrides?: ManagedRuleGroupOverride[];
 	readonly ruleSetType: string;
 	readonly ruleSetVersion: string;
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: ManagedServiceIdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: ManagedServiceIdentityUserAssignedIdentities;
 }
 export interface ManagedServiceIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?:
-		| Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties
-		| undefined;
+	readonly [key: string]: Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties;
 }
 export interface MatchCondition {
 	readonly matchValues: string[];
 	readonly matchVariables: MatchVariable[];
-	readonly negationConditon?: boolean | undefined;
+	readonly negationConditon?: boolean;
 	readonly operator:
 		| "BeginsWith"
 		| "Contains"
@@ -3509,12 +3503,10 @@ export interface MatchCondition {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "Regex";
-	readonly transforms?:
-		| ("HtmlEntityDecode" | "Lowercase" | "RemoveNulls" | "Trim" | "UrlDecode" | "UrlEncode"[])
-		| undefined;
+	readonly transforms?: "HtmlEntityDecode" | "Lowercase" | "RemoveNulls" | "Trim" | "UrlDecode" | "UrlEncode"[];
 }
 export interface MatchVariable {
-	readonly selector?: string | undefined;
+	readonly selector?: string;
 	readonly variableName:
 		| "PostArgs"
 		| "QueryString"
@@ -3526,176 +3518,176 @@ export interface MatchVariable {
 		| "RequestUri";
 }
 export interface NatGateway {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: NatGatewayPropertiesFormat | undefined;
-	readonly sku?: NatGatewaySku | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
-	readonly zones?: string[] | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: NatGatewayPropertiesFormat;
+	readonly sku?: NatGatewaySku;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
+	readonly zones?: string[];
 }
 export interface NatGatewayPropertiesFormat {
-	readonly idleTimeoutInMinutes?: number | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIpAddresses?: SubResource[] | undefined;
-	readonly publicIpPrefixes?: SubResource[] | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly subnets?: SubResource[] | undefined;
+	readonly idleTimeoutInMinutes?: number;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIpAddresses?: SubResource[];
+	readonly publicIpPrefixes?: SubResource[];
+	readonly resourceGuid?: string;
+	readonly subnets?: SubResource[];
 }
 export interface NatGatewaySku {
-	readonly name?: "Standard" | undefined;
+	readonly name?: "Standard";
 }
 export interface NetworkInterface {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: NetworkInterfacePropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: NetworkInterfacePropertiesFormat;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface NetworkInterfaceDnsSettings {
-	readonly appliedDnsServers?: string[] | undefined;
-	readonly dnsServers?: string[] | undefined;
-	readonly internalDnsNameLabel?: string | undefined;
-	readonly internalDomainNameSuffix?: string | undefined;
-	readonly internalFqdn?: string | undefined;
+	readonly appliedDnsServers?: string[];
+	readonly dnsServers?: string[];
+	readonly internalDnsNameLabel?: string;
+	readonly internalDomainNameSuffix?: string;
+	readonly internalFqdn?: string;
 }
 export interface NetworkInterfaceIPConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: NetworkInterfaceIPConfigurationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: NetworkInterfaceIPConfigurationPropertiesFormat;
+	readonly type?: string;
 }
 export interface NetworkInterfaceIPConfigurationPrivateLinkConnectionProperties {
-	readonly fqdns?: string[] | undefined;
-	readonly groupId?: string | undefined;
-	readonly requiredMemberName?: string | undefined;
+	readonly fqdns?: string[];
+	readonly groupId?: string;
+	readonly requiredMemberName?: string;
 }
 export interface NetworkInterfaceIPConfigurationPropertiesFormat {
-	readonly applicationGatewayBackendAddressPools?: ApplicationGatewayBackendAddressPool[] | undefined;
-	readonly applicationSecurityGroups?: ApplicationSecurityGroup[] | undefined;
-	readonly loadBalancerBackendAddressPools?: BackendAddressPool[] | undefined;
-	readonly loadBalancerInboundNatRules?: InboundNatRule[] | undefined;
-	readonly primary?: boolean | undefined;
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAddressVersion?: ("IPv4" | "IPv6") | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly privateLinkConnectionProperties?: NetworkInterfaceIPConfigurationPrivateLinkConnectionProperties | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIPAddress?: PublicIPAddress | undefined;
-	readonly subnet?: Subnet | undefined;
-	readonly virtualNetworkTaps?: VirtualNetworkTap[] | undefined;
+	readonly applicationGatewayBackendAddressPools?: ApplicationGatewayBackendAddressPool[];
+	readonly applicationSecurityGroups?: ApplicationSecurityGroup[];
+	readonly loadBalancerBackendAddressPools?: BackendAddressPool[];
+	readonly loadBalancerInboundNatRules?: InboundNatRule[];
+	readonly primary?: boolean;
+	readonly privateIPAddress?: string;
+	readonly privateIPAddressVersion?: "IPv4" | "IPv6";
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly privateLinkConnectionProperties?: NetworkInterfaceIPConfigurationPrivateLinkConnectionProperties;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIPAddress?: PublicIPAddress;
+	readonly subnet?: Subnet;
+	readonly virtualNetworkTaps?: VirtualNetworkTap[];
 }
 export interface NetworkInterfacePropertiesFormat {
-	readonly dnsSettings?: NetworkInterfaceDnsSettings | undefined;
-	readonly dscpConfiguration?: SubResource | undefined;
-	readonly enableAcceleratedNetworking?: boolean | undefined;
-	readonly enableIPForwarding?: boolean | undefined;
-	readonly hostedWorkloads?: string[] | undefined;
-	readonly ipConfigurations?: NetworkInterfaceIPConfiguration[] | undefined;
-	readonly macAddress?: string | undefined;
-	readonly migrationPhase?: ("Abort" | "Commit" | "Committed" | "None" | "Prepare") | undefined;
-	readonly networkSecurityGroup?: NetworkSecurityGroup | undefined;
-	readonly nicType?: ("Elastic" | "Standard") | undefined;
-	readonly primary?: boolean | undefined;
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkService?: PrivateLinkService | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly tapConfigurations?: NetworkInterfaceTapConfiguration[] | undefined;
-	readonly virtualMachine?: SubResource | undefined;
+	readonly dnsSettings?: NetworkInterfaceDnsSettings;
+	readonly dscpConfiguration?: SubResource;
+	readonly enableAcceleratedNetworking?: boolean;
+	readonly enableIPForwarding?: boolean;
+	readonly hostedWorkloads?: string[];
+	readonly ipConfigurations?: NetworkInterfaceIPConfiguration[];
+	readonly macAddress?: string;
+	readonly migrationPhase?: "Abort" | "Commit" | "Committed" | "None" | "Prepare";
+	readonly networkSecurityGroup?: NetworkSecurityGroup;
+	readonly nicType?: "Elastic" | "Standard";
+	readonly primary?: boolean;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkService?: PrivateLinkService;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
+	readonly tapConfigurations?: NetworkInterfaceTapConfiguration[];
+	readonly virtualMachine?: SubResource;
 }
 export interface NetworkInterfaceTapConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: NetworkInterfaceTapConfigurationPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: NetworkInterfaceTapConfigurationPropertiesFormat;
+	readonly type?: string;
 }
 export interface NetworkInterfaceTapConfigurationPropertiesFormat {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly virtualNetworkTap?: VirtualNetworkTap | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly virtualNetworkTap?: VirtualNetworkTap;
 }
 export interface NetworkProfilePropertiesFormat {
-	readonly containerNetworkInterfaceConfigurations?: ContainerNetworkInterfaceConfiguration[] | undefined;
-	readonly containerNetworkInterfaces?: ContainerNetworkInterface[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly containerNetworkInterfaceConfigurations?: ContainerNetworkInterfaceConfiguration[];
+	readonly containerNetworkInterfaces?: ContainerNetworkInterface[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
 }
 export interface NetworkSecurityGroup {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: NetworkSecurityGroupPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: NetworkSecurityGroupPropertiesFormat;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface NetworkSecurityGroupPropertiesFormat {
-	readonly defaultSecurityRules?: SecurityRule[] | undefined;
-	readonly flowLogs?: FlowLog[] | undefined;
-	readonly networkInterfaces?: NetworkInterface[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly securityRules?: SecurityRule[] | undefined;
-	readonly subnets?: Subnet[] | undefined;
+	readonly defaultSecurityRules?: SecurityRule[];
+	readonly flowLogs?: FlowLog[];
+	readonly networkInterfaces?: NetworkInterface[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
+	readonly securityRules?: SecurityRule[];
+	readonly subnets?: Subnet[];
 }
 export interface NetworkVirtualAppliancePropertiesFormat {
-	readonly addressPrefix?: string | undefined;
-	readonly bootStrapConfigurationBlobs?: string[] | undefined;
-	readonly cloudInitConfiguration?: string | undefined;
-	readonly cloudInitConfigurationBlobs?: string[] | undefined;
-	readonly inboundSecurityRules?: SubResource[] | undefined;
-	readonly nvaSku?: VirtualApplianceSkuProperties | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly virtualApplianceAsn?: number | undefined;
-	readonly virtualApplianceNics?: VirtualApplianceNicProperties[] | undefined;
-	readonly virtualApplianceSites?: SubResource[] | undefined;
-	readonly virtualHub?: SubResource | undefined;
+	readonly addressPrefix?: string;
+	readonly bootStrapConfigurationBlobs?: string[];
+	readonly cloudInitConfiguration?: string;
+	readonly cloudInitConfigurationBlobs?: string[];
+	readonly inboundSecurityRules?: SubResource[];
+	readonly nvaSku?: VirtualApplianceSkuProperties;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly virtualApplianceAsn?: number;
+	readonly virtualApplianceNics?: VirtualApplianceNicProperties[];
+	readonly virtualApplianceSites?: SubResource[];
+	readonly virtualHub?: SubResource;
 }
 export interface NetworkVirtualApplianceSkuInstances {
-	readonly instanceCount?: number | undefined;
-	readonly scaleUnit?: string | undefined;
+	readonly instanceCount?: number;
+	readonly scaleUnit?: string;
 }
 export interface NetworkVirtualApplianceSkuPropertiesFormat {
-	readonly availableScaleUnits?: NetworkVirtualApplianceSkuInstances[] | undefined;
-	readonly availableVersions?: string[] | undefined;
-	readonly vendor?: string | undefined;
+	readonly availableScaleUnits?: NetworkVirtualApplianceSkuInstances[];
+	readonly availableVersions?: string[];
+	readonly vendor?: string;
 }
 export interface NetworkWatcherPropertiesFormat {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface O365BreakOutCategoryPolicies {
-	readonly allow?: boolean | undefined;
-	readonly default?: boolean | undefined;
-	readonly optimize?: boolean | undefined;
+	readonly allow?: boolean;
+	readonly default?: boolean;
+	readonly optimize?: boolean;
 }
 export interface O365PolicyProperties {
-	readonly breakOutCategories?: O365BreakOutCategoryPolicies | undefined;
+	readonly breakOutCategories?: O365BreakOutCategoryPolicies;
 }
 export interface Office365PolicyProperties {
-	readonly breakOutCategories?: BreakOutCategoryPolicies | undefined;
+	readonly breakOutCategories?: BreakOutCategoryPolicies;
 }
 export interface OutboundRule {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: OutboundRulePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: OutboundRulePropertiesFormat;
+	readonly type?: string;
 }
 export interface OutboundRulePropertiesFormat {
-	readonly allocatedOutboundPorts?: number | undefined;
+	readonly allocatedOutboundPorts?: number;
 	readonly backendAddressPool: SubResource;
-	readonly enableTcpReset?: boolean | undefined;
+	readonly enableTcpReset?: boolean;
 	readonly frontendIPConfigurations: SubResource[];
-	readonly idleTimeoutInMinutes?: number | undefined;
+	readonly idleTimeoutInMinutes?: number;
 	readonly protocol: "All" | "Tcp" | "Udp";
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface OwaspCrsExclusionEntry {
 	readonly matchVariable: "RequestArgNames" | "RequestCookieNames" | "RequestHeaderNames";
@@ -3703,965 +3695,959 @@ export interface OwaspCrsExclusionEntry {
 	readonly selectorMatchOperator: "Contains" | "EndsWith" | "Equals" | "Equalsany" | "StartsWith";
 }
 export interface P2SConnectionConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: P2SConnectionConfigurationProperties | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: P2SConnectionConfigurationProperties;
 }
 export interface P2SConnectionConfigurationProperties {
-	readonly enableInternetSecurity?: boolean | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly routingConfiguration?: RoutingConfiguration | undefined;
-	readonly vpnClientAddressPool?: AddressSpace | undefined;
+	readonly enableInternetSecurity?: boolean;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly routingConfiguration?: RoutingConfiguration;
+	readonly vpnClientAddressPool?: AddressSpace;
 }
 export interface P2SVpnGateway {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: P2SVpnGatewayProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: P2SVpnGatewayProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface P2SVpnGatewayProperties {
-	readonly customDnsServers?: string[] | undefined;
-	readonly isRoutingPreferenceInternet?: boolean | undefined;
-	readonly p2SConnectionConfigurations?: P2SConnectionConfiguration[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly virtualHub?: SubResource | undefined;
-	readonly vpnClientConnectionHealth?: VpnClientConnectionHealth | undefined;
-	readonly vpnGatewayScaleUnit?: number | undefined;
-	readonly vpnServerConfiguration?: SubResource | undefined;
+	readonly customDnsServers?: string[];
+	readonly isRoutingPreferenceInternet?: boolean;
+	readonly p2SConnectionConfigurations?: P2SConnectionConfiguration[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly virtualHub?: SubResource;
+	readonly vpnClientConnectionHealth?: VpnClientConnectionHealth;
+	readonly vpnGatewayScaleUnit?: number;
+	readonly vpnServerConfiguration?: SubResource;
 }
 export interface PacketCaptureFilter {
-	readonly localIPAddress?: string | undefined;
-	readonly localPort?: string | undefined;
-	readonly protocol?: ("any" | "TCP" | "UDP") | undefined;
-	readonly remoteIPAddress?: string | undefined;
-	readonly remotePort?: string | undefined;
+	readonly localIPAddress?: string;
+	readonly localPort?: string;
+	readonly protocol?: "any" | "TCP" | "UDP";
+	readonly remoteIPAddress?: string;
+	readonly remotePort?: string;
 }
 export interface PacketCaptureParametersOrPacketCaptureResultProperties {
-	readonly bytesToCapturePerPacket?: number | undefined;
-	readonly filters?: PacketCaptureFilter[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly bytesToCapturePerPacket?: number;
+	readonly filters?: PacketCaptureFilter[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly storageLocation: PacketCaptureStorageLocation;
 	readonly target: string;
-	readonly timeLimitInSeconds?: number | undefined;
-	readonly totalBytesPerSession?: number | undefined;
+	readonly timeLimitInSeconds?: number;
+	readonly totalBytesPerSession?: number;
 }
 export interface PacketCaptureStorageLocation {
-	readonly filePath?: string | undefined;
-	readonly storageId?: string | undefined;
-	readonly storagePath?: string | undefined;
+	readonly filePath?: string;
+	readonly storageId?: string;
+	readonly storagePath?: string;
 }
 export interface PeerExpressRouteCircuitConnection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PeerExpressRouteCircuitConnectionPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PeerExpressRouteCircuitConnectionPropertiesFormat;
+	readonly type?: string;
 }
 export interface PeerExpressRouteCircuitConnectionPropertiesFormat {
-	readonly addressPrefix?: string | undefined;
-	readonly authResourceGuid?: string | undefined;
-	readonly circuitConnectionStatus?: ("Connected" | "Connecting" | "Disconnected") | undefined;
-	readonly connectionName?: string | undefined;
-	readonly expressRouteCircuitPeering?: SubResource | undefined;
-	readonly peerExpressRouteCircuitPeering?: SubResource | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly addressPrefix?: string;
+	readonly authResourceGuid?: string;
+	readonly circuitConnectionStatus?: "Connected" | "Connecting" | "Disconnected";
+	readonly connectionName?: string;
+	readonly expressRouteCircuitPeering?: SubResource;
+	readonly peerExpressRouteCircuitPeering?: SubResource;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PolicySettings {
-	readonly fileUploadLimitInMb?: number | undefined;
-	readonly maxRequestBodySizeInKb?: number | undefined;
-	readonly mode?: ("Detection" | "Prevention") | undefined;
-	readonly requestBodyCheck?: boolean | undefined;
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly fileUploadLimitInMb?: number;
+	readonly maxRequestBodySizeInKb?: number;
+	readonly mode?: "Detection" | "Prevention";
+	readonly requestBodyCheck?: boolean;
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface PrivateDnsZoneConfig {
-	readonly name?: string | undefined;
-	readonly properties?: PrivateDnsZonePropertiesFormat | undefined;
+	readonly name?: string;
+	readonly properties?: PrivateDnsZonePropertiesFormat;
 }
 export interface PrivateDnsZoneGroupPropertiesFormat {
-	readonly privateDnsZoneConfigs?: PrivateDnsZoneConfig[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly privateDnsZoneConfigs?: PrivateDnsZoneConfig[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PrivateDnsZonePropertiesFormat {
-	readonly privateDnsZoneId?: string | undefined;
-	readonly recordSets?: RecordSet[] | undefined;
+	readonly privateDnsZoneId?: string;
+	readonly recordSets?: RecordSet[];
 }
 export interface PrivateEndpoint {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly linkIdentifier?: string | undefined;
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly linkIdentifier?: string;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PrivateEndpointProperties {
-	readonly customDnsConfigs?: CustomDnsConfigPropertiesFormat[] | undefined;
-	readonly manualPrivateLinkServiceConnections?: PrivateLinkServiceConnection[] | undefined;
-	readonly networkInterfaces?: NetworkInterface[] | undefined;
-	readonly privateLinkServiceConnections?: PrivateLinkServiceConnection[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly subnet?: Subnet | undefined;
+	readonly customDnsConfigs?: CustomDnsConfigPropertiesFormat[];
+	readonly manualPrivateLinkServiceConnections?: PrivateLinkServiceConnection[];
+	readonly networkInterfaces?: NetworkInterface[];
+	readonly privateLinkServiceConnections?: PrivateLinkServiceConnection[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly subnet?: Subnet;
 }
 export interface PrivateLinkService {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateLinkServiceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: PrivateLinkServiceProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface PrivateLinkServiceConnection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateLinkServiceConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateLinkServiceConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateLinkServiceConnectionProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly privateLinkServiceId?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly requestMessage?: string | undefined;
+	readonly groupIds?: string[];
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly privateLinkServiceId?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly requestMessage?: string;
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: string | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: string;
 }
 export interface PrivateLinkServiceIpConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateLinkServiceIpConfigurationProperties | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateLinkServiceIpConfigurationProperties;
+	readonly type?: string;
 }
 export interface PrivateLinkServiceIpConfigurationProperties {
-	readonly primary?: boolean | undefined;
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAddressVersion?: ("IPv4" | "IPv6") | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly subnet?: Subnet | undefined;
+	readonly primary?: boolean;
+	readonly privateIPAddress?: string;
+	readonly privateIPAddressVersion?: "IPv4" | "IPv6";
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly subnet?: Subnet;
 }
 export interface PrivateLinkServiceProperties {
-	readonly alias?: string | undefined;
-	readonly autoApproval?: PrivateLinkServicePropertiesAutoApproval | undefined;
-	readonly enableProxyProtocol?: boolean | undefined;
-	readonly fqdns?: string[] | undefined;
-	readonly ipConfigurations?: PrivateLinkServiceIpConfiguration[] | undefined;
-	readonly loadBalancerFrontendIpConfigurations?: FrontendIPConfiguration[] | undefined;
-	readonly networkInterfaces?: NetworkInterface[] | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly visibility?: PrivateLinkServicePropertiesVisibility | undefined;
+	readonly alias?: string;
+	readonly autoApproval?: PrivateLinkServicePropertiesAutoApproval;
+	readonly enableProxyProtocol?: boolean;
+	readonly fqdns?: string[];
+	readonly ipConfigurations?: PrivateLinkServiceIpConfiguration[];
+	readonly loadBalancerFrontendIpConfigurations?: FrontendIPConfiguration[];
+	readonly networkInterfaces?: NetworkInterface[];
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly visibility?: PrivateLinkServicePropertiesVisibility;
 }
 export interface PrivateLinkServicePropertiesAutoApproval {
-	readonly subscriptions?: string[] | undefined;
+	readonly subscriptions?: string[];
 }
 export interface PrivateLinkServicePropertiesVisibility {
-	readonly subscriptions?: string[] | undefined;
+	readonly subscriptions?: string[];
 }
 export interface Probe {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ProbePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ProbePropertiesFormat;
+	readonly type?: string;
 }
 export interface ProbePropertiesFormat {
-	readonly intervalInSeconds?: number | undefined;
-	readonly loadBalancingRules?: SubResource[] | undefined;
-	readonly numberOfProbes?: number | undefined;
+	readonly intervalInSeconds?: number;
+	readonly loadBalancingRules?: SubResource[];
+	readonly numberOfProbes?: number;
 	readonly port: number;
 	readonly protocol: "Http" | "Https" | "Tcp";
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly requestPath?: string | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly requestPath?: string;
 }
 export interface PropagatedRouteTable {
-	readonly ids?: SubResource[] | undefined;
-	readonly labels?: string[] | undefined;
+	readonly ids?: SubResource[];
+	readonly labels?: string[];
 }
 export interface ProtocolCustomSettingsFormat {
-	readonly protocol?: ("Syn" | "Tcp" | "Udp") | undefined;
-	readonly sourceRateOverride?: string | undefined;
-	readonly triggerRateOverride?: string | undefined;
-	readonly triggerSensitivityOverride?: ("Default" | "High" | "Low" | "Relaxed") | undefined;
+	readonly protocol?: "Syn" | "Tcp" | "Udp";
+	readonly sourceRateOverride?: string;
+	readonly triggerRateOverride?: string;
+	readonly triggerSensitivityOverride?: "Default" | "High" | "Low" | "Relaxed";
 }
 export interface PublicIPAddress {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PublicIPAddressPropertiesFormat | undefined;
-	readonly sku?: PublicIPAddressSku | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
-	readonly zones?: string[] | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: PublicIPAddressPropertiesFormat;
+	readonly sku?: PublicIPAddressSku;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
+	readonly zones?: string[];
 }
 export interface PublicIPAddressDnsSettings {
-	readonly domainNameLabel?: string | undefined;
-	readonly fqdn?: string | undefined;
-	readonly reverseFqdn?: string | undefined;
+	readonly domainNameLabel?: string;
+	readonly fqdn?: string;
+	readonly reverseFqdn?: string;
 }
 export interface PublicIPAddressPropertiesFormat {
-	readonly ddosSettings?: DdosSettings | undefined;
-	readonly dnsSettings?: PublicIPAddressDnsSettings | undefined;
-	readonly idleTimeoutInMinutes?: number | undefined;
-	readonly ipAddress?: string | undefined;
-	readonly ipConfiguration?: IPConfiguration | undefined;
-	readonly ipTags?: IpTag[] | undefined;
-	readonly linkedPublicIPAddress?: PublicIPAddress | undefined;
-	readonly migrationPhase?: ("Abort" | "Commit" | "Committed" | "None" | "Prepare") | undefined;
-	readonly natGateway?: NatGateway | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIPAddressVersion?: ("IPv4" | "IPv6") | undefined;
-	readonly publicIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly publicIPPrefix?: SubResource | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly servicePublicIPAddress?: PublicIPAddress | undefined;
+	readonly ddosSettings?: DdosSettings;
+	readonly dnsSettings?: PublicIPAddressDnsSettings;
+	readonly idleTimeoutInMinutes?: number;
+	readonly ipAddress?: string;
+	readonly ipConfiguration?: IPConfiguration;
+	readonly ipTags?: IpTag[];
+	readonly linkedPublicIPAddress?: PublicIPAddress;
+	readonly migrationPhase?: "Abort" | "Commit" | "Committed" | "None" | "Prepare";
+	readonly natGateway?: NatGateway;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIPAddressVersion?: "IPv4" | "IPv6";
+	readonly publicIPAllocationMethod?: "Dynamic" | "Static";
+	readonly publicIPPrefix?: SubResource;
+	readonly resourceGuid?: string;
+	readonly servicePublicIPAddress?: PublicIPAddress;
 }
 export interface PublicIPAddressSku {
-	readonly name?: ("Basic" | "Standard") | undefined;
-	readonly tier?: ("Global" | "Regional") | undefined;
+	readonly name?: "Basic" | "Standard";
+	readonly tier?: "Global" | "Regional";
 }
 export interface PublicIPPrefixPropertiesFormat {
-	readonly customIPPrefix?: SubResource | undefined;
-	readonly ipPrefix?: string | undefined;
-	readonly ipTags?: IpTag[] | undefined;
-	readonly loadBalancerFrontendIpConfiguration?: SubResource | undefined;
-	readonly natGateway?: NatGateway | undefined;
-	readonly prefixLength?: number | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIPAddresses?: ReferencedPublicIpAddress[] | undefined;
-	readonly publicIPAddressVersion?: ("IPv4" | "IPv6") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly customIPPrefix?: SubResource;
+	readonly ipPrefix?: string;
+	readonly ipTags?: IpTag[];
+	readonly loadBalancerFrontendIpConfiguration?: SubResource;
+	readonly natGateway?: NatGateway;
+	readonly prefixLength?: number;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIPAddresses?: ReferencedPublicIpAddress[];
+	readonly publicIPAddressVersion?: "IPv4" | "IPv6";
+	readonly resourceGuid?: string;
 }
 export interface PublicIPPrefixSku {
-	readonly name?: "Standard" | undefined;
-	readonly tier?: ("Global" | "Regional") | undefined;
+	readonly name?: "Standard";
+	readonly tier?: "Global" | "Regional";
 }
 export interface QosIpRange {
-	readonly endIP?: string | undefined;
-	readonly startIP?: string | undefined;
+	readonly endIP?: string;
+	readonly startIP?: string;
 }
 export interface QosPortRange {
-	readonly end?: number | undefined;
-	readonly start?: number | undefined;
+	readonly end?: number;
+	readonly start?: number;
 }
 export interface RadiusServer {
 	readonly radiusServerAddress: string;
-	readonly radiusServerScore?: number | undefined;
-	readonly radiusServerSecret?: string | undefined;
+	readonly radiusServerScore?: number;
+	readonly radiusServerSecret?: string;
 }
 export interface RecordSet {
-	readonly fqdn?: string | undefined;
-	readonly ipAddresses?: string[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly recordSetName?: string | undefined;
-	readonly recordType?: string | undefined;
-	readonly ttl?: number | undefined;
+	readonly fqdn?: string;
+	readonly ipAddresses?: string[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly recordSetName?: string;
+	readonly recordType?: string;
+	readonly ttl?: number;
 }
 export interface ReferencedPublicIpAddress {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ResourceNavigationLink {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ResourceNavigationLinkFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ResourceNavigationLinkFormat;
+	readonly type?: string;
 }
 export interface ResourceNavigationLinkFormat {
-	readonly link?: string | undefined;
-	readonly linkedResourceType?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly link?: string;
+	readonly linkedResourceType?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RetentionPolicyParameters {
-	readonly days?: number | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly days?: number;
+	readonly enabled?: boolean;
 }
 export interface Route {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: RoutePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: RoutePropertiesFormat;
+	readonly type?: string;
 }
 export interface RouteFilterPropertiesFormat {
-	readonly ipv6Peerings?: ExpressRouteCircuitPeering[] | undefined;
-	readonly peerings?: ExpressRouteCircuitPeering[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly rules?: RouteFilterRule[] | undefined;
+	readonly ipv6Peerings?: ExpressRouteCircuitPeering[];
+	readonly peerings?: ExpressRouteCircuitPeering[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly rules?: RouteFilterRule[];
 }
 export interface RouteFilterRule {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: RouteFilterRulePropertiesFormat | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: RouteFilterRulePropertiesFormat;
 }
 export interface RouteFilterRulePropertiesFormat {
 	readonly access: "Allow" | "Deny";
 	readonly communities: string[];
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly routeFilterRuleType: "Community";
 }
 export interface RoutePropertiesFormat {
-	readonly addressPrefix?: string | undefined;
-	readonly hasBgpOverride?: boolean | undefined;
-	readonly nextHopIpAddress?: string | undefined;
+	readonly addressPrefix?: string;
+	readonly hasBgpOverride?: boolean;
+	readonly nextHopIpAddress?: string;
 	readonly nextHopType: "Internet" | "None" | "VirtualAppliance" | "VirtualNetworkGateway" | "VnetLocal";
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface RouteTable {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: RouteTablePropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: RouteTablePropertiesFormat;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface RouteTablePropertiesFormat {
-	readonly disableBgpRoutePropagation?: boolean | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly routes?: Route[] | undefined;
-	readonly subnets?: Subnet[] | undefined;
+	readonly disableBgpRoutePropagation?: boolean;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
+	readonly routes?: Route[];
+	readonly subnets?: Subnet[];
 }
 export interface RoutingConfiguration {
-	readonly associatedRouteTable?: SubResource | undefined;
-	readonly propagatedRouteTables?: PropagatedRouteTable | undefined;
-	readonly vnetRoutes?: VnetRoute | undefined;
+	readonly associatedRouteTable?: SubResource;
+	readonly propagatedRouteTables?: PropagatedRouteTable;
+	readonly vnetRoutes?: VnetRoute;
 }
 export interface SecurityPartnerProviderPropertiesFormat {
-	readonly connectionStatus?: ("Connected" | "NotConnected" | "PartiallyConnected" | "Unknown") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly securityProviderName?: ("Checkpoint" | "IBoss" | "ZScaler") | undefined;
-	readonly virtualHub?: SubResource | undefined;
+	readonly connectionStatus?: "Connected" | "NotConnected" | "PartiallyConnected" | "Unknown";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly securityProviderName?: "Checkpoint" | "IBoss" | "ZScaler";
+	readonly virtualHub?: SubResource;
 }
 export interface SecurityRule {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: SecurityRulePropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: SecurityRulePropertiesFormat;
+	readonly type?: string;
 }
 export interface SecurityRulePropertiesFormat {
 	readonly access: "Allow" | "Deny";
-	readonly description?: string | undefined;
-	readonly destinationAddressPrefix?: string | undefined;
-	readonly destinationAddressPrefixes?: string[] | undefined;
-	readonly destinationApplicationSecurityGroups?: ApplicationSecurityGroup[] | undefined;
-	readonly destinationPortRange?: string | undefined;
-	readonly destinationPortRanges?: string[] | undefined;
+	readonly description?: string;
+	readonly destinationAddressPrefix?: string;
+	readonly destinationAddressPrefixes?: string[];
+	readonly destinationApplicationSecurityGroups?: ApplicationSecurityGroup[];
+	readonly destinationPortRange?: string;
+	readonly destinationPortRanges?: string[];
 	readonly direction: "Inbound" | "Outbound";
-	readonly priority?: number | undefined;
+	readonly priority?: number;
 	readonly protocol: "*" | "Ah" | "Esp" | "Icmp" | "Tcp" | "Udp";
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly sourceAddressPrefix?: string | undefined;
-	readonly sourceAddressPrefixes?: string[] | undefined;
-	readonly sourceApplicationSecurityGroups?: ApplicationSecurityGroup[] | undefined;
-	readonly sourcePortRange?: string | undefined;
-	readonly sourcePortRanges?: string[] | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly sourceAddressPrefix?: string;
+	readonly sourceAddressPrefixes?: string[];
+	readonly sourceApplicationSecurityGroups?: ApplicationSecurityGroup[];
+	readonly sourcePortRange?: string;
+	readonly sourcePortRanges?: string[];
 }
 export interface ServiceAssociationLink {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ServiceAssociationLinkPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ServiceAssociationLinkPropertiesFormat;
+	readonly type?: string;
 }
 export interface ServiceAssociationLinkPropertiesFormat {
-	readonly allowDelete?: boolean | undefined;
-	readonly link?: string | undefined;
-	readonly linkedResourceType?: string | undefined;
-	readonly locations?: string[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly allowDelete?: boolean;
+	readonly link?: string;
+	readonly linkedResourceType?: string;
+	readonly locations?: string[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ServiceDelegationPropertiesFormat {
-	readonly actions?: string[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly serviceName?: string | undefined;
+	readonly actions?: string[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly serviceName?: string;
 }
 export interface ServiceEndpointPolicy {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ServiceEndpointPolicyPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: ServiceEndpointPolicyPropertiesFormat;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ServiceEndpointPolicyDefinition {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ServiceEndpointPolicyDefinitionPropertiesFormat | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ServiceEndpointPolicyDefinitionPropertiesFormat;
 }
 export interface ServiceEndpointPolicyDefinitionPropertiesFormat {
-	readonly description?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly service?: string | undefined;
-	readonly serviceResources?: string[] | undefined;
+	readonly description?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly service?: string;
+	readonly serviceResources?: string[];
 }
 export interface ServiceEndpointPolicyPropertiesFormat {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly serviceEndpointPolicyDefinitions?: ServiceEndpointPolicyDefinition[] | undefined;
-	readonly subnets?: Subnet[] | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
+	readonly serviceEndpointPolicyDefinitions?: ServiceEndpointPolicyDefinition[];
+	readonly subnets?: Subnet[];
 }
 export interface ServiceEndpointPropertiesFormat {
-	readonly locations?: string[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly service?: string | undefined;
+	readonly locations?: string[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly service?: string;
 }
 export interface StaticRoute {
-	readonly addressPrefixes?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly nextHopIpAddress?: string | undefined;
+	readonly addressPrefixes?: string[];
+	readonly name?: string;
+	readonly nextHopIpAddress?: string;
 }
 export interface Subnet {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: SubnetPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: SubnetPropertiesFormat;
+	readonly type?: string;
 }
 export interface SubnetPropertiesFormat {
-	readonly addressPrefix?: string | undefined;
-	readonly addressPrefixes?: string[] | undefined;
-	readonly applicationGatewayIpConfigurations?: ApplicationGatewayIPConfiguration[] | undefined;
-	readonly delegations?: Delegation[] | undefined;
-	readonly ipAllocations?: SubResource[] | undefined;
-	readonly ipConfigurationProfiles?: IPConfigurationProfile[] | undefined;
-	readonly ipConfigurations?: IPConfiguration[] | undefined;
-	readonly natGateway?: SubResource | undefined;
-	readonly networkSecurityGroup?: NetworkSecurityGroup | undefined;
-	readonly privateEndpointNetworkPolicies?: ("Disabled" | "Enabled") | undefined;
-	readonly privateEndpoints?: PrivateEndpoint[] | undefined;
-	readonly privateLinkServiceNetworkPolicies?: ("Disabled" | "Enabled") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly purpose?: string | undefined;
-	readonly resourceNavigationLinks?: ResourceNavigationLink[] | undefined;
-	readonly routeTable?: RouteTable | undefined;
-	readonly serviceAssociationLinks?: ServiceAssociationLink[] | undefined;
-	readonly serviceEndpointPolicies?: ServiceEndpointPolicy[] | undefined;
-	readonly serviceEndpoints?: ServiceEndpointPropertiesFormat[] | undefined;
+	readonly addressPrefix?: string;
+	readonly addressPrefixes?: string[];
+	readonly applicationGatewayIpConfigurations?: ApplicationGatewayIPConfiguration[];
+	readonly delegations?: Delegation[];
+	readonly ipAllocations?: SubResource[];
+	readonly ipConfigurationProfiles?: IPConfigurationProfile[];
+	readonly ipConfigurations?: IPConfiguration[];
+	readonly natGateway?: SubResource;
+	readonly networkSecurityGroup?: NetworkSecurityGroup;
+	readonly privateEndpointNetworkPolicies?: "Disabled" | "Enabled";
+	readonly privateEndpoints?: PrivateEndpoint[];
+	readonly privateLinkServiceNetworkPolicies?: "Disabled" | "Enabled";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly purpose?: string;
+	readonly resourceNavigationLinks?: ResourceNavigationLink[];
+	readonly routeTable?: RouteTable;
+	readonly serviceAssociationLinks?: ServiceAssociationLink[];
+	readonly serviceEndpointPolicies?: ServiceEndpointPolicy[];
+	readonly serviceEndpoints?: ServiceEndpointPropertiesFormat[];
 }
 export interface SubResource {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface TrafficAnalyticsConfigurationProperties {
-	readonly enabled?: boolean | undefined;
-	readonly trafficAnalyticsInterval?: number | undefined;
-	readonly workspaceId?: string | undefined;
-	readonly workspaceRegion?: string | undefined;
-	readonly workspaceResourceId?: string | undefined;
+	readonly enabled?: boolean;
+	readonly trafficAnalyticsInterval?: number;
+	readonly workspaceId?: string;
+	readonly workspaceRegion?: string;
+	readonly workspaceResourceId?: string;
 }
 export interface TrafficAnalyticsProperties {
-	readonly networkWatcherFlowAnalyticsConfiguration?: TrafficAnalyticsConfigurationProperties | undefined;
+	readonly networkWatcherFlowAnalyticsConfiguration?: TrafficAnalyticsConfigurationProperties;
 }
 export interface TrafficSelectorPolicy {
 	readonly localAddressRanges: string[];
 	readonly remoteAddressRanges: string[];
 }
 export interface TunnelConnectionHealth {
-	readonly connectionStatus?: ("Connected" | "Connecting" | "NotConnected" | "Unknown") | undefined;
-	readonly egressBytesTransferred?: number | undefined;
-	readonly ingressBytesTransferred?: number | undefined;
-	readonly lastConnectionEstablishedUtcTime?: string | undefined;
-	readonly tunnel?: string | undefined;
+	readonly connectionStatus?: "Connected" | "Connecting" | "NotConnected" | "Unknown";
+	readonly egressBytesTransferred?: number;
+	readonly ingressBytesTransferred?: number;
+	readonly lastConnectionEstablishedUtcTime?: string;
+	readonly tunnel?: string;
 }
 export interface VirtualApplianceNicProperties {
-	readonly name?: string | undefined;
-	readonly privateIpAddress?: string | undefined;
-	readonly publicIpAddress?: string | undefined;
+	readonly name?: string;
+	readonly privateIpAddress?: string;
+	readonly publicIpAddress?: string;
 }
 export interface VirtualApplianceSiteProperties {
-	readonly addressPrefix?: string | undefined;
-	readonly o365Policy?: Office365PolicyProperties | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly addressPrefix?: string;
+	readonly o365Policy?: Office365PolicyProperties;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface VirtualApplianceSkuProperties {
-	readonly bundledScaleUnit?: string | undefined;
-	readonly marketPlaceVersion?: string | undefined;
-	readonly vendor?: string | undefined;
+	readonly bundledScaleUnit?: string;
+	readonly marketPlaceVersion?: string;
+	readonly vendor?: string;
 }
 export interface VirtualHubId {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface VirtualHubProperties {
-	readonly addressPrefix?: string | undefined;
-	readonly allowBranchToBranchTraffic?: boolean | undefined;
-	readonly azureFirewall?: SubResource | undefined;
-	readonly bgpConnections?: SubResource[] | undefined;
-	readonly expressRouteGateway?: SubResource | undefined;
-	readonly ipConfigurations?: SubResource[] | undefined;
-	readonly p2SVpnGateway?: SubResource | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly routeTable?: VirtualHubRouteTable | undefined;
-	readonly routingState?: ("Failed" | "None" | "Provisioned" | "Provisioning") | undefined;
-	readonly securityPartnerProvider?: SubResource | undefined;
-	readonly securityProviderName?: string | undefined;
-	readonly sku?: string | undefined;
-	readonly virtualHubRouteTableV2s?: VirtualHubRouteTableV2[] | undefined;
-	readonly virtualRouterAsn?: number | undefined;
-	readonly virtualRouterIps?: string[] | undefined;
-	readonly virtualWan?: SubResource | undefined;
-	readonly vpnGateway?: SubResource | undefined;
+	readonly addressPrefix?: string;
+	readonly allowBranchToBranchTraffic?: boolean;
+	readonly azureFirewall?: SubResource;
+	readonly bgpConnections?: SubResource[];
+	readonly expressRouteGateway?: SubResource;
+	readonly ipConfigurations?: SubResource[];
+	readonly p2SVpnGateway?: SubResource;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly routeTable?: VirtualHubRouteTable;
+	readonly routingState?: "Failed" | "None" | "Provisioned" | "Provisioning";
+	readonly securityPartnerProvider?: SubResource;
+	readonly securityProviderName?: string;
+	readonly sku?: string;
+	readonly virtualHubRouteTableV2s?: VirtualHubRouteTableV2[];
+	readonly virtualRouterAsn?: number;
+	readonly virtualRouterIps?: string[];
+	readonly virtualWan?: SubResource;
+	readonly vpnGateway?: SubResource;
 }
 export interface VirtualHubRoute {
-	readonly addressPrefixes?: string[] | undefined;
-	readonly nextHopIpAddress?: string | undefined;
+	readonly addressPrefixes?: string[];
+	readonly nextHopIpAddress?: string;
 }
 export interface VirtualHubRouteTable {
-	readonly routes?: VirtualHubRoute[] | undefined;
+	readonly routes?: VirtualHubRoute[];
 }
 export interface VirtualHubRouteTableV2 {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: VirtualHubRouteTableV2Properties | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: VirtualHubRouteTableV2Properties;
 }
 export interface VirtualHubRouteTableV2Properties {
-	readonly attachedConnections?: string[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly routes?: VirtualHubRouteV2[] | undefined;
+	readonly attachedConnections?: string[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly routes?: VirtualHubRouteV2[];
 }
 export interface VirtualHubRouteV2 {
-	readonly destinations?: string[] | undefined;
-	readonly destinationType?: string | undefined;
-	readonly nextHops?: string[] | undefined;
-	readonly nextHopType?: string | undefined;
+	readonly destinations?: string[];
+	readonly destinationType?: string;
+	readonly nextHops?: string[];
+	readonly nextHopType?: string;
 }
 export interface VirtualNetworkBgpCommunities {
-	readonly regionalCommunity?: string | undefined;
+	readonly regionalCommunity?: string;
 	readonly virtualNetworkCommunity: string;
 }
 export interface VirtualNetworkGateway {
-	readonly etag?: string | undefined;
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
+	readonly etag?: string;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
 	readonly properties: VirtualNetworkGatewayPropertiesFormat;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface VirtualNetworkGatewayConnectionPropertiesFormat {
-	readonly authorizationKey?: string | undefined;
-	readonly connectionMode?: ("Default" | "InitiatorOnly" | "ResponderOnly") | undefined;
-	readonly connectionProtocol?: ("IKEv1" | "IKEv2") | undefined;
-	readonly connectionStatus?: ("Connected" | "Connecting" | "NotConnected" | "Unknown") | undefined;
+	readonly authorizationKey?: string;
+	readonly connectionMode?: "Default" | "InitiatorOnly" | "ResponderOnly";
+	readonly connectionProtocol?: "IKEv1" | "IKEv2";
+	readonly connectionStatus?: "Connected" | "Connecting" | "NotConnected" | "Unknown";
 	readonly connectionType: "ExpressRoute" | "IPsec" | "VPNClient" | "Vnet2Vnet";
-	readonly dpdTimeoutSeconds?: number | undefined;
-	readonly egressBytesTransferred?: number | undefined;
-	readonly enableBgp?: boolean | undefined;
-	readonly expressRouteGatewayBypass?: boolean | undefined;
-	readonly ingressBytesTransferred?: number | undefined;
-	readonly ipsecPolicies?: IpsecPolicy[] | undefined;
-	readonly localNetworkGateway2?: LocalNetworkGateway | undefined;
-	readonly peer?: SubResource | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly routingWeight?: number | undefined;
-	readonly sharedKey?: string | undefined;
-	readonly trafficSelectorPolicies?: TrafficSelectorPolicy[] | undefined;
-	readonly tunnelConnectionStatus?: TunnelConnectionHealth[] | undefined;
-	readonly useLocalAzureIpAddress?: boolean | undefined;
-	readonly usePolicyBasedTrafficSelectors?: boolean | undefined;
+	readonly dpdTimeoutSeconds?: number;
+	readonly egressBytesTransferred?: number;
+	readonly enableBgp?: boolean;
+	readonly expressRouteGatewayBypass?: boolean;
+	readonly ingressBytesTransferred?: number;
+	readonly ipsecPolicies?: IpsecPolicy[];
+	readonly localNetworkGateway2?: LocalNetworkGateway;
+	readonly peer?: SubResource;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
+	readonly routingWeight?: number;
+	readonly sharedKey?: string;
+	readonly trafficSelectorPolicies?: TrafficSelectorPolicy[];
+	readonly tunnelConnectionStatus?: TunnelConnectionHealth[];
+	readonly useLocalAzureIpAddress?: boolean;
+	readonly usePolicyBasedTrafficSelectors?: boolean;
 	readonly virtualNetworkGateway1: VirtualNetworkGateway;
-	readonly virtualNetworkGateway2?: VirtualNetworkGateway | undefined;
+	readonly virtualNetworkGateway2?: VirtualNetworkGateway;
 }
 export interface VirtualNetworkGatewayIPConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: VirtualNetworkGatewayIPConfigurationPropertiesFormat | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: VirtualNetworkGatewayIPConfigurationPropertiesFormat;
 }
 export interface VirtualNetworkGatewayIPConfigurationPropertiesFormat {
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIPAddress?: SubResource | undefined;
-	readonly subnet?: SubResource | undefined;
+	readonly privateIPAddress?: string;
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIPAddress?: SubResource;
+	readonly subnet?: SubResource;
 }
 export interface VirtualNetworkGatewayPropertiesFormat {
-	readonly activeActive?: boolean | undefined;
-	readonly bgpSettings?: BgpSettings | undefined;
-	readonly customRoutes?: AddressSpace | undefined;
-	readonly enableBgp?: boolean | undefined;
-	readonly enableDnsForwarding?: boolean | undefined;
-	readonly enablePrivateIpAddress?: boolean | undefined;
-	readonly gatewayDefaultSite?: SubResource | undefined;
-	readonly gatewayType?: ("ExpressRoute" | "LocalGateway" | "Vpn") | undefined;
-	readonly inboundDnsForwardingEndpoint?: string | undefined;
-	readonly ipConfigurations?: VirtualNetworkGatewayIPConfiguration[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly sku?: VirtualNetworkGatewaySku | undefined;
-	readonly vNetExtendedLocationResourceId?: string | undefined;
-	readonly vpnClientConfiguration?: VpnClientConfiguration | undefined;
-	readonly vpnGatewayGeneration?: ("Generation1" | "Generation2" | "None") | undefined;
-	readonly vpnType?: ("PolicyBased" | "RouteBased") | undefined;
+	readonly activeActive?: boolean;
+	readonly bgpSettings?: BgpSettings;
+	readonly customRoutes?: AddressSpace;
+	readonly enableBgp?: boolean;
+	readonly enableDnsForwarding?: boolean;
+	readonly enablePrivateIpAddress?: boolean;
+	readonly gatewayDefaultSite?: SubResource;
+	readonly gatewayType?: "ExpressRoute" | "LocalGateway" | "Vpn";
+	readonly inboundDnsForwardingEndpoint?: string;
+	readonly ipConfigurations?: VirtualNetworkGatewayIPConfiguration[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
+	readonly sku?: VirtualNetworkGatewaySku;
+	readonly vNetExtendedLocationResourceId?: string;
+	readonly vpnClientConfiguration?: VpnClientConfiguration;
+	readonly vpnGatewayGeneration?: "Generation1" | "Generation2" | "None";
+	readonly vpnType?: "PolicyBased" | "RouteBased";
 }
 export interface VirtualNetworkGatewaySku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name?:
-		| (
-				| "Basic"
-				| "ErGw1AZ"
-				| "ErGw2AZ"
-				| "ErGw3AZ"
-				| "HighPerformance"
-				| "Standard"
-				| "UltraPerformance"
-				| "VpnGw1"
-				| "VpnGw1AZ"
-				| "VpnGw2"
-				| "VpnGw2AZ"
-				| "VpnGw3"
-				| "VpnGw3AZ"
-				| "VpnGw4"
-				| "VpnGw4AZ"
-				| "VpnGw5"
-				| "VpnGw5AZ"
-		  )
-		| undefined;
+		| "Basic"
+		| "ErGw1AZ"
+		| "ErGw2AZ"
+		| "ErGw3AZ"
+		| "HighPerformance"
+		| "Standard"
+		| "UltraPerformance"
+		| "VpnGw1"
+		| "VpnGw1AZ"
+		| "VpnGw2"
+		| "VpnGw2AZ"
+		| "VpnGw3"
+		| "VpnGw3AZ"
+		| "VpnGw4"
+		| "VpnGw4AZ"
+		| "VpnGw5"
+		| "VpnGw5AZ";
 	readonly tier?:
-		| (
-				| "Basic"
-				| "ErGw1AZ"
-				| "ErGw2AZ"
-				| "ErGw3AZ"
-				| "HighPerformance"
-				| "Standard"
-				| "UltraPerformance"
-				| "VpnGw1"
-				| "VpnGw1AZ"
-				| "VpnGw2"
-				| "VpnGw2AZ"
-				| "VpnGw3"
-				| "VpnGw3AZ"
-				| "VpnGw4"
-				| "VpnGw4AZ"
-				| "VpnGw5"
-				| "VpnGw5AZ"
-		  )
-		| undefined;
+		| "Basic"
+		| "ErGw1AZ"
+		| "ErGw2AZ"
+		| "ErGw3AZ"
+		| "HighPerformance"
+		| "Standard"
+		| "UltraPerformance"
+		| "VpnGw1"
+		| "VpnGw1AZ"
+		| "VpnGw2"
+		| "VpnGw2AZ"
+		| "VpnGw3"
+		| "VpnGw3AZ"
+		| "VpnGw4"
+		| "VpnGw4AZ"
+		| "VpnGw5"
+		| "VpnGw5AZ";
 }
 export interface VirtualNetworkPeering {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: VirtualNetworkPeeringPropertiesFormat | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: VirtualNetworkPeeringPropertiesFormat;
+	readonly type?: string;
 }
 export interface VirtualNetworkPeeringPropertiesFormat {
-	readonly allowForwardedTraffic?: boolean | undefined;
-	readonly allowGatewayTransit?: boolean | undefined;
-	readonly allowVirtualNetworkAccess?: boolean | undefined;
-	readonly doNotVerifyRemoteGateways?: boolean | undefined;
-	readonly peeringState?: ("Connected" | "Disconnected" | "Initiated") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly remoteAddressSpace?: AddressSpace | undefined;
-	readonly remoteBgpCommunities?: VirtualNetworkBgpCommunities | undefined;
-	readonly remoteVirtualNetwork?: SubResource | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly useRemoteGateways?: boolean | undefined;
+	readonly allowForwardedTraffic?: boolean;
+	readonly allowGatewayTransit?: boolean;
+	readonly allowVirtualNetworkAccess?: boolean;
+	readonly doNotVerifyRemoteGateways?: boolean;
+	readonly peeringState?: "Connected" | "Disconnected" | "Initiated";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly remoteAddressSpace?: AddressSpace;
+	readonly remoteBgpCommunities?: VirtualNetworkBgpCommunities;
+	readonly remoteVirtualNetwork?: SubResource;
+	readonly resourceGuid?: string;
+	readonly useRemoteGateways?: boolean;
 }
 export interface VirtualNetworkPropertiesFormat {
-	readonly addressSpace?: AddressSpace | undefined;
-	readonly bgpCommunities?: VirtualNetworkBgpCommunities | undefined;
-	readonly ddosProtectionPlan?: SubResource | undefined;
-	readonly dhcpOptions?: DhcpOptions | undefined;
-	readonly enableDdosProtection?: boolean | undefined;
-	readonly enableVmProtection?: boolean | undefined;
-	readonly ipAllocations?: SubResource[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly subnets?: Subnet[] | undefined;
-	readonly virtualNetworkPeerings?: VirtualNetworkPeering[] | undefined;
+	readonly addressSpace?: AddressSpace;
+	readonly bgpCommunities?: VirtualNetworkBgpCommunities;
+	readonly ddosProtectionPlan?: SubResource;
+	readonly dhcpOptions?: DhcpOptions;
+	readonly enableDdosProtection?: boolean;
+	readonly enableVmProtection?: boolean;
+	readonly ipAllocations?: SubResource[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
+	readonly subnets?: Subnet[];
+	readonly virtualNetworkPeerings?: VirtualNetworkPeering[];
 }
 export interface VirtualNetworkTap {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: VirtualNetworkTapPropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: VirtualNetworkTapPropertiesFormat;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface VirtualNetworkTapPropertiesFormat {
-	readonly destinationLoadBalancerFrontEndIPConfiguration?: FrontendIPConfiguration | undefined;
-	readonly destinationNetworkInterfaceIPConfiguration?: NetworkInterfaceIPConfiguration | undefined;
-	readonly destinationPort?: number | undefined;
-	readonly networkInterfaceTapConfigurations?: NetworkInterfaceTapConfiguration[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly destinationLoadBalancerFrontEndIPConfiguration?: FrontendIPConfiguration;
+	readonly destinationNetworkInterfaceIPConfiguration?: NetworkInterfaceIPConfiguration;
+	readonly destinationPort?: number;
+	readonly networkInterfaceTapConfigurations?: NetworkInterfaceTapConfiguration[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceGuid?: string;
 }
 export interface VirtualRouterPeeringProperties {
-	readonly peerAsn?: number | undefined;
-	readonly peerIp?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly peerAsn?: number;
+	readonly peerIp?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface VirtualRouterPropertiesFormat {
-	readonly hostedGateway?: SubResource | undefined;
-	readonly hostedSubnet?: SubResource | undefined;
-	readonly peerings?: SubResource[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly virtualRouterAsn?: number | undefined;
-	readonly virtualRouterIps?: string[] | undefined;
+	readonly hostedGateway?: SubResource;
+	readonly hostedSubnet?: SubResource;
+	readonly peerings?: SubResource[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly virtualRouterAsn?: number;
+	readonly virtualRouterIps?: string[];
 }
 export interface VirtualWanProperties {
-	readonly allowBranchToBranchTraffic?: boolean | undefined;
-	readonly allowVnetToVnetTraffic?: boolean | undefined;
-	readonly disableVpnEncryption?: boolean | undefined;
-	readonly office365LocalBreakoutCategory?: ("All" | "None" | "Optimize" | "OptimizeAndAllow") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly type?: string | undefined;
-	readonly virtualHubs?: SubResource[] | undefined;
-	readonly vpnSites?: SubResource[] | undefined;
+	readonly allowBranchToBranchTraffic?: boolean;
+	readonly allowVnetToVnetTraffic?: boolean;
+	readonly disableVpnEncryption?: boolean;
+	readonly office365LocalBreakoutCategory?: "All" | "None" | "Optimize" | "OptimizeAndAllow";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly type?: string;
+	readonly virtualHubs?: SubResource[];
+	readonly vpnSites?: SubResource[];
 }
 export interface VnetRoute {
-	readonly staticRoutes?: StaticRoute[] | undefined;
+	readonly staticRoutes?: StaticRoute[];
 }
 export interface VpnClientConfiguration {
-	readonly aadAudience?: string | undefined;
-	readonly aadIssuer?: string | undefined;
-	readonly aadTenant?: string | undefined;
-	readonly radiusServerAddress?: string | undefined;
-	readonly radiusServers?: RadiusServer[] | undefined;
-	readonly radiusServerSecret?: string | undefined;
-	readonly vpnClientAddressPool?: AddressSpace | undefined;
-	readonly vpnClientIpsecPolicies?: IpsecPolicy[] | undefined;
-	readonly vpnClientProtocols?: ("IkeV2" | "OpenVPN" | "SSTP"[]) | undefined;
-	readonly vpnClientRevokedCertificates?: VpnClientRevokedCertificate[] | undefined;
-	readonly vpnClientRootCertificates?: VpnClientRootCertificate[] | undefined;
+	readonly aadAudience?: string;
+	readonly aadIssuer?: string;
+	readonly aadTenant?: string;
+	readonly radiusServerAddress?: string;
+	readonly radiusServers?: RadiusServer[];
+	readonly radiusServerSecret?: string;
+	readonly vpnClientAddressPool?: AddressSpace;
+	readonly vpnClientIpsecPolicies?: IpsecPolicy[];
+	readonly vpnClientProtocols?: "IkeV2" | "OpenVPN" | "SSTP"[];
+	readonly vpnClientRevokedCertificates?: VpnClientRevokedCertificate[];
+	readonly vpnClientRootCertificates?: VpnClientRootCertificate[];
 }
 export interface VpnClientConnectionHealth {
-	readonly allocatedIpAddresses?: string[] | undefined;
-	readonly totalEgressBytesTransferred?: number | undefined;
-	readonly totalIngressBytesTransferred?: number | undefined;
-	readonly vpnClientConnectionsCount?: number | undefined;
+	readonly allocatedIpAddresses?: string[];
+	readonly totalEgressBytesTransferred?: number;
+	readonly totalIngressBytesTransferred?: number;
+	readonly vpnClientConnectionsCount?: number;
 }
 export interface VpnClientRevokedCertificate {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: VpnClientRevokedCertificatePropertiesFormat | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: VpnClientRevokedCertificatePropertiesFormat;
 }
 export interface VpnClientRevokedCertificatePropertiesFormat {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly thumbprint?: string;
 }
 export interface VpnClientRootCertificate {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
 	readonly properties: VpnClientRootCertificatePropertiesFormat;
 }
 export interface VpnClientRootCertificatePropertiesFormat {
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly publicCertData: string;
 }
 export interface VpnConnection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: VpnConnectionProperties | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: VpnConnectionProperties;
 }
 export interface VpnConnectionProperties {
-	readonly connectionBandwidth?: number | undefined;
-	readonly connectionStatus?: ("Connected" | "Connecting" | "NotConnected" | "Unknown") | undefined;
-	readonly dpdTimeoutSeconds?: number | undefined;
-	readonly egressBytesTransferred?: number | undefined;
-	readonly enableBgp?: boolean | undefined;
-	readonly enableInternetSecurity?: boolean | undefined;
-	readonly enableRateLimiting?: boolean | undefined;
-	readonly ingressBytesTransferred?: number | undefined;
-	readonly ipsecPolicies?: IpsecPolicy[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly remoteVpnSite?: SubResource | undefined;
-	readonly routingConfiguration?: RoutingConfiguration | undefined;
-	readonly routingWeight?: number | undefined;
-	readonly sharedKey?: string | undefined;
-	readonly useLocalAzureIpAddress?: boolean | undefined;
-	readonly usePolicyBasedTrafficSelectors?: boolean | undefined;
-	readonly vpnConnectionProtocolType?: ("IKEv1" | "IKEv2") | undefined;
-	readonly vpnLinkConnections?: VpnSiteLinkConnection[] | undefined;
+	readonly connectionBandwidth?: number;
+	readonly connectionStatus?: "Connected" | "Connecting" | "NotConnected" | "Unknown";
+	readonly dpdTimeoutSeconds?: number;
+	readonly egressBytesTransferred?: number;
+	readonly enableBgp?: boolean;
+	readonly enableInternetSecurity?: boolean;
+	readonly enableRateLimiting?: boolean;
+	readonly ingressBytesTransferred?: number;
+	readonly ipsecPolicies?: IpsecPolicy[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly remoteVpnSite?: SubResource;
+	readonly routingConfiguration?: RoutingConfiguration;
+	readonly routingWeight?: number;
+	readonly sharedKey?: string;
+	readonly useLocalAzureIpAddress?: boolean;
+	readonly usePolicyBasedTrafficSelectors?: boolean;
+	readonly vpnConnectionProtocolType?: "IKEv1" | "IKEv2";
+	readonly vpnLinkConnections?: VpnSiteLinkConnection[];
 }
 export interface VpnGatewayIpConfiguration {
-	readonly id?: string | undefined;
-	readonly privateIpAddress?: string | undefined;
-	readonly publicIpAddress?: string | undefined;
+	readonly id?: string;
+	readonly privateIpAddress?: string;
+	readonly publicIpAddress?: string;
 }
 export interface VpnGatewayNatRule {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: VpnGatewayNatRuleProperties | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: VpnGatewayNatRuleProperties;
+	readonly type?: string;
 }
 export interface VpnGatewayNatRuleProperties {
-	readonly egressVpnSiteLinkConnections?: SubResource[] | undefined;
-	readonly externalMappings?: VpnNatRuleMapping[] | undefined;
-	readonly ingressVpnSiteLinkConnections?: SubResource[] | undefined;
-	readonly internalMappings?: VpnNatRuleMapping[] | undefined;
-	readonly ipConfigurationId?: string | undefined;
-	readonly mode?: ("EgressSnat" | "IngressSnat") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly type?: ("Dynamic" | "Static") | undefined;
+	readonly egressVpnSiteLinkConnections?: SubResource[];
+	readonly externalMappings?: VpnNatRuleMapping[];
+	readonly ingressVpnSiteLinkConnections?: SubResource[];
+	readonly internalMappings?: VpnNatRuleMapping[];
+	readonly ipConfigurationId?: string;
+	readonly mode?: "EgressSnat" | "IngressSnat";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly type?: "Dynamic" | "Static";
 }
 export interface VpnGatewayProperties {
-	readonly bgpSettings?: BgpSettings | undefined;
-	readonly connections?: VpnConnection[] | undefined;
-	readonly ipConfigurations?: VpnGatewayIpConfiguration[] | undefined;
-	readonly isRoutingPreferenceInternet?: boolean | undefined;
-	readonly natRules?: VpnGatewayNatRule[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly virtualHub?: SubResource | undefined;
-	readonly vpnGatewayScaleUnit?: number | undefined;
+	readonly bgpSettings?: BgpSettings;
+	readonly connections?: VpnConnection[];
+	readonly ipConfigurations?: VpnGatewayIpConfiguration[];
+	readonly isRoutingPreferenceInternet?: boolean;
+	readonly natRules?: VpnGatewayNatRule[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly virtualHub?: SubResource;
+	readonly vpnGatewayScaleUnit?: number;
 }
 export interface VpnLinkBgpSettings {
-	readonly asn?: number | undefined;
-	readonly bgpPeeringAddress?: string | undefined;
+	readonly asn?: number;
+	readonly bgpPeeringAddress?: string;
 }
 export interface VpnLinkProviderProperties {
-	readonly linkProviderName?: string | undefined;
-	readonly linkSpeedInMbps?: number | undefined;
+	readonly linkProviderName?: string;
+	readonly linkSpeedInMbps?: number;
 }
 export interface VpnNatRuleMapping {
-	readonly addressSpace?: string | undefined;
+	readonly addressSpace?: string;
 }
 export interface VpnServerConfigRadiusClientRootCertificate {
-	readonly name?: string | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly name?: string;
+	readonly thumbprint?: string;
 }
 export interface VpnServerConfigRadiusServerRootCertificate {
-	readonly name?: string | undefined;
-	readonly publicCertData?: string | undefined;
+	readonly name?: string;
+	readonly publicCertData?: string;
 }
 export interface VpnServerConfigurationProperties {
-	readonly aadAuthenticationParameters?: AadAuthenticationParameters | undefined;
-	readonly etag?: string | undefined;
-	readonly name?: string | undefined;
-	readonly p2SVpnGateways?: P2SVpnGateway[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly radiusClientRootCertificates?: VpnServerConfigRadiusClientRootCertificate[] | undefined;
-	readonly radiusServerAddress?: string | undefined;
-	readonly radiusServerRootCertificates?: VpnServerConfigRadiusServerRootCertificate[] | undefined;
-	readonly radiusServers?: RadiusServer[] | undefined;
-	readonly radiusServerSecret?: string | undefined;
-	readonly vpnAuthenticationTypes?: ("AAD" | "Certificate" | "Radius"[]) | undefined;
-	readonly vpnClientIpsecPolicies?: IpsecPolicy[] | undefined;
-	readonly vpnClientRevokedCertificates?: VpnServerConfigVpnClientRevokedCertificate[] | undefined;
-	readonly vpnClientRootCertificates?: VpnServerConfigVpnClientRootCertificate[] | undefined;
-	readonly vpnProtocols?: ("IkeV2" | "OpenVPN"[]) | undefined;
+	readonly aadAuthenticationParameters?: AadAuthenticationParameters;
+	readonly etag?: string;
+	readonly name?: string;
+	readonly p2SVpnGateways?: P2SVpnGateway[];
+	readonly provisioningState?: string;
+	readonly radiusClientRootCertificates?: VpnServerConfigRadiusClientRootCertificate[];
+	readonly radiusServerAddress?: string;
+	readonly radiusServerRootCertificates?: VpnServerConfigRadiusServerRootCertificate[];
+	readonly radiusServers?: RadiusServer[];
+	readonly radiusServerSecret?: string;
+	readonly vpnAuthenticationTypes?: "AAD" | "Certificate" | "Radius"[];
+	readonly vpnClientIpsecPolicies?: IpsecPolicy[];
+	readonly vpnClientRevokedCertificates?: VpnServerConfigVpnClientRevokedCertificate[];
+	readonly vpnClientRootCertificates?: VpnServerConfigVpnClientRootCertificate[];
+	readonly vpnProtocols?: "IkeV2" | "OpenVPN"[];
 }
 export interface VpnServerConfigVpnClientRevokedCertificate {
-	readonly name?: string | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly name?: string;
+	readonly thumbprint?: string;
 }
 export interface VpnServerConfigVpnClientRootCertificate {
-	readonly name?: string | undefined;
-	readonly publicCertData?: string | undefined;
+	readonly name?: string;
+	readonly publicCertData?: string;
 }
 export interface VpnSiteLink {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: VpnSiteLinkProperties | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: VpnSiteLinkProperties;
+	readonly type?: string;
 }
 export interface VpnSiteLinkConnection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: VpnSiteLinkConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: VpnSiteLinkConnectionProperties;
+	readonly type?: string;
 }
 export interface VpnSiteLinkConnectionProperties {
-	readonly connectionBandwidth?: number | undefined;
-	readonly connectionStatus?: ("Connected" | "Connecting" | "NotConnected" | "Unknown") | undefined;
-	readonly egressBytesTransferred?: number | undefined;
-	readonly egressNatRules?: SubResource[] | undefined;
-	readonly enableBgp?: boolean | undefined;
-	readonly enableRateLimiting?: boolean | undefined;
-	readonly ingressBytesTransferred?: number | undefined;
-	readonly ingressNatRules?: SubResource[] | undefined;
-	readonly ipsecPolicies?: IpsecPolicy[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly routingWeight?: number | undefined;
-	readonly sharedKey?: string | undefined;
-	readonly useLocalAzureIpAddress?: boolean | undefined;
-	readonly usePolicyBasedTrafficSelectors?: boolean | undefined;
-	readonly vpnConnectionProtocolType?: ("IKEv1" | "IKEv2") | undefined;
-	readonly vpnLinkConnectionMode?: ("Default" | "InitiatorOnly" | "ResponderOnly") | undefined;
-	readonly vpnSiteLink?: SubResource | undefined;
+	readonly connectionBandwidth?: number;
+	readonly connectionStatus?: "Connected" | "Connecting" | "NotConnected" | "Unknown";
+	readonly egressBytesTransferred?: number;
+	readonly egressNatRules?: SubResource[];
+	readonly enableBgp?: boolean;
+	readonly enableRateLimiting?: boolean;
+	readonly ingressBytesTransferred?: number;
+	readonly ingressNatRules?: SubResource[];
+	readonly ipsecPolicies?: IpsecPolicy[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly routingWeight?: number;
+	readonly sharedKey?: string;
+	readonly useLocalAzureIpAddress?: boolean;
+	readonly usePolicyBasedTrafficSelectors?: boolean;
+	readonly vpnConnectionProtocolType?: "IKEv1" | "IKEv2";
+	readonly vpnLinkConnectionMode?: "Default" | "InitiatorOnly" | "ResponderOnly";
+	readonly vpnSiteLink?: SubResource;
 }
 export interface VpnSiteLinkProperties {
-	readonly bgpProperties?: VpnLinkBgpSettings | undefined;
-	readonly fqdn?: string | undefined;
-	readonly ipAddress?: string | undefined;
-	readonly linkProperties?: VpnLinkProviderProperties | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly bgpProperties?: VpnLinkBgpSettings;
+	readonly fqdn?: string;
+	readonly ipAddress?: string;
+	readonly linkProperties?: VpnLinkProviderProperties;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface VpnSiteProperties {
-	readonly addressSpace?: AddressSpace | undefined;
-	readonly bgpProperties?: BgpSettings | undefined;
-	readonly deviceProperties?: DeviceProperties | undefined;
-	readonly ipAddress?: string | undefined;
-	readonly isSecuritySite?: boolean | undefined;
-	readonly o365Policy?: O365PolicyProperties | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly siteKey?: string | undefined;
-	readonly virtualWan?: SubResource | undefined;
-	readonly vpnSiteLinks?: VpnSiteLink[] | undefined;
+	readonly addressSpace?: AddressSpace;
+	readonly bgpProperties?: BgpSettings;
+	readonly deviceProperties?: DeviceProperties;
+	readonly ipAddress?: string;
+	readonly isSecuritySite?: boolean;
+	readonly o365Policy?: O365PolicyProperties;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly siteKey?: string;
+	readonly virtualWan?: SubResource;
+	readonly vpnSiteLinks?: VpnSiteLink[];
 }
 export interface WebApplicationFirewallCustomRule {
 	readonly action: "Allow" | "Block" | "Log";
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly matchConditions: MatchCondition[];
-	readonly name?: string | undefined;
+	readonly name?: string;
 	readonly priority: number;
 	readonly ruleType: "Invalid" | "MatchRule";
 }
 export interface WebApplicationFirewallPolicyPropertiesFormat {
-	readonly applicationGateways?: ApplicationGateway[] | undefined;
-	readonly customRules?: WebApplicationFirewallCustomRule[] | undefined;
-	readonly httpListeners?: SubResource[] | undefined;
+	readonly applicationGateways?: ApplicationGateway[];
+	readonly customRules?: WebApplicationFirewallCustomRule[];
+	readonly httpListeners?: SubResource[];
 	readonly managedRules: ManagedRulesDefinition;
-	readonly pathBasedRules?: SubResource[] | undefined;
-	readonly policySettings?: PolicySettings | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling") | undefined;
+	readonly pathBasedRules?: SubResource[];
+	readonly policySettings?: PolicySettings;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceState?: "Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling";
 }
 export default {
 	applicationGatewayAvailableSslOptions: applicationGatewayAvailableSslOptions,

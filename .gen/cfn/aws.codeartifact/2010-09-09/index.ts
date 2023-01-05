@@ -15,9 +15,9 @@ export interface DomainComponentOutputs {
 }
 export interface DomainComponentInputs {
 	readonly DomainName: string;
-	readonly EncryptionKey?: string | undefined;
-	readonly PermissionsPolicyDocument?: (any | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly EncryptionKey?: string;
+	readonly PermissionsPolicyDocument?: any | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Repository extends CfnResource<RepositoryComponentInputs> implements RepositoryComponentOutputs {
@@ -36,12 +36,12 @@ export interface RepositoryComponentOutputs {
 export interface RepositoryComponentInputs {
 	readonly DomainName: string;
 	readonly RepositoryName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DomainOwner?: string | undefined;
-	readonly ExternalConnections?: (string[] | undefined) | undefined;
-	readonly PermissionsPolicyDocument?: (any | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Upstreams?: (string[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DomainOwner?: string;
+	readonly ExternalConnections?: string[] | undefined;
+	readonly PermissionsPolicyDocument?: any | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Upstreams?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export default {

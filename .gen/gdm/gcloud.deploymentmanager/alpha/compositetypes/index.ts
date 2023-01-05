@@ -4,77 +4,74 @@ export class CompositeTypes extends GdmResource<CompositeTypesComponentInputs> i
 	constructor(entity: ADKEntity, options: CompositeTypesComponentInputs) {
 		super(entity, options.name, "deploymentmanager.alpha.CompositeTypes", options);
 	}
-	public readonly insertTime?: string | undefined;
-	public readonly operation?: Operation | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly insertTime?: string;
+	public readonly operation?: Operation;
+	public readonly selfLink?: string;
 }
 export interface CompositeTypesComponentOutputs {
-	readonly insertTime?: string | undefined;
-	readonly operation?: Operation | undefined;
-	readonly selfLink?: string | undefined;
+	readonly insertTime?: string;
+	readonly operation?: Operation;
+	readonly selfLink?: string;
 }
 export interface CompositeTypesComponentInputs {
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly labels?: CompositeTypeLabelEntry[] | undefined;
+	readonly description?: string;
+	readonly id?: string;
+	readonly labels?: CompositeTypeLabelEntry[];
 	readonly name: string;
-	readonly status?: string | undefined;
-	readonly templateContents?: TemplateContents | undefined;
-	readonly type: string;
+	readonly status?: string;
+	readonly templateContents?: TemplateContents;
 }
 export interface CompositeType {
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly insertTime?: string | undefined;
-	readonly labels?: CompositeTypeLabelEntry[] | undefined;
-	readonly name?: string | undefined;
-	readonly operation?: Operation | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly templateContents?: TemplateContents | undefined;
+	readonly description?: string;
+	readonly id?: string;
+	readonly insertTime?: string;
+	readonly labels?: CompositeTypeLabelEntry[];
+	readonly name?: string;
+	readonly operation?: Operation;
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly templateContents?: TemplateContents;
 }
 export interface CompositeTypeLabelEntry {
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface ImportFile {
-	readonly content?: string | undefined;
-	readonly name?: string | undefined;
+	readonly content?: string;
+	readonly name?: string;
 }
 export interface Operation {
-	readonly clientOperationId?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: { errors?: Array<{ code?: string; location?: string; message?: string }> } | undefined;
-	readonly httpErrorMessage?: string | undefined;
-	readonly httpErrorStatusCode?: number | undefined;
-	readonly id?: string | undefined;
-	readonly insertTime?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly operationGroupId?: string | undefined;
-	readonly operationType?: string | undefined;
-	readonly progress?: number | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly targetId?: string | undefined;
-	readonly targetLink?: string | undefined;
-	readonly user?: string | undefined;
-	readonly warnings?:
-		| Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>
-		| undefined;
-	readonly zone?: string | undefined;
+	readonly clientOperationId?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly endTime?: string;
+	readonly error?: { errors?: Array<{ code?: string; location?: string; message?: string }> };
+	readonly httpErrorMessage?: string;
+	readonly httpErrorStatusCode?: number;
+	readonly id?: string;
+	readonly insertTime?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly operationGroupId?: string;
+	readonly operationType?: string;
+	readonly progress?: number;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly statusMessage?: string;
+	readonly targetId?: string;
+	readonly targetLink?: string;
+	readonly user?: string;
+	readonly warnings?: Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>;
+	readonly zone?: string;
 }
 export interface TemplateContents {
-	readonly imports?: ImportFile[] | undefined;
-	readonly interpreter?: string | undefined;
-	readonly mainTemplate?: string | undefined;
-	readonly schema?: string | undefined;
-	readonly template?: string | undefined;
+	readonly imports?: ImportFile[];
+	readonly interpreter?: string;
+	readonly mainTemplate?: string;
+	readonly schema?: string;
+	readonly template?: string;
 }
 export default {
 	CompositeTypes: CompositeTypes,

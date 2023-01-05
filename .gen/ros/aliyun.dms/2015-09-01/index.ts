@@ -24,13 +24,13 @@ export interface InstanceComponentInputs {
 	readonly QueryTimeout: number;
 	readonly SafeRule: string;
 	readonly Tid: number;
-	readonly DataLinkName?: (string | undefined) | undefined;
-	readonly DdlOnline?: (number | undefined) | undefined;
-	readonly EcsInstanceId?: (string | undefined) | undefined;
-	readonly EcsRegion?: (string | undefined) | undefined;
-	readonly Sid?: (string | undefined) | undefined;
-	readonly UseDsql?: (number | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
+	readonly DataLinkName?: string | undefined;
+	readonly DdlOnline?: number | undefined;
+	readonly EcsInstanceId?: string | undefined;
+	readonly EcsRegion?: string | undefined;
+	readonly Sid?: string | undefined;
+	readonly UseDsql?: number | undefined;
+	readonly VpcId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class User extends RosResource<UserComponentInputs> implements UserComponentOutputs {
@@ -48,11 +48,11 @@ export interface UserComponentOutputs {
 }
 export interface UserComponentInputs {
 	readonly Uid: any | string;
-	readonly Mobile?: (any | string) | undefined;
-	readonly RoleNames?: (any | string[]) | undefined;
-	readonly Status?: (string | undefined) | undefined;
-	readonly Tid?: (string | undefined) | undefined;
-	readonly UserName?: (any | string) | undefined;
+	readonly Mobile?: any | string;
+	readonly RoleNames?: any | string[];
+	readonly Status?: string | undefined;
+	readonly Tid?: string | undefined;
+	readonly UserName?: any | string;
 	readonly LogicalId: string;
 }
 export default {

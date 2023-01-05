@@ -10,54 +10,53 @@ export class AccessPoliciesAccessLevels
 }
 export interface AccessPoliciesAccessLevelsComponentOutputs {}
 export interface AccessPoliciesAccessLevelsComponentInputs {
-	readonly basic?: BasicLevel | undefined;
-	readonly custom?: CustomLevel | undefined;
-	readonly description?: string | undefined;
+	readonly basic?: BasicLevel;
+	readonly custom?: CustomLevel;
+	readonly description?: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly title?: string | undefined;
-	readonly type: string;
+	readonly title?: string;
 }
 export interface AccessLevel {
-	readonly basic?: BasicLevel | undefined;
-	readonly custom?: CustomLevel | undefined;
-	readonly description?: string | undefined;
-	readonly name?: string | undefined;
-	readonly title?: string | undefined;
+	readonly basic?: BasicLevel;
+	readonly custom?: CustomLevel;
+	readonly description?: string;
+	readonly name?: string;
+	readonly title?: string;
 }
 export interface BasicLevel {
-	readonly combiningFunction?: string | undefined;
+	readonly combiningFunction?: string;
 	readonly conditions: Condition[];
 }
 export interface Condition {
-	readonly devicePolicy?: DevicePolicy | undefined;
-	readonly ipSubnetworks?: string[] | undefined;
-	readonly members?: string[] | undefined;
-	readonly negate?: boolean | undefined;
-	readonly regions?: string[] | undefined;
-	readonly requiredAccessLevels?: string[] | undefined;
+	readonly devicePolicy?: DevicePolicy;
+	readonly ipSubnetworks?: string[];
+	readonly members?: string[];
+	readonly negate?: boolean;
+	readonly regions?: string[];
+	readonly requiredAccessLevels?: string[];
 }
 export interface CustomLevel {
 	readonly expr: Expr;
 }
 export interface DevicePolicy {
-	readonly allowedDeviceManagementLevels?: string[] | undefined;
-	readonly allowedEncryptionStatuses?: string[] | undefined;
-	readonly osConstraints?: OsConstraint[] | undefined;
-	readonly requireAdminApproval?: boolean | undefined;
-	readonly requireCorpOwned?: boolean | undefined;
-	readonly requireScreenlock?: boolean | undefined;
+	readonly allowedDeviceManagementLevels?: string[];
+	readonly allowedEncryptionStatuses?: string[];
+	readonly osConstraints?: OsConstraint[];
+	readonly requireAdminApproval?: boolean;
+	readonly requireCorpOwned?: boolean;
+	readonly requireScreenlock?: boolean;
 }
 export interface Expr {
-	readonly description?: string | undefined;
-	readonly expression?: string | undefined;
-	readonly location?: string | undefined;
-	readonly title?: string | undefined;
+	readonly description?: string;
+	readonly expression?: string;
+	readonly location?: string;
+	readonly title?: string;
 }
 export interface OsConstraint {
-	readonly minimumVersion?: string | undefined;
+	readonly minimumVersion?: string;
 	readonly osType: string;
-	readonly requireVerifiedChromeOs?: boolean | undefined;
+	readonly requireVerifiedChromeOs?: boolean;
 }
 export default {
 	AccessPoliciesAccessLevels: AccessPoliciesAccessLevels,

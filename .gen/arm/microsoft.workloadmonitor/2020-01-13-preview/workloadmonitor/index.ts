@@ -15,7 +15,7 @@ export interface monitorsComponentOutputs {
 }
 export interface monitorsComponentInputs {
 	readonly name: string;
-	readonly properties?: HealthMonitorProperties | undefined;
+	readonly properties?: HealthMonitorProperties;
 }
 export class monitors_history
 	extends ArmResource<monitors_historyComponentInputs>
@@ -35,31 +35,31 @@ export interface monitors_historyComponentOutputs {
 }
 export interface monitors_historyComponentInputs {
 	readonly name: string;
-	readonly properties?: HealthMonitorStateChangeProperties | undefined;
+	readonly properties?: HealthMonitorStateChangeProperties;
 }
 export interface HealthMonitorProperties {
-	readonly currentMonitorState?: ("Critical" | "Disabled" | "Healthy" | "None" | "Unknown" | "Warning") | undefined;
-	readonly currentStateFirstObservedTimestamp?: string | undefined;
-	readonly evaluationTimestamp?: string | undefined;
-	readonly evidence?: any | undefined;
-	readonly lastReportedTimestamp?: string | undefined;
-	readonly monitorConfiguration?: any | undefined;
-	readonly monitoredObject?: string | undefined;
-	readonly monitorName?: string | undefined;
-	readonly monitorType?: string | undefined;
-	readonly parentMonitorName?: string | undefined;
-	readonly previousMonitorState?: ("Critical" | "Disabled" | "Healthy" | "None" | "Unknown" | "Warning") | undefined;
+	readonly currentMonitorState?: "Critical" | "Disabled" | "Healthy" | "None" | "Unknown" | "Warning";
+	readonly currentStateFirstObservedTimestamp?: string;
+	readonly evaluationTimestamp?: string;
+	readonly evidence?: any;
+	readonly lastReportedTimestamp?: string;
+	readonly monitorConfiguration?: any;
+	readonly monitoredObject?: string;
+	readonly monitorName?: string;
+	readonly monitorType?: string;
+	readonly parentMonitorName?: string;
+	readonly previousMonitorState?: "Critical" | "Disabled" | "Healthy" | "None" | "Unknown" | "Warning";
 }
 export interface HealthMonitorStateChangeProperties {
-	readonly currentMonitorState?: ("Critical" | "Disabled" | "Healthy" | "None" | "Unknown" | "Warning") | undefined;
-	readonly currentStateFirstObservedTimestamp?: string | undefined;
-	readonly evaluationTimestamp?: string | undefined;
-	readonly evidence?: any | undefined;
-	readonly monitorConfiguration?: any | undefined;
-	readonly monitoredObject?: string | undefined;
-	readonly monitorName?: string | undefined;
-	readonly monitorType?: string | undefined;
-	readonly previousMonitorState?: ("Critical" | "Disabled" | "Healthy" | "None" | "Unknown" | "Warning") | undefined;
+	readonly currentMonitorState?: "Critical" | "Disabled" | "Healthy" | "None" | "Unknown" | "Warning";
+	readonly currentStateFirstObservedTimestamp?: string;
+	readonly evaluationTimestamp?: string;
+	readonly evidence?: any;
+	readonly monitorConfiguration?: any;
+	readonly monitoredObject?: string;
+	readonly monitorName?: string;
+	readonly monitorType?: string;
+	readonly previousMonitorState?: "Critical" | "Disabled" | "Healthy" | "None" | "Unknown" | "Warning";
 }
 export default {
 	monitors: monitors,

@@ -14,12 +14,12 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.RecommendationsService/accounts";
 }
 export interface accountsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
+	readonly identity?: ManagedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AccountResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: AccountResourceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class accounts_modeling
 	extends ArmResource<accounts_modelingComponentInputs>
@@ -40,9 +40,9 @@ export interface accounts_modelingComponentOutputs {
 export interface accounts_modelingComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ModelingResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ModelingResourceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class accounts_serviceEndpoints
 	extends ArmResource<accounts_serviceEndpointsComponentInputs>
@@ -69,68 +69,68 @@ export interface accounts_serviceEndpointsComponentOutputs {
 export interface accounts_serviceEndpointsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServiceEndpointResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ServiceEndpointResourceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AccountResourceProperties {
-	readonly configuration?: ("Capacity" | "Free") | undefined;
-	readonly cors?: CorsRule[] | undefined;
-	readonly endpointAuthentications?: EndpointAuthentication[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly reportsConnectionString?: string | undefined;
+	readonly configuration?: "Capacity" | "Free";
+	readonly cors?: CorsRule[];
+	readonly endpointAuthentications?: EndpointAuthentication[];
+	readonly provisioningState?: string;
+	readonly reportsConnectionString?: string;
 }
 export interface CorsRule {
-	readonly allowedHeaders?: string[] | undefined;
-	readonly allowedMethods?: string[] | undefined;
+	readonly allowedHeaders?: string[];
+	readonly allowedMethods?: string[];
 	readonly allowedOrigins: string[];
-	readonly exposedHeaders?: string[] | undefined;
-	readonly maxAgeInSeconds?: number | undefined;
+	readonly exposedHeaders?: string[];
+	readonly maxAgeInSeconds?: number;
 }
 export interface EndpointAuthentication {
-	readonly aadTenantID?: string | undefined;
-	readonly principalID?: string | undefined;
-	readonly principalType?: ("Application" | "User") | undefined;
+	readonly aadTenantID?: string;
+	readonly principalID?: string;
+	readonly principalType?: "Application" | "User";
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: UserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedIdentities;
 }
 export interface ModelingInputData {
-	readonly connectionString?: string | undefined;
+	readonly connectionString?: string;
 }
 export interface ModelingResourceProperties {
-	readonly features?: ("Basic" | "Premium" | "Standard") | undefined;
-	readonly frequency?: ("High" | "Low" | "Medium") | undefined;
-	readonly inputData?: ModelingInputData | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly size?: ("Large" | "Medium" | "Small") | undefined;
+	readonly features?: "Basic" | "Premium" | "Standard";
+	readonly frequency?: "High" | "Low" | "Medium";
+	readonly inputData?: ModelingInputData;
+	readonly provisioningState?: string;
+	readonly size?: "Large" | "Medium" | "Small";
 }
 export interface ServiceEndpointResourceProperties {
-	readonly pairedLocation?: string | undefined;
-	readonly preAllocatedCapacity?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly url?: string | undefined;
+	readonly pairedLocation?: string;
+	readonly preAllocatedCapacity?: number;
+	readonly provisioningState?: string;
+	readonly url?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	accounts: accounts,

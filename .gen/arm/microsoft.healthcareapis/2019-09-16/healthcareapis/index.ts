@@ -14,62 +14,59 @@ export interface servicesComponentOutputs {
 	readonly type: "Microsoft.HealthcareApis/services";
 }
 export interface servicesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ResourceIdentity | undefined;
+	readonly etag?: string;
+	readonly identity?: ResourceIdentity;
 	readonly kind: "fhir" | "fhir-R4";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServicesProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ServicesProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ResourceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ServiceAccessPolicyEntry {
 	readonly objectId: string;
 }
 export interface ServiceAuthenticationConfigurationInfo {
-	readonly audience?: string | undefined;
-	readonly authority?: string | undefined;
-	readonly smartProxyEnabled?: boolean | undefined;
+	readonly audience?: string;
+	readonly authority?: string;
+	readonly smartProxyEnabled?: boolean;
 }
 export interface ServiceCorsConfigurationInfo {
-	readonly allowCredentials?: boolean | undefined;
-	readonly headers?: string[] | undefined;
-	readonly maxAge?: number | undefined;
-	readonly methods?: string[] | undefined;
-	readonly origins?: string[] | undefined;
+	readonly allowCredentials?: boolean;
+	readonly headers?: string[];
+	readonly maxAge?: number;
+	readonly methods?: string[];
+	readonly origins?: string[];
 }
 export interface ServiceCosmosDbConfigurationInfo {
-	readonly offerThroughput?: number | undefined;
+	readonly offerThroughput?: number;
 }
 export interface ServiceExportConfigurationInfo {
-	readonly storageAccountName?: string | undefined;
+	readonly storageAccountName?: string;
 }
 export interface ServicesProperties {
-	readonly accessPolicies?: ServiceAccessPolicyEntry[] | undefined;
-	readonly authenticationConfiguration?: ServiceAuthenticationConfigurationInfo | undefined;
-	readonly corsConfiguration?: ServiceCorsConfigurationInfo | undefined;
-	readonly cosmosDbConfiguration?: ServiceCosmosDbConfigurationInfo | undefined;
-	readonly exportConfiguration?: ServiceExportConfigurationInfo | undefined;
+	readonly accessPolicies?: ServiceAccessPolicyEntry[];
+	readonly authenticationConfiguration?: ServiceAuthenticationConfigurationInfo;
+	readonly corsConfiguration?: ServiceCorsConfigurationInfo;
+	readonly cosmosDbConfiguration?: ServiceCosmosDbConfigurationInfo;
+	readonly exportConfiguration?: ServiceExportConfigurationInfo;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleting"
-				| "Deprovisioned"
-				| "Failed"
-				| "Succeeded"
-				| "Updating"
-				| "Verifying"
-		  )
-		| undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Deprovisioned"
+		| "Failed"
+		| "Succeeded"
+		| "Updating"
+		| "Verifying";
 }
 export default {
 	services: services,

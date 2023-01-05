@@ -7,40 +7,39 @@ export class TargetSslProxies
 	constructor(entity: ADKEntity, options: TargetSslProxiesComponentInputs) {
 		super(entity, options.name, "compute.beta.TargetSslProxies", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly selfLink?: string;
 }
 export interface TargetSslProxiesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly selfLink?: string;
 }
 export interface TargetSslProxiesComponentInputs {
-	readonly certificateMap?: string | undefined;
-	readonly description?: string | undefined;
+	readonly certificateMap?: string;
+	readonly description?: string;
 	readonly name: string;
-	readonly proxyHeader?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly service?: string | undefined;
-	readonly sslCertificates?: string[] | undefined;
-	readonly sslPolicy?: string | undefined;
-	readonly type: string;
+	readonly proxyHeader?: string;
+	readonly requestId?: string;
+	readonly service?: string;
+	readonly sslCertificates?: string[];
+	readonly sslPolicy?: string;
 }
 export interface TargetSslProxy {
-	readonly certificateMap?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly proxyHeader?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly service?: string | undefined;
-	readonly sslCertificates?: string[] | undefined;
-	readonly sslPolicy?: string | undefined;
+	readonly certificateMap?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly proxyHeader?: string;
+	readonly selfLink?: string;
+	readonly service?: string;
+	readonly sslCertificates?: string[];
+	readonly sslPolicy?: string;
 }
 export default {
 	TargetSslProxies: TargetSslProxies,

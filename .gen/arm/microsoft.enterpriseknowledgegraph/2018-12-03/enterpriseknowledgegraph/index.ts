@@ -14,19 +14,19 @@ export interface servicesComponentOutputs {
 	readonly type: "Microsoft.EnterpriseKnowledgeGraph/services";
 }
 export interface servicesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: EnterpriseKnowledgeGraphProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: EnterpriseKnowledgeGraphProperties;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export interface EnterpriseKnowledgeGraphProperties {
-	readonly description?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly description?: string;
+	readonly metadata?: any;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
 	readonly name: "F0" | "S1";

@@ -4,54 +4,53 @@ export class BackendBucket extends GdmResource<BackendBucketComponentInputs> imp
 	constructor(entity: ADKEntity, options: BackendBucketComponentInputs) {
 		super(entity, options.name, "compute.alpha.backendBucket", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly edgeSecurityPolicy?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly edgeSecurityPolicy?: string;
+	public readonly id?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
 }
 export interface BackendBucketComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly edgeSecurityPolicy?: string | undefined;
-	readonly id?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly edgeSecurityPolicy?: string;
+	readonly id?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
 }
 export interface BackendBucketComponentInputs {
-	readonly bucketName?: string | undefined;
-	readonly cdnPolicy?: BackendBucketCdnPolicy | undefined;
-	readonly compressionMode?: string | undefined;
-	readonly customResponseHeaders?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly enableCdn?: boolean | undefined;
-	readonly kind?: string | undefined;
+	readonly bucketName?: string;
+	readonly cdnPolicy?: BackendBucketCdnPolicy;
+	readonly compressionMode?: string;
+	readonly customResponseHeaders?: string[];
+	readonly description?: string;
+	readonly enableCdn?: boolean;
+	readonly kind?: string;
 	readonly name: string;
-	readonly type: string;
 }
 export interface BackendBucketCdnPolicy {
-	readonly bypassCacheOnRequestHeaders?: BackendBucketCdnPolicyBypassCacheOnRequestHeader[] | undefined;
-	readonly cacheKeyPolicy?: BackendBucketCdnPolicyCacheKeyPolicy | undefined;
-	readonly cacheMode?: string | undefined;
-	readonly clientTtl?: number | undefined;
-	readonly defaultTtl?: number | undefined;
-	readonly maxTtl?: number | undefined;
-	readonly negativeCaching?: boolean | undefined;
-	readonly negativeCachingPolicy?: BackendBucketCdnPolicyNegativeCachingPolicy[] | undefined;
-	readonly requestCoalescing?: boolean | undefined;
-	readonly serveWhileStale?: number | undefined;
-	readonly signedUrlCacheMaxAgeSec?: string | undefined;
-	readonly signedUrlKeyNames?: string[] | undefined;
+	readonly bypassCacheOnRequestHeaders?: BackendBucketCdnPolicyBypassCacheOnRequestHeader[];
+	readonly cacheKeyPolicy?: BackendBucketCdnPolicyCacheKeyPolicy;
+	readonly cacheMode?: string;
+	readonly clientTtl?: number;
+	readonly defaultTtl?: number;
+	readonly maxTtl?: number;
+	readonly negativeCaching?: boolean;
+	readonly negativeCachingPolicy?: BackendBucketCdnPolicyNegativeCachingPolicy[];
+	readonly requestCoalescing?: boolean;
+	readonly serveWhileStale?: number;
+	readonly signedUrlCacheMaxAgeSec?: string;
+	readonly signedUrlKeyNames?: string[];
 }
 export interface BackendBucketCdnPolicyBypassCacheOnRequestHeader {
-	readonly headerName?: string | undefined;
+	readonly headerName?: string;
 }
 export interface BackendBucketCdnPolicyCacheKeyPolicy {
-	readonly includeHttpHeaders?: string[] | undefined;
-	readonly queryStringWhitelist?: string[] | undefined;
+	readonly includeHttpHeaders?: string[];
+	readonly queryStringWhitelist?: string[];
 }
 export interface BackendBucketCdnPolicyNegativeCachingPolicy {
-	readonly code?: number | undefined;
-	readonly ttl?: number | undefined;
+	readonly code?: number;
+	readonly ttl?: number;
 }
 export default {
 	BackendBucket: BackendBucket,

@@ -7,30 +7,29 @@ export class ProjectsLocationsInstancesSnapshots
 	constructor(entity: ADKEntity, options: ProjectsLocationsInstancesSnapshotsComponentInputs) {
 		super(entity, options.name, "file.v1beta1.ProjectsLocationsInstancesSnapshots", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly filesystemUsedBytes?: string | undefined;
-	public readonly state?: string | undefined;
+	public readonly createTime?: string;
+	public readonly filesystemUsedBytes?: string;
+	public readonly state?: string;
 }
 export interface ProjectsLocationsInstancesSnapshotsComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly filesystemUsedBytes?: string | undefined;
-	readonly state?: string | undefined;
+	readonly createTime?: string;
+	readonly filesystemUsedBytes?: string;
+	readonly state?: string;
 }
 export interface ProjectsLocationsInstancesSnapshotsComponentInputs {
-	readonly description?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly description?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
 	readonly parent: string;
 	readonly snapshotId: string;
-	readonly type: string;
 }
 export interface Snapshot {
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly filesystemUsedBytes?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly state?: string | undefined;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly filesystemUsedBytes?: string;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly state?: string;
 }
 export default {
 	ProjectsLocationsInstancesSnapshots: ProjectsLocationsInstancesSnapshots,

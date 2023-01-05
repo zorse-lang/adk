@@ -18,11 +18,11 @@ export interface flexibleServers_databasesComponentOutputs {
 }
 export interface flexibleServers_databasesComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseProperties | undefined;
+	readonly properties?: DatabaseProperties;
 }
 export interface DatabaseProperties {
-	readonly charset?: string | undefined;
-	readonly collation?: string | undefined;
+	readonly charset?: string;
+	readonly collation?: string;
 }
 export default {
 	"flexibleServers/databases": flexibleServers_databases,

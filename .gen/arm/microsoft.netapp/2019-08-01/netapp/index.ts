@@ -16,8 +16,8 @@ export interface netAppAccountsComponentOutputs {
 export interface netAppAccountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AccountProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: AccountProperties;
+	readonly tags?: ResourceTags;
 }
 export class netAppAccounts_capacityPools
 	extends ArmResource<netAppAccounts_capacityPoolsComponentInputs>
@@ -39,7 +39,7 @@ export interface netAppAccounts_capacityPoolsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: PoolProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class netAppAccounts_capacityPools_volumes
 	extends ArmResource<netAppAccounts_capacityPools_volumesComponentInputs>
@@ -61,7 +61,7 @@ export interface netAppAccounts_capacityPools_volumesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: VolumeProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class netAppAccounts_capacityPools_volumes_snapshots
 	extends ArmResource<netAppAccounts_capacityPools_volumes_snapshotsComponentInputs>
@@ -88,86 +88,86 @@ export interface netAppAccounts_capacityPools_volumes_snapshotsComponentOutputs 
 export interface netAppAccounts_capacityPools_volumes_snapshotsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SnapshotProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SnapshotProperties;
+	readonly tags?: ResourceTags;
 }
 export interface AccountProperties {
-	readonly activeDirectories?: ActiveDirectory[] | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly activeDirectories?: ActiveDirectory[];
+	readonly provisioningState?: string;
 }
 export interface ActiveDirectory {
-	readonly activeDirectoryId?: string | undefined;
-	readonly dns?: string | undefined;
-	readonly domain?: string | undefined;
-	readonly organizationalUnit?: string | undefined;
-	readonly password?: string | undefined;
-	readonly smbServerName?: string | undefined;
-	readonly status?: string | undefined;
-	readonly username?: string | undefined;
+	readonly activeDirectoryId?: string;
+	readonly dns?: string;
+	readonly domain?: string;
+	readonly organizationalUnit?: string;
+	readonly password?: string;
+	readonly smbServerName?: string;
+	readonly status?: string;
+	readonly username?: string;
 }
 export interface ExportPolicyRule {
-	readonly allowedClients?: string | undefined;
-	readonly cifs?: boolean | undefined;
-	readonly nfsv3?: boolean | undefined;
-	readonly nfsv41?: boolean | undefined;
-	readonly ruleIndex?: number | undefined;
-	readonly unixReadOnly?: boolean | undefined;
-	readonly unixReadWrite?: boolean | undefined;
+	readonly allowedClients?: string;
+	readonly cifs?: boolean;
+	readonly nfsv3?: boolean;
+	readonly nfsv41?: boolean;
+	readonly ruleIndex?: number;
+	readonly unixReadOnly?: boolean;
+	readonly unixReadWrite?: boolean;
 }
 export interface MountTargetProperties {
-	readonly endIp?: string | undefined;
+	readonly endIp?: string;
 	readonly fileSystemId: string;
-	readonly gateway?: string | undefined;
-	readonly ipAddress?: string | undefined;
-	readonly mountTargetId?: string | undefined;
-	readonly netmask?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly smbServerFqdn?: string | undefined;
-	readonly startIp?: string | undefined;
-	readonly subnet?: string | undefined;
+	readonly gateway?: string;
+	readonly ipAddress?: string;
+	readonly mountTargetId?: string;
+	readonly netmask?: string;
+	readonly provisioningState?: string;
+	readonly smbServerFqdn?: string;
+	readonly startIp?: string;
+	readonly subnet?: string;
 }
 export interface PoolProperties {
-	readonly poolId?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly poolId?: string;
+	readonly provisioningState?: string;
 	readonly serviceLevel: "Premium" | "Standard" | "Ultra";
 	readonly size: number;
 }
 export interface ReplicationObject {
 	readonly endpointType: string;
 	readonly remoteVolumeResourceId: string;
-	readonly replicationId?: string | undefined;
+	readonly replicationId?: string;
 	readonly replicationSchedule: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SnapshotProperties {
-	readonly created?: string | undefined;
-	readonly fileSystemId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly snapshotId?: string | undefined;
+	readonly created?: string;
+	readonly fileSystemId?: string;
+	readonly provisioningState?: string;
+	readonly snapshotId?: string;
 }
 export interface VolumeProperties {
-	readonly baremetalTenantId?: string | undefined;
+	readonly baremetalTenantId?: string;
 	readonly creationToken: string;
-	readonly dataProtection?: VolumePropertiesDataProtection | undefined;
-	readonly exportPolicy?: VolumePropertiesExportPolicy | undefined;
-	readonly fileSystemId?: string | undefined;
-	readonly mountTargets?: MountTargetProperties[] | undefined;
-	readonly protocolTypes?: string[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceLevel?: ("Premium" | "Standard" | "Ultra") | undefined;
-	readonly snapshotId?: string | undefined;
+	readonly dataProtection?: VolumePropertiesDataProtection;
+	readonly exportPolicy?: VolumePropertiesExportPolicy;
+	readonly fileSystemId?: string;
+	readonly mountTargets?: MountTargetProperties[];
+	readonly protocolTypes?: string[];
+	readonly provisioningState?: string;
+	readonly serviceLevel?: "Premium" | "Standard" | "Ultra";
+	readonly snapshotId?: string;
 	readonly subnetId: string;
 	readonly usageThreshold: number;
-	readonly usedBytes?: number | undefined;
-	readonly volumeType?: string | undefined;
+	readonly usedBytes?: number;
+	readonly volumeType?: string;
 }
 export interface VolumePropertiesDataProtection {
-	readonly replication?: ReplicationObject | undefined;
+	readonly replication?: ReplicationObject;
 }
 export interface VolumePropertiesExportPolicy {
-	readonly rules?: ExportPolicyRule[] | undefined;
+	readonly rules?: ExportPolicyRule[];
 }
 export default {
 	netAppAccounts: netAppAccounts,

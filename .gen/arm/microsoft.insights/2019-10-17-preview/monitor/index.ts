@@ -20,7 +20,7 @@ export interface privateLinkScopesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: AzureMonitorPrivateLinkScopeProperties;
-	readonly tags?: PrivateLinkScopesResourceTags | undefined;
+	readonly tags?: PrivateLinkScopesResourceTags;
 }
 export class Microsoft_Insights_privateLinkScopes_privateEndpointConnections
 	extends ArmResource<Microsoft_Insights_privateLinkScopes_privateEndpointConnectionsComponentInputs>
@@ -49,7 +49,7 @@ export interface Microsoft_Insights_privateLinkScopes_privateEndpointConnections
 }
 export interface Microsoft_Insights_privateLinkScopes_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class Microsoft_Insights_privateLinkScopes_privateLinkResources
 	extends ArmResource<Microsoft_Insights_privateLinkScopes_privateLinkResourcesComponentInputs>
@@ -75,7 +75,7 @@ export interface Microsoft_Insights_privateLinkScopes_privateLinkResourcesCompon
 }
 export interface Microsoft_Insights_privateLinkScopes_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export class Microsoft_Insights_privateLinkScopes_scopedResources
 	extends ArmResource<Microsoft_Insights_privateLinkScopes_scopedResourcesComponentInputs>
@@ -101,41 +101,41 @@ export interface Microsoft_Insights_privateLinkScopes_scopedResourcesComponentOu
 }
 export interface Microsoft_Insights_privateLinkScopes_scopedResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: ScopedResourceProperties | undefined;
+	readonly properties?: ScopedResourceProperties;
 }
 export interface AzureMonitorPrivateLinkScopeProperties {
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpointProperty | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly privateEndpoint?: PrivateEndpointProperty;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty;
+	readonly provisioningState?: string;
 }
 export interface PrivateEndpointProperty {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
 }
 export interface PrivateLinkScopesResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PrivateLinkServiceConnectionStateProperty {
-	readonly actionsRequired?: string | undefined;
+	readonly actionsRequired?: string;
 	readonly description: string;
 	readonly status: string;
 }
 export interface ScopedResourceProperties {
-	readonly linkedResourceId?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly linkedResourceId?: string;
+	readonly provisioningState?: string;
 }
 export default {
 	privateLinkScopes: privateLinkScopes,

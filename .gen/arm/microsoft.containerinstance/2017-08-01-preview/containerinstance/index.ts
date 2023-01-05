@@ -20,12 +20,12 @@ export interface containerGroupsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ContainerGroupProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export interface AzureFileVolume {
-	readonly readOnly?: boolean | undefined;
+	readonly readOnly?: boolean;
 	readonly shareName: string;
-	readonly storageAccountKey?: string | undefined;
+	readonly storageAccountKey?: string;
 	readonly storageAccountName: string;
 }
 export interface Container {
@@ -33,79 +33,79 @@ export interface Container {
 	readonly properties: ContainerProperties;
 }
 export interface ContainerEvent {
-	readonly count?: number | undefined;
-	readonly firstTimestamp?: string | undefined;
-	readonly lastTimestamp?: string | undefined;
-	readonly message?: string | undefined;
-	readonly type?: string | undefined;
+	readonly count?: number;
+	readonly firstTimestamp?: string;
+	readonly lastTimestamp?: string;
+	readonly message?: string;
+	readonly type?: string;
 }
 export interface ContainerGroupProperties {
 	readonly containers: Container[];
-	readonly imageRegistryCredentials?: ImageRegistryCredential[] | undefined;
-	readonly ipAddress?: IpAddress | undefined;
+	readonly imageRegistryCredentials?: ImageRegistryCredential[];
+	readonly ipAddress?: IpAddress;
 	readonly osType: "Linux" | "Windows";
-	readonly provisioningState?: string | undefined;
-	readonly restartPolicy?: "always" | undefined;
-	readonly state?: string | undefined;
-	readonly volumes?: Volume[] | undefined;
+	readonly provisioningState?: string;
+	readonly restartPolicy?: "always";
+	readonly state?: string;
+	readonly volumes?: Volume[];
 }
 export interface ContainerPort {
 	readonly port: number;
 }
 export interface ContainerProperties {
-	readonly command?: string[] | undefined;
-	readonly environmentVariables?: EnvironmentVariable[] | undefined;
+	readonly command?: string[];
+	readonly environmentVariables?: EnvironmentVariable[];
 	readonly image: string;
-	readonly instanceView?: ContainerPropertiesInstanceView | undefined;
-	readonly ports?: ContainerPort[] | undefined;
+	readonly instanceView?: ContainerPropertiesInstanceView;
+	readonly ports?: ContainerPort[];
 	readonly resources: ResourceRequirements;
-	readonly volumeMounts?: VolumeMount[] | undefined;
+	readonly volumeMounts?: VolumeMount[];
 }
 export interface ContainerPropertiesInstanceView {
-	readonly currentState?: ContainerState | undefined;
-	readonly events?: ContainerEvent[] | undefined;
-	readonly previousState?: ContainerState | undefined;
-	readonly restartCount?: number | undefined;
+	readonly currentState?: ContainerState;
+	readonly events?: ContainerEvent[];
+	readonly previousState?: ContainerState;
+	readonly restartCount?: number;
 }
 export interface ContainerState {
-	readonly detailStatus?: string | undefined;
-	readonly exitCode?: number | undefined;
-	readonly finishTime?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly state?: string | undefined;
+	readonly detailStatus?: string;
+	readonly exitCode?: number;
+	readonly finishTime?: string;
+	readonly startTime?: string;
+	readonly state?: string;
 }
 export interface EnvironmentVariable {
 	readonly name: string;
 	readonly value: string;
 }
 export interface ImageRegistryCredential {
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly server: string;
 	readonly username: string;
 }
 export interface IpAddress {
-	readonly ip?: string | undefined;
+	readonly ip?: string;
 	readonly ports: Port[];
 	readonly type: "Public";
 }
 export interface Port {
 	readonly port: number;
-	readonly protocol?: ("TCP" | "UDP") | undefined;
+	readonly protocol?: "TCP" | "UDP";
 }
 export interface ResourceLimits {
-	readonly cpu?: number | undefined;
-	readonly memoryInGB?: number | undefined;
+	readonly cpu?: number;
+	readonly memoryInGB?: number;
 }
 export interface ResourceRequests {
 	readonly cpu: number;
 	readonly memoryInGB: number;
 }
 export interface ResourceRequirements {
-	readonly limits?: ResourceLimits | undefined;
+	readonly limits?: ResourceLimits;
 	readonly requests: ResourceRequests;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Volume {
 	readonly azureFile: AzureFileVolume;
@@ -114,7 +114,7 @@ export interface Volume {
 export interface VolumeMount {
 	readonly mountPath: string;
 	readonly name: string;
-	readonly readOnly?: boolean | undefined;
+	readonly readOnly?: boolean;
 }
 export default {
 	containerGroups: containerGroups,

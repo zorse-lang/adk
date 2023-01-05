@@ -8,9 +8,9 @@ export class Detector extends CfnResource<DetectorComponentInputs> implements De
 export interface DetectorComponentOutputs {}
 export interface DetectorComponentInputs {
 	readonly Enable: boolean;
-	readonly DataSources?: (CFNDataSourceConfigurations | undefined) | undefined;
-	readonly FindingPublishingFrequency?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DataSources?: CFNDataSourceConfigurations | undefined;
+	readonly FindingPublishingFrequency?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Filter extends CfnResource<FilterComponentInputs> implements FilterComponentOutputs {
@@ -26,7 +26,7 @@ export interface FilterComponentInputs {
 	readonly FindingCriteria: FindingCriteria;
 	readonly Name: string;
 	readonly Rank: number;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class IPSet extends CfnResource<IPSetComponentInputs> implements IPSetComponentOutputs {
@@ -40,8 +40,8 @@ export interface IPSetComponentInputs {
 	readonly DetectorId: string;
 	readonly Format: string;
 	readonly Location: string;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Master extends CfnResource<MasterComponentInputs> implements MasterComponentOutputs {
@@ -53,7 +53,7 @@ export interface MasterComponentOutputs {}
 export interface MasterComponentInputs {
 	readonly DetectorId: string;
 	readonly MasterId: string;
-	readonly InvitationId?: (string | undefined) | undefined;
+	readonly InvitationId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Member extends CfnResource<MemberComponentInputs> implements MemberComponentOutputs {
@@ -66,9 +66,9 @@ export interface MemberComponentInputs {
 	readonly DetectorId: string;
 	readonly Email: string;
 	readonly MemberId: string;
-	readonly DisableEmailNotification?: (boolean | undefined) | undefined;
-	readonly Message?: (string | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
+	readonly DisableEmailNotification?: boolean | undefined;
+	readonly Message?: string | undefined;
+	readonly Status?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ThreatIntelSet extends CfnResource<ThreatIntelSetComponentInputs> implements ThreatIntelSetComponentOutputs {
@@ -82,47 +82,47 @@ export interface ThreatIntelSetComponentInputs {
 	readonly DetectorId: string;
 	readonly Format: string;
 	readonly Location: string;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface CFNDataSourceConfigurations {
-	readonly Kubernetes?: (CFNKubernetesConfiguration | undefined) | undefined;
-	readonly MalwareProtection?: (CFNMalwareProtectionConfiguration | undefined) | undefined;
-	readonly S3Logs?: (CFNS3LogsConfiguration | undefined) | undefined;
+	readonly Kubernetes?: CFNKubernetesConfiguration | undefined;
+	readonly MalwareProtection?: CFNMalwareProtectionConfiguration | undefined;
+	readonly S3Logs?: CFNS3LogsConfiguration | undefined;
 }
 export interface CFNKubernetesAuditLogsConfiguration {
-	readonly Enable?: (boolean | undefined) | undefined;
+	readonly Enable?: boolean | undefined;
 }
 export interface CFNKubernetesConfiguration {
-	readonly AuditLogs?: (CFNKubernetesAuditLogsConfiguration | undefined) | undefined;
+	readonly AuditLogs?: CFNKubernetesAuditLogsConfiguration | undefined;
 }
 export interface CFNMalwareProtectionConfiguration {
-	readonly ScanEc2InstanceWithFindings?: (CFNScanEc2InstanceWithFindingsConfiguration | undefined) | undefined;
+	readonly ScanEc2InstanceWithFindings?: CFNScanEc2InstanceWithFindingsConfiguration | undefined;
 }
 export interface CFNS3LogsConfiguration {
-	readonly Enable?: (boolean | undefined) | undefined;
+	readonly Enable?: boolean | undefined;
 }
 export interface CFNScanEc2InstanceWithFindingsConfiguration {
-	readonly EbsVolumes?: (boolean | undefined) | undefined;
+	readonly EbsVolumes?: boolean | undefined;
 }
 export interface Condition {
-	readonly Eq?: (string[] | undefined) | undefined;
-	readonly Equals?: (string[] | undefined) | undefined;
-	readonly GreaterThan?: (number | undefined) | undefined;
-	readonly GreaterThanOrEqual?: (number | undefined) | undefined;
-	readonly Gt?: (number | undefined) | undefined;
-	readonly Gte?: (number | undefined) | undefined;
-	readonly LessThan?: (number | undefined) | undefined;
-	readonly LessThanOrEqual?: (number | undefined) | undefined;
-	readonly Lt?: (number | undefined) | undefined;
-	readonly Lte?: (number | undefined) | undefined;
-	readonly Neq?: (string[] | undefined) | undefined;
-	readonly NotEquals?: (string[] | undefined) | undefined;
+	readonly Eq?: string[] | undefined;
+	readonly Equals?: string[] | undefined;
+	readonly GreaterThan?: number | undefined;
+	readonly GreaterThanOrEqual?: number | undefined;
+	readonly Gt?: number | undefined;
+	readonly Gte?: number | undefined;
+	readonly LessThan?: number | undefined;
+	readonly LessThanOrEqual?: number | undefined;
+	readonly Lt?: number | undefined;
+	readonly Lte?: number | undefined;
+	readonly Neq?: string[] | undefined;
+	readonly NotEquals?: string[] | undefined;
 }
 export interface FindingCriteria {
-	readonly Criterion?: (any | undefined) | undefined;
-	readonly ItemType?: (Condition | undefined) | undefined;
+	readonly Criterion?: any | undefined;
+	readonly ItemType?: Condition | undefined;
 }
 export default {
 	Detector: Detector,

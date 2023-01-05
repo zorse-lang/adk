@@ -99,173 +99,167 @@ export interface automationAccounts_sourceControls_sourceControlSyncJobsComponen
 	readonly properties: SourceControlSyncJobCreatePropertiesOrSourceControlSyncJobByIdProperties;
 }
 export interface AdvancedSchedule {
-	readonly monthDays?: number[] | undefined;
-	readonly monthlyOccurrences?: AdvancedScheduleMonthlyOccurrence[] | undefined;
-	readonly weekDays?: string[] | undefined;
+	readonly monthDays?: number[];
+	readonly monthlyOccurrences?: AdvancedScheduleMonthlyOccurrence[];
+	readonly weekDays?: string[];
 }
 export interface AdvancedScheduleMonthlyOccurrence {
-	readonly day?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday") | undefined;
-	readonly occurrence?: number | undefined;
+	readonly day?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday";
+	readonly occurrence?: number;
 }
 export interface AzureQueryProperties {
-	readonly locations?: string[] | undefined;
-	readonly scope?: string[] | undefined;
-	readonly tagSettings?: TagSettingsProperties | undefined;
+	readonly locations?: string[];
+	readonly scope?: string[];
+	readonly tagSettings?: TagSettingsProperties;
 }
 export interface ErrorResponse {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface JobCreatePropertiesOrJobProperties {
-	readonly creationTime?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly exception?: string | undefined;
-	readonly jobId?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly lastStatusModifiedTime?: string | undefined;
-	readonly parameters?: JobCreatePropertiesParameters | undefined;
-	readonly provisioningState?: ("Failed" | "Processing" | "Succeeded" | "Suspended") | undefined;
-	readonly runbook?: RunbookAssociationProperty | undefined;
-	readonly runOn?: string | undefined;
-	readonly startedBy?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly endTime?: string;
+	readonly exception?: string;
+	readonly jobId?: string;
+	readonly lastModifiedTime?: string;
+	readonly lastStatusModifiedTime?: string;
+	readonly parameters?: JobCreatePropertiesParameters;
+	readonly provisioningState?: "Failed" | "Processing" | "Succeeded" | "Suspended";
+	readonly runbook?: RunbookAssociationProperty;
+	readonly runOn?: string;
+	readonly startedBy?: string;
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Activating"
-				| "Blocked"
-				| "Completed"
-				| "Disconnected"
-				| "Failed"
-				| "New"
-				| "Removing"
-				| "Resuming"
-				| "Running"
-				| "Stopped"
-				| "Stopping"
-				| "Suspended"
-				| "Suspending"
-		  )
-		| undefined;
-	readonly statusDetails?: string | undefined;
+		| "Activating"
+		| "Blocked"
+		| "Completed"
+		| "Disconnected"
+		| "Failed"
+		| "New"
+		| "Removing"
+		| "Resuming"
+		| "Running"
+		| "Stopped"
+		| "Stopping"
+		| "Suspended"
+		| "Suspending";
+	readonly statusDetails?: string;
 }
 export interface JobCreatePropertiesParameters {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface LinuxProperties {
-	readonly excludedPackageNameMasks?: string[] | undefined;
-	readonly includedPackageClassifications?: ("Critical" | "Other" | "Security" | "Unclassified") | undefined;
-	readonly includedPackageNameMasks?: string[] | undefined;
-	readonly rebootSetting?: string | undefined;
+	readonly excludedPackageNameMasks?: string[];
+	readonly includedPackageClassifications?: "Critical" | "Other" | "Security" | "Unclassified";
+	readonly includedPackageNameMasks?: string[];
+	readonly rebootSetting?: string;
 }
 export interface NonAzureQueryProperties {
-	readonly functionAlias?: string | undefined;
-	readonly workspaceId?: string | undefined;
+	readonly functionAlias?: string;
+	readonly workspaceId?: string;
 }
 export interface RunbookAssociationProperty {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface ScheduleProperties {
-	readonly advancedSchedule?: AdvancedSchedule | undefined;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly expiryTime?: string | undefined;
-	readonly expiryTimeOffsetMinutes?: number | undefined;
-	readonly frequency?: ("Day" | "Hour" | "Minute" | "Month" | "OneTime" | "Week") | undefined;
-	readonly interval?: number | undefined;
-	readonly isEnabled?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly nextRun?: string | undefined;
-	readonly nextRunOffsetMinutes?: number | undefined;
-	readonly startTime?: string | undefined;
-	readonly startTimeOffsetMinutes?: number | undefined;
-	readonly timeZone?: string | undefined;
+	readonly advancedSchedule?: AdvancedSchedule;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly expiryTime?: string;
+	readonly expiryTimeOffsetMinutes?: number;
+	readonly frequency?: "Day" | "Hour" | "Minute" | "Month" | "OneTime" | "Week";
+	readonly interval?: number;
+	readonly isEnabled?: boolean;
+	readonly lastModifiedTime?: string;
+	readonly nextRun?: string;
+	readonly nextRunOffsetMinutes?: number;
+	readonly startTime?: string;
+	readonly startTimeOffsetMinutes?: number;
+	readonly timeZone?: string;
 }
 export interface SoftwareUpdateConfigurationProperties {
-	readonly createdBy?: string | undefined;
-	readonly creationTime?: string | undefined;
-	readonly error?: ErrorResponse | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly createdBy?: string;
+	readonly creationTime?: string;
+	readonly error?: ErrorResponse;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedTime?: string;
+	readonly provisioningState?: string;
 	readonly scheduleInfo: ScheduleProperties;
-	readonly tasks?: SoftwareUpdateConfigurationTasks | undefined;
+	readonly tasks?: SoftwareUpdateConfigurationTasks;
 	readonly updateConfiguration: UpdateConfiguration;
 }
 export interface SoftwareUpdateConfigurationTasks {
-	readonly postTask?: TaskProperties | undefined;
-	readonly preTask?: TaskProperties | undefined;
+	readonly postTask?: TaskProperties;
+	readonly preTask?: TaskProperties;
 }
 export interface SourceControlCreateOrUpdatePropertiesOrSourceControlProperties {
-	readonly autoSync?: boolean | undefined;
-	readonly branch?: string | undefined;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly folderPath?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly publishRunbook?: boolean | undefined;
-	readonly repoUrl?: string | undefined;
-	readonly securityToken?: SourceControlSecurityTokenProperties | undefined;
-	readonly sourceType?: ("GitHub" | "VsoGit" | "VsoTfvc") | undefined;
+	readonly autoSync?: boolean;
+	readonly branch?: string;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly folderPath?: string;
+	readonly lastModifiedTime?: string;
+	readonly publishRunbook?: boolean;
+	readonly repoUrl?: string;
+	readonly securityToken?: SourceControlSecurityTokenProperties;
+	readonly sourceType?: "GitHub" | "VsoGit" | "VsoTfvc";
 }
 export interface SourceControlSecurityTokenProperties {
-	readonly accessToken?: string | undefined;
-	readonly refreshToken?: string | undefined;
-	readonly tokenType?: ("Oauth" | "PersonalAccessToken") | undefined;
+	readonly accessToken?: string;
+	readonly refreshToken?: string;
+	readonly tokenType?: "Oauth" | "PersonalAccessToken";
 }
 export interface SourceControlSyncJobCreatePropertiesOrSourceControlSyncJobByIdProperties {
 	readonly commitId: string;
-	readonly creationTime?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly exception?: string | undefined;
-	readonly provisioningState?: ("Completed" | "Failed" | "Running") | undefined;
-	readonly sourceControlSyncJobId?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly syncType?: ("FullSync" | "PartialSync") | undefined;
+	readonly creationTime?: string;
+	readonly endTime?: string;
+	readonly exception?: string;
+	readonly provisioningState?: "Completed" | "Failed" | "Running";
+	readonly sourceControlSyncJobId?: string;
+	readonly startTime?: string;
+	readonly syncType?: "FullSync" | "PartialSync";
 }
 export interface TagSettingsProperties {
-	readonly filterOperator?: "All" | undefined;
-	readonly tags?: TagSettingsPropertiesTags | undefined;
+	readonly filterOperator?: "All";
+	readonly tags?: TagSettingsPropertiesTags;
 }
 export interface TagSettingsPropertiesTags {
-	readonly "[ key: string ]"?: string[] | undefined;
+	readonly [key: string]: string[];
 }
 export interface TargetProperties {
-	readonly azureQueries?: AzureQueryProperties[] | undefined;
-	readonly nonAzureQueries?: NonAzureQueryProperties[] | undefined;
+	readonly azureQueries?: AzureQueryProperties[];
+	readonly nonAzureQueries?: NonAzureQueryProperties[];
 }
 export interface TaskProperties {
-	readonly parameters?: TaskPropertiesParameters | undefined;
-	readonly source?: string | undefined;
+	readonly parameters?: TaskPropertiesParameters;
+	readonly source?: string;
 }
 export interface TaskPropertiesParameters {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UpdateConfiguration {
-	readonly azureVirtualMachines?: string[] | undefined;
-	readonly duration?: string | undefined;
-	readonly linux?: LinuxProperties | undefined;
-	readonly nonAzureComputerNames?: string[] | undefined;
+	readonly azureVirtualMachines?: string[];
+	readonly duration?: string;
+	readonly linux?: LinuxProperties;
+	readonly nonAzureComputerNames?: string[];
 	readonly operatingSystem: "Linux";
-	readonly targets?: TargetProperties | undefined;
-	readonly windows?: WindowsProperties | undefined;
+	readonly targets?: TargetProperties;
+	readonly windows?: WindowsProperties;
 }
 export interface WindowsProperties {
-	readonly excludedKbNumbers?: string[] | undefined;
-	readonly includedKbNumbers?: string[] | undefined;
+	readonly excludedKbNumbers?: string[];
+	readonly includedKbNumbers?: string[];
 	readonly includedUpdateClassifications?:
-		| (
-				| "Critical"
-				| "Definition"
-				| "FeaturePack"
-				| "Security"
-				| "ServicePack"
-				| "Tools"
-				| "Unclassified"
-				| "UpdateRollup"
-				| "Updates"
-		  )
-		| undefined;
-	readonly rebootSetting?: string | undefined;
+		| "Critical"
+		| "Definition"
+		| "FeaturePack"
+		| "Security"
+		| "ServicePack"
+		| "Tools"
+		| "Unclassified"
+		| "UpdateRollup"
+		| "Updates";
+	readonly rebootSetting?: string;
 }
 export default {
 	"automationAccounts/jobs": automationAccounts_jobs,

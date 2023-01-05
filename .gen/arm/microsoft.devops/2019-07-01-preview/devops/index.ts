@@ -14,55 +14,55 @@ export interface pipelinesComponentOutputs {
 	readonly type: "Microsoft.DevOps/pipelines";
 }
 export interface pipelinesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: PipelineProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export interface Authorization {
 	readonly authorizationType: "personalAccessToken";
-	readonly parameters?: AuthorizationParameters | undefined;
+	readonly parameters?: AuthorizationParameters;
 }
 export interface AuthorizationParameters {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface BootstrapConfiguration {
-	readonly repository?: CodeRepository | undefined;
+	readonly repository?: CodeRepository;
 	readonly template: PipelineTemplate;
 }
 export interface CodeRepository {
-	readonly authorization?: Authorization | undefined;
+	readonly authorization?: Authorization;
 	readonly defaultBranch: string;
 	readonly id: string;
-	readonly properties?: CodeRepositoryProperties | undefined;
+	readonly properties?: CodeRepositoryProperties;
 	readonly repositoryType: "gitHub" | "vstsGit";
 }
 export interface CodeRepositoryProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface OrganizationReference {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
 }
 export interface PipelineProperties {
 	readonly bootstrapConfiguration: BootstrapConfiguration;
 	readonly organization: OrganizationReference;
-	readonly pipelineId?: number | undefined;
+	readonly pipelineId?: number;
 	readonly project: ProjectReference;
 }
 export interface PipelineTemplate {
 	readonly id: string;
-	readonly parameters?: PipelineTemplateParameters | undefined;
+	readonly parameters?: PipelineTemplateParameters;
 }
 export interface PipelineTemplateParameters {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ProjectReference {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	pipelines: pipelines,

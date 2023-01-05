@@ -12,11 +12,11 @@ export interface OrderComponentOutputs {
 export interface OrderComponentInputs {
 	readonly ProductCode: string;
 	readonly SkuCode: string;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly Duration?: (number | undefined) | undefined;
-	readonly Preference?: ({ [key: string]: any } | undefined) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
-	readonly Quantity?: (number | undefined) | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly Duration?: number | undefined;
+	readonly Preference?: { [key: string]: any } | undefined;
+	readonly PricingCycle?: string | undefined;
+	readonly Quantity?: number | undefined;
 	readonly LogicalId: string;
 }
 export default {

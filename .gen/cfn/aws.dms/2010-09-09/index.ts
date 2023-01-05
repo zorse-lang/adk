@@ -7,9 +7,9 @@ export class Certificate extends CfnResource<CertificateComponentInputs> impleme
 }
 export interface CertificateComponentOutputs {}
 export interface CertificateComponentInputs {
-	readonly CertificateIdentifier?: (string | undefined) | undefined;
-	readonly CertificatePem?: (string | undefined) | undefined;
-	readonly CertificateWallet?: (string | undefined) | undefined;
+	readonly CertificateIdentifier?: string | undefined;
+	readonly CertificatePem?: string | undefined;
+	readonly CertificateWallet?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Endpoint extends CfnResource<EndpointComponentInputs> implements EndpointComponentOutputs {
@@ -24,35 +24,35 @@ export interface EndpointComponentOutputs {
 export interface EndpointComponentInputs {
 	readonly EndpointType: string;
 	readonly EngineName: string;
-	readonly CertificateArn?: (string | undefined) | undefined;
-	readonly DatabaseName?: (string | undefined) | undefined;
-	readonly DocDbSettings?: (DocDbSettings | undefined) | undefined;
-	readonly DynamoDbSettings?: (DynamoDbSettings | undefined) | undefined;
-	readonly ElasticsearchSettings?: (ElasticsearchSettings | undefined) | undefined;
-	readonly EndpointIdentifier?: (string | undefined) | undefined;
-	readonly ExtraConnectionAttributes?: (string | undefined) | undefined;
-	readonly GcpMySQLSettings?: (GcpMySQLSettings | undefined) | undefined;
-	readonly IbmDb2Settings?: (IbmDb2Settings | undefined) | undefined;
-	readonly KafkaSettings?: (KafkaSettings | undefined) | undefined;
-	readonly KinesisSettings?: (KinesisSettings | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly MicrosoftSqlServerSettings?: (MicrosoftSqlServerSettings | undefined) | undefined;
-	readonly MongoDbSettings?: (MongoDbSettings | undefined) | undefined;
-	readonly MySqlSettings?: (MySqlSettings | undefined) | undefined;
-	readonly NeptuneSettings?: (NeptuneSettings | undefined) | undefined;
-	readonly OracleSettings?: (OracleSettings | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly PostgreSqlSettings?: (PostgreSqlSettings | undefined) | undefined;
-	readonly RedisSettings?: (RedisSettings | undefined) | undefined;
-	readonly RedshiftSettings?: (RedshiftSettings | undefined) | undefined;
-	readonly ResourceIdentifier?: (string | undefined) | undefined;
-	readonly S3Settings?: (S3Settings | undefined) | undefined;
-	readonly ServerName?: (string | undefined) | undefined;
-	readonly SslMode?: (string | undefined) | undefined;
-	readonly SybaseSettings?: (SybaseSettings | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Username?: (string | undefined) | undefined;
+	readonly CertificateArn?: string | undefined;
+	readonly DatabaseName?: string | undefined;
+	readonly DocDbSettings?: DocDbSettings | undefined;
+	readonly DynamoDbSettings?: DynamoDbSettings | undefined;
+	readonly ElasticsearchSettings?: ElasticsearchSettings | undefined;
+	readonly EndpointIdentifier?: string | undefined;
+	readonly ExtraConnectionAttributes?: string | undefined;
+	readonly GcpMySQLSettings?: GcpMySQLSettings | undefined;
+	readonly IbmDb2Settings?: IbmDb2Settings | undefined;
+	readonly KafkaSettings?: KafkaSettings | undefined;
+	readonly KinesisSettings?: KinesisSettings | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly MicrosoftSqlServerSettings?: MicrosoftSqlServerSettings | undefined;
+	readonly MongoDbSettings?: MongoDbSettings | undefined;
+	readonly MySqlSettings?: MySqlSettings | undefined;
+	readonly NeptuneSettings?: NeptuneSettings | undefined;
+	readonly OracleSettings?: OracleSettings | undefined;
+	readonly Password?: string | undefined;
+	readonly Port?: number | undefined;
+	readonly PostgreSqlSettings?: PostgreSqlSettings | undefined;
+	readonly RedisSettings?: RedisSettings | undefined;
+	readonly RedshiftSettings?: RedshiftSettings | undefined;
+	readonly ResourceIdentifier?: string | undefined;
+	readonly S3Settings?: S3Settings | undefined;
+	readonly ServerName?: string | undefined;
+	readonly SslMode?: string | undefined;
+	readonly SybaseSettings?: SybaseSettings | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Username?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EventSubscription
@@ -66,12 +66,12 @@ export class EventSubscription
 export interface EventSubscriptionComponentOutputs {}
 export interface EventSubscriptionComponentInputs {
 	readonly SnsTopicArn: string;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly EventCategories?: (string[] | undefined) | undefined;
-	readonly SourceIds?: (string[] | undefined) | undefined;
-	readonly SourceType?: (string | undefined) | undefined;
-	readonly SubscriptionName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly EventCategories?: string[] | undefined;
+	readonly SourceIds?: string[] | undefined;
+	readonly SourceType?: string | undefined;
+	readonly SubscriptionName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ReplicationInstance
@@ -90,20 +90,20 @@ export interface ReplicationInstanceComponentOutputs {
 }
 export interface ReplicationInstanceComponentInputs {
 	readonly ReplicationInstanceClass: string;
-	readonly AllocatedStorage?: (number | undefined) | undefined;
-	readonly AllowMajorVersionUpgrade?: (boolean | undefined) | undefined;
-	readonly AutoMinorVersionUpgrade?: (boolean | undefined) | undefined;
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly MultiAZ?: (boolean | undefined) | undefined;
-	readonly PreferredMaintenanceWindow?: (string | undefined) | undefined;
-	readonly PubliclyAccessible?: (boolean | undefined) | undefined;
-	readonly ReplicationInstanceIdentifier?: (string | undefined) | undefined;
-	readonly ReplicationSubnetGroupIdentifier?: (string | undefined) | undefined;
-	readonly ResourceIdentifier?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VpcSecurityGroupIds?: (string[] | undefined) | undefined;
+	readonly AllocatedStorage?: number | undefined;
+	readonly AllowMajorVersionUpgrade?: boolean | undefined;
+	readonly AutoMinorVersionUpgrade?: boolean | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly MultiAZ?: boolean | undefined;
+	readonly PreferredMaintenanceWindow?: string | undefined;
+	readonly PubliclyAccessible?: boolean | undefined;
+	readonly ReplicationInstanceIdentifier?: string | undefined;
+	readonly ReplicationSubnetGroupIdentifier?: string | undefined;
+	readonly ResourceIdentifier?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VpcSecurityGroupIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class ReplicationSubnetGroup
@@ -118,8 +118,8 @@ export interface ReplicationSubnetGroupComponentOutputs {}
 export interface ReplicationSubnetGroupComponentInputs {
 	readonly ReplicationSubnetGroupDescription: string;
 	readonly SubnetIds: string[];
-	readonly ReplicationSubnetGroupIdentifier?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ReplicationSubnetGroupIdentifier?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ReplicationTask
@@ -137,263 +137,263 @@ export interface ReplicationTaskComponentInputs {
 	readonly SourceEndpointArn: string;
 	readonly TableMappings: string;
 	readonly TargetEndpointArn: string;
-	readonly CdcStartPosition?: (string | undefined) | undefined;
-	readonly CdcStartTime?: (number | undefined) | undefined;
-	readonly CdcStopPosition?: (string | undefined) | undefined;
-	readonly ReplicationTaskIdentifier?: (string | undefined) | undefined;
-	readonly ReplicationTaskSettings?: (string | undefined) | undefined;
-	readonly ResourceIdentifier?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TaskData?: (string | undefined) | undefined;
+	readonly CdcStartPosition?: string | undefined;
+	readonly CdcStartTime?: number | undefined;
+	readonly CdcStopPosition?: string | undefined;
+	readonly ReplicationTaskIdentifier?: string | undefined;
+	readonly ReplicationTaskSettings?: string | undefined;
+	readonly ResourceIdentifier?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TaskData?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface DocDbSettings {
-	readonly DocsToInvestigate?: (number | undefined) | undefined;
-	readonly ExtractDocId?: (boolean | undefined) | undefined;
-	readonly NestingLevel?: (string | undefined) | undefined;
-	readonly SecretsManagerAccessRoleArn?: (string | undefined) | undefined;
-	readonly SecretsManagerSecretId?: (string | undefined) | undefined;
+	readonly DocsToInvestigate?: number | undefined;
+	readonly ExtractDocId?: boolean | undefined;
+	readonly NestingLevel?: string | undefined;
+	readonly SecretsManagerAccessRoleArn?: string | undefined;
+	readonly SecretsManagerSecretId?: string | undefined;
 }
 export interface DynamoDbSettings {
-	readonly ServiceAccessRoleArn?: (string | undefined) | undefined;
+	readonly ServiceAccessRoleArn?: string | undefined;
 }
 export interface ElasticsearchSettings {
-	readonly EndpointUri?: (string | undefined) | undefined;
-	readonly ErrorRetryDuration?: (number | undefined) | undefined;
-	readonly FullLoadErrorPercentage?: (number | undefined) | undefined;
-	readonly ServiceAccessRoleArn?: (string | undefined) | undefined;
+	readonly EndpointUri?: string | undefined;
+	readonly ErrorRetryDuration?: number | undefined;
+	readonly FullLoadErrorPercentage?: number | undefined;
+	readonly ServiceAccessRoleArn?: string | undefined;
 }
 export interface GcpMySQLSettings {
-	readonly AfterConnectScript?: (string | undefined) | undefined;
-	readonly CleanSourceMetadataOnMismatch?: (boolean | undefined) | undefined;
-	readonly DatabaseName?: (string | undefined) | undefined;
-	readonly EventsPollInterval?: (number | undefined) | undefined;
-	readonly MaxFileSize?: (number | undefined) | undefined;
-	readonly ParallelLoadThreads?: (number | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly SecretsManagerAccessRoleArn?: (string | undefined) | undefined;
-	readonly SecretsManagerSecretId?: (string | undefined) | undefined;
-	readonly ServerName?: (string | undefined) | undefined;
-	readonly ServerTimezone?: (string | undefined) | undefined;
-	readonly Username?: (string | undefined) | undefined;
+	readonly AfterConnectScript?: string | undefined;
+	readonly CleanSourceMetadataOnMismatch?: boolean | undefined;
+	readonly DatabaseName?: string | undefined;
+	readonly EventsPollInterval?: number | undefined;
+	readonly MaxFileSize?: number | undefined;
+	readonly ParallelLoadThreads?: number | undefined;
+	readonly Password?: string | undefined;
+	readonly Port?: number | undefined;
+	readonly SecretsManagerAccessRoleArn?: string | undefined;
+	readonly SecretsManagerSecretId?: string | undefined;
+	readonly ServerName?: string | undefined;
+	readonly ServerTimezone?: string | undefined;
+	readonly Username?: string | undefined;
 }
 export interface IbmDb2Settings {
-	readonly CurrentLsn?: (string | undefined) | undefined;
-	readonly MaxKBytesPerRead?: (number | undefined) | undefined;
-	readonly SecretsManagerAccessRoleArn?: (string | undefined) | undefined;
-	readonly SecretsManagerSecretId?: (string | undefined) | undefined;
-	readonly SetDataCaptureChanges?: (boolean | undefined) | undefined;
+	readonly CurrentLsn?: string | undefined;
+	readonly MaxKBytesPerRead?: number | undefined;
+	readonly SecretsManagerAccessRoleArn?: string | undefined;
+	readonly SecretsManagerSecretId?: string | undefined;
+	readonly SetDataCaptureChanges?: boolean | undefined;
 }
 export interface KafkaSettings {
-	readonly Broker?: (string | undefined) | undefined;
-	readonly IncludeControlDetails?: (boolean | undefined) | undefined;
-	readonly IncludeNullAndEmpty?: (boolean | undefined) | undefined;
-	readonly IncludePartitionValue?: (boolean | undefined) | undefined;
-	readonly IncludeTableAlterOperations?: (boolean | undefined) | undefined;
-	readonly IncludeTransactionDetails?: (boolean | undefined) | undefined;
-	readonly MessageFormat?: (string | undefined) | undefined;
-	readonly MessageMaxBytes?: (number | undefined) | undefined;
-	readonly NoHexPrefix?: (boolean | undefined) | undefined;
-	readonly PartitionIncludeSchemaTable?: (boolean | undefined) | undefined;
-	readonly SaslPassword?: (string | undefined) | undefined;
-	readonly SaslUserName?: (string | undefined) | undefined;
-	readonly SecurityProtocol?: (string | undefined) | undefined;
-	readonly SslCaCertificateArn?: (string | undefined) | undefined;
-	readonly SslClientCertificateArn?: (string | undefined) | undefined;
-	readonly SslClientKeyArn?: (string | undefined) | undefined;
-	readonly SslClientKeyPassword?: (string | undefined) | undefined;
-	readonly Topic?: (string | undefined) | undefined;
+	readonly Broker?: string | undefined;
+	readonly IncludeControlDetails?: boolean | undefined;
+	readonly IncludeNullAndEmpty?: boolean | undefined;
+	readonly IncludePartitionValue?: boolean | undefined;
+	readonly IncludeTableAlterOperations?: boolean | undefined;
+	readonly IncludeTransactionDetails?: boolean | undefined;
+	readonly MessageFormat?: string | undefined;
+	readonly MessageMaxBytes?: number | undefined;
+	readonly NoHexPrefix?: boolean | undefined;
+	readonly PartitionIncludeSchemaTable?: boolean | undefined;
+	readonly SaslPassword?: string | undefined;
+	readonly SaslUserName?: string | undefined;
+	readonly SecurityProtocol?: string | undefined;
+	readonly SslCaCertificateArn?: string | undefined;
+	readonly SslClientCertificateArn?: string | undefined;
+	readonly SslClientKeyArn?: string | undefined;
+	readonly SslClientKeyPassword?: string | undefined;
+	readonly Topic?: string | undefined;
 }
 export interface KinesisSettings {
-	readonly IncludeControlDetails?: (boolean | undefined) | undefined;
-	readonly IncludeNullAndEmpty?: (boolean | undefined) | undefined;
-	readonly IncludePartitionValue?: (boolean | undefined) | undefined;
-	readonly IncludeTableAlterOperations?: (boolean | undefined) | undefined;
-	readonly IncludeTransactionDetails?: (boolean | undefined) | undefined;
-	readonly MessageFormat?: (string | undefined) | undefined;
-	readonly NoHexPrefix?: (boolean | undefined) | undefined;
-	readonly PartitionIncludeSchemaTable?: (boolean | undefined) | undefined;
-	readonly ServiceAccessRoleArn?: (string | undefined) | undefined;
-	readonly StreamArn?: (string | undefined) | undefined;
+	readonly IncludeControlDetails?: boolean | undefined;
+	readonly IncludeNullAndEmpty?: boolean | undefined;
+	readonly IncludePartitionValue?: boolean | undefined;
+	readonly IncludeTableAlterOperations?: boolean | undefined;
+	readonly IncludeTransactionDetails?: boolean | undefined;
+	readonly MessageFormat?: string | undefined;
+	readonly NoHexPrefix?: boolean | undefined;
+	readonly PartitionIncludeSchemaTable?: boolean | undefined;
+	readonly ServiceAccessRoleArn?: string | undefined;
+	readonly StreamArn?: string | undefined;
 }
 export interface MicrosoftSqlServerSettings {
-	readonly BcpPacketSize?: (number | undefined) | undefined;
-	readonly ControlTablesFileGroup?: (string | undefined) | undefined;
-	readonly QuerySingleAlwaysOnNode?: (boolean | undefined) | undefined;
-	readonly ReadBackupOnly?: (boolean | undefined) | undefined;
-	readonly SafeguardPolicy?: (string | undefined) | undefined;
-	readonly SecretsManagerAccessRoleArn?: (string | undefined) | undefined;
-	readonly SecretsManagerSecretId?: (string | undefined) | undefined;
-	readonly UseBcpFullLoad?: (boolean | undefined) | undefined;
-	readonly UseThirdPartyBackupDevice?: (boolean | undefined) | undefined;
+	readonly BcpPacketSize?: number | undefined;
+	readonly ControlTablesFileGroup?: string | undefined;
+	readonly QuerySingleAlwaysOnNode?: boolean | undefined;
+	readonly ReadBackupOnly?: boolean | undefined;
+	readonly SafeguardPolicy?: string | undefined;
+	readonly SecretsManagerAccessRoleArn?: string | undefined;
+	readonly SecretsManagerSecretId?: string | undefined;
+	readonly UseBcpFullLoad?: boolean | undefined;
+	readonly UseThirdPartyBackupDevice?: boolean | undefined;
 }
 export interface MongoDbSettings {
-	readonly AuthMechanism?: (string | undefined) | undefined;
-	readonly AuthSource?: (string | undefined) | undefined;
-	readonly AuthType?: (string | undefined) | undefined;
-	readonly DatabaseName?: (string | undefined) | undefined;
-	readonly DocsToInvestigate?: (string | undefined) | undefined;
-	readonly ExtractDocId?: (string | undefined) | undefined;
-	readonly NestingLevel?: (string | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly SecretsManagerAccessRoleArn?: (string | undefined) | undefined;
-	readonly SecretsManagerSecretId?: (string | undefined) | undefined;
-	readonly ServerName?: (string | undefined) | undefined;
-	readonly Username?: (string | undefined) | undefined;
+	readonly AuthMechanism?: string | undefined;
+	readonly AuthSource?: string | undefined;
+	readonly AuthType?: string | undefined;
+	readonly DatabaseName?: string | undefined;
+	readonly DocsToInvestigate?: string | undefined;
+	readonly ExtractDocId?: string | undefined;
+	readonly NestingLevel?: string | undefined;
+	readonly Password?: string | undefined;
+	readonly Port?: number | undefined;
+	readonly SecretsManagerAccessRoleArn?: string | undefined;
+	readonly SecretsManagerSecretId?: string | undefined;
+	readonly ServerName?: string | undefined;
+	readonly Username?: string | undefined;
 }
 export interface MySqlSettings {
-	readonly AfterConnectScript?: (string | undefined) | undefined;
-	readonly CleanSourceMetadataOnMismatch?: (boolean | undefined) | undefined;
-	readonly EventsPollInterval?: (number | undefined) | undefined;
-	readonly MaxFileSize?: (number | undefined) | undefined;
-	readonly ParallelLoadThreads?: (number | undefined) | undefined;
-	readonly SecretsManagerAccessRoleArn?: (string | undefined) | undefined;
-	readonly SecretsManagerSecretId?: (string | undefined) | undefined;
-	readonly ServerTimezone?: (string | undefined) | undefined;
-	readonly TargetDbType?: (string | undefined) | undefined;
+	readonly AfterConnectScript?: string | undefined;
+	readonly CleanSourceMetadataOnMismatch?: boolean | undefined;
+	readonly EventsPollInterval?: number | undefined;
+	readonly MaxFileSize?: number | undefined;
+	readonly ParallelLoadThreads?: number | undefined;
+	readonly SecretsManagerAccessRoleArn?: string | undefined;
+	readonly SecretsManagerSecretId?: string | undefined;
+	readonly ServerTimezone?: string | undefined;
+	readonly TargetDbType?: string | undefined;
 }
 export interface NeptuneSettings {
-	readonly ErrorRetryDuration?: (number | undefined) | undefined;
-	readonly IamAuthEnabled?: (boolean | undefined) | undefined;
-	readonly MaxFileSize?: (number | undefined) | undefined;
-	readonly MaxRetryCount?: (number | undefined) | undefined;
-	readonly S3BucketFolder?: (string | undefined) | undefined;
-	readonly S3BucketName?: (string | undefined) | undefined;
-	readonly ServiceAccessRoleArn?: (string | undefined) | undefined;
+	readonly ErrorRetryDuration?: number | undefined;
+	readonly IamAuthEnabled?: boolean | undefined;
+	readonly MaxFileSize?: number | undefined;
+	readonly MaxRetryCount?: number | undefined;
+	readonly S3BucketFolder?: string | undefined;
+	readonly S3BucketName?: string | undefined;
+	readonly ServiceAccessRoleArn?: string | undefined;
 }
 export interface OracleSettings {
-	readonly AccessAlternateDirectly?: (boolean | undefined) | undefined;
-	readonly AddSupplementalLogging?: (boolean | undefined) | undefined;
-	readonly AdditionalArchivedLogDestId?: (number | undefined) | undefined;
-	readonly AllowSelectNestedTables?: (boolean | undefined) | undefined;
-	readonly ArchivedLogDestId?: (number | undefined) | undefined;
-	readonly ArchivedLogsOnly?: (boolean | undefined) | undefined;
-	readonly AsmPassword?: (string | undefined) | undefined;
-	readonly AsmServer?: (string | undefined) | undefined;
-	readonly AsmUser?: (string | undefined) | undefined;
-	readonly CharLengthSemantics?: (string | undefined) | undefined;
-	readonly DirectPathNoLog?: (boolean | undefined) | undefined;
-	readonly DirectPathParallelLoad?: (boolean | undefined) | undefined;
-	readonly EnableHomogenousTablespace?: (boolean | undefined) | undefined;
-	readonly ExtraArchivedLogDestIds?: (number[] | undefined) | undefined;
-	readonly FailTasksOnLobTruncation?: (boolean | undefined) | undefined;
-	readonly NumberDatatypeScale?: (number | undefined) | undefined;
-	readonly OraclePathPrefix?: (string | undefined) | undefined;
-	readonly ParallelAsmReadThreads?: (number | undefined) | undefined;
-	readonly ReadAheadBlocks?: (number | undefined) | undefined;
-	readonly ReadTableSpaceName?: (boolean | undefined) | undefined;
-	readonly ReplacePathPrefix?: (boolean | undefined) | undefined;
-	readonly RetryInterval?: (number | undefined) | undefined;
-	readonly SecretsManagerAccessRoleArn?: (string | undefined) | undefined;
-	readonly SecretsManagerOracleAsmAccessRoleArn?: (string | undefined) | undefined;
-	readonly SecretsManagerOracleAsmSecretId?: (string | undefined) | undefined;
-	readonly SecretsManagerSecretId?: (string | undefined) | undefined;
-	readonly SecurityDbEncryption?: (string | undefined) | undefined;
-	readonly SecurityDbEncryptionName?: (string | undefined) | undefined;
-	readonly SpatialDataOptionToGeoJsonFunctionName?: (string | undefined) | undefined;
-	readonly StandbyDelayTime?: (number | undefined) | undefined;
-	readonly UseAlternateFolderForOnline?: (boolean | undefined) | undefined;
-	readonly UseBFile?: (boolean | undefined) | undefined;
-	readonly UseDirectPathFullLoad?: (boolean | undefined) | undefined;
-	readonly UseLogminerReader?: (boolean | undefined) | undefined;
-	readonly UsePathPrefix?: (string | undefined) | undefined;
+	readonly AccessAlternateDirectly?: boolean | undefined;
+	readonly AddSupplementalLogging?: boolean | undefined;
+	readonly AdditionalArchivedLogDestId?: number | undefined;
+	readonly AllowSelectNestedTables?: boolean | undefined;
+	readonly ArchivedLogDestId?: number | undefined;
+	readonly ArchivedLogsOnly?: boolean | undefined;
+	readonly AsmPassword?: string | undefined;
+	readonly AsmServer?: string | undefined;
+	readonly AsmUser?: string | undefined;
+	readonly CharLengthSemantics?: string | undefined;
+	readonly DirectPathNoLog?: boolean | undefined;
+	readonly DirectPathParallelLoad?: boolean | undefined;
+	readonly EnableHomogenousTablespace?: boolean | undefined;
+	readonly ExtraArchivedLogDestIds?: number[] | undefined;
+	readonly FailTasksOnLobTruncation?: boolean | undefined;
+	readonly NumberDatatypeScale?: number | undefined;
+	readonly OraclePathPrefix?: string | undefined;
+	readonly ParallelAsmReadThreads?: number | undefined;
+	readonly ReadAheadBlocks?: number | undefined;
+	readonly ReadTableSpaceName?: boolean | undefined;
+	readonly ReplacePathPrefix?: boolean | undefined;
+	readonly RetryInterval?: number | undefined;
+	readonly SecretsManagerAccessRoleArn?: string | undefined;
+	readonly SecretsManagerOracleAsmAccessRoleArn?: string | undefined;
+	readonly SecretsManagerOracleAsmSecretId?: string | undefined;
+	readonly SecretsManagerSecretId?: string | undefined;
+	readonly SecurityDbEncryption?: string | undefined;
+	readonly SecurityDbEncryptionName?: string | undefined;
+	readonly SpatialDataOptionToGeoJsonFunctionName?: string | undefined;
+	readonly StandbyDelayTime?: number | undefined;
+	readonly UseAlternateFolderForOnline?: boolean | undefined;
+	readonly UseBFile?: boolean | undefined;
+	readonly UseDirectPathFullLoad?: boolean | undefined;
+	readonly UseLogminerReader?: boolean | undefined;
+	readonly UsePathPrefix?: string | undefined;
 }
 export interface PostgreSqlSettings {
-	readonly AfterConnectScript?: (string | undefined) | undefined;
-	readonly CaptureDdls?: (boolean | undefined) | undefined;
-	readonly DdlArtifactsSchema?: (string | undefined) | undefined;
-	readonly ExecuteTimeout?: (number | undefined) | undefined;
-	readonly FailTasksOnLobTruncation?: (boolean | undefined) | undefined;
-	readonly HeartbeatEnable?: (boolean | undefined) | undefined;
-	readonly HeartbeatFrequency?: (number | undefined) | undefined;
-	readonly HeartbeatSchema?: (string | undefined) | undefined;
-	readonly MaxFileSize?: (number | undefined) | undefined;
-	readonly PluginName?: (string | undefined) | undefined;
-	readonly SecretsManagerAccessRoleArn?: (string | undefined) | undefined;
-	readonly SecretsManagerSecretId?: (string | undefined) | undefined;
-	readonly SlotName?: (string | undefined) | undefined;
+	readonly AfterConnectScript?: string | undefined;
+	readonly CaptureDdls?: boolean | undefined;
+	readonly DdlArtifactsSchema?: string | undefined;
+	readonly ExecuteTimeout?: number | undefined;
+	readonly FailTasksOnLobTruncation?: boolean | undefined;
+	readonly HeartbeatEnable?: boolean | undefined;
+	readonly HeartbeatFrequency?: number | undefined;
+	readonly HeartbeatSchema?: string | undefined;
+	readonly MaxFileSize?: number | undefined;
+	readonly PluginName?: string | undefined;
+	readonly SecretsManagerAccessRoleArn?: string | undefined;
+	readonly SecretsManagerSecretId?: string | undefined;
+	readonly SlotName?: string | undefined;
 }
 export interface RedisSettings {
-	readonly AuthPassword?: (string | undefined) | undefined;
-	readonly AuthType?: (string | undefined) | undefined;
-	readonly AuthUserName?: (string | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly ServerName?: (string | undefined) | undefined;
-	readonly SslCaCertificateArn?: (string | undefined) | undefined;
-	readonly SslSecurityProtocol?: (string | undefined) | undefined;
+	readonly AuthPassword?: string | undefined;
+	readonly AuthType?: string | undefined;
+	readonly AuthUserName?: string | undefined;
+	readonly Port?: number | undefined;
+	readonly ServerName?: string | undefined;
+	readonly SslCaCertificateArn?: string | undefined;
+	readonly SslSecurityProtocol?: string | undefined;
 }
 export interface RedshiftSettings {
-	readonly AcceptAnyDate?: (boolean | undefined) | undefined;
-	readonly AfterConnectScript?: (string | undefined) | undefined;
-	readonly BucketFolder?: (string | undefined) | undefined;
-	readonly BucketName?: (string | undefined) | undefined;
-	readonly CaseSensitiveNames?: (boolean | undefined) | undefined;
-	readonly CompUpdate?: (boolean | undefined) | undefined;
-	readonly ConnectionTimeout?: (number | undefined) | undefined;
-	readonly DateFormat?: (string | undefined) | undefined;
-	readonly EmptyAsNull?: (boolean | undefined) | undefined;
-	readonly EncryptionMode?: (string | undefined) | undefined;
-	readonly ExplicitIds?: (boolean | undefined) | undefined;
-	readonly FileTransferUploadStreams?: (number | undefined) | undefined;
-	readonly LoadTimeout?: (number | undefined) | undefined;
-	readonly MaxFileSize?: (number | undefined) | undefined;
-	readonly RemoveQuotes?: (boolean | undefined) | undefined;
-	readonly ReplaceChars?: (string | undefined) | undefined;
-	readonly ReplaceInvalidChars?: (string | undefined) | undefined;
-	readonly SecretsManagerAccessRoleArn?: (string | undefined) | undefined;
-	readonly SecretsManagerSecretId?: (string | undefined) | undefined;
-	readonly ServerSideEncryptionKmsKeyId?: (string | undefined) | undefined;
-	readonly ServiceAccessRoleArn?: (string | undefined) | undefined;
-	readonly TimeFormat?: (string | undefined) | undefined;
-	readonly TrimBlanks?: (boolean | undefined) | undefined;
-	readonly TruncateColumns?: (boolean | undefined) | undefined;
-	readonly WriteBufferSize?: (number | undefined) | undefined;
+	readonly AcceptAnyDate?: boolean | undefined;
+	readonly AfterConnectScript?: string | undefined;
+	readonly BucketFolder?: string | undefined;
+	readonly BucketName?: string | undefined;
+	readonly CaseSensitiveNames?: boolean | undefined;
+	readonly CompUpdate?: boolean | undefined;
+	readonly ConnectionTimeout?: number | undefined;
+	readonly DateFormat?: string | undefined;
+	readonly EmptyAsNull?: boolean | undefined;
+	readonly EncryptionMode?: string | undefined;
+	readonly ExplicitIds?: boolean | undefined;
+	readonly FileTransferUploadStreams?: number | undefined;
+	readonly LoadTimeout?: number | undefined;
+	readonly MaxFileSize?: number | undefined;
+	readonly RemoveQuotes?: boolean | undefined;
+	readonly ReplaceChars?: string | undefined;
+	readonly ReplaceInvalidChars?: string | undefined;
+	readonly SecretsManagerAccessRoleArn?: string | undefined;
+	readonly SecretsManagerSecretId?: string | undefined;
+	readonly ServerSideEncryptionKmsKeyId?: string | undefined;
+	readonly ServiceAccessRoleArn?: string | undefined;
+	readonly TimeFormat?: string | undefined;
+	readonly TrimBlanks?: boolean | undefined;
+	readonly TruncateColumns?: boolean | undefined;
+	readonly WriteBufferSize?: number | undefined;
 }
 export interface S3Settings {
-	readonly AddColumnName?: (boolean | undefined) | undefined;
-	readonly BucketFolder?: (string | undefined) | undefined;
-	readonly BucketName?: (string | undefined) | undefined;
-	readonly CannedAclForObjects?: (string | undefined) | undefined;
-	readonly CdcInsertsAndUpdates?: (boolean | undefined) | undefined;
-	readonly CdcInsertsOnly?: (boolean | undefined) | undefined;
-	readonly CdcMaxBatchInterval?: (number | undefined) | undefined;
-	readonly CdcMinFileSize?: (number | undefined) | undefined;
-	readonly CdcPath?: (string | undefined) | undefined;
-	readonly CompressionType?: (string | undefined) | undefined;
-	readonly CsvDelimiter?: (string | undefined) | undefined;
-	readonly CsvNoSupValue?: (string | undefined) | undefined;
-	readonly CsvNullValue?: (string | undefined) | undefined;
-	readonly CsvRowDelimiter?: (string | undefined) | undefined;
-	readonly DataFormat?: (string | undefined) | undefined;
-	readonly DataPageSize?: (number | undefined) | undefined;
-	readonly DatePartitionDelimiter?: (string | undefined) | undefined;
-	readonly DatePartitionEnabled?: (boolean | undefined) | undefined;
-	readonly DatePartitionSequence?: (string | undefined) | undefined;
-	readonly DatePartitionTimezone?: (string | undefined) | undefined;
-	readonly DictPageSizeLimit?: (number | undefined) | undefined;
-	readonly EnableStatistics?: (boolean | undefined) | undefined;
-	readonly EncodingType?: (string | undefined) | undefined;
-	readonly EncryptionMode?: (string | undefined) | undefined;
-	readonly ExternalTableDefinition?: (string | undefined) | undefined;
-	readonly IgnoreHeaderRows?: (number | undefined) | undefined;
-	readonly IncludeOpForFullLoad?: (boolean | undefined) | undefined;
-	readonly MaxFileSize?: (number | undefined) | undefined;
-	readonly ParquetTimestampInMillisecond?: (boolean | undefined) | undefined;
-	readonly ParquetVersion?: (string | undefined) | undefined;
-	readonly PreserveTransactions?: (boolean | undefined) | undefined;
-	readonly Rfc4180?: (boolean | undefined) | undefined;
-	readonly RowGroupLength?: (number | undefined) | undefined;
-	readonly ServerSideEncryptionKmsKeyId?: (string | undefined) | undefined;
-	readonly ServiceAccessRoleArn?: (string | undefined) | undefined;
-	readonly TimestampColumnName?: (string | undefined) | undefined;
-	readonly UseCsvNoSupValue?: (boolean | undefined) | undefined;
-	readonly UseTaskStartTimeForFullLoadTimestamp?: (boolean | undefined) | undefined;
+	readonly AddColumnName?: boolean | undefined;
+	readonly BucketFolder?: string | undefined;
+	readonly BucketName?: string | undefined;
+	readonly CannedAclForObjects?: string | undefined;
+	readonly CdcInsertsAndUpdates?: boolean | undefined;
+	readonly CdcInsertsOnly?: boolean | undefined;
+	readonly CdcMaxBatchInterval?: number | undefined;
+	readonly CdcMinFileSize?: number | undefined;
+	readonly CdcPath?: string | undefined;
+	readonly CompressionType?: string | undefined;
+	readonly CsvDelimiter?: string | undefined;
+	readonly CsvNoSupValue?: string | undefined;
+	readonly CsvNullValue?: string | undefined;
+	readonly CsvRowDelimiter?: string | undefined;
+	readonly DataFormat?: string | undefined;
+	readonly DataPageSize?: number | undefined;
+	readonly DatePartitionDelimiter?: string | undefined;
+	readonly DatePartitionEnabled?: boolean | undefined;
+	readonly DatePartitionSequence?: string | undefined;
+	readonly DatePartitionTimezone?: string | undefined;
+	readonly DictPageSizeLimit?: number | undefined;
+	readonly EnableStatistics?: boolean | undefined;
+	readonly EncodingType?: string | undefined;
+	readonly EncryptionMode?: string | undefined;
+	readonly ExternalTableDefinition?: string | undefined;
+	readonly IgnoreHeaderRows?: number | undefined;
+	readonly IncludeOpForFullLoad?: boolean | undefined;
+	readonly MaxFileSize?: number | undefined;
+	readonly ParquetTimestampInMillisecond?: boolean | undefined;
+	readonly ParquetVersion?: string | undefined;
+	readonly PreserveTransactions?: boolean | undefined;
+	readonly Rfc4180?: boolean | undefined;
+	readonly RowGroupLength?: number | undefined;
+	readonly ServerSideEncryptionKmsKeyId?: string | undefined;
+	readonly ServiceAccessRoleArn?: string | undefined;
+	readonly TimestampColumnName?: string | undefined;
+	readonly UseCsvNoSupValue?: boolean | undefined;
+	readonly UseTaskStartTimeForFullLoadTimestamp?: boolean | undefined;
 }
 export interface SybaseSettings {
-	readonly SecretsManagerAccessRoleArn?: (string | undefined) | undefined;
-	readonly SecretsManagerSecretId?: (string | undefined) | undefined;
+	readonly SecretsManagerAccessRoleArn?: string | undefined;
+	readonly SecretsManagerSecretId?: string | undefined;
 }
 export default {
 	Certificate: Certificate,

@@ -7,7 +7,6 @@ export class Aggregations extends GdmResource<AggregationsComponentInputs> imple
 }
 export interface AggregationsComponentOutputs {}
 export interface AggregationsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

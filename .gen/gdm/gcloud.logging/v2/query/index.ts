@@ -7,7 +7,6 @@ export class Query extends GdmResource<QueryComponentInputs> implements QueryCom
 }
 export interface QueryComponentOutputs {}
 export interface QueryComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

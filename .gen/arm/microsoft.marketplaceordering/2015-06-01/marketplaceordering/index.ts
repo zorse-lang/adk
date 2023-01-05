@@ -18,7 +18,7 @@ export interface agreements_offers_plansComponentOutputs {
 }
 export interface agreements_offers_plansComponentInputs {
 	readonly name: string;
-	readonly properties?: OldAgreementProperties | undefined;
+	readonly properties?: OldAgreementProperties;
 }
 export class offerTypes_publishers_offers_plans_agreements
 	extends ArmResource<offerTypes_publishers_offers_plans_agreementsComponentInputs>
@@ -44,25 +44,25 @@ export interface offerTypes_publishers_offers_plans_agreementsComponentOutputs {
 }
 export interface offerTypes_publishers_offers_plans_agreementsComponentInputs {
 	readonly name: string;
-	readonly properties?: AgreementProperties | undefined;
+	readonly properties?: AgreementProperties;
 }
 export interface AgreementProperties {
-	readonly accepted?: boolean | undefined;
-	readonly licenseTextLink?: string | undefined;
-	readonly plan?: string | undefined;
-	readonly privacyPolicyLink?: string | undefined;
-	readonly product?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly retrieveDatetime?: string | undefined;
-	readonly signature?: string | undefined;
+	readonly accepted?: boolean;
+	readonly licenseTextLink?: string;
+	readonly plan?: string;
+	readonly privacyPolicyLink?: string;
+	readonly product?: string;
+	readonly publisher?: string;
+	readonly retrieveDatetime?: string;
+	readonly signature?: string;
 }
 export interface OldAgreementProperties {
-	readonly cancelDate?: string | undefined;
-	readonly id?: string | undefined;
-	readonly offer?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly signDate?: string | undefined;
-	readonly state?: ("Active" | "Canceled") | undefined;
+	readonly cancelDate?: string;
+	readonly id?: string;
+	readonly offer?: string;
+	readonly publisher?: string;
+	readonly signDate?: string;
+	readonly state?: "Active" | "Canceled";
 }
 export default {
 	"agreements/offers/plans": agreements_offers_plans,

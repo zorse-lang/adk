@@ -10,7 +10,6 @@ export class ProjectsManagedZones
 }
 export interface ProjectsManagedZonesComponentOutputs {}
 export interface ProjectsManagedZonesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

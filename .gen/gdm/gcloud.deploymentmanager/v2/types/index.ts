@@ -7,7 +7,6 @@ export class Types extends GdmResource<TypesComponentInputs> implements TypesCom
 }
 export interface TypesComponentOutputs {}
 export interface TypesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

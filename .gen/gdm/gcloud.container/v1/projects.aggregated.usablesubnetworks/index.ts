@@ -10,7 +10,6 @@ export class ProjectsAggregatedUsableSubnetworks
 }
 export interface ProjectsAggregatedUsableSubnetworksComponentOutputs {}
 export interface ProjectsAggregatedUsableSubnetworksComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

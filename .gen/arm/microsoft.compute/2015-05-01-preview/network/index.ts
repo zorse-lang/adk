@@ -23,49 +23,49 @@ export interface virtualMachineScaleSets_virtualMachines_networkInterfacesCompon
 	readonly type: "microsoft.compute/virtualMachineScaleSets/virtualMachines/networkInterfaces";
 }
 export interface virtualMachineScaleSets_virtualMachines_networkInterfacesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkInterfacePropertiesFormat | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkInterfacePropertiesFormat;
+	readonly tags?: ResourceTags;
 }
 export interface NetworkInterfaceDnsSettings {
-	readonly appliedDnsServers?: string[] | undefined;
-	readonly dnsServers?: string[] | undefined;
-	readonly internalDnsNameLabel?: string | undefined;
-	readonly internalFqdn?: string | undefined;
+	readonly appliedDnsServers?: string[];
+	readonly dnsServers?: string[];
+	readonly internalDnsNameLabel?: string;
+	readonly internalFqdn?: string;
 }
 export interface NetworkInterfaceIpConfiguration {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: NetworkInterfaceIpConfigurationPropertiesFormat | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: NetworkInterfaceIpConfigurationPropertiesFormat;
 }
 export interface NetworkInterfaceIpConfigurationPropertiesFormat {
-	readonly loadBalancerBackendAddressPools?: SubResource[] | undefined;
-	readonly loadBalancerInboundNatRules?: SubResource[] | undefined;
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicIPAddress?: SubResource | undefined;
-	readonly subnet?: SubResource | undefined;
+	readonly loadBalancerBackendAddressPools?: SubResource[];
+	readonly loadBalancerInboundNatRules?: SubResource[];
+	readonly privateIPAddress?: string;
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly provisioningState?: string;
+	readonly publicIPAddress?: SubResource;
+	readonly subnet?: SubResource;
 }
 export interface NetworkInterfacePropertiesFormat {
-	readonly dnsSettings?: NetworkInterfaceDnsSettings | undefined;
-	readonly enableIPForwarding?: boolean | undefined;
-	readonly ipConfigurations?: NetworkInterfaceIpConfiguration[] | undefined;
-	readonly macAddress?: string | undefined;
-	readonly networkSecurityGroup?: SubResource | undefined;
-	readonly primary?: boolean | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly virtualMachine?: SubResource | undefined;
+	readonly dnsSettings?: NetworkInterfaceDnsSettings;
+	readonly enableIPForwarding?: boolean;
+	readonly ipConfigurations?: NetworkInterfaceIpConfiguration[];
+	readonly macAddress?: string;
+	readonly networkSecurityGroup?: SubResource;
+	readonly primary?: boolean;
+	readonly provisioningState?: string;
+	readonly resourceGuid?: string;
+	readonly virtualMachine?: SubResource;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SubResource {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export default {
 	"virtualMachineScaleSets/virtualMachines/networkInterfaces":

@@ -10,23 +10,22 @@ export class ServicesConsumerQuotaMetricsLimitsAdminQuotaPolicies
 }
 export interface ServicesConsumerQuotaMetricsLimitsAdminQuotaPoliciesComponentOutputs {}
 export interface ServicesConsumerQuotaMetricsLimitsAdminQuotaPoliciesComponentInputs {
-	readonly container?: string | undefined;
-	readonly dimensions?: { [P in string]: string } | undefined;
-	readonly force?: boolean | undefined;
-	readonly metric?: string | undefined;
+	readonly container?: string;
+	readonly dimensions?: { [P in string]: string };
+	readonly force?: boolean;
+	readonly metric?: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly policyValue?: string | undefined;
-	readonly unit?: string | undefined;
-	readonly type: string;
+	readonly policyValue?: string;
+	readonly unit?: string;
 }
 export interface AdminQuotaPolicy {
-	readonly container?: string | undefined;
-	readonly dimensions?: { [P in string]: string } | undefined;
-	readonly metric?: string | undefined;
-	readonly name?: string | undefined;
-	readonly policyValue?: string | undefined;
-	readonly unit?: string | undefined;
+	readonly container?: string;
+	readonly dimensions?: { [P in string]: string };
+	readonly metric?: string;
+	readonly name?: string;
+	readonly policyValue?: string;
+	readonly unit?: string;
 }
 export default {
 	ServicesConsumerQuotaMetricsLimitsAdminQuotaPolicies: ServicesConsumerQuotaMetricsLimitsAdminQuotaPolicies,

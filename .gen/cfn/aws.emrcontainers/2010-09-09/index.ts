@@ -14,7 +14,7 @@ export interface VirtualClusterComponentOutputs {
 export interface VirtualClusterComponentInputs {
 	readonly ContainerProvider: ContainerProvider;
 	readonly Name: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface ContainerInfo {

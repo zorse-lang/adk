@@ -14,14 +14,14 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.Maps/accounts";
 }
 export interface accountsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly kind?: ("Gen1" | "Gen2") | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly kind?: "Gen1" | "Gen2";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MapsAccountProperties | undefined;
+	readonly properties?: MapsAccountProperties;
 	readonly sku: Sku;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class accounts_creators
 	extends ArmResource<accounts_creatorsComponentInputs>
@@ -43,8 +43,8 @@ export interface accounts_creatorsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: CreatorProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export function listKeys(resource: accounts): MapsAccountKeys {
 	if (resource.apiVersion !== "2021-12-01-preview") {
@@ -68,22 +68,22 @@ export interface AccountSasParameters {
 	readonly expiry: string;
 	readonly maxRatePerSecond: number;
 	readonly principalId: string;
-	readonly regions?: string[] | undefined;
+	readonly regions?: string[];
 	readonly signingKey: "primaryKey" | "secondaryKey";
 	readonly start: string;
 }
 export interface Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface CorsRule {
 	readonly allowedOrigins: string[];
 }
 export interface CorsRules {
-	readonly corsRules?: CorsRule[] | undefined;
+	readonly corsRules?: CorsRule[];
 }
 export interface CreatorProperties {
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 	readonly storageUnits: number;
 }
 export interface LinkedResource {
@@ -91,46 +91,44 @@ export interface LinkedResource {
 	readonly uniqueName: string;
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: ManagedServiceIdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: ManagedServiceIdentityUserAssignedIdentities;
 }
 export interface ManagedServiceIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?:
-		| Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties
-		| undefined;
+	readonly [key: string]: Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties;
 }
 export interface MapsAccountKeys {
-	readonly primaryKey?: string | undefined;
-	readonly primaryKeyLastUpdated?: string | undefined;
-	readonly secondaryKey?: string | undefined;
-	readonly secondaryKeyLastUpdated?: string | undefined;
+	readonly primaryKey?: string;
+	readonly primaryKeyLastUpdated?: string;
+	readonly secondaryKey?: string;
+	readonly secondaryKeyLastUpdated?: string;
 }
 export interface MapsAccountProperties {
-	readonly cors?: CorsRules | undefined;
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly linkedResources?: LinkedResource[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uniqueId?: string | undefined;
+	readonly cors?: CorsRules;
+	readonly disableLocalAuth?: boolean;
+	readonly linkedResources?: LinkedResource[];
+	readonly provisioningState?: string;
+	readonly uniqueId?: string;
 }
 export interface MapsAccountSasToken {
-	readonly accountSasToken?: string | undefined;
+	readonly accountSasToken?: string;
 }
 export interface Sku {
 	readonly name: "G2" | "S0" | "S1";
-	readonly tier?: string | undefined;
+	readonly tier?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	accounts: accounts,

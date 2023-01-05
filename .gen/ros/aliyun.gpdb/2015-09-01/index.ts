@@ -13,7 +13,7 @@ export interface AccountComponentInputs {
 	readonly AccountName: any | string;
 	readonly AccountPassword: string;
 	readonly DBInstanceId: string;
-	readonly AccountDescription?: (string | undefined) | undefined;
+	readonly AccountDescription?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DBInstance extends RosResource<DBInstanceComponentInputs> implements DBInstanceComponentOutputs {
@@ -37,13 +37,13 @@ export interface DBInstanceComponentInputs {
 	readonly EngineVersion: string;
 	readonly VSwitchId: string;
 	readonly ZoneId: string;
-	readonly DBInstanceDescription?: (string | undefined) | undefined;
-	readonly PayType?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly SecurityIPList?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VPCId?: (string | undefined) | undefined;
+	readonly DBInstanceDescription?: string | undefined;
+	readonly PayType?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly SecurityIPList?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly VPCId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ElasticDBInstance
@@ -72,17 +72,17 @@ export interface ElasticDBInstanceComponentInputs {
 	readonly StorageSize: number;
 	readonly VSwitchId: string;
 	readonly ZoneId: string;
-	readonly DBInstanceCategory?: (string | undefined) | undefined;
-	readonly DBInstanceDescription?: (string | undefined) | undefined;
-	readonly EncryptionKey?: (string | undefined) | undefined;
-	readonly EncryptionType?: (string | undefined) | undefined;
-	readonly MasterNodeNum?: (number | undefined) | undefined;
-	readonly PayType?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly SecurityIPList?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VPCId?: (string | undefined) | undefined;
+	readonly DBInstanceCategory?: string | undefined;
+	readonly DBInstanceDescription?: string | undefined;
+	readonly EncryptionKey?: string | undefined;
+	readonly EncryptionType?: string | undefined;
+	readonly MasterNodeNum?: number | undefined;
+	readonly PayType?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly SecurityIPList?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly VPCId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class InstancePublicConnection
@@ -106,7 +106,7 @@ export interface InstancePublicConnectionComponentInputs {
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export default {

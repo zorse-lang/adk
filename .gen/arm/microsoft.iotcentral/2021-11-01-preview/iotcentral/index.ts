@@ -14,13 +14,13 @@ export interface iotAppsComponentOutputs {
 	readonly type: "Microsoft.IoTCentral/iotApps";
 }
 export interface iotAppsComponentInputs {
-	readonly identity?: SystemAssignedServiceIdentity | undefined;
+	readonly identity?: SystemAssignedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AppProperties | undefined;
+	readonly properties?: AppProperties;
 	readonly sku: AppSkuInfo;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class iotApps_privateEndpointConnections
 	extends ArmResource<iotApps_privateEndpointConnectionsComponentInputs>
@@ -46,8 +46,8 @@ export interface iotApps_privateEndpointConnectionsComponentOutputs {
 }
 export interface iotApps_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class iotApps_privateLinkResources
 	extends ArmResource<iotApps_privateLinkResourcesComponentInputs>
@@ -67,75 +67,75 @@ export interface iotApps_privateLinkResourcesComponentOutputs {
 }
 export interface iotApps_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
 }
 export interface AppProperties {
-	readonly applicationId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly networkRuleSets?: NetworkRuleSets | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly state?: ("created" | "suspended") | undefined;
-	readonly subdomain?: string | undefined;
-	readonly template?: string | undefined;
+	readonly applicationId?: string;
+	readonly displayName?: string;
+	readonly networkRuleSets?: NetworkRuleSets;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly state?: "created" | "suspended";
+	readonly subdomain?: string;
+	readonly template?: string;
 }
 export interface AppSkuInfo {
 	readonly name: "ST0" | "ST1" | "ST2";
 }
 export interface NetworkRuleSetIpRule {
-	readonly action?: "Allow" | undefined;
-	readonly filterName?: string | undefined;
-	readonly ipMask?: string | undefined;
+	readonly action?: "Allow";
+	readonly filterName?: string;
+	readonly ipMask?: string;
 }
 export interface NetworkRuleSets {
-	readonly applyToDevices?: boolean | undefined;
-	readonly applyToIoTCentral?: boolean | undefined;
-	readonly defaultAction?: ("Allow" | "Deny") | undefined;
-	readonly ipRules?: NetworkRuleSetIpRule[] | undefined;
+	readonly applyToDevices?: boolean;
+	readonly applyToIoTCentral?: boolean;
+	readonly defaultAction?: "Allow" | "Deny";
+	readonly ipRules?: NetworkRuleSetIpRule[];
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly groupIds?: string[];
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface SystemAssignedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	iotApps: iotApps,

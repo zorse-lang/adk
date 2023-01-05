@@ -17,13 +17,13 @@ export interface dataCollectionEndpointsComponentOutputs {
 	readonly type: "Microsoft.Insights/dataCollectionEndpoints";
 }
 export interface dataCollectionEndpointsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: ("Linux" | "Windows") | undefined;
+	readonly etag?: string;
+	readonly kind?: "Linux" | "Windows";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DataCollectionEndpointResourceProperties | undefined;
-	readonly systemData?: DataCollectionEndpointResourceSystemData | undefined;
-	readonly tags?: DataCollectionEndpointResourceTags | undefined;
+	readonly properties?: DataCollectionEndpointResourceProperties;
+	readonly systemData?: DataCollectionEndpointResourceSystemData;
+	readonly tags?: DataCollectionEndpointResourceTags;
 }
 export class dataCollectionRuleAssociations
 	extends ArmResource<dataCollectionRuleAssociationsComponentInputs>
@@ -42,10 +42,10 @@ export interface dataCollectionRuleAssociationsComponentOutputs {
 	readonly type: "Microsoft.Insights/dataCollectionRuleAssociations";
 }
 export interface dataCollectionRuleAssociationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: DataCollectionRuleAssociationProxyOnlyResourceProperties | undefined;
-	readonly systemData?: DataCollectionRuleAssociationProxyOnlyResourceSystemData | undefined;
+	readonly properties?: DataCollectionRuleAssociationProxyOnlyResourceProperties;
+	readonly systemData?: DataCollectionRuleAssociationProxyOnlyResourceSystemData;
 }
 export class dataCollectionRules
 	extends ArmResource<dataCollectionRulesComponentInputs>
@@ -64,155 +64,149 @@ export interface dataCollectionRulesComponentOutputs {
 	readonly type: "Microsoft.Insights/dataCollectionRules";
 }
 export interface dataCollectionRulesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: ("Linux" | "Windows") | undefined;
+	readonly etag?: string;
+	readonly kind?: "Linux" | "Windows";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DataCollectionRuleResourceProperties | undefined;
-	readonly systemData?: DataCollectionRuleResourceSystemData | undefined;
-	readonly tags?: DataCollectionRuleResourceTags | undefined;
+	readonly properties?: DataCollectionRuleResourceProperties;
+	readonly systemData?: DataCollectionRuleResourceSystemData;
+	readonly tags?: DataCollectionRuleResourceTags;
 }
 export interface ColumnDefinition {
-	readonly name?: string | undefined;
-	readonly type?: ("boolean" | "datetime" | "dynamic" | "int" | "long" | "real" | "string") | undefined;
+	readonly name?: string;
+	readonly type?: "boolean" | "datetime" | "dynamic" | "int" | "long" | "real" | "string";
 }
 export interface DataCollectionEndpointConfigurationAccess {
-	readonly endpoint?: string | undefined;
+	readonly endpoint?: string;
 }
 export interface DataCollectionEndpointLogsIngestion {
-	readonly endpoint?: string | undefined;
+	readonly endpoint?: string;
 }
 export interface DataCollectionEndpointNetworkAcls {
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface DataCollectionEndpointResourceProperties {
-	readonly configurationAccess?: DataCollectionEndpointConfigurationAccess | undefined;
-	readonly description?: string | undefined;
-	readonly immutableId?: string | undefined;
-	readonly logsIngestion?: DataCollectionEndpointLogsIngestion | undefined;
-	readonly networkAcls?: DataCollectionEndpointNetworkAcls | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly configurationAccess?: DataCollectionEndpointConfigurationAccess;
+	readonly description?: string;
+	readonly immutableId?: string;
+	readonly logsIngestion?: DataCollectionEndpointLogsIngestion;
+	readonly networkAcls?: DataCollectionEndpointNetworkAcls;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface DataCollectionEndpointResourceSystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface DataCollectionEndpointResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DataCollectionRuleAssociationMetadata {
-	readonly provisionedBy?: string | undefined;
+	readonly provisionedBy?: string;
 }
 export interface DataCollectionRuleAssociationProxyOnlyResourceProperties {
-	readonly dataCollectionEndpointId?: string | undefined;
-	readonly dataCollectionRuleId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly metadata?: DataCollectionRuleAssociationMetadata | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly dataCollectionEndpointId?: string;
+	readonly dataCollectionRuleId?: string;
+	readonly description?: string;
+	readonly metadata?: DataCollectionRuleAssociationMetadata;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface DataCollectionRuleAssociationProxyOnlyResourceSystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface DataCollectionRuleDataSources {
-	readonly extensions?: ExtensionDataSource[] | undefined;
-	readonly iisLogs?: IisLogsDataSource[] | undefined;
-	readonly logFiles?: LogFilesDataSource[] | undefined;
-	readonly performanceCounters?: PerfCounterDataSource[] | undefined;
-	readonly syslog?: SyslogDataSource[] | undefined;
-	readonly windowsEventLogs?: WindowsEventLogDataSource[] | undefined;
+	readonly extensions?: ExtensionDataSource[];
+	readonly iisLogs?: IisLogsDataSource[];
+	readonly logFiles?: LogFilesDataSource[];
+	readonly performanceCounters?: PerfCounterDataSource[];
+	readonly syslog?: SyslogDataSource[];
+	readonly windowsEventLogs?: WindowsEventLogDataSource[];
 }
 export interface DataCollectionRuleDestinations {
-	readonly azureMonitorMetrics?: DestinationsSpecAzureMonitorMetrics | undefined;
-	readonly logAnalytics?: LogAnalyticsDestination[] | undefined;
+	readonly azureMonitorMetrics?: DestinationsSpecAzureMonitorMetrics;
+	readonly logAnalytics?: LogAnalyticsDestination[];
 }
 export interface DataCollectionRuleMetadata {
-	readonly provisionedBy?: string | undefined;
+	readonly provisionedBy?: string;
 }
 export interface DataCollectionRuleResourceProperties {
-	readonly dataCollectionEndpointId?: string | undefined;
-	readonly dataFlows?: DataFlow[] | undefined;
-	readonly dataSources?: DataCollectionRuleDataSources | undefined;
-	readonly description?: string | undefined;
-	readonly destinations?: DataCollectionRuleDestinations | undefined;
-	readonly immutableId?: string | undefined;
-	readonly metadata?: DataCollectionRuleMetadata | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly streamDeclarations?: DataCollectionRuleStreamDeclarations | undefined;
+	readonly dataCollectionEndpointId?: string;
+	readonly dataFlows?: DataFlow[];
+	readonly dataSources?: DataCollectionRuleDataSources;
+	readonly description?: string;
+	readonly destinations?: DataCollectionRuleDestinations;
+	readonly immutableId?: string;
+	readonly metadata?: DataCollectionRuleMetadata;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly streamDeclarations?: DataCollectionRuleStreamDeclarations;
 }
 export interface DataCollectionRuleResourceSystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface DataCollectionRuleResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DataCollectionRuleStreamDeclarations {
-	readonly "[ key: string ]"?: StreamDeclaration | undefined;
+	readonly [key: string]: StreamDeclaration;
 }
 export interface DataFlow {
-	readonly destinations?: string[] | undefined;
-	readonly outputStream?: string | undefined;
+	readonly destinations?: string[];
+	readonly outputStream?: string;
 	readonly streams?:
-		| (
-				| "Microsoft-Event"
-				| "Microsoft-InsightsMetrics"
-				| "Microsoft-Perf"
-				| "Microsoft-Syslog"
-				| "Microsoft-WindowsEvent"[]
-		  )
-		| undefined;
-	readonly transformKql?: string | undefined;
+		| "Microsoft-Event"
+		| "Microsoft-InsightsMetrics"
+		| "Microsoft-Perf"
+		| "Microsoft-Syslog"
+		| "Microsoft-WindowsEvent"[];
+	readonly transformKql?: string;
 }
 export interface DestinationsSpecAzureMonitorMetrics {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface ExtensionDataSource {
 	readonly extensionName: string;
-	readonly extensionSettings?: any | undefined;
-	readonly inputDataSources?: string[] | undefined;
-	readonly name?: string | undefined;
+	readonly extensionSettings?: any;
+	readonly inputDataSources?: string[];
+	readonly name?: string;
 	readonly streams?:
-		| (
-				| "Microsoft-Event"
-				| "Microsoft-InsightsMetrics"
-				| "Microsoft-Perf"
-				| "Microsoft-Syslog"
-				| "Microsoft-WindowsEvent"[]
-		  )
-		| undefined;
+		| "Microsoft-Event"
+		| "Microsoft-InsightsMetrics"
+		| "Microsoft-Perf"
+		| "Microsoft-Syslog"
+		| "Microsoft-WindowsEvent"[];
 }
 export interface IisLogsDataSource {
-	readonly logDirectories?: string[] | undefined;
-	readonly name?: string | undefined;
+	readonly logDirectories?: string[];
+	readonly name?: string;
 	readonly streams: string[];
 }
 export interface LogAnalyticsDestination {
-	readonly name?: string | undefined;
-	readonly workspaceId?: string | undefined;
-	readonly workspaceResourceId?: string | undefined;
+	readonly name?: string;
+	readonly workspaceId?: string;
+	readonly workspaceResourceId?: string;
 }
 export interface LogFilesDataSource {
 	readonly filePatterns: string[];
 	readonly format: "text";
-	readonly name?: string | undefined;
-	readonly settings?: LogFilesDataSourceSettings | undefined;
+	readonly name?: string;
+	readonly settings?: LogFilesDataSourceSettings;
 	readonly streams: string[];
 }
 export interface LogFilesDataSourceSettings {
-	readonly text?: LogFileSettingsText | undefined;
+	readonly text?: LogFileSettingsText;
 }
 export interface LogFileSettingsText {
 	readonly recordStartTimestampFormat:
@@ -227,50 +221,45 @@ export interface LogFileSettingsText {
 		| "yyyy-MM-ddTHH:mm:ssK";
 }
 export interface PerfCounterDataSource {
-	readonly counterSpecifiers?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly samplingFrequencyInSeconds?: number | undefined;
-	readonly streams?: ("Microsoft-InsightsMetrics" | "Microsoft-Perf"[]) | undefined;
+	readonly counterSpecifiers?: string[];
+	readonly name?: string;
+	readonly samplingFrequencyInSeconds?: number;
+	readonly streams?: "Microsoft-InsightsMetrics" | "Microsoft-Perf"[];
 }
 export interface StreamDeclaration {
-	readonly columns?: ColumnDefinition[] | undefined;
+	readonly columns?: ColumnDefinition[];
 }
 export interface SyslogDataSource {
 	readonly facilityNames?:
-		| (
-				| "*"
-				| "auth"
-				| "authpriv"
-				| "cron"
-				| "daemon"
-				| "kern"
-				| "local0"
-				| "local1"
-				| "local2"
-				| "local3"
-				| "local4"
-				| "local5"
-				| "local6"
-				| "local7"
-				| "lpr"
-				| "mail"
-				| "mark"
-				| "news"
-				| "syslog"
-				| "user"
-				| "uucp"[]
-		  )
-		| undefined;
-	readonly logLevels?:
-		| ("*" | "Alert" | "Critical" | "Debug" | "Emergency" | "Error" | "Info" | "Notice" | "Warning"[])
-		| undefined;
-	readonly name?: string | undefined;
-	readonly streams?: "Microsoft-Syslog"[] | undefined;
+		| "*"
+		| "auth"
+		| "authpriv"
+		| "cron"
+		| "daemon"
+		| "kern"
+		| "local0"
+		| "local1"
+		| "local2"
+		| "local3"
+		| "local4"
+		| "local5"
+		| "local6"
+		| "local7"
+		| "lpr"
+		| "mail"
+		| "mark"
+		| "news"
+		| "syslog"
+		| "user"
+		| "uucp"[];
+	readonly logLevels?: "*" | "Alert" | "Critical" | "Debug" | "Emergency" | "Error" | "Info" | "Notice" | "Warning"[];
+	readonly name?: string;
+	readonly streams?: "Microsoft-Syslog"[];
 }
 export interface WindowsEventLogDataSource {
-	readonly name?: string | undefined;
-	readonly streams?: ("Microsoft-Event" | "Microsoft-WindowsEvent"[]) | undefined;
-	readonly xPathQueries?: string[] | undefined;
+	readonly name?: string;
+	readonly streams?: "Microsoft-Event" | "Microsoft-WindowsEvent"[];
+	readonly xPathQueries?: string[];
 }
 export default {
 	dataCollectionEndpoints: dataCollectionEndpoints,

@@ -4,60 +4,59 @@ export class DiskTypes extends GdmResource<DiskTypesComponentInputs> implements 
 	constructor(entity: ADKEntity, options: DiskTypesComponentInputs) {
 		super(entity, options.name, "compute.alpha.DiskTypes", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly defaultDiskSizeGb?: string | undefined;
-	public readonly deprecated?: DeprecationStatus | undefined;
-	public readonly description?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly validDiskSize?: string | undefined;
-	public readonly zone?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly defaultDiskSizeGb?: string;
+	public readonly deprecated?: DeprecationStatus;
+	public readonly description?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly validDiskSize?: string;
+	public readonly zone?: string;
 }
 export interface DiskTypesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly defaultDiskSizeGb?: string | undefined;
-	readonly deprecated?: DeprecationStatus | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly validDiskSize?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly defaultDiskSizeGb?: string;
+	readonly deprecated?: DeprecationStatus;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly validDiskSize?: string;
+	readonly zone?: string;
 }
 export interface DiskTypesComponentInputs {
 	readonly name: string;
-	readonly type: string;
 }
 export interface DeprecationStatus {
-	readonly deleted?: string | undefined;
-	readonly deprecated?: string | undefined;
-	readonly obsolete?: string | undefined;
-	readonly replacement?: string | undefined;
-	readonly state?: string | undefined;
-	readonly stateOverride?: RolloutPolicy | undefined;
+	readonly deleted?: string;
+	readonly deprecated?: string;
+	readonly obsolete?: string;
+	readonly replacement?: string;
+	readonly state?: string;
+	readonly stateOverride?: RolloutPolicy;
 }
 export interface DiskType {
-	readonly creationTimestamp?: string | undefined;
-	readonly defaultDiskSizeGb?: string | undefined;
-	readonly deprecated?: DeprecationStatus | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly validDiskSize?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly defaultDiskSizeGb?: string;
+	readonly deprecated?: DeprecationStatus;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly validDiskSize?: string;
+	readonly zone?: string;
 }
 export interface RolloutPolicy {
-	readonly defaultRolloutTime?: string | undefined;
-	readonly locationRolloutPolicies?: { [P in string]: string } | undefined;
+	readonly defaultRolloutTime?: string;
+	readonly locationRolloutPolicies?: { [P in string]: string };
 }
 export default {
 	DiskTypes: DiskTypes,

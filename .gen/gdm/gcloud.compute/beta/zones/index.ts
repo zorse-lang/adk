@@ -4,57 +4,56 @@ export class Zones extends GdmResource<ZonesComponentInputs> implements ZonesCom
 	constructor(entity: ADKEntity, options: ZonesComponentInputs) {
 		super(entity, options.name, "compute.beta.Zones", options);
 	}
-	public readonly availableCpuPlatforms?: string[] | undefined;
-	public readonly creationTimestamp?: string | undefined;
-	public readonly deprecated?: DeprecationStatus | undefined;
-	public readonly description?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly supportsPzs?: boolean | undefined;
+	public readonly availableCpuPlatforms?: string[];
+	public readonly creationTimestamp?: string;
+	public readonly deprecated?: DeprecationStatus;
+	public readonly description?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly status?: string;
+	public readonly supportsPzs?: boolean;
 }
 export interface ZonesComponentOutputs {
-	readonly availableCpuPlatforms?: string[] | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly deprecated?: DeprecationStatus | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly supportsPzs?: boolean | undefined;
+	readonly availableCpuPlatforms?: string[];
+	readonly creationTimestamp?: string;
+	readonly deprecated?: DeprecationStatus;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly supportsPzs?: boolean;
 }
 export interface ZonesComponentInputs {
 	readonly name: string;
-	readonly type: string;
 }
 export interface DeprecationStatus {
-	readonly deleted?: string | undefined;
-	readonly deprecated?: string | undefined;
-	readonly obsolete?: string | undefined;
-	readonly replacement?: string | undefined;
-	readonly state?: string | undefined;
-	readonly stateOverride?: RolloutPolicy | undefined;
+	readonly deleted?: string;
+	readonly deprecated?: string;
+	readonly obsolete?: string;
+	readonly replacement?: string;
+	readonly state?: string;
+	readonly stateOverride?: RolloutPolicy;
 }
 export interface RolloutPolicy {
-	readonly defaultRolloutTime?: string | undefined;
-	readonly locationRolloutPolicies?: { [P in string]: string } | undefined;
+	readonly defaultRolloutTime?: string;
+	readonly locationRolloutPolicies?: { [P in string]: string };
 }
 export interface Zone {
-	readonly availableCpuPlatforms?: string[] | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly deprecated?: DeprecationStatus | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly supportsPzs?: boolean | undefined;
+	readonly availableCpuPlatforms?: string[];
+	readonly creationTimestamp?: string;
+	readonly deprecated?: DeprecationStatus;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly supportsPzs?: boolean;
 }
 export default {
 	Zones: Zones,

@@ -17,7 +17,7 @@ export interface applicationsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ApplicationResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class applications_services
 	extends ArmResource<applications_servicesComponentInputs>
@@ -37,7 +37,7 @@ export interface applications_servicesComponentOutputs {
 }
 export interface applications_servicesComponentInputs {
 	readonly name: string;
-	readonly properties?: ServiceResourceProperties | undefined;
+	readonly properties?: ServiceResourceProperties;
 }
 export class gateways extends ArmResource<gatewaysComponentInputs> implements gatewaysComponentOutputs {
 	constructor(entity: ADKEntity, options: gatewaysComponentInputs) {
@@ -56,7 +56,7 @@ export interface gatewaysComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: GatewayResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class networks extends ArmResource<networksComponentInputs> implements networksComponentOutputs {
 	constructor(entity: ADKEntity, options: networksComponentInputs) {
@@ -75,7 +75,7 @@ export interface networksComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: NetworkResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class secrets extends ArmResource<secretsComponentInputs> implements secretsComponentOutputs {
 	constructor(entity: ADKEntity, options: secretsComponentInputs) {
@@ -94,7 +94,7 @@ export interface secretsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: SecretResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class secrets_values extends ArmResource<secrets_valuesComponentInputs> implements secrets_valuesComponentOutputs {
 	constructor(entity: ADKEntity, options: secrets_valuesComponentInputs) {
@@ -113,7 +113,7 @@ export interface secrets_valuesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: SecretValueResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class volumes extends ArmResource<volumesComponentInputs> implements volumesComponentOutputs {
 	constructor(entity: ADKEntity, options: volumesComponentInputs) {
@@ -132,7 +132,7 @@ export interface volumesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: VolumeResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export function list_value(resource: secrets_values): SecretValue {
 	if (resource.apiVersion !== "2018-09-01-preview") {
@@ -144,25 +144,25 @@ export function list_value(resource: secrets_values): SecretValue {
 	throw new Error("not implemented");
 }
 export interface ApplicationResourceProperties {
-	readonly debugParams?: string | undefined;
-	readonly description?: string | undefined;
-	readonly diagnostics?: DiagnosticsDescription | undefined;
-	readonly healthState?: ("Error" | "Invalid" | "Ok" | "Unknown" | "Warning") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceNames?: string[] | undefined;
-	readonly services?: ServiceResourceDescription[] | undefined;
-	readonly status?: ("Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading") | undefined;
-	readonly statusDetails?: string | undefined;
-	readonly unhealthyEvaluation?: string | undefined;
+	readonly debugParams?: string;
+	readonly description?: string;
+	readonly diagnostics?: DiagnosticsDescription;
+	readonly healthState?: "Error" | "Invalid" | "Ok" | "Unknown" | "Warning";
+	readonly provisioningState?: string;
+	readonly serviceNames?: string[];
+	readonly services?: ServiceResourceDescription[];
+	readonly status?: "Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading";
+	readonly statusDetails?: string;
+	readonly unhealthyEvaluation?: string;
 }
 export interface ApplicationScopedVolume {
 	readonly creationParameters: ApplicationScopedVolumeCreationParameters;
 	readonly destinationPath: string;
 	readonly name: string;
-	readonly readOnly?: boolean | undefined;
+	readonly readOnly?: boolean;
 }
 export interface ApplicationScopedVolumeCreationParameters {
-	readonly description?: string | undefined;
+	readonly description?: string;
 }
 export interface AutoScalingMechanism {}
 export interface AutoScalingMetric {}
@@ -173,70 +173,70 @@ export interface AutoScalingPolicy {
 }
 export interface AutoScalingTrigger {}
 export interface ContainerCodePackageProperties {
-	readonly commands?: string[] | undefined;
-	readonly diagnostics?: DiagnosticsRef | undefined;
-	readonly endpoints?: EndpointProperties[] | undefined;
-	readonly entrypoint?: string | undefined;
-	readonly environmentVariables?: EnvironmentVariable[] | undefined;
+	readonly commands?: string[];
+	readonly diagnostics?: DiagnosticsRef;
+	readonly endpoints?: EndpointProperties[];
+	readonly entrypoint?: string;
+	readonly environmentVariables?: EnvironmentVariable[];
 	readonly image: string;
-	readonly imageRegistryCredential?: ImageRegistryCredential | undefined;
-	readonly instanceView?: ContainerInstanceView | undefined;
-	readonly labels?: ContainerLabel[] | undefined;
+	readonly imageRegistryCredential?: ImageRegistryCredential;
+	readonly instanceView?: ContainerInstanceView;
+	readonly labels?: ContainerLabel[];
 	readonly name: string;
-	readonly reliableCollectionsRefs?: ReliableCollectionsRef[] | undefined;
+	readonly reliableCollectionsRefs?: ReliableCollectionsRef[];
 	readonly resources: ResourceRequirements;
-	readonly settings?: Setting[] | undefined;
-	readonly volumeRefs?: VolumeReference[] | undefined;
-	readonly volumes?: ApplicationScopedVolume[] | undefined;
+	readonly settings?: Setting[];
+	readonly volumeRefs?: VolumeReference[];
+	readonly volumes?: ApplicationScopedVolume[];
 }
 export interface ContainerEvent {
-	readonly count?: number | undefined;
-	readonly firstTimestamp?: string | undefined;
-	readonly lastTimestamp?: string | undefined;
-	readonly message?: string | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly count?: number;
+	readonly firstTimestamp?: string;
+	readonly lastTimestamp?: string;
+	readonly message?: string;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface ContainerInstanceView {
-	readonly currentState?: ContainerState | undefined;
-	readonly events?: ContainerEvent[] | undefined;
-	readonly previousState?: ContainerState | undefined;
-	readonly restartCount?: number | undefined;
+	readonly currentState?: ContainerState;
+	readonly events?: ContainerEvent[];
+	readonly previousState?: ContainerState;
+	readonly restartCount?: number;
 }
 export interface ContainerLabel {
 	readonly name: string;
 	readonly value: string;
 }
 export interface ContainerState {
-	readonly detailStatus?: string | undefined;
-	readonly exitCode?: string | undefined;
-	readonly finishTime?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly state?: string | undefined;
+	readonly detailStatus?: string;
+	readonly exitCode?: string;
+	readonly finishTime?: string;
+	readonly startTime?: string;
+	readonly state?: string;
 }
 export interface DiagnosticsDescription {
-	readonly defaultSinkRefs?: string[] | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly sinks?: DiagnosticsSinkProperties[] | undefined;
+	readonly defaultSinkRefs?: string[];
+	readonly enabled?: boolean;
+	readonly sinks?: DiagnosticsSinkProperties[];
 }
 export interface DiagnosticsRef {
-	readonly enabled?: boolean | undefined;
-	readonly sinkRefs?: string[] | undefined;
+	readonly enabled?: boolean;
+	readonly sinkRefs?: string[];
 }
 export interface DiagnosticsSinkProperties {
-	readonly description?: string | undefined;
-	readonly name?: string | undefined;
+	readonly description?: string;
+	readonly name?: string;
 }
 export interface EndpointProperties {
 	readonly name: string;
-	readonly port?: number | undefined;
+	readonly port?: number;
 }
 export interface EndpointRef {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface EnvironmentVariable {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface GatewayDestination {
 	readonly applicationName: string;
@@ -244,15 +244,15 @@ export interface GatewayDestination {
 	readonly serviceName: string;
 }
 export interface GatewayResourceProperties {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly destinationNetwork: NetworkRef;
-	readonly http?: HttpConfig[] | undefined;
-	readonly ipAddress?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly http?: HttpConfig[];
+	readonly ipAddress?: string;
+	readonly provisioningState?: string;
 	readonly sourceNetwork: NetworkRef;
-	readonly status?: ("Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading") | undefined;
-	readonly statusDetails?: string | undefined;
-	readonly tcp?: TcpConfig[] | undefined;
+	readonly status?: "Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading";
+	readonly statusDetails?: string;
+	readonly tcp?: TcpConfig[];
 }
 export interface HttpConfig {
 	readonly hosts: HttpHostConfig[];
@@ -270,86 +270,86 @@ export interface HttpRouteConfig {
 }
 export interface HttpRouteMatchHeader {
 	readonly name: string;
-	readonly type?: "exact" | undefined;
-	readonly value?: string | undefined;
+	readonly type?: "exact";
+	readonly value?: string;
 }
 export interface HttpRouteMatchPath {
-	readonly rewrite?: string | undefined;
+	readonly rewrite?: string;
 	readonly type: "prefix";
 	readonly value: string;
 }
 export interface HttpRouteMatchRule {
-	readonly headers?: HttpRouteMatchHeader[] | undefined;
+	readonly headers?: HttpRouteMatchHeader[];
 	readonly path: HttpRouteMatchPath;
 }
 export interface ImageRegistryCredential {
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly server: string;
 	readonly username: string;
 }
 export interface NetworkRef {
-	readonly endpointRefs?: EndpointRef[] | undefined;
-	readonly name?: string | undefined;
+	readonly endpointRefs?: EndpointRef[];
+	readonly name?: string;
 }
 export interface NetworkResourceProperties {
-	readonly description?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly status?: ("Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading") | undefined;
-	readonly statusDetails?: string | undefined;
+	readonly description?: string;
+	readonly provisioningState?: string;
+	readonly status?: "Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading";
+	readonly statusDetails?: string;
 }
 export interface ReliableCollectionsRef {
-	readonly doNotPersistState?: boolean | undefined;
+	readonly doNotPersistState?: boolean;
 	readonly name: string;
 }
 export interface ResourceLimits {
-	readonly cpu?: number | undefined;
-	readonly memoryInGB?: number | undefined;
+	readonly cpu?: number;
+	readonly memoryInGB?: number;
 }
 export interface ResourceRequests {
 	readonly cpu: number;
 	readonly memoryInGB: number;
 }
 export interface ResourceRequirements {
-	readonly limits?: ResourceLimits | undefined;
+	readonly limits?: ResourceLimits;
 	readonly requests: ResourceRequests;
 }
 export interface SecretResourceProperties {
-	readonly contentType?: string | undefined;
-	readonly description?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly status?: ("Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading") | undefined;
-	readonly statusDetails?: string | undefined;
+	readonly contentType?: string;
+	readonly description?: string;
+	readonly provisioningState?: string;
+	readonly status?: "Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading";
+	readonly statusDetails?: string;
 }
 export interface SecretValue {
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface SecretValueResourceProperties {
-	readonly provisioningState?: string | undefined;
-	readonly value?: string | undefined;
+	readonly provisioningState?: string;
+	readonly value?: string;
 }
 export interface ServiceResourceDescription {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
 	readonly properties: ServiceResourceProperties;
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface ServiceResourceProperties {
-	readonly autoScalingPolicies?: AutoScalingPolicy[] | undefined;
+	readonly autoScalingPolicies?: AutoScalingPolicy[];
 	readonly codePackages: ContainerCodePackageProperties[];
-	readonly description?: string | undefined;
-	readonly diagnostics?: DiagnosticsRef | undefined;
-	readonly healthState?: ("Error" | "Invalid" | "Ok" | "Unknown" | "Warning") | undefined;
-	readonly networkRefs?: NetworkRef[] | undefined;
+	readonly description?: string;
+	readonly diagnostics?: DiagnosticsRef;
+	readonly healthState?: "Error" | "Invalid" | "Ok" | "Unknown" | "Warning";
+	readonly networkRefs?: NetworkRef[];
 	readonly osType: "Linux" | "Windows";
-	readonly provisioningState?: string | undefined;
-	readonly replicaCount?: number | undefined;
-	readonly status?: ("Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading") | undefined;
-	readonly statusDetails?: string | undefined;
-	readonly unhealthyEvaluation?: string | undefined;
+	readonly provisioningState?: string;
+	readonly replicaCount?: number;
+	readonly status?: "Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading";
+	readonly statusDetails?: string;
+	readonly unhealthyEvaluation?: string;
 }
 export interface Setting {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface TcpConfig {
 	readonly destination: GatewayDestination;
@@ -357,25 +357,25 @@ export interface TcpConfig {
 	readonly port: number;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VolumeProviderParametersAzureFile {
-	readonly accountKey?: string | undefined;
+	readonly accountKey?: string;
 	readonly accountName: string;
 	readonly shareName: string;
 }
 export interface VolumeReference {
 	readonly destinationPath: string;
 	readonly name: string;
-	readonly readOnly?: boolean | undefined;
+	readonly readOnly?: boolean;
 }
 export interface VolumeResourceProperties {
-	readonly azureFileParameters?: VolumeProviderParametersAzureFile | undefined;
-	readonly description?: string | undefined;
+	readonly azureFileParameters?: VolumeProviderParametersAzureFile;
+	readonly description?: string;
 	readonly provider: "SFAzureFile";
-	readonly provisioningState?: string | undefined;
-	readonly status?: ("Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading") | undefined;
-	readonly statusDetails?: string | undefined;
+	readonly provisioningState?: string;
+	readonly status?: "Creating" | "Deleting" | "Failed" | "Ready" | "Unknown" | "Upgrading";
+	readonly statusDetails?: string;
 }
 export default {
 	applications: applications,

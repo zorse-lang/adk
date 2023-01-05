@@ -14,10 +14,10 @@ export interface workflowsComponentOutputs {
 	readonly type: "Microsoft.Logic/workflows";
 }
 export interface workflowsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WorkflowProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkflowProperties;
+	readonly tags?: ResourceTags;
 }
 export class workflows_accessKeys
 	extends ArmResource<workflows_accessKeysComponentInputs>
@@ -37,7 +37,7 @@ export interface workflows_accessKeysComponentOutputs {
 }
 export interface workflows_accessKeysComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowAccessKeyProperties | undefined;
+	readonly properties?: WorkflowAccessKeyProperties;
 }
 export class workflows_runs extends ArmResource<workflows_runsComponentInputs> implements workflows_runsComponentOutputs {
 	constructor(entity: ADKEntity, options: workflows_runsComponentInputs) {
@@ -54,7 +54,7 @@ export interface workflows_runsComponentOutputs {
 }
 export interface workflows_runsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowRunProperties | undefined;
+	readonly properties?: WorkflowRunProperties;
 }
 export class workflows_runs_actions
 	extends ArmResource<workflows_runs_actionsComponentInputs>
@@ -74,7 +74,7 @@ export interface workflows_runs_actionsComponentOutputs {
 }
 export interface workflows_runs_actionsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowRunActionProperties | undefined;
+	readonly properties?: WorkflowRunActionProperties;
 }
 export class workflows_triggers
 	extends ArmResource<workflows_triggersComponentInputs>
@@ -94,7 +94,7 @@ export interface workflows_triggersComponentOutputs {
 }
 export interface workflows_triggersComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowTriggerProperties | undefined;
+	readonly properties?: WorkflowTriggerProperties;
 }
 export class workflows_triggers_histories
 	extends ArmResource<workflows_triggers_historiesComponentInputs>
@@ -114,7 +114,7 @@ export interface workflows_triggers_historiesComponentOutputs {
 }
 export interface workflows_triggers_historiesComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowTriggerHistoryProperties | undefined;
+	readonly properties?: WorkflowTriggerHistoryProperties;
 }
 export class workflows_versions
 	extends ArmResource<workflows_versionsComponentInputs>
@@ -133,10 +133,10 @@ export interface workflows_versionsComponentOutputs {
 	readonly type: "Microsoft.Logic/workflows/versions";
 }
 export interface workflows_versionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WorkflowVersionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkflowVersionProperties;
+	readonly tags?: ResourceTags;
 }
 export function list(resource: workflows_accessKeys): WorkflowSecretKeys {
 	if (resource.apiVersion !== "2015-02-01-preview") {
@@ -148,217 +148,198 @@ export function list(resource: workflows_accessKeys): WorkflowSecretKeys {
 	throw new Error("not implemented");
 }
 export interface ContentHash {
-	readonly algorithm?: string | undefined;
-	readonly value?: string | undefined;
+	readonly algorithm?: string;
+	readonly value?: string;
 }
 export interface ContentLink {
-	readonly contentHash?: ContentHash | undefined;
-	readonly contentSize?: number | undefined;
-	readonly contentVersion?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly uri?: string | undefined;
+	readonly contentHash?: ContentHash;
+	readonly contentSize?: number;
+	readonly contentVersion?: string;
+	readonly metadata?: any;
+	readonly uri?: string;
 }
 export interface ResourceReference {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
-	readonly name?: ("Basic" | "Free" | "NotSpecified" | "Premium" | "Shared") | undefined;
-	readonly plan?: ResourceReference | undefined;
+	readonly name?: "Basic" | "Free" | "NotSpecified" | "Premium" | "Shared";
+	readonly plan?: ResourceReference;
 }
 export interface WorkflowAccessKeyProperties {
-	readonly notAfter?: string | undefined;
-	readonly notBefore?: string | undefined;
+	readonly notAfter?: string;
+	readonly notBefore?: string;
 }
 export interface WorkflowOutputParameter {
-	readonly error?: any | undefined;
-	readonly metadata?: any | undefined;
-	readonly type?:
-		| ("Array" | "Bool" | "Float" | "Int" | "NotSpecified" | "Object" | "SecureObject" | "SecureString")
-		| undefined;
-	readonly value?: any | undefined;
+	readonly error?: any;
+	readonly metadata?: any;
+	readonly type?: "Array" | "Bool" | "Float" | "Int" | "NotSpecified" | "Object" | "SecureObject" | "SecureString";
+	readonly value?: any;
 }
 export interface WorkflowParameter {
-	readonly metadata?: any | undefined;
-	readonly type?:
-		| ("Array" | "Bool" | "Float" | "Int" | "NotSpecified" | "Object" | "SecureObject" | "SecureString")
-		| undefined;
-	readonly value?: any | undefined;
+	readonly metadata?: any;
+	readonly type?: "Array" | "Bool" | "Float" | "Int" | "NotSpecified" | "Object" | "SecureObject" | "SecureString";
+	readonly value?: any;
 }
 export interface WorkflowProperties {
-	readonly accessEndpoint?: string | undefined;
-	readonly changedTime?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly definition?: any | undefined;
-	readonly definitionLink?: ContentLink | undefined;
-	readonly parameters?: WorkflowPropertiesParameters | undefined;
-	readonly parametersLink?: ContentLink | undefined;
-	readonly provisioningState?: ("Moving" | "NotSpecified") | undefined;
-	readonly sku?: Sku | undefined;
-	readonly state?: ("Deleted" | "Disabled" | "Enabled" | "NotSpecified") | undefined;
-	readonly version?: string | undefined;
+	readonly accessEndpoint?: string;
+	readonly changedTime?: string;
+	readonly createdTime?: string;
+	readonly definition?: any;
+	readonly definitionLink?: ContentLink;
+	readonly parameters?: WorkflowPropertiesParameters;
+	readonly parametersLink?: ContentLink;
+	readonly provisioningState?: "Moving" | "NotSpecified";
+	readonly sku?: Sku;
+	readonly state?: "Deleted" | "Disabled" | "Enabled" | "NotSpecified";
+	readonly version?: string;
 }
 export interface WorkflowPropertiesParameters {
-	readonly "[ key: string ]"?: WorkflowParameter | undefined;
+	readonly [key: string]: WorkflowParameter;
 }
 export interface WorkflowRunActionProperties {
-	readonly code?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: any | undefined;
-	readonly inputsLink?: ContentLink | undefined;
-	readonly outputsLink?: ContentLink | undefined;
-	readonly startTime?: string | undefined;
+	readonly code?: string;
+	readonly endTime?: string;
+	readonly error?: any;
+	readonly inputsLink?: ContentLink;
+	readonly outputsLink?: ContentLink;
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Aborted"
-				| "Cancelled"
-				| "Failed"
-				| "Faulted"
-				| "NotSpecified"
-				| "Paused"
-				| "Running"
-				| "Skipped"
-				| "Succeeded"
-				| "Suspended"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly trackingId?: string | undefined;
+		| "Aborted"
+		| "Cancelled"
+		| "Failed"
+		| "Faulted"
+		| "NotSpecified"
+		| "Paused"
+		| "Running"
+		| "Skipped"
+		| "Succeeded"
+		| "Suspended"
+		| "TimedOut";
+	readonly trackingId?: string;
 }
 export interface WorkflowRunProperties {
-	readonly code?: string | undefined;
-	readonly correlationId?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: any | undefined;
-	readonly outputs?: WorkflowRunPropertiesOutputs | undefined;
-	readonly startTime?: string | undefined;
+	readonly code?: string;
+	readonly correlationId?: string;
+	readonly endTime?: string;
+	readonly error?: any;
+	readonly outputs?: WorkflowRunPropertiesOutputs;
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Aborted"
-				| "Cancelled"
-				| "Failed"
-				| "Faulted"
-				| "NotSpecified"
-				| "Paused"
-				| "Running"
-				| "Skipped"
-				| "Succeeded"
-				| "Suspended"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly trigger?: WorkflowRunTrigger | undefined;
-	readonly workflow?: ResourceReference | undefined;
+		| "Aborted"
+		| "Cancelled"
+		| "Failed"
+		| "Faulted"
+		| "NotSpecified"
+		| "Paused"
+		| "Running"
+		| "Skipped"
+		| "Succeeded"
+		| "Suspended"
+		| "TimedOut";
+	readonly trigger?: WorkflowRunTrigger;
+	readonly workflow?: ResourceReference;
 }
 export interface WorkflowRunPropertiesOutputs {
-	readonly "[ key: string ]"?: WorkflowOutputParameter | undefined;
+	readonly [key: string]: WorkflowOutputParameter;
 }
 export interface WorkflowRunTrigger {
-	readonly code?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: any | undefined;
-	readonly inputs?: any | undefined;
-	readonly inputsLink?: ContentLink | undefined;
-	readonly name?: string | undefined;
-	readonly outputs?: any | undefined;
-	readonly outputsLink?: ContentLink | undefined;
-	readonly startTime?: string | undefined;
+	readonly code?: string;
+	readonly endTime?: string;
+	readonly error?: any;
+	readonly inputs?: any;
+	readonly inputsLink?: ContentLink;
+	readonly name?: string;
+	readonly outputs?: any;
+	readonly outputsLink?: ContentLink;
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Aborted"
-				| "Cancelled"
-				| "Failed"
-				| "Faulted"
-				| "NotSpecified"
-				| "Paused"
-				| "Running"
-				| "Skipped"
-				| "Succeeded"
-				| "Suspended"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly trackingId?: string | undefined;
+		| "Aborted"
+		| "Cancelled"
+		| "Failed"
+		| "Faulted"
+		| "NotSpecified"
+		| "Paused"
+		| "Running"
+		| "Skipped"
+		| "Succeeded"
+		| "Suspended"
+		| "TimedOut";
+	readonly trackingId?: string;
 }
 export interface WorkflowSecretKeys {
-	readonly primarySecretKey?: string | undefined;
-	readonly secondarySecretKey?: string | undefined;
+	readonly primarySecretKey?: string;
+	readonly secondarySecretKey?: string;
 }
 export interface WorkflowTriggerHistoryProperties {
-	readonly code?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: any | undefined;
-	readonly fired?: boolean | undefined;
-	readonly inputsLink?: ContentLink | undefined;
-	readonly outputsLink?: ContentLink | undefined;
-	readonly run?: ResourceReference | undefined;
-	readonly startTime?: string | undefined;
+	readonly code?: string;
+	readonly endTime?: string;
+	readonly error?: any;
+	readonly fired?: boolean;
+	readonly inputsLink?: ContentLink;
+	readonly outputsLink?: ContentLink;
+	readonly run?: ResourceReference;
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Aborted"
-				| "Cancelled"
-				| "Failed"
-				| "Faulted"
-				| "NotSpecified"
-				| "Paused"
-				| "Running"
-				| "Skipped"
-				| "Succeeded"
-				| "Suspended"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly trackingId?: string | undefined;
+		| "Aborted"
+		| "Cancelled"
+		| "Failed"
+		| "Faulted"
+		| "NotSpecified"
+		| "Paused"
+		| "Running"
+		| "Skipped"
+		| "Succeeded"
+		| "Suspended"
+		| "TimedOut";
+	readonly trackingId?: string;
 }
 export interface WorkflowTriggerProperties {
-	readonly changedTime?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly lastExecutionTime?: string | undefined;
-	readonly nextExecutionTime?: string | undefined;
-	readonly provisioningState?: ("Creating" | "NotSpecified" | "Succeeded") | undefined;
-	readonly recurrence?: WorkflowTriggerRecurrence | undefined;
-	readonly state?: ("Deleted" | "Disabled" | "Enabled" | "NotSpecified") | undefined;
+	readonly changedTime?: string;
+	readonly createdTime?: string;
+	readonly lastExecutionTime?: string;
+	readonly nextExecutionTime?: string;
+	readonly provisioningState?: "Creating" | "NotSpecified" | "Succeeded";
+	readonly recurrence?: WorkflowTriggerRecurrence;
+	readonly state?: "Deleted" | "Disabled" | "Enabled" | "NotSpecified";
 	readonly status?:
-		| (
-				| "Aborted"
-				| "Cancelled"
-				| "Failed"
-				| "Faulted"
-				| "NotSpecified"
-				| "Paused"
-				| "Running"
-				| "Skipped"
-				| "Succeeded"
-				| "Suspended"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly workflow?: ResourceReference | undefined;
+		| "Aborted"
+		| "Cancelled"
+		| "Failed"
+		| "Faulted"
+		| "NotSpecified"
+		| "Paused"
+		| "Running"
+		| "Skipped"
+		| "Succeeded"
+		| "Suspended"
+		| "TimedOut";
+	readonly workflow?: ResourceReference;
 }
 export interface WorkflowTriggerRecurrence {
-	readonly frequency?: ("Day" | "Hour" | "Minute" | "Month" | "Second" | "Week") | undefined;
-	readonly interval?: number | undefined;
-	readonly startTime?: string | undefined;
-	readonly timeZone?: string | undefined;
+	readonly frequency?: "Day" | "Hour" | "Minute" | "Month" | "Second" | "Week";
+	readonly interval?: number;
+	readonly startTime?: string;
+	readonly timeZone?: string;
 }
 export interface WorkflowVersionProperties {
-	readonly accessEndpoint?: string | undefined;
-	readonly changedTime?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly definition?: any | undefined;
-	readonly definitionLink?: ContentLink | undefined;
-	readonly parameters?: WorkflowVersionPropertiesParameters | undefined;
-	readonly parametersLink?: ContentLink | undefined;
-	readonly sku?: Sku | undefined;
-	readonly state?: ("Deleted" | "Disabled" | "Enabled" | "NotSpecified") | undefined;
-	readonly version?: string | undefined;
+	readonly accessEndpoint?: string;
+	readonly changedTime?: string;
+	readonly createdTime?: string;
+	readonly definition?: any;
+	readonly definitionLink?: ContentLink;
+	readonly parameters?: WorkflowVersionPropertiesParameters;
+	readonly parametersLink?: ContentLink;
+	readonly sku?: Sku;
+	readonly state?: "Deleted" | "Disabled" | "Enabled" | "NotSpecified";
+	readonly version?: string;
 }
 export interface WorkflowVersionPropertiesParameters {
-	readonly "[ key: string ]"?: WorkflowParameter | undefined;
+	readonly [key: string]: WorkflowParameter;
 }
 export default {
 	workflows: workflows,

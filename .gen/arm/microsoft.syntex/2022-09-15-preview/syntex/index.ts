@@ -19,25 +19,25 @@ export interface documentProcessorsComponentOutputs {
 export interface documentProcessorsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DocumentProcessorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DocumentProcessorProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface DocumentProcessorProperties {
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
 	readonly spoTenantId: string;
 	readonly spoTenantUrl: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	documentProcessors: documentProcessors,

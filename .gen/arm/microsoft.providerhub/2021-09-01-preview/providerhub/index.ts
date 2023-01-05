@@ -18,8 +18,8 @@ export interface providerRegistrationsComponentOutputs {
 }
 export interface providerRegistrationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ProviderRegistrationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ProviderRegistrationProperties;
+	readonly systemData?: SystemData;
 }
 export class providerRegistrations_customRollouts
 	extends ArmResource<providerRegistrations_customRolloutsComponentInputs>
@@ -46,7 +46,7 @@ export interface providerRegistrations_customRolloutsComponentOutputs {
 export interface providerRegistrations_customRolloutsComponentInputs {
 	readonly name: string;
 	readonly properties: CustomRolloutProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class providerRegistrations_defaultRollouts
 	extends ArmResource<providerRegistrations_defaultRolloutsComponentInputs>
@@ -72,8 +72,8 @@ export interface providerRegistrations_defaultRolloutsComponentOutputs {
 }
 export interface providerRegistrations_defaultRolloutsComponentInputs {
 	readonly name: string;
-	readonly properties?: DefaultRolloutProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DefaultRolloutProperties;
+	readonly systemData?: SystemData;
 }
 export class providerRegistrations_notificationRegistrations
 	extends ArmResource<providerRegistrations_notificationRegistrationsComponentInputs>
@@ -99,8 +99,8 @@ export interface providerRegistrations_notificationRegistrationsComponentOutputs
 }
 export interface providerRegistrations_notificationRegistrationsComponentInputs {
 	readonly name: string;
-	readonly properties?: NotificationRegistrationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: NotificationRegistrationProperties;
+	readonly systemData?: SystemData;
 }
 export class providerRegistrations_operations
 	extends ArmResource<providerRegistrations_operationsComponentInputs>
@@ -126,7 +126,7 @@ export interface providerRegistrations_operationsComponentOutputs {
 }
 export interface providerRegistrations_operationsComponentInputs {
 	readonly name: string;
-	readonly properties?: OperationsPutContentProperties | undefined;
+	readonly properties?: OperationsPutContentProperties;
 }
 export class providerRegistrations_resourcetypeRegistrations
 	extends ArmResource<providerRegistrations_resourcetypeRegistrationsComponentInputs>
@@ -152,8 +152,8 @@ export interface providerRegistrations_resourcetypeRegistrationsComponentOutputs
 }
 export interface providerRegistrations_resourcetypeRegistrationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ResourceTypeRegistrationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ResourceTypeRegistrationProperties;
+	readonly systemData?: SystemData;
 }
 export class providerRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_skus
 	extends ArmResource<providerRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_skusComponentInputs>
@@ -183,8 +183,8 @@ export interface providerRegistrations_resourcetypeRegistrations_resourcetypeReg
 }
 export interface providerRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_skusComponentInputs {
 	readonly name: string;
-	readonly properties?: SkuResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SkuResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class providerRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_skus
 	extends ArmResource<providerRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_skusComponentInputs>
@@ -214,8 +214,8 @@ export interface providerRegistrations_resourcetypeRegistrations_resourcetypeReg
 }
 export interface providerRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_skusComponentInputs {
 	readonly name: string;
-	readonly properties?: SkuResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SkuResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class providerRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_skus
 	extends ArmResource<providerRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_skusComponentInputs>
@@ -244,8 +244,8 @@ export interface providerRegistrations_resourcetypeRegistrations_resourcetypeReg
 }
 export interface providerRegistrations_resourcetypeRegistrations_resourcetypeRegistrations_skusComponentInputs {
 	readonly name: string;
-	readonly properties?: SkuResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SkuResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class providerRegistrations_resourcetypeRegistrations_skus
 	extends ArmResource<providerRegistrations_resourcetypeRegistrations_skusComponentInputs>
@@ -271,191 +271,180 @@ export interface providerRegistrations_resourcetypeRegistrations_skusComponentOu
 }
 export interface providerRegistrations_resourcetypeRegistrations_skusComponentInputs {
 	readonly name: string;
-	readonly properties?: SkuResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SkuResourceProperties;
+	readonly systemData?: SystemData;
 }
 export interface AuthorizationActionMapping {
-	readonly desired?: string | undefined;
-	readonly original?: string | undefined;
+	readonly desired?: string;
+	readonly original?: string;
 }
 export interface CustomRolloutProperties {
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "MovingResources"
-				| "NotSpecified"
-				| "RolloutInProgress"
-				| "Running"
-				| "Succeeded"
-				| "TransientFailure"
-		  )
-		| undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "MovingResources"
+		| "NotSpecified"
+		| "RolloutInProgress"
+		| "Running"
+		| "Succeeded"
+		| "TransientFailure";
 	readonly specification: CustomRolloutPropertiesSpecification;
-	readonly status?: CustomRolloutPropertiesStatus | undefined;
+	readonly status?: CustomRolloutPropertiesStatus;
 }
 export interface CustomRolloutPropertiesSpecification {
 	readonly canary: CustomRolloutSpecificationCanary;
-	readonly providerRegistration?: CustomRolloutSpecificationProviderRegistration | undefined;
-	readonly resourceTypeRegistrations?: ResourceTypeRegistration[] | undefined;
+	readonly providerRegistration?: CustomRolloutSpecificationProviderRegistration;
+	readonly resourceTypeRegistrations?: ResourceTypeRegistration[];
 }
 export interface CustomRolloutPropertiesStatus {
-	readonly completedRegions?: string[] | undefined;
-	readonly failedOrSkippedRegions?: CustomRolloutStatusFailedOrSkippedRegions | undefined;
+	readonly completedRegions?: string[];
+	readonly failedOrSkippedRegions?: CustomRolloutStatusFailedOrSkippedRegions;
 }
 export interface CustomRolloutSpecificationCanary {
-	readonly regions?: string[] | undefined;
+	readonly regions?: string[];
 }
 export interface CustomRolloutSpecificationProviderRegistration {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ProviderRegistrationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ProviderRegistrationProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface CustomRolloutStatusFailedOrSkippedRegions {
-	readonly "[ key: string ]"?: ExtendedErrorInfo | undefined;
+	readonly [key: string]: ExtendedErrorInfo;
 }
 export interface DefaultRolloutProperties {
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "MovingResources"
-				| "NotSpecified"
-				| "RolloutInProgress"
-				| "Running"
-				| "Succeeded"
-				| "TransientFailure"
-		  )
-		| undefined;
-	readonly specification?: DefaultRolloutPropertiesSpecification | undefined;
-	readonly status?: DefaultRolloutPropertiesStatus | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "MovingResources"
+		| "NotSpecified"
+		| "RolloutInProgress"
+		| "Running"
+		| "Succeeded"
+		| "TransientFailure";
+	readonly specification?: DefaultRolloutPropertiesSpecification;
+	readonly status?: DefaultRolloutPropertiesStatus;
 }
 export interface DefaultRolloutPropertiesSpecification {
-	readonly canary?: DefaultRolloutSpecificationCanary | undefined;
-	readonly expeditedRollout?: DefaultRolloutSpecificationExpeditedRollout | undefined;
-	readonly highTraffic?: DefaultRolloutSpecificationHighTraffic | undefined;
-	readonly lowTraffic?: DefaultRolloutSpecificationLowTraffic | undefined;
-	readonly mediumTraffic?: DefaultRolloutSpecificationMediumTraffic | undefined;
-	readonly providerRegistration?: DefaultRolloutSpecificationProviderRegistration | undefined;
-	readonly resourceTypeRegistrations?: ResourceTypeRegistration[] | undefined;
-	readonly restOfTheWorldGroupOne?: DefaultRolloutSpecificationRestOfTheWorldGroupOne | undefined;
-	readonly restOfTheWorldGroupTwo?: DefaultRolloutSpecificationRestOfTheWorldGroupTwo | undefined;
+	readonly canary?: DefaultRolloutSpecificationCanary;
+	readonly expeditedRollout?: DefaultRolloutSpecificationExpeditedRollout;
+	readonly highTraffic?: DefaultRolloutSpecificationHighTraffic;
+	readonly lowTraffic?: DefaultRolloutSpecificationLowTraffic;
+	readonly mediumTraffic?: DefaultRolloutSpecificationMediumTraffic;
+	readonly providerRegistration?: DefaultRolloutSpecificationProviderRegistration;
+	readonly resourceTypeRegistrations?: ResourceTypeRegistration[];
+	readonly restOfTheWorldGroupOne?: DefaultRolloutSpecificationRestOfTheWorldGroupOne;
+	readonly restOfTheWorldGroupTwo?: DefaultRolloutSpecificationRestOfTheWorldGroupTwo;
 }
 export interface DefaultRolloutPropertiesStatus {
-	readonly completedRegions?: string[] | undefined;
-	readonly failedOrSkippedRegions?: RolloutStatusBaseFailedOrSkippedRegions | undefined;
+	readonly completedRegions?: string[];
+	readonly failedOrSkippedRegions?: RolloutStatusBaseFailedOrSkippedRegions;
 	readonly nextTrafficRegion?:
-		| (
-				| "Canary"
-				| "HighTraffic"
-				| "LowTraffic"
-				| "MediumTraffic"
-				| "None"
-				| "NotSpecified"
-				| "RestOfTheWorldGroupOne"
-				| "RestOfTheWorldGroupTwo"
-		  )
-		| undefined;
-	readonly nextTrafficRegionScheduledTime?: string | undefined;
-	readonly subscriptionReregistrationResult?:
-		| ("ConditionalUpdate" | "Failed" | "ForcedUpdate" | "NotApplicable")
-		| undefined;
+		| "Canary"
+		| "HighTraffic"
+		| "LowTraffic"
+		| "MediumTraffic"
+		| "None"
+		| "NotSpecified"
+		| "RestOfTheWorldGroupOne"
+		| "RestOfTheWorldGroupTwo";
+	readonly nextTrafficRegionScheduledTime?: string;
+	readonly subscriptionReregistrationResult?: "ConditionalUpdate" | "Failed" | "ForcedUpdate" | "NotApplicable";
 }
 export interface DefaultRolloutSpecificationCanary {
-	readonly regions?: string[] | undefined;
-	readonly skipRegions?: string[] | undefined;
+	readonly regions?: string[];
+	readonly skipRegions?: string[];
 }
 export interface DefaultRolloutSpecificationExpeditedRollout {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface DefaultRolloutSpecificationHighTraffic {
-	readonly regions?: string[] | undefined;
-	readonly waitDuration?: string | undefined;
+	readonly regions?: string[];
+	readonly waitDuration?: string;
 }
 export interface DefaultRolloutSpecificationLowTraffic {
-	readonly regions?: string[] | undefined;
-	readonly waitDuration?: string | undefined;
+	readonly regions?: string[];
+	readonly waitDuration?: string;
 }
 export interface DefaultRolloutSpecificationMediumTraffic {
-	readonly regions?: string[] | undefined;
-	readonly waitDuration?: string | undefined;
+	readonly regions?: string[];
+	readonly waitDuration?: string;
 }
 export interface DefaultRolloutSpecificationProviderRegistration {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ProviderRegistrationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ProviderRegistrationProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface DefaultRolloutSpecificationRestOfTheWorldGroupOne {
-	readonly regions?: string[] | undefined;
-	readonly waitDuration?: string | undefined;
+	readonly regions?: string[];
+	readonly waitDuration?: string;
 }
 export interface DefaultRolloutSpecificationRestOfTheWorldGroupTwo {
-	readonly regions?: string[] | undefined;
-	readonly waitDuration?: string | undefined;
+	readonly regions?: string[];
+	readonly waitDuration?: string;
 }
 export interface ExtendedErrorInfo {
-	readonly additionalInfo?: TypedErrorInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ExtendedErrorInfo[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: TypedErrorInfo[];
+	readonly code?: string;
+	readonly details?: ExtendedErrorInfo[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface ExtendedLocationOptions {
-	readonly supportedPolicy?: string | undefined;
-	readonly type?: string | undefined;
+	readonly supportedPolicy?: string;
+	readonly type?: string;
 }
 export interface LightHouseAuthorization {
 	readonly principalId: string;
 	readonly roleDefinitionId: string;
 }
 export interface LinkedAccessCheck {
-	readonly actionName?: string | undefined;
-	readonly linkedAction?: string | undefined;
-	readonly linkedActionVerb?: string | undefined;
-	readonly linkedProperty?: string | undefined;
-	readonly linkedType?: string | undefined;
+	readonly actionName?: string;
+	readonly linkedAction?: string;
+	readonly linkedActionVerb?: string;
+	readonly linkedProperty?: string;
+	readonly linkedType?: string;
 }
 export interface LocalizedOperationDefinition {
-	readonly actionType?: ("Internal" | "NotSpecified") | undefined;
+	readonly actionType?: "Internal" | "NotSpecified";
 	readonly display: LocalizedOperationDefinitionDisplay;
-	readonly isDataAction?: boolean | undefined;
+	readonly isDataAction?: boolean;
 	readonly name: string;
-	readonly origin?: ("NotSpecified" | "System" | "User") | undefined;
-	readonly properties?: any | undefined;
+	readonly origin?: "NotSpecified" | "System" | "User";
+	readonly properties?: any;
 }
 export interface LocalizedOperationDefinitionDisplay {
-	readonly cs?: LocalizedOperationDisplayDefinitionCs | undefined;
-	readonly de?: LocalizedOperationDisplayDefinitionDe | undefined;
+	readonly cs?: LocalizedOperationDisplayDefinitionCs;
+	readonly de?: LocalizedOperationDisplayDefinitionDe;
 	readonly default: LocalizedOperationDisplayDefinitionDefault;
-	readonly en?: LocalizedOperationDisplayDefinitionEn | undefined;
-	readonly es?: LocalizedOperationDisplayDefinitionEs | undefined;
-	readonly fr?: LocalizedOperationDisplayDefinitionFr | undefined;
-	readonly hu?: LocalizedOperationDisplayDefinitionHu | undefined;
-	readonly it?: LocalizedOperationDisplayDefinitionIt | undefined;
-	readonly ja?: LocalizedOperationDisplayDefinitionJa | undefined;
-	readonly ko?: LocalizedOperationDisplayDefinitionKo | undefined;
-	readonly nl?: LocalizedOperationDisplayDefinitionNl | undefined;
-	readonly pl?: LocalizedOperationDisplayDefinitionPl | undefined;
-	readonly ptBR?: LocalizedOperationDisplayDefinitionPtBR | undefined;
-	readonly ptPT?: LocalizedOperationDisplayDefinitionPt | undefined;
-	readonly ru?: LocalizedOperationDisplayDefinitionRu | undefined;
-	readonly sv?: LocalizedOperationDisplayDefinitionSv | undefined;
-	readonly zhHans?: LocalizedOperationDisplayDefinitionZhHans | undefined;
-	readonly zhHant?: LocalizedOperationDisplayDefinitionZhHant | undefined;
+	readonly en?: LocalizedOperationDisplayDefinitionEn;
+	readonly es?: LocalizedOperationDisplayDefinitionEs;
+	readonly fr?: LocalizedOperationDisplayDefinitionFr;
+	readonly hu?: LocalizedOperationDisplayDefinitionHu;
+	readonly it?: LocalizedOperationDisplayDefinitionIt;
+	readonly ja?: LocalizedOperationDisplayDefinitionJa;
+	readonly ko?: LocalizedOperationDisplayDefinitionKo;
+	readonly nl?: LocalizedOperationDisplayDefinitionNl;
+	readonly pl?: LocalizedOperationDisplayDefinitionPl;
+	readonly ptBR?: LocalizedOperationDisplayDefinitionPtBR;
+	readonly ptPT?: LocalizedOperationDisplayDefinitionPt;
+	readonly ru?: LocalizedOperationDisplayDefinitionRu;
+	readonly sv?: LocalizedOperationDisplayDefinitionSv;
+	readonly zhHans?: LocalizedOperationDisplayDefinitionZhHans;
+	readonly zhHant?: LocalizedOperationDisplayDefinitionZhHant;
 }
 export interface LocalizedOperationDisplayDefinitionCs {
 	readonly description: string;
@@ -569,413 +558,367 @@ export interface LoggingRule {
 	readonly action: string;
 	readonly detailLevel: "Body" | "None";
 	readonly direction: "None" | "Request" | "Response";
-	readonly hiddenPropertyPaths?: LoggingRuleHiddenPropertyPaths | undefined;
+	readonly hiddenPropertyPaths?: LoggingRuleHiddenPropertyPaths;
 }
 export interface LoggingRuleHiddenPropertyPaths {
-	readonly hiddenPathsOnRequest?: string[] | undefined;
-	readonly hiddenPathsOnResponse?: string[] | undefined;
+	readonly hiddenPathsOnRequest?: string[];
+	readonly hiddenPathsOnResponse?: string[];
 }
 export interface NotificationEndpoint {
-	readonly locations?: string[] | undefined;
-	readonly notificationDestination?: string | undefined;
+	readonly locations?: string[];
+	readonly notificationDestination?: string;
 }
 export interface NotificationRegistrationProperties {
-	readonly includedEvents?: string[] | undefined;
-	readonly messageScope?: ("NotSpecified" | "RegisteredSubscriptions") | undefined;
-	readonly notificationEndpoints?: NotificationEndpoint[] | undefined;
-	readonly notificationMode?: ("EventHub" | "NotSpecified" | "WebHook") | undefined;
+	readonly includedEvents?: string[];
+	readonly messageScope?: "NotSpecified" | "RegisteredSubscriptions";
+	readonly notificationEndpoints?: NotificationEndpoint[];
+	readonly notificationMode?: "EventHub" | "NotSpecified" | "WebHook";
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "MovingResources"
-				| "NotSpecified"
-				| "RolloutInProgress"
-				| "Running"
-				| "Succeeded"
-				| "TransientFailure"
-		  )
-		| undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "MovingResources"
+		| "NotSpecified"
+		| "RolloutInProgress"
+		| "Running"
+		| "Succeeded"
+		| "TransientFailure";
 }
 export interface OpenApiConfiguration {
-	readonly validation?: OpenApiValidation | undefined;
+	readonly validation?: OpenApiValidation;
 }
 export interface OpenApiValidation {
-	readonly allowNoncompliantCollectionResponse?: boolean | undefined;
+	readonly allowNoncompliantCollectionResponse?: boolean;
 }
 export interface OperationsPutContentProperties {
-	readonly contents?: LocalizedOperationDefinition[] | undefined;
+	readonly contents?: LocalizedOperationDefinition[];
 }
 export interface ProviderHubMetadataProviderAuthentication {
 	readonly allowedAudiences: string[];
 }
 export interface ProviderHubMetadataThirdPartyProviderAuthorization {
-	readonly authorizations?: LightHouseAuthorization[] | undefined;
-	readonly managedByTenantId?: string | undefined;
+	readonly authorizations?: LightHouseAuthorization[];
+	readonly managedByTenantId?: string;
 }
 export interface ProviderRegistrationProperties {
-	readonly capabilities?: ResourceProviderCapabilities[] | undefined;
-	readonly featuresRule?: ResourceProviderManifestPropertiesFeaturesRule | undefined;
-	readonly management?: ResourceProviderManifestPropertiesManagement | undefined;
-	readonly metadata?: any | undefined;
-	readonly namespace?: string | undefined;
-	readonly providerAuthentication?: ResourceProviderManifestPropertiesProviderAuthentication | undefined;
-	readonly providerAuthorizations?: ResourceProviderAuthorization[] | undefined;
-	readonly providerHubMetadata?: ProviderRegistrationPropertiesProviderHubMetadata | undefined;
+	readonly capabilities?: ResourceProviderCapabilities[];
+	readonly featuresRule?: ResourceProviderManifestPropertiesFeaturesRule;
+	readonly management?: ResourceProviderManifestPropertiesManagement;
+	readonly metadata?: any;
+	readonly namespace?: string;
+	readonly providerAuthentication?: ResourceProviderManifestPropertiesProviderAuthentication;
+	readonly providerAuthorizations?: ResourceProviderAuthorization[];
+	readonly providerHubMetadata?: ProviderRegistrationPropertiesProviderHubMetadata;
 	readonly providerType?:
-		| (
-				| "AuthorizationFree"
-				| "External"
-				| "Hidden"
-				| "Internal"
-				| "LegacyRegistrationRequired"
-				| "NotSpecified"
-				| "RegistrationFree"
-				| "TenantOnly"
-		  )
-		| undefined;
-	readonly providerVersion?: string | undefined;
+		| "AuthorizationFree"
+		| "External"
+		| "Hidden"
+		| "Internal"
+		| "LegacyRegistrationRequired"
+		| "NotSpecified"
+		| "RegistrationFree"
+		| "TenantOnly";
+	readonly providerVersion?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "MovingResources"
-				| "NotSpecified"
-				| "RolloutInProgress"
-				| "Running"
-				| "Succeeded"
-				| "TransientFailure"
-		  )
-		| undefined;
-	readonly requestHeaderOptions?: ResourceProviderManifestPropertiesRequestHeaderOptions | undefined;
-	readonly requiredFeatures?: string[] | undefined;
-	readonly subscriptionLifecycleNotificationSpecifications?:
-		| ProviderRegistrationPropertiesSubscriptionLifecycleNotificationSpecifications
-		| undefined;
-	readonly templateDeploymentOptions?: ResourceProviderManifestPropertiesTemplateDeploymentOptions | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "MovingResources"
+		| "NotSpecified"
+		| "RolloutInProgress"
+		| "Running"
+		| "Succeeded"
+		| "TransientFailure";
+	readonly requestHeaderOptions?: ResourceProviderManifestPropertiesRequestHeaderOptions;
+	readonly requiredFeatures?: string[];
+	readonly subscriptionLifecycleNotificationSpecifications?: ProviderRegistrationPropertiesSubscriptionLifecycleNotificationSpecifications;
+	readonly templateDeploymentOptions?: ResourceProviderManifestPropertiesTemplateDeploymentOptions;
 }
 export interface ProviderRegistrationPropertiesProviderHubMetadata {
-	readonly providerAuthentication?: ProviderHubMetadataProviderAuthentication | undefined;
-	readonly providerAuthorizations?: ResourceProviderAuthorization[] | undefined;
-	readonly thirdPartyProviderAuthorization?: ProviderHubMetadataThirdPartyProviderAuthorization | undefined;
+	readonly providerAuthentication?: ProviderHubMetadataProviderAuthentication;
+	readonly providerAuthorizations?: ResourceProviderAuthorization[];
+	readonly thirdPartyProviderAuthorization?: ProviderHubMetadataThirdPartyProviderAuthorization;
 }
 export interface ProviderRegistrationPropertiesSubscriptionLifecycleNotificationSpecifications {
-	readonly softDeleteTTL?: string | undefined;
-	readonly subscriptionStateOverrideActions?: SubscriptionStateOverrideAction[] | undefined;
+	readonly softDeleteTTL?: string;
+	readonly subscriptionStateOverrideActions?: SubscriptionStateOverrideAction[];
 }
 export interface ResourceConcurrencyControlOption {
-	readonly policy?: ("NotSpecified" | "SynchronizeBeginExtension") | undefined;
+	readonly policy?: "NotSpecified" | "SynchronizeBeginExtension";
 }
 export interface ResourceProviderAuthorization {
-	readonly applicationId?: string | undefined;
-	readonly managedByRoleDefinitionId?: string | undefined;
-	readonly roleDefinitionId?: string | undefined;
+	readonly applicationId?: string;
+	readonly managedByRoleDefinitionId?: string;
+	readonly roleDefinitionId?: string;
 }
 export interface ResourceProviderCapabilities {
 	readonly effect: "Allow" | "Disallow" | "NotSpecified";
 	readonly quotaId: string;
-	readonly requiredFeatures?: string[] | undefined;
+	readonly requiredFeatures?: string[];
 }
 export interface ResourceProviderManifestPropertiesFeaturesRule {
 	readonly requiredFeaturesPolicy: "All" | "any";
 }
 export interface ResourceProviderManifestPropertiesManagement {
-	readonly incidentContactEmail?: string | undefined;
-	readonly incidentRoutingService?: string | undefined;
-	readonly incidentRoutingTeam?: string | undefined;
-	readonly manifestOwners?: string[] | undefined;
-	readonly resourceAccessPolicy?: ("AcisActionAllowed" | "AcisReadAllowed" | "NotSpecified") | undefined;
-	readonly resourceAccessRoles?: any[] | undefined;
-	readonly schemaOwners?: string[] | undefined;
-	readonly serviceTreeInfos?: ServiceTreeInfo[] | undefined;
+	readonly incidentContactEmail?: string;
+	readonly incidentRoutingService?: string;
+	readonly incidentRoutingTeam?: string;
+	readonly manifestOwners?: string[];
+	readonly resourceAccessPolicy?: "AcisActionAllowed" | "AcisReadAllowed" | "NotSpecified";
+	readonly resourceAccessRoles?: any[];
+	readonly schemaOwners?: string[];
+	readonly serviceTreeInfos?: ServiceTreeInfo[];
 }
 export interface ResourceProviderManifestPropertiesProviderAuthentication {
 	readonly allowedAudiences: string[];
 }
 export interface ResourceProviderManifestPropertiesRequestHeaderOptions {
 	readonly optInHeaders?:
-		| (
-				| "ClientGroupMembership"
-				| "NotSpecified"
-				| "SignedAuxiliaryTokens"
-				| "SignedUserToken"
-				| "UnboundedClientGroupMembership"
-		  )
-		| undefined;
+		| "ClientGroupMembership"
+		| "NotSpecified"
+		| "SignedAuxiliaryTokens"
+		| "SignedUserToken"
+		| "UnboundedClientGroupMembership";
 }
 export interface ResourceProviderManifestPropertiesTemplateDeploymentOptions {
-	readonly preflightOptions?: ("ContinueDeploymentOnFailure" | "DefaultValidationOnly" | "None"[]) | undefined;
-	readonly preflightSupported?: boolean | undefined;
+	readonly preflightOptions?: "ContinueDeploymentOnFailure" | "DefaultValidationOnly" | "None"[];
+	readonly preflightSupported?: boolean;
 }
 export interface ResourceTypeEndpoint {
-	readonly apiVersions?: string[] | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly endpointType?: ("Canary" | "NotSpecified" | "Production" | "TestInProduction") | undefined;
-	readonly extensions?: ResourceTypeExtension[] | undefined;
-	readonly featuresRule?: ResourceTypeEndpointFeaturesRule | undefined;
-	readonly locations?: string[] | undefined;
-	readonly requiredFeatures?: string[] | undefined;
-	readonly timeout?: string | undefined;
+	readonly apiVersions?: string[];
+	readonly enabled?: boolean;
+	readonly endpointType?: "Canary" | "NotSpecified" | "Production" | "TestInProduction";
+	readonly extensions?: ResourceTypeExtension[];
+	readonly featuresRule?: ResourceTypeEndpointFeaturesRule;
+	readonly locations?: string[];
+	readonly requiredFeatures?: string[];
+	readonly timeout?: string;
 }
 export interface ResourceTypeEndpointFeaturesRule {
 	readonly requiredFeaturesPolicy: "All" | "any";
 }
 export interface ResourceTypeExtension {
-	readonly endpointUri?: string | undefined;
+	readonly endpointUri?: string;
 	readonly extensionCategories?:
-		| (
-				| "NotSpecified"
-				| "ResourceCreationBegin"
-				| "ResourceCreationCompleted"
-				| "ResourceCreationValidate"
-				| "ResourceDeletionBegin"
-				| "ResourceDeletionCompleted"
-				| "ResourceDeletionValidate"
-				| "ResourceMoveBegin"
-				| "ResourceMoveCompleted"
-				| "ResourcePatchBegin"
-				| "ResourcePatchCompleted"
-				| "ResourcePatchValidate"
-				| "ResourcePostAction"
-				| "ResourceReadBegin"
-				| "ResourceReadValidate"
-				| "SubscriptionLifecycleNotification"[]
-		  )
-		| undefined;
-	readonly timeout?: string | undefined;
+		| "NotSpecified"
+		| "ResourceCreationBegin"
+		| "ResourceCreationCompleted"
+		| "ResourceCreationValidate"
+		| "ResourceDeletionBegin"
+		| "ResourceDeletionCompleted"
+		| "ResourceDeletionValidate"
+		| "ResourceMoveBegin"
+		| "ResourceMoveCompleted"
+		| "ResourcePatchBegin"
+		| "ResourcePatchCompleted"
+		| "ResourcePatchValidate"
+		| "ResourcePostAction"
+		| "ResourceReadBegin"
+		| "ResourceReadValidate"
+		| "SubscriptionLifecycleNotification"[];
+	readonly timeout?: string;
 }
 export interface ResourceTypeExtensionOptionsResourceCreationBegin {
-	readonly request?:
-		| ("DoNotMergeExistingReadOnlyAndSecretProperties" | "IncludeInternalMetadata" | "NotSpecified"[])
-		| undefined;
-	readonly response?:
-		| ("DoNotMergeExistingReadOnlyAndSecretProperties" | "IncludeInternalMetadata" | "NotSpecified"[])
-		| undefined;
+	readonly request?: "DoNotMergeExistingReadOnlyAndSecretProperties" | "IncludeInternalMetadata" | "NotSpecified"[];
+	readonly response?: "DoNotMergeExistingReadOnlyAndSecretProperties" | "IncludeInternalMetadata" | "NotSpecified"[];
 }
 export interface ResourceTypeRegistration {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ResourceTypeRegistrationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ResourceTypeRegistrationProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface ResourceTypeRegistrationProperties {
-	readonly allowedUnauthorizedActions?: string[] | undefined;
-	readonly authorizationActionMappings?: AuthorizationActionMapping[] | undefined;
-	readonly checkNameAvailabilitySpecifications?:
-		| ResourceTypeRegistrationPropertiesCheckNameAvailabilitySpecifications
-		| undefined;
-	readonly defaultApiVersion?: string | undefined;
-	readonly disallowedActionVerbs?: string[] | undefined;
-	readonly enableAsyncOperation?: boolean | undefined;
-	readonly enableThirdPartyS2S?: boolean | undefined;
-	readonly endpoints?: ResourceTypeEndpoint[] | undefined;
-	readonly extendedLocations?: ExtendedLocationOptions[] | undefined;
-	readonly extensionOptions?: ResourceTypeRegistrationPropertiesExtensionOptions | undefined;
-	readonly featuresRule?: ResourceTypeRegistrationPropertiesFeaturesRule | undefined;
-	readonly identityManagement?: ResourceTypeRegistrationPropertiesIdentityManagement | undefined;
-	readonly isPureProxy?: boolean | undefined;
-	readonly linkedAccessChecks?: LinkedAccessCheck[] | undefined;
-	readonly loggingRules?: LoggingRule[] | undefined;
-	readonly management?: ResourceTypeRegistrationPropertiesManagement | undefined;
-	readonly marketplaceType?: ("AddOn" | "Bypass" | "NotSpecified" | "Store") | undefined;
-	readonly openApiConfiguration?: OpenApiConfiguration | undefined;
+	readonly allowedUnauthorizedActions?: string[];
+	readonly authorizationActionMappings?: AuthorizationActionMapping[];
+	readonly checkNameAvailabilitySpecifications?: ResourceTypeRegistrationPropertiesCheckNameAvailabilitySpecifications;
+	readonly defaultApiVersion?: string;
+	readonly disallowedActionVerbs?: string[];
+	readonly enableAsyncOperation?: boolean;
+	readonly enableThirdPartyS2S?: boolean;
+	readonly endpoints?: ResourceTypeEndpoint[];
+	readonly extendedLocations?: ExtendedLocationOptions[];
+	readonly extensionOptions?: ResourceTypeRegistrationPropertiesExtensionOptions;
+	readonly featuresRule?: ResourceTypeRegistrationPropertiesFeaturesRule;
+	readonly identityManagement?: ResourceTypeRegistrationPropertiesIdentityManagement;
+	readonly isPureProxy?: boolean;
+	readonly linkedAccessChecks?: LinkedAccessCheck[];
+	readonly loggingRules?: LoggingRule[];
+	readonly management?: ResourceTypeRegistrationPropertiesManagement;
+	readonly marketplaceType?: "AddOn" | "Bypass" | "NotSpecified" | "Store";
+	readonly openApiConfiguration?: OpenApiConfiguration;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "MovingResources"
-				| "NotSpecified"
-				| "RolloutInProgress"
-				| "Running"
-				| "Succeeded"
-				| "TransientFailure"
-		  )
-		| undefined;
-	readonly regionality?: ("Global" | "NotSpecified" | "Regional") | undefined;
-	readonly requestHeaderOptions?: ResourceTypeRegistrationPropertiesRequestHeaderOptions | undefined;
-	readonly requiredFeatures?: string[] | undefined;
-	readonly resourceConcurrencyControlOptions?:
-		| ResourceTypeRegistrationPropertiesResourceConcurrencyControlOptions
-		| undefined;
-	readonly resourceDeletionPolicy?:
-		| ("CascadeDeleteAll" | "CascadeDeleteProxyOnlyChildren" | "NotSpecified")
-		| undefined;
-	readonly resourceGraphConfiguration?: ResourceTypeRegistrationPropertiesResourceGraphConfiguration | undefined;
-	readonly resourceMovePolicy?: ResourceTypeRegistrationPropertiesResourceMovePolicy | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "MovingResources"
+		| "NotSpecified"
+		| "RolloutInProgress"
+		| "Running"
+		| "Succeeded"
+		| "TransientFailure";
+	readonly regionality?: "Global" | "NotSpecified" | "Regional";
+	readonly requestHeaderOptions?: ResourceTypeRegistrationPropertiesRequestHeaderOptions;
+	readonly requiredFeatures?: string[];
+	readonly resourceConcurrencyControlOptions?: ResourceTypeRegistrationPropertiesResourceConcurrencyControlOptions;
+	readonly resourceDeletionPolicy?: "CascadeDeleteAll" | "CascadeDeleteProxyOnlyChildren" | "NotSpecified";
+	readonly resourceGraphConfiguration?: ResourceTypeRegistrationPropertiesResourceGraphConfiguration;
+	readonly resourceMovePolicy?: ResourceTypeRegistrationPropertiesResourceMovePolicy;
 	readonly routingType?:
-		| (
-				| "CascadeExtension"
-				| "Default"
-				| "Extension"
-				| "Failover"
-				| "Fanout"
-				| "HostBased"
-				| "LocationBased"
-				| "ProxyOnly"
-				| "Tenant"
-		  )
-		| undefined;
-	readonly serviceTreeInfos?: ServiceTreeInfo[] | undefined;
-	readonly subscriptionLifecycleNotificationSpecifications?:
-		| ResourceTypeRegistrationPropertiesSubscriptionLifecycleNotificationSpecifications
-		| undefined;
-	readonly subscriptionStateRules?: SubscriptionStateRule[] | undefined;
-	readonly swaggerSpecifications?: SwaggerSpecification[] | undefined;
-	readonly templateDeploymentOptions?: ResourceTypeRegistrationPropertiesTemplateDeploymentOptions | undefined;
-	readonly throttlingRules?: ThrottlingRule[] | undefined;
+		| "CascadeExtension"
+		| "Default"
+		| "Extension"
+		| "Failover"
+		| "Fanout"
+		| "HostBased"
+		| "LocationBased"
+		| "ProxyOnly"
+		| "Tenant";
+	readonly serviceTreeInfos?: ServiceTreeInfo[];
+	readonly subscriptionLifecycleNotificationSpecifications?: ResourceTypeRegistrationPropertiesSubscriptionLifecycleNotificationSpecifications;
+	readonly subscriptionStateRules?: SubscriptionStateRule[];
+	readonly swaggerSpecifications?: SwaggerSpecification[];
+	readonly templateDeploymentOptions?: ResourceTypeRegistrationPropertiesTemplateDeploymentOptions;
+	readonly throttlingRules?: ThrottlingRule[];
 }
 export interface ResourceTypeRegistrationPropertiesCheckNameAvailabilitySpecifications {
-	readonly enableDefaultValidation?: boolean | undefined;
-	readonly resourceTypesWithCustomValidation?: string[] | undefined;
+	readonly enableDefaultValidation?: boolean;
+	readonly resourceTypesWithCustomValidation?: string[];
 }
 export interface ResourceTypeRegistrationPropertiesExtensionOptions {
-	readonly resourceCreationBegin?: ResourceTypeExtensionOptionsResourceCreationBegin | undefined;
+	readonly resourceCreationBegin?: ResourceTypeExtensionOptionsResourceCreationBegin;
 }
 export interface ResourceTypeRegistrationPropertiesFeaturesRule {
 	readonly requiredFeaturesPolicy: "All" | "any";
 }
 export interface ResourceTypeRegistrationPropertiesIdentityManagement {
-	readonly applicationId?: string | undefined;
-	readonly type?:
-		| ("Actor" | "DelegatedResourceIdentity" | "NotSpecified" | "SystemAssigned" | "UserAssigned")
-		| undefined;
+	readonly applicationId?: string;
+	readonly type?: "Actor" | "DelegatedResourceIdentity" | "NotSpecified" | "SystemAssigned" | "UserAssigned";
 }
 export interface ResourceTypeRegistrationPropertiesManagement {
-	readonly incidentContactEmail?: string | undefined;
-	readonly incidentRoutingService?: string | undefined;
-	readonly incidentRoutingTeam?: string | undefined;
-	readonly manifestOwners?: string[] | undefined;
-	readonly resourceAccessPolicy?: ("AcisActionAllowed" | "AcisReadAllowed" | "NotSpecified") | undefined;
-	readonly resourceAccessRoles?: any[] | undefined;
-	readonly schemaOwners?: string[] | undefined;
-	readonly serviceTreeInfos?: ServiceTreeInfo[] | undefined;
+	readonly incidentContactEmail?: string;
+	readonly incidentRoutingService?: string;
+	readonly incidentRoutingTeam?: string;
+	readonly manifestOwners?: string[];
+	readonly resourceAccessPolicy?: "AcisActionAllowed" | "AcisReadAllowed" | "NotSpecified";
+	readonly resourceAccessRoles?: any[];
+	readonly schemaOwners?: string[];
+	readonly serviceTreeInfos?: ServiceTreeInfo[];
 }
 export interface ResourceTypeRegistrationPropertiesRequestHeaderOptions {
 	readonly optInHeaders?:
-		| (
-				| "ClientGroupMembership"
-				| "NotSpecified"
-				| "SignedAuxiliaryTokens"
-				| "SignedUserToken"
-				| "UnboundedClientGroupMembership"
-		  )
-		| undefined;
+		| "ClientGroupMembership"
+		| "NotSpecified"
+		| "SignedAuxiliaryTokens"
+		| "SignedUserToken"
+		| "UnboundedClientGroupMembership";
 }
 export interface ResourceTypeRegistrationPropertiesResourceConcurrencyControlOptions {
-	readonly "[ key: string ]"?: ResourceConcurrencyControlOption | undefined;
+	readonly [key: string]: ResourceConcurrencyControlOption;
 }
 export interface ResourceTypeRegistrationPropertiesResourceGraphConfiguration {
-	readonly apiVersion?: string | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly apiVersion?: string;
+	readonly enabled?: boolean;
 }
 export interface ResourceTypeRegistrationPropertiesResourceMovePolicy {
-	readonly crossResourceGroupMoveEnabled?: boolean | undefined;
-	readonly crossSubscriptionMoveEnabled?: boolean | undefined;
-	readonly validationRequired?: boolean | undefined;
+	readonly crossResourceGroupMoveEnabled?: boolean;
+	readonly crossSubscriptionMoveEnabled?: boolean;
+	readonly validationRequired?: boolean;
 }
 export interface ResourceTypeRegistrationPropertiesSubscriptionLifecycleNotificationSpecifications {
-	readonly softDeleteTTL?: string | undefined;
-	readonly subscriptionStateOverrideActions?: SubscriptionStateOverrideAction[] | undefined;
+	readonly softDeleteTTL?: string;
+	readonly subscriptionStateOverrideActions?: SubscriptionStateOverrideAction[];
 }
 export interface ResourceTypeRegistrationPropertiesTemplateDeploymentOptions {
-	readonly preflightOptions?: ("ContinueDeploymentOnFailure" | "DefaultValidationOnly" | "None"[]) | undefined;
-	readonly preflightSupported?: boolean | undefined;
+	readonly preflightOptions?: "ContinueDeploymentOnFailure" | "DefaultValidationOnly" | "None"[];
+	readonly preflightSupported?: boolean;
 }
 export interface RolloutStatusBaseFailedOrSkippedRegions {
-	readonly "[ key: string ]"?: ExtendedErrorInfo | undefined;
+	readonly [key: string]: ExtendedErrorInfo;
 }
 export interface ServiceTreeInfo {
-	readonly componentId?: string | undefined;
+	readonly componentId?: string;
 	readonly readiness?:
-		| (
-				| "ClosingDown"
-				| "Deprecated"
-				| "GA"
-				| "InDevelopment"
-				| "InternalOnly"
-				| "PrivatePreview"
-				| "PublicPreview"
-				| "RemovedFromARM"
-				| "Retired"
-		  )
-		| undefined;
-	readonly serviceId?: string | undefined;
+		| "ClosingDown"
+		| "Deprecated"
+		| "GA"
+		| "InDevelopment"
+		| "InternalOnly"
+		| "PrivatePreview"
+		| "PublicPreview"
+		| "RemovedFromARM"
+		| "Retired";
+	readonly serviceId?: string;
 }
 export interface SkuCapability {
 	readonly name: string;
 	readonly value: string;
 }
 export interface SkuCost {
-	readonly extendedUnit?: string | undefined;
+	readonly extendedUnit?: string;
 	readonly meterId: string;
-	readonly quantity?: number | undefined;
+	readonly quantity?: number;
 }
 export interface SkuLocationInfo {
-	readonly extendedLocations?: string[] | undefined;
+	readonly extendedLocations?: string[];
 	readonly location: string;
-	readonly type?: ("ArcZone" | "EdgeZone" | "NotSpecified") | undefined;
-	readonly zoneDetails?: SkuZoneDetail[] | undefined;
-	readonly zones?: string[] | undefined;
+	readonly type?: "ArcZone" | "EdgeZone" | "NotSpecified";
+	readonly zoneDetails?: SkuZoneDetail[];
+	readonly zones?: string[];
 }
 export interface SkuResourceProperties {
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "MovingResources"
-				| "NotSpecified"
-				| "RolloutInProgress"
-				| "Running"
-				| "Succeeded"
-				| "TransientFailure"
-		  )
-		| undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "MovingResources"
+		| "NotSpecified"
+		| "RolloutInProgress"
+		| "Running"
+		| "Succeeded"
+		| "TransientFailure";
 	readonly skuSettings: SkuSetting[];
 }
 export interface SkuSetting {
-	readonly capabilities?: SkuCapability[] | undefined;
-	readonly capacity?: SkuSettingCapacity | undefined;
-	readonly costs?: SkuCost[] | undefined;
-	readonly family?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly locationInfo?: SkuLocationInfo[] | undefined;
-	readonly locations?: string[] | undefined;
+	readonly capabilities?: SkuCapability[];
+	readonly capacity?: SkuSettingCapacity;
+	readonly costs?: SkuCost[];
+	readonly family?: string;
+	readonly kind?: string;
+	readonly locationInfo?: SkuLocationInfo[];
+	readonly locations?: string[];
 	readonly name: string;
-	readonly requiredFeatures?: string[] | undefined;
-	readonly requiredQuotaIds?: string[] | undefined;
-	readonly size?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly requiredFeatures?: string[];
+	readonly requiredQuotaIds?: string[];
+	readonly size?: string;
+	readonly tier?: string;
 }
 export interface SkuSettingCapacity {
-	readonly default?: number | undefined;
-	readonly maximum?: number | undefined;
+	readonly default?: number;
+	readonly maximum?: number;
 	readonly minimum: number;
-	readonly scaleType?: ("Automatic" | "Manual" | "None") | undefined;
+	readonly scaleType?: "Automatic" | "Manual" | "None";
 }
 export interface SkuZoneDetail {
-	readonly capabilities?: SkuCapability[] | undefined;
-	readonly name?: string[] | undefined;
+	readonly capabilities?: SkuCapability[];
+	readonly name?: string[];
 }
 export interface SubscriptionStateOverrideAction {
 	readonly action:
@@ -1001,33 +944,33 @@ export interface SubscriptionStateOverrideAction {
 		| "WarnedToUnregistered";
 }
 export interface SubscriptionStateRule {
-	readonly allowedActions?: string[] | undefined;
-	readonly state?: ("Deleted" | "Disabled" | "Enabled" | "NotDefined" | "PastDue" | "Warned") | undefined;
+	readonly allowedActions?: string[];
+	readonly state?: "Deleted" | "Disabled" | "Enabled" | "NotDefined" | "PastDue" | "Warned";
 }
 export interface SwaggerSpecification {
-	readonly apiVersions?: string[] | undefined;
-	readonly swaggerSpecFolderUri?: string | undefined;
+	readonly apiVersions?: string[];
+	readonly swaggerSpecFolderUri?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface ThrottlingMetric {
-	readonly interval?: string | undefined;
+	readonly interval?: string;
 	readonly limit: number;
 	readonly type: "NotSpecified" | "NumberOfRequests" | "NumberOfResources";
 }
 export interface ThrottlingRule {
 	readonly action: string;
 	readonly metrics: ThrottlingMetric[];
-	readonly requiredFeatures?: string[] | undefined;
+	readonly requiredFeatures?: string[];
 }
 export interface TypedErrorInfo {
-	readonly info?: any | undefined;
+	readonly info?: any;
 	readonly type: string;
 }
 export default {

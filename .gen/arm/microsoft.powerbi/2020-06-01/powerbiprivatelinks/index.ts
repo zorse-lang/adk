@@ -17,11 +17,11 @@ export interface privateLinkServicesForPowerBIComponentOutputs {
 	readonly type: "Microsoft.PowerBI/privateLinkServicesForPowerBI";
 }
 export interface privateLinkServicesForPowerBIComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: TenantProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TenantResourceTags | undefined;
+	readonly properties?: TenantProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TenantResourceTags;
 }
 export class privateLinkServicesForPowerBI_privateEndpointConnections
 	extends ArmResource<privateLinkServicesForPowerBI_privateEndpointConnectionsComponentInputs>
@@ -47,43 +47,43 @@ export interface privateLinkServicesForPowerBI_privateEndpointConnectionsCompone
 }
 export interface privateLinkServicesForPowerBI_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export interface ConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: ConnectionState | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: ConnectionState;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TenantProperties {
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly tenantId?: string | undefined;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly tenantId?: string;
 }
 export interface TenantResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	privateLinkServicesForPowerBI: privateLinkServicesForPowerBI,

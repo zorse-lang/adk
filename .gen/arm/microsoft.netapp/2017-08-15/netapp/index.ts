@@ -17,7 +17,7 @@ export interface netAppAccountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: AccountProperties;
-	readonly tags?: any | undefined;
+	readonly tags?: any;
 }
 export class netAppAccounts_capacityPools
 	extends ArmResource<netAppAccounts_capacityPoolsComponentInputs>
@@ -39,7 +39,7 @@ export interface netAppAccounts_capacityPoolsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: PoolProperties;
-	readonly tags?: any | undefined;
+	readonly tags?: any;
 }
 export class netAppAccounts_capacityPools_volumes
 	extends ArmResource<netAppAccounts_capacityPools_volumesComponentInputs>
@@ -61,7 +61,7 @@ export interface netAppAccounts_capacityPools_volumesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: VolumeProperties;
-	readonly tags?: any | undefined;
+	readonly tags?: any;
 }
 export class netAppAccounts_capacityPools_volumes_snapshots
 	extends ArmResource<netAppAccounts_capacityPools_volumes_snapshotsComponentInputs>
@@ -89,54 +89,54 @@ export interface netAppAccounts_capacityPools_volumes_snapshotsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: SnapshotProperties;
-	readonly tags?: any | undefined;
+	readonly tags?: any;
 }
 export interface AccountProperties {
-	readonly activeDirectories?: ActiveDirectory[] | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly activeDirectories?: ActiveDirectory[];
+	readonly provisioningState?: string;
 }
 export interface ActiveDirectory {
-	readonly activeDirectoryId?: string | undefined;
-	readonly dNS?: string | undefined;
-	readonly domain?: string | undefined;
-	readonly organizationalUnit?: string | undefined;
-	readonly password?: string | undefined;
-	readonly sMBServerName?: string | undefined;
-	readonly status?: string | undefined;
-	readonly username?: string | undefined;
+	readonly activeDirectoryId?: string;
+	readonly dNS?: string;
+	readonly domain?: string;
+	readonly organizationalUnit?: string;
+	readonly password?: string;
+	readonly sMBServerName?: string;
+	readonly status?: string;
+	readonly username?: string;
 }
 export interface ExportPolicyRule {
-	readonly allowedClients?: string | undefined;
-	readonly cifs?: boolean | undefined;
-	readonly nfsv3?: boolean | undefined;
-	readonly nfsv4?: boolean | undefined;
-	readonly ruleIndex?: number | undefined;
-	readonly unixReadOnly?: boolean | undefined;
-	readonly unixReadWrite?: boolean | undefined;
+	readonly allowedClients?: string;
+	readonly cifs?: boolean;
+	readonly nfsv3?: boolean;
+	readonly nfsv4?: boolean;
+	readonly ruleIndex?: number;
+	readonly unixReadOnly?: boolean;
+	readonly unixReadWrite?: boolean;
 }
 export interface PoolProperties {
-	readonly poolId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceLevel?: ("Premium" | "Standard" | "Ultra") | undefined;
-	readonly size?: number | undefined;
+	readonly poolId?: string;
+	readonly provisioningState?: string;
+	readonly serviceLevel?: "Premium" | "Standard" | "Ultra";
+	readonly size?: number;
 }
 export interface SnapshotProperties {
-	readonly creationDate?: string | undefined;
+	readonly creationDate?: string;
 	readonly fileSystemId: string;
-	readonly provisioningState?: string | undefined;
-	readonly snapshotId?: string | undefined;
+	readonly provisioningState?: string;
+	readonly snapshotId?: string;
 }
 export interface VolumeProperties {
 	readonly creationToken: string;
-	readonly exportPolicy?: VolumePropertiesExportPolicy | undefined;
-	readonly fileSystemId?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly exportPolicy?: VolumePropertiesExportPolicy;
+	readonly fileSystemId?: string;
+	readonly provisioningState?: string;
 	readonly serviceLevel: "Premium" | "Standard" | "Ultra";
-	readonly subnetId?: string | undefined;
-	readonly usageThreshold?: number | undefined;
+	readonly subnetId?: string;
+	readonly usageThreshold?: number;
 }
 export interface VolumePropertiesExportPolicy {
-	readonly rules?: ExportPolicyRule[] | undefined;
+	readonly rules?: ExportPolicyRule[];
 }
 export default {
 	netAppAccounts: netAppAccounts,

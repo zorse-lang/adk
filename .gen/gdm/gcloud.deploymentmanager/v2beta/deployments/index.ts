@@ -4,97 +4,94 @@ export class Deployments extends GdmResource<DeploymentsComponentInputs> impleme
 	constructor(entity: ADKEntity, options: DeploymentsComponentInputs) {
 		super(entity, options.name, "deploymentmanager.v2beta.Deployments", options);
 	}
-	public readonly insertTime?: string | undefined;
-	public readonly manifest?: string | undefined;
-	public readonly operation?: Operation | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly update?: DeploymentUpdate | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly insertTime?: string;
+	public readonly manifest?: string;
+	public readonly operation?: Operation;
+	public readonly selfLink?: string;
+	public readonly update?: DeploymentUpdate;
+	public readonly updateTime?: string;
 }
 export interface DeploymentsComponentOutputs {
-	readonly insertTime?: string | undefined;
-	readonly manifest?: string | undefined;
-	readonly operation?: Operation | undefined;
-	readonly selfLink?: string | undefined;
-	readonly update?: DeploymentUpdate | undefined;
-	readonly updateTime?: string | undefined;
+	readonly insertTime?: string;
+	readonly manifest?: string;
+	readonly operation?: Operation;
+	readonly selfLink?: string;
+	readonly update?: DeploymentUpdate;
+	readonly updateTime?: string;
 }
 export interface DeploymentsComponentInputs {
-	readonly createPolicy?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly labels?: DeploymentLabelEntry[] | undefined;
+	readonly createPolicy?: string;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly labels?: DeploymentLabelEntry[];
 	readonly name: string;
-	readonly preview?: boolean | undefined;
-	readonly target?: TargetConfiguration | undefined;
-	readonly type: string;
+	readonly preview?: boolean;
+	readonly target?: TargetConfiguration;
 }
 export interface ConfigFile {
-	readonly content?: string | undefined;
+	readonly content?: string;
 }
 export interface Deployment {
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly insertTime?: string | undefined;
-	readonly labels?: DeploymentLabelEntry[] | undefined;
-	readonly manifest?: string | undefined;
-	readonly name?: string | undefined;
-	readonly operation?: Operation | undefined;
-	readonly selfLink?: string | undefined;
-	readonly target?: TargetConfiguration | undefined;
-	readonly update?: DeploymentUpdate | undefined;
-	readonly updateTime?: string | undefined;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly insertTime?: string;
+	readonly labels?: DeploymentLabelEntry[];
+	readonly manifest?: string;
+	readonly name?: string;
+	readonly operation?: Operation;
+	readonly selfLink?: string;
+	readonly target?: TargetConfiguration;
+	readonly update?: DeploymentUpdate;
+	readonly updateTime?: string;
 }
 export interface DeploymentLabelEntry {
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface DeploymentUpdate {
-	readonly description?: string | undefined;
-	readonly labels?: DeploymentUpdateLabelEntry[] | undefined;
-	readonly manifest?: string | undefined;
+	readonly description?: string;
+	readonly labels?: DeploymentUpdateLabelEntry[];
+	readonly manifest?: string;
 }
 export interface DeploymentUpdateLabelEntry {
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface ImportFile {
-	readonly content?: string | undefined;
-	readonly name?: string | undefined;
+	readonly content?: string;
+	readonly name?: string;
 }
 export interface Operation {
-	readonly clientOperationId?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: { errors?: Array<{ code?: string; location?: string; message?: string }> } | undefined;
-	readonly httpErrorMessage?: string | undefined;
-	readonly httpErrorStatusCode?: number | undefined;
-	readonly id?: string | undefined;
-	readonly insertTime?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly operationGroupId?: string | undefined;
-	readonly operationType?: string | undefined;
-	readonly progress?: number | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly targetId?: string | undefined;
-	readonly targetLink?: string | undefined;
-	readonly user?: string | undefined;
-	readonly warnings?:
-		| Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>
-		| undefined;
-	readonly zone?: string | undefined;
+	readonly clientOperationId?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly endTime?: string;
+	readonly error?: { errors?: Array<{ code?: string; location?: string; message?: string }> };
+	readonly httpErrorMessage?: string;
+	readonly httpErrorStatusCode?: number;
+	readonly id?: string;
+	readonly insertTime?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly operationGroupId?: string;
+	readonly operationType?: string;
+	readonly progress?: number;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly statusMessage?: string;
+	readonly targetId?: string;
+	readonly targetLink?: string;
+	readonly user?: string;
+	readonly warnings?: Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>;
+	readonly zone?: string;
 }
 export interface TargetConfiguration {
-	readonly config?: ConfigFile | undefined;
-	readonly imports?: ImportFile[] | undefined;
+	readonly config?: ConfigFile;
+	readonly imports?: ImportFile[];
 }
 export default {
 	Deployments: Deployments,

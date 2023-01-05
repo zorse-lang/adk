@@ -15,7 +15,7 @@ export interface BackupPlanComponentOutputs {
 }
 export interface BackupPlanComponentInputs {
 	readonly BackupPlan: BackupPlanResourceType;
-	readonly BackupPlanTags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly BackupPlanTags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class BackupSelection
@@ -52,11 +52,11 @@ export interface BackupVaultComponentOutputs {
 }
 export interface BackupVaultComponentInputs {
 	readonly BackupVaultName: string;
-	readonly AccessPolicy?: (any | undefined) | undefined;
-	readonly BackupVaultTags?: ({ [key: string]: string } | undefined) | undefined;
-	readonly EncryptionKeyArn?: (string | undefined) | undefined;
-	readonly LockConfiguration?: (LockConfigurationType | undefined) | undefined;
-	readonly Notifications?: (NotificationObjectType | undefined) | undefined;
+	readonly AccessPolicy?: any | undefined;
+	readonly BackupVaultTags?: { [key: string]: string } | undefined;
+	readonly EncryptionKeyArn?: string | undefined;
+	readonly LockConfiguration?: LockConfigurationType | undefined;
+	readonly Notifications?: NotificationObjectType | undefined;
 	readonly LogicalId: string;
 }
 export class Framework extends CfnResource<FrameworkComponentInputs> implements FrameworkComponentOutputs {
@@ -76,9 +76,9 @@ export interface FrameworkComponentOutputs {
 }
 export interface FrameworkComponentInputs {
 	readonly FrameworkControls: FrameworkControl[];
-	readonly FrameworkDescription?: (string | undefined) | undefined;
-	readonly FrameworkName?: (string | undefined) | undefined;
-	readonly FrameworkTags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly FrameworkDescription?: string | undefined;
+	readonly FrameworkName?: string | undefined;
+	readonly FrameworkTags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ReportPlan extends CfnResource<ReportPlanComponentInputs> implements ReportPlanComponentOutputs {
@@ -93,9 +93,9 @@ export interface ReportPlanComponentOutputs {
 export interface ReportPlanComponentInputs {
 	readonly ReportDeliveryChannel: ReportDeliveryChannel;
 	readonly ReportSetting: ReportSetting;
-	readonly ReportPlanDescription?: (string | undefined) | undefined;
-	readonly ReportPlanName?: (string | undefined) | undefined;
-	readonly ReportPlanTags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ReportPlanDescription?: string | undefined;
+	readonly ReportPlanName?: string | undefined;
+	readonly ReportPlanTags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface AdvancedBackupSettingResourceType {
@@ -103,40 +103,40 @@ export interface AdvancedBackupSettingResourceType {
 	readonly ResourceType: string;
 }
 export interface BackupPlanResourceType {
-	readonly AdvancedBackupSettings?: (AdvancedBackupSettingResourceType[] | undefined) | undefined;
+	readonly AdvancedBackupSettings?: AdvancedBackupSettingResourceType[] | undefined;
 	readonly BackupPlanName: string;
 	readonly BackupPlanRule: BackupRuleResourceType[];
 }
 export interface BackupRuleResourceType {
-	readonly CompletionWindowMinutes?: (number | undefined) | undefined;
-	readonly CopyActions?: (CopyActionResourceType[] | undefined) | undefined;
-	readonly EnableContinuousBackup?: (boolean | undefined) | undefined;
-	readonly Lifecycle?: (LifecycleResourceType | undefined) | undefined;
-	readonly RecoveryPointTags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly CompletionWindowMinutes?: number | undefined;
+	readonly CopyActions?: CopyActionResourceType[] | undefined;
+	readonly EnableContinuousBackup?: boolean | undefined;
+	readonly Lifecycle?: LifecycleResourceType | undefined;
+	readonly RecoveryPointTags?: { [key: string]: string } | undefined;
 	readonly RuleName: string;
-	readonly ScheduleExpression?: (string | undefined) | undefined;
-	readonly StartWindowMinutes?: (number | undefined) | undefined;
+	readonly ScheduleExpression?: string | undefined;
+	readonly StartWindowMinutes?: number | undefined;
 	readonly TargetBackupVault: string;
 }
 export interface CopyActionResourceType {
 	readonly DestinationBackupVaultArn: string;
-	readonly Lifecycle?: (LifecycleResourceType | undefined) | undefined;
+	readonly Lifecycle?: LifecycleResourceType | undefined;
 }
 export interface LifecycleResourceType {
-	readonly DeleteAfterDays?: (number | undefined) | undefined;
-	readonly MoveToColdStorageAfterDays?: (number | undefined) | undefined;
+	readonly DeleteAfterDays?: number | undefined;
+	readonly MoveToColdStorageAfterDays?: number | undefined;
 }
 export interface BackupSelectionResourceType {
-	readonly Conditions?: (Conditions | undefined) | undefined;
+	readonly Conditions?: Conditions | undefined;
 	readonly IamRoleArn: string;
-	readonly ListOfTags?: (ConditionResourceType[] | undefined) | undefined;
-	readonly NotResources?: (string[] | undefined) | undefined;
-	readonly Resources?: (string[] | undefined) | undefined;
+	readonly ListOfTags?: ConditionResourceType[] | undefined;
+	readonly NotResources?: string[] | undefined;
+	readonly Resources?: string[] | undefined;
 	readonly SelectionName: string;
 }
 export interface ConditionParameter {
-	readonly ConditionKey?: (string | undefined) | undefined;
-	readonly ConditionValue?: (string | undefined) | undefined;
+	readonly ConditionKey?: string | undefined;
+	readonly ConditionValue?: string | undefined;
 }
 export interface ConditionResourceType {
 	readonly ConditionKey: string;
@@ -144,14 +144,14 @@ export interface ConditionResourceType {
 	readonly ConditionValue: string;
 }
 export interface Conditions {
-	readonly StringEquals?: (ConditionParameter[] | undefined) | undefined;
-	readonly StringLike?: (ConditionParameter[] | undefined) | undefined;
-	readonly StringNotEquals?: (ConditionParameter[] | undefined) | undefined;
-	readonly StringNotLike?: (ConditionParameter[] | undefined) | undefined;
+	readonly StringEquals?: ConditionParameter[] | undefined;
+	readonly StringLike?: ConditionParameter[] | undefined;
+	readonly StringNotEquals?: ConditionParameter[] | undefined;
+	readonly StringNotLike?: ConditionParameter[] | undefined;
 }
 export interface LockConfigurationType {
-	readonly ChangeableForDays?: (number | undefined) | undefined;
-	readonly MaxRetentionDays?: (number | undefined) | undefined;
+	readonly ChangeableForDays?: number | undefined;
+	readonly MaxRetentionDays?: number | undefined;
 	readonly MinRetentionDays: number;
 }
 export interface NotificationObjectType {
@@ -163,25 +163,25 @@ export interface ControlInputParameter {
 	readonly ParameterValue: string;
 }
 export interface ControlScope {
-	readonly ComplianceResourceIds?: (string[] | undefined) | undefined;
-	readonly ComplianceResourceTypes?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ComplianceResourceIds?: string[] | undefined;
+	readonly ComplianceResourceTypes?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 }
 export interface FrameworkControl {
-	readonly ControlInputParameters?: (ControlInputParameter[] | undefined) | undefined;
+	readonly ControlInputParameters?: ControlInputParameter[] | undefined;
 	readonly ControlName: string;
-	readonly ControlScope?: (ControlScope | undefined) | undefined;
+	readonly ControlScope?: ControlScope | undefined;
 }
 export interface ReportDeliveryChannel {
-	readonly Formats?: (string[] | undefined) | undefined;
+	readonly Formats?: string[] | undefined;
 	readonly S3BucketName: string;
-	readonly S3KeyPrefix?: (string | undefined) | undefined;
+	readonly S3KeyPrefix?: string | undefined;
 }
 export interface ReportSetting {
-	readonly Accounts?: (string[] | undefined) | undefined;
-	readonly FrameworkArns?: (string[] | undefined) | undefined;
-	readonly OrganizationUnits?: (string[] | undefined) | undefined;
-	readonly Regions?: (string[] | undefined) | undefined;
+	readonly Accounts?: string[] | undefined;
+	readonly FrameworkArns?: string[] | undefined;
+	readonly OrganizationUnits?: string[] | undefined;
+	readonly Regions?: string[] | undefined;
 	readonly ReportTemplate: string;
 }
 export default {

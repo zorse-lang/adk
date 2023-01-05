@@ -7,66 +7,63 @@ export class Operations extends GdmResource<OperationsComponentInputs> implement
 }
 export interface OperationsComponentOutputs {}
 export interface OperationsComponentInputs {
-	readonly endTime?: string | undefined;
-	readonly error?: OperationErrors | undefined;
-	readonly exportContext?: ExportContext | undefined;
-	readonly importContext?: ImportContext | undefined;
-	readonly insertTime?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly endTime?: string;
+	readonly error?: OperationErrors;
+	readonly exportContext?: ExportContext;
+	readonly importContext?: ImportContext;
+	readonly insertTime?: string;
+	readonly kind?: string;
 	readonly name: string;
-	readonly operationType?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly targetId?: string | undefined;
-	readonly targetLink?: string | undefined;
-	readonly targetProject?: string | undefined;
-	readonly user?: string | undefined;
-	readonly type: string;
+	readonly operationType?: string;
+	readonly selfLink?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly targetId?: string;
+	readonly targetLink?: string;
+	readonly targetProject?: string;
+	readonly user?: string;
 }
 export interface ExportContext {
-	readonly csvExportOptions?: { selectQuery?: string } | undefined;
-	readonly databases?: string[] | undefined;
-	readonly fileType?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly sqlExportOptions?:
-		| { mysqlExportOptions?: { masterData?: number }; schemaOnly?: boolean; tables?: string[] }
-		| undefined;
-	readonly uri?: string | undefined;
+	readonly csvExportOptions?: { selectQuery?: string };
+	readonly databases?: string[];
+	readonly fileType?: string;
+	readonly kind?: string;
+	readonly sqlExportOptions?: { mysqlExportOptions?: { masterData?: number }; schemaOnly?: boolean; tables?: string[] };
+	readonly uri?: string;
 }
 export interface ImportContext {
-	readonly csvImportOptions?: { columns?: string[]; table?: string } | undefined;
-	readonly database?: string | undefined;
-	readonly fileType?: string | undefined;
-	readonly importUser?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly csvImportOptions?: { columns?: string[]; table?: string };
+	readonly database?: string;
+	readonly fileType?: string;
+	readonly importUser?: string;
+	readonly kind?: string;
+	readonly uri?: string;
 }
 export interface Operation {
-	readonly endTime?: string | undefined;
-	readonly error?: OperationErrors | undefined;
-	readonly exportContext?: ExportContext | undefined;
-	readonly importContext?: ImportContext | undefined;
-	readonly insertTime?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly operationType?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly targetId?: string | undefined;
-	readonly targetLink?: string | undefined;
-	readonly targetProject?: string | undefined;
-	readonly user?: string | undefined;
+	readonly endTime?: string;
+	readonly error?: OperationErrors;
+	readonly exportContext?: ExportContext;
+	readonly importContext?: ImportContext;
+	readonly insertTime?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly operationType?: string;
+	readonly selfLink?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly targetId?: string;
+	readonly targetLink?: string;
+	readonly targetProject?: string;
+	readonly user?: string;
 }
 export interface OperationError {
-	readonly code?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly kind?: string;
+	readonly message?: string;
 }
 export interface OperationErrors {
-	readonly errors?: OperationError[] | undefined;
-	readonly kind?: string | undefined;
+	readonly errors?: OperationError[];
+	readonly kind?: string;
 }
 export default {
 	Operations: Operations,

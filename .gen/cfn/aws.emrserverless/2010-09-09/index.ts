@@ -14,21 +14,21 @@ export interface ApplicationComponentOutputs {
 export interface ApplicationComponentInputs {
 	readonly ReleaseLabel: string;
 	readonly Type: string;
-	readonly AutoStartConfiguration?: (AutoStartConfiguration | undefined) | undefined;
-	readonly AutoStopConfiguration?: (AutoStopConfiguration | undefined) | undefined;
-	readonly InitialCapacity?: (InitialCapacityConfigKeyValuePair[] | undefined) | undefined;
-	readonly MaximumCapacity?: (MaximumAllowedResources | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly NetworkConfiguration?: (NetworkConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AutoStartConfiguration?: AutoStartConfiguration | undefined;
+	readonly AutoStopConfiguration?: AutoStopConfiguration | undefined;
+	readonly InitialCapacity?: InitialCapacityConfigKeyValuePair[] | undefined;
+	readonly MaximumCapacity?: MaximumAllowedResources | undefined;
+	readonly Name?: string | undefined;
+	readonly NetworkConfiguration?: NetworkConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface AutoStartConfiguration {
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
 }
 export interface AutoStopConfiguration {
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly IdleTimeoutMinutes?: (number | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly IdleTimeoutMinutes?: number | undefined;
 }
 export interface InitialCapacityConfig {
 	readonly WorkerConfiguration: WorkerConfiguration;
@@ -40,16 +40,16 @@ export interface InitialCapacityConfigKeyValuePair {
 }
 export interface MaximumAllowedResources {
 	readonly Cpu: string;
-	readonly Disk?: (string | undefined) | undefined;
+	readonly Disk?: string | undefined;
 	readonly Memory: string;
 }
 export interface NetworkConfiguration {
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SubnetIds?: (string[] | undefined) | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SubnetIds?: string[] | undefined;
 }
 export interface WorkerConfiguration {
 	readonly Cpu: string;
-	readonly Disk?: (string | undefined) | undefined;
+	readonly Disk?: string | undefined;
 	readonly Memory: string;
 }
 export default {

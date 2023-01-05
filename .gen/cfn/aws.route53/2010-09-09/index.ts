@@ -13,7 +13,7 @@ export interface CidrCollectionComponentOutputs {
 }
 export interface CidrCollectionComponentInputs {
 	readonly Name: string;
-	readonly Locations?: (Location[] | undefined) | undefined;
+	readonly Locations?: Location[] | undefined;
 	readonly LogicalId: string;
 }
 export class DNSSEC extends CfnResource<DNSSECComponentInputs> implements DNSSECComponentOutputs {
@@ -37,7 +37,7 @@ export interface HealthCheckComponentOutputs {
 }
 export interface HealthCheckComponentInputs {
 	readonly HealthCheckConfig: HealthCheckConfig;
-	readonly HealthCheckTags?: (HealthCheckTag[] | undefined) | undefined;
+	readonly HealthCheckTags?: HealthCheckTag[] | undefined;
 	readonly LogicalId: string;
 }
 export class HostedZone extends CfnResource<HostedZoneComponentInputs> implements HostedZoneComponentOutputs {
@@ -52,11 +52,11 @@ export interface HostedZoneComponentOutputs {
 	readonly NameServers: string[];
 }
 export interface HostedZoneComponentInputs {
-	readonly HostedZoneConfig?: (HostedZoneConfig | undefined) | undefined;
-	readonly HostedZoneTags?: (HostedZoneTag[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly QueryLoggingConfig?: (QueryLoggingConfig | undefined) | undefined;
-	readonly VPCs?: (VPC[] | undefined) | undefined;
+	readonly HostedZoneConfig?: HostedZoneConfig | undefined;
+	readonly HostedZoneTags?: HostedZoneTag[] | undefined;
+	readonly Name?: string | undefined;
+	readonly QueryLoggingConfig?: QueryLoggingConfig | undefined;
+	readonly VPCs?: VPC[] | undefined;
 	readonly LogicalId: string;
 }
 export class KeySigningKey extends CfnResource<KeySigningKeyComponentInputs> implements KeySigningKeyComponentOutputs {
@@ -81,20 +81,20 @@ export interface RecordSetComponentOutputs {}
 export interface RecordSetComponentInputs {
 	readonly Name: string;
 	readonly Type: string;
-	readonly AliasTarget?: (AliasTarget | undefined) | undefined;
-	readonly CidrRoutingConfig?: (CidrRoutingConfig | undefined) | undefined;
-	readonly Comment?: (string | undefined) | undefined;
-	readonly Failover?: (string | undefined) | undefined;
-	readonly GeoLocation?: (GeoLocation | undefined) | undefined;
-	readonly HealthCheckId?: (string | undefined) | undefined;
-	readonly HostedZoneId?: (string | undefined) | undefined;
-	readonly HostedZoneName?: (string | undefined) | undefined;
-	readonly MultiValueAnswer?: (boolean | undefined) | undefined;
-	readonly Region?: (string | undefined) | undefined;
-	readonly ResourceRecords?: (string[] | undefined) | undefined;
-	readonly SetIdentifier?: (string | undefined) | undefined;
-	readonly TTL?: (string | undefined) | undefined;
-	readonly Weight?: (number | undefined) | undefined;
+	readonly AliasTarget?: AliasTarget | undefined;
+	readonly CidrRoutingConfig?: CidrRoutingConfig | undefined;
+	readonly Comment?: string | undefined;
+	readonly Failover?: string | undefined;
+	readonly GeoLocation?: GeoLocation | undefined;
+	readonly HealthCheckId?: string | undefined;
+	readonly HostedZoneId?: string | undefined;
+	readonly HostedZoneName?: string | undefined;
+	readonly MultiValueAnswer?: boolean | undefined;
+	readonly Region?: string | undefined;
+	readonly ResourceRecords?: string[] | undefined;
+	readonly SetIdentifier?: string | undefined;
+	readonly TTL?: string | undefined;
+	readonly Weight?: number | undefined;
 	readonly LogicalId: string;
 }
 export class RecordSetGroup extends CfnResource<RecordSetGroupComponentInputs> implements RecordSetGroupComponentOutputs {
@@ -104,10 +104,10 @@ export class RecordSetGroup extends CfnResource<RecordSetGroupComponentInputs> i
 }
 export interface RecordSetGroupComponentOutputs {}
 export interface RecordSetGroupComponentInputs {
-	readonly Comment?: (string | undefined) | undefined;
-	readonly HostedZoneId?: (string | undefined) | undefined;
-	readonly HostedZoneName?: (string | undefined) | undefined;
-	readonly RecordSets?: (RecordSet[] | undefined) | undefined;
+	readonly Comment?: string | undefined;
+	readonly HostedZoneId?: string | undefined;
+	readonly HostedZoneName?: string | undefined;
+	readonly RecordSets?: RecordSet[] | undefined;
 	readonly LogicalId: string;
 }
 export interface Location {
@@ -119,22 +119,22 @@ export interface AlarmIdentifier {
 	readonly Region: string;
 }
 export interface HealthCheckConfig {
-	readonly AlarmIdentifier?: (AlarmIdentifier | undefined) | undefined;
-	readonly ChildHealthChecks?: (string[] | undefined) | undefined;
-	readonly EnableSNI?: (boolean | undefined) | undefined;
-	readonly FailureThreshold?: (number | undefined) | undefined;
-	readonly FullyQualifiedDomainName?: (string | undefined) | undefined;
-	readonly HealthThreshold?: (number | undefined) | undefined;
-	readonly IPAddress?: (string | undefined) | undefined;
-	readonly InsufficientDataHealthStatus?: (string | undefined) | undefined;
-	readonly Inverted?: (boolean | undefined) | undefined;
-	readonly MeasureLatency?: (boolean | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly Regions?: (string[] | undefined) | undefined;
-	readonly RequestInterval?: (number | undefined) | undefined;
-	readonly ResourcePath?: (string | undefined) | undefined;
-	readonly RoutingControlArn?: (string | undefined) | undefined;
-	readonly SearchString?: (string | undefined) | undefined;
+	readonly AlarmIdentifier?: AlarmIdentifier | undefined;
+	readonly ChildHealthChecks?: string[] | undefined;
+	readonly EnableSNI?: boolean | undefined;
+	readonly FailureThreshold?: number | undefined;
+	readonly FullyQualifiedDomainName?: string | undefined;
+	readonly HealthThreshold?: number | undefined;
+	readonly IPAddress?: string | undefined;
+	readonly InsufficientDataHealthStatus?: string | undefined;
+	readonly Inverted?: boolean | undefined;
+	readonly MeasureLatency?: boolean | undefined;
+	readonly Port?: number | undefined;
+	readonly Regions?: string[] | undefined;
+	readonly RequestInterval?: number | undefined;
+	readonly ResourcePath?: string | undefined;
+	readonly RoutingControlArn?: string | undefined;
+	readonly SearchString?: string | undefined;
 	readonly Type: string;
 }
 export interface HealthCheckTag {
@@ -142,7 +142,7 @@ export interface HealthCheckTag {
 	readonly Value: string;
 }
 export interface HostedZoneConfig {
-	readonly Comment?: (string | undefined) | undefined;
+	readonly Comment?: string | undefined;
 }
 export interface HostedZoneTag {
 	readonly Key: string;
@@ -157,7 +157,7 @@ export interface VPC {
 }
 export interface AliasTarget {
 	readonly DNSName: string;
-	readonly EvaluateTargetHealth?: (boolean | undefined) | undefined;
+	readonly EvaluateTargetHealth?: boolean | undefined;
 	readonly HostedZoneId: string;
 }
 export interface CidrRoutingConfig {
@@ -165,26 +165,26 @@ export interface CidrRoutingConfig {
 	readonly LocationName: string;
 }
 export interface GeoLocation {
-	readonly ContinentCode?: (string | undefined) | undefined;
-	readonly CountryCode?: (string | undefined) | undefined;
-	readonly SubdivisionCode?: (string | undefined) | undefined;
+	readonly ContinentCode?: string | undefined;
+	readonly CountryCode?: string | undefined;
+	readonly SubdivisionCode?: string | undefined;
 }
 export interface RecordSet {
-	readonly AliasTarget?: (AliasTarget | undefined) | undefined;
-	readonly CidrRoutingConfig?: (CidrRoutingConfig | undefined) | undefined;
-	readonly Failover?: (string | undefined) | undefined;
-	readonly GeoLocation?: (GeoLocation | undefined) | undefined;
-	readonly HealthCheckId?: (string | undefined) | undefined;
-	readonly HostedZoneId?: (string | undefined) | undefined;
-	readonly HostedZoneName?: (string | undefined) | undefined;
-	readonly MultiValueAnswer?: (boolean | undefined) | undefined;
+	readonly AliasTarget?: AliasTarget | undefined;
+	readonly CidrRoutingConfig?: CidrRoutingConfig | undefined;
+	readonly Failover?: string | undefined;
+	readonly GeoLocation?: GeoLocation | undefined;
+	readonly HealthCheckId?: string | undefined;
+	readonly HostedZoneId?: string | undefined;
+	readonly HostedZoneName?: string | undefined;
+	readonly MultiValueAnswer?: boolean | undefined;
 	readonly Name: string;
-	readonly Region?: (string | undefined) | undefined;
-	readonly ResourceRecords?: (string[] | undefined) | undefined;
-	readonly SetIdentifier?: (string | undefined) | undefined;
-	readonly TTL?: (string | undefined) | undefined;
+	readonly Region?: string | undefined;
+	readonly ResourceRecords?: string[] | undefined;
+	readonly SetIdentifier?: string | undefined;
+	readonly TTL?: string | undefined;
 	readonly Type: string;
-	readonly Weight?: (number | undefined) | undefined;
+	readonly Weight?: number | undefined;
 }
 export default {
 	CidrCollection: CidrCollection,

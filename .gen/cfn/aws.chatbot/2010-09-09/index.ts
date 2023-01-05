@@ -17,10 +17,10 @@ export interface SlackChannelConfigurationComponentInputs {
 	readonly IamRoleArn: string;
 	readonly SlackChannelId: string;
 	readonly SlackWorkspaceId: string;
-	readonly GuardrailPolicies?: (string[] | undefined) | undefined;
-	readonly LoggingLevel?: (string | undefined) | undefined;
-	readonly SnsTopicArns?: (string[] | undefined) | undefined;
-	readonly UserRoleRequired?: (boolean | undefined) | undefined;
+	readonly GuardrailPolicies?: string[] | undefined;
+	readonly LoggingLevel?: string | undefined;
+	readonly SnsTopicArns?: string[] | undefined;
+	readonly UserRoleRequired?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export default {

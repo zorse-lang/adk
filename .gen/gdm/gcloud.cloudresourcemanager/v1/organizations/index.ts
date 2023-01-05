@@ -7,22 +7,21 @@ export class Organizations extends GdmResource<OrganizationsComponentInputs> imp
 }
 export interface OrganizationsComponentOutputs {}
 export interface OrganizationsComponentInputs {
-	readonly creationTime?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly lifecycleState?: string | undefined;
+	readonly creationTime?: string;
+	readonly displayName?: string;
+	readonly lifecycleState?: string;
 	readonly name: string;
-	readonly owner?: OrganizationOwner | undefined;
-	readonly type: string;
+	readonly owner?: OrganizationOwner;
 }
 export interface Organization {
-	readonly creationTime?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly lifecycleState?: string | undefined;
-	readonly name?: string | undefined;
-	readonly owner?: OrganizationOwner | undefined;
+	readonly creationTime?: string;
+	readonly displayName?: string;
+	readonly lifecycleState?: string;
+	readonly name?: string;
+	readonly owner?: OrganizationOwner;
 }
 export interface OrganizationOwner {
-	readonly directoryCustomerId?: string | undefined;
+	readonly directoryCustomerId?: string;
 }
 export default {
 	Organizations: Organizations,

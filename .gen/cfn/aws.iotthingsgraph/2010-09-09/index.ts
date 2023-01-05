@@ -8,7 +8,7 @@ export class FlowTemplate extends CfnResource<FlowTemplateComponentInputs> imple
 export interface FlowTemplateComponentOutputs {}
 export interface FlowTemplateComponentInputs {
 	readonly Definition: DefinitionDocument;
-	readonly CompatibleNamespaceVersion?: (number | undefined) | undefined;
+	readonly CompatibleNamespaceVersion?: number | undefined;
 	readonly LogicalId: string;
 }
 export interface DefinitionDocument {

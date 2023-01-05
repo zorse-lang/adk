@@ -14,11 +14,11 @@ export interface certificatesComponentOutputs {
 	readonly type: "Microsoft.Web/certificates";
 }
 export interface certificatesComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CertificateProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: CertificateProperties;
+	readonly tags?: ResourceTags;
 }
 export class classicMobileServices
 	extends ArmResource<classicMobileServicesComponentInputs>
@@ -37,11 +37,11 @@ export interface classicMobileServicesComponentOutputs {
 	readonly type: "Microsoft.Web/classicMobileServices";
 }
 export interface classicMobileServicesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ClassicMobileServiceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ClassicMobileServiceProperties;
+	readonly tags?: ResourceTags;
 }
 export class csrs extends ArmResource<csrsComponentInputs> implements csrsComponentOutputs {
 	constructor(entity: ADKEntity, options: csrsComponentInputs) {
@@ -57,11 +57,11 @@ export interface csrsComponentOutputs {
 	readonly type: "Microsoft.Web/csrs";
 }
 export interface csrsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CsrProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: CsrProperties;
+	readonly tags?: ResourceTags;
 }
 export class hostingEnvironments
 	extends ArmResource<hostingEnvironmentsComponentInputs>
@@ -80,11 +80,11 @@ export interface hostingEnvironmentsComponentOutputs {
 	readonly type: "Microsoft.Web/hostingEnvironments";
 }
 export interface hostingEnvironmentsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: HostingEnvironmentProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: HostingEnvironmentProperties;
+	readonly tags?: ResourceTags;
 }
 export class hostingEnvironments_multiRolePools
 	extends ArmResource<hostingEnvironments_multiRolePoolsComponentInputs>
@@ -103,12 +103,12 @@ export interface hostingEnvironments_multiRolePoolsComponentOutputs {
 	readonly type: "Microsoft.Web/hostingEnvironments/multiRolePools";
 }
 export interface hostingEnvironments_multiRolePoolsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WorkerPoolProperties | undefined;
-	readonly sku?: SkuDescription | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkerPoolProperties;
+	readonly sku?: SkuDescription;
+	readonly tags?: ResourceTags;
 }
 export class hostingEnvironments_workerPools
 	extends ArmResource<hostingEnvironments_workerPoolsComponentInputs>
@@ -127,12 +127,12 @@ export interface hostingEnvironments_workerPoolsComponentOutputs {
 	readonly type: "Microsoft.Web/hostingEnvironments/workerPools";
 }
 export interface hostingEnvironments_workerPoolsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WorkerPoolProperties | undefined;
-	readonly sku?: SkuDescription | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkerPoolProperties;
+	readonly sku?: SkuDescription;
+	readonly tags?: ResourceTags;
 }
 export class managedHostingEnvironments
 	extends ArmResource<managedHostingEnvironmentsComponentInputs>
@@ -151,11 +151,11 @@ export interface managedHostingEnvironmentsComponentOutputs {
 	readonly type: "Microsoft.Web/managedHostingEnvironments";
 }
 export interface managedHostingEnvironmentsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: HostingEnvironmentPropertiesOrManagedHostingEnvironmentProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: HostingEnvironmentPropertiesOrManagedHostingEnvironmentProperties;
+	readonly tags?: ResourceTags;
 }
 export class publishingUsers
 	extends ArmResource<publishingUsersComponentInputs>
@@ -174,11 +174,11 @@ export interface publishingUsersComponentOutputs {
 	readonly type: "Microsoft.Web/publishingUsers";
 }
 export interface publishingUsersComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: UserProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: UserProperties;
+	readonly tags?: ResourceTags;
 }
 export class serverfarms extends ArmResource<serverfarmsComponentInputs> implements serverfarmsComponentOutputs {
 	constructor(entity: ADKEntity, options: serverfarmsComponentInputs) {
@@ -194,12 +194,12 @@ export interface serverfarmsComponentOutputs {
 	readonly type: "Microsoft.Web/serverfarms";
 }
 export interface serverfarmsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServerFarmWithRichSkuProperties | undefined;
-	readonly sku?: SkuDescription | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ServerFarmWithRichSkuProperties;
+	readonly sku?: SkuDescription;
+	readonly tags?: ResourceTags;
 }
 export class serverfarms_operationresults
 	extends ArmResource<serverfarms_operationresultsComponentInputs>
@@ -218,12 +218,12 @@ export interface serverfarms_operationresultsComponentOutputs {
 	readonly type: "Microsoft.Web/serverfarms/operationresults";
 }
 export interface serverfarms_operationresultsComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ServerFarmWithRichSkuProperties | undefined;
-	readonly sku?: SkuDescription | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ServerFarmWithRichSkuProperties;
+	readonly sku?: SkuDescription;
+	readonly tags?: ResourceTags;
 }
 export class serverfarms_virtualNetworkConnections
 	extends ArmResource<serverfarms_virtualNetworkConnectionsComponentInputs>
@@ -242,11 +242,11 @@ export interface serverfarms_virtualNetworkConnectionsComponentOutputs {
 	readonly type: "Microsoft.Web/serverfarms/virtualNetworkConnections";
 }
 export interface serverfarms_virtualNetworkConnectionsComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VnetInfoProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VnetInfoProperties;
+	readonly tags?: ResourceTags;
 }
 export class serverfarms_virtualNetworkConnections_gateways
 	extends ArmResource<serverfarms_virtualNetworkConnections_gatewaysComponentInputs>
@@ -265,11 +265,11 @@ export interface serverfarms_virtualNetworkConnections_gatewaysComponentOutputs 
 	readonly type: "Microsoft.Web/serverfarms/virtualNetworkConnections/gateways";
 }
 export interface serverfarms_virtualNetworkConnections_gatewaysComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VnetGatewayProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VnetGatewayProperties;
+	readonly tags?: ResourceTags;
 }
 export class serverfarms_virtualNetworkConnections_routes
 	extends ArmResource<serverfarms_virtualNetworkConnections_routesComponentInputs>
@@ -288,11 +288,11 @@ export interface serverfarms_virtualNetworkConnections_routesComponentOutputs {
 	readonly type: "Microsoft.Web/serverfarms/virtualNetworkConnections/routes";
 }
 export interface serverfarms_virtualNetworkConnections_routesComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VnetRouteProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VnetRouteProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites extends ArmResource<sitesComponentInputs> implements sitesComponentOutputs {
 	constructor(entity: ADKEntity, options: sitesComponentInputs) {
@@ -308,11 +308,11 @@ export interface sitesComponentOutputs {
 	readonly type: "Microsoft.Web/sites";
 }
 export interface sitesComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SiteProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SiteProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_backups extends ArmResource<sites_backupsComponentInputs> implements sites_backupsComponentOutputs {
 	constructor(entity: ADKEntity, options: sites_backupsComponentInputs) {
@@ -328,11 +328,11 @@ export interface sites_backupsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/backups";
 }
 export interface sites_backupsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RestoreRequestPropertiesOrBackupItemProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: RestoreRequestPropertiesOrBackupItemProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_config_appsettings
 	extends ArmResource<sites_config_appsettingsComponentInputs>
@@ -351,11 +351,11 @@ export interface sites_config_appsettingsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/config";
 }
 export interface sites_config_appsettingsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StringDictionaryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: StringDictionaryProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_config_authsettings
 	extends ArmResource<sites_config_authsettingsComponentInputs>
@@ -374,32 +374,32 @@ export interface sites_config_authsettingsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/config";
 }
 export interface sites_config_authsettingsComponentInputs {
-	readonly aadClientId?: string | undefined;
-	readonly additionalLoginParams?: string[] | undefined;
-	readonly allowedAudiences?: string[] | undefined;
-	readonly allowedExternalRedirectUrls?: string[] | undefined;
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
-	readonly defaultProvider?: ("AzureActiveDirectory" | "Facebook" | "Google" | "MicrosoftAccount") | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly facebookAppId?: string | undefined;
-	readonly facebookAppSecret?: string | undefined;
-	readonly facebookOAuthScopes?: string[] | undefined;
-	readonly googleClientId?: string | undefined;
-	readonly googleClientSecret?: string | undefined;
-	readonly googleOAuthScopes?: string[] | undefined;
-	readonly httpApiPrefixPath?: string | undefined;
-	readonly issuer?: string | undefined;
-	readonly microsoftAccountClientId?: string | undefined;
-	readonly microsoftAccountClientSecret?: string | undefined;
-	readonly microsoftAccountOAuthScopes?: string[] | undefined;
+	readonly aadClientId?: string;
+	readonly additionalLoginParams?: string[];
+	readonly allowedAudiences?: string[];
+	readonly allowedExternalRedirectUrls?: string[];
+	readonly clientId?: string;
+	readonly clientSecret?: string;
+	readonly defaultProvider?: "AzureActiveDirectory" | "Facebook" | "Google" | "MicrosoftAccount";
+	readonly enabled?: boolean;
+	readonly facebookAppId?: string;
+	readonly facebookAppSecret?: string;
+	readonly facebookOAuthScopes?: string[];
+	readonly googleClientId?: string;
+	readonly googleClientSecret?: string;
+	readonly googleOAuthScopes?: string[];
+	readonly httpApiPrefixPath?: string;
+	readonly issuer?: string;
+	readonly microsoftAccountClientId?: string;
+	readonly microsoftAccountClientSecret?: string;
+	readonly microsoftAccountOAuthScopes?: string[];
 	readonly name: string;
-	readonly openIdIssuer?: string | undefined;
-	readonly tokenRefreshExtensionHours?: number | undefined;
-	readonly tokenStoreEnabled?: boolean | undefined;
-	readonly twitterConsumerKey?: string | undefined;
-	readonly twitterConsumerSecret?: string | undefined;
-	readonly unauthenticatedClientAction?: "AllowAnonymous" | undefined;
+	readonly openIdIssuer?: string;
+	readonly tokenRefreshExtensionHours?: number;
+	readonly tokenStoreEnabled?: boolean;
+	readonly twitterConsumerKey?: string;
+	readonly twitterConsumerSecret?: string;
+	readonly unauthenticatedClientAction?: "AllowAnonymous";
 }
 export class sites_config_backup
 	extends ArmResource<sites_config_backupComponentInputs>
@@ -418,11 +418,11 @@ export interface sites_config_backupComponentOutputs {
 	readonly type: "Microsoft.Web/sites/config";
 }
 export interface sites_config_backupComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: BackupRequestProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: BackupRequestProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_config_connectionstrings
 	extends ArmResource<sites_config_connectionstringsComponentInputs>
@@ -441,11 +441,11 @@ export interface sites_config_connectionstringsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/config";
 }
 export interface sites_config_connectionstringsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ConnectionStringDictionaryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ConnectionStringDictionaryProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_config_logs
 	extends ArmResource<sites_config_logsComponentInputs>
@@ -464,11 +464,11 @@ export interface sites_config_logsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/config";
 }
 export interface sites_config_logsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SiteLogsConfigProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SiteLogsConfigProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_config_metadata
 	extends ArmResource<sites_config_metadataComponentInputs>
@@ -487,11 +487,11 @@ export interface sites_config_metadataComponentOutputs {
 	readonly type: "Microsoft.Web/sites/config";
 }
 export interface sites_config_metadataComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StringDictionaryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: StringDictionaryProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_config_slotConfigNames
 	extends ArmResource<sites_config_slotConfigNamesComponentInputs>
@@ -510,11 +510,11 @@ export interface sites_config_slotConfigNamesComponentOutputs {
 	readonly type: "Microsoft.Web/sites/config";
 }
 export interface sites_config_slotConfigNamesComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SlotConfigNamesResourceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SlotConfigNamesResourceProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_config_web
 	extends ArmResource<sites_config_webComponentInputs>
@@ -533,11 +533,11 @@ export interface sites_config_webComponentOutputs {
 	readonly type: "Microsoft.Web/sites/config";
 }
 export interface sites_config_webComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SiteConfigProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SiteConfigProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_deployments
 	extends ArmResource<sites_deploymentsComponentInputs>
@@ -556,11 +556,11 @@ export interface sites_deploymentsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/deployments";
 }
 export interface sites_deploymentsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DeploymentProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: DeploymentProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_hostNameBindings
 	extends ArmResource<sites_hostNameBindingsComponentInputs>
@@ -579,11 +579,11 @@ export interface sites_hostNameBindingsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/hostNameBindings";
 }
 export interface sites_hostNameBindingsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: HostNameBindingProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: HostNameBindingProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_hybridconnection
 	extends ArmResource<sites_hybridconnectionComponentInputs>
@@ -602,11 +602,11 @@ export interface sites_hybridconnectionComponentOutputs {
 	readonly type: "Microsoft.Web/sites/hybridconnection";
 }
 export interface sites_hybridconnectionComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RelayServiceConnectionEntityProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: RelayServiceConnectionEntityProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_instances_deployments
 	extends ArmResource<sites_instances_deploymentsComponentInputs>
@@ -625,11 +625,11 @@ export interface sites_instances_deploymentsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/instances/deployments";
 }
 export interface sites_instances_deploymentsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DeploymentProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: DeploymentProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_networkFeatures
 	extends ArmResource<sites_networkFeaturesComponentInputs>
@@ -648,11 +648,11 @@ export interface sites_networkFeaturesComponentOutputs {
 	readonly type: "Microsoft.Web/sites/networkFeatures";
 }
 export interface sites_networkFeaturesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkFeaturesProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkFeaturesProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_premieraddons
 	extends ArmResource<sites_premieraddonsComponentInputs>
@@ -671,12 +671,12 @@ export interface sites_premieraddonsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/premieraddons";
 }
 export interface sites_premieraddonsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly plan?: ArmPlan | undefined;
-	readonly properties?: any | undefined;
-	readonly sku?: SkuDescription | undefined;
-	readonly tags?: PremierAddOnRequestTags | undefined;
+	readonly plan?: ArmPlan;
+	readonly properties?: any;
+	readonly sku?: SkuDescription;
+	readonly tags?: PremierAddOnRequestTags;
 }
 export class sites_slots extends ArmResource<sites_slotsComponentInputs> implements sites_slotsComponentOutputs {
 	constructor(entity: ADKEntity, options: sites_slotsComponentInputs) {
@@ -692,11 +692,11 @@ export interface sites_slotsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots";
 }
 export interface sites_slotsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SiteProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SiteProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_backups
 	extends ArmResource<sites_slots_backupsComponentInputs>
@@ -715,11 +715,11 @@ export interface sites_slots_backupsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/backups";
 }
 export interface sites_slots_backupsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RestoreRequestPropertiesOrBackupItemProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: RestoreRequestPropertiesOrBackupItemProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_config_appsettings
 	extends ArmResource<sites_slots_config_appsettingsComponentInputs>
@@ -738,11 +738,11 @@ export interface sites_slots_config_appsettingsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/config";
 }
 export interface sites_slots_config_appsettingsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StringDictionaryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: StringDictionaryProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_config_authsettings
 	extends ArmResource<sites_slots_config_authsettingsComponentInputs>
@@ -761,32 +761,32 @@ export interface sites_slots_config_authsettingsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/config";
 }
 export interface sites_slots_config_authsettingsComponentInputs {
-	readonly aadClientId?: string | undefined;
-	readonly additionalLoginParams?: string[] | undefined;
-	readonly allowedAudiences?: string[] | undefined;
-	readonly allowedExternalRedirectUrls?: string[] | undefined;
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
-	readonly defaultProvider?: ("AzureActiveDirectory" | "Facebook" | "Google" | "MicrosoftAccount") | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly facebookAppId?: string | undefined;
-	readonly facebookAppSecret?: string | undefined;
-	readonly facebookOAuthScopes?: string[] | undefined;
-	readonly googleClientId?: string | undefined;
-	readonly googleClientSecret?: string | undefined;
-	readonly googleOAuthScopes?: string[] | undefined;
-	readonly httpApiPrefixPath?: string | undefined;
-	readonly issuer?: string | undefined;
-	readonly microsoftAccountClientId?: string | undefined;
-	readonly microsoftAccountClientSecret?: string | undefined;
-	readonly microsoftAccountOAuthScopes?: string[] | undefined;
+	readonly aadClientId?: string;
+	readonly additionalLoginParams?: string[];
+	readonly allowedAudiences?: string[];
+	readonly allowedExternalRedirectUrls?: string[];
+	readonly clientId?: string;
+	readonly clientSecret?: string;
+	readonly defaultProvider?: "AzureActiveDirectory" | "Facebook" | "Google" | "MicrosoftAccount";
+	readonly enabled?: boolean;
+	readonly facebookAppId?: string;
+	readonly facebookAppSecret?: string;
+	readonly facebookOAuthScopes?: string[];
+	readonly googleClientId?: string;
+	readonly googleClientSecret?: string;
+	readonly googleOAuthScopes?: string[];
+	readonly httpApiPrefixPath?: string;
+	readonly issuer?: string;
+	readonly microsoftAccountClientId?: string;
+	readonly microsoftAccountClientSecret?: string;
+	readonly microsoftAccountOAuthScopes?: string[];
 	readonly name: string;
-	readonly openIdIssuer?: string | undefined;
-	readonly tokenRefreshExtensionHours?: number | undefined;
-	readonly tokenStoreEnabled?: boolean | undefined;
-	readonly twitterConsumerKey?: string | undefined;
-	readonly twitterConsumerSecret?: string | undefined;
-	readonly unauthenticatedClientAction?: "AllowAnonymous" | undefined;
+	readonly openIdIssuer?: string;
+	readonly tokenRefreshExtensionHours?: number;
+	readonly tokenStoreEnabled?: boolean;
+	readonly twitterConsumerKey?: string;
+	readonly twitterConsumerSecret?: string;
+	readonly unauthenticatedClientAction?: "AllowAnonymous";
 }
 export class sites_slots_config_backup
 	extends ArmResource<sites_slots_config_backupComponentInputs>
@@ -805,11 +805,11 @@ export interface sites_slots_config_backupComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/config";
 }
 export interface sites_slots_config_backupComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: BackupRequestProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: BackupRequestProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_config_connectionstrings
 	extends ArmResource<sites_slots_config_connectionstringsComponentInputs>
@@ -828,11 +828,11 @@ export interface sites_slots_config_connectionstringsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/config";
 }
 export interface sites_slots_config_connectionstringsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ConnectionStringDictionaryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ConnectionStringDictionaryProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_config_logs
 	extends ArmResource<sites_slots_config_logsComponentInputs>
@@ -851,11 +851,11 @@ export interface sites_slots_config_logsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/config";
 }
 export interface sites_slots_config_logsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SiteLogsConfigProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SiteLogsConfigProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_config_metadata
 	extends ArmResource<sites_slots_config_metadataComponentInputs>
@@ -874,11 +874,11 @@ export interface sites_slots_config_metadataComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/config";
 }
 export interface sites_slots_config_metadataComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StringDictionaryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: StringDictionaryProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_config_web
 	extends ArmResource<sites_slots_config_webComponentInputs>
@@ -897,11 +897,11 @@ export interface sites_slots_config_webComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/config";
 }
 export interface sites_slots_config_webComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SiteConfigProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SiteConfigProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_deployments
 	extends ArmResource<sites_slots_deploymentsComponentInputs>
@@ -920,11 +920,11 @@ export interface sites_slots_deploymentsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/deployments";
 }
 export interface sites_slots_deploymentsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DeploymentProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: DeploymentProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_hostNameBindings
 	extends ArmResource<sites_slots_hostNameBindingsComponentInputs>
@@ -943,11 +943,11 @@ export interface sites_slots_hostNameBindingsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/hostNameBindings";
 }
 export interface sites_slots_hostNameBindingsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: HostNameBindingProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: HostNameBindingProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_hybridconnection
 	extends ArmResource<sites_slots_hybridconnectionComponentInputs>
@@ -966,11 +966,11 @@ export interface sites_slots_hybridconnectionComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/hybridconnection";
 }
 export interface sites_slots_hybridconnectionComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RelayServiceConnectionEntityProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: RelayServiceConnectionEntityProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_instances_deployments
 	extends ArmResource<sites_slots_instances_deploymentsComponentInputs>
@@ -989,11 +989,11 @@ export interface sites_slots_instances_deploymentsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/instances/deployments";
 }
 export interface sites_slots_instances_deploymentsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DeploymentProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: DeploymentProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_networkFeatures
 	extends ArmResource<sites_slots_networkFeaturesComponentInputs>
@@ -1012,11 +1012,11 @@ export interface sites_slots_networkFeaturesComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/networkFeatures";
 }
 export interface sites_slots_networkFeaturesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkFeaturesProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkFeaturesProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_premieraddons
 	extends ArmResource<sites_slots_premieraddonsComponentInputs>
@@ -1035,12 +1035,12 @@ export interface sites_slots_premieraddonsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/premieraddons";
 }
 export interface sites_slots_premieraddonsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly plan?: ArmPlan | undefined;
-	readonly properties?: any | undefined;
-	readonly sku?: SkuDescription | undefined;
-	readonly tags?: PremierAddOnRequestTags | undefined;
+	readonly plan?: ArmPlan;
+	readonly properties?: any;
+	readonly sku?: SkuDescription;
+	readonly tags?: PremierAddOnRequestTags;
 }
 export class sites_slots_sourcecontrols
 	extends ArmResource<sites_slots_sourcecontrolsComponentInputs>
@@ -1059,11 +1059,11 @@ export interface sites_slots_sourcecontrolsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/sourcecontrols";
 }
 export interface sites_slots_sourcecontrolsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SiteSourceControlProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SiteSourceControlProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_virtualNetworkConnections
 	extends ArmResource<sites_slots_virtualNetworkConnectionsComponentInputs>
@@ -1082,11 +1082,11 @@ export interface sites_slots_virtualNetworkConnectionsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/slots/virtualNetworkConnections";
 }
 export interface sites_slots_virtualNetworkConnectionsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VnetInfoProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VnetInfoProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_slots_virtualNetworkConnections_gateways
 	extends ArmResource<sites_slots_virtualNetworkConnections_gatewaysComponentInputs>
@@ -1105,11 +1105,11 @@ export interface sites_slots_virtualNetworkConnections_gatewaysComponentOutputs 
 	readonly type: "Microsoft.Web/sites/slots/virtualNetworkConnections/gateways";
 }
 export interface sites_slots_virtualNetworkConnections_gatewaysComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VnetGatewayProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VnetGatewayProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_sourcecontrols
 	extends ArmResource<sites_sourcecontrolsComponentInputs>
@@ -1128,11 +1128,11 @@ export interface sites_sourcecontrolsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/sourcecontrols";
 }
 export interface sites_sourcecontrolsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SiteSourceControlProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SiteSourceControlProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_virtualNetworkConnections
 	extends ArmResource<sites_virtualNetworkConnectionsComponentInputs>
@@ -1151,11 +1151,11 @@ export interface sites_virtualNetworkConnectionsComponentOutputs {
 	readonly type: "Microsoft.Web/sites/virtualNetworkConnections";
 }
 export interface sites_virtualNetworkConnectionsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VnetInfoProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VnetInfoProperties;
+	readonly tags?: ResourceTags;
 }
 export class sites_virtualNetworkConnections_gateways
 	extends ArmResource<sites_virtualNetworkConnections_gatewaysComponentInputs>
@@ -1174,11 +1174,11 @@ export interface sites_virtualNetworkConnections_gatewaysComponentOutputs {
 	readonly type: "Microsoft.Web/sites/virtualNetworkConnections/gateways";
 }
 export interface sites_virtualNetworkConnections_gatewaysComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VnetGatewayProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VnetGatewayProperties;
+	readonly tags?: ResourceTags;
 }
 export class sourcecontrols extends ArmResource<sourcecontrolsComponentInputs> implements sourcecontrolsComponentOutputs {
 	constructor(entity: ADKEntity, options: sourcecontrolsComponentInputs) {
@@ -1194,11 +1194,11 @@ export interface sourcecontrolsComponentOutputs {
 	readonly type: "Microsoft.Web/sourcecontrols";
 }
 export interface sourcecontrolsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SourceControlProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SourceControlProperties;
+	readonly tags?: ResourceTags;
 }
 export function list(resource: ArmResource): StringDictionary {
 	if (resource.apiVersion !== "2015-08-01") {
@@ -1210,74 +1210,74 @@ export function list(resource: ArmResource): StringDictionary {
 	throw new Error("not implemented");
 }
 export interface ApiDefinitionInfo {
-	readonly url?: string | undefined;
+	readonly url?: string;
 }
 export interface ApplicationLogsConfig {
-	readonly azureBlobStorage?: AzureBlobStorageApplicationLogsConfig | undefined;
-	readonly azureTableStorage?: AzureTableStorageApplicationLogsConfig | undefined;
-	readonly fileSystem?: FileSystemApplicationLogsConfig | undefined;
+	readonly azureBlobStorage?: AzureBlobStorageApplicationLogsConfig;
+	readonly azureTableStorage?: AzureTableStorageApplicationLogsConfig;
+	readonly fileSystem?: FileSystemApplicationLogsConfig;
 }
 export interface ArmPlan {
-	readonly name?: string | undefined;
-	readonly product?: string | undefined;
-	readonly promotionCode?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly version?: string | undefined;
+	readonly name?: string;
+	readonly product?: string;
+	readonly promotionCode?: string;
+	readonly publisher?: string;
+	readonly version?: string;
 }
 export interface AutoHealActions {
 	readonly actionType: "CustomAction" | "LogEvent";
-	readonly customAction?: AutoHealCustomAction | undefined;
-	readonly minProcessExecutionTime?: string | undefined;
+	readonly customAction?: AutoHealCustomAction;
+	readonly minProcessExecutionTime?: string;
 }
 export interface AutoHealCustomAction {
-	readonly exe?: string | undefined;
-	readonly parameters?: string | undefined;
+	readonly exe?: string;
+	readonly parameters?: string;
 }
 export interface AutoHealRules {
-	readonly actions?: AutoHealActions | undefined;
-	readonly triggers?: AutoHealTriggers | undefined;
+	readonly actions?: AutoHealActions;
+	readonly triggers?: AutoHealTriggers;
 }
 export interface AutoHealTriggers {
-	readonly privateBytesInKB?: number | undefined;
-	readonly requests?: RequestsBasedTrigger | undefined;
-	readonly slowRequests?: SlowRequestsBasedTrigger | undefined;
-	readonly statusCodes?: StatusCodesBasedTrigger[] | undefined;
+	readonly privateBytesInKB?: number;
+	readonly requests?: RequestsBasedTrigger;
+	readonly slowRequests?: SlowRequestsBasedTrigger;
+	readonly statusCodes?: StatusCodesBasedTrigger[];
 }
 export interface AzureBlobStorageApplicationLogsConfig {
-	readonly level?: ("Error" | "Information" | "Off" | "Verbose") | undefined;
-	readonly retentionInDays?: number | undefined;
-	readonly sasUrl?: string | undefined;
+	readonly level?: "Error" | "Information" | "Off" | "Verbose";
+	readonly retentionInDays?: number;
+	readonly sasUrl?: string;
 }
 export interface AzureBlobStorageHttpLogsConfig {
-	readonly enabled?: boolean | undefined;
-	readonly retentionInDays?: number | undefined;
-	readonly sasUrl?: string | undefined;
+	readonly enabled?: boolean;
+	readonly retentionInDays?: number;
+	readonly sasUrl?: string;
 }
 export interface AzureTableStorageApplicationLogsConfig {
-	readonly level?: ("Error" | "Information" | "Off" | "Verbose") | undefined;
-	readonly sasUrl?: string | undefined;
+	readonly level?: "Error" | "Information" | "Off" | "Verbose";
+	readonly sasUrl?: string;
 }
 export interface BackupItem {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: BackupItemProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: BackupItemProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface BackupItemProperties {
-	readonly blobName?: string | undefined;
-	readonly correlationId?: string | undefined;
-	readonly created?: string | undefined;
-	readonly databases?: DatabaseBackupSetting[] | undefined;
-	readonly finishedTimeStamp?: string | undefined;
-	readonly id?: number | undefined;
-	readonly lastRestoreTimeStamp?: string | undefined;
-	readonly log?: string | undefined;
-	readonly name?: string | undefined;
-	readonly scheduled?: boolean | undefined;
-	readonly sizeInBytes?: number | undefined;
+	readonly blobName?: string;
+	readonly correlationId?: string;
+	readonly created?: string;
+	readonly databases?: DatabaseBackupSetting[];
+	readonly finishedTimeStamp?: string;
+	readonly id?: number;
+	readonly lastRestoreTimeStamp?: string;
+	readonly log?: string;
+	readonly name?: string;
+	readonly scheduled?: boolean;
+	readonly sizeInBytes?: number;
 	readonly status:
 		| "Created"
 		| "DeleteFailed"
@@ -1288,565 +1288,562 @@ export interface BackupItemProperties {
 		| "PartiallySucceeded"
 		| "Skipped"
 		| "Succeeded";
-	readonly storageAccountUrl?: string | undefined;
-	readonly websiteSizeInBytes?: number | undefined;
+	readonly storageAccountUrl?: string;
+	readonly websiteSizeInBytes?: number;
 }
 export interface BackupRequest {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: BackupRequestProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: BackupRequestProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface BackupRequestProperties {
-	readonly backupSchedule?: BackupSchedule | undefined;
-	readonly databases?: DatabaseBackupSetting[] | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly storageAccountUrl?: string | undefined;
+	readonly backupSchedule?: BackupSchedule;
+	readonly databases?: DatabaseBackupSetting[];
+	readonly enabled?: boolean;
+	readonly name?: string;
+	readonly storageAccountUrl?: string;
 	readonly type: "Clone" | "Default";
 }
 export interface BackupSchedule {
-	readonly frequencyInterval?: number | undefined;
+	readonly frequencyInterval?: number;
 	readonly frequencyUnit: "Day";
-	readonly keepAtLeastOneBackup?: boolean | undefined;
-	readonly lastExecutionTime?: string | undefined;
-	readonly retentionPeriodInDays?: number | undefined;
-	readonly startTime?: string | undefined;
+	readonly keepAtLeastOneBackup?: boolean;
+	readonly lastExecutionTime?: string;
+	readonly retentionPeriodInDays?: number;
+	readonly startTime?: string;
 }
 export interface CertificateProperties {
-	readonly cerBlob?: string | undefined;
-	readonly expirationDate?: string | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly hostingEnvironmentProfile?: HostingEnvironmentProfile | undefined;
-	readonly hostNames?: string[] | undefined;
-	readonly issueDate?: string | undefined;
-	readonly issuer?: string | undefined;
-	readonly password?: string | undefined;
-	readonly pfxBlob?: string | undefined;
-	readonly publicKeyHash?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly siteName?: string | undefined;
-	readonly subjectName?: string | undefined;
-	readonly thumbprint?: string | undefined;
-	readonly valid?: boolean | undefined;
+	readonly cerBlob?: string;
+	readonly expirationDate?: string;
+	readonly friendlyName?: string;
+	readonly hostingEnvironmentProfile?: HostingEnvironmentProfile;
+	readonly hostNames?: string[];
+	readonly issueDate?: string;
+	readonly issuer?: string;
+	readonly password?: string;
+	readonly pfxBlob?: string;
+	readonly publicKeyHash?: string;
+	readonly selfLink?: string;
+	readonly siteName?: string;
+	readonly subjectName?: string;
+	readonly thumbprint?: string;
+	readonly valid?: boolean;
 }
 export interface ClassicMobileServiceProperties {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface CloningInfo {
-	readonly appSettingsOverrides?: CloningInfoAppSettingsOverrides | undefined;
-	readonly cloneCustomHostNames?: boolean | undefined;
-	readonly cloneSourceControl?: boolean | undefined;
-	readonly configureLoadBalancing?: boolean | undefined;
-	readonly correlationId?: string | undefined;
-	readonly hostingEnvironment?: string | undefined;
-	readonly overwrite?: boolean | undefined;
-	readonly sourceWebAppId?: string | undefined;
-	readonly trafficManagerProfileId?: string | undefined;
-	readonly trafficManagerProfileName?: string | undefined;
+	readonly appSettingsOverrides?: CloningInfoAppSettingsOverrides;
+	readonly cloneCustomHostNames?: boolean;
+	readonly cloneSourceControl?: boolean;
+	readonly configureLoadBalancing?: boolean;
+	readonly correlationId?: string;
+	readonly hostingEnvironment?: string;
+	readonly overwrite?: boolean;
+	readonly sourceWebAppId?: string;
+	readonly trafficManagerProfileId?: string;
+	readonly trafficManagerProfileName?: string;
 }
 export interface CloningInfoAppSettingsOverrides {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ConnectionStringDictionaryProperties {
-	readonly "[ key: string ]"?: ConnStringValueTypePair | undefined;
+	readonly [key: string]: ConnStringValueTypePair;
 }
 export interface ConnStringInfo {
-	readonly connectionString?: string | undefined;
-	readonly name?: string | undefined;
+	readonly connectionString?: string;
+	readonly name?: string;
 	readonly type: "Custom" | "MySql" | "SQLAzure";
 }
 export interface ConnStringValueTypePair {
 	readonly type: "Custom" | "MySql" | "SQLAzure";
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface CorsSettings {
-	readonly allowedOrigins?: string[] | undefined;
+	readonly allowedOrigins?: string[];
 }
 export interface CsrProperties {
-	readonly csrString?: string | undefined;
-	readonly distinguishedName?: string | undefined;
-	readonly hostingEnvironment?: string | undefined;
-	readonly name?: string | undefined;
-	readonly password?: string | undefined;
-	readonly pfxBlob?: string | undefined;
-	readonly publicKeyHash?: string | undefined;
+	readonly csrString?: string;
+	readonly distinguishedName?: string;
+	readonly hostingEnvironment?: string;
+	readonly name?: string;
+	readonly password?: string;
+	readonly pfxBlob?: string;
+	readonly publicKeyHash?: string;
 }
 export interface DatabaseBackupSetting {
-	readonly connectionString?: string | undefined;
-	readonly connectionStringName?: string | undefined;
-	readonly databaseType?: string | undefined;
-	readonly name?: string | undefined;
+	readonly connectionString?: string;
+	readonly connectionStringName?: string;
+	readonly databaseType?: string;
+	readonly name?: string;
 }
 export interface DeploymentProperties {
-	readonly active?: boolean | undefined;
-	readonly author?: string | undefined;
-	readonly author_email?: string | undefined;
-	readonly deployer?: string | undefined;
-	readonly details?: string | undefined;
-	readonly end_time?: string | undefined;
-	readonly id?: string | undefined;
-	readonly message?: string | undefined;
-	readonly start_time?: string | undefined;
-	readonly status?: number | undefined;
+	readonly active?: boolean;
+	readonly author?: string;
+	readonly author_email?: string;
+	readonly deployer?: string;
+	readonly details?: string;
+	readonly end_time?: string;
+	readonly id?: string;
+	readonly message?: string;
+	readonly start_time?: string;
+	readonly status?: number;
 }
 export interface EnabledConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface Experiments {
-	readonly rampUpRules?: RampUpRule[] | undefined;
+	readonly rampUpRules?: RampUpRule[];
 }
 export interface FileSystemApplicationLogsConfig {
-	readonly level?: ("Error" | "Information" | "Off" | "Verbose") | undefined;
+	readonly level?: "Error" | "Information" | "Off" | "Verbose";
 }
 export interface FileSystemHttpLogsConfig {
-	readonly enabled?: boolean | undefined;
-	readonly retentionInDays?: number | undefined;
-	readonly retentionInMb?: number | undefined;
+	readonly enabled?: boolean;
+	readonly retentionInDays?: number;
+	readonly retentionInMb?: number;
 }
 export interface HandlerMapping {
-	readonly arguments?: string | undefined;
-	readonly extension?: string | undefined;
-	readonly scriptProcessor?: string | undefined;
+	readonly arguments?: string;
+	readonly extension?: string;
+	readonly scriptProcessor?: string;
 }
 export interface HostingEnvironmentProfile {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface HostingEnvironmentProperties {
-	readonly allowedMultiSizes?: string | undefined;
-	readonly allowedWorkerSizes?: string | undefined;
-	readonly apiManagementAccountId?: string | undefined;
-	readonly clusterSettings?: NameValuePair[] | undefined;
-	readonly databaseEdition?: string | undefined;
-	readonly databaseServiceObjective?: string | undefined;
-	readonly dnsSuffix?: string | undefined;
-	readonly environmentCapacities?: StampCapacity[] | undefined;
-	readonly environmentIsHealthy?: boolean | undefined;
-	readonly environmentStatus?: string | undefined;
-	readonly internalLoadBalancingMode?: ("None" | "Publishing") | undefined;
-	readonly ipsslAddressCount?: number | undefined;
-	readonly lastAction?: string | undefined;
-	readonly lastActionResult?: string | undefined;
-	readonly location?: string | undefined;
-	readonly maximumNumberOfMachines?: number | undefined;
-	readonly multiRoleCount?: number | undefined;
-	readonly multiSize?: string | undefined;
-	readonly name?: string | undefined;
-	readonly networkAccessControlList?: NetworkAccessControlEntry[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleting" | "Failed" | "InProgress") | undefined;
-	readonly resourceGroup?: string | undefined;
+	readonly allowedMultiSizes?: string;
+	readonly allowedWorkerSizes?: string;
+	readonly apiManagementAccountId?: string;
+	readonly clusterSettings?: NameValuePair[];
+	readonly databaseEdition?: string;
+	readonly databaseServiceObjective?: string;
+	readonly dnsSuffix?: string;
+	readonly environmentCapacities?: StampCapacity[];
+	readonly environmentIsHealthy?: boolean;
+	readonly environmentStatus?: string;
+	readonly internalLoadBalancingMode?: "None" | "Publishing";
+	readonly ipsslAddressCount?: number;
+	readonly lastAction?: string;
+	readonly lastActionResult?: string;
+	readonly location?: string;
+	readonly maximumNumberOfMachines?: number;
+	readonly multiRoleCount?: number;
+	readonly multiSize?: string;
+	readonly name?: string;
+	readonly networkAccessControlList?: NetworkAccessControlEntry[];
+	readonly provisioningState?: "Canceled" | "Deleting" | "Failed" | "InProgress";
+	readonly resourceGroup?: string;
 	readonly status: "Deleting" | "Preparing" | "Ready";
-	readonly subscriptionId?: string | undefined;
-	readonly suspended?: boolean | undefined;
-	readonly upgradeDomains?: number | undefined;
-	readonly vipMappings?: VirtualIPMapping[] | undefined;
-	readonly virtualNetwork?: VirtualNetworkProfile | undefined;
-	readonly vnetName?: string | undefined;
-	readonly vnetResourceGroupName?: string | undefined;
-	readonly vnetSubnetName?: string | undefined;
-	readonly workerPools?: WorkerPool[] | undefined;
+	readonly subscriptionId?: string;
+	readonly suspended?: boolean;
+	readonly upgradeDomains?: number;
+	readonly vipMappings?: VirtualIPMapping[];
+	readonly virtualNetwork?: VirtualNetworkProfile;
+	readonly vnetName?: string;
+	readonly vnetResourceGroupName?: string;
+	readonly vnetSubnetName?: string;
+	readonly workerPools?: WorkerPool[];
 }
 export interface HostingEnvironmentPropertiesOrManagedHostingEnvironmentProperties {
-	readonly allowedMultiSizes?: string | undefined;
-	readonly allowedWorkerSizes?: string | undefined;
-	readonly apiManagementAccount?: string | undefined;
-	readonly apiManagementAccountId?: string | undefined;
-	readonly clusterSettings?: NameValuePair[] | undefined;
-	readonly databaseEdition?: string | undefined;
-	readonly databaseServiceObjective?: string | undefined;
-	readonly dnsSuffix?: string | undefined;
-	readonly environmentCapacities?: StampCapacity[] | undefined;
-	readonly environmentIsHealthy?: boolean | undefined;
-	readonly environmentStatus?: string | undefined;
-	readonly internalLoadBalancingMode?: ("None" | "Publishing") | undefined;
-	readonly ipsslAddressCount?: number | undefined;
-	readonly lastAction?: string | undefined;
-	readonly lastActionResult?: string | undefined;
-	readonly location?: string | undefined;
-	readonly maximumNumberOfMachines?: number | undefined;
-	readonly multiRoleCount?: number | undefined;
-	readonly multiSize?: string | undefined;
-	readonly name?: string | undefined;
-	readonly networkAccessControlList?: NetworkAccessControlEntry[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleting" | "Failed" | "InProgress") | undefined;
-	readonly resourceGroup?: string | undefined;
+	readonly allowedMultiSizes?: string;
+	readonly allowedWorkerSizes?: string;
+	readonly apiManagementAccount?: string;
+	readonly apiManagementAccountId?: string;
+	readonly clusterSettings?: NameValuePair[];
+	readonly databaseEdition?: string;
+	readonly databaseServiceObjective?: string;
+	readonly dnsSuffix?: string;
+	readonly environmentCapacities?: StampCapacity[];
+	readonly environmentIsHealthy?: boolean;
+	readonly environmentStatus?: string;
+	readonly internalLoadBalancingMode?: "None" | "Publishing";
+	readonly ipsslAddressCount?: number;
+	readonly lastAction?: string;
+	readonly lastActionResult?: string;
+	readonly location?: string;
+	readonly maximumNumberOfMachines?: number;
+	readonly multiRoleCount?: number;
+	readonly multiSize?: string;
+	readonly name?: string;
+	readonly networkAccessControlList?: NetworkAccessControlEntry[];
+	readonly provisioningState?: "Canceled" | "Deleting" | "Failed" | "InProgress";
+	readonly resourceGroup?: string;
 	readonly status: "Deleting" | "Preparing" | "Ready";
-	readonly subscriptionId?: string | undefined;
-	readonly suspended?: boolean | undefined;
-	readonly upgradeDomains?: number | undefined;
-	readonly vipMappings?: VirtualIPMapping[] | undefined;
-	readonly virtualNetwork?: VirtualNetworkProfile | undefined;
-	readonly vnetName?: string | undefined;
-	readonly vnetResourceGroupName?: string | undefined;
-	readonly vnetSubnetName?: string | undefined;
-	readonly workerPools?: WorkerPool[] | undefined;
+	readonly subscriptionId?: string;
+	readonly suspended?: boolean;
+	readonly upgradeDomains?: number;
+	readonly vipMappings?: VirtualIPMapping[];
+	readonly virtualNetwork?: VirtualNetworkProfile;
+	readonly vnetName?: string;
+	readonly vnetResourceGroupName?: string;
+	readonly vnetSubnetName?: string;
+	readonly workerPools?: WorkerPool[];
 }
 export interface HostNameBindingProperties {
-	readonly azureResourceName?: string | undefined;
-	readonly azureResourceType?: "TrafficManager" | undefined;
-	readonly customHostNameDnsRecordType?: "A" | undefined;
-	readonly domainId?: string | undefined;
-	readonly hostNameType?: "Managed" | undefined;
-	readonly name?: string | undefined;
-	readonly siteName?: string | undefined;
+	readonly azureResourceName?: string;
+	readonly azureResourceType?: "TrafficManager";
+	readonly customHostNameDnsRecordType?: "A";
+	readonly domainId?: string;
+	readonly hostNameType?: "Managed";
+	readonly name?: string;
+	readonly siteName?: string;
 }
 export interface HostNameSslState {
-	readonly name?: string | undefined;
+	readonly name?: string;
 	readonly sslState: "Disabled" | "IpBasedEnabled";
-	readonly thumbprint?: string | undefined;
-	readonly toUpdate?: boolean | undefined;
-	readonly virtualIP?: string | undefined;
+	readonly thumbprint?: string;
+	readonly toUpdate?: boolean;
+	readonly virtualIP?: string;
 }
 export interface HttpLogsConfig {
-	readonly azureBlobStorage?: AzureBlobStorageHttpLogsConfig | undefined;
-	readonly fileSystem?: FileSystemHttpLogsConfig | undefined;
+	readonly azureBlobStorage?: AzureBlobStorageHttpLogsConfig;
+	readonly fileSystem?: FileSystemHttpLogsConfig;
 }
 export interface IpSecurityRestriction {
-	readonly ipAddress?: string | undefined;
-	readonly subnetMask?: string | undefined;
+	readonly ipAddress?: string;
+	readonly subnetMask?: string;
 }
 export interface NameValuePair {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface NetworkAccessControlEntry {
-	readonly action?: "Deny" | undefined;
-	readonly description?: string | undefined;
-	readonly order?: number | undefined;
-	readonly remoteSubnet?: string | undefined;
+	readonly action?: "Deny";
+	readonly description?: string;
+	readonly order?: number;
+	readonly remoteSubnet?: string;
 }
 export interface NetworkFeaturesProperties {
-	readonly hybridConnections?: RelayServiceConnectionEntity[] | undefined;
-	readonly virtualNetworkConnection?: VnetInfo | undefined;
-	readonly virtualNetworkName?: string | undefined;
+	readonly hybridConnections?: RelayServiceConnectionEntity[];
+	readonly virtualNetworkConnection?: VnetInfo;
+	readonly virtualNetworkName?: string;
 }
 export interface PremierAddOnRequestTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RampUpRule {
-	readonly actionHostName?: string | undefined;
-	readonly changeDecisionCallbackUrl?: string | undefined;
-	readonly changeIntervalInMinutes?: number | undefined;
-	readonly changeStep?: number | undefined;
-	readonly maxReroutePercentage?: number | undefined;
-	readonly minReroutePercentage?: number | undefined;
-	readonly name?: string | undefined;
-	readonly reroutePercentage?: number | undefined;
+	readonly actionHostName?: string;
+	readonly changeDecisionCallbackUrl?: string;
+	readonly changeIntervalInMinutes?: number;
+	readonly changeStep?: number;
+	readonly maxReroutePercentage?: number;
+	readonly minReroutePercentage?: number;
+	readonly name?: string;
+	readonly reroutePercentage?: number;
 }
 export interface RelayServiceConnectionEntity {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: RelayServiceConnectionEntityProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: RelayServiceConnectionEntityProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface RelayServiceConnectionEntityProperties {
-	readonly biztalkUri?: string | undefined;
-	readonly entityConnectionString?: string | undefined;
-	readonly entityName?: string | undefined;
-	readonly hostname?: string | undefined;
-	readonly port?: number | undefined;
-	readonly resourceConnectionString?: string | undefined;
-	readonly resourceType?: string | undefined;
+	readonly biztalkUri?: string;
+	readonly entityConnectionString?: string;
+	readonly entityName?: string;
+	readonly hostname?: string;
+	readonly port?: number;
+	readonly resourceConnectionString?: string;
+	readonly resourceType?: string;
 }
 export interface RequestsBasedTrigger {
-	readonly count?: number | undefined;
-	readonly timeInterval?: string | undefined;
+	readonly count?: number;
+	readonly timeInterval?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RestoreRequestPropertiesOrBackupItemProperties {
-	readonly adjustConnectionStrings?: boolean | undefined;
-	readonly blobName?: string | undefined;
-	readonly correlationId?: string | undefined;
-	readonly created?: string | undefined;
-	readonly databases?: DatabaseBackupSetting[] | undefined;
-	readonly finishedTimeStamp?: string | undefined;
-	readonly hostingEnvironment?: string | undefined;
-	readonly id?: number | undefined;
-	readonly ignoreConflictingHostNames?: boolean | undefined;
-	readonly lastRestoreTimeStamp?: string | undefined;
-	readonly log?: string | undefined;
-	readonly name?: string | undefined;
+	readonly adjustConnectionStrings?: boolean;
+	readonly blobName?: string;
+	readonly correlationId?: string;
+	readonly created?: string;
+	readonly databases?: DatabaseBackupSetting[];
+	readonly finishedTimeStamp?: string;
+	readonly hostingEnvironment?: string;
+	readonly id?: number;
+	readonly ignoreConflictingHostNames?: boolean;
+	readonly lastRestoreTimeStamp?: string;
+	readonly log?: string;
+	readonly name?: string;
 	readonly operationType: "Clone" | "Default";
-	readonly overwrite?: boolean | undefined;
-	readonly scheduled?: boolean | undefined;
-	readonly siteName?: string | undefined;
-	readonly sizeInBytes?: number | undefined;
+	readonly overwrite?: boolean;
+	readonly scheduled?: boolean;
+	readonly siteName?: string;
+	readonly sizeInBytes?: number;
 	readonly status?:
-		| (
-				| "Created"
-				| "DeleteFailed"
-				| "DeleteInProgress"
-				| "Deleted"
-				| "Failed"
-				| "InProgress"
-				| "PartiallySucceeded"
-				| "Skipped"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly storageAccountUrl?: string | undefined;
-	readonly websiteSizeInBytes?: number | undefined;
+		| "Created"
+		| "DeleteFailed"
+		| "DeleteInProgress"
+		| "Deleted"
+		| "Failed"
+		| "InProgress"
+		| "PartiallySucceeded"
+		| "Skipped"
+		| "Succeeded";
+	readonly storageAccountUrl?: string;
+	readonly websiteSizeInBytes?: number;
 }
 export interface ServerFarmWithRichSkuProperties {
-	readonly adminSiteName?: string | undefined;
-	readonly geoRegion?: string | undefined;
-	readonly hostingEnvironmentProfile?: HostingEnvironmentProfile | undefined;
-	readonly maximumNumberOfWorkers?: number | undefined;
-	readonly name?: string | undefined;
-	readonly numberOfSites?: number | undefined;
-	readonly perSiteScaling?: boolean | undefined;
-	readonly reserved?: boolean | undefined;
-	readonly resourceGroup?: string | undefined;
+	readonly adminSiteName?: string;
+	readonly geoRegion?: string;
+	readonly hostingEnvironmentProfile?: HostingEnvironmentProfile;
+	readonly maximumNumberOfWorkers?: number;
+	readonly name?: string;
+	readonly numberOfSites?: number;
+	readonly perSiteScaling?: boolean;
+	readonly reserved?: boolean;
+	readonly resourceGroup?: string;
 	readonly status: "Pending";
-	readonly subscription?: string | undefined;
-	readonly workerTierName?: string | undefined;
+	readonly subscription?: string;
+	readonly workerTierName?: string;
 }
 export interface SiteConfig {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: SiteConfigProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: SiteConfigProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface SiteConfigProperties {
-	readonly alwaysOn?: boolean | undefined;
-	readonly apiDefinition?: ApiDefinitionInfo | undefined;
-	readonly appCommandLine?: string | undefined;
-	readonly appSettings?: NameValuePair[] | undefined;
-	readonly autoHealEnabled?: boolean | undefined;
-	readonly autoHealRules?: AutoHealRules | undefined;
-	readonly autoSwapSlotName?: string | undefined;
-	readonly connectionStrings?: ConnStringInfo[] | undefined;
-	readonly cors?: CorsSettings | undefined;
-	readonly defaultDocuments?: string[] | undefined;
-	readonly detailedErrorLoggingEnabled?: boolean | undefined;
-	readonly documentRoot?: string | undefined;
-	readonly experiments?: Experiments | undefined;
-	readonly handlerMappings?: HandlerMapping[] | undefined;
-	readonly httpLoggingEnabled?: boolean | undefined;
-	readonly ipSecurityRestrictions?: IpSecurityRestriction[] | undefined;
-	readonly javaContainer?: string | undefined;
-	readonly javaContainerVersion?: string | undefined;
-	readonly javaVersion?: string | undefined;
-	readonly limits?: SiteLimits | undefined;
-	readonly loadBalancing?: ("LeastRequests" | "LeastResponseTime" | "RequestHash" | "WeightedRoundRobin") | undefined;
-	readonly localMySqlEnabled?: boolean | undefined;
-	readonly logsDirectorySizeLimit?: number | undefined;
-	readonly managedPipelineMode?: "Classic" | undefined;
-	readonly metadata?: NameValuePair[] | undefined;
-	readonly netFrameworkVersion?: string | undefined;
-	readonly nodeVersion?: string | undefined;
-	readonly numberOfWorkers?: number | undefined;
-	readonly phpVersion?: string | undefined;
-	readonly publishingPassword?: string | undefined;
-	readonly publishingUsername?: string | undefined;
-	readonly pythonVersion?: string | undefined;
-	readonly remoteDebuggingEnabled?: boolean | undefined;
-	readonly remoteDebuggingVersion?: string | undefined;
-	readonly requestTracingEnabled?: boolean | undefined;
-	readonly requestTracingExpirationTime?: string | undefined;
-	readonly scmType?: string | undefined;
-	readonly tracingOptions?: string | undefined;
-	readonly use32BitWorkerProcess?: boolean | undefined;
-	readonly virtualApplications?: VirtualApplication[] | undefined;
-	readonly vnetName?: string | undefined;
-	readonly webSocketsEnabled?: boolean | undefined;
+	readonly alwaysOn?: boolean;
+	readonly apiDefinition?: ApiDefinitionInfo;
+	readonly appCommandLine?: string;
+	readonly appSettings?: NameValuePair[];
+	readonly autoHealEnabled?: boolean;
+	readonly autoHealRules?: AutoHealRules;
+	readonly autoSwapSlotName?: string;
+	readonly connectionStrings?: ConnStringInfo[];
+	readonly cors?: CorsSettings;
+	readonly defaultDocuments?: string[];
+	readonly detailedErrorLoggingEnabled?: boolean;
+	readonly documentRoot?: string;
+	readonly experiments?: Experiments;
+	readonly handlerMappings?: HandlerMapping[];
+	readonly httpLoggingEnabled?: boolean;
+	readonly ipSecurityRestrictions?: IpSecurityRestriction[];
+	readonly javaContainer?: string;
+	readonly javaContainerVersion?: string;
+	readonly javaVersion?: string;
+	readonly limits?: SiteLimits;
+	readonly loadBalancing?: "LeastRequests" | "LeastResponseTime" | "RequestHash" | "WeightedRoundRobin";
+	readonly localMySqlEnabled?: boolean;
+	readonly logsDirectorySizeLimit?: number;
+	readonly managedPipelineMode?: "Classic";
+	readonly metadata?: NameValuePair[];
+	readonly netFrameworkVersion?: string;
+	readonly nodeVersion?: string;
+	readonly numberOfWorkers?: number;
+	readonly phpVersion?: string;
+	readonly publishingPassword?: string;
+	readonly publishingUsername?: string;
+	readonly pythonVersion?: string;
+	readonly remoteDebuggingEnabled?: boolean;
+	readonly remoteDebuggingVersion?: string;
+	readonly requestTracingEnabled?: boolean;
+	readonly requestTracingExpirationTime?: string;
+	readonly scmType?: string;
+	readonly tracingOptions?: string;
+	readonly use32BitWorkerProcess?: boolean;
+	readonly virtualApplications?: VirtualApplication[];
+	readonly vnetName?: string;
+	readonly webSocketsEnabled?: boolean;
 }
 export interface SiteLimits {
-	readonly maxDiskSizeInMb?: number | undefined;
-	readonly maxMemoryInMb?: number | undefined;
-	readonly maxPercentageCpu?: number | undefined;
+	readonly maxDiskSizeInMb?: number;
+	readonly maxMemoryInMb?: number;
+	readonly maxPercentageCpu?: number;
 }
 export interface SiteLogsConfigProperties {
-	readonly applicationLogs?: ApplicationLogsConfig | undefined;
-	readonly detailedErrorMessages?: EnabledConfig | undefined;
-	readonly failedRequestsTracing?: EnabledConfig | undefined;
-	readonly httpLogs?: HttpLogsConfig | undefined;
+	readonly applicationLogs?: ApplicationLogsConfig;
+	readonly detailedErrorMessages?: EnabledConfig;
+	readonly failedRequestsTracing?: EnabledConfig;
+	readonly httpLogs?: HttpLogsConfig;
 }
 export interface SiteProperties {
 	readonly availabilityState: "DisasterRecoveryMode" | "Limited";
-	readonly clientAffinityEnabled?: boolean | undefined;
-	readonly clientCertEnabled?: boolean | undefined;
-	readonly cloningInfo?: CloningInfo | undefined;
-	readonly containerSize?: number | undefined;
-	readonly defaultHostName?: string | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly enabledHostNames?: string[] | undefined;
-	readonly gatewaySiteName?: string | undefined;
-	readonly hostingEnvironmentProfile?: HostingEnvironmentProfile | undefined;
-	readonly hostNames?: string[] | undefined;
-	readonly hostNamesDisabled?: boolean | undefined;
-	readonly hostNameSslStates?: HostNameSslState[] | undefined;
-	readonly isDefaultContainer?: boolean | undefined;
-	readonly lastModifiedTimeUtc?: string | undefined;
-	readonly maxNumberOfWorkers?: number | undefined;
-	readonly microService?: string | undefined;
-	readonly name?: string | undefined;
-	readonly outboundIpAddresses?: string | undefined;
-	readonly premiumAppDeployed?: boolean | undefined;
-	readonly repositorySiteName?: string | undefined;
-	readonly resourceGroup?: string | undefined;
-	readonly scmSiteAlsoStopped?: boolean | undefined;
-	readonly serverFarmId?: string | undefined;
-	readonly siteConfig?: SiteConfig | undefined;
-	readonly state?: string | undefined;
-	readonly targetSwapSlot?: string | undefined;
-	readonly trafficManagerHostNames?: string[] | undefined;
+	readonly clientAffinityEnabled?: boolean;
+	readonly clientCertEnabled?: boolean;
+	readonly cloningInfo?: CloningInfo;
+	readonly containerSize?: number;
+	readonly defaultHostName?: string;
+	readonly enabled?: boolean;
+	readonly enabledHostNames?: string[];
+	readonly gatewaySiteName?: string;
+	readonly hostingEnvironmentProfile?: HostingEnvironmentProfile;
+	readonly hostNames?: string[];
+	readonly hostNamesDisabled?: boolean;
+	readonly hostNameSslStates?: HostNameSslState[];
+	readonly isDefaultContainer?: boolean;
+	readonly lastModifiedTimeUtc?: string;
+	readonly maxNumberOfWorkers?: number;
+	readonly microService?: string;
+	readonly name?: string;
+	readonly outboundIpAddresses?: string;
+	readonly premiumAppDeployed?: boolean;
+	readonly repositorySiteName?: string;
+	readonly resourceGroup?: string;
+	readonly scmSiteAlsoStopped?: boolean;
+	readonly serverFarmId?: string;
+	readonly siteConfig?: SiteConfig;
+	readonly state?: string;
+	readonly targetSwapSlot?: string;
+	readonly trafficManagerHostNames?: string[];
 	readonly usageState: "Exceeded";
 }
 export interface SiteSourceControlProperties {
-	readonly branch?: string | undefined;
-	readonly deploymentRollbackEnabled?: boolean | undefined;
-	readonly isManualIntegration?: boolean | undefined;
-	readonly isMercurial?: boolean | undefined;
-	readonly repoUrl?: string | undefined;
+	readonly branch?: string;
+	readonly deploymentRollbackEnabled?: boolean;
+	readonly isManualIntegration?: boolean;
+	readonly isMercurial?: boolean;
+	readonly repoUrl?: string;
 }
 export interface SkuDescription {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
-	readonly name?: string | undefined;
-	readonly size?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
+	readonly name?: string;
+	readonly size?: string;
+	readonly tier?: string;
 }
 export interface SlotConfigNamesResourceProperties {
-	readonly appSettingNames?: string[] | undefined;
-	readonly connectionStringNames?: string[] | undefined;
+	readonly appSettingNames?: string[];
+	readonly connectionStringNames?: string[];
 }
 export interface SlowRequestsBasedTrigger {
-	readonly count?: number | undefined;
-	readonly timeInterval?: string | undefined;
-	readonly timeTaken?: string | undefined;
+	readonly count?: number;
+	readonly timeInterval?: string;
+	readonly timeTaken?: string;
 }
 export interface SourceControlProperties {
-	readonly expirationTime?: string | undefined;
-	readonly name?: string | undefined;
-	readonly refreshToken?: string | undefined;
-	readonly token?: string | undefined;
-	readonly tokenSecret?: string | undefined;
+	readonly expirationTime?: string;
+	readonly name?: string;
+	readonly refreshToken?: string;
+	readonly token?: string;
+	readonly tokenSecret?: string;
 }
 export interface StampCapacity {
-	readonly availableCapacity?: number | undefined;
-	readonly computeMode?: ("Dedicated" | "Dynamic") | undefined;
-	readonly excludeFromCapacityAllocation?: boolean | undefined;
-	readonly isApplicableForAllComputeModes?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly siteMode?: string | undefined;
-	readonly totalCapacity?: number | undefined;
-	readonly unit?: string | undefined;
-	readonly workerSize?: ("Default" | "Large" | "Medium") | undefined;
-	readonly workerSizeId?: number | undefined;
+	readonly availableCapacity?: number;
+	readonly computeMode?: "Dedicated" | "Dynamic";
+	readonly excludeFromCapacityAllocation?: boolean;
+	readonly isApplicableForAllComputeModes?: boolean;
+	readonly name?: string;
+	readonly siteMode?: string;
+	readonly totalCapacity?: number;
+	readonly unit?: string;
+	readonly workerSize?: "Default" | "Large" | "Medium";
+	readonly workerSizeId?: number;
 }
 export interface StatusCodesBasedTrigger {
-	readonly count?: number | undefined;
-	readonly status?: number | undefined;
-	readonly subStatus?: number | undefined;
-	readonly timeInterval?: string | undefined;
-	readonly win32Status?: number | undefined;
+	readonly count?: number;
+	readonly status?: number;
+	readonly subStatus?: number;
+	readonly timeInterval?: string;
+	readonly win32Status?: number;
 }
 export interface StringDictionary {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: StringDictionaryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: StringDictionaryProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface StringDictionaryProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserProperties {
-	readonly name?: string | undefined;
-	readonly publishingPassword?: string | undefined;
-	readonly publishingUserName?: string | undefined;
-	readonly scmUri?: string | undefined;
+	readonly name?: string;
+	readonly publishingPassword?: string;
+	readonly publishingUserName?: string;
+	readonly scmUri?: string;
 }
 export interface VirtualApplication {
-	readonly physicalPath?: string | undefined;
-	readonly preloadEnabled?: boolean | undefined;
-	readonly virtualDirectories?: VirtualDirectory[] | undefined;
-	readonly virtualPath?: string | undefined;
+	readonly physicalPath?: string;
+	readonly preloadEnabled?: boolean;
+	readonly virtualDirectories?: VirtualDirectory[];
+	readonly virtualPath?: string;
 }
 export interface VirtualDirectory {
-	readonly physicalPath?: string | undefined;
-	readonly virtualPath?: string | undefined;
+	readonly physicalPath?: string;
+	readonly virtualPath?: string;
 }
 export interface VirtualIPMapping {
-	readonly internalHttpPort?: number | undefined;
-	readonly internalHttpsPort?: number | undefined;
-	readonly inUse?: boolean | undefined;
-	readonly virtualIP?: string | undefined;
+	readonly internalHttpPort?: number;
+	readonly internalHttpsPort?: number;
+	readonly inUse?: boolean;
+	readonly virtualIP?: string;
 }
 export interface VirtualNetworkProfile {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly subnet?: string | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly subnet?: string;
+	readonly type?: string;
 }
 export interface VnetGatewayProperties {
-	readonly vnetName?: string | undefined;
-	readonly vpnPackageUri?: string | undefined;
+	readonly vnetName?: string;
+	readonly vpnPackageUri?: string;
 }
 export interface VnetInfo {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: VnetInfoProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: VnetInfoProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface VnetInfoProperties {
-	readonly certBlob?: string | undefined;
-	readonly certThumbprint?: string | undefined;
-	readonly dnsServers?: string | undefined;
-	readonly resyncRequired?: boolean | undefined;
-	readonly routes?: VnetRoute[] | undefined;
-	readonly vnetResourceId?: string | undefined;
+	readonly certBlob?: string;
+	readonly certThumbprint?: string;
+	readonly dnsServers?: string;
+	readonly resyncRequired?: boolean;
+	readonly routes?: VnetRoute[];
+	readonly vnetResourceId?: string;
 }
 export interface VnetRoute {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: VnetRouteProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: VnetRouteProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface VnetRouteProperties {
-	readonly endAddress?: string | undefined;
-	readonly name?: string | undefined;
-	readonly routeType?: string | undefined;
-	readonly startAddress?: string | undefined;
+	readonly endAddress?: string;
+	readonly name?: string;
+	readonly routeType?: string;
+	readonly startAddress?: string;
 }
 export interface WorkerPool {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: WorkerPoolProperties | undefined;
-	readonly sku?: SkuDescription | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: WorkerPoolProperties;
+	readonly sku?: SkuDescription;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface WorkerPoolProperties {
-	readonly computeMode?: ("Dedicated" | "Dynamic") | undefined;
-	readonly instanceNames?: string[] | undefined;
-	readonly workerCount?: number | undefined;
-	readonly workerSize?: string | undefined;
-	readonly workerSizeId?: number | undefined;
+	readonly computeMode?: "Dedicated" | "Dynamic";
+	readonly instanceNames?: string[];
+	readonly workerCount?: number;
+	readonly workerSize?: string;
+	readonly workerSizeId?: number;
 }
 export type sites_config =
 	| sites_config_appsettings

@@ -15,12 +15,12 @@ export interface AccessPointComponentOutputs {
 }
 export interface AccessPointComponentInputs {
 	readonly Bucket: string;
-	readonly BucketAccountId?: (string | undefined) | undefined;
-	readonly Name?: string | undefined;
-	readonly Policy?: (any | undefined) | undefined;
-	readonly PolicyStatus?: (PolicyStatus | undefined) | undefined;
-	readonly PublicAccessBlockConfiguration?: (PublicAccessBlockConfiguration | undefined) | undefined;
-	readonly VpcConfiguration?: (VpcConfiguration | undefined) | undefined;
+	readonly BucketAccountId?: string | undefined;
+	readonly Name?: string;
+	readonly Policy?: any | undefined;
+	readonly PolicyStatus?: PolicyStatus | undefined;
+	readonly PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration | undefined;
+	readonly VpcConfiguration?: VpcConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export class Bucket extends CfnResource<BucketComponentInputs> implements BucketComponentOutputs {
@@ -41,26 +41,26 @@ export interface BucketComponentOutputs {
 	readonly WebsiteUrl: string;
 }
 export interface BucketComponentInputs {
-	readonly AccelerateConfiguration?: (AccelerateConfiguration | undefined) | undefined;
-	readonly AccessControl?: (string | undefined) | undefined;
-	readonly AnalyticsConfigurations?: (AnalyticsConfiguration[] | undefined) | undefined;
-	readonly BucketEncryption?: (BucketEncryption | undefined) | undefined;
-	readonly BucketName?: (string | undefined) | undefined;
-	readonly CorsConfiguration?: (CorsConfiguration | undefined) | undefined;
-	readonly IntelligentTieringConfigurations?: (IntelligentTieringConfiguration[] | undefined) | undefined;
-	readonly InventoryConfigurations?: (InventoryConfiguration[] | undefined) | undefined;
-	readonly LifecycleConfiguration?: (LifecycleConfiguration | undefined) | undefined;
-	readonly LoggingConfiguration?: (LoggingConfiguration | undefined) | undefined;
-	readonly MetricsConfigurations?: (MetricsConfiguration[] | undefined) | undefined;
-	readonly NotificationConfiguration?: (NotificationConfiguration | undefined) | undefined;
-	readonly ObjectLockConfiguration?: (ObjectLockConfiguration | undefined) | undefined;
-	readonly ObjectLockEnabled?: (boolean | undefined) | undefined;
-	readonly OwnershipControls?: (OwnershipControls | undefined) | undefined;
-	readonly PublicAccessBlockConfiguration?: (PublicAccessBlockConfiguration | undefined) | undefined;
-	readonly ReplicationConfiguration?: (ReplicationConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VersioningConfiguration?: (VersioningConfiguration | undefined) | undefined;
-	readonly WebsiteConfiguration?: (WebsiteConfiguration | undefined) | undefined;
+	readonly AccelerateConfiguration?: AccelerateConfiguration | undefined;
+	readonly AccessControl?: string | undefined;
+	readonly AnalyticsConfigurations?: AnalyticsConfiguration[] | undefined;
+	readonly BucketEncryption?: BucketEncryption | undefined;
+	readonly BucketName?: string | undefined;
+	readonly CorsConfiguration?: CorsConfiguration | undefined;
+	readonly IntelligentTieringConfigurations?: IntelligentTieringConfiguration[] | undefined;
+	readonly InventoryConfigurations?: InventoryConfiguration[] | undefined;
+	readonly LifecycleConfiguration?: LifecycleConfiguration | undefined;
+	readonly LoggingConfiguration?: LoggingConfiguration | undefined;
+	readonly MetricsConfigurations?: MetricsConfiguration[] | undefined;
+	readonly NotificationConfiguration?: NotificationConfiguration | undefined;
+	readonly ObjectLockConfiguration?: ObjectLockConfiguration | undefined;
+	readonly ObjectLockEnabled?: boolean | undefined;
+	readonly OwnershipControls?: OwnershipControls | undefined;
+	readonly PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration | undefined;
+	readonly ReplicationConfiguration?: ReplicationConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VersioningConfiguration?: VersioningConfiguration | undefined;
+	readonly WebsiteConfiguration?: WebsiteConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export class BucketPolicy extends CfnResource<BucketPolicyComponentInputs> implements BucketPolicyComponentOutputs {
@@ -90,8 +90,8 @@ export interface MultiRegionAccessPointComponentOutputs {
 }
 export interface MultiRegionAccessPointComponentInputs {
 	readonly Regions: Region[];
-	readonly Name?: (string | undefined) | undefined;
-	readonly PublicAccessBlockConfiguration?: (PublicAccessBlockConfiguration | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export class MultiRegionAccessPointPolicy
@@ -122,20 +122,20 @@ export interface StorageLensComponentOutputs {
 }
 export interface StorageLensComponentInputs {
 	readonly StorageLensConfiguration: StorageLensConfiguration;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface PolicyStatus {
-	readonly IsPublic?: (string | undefined) | undefined;
+	readonly IsPublic?: string | undefined;
 }
 export interface PublicAccessBlockConfiguration {
-	readonly BlockPublicAcls?: (boolean | undefined) | undefined;
-	readonly BlockPublicPolicy?: (boolean | undefined) | undefined;
-	readonly IgnorePublicAcls?: (boolean | undefined) | undefined;
-	readonly RestrictPublicBuckets?: (boolean | undefined) | undefined;
+	readonly BlockPublicAcls?: boolean | undefined;
+	readonly BlockPublicPolicy?: boolean | undefined;
+	readonly IgnorePublicAcls?: boolean | undefined;
+	readonly RestrictPublicBuckets?: boolean | undefined;
 }
 export interface VpcConfiguration {
-	readonly VpcId?: (string | undefined) | undefined;
+	readonly VpcId?: string | undefined;
 }
 export interface AbortIncompleteMultipartUpload {
 	readonly DaysAfterInitiation: number;
@@ -148,9 +148,9 @@ export interface AccessControlTranslation {
 }
 export interface AnalyticsConfiguration {
 	readonly Id: string;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly Prefix?: string | undefined;
 	readonly StorageClassAnalysis: StorageClassAnalysis;
-	readonly TagFilters?: (TagFilter[] | undefined) | undefined;
+	readonly TagFilters?: TagFilter[] | undefined;
 }
 export interface BucketEncryption {
 	readonly ServerSideEncryptionConfiguration: ServerSideEncryptionRule[];
@@ -159,36 +159,36 @@ export interface CorsConfiguration {
 	readonly CorsRules: CorsRule[];
 }
 export interface CorsRule {
-	readonly AllowedHeaders?: (string[] | undefined) | undefined;
+	readonly AllowedHeaders?: string[] | undefined;
 	readonly AllowedMethods: string[];
 	readonly AllowedOrigins: string[];
-	readonly ExposedHeaders?: (string[] | undefined) | undefined;
-	readonly Id?: (string | undefined) | undefined;
-	readonly MaxAge?: (number | undefined) | undefined;
+	readonly ExposedHeaders?: string[] | undefined;
+	readonly Id?: string | undefined;
+	readonly MaxAge?: number | undefined;
 }
 export interface DataExport {
 	readonly Destination: Destination;
 	readonly OutputSchemaVersion: string;
 }
 export interface DefaultRetention {
-	readonly Days?: (number | undefined) | undefined;
-	readonly Mode?: (string | undefined) | undefined;
-	readonly Years?: (number | undefined) | undefined;
+	readonly Days?: number | undefined;
+	readonly Mode?: string | undefined;
+	readonly Years?: number | undefined;
 }
 export interface DeleteMarkerReplication {
-	readonly Status?: (string | undefined) | undefined;
+	readonly Status?: string | undefined;
 }
 export interface Destination {
-	readonly BucketAccountId?: (string | undefined) | undefined;
+	readonly BucketAccountId?: string | undefined;
 	readonly BucketArn: string;
 	readonly Format: string;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly Prefix?: string | undefined;
 }
 export interface EncryptionConfiguration {
 	readonly ReplicaKmsKeyID: string;
 }
 export interface EventBridgeConfiguration {
-	readonly EventBridgeEnabled?: (boolean | undefined) | undefined;
+	readonly EventBridgeEnabled?: boolean | undefined;
 }
 export interface FilterRule {
 	readonly Name: string;
@@ -196,9 +196,9 @@ export interface FilterRule {
 }
 export interface IntelligentTieringConfiguration {
 	readonly Id: string;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly Prefix?: string | undefined;
 	readonly Status: string;
-	readonly TagFilters?: (TagFilter[] | undefined) | undefined;
+	readonly TagFilters?: TagFilter[] | undefined;
 	readonly Tierings: Tiering[];
 }
 export interface InventoryConfiguration {
@@ -206,78 +206,78 @@ export interface InventoryConfiguration {
 	readonly Enabled: boolean;
 	readonly Id: string;
 	readonly IncludedObjectVersions: string;
-	readonly OptionalFields?: (string[] | undefined) | undefined;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly OptionalFields?: string[] | undefined;
+	readonly Prefix?: string | undefined;
 	readonly ScheduleFrequency: string;
 }
 export interface LambdaConfiguration {
 	readonly Event: string;
-	readonly Filter?: (NotificationFilter | undefined) | undefined;
+	readonly Filter?: NotificationFilter | undefined;
 	readonly Function: string;
 }
 export interface LifecycleConfiguration {
 	readonly Rules: Rule[];
 }
 export interface LoggingConfiguration {
-	readonly DestinationBucketName?: (string | undefined) | undefined;
-	readonly LogFilePrefix?: (string | undefined) | undefined;
+	readonly DestinationBucketName?: string | undefined;
+	readonly LogFilePrefix?: string | undefined;
 }
 export interface Metrics {
-	readonly EventThreshold?: (ReplicationTimeValue | undefined) | undefined;
+	readonly EventThreshold?: ReplicationTimeValue | undefined;
 	readonly Status: string;
 }
 export interface MetricsConfiguration {
-	readonly AccessPointArn?: (string | undefined) | undefined;
+	readonly AccessPointArn?: string | undefined;
 	readonly Id: string;
-	readonly Prefix?: (string | undefined) | undefined;
-	readonly TagFilters?: (TagFilter[] | undefined) | undefined;
+	readonly Prefix?: string | undefined;
+	readonly TagFilters?: TagFilter[] | undefined;
 }
 export interface NoncurrentVersionExpiration {
-	readonly NewerNoncurrentVersions?: (number | undefined) | undefined;
+	readonly NewerNoncurrentVersions?: number | undefined;
 	readonly NoncurrentDays: number;
 }
 export interface NoncurrentVersionTransition {
-	readonly NewerNoncurrentVersions?: (number | undefined) | undefined;
+	readonly NewerNoncurrentVersions?: number | undefined;
 	readonly StorageClass: string;
 	readonly TransitionInDays: number;
 }
 export interface NotificationConfiguration {
-	readonly EventBridgeConfiguration?: (EventBridgeConfiguration | undefined) | undefined;
-	readonly LambdaConfigurations?: (LambdaConfiguration[] | undefined) | undefined;
-	readonly QueueConfigurations?: (QueueConfiguration[] | undefined) | undefined;
-	readonly TopicConfigurations?: (TopicConfiguration[] | undefined) | undefined;
+	readonly EventBridgeConfiguration?: EventBridgeConfiguration | undefined;
+	readonly LambdaConfigurations?: LambdaConfiguration[] | undefined;
+	readonly QueueConfigurations?: QueueConfiguration[] | undefined;
+	readonly TopicConfigurations?: TopicConfiguration[] | undefined;
 }
 export interface NotificationFilter {
 	readonly S3Key: S3KeyFilter;
 }
 export interface ObjectLockConfiguration {
-	readonly ObjectLockEnabled?: (string | undefined) | undefined;
-	readonly Rule?: (ObjectLockRule | undefined) | undefined;
+	readonly ObjectLockEnabled?: string | undefined;
+	readonly Rule?: ObjectLockRule | undefined;
 }
 export interface ObjectLockRule {
-	readonly DefaultRetention?: (DefaultRetention | undefined) | undefined;
+	readonly DefaultRetention?: DefaultRetention | undefined;
 }
 export interface OwnershipControls {
 	readonly Rules: OwnershipControlsRule[];
 }
 export interface OwnershipControlsRule {
-	readonly ObjectOwnership?: (string | undefined) | undefined;
+	readonly ObjectOwnership?: string | undefined;
 }
 export interface QueueConfiguration {
 	readonly Event: string;
-	readonly Filter?: (NotificationFilter | undefined) | undefined;
+	readonly Filter?: NotificationFilter | undefined;
 	readonly Queue: string;
 }
 export interface RedirectAllRequestsTo {
 	readonly HostName: string;
-	readonly Protocol?: (string | undefined) | undefined;
+	readonly Protocol?: string | undefined;
 }
 export interface RedirectRule {
-	readonly HostName?: (string | undefined) | undefined;
-	readonly HttpRedirectCode?: (string | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
-	readonly ReplaceKeyPrefixWith?: (string | undefined) | undefined;
-	readonly ReplaceKeyWith?: (string | undefined) | undefined;
+	readonly HostName?: string | undefined;
+	readonly HttpRedirectCode?: string | undefined;
+	readonly Protocol?: string | undefined;
+	readonly ReplaceKeyPrefixWith?: string | undefined;
+	readonly ReplaceKeyWith?: string | undefined;
 }
 export interface ReplicaModifications {
 	readonly Status: string;
@@ -287,32 +287,32 @@ export interface ReplicationConfiguration {
 	readonly Rules: ReplicationRule[];
 }
 export interface ReplicationDestination {
-	readonly AccessControlTranslation?: (AccessControlTranslation | undefined) | undefined;
-	readonly Account?: (string | undefined) | undefined;
+	readonly AccessControlTranslation?: AccessControlTranslation | undefined;
+	readonly Account?: string | undefined;
 	readonly Bucket: string;
-	readonly EncryptionConfiguration?: (EncryptionConfiguration | undefined) | undefined;
-	readonly Metrics?: (Metrics | undefined) | undefined;
-	readonly ReplicationTime?: (ReplicationTime | undefined) | undefined;
-	readonly StorageClass?: (string | undefined) | undefined;
+	readonly EncryptionConfiguration?: EncryptionConfiguration | undefined;
+	readonly Metrics?: Metrics | undefined;
+	readonly ReplicationTime?: ReplicationTime | undefined;
+	readonly StorageClass?: string | undefined;
 }
 export interface ReplicationRule {
-	readonly DeleteMarkerReplication?: (DeleteMarkerReplication | undefined) | undefined;
+	readonly DeleteMarkerReplication?: DeleteMarkerReplication | undefined;
 	readonly Destination: ReplicationDestination;
-	readonly Filter?: (ReplicationRuleFilter | undefined) | undefined;
-	readonly Id?: (string | undefined) | undefined;
-	readonly Prefix?: (string | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly SourceSelectionCriteria?: (SourceSelectionCriteria | undefined) | undefined;
+	readonly Filter?: ReplicationRuleFilter | undefined;
+	readonly Id?: string | undefined;
+	readonly Prefix?: string | undefined;
+	readonly Priority?: number | undefined;
+	readonly SourceSelectionCriteria?: SourceSelectionCriteria | undefined;
 	readonly Status: string;
 }
 export interface ReplicationRuleAndOperator {
-	readonly Prefix?: (string | undefined) | undefined;
-	readonly TagFilters?: (TagFilter[] | undefined) | undefined;
+	readonly Prefix?: string | undefined;
+	readonly TagFilters?: TagFilter[] | undefined;
 }
 export interface ReplicationRuleFilter {
-	readonly And?: (ReplicationRuleAndOperator | undefined) | undefined;
-	readonly Prefix?: (string | undefined) | undefined;
-	readonly TagFilter?: (TagFilter | undefined) | undefined;
+	readonly And?: ReplicationRuleAndOperator | undefined;
+	readonly Prefix?: string | undefined;
+	readonly TagFilter?: TagFilter | undefined;
 }
 export interface ReplicationTime {
 	readonly Status: string;
@@ -323,50 +323,50 @@ export interface ReplicationTimeValue {
 }
 export interface RoutingRule {
 	readonly RedirectRule: RedirectRule;
-	readonly RoutingRuleCondition?: (RoutingRuleCondition | undefined) | undefined;
+	readonly RoutingRuleCondition?: RoutingRuleCondition | undefined;
 }
 export interface RoutingRuleCondition {
-	readonly HttpErrorCodeReturnedEquals?: (string | undefined) | undefined;
-	readonly KeyPrefixEquals?: (string | undefined) | undefined;
+	readonly HttpErrorCodeReturnedEquals?: string | undefined;
+	readonly KeyPrefixEquals?: string | undefined;
 }
 export interface Rule {
-	readonly AbortIncompleteMultipartUpload?: (AbortIncompleteMultipartUpload | undefined) | undefined;
-	readonly ExpirationDate?: (Date | undefined) | undefined;
-	readonly ExpirationInDays?: (number | undefined) | undefined;
-	readonly ExpiredObjectDeleteMarker?: (boolean | undefined) | undefined;
-	readonly Id?: (string | undefined) | undefined;
-	readonly NoncurrentVersionExpiration?: (NoncurrentVersionExpiration | undefined) | undefined;
-	readonly NoncurrentVersionExpirationInDays?: (number | undefined) | undefined;
-	readonly NoncurrentVersionTransition?: (NoncurrentVersionTransition | undefined) | undefined;
-	readonly NoncurrentVersionTransitions?: (NoncurrentVersionTransition[] | undefined) | undefined;
-	readonly ObjectSizeGreaterThan?: (number | undefined) | undefined;
-	readonly ObjectSizeLessThan?: (number | undefined) | undefined;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly AbortIncompleteMultipartUpload?: AbortIncompleteMultipartUpload | undefined;
+	readonly ExpirationDate?: Date | undefined;
+	readonly ExpirationInDays?: number | undefined;
+	readonly ExpiredObjectDeleteMarker?: boolean | undefined;
+	readonly Id?: string | undefined;
+	readonly NoncurrentVersionExpiration?: NoncurrentVersionExpiration | undefined;
+	readonly NoncurrentVersionExpirationInDays?: number | undefined;
+	readonly NoncurrentVersionTransition?: NoncurrentVersionTransition | undefined;
+	readonly NoncurrentVersionTransitions?: NoncurrentVersionTransition[] | undefined;
+	readonly ObjectSizeGreaterThan?: number | undefined;
+	readonly ObjectSizeLessThan?: number | undefined;
+	readonly Prefix?: string | undefined;
 	readonly Status: string;
-	readonly TagFilters?: (TagFilter[] | undefined) | undefined;
-	readonly Transition?: (Transition | undefined) | undefined;
-	readonly Transitions?: (Transition[] | undefined) | undefined;
+	readonly TagFilters?: TagFilter[] | undefined;
+	readonly Transition?: Transition | undefined;
+	readonly Transitions?: Transition[] | undefined;
 }
 export interface S3KeyFilter {
 	readonly Rules: FilterRule[];
 }
 export interface ServerSideEncryptionByDefault {
-	readonly KMSMasterKeyID?: (string | undefined) | undefined;
+	readonly KMSMasterKeyID?: string | undefined;
 	readonly SSEAlgorithm: string;
 }
 export interface ServerSideEncryptionRule {
-	readonly BucketKeyEnabled?: (boolean | undefined) | undefined;
-	readonly ServerSideEncryptionByDefault?: (ServerSideEncryptionByDefault | undefined) | undefined;
+	readonly BucketKeyEnabled?: boolean | undefined;
+	readonly ServerSideEncryptionByDefault?: ServerSideEncryptionByDefault | undefined;
 }
 export interface SourceSelectionCriteria {
-	readonly ReplicaModifications?: (ReplicaModifications | undefined) | undefined;
-	readonly SseKmsEncryptedObjects?: (SseKmsEncryptedObjects | undefined) | undefined;
+	readonly ReplicaModifications?: ReplicaModifications | undefined;
+	readonly SseKmsEncryptedObjects?: SseKmsEncryptedObjects | undefined;
 }
 export interface SseKmsEncryptedObjects {
 	readonly Status: string;
 }
 export interface StorageClassAnalysis {
-	readonly DataExport?: (DataExport | undefined) | undefined;
+	readonly DataExport?: DataExport | undefined;
 }
 export interface TagFilter {
 	readonly Key: string;
@@ -378,98 +378,98 @@ export interface Tiering {
 }
 export interface TopicConfiguration {
 	readonly Event: string;
-	readonly Filter?: (NotificationFilter | undefined) | undefined;
+	readonly Filter?: NotificationFilter | undefined;
 	readonly Topic: string;
 }
 export interface Transition {
 	readonly StorageClass: string;
-	readonly TransitionDate?: (Date | undefined) | undefined;
-	readonly TransitionInDays?: (number | undefined) | undefined;
+	readonly TransitionDate?: Date | undefined;
+	readonly TransitionInDays?: number | undefined;
 }
 export interface VersioningConfiguration {
 	readonly Status: string;
 }
 export interface WebsiteConfiguration {
-	readonly ErrorDocument?: (string | undefined) | undefined;
-	readonly IndexDocument?: (string | undefined) | undefined;
-	readonly RedirectAllRequestsTo?: (RedirectAllRequestsTo | undefined) | undefined;
-	readonly RoutingRules?: (RoutingRule[] | undefined) | undefined;
+	readonly ErrorDocument?: string | undefined;
+	readonly IndexDocument?: string | undefined;
+	readonly RedirectAllRequestsTo?: RedirectAllRequestsTo | undefined;
+	readonly RoutingRules?: RoutingRule[] | undefined;
 }
 export interface Region {
 	readonly Bucket: string;
 }
 export interface AccountLevel {
-	readonly ActivityMetrics?: (ActivityMetrics | undefined) | undefined;
-	readonly AdvancedCostOptimizationMetrics?: (AdvancedCostOptimizationMetrics | undefined) | undefined;
-	readonly AdvancedDataProtectionMetrics?: (AdvancedDataProtectionMetrics | undefined) | undefined;
+	readonly ActivityMetrics?: ActivityMetrics | undefined;
+	readonly AdvancedCostOptimizationMetrics?: AdvancedCostOptimizationMetrics | undefined;
+	readonly AdvancedDataProtectionMetrics?: AdvancedDataProtectionMetrics | undefined;
 	readonly BucketLevel: BucketLevel;
-	readonly DetailedStatusCodesMetrics?: (DetailedStatusCodesMetrics | undefined) | undefined;
+	readonly DetailedStatusCodesMetrics?: DetailedStatusCodesMetrics | undefined;
 }
 export interface ActivityMetrics {
-	readonly IsEnabled?: (boolean | undefined) | undefined;
+	readonly IsEnabled?: boolean | undefined;
 }
 export interface AdvancedCostOptimizationMetrics {
-	readonly IsEnabled?: (boolean | undefined) | undefined;
+	readonly IsEnabled?: boolean | undefined;
 }
 export interface AdvancedDataProtectionMetrics {
-	readonly IsEnabled?: (boolean | undefined) | undefined;
+	readonly IsEnabled?: boolean | undefined;
 }
 export interface AwsOrg {
 	readonly Arn: string;
 }
 export interface BucketLevel {
-	readonly ActivityMetrics?: (ActivityMetrics | undefined) | undefined;
-	readonly AdvancedCostOptimizationMetrics?: (AdvancedCostOptimizationMetrics | undefined) | undefined;
-	readonly AdvancedDataProtectionMetrics?: (AdvancedDataProtectionMetrics | undefined) | undefined;
-	readonly DetailedStatusCodesMetrics?: (DetailedStatusCodesMetrics | undefined) | undefined;
-	readonly PrefixLevel?: (PrefixLevel | undefined) | undefined;
+	readonly ActivityMetrics?: ActivityMetrics | undefined;
+	readonly AdvancedCostOptimizationMetrics?: AdvancedCostOptimizationMetrics | undefined;
+	readonly AdvancedDataProtectionMetrics?: AdvancedDataProtectionMetrics | undefined;
+	readonly DetailedStatusCodesMetrics?: DetailedStatusCodesMetrics | undefined;
+	readonly PrefixLevel?: PrefixLevel | undefined;
 }
 export interface BucketsAndRegions {
-	readonly Buckets?: (string[] | undefined) | undefined;
-	readonly Regions?: (string[] | undefined) | undefined;
+	readonly Buckets?: string[] | undefined;
+	readonly Regions?: string[] | undefined;
 }
 export interface CloudWatchMetrics {
 	readonly IsEnabled: boolean;
 }
 export interface DetailedStatusCodesMetrics {
-	readonly IsEnabled?: (boolean | undefined) | undefined;
+	readonly IsEnabled?: boolean | undefined;
 }
 export interface Encryption {
-	readonly SSEKMS?: (SSEKMS | undefined) | undefined;
-	readonly SSES3?: (any | undefined) | undefined;
+	readonly SSEKMS?: SSEKMS | undefined;
+	readonly SSES3?: any | undefined;
 }
 export interface PrefixLevel {
 	readonly StorageMetrics: PrefixLevelStorageMetrics;
 }
 export interface PrefixLevelStorageMetrics {
-	readonly IsEnabled?: (boolean | undefined) | undefined;
-	readonly SelectionCriteria?: (SelectionCriteria | undefined) | undefined;
+	readonly IsEnabled?: boolean | undefined;
+	readonly SelectionCriteria?: SelectionCriteria | undefined;
 }
 export interface S3BucketDestination {
 	readonly AccountId: string;
 	readonly Arn: string;
-	readonly Encryption?: (Encryption | undefined) | undefined;
+	readonly Encryption?: Encryption | undefined;
 	readonly Format: string;
 	readonly OutputSchemaVersion: string;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly Prefix?: string | undefined;
 }
 export interface SSEKMS {
 	readonly KeyId: string;
 }
 export interface SelectionCriteria {
-	readonly Delimiter?: (string | undefined) | undefined;
-	readonly MaxDepth?: (number | undefined) | undefined;
-	readonly MinStorageBytesPercentage?: (number | undefined) | undefined;
+	readonly Delimiter?: string | undefined;
+	readonly MaxDepth?: number | undefined;
+	readonly MinStorageBytesPercentage?: number | undefined;
 }
 export interface StorageLensConfiguration {
 	readonly AccountLevel: AccountLevel;
-	readonly AwsOrg?: (AwsOrg | undefined) | undefined;
-	readonly DataExport?: (DataExport | undefined) | undefined;
-	readonly Exclude?: (BucketsAndRegions | undefined) | undefined;
+	readonly AwsOrg?: AwsOrg | undefined;
+	readonly DataExport?: DataExport | undefined;
+	readonly Exclude?: BucketsAndRegions | undefined;
 	readonly Id: string;
-	readonly Include?: (BucketsAndRegions | undefined) | undefined;
+	readonly Include?: BucketsAndRegions | undefined;
 	readonly IsEnabled: boolean;
-	readonly StorageLensArn?: (string | undefined) | undefined;
+	readonly StorageLensArn?: string | undefined;
 }
 export default {
 	AccessPoint: AccessPoint,

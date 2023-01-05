@@ -7,65 +7,64 @@ export class InterconnectLocations
 	constructor(entity: ADKEntity, options: InterconnectLocationsComponentInputs) {
 		super(entity, options.name, "compute.v1.InterconnectLocations", options);
 	}
-	public readonly address?: string | undefined;
-	public readonly availabilityZone?: string | undefined;
-	public readonly city?: string | undefined;
-	public readonly continent?: string | undefined;
-	public readonly creationTimestamp?: string | undefined;
-	public readonly description?: string | undefined;
-	public readonly facilityProvider?: string | undefined;
-	public readonly facilityProviderFacilityId?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly peeringdbFacilityId?: string | undefined;
-	public readonly regionInfos?: InterconnectLocationRegionInfo[] | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly supportsPzs?: boolean | undefined;
+	public readonly address?: string;
+	public readonly availabilityZone?: string;
+	public readonly city?: string;
+	public readonly continent?: string;
+	public readonly creationTimestamp?: string;
+	public readonly description?: string;
+	public readonly facilityProvider?: string;
+	public readonly facilityProviderFacilityId?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly peeringdbFacilityId?: string;
+	public readonly regionInfos?: InterconnectLocationRegionInfo[];
+	public readonly selfLink?: string;
+	public readonly status?: string;
+	public readonly supportsPzs?: boolean;
 }
 export interface InterconnectLocationsComponentOutputs {
-	readonly address?: string | undefined;
-	readonly availabilityZone?: string | undefined;
-	readonly city?: string | undefined;
-	readonly continent?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly facilityProvider?: string | undefined;
-	readonly facilityProviderFacilityId?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly peeringdbFacilityId?: string | undefined;
-	readonly regionInfos?: InterconnectLocationRegionInfo[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly supportsPzs?: boolean | undefined;
+	readonly address?: string;
+	readonly availabilityZone?: string;
+	readonly city?: string;
+	readonly continent?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly facilityProvider?: string;
+	readonly facilityProviderFacilityId?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly peeringdbFacilityId?: string;
+	readonly regionInfos?: InterconnectLocationRegionInfo[];
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly supportsPzs?: boolean;
 }
 export interface InterconnectLocationsComponentInputs {
 	readonly name: string;
-	readonly type: string;
 }
 export interface InterconnectLocation {
-	readonly address?: string | undefined;
-	readonly availabilityZone?: string | undefined;
-	readonly city?: string | undefined;
-	readonly continent?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly facilityProvider?: string | undefined;
-	readonly facilityProviderFacilityId?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly peeringdbFacilityId?: string | undefined;
-	readonly regionInfos?: InterconnectLocationRegionInfo[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly supportsPzs?: boolean | undefined;
+	readonly address?: string;
+	readonly availabilityZone?: string;
+	readonly city?: string;
+	readonly continent?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly facilityProvider?: string;
+	readonly facilityProviderFacilityId?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly peeringdbFacilityId?: string;
+	readonly regionInfos?: InterconnectLocationRegionInfo[];
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly supportsPzs?: boolean;
 }
 export interface InterconnectLocationRegionInfo {
-	readonly expectedRttMs?: string | undefined;
-	readonly locationPresence?: string | undefined;
-	readonly region?: string | undefined;
+	readonly expectedRttMs?: string;
+	readonly locationPresence?: string;
+	readonly region?: string;
 }
 export default {
 	InterconnectLocations: InterconnectLocations,

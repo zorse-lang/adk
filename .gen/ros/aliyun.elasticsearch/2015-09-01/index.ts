@@ -26,29 +26,29 @@ export interface InstanceComponentInputs {
 	readonly Password: string;
 	readonly Version: any | string;
 	readonly VSwitchId: any | string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnableKibanaPrivate?: (boolean | undefined) | undefined;
-	readonly EnableKibanaPublic?: (boolean | undefined) | undefined;
-	readonly EnablePublic?: (boolean | undefined) | undefined;
-	readonly InstanceChargeType?: (any | string) | undefined;
-	readonly KibanaNode?: (KibanaNode | undefined) | undefined;
-	readonly KibanaWhitelist?: (any[] | undefined) | undefined;
-	readonly MasterNode?: (MasterNode | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly PrivateWhitelist?: (any[] | undefined) | undefined;
-	readonly PublicWhitelist?: (any[] | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly YMLConfig?: (YMLConfig | undefined) | undefined;
-	readonly ZoneCount?: (number | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly EnableKibanaPrivate?: boolean | undefined;
+	readonly EnableKibanaPublic?: boolean | undefined;
+	readonly EnablePublic?: boolean | undefined;
+	readonly InstanceChargeType?: any | string;
+	readonly KibanaNode?: KibanaNode | undefined;
+	readonly KibanaWhitelist?: any[] | undefined;
+	readonly MasterNode?: MasterNode | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly PrivateWhitelist?: any[] | undefined;
+	readonly PublicWhitelist?: any[] | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly YMLConfig?: YMLConfig | undefined;
+	readonly ZoneCount?: number | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface DataNode {
 	readonly DiskType: string;
-	readonly DiskEncryption?: (boolean | undefined) | undefined;
-	readonly PerformanceLevel?: (string | undefined) | undefined;
+	readonly DiskEncryption?: boolean | undefined;
+	readonly PerformanceLevel?: string | undefined;
 	readonly Amount: number;
 	readonly DiskSize: number;
 	readonly Spec: string;
@@ -57,21 +57,21 @@ export interface KibanaNode {
 	readonly Spec: string;
 }
 export interface MasterNode {
-	readonly DiskType?: (string | undefined) | undefined;
-	readonly Amount?: (number | undefined) | undefined;
-	readonly DiskSize?: (number | undefined) | undefined;
+	readonly DiskType?: string | undefined;
+	readonly Amount?: number | undefined;
+	readonly DiskSize?: number | undefined;
 	readonly Spec: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface YMLConfig {
-	readonly CreateIndex?: (string | undefined) | undefined;
-	readonly DestructiveRequiresName?: (boolean | undefined) | undefined;
-	readonly OtherConfigs?: ({ [key: string]: any } | undefined) | undefined;
-	readonly Watcher?: (boolean | undefined) | undefined;
-	readonly AuditLog?: (boolean | undefined) | undefined;
+	readonly CreateIndex?: string | undefined;
+	readonly DestructiveRequiresName?: boolean | undefined;
+	readonly OtherConfigs?: { [key: string]: any } | undefined;
+	readonly Watcher?: boolean | undefined;
+	readonly AuditLog?: boolean | undefined;
 }
 export default {
 	Instance: Instance,

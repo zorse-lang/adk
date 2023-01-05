@@ -8,9 +8,9 @@ export class Catalog extends RosResource<CatalogComponentInputs> implements Cata
 export interface CatalogComponentOutputs {}
 export interface CatalogComponentInputs {
 	readonly CatalogId: any | string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly LocationUri?: (string | undefined) | undefined;
-	readonly Owner?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly LocationUri?: string | undefined;
+	readonly Owner?: string | undefined;
 	readonly LogicalId: string;
 }
 export default {

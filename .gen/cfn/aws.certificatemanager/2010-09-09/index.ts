@@ -21,21 +21,21 @@ export class Certificate extends CfnResource<CertificateComponentInputs> impleme
 export interface CertificateComponentOutputs {}
 export interface CertificateComponentInputs {
 	readonly DomainName: string;
-	readonly CertificateAuthorityArn?: (string | undefined) | undefined;
-	readonly CertificateTransparencyLoggingPreference?: (string | undefined) | undefined;
-	readonly DomainValidationOptions?: (DomainValidationOption[] | undefined) | undefined;
-	readonly SubjectAlternativeNames?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly ValidationMethod?: (string | undefined) | undefined;
+	readonly CertificateAuthorityArn?: string | undefined;
+	readonly CertificateTransparencyLoggingPreference?: string | undefined;
+	readonly DomainValidationOptions?: DomainValidationOption[] | undefined;
+	readonly SubjectAlternativeNames?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly ValidationMethod?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface ExpiryEventsConfiguration {
-	readonly DaysBeforeExpiry?: (number | undefined) | undefined;
+	readonly DaysBeforeExpiry?: number | undefined;
 }
 export interface DomainValidationOption {
 	readonly DomainName: string;
-	readonly HostedZoneId?: (string | undefined) | undefined;
-	readonly ValidationDomain?: (string | undefined) | undefined;
+	readonly HostedZoneId?: string | undefined;
+	readonly ValidationDomain?: string | undefined;
 }
 export default {
 	Account: Account,

@@ -16,13 +16,13 @@ export interface BotComponentInputs {
 	readonly IdleSessionTTLInSeconds: number;
 	readonly Name: string;
 	readonly RoleArn: string;
-	readonly AutoBuildBotLocales?: (boolean | undefined) | undefined;
-	readonly BotFileS3Location?: (S3Location | undefined) | undefined;
-	readonly BotLocales?: (BotLocale[] | undefined) | undefined;
-	readonly BotTags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly TestBotAliasSettings?: (TestBotAliasSettings | undefined) | undefined;
-	readonly TestBotAliasTags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AutoBuildBotLocales?: boolean | undefined;
+	readonly BotFileS3Location?: S3Location | undefined;
+	readonly BotLocales?: BotLocale[] | undefined;
+	readonly BotTags?: { key: string; value: string }[] | undefined;
+	readonly Description?: string | undefined;
+	readonly TestBotAliasSettings?: TestBotAliasSettings | undefined;
+	readonly TestBotAliasTags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class BotAlias extends CfnResource<BotAliasComponentInputs> implements BotAliasComponentOutputs {
@@ -41,12 +41,12 @@ export interface BotAliasComponentOutputs {
 export interface BotAliasComponentInputs {
 	readonly BotAliasName: string;
 	readonly BotId: string;
-	readonly BotAliasLocaleSettings?: (BotAliasLocaleSettingsItem[] | undefined) | undefined;
-	readonly BotAliasTags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly BotVersion?: (string | undefined) | undefined;
-	readonly ConversationLogSettings?: (ConversationLogSettings | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly SentimentAnalysisSettings?: (SentimentAnalysisSettings | undefined) | undefined;
+	readonly BotAliasLocaleSettings?: BotAliasLocaleSettingsItem[] | undefined;
+	readonly BotAliasTags?: { key: string; value: string }[] | undefined;
+	readonly BotVersion?: string | undefined;
+	readonly ConversationLogSettings?: ConversationLogSettings | undefined;
+	readonly Description?: string | undefined;
+	readonly SentimentAnalysisSettings?: SentimentAnalysisSettings | undefined;
 	readonly LogicalId: string;
 }
 export class BotVersion extends CfnResource<BotVersionComponentInputs> implements BotVersionComponentOutputs {
@@ -61,7 +61,7 @@ export interface BotVersionComponentOutputs {
 export interface BotVersionComponentInputs {
 	readonly BotId: string;
 	readonly BotVersionLocaleSpecification: BotVersionLocaleSpecification[];
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ResourcePolicy extends CfnResource<ResourcePolicyComponentInputs> implements ResourcePolicyComponentOutputs {
@@ -81,15 +81,15 @@ export interface ResourcePolicyComponentInputs {
 	readonly LogicalId: string;
 }
 export interface AdvancedRecognitionSetting {
-	readonly AudioRecognitionStrategy?: (string | undefined) | undefined;
+	readonly AudioRecognitionStrategy?: string | undefined;
 }
 export interface AllowedInputTypes {
 	readonly AllowAudioInput: boolean;
 	readonly AllowDTMFInput: boolean;
 }
 export interface AudioAndDTMFInputSpecification {
-	readonly AudioSpecification?: (AudioSpecification | undefined) | undefined;
-	readonly DTMFSpecification?: (DTMFSpecification | undefined) | undefined;
+	readonly AudioSpecification?: AudioSpecification | undefined;
+	readonly DTMFSpecification?: DTMFSpecification | undefined;
 	readonly StartTimeoutMs: number;
 }
 export interface AudioLogDestination {
@@ -104,7 +104,7 @@ export interface AudioSpecification {
 	readonly MaxLengthMs: number;
 }
 export interface BotAliasLocaleSettings {
-	readonly CodeHookSpecification?: (CodeHookSpecification | undefined) | undefined;
+	readonly CodeHookSpecification?: CodeHookSpecification | undefined;
 	readonly Enabled: boolean;
 }
 export interface BotAliasLocaleSettingsItem {
@@ -112,13 +112,13 @@ export interface BotAliasLocaleSettingsItem {
 	readonly LocaleId: string;
 }
 export interface BotLocale {
-	readonly CustomVocabulary?: (CustomVocabulary | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Intents?: (Intent[] | undefined) | undefined;
+	readonly CustomVocabulary?: CustomVocabulary | undefined;
+	readonly Description?: string | undefined;
+	readonly Intents?: Intent[] | undefined;
 	readonly LocaleId: string;
 	readonly NluConfidenceThreshold: number;
-	readonly SlotTypes?: (SlotType[] | undefined) | undefined;
-	readonly VoiceSettings?: (VoiceSettings | undefined) | undefined;
+	readonly SlotTypes?: SlotType[] | undefined;
+	readonly VoiceSettings?: VoiceSettings | undefined;
 }
 export interface Button {
 	readonly Text: string;
@@ -132,8 +132,8 @@ export interface CodeHookSpecification {
 	readonly LambdaCodeHook: LambdaCodeHook;
 }
 export interface ConversationLogSettings {
-	readonly AudioLogSettings?: (AudioLogSetting[] | undefined) | undefined;
-	readonly TextLogSettings?: (TextLogSetting[] | undefined) | undefined;
+	readonly AudioLogSettings?: AudioLogSetting[] | undefined;
+	readonly TextLogSettings?: TextLogSetting[] | undefined;
 }
 export interface CustomPayload {
 	readonly Value: string;
@@ -143,7 +143,7 @@ export interface CustomVocabulary {
 }
 export interface CustomVocabularyItem {
 	readonly Phrase: string;
-	readonly Weight?: (number | undefined) | undefined;
+	readonly Weight?: number | undefined;
 }
 export interface DTMFSpecification {
 	readonly DeletionCharacter: string;
@@ -158,91 +158,91 @@ export interface DialogCodeHookSetting {
 	readonly Enabled: boolean;
 }
 export interface ExternalSourceSetting {
-	readonly GrammarSlotTypeSetting?: (GrammarSlotTypeSetting | undefined) | undefined;
+	readonly GrammarSlotTypeSetting?: GrammarSlotTypeSetting | undefined;
 }
 export interface FulfillmentCodeHookSetting {
 	readonly Enabled: boolean;
-	readonly FulfillmentUpdatesSpecification?: (FulfillmentUpdatesSpecification | undefined) | undefined;
-	readonly PostFulfillmentStatusSpecification?: (PostFulfillmentStatusSpecification | undefined) | undefined;
+	readonly FulfillmentUpdatesSpecification?: FulfillmentUpdatesSpecification | undefined;
+	readonly PostFulfillmentStatusSpecification?: PostFulfillmentStatusSpecification | undefined;
 }
 export interface FulfillmentStartResponseSpecification {
-	readonly AllowInterrupt?: (boolean | undefined) | undefined;
+	readonly AllowInterrupt?: boolean | undefined;
 	readonly DelayInSeconds: number;
 	readonly MessageGroups: MessageGroup[];
 }
 export interface FulfillmentUpdateResponseSpecification {
-	readonly AllowInterrupt?: (boolean | undefined) | undefined;
+	readonly AllowInterrupt?: boolean | undefined;
 	readonly FrequencyInSeconds: number;
 	readonly MessageGroups: MessageGroup[];
 }
 export interface FulfillmentUpdatesSpecification {
 	readonly Active: boolean;
-	readonly StartResponse?: (FulfillmentStartResponseSpecification | undefined) | undefined;
-	readonly TimeoutInSeconds?: (number | undefined) | undefined;
-	readonly UpdateResponse?: (FulfillmentUpdateResponseSpecification | undefined) | undefined;
+	readonly StartResponse?: FulfillmentStartResponseSpecification | undefined;
+	readonly TimeoutInSeconds?: number | undefined;
+	readonly UpdateResponse?: FulfillmentUpdateResponseSpecification | undefined;
 }
 export interface GrammarSlotTypeSetting {
-	readonly Source?: (GrammarSlotTypeSource | undefined) | undefined;
+	readonly Source?: GrammarSlotTypeSource | undefined;
 }
 export interface GrammarSlotTypeSource {
-	readonly KmsKeyArn?: (string | undefined) | undefined;
+	readonly KmsKeyArn?: string | undefined;
 	readonly S3BucketName: string;
 	readonly S3ObjectKey: string;
 }
 export interface ImageResponseCard {
-	readonly Buttons?: (Button[] | undefined) | undefined;
-	readonly ImageUrl?: (string | undefined) | undefined;
-	readonly Subtitle?: (string | undefined) | undefined;
+	readonly Buttons?: Button[] | undefined;
+	readonly ImageUrl?: string | undefined;
+	readonly Subtitle?: string | undefined;
 	readonly Title: string;
 }
 export interface InputContext {
 	readonly Name: string;
 }
 export interface Intent {
-	readonly Description?: (string | undefined) | undefined;
-	readonly DialogCodeHook?: (DialogCodeHookSetting | undefined) | undefined;
-	readonly FulfillmentCodeHook?: (FulfillmentCodeHookSetting | undefined) | undefined;
-	readonly InputContexts?: (InputContext[] | undefined) | undefined;
-	readonly IntentClosingSetting?: (IntentClosingSetting | undefined) | undefined;
-	readonly IntentConfirmationSetting?: (IntentConfirmationSetting | undefined) | undefined;
-	readonly KendraConfiguration?: (KendraConfiguration | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DialogCodeHook?: DialogCodeHookSetting | undefined;
+	readonly FulfillmentCodeHook?: FulfillmentCodeHookSetting | undefined;
+	readonly InputContexts?: InputContext[] | undefined;
+	readonly IntentClosingSetting?: IntentClosingSetting | undefined;
+	readonly IntentConfirmationSetting?: IntentConfirmationSetting | undefined;
+	readonly KendraConfiguration?: KendraConfiguration | undefined;
 	readonly Name: string;
-	readonly OutputContexts?: (OutputContext[] | undefined) | undefined;
-	readonly ParentIntentSignature?: (string | undefined) | undefined;
-	readonly SampleUtterances?: (SampleUtterance[] | undefined) | undefined;
-	readonly SlotPriorities?: (SlotPriority[] | undefined) | undefined;
-	readonly Slots?: (Slot[] | undefined) | undefined;
+	readonly OutputContexts?: OutputContext[] | undefined;
+	readonly ParentIntentSignature?: string | undefined;
+	readonly SampleUtterances?: SampleUtterance[] | undefined;
+	readonly SlotPriorities?: SlotPriority[] | undefined;
+	readonly Slots?: Slot[] | undefined;
 }
 export interface IntentClosingSetting {
 	readonly ClosingResponse: ResponseSpecification;
-	readonly IsActive?: (boolean | undefined) | undefined;
+	readonly IsActive?: boolean | undefined;
 }
 export interface IntentConfirmationSetting {
 	readonly DeclinationResponse: ResponseSpecification;
-	readonly IsActive?: (boolean | undefined) | undefined;
+	readonly IsActive?: boolean | undefined;
 	readonly PromptSpecification: PromptSpecification;
 }
 export interface KendraConfiguration {
 	readonly KendraIndex: string;
-	readonly QueryFilterString?: (string | undefined) | undefined;
-	readonly QueryFilterStringEnabled?: (boolean | undefined) | undefined;
+	readonly QueryFilterString?: string | undefined;
+	readonly QueryFilterStringEnabled?: boolean | undefined;
 }
 export interface LambdaCodeHook {
 	readonly CodeHookInterfaceVersion: string;
 	readonly LambdaArn: string;
 }
 export interface Message {
-	readonly CustomPayload?: (CustomPayload | undefined) | undefined;
-	readonly ImageResponseCard?: (ImageResponseCard | undefined) | undefined;
-	readonly PlainTextMessage?: (PlainTextMessage | undefined) | undefined;
-	readonly SSMLMessage?: (SSMLMessage | undefined) | undefined;
+	readonly CustomPayload?: CustomPayload | undefined;
+	readonly ImageResponseCard?: ImageResponseCard | undefined;
+	readonly PlainTextMessage?: PlainTextMessage | undefined;
+	readonly SSMLMessage?: SSMLMessage | undefined;
 }
 export interface MessageGroup {
 	readonly Message: Message;
-	readonly Variations?: (Message[] | undefined) | undefined;
+	readonly Variations?: Message[] | undefined;
 }
 export interface MultipleValuesSetting {
-	readonly AllowMultipleValues?: (boolean | undefined) | undefined;
+	readonly AllowMultipleValues?: boolean | undefined;
 }
 export interface ObfuscationSetting {
 	readonly ObfuscationSettingType: string;
@@ -256,36 +256,36 @@ export interface PlainTextMessage {
 	readonly Value: string;
 }
 export interface PostFulfillmentStatusSpecification {
-	readonly FailureResponse?: (ResponseSpecification | undefined) | undefined;
-	readonly SuccessResponse?: (ResponseSpecification | undefined) | undefined;
-	readonly TimeoutResponse?: (ResponseSpecification | undefined) | undefined;
+	readonly FailureResponse?: ResponseSpecification | undefined;
+	readonly SuccessResponse?: ResponseSpecification | undefined;
+	readonly TimeoutResponse?: ResponseSpecification | undefined;
 }
 export interface PromptAttemptSpecification {
-	readonly AllowInterrupt?: (boolean | undefined) | undefined;
+	readonly AllowInterrupt?: boolean | undefined;
 	readonly AllowedInputTypes: AllowedInputTypes;
-	readonly AudioAndDTMFInputSpecification?: (AudioAndDTMFInputSpecification | undefined) | undefined;
-	readonly TextInputSpecification?: (TextInputSpecification | undefined) | undefined;
+	readonly AudioAndDTMFInputSpecification?: AudioAndDTMFInputSpecification | undefined;
+	readonly TextInputSpecification?: TextInputSpecification | undefined;
 }
 export interface PromptSpecification {
-	readonly AllowInterrupt?: (boolean | undefined) | undefined;
+	readonly AllowInterrupt?: boolean | undefined;
 	readonly MaxRetries: number;
 	readonly MessageGroupsList: MessageGroup[];
-	readonly MessageSelectionStrategy?: (string | undefined) | undefined;
-	readonly PromptAttemptsSpecification?: ({ [key: string]: PromptAttemptSpecification } | undefined) | undefined;
+	readonly MessageSelectionStrategy?: string | undefined;
+	readonly PromptAttemptsSpecification?: { [key: string]: PromptAttemptSpecification } | undefined;
 }
 export interface ResponseSpecification {
-	readonly AllowInterrupt?: (boolean | undefined) | undefined;
+	readonly AllowInterrupt?: boolean | undefined;
 	readonly MessageGroupsList: MessageGroup[];
 }
 export interface S3BucketLogDestination {
-	readonly KmsKeyArn?: (string | undefined) | undefined;
+	readonly KmsKeyArn?: string | undefined;
 	readonly LogPrefix: string;
 	readonly S3BucketArn: string;
 }
 export interface S3Location {
 	readonly S3Bucket: string;
 	readonly S3ObjectKey: string;
-	readonly S3ObjectVersion?: (string | undefined) | undefined;
+	readonly S3ObjectVersion?: string | undefined;
 }
 export interface SSMLMessage {
 	readonly Value: string;
@@ -300,10 +300,10 @@ export interface SentimentAnalysisSettings {
 	readonly DetectSentiment: boolean;
 }
 export interface Slot {
-	readonly Description?: (string | undefined) | undefined;
-	readonly MultipleValuesSetting?: (MultipleValuesSetting | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly MultipleValuesSetting?: MultipleValuesSetting | undefined;
 	readonly Name: string;
-	readonly ObfuscationSetting?: (ObfuscationSetting | undefined) | undefined;
+	readonly ObfuscationSetting?: ObfuscationSetting | undefined;
 	readonly SlotTypeName: string;
 	readonly ValueElicitationSetting: SlotValueElicitationSetting;
 }
@@ -318,43 +318,43 @@ export interface SlotPriority {
 	readonly SlotName: string;
 }
 export interface SlotType {
-	readonly Description?: (string | undefined) | undefined;
-	readonly ExternalSourceSetting?: (ExternalSourceSetting | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly ExternalSourceSetting?: ExternalSourceSetting | undefined;
 	readonly Name: string;
-	readonly ParentSlotTypeSignature?: (string | undefined) | undefined;
-	readonly SlotTypeValues?: (SlotTypeValue[] | undefined) | undefined;
-	readonly ValueSelectionSetting?: (SlotValueSelectionSetting | undefined) | undefined;
+	readonly ParentSlotTypeSignature?: string | undefined;
+	readonly SlotTypeValues?: SlotTypeValue[] | undefined;
+	readonly ValueSelectionSetting?: SlotValueSelectionSetting | undefined;
 }
 export interface SlotTypeValue {
 	readonly SampleValue: SampleValue;
-	readonly Synonyms?: (SampleValue[] | undefined) | undefined;
+	readonly Synonyms?: SampleValue[] | undefined;
 }
 export interface SlotValueElicitationSetting {
-	readonly DefaultValueSpecification?: (SlotDefaultValueSpecification | undefined) | undefined;
-	readonly PromptSpecification?: (PromptSpecification | undefined) | undefined;
-	readonly SampleUtterances?: (SampleUtterance[] | undefined) | undefined;
+	readonly DefaultValueSpecification?: SlotDefaultValueSpecification | undefined;
+	readonly PromptSpecification?: PromptSpecification | undefined;
+	readonly SampleUtterances?: SampleUtterance[] | undefined;
 	readonly SlotConstraint: string;
-	readonly WaitAndContinueSpecification?: (WaitAndContinueSpecification | undefined) | undefined;
+	readonly WaitAndContinueSpecification?: WaitAndContinueSpecification | undefined;
 }
 export interface SlotValueRegexFilter {
 	readonly Pattern: string;
 }
 export interface SlotValueSelectionSetting {
-	readonly AdvancedRecognitionSetting?: (AdvancedRecognitionSetting | undefined) | undefined;
-	readonly RegexFilter?: (SlotValueRegexFilter | undefined) | undefined;
+	readonly AdvancedRecognitionSetting?: AdvancedRecognitionSetting | undefined;
+	readonly RegexFilter?: SlotValueRegexFilter | undefined;
 	readonly ResolutionStrategy: string;
 }
 export interface StillWaitingResponseSpecification {
-	readonly AllowInterrupt?: (boolean | undefined) | undefined;
+	readonly AllowInterrupt?: boolean | undefined;
 	readonly FrequencyInSeconds: number;
 	readonly MessageGroupsList: MessageGroup[];
 	readonly TimeoutInSeconds: number;
 }
 export interface TestBotAliasSettings {
-	readonly BotAliasLocaleSettings?: (BotAliasLocaleSettingsItem[] | undefined) | undefined;
-	readonly ConversationLogSettings?: (ConversationLogSettings | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly SentimentAnalysisSettings?: (SentimentAnalysisSettings | undefined) | undefined;
+	readonly BotAliasLocaleSettings?: BotAliasLocaleSettingsItem[] | undefined;
+	readonly ConversationLogSettings?: ConversationLogSettings | undefined;
+	readonly Description?: string | undefined;
+	readonly SentimentAnalysisSettings?: SentimentAnalysisSettings | undefined;
 }
 export interface TextInputSpecification {
 	readonly StartTimeoutMs: number;
@@ -367,13 +367,13 @@ export interface TextLogSetting {
 	readonly Enabled: boolean;
 }
 export interface VoiceSettings {
-	readonly Engine?: (string | undefined) | undefined;
+	readonly Engine?: string | undefined;
 	readonly VoiceId: string;
 }
 export interface WaitAndContinueSpecification {
 	readonly ContinueResponse: ResponseSpecification;
-	readonly IsActive?: (boolean | undefined) | undefined;
-	readonly StillWaitingResponse?: (StillWaitingResponseSpecification | undefined) | undefined;
+	readonly IsActive?: boolean | undefined;
+	readonly StillWaitingResponse?: StillWaitingResponseSpecification | undefined;
 	readonly WaitingResponse: ResponseSpecification;
 }
 export interface BotVersionLocaleDetails {

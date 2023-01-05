@@ -16,10 +16,10 @@ export interface clustersComponentOutputs {
 export interface clustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
+	readonly properties?: ClusterProperties;
 	readonly sku: AzureSku;
-	readonly tags?: TrackedResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly tags?: TrackedResourceTags;
+	readonly zones?: string[];
 }
 export class clusters_databases
 	extends ArmResource<clusters_databasesComponentInputs>
@@ -38,9 +38,9 @@ export interface clusters_databasesComponentOutputs {
 	readonly type: "Microsoft.Kusto/clusters/databases";
 }
 export interface clusters_databasesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DatabaseProperties | undefined;
+	readonly properties?: DatabaseProperties;
 }
 export class clusters_databases_dataConnections_EventGrid
 	extends ArmResource<clusters_databases_dataConnections_EventGridComponentInputs>
@@ -59,10 +59,10 @@ export interface clusters_databases_dataConnections_EventGridComponentOutputs {
 	readonly type: "Microsoft.Kusto/clusters/databases/dataConnections";
 }
 export interface clusters_databases_dataConnections_EventGridComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly kind: "EventGrid";
-	readonly properties?: EventGridConnectionProperties | undefined;
+	readonly properties?: EventGridConnectionProperties;
 }
 export class clusters_databases_dataConnections_EventHub
 	extends ArmResource<clusters_databases_dataConnections_EventHubComponentInputs>
@@ -81,10 +81,10 @@ export interface clusters_databases_dataConnections_EventHubComponentOutputs {
 	readonly type: "Microsoft.Kusto/clusters/databases/dataConnections";
 }
 export interface clusters_databases_dataConnections_EventHubComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly kind: "EventHub";
-	readonly properties?: EventHubConnectionProperties | undefined;
+	readonly properties?: EventHubConnectionProperties;
 }
 export class clusters_databases_dataConnections_IotHub
 	extends ArmResource<clusters_databases_dataConnections_IotHubComponentInputs>
@@ -103,10 +103,10 @@ export interface clusters_databases_dataConnections_IotHubComponentOutputs {
 	readonly type: "Microsoft.Kusto/clusters/databases/dataConnections";
 }
 export interface clusters_databases_dataConnections_IotHubComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly kind: "IotHub";
-	readonly properties?: IotHubConnectionProperties | undefined;
+	readonly properties?: IotHubConnectionProperties;
 }
 export function listPrincipals(resource: clusters_databases): DatabasePrincipalListResult {
 	if (resource.apiVersion !== "2019-05-15") {
@@ -118,7 +118,7 @@ export function listPrincipals(resource: clusters_databases): DatabasePrincipalL
 	throw new Error("not implemented");
 }
 export interface AzureSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name:
 		| "Dev(No SLA)_Standard_D11_v2"
 		| "Standard_D11_v2"
@@ -135,48 +135,45 @@ export interface AzureSku {
 	readonly tier: "Basic" | "Standard";
 }
 export interface ClusterProperties {
-	readonly dataIngestionUri?: string | undefined;
-	readonly enableDiskEncryption?: boolean | undefined;
-	readonly enableStreamingIngest?: boolean | undefined;
-	readonly optimizedAutoscale?: OptimizedAutoscale | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded") | undefined;
+	readonly dataIngestionUri?: string;
+	readonly enableDiskEncryption?: boolean;
+	readonly enableStreamingIngest?: boolean;
+	readonly optimizedAutoscale?: OptimizedAutoscale;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
 	readonly state?:
-		| (
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Running"
-				| "Starting"
-				| "Stopped"
-				| "Stopping"
-				| "Unavailable"
-				| "Updating"
-		  )
-		| undefined;
-	readonly trustedExternalTenants?: TrustedExternalTenant[] | undefined;
-	readonly uri?: string | undefined;
-	readonly virtualNetworkConfiguration?: VirtualNetworkConfiguration | undefined;
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Running"
+		| "Starting"
+		| "Stopped"
+		| "Stopping"
+		| "Unavailable"
+		| "Updating";
+	readonly trustedExternalTenants?: TrustedExternalTenant[];
+	readonly uri?: string;
+	readonly virtualNetworkConfiguration?: VirtualNetworkConfiguration;
 }
 export interface DatabasePrincipal {
-	readonly appId?: string | undefined;
-	readonly email?: string | undefined;
-	readonly fqn?: string | undefined;
+	readonly appId?: string;
+	readonly email?: string;
+	readonly fqn?: string;
 	readonly name: string;
 	readonly role: "Admin" | "Ingestor" | "Monitor" | "UnrestrictedViewers" | "User" | "Viewer";
-	readonly tenantName?: string | undefined;
+	readonly tenantName?: string;
 	readonly type: "App" | "Group" | "User";
 }
 export interface DatabasePrincipalListResult {
-	readonly value?: DatabasePrincipal[] | undefined;
+	readonly value?: DatabasePrincipal[];
 }
 export interface DatabaseProperties {
-	readonly hotCachePeriod?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded") | undefined;
-	readonly softDeletePeriod?: string | undefined;
-	readonly statistics?: DatabaseStatistics | undefined;
+	readonly hotCachePeriod?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
+	readonly softDeletePeriod?: string;
+	readonly statistics?: DatabaseStatistics;
 }
 export interface DatabaseStatistics {
-	readonly size?: number | undefined;
+	readonly size?: number;
 }
 export interface EventGridConnectionProperties {
 	readonly consumerGroup: string;
@@ -194,30 +191,50 @@ export interface EventGridConnectionProperties {
 		| "TSVE"
 		| "TXT";
 	readonly eventHubResourceId: string;
-	readonly mappingRuleName?: string | undefined;
+	readonly mappingRuleName?: string;
 	readonly storageAccountResourceId: string;
 	readonly tableName: string;
 }
 export interface EventHubConnectionProperties {
 	readonly consumerGroup: string;
 	readonly dataFormat?:
-		| ("AVRO" | "CSV" | "JSON" | "MULTIJSON" | "PSV" | "RAW" | "SCSV" | "SINGLEJSON" | "SOHSV" | "TSV" | "TSVE" | "TXT")
-		| undefined;
+		| "AVRO"
+		| "CSV"
+		| "JSON"
+		| "MULTIJSON"
+		| "PSV"
+		| "RAW"
+		| "SCSV"
+		| "SINGLEJSON"
+		| "SOHSV"
+		| "TSV"
+		| "TSVE"
+		| "TXT";
 	readonly eventHubResourceId: string;
-	readonly eventSystemProperties?: string[] | undefined;
-	readonly mappingRuleName?: string | undefined;
-	readonly tableName?: string | undefined;
+	readonly eventSystemProperties?: string[];
+	readonly mappingRuleName?: string;
+	readonly tableName?: string;
 }
 export interface IotHubConnectionProperties {
 	readonly consumerGroup: string;
 	readonly dataFormat?:
-		| ("AVRO" | "CSV" | "JSON" | "MULTIJSON" | "PSV" | "RAW" | "SCSV" | "SINGLEJSON" | "SOHSV" | "TSV" | "TSVE" | "TXT")
-		| undefined;
-	readonly eventSystemProperties?: string[] | undefined;
+		| "AVRO"
+		| "CSV"
+		| "JSON"
+		| "MULTIJSON"
+		| "PSV"
+		| "RAW"
+		| "SCSV"
+		| "SINGLEJSON"
+		| "SOHSV"
+		| "TSV"
+		| "TSVE"
+		| "TXT";
+	readonly eventSystemProperties?: string[];
 	readonly iotHubResourceId: string;
-	readonly mappingRuleName?: string | undefined;
+	readonly mappingRuleName?: string;
 	readonly sharedAccessPolicyName: string;
-	readonly tableName?: string | undefined;
+	readonly tableName?: string;
 }
 export interface OptimizedAutoscale {
 	readonly isEnabled: boolean;
@@ -226,10 +243,10 @@ export interface OptimizedAutoscale {
 	readonly version: number;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrustedExternalTenant {
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface VirtualNetworkConfiguration {
 	readonly dataManagementPublicIpId: string;

@@ -10,19 +10,18 @@ export class AppsFirewallIngressRules
 }
 export interface AppsFirewallIngressRulesComponentOutputs {}
 export interface AppsFirewallIngressRulesComponentInputs {
-	readonly action?: string | undefined;
+	readonly action?: string;
 	readonly appsId: string;
-	readonly description?: string | undefined;
-	readonly priority?: number | undefined;
-	readonly sourceRange?: string | undefined;
-	readonly type: string;
+	readonly description?: string;
+	readonly priority?: number;
+	readonly sourceRange?: string;
 	readonly name: string;
 }
 export interface FirewallRule {
-	readonly action?: string | undefined;
-	readonly description?: string | undefined;
-	readonly priority?: number | undefined;
-	readonly sourceRange?: string | undefined;
+	readonly action?: string;
+	readonly description?: string;
+	readonly priority?: number;
+	readonly sourceRange?: string;
 }
 export default {
 	AppsFirewallIngressRules: AppsFirewallIngressRules,

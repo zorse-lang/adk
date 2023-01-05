@@ -14,11 +14,11 @@ export interface machinesComponentOutputs {
 	readonly type: "Microsoft.HybridCompute/machines";
 }
 export interface machinesComponentInputs {
-	readonly identity?: MachineIdentity | undefined;
+	readonly identity?: MachineIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MachineProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: MachineProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class machines_extensions
 	extends ArmResource<machines_extensionsComponentInputs>
@@ -39,82 +39,82 @@ export interface machines_extensionsComponentOutputs {
 export interface machines_extensionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MachineExtensionProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: MachineExtensionProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface ErrorDetail {
 	readonly code: string;
-	readonly details?: ErrorDetail[] | undefined;
+	readonly details?: ErrorDetail[];
 	readonly message: string;
-	readonly target?: string | undefined;
+	readonly target?: string;
 }
 export interface LocationData {
-	readonly city?: string | undefined;
-	readonly countryOrRegion?: string | undefined;
-	readonly district?: string | undefined;
+	readonly city?: string;
+	readonly countryOrRegion?: string;
+	readonly district?: string;
 	readonly name: string;
 }
 export interface MachineExtensionInstanceView {
-	readonly name?: string | undefined;
-	readonly status?: MachineExtensionInstanceViewStatus | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly name?: string;
+	readonly status?: MachineExtensionInstanceViewStatus;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface MachineExtensionInstanceViewStatus {
-	readonly code?: string | undefined;
-	readonly displayStatus?: string | undefined;
-	readonly level?: ("Error" | "Info" | "Warning") | undefined;
-	readonly message?: string | undefined;
-	readonly time?: string | undefined;
+	readonly code?: string;
+	readonly displayStatus?: string;
+	readonly level?: "Error" | "Info" | "Warning";
+	readonly message?: string;
+	readonly time?: string;
 }
 export interface MachineExtensionProperties {
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly instanceView?: MachineExtensionPropertiesInstanceView | undefined;
-	readonly protectedSettings?: any | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly settings?: any | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly forceUpdateTag?: string;
+	readonly instanceView?: MachineExtensionPropertiesInstanceView;
+	readonly protectedSettings?: any;
+	readonly provisioningState?: string;
+	readonly publisher?: string;
+	readonly settings?: any;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface MachineExtensionPropertiesInstanceView {
-	readonly name?: string | undefined;
-	readonly status?: MachineExtensionInstanceViewStatus | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly name?: string;
+	readonly status?: MachineExtensionInstanceViewStatus;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface MachineIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: string;
 }
 export interface MachineProperties {
-	readonly adFqdn?: string | undefined;
-	readonly agentVersion?: string | undefined;
-	readonly clientPublicKey?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly dnsFqdn?: string | undefined;
-	readonly domainName?: string | undefined;
-	readonly errorDetails?: ErrorDetail[] | undefined;
-	readonly extensions?: MachineExtensionInstanceView[] | undefined;
-	readonly lastStatusChange?: string | undefined;
-	readonly locationData?: LocationData | undefined;
-	readonly machineFqdn?: string | undefined;
-	readonly osName?: string | undefined;
-	readonly osProfile?: MachinePropertiesOsProfile | undefined;
-	readonly osSku?: string | undefined;
-	readonly osVersion?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly status?: ("Connected" | "Disconnected" | "Error") | undefined;
-	readonly vmId?: string | undefined;
-	readonly vmUuid?: string | undefined;
+	readonly adFqdn?: string;
+	readonly agentVersion?: string;
+	readonly clientPublicKey?: string;
+	readonly displayName?: string;
+	readonly dnsFqdn?: string;
+	readonly domainName?: string;
+	readonly errorDetails?: ErrorDetail[];
+	readonly extensions?: MachineExtensionInstanceView[];
+	readonly lastStatusChange?: string;
+	readonly locationData?: LocationData;
+	readonly machineFqdn?: string;
+	readonly osName?: string;
+	readonly osProfile?: MachinePropertiesOsProfile;
+	readonly osSku?: string;
+	readonly osVersion?: string;
+	readonly provisioningState?: string;
+	readonly status?: "Connected" | "Disconnected" | "Error";
+	readonly vmId?: string;
+	readonly vmUuid?: string;
 }
 export interface MachinePropertiesOsProfile {
-	readonly computerName?: string | undefined;
+	readonly computerName?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	machines: machines,

@@ -14,12 +14,12 @@ export interface clustersComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/clusters";
 }
 export interface clustersComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
+	readonly identity?: ManagedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ClusterProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class clusters_arcSettings
 	extends ArmResource<clusters_arcSettingsComponentInputs>
@@ -39,8 +39,8 @@ export interface clusters_arcSettingsComponentOutputs {
 }
 export interface clusters_arcSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ArcSettingProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ArcSettingProperties;
+	readonly systemData?: SystemData;
 }
 export class clusters_arcSettings_extensions
 	extends ArmResource<clusters_arcSettings_extensionsComponentInputs>
@@ -60,8 +60,8 @@ export interface clusters_arcSettings_extensionsComponentOutputs {
 }
 export interface clusters_arcSettings_extensionsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ExtensionProperties;
+	readonly systemData?: SystemData;
 }
 export class clusters_publishers
 	extends ArmResource<clusters_publishersComponentInputs>
@@ -81,8 +81,8 @@ export interface clusters_publishersComponentOutputs {
 }
 export interface clusters_publishersComponentInputs {
 	readonly name: string;
-	readonly properties?: PublisherProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PublisherProperties;
+	readonly systemData?: SystemData;
 }
 export class clusters_publishers_offers
 	extends ArmResource<clusters_publishers_offersComponentInputs>
@@ -102,8 +102,8 @@ export interface clusters_publishers_offersComponentOutputs {
 }
 export interface clusters_publishers_offersComponentInputs {
 	readonly name: string;
-	readonly properties?: OfferProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: OfferProperties;
+	readonly systemData?: SystemData;
 }
 export class clusters_publishers_offers_skus
 	extends ArmResource<clusters_publishers_offers_skusComponentInputs>
@@ -123,8 +123,8 @@ export interface clusters_publishers_offers_skusComponentOutputs {
 }
 export interface clusters_publishers_offers_skusComponentInputs {
 	readonly name: string;
-	readonly properties?: SkuProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SkuProperties;
+	readonly systemData?: SystemData;
 }
 export class clusters_updates
 	extends ArmResource<clusters_updatesComponentInputs>
@@ -143,10 +143,10 @@ export interface clusters_updatesComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/clusters/updates";
 }
 export interface clusters_updatesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: UpdateProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: UpdateProperties;
+	readonly systemData?: SystemData;
 }
 export class clusters_updates_updateRuns
 	extends ArmResource<clusters_updates_updateRunsComponentInputs>
@@ -165,10 +165,10 @@ export interface clusters_updates_updateRunsComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/clusters/updates/updateRuns";
 }
 export interface clusters_updates_updateRunsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: UpdateRunProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: UpdateRunProperties;
+	readonly systemData?: SystemData;
 }
 export class clusters_updateSummaries
 	extends ArmResource<clusters_updateSummariesComponentInputs>
@@ -187,299 +187,279 @@ export interface clusters_updateSummariesComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/clusters/updateSummaries";
 }
 export interface clusters_updateSummariesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: UpdateSummariesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: UpdateSummariesProperties;
+	readonly systemData?: SystemData;
 }
 export interface ArcSettingProperties {
 	readonly aggregateState?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "InProgress"
-				| "Moving"
-				| "NotSpecified"
-				| "PartiallyConnected"
-				| "PartiallySucceeded"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly arcApplicationClientId?: string | undefined;
-	readonly arcApplicationObjectId?: string | undefined;
-	readonly arcApplicationTenantId?: string | undefined;
-	readonly arcInstanceResourceGroup?: string | undefined;
-	readonly arcServicePrincipalObjectId?: string | undefined;
-	readonly connectivityProperties?: any | undefined;
-	readonly perNodeDetails?: PerNodeState[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "InProgress"
+		| "Moving"
+		| "NotSpecified"
+		| "PartiallyConnected"
+		| "PartiallySucceeded"
+		| "Succeeded"
+		| "Updating";
+	readonly arcApplicationClientId?: string;
+	readonly arcApplicationObjectId?: string;
+	readonly arcApplicationTenantId?: string;
+	readonly arcInstanceResourceGroup?: string;
+	readonly arcServicePrincipalObjectId?: string;
+	readonly connectivityProperties?: any;
+	readonly perNodeDetails?: PerNodeState[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
 }
 export interface ClusterDesiredProperties {
-	readonly diagnosticLevel?: ("Basic" | "Enhanced" | "Off") | undefined;
-	readonly windowsServerSubscription?: ("Disabled" | "Enabled") | undefined;
+	readonly diagnosticLevel?: "Basic" | "Enhanced" | "Off";
+	readonly windowsServerSubscription?: "Disabled" | "Enabled";
 }
 export interface ClusterNode {
-	readonly coreCount?: number | undefined;
-	readonly id?: number | undefined;
-	readonly manufacturer?: string | undefined;
-	readonly memoryInGiB?: number | undefined;
-	readonly model?: string | undefined;
-	readonly name?: string | undefined;
-	readonly nodeType?: ("FirstParty" | "ThirdParty") | undefined;
-	readonly osDisplayVersion?: string | undefined;
-	readonly osName?: string | undefined;
-	readonly osVersion?: string | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly windowsServerSubscription?: ("Disabled" | "Enabled") | undefined;
+	readonly coreCount?: number;
+	readonly id?: number;
+	readonly manufacturer?: string;
+	readonly memoryInGiB?: number;
+	readonly model?: string;
+	readonly name?: string;
+	readonly nodeType?: "FirstParty" | "ThirdParty";
+	readonly osDisplayVersion?: string;
+	readonly osName?: string;
+	readonly osVersion?: string;
+	readonly serialNumber?: string;
+	readonly windowsServerSubscription?: "Disabled" | "Enabled";
 }
 export interface ClusterProperties {
-	readonly aadApplicationObjectId?: string | undefined;
-	readonly aadClientId?: string | undefined;
-	readonly aadServicePrincipalObjectId?: string | undefined;
-	readonly aadTenantId?: string | undefined;
-	readonly billingModel?: string | undefined;
-	readonly cloudId?: string | undefined;
-	readonly cloudManagementEndpoint?: string | undefined;
-	readonly desiredProperties?: ClusterDesiredProperties | undefined;
-	readonly lastBillingTimestamp?: string | undefined;
-	readonly lastSyncTimestamp?: string | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly registrationTimestamp?: string | undefined;
-	readonly reportedProperties?: ClusterReportedProperties | undefined;
-	readonly serviceEndpoint?: string | undefined;
-	readonly softwareAssuranceProperties?: SoftwareAssuranceProperties | undefined;
-	readonly status?:
-		| ("ConnectedRecently" | "Disconnected" | "Error" | "NotConnectedRecently" | "NotYetRegistered")
-		| undefined;
-	readonly trialDaysRemaining?: number | undefined;
+	readonly aadApplicationObjectId?: string;
+	readonly aadClientId?: string;
+	readonly aadServicePrincipalObjectId?: string;
+	readonly aadTenantId?: string;
+	readonly billingModel?: string;
+	readonly cloudId?: string;
+	readonly cloudManagementEndpoint?: string;
+	readonly desiredProperties?: ClusterDesiredProperties;
+	readonly lastBillingTimestamp?: string;
+	readonly lastSyncTimestamp?: string;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
+	readonly registrationTimestamp?: string;
+	readonly reportedProperties?: ClusterReportedProperties;
+	readonly serviceEndpoint?: string;
+	readonly softwareAssuranceProperties?: SoftwareAssuranceProperties;
+	readonly status?: "ConnectedRecently" | "Disconnected" | "Error" | "NotConnectedRecently" | "NotYetRegistered";
+	readonly trialDaysRemaining?: number;
 }
 export interface ClusterReportedProperties {
-	readonly clusterId?: string | undefined;
-	readonly clusterName?: string | undefined;
-	readonly clusterVersion?: string | undefined;
-	readonly diagnosticLevel?: ("Basic" | "Enhanced" | "Off") | undefined;
-	readonly imdsAttestation?: ("Disabled" | "Enabled") | undefined;
-	readonly lastUpdated?: string | undefined;
-	readonly nodes?: ClusterNode[] | undefined;
+	readonly clusterId?: string;
+	readonly clusterName?: string;
+	readonly clusterVersion?: string;
+	readonly diagnosticLevel?: "Basic" | "Enhanced" | "Off";
+	readonly imdsAttestation?: "Disabled" | "Enabled";
+	readonly lastUpdated?: string;
+	readonly nodes?: ClusterNode[];
 }
 export interface ExtensionParameters {
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly protectedSettings?: any | undefined;
-	readonly publisher?: string | undefined;
-	readonly settings?: any | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly forceUpdateTag?: string;
+	readonly protectedSettings?: any;
+	readonly publisher?: string;
+	readonly settings?: any;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface ExtensionProperties {
 	readonly aggregateState?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "InProgress"
-				| "Moving"
-				| "NotSpecified"
-				| "PartiallyConnected"
-				| "PartiallySucceeded"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly extensionParameters?: ExtensionParameters | undefined;
-	readonly perNodeExtensionDetails?: PerNodeExtensionState[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "InProgress"
+		| "Moving"
+		| "NotSpecified"
+		| "PartiallyConnected"
+		| "PartiallySucceeded"
+		| "Succeeded"
+		| "Updating";
+	readonly extensionParameters?: ExtensionParameters;
+	readonly perNodeExtensionDetails?: PerNodeExtensionState[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: UserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedIdentities;
 }
 export interface OfferProperties {
-	readonly content?: string | undefined;
-	readonly contentVersion?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publisherId?: string | undefined;
-	readonly skuMappings?: SkuMappings[] | undefined;
+	readonly content?: string;
+	readonly contentVersion?: string;
+	readonly provisioningState?: string;
+	readonly publisherId?: string;
+	readonly skuMappings?: SkuMappings[];
 }
 export interface PackageVersionInfo {
-	readonly lastUpdated?: string | undefined;
-	readonly packageType?: string | undefined;
-	readonly version?: string | undefined;
+	readonly lastUpdated?: string;
+	readonly packageType?: string;
+	readonly version?: string;
 }
 export interface PerNodeExtensionState {
-	readonly extension?: string | undefined;
-	readonly name?: string | undefined;
+	readonly extension?: string;
+	readonly name?: string;
 	readonly state?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "Moving"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "Moving"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
 }
 export interface PerNodeState {
-	readonly arcInstance?: string | undefined;
-	readonly name?: string | undefined;
+	readonly arcInstance?: string;
+	readonly name?: string;
 	readonly state?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "Moving"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "Moving"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
 }
 export interface PublisherProperties {
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface SkuMappings {
-	readonly catalogPlanId?: string | undefined;
-	readonly marketplaceSkuId?: string | undefined;
-	readonly marketplaceSkuVersions?: string[] | undefined;
+	readonly catalogPlanId?: string;
+	readonly marketplaceSkuId?: string;
+	readonly marketplaceSkuVersions?: string[];
 }
 export interface SkuProperties {
-	readonly content?: string | undefined;
-	readonly contentVersion?: string | undefined;
-	readonly offerId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publisherId?: string | undefined;
-	readonly skuMappings?: SkuMappings[] | undefined;
+	readonly content?: string;
+	readonly contentVersion?: string;
+	readonly offerId?: string;
+	readonly provisioningState?: string;
+	readonly publisherId?: string;
+	readonly skuMappings?: SkuMappings[];
 }
 export interface SoftwareAssuranceProperties {
-	readonly lastUpdated?: string | undefined;
-	readonly softwareAssuranceIntent?: ("Disable" | "Enable") | undefined;
-	readonly softwareAssuranceStatus?: ("Disabled" | "Enabled") | undefined;
+	readonly lastUpdated?: string;
+	readonly softwareAssuranceIntent?: "Disable" | "Enable";
+	readonly softwareAssuranceStatus?: "Disabled" | "Enabled";
 }
 export interface Step {
-	readonly description?: string | undefined;
-	readonly endTimeUtc?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly lastUpdatedTimeUtc?: string | undefined;
-	readonly name?: string | undefined;
-	readonly startTimeUtc?: string | undefined;
-	readonly status?: string | undefined;
-	readonly steps?: Step[] | undefined;
+	readonly description?: string;
+	readonly endTimeUtc?: string;
+	readonly errorMessage?: string;
+	readonly lastUpdatedTimeUtc?: string;
+	readonly name?: string;
+	readonly startTimeUtc?: string;
+	readonly status?: string;
+	readonly steps?: Step[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UpdatePrerequisite {
-	readonly packageName?: string | undefined;
-	readonly updateType?: string | undefined;
-	readonly version?: string | undefined;
+	readonly packageName?: string;
+	readonly updateType?: string;
+	readonly version?: string;
 }
 export interface UpdateProperties {
-	readonly additionalProperties?: string | undefined;
-	readonly availabilityType?: ("Local" | "Notify" | "Online") | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly installedDate?: string | undefined;
-	readonly packagePath?: string | undefined;
-	readonly packageSizeInMb?: number | undefined;
-	readonly packageType?: string | undefined;
-	readonly prerequisites?: UpdatePrerequisite[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly publisher?: string | undefined;
-	readonly releaseLink?: string | undefined;
+	readonly additionalProperties?: string;
+	readonly availabilityType?: "Local" | "Notify" | "Online";
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly installedDate?: string;
+	readonly packagePath?: string;
+	readonly packageSizeInMb?: number;
+	readonly packageType?: string;
+	readonly prerequisites?: UpdatePrerequisite[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
+	readonly publisher?: string;
+	readonly releaseLink?: string;
 	readonly state?:
-		| (
-				| "DownloadFailed"
-				| "Downloading"
-				| "HasPrerequisite"
-				| "HealthCheckFailed"
-				| "HealthChecking"
-				| "InstallationFailed"
-				| "Installed"
-				| "Installing"
-				| "Invalid"
-				| "NotApplicableBecauseAnotherUpdateIsInProgress"
-				| "Obsolete"
-				| "PreparationFailed"
-				| "Preparing"
-				| "Ready"
-				| "ReadyToInstall"
-				| "Recalled"
-				| "ScanFailed"
-				| "ScanInProgress"
-		  )
-		| undefined;
-	readonly updateStateProperties?: UpdateStateProperties | undefined;
-	readonly version?: string | undefined;
+		| "DownloadFailed"
+		| "Downloading"
+		| "HasPrerequisite"
+		| "HealthCheckFailed"
+		| "HealthChecking"
+		| "InstallationFailed"
+		| "Installed"
+		| "Installing"
+		| "Invalid"
+		| "NotApplicableBecauseAnotherUpdateIsInProgress"
+		| "Obsolete"
+		| "PreparationFailed"
+		| "Preparing"
+		| "Ready"
+		| "ReadyToInstall"
+		| "Recalled"
+		| "ScanFailed"
+		| "ScanInProgress";
+	readonly updateStateProperties?: UpdateStateProperties;
+	readonly version?: string;
 }
 export interface UpdateRunProperties {
-	readonly duration?: string | undefined;
-	readonly progress?: Step | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly state?: ("Failed" | "InProgress" | "Succeeded" | "Unknown") | undefined;
+	readonly duration?: string;
+	readonly progress?: Step;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
+	readonly state?: "Failed" | "InProgress" | "Succeeded" | "Unknown";
 }
 export interface UpdateStateProperties {
-	readonly notifyMessage?: string | undefined;
-	readonly progressPercentage?: number | undefined;
+	readonly notifyMessage?: string;
+	readonly progressPercentage?: number;
 }
 export interface UpdateSummariesProperties {
-	readonly currentVersion?: string | undefined;
-	readonly hardwareModel?: string | undefined;
-	readonly oemFamily?: string | undefined;
-	readonly packageVersions?: PackageVersionInfo[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
+	readonly currentVersion?: string;
+	readonly hardwareModel?: string;
+	readonly oemFamily?: string;
+	readonly packageVersions?: PackageVersionInfo[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
 	readonly state?:
-		| (
-				| "AppliedSuccessfully"
-				| "NeedsAttention"
-				| "PreparationFailed"
-				| "PreparationInProgress"
-				| "Unknown"
-				| "UpdateAvailable"
-				| "UpdateFailed"
-				| "UpdateInProgress"
-		  )
-		| undefined;
+		| "AppliedSuccessfully"
+		| "NeedsAttention"
+		| "PreparationFailed"
+		| "PreparationInProgress"
+		| "Unknown"
+		| "UpdateAvailable"
+		| "UpdateFailed"
+		| "UpdateInProgress";
 }
 export interface UserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	clusters: clusters,

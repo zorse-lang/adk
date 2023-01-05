@@ -14,7 +14,7 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.CognitiveServices/accounts";
 }
 export interface accountsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly kind:
 		| "Academic"
 		| "Bing.Autosuggest"
@@ -37,7 +37,7 @@ export interface accountsComponentInputs {
 	readonly name: string;
 	readonly properties: any;
 	readonly sku: Sku;
-	readonly tags?: CognitiveServicesAccountCreateParametersTags | undefined;
+	readonly tags?: CognitiveServicesAccountCreateParametersTags;
 }
 export function listKeys(resource: accounts): CognitiveServicesAccountKeys {
 	if (resource.apiVersion !== "2016-02-01-preview") {
@@ -49,15 +49,15 @@ export function listKeys(resource: accounts): CognitiveServicesAccountKeys {
 	throw new Error("not implemented");
 }
 export interface CognitiveServicesAccountCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CognitiveServicesAccountKeys {
-	readonly key1?: string | undefined;
-	readonly key2?: string | undefined;
+	readonly key1?: string;
+	readonly key2?: string;
 }
 export interface Sku {
 	readonly name: "F0" | "P0" | "P1" | "P2" | "S0" | "S1" | "S2" | "S3" | "S4" | "S5" | "S6";
-	readonly tier?: ("Free" | "Premium") | undefined;
+	readonly tier?: "Free" | "Premium";
 }
 export default {
 	accounts: accounts,

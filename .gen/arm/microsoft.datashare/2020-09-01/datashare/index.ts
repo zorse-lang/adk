@@ -15,11 +15,11 @@ export interface accountsComponentOutputs {
 }
 export interface accountsComponentInputs {
 	readonly identity: Identity;
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AccountProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: DefaultDtoTags | undefined;
+	readonly properties?: AccountProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: DefaultDtoTags;
 }
 export class accounts_shares
 	extends ArmResource<accounts_sharesComponentInputs>
@@ -39,8 +39,8 @@ export interface accounts_sharesComponentOutputs {
 }
 export interface accounts_sharesComponentInputs {
 	readonly name: string;
-	readonly properties?: ShareProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ShareProperties;
+	readonly systemData?: SystemData;
 }
 export class accounts_shares_dataSets_AdlsGen1File
 	extends ArmResource<accounts_shares_dataSets_AdlsGen1FileComponentInputs>
@@ -60,7 +60,7 @@ export interface accounts_shares_dataSets_AdlsGen1FileComponentOutputs {
 }
 export interface accounts_shares_dataSets_AdlsGen1FileComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "AdlsGen1File";
 	readonly properties: AdlsGen1FileProperties;
 }
@@ -82,7 +82,7 @@ export interface accounts_shares_dataSets_AdlsGen1FolderComponentOutputs {
 }
 export interface accounts_shares_dataSets_AdlsGen1FolderComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "AdlsGen1Folder";
 	readonly properties: AdlsGen1FolderProperties;
 }
@@ -104,7 +104,7 @@ export interface accounts_shares_dataSets_AdlsGen2FileComponentOutputs {
 }
 export interface accounts_shares_dataSets_AdlsGen2FileComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "AdlsGen2File";
 	readonly properties: AdlsGen2FileProperties;
 }
@@ -126,7 +126,7 @@ export interface accounts_shares_dataSets_AdlsGen2FileSystemComponentOutputs {
 }
 export interface accounts_shares_dataSets_AdlsGen2FileSystemComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "AdlsGen2FileSystem";
 	readonly properties: AdlsGen2FileSystemProperties;
 }
@@ -148,7 +148,7 @@ export interface accounts_shares_dataSets_AdlsGen2FolderComponentOutputs {
 }
 export interface accounts_shares_dataSets_AdlsGen2FolderComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "AdlsGen2Folder";
 	readonly properties: AdlsGen2FolderProperties;
 }
@@ -170,7 +170,7 @@ export interface accounts_shares_dataSets_BlobComponentOutputs {
 }
 export interface accounts_shares_dataSets_BlobComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "Blob";
 	readonly properties: BlobProperties;
 }
@@ -192,7 +192,7 @@ export interface accounts_shares_dataSets_BlobFolderComponentOutputs {
 }
 export interface accounts_shares_dataSets_BlobFolderComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "BlobFolder";
 	readonly properties: BlobFolderProperties;
 }
@@ -214,7 +214,7 @@ export interface accounts_shares_dataSets_ContainerComponentOutputs {
 }
 export interface accounts_shares_dataSets_ContainerComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "Container";
 	readonly properties: BlobContainerProperties;
 }
@@ -236,7 +236,7 @@ export interface accounts_shares_dataSets_KustoClusterComponentOutputs {
 }
 export interface accounts_shares_dataSets_KustoClusterComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "KustoCluster";
 	readonly properties: KustoClusterDataSetProperties;
 }
@@ -258,7 +258,7 @@ export interface accounts_shares_dataSets_KustoDatabaseComponentOutputs {
 }
 export interface accounts_shares_dataSets_KustoDatabaseComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "KustoDatabase";
 	readonly properties: KustoDatabaseDataSetProperties;
 }
@@ -280,9 +280,9 @@ export interface accounts_shares_dataSets_SqlDBTableComponentOutputs {
 }
 export interface accounts_shares_dataSets_SqlDBTableComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "SqlDBTable";
-	readonly properties?: SqlDBTableProperties | undefined;
+	readonly properties?: SqlDBTableProperties;
 }
 export class accounts_shares_dataSets_SqlDWTable
 	extends ArmResource<accounts_shares_dataSets_SqlDWTableComponentInputs>
@@ -302,9 +302,9 @@ export interface accounts_shares_dataSets_SqlDWTableComponentOutputs {
 }
 export interface accounts_shares_dataSets_SqlDWTableComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "SqlDWTable";
-	readonly properties?: SqlDWTableProperties | undefined;
+	readonly properties?: SqlDWTableProperties;
 }
 export class accounts_shares_dataSets_SynapseWorkspaceSqlPoolTable
 	extends ArmResource<accounts_shares_dataSets_SynapseWorkspaceSqlPoolTableComponentInputs>
@@ -324,7 +324,7 @@ export interface accounts_shares_dataSets_SynapseWorkspaceSqlPoolTableComponentO
 }
 export interface accounts_shares_dataSets_SynapseWorkspaceSqlPoolTableComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "SynapseWorkspaceSqlPoolTable";
 	readonly properties: SynapseWorkspaceSqlPoolTableDataSetProperties;
 }
@@ -346,8 +346,8 @@ export interface accounts_shares_invitationsComponentOutputs {
 }
 export interface accounts_shares_invitationsComponentInputs {
 	readonly name: string;
-	readonly properties?: InvitationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: InvitationProperties;
+	readonly systemData?: SystemData;
 }
 export class accounts_shares_providerShareSubscriptions
 	extends ArmResource<accounts_shares_providerShareSubscriptionsComponentInputs>
@@ -373,8 +373,8 @@ export interface accounts_shares_providerShareSubscriptionsComponentOutputs {
 }
 export interface accounts_shares_providerShareSubscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: ProviderShareSubscriptionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ProviderShareSubscriptionProperties;
+	readonly systemData?: SystemData;
 }
 export class accounts_shares_synchronizationSettings_ScheduleBased
 	extends ArmResource<accounts_shares_synchronizationSettings_ScheduleBasedComponentInputs>
@@ -394,7 +394,7 @@ export interface accounts_shares_synchronizationSettings_ScheduleBasedComponentO
 }
 export interface accounts_shares_synchronizationSettings_ScheduleBasedComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "ScheduleBased";
 	readonly properties: ScheduledSynchronizationSettingProperties;
 }
@@ -417,7 +417,7 @@ export interface accounts_shareSubscriptionsComponentOutputs {
 export interface accounts_shareSubscriptionsComponentInputs {
 	readonly name: string;
 	readonly properties: ShareSubscriptionProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class accounts_shareSubscriptions_dataSetMappings_AdlsGen2File
 	extends ArmResource<accounts_shareSubscriptions_dataSetMappings_AdlsGen2FileComponentInputs>
@@ -443,7 +443,7 @@ export interface accounts_shareSubscriptions_dataSetMappings_AdlsGen2FileCompone
 }
 export interface accounts_shareSubscriptions_dataSetMappings_AdlsGen2FileComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "AdlsGen2File";
 	readonly properties: AdlsGen2FileDataSetMappingProperties;
 }
@@ -474,7 +474,7 @@ export interface accounts_shareSubscriptions_dataSetMappings_AdlsGen2FileSystemC
 }
 export interface accounts_shareSubscriptions_dataSetMappings_AdlsGen2FileSystemComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "AdlsGen2FileSystem";
 	readonly properties: AdlsGen2FileSystemDataSetMappingProperties;
 }
@@ -502,7 +502,7 @@ export interface accounts_shareSubscriptions_dataSetMappings_AdlsGen2FolderCompo
 }
 export interface accounts_shareSubscriptions_dataSetMappings_AdlsGen2FolderComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "AdlsGen2Folder";
 	readonly properties: AdlsGen2FolderDataSetMappingProperties;
 }
@@ -530,7 +530,7 @@ export interface accounts_shareSubscriptions_dataSetMappings_BlobComponentOutput
 }
 export interface accounts_shareSubscriptions_dataSetMappings_BlobComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "Blob";
 	readonly properties: BlobMappingProperties;
 }
@@ -558,7 +558,7 @@ export interface accounts_shareSubscriptions_dataSetMappings_BlobFolderComponent
 }
 export interface accounts_shareSubscriptions_dataSetMappings_BlobFolderComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "BlobFolder";
 	readonly properties: BlobFolderMappingProperties;
 }
@@ -586,7 +586,7 @@ export interface accounts_shareSubscriptions_dataSetMappings_ContainerComponentO
 }
 export interface accounts_shareSubscriptions_dataSetMappings_ContainerComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "Container";
 	readonly properties: BlobContainerMappingProperties;
 }
@@ -614,7 +614,7 @@ export interface accounts_shareSubscriptions_dataSetMappings_KustoClusterCompone
 }
 export interface accounts_shareSubscriptions_dataSetMappings_KustoClusterComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "KustoCluster";
 	readonly properties: KustoClusterDataSetMappingProperties;
 }
@@ -642,7 +642,7 @@ export interface accounts_shareSubscriptions_dataSetMappings_KustoDatabaseCompon
 }
 export interface accounts_shareSubscriptions_dataSetMappings_KustoDatabaseComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "KustoDatabase";
 	readonly properties: KustoDatabaseDataSetMappingProperties;
 }
@@ -670,7 +670,7 @@ export interface accounts_shareSubscriptions_dataSetMappings_SqlDBTableComponent
 }
 export interface accounts_shareSubscriptions_dataSetMappings_SqlDBTableComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "SqlDBTable";
 	readonly properties: SqlDBTableDataSetMappingProperties;
 }
@@ -698,7 +698,7 @@ export interface accounts_shareSubscriptions_dataSetMappings_SqlDWTableComponent
 }
 export interface accounts_shareSubscriptions_dataSetMappings_SqlDWTableComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "SqlDWTable";
 	readonly properties: SqlDWTableDataSetMappingProperties;
 }
@@ -729,7 +729,7 @@ export interface accounts_shareSubscriptions_dataSetMappings_SynapseWorkspaceSql
 }
 export interface accounts_shareSubscriptions_dataSetMappings_SynapseWorkspaceSqlPoolTableComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "SynapseWorkspaceSqlPoolTable";
 	readonly properties: SynapseWorkspaceSqlPoolTableDataSetMappingProperties;
 }
@@ -751,7 +751,7 @@ export interface accounts_shareSubscriptions_triggers_ScheduleBasedComponentOutp
 }
 export interface accounts_shareSubscriptions_triggers_ScheduleBasedComponentInputs {
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "ScheduleBased";
 	readonly properties: ScheduledTriggerProperties;
 }
@@ -773,8 +773,8 @@ export interface locations_consumerInvitationsComponentOutputs {
 }
 export interface locations_consumerInvitationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConsumerInvitationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConsumerInvitationProperties;
+	readonly systemData?: SystemData;
 }
 export function listSourceShareSynchronizationSettings(
 	resource: accounts_shareSubscriptions,
@@ -809,14 +809,14 @@ export function listSynchronizations(resource: accounts_shares): ShareSynchroniz
 	throw new Error("not implemented");
 }
 export interface AccountProperties {
-	readonly createdAt?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
-	readonly userEmail?: string | undefined;
-	readonly userName?: string | undefined;
+	readonly createdAt?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
+	readonly userEmail?: string;
+	readonly userName?: string;
 }
 export interface AdlsGen1FileProperties {
 	readonly accountName: string;
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly fileName: string;
 	readonly folderPath: string;
 	readonly resourceGroup: string;
@@ -824,24 +824,24 @@ export interface AdlsGen1FileProperties {
 }
 export interface AdlsGen1FolderProperties {
 	readonly accountName: string;
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly folderPath: string;
 	readonly resourceGroup: string;
 	readonly subscriptionId: string;
 }
 export interface AdlsGen2FileDataSetMappingProperties {
 	readonly dataSetId: string;
-	readonly dataSetMappingStatus?: ("Broken" | "Ok") | undefined;
+	readonly dataSetMappingStatus?: "Broken" | "Ok";
 	readonly filePath: string;
 	readonly fileSystem: string;
-	readonly outputType?: ("Csv" | "Parquet") | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly outputType?: "Csv" | "Parquet";
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 	readonly resourceGroup: string;
 	readonly storageAccountName: string;
 	readonly subscriptionId: string;
 }
 export interface AdlsGen2FileProperties {
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly filePath: string;
 	readonly fileSystem: string;
 	readonly resourceGroup: string;
@@ -850,15 +850,15 @@ export interface AdlsGen2FileProperties {
 }
 export interface AdlsGen2FileSystemDataSetMappingProperties {
 	readonly dataSetId: string;
-	readonly dataSetMappingStatus?: ("Broken" | "Ok") | undefined;
+	readonly dataSetMappingStatus?: "Broken" | "Ok";
 	readonly fileSystem: string;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 	readonly resourceGroup: string;
 	readonly storageAccountName: string;
 	readonly subscriptionId: string;
 }
 export interface AdlsGen2FileSystemProperties {
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly fileSystem: string;
 	readonly resourceGroup: string;
 	readonly storageAccountName: string;
@@ -866,16 +866,16 @@ export interface AdlsGen2FileSystemProperties {
 }
 export interface AdlsGen2FolderDataSetMappingProperties {
 	readonly dataSetId: string;
-	readonly dataSetMappingStatus?: ("Broken" | "Ok") | undefined;
+	readonly dataSetMappingStatus?: "Broken" | "Ok";
 	readonly fileSystem: string;
 	readonly folderPath: string;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 	readonly resourceGroup: string;
 	readonly storageAccountName: string;
 	readonly subscriptionId: string;
 }
 export interface AdlsGen2FolderProperties {
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly fileSystem: string;
 	readonly folderPath: string;
 	readonly resourceGroup: string;
@@ -885,15 +885,15 @@ export interface AdlsGen2FolderProperties {
 export interface BlobContainerMappingProperties {
 	readonly containerName: string;
 	readonly dataSetId: string;
-	readonly dataSetMappingStatus?: ("Broken" | "Ok") | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly dataSetMappingStatus?: "Broken" | "Ok";
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 	readonly resourceGroup: string;
 	readonly storageAccountName: string;
 	readonly subscriptionId: string;
 }
 export interface BlobContainerProperties {
 	readonly containerName: string;
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly resourceGroup: string;
 	readonly storageAccountName: string;
 	readonly subscriptionId: string;
@@ -901,16 +901,16 @@ export interface BlobContainerProperties {
 export interface BlobFolderMappingProperties {
 	readonly containerName: string;
 	readonly dataSetId: string;
-	readonly dataSetMappingStatus?: ("Broken" | "Ok") | undefined;
+	readonly dataSetMappingStatus?: "Broken" | "Ok";
 	readonly prefix: string;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 	readonly resourceGroup: string;
 	readonly storageAccountName: string;
 	readonly subscriptionId: string;
 }
 export interface BlobFolderProperties {
 	readonly containerName: string;
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly prefix: string;
 	readonly resourceGroup: string;
 	readonly storageAccountName: string;
@@ -919,204 +919,204 @@ export interface BlobFolderProperties {
 export interface BlobMappingProperties {
 	readonly containerName: string;
 	readonly dataSetId: string;
-	readonly dataSetMappingStatus?: ("Broken" | "Ok") | undefined;
+	readonly dataSetMappingStatus?: "Broken" | "Ok";
 	readonly filePath: string;
-	readonly outputType?: ("Csv" | "Parquet") | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly outputType?: "Csv" | "Parquet";
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 	readonly resourceGroup: string;
 	readonly storageAccountName: string;
 	readonly subscriptionId: string;
 }
 export interface BlobProperties {
 	readonly containerName: string;
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly filePath: string;
 	readonly resourceGroup: string;
 	readonly storageAccountName: string;
 	readonly subscriptionId: string;
 }
 export interface ConsumerInvitationProperties {
-	readonly dataSetCount?: number | undefined;
-	readonly description?: string | undefined;
-	readonly expirationDate?: string | undefined;
+	readonly dataSetCount?: number;
+	readonly description?: string;
+	readonly expirationDate?: string;
 	readonly invitationId: string;
-	readonly invitationStatus?: ("Accepted" | "Pending" | "Rejected" | "Withdrawn") | undefined;
-	readonly location?: string | undefined;
-	readonly providerEmail?: string | undefined;
-	readonly providerName?: string | undefined;
-	readonly providerTenantName?: string | undefined;
-	readonly respondedAt?: string | undefined;
-	readonly sentAt?: string | undefined;
-	readonly shareName?: string | undefined;
-	readonly termsOfUse?: string | undefined;
-	readonly userEmail?: string | undefined;
-	readonly userName?: string | undefined;
+	readonly invitationStatus?: "Accepted" | "Pending" | "Rejected" | "Withdrawn";
+	readonly location?: string;
+	readonly providerEmail?: string;
+	readonly providerName?: string;
+	readonly providerTenantName?: string;
+	readonly respondedAt?: string;
+	readonly sentAt?: string;
+	readonly shareName?: string;
+	readonly termsOfUse?: string;
+	readonly userEmail?: string;
+	readonly userName?: string;
 }
 export interface DefaultDtoTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface InvitationProperties {
-	readonly expirationDate?: string | undefined;
-	readonly invitationId?: string | undefined;
-	readonly invitationStatus?: ("Accepted" | "Pending" | "Rejected" | "Withdrawn") | undefined;
-	readonly respondedAt?: string | undefined;
-	readonly sentAt?: string | undefined;
-	readonly targetActiveDirectoryId?: string | undefined;
-	readonly targetEmail?: string | undefined;
-	readonly targetObjectId?: string | undefined;
-	readonly userEmail?: string | undefined;
-	readonly userName?: string | undefined;
+	readonly expirationDate?: string;
+	readonly invitationId?: string;
+	readonly invitationStatus?: "Accepted" | "Pending" | "Rejected" | "Withdrawn";
+	readonly respondedAt?: string;
+	readonly sentAt?: string;
+	readonly targetActiveDirectoryId?: string;
+	readonly targetEmail?: string;
+	readonly targetObjectId?: string;
+	readonly userEmail?: string;
+	readonly userName?: string;
 }
 export interface KustoClusterDataSetMappingProperties {
 	readonly dataSetId: string;
-	readonly dataSetMappingStatus?: ("Broken" | "Ok") | undefined;
+	readonly dataSetMappingStatus?: "Broken" | "Ok";
 	readonly kustoClusterResourceId: string;
-	readonly location?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly location?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 }
 export interface KustoClusterDataSetProperties {
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly kustoClusterResourceId: string;
-	readonly location?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly location?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 }
 export interface KustoDatabaseDataSetMappingProperties {
 	readonly dataSetId: string;
-	readonly dataSetMappingStatus?: ("Broken" | "Ok") | undefined;
+	readonly dataSetMappingStatus?: "Broken" | "Ok";
 	readonly kustoClusterResourceId: string;
-	readonly location?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly location?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 }
 export interface KustoDatabaseDataSetProperties {
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly kustoDatabaseResourceId: string;
-	readonly location?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly location?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 }
 export interface ProviderShareSubscriptionProperties {
-	readonly consumerEmail?: string | undefined;
-	readonly consumerName?: string | undefined;
-	readonly consumerTenantName?: string | undefined;
-	readonly createdAt?: string | undefined;
-	readonly expirationDate?: string | undefined;
-	readonly providerEmail?: string | undefined;
-	readonly providerName?: string | undefined;
-	readonly sharedAt?: string | undefined;
-	readonly shareSubscriptionObjectId?: string | undefined;
-	readonly shareSubscriptionStatus?: ("Active" | "Revoked" | "Revoking" | "SourceDeleted") | undefined;
+	readonly consumerEmail?: string;
+	readonly consumerName?: string;
+	readonly consumerTenantName?: string;
+	readonly createdAt?: string;
+	readonly expirationDate?: string;
+	readonly providerEmail?: string;
+	readonly providerName?: string;
+	readonly sharedAt?: string;
+	readonly shareSubscriptionObjectId?: string;
+	readonly shareSubscriptionStatus?: "Active" | "Revoked" | "Revoking" | "SourceDeleted";
 }
 export interface ScheduledSourceShareSynchronizationSettingProperties {
-	readonly recurrenceInterval?: ("Day" | "Hour") | undefined;
-	readonly synchronizationTime?: string | undefined;
+	readonly recurrenceInterval?: "Day" | "Hour";
+	readonly synchronizationTime?: string;
 }
 export interface ScheduledSynchronizationSettingProperties {
-	readonly createdAt?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly createdAt?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 	readonly recurrenceInterval: "Day" | "Hour";
 	readonly synchronizationTime: string;
-	readonly userName?: string | undefined;
+	readonly userName?: string;
 }
 export interface ScheduledTriggerProperties {
-	readonly createdAt?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly createdAt?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 	readonly recurrenceInterval: "Day" | "Hour";
-	readonly synchronizationMode?: ("FullSync" | "Incremental") | undefined;
+	readonly synchronizationMode?: "FullSync" | "Incremental";
 	readonly synchronizationTime: string;
-	readonly triggerStatus?: ("Active" | "Inactive" | "SourceSynchronizationSettingDeleted") | undefined;
-	readonly userName?: string | undefined;
+	readonly triggerStatus?: "Active" | "Inactive" | "SourceSynchronizationSettingDeleted";
+	readonly userName?: string;
 }
 export interface ShareProperties {
-	readonly createdAt?: string | undefined;
-	readonly description?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
-	readonly shareKind?: ("CopyBased" | "InPlace") | undefined;
-	readonly terms?: string | undefined;
-	readonly userEmail?: string | undefined;
-	readonly userName?: string | undefined;
+	readonly createdAt?: string;
+	readonly description?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
+	readonly shareKind?: "CopyBased" | "InPlace";
+	readonly terms?: string;
+	readonly userEmail?: string;
+	readonly userName?: string;
 }
 export interface ShareSubscriptionProperties {
-	readonly createdAt?: string | undefined;
-	readonly expirationDate?: string | undefined;
+	readonly createdAt?: string;
+	readonly expirationDate?: string;
 	readonly invitationId: string;
-	readonly providerEmail?: string | undefined;
-	readonly providerName?: string | undefined;
-	readonly providerTenantName?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
-	readonly shareDescription?: string | undefined;
-	readonly shareKind?: ("CopyBased" | "InPlace") | undefined;
-	readonly shareName?: string | undefined;
-	readonly shareSubscriptionStatus?: ("Active" | "Revoked" | "Revoking" | "SourceDeleted") | undefined;
-	readonly shareTerms?: string | undefined;
+	readonly providerEmail?: string;
+	readonly providerName?: string;
+	readonly providerTenantName?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
+	readonly shareDescription?: string;
+	readonly shareKind?: "CopyBased" | "InPlace";
+	readonly shareName?: string;
+	readonly shareSubscriptionStatus?: "Active" | "Revoked" | "Revoking" | "SourceDeleted";
+	readonly shareTerms?: string;
 	readonly sourceShareLocation: string;
-	readonly userEmail?: string | undefined;
-	readonly userName?: string | undefined;
+	readonly userEmail?: string;
+	readonly userName?: string;
 }
 export interface ShareSubscriptionSynchronization {
-	readonly durationMs?: number | undefined;
-	readonly endTime?: string | undefined;
-	readonly message?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
+	readonly durationMs?: number;
+	readonly endTime?: string;
+	readonly message?: string;
+	readonly startTime?: string;
+	readonly status?: string;
 	readonly synchronizationId: string;
-	readonly synchronizationMode?: ("FullSync" | "Incremental") | undefined;
+	readonly synchronizationMode?: "FullSync" | "Incremental";
 }
 export interface ShareSubscriptionSynchronizationList {
-	readonly nextLink?: string | undefined;
+	readonly nextLink?: string;
 	readonly value: ShareSubscriptionSynchronization[];
 }
 export interface ShareSynchronization {
-	readonly consumerEmail?: string | undefined;
-	readonly consumerName?: string | undefined;
-	readonly consumerTenantName?: string | undefined;
-	readonly durationMs?: number | undefined;
-	readonly endTime?: string | undefined;
-	readonly message?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly synchronizationId?: string | undefined;
-	readonly synchronizationMode?: ("FullSync" | "Incremental") | undefined;
+	readonly consumerEmail?: string;
+	readonly consumerName?: string;
+	readonly consumerTenantName?: string;
+	readonly durationMs?: number;
+	readonly endTime?: string;
+	readonly message?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly synchronizationId?: string;
+	readonly synchronizationMode?: "FullSync" | "Incremental";
 }
 export interface ShareSynchronizationList {
-	readonly nextLink?: string | undefined;
+	readonly nextLink?: string;
 	readonly value: ShareSynchronization[];
 }
 export interface SourceShareSynchronizationSetting {}
 export interface SourceShareSynchronizationSettingList {
-	readonly nextLink?: string | undefined;
+	readonly nextLink?: string;
 	readonly value: SourceShareSynchronizationSetting[];
 }
 export interface SqlDBTableDataSetMappingProperties {
 	readonly databaseName: string;
 	readonly dataSetId: string;
-	readonly dataSetMappingStatus?: ("Broken" | "Ok") | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly dataSetMappingStatus?: "Broken" | "Ok";
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 	readonly schemaName: string;
 	readonly sqlServerResourceId: string;
 	readonly tableName: string;
 }
 export interface SqlDBTableProperties {
 	readonly databaseName: string;
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly schemaName: string;
 	readonly sqlServerResourceId: string;
 	readonly tableName: string;
 }
 export interface SqlDWTableDataSetMappingProperties {
 	readonly dataSetId: string;
-	readonly dataSetMappingStatus?: ("Broken" | "Ok") | undefined;
+	readonly dataSetMappingStatus?: "Broken" | "Ok";
 	readonly dataWarehouseName: string;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 	readonly schemaName: string;
 	readonly sqlServerResourceId: string;
 	readonly tableName: string;
 }
 export interface SqlDWTableProperties {
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly dataWarehouseName: string;
 	readonly schemaName: string;
 	readonly sqlServerResourceId: string;
@@ -1124,58 +1124,55 @@ export interface SqlDWTableProperties {
 }
 export interface SynapseWorkspaceSqlPoolTableDataSetMappingProperties {
 	readonly dataSetId: string;
-	readonly dataSetMappingStatus?: ("Broken" | "Ok") | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
+	readonly dataSetMappingStatus?: "Broken" | "Ok";
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
 	readonly synapseWorkspaceSqlPoolTableResourceId: string;
 }
 export interface SynapseWorkspaceSqlPoolTableDataSetProperties {
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly synapseWorkspaceSqlPoolTableResourceId: string;
 }
 export interface SynchronizationDetails {
-	readonly dataSetId?: string | undefined;
+	readonly dataSetId?: string;
 	readonly dataSetType?:
-		| (
-				| "AdlsGen1File"
-				| "AdlsGen1Folder"
-				| "AdlsGen2File"
-				| "AdlsGen2FileSystem"
-				| "AdlsGen2Folder"
-				| "Blob"
-				| "BlobFolder"
-				| "Container"
-				| "KustoCluster"
-				| "KustoDatabase"
-				| "SqlDBTable"
-				| "SqlDWTable"
-				| "SynapseWorkspaceSqlPoolTable"
-		  )
-		| undefined;
-	readonly durationMs?: number | undefined;
-	readonly endTime?: string | undefined;
-	readonly filesRead?: number | undefined;
-	readonly filesWritten?: number | undefined;
-	readonly message?: string | undefined;
-	readonly name?: string | undefined;
-	readonly rowsCopied?: number | undefined;
-	readonly rowsRead?: number | undefined;
-	readonly sizeRead?: number | undefined;
-	readonly sizeWritten?: number | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly vCore?: number | undefined;
+		| "AdlsGen1File"
+		| "AdlsGen1Folder"
+		| "AdlsGen2File"
+		| "AdlsGen2FileSystem"
+		| "AdlsGen2Folder"
+		| "Blob"
+		| "BlobFolder"
+		| "Container"
+		| "KustoCluster"
+		| "KustoDatabase"
+		| "SqlDBTable"
+		| "SqlDWTable"
+		| "SynapseWorkspaceSqlPoolTable";
+	readonly durationMs?: number;
+	readonly endTime?: string;
+	readonly filesRead?: number;
+	readonly filesWritten?: number;
+	readonly message?: string;
+	readonly name?: string;
+	readonly rowsCopied?: number;
+	readonly rowsRead?: number;
+	readonly sizeRead?: number;
+	readonly sizeWritten?: number;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly vCore?: number;
 }
 export interface SynchronizationDetailsList {
-	readonly nextLink?: string | undefined;
+	readonly nextLink?: string;
 	readonly value: SynchronizationDetails[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export type accounts_shares_dataSets =
 	| accounts_shares_dataSets_AdlsGen1File

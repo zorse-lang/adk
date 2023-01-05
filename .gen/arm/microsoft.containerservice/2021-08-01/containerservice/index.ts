@@ -17,13 +17,13 @@ export interface managedClustersComponentOutputs {
 	readonly type: "Microsoft.ContainerService/managedClusters";
 }
 export interface managedClustersComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly identity?: ManagedClusterIdentity | undefined;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly identity?: ManagedClusterIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagedClusterProperties | undefined;
-	readonly sku?: ManagedClusterSKU | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ManagedClusterProperties;
+	readonly sku?: ManagedClusterSKU;
+	readonly tags?: ResourceTags;
 }
 export class managedClusters_agentPools
 	extends ArmResource<managedClusters_agentPoolsComponentInputs>
@@ -43,7 +43,7 @@ export interface managedClusters_agentPoolsComponentOutputs {
 }
 export interface managedClusters_agentPoolsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedClusterAgentPoolProfileProperties | undefined;
+	readonly properties?: ManagedClusterAgentPoolProfileProperties;
 }
 export class managedClusters_maintenanceConfigurations
 	extends ArmResource<managedClusters_maintenanceConfigurationsComponentInputs>
@@ -69,8 +69,8 @@ export interface managedClusters_maintenanceConfigurationsComponentOutputs {
 }
 export interface managedClusters_maintenanceConfigurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: MaintenanceConfigurationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: MaintenanceConfigurationProperties;
+	readonly systemData?: SystemData;
 }
 export class managedClusters_privateEndpointConnections
 	extends ArmResource<managedClusters_privateEndpointConnectionsComponentInputs>
@@ -96,7 +96,7 @@ export interface managedClusters_privateEndpointConnectionsComponentOutputs {
 }
 export interface managedClusters_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class snapshots extends ArmResource<snapshotsComponentInputs> implements snapshotsComponentOutputs {
 	constructor(entity: ADKEntity, options: snapshotsComponentInputs) {
@@ -114,9 +114,9 @@ export interface snapshotsComponentOutputs {
 export interface snapshotsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SnapshotProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: SnapshotProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export function listClusterAdminCredential(resource: managedClusters): CredentialResults {
 	if (resource.apiVersion !== "2021-08-01") {
@@ -155,29 +155,27 @@ export function listCredential(resource: ArmResource): ManagedClusterAccessProfi
 	throw new Error("not implemented");
 }
 export interface AccessProfile {
-	readonly kubeConfig?: any | undefined;
+	readonly kubeConfig?: any;
 }
 export interface AgentPoolUpgradeSettings {
-	readonly maxSurge?: string | undefined;
+	readonly maxSurge?: string;
 }
 export interface ContainerServiceLinuxProfile {
 	readonly adminUsername: string;
 	readonly ssh: ContainerServiceSshConfiguration;
 }
 export interface ContainerServiceNetworkProfile {
-	readonly dnsServiceIP?: string | undefined;
-	readonly dockerBridgeCidr?: string | undefined;
-	readonly loadBalancerProfile?: ManagedClusterLoadBalancerProfile | undefined;
-	readonly loadBalancerSku?: ("basic" | "standard") | undefined;
-	readonly natGatewayProfile?: ManagedClusterNATGatewayProfile | undefined;
-	readonly networkMode?: ("bridge" | "transparent") | undefined;
-	readonly networkPlugin?: ("azure" | "kubenet") | undefined;
-	readonly networkPolicy?: ("azure" | "calico") | undefined;
-	readonly outboundType?:
-		| ("loadBalancer" | "managedNATGateway" | "userAssignedNATGateway" | "userDefinedRouting")
-		| undefined;
-	readonly podCidr?: string | undefined;
-	readonly serviceCidr?: string | undefined;
+	readonly dnsServiceIP?: string;
+	readonly dockerBridgeCidr?: string;
+	readonly loadBalancerProfile?: ManagedClusterLoadBalancerProfile;
+	readonly loadBalancerSku?: "basic" | "standard";
+	readonly natGatewayProfile?: ManagedClusterNATGatewayProfile;
+	readonly networkMode?: "bridge" | "transparent";
+	readonly networkPlugin?: "azure" | "kubenet";
+	readonly networkPolicy?: "azure" | "calico";
+	readonly outboundType?: "loadBalancer" | "managedNATGateway" | "userAssignedNATGateway" | "userDefinedRouting";
+	readonly podCidr?: string;
+	readonly serviceCidr?: string;
 }
 export interface ContainerServiceSshConfiguration {
 	readonly publicKeys: ContainerServiceSshPublicKey[];
@@ -186,219 +184,219 @@ export interface ContainerServiceSshPublicKey {
 	readonly keyData: string;
 }
 export interface CreationData {
-	readonly sourceResourceId?: string | undefined;
+	readonly sourceResourceId?: string;
 }
 export interface CredentialResult {
-	readonly name?: string | undefined;
-	readonly value?: any | undefined;
+	readonly name?: string;
+	readonly value?: any;
 }
 export interface CredentialResults {
-	readonly kubeconfigs?: CredentialResult[] | undefined;
+	readonly kubeconfigs?: CredentialResult[];
 }
 export interface ExtendedLocation {
-	readonly name?: string | undefined;
-	readonly type?: "EdgeZone" | undefined;
+	readonly name?: string;
+	readonly type?: "EdgeZone";
 }
 export interface KubeletConfig {
-	readonly allowedUnsafeSysctls?: string[] | undefined;
-	readonly containerLogMaxFiles?: number | undefined;
-	readonly containerLogMaxSizeMB?: number | undefined;
-	readonly cpuCfsQuota?: boolean | undefined;
-	readonly cpuCfsQuotaPeriod?: string | undefined;
-	readonly cpuManagerPolicy?: string | undefined;
-	readonly failSwapOn?: boolean | undefined;
-	readonly imageGcHighThreshold?: number | undefined;
-	readonly imageGcLowThreshold?: number | undefined;
-	readonly podMaxPids?: number | undefined;
-	readonly topologyManagerPolicy?: string | undefined;
+	readonly allowedUnsafeSysctls?: string[];
+	readonly containerLogMaxFiles?: number;
+	readonly containerLogMaxSizeMB?: number;
+	readonly cpuCfsQuota?: boolean;
+	readonly cpuCfsQuotaPeriod?: string;
+	readonly cpuManagerPolicy?: string;
+	readonly failSwapOn?: boolean;
+	readonly imageGcHighThreshold?: number;
+	readonly imageGcLowThreshold?: number;
+	readonly podMaxPids?: number;
+	readonly topologyManagerPolicy?: string;
 }
 export interface LinuxOSConfig {
-	readonly swapFileSizeMB?: number | undefined;
-	readonly sysctls?: SysctlConfig | undefined;
-	readonly transparentHugePageDefrag?: string | undefined;
-	readonly transparentHugePageEnabled?: string | undefined;
+	readonly swapFileSizeMB?: number;
+	readonly sysctls?: SysctlConfig;
+	readonly transparentHugePageDefrag?: string;
+	readonly transparentHugePageEnabled?: string;
 }
 export interface MaintenanceConfigurationProperties {
-	readonly notAllowedTime?: TimeSpan[] | undefined;
-	readonly timeInWeek?: TimeInWeek[] | undefined;
+	readonly notAllowedTime?: TimeSpan[];
+	readonly timeInWeek?: TimeInWeek[];
 }
 export interface ManagedClusterAADProfile {
-	readonly adminGroupObjectIDs?: string[] | undefined;
-	readonly clientAppID?: string | undefined;
-	readonly enableAzureRBAC?: boolean | undefined;
-	readonly managed?: boolean | undefined;
-	readonly serverAppID?: string | undefined;
-	readonly serverAppSecret?: string | undefined;
-	readonly tenantID?: string | undefined;
+	readonly adminGroupObjectIDs?: string[];
+	readonly clientAppID?: string;
+	readonly enableAzureRBAC?: boolean;
+	readonly managed?: boolean;
+	readonly serverAppID?: string;
+	readonly serverAppSecret?: string;
+	readonly tenantID?: string;
 }
 export interface ManagedClusterAccessProfile {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: AccessProfile | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: AccessProfile;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ManagedClusterAddonProfile {
-	readonly config?: ManagedClusterAddonProfileConfig | undefined;
+	readonly config?: ManagedClusterAddonProfileConfig;
 	readonly enabled: boolean;
-	readonly identity?: ManagedClusterAddonProfileIdentity | undefined;
+	readonly identity?: ManagedClusterAddonProfileIdentity;
 }
 export interface ManagedClusterAddonProfileConfig {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ManagedClusterAddonProfileIdentity {
-	readonly clientId?: string | undefined;
-	readonly objectId?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly clientId?: string;
+	readonly objectId?: string;
+	readonly resourceId?: string;
 }
 export interface ManagedClusterAgentPoolProfile {
-	readonly availabilityZones?: string[] | undefined;
-	readonly count?: number | undefined;
-	readonly creationData?: CreationData | undefined;
-	readonly enableAutoScaling?: boolean | undefined;
-	readonly enableEncryptionAtHost?: boolean | undefined;
-	readonly enableFIPS?: boolean | undefined;
-	readonly enableNodePublicIP?: boolean | undefined;
-	readonly enableUltraSSD?: boolean | undefined;
-	readonly gpuInstanceProfile?: ("MIG1g" | "MIG2g" | "MIG3g" | "MIG4g" | "MIG7g") | undefined;
-	readonly kubeletConfig?: KubeletConfig | undefined;
-	readonly kubeletDiskType?: ("OS" | "Temporary") | undefined;
-	readonly linuxOSConfig?: LinuxOSConfig | undefined;
-	readonly maxCount?: number | undefined;
-	readonly maxPods?: number | undefined;
-	readonly minCount?: number | undefined;
-	readonly mode?: ("System" | "User") | undefined;
+	readonly availabilityZones?: string[];
+	readonly count?: number;
+	readonly creationData?: CreationData;
+	readonly enableAutoScaling?: boolean;
+	readonly enableEncryptionAtHost?: boolean;
+	readonly enableFIPS?: boolean;
+	readonly enableNodePublicIP?: boolean;
+	readonly enableUltraSSD?: boolean;
+	readonly gpuInstanceProfile?: "MIG1g" | "MIG2g" | "MIG3g" | "MIG4g" | "MIG7g";
+	readonly kubeletConfig?: KubeletConfig;
+	readonly kubeletDiskType?: "OS" | "Temporary";
+	readonly linuxOSConfig?: LinuxOSConfig;
+	readonly maxCount?: number;
+	readonly maxPods?: number;
+	readonly minCount?: number;
+	readonly mode?: "System" | "User";
 	readonly name: string;
-	readonly nodeImageVersion?: string | undefined;
-	readonly nodeLabels?: ManagedClusterAgentPoolProfilePropertiesNodeLabels | undefined;
-	readonly nodePublicIPPrefixID?: string | undefined;
-	readonly nodeTaints?: string[] | undefined;
-	readonly orchestratorVersion?: string | undefined;
-	readonly osDiskSizeGB?: number | undefined;
-	readonly osDiskType?: ("Ephemeral" | "Managed") | undefined;
-	readonly osSKU?: ("CBLMariner" | "Ubuntu") | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly podSubnetID?: string | undefined;
-	readonly powerState?: PowerState | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly proximityPlacementGroupID?: string | undefined;
-	readonly scaleDownMode?: ("Deallocate" | "Delete") | undefined;
-	readonly scaleSetEvictionPolicy?: ("Deallocate" | "Delete") | undefined;
-	readonly scaleSetPriority?: ("Regular" | "Spot") | undefined;
-	readonly spotMaxPrice?: number | undefined;
-	readonly tags?: ManagedClusterAgentPoolProfilePropertiesTags | undefined;
-	readonly type?: ("AvailabilitySet" | "VirtualMachineScaleSets") | undefined;
-	readonly upgradeSettings?: AgentPoolUpgradeSettings | undefined;
-	readonly vmSize?: string | undefined;
-	readonly vnetSubnetID?: string | undefined;
-	readonly workloadRuntime?: ("OCIContainer" | "WasmWasi") | undefined;
+	readonly nodeImageVersion?: string;
+	readonly nodeLabels?: ManagedClusterAgentPoolProfilePropertiesNodeLabels;
+	readonly nodePublicIPPrefixID?: string;
+	readonly nodeTaints?: string[];
+	readonly orchestratorVersion?: string;
+	readonly osDiskSizeGB?: number;
+	readonly osDiskType?: "Ephemeral" | "Managed";
+	readonly osSKU?: "CBLMariner" | "Ubuntu";
+	readonly osType?: "Linux" | "Windows";
+	readonly podSubnetID?: string;
+	readonly powerState?: PowerState;
+	readonly provisioningState?: string;
+	readonly proximityPlacementGroupID?: string;
+	readonly scaleDownMode?: "Deallocate" | "Delete";
+	readonly scaleSetEvictionPolicy?: "Deallocate" | "Delete";
+	readonly scaleSetPriority?: "Regular" | "Spot";
+	readonly spotMaxPrice?: number;
+	readonly tags?: ManagedClusterAgentPoolProfilePropertiesTags;
+	readonly type?: "AvailabilitySet" | "VirtualMachineScaleSets";
+	readonly upgradeSettings?: AgentPoolUpgradeSettings;
+	readonly vmSize?: string;
+	readonly vnetSubnetID?: string;
+	readonly workloadRuntime?: "OCIContainer" | "WasmWasi";
 }
 export interface ManagedClusterAgentPoolProfileProperties {
-	readonly availabilityZones?: string[] | undefined;
-	readonly count?: number | undefined;
-	readonly creationData?: CreationData | undefined;
-	readonly enableAutoScaling?: boolean | undefined;
-	readonly enableEncryptionAtHost?: boolean | undefined;
-	readonly enableFIPS?: boolean | undefined;
-	readonly enableNodePublicIP?: boolean | undefined;
-	readonly enableUltraSSD?: boolean | undefined;
-	readonly gpuInstanceProfile?: ("MIG1g" | "MIG2g" | "MIG3g" | "MIG4g" | "MIG7g") | undefined;
-	readonly kubeletConfig?: KubeletConfig | undefined;
-	readonly kubeletDiskType?: ("OS" | "Temporary") | undefined;
-	readonly linuxOSConfig?: LinuxOSConfig | undefined;
-	readonly maxCount?: number | undefined;
-	readonly maxPods?: number | undefined;
-	readonly minCount?: number | undefined;
-	readonly mode?: ("System" | "User") | undefined;
-	readonly nodeImageVersion?: string | undefined;
-	readonly nodeLabels?: ManagedClusterAgentPoolProfilePropertiesNodeLabels | undefined;
-	readonly nodePublicIPPrefixID?: string | undefined;
-	readonly nodeTaints?: string[] | undefined;
-	readonly orchestratorVersion?: string | undefined;
-	readonly osDiskSizeGB?: number | undefined;
-	readonly osDiskType?: ("Ephemeral" | "Managed") | undefined;
-	readonly osSKU?: ("CBLMariner" | "Ubuntu") | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly podSubnetID?: string | undefined;
-	readonly powerState?: PowerState | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly proximityPlacementGroupID?: string | undefined;
-	readonly scaleDownMode?: ("Deallocate" | "Delete") | undefined;
-	readonly scaleSetEvictionPolicy?: ("Deallocate" | "Delete") | undefined;
-	readonly scaleSetPriority?: ("Regular" | "Spot") | undefined;
-	readonly spotMaxPrice?: number | undefined;
-	readonly tags?: ManagedClusterAgentPoolProfilePropertiesTags | undefined;
-	readonly type?: ("AvailabilitySet" | "VirtualMachineScaleSets") | undefined;
-	readonly upgradeSettings?: AgentPoolUpgradeSettings | undefined;
-	readonly vmSize?: string | undefined;
-	readonly vnetSubnetID?: string | undefined;
-	readonly workloadRuntime?: ("OCIContainer" | "WasmWasi") | undefined;
+	readonly availabilityZones?: string[];
+	readonly count?: number;
+	readonly creationData?: CreationData;
+	readonly enableAutoScaling?: boolean;
+	readonly enableEncryptionAtHost?: boolean;
+	readonly enableFIPS?: boolean;
+	readonly enableNodePublicIP?: boolean;
+	readonly enableUltraSSD?: boolean;
+	readonly gpuInstanceProfile?: "MIG1g" | "MIG2g" | "MIG3g" | "MIG4g" | "MIG7g";
+	readonly kubeletConfig?: KubeletConfig;
+	readonly kubeletDiskType?: "OS" | "Temporary";
+	readonly linuxOSConfig?: LinuxOSConfig;
+	readonly maxCount?: number;
+	readonly maxPods?: number;
+	readonly minCount?: number;
+	readonly mode?: "System" | "User";
+	readonly nodeImageVersion?: string;
+	readonly nodeLabels?: ManagedClusterAgentPoolProfilePropertiesNodeLabels;
+	readonly nodePublicIPPrefixID?: string;
+	readonly nodeTaints?: string[];
+	readonly orchestratorVersion?: string;
+	readonly osDiskSizeGB?: number;
+	readonly osDiskType?: "Ephemeral" | "Managed";
+	readonly osSKU?: "CBLMariner" | "Ubuntu";
+	readonly osType?: "Linux" | "Windows";
+	readonly podSubnetID?: string;
+	readonly powerState?: PowerState;
+	readonly provisioningState?: string;
+	readonly proximityPlacementGroupID?: string;
+	readonly scaleDownMode?: "Deallocate" | "Delete";
+	readonly scaleSetEvictionPolicy?: "Deallocate" | "Delete";
+	readonly scaleSetPriority?: "Regular" | "Spot";
+	readonly spotMaxPrice?: number;
+	readonly tags?: ManagedClusterAgentPoolProfilePropertiesTags;
+	readonly type?: "AvailabilitySet" | "VirtualMachineScaleSets";
+	readonly upgradeSettings?: AgentPoolUpgradeSettings;
+	readonly vmSize?: string;
+	readonly vnetSubnetID?: string;
+	readonly workloadRuntime?: "OCIContainer" | "WasmWasi";
 }
 export interface ManagedClusterAgentPoolProfilePropertiesNodeLabels {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ManagedClusterAgentPoolProfilePropertiesTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ManagedClusterAPIServerAccessProfile {
-	readonly authorizedIPRanges?: string[] | undefined;
-	readonly disableRunCommand?: boolean | undefined;
-	readonly enablePrivateCluster?: boolean | undefined;
-	readonly enablePrivateClusterPublicFQDN?: boolean | undefined;
-	readonly privateDNSZone?: string | undefined;
+	readonly authorizedIPRanges?: string[];
+	readonly disableRunCommand?: boolean;
+	readonly enablePrivateCluster?: boolean;
+	readonly enablePrivateClusterPublicFQDN?: boolean;
+	readonly privateDNSZone?: string;
 }
 export interface ManagedClusterAutoUpgradeProfile {
-	readonly upgradeChannel?: ("node-image" | "none" | "patch" | "rapid" | "stable") | undefined;
+	readonly upgradeChannel?: "node-image" | "none" | "patch" | "rapid" | "stable";
 }
 export interface ManagedClusterHttpProxyConfig {
-	readonly httpProxy?: string | undefined;
-	readonly httpsProxy?: string | undefined;
-	readonly noProxy?: string[] | undefined;
-	readonly trustedCa?: string | undefined;
+	readonly httpProxy?: string;
+	readonly httpsProxy?: string;
+	readonly noProxy?: string[];
+	readonly trustedCa?: string;
 }
 export interface ManagedClusterIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
-	readonly userAssignedIdentities?: ManagedClusterIdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
+	readonly userAssignedIdentities?: ManagedClusterIdentityUserAssignedIdentities;
 }
 export interface ManagedClusterIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: ManagedServiceIdentityUserAssignedIdentitiesValue | undefined;
+	readonly [key: string]: ManagedServiceIdentityUserAssignedIdentitiesValue;
 }
 export interface ManagedClusterLoadBalancerProfile {
-	readonly allocatedOutboundPorts?: number | undefined;
-	readonly effectiveOutboundIPs?: ResourceReference[] | undefined;
-	readonly enableMultipleStandardLoadBalancers?: boolean | undefined;
-	readonly idleTimeoutInMinutes?: number | undefined;
-	readonly managedOutboundIPs?: ManagedClusterLoadBalancerProfileManagedOutboundIPs | undefined;
-	readonly outboundIPPrefixes?: ManagedClusterLoadBalancerProfileOutboundIPPrefixes | undefined;
-	readonly outboundIPs?: ManagedClusterLoadBalancerProfileOutboundIPs | undefined;
+	readonly allocatedOutboundPorts?: number;
+	readonly effectiveOutboundIPs?: ResourceReference[];
+	readonly enableMultipleStandardLoadBalancers?: boolean;
+	readonly idleTimeoutInMinutes?: number;
+	readonly managedOutboundIPs?: ManagedClusterLoadBalancerProfileManagedOutboundIPs;
+	readonly outboundIPPrefixes?: ManagedClusterLoadBalancerProfileOutboundIPPrefixes;
+	readonly outboundIPs?: ManagedClusterLoadBalancerProfileOutboundIPs;
 }
 export interface ManagedClusterLoadBalancerProfileManagedOutboundIPs {
-	readonly count?: number | undefined;
+	readonly count?: number;
 }
 export interface ManagedClusterLoadBalancerProfileOutboundIPPrefixes {
-	readonly publicIPPrefixes?: ResourceReference[] | undefined;
+	readonly publicIPPrefixes?: ResourceReference[];
 }
 export interface ManagedClusterLoadBalancerProfileOutboundIPs {
-	readonly publicIPs?: ResourceReference[] | undefined;
+	readonly publicIPs?: ResourceReference[];
 }
 export interface ManagedClusterManagedOutboundIPProfile {
-	readonly count?: number | undefined;
+	readonly count?: number;
 }
 export interface ManagedClusterNATGatewayProfile {
-	readonly effectiveOutboundIPs?: ResourceReference[] | undefined;
-	readonly idleTimeoutInMinutes?: number | undefined;
-	readonly managedOutboundIPProfile?: ManagedClusterManagedOutboundIPProfile | undefined;
+	readonly effectiveOutboundIPs?: ResourceReference[];
+	readonly idleTimeoutInMinutes?: number;
+	readonly managedOutboundIPProfile?: ManagedClusterManagedOutboundIPProfile;
 }
 export interface ManagedClusterPodIdentity {
-	readonly bindingSelector?: string | undefined;
+	readonly bindingSelector?: string;
 	readonly identity: UserAssignedIdentity;
 	readonly name: string;
 	readonly namespace: string;
-	readonly provisioningInfo?: ManagedClusterPodIdentityProvisioningInfo | undefined;
-	readonly provisioningState?: ("Assigned" | "Deleting" | "Failed" | "Updating") | undefined;
+	readonly provisioningInfo?: ManagedClusterPodIdentityProvisioningInfo;
+	readonly provisioningState?: "Assigned" | "Deleting" | "Failed" | "Updating";
 }
 export interface ManagedClusterPodIdentityException {
 	readonly name: string;
@@ -406,191 +404,191 @@ export interface ManagedClusterPodIdentityException {
 	readonly podLabels: ManagedClusterPodIdentityExceptionPodLabels;
 }
 export interface ManagedClusterPodIdentityExceptionPodLabels {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ManagedClusterPodIdentityProfile {
-	readonly allowNetworkPluginKubenet?: boolean | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly userAssignedIdentities?: ManagedClusterPodIdentity[] | undefined;
-	readonly userAssignedIdentityExceptions?: ManagedClusterPodIdentityException[] | undefined;
+	readonly allowNetworkPluginKubenet?: boolean;
+	readonly enabled?: boolean;
+	readonly userAssignedIdentities?: ManagedClusterPodIdentity[];
+	readonly userAssignedIdentityExceptions?: ManagedClusterPodIdentityException[];
 }
 export interface ManagedClusterPodIdentityProvisioningError {
-	readonly error?: ManagedClusterPodIdentityProvisioningErrorBody | undefined;
+	readonly error?: ManagedClusterPodIdentityProvisioningErrorBody;
 }
 export interface ManagedClusterPodIdentityProvisioningErrorBody {
-	readonly code?: string | undefined;
-	readonly details?: ManagedClusterPodIdentityProvisioningErrorBody[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly code?: string;
+	readonly details?: ManagedClusterPodIdentityProvisioningErrorBody[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface ManagedClusterPodIdentityProvisioningInfo {
-	readonly error?: ManagedClusterPodIdentityProvisioningError | undefined;
+	readonly error?: ManagedClusterPodIdentityProvisioningError;
 }
 export interface ManagedClusterProperties {
-	readonly aadProfile?: ManagedClusterAADProfile | undefined;
-	readonly addonProfiles?: ManagedClusterPropertiesAddonProfiles | undefined;
-	readonly agentPoolProfiles?: ManagedClusterAgentPoolProfile[] | undefined;
-	readonly apiServerAccessProfile?: ManagedClusterAPIServerAccessProfile | undefined;
-	readonly autoScalerProfile?: ManagedClusterPropertiesAutoScalerProfile | undefined;
-	readonly autoUpgradeProfile?: ManagedClusterAutoUpgradeProfile | undefined;
-	readonly azurePortalFQDN?: string | undefined;
-	readonly disableLocalAccounts?: boolean | undefined;
-	readonly diskEncryptionSetID?: string | undefined;
-	readonly dnsPrefix?: string | undefined;
-	readonly enablePodSecurityPolicy?: boolean | undefined;
-	readonly enableRBAC?: boolean | undefined;
-	readonly fqdn?: string | undefined;
-	readonly fqdnSubdomain?: string | undefined;
-	readonly httpProxyConfig?: ManagedClusterHttpProxyConfig | undefined;
-	readonly identityProfile?: ManagedClusterPropertiesIdentityProfile | undefined;
-	readonly kubernetesVersion?: string | undefined;
-	readonly linuxProfile?: ContainerServiceLinuxProfile | undefined;
-	readonly maxAgentPools?: number | undefined;
-	readonly networkProfile?: ContainerServiceNetworkProfile | undefined;
-	readonly nodeResourceGroup?: string | undefined;
-	readonly podIdentityProfile?: ManagedClusterPodIdentityProfile | undefined;
-	readonly powerState?: PowerState | undefined;
-	readonly privateFQDN?: string | undefined;
-	readonly privateLinkResources?: PrivateLinkResource[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly securityProfile?: ManagedClusterSecurityProfile | undefined;
-	readonly servicePrincipalProfile?: ManagedClusterServicePrincipalProfile | undefined;
-	readonly windowsProfile?: ManagedClusterWindowsProfile | undefined;
+	readonly aadProfile?: ManagedClusterAADProfile;
+	readonly addonProfiles?: ManagedClusterPropertiesAddonProfiles;
+	readonly agentPoolProfiles?: ManagedClusterAgentPoolProfile[];
+	readonly apiServerAccessProfile?: ManagedClusterAPIServerAccessProfile;
+	readonly autoScalerProfile?: ManagedClusterPropertiesAutoScalerProfile;
+	readonly autoUpgradeProfile?: ManagedClusterAutoUpgradeProfile;
+	readonly azurePortalFQDN?: string;
+	readonly disableLocalAccounts?: boolean;
+	readonly diskEncryptionSetID?: string;
+	readonly dnsPrefix?: string;
+	readonly enablePodSecurityPolicy?: boolean;
+	readonly enableRBAC?: boolean;
+	readonly fqdn?: string;
+	readonly fqdnSubdomain?: string;
+	readonly httpProxyConfig?: ManagedClusterHttpProxyConfig;
+	readonly identityProfile?: ManagedClusterPropertiesIdentityProfile;
+	readonly kubernetesVersion?: string;
+	readonly linuxProfile?: ContainerServiceLinuxProfile;
+	readonly maxAgentPools?: number;
+	readonly networkProfile?: ContainerServiceNetworkProfile;
+	readonly nodeResourceGroup?: string;
+	readonly podIdentityProfile?: ManagedClusterPodIdentityProfile;
+	readonly powerState?: PowerState;
+	readonly privateFQDN?: string;
+	readonly privateLinkResources?: PrivateLinkResource[];
+	readonly provisioningState?: string;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly securityProfile?: ManagedClusterSecurityProfile;
+	readonly servicePrincipalProfile?: ManagedClusterServicePrincipalProfile;
+	readonly windowsProfile?: ManagedClusterWindowsProfile;
 }
 export interface ManagedClusterPropertiesAddonProfiles {
-	readonly "[ key: string ]"?: ManagedClusterAddonProfile | undefined;
+	readonly [key: string]: ManagedClusterAddonProfile;
 }
 export interface ManagedClusterPropertiesAutoScalerProfile {
-	readonly "balance-similar-node-groups"?: string | undefined;
-	readonly expander?: ("least-waste" | "most-pods" | "priority" | "random") | undefined;
-	readonly "max-empty-bulk-delete"?: string | undefined;
-	readonly "max-graceful-termination-sec"?: string | undefined;
-	readonly "max-node-provision-time"?: string | undefined;
-	readonly "max-total-unready-percentage"?: string | undefined;
-	readonly "new-pod-scale-up-delay"?: string | undefined;
-	readonly "ok-total-unready-count"?: string | undefined;
-	readonly "scale-down-delay-after-add"?: string | undefined;
-	readonly "scale-down-delay-after-delete"?: string | undefined;
-	readonly "scale-down-delay-after-failure"?: string | undefined;
-	readonly "scale-down-unneeded-time"?: string | undefined;
-	readonly "scale-down-unready-time"?: string | undefined;
-	readonly "scale-down-utilization-threshold"?: string | undefined;
-	readonly "scan-interval"?: string | undefined;
-	readonly "skip-nodes-with-local-storage"?: string | undefined;
-	readonly "skip-nodes-with-system-pods"?: string | undefined;
+	readonly "balance-similar-node-groups"?: string;
+	readonly expander?: "least-waste" | "most-pods" | "priority" | "random";
+	readonly "max-empty-bulk-delete"?: string;
+	readonly "max-graceful-termination-sec"?: string;
+	readonly "max-node-provision-time"?: string;
+	readonly "max-total-unready-percentage"?: string;
+	readonly "new-pod-scale-up-delay"?: string;
+	readonly "ok-total-unready-count"?: string;
+	readonly "scale-down-delay-after-add"?: string;
+	readonly "scale-down-delay-after-delete"?: string;
+	readonly "scale-down-delay-after-failure"?: string;
+	readonly "scale-down-unneeded-time"?: string;
+	readonly "scale-down-unready-time"?: string;
+	readonly "scale-down-utilization-threshold"?: string;
+	readonly "scan-interval"?: string;
+	readonly "skip-nodes-with-local-storage"?: string;
+	readonly "skip-nodes-with-system-pods"?: string;
 }
 export interface ManagedClusterPropertiesIdentityProfile {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface ManagedClusterSecurityProfile {
-	readonly azureDefender?: ManagedClusterSecurityProfileAzureDefender | undefined;
+	readonly azureDefender?: ManagedClusterSecurityProfileAzureDefender;
 }
 export interface ManagedClusterSecurityProfileAzureDefender {
-	readonly enabled?: boolean | undefined;
-	readonly logAnalyticsWorkspaceResourceId?: string | undefined;
+	readonly enabled?: boolean;
+	readonly logAnalyticsWorkspaceResourceId?: string;
 }
 export interface ManagedClusterServicePrincipalProfile {
 	readonly clientId: string;
-	readonly secret?: string | undefined;
+	readonly secret?: string;
 }
 export interface ManagedClusterSKU {
-	readonly name?: "Basic" | undefined;
-	readonly tier?: ("Free" | "Paid") | undefined;
+	readonly name?: "Basic";
+	readonly tier?: "Free" | "Paid";
 }
 export interface ManagedClusterWindowsProfile {
-	readonly adminPassword?: string | undefined;
+	readonly adminPassword?: string;
 	readonly adminUsername: string;
-	readonly enableCSIProxy?: boolean | undefined;
-	readonly licenseType?: ("None" | "Windows_Server") | undefined;
+	readonly enableCSIProxy?: boolean;
+	readonly licenseType?: "None" | "Windows_Server";
 }
 export interface ManagedServiceIdentityUserAssignedIdentitiesValue {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface PowerState {
-	readonly code?: ("Running" | "Stopped") | undefined;
+	readonly code?: "Running" | "Stopped";
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkResource {
-	readonly groupId?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly privateLinkServiceID?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly type?: string | undefined;
+	readonly groupId?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly privateLinkServiceID?: string;
+	readonly requiredMembers?: string[];
+	readonly type?: string;
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface ResourceReference {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SnapshotProperties {
-	readonly creationData?: CreationData | undefined;
-	readonly snapshotType?: "NodePool" | undefined;
+	readonly creationData?: CreationData;
+	readonly snapshotType?: "NodePool";
 }
 export interface SysctlConfig {
-	readonly fsAioMaxNr?: number | undefined;
-	readonly fsFileMax?: number | undefined;
-	readonly fsInotifyMaxUserWatches?: number | undefined;
-	readonly fsNrOpen?: number | undefined;
-	readonly kernelThreadsMax?: number | undefined;
-	readonly netCoreNetdevMaxBacklog?: number | undefined;
-	readonly netCoreOptmemMax?: number | undefined;
-	readonly netCoreRmemDefault?: number | undefined;
-	readonly netCoreRmemMax?: number | undefined;
-	readonly netCoreSomaxconn?: number | undefined;
-	readonly netCoreWmemDefault?: number | undefined;
-	readonly netCoreWmemMax?: number | undefined;
-	readonly netIpv4IpLocalPortRange?: string | undefined;
-	readonly netIpv4NeighDefaultGcThresh1?: number | undefined;
-	readonly netIpv4NeighDefaultGcThresh2?: number | undefined;
-	readonly netIpv4NeighDefaultGcThresh3?: number | undefined;
-	readonly netIpv4TcpFinTimeout?: number | undefined;
-	readonly netIpv4TcpkeepaliveIntvl?: number | undefined;
-	readonly netIpv4TcpKeepaliveProbes?: number | undefined;
-	readonly netIpv4TcpKeepaliveTime?: number | undefined;
-	readonly netIpv4TcpMaxSynBacklog?: number | undefined;
-	readonly netIpv4TcpMaxTwBuckets?: number | undefined;
-	readonly netIpv4TcpTwReuse?: boolean | undefined;
-	readonly netNetfilterNfConntrackBuckets?: number | undefined;
-	readonly netNetfilterNfConntrackMax?: number | undefined;
-	readonly vmMaxMapCount?: number | undefined;
-	readonly vmSwappiness?: number | undefined;
-	readonly vmVfsCachePressure?: number | undefined;
+	readonly fsAioMaxNr?: number;
+	readonly fsFileMax?: number;
+	readonly fsInotifyMaxUserWatches?: number;
+	readonly fsNrOpen?: number;
+	readonly kernelThreadsMax?: number;
+	readonly netCoreNetdevMaxBacklog?: number;
+	readonly netCoreOptmemMax?: number;
+	readonly netCoreRmemDefault?: number;
+	readonly netCoreRmemMax?: number;
+	readonly netCoreSomaxconn?: number;
+	readonly netCoreWmemDefault?: number;
+	readonly netCoreWmemMax?: number;
+	readonly netIpv4IpLocalPortRange?: string;
+	readonly netIpv4NeighDefaultGcThresh1?: number;
+	readonly netIpv4NeighDefaultGcThresh2?: number;
+	readonly netIpv4NeighDefaultGcThresh3?: number;
+	readonly netIpv4TcpFinTimeout?: number;
+	readonly netIpv4TcpkeepaliveIntvl?: number;
+	readonly netIpv4TcpKeepaliveProbes?: number;
+	readonly netIpv4TcpKeepaliveTime?: number;
+	readonly netIpv4TcpMaxSynBacklog?: number;
+	readonly netIpv4TcpMaxTwBuckets?: number;
+	readonly netIpv4TcpTwReuse?: boolean;
+	readonly netNetfilterNfConntrackBuckets?: number;
+	readonly netNetfilterNfConntrackMax?: number;
+	readonly vmMaxMapCount?: number;
+	readonly vmSwappiness?: number;
+	readonly vmVfsCachePressure?: number;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TimeInWeek {
-	readonly day?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday") | undefined;
-	readonly hourSlots?: number[] | undefined;
+	readonly day?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday";
+	readonly hourSlots?: number[];
 }
 export interface TimeSpan {
-	readonly end?: string | undefined;
-	readonly start?: string | undefined;
+	readonly end?: string;
+	readonly start?: string;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly objectId?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly clientId?: string;
+	readonly objectId?: string;
+	readonly resourceId?: string;
 }
 export default {
 	managedClusters: managedClusters,

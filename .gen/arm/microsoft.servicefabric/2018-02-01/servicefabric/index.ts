@@ -16,43 +16,40 @@ export interface clustersComponentOutputs {
 export interface clustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ClusterProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ApplicationDeltaHealthPolicy {
-	readonly defaultServiceTypeDeltaHealthPolicy?: ServiceTypeDeltaHealthPolicy | undefined;
-	readonly serviceTypeDeltaHealthPolicies?: ServiceTypeDeltaHealthPolicyMap | undefined;
+	readonly defaultServiceTypeDeltaHealthPolicy?: ServiceTypeDeltaHealthPolicy;
+	readonly serviceTypeDeltaHealthPolicies?: ServiceTypeDeltaHealthPolicyMap;
 }
 export interface ApplicationDeltaHealthPolicyMap {
-	readonly "[ key: string ]"?: ApplicationDeltaHealthPolicy | undefined;
+	readonly [key: string]: ApplicationDeltaHealthPolicy;
 }
 export interface ApplicationHealthPolicy {
-	readonly defaultServiceTypeHealthPolicy?: ServiceTypeHealthPolicy | undefined;
-	readonly serviceTypeHealthPolicies?: ServiceTypeHealthPolicyMap | undefined;
+	readonly defaultServiceTypeHealthPolicy?: ServiceTypeHealthPolicy;
+	readonly serviceTypeHealthPolicies?: ServiceTypeHealthPolicyMap;
 }
 export interface ApplicationHealthPolicyMap {
-	readonly "[ key: string ]"?: ApplicationHealthPolicy | undefined;
+	readonly [key: string]: ApplicationHealthPolicy;
 }
 export interface AzureActiveDirectory {
-	readonly clientApplication?: string | undefined;
-	readonly clusterApplication?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly clientApplication?: string;
+	readonly clusterApplication?: string;
+	readonly tenantId?: string;
 }
 export interface CertificateDescription {
 	readonly thumbprint: string;
-	readonly thumbprintSecondary?: string | undefined;
+	readonly thumbprintSecondary?: string;
 	readonly x509StoreName?:
-		| (
-				| "AddressBook"
-				| "AuthRoot"
-				| "CertificateAuthority"
-				| "Disallowed"
-				| "My"
-				| "Root"
-				| "TrustedPeople"
-				| "TrustedPublisher"
-		  )
-		| undefined;
+		| "AddressBook"
+		| "AuthRoot"
+		| "CertificateAuthority"
+		| "Disallowed"
+		| "My"
+		| "Root"
+		| "TrustedPeople"
+		| "TrustedPublisher";
 }
 export interface ClientCertificateCommonName {
 	readonly certificateCommonName: string;
@@ -64,57 +61,52 @@ export interface ClientCertificateThumbprint {
 	readonly isAdmin: boolean;
 }
 export interface ClusterHealthPolicy {
-	readonly applicationHealthPolicies?: ApplicationHealthPolicyMap | undefined;
-	readonly maxPercentUnhealthyApplications?: number | undefined;
+	readonly applicationHealthPolicies?: ApplicationHealthPolicyMap;
+	readonly maxPercentUnhealthyApplications?: number;
 }
 export interface ClusterProperties {
-	readonly addOnFeatures?:
-		| ("BackupRestoreService" | "DnsService" | "RepairManager" | "ResourceMonitorService"[])
-		| undefined;
-	readonly availableClusterVersions?: ClusterVersionDetails[] | undefined;
-	readonly azureActiveDirectory?: AzureActiveDirectory | undefined;
-	readonly certificate?: CertificateDescription | undefined;
-	readonly certificateCommonNames?: ServerCertificateCommonNames | undefined;
-	readonly clientCertificateCommonNames?: ClientCertificateCommonName[] | undefined;
-	readonly clientCertificateThumbprints?: ClientCertificateThumbprint[] | undefined;
-	readonly clusterCodeVersion?: string | undefined;
-	readonly clusterEndpoint?: string | undefined;
-	readonly clusterId?: string | undefined;
+	readonly addOnFeatures?: "BackupRestoreService" | "DnsService" | "RepairManager" | "ResourceMonitorService"[];
+	readonly availableClusterVersions?: ClusterVersionDetails[];
+	readonly azureActiveDirectory?: AzureActiveDirectory;
+	readonly certificate?: CertificateDescription;
+	readonly certificateCommonNames?: ServerCertificateCommonNames;
+	readonly clientCertificateCommonNames?: ClientCertificateCommonName[];
+	readonly clientCertificateThumbprints?: ClientCertificateThumbprint[];
+	readonly clusterCodeVersion?: string;
+	readonly clusterEndpoint?: string;
+	readonly clusterId?: string;
 	readonly clusterState?:
-		| (
-				| "AutoScale"
-				| "BaselineUpgrade"
-				| "Deploying"
-				| "EnforcingClusterVersion"
-				| "Ready"
-				| "UpdatingInfrastructure"
-				| "UpdatingUserCertificate"
-				| "UpdatingUserConfiguration"
-				| "UpgradeServiceUnreachable"
-				| "WaitingForNodes"
-		  )
-		| undefined;
-	readonly diagnosticsStorageAccountConfig?: DiagnosticsStorageAccountConfig | undefined;
-	readonly fabricSettings?: SettingsSectionDescription[] | undefined;
+		| "AutoScale"
+		| "BaselineUpgrade"
+		| "Deploying"
+		| "EnforcingClusterVersion"
+		| "Ready"
+		| "UpdatingInfrastructure"
+		| "UpdatingUserCertificate"
+		| "UpdatingUserConfiguration"
+		| "UpgradeServiceUnreachable"
+		| "WaitingForNodes";
+	readonly diagnosticsStorageAccountConfig?: DiagnosticsStorageAccountConfig;
+	readonly fabricSettings?: SettingsSectionDescription[];
 	readonly managementEndpoint: string;
 	readonly nodeTypes: NodeTypeDescription[];
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly reliabilityLevel?: ("Bronze" | "Gold" | "None" | "Platinum" | "Silver") | undefined;
-	readonly reverseProxyCertificate?: CertificateDescription | undefined;
-	readonly reverseProxyCertificateCommonNames?: ServerCertificateCommonNames | undefined;
-	readonly upgradeDescription?: ClusterUpgradePolicy | undefined;
-	readonly upgradeMode?: ("Automatic" | "Manual") | undefined;
-	readonly vmImage?: string | undefined;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded" | "Updating";
+	readonly reliabilityLevel?: "Bronze" | "Gold" | "None" | "Platinum" | "Silver";
+	readonly reverseProxyCertificate?: CertificateDescription;
+	readonly reverseProxyCertificateCommonNames?: ServerCertificateCommonNames;
+	readonly upgradeDescription?: ClusterUpgradePolicy;
+	readonly upgradeMode?: "Automatic" | "Manual";
+	readonly vmImage?: string;
 }
 export interface ClusterUpgradeDeltaHealthPolicy {
-	readonly applicationDeltaHealthPolicies?: ApplicationDeltaHealthPolicyMap | undefined;
+	readonly applicationDeltaHealthPolicies?: ApplicationDeltaHealthPolicyMap;
 	readonly maxPercentDeltaUnhealthyApplications: number;
 	readonly maxPercentDeltaUnhealthyNodes: number;
 	readonly maxPercentUpgradeDomainDeltaUnhealthyNodes: number;
 }
 export interface ClusterUpgradePolicy {
-	readonly deltaHealthPolicy?: ClusterUpgradeDeltaHealthPolicy | undefined;
-	readonly forceRestart?: boolean | undefined;
+	readonly deltaHealthPolicy?: ClusterUpgradeDeltaHealthPolicy;
+	readonly forceRestart?: boolean;
 	readonly healthCheckRetryTimeout: string;
 	readonly healthCheckStableDuration: string;
 	readonly healthCheckWaitDuration: string;
@@ -124,9 +116,9 @@ export interface ClusterUpgradePolicy {
 	readonly upgradeTimeout: string;
 }
 export interface ClusterVersionDetails {
-	readonly codeVersion?: string | undefined;
-	readonly environment?: ("Linux" | "Windows") | undefined;
-	readonly supportExpiryUtc?: string | undefined;
+	readonly codeVersion?: string;
+	readonly environment?: "Linux" | "Windows";
+	readonly supportExpiryUtc?: string;
 }
 export interface DiagnosticsStorageAccountConfig {
 	readonly blobEndpoint: string;
@@ -140,57 +132,54 @@ export interface EndpointRangeDescription {
 	readonly startPort: number;
 }
 export interface NodeTypeDescription {
-	readonly applicationPorts?: EndpointRangeDescription | undefined;
-	readonly capacities?: NodeTypeDescriptionCapacities | undefined;
+	readonly applicationPorts?: EndpointRangeDescription;
+	readonly capacities?: NodeTypeDescriptionCapacities;
 	readonly clientConnectionEndpointPort: number;
-	readonly durabilityLevel?: ("Bronze" | "Gold" | "Silver") | undefined;
-	readonly ephemeralPorts?: EndpointRangeDescription | undefined;
+	readonly durabilityLevel?: "Bronze" | "Gold" | "Silver";
+	readonly ephemeralPorts?: EndpointRangeDescription;
 	readonly httpGatewayEndpointPort: number;
 	readonly isPrimary: boolean;
 	readonly name: string;
-	readonly placementProperties?: NodeTypeDescriptionPlacementProperties | undefined;
-	readonly reverseProxyEndpointPort?: number | undefined;
+	readonly placementProperties?: NodeTypeDescriptionPlacementProperties;
+	readonly reverseProxyEndpointPort?: number;
 	readonly vmInstanceCount: number;
 }
 export interface NodeTypeDescriptionCapacities {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NodeTypeDescriptionPlacementProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ServerCertificateCommonName {
 	readonly certificateCommonName: string;
 	readonly certificateIssuerThumbprint: string;
 }
 export interface ServerCertificateCommonNames {
-	readonly commonNames?: ServerCertificateCommonName[] | undefined;
+	readonly commonNames?: ServerCertificateCommonName[];
 	readonly x509StoreName?:
-		| (
-				| "AddressBook"
-				| "AuthRoot"
-				| "CertificateAuthority"
-				| "Disallowed"
-				| "My"
-				| "Root"
-				| "TrustedPeople"
-				| "TrustedPublisher"
-		  )
-		| undefined;
+		| "AddressBook"
+		| "AuthRoot"
+		| "CertificateAuthority"
+		| "Disallowed"
+		| "My"
+		| "Root"
+		| "TrustedPeople"
+		| "TrustedPublisher";
 }
 export interface ServiceTypeDeltaHealthPolicy {
-	readonly maxPercentDeltaUnhealthyServices?: number | undefined;
+	readonly maxPercentDeltaUnhealthyServices?: number;
 }
 export interface ServiceTypeDeltaHealthPolicyMap {
-	readonly "[ key: string ]"?: ServiceTypeDeltaHealthPolicy | undefined;
+	readonly [key: string]: ServiceTypeDeltaHealthPolicy;
 }
 export interface ServiceTypeHealthPolicy {
-	readonly maxPercentUnhealthyServices?: number | undefined;
+	readonly maxPercentUnhealthyServices?: number;
 }
 export interface ServiceTypeHealthPolicyMap {
-	readonly "[ key: string ]"?: ServiceTypeHealthPolicy | undefined;
+	readonly [key: string]: ServiceTypeHealthPolicy;
 }
 export interface SettingsParameterDescription {
 	readonly name: string;

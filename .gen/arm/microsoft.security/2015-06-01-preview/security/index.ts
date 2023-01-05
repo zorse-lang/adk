@@ -18,7 +18,7 @@ export interface adaptiveNetworkHardeningsComponentOutputs {
 }
 export interface adaptiveNetworkHardeningsComponentInputs {
 	readonly name: string;
-	readonly properties?: AdaptiveNetworkHardeningProperties | undefined;
+	readonly properties?: AdaptiveNetworkHardeningProperties;
 }
 export class locations extends ArmResource<locationsComponentInputs> implements locationsComponentOutputs {
 	constructor(entity: ADKEntity, options: locationsComponentInputs) {
@@ -35,7 +35,7 @@ export interface locationsComponentOutputs {
 }
 export interface locationsComponentInputs {
 	readonly name: string;
-	readonly properties?: any | undefined;
+	readonly properties?: any;
 }
 export class locations_alerts
 	extends ArmResource<locations_alertsComponentInputs>
@@ -55,7 +55,7 @@ export interface locations_alertsComponentOutputs {
 }
 export interface locations_alertsComponentInputs {
 	readonly name: string;
-	readonly properties?: AlertProperties | undefined;
+	readonly properties?: AlertProperties;
 }
 export class locations_allowedConnections
 	extends ArmResource<locations_allowedConnectionsComponentInputs>
@@ -74,9 +74,9 @@ export interface locations_allowedConnectionsComponentOutputs {
 	readonly type: "Microsoft.Security/locations/allowedConnections";
 }
 export interface locations_allowedConnectionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AllowedConnectionsResourceProperties | undefined;
+	readonly properties?: AllowedConnectionsResourceProperties;
 }
 export class locations_applicationWhitelistings
 	extends ArmResource<locations_applicationWhitelistingsComponentInputs>
@@ -95,13 +95,13 @@ export interface locations_applicationWhitelistingsComponentOutputs {
 	readonly type: "Microsoft.Security/locations/applicationWhitelistings";
 }
 export interface locations_applicationWhitelistingsComponentInputs {
-	readonly enforcementMode?: ("Audit" | "Enforce" | "None") | undefined;
-	readonly location?: string | undefined;
+	readonly enforcementMode?: "Audit" | "Enforce" | "None";
+	readonly location?: string;
 	readonly name: string;
-	readonly pathRecommendations?: PathRecommendation[] | undefined;
-	readonly properties?: AppWhitelistingGroupData | undefined;
-	readonly protectionMode?: ProtectionMode | undefined;
-	readonly vmRecommendations?: VmRecommendation[] | undefined;
+	readonly pathRecommendations?: PathRecommendation[];
+	readonly properties?: AppWhitelistingGroupData;
+	readonly protectionMode?: ProtectionMode;
+	readonly vmRecommendations?: VmRecommendation[];
 }
 export class locations_discoveredSecuritySolutions
 	extends ArmResource<locations_discoveredSecuritySolutionsComponentInputs>
@@ -126,9 +126,9 @@ export interface locations_discoveredSecuritySolutionsComponentOutputs {
 	readonly type: "Microsoft.Security/locations/discoveredSecuritySolutions";
 }
 export interface locations_discoveredSecuritySolutionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DiscoveredSecuritySolutionProperties | undefined;
+	readonly properties?: DiscoveredSecuritySolutionProperties;
 }
 export class locations_ExternalSecuritySolutions
 	extends ArmResource<locations_ExternalSecuritySolutionsComponentInputs>
@@ -153,8 +153,8 @@ export interface locations_ExternalSecuritySolutionsComponentOutputs {
 	readonly type: "Microsoft.Security/locations/ExternalSecuritySolutions";
 }
 export interface locations_ExternalSecuritySolutionsComponentInputs {
-	readonly kind?: ("AAD" | "ATA" | "CEF") | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: "AAD" | "ATA" | "CEF";
+	readonly location?: string;
 	readonly name: string;
 }
 export class locations_jitNetworkAccessPolicies
@@ -174,8 +174,8 @@ export interface locations_jitNetworkAccessPoliciesComponentOutputs {
 	readonly type: "Microsoft.Security/locations/jitNetworkAccessPolicies";
 }
 export interface locations_jitNetworkAccessPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: JitNetworkAccessPolicyProperties;
 }
@@ -197,7 +197,7 @@ export interface locations_tasksComponentOutputs {
 }
 export interface locations_tasksComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityTaskProperties | undefined;
+	readonly properties?: SecurityTaskProperties;
 }
 export class locations_topologies
 	extends ArmResource<locations_topologiesComponentInputs>
@@ -216,89 +216,84 @@ export interface locations_topologiesComponentOutputs {
 	readonly type: "Microsoft.Security/locations/topologies";
 }
 export interface locations_topologiesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: TopologyResourceProperties | undefined;
+	readonly properties?: TopologyResourceProperties;
 }
 export interface AdaptiveNetworkHardeningProperties {
-	readonly effectiveNetworkSecurityGroups?: EffectiveNetworkSecurityGroups[] | undefined;
-	readonly rules?: Rule[] | undefined;
-	readonly rulesCalculationTime?: string | undefined;
+	readonly effectiveNetworkSecurityGroups?: EffectiveNetworkSecurityGroups[];
+	readonly rules?: Rule[];
+	readonly rulesCalculationTime?: string;
 }
 export interface AlertConfidenceReason {
-	readonly reason?: string | undefined;
-	readonly type?: string | undefined;
+	readonly reason?: string;
+	readonly type?: string;
 }
 export interface AlertEntity {
-	readonly type?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly type?: string;
+	readonly [key: string]: any;
 }
 export interface AlertExtendedProperties {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface AlertProperties {
-	readonly actionTaken?: string | undefined;
-	readonly alertDisplayName?: string | undefined;
-	readonly alertName?: string | undefined;
-	readonly associatedResource?: string | undefined;
-	readonly canBeInvestigated?: boolean | undefined;
-	readonly compromisedEntity?: string | undefined;
-	readonly confidenceReasons?: AlertConfidenceReason[] | undefined;
-	readonly confidenceScore?: number | undefined;
-	readonly correlationKey?: string | undefined;
-	readonly description?: string | undefined;
-	readonly detectedTimeUtc?: string | undefined;
-	readonly entities?: AlertEntity[] | undefined;
-	readonly extendedProperties?: AlertExtendedProperties | undefined;
-	readonly instanceId?: string | undefined;
-	readonly isIncident?: boolean | undefined;
-	readonly remediationSteps?: string | undefined;
-	readonly reportedSeverity?: ("High" | "Information" | "Low" | "Silent") | undefined;
-	readonly reportedTimeUtc?: string | undefined;
-	readonly state?: string | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly systemSource?: string | undefined;
-	readonly vendorName?: string | undefined;
-	readonly workspaceArmId?: string | undefined;
+	readonly actionTaken?: string;
+	readonly alertDisplayName?: string;
+	readonly alertName?: string;
+	readonly associatedResource?: string;
+	readonly canBeInvestigated?: boolean;
+	readonly compromisedEntity?: string;
+	readonly confidenceReasons?: AlertConfidenceReason[];
+	readonly confidenceScore?: number;
+	readonly correlationKey?: string;
+	readonly description?: string;
+	readonly detectedTimeUtc?: string;
+	readonly entities?: AlertEntity[];
+	readonly extendedProperties?: AlertExtendedProperties;
+	readonly instanceId?: string;
+	readonly isIncident?: boolean;
+	readonly remediationSteps?: string;
+	readonly reportedSeverity?: "High" | "Information" | "Low" | "Silent";
+	readonly reportedTimeUtc?: string;
+	readonly state?: string;
+	readonly subscriptionId?: string;
+	readonly systemSource?: string;
+	readonly vendorName?: string;
+	readonly workspaceArmId?: string;
 }
 export interface AllowedConnectionsResourceProperties {
-	readonly calculatedDateTime?: string | undefined;
-	readonly connectableResources?: ConnectableResource[] | undefined;
+	readonly calculatedDateTime?: string;
+	readonly connectableResources?: ConnectableResource[];
 }
 export interface AppWhitelistingGroupData {
-	readonly configurationStatus?: ("Configured" | "Failed" | "InProgress" | "NoStatus" | "NotConfigured") | undefined;
-	readonly enforcementMode?: ("Audit" | "Enforce" | "None") | undefined;
-	readonly issues?: AppWhitelistingIssueSummary[] | undefined;
-	readonly pathRecommendations?: PathRecommendation[] | undefined;
-	readonly protectionMode?: ProtectionMode | undefined;
-	readonly recommendationStatus?: ("NoStatus" | "NotAvailable" | "NotRecommended" | "Recommended") | undefined;
-	readonly sourceSystem?:
-		| ("Azure_AppLocker" | "Azure_AuditD" | "NonAzure_AppLocker" | "NonAzure_AuditD" | "None")
-		| undefined;
-	readonly vmRecommendations?: VmRecommendation[] | undefined;
+	readonly configurationStatus?: "Configured" | "Failed" | "InProgress" | "NoStatus" | "NotConfigured";
+	readonly enforcementMode?: "Audit" | "Enforce" | "None";
+	readonly issues?: AppWhitelistingIssueSummary[];
+	readonly pathRecommendations?: PathRecommendation[];
+	readonly protectionMode?: ProtectionMode;
+	readonly recommendationStatus?: "NoStatus" | "NotAvailable" | "NotRecommended" | "Recommended";
+	readonly sourceSystem?: "Azure_AppLocker" | "Azure_AuditD" | "NonAzure_AppLocker" | "NonAzure_AuditD" | "None";
+	readonly vmRecommendations?: VmRecommendation[];
 }
 export interface AppWhitelistingIssueSummary {
 	readonly issue?:
-		| (
-				| "ExecutableViolationsAudited"
-				| "MsiAndScriptViolationsAudited"
-				| "MsiAndScriptViolationsBlocked"
-				| "RulesViolatedManually"
-				| "ViolationsAudited"
-				| "ViolationsBlocked"
-		  )
-		| undefined;
-	readonly numberOfVms?: number | undefined;
+		| "ExecutableViolationsAudited"
+		| "MsiAndScriptViolationsAudited"
+		| "MsiAndScriptViolationsBlocked"
+		| "RulesViolatedManually"
+		| "ViolationsAudited"
+		| "ViolationsBlocked";
+	readonly numberOfVms?: number;
 }
 export interface ConnectableResource {
-	readonly id?: string | undefined;
-	readonly inboundConnectedResources?: ConnectedResource[] | undefined;
-	readonly outboundConnectedResources?: ConnectedResource[] | undefined;
+	readonly id?: string;
+	readonly inboundConnectedResources?: ConnectedResource[];
+	readonly outboundConnectedResources?: ConnectedResource[];
 }
 export interface ConnectedResource {
-	readonly connectedResourceId?: string | undefined;
-	readonly tcpPorts?: string | undefined;
-	readonly udpPorts?: string | undefined;
+	readonly connectedResourceId?: string;
+	readonly tcpPorts?: string;
+	readonly udpPorts?: string;
 }
 export interface DiscoveredSecuritySolutionProperties {
 	readonly offer: string;
@@ -307,37 +302,37 @@ export interface DiscoveredSecuritySolutionProperties {
 	readonly sku: string;
 }
 export interface EffectiveNetworkSecurityGroups {
-	readonly networkInterface?: string | undefined;
-	readonly networkSecurityGroups?: string[] | undefined;
+	readonly networkInterface?: string;
+	readonly networkSecurityGroups?: string[];
 }
 export interface JitNetworkAccessPolicyProperties {
-	readonly provisioningState?: string | undefined;
-	readonly requests?: JitNetworkAccessRequest[] | undefined;
+	readonly provisioningState?: string;
+	readonly requests?: JitNetworkAccessRequest[];
 	readonly virtualMachines: JitNetworkAccessPolicyVirtualMachine[];
 }
 export interface JitNetworkAccessPolicyVirtualMachine {
 	readonly id: string;
 	readonly ports: JitNetworkAccessPortRule[];
-	readonly publicIpAddress?: string | undefined;
+	readonly publicIpAddress?: string;
 }
 export interface JitNetworkAccessPortRule {
-	readonly allowedSourceAddressPrefix?: string | undefined;
-	readonly allowedSourceAddressPrefixes?: string[] | undefined;
+	readonly allowedSourceAddressPrefix?: string;
+	readonly allowedSourceAddressPrefixes?: string[];
 	readonly maxRequestAccessDuration: string;
 	readonly number: number;
 	readonly protocol: "*" | "TCP" | "UDP";
 }
 export interface JitNetworkAccessRequest {
-	readonly justification?: string | undefined;
+	readonly justification?: string;
 	readonly requestor: string;
 	readonly startTimeUtc: string;
 	readonly virtualMachines: JitNetworkAccessRequestVirtualMachine[];
 }
 export interface JitNetworkAccessRequestPort {
-	readonly allowedSourceAddressPrefix?: string | undefined;
-	readonly allowedSourceAddressPrefixes?: string[] | undefined;
+	readonly allowedSourceAddressPrefix?: string;
+	readonly allowedSourceAddressPrefixes?: string[];
 	readonly endTimeUtc: string;
-	readonly mappedPort?: number | undefined;
+	readonly mappedPort?: number;
 	readonly number: number;
 	readonly status: "Initiated" | "Revoked";
 	readonly statusReason: "Expired" | "NewerRequestInitiated" | "UserRequested";
@@ -347,77 +342,81 @@ export interface JitNetworkAccessRequestVirtualMachine {
 	readonly ports: JitNetworkAccessRequestPort[];
 }
 export interface PathRecommendation {
-	readonly action?: ("Add" | "Recommended" | "Remove") | undefined;
-	readonly common?: boolean | undefined;
-	readonly configurationStatus?: ("Configured" | "Failed" | "InProgress" | "NoStatus" | "NotConfigured") | undefined;
-	readonly fileType?: ("Dll" | "Exe" | "Executable" | "Msi" | "Script" | "Unknown") | undefined;
-	readonly path?: string | undefined;
-	readonly publisherInfo?: PublisherInfo | undefined;
+	readonly action?: "Add" | "Recommended" | "Remove";
+	readonly common?: boolean;
+	readonly configurationStatus?: "Configured" | "Failed" | "InProgress" | "NoStatus" | "NotConfigured";
+	readonly fileType?: "Dll" | "Exe" | "Executable" | "Msi" | "Script" | "Unknown";
+	readonly path?: string;
+	readonly publisherInfo?: PublisherInfo;
 	readonly type?:
-		| ("BinarySignature" | "File" | "FileHash" | "ProductSignature" | "PublisherSignature" | "VersionAndAboveSignature")
-		| undefined;
-	readonly usernames?: UserRecommendation[] | undefined;
-	readonly userSids?: string[] | undefined;
+		| "BinarySignature"
+		| "File"
+		| "FileHash"
+		| "ProductSignature"
+		| "PublisherSignature"
+		| "VersionAndAboveSignature";
+	readonly usernames?: UserRecommendation[];
+	readonly userSids?: string[];
 }
 export interface ProtectionMode {
-	readonly exe?: ("Audit" | "Enforce" | "None") | undefined;
-	readonly executable?: ("Audit" | "Enforce" | "None") | undefined;
-	readonly msi?: ("Audit" | "Enforce" | "None") | undefined;
-	readonly script?: ("Audit" | "Enforce" | "None") | undefined;
+	readonly exe?: "Audit" | "Enforce" | "None";
+	readonly executable?: "Audit" | "Enforce" | "None";
+	readonly msi?: "Audit" | "Enforce" | "None";
+	readonly script?: "Audit" | "Enforce" | "None";
 }
 export interface PublisherInfo {
-	readonly binaryName?: string | undefined;
-	readonly productName?: string | undefined;
-	readonly publisherName?: string | undefined;
-	readonly version?: string | undefined;
+	readonly binaryName?: string;
+	readonly productName?: string;
+	readonly publisherName?: string;
+	readonly version?: string;
 }
 export interface Rule {
-	readonly destinationPort?: number | undefined;
-	readonly direction?: ("Inbound" | "Outbound") | undefined;
-	readonly ipAddresses?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly protocols?: ("TCP" | "UDP"[]) | undefined;
+	readonly destinationPort?: number;
+	readonly direction?: "Inbound" | "Outbound";
+	readonly ipAddresses?: string[];
+	readonly name?: string;
+	readonly protocols?: "TCP" | "UDP"[];
 }
 export interface SecurityTaskParameters {
-	readonly name?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly name?: string;
+	readonly [key: string]: any;
 }
 export interface SecurityTaskProperties {
-	readonly creationTimeUtc?: string | undefined;
-	readonly lastStateChangeTimeUtc?: string | undefined;
-	readonly securityTaskParameters?: SecurityTaskParameters | undefined;
-	readonly state?: string | undefined;
-	readonly subState?: string | undefined;
+	readonly creationTimeUtc?: string;
+	readonly lastStateChangeTimeUtc?: string;
+	readonly securityTaskParameters?: SecurityTaskParameters;
+	readonly state?: string;
+	readonly subState?: string;
 }
 export interface TopologyResourceProperties {
-	readonly calculatedDateTime?: string | undefined;
-	readonly topologyResources?: TopologySingleResource[] | undefined;
+	readonly calculatedDateTime?: string;
+	readonly topologyResources?: TopologySingleResource[];
 }
 export interface TopologySingleResource {
-	readonly children?: TopologySingleResourceChild[] | undefined;
-	readonly location?: string | undefined;
-	readonly networkZones?: string | undefined;
-	readonly parents?: TopologySingleResourceParent[] | undefined;
-	readonly recommendationsExist?: boolean | undefined;
-	readonly resourceId?: string | undefined;
-	readonly severity?: string | undefined;
-	readonly topologyScore?: number | undefined;
+	readonly children?: TopologySingleResourceChild[];
+	readonly location?: string;
+	readonly networkZones?: string;
+	readonly parents?: TopologySingleResourceParent[];
+	readonly recommendationsExist?: boolean;
+	readonly resourceId?: string;
+	readonly severity?: string;
+	readonly topologyScore?: number;
 }
 export interface TopologySingleResourceChild {
-	readonly resourceId?: string | undefined;
+	readonly resourceId?: string;
 }
 export interface TopologySingleResourceParent {
-	readonly resourceId?: string | undefined;
+	readonly resourceId?: string;
 }
 export interface UserRecommendation {
-	readonly recommendationAction?: ("Add" | "Recommended" | "Remove") | undefined;
-	readonly username?: string | undefined;
+	readonly recommendationAction?: "Add" | "Recommended" | "Remove";
+	readonly username?: string;
 }
 export interface VmRecommendation {
-	readonly configurationStatus?: ("Configured" | "Failed" | "InProgress" | "NoStatus" | "NotConfigured") | undefined;
-	readonly enforcementSupport?: ("NotSupported" | "Supported" | "Unknown") | undefined;
-	readonly recommendationAction?: ("Add" | "Recommended" | "Remove") | undefined;
-	readonly resourceId?: string | undefined;
+	readonly configurationStatus?: "Configured" | "Failed" | "InProgress" | "NoStatus" | "NotConfigured";
+	readonly enforcementSupport?: "NotSupported" | "Supported" | "Unknown";
+	readonly recommendationAction?: "Add" | "Recommended" | "Remove";
+	readonly resourceId?: string;
 }
 export default {
 	adaptiveNetworkHardenings: adaptiveNetworkHardenings,

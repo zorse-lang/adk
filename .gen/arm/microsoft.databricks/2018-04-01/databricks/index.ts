@@ -17,8 +17,8 @@ export interface workspacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: WorkspaceProperties;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_virtualNetworkPeerings
 	extends ArmResource<workspaces_virtualNetworkPeeringsComponentInputs>
@@ -41,109 +41,106 @@ export interface workspaces_virtualNetworkPeeringsComponentInputs {
 	readonly properties: VirtualNetworkPeeringPropertiesFormat;
 }
 export interface AddressSpace {
-	readonly addressPrefixes?: string[] | undefined;
+	readonly addressPrefixes?: string[];
 }
 export interface CreatedBy {
-	readonly applicationId?: string | undefined;
-	readonly oid?: string | undefined;
-	readonly puid?: string | undefined;
+	readonly applicationId?: string;
+	readonly oid?: string;
+	readonly puid?: string;
 }
 export interface Encryption {
-	readonly KeyName?: string | undefined;
-	readonly keySource?: ("Default" | "Microsoft.Keyvault") | undefined;
-	readonly keyvaulturi?: string | undefined;
-	readonly keyversion?: string | undefined;
+	readonly KeyName?: string;
+	readonly keySource?: "Default" | "Microsoft.Keyvault";
+	readonly keyvaulturi?: string;
+	readonly keyversion?: string;
 }
 export interface ManagedIdentityConfiguration {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: string;
 }
 export interface Sku {
 	readonly name: string;
-	readonly tier?: string | undefined;
+	readonly tier?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualNetworkPeeringPropertiesFormat {
-	readonly allowForwardedTraffic?: boolean | undefined;
-	readonly allowGatewayTransit?: boolean | undefined;
-	readonly allowVirtualNetworkAccess?: boolean | undefined;
-	readonly databricksAddressSpace?: AddressSpace | undefined;
-	readonly databricksVirtualNetwork?: VirtualNetworkPeeringPropertiesFormatDatabricksVirtualNetwork | undefined;
-	readonly peeringState?: ("Connected" | "Disconnected" | "Initiated") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly remoteAddressSpace?: AddressSpace | undefined;
+	readonly allowForwardedTraffic?: boolean;
+	readonly allowGatewayTransit?: boolean;
+	readonly allowVirtualNetworkAccess?: boolean;
+	readonly databricksAddressSpace?: AddressSpace;
+	readonly databricksVirtualNetwork?: VirtualNetworkPeeringPropertiesFormatDatabricksVirtualNetwork;
+	readonly peeringState?: "Connected" | "Disconnected" | "Initiated";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly remoteAddressSpace?: AddressSpace;
 	readonly remoteVirtualNetwork: VirtualNetworkPeeringPropertiesFormatRemoteVirtualNetwork;
-	readonly useRemoteGateways?: boolean | undefined;
+	readonly useRemoteGateways?: boolean;
 }
 export interface VirtualNetworkPeeringPropertiesFormatDatabricksVirtualNetwork {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface VirtualNetworkPeeringPropertiesFormatRemoteVirtualNetwork {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface WorkspaceCustomBooleanParameter {
-	readonly type?: ("Bool" | "Object" | "String") | undefined;
+	readonly type?: "Bool" | "Object" | "String";
 	readonly value: boolean;
 }
 export interface WorkspaceCustomObjectParameter {
-	readonly type?: ("Bool" | "Object" | "String") | undefined;
+	readonly type?: "Bool" | "Object" | "String";
 	readonly value: any;
 }
 export interface WorkspaceCustomParameters {
-	readonly amlWorkspaceId?: WorkspaceCustomStringParameter | undefined;
-	readonly customPrivateSubnetName?: WorkspaceCustomStringParameter | undefined;
-	readonly customPublicSubnetName?: WorkspaceCustomStringParameter | undefined;
-	readonly customVirtualNetworkId?: WorkspaceCustomStringParameter | undefined;
-	readonly enableNoPublicIp?: WorkspaceCustomBooleanParameter | undefined;
-	readonly encryption?: WorkspaceEncryptionParameter | undefined;
-	readonly loadBalancerBackendPoolName?: WorkspaceCustomStringParameter | undefined;
-	readonly loadBalancerId?: WorkspaceCustomStringParameter | undefined;
-	readonly natGatewayName?: WorkspaceCustomStringParameter | undefined;
-	readonly prepareEncryption?: WorkspaceCustomBooleanParameter | undefined;
-	readonly publicIpName?: WorkspaceCustomStringParameter | undefined;
-	readonly requireInfrastructureEncryption?: WorkspaceCustomBooleanParameter | undefined;
-	readonly resourceTags?: WorkspaceCustomObjectParameter | undefined;
-	readonly storageAccountName?: WorkspaceCustomStringParameter | undefined;
-	readonly storageAccountSkuName?: WorkspaceCustomStringParameter | undefined;
-	readonly vnetAddressPrefix?: WorkspaceCustomStringParameter | undefined;
+	readonly amlWorkspaceId?: WorkspaceCustomStringParameter;
+	readonly customPrivateSubnetName?: WorkspaceCustomStringParameter;
+	readonly customPublicSubnetName?: WorkspaceCustomStringParameter;
+	readonly customVirtualNetworkId?: WorkspaceCustomStringParameter;
+	readonly enableNoPublicIp?: WorkspaceCustomBooleanParameter;
+	readonly encryption?: WorkspaceEncryptionParameter;
+	readonly loadBalancerBackendPoolName?: WorkspaceCustomStringParameter;
+	readonly loadBalancerId?: WorkspaceCustomStringParameter;
+	readonly natGatewayName?: WorkspaceCustomStringParameter;
+	readonly prepareEncryption?: WorkspaceCustomBooleanParameter;
+	readonly publicIpName?: WorkspaceCustomStringParameter;
+	readonly requireInfrastructureEncryption?: WorkspaceCustomBooleanParameter;
+	readonly resourceTags?: WorkspaceCustomObjectParameter;
+	readonly storageAccountName?: WorkspaceCustomStringParameter;
+	readonly storageAccountSkuName?: WorkspaceCustomStringParameter;
+	readonly vnetAddressPrefix?: WorkspaceCustomStringParameter;
 }
 export interface WorkspaceCustomStringParameter {
-	readonly type?: ("Bool" | "Object" | "String") | undefined;
+	readonly type?: "Bool" | "Object" | "String";
 	readonly value: string;
 }
 export interface WorkspaceEncryptionParameter {
-	readonly type?: ("Bool" | "Object" | "String") | undefined;
-	readonly value?: Encryption | undefined;
+	readonly type?: "Bool" | "Object" | "String";
+	readonly value?: Encryption;
 }
 export interface WorkspaceProperties {
-	readonly authorizations?: WorkspaceProviderAuthorization[] | undefined;
-	readonly createdBy?: CreatedBy | undefined;
-	readonly createdDateTime?: string | undefined;
+	readonly authorizations?: WorkspaceProviderAuthorization[];
+	readonly createdBy?: CreatedBy;
+	readonly createdDateTime?: string;
 	readonly managedResourceGroupId: string;
-	readonly parameters?: WorkspaceCustomParameters | undefined;
+	readonly parameters?: WorkspaceCustomParameters;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly storageAccountIdentity?: ManagedIdentityConfiguration | undefined;
-	readonly uiDefinitionUri?: string | undefined;
-	readonly updatedBy?: CreatedBy | undefined;
-	readonly workspaceId?: string | undefined;
-	readonly workspaceUrl?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "Ready"
+		| "Running"
+		| "Succeeded"
+		| "Updating";
+	readonly storageAccountIdentity?: ManagedIdentityConfiguration;
+	readonly uiDefinitionUri?: string;
+	readonly updatedBy?: CreatedBy;
+	readonly workspaceId?: string;
+	readonly workspaceUrl?: string;
 }
 export interface WorkspaceProviderAuthorization {
 	readonly principalId: string;

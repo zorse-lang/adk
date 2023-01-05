@@ -15,7 +15,7 @@ export interface AggregationAuthorizationComponentOutputs {
 export interface AggregationAuthorizationComponentInputs {
 	readonly AuthorizedAccountId: string;
 	readonly AuthorizedAwsRegion: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ConfigRule extends CfnResource<ConfigRuleComponentInputs> implements ConfigRuleComponentOutputs {
@@ -33,11 +33,11 @@ export interface ConfigRuleComponentOutputs {
 }
 export interface ConfigRuleComponentInputs {
 	readonly Source: Source;
-	readonly ConfigRuleName?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InputParameters?: (any | undefined) | undefined;
-	readonly MaximumExecutionFrequency?: (string | undefined) | undefined;
-	readonly Scope?: (Scope | undefined) | undefined;
+	readonly ConfigRuleName?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly InputParameters?: any | undefined;
+	readonly MaximumExecutionFrequency?: string | undefined;
+	readonly Scope?: Scope | undefined;
 	readonly LogicalId: string;
 }
 export class ConfigurationAggregator
@@ -53,10 +53,10 @@ export interface ConfigurationAggregatorComponentOutputs {
 	readonly ConfigurationAggregatorArn: string;
 }
 export interface ConfigurationAggregatorComponentInputs {
-	readonly AccountAggregationSources?: (AccountAggregationSource[] | undefined) | undefined;
-	readonly ConfigurationAggregatorName?: (string | undefined) | undefined;
-	readonly OrganizationAggregationSource?: (OrganizationAggregationSource | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AccountAggregationSources?: AccountAggregationSource[] | undefined;
+	readonly ConfigurationAggregatorName?: string | undefined;
+	readonly OrganizationAggregationSource?: OrganizationAggregationSource | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ConfigurationRecorder
@@ -70,8 +70,8 @@ export class ConfigurationRecorder
 export interface ConfigurationRecorderComponentOutputs {}
 export interface ConfigurationRecorderComponentInputs {
 	readonly RoleARN: string;
-	readonly Name?: (string | undefined) | undefined;
-	readonly RecordingGroup?: (RecordingGroup | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly RecordingGroup?: RecordingGroup | undefined;
 	readonly LogicalId: string;
 }
 export class ConformancePack
@@ -85,12 +85,12 @@ export class ConformancePack
 export interface ConformancePackComponentOutputs {}
 export interface ConformancePackComponentInputs {
 	readonly ConformancePackName: string;
-	readonly ConformancePackInputParameters?: (ConformancePackInputParameter[] | undefined) | undefined;
-	readonly DeliveryS3Bucket?: (string | undefined) | undefined;
-	readonly DeliveryS3KeyPrefix?: (string | undefined) | undefined;
-	readonly TemplateBody?: (string | undefined) | undefined;
-	readonly TemplateS3Uri?: (string | undefined) | undefined;
-	readonly TemplateSSMDocumentDetails?: (TemplateSSMDocumentDetails | undefined) | undefined;
+	readonly ConformancePackInputParameters?: ConformancePackInputParameter[] | undefined;
+	readonly DeliveryS3Bucket?: string | undefined;
+	readonly DeliveryS3KeyPrefix?: string | undefined;
+	readonly TemplateBody?: string | undefined;
+	readonly TemplateS3Uri?: string | undefined;
+	readonly TemplateSSMDocumentDetails?: TemplateSSMDocumentDetails | undefined;
 	readonly LogicalId: string;
 }
 export class DeliveryChannel
@@ -104,11 +104,11 @@ export class DeliveryChannel
 export interface DeliveryChannelComponentOutputs {}
 export interface DeliveryChannelComponentInputs {
 	readonly S3BucketName: string;
-	readonly ConfigSnapshotDeliveryProperties?: (ConfigSnapshotDeliveryProperties | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly S3KeyPrefix?: (string | undefined) | undefined;
-	readonly S3KmsKeyArn?: (string | undefined) | undefined;
-	readonly SnsTopicARN?: (string | undefined) | undefined;
+	readonly ConfigSnapshotDeliveryProperties?: ConfigSnapshotDeliveryProperties | undefined;
+	readonly Name?: string | undefined;
+	readonly S3KeyPrefix?: string | undefined;
+	readonly S3KmsKeyArn?: string | undefined;
+	readonly SnsTopicARN?: string | undefined;
 	readonly LogicalId: string;
 }
 export class OrganizationConfigRule
@@ -122,10 +122,10 @@ export class OrganizationConfigRule
 export interface OrganizationConfigRuleComponentOutputs {}
 export interface OrganizationConfigRuleComponentInputs {
 	readonly OrganizationConfigRuleName: string;
-	readonly ExcludedAccounts?: (string[] | undefined) | undefined;
-	readonly OrganizationCustomCodeRuleMetadata?: (OrganizationCustomCodeRuleMetadata | undefined) | undefined;
-	readonly OrganizationCustomRuleMetadata?: (OrganizationCustomRuleMetadata | undefined) | undefined;
-	readonly OrganizationManagedRuleMetadata?: (OrganizationManagedRuleMetadata | undefined) | undefined;
+	readonly ExcludedAccounts?: string[] | undefined;
+	readonly OrganizationCustomCodeRuleMetadata?: OrganizationCustomCodeRuleMetadata | undefined;
+	readonly OrganizationCustomRuleMetadata?: OrganizationCustomRuleMetadata | undefined;
+	readonly OrganizationManagedRuleMetadata?: OrganizationManagedRuleMetadata | undefined;
 	readonly LogicalId: string;
 }
 export class OrganizationConformancePack
@@ -139,12 +139,12 @@ export class OrganizationConformancePack
 export interface OrganizationConformancePackComponentOutputs {}
 export interface OrganizationConformancePackComponentInputs {
 	readonly OrganizationConformancePackName: string;
-	readonly ConformancePackInputParameters?: (ConformancePackInputParameter[] | undefined) | undefined;
-	readonly DeliveryS3Bucket?: (string | undefined) | undefined;
-	readonly DeliveryS3KeyPrefix?: (string | undefined) | undefined;
-	readonly ExcludedAccounts?: (string[] | undefined) | undefined;
-	readonly TemplateBody?: (string | undefined) | undefined;
-	readonly TemplateS3Uri?: (string | undefined) | undefined;
+	readonly ConformancePackInputParameters?: ConformancePackInputParameter[] | undefined;
+	readonly DeliveryS3Bucket?: string | undefined;
+	readonly DeliveryS3KeyPrefix?: string | undefined;
+	readonly ExcludedAccounts?: string[] | undefined;
+	readonly TemplateBody?: string | undefined;
+	readonly TemplateS3Uri?: string | undefined;
 	readonly LogicalId: string;
 }
 export class RemediationConfiguration
@@ -160,13 +160,13 @@ export interface RemediationConfigurationComponentInputs {
 	readonly ConfigRuleName: string;
 	readonly TargetId: string;
 	readonly TargetType: string;
-	readonly Automatic?: (boolean | undefined) | undefined;
-	readonly ExecutionControls?: (ExecutionControls | undefined) | undefined;
-	readonly MaximumAutomaticAttempts?: (number | undefined) | undefined;
-	readonly Parameters?: (any | undefined) | undefined;
-	readonly ResourceType?: (string | undefined) | undefined;
-	readonly RetryAttemptSeconds?: (number | undefined) | undefined;
-	readonly TargetVersion?: (string | undefined) | undefined;
+	readonly Automatic?: boolean | undefined;
+	readonly ExecutionControls?: ExecutionControls | undefined;
+	readonly MaximumAutomaticAttempts?: number | undefined;
+	readonly Parameters?: any | undefined;
+	readonly ResourceType?: string | undefined;
+	readonly RetryAttemptSeconds?: number | undefined;
+	readonly TargetVersion?: string | undefined;
 	readonly LogicalId: string;
 }
 export class StoredQuery extends CfnResource<StoredQueryComponentInputs> implements StoredQueryComponentOutputs {
@@ -183,108 +183,108 @@ export interface StoredQueryComponentOutputs {
 export interface StoredQueryComponentInputs {
 	readonly QueryExpression: string;
 	readonly QueryName: string;
-	readonly QueryDescription?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly QueryDescription?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface CustomPolicyDetails {
-	readonly EnableDebugLogDelivery?: (boolean | undefined) | undefined;
-	readonly PolicyRuntime?: (string | undefined) | undefined;
-	readonly PolicyText?: (string | undefined) | undefined;
+	readonly EnableDebugLogDelivery?: boolean | undefined;
+	readonly PolicyRuntime?: string | undefined;
+	readonly PolicyText?: string | undefined;
 }
 export interface Scope {
-	readonly ComplianceResourceId?: (string | undefined) | undefined;
-	readonly ComplianceResourceTypes?: (string[] | undefined) | undefined;
-	readonly TagKey?: (string | undefined) | undefined;
-	readonly TagValue?: (string | undefined) | undefined;
+	readonly ComplianceResourceId?: string | undefined;
+	readonly ComplianceResourceTypes?: string[] | undefined;
+	readonly TagKey?: string | undefined;
+	readonly TagValue?: string | undefined;
 }
 export interface Source {
-	readonly CustomPolicyDetails?: (CustomPolicyDetails | undefined) | undefined;
+	readonly CustomPolicyDetails?: CustomPolicyDetails | undefined;
 	readonly Owner: string;
-	readonly SourceDetails?: (SourceDetail[] | undefined) | undefined;
-	readonly SourceIdentifier?: (string | undefined) | undefined;
+	readonly SourceDetails?: SourceDetail[] | undefined;
+	readonly SourceIdentifier?: string | undefined;
 }
 export interface SourceDetail {
 	readonly EventSource: string;
-	readonly MaximumExecutionFrequency?: (string | undefined) | undefined;
+	readonly MaximumExecutionFrequency?: string | undefined;
 	readonly MessageType: string;
 }
 export interface AccountAggregationSource {
 	readonly AccountIds: string[];
-	readonly AllAwsRegions?: (boolean | undefined) | undefined;
-	readonly AwsRegions?: (string[] | undefined) | undefined;
+	readonly AllAwsRegions?: boolean | undefined;
+	readonly AwsRegions?: string[] | undefined;
 }
 export interface OrganizationAggregationSource {
-	readonly AllAwsRegions?: (boolean | undefined) | undefined;
-	readonly AwsRegions?: (string[] | undefined) | undefined;
+	readonly AllAwsRegions?: boolean | undefined;
+	readonly AwsRegions?: string[] | undefined;
 	readonly RoleArn: string;
 }
 export interface RecordingGroup {
-	readonly AllSupported?: (boolean | undefined) | undefined;
-	readonly IncludeGlobalResourceTypes?: (boolean | undefined) | undefined;
-	readonly ResourceTypes?: (string[] | undefined) | undefined;
+	readonly AllSupported?: boolean | undefined;
+	readonly IncludeGlobalResourceTypes?: boolean | undefined;
+	readonly ResourceTypes?: string[] | undefined;
 }
 export interface ConformancePackInputParameter {
 	readonly ParameterName: string;
 	readonly ParameterValue: string;
 }
 export interface TemplateSSMDocumentDetails {
-	readonly DocumentName?: (string | undefined) | undefined;
-	readonly DocumentVersion?: (string | undefined) | undefined;
+	readonly DocumentName?: string | undefined;
+	readonly DocumentVersion?: string | undefined;
 }
 export interface ConfigSnapshotDeliveryProperties {
-	readonly DeliveryFrequency?: (string | undefined) | undefined;
+	readonly DeliveryFrequency?: string | undefined;
 }
 export interface OrganizationCustomCodeRuleMetadata {
 	readonly CodeText: string;
-	readonly DebugLogDeliveryAccounts?: (string[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InputParameters?: (string | undefined) | undefined;
-	readonly MaximumExecutionFrequency?: (string | undefined) | undefined;
-	readonly OrganizationConfigRuleTriggerTypes?: (string[] | undefined) | undefined;
-	readonly ResourceIdScope?: (string | undefined) | undefined;
-	readonly ResourceTypesScope?: (string[] | undefined) | undefined;
+	readonly DebugLogDeliveryAccounts?: string[] | undefined;
+	readonly Description?: string | undefined;
+	readonly InputParameters?: string | undefined;
+	readonly MaximumExecutionFrequency?: string | undefined;
+	readonly OrganizationConfigRuleTriggerTypes?: string[] | undefined;
+	readonly ResourceIdScope?: string | undefined;
+	readonly ResourceTypesScope?: string[] | undefined;
 	readonly Runtime: string;
-	readonly TagKeyScope?: (string | undefined) | undefined;
-	readonly TagValueScope?: (string | undefined) | undefined;
+	readonly TagKeyScope?: string | undefined;
+	readonly TagValueScope?: string | undefined;
 }
 export interface OrganizationCustomRuleMetadata {
-	readonly Description?: (string | undefined) | undefined;
-	readonly InputParameters?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly InputParameters?: string | undefined;
 	readonly LambdaFunctionArn: string;
-	readonly MaximumExecutionFrequency?: (string | undefined) | undefined;
+	readonly MaximumExecutionFrequency?: string | undefined;
 	readonly OrganizationConfigRuleTriggerTypes: string[];
-	readonly ResourceIdScope?: (string | undefined) | undefined;
-	readonly ResourceTypesScope?: (string[] | undefined) | undefined;
-	readonly TagKeyScope?: (string | undefined) | undefined;
-	readonly TagValueScope?: (string | undefined) | undefined;
+	readonly ResourceIdScope?: string | undefined;
+	readonly ResourceTypesScope?: string[] | undefined;
+	readonly TagKeyScope?: string | undefined;
+	readonly TagValueScope?: string | undefined;
 }
 export interface OrganizationManagedRuleMetadata {
-	readonly Description?: (string | undefined) | undefined;
-	readonly InputParameters?: (string | undefined) | undefined;
-	readonly MaximumExecutionFrequency?: (string | undefined) | undefined;
-	readonly ResourceIdScope?: (string | undefined) | undefined;
-	readonly ResourceTypesScope?: (string[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly InputParameters?: string | undefined;
+	readonly MaximumExecutionFrequency?: string | undefined;
+	readonly ResourceIdScope?: string | undefined;
+	readonly ResourceTypesScope?: string[] | undefined;
 	readonly RuleIdentifier: string;
-	readonly TagKeyScope?: (string | undefined) | undefined;
-	readonly TagValueScope?: (string | undefined) | undefined;
+	readonly TagKeyScope?: string | undefined;
+	readonly TagValueScope?: string | undefined;
 }
 export interface ExecutionControls {
-	readonly SsmControls?: (SsmControls | undefined) | undefined;
+	readonly SsmControls?: SsmControls | undefined;
 }
 export interface RemediationParameterValue {
-	readonly ResourceValue?: (ResourceValue | undefined) | undefined;
-	readonly StaticValue?: (StaticValue | undefined) | undefined;
+	readonly ResourceValue?: ResourceValue | undefined;
+	readonly StaticValue?: StaticValue | undefined;
 }
 export interface ResourceValue {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 }
 export interface SsmControls {
-	readonly ConcurrentExecutionRatePercentage?: (number | undefined) | undefined;
-	readonly ErrorPercentage?: (number | undefined) | undefined;
+	readonly ConcurrentExecutionRatePercentage?: number | undefined;
+	readonly ErrorPercentage?: number | undefined;
 }
 export interface StaticValue {
-	readonly Values?: (string[] | undefined) | undefined;
+	readonly Values?: string[] | undefined;
 }
 export default {
 	AggregationAuthorization: AggregationAuthorization,

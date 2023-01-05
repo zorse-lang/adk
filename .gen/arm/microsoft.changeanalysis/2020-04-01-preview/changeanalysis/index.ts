@@ -14,36 +14,36 @@ export interface profileComponentOutputs {
 	readonly type: "Microsoft.ChangeAnalysis/profile";
 }
 export interface profileComponentInputs {
-	readonly identity?: ResourceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ResourceIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ConfigurationProfileResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConfigurationProfileResourceProperties;
+	readonly systemData?: SystemData;
 }
 export interface AzureMonitorWorkspaceProperties {
-	readonly includeChangeDetails?: ("Exclude" | "Include" | "None") | undefined;
-	readonly workspaceId?: string | undefined;
-	readonly workspaceResourceId?: string | undefined;
+	readonly includeChangeDetails?: "Exclude" | "Include" | "None";
+	readonly workspaceId?: string;
+	readonly workspaceResourceId?: string;
 }
 export interface ConfigurationProfileResourceProperties {
-	readonly notifications?: NotificationSettings | undefined;
+	readonly notifications?: NotificationSettings;
 }
 export interface NotificationSettings {
-	readonly activationState?: ("Disabled" | "Enabled" | "None") | undefined;
-	readonly azureMonitorWorkspaceProperties?: AzureMonitorWorkspaceProperties | undefined;
+	readonly activationState?: "Disabled" | "Enabled" | "None";
+	readonly azureMonitorWorkspaceProperties?: AzureMonitorWorkspaceProperties;
 }
 export interface ResourceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: string | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: string | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: string;
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: string;
 }
 export default {
 	profile: profile,

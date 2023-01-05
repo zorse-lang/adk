@@ -16,9 +16,9 @@ export interface registriesComponentOutputs {
 export interface registriesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RegistryProperties | undefined;
+	readonly properties?: RegistryProperties;
 	readonly sku: Sku;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class registries_replications
 	extends ArmResource<registries_replicationsComponentInputs>
@@ -39,8 +39,8 @@ export interface registries_replicationsComponentOutputs {
 export interface registries_replicationsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ReplicationProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ReplicationProperties;
+	readonly tags?: ResourceTags;
 }
 export class registries_webhooks
 	extends ArmResource<registries_webhooksComponentInputs>
@@ -61,8 +61,8 @@ export interface registries_webhooksComponentOutputs {
 export interface registries_webhooksComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WebhookPropertiesCreateParametersOrWebhookProperties | undefined;
-	readonly tags?: WebhookCreateParametersTags | undefined;
+	readonly properties?: WebhookPropertiesCreateParametersOrWebhookProperties;
+	readonly tags?: WebhookCreateParametersTags;
 }
 export function listCredentials(resource: registries): RegistryListCredentialsResult {
 	if (resource.apiVersion !== "2017-06-01-preview") {
@@ -83,114 +83,114 @@ export function listEvents(resource: registries_webhooks): EventListResult {
 	throw new Error("not implemented");
 }
 export interface Actor {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface Event {
-	readonly eventRequestMessage?: EventRequestMessage | undefined;
-	readonly eventResponseMessage?: EventResponseMessage | undefined;
-	readonly id?: string | undefined;
+	readonly eventRequestMessage?: EventRequestMessage;
+	readonly eventResponseMessage?: EventResponseMessage;
+	readonly id?: string;
 }
 export interface EventContent {
-	readonly action?: string | undefined;
-	readonly actor?: Actor | undefined;
-	readonly id?: string | undefined;
-	readonly request?: Request | undefined;
-	readonly source?: Source | undefined;
-	readonly target?: Target | undefined;
-	readonly timestamp?: string | undefined;
+	readonly action?: string;
+	readonly actor?: Actor;
+	readonly id?: string;
+	readonly request?: Request;
+	readonly source?: Source;
+	readonly target?: Target;
+	readonly timestamp?: string;
 }
 export interface EventListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: Event[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: Event[];
 }
 export interface EventRequestMessage {
-	readonly content?: EventContent | undefined;
-	readonly headers?: EventRequestMessageHeaders | undefined;
-	readonly method?: string | undefined;
-	readonly requestUri?: string | undefined;
-	readonly version?: string | undefined;
+	readonly content?: EventContent;
+	readonly headers?: EventRequestMessageHeaders;
+	readonly method?: string;
+	readonly requestUri?: string;
+	readonly version?: string;
 }
 export interface EventRequestMessageHeaders {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface EventResponseMessage {
-	readonly content?: string | undefined;
-	readonly headers?: EventResponseMessageHeaders | undefined;
-	readonly reasonPhrase?: string | undefined;
-	readonly statusCode?: string | undefined;
-	readonly version?: string | undefined;
+	readonly content?: string;
+	readonly headers?: EventResponseMessageHeaders;
+	readonly reasonPhrase?: string;
+	readonly statusCode?: string;
+	readonly version?: string;
 }
 export interface EventResponseMessageHeaders {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RegistryListCredentialsResult {
-	readonly passwords?: RegistryPassword[] | undefined;
-	readonly username?: string | undefined;
+	readonly passwords?: RegistryPassword[];
+	readonly username?: string;
 }
 export interface RegistryPassword {
-	readonly name?: "password" | undefined;
-	readonly value?: string | undefined;
+	readonly name?: "password";
+	readonly value?: string;
 }
 export interface RegistryProperties {
-	readonly adminUserEnabled?: boolean | undefined;
-	readonly creationDate?: string | undefined;
-	readonly loginServer?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly status?: Status | undefined;
-	readonly storageAccount?: StorageAccountProperties | undefined;
+	readonly adminUserEnabled?: boolean;
+	readonly creationDate?: string;
+	readonly loginServer?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly status?: Status;
+	readonly storageAccount?: StorageAccountProperties;
 }
 export interface ReplicationProperties {
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly status?: Status | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly status?: Status;
 }
 export interface Request {
-	readonly addr?: string | undefined;
-	readonly host?: string | undefined;
-	readonly id?: string | undefined;
-	readonly method?: string | undefined;
-	readonly useragent?: string | undefined;
+	readonly addr?: string;
+	readonly host?: string;
+	readonly id?: string;
+	readonly method?: string;
+	readonly useragent?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
 	readonly name: "Basic" | "Managed_Basic" | "Managed_Premium" | "Managed_Standard";
-	readonly tier?: ("Basic" | "Managed") | undefined;
+	readonly tier?: "Basic" | "Managed";
 }
 export interface Source {
-	readonly addr?: string | undefined;
-	readonly instanceID?: string | undefined;
+	readonly addr?: string;
+	readonly instanceID?: string;
 }
 export interface Status {
-	readonly displayStatus?: string | undefined;
-	readonly message?: string | undefined;
-	readonly timestamp?: string | undefined;
+	readonly displayStatus?: string;
+	readonly message?: string;
+	readonly timestamp?: string;
 }
 export interface StorageAccountProperties {
 	readonly id: string;
 }
 export interface Target {
-	readonly digest?: string | undefined;
-	readonly length?: number | undefined;
-	readonly mediaType?: string | undefined;
-	readonly repository?: string | undefined;
-	readonly size?: number | undefined;
-	readonly tag?: string | undefined;
-	readonly url?: string | undefined;
+	readonly digest?: string;
+	readonly length?: number;
+	readonly mediaType?: string;
+	readonly repository?: string;
+	readonly size?: number;
+	readonly tag?: string;
+	readonly url?: string;
 }
 export interface WebhookCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WebhookPropertiesCreateParametersCustomHeaders {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WebhookPropertiesCreateParametersOrWebhookProperties {
 	readonly actions: "delete" | "push"[];
-	readonly customHeaders?: WebhookPropertiesCreateParametersCustomHeaders | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly scope?: string | undefined;
+	readonly customHeaders?: WebhookPropertiesCreateParametersCustomHeaders;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly scope?: string;
 	readonly serviceUri: string;
-	readonly status?: ("disabled" | "enabled") | undefined;
+	readonly status?: "disabled" | "enabled";
 }
 export default {
 	registries: registries,

@@ -12,7 +12,7 @@ export interface GroupComponentOutputs {
 export interface GroupComponentInputs {
 	readonly DisplayName: string;
 	readonly IdentityStoreId: string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class GroupMembership

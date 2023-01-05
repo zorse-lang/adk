@@ -23,9 +23,9 @@ export interface HookDefaultVersionComponentOutputs {
 	readonly Arn: string;
 }
 export interface HookDefaultVersionComponentInputs {
-	readonly TypeName?: (string | undefined) | undefined;
-	readonly TypeVersionArn?: (string | undefined) | undefined;
-	readonly VersionId?: (string | undefined) | undefined;
+	readonly TypeName?: string | undefined;
+	readonly TypeVersionArn?: string | undefined;
+	readonly VersionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class HookTypeConfig extends CfnResource<HookTypeConfigComponentInputs> implements HookTypeConfigComponentOutputs {
@@ -39,9 +39,9 @@ export interface HookTypeConfigComponentOutputs {
 }
 export interface HookTypeConfigComponentInputs {
 	readonly Configuration: string;
-	readonly ConfigurationAlias?: (string | undefined) | undefined;
-	readonly TypeArn?: (string | undefined) | undefined;
-	readonly TypeName?: (string | undefined) | undefined;
+	readonly ConfigurationAlias?: string | undefined;
+	readonly TypeArn?: string | undefined;
+	readonly TypeName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class HookVersion extends CfnResource<HookVersionComponentInputs> implements HookVersionComponentOutputs {
@@ -64,8 +64,8 @@ export interface HookVersionComponentOutputs {
 export interface HookVersionComponentInputs {
 	readonly SchemaHandlerPackage: string;
 	readonly TypeName: string;
-	readonly ExecutionRoleArn?: (string | undefined) | undefined;
-	readonly LoggingConfig?: (LoggingConfig | undefined) | undefined;
+	readonly ExecutionRoleArn?: string | undefined;
+	readonly LoggingConfig?: LoggingConfig | undefined;
 	readonly LogicalId: string;
 }
 export class Macro extends CfnResource<MacroComponentInputs> implements MacroComponentOutputs {
@@ -77,9 +77,9 @@ export interface MacroComponentOutputs {}
 export interface MacroComponentInputs {
 	readonly FunctionName: string;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly LogGroupName?: (string | undefined) | undefined;
-	readonly LogRoleARN?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly LogGroupName?: string | undefined;
+	readonly LogRoleARN?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ModuleDefaultVersion
@@ -92,9 +92,9 @@ export class ModuleDefaultVersion
 }
 export interface ModuleDefaultVersionComponentOutputs {}
 export interface ModuleDefaultVersionComponentInputs {
-	readonly Arn?: (string | undefined) | undefined;
-	readonly ModuleName?: (string | undefined) | undefined;
-	readonly VersionId?: (string | undefined) | undefined;
+	readonly Arn?: string | undefined;
+	readonly ModuleName?: string | undefined;
+	readonly VersionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ModuleVersion extends CfnResource<ModuleVersionComponentInputs> implements ModuleVersionComponentOutputs {
@@ -142,11 +142,11 @@ export interface PublicTypeVersionComponentOutputs {
 	readonly TypeVersionArn: string;
 }
 export interface PublicTypeVersionComponentInputs {
-	readonly Arn?: (string | undefined) | undefined;
-	readonly LogDeliveryBucket?: (string | undefined) | undefined;
-	readonly PublicVersionNumber?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
-	readonly TypeName?: (string | undefined) | undefined;
+	readonly Arn?: string | undefined;
+	readonly LogDeliveryBucket?: string | undefined;
+	readonly PublicVersionNumber?: string | undefined;
+	readonly Type?: string | undefined;
+	readonly TypeName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Publisher extends CfnResource<PublisherComponentInputs> implements PublisherComponentOutputs {
@@ -166,7 +166,7 @@ export interface PublisherComponentOutputs {
 }
 export interface PublisherComponentInputs {
 	readonly AcceptTermsAndConditions: boolean;
-	readonly ConnectionArn?: (string | undefined) | undefined;
+	readonly ConnectionArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ResourceDefaultVersion
@@ -182,9 +182,9 @@ export interface ResourceDefaultVersionComponentOutputs {
 	readonly Arn: string;
 }
 export interface ResourceDefaultVersionComponentInputs {
-	readonly TypeName?: (string | undefined) | undefined;
-	readonly TypeVersionArn?: (string | undefined) | undefined;
-	readonly VersionId?: (string | undefined) | undefined;
+	readonly TypeName?: string | undefined;
+	readonly TypeVersionArn?: string | undefined;
+	readonly VersionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ResourceVersion
@@ -212,8 +212,8 @@ export interface ResourceVersionComponentOutputs {
 export interface ResourceVersionComponentInputs {
 	readonly SchemaHandlerPackage: string;
 	readonly TypeName: string;
-	readonly ExecutionRoleArn?: (string | undefined) | undefined;
-	readonly LoggingConfig?: (LoggingConfig | undefined) | undefined;
+	readonly ExecutionRoleArn?: string | undefined;
+	readonly LoggingConfig?: LoggingConfig | undefined;
 	readonly LogicalId: string;
 }
 export class Stack extends CfnResource<StackComponentInputs> implements StackComponentOutputs {
@@ -224,10 +224,10 @@ export class Stack extends CfnResource<StackComponentInputs> implements StackCom
 export interface StackComponentOutputs {}
 export interface StackComponentInputs {
 	readonly TemplateURL: string;
-	readonly NotificationARNs?: (string[] | undefined) | undefined;
-	readonly Parameters?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TimeoutInMinutes?: (number | undefined) | undefined;
+	readonly NotificationARNs?: string[] | undefined;
+	readonly Parameters?: { [key: string]: string } | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TimeoutInMinutes?: number | undefined;
 	readonly LogicalId: string;
 }
 export class StackSet extends CfnResource<StackSetComponentInputs> implements StackSetComponentOutputs {
@@ -242,19 +242,19 @@ export interface StackSetComponentOutputs {
 export interface StackSetComponentInputs {
 	readonly PermissionModel: string;
 	readonly StackSetName: string;
-	readonly AdministrationRoleARN?: (string | undefined) | undefined;
-	readonly AutoDeployment?: (AutoDeployment | undefined) | undefined;
-	readonly CallAs?: (string | undefined) | undefined;
-	readonly Capabilities?: (string[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ExecutionRoleName?: (string | undefined) | undefined;
-	readonly ManagedExecution?: (ManagedExecution | undefined) | undefined;
-	readonly OperationPreferences?: (OperationPreferences | undefined) | undefined;
-	readonly Parameters?: (Parameter[] | undefined) | undefined;
-	readonly StackInstancesGroup?: (StackInstances[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TemplateBody?: (string | undefined) | undefined;
-	readonly TemplateURL?: (string | undefined) | undefined;
+	readonly AdministrationRoleARN?: string | undefined;
+	readonly AutoDeployment?: AutoDeployment | undefined;
+	readonly CallAs?: string | undefined;
+	readonly Capabilities?: string[] | undefined;
+	readonly Description?: string | undefined;
+	readonly ExecutionRoleName?: string | undefined;
+	readonly ManagedExecution?: ManagedExecution | undefined;
+	readonly OperationPreferences?: OperationPreferences | undefined;
+	readonly Parameters?: Parameter[] | undefined;
+	readonly StackInstancesGroup?: StackInstances[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TemplateBody?: string | undefined;
+	readonly TemplateURL?: string | undefined;
 	readonly LogicalId: string;
 }
 export class TypeActivation extends CfnResource<TypeActivationComponentInputs> implements TypeActivationComponentOutputs {
@@ -267,16 +267,16 @@ export interface TypeActivationComponentOutputs {
 	readonly Arn: string;
 }
 export interface TypeActivationComponentInputs {
-	readonly AutoUpdate?: (boolean | undefined) | undefined;
-	readonly ExecutionRoleArn?: (string | undefined) | undefined;
-	readonly LoggingConfig?: (LoggingConfig | undefined) | undefined;
-	readonly MajorVersion?: (string | undefined) | undefined;
-	readonly PublicTypeArn?: (string | undefined) | undefined;
-	readonly PublisherId?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
-	readonly TypeName?: (string | undefined) | undefined;
-	readonly TypeNameAlias?: (string | undefined) | undefined;
-	readonly VersionBump?: (string | undefined) | undefined;
+	readonly AutoUpdate?: boolean | undefined;
+	readonly ExecutionRoleArn?: string | undefined;
+	readonly LoggingConfig?: LoggingConfig | undefined;
+	readonly MajorVersion?: string | undefined;
+	readonly PublicTypeArn?: string | undefined;
+	readonly PublisherId?: string | undefined;
+	readonly Type?: string | undefined;
+	readonly TypeName?: string | undefined;
+	readonly TypeNameAlias?: string | undefined;
+	readonly VersionBump?: string | undefined;
 	readonly LogicalId: string;
 }
 export class WaitCondition extends CfnResource<WaitConditionComponentInputs> implements WaitConditionComponentOutputs {
@@ -289,9 +289,9 @@ export interface WaitConditionComponentOutputs {
 	readonly Data: any;
 }
 export interface WaitConditionComponentInputs {
-	readonly Count?: (number | undefined) | undefined;
-	readonly Handle?: (string | undefined) | undefined;
-	readonly Timeout?: (string | undefined) | undefined;
+	readonly Count?: number | undefined;
+	readonly Handle?: string | undefined;
+	readonly Timeout?: string | undefined;
 	readonly LogicalId: string;
 }
 export class WaitConditionHandle
@@ -307,28 +307,28 @@ export interface WaitConditionHandleComponentInputs {
 	readonly LogicalId: string;
 }
 export interface LoggingConfig {
-	readonly LogGroupName?: (string | undefined) | undefined;
-	readonly LogRoleArn?: (string | undefined) | undefined;
+	readonly LogGroupName?: string | undefined;
+	readonly LogRoleArn?: string | undefined;
 }
 export interface AutoDeployment {
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly RetainStacksOnAccountRemoval?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly RetainStacksOnAccountRemoval?: boolean | undefined;
 }
 export interface DeploymentTargets {
-	readonly AccountFilterType?: (string | undefined) | undefined;
-	readonly Accounts?: (string[] | undefined) | undefined;
-	readonly OrganizationalUnitIds?: (string[] | undefined) | undefined;
+	readonly AccountFilterType?: string | undefined;
+	readonly Accounts?: string[] | undefined;
+	readonly OrganizationalUnitIds?: string[] | undefined;
 }
 export interface ManagedExecution {
-	readonly Active?: (boolean | undefined) | undefined;
+	readonly Active?: boolean | undefined;
 }
 export interface OperationPreferences {
-	readonly FailureToleranceCount?: (number | undefined) | undefined;
-	readonly FailureTolerancePercentage?: (number | undefined) | undefined;
-	readonly MaxConcurrentCount?: (number | undefined) | undefined;
-	readonly MaxConcurrentPercentage?: (number | undefined) | undefined;
-	readonly RegionConcurrencyType?: (string | undefined) | undefined;
-	readonly RegionOrder?: (string[] | undefined) | undefined;
+	readonly FailureToleranceCount?: number | undefined;
+	readonly FailureTolerancePercentage?: number | undefined;
+	readonly MaxConcurrentCount?: number | undefined;
+	readonly MaxConcurrentPercentage?: number | undefined;
+	readonly RegionConcurrencyType?: string | undefined;
+	readonly RegionOrder?: string[] | undefined;
 }
 export interface Parameter {
 	readonly ParameterKey: string;
@@ -336,7 +336,7 @@ export interface Parameter {
 }
 export interface StackInstances {
 	readonly DeploymentTargets: DeploymentTargets;
-	readonly ParameterOverrides?: (Parameter[] | undefined) | undefined;
+	readonly ParameterOverrides?: Parameter[] | undefined;
 	readonly Regions: string[];
 }
 export default {

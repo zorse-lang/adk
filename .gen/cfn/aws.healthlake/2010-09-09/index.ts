@@ -21,10 +21,10 @@ export interface FHIRDatastoreComponentOutputs {
 }
 export interface FHIRDatastoreComponentInputs {
 	readonly DatastoreTypeVersion: string;
-	readonly DatastoreName?: (string | undefined) | undefined;
-	readonly PreloadDataConfig?: (PreloadDataConfig | undefined) | undefined;
-	readonly SseConfiguration?: (SseConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DatastoreName?: string | undefined;
+	readonly PreloadDataConfig?: PreloadDataConfig | undefined;
+	readonly SseConfiguration?: SseConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface CreatedAt {
@@ -33,7 +33,7 @@ export interface CreatedAt {
 }
 export interface KmsEncryptionConfig {
 	readonly CmkType: string;
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
 }
 export interface PreloadDataConfig {
 	readonly PreloadDataType: string;

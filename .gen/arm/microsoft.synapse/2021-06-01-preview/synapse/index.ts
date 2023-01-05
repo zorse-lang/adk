@@ -19,8 +19,8 @@ export interface privateLinkHubsComponentOutputs {
 export interface privateLinkHubsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: PrivateLinkHubProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: PrivateLinkHubProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class privateLinkHubs_privateLinkResources
 	extends ArmResource<privateLinkHubs_privateLinkResourcesComponentInputs>
@@ -46,7 +46,7 @@ export interface privateLinkHubs_privateLinkResourcesComponentOutputs {
 }
 export interface privateLinkHubs_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export class workspaces extends ArmResource<workspacesComponentInputs> implements workspacesComponentOutputs {
 	constructor(entity: ADKEntity, options: workspacesComponentInputs) {
@@ -62,11 +62,11 @@ export interface workspacesComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces";
 }
 export interface workspacesComponentInputs {
-	readonly identity?: ManagedIdentity | undefined;
+	readonly identity?: ManagedIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WorkspaceProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: WorkspaceProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_administrators
 	extends ArmResource<workspaces_administratorsComponentInputs>
@@ -86,7 +86,7 @@ export interface workspaces_administratorsComponentOutputs {
 }
 export interface workspaces_administratorsComponentInputs {
 	readonly name: string;
-	readonly properties?: AadAdminProperties | undefined;
+	readonly properties?: AadAdminProperties;
 }
 export class workspaces_auditingSettings
 	extends ArmResource<workspaces_auditingSettingsComponentInputs>
@@ -106,7 +106,7 @@ export interface workspaces_auditingSettingsComponentOutputs {
 }
 export interface workspaces_auditingSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerBlobAuditingPolicyProperties | undefined;
+	readonly properties?: ServerBlobAuditingPolicyProperties;
 }
 export class workspaces_azureADOnlyAuthentications
 	extends ArmResource<workspaces_azureADOnlyAuthenticationsComponentInputs>
@@ -132,7 +132,7 @@ export interface workspaces_azureADOnlyAuthenticationsComponentOutputs {
 }
 export interface workspaces_azureADOnlyAuthenticationsComponentInputs {
 	readonly name: string;
-	readonly properties?: AzureADOnlyAuthenticationProperties | undefined;
+	readonly properties?: AzureADOnlyAuthenticationProperties;
 }
 export class workspaces_bigDataPools
 	extends ArmResource<workspaces_bigDataPoolsComponentInputs>
@@ -153,8 +153,8 @@ export interface workspaces_bigDataPoolsComponentOutputs {
 export interface workspaces_bigDataPoolsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: BigDataPoolResourceProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: BigDataPoolResourceProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_dedicatedSQLminimalTlsSettings
 	extends ArmResource<workspaces_dedicatedSQLminimalTlsSettingsComponentInputs>
@@ -179,9 +179,9 @@ export interface workspaces_dedicatedSQLminimalTlsSettingsComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/dedicatedSQLminimalTlsSettings";
 }
 export interface workspaces_dedicatedSQLminimalTlsSettingsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DedicatedSQLminimalTlsSettingsProperties | undefined;
+	readonly properties?: DedicatedSQLminimalTlsSettingsProperties;
 }
 export class workspaces_encryptionProtector
 	extends ArmResource<workspaces_encryptionProtectorComponentInputs>
@@ -200,10 +200,10 @@ export interface workspaces_encryptionProtectorComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/encryptionProtector";
 }
 export interface workspaces_encryptionProtectorComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: EncryptionProtectorProperties | undefined;
+	readonly properties?: EncryptionProtectorProperties;
 }
 export class workspaces_extendedAuditingSettings
 	extends ArmResource<workspaces_extendedAuditingSettingsComponentInputs>
@@ -223,7 +223,7 @@ export interface workspaces_extendedAuditingSettingsComponentOutputs {
 }
 export interface workspaces_extendedAuditingSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExtendedServerBlobAuditingPolicyProperties | undefined;
+	readonly properties?: ExtendedServerBlobAuditingPolicyProperties;
 }
 export class workspaces_firewallRules
 	extends ArmResource<workspaces_firewallRulesComponentInputs>
@@ -243,7 +243,7 @@ export interface workspaces_firewallRulesComponentOutputs {
 }
 export interface workspaces_firewallRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: IpFirewallRuleProperties | undefined;
+	readonly properties?: IpFirewallRuleProperties;
 }
 export class workspaces_integrationRuntimes
 	extends ArmResource<workspaces_integrationRuntimesComponentInputs>
@@ -262,7 +262,7 @@ export interface workspaces_integrationRuntimesComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/integrationRuntimes";
 }
 export interface workspaces_integrationRuntimesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly properties: IntegrationRuntime;
 }
@@ -284,7 +284,7 @@ export interface workspaces_keysComponentOutputs {
 }
 export interface workspaces_keysComponentInputs {
 	readonly name: string;
-	readonly properties?: KeyProperties | undefined;
+	readonly properties?: KeyProperties;
 }
 export class workspaces_kustoPools
 	extends ArmResource<workspaces_kustoPoolsComponentInputs>
@@ -303,13 +303,13 @@ export interface workspaces_kustoPoolsComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/kustoPools";
 }
 export interface workspaces_kustoPoolsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: KustoPoolProperties | undefined;
+	readonly properties?: KustoPoolProperties;
 	readonly sku: AzureSku;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_kustoPools_attachedDatabaseConfigurations
 	extends ArmResource<workspaces_kustoPools_attachedDatabaseConfigurationsComponentInputs>
@@ -334,10 +334,10 @@ export interface workspaces_kustoPools_attachedDatabaseConfigurationsComponentOu
 	readonly type: "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations";
 }
 export interface workspaces_kustoPools_attachedDatabaseConfigurationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AttachedDatabaseConfigurationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AttachedDatabaseConfigurationProperties;
+	readonly systemData?: SystemData;
 }
 export class workspaces_kustoPools_databases_ReadOnlyFollowing
 	extends ArmResource<workspaces_kustoPools_databases_ReadOnlyFollowingComponentInputs>
@@ -356,11 +356,11 @@ export interface workspaces_kustoPools_databases_ReadOnlyFollowingComponentOutpu
 	readonly type: "Microsoft.Synapse/workspaces/kustoPools/databases";
 }
 export interface workspaces_kustoPools_databases_ReadOnlyFollowingComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "ReadOnlyFollowing";
-	readonly properties?: ReadOnlyFollowingDatabaseProperties | undefined;
+	readonly properties?: ReadOnlyFollowingDatabaseProperties;
 }
 export class workspaces_kustoPools_databases_ReadWrite
 	extends ArmResource<workspaces_kustoPools_databases_ReadWriteComponentInputs>
@@ -379,11 +379,11 @@ export interface workspaces_kustoPools_databases_ReadWriteComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/kustoPools/databases";
 }
 export interface workspaces_kustoPools_databases_ReadWriteComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "ReadWrite";
-	readonly properties?: ReadWriteDatabaseProperties | undefined;
+	readonly properties?: ReadWriteDatabaseProperties;
 }
 export class workspaces_kustoPools_databases_dataConnections_EventGrid
 	extends ArmResource<workspaces_kustoPools_databases_dataConnections_EventGridComponentInputs>
@@ -408,11 +408,11 @@ export interface workspaces_kustoPools_databases_dataConnections_EventGridCompon
 	readonly type: "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections";
 }
 export interface workspaces_kustoPools_databases_dataConnections_EventGridComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "EventGrid";
-	readonly properties?: EventGridConnectionProperties | undefined;
+	readonly properties?: EventGridConnectionProperties;
 }
 export class workspaces_kustoPools_databases_dataConnections_EventHub
 	extends ArmResource<workspaces_kustoPools_databases_dataConnections_EventHubComponentInputs>
@@ -437,11 +437,11 @@ export interface workspaces_kustoPools_databases_dataConnections_EventHubCompone
 	readonly type: "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections";
 }
 export interface workspaces_kustoPools_databases_dataConnections_EventHubComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "EventHub";
-	readonly properties?: EventHubConnectionProperties | undefined;
+	readonly properties?: EventHubConnectionProperties;
 }
 export class workspaces_kustoPools_databases_dataConnections_IotHub
 	extends ArmResource<workspaces_kustoPools_databases_dataConnections_IotHubComponentInputs>
@@ -466,11 +466,11 @@ export interface workspaces_kustoPools_databases_dataConnections_IotHubComponent
 	readonly type: "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections";
 }
 export interface workspaces_kustoPools_databases_dataConnections_IotHubComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "IotHub";
-	readonly properties?: IotHubConnectionProperties | undefined;
+	readonly properties?: IotHubConnectionProperties;
 }
 export class workspaces_kustoPools_databases_principalAssignments
 	extends ArmResource<workspaces_kustoPools_databases_principalAssignmentsComponentInputs>
@@ -496,8 +496,8 @@ export interface workspaces_kustoPools_databases_principalAssignmentsComponentOu
 }
 export interface workspaces_kustoPools_databases_principalAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabasePrincipalProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DatabasePrincipalProperties;
+	readonly systemData?: SystemData;
 }
 export class workspaces_kustoPools_principalAssignments
 	extends ArmResource<workspaces_kustoPools_principalAssignmentsComponentInputs>
@@ -523,8 +523,8 @@ export interface workspaces_kustoPools_principalAssignmentsComponentOutputs {
 }
 export interface workspaces_kustoPools_principalAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: ClusterPrincipalProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ClusterPrincipalProperties;
+	readonly systemData?: SystemData;
 }
 export class workspaces_libraries
 	extends ArmResource<workspaces_librariesComponentInputs>
@@ -543,9 +543,9 @@ export interface workspaces_librariesComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/libraries";
 }
 export interface workspaces_librariesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: LibraryInfo | undefined;
+	readonly properties?: LibraryInfo;
 }
 export class workspaces_managedIdentitySqlControlSettings
 	extends ArmResource<workspaces_managedIdentitySqlControlSettingsComponentInputs>
@@ -571,7 +571,7 @@ export interface workspaces_managedIdentitySqlControlSettingsComponentOutputs {
 }
 export interface workspaces_managedIdentitySqlControlSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedIdentitySqlControlSettingsModelProperties | undefined;
+	readonly properties?: ManagedIdentitySqlControlSettingsModelProperties;
 }
 export class workspaces_privateEndpointConnections
 	extends ArmResource<workspaces_privateEndpointConnectionsComponentInputs>
@@ -597,7 +597,7 @@ export interface workspaces_privateEndpointConnectionsComponentOutputs {
 }
 export interface workspaces_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class workspaces_privateLinkResources
 	extends ArmResource<workspaces_privateLinkResourcesComponentInputs>
@@ -617,7 +617,7 @@ export interface workspaces_privateLinkResourcesComponentOutputs {
 }
 export interface workspaces_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export class workspaces_recoverableSqlPools
 	extends ArmResource<workspaces_recoverableSqlPoolsComponentInputs>
@@ -637,7 +637,7 @@ export interface workspaces_recoverableSqlPoolsComponentOutputs {
 }
 export interface workspaces_recoverableSqlPoolsComponentInputs {
 	readonly name: string;
-	readonly properties?: RecoverableSqlPoolProperties | undefined;
+	readonly properties?: RecoverableSqlPoolProperties;
 }
 export class workspaces_restorableDroppedSqlPools
 	extends ArmResource<workspaces_restorableDroppedSqlPoolsComponentInputs>
@@ -662,9 +662,9 @@ export interface workspaces_restorableDroppedSqlPoolsComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/restorableDroppedSqlPools";
 }
 export interface workspaces_restorableDroppedSqlPoolsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RestorableDroppedSqlPoolProperties | undefined;
+	readonly properties?: RestorableDroppedSqlPoolProperties;
 }
 export class workspaces_securityAlertPolicies
 	extends ArmResource<workspaces_securityAlertPoliciesComponentInputs>
@@ -684,7 +684,7 @@ export interface workspaces_securityAlertPoliciesComponentOutputs {
 }
 export interface workspaces_securityAlertPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerSecurityAlertPolicyProperties | undefined;
+	readonly properties?: ServerSecurityAlertPolicyProperties;
 }
 export class workspaces_sparkconfigurations
 	extends ArmResource<workspaces_sparkconfigurationsComponentInputs>
@@ -703,9 +703,9 @@ export interface workspaces_sparkconfigurationsComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/sparkconfigurations";
 }
 export interface workspaces_sparkconfigurationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: SparkConfigurationInfo | undefined;
+	readonly properties?: SparkConfigurationInfo;
 }
 export class workspaces_sqlAdministrators
 	extends ArmResource<workspaces_sqlAdministratorsComponentInputs>
@@ -725,7 +725,7 @@ export interface workspaces_sqlAdministratorsComponentOutputs {
 }
 export interface workspaces_sqlAdministratorsComponentInputs {
 	readonly name: string;
-	readonly properties?: AadAdminProperties | undefined;
+	readonly properties?: AadAdminProperties;
 }
 export class workspaces_sqlPools
 	extends ArmResource<workspaces_sqlPoolsComponentInputs>
@@ -746,9 +746,9 @@ export interface workspaces_sqlPoolsComponentOutputs {
 export interface workspaces_sqlPoolsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SqlPoolResourceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SqlPoolResourceProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_sqlPools_auditingSettings
 	extends ArmResource<workspaces_sqlPools_auditingSettingsComponentInputs>
@@ -773,9 +773,9 @@ export interface workspaces_sqlPools_auditingSettingsComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/sqlPools/auditingSettings";
 }
 export interface workspaces_sqlPools_auditingSettingsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly properties?: SqlPoolBlobAuditingPolicyProperties | undefined;
+	readonly properties?: SqlPoolBlobAuditingPolicyProperties;
 }
 export class workspaces_sqlPools_connectionPolicies
 	extends ArmResource<workspaces_sqlPools_connectionPoliciesComponentInputs>
@@ -800,10 +800,10 @@ export interface workspaces_sqlPools_connectionPoliciesComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/sqlPools/connectionPolicies";
 }
 export interface workspaces_sqlPools_connectionPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SqlPoolConnectionPolicyProperties | undefined;
+	readonly properties?: SqlPoolConnectionPolicyProperties;
 }
 export class workspaces_sqlPools_dataMaskingPolicies
 	extends ArmResource<workspaces_sqlPools_dataMaskingPoliciesComponentInputs>
@@ -828,11 +828,11 @@ export interface workspaces_sqlPools_dataMaskingPoliciesComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies";
 }
 export interface workspaces_sqlPools_dataMaskingPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
-	readonly managedBy?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly properties?: DataMaskingPolicyProperties | undefined;
+	readonly properties?: DataMaskingPolicyProperties;
 }
 export class workspaces_sqlPools_dataMaskingPolicies_rules
 	extends ArmResource<workspaces_sqlPools_dataMaskingPolicies_rulesComponentInputs>
@@ -857,10 +857,10 @@ export interface workspaces_sqlPools_dataMaskingPolicies_rulesComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules";
 }
 export interface workspaces_sqlPools_dataMaskingPolicies_rulesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DataMaskingRuleProperties | undefined;
+	readonly properties?: DataMaskingRuleProperties;
 }
 export class workspaces_sqlPools_dataWarehouseUserActivities
 	extends ArmResource<workspaces_sqlPools_dataWarehouseUserActivitiesComponentInputs>
@@ -886,7 +886,7 @@ export interface workspaces_sqlPools_dataWarehouseUserActivitiesComponentOutputs
 }
 export interface workspaces_sqlPools_dataWarehouseUserActivitiesComponentInputs {
 	readonly name: string;
-	readonly properties?: DataWarehouseUserActivitiesProperties | undefined;
+	readonly properties?: DataWarehouseUserActivitiesProperties;
 }
 export class workspaces_sqlPools_extendedAuditingSettings
 	extends ArmResource<workspaces_sqlPools_extendedAuditingSettingsComponentInputs>
@@ -912,7 +912,7 @@ export interface workspaces_sqlPools_extendedAuditingSettingsComponentOutputs {
 }
 export interface workspaces_sqlPools_extendedAuditingSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExtendedSqlPoolBlobAuditingPolicyProperties | undefined;
+	readonly properties?: ExtendedSqlPoolBlobAuditingPolicyProperties;
 }
 export class workspaces_sqlPools_geoBackupPolicies
 	extends ArmResource<workspaces_sqlPools_geoBackupPoliciesComponentInputs>
@@ -937,8 +937,8 @@ export interface workspaces_sqlPools_geoBackupPoliciesComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/sqlPools/geoBackupPolicies";
 }
 export interface workspaces_sqlPools_geoBackupPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: GeoBackupPolicyProperties;
 }
@@ -960,7 +960,7 @@ export interface workspaces_sqlPools_metadataSyncComponentOutputs {
 }
 export interface workspaces_sqlPools_metadataSyncComponentInputs {
 	readonly name: string;
-	readonly properties?: MetadataSyncConfigProperties | undefined;
+	readonly properties?: MetadataSyncConfigProperties;
 }
 export class workspaces_sqlPools_operationResults
 	extends ArmResource<workspaces_sqlPools_operationResultsComponentInputs>
@@ -985,11 +985,11 @@ export interface workspaces_sqlPools_operationResultsComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/sqlPools/operationResults";
 }
 export interface workspaces_sqlPools_operationResultsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SqlPoolResourceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SqlPoolResourceProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_sqlPools_replicationLinks
 	extends ArmResource<workspaces_sqlPools_replicationLinksComponentInputs>
@@ -1014,9 +1014,9 @@ export interface workspaces_sqlPools_replicationLinksComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/sqlPools/replicationLinks";
 }
 export interface workspaces_sqlPools_replicationLinksComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ReplicationLinkProperties | undefined;
+	readonly properties?: ReplicationLinkProperties;
 }
 export class workspaces_sqlPools_restorePoints
 	extends ArmResource<workspaces_sqlPools_restorePointsComponentInputs>
@@ -1035,9 +1035,9 @@ export interface workspaces_sqlPools_restorePointsComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/sqlPools/restorePoints";
 }
 export interface workspaces_sqlPools_restorePointsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RestorePointProperties | undefined;
+	readonly properties?: RestorePointProperties;
 }
 export class workspaces_sqlPools_schemas
 	extends ArmResource<workspaces_sqlPools_schemasComponentInputs>
@@ -1101,7 +1101,7 @@ export interface workspaces_sqlPools_schemas_tables_columnsComponentOutputs {
 }
 export interface workspaces_sqlPools_schemas_tables_columnsComponentInputs {
 	readonly name: string;
-	readonly properties?: SqlPoolColumnProperties | undefined;
+	readonly properties?: SqlPoolColumnProperties;
 }
 export class workspaces_sqlPools_schemas_tables_columns_sensitivityLabels
 	extends ArmResource<workspaces_sqlPools_schemas_tables_columns_sensitivityLabelsComponentInputs>
@@ -1126,9 +1126,9 @@ export interface workspaces_sqlPools_schemas_tables_columns_sensitivityLabelsCom
 	readonly type: "Microsoft.Synapse/workspaces/sqlPools/schemas/tables/columns/sensitivityLabels";
 }
 export interface workspaces_sqlPools_schemas_tables_columns_sensitivityLabelsComponentInputs {
-	readonly managedBy?: string | undefined;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly properties?: SensitivityLabelProperties | undefined;
+	readonly properties?: SensitivityLabelProperties;
 }
 export class workspaces_sqlPools_securityAlertPolicies
 	extends ArmResource<workspaces_sqlPools_securityAlertPoliciesComponentInputs>
@@ -1154,7 +1154,7 @@ export interface workspaces_sqlPools_securityAlertPoliciesComponentOutputs {
 }
 export interface workspaces_sqlPools_securityAlertPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityAlertPolicyProperties | undefined;
+	readonly properties?: SecurityAlertPolicyProperties;
 }
 export class workspaces_sqlPools_transparentDataEncryption
 	extends ArmResource<workspaces_sqlPools_transparentDataEncryptionComponentInputs>
@@ -1179,9 +1179,9 @@ export interface workspaces_sqlPools_transparentDataEncryptionComponentOutputs {
 	readonly type: "Microsoft.Synapse/workspaces/sqlPools/transparentDataEncryption";
 }
 export interface workspaces_sqlPools_transparentDataEncryptionComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: TransparentDataEncryptionProperties | undefined;
+	readonly properties?: TransparentDataEncryptionProperties;
 }
 export class workspaces_sqlPools_vulnerabilityAssessments
 	extends ArmResource<workspaces_sqlPools_vulnerabilityAssessmentsComponentInputs>
@@ -1207,7 +1207,7 @@ export interface workspaces_sqlPools_vulnerabilityAssessmentsComponentOutputs {
 }
 export interface workspaces_sqlPools_vulnerabilityAssessmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: SqlPoolVulnerabilityAssessmentProperties | undefined;
+	readonly properties?: SqlPoolVulnerabilityAssessmentProperties;
 }
 export class workspaces_sqlPools_vulnerabilityAssessments_rules_baselines
 	extends ArmResource<workspaces_sqlPools_vulnerabilityAssessments_rules_baselinesComponentInputs>
@@ -1233,7 +1233,7 @@ export interface workspaces_sqlPools_vulnerabilityAssessments_rules_baselinesCom
 }
 export interface workspaces_sqlPools_vulnerabilityAssessments_rules_baselinesComponentInputs {
 	readonly name: string;
-	readonly properties?: SqlPoolVulnerabilityAssessmentRuleBaselineProperties | undefined;
+	readonly properties?: SqlPoolVulnerabilityAssessmentRuleBaselineProperties;
 }
 export class workspaces_sqlPools_vulnerabilityAssessments_scans
 	extends ArmResource<workspaces_sqlPools_vulnerabilityAssessments_scansComponentInputs>
@@ -1259,7 +1259,7 @@ export interface workspaces_sqlPools_vulnerabilityAssessments_scansComponentOutp
 }
 export interface workspaces_sqlPools_vulnerabilityAssessments_scansComponentInputs {
 	readonly name: string;
-	readonly properties?: VulnerabilityAssessmentScanRecordProperties | undefined;
+	readonly properties?: VulnerabilityAssessmentScanRecordProperties;
 }
 export class workspaces_sqlPools_workloadGroups
 	extends ArmResource<workspaces_sqlPools_workloadGroupsComponentInputs>
@@ -1279,7 +1279,7 @@ export interface workspaces_sqlPools_workloadGroupsComponentOutputs {
 }
 export interface workspaces_sqlPools_workloadGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadGroupProperties | undefined;
+	readonly properties?: WorkloadGroupProperties;
 }
 export class workspaces_sqlPools_workloadGroups_workloadClassifiers
 	extends ArmResource<workspaces_sqlPools_workloadGroups_workloadClassifiersComponentInputs>
@@ -1305,7 +1305,7 @@ export interface workspaces_sqlPools_workloadGroups_workloadClassifiersComponent
 }
 export interface workspaces_sqlPools_workloadGroups_workloadClassifiersComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadClassifierProperties | undefined;
+	readonly properties?: WorkloadClassifierProperties;
 }
 export class workspaces_trustedServiceByPassConfiguration
 	extends ArmResource<workspaces_trustedServiceByPassConfigurationComponentInputs>
@@ -1350,7 +1350,7 @@ export interface workspaces_vulnerabilityAssessmentsComponentOutputs {
 }
 export interface workspaces_vulnerabilityAssessmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerVulnerabilityAssessmentProperties | undefined;
+	readonly properties?: ServerVulnerabilityAssessmentProperties;
 }
 export function listAuthKeys(resource: workspaces_integrationRuntimes): IntegrationRuntimeAuthKeys {
 	if (resource.apiVersion !== "2021-06-01-preview") {
@@ -1380,74 +1380,68 @@ export function listLanguageExtensions(resource: workspaces_kustoPools): Languag
 	throw new Error("not implemented");
 }
 export interface AadAdminProperties {
-	readonly administratorType?: string | undefined;
-	readonly login?: string | undefined;
-	readonly sid?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly administratorType?: string;
+	readonly login?: string;
+	readonly sid?: string;
+	readonly tenantId?: string;
 }
 export interface AttachedDatabaseConfigurationProperties {
-	readonly attachedDatabaseNames?: string[] | undefined;
+	readonly attachedDatabaseNames?: string[];
 	readonly clusterResourceId: string;
 	readonly databaseName: string;
 	readonly defaultPrincipalsModificationKind: "None" | "Replace" | "Union";
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded")
-		| undefined;
-	readonly tableLevelSharingProperties?: TableLevelSharingProperties | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
+	readonly tableLevelSharingProperties?: TableLevelSharingProperties;
 }
 export interface AutoPauseProperties {
-	readonly delayInMinutes?: number | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly delayInMinutes?: number;
+	readonly enabled?: boolean;
 }
 export interface AutoScaleProperties {
-	readonly enabled?: boolean | undefined;
-	readonly maxNodeCount?: number | undefined;
-	readonly minNodeCount?: number | undefined;
+	readonly enabled?: boolean;
+	readonly maxNodeCount?: number;
+	readonly minNodeCount?: number;
 }
 export interface AzureADOnlyAuthenticationProperties {
 	readonly azureADOnlyAuthentication: boolean;
-	readonly creationDate?: string | undefined;
-	readonly state?: ("Consistent" | "InConsistent" | "Updating") | undefined;
+	readonly creationDate?: string;
+	readonly state?: "Consistent" | "InConsistent" | "Updating";
 }
 export interface AzureSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name: "Compute optimized" | "Storage optimized";
 	readonly size: "Extra small" | "Large" | "Medium" | "Small";
 }
 export interface BigDataPoolResourceProperties {
-	readonly autoPause?: AutoPauseProperties | undefined;
-	readonly autoScale?: AutoScaleProperties | undefined;
-	readonly cacheSize?: number | undefined;
-	readonly creationDate?: string | undefined;
-	readonly customLibraries?: LibraryInfo[] | undefined;
-	readonly defaultSparkLogFolder?: string | undefined;
-	readonly dynamicExecutorAllocation?: DynamicExecutorAllocation | undefined;
-	readonly isAutotuneEnabled?: boolean | undefined;
-	readonly isComputeIsolationEnabled?: boolean | undefined;
-	readonly lastSucceededTimestamp?: string | undefined;
-	readonly libraryRequirements?: LibraryRequirements | undefined;
-	readonly nodeCount?: number | undefined;
-	readonly nodeSize?: ("Large" | "Medium" | "None" | "Small" | "XLarge" | "XXLarge" | "XXXLarge") | undefined;
-	readonly nodeSizeFamily?:
-		| ("HardwareAcceleratedFPGA" | "HardwareAcceleratedGPU" | "MemoryOptimized" | "None")
-		| undefined;
-	readonly provisioningState?: string | undefined;
-	readonly sessionLevelPackagesEnabled?: boolean | undefined;
-	readonly sparkConfigProperties?: SparkConfigProperties | undefined;
-	readonly sparkEventsFolder?: string | undefined;
-	readonly sparkVersion?: string | undefined;
+	readonly autoPause?: AutoPauseProperties;
+	readonly autoScale?: AutoScaleProperties;
+	readonly cacheSize?: number;
+	readonly creationDate?: string;
+	readonly customLibraries?: LibraryInfo[];
+	readonly defaultSparkLogFolder?: string;
+	readonly dynamicExecutorAllocation?: DynamicExecutorAllocation;
+	readonly isAutotuneEnabled?: boolean;
+	readonly isComputeIsolationEnabled?: boolean;
+	readonly lastSucceededTimestamp?: string;
+	readonly libraryRequirements?: LibraryRequirements;
+	readonly nodeCount?: number;
+	readonly nodeSize?: "Large" | "Medium" | "None" | "Small" | "XLarge" | "XXLarge" | "XXXLarge";
+	readonly nodeSizeFamily?: "HardwareAcceleratedFPGA" | "HardwareAcceleratedGPU" | "MemoryOptimized" | "None";
+	readonly provisioningState?: string;
+	readonly sessionLevelPackagesEnabled?: boolean;
+	readonly sparkConfigProperties?: SparkConfigProperties;
+	readonly sparkEventsFolder?: string;
+	readonly sparkVersion?: string;
 }
 export interface ClusterPrincipalProperties {
-	readonly aadObjectId?: string | undefined;
+	readonly aadObjectId?: string;
 	readonly principalId: string;
-	readonly principalName?: string | undefined;
+	readonly principalName?: string;
 	readonly principalType: "App" | "Group" | "User";
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded")
-		| undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
 	readonly role: "AllDatabasesAdmin" | "AllDatabasesViewer";
-	readonly tenantId?: string | undefined;
-	readonly tenantName?: string | undefined;
+	readonly tenantId?: string;
+	readonly tenantName?: string;
 }
 export interface CmdkeySetupTypeProperties {
 	readonly password: SecretBase;
@@ -1455,349 +1449,325 @@ export interface CmdkeySetupTypeProperties {
 	readonly userName: any;
 }
 export interface CspWorkspaceAdminProperties {
-	readonly initialWorkspaceAdminObjectId?: string | undefined;
+	readonly initialWorkspaceAdminObjectId?: string;
 }
 export interface CustomerManagedKeyDetails {
-	readonly kekIdentity?: KekIdentityProperties | undefined;
-	readonly key?: WorkspaceKeyDetails | undefined;
-	readonly status?: string | undefined;
+	readonly kekIdentity?: KekIdentityProperties;
+	readonly key?: WorkspaceKeyDetails;
+	readonly status?: string;
 }
 export interface CustomSetupBase {}
 export interface DatabasePrincipalProperties {
-	readonly aadObjectId?: string | undefined;
+	readonly aadObjectId?: string;
 	readonly principalId: string;
-	readonly principalName?: string | undefined;
+	readonly principalName?: string;
 	readonly principalType: "App" | "Group" | "User";
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded")
-		| undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
 	readonly role: "Admin" | "Ingestor" | "Monitor" | "UnrestrictedViewer" | "User" | "Viewer";
-	readonly tenantId?: string | undefined;
-	readonly tenantName?: string | undefined;
+	readonly tenantId?: string;
+	readonly tenantName?: string;
 }
 export interface DatabaseStatistics {
-	readonly size?: number | undefined;
+	readonly size?: number;
 }
 export interface DataLakeStorageAccountDetails {
-	readonly accountUrl?: string | undefined;
-	readonly createManagedPrivateEndpoint?: boolean | undefined;
-	readonly filesystem?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly accountUrl?: string;
+	readonly createManagedPrivateEndpoint?: boolean;
+	readonly filesystem?: string;
+	readonly resourceId?: string;
 }
 export interface DataMaskingPolicyProperties {
-	readonly applicationPrincipals?: string | undefined;
+	readonly applicationPrincipals?: string;
 	readonly dataMaskingState: "Disabled";
-	readonly exemptPrincipals?: string | undefined;
-	readonly maskingLevel?: string | undefined;
+	readonly exemptPrincipals?: string;
+	readonly maskingLevel?: string;
 }
 export interface DataMaskingRuleProperties {
-	readonly aliasName?: string | undefined;
+	readonly aliasName?: string;
 	readonly columnName: string;
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly maskingFunction: "CCN" | "Default" | "Email" | "Number" | "SSN";
-	readonly numberFrom?: string | undefined;
-	readonly numberTo?: string | undefined;
-	readonly prefixSize?: string | undefined;
-	readonly replacementString?: string | undefined;
-	readonly ruleState?: "Disabled" | undefined;
+	readonly numberFrom?: string;
+	readonly numberTo?: string;
+	readonly prefixSize?: string;
+	readonly replacementString?: string;
+	readonly ruleState?: "Disabled";
 	readonly schemaName: string;
-	readonly suffixSize?: string | undefined;
+	readonly suffixSize?: string;
 	readonly tableName: string;
 }
 export interface DataWarehouseUserActivitiesProperties {
-	readonly activeQueriesCount?: number | undefined;
+	readonly activeQueriesCount?: number;
 }
 export interface DedicatedSQLminimalTlsSettingsProperties {
-	readonly minimalTlsVersion?: string | undefined;
+	readonly minimalTlsVersion?: string;
 }
 export interface DynamicExecutorAllocation {
-	readonly enabled?: boolean | undefined;
-	readonly maxExecutors?: number | undefined;
-	readonly minExecutors?: number | undefined;
+	readonly enabled?: boolean;
+	readonly maxExecutors?: number;
+	readonly minExecutors?: number;
 }
 export interface EncryptionDetails {
-	readonly cmk?: CustomerManagedKeyDetails | undefined;
-	readonly doubleEncryptionEnabled?: boolean | undefined;
+	readonly cmk?: CustomerManagedKeyDetails;
+	readonly doubleEncryptionEnabled?: boolean;
 }
 export interface EncryptionProtectorProperties {
-	readonly serverKeyName?: string | undefined;
+	readonly serverKeyName?: string;
 	readonly serverKeyType: "AzureKeyVault" | "ServiceManaged";
-	readonly subregion?: string | undefined;
-	readonly thumbprint?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly subregion?: string;
+	readonly thumbprint?: string;
+	readonly uri?: string;
 }
 export interface EntityReference {
-	readonly referenceName?: string | undefined;
-	readonly type?: ("IntegrationRuntimeReference" | "LinkedServiceReference") | undefined;
+	readonly referenceName?: string;
+	readonly type?: "IntegrationRuntimeReference" | "LinkedServiceReference";
 }
 export interface EnvironmentVariableSetupTypeProperties {
 	readonly variableName: string;
 	readonly variableValue: string;
 }
 export interface EventGridConnectionProperties {
-	readonly blobStorageEventType?: ("Microsoft.Storage.BlobCreated" | "Microsoft.Storage.BlobRenamed") | undefined;
+	readonly blobStorageEventType?: "Microsoft.Storage.BlobCreated" | "Microsoft.Storage.BlobRenamed";
 	readonly consumerGroup: string;
 	readonly dataFormat?:
-		| (
-				| "APACHEAVRO"
-				| "AVRO"
-				| "CSV"
-				| "JSON"
-				| "MULTIJSON"
-				| "ORC"
-				| "PARQUET"
-				| "PSV"
-				| "RAW"
-				| "SCSV"
-				| "SINGLEJSON"
-				| "SOHSV"
-				| "TSV"
-				| "TSVE"
-				| "TXT"
-				| "W3CLOGFILE"
-		  )
-		| undefined;
+		| "APACHEAVRO"
+		| "AVRO"
+		| "CSV"
+		| "JSON"
+		| "MULTIJSON"
+		| "ORC"
+		| "PARQUET"
+		| "PSV"
+		| "RAW"
+		| "SCSV"
+		| "SINGLEJSON"
+		| "SOHSV"
+		| "TSV"
+		| "TSVE"
+		| "TXT"
+		| "W3CLOGFILE";
 	readonly eventHubResourceId: string;
-	readonly ignoreFirstRecord?: boolean | undefined;
-	readonly mappingRuleName?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded")
-		| undefined;
+	readonly ignoreFirstRecord?: boolean;
+	readonly mappingRuleName?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
 	readonly storageAccountResourceId: string;
-	readonly tableName?: string | undefined;
+	readonly tableName?: string;
 }
 export interface EventHubConnectionProperties {
-	readonly compression?: ("GZip" | "None") | undefined;
+	readonly compression?: "GZip" | "None";
 	readonly consumerGroup: string;
 	readonly dataFormat?:
-		| (
-				| "APACHEAVRO"
-				| "AVRO"
-				| "CSV"
-				| "JSON"
-				| "MULTIJSON"
-				| "ORC"
-				| "PARQUET"
-				| "PSV"
-				| "RAW"
-				| "SCSV"
-				| "SINGLEJSON"
-				| "SOHSV"
-				| "TSV"
-				| "TSVE"
-				| "TXT"
-				| "W3CLOGFILE"
-		  )
-		| undefined;
+		| "APACHEAVRO"
+		| "AVRO"
+		| "CSV"
+		| "JSON"
+		| "MULTIJSON"
+		| "ORC"
+		| "PARQUET"
+		| "PSV"
+		| "RAW"
+		| "SCSV"
+		| "SINGLEJSON"
+		| "SOHSV"
+		| "TSV"
+		| "TSVE"
+		| "TXT"
+		| "W3CLOGFILE";
 	readonly eventHubResourceId: string;
-	readonly eventSystemProperties?: string[] | undefined;
-	readonly managedIdentityResourceId?: string | undefined;
-	readonly mappingRuleName?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded")
-		| undefined;
-	readonly tableName?: string | undefined;
+	readonly eventSystemProperties?: string[];
+	readonly managedIdentityResourceId?: string;
+	readonly mappingRuleName?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
+	readonly tableName?: string;
 }
 export interface ExtendedServerBlobAuditingPolicyProperties {
-	readonly auditActionsAndGroups?: string[] | undefined;
+	readonly auditActionsAndGroups?: string[];
 }
 export interface ExtendedSqlPoolBlobAuditingPolicyProperties {
-	readonly auditActionsAndGroups?: string[] | undefined;
+	readonly auditActionsAndGroups?: string[];
 }
 export interface FollowerDatabaseDefinition {
 	readonly attachedDatabaseConfigurationName: string;
 	readonly clusterResourceId: string;
-	readonly databaseName?: string | undefined;
+	readonly databaseName?: string;
 }
 export interface FollowerDatabaseListResult {
-	readonly value?: FollowerDatabaseDefinition[] | undefined;
+	readonly value?: FollowerDatabaseDefinition[];
 }
 export interface GeoBackupPolicyProperties {
 	readonly state: "Disabled";
-	readonly storageType?: string | undefined;
+	readonly storageType?: string;
 }
 export interface IntegrationRuntime {
-	readonly description?: string | undefined;
+	readonly description?: string;
 }
 export interface IntegrationRuntimeAuthKeys {
-	readonly authKey1?: string | undefined;
-	readonly authKey2?: string | undefined;
+	readonly authKey1?: string;
+	readonly authKey2?: string;
 }
 export interface IntegrationRuntimeComputeProperties {
-	readonly dataFlowProperties?: IntegrationRuntimeDataFlowProperties | undefined;
-	readonly location?: string | undefined;
-	readonly maxParallelExecutionsPerNode?: number | undefined;
-	readonly nodeSize?: string | undefined;
-	readonly numberOfNodes?: number | undefined;
-	readonly vNetProperties?: IntegrationRuntimeVNetProperties | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly dataFlowProperties?: IntegrationRuntimeDataFlowProperties;
+	readonly location?: string;
+	readonly maxParallelExecutionsPerNode?: number;
+	readonly nodeSize?: string;
+	readonly numberOfNodes?: number;
+	readonly vNetProperties?: IntegrationRuntimeVNetProperties;
+	readonly [key: string]: any;
 }
 export interface IntegrationRuntimeCustomSetupScriptProperties {
-	readonly blobContainerUri?: string | undefined;
-	readonly sasToken?: SecureString | undefined;
+	readonly blobContainerUri?: string;
+	readonly sasToken?: SecureString;
 }
 export interface IntegrationRuntimeDataFlowProperties {
-	readonly cleanup?: boolean | undefined;
-	readonly computeType?: ("ComputeOptimized" | "General" | "MemoryOptimized") | undefined;
-	readonly coreCount?: number | undefined;
-	readonly timeToLive?: number | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly cleanup?: boolean;
+	readonly computeType?: "ComputeOptimized" | "General" | "MemoryOptimized";
+	readonly coreCount?: number;
+	readonly timeToLive?: number;
+	readonly [key: string]: any;
 }
 export interface IntegrationRuntimeDataProxyProperties {
-	readonly connectVia?: EntityReference | undefined;
-	readonly path?: string | undefined;
-	readonly stagingLinkedService?: EntityReference | undefined;
+	readonly connectVia?: EntityReference;
+	readonly path?: string;
+	readonly stagingLinkedService?: EntityReference;
 }
 export interface IntegrationRuntimeSsisCatalogInfo {
-	readonly catalogAdminPassword?: SecureString | undefined;
-	readonly catalogAdminUserName?: string | undefined;
-	readonly catalogPricingTier?: ("Basic" | "Premium" | "PremiumRS" | "Standard") | undefined;
-	readonly catalogServerEndpoint?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly catalogAdminPassword?: SecureString;
+	readonly catalogAdminUserName?: string;
+	readonly catalogPricingTier?: "Basic" | "Premium" | "PremiumRS" | "Standard";
+	readonly catalogServerEndpoint?: string;
+	readonly [key: string]: any;
 }
 export interface IntegrationRuntimeSsisProperties {
-	readonly catalogInfo?: IntegrationRuntimeSsisCatalogInfo | undefined;
-	readonly customSetupScriptProperties?: IntegrationRuntimeCustomSetupScriptProperties | undefined;
-	readonly dataProxyProperties?: IntegrationRuntimeDataProxyProperties | undefined;
-	readonly edition?: ("Enterprise" | "Standard") | undefined;
-	readonly expressCustomSetupProperties?: CustomSetupBase[] | undefined;
-	readonly licenseType?: ("BasePrice" | "LicenseIncluded") | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly catalogInfo?: IntegrationRuntimeSsisCatalogInfo;
+	readonly customSetupScriptProperties?: IntegrationRuntimeCustomSetupScriptProperties;
+	readonly dataProxyProperties?: IntegrationRuntimeDataProxyProperties;
+	readonly edition?: "Enterprise" | "Standard";
+	readonly expressCustomSetupProperties?: CustomSetupBase[];
+	readonly licenseType?: "BasePrice" | "LicenseIncluded";
+	readonly [key: string]: any;
 }
 export interface IntegrationRuntimeVNetProperties {
-	readonly publicIPs?: string[] | undefined;
-	readonly subnet?: string | undefined;
-	readonly subnetId?: string | undefined;
-	readonly vNetId?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly publicIPs?: string[];
+	readonly subnet?: string;
+	readonly subnetId?: string;
+	readonly vNetId?: string;
+	readonly [key: string]: any;
 }
 export interface IotHubConnectionProperties {
 	readonly consumerGroup: string;
 	readonly dataFormat?:
-		| (
-				| "APACHEAVRO"
-				| "AVRO"
-				| "CSV"
-				| "JSON"
-				| "MULTIJSON"
-				| "ORC"
-				| "PARQUET"
-				| "PSV"
-				| "RAW"
-				| "SCSV"
-				| "SINGLEJSON"
-				| "SOHSV"
-				| "TSV"
-				| "TSVE"
-				| "TXT"
-				| "W3CLOGFILE"
-		  )
-		| undefined;
-	readonly eventSystemProperties?: string[] | undefined;
+		| "APACHEAVRO"
+		| "AVRO"
+		| "CSV"
+		| "JSON"
+		| "MULTIJSON"
+		| "ORC"
+		| "PARQUET"
+		| "PSV"
+		| "RAW"
+		| "SCSV"
+		| "SINGLEJSON"
+		| "SOHSV"
+		| "TSV"
+		| "TSVE"
+		| "TXT"
+		| "W3CLOGFILE";
+	readonly eventSystemProperties?: string[];
 	readonly iotHubResourceId: string;
-	readonly mappingRuleName?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded")
-		| undefined;
+	readonly mappingRuleName?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
 	readonly sharedAccessPolicyName: string;
-	readonly tableName?: string | undefined;
+	readonly tableName?: string;
 }
 export interface IpFirewallRuleProperties {
-	readonly endIpAddress?: string | undefined;
-	readonly provisioningState?: ("DeleteError" | "Deleting" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly startIpAddress?: string | undefined;
+	readonly endIpAddress?: string;
+	readonly provisioningState?: "DeleteError" | "Deleting" | "Failed" | "Provisioning" | "Succeeded";
+	readonly startIpAddress?: string;
 }
 export interface KekIdentityProperties {
-	readonly userAssignedIdentity?: string | undefined;
-	readonly useSystemAssignedIdentity?: any | undefined;
+	readonly userAssignedIdentity?: string;
+	readonly useSystemAssignedIdentity?: any;
 }
 export interface KeyProperties {
-	readonly isActiveCMK?: boolean | undefined;
-	readonly keyVaultUrl?: string | undefined;
+	readonly isActiveCMK?: boolean;
+	readonly keyVaultUrl?: string;
 }
 export interface KustoPoolProperties {
-	readonly dataIngestionUri?: string | undefined;
-	readonly enablePurge?: boolean | undefined;
-	readonly enableStreamingIngest?: boolean | undefined;
-	readonly languageExtensions?: LanguageExtensionsList | undefined;
-	readonly optimizedAutoscale?: OptimizedAutoscale | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded")
-		| undefined;
+	readonly dataIngestionUri?: string;
+	readonly enablePurge?: boolean;
+	readonly enableStreamingIngest?: boolean;
+	readonly languageExtensions?: LanguageExtensionsList;
+	readonly optimizedAutoscale?: OptimizedAutoscale;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
 	readonly state?:
-		| (
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Running"
-				| "Starting"
-				| "Stopped"
-				| "Stopping"
-				| "Unavailable"
-				| "Updating"
-		  )
-		| undefined;
-	readonly stateReason?: string | undefined;
-	readonly uri?: string | undefined;
-	readonly workspaceUID?: string | undefined;
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Running"
+		| "Starting"
+		| "Stopped"
+		| "Stopping"
+		| "Unavailable"
+		| "Updating";
+	readonly stateReason?: string;
+	readonly uri?: string;
+	readonly workspaceUID?: string;
 }
 export interface LanguageExtension {
-	readonly languageExtensionName?: ("PYTHON" | "R") | undefined;
+	readonly languageExtensionName?: "PYTHON" | "R";
 }
 export interface LanguageExtensionsList {
-	readonly value?: LanguageExtension[] | undefined;
+	readonly value?: LanguageExtension[];
 }
 export interface LibraryInfo {
-	readonly containerName?: string | undefined;
-	readonly creatorId?: string | undefined;
-	readonly name?: string | undefined;
-	readonly path?: string | undefined;
-	readonly provisioningStatus?: string | undefined;
-	readonly type?: string | undefined;
-	readonly uploadedTimestamp?: string | undefined;
+	readonly containerName?: string;
+	readonly creatorId?: string;
+	readonly name?: string;
+	readonly path?: string;
+	readonly provisioningStatus?: string;
+	readonly type?: string;
+	readonly uploadedTimestamp?: string;
 }
 export interface LibraryRequirements {
-	readonly content?: string | undefined;
-	readonly filename?: string | undefined;
-	readonly time?: string | undefined;
+	readonly content?: string;
+	readonly filename?: string;
+	readonly time?: string;
 }
 export interface LicensedComponentSetupTypeProperties {
 	readonly componentName: string;
-	readonly licenseKey?: SecretBase | undefined;
+	readonly licenseKey?: SecretBase;
 }
 export interface LinkedIntegrationRuntimeType {}
 export interface ManagedIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
-	readonly userAssignedIdentities?: UserAssignedManagedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
+	readonly userAssignedIdentities?: UserAssignedManagedIdentities;
 }
 export interface ManagedIdentitySqlControlSettingsModelProperties {
-	readonly grantSqlControlToManagedIdentity?:
-		| ManagedIdentitySqlControlSettingsModelPropertiesGrantSqlControlToManagedIdentity
-		| undefined;
+	readonly grantSqlControlToManagedIdentity?: ManagedIdentitySqlControlSettingsModelPropertiesGrantSqlControlToManagedIdentity;
 }
 export interface ManagedIdentitySqlControlSettingsModelPropertiesGrantSqlControlToManagedIdentity {
-	readonly actualState?: ("Disabled" | "Disabling" | "Enabled" | "Enabling" | "Unknown") | undefined;
-	readonly desiredState?: ("Disabled" | "Enabled") | undefined;
+	readonly actualState?: "Disabled" | "Disabling" | "Enabled" | "Enabling" | "Unknown";
+	readonly desiredState?: "Disabled" | "Enabled";
 }
 export interface ManagedIntegrationRuntimeManagedVirtualNetworkReference {
-	readonly id?: string | undefined;
-	readonly referenceName?: string | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly referenceName?: string;
+	readonly type?: string;
 }
 export interface ManagedIntegrationRuntimeTypeProperties {
-	readonly computeProperties?: IntegrationRuntimeComputeProperties | undefined;
-	readonly ssisProperties?: IntegrationRuntimeSsisProperties | undefined;
+	readonly computeProperties?: IntegrationRuntimeComputeProperties;
+	readonly ssisProperties?: IntegrationRuntimeSsisProperties;
 }
 export interface ManagedVirtualNetworkSettings {
-	readonly allowedAadTenantIdsForLinking?: string[] | undefined;
-	readonly linkedAccessCheckOnTargetResource?: boolean | undefined;
-	readonly preventDataExfiltration?: boolean | undefined;
+	readonly allowedAadTenantIdsForLinking?: string[];
+	readonly linkedAccessCheckOnTargetResource?: boolean;
+	readonly preventDataExfiltration?: boolean;
 }
 export interface MetadataSyncConfigProperties {
-	readonly enabled?: boolean | undefined;
-	readonly syncIntervalInMinutes?: number | undefined;
+	readonly enabled?: boolean;
+	readonly syncIntervalInMinutes?: number;
 }
 export interface OptimizedAutoscale {
 	readonly isEnabled: boolean;
@@ -1806,93 +1776,89 @@ export interface OptimizedAutoscale {
 	readonly version: number;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionForPrivateLinkHubBasic {
-	readonly id?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly id?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: string;
 }
 export interface PrivateLinkHubProperties {
-	readonly privateEndpointConnections?: PrivateEndpointConnectionForPrivateLinkHubBasic[] | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly privateEndpointConnections?: PrivateEndpointConnectionForPrivateLinkHubBasic[];
+	readonly provisioningState?: string;
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: string | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: string;
 }
 export interface PurviewConfiguration {
-	readonly purviewResourceId?: string | undefined;
+	readonly purviewResourceId?: string;
 }
 export interface ReadOnlyFollowingDatabaseProperties {
-	readonly attachedDatabaseConfigurationName?: string | undefined;
-	readonly hotCachePeriod?: string | undefined;
-	readonly leaderClusterResourceId?: string | undefined;
-	readonly principalsModificationKind?: ("None" | "Replace" | "Union") | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded")
-		| undefined;
-	readonly softDeletePeriod?: string | undefined;
-	readonly statistics?: DatabaseStatistics | undefined;
+	readonly attachedDatabaseConfigurationName?: string;
+	readonly hotCachePeriod?: string;
+	readonly leaderClusterResourceId?: string;
+	readonly principalsModificationKind?: "None" | "Replace" | "Union";
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
+	readonly softDeletePeriod?: string;
+	readonly statistics?: DatabaseStatistics;
 }
 export interface ReadWriteDatabaseProperties {
-	readonly hotCachePeriod?: string | undefined;
-	readonly isFollowed?: boolean | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded")
-		| undefined;
-	readonly softDeletePeriod?: string | undefined;
-	readonly statistics?: DatabaseStatistics | undefined;
+	readonly hotCachePeriod?: string;
+	readonly isFollowed?: boolean;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
+	readonly softDeletePeriod?: string;
+	readonly statistics?: DatabaseStatistics;
 }
 export interface RecoverableSqlPoolProperties {
-	readonly edition?: string | undefined;
-	readonly elasticPoolName?: string | undefined;
-	readonly lastAvailableBackupDate?: string | undefined;
-	readonly serviceLevelObjective?: string | undefined;
+	readonly edition?: string;
+	readonly elasticPoolName?: string;
+	readonly lastAvailableBackupDate?: string;
+	readonly serviceLevelObjective?: string;
 }
 export interface ReplicationLinkProperties {
-	readonly isTerminationAllowed?: boolean | undefined;
-	readonly partnerDatabase?: string | undefined;
-	readonly partnerLocation?: string | undefined;
-	readonly partnerRole?: ("Copy" | "NonReadableSecondary" | "Primary" | "Secondary") | undefined;
-	readonly partnerServer?: string | undefined;
-	readonly percentComplete?: number | undefined;
-	readonly replicationMode?: string | undefined;
-	readonly replicationState?: ("CATCH_UP" | "PENDING" | "SEEDING" | "SUSPENDED") | undefined;
-	readonly role?: ("Copy" | "NonReadableSecondary" | "Primary" | "Secondary") | undefined;
-	readonly startTime?: string | undefined;
+	readonly isTerminationAllowed?: boolean;
+	readonly partnerDatabase?: string;
+	readonly partnerLocation?: string;
+	readonly partnerRole?: "Copy" | "NonReadableSecondary" | "Primary" | "Secondary";
+	readonly partnerServer?: string;
+	readonly percentComplete?: number;
+	readonly replicationMode?: string;
+	readonly replicationState?: "CATCH_UP" | "PENDING" | "SEEDING" | "SUSPENDED";
+	readonly role?: "Copy" | "NonReadableSecondary" | "Primary" | "Secondary";
+	readonly startTime?: string;
 }
 export interface RestorableDroppedSqlPoolProperties {
-	readonly creationDate?: string | undefined;
-	readonly databaseName?: string | undefined;
-	readonly deletionDate?: string | undefined;
-	readonly earliestRestoreDate?: string | undefined;
-	readonly edition?: string | undefined;
-	readonly elasticPoolName?: string | undefined;
-	readonly maxSizeBytes?: string | undefined;
-	readonly serviceLevelObjective?: string | undefined;
+	readonly creationDate?: string;
+	readonly databaseName?: string;
+	readonly deletionDate?: string;
+	readonly earliestRestoreDate?: string;
+	readonly edition?: string;
+	readonly elasticPoolName?: string;
+	readonly maxSizeBytes?: string;
+	readonly serviceLevelObjective?: string;
 }
 export interface RestorePointProperties {
-	readonly earliestRestoreDate?: string | undefined;
-	readonly restorePointCreationDate?: string | undefined;
-	readonly restorePointLabel?: string | undefined;
-	readonly restorePointType?: "CONTINUOUS" | undefined;
+	readonly earliestRestoreDate?: string;
+	readonly restorePointCreationDate?: string;
+	readonly restorePointLabel?: string;
+	readonly restorePointType?: "CONTINUOUS";
 }
 export interface SecretBase {}
 export interface SecureString {
@@ -1900,136 +1866,133 @@ export interface SecureString {
 	readonly value: string;
 }
 export interface SecurityAlertPolicyProperties {
-	readonly creationTime?: string | undefined;
-	readonly disabledAlerts?: string[] | undefined;
-	readonly emailAccountAdmins?: boolean | undefined;
-	readonly emailAddresses?: string[] | undefined;
-	readonly retentionDays?: number | undefined;
+	readonly creationTime?: string;
+	readonly disabledAlerts?: string[];
+	readonly emailAccountAdmins?: boolean;
+	readonly emailAddresses?: string[];
+	readonly retentionDays?: number;
 	readonly state: "Disabled" | "Enabled";
-	readonly storageAccountAccessKey?: string | undefined;
-	readonly storageEndpoint?: string | undefined;
+	readonly storageAccountAccessKey?: string;
+	readonly storageEndpoint?: string;
 }
 export interface SelfHostedIntegrationRuntimeTypeProperties {
-	readonly linkedInfo?: LinkedIntegrationRuntimeType | undefined;
+	readonly linkedInfo?: LinkedIntegrationRuntimeType;
 }
 export interface SensitivityLabelProperties {
-	readonly columnName?: string | undefined;
-	readonly informationType?: string | undefined;
-	readonly informationTypeId?: string | undefined;
-	readonly isDisabled?: boolean | undefined;
-	readonly labelId?: string | undefined;
-	readonly labelName?: string | undefined;
-	readonly rank?: ("Critical" | "High" | "Low" | "Medium") | undefined;
-	readonly schemaName?: string | undefined;
-	readonly tableName?: string | undefined;
+	readonly columnName?: string;
+	readonly informationType?: string;
+	readonly informationTypeId?: string;
+	readonly isDisabled?: boolean;
+	readonly labelId?: string;
+	readonly labelName?: string;
+	readonly rank?: "Critical" | "High" | "Low" | "Medium";
+	readonly schemaName?: string;
+	readonly tableName?: string;
 }
 export interface ServerBlobAuditingPolicyProperties {
-	readonly auditActionsAndGroups?: string[] | undefined;
+	readonly auditActionsAndGroups?: string[];
 }
 export interface ServerSecurityAlertPolicyProperties {
-	readonly creationTime?: string | undefined;
-	readonly disabledAlerts?: string[] | undefined;
-	readonly emailAccountAdmins?: boolean | undefined;
-	readonly emailAddresses?: string[] | undefined;
-	readonly retentionDays?: number | undefined;
+	readonly creationTime?: string;
+	readonly disabledAlerts?: string[];
+	readonly emailAccountAdmins?: boolean;
+	readonly emailAddresses?: string[];
+	readonly retentionDays?: number;
 	readonly state: "Disabled" | "Enabled";
-	readonly storageAccountAccessKey?: string | undefined;
-	readonly storageEndpoint?: string | undefined;
+	readonly storageAccountAccessKey?: string;
+	readonly storageEndpoint?: string;
 }
 export interface ServerVulnerabilityAssessmentProperties {
-	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties | undefined;
-	readonly storageAccountAccessKey?: string | undefined;
+	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties;
+	readonly storageAccountAccessKey?: string;
 	readonly storageContainerPath: string;
-	readonly storageContainerSasKey?: string | undefined;
+	readonly storageContainerSasKey?: string;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly name?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly capacity?: number;
+	readonly name?: string;
+	readonly tier?: string;
 }
 export interface SparkConfigProperties {
-	readonly configurationType?: ("Artifact" | "File") | undefined;
-	readonly content?: string | undefined;
-	readonly filename?: string | undefined;
-	readonly time?: string | undefined;
+	readonly configurationType?: "Artifact" | "File";
+	readonly content?: string;
+	readonly filename?: string;
+	readonly time?: string;
 }
 export interface SparkConfigurationInfo {
-	readonly annotations?: string[] | undefined;
-	readonly configMergeRule?: SparkConfigurationInfoConfigMergeRule | undefined;
+	readonly annotations?: string[];
+	readonly configMergeRule?: SparkConfigurationInfoConfigMergeRule;
 	readonly configs: SparkConfigurationInfoConfigs;
-	readonly created?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly description?: string | undefined;
-	readonly notes?: string | undefined;
+	readonly created?: string;
+	readonly createdBy?: string;
+	readonly description?: string;
+	readonly notes?: string;
 }
 export interface SparkConfigurationInfoConfigMergeRule {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SparkConfigurationInfoConfigs {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SqlPoolBlobAuditingPolicyProperties {
-	readonly auditActionsAndGroups?: string[] | undefined;
+	readonly auditActionsAndGroups?: string[];
 }
 export interface SqlPoolColumnProperties {
 	readonly columnType?:
-		| (
-				| "bigint"
-				| "binary"
-				| "bit"
-				| "char"
-				| "date"
-				| "datetime"
-				| "datetime2"
-				| "datetimeoffset"
-				| "decimal"
-				| "float"
-				| "geography"
-				| "geometry"
-				| "hierarchyid"
-				| "image"
-				| "int"
-				| "money"
-				| "nchar"
-				| "ntext"
-				| "numeric"
-				| "nvarchar"
-				| "real"
-				| "smalldatetime"
-				| "smallint"
-				| "smallmoney"
-				| "sql_variant"
-				| "sysname"
-				| "text"
-				| "time"
-				| "timestamp"
-				| "tinyint"
-				| "uniqueidentifier"
-				| "varbinary"
-				| "varchar"
-				| "xml"
-		  )
-		| undefined;
-	readonly isComputed?: boolean | undefined;
+		| "bigint"
+		| "binary"
+		| "bit"
+		| "char"
+		| "date"
+		| "datetime"
+		| "datetime2"
+		| "datetimeoffset"
+		| "decimal"
+		| "float"
+		| "geography"
+		| "geometry"
+		| "hierarchyid"
+		| "image"
+		| "int"
+		| "money"
+		| "nchar"
+		| "ntext"
+		| "numeric"
+		| "nvarchar"
+		| "real"
+		| "smalldatetime"
+		| "smallint"
+		| "smallmoney"
+		| "sql_variant"
+		| "sysname"
+		| "text"
+		| "time"
+		| "timestamp"
+		| "tinyint"
+		| "uniqueidentifier"
+		| "varbinary"
+		| "varchar"
+		| "xml";
+	readonly isComputed?: boolean;
 }
 export interface SqlPoolConnectionPolicyProperties {
-	readonly proxyDnsName?: string | undefined;
-	readonly proxyPort?: string | undefined;
-	readonly redirectionState?: string | undefined;
-	readonly securityEnabledAccess?: string | undefined;
-	readonly state?: string | undefined;
-	readonly useServerDefault?: string | undefined;
-	readonly visibility?: string | undefined;
+	readonly proxyDnsName?: string;
+	readonly proxyPort?: string;
+	readonly redirectionState?: string;
+	readonly securityEnabledAccess?: string;
+	readonly state?: string;
+	readonly useServerDefault?: string;
+	readonly visibility?: string;
 }
 export interface SqlPoolResourceProperties {
-	readonly collation?: string | undefined;
-	readonly createMode?: ("Default" | "PointInTimeRestore" | "Recovery" | "Restore") | undefined;
+	readonly collation?: string;
+	readonly createMode?: "Default" | "PointInTimeRestore" | "Recovery" | "Restore";
 }
 export interface SqlPoolVulnerabilityAssessmentProperties {
-	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties | undefined;
-	readonly storageAccountAccessKey?: string | undefined;
-	readonly storageContainerPath?: string | undefined;
-	readonly storageContainerSasKey?: string | undefined;
+	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties;
+	readonly storageAccountAccessKey?: string;
+	readonly storageContainerPath?: string;
+	readonly storageContainerSasKey?: string;
 }
 export interface SqlPoolVulnerabilityAssessmentRuleBaselineItem {
 	readonly result: string[];
@@ -2038,118 +2001,118 @@ export interface SqlPoolVulnerabilityAssessmentRuleBaselineProperties {
 	readonly baselineResults: SqlPoolVulnerabilityAssessmentRuleBaselineItem[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TableLevelSharingProperties {
-	readonly externalTablesToExclude?: string[] | undefined;
-	readonly externalTablesToInclude?: string[] | undefined;
-	readonly materializedViewsToExclude?: string[] | undefined;
-	readonly materializedViewsToInclude?: string[] | undefined;
-	readonly tablesToExclude?: string[] | undefined;
-	readonly tablesToInclude?: string[] | undefined;
+	readonly externalTablesToExclude?: string[];
+	readonly externalTablesToInclude?: string[];
+	readonly materializedViewsToExclude?: string[];
+	readonly materializedViewsToInclude?: string[];
+	readonly tablesToExclude?: string[];
+	readonly tablesToInclude?: string[];
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TransparentDataEncryptionProperties {
-	readonly status?: "Disabled" | undefined;
+	readonly status?: "Disabled";
 }
 export interface UserAssignedManagedIdentities {
-	readonly "[ key: string ]"?: UserAssignedManagedIdentity | undefined;
+	readonly [key: string]: UserAssignedManagedIdentity;
 }
 export interface UserAssignedManagedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface VirtualNetworkProfile {
-	readonly computeSubnetId?: string | undefined;
+	readonly computeSubnetId?: string;
 }
 export interface VulnerabilityAssessmentRecurringScansProperties {
-	readonly emails?: string[] | undefined;
-	readonly emailSubscriptionAdmins?: boolean | undefined;
-	readonly isEnabled?: boolean | undefined;
+	readonly emails?: string[];
+	readonly emailSubscriptionAdmins?: boolean;
+	readonly isEnabled?: boolean;
 }
 export interface VulnerabilityAssessmentScanError {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface VulnerabilityAssessmentScanRecordProperties {
-	readonly endTime?: string | undefined;
-	readonly errors?: VulnerabilityAssessmentScanError[] | undefined;
-	readonly numberOfFailedSecurityChecks?: number | undefined;
-	readonly scanId?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly state?: ("Failed" | "FailedToRun" | "InProgress" | "Passed") | undefined;
-	readonly storageContainerPath?: string | undefined;
-	readonly triggerType?: ("OnDemand" | "Recurring") | undefined;
+	readonly endTime?: string;
+	readonly errors?: VulnerabilityAssessmentScanError[];
+	readonly numberOfFailedSecurityChecks?: number;
+	readonly scanId?: string;
+	readonly startTime?: string;
+	readonly state?: "Failed" | "FailedToRun" | "InProgress" | "Passed";
+	readonly storageContainerPath?: string;
+	readonly triggerType?: "OnDemand" | "Recurring";
 }
 export interface WorkloadClassifierProperties {
-	readonly context?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly importance?: string | undefined;
-	readonly label?: string | undefined;
+	readonly context?: string;
+	readonly endTime?: string;
+	readonly importance?: string;
+	readonly label?: string;
 	readonly memberName: string;
-	readonly startTime?: string | undefined;
+	readonly startTime?: string;
 }
 export interface WorkloadGroupProperties {
-	readonly importance?: string | undefined;
+	readonly importance?: string;
 	readonly maxResourcePercent: number;
-	readonly maxResourcePercentPerRequest?: number | undefined;
+	readonly maxResourcePercentPerRequest?: number;
 	readonly minResourcePercent: number;
 	readonly minResourcePercentPerRequest: number;
-	readonly queryExecutionTimeout?: number | undefined;
+	readonly queryExecutionTimeout?: number;
 }
 export interface WorkspaceKeyDetails {
-	readonly keyVaultUrl?: string | undefined;
-	readonly name?: string | undefined;
+	readonly keyVaultUrl?: string;
+	readonly name?: string;
 }
 export interface WorkspaceProperties {
-	readonly adlaResourceId?: string | undefined;
-	readonly azureADOnlyAuthentication?: boolean | undefined;
-	readonly connectivityEndpoints?: WorkspacePropertiesConnectivityEndpoints | undefined;
-	readonly cspWorkspaceAdminProperties?: CspWorkspaceAdminProperties | undefined;
-	readonly defaultDataLakeStorage?: DataLakeStorageAccountDetails | undefined;
-	readonly encryption?: EncryptionDetails | undefined;
-	readonly extraProperties?: WorkspacePropertiesExtraProperties | undefined;
-	readonly managedResourceGroupName?: string | undefined;
-	readonly managedVirtualNetwork?: string | undefined;
-	readonly managedVirtualNetworkSettings?: ManagedVirtualNetworkSettings | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly purviewConfiguration?: PurviewConfiguration | undefined;
-	readonly settings?: WorkspacePropertiesSettings | undefined;
-	readonly sqlAdministratorLogin?: string | undefined;
-	readonly sqlAdministratorLoginPassword?: string | undefined;
-	readonly trustedServiceBypassEnabled?: boolean | undefined;
-	readonly virtualNetworkProfile?: VirtualNetworkProfile | undefined;
-	readonly workspaceRepositoryConfiguration?: WorkspaceRepositoryConfiguration | undefined;
-	readonly workspaceUID?: string | undefined;
+	readonly adlaResourceId?: string;
+	readonly azureADOnlyAuthentication?: boolean;
+	readonly connectivityEndpoints?: WorkspacePropertiesConnectivityEndpoints;
+	readonly cspWorkspaceAdminProperties?: CspWorkspaceAdminProperties;
+	readonly defaultDataLakeStorage?: DataLakeStorageAccountDetails;
+	readonly encryption?: EncryptionDetails;
+	readonly extraProperties?: WorkspacePropertiesExtraProperties;
+	readonly managedResourceGroupName?: string;
+	readonly managedVirtualNetwork?: string;
+	readonly managedVirtualNetworkSettings?: ManagedVirtualNetworkSettings;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: string;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly purviewConfiguration?: PurviewConfiguration;
+	readonly settings?: WorkspacePropertiesSettings;
+	readonly sqlAdministratorLogin?: string;
+	readonly sqlAdministratorLoginPassword?: string;
+	readonly trustedServiceBypassEnabled?: boolean;
+	readonly virtualNetworkProfile?: VirtualNetworkProfile;
+	readonly workspaceRepositoryConfiguration?: WorkspaceRepositoryConfiguration;
+	readonly workspaceUID?: string;
 }
 export interface WorkspacePropertiesConnectivityEndpoints {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WorkspacePropertiesExtraProperties {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface WorkspacePropertiesSettings {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface WorkspaceRepositoryConfiguration {
-	readonly accountName?: string | undefined;
-	readonly collaborationBranch?: string | undefined;
-	readonly hostName?: string | undefined;
-	readonly lastCommitId?: string | undefined;
-	readonly projectName?: string | undefined;
-	readonly repositoryName?: string | undefined;
-	readonly rootFolder?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: string | undefined;
+	readonly accountName?: string;
+	readonly collaborationBranch?: string;
+	readonly hostName?: string;
+	readonly lastCommitId?: string;
+	readonly projectName?: string;
+	readonly repositoryName?: string;
+	readonly rootFolder?: string;
+	readonly tenantId?: string;
+	readonly type?: string;
 }
 export type workspaces_kustoPools_databases =
 	| workspaces_kustoPools_databases_ReadOnlyFollowing

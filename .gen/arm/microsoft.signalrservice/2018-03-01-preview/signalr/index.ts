@@ -16,9 +16,9 @@ export interface SignalRComponentOutputs {
 export interface SignalRComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SignalRCreateOrUpdatePropertiesOrSignalRProperties | undefined;
-	readonly sku?: ResourceSku | undefined;
-	readonly tags?: SignalRUpdateParametersTags | undefined;
+	readonly properties?: SignalRCreateOrUpdatePropertiesOrSignalRProperties;
+	readonly sku?: ResourceSku;
+	readonly tags?: SignalRUpdateParametersTags;
 }
 export function listKeys(resource: SignalR): SignalRKeys {
 	if (resource.apiVersion !== "2018-03-01-preview") {
@@ -30,31 +30,38 @@ export function listKeys(resource: SignalR): SignalRKeys {
 	throw new Error("not implemented");
 }
 export interface ResourceSku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
 	readonly name: string;
-	readonly size?: string | undefined;
-	readonly tier?: ("Basic" | "Free" | "Premium" | "Standard") | undefined;
+	readonly size?: string;
+	readonly tier?: "Basic" | "Free" | "Premium" | "Standard";
 }
 export interface SignalRCreateOrUpdatePropertiesOrSignalRProperties {
-	readonly externalIP?: string | undefined;
-	readonly hostName?: string | undefined;
-	readonly hostNamePrefix?: string | undefined;
+	readonly externalIP?: string;
+	readonly hostName?: string;
+	readonly hostNamePrefix?: string;
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
-	readonly publicPort?: number | undefined;
-	readonly serverPort?: number | undefined;
-	readonly version?: string | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "Running"
+		| "Succeeded"
+		| "Unknown"
+		| "Updating";
+	readonly publicPort?: number;
+	readonly serverPort?: number;
+	readonly version?: string;
 }
 export interface SignalRKeys {
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface SignalRUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	SignalR: SignalR,

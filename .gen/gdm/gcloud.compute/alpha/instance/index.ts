@@ -4,300 +4,299 @@ export class Instance extends GdmResource<InstanceComponentInputs> implements In
 	constructor(entity: ADKEntity, options: InstanceComponentInputs) {
 		super(entity, options.name, "compute.alpha.instance", options);
 	}
-	public readonly cpuPlatform?: string | undefined;
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly lastStartTimestamp?: string | undefined;
-	public readonly lastStopTimestamp?: string | undefined;
-	public readonly lastSuspendedTimestamp?: string | undefined;
-	public readonly resourceStatus?: ResourceStatus | undefined;
-	public readonly satisfiesPzs?: boolean | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly startRestricted?: boolean | undefined;
-	public readonly status?: string | undefined;
-	public readonly statusMessage?: string | undefined;
-	public readonly upcomingMaintenance?: UpcomingMaintenance | undefined;
-	public readonly zone?: string | undefined;
+	public readonly cpuPlatform?: string;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly lastStartTimestamp?: string;
+	public readonly lastStopTimestamp?: string;
+	public readonly lastSuspendedTimestamp?: string;
+	public readonly resourceStatus?: ResourceStatus;
+	public readonly satisfiesPzs?: boolean;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly startRestricted?: boolean;
+	public readonly status?: string;
+	public readonly statusMessage?: string;
+	public readonly upcomingMaintenance?: UpcomingMaintenance;
+	public readonly zone?: string;
 }
 export interface InstanceComponentOutputs {
-	readonly cpuPlatform?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly lastStartTimestamp?: string | undefined;
-	readonly lastStopTimestamp?: string | undefined;
-	readonly lastSuspendedTimestamp?: string | undefined;
-	readonly resourceStatus?: ResourceStatus | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly startRestricted?: boolean | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly upcomingMaintenance?: UpcomingMaintenance | undefined;
-	readonly zone?: string | undefined;
+	readonly cpuPlatform?: string;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly lastStartTimestamp?: string;
+	readonly lastStopTimestamp?: string;
+	readonly lastSuspendedTimestamp?: string;
+	readonly resourceStatus?: ResourceStatus;
+	readonly satisfiesPzs?: boolean;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly startRestricted?: boolean;
+	readonly status?: string;
+	readonly statusMessage?: string;
+	readonly upcomingMaintenance?: UpcomingMaintenance;
+	readonly zone?: string;
 }
 export interface InstanceComponentInputs {
-	readonly advancedMachineFeatures?: AdvancedMachineFeatures | undefined;
-	readonly canIpForward?: boolean | undefined;
-	readonly confidentialInstanceConfig?: ConfidentialInstanceConfig | undefined;
-	readonly deletionProtection?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly disks?: AttachedDisk[] | undefined;
-	readonly displayDevice?: DisplayDevice | undefined;
-	readonly eraseWindowsVssSignature?: boolean | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly guestAccelerators?: AcceleratorConfig[] | undefined;
-	readonly hostname?: string | undefined;
-	readonly instanceEncryptionKey?: CustomerEncryptionKey | undefined;
-	readonly keyRevocationActionType?: string | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly machineType?: string | undefined;
-	readonly metadata?: Metadata | undefined;
-	readonly minCpuPlatform?: string | undefined;
+	readonly advancedMachineFeatures?: AdvancedMachineFeatures;
+	readonly canIpForward?: boolean;
+	readonly confidentialInstanceConfig?: ConfidentialInstanceConfig;
+	readonly deletionProtection?: boolean;
+	readonly description?: string;
+	readonly disks?: AttachedDisk[];
+	readonly displayDevice?: DisplayDevice;
+	readonly eraseWindowsVssSignature?: boolean;
+	readonly fingerprint?: string;
+	readonly guestAccelerators?: AcceleratorConfig[];
+	readonly hostname?: string;
+	readonly instanceEncryptionKey?: CustomerEncryptionKey;
+	readonly keyRevocationActionType?: string;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
+	readonly machineType?: string;
+	readonly metadata?: Metadata;
+	readonly minCpuPlatform?: string;
 	readonly name: string;
-	readonly networkInterfaces?: NetworkInterface[] | undefined;
-	readonly networkPerformanceConfig?: NetworkPerformanceConfig | undefined;
-	readonly params?: InstanceParams | undefined;
-	readonly postKeyRevocationActionType?: string | undefined;
-	readonly preservedStateSizeGb?: string | undefined;
-	readonly privateIpv6GoogleAccess?: string | undefined;
-	readonly reservationAffinity?: ReservationAffinity | undefined;
-	readonly resourcePolicies?: string[] | undefined;
-	readonly scheduling?: Scheduling | undefined;
-	readonly secureTags?: string[] | undefined;
-	readonly serviceAccounts?: ServiceAccount[] | undefined;
-	readonly shieldedInstanceConfig?: ShieldedInstanceConfig | undefined;
-	readonly shieldedInstanceIntegrityPolicy?: ShieldedInstanceIntegrityPolicy | undefined;
-	readonly shieldedVmConfig?: ShieldedVmConfig | undefined;
-	readonly shieldedVmIntegrityPolicy?: ShieldedVmIntegrityPolicy | undefined;
-	readonly sourceMachineImage?: string | undefined;
-	readonly sourceMachineImageEncryptionKey?: CustomerEncryptionKey | undefined;
-	readonly tags?: Tags | undefined;
-	readonly type: string;
+	readonly networkInterfaces?: NetworkInterface[];
+	readonly networkPerformanceConfig?: NetworkPerformanceConfig;
+	readonly params?: InstanceParams;
+	readonly postKeyRevocationActionType?: string;
+	readonly preservedStateSizeGb?: string;
+	readonly privateIpv6GoogleAccess?: string;
+	readonly reservationAffinity?: ReservationAffinity;
+	readonly resourcePolicies?: string[];
+	readonly scheduling?: Scheduling;
+	readonly secureTags?: string[];
+	readonly serviceAccounts?: ServiceAccount[];
+	readonly shieldedInstanceConfig?: ShieldedInstanceConfig;
+	readonly shieldedInstanceIntegrityPolicy?: ShieldedInstanceIntegrityPolicy;
+	readonly shieldedVmConfig?: ShieldedVmConfig;
+	readonly shieldedVmIntegrityPolicy?: ShieldedVmIntegrityPolicy;
+	readonly sourceMachineImage?: string;
+	readonly sourceMachineImageEncryptionKey?: CustomerEncryptionKey;
+	readonly tags?: Tags;
 }
 export interface AcceleratorConfig {
-	readonly acceleratorCount?: number | undefined;
-	readonly acceleratorType?: string | undefined;
+	readonly acceleratorCount?: number;
+	readonly acceleratorType?: string;
 }
 export interface AccessConfig {
-	readonly externalIpv6?: string | undefined;
-	readonly externalIpv6PrefixLength?: number | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly natIP?: string | undefined;
-	readonly networkTier?: string | undefined;
-	readonly publicDnsName?: string | undefined;
-	readonly publicPtrDomainName?: string | undefined;
-	readonly securityPolicy?: string | undefined;
-	readonly setPublicDns?: boolean | undefined;
-	readonly setPublicPtr?: boolean | undefined;
-	readonly type?: string | undefined;
+	readonly externalIpv6?: string;
+	readonly externalIpv6PrefixLength?: number;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly natIP?: string;
+	readonly networkTier?: string;
+	readonly publicDnsName?: string;
+	readonly publicPtrDomainName?: string;
+	readonly securityPolicy?: string;
+	readonly setPublicDns?: boolean;
+	readonly setPublicPtr?: boolean;
+	readonly type?: string;
 }
 export interface AdvancedMachineFeatures {
-	readonly enableNestedVirtualization?: boolean | undefined;
-	readonly enableUefiNetworking?: boolean | undefined;
-	readonly numaNodeCount?: number | undefined;
-	readonly performanceMonitoringUnit?: string | undefined;
-	readonly threadsPerCore?: number | undefined;
-	readonly visibleCoreCount?: number | undefined;
+	readonly enableNestedVirtualization?: boolean;
+	readonly enableUefiNetworking?: boolean;
+	readonly numaNodeCount?: number;
+	readonly performanceMonitoringUnit?: string;
+	readonly threadsPerCore?: number;
+	readonly visibleCoreCount?: number;
 }
 export interface AliasIpRange {
-	readonly ipCidrRange?: string | undefined;
-	readonly subnetworkRangeName?: string | undefined;
+	readonly ipCidrRange?: string;
+	readonly subnetworkRangeName?: string;
 }
 export interface AttachedDisk {
-	readonly architecture?: string | undefined;
-	readonly autoDelete?: boolean | undefined;
-	readonly boot?: boolean | undefined;
-	readonly deviceName?: string | undefined;
-	readonly diskEncryptionKey?: CustomerEncryptionKey | undefined;
-	readonly diskSizeGb?: string | undefined;
-	readonly forceAttach?: boolean | undefined;
-	readonly guestOsFeatures?: GuestOsFeature[] | undefined;
-	readonly index?: number | undefined;
-	readonly initializeParams?: AttachedDiskInitializeParams | undefined;
-	readonly interface?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly licenses?: string[] | undefined;
-	readonly locked?: boolean | undefined;
-	readonly mode?: string | undefined;
-	readonly savedState?: string | undefined;
-	readonly shieldedInstanceInitialState?: InitialStateConfig | undefined;
-	readonly source?: string | undefined;
-	readonly type?: string | undefined;
-	readonly userLicenses?: string[] | undefined;
+	readonly architecture?: string;
+	readonly autoDelete?: boolean;
+	readonly boot?: boolean;
+	readonly deviceName?: string;
+	readonly diskEncryptionKey?: CustomerEncryptionKey;
+	readonly diskSizeGb?: string;
+	readonly forceAttach?: boolean;
+	readonly guestOsFeatures?: GuestOsFeature[];
+	readonly index?: number;
+	readonly initializeParams?: AttachedDiskInitializeParams;
+	readonly interface?: string;
+	readonly kind?: string;
+	readonly licenses?: string[];
+	readonly locked?: boolean;
+	readonly mode?: string;
+	readonly savedState?: string;
+	readonly shieldedInstanceInitialState?: InitialStateConfig;
+	readonly source?: string;
+	readonly type?: string;
+	readonly userLicenses?: string[];
 }
 export interface AttachedDiskInitializeParams {
-	readonly architecture?: string | undefined;
-	readonly description?: string | undefined;
-	readonly diskName?: string | undefined;
-	readonly diskSizeGb?: string | undefined;
-	readonly diskType?: string | undefined;
-	readonly guestOsFeatures?: GuestOsFeature[] | undefined;
-	readonly interface?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly licenseCodes?: string[] | undefined;
-	readonly licenses?: string[] | undefined;
-	readonly multiWriter?: boolean | undefined;
-	readonly onUpdateAction?: string | undefined;
-	readonly provisionedIops?: string | undefined;
-	readonly provisionedThroughput?: string | undefined;
-	readonly replicaZones?: string[] | undefined;
-	readonly resourceManagerTags?: { [P in string]: string } | undefined;
-	readonly resourcePolicies?: string[] | undefined;
-	readonly sourceImage?: string | undefined;
-	readonly sourceImageEncryptionKey?: CustomerEncryptionKey | undefined;
-	readonly sourceInstantSnapshot?: string | undefined;
-	readonly sourceSnapshot?: string | undefined;
-	readonly sourceSnapshotEncryptionKey?: CustomerEncryptionKey | undefined;
+	readonly architecture?: string;
+	readonly description?: string;
+	readonly diskName?: string;
+	readonly diskSizeGb?: string;
+	readonly diskType?: string;
+	readonly guestOsFeatures?: GuestOsFeature[];
+	readonly interface?: string;
+	readonly labels?: { [P in string]: string };
+	readonly licenseCodes?: string[];
+	readonly licenses?: string[];
+	readonly multiWriter?: boolean;
+	readonly onUpdateAction?: string;
+	readonly provisionedIops?: string;
+	readonly provisionedThroughput?: string;
+	readonly replicaZones?: string[];
+	readonly resourceManagerTags?: { [P in string]: string };
+	readonly resourcePolicies?: string[];
+	readonly sourceImage?: string;
+	readonly sourceImageEncryptionKey?: CustomerEncryptionKey;
+	readonly sourceInstantSnapshot?: string;
+	readonly sourceSnapshot?: string;
+	readonly sourceSnapshotEncryptionKey?: CustomerEncryptionKey;
 }
 export interface ConfidentialInstanceConfig {
-	readonly confidentialInstanceType?: string | undefined;
-	readonly enableConfidentialCompute?: boolean | undefined;
+	readonly confidentialInstanceType?: string;
+	readonly enableConfidentialCompute?: boolean;
 }
 export interface CustomerEncryptionKey {
-	readonly kmsKeyName?: string | undefined;
-	readonly kmsKeyServiceAccount?: string | undefined;
-	readonly rawKey?: string | undefined;
-	readonly rsaEncryptedKey?: string | undefined;
-	readonly sha256?: string | undefined;
+	readonly kmsKeyName?: string;
+	readonly kmsKeyServiceAccount?: string;
+	readonly rawKey?: string;
+	readonly rsaEncryptedKey?: string;
+	readonly sha256?: string;
 }
 export interface DisplayDevice {
-	readonly enableDisplay?: boolean | undefined;
+	readonly enableDisplay?: boolean;
 }
 export interface Duration {
-	readonly nanos?: number | undefined;
-	readonly seconds?: string | undefined;
+	readonly nanos?: number;
+	readonly seconds?: string;
 }
 export interface FileContentBuffer {
-	readonly content?: string | undefined;
-	readonly fileType?: string | undefined;
+	readonly content?: string;
+	readonly fileType?: string;
 }
 export interface GuestOsFeature {
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface InitialStateConfig {
-	readonly dbs?: FileContentBuffer[] | undefined;
-	readonly dbxs?: FileContentBuffer[] | undefined;
-	readonly keks?: FileContentBuffer[] | undefined;
-	readonly pk?: FileContentBuffer | undefined;
+	readonly dbs?: FileContentBuffer[];
+	readonly dbxs?: FileContentBuffer[];
+	readonly keks?: FileContentBuffer[];
+	readonly pk?: FileContentBuffer;
 }
 export interface InstanceParams {
-	readonly resourceManagerTags?: { [P in string]: string } | undefined;
+	readonly resourceManagerTags?: { [P in string]: string };
 }
 export interface Metadata {
-	readonly fingerprint?: string | undefined;
-	readonly items?: Array<{ key?: string; value?: string }> | undefined;
-	readonly kind?: string | undefined;
+	readonly fingerprint?: string;
+	readonly items?: Array<{ key?: string; value?: string }>;
+	readonly kind?: string;
 }
 export interface NetworkInterface {
-	readonly accessConfigs?: AccessConfig[] | undefined;
-	readonly aliasIpRanges?: AliasIpRange[] | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly internalIpv6PrefixLength?: number | undefined;
-	readonly ipv6AccessConfigs?: AccessConfig[] | undefined;
-	readonly ipv6AccessType?: string | undefined;
-	readonly ipv6Address?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly network?: string | undefined;
-	readonly networkAttachment?: string | undefined;
-	readonly networkIP?: string | undefined;
-	readonly nicType?: string | undefined;
-	readonly queueCount?: number | undefined;
-	readonly stackType?: string | undefined;
-	readonly subinterfaces?: NetworkInterfaceSubInterface[] | undefined;
-	readonly subnetwork?: string | undefined;
+	readonly accessConfigs?: AccessConfig[];
+	readonly aliasIpRanges?: AliasIpRange[];
+	readonly fingerprint?: string;
+	readonly internalIpv6PrefixLength?: number;
+	readonly ipv6AccessConfigs?: AccessConfig[];
+	readonly ipv6AccessType?: string;
+	readonly ipv6Address?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly network?: string;
+	readonly networkAttachment?: string;
+	readonly networkIP?: string;
+	readonly nicType?: string;
+	readonly queueCount?: number;
+	readonly stackType?: string;
+	readonly subinterfaces?: NetworkInterfaceSubInterface[];
+	readonly subnetwork?: string;
 }
 export interface NetworkInterfaceSubInterface {
-	readonly ipAddress?: string | undefined;
-	readonly ipAllocationMode?: string | undefined;
-	readonly subnetwork?: string | undefined;
-	readonly vlan?: number | undefined;
+	readonly ipAddress?: string;
+	readonly ipAllocationMode?: string;
+	readonly subnetwork?: string;
+	readonly vlan?: number;
 }
 export interface NetworkPerformanceConfig {
-	readonly externalIpEgressBandwidthTier?: string | undefined;
-	readonly totalEgressBandwidthTier?: string | undefined;
+	readonly externalIpEgressBandwidthTier?: string;
+	readonly totalEgressBandwidthTier?: string;
 }
 export interface ReservationAffinity {
-	readonly consumeReservationType?: string | undefined;
-	readonly key?: string | undefined;
-	readonly values?: string[] | undefined;
+	readonly consumeReservationType?: string;
+	readonly key?: string;
+	readonly values?: string[];
 }
 export interface ResourceStatus {
-	readonly physicalHost?: string | undefined;
-	readonly scheduling?: ResourceStatusScheduling | undefined;
-	readonly upcomingMaintenance?: ResourceStatusUpcomingMaintenance | undefined;
+	readonly physicalHost?: string;
+	readonly scheduling?: ResourceStatusScheduling;
+	readonly upcomingMaintenance?: ResourceStatusUpcomingMaintenance;
 }
 export interface ResourceStatusScheduling {
-	readonly availabilityDomain?: number | undefined;
-	readonly terminationTimestamp?: string | undefined;
+	readonly availabilityDomain?: number;
+	readonly terminationTimestamp?: string;
 }
 export interface ResourceStatusUpcomingMaintenance {
-	readonly canReschedule?: boolean | undefined;
+	readonly canReschedule?: boolean;
 }
 export interface Scheduling {
-	readonly automaticRestart?: boolean | undefined;
-	readonly availabilityDomain?: number | undefined;
-	readonly currentCpus?: number | undefined;
-	readonly currentMemoryMb?: string | undefined;
-	readonly hostErrorTimeoutSeconds?: number | undefined;
-	readonly instanceTerminationAction?: string | undefined;
-	readonly latencyTolerant?: boolean | undefined;
-	readonly locationHint?: string | undefined;
-	readonly maintenanceFreezeDurationHours?: number | undefined;
-	readonly maintenanceInterval?: string | undefined;
-	readonly maxRunDuration?: Duration | undefined;
-	readonly minNodeCpus?: number | undefined;
-	readonly nodeAffinities?: SchedulingNodeAffinity[] | undefined;
-	readonly onHostMaintenance?: string | undefined;
-	readonly preemptible?: boolean | undefined;
-	readonly provisioningModel?: string | undefined;
-	readonly terminationTime?: string | undefined;
+	readonly automaticRestart?: boolean;
+	readonly availabilityDomain?: number;
+	readonly currentCpus?: number;
+	readonly currentMemoryMb?: string;
+	readonly hostErrorTimeoutSeconds?: number;
+	readonly instanceTerminationAction?: string;
+	readonly latencyTolerant?: boolean;
+	readonly locationHint?: string;
+	readonly maintenanceFreezeDurationHours?: number;
+	readonly maintenanceInterval?: string;
+	readonly maxRunDuration?: Duration;
+	readonly minNodeCpus?: number;
+	readonly nodeAffinities?: SchedulingNodeAffinity[];
+	readonly onHostMaintenance?: string;
+	readonly preemptible?: boolean;
+	readonly provisioningModel?: string;
+	readonly terminationTime?: string;
 }
 export interface SchedulingNodeAffinity {
-	readonly key?: string | undefined;
-	readonly operator?: string | undefined;
-	readonly values?: string[] | undefined;
+	readonly key?: string;
+	readonly operator?: string;
+	readonly values?: string[];
 }
 export interface ServiceAccount {
-	readonly email?: string | undefined;
-	readonly scopes?: string[] | undefined;
+	readonly email?: string;
+	readonly scopes?: string[];
 }
 export interface ShieldedInstanceConfig {
-	readonly enableIntegrityMonitoring?: boolean | undefined;
-	readonly enableSecureBoot?: boolean | undefined;
-	readonly enableVtpm?: boolean | undefined;
+	readonly enableIntegrityMonitoring?: boolean;
+	readonly enableSecureBoot?: boolean;
+	readonly enableVtpm?: boolean;
 }
 export interface ShieldedInstanceIntegrityPolicy {
-	readonly updateAutoLearnPolicy?: boolean | undefined;
+	readonly updateAutoLearnPolicy?: boolean;
 }
 export interface ShieldedVmConfig {
-	readonly enableIntegrityMonitoring?: boolean | undefined;
-	readonly enableSecureBoot?: boolean | undefined;
-	readonly enableVtpm?: boolean | undefined;
+	readonly enableIntegrityMonitoring?: boolean;
+	readonly enableSecureBoot?: boolean;
+	readonly enableVtpm?: boolean;
 }
 export interface ShieldedVmIntegrityPolicy {
-	readonly updateAutoLearnPolicy?: boolean | undefined;
+	readonly updateAutoLearnPolicy?: boolean;
 }
 export interface Tags {
-	readonly fingerprint?: string | undefined;
-	readonly items?: string[] | undefined;
+	readonly fingerprint?: string;
+	readonly items?: string[];
 }
 export interface UpcomingMaintenance {
-	readonly canReschedule?: boolean | undefined;
-	readonly date?: string | undefined;
-	readonly startTimeWindow?: UpcomingMaintenanceTimeWindow | undefined;
-	readonly time?: string | undefined;
-	readonly type?: string | undefined;
+	readonly canReschedule?: boolean;
+	readonly date?: string;
+	readonly startTimeWindow?: UpcomingMaintenanceTimeWindow;
+	readonly time?: string;
+	readonly type?: string;
 }
 export interface UpcomingMaintenanceTimeWindow {
-	readonly earliest?: string | undefined;
-	readonly latest?: string | undefined;
+	readonly earliest?: string;
+	readonly latest?: string;
 }
 export default {
 	Instance: Instance,

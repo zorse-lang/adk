@@ -16,9 +16,9 @@ export interface clustersComponentOutputs {
 export interface clustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ClusterProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class clusters_arcSettings
 	extends ArmResource<clusters_arcSettingsComponentInputs>
@@ -38,8 +38,8 @@ export interface clusters_arcSettingsComponentOutputs {
 }
 export interface clusters_arcSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ArcSettingProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ArcSettingProperties;
+	readonly systemData?: SystemData;
 }
 export class clusters_arcSettings_extensions
 	extends ArmResource<clusters_arcSettings_extensionsComponentInputs>
@@ -65,8 +65,8 @@ export interface clusters_arcSettings_extensionsComponentOutputs {
 }
 export interface clusters_arcSettings_extensionsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ExtensionProperties;
+	readonly systemData?: SystemData;
 }
 export class galleryimages extends ArmResource<galleryimagesComponentInputs> implements galleryimagesComponentOutputs {
 	constructor(entity: ADKEntity, options: galleryimagesComponentInputs) {
@@ -82,12 +82,12 @@ export interface galleryimagesComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/galleryimages";
 }
 export interface galleryimagesComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: GalleryimagesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: GalleryimagesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class marketplacegalleryimages
 	extends ArmResource<marketplacegalleryimagesComponentInputs>
@@ -106,12 +106,12 @@ export interface marketplacegalleryimagesComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/marketplacegalleryimages";
 }
 export interface marketplacegalleryimagesComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MarketplacegalleryimagesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: MarketplacegalleryimagesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class networkinterfaces
 	extends ArmResource<networkinterfacesComponentInputs>
@@ -130,12 +130,12 @@ export interface networkinterfacesComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/networkinterfaces";
 }
 export interface networkinterfacesComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: NetworkinterfacesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: NetworkinterfacesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class storagecontainers
 	extends ArmResource<storagecontainersComponentInputs>
@@ -154,12 +154,12 @@ export interface storagecontainersComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/storagecontainers";
 }
 export interface storagecontainersComponentInputs {
-	readonly extendedLocation?: StoragecontainersExtendedLocation | undefined;
+	readonly extendedLocation?: StoragecontainersExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StoragecontainersProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: StoragecontainersTags | undefined;
+	readonly properties?: StoragecontainersProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: StoragecontainersTags;
 }
 export class virtualharddisks
 	extends ArmResource<virtualharddisksComponentInputs>
@@ -178,12 +178,12 @@ export interface virtualharddisksComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/virtualharddisks";
 }
 export interface virtualharddisksComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VirtualharddisksProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VirtualharddisksProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class virtualmachines
 	extends ArmResource<virtualmachinesComponentInputs>
@@ -202,13 +202,13 @@ export interface virtualmachinesComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/virtualmachines";
 }
 export interface virtualmachinesComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly identity?: Identity | undefined;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VirtualmachinesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VirtualmachinesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class virtualMachines_extensions
 	extends ArmResource<virtualMachines_extensionsComponentInputs>
@@ -227,11 +227,11 @@ export interface virtualMachines_extensionsComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/virtualMachines/extensions";
 }
 export interface virtualMachines_extensionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: MachineExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: MachineExtensionTags | undefined;
+	readonly properties?: MachineExtensionProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: MachineExtensionTags;
 }
 export class virtualMachines_guestAgents
 	extends ArmResource<virtualMachines_guestAgentsComponentInputs>
@@ -252,7 +252,7 @@ export interface virtualMachines_guestAgentsComponentOutputs {
 export interface virtualMachines_guestAgentsComponentInputs {
 	readonly name: string;
 	readonly properties: GuestAgentProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class virtualMachines_hybridIdentityMetadata
 	extends ArmResource<virtualMachines_hybridIdentityMetadataComponentInputs>
@@ -279,7 +279,7 @@ export interface virtualMachines_hybridIdentityMetadataComponentOutputs {
 export interface virtualMachines_hybridIdentityMetadataComponentInputs {
 	readonly name: string;
 	readonly properties: HybridIdentityMetadataProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class virtualnetworks
 	extends ArmResource<virtualnetworksComponentInputs>
@@ -298,140 +298,130 @@ export interface virtualnetworksComponentOutputs {
 	readonly type: "Microsoft.AzureStackHCI/virtualnetworks";
 }
 export interface virtualnetworksComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VirtualnetworksProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VirtualnetworksProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface ArcSettingProperties {
 	readonly aggregateState?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "InProgress"
-				| "Moving"
-				| "NotSpecified"
-				| "PartiallyConnected"
-				| "PartiallySucceeded"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly arcInstanceResourceGroup?: string | undefined;
-	readonly perNodeDetails?: PerNodeState[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "InProgress"
+		| "Moving"
+		| "NotSpecified"
+		| "PartiallyConnected"
+		| "PartiallySucceeded"
+		| "Succeeded"
+		| "Updating";
+	readonly arcInstanceResourceGroup?: string;
+	readonly perNodeDetails?: PerNodeState[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
 }
 export interface ClusterDesiredProperties {
-	readonly diagnosticLevel?: ("Basic" | "Enhanced" | "Off") | undefined;
-	readonly windowsServerSubscription?: ("Disabled" | "Enabled") | undefined;
+	readonly diagnosticLevel?: "Basic" | "Enhanced" | "Off";
+	readonly windowsServerSubscription?: "Disabled" | "Enabled";
 }
 export interface ClusterNode {
-	readonly coreCount?: number | undefined;
-	readonly id?: number | undefined;
-	readonly manufacturer?: string | undefined;
-	readonly memoryInGiB?: number | undefined;
-	readonly model?: string | undefined;
-	readonly name?: string | undefined;
-	readonly osName?: string | undefined;
-	readonly osVersion?: string | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly windowsServerSubscription?: ("Disabled" | "Enabled") | undefined;
+	readonly coreCount?: number;
+	readonly id?: number;
+	readonly manufacturer?: string;
+	readonly memoryInGiB?: number;
+	readonly model?: string;
+	readonly name?: string;
+	readonly osName?: string;
+	readonly osVersion?: string;
+	readonly serialNumber?: string;
+	readonly windowsServerSubscription?: "Disabled" | "Enabled";
 }
 export interface ClusterProperties {
 	readonly aadClientId: string;
 	readonly aadTenantId: string;
-	readonly billingModel?: string | undefined;
-	readonly cloudId?: string | undefined;
-	readonly cloudManagementEndpoint?: string | undefined;
-	readonly desiredProperties?: ClusterDesiredProperties | undefined;
-	readonly lastBillingTimestamp?: string | undefined;
-	readonly lastSyncTimestamp?: string | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly registrationTimestamp?: string | undefined;
-	readonly reportedProperties?: ClusterReportedProperties | undefined;
-	readonly status?:
-		| ("ConnectedRecently" | "Disconnected" | "Error" | "NotConnectedRecently" | "NotYetRegistered")
-		| undefined;
-	readonly trialDaysRemaining?: number | undefined;
+	readonly billingModel?: string;
+	readonly cloudId?: string;
+	readonly cloudManagementEndpoint?: string;
+	readonly desiredProperties?: ClusterDesiredProperties;
+	readonly lastBillingTimestamp?: string;
+	readonly lastSyncTimestamp?: string;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
+	readonly registrationTimestamp?: string;
+	readonly reportedProperties?: ClusterReportedProperties;
+	readonly status?: "ConnectedRecently" | "Disconnected" | "Error" | "NotConnectedRecently" | "NotYetRegistered";
+	readonly trialDaysRemaining?: number;
 }
 export interface ClusterReportedProperties {
-	readonly clusterId?: string | undefined;
-	readonly clusterName?: string | undefined;
-	readonly clusterVersion?: string | undefined;
-	readonly diagnosticLevel?: ("Basic" | "Enhanced" | "Off") | undefined;
-	readonly imdsAttestation?: ("Disabled" | "Enabled") | undefined;
-	readonly lastUpdated?: string | undefined;
-	readonly nodes?: ClusterNode[] | undefined;
+	readonly clusterId?: string;
+	readonly clusterName?: string;
+	readonly clusterVersion?: string;
+	readonly diagnosticLevel?: "Basic" | "Enhanced" | "Off";
+	readonly imdsAttestation?: "Disabled" | "Enabled";
+	readonly lastUpdated?: string;
+	readonly nodes?: ClusterNode[];
 }
 export interface ComponentsL15GkaSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetable {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?:
-		| ComponentsOycd2YSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetableProperties
-		| undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ComponentsOycd2YSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetableProperties;
+	readonly type?: string;
 }
 export interface ComponentsOycd2YSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetableProperties {
-	readonly routes?: VirtualnetworksPropertiesSubnetsPropertiesItemsItem[] | undefined;
+	readonly routes?: VirtualnetworksPropertiesSubnetsPropertiesItemsItem[];
 }
 export interface ComponentsVqks9HSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesIpconfigurationreferencesItems {
-	readonly ID?: string | undefined;
+	readonly ID?: string;
 }
 export interface ErrorAdditionalInfo {
-	readonly info?: any | undefined;
-	readonly type?: string | undefined;
+	readonly info?: any;
+	readonly type?: string;
 }
 export interface ErrorDetail {
-	readonly additionalInfo?: ErrorAdditionalInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ErrorDetail[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: ErrorAdditionalInfo[];
+	readonly code?: string;
+	readonly details?: ErrorDetail[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface ExtendedLocation {
-	readonly name?: string | undefined;
-	readonly type?: "CustomLocation" | undefined;
+	readonly name?: string;
+	readonly type?: "CustomLocation";
 }
 export interface ExtensionParameters {
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly protectedSettings?: any | undefined;
-	readonly publisher?: string | undefined;
-	readonly settings?: any | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly forceUpdateTag?: string;
+	readonly protectedSettings?: any;
+	readonly publisher?: string;
+	readonly settings?: any;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface ExtensionProperties {
 	readonly aggregateState?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "InProgress"
-				| "Moving"
-				| "NotSpecified"
-				| "PartiallyConnected"
-				| "PartiallySucceeded"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly extensionParameters?: ExtensionParameters | undefined;
-	readonly perNodeExtensionDetails?: PerNodeExtensionState[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "InProgress"
+		| "Moving"
+		| "NotSpecified"
+		| "PartiallyConnected"
+		| "PartiallySucceeded"
+		| "Succeeded"
+		| "Updating";
+	readonly extensionParameters?: ExtensionParameters;
+	readonly perNodeExtensionDetails?: PerNodeExtensionState[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
 }
 export interface GalleryImageIdentifier {
 	readonly offer: string;
@@ -439,421 +429,404 @@ export interface GalleryImageIdentifier {
 	readonly sku: string;
 }
 export interface GalleryimagesProperties {
-	readonly cloudInitDataSource?: ("Azure" | "NoCloud") | undefined;
-	readonly containerName?: string | undefined;
-	readonly hyperVGeneration?: ("V1" | "V2") | undefined;
-	readonly identifier?: GalleryImageIdentifier | undefined;
-	readonly imagePath?: string | undefined;
-	readonly osType?: "Linux" | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded")
-		| undefined;
-	readonly resourceName?: string | undefined;
-	readonly status?: GalleryImageStatus | undefined;
-	readonly version?: GalleryImageVersion | undefined;
+	readonly cloudInitDataSource?: "Azure" | "NoCloud";
+	readonly containerName?: string;
+	readonly hyperVGeneration?: "V1" | "V2";
+	readonly identifier?: GalleryImageIdentifier;
+	readonly imagePath?: string;
+	readonly osType?: "Linux";
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly resourceName?: string;
+	readonly status?: GalleryImageStatus;
+	readonly version?: GalleryImageVersion;
 }
 export interface GalleryImageStatus {
-	readonly downloadStatus?: GalleryImageStatusDownloadStatus | undefined;
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly progressPercentage?: number | undefined;
-	readonly provisioningStatus?: GalleryImageStatusProvisioningStatus | undefined;
+	readonly downloadStatus?: GalleryImageStatusDownloadStatus;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
+	readonly progressPercentage?: number;
+	readonly provisioningStatus?: GalleryImageStatusProvisioningStatus;
 }
 export interface GalleryImageStatusDownloadStatus {
-	readonly downloadSizeInMB?: number | undefined;
+	readonly downloadSizeInMB?: number;
 }
 export interface GalleryImageStatusProvisioningStatus {
-	readonly operationId?: string | undefined;
-	readonly status?: ("Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly operationId?: string;
+	readonly status?: "Failed" | "InProgress" | "Succeeded";
 }
 export interface GalleryImageVersion {
-	readonly name?: string | undefined;
-	readonly properties?: GalleryImageVersionProperties | undefined;
+	readonly name?: string;
+	readonly properties?: GalleryImageVersionProperties;
 }
 export interface GalleryImageVersionProperties {
 	readonly storageProfile: GalleryImageVersionStorageProfile;
 }
 export interface GalleryImageVersionStorageProfile {
-	readonly osDiskImage?: GalleryOSDiskImage | undefined;
+	readonly osDiskImage?: GalleryOSDiskImage;
 }
 export interface GalleryOSDiskImage {
-	readonly sizeInMB?: number | undefined;
+	readonly sizeInMB?: number;
 }
 export interface GuestAgentProfile {
-	readonly agentVersion?: string | undefined;
-	readonly errorDetails?: ErrorDetail[] | undefined;
-	readonly lastStatusChange?: string | undefined;
-	readonly status?: ("Connected" | "Disconnected" | "Error") | undefined;
-	readonly vmUuid?: string | undefined;
+	readonly agentVersion?: string;
+	readonly errorDetails?: ErrorDetail[];
+	readonly lastStatusChange?: string;
+	readonly status?: "Connected" | "Disconnected" | "Error";
+	readonly vmUuid?: string;
 }
 export interface GuestAgentProperties {
-	readonly credentials?: GuestCredential | undefined;
-	readonly httpProxyConfig?: HttpProxyConfiguration | undefined;
-	readonly provisioningAction?: ("install" | "repair" | "uninstall") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly status?: string | undefined;
+	readonly credentials?: GuestCredential;
+	readonly httpProxyConfig?: HttpProxyConfiguration;
+	readonly provisioningAction?: "install" | "repair" | "uninstall";
+	readonly provisioningState?: string;
+	readonly status?: string;
 }
 export interface GuestCredential {
-	readonly password?: string | undefined;
-	readonly username?: string | undefined;
+	readonly password?: string;
+	readonly username?: string;
 }
 export interface HttpProxyConfiguration {
-	readonly httpsProxy?: string | undefined;
+	readonly httpsProxy?: string;
 }
 export interface HybridIdentityMetadataProperties {
-	readonly identity?: Identity | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicKey?: string | undefined;
-	readonly resourceUid?: string | undefined;
+	readonly identity?: Identity;
+	readonly provisioningState?: string;
+	readonly publicKey?: string;
+	readonly resourceUid?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface InterfaceDNSSettings {
-	readonly dnsServers?: string[] | undefined;
+	readonly dnsServers?: string[];
 }
 export interface IpConfiguration {
-	readonly name?: string | undefined;
-	readonly properties?: IpConfigurationProperties | undefined;
+	readonly name?: string;
+	readonly properties?: IpConfigurationProperties;
 }
 export interface IpConfigurationProperties {
-	readonly gateway?: string | undefined;
-	readonly prefixLength?: string | undefined;
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly subnet?: IpConfigurationPropertiesSubnet | undefined;
+	readonly gateway?: string;
+	readonly prefixLength?: string;
+	readonly privateIPAddress?: string;
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly subnet?: IpConfigurationPropertiesSubnet;
 }
 export interface IpConfigurationPropertiesSubnet {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface IPPool {
-	readonly end?: string | undefined;
-	readonly info?: IPPoolInfo | undefined;
-	readonly ipPoolType?: "vippool" | undefined;
-	readonly start?: string | undefined;
+	readonly end?: string;
+	readonly info?: IPPoolInfo;
+	readonly ipPoolType?: "vippool";
+	readonly start?: string;
 }
 export interface IPPoolInfo {
-	readonly available?: string | undefined;
-	readonly used?: string | undefined;
+	readonly available?: string;
+	readonly used?: string;
 }
 export interface MachineExtensionInstanceViewStatus {
-	readonly code?: string | undefined;
-	readonly displayStatus?: string | undefined;
-	readonly level?: ("Error" | "Info" | "Warning") | undefined;
-	readonly message?: string | undefined;
-	readonly time?: string | undefined;
+	readonly code?: string;
+	readonly displayStatus?: string;
+	readonly level?: "Error" | "Info" | "Warning";
+	readonly message?: string;
+	readonly time?: string;
 }
 export interface MachineExtensionProperties {
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly instanceView?: MachineExtensionPropertiesInstanceView | undefined;
-	readonly protectedSettings?: any | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly settings?: any | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly forceUpdateTag?: string;
+	readonly instanceView?: MachineExtensionPropertiesInstanceView;
+	readonly protectedSettings?: any;
+	readonly provisioningState?: string;
+	readonly publisher?: string;
+	readonly settings?: any;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface MachineExtensionPropertiesInstanceView {
-	readonly name?: string | undefined;
-	readonly status?: MachineExtensionInstanceViewStatus | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly name?: string;
+	readonly status?: MachineExtensionInstanceViewStatus;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface MachineExtensionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MarketplacegalleryimagesProperties {
-	readonly cloudInitDataSource?: ("Azure" | "NoCloud") | undefined;
-	readonly containerName?: string | undefined;
-	readonly hyperVGeneration?: ("V1" | "V2") | undefined;
-	readonly identifier?: GalleryImageIdentifier | undefined;
-	readonly osType?: "Linux" | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded")
-		| undefined;
-	readonly resourceName?: string | undefined;
-	readonly status?: MarketplaceGalleryImageStatus | undefined;
-	readonly version?: GalleryImageVersion | undefined;
+	readonly cloudInitDataSource?: "Azure" | "NoCloud";
+	readonly containerName?: string;
+	readonly hyperVGeneration?: "V1" | "V2";
+	readonly identifier?: GalleryImageIdentifier;
+	readonly osType?: "Linux";
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly resourceName?: string;
+	readonly status?: MarketplaceGalleryImageStatus;
+	readonly version?: GalleryImageVersion;
 }
 export interface MarketplaceGalleryImageStatus {
-	readonly downloadStatus?: MarketplaceGalleryImageStatusDownloadStatus | undefined;
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly progressPercentage?: number | undefined;
-	readonly provisioningStatus?: MarketplaceGalleryImageStatusProvisioningStatus | undefined;
+	readonly downloadStatus?: MarketplaceGalleryImageStatusDownloadStatus;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
+	readonly progressPercentage?: number;
+	readonly provisioningStatus?: MarketplaceGalleryImageStatusProvisioningStatus;
 }
 export interface MarketplaceGalleryImageStatusDownloadStatus {
-	readonly downloadSizeInMB?: number | undefined;
+	readonly downloadSizeInMB?: number;
 }
 export interface MarketplaceGalleryImageStatusProvisioningStatus {
-	readonly operationId?: string | undefined;
-	readonly status?: ("Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly operationId?: string;
+	readonly status?: "Failed" | "InProgress" | "Succeeded";
 }
 export interface NetworkinterfacesProperties {
-	readonly dnsSettings?: InterfaceDNSSettings | undefined;
-	readonly ipConfigurations?: IpConfiguration[] | undefined;
-	readonly macAddress?: string | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded")
-		| undefined;
-	readonly resourceName?: string | undefined;
-	readonly status?: NetworkInterfaceStatus | undefined;
+	readonly dnsSettings?: InterfaceDNSSettings;
+	readonly ipConfigurations?: IpConfiguration[];
+	readonly macAddress?: string;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly resourceName?: string;
+	readonly status?: NetworkInterfaceStatus;
 }
 export interface NetworkInterfaceStatus {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly provisioningStatus?: NetworkInterfaceStatusProvisioningStatus | undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
+	readonly provisioningStatus?: NetworkInterfaceStatusProvisioningStatus;
 }
 export interface NetworkInterfaceStatusProvisioningStatus {
-	readonly operationId?: string | undefined;
-	readonly status?: ("Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly operationId?: string;
+	readonly status?: "Failed" | "InProgress" | "Succeeded";
 }
 export interface PerNodeExtensionState {
-	readonly extension?: string | undefined;
-	readonly name?: string | undefined;
+	readonly extension?: string;
+	readonly name?: string;
 	readonly state?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "Moving"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "Moving"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
 }
 export interface PerNodeState {
-	readonly arcInstance?: string | undefined;
-	readonly name?: string | undefined;
+	readonly arcInstance?: string;
+	readonly name?: string;
 	readonly state?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "Moving"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "Moving"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
 }
 export interface StoragecontainersExtendedLocation {
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface StoragecontainersProperties {
-	readonly availableSizeMB?: number | undefined;
-	readonly containerSizeMB?: number | undefined;
-	readonly path?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceName?: string | undefined;
-	readonly status?: StorageContainerStatus | undefined;
+	readonly availableSizeMB?: number;
+	readonly containerSizeMB?: number;
+	readonly path?: string;
+	readonly provisioningState?: string;
+	readonly resourceName?: string;
+	readonly status?: StorageContainerStatus;
 }
 export interface StoragecontainersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StorageContainerStatus {
-	readonly availableSizeMB?: number | undefined;
-	readonly containerSizeMB?: number | undefined;
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly provisioningStatus?: StorageContainerStatusProvisioningStatus | undefined;
+	readonly availableSizeMB?: number;
+	readonly containerSizeMB?: number;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
+	readonly provisioningStatus?: StorageContainerStatusProvisioningStatus;
 }
 export interface StorageContainerStatusProvisioningStatus {
-	readonly operationId?: string | undefined;
-	readonly status?: ("Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly operationId?: string;
+	readonly status?: "Failed" | "InProgress" | "Succeeded";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualharddisksProperties {
-	readonly blockSizeBytes?: number | undefined;
-	readonly containerId?: string | undefined;
-	readonly diskFileFormat?: ("vhd" | "vhdx") | undefined;
-	readonly diskSizeBytes?: number | undefined;
-	readonly dynamic?: boolean | undefined;
-	readonly hyperVGeneration?: ("V1" | "V2") | undefined;
-	readonly logicalSectorBytes?: number | undefined;
-	readonly physicalSectorBytes?: number | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded")
-		| undefined;
-	readonly resourceName?: string | undefined;
-	readonly status?: VirtualHardDiskStatus | undefined;
+	readonly blockSizeBytes?: number;
+	readonly containerId?: string;
+	readonly diskFileFormat?: "vhd" | "vhdx";
+	readonly diskSizeBytes?: number;
+	readonly dynamic?: boolean;
+	readonly hyperVGeneration?: "V1" | "V2";
+	readonly logicalSectorBytes?: number;
+	readonly physicalSectorBytes?: number;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly resourceName?: string;
+	readonly status?: VirtualHardDiskStatus;
 }
 export interface VirtualHardDiskStatus {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly provisioningStatus?: VirtualHardDiskStatusProvisioningStatus | undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
+	readonly provisioningStatus?: VirtualHardDiskStatusProvisioningStatus;
 }
 export interface VirtualHardDiskStatusProvisioningStatus {
-	readonly operationId?: string | undefined;
-	readonly status?: ("Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly operationId?: string;
+	readonly status?: "Failed" | "InProgress" | "Succeeded";
 }
 export interface VirtualmachinesProperties {
-	readonly guestAgentProfile?: GuestAgentProfile | undefined;
-	readonly hardwareProfile?: VirtualmachinesPropertiesHardwareProfile | undefined;
-	readonly networkProfile?: VirtualmachinesPropertiesNetworkProfile | undefined;
-	readonly osProfile?: VirtualmachinesPropertiesOsProfile | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded")
-		| undefined;
-	readonly resourceName?: string | undefined;
-	readonly securityProfile?: VirtualmachinesPropertiesSecurityProfile | undefined;
-	readonly status?: VirtualMachineStatus | undefined;
-	readonly storageProfile?: VirtualmachinesPropertiesStorageProfile | undefined;
-	readonly vmId?: string | undefined;
+	readonly guestAgentProfile?: GuestAgentProfile;
+	readonly hardwareProfile?: VirtualmachinesPropertiesHardwareProfile;
+	readonly networkProfile?: VirtualmachinesPropertiesNetworkProfile;
+	readonly osProfile?: VirtualmachinesPropertiesOsProfile;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly resourceName?: string;
+	readonly securityProfile?: VirtualmachinesPropertiesSecurityProfile;
+	readonly status?: VirtualMachineStatus;
+	readonly storageProfile?: VirtualmachinesPropertiesStorageProfile;
+	readonly vmId?: string;
 }
 export interface VirtualmachinesPropertiesHardwareProfile {
-	readonly dynamicMemoryConfig?: VirtualmachinesPropertiesHardwareProfileDynamicMemoryConfig | undefined;
-	readonly memoryGB?: number | undefined;
-	readonly processors?: number | undefined;
-	readonly vmSize?: string | undefined;
+	readonly dynamicMemoryConfig?: VirtualmachinesPropertiesHardwareProfileDynamicMemoryConfig;
+	readonly memoryGB?: number;
+	readonly processors?: number;
+	readonly vmSize?: string;
 }
 export interface VirtualmachinesPropertiesHardwareProfileDynamicMemoryConfig {
-	readonly maximumMemoryGB?: number | undefined;
-	readonly minimumMemoryGB?: number | undefined;
-	readonly targetMemoryBuffer?: number | undefined;
+	readonly maximumMemoryGB?: number;
+	readonly minimumMemoryGB?: number;
+	readonly targetMemoryBuffer?: number;
 }
 export interface VirtualmachinesPropertiesNetworkProfile {
-	readonly networkInterfaces?: VirtualmachinesPropertiesNetworkProfileNetworkInterfacesItem[] | undefined;
+	readonly networkInterfaces?: VirtualmachinesPropertiesNetworkProfileNetworkInterfacesItem[];
 }
 export interface VirtualmachinesPropertiesNetworkProfileNetworkInterfacesItem {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface VirtualmachinesPropertiesOsProfile {
-	readonly adminPassword?: string | undefined;
-	readonly adminUsername?: string | undefined;
-	readonly computerName?: string | undefined;
-	readonly linuxConfiguration?: VirtualmachinesPropertiesOsProfileLinuxConfiguration | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly windowsConfiguration?: VirtualmachinesPropertiesOsProfileWindowsConfiguration | undefined;
+	readonly adminPassword?: string;
+	readonly adminUsername?: string;
+	readonly computerName?: string;
+	readonly linuxConfiguration?: VirtualmachinesPropertiesOsProfileLinuxConfiguration;
+	readonly osType?: "Linux" | "Windows";
+	readonly windowsConfiguration?: VirtualmachinesPropertiesOsProfileWindowsConfiguration;
 }
 export interface VirtualmachinesPropertiesOsProfileLinuxConfiguration {
-	readonly disablePasswordAuthentication?: boolean | undefined;
-	readonly provisionVMAgent?: boolean | undefined;
-	readonly ssh?: VirtualmachinesPropertiesOsProfileLinuxConfigurationSsh | undefined;
+	readonly disablePasswordAuthentication?: boolean;
+	readonly provisionVMAgent?: boolean;
+	readonly ssh?: VirtualmachinesPropertiesOsProfileLinuxConfigurationSsh;
 }
 export interface VirtualmachinesPropertiesOsProfileLinuxConfigurationSsh {
-	readonly publicKeys?: VirtualmachinesPropertiesOsProfileLinuxConfigurationSshPublicKeysItem[] | undefined;
+	readonly publicKeys?: VirtualmachinesPropertiesOsProfileLinuxConfigurationSshPublicKeysItem[];
 }
 export interface VirtualmachinesPropertiesOsProfileLinuxConfigurationSshPublicKeysItem {
-	readonly keyData?: string | undefined;
-	readonly path?: string | undefined;
+	readonly keyData?: string;
+	readonly path?: string;
 }
 export interface VirtualmachinesPropertiesOsProfileWindowsConfiguration {
-	readonly enableAutomaticUpdates?: boolean | undefined;
-	readonly provisionVMAgent?: boolean | undefined;
-	readonly ssh?: VirtualmachinesPropertiesOsProfileWindowsConfigurationSsh | undefined;
-	readonly timeZone?: string | undefined;
+	readonly enableAutomaticUpdates?: boolean;
+	readonly provisionVMAgent?: boolean;
+	readonly ssh?: VirtualmachinesPropertiesOsProfileWindowsConfigurationSsh;
+	readonly timeZone?: string;
 }
 export interface VirtualmachinesPropertiesOsProfileWindowsConfigurationSsh {
-	readonly publicKeys?: VirtualmachinesPropertiesOsProfileWindowsConfigurationSshPublicKeysItem[] | undefined;
+	readonly publicKeys?: VirtualmachinesPropertiesOsProfileWindowsConfigurationSshPublicKeysItem[];
 }
 export interface VirtualmachinesPropertiesOsProfileWindowsConfigurationSshPublicKeysItem {
-	readonly keyData?: string | undefined;
-	readonly path?: string | undefined;
+	readonly keyData?: string;
+	readonly path?: string;
 }
 export interface VirtualmachinesPropertiesSecurityProfile {
-	readonly enableTPM?: boolean | undefined;
-	readonly uefiSettings?: VirtualmachinesPropertiesSecurityProfileUefiSettings | undefined;
+	readonly enableTPM?: boolean;
+	readonly uefiSettings?: VirtualmachinesPropertiesSecurityProfileUefiSettings;
 }
 export interface VirtualmachinesPropertiesSecurityProfileUefiSettings {
-	readonly secureBootEnabled?: boolean | undefined;
+	readonly secureBootEnabled?: boolean;
 }
 export interface VirtualmachinesPropertiesStorageProfile {
-	readonly dataDisks?: VirtualmachinesPropertiesStorageProfileDataDisksItem[] | undefined;
-	readonly imageReference?: VirtualmachinesPropertiesStorageProfileImageReference | undefined;
-	readonly osDisk?: VirtualmachinesPropertiesStorageProfileOsDisk | undefined;
-	readonly vmConfigContainerName?: string | undefined;
+	readonly dataDisks?: VirtualmachinesPropertiesStorageProfileDataDisksItem[];
+	readonly imageReference?: VirtualmachinesPropertiesStorageProfileImageReference;
+	readonly osDisk?: VirtualmachinesPropertiesStorageProfileOsDisk;
+	readonly vmConfigContainerName?: string;
 }
 export interface VirtualmachinesPropertiesStorageProfileDataDisksItem {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface VirtualmachinesPropertiesStorageProfileImageReference {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface VirtualmachinesPropertiesStorageProfileOsDisk {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface VirtualMachineStatus {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly powerState?:
-		| ("Deallocated" | "Deallocating" | "Running" | "Starting" | "Stopped" | "Stopping" | "Unknown")
-		| undefined;
-	readonly provisioningStatus?: VirtualMachineStatusProvisioningStatus | undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
+	readonly powerState?: "Deallocated" | "Deallocating" | "Running" | "Starting" | "Stopped" | "Stopping" | "Unknown";
+	readonly provisioningStatus?: VirtualMachineStatusProvisioningStatus;
 }
 export interface VirtualMachineStatusProvisioningStatus {
-	readonly operationId?: string | undefined;
-	readonly status?: ("Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly operationId?: string;
+	readonly status?: "Failed" | "InProgress" | "Succeeded";
 }
 export interface VirtualnetworksProperties {
 	readonly networkType?:
-		| ("ICS" | "Internal" | "L2Bridge" | "L2Tunnel" | "Mirrored" | "NAT" | "Overlay" | "Private" | "Transparent")
-		| undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded")
-		| undefined;
-	readonly resourceName?: string | undefined;
-	readonly status?: VirtualNetworkStatus | undefined;
-	readonly subnets?: VirtualnetworksPropertiesSubnetsItem[] | undefined;
+		| "ICS"
+		| "Internal"
+		| "L2Bridge"
+		| "L2Tunnel"
+		| "Mirrored"
+		| "NAT"
+		| "Overlay"
+		| "Private"
+		| "Transparent";
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly resourceName?: string;
+	readonly status?: VirtualNetworkStatus;
+	readonly subnets?: VirtualnetworksPropertiesSubnetsItem[];
 }
 export interface VirtualnetworksPropertiesSubnetsItem {
-	readonly name?: string | undefined;
-	readonly properties?: VirtualnetworksPropertiesSubnetsItemAutoGenerated | undefined;
+	readonly name?: string;
+	readonly properties?: VirtualnetworksPropertiesSubnetsItemAutoGenerated;
 }
 export interface VirtualnetworksPropertiesSubnetsItemAutoGenerated {
-	readonly addressPrefix?: string | undefined;
-	readonly addressPrefixes?: string[] | undefined;
-	readonly ipAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly ipConfigurationReferences?:
-		| ComponentsVqks9HSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesIpconfigurationreferencesItems[]
-		| undefined;
-	readonly ipPools?: IPPool[] | undefined;
-	readonly routeTable?:
-		| ComponentsL15GkaSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetable
-		| undefined;
-	readonly vlan?: number | undefined;
+	readonly addressPrefix?: string;
+	readonly addressPrefixes?: string[];
+	readonly ipAllocationMethod?: "Dynamic" | "Static";
+	readonly ipConfigurationReferences?: ComponentsVqks9HSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesIpconfigurationreferencesItems[];
+	readonly ipPools?: IPPool[];
+	readonly routeTable?: ComponentsL15GkaSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetable;
+	readonly vlan?: number;
 }
 export interface VirtualnetworksPropertiesSubnetsItemRouteTableRoutesItem {
-	readonly addressPrefix?: string | undefined;
-	readonly nextHopIpAddress?: string | undefined;
+	readonly addressPrefix?: string;
+	readonly nextHopIpAddress?: string;
 }
 export interface VirtualnetworksPropertiesSubnetsPropertiesItemsItem {
-	readonly name?: string | undefined;
-	readonly properties?: VirtualnetworksPropertiesSubnetsItemRouteTableRoutesItem | undefined;
+	readonly name?: string;
+	readonly properties?: VirtualnetworksPropertiesSubnetsItemRouteTableRoutesItem;
 }
 export interface VirtualNetworkStatus {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly provisioningStatus?: VirtualNetworkStatusProvisioningStatus | undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
+	readonly provisioningStatus?: VirtualNetworkStatusProvisioningStatus;
 }
 export interface VirtualNetworkStatusProvisioningStatus {
-	readonly operationId?: string | undefined;
-	readonly status?: ("Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly operationId?: string;
+	readonly status?: "Failed" | "InProgress" | "Succeeded";
 }
 export default {
 	clusters: clusters,

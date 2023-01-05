@@ -14,12 +14,12 @@ export interface accountComponentOutputs {
 	readonly type: "microsoft.visualstudio/account";
 }
 export interface accountComponentInputs {
-	readonly accountName?: string | undefined;
-	readonly location?: string | undefined;
+	readonly accountName?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly operationType?: ("create" | "link" | "unknown") | undefined;
-	readonly properties?: AccountResourceRequestProperties | undefined;
-	readonly tags?: AccountResourceRequestTags | undefined;
+	readonly operationType?: "create" | "link" | "unknown";
+	readonly properties?: AccountResourceRequestProperties;
+	readonly tags?: AccountResourceRequestTags;
 }
 export class account_extension
 	extends ArmResource<account_extensionComponentInputs>
@@ -38,11 +38,11 @@ export interface account_extensionComponentOutputs {
 	readonly type: "microsoft.visualstudio/account/extension";
 }
 export interface account_extensionComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly plan?: ExtensionResourcePlan | undefined;
-	readonly properties?: ExtensionResourceRequestProperties | undefined;
-	readonly tags?: ExtensionResourceRequestTags | undefined;
+	readonly plan?: ExtensionResourcePlan;
+	readonly properties?: ExtensionResourceRequestProperties;
+	readonly tags?: ExtensionResourceRequestTags;
 }
 export class account_project
 	extends ArmResource<account_projectComponentInputs>
@@ -61,35 +61,35 @@ export interface account_projectComponentOutputs {
 	readonly type: "microsoft.visualstudio/account/project";
 }
 export interface account_projectComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProjectResourceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ProjectResourceProperties;
+	readonly tags?: ResourceTags;
 }
 export interface AccountResourceRequestProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AccountResourceRequestTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ExtensionResourcePlan {
-	readonly name?: string | undefined;
-	readonly product?: string | undefined;
-	readonly promotionCode?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly version?: string | undefined;
+	readonly name?: string;
+	readonly product?: string;
+	readonly promotionCode?: string;
+	readonly publisher?: string;
+	readonly version?: string;
 }
 export interface ExtensionResourceRequestProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ExtensionResourceRequestTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ProjectResourceProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	account: account,

@@ -16,9 +16,9 @@ export interface cloudServicesComponentOutputs {
 export interface cloudServicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CloudServiceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: CloudServiceTags | undefined;
+	readonly properties?: CloudServiceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: CloudServiceTags;
 }
 export class cloudServices_updateDomains
 	extends ArmResource<cloudServices_updateDomainsComponentInputs>
@@ -40,74 +40,74 @@ export interface cloudServices_updateDomainsComponentInputs {
 	readonly name: string;
 }
 export interface CloudServiceExtensionProfile {
-	readonly extensions?: Extension[] | undefined;
+	readonly extensions?: Extension[];
 }
 export interface CloudServiceExtensionProperties {
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly protectedSettings?: any | undefined;
-	readonly protectedSettingsFromKeyVault?: CloudServiceVaultAndSecretReference | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly rolesAppliedTo?: string[] | undefined;
-	readonly settings?: any | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly forceUpdateTag?: string;
+	readonly protectedSettings?: any;
+	readonly protectedSettingsFromKeyVault?: CloudServiceVaultAndSecretReference;
+	readonly provisioningState?: string;
+	readonly publisher?: string;
+	readonly rolesAppliedTo?: string[];
+	readonly settings?: any;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface CloudServiceNetworkProfile {
-	readonly loadBalancerConfigurations?: LoadBalancerConfiguration[] | undefined;
-	readonly slotType?: ("Production" | "Staging") | undefined;
-	readonly swappableCloudService?: SubResource | undefined;
+	readonly loadBalancerConfigurations?: LoadBalancerConfiguration[];
+	readonly slotType?: "Production" | "Staging";
+	readonly swappableCloudService?: SubResource;
 }
 export interface CloudServiceOsProfile {
-	readonly secrets?: CloudServiceVaultSecretGroup[] | undefined;
+	readonly secrets?: CloudServiceVaultSecretGroup[];
 }
 export interface CloudServiceProperties {
-	readonly allowModelOverride?: boolean | undefined;
-	readonly configuration?: string | undefined;
-	readonly configurationUrl?: string | undefined;
-	readonly extensionProfile?: CloudServiceExtensionProfile | undefined;
-	readonly networkProfile?: CloudServiceNetworkProfile | undefined;
-	readonly osProfile?: CloudServiceOsProfile | undefined;
-	readonly packageUrl?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly roleProfile?: CloudServiceRoleProfile | undefined;
-	readonly startCloudService?: boolean | undefined;
-	readonly uniqueId?: string | undefined;
-	readonly upgradeMode?: ("Auto" | "Manual" | "Simultaneous") | undefined;
+	readonly allowModelOverride?: boolean;
+	readonly configuration?: string;
+	readonly configurationUrl?: string;
+	readonly extensionProfile?: CloudServiceExtensionProfile;
+	readonly networkProfile?: CloudServiceNetworkProfile;
+	readonly osProfile?: CloudServiceOsProfile;
+	readonly packageUrl?: string;
+	readonly provisioningState?: string;
+	readonly roleProfile?: CloudServiceRoleProfile;
+	readonly startCloudService?: boolean;
+	readonly uniqueId?: string;
+	readonly upgradeMode?: "Auto" | "Manual" | "Simultaneous";
 }
 export interface CloudServiceRoleProfile {
-	readonly roles?: CloudServiceRoleProfileProperties[] | undefined;
+	readonly roles?: CloudServiceRoleProfileProperties[];
 }
 export interface CloudServiceRoleProfileProperties {
-	readonly name?: string | undefined;
-	readonly sku?: CloudServiceRoleSku | undefined;
+	readonly name?: string;
+	readonly sku?: CloudServiceRoleSku;
 }
 export interface CloudServiceRoleSku {
-	readonly capacity?: number | undefined;
-	readonly name?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly capacity?: number;
+	readonly name?: string;
+	readonly tier?: string;
 }
 export interface CloudServiceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CloudServiceVaultAndSecretReference {
-	readonly secretUrl?: string | undefined;
-	readonly sourceVault?: SubResource | undefined;
+	readonly secretUrl?: string;
+	readonly sourceVault?: SubResource;
 }
 export interface CloudServiceVaultCertificate {
-	readonly certificateUrl?: string | undefined;
+	readonly certificateUrl?: string;
 }
 export interface CloudServiceVaultSecretGroup {
-	readonly sourceVault?: SubResource | undefined;
-	readonly vaultCertificates?: CloudServiceVaultCertificate[] | undefined;
+	readonly sourceVault?: SubResource;
+	readonly vaultCertificates?: CloudServiceVaultCertificate[];
 }
 export interface Extension {
-	readonly name?: string | undefined;
-	readonly properties?: CloudServiceExtensionProperties | undefined;
+	readonly name?: string;
+	readonly properties?: CloudServiceExtensionProperties;
 }
 export interface LoadBalancerConfiguration {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
 	readonly properties: LoadBalancerConfigurationProperties;
 }
@@ -119,16 +119,16 @@ export interface LoadBalancerFrontendIPConfiguration {
 	readonly properties: LoadBalancerFrontendIPConfigurationProperties;
 }
 export interface LoadBalancerFrontendIPConfigurationProperties {
-	readonly privateIPAddress?: string | undefined;
-	readonly publicIPAddress?: SubResource | undefined;
-	readonly subnet?: SubResource | undefined;
+	readonly privateIPAddress?: string;
+	readonly publicIPAddress?: SubResource;
+	readonly subnet?: SubResource;
 }
 export interface SubResource {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly lastModifiedAt?: string | undefined;
+	readonly createdAt?: string;
+	readonly lastModifiedAt?: string;
 }
 export default {
 	cloudServices: cloudServices,

@@ -17,12 +17,12 @@ export interface provisioningServicesComponentOutputs {
 	readonly type: "Microsoft.Devices/provisioningServices";
 }
 export interface provisioningServicesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: IotDpsPropertiesDescription;
 	readonly sku: IotDpsSkuInfo;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class provisioningServices_certificates
 	extends ArmResource<provisioningServices_certificatesComponentInputs>
@@ -41,10 +41,10 @@ export interface provisioningServices_certificatesComponentOutputs {
 	readonly type: "Microsoft.Devices/provisioningServices/certificates";
 }
 export interface provisioningServices_certificatesComponentInputs {
-	readonly certificate?: string | undefined;
-	readonly etag?: string | undefined;
+	readonly certificate?: string;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: CertificateProperties | undefined;
+	readonly properties?: CertificateProperties;
 }
 export function listkeys(resource: provisioningServices): SharedAccessSignatureAuthorizationRuleListResult {
 	if (resource.apiVersion !== "2017-08-21-preview") {
@@ -56,56 +56,53 @@ export function listkeys(resource: provisioningServices): SharedAccessSignatureA
 	throw new Error("not implemented");
 }
 export interface CertificateProperties {
-	readonly created?: string | undefined;
-	readonly expiry?: string | undefined;
-	readonly isVerified?: boolean | undefined;
-	readonly subject?: string | undefined;
-	readonly thumbprint?: string | undefined;
-	readonly updated?: string | undefined;
+	readonly created?: string;
+	readonly expiry?: string;
+	readonly isVerified?: boolean;
+	readonly subject?: string;
+	readonly thumbprint?: string;
+	readonly updated?: string;
 }
 export interface IotDpsPropertiesDescription {
-	readonly allocationPolicy?: ("GeoLatency" | "Hashed" | "Static") | undefined;
-	readonly authorizationPolicies?: SharedAccessSignatureAuthorizationRuleAccessRightsDescription[] | undefined;
-	readonly deviceProvisioningHostName?: string | undefined;
-	readonly idScope?: string | undefined;
-	readonly iotHubs?: IotHubDefinitionDescription[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceOperationsHostName?: string | undefined;
+	readonly allocationPolicy?: "GeoLatency" | "Hashed" | "Static";
+	readonly authorizationPolicies?: SharedAccessSignatureAuthorizationRuleAccessRightsDescription[];
+	readonly deviceProvisioningHostName?: string;
+	readonly idScope?: string;
+	readonly iotHubs?: IotHubDefinitionDescription[];
+	readonly provisioningState?: string;
+	readonly serviceOperationsHostName?: string;
 	readonly state?:
-		| (
-				| "Activating"
-				| "ActivationFailed"
-				| "Active"
-				| "Deleted"
-				| "Deleting"
-				| "DeletionFailed"
-				| "FailingOver"
-				| "FailoverFailed"
-				| "Resuming"
-				| "Suspended"
-				| "Suspending"
-				| "Transitioning"
-		  )
-		| undefined;
+		| "Activating"
+		| "ActivationFailed"
+		| "Active"
+		| "Deleted"
+		| "Deleting"
+		| "DeletionFailed"
+		| "FailingOver"
+		| "FailoverFailed"
+		| "Resuming"
+		| "Suspended"
+		| "Suspending"
+		| "Transitioning";
 }
 export interface IotDpsSkuInfo {
-	readonly capacity?: number | undefined;
-	readonly name?: "S1" | undefined;
-	readonly tier?: string | undefined;
+	readonly capacity?: number;
+	readonly name?: "S1";
+	readonly tier?: string;
 }
 export interface IotHubDefinitionDescription {
-	readonly allocationWeight?: number | undefined;
-	readonly applyAllocationPolicy?: boolean | undefined;
+	readonly allocationWeight?: number;
+	readonly applyAllocationPolicy?: boolean;
 	readonly connectionString: string;
 	readonly location: string;
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SharedAccessSignatureAuthorizationRuleAccessRightsDescription {
 	readonly keyName: string;
-	readonly primaryKey?: string | undefined;
+	readonly primaryKey?: string;
 	readonly rights:
 		| "DeviceConnect"
 		| "EnrollmentRead"
@@ -113,11 +110,11 @@ export interface SharedAccessSignatureAuthorizationRuleAccessRightsDescription {
 		| "RegistrationStatusRead"
 		| "RegistrationStatusWrite"
 		| "ServiceConfig";
-	readonly secondaryKey?: string | undefined;
+	readonly secondaryKey?: string;
 }
 export interface SharedAccessSignatureAuthorizationRuleListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: SharedAccessSignatureAuthorizationRuleAccessRightsDescription[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: SharedAccessSignatureAuthorizationRuleAccessRightsDescription[];
 }
 export default {
 	provisioningServices: provisioningServices,

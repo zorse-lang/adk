@@ -18,7 +18,7 @@ export interface deviceSecurityGroupsComponentOutputs {
 }
 export interface deviceSecurityGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: DeviceSecurityGroupProperties | undefined;
+	readonly properties?: DeviceSecurityGroupProperties;
 }
 export class iotSecuritySolutions
 	extends ArmResource<iotSecuritySolutionsComponentInputs>
@@ -37,11 +37,11 @@ export interface iotSecuritySolutionsComponentOutputs {
 	readonly type: "Microsoft.Security/iotSecuritySolutions";
 }
 export interface iotSecuritySolutionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: IoTSecuritySolutionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TagsResourceTags | undefined;
+	readonly properties?: IoTSecuritySolutionProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TagsResourceTags;
 }
 export class iotSecuritySolutions_analyticsModels
 	extends ArmResource<iotSecuritySolutions_analyticsModelsComponentInputs>
@@ -61,7 +61,7 @@ export interface iotSecuritySolutions_analyticsModelsComponentOutputs {
 }
 export interface iotSecuritySolutions_analyticsModelsComponentInputs {
 	readonly name: string;
-	readonly properties?: IoTSecuritySolutionAnalyticsModelProperties | undefined;
+	readonly properties?: IoTSecuritySolutionAnalyticsModelProperties;
 }
 export class iotSecuritySolutions_analyticsModels_aggregatedAlerts
 	extends ArmResource<iotSecuritySolutions_analyticsModels_aggregatedAlertsComponentInputs>
@@ -87,8 +87,8 @@ export interface iotSecuritySolutions_analyticsModels_aggregatedAlertsComponentO
 }
 export interface iotSecuritySolutions_analyticsModels_aggregatedAlertsComponentInputs {
 	readonly name: string;
-	readonly properties?: IoTSecurityAggregatedAlertProperties | undefined;
-	readonly tags?: TagsResourceTags | undefined;
+	readonly properties?: IoTSecurityAggregatedAlertProperties;
+	readonly tags?: TagsResourceTags;
 }
 export class iotSecuritySolutions_analyticsModels_aggregatedRecommendations
 	extends ArmResource<iotSecuritySolutions_analyticsModels_aggregatedRecommendationsComponentInputs>
@@ -117,8 +117,8 @@ export interface iotSecuritySolutions_analyticsModels_aggregatedRecommendationsC
 }
 export interface iotSecuritySolutions_analyticsModels_aggregatedRecommendationsComponentInputs {
 	readonly name: string;
-	readonly properties?: IoTSecurityAggregatedRecommendationProperties | undefined;
-	readonly tags?: TagsResourceTags | undefined;
+	readonly properties?: IoTSecurityAggregatedRecommendationProperties;
+	readonly tags?: TagsResourceTags;
 }
 export class iotSecuritySolutions_iotAlerts
 	extends ArmResource<iotSecuritySolutions_iotAlertsComponentInputs>
@@ -138,7 +138,7 @@ export interface iotSecuritySolutions_iotAlertsComponentOutputs {
 }
 export interface iotSecuritySolutions_iotAlertsComponentInputs {
 	readonly name: string;
-	readonly properties?: IotAlertProperties | undefined;
+	readonly properties?: IotAlertProperties;
 }
 export class iotSecuritySolutions_iotAlertTypes
 	extends ArmResource<iotSecuritySolutions_iotAlertTypesComponentInputs>
@@ -158,7 +158,7 @@ export interface iotSecuritySolutions_iotAlertTypesComponentOutputs {
 }
 export interface iotSecuritySolutions_iotAlertTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: IotAlertTypeProperties | undefined;
+	readonly properties?: IotAlertTypeProperties;
 }
 export class iotSecuritySolutions_iotRecommendations
 	extends ArmResource<iotSecuritySolutions_iotRecommendationsComponentInputs>
@@ -178,7 +178,7 @@ export interface iotSecuritySolutions_iotRecommendationsComponentOutputs {
 }
 export interface iotSecuritySolutions_iotRecommendationsComponentInputs {
 	readonly name: string;
-	readonly properties?: IotRecommendationProperties | undefined;
+	readonly properties?: IotRecommendationProperties;
 }
 export class iotSecuritySolutions_iotRecommendationTypes
 	extends ArmResource<iotSecuritySolutions_iotRecommendationTypesComponentInputs>
@@ -204,168 +204,165 @@ export interface iotSecuritySolutions_iotRecommendationTypesComponentOutputs {
 }
 export interface iotSecuritySolutions_iotRecommendationTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: IotRecommendationTypeProperties | undefined;
+	readonly properties?: IotRecommendationTypeProperties;
 }
 export interface AdditionalWorkspacesProperties {
-	readonly dataTypes?: ("Alerts" | "RawEvents"[]) | undefined;
-	readonly type?: "Sentinel" | undefined;
-	readonly workspace?: string | undefined;
+	readonly dataTypes?: "Alerts" | "RawEvents"[];
+	readonly type?: "Sentinel";
+	readonly workspace?: string;
 }
 export interface AllowlistCustomAlertRule {
 	readonly allowlistValues: string[];
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly isEnabled: boolean;
-	readonly valueType?: ("IpCidr" | "String") | undefined;
+	readonly valueType?: "IpCidr" | "String";
 }
 export interface DenylistCustomAlertRule {
 	readonly denylistValues: string[];
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly isEnabled: boolean;
 	readonly ruleType: string;
-	readonly valueType?: ("IpCidr" | "String") | undefined;
+	readonly valueType?: "IpCidr" | "String";
 }
 export interface DeviceSecurityGroupProperties {
-	readonly allowlistRules?: AllowlistCustomAlertRule[] | undefined;
-	readonly denylistRules?: DenylistCustomAlertRule[] | undefined;
-	readonly thresholdRules?: ThresholdCustomAlertRule[] | undefined;
-	readonly timeWindowRules?: TimeWindowCustomAlertRule[] | undefined;
+	readonly allowlistRules?: AllowlistCustomAlertRule[];
+	readonly denylistRules?: DenylistCustomAlertRule[];
+	readonly thresholdRules?: ThresholdCustomAlertRule[];
+	readonly timeWindowRules?: TimeWindowCustomAlertRule[];
 }
 export interface IotAlertProperties {
-	readonly alertType?: string | undefined;
-	readonly compromisedEntity?: string | undefined;
-	readonly endTimeUtc?: string | undefined;
-	readonly entities?: any[] | undefined;
-	readonly extendedProperties?: any | undefined;
-	readonly startTimeUtc?: string | undefined;
-	readonly systemAlertId?: string | undefined;
+	readonly alertType?: string;
+	readonly compromisedEntity?: string;
+	readonly endTimeUtc?: string;
+	readonly entities?: any[];
+	readonly extendedProperties?: any;
+	readonly startTimeUtc?: string;
+	readonly systemAlertId?: string;
 }
 export interface IotAlertTypeProperties {
-	readonly alertDisplayName?: string | undefined;
-	readonly description?: string | undefined;
+	readonly alertDisplayName?: string;
+	readonly description?: string;
 	readonly intent?:
-		| (
-				| "Collection"
-				| "CommandAndControl"
-				| "CredentialAccess"
-				| "DefenseEvasion"
-				| "Discovery"
-				| "Execution"
-				| "Exfiltration"
-				| "Exploitation"
-				| "Impact"
-				| "InitialAccess"
-				| "LateralMovement"
-				| "Persistence"
-				| "PreAttack"
-				| "PrivilegeEscalation"
-				| "Probing"
-				| "Unknown"
-		  )
-		| undefined;
-	readonly productComponentName?: string | undefined;
-	readonly productName?: string | undefined;
-	readonly providerName?: string | undefined;
-	readonly remediationSteps?: string[] | undefined;
-	readonly severity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
-	readonly vendorName?: string | undefined;
+		| "Collection"
+		| "CommandAndControl"
+		| "CredentialAccess"
+		| "DefenseEvasion"
+		| "Discovery"
+		| "Execution"
+		| "Exfiltration"
+		| "Exploitation"
+		| "Impact"
+		| "InitialAccess"
+		| "LateralMovement"
+		| "Persistence"
+		| "PreAttack"
+		| "PrivilegeEscalation"
+		| "Probing"
+		| "Unknown";
+	readonly productComponentName?: string;
+	readonly productName?: string;
+	readonly providerName?: string;
+	readonly remediationSteps?: string[];
+	readonly severity?: "High" | "Informational" | "Low" | "Medium";
+	readonly vendorName?: string;
 }
 export interface IotRecommendationProperties {
-	readonly deviceId?: string | undefined;
-	readonly discoveredTimeUtc?: string | undefined;
-	readonly recommendationAdditionalData?: any | undefined;
-	readonly recommendationType?: string | undefined;
+	readonly deviceId?: string;
+	readonly discoveredTimeUtc?: string;
+	readonly recommendationAdditionalData?: any;
+	readonly recommendationType?: string;
 }
 export interface IotRecommendationTypeProperties {
-	readonly control?: string | undefined;
-	readonly dataSource?: string | undefined;
-	readonly description?: string | undefined;
-	readonly productComponentName?: string | undefined;
-	readonly productName?: string | undefined;
-	readonly recommendationDisplayName?: string | undefined;
-	readonly remediationSteps?: string[] | undefined;
-	readonly severity?: ("Healthy" | "High" | "Low" | "Medium" | "NotApplicable" | "OffByPolicy" | "Unknown") | undefined;
-	readonly vendorName?: string | undefined;
+	readonly control?: string;
+	readonly dataSource?: string;
+	readonly description?: string;
+	readonly productComponentName?: string;
+	readonly productName?: string;
+	readonly recommendationDisplayName?: string;
+	readonly remediationSteps?: string[];
+	readonly severity?: "Healthy" | "High" | "Low" | "Medium" | "NotApplicable" | "OffByPolicy" | "Unknown";
+	readonly vendorName?: string;
 }
 export interface IoTSecurityAggregatedAlertProperties {
-	readonly actionTaken?: string | undefined;
-	readonly aggregatedDateUtc?: string | undefined;
-	readonly alertDisplayName?: string | undefined;
-	readonly alertType?: string | undefined;
-	readonly count?: number | undefined;
-	readonly description?: string | undefined;
-	readonly effectedResourceType?: string | undefined;
-	readonly logAnalyticsQuery?: string | undefined;
-	readonly remediationSteps?: string | undefined;
-	readonly reportedSeverity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
-	readonly systemSource?: string | undefined;
-	readonly topDevicesList?: IoTSecurityAggregatedAlertPropertiesTopDevicesListItem[] | undefined;
-	readonly vendorName?: string | undefined;
+	readonly actionTaken?: string;
+	readonly aggregatedDateUtc?: string;
+	readonly alertDisplayName?: string;
+	readonly alertType?: string;
+	readonly count?: number;
+	readonly description?: string;
+	readonly effectedResourceType?: string;
+	readonly logAnalyticsQuery?: string;
+	readonly remediationSteps?: string;
+	readonly reportedSeverity?: "High" | "Informational" | "Low" | "Medium";
+	readonly systemSource?: string;
+	readonly topDevicesList?: IoTSecurityAggregatedAlertPropertiesTopDevicesListItem[];
+	readonly vendorName?: string;
 }
 export interface IoTSecurityAggregatedAlertPropertiesTopDevicesListItem {
-	readonly alertsCount?: number | undefined;
-	readonly deviceId?: string | undefined;
-	readonly lastOccurrence?: string | undefined;
+	readonly alertsCount?: number;
+	readonly deviceId?: string;
+	readonly lastOccurrence?: string;
 }
 export interface IoTSecurityAggregatedRecommendationProperties {
-	readonly description?: string | undefined;
-	readonly detectedBy?: string | undefined;
-	readonly healthyDevices?: number | undefined;
-	readonly logAnalyticsQuery?: string | undefined;
-	readonly recommendationDisplayName?: string | undefined;
-	readonly recommendationName?: string | undefined;
-	readonly recommendationTypeId?: string | undefined;
-	readonly remediationSteps?: string | undefined;
-	readonly reportedSeverity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
-	readonly unhealthyDeviceCount?: number | undefined;
+	readonly description?: string;
+	readonly detectedBy?: string;
+	readonly healthyDevices?: number;
+	readonly logAnalyticsQuery?: string;
+	readonly recommendationDisplayName?: string;
+	readonly recommendationName?: string;
+	readonly recommendationTypeId?: string;
+	readonly remediationSteps?: string;
+	readonly reportedSeverity?: "High" | "Informational" | "Low" | "Medium";
+	readonly unhealthyDeviceCount?: number;
 }
 export interface IoTSecurityAlertedDevice {
-	readonly alertsCount?: number | undefined;
-	readonly deviceId?: string | undefined;
+	readonly alertsCount?: number;
+	readonly deviceId?: string;
 }
 export interface IoTSecurityDeviceAlert {
-	readonly alertDisplayName?: string | undefined;
-	readonly alertsCount?: number | undefined;
-	readonly reportedSeverity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
+	readonly alertDisplayName?: string;
+	readonly alertsCount?: number;
+	readonly reportedSeverity?: "High" | "Informational" | "Low" | "Medium";
 }
 export interface IoTSecurityDeviceRecommendation {
-	readonly devicesCount?: number | undefined;
-	readonly recommendationDisplayName?: string | undefined;
-	readonly reportedSeverity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
+	readonly devicesCount?: number;
+	readonly recommendationDisplayName?: string;
+	readonly reportedSeverity?: "High" | "Informational" | "Low" | "Medium";
 }
 export interface IoTSecuritySolutionAnalyticsModelProperties {
-	readonly devicesMetrics?: IoTSecuritySolutionAnalyticsModelPropertiesDevicesMetricsItem[] | undefined;
-	readonly metrics?: IoTSeverityMetrics | undefined;
-	readonly mostPrevalentDeviceAlerts?: IoTSecurityDeviceAlert[] | undefined;
-	readonly mostPrevalentDeviceRecommendations?: IoTSecurityDeviceRecommendation[] | undefined;
-	readonly topAlertedDevices?: IoTSecurityAlertedDevice[] | undefined;
-	readonly unhealthyDeviceCount?: number | undefined;
+	readonly devicesMetrics?: IoTSecuritySolutionAnalyticsModelPropertiesDevicesMetricsItem[];
+	readonly metrics?: IoTSeverityMetrics;
+	readonly mostPrevalentDeviceAlerts?: IoTSecurityDeviceAlert[];
+	readonly mostPrevalentDeviceRecommendations?: IoTSecurityDeviceRecommendation[];
+	readonly topAlertedDevices?: IoTSecurityAlertedDevice[];
+	readonly unhealthyDeviceCount?: number;
 }
 export interface IoTSecuritySolutionAnalyticsModelPropertiesDevicesMetricsItem {
-	readonly date?: string | undefined;
-	readonly devicesMetrics?: IoTSeverityMetrics | undefined;
+	readonly date?: string;
+	readonly devicesMetrics?: IoTSeverityMetrics;
 }
 export interface IoTSecuritySolutionProperties {
-	readonly additionalWorkspaces?: AdditionalWorkspacesProperties[] | undefined;
-	readonly autoDiscoveredResources?: string[] | undefined;
-	readonly disabledDataSources?: "TwinData"[] | undefined;
+	readonly additionalWorkspaces?: AdditionalWorkspacesProperties[];
+	readonly autoDiscoveredResources?: string[];
+	readonly disabledDataSources?: "TwinData"[];
 	readonly displayName: string;
-	readonly export?: "RawEvents"[] | undefined;
+	readonly export?: "RawEvents"[];
 	readonly iotHubs: string[];
-	readonly recommendationsConfiguration?: RecommendationConfigurationProperties[] | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly unmaskedIpLoggingStatus?: ("Disabled" | "Enabled") | undefined;
-	readonly userDefinedResources?: UserDefinedResourcesProperties | undefined;
-	readonly workspace?: string | undefined;
+	readonly recommendationsConfiguration?: RecommendationConfigurationProperties[];
+	readonly status?: "Disabled" | "Enabled";
+	readonly unmaskedIpLoggingStatus?: "Disabled" | "Enabled";
+	readonly userDefinedResources?: UserDefinedResourcesProperties;
+	readonly workspace?: string;
 }
 export interface IoTSeverityMetrics {
-	readonly high?: number | undefined;
-	readonly low?: number | undefined;
-	readonly medium?: number | undefined;
+	readonly high?: number;
+	readonly low?: number;
+	readonly medium?: number;
 }
 export interface RecommendationConfigurationProperties {
-	readonly name?: string | undefined;
+	readonly name?: string;
 	readonly recommendationType:
 		| "IoT_ACRAuthentication"
 		| "IoT_AgentSendsUnutilizedMessages"
@@ -386,26 +383,26 @@ export interface RecommendationConfigurationProperties {
 	readonly status: "Disabled" | "Enabled";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TagsResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ThresholdCustomAlertRule {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly isEnabled: boolean;
 	readonly maxThreshold: number;
 	readonly minThreshold: number;
 }
 export interface TimeWindowCustomAlertRule {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly isEnabled: boolean;
 	readonly maxThreshold: number;
 	readonly minThreshold: number;

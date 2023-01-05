@@ -17,8 +17,8 @@ export interface labPlansComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: LabPlanProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class labPlans_images
 	extends ArmResource<labPlans_imagesComponentInputs>
@@ -39,7 +39,7 @@ export interface labPlans_imagesComponentOutputs {
 export interface labPlans_imagesComponentInputs {
 	readonly name: string;
 	readonly properties: ImageProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class labs extends ArmResource<labsComponentInputs> implements labsComponentOutputs {
 	constructor(entity: ADKEntity, options: labsComponentInputs) {
@@ -58,8 +58,8 @@ export interface labsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: LabProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class labs_schedules extends ArmResource<labs_schedulesComponentInputs> implements labs_schedulesComponentOutputs {
 	constructor(entity: ADKEntity, options: labs_schedulesComponentInputs) {
@@ -77,7 +77,7 @@ export interface labs_schedulesComponentOutputs {
 export interface labs_schedulesComponentInputs {
 	readonly name: string;
 	readonly properties: ScheduleProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class labs_users extends ArmResource<labs_usersComponentInputs> implements labs_usersComponentOutputs {
 	constructor(entity: ADKEntity, options: labs_usersComponentInputs) {
@@ -95,7 +95,7 @@ export interface labs_usersComponentOutputs {
 export interface labs_usersComponentInputs {
 	readonly name: string;
 	readonly properties: UserProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class labs_virtualMachines
 	extends ArmResource<labs_virtualMachinesComponentInputs>
@@ -115,172 +115,172 @@ export interface labs_virtualMachinesComponentOutputs {
 }
 export interface labs_virtualMachinesComponentInputs {
 	readonly name: string;
-	readonly properties?: VirtualMachineProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: VirtualMachineProperties;
+	readonly systemData?: SystemData;
 }
 export interface AutoShutdownProfile {
-	readonly disconnectDelay?: string | undefined;
-	readonly idleDelay?: string | undefined;
-	readonly noConnectDelay?: string | undefined;
-	readonly shutdownOnDisconnect?: "Disabled" | undefined;
-	readonly shutdownOnIdle?: ("LowUsage" | "None") | undefined;
-	readonly shutdownWhenNotConnected?: "Disabled" | undefined;
+	readonly disconnectDelay?: string;
+	readonly idleDelay?: string;
+	readonly noConnectDelay?: string;
+	readonly shutdownOnDisconnect?: "Disabled";
+	readonly shutdownOnIdle?: "LowUsage" | "None";
+	readonly shutdownWhenNotConnected?: "Disabled";
 }
 export interface ConnectionProfile {
-	readonly clientRdpAccess?: ("None" | "Private") | undefined;
-	readonly clientSshAccess?: ("None" | "Private") | undefined;
-	readonly webRdpAccess?: ("None" | "Private") | undefined;
-	readonly webSshAccess?: ("None" | "Private") | undefined;
+	readonly clientRdpAccess?: "None" | "Private";
+	readonly clientSshAccess?: "None" | "Private";
+	readonly webRdpAccess?: "None" | "Private";
+	readonly webSshAccess?: "None" | "Private";
 }
 export interface Credentials {
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly username: string;
 }
 export interface ImageProperties {
-	readonly author?: string | undefined;
-	readonly availableRegions?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enabledState?: "Disabled" | undefined;
-	readonly iconUrl?: string | undefined;
-	readonly offer?: string | undefined;
-	readonly osState?: "Generalized" | undefined;
-	readonly osType?: "Linux" | undefined;
-	readonly plan?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded") | undefined;
-	readonly publisher?: string | undefined;
-	readonly sharedGalleryId?: string | undefined;
-	readonly sku?: string | undefined;
-	readonly termsStatus?: "Disabled" | undefined;
-	readonly version?: string | undefined;
+	readonly author?: string;
+	readonly availableRegions?: string[];
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly enabledState?: "Disabled";
+	readonly iconUrl?: string;
+	readonly offer?: string;
+	readonly osState?: "Generalized";
+	readonly osType?: "Linux";
+	readonly plan?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded";
+	readonly publisher?: string;
+	readonly sharedGalleryId?: string;
+	readonly sku?: string;
+	readonly termsStatus?: "Disabled";
+	readonly version?: string;
 }
 export interface ImageReference {
-	readonly exactVersion?: string | undefined;
-	readonly id?: string | undefined;
-	readonly offer?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly sku?: string | undefined;
-	readonly version?: string | undefined;
+	readonly exactVersion?: string;
+	readonly id?: string;
+	readonly offer?: string;
+	readonly publisher?: string;
+	readonly sku?: string;
+	readonly version?: string;
 }
 export interface LabNetworkProfile {
-	readonly loadBalancerId?: string | undefined;
-	readonly publicIpId?: string | undefined;
-	readonly subnetId?: string | undefined;
+	readonly loadBalancerId?: string;
+	readonly publicIpId?: string;
+	readonly subnetId?: string;
 }
 export interface LabPlanNetworkProfile {
-	readonly subnetId?: string | undefined;
+	readonly subnetId?: string;
 }
 export interface LabPlanProperties {
-	readonly allowedRegions?: string[] | undefined;
-	readonly defaultAutoShutdownProfile?: AutoShutdownProfile | undefined;
-	readonly defaultConnectionProfile?: ConnectionProfile | undefined;
-	readonly defaultNetworkProfile?: LabPlanNetworkProfile | undefined;
-	readonly linkedLmsInstance?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded") | undefined;
-	readonly sharedGalleryId?: string | undefined;
-	readonly supportInfo?: SupportInfo | undefined;
+	readonly allowedRegions?: string[];
+	readonly defaultAutoShutdownProfile?: AutoShutdownProfile;
+	readonly defaultConnectionProfile?: ConnectionProfile;
+	readonly defaultNetworkProfile?: LabPlanNetworkProfile;
+	readonly linkedLmsInstance?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded";
+	readonly sharedGalleryId?: string;
+	readonly supportInfo?: SupportInfo;
 }
 export interface LabProperties {
-	readonly autoShutdownProfile?: AutoShutdownProfile | undefined;
-	readonly connectionProfile?: ConnectionProfile | undefined;
-	readonly description?: string | undefined;
-	readonly labPlanId?: string | undefined;
-	readonly networkProfile?: LabNetworkProfile | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded") | undefined;
-	readonly rosterProfile?: RosterProfile | undefined;
-	readonly securityProfile?: SecurityProfile | undefined;
-	readonly state?: ("Draft" | "Published" | "Publishing" | "Scaling") | undefined;
-	readonly title?: string | undefined;
-	readonly virtualMachineProfile?: VirtualMachineProfile | undefined;
+	readonly autoShutdownProfile?: AutoShutdownProfile;
+	readonly connectionProfile?: ConnectionProfile;
+	readonly description?: string;
+	readonly labPlanId?: string;
+	readonly networkProfile?: LabNetworkProfile;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded";
+	readonly rosterProfile?: RosterProfile;
+	readonly securityProfile?: SecurityProfile;
+	readonly state?: "Draft" | "Published" | "Publishing" | "Scaling";
+	readonly title?: string;
+	readonly virtualMachineProfile?: VirtualMachineProfile;
 }
 export interface RecurrencePattern {
 	readonly expirationDate: string;
 	readonly frequency: "Daily";
-	readonly interval?: number | undefined;
-	readonly weekDays?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[]) | undefined;
+	readonly interval?: number;
+	readonly weekDays?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[];
 }
 export interface RosterProfile {
-	readonly activeDirectoryGroupId?: string | undefined;
-	readonly lmsInstance?: string | undefined;
-	readonly ltiClientId?: string | undefined;
-	readonly ltiContextId?: string | undefined;
-	readonly ltiRosterEndpoint?: string | undefined;
+	readonly activeDirectoryGroupId?: string;
+	readonly lmsInstance?: string;
+	readonly ltiClientId?: string;
+	readonly ltiContextId?: string;
+	readonly ltiRosterEndpoint?: string;
 }
 export interface ScheduleProperties {
-	readonly notes?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded") | undefined;
-	readonly recurrencePattern?: RecurrencePattern | undefined;
-	readonly startAt?: string | undefined;
-	readonly stopAt?: string | undefined;
-	readonly timeZoneId?: string | undefined;
+	readonly notes?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded";
+	readonly recurrencePattern?: RecurrencePattern;
+	readonly startAt?: string;
+	readonly stopAt?: string;
+	readonly timeZoneId?: string;
 }
 export interface SecurityProfile {
-	readonly openAccess?: "Disabled" | undefined;
-	readonly registrationCode?: string | undefined;
+	readonly openAccess?: "Disabled";
+	readonly registrationCode?: string;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
 	readonly name: string;
-	readonly size?: string | undefined;
-	readonly tier?: ("Basic" | "Free" | "Premium") | undefined;
+	readonly size?: string;
+	readonly tier?: "Basic" | "Free" | "Premium";
 }
 export interface SupportInfo {
-	readonly email?: string | undefined;
-	readonly instructions?: string | undefined;
-	readonly phone?: string | undefined;
-	readonly url?: string | undefined;
+	readonly email?: string;
+	readonly instructions?: string;
+	readonly phone?: string;
+	readonly url?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserProperties {
-	readonly additionalUsageQuota?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly additionalUsageQuota?: string;
+	readonly displayName?: string;
 	readonly email: string;
-	readonly invitationSent?: string | undefined;
-	readonly invitationState?: ("Failed" | "NotSent" | "Sending") | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded") | undefined;
-	readonly registrationState?: "NotRegistered" | undefined;
-	readonly totalUsage?: string | undefined;
+	readonly invitationSent?: string;
+	readonly invitationState?: "Failed" | "NotSent" | "Sending";
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded";
+	readonly registrationState?: "NotRegistered";
+	readonly totalUsage?: string;
 }
 export interface VirtualMachineAdditionalCapabilities {
-	readonly installGpuDrivers?: "Disabled" | undefined;
+	readonly installGpuDrivers?: "Disabled";
 }
 export interface VirtualMachineConnectionProfile {
-	readonly adminUsername?: string | undefined;
-	readonly nonAdminUsername?: string | undefined;
-	readonly privateIpAddress?: string | undefined;
-	readonly rdpAuthority?: string | undefined;
-	readonly rdpInBrowserUrl?: string | undefined;
-	readonly sshAuthority?: string | undefined;
-	readonly sshInBrowserUrl?: string | undefined;
+	readonly adminUsername?: string;
+	readonly nonAdminUsername?: string;
+	readonly privateIpAddress?: string;
+	readonly rdpAuthority?: string;
+	readonly rdpInBrowserUrl?: string;
+	readonly sshAuthority?: string;
+	readonly sshInBrowserUrl?: string;
 }
 export interface VirtualMachineProfile {
-	readonly additionalCapabilities?: VirtualMachineAdditionalCapabilities | undefined;
+	readonly additionalCapabilities?: VirtualMachineAdditionalCapabilities;
 	readonly adminUser: Credentials;
 	readonly createOption: "Image";
 	readonly imageReference: ImageReference;
-	readonly nonAdminUser?: Credentials | undefined;
-	readonly osType?: "Linux" | undefined;
+	readonly nonAdminUser?: Credentials;
+	readonly osType?: "Linux";
 	readonly sku: Sku;
 	readonly usageQuota: string;
-	readonly useSharedPassword?: "Disabled" | undefined;
+	readonly useSharedPassword?: "Disabled";
 }
 export interface VirtualMachineProperties {
-	readonly claimedByUserId?: string | undefined;
-	readonly connectionProfile?: VirtualMachineConnectionProfile | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded") | undefined;
-	readonly state?: ("Redeploying" | "Reimaging" | "ResettingPassword" | "Running" | "Starting" | "Stopped") | undefined;
-	readonly vmType?: "Template" | undefined;
+	readonly claimedByUserId?: string;
+	readonly connectionProfile?: VirtualMachineConnectionProfile;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Locked" | "Succeeded";
+	readonly state?: "Redeploying" | "Reimaging" | "ResettingPassword" | "Running" | "Starting" | "Stopped";
+	readonly vmType?: "Template";
 }
 export default {
 	labPlans: labPlans,

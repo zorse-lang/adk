@@ -14,12 +14,12 @@ export interface clustersComponentOutputs {
 	readonly type: "Microsoft.StreamAnalytics/clusters";
 }
 export interface clustersComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
-	readonly sku?: ClusterSku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ClusterProperties;
+	readonly sku?: ClusterSku;
+	readonly tags?: TrackedResourceTags;
 }
 export class clusters_privateEndpoints
 	extends ArmResource<clusters_privateEndpointsComponentInputs>
@@ -38,9 +38,9 @@ export interface clusters_privateEndpointsComponentOutputs {
 	readonly type: "Microsoft.StreamAnalytics/clusters/privateEndpoints";
 }
 export interface clusters_privateEndpointsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: PrivateEndpointProperties | undefined;
+	readonly properties?: PrivateEndpointProperties;
 }
 export function listStreamingJobs(resource: clusters): ClusterJobListResult {
 	if (resource.apiVersion !== "2020-03-01-preview") {
@@ -52,58 +52,55 @@ export function listStreamingJobs(resource: clusters): ClusterJobListResult {
 	throw new Error("not implemented");
 }
 export interface ClusterJob {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly jobState?:
-		| (
-				| "Created"
-				| "Degraded"
-				| "Deleting"
-				| "Failed"
-				| "Restarting"
-				| "Running"
-				| "Scaling"
-				| "Starting"
-				| "Stopped"
-				| "Stopping"
-		  )
-		| undefined;
-	readonly streamingUnits?: number | undefined;
+		| "Created"
+		| "Degraded"
+		| "Deleting"
+		| "Failed"
+		| "Restarting"
+		| "Running"
+		| "Scaling"
+		| "Starting"
+		| "Stopped"
+		| "Stopping";
+	readonly streamingUnits?: number;
 }
 export interface ClusterJobListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: ClusterJob[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: ClusterJob[];
 }
 export interface ClusterProperties {
-	readonly capacityAllocated?: number | undefined;
-	readonly capacityAssigned?: number | undefined;
-	readonly clusterId?: string | undefined;
-	readonly createdDate?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly capacityAllocated?: number;
+	readonly capacityAssigned?: number;
+	readonly clusterId?: string;
+	readonly createdDate?: string;
+	readonly provisioningState?: "Canceled" | "Failed" | "InProgress" | "Succeeded";
 }
 export interface ClusterSku {
-	readonly capacity?: number | undefined;
-	readonly name?: "Default" | undefined;
+	readonly capacity?: number;
+	readonly name?: "Default";
 }
 export interface PrivateEndpointProperties {
-	readonly createdDate?: string | undefined;
-	readonly manualPrivateLinkServiceConnections?: PrivateLinkServiceConnection[] | undefined;
+	readonly createdDate?: string;
+	readonly manualPrivateLinkServiceConnections?: PrivateLinkServiceConnection[];
 }
 export interface PrivateLinkConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: string | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: string;
 }
 export interface PrivateLinkServiceConnection {
-	readonly properties?: PrivateLinkServiceConnectionProperties | undefined;
+	readonly properties?: PrivateLinkServiceConnectionProperties;
 }
 export interface PrivateLinkServiceConnectionProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkConnectionState | undefined;
-	readonly privateLinkServiceId?: string | undefined;
-	readonly requestMessage?: string | undefined;
+	readonly groupIds?: string[];
+	readonly privateLinkServiceConnectionState?: PrivateLinkConnectionState;
+	readonly privateLinkServiceId?: string;
+	readonly requestMessage?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	clusters: clusters,

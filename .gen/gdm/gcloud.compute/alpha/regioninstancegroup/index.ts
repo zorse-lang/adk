@@ -1,23 +1,23 @@
 import { GdmResource, Entity as ADKEntity } from "@zorse/adk";
 
 export interface InstanceGroup {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly namedPorts?: NamedPort[] | undefined;
-	readonly network?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly size?: number | undefined;
-	readonly subnetwork?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly namedPorts?: NamedPort[];
+	readonly network?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly size?: number;
+	readonly subnetwork?: string;
+	readonly zone?: string;
 }
 export interface NamedPort {
-	readonly name?: string | undefined;
-	readonly port?: number | undefined;
+	readonly name?: string;
+	readonly port?: number;
 }
 export default {};

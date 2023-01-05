@@ -17,13 +17,13 @@ export interface cdnWebApplicationFirewallPoliciesComponentOutputs {
 	readonly type: "Microsoft.Cdn/cdnWebApplicationFirewallPolicies";
 }
 export interface cdnWebApplicationFirewallPoliciesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CdnWebApplicationFirewallPolicyProperties | undefined;
+	readonly properties?: CdnWebApplicationFirewallPolicyProperties;
 	readonly sku: Sku;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class profiles extends ArmResource<profilesComponentInputs> implements profilesComponentOutputs {
 	constructor(entity: ADKEntity, options: profilesComponentInputs) {
@@ -39,14 +39,14 @@ export interface profilesComponentOutputs {
 	readonly type: "Microsoft.Cdn/profiles";
 }
 export interface profilesComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly kind?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ProfileProperties | undefined;
+	readonly properties?: ProfileProperties;
 	readonly sku: Sku;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class profiles_afdEndpoints
 	extends ArmResource<profiles_afdEndpointsComponentInputs>
@@ -67,9 +67,9 @@ export interface profiles_afdEndpointsComponentOutputs {
 export interface profiles_afdEndpointsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AFDEndpointProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: AFDEndpointProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class profiles_afdEndpoints_routes
 	extends ArmResource<profiles_afdEndpoints_routesComponentInputs>
@@ -89,8 +89,8 @@ export interface profiles_afdEndpoints_routesComponentOutputs {
 }
 export interface profiles_afdEndpoints_routesComponentInputs {
 	readonly name: string;
-	readonly properties?: RouteProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: RouteProperties;
+	readonly systemData?: SystemData;
 }
 export class profiles_customDomains
 	extends ArmResource<profiles_customDomainsComponentInputs>
@@ -110,8 +110,8 @@ export interface profiles_customDomainsComponentOutputs {
 }
 export interface profiles_customDomainsComponentInputs {
 	readonly name: string;
-	readonly properties?: AFDDomainProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AFDDomainProperties;
+	readonly systemData?: SystemData;
 }
 export class profiles_endpoints
 	extends ArmResource<profiles_endpointsComponentInputs>
@@ -132,9 +132,9 @@ export interface profiles_endpointsComponentOutputs {
 export interface profiles_endpointsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: EndpointProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: EndpointProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class profiles_endpoints_customDomains
 	extends ArmResource<profiles_endpoints_customDomainsComponentInputs>
@@ -154,8 +154,8 @@ export interface profiles_endpoints_customDomainsComponentOutputs {
 }
 export interface profiles_endpoints_customDomainsComponentInputs {
 	readonly name: string;
-	readonly properties?: CustomDomainPropertiesParametersOrCustomDomainProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CustomDomainPropertiesParametersOrCustomDomainProperties;
+	readonly systemData?: SystemData;
 }
 export class profiles_endpoints_originGroups
 	extends ArmResource<profiles_endpoints_originGroupsComponentInputs>
@@ -175,8 +175,8 @@ export interface profiles_endpoints_originGroupsComponentOutputs {
 }
 export interface profiles_endpoints_originGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: OriginGroupProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: OriginGroupProperties;
+	readonly systemData?: SystemData;
 }
 export class profiles_endpoints_origins
 	extends ArmResource<profiles_endpoints_originsComponentInputs>
@@ -196,8 +196,8 @@ export interface profiles_endpoints_originsComponentOutputs {
 }
 export interface profiles_endpoints_originsComponentInputs {
 	readonly name: string;
-	readonly properties?: OriginProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: OriginProperties;
+	readonly systemData?: SystemData;
 }
 export class profiles_originGroups
 	extends ArmResource<profiles_originGroupsComponentInputs>
@@ -217,8 +217,8 @@ export interface profiles_originGroupsComponentOutputs {
 }
 export interface profiles_originGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: AFDOriginGroupProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AFDOriginGroupProperties;
+	readonly systemData?: SystemData;
 }
 export class profiles_originGroups_origins
 	extends ArmResource<profiles_originGroups_originsComponentInputs>
@@ -238,8 +238,8 @@ export interface profiles_originGroups_originsComponentOutputs {
 }
 export interface profiles_originGroups_originsComponentInputs {
 	readonly name: string;
-	readonly properties?: AFDOriginProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AFDOriginProperties;
+	readonly systemData?: SystemData;
 }
 export class profiles_ruleSets
 	extends ArmResource<profiles_ruleSetsComponentInputs>
@@ -259,8 +259,8 @@ export interface profiles_ruleSetsComponentOutputs {
 }
 export interface profiles_ruleSetsComponentInputs {
 	readonly name: string;
-	readonly properties?: RuleSetProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: RuleSetProperties;
+	readonly systemData?: SystemData;
 }
 export class profiles_ruleSets_rules
 	extends ArmResource<profiles_ruleSets_rulesComponentInputs>
@@ -280,8 +280,8 @@ export interface profiles_ruleSets_rulesComponentOutputs {
 }
 export interface profiles_ruleSets_rulesComponentInputs {
 	readonly name: string;
-	readonly properties?: RuleProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: RuleProperties;
+	readonly systemData?: SystemData;
 }
 export class profiles_secrets
 	extends ArmResource<profiles_secretsComponentInputs>
@@ -301,8 +301,8 @@ export interface profiles_secretsComponentOutputs {
 }
 export interface profiles_secretsComponentInputs {
 	readonly name: string;
-	readonly properties?: SecretProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SecretProperties;
+	readonly systemData?: SystemData;
 }
 export class profiles_securityPolicies
 	extends ArmResource<profiles_securityPoliciesComponentInputs>
@@ -322,103 +322,102 @@ export interface profiles_securityPoliciesComponentOutputs {
 }
 export interface profiles_securityPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityPolicyProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SecurityPolicyProperties;
+	readonly systemData?: SystemData;
 }
 export interface ActivatedResourceReference {
-	readonly id?: string | undefined;
-	readonly isActive?: boolean | undefined;
+	readonly id?: string;
+	readonly isActive?: boolean;
 }
 export interface AFDDomainHttpsParameters {
 	readonly certificateType: "AzureFirstPartyManagedCertificate" | "CustomerCertificate" | "ManagedCertificate";
-	readonly minimumTlsVersion?: "TLS10" | undefined;
-	readonly secret?: ResourceReference | undefined;
+	readonly minimumTlsVersion?: "TLS10";
+	readonly secret?: ResourceReference;
 }
 export interface AFDDomainProperties {
-	readonly azureDnsZone?: ResourceReference | undefined;
-	readonly deploymentStatus?: ("Failed" | "InProgress" | "NotStarted" | "Succeeded") | undefined;
+	readonly azureDnsZone?: ResourceReference;
+	readonly deploymentStatus?: "Failed" | "InProgress" | "NotStarted" | "Succeeded";
 	readonly domainValidationState?:
-		| (
-				| "Approved"
-				| "InternalError"
-				| "Pending"
-				| "PendingRevalidation"
-				| "RefreshingValidationToken"
-				| "Rejected"
-				| "Submitting"
-				| "TimedOut"
-				| "Unknown"
-		  )
-		| undefined;
-	readonly extendedProperties?: AFDDomainPropertiesExtendedProperties | undefined;
+		| "Approved"
+		| "InternalError"
+		| "Pending"
+		| "PendingRevalidation"
+		| "RefreshingValidationToken"
+		| "Rejected"
+		| "Submitting"
+		| "TimedOut"
+		| "Unknown";
+	readonly extendedProperties?: AFDDomainPropertiesExtendedProperties;
 	readonly hostName: string;
-	readonly preValidatedCustomDomainResourceId?: ResourceReference | undefined;
-	readonly profileName?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly tlsSettings?: AFDDomainHttpsParameters | undefined;
-	readonly validationProperties?: DomainValidationProperties | undefined;
+	readonly preValidatedCustomDomainResourceId?: ResourceReference;
+	readonly profileName?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly tlsSettings?: AFDDomainHttpsParameters;
+	readonly validationProperties?: DomainValidationProperties;
 }
 export interface AFDDomainPropertiesExtendedProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AFDEndpointProperties {
-	readonly autoGeneratedDomainNameLabelScope?:
-		| ("NoReuse" | "ResourceGroupReuse" | "SubscriptionReuse" | "TenantReuse")
-		| undefined;
-	readonly deploymentStatus?: ("Failed" | "InProgress" | "NotStarted" | "Succeeded") | undefined;
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
-	readonly hostName?: string | undefined;
-	readonly profileName?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly autoGeneratedDomainNameLabelScope?: "NoReuse" | "ResourceGroupReuse" | "SubscriptionReuse" | "TenantReuse";
+	readonly deploymentStatus?: "Failed" | "InProgress" | "NotStarted" | "Succeeded";
+	readonly enabledState?: "Disabled" | "Enabled";
+	readonly hostName?: string;
+	readonly profileName?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface AFDOriginGroupProperties {
-	readonly deploymentStatus?: ("Failed" | "InProgress" | "NotStarted" | "Succeeded") | undefined;
-	readonly healthProbeSettings?: HealthProbeParameters | undefined;
-	readonly loadBalancingSettings?: LoadBalancingSettingsParameters | undefined;
-	readonly profileName?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly sessionAffinityState?: ("Disabled" | "Enabled") | undefined;
-	readonly trafficRestorationTimeToHealedOrNewEndpointsInMinutes?: number | undefined;
+	readonly deploymentStatus?: "Failed" | "InProgress" | "NotStarted" | "Succeeded";
+	readonly healthProbeSettings?: HealthProbeParameters;
+	readonly loadBalancingSettings?: LoadBalancingSettingsParameters;
+	readonly profileName?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly sessionAffinityState?: "Disabled" | "Enabled";
+	readonly trafficRestorationTimeToHealedOrNewEndpointsInMinutes?: number;
 }
 export interface AFDOriginProperties {
-	readonly azureOrigin?: ResourceReference | undefined;
-	readonly deploymentStatus?: ("Failed" | "InProgress" | "NotStarted" | "Succeeded") | undefined;
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
-	readonly enforceCertificateNameCheck?: boolean | undefined;
-	readonly hostName?: string | undefined;
-	readonly httpPort?: number | undefined;
-	readonly httpsPort?: number | undefined;
-	readonly originGroupName?: string | undefined;
-	readonly originHostHeader?: string | undefined;
-	readonly priority?: number | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly sharedPrivateLinkResource?: SharedPrivateLinkResourceProperties | undefined;
-	readonly weight?: number | undefined;
+	readonly azureOrigin?: ResourceReference;
+	readonly deploymentStatus?: "Failed" | "InProgress" | "NotStarted" | "Succeeded";
+	readonly enabledState?: "Disabled" | "Enabled";
+	readonly enforceCertificateNameCheck?: boolean;
+	readonly hostName?: string;
+	readonly httpPort?: number;
+	readonly httpsPort?: number;
+	readonly originGroupName?: string;
+	readonly originHostHeader?: string;
+	readonly priority?: number;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly sharedPrivateLinkResource?: SharedPrivateLinkResourceProperties;
+	readonly weight?: number;
 }
 export interface AfdRouteCacheConfiguration {
-	readonly compressionSettings?: CompressionSettings | undefined;
-	readonly queryParameters?: string | undefined;
+	readonly compressionSettings?: CompressionSettings;
+	readonly queryParameters?: string;
 	readonly queryStringCachingBehavior?:
-		| ("IgnoreQueryString" | "IgnoreSpecifiedQueryStrings" | "IncludeSpecifiedQueryStrings" | "UseQueryString")
-		| undefined;
+		| "IgnoreQueryString"
+		| "IgnoreSpecifiedQueryStrings"
+		| "IncludeSpecifiedQueryStrings"
+		| "UseQueryString";
 }
 export interface CacheConfiguration {
-	readonly cacheBehavior?: ("HonorOrigin" | "OverrideAlways" | "OverrideIfOriginMissing") | undefined;
-	readonly cacheDuration?: string | undefined;
-	readonly isCompressionEnabled?: ("Disabled" | "Enabled") | undefined;
-	readonly queryParameters?: string | undefined;
+	readonly cacheBehavior?: "HonorOrigin" | "OverrideAlways" | "OverrideIfOriginMissing";
+	readonly cacheDuration?: string;
+	readonly isCompressionEnabled?: "Disabled" | "Enabled";
+	readonly queryParameters?: string;
 	readonly queryStringCachingBehavior?:
-		| ("IgnoreQueryString" | "IgnoreSpecifiedQueryStrings" | "IncludeSpecifiedQueryStrings" | "UseQueryString")
-		| undefined;
+		| "IgnoreQueryString"
+		| "IgnoreSpecifiedQueryStrings"
+		| "IncludeSpecifiedQueryStrings"
+		| "UseQueryString";
 }
 export interface CacheExpirationActionParameters {
 	readonly cacheBehavior: "BypassCache" | "Override" | "SetIfMissing";
-	readonly cacheDuration?: string | undefined;
+	readonly cacheDuration?: string;
 	readonly cacheType: "All";
 	readonly typeName: "DeliveryRuleCacheExpirationActionParameters";
 }
 export interface CacheKeyQueryStringActionParameters {
-	readonly queryParameters?: string | undefined;
+	readonly queryParameters?: string;
 	readonly queryStringBehavior: "Exclude" | "ExcludeAll" | "Include" | "IncludeAll";
 	readonly typeName: "DeliveryRuleCacheKeyQueryStringBehaviorActionParameters";
 }
@@ -427,24 +426,24 @@ export interface CdnCertificateSourceParameters {
 	readonly typeName: "CdnCertificateSourceParameters";
 }
 export interface CdnEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface CdnWebApplicationFirewallPolicyProperties {
-	readonly customRules?: CustomRuleList | undefined;
-	readonly endpointLinks?: CdnEndpoint[] | undefined;
-	readonly extendedProperties?: CdnWebApplicationFirewallPolicyPropertiesExtendedProperties | undefined;
-	readonly managedRules?: ManagedRuleSetList | undefined;
-	readonly policySettings?: PolicySettings | undefined;
-	readonly provisioningState?: ("Creating" | "Failed" | "Succeeded") | undefined;
-	readonly rateLimitRules?: RateLimitRuleList | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling") | undefined;
+	readonly customRules?: CustomRuleList;
+	readonly endpointLinks?: CdnEndpoint[];
+	readonly extendedProperties?: CdnWebApplicationFirewallPolicyPropertiesExtendedProperties;
+	readonly managedRules?: ManagedRuleSetList;
+	readonly policySettings?: PolicySettings;
+	readonly provisioningState?: "Creating" | "Failed" | "Succeeded";
+	readonly rateLimitRules?: RateLimitRuleList;
+	readonly resourceState?: "Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling";
 }
 export interface CdnWebApplicationFirewallPolicyPropertiesExtendedProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ClientPortMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -456,16 +455,16 @@ export interface ClientPortMatchConditionParameters {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleClientPortConditionParameters";
 }
 export interface CompressionSettings {
-	readonly contentTypesToCompress?: string[] | undefined;
-	readonly isCompressionEnabled?: boolean | undefined;
+	readonly contentTypesToCompress?: string[];
+	readonly isCompressionEnabled?: boolean;
 }
 export interface CookiesMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -477,132 +476,124 @@ export interface CookiesMatchConditionParameters {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly selector?: string | undefined;
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly selector?: string;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleCookiesConditionParameters";
 }
 export interface CustomDomainHttpsParameters {
-	readonly minimumTlsVersion?: ("None" | "TLS10") | undefined;
+	readonly minimumTlsVersion?: "None" | "TLS10";
 	readonly protocolType: "IPBased" | "ServerNameIndication";
 }
 export interface CustomDomainPropertiesParametersOrCustomDomainProperties {
-	readonly customHttpsParameters?: CustomDomainHttpsParameters | undefined;
-	readonly customHttpsProvisioningState?: ("Disabled" | "Disabling" | "Enabled" | "Enabling" | "Failed") | undefined;
+	readonly customHttpsParameters?: CustomDomainHttpsParameters;
+	readonly customHttpsProvisioningState?: "Disabled" | "Disabling" | "Enabled" | "Enabling" | "Failed";
 	readonly customHttpsProvisioningSubstate?:
-		| (
-				| "CertificateDeleted"
-				| "CertificateDeployed"
-				| "DeletingCertificate"
-				| "DeployingCertificate"
-				| "DomainControlValidationRequestApproved"
-				| "DomainControlValidationRequestRejected"
-				| "DomainControlValidationRequestTimedOut"
-				| "IssuingCertificate"
-				| "PendingDomainControlValidationREquestApproval"
-				| "SubmittingDomainControlValidationRequest"
-		  )
-		| undefined;
+		| "CertificateDeleted"
+		| "CertificateDeployed"
+		| "DeletingCertificate"
+		| "DeployingCertificate"
+		| "DomainControlValidationRequestApproved"
+		| "DomainControlValidationRequestRejected"
+		| "DomainControlValidationRequestTimedOut"
+		| "IssuingCertificate"
+		| "PendingDomainControlValidationREquestApproval"
+		| "SubmittingDomainControlValidationRequest";
 	readonly hostName: string;
-	readonly provisioningState?: ("Disabled" | "Disabling" | "Enabled" | "Enabling" | "Failed") | undefined;
-	readonly resourceState?: ("Active" | "Creating" | "Deleting") | undefined;
-	readonly validationData?: string | undefined;
+	readonly provisioningState?: "Disabled" | "Disabling" | "Enabled" | "Enabling" | "Failed";
+	readonly resourceState?: "Active" | "Creating" | "Deleting";
+	readonly validationData?: string;
 }
 export interface CustomRule {
 	readonly action: "Allow" | "Block" | "Log" | "Redirect";
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
+	readonly enabledState?: "Disabled" | "Enabled";
 	readonly matchConditions: MatchCondition[];
 	readonly name: string;
 	readonly priority: number;
 }
 export interface CustomRuleList {
-	readonly rules?: CustomRule[] | undefined;
+	readonly rules?: CustomRule[];
 }
 export interface DeepCreatedCustomDomain {
 	readonly name: string;
-	readonly properties?: DeepCreatedCustomDomainProperties | undefined;
+	readonly properties?: DeepCreatedCustomDomainProperties;
 }
 export interface DeepCreatedCustomDomainProperties {
 	readonly hostName: string;
-	readonly validationData?: string | undefined;
+	readonly validationData?: string;
 }
 export interface DeepCreatedOrigin {
 	readonly name: string;
-	readonly properties?: DeepCreatedOriginProperties | undefined;
+	readonly properties?: DeepCreatedOriginProperties;
 }
 export interface DeepCreatedOriginGroup {
 	readonly name: string;
-	readonly properties?: DeepCreatedOriginGroupProperties | undefined;
+	readonly properties?: DeepCreatedOriginGroupProperties;
 }
 export interface DeepCreatedOriginGroupProperties {
-	readonly healthProbeSettings?: HealthProbeParameters | undefined;
+	readonly healthProbeSettings?: HealthProbeParameters;
 	readonly origins: ResourceReference[];
-	readonly responseBasedOriginErrorDetectionSettings?: ResponseBasedOriginErrorDetectionParameters | undefined;
-	readonly trafficRestorationTimeToHealedOrNewEndpointsInMinutes?: number | undefined;
+	readonly responseBasedOriginErrorDetectionSettings?: ResponseBasedOriginErrorDetectionParameters;
+	readonly trafficRestorationTimeToHealedOrNewEndpointsInMinutes?: number;
 }
 export interface DeepCreatedOriginProperties {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 	readonly hostName: string;
-	readonly httpPort?: number | undefined;
-	readonly httpsPort?: number | undefined;
-	readonly originHostHeader?: string | undefined;
-	readonly priority?: number | undefined;
-	readonly privateEndpointStatus?: ("Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout") | undefined;
-	readonly privateLinkAlias?: string | undefined;
-	readonly privateLinkApprovalMessage?: string | undefined;
-	readonly privateLinkLocation?: string | undefined;
-	readonly privateLinkResourceId?: string | undefined;
-	readonly weight?: number | undefined;
+	readonly httpPort?: number;
+	readonly httpsPort?: number;
+	readonly originHostHeader?: string;
+	readonly priority?: number;
+	readonly privateEndpointStatus?: "Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout";
+	readonly privateLinkAlias?: string;
+	readonly privateLinkApprovalMessage?: string;
+	readonly privateLinkLocation?: string;
+	readonly privateLinkResourceId?: string;
+	readonly weight?: number;
 }
 export interface DeliveryRule {
 	readonly actions: DeliveryRuleActionAutoGenerated[];
-	readonly conditions?: DeliveryRuleCondition[] | undefined;
-	readonly name?: string | undefined;
+	readonly conditions?: DeliveryRuleCondition[];
+	readonly name?: string;
 	readonly order: number;
 }
 export interface DeliveryRuleActionAutoGenerated {}
 export interface DeliveryRuleCondition {}
 export interface DomainValidationProperties {
-	readonly expirationDate?: string | undefined;
-	readonly validationToken?: string | undefined;
+	readonly expirationDate?: string;
+	readonly validationToken?: string;
 }
 export interface EndpointProperties {
-	readonly contentTypesToCompress?: string[] | undefined;
-	readonly customDomains?: DeepCreatedCustomDomain[] | undefined;
-	readonly defaultOriginGroup?: ResourceReference | undefined;
-	readonly deliveryPolicy?: EndpointPropertiesUpdateParametersDeliveryPolicy | undefined;
-	readonly geoFilters?: GeoFilter[] | undefined;
-	readonly hostName?: string | undefined;
-	readonly isCompressionEnabled?: boolean | undefined;
-	readonly isHttpAllowed?: boolean | undefined;
-	readonly isHttpsAllowed?: boolean | undefined;
+	readonly contentTypesToCompress?: string[];
+	readonly customDomains?: DeepCreatedCustomDomain[];
+	readonly defaultOriginGroup?: ResourceReference;
+	readonly deliveryPolicy?: EndpointPropertiesUpdateParametersDeliveryPolicy;
+	readonly geoFilters?: GeoFilter[];
+	readonly hostName?: string;
+	readonly isCompressionEnabled?: boolean;
+	readonly isHttpAllowed?: boolean;
+	readonly isHttpsAllowed?: boolean;
 	readonly optimizationType?:
-		| (
-				| "DynamicSiteAcceleration"
-				| "GeneralMediaStreaming"
-				| "GeneralWebDelivery"
-				| "LargeFileDownload"
-				| "VideoOnDemandMediaStreaming"
-		  )
-		| undefined;
-	readonly originGroups?: DeepCreatedOriginGroup[] | undefined;
-	readonly originHostHeader?: string | undefined;
-	readonly originPath?: string | undefined;
+		| "DynamicSiteAcceleration"
+		| "GeneralMediaStreaming"
+		| "GeneralWebDelivery"
+		| "LargeFileDownload"
+		| "VideoOnDemandMediaStreaming";
+	readonly originGroups?: DeepCreatedOriginGroup[];
+	readonly originHostHeader?: string;
+	readonly originPath?: string;
 	readonly origins: DeepCreatedOrigin[];
-	readonly probePath?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly queryStringCachingBehavior?: ("BypassCaching" | "IgnoreQueryString" | "NotSet") | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Running" | "Starting" | "Stopped" | "Stopping") | undefined;
-	readonly urlSigningKeys?: UrlSigningKey[] | undefined;
-	readonly webApplicationFirewallPolicyLink?:
-		| EndpointPropertiesUpdateParametersWebApplicationFirewallPolicyLink
-		| undefined;
+	readonly probePath?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly queryStringCachingBehavior?: "BypassCaching" | "IgnoreQueryString" | "NotSet";
+	readonly resourceState?: "Creating" | "Deleting" | "Running" | "Starting" | "Stopped" | "Stopping";
+	readonly urlSigningKeys?: UrlSigningKey[];
+	readonly webApplicationFirewallPolicyLink?: EndpointPropertiesUpdateParametersWebApplicationFirewallPolicyLink;
 }
 export interface EndpointPropertiesUpdateParametersDeliveryPolicy {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly rules: DeliveryRule[];
 }
 export interface EndpointPropertiesUpdateParametersWebApplicationFirewallPolicyLink {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface GeoFilter {
 	readonly action: "Allow";
@@ -613,17 +604,17 @@ export interface HeaderActionParameters {
 	readonly headerAction: "Append" | "Delete" | "Overwrite";
 	readonly headerName: string;
 	readonly typeName: "DeliveryRuleHeaderActionParameters";
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface HealthProbeParameters {
-	readonly probeIntervalInSeconds?: number | undefined;
-	readonly probePath?: string | undefined;
-	readonly probeProtocol?: ("Http" | "Https") | undefined;
-	readonly probeRequestType?: ("GET" | "HEAD") | undefined;
+	readonly probeIntervalInSeconds?: number;
+	readonly probePath?: string;
+	readonly probeProtocol?: "Http" | "Https";
+	readonly probeRequestType?: "GET" | "HEAD";
 }
 export interface HostNameMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -635,32 +626,32 @@ export interface HostNameMatchConditionParameters {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleHostNameConditionParameters";
 }
 export interface HttpErrorRangeParameters {
-	readonly begin?: number | undefined;
-	readonly end?: number | undefined;
+	readonly begin?: number;
+	readonly end?: number;
 }
 export interface HttpVersionMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator: "Equal";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleHttpVersionConditionParameters";
 }
 export interface IsDeviceMatchConditionParameters {
-	readonly matchValues?: ("Desktop" | "Mobile"[]) | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: "Desktop" | "Mobile"[];
+	readonly negateCondition?: boolean;
 	readonly operator: "Equal";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleIsDeviceConditionParameters";
 }
 export interface KeyVaultCertificateSourceParameters {
 	readonly deleteRule: "NoAction";
 	readonly resourceGroupName: string;
 	readonly secretName: string;
-	readonly secretVersion?: string | undefined;
+	readonly secretVersion?: string;
 	readonly subscriptionId: string;
 	readonly typeName: "KeyVaultCertificateSourceParameters";
 	readonly updateRule: "NoAction";
@@ -675,33 +666,33 @@ export interface KeyVaultSigningKeyParameters {
 	readonly vaultName: string;
 }
 export interface LoadBalancingSettingsParameters {
-	readonly additionalLatencyInMilliseconds?: number | undefined;
-	readonly sampleSize?: number | undefined;
-	readonly successfulSamplesRequired?: number | undefined;
+	readonly additionalLatencyInMilliseconds?: number;
+	readonly sampleSize?: number;
+	readonly successfulSamplesRequired?: number;
 }
 export interface ManagedRuleGroupOverride {
 	readonly ruleGroupName: string;
-	readonly rules?: ManagedRuleOverride[] | undefined;
+	readonly rules?: ManagedRuleOverride[];
 }
 export interface ManagedRuleOverride {
-	readonly action?: ("Allow" | "Block" | "Log" | "Redirect") | undefined;
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
+	readonly action?: "Allow" | "Block" | "Log" | "Redirect";
+	readonly enabledState?: "Disabled" | "Enabled";
 	readonly ruleId: string;
 }
 export interface ManagedRuleSet {
-	readonly anomalyScore?: number | undefined;
-	readonly ruleGroupOverrides?: ManagedRuleGroupOverride[] | undefined;
+	readonly anomalyScore?: number;
+	readonly ruleGroupOverrides?: ManagedRuleGroupOverride[];
 	readonly ruleSetType: string;
 	readonly ruleSetVersion: string;
 }
 export interface ManagedRuleSetList {
-	readonly managedRuleSets?: ManagedRuleSet[] | undefined;
+	readonly managedRuleSets?: ManagedRuleSet[];
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: UserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedIdentities;
 }
 export interface MatchCondition {
 	readonly matchValue: string[];
@@ -715,7 +706,7 @@ export interface MatchCondition {
 		| "RequestMethod"
 		| "RequestUri"
 		| "SocketAddr";
-	readonly negateCondition?: boolean | undefined;
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -729,51 +720,51 @@ export interface MatchCondition {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly selector?: string | undefined;
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly selector?: string;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 }
 export interface OriginGroupOverride {
-	readonly forwardingProtocol?: ("HttpOnly" | "HttpsOnly" | "MatchRequest") | undefined;
-	readonly originGroup?: ResourceReference | undefined;
+	readonly forwardingProtocol?: "HttpOnly" | "HttpsOnly" | "MatchRequest";
+	readonly originGroup?: ResourceReference;
 }
 export interface OriginGroupOverrideActionParameters {
 	readonly originGroup: ResourceReference;
 	readonly typeName: "DeliveryRuleOriginGroupOverrideActionParameters";
 }
 export interface OriginGroupProperties {
-	readonly healthProbeSettings?: HealthProbeParameters | undefined;
-	readonly origins?: ResourceReference[] | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceState?: ("Active" | "Creating" | "Deleting") | undefined;
-	readonly responseBasedOriginErrorDetectionSettings?: ResponseBasedOriginErrorDetectionParameters | undefined;
-	readonly trafficRestorationTimeToHealedOrNewEndpointsInMinutes?: number | undefined;
+	readonly healthProbeSettings?: HealthProbeParameters;
+	readonly origins?: ResourceReference[];
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceState?: "Active" | "Creating" | "Deleting";
+	readonly responseBasedOriginErrorDetectionSettings?: ResponseBasedOriginErrorDetectionParameters;
+	readonly trafficRestorationTimeToHealedOrNewEndpointsInMinutes?: number;
 }
 export interface OriginProperties {
-	readonly enabled?: boolean | undefined;
-	readonly hostName?: string | undefined;
-	readonly httpPort?: number | undefined;
-	readonly httpsPort?: number | undefined;
-	readonly originHostHeader?: string | undefined;
-	readonly priority?: number | undefined;
-	readonly privateEndpointStatus?: ("Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout") | undefined;
-	readonly privateLinkAlias?: string | undefined;
-	readonly privateLinkApprovalMessage?: string | undefined;
-	readonly privateLinkLocation?: string | undefined;
-	readonly privateLinkResourceId?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceState?: ("Active" | "Creating" | "Deleting") | undefined;
-	readonly weight?: number | undefined;
+	readonly enabled?: boolean;
+	readonly hostName?: string;
+	readonly httpPort?: number;
+	readonly httpsPort?: number;
+	readonly originHostHeader?: string;
+	readonly priority?: number;
+	readonly privateEndpointStatus?: "Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout";
+	readonly privateLinkAlias?: string;
+	readonly privateLinkApprovalMessage?: string;
+	readonly privateLinkLocation?: string;
+	readonly privateLinkResourceId?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceState?: "Active" | "Creating" | "Deleting";
+	readonly weight?: number;
 }
 export interface PolicySettings {
-	readonly defaultCustomBlockResponseBody?: string | undefined;
-	readonly defaultCustomBlockResponseStatusCode?: number | undefined;
-	readonly defaultRedirectUrl?: string | undefined;
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
-	readonly mode?: ("Detection" | "Prevention") | undefined;
+	readonly defaultCustomBlockResponseBody?: string;
+	readonly defaultCustomBlockResponseStatusCode?: number;
+	readonly defaultRedirectUrl?: string;
+	readonly enabledState?: "Disabled" | "Enabled";
+	readonly mode?: "Detection" | "Prevention";
 }
 export interface PostArgsMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -785,35 +776,32 @@ export interface PostArgsMatchConditionParameters {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly selector?: string | undefined;
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly selector?: string;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRulePostArgsConditionParameters";
 }
 export interface ProfileProperties {
-	readonly extendedProperties?: ProfilePropertiesExtendedProperties | undefined;
-	readonly frontDoorId?: string | undefined;
-	readonly originResponseTimeoutSeconds?: number | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly extendedProperties?: ProfilePropertiesExtendedProperties;
+	readonly frontDoorId?: string;
+	readonly originResponseTimeoutSeconds?: number;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly resourceState?:
-		| (
-				| "AbortingMigration"
-				| "Active"
-				| "CommittingMigration"
-				| "Creating"
-				| "Deleting"
-				| "Disabled"
-				| "Migrated"
-				| "Migrating"
-				| "PendingMigrationCommit"
-		  )
-		| undefined;
+		| "AbortingMigration"
+		| "Active"
+		| "CommittingMigration"
+		| "Creating"
+		| "Deleting"
+		| "Disabled"
+		| "Migrated"
+		| "Migrating"
+		| "PendingMigrationCommit";
 }
 export interface ProfilePropertiesExtendedProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface QueryStringMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -825,12 +813,12 @@ export interface QueryStringMatchConditionParameters {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleQueryStringConditionParameters";
 }
 export interface RateLimitRule {
 	readonly action: "Allow" | "Block" | "Log" | "Redirect";
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
+	readonly enabledState?: "Disabled" | "Enabled";
 	readonly matchConditions: MatchCondition[];
 	readonly name: string;
 	readonly priority: number;
@@ -838,18 +826,18 @@ export interface RateLimitRule {
 	readonly rateLimitThreshold: number;
 }
 export interface RateLimitRuleList {
-	readonly rules?: RateLimitRule[] | undefined;
+	readonly rules?: RateLimitRule[];
 }
 export interface RemoteAddressMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator: "any" | "GeoMatch" | "IPMatch";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleRemoteAddressConditionParameters";
 }
 export interface RequestBodyMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -861,12 +849,12 @@ export interface RequestBodyMatchConditionParameters {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleRequestBodyConditionParameters";
 }
 export interface RequestHeaderMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -878,27 +866,27 @@ export interface RequestHeaderMatchConditionParameters {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly selector?: string | undefined;
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly selector?: string;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleRequestHeaderConditionParameters";
 }
 export interface RequestMethodMatchConditionParameters {
-	readonly matchValues?: ("DELETE" | "GET" | "HEAD" | "OPTIONS" | "POST" | "PUT" | "TRACE"[]) | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: "DELETE" | "GET" | "HEAD" | "OPTIONS" | "POST" | "PUT" | "TRACE"[];
+	readonly negateCondition?: boolean;
 	readonly operator: "Equal";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleRequestMethodConditionParameters";
 }
 export interface RequestSchemeMatchConditionParameters {
-	readonly matchValues?: ("HTTP" | "HTTPS"[]) | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: "HTTP" | "HTTPS"[];
+	readonly negateCondition?: boolean;
 	readonly operator: "Equal";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleRequestSchemeConditionParameters";
 }
 export interface RequestUriMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -910,73 +898,73 @@ export interface RequestUriMatchConditionParameters {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleRequestUriConditionParameters";
 }
 export interface ResourceReference {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ResponseBasedOriginErrorDetectionParameters {
-	readonly httpErrorRanges?: HttpErrorRangeParameters[] | undefined;
-	readonly responseBasedDetectedErrorTypes?: ("None" | "TcpAndHttpErrors") | undefined;
-	readonly responseBasedFailoverThresholdPercentage?: number | undefined;
+	readonly httpErrorRanges?: HttpErrorRangeParameters[];
+	readonly responseBasedDetectedErrorTypes?: "None" | "TcpAndHttpErrors";
+	readonly responseBasedFailoverThresholdPercentage?: number;
 }
 export interface RouteConfigurationOverrideActionParameters {
-	readonly cacheConfiguration?: CacheConfiguration | undefined;
-	readonly originGroupOverride?: OriginGroupOverride | undefined;
+	readonly cacheConfiguration?: CacheConfiguration;
+	readonly originGroupOverride?: OriginGroupOverride;
 	readonly typeName: "DeliveryRuleRouteConfigurationOverrideActionParameters";
 }
 export interface RouteProperties {
-	readonly cacheConfiguration?: AfdRouteCacheConfiguration | undefined;
-	readonly customDomains?: ActivatedResourceReference[] | undefined;
-	readonly deploymentStatus?: ("Failed" | "InProgress" | "NotStarted" | "Succeeded") | undefined;
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
-	readonly endpointName?: string | undefined;
-	readonly forwardingProtocol?: ("HttpOnly" | "HttpsOnly" | "MatchRequest") | undefined;
-	readonly httpsRedirect?: ("Disabled" | "Enabled") | undefined;
-	readonly linkToDefaultDomain?: ("Disabled" | "Enabled") | undefined;
-	readonly originGroup?: ResourceReference | undefined;
-	readonly originPath?: string | undefined;
-	readonly patternsToMatch?: string[] | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly ruleSets?: ResourceReference[] | undefined;
-	readonly supportedProtocols?: ("Http" | "Https"[]) | undefined;
+	readonly cacheConfiguration?: AfdRouteCacheConfiguration;
+	readonly customDomains?: ActivatedResourceReference[];
+	readonly deploymentStatus?: "Failed" | "InProgress" | "NotStarted" | "Succeeded";
+	readonly enabledState?: "Disabled" | "Enabled";
+	readonly endpointName?: string;
+	readonly forwardingProtocol?: "HttpOnly" | "HttpsOnly" | "MatchRequest";
+	readonly httpsRedirect?: "Disabled" | "Enabled";
+	readonly linkToDefaultDomain?: "Disabled" | "Enabled";
+	readonly originGroup?: ResourceReference;
+	readonly originPath?: string;
+	readonly patternsToMatch?: string[];
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly ruleSets?: ResourceReference[];
+	readonly supportedProtocols?: "Http" | "Https"[];
 }
 export interface RuleProperties {
-	readonly actions?: DeliveryRuleActionAutoGenerated[] | undefined;
-	readonly conditions?: DeliveryRuleCondition[] | undefined;
-	readonly deploymentStatus?: ("Failed" | "InProgress" | "NotStarted" | "Succeeded") | undefined;
-	readonly matchProcessingBehavior?: ("Continue" | "Stop") | undefined;
-	readonly order?: number | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly ruleSetName?: string | undefined;
+	readonly actions?: DeliveryRuleActionAutoGenerated[];
+	readonly conditions?: DeliveryRuleCondition[];
+	readonly deploymentStatus?: "Failed" | "InProgress" | "NotStarted" | "Succeeded";
+	readonly matchProcessingBehavior?: "Continue" | "Stop";
+	readonly order?: number;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly ruleSetName?: string;
 }
 export interface RuleSetProperties {
-	readonly deploymentStatus?: ("Failed" | "InProgress" | "NotStarted" | "Succeeded") | undefined;
-	readonly profileName?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly deploymentStatus?: "Failed" | "InProgress" | "NotStarted" | "Succeeded";
+	readonly profileName?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface SecretParameters {}
 export interface SecretProperties {
-	readonly deploymentStatus?: ("Failed" | "InProgress" | "NotStarted" | "Succeeded") | undefined;
-	readonly parameters?: SecretParameters | undefined;
-	readonly profileName?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly deploymentStatus?: "Failed" | "InProgress" | "NotStarted" | "Succeeded";
+	readonly parameters?: SecretParameters;
+	readonly profileName?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface SecurityPolicyProperties {
-	readonly deploymentStatus?: ("Failed" | "InProgress" | "NotStarted" | "Succeeded") | undefined;
-	readonly parameters?: SecurityPolicyPropertiesParameters | undefined;
-	readonly profileName?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly deploymentStatus?: "Failed" | "InProgress" | "NotStarted" | "Succeeded";
+	readonly parameters?: SecurityPolicyPropertiesParameters;
+	readonly profileName?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface SecurityPolicyPropertiesParameters {}
 export interface SecurityPolicyWebApplicationFirewallAssociation {
-	readonly domains?: ActivatedResourceReference[] | undefined;
-	readonly patternsToMatch?: string[] | undefined;
+	readonly domains?: ActivatedResourceReference[];
+	readonly patternsToMatch?: string[];
 }
 export interface ServerPortMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -988,63 +976,60 @@ export interface ServerPortMatchConditionParameters {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleServerPortConditionParameters";
 }
 export interface SharedPrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly privateLink?: ResourceReference | undefined;
-	readonly privateLinkLocation?: string | undefined;
-	readonly requestMessage?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly groupId?: string;
+	readonly privateLink?: ResourceReference;
+	readonly privateLinkLocation?: string;
+	readonly requestMessage?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface Sku {
 	readonly name?:
-		| (
-				| "Custom_Verizon"
-				| "Premium_AzureFrontDoor"
-				| "Premium_Verizon"
-				| "StandardPlus_955BandWidth_ChinaCdn"
-				| "StandardPlus_AvgBandWidth_ChinaCdn"
-				| "StandardPlus_ChinaCdn"
-				| "Standard_955BandWidth_ChinaCdn"
-				| "Standard_Akamai"
-				| "Standard_AvgBandWidth_ChinaCdn"
-				| "Standard_AzureFrontDoor"
-				| "Standard_ChinaCdn"
-				| "Standard_Microsoft"
-				| "Standard_Verizon"
-		  )
-		| undefined;
+		| "Custom_Verizon"
+		| "Premium_AzureFrontDoor"
+		| "Premium_Verizon"
+		| "StandardPlus_955BandWidth_ChinaCdn"
+		| "StandardPlus_AvgBandWidth_ChinaCdn"
+		| "StandardPlus_ChinaCdn"
+		| "Standard_955BandWidth_ChinaCdn"
+		| "Standard_Akamai"
+		| "Standard_AvgBandWidth_ChinaCdn"
+		| "Standard_AzureFrontDoor"
+		| "Standard_ChinaCdn"
+		| "Standard_Microsoft"
+		| "Standard_Verizon";
 }
 export interface SocketAddrMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator: "any" | "IPMatch";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleSocketAddrConditionParameters";
 }
 export interface SslProtocolMatchConditionParameters {
-	readonly matchValues?: ("TLSv1" | "TLSv1.1" | "TLSv1.2"[]) | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: "TLSv1" | "TLSv1.1" | "TLSv1.2"[];
+	readonly negateCondition?: boolean;
 	readonly operator: "Equal";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleSslProtocolConditionParameters";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("application" | "key" | "managedIdentity" | "user") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("application" | "key" | "managedIdentity" | "user") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "application" | "key" | "managedIdentity" | "user";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "application" | "key" | "managedIdentity" | "user";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UrlFileExtensionMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -1056,12 +1041,12 @@ export interface UrlFileExtensionMatchConditionParameters {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleUrlFileExtensionMatchConditionParameters";
 }
 export interface UrlFileNameMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -1073,12 +1058,12 @@ export interface UrlFileNameMatchConditionParameters {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleUrlFilenameConditionParameters";
 }
 export interface UrlPathMatchConditionParameters {
-	readonly matchValues?: string[] | undefined;
-	readonly negateCondition?: boolean | undefined;
+	readonly matchValues?: string[];
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -1091,27 +1076,27 @@ export interface UrlPathMatchConditionParameters {
 		| "LessThanOrEqual"
 		| "RegEx"
 		| "Wildcard";
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 	readonly typeName: "DeliveryRuleUrlPathMatchConditionParameters";
 }
 export interface UrlRedirectActionParameters {
-	readonly customFragment?: string | undefined;
-	readonly customHostname?: string | undefined;
-	readonly customPath?: string | undefined;
-	readonly customQueryString?: string | undefined;
-	readonly destinationProtocol?: ("Http" | "Https" | "MatchRequest") | undefined;
+	readonly customFragment?: string;
+	readonly customHostname?: string;
+	readonly customPath?: string;
+	readonly customQueryString?: string;
+	readonly destinationProtocol?: "Http" | "Https" | "MatchRequest";
 	readonly redirectType: "Found" | "Moved" | "PermanentRedirect" | "TemporaryRedirect";
 	readonly typeName: "DeliveryRuleUrlRedirectActionParameters";
 }
 export interface UrlRewriteActionParameters {
 	readonly destination: string;
-	readonly preserveUnmatchedPath?: boolean | undefined;
+	readonly preserveUnmatchedPath?: boolean;
 	readonly sourcePattern: string;
 	readonly typeName: "DeliveryRuleUrlRewriteActionParameters";
 }
 export interface UrlSigningActionParameters {
-	readonly algorithm?: "SHA256" | undefined;
-	readonly parameterNameOverride?: UrlSigningParamIdentifier[] | undefined;
+	readonly algorithm?: "SHA256";
+	readonly parameterNameOverride?: UrlSigningParamIdentifier[];
 	readonly typeName: "DeliveryRuleUrlSigningActionParameters";
 }
 export interface UrlSigningKey {
@@ -1123,11 +1108,11 @@ export interface UrlSigningParamIdentifier {
 	readonly paramName: string;
 }
 export interface UserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	cdnWebApplicationFirewallPolicies: cdnWebApplicationFirewallPolicies,

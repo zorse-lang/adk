@@ -8,8 +8,8 @@ export class Application extends CfnResource<ApplicationComponentInputs> impleme
 export interface ApplicationComponentOutputs {}
 export interface ApplicationComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class ConfigurationProfile
@@ -25,11 +25,11 @@ export interface ConfigurationProfileComponentInputs {
 	readonly ApplicationId: string;
 	readonly LocationUri: string;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly RetrievalRoleArn?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
-	readonly Validators?: (Validators[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly RetrievalRoleArn?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly Type?: string | undefined;
+	readonly Validators?: Validators[] | undefined;
 	readonly LogicalId: string;
 }
 export class Deployment extends CfnResource<DeploymentComponentInputs> implements DeploymentComponentOutputs {
@@ -44,8 +44,8 @@ export interface DeploymentComponentInputs {
 	readonly ConfigurationVersion: string;
 	readonly DeploymentStrategyId: string;
 	readonly EnvironmentId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class DeploymentStrategy
@@ -62,10 +62,10 @@ export interface DeploymentStrategyComponentInputs {
 	readonly GrowthFactor: number;
 	readonly Name: string;
 	readonly ReplicateTo: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly FinalBakeTimeInMinutes?: (number | undefined) | undefined;
-	readonly GrowthType?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly FinalBakeTimeInMinutes?: number | undefined;
+	readonly GrowthType?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class Environment extends CfnResource<EnvironmentComponentInputs> implements EnvironmentComponentOutputs {
@@ -77,9 +77,9 @@ export interface EnvironmentComponentOutputs {}
 export interface EnvironmentComponentInputs {
 	readonly ApplicationId: string;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Monitors?: (Monitors[] | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Monitors?: Monitors[] | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class HostedConfigurationVersion
@@ -96,21 +96,21 @@ export interface HostedConfigurationVersionComponentInputs {
 	readonly ConfigurationProfileId: string;
 	readonly Content: string;
 	readonly ContentType: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly LatestVersionNumber?: (number | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly LatestVersionNumber?: number | undefined;
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Key?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface Validators {
-	readonly Content?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Content?: string | undefined;
+	readonly Type?: string | undefined;
 }
 export interface Monitors {
-	readonly AlarmArn?: (string | undefined) | undefined;
-	readonly AlarmRoleArn?: (string | undefined) | undefined;
+	readonly AlarmArn?: string | undefined;
+	readonly AlarmRoleArn?: string | undefined;
 }
 export default {
 	Application: Application,

@@ -14,12 +14,12 @@ export interface domainsComponentOutputs {
 	readonly type: "Microsoft.EventGrid/domains";
 }
 export interface domainsComponentInputs {
-	readonly identity?: IdentityInfo | undefined;
+	readonly identity?: IdentityInfo;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DomainProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DomainProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class domains_eventSubscriptions
 	extends ArmResource<domains_eventSubscriptionsComponentInputs>
@@ -39,8 +39,8 @@ export interface domains_eventSubscriptionsComponentOutputs {
 }
 export interface domains_eventSubscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: EventSubscriptionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EventSubscriptionProperties;
+	readonly systemData?: SystemData;
 }
 export class domains_privateEndpointConnections
 	extends ArmResource<domains_privateEndpointConnectionsComponentInputs>
@@ -60,7 +60,7 @@ export interface domains_privateEndpointConnectionsComponentOutputs {
 }
 export interface domains_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class domains_topics extends ArmResource<domains_topicsComponentInputs> implements domains_topicsComponentOutputs {
 	constructor(entity: ADKEntity, options: domains_topicsComponentInputs) {
@@ -77,8 +77,8 @@ export interface domains_topicsComponentOutputs {
 }
 export interface domains_topicsComponentInputs {
 	readonly name: string;
-	readonly properties?: DomainTopicProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DomainTopicProperties;
+	readonly systemData?: SystemData;
 }
 export class domains_topics_eventSubscriptions
 	extends ArmResource<domains_topics_eventSubscriptionsComponentInputs>
@@ -98,8 +98,8 @@ export interface domains_topics_eventSubscriptionsComponentOutputs {
 }
 export interface domains_topics_eventSubscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: EventSubscriptionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EventSubscriptionProperties;
+	readonly systemData?: SystemData;
 }
 export class eventSubscriptions
 	extends ArmResource<eventSubscriptionsComponentInputs>
@@ -119,8 +119,8 @@ export interface eventSubscriptionsComponentOutputs {
 }
 export interface eventSubscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: EventSubscriptionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EventSubscriptionProperties;
+	readonly systemData?: SystemData;
 }
 export class extensionTopics
 	extends ArmResource<extensionTopicsComponentInputs>
@@ -140,8 +140,8 @@ export interface extensionTopicsComponentOutputs {
 }
 export interface extensionTopicsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExtensionTopicProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ExtensionTopicProperties;
+	readonly systemData?: SystemData;
 }
 export class partnerConfigurations
 	extends ArmResource<partnerConfigurationsComponentInputs>
@@ -160,11 +160,11 @@ export interface partnerConfigurationsComponentOutputs {
 	readonly type: "Microsoft.EventGrid/partnerConfigurations";
 }
 export interface partnerConfigurationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PartnerConfigurationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: PartnerConfigurationTags | undefined;
+	readonly properties?: PartnerConfigurationProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: PartnerConfigurationTags;
 }
 export class partnerNamespaces
 	extends ArmResource<partnerNamespacesComponentInputs>
@@ -185,9 +185,9 @@ export interface partnerNamespacesComponentOutputs {
 export interface partnerNamespacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: PartnerNamespaceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: PartnerNamespaceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class partnerNamespaces_channels
 	extends ArmResource<partnerNamespaces_channelsComponentInputs>
@@ -207,8 +207,8 @@ export interface partnerNamespaces_channelsComponentOutputs {
 }
 export interface partnerNamespaces_channelsComponentInputs {
 	readonly name: string;
-	readonly properties?: ChannelProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ChannelProperties;
+	readonly systemData?: SystemData;
 }
 export class partnerNamespaces_privateEndpointConnections
 	extends ArmResource<partnerNamespaces_privateEndpointConnectionsComponentInputs>
@@ -234,7 +234,7 @@ export interface partnerNamespaces_privateEndpointConnectionsComponentOutputs {
 }
 export interface partnerNamespaces_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class partnerRegistrations
 	extends ArmResource<partnerRegistrationsComponentInputs>
@@ -255,9 +255,9 @@ export interface partnerRegistrationsComponentOutputs {
 export interface partnerRegistrationsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: PartnerRegistrationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: PartnerRegistrationProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class partnerTopics extends ArmResource<partnerTopicsComponentInputs> implements partnerTopicsComponentOutputs {
 	constructor(entity: ADKEntity, options: partnerTopicsComponentInputs) {
@@ -273,12 +273,12 @@ export interface partnerTopicsComponentOutputs {
 	readonly type: "Microsoft.EventGrid/partnerTopics";
 }
 export interface partnerTopicsComponentInputs {
-	readonly identity?: IdentityInfo | undefined;
+	readonly identity?: IdentityInfo;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: PartnerTopicProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: PartnerTopicProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class partnerTopics_eventSubscriptions
 	extends ArmResource<partnerTopics_eventSubscriptionsComponentInputs>
@@ -298,8 +298,8 @@ export interface partnerTopics_eventSubscriptionsComponentOutputs {
 }
 export interface partnerTopics_eventSubscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: EventSubscriptionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EventSubscriptionProperties;
+	readonly systemData?: SystemData;
 }
 export class systemTopics extends ArmResource<systemTopicsComponentInputs> implements systemTopicsComponentOutputs {
 	constructor(entity: ADKEntity, options: systemTopicsComponentInputs) {
@@ -315,12 +315,12 @@ export interface systemTopicsComponentOutputs {
 	readonly type: "Microsoft.EventGrid/systemTopics";
 }
 export interface systemTopicsComponentInputs {
-	readonly identity?: IdentityInfo | undefined;
+	readonly identity?: IdentityInfo;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SystemTopicProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SystemTopicProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class systemTopics_eventSubscriptions
 	extends ArmResource<systemTopics_eventSubscriptionsComponentInputs>
@@ -340,8 +340,8 @@ export interface systemTopics_eventSubscriptionsComponentOutputs {
 }
 export interface systemTopics_eventSubscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: EventSubscriptionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EventSubscriptionProperties;
+	readonly systemData?: SystemData;
 }
 export class topics extends ArmResource<topicsComponentInputs> implements topicsComponentOutputs {
 	constructor(entity: ADKEntity, options: topicsComponentInputs) {
@@ -357,12 +357,12 @@ export interface topicsComponentOutputs {
 	readonly type: "Microsoft.EventGrid/topics";
 }
 export interface topicsComponentInputs {
-	readonly identity?: IdentityInfo | undefined;
+	readonly identity?: IdentityInfo;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: TopicProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: TopicProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class topics_eventSubscriptions
 	extends ArmResource<topics_eventSubscriptionsComponentInputs>
@@ -382,8 +382,8 @@ export interface topics_eventSubscriptionsComponentOutputs {
 }
 export interface topics_eventSubscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: EventSubscriptionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EventSubscriptionProperties;
+	readonly systemData?: SystemData;
 }
 export class topics_privateEndpointConnections
 	extends ArmResource<topics_privateEndpointConnectionsComponentInputs>
@@ -403,7 +403,7 @@ export interface topics_privateEndpointConnectionsComponentOutputs {
 }
 export interface topics_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class topicTypes extends ArmResource<topicTypesComponentInputs> implements topicTypesComponentOutputs {
 	constructor(entity: ADKEntity, options: topicTypesComponentInputs) {
@@ -420,7 +420,7 @@ export interface topicTypesComponentOutputs {
 }
 export interface topicTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: TopicTypeProperties | undefined;
+	readonly properties?: TopicTypeProperties;
 }
 export class verifiedPartners
 	extends ArmResource<verifiedPartnersComponentInputs>
@@ -440,8 +440,8 @@ export interface verifiedPartnersComponentOutputs {
 }
 export interface verifiedPartnersComponentInputs {
 	readonly name: string;
-	readonly properties?: VerifiedPartnerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: VerifiedPartnerProperties;
+	readonly systemData?: SystemData;
 }
 export function listKeys(resource: domains): DomainSharedAccessKeys {
 	if (resource.apiVersion !== "2022-06-15") {
@@ -453,325 +453,322 @@ export function listKeys(resource: domains): DomainSharedAccessKeys {
 	throw new Error("not implemented");
 }
 export interface AdvancedFilter {
-	readonly key?: string | undefined;
+	readonly key?: string;
 }
 export interface AzureFunctionEventSubscriptionDestinationProperties {
-	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[] | undefined;
-	readonly maxEventsPerBatch?: number | undefined;
-	readonly preferredBatchSizeInKilobytes?: number | undefined;
-	readonly resourceId?: string | undefined;
+	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[];
+	readonly maxEventsPerBatch?: number;
+	readonly preferredBatchSizeInKilobytes?: number;
+	readonly resourceId?: string;
 }
 export interface ChannelProperties {
-	readonly channelType?: "PartnerTopic" | undefined;
-	readonly expirationTimeIfNotActivatedUtc?: string | undefined;
-	readonly messageForActivation?: string | undefined;
-	readonly partnerTopicInfo?: PartnerTopicInfo | undefined;
+	readonly channelType?: "PartnerTopic";
+	readonly expirationTimeIfNotActivatedUtc?: string;
+	readonly messageForActivation?: string;
+	readonly partnerTopicInfo?: PartnerTopicInfo;
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Creating"
-				| "Deleting"
-				| "Failed"
-				| "IdleDueToMirroredPartnerTopicDeletion"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly readinessState?: ("Activated" | "NeverActivated") | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "IdleDueToMirroredPartnerTopicDeletion"
+		| "Succeeded"
+		| "Updating";
+	readonly readinessState?: "Activated" | "NeverActivated";
 }
 export interface ConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface DeadLetterDestination {}
 export interface DeadLetterWithResourceIdentity {
-	readonly deadLetterDestination?: DeadLetterDestination | undefined;
-	readonly identity?: EventSubscriptionIdentity | undefined;
+	readonly deadLetterDestination?: DeadLetterDestination;
+	readonly identity?: EventSubscriptionIdentity;
 }
 export interface DeliveryAttributeMapping {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface DeliveryWithResourceIdentity {
-	readonly destination?: EventSubscriptionDestination | undefined;
-	readonly identity?: EventSubscriptionIdentity | undefined;
+	readonly destination?: EventSubscriptionDestination;
+	readonly identity?: EventSubscriptionIdentity;
 }
 export interface DomainProperties {
-	readonly autoCreateTopicWithFirstSubscription?: boolean | undefined;
-	readonly autoDeleteTopicWithLastSubscription?: boolean | undefined;
-	readonly dataResidencyBoundary?: ("WithinGeopair" | "WithinRegion") | undefined;
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly endpoint?: string | undefined;
-	readonly inboundIpRules?: InboundIpRule[] | undefined;
-	readonly inputSchema?: ("CloudEventSchemaV1_0" | "CustomEventSchema" | "EventGridSchema") | undefined;
-	readonly inputSchemaMapping?: InputSchemaMapping | undefined;
-	readonly metricResourceId?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly autoCreateTopicWithFirstSubscription?: boolean;
+	readonly autoDeleteTopicWithLastSubscription?: boolean;
+	readonly dataResidencyBoundary?: "WithinGeopair" | "WithinRegion";
+	readonly disableLocalAuth?: boolean;
+	readonly endpoint?: string;
+	readonly inboundIpRules?: InboundIpRule[];
+	readonly inputSchema?: "CloudEventSchemaV1_0" | "CustomEventSchema" | "EventGridSchema";
+	readonly inputSchemaMapping?: InputSchemaMapping;
+	readonly metricResourceId?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface DomainSharedAccessKeys {
-	readonly key1?: string | undefined;
-	readonly key2?: string | undefined;
+	readonly key1?: string;
+	readonly key2?: string;
 }
 export interface DomainTopicProperties {
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface DynamicDeliveryAttributeMappingProperties {
-	readonly sourceField?: string | undefined;
+	readonly sourceField?: string;
 }
 export interface EventHubEventSubscriptionDestinationProperties {
-	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[] | undefined;
-	readonly resourceId?: string | undefined;
+	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[];
+	readonly resourceId?: string;
 }
 export interface EventSubscriptionDestination {}
 export interface EventSubscriptionFilter {
-	readonly advancedFilters?: AdvancedFilter[] | undefined;
-	readonly enableAdvancedFilteringOnArrays?: boolean | undefined;
-	readonly includedEventTypes?: string[] | undefined;
-	readonly isSubjectCaseSensitive?: boolean | undefined;
-	readonly subjectBeginsWith?: string | undefined;
-	readonly subjectEndsWith?: string | undefined;
+	readonly advancedFilters?: AdvancedFilter[];
+	readonly enableAdvancedFilteringOnArrays?: boolean;
+	readonly includedEventTypes?: string[];
+	readonly isSubjectCaseSensitive?: boolean;
+	readonly subjectBeginsWith?: string;
+	readonly subjectEndsWith?: string;
 }
 export interface EventSubscriptionIdentity {
-	readonly type?: ("SystemAssigned" | "UserAssigned") | undefined;
-	readonly userAssignedIdentity?: string | undefined;
+	readonly type?: "SystemAssigned" | "UserAssigned";
+	readonly userAssignedIdentity?: string;
 }
 export interface EventSubscriptionProperties {
-	readonly deadLetterDestination?: DeadLetterDestination | undefined;
-	readonly deadLetterWithResourceIdentity?: DeadLetterWithResourceIdentity | undefined;
-	readonly deliveryWithResourceIdentity?: DeliveryWithResourceIdentity | undefined;
-	readonly destination?: EventSubscriptionDestination | undefined;
-	readonly eventDeliverySchema?: ("CloudEventSchemaV1_0" | "CustomInputSchema" | "EventGridSchema") | undefined;
-	readonly expirationTimeUtc?: string | undefined;
-	readonly filter?: EventSubscriptionFilter | undefined;
-	readonly labels?: string[] | undefined;
+	readonly deadLetterDestination?: DeadLetterDestination;
+	readonly deadLetterWithResourceIdentity?: DeadLetterWithResourceIdentity;
+	readonly deliveryWithResourceIdentity?: DeliveryWithResourceIdentity;
+	readonly destination?: EventSubscriptionDestination;
+	readonly eventDeliverySchema?: "CloudEventSchemaV1_0" | "CustomInputSchema" | "EventGridSchema";
+	readonly expirationTimeUtc?: string;
+	readonly filter?: EventSubscriptionFilter;
+	readonly labels?: string[];
 	readonly provisioningState?:
-		| ("AwaitingManualAction" | "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating")
-		| undefined;
-	readonly retryPolicy?: RetryPolicy | undefined;
-	readonly topic?: string | undefined;
+		| "AwaitingManualAction"
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Succeeded"
+		| "Updating";
+	readonly retryPolicy?: RetryPolicy;
+	readonly topic?: string;
 }
 export interface EventTypeInfo {
-	readonly inlineEventTypes?: EventTypeInfoInlineEventTypes | undefined;
-	readonly kind?: "Inline" | undefined;
+	readonly inlineEventTypes?: EventTypeInfoInlineEventTypes;
+	readonly kind?: "Inline";
 }
 export interface EventTypeInfoInlineEventTypes {
-	readonly "[ key: string ]"?: InlineEventProperties | undefined;
+	readonly [key: string]: InlineEventProperties;
 }
 export interface ExtensionTopicProperties {
-	readonly description?: string | undefined;
-	readonly systemTopic?: string | undefined;
+	readonly description?: string;
+	readonly systemTopic?: string;
 }
 export interface HybridConnectionEventSubscriptionDestinationProperties {
-	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[] | undefined;
-	readonly resourceId?: string | undefined;
+	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[];
+	readonly resourceId?: string;
 }
 export interface IdentityInfo {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned" | "UserAssigned") | undefined;
-	readonly userAssignedIdentities?: IdentityInfoUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned" | "UserAssigned";
+	readonly userAssignedIdentities?: IdentityInfoUserAssignedIdentities;
 }
 export interface IdentityInfoUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserIdentityProperties | undefined;
+	readonly [key: string]: UserIdentityProperties;
 }
 export interface InboundIpRule {
-	readonly action?: "Allow" | undefined;
-	readonly ipMask?: string | undefined;
+	readonly action?: "Allow";
+	readonly ipMask?: string;
 }
 export interface InlineEventProperties {
-	readonly dataSchemaUrl?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly documentationUrl?: string | undefined;
+	readonly dataSchemaUrl?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly documentationUrl?: string;
 }
 export interface InputSchemaMapping {}
 export interface JsonField {
-	readonly sourceField?: string | undefined;
+	readonly sourceField?: string;
 }
 export interface JsonFieldWithDefault {
-	readonly defaultValue?: string | undefined;
-	readonly sourceField?: string | undefined;
+	readonly defaultValue?: string;
+	readonly sourceField?: string;
 }
 export interface JsonInputSchemaMappingProperties {
-	readonly dataVersion?: JsonFieldWithDefault | undefined;
-	readonly eventTime?: JsonField | undefined;
-	readonly eventType?: JsonFieldWithDefault | undefined;
-	readonly id?: JsonField | undefined;
-	readonly subject?: JsonFieldWithDefault | undefined;
-	readonly topic?: JsonField | undefined;
+	readonly dataVersion?: JsonFieldWithDefault;
+	readonly eventTime?: JsonField;
+	readonly eventType?: JsonFieldWithDefault;
+	readonly id?: JsonField;
+	readonly subject?: JsonFieldWithDefault;
+	readonly topic?: JsonField;
 }
 export interface Partner {
-	readonly authorizationExpirationTimeInUtc?: string | undefined;
-	readonly partnerName?: string | undefined;
-	readonly partnerRegistrationImmutableId?: string | undefined;
+	readonly authorizationExpirationTimeInUtc?: string;
+	readonly partnerName?: string;
+	readonly partnerRegistrationImmutableId?: string;
 }
 export interface PartnerAuthorization {
-	readonly authorizedPartnersList?: Partner[] | undefined;
-	readonly defaultMaximumExpirationTimeInDays?: number | undefined;
+	readonly authorizedPartnersList?: Partner[];
+	readonly defaultMaximumExpirationTimeInDays?: number;
 }
 export interface PartnerConfigurationProperties {
-	readonly partnerAuthorization?: PartnerAuthorization | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly partnerAuthorization?: PartnerAuthorization;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PartnerConfigurationTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PartnerDetails {
-	readonly description?: string | undefined;
-	readonly longDescription?: string | undefined;
-	readonly setupUri?: string | undefined;
+	readonly description?: string;
+	readonly longDescription?: string;
+	readonly setupUri?: string;
 }
 export interface PartnerNamespaceProperties {
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly endpoint?: string | undefined;
-	readonly inboundIpRules?: InboundIpRule[] | undefined;
-	readonly partnerRegistrationFullyQualifiedId?: string | undefined;
-	readonly partnerTopicRoutingMode?: ("ChannelNameHeader" | "SourceEventAttribute") | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly disableLocalAuth?: boolean;
+	readonly endpoint?: string;
+	readonly inboundIpRules?: InboundIpRule[];
+	readonly partnerRegistrationFullyQualifiedId?: string;
+	readonly partnerTopicRoutingMode?: "ChannelNameHeader" | "SourceEventAttribute";
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface PartnerNamespaceSharedAccessKeys {
-	readonly key1?: string | undefined;
-	readonly key2?: string | undefined;
+	readonly key1?: string;
+	readonly key2?: string;
 }
 export interface PartnerRegistrationProperties {
-	readonly partnerRegistrationImmutableId?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly partnerRegistrationImmutableId?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PartnerTopicInfo {
-	readonly azureSubscriptionId?: string | undefined;
-	readonly eventTypeInfo?: EventTypeInfo | undefined;
-	readonly name?: string | undefined;
-	readonly resourceGroupName?: string | undefined;
-	readonly source?: string | undefined;
+	readonly azureSubscriptionId?: string;
+	readonly eventTypeInfo?: EventTypeInfo;
+	readonly name?: string;
+	readonly resourceGroupName?: string;
+	readonly source?: string;
 }
 export interface PartnerTopicProperties {
-	readonly activationState?: ("Activated" | "Deactivated" | "NeverActivated") | undefined;
-	readonly eventTypeInfo?: EventTypeInfo | undefined;
-	readonly expirationTimeIfNotActivatedUtc?: string | undefined;
-	readonly messageForActivation?: string | undefined;
-	readonly partnerRegistrationImmutableId?: string | undefined;
-	readonly partnerTopicFriendlyDescription?: string | undefined;
+	readonly activationState?: "Activated" | "Deactivated" | "NeverActivated";
+	readonly eventTypeInfo?: EventTypeInfo;
+	readonly expirationTimeIfNotActivatedUtc?: string;
+	readonly messageForActivation?: string;
+	readonly partnerRegistrationImmutableId?: string;
+	readonly partnerTopicFriendlyDescription?: string;
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Creating"
-				| "Deleting"
-				| "Failed"
-				| "IdleDueToMirroredChannelResourceDeletion"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly source?: string | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "IdleDueToMirroredChannelResourceDeletion"
+		| "Succeeded"
+		| "Updating";
+	readonly source?: string;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: ConnectionState | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly groupIds?: string[];
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: ConnectionState;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface RetryPolicy {
-	readonly eventTimeToLiveInMinutes?: number | undefined;
-	readonly maxDeliveryAttempts?: number | undefined;
+	readonly eventTimeToLiveInMinutes?: number;
+	readonly maxDeliveryAttempts?: number;
 }
 export interface ServiceBusQueueEventSubscriptionDestinationProperties {
-	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[] | undefined;
-	readonly resourceId?: string | undefined;
+	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[];
+	readonly resourceId?: string;
 }
 export interface ServiceBusTopicEventSubscriptionDestinationProperties {
-	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[] | undefined;
-	readonly resourceId?: string | undefined;
+	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[];
+	readonly resourceId?: string;
 }
 export interface StaticDeliveryAttributeMappingProperties {
-	readonly isSecret?: boolean | undefined;
-	readonly value?: string | undefined;
+	readonly isSecret?: boolean;
+	readonly value?: string;
 }
 export interface StorageBlobDeadLetterDestinationProperties {
-	readonly blobContainerName?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly blobContainerName?: string;
+	readonly resourceId?: string;
 }
 export interface StorageQueueEventSubscriptionDestinationProperties {
-	readonly queueMessageTimeToLiveInSeconds?: number | undefined;
-	readonly queueName?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly queueMessageTimeToLiveInSeconds?: number;
+	readonly queueName?: string;
+	readonly resourceId?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface SystemTopicProperties {
-	readonly metricResourceId?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly source?: string | undefined;
-	readonly topicType?: string | undefined;
+	readonly metricResourceId?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly source?: string;
+	readonly topicType?: string;
 }
 export interface TopicProperties {
-	readonly dataResidencyBoundary?: ("WithinGeopair" | "WithinRegion") | undefined;
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly endpoint?: string | undefined;
-	readonly inboundIpRules?: InboundIpRule[] | undefined;
-	readonly inputSchema?: ("CloudEventSchemaV1_0" | "CustomEventSchema" | "EventGridSchema") | undefined;
-	readonly inputSchemaMapping?: InputSchemaMapping | undefined;
-	readonly metricResourceId?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly dataResidencyBoundary?: "WithinGeopair" | "WithinRegion";
+	readonly disableLocalAuth?: boolean;
+	readonly endpoint?: string;
+	readonly inboundIpRules?: InboundIpRule[];
+	readonly inputSchema?: "CloudEventSchemaV1_0" | "CustomEventSchema" | "EventGridSchema";
+	readonly inputSchemaMapping?: InputSchemaMapping;
+	readonly metricResourceId?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface TopicSharedAccessKeys {
-	readonly key1?: string | undefined;
-	readonly key2?: string | undefined;
+	readonly key1?: string;
+	readonly key2?: string;
 }
 export interface TopicTypeProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly provider?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceRegionType?: ("GlobalResource" | "RegionalResource") | undefined;
-	readonly sourceResourceFormat?: string | undefined;
-	readonly supportedLocations?: string[] | undefined;
-	readonly supportedScopesForSource?:
-		| ("AzureSubscription" | "ManagementGroup" | "Resource" | "ResourceGroup"[])
-		| undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly provider?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceRegionType?: "GlobalResource" | "RegionalResource";
+	readonly sourceResourceFormat?: string;
+	readonly supportedLocations?: string[];
+	readonly supportedScopesForSource?: "AzureSubscription" | "ManagementGroup" | "Resource" | "ResourceGroup"[];
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserIdentityProperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface VerifiedPartnerProperties {
-	readonly organizationName?: string | undefined;
-	readonly partnerDisplayName?: string | undefined;
-	readonly partnerRegistrationImmutableId?: string | undefined;
-	readonly partnerTopicDetails?: PartnerDetails | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly organizationName?: string;
+	readonly partnerDisplayName?: string;
+	readonly partnerRegistrationImmutableId?: string;
+	readonly partnerTopicDetails?: PartnerDetails;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface WebHookEventSubscriptionDestinationProperties {
-	readonly azureActiveDirectoryApplicationIdOrUri?: string | undefined;
-	readonly azureActiveDirectoryTenantId?: string | undefined;
-	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[] | undefined;
-	readonly endpointBaseUrl?: string | undefined;
-	readonly endpointUrl?: string | undefined;
-	readonly maxEventsPerBatch?: number | undefined;
-	readonly preferredBatchSizeInKilobytes?: number | undefined;
+	readonly azureActiveDirectoryApplicationIdOrUri?: string;
+	readonly azureActiveDirectoryTenantId?: string;
+	readonly deliveryAttributeMappings?: DeliveryAttributeMapping[];
+	readonly endpointBaseUrl?: string;
+	readonly endpointUrl?: string;
+	readonly maxEventsPerBatch?: number;
+	readonly preferredBatchSizeInKilobytes?: number;
 }
 export default {
 	domains: domains,

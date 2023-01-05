@@ -11,15 +11,15 @@ export interface EnvironmentEC2ComponentOutputs {
 }
 export interface EnvironmentEC2ComponentInputs {
 	readonly InstanceType: string;
-	readonly AutomaticStopTimeMinutes?: (number | undefined) | undefined;
-	readonly ConnectionType?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ImageId?: (string | undefined) | undefined;
-	readonly Name?: string | undefined;
-	readonly OwnerArn?: (string | undefined) | undefined;
-	readonly Repositories?: (Repository[] | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AutomaticStopTimeMinutes?: number | undefined;
+	readonly ConnectionType?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly ImageId?: string | undefined;
+	readonly Name?: string;
+	readonly OwnerArn?: string | undefined;
+	readonly Repositories?: Repository[] | undefined;
+	readonly SubnetId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface Repository {

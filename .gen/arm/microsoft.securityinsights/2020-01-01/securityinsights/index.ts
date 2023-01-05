@@ -17,10 +17,10 @@ export interface alertRules_FusionComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/alertRules";
 }
 export interface alertRules_FusionComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly kind: "Fusion";
-	readonly properties?: FusionAlertRuleProperties | undefined;
+	readonly properties?: FusionAlertRuleProperties;
 }
 export class alertRules_MicrosoftSecurityIncidentCreation
 	extends ArmResource<alertRules_MicrosoftSecurityIncidentCreationComponentInputs>
@@ -39,10 +39,10 @@ export interface alertRules_MicrosoftSecurityIncidentCreationComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/alertRules";
 }
 export interface alertRules_MicrosoftSecurityIncidentCreationComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly kind: "MicrosoftSecurityIncidentCreation";
-	readonly properties?: MicrosoftSecurityIncidentCreationAlertRuleProperties | undefined;
+	readonly properties?: MicrosoftSecurityIncidentCreationAlertRuleProperties;
 }
 export class alertRules_Scheduled
 	extends ArmResource<alertRules_ScheduledComponentInputs>
@@ -61,10 +61,10 @@ export interface alertRules_ScheduledComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/alertRules";
 }
 export interface alertRules_ScheduledComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly kind: "Scheduled";
-	readonly properties?: ScheduledAlertRuleProperties | undefined;
+	readonly properties?: ScheduledAlertRuleProperties;
 }
 export class alertRules_actions
 	extends ArmResource<alertRules_actionsComponentInputs>
@@ -83,9 +83,9 @@ export interface alertRules_actionsComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/alertRules/actions";
 }
 export interface alertRules_actionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ActionRequestPropertiesOrActionResponseProperties | undefined;
+	readonly properties?: ActionRequestPropertiesOrActionResponseProperties;
 }
 export class alertRuleTemplates_Fusion
 	extends ArmResource<alertRuleTemplates_FusionComponentInputs>
@@ -106,7 +106,7 @@ export interface alertRuleTemplates_FusionComponentOutputs {
 export interface alertRuleTemplates_FusionComponentInputs {
 	readonly name: string;
 	readonly kind: "Fusion";
-	readonly properties?: FusionAlertRuleTemplateProperties | undefined;
+	readonly properties?: FusionAlertRuleTemplateProperties;
 }
 export class alertRuleTemplates_MicrosoftSecurityIncidentCreation
 	extends ArmResource<alertRuleTemplates_MicrosoftSecurityIncidentCreationComponentInputs>
@@ -127,7 +127,7 @@ export interface alertRuleTemplates_MicrosoftSecurityIncidentCreationComponentOu
 export interface alertRuleTemplates_MicrosoftSecurityIncidentCreationComponentInputs {
 	readonly name: string;
 	readonly kind: "MicrosoftSecurityIncidentCreation";
-	readonly properties?: MicrosoftSecurityIncidentCreationAlertRuleTemplateProperties | undefined;
+	readonly properties?: MicrosoftSecurityIncidentCreationAlertRuleTemplateProperties;
 }
 export class alertRuleTemplates_Scheduled
 	extends ArmResource<alertRuleTemplates_ScheduledComponentInputs>
@@ -148,7 +148,7 @@ export interface alertRuleTemplates_ScheduledComponentOutputs {
 export interface alertRuleTemplates_ScheduledComponentInputs {
 	readonly name: string;
 	readonly kind: "Scheduled";
-	readonly properties?: ScheduledAlertRuleTemplateProperties | undefined;
+	readonly properties?: ScheduledAlertRuleTemplateProperties;
 }
 export class bookmarks extends ArmResource<bookmarksComponentInputs> implements bookmarksComponentOutputs {
 	constructor(entity: ADKEntity, options: bookmarksComponentInputs) {
@@ -164,9 +164,9 @@ export interface bookmarksComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/bookmarks";
 }
 export interface bookmarksComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: BookmarkProperties | undefined;
+	readonly properties?: BookmarkProperties;
 }
 export class dataConnectors_AmazonWebServicesCloudTrail
 	extends ArmResource<dataConnectors_AmazonWebServicesCloudTrailComponentInputs>
@@ -185,10 +185,10 @@ export interface dataConnectors_AmazonWebServicesCloudTrailComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/dataConnectors";
 }
 export interface dataConnectors_AmazonWebServicesCloudTrailComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly kind: "AmazonWebServicesCloudTrail";
-	readonly properties?: AwsCloudTrailDataConnectorProperties | undefined;
+	readonly properties?: AwsCloudTrailDataConnectorProperties;
 }
 export class dataConnectors_AzureActiveDirectory
 	extends ArmResource<dataConnectors_AzureActiveDirectoryComponentInputs>
@@ -207,10 +207,10 @@ export interface dataConnectors_AzureActiveDirectoryComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/dataConnectors";
 }
 export interface dataConnectors_AzureActiveDirectoryComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly kind: "AzureActiveDirectory";
-	readonly properties?: AADDataConnectorProperties | undefined;
+	readonly properties?: AADDataConnectorProperties;
 }
 export class dataConnectors_AzureAdvancedThreatProtection
 	extends ArmResource<dataConnectors_AzureAdvancedThreatProtectionComponentInputs>
@@ -229,10 +229,10 @@ export interface dataConnectors_AzureAdvancedThreatProtectionComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/dataConnectors";
 }
 export interface dataConnectors_AzureAdvancedThreatProtectionComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly kind: "AzureAdvancedThreatProtection";
-	readonly properties?: AatpDataConnectorProperties | undefined;
+	readonly properties?: AatpDataConnectorProperties;
 }
 export class dataConnectors_AzureSecurityCenter
 	extends ArmResource<dataConnectors_AzureSecurityCenterComponentInputs>
@@ -251,10 +251,10 @@ export interface dataConnectors_AzureSecurityCenterComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/dataConnectors";
 }
 export interface dataConnectors_AzureSecurityCenterComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly kind: "AzureSecurityCenter";
-	readonly properties?: ASCDataConnectorProperties | undefined;
+	readonly properties?: ASCDataConnectorProperties;
 }
 export class dataConnectors_MicrosoftCloudAppSecurity
 	extends ArmResource<dataConnectors_MicrosoftCloudAppSecurityComponentInputs>
@@ -273,10 +273,10 @@ export interface dataConnectors_MicrosoftCloudAppSecurityComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/dataConnectors";
 }
 export interface dataConnectors_MicrosoftCloudAppSecurityComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly kind: "MicrosoftCloudAppSecurity";
-	readonly properties?: McasDataConnectorProperties | undefined;
+	readonly properties?: McasDataConnectorProperties;
 }
 export class dataConnectors_MicrosoftDefenderAdvancedThreatProtection
 	extends ArmResource<dataConnectors_MicrosoftDefenderAdvancedThreatProtectionComponentInputs>
@@ -295,10 +295,10 @@ export interface dataConnectors_MicrosoftDefenderAdvancedThreatProtectionCompone
 	readonly type: "Microsoft.SecurityInsights/dataConnectors";
 }
 export interface dataConnectors_MicrosoftDefenderAdvancedThreatProtectionComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly kind: "MicrosoftDefenderAdvancedThreatProtection";
-	readonly properties?: MdatpDataConnectorProperties | undefined;
+	readonly properties?: MdatpDataConnectorProperties;
 }
 export class dataConnectors_Office365
 	extends ArmResource<dataConnectors_Office365ComponentInputs>
@@ -317,10 +317,10 @@ export interface dataConnectors_Office365ComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/dataConnectors";
 }
 export interface dataConnectors_Office365ComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly kind: "Office365";
-	readonly properties?: OfficeDataConnectorProperties | undefined;
+	readonly properties?: OfficeDataConnectorProperties;
 }
 export class dataConnectors_ThreatIntelligence
 	extends ArmResource<dataConnectors_ThreatIntelligenceComponentInputs>
@@ -339,10 +339,10 @@ export interface dataConnectors_ThreatIntelligenceComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/dataConnectors";
 }
 export interface dataConnectors_ThreatIntelligenceComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly kind: "ThreatIntelligence";
-	readonly properties?: TIDataConnectorProperties | undefined;
+	readonly properties?: TIDataConnectorProperties;
 }
 export class incidents extends ArmResource<incidentsComponentInputs> implements incidentsComponentOutputs {
 	constructor(entity: ADKEntity, options: incidentsComponentInputs) {
@@ -358,9 +358,9 @@ export interface incidentsComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/incidents";
 }
 export interface incidentsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: IncidentProperties | undefined;
+	readonly properties?: IncidentProperties;
 }
 export class incidents_comments
 	extends ArmResource<incidents_commentsComponentInputs>
@@ -380,320 +380,307 @@ export interface incidents_commentsComponentOutputs {
 }
 export interface incidents_commentsComponentInputs {
 	readonly name: string;
-	readonly properties?: IncidentCommentProperties | undefined;
+	readonly properties?: IncidentCommentProperties;
 }
 export interface AADDataConnectorProperties {
-	readonly dataTypes?: AlertsDataTypeOfDataConnector | undefined;
-	readonly tenantId?: string | undefined;
+	readonly dataTypes?: AlertsDataTypeOfDataConnector;
+	readonly tenantId?: string;
 }
 export interface AatpDataConnectorProperties {
-	readonly dataTypes?: AlertsDataTypeOfDataConnector | undefined;
-	readonly tenantId?: string | undefined;
+	readonly dataTypes?: AlertsDataTypeOfDataConnector;
+	readonly tenantId?: string;
 }
 export interface ActionRequestPropertiesOrActionResponseProperties {
 	readonly logicAppResourceId: string;
 	readonly triggerUri: string;
-	readonly workflowId?: string | undefined;
+	readonly workflowId?: string;
 }
 export interface AlertRuleTemplateDataSource {
-	readonly connectorId?: string | undefined;
-	readonly dataTypes?: string[] | undefined;
+	readonly connectorId?: string;
+	readonly dataTypes?: string[];
 }
 export interface AlertsDataTypeOfDataConnector {
-	readonly alerts?: DataConnectorDataTypeCommon | undefined;
+	readonly alerts?: DataConnectorDataTypeCommon;
 }
 export interface ASCDataConnectorProperties {
-	readonly dataTypes?: AlertsDataTypeOfDataConnector | undefined;
-	readonly subscriptionId?: string | undefined;
+	readonly dataTypes?: AlertsDataTypeOfDataConnector;
+	readonly subscriptionId?: string;
 }
 export interface AwsCloudTrailDataConnectorDataTypes {
-	readonly logs?: AwsCloudTrailDataConnectorDataTypesLogs | undefined;
+	readonly logs?: AwsCloudTrailDataConnectorDataTypesLogs;
 }
 export interface AwsCloudTrailDataConnectorDataTypesLogs {
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface AwsCloudTrailDataConnectorProperties {
-	readonly awsRoleArn?: string | undefined;
-	readonly dataTypes?: AwsCloudTrailDataConnectorDataTypes | undefined;
+	readonly awsRoleArn?: string;
+	readonly dataTypes?: AwsCloudTrailDataConnectorDataTypes;
 }
 export interface BookmarkProperties {
-	readonly created?: string | undefined;
-	readonly createdBy?: UserInfo | undefined;
+	readonly created?: string;
+	readonly createdBy?: UserInfo;
 	readonly displayName: string;
-	readonly eventTime?: string | undefined;
-	readonly incidentInfo?: IncidentInfo | undefined;
-	readonly labels?: string[] | undefined;
-	readonly notes?: string | undefined;
+	readonly eventTime?: string;
+	readonly incidentInfo?: IncidentInfo;
+	readonly labels?: string[];
+	readonly notes?: string;
 	readonly query: string;
-	readonly queryEndTime?: string | undefined;
-	readonly queryResult?: string | undefined;
-	readonly queryStartTime?: string | undefined;
-	readonly updated?: string | undefined;
-	readonly updatedBy?: UserInfo | undefined;
+	readonly queryEndTime?: string;
+	readonly queryResult?: string;
+	readonly queryStartTime?: string;
+	readonly updated?: string;
+	readonly updatedBy?: UserInfo;
 }
 export interface ClientInfo {
-	readonly email?: string | undefined;
-	readonly name?: string | undefined;
-	readonly objectId?: string | undefined;
-	readonly userPrincipalName?: string | undefined;
+	readonly email?: string;
+	readonly name?: string;
+	readonly objectId?: string;
+	readonly userPrincipalName?: string;
 }
 export interface DataConnectorDataTypeCommon {
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface FusionAlertRuleProperties {
 	readonly alertRuleTemplateName: string;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly enabled: boolean;
-	readonly lastModifiedUtc?: string | undefined;
-	readonly severity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
+	readonly lastModifiedUtc?: string;
+	readonly severity?: "High" | "Informational" | "Low" | "Medium";
 	readonly tactics?:
-		| (
-				| "Collection"
-				| "CommandAndControl"
-				| "CredentialAccess"
-				| "DefenseEvasion"
-				| "Discovery"
-				| "Execution"
-				| "Exfiltration"
-				| "Impact"
-				| "InitialAccess"
-				| "LateralMovement"
-				| "Persistence"
-				| "PrivilegeEscalation"[]
-		  )
-		| undefined;
+		| "Collection"
+		| "CommandAndControl"
+		| "CredentialAccess"
+		| "DefenseEvasion"
+		| "Discovery"
+		| "Execution"
+		| "Exfiltration"
+		| "Impact"
+		| "InitialAccess"
+		| "LateralMovement"
+		| "Persistence"
+		| "PrivilegeEscalation"[];
 }
 export interface FusionAlertRuleTemplateProperties {
-	readonly alertRulesCreatedByTemplateCount?: number | undefined;
-	readonly createdDateUTC?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly lastUpdatedDateUTC?: string | undefined;
-	readonly requiredDataConnectors?: AlertRuleTemplateDataSource[] | undefined;
-	readonly severity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
-	readonly status?: ("Available" | "Installed" | "NotAvailable") | undefined;
+	readonly alertRulesCreatedByTemplateCount?: number;
+	readonly createdDateUTC?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly lastUpdatedDateUTC?: string;
+	readonly requiredDataConnectors?: AlertRuleTemplateDataSource[];
+	readonly severity?: "High" | "Informational" | "Low" | "Medium";
+	readonly status?: "Available" | "Installed" | "NotAvailable";
 	readonly tactics?:
-		| (
-				| "Collection"
-				| "CommandAndControl"
-				| "CredentialAccess"
-				| "DefenseEvasion"
-				| "Discovery"
-				| "Execution"
-				| "Exfiltration"
-				| "Impact"
-				| "InitialAccess"
-				| "LateralMovement"
-				| "Persistence"
-				| "PrivilegeEscalation"[]
-		  )
-		| undefined;
+		| "Collection"
+		| "CommandAndControl"
+		| "CredentialAccess"
+		| "DefenseEvasion"
+		| "Discovery"
+		| "Execution"
+		| "Exfiltration"
+		| "Impact"
+		| "InitialAccess"
+		| "LateralMovement"
+		| "Persistence"
+		| "PrivilegeEscalation"[];
 }
 export interface IncidentAdditionalData {
-	readonly alertProductNames?: string[] | undefined;
-	readonly alertsCount?: number | undefined;
-	readonly bookmarksCount?: number | undefined;
-	readonly commentsCount?: number | undefined;
+	readonly alertProductNames?: string[];
+	readonly alertsCount?: number;
+	readonly bookmarksCount?: number;
+	readonly commentsCount?: number;
 	readonly tactics?:
-		| (
-				| "Collection"
-				| "CommandAndControl"
-				| "CredentialAccess"
-				| "DefenseEvasion"
-				| "Discovery"
-				| "Execution"
-				| "Exfiltration"
-				| "Impact"
-				| "InitialAccess"
-				| "LateralMovement"
-				| "Persistence"
-				| "PrivilegeEscalation"[]
-		  )
-		| undefined;
+		| "Collection"
+		| "CommandAndControl"
+		| "CredentialAccess"
+		| "DefenseEvasion"
+		| "Discovery"
+		| "Execution"
+		| "Exfiltration"
+		| "Impact"
+		| "InitialAccess"
+		| "LateralMovement"
+		| "Persistence"
+		| "PrivilegeEscalation"[];
 }
 export interface IncidentCommentProperties {
-	readonly author?: ClientInfo | undefined;
-	readonly createdTimeUtc?: string | undefined;
+	readonly author?: ClientInfo;
+	readonly createdTimeUtc?: string;
 	readonly message: string;
 }
 export interface IncidentInfo {
-	readonly incidentId?: string | undefined;
-	readonly relationName?: string | undefined;
-	readonly severity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
-	readonly title?: string | undefined;
+	readonly incidentId?: string;
+	readonly relationName?: string;
+	readonly severity?: "High" | "Informational" | "Low" | "Medium";
+	readonly title?: string;
 }
 export interface IncidentLabel {
 	readonly labelName: string;
-	readonly labelType?: ("System" | "User") | undefined;
+	readonly labelType?: "System" | "User";
 }
 export interface IncidentOwnerInfo {
-	readonly assignedTo?: string | undefined;
-	readonly email?: string | undefined;
-	readonly objectId?: string | undefined;
-	readonly userPrincipalName?: string | undefined;
+	readonly assignedTo?: string;
+	readonly email?: string;
+	readonly objectId?: string;
+	readonly userPrincipalName?: string;
 }
 export interface IncidentProperties {
-	readonly additionalData?: IncidentAdditionalData | undefined;
-	readonly classification?: ("BenignPositive" | "FalsePositive" | "TruePositive" | "Undetermined") | undefined;
-	readonly classificationComment?: string | undefined;
+	readonly additionalData?: IncidentAdditionalData;
+	readonly classification?: "BenignPositive" | "FalsePositive" | "TruePositive" | "Undetermined";
+	readonly classificationComment?: string;
 	readonly classificationReason?:
-		| ("InaccurateData" | "IncorrectAlertLogic" | "SuspiciousActivity" | "SuspiciousButExpected")
-		| undefined;
-	readonly createdTimeUtc?: string | undefined;
-	readonly description?: string | undefined;
-	readonly firstActivityTimeUtc?: string | undefined;
-	readonly incidentNumber?: number | undefined;
-	readonly incidentUrl?: string | undefined;
-	readonly labels?: IncidentLabel[] | undefined;
-	readonly lastActivityTimeUtc?: string | undefined;
-	readonly lastModifiedTimeUtc?: string | undefined;
-	readonly owner?: IncidentOwnerInfo | undefined;
-	readonly relatedAnalyticRuleIds?: string[] | undefined;
+		| "InaccurateData"
+		| "IncorrectAlertLogic"
+		| "SuspiciousActivity"
+		| "SuspiciousButExpected";
+	readonly createdTimeUtc?: string;
+	readonly description?: string;
+	readonly firstActivityTimeUtc?: string;
+	readonly incidentNumber?: number;
+	readonly incidentUrl?: string;
+	readonly labels?: IncidentLabel[];
+	readonly lastActivityTimeUtc?: string;
+	readonly lastModifiedTimeUtc?: string;
+	readonly owner?: IncidentOwnerInfo;
+	readonly relatedAnalyticRuleIds?: string[];
 	readonly severity: "High" | "Informational" | "Low" | "Medium";
 	readonly status: "Active" | "Closed" | "New";
 	readonly title: string;
 }
 export interface McasDataConnectorDataTypes {
-	readonly alerts?: DataConnectorDataTypeCommon | undefined;
-	readonly discoveryLogs?: DataConnectorDataTypeCommon | undefined;
+	readonly alerts?: DataConnectorDataTypeCommon;
+	readonly discoveryLogs?: DataConnectorDataTypeCommon;
 }
 export interface McasDataConnectorProperties {
-	readonly dataTypes?: McasDataConnectorDataTypes | undefined;
-	readonly tenantId?: string | undefined;
+	readonly dataTypes?: McasDataConnectorDataTypes;
+	readonly tenantId?: string;
 }
 export interface MdatpDataConnectorProperties {
-	readonly dataTypes?: AlertsDataTypeOfDataConnector | undefined;
-	readonly tenantId?: string | undefined;
+	readonly dataTypes?: AlertsDataTypeOfDataConnector;
+	readonly tenantId?: string;
 }
 export interface MicrosoftSecurityIncidentCreationAlertRuleProperties {
-	readonly alertRuleTemplateName?: string | undefined;
-	readonly description?: string | undefined;
+	readonly alertRuleTemplateName?: string;
+	readonly description?: string;
 	readonly displayName: string;
-	readonly displayNamesExcludeFilter?: string[] | undefined;
-	readonly displayNamesFilter?: string[] | undefined;
+	readonly displayNamesExcludeFilter?: string[];
+	readonly displayNamesFilter?: string[];
 	readonly enabled: boolean;
-	readonly lastModifiedUtc?: string | undefined;
+	readonly lastModifiedUtc?: string;
 	readonly productFilter:
 		| "Azure Active Directory Identity Protection"
 		| "Azure Advanced Threat Protection"
 		| "Azure Security Center for IoT"
 		| "Azure Security Center"
 		| "Microsoft Cloud App Security";
-	readonly severitiesFilter?: ("High" | "Informational" | "Low" | "Medium"[]) | undefined;
+	readonly severitiesFilter?: "High" | "Informational" | "Low" | "Medium"[];
 }
 export interface MicrosoftSecurityIncidentCreationAlertRuleTemplateProperties {
-	readonly alertRulesCreatedByTemplateCount?: number | undefined;
-	readonly createdDateUTC?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly displayNamesExcludeFilter?: string[] | undefined;
-	readonly displayNamesFilter?: string[] | undefined;
-	readonly lastUpdatedDateUTC?: string | undefined;
+	readonly alertRulesCreatedByTemplateCount?: number;
+	readonly createdDateUTC?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly displayNamesExcludeFilter?: string[];
+	readonly displayNamesFilter?: string[];
+	readonly lastUpdatedDateUTC?: string;
 	readonly productFilter:
 		| "Azure Active Directory Identity Protection"
 		| "Azure Advanced Threat Protection"
 		| "Azure Security Center for IoT"
 		| "Azure Security Center"
 		| "Microsoft Cloud App Security";
-	readonly requiredDataConnectors?: AlertRuleTemplateDataSource[] | undefined;
-	readonly severitiesFilter?: ("High" | "Informational" | "Low" | "Medium"[]) | undefined;
-	readonly status?: ("Available" | "Installed" | "NotAvailable") | undefined;
+	readonly requiredDataConnectors?: AlertRuleTemplateDataSource[];
+	readonly severitiesFilter?: "High" | "Informational" | "Low" | "Medium"[];
+	readonly status?: "Available" | "Installed" | "NotAvailable";
 }
 export interface OfficeDataConnectorDataTypes {
-	readonly exchange?: OfficeDataConnectorDataTypesExchange | undefined;
-	readonly sharePoint?: OfficeDataConnectorDataTypesSharePoint | undefined;
-	readonly teams?: OfficeDataConnectorDataTypesTeams | undefined;
+	readonly exchange?: OfficeDataConnectorDataTypesExchange;
+	readonly sharePoint?: OfficeDataConnectorDataTypesSharePoint;
+	readonly teams?: OfficeDataConnectorDataTypesTeams;
 }
 export interface OfficeDataConnectorDataTypesExchange {
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface OfficeDataConnectorDataTypesSharePoint {
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface OfficeDataConnectorDataTypesTeams {
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface OfficeDataConnectorProperties {
-	readonly dataTypes?: OfficeDataConnectorDataTypes | undefined;
-	readonly tenantId?: string | undefined;
+	readonly dataTypes?: OfficeDataConnectorDataTypes;
+	readonly tenantId?: string;
 }
 export interface ScheduledAlertRuleProperties {
-	readonly alertRuleTemplateName?: string | undefined;
-	readonly description?: string | undefined;
+	readonly alertRuleTemplateName?: string;
+	readonly description?: string;
 	readonly displayName: string;
 	readonly enabled: boolean;
-	readonly lastModifiedUtc?: string | undefined;
-	readonly query?: string | undefined;
-	readonly queryFrequency?: string | undefined;
-	readonly queryPeriod?: string | undefined;
-	readonly severity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
+	readonly lastModifiedUtc?: string;
+	readonly query?: string;
+	readonly queryFrequency?: string;
+	readonly queryPeriod?: string;
+	readonly severity?: "High" | "Informational" | "Low" | "Medium";
 	readonly suppressionDuration: string;
 	readonly suppressionEnabled: boolean;
 	readonly tactics?:
-		| (
-				| "Collection"
-				| "CommandAndControl"
-				| "CredentialAccess"
-				| "DefenseEvasion"
-				| "Discovery"
-				| "Execution"
-				| "Exfiltration"
-				| "Impact"
-				| "InitialAccess"
-				| "LateralMovement"
-				| "Persistence"
-				| "PrivilegeEscalation"[]
-		  )
-		| undefined;
-	readonly triggerOperator?: ("Equal" | "GreaterThan" | "LessThan") | undefined;
-	readonly triggerThreshold?: number | undefined;
+		| "Collection"
+		| "CommandAndControl"
+		| "CredentialAccess"
+		| "DefenseEvasion"
+		| "Discovery"
+		| "Execution"
+		| "Exfiltration"
+		| "Impact"
+		| "InitialAccess"
+		| "LateralMovement"
+		| "Persistence"
+		| "PrivilegeEscalation"[];
+	readonly triggerOperator?: "Equal" | "GreaterThan" | "LessThan";
+	readonly triggerThreshold?: number;
 }
 export interface ScheduledAlertRuleTemplateProperties {
-	readonly alertRulesCreatedByTemplateCount?: number | undefined;
-	readonly createdDateUTC?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly lastUpdatedDateUTC?: string | undefined;
-	readonly query?: string | undefined;
-	readonly queryFrequency?: string | undefined;
-	readonly queryPeriod?: string | undefined;
-	readonly requiredDataConnectors?: AlertRuleTemplateDataSource[] | undefined;
-	readonly severity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
-	readonly status?: ("Available" | "Installed" | "NotAvailable") | undefined;
+	readonly alertRulesCreatedByTemplateCount?: number;
+	readonly createdDateUTC?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly lastUpdatedDateUTC?: string;
+	readonly query?: string;
+	readonly queryFrequency?: string;
+	readonly queryPeriod?: string;
+	readonly requiredDataConnectors?: AlertRuleTemplateDataSource[];
+	readonly severity?: "High" | "Informational" | "Low" | "Medium";
+	readonly status?: "Available" | "Installed" | "NotAvailable";
 	readonly tactics?:
-		| (
-				| "Collection"
-				| "CommandAndControl"
-				| "CredentialAccess"
-				| "DefenseEvasion"
-				| "Discovery"
-				| "Execution"
-				| "Exfiltration"
-				| "Impact"
-				| "InitialAccess"
-				| "LateralMovement"
-				| "Persistence"
-				| "PrivilegeEscalation"[]
-		  )
-		| undefined;
-	readonly triggerOperator?: ("Equal" | "GreaterThan" | "LessThan") | undefined;
-	readonly triggerThreshold?: number | undefined;
+		| "Collection"
+		| "CommandAndControl"
+		| "CredentialAccess"
+		| "DefenseEvasion"
+		| "Discovery"
+		| "Execution"
+		| "Exfiltration"
+		| "Impact"
+		| "InitialAccess"
+		| "LateralMovement"
+		| "Persistence"
+		| "PrivilegeEscalation"[];
+	readonly triggerOperator?: "Equal" | "GreaterThan" | "LessThan";
+	readonly triggerThreshold?: number;
 }
 export interface TIDataConnectorDataTypes {
-	readonly indicators?: TIDataConnectorDataTypesIndicators | undefined;
+	readonly indicators?: TIDataConnectorDataTypesIndicators;
 }
 export interface TIDataConnectorDataTypesIndicators {
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface TIDataConnectorProperties {
-	readonly dataTypes?: TIDataConnectorDataTypes | undefined;
-	readonly tenantId?: string | undefined;
-	readonly tipLookbackPeriod?: string | undefined;
+	readonly dataTypes?: TIDataConnectorDataTypes;
+	readonly tenantId?: string;
+	readonly tipLookbackPeriod?: string;
 }
 export interface UserInfo {
-	readonly email?: string | undefined;
-	readonly name?: string | undefined;
+	readonly email?: string;
+	readonly name?: string;
 	readonly objectId: string;
 }
 export type alertRules = alertRules_Fusion | alertRules_MicrosoftSecurityIncidentCreation | alertRules_Scheduled;

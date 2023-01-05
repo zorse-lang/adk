@@ -17,12 +17,12 @@ export interface flexibleServersComponentOutputs {
 	readonly type: "Microsoft.DBForPostgreSql/flexibleServers";
 }
 export interface flexibleServersComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServerProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ServerProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class flexibleServers_configurations
 	extends ArmResource<flexibleServers_configurationsComponentInputs>
@@ -48,7 +48,7 @@ export interface flexibleServers_configurationsComponentOutputs {
 }
 export interface flexibleServers_configurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfigurationProperties | undefined;
+	readonly properties?: ConfigurationProperties;
 }
 export class flexibleServers_firewallRules
 	extends ArmResource<flexibleServers_firewallRulesComponentInputs>
@@ -77,78 +77,82 @@ export interface flexibleServers_firewallRulesComponentInputs {
 	readonly properties: FirewallRuleProperties;
 }
 export interface ConfigurationProperties {
-	readonly allowedValues?: string | undefined;
-	readonly dataType?: ("Boolean" | "Enumeration" | "Integer" | "Numeric") | undefined;
-	readonly defaultValue?: string | undefined;
-	readonly description?: string | undefined;
-	readonly source?: string | undefined;
-	readonly value?: string | undefined;
+	readonly allowedValues?: string;
+	readonly dataType?: "Boolean" | "Enumeration" | "Integer" | "Numeric";
+	readonly defaultValue?: string;
+	readonly description?: string;
+	readonly source?: string;
+	readonly value?: string;
 }
 export interface FirewallRuleProperties {
 	readonly endIpAddress: string;
 	readonly startIpAddress: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface MaintenanceWindow {
-	readonly customWindow?: string | undefined;
-	readonly dayOfWeek?: number | undefined;
-	readonly startHour?: number | undefined;
-	readonly startMinute?: number | undefined;
+	readonly customWindow?: string;
+	readonly dayOfWeek?: number;
+	readonly startHour?: number;
+	readonly startMinute?: number;
 }
 export interface ServerProperties {
-	readonly administratorLogin?: string | undefined;
-	readonly administratorLoginPassword?: string | undefined;
-	readonly availabilityZone?: string | undefined;
-	readonly byokEnforcement?: string | undefined;
-	readonly createMode?: ("Default" | "PointInTimeRestore") | undefined;
-	readonly delegatedSubnetArguments?: ServerPropertiesDelegatedSubnetArguments | undefined;
-	readonly displayName?: string | undefined;
-	readonly earliestRestoreDate?: string | undefined;
-	readonly fullyQualifiedDomainName?: string | undefined;
-	readonly haEnabled?: "Disabled" | undefined;
+	readonly administratorLogin?: string;
+	readonly administratorLoginPassword?: string;
+	readonly availabilityZone?: string;
+	readonly byokEnforcement?: string;
+	readonly createMode?: "Default" | "PointInTimeRestore";
+	readonly delegatedSubnetArguments?: ServerPropertiesDelegatedSubnetArguments;
+	readonly displayName?: string;
+	readonly earliestRestoreDate?: string;
+	readonly fullyQualifiedDomainName?: string;
+	readonly haEnabled?: "Disabled";
 	readonly haState?:
-		| ("CreatingStandby" | "FailingOver" | "Healthy" | "NotEnabled" | "RemovingStandby" | "ReplicatingData")
-		| undefined;
-	readonly logBackupStorageSku?: string | undefined;
-	readonly maintenanceWindow?: MaintenanceWindow | undefined;
-	readonly minorVersion?: string | undefined;
-	readonly pointInTimeUTC?: string | undefined;
-	readonly privateDnsZoneArguments?: ServerPropertiesPrivateDnsZoneArguments | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly sourceResourceGroupName?: string | undefined;
-	readonly sourceServerName?: string | undefined;
-	readonly sourceSubscriptionId?: string | undefined;
-	readonly standbyAvailabilityZone?: string | undefined;
-	readonly standbyCount?: number | undefined;
-	readonly state?: ("Disabled" | "Dropping" | "Ready" | "Starting" | "Stopped" | "Stopping" | "Updating") | undefined;
-	readonly storageProfile?: StorageProfile | undefined;
-	readonly tags?: ServerPropertiesTags | undefined;
-	readonly version?: ("11" | "12") | undefined;
+		| "CreatingStandby"
+		| "FailingOver"
+		| "Healthy"
+		| "NotEnabled"
+		| "RemovingStandby"
+		| "ReplicatingData";
+	readonly logBackupStorageSku?: string;
+	readonly maintenanceWindow?: MaintenanceWindow;
+	readonly minorVersion?: string;
+	readonly pointInTimeUTC?: string;
+	readonly privateDnsZoneArguments?: ServerPropertiesPrivateDnsZoneArguments;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly sourceResourceGroupName?: string;
+	readonly sourceServerName?: string;
+	readonly sourceSubscriptionId?: string;
+	readonly standbyAvailabilityZone?: string;
+	readonly standbyCount?: number;
+	readonly state?: "Disabled" | "Dropping" | "Ready" | "Starting" | "Stopped" | "Stopping" | "Updating";
+	readonly storageProfile?: StorageProfile;
+	readonly tags?: ServerPropertiesTags;
+	readonly version?: "11" | "12";
 }
 export interface ServerPropertiesDelegatedSubnetArguments {
-	readonly subnetArmResourceId?: string | undefined;
+	readonly subnetArmResourceId?: string;
 }
 export interface ServerPropertiesPrivateDnsZoneArguments {
-	readonly privateDnsZoneArmResourceId?: string | undefined;
+	readonly privateDnsZoneArmResourceId?: string;
 }
 export interface ServerPropertiesTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
 	readonly name: string;
 	readonly tier: "Burstable" | "GeneralPurpose" | "MemoryOptimized";
 }
 export interface StorageProfile {
-	readonly backupRetentionDays?: number | undefined;
-	readonly geoRedundantBackup?: ("Disabled" | "Enabled") | undefined;
-	readonly storageMB?: number | undefined;
+	readonly backupRetentionDays?: number;
+	readonly geoRedundantBackup?: "Disabled" | "Enabled";
+	readonly storageMB?: number;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	flexibleServers: flexibleServers,

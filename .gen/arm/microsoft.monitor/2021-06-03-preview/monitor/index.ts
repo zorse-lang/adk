@@ -14,37 +14,37 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.Monitor/accounts";
 }
 export interface accountsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MonitoringAccountResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: MonitoringAccountResourceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface MonitoringAccountDefaultIngestionSettings {
-	readonly dataCollectionEndpointResourceId?: string | undefined;
-	readonly dataCollectionRuleResourceId?: string | undefined;
+	readonly dataCollectionEndpointResourceId?: string;
+	readonly dataCollectionRuleResourceId?: string;
 }
 export interface MonitoringAccountMetrics {
-	readonly internalId?: string | undefined;
-	readonly prometheusQueryEndpoint?: string | undefined;
+	readonly internalId?: string;
+	readonly prometheusQueryEndpoint?: string;
 }
 export interface MonitoringAccountResourceProperties {
-	readonly accountId?: string | undefined;
-	readonly defaultIngestionSettings?: MonitoringAccountDefaultIngestionSettings | undefined;
-	readonly metrics?: MonitoringAccountMetrics | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly accountId?: string;
+	readonly defaultIngestionSettings?: MonitoringAccountDefaultIngestionSettings;
+	readonly metrics?: MonitoringAccountMetrics;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	accounts: accounts,

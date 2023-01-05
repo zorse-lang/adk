@@ -17,11 +17,11 @@ export interface integrationAccountsComponentOutputs {
 	readonly type: "Microsoft.Logic/integrationAccounts";
 }
 export interface integrationAccountsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: any | undefined;
-	readonly sku?: IntegrationAccountSku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: any;
+	readonly sku?: IntegrationAccountSku;
+	readonly tags?: ResourceTags;
 }
 export class integrationAccounts_agreements
 	extends ArmResource<integrationAccounts_agreementsComponentInputs>
@@ -40,10 +40,10 @@ export interface integrationAccounts_agreementsComponentOutputs {
 	readonly type: "Microsoft.Logic/integrationAccounts/agreements";
 }
 export interface integrationAccounts_agreementsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: IntegrationAccountAgreementProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class integrationAccounts_assemblies
 	extends ArmResource<integrationAccounts_assembliesComponentInputs>
@@ -62,10 +62,10 @@ export interface integrationAccounts_assembliesComponentOutputs {
 	readonly type: "Microsoft.Logic/integrationAccounts/assemblies";
 }
 export interface integrationAccounts_assembliesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: AssemblyProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class integrationAccounts_batchConfigurations
 	extends ArmResource<integrationAccounts_batchConfigurationsComponentInputs>
@@ -84,10 +84,10 @@ export interface integrationAccounts_batchConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Logic/integrationAccounts/batchConfigurations";
 }
 export interface integrationAccounts_batchConfigurationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: BatchConfigurationProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class integrationAccounts_certificates
 	extends ArmResource<integrationAccounts_certificatesComponentInputs>
@@ -106,10 +106,10 @@ export interface integrationAccounts_certificatesComponentOutputs {
 	readonly type: "Microsoft.Logic/integrationAccounts/certificates";
 }
 export interface integrationAccounts_certificatesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: IntegrationAccountCertificateProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class integrationAccounts_maps
 	extends ArmResource<integrationAccounts_mapsComponentInputs>
@@ -128,10 +128,10 @@ export interface integrationAccounts_mapsComponentOutputs {
 	readonly type: "Microsoft.Logic/integrationAccounts/maps";
 }
 export interface integrationAccounts_mapsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: IntegrationAccountMapProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class integrationAccounts_partners
 	extends ArmResource<integrationAccounts_partnersComponentInputs>
@@ -150,10 +150,10 @@ export interface integrationAccounts_partnersComponentOutputs {
 	readonly type: "Microsoft.Logic/integrationAccounts/partners";
 }
 export interface integrationAccounts_partnersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: IntegrationAccountPartnerProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class integrationAccounts_rosettanetprocessconfigurations
 	extends ArmResource<integrationAccounts_rosettanetprocessconfigurationsComponentInputs>
@@ -178,10 +178,10 @@ export interface integrationAccounts_rosettanetprocessconfigurationsComponentOut
 	readonly type: "Microsoft.Logic/integrationAccounts/rosettanetprocessconfigurations";
 }
 export interface integrationAccounts_rosettanetprocessconfigurationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: IntegrationAccountRosettaNetProcessConfigurationProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class integrationAccounts_schemas
 	extends ArmResource<integrationAccounts_schemasComponentInputs>
@@ -200,10 +200,10 @@ export interface integrationAccounts_schemasComponentOutputs {
 	readonly type: "Microsoft.Logic/integrationAccounts/schemas";
 }
 export interface integrationAccounts_schemasComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: IntegrationAccountSchemaProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class integrationAccounts_sessions
 	extends ArmResource<integrationAccounts_sessionsComponentInputs>
@@ -222,10 +222,10 @@ export interface integrationAccounts_sessionsComponentOutputs {
 	readonly type: "Microsoft.Logic/integrationAccounts/sessions";
 }
 export interface integrationAccounts_sessionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: IntegrationAccountSessionProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class workflows extends ArmResource<workflowsComponentInputs> implements workflowsComponentOutputs {
 	constructor(entity: ADKEntity, options: workflowsComponentInputs) {
@@ -241,10 +241,10 @@ export interface workflowsComponentOutputs {
 	readonly type: "Microsoft.Logic/workflows";
 }
 export interface workflowsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WorkflowProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkflowProperties;
+	readonly tags?: ResourceTags;
 }
 export class workflows_runs extends ArmResource<workflows_runsComponentInputs> implements workflows_runsComponentOutputs {
 	constructor(entity: ADKEntity, options: workflows_runsComponentInputs) {
@@ -261,7 +261,7 @@ export interface workflows_runsComponentOutputs {
 }
 export interface workflows_runsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowRunProperties | undefined;
+	readonly properties?: WorkflowRunProperties;
 }
 export class workflows_runs_actions
 	extends ArmResource<workflows_runs_actionsComponentInputs>
@@ -281,7 +281,7 @@ export interface workflows_runs_actionsComponentOutputs {
 }
 export interface workflows_runs_actionsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowRunActionProperties | undefined;
+	readonly properties?: WorkflowRunActionProperties;
 }
 export class workflows_runs_actions_repetitions
 	extends ArmResource<workflows_runs_actions_repetitionsComponentInputs>
@@ -300,10 +300,10 @@ export interface workflows_runs_actions_repetitionsComponentOutputs {
 	readonly type: "Microsoft.Logic/workflows/runs/actions/repetitions";
 }
 export interface workflows_runs_actions_repetitionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WorkflowRunActionRepetitionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkflowRunActionRepetitionProperties;
+	readonly tags?: ResourceTags;
 }
 export class workflows_runs_actions_repetitions_requestHistories
 	extends ArmResource<workflows_runs_actions_repetitions_requestHistoriesComponentInputs>
@@ -328,10 +328,10 @@ export interface workflows_runs_actions_repetitions_requestHistoriesComponentOut
 	readonly type: "Microsoft.Logic/workflows/runs/actions/repetitions/requestHistories";
 }
 export interface workflows_runs_actions_repetitions_requestHistoriesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RequestHistoryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: RequestHistoryProperties;
+	readonly tags?: ResourceTags;
 }
 export class workflows_runs_actions_requestHistories
 	extends ArmResource<workflows_runs_actions_requestHistoriesComponentInputs>
@@ -350,10 +350,10 @@ export interface workflows_runs_actions_requestHistoriesComponentOutputs {
 	readonly type: "Microsoft.Logic/workflows/runs/actions/requestHistories";
 }
 export interface workflows_runs_actions_requestHistoriesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RequestHistoryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: RequestHistoryProperties;
+	readonly tags?: ResourceTags;
 }
 export class workflows_runs_actions_scopeRepetitions
 	extends ArmResource<workflows_runs_actions_scopeRepetitionsComponentInputs>
@@ -372,10 +372,10 @@ export interface workflows_runs_actions_scopeRepetitionsComponentOutputs {
 	readonly type: "Microsoft.Logic/workflows/runs/actions/scopeRepetitions";
 }
 export interface workflows_runs_actions_scopeRepetitionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WorkflowRunActionRepetitionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkflowRunActionRepetitionProperties;
+	readonly tags?: ResourceTags;
 }
 export class workflows_runs_operations
 	extends ArmResource<workflows_runs_operationsComponentInputs>
@@ -395,7 +395,7 @@ export interface workflows_runs_operationsComponentOutputs {
 }
 export interface workflows_runs_operationsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowRunProperties | undefined;
+	readonly properties?: WorkflowRunProperties;
 }
 export class workflows_triggers
 	extends ArmResource<workflows_triggersComponentInputs>
@@ -415,7 +415,7 @@ export interface workflows_triggersComponentOutputs {
 }
 export interface workflows_triggersComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowTriggerProperties | undefined;
+	readonly properties?: WorkflowTriggerProperties;
 }
 export class workflows_triggers_histories
 	extends ArmResource<workflows_triggers_historiesComponentInputs>
@@ -435,7 +435,7 @@ export interface workflows_triggers_historiesComponentOutputs {
 }
 export interface workflows_triggers_historiesComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowTriggerHistoryProperties | undefined;
+	readonly properties?: WorkflowTriggerHistoryProperties;
 }
 export class workflows_versions
 	extends ArmResource<workflows_versionsComponentInputs>
@@ -454,10 +454,10 @@ export interface workflows_versionsComponentOutputs {
 	readonly type: "Microsoft.Logic/workflows/versions";
 }
 export interface workflows_versionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WorkflowVersionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkflowVersionProperties;
+	readonly tags?: ResourceTags;
 }
 export function listCallbackUrl(resource: workflows, input: GetCallbackUrlParameters): WorkflowTriggerCallbackUrl {
 	if (resource.apiVersion !== "2016-06-01") {
@@ -508,9 +508,9 @@ export function listSwagger(resource: workflows): any {
 	throw new Error("not implemented");
 }
 export interface AgreementContent {
-	readonly aS2?: AS2AgreementContent | undefined;
-	readonly edifact?: EdifactAgreementContent | undefined;
-	readonly x12?: X12AgreementContent | undefined;
+	readonly aS2?: AS2AgreementContent;
+	readonly edifact?: EdifactAgreementContent;
+	readonly x12?: X12AgreementContent;
 }
 export interface AS2AcknowledgementConnectionSettings {
 	readonly ignoreCertificateNameMismatch: boolean;
@@ -534,11 +534,11 @@ export interface AS2ErrorSettings {
 	readonly suspendDuplicateMessage: boolean;
 }
 export interface AS2MdnSettings {
-	readonly dispositionNotificationTo?: string | undefined;
-	readonly mdnText?: string | undefined;
+	readonly dispositionNotificationTo?: string;
+	readonly mdnText?: string;
 	readonly micHashingAlgorithm: "MD5" | "None" | "NotSpecified" | "SHA1" | "SHA2256" | "SHA2384";
 	readonly needMdn: boolean;
-	readonly receiptDeliveryUrl?: string | undefined;
+	readonly receiptDeliveryUrl?: string;
 	readonly sendInboundMdnToMessageBox: boolean;
 	readonly sendMdnAsynchronously: boolean;
 	readonly signMdn: boolean;
@@ -571,10 +571,10 @@ export interface AS2SecuritySettings {
 	readonly enableNrrForOutboundDecodedMessages: boolean;
 	readonly enableNrrForOutboundEncodedMessages: boolean;
 	readonly enableNrrForOutboundMdn: boolean;
-	readonly encryptionCertificateName?: string | undefined;
+	readonly encryptionCertificateName?: string;
 	readonly overrideGroupSigningCertificate: boolean;
-	readonly sha2AlgorithmFormat?: string | undefined;
-	readonly signingCertificateName?: string | undefined;
+	readonly sha2AlgorithmFormat?: string;
+	readonly signingCertificateName?: string;
 }
 export interface AS2ValidationSettings {
 	readonly checkCertificateRevocationListOnReceive: boolean;
@@ -585,66 +585,66 @@ export interface AS2ValidationSettings {
 	readonly encryptMessage: boolean;
 	readonly interchangeDuplicatesValidityDays: number;
 	readonly overrideMessageProperties: boolean;
-	readonly signingAlgorithm?: ("Default" | "NotSpecified" | "SHA1" | "SHA2256" | "SHA2384" | "SHA2512") | undefined;
+	readonly signingAlgorithm?: "Default" | "NotSpecified" | "SHA1" | "SHA2256" | "SHA2384" | "SHA2512";
 	readonly signMessage: boolean;
 }
 export interface AssemblyProperties {
-	readonly assemblyCulture?: string | undefined;
+	readonly assemblyCulture?: string;
 	readonly assemblyName: string;
-	readonly assemblyPublicKeyToken?: string | undefined;
-	readonly assemblyVersion?: string | undefined;
-	readonly changedTime?: string | undefined;
-	readonly content?: any | undefined;
-	readonly contentLink?: ContentLink | undefined;
-	readonly contentType?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly metadata?: any | undefined;
+	readonly assemblyPublicKeyToken?: string;
+	readonly assemblyVersion?: string;
+	readonly changedTime?: string;
+	readonly content?: any;
+	readonly contentLink?: ContentLink;
+	readonly contentType?: string;
+	readonly createdTime?: string;
+	readonly metadata?: any;
 }
 export interface AzureResourceErrorInfo {
 	readonly code: string;
-	readonly details?: AzureResourceErrorInfo[] | undefined;
+	readonly details?: AzureResourceErrorInfo[];
 	readonly message: string;
 }
 export interface B2BPartnerContent {
-	readonly businessIdentities?: BusinessIdentity[] | undefined;
+	readonly businessIdentities?: BusinessIdentity[];
 }
 export interface BatchConfigurationProperties {
 	readonly batchGroupName: string;
-	readonly changedTime?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly metadata?: any | undefined;
+	readonly changedTime?: string;
+	readonly createdTime?: string;
+	readonly metadata?: any;
 	readonly releaseCriteria: BatchReleaseCriteria;
 }
 export interface BatchReleaseCriteria {
-	readonly batchSize?: number | undefined;
-	readonly messageCount?: number | undefined;
-	readonly recurrence?: WorkflowTriggerRecurrence | undefined;
+	readonly batchSize?: number;
+	readonly messageCount?: number;
+	readonly recurrence?: WorkflowTriggerRecurrence;
 }
 export interface BusinessIdentity {
 	readonly qualifier: string;
 	readonly value: string;
 }
 export interface CallbackUrl {
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface ContentHash {
-	readonly algorithm?: string | undefined;
-	readonly value?: string | undefined;
+	readonly algorithm?: string;
+	readonly value?: string;
 }
 export interface ContentLink {
-	readonly contentHash?: ContentHash | undefined;
-	readonly contentSize?: number | undefined;
-	readonly contentVersion?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly uri?: string | undefined;
+	readonly contentHash?: ContentHash;
+	readonly contentSize?: number;
+	readonly contentVersion?: string;
+	readonly metadata?: any;
+	readonly uri?: string;
 }
 export interface Correlation {
-	readonly clientTrackingId?: string | undefined;
+	readonly clientTrackingId?: string;
 }
 export interface EdifactAcknowledgementSettings {
 	readonly acknowledgementControlNumberLowerBound: number;
-	readonly acknowledgementControlNumberPrefix?: string | undefined;
-	readonly acknowledgementControlNumberSuffix?: string | undefined;
+	readonly acknowledgementControlNumberPrefix?: string;
+	readonly acknowledgementControlNumberSuffix?: string;
 	readonly acknowledgementControlNumberUpperBound: number;
 	readonly batchFunctionalAcknowledgements: boolean;
 	readonly batchTechnicalAcknowledgements: boolean;
@@ -662,78 +662,78 @@ export interface EdifactDelimiterOverride {
 	readonly componentSeparator: number;
 	readonly dataElementSeparator: number;
 	readonly decimalPointIndicator: "Comma" | "Decimal";
-	readonly messageAssociationAssignedCode?: string | undefined;
-	readonly messageId?: string | undefined;
-	readonly messageRelease?: string | undefined;
-	readonly messageVersion?: string | undefined;
+	readonly messageAssociationAssignedCode?: string;
+	readonly messageId?: string;
+	readonly messageRelease?: string;
+	readonly messageVersion?: string;
 	readonly releaseIndicator: number;
 	readonly repetitionSeparator: number;
 	readonly segmentTerminator: number;
 	readonly segmentTerminatorSuffix: "CR" | "CRLF" | "LF" | "None";
-	readonly targetNamespace?: string | undefined;
+	readonly targetNamespace?: string;
 }
 export interface EdifactEnvelopeOverride {
-	readonly applicationPassword?: string | undefined;
-	readonly associationAssignedCode?: string | undefined;
-	readonly controllingAgencyCode?: string | undefined;
-	readonly functionalGroupId?: string | undefined;
-	readonly groupHeaderMessageRelease?: string | undefined;
-	readonly groupHeaderMessageVersion?: string | undefined;
-	readonly messageAssociationAssignedCode?: string | undefined;
-	readonly messageId?: string | undefined;
-	readonly messageRelease?: string | undefined;
-	readonly messageVersion?: string | undefined;
-	readonly receiverApplicationId?: string | undefined;
-	readonly receiverApplicationQualifier?: string | undefined;
-	readonly senderApplicationId?: string | undefined;
-	readonly senderApplicationQualifier?: string | undefined;
-	readonly targetNamespace?: string | undefined;
+	readonly applicationPassword?: string;
+	readonly associationAssignedCode?: string;
+	readonly controllingAgencyCode?: string;
+	readonly functionalGroupId?: string;
+	readonly groupHeaderMessageRelease?: string;
+	readonly groupHeaderMessageVersion?: string;
+	readonly messageAssociationAssignedCode?: string;
+	readonly messageId?: string;
+	readonly messageRelease?: string;
+	readonly messageVersion?: string;
+	readonly receiverApplicationId?: string;
+	readonly receiverApplicationQualifier?: string;
+	readonly senderApplicationId?: string;
+	readonly senderApplicationQualifier?: string;
+	readonly targetNamespace?: string;
 }
 export interface EdifactEnvelopeSettings {
-	readonly applicationReferenceId?: string | undefined;
+	readonly applicationReferenceId?: string;
 	readonly applyDelimiterStringAdvice: boolean;
-	readonly communicationAgreementId?: string | undefined;
+	readonly communicationAgreementId?: string;
 	readonly createGroupingSegments: boolean;
 	readonly enableDefaultGroupHeaders: boolean;
-	readonly functionalGroupId?: string | undefined;
-	readonly groupApplicationPassword?: string | undefined;
-	readonly groupApplicationReceiverId?: string | undefined;
-	readonly groupApplicationReceiverQualifier?: string | undefined;
-	readonly groupApplicationSenderId?: string | undefined;
-	readonly groupApplicationSenderQualifier?: string | undefined;
-	readonly groupAssociationAssignedCode?: string | undefined;
-	readonly groupControllingAgencyCode?: string | undefined;
+	readonly functionalGroupId?: string;
+	readonly groupApplicationPassword?: string;
+	readonly groupApplicationReceiverId?: string;
+	readonly groupApplicationReceiverQualifier?: string;
+	readonly groupApplicationSenderId?: string;
+	readonly groupApplicationSenderQualifier?: string;
+	readonly groupAssociationAssignedCode?: string;
+	readonly groupControllingAgencyCode?: string;
 	readonly groupControlNumberLowerBound: number;
-	readonly groupControlNumberPrefix?: string | undefined;
-	readonly groupControlNumberSuffix?: string | undefined;
+	readonly groupControlNumberPrefix?: string;
+	readonly groupControlNumberSuffix?: string;
 	readonly groupControlNumberUpperBound: number;
-	readonly groupMessageRelease?: string | undefined;
-	readonly groupMessageVersion?: string | undefined;
+	readonly groupMessageRelease?: string;
+	readonly groupMessageVersion?: string;
 	readonly interchangeControlNumberLowerBound: number;
-	readonly interchangeControlNumberPrefix?: string | undefined;
-	readonly interchangeControlNumberSuffix?: string | undefined;
+	readonly interchangeControlNumberPrefix?: string;
+	readonly interchangeControlNumberSuffix?: string;
 	readonly interchangeControlNumberUpperBound: number;
 	readonly isTestInterchange: boolean;
 	readonly overwriteExistingTransactionSetControlNumber: boolean;
-	readonly processingPriorityCode?: string | undefined;
-	readonly receiverInternalIdentification?: string | undefined;
-	readonly receiverInternalSubIdentification?: string | undefined;
-	readonly receiverReverseRoutingAddress?: string | undefined;
-	readonly recipientReferencePasswordQualifier?: string | undefined;
-	readonly recipientReferencePasswordValue?: string | undefined;
+	readonly processingPriorityCode?: string;
+	readonly receiverInternalIdentification?: string;
+	readonly receiverInternalSubIdentification?: string;
+	readonly receiverReverseRoutingAddress?: string;
+	readonly recipientReferencePasswordQualifier?: string;
+	readonly recipientReferencePasswordValue?: string;
 	readonly rolloverGroupControlNumber: boolean;
 	readonly rolloverInterchangeControlNumber: boolean;
 	readonly rolloverTransactionSetControlNumber: boolean;
-	readonly senderInternalIdentification?: string | undefined;
-	readonly senderInternalSubIdentification?: string | undefined;
-	readonly senderReverseRoutingAddress?: string | undefined;
+	readonly senderInternalIdentification?: string;
+	readonly senderInternalSubIdentification?: string;
+	readonly senderReverseRoutingAddress?: string;
 	readonly transactionSetControlNumberLowerBound: number;
-	readonly transactionSetControlNumberPrefix?: string | undefined;
-	readonly transactionSetControlNumberSuffix?: string | undefined;
+	readonly transactionSetControlNumberPrefix?: string;
+	readonly transactionSetControlNumberSuffix?: string;
 	readonly transactionSetControlNumberUpperBound: number;
 }
 export interface EdifactFramingSettings {
-	readonly characterEncoding?: string | undefined;
+	readonly characterEncoding?: string;
 	readonly characterSet:
 		| "KECA"
 		| "NotSpecified"
@@ -757,7 +757,7 @@ export interface EdifactFramingSettings {
 	readonly repetitionSeparator: number;
 	readonly segmentTerminator: number;
 	readonly segmentTerminatorSuffix: "CR" | "CRLF" | "LF" | "None";
-	readonly serviceCodeListDirectoryVersion?: string | undefined;
+	readonly serviceCodeListDirectoryVersion?: string;
 }
 export interface EdifactMessageFilter {
 	readonly messageFilterType: "Exclude" | "Include";
@@ -779,25 +779,25 @@ export interface EdifactProcessingSettings {
 }
 export interface EdifactProtocolSettings {
 	readonly acknowledgementSettings: EdifactAcknowledgementSettings;
-	readonly edifactDelimiterOverrides?: EdifactDelimiterOverride[] | undefined;
-	readonly envelopeOverrides?: EdifactEnvelopeOverride[] | undefined;
+	readonly edifactDelimiterOverrides?: EdifactDelimiterOverride[];
+	readonly envelopeOverrides?: EdifactEnvelopeOverride[];
 	readonly envelopeSettings: EdifactEnvelopeSettings;
 	readonly framingSettings: EdifactFramingSettings;
 	readonly messageFilter: EdifactMessageFilter;
-	readonly messageFilterList?: EdifactMessageIdentifier[] | undefined;
+	readonly messageFilterList?: EdifactMessageIdentifier[];
 	readonly processingSettings: EdifactProcessingSettings;
 	readonly schemaReferences: EdifactSchemaReference[];
-	readonly validationOverrides?: EdifactValidationOverride[] | undefined;
+	readonly validationOverrides?: EdifactValidationOverride[];
 	readonly validationSettings: EdifactValidationSettings;
 }
 export interface EdifactSchemaReference {
-	readonly associationAssignedCode?: string | undefined;
+	readonly associationAssignedCode?: string;
 	readonly messageId: string;
 	readonly messageRelease: string;
 	readonly messageVersion: string;
 	readonly schemaName: string;
-	readonly senderApplicationId?: string | undefined;
-	readonly senderApplicationQualifier?: string | undefined;
+	readonly senderApplicationId?: string;
+	readonly senderApplicationQualifier?: string;
 }
 export interface EdifactValidationOverride {
 	readonly allowLeadingAndTrailingSpacesAndZeroes: boolean;
@@ -821,186 +821,186 @@ export interface EdifactValidationSettings {
 	readonly validateXsdTypes: boolean;
 }
 export interface ErrorProperties {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface ErrorResponse {
-	readonly error?: ErrorProperties | undefined;
+	readonly error?: ErrorProperties;
 }
 export interface Expression {
-	readonly error?: AzureResourceErrorInfo | undefined;
-	readonly subexpressions?: Expression[] | undefined;
-	readonly text?: string | undefined;
-	readonly value?: any | undefined;
+	readonly error?: AzureResourceErrorInfo;
+	readonly subexpressions?: Expression[];
+	readonly text?: string;
+	readonly value?: any;
 }
 export interface ExpressionRoot {
-	readonly error?: AzureResourceErrorInfo | undefined;
-	readonly path?: string | undefined;
-	readonly subexpressions?: Expression[] | undefined;
-	readonly text?: string | undefined;
-	readonly value?: any | undefined;
+	readonly error?: AzureResourceErrorInfo;
+	readonly path?: string;
+	readonly subexpressions?: Expression[];
+	readonly text?: string;
+	readonly value?: any;
 }
 export interface ExpressionTraces {
-	readonly inputs?: ExpressionRoot[] | undefined;
+	readonly inputs?: ExpressionRoot[];
 }
 export interface GetCallbackUrlParameters {
-	readonly keyType?: ("NotSpecified" | "Primary") | undefined;
-	readonly notAfter?: string | undefined;
+	readonly keyType?: "NotSpecified" | "Primary";
+	readonly notAfter?: string;
 }
 export interface IntegrationAccountAgreementProperties {
 	readonly agreementType: "AS2" | "Edifact" | "NotSpecified";
-	readonly changedTime?: string | undefined;
+	readonly changedTime?: string;
 	readonly content: AgreementContent;
-	readonly createdTime?: string | undefined;
+	readonly createdTime?: string;
 	readonly guestIdentity: BusinessIdentity;
 	readonly guestPartner: string;
 	readonly hostIdentity: BusinessIdentity;
 	readonly hostPartner: string;
-	readonly metadata?: any | undefined;
+	readonly metadata?: any;
 }
 export interface IntegrationAccountCertificateProperties {
-	readonly changedTime?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly key?: KeyVaultKeyReference | undefined;
-	readonly metadata?: any | undefined;
-	readonly publicCertificate?: string | undefined;
+	readonly changedTime?: string;
+	readonly createdTime?: string;
+	readonly key?: KeyVaultKeyReference;
+	readonly metadata?: any;
+	readonly publicCertificate?: string;
 }
 export interface IntegrationAccountMapProperties {
-	readonly changedTime?: string | undefined;
-	readonly content?: string | undefined;
-	readonly contentLink?: ContentLink | undefined;
-	readonly contentType?: string | undefined;
-	readonly createdTime?: string | undefined;
+	readonly changedTime?: string;
+	readonly content?: string;
+	readonly contentLink?: ContentLink;
+	readonly contentType?: string;
+	readonly createdTime?: string;
 	readonly mapType: "NotSpecified";
-	readonly metadata?: any | undefined;
-	readonly parametersSchema?: IntegrationAccountMapPropertiesParametersSchema | undefined;
+	readonly metadata?: any;
+	readonly parametersSchema?: IntegrationAccountMapPropertiesParametersSchema;
 }
 export interface IntegrationAccountMapPropertiesParametersSchema {
-	readonly ref?: string | undefined;
+	readonly ref?: string;
 }
 export interface IntegrationAccountPartnerProperties {
-	readonly changedTime?: string | undefined;
+	readonly changedTime?: string;
 	readonly content: PartnerContent;
-	readonly createdTime?: string | undefined;
-	readonly metadata?: any | undefined;
+	readonly createdTime?: string;
+	readonly metadata?: any;
 	readonly partnerType: "B2B";
 }
 export interface IntegrationAccountRosettaNetProcessConfigurationProperties {
 	readonly activitySettings: RosettaNetPipActivitySettings;
-	readonly changedTime?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly description?: string | undefined;
+	readonly changedTime?: string;
+	readonly createdTime?: string;
+	readonly description?: string;
 	readonly initiatorRoleSettings: RosettaNetPipRoleSettings;
-	readonly metadata?: IntegrationAccountRosettaNetProcessConfigurationPropertiesMetadata | undefined;
+	readonly metadata?: IntegrationAccountRosettaNetProcessConfigurationPropertiesMetadata;
 	readonly processCode: string;
 	readonly processName: string;
 	readonly processVersion: string;
 	readonly responderRoleSettings: RosettaNetPipRoleSettings;
 }
 export interface IntegrationAccountRosettaNetProcessConfigurationPropertiesMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface IntegrationAccountSchemaProperties {
-	readonly changedTime?: string | undefined;
-	readonly content?: string | undefined;
-	readonly contentLink?: ContentLink | undefined;
-	readonly contentType?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly documentName?: string | undefined;
-	readonly fileName?: string | undefined;
-	readonly metadata?: any | undefined;
+	readonly changedTime?: string;
+	readonly content?: string;
+	readonly contentLink?: ContentLink;
+	readonly contentType?: string;
+	readonly createdTime?: string;
+	readonly documentName?: string;
+	readonly fileName?: string;
+	readonly metadata?: any;
 	readonly schemaType: "NotSpecified";
-	readonly targetNamespace?: string | undefined;
+	readonly targetNamespace?: string;
 }
 export interface IntegrationAccountSessionProperties {
-	readonly changedTime?: string | undefined;
-	readonly content?: any | undefined;
-	readonly createdTime?: string | undefined;
+	readonly changedTime?: string;
+	readonly content?: any;
+	readonly createdTime?: string;
 }
 export interface IntegrationAccountSku {
 	readonly name: "Free" | "NotSpecified";
 }
 export interface KeyVaultKey {
-	readonly attributes?: KeyVaultKeyAttributes | undefined;
-	readonly kid?: string | undefined;
+	readonly attributes?: KeyVaultKeyAttributes;
+	readonly kid?: string;
 }
 export interface KeyVaultKeyAttributes {
-	readonly created?: number | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly updated?: number | undefined;
+	readonly created?: number;
+	readonly enabled?: boolean;
+	readonly updated?: number;
 }
 export interface KeyVaultKeyCollection {
-	readonly skipToken?: string | undefined;
-	readonly value?: KeyVaultKey[] | undefined;
+	readonly skipToken?: string;
+	readonly value?: KeyVaultKey[];
 }
 export interface KeyVaultKeyReference {
 	readonly keyName: string;
 	readonly keyVault: KeyVaultKeyReferenceKeyVault;
-	readonly keyVersion?: string | undefined;
+	readonly keyVersion?: string;
 }
 export interface KeyVaultKeyReferenceKeyVault {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface KeyVaultReference {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface ListKeyVaultKeysDefinition {
 	readonly keyVault: KeyVaultReference;
-	readonly skipToken?: string | undefined;
+	readonly skipToken?: string;
 }
 export interface PartnerContent {
-	readonly b2b?: B2BPartnerContent | undefined;
+	readonly b2b?: B2BPartnerContent;
 }
 export interface RecurrenceSchedule {
-	readonly hours?: number[] | undefined;
-	readonly minutes?: number[] | undefined;
-	readonly monthDays?: number[] | undefined;
-	readonly monthlyOccurrences?: RecurrenceScheduleOccurrence[] | undefined;
-	readonly weekDays?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[]) | undefined;
+	readonly hours?: number[];
+	readonly minutes?: number[];
+	readonly monthDays?: number[];
+	readonly monthlyOccurrences?: RecurrenceScheduleOccurrence[];
+	readonly weekDays?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[];
 }
 export interface RecurrenceScheduleOccurrence {
-	readonly day?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday") | undefined;
-	readonly occurrence?: number | undefined;
+	readonly day?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday";
+	readonly occurrence?: number;
 }
 export interface RepetitionIndex {
 	readonly itemIndex: number;
-	readonly scopeName?: string | undefined;
+	readonly scopeName?: string;
 }
 export interface Request {
-	readonly headers?: any | undefined;
-	readonly method?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly headers?: any;
+	readonly method?: string;
+	readonly uri?: string;
 }
 export interface RequestHistoryProperties {
-	readonly endTime?: string | undefined;
-	readonly request?: Request | undefined;
-	readonly response?: Response | undefined;
-	readonly startTime?: string | undefined;
+	readonly endTime?: string;
+	readonly request?: Request;
+	readonly response?: Response;
+	readonly startTime?: string;
 }
 export interface ResourceReference {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Response {
-	readonly bodyLink?: ContentLink | undefined;
-	readonly headers?: any | undefined;
-	readonly statusCode?: number | undefined;
+	readonly bodyLink?: ContentLink;
+	readonly headers?: any;
+	readonly statusCode?: number;
 }
 export interface RetryHistory {
-	readonly clientRequestId?: string | undefined;
-	readonly code?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: ErrorResponse | undefined;
-	readonly serviceRequestId?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly clientRequestId?: string;
+	readonly code?: string;
+	readonly endTime?: string;
+	readonly error?: ErrorResponse;
+	readonly serviceRequestId?: string;
+	readonly startTime?: string;
 }
 export interface RosettaNetPipAcknowledgmentOfReceiptSettings {
 	readonly isNonRepudiationRequired: boolean;
@@ -1028,324 +1028,296 @@ export interface RosettaNetPipActivitySettings {
 		| "RequestConfirm";
 }
 export interface RosettaNetPipBusinessDocument {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly name: string;
 	readonly version: string;
 }
 export interface RosettaNetPipRoleSettings {
 	readonly action: string;
 	readonly businessDocument: RosettaNetPipBusinessDocument;
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly role: string;
 	readonly roleType: "Employee" | "Functional" | "NotSpecified";
 	readonly service: string;
 	readonly serviceClassification: string;
 }
 export interface RunActionCorrelation {
-	readonly actionTrackingId?: string | undefined;
-	readonly clientKeywords?: string[] | undefined;
-	readonly clientTrackingId?: string | undefined;
+	readonly actionTrackingId?: string;
+	readonly clientKeywords?: string[];
+	readonly clientTrackingId?: string;
 }
 export interface Sku {
 	readonly name: "Basic" | "Free" | "NotSpecified" | "Premium" | "Shared";
-	readonly plan?: ResourceReference | undefined;
+	readonly plan?: ResourceReference;
 }
 export interface WorkflowOutputParameter {
-	readonly description?: string | undefined;
-	readonly error?: any | undefined;
-	readonly metadata?: any | undefined;
-	readonly type?:
-		| ("Array" | "Bool" | "Float" | "Int" | "NotSpecified" | "Object" | "SecureObject" | "SecureString")
-		| undefined;
-	readonly value?: any | undefined;
+	readonly description?: string;
+	readonly error?: any;
+	readonly metadata?: any;
+	readonly type?: "Array" | "Bool" | "Float" | "Int" | "NotSpecified" | "Object" | "SecureObject" | "SecureString";
+	readonly value?: any;
 }
 export interface WorkflowParameter {
-	readonly description?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly type?:
-		| ("Array" | "Bool" | "Float" | "Int" | "NotSpecified" | "Object" | "SecureObject" | "SecureString")
-		| undefined;
-	readonly value?: any | undefined;
+	readonly description?: string;
+	readonly metadata?: any;
+	readonly type?: "Array" | "Bool" | "Float" | "Int" | "NotSpecified" | "Object" | "SecureObject" | "SecureString";
+	readonly value?: any;
 }
 export interface WorkflowProperties {
-	readonly accessEndpoint?: string | undefined;
-	readonly changedTime?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly definition?: any | undefined;
-	readonly integrationAccount?: ResourceReference | undefined;
-	readonly parameters?: WorkflowPropertiesParameters | undefined;
+	readonly accessEndpoint?: string;
+	readonly changedTime?: string;
+	readonly createdTime?: string;
+	readonly definition?: any;
+	readonly integrationAccount?: ResourceReference;
+	readonly parameters?: WorkflowPropertiesParameters;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Completed"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "Moving"
-				| "NotSpecified"
-				| "Ready"
-				| "Registered"
-				| "Registering"
-				| "Running"
-				| "Succeeded"
-				| "Unregistered"
-				| "Unregistering"
-		  )
-		| undefined;
-	readonly sku?: Sku | undefined;
-	readonly state?: ("Completed" | "Deleted" | "Disabled" | "Enabled" | "NotSpecified") | undefined;
-	readonly version?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Completed"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "NotSpecified"
+		| "Ready"
+		| "Registered"
+		| "Registering"
+		| "Running"
+		| "Succeeded"
+		| "Unregistered"
+		| "Unregistering";
+	readonly sku?: Sku;
+	readonly state?: "Completed" | "Deleted" | "Disabled" | "Enabled" | "NotSpecified";
+	readonly version?: string;
 }
 export interface WorkflowPropertiesParameters {
-	readonly "[ key: string ]"?: WorkflowParameter | undefined;
+	readonly [key: string]: WorkflowParameter;
 }
 export interface WorkflowRunActionProperties {
-	readonly code?: string | undefined;
-	readonly correlation?: Correlation | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: any | undefined;
-	readonly inputsLink?: ContentLink | undefined;
-	readonly outputsLink?: ContentLink | undefined;
-	readonly retryHistory?: RetryHistory[] | undefined;
-	readonly startTime?: string | undefined;
+	readonly code?: string;
+	readonly correlation?: Correlation;
+	readonly endTime?: string;
+	readonly error?: any;
+	readonly inputsLink?: ContentLink;
+	readonly outputsLink?: ContentLink;
+	readonly retryHistory?: RetryHistory[];
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Aborted"
-				| "Cancelled"
-				| "Failed"
-				| "Faulted"
-				| "Ignored"
-				| "NotSpecified"
-				| "Paused"
-				| "Running"
-				| "Skipped"
-				| "Succeeded"
-				| "Suspended"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly trackedProperties?: any | undefined;
-	readonly trackingId?: string | undefined;
+		| "Aborted"
+		| "Cancelled"
+		| "Failed"
+		| "Faulted"
+		| "Ignored"
+		| "NotSpecified"
+		| "Paused"
+		| "Running"
+		| "Skipped"
+		| "Succeeded"
+		| "Suspended"
+		| "TimedOut";
+	readonly trackedProperties?: any;
+	readonly trackingId?: string;
 }
 export interface WorkflowRunActionRepetitionProperties {
-	readonly code?: string | undefined;
-	readonly correlation?: RunActionCorrelation | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: any | undefined;
-	readonly inputs?: any | undefined;
-	readonly inputsLink?: ContentLink | undefined;
-	readonly iterationCount?: number | undefined;
-	readonly outputs?: any | undefined;
-	readonly outputsLink?: ContentLink | undefined;
-	readonly repetitionIndexes?: RepetitionIndex[] | undefined;
-	readonly retryHistory?: RetryHistory[] | undefined;
-	readonly startTime?: string | undefined;
+	readonly code?: string;
+	readonly correlation?: RunActionCorrelation;
+	readonly endTime?: string;
+	readonly error?: any;
+	readonly inputs?: any;
+	readonly inputsLink?: ContentLink;
+	readonly iterationCount?: number;
+	readonly outputs?: any;
+	readonly outputsLink?: ContentLink;
+	readonly repetitionIndexes?: RepetitionIndex[];
+	readonly retryHistory?: RetryHistory[];
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Aborted"
-				| "Cancelled"
-				| "Failed"
-				| "Faulted"
-				| "Ignored"
-				| "NotSpecified"
-				| "Paused"
-				| "Running"
-				| "Skipped"
-				| "Succeeded"
-				| "Suspended"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly trackedProperties?: any | undefined;
-	readonly trackingId?: string | undefined;
+		| "Aborted"
+		| "Cancelled"
+		| "Failed"
+		| "Faulted"
+		| "Ignored"
+		| "NotSpecified"
+		| "Paused"
+		| "Running"
+		| "Skipped"
+		| "Succeeded"
+		| "Suspended"
+		| "TimedOut";
+	readonly trackedProperties?: any;
+	readonly trackingId?: string;
 }
 export interface WorkflowRunProperties {
-	readonly code?: string | undefined;
-	readonly correlation?: Correlation | undefined;
-	readonly correlationId?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: any | undefined;
-	readonly outputs?: WorkflowRunPropertiesOutputs | undefined;
-	readonly response?: WorkflowRunTrigger | undefined;
-	readonly startTime?: string | undefined;
+	readonly code?: string;
+	readonly correlation?: Correlation;
+	readonly correlationId?: string;
+	readonly endTime?: string;
+	readonly error?: any;
+	readonly outputs?: WorkflowRunPropertiesOutputs;
+	readonly response?: WorkflowRunTrigger;
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Aborted"
-				| "Cancelled"
-				| "Failed"
-				| "Faulted"
-				| "Ignored"
-				| "NotSpecified"
-				| "Paused"
-				| "Running"
-				| "Skipped"
-				| "Succeeded"
-				| "Suspended"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly trigger?: WorkflowRunTrigger | undefined;
-	readonly waitEndTime?: string | undefined;
-	readonly workflow?: ResourceReference | undefined;
+		| "Aborted"
+		| "Cancelled"
+		| "Failed"
+		| "Faulted"
+		| "Ignored"
+		| "NotSpecified"
+		| "Paused"
+		| "Running"
+		| "Skipped"
+		| "Succeeded"
+		| "Suspended"
+		| "TimedOut";
+	readonly trigger?: WorkflowRunTrigger;
+	readonly waitEndTime?: string;
+	readonly workflow?: ResourceReference;
 }
 export interface WorkflowRunPropertiesOutputs {
-	readonly "[ key: string ]"?: WorkflowOutputParameter | undefined;
+	readonly [key: string]: WorkflowOutputParameter;
 }
 export interface WorkflowRunTrigger {
-	readonly code?: string | undefined;
-	readonly correlation?: Correlation | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: any | undefined;
-	readonly inputs?: any | undefined;
-	readonly inputsLink?: ContentLink | undefined;
-	readonly name?: string | undefined;
-	readonly outputs?: any | undefined;
-	readonly outputsLink?: ContentLink | undefined;
-	readonly scheduledTime?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly code?: string;
+	readonly correlation?: Correlation;
+	readonly endTime?: string;
+	readonly error?: any;
+	readonly inputs?: any;
+	readonly inputsLink?: ContentLink;
+	readonly name?: string;
+	readonly outputs?: any;
+	readonly outputsLink?: ContentLink;
+	readonly scheduledTime?: string;
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Aborted"
-				| "Cancelled"
-				| "Failed"
-				| "Faulted"
-				| "Ignored"
-				| "NotSpecified"
-				| "Paused"
-				| "Running"
-				| "Skipped"
-				| "Succeeded"
-				| "Suspended"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly trackedProperties?: any | undefined;
-	readonly trackingId?: string | undefined;
+		| "Aborted"
+		| "Cancelled"
+		| "Failed"
+		| "Faulted"
+		| "Ignored"
+		| "NotSpecified"
+		| "Paused"
+		| "Running"
+		| "Skipped"
+		| "Succeeded"
+		| "Suspended"
+		| "TimedOut";
+	readonly trackedProperties?: any;
+	readonly trackingId?: string;
 }
 export interface WorkflowTriggerCallbackUrl {
-	readonly basePath?: string | undefined;
-	readonly method?: string | undefined;
-	readonly queries?: WorkflowTriggerListCallbackUrlQueries | undefined;
-	readonly relativePath?: string | undefined;
-	readonly relativePathParameters?: string[] | undefined;
-	readonly value?: string | undefined;
+	readonly basePath?: string;
+	readonly method?: string;
+	readonly queries?: WorkflowTriggerListCallbackUrlQueries;
+	readonly relativePath?: string;
+	readonly relativePathParameters?: string[];
+	readonly value?: string;
 }
 export interface WorkflowTriggerHistoryProperties {
-	readonly code?: string | undefined;
-	readonly correlation?: Correlation | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: any | undefined;
-	readonly fired?: boolean | undefined;
-	readonly inputsLink?: ContentLink | undefined;
-	readonly outputsLink?: ContentLink | undefined;
-	readonly run?: ResourceReference | undefined;
-	readonly startTime?: string | undefined;
+	readonly code?: string;
+	readonly correlation?: Correlation;
+	readonly endTime?: string;
+	readonly error?: any;
+	readonly fired?: boolean;
+	readonly inputsLink?: ContentLink;
+	readonly outputsLink?: ContentLink;
+	readonly run?: ResourceReference;
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Aborted"
-				| "Cancelled"
-				| "Failed"
-				| "Faulted"
-				| "Ignored"
-				| "NotSpecified"
-				| "Paused"
-				| "Running"
-				| "Skipped"
-				| "Succeeded"
-				| "Suspended"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly trackingId?: string | undefined;
+		| "Aborted"
+		| "Cancelled"
+		| "Failed"
+		| "Faulted"
+		| "Ignored"
+		| "NotSpecified"
+		| "Paused"
+		| "Running"
+		| "Skipped"
+		| "Succeeded"
+		| "Suspended"
+		| "TimedOut";
+	readonly trackingId?: string;
 }
 export interface WorkflowTriggerListCallbackUrlQueries {
-	readonly "api-version"?: string | undefined;
-	readonly se?: string | undefined;
-	readonly sig?: string | undefined;
-	readonly sp?: string | undefined;
-	readonly sv?: string | undefined;
+	readonly "api-version"?: string;
+	readonly se?: string;
+	readonly sig?: string;
+	readonly sp?: string;
+	readonly sv?: string;
 }
 export interface WorkflowTriggerProperties {
-	readonly changedTime?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly lastExecutionTime?: string | undefined;
-	readonly nextExecutionTime?: string | undefined;
+	readonly changedTime?: string;
+	readonly createdTime?: string;
+	readonly lastExecutionTime?: string;
+	readonly nextExecutionTime?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Completed"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "Moving"
-				| "NotSpecified"
-				| "Ready"
-				| "Registered"
-				| "Registering"
-				| "Running"
-				| "Succeeded"
-				| "Unregistered"
-				| "Unregistering"
-		  )
-		| undefined;
-	readonly recurrence?: WorkflowTriggerRecurrence | undefined;
-	readonly state?: ("Completed" | "Deleted" | "Disabled" | "Enabled" | "NotSpecified") | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Completed"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "NotSpecified"
+		| "Ready"
+		| "Registered"
+		| "Registering"
+		| "Running"
+		| "Succeeded"
+		| "Unregistered"
+		| "Unregistering";
+	readonly recurrence?: WorkflowTriggerRecurrence;
+	readonly state?: "Completed" | "Deleted" | "Disabled" | "Enabled" | "NotSpecified";
 	readonly status?:
-		| (
-				| "Aborted"
-				| "Cancelled"
-				| "Failed"
-				| "Faulted"
-				| "Ignored"
-				| "NotSpecified"
-				| "Paused"
-				| "Running"
-				| "Skipped"
-				| "Succeeded"
-				| "Suspended"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly workflow?: ResourceReference | undefined;
+		| "Aborted"
+		| "Cancelled"
+		| "Failed"
+		| "Faulted"
+		| "Ignored"
+		| "NotSpecified"
+		| "Paused"
+		| "Running"
+		| "Skipped"
+		| "Succeeded"
+		| "Suspended"
+		| "TimedOut";
+	readonly workflow?: ResourceReference;
 }
 export interface WorkflowTriggerRecurrence {
-	readonly endTime?: string | undefined;
-	readonly frequency?: ("Day" | "Hour" | "Minute" | "Month" | "NotSpecified" | "Second" | "Week") | undefined;
-	readonly interval?: number | undefined;
-	readonly schedule?: RecurrenceSchedule | undefined;
-	readonly startTime?: string | undefined;
-	readonly timeZone?: string | undefined;
+	readonly endTime?: string;
+	readonly frequency?: "Day" | "Hour" | "Minute" | "Month" | "NotSpecified" | "Second" | "Week";
+	readonly interval?: number;
+	readonly schedule?: RecurrenceSchedule;
+	readonly startTime?: string;
+	readonly timeZone?: string;
 }
 export interface WorkflowVersionProperties {
-	readonly accessEndpoint?: string | undefined;
-	readonly changedTime?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly definition?: any | undefined;
-	readonly integrationAccount?: ResourceReference | undefined;
-	readonly parameters?: WorkflowVersionPropertiesParameters | undefined;
-	readonly sku?: Sku | undefined;
-	readonly state?: ("Completed" | "Deleted" | "Disabled" | "Enabled" | "NotSpecified") | undefined;
-	readonly version?: string | undefined;
+	readonly accessEndpoint?: string;
+	readonly changedTime?: string;
+	readonly createdTime?: string;
+	readonly definition?: any;
+	readonly integrationAccount?: ResourceReference;
+	readonly parameters?: WorkflowVersionPropertiesParameters;
+	readonly sku?: Sku;
+	readonly state?: "Completed" | "Deleted" | "Disabled" | "Enabled" | "NotSpecified";
+	readonly version?: string;
 }
 export interface WorkflowVersionPropertiesParameters {
-	readonly "[ key: string ]"?: WorkflowParameter | undefined;
+	readonly [key: string]: WorkflowParameter;
 }
 export interface X12AcknowledgementSettings {
 	readonly acknowledgementControlNumberLowerBound: number;
-	readonly acknowledgementControlNumberPrefix?: string | undefined;
-	readonly acknowledgementControlNumberSuffix?: string | undefined;
+	readonly acknowledgementControlNumberPrefix?: string;
+	readonly acknowledgementControlNumberSuffix?: string;
 	readonly acknowledgementControlNumberUpperBound: number;
 	readonly batchFunctionalAcknowledgements: boolean;
 	readonly batchImplementationAcknowledgements: boolean;
 	readonly batchTechnicalAcknowledgements: boolean;
-	readonly functionalAcknowledgementVersion?: string | undefined;
-	readonly implementationAcknowledgementVersion?: string | undefined;
+	readonly functionalAcknowledgementVersion?: string;
+	readonly implementationAcknowledgementVersion?: string;
 	readonly needFunctionalAcknowledgement: boolean;
 	readonly needImplementationAcknowledgement: boolean;
 	readonly needLoopForValidMessages: boolean;
@@ -1360,17 +1332,17 @@ export interface X12AgreementContent {
 export interface X12DelimiterOverrides {
 	readonly componentSeparator: number;
 	readonly dataElementSeparator: number;
-	readonly messageId?: string | undefined;
-	readonly protocolVersion?: string | undefined;
+	readonly messageId?: string;
+	readonly protocolVersion?: string;
 	readonly replaceCharacter: number;
 	readonly replaceSeparatorsInPayload: boolean;
 	readonly segmentTerminator: number;
 	readonly segmentTerminatorSuffix: "CR" | "CRLF" | "LF" | "None";
-	readonly targetNamespace?: string | undefined;
+	readonly targetNamespace?: string;
 }
 export interface X12EnvelopeOverride {
 	readonly dateFormat: "CCYYMMDD" | "NotSpecified";
-	readonly functionalIdentifierCode?: string | undefined;
+	readonly functionalIdentifierCode?: string;
 	readonly headerVersion: string;
 	readonly messageId: string;
 	readonly protocolVersion: string;
@@ -1384,7 +1356,7 @@ export interface X12EnvelopeSettings {
 	readonly controlStandardsId: number;
 	readonly controlVersionNumber: string;
 	readonly enableDefaultGroupHeaders: boolean;
-	readonly functionalGroupId?: string | undefined;
+	readonly functionalGroupId?: string;
 	readonly groupControlNumberLowerBound: number;
 	readonly groupControlNumberUpperBound: number;
 	readonly groupHeaderAgencyCode: string;
@@ -1400,8 +1372,8 @@ export interface X12EnvelopeSettings {
 	readonly rolloverTransactionSetControlNumber: boolean;
 	readonly senderApplicationId: string;
 	readonly transactionSetControlNumberLowerBound: number;
-	readonly transactionSetControlNumberPrefix?: string | undefined;
-	readonly transactionSetControlNumberSuffix?: string | undefined;
+	readonly transactionSetControlNumberPrefix?: string;
+	readonly transactionSetControlNumberSuffix?: string;
 	readonly transactionSetControlNumberUpperBound: number;
 	readonly usageIndicator: "Information" | "NotSpecified" | "Production";
 	readonly useControlStandardsIdAsRepetitionCharacter: boolean;
@@ -1436,28 +1408,28 @@ export interface X12ProcessingSettings {
 }
 export interface X12ProtocolSettings {
 	readonly acknowledgementSettings: X12AcknowledgementSettings;
-	readonly envelopeOverrides?: X12EnvelopeOverride[] | undefined;
+	readonly envelopeOverrides?: X12EnvelopeOverride[];
 	readonly envelopeSettings: X12EnvelopeSettings;
 	readonly framingSettings: X12FramingSettings;
 	readonly messageFilter: X12MessageFilter;
-	readonly messageFilterList?: X12MessageIdentifier[] | undefined;
+	readonly messageFilterList?: X12MessageIdentifier[];
 	readonly processingSettings: X12ProcessingSettings;
 	readonly schemaReferences: X12SchemaReference[];
 	readonly securitySettings: X12SecuritySettings;
-	readonly validationOverrides?: X12ValidationOverride[] | undefined;
+	readonly validationOverrides?: X12ValidationOverride[];
 	readonly validationSettings: X12ValidationSettings;
-	readonly x12DelimiterOverrides?: X12DelimiterOverrides[] | undefined;
+	readonly x12DelimiterOverrides?: X12DelimiterOverrides[];
 }
 export interface X12SchemaReference {
 	readonly messageId: string;
 	readonly schemaName: string;
 	readonly schemaVersion: string;
-	readonly senderApplicationId?: string | undefined;
+	readonly senderApplicationId?: string;
 }
 export interface X12SecuritySettings {
 	readonly authorizationQualifier: string;
-	readonly authorizationValue?: string | undefined;
-	readonly passwordValue?: string | undefined;
+	readonly authorizationValue?: string;
+	readonly passwordValue?: string;
 	readonly securityQualifier: string;
 }
 export interface X12ValidationOverride {

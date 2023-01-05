@@ -16,8 +16,8 @@ export interface netAppAccountsComponentOutputs {
 export interface netAppAccountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AccountProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: AccountProperties;
+	readonly tags?: ResourceTags;
 }
 export class netAppAccounts_accountBackups
 	extends ArmResource<netAppAccounts_accountBackupsComponentInputs>
@@ -36,9 +36,9 @@ export interface netAppAccounts_accountBackupsComponentOutputs {
 	readonly type: "Microsoft.NetApp/netAppAccounts/accountBackups";
 }
 export interface netAppAccounts_accountBackupsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: BackupProperties | undefined;
+	readonly properties?: BackupProperties;
 }
 export class netAppAccounts_backupPolicies
 	extends ArmResource<netAppAccounts_backupPoliciesComponentInputs>
@@ -60,7 +60,7 @@ export interface netAppAccounts_backupPoliciesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: BackupPolicyProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class netAppAccounts_capacityPools
 	extends ArmResource<netAppAccounts_capacityPoolsComponentInputs>
@@ -82,7 +82,7 @@ export interface netAppAccounts_capacityPoolsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: PoolProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class netAppAccounts_capacityPools_volumes
 	extends ArmResource<netAppAccounts_capacityPools_volumesComponentInputs>
@@ -104,7 +104,7 @@ export interface netAppAccounts_capacityPools_volumesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: VolumeProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class netAppAccounts_capacityPools_volumes_backups
 	extends ArmResource<netAppAccounts_capacityPools_volumes_backupsComponentInputs>
@@ -152,7 +152,7 @@ export interface netAppAccounts_capacityPools_volumes_snapshotsComponentOutputs 
 export interface netAppAccounts_capacityPools_volumes_snapshotsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SnapshotProperties | undefined;
+	readonly properties?: SnapshotProperties;
 }
 export class netAppAccounts_snapshotPolicies
 	extends ArmResource<netAppAccounts_snapshotPoliciesComponentInputs>
@@ -174,174 +174,174 @@ export interface netAppAccounts_snapshotPoliciesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: SnapshotPolicyProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export interface AccountProperties {
-	readonly activeDirectories?: ActiveDirectory[] | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly activeDirectories?: ActiveDirectory[];
+	readonly provisioningState?: string;
 }
 export interface ActiveDirectory {
-	readonly activeDirectoryId?: string | undefined;
-	readonly adName?: string | undefined;
-	readonly aesEncryption?: boolean | undefined;
-	readonly backupOperators?: string[] | undefined;
-	readonly dns?: string | undefined;
-	readonly domain?: string | undefined;
-	readonly kdcIP?: string | undefined;
-	readonly ldapSigning?: boolean | undefined;
-	readonly organizationalUnit?: string | undefined;
-	readonly password?: string | undefined;
-	readonly securityOperators?: string[] | undefined;
-	readonly serverRootCACertificate?: string | undefined;
-	readonly site?: string | undefined;
-	readonly smbServerName?: string | undefined;
-	readonly status?: ("Created" | "Deleted" | "Error" | "InUse" | "Updating") | undefined;
-	readonly statusDetails?: string | undefined;
-	readonly username?: string | undefined;
+	readonly activeDirectoryId?: string;
+	readonly adName?: string;
+	readonly aesEncryption?: boolean;
+	readonly backupOperators?: string[];
+	readonly dns?: string;
+	readonly domain?: string;
+	readonly kdcIP?: string;
+	readonly ldapSigning?: boolean;
+	readonly organizationalUnit?: string;
+	readonly password?: string;
+	readonly securityOperators?: string[];
+	readonly serverRootCACertificate?: string;
+	readonly site?: string;
+	readonly smbServerName?: string;
+	readonly status?: "Created" | "Deleted" | "Error" | "InUse" | "Updating";
+	readonly statusDetails?: string;
+	readonly username?: string;
 }
 export interface BackupPolicyProperties {
-	readonly dailyBackupsToKeep?: number | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly monthlyBackupsToKeep?: number | undefined;
-	readonly name?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly volumeBackups?: VolumeBackups[] | undefined;
-	readonly volumesAssigned?: number | undefined;
-	readonly weeklyBackupsToKeep?: number | undefined;
-	readonly yearlyBackupsToKeep?: number | undefined;
+	readonly dailyBackupsToKeep?: number;
+	readonly enabled?: boolean;
+	readonly monthlyBackupsToKeep?: number;
+	readonly name?: string;
+	readonly provisioningState?: string;
+	readonly volumeBackups?: VolumeBackups[];
+	readonly volumesAssigned?: number;
+	readonly weeklyBackupsToKeep?: number;
+	readonly yearlyBackupsToKeep?: number;
 }
 export interface BackupProperties {
-	readonly backupId?: string | undefined;
-	readonly backupType?: ("Manual" | "Scheduled") | undefined;
-	readonly creationDate?: string | undefined;
-	readonly label?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly size?: number | undefined;
+	readonly backupId?: string;
+	readonly backupType?: "Manual" | "Scheduled";
+	readonly creationDate?: string;
+	readonly label?: string;
+	readonly provisioningState?: string;
+	readonly size?: number;
 }
 export interface DailySchedule {
-	readonly hour?: number | undefined;
-	readonly minute?: number | undefined;
-	readonly snapshotsToKeep?: number | undefined;
-	readonly usedBytes?: number | undefined;
+	readonly hour?: number;
+	readonly minute?: number;
+	readonly snapshotsToKeep?: number;
+	readonly usedBytes?: number;
 }
 export interface ExportPolicyRule {
-	readonly allowedClients?: string | undefined;
-	readonly cifs?: boolean | undefined;
-	readonly hasRootAccess?: boolean | undefined;
-	readonly kerberos5iReadOnly?: boolean | undefined;
-	readonly kerberos5iReadWrite?: boolean | undefined;
-	readonly kerberos5pReadOnly?: boolean | undefined;
-	readonly kerberos5pReadWrite?: boolean | undefined;
-	readonly kerberos5ReadOnly?: boolean | undefined;
-	readonly kerberos5ReadWrite?: boolean | undefined;
-	readonly nfsv3?: boolean | undefined;
-	readonly nfsv41?: boolean | undefined;
-	readonly ruleIndex?: number | undefined;
-	readonly unixReadOnly?: boolean | undefined;
-	readonly unixReadWrite?: boolean | undefined;
+	readonly allowedClients?: string;
+	readonly cifs?: boolean;
+	readonly hasRootAccess?: boolean;
+	readonly kerberos5iReadOnly?: boolean;
+	readonly kerberos5iReadWrite?: boolean;
+	readonly kerberos5pReadOnly?: boolean;
+	readonly kerberos5pReadWrite?: boolean;
+	readonly kerberos5ReadOnly?: boolean;
+	readonly kerberos5ReadWrite?: boolean;
+	readonly nfsv3?: boolean;
+	readonly nfsv41?: boolean;
+	readonly ruleIndex?: number;
+	readonly unixReadOnly?: boolean;
+	readonly unixReadWrite?: boolean;
 }
 export interface HourlySchedule {
-	readonly minute?: number | undefined;
-	readonly snapshotsToKeep?: number | undefined;
-	readonly usedBytes?: number | undefined;
+	readonly minute?: number;
+	readonly snapshotsToKeep?: number;
+	readonly usedBytes?: number;
 }
 export interface MonthlySchedule {
-	readonly daysOfMonth?: string | undefined;
-	readonly hour?: number | undefined;
-	readonly minute?: number | undefined;
-	readonly snapshotsToKeep?: number | undefined;
-	readonly usedBytes?: number | undefined;
+	readonly daysOfMonth?: string;
+	readonly hour?: number;
+	readonly minute?: number;
+	readonly snapshotsToKeep?: number;
+	readonly usedBytes?: number;
 }
 export interface MountTargetProperties {
 	readonly fileSystemId: string;
-	readonly ipAddress?: string | undefined;
-	readonly mountTargetId?: string | undefined;
-	readonly smbServerFqdn?: string | undefined;
+	readonly ipAddress?: string;
+	readonly mountTargetId?: string;
+	readonly smbServerFqdn?: string;
 }
 export interface PoolProperties {
-	readonly poolId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly qosType?: ("Auto" | "Manual") | undefined;
+	readonly poolId?: string;
+	readonly provisioningState?: string;
+	readonly qosType?: "Auto" | "Manual";
 	readonly serviceLevel: "Premium" | "Standard" | "Ultra";
 	readonly size: number;
-	readonly totalThroughputMibps?: number | undefined;
-	readonly utilizedThroughputMibps?: number | undefined;
+	readonly totalThroughputMibps?: number;
+	readonly utilizedThroughputMibps?: number;
 }
 export interface ReplicationObject {
-	readonly endpointType?: ("dst" | "src") | undefined;
-	readonly remoteVolumeRegion?: string | undefined;
+	readonly endpointType?: "dst" | "src";
+	readonly remoteVolumeRegion?: string;
 	readonly remoteVolumeResourceId: string;
-	readonly replicationId?: string | undefined;
+	readonly replicationId?: string;
 	readonly replicationSchedule: "_10minutely" | "daily" | "hourly";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SnapshotPolicyProperties {
-	readonly dailySchedule?: DailySchedule | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly hourlySchedule?: HourlySchedule | undefined;
-	readonly monthlySchedule?: MonthlySchedule | undefined;
-	readonly name?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly weeklySchedule?: WeeklySchedule | undefined;
+	readonly dailySchedule?: DailySchedule;
+	readonly enabled?: boolean;
+	readonly hourlySchedule?: HourlySchedule;
+	readonly monthlySchedule?: MonthlySchedule;
+	readonly name?: string;
+	readonly provisioningState?: string;
+	readonly weeklySchedule?: WeeklySchedule;
 }
 export interface SnapshotProperties {
-	readonly created?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly snapshotId?: string | undefined;
+	readonly created?: string;
+	readonly provisioningState?: string;
+	readonly snapshotId?: string;
 }
 export interface VolumeBackupProperties {
-	readonly backupEnabled?: boolean | undefined;
-	readonly backupPolicyId?: string | undefined;
-	readonly policyEnforced?: boolean | undefined;
-	readonly vaultId?: string | undefined;
+	readonly backupEnabled?: boolean;
+	readonly backupPolicyId?: string;
+	readonly policyEnforced?: boolean;
+	readonly vaultId?: string;
 }
 export interface VolumeBackups {
-	readonly backupsCount?: number | undefined;
-	readonly policyEnabled?: boolean | undefined;
-	readonly volumeName?: string | undefined;
+	readonly backupsCount?: number;
+	readonly policyEnabled?: boolean;
+	readonly volumeName?: string;
 }
 export interface VolumeProperties {
-	readonly backupId?: string | undefined;
-	readonly baremetalTenantId?: string | undefined;
+	readonly backupId?: string;
+	readonly baremetalTenantId?: string;
 	readonly creationToken: string;
-	readonly dataProtection?: VolumePropertiesDataProtection | undefined;
-	readonly exportPolicy?: VolumePropertiesExportPolicy | undefined;
-	readonly fileSystemId?: string | undefined;
-	readonly isRestoring?: boolean | undefined;
-	readonly kerberosEnabled?: boolean | undefined;
-	readonly mountTargets?: MountTargetProperties[] | undefined;
-	readonly protocolTypes?: string[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly securityStyle?: ("ntfs" | "unix") | undefined;
-	readonly serviceLevel?: ("Premium" | "Standard" | "Ultra") | undefined;
-	readonly smbContinuouslyAvailable?: boolean | undefined;
-	readonly smbEncryption?: boolean | undefined;
-	readonly snapshotDirectoryVisible?: boolean | undefined;
-	readonly snapshotId?: string | undefined;
+	readonly dataProtection?: VolumePropertiesDataProtection;
+	readonly exportPolicy?: VolumePropertiesExportPolicy;
+	readonly fileSystemId?: string;
+	readonly isRestoring?: boolean;
+	readonly kerberosEnabled?: boolean;
+	readonly mountTargets?: MountTargetProperties[];
+	readonly protocolTypes?: string[];
+	readonly provisioningState?: string;
+	readonly securityStyle?: "ntfs" | "unix";
+	readonly serviceLevel?: "Premium" | "Standard" | "Ultra";
+	readonly smbContinuouslyAvailable?: boolean;
+	readonly smbEncryption?: boolean;
+	readonly snapshotDirectoryVisible?: boolean;
+	readonly snapshotId?: string;
 	readonly subnetId: string;
-	readonly throughputMibps?: number | undefined;
+	readonly throughputMibps?: number;
 	readonly usageThreshold: number;
-	readonly volumeType?: string | undefined;
+	readonly volumeType?: string;
 }
 export interface VolumePropertiesDataProtection {
-	readonly backup?: VolumeBackupProperties | undefined;
-	readonly replication?: ReplicationObject | undefined;
-	readonly snapshot?: VolumeSnapshotProperties | undefined;
+	readonly backup?: VolumeBackupProperties;
+	readonly replication?: ReplicationObject;
+	readonly snapshot?: VolumeSnapshotProperties;
 }
 export interface VolumePropertiesExportPolicy {
-	readonly rules?: ExportPolicyRule[] | undefined;
+	readonly rules?: ExportPolicyRule[];
 }
 export interface VolumeSnapshotProperties {
-	readonly snapshotPolicyId?: string | undefined;
+	readonly snapshotPolicyId?: string;
 }
 export interface WeeklySchedule {
-	readonly day?: string | undefined;
-	readonly hour?: number | undefined;
-	readonly minute?: number | undefined;
-	readonly snapshotsToKeep?: number | undefined;
-	readonly usedBytes?: number | undefined;
+	readonly day?: string;
+	readonly hour?: number;
+	readonly minute?: number;
+	readonly snapshotsToKeep?: number;
+	readonly usedBytes?: number;
 }
 export default {
 	netAppAccounts: netAppAccounts,

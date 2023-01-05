@@ -14,19 +14,19 @@ export interface partnersComponentOutputs {
 	readonly type: "Microsoft.ManagementPartner/partners";
 }
 export interface partnersComponentInputs {
-	readonly etag?: number | undefined;
+	readonly etag?: number;
 	readonly name: string;
-	readonly properties?: PartnerProperties | undefined;
+	readonly properties?: PartnerProperties;
 }
 export interface PartnerProperties {
-	readonly createdTime?: string | undefined;
-	readonly objectId?: string | undefined;
-	readonly partnerId?: string | undefined;
-	readonly partnerName?: string | undefined;
-	readonly state?: ("Active" | "Deleted") | undefined;
-	readonly tenantId?: string | undefined;
-	readonly updatedTime?: string | undefined;
-	readonly version?: number | undefined;
+	readonly createdTime?: string;
+	readonly objectId?: string;
+	readonly partnerId?: string;
+	readonly partnerName?: string;
+	readonly state?: "Active" | "Deleted";
+	readonly tenantId?: string;
+	readonly updatedTime?: string;
+	readonly version?: number;
 }
 export default {
 	partners: partners,

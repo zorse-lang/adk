@@ -18,26 +18,23 @@ export interface softwareInventoriesComponentOutputs {
 }
 export interface softwareInventoriesComponentInputs {
 	readonly name: string;
-	readonly properties?: SoftwareProperties | undefined;
+	readonly properties?: SoftwareProperties;
 }
 export interface SoftwareProperties {
-	readonly deviceId?: string | undefined;
-	readonly endOfSupportDate?: string | undefined;
+	readonly deviceId?: string;
+	readonly endOfSupportDate?: string;
 	readonly endOfSupportStatus?:
-		| (
-				| "None"
-				| "noLongerSupported"
-				| "upcomingNoLongerSupported"
-				| "upcomingVersionNoLongerSupported"
-				| "versionNoLongerSupported"
-		  )
-		| undefined;
-	readonly firstSeenAt?: string | undefined;
-	readonly numberOfKnownVulnerabilities?: number | undefined;
-	readonly osPlatform?: string | undefined;
-	readonly softwareName?: string | undefined;
-	readonly vendor?: string | undefined;
-	readonly version?: string | undefined;
+		| "None"
+		| "noLongerSupported"
+		| "upcomingNoLongerSupported"
+		| "upcomingVersionNoLongerSupported"
+		| "versionNoLongerSupported";
+	readonly firstSeenAt?: string;
+	readonly numberOfKnownVulnerabilities?: number;
+	readonly osPlatform?: string;
+	readonly softwareName?: string;
+	readonly vendor?: string;
+	readonly version?: string;
 }
 export default {
 	softwareInventories: softwareInventories,

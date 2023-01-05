@@ -18,7 +18,7 @@ export interface subscriptionDefinitionsComponentOutputs {
 }
 export interface subscriptionDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: SubscriptionDefinitionProperties | undefined;
+	readonly properties?: SubscriptionDefinitionProperties;
 }
 export class subscriptionOperations
 	extends ArmResource<subscriptionOperationsComponentInputs>
@@ -38,13 +38,13 @@ export interface subscriptionOperationsComponentOutputs {
 }
 export interface subscriptionOperationsComponentInputs {
 	readonly name: string;
-	readonly properties?: SubscriptionDefinitionProperties | undefined;
+	readonly properties?: SubscriptionDefinitionProperties;
 }
 export interface SubscriptionDefinitionProperties {
-	readonly etag?: string | undefined;
-	readonly offerType?: string | undefined;
-	readonly subscriptionDisplayName?: string | undefined;
-	readonly subscriptionId?: string | undefined;
+	readonly etag?: string;
+	readonly offerType?: string;
+	readonly subscriptionDisplayName?: string;
+	readonly subscriptionId?: string;
 }
 export default {
 	subscriptionDefinitions: subscriptionDefinitions,

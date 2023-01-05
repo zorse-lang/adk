@@ -14,11 +14,11 @@ export interface dataManagersComponentOutputs {
 	readonly type: "Microsoft.HybridData/dataManagers";
 }
 export interface dataManagersComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export class dataManagers_dataServices_jobDefinitions
 	extends ArmResource<dataManagers_dataServices_jobDefinitionsComponentInputs>
@@ -66,62 +66,59 @@ export interface CustomerSecret {
 	readonly keyValue: string;
 }
 export interface DataStoreProperties {
-	readonly customerSecrets?: CustomerSecret[] | undefined;
+	readonly customerSecrets?: CustomerSecret[];
 	readonly dataStoreTypeId: string;
-	readonly extendedProperties?: any | undefined;
-	readonly repositoryId?: string | undefined;
+	readonly extendedProperties?: any;
+	readonly repositoryId?: string;
 	readonly state: "Disabled" | "Enabled";
 }
 export interface JobDefinitionProperties {
-	readonly customerSecrets?: CustomerSecret[] | undefined;
-	readonly dataServiceInput?: any | undefined;
+	readonly customerSecrets?: CustomerSecret[];
+	readonly dataServiceInput?: any;
 	readonly dataSinkId: string;
 	readonly dataSourceId: string;
-	readonly lastModifiedTime?: string | undefined;
+	readonly lastModifiedTime?: string;
 	readonly runLocation?:
-		| (
-				| "australiaeast"
-				| "australiasoutheast"
-				| "brazilsouth"
-				| "canadacentral"
-				| "canadaeast"
-				| "centralindia"
-				| "centralus"
-				| "eastasia"
-				| "eastus"
-				| "eastus2"
-				| "japaneast"
-				| "japanwest"
-				| "koreacentral"
-				| "koreasouth"
-				| "none"
-				| "northcentralus"
-				| "northeurope"
-				| "southcentralus"
-				| "southeastasia"
-				| "southindia"
-				| "uksouth"
-				| "ukwest"
-				| "westcentralus"
-				| "westeurope"
-				| "westindia"
-				| "westus"
-		  )
-		| undefined;
-	readonly schedules?: Schedule[] | undefined;
+		| "australiaeast"
+		| "australiasoutheast"
+		| "brazilsouth"
+		| "canadacentral"
+		| "canadaeast"
+		| "centralindia"
+		| "centralus"
+		| "eastasia"
+		| "eastus"
+		| "eastus2"
+		| "japaneast"
+		| "japanwest"
+		| "koreacentral"
+		| "koreasouth"
+		| "none"
+		| "northcentralus"
+		| "northeurope"
+		| "southcentralus"
+		| "southeastasia"
+		| "southindia"
+		| "uksouth"
+		| "ukwest"
+		| "westcentralus"
+		| "westeurope"
+		| "westindia"
+		| "westus";
+	readonly schedules?: Schedule[];
 	readonly state: "Disabled" | "Enabled";
-	readonly userConfirmation?: "NotRequired" | undefined;
+	readonly userConfirmation?: "NotRequired";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Schedule {
-	readonly name?: string | undefined;
-	readonly policyList?: string[] | undefined;
+	readonly name?: string;
+	readonly policyList?: string[];
 }
 export interface Sku {
-	readonly name?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly name?: string;
+	readonly tier?: string;
 }
 export default {
 	dataManagers: dataManagers,

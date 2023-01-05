@@ -10,7 +10,6 @@ export class ServicesAccessPolicy
 }
 export interface ServicesAccessPolicyComponentOutputs {}
 export interface ServicesAccessPolicyComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

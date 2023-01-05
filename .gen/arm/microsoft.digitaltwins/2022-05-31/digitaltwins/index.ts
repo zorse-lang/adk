@@ -17,12 +17,12 @@ export interface digitalTwinsInstancesComponentOutputs {
 	readonly type: "Microsoft.DigitalTwins/digitalTwinsInstances";
 }
 export interface digitalTwinsInstancesComponentInputs {
-	readonly identity?: DigitalTwinsIdentity | undefined;
+	readonly identity?: DigitalTwinsIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DigitalTwinsProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: DigitalTwinsResourceTags | undefined;
+	readonly properties?: DigitalTwinsProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: DigitalTwinsResourceTags;
 }
 export class digitalTwinsInstances_endpoints
 	extends ArmResource<digitalTwinsInstances_endpointsComponentInputs>
@@ -43,7 +43,7 @@ export interface digitalTwinsInstances_endpointsComponentOutputs {
 export interface digitalTwinsInstances_endpointsComponentInputs {
 	readonly name: string;
 	readonly properties: DigitalTwinsEndpointResourceProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class digitalTwinsInstances_privateEndpointConnections
 	extends ArmResource<digitalTwinsInstances_privateEndpointConnectionsComponentInputs>
@@ -70,7 +70,7 @@ export interface digitalTwinsInstances_privateEndpointConnectionsComponentOutput
 export interface digitalTwinsInstances_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
 	readonly properties: ConnectionProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class digitalTwinsInstances_timeSeriesDatabaseConnections
 	extends ArmResource<digitalTwinsInstances_timeSeriesDatabaseConnectionsComponentInputs>
@@ -96,107 +96,98 @@ export interface digitalTwinsInstances_timeSeriesDatabaseConnectionsComponentOut
 }
 export interface digitalTwinsInstances_timeSeriesDatabaseConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: TimeSeriesDatabaseConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: TimeSeriesDatabaseConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export interface ConnectionProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: ConnectionPropertiesPrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly groupIds?: string[];
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: ConnectionPropertiesPrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface ConnectionPropertiesPrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
+	readonly actionsRequired?: string;
 	readonly description: string;
 	readonly status: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface DigitalTwinsEndpointResourceProperties {
-	readonly authenticationType?: ("IdentityBased" | "KeyBased") | undefined;
-	readonly createdTime?: string | undefined;
-	readonly deadLetterSecret?: string | undefined;
-	readonly deadLetterUri?: string | undefined;
+	readonly authenticationType?: "IdentityBased" | "KeyBased";
+	readonly createdTime?: string;
+	readonly deadLetterSecret?: string;
+	readonly deadLetterUri?: string;
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Deleted"
-				| "Deleting"
-				| "Disabled"
-				| "Failed"
-				| "Moving"
-				| "Provisioning"
-				| "Restoring"
-				| "Succeeded"
-				| "Suspending"
-				| "Updating"
-				| "Warning"
-		  )
-		| undefined;
+		| "Canceled"
+		| "Deleted"
+		| "Deleting"
+		| "Disabled"
+		| "Failed"
+		| "Moving"
+		| "Provisioning"
+		| "Restoring"
+		| "Succeeded"
+		| "Suspending"
+		| "Updating"
+		| "Warning";
 }
 export interface DigitalTwinsIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
 }
 export interface DigitalTwinsProperties {
-	readonly createdTime?: string | undefined;
-	readonly hostName?: string | undefined;
-	readonly lastUpdatedTime?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
+	readonly createdTime?: string;
+	readonly hostName?: string;
+	readonly lastUpdatedTime?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "Moving"
-				| "Provisioning"
-				| "Restoring"
-				| "Succeeded"
-				| "Suspending"
-				| "Updating"
-				| "Warning"
-		  )
-		| undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+		| "Canceled"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "Provisioning"
+		| "Restoring"
+		| "Succeeded"
+		| "Suspending"
+		| "Updating"
+		| "Warning";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface DigitalTwinsResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
 	readonly properties: ConnectionProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TimeSeriesDatabaseConnectionProperties {
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Deleted"
-				| "Deleting"
-				| "Disabled"
-				| "Failed"
-				| "Moving"
-				| "Provisioning"
-				| "Restoring"
-				| "Succeeded"
-				| "Suspending"
-				| "Updating"
-				| "Warning"
-		  )
-		| undefined;
+		| "Canceled"
+		| "Deleted"
+		| "Deleting"
+		| "Disabled"
+		| "Failed"
+		| "Moving"
+		| "Provisioning"
+		| "Restoring"
+		| "Succeeded"
+		| "Suspending"
+		| "Updating"
+		| "Warning";
 }
 export default {
 	digitalTwinsInstances: digitalTwinsInstances,

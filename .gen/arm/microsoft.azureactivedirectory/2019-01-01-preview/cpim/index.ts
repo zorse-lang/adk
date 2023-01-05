@@ -18,27 +18,27 @@ export interface b2cDirectoriesComponentInputs {
 	readonly name: string;
 	readonly properties: CreateTenantRequestBodyPropertiesOrB2CTenantResourceProperties;
 	readonly sku: B2CResourceSKU;
-	readonly tags?: CreateTenantRequestBodyTags | undefined;
+	readonly tags?: CreateTenantRequestBodyTags;
 }
 export interface B2CResourceSKU {
-	readonly name?: ("PremiumP1" | "PremiumP2") | undefined;
-	readonly tier?: "A0" | undefined;
+	readonly name?: "PremiumP1" | "PremiumP2";
+	readonly tier?: "A0";
 }
 export interface B2CTenantResourcePropertiesBillingConfig {
-	readonly billingType?: "Auths" | undefined;
-	readonly effectiveStartDateUtc?: string | undefined;
+	readonly billingType?: "Auths";
+	readonly effectiveStartDateUtc?: string;
 }
 export interface CreateTenantProperties {
-	readonly countryCode?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly countryCode?: string;
+	readonly displayName?: string;
 }
 export interface CreateTenantRequestBodyPropertiesOrB2CTenantResourceProperties {
-	readonly billingConfig?: B2CTenantResourcePropertiesBillingConfig | undefined;
-	readonly createTenantProperties?: CreateTenantProperties | undefined;
-	readonly tenantId?: string | undefined;
+	readonly billingConfig?: B2CTenantResourcePropertiesBillingConfig;
+	readonly createTenantProperties?: CreateTenantProperties;
+	readonly tenantId?: string;
 }
 export interface CreateTenantRequestBodyTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	b2cDirectories: b2cDirectories,

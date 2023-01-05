@@ -4,111 +4,111 @@ export class Disk extends GdmResource<DiskComponentInputs> implements DiskCompon
 	constructor(entity: ADKEntity, options: DiskComponentInputs) {
 		super(entity, options.name, "compute.alpha.disk", options);
 	}
-	public readonly asyncSecondaryDisks?: { [P in string]: DiskAsyncReplicationList } | undefined;
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly lastAttachTimestamp?: string | undefined;
-	public readonly lastDetachTimestamp?: string | undefined;
-	public readonly locked?: boolean | undefined;
-	public readonly region?: string | undefined;
-	public readonly resourceStatus?: DiskResourceStatus | undefined;
-	public readonly satisfiesPzs?: boolean | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly sourceConsistencyGroupPolicy?: string | undefined;
-	public readonly sourceConsistencyGroupPolicyId?: string | undefined;
-	public readonly sourceDiskId?: string | undefined;
-	public readonly sourceImageId?: string | undefined;
-	public readonly sourceInstantSnapshotId?: string | undefined;
-	public readonly sourceSnapshotId?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly users?: string[] | undefined;
-	public readonly zone?: string | undefined;
+	public readonly asyncSecondaryDisks?: { [P in string]: DiskAsyncReplicationList
+	};
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly lastAttachTimestamp?: string;
+	public readonly lastDetachTimestamp?: string;
+	public readonly locked?: boolean;
+	public readonly region?: string;
+	public readonly resourceStatus?: DiskResourceStatus;
+	public readonly satisfiesPzs?: boolean;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly sourceConsistencyGroupPolicy?: string;
+	public readonly sourceConsistencyGroupPolicyId?: string;
+	public readonly sourceDiskId?: string;
+	public readonly sourceImageId?: string;
+	public readonly sourceInstantSnapshotId?: string;
+	public readonly sourceSnapshotId?: string;
+	public readonly status?: string;
+	public readonly users?: string[];
+	public readonly zone?: string;
 }
 export interface DiskComponentOutputs {
-	readonly asyncSecondaryDisks?: { [P in string]: DiskAsyncReplicationList } | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly lastAttachTimestamp?: string | undefined;
-	readonly lastDetachTimestamp?: string | undefined;
-	readonly locked?: boolean | undefined;
-	readonly region?: string | undefined;
-	readonly resourceStatus?: DiskResourceStatus | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly sourceConsistencyGroupPolicy?: string | undefined;
-	readonly sourceConsistencyGroupPolicyId?: string | undefined;
-	readonly sourceDiskId?: string | undefined;
-	readonly sourceImageId?: string | undefined;
-	readonly sourceInstantSnapshotId?: string | undefined;
-	readonly sourceSnapshotId?: string | undefined;
-	readonly status?: string | undefined;
-	readonly users?: string[] | undefined;
-	readonly zone?: string | undefined;
+	readonly asyncSecondaryDisks?: { [P in string]: DiskAsyncReplicationList };
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly lastAttachTimestamp?: string;
+	readonly lastDetachTimestamp?: string;
+	readonly locked?: boolean;
+	readonly region?: string;
+	readonly resourceStatus?: DiskResourceStatus;
+	readonly satisfiesPzs?: boolean;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly sourceConsistencyGroupPolicy?: string;
+	readonly sourceConsistencyGroupPolicyId?: string;
+	readonly sourceDiskId?: string;
+	readonly sourceImageId?: string;
+	readonly sourceInstantSnapshotId?: string;
+	readonly sourceSnapshotId?: string;
+	readonly status?: string;
+	readonly users?: string[];
+	readonly zone?: string;
 }
 export interface DiskComponentInputs {
-	readonly architecture?: string | undefined;
-	readonly asyncPrimaryDisk?: DiskAsyncReplication | undefined;
-	readonly description?: string | undefined;
-	readonly diskEncryptionKey?: CustomerEncryptionKey | undefined;
-	readonly eraseWindowsVssSignature?: boolean | undefined;
-	readonly guestOsFeatures?: GuestOsFeature[] | undefined;
-	readonly interface?: string | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly licenseCodes?: string[] | undefined;
-	readonly licenses?: string[] | undefined;
-	readonly locationHint?: string | undefined;
-	readonly multiWriter?: boolean | undefined;
+	readonly architecture?: string;
+	readonly asyncPrimaryDisk?: DiskAsyncReplication;
+	readonly description?: string;
+	readonly diskEncryptionKey?: CustomerEncryptionKey;
+	readonly eraseWindowsVssSignature?: boolean;
+	readonly guestOsFeatures?: GuestOsFeature[];
+	readonly interface?: string;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
+	readonly licenseCodes?: string[];
+	readonly licenses?: string[];
+	readonly locationHint?: string;
+	readonly multiWriter?: boolean;
 	readonly name: string;
-	readonly options?: string | undefined;
-	readonly params?: DiskParams | undefined;
-	readonly physicalBlockSizeBytes?: string | undefined;
-	readonly provisionedIops?: string | undefined;
-	readonly provisionedThroughput?: string | undefined;
-	readonly replicaZones?: string[] | undefined;
-	readonly resourcePolicies?: string[] | undefined;
-	readonly sizeGb?: string | undefined;
-	readonly sourceDisk?: string | undefined;
-	readonly sourceImage?: string | undefined;
-	readonly sourceImageEncryptionKey?: CustomerEncryptionKey | undefined;
-	readonly sourceInstantSnapshot?: string | undefined;
-	readonly sourceSnapshot?: string | undefined;
-	readonly sourceSnapshotEncryptionKey?: CustomerEncryptionKey | undefined;
-	readonly sourceStorageObject?: string | undefined;
-	readonly storageType?: string | undefined;
-	readonly type: string;
-	readonly userLicenses?: string[] | undefined;
+	readonly options?: string;
+	readonly params?: DiskParams;
+	readonly physicalBlockSizeBytes?: string;
+	readonly provisionedIops?: string;
+	readonly provisionedThroughput?: string;
+	readonly replicaZones?: string[];
+	readonly resourcePolicies?: string[];
+	readonly sizeGb?: string;
+	readonly sourceDisk?: string;
+	readonly sourceImage?: string;
+	readonly sourceImageEncryptionKey?: CustomerEncryptionKey;
+	readonly sourceInstantSnapshot?: string;
+	readonly sourceSnapshot?: string;
+	readonly sourceSnapshotEncryptionKey?: CustomerEncryptionKey;
+	readonly sourceStorageObject?: string;
+	readonly storageType?: string;
+	readonly userLicenses?: string[];
 }
 export interface CustomerEncryptionKey {
-	readonly kmsKeyName?: string | undefined;
-	readonly kmsKeyServiceAccount?: string | undefined;
-	readonly rawKey?: string | undefined;
-	readonly rsaEncryptedKey?: string | undefined;
-	readonly sha256?: string | undefined;
+	readonly kmsKeyName?: string;
+	readonly kmsKeyServiceAccount?: string;
+	readonly rawKey?: string;
+	readonly rsaEncryptedKey?: string;
+	readonly sha256?: string;
 }
 export interface DiskAsyncReplication {
-	readonly disk?: string | undefined;
-	readonly diskId?: string | undefined;
+	readonly disk?: string;
+	readonly diskId?: string;
 }
 export interface DiskAsyncReplicationList {
-	readonly asyncReplicationDisk?: DiskAsyncReplication | undefined;
+	readonly asyncReplicationDisk?: DiskAsyncReplication;
 }
 export interface DiskParams {
-	readonly resourceManagerTags?: { [P in string]: string } | undefined;
+	readonly resourceManagerTags?: { [P in string]: string };
 }
 export interface DiskResourceStatus {
-	readonly asyncPrimaryDisk?: DiskResourceStatusAsyncReplicationStatus | undefined;
-	readonly asyncSecondaryDisks?: { [P in string]: DiskResourceStatusAsyncReplicationStatus } | undefined;
+	readonly asyncPrimaryDisk?: DiskResourceStatusAsyncReplicationStatus;
+	readonly asyncSecondaryDisks?: { [P in string]: DiskResourceStatusAsyncReplicationStatus };
 }
 export interface DiskResourceStatusAsyncReplicationStatus {
-	readonly state?: string | undefined;
+	readonly state?: string;
 }
 export interface GuestOsFeature {
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export default {
 	Disk: Disk,

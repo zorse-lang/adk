@@ -24,25 +24,23 @@ export interface automationAccounts_hybridRunbookWorkerGroupsComponentOutputs {
 }
 export interface automationAccounts_hybridRunbookWorkerGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?:
-		| HybridRunbookWorkerGroupCreateOrUpdatePropertiesOrHybridRunbookWorkerGroupProperties
-		| undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: HybridRunbookWorkerGroupCreateOrUpdatePropertiesOrHybridRunbookWorkerGroupProperties;
+	readonly systemData?: SystemData;
 }
 export interface HybridRunbookWorkerGroupCreateOrUpdatePropertiesOrHybridRunbookWorkerGroupProperties {
-	readonly credential?: RunAsCredentialAssociationProperty | undefined;
-	readonly groupType?: ("System" | "User") | undefined;
+	readonly credential?: RunAsCredentialAssociationProperty;
+	readonly groupType?: "System" | "User";
 }
 export interface RunAsCredentialAssociationProperty {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	"automationAccounts/hybridRunbookWorkerGroups": automationAccounts_hybridRunbookWorkerGroups,

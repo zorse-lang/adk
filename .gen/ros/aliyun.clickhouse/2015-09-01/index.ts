@@ -60,14 +60,14 @@ export interface DBClusterComponentInputs {
 	readonly DBNodeStorage: number;
 	readonly DbNodeStorageType: any | string;
 	readonly PaymentType: any | string;
-	readonly DBClusterDescription?: (string | undefined) | undefined;
-	readonly EncryptionKey?: (any | string) | undefined;
-	readonly EncryptionType?: (any | string) | undefined;
-	readonly Period?: (any | string) | undefined;
-	readonly UsedTime?: (string | undefined) | undefined;
-	readonly VpcId?: (any | string) | undefined;
-	readonly VSwitchId?: (any | string) | undefined;
-	readonly ZoneId?: (any | string) | undefined;
+	readonly DBClusterDescription?: string | undefined;
+	readonly EncryptionKey?: any | string;
+	readonly EncryptionType?: any | string;
+	readonly Period?: any | string;
+	readonly UsedTime?: string | undefined;
+	readonly VpcId?: any | string;
+	readonly VSwitchId?: any | string;
+	readonly ZoneId?: any | string;
 	readonly LogicalId: string;
 }
 export default {

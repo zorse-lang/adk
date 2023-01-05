@@ -11,15 +11,15 @@ export interface JobTemplateComponentOutputs {
 }
 export interface JobTemplateComponentInputs {
 	readonly SettingsJson: any;
-	readonly AccelerationSettings?: (AccelerationSettings | undefined) | undefined;
-	readonly Category?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly HopDestinations?: (HopDestination[] | undefined) | undefined;
-	readonly Name?: string | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly Queue?: (string | undefined) | undefined;
-	readonly StatusUpdateInterval?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly AccelerationSettings?: AccelerationSettings | undefined;
+	readonly Category?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly HopDestinations?: HopDestination[] | undefined;
+	readonly Name?: string;
+	readonly Priority?: number | undefined;
+	readonly Queue?: string | undefined;
+	readonly StatusUpdateInterval?: string | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class Preset extends CfnResource<PresetComponentInputs> implements PresetComponentOutputs {
@@ -33,10 +33,10 @@ export interface PresetComponentOutputs {
 }
 export interface PresetComponentInputs {
 	readonly SettingsJson: any;
-	readonly Category?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: string | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly Category?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class Queue extends CfnResource<QueueComponentInputs> implements QueueComponentOutputs {
@@ -49,20 +49,20 @@ export interface QueueComponentOutputs {
 	readonly Arn: string;
 }
 export interface QueueComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: string | undefined;
-	readonly PricingPlan?: (string | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string;
+	readonly PricingPlan?: string | undefined;
+	readonly Status?: string | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export interface AccelerationSettings {
 	readonly Mode: string;
 }
 export interface HopDestination {
-	readonly Priority?: (number | undefined) | undefined;
-	readonly Queue?: (string | undefined) | undefined;
-	readonly WaitMinutes?: (number | undefined) | undefined;
+	readonly Priority?: number | undefined;
+	readonly Queue?: string | undefined;
+	readonly WaitMinutes?: number | undefined;
 }
 export default {
 	JobTemplate: JobTemplate,

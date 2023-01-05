@@ -13,9 +13,9 @@ export interface DiscovererComponentOutputs {
 }
 export interface DiscovererComponentInputs {
 	readonly SourceArn: string;
-	readonly CrossAccount?: boolean | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: (TagsEntry[] | undefined) | undefined;
+	readonly CrossAccount?: boolean;
+	readonly Description?: string | undefined;
+	readonly Tags?: TagsEntry[] | undefined;
 	readonly LogicalId: string;
 }
 export class Registry extends CfnResource<RegistryComponentInputs> implements RegistryComponentOutputs {
@@ -28,9 +28,9 @@ export interface RegistryComponentOutputs {
 	readonly RegistryArn: string;
 }
 export interface RegistryComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly RegistryName?: string | undefined;
-	readonly Tags?: (TagsEntry[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly RegistryName?: string;
+	readonly Tags?: TagsEntry[] | undefined;
 	readonly LogicalId: string;
 }
 export class RegistryPolicy extends CfnResource<RegistryPolicyComponentInputs> implements RegistryPolicyComponentOutputs {
@@ -45,7 +45,7 @@ export interface RegistryPolicyComponentOutputs {
 export interface RegistryPolicyComponentInputs {
 	readonly Policy: any;
 	readonly RegistryName: string;
-	readonly RevisionId?: (string | undefined) | undefined;
+	readonly RevisionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Schema extends CfnResource<SchemaComponentInputs> implements SchemaComponentOutputs {
@@ -63,9 +63,9 @@ export interface SchemaComponentInputs {
 	readonly Content: string;
 	readonly RegistryName: string;
 	readonly Type: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly SchemaName?: string | undefined;
-	readonly Tags?: (TagsEntry[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly SchemaName?: string;
+	readonly Tags?: TagsEntry[] | undefined;
 	readonly LogicalId: string;
 }
 export interface TagsEntry {

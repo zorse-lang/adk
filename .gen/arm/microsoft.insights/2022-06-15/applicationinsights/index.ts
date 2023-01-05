@@ -14,59 +14,59 @@ export interface webtestsComponentOutputs {
 	readonly type: "Microsoft.Insights/webtests";
 }
 export interface webtestsComponentInputs {
-	readonly kind?: ("multistep" | "ping") | undefined;
+	readonly kind?: "multistep" | "ping";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WebTestProperties | undefined;
-	readonly tags?: WebtestsResourceTags | undefined;
+	readonly properties?: WebTestProperties;
+	readonly tags?: WebtestsResourceTags;
 }
 export interface HeaderField {
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface WebTestGeolocation {
-	readonly Id?: string | undefined;
+	readonly Id?: string;
 }
 export interface WebTestProperties {
-	readonly Configuration?: WebTestPropertiesConfiguration | undefined;
-	readonly Description?: string | undefined;
-	readonly Enabled?: boolean | undefined;
-	readonly Frequency?: number | undefined;
+	readonly Configuration?: WebTestPropertiesConfiguration;
+	readonly Description?: string;
+	readonly Enabled?: boolean;
+	readonly Frequency?: number;
 	readonly Kind: "multistep" | "ping";
 	readonly Locations: WebTestGeolocation[];
 	readonly Name: string;
-	readonly provisioningState?: string | undefined;
-	readonly Request?: WebTestPropertiesRequest | undefined;
-	readonly RetryEnabled?: boolean | undefined;
+	readonly provisioningState?: string;
+	readonly Request?: WebTestPropertiesRequest;
+	readonly RetryEnabled?: boolean;
 	readonly SyntheticMonitorId: string;
-	readonly Timeout?: number | undefined;
-	readonly ValidationRules?: WebTestPropertiesValidationRules | undefined;
+	readonly Timeout?: number;
+	readonly ValidationRules?: WebTestPropertiesValidationRules;
 }
 export interface WebTestPropertiesConfiguration {
-	readonly WebTest?: string | undefined;
+	readonly WebTest?: string;
 }
 export interface WebTestPropertiesRequest {
-	readonly FollowRedirects?: boolean | undefined;
-	readonly Headers?: HeaderField[] | undefined;
-	readonly HttpVerb?: string | undefined;
-	readonly ParseDependentRequests?: boolean | undefined;
-	readonly RequestBody?: string | undefined;
-	readonly RequestUrl?: string | undefined;
+	readonly FollowRedirects?: boolean;
+	readonly Headers?: HeaderField[];
+	readonly HttpVerb?: string;
+	readonly ParseDependentRequests?: boolean;
+	readonly RequestBody?: string;
+	readonly RequestUrl?: string;
 }
 export interface WebTestPropertiesValidationRules {
-	readonly ContentValidation?: WebTestPropertiesValidationRulesContentValidation | undefined;
-	readonly ExpectedHttpStatusCode?: number | undefined;
-	readonly IgnoreHttpsStatusCode?: boolean | undefined;
-	readonly SSLCertRemainingLifetimeCheck?: number | undefined;
-	readonly SSLCheck?: boolean | undefined;
+	readonly ContentValidation?: WebTestPropertiesValidationRulesContentValidation;
+	readonly ExpectedHttpStatusCode?: number;
+	readonly IgnoreHttpsStatusCode?: boolean;
+	readonly SSLCertRemainingLifetimeCheck?: number;
+	readonly SSLCheck?: boolean;
 }
 export interface WebTestPropertiesValidationRulesContentValidation {
-	readonly ContentMatch?: string | undefined;
-	readonly IgnoreCase?: boolean | undefined;
-	readonly PassIfTextFound?: boolean | undefined;
+	readonly ContentMatch?: string;
+	readonly IgnoreCase?: boolean;
+	readonly PassIfTextFound?: boolean;
 }
 export interface WebtestsResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	webtests: webtests,

@@ -16,9 +16,9 @@ export interface namespacesComponentOutputs {
 export interface namespacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RelayNamespaceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: RelayNamespaceProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class namespaces_AuthorizationRules
 	extends ArmResource<namespaces_AuthorizationRulesComponentInputs>
@@ -58,7 +58,7 @@ export interface namespaces_HybridConnectionsComponentOutputs {
 }
 export interface namespaces_HybridConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: HybridConnectionProperties | undefined;
+	readonly properties?: HybridConnectionProperties;
 }
 export class namespaces_HybridConnections_authorizationRules
 	extends ArmResource<namespaces_HybridConnections_authorizationRulesComponentInputs>
@@ -104,7 +104,7 @@ export interface namespaces_WcfRelaysComponentOutputs {
 }
 export interface namespaces_WcfRelaysComponentInputs {
 	readonly name: string;
-	readonly properties?: WcfRelayProperties | undefined;
+	readonly properties?: WcfRelayProperties;
 }
 export class namespaces_WcfRelays_authorizationRules
 	extends ArmResource<namespaces_WcfRelays_authorizationRulesComponentInputs>
@@ -136,45 +136,45 @@ export function listKeys(resource: namespaces_AuthorizationRules): Authorization
 	throw new Error("not implemented");
 }
 export interface AuthorizationRuleKeys {
-	readonly keyName?: string | undefined;
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly keyName?: string;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface AuthorizationRuleProperties {
 	readonly rights: "Listen" | "Manage" | "Send"[];
 }
 export interface HybridConnectionProperties {
-	readonly createdAt?: string | undefined;
-	readonly listenerCount?: number | undefined;
-	readonly requiresClientAuthorization?: boolean | undefined;
-	readonly updatedAt?: string | undefined;
-	readonly userMetadata?: string | undefined;
+	readonly createdAt?: string;
+	readonly listenerCount?: number;
+	readonly requiresClientAuthorization?: boolean;
+	readonly updatedAt?: string;
+	readonly userMetadata?: string;
 }
 export interface RelayNamespaceProperties {
-	readonly createdAt?: string | undefined;
-	readonly metricId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceBusEndpoint?: string | undefined;
-	readonly updatedAt?: string | undefined;
+	readonly createdAt?: string;
+	readonly metricId?: string;
+	readonly provisioningState?: string;
+	readonly serviceBusEndpoint?: string;
+	readonly updatedAt?: string;
 }
 export interface Sku {
 	readonly name: "Standard";
 	readonly tier: "Standard";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WcfRelayProperties {
-	readonly createdAt?: string | undefined;
-	readonly isDynamic?: boolean | undefined;
-	readonly listenerCount?: number | undefined;
-	readonly relayType?: ("Http" | "NetTcp") | undefined;
-	readonly requiresClientAuthorization?: boolean | undefined;
-	readonly requiresTransportSecurity?: boolean | undefined;
-	readonly updatedAt?: string | undefined;
-	readonly userMetadata?: string | undefined;
+	readonly createdAt?: string;
+	readonly isDynamic?: boolean;
+	readonly listenerCount?: number;
+	readonly relayType?: "Http" | "NetTcp";
+	readonly requiresClientAuthorization?: boolean;
+	readonly requiresTransportSecurity?: boolean;
+	readonly updatedAt?: string;
+	readonly userMetadata?: string;
 }
 export default {
 	namespaces: namespaces,

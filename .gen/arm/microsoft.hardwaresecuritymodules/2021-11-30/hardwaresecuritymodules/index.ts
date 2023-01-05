@@ -17,54 +17,56 @@ export interface dedicatedHSMsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: DedicatedHsmProperties;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
+	readonly zones?: string[];
 }
 export interface ApiEntityReference {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface DedicatedHsmProperties {
-	readonly managementNetworkProfile?: NetworkProfile | undefined;
-	readonly networkProfile?: NetworkProfile | undefined;
+	readonly managementNetworkProfile?: NetworkProfile;
+	readonly networkProfile?: NetworkProfile;
 	readonly provisioningState?:
-		| ("Allocating" | "CheckingQuota" | "Connecting" | "Deleting" | "Failed" | "Provisioning" | "Succeeded")
-		| undefined;
-	readonly stampId?: string | undefined;
-	readonly statusMessage?: string | undefined;
+		| "Allocating"
+		| "CheckingQuota"
+		| "Connecting"
+		| "Deleting"
+		| "Failed"
+		| "Provisioning"
+		| "Succeeded";
+	readonly stampId?: string;
+	readonly statusMessage?: string;
 }
 export interface NetworkInterface {
-	readonly id?: string | undefined;
-	readonly privateIpAddress?: string | undefined;
+	readonly id?: string;
+	readonly privateIpAddress?: string;
 }
 export interface NetworkProfile {
-	readonly networkInterfaces?: NetworkInterface[] | undefined;
-	readonly subnet?: ApiEntityReference | undefined;
+	readonly networkInterfaces?: NetworkInterface[];
+	readonly subnet?: ApiEntityReference;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
 	readonly name?:
-		| (
-				| "SafeNet Luna Network HSM A790"
-				| "payShield10K_LMK1_CPS250"
-				| "payShield10K_LMK1_CPS2500"
-				| "payShield10K_LMK1_CPS60"
-				| "payShield10K_LMK2_CPS250"
-				| "payShield10K_LMK2_CPS2500"
-				| "payShield10K_LMK2_CPS60"
-		  )
-		| undefined;
+		| "SafeNet Luna Network HSM A790"
+		| "payShield10K_LMK1_CPS250"
+		| "payShield10K_LMK1_CPS2500"
+		| "payShield10K_LMK1_CPS60"
+		| "payShield10K_LMK2_CPS250"
+		| "payShield10K_LMK2_CPS2500"
+		| "payShield10K_LMK2_CPS60";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	dedicatedHSMs: dedicatedHSMs,

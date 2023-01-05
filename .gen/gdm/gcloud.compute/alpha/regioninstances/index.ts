@@ -10,7 +10,6 @@ export class RegionInstances
 }
 export interface RegionInstancesComponentOutputs {}
 export interface RegionInstancesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

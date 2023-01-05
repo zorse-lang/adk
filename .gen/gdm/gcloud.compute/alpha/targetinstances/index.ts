@@ -7,45 +7,44 @@ export class TargetInstances
 	constructor(entity: ADKEntity, options: TargetInstancesComponentInputs) {
 		super(entity, options.name, "compute.alpha.TargetInstances", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly securityPolicy?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly zone?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly securityPolicy?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly zone?: string;
 }
 export interface TargetInstancesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly securityPolicy?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly securityPolicy?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly zone?: string;
 }
 export interface TargetInstancesComponentInputs {
-	readonly description?: string | undefined;
-	readonly instance?: string | undefined;
+	readonly description?: string;
+	readonly instance?: string;
 	readonly name: string;
-	readonly natPolicy?: string | undefined;
-	readonly network?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly type: string;
+	readonly natPolicy?: string;
+	readonly network?: string;
+	readonly requestId?: string;
 }
 export interface TargetInstance {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly instance?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly natPolicy?: string | undefined;
-	readonly network?: string | undefined;
-	readonly securityPolicy?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly instance?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly natPolicy?: string;
+	readonly network?: string;
+	readonly securityPolicy?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly zone?: string;
 }
 export default {
 	TargetInstances: TargetInstances,

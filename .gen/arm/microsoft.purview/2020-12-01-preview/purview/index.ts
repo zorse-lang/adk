@@ -14,12 +14,12 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.Purview/accounts";
 }
 export interface accountsComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AccountProperties | undefined;
-	readonly sku?: AccountSku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: AccountProperties;
+	readonly sku?: AccountSku;
+	readonly tags?: TrackedResourceTags;
 }
 export class accounts_privateEndpointConnections
 	extends ArmResource<accounts_privateEndpointConnectionsComponentInputs>
@@ -39,7 +39,7 @@ export interface accounts_privateEndpointConnectionsComponentOutputs {
 }
 export interface accounts_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export function listkeys(resource: accounts): AccessKeys {
 	if (resource.apiVersion !== "2020-12-01-preview") {
@@ -51,86 +51,83 @@ export function listkeys(resource: accounts): AccessKeys {
 	throw new Error("not implemented");
 }
 export interface AccessKeys {
-	readonly atlasKafkaPrimaryEndpoint?: string | undefined;
-	readonly atlasKafkaSecondaryEndpoint?: string | undefined;
+	readonly atlasKafkaPrimaryEndpoint?: string;
+	readonly atlasKafkaSecondaryEndpoint?: string;
 }
 export interface AccountProperties {
-	readonly cloudConnectors?: CloudConnectors | undefined;
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByObjectId?: string | undefined;
-	readonly endpoints?: AccountPropertiesEndpoints | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly managedResourceGroupName?: string | undefined;
-	readonly managedResources?: AccountPropertiesManagedResources | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
+	readonly cloudConnectors?: CloudConnectors;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByObjectId?: string;
+	readonly endpoints?: AccountPropertiesEndpoints;
+	readonly friendlyName?: string;
+	readonly managedResourceGroupName?: string;
+	readonly managedResources?: AccountPropertiesManagedResources;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Creating"
-				| "Deleting"
-				| "Failed"
-				| "Moving"
-				| "SoftDeleted"
-				| "SoftDeleting"
-				| "Succeeded"
-				| "Unknown"
-		  )
-		| undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled" | "NotSpecified") | undefined;
-	readonly systemData?: AccountPropertiesSystemData | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "SoftDeleted"
+		| "SoftDeleting"
+		| "Succeeded"
+		| "Unknown";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled" | "NotSpecified";
+	readonly systemData?: AccountPropertiesSystemData;
 }
 export interface AccountPropertiesEndpoints {
-	readonly catalog?: string | undefined;
-	readonly guardian?: string | undefined;
-	readonly scan?: string | undefined;
+	readonly catalog?: string;
+	readonly guardian?: string;
+	readonly scan?: string;
 }
 export interface AccountPropertiesManagedResources {
-	readonly eventHubNamespace?: string | undefined;
-	readonly resourceGroup?: string | undefined;
-	readonly storageAccount?: string | undefined;
+	readonly eventHubNamespace?: string;
+	readonly resourceGroup?: string;
+	readonly storageAccount?: string;
 }
 export interface AccountPropertiesSystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface AccountSku {
-	readonly capacity?: number | undefined;
-	readonly name?: "Standard" | undefined;
+	readonly capacity?: number;
+	readonly name?: "Standard";
 }
 export interface CloudConnectors {
-	readonly awsExternalId?: string | undefined;
+	readonly awsExternalId?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: string;
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected" | "Unknown") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected" | "Unknown";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	accounts: accounts,

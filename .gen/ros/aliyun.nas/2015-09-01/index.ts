@@ -9,8 +9,8 @@ export interface AccessGroupComponentOutputs {}
 export interface AccessGroupComponentInputs {
 	readonly AccessGroupName: any | string;
 	readonly AccessGroupType: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly FileSystemType?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly FileSystemType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class AccessRule extends RosResource<AccessRuleComponentInputs> implements AccessRuleComponentOutputs {
@@ -25,9 +25,9 @@ export interface AccessRuleComponentOutputs {
 export interface AccessRuleComponentInputs {
 	readonly AccessGroupName: string;
 	readonly SourceCidrIp: string;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly RWAccessType?: (string | undefined) | undefined;
-	readonly UserAccessType?: (string | undefined) | undefined;
+	readonly Priority?: number | undefined;
+	readonly RWAccessType?: string | undefined;
+	readonly UserAccessType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class FileSystem extends RosResource<FileSystemComponentInputs> implements FileSystemComponentOutputs {
@@ -42,19 +42,19 @@ export interface FileSystemComponentOutputs {
 export interface FileSystemComponentInputs {
 	readonly ProtocolType: string;
 	readonly StorageType: string;
-	readonly Bandwidth?: (number | undefined) | undefined;
-	readonly Capacity?: (number | undefined) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Duration?: (number | undefined) | undefined;
-	readonly EncryptType?: (number | undefined) | undefined;
-	readonly FileSystemType?: (string | undefined) | undefined;
-	readonly SnapshotId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly Bandwidth?: number | undefined;
+	readonly Capacity?: number | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly Duration?: number | undefined;
+	readonly EncryptType?: number | undefined;
+	readonly FileSystemType?: string | undefined;
+	readonly SnapshotId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VSwitchId?: string | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class MountTarget extends RosResource<MountTargetComponentInputs> implements MountTargetComponentOutputs {
@@ -70,13 +70,13 @@ export interface MountTargetComponentInputs {
 	readonly AccessGroupName: string;
 	readonly FileSystemId: string;
 	readonly NetworkType: string;
-	readonly Status?: (string | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
+	readonly Status?: string | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VSwitchId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export default {

@@ -21,284 +21,284 @@ export interface PipeComponentInputs {
 	readonly RoleArn: string;
 	readonly Source: string;
 	readonly Target: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DesiredState?: (string | undefined) | undefined;
-	readonly Enrichment?: (string | undefined) | undefined;
-	readonly EnrichmentParameters?: (PipeEnrichmentParameters | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly SourceParameters?: (PipeSourceParameters | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
-	readonly TargetParameters?: (PipeTargetParameters | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DesiredState?: string | undefined;
+	readonly Enrichment?: string | undefined;
+	readonly EnrichmentParameters?: PipeEnrichmentParameters | undefined;
+	readonly Name?: string | undefined;
+	readonly SourceParameters?: PipeSourceParameters | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
+	readonly TargetParameters?: PipeTargetParameters | undefined;
 	readonly LogicalId: string;
 }
 export interface AwsVpcConfiguration {
-	readonly AssignPublicIp?: (string | undefined) | undefined;
-	readonly SecurityGroups?: (string[] | undefined) | undefined;
+	readonly AssignPublicIp?: string | undefined;
+	readonly SecurityGroups?: string[] | undefined;
 	readonly Subnets: string[];
 }
 export interface BatchArrayProperties {
-	readonly Size?: (number | undefined) | undefined;
+	readonly Size?: number | undefined;
 }
 export interface BatchContainerOverrides {
-	readonly Command?: (string[] | undefined) | undefined;
-	readonly Environment?: (BatchEnvironmentVariable[] | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly ResourceRequirements?: (BatchResourceRequirement[] | undefined) | undefined;
+	readonly Command?: string[] | undefined;
+	readonly Environment?: BatchEnvironmentVariable[] | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly ResourceRequirements?: BatchResourceRequirement[] | undefined;
 }
 export interface BatchEnvironmentVariable {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface BatchJobDependency {
-	readonly JobId?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly JobId?: string | undefined;
+	readonly Type?: string | undefined;
 }
 export interface BatchResourceRequirement {
 	readonly Type: string;
 	readonly Value: string;
 }
 export interface BatchRetryStrategy {
-	readonly Attempts?: (number | undefined) | undefined;
+	readonly Attempts?: number | undefined;
 }
 export interface CapacityProviderStrategyItem {
-	readonly Base?: (number | undefined) | undefined;
+	readonly Base?: number | undefined;
 	readonly CapacityProvider: string;
-	readonly Weight?: (number | undefined) | undefined;
+	readonly Weight?: number | undefined;
 }
 export interface DeadLetterConfig {
-	readonly Arn?: (string | undefined) | undefined;
+	readonly Arn?: string | undefined;
 }
 export interface EcsContainerOverride {
-	readonly Command?: (string[] | undefined) | undefined;
-	readonly Cpu?: (number | undefined) | undefined;
-	readonly Environment?: (EcsEnvironmentVariable[] | undefined) | undefined;
-	readonly EnvironmentFiles?: (EcsEnvironmentFile[] | undefined) | undefined;
-	readonly Memory?: (number | undefined) | undefined;
-	readonly MemoryReservation?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly ResourceRequirements?: (EcsResourceRequirement[] | undefined) | undefined;
+	readonly Command?: string[] | undefined;
+	readonly Cpu?: number | undefined;
+	readonly Environment?: EcsEnvironmentVariable[] | undefined;
+	readonly EnvironmentFiles?: EcsEnvironmentFile[] | undefined;
+	readonly Memory?: number | undefined;
+	readonly MemoryReservation?: number | undefined;
+	readonly Name?: string | undefined;
+	readonly ResourceRequirements?: EcsResourceRequirement[] | undefined;
 }
 export interface EcsEnvironmentFile {
 	readonly Type: string;
 	readonly Value: string;
 }
 export interface EcsEnvironmentVariable {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface EcsEphemeralStorage {
 	readonly SizeInGiB: number;
 }
 export interface EcsInferenceAcceleratorOverride {
-	readonly DeviceName?: (string | undefined) | undefined;
-	readonly DeviceType?: (string | undefined) | undefined;
+	readonly DeviceName?: string | undefined;
+	readonly DeviceType?: string | undefined;
 }
 export interface EcsResourceRequirement {
 	readonly Type: string;
 	readonly Value: string;
 }
 export interface EcsTaskOverride {
-	readonly ContainerOverrides?: (EcsContainerOverride[] | undefined) | undefined;
-	readonly Cpu?: (string | undefined) | undefined;
-	readonly EphemeralStorage?: (EcsEphemeralStorage | undefined) | undefined;
-	readonly ExecutionRoleArn?: (string | undefined) | undefined;
-	readonly InferenceAcceleratorOverrides?: (EcsInferenceAcceleratorOverride[] | undefined) | undefined;
-	readonly Memory?: (string | undefined) | undefined;
-	readonly TaskRoleArn?: (string | undefined) | undefined;
+	readonly ContainerOverrides?: EcsContainerOverride[] | undefined;
+	readonly Cpu?: string | undefined;
+	readonly EphemeralStorage?: EcsEphemeralStorage | undefined;
+	readonly ExecutionRoleArn?: string | undefined;
+	readonly InferenceAcceleratorOverrides?: EcsInferenceAcceleratorOverride[] | undefined;
+	readonly Memory?: string | undefined;
+	readonly TaskRoleArn?: string | undefined;
 }
 export interface Filter {
-	readonly Pattern?: (string | undefined) | undefined;
+	readonly Pattern?: string | undefined;
 }
 export interface FilterCriteria {
-	readonly Filters?: (Filter[] | undefined) | undefined;
+	readonly Filters?: Filter[] | undefined;
 }
 export interface MQBrokerAccessCredentials {
 	readonly BasicAuth: string;
 }
 export interface MSKAccessCredentials {
-	readonly ClientCertificateTlsAuth?: (string | undefined) | undefined;
-	readonly SaslScram512Auth?: (string | undefined) | undefined;
+	readonly ClientCertificateTlsAuth?: string | undefined;
+	readonly SaslScram512Auth?: string | undefined;
 }
 export interface NetworkConfiguration {
-	readonly AwsvpcConfiguration?: (AwsVpcConfiguration | undefined) | undefined;
+	readonly AwsvpcConfiguration?: AwsVpcConfiguration | undefined;
 }
 export interface PipeEnrichmentHttpParameters {
-	readonly HeaderParameters?: ({ [key: string]: string } | undefined) | undefined;
-	readonly PathParameterValues?: (string[] | undefined) | undefined;
-	readonly QueryStringParameters?: ({ [key: string]: string } | undefined) | undefined;
+	readonly HeaderParameters?: { [key: string]: string } | undefined;
+	readonly PathParameterValues?: string[] | undefined;
+	readonly QueryStringParameters?: { [key: string]: string } | undefined;
 }
 export interface PipeEnrichmentParameters {
-	readonly HttpParameters?: (PipeEnrichmentHttpParameters | undefined) | undefined;
-	readonly InputTemplate?: (string | undefined) | undefined;
+	readonly HttpParameters?: PipeEnrichmentHttpParameters | undefined;
+	readonly InputTemplate?: string | undefined;
 }
 export interface PipeSourceActiveMQBrokerParameters {
-	readonly BatchSize?: (number | undefined) | undefined;
+	readonly BatchSize?: number | undefined;
 	readonly Credentials: MQBrokerAccessCredentials;
-	readonly MaximumBatchingWindowInSeconds?: (number | undefined) | undefined;
+	readonly MaximumBatchingWindowInSeconds?: number | undefined;
 	readonly QueueName: string;
 }
 export interface PipeSourceDynamoDBStreamParameters {
-	readonly BatchSize?: (number | undefined) | undefined;
-	readonly DeadLetterConfig?: (DeadLetterConfig | undefined) | undefined;
-	readonly MaximumBatchingWindowInSeconds?: (number | undefined) | undefined;
-	readonly MaximumRecordAgeInSeconds?: (number | undefined) | undefined;
-	readonly MaximumRetryAttempts?: (number | undefined) | undefined;
-	readonly OnPartialBatchItemFailure?: (string | undefined) | undefined;
-	readonly ParallelizationFactor?: (number | undefined) | undefined;
+	readonly BatchSize?: number | undefined;
+	readonly DeadLetterConfig?: DeadLetterConfig | undefined;
+	readonly MaximumBatchingWindowInSeconds?: number | undefined;
+	readonly MaximumRecordAgeInSeconds?: number | undefined;
+	readonly MaximumRetryAttempts?: number | undefined;
+	readonly OnPartialBatchItemFailure?: string | undefined;
+	readonly ParallelizationFactor?: number | undefined;
 	readonly StartingPosition: string;
 }
 export interface PipeSourceKinesisStreamParameters {
-	readonly BatchSize?: (number | undefined) | undefined;
-	readonly DeadLetterConfig?: (DeadLetterConfig | undefined) | undefined;
-	readonly MaximumBatchingWindowInSeconds?: (number | undefined) | undefined;
-	readonly MaximumRecordAgeInSeconds?: (number | undefined) | undefined;
-	readonly MaximumRetryAttempts?: (number | undefined) | undefined;
-	readonly OnPartialBatchItemFailure?: (string | undefined) | undefined;
-	readonly ParallelizationFactor?: (number | undefined) | undefined;
+	readonly BatchSize?: number | undefined;
+	readonly DeadLetterConfig?: DeadLetterConfig | undefined;
+	readonly MaximumBatchingWindowInSeconds?: number | undefined;
+	readonly MaximumRecordAgeInSeconds?: number | undefined;
+	readonly MaximumRetryAttempts?: number | undefined;
+	readonly OnPartialBatchItemFailure?: string | undefined;
+	readonly ParallelizationFactor?: number | undefined;
 	readonly StartingPosition: string;
-	readonly StartingPositionTimestamp?: (string | undefined) | undefined;
+	readonly StartingPositionTimestamp?: string | undefined;
 }
 export interface PipeSourceManagedStreamingKafkaParameters {
-	readonly BatchSize?: (number | undefined) | undefined;
-	readonly ConsumerGroupID?: (string | undefined) | undefined;
-	readonly Credentials?: (MSKAccessCredentials | undefined) | undefined;
-	readonly MaximumBatchingWindowInSeconds?: (number | undefined) | undefined;
-	readonly StartingPosition?: (string | undefined) | undefined;
+	readonly BatchSize?: number | undefined;
+	readonly ConsumerGroupID?: string | undefined;
+	readonly Credentials?: MSKAccessCredentials | undefined;
+	readonly MaximumBatchingWindowInSeconds?: number | undefined;
+	readonly StartingPosition?: string | undefined;
 	readonly TopicName: string;
 }
 export interface PipeSourceParameters {
-	readonly ActiveMQBrokerParameters?: (PipeSourceActiveMQBrokerParameters | undefined) | undefined;
-	readonly DynamoDBStreamParameters?: (PipeSourceDynamoDBStreamParameters | undefined) | undefined;
-	readonly FilterCriteria?: (FilterCriteria | undefined) | undefined;
-	readonly KinesisStreamParameters?: (PipeSourceKinesisStreamParameters | undefined) | undefined;
-	readonly ManagedStreamingKafkaParameters?: (PipeSourceManagedStreamingKafkaParameters | undefined) | undefined;
-	readonly RabbitMQBrokerParameters?: (PipeSourceRabbitMQBrokerParameters | undefined) | undefined;
-	readonly SelfManagedKafkaParameters?: (PipeSourceSelfManagedKafkaParameters | undefined) | undefined;
-	readonly SqsQueueParameters?: (PipeSourceSqsQueueParameters | undefined) | undefined;
+	readonly ActiveMQBrokerParameters?: PipeSourceActiveMQBrokerParameters | undefined;
+	readonly DynamoDBStreamParameters?: PipeSourceDynamoDBStreamParameters | undefined;
+	readonly FilterCriteria?: FilterCriteria | undefined;
+	readonly KinesisStreamParameters?: PipeSourceKinesisStreamParameters | undefined;
+	readonly ManagedStreamingKafkaParameters?: PipeSourceManagedStreamingKafkaParameters | undefined;
+	readonly RabbitMQBrokerParameters?: PipeSourceRabbitMQBrokerParameters | undefined;
+	readonly SelfManagedKafkaParameters?: PipeSourceSelfManagedKafkaParameters | undefined;
+	readonly SqsQueueParameters?: PipeSourceSqsQueueParameters | undefined;
 }
 export interface PipeSourceRabbitMQBrokerParameters {
-	readonly BatchSize?: (number | undefined) | undefined;
+	readonly BatchSize?: number | undefined;
 	readonly Credentials: MQBrokerAccessCredentials;
-	readonly MaximumBatchingWindowInSeconds?: (number | undefined) | undefined;
+	readonly MaximumBatchingWindowInSeconds?: number | undefined;
 	readonly QueueName: string;
-	readonly VirtualHost?: (string | undefined) | undefined;
+	readonly VirtualHost?: string | undefined;
 }
 export interface PipeSourceSelfManagedKafkaParameters {
-	readonly AdditionalBootstrapServers?: (string[] | undefined) | undefined;
-	readonly BatchSize?: (number | undefined) | undefined;
-	readonly ConsumerGroupID?: (string | undefined) | undefined;
-	readonly Credentials?: (SelfManagedKafkaAccessConfigurationCredentials | undefined) | undefined;
-	readonly MaximumBatchingWindowInSeconds?: (number | undefined) | undefined;
-	readonly ServerRootCaCertificate?: (string | undefined) | undefined;
-	readonly StartingPosition?: (string | undefined) | undefined;
+	readonly AdditionalBootstrapServers?: string[] | undefined;
+	readonly BatchSize?: number | undefined;
+	readonly ConsumerGroupID?: string | undefined;
+	readonly Credentials?: SelfManagedKafkaAccessConfigurationCredentials | undefined;
+	readonly MaximumBatchingWindowInSeconds?: number | undefined;
+	readonly ServerRootCaCertificate?: string | undefined;
+	readonly StartingPosition?: string | undefined;
 	readonly TopicName: string;
-	readonly Vpc?: (SelfManagedKafkaAccessConfigurationVpc | undefined) | undefined;
+	readonly Vpc?: SelfManagedKafkaAccessConfigurationVpc | undefined;
 }
 export interface PipeSourceSqsQueueParameters {
-	readonly BatchSize?: (number | undefined) | undefined;
-	readonly MaximumBatchingWindowInSeconds?: (number | undefined) | undefined;
+	readonly BatchSize?: number | undefined;
+	readonly MaximumBatchingWindowInSeconds?: number | undefined;
 }
 export interface PipeTargetBatchJobParameters {
-	readonly ArrayProperties?: (BatchArrayProperties | undefined) | undefined;
-	readonly ContainerOverrides?: (BatchContainerOverrides | undefined) | undefined;
-	readonly DependsOn?: (BatchJobDependency[] | undefined) | undefined;
+	readonly ArrayProperties?: BatchArrayProperties | undefined;
+	readonly ContainerOverrides?: BatchContainerOverrides | undefined;
+	readonly DependsOn?: BatchJobDependency[] | undefined;
 	readonly JobDefinition: string;
 	readonly JobName: string;
-	readonly Parameters?: ({ [key: string]: string } | undefined) | undefined;
-	readonly RetryStrategy?: (BatchRetryStrategy | undefined) | undefined;
+	readonly Parameters?: { [key: string]: string } | undefined;
+	readonly RetryStrategy?: BatchRetryStrategy | undefined;
 }
 export interface PipeTargetCloudWatchLogsParameters {
-	readonly LogStreamName?: (string | undefined) | undefined;
-	readonly Timestamp?: (string | undefined) | undefined;
+	readonly LogStreamName?: string | undefined;
+	readonly Timestamp?: string | undefined;
 }
 export interface PipeTargetEcsTaskParameters {
-	readonly CapacityProviderStrategy?: (CapacityProviderStrategyItem[] | undefined) | undefined;
-	readonly EnableECSManagedTags?: (boolean | undefined) | undefined;
-	readonly EnableExecuteCommand?: (boolean | undefined) | undefined;
-	readonly Group?: (string | undefined) | undefined;
-	readonly LaunchType?: (string | undefined) | undefined;
-	readonly NetworkConfiguration?: (NetworkConfiguration | undefined) | undefined;
-	readonly Overrides?: (EcsTaskOverride | undefined) | undefined;
-	readonly PlacementConstraints?: (PlacementConstraint[] | undefined) | undefined;
-	readonly PlacementStrategy?: (PlacementStrategy[] | undefined) | undefined;
-	readonly PlatformVersion?: (string | undefined) | undefined;
-	readonly PropagateTags?: (string | undefined) | undefined;
-	readonly ReferenceId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TaskCount?: (number | undefined) | undefined;
+	readonly CapacityProviderStrategy?: CapacityProviderStrategyItem[] | undefined;
+	readonly EnableECSManagedTags?: boolean | undefined;
+	readonly EnableExecuteCommand?: boolean | undefined;
+	readonly Group?: string | undefined;
+	readonly LaunchType?: string | undefined;
+	readonly NetworkConfiguration?: NetworkConfiguration | undefined;
+	readonly Overrides?: EcsTaskOverride | undefined;
+	readonly PlacementConstraints?: PlacementConstraint[] | undefined;
+	readonly PlacementStrategy?: PlacementStrategy[] | undefined;
+	readonly PlatformVersion?: string | undefined;
+	readonly PropagateTags?: string | undefined;
+	readonly ReferenceId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TaskCount?: number | undefined;
 	readonly TaskDefinitionArn: string;
 }
 export interface PipeTargetEventBridgeEventBusParameters {
-	readonly DetailType?: (string | undefined) | undefined;
-	readonly EndpointId?: (string | undefined) | undefined;
-	readonly Resources?: (string[] | undefined) | undefined;
-	readonly Source?: (string | undefined) | undefined;
-	readonly Time?: (string | undefined) | undefined;
+	readonly DetailType?: string | undefined;
+	readonly EndpointId?: string | undefined;
+	readonly Resources?: string[] | undefined;
+	readonly Source?: string | undefined;
+	readonly Time?: string | undefined;
 }
 export interface PipeTargetHttpParameters {
-	readonly HeaderParameters?: ({ [key: string]: string } | undefined) | undefined;
-	readonly PathParameterValues?: (string[] | undefined) | undefined;
-	readonly QueryStringParameters?: ({ [key: string]: string } | undefined) | undefined;
+	readonly HeaderParameters?: { [key: string]: string } | undefined;
+	readonly PathParameterValues?: string[] | undefined;
+	readonly QueryStringParameters?: { [key: string]: string } | undefined;
 }
 export interface PipeTargetKinesisStreamParameters {
 	readonly PartitionKey: string;
 }
 export interface PipeTargetLambdaFunctionParameters {
-	readonly InvocationType?: (string | undefined) | undefined;
+	readonly InvocationType?: string | undefined;
 }
 export interface PipeTargetParameters {
-	readonly BatchJobParameters?: (PipeTargetBatchJobParameters | undefined) | undefined;
-	readonly CloudWatchLogsParameters?: (PipeTargetCloudWatchLogsParameters | undefined) | undefined;
-	readonly EcsTaskParameters?: (PipeTargetEcsTaskParameters | undefined) | undefined;
-	readonly EventBridgeEventBusParameters?: (PipeTargetEventBridgeEventBusParameters | undefined) | undefined;
-	readonly HttpParameters?: (PipeTargetHttpParameters | undefined) | undefined;
-	readonly InputTemplate?: (string | undefined) | undefined;
-	readonly KinesisStreamParameters?: (PipeTargetKinesisStreamParameters | undefined) | undefined;
-	readonly LambdaFunctionParameters?: (PipeTargetLambdaFunctionParameters | undefined) | undefined;
-	readonly RedshiftDataParameters?: (PipeTargetRedshiftDataParameters | undefined) | undefined;
-	readonly SageMakerPipelineParameters?: (PipeTargetSageMakerPipelineParameters | undefined) | undefined;
-	readonly SqsQueueParameters?: (PipeTargetSqsQueueParameters | undefined) | undefined;
-	readonly StepFunctionStateMachineParameters?: (PipeTargetStateMachineParameters | undefined) | undefined;
+	readonly BatchJobParameters?: PipeTargetBatchJobParameters | undefined;
+	readonly CloudWatchLogsParameters?: PipeTargetCloudWatchLogsParameters | undefined;
+	readonly EcsTaskParameters?: PipeTargetEcsTaskParameters | undefined;
+	readonly EventBridgeEventBusParameters?: PipeTargetEventBridgeEventBusParameters | undefined;
+	readonly HttpParameters?: PipeTargetHttpParameters | undefined;
+	readonly InputTemplate?: string | undefined;
+	readonly KinesisStreamParameters?: PipeTargetKinesisStreamParameters | undefined;
+	readonly LambdaFunctionParameters?: PipeTargetLambdaFunctionParameters | undefined;
+	readonly RedshiftDataParameters?: PipeTargetRedshiftDataParameters | undefined;
+	readonly SageMakerPipelineParameters?: PipeTargetSageMakerPipelineParameters | undefined;
+	readonly SqsQueueParameters?: PipeTargetSqsQueueParameters | undefined;
+	readonly StepFunctionStateMachineParameters?: PipeTargetStateMachineParameters | undefined;
 }
 export interface PipeTargetRedshiftDataParameters {
 	readonly Database: string;
-	readonly DbUser?: (string | undefined) | undefined;
-	readonly SecretManagerArn?: (string | undefined) | undefined;
+	readonly DbUser?: string | undefined;
+	readonly SecretManagerArn?: string | undefined;
 	readonly Sqls: string[];
-	readonly StatementName?: (string | undefined) | undefined;
-	readonly WithEvent?: (boolean | undefined) | undefined;
+	readonly StatementName?: string | undefined;
+	readonly WithEvent?: boolean | undefined;
 }
 export interface PipeTargetSageMakerPipelineParameters {
-	readonly PipelineParameterList?: (SageMakerPipelineParameter[] | undefined) | undefined;
+	readonly PipelineParameterList?: SageMakerPipelineParameter[] | undefined;
 }
 export interface PipeTargetSqsQueueParameters {
-	readonly MessageDeduplicationId?: (string | undefined) | undefined;
-	readonly MessageGroupId?: (string | undefined) | undefined;
+	readonly MessageDeduplicationId?: string | undefined;
+	readonly MessageGroupId?: string | undefined;
 }
 export interface PipeTargetStateMachineParameters {
-	readonly InvocationType?: (string | undefined) | undefined;
+	readonly InvocationType?: string | undefined;
 }
 export interface PlacementConstraint {
-	readonly Expression?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Expression?: string | undefined;
+	readonly Type?: string | undefined;
 }
 export interface PlacementStrategy {
-	readonly Field?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Field?: string | undefined;
+	readonly Type?: string | undefined;
 }
 export interface SageMakerPipelineParameter {
 	readonly Name: string;
 	readonly Value: string;
 }
 export interface SelfManagedKafkaAccessConfigurationCredentials {
-	readonly BasicAuth?: (string | undefined) | undefined;
-	readonly ClientCertificateTlsAuth?: (string | undefined) | undefined;
-	readonly SaslScram256Auth?: (string | undefined) | undefined;
-	readonly SaslScram512Auth?: (string | undefined) | undefined;
+	readonly BasicAuth?: string | undefined;
+	readonly ClientCertificateTlsAuth?: string | undefined;
+	readonly SaslScram256Auth?: string | undefined;
+	readonly SaslScram512Auth?: string | undefined;
 }
 export interface SelfManagedKafkaAccessConfigurationVpc {
-	readonly SecurityGroup?: (string[] | undefined) | undefined;
-	readonly Subnets?: (string[] | undefined) | undefined;
+	readonly SecurityGroup?: string[] | undefined;
+	readonly Subnets?: string[] | undefined;
 }
 export default {
 	Pipe: Pipe,

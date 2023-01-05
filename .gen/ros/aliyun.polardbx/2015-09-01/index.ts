@@ -19,14 +19,14 @@ export interface DBInstanceComponentInputs {
 	readonly TopologyType: string;
 	readonly VPCId: string;
 	readonly VSwitchId: string;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly DBInstanceDescription?: (string | undefined) | undefined;
-	readonly PayType?: (string | undefined) | undefined;
-	readonly Period?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecondaryZone?: (string | undefined) | undefined;
-	readonly TertiaryZone?: (string | undefined) | undefined;
-	readonly UsedTime?: (number | undefined) | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly DBInstanceDescription?: string | undefined;
+	readonly PayType?: string | undefined;
+	readonly Period?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecondaryZone?: string | undefined;
+	readonly TertiaryZone?: string | undefined;
+	readonly UsedTime?: number | undefined;
 	readonly LogicalId: string;
 }
 export default {

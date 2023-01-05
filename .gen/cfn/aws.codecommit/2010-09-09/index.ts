@@ -17,19 +17,19 @@ export interface RepositoryComponentOutputs {
 }
 export interface RepositoryComponentInputs {
 	readonly RepositoryName: string;
-	readonly Code?: (Code | undefined) | undefined;
-	readonly RepositoryDescription?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Triggers?: (RepositoryTrigger[] | undefined) | undefined;
+	readonly Code?: Code | undefined;
+	readonly RepositoryDescription?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Triggers?: RepositoryTrigger[] | undefined;
 	readonly LogicalId: string;
 }
 export interface Code {
-	readonly BranchName?: (string | undefined) | undefined;
+	readonly BranchName?: string | undefined;
 	readonly S3: S3;
 }
 export interface RepositoryTrigger {
-	readonly Branches?: (string[] | undefined) | undefined;
-	readonly CustomData?: (string | undefined) | undefined;
+	readonly Branches?: string[] | undefined;
+	readonly CustomData?: string | undefined;
 	readonly DestinationArn: string;
 	readonly Events: string[];
 	readonly Name: string;
@@ -37,7 +37,7 @@ export interface RepositoryTrigger {
 export interface S3 {
 	readonly Bucket: string;
 	readonly Key: string;
-	readonly ObjectVersion?: (string | undefined) | undefined;
+	readonly ObjectVersion?: string | undefined;
 }
 export default {
 	Repository: Repository,

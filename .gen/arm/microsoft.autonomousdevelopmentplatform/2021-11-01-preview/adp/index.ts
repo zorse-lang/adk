@@ -16,9 +16,9 @@ export interface accountsComponentOutputs {
 export interface accountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AccountProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: AccountProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class accounts_dataPools
 	extends ArmResource<accounts_dataPoolsComponentInputs>
@@ -44,34 +44,30 @@ export interface accounts_dataPoolsComponentOutputs {
 }
 export interface accounts_dataPoolsComponentInputs {
 	readonly name: string;
-	readonly properties?: DataPoolProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DataPoolProperties;
+	readonly systemData?: SystemData;
 }
 export interface AccountProperties {
-	readonly accountId?: string | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleting" | "Failed" | "Provisioning" | "Succeeded")
-		| undefined;
+	readonly accountId?: string;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleting" | "Failed" | "Provisioning" | "Succeeded";
 }
 export interface DataPoolEncryption {
 	readonly keyName: string;
 	readonly keyVaultUri: string;
-	readonly keyVersion?: string | undefined;
+	readonly keyVersion?: string;
 	readonly userAssignedIdentity: string;
 }
 export interface DataPoolLocation {
-	readonly encryption?: DataPoolEncryption | undefined;
+	readonly encryption?: DataPoolEncryption;
 	readonly name: string;
-	readonly storageAccountCount?: number | undefined;
-	readonly storageSku?: StorageSku | undefined;
+	readonly storageAccountCount?: number;
+	readonly storageSku?: StorageSku;
 }
 export interface DataPoolProperties {
-	readonly dataPoolId?: string | undefined;
-	readonly locations?: DataPoolLocation[] | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleting" | "Failed" | "Provisioning" | "Succeeded")
-		| undefined;
-	readonly tags?: Tags | undefined;
+	readonly dataPoolId?: string;
+	readonly locations?: DataPoolLocation[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleting" | "Failed" | "Provisioning" | "Succeeded";
+	readonly tags?: Tags;
 }
 export interface StorageSku {
 	readonly name:
@@ -85,18 +81,18 @@ export interface StorageSku {
 		| "Standard_ZRS";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Tags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	accounts: accounts,

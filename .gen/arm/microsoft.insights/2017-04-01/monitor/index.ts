@@ -16,8 +16,8 @@ export interface actionGroupsComponentOutputs {
 export interface actionGroupsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ActionGroup | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ActionGroup;
+	readonly tags?: ResourceTags;
 }
 export class activityLogAlerts
 	extends ArmResource<activityLogAlertsComponentInputs>
@@ -38,35 +38,35 @@ export interface activityLogAlertsComponentOutputs {
 export interface activityLogAlertsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ActivityLogAlert | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ActivityLogAlert;
+	readonly tags?: ResourceTags;
 }
 export interface ActionGroup {
-	readonly automationRunbookReceivers?: AutomationRunbookReceiver[] | undefined;
-	readonly azureAppPushReceivers?: AzureAppPushReceiver[] | undefined;
-	readonly emailReceivers?: EmailReceiver[] | undefined;
+	readonly automationRunbookReceivers?: AutomationRunbookReceiver[];
+	readonly azureAppPushReceivers?: AzureAppPushReceiver[];
+	readonly emailReceivers?: EmailReceiver[];
 	readonly enabled: boolean;
 	readonly groupShortName: string;
-	readonly itsmReceivers?: ItsmReceiver[] | undefined;
-	readonly smsReceivers?: SmsReceiver[] | undefined;
-	readonly webhookReceivers?: WebhookReceiver[] | undefined;
+	readonly itsmReceivers?: ItsmReceiver[];
+	readonly smsReceivers?: SmsReceiver[];
+	readonly webhookReceivers?: WebhookReceiver[];
 }
 export interface ActivityLogAlert {
 	readonly actions: ActivityLogAlertActionList;
 	readonly condition: ActivityLogAlertAllOfCondition;
-	readonly description?: string | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly description?: string;
+	readonly enabled?: boolean;
 	readonly scopes: string[];
 }
 export interface ActivityLogAlertActionGroup {
 	readonly actionGroupId: string;
-	readonly webhookProperties?: ActivityLogAlertActionGroupWebhookProperties | undefined;
+	readonly webhookProperties?: ActivityLogAlertActionGroupWebhookProperties;
 }
 export interface ActivityLogAlertActionGroupWebhookProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ActivityLogAlertActionList {
-	readonly actionGroups?: ActivityLogAlertActionGroup[] | undefined;
+	readonly actionGroups?: ActivityLogAlertActionGroup[];
 }
 export interface ActivityLogAlertAllOfCondition {
 	readonly allOf: ActivityLogAlertLeafCondition[];
@@ -78,9 +78,9 @@ export interface ActivityLogAlertLeafCondition {
 export interface AutomationRunbookReceiver {
 	readonly automationAccountId: string;
 	readonly isGlobalRunbook: boolean;
-	readonly name?: string | undefined;
+	readonly name?: string;
 	readonly runbookName: string;
-	readonly serviceUri?: string | undefined;
+	readonly serviceUri?: string;
 	readonly webhookResourceId: string;
 }
 export interface AzureAppPushReceiver {
@@ -90,7 +90,7 @@ export interface AzureAppPushReceiver {
 export interface EmailReceiver {
 	readonly emailAddress: string;
 	readonly name: string;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
+	readonly status?: "Disabled" | "Enabled";
 }
 export interface ItsmReceiver {
 	readonly connectionId: string;
@@ -100,13 +100,13 @@ export interface ItsmReceiver {
 	readonly workspaceId: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SmsReceiver {
 	readonly countryCode: string;
 	readonly name: string;
 	readonly phoneNumber: string;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
+	readonly status?: "Disabled" | "Enabled";
 }
 export interface WebhookReceiver {
 	readonly name: string;

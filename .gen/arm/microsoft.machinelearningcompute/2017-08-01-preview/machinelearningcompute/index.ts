@@ -25,8 +25,8 @@ export interface operationalizationClustersComponentOutputs {
 export interface operationalizationClustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: OperationalizationClusterProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: OperationalizationClusterProperties;
+	readonly tags?: ResourceTags;
 }
 export function listKeys(resource: operationalizationClusters): OperationalizationClusterCredentials {
 	if (resource.apiVersion !== "2017-08-01-preview") {
@@ -38,91 +38,88 @@ export function listKeys(resource: operationalizationClusters): Operationalizati
 	throw new Error("not implemented");
 }
 export interface AcsClusterProperties {
-	readonly agentCount?: number | undefined;
+	readonly agentCount?: number;
 	readonly agentVmSize?:
-		| (
-				| "Standard_A0"
-				| "Standard_A1"
-				| "Standard_A10"
-				| "Standard_A11"
-				| "Standard_A2"
-				| "Standard_A3"
-				| "Standard_A4"
-				| "Standard_A5"
-				| "Standard_A6"
-				| "Standard_A7"
-				| "Standard_A8"
-				| "Standard_A9"
-				| "Standard_D1"
-				| "Standard_D11"
-				| "Standard_D11_v2"
-				| "Standard_D12"
-				| "Standard_D12_v2"
-				| "Standard_D13"
-				| "Standard_D13_v2"
-				| "Standard_D14"
-				| "Standard_D14_v2"
-				| "Standard_D1_v2"
-				| "Standard_D2"
-				| "Standard_D2_v2"
-				| "Standard_D3"
-				| "Standard_D3_v2"
-				| "Standard_D4"
-				| "Standard_D4_v2"
-				| "Standard_D5_v2"
-				| "Standard_DS1"
-				| "Standard_DS11"
-				| "Standard_DS12"
-				| "Standard_DS13"
-				| "Standard_DS14"
-				| "Standard_DS2"
-				| "Standard_DS3"
-				| "Standard_DS4"
-				| "Standard_G1"
-				| "Standard_G2"
-				| "Standard_G3"
-				| "Standard_G4"
-				| "Standard_G5"
-				| "Standard_GS1"
-				| "Standard_GS2"
-				| "Standard_GS3"
-				| "Standard_GS4"
-				| "Standard_GS5"
-		  )
-		| undefined;
-	readonly clusterFqdn?: string | undefined;
-	readonly masterCount?: number | undefined;
-	readonly orchestratorProperties?: KubernetesClusterProperties | undefined;
+		| "Standard_A0"
+		| "Standard_A1"
+		| "Standard_A10"
+		| "Standard_A11"
+		| "Standard_A2"
+		| "Standard_A3"
+		| "Standard_A4"
+		| "Standard_A5"
+		| "Standard_A6"
+		| "Standard_A7"
+		| "Standard_A8"
+		| "Standard_A9"
+		| "Standard_D1"
+		| "Standard_D11"
+		| "Standard_D11_v2"
+		| "Standard_D12"
+		| "Standard_D12_v2"
+		| "Standard_D13"
+		| "Standard_D13_v2"
+		| "Standard_D14"
+		| "Standard_D14_v2"
+		| "Standard_D1_v2"
+		| "Standard_D2"
+		| "Standard_D2_v2"
+		| "Standard_D3"
+		| "Standard_D3_v2"
+		| "Standard_D4"
+		| "Standard_D4_v2"
+		| "Standard_D5_v2"
+		| "Standard_DS1"
+		| "Standard_DS11"
+		| "Standard_DS12"
+		| "Standard_DS13"
+		| "Standard_DS14"
+		| "Standard_DS2"
+		| "Standard_DS3"
+		| "Standard_DS4"
+		| "Standard_G1"
+		| "Standard_G2"
+		| "Standard_G3"
+		| "Standard_G4"
+		| "Standard_G5"
+		| "Standard_GS1"
+		| "Standard_GS2"
+		| "Standard_GS3"
+		| "Standard_GS4"
+		| "Standard_GS5";
+	readonly clusterFqdn?: string;
+	readonly masterCount?: number;
+	readonly orchestratorProperties?: KubernetesClusterProperties;
 	readonly orchestratorType: "Kubernetes" | "None";
-	readonly systemServices?: SystemService[] | undefined;
+	readonly systemServices?: SystemService[];
 }
 export interface AppInsightsCredentials {
-	readonly appId?: string | undefined;
-	readonly instrumentationKey?: string | undefined;
+	readonly appId?: string;
+	readonly instrumentationKey?: string;
 }
 export interface AppInsightsProperties {
-	readonly resourceId?: string | undefined;
+	readonly resourceId?: string;
 }
 export interface AutoScaleConfiguration {
-	readonly maxReplicas?: number | undefined;
-	readonly minReplicas?: number | undefined;
-	readonly refreshPeriodInSeconds?: number | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly targetUtilization?: number | undefined;
+	readonly maxReplicas?: number;
+	readonly minReplicas?: number;
+	readonly refreshPeriodInSeconds?: number;
+	readonly status?: "Disabled" | "Enabled";
+	readonly targetUtilization?: number;
 }
 export interface ContainerRegistryCredentials {
-	readonly loginServer?: string | undefined;
-	readonly password?: string | undefined;
-	readonly password2?: string | undefined;
-	readonly username?: string | undefined;
+	readonly loginServer?: string;
+	readonly password?: string;
+	readonly password2?: string;
+	readonly username?: string;
 }
 export interface ContainerRegistryProperties {
-	readonly resourceId?: string | undefined;
+	readonly resourceId?: string;
 }
 export interface ContainerServiceCredentials {
-	readonly acsKubeConfig?: string | undefined;
-	readonly imagePullSecretName?: string | undefined;
-	readonly servicePrincipalConfiguration?: ServicePrincipalProperties | undefined;
+	readonly acsKubeConfig?: string;
+	readonly imagePullSecretName?: string;
+	readonly servicePrincipalConfiguration?: ServicePrincipalProperties;
 }
 export interface ErrorDetail {
 	readonly code: string;
@@ -130,47 +127,45 @@ export interface ErrorDetail {
 }
 export interface ErrorResponse {
 	readonly code: string;
-	readonly details?: ErrorDetail[] | undefined;
+	readonly details?: ErrorDetail[];
 	readonly message: string;
 }
 export interface ErrorResponseWrapper {
-	readonly error?: ErrorResponse | undefined;
+	readonly error?: ErrorResponse;
 }
 export interface GlobalServiceConfiguration {
-	readonly autoScale?: AutoScaleConfiguration | undefined;
-	readonly etag?: string | undefined;
-	readonly serviceAuth?: ServiceAuthConfiguration | undefined;
-	readonly ssl?: SslConfiguration | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly autoScale?: AutoScaleConfiguration;
+	readonly etag?: string;
+	readonly serviceAuth?: ServiceAuthConfiguration;
+	readonly ssl?: SslConfiguration;
+	readonly [key: string]: any;
 }
 export interface KubernetesClusterProperties {
-	readonly servicePrincipal?: ServicePrincipalProperties | undefined;
+	readonly servicePrincipal?: ServicePrincipalProperties;
 }
 export interface OperationalizationClusterCredentials {
-	readonly appInsights?: AppInsightsCredentials | undefined;
-	readonly containerRegistry?: ContainerRegistryCredentials | undefined;
-	readonly containerService?: ContainerServiceCredentials | undefined;
-	readonly serviceAuthConfiguration?: ServiceAuthConfiguration | undefined;
-	readonly sslConfiguration?: SslConfiguration | undefined;
-	readonly storageAccount?: StorageAccountCredentials | undefined;
+	readonly appInsights?: AppInsightsCredentials;
+	readonly containerRegistry?: ContainerRegistryCredentials;
+	readonly containerService?: ContainerServiceCredentials;
+	readonly serviceAuthConfiguration?: ServiceAuthConfiguration;
+	readonly sslConfiguration?: SslConfiguration;
+	readonly storageAccount?: StorageAccountCredentials;
 }
 export interface OperationalizationClusterProperties {
-	readonly appInsights?: AppInsightsProperties | undefined;
+	readonly appInsights?: AppInsightsProperties;
 	readonly clusterType: "ACS" | "Local";
-	readonly containerRegistry?: ContainerRegistryProperties | undefined;
-	readonly containerService?: AcsClusterProperties | undefined;
-	readonly createdOn?: string | undefined;
-	readonly description?: string | undefined;
-	readonly globalServiceConfiguration?: GlobalServiceConfiguration | undefined;
-	readonly modifiedOn?: string | undefined;
-	readonly provisioningErrors?: ErrorResponseWrapper[] | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
-	readonly storageAccount?: StorageAccountProperties | undefined;
+	readonly containerRegistry?: ContainerRegistryProperties;
+	readonly containerService?: AcsClusterProperties;
+	readonly createdOn?: string;
+	readonly description?: string;
+	readonly globalServiceConfiguration?: GlobalServiceConfiguration;
+	readonly modifiedOn?: string;
+	readonly provisioningErrors?: ErrorResponseWrapper[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating";
+	readonly storageAccount?: StorageAccountProperties;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ServiceAuthConfiguration {
 	readonly primaryAuthKeyHash: string;
@@ -181,23 +176,23 @@ export interface ServicePrincipalProperties {
 	readonly secret: string;
 }
 export interface SslConfiguration {
-	readonly cert?: string | undefined;
-	readonly cname?: string | undefined;
-	readonly key?: string | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
+	readonly cert?: string;
+	readonly cname?: string;
+	readonly key?: string;
+	readonly status?: "Disabled" | "Enabled";
 }
 export interface StorageAccountCredentials {
-	readonly primaryKey?: string | undefined;
-	readonly resourceId?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryKey?: string;
+	readonly resourceId?: string;
+	readonly secondaryKey?: string;
 }
 export interface StorageAccountProperties {
-	readonly resourceId?: string | undefined;
+	readonly resourceId?: string;
 }
 export interface SystemService {
-	readonly publicIpAddress?: string | undefined;
+	readonly publicIpAddress?: string;
 	readonly systemServiceType: "BatchFrontEnd" | "None" | "ScoringFrontEnd";
-	readonly version?: string | undefined;
+	readonly version?: string;
 }
 export default {
 	operationalizationClusters: operationalizationClusters,

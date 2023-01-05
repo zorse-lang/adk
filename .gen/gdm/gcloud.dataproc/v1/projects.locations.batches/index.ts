@@ -7,131 +7,130 @@ export class ProjectsLocationsBatches
 	constructor(entity: ADKEntity, options: ProjectsLocationsBatchesComponentInputs) {
 		super(entity, options.name, "dataproc.v1.ProjectsLocationsBatches", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly creator?: string | undefined;
-	public readonly operation?: string | undefined;
-	public readonly runtimeInfo?: RuntimeInfo | undefined;
-	public readonly state?: string | undefined;
-	public readonly stateHistory?: StateHistory[] | undefined;
-	public readonly stateMessage?: string | undefined;
-	public readonly stateTime?: string | undefined;
-	public readonly uuid?: string | undefined;
+	public readonly createTime?: string;
+	public readonly creator?: string;
+	public readonly operation?: string;
+	public readonly runtimeInfo?: RuntimeInfo;
+	public readonly state?: string;
+	public readonly stateHistory?: StateHistory[];
+	public readonly stateMessage?: string;
+	public readonly stateTime?: string;
+	public readonly uuid?: string;
 }
 export interface ProjectsLocationsBatchesComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly creator?: string | undefined;
-	readonly operation?: string | undefined;
-	readonly runtimeInfo?: RuntimeInfo | undefined;
-	readonly state?: string | undefined;
-	readonly stateHistory?: StateHistory[] | undefined;
-	readonly stateMessage?: string | undefined;
-	readonly stateTime?: string | undefined;
-	readonly uuid?: string | undefined;
+	readonly createTime?: string;
+	readonly creator?: string;
+	readonly operation?: string;
+	readonly runtimeInfo?: RuntimeInfo;
+	readonly state?: string;
+	readonly stateHistory?: StateHistory[];
+	readonly stateMessage?: string;
+	readonly stateTime?: string;
+	readonly uuid?: string;
 }
 export interface ProjectsLocationsBatchesComponentInputs {
-	readonly batchId?: string | undefined;
-	readonly environmentConfig?: EnvironmentConfig | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly batchId?: string;
+	readonly environmentConfig?: EnvironmentConfig;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
 	readonly parent: string;
-	readonly pysparkBatch?: PySparkBatch | undefined;
-	readonly requestId?: string | undefined;
-	readonly runtimeConfig?: RuntimeConfig | undefined;
-	readonly sparkBatch?: SparkBatch | undefined;
-	readonly sparkRBatch?: SparkRBatch | undefined;
-	readonly sparkSqlBatch?: SparkSqlBatch | undefined;
-	readonly type: string;
+	readonly pysparkBatch?: PySparkBatch;
+	readonly requestId?: string;
+	readonly runtimeConfig?: RuntimeConfig;
+	readonly sparkBatch?: SparkBatch;
+	readonly sparkRBatch?: SparkRBatch;
+	readonly sparkSqlBatch?: SparkSqlBatch;
 }
 export interface Batch {
-	readonly createTime?: string | undefined;
-	readonly creator?: string | undefined;
-	readonly environmentConfig?: EnvironmentConfig | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly operation?: string | undefined;
-	readonly pysparkBatch?: PySparkBatch | undefined;
-	readonly runtimeConfig?: RuntimeConfig | undefined;
-	readonly runtimeInfo?: RuntimeInfo | undefined;
-	readonly sparkBatch?: SparkBatch | undefined;
-	readonly sparkRBatch?: SparkRBatch | undefined;
-	readonly sparkSqlBatch?: SparkSqlBatch | undefined;
-	readonly state?: string | undefined;
-	readonly stateHistory?: StateHistory[] | undefined;
-	readonly stateMessage?: string | undefined;
-	readonly stateTime?: string | undefined;
-	readonly uuid?: string | undefined;
+	readonly createTime?: string;
+	readonly creator?: string;
+	readonly environmentConfig?: EnvironmentConfig;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly operation?: string;
+	readonly pysparkBatch?: PySparkBatch;
+	readonly runtimeConfig?: RuntimeConfig;
+	readonly runtimeInfo?: RuntimeInfo;
+	readonly sparkBatch?: SparkBatch;
+	readonly sparkRBatch?: SparkRBatch;
+	readonly sparkSqlBatch?: SparkSqlBatch;
+	readonly state?: string;
+	readonly stateHistory?: StateHistory[];
+	readonly stateMessage?: string;
+	readonly stateTime?: string;
+	readonly uuid?: string;
 }
 export interface EnvironmentConfig {
-	readonly executionConfig?: ExecutionConfig | undefined;
-	readonly peripheralsConfig?: PeripheralsConfig | undefined;
+	readonly executionConfig?: ExecutionConfig;
+	readonly peripheralsConfig?: PeripheralsConfig;
 }
 export interface ExecutionConfig {
-	readonly idleTtl?: string | undefined;
-	readonly kmsKey?: string | undefined;
-	readonly networkTags?: string[] | undefined;
-	readonly networkUri?: string | undefined;
-	readonly serviceAccount?: string | undefined;
-	readonly subnetworkUri?: string | undefined;
+	readonly idleTtl?: string;
+	readonly kmsKey?: string;
+	readonly networkTags?: string[];
+	readonly networkUri?: string;
+	readonly serviceAccount?: string;
+	readonly subnetworkUri?: string;
 }
 export interface PeripheralsConfig {
-	readonly metastoreService?: string | undefined;
-	readonly sparkHistoryServerConfig?: SparkHistoryServerConfig | undefined;
+	readonly metastoreService?: string;
+	readonly sparkHistoryServerConfig?: SparkHistoryServerConfig;
 }
 export interface PySparkBatch {
-	readonly archiveUris?: string[] | undefined;
-	readonly args?: string[] | undefined;
-	readonly fileUris?: string[] | undefined;
-	readonly jarFileUris?: string[] | undefined;
+	readonly archiveUris?: string[];
+	readonly args?: string[];
+	readonly fileUris?: string[];
+	readonly jarFileUris?: string[];
 	readonly mainPythonFileUri: string;
-	readonly pythonFileUris?: string[] | undefined;
+	readonly pythonFileUris?: string[];
 }
 export interface RuntimeConfig {
-	readonly containerImage?: string | undefined;
-	readonly properties?: { [P in string]: string } | undefined;
-	readonly version?: string | undefined;
+	readonly containerImage?: string;
+	readonly properties?: { [P in string]: string };
+	readonly version?: string;
 }
 export interface RuntimeInfo {
-	readonly approximateUsage?: UsageMetrics | undefined;
-	readonly currentUsage?: UsageSnapshot | undefined;
-	readonly diagnosticOutputUri?: string | undefined;
-	readonly endpoints?: { [P in string]: string } | undefined;
-	readonly outputUri?: string | undefined;
+	readonly approximateUsage?: UsageMetrics;
+	readonly currentUsage?: UsageSnapshot;
+	readonly diagnosticOutputUri?: string;
+	readonly endpoints?: { [P in string]: string };
+	readonly outputUri?: string;
 }
 export interface SparkBatch {
-	readonly archiveUris?: string[] | undefined;
-	readonly args?: string[] | undefined;
-	readonly fileUris?: string[] | undefined;
-	readonly jarFileUris?: string[] | undefined;
-	readonly mainClass?: string | undefined;
-	readonly mainJarFileUri?: string | undefined;
+	readonly archiveUris?: string[];
+	readonly args?: string[];
+	readonly fileUris?: string[];
+	readonly jarFileUris?: string[];
+	readonly mainClass?: string;
+	readonly mainJarFileUri?: string;
 }
 export interface SparkHistoryServerConfig {
-	readonly dataprocCluster?: string | undefined;
+	readonly dataprocCluster?: string;
 }
 export interface SparkRBatch {
-	readonly archiveUris?: string[] | undefined;
-	readonly args?: string[] | undefined;
-	readonly fileUris?: string[] | undefined;
+	readonly archiveUris?: string[];
+	readonly args?: string[];
+	readonly fileUris?: string[];
 	readonly mainRFileUri: string;
 }
 export interface SparkSqlBatch {
-	readonly jarFileUris?: string[] | undefined;
+	readonly jarFileUris?: string[];
 	readonly queryFileUri: string;
-	readonly queryVariables?: { [P in string]: string } | undefined;
+	readonly queryVariables?: { [P in string]: string };
 }
 export interface StateHistory {
-	readonly state?: string | undefined;
-	readonly stateMessage?: string | undefined;
-	readonly stateStartTime?: string | undefined;
+	readonly state?: string;
+	readonly stateMessage?: string;
+	readonly stateStartTime?: string;
 }
 export interface UsageMetrics {
-	readonly milliDcuSeconds?: string | undefined;
-	readonly shuffleStorageGbSeconds?: string | undefined;
+	readonly milliDcuSeconds?: string;
+	readonly shuffleStorageGbSeconds?: string;
 }
 export interface UsageSnapshot {
-	readonly milliDcu?: string | undefined;
-	readonly shuffleStorageGb?: string | undefined;
-	readonly snapshotTime?: string | undefined;
+	readonly milliDcu?: string;
+	readonly shuffleStorageGb?: string;
+	readonly snapshotTime?: string;
 }
 export default {
 	ProjectsLocationsBatches: ProjectsLocationsBatches,

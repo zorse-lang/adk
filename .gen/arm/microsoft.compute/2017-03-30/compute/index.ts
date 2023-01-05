@@ -19,9 +19,9 @@ export interface availabilitySetsComponentOutputs {
 export interface availabilitySetsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AvailabilitySetProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: AvailabilitySetProperties;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export class disks extends ArmResource<disksComponentInputs> implements disksComponentOutputs {
 	constructor(entity: ADKEntity, options: disksComponentInputs) {
@@ -38,12 +38,12 @@ export interface disksComponentOutputs {
 }
 export interface disksComponentInputs {
 	readonly location: string;
-	readonly managedBy?: string | undefined;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly properties?: DiskProperties | undefined;
-	readonly sku?: DiskSku | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly properties?: DiskProperties;
+	readonly sku?: DiskSku;
+	readonly tags?: ResourceTags;
+	readonly zones?: string[];
 }
 export class images extends ArmResource<imagesComponentInputs> implements imagesComponentOutputs {
 	constructor(entity: ADKEntity, options: imagesComponentInputs) {
@@ -61,8 +61,8 @@ export interface imagesComponentOutputs {
 export interface imagesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ImageProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ImageProperties;
+	readonly tags?: ResourceTags;
 }
 export class locations_publishers_artifacttypes_offers_skus_versions
 	extends ArmResource<locations_publishers_artifacttypes_offers_skus_versionsComponentInputs>
@@ -87,10 +87,10 @@ export interface locations_publishers_artifacttypes_offers_skus_versionsComponen
 	readonly type: "Microsoft.Compute/locations/publishers/artifacttypes/offers/skus/versions";
 }
 export interface locations_publishers_artifacttypes_offers_skus_versionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VirtualMachineImageProperties | undefined;
-	readonly tags?: VirtualMachineImageResourceTags | undefined;
+	readonly properties?: VirtualMachineImageProperties;
+	readonly tags?: VirtualMachineImageResourceTags;
 }
 export class locations_publishers_artifacttypes_types_versions
 	extends ArmResource<locations_publishers_artifacttypes_types_versionsComponentInputs>
@@ -115,10 +115,10 @@ export interface locations_publishers_artifacttypes_types_versionsComponentOutpu
 	readonly type: "Microsoft.Compute/locations/publishers/artifacttypes/types/versions";
 }
 export interface locations_publishers_artifacttypes_types_versionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VirtualMachineExtensionImageProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VirtualMachineExtensionImageProperties;
+	readonly tags?: ResourceTags;
 }
 export class snapshots extends ArmResource<snapshotsComponentInputs> implements snapshotsComponentOutputs {
 	constructor(entity: ADKEntity, options: snapshotsComponentInputs) {
@@ -135,11 +135,11 @@ export interface snapshotsComponentOutputs {
 }
 export interface snapshotsComponentInputs {
 	readonly location: string;
-	readonly managedBy?: string | undefined;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly properties?: DiskProperties | undefined;
-	readonly sku?: DiskSku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: DiskProperties;
+	readonly sku?: DiskSku;
+	readonly tags?: ResourceTags;
 }
 export class virtualMachines
 	extends ArmResource<virtualMachinesComponentInputs>
@@ -158,14 +158,14 @@ export interface virtualMachinesComponentOutputs {
 	readonly type: "Microsoft.Compute/virtualMachines";
 }
 export interface virtualMachinesComponentInputs {
-	readonly identity?: VirtualMachineIdentity | undefined;
+	readonly identity?: VirtualMachineIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly plan?: Plan | undefined;
-	readonly properties?: VirtualMachineProperties | undefined;
-	readonly resources?: VirtualMachineExtension[] | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly plan?: Plan;
+	readonly properties?: VirtualMachineProperties;
+	readonly resources?: VirtualMachineExtension[];
+	readonly tags?: ResourceTags;
+	readonly zones?: string[];
 }
 export class virtualMachines_extensions
 	extends ArmResource<virtualMachines_extensionsComponentInputs>
@@ -186,8 +186,8 @@ export interface virtualMachines_extensionsComponentOutputs {
 export interface virtualMachines_extensionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VirtualMachineExtensionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: VirtualMachineExtensionProperties;
+	readonly tags?: ResourceTags;
 }
 export class virtualMachineScaleSets
 	extends ArmResource<virtualMachineScaleSetsComponentInputs>
@@ -206,14 +206,14 @@ export interface virtualMachineScaleSetsComponentOutputs {
 	readonly type: "Microsoft.Compute/virtualMachineScaleSets";
 }
 export interface virtualMachineScaleSetsComponentInputs {
-	readonly identity?: VirtualMachineScaleSetIdentity | undefined;
+	readonly identity?: VirtualMachineScaleSetIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly plan?: Plan | undefined;
-	readonly properties?: VirtualMachineScaleSetProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly plan?: Plan;
+	readonly properties?: VirtualMachineScaleSetProperties;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
+	readonly zones?: string[];
 }
 export class virtualMachineScaleSets_extensions
 	extends ArmResource<virtualMachineScaleSets_extensionsComponentInputs>
@@ -233,7 +233,7 @@ export interface virtualMachineScaleSets_extensionsComponentOutputs {
 }
 export interface virtualMachineScaleSets_extensionsComponentInputs {
 	readonly name: string;
-	readonly properties?: VirtualMachineScaleSetExtensionProperties | undefined;
+	readonly properties?: VirtualMachineScaleSetExtensionProperties;
 }
 export class virtualMachineScaleSets_rollingUpgrades
 	extends ArmResource<virtualMachineScaleSets_rollingUpgradesComponentInputs>
@@ -252,10 +252,10 @@ export interface virtualMachineScaleSets_rollingUpgradesComponentOutputs {
 	readonly type: "Microsoft.Compute/virtualMachineScaleSets/rollingUpgrades";
 }
 export interface virtualMachineScaleSets_rollingUpgradesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RollingUpgradeStatusInfoProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: RollingUpgradeStatusInfoProperties;
+	readonly tags?: ResourceTags;
 }
 export class virtualMachineScaleSets_virtualmachines
 	extends ArmResource<virtualMachineScaleSets_virtualmachinesComponentInputs>
@@ -274,252 +274,249 @@ export interface virtualMachineScaleSets_virtualmachinesComponentOutputs {
 	readonly type: "Microsoft.Compute/virtualMachineScaleSets/virtualmachines";
 }
 export interface virtualMachineScaleSets_virtualmachinesComponentInputs {
-	readonly instanceId?: string | undefined;
-	readonly location?: string | undefined;
+	readonly instanceId?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly plan?: Plan | undefined;
-	readonly properties?: VirtualMachineScaleSetVMProperties | undefined;
-	readonly resources?: VirtualMachineExtension[] | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly plan?: Plan;
+	readonly properties?: VirtualMachineScaleSetVMProperties;
+	readonly resources?: VirtualMachineExtension[];
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export interface AdditionalUnattendContent {
-	readonly componentName?: "Microsoft-Windows-Shell-Setup" | undefined;
-	readonly content?: string | undefined;
-	readonly passName?: "OobeSystem" | undefined;
-	readonly settingName?: "AutoLogon" | undefined;
+	readonly componentName?: "Microsoft-Windows-Shell-Setup";
+	readonly content?: string;
+	readonly passName?: "OobeSystem";
+	readonly settingName?: "AutoLogon";
 }
 export interface ApiEntityReference {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ApiError {
-	readonly code?: string | undefined;
-	readonly details?: ApiErrorBase[] | undefined;
-	readonly innererror?: InnerError | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly code?: string;
+	readonly details?: ApiErrorBase[];
+	readonly innererror?: InnerError;
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface ApiErrorBase {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface AvailabilitySetProperties {
-	readonly platformFaultDomainCount?: number | undefined;
-	readonly platformUpdateDomainCount?: number | undefined;
-	readonly statuses?: InstanceViewStatus[] | undefined;
-	readonly virtualMachines?: SubResource[] | undefined;
+	readonly platformFaultDomainCount?: number;
+	readonly platformUpdateDomainCount?: number;
+	readonly statuses?: InstanceViewStatus[];
+	readonly virtualMachines?: SubResource[];
 }
 export interface BootDiagnostics {
-	readonly enabled?: boolean | undefined;
-	readonly storageUri?: string | undefined;
+	readonly enabled?: boolean;
+	readonly storageUri?: string;
 }
 export interface BootDiagnosticsInstanceView {
-	readonly consoleScreenshotBlobUri?: string | undefined;
-	readonly serialConsoleLogBlobUri?: string | undefined;
+	readonly consoleScreenshotBlobUri?: string;
+	readonly serialConsoleLogBlobUri?: string;
 }
 export interface CreationData {
 	readonly createOption: "Attach" | "Copy" | "Empty" | "FromImage";
-	readonly imageReference?: ImageDiskReference | undefined;
-	readonly sourceResourceId?: string | undefined;
-	readonly sourceUri?: string | undefined;
-	readonly storageAccountId?: string | undefined;
+	readonly imageReference?: ImageDiskReference;
+	readonly sourceResourceId?: string;
+	readonly sourceUri?: string;
+	readonly storageAccountId?: string;
 }
 export interface DataDisk {
-	readonly caching?: ("None" | "ReadOnly") | undefined;
+	readonly caching?: "None" | "ReadOnly";
 	readonly createOption: "Attach" | "Empty";
-	readonly diskSizeGB?: number | undefined;
-	readonly image?: VirtualHardDisk | undefined;
+	readonly diskSizeGB?: number;
+	readonly image?: VirtualHardDisk;
 	readonly lun: number;
-	readonly managedDisk?: ManagedDiskParameters | undefined;
-	readonly name?: string | undefined;
-	readonly vhd?: VirtualHardDisk | undefined;
+	readonly managedDisk?: ManagedDiskParameters;
+	readonly name?: string;
+	readonly vhd?: VirtualHardDisk;
 }
 export interface DataDiskImage {
-	readonly lun?: number | undefined;
+	readonly lun?: number;
 }
 export interface DiagnosticsProfile {
-	readonly bootDiagnostics?: BootDiagnostics | undefined;
+	readonly bootDiagnostics?: BootDiagnostics;
 }
 export interface DiskEncryptionSettings {
-	readonly diskEncryptionKey?: KeyVaultSecretReference | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly keyEncryptionKey?: KeyVaultKeyReference | undefined;
+	readonly diskEncryptionKey?: KeyVaultSecretReference;
+	readonly enabled?: boolean;
+	readonly keyEncryptionKey?: KeyVaultKeyReference;
 }
 export interface DiskInstanceView {
-	readonly encryptionSettings?: DiskEncryptionSettings[] | undefined;
-	readonly name?: string | undefined;
-	readonly statuses?: InstanceViewStatus[] | undefined;
+	readonly encryptionSettings?: DiskEncryptionSettings[];
+	readonly name?: string;
+	readonly statuses?: InstanceViewStatus[];
 }
 export interface DiskProperties {
 	readonly creationData: CreationData;
-	readonly diskSizeGB?: number | undefined;
-	readonly encryptionSettings?: EncryptionSettings | undefined;
-	readonly osType?: "Linux" | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly timeCreated?: string | undefined;
+	readonly diskSizeGB?: number;
+	readonly encryptionSettings?: EncryptionSettings;
+	readonly osType?: "Linux";
+	readonly provisioningState?: string;
+	readonly timeCreated?: string;
 }
 export interface DiskSku {
-	readonly name?: ("Premium_LRS" | "Standard_LRS") | undefined;
-	readonly tier?: string | undefined;
+	readonly name?: "Premium_LRS" | "Standard_LRS";
+	readonly tier?: string;
 }
 export interface EncryptionSettings {
-	readonly diskEncryptionKey?: KeyVaultAndSecretReference | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly keyEncryptionKey?: KeyVaultAndKeyReference | undefined;
+	readonly diskEncryptionKey?: KeyVaultAndSecretReference;
+	readonly enabled?: boolean;
+	readonly keyEncryptionKey?: KeyVaultAndKeyReference;
 }
 export interface HardwareProfile {
 	readonly vmSize?:
-		| (
-				| "Basic_A0"
-				| "Basic_A1"
-				| "Basic_A2"
-				| "Basic_A3"
-				| "Basic_A4"
-				| "Standard_A0"
-				| "Standard_A1"
-				| "Standard_A10"
-				| "Standard_A11"
-				| "Standard_A1_v2"
-				| "Standard_A2"
-				| "Standard_A2_v2"
-				| "Standard_A2m_v2"
-				| "Standard_A3"
-				| "Standard_A4"
-				| "Standard_A4_v2"
-				| "Standard_A4m_v2"
-				| "Standard_A5"
-				| "Standard_A6"
-				| "Standard_A7"
-				| "Standard_A8"
-				| "Standard_A8_v2"
-				| "Standard_A8m_v2"
-				| "Standard_A9"
-				| "Standard_D1"
-				| "Standard_D11"
-				| "Standard_D11_v2"
-				| "Standard_D12"
-				| "Standard_D12_v2"
-				| "Standard_D13"
-				| "Standard_D13_v2"
-				| "Standard_D14"
-				| "Standard_D14_v2"
-				| "Standard_D15_v2"
-				| "Standard_D1_v2"
-				| "Standard_D2"
-				| "Standard_D2_v2"
-				| "Standard_D3"
-				| "Standard_D3_v2"
-				| "Standard_D4"
-				| "Standard_D4_v2"
-				| "Standard_D5_v2"
-				| "Standard_DS1"
-				| "Standard_DS11"
-				| "Standard_DS11_v2"
-				| "Standard_DS12"
-				| "Standard_DS12_v2"
-				| "Standard_DS13"
-				| "Standard_DS13_v2"
-				| "Standard_DS14"
-				| "Standard_DS14_v2"
-				| "Standard_DS15_v2"
-				| "Standard_DS1_v2"
-				| "Standard_DS2"
-				| "Standard_DS2_v2"
-				| "Standard_DS3"
-				| "Standard_DS3_v2"
-				| "Standard_DS4"
-				| "Standard_DS4_v2"
-				| "Standard_DS5_v2"
-				| "Standard_F1"
-				| "Standard_F16"
-				| "Standard_F16s"
-				| "Standard_F1s"
-				| "Standard_F2"
-				| "Standard_F2s"
-				| "Standard_F4"
-				| "Standard_F4s"
-				| "Standard_F8"
-				| "Standard_F8s"
-				| "Standard_G1"
-				| "Standard_G2"
-				| "Standard_G3"
-				| "Standard_G4"
-				| "Standard_G5"
-				| "Standard_GS1"
-				| "Standard_GS2"
-				| "Standard_GS3"
-				| "Standard_GS4"
-				| "Standard_GS5"
-				| "Standard_H16"
-				| "Standard_H16m"
-				| "Standard_H16mr"
-				| "Standard_H16r"
-				| "Standard_H8"
-				| "Standard_H8m"
-				| "Standard_L16s"
-				| "Standard_L32s"
-				| "Standard_L4s"
-				| "Standard_L8s"
-				| "Standard_NC12"
-				| "Standard_NC24"
-				| "Standard_NC24r"
-				| "Standard_NC6"
-				| "Standard_NV12"
-				| "Standard_NV24"
-				| "Standard_NV6"
-		  )
-		| undefined;
+		| "Basic_A0"
+		| "Basic_A1"
+		| "Basic_A2"
+		| "Basic_A3"
+		| "Basic_A4"
+		| "Standard_A0"
+		| "Standard_A1"
+		| "Standard_A10"
+		| "Standard_A11"
+		| "Standard_A1_v2"
+		| "Standard_A2"
+		| "Standard_A2_v2"
+		| "Standard_A2m_v2"
+		| "Standard_A3"
+		| "Standard_A4"
+		| "Standard_A4_v2"
+		| "Standard_A4m_v2"
+		| "Standard_A5"
+		| "Standard_A6"
+		| "Standard_A7"
+		| "Standard_A8"
+		| "Standard_A8_v2"
+		| "Standard_A8m_v2"
+		| "Standard_A9"
+		| "Standard_D1"
+		| "Standard_D11"
+		| "Standard_D11_v2"
+		| "Standard_D12"
+		| "Standard_D12_v2"
+		| "Standard_D13"
+		| "Standard_D13_v2"
+		| "Standard_D14"
+		| "Standard_D14_v2"
+		| "Standard_D15_v2"
+		| "Standard_D1_v2"
+		| "Standard_D2"
+		| "Standard_D2_v2"
+		| "Standard_D3"
+		| "Standard_D3_v2"
+		| "Standard_D4"
+		| "Standard_D4_v2"
+		| "Standard_D5_v2"
+		| "Standard_DS1"
+		| "Standard_DS11"
+		| "Standard_DS11_v2"
+		| "Standard_DS12"
+		| "Standard_DS12_v2"
+		| "Standard_DS13"
+		| "Standard_DS13_v2"
+		| "Standard_DS14"
+		| "Standard_DS14_v2"
+		| "Standard_DS15_v2"
+		| "Standard_DS1_v2"
+		| "Standard_DS2"
+		| "Standard_DS2_v2"
+		| "Standard_DS3"
+		| "Standard_DS3_v2"
+		| "Standard_DS4"
+		| "Standard_DS4_v2"
+		| "Standard_DS5_v2"
+		| "Standard_F1"
+		| "Standard_F16"
+		| "Standard_F16s"
+		| "Standard_F1s"
+		| "Standard_F2"
+		| "Standard_F2s"
+		| "Standard_F4"
+		| "Standard_F4s"
+		| "Standard_F8"
+		| "Standard_F8s"
+		| "Standard_G1"
+		| "Standard_G2"
+		| "Standard_G3"
+		| "Standard_G4"
+		| "Standard_G5"
+		| "Standard_GS1"
+		| "Standard_GS2"
+		| "Standard_GS3"
+		| "Standard_GS4"
+		| "Standard_GS5"
+		| "Standard_H16"
+		| "Standard_H16m"
+		| "Standard_H16mr"
+		| "Standard_H16r"
+		| "Standard_H8"
+		| "Standard_H8m"
+		| "Standard_L16s"
+		| "Standard_L32s"
+		| "Standard_L4s"
+		| "Standard_L8s"
+		| "Standard_NC12"
+		| "Standard_NC24"
+		| "Standard_NC24r"
+		| "Standard_NC6"
+		| "Standard_NV12"
+		| "Standard_NV24"
+		| "Standard_NV6";
 }
 export interface ImageDataDisk {
-	readonly blobUri?: string | undefined;
-	readonly caching?: ("None" | "ReadOnly") | undefined;
-	readonly diskSizeGB?: number | undefined;
+	readonly blobUri?: string;
+	readonly caching?: "None" | "ReadOnly";
+	readonly diskSizeGB?: number;
 	readonly lun: number;
-	readonly managedDisk?: SubResource | undefined;
-	readonly snapshot?: SubResource | undefined;
-	readonly storageAccountType?: ("Premium_LRS" | "Standard_LRS") | undefined;
+	readonly managedDisk?: SubResource;
+	readonly snapshot?: SubResource;
+	readonly storageAccountType?: "Premium_LRS" | "Standard_LRS";
 }
 export interface ImageDiskReference {
 	readonly id: string;
-	readonly lun?: number | undefined;
+	readonly lun?: number;
 }
 export interface ImageOSDisk {
-	readonly blobUri?: string | undefined;
-	readonly caching?: ("None" | "ReadOnly") | undefined;
-	readonly diskSizeGB?: number | undefined;
-	readonly managedDisk?: SubResource | undefined;
+	readonly blobUri?: string;
+	readonly caching?: "None" | "ReadOnly";
+	readonly diskSizeGB?: number;
+	readonly managedDisk?: SubResource;
 	readonly osState: "Generalized";
 	readonly osType: "Linux";
-	readonly snapshot?: SubResource | undefined;
-	readonly storageAccountType?: ("Premium_LRS" | "Standard_LRS") | undefined;
+	readonly snapshot?: SubResource;
+	readonly storageAccountType?: "Premium_LRS" | "Standard_LRS";
 }
 export interface ImageProperties {
-	readonly provisioningState?: string | undefined;
-	readonly sourceVirtualMachine?: SubResource | undefined;
-	readonly storageProfile?: ImageStorageProfile | undefined;
+	readonly provisioningState?: string;
+	readonly sourceVirtualMachine?: SubResource;
+	readonly storageProfile?: ImageStorageProfile;
 }
 export interface ImageReference {
-	readonly id?: string | undefined;
-	readonly offer?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly sku?: string | undefined;
-	readonly version?: string | undefined;
+	readonly id?: string;
+	readonly offer?: string;
+	readonly publisher?: string;
+	readonly sku?: string;
+	readonly version?: string;
 }
 export interface ImageStorageProfile {
-	readonly dataDisks?: ImageDataDisk[] | undefined;
+	readonly dataDisks?: ImageDataDisk[];
 	readonly osDisk: ImageOSDisk;
 }
 export interface InnerError {
-	readonly errordetail?: string | undefined;
-	readonly exceptiontype?: string | undefined;
+	readonly errordetail?: string;
+	readonly exceptiontype?: string;
 }
 export interface InstanceViewStatus {
-	readonly code?: string | undefined;
-	readonly displayStatus?: string | undefined;
-	readonly level?: ("Error" | "Info") | undefined;
-	readonly message?: string | undefined;
-	readonly time?: string | undefined;
+	readonly code?: string;
+	readonly displayStatus?: string;
+	readonly level?: "Error" | "Info";
+	readonly message?: string;
+	readonly time?: string;
 }
 export interface KeyVaultAndKeyReference {
 	readonly keyUrl: string;
@@ -538,60 +535,60 @@ export interface KeyVaultSecretReference {
 	readonly sourceVault: SubResource;
 }
 export interface LinuxConfiguration {
-	readonly disablePasswordAuthentication?: boolean | undefined;
-	readonly ssh?: SshConfiguration | undefined;
+	readonly disablePasswordAuthentication?: boolean;
+	readonly ssh?: SshConfiguration;
 }
 export interface MaintenanceRedeployStatus {
-	readonly isCustomerInitiatedMaintenanceAllowed?: boolean | undefined;
-	readonly lastOperationMessage?: string | undefined;
-	readonly lastOperationResultCode?: ("MaintenanceAborted" | "MaintenanceCompleted" | "None") | undefined;
-	readonly maintenanceWindowEndTime?: string | undefined;
-	readonly maintenanceWindowStartTime?: string | undefined;
-	readonly preMaintenanceWindowEndTime?: string | undefined;
-	readonly preMaintenanceWindowStartTime?: string | undefined;
+	readonly isCustomerInitiatedMaintenanceAllowed?: boolean;
+	readonly lastOperationMessage?: string;
+	readonly lastOperationResultCode?: "MaintenanceAborted" | "MaintenanceCompleted" | "None";
+	readonly maintenanceWindowEndTime?: string;
+	readonly maintenanceWindowStartTime?: string;
+	readonly preMaintenanceWindowEndTime?: string;
+	readonly preMaintenanceWindowStartTime?: string;
 }
 export interface ManagedDiskParameters {
-	readonly id?: string | undefined;
-	readonly storageAccountType?: ("Premium_LRS" | "Standard_LRS") | undefined;
+	readonly id?: string;
+	readonly storageAccountType?: "Premium_LRS" | "Standard_LRS";
 }
 export interface NetworkInterfaceReference {
-	readonly id?: string | undefined;
-	readonly properties?: NetworkInterfaceReferenceProperties | undefined;
+	readonly id?: string;
+	readonly properties?: NetworkInterfaceReferenceProperties;
 }
 export interface NetworkInterfaceReferenceProperties {
-	readonly primary?: boolean | undefined;
+	readonly primary?: boolean;
 }
 export interface NetworkProfile {
-	readonly networkInterfaces?: NetworkInterfaceReference[] | undefined;
+	readonly networkInterfaces?: NetworkInterfaceReference[];
 }
 export interface OSDisk {
-	readonly caching?: ("None" | "ReadOnly") | undefined;
+	readonly caching?: "None" | "ReadOnly";
 	readonly createOption: "Attach" | "Empty";
-	readonly diskSizeGB?: number | undefined;
-	readonly encryptionSettings?: DiskEncryptionSettings | undefined;
-	readonly image?: VirtualHardDisk | undefined;
-	readonly managedDisk?: ManagedDiskParameters | undefined;
-	readonly name?: string | undefined;
-	readonly osType?: "Linux" | undefined;
-	readonly vhd?: VirtualHardDisk | undefined;
+	readonly diskSizeGB?: number;
+	readonly encryptionSettings?: DiskEncryptionSettings;
+	readonly image?: VirtualHardDisk;
+	readonly managedDisk?: ManagedDiskParameters;
+	readonly name?: string;
+	readonly osType?: "Linux";
+	readonly vhd?: VirtualHardDisk;
 }
 export interface OSDiskImage {
 	readonly operatingSystem: "Linux";
 }
 export interface OSProfile {
-	readonly adminPassword?: string | undefined;
-	readonly adminUsername?: string | undefined;
-	readonly computerName?: string | undefined;
-	readonly customData?: string | undefined;
-	readonly linuxConfiguration?: LinuxConfiguration | undefined;
-	readonly secrets?: VaultSecretGroup[] | undefined;
-	readonly windowsConfiguration?: WindowsConfiguration | undefined;
+	readonly adminPassword?: string;
+	readonly adminUsername?: string;
+	readonly computerName?: string;
+	readonly customData?: string;
+	readonly linuxConfiguration?: LinuxConfiguration;
+	readonly secrets?: VaultSecretGroup[];
+	readonly windowsConfiguration?: WindowsConfiguration;
 }
 export interface Plan {
-	readonly name?: string | undefined;
-	readonly product?: string | undefined;
-	readonly promotionCode?: string | undefined;
-	readonly publisher?: string | undefined;
+	readonly name?: string;
+	readonly product?: string;
+	readonly promotionCode?: string;
+	readonly publisher?: string;
 }
 export interface PurchasePlan {
 	readonly name: string;
@@ -599,308 +596,308 @@ export interface PurchasePlan {
 	readonly publisher: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RollingUpgradePolicy {
-	readonly maxBatchInstancePercent?: number | undefined;
-	readonly maxUnhealthyInstancePercent?: number | undefined;
-	readonly maxUnhealthyUpgradedInstancePercent?: number | undefined;
-	readonly pauseTimeBetweenBatches?: string | undefined;
+	readonly maxBatchInstancePercent?: number;
+	readonly maxUnhealthyInstancePercent?: number;
+	readonly maxUnhealthyUpgradedInstancePercent?: number;
+	readonly pauseTimeBetweenBatches?: string;
 }
 export interface RollingUpgradeProgressInfo {
-	readonly failedInstanceCount?: number | undefined;
-	readonly inProgressInstanceCount?: number | undefined;
-	readonly pendingInstanceCount?: number | undefined;
-	readonly successfulInstanceCount?: number | undefined;
+	readonly failedInstanceCount?: number;
+	readonly inProgressInstanceCount?: number;
+	readonly pendingInstanceCount?: number;
+	readonly successfulInstanceCount?: number;
 }
 export interface RollingUpgradeRunningStatus {
-	readonly code?: ("Cancelled" | "Completed" | "Faulted") | undefined;
-	readonly lastAction?: "Cancel" | undefined;
-	readonly lastActionTime?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly code?: "Cancelled" | "Completed" | "Faulted";
+	readonly lastAction?: "Cancel";
+	readonly lastActionTime?: string;
+	readonly startTime?: string;
 }
 export interface RollingUpgradeStatusInfoProperties {
-	readonly error?: ApiError | undefined;
-	readonly policy?: RollingUpgradePolicy | undefined;
-	readonly progress?: RollingUpgradeProgressInfo | undefined;
-	readonly runningStatus?: RollingUpgradeRunningStatus | undefined;
+	readonly error?: ApiError;
+	readonly policy?: RollingUpgradePolicy;
+	readonly progress?: RollingUpgradeProgressInfo;
+	readonly runningStatus?: RollingUpgradeRunningStatus;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly name?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly capacity?: number;
+	readonly name?: string;
+	readonly tier?: string;
 }
 export interface SourceVault {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface SshConfiguration {
-	readonly publicKeys?: SshPublicKey[] | undefined;
+	readonly publicKeys?: SshPublicKey[];
 }
 export interface SshPublicKey {
-	readonly keyData?: string | undefined;
-	readonly path?: string | undefined;
+	readonly keyData?: string;
+	readonly path?: string;
 }
 export interface StorageProfile {
-	readonly dataDisks?: DataDisk[] | undefined;
-	readonly imageReference?: ImageReference | undefined;
-	readonly osDisk?: OSDisk | undefined;
+	readonly dataDisks?: DataDisk[];
+	readonly imageReference?: ImageReference;
+	readonly osDisk?: OSDisk;
 }
 export interface SubResource {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface UpgradePolicy {
-	readonly automaticOSUpgrade?: boolean | undefined;
-	readonly mode?: ("Automatic" | "Manual") | undefined;
-	readonly rollingUpgradePolicy?: RollingUpgradePolicy | undefined;
+	readonly automaticOSUpgrade?: boolean;
+	readonly mode?: "Automatic" | "Manual";
+	readonly rollingUpgradePolicy?: RollingUpgradePolicy;
 }
 export interface VaultCertificate {
-	readonly certificateStore?: string | undefined;
-	readonly certificateUrl?: string | undefined;
+	readonly certificateStore?: string;
+	readonly certificateUrl?: string;
 }
 export interface VaultSecretGroup {
-	readonly sourceVault?: SubResource | undefined;
-	readonly vaultCertificates?: VaultCertificate[] | undefined;
+	readonly sourceVault?: SubResource;
+	readonly vaultCertificates?: VaultCertificate[];
 }
 export interface VirtualHardDisk {
-	readonly uri?: string | undefined;
+	readonly uri?: string;
 }
 export interface VirtualMachineAgentInstanceView {
-	readonly extensionHandlers?: VirtualMachineExtensionHandlerInstanceView[] | undefined;
-	readonly statuses?: InstanceViewStatus[] | undefined;
-	readonly vmAgentVersion?: string | undefined;
+	readonly extensionHandlers?: VirtualMachineExtensionHandlerInstanceView[];
+	readonly statuses?: InstanceViewStatus[];
+	readonly vmAgentVersion?: string;
 }
 export interface VirtualMachineExtension {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: VirtualMachineExtensionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: VirtualMachineExtensionProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface VirtualMachineExtensionHandlerInstanceView {
-	readonly status?: InstanceViewStatus | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly status?: InstanceViewStatus;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface VirtualMachineExtensionImageProperties {
 	readonly computeRole: string;
 	readonly handlerSchema: string;
 	readonly operatingSystem: string;
-	readonly supportsMultipleExtensions?: boolean | undefined;
-	readonly vmScaleSetEnabled?: boolean | undefined;
+	readonly supportsMultipleExtensions?: boolean;
+	readonly vmScaleSetEnabled?: boolean;
 }
 export interface VirtualMachineExtensionInstanceView {
-	readonly name?: string | undefined;
-	readonly statuses?: InstanceViewStatus[] | undefined;
-	readonly substatuses?: InstanceViewStatus[] | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly name?: string;
+	readonly statuses?: InstanceViewStatus[];
+	readonly substatuses?: InstanceViewStatus[];
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface VirtualMachineExtensionProperties {
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly instanceView?: VirtualMachineExtensionInstanceView | undefined;
-	readonly protectedSettings?: any | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly settings?: any | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly forceUpdateTag?: string;
+	readonly instanceView?: VirtualMachineExtensionInstanceView;
+	readonly protectedSettings?: any;
+	readonly provisioningState?: string;
+	readonly publisher?: string;
+	readonly settings?: any;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface VirtualMachineHealthStatus {
-	readonly status?: InstanceViewStatus | undefined;
+	readonly status?: InstanceViewStatus;
 }
 export interface VirtualMachineIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface VirtualMachineImageProperties {
-	readonly dataDiskImages?: DataDiskImage[] | undefined;
-	readonly osDiskImage?: OSDiskImage | undefined;
-	readonly plan?: PurchasePlan | undefined;
+	readonly dataDiskImages?: DataDiskImage[];
+	readonly osDiskImage?: OSDiskImage;
+	readonly plan?: PurchasePlan;
 }
 export interface VirtualMachineImageResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualMachineInstanceView {
-	readonly bootDiagnostics?: BootDiagnosticsInstanceView | undefined;
-	readonly disks?: DiskInstanceView[] | undefined;
-	readonly extensions?: VirtualMachineExtensionInstanceView[] | undefined;
-	readonly maintenanceRedeployStatus?: MaintenanceRedeployStatus | undefined;
-	readonly platformFaultDomain?: number | undefined;
-	readonly platformUpdateDomain?: number | undefined;
-	readonly rdpThumbPrint?: string | undefined;
-	readonly statuses?: InstanceViewStatus[] | undefined;
-	readonly vmAgent?: VirtualMachineAgentInstanceView | undefined;
+	readonly bootDiagnostics?: BootDiagnosticsInstanceView;
+	readonly disks?: DiskInstanceView[];
+	readonly extensions?: VirtualMachineExtensionInstanceView[];
+	readonly maintenanceRedeployStatus?: MaintenanceRedeployStatus;
+	readonly platformFaultDomain?: number;
+	readonly platformUpdateDomain?: number;
+	readonly rdpThumbPrint?: string;
+	readonly statuses?: InstanceViewStatus[];
+	readonly vmAgent?: VirtualMachineAgentInstanceView;
 }
 export interface VirtualMachineProperties {
-	readonly availabilitySet?: SubResource | undefined;
-	readonly diagnosticsProfile?: DiagnosticsProfile | undefined;
-	readonly hardwareProfile?: HardwareProfile | undefined;
-	readonly instanceView?: VirtualMachineInstanceView | undefined;
-	readonly licenseType?: string | undefined;
-	readonly networkProfile?: NetworkProfile | undefined;
-	readonly osProfile?: OSProfile | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly storageProfile?: StorageProfile | undefined;
-	readonly vmId?: string | undefined;
+	readonly availabilitySet?: SubResource;
+	readonly diagnosticsProfile?: DiagnosticsProfile;
+	readonly hardwareProfile?: HardwareProfile;
+	readonly instanceView?: VirtualMachineInstanceView;
+	readonly licenseType?: string;
+	readonly networkProfile?: NetworkProfile;
+	readonly osProfile?: OSProfile;
+	readonly provisioningState?: string;
+	readonly storageProfile?: StorageProfile;
+	readonly vmId?: string;
 }
 export interface VirtualMachineScaleSetDataDisk {
-	readonly caching?: ("None" | "ReadOnly") | undefined;
+	readonly caching?: "None" | "ReadOnly";
 	readonly createOption: "Attach" | "Empty";
-	readonly diskSizeGB?: number | undefined;
+	readonly diskSizeGB?: number;
 	readonly lun: number;
-	readonly managedDisk?: VirtualMachineScaleSetManagedDiskParameters | undefined;
-	readonly name?: string | undefined;
+	readonly managedDisk?: VirtualMachineScaleSetManagedDiskParameters;
+	readonly name?: string;
 }
 export interface VirtualMachineScaleSetExtension {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: VirtualMachineScaleSetExtensionProperties | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: VirtualMachineScaleSetExtensionProperties;
 }
 export interface VirtualMachineScaleSetExtensionProfile {
-	readonly extensions?: VirtualMachineScaleSetExtension[] | undefined;
+	readonly extensions?: VirtualMachineScaleSetExtension[];
 }
 export interface VirtualMachineScaleSetExtensionProperties {
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly protectedSettings?: any | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly settings?: any | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly forceUpdateTag?: string;
+	readonly protectedSettings?: any;
+	readonly provisioningState?: string;
+	readonly publisher?: string;
+	readonly settings?: any;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface VirtualMachineScaleSetIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface VirtualMachineScaleSetIPConfiguration {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
-	readonly properties?: VirtualMachineScaleSetIPConfigurationProperties | undefined;
+	readonly properties?: VirtualMachineScaleSetIPConfigurationProperties;
 }
 export interface VirtualMachineScaleSetIPConfigurationProperties {
-	readonly applicationGatewayBackendAddressPools?: SubResource[] | undefined;
-	readonly loadBalancerBackendAddressPools?: SubResource[] | undefined;
-	readonly loadBalancerInboundNatPools?: SubResource[] | undefined;
-	readonly primary?: boolean | undefined;
-	readonly privateIPAddressVersion?: ("IPv4" | "IPv6") | undefined;
-	readonly publicIPAddressConfiguration?: VirtualMachineScaleSetPublicIPAddressConfiguration | undefined;
-	readonly subnet?: ApiEntityReference | undefined;
+	readonly applicationGatewayBackendAddressPools?: SubResource[];
+	readonly loadBalancerBackendAddressPools?: SubResource[];
+	readonly loadBalancerInboundNatPools?: SubResource[];
+	readonly primary?: boolean;
+	readonly privateIPAddressVersion?: "IPv4" | "IPv6";
+	readonly publicIPAddressConfiguration?: VirtualMachineScaleSetPublicIPAddressConfiguration;
+	readonly subnet?: ApiEntityReference;
 }
 export interface VirtualMachineScaleSetManagedDiskParameters {
-	readonly storageAccountType?: ("Premium_LRS" | "Standard_LRS") | undefined;
+	readonly storageAccountType?: "Premium_LRS" | "Standard_LRS";
 }
 export interface VirtualMachineScaleSetNetworkConfiguration {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
-	readonly properties?: VirtualMachineScaleSetNetworkConfigurationProperties | undefined;
+	readonly properties?: VirtualMachineScaleSetNetworkConfigurationProperties;
 }
 export interface VirtualMachineScaleSetNetworkConfigurationDnsSettings {
-	readonly dnsServers?: string[] | undefined;
+	readonly dnsServers?: string[];
 }
 export interface VirtualMachineScaleSetNetworkConfigurationProperties {
-	readonly dnsSettings?: VirtualMachineScaleSetNetworkConfigurationDnsSettings | undefined;
-	readonly enableAcceleratedNetworking?: boolean | undefined;
+	readonly dnsSettings?: VirtualMachineScaleSetNetworkConfigurationDnsSettings;
+	readonly enableAcceleratedNetworking?: boolean;
 	readonly ipConfigurations: VirtualMachineScaleSetIPConfiguration[];
-	readonly networkSecurityGroup?: SubResource | undefined;
-	readonly primary?: boolean | undefined;
+	readonly networkSecurityGroup?: SubResource;
+	readonly primary?: boolean;
 }
 export interface VirtualMachineScaleSetNetworkProfile {
-	readonly healthProbe?: ApiEntityReference | undefined;
-	readonly networkInterfaceConfigurations?: VirtualMachineScaleSetNetworkConfiguration[] | undefined;
+	readonly healthProbe?: ApiEntityReference;
+	readonly networkInterfaceConfigurations?: VirtualMachineScaleSetNetworkConfiguration[];
 }
 export interface VirtualMachineScaleSetOSDisk {
-	readonly caching?: ("None" | "ReadOnly") | undefined;
+	readonly caching?: "None" | "ReadOnly";
 	readonly createOption: "Attach" | "Empty";
-	readonly image?: VirtualHardDisk | undefined;
-	readonly managedDisk?: VirtualMachineScaleSetManagedDiskParameters | undefined;
-	readonly name?: string | undefined;
-	readonly osType?: "Linux" | undefined;
-	readonly vhdContainers?: string[] | undefined;
+	readonly image?: VirtualHardDisk;
+	readonly managedDisk?: VirtualMachineScaleSetManagedDiskParameters;
+	readonly name?: string;
+	readonly osType?: "Linux";
+	readonly vhdContainers?: string[];
 }
 export interface VirtualMachineScaleSetOSProfile {
-	readonly adminPassword?: string | undefined;
-	readonly adminUsername?: string | undefined;
-	readonly computerNamePrefix?: string | undefined;
-	readonly customData?: string | undefined;
-	readonly linuxConfiguration?: LinuxConfiguration | undefined;
-	readonly secrets?: VaultSecretGroup[] | undefined;
-	readonly windowsConfiguration?: WindowsConfiguration | undefined;
+	readonly adminPassword?: string;
+	readonly adminUsername?: string;
+	readonly computerNamePrefix?: string;
+	readonly customData?: string;
+	readonly linuxConfiguration?: LinuxConfiguration;
+	readonly secrets?: VaultSecretGroup[];
+	readonly windowsConfiguration?: WindowsConfiguration;
 }
 export interface VirtualMachineScaleSetProperties {
-	readonly overprovision?: boolean | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly singlePlacementGroup?: boolean | undefined;
-	readonly uniqueId?: string | undefined;
-	readonly upgradePolicy?: UpgradePolicy | undefined;
-	readonly virtualMachineProfile?: VirtualMachineScaleSetVMProfile | undefined;
+	readonly overprovision?: boolean;
+	readonly provisioningState?: string;
+	readonly singlePlacementGroup?: boolean;
+	readonly uniqueId?: string;
+	readonly upgradePolicy?: UpgradePolicy;
+	readonly virtualMachineProfile?: VirtualMachineScaleSetVMProfile;
 }
 export interface VirtualMachineScaleSetPublicIPAddressConfiguration {
 	readonly name: string;
-	readonly properties?: VirtualMachineScaleSetPublicIPAddressConfigurationProperties | undefined;
+	readonly properties?: VirtualMachineScaleSetPublicIPAddressConfigurationProperties;
 }
 export interface VirtualMachineScaleSetPublicIPAddressConfigurationDnsSettings {
 	readonly domainNameLabel: string;
 }
 export interface VirtualMachineScaleSetPublicIPAddressConfigurationProperties {
-	readonly dnsSettings?: VirtualMachineScaleSetPublicIPAddressConfigurationDnsSettings | undefined;
-	readonly idleTimeoutInMinutes?: number | undefined;
+	readonly dnsSettings?: VirtualMachineScaleSetPublicIPAddressConfigurationDnsSettings;
+	readonly idleTimeoutInMinutes?: number;
 }
 export interface VirtualMachineScaleSetStorageProfile {
-	readonly dataDisks?: VirtualMachineScaleSetDataDisk[] | undefined;
-	readonly imageReference?: ImageReference | undefined;
-	readonly osDisk?: VirtualMachineScaleSetOSDisk | undefined;
+	readonly dataDisks?: VirtualMachineScaleSetDataDisk[];
+	readonly imageReference?: ImageReference;
+	readonly osDisk?: VirtualMachineScaleSetOSDisk;
 }
 export interface VirtualMachineScaleSetVMInstanceView {
-	readonly bootDiagnostics?: BootDiagnosticsInstanceView | undefined;
-	readonly disks?: DiskInstanceView[] | undefined;
-	readonly extensions?: VirtualMachineExtensionInstanceView[] | undefined;
-	readonly placementGroupId?: string | undefined;
-	readonly platformFaultDomain?: number | undefined;
-	readonly platformUpdateDomain?: number | undefined;
-	readonly rdpThumbPrint?: string | undefined;
-	readonly statuses?: InstanceViewStatus[] | undefined;
-	readonly vmAgent?: VirtualMachineAgentInstanceView | undefined;
-	readonly vmHealth?: VirtualMachineHealthStatus | undefined;
+	readonly bootDiagnostics?: BootDiagnosticsInstanceView;
+	readonly disks?: DiskInstanceView[];
+	readonly extensions?: VirtualMachineExtensionInstanceView[];
+	readonly placementGroupId?: string;
+	readonly platformFaultDomain?: number;
+	readonly platformUpdateDomain?: number;
+	readonly rdpThumbPrint?: string;
+	readonly statuses?: InstanceViewStatus[];
+	readonly vmAgent?: VirtualMachineAgentInstanceView;
+	readonly vmHealth?: VirtualMachineHealthStatus;
 }
 export interface VirtualMachineScaleSetVMProfile {
-	readonly diagnosticsProfile?: DiagnosticsProfile | undefined;
-	readonly extensionProfile?: VirtualMachineScaleSetExtensionProfile | undefined;
-	readonly licenseType?: string | undefined;
-	readonly networkProfile?: VirtualMachineScaleSetNetworkProfile | undefined;
-	readonly osProfile?: VirtualMachineScaleSetOSProfile | undefined;
-	readonly storageProfile?: VirtualMachineScaleSetStorageProfile | undefined;
+	readonly diagnosticsProfile?: DiagnosticsProfile;
+	readonly extensionProfile?: VirtualMachineScaleSetExtensionProfile;
+	readonly licenseType?: string;
+	readonly networkProfile?: VirtualMachineScaleSetNetworkProfile;
+	readonly osProfile?: VirtualMachineScaleSetOSProfile;
+	readonly storageProfile?: VirtualMachineScaleSetStorageProfile;
 }
 export interface VirtualMachineScaleSetVMProperties {
-	readonly availabilitySet?: SubResource | undefined;
-	readonly diagnosticsProfile?: DiagnosticsProfile | undefined;
-	readonly hardwareProfile?: HardwareProfile | undefined;
-	readonly instanceView?: VirtualMachineScaleSetVMInstanceView | undefined;
-	readonly latestModelApplied?: boolean | undefined;
-	readonly licenseType?: string | undefined;
-	readonly networkProfile?: NetworkProfile | undefined;
-	readonly osProfile?: OSProfile | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly storageProfile?: StorageProfile | undefined;
-	readonly vmId?: string | undefined;
+	readonly availabilitySet?: SubResource;
+	readonly diagnosticsProfile?: DiagnosticsProfile;
+	readonly hardwareProfile?: HardwareProfile;
+	readonly instanceView?: VirtualMachineScaleSetVMInstanceView;
+	readonly latestModelApplied?: boolean;
+	readonly licenseType?: string;
+	readonly networkProfile?: NetworkProfile;
+	readonly osProfile?: OSProfile;
+	readonly provisioningState?: string;
+	readonly storageProfile?: StorageProfile;
+	readonly vmId?: string;
 }
 export interface WindowsConfiguration {
-	readonly additionalUnattendContent?: AdditionalUnattendContent[] | undefined;
-	readonly enableAutomaticUpdates?: boolean | undefined;
-	readonly provisionVMAgent?: boolean | undefined;
-	readonly timeZone?: string | undefined;
-	readonly winRM?: WinRMConfiguration | undefined;
+	readonly additionalUnattendContent?: AdditionalUnattendContent[];
+	readonly enableAutomaticUpdates?: boolean;
+	readonly provisionVMAgent?: boolean;
+	readonly timeZone?: string;
+	readonly winRM?: WinRMConfiguration;
 }
 export interface WinRMConfiguration {
-	readonly listeners?: WinRMListener[] | undefined;
+	readonly listeners?: WinRMListener[];
 }
 export interface WinRMListener {
-	readonly certificateUrl?: string | undefined;
-	readonly protocol?: "Http" | undefined;
+	readonly certificateUrl?: string;
+	readonly protocol?: "Http";
 }
 export default {
 	availabilitySets: availabilitySets,

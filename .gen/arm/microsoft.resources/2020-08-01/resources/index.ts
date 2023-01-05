@@ -14,10 +14,10 @@ export interface deploymentsComponentOutputs {
 	readonly type: "Microsoft.Resources/deployments";
 }
 export interface deploymentsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: DeploymentPropertiesOrDeploymentPropertiesExtended;
-	readonly tags?: DeploymentTags | undefined;
+	readonly tags?: DeploymentTags;
 }
 export class resourceGroups extends ArmResource<resourceGroupsComponentInputs> implements resourceGroupsComponentOutputs {
 	constructor(entity: ADKEntity, options: resourceGroupsComponentInputs) {
@@ -34,10 +34,10 @@ export interface resourceGroupsComponentOutputs {
 }
 export interface resourceGroupsComponentInputs {
 	readonly location: string;
-	readonly managedBy?: string | undefined;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly properties?: ResourceGroupProperties | undefined;
-	readonly tags?: ResourceGroupTags | undefined;
+	readonly properties?: ResourceGroupProperties;
+	readonly tags?: ResourceGroupTags;
 }
 export class tags extends ArmResource<tagsComponentInputs> implements tagsComponentOutputs {
 	constructor(entity: ADKEntity, options: tagsComponentInputs) {
@@ -57,154 +57,149 @@ export interface tagsComponentInputs {
 	readonly properties: Tags;
 }
 export interface Alias {
-	readonly defaultMetadata?: AliasPathMetadata | undefined;
-	readonly defaultPath?: string | undefined;
-	readonly defaultPattern?: AliasPattern | undefined;
-	readonly name?: string | undefined;
-	readonly paths?: AliasPath[] | undefined;
-	readonly type?: ("Mask" | "NotSpecified") | undefined;
+	readonly defaultMetadata?: AliasPathMetadata;
+	readonly defaultPath?: string;
+	readonly defaultPattern?: AliasPattern;
+	readonly name?: string;
+	readonly paths?: AliasPath[];
+	readonly type?: "Mask" | "NotSpecified";
 }
 export interface AliasPath {
-	readonly apiVersions?: string[] | undefined;
-	readonly metadata?: AliasPathMetadata | undefined;
-	readonly path?: string | undefined;
-	readonly pattern?: AliasPattern | undefined;
+	readonly apiVersions?: string[];
+	readonly metadata?: AliasPathMetadata;
+	readonly path?: string;
+	readonly pattern?: AliasPattern;
 }
 export interface AliasPathMetadata {
-	readonly attributes?: ("Modifiable" | "None") | undefined;
-	readonly type?:
-		| ("any" | "Array" | "Boolean" | "Integer" | "NotSpecified" | "Number" | "Object" | "String")
-		| undefined;
+	readonly attributes?: "Modifiable" | "None";
+	readonly type?: "any" | "Array" | "Boolean" | "Integer" | "NotSpecified" | "Number" | "Object" | "String";
 }
 export interface AliasPattern {
-	readonly phrase?: string | undefined;
-	readonly type?: "Extract" | undefined;
-	readonly variable?: string | undefined;
+	readonly phrase?: string;
+	readonly type?: "Extract";
+	readonly variable?: string;
 }
 export interface ApiProfile {
-	readonly apiVersion?: string | undefined;
-	readonly profileVersion?: string | undefined;
+	readonly apiVersion?: string;
+	readonly profileVersion?: string;
 }
 export interface BasicDependency {
-	readonly id?: string | undefined;
-	readonly resourceName?: string | undefined;
-	readonly resourceType?: string | undefined;
+	readonly id?: string;
+	readonly resourceName?: string;
+	readonly resourceType?: string;
 }
 export interface DebugSetting {
-	readonly detailLevel?: string | undefined;
+	readonly detailLevel?: string;
 }
 export interface Dependency {
-	readonly dependsOn?: BasicDependency[] | undefined;
-	readonly id?: string | undefined;
-	readonly resourceName?: string | undefined;
-	readonly resourceType?: string | undefined;
+	readonly dependsOn?: BasicDependency[];
+	readonly id?: string;
+	readonly resourceName?: string;
+	readonly resourceType?: string;
 }
 export interface DeploymentPropertiesOrDeploymentPropertiesExtended {
-	readonly correlationId?: string | undefined;
-	readonly debugSetting?: DebugSetting | undefined;
-	readonly dependencies?: Dependency[] | undefined;
-	readonly duration?: string | undefined;
-	readonly error?: ErrorResponse | undefined;
+	readonly correlationId?: string;
+	readonly debugSetting?: DebugSetting;
+	readonly dependencies?: Dependency[];
+	readonly duration?: string;
+	readonly error?: ErrorResponse;
 	readonly mode: "Complete";
-	readonly onErrorDeployment?: OnErrorDeploymentOrOnErrorDeploymentExtended | undefined;
-	readonly outputResources?: ResourceReference[] | undefined;
-	readonly outputs?: any | undefined;
-	readonly parameters?: any | undefined;
-	readonly parametersLink?: ParametersLink | undefined;
-	readonly providers?: Provider[] | undefined;
+	readonly onErrorDeployment?: OnErrorDeploymentOrOnErrorDeploymentExtended;
+	readonly outputResources?: ResourceReference[];
+	readonly outputs?: any;
+	readonly parameters?: any;
+	readonly parametersLink?: ParametersLink;
+	readonly providers?: Provider[];
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly template?: any | undefined;
-	readonly templateHash?: string | undefined;
-	readonly templateLink?: TemplateLink | undefined;
-	readonly timestamp?: string | undefined;
-	readonly validatedResources?: ResourceReference[] | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Ready"
+		| "Running"
+		| "Succeeded"
+		| "Updating";
+	readonly template?: any;
+	readonly templateHash?: string;
+	readonly templateLink?: TemplateLink;
+	readonly timestamp?: string;
+	readonly validatedResources?: ResourceReference[];
 }
 export interface DeploymentTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ErrorAdditionalInfo {
-	readonly info?: any | undefined;
-	readonly type?: string | undefined;
+	readonly info?: any;
+	readonly type?: string;
 }
 export interface ErrorResponse {
-	readonly additionalInfo?: ErrorAdditionalInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ErrorResponse[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: ErrorAdditionalInfo[];
+	readonly code?: string;
+	readonly details?: ErrorResponse[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface OnErrorDeploymentOrOnErrorDeploymentExtended {
-	readonly deploymentName?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly type?: "LastSuccessful" | undefined;
+	readonly deploymentName?: string;
+	readonly provisioningState?: string;
+	readonly type?: "LastSuccessful";
 }
 export interface ParametersLink {
-	readonly contentVersion?: string | undefined;
+	readonly contentVersion?: string;
 	readonly uri: string;
 }
 export interface Provider {
-	readonly id?: string | undefined;
-	readonly namespace?: string | undefined;
-	readonly registrationPolicy?: string | undefined;
-	readonly registrationState?: string | undefined;
-	readonly resourceTypes?: ProviderResourceType[] | undefined;
+	readonly id?: string;
+	readonly namespace?: string;
+	readonly registrationPolicy?: string;
+	readonly registrationState?: string;
+	readonly resourceTypes?: ProviderResourceType[];
 }
 export interface ProviderExtendedLocation {
-	readonly extendedLocations?: string[] | undefined;
-	readonly location?: string | undefined;
-	readonly type?: string | undefined;
+	readonly extendedLocations?: string[];
+	readonly location?: string;
+	readonly type?: string;
 }
 export interface ProviderResourceType {
-	readonly aliases?: Alias[] | undefined;
-	readonly apiProfiles?: ApiProfile[] | undefined;
-	readonly apiVersions?: string[] | undefined;
-	readonly capabilities?: string | undefined;
-	readonly defaultApiVersion?: string | undefined;
-	readonly locationMappings?: ProviderExtendedLocation[] | undefined;
-	readonly locations?: string[] | undefined;
-	readonly properties?: ProviderResourceTypeProperties | undefined;
-	readonly resourceType?: string | undefined;
-	readonly zoneMappings?: ZoneMapping[] | undefined;
+	readonly aliases?: Alias[];
+	readonly apiProfiles?: ApiProfile[];
+	readonly apiVersions?: string[];
+	readonly capabilities?: string;
+	readonly defaultApiVersion?: string;
+	readonly locationMappings?: ProviderExtendedLocation[];
+	readonly locations?: string[];
+	readonly properties?: ProviderResourceTypeProperties;
+	readonly resourceType?: string;
+	readonly zoneMappings?: ZoneMapping[];
 }
 export interface ProviderResourceTypeProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResourceGroupProperties {
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface ResourceGroupTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResourceReference {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface Tags {
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export interface TemplateLink {
-	readonly contentVersion?: string | undefined;
-	readonly id?: string | undefined;
-	readonly relativePath?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly contentVersion?: string;
+	readonly id?: string;
+	readonly relativePath?: string;
+	readonly uri?: string;
 }
 export interface ZoneMapping {
-	readonly location?: string | undefined;
-	readonly zones?: string[] | undefined;
+	readonly location?: string;
+	readonly zones?: string[];
 }
 export default {
 	deployments: deployments,

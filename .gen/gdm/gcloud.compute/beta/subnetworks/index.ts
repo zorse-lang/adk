@@ -4,87 +4,86 @@ export class Subnetworks extends GdmResource<SubnetworksComponentInputs> impleme
 	constructor(entity: ADKEntity, options: SubnetworksComponentInputs) {
 		super(entity, options.name, "compute.beta.Subnetworks", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly gatewayAddress?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly internalIpv6Prefix?: string | undefined;
-	public readonly ipv6CidrRange?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly state?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly gatewayAddress?: string;
+	public readonly id?: string;
+	public readonly internalIpv6Prefix?: string;
+	public readonly ipv6CidrRange?: string;
+	public readonly kind?: string;
+	public readonly selfLink?: string;
+	public readonly state?: string;
 }
 export interface SubnetworksComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly gatewayAddress?: string | undefined;
-	readonly id?: string | undefined;
-	readonly internalIpv6Prefix?: string | undefined;
-	readonly ipv6CidrRange?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly state?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly gatewayAddress?: string;
+	readonly id?: string;
+	readonly internalIpv6Prefix?: string;
+	readonly ipv6CidrRange?: string;
+	readonly kind?: string;
+	readonly selfLink?: string;
+	readonly state?: string;
 }
 export interface SubnetworksComponentInputs {
-	readonly allowSubnetCidrRoutesOverlap?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly enableFlowLogs?: boolean | undefined;
-	readonly externalIpv6Prefix?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly ipCidrRange?: string | undefined;
-	readonly ipv6AccessType?: string | undefined;
-	readonly logConfig?: SubnetworkLogConfig | undefined;
+	readonly allowSubnetCidrRoutesOverlap?: boolean;
+	readonly description?: string;
+	readonly enableFlowLogs?: boolean;
+	readonly externalIpv6Prefix?: string;
+	readonly fingerprint?: string;
+	readonly ipCidrRange?: string;
+	readonly ipv6AccessType?: string;
+	readonly logConfig?: SubnetworkLogConfig;
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly privateIpGoogleAccess?: boolean | undefined;
-	readonly privateIpv6GoogleAccess?: string | undefined;
-	readonly purpose?: string | undefined;
-	readonly region?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly reservedInternalRange?: string | undefined;
-	readonly role?: string | undefined;
-	readonly secondaryIpRanges?: SubnetworkSecondaryRange[] | undefined;
-	readonly stackType?: string | undefined;
-	readonly type: string;
+	readonly network?: string;
+	readonly privateIpGoogleAccess?: boolean;
+	readonly privateIpv6GoogleAccess?: string;
+	readonly purpose?: string;
+	readonly region?: string;
+	readonly requestId?: string;
+	readonly reservedInternalRange?: string;
+	readonly role?: string;
+	readonly secondaryIpRanges?: SubnetworkSecondaryRange[];
+	readonly stackType?: string;
 }
 export interface Subnetwork {
-	readonly allowSubnetCidrRoutesOverlap?: boolean | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly enableFlowLogs?: boolean | undefined;
-	readonly externalIpv6Prefix?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly gatewayAddress?: string | undefined;
-	readonly id?: string | undefined;
-	readonly internalIpv6Prefix?: string | undefined;
-	readonly ipCidrRange?: string | undefined;
-	readonly ipv6AccessType?: string | undefined;
-	readonly ipv6CidrRange?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly logConfig?: SubnetworkLogConfig | undefined;
-	readonly name?: string | undefined;
-	readonly network?: string | undefined;
-	readonly privateIpGoogleAccess?: boolean | undefined;
-	readonly privateIpv6GoogleAccess?: string | undefined;
-	readonly purpose?: string | undefined;
-	readonly region?: string | undefined;
-	readonly reservedInternalRange?: string | undefined;
-	readonly role?: string | undefined;
-	readonly secondaryIpRanges?: SubnetworkSecondaryRange[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly stackType?: string | undefined;
-	readonly state?: string | undefined;
+	readonly allowSubnetCidrRoutesOverlap?: boolean;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly enableFlowLogs?: boolean;
+	readonly externalIpv6Prefix?: string;
+	readonly fingerprint?: string;
+	readonly gatewayAddress?: string;
+	readonly id?: string;
+	readonly internalIpv6Prefix?: string;
+	readonly ipCidrRange?: string;
+	readonly ipv6AccessType?: string;
+	readonly ipv6CidrRange?: string;
+	readonly kind?: string;
+	readonly logConfig?: SubnetworkLogConfig;
+	readonly name?: string;
+	readonly network?: string;
+	readonly privateIpGoogleAccess?: boolean;
+	readonly privateIpv6GoogleAccess?: string;
+	readonly purpose?: string;
+	readonly region?: string;
+	readonly reservedInternalRange?: string;
+	readonly role?: string;
+	readonly secondaryIpRanges?: SubnetworkSecondaryRange[];
+	readonly selfLink?: string;
+	readonly stackType?: string;
+	readonly state?: string;
 }
 export interface SubnetworkLogConfig {
-	readonly aggregationInterval?: string | undefined;
-	readonly enable?: boolean | undefined;
-	readonly filterExpr?: string | undefined;
-	readonly flowSampling?: number | undefined;
-	readonly metadata?: string | undefined;
-	readonly metadataFields?: string[] | undefined;
+	readonly aggregationInterval?: string;
+	readonly enable?: boolean;
+	readonly filterExpr?: string;
+	readonly flowSampling?: number;
+	readonly metadata?: string;
+	readonly metadataFields?: string[];
 }
 export interface SubnetworkSecondaryRange {
-	readonly ipCidrRange?: string | undefined;
-	readonly rangeName?: string | undefined;
-	readonly reservedInternalRange?: string | undefined;
+	readonly ipCidrRange?: string;
+	readonly rangeName?: string;
+	readonly reservedInternalRange?: string;
 }
 export default {
 	Subnetworks: Subnetworks,

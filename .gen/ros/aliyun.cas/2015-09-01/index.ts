@@ -13,8 +13,8 @@ export interface CertificateComponentInputs {
 	readonly Cert: string;
 	readonly Key: string;
 	readonly Name: string;
-	readonly Lang?: (string | undefined) | undefined;
-	readonly SourceIp?: (string | undefined) | undefined;
+	readonly Lang?: string | undefined;
+	readonly SourceIp?: string | undefined;
 	readonly LogicalId: string;
 }
 export default {

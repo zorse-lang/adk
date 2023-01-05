@@ -14,13 +14,13 @@ export interface servicesComponentOutputs {
 	readonly type: "Microsoft.DataMigration/services";
 }
 export interface servicesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DataMigrationServiceProperties | undefined;
-	readonly sku?: ServiceSku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DataMigrationServiceProperties;
+	readonly sku?: ServiceSku;
+	readonly tags?: TrackedResourceTags;
 }
 export class services_projects
 	extends ArmResource<services_projectsComponentInputs>
@@ -41,8 +41,8 @@ export interface services_projectsComponentOutputs {
 export interface services_projectsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ProjectProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ProjectProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class services_projects_tasks
 	extends ArmResource<services_projects_tasksComponentInputs>
@@ -61,57 +61,54 @@ export interface services_projects_tasksComponentOutputs {
 	readonly type: "Microsoft.DataMigration/services/projects/tasks";
 }
 export interface services_projects_tasksComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ProjectTaskProperties | undefined;
+	readonly properties?: ProjectTaskProperties;
 }
 export interface ConnectionInfo {
-	readonly password?: string | undefined;
-	readonly userName?: string | undefined;
+	readonly password?: string;
+	readonly userName?: string;
 }
 export interface ConnectToSourceSqlServerTaskInput {
-	readonly checkPermissionsGroup?: "Default" | undefined;
+	readonly checkPermissionsGroup?: "Default";
 	readonly sourceConnectionInfo: SqlConnectionInfo;
 }
 export interface ConnectToSourceSqlServerTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ConnectToTargetSqlDbTaskInput {
 	readonly targetConnectionInfo: SqlConnectionInfo;
 }
 export interface ConnectToTargetSqlDbTaskOutput {
-	readonly databases?: string | undefined;
-	readonly id?: string | undefined;
-	readonly targetServerBrandVersion?: string | undefined;
-	readonly targetServerVersion?: string | undefined;
+	readonly databases?: string;
+	readonly id?: string;
+	readonly targetServerBrandVersion?: string;
+	readonly targetServerVersion?: string;
 }
 export interface DatabaseFileInfo {
-	readonly databaseName?: string | undefined;
-	readonly fileType?: ("Filestream" | "Fulltext" | "Log" | "NotSupported") | undefined;
-	readonly id?: string | undefined;
-	readonly logicalName?: string | undefined;
-	readonly physicalFullName?: string | undefined;
-	readonly restoreFullName?: string | undefined;
-	readonly sizeMB?: number | undefined;
+	readonly databaseName?: string;
+	readonly fileType?: "Filestream" | "Fulltext" | "Log" | "NotSupported";
+	readonly id?: string;
+	readonly logicalName?: string;
+	readonly physicalFullName?: string;
+	readonly restoreFullName?: string;
+	readonly sizeMB?: number;
 }
 export interface DatabaseInfo {
 	readonly sourceDatabaseName: string;
 }
 export interface DataMigrationServiceProperties {
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Deleting"
-				| "Deploying"
-				| "Failed"
-				| "FailedToStart"
-				| "FailedToStop"
-				| "Starting"
-				| "Stopped"
-				| "Stopping"
-		  )
-		| undefined;
-	readonly publicKey?: string | undefined;
+		| "Accepted"
+		| "Deleting"
+		| "Deploying"
+		| "Failed"
+		| "FailedToStart"
+		| "FailedToStop"
+		| "Starting"
+		| "Stopped"
+		| "Stopping";
+	readonly publicKey?: string;
 	readonly virtualSubnetId: string;
 }
 export interface GetUserTablesSqlTaskInput {
@@ -119,85 +116,81 @@ export interface GetUserTablesSqlTaskInput {
 	readonly selectedDatabases: string[];
 }
 export interface GetUserTablesSqlTaskOutput {
-	readonly databasesToTables?: string | undefined;
-	readonly id?: string | undefined;
-	readonly validationErrors?: ReportableException[] | undefined;
+	readonly databasesToTables?: string;
+	readonly id?: string;
+	readonly validationErrors?: ReportableException[];
 }
 export interface MigrateSqlServerSqlDbDatabaseInput {
-	readonly makeSourceDbReadOnly?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly tableMap?: MigrateSqlServerSqlDbDatabaseInputTableMap | undefined;
-	readonly targetDatabaseName?: string | undefined;
+	readonly makeSourceDbReadOnly?: boolean;
+	readonly name?: string;
+	readonly tableMap?: MigrateSqlServerSqlDbDatabaseInputTableMap;
+	readonly targetDatabaseName?: string;
 }
 export interface MigrateSqlServerSqlDbDatabaseInputTableMap {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MigrateSqlServerSqlDbTaskInput {
 	readonly selectedDatabases: MigrateSqlServerSqlDbDatabaseInput[];
 	readonly sourceConnectionInfo: SqlConnectionInfo;
 	readonly targetConnectionInfo: SqlConnectionInfo;
-	readonly validationOptions?: MigrationValidationOptions | undefined;
+	readonly validationOptions?: MigrationValidationOptions;
 }
 export interface MigrateSqlServerSqlDbTaskOutput {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MigrationReportResult {
-	readonly id?: string | undefined;
-	readonly reportUrl?: string | undefined;
+	readonly id?: string;
+	readonly reportUrl?: string;
 }
 export interface MigrationValidationOptions {
-	readonly enableDataIntegrityValidation?: boolean | undefined;
-	readonly enableQueryAnalysisValidation?: boolean | undefined;
-	readonly enableSchemaValidation?: boolean | undefined;
+	readonly enableDataIntegrityValidation?: boolean;
+	readonly enableQueryAnalysisValidation?: boolean;
+	readonly enableSchemaValidation?: boolean;
 }
 export interface ODataError {
-	readonly code?: string | undefined;
-	readonly details?: ODataError[] | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly details?: ODataError[];
+	readonly message?: string;
 }
 export interface ProjectProperties {
-	readonly creationTime?: string | undefined;
-	readonly databasesInfo?: DatabaseInfo[] | undefined;
-	readonly provisioningState?: "Deleting" | undefined;
-	readonly sourceConnectionInfo?: ConnectionInfo | undefined;
+	readonly creationTime?: string;
+	readonly databasesInfo?: DatabaseInfo[];
+	readonly provisioningState?: "Deleting";
+	readonly sourceConnectionInfo?: ConnectionInfo;
 	readonly sourcePlatform: "SQL";
-	readonly targetConnectionInfo?: ConnectionInfo | undefined;
+	readonly targetConnectionInfo?: ConnectionInfo;
 	readonly targetPlatform: "SQLDB";
 }
 export interface ProjectTaskProperties {
-	readonly errors?: ODataError[] | undefined;
-	readonly state?:
-		| ("Canceled" | "Failed" | "FailedInputValidation" | "Faulted" | "Queued" | "Running" | "Succeeded")
-		| undefined;
+	readonly errors?: ODataError[];
+	readonly state?: "Canceled" | "Failed" | "FailedInputValidation" | "Faulted" | "Queued" | "Running" | "Succeeded";
 }
 export interface ReportableException {
-	readonly filePath?: string | undefined;
-	readonly hResult?: number | undefined;
-	readonly lineNumber?: string | undefined;
-	readonly message?: string | undefined;
-	readonly stackTrace?: string | undefined;
+	readonly filePath?: string;
+	readonly hResult?: number;
+	readonly lineNumber?: string;
+	readonly message?: string;
+	readonly stackTrace?: string;
 }
 export interface ServiceSku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
-	readonly name?: string | undefined;
-	readonly size?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
+	readonly name?: string;
+	readonly size?: string;
+	readonly tier?: string;
 }
 export interface SqlConnectionInfo {
-	readonly additionalSettings?: string | undefined;
-	readonly authentication?:
-		| ("ActiveDirectoryIntegrated" | "ActiveDirectoryPassword" | "None" | "SqlAuthentication")
-		| undefined;
+	readonly additionalSettings?: string;
+	readonly authentication?: "ActiveDirectoryIntegrated" | "ActiveDirectoryPassword" | "None" | "SqlAuthentication";
 	readonly dataSource: string;
-	readonly encryptConnection?: boolean | undefined;
-	readonly password?: string | undefined;
-	readonly trustServerCertificate?: boolean | undefined;
+	readonly encryptConnection?: boolean;
+	readonly password?: string;
+	readonly trustServerCertificate?: boolean;
 	readonly type: string;
-	readonly userName?: string | undefined;
+	readonly userName?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	services: services,

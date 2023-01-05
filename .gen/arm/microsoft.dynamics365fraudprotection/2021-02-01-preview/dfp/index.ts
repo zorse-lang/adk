@@ -16,42 +16,39 @@ export interface instancesComponentOutputs {
 export interface instancesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DFPInstanceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: DFPInstanceTags | undefined;
+	readonly properties?: DFPInstanceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: DFPInstanceTags;
 }
 export interface DFPInstanceAdministrators {
-	readonly members?: string[] | undefined;
+	readonly members?: string[];
 }
 export interface DFPInstanceProperties {
-	readonly administration?: DFPInstanceAdministrators | undefined;
+	readonly administration?: DFPInstanceAdministrators;
 	readonly provisioningState?:
-		| (
-				| "Deleting"
-				| "Failed"
-				| "Paused"
-				| "Pausing"
-				| "Preparing"
-				| "Provisioning"
-				| "Resuming"
-				| "Scaling"
-				| "Succeeded"
-				| "Suspended"
-				| "Suspending"
-				| "Updating"
-		  )
-		| undefined;
+		| "Deleting"
+		| "Failed"
+		| "Paused"
+		| "Pausing"
+		| "Preparing"
+		| "Provisioning"
+		| "Resuming"
+		| "Scaling"
+		| "Succeeded"
+		| "Suspended"
+		| "Suspending"
+		| "Updating";
 }
 export interface DFPInstanceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	instances: instances,

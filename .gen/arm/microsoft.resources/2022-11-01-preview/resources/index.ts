@@ -15,14 +15,14 @@ export interface snapshotsComponentOutputs {
 }
 export interface snapshotsComponentInputs {
 	readonly name: string;
-	readonly properties?: SnapshotProperties | undefined;
+	readonly properties?: SnapshotProperties;
 }
 export interface SnapshotProperties {
-	readonly apiVersion?: string | undefined;
-	readonly content?: SnapshotPropertiesContent | undefined;
+	readonly apiVersion?: string;
+	readonly content?: SnapshotPropertiesContent;
 }
 export interface SnapshotPropertiesContent {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export default {
 	snapshots: snapshots,

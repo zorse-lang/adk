@@ -18,55 +18,55 @@ export interface DBClusterComponentOutputs {
 	readonly ReadEndpointAddress: string;
 }
 export interface DBClusterComponentInputs {
-	readonly AllocatedStorage?: (number | undefined) | undefined;
-	readonly AssociatedRoles?: (DBClusterRole[] | undefined) | undefined;
-	readonly AutoMinorVersionUpgrade?: (boolean | undefined) | undefined;
-	readonly AvailabilityZones?: (string[] | undefined) | undefined;
-	readonly BacktrackWindow?: (number | undefined) | undefined;
-	readonly BackupRetentionPeriod?: (number | undefined) | undefined;
-	readonly CopyTagsToSnapshot?: (boolean | undefined) | undefined;
-	readonly DatabaseName?: (string | undefined) | undefined;
-	readonly DBClusterIdentifier?: (string | undefined) | undefined;
-	readonly DBClusterInstanceClass?: (string | undefined) | undefined;
-	readonly DBClusterParameterGroupName?: (string | undefined) | undefined;
-	readonly DBInstanceParameterGroupName?: (string | undefined) | undefined;
-	readonly DBSubnetGroupName?: (string | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly Domain?: (string | undefined) | undefined;
-	readonly DomainIAMRoleName?: (string | undefined) | undefined;
-	readonly EnableCloudwatchLogsExports?: (string[] | undefined) | undefined;
-	readonly EnableHttpEndpoint?: (boolean | undefined) | undefined;
-	readonly EnableIAMDatabaseAuthentication?: (boolean | undefined) | undefined;
-	readonly Engine?: (string | undefined) | undefined;
-	readonly EngineMode?: (string | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly GlobalClusterIdentifier?: (string | undefined) | undefined;
-	readonly Iops?: (number | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly MasterUsername?: (string | undefined) | undefined;
-	readonly MasterUserPassword?: (string | undefined) | undefined;
-	readonly MonitoringInterval?: (number | undefined) | undefined;
-	readonly MonitoringRoleArn?: (string | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly PerformanceInsightsEnabled?: (boolean | undefined) | undefined;
-	readonly PerformanceInsightsKmsKeyId?: (string | undefined) | undefined;
-	readonly PerformanceInsightsRetentionPeriod?: (number | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly PreferredBackupWindow?: (string | undefined) | undefined;
-	readonly PreferredMaintenanceWindow?: (string | undefined) | undefined;
-	readonly PubliclyAccessible?: (boolean | undefined) | undefined;
-	readonly ReplicationSourceIdentifier?: (string | undefined) | undefined;
-	readonly RestoreType?: (string | undefined) | undefined;
-	readonly ScalingConfiguration?: (ScalingConfiguration | undefined) | undefined;
-	readonly ServerlessV2ScalingConfiguration?: (ServerlessV2ScalingConfiguration | undefined) | undefined;
-	readonly SnapshotIdentifier?: (string | undefined) | undefined;
-	readonly SourceDBClusterIdentifier?: (string | undefined) | undefined;
-	readonly SourceRegion?: (string | undefined) | undefined;
-	readonly StorageEncrypted?: (boolean | undefined) | undefined;
-	readonly StorageType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly UseLatestRestorableTime?: (boolean | undefined) | undefined;
-	readonly VpcSecurityGroupIds?: (string[] | undefined) | undefined;
+	readonly AllocatedStorage?: number | undefined;
+	readonly AssociatedRoles?: DBClusterRole[] | undefined;
+	readonly AutoMinorVersionUpgrade?: boolean | undefined;
+	readonly AvailabilityZones?: string[] | undefined;
+	readonly BacktrackWindow?: number | undefined;
+	readonly BackupRetentionPeriod?: number | undefined;
+	readonly CopyTagsToSnapshot?: boolean | undefined;
+	readonly DatabaseName?: string | undefined;
+	readonly DBClusterIdentifier?: string | undefined;
+	readonly DBClusterInstanceClass?: string | undefined;
+	readonly DBClusterParameterGroupName?: string | undefined;
+	readonly DBInstanceParameterGroupName?: string | undefined;
+	readonly DBSubnetGroupName?: string | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly Domain?: string | undefined;
+	readonly DomainIAMRoleName?: string | undefined;
+	readonly EnableCloudwatchLogsExports?: string[] | undefined;
+	readonly EnableHttpEndpoint?: boolean | undefined;
+	readonly EnableIAMDatabaseAuthentication?: boolean | undefined;
+	readonly Engine?: string | undefined;
+	readonly EngineMode?: string | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly GlobalClusterIdentifier?: string | undefined;
+	readonly Iops?: number | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly MasterUsername?: string | undefined;
+	readonly MasterUserPassword?: string | undefined;
+	readonly MonitoringInterval?: number | undefined;
+	readonly MonitoringRoleArn?: string | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly PerformanceInsightsEnabled?: boolean | undefined;
+	readonly PerformanceInsightsKmsKeyId?: string | undefined;
+	readonly PerformanceInsightsRetentionPeriod?: number | undefined;
+	readonly Port?: number | undefined;
+	readonly PreferredBackupWindow?: string | undefined;
+	readonly PreferredMaintenanceWindow?: string | undefined;
+	readonly PubliclyAccessible?: boolean | undefined;
+	readonly ReplicationSourceIdentifier?: string | undefined;
+	readonly RestoreType?: string | undefined;
+	readonly ScalingConfiguration?: ScalingConfiguration | undefined;
+	readonly ServerlessV2ScalingConfiguration?: ServerlessV2ScalingConfiguration | undefined;
+	readonly SnapshotIdentifier?: string | undefined;
+	readonly SourceDBClusterIdentifier?: string | undefined;
+	readonly SourceRegion?: string | undefined;
+	readonly StorageEncrypted?: boolean | undefined;
+	readonly StorageType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly UseLatestRestorableTime?: boolean | undefined;
+	readonly VpcSecurityGroupIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBClusterParameterGroup
@@ -82,8 +82,8 @@ export interface DBClusterParameterGroupComponentInputs {
 	readonly Description: string;
 	readonly Family: string;
 	readonly Parameters: any;
-	readonly DBClusterParameterGroupName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DBClusterParameterGroupName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBInstance extends CfnResource<DBInstanceComponentInputs> implements DBInstanceComponentOutputs {
@@ -104,64 +104,64 @@ export interface DBInstanceComponentOutputs {
 	readonly EndpointPort: string;
 }
 export interface DBInstanceComponentInputs {
-	readonly AllocatedStorage?: (string | undefined) | undefined;
-	readonly AllowMajorVersionUpgrade?: (boolean | undefined) | undefined;
-	readonly AssociatedRoles?: (DBInstanceRole[] | undefined) | undefined;
-	readonly AutoMinorVersionUpgrade?: (boolean | undefined) | undefined;
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly BackupRetentionPeriod?: (number | undefined) | undefined;
-	readonly CACertificateIdentifier?: (string | undefined) | undefined;
-	readonly CharacterSetName?: (string | undefined) | undefined;
-	readonly CopyTagsToSnapshot?: (boolean | undefined) | undefined;
-	readonly CustomIAMInstanceProfile?: (string | undefined) | undefined;
-	readonly DBClusterIdentifier?: (string | undefined) | undefined;
-	readonly DBInstanceClass?: (string | undefined) | undefined;
-	readonly DBInstanceIdentifier?: (string | undefined) | undefined;
-	readonly DBName?: (string | undefined) | undefined;
-	readonly DBParameterGroupName?: (string | undefined) | undefined;
-	readonly DBSecurityGroups?: (string[] | undefined) | undefined;
-	readonly DBSnapshotIdentifier?: (string | undefined) | undefined;
-	readonly DBSubnetGroupName?: (string | undefined) | undefined;
-	readonly DeleteAutomatedBackups?: (boolean | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly Domain?: (string | undefined) | undefined;
-	readonly DomainIAMRoleName?: (string | undefined) | undefined;
-	readonly EnableCloudwatchLogsExports?: (string[] | undefined) | undefined;
-	readonly EnableIAMDatabaseAuthentication?: (boolean | undefined) | undefined;
-	readonly EnablePerformanceInsights?: (boolean | undefined) | undefined;
-	readonly Endpoint?: (Endpoint | undefined) | undefined;
-	readonly Engine?: (string | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly Iops?: (number | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly LicenseModel?: (string | undefined) | undefined;
-	readonly MasterUsername?: (string | undefined) | undefined;
-	readonly MasterUserPassword?: (string | undefined) | undefined;
-	readonly MaxAllocatedStorage?: (number | undefined) | undefined;
-	readonly MonitoringInterval?: (number | undefined) | undefined;
-	readonly MonitoringRoleArn?: (string | undefined) | undefined;
-	readonly MultiAZ?: (boolean | undefined) | undefined;
-	readonly NcharCharacterSetName?: (string | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly OptionGroupName?: (string | undefined) | undefined;
-	readonly PerformanceInsightsKMSKeyId?: (string | undefined) | undefined;
-	readonly PerformanceInsightsRetentionPeriod?: (number | undefined) | undefined;
-	readonly Port?: (string | undefined) | undefined;
-	readonly PreferredBackupWindow?: (string | undefined) | undefined;
-	readonly PreferredMaintenanceWindow?: (string | undefined) | undefined;
-	readonly ProcessorFeatures?: (ProcessorFeature[] | undefined) | undefined;
-	readonly PromotionTier?: (number | undefined) | undefined;
-	readonly PubliclyAccessible?: (boolean | undefined) | undefined;
-	readonly ReplicaMode?: (string | undefined) | undefined;
-	readonly SourceDBInstanceIdentifier?: (string | undefined) | undefined;
-	readonly SourceRegion?: (string | undefined) | undefined;
-	readonly StorageEncrypted?: (boolean | undefined) | undefined;
-	readonly StorageThroughput?: (number | undefined) | undefined;
-	readonly StorageType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Timezone?: (string | undefined) | undefined;
-	readonly UseDefaultProcessorFeatures?: (boolean | undefined) | undefined;
-	readonly VPCSecurityGroups?: (string[] | undefined) | undefined;
+	readonly AllocatedStorage?: string | undefined;
+	readonly AllowMajorVersionUpgrade?: boolean | undefined;
+	readonly AssociatedRoles?: DBInstanceRole[] | undefined;
+	readonly AutoMinorVersionUpgrade?: boolean | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly BackupRetentionPeriod?: number | undefined;
+	readonly CACertificateIdentifier?: string | undefined;
+	readonly CharacterSetName?: string | undefined;
+	readonly CopyTagsToSnapshot?: boolean | undefined;
+	readonly CustomIAMInstanceProfile?: string | undefined;
+	readonly DBClusterIdentifier?: string | undefined;
+	readonly DBInstanceClass?: string | undefined;
+	readonly DBInstanceIdentifier?: string | undefined;
+	readonly DBName?: string | undefined;
+	readonly DBParameterGroupName?: string | undefined;
+	readonly DBSecurityGroups?: string[] | undefined;
+	readonly DBSnapshotIdentifier?: string | undefined;
+	readonly DBSubnetGroupName?: string | undefined;
+	readonly DeleteAutomatedBackups?: boolean | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly Domain?: string | undefined;
+	readonly DomainIAMRoleName?: string | undefined;
+	readonly EnableCloudwatchLogsExports?: string[] | undefined;
+	readonly EnableIAMDatabaseAuthentication?: boolean | undefined;
+	readonly EnablePerformanceInsights?: boolean | undefined;
+	readonly Endpoint?: Endpoint | undefined;
+	readonly Engine?: string | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly Iops?: number | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly LicenseModel?: string | undefined;
+	readonly MasterUsername?: string | undefined;
+	readonly MasterUserPassword?: string | undefined;
+	readonly MaxAllocatedStorage?: number | undefined;
+	readonly MonitoringInterval?: number | undefined;
+	readonly MonitoringRoleArn?: string | undefined;
+	readonly MultiAZ?: boolean | undefined;
+	readonly NcharCharacterSetName?: string | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly OptionGroupName?: string | undefined;
+	readonly PerformanceInsightsKMSKeyId?: string | undefined;
+	readonly PerformanceInsightsRetentionPeriod?: number | undefined;
+	readonly Port?: string | undefined;
+	readonly PreferredBackupWindow?: string | undefined;
+	readonly PreferredMaintenanceWindow?: string | undefined;
+	readonly ProcessorFeatures?: ProcessorFeature[] | undefined;
+	readonly PromotionTier?: number | undefined;
+	readonly PubliclyAccessible?: boolean | undefined;
+	readonly ReplicaMode?: string | undefined;
+	readonly SourceDBInstanceIdentifier?: string | undefined;
+	readonly SourceRegion?: string | undefined;
+	readonly StorageEncrypted?: boolean | undefined;
+	readonly StorageThroughput?: number | undefined;
+	readonly StorageType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Timezone?: string | undefined;
+	readonly UseDefaultProcessorFeatures?: boolean | undefined;
+	readonly VPCSecurityGroups?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBParameterGroup
@@ -179,9 +179,9 @@ export interface DBParameterGroupComponentOutputs {
 export interface DBParameterGroupComponentInputs {
 	readonly Description: string;
 	readonly Family: string;
-	readonly DBParameterGroupName?: (string | undefined) | undefined;
-	readonly Parameters?: (any | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DBParameterGroupName?: string | undefined;
+	readonly Parameters?: any | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBProxy extends CfnResource<DBProxyComponentInputs> implements DBProxyComponentOutputs {
@@ -203,11 +203,11 @@ export interface DBProxyComponentInputs {
 	readonly EngineFamily: string;
 	readonly RoleArn: string;
 	readonly VpcSubnetIds: string[];
-	readonly DebugLogging?: (boolean | undefined) | undefined;
-	readonly IdleClientTimeout?: (number | undefined) | undefined;
-	readonly RequireTLS?: (boolean | undefined) | undefined;
-	readonly Tags?: (TagFormat[] | undefined) | undefined;
-	readonly VpcSecurityGroupIds?: (string[] | undefined) | undefined;
+	readonly DebugLogging?: boolean | undefined;
+	readonly IdleClientTimeout?: number | undefined;
+	readonly RequireTLS?: boolean | undefined;
+	readonly Tags?: TagFormat[] | undefined;
+	readonly VpcSecurityGroupIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBProxyEndpoint
@@ -232,9 +232,9 @@ export interface DBProxyEndpointComponentInputs {
 	readonly DBProxyEndpointName: string;
 	readonly DBProxyName: string;
 	readonly VpcSubnetIds: string[];
-	readonly Tags?: (TagFormat[] | undefined) | undefined;
-	readonly TargetRole?: (string | undefined) | undefined;
-	readonly VpcSecurityGroupIds?: (string[] | undefined) | undefined;
+	readonly Tags?: TagFormat[] | undefined;
+	readonly TargetRole?: string | undefined;
+	readonly VpcSecurityGroupIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBProxyTargetGroup
@@ -252,9 +252,9 @@ export interface DBProxyTargetGroupComponentOutputs {
 export interface DBProxyTargetGroupComponentInputs {
 	readonly DBProxyName: string;
 	readonly TargetGroupName: string;
-	readonly ConnectionPoolConfigurationInfo?: (ConnectionPoolConfigurationInfoFormat | undefined) | undefined;
-	readonly DBClusterIdentifiers?: (string[] | undefined) | undefined;
-	readonly DBInstanceIdentifiers?: (string[] | undefined) | undefined;
+	readonly ConnectionPoolConfigurationInfo?: ConnectionPoolConfigurationInfoFormat | undefined;
+	readonly DBClusterIdentifiers?: string[] | undefined;
+	readonly DBInstanceIdentifiers?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBSecurityGroup
@@ -269,8 +269,8 @@ export interface DBSecurityGroupComponentOutputs {}
 export interface DBSecurityGroupComponentInputs {
 	readonly DBSecurityGroupIngress: Ingress[];
 	readonly GroupDescription: string;
-	readonly EC2VpcId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly EC2VpcId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBSecurityGroupIngress
@@ -284,10 +284,10 @@ export class DBSecurityGroupIngress
 export interface DBSecurityGroupIngressComponentOutputs {}
 export interface DBSecurityGroupIngressComponentInputs {
 	readonly DBSecurityGroupName: string;
-	readonly CIDRIP?: (string | undefined) | undefined;
-	readonly EC2SecurityGroupId?: (string | undefined) | undefined;
-	readonly EC2SecurityGroupName?: (string | undefined) | undefined;
-	readonly EC2SecurityGroupOwnerId?: (string | undefined) | undefined;
+	readonly CIDRIP?: string | undefined;
+	readonly EC2SecurityGroupId?: string | undefined;
+	readonly EC2SecurityGroupName?: string | undefined;
+	readonly EC2SecurityGroupOwnerId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DBSubnetGroup extends CfnResource<DBSubnetGroupComponentInputs> implements DBSubnetGroupComponentOutputs {
@@ -299,8 +299,8 @@ export interface DBSubnetGroupComponentOutputs {}
 export interface DBSubnetGroupComponentInputs {
 	readonly DBSubnetGroupDescription: string;
 	readonly SubnetIds: string[];
-	readonly DBSubnetGroupName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DBSubnetGroupName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class EventSubscription
@@ -314,12 +314,12 @@ export class EventSubscription
 export interface EventSubscriptionComponentOutputs {}
 export interface EventSubscriptionComponentInputs {
 	readonly SnsTopicArn: string;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly EventCategories?: (string[] | undefined) | undefined;
-	readonly SourceIds?: (string[] | undefined) | undefined;
-	readonly SourceType?: (string | undefined) | undefined;
-	readonly SubscriptionName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly EventCategories?: string[] | undefined;
+	readonly SourceIds?: string[] | undefined;
+	readonly SourceType?: string | undefined;
+	readonly SubscriptionName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class GlobalCluster extends CfnResource<GlobalClusterComponentInputs> implements GlobalClusterComponentOutputs {
@@ -329,12 +329,12 @@ export class GlobalCluster extends CfnResource<GlobalClusterComponentInputs> imp
 }
 export interface GlobalClusterComponentOutputs {}
 export interface GlobalClusterComponentInputs {
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly Engine?: (string | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly GlobalClusterIdentifier?: (string | undefined) | undefined;
-	readonly SourceDBClusterIdentifier?: (string | undefined) | undefined;
-	readonly StorageEncrypted?: (boolean | undefined) | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly Engine?: string | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly GlobalClusterIdentifier?: string | undefined;
+	readonly SourceDBClusterIdentifier?: string | undefined;
+	readonly StorageEncrypted?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class OptionGroup extends CfnResource<OptionGroupComponentInputs> implements OptionGroupComponentOutputs {
@@ -347,76 +347,76 @@ export interface OptionGroupComponentInputs {
 	readonly EngineName: string;
 	readonly MajorEngineVersion: string;
 	readonly OptionGroupDescription: string;
-	readonly OptionConfigurations?: (OptionConfiguration[] | undefined) | undefined;
-	readonly OptionGroupName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly OptionConfigurations?: OptionConfiguration[] | undefined;
+	readonly OptionGroupName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface DBClusterRole {
-	readonly FeatureName?: (string | undefined) | undefined;
+	readonly FeatureName?: string | undefined;
 	readonly RoleArn: string;
 }
 export interface Endpoint {
-	readonly Address?: (string | undefined) | undefined;
-	readonly Port?: (string | undefined) | undefined;
+	readonly Address?: string | undefined;
+	readonly Port?: string | undefined;
 }
 export interface ReadEndpoint {
-	readonly Address?: (string | undefined) | undefined;
+	readonly Address?: string | undefined;
 }
 export interface ScalingConfiguration {
-	readonly AutoPause?: (boolean | undefined) | undefined;
-	readonly MaxCapacity?: (number | undefined) | undefined;
-	readonly MinCapacity?: (number | undefined) | undefined;
-	readonly SecondsUntilAutoPause?: (number | undefined) | undefined;
-	readonly TimeoutAction?: (string | undefined) | undefined;
+	readonly AutoPause?: boolean | undefined;
+	readonly MaxCapacity?: number | undefined;
+	readonly MinCapacity?: number | undefined;
+	readonly SecondsUntilAutoPause?: number | undefined;
+	readonly TimeoutAction?: string | undefined;
 }
 export interface ServerlessV2ScalingConfiguration {
-	readonly MaxCapacity?: (number | undefined) | undefined;
-	readonly MinCapacity?: (number | undefined) | undefined;
+	readonly MaxCapacity?: number | undefined;
+	readonly MinCapacity?: number | undefined;
 }
 export interface DBInstanceRole {
 	readonly FeatureName: string;
 	readonly RoleArn: string;
 }
 export interface ProcessorFeature {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface AuthFormat {
-	readonly AuthScheme?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly IAMAuth?: (string | undefined) | undefined;
-	readonly SecretArn?: (string | undefined) | undefined;
-	readonly UserName?: (string | undefined) | undefined;
+	readonly AuthScheme?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly IAMAuth?: string | undefined;
+	readonly SecretArn?: string | undefined;
+	readonly UserName?: string | undefined;
 }
 export interface TagFormat {
-	readonly Key?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface ConnectionPoolConfigurationInfoFormat {
-	readonly ConnectionBorrowTimeout?: (number | undefined) | undefined;
-	readonly InitQuery?: (string | undefined) | undefined;
-	readonly MaxConnectionsPercent?: (number | undefined) | undefined;
-	readonly MaxIdleConnectionsPercent?: (number | undefined) | undefined;
-	readonly SessionPinningFilters?: (string[] | undefined) | undefined;
+	readonly ConnectionBorrowTimeout?: number | undefined;
+	readonly InitQuery?: string | undefined;
+	readonly MaxConnectionsPercent?: number | undefined;
+	readonly MaxIdleConnectionsPercent?: number | undefined;
+	readonly SessionPinningFilters?: string[] | undefined;
 }
 export interface Ingress {
-	readonly CIDRIP?: (string | undefined) | undefined;
-	readonly EC2SecurityGroupId?: (string | undefined) | undefined;
-	readonly EC2SecurityGroupName?: (string | undefined) | undefined;
-	readonly EC2SecurityGroupOwnerId?: (string | undefined) | undefined;
+	readonly CIDRIP?: string | undefined;
+	readonly EC2SecurityGroupId?: string | undefined;
+	readonly EC2SecurityGroupName?: string | undefined;
+	readonly EC2SecurityGroupOwnerId?: string | undefined;
 }
 export interface OptionConfiguration {
-	readonly DBSecurityGroupMemberships?: (string[] | undefined) | undefined;
+	readonly DBSecurityGroupMemberships?: string[] | undefined;
 	readonly OptionName: string;
-	readonly OptionSettings?: (OptionSetting[] | undefined) | undefined;
-	readonly OptionVersion?: (string | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly VpcSecurityGroupMemberships?: (string[] | undefined) | undefined;
+	readonly OptionSettings?: OptionSetting[] | undefined;
+	readonly OptionVersion?: string | undefined;
+	readonly Port?: number | undefined;
+	readonly VpcSecurityGroupMemberships?: string[] | undefined;
 }
 export interface OptionSetting {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export default {
 	DBCluster: DBCluster,

@@ -16,9 +16,9 @@ export interface storageMoversComponentOutputs {
 export interface storageMoversComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StorageMoverProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: StorageMoverProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class storageMovers_agents
 	extends ArmResource<storageMovers_agentsComponentInputs>
@@ -39,7 +39,7 @@ export interface storageMovers_agentsComponentOutputs {
 export interface storageMovers_agentsComponentInputs {
 	readonly name: string;
 	readonly properties: AgentProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class storageMovers_endpoints
 	extends ArmResource<storageMovers_endpointsComponentInputs>
@@ -60,7 +60,7 @@ export interface storageMovers_endpointsComponentOutputs {
 export interface storageMovers_endpointsComponentInputs {
 	readonly name: string;
 	readonly properties: EndpointBaseProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class storageMovers_projects
 	extends ArmResource<storageMovers_projectsComponentInputs>
@@ -80,8 +80,8 @@ export interface storageMovers_projectsComponentOutputs {
 }
 export interface storageMovers_projectsComponentInputs {
 	readonly name: string;
-	readonly properties?: ProjectProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ProjectProperties;
+	readonly systemData?: SystemData;
 }
 export class storageMovers_projects_jobDefinitions
 	extends ArmResource<storageMovers_projects_jobDefinitionsComponentInputs>
@@ -108,7 +108,7 @@ export interface storageMovers_projects_jobDefinitionsComponentOutputs {
 export interface storageMovers_projects_jobDefinitionsComponentInputs {
 	readonly name: string;
 	readonly properties: JobDefinitionProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class storageMovers_projects_jobDefinitions_jobRuns
 	extends ArmResource<storageMovers_projects_jobDefinitions_jobRunsComponentInputs>
@@ -134,106 +134,116 @@ export interface storageMovers_projects_jobDefinitions_jobRunsComponentOutputs {
 }
 export interface storageMovers_projects_jobDefinitions_jobRunsComponentInputs {
 	readonly name: string;
-	readonly properties?: JobRunProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: JobRunProperties;
+	readonly systemData?: SystemData;
 }
 export interface AgentProperties {
-	readonly agentStatus?:
-		| ("Executing" | "Offline" | "Online" | "Registering" | "RequiresAttention" | "Unregistering")
-		| undefined;
-	readonly agentVersion?: string | undefined;
+	readonly agentStatus?: "Executing" | "Offline" | "Online" | "Registering" | "RequiresAttention" | "Unregistering";
+	readonly agentVersion?: string;
 	readonly arcResourceId: string;
 	readonly arcVmUuid: string;
-	readonly description?: string | undefined;
-	readonly errorDetails?: AgentPropertiesErrorDetails | undefined;
-	readonly lastStatusUpdate?: string | undefined;
-	readonly localIPAddress?: string | undefined;
-	readonly memoryInMB?: number | undefined;
-	readonly numberOfCores?: number | undefined;
-	readonly provisioningState?: "Succeeded" | undefined;
-	readonly uptimeInSeconds?: number | undefined;
+	readonly description?: string;
+	readonly errorDetails?: AgentPropertiesErrorDetails;
+	readonly lastStatusUpdate?: string;
+	readonly localIPAddress?: string;
+	readonly memoryInMB?: number;
+	readonly numberOfCores?: number;
+	readonly provisioningState?: "Succeeded";
+	readonly uptimeInSeconds?: number;
 }
 export interface AgentPropertiesErrorDetails {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface EndpointBaseProperties {
-	readonly description?: string | undefined;
-	readonly provisioningState?: "Succeeded" | undefined;
+	readonly description?: string;
+	readonly provisioningState?: "Succeeded";
 }
 export interface JobDefinitionProperties {
-	readonly agentName?: string | undefined;
-	readonly agentResourceId?: string | undefined;
+	readonly agentName?: string;
+	readonly agentResourceId?: string;
 	readonly copyMode: "Additive" | "Mirror";
-	readonly description?: string | undefined;
-	readonly latestJobRunName?: string | undefined;
-	readonly latestJobRunResourceId?: string | undefined;
+	readonly description?: string;
+	readonly latestJobRunName?: string;
+	readonly latestJobRunResourceId?: string;
 	readonly latestJobRunStatus?:
-		| ("CancelRequested" | "Canceled" | "Canceling" | "Failed" | "Queued" | "Running" | "Started" | "Succeeded")
-		| undefined;
-	readonly provisioningState?: "Succeeded" | undefined;
+		| "CancelRequested"
+		| "Canceled"
+		| "Canceling"
+		| "Failed"
+		| "Queued"
+		| "Running"
+		| "Started"
+		| "Succeeded";
+	readonly provisioningState?: "Succeeded";
 	readonly sourceName: string;
-	readonly sourceResourceId?: string | undefined;
-	readonly sourceSubpath?: string | undefined;
+	readonly sourceResourceId?: string;
+	readonly sourceSubpath?: string;
 	readonly targetName: string;
-	readonly targetResourceId?: string | undefined;
-	readonly targetSubpath?: string | undefined;
+	readonly targetResourceId?: string;
+	readonly targetSubpath?: string;
 }
 export interface JobRunError {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface JobRunProperties {
-	readonly agentName?: string | undefined;
-	readonly agentResourceId?: string | undefined;
-	readonly bytesExcluded?: number | undefined;
-	readonly bytesFailed?: number | undefined;
-	readonly bytesNoTransferNeeded?: number | undefined;
-	readonly bytesScanned?: number | undefined;
-	readonly bytesTransferred?: number | undefined;
-	readonly bytesUnsupported?: number | undefined;
-	readonly error?: JobRunError | undefined;
-	readonly executionEndTime?: string | undefined;
-	readonly executionStartTime?: string | undefined;
-	readonly itemsExcluded?: number | undefined;
-	readonly itemsFailed?: number | undefined;
-	readonly itemsNoTransferNeeded?: number | undefined;
-	readonly itemsScanned?: number | undefined;
-	readonly itemsTransferred?: number | undefined;
-	readonly itemsUnsupported?: number | undefined;
-	readonly jobDefinitionProperties?: any | undefined;
-	readonly lastStatusUpdate?: string | undefined;
-	readonly provisioningState?: "Succeeded" | undefined;
-	readonly scanStatus?: ("Completed" | "NotStarted" | "Scanning") | undefined;
-	readonly sourceName?: string | undefined;
-	readonly sourceProperties?: any | undefined;
-	readonly sourceResourceId?: string | undefined;
+	readonly agentName?: string;
+	readonly agentResourceId?: string;
+	readonly bytesExcluded?: number;
+	readonly bytesFailed?: number;
+	readonly bytesNoTransferNeeded?: number;
+	readonly bytesScanned?: number;
+	readonly bytesTransferred?: number;
+	readonly bytesUnsupported?: number;
+	readonly error?: JobRunError;
+	readonly executionEndTime?: string;
+	readonly executionStartTime?: string;
+	readonly itemsExcluded?: number;
+	readonly itemsFailed?: number;
+	readonly itemsNoTransferNeeded?: number;
+	readonly itemsScanned?: number;
+	readonly itemsTransferred?: number;
+	readonly itemsUnsupported?: number;
+	readonly jobDefinitionProperties?: any;
+	readonly lastStatusUpdate?: string;
+	readonly provisioningState?: "Succeeded";
+	readonly scanStatus?: "Completed" | "NotStarted" | "Scanning";
+	readonly sourceName?: string;
+	readonly sourceProperties?: any;
+	readonly sourceResourceId?: string;
 	readonly status?:
-		| ("CancelRequested" | "Canceled" | "Canceling" | "Failed" | "Queued" | "Running" | "Started" | "Succeeded")
-		| undefined;
-	readonly targetName?: string | undefined;
-	readonly targetProperties?: any | undefined;
-	readonly targetResourceId?: string | undefined;
+		| "CancelRequested"
+		| "Canceled"
+		| "Canceling"
+		| "Failed"
+		| "Queued"
+		| "Running"
+		| "Started"
+		| "Succeeded";
+	readonly targetName?: string;
+	readonly targetProperties?: any;
+	readonly targetResourceId?: string;
 }
 export interface ProjectProperties {
-	readonly description?: string | undefined;
-	readonly provisioningState?: "Succeeded" | undefined;
+	readonly description?: string;
+	readonly provisioningState?: "Succeeded";
 }
 export interface StorageMoverProperties {
-	readonly description?: string | undefined;
-	readonly provisioningState?: "Succeeded" | undefined;
+	readonly description?: string;
+	readonly provisioningState?: "Succeeded";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	storageMovers: storageMovers,

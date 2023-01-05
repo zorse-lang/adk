@@ -12,23 +12,23 @@ export interface ApiComponentOutputs {
 	readonly ApiId: string;
 }
 export interface ApiComponentInputs {
-	readonly ApiKeySelectionExpression?: (string | undefined) | undefined;
-	readonly BasePath?: (string | undefined) | undefined;
-	readonly Body?: (any | undefined) | undefined;
-	readonly BodyS3Location?: (BodyS3Location | undefined) | undefined;
-	readonly CorsConfiguration?: (Cors | undefined) | undefined;
-	readonly CredentialsArn?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DisableExecuteApiEndpoint?: (boolean | undefined) | undefined;
-	readonly DisableSchemaValidation?: (boolean | undefined) | undefined;
-	readonly FailOnWarnings?: (boolean | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly ProtocolType?: (string | undefined) | undefined;
-	readonly RouteKey?: (string | undefined) | undefined;
-	readonly RouteSelectionExpression?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Target?: (string | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly ApiKeySelectionExpression?: string | undefined;
+	readonly BasePath?: string | undefined;
+	readonly Body?: any | undefined;
+	readonly BodyS3Location?: BodyS3Location | undefined;
+	readonly CorsConfiguration?: Cors | undefined;
+	readonly CredentialsArn?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DisableExecuteApiEndpoint?: boolean | undefined;
+	readonly DisableSchemaValidation?: boolean | undefined;
+	readonly FailOnWarnings?: boolean | undefined;
+	readonly Name?: string | undefined;
+	readonly ProtocolType?: string | undefined;
+	readonly RouteKey?: string | undefined;
+	readonly RouteSelectionExpression?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
+	readonly Target?: string | undefined;
+	readonly Version?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ApiGatewayManagedOverrides
@@ -42,9 +42,9 @@ export class ApiGatewayManagedOverrides
 export interface ApiGatewayManagedOverridesComponentOutputs {}
 export interface ApiGatewayManagedOverridesComponentInputs {
 	readonly ApiId: string;
-	readonly Integration?: (IntegrationOverrides | undefined) | undefined;
-	readonly Route?: (RouteOverrides | undefined) | undefined;
-	readonly Stage?: (StageOverrides | undefined) | undefined;
+	readonly Integration?: IntegrationOverrides | undefined;
+	readonly Route?: RouteOverrides | undefined;
+	readonly Stage?: StageOverrides | undefined;
 	readonly LogicalId: string;
 }
 export class ApiMapping extends CfnResource<ApiMappingComponentInputs> implements ApiMappingComponentOutputs {
@@ -57,7 +57,7 @@ export interface ApiMappingComponentInputs {
 	readonly ApiId: string;
 	readonly DomainName: string;
 	readonly Stage: string;
-	readonly ApiMappingKey?: (string | undefined) | undefined;
+	readonly ApiMappingKey?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Authorizer extends CfnResource<AuthorizerComponentInputs> implements AuthorizerComponentOutputs {
@@ -73,14 +73,14 @@ export interface AuthorizerComponentInputs {
 	readonly ApiId: string;
 	readonly AuthorizerType: string;
 	readonly Name: string;
-	readonly AuthorizerCredentialsArn?: (string | undefined) | undefined;
-	readonly AuthorizerPayloadFormatVersion?: (string | undefined) | undefined;
-	readonly AuthorizerResultTtlInSeconds?: (number | undefined) | undefined;
-	readonly AuthorizerUri?: (string | undefined) | undefined;
-	readonly EnableSimpleResponses?: (boolean | undefined) | undefined;
-	readonly IdentitySource?: (string[] | undefined) | undefined;
-	readonly IdentityValidationExpression?: (string | undefined) | undefined;
-	readonly JwtConfiguration?: (JWTConfiguration | undefined) | undefined;
+	readonly AuthorizerCredentialsArn?: string | undefined;
+	readonly AuthorizerPayloadFormatVersion?: string | undefined;
+	readonly AuthorizerResultTtlInSeconds?: number | undefined;
+	readonly AuthorizerUri?: string | undefined;
+	readonly EnableSimpleResponses?: boolean | undefined;
+	readonly IdentitySource?: string[] | undefined;
+	readonly IdentityValidationExpression?: string | undefined;
+	readonly JwtConfiguration?: JWTConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export class Deployment extends CfnResource<DeploymentComponentInputs> implements DeploymentComponentOutputs {
@@ -94,8 +94,8 @@ export interface DeploymentComponentOutputs {
 }
 export interface DeploymentComponentInputs {
 	readonly ApiId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly StageName?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly StageName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DomainName extends CfnResource<DomainNameComponentInputs> implements DomainNameComponentOutputs {
@@ -111,9 +111,9 @@ export interface DomainNameComponentOutputs {
 }
 export interface DomainNameComponentInputs {
 	readonly DomainName: string;
-	readonly DomainNameConfigurations?: (DomainNameConfiguration[] | undefined) | undefined;
-	readonly MutualTlsAuthentication?: (MutualTlsAuthentication | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly DomainNameConfigurations?: DomainNameConfiguration[] | undefined;
+	readonly MutualTlsAuthentication?: MutualTlsAuthentication | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class Integration extends CfnResource<IntegrationComponentInputs> implements IntegrationComponentOutputs {
@@ -125,22 +125,22 @@ export interface IntegrationComponentOutputs {}
 export interface IntegrationComponentInputs {
 	readonly ApiId: string;
 	readonly IntegrationType: string;
-	readonly ConnectionId?: (string | undefined) | undefined;
-	readonly ConnectionType?: (string | undefined) | undefined;
-	readonly ContentHandlingStrategy?: (string | undefined) | undefined;
-	readonly CredentialsArn?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly IntegrationMethod?: (string | undefined) | undefined;
-	readonly IntegrationSubtype?: (string | undefined) | undefined;
-	readonly IntegrationUri?: (string | undefined) | undefined;
-	readonly PassthroughBehavior?: (string | undefined) | undefined;
-	readonly PayloadFormatVersion?: (string | undefined) | undefined;
-	readonly RequestParameters?: (any | undefined) | undefined;
-	readonly RequestTemplates?: (any | undefined) | undefined;
-	readonly ResponseParameters?: (any | undefined) | undefined;
-	readonly TemplateSelectionExpression?: (string | undefined) | undefined;
-	readonly TimeoutInMillis?: (number | undefined) | undefined;
-	readonly TlsConfig?: (TlsConfig | undefined) | undefined;
+	readonly ConnectionId?: string | undefined;
+	readonly ConnectionType?: string | undefined;
+	readonly ContentHandlingStrategy?: string | undefined;
+	readonly CredentialsArn?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly IntegrationMethod?: string | undefined;
+	readonly IntegrationSubtype?: string | undefined;
+	readonly IntegrationUri?: string | undefined;
+	readonly PassthroughBehavior?: string | undefined;
+	readonly PayloadFormatVersion?: string | undefined;
+	readonly RequestParameters?: any | undefined;
+	readonly RequestTemplates?: any | undefined;
+	readonly ResponseParameters?: any | undefined;
+	readonly TemplateSelectionExpression?: string | undefined;
+	readonly TimeoutInMillis?: number | undefined;
+	readonly TlsConfig?: TlsConfig | undefined;
 	readonly LogicalId: string;
 }
 export class IntegrationResponse
@@ -156,10 +156,10 @@ export interface IntegrationResponseComponentInputs {
 	readonly ApiId: string;
 	readonly IntegrationId: string;
 	readonly IntegrationResponseKey: string;
-	readonly ContentHandlingStrategy?: (string | undefined) | undefined;
-	readonly ResponseParameters?: (any | undefined) | undefined;
-	readonly ResponseTemplates?: (any | undefined) | undefined;
-	readonly TemplateSelectionExpression?: (string | undefined) | undefined;
+	readonly ContentHandlingStrategy?: string | undefined;
+	readonly ResponseParameters?: any | undefined;
+	readonly ResponseTemplates?: any | undefined;
+	readonly TemplateSelectionExpression?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Model extends CfnResource<ModelComponentInputs> implements ModelComponentOutputs {
@@ -175,8 +175,8 @@ export interface ModelComponentInputs {
 	readonly ApiId: string;
 	readonly Name: string;
 	readonly Schema: any;
-	readonly ContentType?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly ContentType?: string | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Route extends CfnResource<RouteComponentInputs> implements RouteComponentOutputs {
@@ -188,16 +188,16 @@ export interface RouteComponentOutputs {}
 export interface RouteComponentInputs {
 	readonly ApiId: string;
 	readonly RouteKey: string;
-	readonly ApiKeyRequired?: (boolean | undefined) | undefined;
-	readonly AuthorizationScopes?: (string[] | undefined) | undefined;
-	readonly AuthorizationType?: (string | undefined) | undefined;
-	readonly AuthorizerId?: (string | undefined) | undefined;
-	readonly ModelSelectionExpression?: (string | undefined) | undefined;
-	readonly OperationName?: (string | undefined) | undefined;
-	readonly RequestModels?: (any | undefined) | undefined;
-	readonly RequestParameters?: (any | undefined) | undefined;
-	readonly RouteResponseSelectionExpression?: (string | undefined) | undefined;
-	readonly Target?: (string | undefined) | undefined;
+	readonly ApiKeyRequired?: boolean | undefined;
+	readonly AuthorizationScopes?: string[] | undefined;
+	readonly AuthorizationType?: string | undefined;
+	readonly AuthorizerId?: string | undefined;
+	readonly ModelSelectionExpression?: string | undefined;
+	readonly OperationName?: string | undefined;
+	readonly RequestModels?: any | undefined;
+	readonly RequestParameters?: any | undefined;
+	readonly RouteResponseSelectionExpression?: string | undefined;
+	readonly Target?: string | undefined;
 	readonly LogicalId: string;
 }
 export class RouteResponse extends CfnResource<RouteResponseComponentInputs> implements RouteResponseComponentOutputs {
@@ -210,9 +210,9 @@ export interface RouteResponseComponentInputs {
 	readonly ApiId: string;
 	readonly RouteId: string;
 	readonly RouteResponseKey: string;
-	readonly ModelSelectionExpression?: (string | undefined) | undefined;
-	readonly ResponseModels?: (any | undefined) | undefined;
-	readonly ResponseParameters?: (any | undefined) | undefined;
+	readonly ModelSelectionExpression?: string | undefined;
+	readonly ResponseModels?: any | undefined;
+	readonly ResponseParameters?: any | undefined;
 	readonly LogicalId: string;
 }
 export class Stage extends CfnResource<StageComponentInputs> implements StageComponentOutputs {
@@ -224,16 +224,16 @@ export interface StageComponentOutputs {}
 export interface StageComponentInputs {
 	readonly ApiId: string;
 	readonly StageName: string;
-	readonly AccessLogSettings?: (AccessLogSettings | undefined) | undefined;
-	readonly AccessPolicyId?: (string | undefined) | undefined;
-	readonly AutoDeploy?: (boolean | undefined) | undefined;
-	readonly ClientCertificateId?: (string | undefined) | undefined;
-	readonly DefaultRouteSettings?: (RouteSettings | undefined) | undefined;
-	readonly DeploymentId?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly RouteSettings?: (any | undefined) | undefined;
-	readonly StageVariables?: (any | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly AccessLogSettings?: AccessLogSettings | undefined;
+	readonly AccessPolicyId?: string | undefined;
+	readonly AutoDeploy?: boolean | undefined;
+	readonly ClientCertificateId?: string | undefined;
+	readonly DefaultRouteSettings?: RouteSettings | undefined;
+	readonly DeploymentId?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly RouteSettings?: any | undefined;
+	readonly StageVariables?: any | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class VpcLink extends CfnResource<VpcLinkComponentInputs> implements VpcLinkComponentOutputs {
@@ -248,80 +248,80 @@ export interface VpcLinkComponentOutputs {
 export interface VpcLinkComponentInputs {
 	readonly Name: string;
 	readonly SubnetIds: string[];
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export interface BodyS3Location {
-	readonly Bucket?: (string | undefined) | undefined;
-	readonly Etag?: (string | undefined) | undefined;
-	readonly Key?: (string | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly Bucket?: string | undefined;
+	readonly Etag?: string | undefined;
+	readonly Key?: string | undefined;
+	readonly Version?: string | undefined;
 }
 export interface Cors {
-	readonly AllowCredentials?: (boolean | undefined) | undefined;
-	readonly AllowHeaders?: (string[] | undefined) | undefined;
-	readonly AllowMethods?: (string[] | undefined) | undefined;
-	readonly AllowOrigins?: (string[] | undefined) | undefined;
-	readonly ExposeHeaders?: (string[] | undefined) | undefined;
-	readonly MaxAge?: (number | undefined) | undefined;
+	readonly AllowCredentials?: boolean | undefined;
+	readonly AllowHeaders?: string[] | undefined;
+	readonly AllowMethods?: string[] | undefined;
+	readonly AllowOrigins?: string[] | undefined;
+	readonly ExposeHeaders?: string[] | undefined;
+	readonly MaxAge?: number | undefined;
 }
 export interface AccessLogSettings {
-	readonly DestinationArn?: (string | undefined) | undefined;
-	readonly Format?: (string | undefined) | undefined;
+	readonly DestinationArn?: string | undefined;
+	readonly Format?: string | undefined;
 }
 export interface IntegrationOverrides {
-	readonly Description?: (string | undefined) | undefined;
-	readonly IntegrationMethod?: (string | undefined) | undefined;
-	readonly PayloadFormatVersion?: (string | undefined) | undefined;
-	readonly TimeoutInMillis?: (number | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly IntegrationMethod?: string | undefined;
+	readonly PayloadFormatVersion?: string | undefined;
+	readonly TimeoutInMillis?: number | undefined;
 }
 export interface RouteOverrides {
-	readonly AuthorizationScopes?: (string[] | undefined) | undefined;
-	readonly AuthorizationType?: (string | undefined) | undefined;
-	readonly AuthorizerId?: (string | undefined) | undefined;
-	readonly OperationName?: (string | undefined) | undefined;
-	readonly Target?: (string | undefined) | undefined;
+	readonly AuthorizationScopes?: string[] | undefined;
+	readonly AuthorizationType?: string | undefined;
+	readonly AuthorizerId?: string | undefined;
+	readonly OperationName?: string | undefined;
+	readonly Target?: string | undefined;
 }
 export interface RouteSettings {
-	readonly DataTraceEnabled?: (boolean | undefined) | undefined;
-	readonly DetailedMetricsEnabled?: (boolean | undefined) | undefined;
-	readonly LoggingLevel?: (string | undefined) | undefined;
-	readonly ThrottlingBurstLimit?: (number | undefined) | undefined;
-	readonly ThrottlingRateLimit?: (number | undefined) | undefined;
+	readonly DataTraceEnabled?: boolean | undefined;
+	readonly DetailedMetricsEnabled?: boolean | undefined;
+	readonly LoggingLevel?: string | undefined;
+	readonly ThrottlingBurstLimit?: number | undefined;
+	readonly ThrottlingRateLimit?: number | undefined;
 }
 export interface StageOverrides {
-	readonly AccessLogSettings?: (AccessLogSettings | undefined) | undefined;
-	readonly AutoDeploy?: (boolean | undefined) | undefined;
-	readonly DefaultRouteSettings?: (RouteSettings | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly RouteSettings?: (any | undefined) | undefined;
-	readonly StageVariables?: (any | undefined) | undefined;
+	readonly AccessLogSettings?: AccessLogSettings | undefined;
+	readonly AutoDeploy?: boolean | undefined;
+	readonly DefaultRouteSettings?: RouteSettings | undefined;
+	readonly Description?: string | undefined;
+	readonly RouteSettings?: any | undefined;
+	readonly StageVariables?: any | undefined;
 }
 export interface JWTConfiguration {
-	readonly Audience?: (string[] | undefined) | undefined;
-	readonly Issuer?: (string | undefined) | undefined;
+	readonly Audience?: string[] | undefined;
+	readonly Issuer?: string | undefined;
 }
 export interface DomainNameConfiguration {
-	readonly CertificateArn?: (string | undefined) | undefined;
-	readonly CertificateName?: (string | undefined) | undefined;
-	readonly EndpointType?: (string | undefined) | undefined;
-	readonly OwnershipVerificationCertificateArn?: (string | undefined) | undefined;
-	readonly SecurityPolicy?: (string | undefined) | undefined;
+	readonly CertificateArn?: string | undefined;
+	readonly CertificateName?: string | undefined;
+	readonly EndpointType?: string | undefined;
+	readonly OwnershipVerificationCertificateArn?: string | undefined;
+	readonly SecurityPolicy?: string | undefined;
 }
 export interface MutualTlsAuthentication {
-	readonly TruststoreUri?: (string | undefined) | undefined;
-	readonly TruststoreVersion?: (string | undefined) | undefined;
+	readonly TruststoreUri?: string | undefined;
+	readonly TruststoreVersion?: string | undefined;
 }
 export interface ResponseParameter {
 	readonly Destination: string;
 	readonly Source: string;
 }
 export interface ResponseParameterList {
-	readonly ResponseParameters?: (ResponseParameter[] | undefined) | undefined;
+	readonly ResponseParameters?: ResponseParameter[] | undefined;
 }
 export interface TlsConfig {
-	readonly ServerNameToVerify?: (string | undefined) | undefined;
+	readonly ServerNameToVerify?: string | undefined;
 }
 export interface ParameterConstraints {
 	readonly Required: boolean;

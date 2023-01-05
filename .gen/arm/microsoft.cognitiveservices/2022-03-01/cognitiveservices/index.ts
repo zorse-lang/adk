@@ -14,15 +14,15 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.CognitiveServices/accounts";
 }
 export interface accountsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: Identity | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly identity?: Identity;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AccountProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: AccountTags | undefined;
+	readonly properties?: AccountProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: AccountTags;
 }
 export class accounts_commitmentPlans
 	extends ArmResource<accounts_commitmentPlansComponentInputs>
@@ -41,10 +41,10 @@ export interface accounts_commitmentPlansComponentOutputs {
 	readonly type: "Microsoft.CognitiveServices/accounts/commitmentPlans";
 }
 export interface accounts_commitmentPlansComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: CommitmentPlanProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CommitmentPlanProperties;
+	readonly systemData?: SystemData;
 }
 export class accounts_deployments
 	extends ArmResource<accounts_deploymentsComponentInputs>
@@ -63,10 +63,10 @@ export interface accounts_deploymentsComponentOutputs {
 	readonly type: "Microsoft.CognitiveServices/accounts/deployments";
 }
 export interface accounts_deploymentsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: DeploymentProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DeploymentProperties;
+	readonly systemData?: SystemData;
 }
 export class accounts_privateEndpointConnections
 	extends ArmResource<accounts_privateEndpointConnectionsComponentInputs>
@@ -91,11 +91,11 @@ export interface accounts_privateEndpointConnectionsComponentOutputs {
 	readonly type: "Microsoft.CognitiveServices/accounts/privateEndpointConnections";
 }
 export interface accounts_privateEndpointConnectionsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class locations_resourceGroups_deletedAccounts
 	extends ArmResource<locations_resourceGroups_deletedAccountsComponentInputs>
@@ -120,15 +120,15 @@ export interface locations_resourceGroups_deletedAccountsComponentOutputs {
 	readonly type: "Microsoft.CognitiveServices/locations/resourceGroups/deletedAccounts";
 }
 export interface locations_resourceGroups_deletedAccountsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: Identity | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly identity?: Identity;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AccountProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: AccountTags | undefined;
+	readonly properties?: AccountProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: AccountTags;
 }
 export function listKeys(resource: accounts): ApiKeys {
 	if (resource.apiVersion !== "2022-03-01") {
@@ -140,199 +140,204 @@ export function listKeys(resource: accounts): ApiKeys {
 	throw new Error("not implemented");
 }
 export interface AccountProperties {
-	readonly allowedFqdnList?: string[] | undefined;
-	readonly apiProperties?: ApiProperties | undefined;
-	readonly callRateLimit?: CallRateLimit | undefined;
-	readonly capabilities?: SkuCapability[] | undefined;
-	readonly customSubDomainName?: string | undefined;
-	readonly dateCreated?: string | undefined;
-	readonly deletionDate?: string | undefined;
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly dynamicThrottlingEnabled?: boolean | undefined;
-	readonly encryption?: Encryption | undefined;
-	readonly endpoint?: string | undefined;
-	readonly endpoints?: AccountPropertiesEndpoints | undefined;
-	readonly internalId?: string | undefined;
-	readonly isMigrated?: boolean | undefined;
-	readonly migrationToken?: string | undefined;
-	readonly networkAcls?: NetworkRuleSet | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
+	readonly allowedFqdnList?: string[];
+	readonly apiProperties?: ApiProperties;
+	readonly callRateLimit?: CallRateLimit;
+	readonly capabilities?: SkuCapability[];
+	readonly customSubDomainName?: string;
+	readonly dateCreated?: string;
+	readonly deletionDate?: string;
+	readonly disableLocalAuth?: boolean;
+	readonly dynamicThrottlingEnabled?: boolean;
+	readonly encryption?: Encryption;
+	readonly endpoint?: string;
+	readonly endpoints?: AccountPropertiesEndpoints;
+	readonly internalId?: string;
+	readonly isMigrated?: boolean;
+	readonly migrationToken?: string;
+	readonly networkAcls?: NetworkRuleSet;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
 	readonly provisioningState?:
-		| ("Accepted" | "Creating" | "Deleting" | "Failed" | "Moving" | "ResolvingDNS" | "Succeeded")
-		| undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly quotaLimit?: QuotaLimit | undefined;
-	readonly restore?: boolean | undefined;
-	readonly restrictOutboundNetworkAccess?: boolean | undefined;
-	readonly scheduledPurgeDate?: string | undefined;
-	readonly skuChangeInfo?: SkuChangeInfo | undefined;
-	readonly userOwnedStorage?: UserOwnedStorage[] | undefined;
+		| "Accepted"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "ResolvingDNS"
+		| "Succeeded";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly quotaLimit?: QuotaLimit;
+	readonly restore?: boolean;
+	readonly restrictOutboundNetworkAccess?: boolean;
+	readonly scheduledPurgeDate?: string;
+	readonly skuChangeInfo?: SkuChangeInfo;
+	readonly userOwnedStorage?: UserOwnedStorage[];
 }
 export interface AccountPropertiesEndpoints {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AccountTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ApiKeys {
-	readonly key1?: string | undefined;
-	readonly key2?: string | undefined;
+	readonly key1?: string;
+	readonly key2?: string;
 }
 export interface ApiProperties {
-	readonly aadClientId?: string | undefined;
-	readonly aadTenantId?: string | undefined;
-	readonly eventHubConnectionString?: string | undefined;
-	readonly qnaAzureSearchEndpointId?: string | undefined;
-	readonly qnaAzureSearchEndpointKey?: string | undefined;
-	readonly qnaRuntimeEndpoint?: string | undefined;
-	readonly statisticsEnabled?: boolean | undefined;
-	readonly storageAccountConnectionString?: string | undefined;
-	readonly superUser?: string | undefined;
-	readonly websiteName?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly aadClientId?: string;
+	readonly aadTenantId?: string;
+	readonly eventHubConnectionString?: string;
+	readonly qnaAzureSearchEndpointId?: string;
+	readonly qnaAzureSearchEndpointKey?: string;
+	readonly qnaRuntimeEndpoint?: string;
+	readonly statisticsEnabled?: boolean;
+	readonly storageAccountConnectionString?: string;
+	readonly superUser?: string;
+	readonly websiteName?: string;
+	readonly [key: string]: any;
 }
 export interface CallRateLimit {
-	readonly count?: number | undefined;
-	readonly renewalPeriod?: number | undefined;
-	readonly rules?: ThrottlingRule[] | undefined;
+	readonly count?: number;
+	readonly renewalPeriod?: number;
+	readonly rules?: ThrottlingRule[];
 }
 export interface CommitmentPeriod {
-	readonly count?: number | undefined;
-	readonly endDate?: string | undefined;
-	readonly quota?: CommitmentQuota | undefined;
-	readonly startDate?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly count?: number;
+	readonly endDate?: string;
+	readonly quota?: CommitmentQuota;
+	readonly startDate?: string;
+	readonly tier?: string;
 }
 export interface CommitmentPlanProperties {
-	readonly autoRenew?: boolean | undefined;
-	readonly current?: CommitmentPeriod | undefined;
-	readonly hostingModel?: ("ConnectedContainer" | "DisconnectedContainer" | "Web") | undefined;
-	readonly last?: CommitmentPeriod | undefined;
-	readonly next?: CommitmentPeriod | undefined;
-	readonly planType?: string | undefined;
+	readonly autoRenew?: boolean;
+	readonly current?: CommitmentPeriod;
+	readonly hostingModel?: "ConnectedContainer" | "DisconnectedContainer" | "Web";
+	readonly last?: CommitmentPeriod;
+	readonly next?: CommitmentPeriod;
+	readonly planType?: string;
 }
 export interface CommitmentQuota {
-	readonly quantity?: number | undefined;
-	readonly unit?: string | undefined;
+	readonly quantity?: number;
+	readonly unit?: string;
 }
 export interface DeploymentModel {
-	readonly format?: string | undefined;
-	readonly name?: string | undefined;
-	readonly version?: string | undefined;
+	readonly format?: string;
+	readonly name?: string;
+	readonly version?: string;
 }
 export interface DeploymentProperties {
-	readonly model?: DeploymentModel | undefined;
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded") | undefined;
-	readonly scaleSettings?: DeploymentScaleSettings | undefined;
+	readonly model?: DeploymentModel;
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Moving" | "Succeeded";
+	readonly scaleSettings?: DeploymentScaleSettings;
 }
 export interface DeploymentScaleSettings {
-	readonly activeCapacity?: number | undefined;
-	readonly capacity?: number | undefined;
-	readonly scaleType?: ("Manual" | "Standard") | undefined;
+	readonly activeCapacity?: number;
+	readonly capacity?: number;
+	readonly scaleType?: "Manual" | "Standard";
 }
 export interface Encryption {
-	readonly keySource?: ("Microsoft.CognitiveServices" | "Microsoft.KeyVault") | undefined;
-	readonly keyVaultProperties?: KeyVaultProperties | undefined;
+	readonly keySource?: "Microsoft.CognitiveServices" | "Microsoft.KeyVault";
+	readonly keyVaultProperties?: KeyVaultProperties;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: IdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: IdentityUserAssignedIdentities;
 }
 export interface IdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface IpRule {
 	readonly value: string;
 }
 export interface KeyVaultProperties {
-	readonly identityClientId?: string | undefined;
-	readonly keyName?: string | undefined;
-	readonly keyVaultUri?: string | undefined;
-	readonly keyVersion?: string | undefined;
+	readonly identityClientId?: string;
+	readonly keyName?: string;
+	readonly keyVaultUri?: string;
+	readonly keyVersion?: string;
 }
 export interface NetworkRuleSet {
-	readonly defaultAction?: ("Allow" | "Deny") | undefined;
-	readonly ipRules?: IpRule[] | undefined;
-	readonly virtualNetworkRules?: VirtualNetworkRule[] | undefined;
+	readonly defaultAction?: "Allow" | "Deny";
+	readonly ipRules?: IpRule[];
+	readonly virtualNetworkRules?: VirtualNetworkRule[];
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly groupIds?: string[];
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface QuotaLimit {
-	readonly count?: number | undefined;
-	readonly renewalPeriod?: number | undefined;
-	readonly rules?: ThrottlingRule[] | undefined;
+	readonly count?: number;
+	readonly renewalPeriod?: number;
+	readonly rules?: ThrottlingRule[];
 }
 export interface RequestMatchPattern {
-	readonly method?: string | undefined;
-	readonly path?: string | undefined;
+	readonly method?: string;
+	readonly path?: string;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
 	readonly name: string;
-	readonly size?: string | undefined;
-	readonly tier?: ("Basic" | "Enterprise" | "Free" | "Premium" | "Standard") | undefined;
+	readonly size?: string;
+	readonly tier?: "Basic" | "Enterprise" | "Free" | "Premium" | "Standard";
 }
 export interface SkuCapability {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface SkuChangeInfo {
-	readonly countOfDowngrades?: number | undefined;
-	readonly countOfUpgradesAfterDowngrades?: number | undefined;
-	readonly lastChangeDate?: string | undefined;
+	readonly countOfDowngrades?: number;
+	readonly countOfUpgradesAfterDowngrades?: number;
+	readonly lastChangeDate?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface ThrottlingRule {
-	readonly count?: number | undefined;
-	readonly dynamicThrottlingEnabled?: boolean | undefined;
-	readonly key?: string | undefined;
-	readonly matchPatterns?: RequestMatchPattern[] | undefined;
-	readonly minCount?: number | undefined;
-	readonly renewalPeriod?: number | undefined;
+	readonly count?: number;
+	readonly dynamicThrottlingEnabled?: boolean;
+	readonly key?: string;
+	readonly matchPatterns?: RequestMatchPattern[];
+	readonly minCount?: number;
+	readonly renewalPeriod?: number;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface UserOwnedStorage {
-	readonly identityClientId?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly identityClientId?: string;
+	readonly resourceId?: string;
 }
 export interface VirtualNetworkRule {
 	readonly id: string;
-	readonly ignoreMissingVnetServiceEndpoint?: boolean | undefined;
-	readonly state?: string | undefined;
+	readonly ignoreMissingVnetServiceEndpoint?: boolean;
+	readonly state?: string;
 }
 export default {
 	accounts: accounts,

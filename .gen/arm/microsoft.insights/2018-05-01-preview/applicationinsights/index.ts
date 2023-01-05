@@ -17,8 +17,8 @@ export interface componentsComponentInputs {
 	readonly kind: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ApplicationInsightsComponentProperties | undefined;
-	readonly tags?: ComponentsResourceTags | undefined;
+	readonly properties?: ApplicationInsightsComponentProperties;
+	readonly tags?: ComponentsResourceTags;
 }
 export class components_ProactiveDetectionConfigs
 	extends ArmResource<components_ProactiveDetectionConfigsComponentInputs>
@@ -43,9 +43,9 @@ export interface components_ProactiveDetectionConfigsComponentOutputs {
 	readonly type: "Microsoft.Insights/components/ProactiveDetectionConfigs";
 }
 export interface components_ProactiveDetectionConfigsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ApplicationInsightsComponentProactiveDetectionConfigurationProperties | undefined;
+	readonly properties?: ApplicationInsightsComponentProactiveDetectionConfigurationProperties;
 }
 export class webtests extends ArmResource<webtestsComponentInputs> implements webtestsComponentOutputs {
 	constructor(entity: ADKEntity, options: webtestsComponentInputs) {
@@ -61,110 +61,106 @@ export interface webtestsComponentOutputs {
 	readonly type: "Microsoft.Insights/webtests";
 }
 export interface webtestsComponentInputs {
-	readonly kind?: "multistep" | undefined;
+	readonly kind?: "multistep";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WebTestProperties | undefined;
-	readonly tags?: WebtestsResourceTags | undefined;
+	readonly properties?: WebTestProperties;
+	readonly tags?: WebtestsResourceTags;
 }
 export interface ApplicationInsightsComponentProactiveDetectionConfigurationProperties {
-	readonly CustomEmails?: string[] | undefined;
-	readonly Enabled?: boolean | undefined;
-	readonly LastUpdatedTime?: string | undefined;
-	readonly Name?: string | undefined;
-	readonly RuleDefinitions?:
-		| ApplicationInsightsComponentProactiveDetectionConfigurationPropertiesRuleDefinitions
-		| undefined;
-	readonly SendEmailsToSubscriptionOwners?: boolean | undefined;
+	readonly CustomEmails?: string[];
+	readonly Enabled?: boolean;
+	readonly LastUpdatedTime?: string;
+	readonly Name?: string;
+	readonly RuleDefinitions?: ApplicationInsightsComponentProactiveDetectionConfigurationPropertiesRuleDefinitions;
+	readonly SendEmailsToSubscriptionOwners?: boolean;
 }
 export interface ApplicationInsightsComponentProactiveDetectionConfigurationPropertiesRuleDefinitions {
-	readonly Description?: string | undefined;
-	readonly DisplayName?: string | undefined;
-	readonly HelpUrl?: string | undefined;
-	readonly IsEnabledByDefault?: boolean | undefined;
-	readonly IsHidden?: boolean | undefined;
-	readonly IsInPreview?: boolean | undefined;
-	readonly Name?: string | undefined;
-	readonly SupportsEmailNotifications?: boolean | undefined;
+	readonly Description?: string;
+	readonly DisplayName?: string;
+	readonly HelpUrl?: string;
+	readonly IsEnabledByDefault?: boolean;
+	readonly IsHidden?: boolean;
+	readonly IsInPreview?: boolean;
+	readonly Name?: string;
+	readonly SupportsEmailNotifications?: boolean;
 }
 export interface ApplicationInsightsComponentProperties {
-	readonly AppId?: string | undefined;
+	readonly AppId?: string;
 	readonly Application_Type: "other" | "web";
-	readonly ApplicationId?: string | undefined;
-	readonly ConnectionString?: string | undefined;
-	readonly CreationDate?: string | undefined;
-	readonly DisableIpMasking?: boolean | undefined;
-	readonly Flow_Type?: "Bluefield" | undefined;
-	readonly HockeyAppId?: string | undefined;
-	readonly HockeyAppToken?: string | undefined;
-	readonly ImmediatePurgeDataOn30Days?: boolean | undefined;
-	readonly IngestionMode?:
-		| ("ApplicationInsights" | "ApplicationInsightsWithDiagnosticSettings" | "LogAnalytics")
-		| undefined;
-	readonly InstrumentationKey?: string | undefined;
-	readonly PrivateLinkScopedResources?: PrivateLinkScopedResource[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicNetworkAccessForIngestion?: ("Disabled" | "Enabled") | undefined;
-	readonly publicNetworkAccessForQuery?: ("Disabled" | "Enabled") | undefined;
-	readonly Request_Source?: "rest" | undefined;
-	readonly RetentionInDays?: number | undefined;
-	readonly SamplingPercentage?: number | undefined;
-	readonly TenantId?: string | undefined;
+	readonly ApplicationId?: string;
+	readonly ConnectionString?: string;
+	readonly CreationDate?: string;
+	readonly DisableIpMasking?: boolean;
+	readonly Flow_Type?: "Bluefield";
+	readonly HockeyAppId?: string;
+	readonly HockeyAppToken?: string;
+	readonly ImmediatePurgeDataOn30Days?: boolean;
+	readonly IngestionMode?: "ApplicationInsights" | "ApplicationInsightsWithDiagnosticSettings" | "LogAnalytics";
+	readonly InstrumentationKey?: string;
+	readonly PrivateLinkScopedResources?: PrivateLinkScopedResource[];
+	readonly provisioningState?: string;
+	readonly publicNetworkAccessForIngestion?: "Disabled" | "Enabled";
+	readonly publicNetworkAccessForQuery?: "Disabled" | "Enabled";
+	readonly Request_Source?: "rest";
+	readonly RetentionInDays?: number;
+	readonly SamplingPercentage?: number;
+	readonly TenantId?: string;
 }
 export interface ComponentsResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface HeaderField {
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface PrivateLinkScopedResource {
-	readonly ResourceId?: string | undefined;
-	readonly ScopeId?: string | undefined;
+	readonly ResourceId?: string;
+	readonly ScopeId?: string;
 }
 export interface WebTestGeolocation {
-	readonly Id?: string | undefined;
+	readonly Id?: string;
 }
 export interface WebTestProperties {
-	readonly Configuration?: WebTestPropertiesConfiguration | undefined;
-	readonly Description?: string | undefined;
-	readonly Enabled?: boolean | undefined;
-	readonly Frequency?: number | undefined;
+	readonly Configuration?: WebTestPropertiesConfiguration;
+	readonly Description?: string;
+	readonly Enabled?: boolean;
+	readonly Frequency?: number;
 	readonly Kind: "basic" | "multistep" | "ping";
 	readonly Locations: WebTestGeolocation[];
 	readonly Name: string;
-	readonly provisioningState?: string | undefined;
-	readonly Request?: WebTestPropertiesRequest | undefined;
-	readonly RetryEnabled?: boolean | undefined;
+	readonly provisioningState?: string;
+	readonly Request?: WebTestPropertiesRequest;
+	readonly RetryEnabled?: boolean;
 	readonly SyntheticMonitorId: string;
-	readonly Timeout?: number | undefined;
-	readonly ValidationRules?: WebTestPropertiesValidationRules | undefined;
+	readonly Timeout?: number;
+	readonly ValidationRules?: WebTestPropertiesValidationRules;
 }
 export interface WebTestPropertiesConfiguration {
-	readonly WebTest?: string | undefined;
+	readonly WebTest?: string;
 }
 export interface WebTestPropertiesRequest {
-	readonly FollowRedirects?: boolean | undefined;
-	readonly Headers?: HeaderField[] | undefined;
-	readonly HttpVerb?: string | undefined;
-	readonly ParseDependentRequests?: boolean | undefined;
-	readonly RequestBody?: string | undefined;
-	readonly RequestUrl?: string | undefined;
+	readonly FollowRedirects?: boolean;
+	readonly Headers?: HeaderField[];
+	readonly HttpVerb?: string;
+	readonly ParseDependentRequests?: boolean;
+	readonly RequestBody?: string;
+	readonly RequestUrl?: string;
 }
 export interface WebTestPropertiesValidationRules {
-	readonly ContentValidation?: WebTestPropertiesValidationRulesContentValidation | undefined;
-	readonly ExpectedHttpStatusCode?: number | undefined;
-	readonly IgnoreHttpsStatusCode?: boolean | undefined;
-	readonly SSLCertRemainingLifetimeCheck?: number | undefined;
-	readonly SSLCheck?: boolean | undefined;
+	readonly ContentValidation?: WebTestPropertiesValidationRulesContentValidation;
+	readonly ExpectedHttpStatusCode?: number;
+	readonly IgnoreHttpsStatusCode?: boolean;
+	readonly SSLCertRemainingLifetimeCheck?: number;
+	readonly SSLCheck?: boolean;
 }
 export interface WebTestPropertiesValidationRulesContentValidation {
-	readonly ContentMatch?: string | undefined;
-	readonly IgnoreCase?: boolean | undefined;
-	readonly PassIfTextFound?: boolean | undefined;
+	readonly ContentMatch?: string;
+	readonly IgnoreCase?: boolean;
+	readonly PassIfTextFound?: boolean;
 }
 export interface WebtestsResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	components: components,

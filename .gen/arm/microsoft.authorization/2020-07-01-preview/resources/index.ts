@@ -19,24 +19,24 @@ export interface policyExemptionsComponentOutputs {
 export interface policyExemptionsComponentInputs {
 	readonly name: string;
 	readonly properties: PolicyExemptionProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export interface PolicyExemptionProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly exemptionCategory: "Mitigated" | "Waiver";
-	readonly expiresOn?: string | undefined;
-	readonly metadata?: any | undefined;
+	readonly expiresOn?: string;
+	readonly metadata?: any;
 	readonly policyAssignmentId: string;
-	readonly policyDefinitionReferenceIds?: string[] | undefined;
+	readonly policyDefinitionReferenceIds?: string[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	policyExemptions: policyExemptions,

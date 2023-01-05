@@ -17,13 +17,13 @@ export interface flexibleServersComponentOutputs {
 	readonly type: "Microsoft.DBforPostgreSQL/flexibleServers";
 }
 export interface flexibleServersComponentInputs {
-	readonly identity?: UserAssignedIdentity | undefined;
+	readonly identity?: UserAssignedIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServerProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ServerProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class flexibleServers_administrators
 	extends ArmResource<flexibleServers_administratorsComponentInputs>
@@ -49,8 +49,8 @@ export interface flexibleServers_administratorsComponentOutputs {
 }
 export interface flexibleServers_administratorsComponentInputs {
 	readonly name: string;
-	readonly properties?: AdministratorPropertiesForAddOrAdministratorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AdministratorPropertiesForAddOrAdministratorProperties;
+	readonly systemData?: SystemData;
 }
 export class flexibleServers_backups
 	extends ArmResource<flexibleServers_backupsComponentInputs>
@@ -70,8 +70,8 @@ export interface flexibleServers_backupsComponentOutputs {
 }
 export interface flexibleServers_backupsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerBackupProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ServerBackupProperties;
+	readonly systemData?: SystemData;
 }
 export class flexibleServers_configurations
 	extends ArmResource<flexibleServers_configurationsComponentInputs>
@@ -97,8 +97,8 @@ export interface flexibleServers_configurationsComponentOutputs {
 }
 export interface flexibleServers_configurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfigurationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConfigurationProperties;
+	readonly systemData?: SystemData;
 }
 export class flexibleServers_databases
 	extends ArmResource<flexibleServers_databasesComponentInputs>
@@ -118,8 +118,8 @@ export interface flexibleServers_databasesComponentOutputs {
 }
 export interface flexibleServers_databasesComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DatabaseProperties;
+	readonly systemData?: SystemData;
 }
 export class flexibleServers_firewallRules
 	extends ArmResource<flexibleServers_firewallRulesComponentInputs>
@@ -146,133 +146,128 @@ export interface flexibleServers_firewallRulesComponentOutputs {
 export interface flexibleServers_firewallRulesComponentInputs {
 	readonly name: string;
 	readonly properties: FirewallRuleProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export interface AdministratorPropertiesForAddOrAdministratorProperties {
-	readonly objectId?: string | undefined;
-	readonly principalName?: string | undefined;
-	readonly principalType?: ("Group" | "ServicePrincipal" | "Unknown" | "User") | undefined;
-	readonly tenantId?: string | undefined;
+	readonly objectId?: string;
+	readonly principalName?: string;
+	readonly principalType?: "Group" | "ServicePrincipal" | "Unknown" | "User";
+	readonly tenantId?: string;
 }
 export interface AuthConfig {
-	readonly activeDirectoryAuthEnabled?: boolean | undefined;
-	readonly passwordAuthEnabled?: boolean | undefined;
-	readonly tenantId?: string | undefined;
+	readonly activeDirectoryAuthEnabled?: boolean;
+	readonly passwordAuthEnabled?: boolean;
+	readonly tenantId?: string;
 }
 export interface Backup {
-	readonly backupRetentionDays?: number | undefined;
-	readonly earliestRestoreDate?: string | undefined;
-	readonly geoRedundantBackup?: ("Disabled" | "Enabled") | undefined;
+	readonly backupRetentionDays?: number;
+	readonly earliestRestoreDate?: string;
+	readonly geoRedundantBackup?: "Disabled" | "Enabled";
 }
 export interface ConfigurationProperties {
-	readonly allowedValues?: string | undefined;
-	readonly dataType?: ("Boolean" | "Enumeration" | "Integer" | "Numeric") | undefined;
-	readonly defaultValue?: string | undefined;
-	readonly description?: string | undefined;
-	readonly documentationLink?: string | undefined;
-	readonly isConfigPendingRestart?: boolean | undefined;
-	readonly isDynamicConfig?: boolean | undefined;
-	readonly isReadOnly?: boolean | undefined;
-	readonly source?: string | undefined;
-	readonly unit?: string | undefined;
-	readonly value?: string | undefined;
+	readonly allowedValues?: string;
+	readonly dataType?: "Boolean" | "Enumeration" | "Integer" | "Numeric";
+	readonly defaultValue?: string;
+	readonly description?: string;
+	readonly documentationLink?: string;
+	readonly isConfigPendingRestart?: boolean;
+	readonly isDynamicConfig?: boolean;
+	readonly isReadOnly?: boolean;
+	readonly source?: string;
+	readonly unit?: string;
+	readonly value?: string;
 }
 export interface DatabaseProperties {
-	readonly charset?: string | undefined;
-	readonly collation?: string | undefined;
+	readonly charset?: string;
+	readonly collation?: string;
 }
 export interface DataEncryption {
-	readonly primaryKeyURI?: string | undefined;
-	readonly primaryUserAssignedIdentityId?: string | undefined;
-	readonly type?: ("AzureKeyVault" | "SystemAssigned") | undefined;
+	readonly primaryKeyURI?: string;
+	readonly primaryUserAssignedIdentityId?: string;
+	readonly type?: "AzureKeyVault" | "SystemAssigned";
 }
 export interface FirewallRuleProperties {
 	readonly endIpAddress: string;
 	readonly startIpAddress: string;
 }
 export interface HighAvailability {
-	readonly mode?: ("Disabled" | "SameZone" | "ZoneRedundant") | undefined;
-	readonly standbyAvailabilityZone?: string | undefined;
-	readonly state?:
-		| ("CreatingStandby" | "FailingOver" | "Healthy" | "NotEnabled" | "RemovingStandby" | "ReplicatingData")
-		| undefined;
+	readonly mode?: "Disabled" | "SameZone" | "ZoneRedundant";
+	readonly standbyAvailabilityZone?: string;
+	readonly state?: "CreatingStandby" | "FailingOver" | "Healthy" | "NotEnabled" | "RemovingStandby" | "ReplicatingData";
 }
 export interface MaintenanceWindow {
-	readonly customWindow?: string | undefined;
-	readonly dayOfWeek?: number | undefined;
-	readonly startHour?: number | undefined;
-	readonly startMinute?: number | undefined;
+	readonly customWindow?: string;
+	readonly dayOfWeek?: number;
+	readonly startHour?: number;
+	readonly startMinute?: number;
 }
 export interface Network {
-	readonly delegatedSubnetResourceId?: string | undefined;
-	readonly privateDnsZoneArmResourceId?: string | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly delegatedSubnetResourceId?: string;
+	readonly privateDnsZoneArmResourceId?: string;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface ServerBackupProperties {
-	readonly backupType?: "Full" | undefined;
-	readonly completedTime?: string | undefined;
-	readonly source?: string | undefined;
+	readonly backupType?: "Full";
+	readonly completedTime?: string;
+	readonly source?: string;
 }
 export interface ServerProperties {
-	readonly administratorLogin?: string | undefined;
-	readonly administratorLoginPassword?: string | undefined;
-	readonly authConfig?: AuthConfig | undefined;
-	readonly availabilityZone?: string | undefined;
-	readonly backup?: Backup | undefined;
-	readonly createMode?: ("Create" | "Default" | "GeoRestore" | "PointInTimeRestore" | "Replica" | "Update") | undefined;
-	readonly dataEncryption?: DataEncryption | undefined;
-	readonly fullyQualifiedDomainName?: string | undefined;
-	readonly highAvailability?: HighAvailability | undefined;
-	readonly maintenanceWindow?: MaintenanceWindow | undefined;
-	readonly minorVersion?: string | undefined;
-	readonly network?: Network | undefined;
-	readonly pointInTimeUTC?: string | undefined;
-	readonly replicaCapacity?: number | undefined;
+	readonly administratorLogin?: string;
+	readonly administratorLoginPassword?: string;
+	readonly authConfig?: AuthConfig;
+	readonly availabilityZone?: string;
+	readonly backup?: Backup;
+	readonly createMode?: "Create" | "Default" | "GeoRestore" | "PointInTimeRestore" | "Replica" | "Update";
+	readonly dataEncryption?: DataEncryption;
+	readonly fullyQualifiedDomainName?: string;
+	readonly highAvailability?: HighAvailability;
+	readonly maintenanceWindow?: MaintenanceWindow;
+	readonly minorVersion?: string;
+	readonly network?: Network;
+	readonly pointInTimeUTC?: string;
+	readonly replicaCapacity?: number;
 	readonly replicationRole?:
-		| (
-				| "AsyncReplica"
-				| "GeoAsyncReplica"
-				| "GeoSyncReplica"
-				| "None"
-				| "Primary"
-				| "Secondary"
-				| "SyncReplica"
-				| "WalReplica"
-		  )
-		| undefined;
-	readonly sourceServerResourceId?: string | undefined;
-	readonly state?: ("Disabled" | "Dropping" | "Ready" | "Starting" | "Stopped" | "Stopping" | "Updating") | undefined;
-	readonly storage?: Storage | undefined;
-	readonly version?: ("11" | "12" | "13" | "14") | undefined;
+		| "AsyncReplica"
+		| "GeoAsyncReplica"
+		| "GeoSyncReplica"
+		| "None"
+		| "Primary"
+		| "Secondary"
+		| "SyncReplica"
+		| "WalReplica";
+	readonly sourceServerResourceId?: string;
+	readonly state?: "Disabled" | "Dropping" | "Ready" | "Starting" | "Stopped" | "Stopping" | "Updating";
+	readonly storage?: Storage;
+	readonly version?: "11" | "12" | "13" | "14";
 }
 export interface Sku {
 	readonly name: string;
 	readonly tier: "Burstable" | "GeneralPurpose" | "MemoryOptimized";
 }
 export interface Storage {
-	readonly storageSizeGB?: number | undefined;
+	readonly storageSizeGB?: number;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentity {
 	readonly type: "None" | "SystemAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: UserAssignedIdentityMap | undefined;
+	readonly userAssignedIdentities?: UserAssignedIdentityMap;
 }
 export interface UserAssignedIdentityMap {
-	readonly "[ key: string ]"?: UserIdentity | undefined;
+	readonly [key: string]: UserIdentity;
 }
 export interface UserIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	flexibleServers: flexibleServers,

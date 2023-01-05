@@ -16,8 +16,8 @@ export interface galleriesComponentOutputs {
 export interface galleriesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: GalleryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: GalleryProperties;
+	readonly tags?: ResourceTags;
 }
 export class galleries_applications
 	extends ArmResource<galleries_applicationsComponentInputs>
@@ -38,8 +38,8 @@ export interface galleries_applicationsComponentOutputs {
 export interface galleries_applicationsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: GalleryApplicationProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: GalleryApplicationProperties;
+	readonly tags?: ResourceTags;
 }
 export class galleries_applications_versions
 	extends ArmResource<galleries_applications_versionsComponentInputs>
@@ -60,8 +60,8 @@ export interface galleries_applications_versionsComponentOutputs {
 export interface galleries_applications_versionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: GalleryApplicationVersionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: GalleryApplicationVersionProperties;
+	readonly tags?: ResourceTags;
 }
 export class galleries_images
 	extends ArmResource<galleries_imagesComponentInputs>
@@ -82,8 +82,8 @@ export interface galleries_imagesComponentOutputs {
 export interface galleries_imagesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: GalleryImageProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: GalleryImageProperties;
+	readonly tags?: ResourceTags;
 }
 export class galleries_images_versions
 	extends ArmResource<galleries_images_versionsComponentInputs>
@@ -104,81 +104,79 @@ export interface galleries_images_versionsComponentOutputs {
 export interface galleries_images_versionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: GalleryImageVersionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: GalleryImageVersionProperties;
+	readonly tags?: ResourceTags;
 }
 export interface CommunityGalleryInfo {
-	readonly communityGalleryEnabled?: boolean | undefined;
-	readonly eula?: string | undefined;
-	readonly publicNamePrefix?: string | undefined;
-	readonly publicNames?: string[] | undefined;
-	readonly publisherContact?: string | undefined;
-	readonly publisherUri?: string | undefined;
+	readonly communityGalleryEnabled?: boolean;
+	readonly eula?: string;
+	readonly publicNamePrefix?: string;
+	readonly publicNames?: string[];
+	readonly publisherContact?: string;
+	readonly publisherUri?: string;
 }
 export interface DataDiskImageEncryption {
-	readonly diskEncryptionSetId?: string | undefined;
+	readonly diskEncryptionSetId?: string;
 	readonly lun: number;
 }
 export interface Disallowed {
-	readonly diskTypes?: string[] | undefined;
+	readonly diskTypes?: string[];
 }
 export interface EncryptionImages {
-	readonly dataDiskImages?: DataDiskImageEncryption[] | undefined;
-	readonly osDiskImage?: OSDiskImageEncryption | undefined;
+	readonly dataDiskImages?: DataDiskImageEncryption[];
+	readonly osDiskImage?: OSDiskImageEncryption;
 }
 export interface GalleryApplicationProperties {
-	readonly description?: string | undefined;
-	readonly endOfLifeDate?: string | undefined;
-	readonly eula?: string | undefined;
-	readonly privacyStatementUri?: string | undefined;
-	readonly releaseNoteUri?: string | undefined;
+	readonly description?: string;
+	readonly endOfLifeDate?: string;
+	readonly eula?: string;
+	readonly privacyStatementUri?: string;
+	readonly releaseNoteUri?: string;
 	readonly supportedOSType: "Linux";
 }
 export interface GalleryApplicationVersionProperties {
-	readonly provisioningState?:
-		| ("Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating")
-		| undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating";
 	readonly publishingProfile: GalleryApplicationVersionPublishingProfile;
-	readonly replicationStatus?: ReplicationStatus | undefined;
+	readonly replicationStatus?: ReplicationStatus;
 }
 export interface GalleryApplicationVersionPublishingProfile {
-	readonly advancedSettings?: GalleryApplicationVersionPublishingProfileAdvancedSettings | undefined;
-	readonly enableHealthCheck?: boolean | undefined;
-	readonly endOfLifeDate?: string | undefined;
-	readonly excludeFromLatest?: boolean | undefined;
-	readonly manageActions?: UserArtifactManage | undefined;
-	readonly publishedDate?: string | undefined;
-	readonly replicaCount?: number | undefined;
-	readonly replicationMode?: ("Full" | "Shallow") | undefined;
-	readonly settings?: UserArtifactSettings | undefined;
+	readonly advancedSettings?: GalleryApplicationVersionPublishingProfileAdvancedSettings;
+	readonly enableHealthCheck?: boolean;
+	readonly endOfLifeDate?: string;
+	readonly excludeFromLatest?: boolean;
+	readonly manageActions?: UserArtifactManage;
+	readonly publishedDate?: string;
+	readonly replicaCount?: number;
+	readonly replicationMode?: "Full" | "Shallow";
+	readonly settings?: UserArtifactSettings;
 	readonly source: UserArtifactSource;
-	readonly storageAccountType?: ("Premium_LRS" | "Standard_LRS" | "Standard_ZRS") | undefined;
-	readonly targetExtendedLocations?: GalleryTargetExtendedLocation[] | undefined;
-	readonly targetRegions?: TargetRegion[] | undefined;
+	readonly storageAccountType?: "Premium_LRS" | "Standard_LRS" | "Standard_ZRS";
+	readonly targetExtendedLocations?: GalleryTargetExtendedLocation[];
+	readonly targetRegions?: TargetRegion[];
 }
 export interface GalleryApplicationVersionPublishingProfileAdvancedSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface GalleryArtifactVersionSource {
-	readonly id?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly id?: string;
+	readonly uri?: string;
 }
 export interface GalleryDataDiskImage {
-	readonly hostCaching?: ("None" | "ReadOnly") | undefined;
+	readonly hostCaching?: "None" | "ReadOnly";
 	readonly lun: number;
-	readonly sizeInGB?: number | undefined;
-	readonly source?: GalleryArtifactVersionSource | undefined;
+	readonly sizeInGB?: number;
+	readonly source?: GalleryArtifactVersionSource;
 }
 export interface GalleryExtendedLocation {
-	readonly name?: string | undefined;
-	readonly type?: ("EdgeZone" | "Unknown") | undefined;
+	readonly name?: string;
+	readonly type?: "EdgeZone" | "Unknown";
 }
 export interface GalleryIdentifier {
-	readonly uniqueName?: string | undefined;
+	readonly uniqueName?: string;
 }
 export interface GalleryImageFeature {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface GalleryImageIdentifier {
 	readonly offer: string;
@@ -186,143 +184,135 @@ export interface GalleryImageIdentifier {
 	readonly sku: string;
 }
 export interface GalleryImageProperties {
-	readonly architecture?: ("Arm64" | "x64") | undefined;
-	readonly description?: string | undefined;
-	readonly disallowed?: Disallowed | undefined;
-	readonly endOfLifeDate?: string | undefined;
-	readonly eula?: string | undefined;
-	readonly features?: GalleryImageFeature[] | undefined;
-	readonly hyperVGeneration?: ("V1" | "V2") | undefined;
+	readonly architecture?: "Arm64" | "x64";
+	readonly description?: string;
+	readonly disallowed?: Disallowed;
+	readonly endOfLifeDate?: string;
+	readonly eula?: string;
+	readonly features?: GalleryImageFeature[];
+	readonly hyperVGeneration?: "V1" | "V2";
 	readonly identifier: GalleryImageIdentifier;
 	readonly osState: "Generalized";
 	readonly osType: "Linux";
-	readonly privacyStatementUri?: string | undefined;
-	readonly provisioningState?:
-		| ("Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating")
-		| undefined;
-	readonly purchasePlan?: ImagePurchasePlan | undefined;
-	readonly recommended?: RecommendedMachineConfiguration | undefined;
-	readonly releaseNoteUri?: string | undefined;
+	readonly privacyStatementUri?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating";
+	readonly purchasePlan?: ImagePurchasePlan;
+	readonly recommended?: RecommendedMachineConfiguration;
+	readonly releaseNoteUri?: string;
 }
 export interface GalleryImageVersionProperties {
-	readonly provisioningState?:
-		| ("Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating")
-		| undefined;
-	readonly publishingProfile?: GalleryImageVersionPublishingProfile | undefined;
-	readonly replicationStatus?: ReplicationStatus | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating";
+	readonly publishingProfile?: GalleryImageVersionPublishingProfile;
+	readonly replicationStatus?: ReplicationStatus;
 	readonly storageProfile: GalleryImageVersionStorageProfile;
 }
 export interface GalleryImageVersionPublishingProfile {
-	readonly endOfLifeDate?: string | undefined;
-	readonly excludeFromLatest?: boolean | undefined;
-	readonly publishedDate?: string | undefined;
-	readonly replicaCount?: number | undefined;
-	readonly replicationMode?: ("Full" | "Shallow") | undefined;
-	readonly storageAccountType?: ("Premium_LRS" | "Standard_LRS" | "Standard_ZRS") | undefined;
-	readonly targetExtendedLocations?: GalleryTargetExtendedLocation[] | undefined;
-	readonly targetRegions?: TargetRegion[] | undefined;
+	readonly endOfLifeDate?: string;
+	readonly excludeFromLatest?: boolean;
+	readonly publishedDate?: string;
+	readonly replicaCount?: number;
+	readonly replicationMode?: "Full" | "Shallow";
+	readonly storageAccountType?: "Premium_LRS" | "Standard_LRS" | "Standard_ZRS";
+	readonly targetExtendedLocations?: GalleryTargetExtendedLocation[];
+	readonly targetRegions?: TargetRegion[];
 }
 export interface GalleryImageVersionStorageProfile {
-	readonly dataDiskImages?: GalleryDataDiskImage[] | undefined;
-	readonly osDiskImage?: GalleryOSDiskImage | undefined;
-	readonly source?: GalleryArtifactVersionSource | undefined;
+	readonly dataDiskImages?: GalleryDataDiskImage[];
+	readonly osDiskImage?: GalleryOSDiskImage;
+	readonly source?: GalleryArtifactVersionSource;
 }
 export interface GalleryOSDiskImage {
-	readonly hostCaching?: ("None" | "ReadOnly") | undefined;
-	readonly sizeInGB?: number | undefined;
-	readonly source?: GalleryArtifactVersionSource | undefined;
+	readonly hostCaching?: "None" | "ReadOnly";
+	readonly sizeInGB?: number;
+	readonly source?: GalleryArtifactVersionSource;
 }
 export interface GalleryProperties {
-	readonly description?: string | undefined;
-	readonly identifier?: GalleryIdentifier | undefined;
-	readonly provisioningState?:
-		| ("Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating")
-		| undefined;
-	readonly sharingProfile?: SharingProfile | undefined;
-	readonly sharingStatus?: SharingStatus | undefined;
-	readonly softDeletePolicy?: SoftDeletePolicy | undefined;
+	readonly description?: string;
+	readonly identifier?: GalleryIdentifier;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating";
+	readonly sharingProfile?: SharingProfile;
+	readonly sharingStatus?: SharingStatus;
+	readonly softDeletePolicy?: SoftDeletePolicy;
 }
 export interface GalleryTargetExtendedLocation {
-	readonly encryption?: EncryptionImages | undefined;
-	readonly extendedLocation?: GalleryExtendedLocation | undefined;
-	readonly extendedLocationReplicaCount?: number | undefined;
-	readonly name?: string | undefined;
-	readonly storageAccountType?: ("Premium_LRS" | "Standard_LRS" | "Standard_ZRS") | undefined;
+	readonly encryption?: EncryptionImages;
+	readonly extendedLocation?: GalleryExtendedLocation;
+	readonly extendedLocationReplicaCount?: number;
+	readonly name?: string;
+	readonly storageAccountType?: "Premium_LRS" | "Standard_LRS" | "Standard_ZRS";
 }
 export interface ImagePurchasePlan {
-	readonly name?: string | undefined;
-	readonly product?: string | undefined;
-	readonly publisher?: string | undefined;
+	readonly name?: string;
+	readonly product?: string;
+	readonly publisher?: string;
 }
 export interface OSDiskImageEncryption {
-	readonly diskEncryptionSetId?: string | undefined;
-	readonly securityProfile?: OSDiskImageSecurityProfile | undefined;
+	readonly diskEncryptionSetId?: string;
+	readonly securityProfile?: OSDiskImageSecurityProfile;
 }
 export interface OSDiskImageSecurityProfile {
-	readonly confidentialVMEncryptionType?:
-		| ("EncryptedVMGuestStateOnlyWithPmk" | "EncryptedWithCmk" | "EncryptedWithPmk")
-		| undefined;
-	readonly secureVMDiskEncryptionSetId?: string | undefined;
+	readonly confidentialVMEncryptionType?: "EncryptedVMGuestStateOnlyWithPmk" | "EncryptedWithCmk" | "EncryptedWithPmk";
+	readonly secureVMDiskEncryptionSetId?: string;
 }
 export interface RecommendedMachineConfiguration {
-	readonly memory?: ResourceRange | undefined;
-	readonly vCPUs?: ResourceRange | undefined;
+	readonly memory?: ResourceRange;
+	readonly vCPUs?: ResourceRange;
 }
 export interface RegionalReplicationStatus {
-	readonly details?: string | undefined;
-	readonly progress?: number | undefined;
-	readonly region?: string | undefined;
-	readonly state?: ("Completed" | "Failed" | "Replicating" | "Unknown") | undefined;
+	readonly details?: string;
+	readonly progress?: number;
+	readonly region?: string;
+	readonly state?: "Completed" | "Failed" | "Replicating" | "Unknown";
 }
 export interface RegionalSharingStatus {
-	readonly details?: string | undefined;
-	readonly region?: string | undefined;
-	readonly state?: ("Failed" | "InProgress" | "Succeeded" | "Unknown") | undefined;
+	readonly details?: string;
+	readonly region?: string;
+	readonly state?: "Failed" | "InProgress" | "Succeeded" | "Unknown";
 }
 export interface ReplicationStatus {
-	readonly aggregatedState?: ("Completed" | "Failed" | "InProgress" | "Unknown") | undefined;
-	readonly summary?: RegionalReplicationStatus[] | undefined;
+	readonly aggregatedState?: "Completed" | "Failed" | "InProgress" | "Unknown";
+	readonly summary?: RegionalReplicationStatus[];
 }
 export interface ResourceRange {
-	readonly max?: number | undefined;
-	readonly min?: number | undefined;
+	readonly max?: number;
+	readonly min?: number;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SharingProfile {
-	readonly communityGalleryInfo?: CommunityGalleryInfo | undefined;
-	readonly groups?: SharingProfileGroup[] | undefined;
-	readonly permissions?: ("Community" | "Groups" | "Private") | undefined;
+	readonly communityGalleryInfo?: CommunityGalleryInfo;
+	readonly groups?: SharingProfileGroup[];
+	readonly permissions?: "Community" | "Groups" | "Private";
 }
 export interface SharingProfileGroup {
-	readonly ids?: string[] | undefined;
-	readonly type?: ("AADTenants" | "Subscriptions") | undefined;
+	readonly ids?: string[];
+	readonly type?: "AADTenants" | "Subscriptions";
 }
 export interface SharingStatus {
-	readonly aggregatedState?: ("Failed" | "InProgress" | "Succeeded" | "Unknown") | undefined;
-	readonly summary?: RegionalSharingStatus[] | undefined;
+	readonly aggregatedState?: "Failed" | "InProgress" | "Succeeded" | "Unknown";
+	readonly summary?: RegionalSharingStatus[];
 }
 export interface SoftDeletePolicy {
-	readonly isSoftDeleteEnabled?: boolean | undefined;
+	readonly isSoftDeleteEnabled?: boolean;
 }
 export interface TargetRegion {
-	readonly encryption?: EncryptionImages | undefined;
+	readonly encryption?: EncryptionImages;
 	readonly name: string;
-	readonly regionalReplicaCount?: number | undefined;
-	readonly storageAccountType?: ("Premium_LRS" | "Standard_LRS" | "Standard_ZRS") | undefined;
+	readonly regionalReplicaCount?: number;
+	readonly storageAccountType?: "Premium_LRS" | "Standard_LRS" | "Standard_ZRS";
 }
 export interface UserArtifactManage {
 	readonly install: string;
 	readonly remove: string;
-	readonly update?: string | undefined;
+	readonly update?: string;
 }
 export interface UserArtifactSettings {
-	readonly configFileName?: string | undefined;
-	readonly packageFileName?: string | undefined;
+	readonly configFileName?: string;
+	readonly packageFileName?: string;
 }
 export interface UserArtifactSource {
-	readonly defaultConfigurationLink?: string | undefined;
+	readonly defaultConfigurationLink?: string;
 	readonly mediaLink: string;
 }
 export default {

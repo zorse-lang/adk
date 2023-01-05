@@ -28,15 +28,15 @@ export interface InstanceComponentInputs {
 	readonly DiskSize: number;
 	readonly DiskType: string;
 	readonly TopicQuota: number;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly DeployOption?: (DeployOption | undefined) | undefined;
-	readonly EipMax?: (number | undefined) | undefined;
-	readonly IoMax?: (number | undefined) | undefined;
-	readonly IoMaxSpec?: (string | undefined) | undefined;
-	readonly OpenConnector?: (boolean | undefined) | undefined;
-	readonly PayType?: (string | undefined) | undefined;
-	readonly SpecType?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly DeployOption?: DeployOption | undefined;
+	readonly EipMax?: number | undefined;
+	readonly IoMax?: number | undefined;
+	readonly IoMaxSpec?: string | undefined;
+	readonly OpenConnector?: boolean | undefined;
+	readonly PayType?: string | undefined;
+	readonly SpecType?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class Topic extends RosResource<TopicComponentInputs> implements TopicComponentOutputs {
@@ -49,31 +49,31 @@ export interface TopicComponentInputs {
 	readonly InstanceId: any | string;
 	readonly Remark: string;
 	readonly Topic: any | string;
-	readonly CompactTopic?: (boolean | undefined) | undefined;
-	readonly Config?: ({ [key: string]: any } | undefined) | undefined;
-	readonly LocalTopic?: (boolean | undefined) | undefined;
-	readonly MinInsyncReplicas?: (number | undefined) | undefined;
-	readonly PartitionNum?: (number | undefined) | undefined;
-	readonly ReplicationFactor?: (number | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly CompactTopic?: boolean | undefined;
+	readonly Config?: { [key: string]: any } | undefined;
+	readonly LocalTopic?: boolean | undefined;
+	readonly MinInsyncReplicas?: number | undefined;
+	readonly PartitionNum?: number | undefined;
+	readonly ReplicationFactor?: number | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export interface DeployOption {
-	readonly IsEipInner?: (boolean | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
-	readonly Username?: (string | undefined) | undefined;
-	readonly Config?: ({ [key: string]: any } | undefined) | undefined;
+	readonly IsEipInner?: boolean | undefined;
+	readonly VpcId?: string | undefined;
+	readonly ZoneId?: string | undefined;
+	readonly Username?: string | undefined;
+	readonly Config?: { [key: string]: any } | undefined;
 	readonly VSwitchId: string;
-	readonly ServiceVersion?: (string | undefined) | undefined;
-	readonly SecurityGroup?: (string | undefined) | undefined;
+	readonly ServiceVersion?: string | undefined;
+	readonly SecurityGroup?: string | undefined;
 	readonly DeployModule: string;
-	readonly IsSetUserAndPassword?: (boolean | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
+	readonly IsSetUserAndPassword?: boolean | undefined;
+	readonly Name?: string | undefined;
+	readonly Password?: string | undefined;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export default {

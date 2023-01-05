@@ -10,7 +10,6 @@ export class ProjectsInstancesDatabasesDatabaseRoles
 }
 export interface ProjectsInstancesDatabasesDatabaseRolesComponentOutputs {}
 export interface ProjectsInstancesDatabasesDatabaseRolesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

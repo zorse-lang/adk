@@ -17,18 +17,18 @@ export interface hybridUseBenefitsComponentOutputs {
 	readonly type: "Microsoft.SoftwarePlan/hybridUseBenefits";
 }
 export interface hybridUseBenefitsComponentInputs {
-	readonly etag?: number | undefined;
+	readonly etag?: number;
 	readonly name: string;
-	readonly properties?: HybridUseBenefitProperties | undefined;
+	readonly properties?: HybridUseBenefitProperties;
 	readonly sku: Sku;
 }
 export interface HybridUseBenefitProperties {
-	readonly createdDate?: string | undefined;
-	readonly lastUpdatedDate?: string | undefined;
-	readonly provisioningState?: ("Cancelled" | "Failed" | "Succeeded") | undefined;
+	readonly createdDate?: string;
+	readonly lastUpdatedDate?: string;
+	readonly provisioningState?: "Cancelled" | "Failed" | "Succeeded";
 }
 export interface Sku {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export default {
 	hybridUseBenefits: hybridUseBenefits,

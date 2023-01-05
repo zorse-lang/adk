@@ -15,62 +15,62 @@ export interface BucketComponentOutputs {
 }
 export interface BucketComponentInputs {
 	readonly BucketName: string;
-	readonly AccessControl?: (string | undefined) | undefined;
-	readonly CORSConfiguration?: (CORSConfiguration | undefined) | undefined;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly LifecycleConfiguration?: (LifecycleConfiguration | undefined) | undefined;
-	readonly LoggingConfiguration?: (LoggingConfiguration | undefined) | undefined;
-	readonly Policy?: ({ [key: string]: any } | undefined) | undefined;
-	readonly RefererConfiguration?: (RefererConfiguration | undefined) | undefined;
-	readonly ServerSideEncryptionConfiguration?: (ServerSideEncryptionConfiguration | undefined) | undefined;
-	readonly StorageClass?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: any } | undefined) | undefined;
-	readonly WebsiteConfiguration?: (WebsiteConfiguration | undefined) | undefined;
+	readonly AccessControl?: string | undefined;
+	readonly CORSConfiguration?: CORSConfiguration | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly LifecycleConfiguration?: LifecycleConfiguration | undefined;
+	readonly LoggingConfiguration?: LoggingConfiguration | undefined;
+	readonly Policy?: { [key: string]: any } | undefined;
+	readonly RefererConfiguration?: RefererConfiguration | undefined;
+	readonly ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration | undefined;
+	readonly StorageClass?: string | undefined;
+	readonly Tags?: { [key: string]: any } | undefined;
+	readonly WebsiteConfiguration?: WebsiteConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export interface AbortMultipartUpload {
-	readonly CreatedBeforeDate?: (string | undefined) | undefined;
-	readonly Days?: (number | undefined) | undefined;
+	readonly CreatedBeforeDate?: string | undefined;
+	readonly Days?: number | undefined;
 }
 export interface CORSConfiguration {
-	readonly CORSRule?: (CORSRule[] | undefined) | undefined;
+	readonly CORSRule?: CORSRule[] | undefined;
 }
 export interface CORSRule {
-	readonly AllowedMethod?: (string[] | undefined) | undefined;
-	readonly MaxAgeSeconds?: (number | undefined) | undefined;
-	readonly ExposeHeader?: (string[] | undefined) | undefined;
-	readonly AllowedOrigin?: (string[] | undefined) | undefined;
-	readonly AllowedHeader?: (string[] | undefined) | undefined;
+	readonly AllowedMethod?: string[] | undefined;
+	readonly MaxAgeSeconds?: number | undefined;
+	readonly ExposeHeader?: string[] | undefined;
+	readonly AllowedOrigin?: string[] | undefined;
+	readonly AllowedHeader?: string[] | undefined;
 }
 export interface Expiration {
-	readonly CreatedBeforeDate?: (string | undefined) | undefined;
-	readonly Days?: (number | undefined) | undefined;
+	readonly CreatedBeforeDate?: string | undefined;
+	readonly Days?: number | undefined;
 }
 export interface LifecycleConfiguration {
 	readonly Rule: Rule[];
 }
 export interface LoggingConfiguration {
-	readonly TargetPrefix?: (string | undefined) | undefined;
-	readonly TargetBucket?: (string | undefined) | undefined;
+	readonly TargetPrefix?: string | undefined;
+	readonly TargetBucket?: string | undefined;
 }
 export interface RefererConfiguration {
-	readonly RefererList?: (any[] | undefined) | undefined;
-	readonly AllowEmptyReferer?: (boolean | undefined) | undefined;
+	readonly RefererList?: any[] | undefined;
+	readonly AllowEmptyReferer?: boolean | undefined;
 }
 export interface Rule {
-	readonly Status?: (string | undefined) | undefined;
-	readonly AbortMultipartUpload?: (AbortMultipartUpload | undefined) | undefined;
-	readonly Expiration?: (Expiration | undefined) | undefined;
+	readonly Status?: string | undefined;
+	readonly AbortMultipartUpload?: AbortMultipartUpload | undefined;
+	readonly Expiration?: Expiration | undefined;
 	readonly Prefix: string;
-	readonly ID?: (string | undefined) | undefined;
+	readonly ID?: string | undefined;
 }
 export interface ServerSideEncryptionConfiguration {
 	readonly SSEAlgorithm: string;
-	readonly KMSMasterKeyID?: (string | undefined) | undefined;
+	readonly KMSMasterKeyID?: string | undefined;
 }
 export interface WebsiteConfiguration {
-	readonly IndexDocument?: (string | undefined) | undefined;
-	readonly ErrorDocument?: (string | undefined) | undefined;
+	readonly IndexDocument?: string | undefined;
+	readonly ErrorDocument?: string | undefined;
 }
 export default {
 	Bucket: Bucket,

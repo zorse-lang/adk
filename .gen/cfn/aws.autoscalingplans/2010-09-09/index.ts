@@ -17,22 +17,22 @@ export interface ScalingPlanComponentInputs {
 	readonly LogicalId: string;
 }
 export interface ApplicationSource {
-	readonly CloudFormationStackARN?: (string | undefined) | undefined;
-	readonly TagFilters?: (TagFilter[] | undefined) | undefined;
+	readonly CloudFormationStackARN?: string | undefined;
+	readonly TagFilters?: TagFilter[] | undefined;
 }
 export interface CustomizedLoadMetricSpecification {
-	readonly Dimensions?: (MetricDimension[] | undefined) | undefined;
+	readonly Dimensions?: MetricDimension[] | undefined;
 	readonly MetricName: string;
 	readonly Namespace: string;
 	readonly Statistic: string;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly Unit?: string | undefined;
 }
 export interface CustomizedScalingMetricSpecification {
-	readonly Dimensions?: (MetricDimension[] | undefined) | undefined;
+	readonly Dimensions?: MetricDimension[] | undefined;
 	readonly MetricName: string;
 	readonly Namespace: string;
 	readonly Statistic: string;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly Unit?: string | undefined;
 }
 export interface MetricDimension {
 	readonly Name: string;
@@ -40,39 +40,39 @@ export interface MetricDimension {
 }
 export interface PredefinedLoadMetricSpecification {
 	readonly PredefinedLoadMetricType: string;
-	readonly ResourceLabel?: (string | undefined) | undefined;
+	readonly ResourceLabel?: string | undefined;
 }
 export interface PredefinedScalingMetricSpecification {
 	readonly PredefinedScalingMetricType: string;
-	readonly ResourceLabel?: (string | undefined) | undefined;
+	readonly ResourceLabel?: string | undefined;
 }
 export interface ScalingInstruction {
-	readonly CustomizedLoadMetricSpecification?: (CustomizedLoadMetricSpecification | undefined) | undefined;
-	readonly DisableDynamicScaling?: (boolean | undefined) | undefined;
+	readonly CustomizedLoadMetricSpecification?: CustomizedLoadMetricSpecification | undefined;
+	readonly DisableDynamicScaling?: boolean | undefined;
 	readonly MaxCapacity: number;
 	readonly MinCapacity: number;
-	readonly PredefinedLoadMetricSpecification?: (PredefinedLoadMetricSpecification | undefined) | undefined;
-	readonly PredictiveScalingMaxCapacityBehavior?: (string | undefined) | undefined;
-	readonly PredictiveScalingMaxCapacityBuffer?: (number | undefined) | undefined;
-	readonly PredictiveScalingMode?: (string | undefined) | undefined;
+	readonly PredefinedLoadMetricSpecification?: PredefinedLoadMetricSpecification | undefined;
+	readonly PredictiveScalingMaxCapacityBehavior?: string | undefined;
+	readonly PredictiveScalingMaxCapacityBuffer?: number | undefined;
+	readonly PredictiveScalingMode?: string | undefined;
 	readonly ResourceId: string;
 	readonly ScalableDimension: string;
-	readonly ScalingPolicyUpdateBehavior?: (string | undefined) | undefined;
-	readonly ScheduledActionBufferTime?: (number | undefined) | undefined;
+	readonly ScalingPolicyUpdateBehavior?: string | undefined;
+	readonly ScheduledActionBufferTime?: number | undefined;
 	readonly ServiceNamespace: string;
 	readonly TargetTrackingConfigurations: TargetTrackingConfiguration[];
 }
 export interface TagFilter {
 	readonly Key: string;
-	readonly Values?: (string[] | undefined) | undefined;
+	readonly Values?: string[] | undefined;
 }
 export interface TargetTrackingConfiguration {
-	readonly CustomizedScalingMetricSpecification?: (CustomizedScalingMetricSpecification | undefined) | undefined;
-	readonly DisableScaleIn?: (boolean | undefined) | undefined;
-	readonly EstimatedInstanceWarmup?: (number | undefined) | undefined;
-	readonly PredefinedScalingMetricSpecification?: (PredefinedScalingMetricSpecification | undefined) | undefined;
-	readonly ScaleInCooldown?: (number | undefined) | undefined;
-	readonly ScaleOutCooldown?: (number | undefined) | undefined;
+	readonly CustomizedScalingMetricSpecification?: CustomizedScalingMetricSpecification | undefined;
+	readonly DisableScaleIn?: boolean | undefined;
+	readonly EstimatedInstanceWarmup?: number | undefined;
+	readonly PredefinedScalingMetricSpecification?: PredefinedScalingMetricSpecification | undefined;
+	readonly ScaleInCooldown?: number | undefined;
+	readonly ScaleOutCooldown?: number | undefined;
 	readonly TargetValue: number;
 }
 export default {

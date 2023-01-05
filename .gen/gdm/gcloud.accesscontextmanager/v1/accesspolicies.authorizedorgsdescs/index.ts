@@ -10,20 +10,19 @@ export class AccessPoliciesAuthorizedOrgsDescs
 }
 export interface AccessPoliciesAuthorizedOrgsDescsComponentOutputs {}
 export interface AccessPoliciesAuthorizedOrgsDescsComponentInputs {
-	readonly assetType?: string | undefined;
-	readonly authorizationDirection?: string | undefined;
-	readonly authorizationType?: string | undefined;
+	readonly assetType?: string;
+	readonly authorizationDirection?: string;
+	readonly authorizationType?: string;
 	readonly name: string;
-	readonly orgs?: string[] | undefined;
+	readonly orgs?: string[];
 	readonly parent: string;
-	readonly type: string;
 }
 export interface AuthorizedOrgsDesc {
-	readonly assetType?: string | undefined;
-	readonly authorizationDirection?: string | undefined;
-	readonly authorizationType?: string | undefined;
-	readonly name?: string | undefined;
-	readonly orgs?: string[] | undefined;
+	readonly assetType?: string;
+	readonly authorizationDirection?: string;
+	readonly authorizationType?: string;
+	readonly name?: string;
+	readonly orgs?: string[];
 }
 export default {
 	AccessPoliciesAuthorizedOrgsDescs: AccessPoliciesAuthorizedOrgsDescs,

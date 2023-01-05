@@ -29,14 +29,14 @@ export interface ApplicationInstanceComponentOutputs {
 export interface ApplicationInstanceComponentInputs {
 	readonly DefaultRuntimeContextDevice: string;
 	readonly ManifestPayload: ManifestPayload;
-	readonly ApplicationInstanceIdToReplace?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DeviceId?: (string | undefined) | undefined;
-	readonly ManifestOverridesPayload?: (ManifestOverridesPayload | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly RuntimeRoleArn?: (string | undefined) | undefined;
-	readonly StatusFilter?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ApplicationInstanceIdToReplace?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DeviceId?: string | undefined;
+	readonly ManifestOverridesPayload?: ManifestOverridesPayload | undefined;
+	readonly Name?: string | undefined;
+	readonly RuntimeRoleArn?: string | undefined;
+	readonly StatusFilter?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Package extends CfnResource<PackageComponentInputs> implements PackageComponentOutputs {
@@ -64,8 +64,8 @@ export interface PackageComponentOutputs {
 }
 export interface PackageComponentInputs {
 	readonly PackageName: string;
-	readonly StorageLocation?: (StorageLocation | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly StorageLocation?: StorageLocation | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class PackageVersion extends CfnResource<PackageVersionComponentInputs> implements PackageVersionComponentOutputs {
@@ -91,23 +91,23 @@ export interface PackageVersionComponentInputs {
 	readonly PackageId: string;
 	readonly PackageVersion: string;
 	readonly PatchVersion: string;
-	readonly MarkLatest?: (boolean | undefined) | undefined;
-	readonly OwnerAccount?: (string | undefined) | undefined;
-	readonly UpdatedLatestPatchVersion?: (string | undefined) | undefined;
+	readonly MarkLatest?: boolean | undefined;
+	readonly OwnerAccount?: string | undefined;
+	readonly UpdatedLatestPatchVersion?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface ManifestOverridesPayload {
-	readonly PayloadData?: (string | undefined) | undefined;
+	readonly PayloadData?: string | undefined;
 }
 export interface ManifestPayload {
-	readonly PayloadData?: (string | undefined) | undefined;
+	readonly PayloadData?: string | undefined;
 }
 export interface StorageLocation {
-	readonly BinaryPrefixLocation?: (string | undefined) | undefined;
-	readonly Bucket?: (string | undefined) | undefined;
-	readonly GeneratedPrefixLocation?: (string | undefined) | undefined;
-	readonly ManifestPrefixLocation?: (string | undefined) | undefined;
-	readonly RepoPrefixLocation?: (string | undefined) | undefined;
+	readonly BinaryPrefixLocation?: string | undefined;
+	readonly Bucket?: string | undefined;
+	readonly GeneratedPrefixLocation?: string | undefined;
+	readonly ManifestPrefixLocation?: string | undefined;
+	readonly RepoPrefixLocation?: string | undefined;
 }
 export default {
 	ApplicationInstance: ApplicationInstance,

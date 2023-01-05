@@ -17,9 +17,9 @@ export interface dataCollectionRuleAssociationsComponentOutputs {
 	readonly type: "Microsoft.Insights/dataCollectionRuleAssociations";
 }
 export interface dataCollectionRuleAssociationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: DataCollectionRuleAssociationProxyOnlyResourceProperties | undefined;
+	readonly properties?: DataCollectionRuleAssociationProxyOnlyResourceProperties;
 }
 export class dataCollectionRules
 	extends ArmResource<dataCollectionRulesComponentInputs>
@@ -38,116 +38,105 @@ export interface dataCollectionRulesComponentOutputs {
 	readonly type: "Microsoft.Insights/dataCollectionRules";
 }
 export interface dataCollectionRulesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: ("Linux" | "Windows") | undefined;
+	readonly etag?: string;
+	readonly kind?: "Linux" | "Windows";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DataCollectionRuleResourceProperties | undefined;
-	readonly tags?: DataCollectionRuleResourceTags | undefined;
+	readonly properties?: DataCollectionRuleResourceProperties;
+	readonly tags?: DataCollectionRuleResourceTags;
 }
 export interface DataCollectionRuleAssociationProxyOnlyResourceProperties {
-	readonly dataCollectionRuleId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly dataCollectionRuleId?: string;
+	readonly description?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface DataCollectionRuleDataSources {
-	readonly extensions?: ExtensionDataSource[] | undefined;
-	readonly performanceCounters?: PerfCounterDataSource[] | undefined;
-	readonly syslog?: SyslogDataSource[] | undefined;
-	readonly windowsEventLogs?: WindowsEventLogDataSource[] | undefined;
+	readonly extensions?: ExtensionDataSource[];
+	readonly performanceCounters?: PerfCounterDataSource[];
+	readonly syslog?: SyslogDataSource[];
+	readonly windowsEventLogs?: WindowsEventLogDataSource[];
 }
 export interface DataCollectionRuleDestinations {
-	readonly azureMonitorMetrics?: DestinationsSpecAzureMonitorMetrics | undefined;
-	readonly logAnalytics?: LogAnalyticsDestination[] | undefined;
+	readonly azureMonitorMetrics?: DestinationsSpecAzureMonitorMetrics;
+	readonly logAnalytics?: LogAnalyticsDestination[];
 }
 export interface DataCollectionRuleResourceProperties {
-	readonly dataFlows?: DataFlow[] | undefined;
-	readonly dataSources?: DataCollectionRuleDataSources | undefined;
-	readonly description?: string | undefined;
-	readonly destinations?: DataCollectionRuleDestinations | undefined;
-	readonly immutableId?: string | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly dataFlows?: DataFlow[];
+	readonly dataSources?: DataCollectionRuleDataSources;
+	readonly description?: string;
+	readonly destinations?: DataCollectionRuleDestinations;
+	readonly immutableId?: string;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface DataCollectionRuleResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DataFlow {
-	readonly destinations?: string[] | undefined;
+	readonly destinations?: string[];
 	readonly streams?:
-		| (
-				| "Microsoft-Event"
-				| "Microsoft-InsightsMetrics"
-				| "Microsoft-Perf"
-				| "Microsoft-Syslog"
-				| "Microsoft-WindowsEvent"[]
-		  )
-		| undefined;
+		| "Microsoft-Event"
+		| "Microsoft-InsightsMetrics"
+		| "Microsoft-Perf"
+		| "Microsoft-Syslog"
+		| "Microsoft-WindowsEvent"[];
 }
 export interface DestinationsSpecAzureMonitorMetrics {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface ExtensionDataSource {
 	readonly extensionName: string;
-	readonly extensionSettings?: any | undefined;
-	readonly inputDataSources?: string[] | undefined;
-	readonly name?: string | undefined;
+	readonly extensionSettings?: any;
+	readonly inputDataSources?: string[];
+	readonly name?: string;
 	readonly streams?:
-		| (
-				| "Microsoft-Event"
-				| "Microsoft-InsightsMetrics"
-				| "Microsoft-Perf"
-				| "Microsoft-Syslog"
-				| "Microsoft-WindowsEvent"[]
-		  )
-		| undefined;
+		| "Microsoft-Event"
+		| "Microsoft-InsightsMetrics"
+		| "Microsoft-Perf"
+		| "Microsoft-Syslog"
+		| "Microsoft-WindowsEvent"[];
 }
 export interface LogAnalyticsDestination {
-	readonly name?: string | undefined;
-	readonly workspaceId?: string | undefined;
-	readonly workspaceResourceId?: string | undefined;
+	readonly name?: string;
+	readonly workspaceId?: string;
+	readonly workspaceResourceId?: string;
 }
 export interface PerfCounterDataSource {
-	readonly counterSpecifiers?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly samplingFrequencyInSeconds?: number | undefined;
-	readonly streams?: ("Microsoft-InsightsMetrics" | "Microsoft-Perf"[]) | undefined;
+	readonly counterSpecifiers?: string[];
+	readonly name?: string;
+	readonly samplingFrequencyInSeconds?: number;
+	readonly streams?: "Microsoft-InsightsMetrics" | "Microsoft-Perf"[];
 }
 export interface SyslogDataSource {
 	readonly facilityNames?:
-		| (
-				| "*"
-				| "auth"
-				| "authpriv"
-				| "cron"
-				| "daemon"
-				| "kern"
-				| "local0"
-				| "local1"
-				| "local2"
-				| "local3"
-				| "local4"
-				| "local5"
-				| "local6"
-				| "local7"
-				| "lpr"
-				| "mail"
-				| "mark"
-				| "news"
-				| "syslog"
-				| "user"
-				| "uucp"[]
-		  )
-		| undefined;
-	readonly logLevels?:
-		| ("*" | "Alert" | "Critical" | "Debug" | "Emergency" | "Error" | "Info" | "Notice" | "Warning"[])
-		| undefined;
-	readonly name?: string | undefined;
-	readonly streams?: "Microsoft-Syslog"[] | undefined;
+		| "*"
+		| "auth"
+		| "authpriv"
+		| "cron"
+		| "daemon"
+		| "kern"
+		| "local0"
+		| "local1"
+		| "local2"
+		| "local3"
+		| "local4"
+		| "local5"
+		| "local6"
+		| "local7"
+		| "lpr"
+		| "mail"
+		| "mark"
+		| "news"
+		| "syslog"
+		| "user"
+		| "uucp"[];
+	readonly logLevels?: "*" | "Alert" | "Critical" | "Debug" | "Emergency" | "Error" | "Info" | "Notice" | "Warning"[];
+	readonly name?: string;
+	readonly streams?: "Microsoft-Syslog"[];
 }
 export interface WindowsEventLogDataSource {
-	readonly name?: string | undefined;
-	readonly streams?: ("Microsoft-Event" | "Microsoft-WindowsEvent"[]) | undefined;
-	readonly xPathQueries?: string[] | undefined;
+	readonly name?: string;
+	readonly streams?: "Microsoft-Event" | "Microsoft-WindowsEvent"[];
+	readonly xPathQueries?: string[];
 }
 export default {
 	dataCollectionRuleAssociations: dataCollectionRuleAssociations,

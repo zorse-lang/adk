@@ -27,8 +27,8 @@ export interface CustomResourceComponentOutputs {
 export interface CustomResourceComponentInputs {
 	readonly ServiceToken: string;
 	readonly Timeout: number;
-	readonly HttpConfig?: (HttpConfig | undefined) | undefined;
-	readonly Parameters?: ({ [key: string]: any } | undefined) | undefined;
+	readonly HttpConfig?: HttpConfig | undefined;
+	readonly Parameters?: { [key: string]: any } | undefined;
 	readonly LogicalId: string;
 }
 export class ResourceCleaner
@@ -57,16 +57,16 @@ export interface ResourceCleanerComponentOutputs {
 }
 export interface ResourceCleanerComponentInputs {
 	readonly Action: string;
-	readonly CleanUpAlgorithm?: (string | undefined) | undefined;
-	readonly CleanUpRetryCount?: (number | undefined) | undefined;
-	readonly CleanUpTimeout?: (number | undefined) | undefined;
-	readonly DisabledSideEffects?: (string[] | undefined) | undefined;
-	readonly ExcludedResources?: (ExcludedResources[] | undefined) | undefined;
-	readonly FailureOption?: (string | undefined) | undefined;
-	readonly Mode?: (string | undefined) | undefined;
-	readonly ResourceFilters?: (ResourceFilters[] | undefined) | undefined;
-	readonly Resources?: (Resources[] | undefined) | undefined;
-	readonly ResourceTypeOrder?: (string[] | undefined) | undefined;
+	readonly CleanUpAlgorithm?: string | undefined;
+	readonly CleanUpRetryCount?: number | undefined;
+	readonly CleanUpTimeout?: number | undefined;
+	readonly DisabledSideEffects?: string[] | undefined;
+	readonly ExcludedResources?: ExcludedResources[] | undefined;
+	readonly FailureOption?: string | undefined;
+	readonly Mode?: string | undefined;
+	readonly ResourceFilters?: ResourceFilters[] | undefined;
+	readonly Resources?: Resources[] | undefined;
+	readonly ResourceTypeOrder?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class Sleep extends RosResource<SleepComponentInputs> implements SleepComponentOutputs {
@@ -76,11 +76,11 @@ export class Sleep extends RosResource<SleepComponentInputs> implements SleepCom
 }
 export interface SleepComponentOutputs {}
 export interface SleepComponentInputs {
-	readonly CreateDuration?: (number | undefined) | undefined;
-	readonly DeleteDuration?: (number | undefined) | undefined;
-	readonly Triggers?: ({ [key: string]: any } | undefined) | undefined;
-	readonly UpdateDuration?: (number | undefined) | undefined;
-	readonly UpdateRollbackDuration?: (number | undefined) | undefined;
+	readonly CreateDuration?: number | undefined;
+	readonly DeleteDuration?: number | undefined;
+	readonly Triggers?: { [key: string]: any } | undefined;
+	readonly UpdateDuration?: number | undefined;
+	readonly UpdateRollbackDuration?: number | undefined;
 	readonly LogicalId: string;
 }
 export class Stack extends RosResource<StackComponentInputs> implements StackComponentOutputs {
@@ -90,13 +90,13 @@ export class Stack extends RosResource<StackComponentInputs> implements StackCom
 }
 export interface StackComponentOutputs {}
 export interface StackComponentInputs {
-	readonly Parameters?: ({ [key: string]: any } | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly TemplateBody?: ({ [key: string]: any } | undefined) | undefined;
-	readonly TemplateId?: (string | undefined) | undefined;
-	readonly TemplateURL?: (string | undefined) | undefined;
-	readonly TemplateVersion?: (string | undefined) | undefined;
-	readonly TimeoutMins?: (number | undefined) | undefined;
+	readonly Parameters?: { [key: string]: any } | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly TemplateBody?: { [key: string]: any } | undefined;
+	readonly TemplateId?: string | undefined;
+	readonly TemplateURL?: string | undefined;
+	readonly TemplateVersion?: string | undefined;
+	readonly TimeoutMins?: number | undefined;
 	readonly LogicalId: string;
 }
 export class StackGroup extends RosResource<StackGroupComponentInputs> implements StackGroupComponentOutputs {
@@ -110,18 +110,18 @@ export interface StackGroupComponentOutputs {
 }
 export interface StackGroupComponentInputs {
 	readonly StackGroupName: string;
-	readonly AdministrationRoleName?: (string | undefined) | undefined;
-	readonly AutoDeployment?: (AutoDeployment | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DynamicTemplateBody?: ({ [key: string]: any } | undefined) | undefined;
-	readonly ExecutionRoleName?: (string | undefined) | undefined;
-	readonly Parameters?: ({ [key: string]: any } | undefined) | undefined;
-	readonly PermissionModel?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly TemplateBody?: ({ [key: string]: any } | undefined) | undefined;
-	readonly TemplateId?: (string | undefined) | undefined;
-	readonly TemplateURL?: (string | undefined) | undefined;
-	readonly TemplateVersion?: (string | undefined) | undefined;
+	readonly AdministrationRoleName?: string | undefined;
+	readonly AutoDeployment?: AutoDeployment | undefined;
+	readonly Description?: string | undefined;
+	readonly DynamicTemplateBody?: { [key: string]: any } | undefined;
+	readonly ExecutionRoleName?: string | undefined;
+	readonly Parameters?: { [key: string]: any } | undefined;
+	readonly PermissionModel?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly TemplateBody?: { [key: string]: any } | undefined;
+	readonly TemplateId?: string | undefined;
+	readonly TemplateURL?: string | undefined;
+	readonly TemplateVersion?: string | undefined;
 	readonly LogicalId: string;
 }
 export class StackInstances extends RosResource<StackInstancesComponentInputs> implements StackInstancesComponentOutputs {
@@ -138,14 +138,14 @@ export interface StackInstancesComponentOutputs {
 export interface StackInstancesComponentInputs {
 	readonly RegionIds: string[];
 	readonly StackGroupName: string;
-	readonly AccountIds?: (string[] | undefined) | undefined;
-	readonly DeploymentTargets?: (DeploymentTargets | undefined) | undefined;
-	readonly DisableRollback?: (boolean | undefined) | undefined;
-	readonly OperationDescription?: (string | undefined) | undefined;
-	readonly OperationPreferences?: (OperationPreferences | undefined) | undefined;
-	readonly ParameterOverrides?: ({ [key: string]: any } | undefined) | undefined;
-	readonly RetainStacks?: (boolean | undefined) | undefined;
-	readonly TimeoutInMinutes?: (number | undefined) | undefined;
+	readonly AccountIds?: string[] | undefined;
+	readonly DeploymentTargets?: DeploymentTargets | undefined;
+	readonly DisableRollback?: boolean | undefined;
+	readonly OperationDescription?: string | undefined;
+	readonly OperationPreferences?: OperationPreferences | undefined;
+	readonly ParameterOverrides?: { [key: string]: any } | undefined;
+	readonly RetainStacks?: boolean | undefined;
+	readonly TimeoutInMinutes?: number | undefined;
 	readonly LogicalId: string;
 }
 export class WaitCondition extends RosResource<WaitConditionComponentInputs> implements WaitConditionComponentOutputs {
@@ -164,8 +164,8 @@ export interface WaitConditionComponentOutputs {
 export interface WaitConditionComponentInputs {
 	readonly Handle: string;
 	readonly Timeout: number;
-	readonly Count?: (number | undefined) | undefined;
-	readonly ShowProgressEvent?: (string | undefined) | undefined;
+	readonly Count?: number | undefined;
+	readonly ShowProgressEvent?: string | undefined;
 	readonly LogicalId: string;
 }
 export class WaitConditionHandle
@@ -189,29 +189,29 @@ export interface WaitConditionHandleComponentOutputs {
 	readonly PowerShellCurlCli: any;
 }
 export interface WaitConditionHandleComponentInputs {
-	readonly Count?: (number | undefined) | undefined;
-	readonly Mode?: (string | undefined) | undefined;
+	readonly Count?: number | undefined;
+	readonly Mode?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface HttpConfig {
-	readonly SignKey?: (string | undefined) | undefined;
-	readonly ContentType?: (string | undefined) | undefined;
-	readonly Headers?: ({ [key: string]: any } | undefined) | undefined;
+	readonly SignKey?: string | undefined;
+	readonly ContentType?: string | undefined;
+	readonly Headers?: { [key: string]: any } | undefined;
 }
 export interface ExcludedResources {
 	readonly ResourceId: string;
-	readonly ResourceType?: (string | undefined) | undefined;
-	readonly RegionId?: (string | undefined) | undefined;
+	readonly ResourceType?: string | undefined;
+	readonly RegionId?: string | undefined;
 }
 export interface ResourceFilters {
-	readonly IncludeDeletionProtection?: (boolean | undefined) | undefined;
-	readonly ResourceTypePatterns?: (string[] | undefined) | undefined;
-	readonly ResourceIds?: (string[] | undefined) | undefined;
-	readonly RegionIds?: (string[] | undefined) | undefined;
-	readonly ResourceGroupIds?: (string[] | undefined) | undefined;
-	readonly Effect?: (string | undefined) | undefined;
-	readonly ResourceNamePatterns?: (string[] | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly IncludeDeletionProtection?: boolean | undefined;
+	readonly ResourceTypePatterns?: string[] | undefined;
+	readonly ResourceIds?: string[] | undefined;
+	readonly RegionIds?: string[] | undefined;
+	readonly ResourceGroupIds?: string[] | undefined;
+	readonly Effect?: string | undefined;
+	readonly ResourceNamePatterns?: string[] | undefined;
+	readonly Tags?: Tags[] | undefined;
 }
 export interface Resources {
 	readonly ResourceId: string;
@@ -219,21 +219,21 @@ export interface Resources {
 	readonly RegionId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface AutoDeployment {
 	readonly Enabled: boolean;
-	readonly RetainStacksOnAccountRemoval?: (boolean | undefined) | undefined;
+	readonly RetainStacksOnAccountRemoval?: boolean | undefined;
 }
 export interface DeploymentTargets {
-	readonly RdFolderIds?: (string[] | undefined) | undefined;
+	readonly RdFolderIds?: string[] | undefined;
 }
 export interface OperationPreferences {
-	readonly MaxConcurrentPercentage?: (number | undefined) | undefined;
-	readonly MaxConcurrentCount?: (number | undefined) | undefined;
-	readonly FailureTolerancePercentage?: (number | undefined) | undefined;
-	readonly FailureToleranceCount?: (number | undefined) | undefined;
+	readonly MaxConcurrentPercentage?: number | undefined;
+	readonly MaxConcurrentCount?: number | undefined;
+	readonly FailureTolerancePercentage?: number | undefined;
+	readonly FailureToleranceCount?: number | undefined;
 }
 export default {
 	AutoEnableService: AutoEnableService,

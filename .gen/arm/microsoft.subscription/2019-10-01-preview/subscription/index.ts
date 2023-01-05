@@ -15,13 +15,13 @@ export interface aliasesComponentOutputs {
 }
 export interface aliasesComponentInputs {
 	readonly name: string;
-	readonly properties?: PutAliasRequestPropertiesOrPutAliasResponseProperties | undefined;
+	readonly properties?: PutAliasRequestPropertiesOrPutAliasResponseProperties;
 }
 export interface PutAliasRequestPropertiesOrPutAliasResponseProperties {
 	readonly billingScope: string;
 	readonly displayName: string;
-	readonly provisioningState?: ("Accepted" | "Failed" | "Succeeded") | undefined;
-	readonly subscriptionId?: string | undefined;
+	readonly provisioningState?: "Accepted" | "Failed" | "Succeeded";
+	readonly subscriptionId?: string;
 	readonly workload: "DevTest" | "Production";
 }
 export default {

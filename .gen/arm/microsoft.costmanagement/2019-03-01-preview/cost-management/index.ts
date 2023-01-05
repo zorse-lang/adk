@@ -17,9 +17,9 @@ export interface cloudConnectorsComponentOutputs {
 	readonly type: "Microsoft.CostManagement/cloudConnectors";
 }
 export interface cloudConnectorsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly properties?: ConnectorProperties | undefined;
+	readonly properties?: ConnectorProperties;
 }
 export class externalBillingAccounts
 	extends ArmResource<externalBillingAccountsComponentInputs>
@@ -38,9 +38,9 @@ export interface externalBillingAccountsComponentOutputs {
 	readonly type: "Microsoft.CostManagement/externalBillingAccounts";
 }
 export interface externalBillingAccountsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly properties?: ExternalBillingAccountProperties | undefined;
+	readonly properties?: ExternalBillingAccountProperties;
 }
 export class externalSubscriptions
 	extends ArmResource<externalSubscriptionsComponentInputs>
@@ -76,68 +76,68 @@ export interface showbackRulesComponentOutputs {
 }
 export interface showbackRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: ShowbackRuleProperties | undefined;
+	readonly properties?: ShowbackRuleProperties;
 }
 export interface ConnectorCollectionErrorInfo {
-	readonly errorCode?: string | undefined;
-	readonly errorInnerMessage?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly errorStartTime?: string | undefined;
+	readonly errorCode?: string;
+	readonly errorInnerMessage?: string;
+	readonly errorMessage?: string;
+	readonly errorStartTime?: string;
 }
 export interface ConnectorCollectionInfo {
-	readonly error?: ConnectorCollectionErrorInfo | undefined;
-	readonly lastChecked?: string | undefined;
-	readonly lastUpdated?: string | undefined;
-	readonly sourceLastUpdated?: string | undefined;
+	readonly error?: ConnectorCollectionErrorInfo;
+	readonly lastChecked?: string;
+	readonly lastUpdated?: string;
+	readonly sourceLastUpdated?: string;
 }
 export interface ConnectorProperties {
-	readonly billingModel?: ("autoUpgrade" | "expired" | "premium" | "trial") | undefined;
-	readonly collectionInfo?: ConnectorCollectionInfo | undefined;
-	readonly createdOn?: string | undefined;
-	readonly credentialsKey?: string | undefined;
-	readonly credentialsSecret?: string | undefined;
-	readonly daysTrialRemaining?: number | undefined;
-	readonly defaultManagementGroupId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly externalBillingAccountId?: string | undefined;
-	readonly modifiedOn?: string | undefined;
-	readonly providerBillingAccountDisplayName?: string | undefined;
-	readonly providerBillingAccountId?: string | undefined;
-	readonly reportId?: string | undefined;
-	readonly status?: ("active" | "error" | "expired" | "warning") | undefined;
-	readonly subscriptionId?: string | undefined;
+	readonly billingModel?: "autoUpgrade" | "expired" | "premium" | "trial";
+	readonly collectionInfo?: ConnectorCollectionInfo;
+	readonly createdOn?: string;
+	readonly credentialsKey?: string;
+	readonly credentialsSecret?: string;
+	readonly daysTrialRemaining?: number;
+	readonly defaultManagementGroupId?: string;
+	readonly displayName?: string;
+	readonly externalBillingAccountId?: string;
+	readonly modifiedOn?: string;
+	readonly providerBillingAccountDisplayName?: string;
+	readonly providerBillingAccountId?: string;
+	readonly reportId?: string;
+	readonly status?: "active" | "error" | "expired" | "warning";
+	readonly subscriptionId?: string;
 }
 export interface CostAllocationDetails {
-	readonly policy?: ("Evenly" | "Fixed" | "Proportional") | undefined;
+	readonly policy?: "Evenly" | "Fixed" | "Proportional";
 }
 export interface CustomPriceDetails {
-	readonly benefits?: ("AHUB" | "All" | "None" | "Reservations" | "Sum"[]) | undefined;
-	readonly markups?: Markup[] | undefined;
-	readonly pricesheet?: string | undefined;
+	readonly benefits?: "AHUB" | "All" | "None" | "Reservations" | "Sum"[];
+	readonly markups?: Markup[];
+	readonly pricesheet?: string;
 }
 export interface ExternalBillingAccountProperties {
-	readonly collectionInfo?: ConnectorCollectionInfo | undefined;
-	readonly connectorId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly providerBillingAccountId?: string | undefined;
+	readonly collectionInfo?: ConnectorCollectionInfo;
+	readonly connectorId?: string;
+	readonly displayName?: string;
+	readonly providerBillingAccountId?: string;
 }
 export interface Markup {
-	readonly percentage?: string | undefined;
+	readonly percentage?: string;
 }
 export interface Scope {
-	readonly childScope?: Scope | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly childScope?: Scope;
+	readonly id?: string;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface ShowbackRuleProperties {
-	readonly creationTime?: string | undefined;
-	readonly deprecationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly modificationTime?: string | undefined;
-	readonly scopes?: Scope[] | undefined;
-	readonly status?: ("Active" | "NotActive") | undefined;
-	readonly version?: number | undefined;
+	readonly creationTime?: string;
+	readonly deprecationTime?: string;
+	readonly description?: string;
+	readonly modificationTime?: string;
+	readonly scopes?: Scope[];
+	readonly status?: "Active" | "NotActive";
+	readonly version?: number;
 }
 export default {
 	cloudConnectors: cloudConnectors,

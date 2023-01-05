@@ -19,18 +19,18 @@ export interface containerServicesComponentOutputs {
 export interface containerServicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ContainerServiceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ContainerServiceProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ContainerServiceAgentPoolProfile {
-	readonly count?: number | undefined;
-	readonly dnsPrefix?: string | undefined;
-	readonly fqdn?: string | undefined;
+	readonly count?: number;
+	readonly dnsPrefix?: string;
+	readonly fqdn?: string;
 	readonly name: string;
-	readonly osDiskSizeGB?: number | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly ports?: number[] | undefined;
-	readonly storageProfile?: ("ManagedDisks" | "StorageAccount") | undefined;
+	readonly osDiskSizeGB?: number;
+	readonly osType?: "Linux" | "Windows";
+	readonly ports?: number[];
+	readonly storageProfile?: "ManagedDisks" | "StorageAccount";
 	readonly vmSize:
 		| "Standard_A1"
 		| "Standard_A10"
@@ -206,7 +206,7 @@ export interface ContainerServiceAgentPoolProfile {
 		| "Standard_NV12"
 		| "Standard_NV24"
 		| "Standard_NV6";
-	readonly vnetSubnetID?: string | undefined;
+	readonly vnetSubnetID?: string;
 }
 export interface ContainerServiceCustomProfile {
 	readonly orchestrator: string;
@@ -219,12 +219,12 @@ export interface ContainerServiceLinuxProfile {
 	readonly ssh: ContainerServiceSshConfiguration;
 }
 export interface ContainerServiceMasterProfile {
-	readonly count?: number | undefined;
+	readonly count?: number;
 	readonly dnsPrefix: string;
-	readonly firstConsecutiveStaticIP?: string | undefined;
-	readonly fqdn?: string | undefined;
-	readonly osDiskSizeGB?: number | undefined;
-	readonly storageProfile?: ("ManagedDisks" | "StorageAccount") | undefined;
+	readonly firstConsecutiveStaticIP?: string;
+	readonly fqdn?: string;
+	readonly osDiskSizeGB?: number;
+	readonly storageProfile?: "ManagedDisks" | "StorageAccount";
 	readonly vmSize:
 		| "Standard_A1"
 		| "Standard_A10"
@@ -400,27 +400,27 @@ export interface ContainerServiceMasterProfile {
 		| "Standard_NV12"
 		| "Standard_NV24"
 		| "Standard_NV6";
-	readonly vnetSubnetID?: string | undefined;
+	readonly vnetSubnetID?: string;
 }
 export interface ContainerServiceOrchestratorProfile {
 	readonly orchestratorType: "Custom" | "DCOS" | "DockerCE" | "Kubernetes" | "Swarm";
-	readonly orchestratorVersion?: string | undefined;
+	readonly orchestratorVersion?: string;
 }
 export interface ContainerServicePrincipalProfile {
 	readonly clientId: string;
-	readonly keyVaultSecretRef?: KeyVaultSecretRef | undefined;
-	readonly secret?: string | undefined;
+	readonly keyVaultSecretRef?: KeyVaultSecretRef;
+	readonly secret?: string;
 }
 export interface ContainerServiceProperties {
-	readonly agentPoolProfiles?: ContainerServiceAgentPoolProfile[] | undefined;
-	readonly customProfile?: ContainerServiceCustomProfile | undefined;
-	readonly diagnosticsProfile?: ContainerServiceDiagnosticsProfile | undefined;
+	readonly agentPoolProfiles?: ContainerServiceAgentPoolProfile[];
+	readonly customProfile?: ContainerServiceCustomProfile;
+	readonly diagnosticsProfile?: ContainerServiceDiagnosticsProfile;
 	readonly linuxProfile: ContainerServiceLinuxProfile;
 	readonly masterProfile: ContainerServiceMasterProfile;
 	readonly orchestratorProfile: ContainerServiceOrchestratorProfile;
-	readonly provisioningState?: string | undefined;
-	readonly servicePrincipalProfile?: ContainerServicePrincipalProfile | undefined;
-	readonly windowsProfile?: ContainerServiceWindowsProfile | undefined;
+	readonly provisioningState?: string;
+	readonly servicePrincipalProfile?: ContainerServicePrincipalProfile;
+	readonly windowsProfile?: ContainerServiceWindowsProfile;
 }
 export interface ContainerServiceSshConfiguration {
 	readonly publicKeys: ContainerServiceSshPublicKey[];
@@ -430,7 +430,7 @@ export interface ContainerServiceSshPublicKey {
 }
 export interface ContainerServiceVMDiagnostics {
 	readonly enabled: boolean;
-	readonly storageUri?: string | undefined;
+	readonly storageUri?: string;
 }
 export interface ContainerServiceWindowsProfile {
 	readonly adminPassword: string;
@@ -439,10 +439,10 @@ export interface ContainerServiceWindowsProfile {
 export interface KeyVaultSecretRef {
 	readonly secretName: string;
 	readonly vaultID: string;
-	readonly version?: string | undefined;
+	readonly version?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	containerServices: containerServices,

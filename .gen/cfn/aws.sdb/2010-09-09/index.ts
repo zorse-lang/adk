@@ -7,7 +7,7 @@ export class Domain extends CfnResource<DomainComponentInputs> implements Domain
 }
 export interface DomainComponentOutputs {}
 export interface DomainComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export default {

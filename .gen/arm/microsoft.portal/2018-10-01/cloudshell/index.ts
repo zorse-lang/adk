@@ -35,7 +35,7 @@ export interface locations_consolesComponentOutputs {
 }
 export interface locations_consolesComponentInputs {
 	readonly name: string;
-	readonly properties?: ConsoleProperties | undefined;
+	readonly properties?: ConsoleProperties;
 }
 export class locations_userSettings
 	extends ArmResource<locations_userSettingsComponentInputs>
@@ -77,19 +77,16 @@ export interface userSettingsComponentInputs {
 export interface ConsoleCreatePropertiesOrConsoleProperties {
 	readonly osType: "Linux" | "Windows";
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Failed"
-				| "NotSpecified"
-				| "Pending"
-				| "Repairing"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly uri?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Failed"
+		| "NotSpecified"
+		| "Pending"
+		| "Repairing"
+		| "Succeeded"
+		| "Updating";
+	readonly uri?: string;
 }
 export interface ConsoleProperties {
 	readonly osType: "Linux" | "Windows";
@@ -106,13 +103,13 @@ export interface ConsoleProperties {
 	readonly uri: string;
 }
 export interface StorageProfile {
-	readonly diskSizeInGB?: number | undefined;
-	readonly fileShareName?: string | undefined;
-	readonly storageAccountResourceId?: string | undefined;
+	readonly diskSizeInGB?: number;
+	readonly fileShareName?: string;
+	readonly storageAccountResourceId?: string;
 }
 export interface TerminalSettings {
-	readonly fontSize?: ("Large" | "Medium" | "NotSpecified" | "Small") | undefined;
-	readonly fontStyle?: ("Courier" | "Monospace" | "NotSpecified") | undefined;
+	readonly fontSize?: "Large" | "Medium" | "NotSpecified" | "Small";
+	readonly fontStyle?: "Courier" | "Monospace" | "NotSpecified";
 }
 export interface UserProperties {
 	readonly preferredLocation: string;

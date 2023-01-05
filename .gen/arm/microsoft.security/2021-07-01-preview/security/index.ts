@@ -18,8 +18,8 @@ export interface customAssessmentAutomationsComponentOutputs {
 }
 export interface customAssessmentAutomationsComponentInputs {
 	readonly name: string;
-	readonly properties?: CustomAssessmentAutomationRequestPropertiesOrCustomAssessmentAutomationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CustomAssessmentAutomationRequestPropertiesOrCustomAssessmentAutomationProperties;
+	readonly systemData?: SystemData;
 }
 export class customEntityStoreAssignments
 	extends ArmResource<customEntityStoreAssignmentsComponentInputs>
@@ -39,8 +39,8 @@ export interface customEntityStoreAssignmentsComponentOutputs {
 }
 export interface customEntityStoreAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: CustomEntityStoreAssignmentRequestPropertiesOrCustomEntityStoreAssignmentProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CustomEntityStoreAssignmentRequestPropertiesOrCustomEntityStoreAssignmentProperties;
+	readonly systemData?: SystemData;
 }
 export class securityConnectors
 	extends ArmResource<securityConnectorsComponentInputs>
@@ -59,84 +59,82 @@ export interface securityConnectorsComponentOutputs {
 	readonly type: "Microsoft.Security/securityConnectors";
 }
 export interface securityConnectorsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SecurityConnectorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: SecurityConnectorProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: Tags;
 }
 export interface CloudOffering {
-	readonly description?: string | undefined;
+	readonly description?: string;
 }
 export interface CspmMonitorAwsOfferingNativeCloudConnection {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface CustomAssessmentAutomationRequestPropertiesOrCustomAssessmentAutomationProperties {
-	readonly assessmentKey?: string | undefined;
-	readonly compressedQuery?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly remediationDescription?: string | undefined;
-	readonly severity?: ("High" | "Low" | "Medium") | undefined;
-	readonly supportedCloud?: ("AWS" | "GCP") | undefined;
+	readonly assessmentKey?: string;
+	readonly compressedQuery?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly remediationDescription?: string;
+	readonly severity?: "High" | "Low" | "Medium";
+	readonly supportedCloud?: "AWS" | "GCP";
 }
 export interface CustomEntityStoreAssignmentRequestPropertiesOrCustomEntityStoreAssignmentProperties {
-	readonly entityStoreDatabaseLink?: string | undefined;
-	readonly principal?: string | undefined;
+	readonly entityStoreDatabaseLink?: string;
+	readonly principal?: string;
 }
 export interface DefenderForContainersAwsOfferingCloudWatchToKinesis {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface DefenderForContainersAwsOfferingKinesisToS3 {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface DefenderForContainersAwsOfferingKubernetesScubaReader {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface DefenderForContainersAwsOfferingKubernetesService {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface DefenderForServersAwsOfferingArcAutoProvisioning {
-	readonly enabled?: boolean | undefined;
-	readonly servicePrincipalSecretMetadata?:
-		| DefenderForServersAwsOfferingArcAutoProvisioningServicePrincipalSecretMetadata
-		| undefined;
+	readonly enabled?: boolean;
+	readonly servicePrincipalSecretMetadata?: DefenderForServersAwsOfferingArcAutoProvisioningServicePrincipalSecretMetadata;
 }
 export interface DefenderForServersAwsOfferingArcAutoProvisioningServicePrincipalSecretMetadata {
-	readonly expiryDate?: string | undefined;
-	readonly parameterNameInStore?: string | undefined;
-	readonly parameterStoreRegion?: string | undefined;
+	readonly expiryDate?: string;
+	readonly parameterNameInStore?: string;
+	readonly parameterStoreRegion?: string;
 }
 export interface DefenderForServersAwsOfferingDefenderForServers {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface InformationProtectionAwsOfferingInformationProtection {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface SecurityConnectorProperties {
-	readonly cloudName?: ("AWS" | "Azure" | "GCP") | undefined;
-	readonly hierarchyIdentifier?: string | undefined;
-	readonly offerings?: CloudOffering[] | undefined;
-	readonly organizationalData?: SecurityConnectorPropertiesOrganizationalData | undefined;
+	readonly cloudName?: "AWS" | "Azure" | "GCP";
+	readonly hierarchyIdentifier?: string;
+	readonly offerings?: CloudOffering[];
+	readonly organizationalData?: SecurityConnectorPropertiesOrganizationalData;
 }
 export interface SecurityConnectorPropertiesOrganizationalData {
-	readonly excludedAccountIds?: string[] | undefined;
-	readonly organizationMembershipType?: ("Member" | "Organization") | undefined;
-	readonly parentHierarchyId?: string | undefined;
-	readonly stacksetName?: string | undefined;
+	readonly excludedAccountIds?: string[];
+	readonly organizationMembershipType?: "Member" | "Organization";
+	readonly parentHierarchyId?: string;
+	readonly stacksetName?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Tags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	customAssessmentAutomations: customAssessmentAutomations,

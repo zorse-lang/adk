@@ -14,12 +14,12 @@ export interface streamingjobsComponentOutputs {
 	readonly type: "Microsoft.StreamAnalytics/streamingjobs";
 }
 export interface streamingjobsComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: StreamingJobProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: StreamingJobProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class streamingjobs_functions
 	extends ArmResource<streamingjobs_functionsComponentInputs>
@@ -39,7 +39,7 @@ export interface streamingjobs_functionsComponentOutputs {
 }
 export interface streamingjobs_functionsComponentInputs {
 	readonly name: string;
-	readonly properties?: FunctionProperties | undefined;
+	readonly properties?: FunctionProperties;
 }
 export class streamingjobs_inputs
 	extends ArmResource<streamingjobs_inputsComponentInputs>
@@ -59,7 +59,7 @@ export interface streamingjobs_inputsComponentOutputs {
 }
 export interface streamingjobs_inputsComponentInputs {
 	readonly name: string;
-	readonly properties?: InputProperties | undefined;
+	readonly properties?: InputProperties;
 }
 export class streamingjobs_outputs
 	extends ArmResource<streamingjobs_outputsComponentInputs>
@@ -79,7 +79,7 @@ export interface streamingjobs_outputsComponentOutputs {
 }
 export interface streamingjobs_outputsComponentInputs {
 	readonly name: string;
-	readonly properties?: OutputProperties | undefined;
+	readonly properties?: OutputProperties;
 }
 export class streamingjobs_transformations
 	extends ArmResource<streamingjobs_transformationsComponentInputs>
@@ -105,416 +105,414 @@ export interface streamingjobs_transformationsComponentOutputs {
 }
 export interface streamingjobs_transformationsComponentInputs {
 	readonly name: string;
-	readonly properties?: TransformationProperties | undefined;
+	readonly properties?: TransformationProperties;
 }
 export interface AzureDataLakeStoreOutputDataSourceProperties {
-	readonly accountName?: string | undefined;
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly dateFormat?: string | undefined;
-	readonly filePathPrefix?: string | undefined;
-	readonly refreshToken?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly timeFormat?: string | undefined;
-	readonly tokenUserDisplayName?: string | undefined;
-	readonly tokenUserPrincipalName?: string | undefined;
+	readonly accountName?: string;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly dateFormat?: string;
+	readonly filePathPrefix?: string;
+	readonly refreshToken?: string;
+	readonly tenantId?: string;
+	readonly timeFormat?: string;
+	readonly tokenUserDisplayName?: string;
+	readonly tokenUserPrincipalName?: string;
 }
 export interface AzureFunctionOutputDataSourceProperties {
-	readonly apiKey?: string | undefined;
-	readonly functionAppName?: string | undefined;
-	readonly functionName?: string | undefined;
-	readonly maxBatchCount?: number | undefined;
-	readonly maxBatchSize?: number | undefined;
+	readonly apiKey?: string;
+	readonly functionAppName?: string;
+	readonly functionName?: string;
+	readonly maxBatchCount?: number;
+	readonly maxBatchSize?: number;
 }
 export interface AzureMachineLearningServiceFunctionBindingProperties {
-	readonly apiKey?: string | undefined;
-	readonly batchSize?: number | undefined;
-	readonly endpoint?: string | undefined;
-	readonly inputRequestName?: string | undefined;
-	readonly inputs?: AzureMachineLearningServiceInputColumn[] | undefined;
-	readonly numberOfParallelRequests?: number | undefined;
-	readonly outputResponseName?: string | undefined;
-	readonly outputs?: AzureMachineLearningServiceOutputColumn[] | undefined;
+	readonly apiKey?: string;
+	readonly batchSize?: number;
+	readonly endpoint?: string;
+	readonly inputRequestName?: string;
+	readonly inputs?: AzureMachineLearningServiceInputColumn[];
+	readonly numberOfParallelRequests?: number;
+	readonly outputResponseName?: string;
+	readonly outputs?: AzureMachineLearningServiceOutputColumn[];
 }
 export interface AzureMachineLearningServiceInputColumn {
-	readonly dataType?: string | undefined;
-	readonly mapTo?: number | undefined;
-	readonly name?: string | undefined;
+	readonly dataType?: string;
+	readonly mapTo?: number;
+	readonly name?: string;
 }
 export interface AzureMachineLearningServiceOutputColumn {
-	readonly dataType?: string | undefined;
-	readonly mapTo?: number | undefined;
-	readonly name?: string | undefined;
+	readonly dataType?: string;
+	readonly mapTo?: number;
+	readonly name?: string;
 }
 export interface AzureMachineLearningStudioFunctionBindingProperties {
-	readonly apiKey?: string | undefined;
-	readonly batchSize?: number | undefined;
-	readonly endpoint?: string | undefined;
-	readonly inputs?: AzureMachineLearningStudioInputs | undefined;
-	readonly outputs?: AzureMachineLearningStudioOutputColumn[] | undefined;
+	readonly apiKey?: string;
+	readonly batchSize?: number;
+	readonly endpoint?: string;
+	readonly inputs?: AzureMachineLearningStudioInputs;
+	readonly outputs?: AzureMachineLearningStudioOutputColumn[];
 }
 export interface AzureMachineLearningStudioInputColumn {
-	readonly dataType?: string | undefined;
-	readonly mapTo?: number | undefined;
-	readonly name?: string | undefined;
+	readonly dataType?: string;
+	readonly mapTo?: number;
+	readonly name?: string;
 }
 export interface AzureMachineLearningStudioInputs {
-	readonly columnNames?: AzureMachineLearningStudioInputColumn[] | undefined;
-	readonly name?: string | undefined;
+	readonly columnNames?: AzureMachineLearningStudioInputColumn[];
+	readonly name?: string;
 }
 export interface AzureMachineLearningStudioOutputColumn {
-	readonly dataType?: string | undefined;
-	readonly name?: string | undefined;
+	readonly dataType?: string;
+	readonly name?: string;
 }
 export interface AzureSqlDatabaseOutputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly database?: string | undefined;
-	readonly maxBatchCount?: number | undefined;
-	readonly maxWriterCount?: number | undefined;
-	readonly password?: string | undefined;
-	readonly server?: string | undefined;
-	readonly table?: string | undefined;
-	readonly user?: string | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly database?: string;
+	readonly maxBatchCount?: number;
+	readonly maxWriterCount?: number;
+	readonly password?: string;
+	readonly server?: string;
+	readonly table?: string;
+	readonly user?: string;
 }
 export interface AzureSqlReferenceInputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly database?: string | undefined;
-	readonly deltaSnapshotQuery?: string | undefined;
-	readonly fullSnapshotQuery?: string | undefined;
-	readonly password?: string | undefined;
-	readonly refreshRate?: string | undefined;
-	readonly refreshType?: ("RefreshPeriodicallyWithDelta" | "RefreshPeriodicallyWithFull" | "Static") | undefined;
-	readonly server?: string | undefined;
-	readonly user?: string | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly database?: string;
+	readonly deltaSnapshotQuery?: string;
+	readonly fullSnapshotQuery?: string;
+	readonly password?: string;
+	readonly refreshRate?: string;
+	readonly refreshType?: "RefreshPeriodicallyWithDelta" | "RefreshPeriodicallyWithFull" | "Static";
+	readonly server?: string;
+	readonly user?: string;
 }
 export interface AzureSynapseOutputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly database?: string | undefined;
-	readonly password?: string | undefined;
-	readonly server?: string | undefined;
-	readonly table?: string | undefined;
-	readonly user?: string | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly database?: string;
+	readonly password?: string;
+	readonly server?: string;
+	readonly table?: string;
+	readonly user?: string;
 }
 export interface AzureTableOutputDataSourceProperties {
-	readonly accountKey?: string | undefined;
-	readonly accountName?: string | undefined;
-	readonly batchSize?: number | undefined;
-	readonly columnsToRemove?: string[] | undefined;
-	readonly partitionKey?: string | undefined;
-	readonly rowKey?: string | undefined;
-	readonly table?: string | undefined;
+	readonly accountKey?: string;
+	readonly accountName?: string;
+	readonly batchSize?: number;
+	readonly columnsToRemove?: string[];
+	readonly partitionKey?: string;
+	readonly rowKey?: string;
+	readonly table?: string;
 }
 export interface BlobOutputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly blobPathPrefix?: string | undefined;
-	readonly blobWriteMode?: ("Append" | "Once") | undefined;
-	readonly container?: string | undefined;
-	readonly dateFormat?: string | undefined;
-	readonly pathPattern?: string | undefined;
-	readonly storageAccounts?: StorageAccount[] | undefined;
-	readonly timeFormat?: string | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly blobPathPrefix?: string;
+	readonly blobWriteMode?: "Append" | "Once";
+	readonly container?: string;
+	readonly dateFormat?: string;
+	readonly pathPattern?: string;
+	readonly storageAccounts?: StorageAccount[];
+	readonly timeFormat?: string;
 }
 export interface BlobReferenceInputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly blobName?: string | undefined;
-	readonly container?: string | undefined;
-	readonly dateFormat?: string | undefined;
-	readonly deltaPathPattern?: string | undefined;
-	readonly deltaSnapshotRefreshRate?: string | undefined;
-	readonly fullSnapshotRefreshRate?: string | undefined;
-	readonly pathPattern?: string | undefined;
-	readonly sourcePartitionCount?: number | undefined;
-	readonly storageAccounts?: StorageAccount[] | undefined;
-	readonly timeFormat?: string | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly blobName?: string;
+	readonly container?: string;
+	readonly dateFormat?: string;
+	readonly deltaPathPattern?: string;
+	readonly deltaSnapshotRefreshRate?: string;
+	readonly fullSnapshotRefreshRate?: string;
+	readonly pathPattern?: string;
+	readonly sourcePartitionCount?: number;
+	readonly storageAccounts?: StorageAccount[];
+	readonly timeFormat?: string;
 }
 export interface BlobStreamInputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly container?: string | undefined;
-	readonly dateFormat?: string | undefined;
-	readonly pathPattern?: string | undefined;
-	readonly sourcePartitionCount?: number | undefined;
-	readonly storageAccounts?: StorageAccount[] | undefined;
-	readonly timeFormat?: string | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly container?: string;
+	readonly dateFormat?: string;
+	readonly pathPattern?: string;
+	readonly sourcePartitionCount?: number;
+	readonly storageAccounts?: StorageAccount[];
+	readonly timeFormat?: string;
 }
 export interface ClusterInfo {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface Compression {
 	readonly type: "Deflate" | "GZip" | "None";
 }
 export interface CSharpFunctionBindingProperties {
-	readonly class?: string | undefined;
-	readonly dllPath?: string | undefined;
-	readonly method?: string | undefined;
-	readonly updateMode?: ("Refreshable" | "Static") | undefined;
+	readonly class?: string;
+	readonly dllPath?: string;
+	readonly method?: string;
+	readonly updateMode?: "Refreshable" | "Static";
 }
 export interface CsvSerializationProperties {
-	readonly encoding?: "UTF8" | undefined;
-	readonly fieldDelimiter?: string | undefined;
+	readonly encoding?: "UTF8";
+	readonly fieldDelimiter?: string;
 }
 export interface CustomClrSerializationProperties {
-	readonly serializationClassName?: string | undefined;
-	readonly serializationDllPath?: string | undefined;
+	readonly serializationClassName?: string;
+	readonly serializationDllPath?: string;
 }
 export interface DiagnosticCondition {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
-	readonly since?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
+	readonly since?: string;
 }
 export interface Diagnostics {
-	readonly conditions?: DiagnosticCondition[] | undefined;
+	readonly conditions?: DiagnosticCondition[];
 }
 export interface DocumentDbOutputDataSourceProperties {
-	readonly accountId?: string | undefined;
-	readonly accountKey?: string | undefined;
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly collectionNamePattern?: string | undefined;
-	readonly database?: string | undefined;
-	readonly documentId?: string | undefined;
-	readonly partitionKey?: string | undefined;
+	readonly accountId?: string;
+	readonly accountKey?: string;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly collectionNamePattern?: string;
+	readonly database?: string;
+	readonly documentId?: string;
+	readonly partitionKey?: string;
 }
 export interface EventGridStreamInputDataSourceProperties {
-	readonly eventTypes?: string[] | undefined;
-	readonly schema?: ("CloudEventSchema" | "EventGridEventSchema") | undefined;
-	readonly storageAccounts?: StorageAccount[] | undefined;
-	readonly subscriber?: EventHubV2StreamInputDataSource | undefined;
+	readonly eventTypes?: string[];
+	readonly schema?: "CloudEventSchema" | "EventGridEventSchema";
+	readonly storageAccounts?: StorageAccount[];
+	readonly subscriber?: EventHubV2StreamInputDataSource;
 }
 export interface EventHubOutputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly eventHubName?: string | undefined;
-	readonly partitionCount?: number | undefined;
-	readonly partitionKey?: string | undefined;
-	readonly propertyColumns?: string[] | undefined;
-	readonly serviceBusNamespace?: string | undefined;
-	readonly sharedAccessPolicyKey?: string | undefined;
-	readonly sharedAccessPolicyName?: string | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly eventHubName?: string;
+	readonly partitionCount?: number;
+	readonly partitionKey?: string;
+	readonly propertyColumns?: string[];
+	readonly serviceBusNamespace?: string;
+	readonly sharedAccessPolicyKey?: string;
+	readonly sharedAccessPolicyName?: string;
 }
 export interface EventHubStreamInputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly consumerGroupName?: string | undefined;
-	readonly eventHubName?: string | undefined;
-	readonly partitionCount?: number | undefined;
-	readonly prefetchCount?: number | undefined;
-	readonly serviceBusNamespace?: string | undefined;
-	readonly sharedAccessPolicyKey?: string | undefined;
-	readonly sharedAccessPolicyName?: string | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly consumerGroupName?: string;
+	readonly eventHubName?: string;
+	readonly partitionCount?: number;
+	readonly prefetchCount?: number;
+	readonly serviceBusNamespace?: string;
+	readonly sharedAccessPolicyKey?: string;
+	readonly sharedAccessPolicyName?: string;
 }
 export interface EventHubV2StreamInputDataSource {
-	readonly properties?: EventHubStreamInputDataSourceProperties | undefined;
+	readonly properties?: EventHubStreamInputDataSourceProperties;
 	readonly type: string;
 }
 export interface External {
-	readonly container?: string | undefined;
-	readonly path?: string | undefined;
-	readonly refreshConfiguration?: RefreshConfiguration | undefined;
-	readonly storageAccount?: StorageAccount | undefined;
+	readonly container?: string;
+	readonly path?: string;
+	readonly refreshConfiguration?: RefreshConfiguration;
+	readonly storageAccount?: StorageAccount;
 }
 export interface FileReferenceInputDataSourceProperties {
-	readonly path?: string | undefined;
+	readonly path?: string;
 }
 export interface FunctionInstance {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: FunctionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: FunctionProperties;
+	readonly type?: string;
 }
 export interface FunctionBinding {}
 export interface FunctionConfiguration {
-	readonly binding?: FunctionBinding | undefined;
-	readonly inputs?: FunctionInput[] | undefined;
-	readonly output?: FunctionOutput | undefined;
+	readonly binding?: FunctionBinding;
+	readonly inputs?: FunctionInput[];
+	readonly output?: FunctionOutput;
 }
 export interface FunctionInput {
-	readonly dataType?: string | undefined;
-	readonly isConfigurationParameter?: boolean | undefined;
+	readonly dataType?: string;
+	readonly isConfigurationParameter?: boolean;
 }
 export interface FunctionOutput {
-	readonly dataType?: string | undefined;
+	readonly dataType?: string;
 }
 export interface FunctionProperties {
-	readonly etag?: string | undefined;
-	readonly properties?: FunctionConfiguration | undefined;
+	readonly etag?: string;
+	readonly properties?: FunctionConfiguration;
 }
 export interface GatewayMessageBusOutputDataSourceProperties {
-	readonly topic?: string | undefined;
+	readonly topic?: string;
 }
 export interface GatewayMessageBusStreamInputDataSourceProperties {
-	readonly topic?: string | undefined;
+	readonly topic?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: string | undefined;
-	readonly userAssignedIdentities?: any | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: string;
+	readonly userAssignedIdentities?: any;
 }
 export interface Input {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: InputProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: InputProperties;
+	readonly type?: string;
 }
 export interface InputProperties {
-	readonly compression?: Compression | undefined;
-	readonly diagnostics?: Diagnostics | undefined;
-	readonly etag?: string | undefined;
-	readonly partitionKey?: string | undefined;
-	readonly serialization?: Serialization | undefined;
-	readonly watermarkSettings?: InputWatermarkProperties | undefined;
+	readonly compression?: Compression;
+	readonly diagnostics?: Diagnostics;
+	readonly etag?: string;
+	readonly partitionKey?: string;
+	readonly serialization?: Serialization;
+	readonly watermarkSettings?: InputWatermarkProperties;
 }
 export interface InputWatermarkProperties {
-	readonly watermarkMode?: ("None" | "ReadWatermark") | undefined;
+	readonly watermarkMode?: "None" | "ReadWatermark";
 }
 export interface IoTHubStreamInputDataSourceProperties {
-	readonly consumerGroupName?: string | undefined;
-	readonly endpoint?: string | undefined;
-	readonly iotHubNamespace?: string | undefined;
-	readonly sharedAccessPolicyKey?: string | undefined;
-	readonly sharedAccessPolicyName?: string | undefined;
+	readonly consumerGroupName?: string;
+	readonly endpoint?: string;
+	readonly iotHubNamespace?: string;
+	readonly sharedAccessPolicyKey?: string;
+	readonly sharedAccessPolicyName?: string;
 }
 export interface JavaScriptFunctionBindingProperties {
-	readonly script?: string | undefined;
+	readonly script?: string;
 }
 export interface JobStorageAccount {
-	readonly accountKey?: string | undefined;
-	readonly accountName?: string | undefined;
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
+	readonly accountKey?: string;
+	readonly accountName?: string;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
 }
 export interface JsonSerializationProperties {
-	readonly encoding?: "UTF8" | undefined;
-	readonly format?: ("Array" | "LineSeparated") | undefined;
+	readonly encoding?: "UTF8";
+	readonly format?: "Array" | "LineSeparated";
 }
 export interface LastOutputEventTimestamp {
-	readonly lastOutputEventTime?: string | undefined;
-	readonly lastUpdateTime?: string | undefined;
+	readonly lastOutputEventTime?: string;
+	readonly lastUpdateTime?: string;
 }
 export interface Output {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: OutputProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: OutputProperties;
+	readonly type?: string;
 }
 export interface OutputDataSource {}
 export interface OutputProperties {
-	readonly datasource?: OutputDataSource | undefined;
-	readonly diagnostics?: Diagnostics | undefined;
-	readonly etag?: string | undefined;
-	readonly lastOutputEventTimestamps?: LastOutputEventTimestamp[] | undefined;
-	readonly serialization?: Serialization | undefined;
-	readonly sizeWindow?: number | undefined;
-	readonly timeWindow?: string | undefined;
-	readonly watermarkSettings?: OutputWatermarkProperties | undefined;
+	readonly datasource?: OutputDataSource;
+	readonly diagnostics?: Diagnostics;
+	readonly etag?: string;
+	readonly lastOutputEventTimestamps?: LastOutputEventTimestamp[];
+	readonly serialization?: Serialization;
+	readonly sizeWindow?: number;
+	readonly timeWindow?: string;
+	readonly watermarkSettings?: OutputWatermarkProperties;
 }
 export interface OutputWatermarkProperties {
-	readonly maxWatermarkDifferenceAcrossPartitions?: string | undefined;
-	readonly watermarkMode?:
-		| ("None" | "SendCurrentPartitionWatermark" | "SendLowestWatermarkAcrossPartitions")
-		| undefined;
+	readonly maxWatermarkDifferenceAcrossPartitions?: string;
+	readonly watermarkMode?: "None" | "SendCurrentPartitionWatermark" | "SendLowestWatermarkAcrossPartitions";
 }
 export interface PostgreSQLOutputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly database?: string | undefined;
-	readonly maxWriterCount?: number | undefined;
-	readonly password?: string | undefined;
-	readonly server?: string | undefined;
-	readonly table?: string | undefined;
-	readonly user?: string | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly database?: string;
+	readonly maxWriterCount?: number;
+	readonly password?: string;
+	readonly server?: string;
+	readonly table?: string;
+	readonly user?: string;
 }
 export interface PowerBIOutputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly dataset?: string | undefined;
-	readonly groupId?: string | undefined;
-	readonly groupName?: string | undefined;
-	readonly refreshToken?: string | undefined;
-	readonly table?: string | undefined;
-	readonly tokenUserDisplayName?: string | undefined;
-	readonly tokenUserPrincipalName?: string | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly dataset?: string;
+	readonly groupId?: string;
+	readonly groupName?: string;
+	readonly refreshToken?: string;
+	readonly table?: string;
+	readonly tokenUserDisplayName?: string;
+	readonly tokenUserPrincipalName?: string;
 }
 export interface RawInputDatasourceProperties {
-	readonly payload?: string | undefined;
-	readonly payloadUri?: string | undefined;
+	readonly payload?: string;
+	readonly payloadUri?: string;
 }
 export interface RawOutputDatasourceProperties {
-	readonly payloadUri?: string | undefined;
+	readonly payloadUri?: string;
 }
 export interface ReferenceInputDataSource {}
 export interface RefreshConfiguration {
-	readonly dateFormat?: string | undefined;
-	readonly pathPattern?: string | undefined;
-	readonly refreshInterval?: string | undefined;
-	readonly refreshType?: ("Blocking" | "Nonblocking") | undefined;
-	readonly timeFormat?: string | undefined;
+	readonly dateFormat?: string;
+	readonly pathPattern?: string;
+	readonly refreshInterval?: string;
+	readonly refreshType?: "Blocking" | "Nonblocking";
+	readonly timeFormat?: string;
 }
 export interface Serialization {}
 export interface ServiceBusQueueOutputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly propertyColumns?: string[] | undefined;
-	readonly queueName?: string | undefined;
-	readonly serviceBusNamespace?: string | undefined;
-	readonly sharedAccessPolicyKey?: string | undefined;
-	readonly sharedAccessPolicyName?: string | undefined;
-	readonly systemPropertyColumns?: any | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly propertyColumns?: string[];
+	readonly queueName?: string;
+	readonly serviceBusNamespace?: string;
+	readonly sharedAccessPolicyKey?: string;
+	readonly sharedAccessPolicyName?: string;
+	readonly systemPropertyColumns?: any;
 }
 export interface ServiceBusTopicOutputDataSourceProperties {
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
-	readonly propertyColumns?: string[] | undefined;
-	readonly serviceBusNamespace?: string | undefined;
-	readonly sharedAccessPolicyKey?: string | undefined;
-	readonly sharedAccessPolicyName?: string | undefined;
-	readonly systemPropertyColumns?: ServiceBusTopicOutputDataSourcePropertiesSystemPropertyColumns | undefined;
-	readonly topicName?: string | undefined;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
+	readonly propertyColumns?: string[];
+	readonly serviceBusNamespace?: string;
+	readonly sharedAccessPolicyKey?: string;
+	readonly sharedAccessPolicyName?: string;
+	readonly systemPropertyColumns?: ServiceBusTopicOutputDataSourcePropertiesSystemPropertyColumns;
+	readonly topicName?: string;
 }
 export interface ServiceBusTopicOutputDataSourcePropertiesSystemPropertyColumns {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly name?: "Standard" | undefined;
+	readonly capacity?: number;
+	readonly name?: "Standard";
 }
 export interface StorageAccount {
-	readonly accountKey?: string | undefined;
-	readonly accountName?: string | undefined;
-	readonly authenticationMode?: ("ConnectionString" | "Msi" | "UserToken") | undefined;
+	readonly accountKey?: string;
+	readonly accountName?: string;
+	readonly authenticationMode?: "ConnectionString" | "Msi" | "UserToken";
 }
 export interface StreamingJobProperties {
-	readonly cluster?: ClusterInfo | undefined;
-	readonly compatibilityLevel?: ("1.0" | "1.2") | undefined;
-	readonly contentStoragePolicy?: ("JobStorageAccount" | "SystemAccount") | undefined;
-	readonly createdDate?: string | undefined;
-	readonly dataLocale?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly eventsLateArrivalMaxDelayInSeconds?: number | undefined;
-	readonly eventsOutOfOrderMaxDelayInSeconds?: number | undefined;
-	readonly eventsOutOfOrderPolicy?: ("Adjust" | "Drop") | undefined;
-	readonly externals?: External | undefined;
-	readonly functions?: FunctionInstance[] | undefined;
-	readonly inputs?: Input[] | undefined;
-	readonly jobId?: string | undefined;
-	readonly jobState?: string | undefined;
-	readonly jobStorageAccount?: JobStorageAccount | undefined;
-	readonly jobType?: ("Cloud" | "Edge") | undefined;
-	readonly lastOutputEventTime?: string | undefined;
-	readonly outputErrorPolicy?: ("Drop" | "Stop") | undefined;
-	readonly outputs?: Output[] | undefined;
-	readonly outputStartMode?: ("CustomTime" | "JobStartTime" | "LastOutputEventTime") | undefined;
-	readonly outputStartTime?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly sku?: Sku | undefined;
-	readonly transformation?: Transformation | undefined;
+	readonly cluster?: ClusterInfo;
+	readonly compatibilityLevel?: "1.0" | "1.2";
+	readonly contentStoragePolicy?: "JobStorageAccount" | "SystemAccount";
+	readonly createdDate?: string;
+	readonly dataLocale?: string;
+	readonly etag?: string;
+	readonly eventsLateArrivalMaxDelayInSeconds?: number;
+	readonly eventsOutOfOrderMaxDelayInSeconds?: number;
+	readonly eventsOutOfOrderPolicy?: "Adjust" | "Drop";
+	readonly externals?: External;
+	readonly functions?: FunctionInstance[];
+	readonly inputs?: Input[];
+	readonly jobId?: string;
+	readonly jobState?: string;
+	readonly jobStorageAccount?: JobStorageAccount;
+	readonly jobType?: "Cloud" | "Edge";
+	readonly lastOutputEventTime?: string;
+	readonly outputErrorPolicy?: "Drop" | "Stop";
+	readonly outputs?: Output[];
+	readonly outputStartMode?: "CustomTime" | "JobStartTime" | "LastOutputEventTime";
+	readonly outputStartTime?: string;
+	readonly provisioningState?: string;
+	readonly sku?: Sku;
+	readonly transformation?: Transformation;
 }
 export interface StreamInputDataSource {}
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Transformation {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: TransformationProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: TransformationProperties;
+	readonly type?: string;
 }
 export interface TransformationProperties {
-	readonly etag?: string | undefined;
-	readonly query?: string | undefined;
-	readonly streamingUnits?: number | undefined;
-	readonly validStreamingUnits?: number[] | undefined;
+	readonly etag?: string;
+	readonly query?: string;
+	readonly streamingUnits?: number;
+	readonly validStreamingUnits?: number[];
 }
 export default {
 	streamingjobs: streamingjobs,

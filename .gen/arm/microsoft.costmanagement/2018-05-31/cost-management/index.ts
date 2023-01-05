@@ -15,8 +15,8 @@ export interface reportconfigsComponentOutputs {
 }
 export interface reportconfigsComponentInputs {
 	readonly name: string;
-	readonly properties?: ReportConfigProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ReportConfigProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ReportConfigAggregation {
 	readonly function: "Sum";
@@ -28,38 +28,38 @@ export interface ReportConfigComparisonExpression {
 	readonly values: string[];
 }
 export interface ReportConfigDataset {
-	readonly aggregation?: ReportConfigDatasetAggregation | undefined;
-	readonly configuration?: ReportConfigDatasetConfiguration | undefined;
-	readonly filter?: ReportConfigFilter | undefined;
-	readonly granularity?: "Daily" | undefined;
-	readonly grouping?: ReportConfigGrouping[] | undefined;
+	readonly aggregation?: ReportConfigDatasetAggregation;
+	readonly configuration?: ReportConfigDatasetConfiguration;
+	readonly filter?: ReportConfigFilter;
+	readonly granularity?: "Daily";
+	readonly grouping?: ReportConfigGrouping[];
 }
 export interface ReportConfigDatasetAggregation {
-	readonly "[ key: string ]"?: ReportConfigAggregation | undefined;
+	readonly [key: string]: ReportConfigAggregation;
 }
 export interface ReportConfigDatasetConfiguration {
-	readonly columns?: string[] | undefined;
+	readonly columns?: string[];
 }
 export interface ReportConfigDefinition {
-	readonly dataset?: ReportConfigDataset | undefined;
+	readonly dataset?: ReportConfigDataset;
 	readonly timeframe: "Custom" | "MonthToDate" | "WeekToDate" | "YearToDate";
-	readonly timePeriod?: ReportConfigTimePeriod | undefined;
+	readonly timePeriod?: ReportConfigTimePeriod;
 	readonly type: "Usage";
 }
 export interface ReportConfigDeliveryDestination {
 	readonly container: string;
 	readonly resourceId: string;
-	readonly rootFolderPath?: string | undefined;
+	readonly rootFolderPath?: string;
 }
 export interface ReportConfigDeliveryInfo {
 	readonly destination: ReportConfigDeliveryDestination;
 }
 export interface ReportConfigFilter {
-	readonly and?: ReportConfigFilter[] | undefined;
-	readonly dimension?: ReportConfigComparisonExpression | undefined;
-	readonly not?: ReportConfigFilter | undefined;
-	readonly or?: ReportConfigFilter[] | undefined;
-	readonly tag?: ReportConfigComparisonExpression | undefined;
+	readonly and?: ReportConfigFilter[];
+	readonly dimension?: ReportConfigComparisonExpression;
+	readonly not?: ReportConfigFilter;
+	readonly or?: ReportConfigFilter[];
+	readonly tag?: ReportConfigComparisonExpression;
 }
 export interface ReportConfigGrouping {
 	readonly columnType: "Dimension" | "Tag";
@@ -68,24 +68,24 @@ export interface ReportConfigGrouping {
 export interface ReportConfigProperties {
 	readonly definition: ReportConfigDefinition;
 	readonly deliveryInfo: ReportConfigDeliveryInfo;
-	readonly format?: "Csv" | undefined;
-	readonly schedule?: ReportConfigSchedule | undefined;
+	readonly format?: "Csv";
+	readonly schedule?: ReportConfigSchedule;
 }
 export interface ReportConfigRecurrencePeriod {
 	readonly from: string;
-	readonly to?: string | undefined;
+	readonly to?: string;
 }
 export interface ReportConfigSchedule {
 	readonly recurrence: "Annually" | "Daily" | "Monthly" | "Weekly";
 	readonly recurrencePeriod: ReportConfigRecurrencePeriod;
-	readonly status?: ("Active" | "Inactive") | undefined;
+	readonly status?: "Active" | "Inactive";
 }
 export interface ReportConfigTimePeriod {
 	readonly from: string;
 	readonly to: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	reportconfigs: reportconfigs,

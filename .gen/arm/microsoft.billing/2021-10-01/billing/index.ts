@@ -24,7 +24,7 @@ export interface billingAccounts_billingProfiles_paymentMethodLinksComponentOutp
 }
 export interface billingAccounts_billingProfiles_paymentMethodLinksComponentInputs {
 	readonly name: string;
-	readonly properties?: PaymentMethodLinkProperties | undefined;
+	readonly properties?: PaymentMethodLinkProperties;
 }
 export class billingAccounts_billingSubscriptionAliases
 	extends ArmResource<billingAccounts_billingSubscriptionAliasesComponentInputs>
@@ -44,7 +44,7 @@ export interface billingAccounts_billingSubscriptionAliasesComponentOutputs {
 }
 export interface billingAccounts_billingSubscriptionAliasesComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingSubscriptionAliasProperties | undefined;
+	readonly properties?: BillingSubscriptionAliasProperties;
 }
 export class billingAccounts_billingSubscriptions
 	extends ArmResource<billingAccounts_billingSubscriptionsComponentInputs>
@@ -64,7 +64,7 @@ export interface billingAccounts_billingSubscriptionsComponentOutputs {
 }
 export interface billingAccounts_billingSubscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingSubscriptionProperties | undefined;
+	readonly properties?: BillingSubscriptionProperties;
 }
 export class billingAccounts_paymentMethods
 	extends ArmResource<billingAccounts_paymentMethodsComponentInputs>
@@ -84,7 +84,7 @@ export interface billingAccounts_paymentMethodsComponentOutputs {
 }
 export interface billingAccounts_paymentMethodsComponentInputs {
 	readonly name: string;
-	readonly properties?: PaymentMethodProperties | undefined;
+	readonly properties?: PaymentMethodProperties;
 }
 export class paymentMethods extends ArmResource<paymentMethodsComponentInputs> implements paymentMethodsComponentOutputs {
 	constructor(entity: ADKEntity, options: paymentMethodsComponentInputs) {
@@ -101,165 +101,163 @@ export interface paymentMethodsComponentOutputs {
 }
 export interface paymentMethodsComponentInputs {
 	readonly name: string;
-	readonly properties?: PaymentMethodProperties | undefined;
+	readonly properties?: PaymentMethodProperties;
 }
 export interface Amount {
-	readonly currency?: string | undefined;
-	readonly value?: number | undefined;
+	readonly currency?: string;
+	readonly value?: number;
 }
 export interface BillingSubscriptionAliasProperties {
-	readonly autoRenew?: ("Off" | "On") | undefined;
-	readonly beneficiaryTenantId?: string | undefined;
-	readonly billingFrequency?: string | undefined;
-	readonly billingPolicies?: BillingSubscriptionPropertiesBillingPolicies | undefined;
-	readonly billingProfileDisplayName?: string | undefined;
-	readonly billingProfileId?: string | undefined;
-	readonly billingProfileName?: string | undefined;
-	readonly billingSubscriptionId?: string | undefined;
-	readonly consumptionCostCenter?: string | undefined;
-	readonly customerDisplayName?: string | undefined;
-	readonly customerId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enrollmentAccountDisplayName?: string | undefined;
-	readonly enrollmentAccountId?: string | undefined;
-	readonly enrollmentAccountSubscriptionDetails?: EnrollmentAccountSubscriptionDetails | undefined;
-	readonly invoiceSectionDisplayName?: string | undefined;
-	readonly invoiceSectionId?: string | undefined;
-	readonly invoiceSectionName?: string | undefined;
-	readonly lastMonthCharges?: Amount | undefined;
-	readonly monthToDateCharges?: Amount | undefined;
-	readonly nextBillingCycleDetails?: NextBillingCycleDetails | undefined;
-	readonly offerId?: string | undefined;
-	readonly productCategory?: string | undefined;
-	readonly productType?: string | undefined;
-	readonly productTypeId?: string | undefined;
-	readonly purchaseDate?: string | undefined;
-	readonly quantity?: number | undefined;
-	readonly renewalTermDetails?: RenewalTermDetails | undefined;
-	readonly reseller?: Reseller | undefined;
-	readonly skuDescription?: string | undefined;
-	readonly skuId?: string | undefined;
+	readonly autoRenew?: "Off" | "On";
+	readonly beneficiaryTenantId?: string;
+	readonly billingFrequency?: string;
+	readonly billingPolicies?: BillingSubscriptionPropertiesBillingPolicies;
+	readonly billingProfileDisplayName?: string;
+	readonly billingProfileId?: string;
+	readonly billingProfileName?: string;
+	readonly billingSubscriptionId?: string;
+	readonly consumptionCostCenter?: string;
+	readonly customerDisplayName?: string;
+	readonly customerId?: string;
+	readonly displayName?: string;
+	readonly enrollmentAccountDisplayName?: string;
+	readonly enrollmentAccountId?: string;
+	readonly enrollmentAccountSubscriptionDetails?: EnrollmentAccountSubscriptionDetails;
+	readonly invoiceSectionDisplayName?: string;
+	readonly invoiceSectionId?: string;
+	readonly invoiceSectionName?: string;
+	readonly lastMonthCharges?: Amount;
+	readonly monthToDateCharges?: Amount;
+	readonly nextBillingCycleDetails?: NextBillingCycleDetails;
+	readonly offerId?: string;
+	readonly productCategory?: string;
+	readonly productType?: string;
+	readonly productTypeId?: string;
+	readonly purchaseDate?: string;
+	readonly quantity?: number;
+	readonly renewalTermDetails?: RenewalTermDetails;
+	readonly reseller?: Reseller;
+	readonly skuDescription?: string;
+	readonly skuId?: string;
 	readonly status?:
-		| (
-				| "Active"
-				| "AutoRenew"
-				| "Cancelled"
-				| "Deleted"
-				| "Disabled"
-				| "Expired"
-				| "Expiring"
-				| "Suspended"
-				| "Unknown"
-				| "Warned"
-		  )
-		| undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly suspensionReasons?: string[] | undefined;
-	readonly termDuration?: string | undefined;
-	readonly termEndDate?: string | undefined;
-	readonly termStartDate?: string | undefined;
+		| "Active"
+		| "AutoRenew"
+		| "Cancelled"
+		| "Deleted"
+		| "Disabled"
+		| "Expired"
+		| "Expiring"
+		| "Suspended"
+		| "Unknown"
+		| "Warned";
+	readonly subscriptionId?: string;
+	readonly suspensionReasons?: string[];
+	readonly termDuration?: string;
+	readonly termEndDate?: string;
+	readonly termStartDate?: string;
 }
 export interface BillingSubscriptionProperties {
-	readonly autoRenew?: ("Off" | "On") | undefined;
-	readonly beneficiaryTenantId?: string | undefined;
-	readonly billingFrequency?: string | undefined;
-	readonly billingPolicies?: BillingSubscriptionPropertiesBillingPolicies | undefined;
-	readonly billingProfileDisplayName?: string | undefined;
-	readonly billingProfileId?: string | undefined;
-	readonly billingProfileName?: string | undefined;
-	readonly consumptionCostCenter?: string | undefined;
-	readonly customerDisplayName?: string | undefined;
-	readonly customerId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enrollmentAccountDisplayName?: string | undefined;
-	readonly enrollmentAccountId?: string | undefined;
-	readonly enrollmentAccountSubscriptionDetails?: EnrollmentAccountSubscriptionDetails | undefined;
-	readonly invoiceSectionDisplayName?: string | undefined;
-	readonly invoiceSectionId?: string | undefined;
-	readonly invoiceSectionName?: string | undefined;
-	readonly lastMonthCharges?: Amount | undefined;
-	readonly monthToDateCharges?: Amount | undefined;
-	readonly nextBillingCycleDetails?: NextBillingCycleDetails | undefined;
-	readonly offerId?: string | undefined;
-	readonly productCategory?: string | undefined;
-	readonly productType?: string | undefined;
-	readonly productTypeId?: string | undefined;
-	readonly purchaseDate?: string | undefined;
-	readonly quantity?: number | undefined;
-	readonly renewalTermDetails?: RenewalTermDetails | undefined;
-	readonly reseller?: Reseller | undefined;
-	readonly skuDescription?: string | undefined;
-	readonly skuId?: string | undefined;
+	readonly autoRenew?: "Off" | "On";
+	readonly beneficiaryTenantId?: string;
+	readonly billingFrequency?: string;
+	readonly billingPolicies?: BillingSubscriptionPropertiesBillingPolicies;
+	readonly billingProfileDisplayName?: string;
+	readonly billingProfileId?: string;
+	readonly billingProfileName?: string;
+	readonly consumptionCostCenter?: string;
+	readonly customerDisplayName?: string;
+	readonly customerId?: string;
+	readonly displayName?: string;
+	readonly enrollmentAccountDisplayName?: string;
+	readonly enrollmentAccountId?: string;
+	readonly enrollmentAccountSubscriptionDetails?: EnrollmentAccountSubscriptionDetails;
+	readonly invoiceSectionDisplayName?: string;
+	readonly invoiceSectionId?: string;
+	readonly invoiceSectionName?: string;
+	readonly lastMonthCharges?: Amount;
+	readonly monthToDateCharges?: Amount;
+	readonly nextBillingCycleDetails?: NextBillingCycleDetails;
+	readonly offerId?: string;
+	readonly productCategory?: string;
+	readonly productType?: string;
+	readonly productTypeId?: string;
+	readonly purchaseDate?: string;
+	readonly quantity?: number;
+	readonly renewalTermDetails?: RenewalTermDetails;
+	readonly reseller?: Reseller;
+	readonly skuDescription?: string;
+	readonly skuId?: string;
 	readonly status?:
-		| (
-				| "Active"
-				| "AutoRenew"
-				| "Cancelled"
-				| "Deleted"
-				| "Disabled"
-				| "Expired"
-				| "Expiring"
-				| "Suspended"
-				| "Unknown"
-				| "Warned"
-		  )
-		| undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly suspensionReasons?: string[] | undefined;
-	readonly termDuration?: string | undefined;
-	readonly termEndDate?: string | undefined;
-	readonly termStartDate?: string | undefined;
+		| "Active"
+		| "AutoRenew"
+		| "Cancelled"
+		| "Deleted"
+		| "Disabled"
+		| "Expired"
+		| "Expiring"
+		| "Suspended"
+		| "Unknown"
+		| "Warned";
+	readonly subscriptionId?: string;
+	readonly suspensionReasons?: string[];
+	readonly termDuration?: string;
+	readonly termEndDate?: string;
+	readonly termStartDate?: string;
 }
 export interface BillingSubscriptionPropertiesBillingPolicies {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface EnrollmentAccountSubscriptionDetails {
-	readonly enrollmentAccountStartDate?: string | undefined;
+	readonly enrollmentAccountStartDate?: string;
 	readonly subscriptionEnrollmentAccountStatus?:
-		| ("Active" | "Cancelled" | "Deleted" | "Expired" | "TransferredOut" | "Transferring")
-		| undefined;
+		| "Active"
+		| "Cancelled"
+		| "Deleted"
+		| "Expired"
+		| "TransferredOut"
+		| "Transferring";
 }
 export interface NextBillingCycleDetails {
-	readonly billingFrequency?: string | undefined;
+	readonly billingFrequency?: string;
 }
 export interface PaymentMethodLinkProperties {
-	readonly paymentMethod?: PaymentMethodProjectionProperties | undefined;
+	readonly paymentMethod?: PaymentMethodProjectionProperties;
 }
 export interface PaymentMethodLogo {
-	readonly mimeType?: string | undefined;
-	readonly url?: string | undefined;
+	readonly mimeType?: string;
+	readonly url?: string;
 }
 export interface PaymentMethodProjectionProperties {
-	readonly accountHolderName?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly expiration?: string | undefined;
-	readonly family?: ("CheckWire" | "CreditCard") | undefined;
-	readonly id?: string | undefined;
-	readonly lastFourDigits?: string | undefined;
-	readonly logos?: PaymentMethodLogo[] | undefined;
-	readonly status?: ("active" | "inactive") | undefined;
-	readonly type?: string | undefined;
+	readonly accountHolderName?: string;
+	readonly displayName?: string;
+	readonly expiration?: string;
+	readonly family?: "CheckWire" | "CreditCard";
+	readonly id?: string;
+	readonly lastFourDigits?: string;
+	readonly logos?: PaymentMethodLogo[];
+	readonly status?: "active" | "inactive";
+	readonly type?: string;
 }
 export interface PaymentMethodProperties {
-	readonly accountHolderName?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly expiration?: string | undefined;
-	readonly family?: ("CheckWire" | "CreditCard") | undefined;
-	readonly lastFourDigits?: string | undefined;
-	readonly logos?: PaymentMethodLogo[] | undefined;
-	readonly status?: ("active" | "inactive") | undefined;
-	readonly type?: string | undefined;
+	readonly accountHolderName?: string;
+	readonly displayName?: string;
+	readonly expiration?: string;
+	readonly family?: "CheckWire" | "CreditCard";
+	readonly lastFourDigits?: string;
+	readonly logos?: PaymentMethodLogo[];
+	readonly status?: "active" | "inactive";
+	readonly type?: string;
 }
 export interface RenewalTermDetails {
-	readonly billingFrequency?: string | undefined;
-	readonly productTypeId?: string | undefined;
-	readonly quantity?: number | undefined;
-	readonly skuId?: string | undefined;
-	readonly termDuration?: string | undefined;
+	readonly billingFrequency?: string;
+	readonly productTypeId?: string;
+	readonly quantity?: number;
+	readonly skuId?: string;
+	readonly termDuration?: string;
 }
 export interface Reseller {
-	readonly description?: string | undefined;
-	readonly resellerId?: string | undefined;
+	readonly description?: string;
+	readonly resellerId?: string;
 }
 export default {
 	"billingAccounts/billingProfiles/paymentMethodLinks": billingAccounts_billingProfiles_paymentMethodLinks,

@@ -12,12 +12,12 @@ export interface DomainComponentOutputs {
 export interface DomainComponentInputs {
 	readonly CdnType: string;
 	readonly DomainName: any | string;
-	readonly CheckUrl?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Scope?: (string | undefined) | undefined;
-	readonly Sources?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly TopLevelDomain?: (string | undefined) | undefined;
+	readonly CheckUrl?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Scope?: string | undefined;
+	readonly Sources?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly TopLevelDomain?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DomainConfig extends RosResource<DomainConfigComponentInputs> implements DomainConfigComponentOutputs {
@@ -32,7 +32,7 @@ export interface DomainConfigComponentInputs {
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export default {

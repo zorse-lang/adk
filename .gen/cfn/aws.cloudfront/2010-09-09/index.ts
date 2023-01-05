@@ -64,7 +64,7 @@ export interface DistributionComponentOutputs {
 }
 export interface DistributionComponentInputs {
 	readonly DistributionConfig: DistributionConfig;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class FunctionInstance extends CfnResource<FunctionComponentInputs> implements FunctionComponentOutputs {
@@ -82,10 +82,10 @@ export interface FunctionComponentOutputs {
 }
 export interface FunctionComponentInputs {
 	readonly Name: string;
-	readonly AutoPublish?: (boolean | undefined) | undefined;
-	readonly FunctionCode?: (string | undefined) | undefined;
-	readonly FunctionConfig?: (FunctionConfig | undefined) | undefined;
-	readonly FunctionMetadata?: (FunctionMetadata | undefined) | undefined;
+	readonly AutoPublish?: boolean | undefined;
+	readonly FunctionCode?: string | undefined;
+	readonly FunctionConfig?: FunctionConfig | undefined;
+	readonly FunctionMetadata?: FunctionMetadata | undefined;
 	readonly LogicalId: string;
 }
 export class KeyGroup extends CfnResource<KeyGroupComponentInputs> implements KeyGroupComponentOutputs {
@@ -221,7 +221,7 @@ export interface StreamingDistributionComponentInputs {
 	readonly LogicalId: string;
 }
 export interface CachePolicyConfig {
-	readonly Comment?: (string | undefined) | undefined;
+	readonly Comment?: string | undefined;
 	readonly DefaultTTL: number;
 	readonly MaxTTL: number;
 	readonly MinTTL: number;
@@ -230,22 +230,22 @@ export interface CachePolicyConfig {
 }
 export interface CookiesConfig {
 	readonly CookieBehavior: string;
-	readonly Cookies?: (string[] | undefined) | undefined;
+	readonly Cookies?: string[] | undefined;
 }
 export interface HeadersConfig {
 	readonly HeaderBehavior: string;
-	readonly Headers?: (string[] | undefined) | undefined;
+	readonly Headers?: string[] | undefined;
 }
 export interface ParametersInCacheKeyAndForwardedToOrigin {
 	readonly CookiesConfig: CookiesConfig;
-	readonly EnableAcceptEncodingBrotli?: (boolean | undefined) | undefined;
+	readonly EnableAcceptEncodingBrotli?: boolean | undefined;
 	readonly EnableAcceptEncodingGzip: boolean;
 	readonly HeadersConfig: HeadersConfig;
 	readonly QueryStringsConfig: QueryStringsConfig;
 }
 export interface QueryStringsConfig {
 	readonly QueryStringBehavior: string;
-	readonly QueryStrings?: (string[] | undefined) | undefined;
+	readonly QueryStrings?: string[] | undefined;
 }
 export interface CloudFrontOriginAccessIdentityConfig {
 	readonly Comment: string;
@@ -253,7 +253,7 @@ export interface CloudFrontOriginAccessIdentityConfig {
 export interface ContinuousDeploymentPolicyConfig {
 	readonly Enabled: boolean;
 	readonly StagingDistributionDnsNames: string[];
-	readonly TrafficConfig?: (TrafficConfig | undefined) | undefined;
+	readonly TrafficConfig?: TrafficConfig | undefined;
 }
 export interface SessionStickinessConfig {
 	readonly IdleTTL: number;
@@ -264,144 +264,144 @@ export interface SingleHeaderConfig {
 	readonly Value: string;
 }
 export interface SingleWeightConfig {
-	readonly SessionStickinessConfig?: (SessionStickinessConfig | undefined) | undefined;
+	readonly SessionStickinessConfig?: SessionStickinessConfig | undefined;
 	readonly Weight: number;
 }
 export interface TrafficConfig {
-	readonly SingleHeaderConfig?: (SingleHeaderConfig | undefined) | undefined;
-	readonly SingleWeightConfig?: (SingleWeightConfig | undefined) | undefined;
+	readonly SingleHeaderConfig?: SingleHeaderConfig | undefined;
+	readonly SingleWeightConfig?: SingleWeightConfig | undefined;
 	readonly Type: string;
 }
 export interface CacheBehavior {
-	readonly AllowedMethods?: (string[] | undefined) | undefined;
-	readonly CachePolicyId?: (string | undefined) | undefined;
-	readonly CachedMethods?: (string[] | undefined) | undefined;
-	readonly Compress?: (boolean | undefined) | undefined;
-	readonly DefaultTTL?: (number | undefined) | undefined;
-	readonly FieldLevelEncryptionId?: (string | undefined) | undefined;
-	readonly ForwardedValues?: (ForwardedValues | undefined) | undefined;
-	readonly FunctionAssociations?: (FunctionAssociation[] | undefined) | undefined;
-	readonly LambdaFunctionAssociations?: (LambdaFunctionAssociation[] | undefined) | undefined;
-	readonly MaxTTL?: (number | undefined) | undefined;
-	readonly MinTTL?: (number | undefined) | undefined;
-	readonly OriginRequestPolicyId?: (string | undefined) | undefined;
+	readonly AllowedMethods?: string[] | undefined;
+	readonly CachePolicyId?: string | undefined;
+	readonly CachedMethods?: string[] | undefined;
+	readonly Compress?: boolean | undefined;
+	readonly DefaultTTL?: number | undefined;
+	readonly FieldLevelEncryptionId?: string | undefined;
+	readonly ForwardedValues?: ForwardedValues | undefined;
+	readonly FunctionAssociations?: FunctionAssociation[] | undefined;
+	readonly LambdaFunctionAssociations?: LambdaFunctionAssociation[] | undefined;
+	readonly MaxTTL?: number | undefined;
+	readonly MinTTL?: number | undefined;
+	readonly OriginRequestPolicyId?: string | undefined;
 	readonly PathPattern: string;
-	readonly RealtimeLogConfigArn?: (string | undefined) | undefined;
-	readonly ResponseHeadersPolicyId?: (string | undefined) | undefined;
-	readonly SmoothStreaming?: (boolean | undefined) | undefined;
+	readonly RealtimeLogConfigArn?: string | undefined;
+	readonly ResponseHeadersPolicyId?: string | undefined;
+	readonly SmoothStreaming?: boolean | undefined;
 	readonly TargetOriginId: string;
-	readonly TrustedKeyGroups?: (string[] | undefined) | undefined;
-	readonly TrustedSigners?: (string[] | undefined) | undefined;
+	readonly TrustedKeyGroups?: string[] | undefined;
+	readonly TrustedSigners?: string[] | undefined;
 	readonly ViewerProtocolPolicy: string;
 }
 export interface Cookies {
 	readonly Forward: string;
-	readonly WhitelistedNames?: (string[] | undefined) | undefined;
+	readonly WhitelistedNames?: string[] | undefined;
 }
 export interface CustomErrorResponse {
-	readonly ErrorCachingMinTTL?: (number | undefined) | undefined;
+	readonly ErrorCachingMinTTL?: number | undefined;
 	readonly ErrorCode: number;
-	readonly ResponseCode?: (number | undefined) | undefined;
-	readonly ResponsePagePath?: (string | undefined) | undefined;
+	readonly ResponseCode?: number | undefined;
+	readonly ResponsePagePath?: string | undefined;
 }
 export interface CustomOriginConfig {
-	readonly HTTPPort?: (number | undefined) | undefined;
-	readonly HTTPSPort?: (number | undefined) | undefined;
-	readonly OriginKeepaliveTimeout?: (number | undefined) | undefined;
+	readonly HTTPPort?: number | undefined;
+	readonly HTTPSPort?: number | undefined;
+	readonly OriginKeepaliveTimeout?: number | undefined;
 	readonly OriginProtocolPolicy: string;
-	readonly OriginReadTimeout?: (number | undefined) | undefined;
-	readonly OriginSSLProtocols?: (string[] | undefined) | undefined;
+	readonly OriginReadTimeout?: number | undefined;
+	readonly OriginSSLProtocols?: string[] | undefined;
 }
 export interface DefaultCacheBehavior {
-	readonly AllowedMethods?: (string[] | undefined) | undefined;
-	readonly CachePolicyId?: (string | undefined) | undefined;
-	readonly CachedMethods?: (string[] | undefined) | undefined;
-	readonly Compress?: (boolean | undefined) | undefined;
-	readonly DefaultTTL?: (number | undefined) | undefined;
-	readonly FieldLevelEncryptionId?: (string | undefined) | undefined;
-	readonly ForwardedValues?: (ForwardedValues | undefined) | undefined;
-	readonly FunctionAssociations?: (FunctionAssociation[] | undefined) | undefined;
-	readonly LambdaFunctionAssociations?: (LambdaFunctionAssociation[] | undefined) | undefined;
-	readonly MaxTTL?: (number | undefined) | undefined;
-	readonly MinTTL?: (number | undefined) | undefined;
-	readonly OriginRequestPolicyId?: (string | undefined) | undefined;
-	readonly RealtimeLogConfigArn?: (string | undefined) | undefined;
-	readonly ResponseHeadersPolicyId?: (string | undefined) | undefined;
-	readonly SmoothStreaming?: (boolean | undefined) | undefined;
+	readonly AllowedMethods?: string[] | undefined;
+	readonly CachePolicyId?: string | undefined;
+	readonly CachedMethods?: string[] | undefined;
+	readonly Compress?: boolean | undefined;
+	readonly DefaultTTL?: number | undefined;
+	readonly FieldLevelEncryptionId?: string | undefined;
+	readonly ForwardedValues?: ForwardedValues | undefined;
+	readonly FunctionAssociations?: FunctionAssociation[] | undefined;
+	readonly LambdaFunctionAssociations?: LambdaFunctionAssociation[] | undefined;
+	readonly MaxTTL?: number | undefined;
+	readonly MinTTL?: number | undefined;
+	readonly OriginRequestPolicyId?: string | undefined;
+	readonly RealtimeLogConfigArn?: string | undefined;
+	readonly ResponseHeadersPolicyId?: string | undefined;
+	readonly SmoothStreaming?: boolean | undefined;
 	readonly TargetOriginId: string;
-	readonly TrustedKeyGroups?: (string[] | undefined) | undefined;
-	readonly TrustedSigners?: (string[] | undefined) | undefined;
+	readonly TrustedKeyGroups?: string[] | undefined;
+	readonly TrustedSigners?: string[] | undefined;
 	readonly ViewerProtocolPolicy: string;
 }
 export interface DistributionConfig {
-	readonly Aliases?: (string[] | undefined) | undefined;
-	readonly CNAMEs?: (string[] | undefined) | undefined;
-	readonly CacheBehaviors?: (CacheBehavior[] | undefined) | undefined;
-	readonly Comment?: (string | undefined) | undefined;
-	readonly ContinuousDeploymentPolicyId?: (string | undefined) | undefined;
-	readonly CustomErrorResponses?: (CustomErrorResponse[] | undefined) | undefined;
-	readonly CustomOrigin?: (LegacyCustomOrigin | undefined) | undefined;
+	readonly Aliases?: string[] | undefined;
+	readonly CNAMEs?: string[] | undefined;
+	readonly CacheBehaviors?: CacheBehavior[] | undefined;
+	readonly Comment?: string | undefined;
+	readonly ContinuousDeploymentPolicyId?: string | undefined;
+	readonly CustomErrorResponses?: CustomErrorResponse[] | undefined;
+	readonly CustomOrigin?: LegacyCustomOrigin | undefined;
 	readonly DefaultCacheBehavior: DefaultCacheBehavior;
-	readonly DefaultRootObject?: (string | undefined) | undefined;
+	readonly DefaultRootObject?: string | undefined;
 	readonly Enabled: boolean;
-	readonly HttpVersion?: (string | undefined) | undefined;
-	readonly IPV6Enabled?: (boolean | undefined) | undefined;
-	readonly Logging?: (Logging | undefined) | undefined;
-	readonly OriginGroups?: (OriginGroups | undefined) | undefined;
-	readonly Origins?: (Origin[] | undefined) | undefined;
-	readonly PriceClass?: (string | undefined) | undefined;
-	readonly Restrictions?: (Restrictions | undefined) | undefined;
-	readonly S3Origin?: (LegacyS3Origin | undefined) | undefined;
-	readonly Staging?: (boolean | undefined) | undefined;
-	readonly ViewerCertificate?: (ViewerCertificate | undefined) | undefined;
-	readonly WebACLId?: (string | undefined) | undefined;
+	readonly HttpVersion?: string | undefined;
+	readonly IPV6Enabled?: boolean | undefined;
+	readonly Logging?: Logging | undefined;
+	readonly OriginGroups?: OriginGroups | undefined;
+	readonly Origins?: Origin[] | undefined;
+	readonly PriceClass?: string | undefined;
+	readonly Restrictions?: Restrictions | undefined;
+	readonly S3Origin?: LegacyS3Origin | undefined;
+	readonly Staging?: boolean | undefined;
+	readonly ViewerCertificate?: ViewerCertificate | undefined;
+	readonly WebACLId?: string | undefined;
 }
 export interface ForwardedValues {
-	readonly Cookies?: (Cookies | undefined) | undefined;
-	readonly Headers?: (string[] | undefined) | undefined;
+	readonly Cookies?: Cookies | undefined;
+	readonly Headers?: string[] | undefined;
 	readonly QueryString: boolean;
-	readonly QueryStringCacheKeys?: (string[] | undefined) | undefined;
+	readonly QueryStringCacheKeys?: string[] | undefined;
 }
 export interface FunctionAssociation {
-	readonly EventType?: (string | undefined) | undefined;
-	readonly FunctionARN?: (string | undefined) | undefined;
+	readonly EventType?: string | undefined;
+	readonly FunctionARN?: string | undefined;
 }
 export interface GeoRestriction {
-	readonly Locations?: (string[] | undefined) | undefined;
+	readonly Locations?: string[] | undefined;
 	readonly RestrictionType: string;
 }
 export interface LambdaFunctionAssociation {
-	readonly EventType?: (string | undefined) | undefined;
-	readonly IncludeBody?: (boolean | undefined) | undefined;
-	readonly LambdaFunctionARN?: (string | undefined) | undefined;
+	readonly EventType?: string | undefined;
+	readonly IncludeBody?: boolean | undefined;
+	readonly LambdaFunctionARN?: string | undefined;
 }
 export interface LegacyCustomOrigin {
 	readonly DNSName: string;
-	readonly HTTPPort?: (number | undefined) | undefined;
-	readonly HTTPSPort?: (number | undefined) | undefined;
+	readonly HTTPPort?: number | undefined;
+	readonly HTTPSPort?: number | undefined;
 	readonly OriginProtocolPolicy: string;
 	readonly OriginSSLProtocols: string[];
 }
 export interface LegacyS3Origin {
 	readonly DNSName: string;
-	readonly OriginAccessIdentity?: (string | undefined) | undefined;
+	readonly OriginAccessIdentity?: string | undefined;
 }
 export interface Logging {
 	readonly Bucket: string;
-	readonly IncludeCookies?: (boolean | undefined) | undefined;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly IncludeCookies?: boolean | undefined;
+	readonly Prefix?: string | undefined;
 }
 export interface Origin {
-	readonly ConnectionAttempts?: (number | undefined) | undefined;
-	readonly ConnectionTimeout?: (number | undefined) | undefined;
-	readonly CustomOriginConfig?: (CustomOriginConfig | undefined) | undefined;
+	readonly ConnectionAttempts?: number | undefined;
+	readonly ConnectionTimeout?: number | undefined;
+	readonly CustomOriginConfig?: CustomOriginConfig | undefined;
 	readonly DomainName: string;
 	readonly Id: string;
-	readonly OriginAccessControlId?: (string | undefined) | undefined;
-	readonly OriginCustomHeaders?: (OriginCustomHeader[] | undefined) | undefined;
-	readonly OriginPath?: (string | undefined) | undefined;
-	readonly OriginShield?: (OriginShield | undefined) | undefined;
-	readonly S3OriginConfig?: (S3OriginConfig | undefined) | undefined;
+	readonly OriginAccessControlId?: string | undefined;
+	readonly OriginCustomHeaders?: OriginCustomHeader[] | undefined;
+	readonly OriginPath?: string | undefined;
+	readonly OriginShield?: OriginShield | undefined;
+	readonly S3OriginConfig?: S3OriginConfig | undefined;
 }
 export interface OriginCustomHeader {
 	readonly HeaderName: string;
@@ -423,57 +423,57 @@ export interface OriginGroupMembers {
 	readonly Quantity: number;
 }
 export interface OriginGroups {
-	readonly Items?: (OriginGroup[] | undefined) | undefined;
+	readonly Items?: OriginGroup[] | undefined;
 	readonly Quantity: number;
 }
 export interface OriginShield {
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly OriginShieldRegion?: (string | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly OriginShieldRegion?: string | undefined;
 }
 export interface Restrictions {
 	readonly GeoRestriction: GeoRestriction;
 }
 export interface S3OriginConfig {
-	readonly OriginAccessIdentity?: (string | undefined) | undefined;
+	readonly OriginAccessIdentity?: string | undefined;
 }
 export interface StatusCodes {
 	readonly Items: number[];
 	readonly Quantity: number;
 }
 export interface ViewerCertificate {
-	readonly AcmCertificateArn?: (string | undefined) | undefined;
-	readonly CloudFrontDefaultCertificate?: (boolean | undefined) | undefined;
-	readonly IamCertificateId?: (string | undefined) | undefined;
-	readonly MinimumProtocolVersion?: (string | undefined) | undefined;
-	readonly SslSupportMethod?: (string | undefined) | undefined;
+	readonly AcmCertificateArn?: string | undefined;
+	readonly CloudFrontDefaultCertificate?: boolean | undefined;
+	readonly IamCertificateId?: string | undefined;
+	readonly MinimumProtocolVersion?: string | undefined;
+	readonly SslSupportMethod?: string | undefined;
 }
 export interface FunctionConfig {
 	readonly Comment: string;
 	readonly Runtime: string;
 }
 export interface FunctionMetadata {
-	readonly FunctionARN?: (string | undefined) | undefined;
+	readonly FunctionARN?: string | undefined;
 }
 export interface KeyGroupConfig {
-	readonly Comment?: (string | undefined) | undefined;
+	readonly Comment?: string | undefined;
 	readonly Items: string[];
 	readonly Name: string;
 }
 export interface MonitoringSubscription {
-	readonly RealtimeMetricsSubscriptionConfig?: (RealtimeMetricsSubscriptionConfig | undefined) | undefined;
+	readonly RealtimeMetricsSubscriptionConfig?: RealtimeMetricsSubscriptionConfig | undefined;
 }
 export interface RealtimeMetricsSubscriptionConfig {
 	readonly RealtimeMetricsSubscriptionStatus: string;
 }
 export interface OriginAccessControlConfig {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly Name: string;
 	readonly OriginAccessControlOriginType: string;
 	readonly SigningBehavior: string;
 	readonly SigningProtocol: string;
 }
 export interface OriginRequestPolicyConfig {
-	readonly Comment?: (string | undefined) | undefined;
+	readonly Comment?: string | undefined;
 	readonly CookiesConfig: CookiesConfig;
 	readonly HeadersConfig: HeadersConfig;
 	readonly Name: string;
@@ -481,7 +481,7 @@ export interface OriginRequestPolicyConfig {
 }
 export interface PublicKeyConfig {
 	readonly CallerReference: string;
-	readonly Comment?: (string | undefined) | undefined;
+	readonly Comment?: string | undefined;
 	readonly EncodedKey: string;
 	readonly Name: string;
 }
@@ -517,8 +517,8 @@ export interface CorsConfig {
 	readonly AccessControlAllowHeaders: AccessControlAllowHeaders;
 	readonly AccessControlAllowMethods: AccessControlAllowMethods;
 	readonly AccessControlAllowOrigins: AccessControlAllowOrigins;
-	readonly AccessControlExposeHeaders?: (AccessControlExposeHeaders | undefined) | undefined;
-	readonly AccessControlMaxAgeSec?: (number | undefined) | undefined;
+	readonly AccessControlExposeHeaders?: AccessControlExposeHeaders | undefined;
+	readonly AccessControlMaxAgeSec?: number | undefined;
 	readonly OriginOverride: boolean;
 }
 export interface CustomHeader {
@@ -538,52 +538,52 @@ export interface ReferrerPolicy {
 	readonly ReferrerPolicy: string;
 }
 export interface ResponseHeadersPolicyConfig {
-	readonly Comment?: (string | undefined) | undefined;
-	readonly CorsConfig?: (CorsConfig | undefined) | undefined;
-	readonly CustomHeadersConfig?: (CustomHeadersConfig | undefined) | undefined;
+	readonly Comment?: string | undefined;
+	readonly CorsConfig?: CorsConfig | undefined;
+	readonly CustomHeadersConfig?: CustomHeadersConfig | undefined;
 	readonly Name: string;
-	readonly SecurityHeadersConfig?: (SecurityHeadersConfig | undefined) | undefined;
-	readonly ServerTimingHeadersConfig?: (ServerTimingHeadersConfig | undefined) | undefined;
+	readonly SecurityHeadersConfig?: SecurityHeadersConfig | undefined;
+	readonly ServerTimingHeadersConfig?: ServerTimingHeadersConfig | undefined;
 }
 export interface SecurityHeadersConfig {
-	readonly ContentSecurityPolicy?: (ContentSecurityPolicy | undefined) | undefined;
-	readonly ContentTypeOptions?: (ContentTypeOptions | undefined) | undefined;
-	readonly FrameOptions?: (FrameOptions | undefined) | undefined;
-	readonly ReferrerPolicy?: (ReferrerPolicy | undefined) | undefined;
-	readonly StrictTransportSecurity?: (StrictTransportSecurity | undefined) | undefined;
-	readonly XSSProtection?: (XSSProtection | undefined) | undefined;
+	readonly ContentSecurityPolicy?: ContentSecurityPolicy | undefined;
+	readonly ContentTypeOptions?: ContentTypeOptions | undefined;
+	readonly FrameOptions?: FrameOptions | undefined;
+	readonly ReferrerPolicy?: ReferrerPolicy | undefined;
+	readonly StrictTransportSecurity?: StrictTransportSecurity | undefined;
+	readonly XSSProtection?: XSSProtection | undefined;
 }
 export interface ServerTimingHeadersConfig {
 	readonly Enabled: boolean;
-	readonly SamplingRate?: (number | undefined) | undefined;
+	readonly SamplingRate?: number | undefined;
 }
 export interface StrictTransportSecurity {
 	readonly AccessControlMaxAgeSec: number;
-	readonly IncludeSubdomains?: (boolean | undefined) | undefined;
+	readonly IncludeSubdomains?: boolean | undefined;
 	readonly Override: boolean;
-	readonly Preload?: (boolean | undefined) | undefined;
+	readonly Preload?: boolean | undefined;
 }
 export interface XSSProtection {
-	readonly ModeBlock?: (boolean | undefined) | undefined;
+	readonly ModeBlock?: boolean | undefined;
 	readonly Override: boolean;
 	readonly Protection: boolean;
-	readonly ReportUri?: (string | undefined) | undefined;
+	readonly ReportUri?: string | undefined;
 }
 export interface S3Origin {
 	readonly DomainName: string;
 	readonly OriginAccessIdentity: string;
 }
 export interface StreamingDistributionConfig {
-	readonly Aliases?: (string[] | undefined) | undefined;
+	readonly Aliases?: string[] | undefined;
 	readonly Comment: string;
 	readonly Enabled: boolean;
-	readonly Logging?: (Logging | undefined) | undefined;
-	readonly PriceClass?: (string | undefined) | undefined;
+	readonly Logging?: Logging | undefined;
+	readonly PriceClass?: string | undefined;
 	readonly S3Origin: S3Origin;
 	readonly TrustedSigners: TrustedSigners;
 }
 export interface TrustedSigners {
-	readonly AwsAccountNumbers?: (string[] | undefined) | undefined;
+	readonly AwsAccountNumbers?: string[] | undefined;
 	readonly Enabled: boolean;
 }
 export default {

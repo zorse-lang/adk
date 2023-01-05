@@ -19,8 +19,8 @@ export interface digitalTwinsInstancesComponentOutputs {
 export interface digitalTwinsInstancesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DigitalTwinsProperties | undefined;
-	readonly tags?: DigitalTwinsResourceTags | undefined;
+	readonly properties?: DigitalTwinsProperties;
+	readonly tags?: DigitalTwinsResourceTags;
 }
 export class digitalTwinsInstances_endpoints
 	extends ArmResource<digitalTwinsInstances_endpointsComponentInputs>
@@ -43,45 +43,39 @@ export interface digitalTwinsInstances_endpointsComponentInputs {
 	readonly properties: DigitalTwinsEndpointResourceProperties;
 }
 export interface DigitalTwinsEndpointResourceProperties {
-	readonly createdTime?: string | undefined;
-	readonly deadLetterSecret?: string | undefined;
+	readonly createdTime?: string;
+	readonly deadLetterSecret?: string;
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Deleted"
-				| "Deleting"
-				| "Disabled"
-				| "Failed"
-				| "Moving"
-				| "Provisioning"
-				| "Restoring"
-				| "Succeeded"
-				| "Suspending"
-				| "Warning"
-		  )
-		| undefined;
+		| "Canceled"
+		| "Deleted"
+		| "Deleting"
+		| "Disabled"
+		| "Failed"
+		| "Moving"
+		| "Provisioning"
+		| "Restoring"
+		| "Succeeded"
+		| "Suspending"
+		| "Warning";
 }
 export interface DigitalTwinsProperties {
-	readonly createdTime?: string | undefined;
-	readonly hostName?: string | undefined;
-	readonly lastUpdatedTime?: string | undefined;
+	readonly createdTime?: string;
+	readonly hostName?: string;
+	readonly lastUpdatedTime?: string;
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "Moving"
-				| "Provisioning"
-				| "Restoring"
-				| "Succeeded"
-				| "Suspending"
-				| "Warning"
-		  )
-		| undefined;
+		| "Canceled"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "Provisioning"
+		| "Restoring"
+		| "Succeeded"
+		| "Suspending"
+		| "Warning";
 }
 export interface DigitalTwinsResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	digitalTwinsInstances: digitalTwinsInstances,

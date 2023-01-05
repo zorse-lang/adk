@@ -17,15 +17,15 @@ export interface objectAnchorsAccountsComponentOutputs {
 	readonly type: "Microsoft.MixedReality/objectAnchorsAccounts";
 }
 export interface objectAnchorsAccountsComponentInputs {
-	readonly identity?: ObjectAnchorsAccountIdentity | undefined;
-	readonly kind?: Sku | undefined;
+	readonly identity?: ObjectAnchorsAccountIdentity;
+	readonly kind?: Sku;
 	readonly location: string;
 	readonly name: string;
-	readonly plan?: Identity | undefined;
-	readonly properties?: MixedRealityAccountProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly plan?: Identity;
+	readonly properties?: MixedRealityAccountProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class remoteRenderingAccounts
 	extends ArmResource<remoteRenderingAccountsComponentInputs>
@@ -44,15 +44,15 @@ export interface remoteRenderingAccountsComponentOutputs {
 	readonly type: "Microsoft.MixedReality/remoteRenderingAccounts";
 }
 export interface remoteRenderingAccountsComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly kind?: Sku | undefined;
+	readonly identity?: Identity;
+	readonly kind?: Sku;
 	readonly location: string;
 	readonly name: string;
-	readonly plan?: Identity | undefined;
-	readonly properties?: MixedRealityAccountProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly plan?: Identity;
+	readonly properties?: MixedRealityAccountProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class spatialAnchorsAccounts
 	extends ArmResource<spatialAnchorsAccountsComponentInputs>
@@ -71,15 +71,15 @@ export interface spatialAnchorsAccountsComponentOutputs {
 	readonly type: "Microsoft.MixedReality/spatialAnchorsAccounts";
 }
 export interface spatialAnchorsAccountsComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly kind?: Sku | undefined;
+	readonly identity?: Identity;
+	readonly kind?: Sku;
 	readonly location: string;
 	readonly name: string;
-	readonly plan?: Identity | undefined;
-	readonly properties?: MixedRealityAccountProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly plan?: Identity;
+	readonly properties?: MixedRealityAccountProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export function listKeys(resource: spatialAnchorsAccounts): AccountKeys {
 	if (resource.apiVersion !== "2021-03-01-preview") {
@@ -91,41 +91,41 @@ export function listKeys(resource: spatialAnchorsAccounts): AccountKeys {
 	throw new Error("not implemented");
 }
 export interface AccountKeys {
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface MixedRealityAccountProperties {
-	readonly accountDomain?: string | undefined;
-	readonly accountId?: string | undefined;
-	readonly storageAccountName?: string | undefined;
+	readonly accountDomain?: string;
+	readonly accountId?: string;
+	readonly storageAccountName?: string;
 }
 export interface ObjectAnchorsAccountIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
 	readonly name: string;
-	readonly size?: string | undefined;
-	readonly tier?: ("Basic" | "Free" | "Premium") | undefined;
+	readonly size?: string;
+	readonly tier?: "Basic" | "Free" | "Premium";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	objectAnchorsAccounts: objectAnchorsAccounts,

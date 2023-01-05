@@ -24,35 +24,40 @@ export interface featureProviders_subscriptionFeatureRegistrationsComponentOutpu
 }
 export interface featureProviders_subscriptionFeatureRegistrationsComponentInputs {
 	readonly name: string;
-	readonly properties?: SubscriptionFeatureRegistrationProperties | undefined;
+	readonly properties?: SubscriptionFeatureRegistrationProperties;
 }
 export interface AuthorizationProfile {
-	readonly approvedTime?: string | undefined;
-	readonly approver?: string | undefined;
-	readonly requestedTime?: string | undefined;
-	readonly requester?: string | undefined;
-	readonly requesterObjectId?: string | undefined;
+	readonly approvedTime?: string;
+	readonly approver?: string;
+	readonly requestedTime?: string;
+	readonly requester?: string;
+	readonly requesterObjectId?: string;
 }
 export interface SubscriptionFeatureRegistrationProperties {
-	readonly approvalType?: ("ApprovalRequired" | "AutoApproval" | "NotSpecified") | undefined;
-	readonly authorizationProfile?: AuthorizationProfile | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly documentationLink?: string | undefined;
-	readonly featureName?: string | undefined;
-	readonly metadata?: SubscriptionFeatureRegistrationPropertiesMetadata | undefined;
-	readonly providerNamespace?: string | undefined;
-	readonly registrationDate?: string | undefined;
-	readonly releaseDate?: string | undefined;
-	readonly shouldFeatureDisplayInPortal?: boolean | undefined;
+	readonly approvalType?: "ApprovalRequired" | "AutoApproval" | "NotSpecified";
+	readonly authorizationProfile?: AuthorizationProfile;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly documentationLink?: string;
+	readonly featureName?: string;
+	readonly metadata?: SubscriptionFeatureRegistrationPropertiesMetadata;
+	readonly providerNamespace?: string;
+	readonly registrationDate?: string;
+	readonly releaseDate?: string;
+	readonly shouldFeatureDisplayInPortal?: boolean;
 	readonly state?:
-		| ("NotRegistered" | "NotSpecified" | "Pending" | "Registered" | "Registering" | "Unregistered" | "Unregistering")
-		| undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly tenantId?: string | undefined;
+		| "NotRegistered"
+		| "NotSpecified"
+		| "Pending"
+		| "Registered"
+		| "Registering"
+		| "Unregistered"
+		| "Unregistering";
+	readonly subscriptionId?: string;
+	readonly tenantId?: string;
 }
 export interface SubscriptionFeatureRegistrationPropertiesMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	"featureProviders/subscriptionFeatureRegistrations": featureProviders_subscriptionFeatureRegistrations,

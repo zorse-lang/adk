@@ -17,9 +17,9 @@ export interface ComponentVersionComponentOutputs {
 	readonly ComponentVersion: string;
 }
 export interface ComponentVersionComponentInputs {
-	readonly InlineRecipe?: (string | undefined) | undefined;
-	readonly LambdaFunction?: (LambdaFunctionRecipeSource | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly InlineRecipe?: string | undefined;
+	readonly LambdaFunction?: LambdaFunctionRecipeSource | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class Deployment extends CfnResource<DeploymentComponentInputs> implements DeploymentComponentOutputs {
@@ -33,97 +33,97 @@ export interface DeploymentComponentOutputs {
 }
 export interface DeploymentComponentInputs {
 	readonly TargetArn: string;
-	readonly Components?: ({ [key: string]: ComponentDeploymentSpecification } | undefined) | undefined;
-	readonly DeploymentName?: (string | undefined) | undefined;
-	readonly DeploymentPolicies?: (DeploymentPolicies | undefined) | undefined;
-	readonly IotJobConfiguration?: (DeploymentIoTJobConfiguration | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Components?: { [key: string]: ComponentDeploymentSpecification } | undefined;
+	readonly DeploymentName?: string | undefined;
+	readonly DeploymentPolicies?: DeploymentPolicies | undefined;
+	readonly IotJobConfiguration?: DeploymentIoTJobConfiguration | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export interface ComponentDependencyRequirement {
-	readonly DependencyType?: (string | undefined) | undefined;
-	readonly VersionRequirement?: (string | undefined) | undefined;
+	readonly DependencyType?: string | undefined;
+	readonly VersionRequirement?: string | undefined;
 }
 export interface ComponentPlatform {
-	readonly Attributes?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Attributes?: { [key: string]: string } | undefined;
+	readonly Name?: string | undefined;
 }
 export interface LambdaContainerParams {
-	readonly Devices?: (LambdaDeviceMount[] | undefined) | undefined;
-	readonly MemorySizeInKB?: (number | undefined) | undefined;
-	readonly MountROSysfs?: (boolean | undefined) | undefined;
-	readonly Volumes?: (LambdaVolumeMount[] | undefined) | undefined;
+	readonly Devices?: LambdaDeviceMount[] | undefined;
+	readonly MemorySizeInKB?: number | undefined;
+	readonly MountROSysfs?: boolean | undefined;
+	readonly Volumes?: LambdaVolumeMount[] | undefined;
 }
 export interface LambdaDeviceMount {
-	readonly AddGroupOwner?: (boolean | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
-	readonly Permission?: (string | undefined) | undefined;
+	readonly AddGroupOwner?: boolean | undefined;
+	readonly Path?: string | undefined;
+	readonly Permission?: string | undefined;
 }
 export interface LambdaEventSource {
-	readonly Topic?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Topic?: string | undefined;
+	readonly Type?: string | undefined;
 }
 export interface LambdaExecutionParameters {
-	readonly EnvironmentVariables?: ({ [key: string]: string } | undefined) | undefined;
-	readonly EventSources?: (LambdaEventSource[] | undefined) | undefined;
-	readonly ExecArgs?: (string[] | undefined) | undefined;
-	readonly InputPayloadEncodingType?: (string | undefined) | undefined;
-	readonly LinuxProcessParams?: (LambdaLinuxProcessParams | undefined) | undefined;
-	readonly MaxIdleTimeInSeconds?: (number | undefined) | undefined;
-	readonly MaxInstancesCount?: (number | undefined) | undefined;
-	readonly MaxQueueSize?: (number | undefined) | undefined;
-	readonly Pinned?: (boolean | undefined) | undefined;
-	readonly StatusTimeoutInSeconds?: (number | undefined) | undefined;
-	readonly TimeoutInSeconds?: (number | undefined) | undefined;
+	readonly EnvironmentVariables?: { [key: string]: string } | undefined;
+	readonly EventSources?: LambdaEventSource[] | undefined;
+	readonly ExecArgs?: string[] | undefined;
+	readonly InputPayloadEncodingType?: string | undefined;
+	readonly LinuxProcessParams?: LambdaLinuxProcessParams | undefined;
+	readonly MaxIdleTimeInSeconds?: number | undefined;
+	readonly MaxInstancesCount?: number | undefined;
+	readonly MaxQueueSize?: number | undefined;
+	readonly Pinned?: boolean | undefined;
+	readonly StatusTimeoutInSeconds?: number | undefined;
+	readonly TimeoutInSeconds?: number | undefined;
 }
 export interface LambdaFunctionRecipeSource {
-	readonly ComponentDependencies?: ({ [key: string]: ComponentDependencyRequirement } | undefined) | undefined;
-	readonly ComponentLambdaParameters?: (LambdaExecutionParameters | undefined) | undefined;
-	readonly ComponentName?: (string | undefined) | undefined;
-	readonly ComponentPlatforms?: (ComponentPlatform[] | undefined) | undefined;
-	readonly ComponentVersion?: (string | undefined) | undefined;
-	readonly LambdaArn?: (string | undefined) | undefined;
+	readonly ComponentDependencies?: { [key: string]: ComponentDependencyRequirement } | undefined;
+	readonly ComponentLambdaParameters?: LambdaExecutionParameters | undefined;
+	readonly ComponentName?: string | undefined;
+	readonly ComponentPlatforms?: ComponentPlatform[] | undefined;
+	readonly ComponentVersion?: string | undefined;
+	readonly LambdaArn?: string | undefined;
 }
 export interface LambdaLinuxProcessParams {
-	readonly ContainerParams?: (LambdaContainerParams | undefined) | undefined;
-	readonly IsolationMode?: (string | undefined) | undefined;
+	readonly ContainerParams?: LambdaContainerParams | undefined;
+	readonly IsolationMode?: string | undefined;
 }
 export interface LambdaVolumeMount {
-	readonly AddGroupOwner?: (boolean | undefined) | undefined;
-	readonly DestinationPath?: (string | undefined) | undefined;
-	readonly Permission?: (string | undefined) | undefined;
-	readonly SourcePath?: (string | undefined) | undefined;
+	readonly AddGroupOwner?: boolean | undefined;
+	readonly DestinationPath?: string | undefined;
+	readonly Permission?: string | undefined;
+	readonly SourcePath?: string | undefined;
 }
 export interface ComponentConfigurationUpdate {
-	readonly Merge?: (string | undefined) | undefined;
-	readonly Reset?: (string[] | undefined) | undefined;
+	readonly Merge?: string | undefined;
+	readonly Reset?: string[] | undefined;
 }
 export interface ComponentDeploymentSpecification {
-	readonly ComponentVersion?: (string | undefined) | undefined;
-	readonly ConfigurationUpdate?: (ComponentConfigurationUpdate | undefined) | undefined;
-	readonly RunWith?: (ComponentRunWith | undefined) | undefined;
+	readonly ComponentVersion?: string | undefined;
+	readonly ConfigurationUpdate?: ComponentConfigurationUpdate | undefined;
+	readonly RunWith?: ComponentRunWith | undefined;
 }
 export interface ComponentRunWith {
-	readonly PosixUser?: (string | undefined) | undefined;
-	readonly SystemResourceLimits?: (SystemResourceLimits | undefined) | undefined;
-	readonly WindowsUser?: (string | undefined) | undefined;
+	readonly PosixUser?: string | undefined;
+	readonly SystemResourceLimits?: SystemResourceLimits | undefined;
+	readonly WindowsUser?: string | undefined;
 }
 export interface DeploymentComponentUpdatePolicy {
-	readonly Action?: (string | undefined) | undefined;
-	readonly TimeoutInSeconds?: (number | undefined) | undefined;
+	readonly Action?: string | undefined;
+	readonly TimeoutInSeconds?: number | undefined;
 }
 export interface DeploymentConfigurationValidationPolicy {
-	readonly TimeoutInSeconds?: (number | undefined) | undefined;
+	readonly TimeoutInSeconds?: number | undefined;
 }
 export interface DeploymentIoTJobConfiguration {
-	readonly AbortConfig?: (IoTJobAbortConfig | undefined) | undefined;
-	readonly JobExecutionsRolloutConfig?: (IoTJobExecutionsRolloutConfig | undefined) | undefined;
-	readonly TimeoutConfig?: (IoTJobTimeoutConfig | undefined) | undefined;
+	readonly AbortConfig?: IoTJobAbortConfig | undefined;
+	readonly JobExecutionsRolloutConfig?: IoTJobExecutionsRolloutConfig | undefined;
+	readonly TimeoutConfig?: IoTJobTimeoutConfig | undefined;
 }
 export interface DeploymentPolicies {
-	readonly ComponentUpdatePolicy?: (DeploymentComponentUpdatePolicy | undefined) | undefined;
-	readonly ConfigurationValidationPolicy?: (DeploymentConfigurationValidationPolicy | undefined) | undefined;
-	readonly FailureHandlingPolicy?: (string | undefined) | undefined;
+	readonly ComponentUpdatePolicy?: DeploymentComponentUpdatePolicy | undefined;
+	readonly ConfigurationValidationPolicy?: DeploymentConfigurationValidationPolicy | undefined;
+	readonly FailureHandlingPolicy?: string | undefined;
 }
 export interface IoTJobAbortConfig {
 	readonly CriteriaList: IoTJobAbortCriteria[];
@@ -135,8 +135,8 @@ export interface IoTJobAbortCriteria {
 	readonly ThresholdPercentage: number;
 }
 export interface IoTJobExecutionsRolloutConfig {
-	readonly ExponentialRate?: (IoTJobExponentialRolloutRate | undefined) | undefined;
-	readonly MaximumPerMinute?: (number | undefined) | undefined;
+	readonly ExponentialRate?: IoTJobExponentialRolloutRate | undefined;
+	readonly MaximumPerMinute?: number | undefined;
 }
 export interface IoTJobExponentialRolloutRate {
 	readonly BaseRatePerMinute: number;
@@ -144,15 +144,15 @@ export interface IoTJobExponentialRolloutRate {
 	readonly RateIncreaseCriteria: IoTJobRateIncreaseCriteria;
 }
 export interface IoTJobRateIncreaseCriteria {
-	readonly NumberOfNotifiedThings?: (number | undefined) | undefined;
-	readonly NumberOfSucceededThings?: (number | undefined) | undefined;
+	readonly NumberOfNotifiedThings?: number | undefined;
+	readonly NumberOfSucceededThings?: number | undefined;
 }
 export interface IoTJobTimeoutConfig {
-	readonly InProgressTimeoutInMinutes?: (number | undefined) | undefined;
+	readonly InProgressTimeoutInMinutes?: number | undefined;
 }
 export interface SystemResourceLimits {
-	readonly Cpus?: (number | undefined) | undefined;
-	readonly Memory?: (number | undefined) | undefined;
+	readonly Cpus?: number | undefined;
+	readonly Memory?: number | undefined;
 }
 export default {
 	ComponentVersion: ComponentVersion,

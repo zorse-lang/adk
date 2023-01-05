@@ -20,56 +20,56 @@ export interface prometheusRuleGroupsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: PrometheusRuleGroupProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface PrometheusRule {
-	readonly actions?: PrometheusRuleGroupAction[] | undefined;
-	readonly alert?: string | undefined;
-	readonly annotations?: PrometheusRuleAnnotations | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly actions?: PrometheusRuleGroupAction[];
+	readonly alert?: string;
+	readonly annotations?: PrometheusRuleAnnotations;
+	readonly enabled?: boolean;
 	readonly expression: string;
-	readonly for?: string | undefined;
-	readonly labels?: PrometheusRuleLabels | undefined;
-	readonly record?: string | undefined;
-	readonly resolveConfiguration?: PrometheusRuleResolveConfiguration | undefined;
-	readonly severity?: number | undefined;
+	readonly for?: string;
+	readonly labels?: PrometheusRuleLabels;
+	readonly record?: string;
+	readonly resolveConfiguration?: PrometheusRuleResolveConfiguration;
+	readonly severity?: number;
 }
 export interface PrometheusRuleAnnotations {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PrometheusRuleGroupAction {
-	readonly actionGroupId?: string | undefined;
-	readonly actionProperties?: PrometheusRuleGroupActionProperties | undefined;
+	readonly actionGroupId?: string;
+	readonly actionProperties?: PrometheusRuleGroupActionProperties;
 }
 export interface PrometheusRuleGroupActionProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PrometheusRuleGroupProperties {
-	readonly clusterName?: string | undefined;
-	readonly description?: string | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly interval?: string | undefined;
+	readonly clusterName?: string;
+	readonly description?: string;
+	readonly enabled?: boolean;
+	readonly interval?: string;
 	readonly rules: PrometheusRule[];
 	readonly scopes: string[];
 }
 export interface PrometheusRuleLabels {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PrometheusRuleResolveConfiguration {
-	readonly autoResolved?: boolean | undefined;
-	readonly timeToResolve?: string | undefined;
+	readonly autoResolved?: boolean;
+	readonly timeToResolve?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	prometheusRuleGroups: prometheusRuleGroups,

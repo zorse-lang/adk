@@ -19,7 +19,7 @@ export interface settings_AlertSyncSettingsComponentOutputs {
 export interface settings_AlertSyncSettingsComponentInputs {
 	readonly name: string;
 	readonly kind: "AlertSyncSettings";
-	readonly properties?: AlertSyncSettingProperties | undefined;
+	readonly properties?: AlertSyncSettingProperties;
 }
 export class settings_DataExportSettings
 	extends ArmResource<settings_DataExportSettingsComponentInputs>
@@ -40,7 +40,7 @@ export interface settings_DataExportSettingsComponentOutputs {
 export interface settings_DataExportSettingsComponentInputs {
 	readonly name: string;
 	readonly kind: "DataExportSettings";
-	readonly properties?: DataExportSettingProperties | undefined;
+	readonly properties?: DataExportSettingProperties;
 }
 export interface AlertSyncSettingProperties {
 	readonly enabled: boolean;

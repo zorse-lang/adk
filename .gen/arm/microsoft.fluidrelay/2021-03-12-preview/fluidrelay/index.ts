@@ -19,29 +19,29 @@ export interface fluidRelayServersComponentOutputs {
 export interface fluidRelayServersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: FluidRelayServerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: FluidRelayServerProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface FluidRelayEndpoints {
-	readonly ordererEndpoints?: string[] | undefined;
-	readonly storageEndpoints?: string[] | undefined;
+	readonly ordererEndpoints?: string[];
+	readonly storageEndpoints?: string[];
 }
 export interface FluidRelayServerProperties {
-	readonly fluidRelayEndpoints?: FluidRelayEndpoints | undefined;
-	readonly frsTenantId?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
+	readonly fluidRelayEndpoints?: FluidRelayEndpoints;
+	readonly frsTenantId?: string;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	fluidRelayServers: fluidRelayServers,

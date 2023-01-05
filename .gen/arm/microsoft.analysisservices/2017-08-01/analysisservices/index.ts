@@ -16,9 +16,9 @@ export interface serversComponentOutputs {
 export interface serversComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AnalysisServicesServerProperties | undefined;
+	readonly properties?: AnalysisServicesServerProperties;
 	readonly sku: ResourceSku;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export function listGatewayStatus(resource: servers): GatewayListStatusLive {
 	if (resource.apiVersion !== "2017-08-01") {
@@ -30,75 +30,69 @@ export function listGatewayStatus(resource: servers): GatewayListStatusLive {
 	throw new Error("not implemented");
 }
 export interface AnalysisServicesServerProperties {
-	readonly asAdministrators?: ServerAdministrators | undefined;
-	readonly backupBlobContainerUri?: string | undefined;
-	readonly gatewayDetails?: GatewayDetails | undefined;
-	readonly ipV4FirewallSettings?: IPv4FirewallSettings | undefined;
-	readonly managedMode?: number | undefined;
+	readonly asAdministrators?: ServerAdministrators;
+	readonly backupBlobContainerUri?: string;
+	readonly gatewayDetails?: GatewayDetails;
+	readonly ipV4FirewallSettings?: IPv4FirewallSettings;
+	readonly managedMode?: number;
 	readonly provisioningState?:
-		| (
-				| "Deleting"
-				| "Failed"
-				| "Paused"
-				| "Pausing"
-				| "Preparing"
-				| "Provisioning"
-				| "Resuming"
-				| "Scaling"
-				| "Succeeded"
-				| "Suspended"
-				| "Suspending"
-				| "Updating"
-		  )
-		| undefined;
-	readonly querypoolConnectionMode?: "All" | undefined;
-	readonly serverFullName?: string | undefined;
-	readonly serverMonitorMode?: number | undefined;
-	readonly sku?: ResourceSku | undefined;
+		| "Deleting"
+		| "Failed"
+		| "Paused"
+		| "Pausing"
+		| "Preparing"
+		| "Provisioning"
+		| "Resuming"
+		| "Scaling"
+		| "Succeeded"
+		| "Suspended"
+		| "Suspending"
+		| "Updating";
+	readonly querypoolConnectionMode?: "All";
+	readonly serverFullName?: string;
+	readonly serverMonitorMode?: number;
+	readonly sku?: ResourceSku;
 	readonly state?:
-		| (
-				| "Deleting"
-				| "Failed"
-				| "Paused"
-				| "Pausing"
-				| "Preparing"
-				| "Provisioning"
-				| "Resuming"
-				| "Scaling"
-				| "Succeeded"
-				| "Suspended"
-				| "Suspending"
-				| "Updating"
-		  )
-		| undefined;
+		| "Deleting"
+		| "Failed"
+		| "Paused"
+		| "Pausing"
+		| "Preparing"
+		| "Provisioning"
+		| "Resuming"
+		| "Scaling"
+		| "Succeeded"
+		| "Suspended"
+		| "Suspending"
+		| "Updating";
 }
 export interface GatewayDetails {
-	readonly dmtsClusterUri?: string | undefined;
-	readonly gatewayObjectId?: string | undefined;
-	readonly gatewayResourceId?: string | undefined;
+	readonly dmtsClusterUri?: string;
+	readonly gatewayObjectId?: string;
+	readonly gatewayResourceId?: string;
 }
 export interface GatewayListStatusLive {
-	readonly status?: "0" | undefined;
+	readonly status?: "0";
 }
 export interface IPv4FirewallRule {
-	readonly firewallRuleName?: string | undefined;
-	readonly rangeEnd?: string | undefined;
-	readonly rangeStart?: string | undefined;
+	readonly firewallRuleName?: string;
+	readonly rangeEnd?: string;
+	readonly rangeStart?: string;
 }
 export interface IPv4FirewallSettings {
-	readonly enablePowerBIService?: boolean | undefined;
-	readonly firewallRules?: IPv4FirewallRule[] | undefined;
+	readonly enablePowerBIService?: boolean;
+	readonly firewallRules?: IPv4FirewallRule[];
 }
 export interface ResourceSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name: string;
-	readonly tier?: ("Basic" | "Development" | "Standard") | undefined;
+	readonly tier?: "Basic" | "Development" | "Standard";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ServerAdministrators {
-	readonly members?: string[] | undefined;
+	readonly members?: string[];
 }
 export default {
 	servers: servers,

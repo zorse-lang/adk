@@ -17,9 +17,9 @@ export interface reservationOrdersComponentOutputs {
 	readonly type: "Microsoft.Capacity/reservationOrders";
 }
 export interface reservationOrdersComponentInputs {
-	readonly etag?: number | undefined;
+	readonly etag?: number;
 	readonly name: string;
-	readonly properties?: ReservationOrderProperties | undefined;
+	readonly properties?: ReservationOrderProperties;
 }
 export class reservationOrders_reservations
 	extends ArmResource<reservationOrders_reservationsComponentInputs>
@@ -38,75 +38,70 @@ export interface reservationOrders_reservationsComponentOutputs {
 	readonly type: "Microsoft.Capacity/reservationOrders/reservations";
 }
 export interface reservationOrders_reservationsComponentInputs {
-	readonly etag?: number | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: number;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ReservationProperties | undefined;
-	readonly sku?: SkuName | undefined;
+	readonly properties?: ReservationProperties;
+	readonly sku?: SkuName;
 }
 export interface ExtendedStatusInfo {
-	readonly message?: string | undefined;
+	readonly message?: string;
 	readonly statusCode?:
-		| (
-				| "Active"
-				| "Expired"
-				| "Merged"
-				| "None"
-				| "PaymentInstrumentError"
-				| "Pending"
-				| "PurchaseError"
-				| "Split"
-				| "Succeeded"
-		  )
-		| undefined;
+		| "Active"
+		| "Expired"
+		| "Merged"
+		| "None"
+		| "PaymentInstrumentError"
+		| "Pending"
+		| "PurchaseError"
+		| "Split"
+		| "Succeeded";
 }
 export interface ReservationMergeProperties {
-	readonly mergeDestination?: string | undefined;
-	readonly mergeSources?: string[] | undefined;
+	readonly mergeDestination?: string;
+	readonly mergeSources?: string[];
 }
 export interface ReservationOrderProperties {
-	readonly createdDateTime?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly expiryDate?: string | undefined;
-	readonly originalQuantity?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly requestDateTime?: string | undefined;
-	readonly reservations?: ReservationResponse[] | undefined;
-	readonly term?: ("P1Y" | "P3Y") | undefined;
+	readonly createdDateTime?: string;
+	readonly displayName?: string;
+	readonly expiryDate?: string;
+	readonly originalQuantity?: number;
+	readonly provisioningState?: string;
+	readonly requestDateTime?: string;
+	readonly reservations?: ReservationResponse[];
+	readonly term?: "P1Y" | "P3Y";
 }
 export interface ReservationProperties {
-	readonly appliedScopes?: string[] | undefined;
-	readonly appliedScopeType?: ("Shared" | "Single") | undefined;
-	readonly displayName?: string | undefined;
-	readonly effectiveDateTime?: string | undefined;
-	readonly expiryDate?: string | undefined;
-	readonly extendedStatusInfo?: ExtendedStatusInfo | undefined;
-	readonly instanceFlexibility?: ("NotSupported" | "Off" | "On") | undefined;
-	readonly lastUpdatedDateTime?: string | undefined;
-	readonly mergeProperties?: ReservationMergeProperties | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly quantity?: number | undefined;
-	readonly reservedResourceType?:
-		| ("CosmosDb" | "RedHat" | "SqlDatabases" | "SuseLinux" | "VirtualMachines")
-		| undefined;
-	readonly skuDescription?: string | undefined;
-	readonly splitProperties?: ReservationSplitProperties | undefined;
+	readonly appliedScopes?: string[];
+	readonly appliedScopeType?: "Shared" | "Single";
+	readonly displayName?: string;
+	readonly effectiveDateTime?: string;
+	readonly expiryDate?: string;
+	readonly extendedStatusInfo?: ExtendedStatusInfo;
+	readonly instanceFlexibility?: "NotSupported" | "Off" | "On";
+	readonly lastUpdatedDateTime?: string;
+	readonly mergeProperties?: ReservationMergeProperties;
+	readonly provisioningState?: string;
+	readonly quantity?: number;
+	readonly reservedResourceType?: "CosmosDb" | "RedHat" | "SqlDatabases" | "SuseLinux" | "VirtualMachines";
+	readonly skuDescription?: string;
+	readonly splitProperties?: ReservationSplitProperties;
 }
 export interface ReservationResponse {
-	readonly etag?: number | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ReservationProperties | undefined;
-	readonly sku?: SkuName | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: number;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: ReservationProperties;
+	readonly sku?: SkuName;
+	readonly type?: string;
 }
 export interface ReservationSplitProperties {
-	readonly splitDestinations?: string[] | undefined;
-	readonly splitSource?: string | undefined;
+	readonly splitDestinations?: string[];
+	readonly splitSource?: string;
 }
 export interface SkuName {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export default {
 	reservationOrders: reservationOrders,

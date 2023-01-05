@@ -10,46 +10,45 @@ export class ProjectsRegionsAutoscalingPolicies
 }
 export interface ProjectsRegionsAutoscalingPoliciesComponentOutputs {}
 export interface ProjectsRegionsAutoscalingPoliciesComponentInputs {
-	readonly basicAlgorithm?: BasicAutoscalingAlgorithm | undefined;
+	readonly basicAlgorithm?: BasicAutoscalingAlgorithm;
 	readonly id: string;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
 	readonly parent: string;
-	readonly secondaryWorkerConfig?: InstanceGroupAutoscalingPolicyConfig | undefined;
+	readonly secondaryWorkerConfig?: InstanceGroupAutoscalingPolicyConfig;
 	readonly workerConfig: InstanceGroupAutoscalingPolicyConfig;
-	readonly type: string;
 }
 export interface AutoscalingPolicy {
-	readonly basicAlgorithm?: BasicAutoscalingAlgorithm | undefined;
+	readonly basicAlgorithm?: BasicAutoscalingAlgorithm;
 	readonly id: string;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly secondaryWorkerConfig?: InstanceGroupAutoscalingPolicyConfig | undefined;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly secondaryWorkerConfig?: InstanceGroupAutoscalingPolicyConfig;
 	readonly workerConfig: InstanceGroupAutoscalingPolicyConfig;
 }
 export interface BasicAutoscalingAlgorithm {
-	readonly cooldownPeriod?: string | undefined;
-	readonly sparkStandaloneConfig?: SparkStandaloneAutoscalingConfig | undefined;
-	readonly yarnConfig?: BasicYarnAutoscalingConfig | undefined;
+	readonly cooldownPeriod?: string;
+	readonly sparkStandaloneConfig?: SparkStandaloneAutoscalingConfig;
+	readonly yarnConfig?: BasicYarnAutoscalingConfig;
 }
 export interface BasicYarnAutoscalingConfig {
 	readonly gracefulDecommissionTimeout: string;
 	readonly scaleDownFactor: number;
-	readonly scaleDownMinWorkerFraction?: number | undefined;
+	readonly scaleDownMinWorkerFraction?: number;
 	readonly scaleUpFactor: number;
-	readonly scaleUpMinWorkerFraction?: number | undefined;
+	readonly scaleUpMinWorkerFraction?: number;
 }
 export interface InstanceGroupAutoscalingPolicyConfig {
 	readonly maxInstances: number;
-	readonly minInstances?: number | undefined;
-	readonly weight?: number | undefined;
+	readonly minInstances?: number;
+	readonly weight?: number;
 }
 export interface SparkStandaloneAutoscalingConfig {
 	readonly gracefulDecommissionTimeout: string;
 	readonly scaleDownFactor: number;
-	readonly scaleDownMinWorkerFraction?: number | undefined;
+	readonly scaleDownMinWorkerFraction?: number;
 	readonly scaleUpFactor: number;
-	readonly scaleUpMinWorkerFraction?: number | undefined;
+	readonly scaleUpMinWorkerFraction?: number;
 }
 export default {
 	ProjectsRegionsAutoscalingPolicies: ProjectsRegionsAutoscalingPolicies,

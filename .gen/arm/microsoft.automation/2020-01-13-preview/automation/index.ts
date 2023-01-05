@@ -17,12 +17,12 @@ export interface automationAccountsComponentOutputs {
 	readonly type: "Microsoft.Automation/automationAccounts";
 }
 export interface automationAccountsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AutomationAccountCreateOrUpdatePropertiesOrAutomationAccountProperties | undefined;
-	readonly tags?: AutomationAccountCreateOrUpdateParametersTags | undefined;
+	readonly properties?: AutomationAccountCreateOrUpdatePropertiesOrAutomationAccountProperties;
+	readonly tags?: AutomationAccountCreateOrUpdateParametersTags;
 }
 export class automationAccounts_certificates
 	extends ArmResource<automationAccounts_certificatesComponentInputs>
@@ -67,10 +67,10 @@ export interface automationAccounts_compilationjobsComponentOutputs {
 	readonly type: "Microsoft.Automation/automationAccounts/compilationjobs";
 }
 export interface automationAccounts_compilationjobsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: DscCompilationJobCreatePropertiesOrDscCompilationJobProperties;
-	readonly tags?: DscCompilationJobCreateParametersTags | undefined;
+	readonly tags?: DscCompilationJobCreateParametersTags;
 }
 export class automationAccounts_connections
 	extends ArmResource<automationAccounts_connectionsComponentInputs>
@@ -175,11 +175,11 @@ export interface automationAccounts_modulesComponentOutputs {
 	readonly type: "Microsoft.Automation/automationAccounts/modules";
 }
 export interface automationAccounts_modulesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ModuleCreateOrUpdatePropertiesOrModuleProperties;
-	readonly tags?: ModuleCreateOrUpdateParametersTags | undefined;
+	readonly tags?: ModuleCreateOrUpdateParametersTags;
 }
 export class automationAccounts_nodeConfigurations
 	extends ArmResource<automationAccounts_nodeConfigurationsComponentInputs>
@@ -205,10 +205,8 @@ export interface automationAccounts_nodeConfigurationsComponentOutputs {
 }
 export interface automationAccounts_nodeConfigurationsComponentInputs {
 	readonly name: string;
-	readonly properties?:
-		| DscNodeConfigurationCreateOrUpdateParametersPropertiesOrDscNodeConfigurationProperties
-		| undefined;
-	readonly tags?: DscNodeConfigurationCreateOrUpdateParametersTags | undefined;
+	readonly properties?: DscNodeConfigurationCreateOrUpdateParametersPropertiesOrDscNodeConfigurationProperties;
+	readonly tags?: DscNodeConfigurationCreateOrUpdateParametersTags;
 }
 export class automationAccounts_nodes
 	extends ArmResource<automationAccounts_nodesComponentInputs>
@@ -228,7 +226,7 @@ export interface automationAccounts_nodesComponentOutputs {
 }
 export interface automationAccounts_nodesComponentInputs {
 	readonly name: string;
-	readonly properties?: DscNodeProperties | undefined;
+	readonly properties?: DscNodeProperties;
 }
 export class automationAccounts_privateEndpointConnections
 	extends ArmResource<automationAccounts_privateEndpointConnectionsComponentInputs>
@@ -254,7 +252,7 @@ export interface automationAccounts_privateEndpointConnectionsComponentOutputs {
 }
 export interface automationAccounts_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class automationAccounts_python2Packages
 	extends ArmResource<automationAccounts_python2PackagesComponentInputs>
@@ -279,11 +277,11 @@ export interface automationAccounts_python2PackagesComponentOutputs {
 	readonly type: "Microsoft.Automation/automationAccounts/python2Packages";
 }
 export interface automationAccounts_python2PackagesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: PythonPackageCreatePropertiesOrModuleProperties;
-	readonly tags?: PythonPackageCreateParametersTags | undefined;
+	readonly tags?: PythonPackageCreateParametersTags;
 }
 export class automationAccounts_schedules
 	extends ArmResource<automationAccounts_schedulesComponentInputs>
@@ -394,11 +392,11 @@ export interface automationAccounts_watchersComponentOutputs {
 	readonly type: "Microsoft.Automation/automationAccounts/watchers";
 }
 export interface automationAccounts_watchersComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WatcherProperties | undefined;
-	readonly tags?: WatcherTags | undefined;
+	readonly properties?: WatcherProperties;
+	readonly tags?: WatcherTags;
 }
 export function listKeys(resource: automationAccounts): KeyListResult {
 	if (resource.apiVersion !== "2020-01-13-preview") {
@@ -410,373 +408,362 @@ export function listKeys(resource: automationAccounts): KeyListResult {
 	throw new Error("not implemented");
 }
 export interface AdvancedSchedule {
-	readonly monthDays?: number[] | undefined;
-	readonly monthlyOccurrences?: AdvancedScheduleMonthlyOccurrence[] | undefined;
-	readonly weekDays?: string[] | undefined;
+	readonly monthDays?: number[];
+	readonly monthlyOccurrences?: AdvancedScheduleMonthlyOccurrence[];
+	readonly weekDays?: string[];
 }
 export interface AdvancedScheduleMonthlyOccurrence {
-	readonly day?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday") | undefined;
-	readonly occurrence?: number | undefined;
+	readonly day?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday";
+	readonly occurrence?: number;
 }
 export interface AutomationAccountCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AutomationAccountCreateOrUpdatePropertiesOrAutomationAccountProperties {
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly encryption?: EncryptionProperties | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly publicNetworkAccess?: boolean | undefined;
-	readonly sku?: Sku | undefined;
-	readonly state?: ("Ok" | "Suspended" | "Unavailable") | undefined;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly encryption?: EncryptionProperties;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedTime?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly publicNetworkAccess?: boolean;
+	readonly sku?: Sku;
+	readonly state?: "Ok" | "Suspended" | "Unavailable";
 }
 export interface CertificateCreateOrUpdatePropertiesOrCertificateProperties {
 	readonly base64Value: string;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly expiryTime?: string | undefined;
-	readonly isExportable?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly expiryTime?: string;
+	readonly isExportable?: boolean;
+	readonly lastModifiedTime?: string;
+	readonly thumbprint?: string;
 }
 export interface ComponentsSgqdofSchemasIdentityPropertiesUserassignedidentitiesAdditionalproperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface ConnectionCreateOrUpdatePropertiesFieldDefinitionValues {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ConnectionCreateOrUpdatePropertiesOrConnectionProperties {
 	readonly connectionType: ConnectionTypeAssociationProperty;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fieldDefinitionValues?: ConnectionCreateOrUpdatePropertiesFieldDefinitionValues | undefined;
-	readonly lastModifiedTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly fieldDefinitionValues?: ConnectionCreateOrUpdatePropertiesFieldDefinitionValues;
+	readonly lastModifiedTime?: string;
 }
 export interface ConnectionTypeAssociationProperty {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface ConnectionTypeCreateOrUpdatePropertiesFieldDefinitions {
-	readonly "[ key: string ]"?: FieldDefinition | undefined;
+	readonly [key: string]: FieldDefinition;
 }
 export interface ConnectionTypeCreateOrUpdatePropertiesOrConnectionTypeProperties {
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
+	readonly creationTime?: string;
+	readonly description?: string;
 	readonly fieldDefinitions: ConnectionTypeCreateOrUpdatePropertiesFieldDefinitions;
-	readonly isGlobal?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
+	readonly isGlobal?: boolean;
+	readonly lastModifiedTime?: string;
 }
 export interface ContentHash {
 	readonly algorithm: string;
 	readonly value: string;
 }
 export interface ContentLink {
-	readonly contentHash?: ContentHash | undefined;
-	readonly uri?: string | undefined;
-	readonly version?: string | undefined;
+	readonly contentHash?: ContentHash;
+	readonly uri?: string;
+	readonly version?: string;
 }
 export interface ContentSourceOrDscNodeConfigurationPropertiesSource {
-	readonly hash?: ContentHash | undefined;
-	readonly type?: ("embeddedContent" | "uri") | undefined;
-	readonly value?: string | undefined;
-	readonly version?: string | undefined;
+	readonly hash?: ContentHash;
+	readonly type?: "embeddedContent" | "uri";
+	readonly value?: string;
+	readonly version?: string;
 }
 export interface CredentialCreateOrUpdatePropertiesOrCredentialProperties {
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly lastModifiedTime?: string;
 	readonly password: string;
 	readonly userName: string;
 }
 export interface DscCompilationJobCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DscCompilationJobCreatePropertiesOrDscCompilationJobProperties {
 	readonly configuration: DscConfigurationAssociationProperty;
-	readonly creationTime?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly exception?: string | undefined;
-	readonly incrementNodeConfigurationBuild?: boolean | undefined;
-	readonly jobId?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly lastStatusModifiedTime?: string | undefined;
-	readonly parameters?: DscCompilationJobCreatePropertiesParameters | undefined;
-	readonly provisioningState?: ("Failed" | "Processing" | "Succeeded" | "Suspended") | undefined;
-	readonly runOn?: string | undefined;
-	readonly startedBy?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly endTime?: string;
+	readonly exception?: string;
+	readonly incrementNodeConfigurationBuild?: boolean;
+	readonly jobId?: string;
+	readonly lastModifiedTime?: string;
+	readonly lastStatusModifiedTime?: string;
+	readonly parameters?: DscCompilationJobCreatePropertiesParameters;
+	readonly provisioningState?: "Failed" | "Processing" | "Succeeded" | "Suspended";
+	readonly runOn?: string;
+	readonly startedBy?: string;
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Activating"
-				| "Blocked"
-				| "Completed"
-				| "Disconnected"
-				| "Failed"
-				| "New"
-				| "Removing"
-				| "Resuming"
-				| "Running"
-				| "Stopped"
-				| "Stopping"
-				| "Suspended"
-				| "Suspending"
-		  )
-		| undefined;
-	readonly statusDetails?: string | undefined;
+		| "Activating"
+		| "Blocked"
+		| "Completed"
+		| "Disconnected"
+		| "Failed"
+		| "New"
+		| "Removing"
+		| "Resuming"
+		| "Running"
+		| "Stopped"
+		| "Stopping"
+		| "Suspended"
+		| "Suspending";
+	readonly statusDetails?: string;
 }
 export interface DscCompilationJobCreatePropertiesParameters {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DscConfigurationAssociationProperty {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface DscNodeConfigurationAssociationProperty {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface DscNodeConfigurationCreateOrUpdateParametersPropertiesOrDscNodeConfigurationProperties {
 	readonly configuration: DscConfigurationAssociationProperty;
-	readonly creationTime?: string | undefined;
-	readonly incrementNodeConfigurationBuild?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly nodeCount?: number | undefined;
+	readonly creationTime?: string;
+	readonly incrementNodeConfigurationBuild?: boolean;
+	readonly lastModifiedTime?: string;
+	readonly nodeCount?: number;
 	readonly source: ContentSourceOrDscNodeConfigurationPropertiesSource;
 }
 export interface DscNodeConfigurationCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DscNodeExtensionHandlerAssociationProperty {
-	readonly name?: string | undefined;
-	readonly version?: string | undefined;
+	readonly name?: string;
+	readonly version?: string;
 }
 export interface DscNodeProperties {
-	readonly accountId?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly extensionHandler?: DscNodeExtensionHandlerAssociationProperty[] | undefined;
-	readonly ip?: string | undefined;
-	readonly lastSeen?: string | undefined;
-	readonly nodeConfiguration?: DscNodeConfigurationAssociationProperty | undefined;
-	readonly nodeId?: string | undefined;
-	readonly registrationTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly totalCount?: number | undefined;
+	readonly accountId?: string;
+	readonly etag?: string;
+	readonly extensionHandler?: DscNodeExtensionHandlerAssociationProperty[];
+	readonly ip?: string;
+	readonly lastSeen?: string;
+	readonly nodeConfiguration?: DscNodeConfigurationAssociationProperty;
+	readonly nodeId?: string;
+	readonly registrationTime?: string;
+	readonly status?: string;
+	readonly totalCount?: number;
 }
 export interface EncryptionProperties {
-	readonly identity?: EncryptionPropertiesIdentity | undefined;
-	readonly keySource?: "Microsoft.Automation" | undefined;
-	readonly keyVaultProperties?: KeyVaultProperties | undefined;
+	readonly identity?: EncryptionPropertiesIdentity;
+	readonly keySource?: "Microsoft.Automation";
+	readonly keyVaultProperties?: KeyVaultProperties;
 }
 export interface EncryptionPropertiesIdentity {
-	readonly userAssignedIdentity?: any | undefined;
+	readonly userAssignedIdentity?: any;
 }
 export interface FieldDefinition {
-	readonly isEncrypted?: boolean | undefined;
-	readonly isOptional?: boolean | undefined;
+	readonly isEncrypted?: boolean;
+	readonly isOptional?: boolean;
 	readonly type: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: IdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: IdentityUserAssignedIdentities;
 }
 export interface IdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?:
-		| ComponentsSgqdofSchemasIdentityPropertiesUserassignedidentitiesAdditionalproperties
-		| undefined;
+	readonly [key: string]: ComponentsSgqdofSchemasIdentityPropertiesUserassignedidentitiesAdditionalproperties;
 }
 export interface JobScheduleCreatePropertiesOrJobScheduleProperties {
-	readonly jobScheduleId?: string | undefined;
-	readonly parameters?: JobScheduleCreatePropertiesParameters | undefined;
+	readonly jobScheduleId?: string;
+	readonly parameters?: JobScheduleCreatePropertiesParameters;
 	readonly runbook: RunbookAssociationProperty;
-	readonly runOn?: string | undefined;
+	readonly runOn?: string;
 	readonly schedule: ScheduleAssociationProperty;
 }
 export interface JobScheduleCreatePropertiesParameters {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Key {
-	readonly KeyName?: ("Primary" | "Secondary") | undefined;
-	readonly Permissions?: ("Full" | "Read") | undefined;
-	readonly Value?: string | undefined;
+	readonly KeyName?: "Primary" | "Secondary";
+	readonly Permissions?: "Full" | "Read";
+	readonly Value?: string;
 }
 export interface KeyListResult {
-	readonly keys?: Key[] | undefined;
+	readonly keys?: Key[];
 }
 export interface KeyVaultProperties {
-	readonly keyName?: string | undefined;
-	readonly keyvaultUri?: string | undefined;
-	readonly keyVersion?: string | undefined;
+	readonly keyName?: string;
+	readonly keyvaultUri?: string;
+	readonly keyVersion?: string;
 }
 export interface ModuleCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ModuleCreateOrUpdatePropertiesOrModuleProperties {
-	readonly activityCount?: number | undefined;
+	readonly activityCount?: number;
 	readonly contentLink: ContentLink;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly error?: ModuleErrorInfo | undefined;
-	readonly isComposite?: boolean | undefined;
-	readonly isGlobal?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly error?: ModuleErrorInfo;
+	readonly isComposite?: boolean;
+	readonly isGlobal?: boolean;
+	readonly lastModifiedTime?: string;
 	readonly provisioningState?:
-		| (
-				| "ActivitiesStored"
-				| "Cancelled"
-				| "ConnectionTypeImported"
-				| "ContentDownloaded"
-				| "ContentRetrieved"
-				| "ContentStored"
-				| "ContentValidated"
-				| "Created"
-				| "Creating"
-				| "Failed"
-				| "ModuleDataStored"
-				| "ModuleImportRunbookComplete"
-				| "RunningImportModuleRunbook"
-				| "StartingImportModuleRunbook"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly sizeInBytes?: number | undefined;
-	readonly version?: string | undefined;
+		| "ActivitiesStored"
+		| "Cancelled"
+		| "ConnectionTypeImported"
+		| "ContentDownloaded"
+		| "ContentRetrieved"
+		| "ContentStored"
+		| "ContentValidated"
+		| "Created"
+		| "Creating"
+		| "Failed"
+		| "ModuleDataStored"
+		| "ModuleImportRunbookComplete"
+		| "RunningImportModuleRunbook"
+		| "StartingImportModuleRunbook"
+		| "Succeeded";
+	readonly sizeInBytes?: number;
+	readonly version?: string;
 }
 export interface ModuleErrorInfo {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateEndpoint?: PrivateEndpointProperty | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty | undefined;
+	readonly groupIds?: string[];
+	readonly privateEndpoint?: PrivateEndpointProperty;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty;
 }
 export interface PrivateEndpointProperty {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateLinkServiceConnectionStateProperty {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: string | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: string;
 }
 export interface PythonPackageCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PythonPackageCreatePropertiesOrModuleProperties {
-	readonly activityCount?: number | undefined;
+	readonly activityCount?: number;
 	readonly contentLink: ContentLink;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly error?: ModuleErrorInfo | undefined;
-	readonly isComposite?: boolean | undefined;
-	readonly isGlobal?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly error?: ModuleErrorInfo;
+	readonly isComposite?: boolean;
+	readonly isGlobal?: boolean;
+	readonly lastModifiedTime?: string;
 	readonly provisioningState?:
-		| (
-				| "ActivitiesStored"
-				| "Cancelled"
-				| "ConnectionTypeImported"
-				| "ContentDownloaded"
-				| "ContentRetrieved"
-				| "ContentStored"
-				| "ContentValidated"
-				| "Created"
-				| "Creating"
-				| "Failed"
-				| "ModuleDataStored"
-				| "ModuleImportRunbookComplete"
-				| "RunningImportModuleRunbook"
-				| "StartingImportModuleRunbook"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly sizeInBytes?: number | undefined;
-	readonly version?: string | undefined;
+		| "ActivitiesStored"
+		| "Cancelled"
+		| "ConnectionTypeImported"
+		| "ContentDownloaded"
+		| "ContentRetrieved"
+		| "ContentStored"
+		| "ContentValidated"
+		| "Created"
+		| "Creating"
+		| "Failed"
+		| "ModuleDataStored"
+		| "ModuleImportRunbookComplete"
+		| "RunningImportModuleRunbook"
+		| "StartingImportModuleRunbook"
+		| "Succeeded";
+	readonly sizeInBytes?: number;
+	readonly version?: string;
 }
 export interface RunbookAssociationProperty {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface ScheduleAssociationProperty {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface ScheduleCreateOrUpdatePropertiesOrScheduleProperties {
-	readonly advancedSchedule?: AdvancedSchedule | undefined;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly expiryTime?: string | undefined;
-	readonly expiryTimeOffsetMinutes?: number | undefined;
+	readonly advancedSchedule?: AdvancedSchedule;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly expiryTime?: string;
+	readonly expiryTimeOffsetMinutes?: number;
 	readonly frequency: "Day" | "Hour" | "Minute" | "Month" | "OneTime" | "Week";
-	readonly interval?: any | undefined;
-	readonly isEnabled?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly nextRun?: string | undefined;
-	readonly nextRunOffsetMinutes?: number | undefined;
+	readonly interval?: any;
+	readonly isEnabled?: boolean;
+	readonly lastModifiedTime?: string;
+	readonly nextRun?: string;
+	readonly nextRunOffsetMinutes?: number;
 	readonly startTime: string;
-	readonly startTimeOffsetMinutes?: number | undefined;
-	readonly timeZone?: string | undefined;
+	readonly startTimeOffsetMinutes?: number;
+	readonly timeZone?: string;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
 	readonly name: "Basic" | "Free";
 }
 export interface SourceControlCreateOrUpdatePropertiesOrSourceControlProperties {
-	readonly autoSync?: boolean | undefined;
-	readonly branch?: string | undefined;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly folderPath?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly publishRunbook?: boolean | undefined;
-	readonly repoUrl?: string | undefined;
-	readonly securityToken?: SourceControlSecurityTokenProperties | undefined;
-	readonly sourceType?: ("GitHub" | "VsoGit" | "VsoTfvc") | undefined;
+	readonly autoSync?: boolean;
+	readonly branch?: string;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly folderPath?: string;
+	readonly lastModifiedTime?: string;
+	readonly publishRunbook?: boolean;
+	readonly repoUrl?: string;
+	readonly securityToken?: SourceControlSecurityTokenProperties;
+	readonly sourceType?: "GitHub" | "VsoGit" | "VsoTfvc";
 }
 export interface SourceControlSecurityTokenProperties {
-	readonly accessToken?: string | undefined;
-	readonly refreshToken?: string | undefined;
-	readonly tokenType?: ("Oauth" | "PersonalAccessToken") | undefined;
+	readonly accessToken?: string;
+	readonly refreshToken?: string;
+	readonly tokenType?: "Oauth" | "PersonalAccessToken";
 }
 export interface SourceControlSyncJobCreatePropertiesOrSourceControlSyncJobByIdProperties {
 	readonly commitId: string;
-	readonly creationTime?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly exception?: string | undefined;
-	readonly provisioningState?: ("Completed" | "Failed" | "Running") | undefined;
-	readonly sourceControlSyncJobId?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly syncType?: ("FullSync" | "PartialSync") | undefined;
+	readonly creationTime?: string;
+	readonly endTime?: string;
+	readonly exception?: string;
+	readonly provisioningState?: "Completed" | "Failed" | "Running";
+	readonly sourceControlSyncJobId?: string;
+	readonly startTime?: string;
+	readonly syncType?: "FullSync" | "PartialSync";
 }
 export interface VariableCreateOrUpdatePropertiesOrVariableProperties {
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly isEncrypted?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly value?: string | undefined;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly isEncrypted?: boolean;
+	readonly lastModifiedTime?: string;
+	readonly value?: string;
 }
 export interface WatcherProperties {
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly executionFrequencyInSeconds?: number | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly scriptName?: string | undefined;
-	readonly scriptParameters?: WatcherPropertiesScriptParameters | undefined;
-	readonly scriptRunOn?: string | undefined;
-	readonly status?: string | undefined;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly executionFrequencyInSeconds?: number;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedTime?: string;
+	readonly scriptName?: string;
+	readonly scriptParameters?: WatcherPropertiesScriptParameters;
+	readonly scriptRunOn?: string;
+	readonly status?: string;
 }
 export interface WatcherPropertiesScriptParameters {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WatcherTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	automationAccounts: automationAccounts,

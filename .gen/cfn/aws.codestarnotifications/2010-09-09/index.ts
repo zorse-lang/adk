@@ -18,11 +18,11 @@ export interface NotificationRuleComponentInputs {
 	readonly Name: string;
 	readonly Resource: string;
 	readonly Targets: Target[];
-	readonly CreatedBy?: (string | undefined) | undefined;
-	readonly EventTypeId?: (string | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly TargetAddress?: (string | undefined) | undefined;
+	readonly CreatedBy?: string | undefined;
+	readonly EventTypeId?: string | undefined;
+	readonly Status?: string | undefined;
+	readonly Tags?: any | undefined;
+	readonly TargetAddress?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Target {

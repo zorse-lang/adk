@@ -15,25 +15,25 @@ export interface creditsComponentOutputs {
 }
 export interface creditsComponentInputs {
 	readonly name: string;
-	readonly properties?: CreditSummaryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: CreditSummaryProperties;
+	readonly tags?: ResourceTags;
 }
 export interface Amount {
-	readonly currency?: string | undefined;
-	readonly value?: number | undefined;
+	readonly currency?: string;
+	readonly value?: number;
 }
 export interface CreditBalanceSummary {
-	readonly currentBalance?: Amount | undefined;
-	readonly estimatedBalance?: Amount | undefined;
+	readonly currentBalance?: Amount;
+	readonly estimatedBalance?: Amount;
 }
 export interface CreditSummaryProperties {
-	readonly balanceSummary?: CreditBalanceSummary | undefined;
-	readonly expiredCredit?: Amount | undefined;
-	readonly pendingCreditAdjustments?: Amount | undefined;
-	readonly pendingEligibleCharges?: Amount | undefined;
+	readonly balanceSummary?: CreditBalanceSummary;
+	readonly expiredCredit?: Amount;
+	readonly pendingCreditAdjustments?: Amount;
+	readonly pendingEligibleCharges?: Amount;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	credits: credits,

@@ -10,11 +10,11 @@ export interface CRLComponentOutputs {
 	readonly CrlId: string;
 }
 export interface CRLComponentInputs {
-	readonly CrlData?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TrustAnchorArn?: (string | undefined) | undefined;
+	readonly CrlData?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TrustAnchorArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Profile extends CfnResource<ProfileComponentInputs> implements ProfileComponentOutputs {
@@ -29,14 +29,14 @@ export interface ProfileComponentOutputs {
 	readonly ProfileId: string;
 }
 export interface ProfileComponentInputs {
-	readonly DurationSeconds?: (number | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly ManagedPolicyArns?: (string[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly RequireInstanceProperties?: (boolean | undefined) | undefined;
-	readonly RoleArns?: (string[] | undefined) | undefined;
-	readonly SessionPolicy?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DurationSeconds?: number | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly ManagedPolicyArns?: string[] | undefined;
+	readonly Name?: string | undefined;
+	readonly RequireInstanceProperties?: boolean | undefined;
+	readonly RoleArns?: string[] | undefined;
+	readonly SessionPolicy?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class TrustAnchor extends CfnResource<TrustAnchorComponentInputs> implements TrustAnchorComponentOutputs {
@@ -51,19 +51,19 @@ export interface TrustAnchorComponentOutputs {
 	readonly TrustAnchorId: string;
 }
 export interface TrustAnchorComponentInputs {
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Source?: (Source | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly Name?: string | undefined;
+	readonly Source?: Source | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface Source {
-	readonly SourceData?: (SourceData | undefined) | undefined;
-	readonly SourceType?: (string | undefined) | undefined;
+	readonly SourceData?: SourceData | undefined;
+	readonly SourceType?: string | undefined;
 }
 export interface SourceData {
-	readonly AcmPcaArn?: (string | undefined) | undefined;
-	readonly X509CertificateData?: (string | undefined) | undefined;
+	readonly AcmPcaArn?: string | undefined;
+	readonly X509CertificateData?: string | undefined;
 }
 export default {
 	CRL: CRL,

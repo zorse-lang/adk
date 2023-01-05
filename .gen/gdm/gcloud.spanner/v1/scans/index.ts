@@ -7,7 +7,6 @@ export class Scans extends GdmResource<ScansComponentInputs> implements ScansCom
 }
 export interface ScansComponentOutputs {}
 export interface ScansComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

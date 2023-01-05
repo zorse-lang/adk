@@ -4,85 +4,78 @@ export class Routes extends GdmResource<RoutesComponentInputs> implements Routes
 	constructor(entity: ADKEntity, options: RoutesComponentInputs) {
 		super(entity, options.name, "compute.alpha.Routes", options);
 	}
-	public readonly asPaths?: RouteAsPath[] | undefined;
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly nextHopInterconnectAttachment?: string | undefined;
-	public readonly nextHopPeering?: string | undefined;
-	public readonly routeStatus?: string | undefined;
-	public readonly routeType?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly warnings?:
-		| Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>
-		| undefined;
+	public readonly asPaths?: RouteAsPath[];
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly nextHopInterconnectAttachment?: string;
+	public readonly nextHopPeering?: string;
+	public readonly routeStatus?: string;
+	public readonly routeType?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly warnings?: Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>;
 }
 export interface RoutesComponentOutputs {
-	readonly asPaths?: RouteAsPath[] | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly nextHopInterconnectAttachment?: string | undefined;
-	readonly nextHopPeering?: string | undefined;
-	readonly routeStatus?: string | undefined;
-	readonly routeType?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly warnings?:
-		| Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>
-		| undefined;
+	readonly asPaths?: RouteAsPath[];
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly nextHopInterconnectAttachment?: string;
+	readonly nextHopPeering?: string;
+	readonly routeStatus?: string;
+	readonly routeType?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly warnings?: Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>;
 }
 export interface RoutesComponentInputs {
-	readonly allowConflictingSubnetworks?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly destRange?: string | undefined;
-	readonly ilbRouteBehaviorOnUnhealthy?: string | undefined;
+	readonly allowConflictingSubnetworks?: boolean;
+	readonly description?: string;
+	readonly destRange?: string;
+	readonly ilbRouteBehaviorOnUnhealthy?: string;
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly nextHopGateway?: string | undefined;
-	readonly nextHopIlb?: string | undefined;
-	readonly nextHopInstance?: string | undefined;
-	readonly nextHopIp?: string | undefined;
-	readonly nextHopNetwork?: string | undefined;
-	readonly nextHopVpnTunnel?: string | undefined;
-	readonly priority?: number | undefined;
-	readonly requestId?: string | undefined;
-	readonly tags?: string[] | undefined;
-	readonly type: string;
+	readonly network?: string;
+	readonly nextHopGateway?: string;
+	readonly nextHopIlb?: string;
+	readonly nextHopInstance?: string;
+	readonly nextHopIp?: string;
+	readonly nextHopNetwork?: string;
+	readonly nextHopVpnTunnel?: string;
+	readonly priority?: number;
+	readonly requestId?: string;
+	readonly tags?: string[];
 }
 export interface Route {
-	readonly allowConflictingSubnetworks?: boolean | undefined;
-	readonly asPaths?: RouteAsPath[] | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly destRange?: string | undefined;
-	readonly id?: string | undefined;
-	readonly ilbRouteBehaviorOnUnhealthy?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly network?: string | undefined;
-	readonly nextHopGateway?: string | undefined;
-	readonly nextHopIlb?: string | undefined;
-	readonly nextHopInstance?: string | undefined;
-	readonly nextHopInterconnectAttachment?: string | undefined;
-	readonly nextHopIp?: string | undefined;
-	readonly nextHopNetwork?: string | undefined;
-	readonly nextHopPeering?: string | undefined;
-	readonly nextHopVpnTunnel?: string | undefined;
-	readonly priority?: number | undefined;
-	readonly routeStatus?: string | undefined;
-	readonly routeType?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly tags?: string[] | undefined;
-	readonly warnings?:
-		| Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>
-		| undefined;
+	readonly allowConflictingSubnetworks?: boolean;
+	readonly asPaths?: RouteAsPath[];
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly destRange?: string;
+	readonly id?: string;
+	readonly ilbRouteBehaviorOnUnhealthy?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly network?: string;
+	readonly nextHopGateway?: string;
+	readonly nextHopIlb?: string;
+	readonly nextHopInstance?: string;
+	readonly nextHopInterconnectAttachment?: string;
+	readonly nextHopIp?: string;
+	readonly nextHopNetwork?: string;
+	readonly nextHopPeering?: string;
+	readonly nextHopVpnTunnel?: string;
+	readonly priority?: number;
+	readonly routeStatus?: string;
+	readonly routeType?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly tags?: string[];
+	readonly warnings?: Array<{ code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }>;
 }
 export interface RouteAsPath {
-	readonly asLists?: number[] | undefined;
-	readonly pathSegmentType?: string | undefined;
+	readonly asLists?: number[];
+	readonly pathSegmentType?: string;
 }
 export default {
 	Routes: Routes,

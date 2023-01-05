@@ -19,13 +19,13 @@ export interface ComponentComponentInputs {
 	readonly Name: string;
 	readonly Platform: string;
 	readonly Version: string;
-	readonly ChangeDescription?: (string | undefined) | undefined;
-	readonly Data?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly SupportedOsVersions?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Uri?: (string | undefined) | undefined;
+	readonly ChangeDescription?: string | undefined;
+	readonly Data?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly SupportedOsVersions?: string[] | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
+	readonly Uri?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ContainerRecipe
@@ -49,15 +49,15 @@ export interface ContainerRecipeComponentInputs {
 	readonly ParentImage: string;
 	readonly TargetRepository: TargetContainerRepository;
 	readonly Version: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DockerfileTemplateData?: (string | undefined) | undefined;
-	readonly DockerfileTemplateUri?: (string | undefined) | undefined;
-	readonly ImageOsVersionOverride?: (string | undefined) | undefined;
-	readonly InstanceConfiguration?: (InstanceConfiguration | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly PlatformOverride?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
-	readonly WorkingDirectory?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DockerfileTemplateData?: string | undefined;
+	readonly DockerfileTemplateUri?: string | undefined;
+	readonly ImageOsVersionOverride?: string | undefined;
+	readonly InstanceConfiguration?: InstanceConfiguration | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly PlatformOverride?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
+	readonly WorkingDirectory?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DistributionConfiguration
@@ -77,8 +77,8 @@ export interface DistributionConfigurationComponentOutputs {
 export interface DistributionConfigurationComponentInputs {
 	readonly Distributions: Distribution[];
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class Image extends CfnResource<ImageComponentInputs> implements ImageComponentOutputs {
@@ -98,12 +98,12 @@ export interface ImageComponentOutputs {
 }
 export interface ImageComponentInputs {
 	readonly InfrastructureConfigurationArn: string;
-	readonly ContainerRecipeArn?: (string | undefined) | undefined;
-	readonly DistributionConfigurationArn?: (string | undefined) | undefined;
-	readonly EnhancedImageMetadataEnabled?: (boolean | undefined) | undefined;
-	readonly ImageRecipeArn?: (string | undefined) | undefined;
-	readonly ImageTestsConfiguration?: (ImageTestsConfiguration | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly ContainerRecipeArn?: string | undefined;
+	readonly DistributionConfigurationArn?: string | undefined;
+	readonly EnhancedImageMetadataEnabled?: boolean | undefined;
+	readonly ImageRecipeArn?: string | undefined;
+	readonly ImageTestsConfiguration?: ImageTestsConfiguration | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class ImagePipeline extends CfnResource<ImagePipelineComponentInputs> implements ImagePipelineComponentOutputs {
@@ -120,15 +120,15 @@ export interface ImagePipelineComponentOutputs {
 export interface ImagePipelineComponentInputs {
 	readonly InfrastructureConfigurationArn: string;
 	readonly Name: string;
-	readonly ContainerRecipeArn?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DistributionConfigurationArn?: (string | undefined) | undefined;
-	readonly EnhancedImageMetadataEnabled?: (boolean | undefined) | undefined;
-	readonly ImageRecipeArn?: (string | undefined) | undefined;
-	readonly ImageTestsConfiguration?: (ImageTestsConfiguration | undefined) | undefined;
-	readonly Schedule?: (Schedule | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly ContainerRecipeArn?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DistributionConfigurationArn?: string | undefined;
+	readonly EnhancedImageMetadataEnabled?: boolean | undefined;
+	readonly ImageRecipeArn?: string | undefined;
+	readonly ImageTestsConfiguration?: ImageTestsConfiguration | undefined;
+	readonly Schedule?: Schedule | undefined;
+	readonly Status?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class ImageRecipe extends CfnResource<ImageRecipeComponentInputs> implements ImageRecipeComponentOutputs {
@@ -147,11 +147,11 @@ export interface ImageRecipeComponentInputs {
 	readonly Name: string;
 	readonly ParentImage: string;
 	readonly Version: string;
-	readonly AdditionalInstanceConfiguration?: (AdditionalInstanceConfiguration | undefined) | undefined;
-	readonly BlockDeviceMappings?: (InstanceBlockDeviceMapping[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
-	readonly WorkingDirectory?: (string | undefined) | undefined;
+	readonly AdditionalInstanceConfiguration?: AdditionalInstanceConfiguration | undefined;
+	readonly BlockDeviceMappings?: InstanceBlockDeviceMapping[] | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
+	readonly WorkingDirectory?: string | undefined;
 	readonly LogicalId: string;
 }
 export class InfrastructureConfiguration
@@ -171,123 +171,123 @@ export interface InfrastructureConfigurationComponentOutputs {
 export interface InfrastructureConfigurationComponentInputs {
 	readonly InstanceProfileName: string;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InstanceMetadataOptions?: (InstanceMetadataOptions | undefined) | undefined;
-	readonly InstanceTypes?: (string[] | undefined) | undefined;
-	readonly KeyPair?: (string | undefined) | undefined;
-	readonly Logging?: (Logging | undefined) | undefined;
-	readonly ResourceTags?: ({ [key: string]: string } | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SnsTopicArn?: (string | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
-	readonly TerminateInstanceOnFailure?: (boolean | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly InstanceMetadataOptions?: InstanceMetadataOptions | undefined;
+	readonly InstanceTypes?: string[] | undefined;
+	readonly KeyPair?: string | undefined;
+	readonly Logging?: Logging | undefined;
+	readonly ResourceTags?: { [key: string]: string } | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SnsTopicArn?: string | undefined;
+	readonly SubnetId?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
+	readonly TerminateInstanceOnFailure?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export interface ComponentConfiguration {
-	readonly ComponentArn?: (string | undefined) | undefined;
-	readonly Parameters?: (ComponentParameter[] | undefined) | undefined;
+	readonly ComponentArn?: string | undefined;
+	readonly Parameters?: ComponentParameter[] | undefined;
 }
 export interface ComponentParameter {
 	readonly Name: string;
 	readonly Value: string[];
 }
 export interface EbsInstanceBlockDeviceSpecification {
-	readonly DeleteOnTermination?: (boolean | undefined) | undefined;
-	readonly Encrypted?: (boolean | undefined) | undefined;
-	readonly Iops?: (number | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly SnapshotId?: (string | undefined) | undefined;
-	readonly Throughput?: (number | undefined) | undefined;
-	readonly VolumeSize?: (number | undefined) | undefined;
-	readonly VolumeType?: (string | undefined) | undefined;
+	readonly DeleteOnTermination?: boolean | undefined;
+	readonly Encrypted?: boolean | undefined;
+	readonly Iops?: number | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly SnapshotId?: string | undefined;
+	readonly Throughput?: number | undefined;
+	readonly VolumeSize?: number | undefined;
+	readonly VolumeType?: string | undefined;
 }
 export interface InstanceBlockDeviceMapping {
-	readonly DeviceName?: (string | undefined) | undefined;
-	readonly Ebs?: (EbsInstanceBlockDeviceSpecification | undefined) | undefined;
-	readonly NoDevice?: (string | undefined) | undefined;
-	readonly VirtualName?: (string | undefined) | undefined;
+	readonly DeviceName?: string | undefined;
+	readonly Ebs?: EbsInstanceBlockDeviceSpecification | undefined;
+	readonly NoDevice?: string | undefined;
+	readonly VirtualName?: string | undefined;
 }
 export interface InstanceConfiguration {
-	readonly BlockDeviceMappings?: (InstanceBlockDeviceMapping[] | undefined) | undefined;
-	readonly Image?: (string | undefined) | undefined;
+	readonly BlockDeviceMappings?: InstanceBlockDeviceMapping[] | undefined;
+	readonly Image?: string | undefined;
 }
 export interface TargetContainerRepository {
-	readonly RepositoryName?: (string | undefined) | undefined;
-	readonly Service?: (string | undefined) | undefined;
+	readonly RepositoryName?: string | undefined;
+	readonly Service?: string | undefined;
 }
 export interface AmiDistributionConfiguration {
-	readonly AmiTags?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly LaunchPermissionConfiguration?: (LaunchPermissionConfiguration | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly TargetAccountIds?: (string[] | undefined) | undefined;
+	readonly AmiTags?: { [key: string]: string } | undefined;
+	readonly Description?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly LaunchPermissionConfiguration?: LaunchPermissionConfiguration | undefined;
+	readonly Name?: string | undefined;
+	readonly TargetAccountIds?: string[] | undefined;
 }
 export interface ContainerDistributionConfiguration {
-	readonly ContainerTags?: (string[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly TargetRepository?: (TargetContainerRepository | undefined) | undefined;
+	readonly ContainerTags?: string[] | undefined;
+	readonly Description?: string | undefined;
+	readonly TargetRepository?: TargetContainerRepository | undefined;
 }
 export interface Distribution {
-	readonly AmiDistributionConfiguration?: (any | undefined) | undefined;
-	readonly ContainerDistributionConfiguration?: (any | undefined) | undefined;
-	readonly FastLaunchConfigurations?: (FastLaunchConfiguration[] | undefined) | undefined;
-	readonly LaunchTemplateConfigurations?: (LaunchTemplateConfiguration[] | undefined) | undefined;
-	readonly LicenseConfigurationArns?: (string[] | undefined) | undefined;
+	readonly AmiDistributionConfiguration?: any | undefined;
+	readonly ContainerDistributionConfiguration?: any | undefined;
+	readonly FastLaunchConfigurations?: FastLaunchConfiguration[] | undefined;
+	readonly LaunchTemplateConfigurations?: LaunchTemplateConfiguration[] | undefined;
+	readonly LicenseConfigurationArns?: string[] | undefined;
 	readonly Region: string;
 }
 export interface FastLaunchConfiguration {
-	readonly AccountId?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly LaunchTemplate?: (FastLaunchLaunchTemplateSpecification | undefined) | undefined;
-	readonly MaxParallelLaunches?: (number | undefined) | undefined;
-	readonly SnapshotConfiguration?: (FastLaunchSnapshotConfiguration | undefined) | undefined;
+	readonly AccountId?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly LaunchTemplate?: FastLaunchLaunchTemplateSpecification | undefined;
+	readonly MaxParallelLaunches?: number | undefined;
+	readonly SnapshotConfiguration?: FastLaunchSnapshotConfiguration | undefined;
 }
 export interface FastLaunchLaunchTemplateSpecification {
-	readonly LaunchTemplateId?: (string | undefined) | undefined;
-	readonly LaunchTemplateName?: (string | undefined) | undefined;
-	readonly LaunchTemplateVersion?: (string | undefined) | undefined;
+	readonly LaunchTemplateId?: string | undefined;
+	readonly LaunchTemplateName?: string | undefined;
+	readonly LaunchTemplateVersion?: string | undefined;
 }
 export interface FastLaunchSnapshotConfiguration {
-	readonly TargetResourceCount?: (number | undefined) | undefined;
+	readonly TargetResourceCount?: number | undefined;
 }
 export interface LaunchPermissionConfiguration {
-	readonly OrganizationArns?: (string[] | undefined) | undefined;
-	readonly OrganizationalUnitArns?: (string[] | undefined) | undefined;
-	readonly UserGroups?: (string[] | undefined) | undefined;
-	readonly UserIds?: (string[] | undefined) | undefined;
+	readonly OrganizationArns?: string[] | undefined;
+	readonly OrganizationalUnitArns?: string[] | undefined;
+	readonly UserGroups?: string[] | undefined;
+	readonly UserIds?: string[] | undefined;
 }
 export interface LaunchTemplateConfiguration {
-	readonly AccountId?: (string | undefined) | undefined;
-	readonly LaunchTemplateId?: (string | undefined) | undefined;
-	readonly SetDefaultVersion?: (boolean | undefined) | undefined;
+	readonly AccountId?: string | undefined;
+	readonly LaunchTemplateId?: string | undefined;
+	readonly SetDefaultVersion?: boolean | undefined;
 }
 export interface ImageTestsConfiguration {
-	readonly ImageTestsEnabled?: (boolean | undefined) | undefined;
-	readonly TimeoutMinutes?: (number | undefined) | undefined;
+	readonly ImageTestsEnabled?: boolean | undefined;
+	readonly TimeoutMinutes?: number | undefined;
 }
 export interface Schedule {
-	readonly PipelineExecutionStartCondition?: (string | undefined) | undefined;
-	readonly ScheduleExpression?: (string | undefined) | undefined;
+	readonly PipelineExecutionStartCondition?: string | undefined;
+	readonly ScheduleExpression?: string | undefined;
 }
 export interface AdditionalInstanceConfiguration {
-	readonly SystemsManagerAgent?: (SystemsManagerAgent | undefined) | undefined;
-	readonly UserDataOverride?: (string | undefined) | undefined;
+	readonly SystemsManagerAgent?: SystemsManagerAgent | undefined;
+	readonly UserDataOverride?: string | undefined;
 }
 export interface SystemsManagerAgent {
-	readonly UninstallAfterBuild?: (boolean | undefined) | undefined;
+	readonly UninstallAfterBuild?: boolean | undefined;
 }
 export interface InstanceMetadataOptions {
-	readonly HttpPutResponseHopLimit?: (number | undefined) | undefined;
-	readonly HttpTokens?: (string | undefined) | undefined;
+	readonly HttpPutResponseHopLimit?: number | undefined;
+	readonly HttpTokens?: string | undefined;
 }
 export interface Logging {
-	readonly S3Logs?: (S3Logs | undefined) | undefined;
+	readonly S3Logs?: S3Logs | undefined;
 }
 export interface S3Logs {
-	readonly S3BucketName?: (string | undefined) | undefined;
-	readonly S3KeyPrefix?: (string | undefined) | undefined;
+	readonly S3BucketName?: string | undefined;
+	readonly S3KeyPrefix?: string | undefined;
 }
 export default {
 	Component: Component,

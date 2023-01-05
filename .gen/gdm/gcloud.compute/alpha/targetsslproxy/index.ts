@@ -4,26 +4,25 @@ export class TargetSslProxy extends GdmResource<TargetSslProxyComponentInputs> i
 	constructor(entity: ADKEntity, options: TargetSslProxyComponentInputs) {
 		super(entity, options.name, "compute.alpha.targetSslProxy", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly selfLink?: string;
 }
 export interface TargetSslProxyComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly selfLink?: string;
 }
 export interface TargetSslProxyComponentInputs {
-	readonly certificateMap?: string | undefined;
-	readonly description?: string | undefined;
+	readonly certificateMap?: string;
+	readonly description?: string;
 	readonly name: string;
-	readonly proxyHeader?: string | undefined;
-	readonly service?: string | undefined;
-	readonly sslCertificates?: string[] | undefined;
-	readonly sslPolicy?: string | undefined;
-	readonly type: string;
+	readonly proxyHeader?: string;
+	readonly service?: string;
+	readonly sslCertificates?: string[];
+	readonly sslPolicy?: string;
 }
 export default {
 	TargetSslProxy: TargetSslProxy,

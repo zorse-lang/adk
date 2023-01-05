@@ -20,9 +20,9 @@ export interface storageAccountsComponentInputs {
 	readonly kind: "BlobStorage";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StorageAccountPropertiesCreateParametersOrStorageAccountProperties | undefined;
+	readonly properties?: StorageAccountPropertiesCreateParametersOrStorageAccountProperties;
 	readonly sku: Sku;
-	readonly tags?: StorageAccountCreateParametersTags | undefined;
+	readonly tags?: StorageAccountCreateParametersTags;
 }
 export function listKeys(resource: storageAccounts): StorageAccountListKeysResult {
 	if (resource.apiVersion !== "2016-01-01") {
@@ -35,53 +35,53 @@ export function listKeys(resource: storageAccounts): StorageAccountListKeysResul
 }
 export interface CustomDomain {
 	readonly name: string;
-	readonly useSubDomainName?: boolean | undefined;
+	readonly useSubDomainName?: boolean;
 }
 export interface Encryption {
 	readonly keySource: "Microsoft.Storage";
-	readonly services?: EncryptionServices | undefined;
+	readonly services?: EncryptionServices;
 }
 export interface EncryptionService {
-	readonly enabled?: boolean | undefined;
-	readonly lastEnabledTime?: string | undefined;
+	readonly enabled?: boolean;
+	readonly lastEnabledTime?: string;
 }
 export interface EncryptionServices {
-	readonly blob?: EncryptionService | undefined;
+	readonly blob?: EncryptionService;
 }
 export interface Endpoints {
-	readonly blob?: string | undefined;
-	readonly file?: string | undefined;
-	readonly queue?: string | undefined;
-	readonly table?: string | undefined;
+	readonly blob?: string;
+	readonly file?: string;
+	readonly queue?: string;
+	readonly table?: string;
 }
 export interface Sku {
 	readonly name: "Premium_LRS" | "Standard_GRS" | "Standard_LRS" | "Standard_RAGRS";
-	readonly tier?: "Premium" | undefined;
+	readonly tier?: "Premium";
 }
 export interface StorageAccountCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StorageAccountKey {
-	readonly keyName?: string | undefined;
-	readonly permissions?: "FULL" | undefined;
-	readonly value?: string | undefined;
+	readonly keyName?: string;
+	readonly permissions?: "FULL";
+	readonly value?: string;
 }
 export interface StorageAccountListKeysResult {
-	readonly keys?: StorageAccountKey[] | undefined;
+	readonly keys?: StorageAccountKey[];
 }
 export interface StorageAccountPropertiesCreateParametersOrStorageAccountProperties {
-	readonly accessTier?: "Cool" | undefined;
-	readonly creationTime?: string | undefined;
-	readonly customDomain?: CustomDomain | undefined;
-	readonly encryption?: Encryption | undefined;
-	readonly lastGeoFailoverTime?: string | undefined;
-	readonly primaryEndpoints?: Endpoints | undefined;
-	readonly primaryLocation?: string | undefined;
-	readonly provisioningState?: ("Creating" | "ResolvingDNS") | undefined;
-	readonly secondaryEndpoints?: Endpoints | undefined;
-	readonly secondaryLocation?: string | undefined;
-	readonly statusOfPrimary?: "Available" | undefined;
-	readonly statusOfSecondary?: "Available" | undefined;
+	readonly accessTier?: "Cool";
+	readonly creationTime?: string;
+	readonly customDomain?: CustomDomain;
+	readonly encryption?: Encryption;
+	readonly lastGeoFailoverTime?: string;
+	readonly primaryEndpoints?: Endpoints;
+	readonly primaryLocation?: string;
+	readonly provisioningState?: "Creating" | "ResolvingDNS";
+	readonly secondaryEndpoints?: Endpoints;
+	readonly secondaryLocation?: string;
+	readonly statusOfPrimary?: "Available";
+	readonly statusOfSecondary?: "Available";
 }
 export default {
 	storageAccounts: storageAccounts,

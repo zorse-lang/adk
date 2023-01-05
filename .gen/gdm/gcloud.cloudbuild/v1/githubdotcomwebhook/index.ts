@@ -10,7 +10,6 @@ export class GithubDotComWebhook
 }
 export interface GithubDotComWebhookComponentOutputs {}
 export interface GithubDotComWebhookComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

@@ -17,13 +17,13 @@ export interface applicationDefinitionsComponentOutputs {
 	readonly type: "Microsoft.Solutions/applicationDefinitions";
 }
 export interface applicationDefinitionsComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
-	readonly managedBy?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
+	readonly managedBy?: string;
 	readonly name: string;
 	readonly properties: ApplicationDefinitionProperties;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export class applications extends ArmResource<applicationsComponentInputs> implements applicationsComponentOutputs {
 	constructor(entity: ADKEntity, options: applicationsComponentInputs) {
@@ -39,80 +39,77 @@ export interface applicationsComponentOutputs {
 	readonly type: "Microsoft.Solutions/applications";
 }
 export interface applicationsComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly kind: string;
-	readonly location?: string | undefined;
-	readonly managedBy?: string | undefined;
+	readonly location?: string;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly plan?: Plan | undefined;
+	readonly plan?: Plan;
 	readonly properties: ApplicationProperties;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export interface ApplicationArtifact {
-	readonly name?: string | undefined;
-	readonly type?: "Custom" | undefined;
-	readonly uri?: string | undefined;
+	readonly name?: string;
+	readonly type?: "Custom";
+	readonly uri?: string;
 }
 export interface ApplicationDefinitionProperties {
-	readonly artifacts?: ApplicationArtifact[] | undefined;
+	readonly artifacts?: ApplicationArtifact[];
 	readonly authorizations: ApplicationProviderAuthorization[];
-	readonly createUiDefinition?: any | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly isEnabled?: string | undefined;
+	readonly createUiDefinition?: any;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly isEnabled?: string;
 	readonly lockLevel: "CanNotDelete" | "None";
-	readonly mainTemplate?: any | undefined;
-	readonly packageFileUri?: string | undefined;
+	readonly mainTemplate?: any;
+	readonly packageFileUri?: string;
 }
 export interface ApplicationProperties {
-	readonly applicationDefinitionId?: string | undefined;
+	readonly applicationDefinitionId?: string;
 	readonly managedResourceGroupId: string;
-	readonly outputs?: any | undefined;
-	readonly parameters?: any | undefined;
+	readonly outputs?: any;
+	readonly parameters?: any;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly uiDefinitionUri?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "Ready"
+		| "Running"
+		| "Succeeded"
+		| "Updating";
+	readonly uiDefinitionUri?: string;
 }
 export interface ApplicationProviderAuthorization {
 	readonly principalId: string;
 	readonly roleDefinitionId: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface Plan {
 	readonly name: string;
 	readonly product: string;
-	readonly promotionCode?: string | undefined;
+	readonly promotionCode?: string;
 	readonly publisher: string;
 	readonly version: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
-	readonly model?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
+	readonly model?: string;
 	readonly name: string;
-	readonly size?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly size?: string;
+	readonly tier?: string;
 }
 export default {
 	applicationDefinitions: applicationDefinitions,

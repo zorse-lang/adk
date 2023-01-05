@@ -7,79 +7,78 @@ export class AccessPoliciesAccessLevels
 	constructor(entity: ADKEntity, options: AccessPoliciesAccessLevelsComponentInputs) {
 		super(entity, options.name, "accesscontextmanager.v1beta.AccessPoliciesAccessLevels", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly createTime?: string;
+	public readonly updateTime?: string;
 }
 export interface AccessPoliciesAccessLevelsComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly updateTime?: string;
 }
 export interface AccessPoliciesAccessLevelsComponentInputs {
-	readonly basic?: BasicLevel | undefined;
-	readonly custom?: CustomLevel | undefined;
-	readonly description?: string | undefined;
+	readonly basic?: BasicLevel;
+	readonly custom?: CustomLevel;
+	readonly description?: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly title?: string | undefined;
-	readonly type: string;
+	readonly title?: string;
 }
 export interface AccessLevel {
-	readonly basic?: BasicLevel | undefined;
-	readonly createTime?: string | undefined;
-	readonly custom?: CustomLevel | undefined;
-	readonly description?: string | undefined;
-	readonly name?: string | undefined;
-	readonly title?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly basic?: BasicLevel;
+	readonly createTime?: string;
+	readonly custom?: CustomLevel;
+	readonly description?: string;
+	readonly name?: string;
+	readonly title?: string;
+	readonly updateTime?: string;
 }
 export interface BasicLevel {
-	readonly combiningFunction?: string | undefined;
+	readonly combiningFunction?: string;
 	readonly conditions: Condition[];
 }
 export interface Condition {
-	readonly dateTimeRestriction?: DateTimeRestriction | undefined;
-	readonly devicePolicy?: DevicePolicy | undefined;
-	readonly ipSubnetworks?: string[] | undefined;
-	readonly members?: string[] | undefined;
-	readonly negate?: boolean | undefined;
-	readonly regions?: string[] | undefined;
-	readonly requiredAccessLevels?: string[] | undefined;
+	readonly dateTimeRestriction?: DateTimeRestriction;
+	readonly devicePolicy?: DevicePolicy;
+	readonly ipSubnetworks?: string[];
+	readonly members?: string[];
+	readonly negate?: boolean;
+	readonly regions?: string[];
+	readonly requiredAccessLevels?: string[];
 }
 export interface CustomLevel {
 	readonly expr: Expr;
 }
 export interface DateTimeRestriction {
-	readonly allowedDays?: string[] | undefined;
-	readonly earliestTime?: TimeOfDay | undefined;
-	readonly latestTime?: TimeOfDay | undefined;
-	readonly timeZone?: string | undefined;
+	readonly allowedDays?: string[];
+	readonly earliestTime?: TimeOfDay;
+	readonly latestTime?: TimeOfDay;
+	readonly timeZone?: string;
 }
 export interface DevicePolicy {
-	readonly allowedDeviceManagementLevels?: string[] | undefined;
-	readonly allowedEncryptionStatuses?: string[] | undefined;
-	readonly osConstraints?: OsConstraint[] | undefined;
-	readonly requireAdminApproval?: boolean | undefined;
-	readonly requireCorpOwned?: boolean | undefined;
-	readonly requireManagedBrowserProfile?: boolean | undefined;
-	readonly requireScreenlock?: boolean | undefined;
+	readonly allowedDeviceManagementLevels?: string[];
+	readonly allowedEncryptionStatuses?: string[];
+	readonly osConstraints?: OsConstraint[];
+	readonly requireAdminApproval?: boolean;
+	readonly requireCorpOwned?: boolean;
+	readonly requireManagedBrowserProfile?: boolean;
+	readonly requireScreenlock?: boolean;
 }
 export interface Expr {
-	readonly description?: string | undefined;
-	readonly expression?: string | undefined;
-	readonly location?: string | undefined;
-	readonly title?: string | undefined;
+	readonly description?: string;
+	readonly expression?: string;
+	readonly location?: string;
+	readonly title?: string;
 }
 export interface OsConstraint {
-	readonly minimumVersion?: string | undefined;
+	readonly minimumVersion?: string;
 	readonly osType: string;
-	readonly requireComplianceWithEmmPolicy?: boolean | undefined;
-	readonly requireVerifiedChromeOs?: boolean | undefined;
+	readonly requireComplianceWithEmmPolicy?: boolean;
+	readonly requireVerifiedChromeOs?: boolean;
 }
 export interface TimeOfDay {
-	readonly hours?: number | undefined;
-	readonly minutes?: number | undefined;
-	readonly nanos?: number | undefined;
-	readonly seconds?: number | undefined;
+	readonly hours?: number;
+	readonly minutes?: number;
+	readonly nanos?: number;
+	readonly seconds?: number;
 }
 export default {
 	AccessPoliciesAccessLevels: AccessPoliciesAccessLevels,

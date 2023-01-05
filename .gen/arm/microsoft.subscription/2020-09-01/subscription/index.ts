@@ -18,12 +18,12 @@ export interface aliasesComponentInputs {
 	readonly properties: PutAliasRequestPropertiesOrPutAliasResponseProperties;
 }
 export interface PutAliasRequestPropertiesOrPutAliasResponseProperties {
-	readonly billingScope?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly provisioningState?: ("Accepted" | "Failed" | "Succeeded") | undefined;
-	readonly resellerId?: string | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly workload?: ("DevTest" | "Production") | undefined;
+	readonly billingScope?: string;
+	readonly displayName?: string;
+	readonly provisioningState?: "Accepted" | "Failed" | "Succeeded";
+	readonly resellerId?: string;
+	readonly subscriptionId?: string;
+	readonly workload?: "DevTest" | "Production";
 }
 export default {
 	aliases: aliases,

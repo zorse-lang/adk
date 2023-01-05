@@ -24,12 +24,12 @@ export interface ApplicationComponentOutputs {
 	readonly VpcLinkId: string;
 }
 export interface ApplicationComponentInputs {
-	readonly ApiGatewayProxy?: (ApiGatewayProxyInput | undefined) | undefined;
-	readonly EnvironmentIdentifier?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly ProxyType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
+	readonly ApiGatewayProxy?: ApiGatewayProxyInput | undefined;
+	readonly EnvironmentIdentifier?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly ProxyType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VpcId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Environment extends CfnResource<EnvironmentComponentInputs> implements EnvironmentComponentOutputs {
@@ -46,10 +46,10 @@ export interface EnvironmentComponentOutputs {
 	readonly TransitGatewayId: string;
 }
 export interface EnvironmentComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly NetworkFabricType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly NetworkFabricType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Route extends CfnResource<RouteComponentInputs> implements RouteComponentOutputs {
@@ -69,10 +69,10 @@ export interface RouteComponentInputs {
 	readonly ApplicationIdentifier: string;
 	readonly EnvironmentIdentifier: string;
 	readonly ServiceIdentifier: string;
-	readonly DefaultRoute?: (DefaultRouteInput | undefined) | undefined;
-	readonly RouteType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly UriPathRoute?: (UriPathRouteInput | undefined) | undefined;
+	readonly DefaultRoute?: DefaultRouteInput | undefined;
+	readonly RouteType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly UriPathRoute?: UriPathRouteInput | undefined;
 	readonly LogicalId: string;
 }
 export class Service extends CfnResource<ServiceComponentInputs> implements ServiceComponentOutputs {
@@ -89,33 +89,33 @@ export interface ServiceComponentOutputs {
 export interface ServiceComponentInputs {
 	readonly ApplicationIdentifier: string;
 	readonly EnvironmentIdentifier: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EndpointType?: (string | undefined) | undefined;
-	readonly LambdaEndpoint?: (LambdaEndpointInput | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly UrlEndpoint?: (UrlEndpointInput | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly EndpointType?: string | undefined;
+	readonly LambdaEndpoint?: LambdaEndpointInput | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly UrlEndpoint?: UrlEndpointInput | undefined;
+	readonly VpcId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface ApiGatewayProxyInput {
-	readonly EndpointType?: (string | undefined) | undefined;
-	readonly StageName?: (string | undefined) | undefined;
+	readonly EndpointType?: string | undefined;
+	readonly StageName?: string | undefined;
 }
 export interface DefaultRouteInput {
 	readonly ActivationState: string;
 }
 export interface UriPathRouteInput {
 	readonly ActivationState: string;
-	readonly IncludeChildPaths?: (boolean | undefined) | undefined;
-	readonly Methods?: (string[] | undefined) | undefined;
-	readonly SourcePath?: (string | undefined) | undefined;
+	readonly IncludeChildPaths?: boolean | undefined;
+	readonly Methods?: string[] | undefined;
+	readonly SourcePath?: string | undefined;
 }
 export interface LambdaEndpointInput {
 	readonly Arn: string;
 }
 export interface UrlEndpointInput {
-	readonly HealthUrl?: (string | undefined) | undefined;
+	readonly HealthUrl?: string | undefined;
 	readonly Url: string;
 }
 export default {

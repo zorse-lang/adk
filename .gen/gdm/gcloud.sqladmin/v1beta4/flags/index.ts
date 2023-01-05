@@ -7,7 +7,6 @@ export class Flags extends GdmResource<FlagsComponentInputs> implements FlagsCom
 }
 export interface FlagsComponentOutputs {}
 export interface FlagsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

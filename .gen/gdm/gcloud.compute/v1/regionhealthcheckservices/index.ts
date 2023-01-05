@@ -7,43 +7,42 @@ export class RegionHealthCheckServices
 	constructor(entity: ADKEntity, options: RegionHealthCheckServicesComponentInputs) {
 		super(entity, options.name, "compute.v1.RegionHealthCheckServices", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
 }
 export interface RegionHealthCheckServicesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export interface RegionHealthCheckServicesComponentInputs {
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly healthChecks?: string[] | undefined;
-	readonly healthStatusAggregationPolicy?: string | undefined;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly healthChecks?: string[];
+	readonly healthStatusAggregationPolicy?: string;
 	readonly name: string;
-	readonly networkEndpointGroups?: string[] | undefined;
-	readonly notificationEndpoints?: string[] | undefined;
-	readonly requestId?: string | undefined;
-	readonly type: string;
+	readonly networkEndpointGroups?: string[];
+	readonly notificationEndpoints?: string[];
+	readonly requestId?: string;
 }
 export interface HealthCheckService {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly healthChecks?: string[] | undefined;
-	readonly healthStatusAggregationPolicy?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly networkEndpointGroups?: string[] | undefined;
-	readonly notificationEndpoints?: string[] | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly healthChecks?: string[];
+	readonly healthStatusAggregationPolicy?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly networkEndpointGroups?: string[];
+	readonly notificationEndpoints?: string[];
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export default {
 	RegionHealthCheckServices: RegionHealthCheckServices,

@@ -20,9 +20,9 @@ export interface storageAccountsComponentInputs {
 	readonly kind: "BlobStorage";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StorageAccountPropertiesCreateParametersOrStorageAccountProperties | undefined;
+	readonly properties?: StorageAccountPropertiesCreateParametersOrStorageAccountProperties;
 	readonly sku: Sku;
-	readonly tags?: StorageAccountCreateParametersTags | undefined;
+	readonly tags?: StorageAccountCreateParametersTags;
 }
 export function listAccountSas(resource: storageAccounts, input: AccountSasParameters): ListAccountSasResponse {
 	if (resource.apiVersion !== "2016-12-01") {
@@ -52,94 +52,94 @@ export function listServiceSas(resource: storageAccounts, input: ServiceSasParam
 	throw new Error("not implemented");
 }
 export interface AccountSasParameters {
-	readonly keyToSign?: string | undefined;
+	readonly keyToSign?: string;
 	readonly signedExpiry: string;
-	readonly signedIp?: string | undefined;
+	readonly signedIp?: string;
 	readonly signedPermission: "a" | "c" | "d" | "l" | "p" | "r" | "u" | "w";
-	readonly signedProtocol?: "https" | undefined;
+	readonly signedProtocol?: "https";
 	readonly signedResourceTypes: "c" | "o" | "s";
 	readonly signedServices: "b" | "f" | "q" | "t";
-	readonly signedStart?: string | undefined;
+	readonly signedStart?: string;
 }
 export interface CustomDomain {
 	readonly name: string;
-	readonly useSubDomainName?: boolean | undefined;
+	readonly useSubDomainName?: boolean;
 }
 export interface Encryption {
 	readonly keySource: "Microsoft.Storage";
-	readonly services?: EncryptionServices | undefined;
+	readonly services?: EncryptionServices;
 }
 export interface EncryptionService {
-	readonly enabled?: boolean | undefined;
-	readonly lastEnabledTime?: string | undefined;
+	readonly enabled?: boolean;
+	readonly lastEnabledTime?: string;
 }
 export interface EncryptionServices {
-	readonly blob?: EncryptionService | undefined;
-	readonly file?: EncryptionService | undefined;
-	readonly queue?: EncryptionService | undefined;
-	readonly table?: EncryptionService | undefined;
+	readonly blob?: EncryptionService;
+	readonly file?: EncryptionService;
+	readonly queue?: EncryptionService;
+	readonly table?: EncryptionService;
 }
 export interface Endpoints {
-	readonly blob?: string | undefined;
-	readonly file?: string | undefined;
-	readonly queue?: string | undefined;
-	readonly table?: string | undefined;
+	readonly blob?: string;
+	readonly file?: string;
+	readonly queue?: string;
+	readonly table?: string;
 }
 export interface ListAccountSasResponse {
-	readonly accountSasToken?: string | undefined;
+	readonly accountSasToken?: string;
 }
 export interface ListServiceSasResponse {
-	readonly serviceSasToken?: string | undefined;
+	readonly serviceSasToken?: string;
 }
 export interface ServiceSasParameters {
 	readonly canonicalizedResource: string;
-	readonly endPk?: string | undefined;
-	readonly endRk?: string | undefined;
-	readonly keyToSign?: string | undefined;
-	readonly rscc?: string | undefined;
-	readonly rscd?: string | undefined;
-	readonly rsce?: string | undefined;
-	readonly rscl?: string | undefined;
-	readonly rsct?: string | undefined;
-	readonly signedExpiry?: string | undefined;
-	readonly signedIdentifier?: string | undefined;
-	readonly signedIp?: string | undefined;
-	readonly signedPermission?: ("a" | "c" | "d" | "l" | "p" | "r" | "u" | "w") | undefined;
-	readonly signedProtocol?: "https" | undefined;
+	readonly endPk?: string;
+	readonly endRk?: string;
+	readonly keyToSign?: string;
+	readonly rscc?: string;
+	readonly rscd?: string;
+	readonly rsce?: string;
+	readonly rscl?: string;
+	readonly rsct?: string;
+	readonly signedExpiry?: string;
+	readonly signedIdentifier?: string;
+	readonly signedIp?: string;
+	readonly signedPermission?: "a" | "c" | "d" | "l" | "p" | "r" | "u" | "w";
+	readonly signedProtocol?: "https";
 	readonly signedResource: "b" | "c" | "f" | "s";
-	readonly signedStart?: string | undefined;
-	readonly startPk?: string | undefined;
-	readonly startRk?: string | undefined;
+	readonly signedStart?: string;
+	readonly startPk?: string;
+	readonly startRk?: string;
 }
 export interface Sku {
 	readonly name: "Premium_LRS" | "Standard_GRS" | "Standard_LRS" | "Standard_RAGRS";
-	readonly tier?: "Premium" | undefined;
+	readonly tier?: "Premium";
 }
 export interface StorageAccountCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StorageAccountKey {
-	readonly keyName?: string | undefined;
-	readonly permissions?: "Full" | undefined;
-	readonly value?: string | undefined;
+	readonly keyName?: string;
+	readonly permissions?: "Full";
+	readonly value?: string;
 }
 export interface StorageAccountListKeysResult {
-	readonly keys?: StorageAccountKey[] | undefined;
+	readonly keys?: StorageAccountKey[];
 }
 export interface StorageAccountPropertiesCreateParametersOrStorageAccountProperties {
-	readonly accessTier?: "Cool" | undefined;
-	readonly creationTime?: string | undefined;
-	readonly customDomain?: CustomDomain | undefined;
-	readonly encryption?: Encryption | undefined;
-	readonly lastGeoFailoverTime?: string | undefined;
-	readonly primaryEndpoints?: Endpoints | undefined;
-	readonly primaryLocation?: string | undefined;
-	readonly provisioningState?: ("Creating" | "ResolvingDNS") | undefined;
-	readonly secondaryEndpoints?: Endpoints | undefined;
-	readonly secondaryLocation?: string | undefined;
-	readonly statusOfPrimary?: "available" | undefined;
-	readonly statusOfSecondary?: "available" | undefined;
-	readonly supportsHttpsTrafficOnly?: boolean | undefined;
+	readonly accessTier?: "Cool";
+	readonly creationTime?: string;
+	readonly customDomain?: CustomDomain;
+	readonly encryption?: Encryption;
+	readonly lastGeoFailoverTime?: string;
+	readonly primaryEndpoints?: Endpoints;
+	readonly primaryLocation?: string;
+	readonly provisioningState?: "Creating" | "ResolvingDNS";
+	readonly secondaryEndpoints?: Endpoints;
+	readonly secondaryLocation?: string;
+	readonly statusOfPrimary?: "available";
+	readonly statusOfSecondary?: "available";
+	readonly supportsHttpsTrafficOnly?: boolean;
 }
 export default {
 	storageAccounts: storageAccounts,

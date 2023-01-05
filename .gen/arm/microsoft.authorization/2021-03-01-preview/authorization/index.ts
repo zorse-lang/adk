@@ -23,33 +23,30 @@ export interface accessReviewScheduleDefinitionsComponentOutputs {
 	readonly type: "Microsoft.Authorization/accessReviewScheduleDefinitions";
 }
 export interface accessReviewScheduleDefinitionsComponentInputs {
-	readonly backupReviewers?: AccessReviewReviewer[] | undefined;
-	readonly createdBy?: AccessReviewActorIdentity | undefined;
-	readonly descriptionForAdmins?: string | undefined;
-	readonly descriptionForReviewers?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly instances?: AccessReviewInstance[] | undefined;
+	readonly backupReviewers?: AccessReviewReviewer[];
+	readonly createdBy?: AccessReviewActorIdentity;
+	readonly descriptionForAdmins?: string;
+	readonly descriptionForReviewers?: string;
+	readonly displayName?: string;
+	readonly instances?: AccessReviewInstance[];
 	readonly name: string;
-	readonly properties?: AccessReviewScheduleDefinitionProperties | undefined;
-	readonly reviewers?: AccessReviewReviewer[] | undefined;
-	readonly reviewersType?: ("Assigned" | "Managers" | "Self") | undefined;
-	readonly scope?: AccessReviewScope | undefined;
-	readonly settings?: AccessReviewScheduleSettings | undefined;
+	readonly properties?: AccessReviewScheduleDefinitionProperties;
+	readonly reviewers?: AccessReviewReviewer[];
+	readonly reviewersType?: "Assigned" | "Managers" | "Self";
+	readonly scope?: AccessReviewScope;
+	readonly settings?: AccessReviewScheduleSettings;
 	readonly status?:
-		| (
-				| "Applied"
-				| "Applying"
-				| "AutoReviewed"
-				| "AutoReviewing"
-				| "Completed"
-				| "Completing"
-				| "InProgress"
-				| "Initializing"
-				| "NotStarted"
-				| "Scheduled"
-				| "Starting"
-		  )
-		| undefined;
+		| "Applied"
+		| "Applying"
+		| "AutoReviewed"
+		| "AutoReviewing"
+		| "Completed"
+		| "Completing"
+		| "InProgress"
+		| "Initializing"
+		| "NotStarted"
+		| "Scheduled"
+		| "Starting";
 }
 export class accessReviewScheduleDefinitions_instances
 	extends ArmResource<accessReviewScheduleDefinitions_instancesComponentInputs>
@@ -75,7 +72,7 @@ export interface accessReviewScheduleDefinitions_instancesComponentOutputs {
 }
 export interface accessReviewScheduleDefinitions_instancesComponentInputs {
 	readonly name: string;
-	readonly properties?: AccessReviewInstanceProperties | undefined;
+	readonly properties?: AccessReviewInstanceProperties;
 }
 export class accessReviewScheduleDefinitions_instances_decisions
 	extends ArmResource<accessReviewScheduleDefinitions_instances_decisionsComponentInputs>
@@ -101,7 +98,7 @@ export interface accessReviewScheduleDefinitions_instances_decisionsComponentOut
 }
 export interface accessReviewScheduleDefinitions_instances_decisionsComponentInputs {
 	readonly name: string;
-	readonly properties?: AccessReviewDecisionProperties | undefined;
+	readonly properties?: AccessReviewDecisionProperties;
 }
 export class accessReviewScheduleSettings
 	extends ArmResource<accessReviewScheduleSettingsComponentInputs>
@@ -120,140 +117,131 @@ export interface accessReviewScheduleSettingsComponentOutputs {
 	readonly type: "Microsoft.Authorization/accessReviewScheduleSettings";
 }
 export interface accessReviewScheduleSettingsComponentInputs {
-	readonly autoApplyDecisionsEnabled?: boolean | undefined;
-	readonly defaultDecision?: ("Approve" | "Deny" | "Recommendation") | undefined;
-	readonly defaultDecisionEnabled?: boolean | undefined;
-	readonly instanceDurationInDays?: number | undefined;
-	readonly justificationRequiredOnApproval?: boolean | undefined;
-	readonly mailNotificationsEnabled?: boolean | undefined;
+	readonly autoApplyDecisionsEnabled?: boolean;
+	readonly defaultDecision?: "Approve" | "Deny" | "Recommendation";
+	readonly defaultDecisionEnabled?: boolean;
+	readonly instanceDurationInDays?: number;
+	readonly justificationRequiredOnApproval?: boolean;
+	readonly mailNotificationsEnabled?: boolean;
 	readonly name: string;
-	readonly properties?: AccessReviewScheduleSettings | undefined;
-	readonly recommendationsEnabled?: boolean | undefined;
-	readonly recurrence?: AccessReviewRecurrenceSettings | undefined;
-	readonly reminderNotificationsEnabled?: boolean | undefined;
+	readonly properties?: AccessReviewScheduleSettings;
+	readonly recommendationsEnabled?: boolean;
+	readonly recurrence?: AccessReviewRecurrenceSettings;
+	readonly reminderNotificationsEnabled?: boolean;
 }
 export interface AccessReviewActorIdentity {
-	readonly principalId?: string | undefined;
-	readonly principalName?: string | undefined;
-	readonly principalType?: ("servicePrincipal" | "user") | undefined;
-	readonly userPrincipalName?: string | undefined;
+	readonly principalId?: string;
+	readonly principalName?: string;
+	readonly principalType?: "servicePrincipal" | "user";
+	readonly userPrincipalName?: string;
 }
 export interface AccessReviewDecisionIdentity {
-	readonly displayName?: string | undefined;
-	readonly id?: string | undefined;
+	readonly displayName?: string;
+	readonly id?: string;
 }
 export interface AccessReviewDecisionProperties {
-	readonly appliedBy?: AccessReviewActorIdentity | undefined;
-	readonly appliedDateTime?: string | undefined;
+	readonly appliedBy?: AccessReviewActorIdentity;
+	readonly appliedDateTime?: string;
 	readonly applyResult?:
-		| (
-				| "AppliedSuccessfully"
-				| "AppliedSuccessfullyButObjectNotFound"
-				| "AppliedWithUnknownFailure"
-				| "ApplyNotSupported"
-				| "Applying"
-				| "New"
-		  )
-		| undefined;
-	readonly decision?: ("Approve" | "Deny" | "DontKnow" | "NotNotified" | "NotReviewed") | undefined;
-	readonly justification?: string | undefined;
-	readonly principal?: AccessReviewDecisionIdentity | undefined;
-	readonly recommendation?: ("Approve" | "Deny" | "NoInfoAvailable") | undefined;
-	readonly resource?: AccessReviewDecisionResource | undefined;
-	readonly reviewedBy?: AccessReviewActorIdentity | undefined;
-	readonly reviewedDateTime?: string | undefined;
+		| "AppliedSuccessfully"
+		| "AppliedSuccessfullyButObjectNotFound"
+		| "AppliedWithUnknownFailure"
+		| "ApplyNotSupported"
+		| "Applying"
+		| "New";
+	readonly decision?: "Approve" | "Deny" | "DontKnow" | "NotNotified" | "NotReviewed";
+	readonly justification?: string;
+	readonly principal?: AccessReviewDecisionIdentity;
+	readonly recommendation?: "Approve" | "Deny" | "NoInfoAvailable";
+	readonly resource?: AccessReviewDecisionResource;
+	readonly reviewedBy?: AccessReviewActorIdentity;
+	readonly reviewedDateTime?: string;
 }
 export interface AccessReviewDecisionResource {
-	readonly displayName?: string | undefined;
-	readonly id?: string | undefined;
+	readonly displayName?: string;
+	readonly id?: string;
 }
 export interface AccessReviewInstance {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: AccessReviewInstanceProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: AccessReviewInstanceProperties;
+	readonly type?: string;
 }
 export interface AccessReviewInstanceProperties {
-	readonly endDateTime?: string | undefined;
-	readonly startDateTime?: string | undefined;
+	readonly endDateTime?: string;
+	readonly startDateTime?: string;
 	readonly status?:
-		| (
-				| "Applied"
-				| "Applying"
-				| "AutoReviewed"
-				| "AutoReviewing"
-				| "Completed"
-				| "Completing"
-				| "InProgress"
-				| "Initializing"
-				| "NotStarted"
-				| "Scheduled"
-				| "Starting"
-		  )
-		| undefined;
+		| "Applied"
+		| "Applying"
+		| "AutoReviewed"
+		| "AutoReviewing"
+		| "Completed"
+		| "Completing"
+		| "InProgress"
+		| "Initializing"
+		| "NotStarted"
+		| "Scheduled"
+		| "Starting";
 }
 export interface AccessReviewRecurrencePattern {
-	readonly interval?: number | undefined;
-	readonly type?: ("absoluteMonthly" | "weekly") | undefined;
+	readonly interval?: number;
+	readonly type?: "absoluteMonthly" | "weekly";
 }
 export interface AccessReviewRecurrenceRange {
-	readonly endDate?: string | undefined;
-	readonly numberOfOccurrences?: number | undefined;
-	readonly startDate?: string | undefined;
-	readonly type?: ("endDate" | "noEnd" | "numbered") | undefined;
+	readonly endDate?: string;
+	readonly numberOfOccurrences?: number;
+	readonly startDate?: string;
+	readonly type?: "endDate" | "noEnd" | "numbered";
 }
 export interface AccessReviewRecurrenceSettings {
-	readonly pattern?: AccessReviewRecurrencePattern | undefined;
-	readonly range?: AccessReviewRecurrenceRange | undefined;
+	readonly pattern?: AccessReviewRecurrencePattern;
+	readonly range?: AccessReviewRecurrenceRange;
 }
 export interface AccessReviewReviewer {
-	readonly principalId?: string | undefined;
-	readonly principalType?: ("servicePrincipal" | "user") | undefined;
+	readonly principalId?: string;
+	readonly principalType?: "servicePrincipal" | "user";
 }
 export interface AccessReviewScheduleDefinitionProperties {
-	readonly backupReviewers?: AccessReviewReviewer[] | undefined;
-	readonly createdBy?: AccessReviewActorIdentity | undefined;
-	readonly descriptionForAdmins?: string | undefined;
-	readonly descriptionForReviewers?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly instances?: AccessReviewInstance[] | undefined;
-	readonly reviewers?: AccessReviewReviewer[] | undefined;
-	readonly reviewersType?: ("Assigned" | "Managers" | "Self") | undefined;
-	readonly scope?: AccessReviewScope | undefined;
-	readonly settings?: AccessReviewScheduleSettings | undefined;
+	readonly backupReviewers?: AccessReviewReviewer[];
+	readonly createdBy?: AccessReviewActorIdentity;
+	readonly descriptionForAdmins?: string;
+	readonly descriptionForReviewers?: string;
+	readonly displayName?: string;
+	readonly instances?: AccessReviewInstance[];
+	readonly reviewers?: AccessReviewReviewer[];
+	readonly reviewersType?: "Assigned" | "Managers" | "Self";
+	readonly scope?: AccessReviewScope;
+	readonly settings?: AccessReviewScheduleSettings;
 	readonly status?:
-		| (
-				| "Applied"
-				| "Applying"
-				| "AutoReviewed"
-				| "AutoReviewing"
-				| "Completed"
-				| "Completing"
-				| "InProgress"
-				| "Initializing"
-				| "NotStarted"
-				| "Scheduled"
-				| "Starting"
-		  )
-		| undefined;
+		| "Applied"
+		| "Applying"
+		| "AutoReviewed"
+		| "AutoReviewing"
+		| "Completed"
+		| "Completing"
+		| "InProgress"
+		| "Initializing"
+		| "NotStarted"
+		| "Scheduled"
+		| "Starting";
 }
 export interface AccessReviewScheduleSettings {
-	readonly autoApplyDecisionsEnabled?: boolean | undefined;
-	readonly defaultDecision?: ("Approve" | "Deny" | "Recommendation") | undefined;
-	readonly defaultDecisionEnabled?: boolean | undefined;
-	readonly instanceDurationInDays?: number | undefined;
-	readonly justificationRequiredOnApproval?: boolean | undefined;
-	readonly mailNotificationsEnabled?: boolean | undefined;
-	readonly recommendationsEnabled?: boolean | undefined;
-	readonly recurrence?: AccessReviewRecurrenceSettings | undefined;
-	readonly reminderNotificationsEnabled?: boolean | undefined;
+	readonly autoApplyDecisionsEnabled?: boolean;
+	readonly defaultDecision?: "Approve" | "Deny" | "Recommendation";
+	readonly defaultDecisionEnabled?: boolean;
+	readonly instanceDurationInDays?: number;
+	readonly justificationRequiredOnApproval?: boolean;
+	readonly mailNotificationsEnabled?: boolean;
+	readonly recommendationsEnabled?: boolean;
+	readonly recurrence?: AccessReviewRecurrenceSettings;
+	readonly reminderNotificationsEnabled?: boolean;
 }
 export interface AccessReviewScope {
-	readonly assignmentState?: ("active" | "eligible") | undefined;
-	readonly inactiveDuration?: string | undefined;
-	readonly principalType?: ("guestUser" | "servicePrincipal" | "user") | undefined;
-	readonly resourceId?: string | undefined;
-	readonly roleDefinitionId?: string | undefined;
+	readonly assignmentState?: "active" | "eligible";
+	readonly inactiveDuration?: string;
+	readonly principalType?: "guestUser" | "servicePrincipal" | "user";
+	readonly resourceId?: string;
+	readonly roleDefinitionId?: string;
 }
 export default {
 	accessReviewScheduleDefinitions: accessReviewScheduleDefinitions,

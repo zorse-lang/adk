@@ -7,68 +7,67 @@ export class RegionInstantSnapshots
 	constructor(entity: ADKEntity, options: RegionInstantSnapshotsComponentInputs) {
 		super(entity, options.name, "compute.alpha.RegionInstantSnapshots", options);
 	}
-	public readonly architecture?: string | undefined;
-	public readonly creationTimestamp?: string | undefined;
-	public readonly diskSizeGb?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly resourceStatus?: InstantSnapshotResourceStatus | undefined;
-	public readonly satisfiesPzs?: boolean | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly sourceDiskId?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly zone?: string | undefined;
+	public readonly architecture?: string;
+	public readonly creationTimestamp?: string;
+	public readonly diskSizeGb?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly resourceStatus?: InstantSnapshotResourceStatus;
+	public readonly satisfiesPzs?: boolean;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly sourceDiskId?: string;
+	public readonly status?: string;
+	public readonly zone?: string;
 }
 export interface RegionInstantSnapshotsComponentOutputs {
-	readonly architecture?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly diskSizeGb?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly resourceStatus?: InstantSnapshotResourceStatus | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly sourceDiskId?: string | undefined;
-	readonly status?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly architecture?: string;
+	readonly creationTimestamp?: string;
+	readonly diskSizeGb?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly resourceStatus?: InstantSnapshotResourceStatus;
+	readonly satisfiesPzs?: boolean;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly sourceDiskId?: string;
+	readonly status?: string;
+	readonly zone?: string;
 }
 export interface RegionInstantSnapshotsComponentInputs {
-	readonly description?: string | undefined;
-	readonly guestFlush?: boolean | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly description?: string;
+	readonly guestFlush?: boolean;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
-	readonly requestId?: string | undefined;
-	readonly sourceDisk?: string | undefined;
-	readonly type: string;
+	readonly requestId?: string;
+	readonly sourceDisk?: string;
 }
 export interface InstantSnapshot {
-	readonly architecture?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly diskSizeGb?: string | undefined;
-	readonly guestFlush?: boolean | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly region?: string | undefined;
-	readonly resourceStatus?: InstantSnapshotResourceStatus | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly sourceDisk?: string | undefined;
-	readonly sourceDiskId?: string | undefined;
-	readonly status?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly architecture?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly diskSizeGb?: string;
+	readonly guestFlush?: boolean;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly region?: string;
+	readonly resourceStatus?: InstantSnapshotResourceStatus;
+	readonly satisfiesPzs?: boolean;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly sourceDisk?: string;
+	readonly sourceDiskId?: string;
+	readonly status?: string;
+	readonly zone?: string;
 }
 export interface InstantSnapshotResourceStatus {
-	readonly storageSizeBytes?: string | undefined;
+	readonly storageSizeBytes?: string;
 }
 export default {
 	RegionInstantSnapshots: RegionInstantSnapshots,

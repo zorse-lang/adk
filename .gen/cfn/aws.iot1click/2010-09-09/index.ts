@@ -29,9 +29,9 @@ export interface PlacementComponentOutputs {
 }
 export interface PlacementComponentInputs {
 	readonly ProjectName: string;
-	readonly AssociatedDevices?: (any | undefined) | undefined;
-	readonly Attributes?: (any | undefined) | undefined;
-	readonly PlacementName?: string | undefined;
+	readonly AssociatedDevices?: any | undefined;
+	readonly Attributes?: any | undefined;
+	readonly PlacementName?: string;
 	readonly LogicalId: string;
 }
 export class Project extends CfnResource<ProjectComponentInputs> implements ProjectComponentOutputs {
@@ -45,17 +45,17 @@ export interface ProjectComponentOutputs {
 }
 export interface ProjectComponentInputs {
 	readonly PlacementTemplate: PlacementTemplate;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ProjectName?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly ProjectName?: string;
 	readonly LogicalId: string;
 }
 export interface DeviceTemplate {
-	readonly CallbackOverrides?: (any | undefined) | undefined;
-	readonly DeviceType?: (string | undefined) | undefined;
+	readonly CallbackOverrides?: any | undefined;
+	readonly DeviceType?: string | undefined;
 }
 export interface PlacementTemplate {
-	readonly DefaultAttributes?: (any | undefined) | undefined;
-	readonly DeviceTemplates?: ({ [key: string]: DeviceTemplate } | undefined) | undefined;
+	readonly DefaultAttributes?: any | undefined;
+	readonly DeviceTemplates?: { [key: string]: DeviceTemplate } | undefined;
 }
 export default {
 	Device: Device,

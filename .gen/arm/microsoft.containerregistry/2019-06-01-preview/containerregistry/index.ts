@@ -19,9 +19,9 @@ export interface registries_agentPoolsComponentOutputs {
 export interface registries_agentPoolsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AgentPoolProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: AgentPoolProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class registries_runs
 	extends ArmResource<registries_runsComponentInputs>
@@ -41,8 +41,8 @@ export interface registries_runsComponentOutputs {
 }
 export interface registries_runsComponentInputs {
 	readonly name: string;
-	readonly properties?: RunProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: RunProperties;
+	readonly systemData?: SystemData;
 }
 export class registries_taskRuns
 	extends ArmResource<registries_taskRunsComponentInputs>
@@ -61,11 +61,11 @@ export interface registries_taskRunsComponentOutputs {
 	readonly type: "Microsoft.ContainerRegistry/registries/taskRuns";
 }
 export interface registries_taskRunsComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: IdentityProperties;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: TaskRunProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: TaskRunProperties;
+	readonly systemData?: SystemData;
 }
 export class registries_tasks
 	extends ArmResource<registries_tasksComponentInputs>
@@ -84,12 +84,12 @@ export interface registries_tasksComponentOutputs {
 	readonly type: "Microsoft.ContainerRegistry/registries/tasks";
 }
 export interface registries_tasksComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
+	readonly identity?: IdentityProperties;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: TaskProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: TaskProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export function listBuildSourceUploadUrl(resource: ArmResource): SourceUploadDefinition {
 	if (resource.apiVersion !== "2019-06-01-preview") {
@@ -128,240 +128,238 @@ export function listQueueStatus(resource: registries_agentPools): AgentPoolQueue
 	throw new Error("not implemented");
 }
 export interface AgentPoolProperties {
-	readonly count?: number | undefined;
-	readonly os?: ("Linux" | "Windows") | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly tier?: string | undefined;
-	readonly virtualNetworkSubnetResourceId?: string | undefined;
+	readonly count?: number;
+	readonly os?: "Linux" | "Windows";
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly tier?: string;
+	readonly virtualNetworkSubnetResourceId?: string;
 }
 export interface AgentPoolQueueStatus {
-	readonly count?: number | undefined;
+	readonly count?: number;
 }
 export interface AgentProperties {
-	readonly cpu?: number | undefined;
+	readonly cpu?: number;
 }
 export interface Argument {
-	readonly isSecret?: boolean | undefined;
+	readonly isSecret?: boolean;
 	readonly name: string;
 	readonly value: string;
 }
 export interface AuthInfo {
-	readonly expiresIn?: number | undefined;
-	readonly refreshToken?: string | undefined;
-	readonly scope?: string | undefined;
+	readonly expiresIn?: number;
+	readonly refreshToken?: string;
+	readonly scope?: string;
 	readonly token: string;
 	readonly tokenType: "OAuth" | "PAT";
 }
 export interface BaseImageDependency {
-	readonly digest?: string | undefined;
-	readonly registry?: string | undefined;
-	readonly repository?: string | undefined;
-	readonly tag?: string | undefined;
-	readonly type?: ("BuildTime" | "RunTime") | undefined;
+	readonly digest?: string;
+	readonly registry?: string;
+	readonly repository?: string;
+	readonly tag?: string;
+	readonly type?: "BuildTime" | "RunTime";
 }
 export interface BaseImageTrigger {
 	readonly baseImageTriggerType: "All" | "Runtime";
 	readonly name: string;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly updateTriggerEndpoint?: string | undefined;
-	readonly updateTriggerPayloadType?: ("Default" | "Token") | undefined;
+	readonly status?: "Disabled" | "Enabled";
+	readonly updateTriggerEndpoint?: string;
+	readonly updateTriggerPayloadType?: "Default" | "Token";
 }
 export interface Credentials {
-	readonly customRegistries?: CredentialsCustomRegistries | undefined;
-	readonly sourceRegistry?: SourceRegistryCredentials | undefined;
+	readonly customRegistries?: CredentialsCustomRegistries;
+	readonly sourceRegistry?: SourceRegistryCredentials;
 }
 export interface CredentialsCustomRegistries {
-	readonly "[ key: string ]"?: CustomRegistryCredentials | undefined;
+	readonly [key: string]: CustomRegistryCredentials;
 }
 export interface CustomRegistryCredentials {
-	readonly identity?: string | undefined;
-	readonly password?: SecretObject | undefined;
-	readonly userName?: SecretObject | undefined;
+	readonly identity?: string;
+	readonly password?: SecretObject;
+	readonly userName?: SecretObject;
 }
 export interface IdentityProperties {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: IdentityPropertiesUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: IdentityPropertiesUserAssignedIdentities;
 }
 export interface IdentityPropertiesUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserIdentityProperties | undefined;
+	readonly [key: string]: UserIdentityProperties;
 }
 export interface ImageDescriptor {
-	readonly digest?: string | undefined;
-	readonly registry?: string | undefined;
-	readonly repository?: string | undefined;
-	readonly tag?: string | undefined;
+	readonly digest?: string;
+	readonly registry?: string;
+	readonly repository?: string;
+	readonly tag?: string;
 }
 export interface ImageUpdateTrigger {
-	readonly id?: string | undefined;
-	readonly images?: ImageDescriptor[] | undefined;
-	readonly timestamp?: string | undefined;
+	readonly id?: string;
+	readonly images?: ImageDescriptor[];
+	readonly timestamp?: string;
 }
 export interface OverrideTaskStepProperties {
-	readonly arguments?: Argument[] | undefined;
-	readonly contextPath?: string | undefined;
-	readonly file?: string | undefined;
-	readonly target?: string | undefined;
-	readonly updateTriggerToken?: string | undefined;
-	readonly values?: SetValue[] | undefined;
+	readonly arguments?: Argument[];
+	readonly contextPath?: string;
+	readonly file?: string;
+	readonly target?: string;
+	readonly updateTriggerToken?: string;
+	readonly values?: SetValue[];
 }
 export interface PlatformProperties {
-	readonly architecture?: ("386" | "amd64" | "arm" | "arm64" | "x86") | undefined;
+	readonly architecture?: "386" | "amd64" | "arm" | "arm64" | "x86";
 	readonly os: "Linux" | "Windows";
-	readonly variant?: ("v6" | "v7" | "v8") | undefined;
+	readonly variant?: "v6" | "v7" | "v8";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Run {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: RunProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: RunProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface RunGetLogResult {
-	readonly logArtifactLink?: string | undefined;
-	readonly logLink?: string | undefined;
+	readonly logArtifactLink?: string;
+	readonly logLink?: string;
 }
 export interface RunProperties {
-	readonly agentConfiguration?: AgentProperties | undefined;
-	readonly agentPoolName?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly customRegistries?: string[] | undefined;
-	readonly finishTime?: string | undefined;
-	readonly imageUpdateTrigger?: ImageUpdateTrigger | undefined;
-	readonly isArchiveEnabled?: boolean | undefined;
-	readonly lastUpdatedTime?: string | undefined;
-	readonly logArtifact?: ImageDescriptor | undefined;
-	readonly outputImages?: ImageDescriptor[] | undefined;
-	readonly platform?: PlatformProperties | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly runErrorMessage?: string | undefined;
-	readonly runId?: string | undefined;
-	readonly runType?: ("AutoBuild" | "AutoRun" | "QuickBuild" | "QuickRun") | undefined;
-	readonly sourceRegistryAuth?: string | undefined;
-	readonly sourceTrigger?: SourceTriggerDescriptor | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?:
-		| ("Canceled" | "Error" | "Failed" | "Queued" | "Running" | "Started" | "Succeeded" | "Timeout")
-		| undefined;
-	readonly task?: string | undefined;
-	readonly timerTrigger?: TimerTriggerDescriptor | undefined;
-	readonly updateTriggerToken?: string | undefined;
+	readonly agentConfiguration?: AgentProperties;
+	readonly agentPoolName?: string;
+	readonly createTime?: string;
+	readonly customRegistries?: string[];
+	readonly finishTime?: string;
+	readonly imageUpdateTrigger?: ImageUpdateTrigger;
+	readonly isArchiveEnabled?: boolean;
+	readonly lastUpdatedTime?: string;
+	readonly logArtifact?: ImageDescriptor;
+	readonly outputImages?: ImageDescriptor[];
+	readonly platform?: PlatformProperties;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly runErrorMessage?: string;
+	readonly runId?: string;
+	readonly runType?: "AutoBuild" | "AutoRun" | "QuickBuild" | "QuickRun";
+	readonly sourceRegistryAuth?: string;
+	readonly sourceTrigger?: SourceTriggerDescriptor;
+	readonly startTime?: string;
+	readonly status?: "Canceled" | "Error" | "Failed" | "Queued" | "Running" | "Started" | "Succeeded" | "Timeout";
+	readonly task?: string;
+	readonly timerTrigger?: TimerTriggerDescriptor;
+	readonly updateTriggerToken?: string;
 }
 export interface RunRequest {
-	readonly agentPoolName?: string | undefined;
-	readonly isArchiveEnabled?: boolean | undefined;
-	readonly logTemplate?: string | undefined;
+	readonly agentPoolName?: string;
+	readonly isArchiveEnabled?: boolean;
+	readonly logTemplate?: string;
 }
 export interface SecretObject {
-	readonly type?: ("Opaque" | "Vaultsecret") | undefined;
-	readonly value?: string | undefined;
+	readonly type?: "Opaque" | "Vaultsecret";
+	readonly value?: string;
 }
 export interface SetValue {
-	readonly isSecret?: boolean | undefined;
+	readonly isSecret?: boolean;
 	readonly name: string;
 	readonly value: string;
 }
 export interface SourceProperties {
-	readonly branch?: string | undefined;
+	readonly branch?: string;
 	readonly repositoryUrl: string;
-	readonly sourceControlAuthProperties?: AuthInfo | undefined;
+	readonly sourceControlAuthProperties?: AuthInfo;
 	readonly sourceControlType: "Github" | "VisualStudioTeamService";
 }
 export interface SourceRegistryCredentials {
-	readonly loginMode?: ("Default" | "None") | undefined;
+	readonly loginMode?: "Default" | "None";
 }
 export interface SourceTrigger {
 	readonly name: string;
 	readonly sourceRepository: SourceProperties;
 	readonly sourceTriggerEvents: "commit" | "pullrequest"[];
-	readonly status?: ("Disabled" | "Enabled") | undefined;
+	readonly status?: "Disabled" | "Enabled";
 }
 export interface SourceTriggerDescriptor {
-	readonly branchName?: string | undefined;
-	readonly commitId?: string | undefined;
-	readonly eventType?: string | undefined;
-	readonly id?: string | undefined;
-	readonly providerType?: string | undefined;
-	readonly pullRequestId?: string | undefined;
-	readonly repositoryUrl?: string | undefined;
+	readonly branchName?: string;
+	readonly commitId?: string;
+	readonly eventType?: string;
+	readonly id?: string;
+	readonly providerType?: string;
+	readonly pullRequestId?: string;
+	readonly repositoryUrl?: string;
 }
 export interface SourceUploadDefinition {
-	readonly relativePath?: string | undefined;
-	readonly uploadUrl?: string | undefined;
+	readonly relativePath?: string;
+	readonly uploadUrl?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Task {
-	readonly id?: string | undefined;
-	readonly identity?: IdentityProperties | undefined;
+	readonly id?: string;
+	readonly identity?: IdentityProperties;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: TaskProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: TaskProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface TaskProperties {
-	readonly agentConfiguration?: AgentProperties | undefined;
-	readonly agentPoolName?: string | undefined;
-	readonly creationDate?: string | undefined;
-	readonly credentials?: Credentials | undefined;
-	readonly isSystemTask?: boolean | undefined;
-	readonly logTemplate?: string | undefined;
-	readonly platform?: PlatformProperties | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly step?: TaskStepProperties | undefined;
-	readonly timeout?: number | undefined;
-	readonly trigger?: TriggerProperties | undefined;
+	readonly agentConfiguration?: AgentProperties;
+	readonly agentPoolName?: string;
+	readonly creationDate?: string;
+	readonly credentials?: Credentials;
+	readonly isSystemTask?: boolean;
+	readonly logTemplate?: string;
+	readonly platform?: PlatformProperties;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly status?: "Disabled" | "Enabled";
+	readonly step?: TaskStepProperties;
+	readonly timeout?: number;
+	readonly trigger?: TriggerProperties;
 }
 export interface TaskRun {
-	readonly id?: string | undefined;
-	readonly identity?: IdentityProperties | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: TaskRunProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly identity?: IdentityProperties;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: TaskRunProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface TaskRunProperties {
-	readonly forceUpdateTag?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly runRequest?: RunRequest | undefined;
-	readonly runResult?: Run | undefined;
+	readonly forceUpdateTag?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly runRequest?: RunRequest;
+	readonly runResult?: Run;
 }
 export interface TaskStepProperties {
-	readonly baseImageDependencies?: BaseImageDependency[] | undefined;
-	readonly contextAccessToken?: string | undefined;
-	readonly contextPath?: string | undefined;
+	readonly baseImageDependencies?: BaseImageDependency[];
+	readonly contextAccessToken?: string;
+	readonly contextPath?: string;
 }
 export interface TimerTrigger {
 	readonly name: string;
 	readonly schedule: string;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
+	readonly status?: "Disabled" | "Enabled";
 }
 export interface TimerTriggerDescriptor {
-	readonly scheduleOccurrence?: string | undefined;
-	readonly timerTriggerName?: string | undefined;
+	readonly scheduleOccurrence?: string;
+	readonly timerTriggerName?: string;
 }
 export interface TriggerProperties {
-	readonly baseImageTrigger?: BaseImageTrigger | undefined;
-	readonly sourceTriggers?: SourceTrigger[] | undefined;
-	readonly timerTriggers?: TimerTrigger[] | undefined;
+	readonly baseImageTrigger?: BaseImageTrigger;
+	readonly sourceTriggers?: SourceTrigger[];
+	readonly timerTriggers?: TimerTrigger[];
 }
 export interface UserIdentityProperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	"registries/agentPools": registries_agentPools,

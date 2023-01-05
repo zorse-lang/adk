@@ -29,7 +29,7 @@ export interface IndexComponentOutputs {
 }
 export interface IndexComponentInputs {
 	readonly Type: string;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class View extends CfnResource<ViewComponentInputs> implements ViewComponentOutputs {
@@ -43,9 +43,9 @@ export interface ViewComponentOutputs {
 }
 export interface ViewComponentInputs {
 	readonly ViewName: string;
-	readonly Filters?: (Filters | undefined) | undefined;
-	readonly IncludedProperties?: (Included[] | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Filters?: Filters | undefined;
+	readonly IncludedProperties?: Included[] | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export interface Filters {

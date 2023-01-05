@@ -18,8 +18,8 @@ export interface ExperimentTemplateComponentInputs {
 	readonly StopConditions: ExperimentTemplateStopCondition[];
 	readonly Tags: { [key: string]: string };
 	readonly Targets: { [key: string]: ExperimentTemplateTarget };
-	readonly Actions?: ({ [key: string]: ExperimentTemplateAction } | undefined) | undefined;
-	readonly LogConfiguration?: (ExperimentTemplateLogConfiguration | undefined) | undefined;
+	readonly Actions?: { [key: string]: ExperimentTemplateAction } | undefined;
+	readonly LogConfiguration?: ExperimentTemplateLogConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export interface CloudWatchLogsConfiguration {
@@ -27,25 +27,25 @@ export interface CloudWatchLogsConfiguration {
 }
 export interface ExperimentTemplateAction {
 	readonly ActionId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Parameters?: ({ [key: string]: string } | undefined) | undefined;
-	readonly StartAfter?: (string[] | undefined) | undefined;
-	readonly Targets?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Parameters?: { [key: string]: string } | undefined;
+	readonly StartAfter?: string[] | undefined;
+	readonly Targets?: { [key: string]: string } | undefined;
 }
 export interface ExperimentTemplateLogConfiguration {
-	readonly CloudWatchLogsConfiguration?: (CloudWatchLogsConfiguration | undefined) | undefined;
+	readonly CloudWatchLogsConfiguration?: CloudWatchLogsConfiguration | undefined;
 	readonly LogSchemaVersion: number;
-	readonly S3Configuration?: (S3Configuration | undefined) | undefined;
+	readonly S3Configuration?: S3Configuration | undefined;
 }
 export interface ExperimentTemplateStopCondition {
 	readonly Source: string;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 }
 export interface ExperimentTemplateTarget {
-	readonly Filters?: (ExperimentTemplateTargetFilter[] | undefined) | undefined;
-	readonly Parameters?: ({ [key: string]: string } | undefined) | undefined;
-	readonly ResourceArns?: (string[] | undefined) | undefined;
-	readonly ResourceTags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Filters?: ExperimentTemplateTargetFilter[] | undefined;
+	readonly Parameters?: { [key: string]: string } | undefined;
+	readonly ResourceArns?: string[] | undefined;
+	readonly ResourceTags?: { [key: string]: string } | undefined;
 	readonly ResourceType: string;
 	readonly SelectionMode: string;
 }
@@ -55,7 +55,7 @@ export interface ExperimentTemplateTargetFilter {
 }
 export interface S3Configuration {
 	readonly BucketName: string;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly Prefix?: string | undefined;
 }
 export default {
 	ExperimentTemplate: ExperimentTemplate,
