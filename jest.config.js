@@ -12,6 +12,7 @@ module.exports = {
   testTimeout: 10000,
   verbose: true,
   moduleNameMapper: {
+    "@zorse/adk/clouds/(.*)": "<rootDir>/.gen/$1",
     "@zorse/adk": "<rootDir>/src",
     "@zorse/adk/(.*)": "<rootDir>/src/$1",
   },

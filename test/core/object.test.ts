@@ -53,6 +53,16 @@ describe("Object model tests", () => {
 		});
 	});
 
+	it("should be able to render components with string embedded tokens", async () => {
+		const system = new ECS.System();
+		const entity = new ECS.Entity(system);
+		const token = new Token({ name: "TokenName", registry: system.registry });
+		new DebugComponent(entity, { token: `prefix-${token}` });
+		new DebugScene(system);
+		const composition = await system.compose();
+		expect(composition.gizmos()).toEqual([{ Components: [{ properties: { token: "prefix-@@{TokenName}@@" } }] }]);
+	});
+
 	it("should be able to resolve components with tokens", async () => {
 		const system = new ECS.System();
 		const entity = new ECS.Entity(system);
