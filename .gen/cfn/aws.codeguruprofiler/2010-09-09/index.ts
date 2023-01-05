@@ -11,17 +11,17 @@ export interface ProfilingGroupComponentOutputs {
 }
 export interface ProfilingGroupComponentInputs {
 	readonly ProfilingGroupName: string;
-	readonly AgentPermissions?: (AgentPermissions | undefined) | undefined;
-	readonly AnomalyDetectionNotificationConfiguration?: (Channel[] | undefined) | undefined;
-	readonly ComputePlatform?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AgentPermissions?: AgentPermissions | undefined;
+	readonly AnomalyDetectionNotificationConfiguration?: Channel[] | undefined;
+	readonly ComputePlatform?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface AgentPermissions {
 	readonly Principals: string[];
 }
 export interface Channel {
-	readonly channelId?: (string | undefined) | undefined;
+	readonly channelId?: string | undefined;
 	readonly channelUri: string;
 }
 export default {

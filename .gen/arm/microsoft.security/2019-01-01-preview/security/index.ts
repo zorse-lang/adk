@@ -18,7 +18,7 @@ export interface alertsSuppressionRulesComponentOutputs {
 }
 export interface alertsSuppressionRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: AlertsSuppressionRuleProperties | undefined;
+	readonly properties?: AlertsSuppressionRuleProperties;
 }
 export class assessmentMetadata
 	extends ArmResource<assessmentMetadataComponentInputs>
@@ -38,7 +38,7 @@ export interface assessmentMetadataComponentOutputs {
 }
 export interface assessmentMetadataComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityAssessmentMetadataProperties | undefined;
+	readonly properties?: SecurityAssessmentMetadataProperties;
 }
 export class assessments extends ArmResource<assessmentsComponentInputs> implements assessmentsComponentOutputs {
 	constructor(entity: ADKEntity, options: assessmentsComponentInputs) {
@@ -55,7 +55,7 @@ export interface assessmentsComponentOutputs {
 }
 export interface assessmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityAssessmentProperties | undefined;
+	readonly properties?: SecurityAssessmentProperties;
 }
 export class assessments_subAssessments
 	extends ArmResource<assessments_subAssessmentsComponentInputs>
@@ -75,7 +75,7 @@ export interface assessments_subAssessmentsComponentOutputs {
 }
 export interface assessments_subAssessmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: SecuritySubAssessmentProperties | undefined;
+	readonly properties?: SecuritySubAssessmentProperties;
 }
 export class automations extends ArmResource<automationsComponentInputs> implements automationsComponentOutputs {
 	constructor(entity: ADKEntity, options: automationsComponentInputs) {
@@ -91,12 +91,12 @@ export interface automationsComponentOutputs {
 	readonly type: "Microsoft.Security/automations";
 }
 export interface automationsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AutomationProperties | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: AutomationProperties;
+	readonly tags?: Tags;
 }
 export class regulatoryComplianceStandards
 	extends ArmResource<regulatoryComplianceStandardsComponentInputs>
@@ -116,7 +116,7 @@ export interface regulatoryComplianceStandardsComponentOutputs {
 }
 export interface regulatoryComplianceStandardsComponentInputs {
 	readonly name: string;
-	readonly properties?: RegulatoryComplianceStandardProperties | undefined;
+	readonly properties?: RegulatoryComplianceStandardProperties;
 }
 export class regulatoryComplianceStandards_regulatoryComplianceControls
 	extends ArmResource<regulatoryComplianceStandards_regulatoryComplianceControlsComponentInputs>
@@ -142,7 +142,7 @@ export interface regulatoryComplianceStandards_regulatoryComplianceControlsCompo
 }
 export interface regulatoryComplianceStandards_regulatoryComplianceControlsComponentInputs {
 	readonly name: string;
-	readonly properties?: RegulatoryComplianceControlProperties | undefined;
+	readonly properties?: RegulatoryComplianceControlProperties;
 }
 export class regulatoryComplianceStandards_regulatoryComplianceControls_regulatoryComplianceAssessments
 	extends ArmResource<regulatoryComplianceStandards_regulatoryComplianceControls_regulatoryComplianceAssessmentsComponentInputs>
@@ -171,180 +171,171 @@ export interface regulatoryComplianceStandards_regulatoryComplianceControls_regu
 }
 export interface regulatoryComplianceStandards_regulatoryComplianceControls_regulatoryComplianceAssessmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: RegulatoryComplianceAssessmentProperties | undefined;
+	readonly properties?: RegulatoryComplianceAssessmentProperties;
 }
 export interface AdditionalData {}
 export interface AlertsSuppressionRuleProperties {
 	readonly alertType: string;
-	readonly comment?: string | undefined;
-	readonly expirationDateUtc?: string | undefined;
-	readonly lastModifiedUtc?: string | undefined;
+	readonly comment?: string;
+	readonly expirationDateUtc?: string;
+	readonly lastModifiedUtc?: string;
 	readonly reason: string;
 	readonly state: "Disabled" | "Enabled";
-	readonly suppressionAlertsScope?: SuppressionAlertsScope | undefined;
+	readonly suppressionAlertsScope?: SuppressionAlertsScope;
 }
 export interface AssessmentLinks {
-	readonly azurePortalUri?: string | undefined;
+	readonly azurePortalUri?: string;
 }
 export interface AssessmentStatus {
-	readonly cause?: string | undefined;
+	readonly cause?: string;
 	readonly code: "Healthy" | "NotApplicable" | "Unhealthy";
-	readonly description?: string | undefined;
+	readonly description?: string;
 }
 export interface AutomationAction {}
 export interface AutomationProperties {
-	readonly actions?: AutomationAction[] | undefined;
-	readonly description?: string | undefined;
-	readonly isEnabled?: boolean | undefined;
-	readonly scopes?: AutomationScope[] | undefined;
-	readonly sources?: AutomationSource[] | undefined;
+	readonly actions?: AutomationAction[];
+	readonly description?: string;
+	readonly isEnabled?: boolean;
+	readonly scopes?: AutomationScope[];
+	readonly sources?: AutomationSource[];
 }
 export interface AutomationRuleSet {
-	readonly rules?: AutomationTriggeringRule[] | undefined;
+	readonly rules?: AutomationTriggeringRule[];
 }
 export interface AutomationScope {
-	readonly description?: string | undefined;
-	readonly scopePath?: string | undefined;
+	readonly description?: string;
+	readonly scopePath?: string;
 }
 export interface AutomationSource {
 	readonly eventSource?:
-		| (
-				| "Alerts"
-				| "Assessments"
-				| "AssessmentsSnapshot"
-				| "RegulatoryComplianceAssessment"
-				| "RegulatoryComplianceAssessmentSnapshot"
-				| "SecureScoreControls"
-				| "SecureScoreControlsSnapshot"
-				| "SecureScores"
-				| "SecureScoresSnapshot"
-				| "SubAssessments"
-				| "SubAssessmentsSnapshot"
-		  )
-		| undefined;
-	readonly ruleSets?: AutomationRuleSet[] | undefined;
+		| "Alerts"
+		| "Assessments"
+		| "AssessmentsSnapshot"
+		| "RegulatoryComplianceAssessment"
+		| "RegulatoryComplianceAssessmentSnapshot"
+		| "SecureScoreControls"
+		| "SecureScoreControlsSnapshot"
+		| "SecureScores"
+		| "SecureScoresSnapshot"
+		| "SubAssessments"
+		| "SubAssessmentsSnapshot";
+	readonly ruleSets?: AutomationRuleSet[];
 }
 export interface AutomationTriggeringRule {
-	readonly expectedValue?: string | undefined;
+	readonly expectedValue?: string;
 	readonly operator?:
-		| (
-				| "Contains"
-				| "EndsWith"
-				| "Equals"
-				| "GreaterThan"
-				| "GreaterThanOrEqualTo"
-				| "LesserThan"
-				| "LesserThanOrEqualTo"
-				| "NotEquals"
-				| "StartsWith"
-		  )
-		| undefined;
-	readonly propertyJPath?: string | undefined;
-	readonly propertyType?: ("Boolean" | "Integer" | "Number" | "String") | undefined;
+		| "Contains"
+		| "EndsWith"
+		| "Equals"
+		| "GreaterThan"
+		| "GreaterThanOrEqualTo"
+		| "LesserThan"
+		| "LesserThanOrEqualTo"
+		| "NotEquals"
+		| "StartsWith";
+	readonly propertyJPath?: string;
+	readonly propertyType?: "Boolean" | "Integer" | "Number" | "String";
 }
 export interface ContainerRegistryVulnerabilityPropertiesCvss {
-	readonly "[ key: string ]"?: Cvss | undefined;
+	readonly [key: string]: Cvss;
 }
 export interface CVE {
-	readonly link?: string | undefined;
-	readonly title?: string | undefined;
+	readonly link?: string;
+	readonly title?: string;
 }
 export interface Cvss {
-	readonly base?: number | undefined;
+	readonly base?: number;
 }
 export interface RegulatoryComplianceAssessmentProperties {
-	readonly assessmentDetailsLink?: string | undefined;
-	readonly assessmentType?: string | undefined;
-	readonly description?: string | undefined;
-	readonly failedResources?: number | undefined;
-	readonly passedResources?: number | undefined;
-	readonly skippedResources?: number | undefined;
-	readonly state?: ("Failed" | "Passed" | "Skipped" | "Unsupported") | undefined;
-	readonly unsupportedResources?: number | undefined;
+	readonly assessmentDetailsLink?: string;
+	readonly assessmentType?: string;
+	readonly description?: string;
+	readonly failedResources?: number;
+	readonly passedResources?: number;
+	readonly skippedResources?: number;
+	readonly state?: "Failed" | "Passed" | "Skipped" | "Unsupported";
+	readonly unsupportedResources?: number;
 }
 export interface RegulatoryComplianceControlProperties {
-	readonly description?: string | undefined;
-	readonly failedAssessments?: number | undefined;
-	readonly passedAssessments?: number | undefined;
-	readonly skippedAssessments?: number | undefined;
-	readonly state?: ("Failed" | "Passed" | "Skipped" | "Unsupported") | undefined;
+	readonly description?: string;
+	readonly failedAssessments?: number;
+	readonly passedAssessments?: number;
+	readonly skippedAssessments?: number;
+	readonly state?: "Failed" | "Passed" | "Skipped" | "Unsupported";
 }
 export interface RegulatoryComplianceStandardProperties {
-	readonly failedControls?: number | undefined;
-	readonly passedControls?: number | undefined;
-	readonly skippedControls?: number | undefined;
-	readonly state?: ("Failed" | "Passed" | "Skipped" | "Unsupported") | undefined;
-	readonly unsupportedControls?: number | undefined;
+	readonly failedControls?: number;
+	readonly passedControls?: number;
+	readonly skippedControls?: number;
+	readonly state?: "Failed" | "Passed" | "Skipped" | "Unsupported";
+	readonly unsupportedControls?: number;
 }
 export interface ResourceDetails {}
 export interface ScopeElement {
-	readonly field?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly field?: string;
+	readonly [key: string]: any;
 }
 export interface SecurityAssessmentMetadataProperties {
 	readonly assessmentType: "BuiltIn" | "CustomPolicy" | "CustomerManaged";
-	readonly categories?: ("Compute" | "Data" | "IdentityAndAccess" | "IoT" | "Networking"[]) | undefined;
-	readonly description?: string | undefined;
+	readonly categories?: "Compute" | "Data" | "IdentityAndAccess" | "IoT" | "Networking"[];
+	readonly description?: string;
 	readonly displayName: string;
-	readonly implementationEffort?: ("High" | "Low" | "Moderate") | undefined;
-	readonly policyDefinitionId?: string | undefined;
-	readonly preview?: boolean | undefined;
-	readonly remediationDescription?: string | undefined;
+	readonly implementationEffort?: "High" | "Low" | "Moderate";
+	readonly policyDefinitionId?: string;
+	readonly preview?: boolean;
+	readonly remediationDescription?: string;
 	readonly severity: "High" | "Low" | "Medium";
 	readonly threats?:
-		| (
-				| "accountBreach"
-				| "dataExfiltration"
-				| "dataSpillage"
-				| "denialOfService"
-				| "elevationOfPrivilege"
-				| "maliciousInsider"
-				| "missingCoverage"
-				| "threatResistance"[]
-		  )
-		| undefined;
-	readonly userImpact?: ("High" | "Low" | "Moderate") | undefined;
+		| "accountBreach"
+		| "dataExfiltration"
+		| "dataSpillage"
+		| "denialOfService"
+		| "elevationOfPrivilege"
+		| "maliciousInsider"
+		| "missingCoverage"
+		| "threatResistance"[];
+	readonly userImpact?: "High" | "Low" | "Moderate";
 }
 export interface SecurityAssessmentProperties {
-	readonly additionalData?: SecurityAssessmentPropertiesAdditionalData | undefined;
-	readonly displayName?: string | undefined;
-	readonly links?: AssessmentLinks | undefined;
+	readonly additionalData?: SecurityAssessmentPropertiesAdditionalData;
+	readonly displayName?: string;
+	readonly links?: AssessmentLinks;
 	readonly resourceDetails: ResourceDetails;
 	readonly status: AssessmentStatus;
 }
 export interface SecurityAssessmentPropertiesAdditionalData {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SecuritySubAssessmentProperties {
-	readonly additionalData?: AdditionalData | undefined;
-	readonly category?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly id?: string | undefined;
-	readonly impact?: string | undefined;
-	readonly remediation?: string | undefined;
-	readonly resourceDetails?: ResourceDetails | undefined;
-	readonly status?: SubAssessmentStatus | undefined;
-	readonly timeGenerated?: string | undefined;
+	readonly additionalData?: AdditionalData;
+	readonly category?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly id?: string;
+	readonly impact?: string;
+	readonly remediation?: string;
+	readonly resourceDetails?: ResourceDetails;
+	readonly status?: SubAssessmentStatus;
+	readonly timeGenerated?: string;
 }
 export interface ServerVulnerabilityPropertiesCvss {
-	readonly "[ key: string ]"?: Cvss | undefined;
+	readonly [key: string]: Cvss;
 }
 export interface SubAssessmentStatus {
-	readonly cause?: string | undefined;
-	readonly code?: ("Healthy" | "NotApplicable" | "Unhealthy") | undefined;
-	readonly description?: string | undefined;
-	readonly severity?: ("High" | "Low" | "Medium") | undefined;
+	readonly cause?: string;
+	readonly code?: "Healthy" | "NotApplicable" | "Unhealthy";
+	readonly description?: string;
+	readonly severity?: "High" | "Low" | "Medium";
 }
 export interface SuppressionAlertsScope {
 	readonly allOf: ScopeElement[];
 }
 export interface Tags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VendorReference {
-	readonly link?: string | undefined;
-	readonly title?: string | undefined;
+	readonly link?: string;
+	readonly title?: string;
 }
 export default {
 	alertsSuppressionRules: alertsSuppressionRules,

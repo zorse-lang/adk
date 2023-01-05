@@ -18,7 +18,7 @@ export interface advancedThreatProtectionSettingsComponentOutputs {
 }
 export interface advancedThreatProtectionSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: AdvancedThreatProtectionProperties | undefined;
+	readonly properties?: AdvancedThreatProtectionProperties;
 }
 export class autoProvisioningSettings
 	extends ArmResource<autoProvisioningSettingsComponentInputs>
@@ -38,7 +38,7 @@ export interface autoProvisioningSettingsComponentOutputs {
 }
 export interface autoProvisioningSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: AutoProvisioningSettingProperties | undefined;
+	readonly properties?: AutoProvisioningSettingProperties;
 }
 export class compliances extends ArmResource<compliancesComponentInputs> implements compliancesComponentOutputs {
 	constructor(entity: ADKEntity, options: compliancesComponentInputs) {
@@ -55,7 +55,7 @@ export interface compliancesComponentOutputs {
 }
 export interface compliancesComponentInputs {
 	readonly name: string;
-	readonly properties?: ComplianceProperties | undefined;
+	readonly properties?: ComplianceProperties;
 }
 export class deviceSecurityGroups
 	extends ArmResource<deviceSecurityGroupsComponentInputs>
@@ -75,7 +75,7 @@ export interface deviceSecurityGroupsComponentOutputs {
 }
 export interface deviceSecurityGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: DeviceSecurityGroupProperties | undefined;
+	readonly properties?: DeviceSecurityGroupProperties;
 }
 export class informationProtectionPolicies
 	extends ArmResource<informationProtectionPoliciesComponentInputs>
@@ -95,7 +95,7 @@ export interface informationProtectionPoliciesComponentOutputs {
 }
 export interface informationProtectionPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: InformationProtectionPolicyProperties | undefined;
+	readonly properties?: InformationProtectionPolicyProperties;
 }
 export class iotSecuritySolutions
 	extends ArmResource<iotSecuritySolutionsComponentInputs>
@@ -114,10 +114,10 @@ export interface iotSecuritySolutionsComponentOutputs {
 	readonly type: "Microsoft.Security/iotSecuritySolutions";
 }
 export interface iotSecuritySolutionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: IoTSecuritySolutionProperties | undefined;
-	readonly tags?: TagsResourceTags | undefined;
+	readonly properties?: IoTSecuritySolutionProperties;
+	readonly tags?: TagsResourceTags;
 }
 export class iotSecuritySolutions_analyticsModels
 	extends ArmResource<iotSecuritySolutions_analyticsModelsComponentInputs>
@@ -143,7 +143,7 @@ export interface iotSecuritySolutions_analyticsModelsComponentOutputs {
 }
 export interface iotSecuritySolutions_analyticsModelsComponentInputs {
 	readonly name: string;
-	readonly properties?: IoTSecuritySolutionAnalyticsModelProperties | undefined;
+	readonly properties?: IoTSecuritySolutionAnalyticsModelProperties;
 }
 export class iotSecuritySolutions_analyticsModels_aggregatedAlerts
 	extends ArmResource<iotSecuritySolutions_analyticsModels_aggregatedAlertsComponentInputs>
@@ -169,8 +169,8 @@ export interface iotSecuritySolutions_analyticsModels_aggregatedAlertsComponentO
 }
 export interface iotSecuritySolutions_analyticsModels_aggregatedAlertsComponentInputs {
 	readonly name: string;
-	readonly properties?: IoTSecurityAggregatedAlertProperties | undefined;
-	readonly tags?: TagsResourceTags | undefined;
+	readonly properties?: IoTSecurityAggregatedAlertProperties;
+	readonly tags?: TagsResourceTags;
 }
 export class iotSecuritySolutions_analyticsModels_aggregatedRecommendations
 	extends ArmResource<iotSecuritySolutions_analyticsModels_aggregatedRecommendationsComponentInputs>
@@ -199,8 +199,8 @@ export interface iotSecuritySolutions_analyticsModels_aggregatedRecommendationsC
 }
 export interface iotSecuritySolutions_analyticsModels_aggregatedRecommendationsComponentInputs {
 	readonly name: string;
-	readonly properties?: IoTSecurityAggregatedRecommendationProperties | undefined;
-	readonly tags?: TagsResourceTags | undefined;
+	readonly properties?: IoTSecurityAggregatedRecommendationProperties;
+	readonly tags?: TagsResourceTags;
 }
 export class pricings extends ArmResource<pricingsComponentInputs> implements pricingsComponentOutputs {
 	constructor(entity: ADKEntity, options: pricingsComponentInputs) {
@@ -217,7 +217,7 @@ export interface pricingsComponentOutputs {
 }
 export interface pricingsComponentInputs {
 	readonly name: string;
-	readonly properties?: PricingProperties | undefined;
+	readonly properties?: PricingProperties;
 }
 export class securityContacts
 	extends ArmResource<securityContactsComponentInputs>
@@ -237,7 +237,7 @@ export interface securityContactsComponentOutputs {
 }
 export interface securityContactsComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityContactProperties | undefined;
+	readonly properties?: SecurityContactProperties;
 }
 export class settings_DataExportSetting
 	extends ArmResource<settings_DataExportSettingComponentInputs>
@@ -258,7 +258,7 @@ export interface settings_DataExportSettingComponentOutputs {
 export interface settings_DataExportSettingComponentInputs {
 	readonly name: string;
 	readonly kind: "DataExportSetting";
-	readonly properties?: DataExportSettingProperties | undefined;
+	readonly properties?: DataExportSettingProperties;
 }
 export class workspaceSettings
 	extends ArmResource<workspaceSettingsComponentInputs>
@@ -278,159 +278,159 @@ export interface workspaceSettingsComponentOutputs {
 }
 export interface workspaceSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkspaceSettingProperties | undefined;
+	readonly properties?: WorkspaceSettingProperties;
 }
 export interface AdvancedThreatProtectionProperties {
-	readonly isEnabled?: boolean | undefined;
+	readonly isEnabled?: boolean;
 }
 export interface AllowlistCustomAlertRule {
 	readonly allowlistValues: string[];
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly isEnabled: boolean;
-	readonly valueType?: ("IpCidr" | "String") | undefined;
+	readonly valueType?: "IpCidr" | "String";
 }
 export interface AutoProvisioningSettingProperties {
 	readonly autoProvision: "Off" | "On";
 }
 export interface ComplianceProperties {
-	readonly assessmentResult?: ComplianceSegment[] | undefined;
-	readonly assessmentTimestampUtcDate?: string | undefined;
-	readonly resourceCount?: number | undefined;
+	readonly assessmentResult?: ComplianceSegment[];
+	readonly assessmentTimestampUtcDate?: string;
+	readonly resourceCount?: number;
 }
 export interface ComplianceSegment {
-	readonly percentage?: number | undefined;
-	readonly segmentType?: string | undefined;
+	readonly percentage?: number;
+	readonly segmentType?: string;
 }
 export interface DataExportSettingProperties {
 	readonly enabled: boolean;
 }
 export interface DenylistCustomAlertRule {
 	readonly denylistValues: string[];
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly isEnabled: boolean;
 	readonly ruleType: string;
-	readonly valueType?: ("IpCidr" | "String") | undefined;
+	readonly valueType?: "IpCidr" | "String";
 }
 export interface DeviceSecurityGroupProperties {
-	readonly allowlistRules?: AllowlistCustomAlertRule[] | undefined;
-	readonly denylistRules?: DenylistCustomAlertRule[] | undefined;
-	readonly thresholdRules?: ThresholdCustomAlertRule[] | undefined;
-	readonly timeWindowRules?: TimeWindowCustomAlertRule[] | undefined;
+	readonly allowlistRules?: AllowlistCustomAlertRule[];
+	readonly denylistRules?: DenylistCustomAlertRule[];
+	readonly thresholdRules?: ThresholdCustomAlertRule[];
+	readonly timeWindowRules?: TimeWindowCustomAlertRule[];
 }
 export interface InformationProtectionKeyword {
-	readonly canBeNumeric?: boolean | undefined;
-	readonly custom?: boolean | undefined;
-	readonly excluded?: boolean | undefined;
-	readonly pattern?: string | undefined;
+	readonly canBeNumeric?: boolean;
+	readonly custom?: boolean;
+	readonly excluded?: boolean;
+	readonly pattern?: string;
 }
 export interface InformationProtectionPolicyProperties {
-	readonly informationTypes?: InformationProtectionPolicyPropertiesInformationTypes | undefined;
-	readonly labels?: InformationProtectionPolicyPropertiesLabels | undefined;
-	readonly lastModifiedUtc?: string | undefined;
-	readonly version?: string | undefined;
+	readonly informationTypes?: InformationProtectionPolicyPropertiesInformationTypes;
+	readonly labels?: InformationProtectionPolicyPropertiesLabels;
+	readonly lastModifiedUtc?: string;
+	readonly version?: string;
 }
 export interface InformationProtectionPolicyPropertiesInformationTypes {
-	readonly "[ key: string ]"?: InformationType | undefined;
+	readonly [key: string]: InformationType;
 }
 export interface InformationProtectionPolicyPropertiesLabels {
-	readonly "[ key: string ]"?: SensitivityLabel | undefined;
+	readonly [key: string]: SensitivityLabel;
 }
 export interface InformationType {
-	readonly custom?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly keywords?: InformationProtectionKeyword[] | undefined;
-	readonly order?: number | undefined;
-	readonly recommendedLabelId?: string | undefined;
+	readonly custom?: boolean;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly enabled?: boolean;
+	readonly keywords?: InformationProtectionKeyword[];
+	readonly order?: number;
+	readonly recommendedLabelId?: string;
 }
 export interface IoTSecurityAggregatedAlertProperties {
-	readonly actionTaken?: string | undefined;
-	readonly aggregatedDateUtc?: string | undefined;
-	readonly alertDisplayName?: string | undefined;
-	readonly alertType?: string | undefined;
-	readonly count?: number | undefined;
-	readonly description?: string | undefined;
-	readonly effectedResourceType?: string | undefined;
-	readonly logAnalyticsQuery?: string | undefined;
-	readonly remediationSteps?: string | undefined;
-	readonly reportedSeverity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
-	readonly systemSource?: string | undefined;
-	readonly vendorName?: string | undefined;
+	readonly actionTaken?: string;
+	readonly aggregatedDateUtc?: string;
+	readonly alertDisplayName?: string;
+	readonly alertType?: string;
+	readonly count?: number;
+	readonly description?: string;
+	readonly effectedResourceType?: string;
+	readonly logAnalyticsQuery?: string;
+	readonly remediationSteps?: string;
+	readonly reportedSeverity?: "High" | "Informational" | "Low" | "Medium";
+	readonly systemSource?: string;
+	readonly vendorName?: string;
 }
 export interface IoTSecurityAggregatedRecommendationProperties {
-	readonly description?: string | undefined;
-	readonly detectedBy?: string | undefined;
-	readonly healthyDevices?: number | undefined;
-	readonly logAnalyticsQuery?: string | undefined;
-	readonly recommendationDisplayName?: string | undefined;
-	readonly recommendationName?: string | undefined;
-	readonly recommendationTypeId?: string | undefined;
-	readonly remediationSteps?: string | undefined;
-	readonly reportedSeverity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
-	readonly unhealthyDeviceCount?: number | undefined;
+	readonly description?: string;
+	readonly detectedBy?: string;
+	readonly healthyDevices?: number;
+	readonly logAnalyticsQuery?: string;
+	readonly recommendationDisplayName?: string;
+	readonly recommendationName?: string;
+	readonly recommendationTypeId?: string;
+	readonly remediationSteps?: string;
+	readonly reportedSeverity?: "High" | "Informational" | "Low" | "Medium";
+	readonly unhealthyDeviceCount?: number;
 }
 export interface IoTSecurityAlertedDevice {
-	readonly alertsCount?: number | undefined;
-	readonly deviceId?: string | undefined;
+	readonly alertsCount?: number;
+	readonly deviceId?: string;
 }
 export interface IoTSecurityAlertedDevicesList {
-	readonly nextLink?: string | undefined;
+	readonly nextLink?: string;
 	readonly value: IoTSecurityAlertedDevice[];
 }
 export interface IoTSecurityDeviceAlert {
-	readonly alertDisplayName?: string | undefined;
-	readonly alertsCount?: number | undefined;
-	readonly reportedSeverity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
+	readonly alertDisplayName?: string;
+	readonly alertsCount?: number;
+	readonly reportedSeverity?: "High" | "Informational" | "Low" | "Medium";
 }
 export interface IoTSecurityDeviceAlertsList {
-	readonly nextLink?: string | undefined;
+	readonly nextLink?: string;
 	readonly value: IoTSecurityDeviceAlert[];
 }
 export interface IoTSecurityDeviceRecommendation {
-	readonly devicesCount?: number | undefined;
-	readonly recommendationDisplayName?: string | undefined;
-	readonly reportedSeverity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
+	readonly devicesCount?: number;
+	readonly recommendationDisplayName?: string;
+	readonly reportedSeverity?: "High" | "Informational" | "Low" | "Medium";
 }
 export interface IoTSecurityDeviceRecommendationsList {
-	readonly nextLink?: string | undefined;
+	readonly nextLink?: string;
 	readonly value: IoTSecurityDeviceRecommendation[];
 }
 export interface IoTSecuritySolutionAnalyticsModelProperties {
-	readonly devicesMetrics?: IoTSecuritySolutionAnalyticsModelPropertiesDevicesMetricsItem[] | undefined;
-	readonly metrics?: IoTSeverityMetrics | undefined;
-	readonly mostPrevalentDeviceAlerts?: IoTSecurityDeviceAlertsList | undefined;
-	readonly mostPrevalentDeviceRecommendations?: IoTSecurityDeviceRecommendationsList | undefined;
-	readonly topAlertedDevices?: IoTSecurityAlertedDevicesList | undefined;
-	readonly unhealthyDeviceCount?: number | undefined;
+	readonly devicesMetrics?: IoTSecuritySolutionAnalyticsModelPropertiesDevicesMetricsItem[];
+	readonly metrics?: IoTSeverityMetrics;
+	readonly mostPrevalentDeviceAlerts?: IoTSecurityDeviceAlertsList;
+	readonly mostPrevalentDeviceRecommendations?: IoTSecurityDeviceRecommendationsList;
+	readonly topAlertedDevices?: IoTSecurityAlertedDevicesList;
+	readonly unhealthyDeviceCount?: number;
 }
 export interface IoTSecuritySolutionAnalyticsModelPropertiesDevicesMetricsItem {
-	readonly date?: string | undefined;
-	readonly devicesMetrics?: IoTSeverityMetrics | undefined;
+	readonly date?: string;
+	readonly devicesMetrics?: IoTSeverityMetrics;
 }
 export interface IoTSecuritySolutionProperties {
-	readonly autoDiscoveredResources?: string[] | undefined;
-	readonly disabledDataSources?: "TwinData"[] | undefined;
+	readonly autoDiscoveredResources?: string[];
+	readonly disabledDataSources?: "TwinData"[];
 	readonly displayName: string;
-	readonly export?: "RawEvents"[] | undefined;
+	readonly export?: "RawEvents"[];
 	readonly iotHubs: string[];
-	readonly recommendationsConfiguration?: RecommendationConfigurationProperties[] | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
-	readonly userDefinedResources?: UserDefinedResourcesProperties | undefined;
+	readonly recommendationsConfiguration?: RecommendationConfigurationProperties[];
+	readonly status?: "Disabled" | "Enabled";
+	readonly userDefinedResources?: UserDefinedResourcesProperties;
 	readonly workspace: string;
 }
 export interface IoTSeverityMetrics {
-	readonly high?: number | undefined;
-	readonly low?: number | undefined;
-	readonly medium?: number | undefined;
+	readonly high?: number;
+	readonly low?: number;
+	readonly medium?: number;
 }
 export interface PricingProperties {
 	readonly pricingTier: "Free" | "Standard";
 }
 export interface RecommendationConfigurationProperties {
-	readonly name?: string | undefined;
+	readonly name?: string;
 	readonly recommendationType:
 		| "IoT_ACRAuthentication"
 		| "IoT_AgentSendsUnutilizedMessages"
@@ -454,28 +454,28 @@ export interface SecurityContactProperties {
 	readonly alertNotifications: "Off" | "On";
 	readonly alertsToAdmins: "Off" | "On";
 	readonly email: string;
-	readonly phone?: string | undefined;
+	readonly phone?: string;
 }
 export interface SensitivityLabel {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly order?: number | undefined;
-	readonly rank?: ("Critical" | "High" | "Low" | "Medium") | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly enabled?: boolean;
+	readonly order?: number;
+	readonly rank?: "Critical" | "High" | "Low" | "Medium";
 }
 export interface TagsResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ThresholdCustomAlertRule {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly isEnabled: boolean;
 	readonly maxThreshold: number;
 	readonly minThreshold: number;
 }
 export interface TimeWindowCustomAlertRule {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly isEnabled: boolean;
 	readonly maxThreshold: number;
 	readonly minThreshold: number;

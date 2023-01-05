@@ -17,12 +17,12 @@ export interface azureTrafficCollectorsComponentOutputs {
 	readonly type: "Microsoft.NetworkFunction/azureTrafficCollectors";
 }
 export interface azureTrafficCollectorsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AzureTrafficCollectorPropertiesFormat | undefined;
-	readonly systemData?: TrackedResourceSystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: AzureTrafficCollectorPropertiesFormat;
+	readonly systemData?: TrackedResourceSystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class azureTrafficCollectors_collectorPolicies
 	extends ArmResource<azureTrafficCollectors_collectorPoliciesComponentInputs>
@@ -47,60 +47,60 @@ export interface azureTrafficCollectors_collectorPoliciesComponentOutputs {
 	readonly type: "Microsoft.NetworkFunction/azureTrafficCollectors/collectorPolicies";
 }
 export interface azureTrafficCollectors_collectorPoliciesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: CollectorPolicyPropertiesFormat | undefined;
-	readonly systemData?: TrackedResourceSystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: CollectorPolicyPropertiesFormat;
+	readonly systemData?: TrackedResourceSystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AzureTrafficCollectorPropertiesFormat {
-	readonly collectorPolicies?: CollectorPolicy[] | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly virtualHub?: ResourceReference | undefined;
+	readonly collectorPolicies?: CollectorPolicy[];
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly virtualHub?: ResourceReference;
 }
 export interface CollectorPolicy {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: CollectorPolicyPropertiesFormat | undefined;
-	readonly systemData?: TrackedResourceSystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: CollectorPolicyPropertiesFormat;
+	readonly systemData?: TrackedResourceSystemData;
+	readonly tags?: TrackedResourceTags;
+	readonly type?: string;
 }
 export interface CollectorPolicyPropertiesFormat {
-	readonly emissionPolicies?: EmissionPoliciesPropertiesFormat[] | undefined;
-	readonly ingestionPolicy?: IngestionPolicyPropertiesFormat | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly emissionPolicies?: EmissionPoliciesPropertiesFormat[];
+	readonly ingestionPolicy?: IngestionPolicyPropertiesFormat;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface EmissionPoliciesPropertiesFormat {
-	readonly emissionDestinations?: EmissionPolicyDestination[] | undefined;
-	readonly emissionType?: "IPFIX" | undefined;
+	readonly emissionDestinations?: EmissionPolicyDestination[];
+	readonly emissionType?: "IPFIX";
 }
 export interface EmissionPolicyDestination {
-	readonly destinationType?: "AzureMonitor" | undefined;
+	readonly destinationType?: "AzureMonitor";
 }
 export interface IngestionPolicyPropertiesFormat {
-	readonly ingestionSources?: IngestionSourcesPropertiesFormat[] | undefined;
-	readonly ingestionType?: "IPFIX" | undefined;
+	readonly ingestionSources?: IngestionSourcesPropertiesFormat[];
+	readonly ingestionType?: "IPFIX";
 }
 export interface IngestionSourcesPropertiesFormat {
-	readonly resourceId?: string | undefined;
-	readonly sourceType?: "Resource" | undefined;
+	readonly resourceId?: string;
+	readonly sourceType?: "Resource";
 }
 export interface ResourceReference {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface TrackedResourceSystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	azureTrafficCollectors: azureTrafficCollectors,

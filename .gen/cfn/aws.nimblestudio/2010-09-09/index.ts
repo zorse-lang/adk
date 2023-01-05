@@ -16,8 +16,8 @@ export interface LaunchProfileComponentInputs {
 	readonly StreamConfiguration: StreamConfiguration;
 	readonly StudioComponentIds: string[];
 	readonly StudioId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class StreamingImage extends CfnResource<StreamingImageComponentInputs> implements StreamingImageComponentOutputs {
@@ -43,8 +43,8 @@ export interface StreamingImageComponentInputs {
 	readonly Ec2ImageId: string;
 	readonly Name: string;
 	readonly StudioId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class Studio extends CfnResource<StudioComponentInputs> implements StudioComponentOutputs {
@@ -67,8 +67,8 @@ export interface StudioComponentInputs {
 	readonly DisplayName: string;
 	readonly StudioName: string;
 	readonly UserRoleArn: string;
-	readonly StudioEncryptionConfiguration?: (StudioEncryptionConfiguration | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly StudioEncryptionConfiguration?: StudioEncryptionConfiguration | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class StudioComponent
@@ -87,77 +87,77 @@ export interface StudioComponentComponentInputs {
 	readonly Name: string;
 	readonly StudioId: string;
 	readonly Type: string;
-	readonly Configuration?: (StudioComponentConfiguration | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Ec2SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly InitializationScripts?: (StudioComponentInitializationScript[] | undefined) | undefined;
-	readonly ScriptParameters?: (ScriptParameterKeyValue[] | undefined) | undefined;
-	readonly Subtype?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Configuration?: StudioComponentConfiguration | undefined;
+	readonly Description?: string | undefined;
+	readonly Ec2SecurityGroupIds?: string[] | undefined;
+	readonly InitializationScripts?: StudioComponentInitializationScript[] | undefined;
+	readonly ScriptParameters?: ScriptParameterKeyValue[] | undefined;
+	readonly Subtype?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export interface StreamConfiguration {
 	readonly ClipboardMode: string;
 	readonly Ec2InstanceTypes: string[];
-	readonly MaxSessionLengthInMinutes?: (number | undefined) | undefined;
-	readonly MaxStoppedSessionLengthInMinutes?: (number | undefined) | undefined;
-	readonly SessionStorage?: (StreamConfigurationSessionStorage | undefined) | undefined;
+	readonly MaxSessionLengthInMinutes?: number | undefined;
+	readonly MaxStoppedSessionLengthInMinutes?: number | undefined;
+	readonly SessionStorage?: StreamConfigurationSessionStorage | undefined;
 	readonly StreamingImageIds: string[];
 }
 export interface StreamConfigurationSessionStorage {
 	readonly Mode: string[];
-	readonly Root?: (StreamingSessionStorageRoot | undefined) | undefined;
+	readonly Root?: StreamingSessionStorageRoot | undefined;
 }
 export interface StreamingSessionStorageRoot {
-	readonly Linux?: (string | undefined) | undefined;
-	readonly Windows?: (string | undefined) | undefined;
+	readonly Linux?: string | undefined;
+	readonly Windows?: string | undefined;
 }
 export interface StreamingImageEncryptionConfiguration {
-	readonly KeyArn?: (string | undefined) | undefined;
+	readonly KeyArn?: string | undefined;
 	readonly KeyType: string;
 }
 export interface StudioEncryptionConfiguration {
-	readonly KeyArn?: (string | undefined) | undefined;
+	readonly KeyArn?: string | undefined;
 	readonly KeyType: string;
 }
 export interface ActiveDirectoryComputerAttribute {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface ActiveDirectoryConfiguration {
-	readonly ComputerAttributes?: (ActiveDirectoryComputerAttribute[] | undefined) | undefined;
-	readonly DirectoryId?: (string | undefined) | undefined;
-	readonly OrganizationalUnitDistinguishedName?: (string | undefined) | undefined;
+	readonly ComputerAttributes?: ActiveDirectoryComputerAttribute[] | undefined;
+	readonly DirectoryId?: string | undefined;
+	readonly OrganizationalUnitDistinguishedName?: string | undefined;
 }
 export interface ComputeFarmConfiguration {
-	readonly ActiveDirectoryUser?: (string | undefined) | undefined;
-	readonly Endpoint?: (string | undefined) | undefined;
+	readonly ActiveDirectoryUser?: string | undefined;
+	readonly Endpoint?: string | undefined;
 }
 export interface LicenseServiceConfiguration {
-	readonly Endpoint?: (string | undefined) | undefined;
+	readonly Endpoint?: string | undefined;
 }
 export interface ScriptParameterKeyValue {
-	readonly Key?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface SharedFileSystemConfiguration {
-	readonly Endpoint?: (string | undefined) | undefined;
-	readonly FileSystemId?: (string | undefined) | undefined;
-	readonly LinuxMountPoint?: (string | undefined) | undefined;
-	readonly ShareName?: (string | undefined) | undefined;
-	readonly WindowsMountDrive?: (string | undefined) | undefined;
+	readonly Endpoint?: string | undefined;
+	readonly FileSystemId?: string | undefined;
+	readonly LinuxMountPoint?: string | undefined;
+	readonly ShareName?: string | undefined;
+	readonly WindowsMountDrive?: string | undefined;
 }
 export interface StudioComponentConfiguration {
-	readonly ActiveDirectoryConfiguration?: (ActiveDirectoryConfiguration | undefined) | undefined;
-	readonly ComputeFarmConfiguration?: (ComputeFarmConfiguration | undefined) | undefined;
-	readonly LicenseServiceConfiguration?: (LicenseServiceConfiguration | undefined) | undefined;
-	readonly SharedFileSystemConfiguration?: (SharedFileSystemConfiguration | undefined) | undefined;
+	readonly ActiveDirectoryConfiguration?: ActiveDirectoryConfiguration | undefined;
+	readonly ComputeFarmConfiguration?: ComputeFarmConfiguration | undefined;
+	readonly LicenseServiceConfiguration?: LicenseServiceConfiguration | undefined;
+	readonly SharedFileSystemConfiguration?: SharedFileSystemConfiguration | undefined;
 }
 export interface StudioComponentInitializationScript {
-	readonly LaunchProfileProtocolVersion?: (string | undefined) | undefined;
-	readonly Platform?: (string | undefined) | undefined;
-	readonly RunContext?: (string | undefined) | undefined;
-	readonly Script?: (string | undefined) | undefined;
+	readonly LaunchProfileProtocolVersion?: string | undefined;
+	readonly Platform?: string | undefined;
+	readonly RunContext?: string | undefined;
+	readonly Script?: string | undefined;
 }
 export default {
 	LaunchProfile: LaunchProfile,

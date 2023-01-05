@@ -13,10 +13,10 @@ export interface AccessPointComponentOutputs {
 }
 export interface AccessPointComponentInputs {
 	readonly FileSystemId: string;
-	readonly AccessPointTags?: (AccessPointTag[] | undefined) | undefined;
-	readonly ClientToken?: (string | undefined) | undefined;
-	readonly PosixUser?: (PosixUser | undefined) | undefined;
-	readonly RootDirectory?: (RootDirectory | undefined) | undefined;
+	readonly AccessPointTags?: AccessPointTag[] | undefined;
+	readonly ClientToken?: string | undefined;
+	readonly PosixUser?: PosixUser | undefined;
+	readonly RootDirectory?: RootDirectory | undefined;
 	readonly LogicalId: string;
 }
 export class FileSystem extends CfnResource<FileSystemComponentInputs> implements FileSystemComponentOutputs {
@@ -31,17 +31,17 @@ export interface FileSystemComponentOutputs {
 	readonly FileSystemId: string;
 }
 export interface FileSystemComponentInputs {
-	readonly AvailabilityZoneName?: (string | undefined) | undefined;
-	readonly BackupPolicy?: (BackupPolicy | undefined) | undefined;
-	readonly BypassPolicyLockoutSafetyCheck?: (boolean | undefined) | undefined;
-	readonly Encrypted?: (boolean | undefined) | undefined;
-	readonly FileSystemPolicy?: (any | undefined) | undefined;
-	readonly FileSystemTags?: (ElasticFileSystemTag[] | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly LifecyclePolicies?: (LifecyclePolicy[] | undefined) | undefined;
-	readonly PerformanceMode?: (string | undefined) | undefined;
-	readonly ProvisionedThroughputInMibps?: (number | undefined) | undefined;
-	readonly ThroughputMode?: (string | undefined) | undefined;
+	readonly AvailabilityZoneName?: string | undefined;
+	readonly BackupPolicy?: BackupPolicy | undefined;
+	readonly BypassPolicyLockoutSafetyCheck?: boolean | undefined;
+	readonly Encrypted?: boolean | undefined;
+	readonly FileSystemPolicy?: any | undefined;
+	readonly FileSystemTags?: ElasticFileSystemTag[] | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly LifecyclePolicies?: LifecyclePolicy[] | undefined;
+	readonly PerformanceMode?: string | undefined;
+	readonly ProvisionedThroughputInMibps?: number | undefined;
+	readonly ThroughputMode?: string | undefined;
 	readonly LogicalId: string;
 }
 export class MountTarget extends CfnResource<MountTargetComponentInputs> implements MountTargetComponentOutputs {
@@ -57,12 +57,12 @@ export interface MountTargetComponentInputs {
 	readonly FileSystemId: string;
 	readonly SecurityGroups: string[];
 	readonly SubnetId: string;
-	readonly IpAddress?: string | undefined;
+	readonly IpAddress?: string;
 	readonly LogicalId: string;
 }
 export interface AccessPointTag {
-	readonly Key?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface CreationInfo {
 	readonly OwnerGid: string;
@@ -71,12 +71,12 @@ export interface CreationInfo {
 }
 export interface PosixUser {
 	readonly Gid: string;
-	readonly SecondaryGids?: (string[] | undefined) | undefined;
+	readonly SecondaryGids?: string[] | undefined;
 	readonly Uid: string;
 }
 export interface RootDirectory {
-	readonly CreationInfo?: (CreationInfo | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
+	readonly CreationInfo?: CreationInfo | undefined;
+	readonly Path?: string | undefined;
 }
 export interface BackupPolicy {
 	readonly Status: string;
@@ -86,8 +86,8 @@ export interface ElasticFileSystemTag {
 	readonly Value: string;
 }
 export interface LifecyclePolicy {
-	readonly TransitionToIA?: (string | undefined) | undefined;
-	readonly TransitionToPrimaryStorageClass?: (string | undefined) | undefined;
+	readonly TransitionToIA?: string | undefined;
+	readonly TransitionToPrimaryStorageClass?: string | undefined;
 }
 export default {
 	AccessPoint: AccessPoint,

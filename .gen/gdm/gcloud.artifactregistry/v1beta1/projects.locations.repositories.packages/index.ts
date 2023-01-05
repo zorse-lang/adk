@@ -10,17 +10,16 @@ export class ProjectsLocationsRepositoriesPackages
 }
 export interface ProjectsLocationsRepositoriesPackagesComponentOutputs {}
 export interface ProjectsLocationsRepositoriesPackagesComponentInputs {
-	readonly createTime?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly createTime?: string;
+	readonly displayName?: string;
 	readonly name: string;
-	readonly updateTime?: string | undefined;
-	readonly type: string;
+	readonly updateTime?: string;
 }
 export interface Package {
-	readonly createTime?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly name?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly displayName?: string;
+	readonly name?: string;
+	readonly updateTime?: string;
 }
 export default {
 	ProjectsLocationsRepositoriesPackages: ProjectsLocationsRepositoriesPackages,

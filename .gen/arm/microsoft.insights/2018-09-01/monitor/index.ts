@@ -16,22 +16,22 @@ export interface actionGroupsComponentOutputs {
 export interface actionGroupsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ActionGroup | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ActionGroup;
+	readonly tags?: ResourceTags;
 }
 export interface ActionGroup {
-	readonly armRoleReceivers?: ArmRoleReceiver[] | undefined;
-	readonly automationRunbookReceivers?: AutomationRunbookReceiver[] | undefined;
-	readonly azureAppPushReceivers?: AzureAppPushReceiver[] | undefined;
-	readonly azureFunctionReceivers?: AzureFunctionReceiver[] | undefined;
-	readonly emailReceivers?: EmailReceiver[] | undefined;
+	readonly armRoleReceivers?: ArmRoleReceiver[];
+	readonly automationRunbookReceivers?: AutomationRunbookReceiver[];
+	readonly azureAppPushReceivers?: AzureAppPushReceiver[];
+	readonly azureFunctionReceivers?: AzureFunctionReceiver[];
+	readonly emailReceivers?: EmailReceiver[];
 	readonly enabled: boolean;
 	readonly groupShortName: string;
-	readonly itsmReceivers?: ItsmReceiver[] | undefined;
-	readonly logicAppReceivers?: LogicAppReceiver[] | undefined;
-	readonly smsReceivers?: SmsReceiver[] | undefined;
-	readonly voiceReceivers?: VoiceReceiver[] | undefined;
-	readonly webhookReceivers?: WebhookReceiver[] | undefined;
+	readonly itsmReceivers?: ItsmReceiver[];
+	readonly logicAppReceivers?: LogicAppReceiver[];
+	readonly smsReceivers?: SmsReceiver[];
+	readonly voiceReceivers?: VoiceReceiver[];
+	readonly webhookReceivers?: WebhookReceiver[];
 }
 export interface ArmRoleReceiver {
 	readonly name: string;
@@ -40,9 +40,9 @@ export interface ArmRoleReceiver {
 export interface AutomationRunbookReceiver {
 	readonly automationAccountId: string;
 	readonly isGlobalRunbook: boolean;
-	readonly name?: string | undefined;
+	readonly name?: string;
 	readonly runbookName: string;
-	readonly serviceUri?: string | undefined;
+	readonly serviceUri?: string;
 	readonly webhookResourceId: string;
 }
 export interface AzureAppPushReceiver {
@@ -58,7 +58,7 @@ export interface AzureFunctionReceiver {
 export interface EmailReceiver {
 	readonly emailAddress: string;
 	readonly name: string;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
+	readonly status?: "Disabled" | "Enabled";
 }
 export interface ItsmReceiver {
 	readonly connectionId: string;
@@ -73,13 +73,13 @@ export interface LogicAppReceiver {
 	readonly resourceId: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SmsReceiver {
 	readonly countryCode: string;
 	readonly name: string;
 	readonly phoneNumber: string;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
+	readonly status?: "Disabled" | "Enabled";
 }
 export interface VoiceReceiver {
 	readonly countryCode: string;

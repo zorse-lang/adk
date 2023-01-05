@@ -4,24 +4,23 @@ export class Folders extends GdmResource<FoldersComponentInputs> implements Fold
 	constructor(entity: ADKEntity, options: FoldersComponentInputs) {
 		super(entity, options.name, "cloudresourcemanager.v2.Folders", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly lifecycleState?: string | undefined;
+	public readonly createTime?: string;
+	public readonly lifecycleState?: string;
 }
 export interface FoldersComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly lifecycleState?: string | undefined;
+	readonly createTime?: string;
+	readonly lifecycleState?: string;
 }
 export interface FoldersComponentInputs {
-	readonly displayName?: string | undefined;
+	readonly displayName?: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly type: string;
 }
 export interface Folder {
-	readonly createTime?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly lifecycleState?: string | undefined;
-	readonly name?: string | undefined;
+	readonly createTime?: string;
+	readonly displayName?: string;
+	readonly lifecycleState?: string;
+	readonly name?: string;
 	readonly parent: string;
 }
 export default {

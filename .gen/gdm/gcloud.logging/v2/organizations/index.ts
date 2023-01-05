@@ -7,7 +7,6 @@ export class Organizations extends GdmResource<OrganizationsComponentInputs> imp
 }
 export interface OrganizationsComponentOutputs {}
 export interface OrganizationsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

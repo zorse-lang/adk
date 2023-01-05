@@ -11,9 +11,9 @@ export interface AnalyzerComponentOutputs {
 }
 export interface AnalyzerComponentInputs {
 	readonly Type: string;
-	readonly AnalyzerName?: (string | undefined) | undefined;
-	readonly ArchiveRules?: (ArchiveRule[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AnalyzerName?: string | undefined;
+	readonly ArchiveRules?: ArchiveRule[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface ArchiveRule {
@@ -21,10 +21,10 @@ export interface ArchiveRule {
 	readonly RuleName: string;
 }
 export interface Filter {
-	readonly Contains?: (string[] | undefined) | undefined;
-	readonly Eq?: (string[] | undefined) | undefined;
-	readonly Exists?: (boolean | undefined) | undefined;
-	readonly Neq?: (string[] | undefined) | undefined;
+	readonly Contains?: string[] | undefined;
+	readonly Eq?: string[] | undefined;
+	readonly Exists?: boolean | undefined;
+	readonly Neq?: string[] | undefined;
 	readonly Property: string;
 }
 export default {

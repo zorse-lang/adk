@@ -17,17 +17,17 @@ export interface diagnosticSettingsComponentOutputs {
 	readonly type: "microsoft.insights/diagnosticSettings";
 }
 export interface diagnosticSettingsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ManagementGroupDiagnosticSettings | undefined;
+	readonly properties?: ManagementGroupDiagnosticSettings;
 }
 export interface ManagementGroupDiagnosticSettings {
-	readonly eventHubAuthorizationRuleId?: string | undefined;
-	readonly eventHubName?: string | undefined;
-	readonly logs?: ManagementGroupLogSettings[] | undefined;
-	readonly serviceBusRuleId?: string | undefined;
-	readonly storageAccountId?: string | undefined;
-	readonly workspaceId?: string | undefined;
+	readonly eventHubAuthorizationRuleId?: string;
+	readonly eventHubName?: string;
+	readonly logs?: ManagementGroupLogSettings[];
+	readonly serviceBusRuleId?: string;
+	readonly storageAccountId?: string;
+	readonly workspaceId?: string;
 }
 export interface ManagementGroupLogSettings {
 	readonly category: string;

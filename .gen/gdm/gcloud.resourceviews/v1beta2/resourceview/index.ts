@@ -4,33 +4,32 @@ export class ResourceView extends GdmResource<ResourceViewComponentInputs> imple
 	constructor(entity: ADKEntity, options: ResourceViewComponentInputs) {
 		super(entity, options.name, "resourceviews.v1beta2.ResourceView", options);
 	}
-	public readonly id?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly id?: string;
+	public readonly selfLink?: string;
 }
 export interface ResourceViewComponentOutputs {
-	readonly id?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly id?: string;
+	readonly selfLink?: string;
 }
 export interface ResourceViewComponentInputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly endpoints?: ServiceEndpoint[] | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly labels?: Label[] | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly endpoints?: ServiceEndpoint[];
+	readonly fingerprint?: string;
+	readonly kind?: string;
+	readonly labels?: Label[];
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly resources?: string[] | undefined;
-	readonly size?: number | undefined;
-	readonly type: string;
+	readonly network?: string;
+	readonly resources?: string[];
+	readonly size?: number;
 }
 export interface Label {
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface ServiceEndpoint {
-	readonly name?: string | undefined;
-	readonly port?: number | undefined;
+	readonly name?: string;
+	readonly port?: number;
 }
 export default {
 	ResourceView: ResourceView,

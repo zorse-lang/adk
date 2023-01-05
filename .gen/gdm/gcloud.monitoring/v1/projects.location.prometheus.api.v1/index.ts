@@ -10,7 +10,6 @@ export class ProjectsLocationPrometheusApiV1
 }
 export interface ProjectsLocationPrometheusApiV1ComponentOutputs {}
 export interface ProjectsLocationPrometheusApiV1ComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

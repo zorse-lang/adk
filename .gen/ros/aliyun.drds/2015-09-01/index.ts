@@ -8,15 +8,15 @@ export class DrdsDB extends RosResource<DrdsDBComponentInputs> implements DrdsDB
 export interface DrdsDBComponentOutputs {}
 export interface DrdsDBComponentInputs {
 	readonly DrdsInstanceId: string;
-	readonly AccountName?: (string | undefined) | undefined;
-	readonly DbInstanceIsCreating?: (boolean | undefined) | undefined;
-	readonly DbInstType?: (string | undefined) | undefined;
-	readonly DbName?: (string | undefined) | undefined;
-	readonly Encode?: (string | undefined) | undefined;
-	readonly InstDbName?: (InstDbName[] | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly RdsInstance?: (string[] | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly AccountName?: string | undefined;
+	readonly DbInstanceIsCreating?: boolean | undefined;
+	readonly DbInstType?: string | undefined;
+	readonly DbName?: string | undefined;
+	readonly Encode?: string | undefined;
+	readonly InstDbName?: InstDbName[] | undefined;
+	readonly Password?: string | undefined;
+	readonly RdsInstance?: string[] | undefined;
+	readonly Type?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DrdsInstance extends RosResource<DrdsInstanceComponentInputs> implements DrdsInstanceComponentOutputs {
@@ -41,14 +41,14 @@ export interface DrdsInstanceComponentInputs {
 	readonly Specification: string;
 	readonly Type: string;
 	readonly ZoneId: string;
-	readonly Duration?: (number | undefined) | undefined;
-	readonly IsAutoRenew?: (boolean | undefined) | undefined;
-	readonly MySQLVersion?: (string | undefined) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VswitchId?: (string | undefined) | undefined;
+	readonly Duration?: number | undefined;
+	readonly IsAutoRenew?: boolean | undefined;
+	readonly MySQLVersion?: string | undefined;
+	readonly PricingCycle?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VswitchId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface InstDbName {
@@ -56,7 +56,7 @@ export interface InstDbName {
 	readonly DbInstanceId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export default {

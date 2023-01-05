@@ -14,11 +14,11 @@ export interface clustersComponentOutputs {
 	readonly type: "Microsoft.EventHub/clusters";
 }
 export interface clustersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
-	readonly sku?: ClusterSku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ClusterProperties;
+	readonly sku?: ClusterSku;
+	readonly tags?: TrackedResourceTags;
 }
 export class namespaces extends ArmResource<namespacesComponentInputs> implements namespacesComponentOutputs {
 	constructor(entity: ADKEntity, options: namespacesComponentInputs) {
@@ -34,12 +34,12 @@ export interface namespacesComponentOutputs {
 	readonly type: "Microsoft.EventHub/namespaces";
 }
 export interface namespacesComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: EHNamespaceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: EHNamespaceProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class namespaces_authorizationRules
 	extends ArmResource<namespaces_authorizationRulesComponentInputs>
@@ -59,7 +59,7 @@ export interface namespaces_authorizationRulesComponentOutputs {
 }
 export interface namespaces_authorizationRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: AuthorizationRuleProperties | undefined;
+	readonly properties?: AuthorizationRuleProperties;
 }
 export class namespaces_disasterRecoveryConfigs
 	extends ArmResource<namespaces_disasterRecoveryConfigsComponentInputs>
@@ -79,7 +79,7 @@ export interface namespaces_disasterRecoveryConfigsComponentOutputs {
 }
 export interface namespaces_disasterRecoveryConfigsComponentInputs {
 	readonly name: string;
-	readonly properties?: ArmDisasterRecoveryProperties | undefined;
+	readonly properties?: ArmDisasterRecoveryProperties;
 }
 export class namespaces_disasterRecoveryConfigs_authorizationRules
 	extends ArmResource<namespaces_disasterRecoveryConfigs_authorizationRulesComponentInputs>
@@ -105,7 +105,7 @@ export interface namespaces_disasterRecoveryConfigs_authorizationRulesComponentO
 }
 export interface namespaces_disasterRecoveryConfigs_authorizationRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: AuthorizationRuleProperties | undefined;
+	readonly properties?: AuthorizationRuleProperties;
 }
 export class namespaces_eventhubs
 	extends ArmResource<namespaces_eventhubsComponentInputs>
@@ -125,7 +125,7 @@ export interface namespaces_eventhubsComponentOutputs {
 }
 export interface namespaces_eventhubsComponentInputs {
 	readonly name: string;
-	readonly properties?: EventhubProperties | undefined;
+	readonly properties?: EventhubProperties;
 }
 export class namespaces_eventhubs_authorizationRules
 	extends ArmResource<namespaces_eventhubs_authorizationRulesComponentInputs>
@@ -151,7 +151,7 @@ export interface namespaces_eventhubs_authorizationRulesComponentOutputs {
 }
 export interface namespaces_eventhubs_authorizationRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: AuthorizationRuleProperties | undefined;
+	readonly properties?: AuthorizationRuleProperties;
 }
 export class namespaces_eventhubs_consumergroups
 	extends ArmResource<namespaces_eventhubs_consumergroupsComponentInputs>
@@ -177,7 +177,7 @@ export interface namespaces_eventhubs_consumergroupsComponentOutputs {
 }
 export interface namespaces_eventhubs_consumergroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConsumerGroupProperties | undefined;
+	readonly properties?: ConsumerGroupProperties;
 }
 export class namespaces_ipfilterrules
 	extends ArmResource<namespaces_ipfilterrulesComponentInputs>
@@ -197,7 +197,7 @@ export interface namespaces_ipfilterrulesComponentOutputs {
 }
 export interface namespaces_ipfilterrulesComponentInputs {
 	readonly name: string;
-	readonly properties?: IpFilterRuleProperties | undefined;
+	readonly properties?: IpFilterRuleProperties;
 }
 export class namespaces_networkRuleSets
 	extends ArmResource<namespaces_networkRuleSetsComponentInputs>
@@ -217,7 +217,7 @@ export interface namespaces_networkRuleSetsComponentOutputs {
 }
 export interface namespaces_networkRuleSetsComponentInputs {
 	readonly name: string;
-	readonly properties?: NetworkRuleSetProperties | undefined;
+	readonly properties?: NetworkRuleSetProperties;
 }
 export class namespaces_privateEndpointConnections
 	extends ArmResource<namespaces_privateEndpointConnectionsComponentInputs>
@@ -243,7 +243,7 @@ export interface namespaces_privateEndpointConnectionsComponentOutputs {
 }
 export interface namespaces_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class namespaces_virtualnetworkrules
 	extends ArmResource<namespaces_virtualnetworkrulesComponentInputs>
@@ -263,7 +263,7 @@ export interface namespaces_virtualnetworkrulesComponentOutputs {
 }
 export interface namespaces_virtualnetworkrulesComponentInputs {
 	readonly name: string;
-	readonly properties?: VirtualNetworkRuleProperties | undefined;
+	readonly properties?: VirtualNetworkRuleProperties;
 }
 export function listKeys(resource: namespaces_authorizationRules): AccessKeys {
 	if (resource.apiVersion !== "2018-01-01-preview") {
@@ -275,139 +275,145 @@ export function listKeys(resource: namespaces_authorizationRules): AccessKeys {
 	throw new Error("not implemented");
 }
 export interface AccessKeys {
-	readonly aliasPrimaryConnectionString?: string | undefined;
-	readonly aliasSecondaryConnectionString?: string | undefined;
-	readonly keyName?: string | undefined;
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly aliasPrimaryConnectionString?: string;
+	readonly aliasSecondaryConnectionString?: string;
+	readonly keyName?: string;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface ArmDisasterRecoveryProperties {
-	readonly alternateName?: string | undefined;
-	readonly partnerNamespace?: string | undefined;
-	readonly pendingReplicationOperationsCount?: number | undefined;
-	readonly provisioningState?: ("Accepted" | "Failed") | undefined;
-	readonly role?: ("Primary" | "PrimaryNotReplicating") | undefined;
+	readonly alternateName?: string;
+	readonly partnerNamespace?: string;
+	readonly pendingReplicationOperationsCount?: number;
+	readonly provisioningState?: "Accepted" | "Failed";
+	readonly role?: "Primary" | "PrimaryNotReplicating";
 }
 export interface AuthorizationRuleProperties {
 	readonly rights: "Listen" | "Manage" | "Send"[];
 }
 export interface CaptureDescription {
-	readonly destination?: Destination | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly encoding?: "Avro" | undefined;
-	readonly intervalInSeconds?: number | undefined;
-	readonly sizeLimitInBytes?: number | undefined;
-	readonly skipEmptyArchives?: boolean | undefined;
+	readonly destination?: Destination;
+	readonly enabled?: boolean;
+	readonly encoding?: "Avro";
+	readonly intervalInSeconds?: number;
+	readonly sizeLimitInBytes?: number;
+	readonly skipEmptyArchives?: boolean;
 }
 export interface ClusterProperties {
-	readonly createdAt?: string | undefined;
-	readonly metricId?: string | undefined;
-	readonly status?: string | undefined;
-	readonly updatedAt?: string | undefined;
+	readonly createdAt?: string;
+	readonly metricId?: string;
+	readonly status?: string;
+	readonly updatedAt?: string;
 }
 export interface ClusterSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name: "Dedicated";
 }
 export interface ConnectionState {
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface ConsumerGroupProperties {
-	readonly createdAt?: string | undefined;
-	readonly updatedAt?: string | undefined;
-	readonly userMetadata?: string | undefined;
+	readonly createdAt?: string;
+	readonly updatedAt?: string;
+	readonly userMetadata?: string;
 }
 export interface Destination {
-	readonly name?: string | undefined;
-	readonly properties?: DestinationProperties | undefined;
+	readonly name?: string;
+	readonly properties?: DestinationProperties;
 }
 export interface DestinationProperties {
-	readonly archiveNameFormat?: string | undefined;
-	readonly blobContainer?: string | undefined;
-	readonly storageAccountResourceId?: string | undefined;
+	readonly archiveNameFormat?: string;
+	readonly blobContainer?: string;
+	readonly storageAccountResourceId?: string;
 }
 export interface EHNamespaceProperties {
-	readonly clusterArmId?: string | undefined;
-	readonly createdAt?: string | undefined;
-	readonly encryption?: Encryption | undefined;
-	readonly isAutoInflateEnabled?: boolean | undefined;
-	readonly kafkaEnabled?: boolean | undefined;
-	readonly maximumThroughputUnits?: number | undefined;
-	readonly metricId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceBusEndpoint?: string | undefined;
-	readonly status?: string | undefined;
-	readonly updatedAt?: string | undefined;
-	readonly zoneRedundant?: boolean | undefined;
+	readonly clusterArmId?: string;
+	readonly createdAt?: string;
+	readonly encryption?: Encryption;
+	readonly isAutoInflateEnabled?: boolean;
+	readonly kafkaEnabled?: boolean;
+	readonly maximumThroughputUnits?: number;
+	readonly metricId?: string;
+	readonly provisioningState?: string;
+	readonly serviceBusEndpoint?: string;
+	readonly status?: string;
+	readonly updatedAt?: string;
+	readonly zoneRedundant?: boolean;
 }
 export interface Encryption {
-	readonly keySource?: "Microsoft.KeyVault" | undefined;
-	readonly keyVaultProperties?: KeyVaultProperties[] | undefined;
+	readonly keySource?: "Microsoft.KeyVault";
+	readonly keyVaultProperties?: KeyVaultProperties[];
 }
 export interface EventhubProperties {
-	readonly captureDescription?: CaptureDescription | undefined;
-	readonly createdAt?: string | undefined;
-	readonly messageRetentionInDays?: number | undefined;
-	readonly partitionCount?: number | undefined;
-	readonly partitionIds?: string[] | undefined;
+	readonly captureDescription?: CaptureDescription;
+	readonly createdAt?: string;
+	readonly messageRetentionInDays?: number;
+	readonly partitionCount?: number;
+	readonly partitionIds?: string[];
 	readonly status?:
-		| ("Active" | "Creating" | "Deleting" | "Disabled" | "ReceiveDisabled" | "Renaming" | "Restoring" | "SendDisabled")
-		| undefined;
-	readonly updatedAt?: string | undefined;
+		| "Active"
+		| "Creating"
+		| "Deleting"
+		| "Disabled"
+		| "ReceiveDisabled"
+		| "Renaming"
+		| "Restoring"
+		| "SendDisabled";
+	readonly updatedAt?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface IpFilterRuleProperties {
-	readonly action?: ("Accept" | "Reject") | undefined;
-	readonly filterName?: string | undefined;
-	readonly ipMask?: string | undefined;
+	readonly action?: "Accept" | "Reject";
+	readonly filterName?: string;
+	readonly ipMask?: string;
 }
 export interface KeyVaultProperties {
-	readonly keyName?: string | undefined;
-	readonly keyVaultUri?: string | undefined;
-	readonly keyVersion?: string | undefined;
+	readonly keyName?: string;
+	readonly keyVaultUri?: string;
+	readonly keyVersion?: string;
 }
 export interface NetworkRuleSetProperties {
-	readonly defaultAction?: ("Allow" | "Deny") | undefined;
-	readonly ipRules?: NWRuleSetIpRules[] | undefined;
-	readonly trustedServiceAccessEnabled?: boolean | undefined;
-	readonly virtualNetworkRules?: NWRuleSetVirtualNetworkRules[] | undefined;
+	readonly defaultAction?: "Allow" | "Deny";
+	readonly ipRules?: NWRuleSetIpRules[];
+	readonly trustedServiceAccessEnabled?: boolean;
+	readonly virtualNetworkRules?: NWRuleSetVirtualNetworkRules[];
 }
 export interface NWRuleSetIpRules {
-	readonly action?: "Allow" | undefined;
-	readonly ipMask?: string | undefined;
+	readonly action?: "Allow";
+	readonly ipMask?: string;
 }
 export interface NWRuleSetVirtualNetworkRules {
-	readonly ignoreMissingVnetServiceEndpoint?: boolean | undefined;
-	readonly subnet?: Subnet | undefined;
+	readonly ignoreMissingVnetServiceEndpoint?: boolean;
+	readonly subnet?: Subnet;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: ConnectionState | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: ConnectionState;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name: "Basic" | "Standard";
-	readonly tier?: ("Basic" | "Standard") | undefined;
+	readonly tier?: "Basic" | "Standard";
 }
 export interface Subnet {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualNetworkRuleProperties {
-	readonly virtualNetworkSubnetId?: string | undefined;
+	readonly virtualNetworkSubnetId?: string;
 }
 export default {
 	clusters: clusters,

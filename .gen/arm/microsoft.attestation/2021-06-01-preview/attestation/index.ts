@@ -20,8 +20,8 @@ export interface attestationProvidersComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: AttestationServiceCreationSpecificParamsOrStatusResult;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: AttestationServiceCreationParamsTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: AttestationServiceCreationParamsTags;
 }
 export class attestationProviders_privateEndpointConnections
 	extends ArmResource<attestationProviders_privateEndpointConnectionsComponentInputs>
@@ -47,67 +47,67 @@ export interface attestationProviders_privateEndpointConnectionsComponentOutputs
 }
 export interface attestationProviders_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export interface AttestationServiceCreationParamsTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AttestationServiceCreationSpecificParamsOrStatusResult {
-	readonly attestUri?: string | undefined;
-	readonly policySigningCertificates?: JsonWebKeySet | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly status?: ("Error" | "NotReady" | "Ready") | undefined;
-	readonly trustModel?: string | undefined;
+	readonly attestUri?: string;
+	readonly policySigningCertificates?: JsonWebKeySet;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly status?: "Error" | "NotReady" | "Ready";
+	readonly trustModel?: string;
 }
 export interface JsonWebKey {
-	readonly alg?: string | undefined;
-	readonly crv?: string | undefined;
-	readonly d?: string | undefined;
-	readonly dp?: string | undefined;
-	readonly dq?: string | undefined;
-	readonly e?: string | undefined;
-	readonly k?: string | undefined;
-	readonly kid?: string | undefined;
+	readonly alg?: string;
+	readonly crv?: string;
+	readonly d?: string;
+	readonly dp?: string;
+	readonly dq?: string;
+	readonly e?: string;
+	readonly k?: string;
+	readonly kid?: string;
 	readonly kty: string;
-	readonly n?: string | undefined;
-	readonly p?: string | undefined;
-	readonly q?: string | undefined;
-	readonly qi?: string | undefined;
-	readonly use?: string | undefined;
-	readonly x?: string | undefined;
-	readonly x5c?: string[] | undefined;
-	readonly y?: string | undefined;
+	readonly n?: string;
+	readonly p?: string;
+	readonly q?: string;
+	readonly qi?: string;
+	readonly use?: string;
+	readonly x?: string;
+	readonly x5c?: string[];
+	readonly y?: string;
 }
 export interface JsonWebKeySet {
-	readonly keys?: JsonWebKey[] | undefined;
+	readonly keys?: JsonWebKey[];
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	attestationProviders: attestationProviders,

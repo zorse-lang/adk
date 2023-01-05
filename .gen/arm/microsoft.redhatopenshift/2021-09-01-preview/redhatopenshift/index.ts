@@ -19,9 +19,9 @@ export interface openShiftClustersComponentOutputs {
 export interface openShiftClustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: OpenShiftClusterProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: OpenShiftClusterProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export function listAdminCredentials(resource: openShiftClusters): OpenShiftClusterAdminKubeconfig {
 	if (resource.apiVersion !== "2021-09-01-preview") {
@@ -42,130 +42,122 @@ export function listCredentials(resource: openShiftClusters): OpenShiftClusterCr
 	throw new Error("not implemented");
 }
 export interface APIServerProfile {
-	readonly ip?: string | undefined;
-	readonly url?: string | undefined;
-	readonly visibility?: ("Private" | "Public") | undefined;
+	readonly ip?: string;
+	readonly url?: string;
+	readonly visibility?: "Private" | "Public";
 }
 export interface ClusterProfile {
-	readonly domain?: string | undefined;
-	readonly pullSecret?: string | undefined;
-	readonly resourceGroupId?: string | undefined;
-	readonly version?: string | undefined;
+	readonly domain?: string;
+	readonly pullSecret?: string;
+	readonly resourceGroupId?: string;
+	readonly version?: string;
 }
 export interface ConsoleProfile {
-	readonly url?: string | undefined;
+	readonly url?: string;
 }
 export interface IngressProfile {
-	readonly ip?: string | undefined;
-	readonly name?: string | undefined;
-	readonly visibility?: ("Private" | "Public") | undefined;
+	readonly ip?: string;
+	readonly name?: string;
+	readonly visibility?: "Private" | "Public";
 }
 export interface MasterProfile {
-	readonly diskEncryptionSetId?: string | undefined;
-	readonly encryptionAtHost?: ("Disabled" | "Enabled") | undefined;
-	readonly subnetId?: string | undefined;
+	readonly diskEncryptionSetId?: string;
+	readonly encryptionAtHost?: "Disabled" | "Enabled";
+	readonly subnetId?: string;
 	readonly vmSize?:
-		| (
-				| "Standard_D16as_v4"
-				| "Standard_D16s_v3"
-				| "Standard_D2s_v3"
-				| "Standard_D32as_v4"
-				| "Standard_D32s_v3"
-				| "Standard_D4as_v4"
-				| "Standard_D4s_v3"
-				| "Standard_D8as_v4"
-				| "Standard_D8s_v3"
-				| "Standard_E16s_v3"
-				| "Standard_E32s_v3"
-				| "Standard_E4s_v3"
-				| "Standard_E64i_v3"
-				| "Standard_E64is_v3"
-				| "Standard_E8s_v3"
-				| "Standard_F16s_v2"
-				| "Standard_F32s_v2"
-				| "Standard_F4s_v2"
-				| "Standard_F72s_v2"
-				| "Standard_F8s_v2"
-				| "Standard_G5"
-				| "Standard_GS5"
-				| "Standard_M128ms"
-		  )
-		| undefined;
+		| "Standard_D16as_v4"
+		| "Standard_D16s_v3"
+		| "Standard_D2s_v3"
+		| "Standard_D32as_v4"
+		| "Standard_D32s_v3"
+		| "Standard_D4as_v4"
+		| "Standard_D4s_v3"
+		| "Standard_D8as_v4"
+		| "Standard_D8s_v3"
+		| "Standard_E16s_v3"
+		| "Standard_E32s_v3"
+		| "Standard_E4s_v3"
+		| "Standard_E64i_v3"
+		| "Standard_E64is_v3"
+		| "Standard_E8s_v3"
+		| "Standard_F16s_v2"
+		| "Standard_F32s_v2"
+		| "Standard_F4s_v2"
+		| "Standard_F72s_v2"
+		| "Standard_F8s_v2"
+		| "Standard_G5"
+		| "Standard_GS5"
+		| "Standard_M128ms";
 }
 export interface NetworkProfile {
-	readonly podCidr?: string | undefined;
-	readonly serviceCidr?: string | undefined;
-	readonly softwareDefinedNetwork?: ("OVNKubernetes" | "OpenShiftSDN") | undefined;
+	readonly podCidr?: string;
+	readonly serviceCidr?: string;
+	readonly softwareDefinedNetwork?: "OVNKubernetes" | "OpenShiftSDN";
 }
 export interface OpenShiftClusterAdminKubeconfig {
-	readonly kubeconfig?: string | undefined;
+	readonly kubeconfig?: string;
 }
 export interface OpenShiftClusterCredentials {
-	readonly kubeadminPassword?: string | undefined;
-	readonly kubeadminUsername?: string | undefined;
+	readonly kubeadminPassword?: string;
+	readonly kubeadminUsername?: string;
 }
 export interface OpenShiftClusterProperties {
-	readonly apiserverProfile?: APIServerProfile | undefined;
-	readonly clusterProfile?: ClusterProfile | undefined;
-	readonly consoleProfile?: ConsoleProfile | undefined;
-	readonly ingressProfiles?: IngressProfile[] | undefined;
-	readonly masterProfile?: MasterProfile | undefined;
-	readonly networkProfile?: NetworkProfile | undefined;
-	readonly provisioningState?:
-		| ("AdminUpdating" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating")
-		| undefined;
-	readonly servicePrincipalProfile?: ServicePrincipalProfile | undefined;
-	readonly workerProfiles?: WorkerProfile[] | undefined;
+	readonly apiserverProfile?: APIServerProfile;
+	readonly clusterProfile?: ClusterProfile;
+	readonly consoleProfile?: ConsoleProfile;
+	readonly ingressProfiles?: IngressProfile[];
+	readonly masterProfile?: MasterProfile;
+	readonly networkProfile?: NetworkProfile;
+	readonly provisioningState?: "AdminUpdating" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly servicePrincipalProfile?: ServicePrincipalProfile;
+	readonly workerProfiles?: WorkerProfile[];
 }
 export interface ServicePrincipalProfile {
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
+	readonly clientId?: string;
+	readonly clientSecret?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WorkerProfile {
-	readonly count?: number | undefined;
-	readonly diskEncryptionSetId?: string | undefined;
-	readonly diskSizeGB?: number | undefined;
-	readonly encryptionAtHost?: ("Disabled" | "Enabled") | undefined;
-	readonly name?: string | undefined;
-	readonly subnetId?: string | undefined;
+	readonly count?: number;
+	readonly diskEncryptionSetId?: string;
+	readonly diskSizeGB?: number;
+	readonly encryptionAtHost?: "Disabled" | "Enabled";
+	readonly name?: string;
+	readonly subnetId?: string;
 	readonly vmSize?:
-		| (
-				| "Standard_D16as_v4"
-				| "Standard_D16s_v3"
-				| "Standard_D2s_v3"
-				| "Standard_D32as_v4"
-				| "Standard_D32s_v3"
-				| "Standard_D4as_v4"
-				| "Standard_D4s_v3"
-				| "Standard_D8as_v4"
-				| "Standard_D8s_v3"
-				| "Standard_E16s_v3"
-				| "Standard_E32s_v3"
-				| "Standard_E4s_v3"
-				| "Standard_E64i_v3"
-				| "Standard_E64is_v3"
-				| "Standard_E8s_v3"
-				| "Standard_F16s_v2"
-				| "Standard_F32s_v2"
-				| "Standard_F4s_v2"
-				| "Standard_F72s_v2"
-				| "Standard_F8s_v2"
-				| "Standard_G5"
-				| "Standard_GS5"
-				| "Standard_M128ms"
-		  )
-		| undefined;
+		| "Standard_D16as_v4"
+		| "Standard_D16s_v3"
+		| "Standard_D2s_v3"
+		| "Standard_D32as_v4"
+		| "Standard_D32s_v3"
+		| "Standard_D4as_v4"
+		| "Standard_D4s_v3"
+		| "Standard_D8as_v4"
+		| "Standard_D8s_v3"
+		| "Standard_E16s_v3"
+		| "Standard_E32s_v3"
+		| "Standard_E4s_v3"
+		| "Standard_E64i_v3"
+		| "Standard_E64is_v3"
+		| "Standard_E8s_v3"
+		| "Standard_F16s_v2"
+		| "Standard_F32s_v2"
+		| "Standard_F4s_v2"
+		| "Standard_F72s_v2"
+		| "Standard_F8s_v2"
+		| "Standard_G5"
+		| "Standard_GS5"
+		| "Standard_M128ms";
 }
 export default {
 	openShiftClusters: openShiftClusters,

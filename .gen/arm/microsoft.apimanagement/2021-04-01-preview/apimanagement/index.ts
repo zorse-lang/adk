@@ -17,9 +17,9 @@ export interface locations_deletedservicesComponentOutputs {
 	readonly type: "Microsoft.ApiManagement/locations/deletedservices";
 }
 export interface locations_deletedservicesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DeletedServiceContractProperties | undefined;
+	readonly properties?: DeletedServiceContractProperties;
 }
 export class service extends ArmResource<serviceComponentInputs> implements serviceComponentOutputs {
 	constructor(entity: ADKEntity, options: serviceComponentInputs) {
@@ -35,15 +35,15 @@ export interface serviceComponentOutputs {
 	readonly type: "Microsoft.ApiManagement/service";
 }
 export interface serviceComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ApiManagementServiceIdentity | undefined;
+	readonly etag?: string;
+	readonly identity?: ApiManagementServiceIdentity;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ApiManagementServiceProperties;
 	readonly sku: ApiManagementServiceSkuProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ApimResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: ApimResourceTags;
+	readonly zones?: string[];
 }
 export class service_apis extends ArmResource<service_apisComponentInputs> implements service_apisComponentOutputs {
 	constructor(entity: ADKEntity, options: service_apisComponentInputs) {
@@ -60,7 +60,7 @@ export interface service_apisComponentOutputs {
 }
 export interface service_apisComponentInputs {
 	readonly name: string;
-	readonly properties?: ApiCreateOrUpdatePropertiesOrApiContractProperties | undefined;
+	readonly properties?: ApiCreateOrUpdatePropertiesOrApiContractProperties;
 }
 export class service_apis_diagnostics
 	extends ArmResource<service_apis_diagnosticsComponentInputs>
@@ -80,7 +80,7 @@ export interface service_apis_diagnosticsComponentOutputs {
 }
 export interface service_apis_diagnosticsComponentInputs {
 	readonly name: string;
-	readonly properties?: DiagnosticContractProperties | undefined;
+	readonly properties?: DiagnosticContractProperties;
 }
 export class service_apis_issues
 	extends ArmResource<service_apis_issuesComponentInputs>
@@ -100,7 +100,7 @@ export interface service_apis_issuesComponentOutputs {
 }
 export interface service_apis_issuesComponentInputs {
 	readonly name: string;
-	readonly properties?: IssueContractProperties | undefined;
+	readonly properties?: IssueContractProperties;
 }
 export class service_apis_issues_attachments
 	extends ArmResource<service_apis_issues_attachmentsComponentInputs>
@@ -126,7 +126,7 @@ export interface service_apis_issues_attachmentsComponentOutputs {
 }
 export interface service_apis_issues_attachmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: IssueAttachmentContractProperties | undefined;
+	readonly properties?: IssueAttachmentContractProperties;
 }
 export class service_apis_issues_comments
 	extends ArmResource<service_apis_issues_commentsComponentInputs>
@@ -146,7 +146,7 @@ export interface service_apis_issues_commentsComponentOutputs {
 }
 export interface service_apis_issues_commentsComponentInputs {
 	readonly name: string;
-	readonly properties?: IssueCommentContractProperties | undefined;
+	readonly properties?: IssueCommentContractProperties;
 }
 export class service_apis_operations
 	extends ArmResource<service_apis_operationsComponentInputs>
@@ -166,7 +166,7 @@ export interface service_apis_operationsComponentOutputs {
 }
 export interface service_apis_operationsComponentInputs {
 	readonly name: string;
-	readonly properties?: OperationContractProperties | undefined;
+	readonly properties?: OperationContractProperties;
 }
 export class service_apis_operations_policies
 	extends ArmResource<service_apis_operations_policiesComponentInputs>
@@ -192,7 +192,7 @@ export interface service_apis_operations_policiesComponentOutputs {
 }
 export interface service_apis_operations_policiesComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyContractProperties | undefined;
+	readonly properties?: PolicyContractProperties;
 }
 export class service_apis_operations_tags
 	extends ArmResource<service_apis_operations_tagsComponentInputs>
@@ -212,7 +212,7 @@ export interface service_apis_operations_tagsComponentOutputs {
 }
 export interface service_apis_operations_tagsComponentInputs {
 	readonly name: string;
-	readonly properties?: TagContractProperties | undefined;
+	readonly properties?: TagContractProperties;
 }
 export class service_apis_policies
 	extends ArmResource<service_apis_policiesComponentInputs>
@@ -232,7 +232,7 @@ export interface service_apis_policiesComponentOutputs {
 }
 export interface service_apis_policiesComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyContractProperties | undefined;
+	readonly properties?: PolicyContractProperties;
 }
 export class service_apis_releases
 	extends ArmResource<service_apis_releasesComponentInputs>
@@ -252,7 +252,7 @@ export interface service_apis_releasesComponentOutputs {
 }
 export interface service_apis_releasesComponentInputs {
 	readonly name: string;
-	readonly properties?: ApiReleaseContractProperties | undefined;
+	readonly properties?: ApiReleaseContractProperties;
 }
 export class service_apis_schemas
 	extends ArmResource<service_apis_schemasComponentInputs>
@@ -272,7 +272,7 @@ export interface service_apis_schemasComponentOutputs {
 }
 export interface service_apis_schemasComponentInputs {
 	readonly name: string;
-	readonly properties?: ApiSchemaContractProperties | undefined;
+	readonly properties?: ApiSchemaContractProperties;
 }
 export class service_apis_tagDescriptions
 	extends ArmResource<service_apis_tagDescriptionsComponentInputs>
@@ -292,7 +292,7 @@ export interface service_apis_tagDescriptionsComponentOutputs {
 }
 export interface service_apis_tagDescriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: TagDescriptionBasePropertiesOrTagDescriptionContractProperties | undefined;
+	readonly properties?: TagDescriptionBasePropertiesOrTagDescriptionContractProperties;
 }
 export class service_apis_tags
 	extends ArmResource<service_apis_tagsComponentInputs>
@@ -312,7 +312,7 @@ export interface service_apis_tagsComponentOutputs {
 }
 export interface service_apis_tagsComponentInputs {
 	readonly name: string;
-	readonly properties?: TagContractProperties | undefined;
+	readonly properties?: TagContractProperties;
 }
 export class service_apiVersionSets
 	extends ArmResource<service_apiVersionSetsComponentInputs>
@@ -332,7 +332,7 @@ export interface service_apiVersionSetsComponentOutputs {
 }
 export interface service_apiVersionSetsComponentInputs {
 	readonly name: string;
-	readonly properties?: ApiVersionSetContractProperties | undefined;
+	readonly properties?: ApiVersionSetContractProperties;
 }
 export class service_authorizationServers
 	extends ArmResource<service_authorizationServersComponentInputs>
@@ -352,7 +352,7 @@ export interface service_authorizationServersComponentOutputs {
 }
 export interface service_authorizationServersComponentInputs {
 	readonly name: string;
-	readonly properties?: AuthorizationServerContractProperties | undefined;
+	readonly properties?: AuthorizationServerContractProperties;
 }
 export class service_backends
 	extends ArmResource<service_backendsComponentInputs>
@@ -372,7 +372,7 @@ export interface service_backendsComponentOutputs {
 }
 export interface service_backendsComponentInputs {
 	readonly name: string;
-	readonly properties?: BackendContractProperties | undefined;
+	readonly properties?: BackendContractProperties;
 }
 export class service_caches extends ArmResource<service_cachesComponentInputs> implements service_cachesComponentOutputs {
 	constructor(entity: ADKEntity, options: service_cachesComponentInputs) {
@@ -389,7 +389,7 @@ export interface service_cachesComponentOutputs {
 }
 export interface service_cachesComponentInputs {
 	readonly name: string;
-	readonly properties?: CacheContractProperties | undefined;
+	readonly properties?: CacheContractProperties;
 }
 export class service_certificates
 	extends ArmResource<service_certificatesComponentInputs>
@@ -409,7 +409,7 @@ export interface service_certificatesComponentOutputs {
 }
 export interface service_certificatesComponentInputs {
 	readonly name: string;
-	readonly properties?: CertificateCreateOrUpdatePropertiesOrCertificateContractProperties | undefined;
+	readonly properties?: CertificateCreateOrUpdatePropertiesOrCertificateContractProperties;
 }
 export class service_contentTypes
 	extends ArmResource<service_contentTypesComponentInputs>
@@ -429,7 +429,7 @@ export interface service_contentTypesComponentOutputs {
 }
 export interface service_contentTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: ContentTypeContractProperties | undefined;
+	readonly properties?: ContentTypeContractProperties;
 }
 export class service_contentTypes_contentItems
 	extends ArmResource<service_contentTypes_contentItemsComponentInputs>
@@ -455,7 +455,7 @@ export interface service_contentTypes_contentItemsComponentOutputs {
 }
 export interface service_contentTypes_contentItemsComponentInputs {
 	readonly name: string;
-	readonly properties?: ContentItemContractProperties | undefined;
+	readonly properties?: ContentItemContractProperties;
 }
 export class service_diagnostics
 	extends ArmResource<service_diagnosticsComponentInputs>
@@ -475,7 +475,7 @@ export interface service_diagnosticsComponentOutputs {
 }
 export interface service_diagnosticsComponentInputs {
 	readonly name: string;
-	readonly properties?: DiagnosticContractProperties | undefined;
+	readonly properties?: DiagnosticContractProperties;
 }
 export class service_gateways
 	extends ArmResource<service_gatewaysComponentInputs>
@@ -495,7 +495,7 @@ export interface service_gatewaysComponentOutputs {
 }
 export interface service_gatewaysComponentInputs {
 	readonly name: string;
-	readonly properties?: GatewayContractProperties | undefined;
+	readonly properties?: GatewayContractProperties;
 }
 export class service_gateways_apis
 	extends ArmResource<service_gateways_apisComponentInputs>
@@ -515,7 +515,7 @@ export interface service_gateways_apisComponentOutputs {
 }
 export interface service_gateways_apisComponentInputs {
 	readonly name: string;
-	readonly properties?: AssociationContractProperties | undefined;
+	readonly properties?: AssociationContractProperties;
 }
 export class service_gateways_certificateAuthorities
 	extends ArmResource<service_gateways_certificateAuthoritiesComponentInputs>
@@ -541,7 +541,7 @@ export interface service_gateways_certificateAuthoritiesComponentOutputs {
 }
 export interface service_gateways_certificateAuthoritiesComponentInputs {
 	readonly name: string;
-	readonly properties?: GatewayCertificateAuthorityContractProperties | undefined;
+	readonly properties?: GatewayCertificateAuthorityContractProperties;
 }
 export class service_gateways_hostnameConfigurations
 	extends ArmResource<service_gateways_hostnameConfigurationsComponentInputs>
@@ -567,7 +567,7 @@ export interface service_gateways_hostnameConfigurationsComponentOutputs {
 }
 export interface service_gateways_hostnameConfigurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: GatewayHostnameConfigurationContractProperties | undefined;
+	readonly properties?: GatewayHostnameConfigurationContractProperties;
 }
 export class service_groups extends ArmResource<service_groupsComponentInputs> implements service_groupsComponentOutputs {
 	constructor(entity: ADKEntity, options: service_groupsComponentInputs) {
@@ -584,7 +584,7 @@ export interface service_groupsComponentOutputs {
 }
 export interface service_groupsComponentInputs {
 	readonly name: string;
-	readonly properties?: GroupCreateParametersPropertiesOrGroupContractProperties | undefined;
+	readonly properties?: GroupCreateParametersPropertiesOrGroupContractProperties;
 }
 export class service_groups_users
 	extends ArmResource<service_groups_usersComponentInputs>
@@ -623,7 +623,7 @@ export interface service_identityProvidersComponentOutputs {
 }
 export interface service_identityProvidersComponentInputs {
 	readonly name: string;
-	readonly properties?: IdentityProviderCreateContractPropertiesOrIdentityProviderContractProperties | undefined;
+	readonly properties?: IdentityProviderCreateContractPropertiesOrIdentityProviderContractProperties;
 }
 export class service_issues extends ArmResource<service_issuesComponentInputs> implements service_issuesComponentOutputs {
 	constructor(entity: ADKEntity, options: service_issuesComponentInputs) {
@@ -640,7 +640,7 @@ export interface service_issuesComponentOutputs {
 }
 export interface service_issuesComponentInputs {
 	readonly name: string;
-	readonly properties?: IssueContractProperties | undefined;
+	readonly properties?: IssueContractProperties;
 }
 export class service_loggers
 	extends ArmResource<service_loggersComponentInputs>
@@ -660,7 +660,7 @@ export interface service_loggersComponentOutputs {
 }
 export interface service_loggersComponentInputs {
 	readonly name: string;
-	readonly properties?: LoggerContractProperties | undefined;
+	readonly properties?: LoggerContractProperties;
 }
 export class service_namedValues
 	extends ArmResource<service_namedValuesComponentInputs>
@@ -680,7 +680,7 @@ export interface service_namedValuesComponentOutputs {
 }
 export interface service_namedValuesComponentInputs {
 	readonly name: string;
-	readonly properties?: NamedValueCreateContractPropertiesOrNamedValueContractProperties | undefined;
+	readonly properties?: NamedValueCreateContractPropertiesOrNamedValueContractProperties;
 }
 export class service_notifications
 	extends ArmResource<service_notificationsComponentInputs>
@@ -700,7 +700,7 @@ export interface service_notificationsComponentOutputs {
 }
 export interface service_notificationsComponentInputs {
 	readonly name: string;
-	readonly properties?: NotificationContractProperties | undefined;
+	readonly properties?: NotificationContractProperties;
 }
 export class service_notifications_recipientEmails
 	extends ArmResource<service_notifications_recipientEmailsComponentInputs>
@@ -776,7 +776,7 @@ export interface service_openidConnectProvidersComponentOutputs {
 }
 export interface service_openidConnectProvidersComponentInputs {
 	readonly name: string;
-	readonly properties?: OpenidConnectProviderContractProperties | undefined;
+	readonly properties?: OpenidConnectProviderContractProperties;
 }
 export class service_policies
 	extends ArmResource<service_policiesComponentInputs>
@@ -796,7 +796,7 @@ export interface service_policiesComponentOutputs {
 }
 export interface service_policiesComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyContractProperties | undefined;
+	readonly properties?: PolicyContractProperties;
 }
 export class service_portalRevisions
 	extends ArmResource<service_portalRevisionsComponentInputs>
@@ -816,7 +816,7 @@ export interface service_portalRevisionsComponentOutputs {
 }
 export interface service_portalRevisionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PortalRevisionContractProperties | undefined;
+	readonly properties?: PortalRevisionContractProperties;
 }
 export class service_portalsettings_delegation
 	extends ArmResource<service_portalsettings_delegationComponentInputs>
@@ -836,7 +836,7 @@ export interface service_portalsettings_delegationComponentOutputs {
 }
 export interface service_portalsettings_delegationComponentInputs {
 	readonly name: string;
-	readonly properties?: PortalDelegationSettingsProperties | undefined;
+	readonly properties?: PortalDelegationSettingsProperties;
 }
 export class service_portalsettings_signin
 	extends ArmResource<service_portalsettings_signinComponentInputs>
@@ -856,7 +856,7 @@ export interface service_portalsettings_signinComponentOutputs {
 }
 export interface service_portalsettings_signinComponentInputs {
 	readonly name: string;
-	readonly properties?: PortalSigninSettingProperties | undefined;
+	readonly properties?: PortalSigninSettingProperties;
 }
 export class service_portalsettings_signup
 	extends ArmResource<service_portalsettings_signupComponentInputs>
@@ -876,7 +876,7 @@ export interface service_portalsettings_signupComponentOutputs {
 }
 export interface service_portalsettings_signupComponentInputs {
 	readonly name: string;
-	readonly properties?: PortalSignupSettingsProperties | undefined;
+	readonly properties?: PortalSignupSettingsProperties;
 }
 export class service_privateEndpointConnections
 	extends ArmResource<service_privateEndpointConnectionsComponentInputs>
@@ -902,7 +902,7 @@ export interface service_privateEndpointConnectionsComponentOutputs {
 }
 export interface service_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionRequestPropertiesOrPrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionRequestPropertiesOrPrivateEndpointConnectionProperties;
 }
 export class service_privateLinkResources
 	extends ArmResource<service_privateLinkResourcesComponentInputs>
@@ -922,7 +922,7 @@ export interface service_privateLinkResourcesComponentOutputs {
 }
 export interface service_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export class service_products
 	extends ArmResource<service_productsComponentInputs>
@@ -942,7 +942,7 @@ export interface service_productsComponentOutputs {
 }
 export interface service_productsComponentInputs {
 	readonly name: string;
-	readonly properties?: ProductContractProperties | undefined;
+	readonly properties?: ProductContractProperties;
 }
 export class service_products_apis
 	extends ArmResource<service_products_apisComponentInputs>
@@ -1000,7 +1000,7 @@ export interface service_products_policiesComponentOutputs {
 }
 export interface service_products_policiesComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyContractProperties | undefined;
+	readonly properties?: PolicyContractProperties;
 }
 export class service_products_tags
 	extends ArmResource<service_products_tagsComponentInputs>
@@ -1020,7 +1020,7 @@ export interface service_products_tagsComponentOutputs {
 }
 export interface service_products_tagsComponentInputs {
 	readonly name: string;
-	readonly properties?: TagContractProperties | undefined;
+	readonly properties?: TagContractProperties;
 }
 export class service_schemas
 	extends ArmResource<service_schemasComponentInputs>
@@ -1040,7 +1040,7 @@ export interface service_schemasComponentOutputs {
 }
 export interface service_schemasComponentInputs {
 	readonly name: string;
-	readonly properties?: SchemaContractProperties | undefined;
+	readonly properties?: SchemaContractProperties;
 }
 export class service_settings
 	extends ArmResource<service_settingsComponentInputs>
@@ -1060,7 +1060,7 @@ export interface service_settingsComponentOutputs {
 }
 export interface service_settingsComponentInputs {
 	readonly name: string;
-	readonly properties?: TenantSettingsContractProperties | undefined;
+	readonly properties?: TenantSettingsContractProperties;
 }
 export class service_subscriptions
 	extends ArmResource<service_subscriptionsComponentInputs>
@@ -1080,7 +1080,7 @@ export interface service_subscriptionsComponentOutputs {
 }
 export interface service_subscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: SubscriptionCreateParameterPropertiesOrSubscriptionContractProperties | undefined;
+	readonly properties?: SubscriptionCreateParameterPropertiesOrSubscriptionContractProperties;
 }
 export class service_tags extends ArmResource<service_tagsComponentInputs> implements service_tagsComponentOutputs {
 	constructor(entity: ADKEntity, options: service_tagsComponentInputs) {
@@ -1097,7 +1097,7 @@ export interface service_tagsComponentOutputs {
 }
 export interface service_tagsComponentInputs {
 	readonly name: string;
-	readonly properties?: TagContractProperties | undefined;
+	readonly properties?: TagContractProperties;
 }
 export class service_templates
 	extends ArmResource<service_templatesComponentInputs>
@@ -1117,7 +1117,7 @@ export interface service_templatesComponentOutputs {
 }
 export interface service_templatesComponentInputs {
 	readonly name: string;
-	readonly properties?: EmailTemplateUpdateParameterPropertiesOrEmailTemplateContractProperties | undefined;
+	readonly properties?: EmailTemplateUpdateParameterPropertiesOrEmailTemplateContractProperties;
 }
 export class service_tenant extends ArmResource<service_tenantComponentInputs> implements service_tenantComponentOutputs {
 	constructor(entity: ADKEntity, options: service_tenantComponentInputs) {
@@ -1134,7 +1134,7 @@ export interface service_tenantComponentOutputs {
 }
 export interface service_tenantComponentInputs {
 	readonly name: string;
-	readonly properties?: AccessInformationCreateParameterPropertiesOrAccessInformationContractProperties | undefined;
+	readonly properties?: AccessInformationCreateParameterPropertiesOrAccessInformationContractProperties;
 }
 export class service_users extends ArmResource<service_usersComponentInputs> implements service_usersComponentOutputs {
 	constructor(entity: ADKEntity, options: service_usersComponentInputs) {
@@ -1151,7 +1151,7 @@ export interface service_usersComponentOutputs {
 }
 export interface service_usersComponentInputs {
 	readonly name: string;
-	readonly properties?: UserCreateParameterPropertiesOrUserContractProperties | undefined;
+	readonly properties?: UserCreateParameterPropertiesOrUserContractProperties;
 }
 export class service_users_subscriptions
 	extends ArmResource<service_users_subscriptionsComponentInputs>
@@ -1171,7 +1171,7 @@ export interface service_users_subscriptionsComponentOutputs {
 }
 export interface service_users_subscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: SubscriptionContractProperties | undefined;
+	readonly properties?: SubscriptionContractProperties;
 }
 export function listKeys(resource: service_gateways): GatewayKeysContract {
 	if (resource.apiVersion !== "2021-04-01-preview") {
@@ -1201,270 +1201,267 @@ export function listValue(resource: service_namedValues): NamedValueSecretContra
 	throw new Error("not implemented");
 }
 export interface AccessInformationCreateParameterPropertiesOrAccessInformationContractProperties {
-	readonly enabled?: boolean | undefined;
-	readonly id?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly principalId?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly enabled?: boolean;
+	readonly id?: string;
+	readonly primaryKey?: string;
+	readonly principalId?: string;
+	readonly secondaryKey?: string;
 }
 export interface AccessInformationSecretsContract {
-	readonly enabled?: boolean | undefined;
-	readonly id?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly principalId?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly enabled?: boolean;
+	readonly id?: string;
+	readonly primaryKey?: string;
+	readonly principalId?: string;
+	readonly secondaryKey?: string;
 }
 export interface AdditionalLocation {
-	readonly disableGateway?: boolean | undefined;
-	readonly gatewayRegionalUrl?: string | undefined;
+	readonly disableGateway?: boolean;
+	readonly gatewayRegionalUrl?: string;
 	readonly location: string;
-	readonly platformVersion?: ("mtv1" | "stv1" | "stv2" | "undetermined") | undefined;
-	readonly privateIPAddresses?: string[] | undefined;
-	readonly publicIPAddresses?: string[] | undefined;
-	readonly publicIpAddressId?: string | undefined;
+	readonly platformVersion?: "mtv1" | "stv1" | "stv2" | "undetermined";
+	readonly privateIPAddresses?: string[];
+	readonly publicIPAddresses?: string[];
+	readonly publicIpAddressId?: string;
 	readonly sku: ApiManagementServiceSkuProperties;
-	readonly virtualNetworkConfiguration?: VirtualNetworkConfiguration | undefined;
-	readonly zones?: string[] | undefined;
+	readonly virtualNetworkConfiguration?: VirtualNetworkConfiguration;
+	readonly zones?: string[];
 }
 export interface ApiContactInformation {
-	readonly email?: string | undefined;
-	readonly name?: string | undefined;
-	readonly url?: string | undefined;
+	readonly email?: string;
+	readonly name?: string;
+	readonly url?: string;
 }
 export interface ApiCreateOrUpdatePropertiesOrApiContractProperties {
-	readonly apiRevision?: string | undefined;
-	readonly apiRevisionDescription?: string | undefined;
-	readonly apiType?: ("graphql" | "http" | "soap" | "websocket") | undefined;
-	readonly apiVersion?: string | undefined;
-	readonly apiVersionDescription?: string | undefined;
-	readonly apiVersionSet?: ApiVersionSetContractDetails | undefined;
-	readonly apiVersionSetId?: string | undefined;
-	readonly authenticationSettings?: AuthenticationSettingsContract | undefined;
-	readonly contact?: ApiContactInformation | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly apiRevision?: string;
+	readonly apiRevisionDescription?: string;
+	readonly apiType?: "graphql" | "http" | "soap" | "websocket";
+	readonly apiVersion?: string;
+	readonly apiVersionDescription?: string;
+	readonly apiVersionSet?: ApiVersionSetContractDetails;
+	readonly apiVersionSetId?: string;
+	readonly authenticationSettings?: AuthenticationSettingsContract;
+	readonly contact?: ApiContactInformation;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly format?:
-		| (
-				| "graphql-link"
-				| "openapi"
-				| "openapi+json"
-				| "openapi+json-link"
-				| "openapi-link"
-				| "swagger-json"
-				| "swagger-link-json"
-				| "wadl-link-json"
-				| "wadl-xml"
-				| "wsdl"
-				| "wsdl-link"
-		  )
-		| undefined;
-	readonly isCurrent?: boolean | undefined;
-	readonly isOnline?: boolean | undefined;
-	readonly license?: ApiLicenseInformation | undefined;
+		| "graphql-link"
+		| "openapi"
+		| "openapi+json"
+		| "openapi+json-link"
+		| "openapi-link"
+		| "swagger-json"
+		| "swagger-link-json"
+		| "wadl-link-json"
+		| "wadl-xml"
+		| "wsdl"
+		| "wsdl-link";
+	readonly isCurrent?: boolean;
+	readonly isOnline?: boolean;
+	readonly license?: ApiLicenseInformation;
 	readonly path: string;
-	readonly protocols?: ("http" | "https" | "ws" | "wss"[]) | undefined;
-	readonly serviceUrl?: string | undefined;
-	readonly sourceApiId?: string | undefined;
-	readonly subscriptionKeyParameterNames?: SubscriptionKeyParameterNamesContract | undefined;
-	readonly subscriptionRequired?: boolean | undefined;
-	readonly termsOfServiceUrl?: string | undefined;
-	readonly type?: ("graphql" | "http" | "soap" | "websocket") | undefined;
-	readonly value?: string | undefined;
-	readonly wsdlSelector?: ApiCreateOrUpdatePropertiesWsdlSelector | undefined;
+	readonly protocols?: "http" | "https" | "ws" | "wss"[];
+	readonly serviceUrl?: string;
+	readonly sourceApiId?: string;
+	readonly subscriptionKeyParameterNames?: SubscriptionKeyParameterNamesContract;
+	readonly subscriptionRequired?: boolean;
+	readonly termsOfServiceUrl?: string;
+	readonly type?: "graphql" | "http" | "soap" | "websocket";
+	readonly value?: string;
+	readonly wsdlSelector?: ApiCreateOrUpdatePropertiesWsdlSelector;
 }
 export interface ApiCreateOrUpdatePropertiesWsdlSelector {
-	readonly wsdlEndpointName?: string | undefined;
-	readonly wsdlServiceName?: string | undefined;
+	readonly wsdlEndpointName?: string;
+	readonly wsdlServiceName?: string;
 }
 export interface ApiLicenseInformation {
-	readonly name?: string | undefined;
-	readonly url?: string | undefined;
+	readonly name?: string;
+	readonly url?: string;
 }
 export interface ApiManagementServiceBasePropertiesCustomProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ApiManagementServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: ApiManagementServiceIdentityUserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: ApiManagementServiceIdentityUserAssignedIdentities;
 }
 export interface ApiManagementServiceIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserIdentityProperties | undefined;
+	readonly [key: string]: UserIdentityProperties;
 }
 export interface ApiManagementServiceProperties {
-	readonly additionalLocations?: AdditionalLocation[] | undefined;
-	readonly apiVersionConstraint?: ApiVersionConstraint | undefined;
-	readonly certificates?: CertificateConfiguration[] | undefined;
-	readonly createdAtUtc?: string | undefined;
-	readonly customProperties?: ApiManagementServiceBasePropertiesCustomProperties | undefined;
-	readonly developerPortalUrl?: string | undefined;
-	readonly disableGateway?: boolean | undefined;
-	readonly enableClientCertificate?: boolean | undefined;
-	readonly gatewayRegionalUrl?: string | undefined;
-	readonly gatewayUrl?: string | undefined;
-	readonly hostnameConfigurations?: HostnameConfiguration[] | undefined;
-	readonly managementApiUrl?: string | undefined;
-	readonly notificationSenderEmail?: string | undefined;
-	readonly platformVersion?: ("mtv1" | "stv1" | "stv2" | "undetermined") | undefined;
-	readonly portalUrl?: string | undefined;
-	readonly privateEndpointConnections?: RemotePrivateEndpointConnectionWrapper[] | undefined;
-	readonly privateIPAddresses?: string[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicIPAddresses?: string[] | undefined;
-	readonly publicIpAddressId?: string | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly additionalLocations?: AdditionalLocation[];
+	readonly apiVersionConstraint?: ApiVersionConstraint;
+	readonly certificates?: CertificateConfiguration[];
+	readonly createdAtUtc?: string;
+	readonly customProperties?: ApiManagementServiceBasePropertiesCustomProperties;
+	readonly developerPortalUrl?: string;
+	readonly disableGateway?: boolean;
+	readonly enableClientCertificate?: boolean;
+	readonly gatewayRegionalUrl?: string;
+	readonly gatewayUrl?: string;
+	readonly hostnameConfigurations?: HostnameConfiguration[];
+	readonly managementApiUrl?: string;
+	readonly notificationSenderEmail?: string;
+	readonly platformVersion?: "mtv1" | "stv1" | "stv2" | "undetermined";
+	readonly portalUrl?: string;
+	readonly privateEndpointConnections?: RemotePrivateEndpointConnectionWrapper[];
+	readonly privateIPAddresses?: string[];
+	readonly provisioningState?: string;
+	readonly publicIPAddresses?: string[];
+	readonly publicIpAddressId?: string;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 	readonly publisherEmail: string;
 	readonly publisherName: string;
-	readonly restore?: boolean | undefined;
-	readonly scmUrl?: string | undefined;
-	readonly targetProvisioningState?: string | undefined;
-	readonly virtualNetworkConfiguration?: VirtualNetworkConfiguration | undefined;
-	readonly virtualNetworkType?: ("External" | "Internal" | "None") | undefined;
+	readonly restore?: boolean;
+	readonly scmUrl?: string;
+	readonly targetProvisioningState?: string;
+	readonly virtualNetworkConfiguration?: VirtualNetworkConfiguration;
+	readonly virtualNetworkType?: "External" | "Internal" | "None";
 }
 export interface ApiManagementServiceSkuProperties {
 	readonly capacity: number;
 	readonly name: "Basic" | "Consumption" | "Developer" | "Isolated" | "Premium" | "Standard";
 }
 export interface ApimResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ApiReleaseContractProperties {
-	readonly apiId?: string | undefined;
-	readonly createdDateTime?: string | undefined;
-	readonly notes?: string | undefined;
-	readonly updatedDateTime?: string | undefined;
+	readonly apiId?: string;
+	readonly createdDateTime?: string;
+	readonly notes?: string;
+	readonly updatedDateTime?: string;
 }
 export interface ApiSchemaContractProperties {
 	readonly contentType: string;
-	readonly document?: ApiSchemaDocumentProperties | undefined;
+	readonly document?: ApiSchemaDocumentProperties;
 }
 export interface ApiSchemaDocumentProperties {
-	readonly components?: any | undefined;
-	readonly definitions?: any | undefined;
-	readonly value?: string | undefined;
+	readonly components?: any;
+	readonly definitions?: any;
+	readonly value?: string;
 }
 export interface ApiVersionConstraint {
-	readonly minApiVersion?: string | undefined;
+	readonly minApiVersion?: string;
 }
 export interface ApiVersionSetContractDetails {
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly versionHeaderName?: string | undefined;
-	readonly versioningScheme?: ("Header" | "Query" | "Segment") | undefined;
-	readonly versionQueryName?: string | undefined;
+	readonly description?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly versionHeaderName?: string;
+	readonly versioningScheme?: "Header" | "Query" | "Segment";
+	readonly versionQueryName?: string;
 }
 export interface ApiVersionSetContractProperties {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly displayName: string;
-	readonly versionHeaderName?: string | undefined;
+	readonly versionHeaderName?: string;
 	readonly versioningScheme: "Header" | "Query" | "Segment";
-	readonly versionQueryName?: string | undefined;
+	readonly versionQueryName?: string;
 }
 export interface ArmIdWrapper {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface AssociationContractProperties {
-	readonly provisioningState?: "created" | undefined;
+	readonly provisioningState?: "created";
 }
 export interface AuthenticationSettingsContract {
-	readonly oAuth2?: OAuth2AuthenticationSettingsContract | undefined;
-	readonly openid?: OpenIdAuthenticationSettingsContract | undefined;
+	readonly oAuth2?: OAuth2AuthenticationSettingsContract;
+	readonly openid?: OpenIdAuthenticationSettingsContract;
 }
 export interface AuthorizationServerContractProperties {
 	readonly authorizationEndpoint: string;
-	readonly authorizationMethods?: ("DELETE" | "GET" | "HEAD" | "OPTIONS" | "PATCH" | "POST" | "PUT"[]) | undefined;
-	readonly bearerTokenSendingMethods?: ("authorizationHeader" | "query"[]) | undefined;
-	readonly clientAuthenticationMethod?: ("Basic" | "Body"[]) | undefined;
+	readonly authorizationMethods?: "DELETE" | "GET" | "HEAD" | "OPTIONS" | "PATCH" | "POST" | "PUT"[];
+	readonly bearerTokenSendingMethods?: "authorizationHeader" | "query"[];
+	readonly clientAuthenticationMethod?: "Basic" | "Body"[];
 	readonly clientId: string;
 	readonly clientRegistrationEndpoint: string;
-	readonly clientSecret?: string | undefined;
-	readonly defaultScope?: string | undefined;
-	readonly description?: string | undefined;
+	readonly clientSecret?: string;
+	readonly defaultScope?: string;
+	readonly description?: string;
 	readonly displayName: string;
 	readonly grantTypes: "authorizationCode" | "clientCredentials" | "implicit" | "resourceOwnerPassword"[];
-	readonly resourceOwnerPassword?: string | undefined;
-	readonly resourceOwnerUsername?: string | undefined;
-	readonly supportState?: boolean | undefined;
-	readonly tokenBodyParameters?: TokenBodyParameterContract[] | undefined;
-	readonly tokenEndpoint?: string | undefined;
+	readonly resourceOwnerPassword?: string;
+	readonly resourceOwnerUsername?: string;
+	readonly supportState?: boolean;
+	readonly tokenBodyParameters?: TokenBodyParameterContract[];
+	readonly tokenEndpoint?: string;
 }
 export interface AuthorizationServerSecretsContract {
-	readonly clientSecret?: string | undefined;
-	readonly resourceOwnerPassword?: string | undefined;
-	readonly resourceOwnerUsername?: string | undefined;
+	readonly clientSecret?: string;
+	readonly resourceOwnerPassword?: string;
+	readonly resourceOwnerUsername?: string;
 }
 export interface BackendAuthorizationHeaderCredentials {
 	readonly parameter: string;
 	readonly scheme: string;
 }
 export interface BackendContractProperties {
-	readonly credentials?: BackendCredentialsContract | undefined;
-	readonly description?: string | undefined;
-	readonly properties?: BackendProperties | undefined;
+	readonly credentials?: BackendCredentialsContract;
+	readonly description?: string;
+	readonly properties?: BackendProperties;
 	readonly protocol: "http" | "soap";
-	readonly proxy?: BackendProxyContract | undefined;
-	readonly resourceId?: string | undefined;
-	readonly title?: string | undefined;
-	readonly tls?: BackendTlsProperties | undefined;
+	readonly proxy?: BackendProxyContract;
+	readonly resourceId?: string;
+	readonly title?: string;
+	readonly tls?: BackendTlsProperties;
 	readonly url: string;
 }
 export interface BackendCredentialsContract {
-	readonly authorization?: BackendAuthorizationHeaderCredentials | undefined;
-	readonly certificate?: string[] | undefined;
-	readonly certificateIds?: string[] | undefined;
-	readonly header?: BackendCredentialsContractHeader | undefined;
-	readonly query?: BackendCredentialsContractQuery | undefined;
+	readonly authorization?: BackendAuthorizationHeaderCredentials;
+	readonly certificate?: string[];
+	readonly certificateIds?: string[];
+	readonly header?: BackendCredentialsContractHeader;
+	readonly query?: BackendCredentialsContractQuery;
 }
 export interface BackendCredentialsContractHeader {
-	readonly "[ key: string ]"?: string[] | undefined;
+	readonly [key: string]: string[];
 }
 export interface BackendCredentialsContractQuery {
-	readonly "[ key: string ]"?: string[] | undefined;
+	readonly [key: string]: string[];
 }
 export interface BackendProperties {
-	readonly serviceFabricCluster?: BackendServiceFabricClusterProperties | undefined;
+	readonly serviceFabricCluster?: BackendServiceFabricClusterProperties;
 }
 export interface BackendProxyContract {
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly url: string;
-	readonly username?: string | undefined;
+	readonly username?: string;
 }
 export interface BackendServiceFabricClusterProperties {
-	readonly clientCertificateId?: string | undefined;
-	readonly clientCertificatethumbprint?: string | undefined;
+	readonly clientCertificateId?: string;
+	readonly clientCertificatethumbprint?: string;
 	readonly managementEndpoints: string[];
-	readonly maxPartitionResolutionRetries?: number | undefined;
-	readonly serverCertificateThumbprints?: string[] | undefined;
-	readonly serverX509Names?: X509CertificateName[] | undefined;
+	readonly maxPartitionResolutionRetries?: number;
+	readonly serverCertificateThumbprints?: string[];
+	readonly serverX509Names?: X509CertificateName[];
 }
 export interface BackendTlsProperties {
-	readonly validateCertificateChain?: boolean | undefined;
-	readonly validateCertificateName?: boolean | undefined;
+	readonly validateCertificateChain?: boolean;
+	readonly validateCertificateName?: boolean;
 }
 export interface BodyDiagnosticSettings {
-	readonly bytes?: number | undefined;
+	readonly bytes?: number;
 }
 export interface CacheContractProperties {
 	readonly connectionString: string;
-	readonly description?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly description?: string;
+	readonly resourceId?: string;
 	readonly useFromLocation: string;
 }
 export interface CertificateConfiguration {
-	readonly certificate?: CertificateInformation | undefined;
-	readonly certificatePassword?: string | undefined;
-	readonly encodedCertificate?: string | undefined;
+	readonly certificate?: CertificateInformation;
+	readonly certificatePassword?: string;
+	readonly encodedCertificate?: string;
 	readonly storeName: "CertificateAuthority" | "Root";
 }
 export interface CertificateCreateOrUpdatePropertiesOrCertificateContractProperties {
-	readonly data?: string | undefined;
-	readonly expirationDate?: string | undefined;
-	readonly keyVault?: KeyVaultContractCreatePropertiesOrKeyVaultContractProperties | undefined;
-	readonly password?: string | undefined;
-	readonly subject?: string | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly data?: string;
+	readonly expirationDate?: string;
+	readonly keyVault?: KeyVaultContractCreatePropertiesOrKeyVaultContractProperties;
+	readonly password?: string;
+	readonly subject?: string;
+	readonly thumbprint?: string;
 }
 export interface CertificateInformation {
 	readonly expiry: string;
@@ -1472,118 +1469,118 @@ export interface CertificateInformation {
 	readonly thumbprint: string;
 }
 export interface ClientSecretContract {
-	readonly clientSecret?: string | undefined;
+	readonly clientSecret?: string;
 }
 export interface ContentItemContractProperties {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ContentTypeContractProperties {
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly schema?: any | undefined;
-	readonly version?: string | undefined;
+	readonly description?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly schema?: any;
+	readonly version?: string;
 }
 export interface DataMasking {
-	readonly headers?: DataMaskingEntity[] | undefined;
-	readonly queryParams?: DataMaskingEntity[] | undefined;
+	readonly headers?: DataMaskingEntity[];
+	readonly queryParams?: DataMaskingEntity[];
 }
 export interface DataMaskingEntity {
-	readonly mode?: ("Hide" | "Mask") | undefined;
-	readonly value?: string | undefined;
+	readonly mode?: "Hide" | "Mask";
+	readonly value?: string;
 }
 export interface DeletedServiceContractProperties {
-	readonly deletionDate?: string | undefined;
-	readonly scheduledPurgeDate?: string | undefined;
-	readonly serviceId?: string | undefined;
+	readonly deletionDate?: string;
+	readonly scheduledPurgeDate?: string;
+	readonly serviceId?: string;
 }
 export interface DiagnosticContractProperties {
-	readonly alwaysLog?: "allErrors" | undefined;
-	readonly backend?: PipelineDiagnosticSettings | undefined;
-	readonly frontend?: PipelineDiagnosticSettings | undefined;
-	readonly httpCorrelationProtocol?: ("Legacy" | "None" | "W3C") | undefined;
-	readonly logClientIp?: boolean | undefined;
+	readonly alwaysLog?: "allErrors";
+	readonly backend?: PipelineDiagnosticSettings;
+	readonly frontend?: PipelineDiagnosticSettings;
+	readonly httpCorrelationProtocol?: "Legacy" | "None" | "W3C";
+	readonly logClientIp?: boolean;
 	readonly loggerId: string;
-	readonly metrics?: boolean | undefined;
-	readonly operationNameFormat?: ("Name" | "Url") | undefined;
-	readonly sampling?: SamplingSettings | undefined;
-	readonly verbosity?: ("error" | "information" | "verbose") | undefined;
+	readonly metrics?: boolean;
+	readonly operationNameFormat?: "Name" | "Url";
+	readonly sampling?: SamplingSettings;
+	readonly verbosity?: "error" | "information" | "verbose";
 }
 export interface EmailTemplateParametersContractProperties {
-	readonly description?: string | undefined;
-	readonly name?: string | undefined;
-	readonly title?: string | undefined;
+	readonly description?: string;
+	readonly name?: string;
+	readonly title?: string;
 }
 export interface EmailTemplateUpdateParameterPropertiesOrEmailTemplateContractProperties {
-	readonly body?: string | undefined;
-	readonly description?: string | undefined;
-	readonly isDefault?: boolean | undefined;
-	readonly parameters?: EmailTemplateParametersContractProperties[] | undefined;
-	readonly subject?: string | undefined;
-	readonly title?: string | undefined;
+	readonly body?: string;
+	readonly description?: string;
+	readonly isDefault?: boolean;
+	readonly parameters?: EmailTemplateParametersContractProperties[];
+	readonly subject?: string;
+	readonly title?: string;
 }
 export interface GatewayCertificateAuthorityContractProperties {
-	readonly isTrusted?: boolean | undefined;
+	readonly isTrusted?: boolean;
 }
 export interface GatewayContractProperties {
-	readonly description?: string | undefined;
-	readonly locationData?: ResourceLocationDataContract | undefined;
+	readonly description?: string;
+	readonly locationData?: ResourceLocationDataContract;
 }
 export interface GatewayHostnameConfigurationContractProperties {
-	readonly certificateId?: string | undefined;
-	readonly hostname?: string | undefined;
-	readonly http2Enabled?: boolean | undefined;
-	readonly negotiateClientCertificate?: boolean | undefined;
-	readonly tls10Enabled?: boolean | undefined;
-	readonly tls11Enabled?: boolean | undefined;
+	readonly certificateId?: string;
+	readonly hostname?: string;
+	readonly http2Enabled?: boolean;
+	readonly negotiateClientCertificate?: boolean;
+	readonly tls10Enabled?: boolean;
+	readonly tls11Enabled?: boolean;
 }
 export interface GatewayKeysContract {
-	readonly primary?: string | undefined;
-	readonly secondary?: string | undefined;
+	readonly primary?: string;
+	readonly secondary?: string;
 }
 export interface GroupContractProperties {
-	readonly builtIn?: boolean | undefined;
-	readonly description?: string | undefined;
+	readonly builtIn?: boolean;
+	readonly description?: string;
 	readonly displayName: string;
-	readonly externalId?: string | undefined;
-	readonly type?: ("custom" | "external") | undefined;
+	readonly externalId?: string;
+	readonly type?: "custom" | "external";
 }
 export interface GroupCreateParametersPropertiesOrGroupContractProperties {
-	readonly builtIn?: boolean | undefined;
-	readonly description?: string | undefined;
+	readonly builtIn?: boolean;
+	readonly description?: string;
 	readonly displayName: string;
-	readonly externalId?: string | undefined;
-	readonly type?: ("custom" | "external") | undefined;
+	readonly externalId?: string;
+	readonly type?: "custom" | "external";
 }
 export interface HostnameConfiguration {
-	readonly certificate?: CertificateInformation | undefined;
-	readonly certificatePassword?: string | undefined;
-	readonly certificateSource?: ("BuiltIn" | "Custom" | "KeyVault" | "Managed") | undefined;
-	readonly certificateStatus?: ("Completed" | "Failed" | "InProgress") | undefined;
-	readonly defaultSslBinding?: boolean | undefined;
-	readonly encodedCertificate?: string | undefined;
+	readonly certificate?: CertificateInformation;
+	readonly certificatePassword?: string;
+	readonly certificateSource?: "BuiltIn" | "Custom" | "KeyVault" | "Managed";
+	readonly certificateStatus?: "Completed" | "Failed" | "InProgress";
+	readonly defaultSslBinding?: boolean;
+	readonly encodedCertificate?: string;
 	readonly hostName: string;
-	readonly identityClientId?: string | undefined;
-	readonly keyVaultId?: string | undefined;
-	readonly negotiateClientCertificate?: boolean | undefined;
+	readonly identityClientId?: string;
+	readonly keyVaultId?: string;
+	readonly negotiateClientCertificate?: boolean;
 	readonly type: "DeveloperPortal" | "Management" | "Portal" | "Proxy" | "Scm";
 }
 export interface HttpMessageDiagnostic {
-	readonly body?: BodyDiagnosticSettings | undefined;
-	readonly dataMasking?: DataMasking | undefined;
-	readonly headers?: string[] | undefined;
+	readonly body?: BodyDiagnosticSettings;
+	readonly dataMasking?: DataMasking;
+	readonly headers?: string[];
 }
 export interface IdentityProviderCreateContractPropertiesOrIdentityProviderContractProperties {
-	readonly allowedTenants?: string[] | undefined;
-	readonly authority?: string | undefined;
+	readonly allowedTenants?: string[];
+	readonly authority?: string;
 	readonly clientId: string;
 	readonly clientSecret: string;
-	readonly passwordResetPolicyName?: string | undefined;
-	readonly profileEditingPolicyName?: string | undefined;
-	readonly signinPolicyName?: string | undefined;
-	readonly signinTenant?: string | undefined;
-	readonly signupPolicyName?: string | undefined;
-	readonly type?: ("aad" | "aadB2C" | "facebook" | "google" | "microsoft" | "twitter") | undefined;
+	readonly passwordResetPolicyName?: string;
+	readonly profileEditingPolicyName?: string;
+	readonly signinPolicyName?: string;
+	readonly signinTenant?: string;
+	readonly signupPolicyName?: string;
+	readonly type?: "aad" | "aadB2C" | "facebook" | "google" | "microsoft" | "twitter";
 }
 export interface IssueAttachmentContractProperties {
 	readonly content: string;
@@ -1591,314 +1588,314 @@ export interface IssueAttachmentContractProperties {
 	readonly title: string;
 }
 export interface IssueCommentContractProperties {
-	readonly createdDate?: string | undefined;
+	readonly createdDate?: string;
 	readonly text: string;
 	readonly userId: string;
 }
 export interface IssueContractProperties {
-	readonly apiId?: string | undefined;
-	readonly createdDate?: string | undefined;
+	readonly apiId?: string;
+	readonly createdDate?: string;
 	readonly description: string;
-	readonly state?: ("closed" | "open" | "proposed" | "removed" | "resolved") | undefined;
+	readonly state?: "closed" | "open" | "proposed" | "removed" | "resolved";
 	readonly title: string;
 	readonly userId: string;
 }
 export interface KeyVaultContractCreatePropertiesOrKeyVaultContractProperties {
-	readonly identityClientId?: string | undefined;
-	readonly lastStatus?: KeyVaultLastAccessStatusContractProperties | undefined;
-	readonly secretIdentifier?: string | undefined;
+	readonly identityClientId?: string;
+	readonly lastStatus?: KeyVaultLastAccessStatusContractProperties;
+	readonly secretIdentifier?: string;
 }
 export interface KeyVaultLastAccessStatusContractProperties {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
-	readonly timeStampUtc?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
+	readonly timeStampUtc?: string;
 }
 export interface LoggerContractProperties {
-	readonly credentials?: LoggerContractPropertiesCredentials | undefined;
-	readonly description?: string | undefined;
-	readonly isBuffered?: boolean | undefined;
+	readonly credentials?: LoggerContractPropertiesCredentials;
+	readonly description?: string;
+	readonly isBuffered?: boolean;
 	readonly loggerType: "applicationInsights" | "azureEventHub" | "azureMonitor";
-	readonly resourceId?: string | undefined;
+	readonly resourceId?: string;
 }
 export interface LoggerContractPropertiesCredentials {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NamedValueCreateContractPropertiesOrNamedValueContractProperties {
 	readonly displayName: string;
-	readonly keyVault?: KeyVaultContractCreatePropertiesOrKeyVaultContractProperties | undefined;
-	readonly secret?: boolean | undefined;
-	readonly tags?: string[] | undefined;
-	readonly value?: string | undefined;
+	readonly keyVault?: KeyVaultContractCreatePropertiesOrKeyVaultContractProperties;
+	readonly secret?: boolean;
+	readonly tags?: string[];
+	readonly value?: string;
 }
 export interface NamedValueSecretContract {
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface NotificationContractProperties {
-	readonly description?: string | undefined;
-	readonly recipients?: RecipientsContractProperties | undefined;
+	readonly description?: string;
+	readonly recipients?: RecipientsContractProperties;
 	readonly title: string;
 }
 export interface OAuth2AuthenticationSettingsContract {
-	readonly authorizationServerId?: string | undefined;
-	readonly scope?: string | undefined;
+	readonly authorizationServerId?: string;
+	readonly scope?: string;
 }
 export interface OpenIdAuthenticationSettingsContract {
-	readonly bearerTokenSendingMethods?: ("authorizationHeader" | "query"[]) | undefined;
-	readonly openidProviderId?: string | undefined;
+	readonly bearerTokenSendingMethods?: "authorizationHeader" | "query"[];
+	readonly openidProviderId?: string;
 }
 export interface OpenidConnectProviderContractProperties {
 	readonly clientId: string;
-	readonly clientSecret?: string | undefined;
-	readonly description?: string | undefined;
+	readonly clientSecret?: string;
+	readonly description?: string;
 	readonly displayName: string;
 	readonly metadataEndpoint: string;
 }
 export interface OperationContractProperties {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly displayName: string;
 	readonly method: string;
-	readonly policies?: string | undefined;
-	readonly request?: RequestContract | undefined;
-	readonly responses?: ResponseContract[] | undefined;
-	readonly templateParameters?: ParameterContract[] | undefined;
+	readonly policies?: string;
+	readonly request?: RequestContract;
+	readonly responses?: ResponseContract[];
+	readonly templateParameters?: ParameterContract[];
 	readonly urlTemplate: string;
 }
 export interface ParameterContract {
-	readonly defaultValue?: string | undefined;
-	readonly description?: string | undefined;
-	readonly examples?: ParameterExamplesContract | undefined;
+	readonly defaultValue?: string;
+	readonly description?: string;
+	readonly examples?: ParameterExamplesContract;
 	readonly name: string;
-	readonly required?: boolean | undefined;
-	readonly schemaId?: string | undefined;
+	readonly required?: boolean;
+	readonly schemaId?: string;
 	readonly type: string;
-	readonly typeName?: string | undefined;
-	readonly values?: string[] | undefined;
+	readonly typeName?: string;
+	readonly values?: string[];
 }
 export interface ParameterExampleContract {
-	readonly description?: string | undefined;
-	readonly externalValue?: string | undefined;
-	readonly summary?: string | undefined;
-	readonly value?: any | undefined;
+	readonly description?: string;
+	readonly externalValue?: string;
+	readonly summary?: string;
+	readonly value?: any;
 }
 export interface ParameterExamplesContract {
-	readonly "[ key: string ]"?: ParameterExampleContract | undefined;
+	readonly [key: string]: ParameterExampleContract;
 }
 export interface PipelineDiagnosticSettings {
-	readonly request?: HttpMessageDiagnostic | undefined;
-	readonly response?: HttpMessageDiagnostic | undefined;
+	readonly request?: HttpMessageDiagnostic;
+	readonly response?: HttpMessageDiagnostic;
 }
 export interface PolicyContractProperties {
-	readonly format?: ("rawxml" | "rawxml-link" | "xml" | "xml-link") | undefined;
+	readonly format?: "rawxml" | "rawxml-link" | "xml" | "xml-link";
 	readonly value: string;
 }
 export interface PortalDelegationSettingsProperties {
-	readonly subscriptions?: SubscriptionsDelegationSettingsProperties | undefined;
-	readonly url?: string | undefined;
-	readonly userRegistration?: RegistrationDelegationSettingsProperties | undefined;
-	readonly validationKey?: string | undefined;
+	readonly subscriptions?: SubscriptionsDelegationSettingsProperties;
+	readonly url?: string;
+	readonly userRegistration?: RegistrationDelegationSettingsProperties;
+	readonly validationKey?: string;
 }
 export interface PortalRevisionContractProperties {
-	readonly createdDateTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly isCurrent?: boolean | undefined;
-	readonly status?: ("completed" | "failed" | "pending" | "publishing") | undefined;
-	readonly statusDetails?: string | undefined;
-	readonly updatedDateTime?: string | undefined;
+	readonly createdDateTime?: string;
+	readonly description?: string;
+	readonly isCurrent?: boolean;
+	readonly status?: "completed" | "failed" | "pending" | "publishing";
+	readonly statusDetails?: string;
+	readonly updatedDateTime?: string;
 }
 export interface PortalSettingValidationKeyContract {
-	readonly validationKey?: string | undefined;
+	readonly validationKey?: string;
 }
 export interface PortalSigninSettingProperties {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface PortalSignupSettingsProperties {
-	readonly enabled?: boolean | undefined;
-	readonly termsOfService?: TermsOfServiceProperties | undefined;
+	readonly enabled?: boolean;
+	readonly termsOfService?: TermsOfServiceProperties;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnectionRequestPropertiesOrPrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateEndpointConnectionWrapperProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateEndpoint?: ArmIdWrapper | undefined;
+	readonly groupIds?: string[];
+	readonly privateEndpoint?: ArmIdWrapper;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface ProductContractProperties {
-	readonly approvalRequired?: boolean | undefined;
-	readonly description?: string | undefined;
+	readonly approvalRequired?: boolean;
+	readonly description?: string;
 	readonly displayName: string;
-	readonly state?: "notPublished" | undefined;
-	readonly subscriptionRequired?: boolean | undefined;
-	readonly subscriptionsLimit?: number | undefined;
-	readonly terms?: string | undefined;
+	readonly state?: "notPublished";
+	readonly subscriptionRequired?: boolean;
+	readonly subscriptionsLimit?: number;
+	readonly terms?: string;
 }
 export interface RecipientsContractProperties {
-	readonly emails?: string[] | undefined;
-	readonly users?: string[] | undefined;
+	readonly emails?: string[];
+	readonly users?: string[];
 }
 export interface RegistrationDelegationSettingsProperties {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface RemotePrivateEndpointConnectionWrapper {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionWrapperProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionWrapperProperties;
+	readonly type?: string;
 }
 export interface RepresentationContract {
 	readonly contentType: string;
-	readonly examples?: ParameterExamplesContract | undefined;
-	readonly formParameters?: ParameterContract[] | undefined;
-	readonly schemaId?: string | undefined;
-	readonly typeName?: string | undefined;
+	readonly examples?: ParameterExamplesContract;
+	readonly formParameters?: ParameterContract[];
+	readonly schemaId?: string;
+	readonly typeName?: string;
 }
 export interface RequestContract {
-	readonly description?: string | undefined;
-	readonly headers?: ParameterContract[] | undefined;
-	readonly queryParameters?: ParameterContract[] | undefined;
-	readonly representations?: RepresentationContract[] | undefined;
+	readonly description?: string;
+	readonly headers?: ParameterContract[];
+	readonly queryParameters?: ParameterContract[];
+	readonly representations?: RepresentationContract[];
 }
 export interface ResourceLocationDataContract {
-	readonly city?: string | undefined;
-	readonly countryOrRegion?: string | undefined;
-	readonly district?: string | undefined;
+	readonly city?: string;
+	readonly countryOrRegion?: string;
+	readonly district?: string;
 	readonly name: string;
 }
 export interface ResponseContract {
-	readonly description?: string | undefined;
-	readonly headers?: ParameterContract[] | undefined;
-	readonly representations?: RepresentationContract[] | undefined;
+	readonly description?: string;
+	readonly headers?: ParameterContract[];
+	readonly representations?: RepresentationContract[];
 	readonly statusCode: number;
 }
 export interface SamplingSettings {
-	readonly percentage?: number | undefined;
-	readonly samplingType?: "fixed" | undefined;
+	readonly percentage?: number;
+	readonly samplingType?: "fixed";
 }
 export interface SchemaContractProperties {
-	readonly description?: string | undefined;
-	readonly document?: any | undefined;
+	readonly description?: string;
+	readonly document?: any;
 	readonly schemaType: "json" | "xml";
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface SubscriptionContractProperties {
-	readonly allowTracing?: boolean | undefined;
-	readonly createdDate?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly endDate?: string | undefined;
-	readonly expirationDate?: string | undefined;
-	readonly notificationDate?: string | undefined;
-	readonly ownerId?: string | undefined;
-	readonly primaryKey?: string | undefined;
+	readonly allowTracing?: boolean;
+	readonly createdDate?: string;
+	readonly displayName?: string;
+	readonly endDate?: string;
+	readonly expirationDate?: string;
+	readonly notificationDate?: string;
+	readonly ownerId?: string;
+	readonly primaryKey?: string;
 	readonly scope: string;
-	readonly secondaryKey?: string | undefined;
-	readonly startDate?: string | undefined;
+	readonly secondaryKey?: string;
+	readonly startDate?: string;
 	readonly state: "active" | "cancelled" | "expired" | "rejected" | "submitted";
-	readonly stateComment?: string | undefined;
+	readonly stateComment?: string;
 }
 export interface SubscriptionCreateParameterPropertiesOrSubscriptionContractProperties {
-	readonly allowTracing?: boolean | undefined;
-	readonly createdDate?: string | undefined;
+	readonly allowTracing?: boolean;
+	readonly createdDate?: string;
 	readonly displayName: string;
-	readonly endDate?: string | undefined;
-	readonly expirationDate?: string | undefined;
-	readonly notificationDate?: string | undefined;
-	readonly ownerId?: string | undefined;
-	readonly primaryKey?: string | undefined;
+	readonly endDate?: string;
+	readonly expirationDate?: string;
+	readonly notificationDate?: string;
+	readonly ownerId?: string;
+	readonly primaryKey?: string;
 	readonly scope: string;
-	readonly secondaryKey?: string | undefined;
-	readonly startDate?: string | undefined;
-	readonly state?: ("active" | "cancelled" | "expired" | "rejected" | "submitted") | undefined;
-	readonly stateComment?: string | undefined;
+	readonly secondaryKey?: string;
+	readonly startDate?: string;
+	readonly state?: "active" | "cancelled" | "expired" | "rejected" | "submitted";
+	readonly stateComment?: string;
 }
 export interface SubscriptionKeyParameterNamesContract {
-	readonly header?: string | undefined;
-	readonly query?: string | undefined;
+	readonly header?: string;
+	readonly query?: string;
 }
 export interface SubscriptionKeysContract {
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface SubscriptionsDelegationSettingsProperties {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TagContractProperties {
 	readonly displayName: string;
 }
 export interface TagDescriptionBasePropertiesOrTagDescriptionContractProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly externalDocsDescription?: string | undefined;
-	readonly externalDocsUrl?: string | undefined;
-	readonly tagId?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly externalDocsDescription?: string;
+	readonly externalDocsUrl?: string;
+	readonly tagId?: string;
 }
 export interface TenantSettingsContractProperties {
-	readonly settings?: TenantSettingsContractPropertiesSettings | undefined;
+	readonly settings?: TenantSettingsContractPropertiesSettings;
 }
 export interface TenantSettingsContractPropertiesSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TermsOfServiceProperties {
-	readonly consentRequired?: boolean | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly text?: string | undefined;
+	readonly consentRequired?: boolean;
+	readonly enabled?: boolean;
+	readonly text?: string;
 }
 export interface TokenBodyParameterContract {
 	readonly name: string;
 	readonly value: string;
 }
 export interface UserCreateParameterPropertiesOrUserContractProperties {
-	readonly appType?: ("developerPortal" | "portal") | undefined;
-	readonly confirmation?: ("invite" | "signup") | undefined;
+	readonly appType?: "developerPortal" | "portal";
+	readonly confirmation?: "invite" | "signup";
 	readonly email: string;
 	readonly firstName: string;
-	readonly groups?: GroupContractProperties[] | undefined;
-	readonly identities?: UserIdentityContract[] | undefined;
+	readonly groups?: GroupContractProperties[];
+	readonly identities?: UserIdentityContract[];
 	readonly lastName: string;
-	readonly note?: string | undefined;
-	readonly password?: string | undefined;
-	readonly registrationDate?: string | undefined;
-	readonly state?: ("active" | "blocked" | "deleted" | "pending") | undefined;
+	readonly note?: string;
+	readonly password?: string;
+	readonly registrationDate?: string;
+	readonly state?: "active" | "blocked" | "deleted" | "pending";
 }
 export interface UserIdentityContract {
-	readonly id?: string | undefined;
-	readonly provider?: string | undefined;
+	readonly id?: string;
+	readonly provider?: string;
 }
 export interface UserIdentityProperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface VirtualNetworkConfiguration {
-	readonly subnetname?: string | undefined;
-	readonly subnetResourceId?: string | undefined;
-	readonly vnetid?: string | undefined;
+	readonly subnetname?: string;
+	readonly subnetResourceId?: string;
+	readonly vnetid?: string;
 }
 export interface X509CertificateName {
-	readonly issuerCertificateThumbprint?: string | undefined;
-	readonly name?: string | undefined;
+	readonly issuerCertificateThumbprint?: string;
+	readonly name?: string;
 }
 export type service_portalsettings =
 	| service_portalsettings_delegation

@@ -17,7 +17,7 @@ export interface namespacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: NamespaceProperties;
-	readonly tags?: NamespaceCreateOrUpdateParametersTags | undefined;
+	readonly tags?: NamespaceCreateOrUpdateParametersTags;
 }
 export class namespaces_AuthorizationRules
 	extends ArmResource<namespaces_AuthorizationRulesComponentInputs>
@@ -36,7 +36,7 @@ export interface namespaces_AuthorizationRulesComponentOutputs {
 	readonly type: "Microsoft.NotificationHubs/namespaces/AuthorizationRules";
 }
 export interface namespaces_AuthorizationRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: SharedAccessAuthorizationRuleProperties;
 }
@@ -60,7 +60,7 @@ export interface namespaces_notificationHubsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: NotificationHubProperties;
-	readonly tags?: NotificationHubCreateOrUpdateParametersTags | undefined;
+	readonly tags?: NotificationHubCreateOrUpdateParametersTags;
 }
 export class namespaces_notificationHubs_AuthorizationRules
 	extends ArmResource<namespaces_notificationHubs_AuthorizationRulesComponentInputs>
@@ -85,7 +85,7 @@ export interface namespaces_notificationHubs_AuthorizationRulesComponentOutputs 
 	readonly type: "Microsoft.NotificationHubs/namespaces/notificationHubs/AuthorizationRules";
 }
 export interface namespaces_notificationHubs_AuthorizationRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: SharedAccessAuthorizationRuleProperties;
 }
@@ -99,97 +99,97 @@ export function listKeys(resource: namespaces_AuthorizationRules): ResourceListK
 	throw new Error("not implemented");
 }
 export interface AdmCredential {
-	readonly properties?: AdmCredentialProperties | undefined;
+	readonly properties?: AdmCredentialProperties;
 }
 export interface AdmCredentialProperties {
-	readonly authTokenUrl?: string | undefined;
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
+	readonly authTokenUrl?: string;
+	readonly clientId?: string;
+	readonly clientSecret?: string;
 }
 export interface ApnsCredential {
-	readonly properties?: ApnsCredentialProperties | undefined;
+	readonly properties?: ApnsCredentialProperties;
 }
 export interface ApnsCredentialProperties {
-	readonly apnsCertificate?: string | undefined;
-	readonly certificateKey?: string | undefined;
-	readonly endpoint?: string | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly apnsCertificate?: string;
+	readonly certificateKey?: string;
+	readonly endpoint?: string;
+	readonly thumbprint?: string;
 }
 export interface BaiduCredential {
-	readonly properties?: BaiduCredentialProperties | undefined;
+	readonly properties?: BaiduCredentialProperties;
 }
 export interface BaiduCredentialProperties {
-	readonly baiduApiKey?: string | undefined;
-	readonly baiduEndPoint?: string | undefined;
-	readonly baiduSecretKey?: string | undefined;
+	readonly baiduApiKey?: string;
+	readonly baiduEndPoint?: string;
+	readonly baiduSecretKey?: string;
 }
 export interface GcmCredential {
-	readonly properties?: GcmCredentialProperties | undefined;
+	readonly properties?: GcmCredentialProperties;
 }
 export interface GcmCredentialProperties {
-	readonly gcmEndpoint?: string | undefined;
-	readonly googleApiKey?: string | undefined;
+	readonly gcmEndpoint?: string;
+	readonly googleApiKey?: string;
 }
 export interface MpnsCredential {
-	readonly properties?: MpnsCredentialProperties | undefined;
+	readonly properties?: MpnsCredentialProperties;
 }
 export interface MpnsCredentialProperties {
-	readonly certificateKey?: string | undefined;
-	readonly mpnsCertificate?: string | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly certificateKey?: string;
+	readonly mpnsCertificate?: string;
+	readonly thumbprint?: string;
 }
 export interface NamespaceCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NamespaceProperties {
-	readonly createdAt?: string | undefined;
-	readonly critical?: boolean | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly namespaceType?: "Messaging" | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly region?: string | undefined;
-	readonly scaleUnit?: string | undefined;
-	readonly serviceBusEndpoint?: string | undefined;
-	readonly status?: string | undefined;
-	readonly subscriptionId?: string | undefined;
+	readonly createdAt?: string;
+	readonly critical?: boolean;
+	readonly enabled?: boolean;
+	readonly name?: string;
+	readonly namespaceType?: "Messaging";
+	readonly provisioningState?: string;
+	readonly region?: string;
+	readonly scaleUnit?: string;
+	readonly serviceBusEndpoint?: string;
+	readonly status?: string;
+	readonly subscriptionId?: string;
 }
 export interface NotificationHubCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NotificationHubProperties {
-	readonly admCredential?: AdmCredential | undefined;
-	readonly apnsCredential?: ApnsCredential | undefined;
-	readonly authorizationRules?: SharedAccessAuthorizationRuleProperties[] | undefined;
-	readonly baiduCredential?: BaiduCredential | undefined;
-	readonly gcmCredential?: GcmCredential | undefined;
-	readonly mpnsCredential?: MpnsCredential | undefined;
-	readonly name?: string | undefined;
-	readonly registrationTtl?: string | undefined;
-	readonly wnsCredential?: WnsCredential | undefined;
+	readonly admCredential?: AdmCredential;
+	readonly apnsCredential?: ApnsCredential;
+	readonly authorizationRules?: SharedAccessAuthorizationRuleProperties[];
+	readonly baiduCredential?: BaiduCredential;
+	readonly gcmCredential?: GcmCredential;
+	readonly mpnsCredential?: MpnsCredential;
+	readonly name?: string;
+	readonly registrationTtl?: string;
+	readonly wnsCredential?: WnsCredential;
 }
 export interface ResourceListKeys {
-	readonly primaryConnectionString?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
+	readonly primaryConnectionString?: string;
+	readonly secondaryConnectionString?: string;
 }
 export interface SharedAccessAuthorizationRuleProperties {
-	readonly claimType?: string | undefined;
-	readonly claimValue?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly keyName?: string | undefined;
-	readonly modifiedTime?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly revision?: number | undefined;
-	readonly rights?: ("Listen" | "Manage"[]) | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly claimType?: string;
+	readonly claimValue?: string;
+	readonly createdTime?: string;
+	readonly keyName?: string;
+	readonly modifiedTime?: string;
+	readonly primaryKey?: string;
+	readonly revision?: number;
+	readonly rights?: "Listen" | "Manage"[];
+	readonly secondaryKey?: string;
 }
 export interface WnsCredential {
-	readonly properties?: WnsCredentialProperties | undefined;
+	readonly properties?: WnsCredentialProperties;
 }
 export interface WnsCredentialProperties {
-	readonly packageSid?: string | undefined;
-	readonly secretKey?: string | undefined;
-	readonly windowsLiveEndpoint?: string | undefined;
+	readonly packageSid?: string;
+	readonly secretKey?: string;
+	readonly windowsLiveEndpoint?: string;
 }
 export default {
 	namespaces: namespaces,

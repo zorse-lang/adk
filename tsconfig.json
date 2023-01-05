@@ -8,6 +8,7 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
+      "@zorse/adk/clouds/*": [".gen/*"],
       "@zorse/adk": ["src"],
       "@zorse/adk/*": ["src/*"]
     }

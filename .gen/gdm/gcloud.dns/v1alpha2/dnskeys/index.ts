@@ -4,44 +4,43 @@ export class DnsKeys extends GdmResource<DnsKeysComponentInputs> implements DnsK
 	constructor(entity: ADKEntity, options: DnsKeysComponentInputs) {
 		super(entity, options.name, "dns.v1alpha2.DnsKeys", options);
 	}
-	public readonly creationTime?: string | undefined;
-	public readonly digests?: DnsKeyDigest[] | undefined;
-	public readonly id?: string | undefined;
-	public readonly keyTag?: number | undefined;
-	public readonly publicKey?: string | undefined;
+	public readonly creationTime?: string;
+	public readonly digests?: DnsKeyDigest[];
+	public readonly id?: string;
+	public readonly keyTag?: number;
+	public readonly publicKey?: string;
 }
 export interface DnsKeysComponentOutputs {
-	readonly creationTime?: string | undefined;
-	readonly digests?: DnsKeyDigest[] | undefined;
-	readonly id?: string | undefined;
-	readonly keyTag?: number | undefined;
-	readonly publicKey?: string | undefined;
+	readonly creationTime?: string;
+	readonly digests?: DnsKeyDigest[];
+	readonly id?: string;
+	readonly keyTag?: number;
+	readonly publicKey?: string;
 }
 export interface DnsKeysComponentInputs {
-	readonly algorithm?: string | undefined;
-	readonly description?: string | undefined;
-	readonly isActive?: boolean | undefined;
-	readonly keyLength?: number | undefined;
-	readonly kind?: string | undefined;
-	readonly type: string;
+	readonly algorithm?: string;
+	readonly description?: string;
+	readonly isActive?: boolean;
+	readonly keyLength?: number;
+	readonly kind?: string;
 	readonly name: string;
 }
 export interface DnsKey {
-	readonly algorithm?: string | undefined;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly digests?: DnsKeyDigest[] | undefined;
-	readonly id?: string | undefined;
-	readonly isActive?: boolean | undefined;
-	readonly keyLength?: number | undefined;
-	readonly keyTag?: number | undefined;
-	readonly kind?: string | undefined;
-	readonly publicKey?: string | undefined;
-	readonly type?: string | undefined;
+	readonly algorithm?: string;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly digests?: DnsKeyDigest[];
+	readonly id?: string;
+	readonly isActive?: boolean;
+	readonly keyLength?: number;
+	readonly keyTag?: number;
+	readonly kind?: string;
+	readonly publicKey?: string;
+	readonly type?: string;
 }
 export interface DnsKeyDigest {
-	readonly digest?: string | undefined;
-	readonly type?: string | undefined;
+	readonly digest?: string;
+	readonly type?: string;
 }
 export default {
 	DnsKeys: DnsKeys,

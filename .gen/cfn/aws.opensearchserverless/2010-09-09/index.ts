@@ -7,10 +7,10 @@ export class AccessPolicy extends CfnResource<AccessPolicyComponentInputs> imple
 }
 export interface AccessPolicyComponentOutputs {}
 export interface AccessPolicyComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Policy?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Policy?: string | undefined;
+	readonly Type?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Collection extends CfnResource<CollectionComponentInputs> implements CollectionComponentOutputs {
@@ -30,9 +30,9 @@ export interface CollectionComponentOutputs {
 }
 export interface CollectionComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Type?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityConfig extends CfnResource<SecurityConfigComponentInputs> implements SecurityConfigComponentOutputs {
@@ -45,10 +45,10 @@ export interface SecurityConfigComponentOutputs {
 	readonly Id: string;
 }
 export interface SecurityConfigComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly SamlOptions?: (SamlConfigOptions | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly SamlOptions?: SamlConfigOptions | undefined;
+	readonly Type?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityPolicy extends CfnResource<SecurityPolicyComponentInputs> implements SecurityPolicyComponentOutputs {
@@ -59,9 +59,9 @@ export class SecurityPolicy extends CfnResource<SecurityPolicyComponentInputs> i
 export interface SecurityPolicyComponentOutputs {}
 export interface SecurityPolicyComponentInputs {
 	readonly Policy: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Type?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VpcEndpoint extends CfnResource<VpcEndpointComponentInputs> implements VpcEndpointComponentOutputs {
@@ -76,15 +76,15 @@ export interface VpcEndpointComponentOutputs {
 export interface VpcEndpointComponentInputs {
 	readonly Name: string;
 	readonly VpcId: string;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SubnetIds?: (string[] | undefined) | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SubnetIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export interface SamlConfigOptions {
-	readonly GroupAttribute?: (string | undefined) | undefined;
+	readonly GroupAttribute?: string | undefined;
 	readonly Metadata: string;
-	readonly SessionTimeout?: (number | undefined) | undefined;
-	readonly UserAttribute?: (string | undefined) | undefined;
+	readonly SessionTimeout?: number | undefined;
+	readonly UserAttribute?: string | undefined;
 }
 export default {
 	AccessPolicy: AccessPolicy,

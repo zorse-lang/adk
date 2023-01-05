@@ -11,8 +11,8 @@ export interface AccessKeyComponentOutputs {
 }
 export interface AccessKeyComponentInputs {
 	readonly UserName: string;
-	readonly Serial?: (number | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
+	readonly Serial?: number | undefined;
+	readonly Status?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Group extends CfnResource<GroupComponentInputs> implements GroupComponentOutputs {
@@ -25,10 +25,10 @@ export interface GroupComponentOutputs {
 	readonly Arn: string;
 }
 export interface GroupComponentInputs {
-	readonly GroupName?: (string | undefined) | undefined;
-	readonly ManagedPolicyArns?: (string[] | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
-	readonly Policies?: (Policy[] | undefined) | undefined;
+	readonly GroupName?: string | undefined;
+	readonly ManagedPolicyArns?: string[] | undefined;
+	readonly Path?: string | undefined;
+	readonly Policies?: Policy[] | undefined;
 	readonly LogicalId: string;
 }
 export class InstanceProfile
@@ -45,8 +45,8 @@ export interface InstanceProfileComponentOutputs {
 }
 export interface InstanceProfileComponentInputs {
 	readonly Roles: string[];
-	readonly InstanceProfileName?: (string | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
+	readonly InstanceProfileName?: string | undefined;
+	readonly Path?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ManagedPolicy extends CfnResource<ManagedPolicyComponentInputs> implements ManagedPolicyComponentOutputs {
@@ -57,12 +57,12 @@ export class ManagedPolicy extends CfnResource<ManagedPolicyComponentInputs> imp
 export interface ManagedPolicyComponentOutputs {}
 export interface ManagedPolicyComponentInputs {
 	readonly PolicyDocument: any;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Groups?: (string[] | undefined) | undefined;
-	readonly ManagedPolicyName?: (string | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
-	readonly Roles?: (string[] | undefined) | undefined;
-	readonly Users?: (string[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Groups?: string[] | undefined;
+	readonly ManagedPolicyName?: string | undefined;
+	readonly Path?: string | undefined;
+	readonly Roles?: string[] | undefined;
+	readonly Users?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class OIDCProvider extends CfnResource<OIDCProviderComponentInputs> implements OIDCProviderComponentOutputs {
@@ -76,9 +76,9 @@ export interface OIDCProviderComponentOutputs {
 }
 export interface OIDCProviderComponentInputs {
 	readonly ThumbprintList: string[];
-	readonly ClientIdList?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
+	readonly ClientIdList?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Url?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Policy extends CfnResource<PolicyComponentInputs> implements PolicyComponentOutputs {
@@ -90,9 +90,9 @@ export interface PolicyComponentOutputs {}
 export interface PolicyComponentInputs {
 	readonly PolicyDocument: any;
 	readonly PolicyName: string;
-	readonly Groups?: (string[] | undefined) | undefined;
-	readonly Roles?: (string[] | undefined) | undefined;
-	readonly Users?: (string[] | undefined) | undefined;
+	readonly Groups?: string[] | undefined;
+	readonly Roles?: string[] | undefined;
+	readonly Users?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class Role extends CfnResource<RoleComponentInputs> implements RoleComponentOutputs {
@@ -108,14 +108,14 @@ export interface RoleComponentOutputs {
 }
 export interface RoleComponentInputs {
 	readonly AssumeRolePolicyDocument: any;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ManagedPolicyArns?: (string[] | undefined) | undefined;
-	readonly MaxSessionDuration?: (number | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
-	readonly PermissionsBoundary?: (string | undefined) | undefined;
-	readonly Policies?: (Policy[] | undefined) | undefined;
-	readonly RoleName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly ManagedPolicyArns?: string[] | undefined;
+	readonly MaxSessionDuration?: number | undefined;
+	readonly Path?: string | undefined;
+	readonly PermissionsBoundary?: string | undefined;
+	readonly Policies?: Policy[] | undefined;
+	readonly RoleName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class SAMLProvider extends CfnResource<SAMLProviderComponentInputs> implements SAMLProviderComponentOutputs {
@@ -129,8 +129,8 @@ export interface SAMLProviderComponentOutputs {
 }
 export interface SAMLProviderComponentInputs {
 	readonly SamlMetadataDocument: string;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ServerCertificate
@@ -146,12 +146,12 @@ export interface ServerCertificateComponentOutputs {
 	readonly Arn: string;
 }
 export interface ServerCertificateComponentInputs {
-	readonly CertificateBody?: (string | undefined) | undefined;
-	readonly CertificateChain?: (string | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
-	readonly PrivateKey?: (string | undefined) | undefined;
-	readonly ServerCertificateName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CertificateBody?: string | undefined;
+	readonly CertificateChain?: string | undefined;
+	readonly Path?: string | undefined;
+	readonly PrivateKey?: string | undefined;
+	readonly ServerCertificateName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ServiceLinkedRole
@@ -165,8 +165,8 @@ export class ServiceLinkedRole
 export interface ServiceLinkedRoleComponentOutputs {}
 export interface ServiceLinkedRoleComponentInputs {
 	readonly AWSServiceName: string;
-	readonly CustomSuffix?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly CustomSuffix?: string | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class User extends CfnResource<UserComponentInputs> implements UserComponentOutputs {
@@ -179,14 +179,14 @@ export interface UserComponentOutputs {
 	readonly Arn: string;
 }
 export interface UserComponentInputs {
-	readonly Groups?: (string[] | undefined) | undefined;
-	readonly LoginProfile?: (LoginProfile | undefined) | undefined;
-	readonly ManagedPolicyArns?: (string[] | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
-	readonly PermissionsBoundary?: (string | undefined) | undefined;
-	readonly Policies?: (Policy[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly UserName?: (string | undefined) | undefined;
+	readonly Groups?: string[] | undefined;
+	readonly LoginProfile?: LoginProfile | undefined;
+	readonly ManagedPolicyArns?: string[] | undefined;
+	readonly Path?: string | undefined;
+	readonly PermissionsBoundary?: string | undefined;
+	readonly Policies?: Policy[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly UserName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class UserToGroupAddition
@@ -217,9 +217,9 @@ export interface VirtualMFADeviceComponentOutputs {
 }
 export interface VirtualMFADeviceComponentInputs {
 	readonly Users: string[];
-	readonly Path?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VirtualMfaDeviceName?: (string | undefined) | undefined;
+	readonly Path?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VirtualMfaDeviceName?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Policy {
@@ -228,7 +228,7 @@ export interface Policy {
 }
 export interface LoginProfile {
 	readonly Password: string;
-	readonly PasswordResetRequired?: (boolean | undefined) | undefined;
+	readonly PasswordResetRequired?: boolean | undefined;
 }
 export default {
 	AccessKey: AccessKey,

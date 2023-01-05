@@ -4,57 +4,54 @@ export class XpnHostList extends GdmResource<XpnHostListComponentInputs> impleme
 	constructor(entity: ADKEntity, options: XpnHostListComponentInputs) {
 		super(entity, options.name, "compute.alpha.XpnHostList", options);
 	}
-	public readonly id?: string | undefined;
-	public readonly items?: Project[] | undefined;
-	public readonly kind?: string | undefined;
-	public readonly nextPageToken?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly warning?:
-		| { code?: string; data?: Array<{ key?: string; value?: string }>; message?: string }
-		| undefined;
+	public readonly id?: string;
+	public readonly items?: Project[];
+	public readonly kind?: string;
+	public readonly nextPageToken?: string;
+	public readonly selfLink?: string;
+	public readonly warning?: { code?: string; data?: Array<{ key?: string; value?: string }>; message?: string };
 }
 export interface XpnHostListComponentOutputs {
-	readonly id?: string | undefined;
-	readonly items?: Project[] | undefined;
-	readonly kind?: string | undefined;
-	readonly nextPageToken?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly warning?: { code?: string; data?: Array<{ key?: string; value?: string }>; message?: string } | undefined;
+	readonly id?: string;
+	readonly items?: Project[];
+	readonly kind?: string;
+	readonly nextPageToken?: string;
+	readonly selfLink?: string;
+	readonly warning?: { code?: string; data?: Array<{ key?: string; value?: string }>; message?: string };
 }
 export interface XpnHostListComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export interface Metadata {
-	readonly fingerprint?: string | undefined;
-	readonly items?: Array<{ key?: string; value?: string }> | undefined;
-	readonly kind?: string | undefined;
+	readonly fingerprint?: string;
+	readonly items?: Array<{ key?: string; value?: string }>;
+	readonly kind?: string;
 }
 export interface Project {
-	readonly commonInstanceMetadata?: Metadata | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly defaultNetworkTier?: string | undefined;
-	readonly defaultServiceAccount?: string | undefined;
-	readonly description?: string | undefined;
-	readonly enabledFeatures?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly quotas?: Quota[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly usageExportLocation?: UsageExportLocation | undefined;
-	readonly vmDnsSetting?: string | undefined;
-	readonly xpnProjectStatus?: string | undefined;
+	readonly commonInstanceMetadata?: Metadata;
+	readonly creationTimestamp?: string;
+	readonly defaultNetworkTier?: string;
+	readonly defaultServiceAccount?: string;
+	readonly description?: string;
+	readonly enabledFeatures?: string[];
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly quotas?: Quota[];
+	readonly selfLink?: string;
+	readonly usageExportLocation?: UsageExportLocation;
+	readonly vmDnsSetting?: string;
+	readonly xpnProjectStatus?: string;
 }
 export interface Quota {
-	readonly limit?: number | undefined;
-	readonly metric?: string | undefined;
-	readonly owner?: string | undefined;
-	readonly usage?: number | undefined;
+	readonly limit?: number;
+	readonly metric?: string;
+	readonly owner?: string;
+	readonly usage?: number;
 }
 export interface UsageExportLocation {
-	readonly bucketName?: string | undefined;
-	readonly reportNamePrefix?: string | undefined;
+	readonly bucketName?: string;
+	readonly reportNamePrefix?: string;
 }
 export default {
 	XpnHostList: XpnHostList,

@@ -15,7 +15,7 @@ export interface privateStoresComponentOutputs {
 }
 export interface privateStoresComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateStoreProperties | undefined;
+	readonly properties?: PrivateStoreProperties;
 }
 export class privateStores_offers
 	extends ArmResource<privateStores_offersComponentInputs>
@@ -35,43 +35,43 @@ export interface privateStores_offersComponentOutputs {
 }
 export interface privateStores_offersComponentInputs {
 	readonly name: string;
-	readonly properties?: OfferProperties | undefined;
+	readonly properties?: OfferProperties;
 }
 export interface OfferProperties {
-	readonly createdAt?: string | undefined;
-	readonly eTag?: string | undefined;
-	readonly iconFileUris?: OfferPropertiesIconFileUris | undefined;
-	readonly modifiedAt?: string | undefined;
-	readonly offerDisplayName?: string | undefined;
-	readonly plans?: Plan[] | undefined;
-	readonly privateStoreId?: string | undefined;
-	readonly publisherDisplayName?: string | undefined;
-	readonly specificPlanIdsLimitation?: string[] | undefined;
-	readonly uniqueOfferId?: string | undefined;
-	readonly updateSuppressedDueIdempotence?: boolean | undefined;
+	readonly createdAt?: string;
+	readonly eTag?: string;
+	readonly iconFileUris?: OfferPropertiesIconFileUris;
+	readonly modifiedAt?: string;
+	readonly offerDisplayName?: string;
+	readonly plans?: Plan[];
+	readonly privateStoreId?: string;
+	readonly publisherDisplayName?: string;
+	readonly specificPlanIdsLimitation?: string[];
+	readonly uniqueOfferId?: string;
+	readonly updateSuppressedDueIdempotence?: boolean;
 }
 export interface OfferPropertiesIconFileUris {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Plan {
-	readonly accessibility?: ("PrivateSubscriptionOnLevel" | "PrivateTenantOnLevel" | "Public" | "Unknown") | undefined;
-	readonly altStackReference?: string | undefined;
-	readonly planDisplayName?: string | undefined;
-	readonly planId?: string | undefined;
-	readonly skuId?: string | undefined;
-	readonly stackType?: string | undefined;
+	readonly accessibility?: "PrivateSubscriptionOnLevel" | "PrivateTenantOnLevel" | "Public" | "Unknown";
+	readonly altStackReference?: string;
+	readonly planDisplayName?: string;
+	readonly planId?: string;
+	readonly skuId?: string;
+	readonly stackType?: string;
 }
 export interface PrivateStoreProperties {
-	readonly availability?: ("disabled" | "enabled") | undefined;
-	readonly customerTag?: string | undefined;
-	readonly eTag?: string | undefined;
-	readonly hasCommercialAssociation?: boolean | undefined;
-	readonly hasMultiTenantAssociation?: boolean | undefined;
-	readonly isGov?: boolean | undefined;
-	readonly privateStoreId?: string | undefined;
-	readonly privateStoreName?: string | undefined;
-	readonly tenantIds?: string[] | undefined;
-	readonly tenantTag?: string | undefined;
+	readonly availability?: "disabled" | "enabled";
+	readonly customerTag?: string;
+	readonly eTag?: string;
+	readonly hasCommercialAssociation?: boolean;
+	readonly hasMultiTenantAssociation?: boolean;
+	readonly isGov?: boolean;
+	readonly privateStoreId?: string;
+	readonly privateStoreName?: string;
+	readonly tenantIds?: string[];
+	readonly tenantTag?: string;
 }
 export default {
 	privateStores: privateStores,

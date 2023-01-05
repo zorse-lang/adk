@@ -14,13 +14,13 @@ export interface webPubSubComponentOutputs {
 	readonly type: "Microsoft.SignalRService/webPubSub";
 }
 export interface webPubSubComponentInputs {
-	readonly identity?: ManagedIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WebPubSubProperties | undefined;
-	readonly sku?: ResourceSku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: WebPubSubProperties;
+	readonly sku?: ResourceSku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class webPubSub_privateEndpointConnections
 	extends ArmResource<webPubSub_privateEndpointConnectionsComponentInputs>
@@ -46,8 +46,8 @@ export interface webPubSub_privateEndpointConnectionsComponentOutputs {
 }
 export interface webPubSub_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class webPubSub_sharedPrivateLinkResources
 	extends ArmResource<webPubSub_sharedPrivateLinkResourcesComponentInputs>
@@ -73,8 +73,8 @@ export interface webPubSub_sharedPrivateLinkResourcesComponentOutputs {
 }
 export interface webPubSub_sharedPrivateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: SharedPrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SharedPrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
 }
 export function listKeys(resource: webPubSub): WebPubSubKeys {
 	if (resource.apiVersion !== "2021-09-01-preview") {
@@ -86,138 +86,159 @@ export function listKeys(resource: webPubSub): WebPubSubKeys {
 	throw new Error("not implemented");
 }
 export interface EventHandlerSettings {
-	readonly items?: EventHandlerSettingsItems | undefined;
+	readonly items?: EventHandlerSettingsItems;
 }
 export interface EventHandlerSettingsItems {
-	readonly "[ key: string ]"?: EventHandlerTemplate[] | undefined;
+	readonly [key: string]: EventHandlerTemplate[];
 }
 export interface EventHandlerTemplate {
-	readonly auth?: UpstreamAuthSettings | undefined;
-	readonly systemEventPattern?: string | undefined;
+	readonly auth?: UpstreamAuthSettings;
+	readonly systemEventPattern?: string;
 	readonly urlTemplate: string;
-	readonly userEventPattern?: string | undefined;
+	readonly userEventPattern?: string;
 }
 export interface LiveTraceCategory {
-	readonly enabled?: string | undefined;
-	readonly name?: string | undefined;
+	readonly enabled?: string;
+	readonly name?: string;
 }
 export interface LiveTraceConfiguration {
-	readonly categories?: LiveTraceCategory[] | undefined;
-	readonly enabled?: string | undefined;
+	readonly categories?: LiveTraceCategory[];
+	readonly enabled?: string;
 }
 export interface ManagedIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "UserAssigned") | undefined;
-	readonly userAssignedIdentities?: ManagedIdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "UserAssigned";
+	readonly userAssignedIdentities?: ManagedIdentityUserAssignedIdentities;
 }
 export interface ManagedIdentitySettings {
-	readonly resource?: string | undefined;
+	readonly resource?: string;
 }
 export interface ManagedIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentityProperty | undefined;
+	readonly [key: string]: UserAssignedIdentityProperty;
 }
 export interface NetworkACL {
-	readonly allow?: ("ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[]) | undefined;
-	readonly deny?: ("ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[]) | undefined;
+	readonly allow?: "ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[];
+	readonly deny?: "ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[];
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointACL {
-	readonly allow?: ("ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[]) | undefined;
-	readonly deny?: ("ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[]) | undefined;
+	readonly allow?: "ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[];
+	readonly deny?: "ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[];
 	readonly name: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "Running"
+		| "Succeeded"
+		| "Unknown"
+		| "Updating";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface ResourceSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 }
 export interface SharedPrivateLinkResource {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: SharedPrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: SharedPrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface SharedPrivateLinkResourceProperties {
 	readonly groupId: string;
 	readonly privateLinkResourceId: string;
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
-	readonly requestMessage?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout") | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "Running"
+		| "Succeeded"
+		| "Unknown"
+		| "Updating";
+	readonly requestMessage?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UpstreamAuthSettings {
-	readonly managedIdentity?: ManagedIdentitySettings | undefined;
-	readonly type?: ("ManagedIdentity" | "None") | undefined;
+	readonly managedIdentity?: ManagedIdentitySettings;
+	readonly type?: "ManagedIdentity" | "None";
 }
 export interface UserAssignedIdentityProperty {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface WebPubSubKeys {
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface WebPubSubNetworkACLs {
-	readonly defaultAction?: ("Allow" | "Deny") | undefined;
-	readonly privateEndpoints?: PrivateEndpointACL[] | undefined;
-	readonly publicNetwork?: NetworkACL | undefined;
+	readonly defaultAction?: "Allow" | "Deny";
+	readonly privateEndpoints?: PrivateEndpointACL[];
+	readonly publicNetwork?: NetworkACL;
 }
 export interface WebPubSubProperties {
-	readonly disableAadAuth?: boolean | undefined;
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly eventHandler?: EventHandlerSettings | undefined;
-	readonly externalIP?: string | undefined;
-	readonly hostName?: string | undefined;
-	readonly liveTraceConfiguration?: LiveTraceConfiguration | undefined;
-	readonly networkACLs?: WebPubSubNetworkACLs | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
+	readonly disableAadAuth?: boolean;
+	readonly disableLocalAuth?: boolean;
+	readonly eventHandler?: EventHandlerSettings;
+	readonly externalIP?: string;
+	readonly hostName?: string;
+	readonly liveTraceConfiguration?: LiveTraceConfiguration;
+	readonly networkACLs?: WebPubSubNetworkACLs;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
-	readonly publicNetworkAccess?: string | undefined;
-	readonly publicPort?: number | undefined;
-	readonly serverPort?: number | undefined;
-	readonly sharedPrivateLinkResources?: SharedPrivateLinkResource[] | undefined;
-	readonly tls?: WebPubSubTlsSettings | undefined;
-	readonly version?: string | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "Running"
+		| "Succeeded"
+		| "Unknown"
+		| "Updating";
+	readonly publicNetworkAccess?: string;
+	readonly publicPort?: number;
+	readonly serverPort?: number;
+	readonly sharedPrivateLinkResources?: SharedPrivateLinkResource[];
+	readonly tls?: WebPubSubTlsSettings;
+	readonly version?: string;
 }
 export interface WebPubSubTlsSettings {
-	readonly clientCertEnabled?: boolean | undefined;
+	readonly clientCertEnabled?: boolean;
 }
 export default {
 	webPubSub: webPubSub,

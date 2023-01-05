@@ -19,13 +19,13 @@ export interface containerServicesComponentOutputs {
 export interface containerServicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ContainerServiceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ContainerServiceProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ContainerServiceAgentPoolProfile {
-	readonly count?: number | undefined;
+	readonly count?: number;
 	readonly dnsPrefix: string;
-	readonly fqdn?: string | undefined;
+	readonly fqdn?: string;
 	readonly name: string;
 	readonly vmSize:
 		| "Standard_A0"
@@ -84,21 +84,21 @@ export interface ContainerServiceLinuxProfile {
 	readonly ssh: ContainerServiceSshConfiguration;
 }
 export interface ContainerServiceMasterProfile {
-	readonly count?: number | undefined;
+	readonly count?: number;
 	readonly dnsPrefix: string;
-	readonly fqdn?: string | undefined;
+	readonly fqdn?: string;
 }
 export interface ContainerServiceOrchestratorProfile {
 	readonly orchestratorType: "DCOS";
 }
 export interface ContainerServiceProperties {
 	readonly agentPoolProfiles: ContainerServiceAgentPoolProfile[];
-	readonly diagnosticsProfile?: ContainerServiceDiagnosticsProfile | undefined;
+	readonly diagnosticsProfile?: ContainerServiceDiagnosticsProfile;
 	readonly linuxProfile: ContainerServiceLinuxProfile;
 	readonly masterProfile: ContainerServiceMasterProfile;
-	readonly orchestratorProfile?: ContainerServiceOrchestratorProfile | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly windowsProfile?: ContainerServiceWindowsProfile | undefined;
+	readonly orchestratorProfile?: ContainerServiceOrchestratorProfile;
+	readonly provisioningState?: string;
+	readonly windowsProfile?: ContainerServiceWindowsProfile;
 }
 export interface ContainerServiceSshConfiguration {
 	readonly publicKeys: ContainerServiceSshPublicKey[];
@@ -108,14 +108,14 @@ export interface ContainerServiceSshPublicKey {
 }
 export interface ContainerServiceVMDiagnostics {
 	readonly enabled: boolean;
-	readonly storageUri?: string | undefined;
+	readonly storageUri?: string;
 }
 export interface ContainerServiceWindowsProfile {
 	readonly adminPassword: string;
 	readonly adminUsername: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	containerServices: containerServices,

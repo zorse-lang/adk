@@ -17,9 +17,9 @@ export interface cloudManifestFilesComponentOutputs {
 	readonly type: "Microsoft.AzureStack/cloudManifestFiles";
 }
 export interface cloudManifestFilesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: CloudManifestFileProperties | undefined;
+	readonly properties?: CloudManifestFileProperties;
 }
 export class linkedSubscriptions
 	extends ArmResource<linkedSubscriptionsComponentInputs>
@@ -38,13 +38,13 @@ export interface linkedSubscriptionsComponentOutputs {
 	readonly type: "Microsoft.AzureStack/linkedSubscriptions";
 }
 export interface linkedSubscriptionsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: string;
 	readonly location: "global";
 	readonly name: string;
 	readonly properties: LinkedSubscriptionParameterPropertiesOrLinkedSubscriptionProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class registrations extends ArmResource<registrationsComponentInputs> implements registrationsComponentOutputs {
 	constructor(entity: ADKEntity, options: registrationsComponentInputs) {
@@ -60,13 +60,13 @@ export interface registrationsComponentOutputs {
 	readonly type: "Microsoft.AzureStack/registrations";
 }
 export interface registrationsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: string;
 	readonly location: "global";
 	readonly name: string;
 	readonly properties: RegistrationParameterPropertiesOrRegistrationProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class registrations_customerSubscriptions
 	extends ArmResource<registrations_customerSubscriptionsComponentInputs>
@@ -91,10 +91,10 @@ export interface registrations_customerSubscriptionsComponentOutputs {
 	readonly type: "Microsoft.AzureStack/registrations/customerSubscriptions";
 }
 export interface registrations_customerSubscriptionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: CustomerSubscriptionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CustomerSubscriptionProperties;
+	readonly systemData?: SystemData;
 }
 export class registrations_products
 	extends ArmResource<registrations_productsComponentInputs>
@@ -113,10 +113,10 @@ export interface registrations_productsComponentOutputs {
 	readonly type: "Microsoft.AzureStack/registrations/products";
 }
 export interface registrations_productsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ProductNestedProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ProductNestedProperties;
+	readonly systemData?: SystemData;
 }
 export function listDetails(resource: registrations_products): ExtendedProduct {
 	if (resource.apiVersion !== "2020-06-01-preview") {
@@ -128,126 +128,123 @@ export function listDetails(resource: registrations_products): ExtendedProduct {
 	throw new Error("not implemented");
 }
 export interface CloudManifestFileDeploymentData {
-	readonly customCloudVerificationKey?: string | undefined;
-	readonly customEnvironmentEndpoints?: CloudManifestFileEnvironmentEndpoints | undefined;
-	readonly externalDsmsCertificates?: string | undefined;
+	readonly customCloudVerificationKey?: string;
+	readonly customEnvironmentEndpoints?: CloudManifestFileEnvironmentEndpoints;
+	readonly externalDsmsCertificates?: string;
 }
 export interface CloudManifestFileEnvironmentEndpoints {
-	readonly customCloudArmEndpoint?: string | undefined;
-	readonly externalDsmsEndpoint?: string | undefined;
+	readonly customCloudArmEndpoint?: string;
+	readonly externalDsmsEndpoint?: string;
 }
 export interface CloudManifestFileProperties {
-	readonly deploymentData?: CloudManifestFileDeploymentData | undefined;
-	readonly signature?: string | undefined;
+	readonly deploymentData?: CloudManifestFileDeploymentData;
+	readonly signature?: string;
 }
 export interface Compatibility {
-	readonly description?: string | undefined;
-	readonly isCompatible?: boolean | undefined;
+	readonly description?: string;
+	readonly isCompatible?: boolean;
 	readonly issues?:
-		| (
-				| "ADFSIdentitySystemRequired"
-				| "AzureADIdentitySystemRequired"
-				| "CapacityBillingModelRequired"
-				| "ConnectionToAzureRequired"
-				| "ConnectionToInternetRequired"
-				| "DevelopmentBillingModelRequired"
-				| "DisconnectedEnvironmentRequired"
-				| "HigherDeviceVersionRequired"
-				| "LowerDeviceVersionRequired"
-				| "PayAsYouGoBillingModelRequired"[]
-		  )
-		| undefined;
-	readonly message?: string | undefined;
+		| "ADFSIdentitySystemRequired"
+		| "AzureADIdentitySystemRequired"
+		| "CapacityBillingModelRequired"
+		| "ConnectionToAzureRequired"
+		| "ConnectionToInternetRequired"
+		| "DevelopmentBillingModelRequired"
+		| "DisconnectedEnvironmentRequired"
+		| "HigherDeviceVersionRequired"
+		| "LowerDeviceVersionRequired"
+		| "PayAsYouGoBillingModelRequired"[];
+	readonly message?: string;
 }
 export interface CustomerSubscriptionProperties {
-	readonly tenantId?: string | undefined;
+	readonly tenantId?: string;
 }
 export interface DataDiskImage {
-	readonly lun?: number | undefined;
-	readonly sourceBlobSasUri?: string | undefined;
+	readonly lun?: number;
+	readonly sourceBlobSasUri?: string;
 }
 export interface ExtendedProduct {
-	readonly galleryPackageBlobSasUri?: string | undefined;
-	readonly productKind?: string | undefined;
-	readonly properties?: ExtendedProductProperties | undefined;
+	readonly galleryPackageBlobSasUri?: string;
+	readonly productKind?: string;
+	readonly properties?: ExtendedProductProperties;
 }
 export interface ExtendedProductProperties {
-	readonly computeRole?: ("IaaS" | "None" | "PaaS") | undefined;
-	readonly dataDiskImages?: DataDiskImage[] | undefined;
-	readonly isSystemExtension?: boolean | undefined;
-	readonly osDiskImage?: OsDiskImage | undefined;
-	readonly sourceBlob?: Uri | undefined;
-	readonly supportMultipleExtensions?: boolean | undefined;
-	readonly version?: string | undefined;
-	readonly vmOsType?: ("Linux" | "None" | "Windows") | undefined;
-	readonly vmScaleSetEnabled?: boolean | undefined;
+	readonly computeRole?: "IaaS" | "None" | "PaaS";
+	readonly dataDiskImages?: DataDiskImage[];
+	readonly isSystemExtension?: boolean;
+	readonly osDiskImage?: OsDiskImage;
+	readonly sourceBlob?: Uri;
+	readonly supportMultipleExtensions?: boolean;
+	readonly version?: string;
+	readonly vmOsType?: "Linux" | "None" | "Windows";
+	readonly vmScaleSetEnabled?: boolean;
 }
 export interface IconUris {
-	readonly hero?: string | undefined;
-	readonly large?: string | undefined;
-	readonly medium?: string | undefined;
-	readonly small?: string | undefined;
-	readonly wide?: string | undefined;
+	readonly hero?: string;
+	readonly large?: string;
+	readonly medium?: string;
+	readonly small?: string;
+	readonly wide?: string;
 }
 export interface LinkedSubscriptionParameterPropertiesOrLinkedSubscriptionProperties {
-	readonly deviceConnectionStatus?: string | undefined;
-	readonly deviceId?: string | undefined;
-	readonly deviceLinkState?: string | undefined;
-	readonly deviceObjectId?: string | undefined;
-	readonly lastConnectedTime?: string | undefined;
+	readonly deviceConnectionStatus?: string;
+	readonly deviceId?: string;
+	readonly deviceLinkState?: string;
+	readonly deviceObjectId?: string;
+	readonly lastConnectedTime?: string;
 	readonly linkedSubscriptionId: string;
 	readonly registrationResourceId: string;
 }
 export interface OsDiskImage {
-	readonly operatingSystem?: ("Linux" | "None" | "Windows") | undefined;
-	readonly sourceBlobSasUri?: string | undefined;
+	readonly operatingSystem?: "Linux" | "None" | "Windows";
+	readonly sourceBlobSasUri?: string;
 }
 export interface ProductLink {
-	readonly displayName?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly displayName?: string;
+	readonly uri?: string;
 }
 export interface ProductNestedProperties {
-	readonly billingPartNumber?: string | undefined;
-	readonly compatibility?: Compatibility | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly galleryItemIdentity?: string | undefined;
-	readonly iconUris?: IconUris | undefined;
-	readonly legalTerms?: string | undefined;
-	readonly links?: ProductLink[] | undefined;
-	readonly offer?: string | undefined;
-	readonly offerVersion?: string | undefined;
-	readonly payloadLength?: number | undefined;
-	readonly privacyPolicy?: string | undefined;
-	readonly productKind?: string | undefined;
-	readonly productProperties?: ProductProperties | undefined;
-	readonly publisherDisplayName?: string | undefined;
-	readonly publisherIdentifier?: string | undefined;
-	readonly sku?: string | undefined;
-	readonly vmExtensionType?: string | undefined;
+	readonly billingPartNumber?: string;
+	readonly compatibility?: Compatibility;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly galleryItemIdentity?: string;
+	readonly iconUris?: IconUris;
+	readonly legalTerms?: string;
+	readonly links?: ProductLink[];
+	readonly offer?: string;
+	readonly offerVersion?: string;
+	readonly payloadLength?: number;
+	readonly privacyPolicy?: string;
+	readonly productKind?: string;
+	readonly productProperties?: ProductProperties;
+	readonly publisherDisplayName?: string;
+	readonly publisherIdentifier?: string;
+	readonly sku?: string;
+	readonly vmExtensionType?: string;
 }
 export interface ProductProperties {
-	readonly version?: string | undefined;
+	readonly version?: string;
 }
 export interface RegistrationParameterPropertiesOrRegistrationProperties {
-	readonly billingModel?: string | undefined;
-	readonly cloudId?: string | undefined;
-	readonly objectId?: string | undefined;
+	readonly billingModel?: string;
+	readonly cloudId?: string;
+	readonly objectId?: string;
 	readonly registrationToken: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Uri {
-	readonly uri?: string | undefined;
+	readonly uri?: string;
 }
 export default {
 	cloudManifestFiles: cloudManifestFiles,

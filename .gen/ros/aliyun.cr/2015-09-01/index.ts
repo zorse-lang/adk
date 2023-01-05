@@ -12,10 +12,10 @@ export interface InstanceEndpointAclPolicyComponentOutputs {}
 export interface InstanceEndpointAclPolicyComponentInputs {
 	readonly Entry: any | string;
 	readonly InstanceId: any | string;
-	readonly Comment?: (string | undefined) | undefined;
-	readonly EndpointType?: (string | undefined) | undefined;
-	readonly ModuleName?: (string | undefined) | undefined;
-	readonly RegionId?: (string | undefined) | undefined;
+	readonly Comment?: string | undefined;
+	readonly EndpointType?: string | undefined;
+	readonly ModuleName?: string | undefined;
+	readonly RegionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Namespace extends RosResource<NamespaceComponentInputs> implements NamespaceComponentOutputs {
@@ -29,9 +29,9 @@ export interface NamespaceComponentOutputs {
 }
 export interface NamespaceComponentInputs {
 	readonly Namespace: any | string;
-	readonly AutoCreate?: (boolean | undefined) | undefined;
-	readonly DefaultVisibility?: (string | undefined) | undefined;
-	readonly InstanceId?: (any | string) | undefined;
+	readonly AutoCreate?: boolean | undefined;
+	readonly DefaultVisibility?: string | undefined;
+	readonly InstanceId?: any | string;
 	readonly LogicalId: string;
 }
 export class Repository extends RosResource<RepositoryComponentInputs> implements RepositoryComponentOutputs {
@@ -48,10 +48,10 @@ export interface RepositoryComponentInputs {
 	readonly RepoNamespace: any | string;
 	readonly RepoType: any | string;
 	readonly Summary: string;
-	readonly Detail?: (string | undefined) | undefined;
-	readonly InstanceId?: (any | string) | undefined;
-	readonly RepoSource?: (RepoSource | undefined) | undefined;
-	readonly TagImmutability?: (boolean | undefined) | undefined;
+	readonly Detail?: string | undefined;
+	readonly InstanceId?: any | string;
+	readonly RepoSource?: RepoSource | undefined;
+	readonly TagImmutability?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class UserInfo extends RosResource<UserInfoComponentInputs> implements UserInfoComponentOutputs {

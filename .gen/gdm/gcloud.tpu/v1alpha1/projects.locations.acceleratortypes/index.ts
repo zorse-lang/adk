@@ -11,11 +11,10 @@ export class ProjectsLocationsAcceleratorTypes
 export interface ProjectsLocationsAcceleratorTypesComponentOutputs {}
 export interface ProjectsLocationsAcceleratorTypesComponentInputs {
 	readonly name: string;
-	readonly type: string;
 }
 export interface AcceleratorType {
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly type?: string;
 }
 export default {
 	ProjectsLocationsAcceleratorTypes: ProjectsLocationsAcceleratorTypes,

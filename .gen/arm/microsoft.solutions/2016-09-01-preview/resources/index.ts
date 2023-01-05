@@ -17,13 +17,13 @@ export interface applianceDefinitionsComponentOutputs {
 	readonly type: "Microsoft.Solutions/applianceDefinitions";
 }
 export interface applianceDefinitionsComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
-	readonly managedBy?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
+	readonly managedBy?: string;
 	readonly name: string;
 	readonly properties: ApplianceDefinitionProperties;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export class appliances extends ArmResource<appliancesComponentInputs> implements appliancesComponentOutputs {
 	constructor(entity: ADKEntity, options: appliancesComponentInputs) {
@@ -39,77 +39,74 @@ export interface appliancesComponentOutputs {
 	readonly type: "Microsoft.Solutions/appliances";
 }
 export interface appliancesComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
-	readonly managedBy?: string | undefined;
+	readonly identity?: Identity;
+	readonly kind?: string;
+	readonly location?: string;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly plan?: Plan | undefined;
-	readonly properties?: ApplianceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly plan?: Plan;
+	readonly properties?: ApplianceProperties;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export interface ApplianceArtifact {
-	readonly name?: string | undefined;
-	readonly type?: "Custom" | undefined;
-	readonly uri?: string | undefined;
+	readonly name?: string;
+	readonly type?: "Custom";
+	readonly uri?: string;
 }
 export interface ApplianceDefinitionProperties {
-	readonly artifacts?: ApplianceArtifact[] | undefined;
+	readonly artifacts?: ApplianceArtifact[];
 	readonly authorizations: ApplianceProviderAuthorization[];
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly lockLevel: "CanNotDelete" | "None";
 	readonly packageFileUri: string;
 }
 export interface ApplianceProperties {
-	readonly applianceDefinitionId?: string | undefined;
+	readonly applianceDefinitionId?: string;
 	readonly managedResourceGroupId: string;
-	readonly outputs?: any | undefined;
-	readonly parameters?: any | undefined;
+	readonly outputs?: any;
+	readonly parameters?: any;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly uiDefinitionUri?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "Ready"
+		| "Running"
+		| "Succeeded"
+		| "Updating";
+	readonly uiDefinitionUri?: string;
 }
 export interface ApplianceProviderAuthorization {
 	readonly principalId: string;
 	readonly roleDefinitionId: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface Plan {
 	readonly name: string;
 	readonly product: string;
-	readonly promotionCode?: string | undefined;
+	readonly promotionCode?: string;
 	readonly publisher: string;
 	readonly version: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
-	readonly model?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
+	readonly model?: string;
 	readonly name: string;
-	readonly size?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly size?: string;
+	readonly tier?: string;
 }
 export default {
 	applianceDefinitions: applianceDefinitions,

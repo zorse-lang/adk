@@ -12,10 +12,10 @@ export interface AddonComponentOutputs {
 export interface AddonComponentInputs {
 	readonly AddonName: string;
 	readonly ClusterName: string;
-	readonly AddonVersion?: (string | undefined) | undefined;
-	readonly ResolveConflicts?: (string | undefined) | undefined;
-	readonly ServiceAccountRoleArn?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AddonVersion?: string | undefined;
+	readonly ResolveConflicts?: string | undefined;
+	readonly ServiceAccountRoleArn?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Cluster extends CfnResource<ClusterComponentInputs> implements ClusterComponentOutputs {
@@ -44,13 +44,13 @@ export interface ClusterComponentOutputs {
 export interface ClusterComponentInputs {
 	readonly ResourcesVpcConfig: ResourcesVpcConfig;
 	readonly RoleArn: string;
-	readonly EncryptionConfig?: (EncryptionConfig[] | undefined) | undefined;
-	readonly KubernetesNetworkConfig?: (KubernetesNetworkConfig | undefined) | undefined;
-	readonly Logging?: (Logging | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly OutpostConfig?: (OutpostConfig | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly EncryptionConfig?: EncryptionConfig[] | undefined;
+	readonly KubernetesNetworkConfig?: KubernetesNetworkConfig | undefined;
+	readonly Logging?: Logging | undefined;
+	readonly Name?: string | undefined;
+	readonly OutpostConfig?: OutpostConfig | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Version?: string | undefined;
 	readonly LogicalId: string;
 }
 export class FargateProfile extends CfnResource<FargateProfileComponentInputs> implements FargateProfileComponentOutputs {
@@ -66,9 +66,9 @@ export interface FargateProfileComponentInputs {
 	readonly ClusterName: string;
 	readonly PodExecutionRoleArn: string;
 	readonly Selectors: Selector[];
-	readonly FargateProfileName?: (string | undefined) | undefined;
-	readonly Subnets?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly FargateProfileName?: string | undefined;
+	readonly Subnets?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class IdentityProviderConfig
@@ -86,9 +86,9 @@ export interface IdentityProviderConfigComponentOutputs {
 export interface IdentityProviderConfigComponentInputs {
 	readonly ClusterName: string;
 	readonly Type: string;
-	readonly IdentityProviderConfigName?: (string | undefined) | undefined;
-	readonly Oidc?: (OidcIdentityProviderConfig | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly IdentityProviderConfigName?: string | undefined;
+	readonly Oidc?: OidcIdentityProviderConfig | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Nodegroup extends CfnResource<NodegroupComponentInputs> implements NodegroupComponentOutputs {
@@ -108,57 +108,57 @@ export interface NodegroupComponentInputs {
 	readonly ClusterName: string;
 	readonly NodeRole: string;
 	readonly Subnets: string[];
-	readonly AmiType?: (string | undefined) | undefined;
-	readonly CapacityType?: (string | undefined) | undefined;
-	readonly DiskSize?: (number | undefined) | undefined;
-	readonly ForceUpdateEnabled?: (boolean | undefined) | undefined;
-	readonly InstanceTypes?: (string[] | undefined) | undefined;
-	readonly Labels?: (any | undefined) | undefined;
-	readonly LaunchTemplate?: (LaunchTemplateSpecification | undefined) | undefined;
-	readonly NodegroupName?: string | undefined;
-	readonly ReleaseVersion?: (string | undefined) | undefined;
-	readonly RemoteAccess?: (RemoteAccess | undefined) | undefined;
-	readonly ScalingConfig?: (ScalingConfig | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly Taints?: (Taint[] | undefined) | undefined;
-	readonly UpdateConfig?: (UpdateConfig | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly AmiType?: string | undefined;
+	readonly CapacityType?: string | undefined;
+	readonly DiskSize?: number | undefined;
+	readonly ForceUpdateEnabled?: boolean | undefined;
+	readonly InstanceTypes?: string[] | undefined;
+	readonly Labels?: any | undefined;
+	readonly LaunchTemplate?: LaunchTemplateSpecification | undefined;
+	readonly NodegroupName?: string;
+	readonly ReleaseVersion?: string | undefined;
+	readonly RemoteAccess?: RemoteAccess | undefined;
+	readonly ScalingConfig?: ScalingConfig | undefined;
+	readonly Tags?: any | undefined;
+	readonly Taints?: Taint[] | undefined;
+	readonly UpdateConfig?: UpdateConfig | undefined;
+	readonly Version?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface ClusterLogging {
-	readonly EnabledTypes?: (LoggingTypeConfig[] | undefined) | undefined;
+	readonly EnabledTypes?: LoggingTypeConfig[] | undefined;
 }
 export interface ControlPlanePlacement {
-	readonly GroupName?: (string | undefined) | undefined;
+	readonly GroupName?: string | undefined;
 }
 export interface EncryptionConfig {
-	readonly Provider?: (Provider | undefined) | undefined;
-	readonly Resources?: (string[] | undefined) | undefined;
+	readonly Provider?: Provider | undefined;
+	readonly Resources?: string[] | undefined;
 }
 export interface KubernetesNetworkConfig {
-	readonly IpFamily?: (string | undefined) | undefined;
-	readonly ServiceIpv4Cidr?: (string | undefined) | undefined;
-	readonly ServiceIpv6Cidr?: (string | undefined) | undefined;
+	readonly IpFamily?: string | undefined;
+	readonly ServiceIpv4Cidr?: string | undefined;
+	readonly ServiceIpv6Cidr?: string | undefined;
 }
 export interface Logging {
-	readonly ClusterLogging?: (ClusterLogging | undefined) | undefined;
+	readonly ClusterLogging?: ClusterLogging | undefined;
 }
 export interface LoggingTypeConfig {
-	readonly Type?: (string | undefined) | undefined;
+	readonly Type?: string | undefined;
 }
 export interface OutpostConfig {
 	readonly ControlPlaneInstanceType: string;
-	readonly ControlPlanePlacement?: (ControlPlanePlacement | undefined) | undefined;
+	readonly ControlPlanePlacement?: ControlPlanePlacement | undefined;
 	readonly OutpostArns: string[];
 }
 export interface Provider {
-	readonly KeyArn?: (string | undefined) | undefined;
+	readonly KeyArn?: string | undefined;
 }
 export interface ResourcesVpcConfig {
-	readonly EndpointPrivateAccess?: (boolean | undefined) | undefined;
-	readonly EndpointPublicAccess?: (boolean | undefined) | undefined;
-	readonly PublicAccessCidrs?: (string[] | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
+	readonly EndpointPrivateAccess?: boolean | undefined;
+	readonly EndpointPublicAccess?: boolean | undefined;
+	readonly PublicAccessCidrs?: string[] | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
 	readonly SubnetIds: string[];
 }
 export interface LabelOptions {
@@ -166,44 +166,44 @@ export interface LabelOptions {
 	readonly Value: string;
 }
 export interface Selector {
-	readonly Labels?: LabelOptions[] | undefined;
+	readonly Labels?: LabelOptions[];
 	readonly Namespace: string;
 }
 export interface OidcIdentityProviderConfig {
 	readonly ClientId: string;
-	readonly GroupsClaim?: (string | undefined) | undefined;
-	readonly GroupsPrefix?: (string | undefined) | undefined;
+	readonly GroupsClaim?: string | undefined;
+	readonly GroupsPrefix?: string | undefined;
 	readonly IssuerUrl: string;
-	readonly RequiredClaims?: (RequiredClaim[] | undefined) | undefined;
-	readonly UsernameClaim?: (string | undefined) | undefined;
-	readonly UsernamePrefix?: (string | undefined) | undefined;
+	readonly RequiredClaims?: RequiredClaim[] | undefined;
+	readonly UsernameClaim?: string | undefined;
+	readonly UsernamePrefix?: string | undefined;
 }
 export interface RequiredClaim {
 	readonly Key: string;
 	readonly Value: string;
 }
 export interface LaunchTemplateSpecification {
-	readonly Id?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly Id?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Version?: string | undefined;
 }
 export interface RemoteAccess {
 	readonly Ec2SshKey: string;
-	readonly SourceSecurityGroups?: (string[] | undefined) | undefined;
+	readonly SourceSecurityGroups?: string[] | undefined;
 }
 export interface ScalingConfig {
-	readonly DesiredSize?: (number | undefined) | undefined;
-	readonly MaxSize?: (number | undefined) | undefined;
-	readonly MinSize?: (number | undefined) | undefined;
+	readonly DesiredSize?: number | undefined;
+	readonly MaxSize?: number | undefined;
+	readonly MinSize?: number | undefined;
 }
 export interface Taint {
-	readonly Effect?: (string | undefined) | undefined;
-	readonly Key?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Effect?: string | undefined;
+	readonly Key?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface UpdateConfig {
-	readonly MaxUnavailable?: (number | undefined) | undefined;
-	readonly MaxUnavailablePercentage?: (number | undefined) | undefined;
+	readonly MaxUnavailable?: number | undefined;
+	readonly MaxUnavailablePercentage?: number | undefined;
 }
 export default {
 	Addon: Addon,

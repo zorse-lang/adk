@@ -16,8 +16,8 @@ export interface batchAccountsComponentOutputs {
 export interface batchAccountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: BatchAccountCreatePropertiesOrBatchAccountProperties | undefined;
-	readonly tags?: BatchAccountCreateParametersTags | undefined;
+	readonly properties?: BatchAccountCreatePropertiesOrBatchAccountProperties;
+	readonly tags?: BatchAccountCreateParametersTags;
 }
 export class batchAccounts_applications
 	extends ArmResource<batchAccounts_applicationsComponentInputs>
@@ -36,11 +36,11 @@ export interface batchAccounts_applicationsComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/applications";
 }
 export interface batchAccounts_applicationsComponentInputs {
-	readonly allowUpdates?: boolean | undefined;
-	readonly defaultVersion?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly allowUpdates?: boolean;
+	readonly defaultVersion?: string;
+	readonly displayName?: string;
 	readonly name: string;
-	readonly packages?: ApplicationPackage[] | undefined;
+	readonly packages?: ApplicationPackage[];
 }
 export class batchAccounts_applications_versions
 	extends ArmResource<batchAccounts_applications_versionsComponentInputs>
@@ -59,13 +59,13 @@ export interface batchAccounts_applications_versionsComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/applications/versions";
 }
 export interface batchAccounts_applications_versionsComponentInputs {
-	readonly format?: string | undefined;
-	readonly lastActivationTime?: string | undefined;
+	readonly format?: string;
+	readonly lastActivationTime?: string;
 	readonly name: string;
-	readonly state?: ("Active" | "Pending") | undefined;
-	readonly storageUrl?: string | undefined;
-	readonly storageUrlExpiry?: string | undefined;
-	readonly version?: string | undefined;
+	readonly state?: "Active" | "Pending";
+	readonly storageUrl?: string;
+	readonly storageUrlExpiry?: string;
+	readonly version?: string;
 }
 export class batchAccounts_certificates
 	extends ArmResource<batchAccounts_certificatesComponentInputs>
@@ -84,9 +84,9 @@ export interface batchAccounts_certificatesComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/certificates";
 }
 export interface batchAccounts_certificatesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: CertificateCreateOrUpdatePropertiesOrCertificateProperties | undefined;
+	readonly properties?: CertificateCreateOrUpdatePropertiesOrCertificateProperties;
 }
 export class batchAccounts_pools
 	extends ArmResource<batchAccounts_poolsComponentInputs>
@@ -105,9 +105,9 @@ export interface batchAccounts_poolsComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/pools";
 }
 export interface batchAccounts_poolsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: PoolProperties | undefined;
+	readonly properties?: PoolProperties;
 }
 export function listKeys(resource: batchAccounts): BatchAccountKeys {
 	if (resource.apiVersion !== "2017-09-01") {
@@ -119,115 +119,115 @@ export function listKeys(resource: batchAccounts): BatchAccountKeys {
 	throw new Error("not implemented");
 }
 export interface ApplicationPackage {
-	readonly format?: string | undefined;
-	readonly id?: string | undefined;
-	readonly lastActivationTime?: string | undefined;
-	readonly state?: ("Active" | "Pending") | undefined;
-	readonly storageUrl?: string | undefined;
-	readonly storageUrlExpiry?: string | undefined;
-	readonly version?: string | undefined;
+	readonly format?: string;
+	readonly id?: string;
+	readonly lastActivationTime?: string;
+	readonly state?: "Active" | "Pending";
+	readonly storageUrl?: string;
+	readonly storageUrlExpiry?: string;
+	readonly version?: string;
 }
 export interface ApplicationPackageReference {
 	readonly id: string;
-	readonly version?: string | undefined;
+	readonly version?: string;
 }
 export interface AutoScaleRun {
-	readonly error?: AutoScaleRunError | undefined;
+	readonly error?: AutoScaleRunError;
 	readonly evaluationTime: string;
-	readonly results?: string | undefined;
+	readonly results?: string;
 }
 export interface AutoScaleRunError {
 	readonly code: string;
-	readonly details?: AutoScaleRunError[] | undefined;
+	readonly details?: AutoScaleRunError[];
 	readonly message: string;
 }
 export interface AutoScaleSettings {
-	readonly evaluationInterval?: string | undefined;
+	readonly evaluationInterval?: string;
 	readonly formula: string;
 }
 export interface AutoStorageBasePropertiesOrAutoStorageProperties {
-	readonly lastKeySync?: string | undefined;
+	readonly lastKeySync?: string;
 	readonly storageAccountId: string;
 }
 export interface AutoUserSpecification {
-	readonly elevationLevel?: "Admin" | undefined;
-	readonly scope?: "Pool" | undefined;
+	readonly elevationLevel?: "Admin";
+	readonly scope?: "Pool";
 }
 export interface BatchAccountCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface BatchAccountCreatePropertiesOrBatchAccountProperties {
-	readonly accountEndpoint?: string | undefined;
-	readonly activeJobAndJobScheduleQuota?: number | undefined;
-	readonly autoStorage?: AutoStorageBasePropertiesOrAutoStorageProperties | undefined;
-	readonly dedicatedCoreQuota?: number | undefined;
-	readonly keyVaultReference?: KeyVaultReference | undefined;
-	readonly lowPriorityCoreQuota?: number | undefined;
-	readonly poolAllocationMode?: "BatchService" | undefined;
-	readonly poolQuota?: number | undefined;
-	readonly provisioningState?: ("Cancelled" | "Creating" | "Deleting" | "Failed" | "Invalid") | undefined;
+	readonly accountEndpoint?: string;
+	readonly activeJobAndJobScheduleQuota?: number;
+	readonly autoStorage?: AutoStorageBasePropertiesOrAutoStorageProperties;
+	readonly dedicatedCoreQuota?: number;
+	readonly keyVaultReference?: KeyVaultReference;
+	readonly lowPriorityCoreQuota?: number;
+	readonly poolAllocationMode?: "BatchService";
+	readonly poolQuota?: number;
+	readonly provisioningState?: "Cancelled" | "Creating" | "Deleting" | "Failed" | "Invalid";
 }
 export interface BatchAccountKeys {
-	readonly accountName?: string | undefined;
-	readonly primary?: string | undefined;
-	readonly secondary?: string | undefined;
+	readonly accountName?: string;
+	readonly primary?: string;
+	readonly secondary?: string;
 }
 export interface CertificateCreateOrUpdatePropertiesOrCertificateProperties {
 	readonly data: string;
-	readonly deleteCertificateError?: DeleteCertificateError | undefined;
-	readonly format?: "Cer" | undefined;
-	readonly password?: string | undefined;
-	readonly previousProvisioningState?: ("Deleting" | "Failed") | undefined;
-	readonly previousProvisioningStateTransitionTime?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed") | undefined;
+	readonly deleteCertificateError?: DeleteCertificateError;
+	readonly format?: "Cer";
+	readonly password?: string;
+	readonly previousProvisioningState?: "Deleting" | "Failed";
+	readonly previousProvisioningStateTransitionTime?: string;
+	readonly provisioningState?: "Deleting" | "Failed";
 }
 export interface CertificateReference {
 	readonly id: string;
-	readonly storeLocation?: "CurrentUser" | undefined;
-	readonly storeName?: string | undefined;
-	readonly visibility?: ("RemoteUser" | "StartTask"[]) | undefined;
+	readonly storeLocation?: "CurrentUser";
+	readonly storeName?: string;
+	readonly visibility?: "RemoteUser" | "StartTask"[];
 }
 export interface CloudServiceConfiguration {
-	readonly currentOSVersion?: string | undefined;
+	readonly currentOSVersion?: string;
 	readonly osFamily: string;
-	readonly targetOSVersion?: string | undefined;
+	readonly targetOSVersion?: string;
 }
 export interface DataDisk {
-	readonly caching?: ("None" | "ReadOnly") | undefined;
+	readonly caching?: "None" | "ReadOnly";
 }
 export interface DeleteCertificateError {
 	readonly code: string;
-	readonly details?: DeleteCertificateError[] | undefined;
+	readonly details?: DeleteCertificateError[];
 	readonly message: string;
-	readonly target?: string | undefined;
+	readonly target?: string;
 }
 export interface DeploymentConfiguration {
-	readonly cloudServiceConfiguration?: CloudServiceConfiguration | undefined;
-	readonly virtualMachineConfiguration?: VirtualMachineConfiguration | undefined;
+	readonly cloudServiceConfiguration?: CloudServiceConfiguration;
+	readonly virtualMachineConfiguration?: VirtualMachineConfiguration;
 }
 export interface EnvironmentSetting {
 	readonly name: string;
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface FixedScaleSettings {
-	readonly nodeDeallocationOption?: ("Requeue" | "RetainedData" | "TaskCompletion") | undefined;
-	readonly resizeTimeout?: string | undefined;
-	readonly targetDedicatedNodes?: number | undefined;
-	readonly targetLowPriorityNodes?: number | undefined;
+	readonly nodeDeallocationOption?: "Requeue" | "RetainedData" | "TaskCompletion";
+	readonly resizeTimeout?: string;
+	readonly targetDedicatedNodes?: number;
+	readonly targetLowPriorityNodes?: number;
 }
 export interface ImageReference {
-	readonly id?: string | undefined;
-	readonly offer?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly sku?: string | undefined;
-	readonly version?: string | undefined;
+	readonly id?: string;
+	readonly offer?: string;
+	readonly publisher?: string;
+	readonly sku?: string;
+	readonly version?: string;
 }
 export interface InboundNatPool {
 	readonly backendPort: number;
 	readonly frontendPortRangeEnd: number;
 	readonly frontendPortRangeStart: number;
 	readonly name: string;
-	readonly networkSecurityGroupRules?: NetworkSecurityGroupRule[] | undefined;
+	readonly networkSecurityGroupRules?: NetworkSecurityGroupRule[];
 	readonly protocol: "TCP";
 }
 export interface KeyVaultReference {
@@ -235,17 +235,17 @@ export interface KeyVaultReference {
 	readonly url: string;
 }
 export interface LinuxUserConfiguration {
-	readonly gid?: number | undefined;
-	readonly sshPrivateKey?: string | undefined;
-	readonly uid?: number | undefined;
+	readonly gid?: number;
+	readonly sshPrivateKey?: string;
+	readonly uid?: number;
 }
 export interface MetadataItem {
 	readonly name: string;
 	readonly value: string;
 }
 export interface NetworkConfiguration {
-	readonly endpointConfiguration?: PoolEndpointConfiguration | undefined;
-	readonly subnetId?: string | undefined;
+	readonly endpointConfiguration?: PoolEndpointConfiguration;
+	readonly subnetId?: string;
 }
 export interface NetworkSecurityGroupRule {
 	readonly access: "Allow";
@@ -253,64 +253,64 @@ export interface NetworkSecurityGroupRule {
 	readonly sourceAddressPrefix: string;
 }
 export interface OSDisk {
-	readonly caching?: ("None" | "ReadOnly") | undefined;
+	readonly caching?: "None" | "ReadOnly";
 }
 export interface PoolEndpointConfiguration {
 	readonly inboundNatPools: InboundNatPool[];
 }
 export interface PoolProperties {
-	readonly allocationState?: ("Resizing" | "Steady") | undefined;
+	readonly allocationState?: "Resizing" | "Steady";
 }
 export interface ResizeError {
 	readonly code: string;
-	readonly details?: ResizeError[] | undefined;
+	readonly details?: ResizeError[];
 	readonly message: string;
 }
 export interface ResizeOperationStatus {
-	readonly errors?: ResizeError[] | undefined;
-	readonly nodeDeallocationOption?: ("Requeue" | "RetainedData" | "TaskCompletion") | undefined;
-	readonly resizeTimeout?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly targetDedicatedNodes?: number | undefined;
-	readonly targetLowPriorityNodes?: number | undefined;
+	readonly errors?: ResizeError[];
+	readonly nodeDeallocationOption?: "Requeue" | "RetainedData" | "TaskCompletion";
+	readonly resizeTimeout?: string;
+	readonly startTime?: string;
+	readonly targetDedicatedNodes?: number;
+	readonly targetLowPriorityNodes?: number;
 }
 export interface ResourceFile {
 	readonly blobSource: string;
-	readonly fileMode?: string | undefined;
+	readonly fileMode?: string;
 	readonly filePath: string;
 }
 export interface ScaleSettings {
-	readonly autoScale?: AutoScaleSettings | undefined;
-	readonly fixedScale?: FixedScaleSettings | undefined;
+	readonly autoScale?: AutoScaleSettings;
+	readonly fixedScale?: FixedScaleSettings;
 }
 export interface StartTask {
-	readonly commandLine?: string | undefined;
-	readonly environmentSettings?: EnvironmentSetting[] | undefined;
-	readonly maxTaskRetryCount?: number | undefined;
-	readonly resourceFiles?: ResourceFile[] | undefined;
-	readonly userIdentity?: UserIdentity | undefined;
-	readonly waitForSuccess?: boolean | undefined;
+	readonly commandLine?: string;
+	readonly environmentSettings?: EnvironmentSetting[];
+	readonly maxTaskRetryCount?: number;
+	readonly resourceFiles?: ResourceFile[];
+	readonly userIdentity?: UserIdentity;
+	readonly waitForSuccess?: boolean;
 }
 export interface TaskSchedulingPolicy {
 	readonly nodeFillType: "Pack";
 }
 export interface UserAccount {
-	readonly elevationLevel?: "Admin" | undefined;
-	readonly linuxUserConfiguration?: LinuxUserConfiguration | undefined;
+	readonly elevationLevel?: "Admin";
+	readonly linuxUserConfiguration?: LinuxUserConfiguration;
 	readonly name: string;
 	readonly password: string;
 }
 export interface UserIdentity {
-	readonly autoUser?: AutoUserSpecification | undefined;
-	readonly userName?: string | undefined;
+	readonly autoUser?: AutoUserSpecification;
+	readonly userName?: string;
 }
 export interface VirtualMachineConfiguration {
-	readonly dataDisks?: DataDisk[] | undefined;
+	readonly dataDisks?: DataDisk[];
 	readonly imageReference: ImageReference;
-	readonly licenseType?: string | undefined;
+	readonly licenseType?: string;
 }
 export interface WindowsConfiguration {
-	readonly enableAutomaticUpdates?: boolean | undefined;
+	readonly enableAutomaticUpdates?: boolean;
 }
 export default {
 	batchAccounts: batchAccounts,

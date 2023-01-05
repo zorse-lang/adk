@@ -24,8 +24,8 @@ export interface BillingGroupComponentInputs {
 	readonly ComputationPreference: ComputationPreference;
 	readonly Name: string;
 	readonly PrimaryAccountId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class CustomLineItem extends CfnResource<CustomLineItemComponentInputs> implements CustomLineItemComponentOutputs {
@@ -50,10 +50,10 @@ export interface CustomLineItemComponentOutputs {
 export interface CustomLineItemComponentInputs {
 	readonly BillingGroupArn: string;
 	readonly Name: string;
-	readonly BillingPeriodRange?: (BillingPeriodRange | undefined) | undefined;
-	readonly CustomLineItemChargeDetails?: (CustomLineItemChargeDetails | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly BillingPeriodRange?: BillingPeriodRange | undefined;
+	readonly CustomLineItemChargeDetails?: CustomLineItemChargeDetails | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class PricingPlan extends CfnResource<PricingPlanComponentInputs> implements PricingPlanComponentOutputs {
@@ -73,9 +73,9 @@ export interface PricingPlanComponentOutputs {
 }
 export interface PricingPlanComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly PricingRuleArns?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly PricingRuleArns?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class PricingRule extends CfnResource<PricingRuleComponentInputs> implements PricingRuleComponentOutputs {
@@ -97,12 +97,12 @@ export interface PricingRuleComponentInputs {
 	readonly Name: string;
 	readonly Scope: string;
 	readonly Type: string;
-	readonly BillingEntity?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ModifierPercentage?: (number | undefined) | undefined;
-	readonly Service?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Tiering?: (Tiering | undefined) | undefined;
+	readonly BillingEntity?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly ModifierPercentage?: number | undefined;
+	readonly Service?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Tiering?: Tiering | undefined;
 	readonly LogicalId: string;
 }
 export interface AccountGrouping {
@@ -112,26 +112,26 @@ export interface ComputationPreference {
 	readonly PricingPlanArn: string;
 }
 export interface BillingPeriodRange {
-	readonly ExclusiveEndBillingPeriod?: (string | undefined) | undefined;
-	readonly InclusiveStartBillingPeriod?: (string | undefined) | undefined;
+	readonly ExclusiveEndBillingPeriod?: string | undefined;
+	readonly InclusiveStartBillingPeriod?: string | undefined;
 }
 export interface CustomLineItemChargeDetails {
-	readonly Flat?: (CustomLineItemFlatChargeDetails | undefined) | undefined;
-	readonly Percentage?: (CustomLineItemPercentageChargeDetails | undefined) | undefined;
+	readonly Flat?: CustomLineItemFlatChargeDetails | undefined;
+	readonly Percentage?: CustomLineItemPercentageChargeDetails | undefined;
 	readonly Type: string;
 }
 export interface CustomLineItemFlatChargeDetails {
 	readonly ChargeValue: number;
 }
 export interface CustomLineItemPercentageChargeDetails {
-	readonly ChildAssociatedResources?: (string[] | undefined) | undefined;
+	readonly ChildAssociatedResources?: string[] | undefined;
 	readonly PercentageValue: number;
 }
 export interface FreeTier {
 	readonly Activated: boolean;
 }
 export interface Tiering {
-	readonly FreeTier?: (FreeTier | undefined) | undefined;
+	readonly FreeTier?: FreeTier | undefined;
 }
 export default {
 	BillingGroup: BillingGroup,

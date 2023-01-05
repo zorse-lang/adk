@@ -7,79 +7,78 @@ export class ProjectsLocationsInstances
 	constructor(entity: ADKEntity, options: ProjectsLocationsInstancesComponentInputs) {
 		super(entity, options.name, "file.v1beta1.ProjectsLocationsInstances", options);
 	}
-	public readonly capacityStepSizeGb?: string | undefined;
-	public readonly createTime?: string | undefined;
-	public readonly maxCapacityGb?: string | undefined;
-	public readonly maxShareCount?: string | undefined;
-	public readonly satisfiesPzs?: boolean | undefined;
-	public readonly state?: string | undefined;
-	public readonly statusMessage?: string | undefined;
-	public readonly suspensionReasons?: string[] | undefined;
+	public readonly capacityStepSizeGb?: string;
+	public readonly createTime?: string;
+	public readonly maxCapacityGb?: string;
+	public readonly maxShareCount?: string;
+	public readonly satisfiesPzs?: boolean;
+	public readonly state?: string;
+	public readonly statusMessage?: string;
+	public readonly suspensionReasons?: string[];
 }
 export interface ProjectsLocationsInstancesComponentOutputs {
-	readonly capacityStepSizeGb?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly maxCapacityGb?: string | undefined;
-	readonly maxShareCount?: string | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly state?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly suspensionReasons?: string[] | undefined;
+	readonly capacityStepSizeGb?: string;
+	readonly createTime?: string;
+	readonly maxCapacityGb?: string;
+	readonly maxShareCount?: string;
+	readonly satisfiesPzs?: boolean;
+	readonly state?: string;
+	readonly statusMessage?: string;
+	readonly suspensionReasons?: string[];
 }
 export interface ProjectsLocationsInstancesComponentInputs {
-	readonly capacityGb?: string | undefined;
-	readonly description?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly fileShares?: FileShareConfig[] | undefined;
+	readonly capacityGb?: string;
+	readonly description?: string;
+	readonly etag?: string;
+	readonly fileShares?: FileShareConfig[];
 	readonly instanceId: string;
-	readonly kmsKeyName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly multiShareEnabled?: boolean | undefined;
+	readonly kmsKeyName?: string;
+	readonly labels?: { [P in string]: string };
+	readonly multiShareEnabled?: boolean;
 	readonly name: string;
-	readonly networks?: NetworkConfig[] | undefined;
+	readonly networks?: NetworkConfig[];
 	readonly parent: string;
-	readonly tier?: string | undefined;
-	readonly type: string;
+	readonly tier?: string;
 }
 export interface FileShareConfig {
-	readonly capacityGb?: string | undefined;
-	readonly name?: string | undefined;
-	readonly nfsExportOptions?: NfsExportOptions[] | undefined;
-	readonly sourceBackup?: string | undefined;
+	readonly capacityGb?: string;
+	readonly name?: string;
+	readonly nfsExportOptions?: NfsExportOptions[];
+	readonly sourceBackup?: string;
 }
 export interface Instance {
-	readonly capacityGb?: string | undefined;
-	readonly capacityStepSizeGb?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly fileShares?: FileShareConfig[] | undefined;
-	readonly kmsKeyName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly maxCapacityGb?: string | undefined;
-	readonly maxShareCount?: string | undefined;
-	readonly multiShareEnabled?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly networks?: NetworkConfig[] | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly state?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly suspensionReasons?: string[] | undefined;
-	readonly tier?: string | undefined;
+	readonly capacityGb?: string;
+	readonly capacityStepSizeGb?: string;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly etag?: string;
+	readonly fileShares?: FileShareConfig[];
+	readonly kmsKeyName?: string;
+	readonly labels?: { [P in string]: string };
+	readonly maxCapacityGb?: string;
+	readonly maxShareCount?: string;
+	readonly multiShareEnabled?: boolean;
+	readonly name?: string;
+	readonly networks?: NetworkConfig[];
+	readonly satisfiesPzs?: boolean;
+	readonly state?: string;
+	readonly statusMessage?: string;
+	readonly suspensionReasons?: string[];
+	readonly tier?: string;
 }
 export interface NetworkConfig {
-	readonly connectMode?: string | undefined;
-	readonly ipAddresses?: string[] | undefined;
-	readonly modes?: string[] | undefined;
-	readonly network?: string | undefined;
-	readonly reservedIpRange?: string | undefined;
+	readonly connectMode?: string;
+	readonly ipAddresses?: string[];
+	readonly modes?: string[];
+	readonly network?: string;
+	readonly reservedIpRange?: string;
 }
 export interface NfsExportOptions {
-	readonly accessMode?: string | undefined;
-	readonly anonGid?: string | undefined;
-	readonly anonUid?: string | undefined;
-	readonly ipRanges?: string[] | undefined;
-	readonly squashMode?: string | undefined;
+	readonly accessMode?: string;
+	readonly anonGid?: string;
+	readonly anonUid?: string;
+	readonly ipRanges?: string[];
+	readonly squashMode?: string;
 }
 export default {
 	ProjectsLocationsInstances: ProjectsLocationsInstances,

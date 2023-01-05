@@ -32,15 +32,15 @@ export interface CenBandwidthPackageComponentInputs {
 	readonly Bandwidth: number;
 	readonly GeographicRegionAId: string;
 	readonly GeographicRegionBId: string;
-	readonly AutoPay?: (boolean | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly AutoRenewDuration?: (number | undefined) | undefined;
-	readonly BandwidthPackageChargeType?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
+	readonly AutoPay?: boolean | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly AutoRenewDuration?: number | undefined;
+	readonly BandwidthPackageChargeType?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PricingCycle?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class CenBandwidthPackageAssociation
@@ -67,11 +67,11 @@ export interface CenInstanceComponentOutputs {
 	readonly CenId: any;
 }
 export interface CenInstanceComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly ProtectionLevel?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly ProtectionLevel?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class CenInstanceAttachment
@@ -88,7 +88,7 @@ export interface CenInstanceAttachmentComponentInputs {
 	readonly ChildInstanceId: string;
 	readonly ChildInstanceRegionId: string;
 	readonly ChildInstanceType: string;
-	readonly ChildInstanceOwnerId?: (number | undefined) | undefined;
+	readonly ChildInstanceOwnerId?: number | undefined;
 	readonly LogicalId: string;
 }
 export class CenRouteMap extends RosResource<CenRouteMapComponentInputs> implements CenRouteMapComponentOutputs {
@@ -106,28 +106,28 @@ export interface CenRouteMapComponentInputs {
 	readonly MapResult: string;
 	readonly Priority: number;
 	readonly TransmitDirection: string;
-	readonly AsPathMatchMode?: (string | undefined) | undefined;
-	readonly CidrMatchMode?: (string | undefined) | undefined;
-	readonly CommunityMatchMode?: (string | undefined) | undefined;
-	readonly CommunityOperateMode?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DestinationChildInstanceTypes?: (string[] | undefined) | undefined;
-	readonly DestinationCidrBlocks?: (string[] | undefined) | undefined;
-	readonly DestinationInstanceIds?: (string[] | undefined) | undefined;
-	readonly DestinationInstanceIdsReverseMatch?: (boolean | undefined) | undefined;
-	readonly DestinationRouteTableIds?: (string[] | undefined) | undefined;
-	readonly MatchAsns?: (string[] | undefined) | undefined;
-	readonly MatchCommunitySet?: (string[] | undefined) | undefined;
-	readonly NextPriority?: (number | undefined) | undefined;
-	readonly OperateCommunitySet?: (string[] | undefined) | undefined;
-	readonly Preference?: (number | undefined) | undefined;
-	readonly PrependAsPath?: (string[] | undefined) | undefined;
-	readonly RouteTypes?: (string[] | undefined) | undefined;
-	readonly SourceChildInstanceTypes?: (string[] | undefined) | undefined;
-	readonly SourceInstanceIds?: (string[] | undefined) | undefined;
-	readonly SourceInstanceIdsReverseMatch?: (boolean | undefined) | undefined;
-	readonly SourceRegionIds?: (string[] | undefined) | undefined;
-	readonly SourceRouteTableIds?: (string[] | undefined) | undefined;
+	readonly AsPathMatchMode?: string | undefined;
+	readonly CidrMatchMode?: string | undefined;
+	readonly CommunityMatchMode?: string | undefined;
+	readonly CommunityOperateMode?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DestinationChildInstanceTypes?: string[] | undefined;
+	readonly DestinationCidrBlocks?: string[] | undefined;
+	readonly DestinationInstanceIds?: string[] | undefined;
+	readonly DestinationInstanceIdsReverseMatch?: boolean | undefined;
+	readonly DestinationRouteTableIds?: string[] | undefined;
+	readonly MatchAsns?: string[] | undefined;
+	readonly MatchCommunitySet?: string[] | undefined;
+	readonly NextPriority?: number | undefined;
+	readonly OperateCommunitySet?: string[] | undefined;
+	readonly Preference?: number | undefined;
+	readonly PrependAsPath?: string[] | undefined;
+	readonly RouteTypes?: string[] | undefined;
+	readonly SourceChildInstanceTypes?: string[] | undefined;
+	readonly SourceInstanceIds?: string[] | undefined;
+	readonly SourceInstanceIdsReverseMatch?: boolean | undefined;
+	readonly SourceRegionIds?: string[] | undefined;
+	readonly SourceRouteTableIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class CenRouteService
@@ -148,8 +148,8 @@ export interface CenRouteServiceComponentInputs {
 	readonly Host: string;
 	readonly HostRegionId: string;
 	readonly HostVpcId: string;
-	readonly ConflictIgnore?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly ConflictIgnore?: boolean | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class CenVbrHealthCheck
@@ -166,10 +166,10 @@ export interface CenVbrHealthCheckComponentInputs {
 	readonly HealthCheckTargetIp: any | string;
 	readonly VbrInstanceId: any | string;
 	readonly VbrInstanceRegionId: any | string;
-	readonly HealthCheckInterval?: (any | number) | undefined;
-	readonly HealthCheckSourceIp?: (any | string) | undefined;
-	readonly HealthyThreshold?: (any | number) | undefined;
-	readonly VbrInstanceOwnerId?: (any | number) | undefined;
+	readonly HealthCheckInterval?: any | number;
+	readonly HealthCheckSourceIp?: any | string;
+	readonly HealthyThreshold?: any | number;
+	readonly VbrInstanceOwnerId?: any | number;
 	readonly LogicalId: string;
 }
 export class ChildInstanceRouteEntryToAttachment
@@ -220,8 +220,8 @@ export interface TransitRouterComponentOutputs {
 }
 export interface TransitRouterComponentInputs {
 	readonly CenId: any | string;
-	readonly TransitRouterDescription?: (any | string) | undefined;
-	readonly TransitRouterName?: (any | string) | undefined;
+	readonly TransitRouterDescription?: any | string;
+	readonly TransitRouterName?: any | string;
 	readonly LogicalId: string;
 }
 export class TransitRouterPeerAttachment
@@ -246,14 +246,14 @@ export interface TransitRouterPeerAttachmentComponentOutputs {
 }
 export interface TransitRouterPeerAttachmentComponentInputs {
 	readonly PeerTransitRouterId: any | string;
-	readonly AutoPublishRouteEnabled?: (any | boolean) | undefined;
-	readonly Bandwidth?: (any | number) | undefined;
-	readonly CenBandwidthPackageId?: (any | string) | undefined;
-	readonly CenId?: (any | string) | undefined;
-	readonly PeerTransitRouterRegionId?: (any | string) | undefined;
-	readonly TransitRouterAttachmentDescription?: (any | string) | undefined;
-	readonly TransitRouterAttachmentName?: (any | string) | undefined;
-	readonly TransitRouterId?: (any | string) | undefined;
+	readonly AutoPublishRouteEnabled?: any | boolean;
+	readonly Bandwidth?: any | number;
+	readonly CenBandwidthPackageId?: any | string;
+	readonly CenId?: any | string;
+	readonly PeerTransitRouterRegionId?: any | string;
+	readonly TransitRouterAttachmentDescription?: any | string;
+	readonly TransitRouterAttachmentName?: any | string;
+	readonly TransitRouterId?: any | string;
 	readonly LogicalId: string;
 }
 export class TransitRouterRouteEntry
@@ -274,9 +274,9 @@ export interface TransitRouterRouteEntryComponentInputs {
 	readonly TransitRouterRouteEntryDestinationCidrBlock: any | string;
 	readonly TransitRouterRouteEntryNextHopType: any | string;
 	readonly TransitRouterRouteTableId: any | string;
-	readonly TransitRouterRouteEntryDescription?: (any | string) | undefined;
-	readonly TransitRouterRouteEntryName?: (any | string) | undefined;
-	readonly TransitRouterRouteEntryNextHopId?: (any | string) | undefined;
+	readonly TransitRouterRouteEntryDescription?: any | string;
+	readonly TransitRouterRouteEntryName?: any | string;
+	readonly TransitRouterRouteEntryNextHopId?: any | string;
 	readonly LogicalId: string;
 }
 export class TransitRouterRouteTable
@@ -297,8 +297,8 @@ export interface TransitRouterRouteTableComponentOutputs {
 }
 export interface TransitRouterRouteTableComponentInputs {
 	readonly TransitRouterId: any | string;
-	readonly TransitRouterRouteTableDescription?: (any | string) | undefined;
-	readonly TransitRouterRouteTableName?: (any | string) | undefined;
+	readonly TransitRouterRouteTableDescription?: any | string;
+	readonly TransitRouterRouteTableName?: any | string;
 	readonly LogicalId: string;
 }
 export class TransitRouterRouteTableAssociation
@@ -357,12 +357,12 @@ export interface TransitRouterVbrAttachmentComponentOutputs {
 }
 export interface TransitRouterVbrAttachmentComponentInputs {
 	readonly VbrId: any | string;
-	readonly AutoPublishRouteEnabled?: (any | boolean) | undefined;
-	readonly CenId?: (any | string) | undefined;
-	readonly TransitRouterAttachmentDescription?: (any | string) | undefined;
-	readonly TransitRouterAttachmentName?: (any | string) | undefined;
-	readonly TransitRouterId?: (any | string) | undefined;
-	readonly VbrOwnerId?: (any | number) | undefined;
+	readonly AutoPublishRouteEnabled?: any | boolean;
+	readonly CenId?: any | string;
+	readonly TransitRouterAttachmentDescription?: any | string;
+	readonly TransitRouterAttachmentName?: any | string;
+	readonly TransitRouterId?: any | string;
+	readonly VbrOwnerId?: any | number;
 	readonly LogicalId: string;
 }
 export class TransitRouterVpcAttachment
@@ -384,20 +384,20 @@ export interface TransitRouterVpcAttachmentComponentOutputs {
 export interface TransitRouterVpcAttachmentComponentInputs {
 	readonly VpcId: any | string;
 	readonly ZoneMappings: ZoneMappings[];
-	readonly AutoCreateVpcRoute?: (boolean | undefined) | undefined;
-	readonly CenId?: (any | string) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly RouteTableAssociationEnabled?: (boolean | undefined) | undefined;
-	readonly RouteTablePropagationEnabled?: (boolean | undefined) | undefined;
-	readonly TransitRouterAttachmentDescription?: (any | string) | undefined;
-	readonly TransitRouterAttachmentName?: (any | string) | undefined;
-	readonly TransitRouterId?: (any | string) | undefined;
-	readonly VpcOwnerId?: (any | number) | undefined;
+	readonly AutoCreateVpcRoute?: boolean | undefined;
+	readonly CenId?: any | string;
+	readonly ChargeType?: string | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly RouteTableAssociationEnabled?: boolean | undefined;
+	readonly RouteTablePropagationEnabled?: boolean | undefined;
+	readonly TransitRouterAttachmentDescription?: any | string;
+	readonly TransitRouterAttachmentName?: any | string;
+	readonly TransitRouterId?: any | string;
+	readonly VpcOwnerId?: any | number;
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface ZoneMappings {

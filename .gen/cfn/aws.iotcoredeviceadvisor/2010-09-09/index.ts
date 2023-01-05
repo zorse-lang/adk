@@ -18,19 +18,19 @@ export interface SuiteDefinitionComponentOutputs {
 }
 export interface SuiteDefinitionComponentInputs {
 	readonly SuiteDefinitionConfiguration: SuiteDefinitionConfiguration;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface DeviceUnderTest {
-	readonly CertificateArn?: (string | undefined) | undefined;
-	readonly ThingArn?: (string | undefined) | undefined;
+	readonly CertificateArn?: string | undefined;
+	readonly ThingArn?: string | undefined;
 }
 export interface SuiteDefinitionConfiguration {
 	readonly DevicePermissionRoleArn: string;
-	readonly Devices?: (DeviceUnderTest[] | undefined) | undefined;
-	readonly IntendedForQualification?: (boolean | undefined) | undefined;
+	readonly Devices?: DeviceUnderTest[] | undefined;
+	readonly IntendedForQualification?: boolean | undefined;
 	readonly RootGroup: string;
-	readonly SuiteDefinitionName?: (string | undefined) | undefined;
+	readonly SuiteDefinitionName?: string | undefined;
 }
 export default {
 	SuiteDefinition: SuiteDefinition,

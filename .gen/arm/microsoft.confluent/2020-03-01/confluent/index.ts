@@ -15,7 +15,7 @@ export interface agreementsComponentOutputs {
 }
 export interface agreementsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfluentAgreementProperties | undefined;
+	readonly properties?: ConfluentAgreementProperties;
 }
 export class organizations extends ArmResource<organizationsComponentInputs> implements organizationsComponentOutputs {
 	constructor(entity: ADKEntity, options: organizationsComponentInputs) {
@@ -31,69 +31,63 @@ export interface organizationsComponentOutputs {
 	readonly type: "Microsoft.Confluent/organizations";
 }
 export interface organizationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: OrganizationResourceProperties | undefined;
-	readonly tags?: OrganizationResourceTags | undefined;
+	readonly properties?: OrganizationResourceProperties;
+	readonly tags?: OrganizationResourceTags;
 }
 export interface ConfluentAgreementProperties {
-	readonly accepted?: boolean | undefined;
-	readonly licenseTextLink?: string | undefined;
-	readonly plan?: string | undefined;
-	readonly privacyPolicyLink?: string | undefined;
-	readonly product?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly retrieveDatetime?: string | undefined;
-	readonly signature?: string | undefined;
+	readonly accepted?: boolean;
+	readonly licenseTextLink?: string;
+	readonly plan?: string;
+	readonly privacyPolicyLink?: string;
+	readonly product?: string;
+	readonly publisher?: string;
+	readonly retrieveDatetime?: string;
+	readonly signature?: string;
 }
 export interface OrganizationResourceProperties {
-	readonly createdTime?: string | undefined;
-	readonly offerDetail?: OrganizationResourcePropertiesOfferDetail | undefined;
-	readonly organizationId?: string | undefined;
+	readonly createdTime?: string;
+	readonly offerDetail?: OrganizationResourcePropertiesOfferDetail;
+	readonly organizationId?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly ssoUrl?: string | undefined;
-	readonly userDetail?: OrganizationResourcePropertiesUserDetail | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
+	readonly ssoUrl?: string;
+	readonly userDetail?: OrganizationResourcePropertiesUserDetail;
 }
 export interface OrganizationResourcePropertiesOfferDetail {
-	readonly id?: string | undefined;
-	readonly planId?: string | undefined;
-	readonly planName?: string | undefined;
-	readonly publisherId?: string | undefined;
+	readonly id?: string;
+	readonly planId?: string;
+	readonly planName?: string;
+	readonly publisherId?: string;
 	readonly status?:
-		| (
-				| "Failed"
-				| "InProgress"
-				| "PendingFulfillmentStart"
-				| "Reinstated"
-				| "Started"
-				| "Subscribed"
-				| "Succeeded"
-				| "Suspended"
-				| "Unsubscribed"
-				| "Updating"
-		  )
-		| undefined;
-	readonly termUnit?: string | undefined;
+		| "Failed"
+		| "InProgress"
+		| "PendingFulfillmentStart"
+		| "Reinstated"
+		| "Started"
+		| "Subscribed"
+		| "Succeeded"
+		| "Suspended"
+		| "Unsubscribed"
+		| "Updating";
+	readonly termUnit?: string;
 }
 export interface OrganizationResourcePropertiesUserDetail {
-	readonly emailAddress?: string | undefined;
-	readonly firstName?: string | undefined;
-	readonly lastName?: string | undefined;
+	readonly emailAddress?: string;
+	readonly firstName?: string;
+	readonly lastName?: string;
 }
 export interface OrganizationResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	agreements: agreements,

@@ -16,9 +16,9 @@ export interface farmBeatsComponentOutputs {
 export interface farmBeatsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: FarmBeatsProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: FarmBeatsProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class farmBeats_extensions
 	extends ArmResource<farmBeats_extensionsComponentInputs>
@@ -37,32 +37,32 @@ export interface farmBeats_extensionsComponentOutputs {
 	readonly type: "Microsoft.AgFoodPlatform/farmBeats/extensions";
 }
 export interface farmBeats_extensionsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: ExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ExtensionProperties;
+	readonly systemData?: SystemData;
 }
 export interface FarmBeatsProperties {
-	readonly instanceUri?: string | undefined;
-	readonly provisioningState?: "Failed" | undefined;
+	readonly instanceUri?: string;
+	readonly provisioningState?: "Failed";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ExtensionProperties {
-	readonly extensionApiDocsLink?: string | undefined;
-	readonly extensionAuthLink?: string | undefined;
-	readonly extensionCategory?: string | undefined;
-	readonly extensionId?: string | undefined;
-	readonly installedExtensionVersion?: string | undefined;
+	readonly extensionApiDocsLink?: string;
+	readonly extensionAuthLink?: string;
+	readonly extensionCategory?: string;
+	readonly extensionId?: string;
+	readonly installedExtensionVersion?: string;
 }
 export default {
 	farmBeats: farmBeats,

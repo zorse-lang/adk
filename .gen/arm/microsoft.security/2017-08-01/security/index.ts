@@ -18,10 +18,10 @@ export interface complianceResultsComponentOutputs {
 }
 export interface complianceResultsComponentInputs {
 	readonly name: string;
-	readonly properties?: ComplianceResultProperties | undefined;
+	readonly properties?: ComplianceResultProperties;
 }
 export interface ComplianceResultProperties {
-	readonly resourceStatus?: ("Healthy" | "NotApplicable" | "NotHealthy" | "OffByPolicy") | undefined;
+	readonly resourceStatus?: "Healthy" | "NotApplicable" | "NotHealthy" | "OffByPolicy";
 }
 export default {
 	complianceResults: complianceResults,

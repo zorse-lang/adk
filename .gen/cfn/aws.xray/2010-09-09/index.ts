@@ -10,10 +10,10 @@ export interface GroupComponentOutputs {
 	readonly GroupArn: string;
 }
 export interface GroupComponentInputs {
-	readonly FilterExpression?: (string | undefined) | undefined;
-	readonly GroupName?: (string | undefined) | undefined;
-	readonly InsightsConfiguration?: (InsightsConfiguration | undefined) | undefined;
-	readonly Tags?: (any[] | undefined) | undefined;
+	readonly FilterExpression?: string | undefined;
+	readonly GroupName?: string | undefined;
+	readonly InsightsConfiguration?: InsightsConfiguration | undefined;
+	readonly Tags?: any[] | undefined;
 	readonly LogicalId: string;
 }
 export class ResourcePolicy extends CfnResource<ResourcePolicyComponentInputs> implements ResourcePolicyComponentOutputs {
@@ -25,7 +25,7 @@ export interface ResourcePolicyComponentOutputs {}
 export interface ResourcePolicyComponentInputs {
 	readonly PolicyDocument: string;
 	readonly PolicyName: string;
-	readonly BypassPolicyLockoutCheck?: (boolean | undefined) | undefined;
+	readonly BypassPolicyLockoutCheck?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class SamplingRule extends CfnResource<SamplingRuleComponentInputs> implements SamplingRuleComponentOutputs {
@@ -38,54 +38,54 @@ export interface SamplingRuleComponentOutputs {
 	readonly RuleArn: string;
 }
 export interface SamplingRuleComponentInputs {
-	readonly RuleName?: (string | undefined) | undefined;
-	readonly SamplingRule?: (SamplingRule | undefined) | undefined;
-	readonly SamplingRuleRecord?: (SamplingRuleRecord | undefined) | undefined;
-	readonly SamplingRuleUpdate?: (SamplingRuleUpdate | undefined) | undefined;
-	readonly Tags?: (any[] | undefined) | undefined;
+	readonly RuleName?: string | undefined;
+	readonly SamplingRule?: SamplingRule | undefined;
+	readonly SamplingRuleRecord?: SamplingRuleRecord | undefined;
+	readonly SamplingRuleUpdate?: SamplingRuleUpdate | undefined;
+	readonly Tags?: any[] | undefined;
 	readonly LogicalId: string;
 }
 export interface InsightsConfiguration {
-	readonly InsightsEnabled?: (boolean | undefined) | undefined;
-	readonly NotificationsEnabled?: (boolean | undefined) | undefined;
+	readonly InsightsEnabled?: boolean | undefined;
+	readonly NotificationsEnabled?: boolean | undefined;
 }
 export interface TagsItems {
 	readonly Key: string;
 	readonly Value: string;
 }
 export interface SamplingRule {
-	readonly Attributes?: ({ [key: string]: string } | undefined) | undefined;
-	readonly FixedRate?: (number | undefined) | undefined;
-	readonly HTTPMethod?: (string | undefined) | undefined;
-	readonly Host?: (string | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly ReservoirSize?: (number | undefined) | undefined;
-	readonly ResourceARN?: (string | undefined) | undefined;
-	readonly RuleARN?: (string | undefined) | undefined;
-	readonly RuleName?: (string | undefined) | undefined;
-	readonly ServiceName?: (string | undefined) | undefined;
-	readonly ServiceType?: (string | undefined) | undefined;
-	readonly URLPath?: (string | undefined) | undefined;
-	readonly Version?: (number | undefined) | undefined;
+	readonly Attributes?: { [key: string]: string } | undefined;
+	readonly FixedRate?: number | undefined;
+	readonly HTTPMethod?: string | undefined;
+	readonly Host?: string | undefined;
+	readonly Priority?: number | undefined;
+	readonly ReservoirSize?: number | undefined;
+	readonly ResourceARN?: string | undefined;
+	readonly RuleARN?: string | undefined;
+	readonly RuleName?: string | undefined;
+	readonly ServiceName?: string | undefined;
+	readonly ServiceType?: string | undefined;
+	readonly URLPath?: string | undefined;
+	readonly Version?: number | undefined;
 }
 export interface SamplingRuleRecord {
-	readonly CreatedAt?: (string | undefined) | undefined;
-	readonly ModifiedAt?: (string | undefined) | undefined;
-	readonly SamplingRule?: (SamplingRule | undefined) | undefined;
+	readonly CreatedAt?: string | undefined;
+	readonly ModifiedAt?: string | undefined;
+	readonly SamplingRule?: SamplingRule | undefined;
 }
 export interface SamplingRuleUpdate {
-	readonly Attributes?: ({ [key: string]: string } | undefined) | undefined;
-	readonly FixedRate?: (number | undefined) | undefined;
-	readonly HTTPMethod?: (string | undefined) | undefined;
-	readonly Host?: (string | undefined) | undefined;
-	readonly Priority?: (number | undefined) | undefined;
-	readonly ReservoirSize?: (number | undefined) | undefined;
-	readonly ResourceARN?: (string | undefined) | undefined;
-	readonly RuleARN?: (string | undefined) | undefined;
-	readonly RuleName?: (string | undefined) | undefined;
-	readonly ServiceName?: (string | undefined) | undefined;
-	readonly ServiceType?: (string | undefined) | undefined;
-	readonly URLPath?: (string | undefined) | undefined;
+	readonly Attributes?: { [key: string]: string } | undefined;
+	readonly FixedRate?: number | undefined;
+	readonly HTTPMethod?: string | undefined;
+	readonly Host?: string | undefined;
+	readonly Priority?: number | undefined;
+	readonly ReservoirSize?: number | undefined;
+	readonly ResourceARN?: string | undefined;
+	readonly RuleARN?: string | undefined;
+	readonly RuleName?: string | undefined;
+	readonly ServiceName?: string | undefined;
+	readonly ServiceType?: string | undefined;
+	readonly URLPath?: string | undefined;
 }
 export default {
 	Group: Group,

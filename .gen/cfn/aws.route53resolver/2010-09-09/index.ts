@@ -29,10 +29,10 @@ export interface FirewallDomainListComponentOutputs {
 	readonly StatusMessage: string;
 }
 export interface FirewallDomainListComponentInputs {
-	readonly DomainFileUrl?: (string | undefined) | undefined;
-	readonly Domains?: (string[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DomainFileUrl?: string | undefined;
+	readonly Domains?: string[] | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class FirewallRuleGroup
@@ -66,9 +66,9 @@ export interface FirewallRuleGroupComponentOutputs {
 	readonly StatusMessage: string;
 }
 export interface FirewallRuleGroupComponentInputs {
-	readonly FirewallRules?: (FirewallRule[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly FirewallRules?: FirewallRule[] | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class FirewallRuleGroupAssociation
@@ -101,9 +101,9 @@ export interface FirewallRuleGroupAssociationComponentInputs {
 	readonly FirewallRuleGroupId: string;
 	readonly Priority: number;
 	readonly VpcId: string;
-	readonly MutationProtection?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly MutationProtection?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ResolverConfig extends CfnResource<ResolverConfigComponentInputs> implements ResolverConfigComponentOutputs {
@@ -141,7 +141,7 @@ export interface ResolverDNSSECConfigComponentOutputs {
 	readonly ValidationStatus: string;
 }
 export interface ResolverDNSSECConfigComponentInputs {
-	readonly ResourceId?: (string | undefined) | undefined;
+	readonly ResourceId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ResolverEndpoint
@@ -168,8 +168,8 @@ export interface ResolverEndpointComponentInputs {
 	readonly Direction: string;
 	readonly IpAddresses: IpAddressRequest[];
 	readonly SecurityGroupIds: string[];
-	readonly Name?: string | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Name?: string;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ResolverQueryLoggingConfig
@@ -199,8 +199,8 @@ export interface ResolverQueryLoggingConfigComponentOutputs {
 	readonly Status: string;
 }
 export interface ResolverQueryLoggingConfigComponentInputs {
-	readonly DestinationArn?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly DestinationArn?: string | undefined;
+	readonly Name?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ResolverQueryLoggingConfigAssociation
@@ -224,8 +224,8 @@ export interface ResolverQueryLoggingConfigAssociationComponentOutputs {
 	readonly Status: string;
 }
 export interface ResolverQueryLoggingConfigAssociationComponentInputs {
-	readonly ResolverQueryLogConfigId?: (string | undefined) | undefined;
-	readonly ResourceId?: (string | undefined) | undefined;
+	readonly ResolverQueryLogConfigId?: string | undefined;
+	readonly ResourceId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ResolverRule extends CfnResource<ResolverRuleComponentInputs> implements ResolverRuleComponentOutputs {
@@ -244,10 +244,10 @@ export interface ResolverRuleComponentOutputs {
 export interface ResolverRuleComponentInputs {
 	readonly DomainName: string;
 	readonly RuleType: string;
-	readonly Name?: string | undefined;
-	readonly ResolverEndpointId?: string | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TargetIps?: (Map<string, TargetAddress> | TargetAddress[]) | undefined;
+	readonly Name?: string;
+	readonly ResolverEndpointId?: string;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TargetIps?: Map<string, TargetAddress> | TargetAddress[];
 	readonly LogicalId: string;
 }
 export class ResolverRuleAssociation
@@ -269,25 +269,25 @@ export interface ResolverRuleAssociationComponentOutputs {
 export interface ResolverRuleAssociationComponentInputs {
 	readonly ResolverRuleId: string;
 	readonly VPCId: string;
-	readonly Name?: string | undefined;
+	readonly Name?: string;
 	readonly LogicalId: string;
 }
 export interface FirewallRule {
 	readonly Action: string;
-	readonly BlockOverrideDnsType?: (string | undefined) | undefined;
-	readonly BlockOverrideDomain?: (string | undefined) | undefined;
-	readonly BlockOverrideTtl?: (number | undefined) | undefined;
-	readonly BlockResponse?: (string | undefined) | undefined;
+	readonly BlockOverrideDnsType?: string | undefined;
+	readonly BlockOverrideDomain?: string | undefined;
+	readonly BlockOverrideTtl?: number | undefined;
+	readonly BlockResponse?: string | undefined;
 	readonly FirewallDomainListId: string;
 	readonly Priority: number;
 }
 export interface IpAddressRequest {
-	readonly Ip?: (string | undefined) | undefined;
+	readonly Ip?: string | undefined;
 	readonly SubnetId: string;
 }
 export interface TargetAddress {
 	readonly Ip: string;
-	readonly Port?: (string | undefined) | undefined;
+	readonly Port?: string | undefined;
 }
 export default {
 	FirewallDomainList: FirewallDomainList,

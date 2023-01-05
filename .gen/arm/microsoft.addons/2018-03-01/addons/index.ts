@@ -18,7 +18,7 @@ export interface supportProviders_supportPlanTypesComponentOutputs {
 }
 export interface supportProviders_supportPlanTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: CanonicalSupportPlanProperties | undefined;
+	readonly properties?: CanonicalSupportPlanProperties;
 }
 export function listSupportPlanInfo(resource: ArmResource): CanonicalSupportPlanInfoDefinition[] {
 	if (resource.apiVersion !== "2018-03-01") {
@@ -30,14 +30,19 @@ export function listSupportPlanInfo(resource: ArmResource): CanonicalSupportPlan
 	throw new Error("not implemented");
 }
 export interface CanonicalSupportPlanInfoDefinition {
-	readonly enabled?: boolean | undefined;
-	readonly oneTimeCharge?: ("no" | "onEnabled" | "onReenabled") | undefined;
-	readonly supportPlanType?: ("advanced" | "essential" | "standard") | undefined;
+	readonly enabled?: boolean;
+	readonly oneTimeCharge?: "no" | "onEnabled" | "onReenabled";
+	readonly supportPlanType?: "advanced" | "essential" | "standard";
 }
 export interface CanonicalSupportPlanProperties {
 	readonly provisioningState?:
-		| ("Cancelled" | "Cancelling" | "Downgrading" | "Failed" | "Purchasing" | "Succeeded" | "Upgrading")
-		| undefined;
+		| "Cancelled"
+		| "Cancelling"
+		| "Downgrading"
+		| "Failed"
+		| "Purchasing"
+		| "Succeeded"
+		| "Upgrading";
 }
 export default {
 	"supportProviders/supportPlanTypes": supportProviders_supportPlanTypes,

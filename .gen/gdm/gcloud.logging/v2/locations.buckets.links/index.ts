@@ -7,30 +7,29 @@ export class LocationsBucketsLinks
 	constructor(entity: ADKEntity, options: LocationsBucketsLinksComponentInputs) {
 		super(entity, options.name, "logging.v2.LocationsBucketsLinks", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly lifecycleState?: string | undefined;
+	public readonly createTime?: string;
+	public readonly lifecycleState?: string;
 }
 export interface LocationsBucketsLinksComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly lifecycleState?: string | undefined;
+	readonly createTime?: string;
+	readonly lifecycleState?: string;
 }
 export interface LocationsBucketsLinksComponentInputs {
-	readonly bigqueryDataset?: BigQueryDataset | undefined;
-	readonly description?: string | undefined;
+	readonly bigqueryDataset?: BigQueryDataset;
+	readonly description?: string;
 	readonly linkId: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly type: string;
 }
 export interface BigQueryDataset {
-	readonly datasetId?: string | undefined;
+	readonly datasetId?: string;
 }
 export interface Link {
-	readonly bigqueryDataset?: BigQueryDataset | undefined;
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly lifecycleState?: string | undefined;
-	readonly name?: string | undefined;
+	readonly bigqueryDataset?: BigQueryDataset;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly lifecycleState?: string;
+	readonly name?: string;
 }
 export default {
 	LocationsBucketsLinks: LocationsBucketsLinks,

@@ -17,11 +17,11 @@ export interface databaseAccountsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts";
 }
 export interface databaseAccountsComponentInputs {
-	readonly kind?: ("GlobalDocumentDB" | "MongoDB" | "Parse") | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: "GlobalDocumentDB" | "MongoDB" | "Parse";
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: DatabaseAccountCreateUpdatePropertiesOrDatabaseAccountProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_databases
 	extends ArmResource<databaseAccounts_apis_databasesComponentInputs>
@@ -40,10 +40,10 @@ export interface databaseAccounts_apis_databasesComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/databases";
 }
 export interface databaseAccounts_apis_databasesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: SqlDatabaseCreateUpdatePropertiesOrSqlDatabaseProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_databases_collections
 	extends ArmResource<databaseAccounts_apis_databases_collectionsComponentInputs>
@@ -68,10 +68,10 @@ export interface databaseAccounts_apis_databases_collectionsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/databases/collections";
 }
 export interface databaseAccounts_apis_databases_collectionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: MongoDBCollectionCreateUpdatePropertiesOrMongoDBCollectionProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_databases_collections_settings
 	extends ArmResource<databaseAccounts_apis_databases_collections_settingsComponentInputs>
@@ -96,10 +96,10 @@ export interface databaseAccounts_apis_databases_collections_settingsComponentOu
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/settings";
 }
 export interface databaseAccounts_apis_databases_collections_settingsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputUpdatePropertiesOrThroughputProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_databases_containers
 	extends ArmResource<databaseAccounts_apis_databases_containersComponentInputs>
@@ -124,10 +124,10 @@ export interface databaseAccounts_apis_databases_containersComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/databases/containers";
 }
 export interface databaseAccounts_apis_databases_containersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: SqlContainerCreateUpdatePropertiesOrSqlContainerProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_databases_containers_settings
 	extends ArmResource<databaseAccounts_apis_databases_containers_settingsComponentInputs>
@@ -152,10 +152,10 @@ export interface databaseAccounts_apis_databases_containers_settingsComponentOut
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/settings";
 }
 export interface databaseAccounts_apis_databases_containers_settingsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputUpdatePropertiesOrThroughputProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_databases_graphs
 	extends ArmResource<databaseAccounts_apis_databases_graphsComponentInputs>
@@ -174,10 +174,10 @@ export interface databaseAccounts_apis_databases_graphsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs";
 }
 export interface databaseAccounts_apis_databases_graphsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: GremlinGraphCreateUpdatePropertiesOrGremlinGraphProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_databases_graphs_settings
 	extends ArmResource<databaseAccounts_apis_databases_graphs_settingsComponentInputs>
@@ -202,10 +202,10 @@ export interface databaseAccounts_apis_databases_graphs_settingsComponentOutputs
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/settings";
 }
 export interface databaseAccounts_apis_databases_graphs_settingsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputUpdatePropertiesOrThroughputProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_databases_settings
 	extends ArmResource<databaseAccounts_apis_databases_settingsComponentInputs>
@@ -224,10 +224,10 @@ export interface databaseAccounts_apis_databases_settingsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/databases/settings";
 }
 export interface databaseAccounts_apis_databases_settingsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputUpdatePropertiesOrThroughputProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_keyspaces
 	extends ArmResource<databaseAccounts_apis_keyspacesComponentInputs>
@@ -246,10 +246,10 @@ export interface databaseAccounts_apis_keyspacesComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/keyspaces";
 }
 export interface databaseAccounts_apis_keyspacesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: CassandraKeyspaceCreateUpdatePropertiesOrCassandraKeyspaceProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_keyspaces_settings
 	extends ArmResource<databaseAccounts_apis_keyspaces_settingsComponentInputs>
@@ -268,10 +268,10 @@ export interface databaseAccounts_apis_keyspaces_settingsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/settings";
 }
 export interface databaseAccounts_apis_keyspaces_settingsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputUpdatePropertiesOrThroughputProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_keyspaces_tables
 	extends ArmResource<databaseAccounts_apis_keyspaces_tablesComponentInputs>
@@ -290,10 +290,10 @@ export interface databaseAccounts_apis_keyspaces_tablesComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables";
 }
 export interface databaseAccounts_apis_keyspaces_tablesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: CassandraTableCreateUpdatePropertiesOrCassandraTableProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_keyspaces_tables_settings
 	extends ArmResource<databaseAccounts_apis_keyspaces_tables_settingsComponentInputs>
@@ -318,10 +318,10 @@ export interface databaseAccounts_apis_keyspaces_tables_settingsComponentOutputs
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/settings";
 }
 export interface databaseAccounts_apis_keyspaces_tables_settingsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputUpdatePropertiesOrThroughputProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_tables
 	extends ArmResource<databaseAccounts_apis_tablesComponentInputs>
@@ -340,10 +340,10 @@ export interface databaseAccounts_apis_tablesComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/tables";
 }
 export interface databaseAccounts_apis_tablesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: TableCreateUpdatePropertiesOrTableProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_apis_tables_settings
 	extends ArmResource<databaseAccounts_apis_tables_settingsComponentInputs>
@@ -362,10 +362,10 @@ export interface databaseAccounts_apis_tables_settingsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/apis/tables/settings";
 }
 export interface databaseAccounts_apis_tables_settingsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputUpdatePropertiesOrThroughputProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export function listConnectionStrings(resource: databaseAccounts): DatabaseAccountListConnectionStringsResult {
 	if (resource.apiVersion !== "2015-04-01") {
@@ -386,10 +386,10 @@ export function listKeys(resource: databaseAccounts): DatabaseAccountListKeysRes
 	throw new Error("not implemented");
 }
 export interface Capability {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface CassandraKeyspaceCreateUpdatePropertiesOrCassandraKeyspaceProperties {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly options: CreateUpdateOptions;
 	readonly resource: CassandraKeyspaceResource;
 }
@@ -397,187 +397,187 @@ export interface CassandraKeyspaceResource {
 	readonly id: string;
 }
 export interface CassandraPartitionKey {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface CassandraSchema {
-	readonly clusterKeys?: ClusterKey[] | undefined;
-	readonly columns?: Column[] | undefined;
-	readonly partitionKeys?: CassandraPartitionKey[] | undefined;
+	readonly clusterKeys?: ClusterKey[];
+	readonly columns?: Column[];
+	readonly partitionKeys?: CassandraPartitionKey[];
 }
 export interface CassandraTableCreateUpdatePropertiesOrCassandraTableProperties {
-	readonly defaultTtl?: number | undefined;
-	readonly id?: string | undefined;
+	readonly defaultTtl?: number;
+	readonly id?: string;
 	readonly options: CreateUpdateOptions;
 	readonly resource: CassandraTableResource;
-	readonly schema?: CassandraSchema | undefined;
+	readonly schema?: CassandraSchema;
 }
 export interface CassandraTableResource {
-	readonly defaultTtl?: number | undefined;
+	readonly defaultTtl?: number;
 	readonly id: string;
-	readonly schema?: CassandraSchema | undefined;
+	readonly schema?: CassandraSchema;
 }
 export interface ClusterKey {
-	readonly name?: string | undefined;
-	readonly orderBy?: string | undefined;
+	readonly name?: string;
+	readonly orderBy?: string;
 }
 export interface Column {
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface ConflictResolutionPolicy {
-	readonly conflictResolutionPath?: string | undefined;
-	readonly conflictResolutionProcedure?: string | undefined;
-	readonly mode?: ("Custom" | "LastWriterWins") | undefined;
+	readonly conflictResolutionPath?: string;
+	readonly conflictResolutionProcedure?: string;
+	readonly mode?: "Custom" | "LastWriterWins";
 }
 export interface ConsistencyPolicy {
 	readonly defaultConsistencyLevel: "BoundedStaleness" | "ConsistentPrefix" | "Eventual" | "Session";
-	readonly maxIntervalInSeconds?: number | undefined;
-	readonly maxStalenessPrefix?: number | undefined;
+	readonly maxIntervalInSeconds?: number;
+	readonly maxStalenessPrefix?: number;
 }
 export interface ContainerPartitionKey {
-	readonly kind?: ("Hash" | "Range") | undefined;
-	readonly paths?: string[] | undefined;
+	readonly kind?: "Hash" | "Range";
+	readonly paths?: string[];
 }
 export interface CreateUpdateOptions {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DatabaseAccountConnectionString {
-	readonly connectionString?: string | undefined;
-	readonly description?: string | undefined;
+	readonly connectionString?: string;
+	readonly description?: string;
 }
 export interface DatabaseAccountCreateUpdatePropertiesOrDatabaseAccountProperties {
-	readonly capabilities?: Capability[] | undefined;
-	readonly connectorOffer?: "Small" | undefined;
-	readonly consistencyPolicy?: ConsistencyPolicy | undefined;
+	readonly capabilities?: Capability[];
+	readonly connectorOffer?: "Small";
+	readonly consistencyPolicy?: ConsistencyPolicy;
 	readonly databaseAccountOfferType: "Standard";
-	readonly documentEndpoint?: string | undefined;
-	readonly enableAutomaticFailover?: boolean | undefined;
-	readonly enableCassandraConnector?: boolean | undefined;
-	readonly enableMultipleWriteLocations?: boolean | undefined;
-	readonly failoverPolicies?: FailoverPolicy[] | undefined;
-	readonly ipRangeFilter?: string | undefined;
-	readonly isVirtualNetworkFilterEnabled?: boolean | undefined;
+	readonly documentEndpoint?: string;
+	readonly enableAutomaticFailover?: boolean;
+	readonly enableCassandraConnector?: boolean;
+	readonly enableMultipleWriteLocations?: boolean;
+	readonly failoverPolicies?: FailoverPolicy[];
+	readonly ipRangeFilter?: string;
+	readonly isVirtualNetworkFilterEnabled?: boolean;
 	readonly locations: Location[];
-	readonly provisioningState?: string | undefined;
-	readonly readLocations?: Location[] | undefined;
-	readonly virtualNetworkRules?: VirtualNetworkRule[] | undefined;
-	readonly writeLocations?: Location[] | undefined;
+	readonly provisioningState?: string;
+	readonly readLocations?: Location[];
+	readonly virtualNetworkRules?: VirtualNetworkRule[];
+	readonly writeLocations?: Location[];
 }
 export interface DatabaseAccountListConnectionStringsResult {
-	readonly connectionStrings?: DatabaseAccountConnectionString[] | undefined;
+	readonly connectionStrings?: DatabaseAccountConnectionString[];
 }
 export interface DatabaseAccountListKeysResult {
-	readonly primaryMasterKey?: string | undefined;
-	readonly primaryReadonlyMasterKey?: string | undefined;
-	readonly secondaryMasterKey?: string | undefined;
-	readonly secondaryReadonlyMasterKey?: string | undefined;
+	readonly primaryMasterKey?: string;
+	readonly primaryReadonlyMasterKey?: string;
+	readonly secondaryMasterKey?: string;
+	readonly secondaryReadonlyMasterKey?: string;
 }
 export interface ExcludedPath {
-	readonly path?: string | undefined;
+	readonly path?: string;
 }
 export interface FailoverPolicy {
-	readonly failoverPriority?: number | undefined;
-	readonly id?: string | undefined;
-	readonly locationName?: string | undefined;
+	readonly failoverPriority?: number;
+	readonly id?: string;
+	readonly locationName?: string;
 }
 export interface GremlinGraphCreateUpdatePropertiesOrGremlinGraphProperties {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: any | undefined;
-	readonly conflictResolutionPolicy?: ConflictResolutionPolicy | undefined;
-	readonly defaultTtl?: number | undefined;
-	readonly id?: string | undefined;
-	readonly indexingPolicy?: IndexingPolicy | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: any;
+	readonly conflictResolutionPolicy?: ConflictResolutionPolicy;
+	readonly defaultTtl?: number;
+	readonly id?: string;
+	readonly indexingPolicy?: IndexingPolicy;
 	readonly options: CreateUpdateOptions;
-	readonly partitionKey?: ContainerPartitionKey | undefined;
+	readonly partitionKey?: ContainerPartitionKey;
 	readonly resource: GremlinGraphResource;
-	readonly uniqueKeyPolicy?: UniqueKeyPolicy | undefined;
+	readonly uniqueKeyPolicy?: UniqueKeyPolicy;
 }
 export interface GremlinGraphResource {
-	readonly conflictResolutionPolicy?: ConflictResolutionPolicy | undefined;
-	readonly defaultTtl?: number | undefined;
+	readonly conflictResolutionPolicy?: ConflictResolutionPolicy;
+	readonly defaultTtl?: number;
 	readonly id: string;
-	readonly indexingPolicy?: IndexingPolicy | undefined;
-	readonly partitionKey?: ContainerPartitionKey | undefined;
-	readonly uniqueKeyPolicy?: UniqueKeyPolicy | undefined;
+	readonly indexingPolicy?: IndexingPolicy;
+	readonly partitionKey?: ContainerPartitionKey;
+	readonly uniqueKeyPolicy?: UniqueKeyPolicy;
 }
 export interface IncludedPath {
-	readonly indexes?: Indexes[] | undefined;
-	readonly path?: string | undefined;
+	readonly indexes?: Indexes[];
+	readonly path?: string;
 }
 export interface Indexes {
-	readonly dataType?: ("LineString" | "MultiPolygon" | "Number" | "Point" | "Polygon" | "String") | undefined;
-	readonly kind?: ("Hash" | "Range" | "Spatial") | undefined;
-	readonly precision?: number | undefined;
+	readonly dataType?: "LineString" | "MultiPolygon" | "Number" | "Point" | "Polygon" | "String";
+	readonly kind?: "Hash" | "Range" | "Spatial";
+	readonly precision?: number;
 }
 export interface IndexingPolicy {
-	readonly automatic?: boolean | undefined;
-	readonly excludedPaths?: ExcludedPath[] | undefined;
-	readonly includedPaths?: IncludedPath[] | undefined;
-	readonly indexingMode?: ("Consistent" | "Lazy" | "None") | undefined;
+	readonly automatic?: boolean;
+	readonly excludedPaths?: ExcludedPath[];
+	readonly includedPaths?: IncludedPath[];
+	readonly indexingMode?: "Consistent" | "Lazy" | "None";
 }
 export interface Location {
-	readonly documentEndpoint?: string | undefined;
-	readonly failoverPriority?: number | undefined;
-	readonly id?: string | undefined;
-	readonly isZoneRedundant?: boolean | undefined;
-	readonly locationName?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly documentEndpoint?: string;
+	readonly failoverPriority?: number;
+	readonly id?: string;
+	readonly isZoneRedundant?: boolean;
+	readonly locationName?: string;
+	readonly provisioningState?: string;
 }
 export interface MongoDBCollectionCreateUpdatePropertiesOrMongoDBCollectionProperties {
-	readonly id?: string | undefined;
-	readonly indexes?: MongoIndex[] | undefined;
+	readonly id?: string;
+	readonly indexes?: MongoIndex[];
 	readonly options: CreateUpdateOptions;
 	readonly resource: MongoDBCollectionResource;
-	readonly shardKey?: ShardKeys | undefined;
+	readonly shardKey?: ShardKeys;
 }
 export interface MongoDBCollectionResource {
 	readonly id: string;
-	readonly indexes?: MongoIndex[] | undefined;
-	readonly shardKey?: ShardKeys | undefined;
+	readonly indexes?: MongoIndex[];
+	readonly shardKey?: ShardKeys;
 }
 export interface MongoIndex {
-	readonly key?: MongoIndexKeys | undefined;
-	readonly options?: MongoIndexOptions | undefined;
+	readonly key?: MongoIndexKeys;
+	readonly options?: MongoIndexOptions;
 }
 export interface MongoIndexKeys {
-	readonly keys?: string[] | undefined;
+	readonly keys?: string[];
 }
 export interface MongoIndexOptions {
-	readonly expireAfterSeconds?: number | undefined;
-	readonly unique?: boolean | undefined;
+	readonly expireAfterSeconds?: number;
+	readonly unique?: boolean;
 }
 export interface ShardKeys {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SqlContainerCreateUpdatePropertiesOrSqlContainerProperties {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: any | undefined;
-	readonly conflictResolutionPolicy?: ConflictResolutionPolicy | undefined;
-	readonly defaultTtl?: number | undefined;
-	readonly id?: string | undefined;
-	readonly indexingPolicy?: IndexingPolicy | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: any;
+	readonly conflictResolutionPolicy?: ConflictResolutionPolicy;
+	readonly defaultTtl?: number;
+	readonly id?: string;
+	readonly indexingPolicy?: IndexingPolicy;
 	readonly options: CreateUpdateOptions;
-	readonly partitionKey?: ContainerPartitionKey | undefined;
+	readonly partitionKey?: ContainerPartitionKey;
 	readonly resource: SqlContainerResource;
-	readonly uniqueKeyPolicy?: UniqueKeyPolicy | undefined;
+	readonly uniqueKeyPolicy?: UniqueKeyPolicy;
 }
 export interface SqlContainerResource {
-	readonly conflictResolutionPolicy?: ConflictResolutionPolicy | undefined;
-	readonly defaultTtl?: number | undefined;
+	readonly conflictResolutionPolicy?: ConflictResolutionPolicy;
+	readonly defaultTtl?: number;
 	readonly id: string;
-	readonly indexingPolicy?: IndexingPolicy | undefined;
-	readonly partitionKey?: ContainerPartitionKey | undefined;
-	readonly uniqueKeyPolicy?: UniqueKeyPolicy | undefined;
+	readonly indexingPolicy?: IndexingPolicy;
+	readonly partitionKey?: ContainerPartitionKey;
+	readonly uniqueKeyPolicy?: UniqueKeyPolicy;
 }
 export interface SqlDatabaseCreateUpdatePropertiesOrSqlDatabaseProperties {
-	readonly _colls?: string | undefined;
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: any | undefined;
-	readonly _users?: string | undefined;
-	readonly id?: string | undefined;
+	readonly _colls?: string;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: any;
+	readonly _users?: string;
+	readonly id?: string;
 	readonly options: CreateUpdateOptions;
 	readonly resource: SqlDatabaseResource;
 }
@@ -585,7 +585,7 @@ export interface SqlDatabaseResource {
 	readonly id: string;
 }
 export interface TableCreateUpdatePropertiesOrTableProperties {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly options: CreateUpdateOptions;
 	readonly resource: TableResource;
 }
@@ -593,24 +593,24 @@ export interface TableResource {
 	readonly id: string;
 }
 export interface Tags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ThroughputResource {
 	readonly throughput: number;
 }
 export interface ThroughputUpdatePropertiesOrThroughputProperties {
 	readonly resource: ThroughputResource;
-	readonly throughput?: number | undefined;
+	readonly throughput?: number;
 }
 export interface UniqueKey {
-	readonly paths?: string[] | undefined;
+	readonly paths?: string[];
 }
 export interface UniqueKeyPolicy {
-	readonly uniqueKeys?: UniqueKey[] | undefined;
+	readonly uniqueKeys?: UniqueKey[];
 }
 export interface VirtualNetworkRule {
-	readonly id?: string | undefined;
-	readonly ignoreMissingVNetServiceEndpoint?: boolean | undefined;
+	readonly id?: string;
+	readonly ignoreMissingVNetServiceEndpoint?: boolean;
 }
 export default {
 	databaseAccounts: databaseAccounts,

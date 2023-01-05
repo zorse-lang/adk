@@ -19,28 +19,28 @@ export interface CacheClusterComponentInputs {
 	readonly CacheNodeType: string;
 	readonly Engine: string;
 	readonly NumCacheNodes: number;
-	readonly AutoMinorVersionUpgrade?: (boolean | undefined) | undefined;
-	readonly AZMode?: (string | undefined) | undefined;
-	readonly CacheParameterGroupName?: (string | undefined) | undefined;
-	readonly CacheSecurityGroupNames?: (string[] | undefined) | undefined;
-	readonly CacheSubnetGroupName?: (string | undefined) | undefined;
-	readonly ClusterName?: (string | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly IpDiscovery?: (string | undefined) | undefined;
-	readonly LogDeliveryConfigurations?: (LogDeliveryConfigurationRequest[] | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly NotificationTopicArn?: (string | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly PreferredAvailabilityZone?: (string | undefined) | undefined;
-	readonly PreferredAvailabilityZones?: (string[] | undefined) | undefined;
-	readonly PreferredMaintenanceWindow?: (string | undefined) | undefined;
-	readonly SnapshotArns?: (string[] | undefined) | undefined;
-	readonly SnapshotName?: (string | undefined) | undefined;
-	readonly SnapshotRetentionLimit?: (number | undefined) | undefined;
-	readonly SnapshotWindow?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TransitEncryptionEnabled?: (boolean | undefined) | undefined;
-	readonly VpcSecurityGroupIds?: (string[] | undefined) | undefined;
+	readonly AutoMinorVersionUpgrade?: boolean | undefined;
+	readonly AZMode?: string | undefined;
+	readonly CacheParameterGroupName?: string | undefined;
+	readonly CacheSecurityGroupNames?: string[] | undefined;
+	readonly CacheSubnetGroupName?: string | undefined;
+	readonly ClusterName?: string | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly IpDiscovery?: string | undefined;
+	readonly LogDeliveryConfigurations?: LogDeliveryConfigurationRequest[] | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly NotificationTopicArn?: string | undefined;
+	readonly Port?: number | undefined;
+	readonly PreferredAvailabilityZone?: string | undefined;
+	readonly PreferredAvailabilityZones?: string[] | undefined;
+	readonly PreferredMaintenanceWindow?: string | undefined;
+	readonly SnapshotArns?: string[] | undefined;
+	readonly SnapshotName?: string | undefined;
+	readonly SnapshotRetentionLimit?: number | undefined;
+	readonly SnapshotWindow?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TransitEncryptionEnabled?: boolean | undefined;
+	readonly VpcSecurityGroupIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class GlobalReplicationGroup
@@ -59,14 +59,14 @@ export interface GlobalReplicationGroupComponentOutputs {
 }
 export interface GlobalReplicationGroupComponentInputs {
 	readonly Members: GlobalReplicationGroupMember[];
-	readonly AutomaticFailoverEnabled?: (boolean | undefined) | undefined;
-	readonly CacheNodeType?: (string | undefined) | undefined;
-	readonly CacheParameterGroupName?: (string | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly GlobalNodeGroupCount?: (number | undefined) | undefined;
-	readonly GlobalReplicationGroupDescription?: (string | undefined) | undefined;
-	readonly GlobalReplicationGroupIdSuffix?: (string | undefined) | undefined;
-	readonly RegionalConfigurations?: (RegionalConfiguration[] | undefined) | undefined;
+	readonly AutomaticFailoverEnabled?: boolean | undefined;
+	readonly CacheNodeType?: string | undefined;
+	readonly CacheParameterGroupName?: string | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly GlobalNodeGroupCount?: number | undefined;
+	readonly GlobalReplicationGroupDescription?: string | undefined;
+	readonly GlobalReplicationGroupIdSuffix?: string | undefined;
+	readonly RegionalConfigurations?: RegionalConfiguration[] | undefined;
 	readonly LogicalId: string;
 }
 export class ParameterGroup extends CfnResource<ParameterGroupComponentInputs> implements ParameterGroupComponentOutputs {
@@ -78,8 +78,8 @@ export interface ParameterGroupComponentOutputs {}
 export interface ParameterGroupComponentInputs {
 	readonly CacheParameterGroupFamily: string;
 	readonly Description: string;
-	readonly Properties?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Properties?: { [key: string]: string } | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ReplicationGroup
@@ -114,42 +114,42 @@ export interface ReplicationGroupComponentOutputs {
 }
 export interface ReplicationGroupComponentInputs {
 	readonly ReplicationGroupDescription: string;
-	readonly AtRestEncryptionEnabled?: (boolean | undefined) | undefined;
-	readonly AuthToken?: (string | undefined) | undefined;
-	readonly AutomaticFailoverEnabled?: (boolean | undefined) | undefined;
-	readonly AutoMinorVersionUpgrade?: (boolean | undefined) | undefined;
-	readonly CacheNodeType?: (string | undefined) | undefined;
-	readonly CacheParameterGroupName?: (string | undefined) | undefined;
-	readonly CacheSecurityGroupNames?: (string[] | undefined) | undefined;
-	readonly CacheSubnetGroupName?: (string | undefined) | undefined;
-	readonly DataTieringEnabled?: (boolean | undefined) | undefined;
-	readonly Engine?: (string | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly GlobalReplicationGroupId?: (string | undefined) | undefined;
-	readonly IpDiscovery?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly LogDeliveryConfigurations?: (LogDeliveryConfigurationRequest[] | undefined) | undefined;
-	readonly MultiAZEnabled?: (boolean | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly NodeGroupConfiguration?: (NodeGroupConfiguration[] | undefined) | undefined;
-	readonly NotificationTopicArn?: (string | undefined) | undefined;
-	readonly NumCacheClusters?: (number | undefined) | undefined;
-	readonly NumNodeGroups?: (number | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly PreferredCacheClusterAZs?: (string[] | undefined) | undefined;
-	readonly PreferredMaintenanceWindow?: (string | undefined) | undefined;
-	readonly PrimaryClusterId?: (string | undefined) | undefined;
-	readonly ReplicasPerNodeGroup?: (number | undefined) | undefined;
-	readonly ReplicationGroupId?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SnapshotArns?: (string[] | undefined) | undefined;
-	readonly SnapshotName?: (string | undefined) | undefined;
-	readonly SnapshotRetentionLimit?: (number | undefined) | undefined;
-	readonly SnapshottingClusterId?: (string | undefined) | undefined;
-	readonly SnapshotWindow?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TransitEncryptionEnabled?: (boolean | undefined) | undefined;
-	readonly UserGroupIds?: (string[] | undefined) | undefined;
+	readonly AtRestEncryptionEnabled?: boolean | undefined;
+	readonly AuthToken?: string | undefined;
+	readonly AutomaticFailoverEnabled?: boolean | undefined;
+	readonly AutoMinorVersionUpgrade?: boolean | undefined;
+	readonly CacheNodeType?: string | undefined;
+	readonly CacheParameterGroupName?: string | undefined;
+	readonly CacheSecurityGroupNames?: string[] | undefined;
+	readonly CacheSubnetGroupName?: string | undefined;
+	readonly DataTieringEnabled?: boolean | undefined;
+	readonly Engine?: string | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly GlobalReplicationGroupId?: string | undefined;
+	readonly IpDiscovery?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly LogDeliveryConfigurations?: LogDeliveryConfigurationRequest[] | undefined;
+	readonly MultiAZEnabled?: boolean | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly NodeGroupConfiguration?: NodeGroupConfiguration[] | undefined;
+	readonly NotificationTopicArn?: string | undefined;
+	readonly NumCacheClusters?: number | undefined;
+	readonly NumNodeGroups?: number | undefined;
+	readonly Port?: number | undefined;
+	readonly PreferredCacheClusterAZs?: string[] | undefined;
+	readonly PreferredMaintenanceWindow?: string | undefined;
+	readonly PrimaryClusterId?: string | undefined;
+	readonly ReplicasPerNodeGroup?: number | undefined;
+	readonly ReplicationGroupId?: string | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SnapshotArns?: string[] | undefined;
+	readonly SnapshotName?: string | undefined;
+	readonly SnapshotRetentionLimit?: number | undefined;
+	readonly SnapshottingClusterId?: string | undefined;
+	readonly SnapshotWindow?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TransitEncryptionEnabled?: boolean | undefined;
+	readonly UserGroupIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityGroup extends CfnResource<SecurityGroupComponentInputs> implements SecurityGroupComponentOutputs {
@@ -160,7 +160,7 @@ export class SecurityGroup extends CfnResource<SecurityGroupComponentInputs> imp
 export interface SecurityGroupComponentOutputs {}
 export interface SecurityGroupComponentInputs {
 	readonly Description: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityGroupIngress
@@ -175,7 +175,7 @@ export interface SecurityGroupIngressComponentOutputs {}
 export interface SecurityGroupIngressComponentInputs {
 	readonly CacheSecurityGroupName: string;
 	readonly EC2SecurityGroupName: string;
-	readonly EC2SecurityGroupOwnerId?: (string | undefined) | undefined;
+	readonly EC2SecurityGroupOwnerId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SubnetGroup extends CfnResource<SubnetGroupComponentInputs> implements SubnetGroupComponentOutputs {
@@ -187,8 +187,8 @@ export interface SubnetGroupComponentOutputs {}
 export interface SubnetGroupComponentInputs {
 	readonly Description: string;
 	readonly SubnetIds: string[];
-	readonly CacheSubnetGroupName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CacheSubnetGroupName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class User extends CfnResource<UserComponentInputs> implements UserComponentOutputs {
@@ -206,10 +206,10 @@ export interface UserComponentInputs {
 	readonly Engine: string;
 	readonly UserId: string;
 	readonly UserName: string;
-	readonly AccessString?: (string | undefined) | undefined;
-	readonly AuthenticationMode?: (AuthenticationMode | undefined) | undefined;
-	readonly NoPasswordRequired?: (boolean | undefined) | undefined;
-	readonly Passwords?: (string[] | undefined) | undefined;
+	readonly AccessString?: string | undefined;
+	readonly AuthenticationMode?: AuthenticationMode | undefined;
+	readonly NoPasswordRequired?: boolean | undefined;
+	readonly Passwords?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class UserGroup extends CfnResource<UserGroupComponentInputs> implements UserGroupComponentOutputs {
@@ -226,15 +226,15 @@ export interface UserGroupComponentOutputs {
 export interface UserGroupComponentInputs {
 	readonly Engine: string;
 	readonly UserGroupId: string;
-	readonly UserIds?: (string[] | undefined) | undefined;
+	readonly UserIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export interface CloudWatchLogsDestinationDetails {
 	readonly LogGroup: string;
 }
 export interface DestinationDetails {
-	readonly CloudWatchLogsDetails?: (CloudWatchLogsDestinationDetails | undefined) | undefined;
-	readonly KinesisFirehoseDetails?: (KinesisFirehoseDestinationDetails | undefined) | undefined;
+	readonly CloudWatchLogsDetails?: CloudWatchLogsDestinationDetails | undefined;
+	readonly KinesisFirehoseDetails?: KinesisFirehoseDestinationDetails | undefined;
 }
 export interface KinesisFirehoseDestinationDetails {
 	readonly DeliveryStream: string;
@@ -246,28 +246,28 @@ export interface LogDeliveryConfigurationRequest {
 	readonly LogType: string;
 }
 export interface GlobalReplicationGroupMember {
-	readonly ReplicationGroupId?: (string | undefined) | undefined;
-	readonly ReplicationGroupRegion?: (string | undefined) | undefined;
-	readonly Role?: (string | undefined) | undefined;
+	readonly ReplicationGroupId?: string | undefined;
+	readonly ReplicationGroupRegion?: string | undefined;
+	readonly Role?: string | undefined;
 }
 export interface RegionalConfiguration {
-	readonly ReplicationGroupId?: (string | undefined) | undefined;
-	readonly ReplicationGroupRegion?: (string | undefined) | undefined;
-	readonly ReshardingConfigurations?: (ReshardingConfiguration[] | undefined) | undefined;
+	readonly ReplicationGroupId?: string | undefined;
+	readonly ReplicationGroupRegion?: string | undefined;
+	readonly ReshardingConfigurations?: ReshardingConfiguration[] | undefined;
 }
 export interface ReshardingConfiguration {
-	readonly NodeGroupId?: (string | undefined) | undefined;
-	readonly PreferredAvailabilityZones?: (string[] | undefined) | undefined;
+	readonly NodeGroupId?: string | undefined;
+	readonly PreferredAvailabilityZones?: string[] | undefined;
 }
 export interface NodeGroupConfiguration {
-	readonly NodeGroupId?: (string | undefined) | undefined;
-	readonly PrimaryAvailabilityZone?: (string | undefined) | undefined;
-	readonly ReplicaAvailabilityZones?: (string[] | undefined) | undefined;
-	readonly ReplicaCount?: (number | undefined) | undefined;
-	readonly Slots?: (string | undefined) | undefined;
+	readonly NodeGroupId?: string | undefined;
+	readonly PrimaryAvailabilityZone?: string | undefined;
+	readonly ReplicaAvailabilityZones?: string[] | undefined;
+	readonly ReplicaCount?: number | undefined;
+	readonly Slots?: string | undefined;
 }
 export interface AuthenticationMode {
-	readonly Passwords?: (string[] | undefined) | undefined;
+	readonly Passwords?: string[] | undefined;
 	readonly Type: string;
 }
 export default {

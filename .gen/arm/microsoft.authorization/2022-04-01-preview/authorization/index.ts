@@ -24,7 +24,7 @@ export interface roleAssignmentScheduleRequestsComponentOutputs {
 }
 export interface roleAssignmentScheduleRequestsComponentInputs {
 	readonly name: string;
-	readonly properties?: RoleAssignmentScheduleRequestProperties | undefined;
+	readonly properties?: RoleAssignmentScheduleRequestProperties;
 }
 export class roleEligibilityScheduleRequests
 	extends ArmResource<roleEligibilityScheduleRequestsComponentInputs>
@@ -50,40 +50,40 @@ export interface roleEligibilityScheduleRequestsComponentOutputs {
 }
 export interface roleEligibilityScheduleRequestsComponentInputs {
 	readonly name: string;
-	readonly properties?: RoleEligibilityScheduleRequestProperties | undefined;
+	readonly properties?: RoleEligibilityScheduleRequestProperties;
 }
 export interface ExpandedProperties {
-	readonly principal?: ExpandedPropertiesPrincipal | undefined;
-	readonly roleDefinition?: ExpandedPropertiesRoleDefinition | undefined;
-	readonly scope?: ExpandedPropertiesScope | undefined;
+	readonly principal?: ExpandedPropertiesPrincipal;
+	readonly roleDefinition?: ExpandedPropertiesRoleDefinition;
+	readonly scope?: ExpandedPropertiesScope;
 }
 export interface ExpandedPropertiesPrincipal {
-	readonly displayName?: string | undefined;
-	readonly email?: string | undefined;
-	readonly id?: string | undefined;
-	readonly type?: string | undefined;
+	readonly displayName?: string;
+	readonly email?: string;
+	readonly id?: string;
+	readonly type?: string;
 }
 export interface ExpandedPropertiesRoleDefinition {
-	readonly displayName?: string | undefined;
-	readonly id?: string | undefined;
-	readonly type?: string | undefined;
+	readonly displayName?: string;
+	readonly id?: string;
+	readonly type?: string;
 }
 export interface ExpandedPropertiesScope {
-	readonly displayName?: string | undefined;
-	readonly id?: string | undefined;
-	readonly type?: string | undefined;
+	readonly displayName?: string;
+	readonly id?: string;
+	readonly type?: string;
 }
 export interface RoleAssignmentScheduleRequestProperties {
-	readonly approvalId?: string | undefined;
-	readonly condition?: string | undefined;
-	readonly conditionVersion?: string | undefined;
-	readonly createdOn?: string | undefined;
-	readonly expandedProperties?: ExpandedProperties | undefined;
-	readonly justification?: string | undefined;
-	readonly linkedRoleEligibilityScheduleId?: string | undefined;
+	readonly approvalId?: string;
+	readonly condition?: string;
+	readonly conditionVersion?: string;
+	readonly createdOn?: string;
+	readonly expandedProperties?: ExpandedProperties;
+	readonly justification?: string;
+	readonly linkedRoleEligibilityScheduleId?: string;
 	readonly principalId: string;
-	readonly principalType?: ("Device" | "ForeignGroup" | "Group" | "ServicePrincipal" | "User") | undefined;
-	readonly requestorId?: string | undefined;
+	readonly principalType?: "Device" | "ForeignGroup" | "Group" | "ServicePrincipal" | "User";
+	readonly requestorId?: string;
 	readonly requestType:
 		| "AdminAssign"
 		| "AdminExtend"
@@ -95,61 +95,58 @@ export interface RoleAssignmentScheduleRequestProperties {
 		| "SelfExtend"
 		| "SelfRenew";
 	readonly roleDefinitionId: string;
-	readonly scheduleInfo?: RoleAssignmentScheduleRequestPropertiesScheduleInfo | undefined;
-	readonly scope?: string | undefined;
+	readonly scheduleInfo?: RoleAssignmentScheduleRequestPropertiesScheduleInfo;
+	readonly scope?: string;
 	readonly status?:
-		| (
-				| "Accepted"
-				| "AdminApproved"
-				| "AdminDenied"
-				| "Canceled"
-				| "Denied"
-				| "Failed"
-				| "FailedAsResourceIsLocked"
-				| "Granted"
-				| "Invalid"
-				| "PendingAdminDecision"
-				| "PendingApproval"
-				| "PendingApprovalProvisioning"
-				| "PendingEvaluation"
-				| "PendingExternalProvisioning"
-				| "PendingProvisioning"
-				| "PendingRevocation"
-				| "PendingScheduleCreation"
-				| "Provisioned"
-				| "ProvisioningStarted"
-				| "Revoked"
-				| "ScheduleCreated"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly targetRoleAssignmentScheduleId?: string | undefined;
-	readonly targetRoleAssignmentScheduleInstanceId?: string | undefined;
-	readonly ticketInfo?: RoleAssignmentScheduleRequestPropertiesTicketInfo | undefined;
+		| "Accepted"
+		| "AdminApproved"
+		| "AdminDenied"
+		| "Canceled"
+		| "Denied"
+		| "Failed"
+		| "FailedAsResourceIsLocked"
+		| "Granted"
+		| "Invalid"
+		| "PendingAdminDecision"
+		| "PendingApproval"
+		| "PendingApprovalProvisioning"
+		| "PendingEvaluation"
+		| "PendingExternalProvisioning"
+		| "PendingProvisioning"
+		| "PendingRevocation"
+		| "PendingScheduleCreation"
+		| "Provisioned"
+		| "ProvisioningStarted"
+		| "Revoked"
+		| "ScheduleCreated"
+		| "TimedOut";
+	readonly targetRoleAssignmentScheduleId?: string;
+	readonly targetRoleAssignmentScheduleInstanceId?: string;
+	readonly ticketInfo?: RoleAssignmentScheduleRequestPropertiesTicketInfo;
 }
 export interface RoleAssignmentScheduleRequestPropertiesScheduleInfo {
-	readonly expiration?: RoleAssignmentScheduleRequestPropertiesScheduleInfoExpiration | undefined;
-	readonly startDateTime?: string | undefined;
+	readonly expiration?: RoleAssignmentScheduleRequestPropertiesScheduleInfoExpiration;
+	readonly startDateTime?: string;
 }
 export interface RoleAssignmentScheduleRequestPropertiesScheduleInfoExpiration {
-	readonly duration?: string | undefined;
-	readonly endDateTime?: string | undefined;
-	readonly type?: ("AfterDateTime" | "AfterDuration" | "NoExpiration") | undefined;
+	readonly duration?: string;
+	readonly endDateTime?: string;
+	readonly type?: "AfterDateTime" | "AfterDuration" | "NoExpiration";
 }
 export interface RoleAssignmentScheduleRequestPropertiesTicketInfo {
-	readonly ticketNumber?: string | undefined;
-	readonly ticketSystem?: string | undefined;
+	readonly ticketNumber?: string;
+	readonly ticketSystem?: string;
 }
 export interface RoleEligibilityScheduleRequestProperties {
-	readonly approvalId?: string | undefined;
-	readonly condition?: string | undefined;
-	readonly conditionVersion?: string | undefined;
-	readonly createdOn?: string | undefined;
-	readonly expandedProperties?: ExpandedProperties | undefined;
-	readonly justification?: string | undefined;
+	readonly approvalId?: string;
+	readonly condition?: string;
+	readonly conditionVersion?: string;
+	readonly createdOn?: string;
+	readonly expandedProperties?: ExpandedProperties;
+	readonly justification?: string;
 	readonly principalId: string;
-	readonly principalType?: ("Device" | "ForeignGroup" | "Group" | "ServicePrincipal" | "User") | undefined;
-	readonly requestorId?: string | undefined;
+	readonly principalType?: "Device" | "ForeignGroup" | "Group" | "ServicePrincipal" | "User";
+	readonly requestorId?: string;
 	readonly requestType:
 		| "AdminAssign"
 		| "AdminExtend"
@@ -161,50 +158,47 @@ export interface RoleEligibilityScheduleRequestProperties {
 		| "SelfExtend"
 		| "SelfRenew";
 	readonly roleDefinitionId: string;
-	readonly scheduleInfo?: RoleEligibilityScheduleRequestPropertiesScheduleInfo | undefined;
-	readonly scope?: string | undefined;
+	readonly scheduleInfo?: RoleEligibilityScheduleRequestPropertiesScheduleInfo;
+	readonly scope?: string;
 	readonly status?:
-		| (
-				| "Accepted"
-				| "AdminApproved"
-				| "AdminDenied"
-				| "Canceled"
-				| "Denied"
-				| "Failed"
-				| "FailedAsResourceIsLocked"
-				| "Granted"
-				| "Invalid"
-				| "PendingAdminDecision"
-				| "PendingApproval"
-				| "PendingApprovalProvisioning"
-				| "PendingEvaluation"
-				| "PendingExternalProvisioning"
-				| "PendingProvisioning"
-				| "PendingRevocation"
-				| "PendingScheduleCreation"
-				| "Provisioned"
-				| "ProvisioningStarted"
-				| "Revoked"
-				| "ScheduleCreated"
-				| "TimedOut"
-		  )
-		| undefined;
-	readonly targetRoleEligibilityScheduleId?: string | undefined;
-	readonly targetRoleEligibilityScheduleInstanceId?: string | undefined;
-	readonly ticketInfo?: RoleEligibilityScheduleRequestPropertiesTicketInfo | undefined;
+		| "Accepted"
+		| "AdminApproved"
+		| "AdminDenied"
+		| "Canceled"
+		| "Denied"
+		| "Failed"
+		| "FailedAsResourceIsLocked"
+		| "Granted"
+		| "Invalid"
+		| "PendingAdminDecision"
+		| "PendingApproval"
+		| "PendingApprovalProvisioning"
+		| "PendingEvaluation"
+		| "PendingExternalProvisioning"
+		| "PendingProvisioning"
+		| "PendingRevocation"
+		| "PendingScheduleCreation"
+		| "Provisioned"
+		| "ProvisioningStarted"
+		| "Revoked"
+		| "ScheduleCreated"
+		| "TimedOut";
+	readonly targetRoleEligibilityScheduleId?: string;
+	readonly targetRoleEligibilityScheduleInstanceId?: string;
+	readonly ticketInfo?: RoleEligibilityScheduleRequestPropertiesTicketInfo;
 }
 export interface RoleEligibilityScheduleRequestPropertiesScheduleInfo {
-	readonly expiration?: RoleEligibilityScheduleRequestPropertiesScheduleInfoExpiration | undefined;
-	readonly startDateTime?: string | undefined;
+	readonly expiration?: RoleEligibilityScheduleRequestPropertiesScheduleInfoExpiration;
+	readonly startDateTime?: string;
 }
 export interface RoleEligibilityScheduleRequestPropertiesScheduleInfoExpiration {
-	readonly duration?: string | undefined;
-	readonly endDateTime?: string | undefined;
-	readonly type?: ("AfterDateTime" | "AfterDuration" | "NoExpiration") | undefined;
+	readonly duration?: string;
+	readonly endDateTime?: string;
+	readonly type?: "AfterDateTime" | "AfterDuration" | "NoExpiration";
 }
 export interface RoleEligibilityScheduleRequestPropertiesTicketInfo {
-	readonly ticketNumber?: string | undefined;
-	readonly ticketSystem?: string | undefined;
+	readonly ticketNumber?: string;
+	readonly ticketSystem?: string;
 }
 export default {
 	roleAssignmentScheduleRequests: roleAssignmentScheduleRequests,

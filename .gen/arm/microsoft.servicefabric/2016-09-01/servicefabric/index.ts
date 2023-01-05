@@ -16,29 +16,26 @@ export interface clustersComponentOutputs {
 export interface clustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ClusterProperties;
+	readonly tags?: ResourceTags;
 }
 export interface AzureActiveDirectory {
-	readonly clientApplication?: string | undefined;
-	readonly clusterApplication?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly clientApplication?: string;
+	readonly clusterApplication?: string;
+	readonly tenantId?: string;
 }
 export interface CertificateDescription {
 	readonly thumbprint: string;
-	readonly thumbprintSecondary?: string | undefined;
+	readonly thumbprintSecondary?: string;
 	readonly x509StoreName?:
-		| (
-				| "AddressBook"
-				| "AuthRoot"
-				| "CertificateAuthority"
-				| "Disallowed"
-				| "My"
-				| "Root"
-				| "TrustedPeople"
-				| "TrustedPublisher"
-		  )
-		| undefined;
+		| "AddressBook"
+		| "AuthRoot"
+		| "CertificateAuthority"
+		| "Disallowed"
+		| "My"
+		| "Root"
+		| "TrustedPeople"
+		| "TrustedPublisher";
 }
 export interface ClientCertificateCommonName {
 	readonly certificateCommonName: string;
@@ -50,42 +47,39 @@ export interface ClientCertificateThumbprint {
 	readonly isAdmin: boolean;
 }
 export interface ClusterHealthPolicy {
-	readonly maxPercentUnhealthyApplications?: number | undefined;
-	readonly maxPercentUnhealthyNodes?: number | undefined;
+	readonly maxPercentUnhealthyApplications?: number;
+	readonly maxPercentUnhealthyNodes?: number;
 }
 export interface ClusterProperties {
-	readonly availableClusterVersions?: ClusterVersionDetails[] | undefined;
-	readonly azureActiveDirectory?: AzureActiveDirectory | undefined;
-	readonly certificate?: CertificateDescription | undefined;
-	readonly clientCertificateCommonNames?: ClientCertificateCommonName[] | undefined;
-	readonly clientCertificateThumbprints?: ClientCertificateThumbprint[] | undefined;
-	readonly clusterCodeVersion?: string | undefined;
-	readonly clusterEndpoint?: string | undefined;
-	readonly clusterId?: string | undefined;
+	readonly availableClusterVersions?: ClusterVersionDetails[];
+	readonly azureActiveDirectory?: AzureActiveDirectory;
+	readonly certificate?: CertificateDescription;
+	readonly clientCertificateCommonNames?: ClientCertificateCommonName[];
+	readonly clientCertificateThumbprints?: ClientCertificateThumbprint[];
+	readonly clusterCodeVersion?: string;
+	readonly clusterEndpoint?: string;
+	readonly clusterId?: string;
 	readonly clusterState?:
-		| (
-				| "AutoScale"
-				| "BaselineUpgrade"
-				| "Deploying"
-				| "EnforcingClusterVersion"
-				| "Ready"
-				| "UpdatingInfrastructure"
-				| "UpdatingUserCertificate"
-				| "UpdatingUserConfiguration"
-				| "UpgradeServiceUnreachable"
-				| "WaitingForNodes"
-		  )
-		| undefined;
-	readonly diagnosticsStorageAccountConfig?: DiagnosticsStorageAccountConfig | undefined;
-	readonly fabricSettings?: SettingsSectionDescription[] | undefined;
+		| "AutoScale"
+		| "BaselineUpgrade"
+		| "Deploying"
+		| "EnforcingClusterVersion"
+		| "Ready"
+		| "UpdatingInfrastructure"
+		| "UpdatingUserCertificate"
+		| "UpdatingUserConfiguration"
+		| "UpgradeServiceUnreachable"
+		| "WaitingForNodes";
+	readonly diagnosticsStorageAccountConfig?: DiagnosticsStorageAccountConfig;
+	readonly fabricSettings?: SettingsSectionDescription[];
 	readonly managementEndpoint: string;
 	readonly nodeTypes: NodeTypeDescription[];
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly reliabilityLevel?: ("Bronze" | "Gold" | "Platinum" | "Silver") | undefined;
-	readonly reverseProxyCertificate?: CertificateDescription | undefined;
-	readonly upgradeDescription?: ClusterUpgradePolicy | undefined;
-	readonly upgradeMode?: ("Automatic" | "Manual") | undefined;
-	readonly vmImage?: string | undefined;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded" | "Updating";
+	readonly reliabilityLevel?: "Bronze" | "Gold" | "Platinum" | "Silver";
+	readonly reverseProxyCertificate?: CertificateDescription;
+	readonly upgradeDescription?: ClusterUpgradePolicy;
+	readonly upgradeMode?: "Automatic" | "Manual";
+	readonly vmImage?: string;
 }
 export interface ClusterUpgradeDeltaHealthPolicy {
 	readonly maxPercentDeltaUnhealthyApplications: number;
@@ -93,21 +87,21 @@ export interface ClusterUpgradeDeltaHealthPolicy {
 	readonly maxPercentUpgradeDomainDeltaUnhealthyNodes: number;
 }
 export interface ClusterUpgradePolicy {
-	readonly deltaHealthPolicy?: ClusterUpgradeDeltaHealthPolicy | undefined;
-	readonly forceRestart?: boolean | undefined;
+	readonly deltaHealthPolicy?: ClusterUpgradeDeltaHealthPolicy;
+	readonly forceRestart?: boolean;
 	readonly healthCheckRetryTimeout: string;
 	readonly healthCheckStableDuration: string;
 	readonly healthCheckWaitDuration: string;
 	readonly healthPolicy: ClusterHealthPolicy;
-	readonly overrideUserUpgradePolicy?: boolean | undefined;
+	readonly overrideUserUpgradePolicy?: boolean;
 	readonly upgradeDomainTimeout: string;
 	readonly upgradeReplicaSetCheckTimeout: string;
 	readonly upgradeTimeout: string;
 }
 export interface ClusterVersionDetails {
-	readonly codeVersion?: string | undefined;
-	readonly environment?: ("Linux" | "Windows") | undefined;
-	readonly supportExpiryUtc?: string | undefined;
+	readonly codeVersion?: string;
+	readonly environment?: "Linux" | "Windows";
+	readonly supportExpiryUtc?: string;
 }
 export interface DiagnosticsStorageAccountConfig {
 	readonly blobEndpoint: string;
@@ -121,26 +115,26 @@ export interface EndpointRangeDescription {
 	readonly startPort: number;
 }
 export interface NodeTypeDescription {
-	readonly applicationPorts?: EndpointRangeDescription | undefined;
-	readonly capacities?: NodeTypeDescriptionCapacities | undefined;
+	readonly applicationPorts?: EndpointRangeDescription;
+	readonly capacities?: NodeTypeDescriptionCapacities;
 	readonly clientConnectionEndpointPort: number;
-	readonly durabilityLevel?: ("Bronze" | "Gold" | "Silver") | undefined;
-	readonly ephemeralPorts?: EndpointRangeDescription | undefined;
+	readonly durabilityLevel?: "Bronze" | "Gold" | "Silver";
+	readonly ephemeralPorts?: EndpointRangeDescription;
 	readonly httpGatewayEndpointPort: number;
 	readonly isPrimary: boolean;
 	readonly name: string;
-	readonly placementProperties?: NodeTypeDescriptionPlacementProperties | undefined;
-	readonly reverseProxyEndpointPort?: number | undefined;
+	readonly placementProperties?: NodeTypeDescriptionPlacementProperties;
+	readonly reverseProxyEndpointPort?: number;
 	readonly vmInstanceCount: number;
 }
 export interface NodeTypeDescriptionCapacities {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NodeTypeDescriptionPlacementProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SettingsParameterDescription {
 	readonly name: string;

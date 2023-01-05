@@ -10,9 +10,9 @@ export interface AccountComponentInputs {
 	readonly AccountName: any | string;
 	readonly AccountPassword: string;
 	readonly InstanceId: any | string;
-	readonly AccountDescription?: (string | undefined) | undefined;
-	readonly AccountPrivilege?: (string | undefined) | undefined;
-	readonly AccountType?: (string | undefined) | undefined;
+	readonly AccountDescription?: string | undefined;
+	readonly AccountPrivilege?: string | undefined;
+	readonly AccountType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Instance extends RosResource<InstanceComponentInputs> implements InstanceComponentOutputs {
@@ -67,29 +67,29 @@ export interface InstanceComponentOutputs {
 	readonly DirectConnectionString: any;
 }
 export interface InstanceComponentInputs {
-	readonly AutoRenewDuration?: (number | undefined) | undefined;
-	readonly BackupPolicy?: (BackupPolicy | undefined) | undefined;
-	readonly ChargeType?: (any | string) | undefined;
-	readonly Connections?: (Connections | any) | undefined;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly EngineVersion?: (any | string) | undefined;
-	readonly EvictionPolicy?: (string | undefined) | undefined;
-	readonly InstanceClass?: (any | string) | undefined;
-	readonly InstanceMaintainTime?: (InstanceMaintainTime | undefined) | undefined;
-	readonly InstanceName?: (any | string) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly ProductType?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (any | string) | undefined;
-	readonly SecondaryZoneId?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SSLEnabled?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VpcId?: (any | string) | undefined;
-	readonly VpcPasswordFree?: (boolean | undefined) | undefined;
-	readonly VSwitchId?: (any | string) | undefined;
-	readonly ZoneId?: (any | string) | undefined;
+	readonly AutoRenewDuration?: number | undefined;
+	readonly BackupPolicy?: BackupPolicy | undefined;
+	readonly ChargeType?: any | string;
+	readonly Connections?: Connections | any;
+	readonly DeletionForce?: boolean | undefined;
+	readonly EngineVersion?: any | string;
+	readonly EvictionPolicy?: string | undefined;
+	readonly InstanceClass?: any | string;
+	readonly InstanceMaintainTime?: InstanceMaintainTime | undefined;
+	readonly InstanceName?: any | string;
+	readonly Password?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly ProductType?: string | undefined;
+	readonly ResourceGroupId?: any | string;
+	readonly SecondaryZoneId?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SSLEnabled?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly VpcId?: any | string;
+	readonly VpcPasswordFree?: boolean | undefined;
+	readonly VSwitchId?: any | string;
+	readonly ZoneId?: any | string;
 	readonly LogicalId: string;
 }
 export class PrepayInstance extends RosResource<PrepayInstanceComponentInputs> implements PrepayInstanceComponentOutputs {
@@ -146,29 +146,29 @@ export interface PrepayInstanceComponentOutputs {
 	readonly DirectConnectionString: any;
 }
 export interface PrepayInstanceComponentInputs {
-	readonly AutoPay?: (boolean | undefined) | undefined;
-	readonly AutoRenewDuration?: (number | undefined) | undefined;
-	readonly BackupPolicy?: (BackupPolicy | undefined) | undefined;
-	readonly Connections?: (Connections | any) | undefined;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly EngineVersion?: (any | string) | undefined;
-	readonly EvictionPolicy?: (string | undefined) | undefined;
-	readonly InstanceClass?: (any | string) | undefined;
-	readonly InstanceMaintainTime?: (InstanceMaintainTime | undefined) | undefined;
-	readonly InstanceName?: (any | string) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly ProductType?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (any | string) | undefined;
-	readonly SecondaryZoneId?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SSLEnabled?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VpcId?: (any | string) | undefined;
-	readonly VpcPasswordFree?: (boolean | undefined) | undefined;
-	readonly VSwitchId?: (any | string) | undefined;
-	readonly ZoneId?: (any | string) | undefined;
+	readonly AutoPay?: boolean | undefined;
+	readonly AutoRenewDuration?: number | undefined;
+	readonly BackupPolicy?: BackupPolicy | undefined;
+	readonly Connections?: Connections | any;
+	readonly DeletionForce?: boolean | undefined;
+	readonly EngineVersion?: any | string;
+	readonly EvictionPolicy?: string | undefined;
+	readonly InstanceClass?: any | string;
+	readonly InstanceMaintainTime?: InstanceMaintainTime | undefined;
+	readonly InstanceName?: any | string;
+	readonly Password?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly ProductType?: string | undefined;
+	readonly ResourceGroupId?: any | string;
+	readonly SecondaryZoneId?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SSLEnabled?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly VpcId?: any | string;
+	readonly VpcPasswordFree?: boolean | undefined;
+	readonly VSwitchId?: any | string;
+	readonly ZoneId?: any | string;
 	readonly LogicalId: string;
 }
 export class Whitelist extends RosResource<WhitelistComponentInputs> implements WhitelistComponentOutputs {
@@ -180,39 +180,39 @@ export interface WhitelistComponentOutputs {}
 export interface WhitelistComponentInputs {
 	readonly InstanceId: string;
 	readonly SecurityIps: any | string;
-	readonly SecurityIpGroupAttribute?: (any | string) | undefined;
-	readonly SecurityIpGroupName?: (any | string) | undefined;
+	readonly SecurityIpGroupAttribute?: any | string;
+	readonly SecurityIpGroupName?: any | string;
 	readonly LogicalId: string;
 }
 export interface BackupPolicy {
 	readonly PreferredBackupPeriod: string;
 	readonly PreferredBackupTime: string;
-	readonly EnableBackupLog?: (number | undefined) | undefined;
+	readonly EnableBackupLog?: number | undefined;
 }
 export interface ClassicInnerConnection {
 	readonly ConnectionPort: number;
 	readonly ConnectionString: string;
 }
 export interface Connections {
-	readonly VpcPrivateConnection?: (VpcPrivateConnection | undefined) | undefined;
-	readonly PublicConnection?: (PublicConnection | undefined) | undefined;
-	readonly DirectConnection?: (DirectConnection | undefined) | undefined;
-	readonly ClassicInnerConnection?: (ClassicInnerConnection | undefined) | undefined;
+	readonly VpcPrivateConnection?: VpcPrivateConnection | undefined;
+	readonly PublicConnection?: PublicConnection | undefined;
+	readonly DirectConnection?: DirectConnection | undefined;
+	readonly ClassicInnerConnection?: ClassicInnerConnection | undefined;
 }
 export interface DirectConnection {
 	readonly ConnectionPort: number;
 	readonly ConnectionString: string;
 }
 export interface InstanceMaintainTime {
-	readonly MaintainEndTime?: (string | undefined) | undefined;
-	readonly MaintainStartTime?: (string | undefined) | undefined;
+	readonly MaintainEndTime?: string | undefined;
+	readonly MaintainStartTime?: string | undefined;
 }
 export interface PublicConnection {
 	readonly ConnectionPort: number;
 	readonly ConnectionString: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface VpcPrivateConnection {

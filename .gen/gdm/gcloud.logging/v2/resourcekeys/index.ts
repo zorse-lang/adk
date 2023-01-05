@@ -7,7 +7,6 @@ export class ResourceKeys extends GdmResource<ResourceKeysComponentInputs> imple
 }
 export interface ResourceKeysComponentOutputs {}
 export interface ResourceKeysComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

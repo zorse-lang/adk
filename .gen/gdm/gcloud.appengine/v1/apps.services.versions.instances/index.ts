@@ -7,63 +7,62 @@ export class AppsServicesVersionsInstances
 	constructor(entity: ADKEntity, options: AppsServicesVersionsInstancesComponentInputs) {
 		super(entity, options.name, "appengine.v1.AppsServicesVersionsInstances", options);
 	}
-	public readonly appEngineRelease?: string | undefined;
-	public readonly availability?: string | undefined;
-	public readonly averageLatency?: number | undefined;
-	public readonly errors?: number | undefined;
-	public readonly id?: string | undefined;
-	public readonly memoryUsage?: string | undefined;
-	public readonly qps?: number | undefined;
-	public readonly requests?: number | undefined;
-	public readonly startTime?: string | undefined;
-	public readonly vmDebugEnabled?: boolean | undefined;
-	public readonly vmId?: string | undefined;
-	public readonly vmIp?: string | undefined;
-	public readonly vmLiveness?: string | undefined;
-	public readonly vmName?: string | undefined;
-	public readonly vmStatus?: string | undefined;
-	public readonly vmZoneName?: string | undefined;
+	public readonly appEngineRelease?: string;
+	public readonly availability?: string;
+	public readonly averageLatency?: number;
+	public readonly errors?: number;
+	public readonly id?: string;
+	public readonly memoryUsage?: string;
+	public readonly qps?: number;
+	public readonly requests?: number;
+	public readonly startTime?: string;
+	public readonly vmDebugEnabled?: boolean;
+	public readonly vmId?: string;
+	public readonly vmIp?: string;
+	public readonly vmLiveness?: string;
+	public readonly vmName?: string;
+	public readonly vmStatus?: string;
+	public readonly vmZoneName?: string;
 }
 export interface AppsServicesVersionsInstancesComponentOutputs {
-	readonly appEngineRelease?: string | undefined;
-	readonly availability?: string | undefined;
-	readonly averageLatency?: number | undefined;
-	readonly errors?: number | undefined;
-	readonly id?: string | undefined;
-	readonly memoryUsage?: string | undefined;
-	readonly qps?: number | undefined;
-	readonly requests?: number | undefined;
-	readonly startTime?: string | undefined;
-	readonly vmDebugEnabled?: boolean | undefined;
-	readonly vmId?: string | undefined;
-	readonly vmIp?: string | undefined;
-	readonly vmLiveness?: string | undefined;
-	readonly vmName?: string | undefined;
-	readonly vmStatus?: string | undefined;
-	readonly vmZoneName?: string | undefined;
+	readonly appEngineRelease?: string;
+	readonly availability?: string;
+	readonly averageLatency?: number;
+	readonly errors?: number;
+	readonly id?: string;
+	readonly memoryUsage?: string;
+	readonly qps?: number;
+	readonly requests?: number;
+	readonly startTime?: string;
+	readonly vmDebugEnabled?: boolean;
+	readonly vmId?: string;
+	readonly vmIp?: string;
+	readonly vmLiveness?: string;
+	readonly vmName?: string;
+	readonly vmStatus?: string;
+	readonly vmZoneName?: string;
 }
 export interface AppsServicesVersionsInstancesComponentInputs {
 	readonly name: string;
-	readonly type: string;
 }
 export interface Instance {
-	readonly appEngineRelease?: string | undefined;
-	readonly availability?: string | undefined;
-	readonly averageLatency?: number | undefined;
-	readonly errors?: number | undefined;
-	readonly id?: string | undefined;
-	readonly memoryUsage?: string | undefined;
-	readonly name?: string | undefined;
-	readonly qps?: number | undefined;
-	readonly requests?: number | undefined;
-	readonly startTime?: string | undefined;
-	readonly vmDebugEnabled?: boolean | undefined;
-	readonly vmId?: string | undefined;
-	readonly vmIp?: string | undefined;
-	readonly vmLiveness?: string | undefined;
-	readonly vmName?: string | undefined;
-	readonly vmStatus?: string | undefined;
-	readonly vmZoneName?: string | undefined;
+	readonly appEngineRelease?: string;
+	readonly availability?: string;
+	readonly averageLatency?: number;
+	readonly errors?: number;
+	readonly id?: string;
+	readonly memoryUsage?: string;
+	readonly name?: string;
+	readonly qps?: number;
+	readonly requests?: number;
+	readonly startTime?: string;
+	readonly vmDebugEnabled?: boolean;
+	readonly vmId?: string;
+	readonly vmIp?: string;
+	readonly vmLiveness?: string;
+	readonly vmName?: string;
+	readonly vmStatus?: string;
+	readonly vmZoneName?: string;
 }
 export default {
 	AppsServicesVersionsInstances: AppsServicesVersionsInstances,

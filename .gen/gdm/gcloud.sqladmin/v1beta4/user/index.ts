@@ -7,32 +7,31 @@ export class User extends GdmResource<UserComponentInputs> implements UserCompon
 }
 export interface UserComponentOutputs {}
 export interface UserComponentInputs {
-	readonly dualPasswordType?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly host?: string | undefined;
-	readonly instance?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly dualPasswordType?: string;
+	readonly etag?: string;
+	readonly host?: string;
+	readonly instance?: string;
+	readonly kind?: string;
 	readonly name: string;
-	readonly password?: string | undefined;
-	readonly passwordPolicy?: UserPasswordValidationPolicy | undefined;
-	readonly project?: string | undefined;
-	readonly sqlserverUserDetails?: SqlServerUserDetails | undefined;
-	readonly type: string;
+	readonly password?: string;
+	readonly passwordPolicy?: UserPasswordValidationPolicy;
+	readonly project?: string;
+	readonly sqlserverUserDetails?: SqlServerUserDetails;
 }
 export interface PasswordStatus {
-	readonly locked?: boolean | undefined;
-	readonly passwordExpirationTime?: string | undefined;
+	readonly locked?: boolean;
+	readonly passwordExpirationTime?: string;
 }
 export interface SqlServerUserDetails {
-	readonly disabled?: boolean | undefined;
-	readonly serverRoles?: string[] | undefined;
+	readonly disabled?: boolean;
+	readonly serverRoles?: string[];
 }
 export interface UserPasswordValidationPolicy {
-	readonly allowedFailedAttempts?: number | undefined;
-	readonly enableFailedAttemptsCheck?: boolean | undefined;
-	readonly enablePasswordVerification?: boolean | undefined;
-	readonly passwordExpirationDuration?: string | undefined;
-	readonly status?: PasswordStatus | undefined;
+	readonly allowedFailedAttempts?: number;
+	readonly enableFailedAttemptsCheck?: boolean;
+	readonly enablePasswordVerification?: boolean;
+	readonly passwordExpirationDuration?: string;
+	readonly status?: PasswordStatus;
 }
 export default {
 	User: User,

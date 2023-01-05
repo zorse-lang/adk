@@ -14,12 +14,12 @@ export interface videoAnalyzersComponentOutputs {
 	readonly type: "Microsoft.Media/videoAnalyzers";
 }
 export interface videoAnalyzersComponentInputs {
-	readonly identity?: VideoAnalyzerIdentity | undefined;
+	readonly identity?: VideoAnalyzerIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VideoAnalyzerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VideoAnalyzerProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class videoAnalyzers_accessPolicies
 	extends ArmResource<videoAnalyzers_accessPoliciesComponentInputs>
@@ -39,8 +39,8 @@ export interface videoAnalyzers_accessPoliciesComponentOutputs {
 }
 export interface videoAnalyzers_accessPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: AccessPolicyProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AccessPolicyProperties;
+	readonly systemData?: SystemData;
 }
 export class videoAnalyzers_edgeModules
 	extends ArmResource<videoAnalyzers_edgeModulesComponentInputs>
@@ -60,8 +60,8 @@ export interface videoAnalyzers_edgeModulesComponentOutputs {
 }
 export interface videoAnalyzers_edgeModulesComponentInputs {
 	readonly name: string;
-	readonly properties?: EdgeModuleProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EdgeModuleProperties;
+	readonly systemData?: SystemData;
 }
 export class videoAnalyzers_videos
 	extends ArmResource<videoAnalyzers_videosComponentInputs>
@@ -81,8 +81,8 @@ export interface videoAnalyzers_videosComponentOutputs {
 }
 export interface videoAnalyzers_videosComponentInputs {
 	readonly name: string;
-	readonly properties?: VideoProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: VideoProperties;
+	readonly systemData?: SystemData;
 }
 export function listProvisioningToken(
 	resource: videoAnalyzers_edgeModules,
@@ -106,29 +106,29 @@ export function listStreamingToken(resource: videoAnalyzers_videos): VideoStream
 	throw new Error("not implemented");
 }
 export interface AccessPolicyProperties {
-	readonly authentication?: AuthenticationBase | undefined;
-	readonly role?: "Reader" | undefined;
+	readonly authentication?: AuthenticationBase;
+	readonly role?: "Reader";
 }
 export interface AccountEncryption {
-	readonly identity?: ResourceIdentity | undefined;
-	readonly keyVaultProperties?: KeyVaultProperties | undefined;
-	readonly status?: string | undefined;
+	readonly identity?: ResourceIdentity;
+	readonly keyVaultProperties?: KeyVaultProperties;
+	readonly status?: string;
 	readonly type: "CustomerKey" | "SystemKey";
 }
 export interface AuthenticationBase {}
 export interface EdgeModuleProperties {
-	readonly edgeModuleId?: string | undefined;
+	readonly edgeModuleId?: string;
 }
 export interface EdgeModuleProvisioningToken {
-	readonly expirationDate?: string | undefined;
-	readonly token?: string | undefined;
+	readonly expirationDate?: string;
+	readonly token?: string;
 }
 export interface Endpoint {
-	readonly endpointUrl?: string | undefined;
+	readonly endpointUrl?: string;
 	readonly type: "ClientApi";
 }
 export interface KeyVaultProperties {
-	readonly currentKeyIdentifier?: string | undefined;
+	readonly currentKeyIdentifier?: string;
 	readonly keyIdentifier: string;
 }
 export interface ListProvisioningTokenInput {
@@ -138,17 +138,17 @@ export interface ResourceIdentity {
 	readonly userAssignedIdentity: string;
 }
 export interface StorageAccount {
-	readonly id?: string | undefined;
-	readonly identity?: ResourceIdentity | undefined;
-	readonly status?: string | undefined;
+	readonly id?: string;
+	readonly identity?: ResourceIdentity;
+	readonly status?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TokenClaim {
 	readonly name: string;
@@ -158,23 +158,23 @@ export interface TokenKey {
 	readonly kid: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedManagedIdentities {
-	readonly "[ key: string ]"?: UserAssignedManagedIdentity | undefined;
+	readonly [key: string]: UserAssignedManagedIdentity;
 }
 export interface UserAssignedManagedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface VideoAnalyzerIdentity {
 	readonly type: string;
-	readonly userAssignedIdentities?: UserAssignedManagedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedManagedIdentities;
 }
 export interface VideoAnalyzerProperties {
-	readonly encryption?: AccountEncryption | undefined;
-	readonly endpoints?: Endpoint[] | undefined;
-	readonly storageAccounts?: StorageAccount[] | undefined;
+	readonly encryption?: AccountEncryption;
+	readonly endpoints?: Endpoint[];
+	readonly storageAccounts?: StorageAccount[];
 }
 export interface VideoFlags {
 	readonly canStream: boolean;
@@ -182,22 +182,22 @@ export interface VideoFlags {
 	readonly isRecording: boolean;
 }
 export interface VideoMediaInfo {
-	readonly segmentLength?: string | undefined;
+	readonly segmentLength?: string;
 }
 export interface VideoProperties {
-	readonly description?: string | undefined;
-	readonly flags?: VideoFlags | undefined;
-	readonly mediaInfo?: VideoMediaInfo | undefined;
-	readonly streaming?: VideoStreaming | undefined;
-	readonly title?: string | undefined;
-	readonly type?: "Archive" | undefined;
+	readonly description?: string;
+	readonly flags?: VideoFlags;
+	readonly mediaInfo?: VideoMediaInfo;
+	readonly streaming?: VideoStreaming;
+	readonly title?: string;
+	readonly type?: "Archive";
 }
 export interface VideoStreaming {
-	readonly archiveBaseUrl?: string | undefined;
+	readonly archiveBaseUrl?: string;
 }
 export interface VideoStreamingToken {
-	readonly expirationDate?: string | undefined;
-	readonly token?: string | undefined;
+	readonly expirationDate?: string;
+	readonly token?: string;
 }
 export default {
 	videoAnalyzers: videoAnalyzers,

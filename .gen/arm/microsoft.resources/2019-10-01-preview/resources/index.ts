@@ -20,8 +20,8 @@ export interface deploymentScripts_AzureCLIComponentInputs {
 	readonly identity: ManagedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: DeploymentScriptTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: DeploymentScriptTags;
 	readonly kind: "AzureCLI";
 	readonly properties: AzureCliScriptProperties;
 }
@@ -45,8 +45,8 @@ export interface deploymentScripts_AzurePowerShellComponentInputs {
 	readonly identity: ManagedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: DeploymentScriptTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: DeploymentScriptTags;
 	readonly kind: "AzurePowerShell";
 	readonly properties: AzurePowerShellScriptProperties;
 }
@@ -68,105 +68,101 @@ export interface deploymentScripts_logsComponentOutputs {
 }
 export interface deploymentScripts_logsComponentInputs {
 	readonly name: string;
-	readonly properties?: LogProperties | undefined;
+	readonly properties?: LogProperties;
 }
 export interface AzureCliScriptProperties {
-	readonly arguments?: string | undefined;
+	readonly arguments?: string;
 	readonly azCliVersion: string;
-	readonly cleanupPreference?: ("Always" | "OnExpiration" | "OnSuccess") | undefined;
-	readonly containerSettings?: ContainerConfiguration | undefined;
-	readonly environmentVariables?: EnvironmentVariable[] | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly outputs?: DeploymentScriptPropertiesBaseOutputs | undefined;
-	readonly primaryScriptUri?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Failed" | "ProvisioningResources" | "Running" | "Succeeded")
-		| undefined;
+	readonly cleanupPreference?: "Always" | "OnExpiration" | "OnSuccess";
+	readonly containerSettings?: ContainerConfiguration;
+	readonly environmentVariables?: EnvironmentVariable[];
+	readonly forceUpdateTag?: string;
+	readonly outputs?: DeploymentScriptPropertiesBaseOutputs;
+	readonly primaryScriptUri?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Failed" | "ProvisioningResources" | "Running" | "Succeeded";
 	readonly retentionInterval: string;
-	readonly scriptContent?: string | undefined;
-	readonly status?: ScriptStatus | undefined;
-	readonly storageAccountSettings?: StorageAccountConfiguration | undefined;
-	readonly supportingScriptUris?: string[] | undefined;
-	readonly timeout?: string | undefined;
+	readonly scriptContent?: string;
+	readonly status?: ScriptStatus;
+	readonly storageAccountSettings?: StorageAccountConfiguration;
+	readonly supportingScriptUris?: string[];
+	readonly timeout?: string;
 }
 export interface AzurePowerShellScriptProperties {
-	readonly arguments?: string | undefined;
+	readonly arguments?: string;
 	readonly azPowerShellVersion: string;
-	readonly cleanupPreference?: ("Always" | "OnExpiration" | "OnSuccess") | undefined;
-	readonly containerSettings?: ContainerConfiguration | undefined;
-	readonly environmentVariables?: EnvironmentVariable[] | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly outputs?: DeploymentScriptPropertiesBaseOutputs | undefined;
-	readonly primaryScriptUri?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Failed" | "ProvisioningResources" | "Running" | "Succeeded")
-		| undefined;
+	readonly cleanupPreference?: "Always" | "OnExpiration" | "OnSuccess";
+	readonly containerSettings?: ContainerConfiguration;
+	readonly environmentVariables?: EnvironmentVariable[];
+	readonly forceUpdateTag?: string;
+	readonly outputs?: DeploymentScriptPropertiesBaseOutputs;
+	readonly primaryScriptUri?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Failed" | "ProvisioningResources" | "Running" | "Succeeded";
 	readonly retentionInterval: string;
-	readonly scriptContent?: string | undefined;
-	readonly status?: ScriptStatus | undefined;
-	readonly storageAccountSettings?: StorageAccountConfiguration | undefined;
-	readonly supportingScriptUris?: string[] | undefined;
-	readonly timeout?: string | undefined;
+	readonly scriptContent?: string;
+	readonly status?: ScriptStatus;
+	readonly storageAccountSettings?: StorageAccountConfiguration;
+	readonly supportingScriptUris?: string[];
+	readonly timeout?: string;
 }
 export interface ContainerConfiguration {
-	readonly containerGroupName?: string | undefined;
+	readonly containerGroupName?: string;
 }
 export interface DeploymentScriptPropertiesBaseOutputs {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface DeploymentScriptTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface EnvironmentVariable {
 	readonly name: string;
-	readonly secureValue?: string | undefined;
-	readonly value?: string | undefined;
+	readonly secureValue?: string;
+	readonly value?: string;
 }
 export interface ErrorAdditionalInfo {
-	readonly info?: any | undefined;
-	readonly type?: string | undefined;
+	readonly info?: any;
+	readonly type?: string;
 }
 export interface ErrorResponse {
-	readonly additionalInfo?: ErrorAdditionalInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ErrorResponse[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: ErrorAdditionalInfo[];
+	readonly code?: string;
+	readonly details?: ErrorResponse[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface LogProperties {
-	readonly log?: string | undefined;
+	readonly log?: string;
 }
 export interface ManagedServiceIdentity {
-	readonly tenantId?: string | undefined;
-	readonly type?: "UserAssigned" | undefined;
-	readonly userAssignedIdentities?: ManagedServiceIdentityUserAssignedIdentities | undefined;
+	readonly tenantId?: string;
+	readonly type?: "UserAssigned";
+	readonly userAssignedIdentities?: ManagedServiceIdentityUserAssignedIdentities;
 }
 export interface ManagedServiceIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface ScriptStatus {
-	readonly containerInstanceId?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: ErrorResponse | undefined;
-	readonly expirationTime?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly storageAccountId?: string | undefined;
+	readonly containerInstanceId?: string;
+	readonly endTime?: string;
+	readonly error?: ErrorResponse;
+	readonly expirationTime?: string;
+	readonly startTime?: string;
+	readonly storageAccountId?: string;
 }
 export interface StorageAccountConfiguration {
-	readonly storageAccountKey?: string | undefined;
-	readonly storageAccountName?: string | undefined;
+	readonly storageAccountKey?: string;
+	readonly storageAccountName?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export type deploymentScripts = deploymentScripts_AzureCLI | deploymentScripts_AzurePowerShell;
 export default {

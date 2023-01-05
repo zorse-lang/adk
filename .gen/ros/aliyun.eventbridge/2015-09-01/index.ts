@@ -14,18 +14,18 @@ export interface RuleComponentInputs {
 	readonly FilterPattern: { [key: string]: any };
 	readonly RuleName: any | string;
 	readonly Targets: Targets[];
-	readonly Description?: (string | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Status?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface ParamList {
 	readonly Form: string;
 	readonly Value: string;
 	readonly ResourceKey: string;
-	readonly Template?: (string | undefined) | undefined;
+	readonly Template?: string | undefined;
 }
 export interface Targets {
-	readonly PushRetryStrategy?: (string | undefined) | undefined;
+	readonly PushRetryStrategy?: string | undefined;
 	readonly Type: string;
 	readonly Endpoint: string;
 	readonly Id: string;

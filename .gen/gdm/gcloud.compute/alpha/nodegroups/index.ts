@@ -4,82 +4,81 @@ export class NodeGroups extends GdmResource<NodeGroupsComponentInputs> implement
 	constructor(entity: ADKEntity, options: NodeGroupsComponentInputs) {
 		super(entity, options.name, "compute.alpha.NodeGroups", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly size?: number | undefined;
-	public readonly zone?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly size?: number;
+	public readonly zone?: string;
 }
 export interface NodeGroupsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly size?: number | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly size?: number;
+	readonly zone?: string;
 }
 export interface NodeGroupsComponentInputs {
-	readonly autoscalingPolicy?: NodeGroupAutoscalingPolicy | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
+	readonly autoscalingPolicy?: NodeGroupAutoscalingPolicy;
+	readonly description?: string;
+	readonly fingerprint?: string;
 	readonly initialNodeCount: number;
-	readonly locationHint?: string | undefined;
-	readonly maintenancePolicy?: string | undefined;
-	readonly maintenanceWindow?: NodeGroupMaintenanceWindow | undefined;
+	readonly locationHint?: string;
+	readonly maintenancePolicy?: string;
+	readonly maintenanceWindow?: NodeGroupMaintenanceWindow;
 	readonly name: string;
-	readonly nodeTemplate?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly shareSettings?: ShareSettings | undefined;
-	readonly status?: string | undefined;
-	readonly type: string;
+	readonly nodeTemplate?: string;
+	readonly requestId?: string;
+	readonly shareSettings?: ShareSettings;
+	readonly status?: string;
 }
 export interface Duration {
-	readonly nanos?: number | undefined;
-	readonly seconds?: string | undefined;
+	readonly nanos?: number;
+	readonly seconds?: string;
 }
 export interface NodeGroup {
-	readonly autoscalingPolicy?: NodeGroupAutoscalingPolicy | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly locationHint?: string | undefined;
-	readonly maintenancePolicy?: string | undefined;
-	readonly maintenanceWindow?: NodeGroupMaintenanceWindow | undefined;
-	readonly name?: string | undefined;
-	readonly nodeTemplate?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly shareSettings?: ShareSettings | undefined;
-	readonly size?: number | undefined;
-	readonly status?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly autoscalingPolicy?: NodeGroupAutoscalingPolicy;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly locationHint?: string;
+	readonly maintenancePolicy?: string;
+	readonly maintenanceWindow?: NodeGroupMaintenanceWindow;
+	readonly name?: string;
+	readonly nodeTemplate?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly shareSettings?: ShareSettings;
+	readonly size?: number;
+	readonly status?: string;
+	readonly zone?: string;
 }
 export interface NodeGroupAutoscalingPolicy {
-	readonly maxNodes?: number | undefined;
-	readonly minNodes?: number | undefined;
-	readonly mode?: string | undefined;
+	readonly maxNodes?: number;
+	readonly minNodes?: number;
+	readonly mode?: string;
 }
 export interface NodeGroupMaintenanceWindow {
-	readonly duration?: string | undefined;
-	readonly maintenanceDuration?: Duration | undefined;
-	readonly startTime?: string | undefined;
+	readonly duration?: string;
+	readonly maintenanceDuration?: Duration;
+	readonly startTime?: string;
 }
 export interface ShareSettings {
-	readonly folderMap?: { [P in string]: ShareSettingsFolderConfig } | undefined;
-	readonly projectMap?: { [P in string]: ShareSettingsProjectConfig } | undefined;
-	readonly projects?: string[] | undefined;
-	readonly shareType?: string | undefined;
+	readonly folderMap?: { [P in string]: ShareSettingsFolderConfig };
+	readonly projectMap?: { [P in string]: ShareSettingsProjectConfig };
+	readonly projects?: string[];
+	readonly shareType?: string;
 }
 export interface ShareSettingsFolderConfig {
-	readonly folderId?: string | undefined;
+	readonly folderId?: string;
 }
 export interface ShareSettingsProjectConfig {
-	readonly projectId?: string | undefined;
+	readonly projectId?: string;
 }
 export default {
 	NodeGroups: NodeGroups,

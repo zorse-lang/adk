@@ -7,64 +7,63 @@ export class BillingAccountsSinks
 	constructor(entity: ADKEntity, options: BillingAccountsSinksComponentInputs) {
 		super(entity, options.name, "logging.v2.BillingAccountsSinks", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly deleteTime?: string | undefined;
-	public readonly updateTime?: string | undefined;
-	public readonly writerIdentity?: string | undefined;
+	public readonly createTime?: string;
+	public readonly deleteTime?: string;
+	public readonly updateTime?: string;
+	public readonly writerIdentity?: string;
 }
 export interface BillingAccountsSinksComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly deleteTime?: string | undefined;
-	readonly updateTime?: string | undefined;
-	readonly writerIdentity?: string | undefined;
+	readonly createTime?: string;
+	readonly deleteTime?: string;
+	readonly updateTime?: string;
+	readonly writerIdentity?: string;
 }
 export interface BillingAccountsSinksComponentInputs {
-	readonly bigqueryOptions?: BigQueryOptions | undefined;
-	readonly customWriterIdentity?: string | undefined;
-	readonly description?: string | undefined;
+	readonly bigqueryOptions?: BigQueryOptions;
+	readonly customWriterIdentity?: string;
+	readonly description?: string;
 	readonly destination: string;
-	readonly disabled?: boolean | undefined;
-	readonly exclusions?: LogExclusion[] | undefined;
-	readonly filter?: string | undefined;
-	readonly gcsOptions?: GcsOptions | undefined;
-	readonly includeChildren?: boolean | undefined;
+	readonly disabled?: boolean;
+	readonly exclusions?: LogExclusion[];
+	readonly filter?: string;
+	readonly gcsOptions?: GcsOptions;
+	readonly includeChildren?: boolean;
 	readonly name: string;
-	readonly outputVersionFormat?: string | undefined;
+	readonly outputVersionFormat?: string;
 	readonly parent: string;
-	readonly uniqueWriterIdentity?: boolean | undefined;
-	readonly type: string;
+	readonly uniqueWriterIdentity?: boolean;
 }
 export interface BigQueryOptions {
-	readonly clusteredFields?: string[] | undefined;
-	readonly usePartitionedTables?: boolean | undefined;
-	readonly usesTimestampColumnPartitioning?: boolean | undefined;
+	readonly clusteredFields?: string[];
+	readonly usePartitionedTables?: boolean;
+	readonly usesTimestampColumnPartitioning?: boolean;
 }
 export interface GcsOptions {
-	readonly exportWindowSize?: string | undefined;
+	readonly exportWindowSize?: string;
 }
 export interface LogExclusion {
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly disabled?: boolean;
 	readonly filter: string;
 	readonly name: string;
-	readonly updateTime?: string | undefined;
+	readonly updateTime?: string;
 }
 export interface LogSink {
-	readonly bigqueryOptions?: BigQueryOptions | undefined;
-	readonly createTime?: string | undefined;
-	readonly deleteTime?: string | undefined;
-	readonly description?: string | undefined;
+	readonly bigqueryOptions?: BigQueryOptions;
+	readonly createTime?: string;
+	readonly deleteTime?: string;
+	readonly description?: string;
 	readonly destination: string;
-	readonly disabled?: boolean | undefined;
-	readonly exclusions?: LogExclusion[] | undefined;
-	readonly filter?: string | undefined;
-	readonly gcsOptions?: GcsOptions | undefined;
-	readonly includeChildren?: boolean | undefined;
+	readonly disabled?: boolean;
+	readonly exclusions?: LogExclusion[];
+	readonly filter?: string;
+	readonly gcsOptions?: GcsOptions;
+	readonly includeChildren?: boolean;
 	readonly name: string;
-	readonly outputVersionFormat?: string | undefined;
-	readonly updateTime?: string | undefined;
-	readonly writerIdentity?: string | undefined;
+	readonly outputVersionFormat?: string;
+	readonly updateTime?: string;
+	readonly writerIdentity?: string;
 }
 export default {
 	BillingAccountsSinks: BillingAccountsSinks,

@@ -11,24 +11,24 @@ export interface ContainerComponentOutputs {
 }
 export interface ContainerComponentInputs {
 	readonly ContainerName: string;
-	readonly AccessLoggingEnabled?: (boolean | undefined) | undefined;
-	readonly CorsPolicy?: (CorsRule[] | undefined) | undefined;
-	readonly LifecyclePolicy?: (string | undefined) | undefined;
-	readonly MetricPolicy?: (MetricPolicy | undefined) | undefined;
-	readonly Policy?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AccessLoggingEnabled?: boolean | undefined;
+	readonly CorsPolicy?: CorsRule[] | undefined;
+	readonly LifecyclePolicy?: string | undefined;
+	readonly MetricPolicy?: MetricPolicy | undefined;
+	readonly Policy?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface CorsRule {
-	readonly AllowedHeaders?: (string[] | undefined) | undefined;
-	readonly AllowedMethods?: (string[] | undefined) | undefined;
-	readonly AllowedOrigins?: (string[] | undefined) | undefined;
-	readonly ExposeHeaders?: (string[] | undefined) | undefined;
-	readonly MaxAgeSeconds?: (number | undefined) | undefined;
+	readonly AllowedHeaders?: string[] | undefined;
+	readonly AllowedMethods?: string[] | undefined;
+	readonly AllowedOrigins?: string[] | undefined;
+	readonly ExposeHeaders?: string[] | undefined;
+	readonly MaxAgeSeconds?: number | undefined;
 }
 export interface MetricPolicy {
 	readonly ContainerLevelMetrics: string;
-	readonly MetricPolicyRules?: (MetricPolicyRule[] | undefined) | undefined;
+	readonly MetricPolicyRules?: MetricPolicyRule[] | undefined;
 }
 export interface MetricPolicyRule {
 	readonly ObjectGroup: string;

@@ -14,80 +14,80 @@ export interface extensionsComponentOutputs {
 	readonly type: "Microsoft.KubernetesConfiguration/extensions";
 }
 export interface extensionsComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly name: string;
-	readonly properties?: ExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ExtensionProperties;
+	readonly systemData?: SystemData;
 }
 export interface ErrorAdditionalInfo {
-	readonly info?: any | undefined;
-	readonly type?: string | undefined;
+	readonly info?: any;
+	readonly type?: string;
 }
 export interface ErrorDetail {
-	readonly additionalInfo?: ErrorAdditionalInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ErrorDetail[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: ErrorAdditionalInfo[];
+	readonly code?: string;
+	readonly details?: ErrorDetail[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface ExtensionProperties {
-	readonly aksAssignedIdentity?: ExtensionPropertiesAksAssignedIdentity | undefined;
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly configurationProtectedSettings?: ExtensionPropertiesConfigurationProtectedSettings | undefined;
-	readonly configurationSettings?: ExtensionPropertiesConfigurationSettings | undefined;
-	readonly customLocationSettings?: ExtensionPropertiesCustomLocationSettings | undefined;
-	readonly errorInfo?: ErrorDetail | undefined;
-	readonly extensionType?: string | undefined;
-	readonly packageUri?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly releaseTrain?: string | undefined;
-	readonly scope?: Scope | undefined;
-	readonly statuses?: ExtensionStatus[] | undefined;
-	readonly version?: string | undefined;
+	readonly aksAssignedIdentity?: ExtensionPropertiesAksAssignedIdentity;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly configurationProtectedSettings?: ExtensionPropertiesConfigurationProtectedSettings;
+	readonly configurationSettings?: ExtensionPropertiesConfigurationSettings;
+	readonly customLocationSettings?: ExtensionPropertiesCustomLocationSettings;
+	readonly errorInfo?: ErrorDetail;
+	readonly extensionType?: string;
+	readonly packageUri?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly releaseTrain?: string;
+	readonly scope?: Scope;
+	readonly statuses?: ExtensionStatus[];
+	readonly version?: string;
 }
 export interface ExtensionPropertiesAksAssignedIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface ExtensionPropertiesConfigurationProtectedSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ExtensionPropertiesConfigurationSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ExtensionPropertiesCustomLocationSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ExtensionStatus {
-	readonly code?: string | undefined;
-	readonly displayStatus?: string | undefined;
-	readonly level?: ("Error" | "Information" | "Warning") | undefined;
-	readonly message?: string | undefined;
-	readonly time?: string | undefined;
+	readonly code?: string;
+	readonly displayStatus?: string;
+	readonly level?: "Error" | "Information" | "Warning";
+	readonly message?: string;
+	readonly time?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface Scope {
-	readonly cluster?: ScopeCluster | undefined;
-	readonly namespace?: ScopeNamespace | undefined;
+	readonly cluster?: ScopeCluster;
+	readonly namespace?: ScopeNamespace;
 }
 export interface ScopeCluster {
-	readonly releaseNamespace?: string | undefined;
+	readonly releaseNamespace?: string;
 }
 export interface ScopeNamespace {
-	readonly targetNamespace?: string | undefined;
+	readonly targetNamespace?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	extensions: extensions,

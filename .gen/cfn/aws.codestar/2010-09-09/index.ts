@@ -12,12 +12,12 @@ export interface GitHubRepositoryComponentOutputs {}
 export interface GitHubRepositoryComponentInputs {
 	readonly RepositoryName: string;
 	readonly RepositoryOwner: string;
-	readonly Code?: (Code | undefined) | undefined;
-	readonly ConnectionArn?: (string | undefined) | undefined;
-	readonly EnableIssues?: (boolean | undefined) | undefined;
-	readonly IsPrivate?: (boolean | undefined) | undefined;
-	readonly RepositoryAccessToken?: (string | undefined) | undefined;
-	readonly RepositoryDescription?: (string | undefined) | undefined;
+	readonly Code?: Code | undefined;
+	readonly ConnectionArn?: string | undefined;
+	readonly EnableIssues?: boolean | undefined;
+	readonly IsPrivate?: boolean | undefined;
+	readonly RepositoryAccessToken?: string | undefined;
+	readonly RepositoryDescription?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Code {
@@ -26,7 +26,7 @@ export interface Code {
 export interface S3 {
 	readonly Bucket: string;
 	readonly Key: string;
-	readonly ObjectVersion?: (string | undefined) | undefined;
+	readonly ObjectVersion?: string | undefined;
 }
 export default {
 	GitHubRepository: GitHubRepository,

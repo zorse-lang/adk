@@ -16,8 +16,8 @@ export interface batchAccountsComponentOutputs {
 export interface batchAccountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: BatchAccountBasePropertiesOrBatchAccountProperties | undefined;
-	readonly tags?: BatchAccountCreateParametersTags | undefined;
+	readonly properties?: BatchAccountBasePropertiesOrBatchAccountProperties;
+	readonly tags?: BatchAccountCreateParametersTags;
 }
 export class batchAccounts_applications
 	extends ArmResource<batchAccounts_applicationsComponentInputs>
@@ -36,11 +36,11 @@ export interface batchAccounts_applicationsComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/applications";
 }
 export interface batchAccounts_applicationsComponentInputs {
-	readonly allowUpdates?: boolean | undefined;
-	readonly defaultVersion?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly allowUpdates?: boolean;
+	readonly defaultVersion?: string;
+	readonly displayName?: string;
 	readonly name: string;
-	readonly packages?: ApplicationPackage[] | undefined;
+	readonly packages?: ApplicationPackage[];
 }
 export class batchAccounts_applications_versions
 	extends ArmResource<batchAccounts_applications_versionsComponentInputs>
@@ -59,13 +59,13 @@ export interface batchAccounts_applications_versionsComponentOutputs {
 	readonly type: "Microsoft.Batch/batchAccounts/applications/versions";
 }
 export interface batchAccounts_applications_versionsComponentInputs {
-	readonly format?: string | undefined;
-	readonly lastActivationTime?: string | undefined;
+	readonly format?: string;
+	readonly lastActivationTime?: string;
 	readonly name: string;
-	readonly state?: ("active" | "pending") | undefined;
-	readonly storageUrl?: string | undefined;
-	readonly storageUrlExpiry?: string | undefined;
-	readonly version?: string | undefined;
+	readonly state?: "active" | "pending";
+	readonly storageUrl?: string;
+	readonly storageUrlExpiry?: string;
+	readonly version?: string;
 }
 export function listKeys(resource: batchAccounts): BatchAccountKeys {
 	if (resource.apiVersion !== "2017-01-01") {
@@ -77,34 +77,34 @@ export function listKeys(resource: batchAccounts): BatchAccountKeys {
 	throw new Error("not implemented");
 }
 export interface ApplicationPackage {
-	readonly format?: string | undefined;
-	readonly id?: string | undefined;
-	readonly lastActivationTime?: string | undefined;
-	readonly state?: ("active" | "pending") | undefined;
-	readonly storageUrl?: string | undefined;
-	readonly storageUrlExpiry?: string | undefined;
-	readonly version?: string | undefined;
+	readonly format?: string;
+	readonly id?: string;
+	readonly lastActivationTime?: string;
+	readonly state?: "active" | "pending";
+	readonly storageUrl?: string;
+	readonly storageUrlExpiry?: string;
+	readonly version?: string;
 }
 export interface AutoStorageBasePropertiesOrAutoStorageProperties {
-	readonly lastKeySync?: string | undefined;
+	readonly lastKeySync?: string;
 	readonly storageAccountId: string;
 }
 export interface BatchAccountBasePropertiesOrBatchAccountProperties {
-	readonly accountEndpoint?: string | undefined;
-	readonly activeJobAndJobScheduleQuota?: number | undefined;
-	readonly autoStorage?: AutoStorageBasePropertiesOrAutoStorageProperties | undefined;
-	readonly coreQuota?: number | undefined;
-	readonly keyVaultReference?: KeyVaultReference | undefined;
-	readonly poolAllocationMode?: "BatchService" | undefined;
-	readonly poolQuota?: number | undefined;
-	readonly provisioningState?: ("Cancelled" | "Creating" | "Deleting" | "Failed" | "Invalid") | undefined;
+	readonly accountEndpoint?: string;
+	readonly activeJobAndJobScheduleQuota?: number;
+	readonly autoStorage?: AutoStorageBasePropertiesOrAutoStorageProperties;
+	readonly coreQuota?: number;
+	readonly keyVaultReference?: KeyVaultReference;
+	readonly poolAllocationMode?: "BatchService";
+	readonly poolQuota?: number;
+	readonly provisioningState?: "Cancelled" | "Creating" | "Deleting" | "Failed" | "Invalid";
 }
 export interface BatchAccountCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface BatchAccountKeys {
-	readonly primary?: string | undefined;
-	readonly secondary?: string | undefined;
+	readonly primary?: string;
+	readonly secondary?: string;
 }
 export interface KeyVaultReference {
 	readonly id: string;

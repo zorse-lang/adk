@@ -4,30 +4,29 @@ export class TargetInstance extends GdmResource<TargetInstanceComponentInputs> i
 	constructor(entity: ADKEntity, options: TargetInstanceComponentInputs) {
 		super(entity, options.name, "compute.alpha.targetInstance", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly securityPolicy?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly zone?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly securityPolicy?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly zone?: string;
 }
 export interface TargetInstanceComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly securityPolicy?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly securityPolicy?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly zone?: string;
 }
 export interface TargetInstanceComponentInputs {
-	readonly description?: string | undefined;
-	readonly instance?: string | undefined;
+	readonly description?: string;
+	readonly instance?: string;
 	readonly name: string;
-	readonly natPolicy?: string | undefined;
-	readonly network?: string | undefined;
-	readonly type: string;
+	readonly natPolicy?: string;
+	readonly network?: string;
 }
 export default {
 	TargetInstance: TargetInstance,

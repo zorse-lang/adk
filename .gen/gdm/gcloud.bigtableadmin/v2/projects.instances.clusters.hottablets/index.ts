@@ -10,7 +10,6 @@ export class ProjectsInstancesClustersHotTablets
 }
 export interface ProjectsInstancesClustersHotTabletsComponentOutputs {}
 export interface ProjectsInstancesClustersHotTabletsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

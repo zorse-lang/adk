@@ -14,11 +14,11 @@ export interface workspacesComponentOutputs {
 	readonly type: "Microsoft.MachineLearningServices/workspaces";
 }
 export interface workspacesComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WorkspaceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkspaceProperties;
+	readonly tags?: ResourceTags;
 }
 export class workspaces_computes
 	extends ArmResource<workspaces_computesComponentInputs>
@@ -37,11 +37,11 @@ export interface workspaces_computesComponentOutputs {
 	readonly type: "Microsoft.MachineLearningServices/workspaces/computes";
 }
 export interface workspaces_computesComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: Compute | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: Compute;
+	readonly tags?: ResourceTags;
 }
 export function listKeys(resource: workspaces): ListWorkspaceKeysResult {
 	if (resource.apiVersion !== "2018-03-01-preview") {
@@ -53,27 +53,25 @@ export function listKeys(resource: workspaces): ListWorkspaceKeysResult {
 	throw new Error("not implemented");
 }
 export interface AKSProperties {
-	readonly agentCount?: number | undefined;
-	readonly agentVMSize?: string | undefined;
-	readonly clusterFqdn?: string | undefined;
-	readonly sslConfiguration?: SslConfiguration | undefined;
-	readonly systemServices?: SystemService[] | undefined;
+	readonly agentCount?: number;
+	readonly agentVMSize?: string;
+	readonly clusterFqdn?: string;
+	readonly sslConfiguration?: SslConfiguration;
+	readonly systemServices?: SystemService[];
 }
 export interface BatchAIProperties {
-	readonly scaleSettings?: ScaleSettings | undefined;
-	readonly vmPriority?: string | undefined;
-	readonly vmSize?: string | undefined;
+	readonly scaleSettings?: ScaleSettings;
+	readonly vmPriority?: string;
+	readonly vmSize?: string;
 }
 export interface Compute {
-	readonly computeLocation?: string | undefined;
-	readonly createdOn?: string | undefined;
-	readonly description?: string | undefined;
-	readonly modifiedOn?: string | undefined;
-	readonly provisioningErrors?: MachineLearningServiceError[] | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
-	readonly resourceId?: string | undefined;
+	readonly computeLocation?: string;
+	readonly createdOn?: string;
+	readonly description?: string;
+	readonly modifiedOn?: string;
+	readonly provisioningErrors?: MachineLearningServiceError[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating";
+	readonly resourceId?: string;
 }
 export interface ComputeSecrets {}
 export interface ErrorDetail {
@@ -82,82 +80,80 @@ export interface ErrorDetail {
 }
 export interface ErrorResponse {
 	readonly code: string;
-	readonly details?: ErrorDetail[] | undefined;
+	readonly details?: ErrorDetail[];
 	readonly message: string;
 }
 export interface HDInsightProperties {
-	readonly address?: string | undefined;
-	readonly administratorAccount?: VirtualMachineSshCredentials | undefined;
-	readonly sshPort?: number | undefined;
+	readonly address?: string;
+	readonly administratorAccount?: VirtualMachineSshCredentials;
+	readonly sshPort?: number;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface ListWorkspaceKeysResult {
-	readonly appInsightsInstrumentationKey?: string | undefined;
-	readonly containerRegistryCredentials?: RegistryListCredentialsResult | undefined;
-	readonly userStorageKey?: string | undefined;
-	readonly userStorageResourceId?: string | undefined;
+	readonly appInsightsInstrumentationKey?: string;
+	readonly containerRegistryCredentials?: RegistryListCredentialsResult;
+	readonly userStorageKey?: string;
+	readonly userStorageResourceId?: string;
 }
 export interface MachineLearningServiceError {
-	readonly error?: ErrorResponse | undefined;
+	readonly error?: ErrorResponse;
 }
 export interface Password {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface RegistryListCredentialsResult {
-	readonly location?: string | undefined;
-	readonly passwords?: Password[] | undefined;
-	readonly username?: string | undefined;
+	readonly location?: string;
+	readonly passwords?: Password[];
+	readonly username?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ScaleSettings {
-	readonly autoScaleEnabled?: boolean | undefined;
-	readonly maxNodeCount?: number | undefined;
-	readonly minNodeCount?: number | undefined;
+	readonly autoScaleEnabled?: boolean;
+	readonly maxNodeCount?: number;
+	readonly minNodeCount?: number;
 }
 export interface SslConfiguration {
-	readonly cert?: string | undefined;
-	readonly cname?: string | undefined;
-	readonly key?: string | undefined;
-	readonly status?: ("Disabled" | "Enabled") | undefined;
+	readonly cert?: string;
+	readonly cname?: string;
+	readonly key?: string;
+	readonly status?: "Disabled" | "Enabled";
 }
 export interface SystemService {
-	readonly publicIpAddress?: string | undefined;
-	readonly systemServiceType?: string | undefined;
-	readonly version?: string | undefined;
+	readonly publicIpAddress?: string;
+	readonly systemServiceType?: string;
+	readonly version?: string;
 }
 export interface VirtualMachineProperties {
-	readonly address?: string | undefined;
-	readonly administratorAccount?: VirtualMachineSshCredentials | undefined;
-	readonly sshPort?: number | undefined;
-	readonly virtualMachineSize?: string | undefined;
+	readonly address?: string;
+	readonly administratorAccount?: VirtualMachineSshCredentials;
+	readonly sshPort?: number;
+	readonly virtualMachineSize?: string;
 }
 export interface VirtualMachineSshCredentials {
-	readonly password?: string | undefined;
-	readonly privateKeyData?: string | undefined;
-	readonly publicKeyData?: string | undefined;
-	readonly username?: string | undefined;
+	readonly password?: string;
+	readonly privateKeyData?: string;
+	readonly publicKeyData?: string;
+	readonly username?: string;
 }
 export interface WorkspaceProperties {
-	readonly applicationInsights?: string | undefined;
-	readonly batchaiWorkspace?: string | undefined;
-	readonly containerRegistry?: string | undefined;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly discoveryUrl?: string | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly keyVault?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
-	readonly storageAccount?: string | undefined;
-	readonly workspaceId?: string | undefined;
+	readonly applicationInsights?: string;
+	readonly batchaiWorkspace?: string;
+	readonly containerRegistry?: string;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly discoveryUrl?: string;
+	readonly friendlyName?: string;
+	readonly keyVault?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating";
+	readonly storageAccount?: string;
+	readonly workspaceId?: string;
 }
 export default {
 	workspaces: workspaces,

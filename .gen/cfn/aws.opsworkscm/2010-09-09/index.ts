@@ -17,29 +17,29 @@ export interface ServerComponentInputs {
 	readonly InstanceProfileArn: string;
 	readonly InstanceType: string;
 	readonly ServiceRoleArn: string;
-	readonly AssociatePublicIpAddress?: (boolean | undefined) | undefined;
-	readonly BackupId?: (string | undefined) | undefined;
-	readonly BackupRetentionCount?: (number | undefined) | undefined;
-	readonly CustomCertificate?: (string | undefined) | undefined;
-	readonly CustomDomain?: (string | undefined) | undefined;
-	readonly CustomPrivateKey?: (string | undefined) | undefined;
-	readonly DisableAutomatedBackup?: (boolean | undefined) | undefined;
-	readonly Engine?: (string | undefined) | undefined;
-	readonly EngineAttributes?: (EngineAttribute[] | undefined) | undefined;
-	readonly EngineModel?: (string | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly KeyPair?: (string | undefined) | undefined;
-	readonly PreferredBackupWindow?: (string | undefined) | undefined;
-	readonly PreferredMaintenanceWindow?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly ServerName?: (string | undefined) | undefined;
-	readonly SubnetIds?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssociatePublicIpAddress?: boolean | undefined;
+	readonly BackupId?: string | undefined;
+	readonly BackupRetentionCount?: number | undefined;
+	readonly CustomCertificate?: string | undefined;
+	readonly CustomDomain?: string | undefined;
+	readonly CustomPrivateKey?: string | undefined;
+	readonly DisableAutomatedBackup?: boolean | undefined;
+	readonly Engine?: string | undefined;
+	readonly EngineAttributes?: EngineAttribute[] | undefined;
+	readonly EngineModel?: string | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly KeyPair?: string | undefined;
+	readonly PreferredBackupWindow?: string | undefined;
+	readonly PreferredMaintenanceWindow?: string | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly ServerName?: string | undefined;
+	readonly SubnetIds?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface EngineAttribute {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export default {
 	Server: Server,

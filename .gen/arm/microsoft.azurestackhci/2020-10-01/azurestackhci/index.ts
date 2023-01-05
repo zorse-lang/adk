@@ -16,53 +16,51 @@ export interface clustersComponentOutputs {
 export interface clustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ClusterProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface ClusterNode {
-	readonly coreCount?: number | undefined;
-	readonly id?: number | undefined;
-	readonly manufacturer?: string | undefined;
-	readonly memoryInGiB?: number | undefined;
-	readonly model?: string | undefined;
-	readonly name?: string | undefined;
-	readonly osName?: string | undefined;
-	readonly osVersion?: string | undefined;
-	readonly serialNumber?: string | undefined;
+	readonly coreCount?: number;
+	readonly id?: number;
+	readonly manufacturer?: string;
+	readonly memoryInGiB?: number;
+	readonly model?: string;
+	readonly name?: string;
+	readonly osName?: string;
+	readonly osVersion?: string;
+	readonly serialNumber?: string;
 }
 export interface ClusterProperties {
 	readonly aadClientId: string;
 	readonly aadTenantId: string;
-	readonly billingModel?: string | undefined;
-	readonly cloudId?: string | undefined;
-	readonly lastBillingTimestamp?: string | undefined;
-	readonly lastSyncTimestamp?: string | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly registrationTimestamp?: string | undefined;
-	readonly reportedProperties?: ClusterReportedProperties | undefined;
-	readonly status?:
-		| ("ConnectedRecently" | "Disconnected" | "Error" | "NotConnectedRecently" | "NotYetRegistered")
-		| undefined;
-	readonly trialDaysRemaining?: number | undefined;
+	readonly billingModel?: string;
+	readonly cloudId?: string;
+	readonly lastBillingTimestamp?: string;
+	readonly lastSyncTimestamp?: string;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
+	readonly registrationTimestamp?: string;
+	readonly reportedProperties?: ClusterReportedProperties;
+	readonly status?: "ConnectedRecently" | "Disconnected" | "Error" | "NotConnectedRecently" | "NotYetRegistered";
+	readonly trialDaysRemaining?: number;
 }
 export interface ClusterReportedProperties {
-	readonly clusterId?: string | undefined;
-	readonly clusterName?: string | undefined;
-	readonly clusterVersion?: string | undefined;
-	readonly lastUpdated?: string | undefined;
-	readonly nodes?: ClusterNode[] | undefined;
+	readonly clusterId?: string;
+	readonly clusterName?: string;
+	readonly clusterVersion?: string;
+	readonly lastUpdated?: string;
+	readonly nodes?: ClusterNode[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	clusters: clusters,

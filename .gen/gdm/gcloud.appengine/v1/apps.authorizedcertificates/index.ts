@@ -11,35 +11,34 @@ export class AppsAuthorizedCertificates
 export interface AppsAuthorizedCertificatesComponentOutputs {}
 export interface AppsAuthorizedCertificatesComponentInputs {
 	readonly appsId: string;
-	readonly certificateRawData?: CertificateRawData | undefined;
-	readonly displayName?: string | undefined;
-	readonly domainMappingsCount?: number | undefined;
-	readonly domainNames?: string[] | undefined;
-	readonly expireTime?: string | undefined;
-	readonly id?: string | undefined;
-	readonly managedCertificate?: ManagedCertificate | undefined;
+	readonly certificateRawData?: CertificateRawData;
+	readonly displayName?: string;
+	readonly domainMappingsCount?: number;
+	readonly domainNames?: string[];
+	readonly expireTime?: string;
+	readonly id?: string;
+	readonly managedCertificate?: ManagedCertificate;
 	readonly name: string;
-	readonly visibleDomainMappings?: string[] | undefined;
-	readonly type: string;
+	readonly visibleDomainMappings?: string[];
 }
 export interface AuthorizedCertificate {
-	readonly certificateRawData?: CertificateRawData | undefined;
-	readonly displayName?: string | undefined;
-	readonly domainMappingsCount?: number | undefined;
-	readonly domainNames?: string[] | undefined;
-	readonly expireTime?: string | undefined;
-	readonly id?: string | undefined;
-	readonly managedCertificate?: ManagedCertificate | undefined;
-	readonly name?: string | undefined;
-	readonly visibleDomainMappings?: string[] | undefined;
+	readonly certificateRawData?: CertificateRawData;
+	readonly displayName?: string;
+	readonly domainMappingsCount?: number;
+	readonly domainNames?: string[];
+	readonly expireTime?: string;
+	readonly id?: string;
+	readonly managedCertificate?: ManagedCertificate;
+	readonly name?: string;
+	readonly visibleDomainMappings?: string[];
 }
 export interface CertificateRawData {
-	readonly privateKey?: string | undefined;
-	readonly publicCertificate?: string | undefined;
+	readonly privateKey?: string;
+	readonly publicCertificate?: string;
 }
 export interface ManagedCertificate {
-	readonly lastRenewalTime?: string | undefined;
-	readonly status?: string | undefined;
+	readonly lastRenewalTime?: string;
+	readonly status?: string;
 }
 export default {
 	AppsAuthorizedCertificates: AppsAuthorizedCertificates,

@@ -19,8 +19,8 @@ export interface managedClustersComponentOutputs {
 export interface managedClustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagedClusterProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ManagedClusterProperties;
+	readonly tags?: ResourceTags;
 }
 export class managedClusters_accessProfiles
 	extends ArmResource<managedClusters_accessProfilesComponentInputs>
@@ -39,10 +39,10 @@ export interface managedClusters_accessProfilesComponentOutputs {
 	readonly type: "Microsoft.ContainerService/managedClusters/accessProfiles";
 }
 export interface managedClusters_accessProfilesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AccessProfile | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: AccessProfile;
+	readonly tags?: ResourceTags;
 }
 export function listCredential(resource: managedClusters_accessProfiles): ManagedClusterAccessProfile {
 	if (resource.apiVersion !== "2017-08-31") {
@@ -54,17 +54,17 @@ export function listCredential(resource: managedClusters_accessProfiles): Manage
 	throw new Error("not implemented");
 }
 export interface AccessProfile {
-	readonly kubeConfig?: any | undefined;
+	readonly kubeConfig?: any;
 }
 export interface ContainerServiceAgentPoolProfile {
-	readonly count?: number | undefined;
-	readonly dnsPrefix?: string | undefined;
-	readonly fqdn?: string | undefined;
+	readonly count?: number;
+	readonly dnsPrefix?: string;
+	readonly fqdn?: string;
 	readonly name: string;
-	readonly osDiskSizeGB?: number | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly ports?: number[] | undefined;
-	readonly storageProfile?: ("ManagedDisks" | "StorageAccount") | undefined;
+	readonly osDiskSizeGB?: number;
+	readonly osType?: "Linux" | "Windows";
+	readonly ports?: number[];
+	readonly storageProfile?: "ManagedDisks" | "StorageAccount";
 	readonly vmSize:
 		| "Standard_A1"
 		| "Standard_A10"
@@ -240,7 +240,7 @@ export interface ContainerServiceAgentPoolProfile {
 		| "Standard_NV12"
 		| "Standard_NV24"
 		| "Standard_NV6";
-	readonly vnetSubnetID?: string | undefined;
+	readonly vnetSubnetID?: string;
 }
 export interface ContainerServiceLinuxProfile {
 	readonly adminUsername: string;
@@ -248,8 +248,8 @@ export interface ContainerServiceLinuxProfile {
 }
 export interface ContainerServicePrincipalProfile {
 	readonly clientId: string;
-	readonly keyVaultSecretRef?: KeyVaultSecretRef | undefined;
-	readonly secret?: string | undefined;
+	readonly keyVaultSecretRef?: KeyVaultSecretRef;
+	readonly secret?: string;
 }
 export interface ContainerServiceSshConfiguration {
 	readonly publicKeys: ContainerServiceSshPublicKey[];
@@ -260,27 +260,27 @@ export interface ContainerServiceSshPublicKey {
 export interface KeyVaultSecretRef {
 	readonly secretName: string;
 	readonly vaultID: string;
-	readonly version?: string | undefined;
+	readonly version?: string;
 }
 export interface ManagedClusterAccessProfile {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: AccessProfile | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: AccessProfile;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ManagedClusterProperties {
-	readonly agentPoolProfiles?: ContainerServiceAgentPoolProfile[] | undefined;
-	readonly dnsPrefix?: string | undefined;
-	readonly fqdn?: string | undefined;
-	readonly kubernetesVersion?: string | undefined;
-	readonly linuxProfile?: ContainerServiceLinuxProfile | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly servicePrincipalProfile?: ContainerServicePrincipalProfile | undefined;
+	readonly agentPoolProfiles?: ContainerServiceAgentPoolProfile[];
+	readonly dnsPrefix?: string;
+	readonly fqdn?: string;
+	readonly kubernetesVersion?: string;
+	readonly linuxProfile?: ContainerServiceLinuxProfile;
+	readonly provisioningState?: string;
+	readonly servicePrincipalProfile?: ContainerServicePrincipalProfile;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	managedClusters: managedClusters,

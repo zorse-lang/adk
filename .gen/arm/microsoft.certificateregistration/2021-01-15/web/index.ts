@@ -17,11 +17,11 @@ export interface certificateOrdersComponentOutputs {
 	readonly type: "Microsoft.CertificateRegistration/certificateOrders";
 }
 export interface certificateOrdersComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AppServiceCertificateOrderProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: AppServiceCertificateOrderProperties;
+	readonly tags?: ResourceTags;
 }
 export class certificateOrders_certificates
 	extends ArmResource<certificateOrders_certificatesComponentInputs>
@@ -46,11 +46,11 @@ export interface certificateOrders_certificatesComponentOutputs {
 	readonly type: "Microsoft.CertificateRegistration/certificateOrders/certificates";
 }
 export interface certificateOrders_certificatesComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AppServiceCertificate | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: AppServiceCertificate;
+	readonly tags?: ResourceTags;
 }
 export class certificateOrders_detectors
 	extends ArmResource<certificateOrders_detectorsComponentInputs>
@@ -69,179 +69,171 @@ export interface certificateOrders_detectorsComponentOutputs {
 	readonly type: "Microsoft.CertificateRegistration/certificateOrders/detectors";
 }
 export interface certificateOrders_detectorsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly properties?: DetectorResponseProperties | undefined;
+	readonly properties?: DetectorResponseProperties;
 }
 export interface AppServiceCertificate {
-	readonly keyVaultId?: string | undefined;
-	readonly keyVaultSecretName?: string | undefined;
+	readonly keyVaultId?: string;
+	readonly keyVaultSecretName?: string;
 	readonly provisioningState?:
-		| (
-				| "AzureServiceUnauthorizedToAccessKeyVault"
-				| "CertificateOrderFailed"
-				| "ExternalPrivateKey"
-				| "Initialized"
-				| "KeyVaultDoesNotExist"
-				| "KeyVaultSecretDoesNotExist"
-				| "OperationNotPermittedOnKeyVault"
-				| "Succeeded"
-				| "Unknown"
-				| "UnknownError"
-		  )
-		| undefined;
+		| "AzureServiceUnauthorizedToAccessKeyVault"
+		| "CertificateOrderFailed"
+		| "ExternalPrivateKey"
+		| "Initialized"
+		| "KeyVaultDoesNotExist"
+		| "KeyVaultSecretDoesNotExist"
+		| "OperationNotPermittedOnKeyVault"
+		| "Succeeded"
+		| "Unknown"
+		| "UnknownError";
 }
 export interface AppServiceCertificateOrderProperties {
 	readonly appServiceCertificateNotRenewableReasons?:
-		| ("ExpirationNotInRenewalTimeRange" | "RegistrationStatusNotSupportedForRenewal" | "SubscriptionNotActive"[])
-		| undefined;
-	readonly autoRenew?: boolean | undefined;
-	readonly certificates?: AppServiceCertificateOrderPropertiesCertificates | undefined;
-	readonly contact?: CertificateOrderContact | undefined;
-	readonly csr?: string | undefined;
-	readonly distinguishedName?: string | undefined;
-	readonly domainVerificationToken?: string | undefined;
-	readonly expirationTime?: string | undefined;
-	readonly intermediate?: CertificateDetails | undefined;
-	readonly isPrivateKeyExternal?: boolean | undefined;
-	readonly keySize?: number | undefined;
-	readonly lastCertificateIssuanceTime?: string | undefined;
-	readonly nextAutoRenewalTimeStamp?: string | undefined;
+		| "ExpirationNotInRenewalTimeRange"
+		| "RegistrationStatusNotSupportedForRenewal"
+		| "SubscriptionNotActive"[];
+	readonly autoRenew?: boolean;
+	readonly certificates?: AppServiceCertificateOrderPropertiesCertificates;
+	readonly contact?: CertificateOrderContact;
+	readonly csr?: string;
+	readonly distinguishedName?: string;
+	readonly domainVerificationToken?: string;
+	readonly expirationTime?: string;
+	readonly intermediate?: CertificateDetails;
+	readonly isPrivateKeyExternal?: boolean;
+	readonly keySize?: number;
+	readonly lastCertificateIssuanceTime?: string;
+	readonly nextAutoRenewalTimeStamp?: string;
 	readonly productType: "StandardDomainValidatedSsl";
-	readonly provisioningState?: ("Canceled" | "Deleting" | "Failed" | "InProgress") | undefined;
-	readonly root?: CertificateDetails | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly signedCertificate?: CertificateDetails | undefined;
+	readonly provisioningState?: "Canceled" | "Deleting" | "Failed" | "InProgress";
+	readonly root?: CertificateDetails;
+	readonly serialNumber?: string;
+	readonly signedCertificate?: CertificateDetails;
 	readonly status?:
-		| (
-				| "Canceled"
-				| "Denied"
-				| "Expired"
-				| "Issued"
-				| "NotSubmitted"
-				| "PendingRekey"
-				| "Pendingissuance"
-				| "Pendingrevocation"
-				| "Revoked"
-		  )
-		| undefined;
-	readonly validityInYears?: number | undefined;
+		| "Canceled"
+		| "Denied"
+		| "Expired"
+		| "Issued"
+		| "NotSubmitted"
+		| "PendingRekey"
+		| "Pendingissuance"
+		| "Pendingrevocation"
+		| "Revoked";
+	readonly validityInYears?: number;
 }
 export interface AppServiceCertificateOrderPropertiesCertificates {
-	readonly "[ key: string ]"?: AppServiceCertificate | undefined;
+	readonly [key: string]: AppServiceCertificate;
 }
 export interface CertificateDetails {
-	readonly issuer?: string | undefined;
-	readonly notAfter?: string | undefined;
-	readonly notBefore?: string | undefined;
-	readonly rawData?: string | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly signatureAlgorithm?: string | undefined;
-	readonly subject?: string | undefined;
-	readonly thumbprint?: string | undefined;
-	readonly version?: number | undefined;
+	readonly issuer?: string;
+	readonly notAfter?: string;
+	readonly notBefore?: string;
+	readonly rawData?: string;
+	readonly serialNumber?: string;
+	readonly signatureAlgorithm?: string;
+	readonly subject?: string;
+	readonly thumbprint?: string;
+	readonly version?: number;
 }
 export interface CertificateOrderContact {
-	readonly email?: string | undefined;
-	readonly nameFirst?: string | undefined;
-	readonly nameLast?: string | undefined;
-	readonly phone?: string | undefined;
+	readonly email?: string;
+	readonly nameFirst?: string;
+	readonly nameLast?: string;
+	readonly phone?: string;
 }
 export interface DataProviderMetadata {
-	readonly propertyBag?: KeyValuePairStringObject[] | undefined;
-	readonly providerName?: string | undefined;
+	readonly propertyBag?: KeyValuePairStringObject[];
+	readonly providerName?: string;
 }
 export interface DataTableResponseColumn {
-	readonly columnName?: string | undefined;
-	readonly columnType?: string | undefined;
-	readonly dataType?: string | undefined;
+	readonly columnName?: string;
+	readonly columnType?: string;
+	readonly dataType?: string;
 }
 export interface DataTableResponseObject {
-	readonly columns?: DataTableResponseColumn[] | undefined;
-	readonly rows?: string[][] | undefined;
-	readonly tableName?: string | undefined;
+	readonly columns?: DataTableResponseColumn[];
+	readonly rows?: string[][];
+	readonly tableName?: string;
 }
 export interface DetectorInfo {
-	readonly analysisType?: string[] | undefined;
-	readonly author?: string | undefined;
-	readonly category?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly score?: number | undefined;
-	readonly supportTopicList?: SupportTopic[] | undefined;
-	readonly type?: ("Analysis" | "CategoryOverview") | undefined;
+	readonly analysisType?: string[];
+	readonly author?: string;
+	readonly category?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly score?: number;
+	readonly supportTopicList?: SupportTopic[];
+	readonly type?: "Analysis" | "CategoryOverview";
 }
 export interface DetectorResponseProperties {
-	readonly dataProvidersMetadata?: DataProviderMetadata[] | undefined;
-	readonly dataset?: DiagnosticData[] | undefined;
-	readonly metadata?: DetectorInfo | undefined;
-	readonly status?: Status | undefined;
-	readonly suggestedUtterances?: QueryUtterancesResults | undefined;
+	readonly dataProvidersMetadata?: DataProviderMetadata[];
+	readonly dataset?: DiagnosticData[];
+	readonly metadata?: DetectorInfo;
+	readonly status?: Status;
+	readonly suggestedUtterances?: QueryUtterancesResults;
 }
 export interface DiagnosticData {
-	readonly renderingProperties?: Rendering | undefined;
-	readonly table?: DataTableResponseObject | undefined;
+	readonly renderingProperties?: Rendering;
+	readonly table?: DataTableResponseObject;
 }
 export interface KeyValuePairStringObject {
-	readonly key?: string | undefined;
-	readonly value?: any | undefined;
+	readonly key?: string;
+	readonly value?: any;
 }
 export interface QueryUtterancesResult {
-	readonly sampleUtterance?: SampleUtterance | undefined;
-	readonly score?: number | undefined;
+	readonly sampleUtterance?: SampleUtterance;
+	readonly score?: number;
 }
 export interface QueryUtterancesResults {
-	readonly query?: string | undefined;
-	readonly results?: QueryUtterancesResult[] | undefined;
+	readonly query?: string;
+	readonly results?: QueryUtterancesResult[];
 }
 export interface Rendering {
-	readonly description?: string | undefined;
-	readonly title?: string | undefined;
+	readonly description?: string;
+	readonly title?: string;
 	readonly type?:
-		| (
-				| "AppInsight"
-				| "AppInsightEnablement"
-				| "Card"
-				| "ChangeAnalysisOnboarding"
-				| "ChangeSets"
-				| "ChangesView"
-				| "DataSummary"
-				| "DependencyGraph"
-				| "Detector"
-				| "DownTime"
-				| "DropDown"
-				| "DynamicInsight"
-				| "Email"
-				| "Form"
-				| "Guage"
-				| "Insights"
-				| "Markdown"
-				| "NoGraph"
-				| "PieChart"
-				| "SearchComponent"
-				| "Solution"
-				| "SummaryCard"
-				| "Table"
-				| "TimeSeries"
-		  )
-		| undefined;
+		| "AppInsight"
+		| "AppInsightEnablement"
+		| "Card"
+		| "ChangeAnalysisOnboarding"
+		| "ChangeSets"
+		| "ChangesView"
+		| "DataSummary"
+		| "DependencyGraph"
+		| "Detector"
+		| "DownTime"
+		| "DropDown"
+		| "DynamicInsight"
+		| "Email"
+		| "Form"
+		| "Guage"
+		| "Insights"
+		| "Markdown"
+		| "NoGraph"
+		| "PieChart"
+		| "SearchComponent"
+		| "Solution"
+		| "SummaryCard"
+		| "Table"
+		| "TimeSeries";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SampleUtterance {
-	readonly links?: string[] | undefined;
-	readonly qid?: string | undefined;
-	readonly text?: string | undefined;
+	readonly links?: string[];
+	readonly qid?: string;
+	readonly text?: string;
 }
 export interface Status {
-	readonly message?: string | undefined;
-	readonly statusId?: ("Critical" | "Info" | "None" | "Success") | undefined;
+	readonly message?: string;
+	readonly statusId?: "Critical" | "Info" | "None" | "Success";
 }
 export interface SupportTopic {
-	readonly id?: string | undefined;
-	readonly pesId?: string | undefined;
+	readonly id?: string;
+	readonly pesId?: string;
 }
 export default {
 	certificateOrders: certificateOrders,

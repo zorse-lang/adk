@@ -20,31 +20,31 @@ export interface InstanceComponentOutputs {
 export interface InstanceComponentInputs {
 	readonly DBInstanceClass: string;
 	readonly DBInstanceStorage: number;
-	readonly AccountPassword?: (string | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly BackupId?: (string | undefined) | undefined;
-	readonly BusinessInfo?: (string | undefined) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly CouponNo?: (string | undefined) | undefined;
-	readonly DatabaseNames?: (string | undefined) | undefined;
-	readonly DBInstanceDescription?: (string | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly ReadonlyReplicas?: (number | undefined) | undefined;
-	readonly ReplicationFactor?: (number | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly RestoreTime?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SecurityIPArray?: (string | undefined) | undefined;
-	readonly SrcDBInstanceId?: (string | undefined) | undefined;
-	readonly StorageEngine?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly TDEStatus?: (boolean | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VpcPasswordFree?: (boolean | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly AccountPassword?: string | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly BackupId?: string | undefined;
+	readonly BusinessInfo?: string | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly CouponNo?: string | undefined;
+	readonly DatabaseNames?: string | undefined;
+	readonly DBInstanceDescription?: string | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly ReadonlyReplicas?: number | undefined;
+	readonly ReplicationFactor?: number | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly RestoreTime?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SecurityIPArray?: string | undefined;
+	readonly SrcDBInstanceId?: string | undefined;
+	readonly StorageEngine?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly TDEStatus?: boolean | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VpcPasswordFree?: boolean | undefined;
+	readonly VSwitchId?: string | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ServerlessInstance
@@ -67,22 +67,22 @@ export interface ServerlessInstanceComponentOutputs {
 }
 export interface ServerlessInstanceComponentInputs {
 	readonly DBInstanceStorage: number;
-	readonly AccountPassword?: (string | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly DBInstanceDescription?: (string | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodPriceType?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecurityIPArray?: (string | undefined) | undefined;
-	readonly StorageEngine?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly TDEStatus?: (boolean | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly AccountPassword?: string | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly DBInstanceDescription?: string | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodPriceType?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecurityIPArray?: string | undefined;
+	readonly StorageEngine?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly TDEStatus?: boolean | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VSwitchId?: string | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ShardingInstance
@@ -105,28 +105,28 @@ export interface ShardingInstanceComponentInputs {
 	readonly ConfigServer: ConfigServer[];
 	readonly Mongos: Mongos[];
 	readonly ReplicaSet: ReplicaSet[];
-	readonly AccountPassword?: (string | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly DBInstanceDescription?: (string | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly ProtocolType?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly RestoreTime?: (string | undefined) | undefined;
-	readonly SecurityIPArray?: (string | undefined) | undefined;
-	readonly SrcDBInstanceId?: (string | undefined) | undefined;
-	readonly StorageEngine?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly TDEStatus?: (boolean | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly AccountPassword?: string | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly DBInstanceDescription?: string | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly ProtocolType?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly RestoreTime?: string | undefined;
+	readonly SecurityIPArray?: string | undefined;
+	readonly SrcDBInstanceId?: string | undefined;
+	readonly StorageEngine?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly TDEStatus?: boolean | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VSwitchId?: string | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface ConfigServer {
@@ -138,7 +138,7 @@ export interface Mongos {
 }
 export interface ReplicaSet {
 	readonly Storage: number;
-	readonly ReadonlyReplicas?: (number | undefined) | undefined;
+	readonly ReadonlyReplicas?: number | undefined;
 	readonly Class: string;
 }
 export default {

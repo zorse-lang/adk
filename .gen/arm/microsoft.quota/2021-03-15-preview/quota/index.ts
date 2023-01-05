@@ -15,7 +15,7 @@ export interface quotasComponentOutputs {
 }
 export interface quotasComponentInputs {
 	readonly name: string;
-	readonly properties?: QuotaProperties | undefined;
+	readonly properties?: QuotaProperties;
 }
 export class usages extends ArmResource<usagesComponentInputs> implements usagesComponentOutputs {
 	constructor(entity: ADKEntity, options: usagesComponentInputs) {
@@ -32,34 +32,34 @@ export interface usagesComponentOutputs {
 }
 export interface usagesComponentInputs {
 	readonly name: string;
-	readonly properties?: UsagesProperties | undefined;
+	readonly properties?: UsagesProperties;
 }
 export interface LimitJsonObject {}
 export interface QuotaProperties {
-	readonly isQuotaApplicable?: boolean | undefined;
-	readonly limit?: LimitJsonObject | undefined;
-	readonly name?: ResourceName | undefined;
-	readonly properties?: any | undefined;
-	readonly quotaPeriod?: string | undefined;
-	readonly resourceType?: string | undefined;
-	readonly unit?: string | undefined;
+	readonly isQuotaApplicable?: boolean;
+	readonly limit?: LimitJsonObject;
+	readonly name?: ResourceName;
+	readonly properties?: any;
+	readonly quotaPeriod?: string;
+	readonly resourceType?: string;
+	readonly unit?: string;
 }
 export interface ResourceName {
-	readonly localizedValue?: string | undefined;
-	readonly value?: string | undefined;
+	readonly localizedValue?: string;
+	readonly value?: string;
 }
 export interface UsagesObject {
-	readonly usagesType?: ("Combined" | "Individual") | undefined;
+	readonly usagesType?: "Combined" | "Individual";
 	readonly value: number;
 }
 export interface UsagesProperties {
-	readonly isQuotaApplicable?: boolean | undefined;
-	readonly name?: ResourceName | undefined;
-	readonly properties?: any | undefined;
-	readonly quotaPeriod?: string | undefined;
-	readonly resourceType?: string | undefined;
-	readonly unit?: string | undefined;
-	readonly usages?: UsagesObject | undefined;
+	readonly isQuotaApplicable?: boolean;
+	readonly name?: ResourceName;
+	readonly properties?: any;
+	readonly quotaPeriod?: string;
+	readonly resourceType?: string;
+	readonly unit?: string;
+	readonly usages?: UsagesObject;
 }
 export default {
 	quotas: quotas,

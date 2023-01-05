@@ -15,14 +15,14 @@ export interface pricingsComponentOutputs {
 }
 export interface pricingsComponentInputs {
 	readonly name: string;
-	readonly properties?: PricingProperties | undefined;
+	readonly properties?: PricingProperties;
 }
 export interface PricingProperties {
-	readonly deprecated?: boolean | undefined;
-	readonly freeTrialRemainingTime?: string | undefined;
+	readonly deprecated?: boolean;
+	readonly freeTrialRemainingTime?: string;
 	readonly pricingTier: "Free" | "Standard";
-	readonly replacedBy?: string[] | undefined;
-	readonly subPlan?: string | undefined;
+	readonly replacedBy?: string[];
+	readonly subPlan?: string;
 }
 export default {
 	pricings: pricings,

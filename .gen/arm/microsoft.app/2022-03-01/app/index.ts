@@ -14,12 +14,12 @@ export interface containerAppsComponentOutputs {
 	readonly type: "Microsoft.App/containerApps";
 }
 export interface containerAppsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
+	readonly identity?: ManagedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ContainerAppProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ContainerAppProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class containerApps_authConfigs
 	extends ArmResource<containerApps_authConfigsComponentInputs>
@@ -39,8 +39,8 @@ export interface containerApps_authConfigsComponentOutputs {
 }
 export interface containerApps_authConfigsComponentInputs {
 	readonly name: string;
-	readonly properties?: AuthConfigProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AuthConfigProperties;
+	readonly systemData?: SystemData;
 }
 export class containerApps_revisions
 	extends ArmResource<containerApps_revisionsComponentInputs>
@@ -60,8 +60,8 @@ export interface containerApps_revisionsComponentOutputs {
 }
 export interface containerApps_revisionsComponentInputs {
 	readonly name: string;
-	readonly properties?: RevisionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: RevisionProperties;
+	readonly systemData?: SystemData;
 }
 export class containerApps_revisions_replicas
 	extends ArmResource<containerApps_revisions_replicasComponentInputs>
@@ -81,8 +81,8 @@ export interface containerApps_revisions_replicasComponentOutputs {
 }
 export interface containerApps_revisions_replicasComponentInputs {
 	readonly name: string;
-	readonly properties?: ReplicaProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ReplicaProperties;
+	readonly systemData?: SystemData;
 }
 export class containerApps_sourcecontrols
 	extends ArmResource<containerApps_sourcecontrolsComponentInputs>
@@ -102,8 +102,8 @@ export interface containerApps_sourcecontrolsComponentOutputs {
 }
 export interface containerApps_sourcecontrolsComponentInputs {
 	readonly name: string;
-	readonly properties?: SourceControlProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SourceControlProperties;
+	readonly systemData?: SystemData;
 }
 export class managedEnvironments
 	extends ArmResource<managedEnvironmentsComponentInputs>
@@ -124,9 +124,9 @@ export interface managedEnvironmentsComponentOutputs {
 export interface managedEnvironmentsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagedEnvironmentProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ManagedEnvironmentProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class managedEnvironments_certificates
 	extends ArmResource<managedEnvironments_certificatesComponentInputs>
@@ -147,9 +147,9 @@ export interface managedEnvironments_certificatesComponentOutputs {
 export interface managedEnvironments_certificatesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CertificateProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: CertificateProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class managedEnvironments_daprComponents
 	extends ArmResource<managedEnvironments_daprComponentsComponentInputs>
@@ -169,8 +169,8 @@ export interface managedEnvironments_daprComponentsComponentOutputs {
 }
 export interface managedEnvironments_daprComponentsComponentInputs {
 	readonly name: string;
-	readonly properties?: DaprComponentProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DaprComponentProperties;
+	readonly systemData?: SystemData;
 }
 export class managedEnvironments_storages
 	extends ArmResource<managedEnvironments_storagesComponentInputs>
@@ -190,8 +190,8 @@ export interface managedEnvironments_storagesComponentOutputs {
 }
 export interface managedEnvironments_storagesComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedEnvironmentStorageProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ManagedEnvironmentStorageProperties;
+	readonly systemData?: SystemData;
 }
 export function listCustomHostNameAnalysis(resource: containerApps): CustomHostnameAnalysisResult {
 	if (resource.apiVersion !== "2022-03-01") {
@@ -212,522 +212,515 @@ export function listSecrets(resource: containerApps): SecretsCollection {
 	throw new Error("not implemented");
 }
 export interface AllowedAudiencesValidation {
-	readonly allowedAudiences?: string[] | undefined;
+	readonly allowedAudiences?: string[];
 }
 export interface AllowedPrincipals {
-	readonly groups?: string[] | undefined;
-	readonly identities?: string[] | undefined;
+	readonly groups?: string[];
+	readonly identities?: string[];
 }
 export interface Apple {
-	readonly enabled?: boolean | undefined;
-	readonly login?: LoginScopes | undefined;
-	readonly registration?: AppleRegistration | undefined;
+	readonly enabled?: boolean;
+	readonly login?: LoginScopes;
+	readonly registration?: AppleRegistration;
 }
 export interface AppleRegistration {
-	readonly clientId?: string | undefined;
-	readonly clientSecretSettingName?: string | undefined;
+	readonly clientId?: string;
+	readonly clientSecretSettingName?: string;
 }
 export interface AppLogsConfiguration {
-	readonly destination?: string | undefined;
-	readonly logAnalyticsConfiguration?: LogAnalyticsConfiguration | undefined;
+	readonly destination?: string;
+	readonly logAnalyticsConfiguration?: LogAnalyticsConfiguration;
 }
 export interface AppRegistration {
-	readonly appId?: string | undefined;
-	readonly appSecretSettingName?: string | undefined;
+	readonly appId?: string;
+	readonly appSecretSettingName?: string;
 }
 export interface AuthConfigProperties {
-	readonly globalValidation?: GlobalValidation | undefined;
-	readonly httpSettings?: HttpSettings | undefined;
-	readonly identityProviders?: IdentityProviders | undefined;
-	readonly login?: Login | undefined;
-	readonly platform?: AuthPlatform | undefined;
+	readonly globalValidation?: GlobalValidation;
+	readonly httpSettings?: HttpSettings;
+	readonly identityProviders?: IdentityProviders;
+	readonly login?: Login;
+	readonly platform?: AuthPlatform;
 }
 export interface AuthPlatform {
-	readonly enabled?: boolean | undefined;
-	readonly runtimeVersion?: string | undefined;
+	readonly enabled?: boolean;
+	readonly runtimeVersion?: string;
 }
 export interface AzureActiveDirectory {
-	readonly enabled?: boolean | undefined;
-	readonly isAutoProvisioned?: boolean | undefined;
-	readonly login?: AzureActiveDirectoryLogin | undefined;
-	readonly registration?: AzureActiveDirectoryRegistration | undefined;
-	readonly validation?: AzureActiveDirectoryValidation | undefined;
+	readonly enabled?: boolean;
+	readonly isAutoProvisioned?: boolean;
+	readonly login?: AzureActiveDirectoryLogin;
+	readonly registration?: AzureActiveDirectoryRegistration;
+	readonly validation?: AzureActiveDirectoryValidation;
 }
 export interface AzureActiveDirectoryLogin {
-	readonly disableWWWAuthenticate?: boolean | undefined;
-	readonly loginParameters?: string[] | undefined;
+	readonly disableWWWAuthenticate?: boolean;
+	readonly loginParameters?: string[];
 }
 export interface AzureActiveDirectoryRegistration {
-	readonly clientId?: string | undefined;
-	readonly clientSecretCertificateIssuer?: string | undefined;
-	readonly clientSecretCertificateSubjectAlternativeName?: string | undefined;
-	readonly clientSecretCertificateThumbprint?: string | undefined;
-	readonly clientSecretSettingName?: string | undefined;
-	readonly openIdIssuer?: string | undefined;
+	readonly clientId?: string;
+	readonly clientSecretCertificateIssuer?: string;
+	readonly clientSecretCertificateSubjectAlternativeName?: string;
+	readonly clientSecretCertificateThumbprint?: string;
+	readonly clientSecretSettingName?: string;
+	readonly openIdIssuer?: string;
 }
 export interface AzureActiveDirectoryValidation {
-	readonly allowedAudiences?: string[] | undefined;
-	readonly defaultAuthorizationPolicy?: DefaultAuthorizationPolicy | undefined;
-	readonly jwtClaimChecks?: JwtClaimChecks | undefined;
+	readonly allowedAudiences?: string[];
+	readonly defaultAuthorizationPolicy?: DefaultAuthorizationPolicy;
+	readonly jwtClaimChecks?: JwtClaimChecks;
 }
 export interface AzureCredentials {
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly clientId?: string;
+	readonly clientSecret?: string;
+	readonly subscriptionId?: string;
+	readonly tenantId?: string;
 }
 export interface AzureFileProperties {
-	readonly accessMode?: ("ReadOnly" | "ReadWrite") | undefined;
-	readonly accountKey?: string | undefined;
-	readonly accountName?: string | undefined;
-	readonly shareName?: string | undefined;
+	readonly accessMode?: "ReadOnly" | "ReadWrite";
+	readonly accountKey?: string;
+	readonly accountName?: string;
+	readonly shareName?: string;
 }
 export interface AzureStaticWebApps {
-	readonly enabled?: boolean | undefined;
-	readonly registration?: AzureStaticWebAppsRegistration | undefined;
+	readonly enabled?: boolean;
+	readonly registration?: AzureStaticWebAppsRegistration;
 }
 export interface AzureStaticWebAppsRegistration {
-	readonly clientId?: string | undefined;
+	readonly clientId?: string;
 }
 export interface CertificateProperties {
-	readonly expirationDate?: string | undefined;
-	readonly issueDate?: string | undefined;
-	readonly issuer?: string | undefined;
-	readonly password?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "DeleteFailed" | "Failed" | "Pending" | "Succeeded") | undefined;
-	readonly publicKeyHash?: string | undefined;
-	readonly subjectName?: string | undefined;
-	readonly thumbprint?: string | undefined;
-	readonly valid?: boolean | undefined;
-	readonly value?: any | undefined;
+	readonly expirationDate?: string;
+	readonly issueDate?: string;
+	readonly issuer?: string;
+	readonly password?: string;
+	readonly provisioningState?: "Canceled" | "DeleteFailed" | "Failed" | "Pending" | "Succeeded";
+	readonly publicKeyHash?: string;
+	readonly subjectName?: string;
+	readonly thumbprint?: string;
+	readonly valid?: boolean;
+	readonly value?: any;
 }
 export interface ClientRegistration {
-	readonly clientId?: string | undefined;
-	readonly clientSecretSettingName?: string | undefined;
+	readonly clientId?: string;
+	readonly clientSecretSettingName?: string;
 }
 export interface Configuration {
-	readonly activeRevisionsMode?: ("Multiple" | "Single") | undefined;
-	readonly dapr?: Dapr | undefined;
-	readonly ingress?: Ingress | undefined;
-	readonly registries?: RegistryCredentials[] | undefined;
-	readonly secrets?: Secret[] | undefined;
+	readonly activeRevisionsMode?: "Multiple" | "Single";
+	readonly dapr?: Dapr;
+	readonly ingress?: Ingress;
+	readonly registries?: RegistryCredentials[];
+	readonly secrets?: Secret[];
 }
 export interface Container {
-	readonly args?: string[] | undefined;
-	readonly command?: string[] | undefined;
-	readonly env?: EnvironmentVar[] | undefined;
-	readonly image?: string | undefined;
-	readonly name?: string | undefined;
-	readonly probes?: ContainerAppProbe[] | undefined;
-	readonly resources?: ContainerResources | undefined;
-	readonly volumeMounts?: VolumeMount[] | undefined;
+	readonly args?: string[];
+	readonly command?: string[];
+	readonly env?: EnvironmentVar[];
+	readonly image?: string;
+	readonly name?: string;
+	readonly probes?: ContainerAppProbe[];
+	readonly resources?: ContainerResources;
+	readonly volumeMounts?: VolumeMount[];
 }
 export interface ContainerAppProbe {
-	readonly failureThreshold?: number | undefined;
-	readonly httpGet?: ContainerAppProbeHttpGet | undefined;
-	readonly initialDelaySeconds?: number | undefined;
-	readonly periodSeconds?: number | undefined;
-	readonly successThreshold?: number | undefined;
-	readonly tcpSocket?: ContainerAppProbeTcpSocket | undefined;
-	readonly terminationGracePeriodSeconds?: number | undefined;
-	readonly timeoutSeconds?: number | undefined;
-	readonly type?: ("Liveness" | "Readiness" | "Startup") | undefined;
+	readonly failureThreshold?: number;
+	readonly httpGet?: ContainerAppProbeHttpGet;
+	readonly initialDelaySeconds?: number;
+	readonly periodSeconds?: number;
+	readonly successThreshold?: number;
+	readonly tcpSocket?: ContainerAppProbeTcpSocket;
+	readonly terminationGracePeriodSeconds?: number;
+	readonly timeoutSeconds?: number;
+	readonly type?: "Liveness" | "Readiness" | "Startup";
 }
 export interface ContainerAppProbeHttpGet {
-	readonly host?: string | undefined;
-	readonly httpHeaders?: ContainerAppProbeHttpGetHttpHeadersItem[] | undefined;
-	readonly path?: string | undefined;
+	readonly host?: string;
+	readonly httpHeaders?: ContainerAppProbeHttpGetHttpHeadersItem[];
+	readonly path?: string;
 	readonly port: number;
-	readonly scheme?: ("HTTP" | "HTTPS") | undefined;
+	readonly scheme?: "HTTP" | "HTTPS";
 }
 export interface ContainerAppProbeHttpGetHttpHeadersItem {
 	readonly name: string;
 	readonly value: string;
 }
 export interface ContainerAppProbeTcpSocket {
-	readonly host?: string | undefined;
+	readonly host?: string;
 	readonly port: number;
 }
 export interface ContainerAppProperties {
-	readonly configuration?: Configuration | undefined;
-	readonly customDomainVerificationId?: string | undefined;
-	readonly latestRevisionFqdn?: string | undefined;
-	readonly latestRevisionName?: string | undefined;
-	readonly managedEnvironmentId?: string | undefined;
-	readonly outboundIpAddresses?: string[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly template?: Template | undefined;
+	readonly configuration?: Configuration;
+	readonly customDomainVerificationId?: string;
+	readonly latestRevisionFqdn?: string;
+	readonly latestRevisionName?: string;
+	readonly managedEnvironmentId?: string;
+	readonly outboundIpAddresses?: string[];
+	readonly provisioningState?: "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly template?: Template;
 }
 export interface ContainerAppSecret {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface ContainerResources {
-	readonly cpu?: number | undefined;
-	readonly ephemeralStorage?: string | undefined;
-	readonly memory?: string | undefined;
+	readonly cpu?: number;
+	readonly ephemeralStorage?: string;
+	readonly memory?: string;
 }
 export interface CookieExpiration {
-	readonly convention?: "FixedTime" | undefined;
-	readonly timeToExpiration?: string | undefined;
+	readonly convention?: "FixedTime";
+	readonly timeToExpiration?: string;
 }
 export interface CustomDomain {
-	readonly bindingType?: ("Disabled" | "SniEnabled") | undefined;
+	readonly bindingType?: "Disabled" | "SniEnabled";
 	readonly certificateId: string;
 	readonly name: string;
 }
 export interface CustomHostnameAnalysisResult {
-	readonly alternateCNameRecords?: string[] | undefined;
-	readonly alternateTxtRecords?: string[] | undefined;
-	readonly aRecords?: string[] | undefined;
-	readonly cNameRecords?: string[] | undefined;
-	readonly conflictingContainerAppResourceId?: string | undefined;
-	readonly conflictWithEnvironmentCustomDomain?: boolean | undefined;
-	readonly customDomainVerificationFailureInfo?:
-		| CustomHostnameAnalysisResultCustomDomainVerificationFailureInfo
-		| undefined;
-	readonly customDomainVerificationTest?: ("Failed" | "Passed") | undefined;
-	readonly hasConflictOnManagedEnvironment?: boolean | undefined;
-	readonly hostName?: string | undefined;
-	readonly isHostnameAlreadyVerified?: boolean | undefined;
-	readonly txtRecords?: string[] | undefined;
+	readonly alternateCNameRecords?: string[];
+	readonly alternateTxtRecords?: string[];
+	readonly aRecords?: string[];
+	readonly cNameRecords?: string[];
+	readonly conflictingContainerAppResourceId?: string;
+	readonly conflictWithEnvironmentCustomDomain?: boolean;
+	readonly customDomainVerificationFailureInfo?: CustomHostnameAnalysisResultCustomDomainVerificationFailureInfo;
+	readonly customDomainVerificationTest?: "Failed" | "Passed";
+	readonly hasConflictOnManagedEnvironment?: boolean;
+	readonly hostName?: string;
+	readonly isHostnameAlreadyVerified?: boolean;
+	readonly txtRecords?: string[];
 }
 export interface CustomHostnameAnalysisResultCustomDomainVerificationFailureInfo {
-	readonly code?: string | undefined;
-	readonly details?: CustomHostnameAnalysisResultCustomDomainVerificationFailureInfoDetailsItem[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly code?: string;
+	readonly details?: CustomHostnameAnalysisResultCustomDomainVerificationFailureInfoDetailsItem[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface CustomHostnameAnalysisResultCustomDomainVerificationFailureInfoDetailsItem {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface CustomOpenIdConnectProvider {
-	readonly enabled?: boolean | undefined;
-	readonly login?: OpenIdConnectLogin | undefined;
-	readonly registration?: OpenIdConnectRegistration | undefined;
+	readonly enabled?: boolean;
+	readonly login?: OpenIdConnectLogin;
+	readonly registration?: OpenIdConnectRegistration;
 }
 export interface CustomScaleRule {
-	readonly auth?: ScaleRuleAuth[] | undefined;
-	readonly metadata?: CustomScaleRuleMetadata | undefined;
-	readonly type?: string | undefined;
+	readonly auth?: ScaleRuleAuth[];
+	readonly metadata?: CustomScaleRuleMetadata;
+	readonly type?: string;
 }
 export interface CustomScaleRuleMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Dapr {
-	readonly appId?: string | undefined;
-	readonly appPort?: number | undefined;
-	readonly appProtocol?: ("grpc" | "http") | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly appId?: string;
+	readonly appPort?: number;
+	readonly appProtocol?: "grpc" | "http";
+	readonly enabled?: boolean;
 }
 export interface DaprComponentProperties {
-	readonly componentType?: string | undefined;
-	readonly ignoreErrors?: boolean | undefined;
-	readonly initTimeout?: string | undefined;
-	readonly metadata?: DaprMetadata[] | undefined;
-	readonly scopes?: string[] | undefined;
-	readonly secrets?: Secret[] | undefined;
-	readonly version?: string | undefined;
+	readonly componentType?: string;
+	readonly ignoreErrors?: boolean;
+	readonly initTimeout?: string;
+	readonly metadata?: DaprMetadata[];
+	readonly scopes?: string[];
+	readonly secrets?: Secret[];
+	readonly version?: string;
 }
 export interface DaprMetadata {
-	readonly name?: string | undefined;
-	readonly secretRef?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly secretRef?: string;
+	readonly value?: string;
 }
 export interface DaprSecret {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface DaprSecretsCollection {
 	readonly value: DaprSecret[];
 }
 export interface DefaultAuthorizationPolicy {
-	readonly allowedApplications?: string[] | undefined;
-	readonly allowedPrincipals?: AllowedPrincipals | undefined;
+	readonly allowedApplications?: string[];
+	readonly allowedPrincipals?: AllowedPrincipals;
 }
 export interface EnvironmentVar {
-	readonly name?: string | undefined;
-	readonly secretRef?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly secretRef?: string;
+	readonly value?: string;
 }
 export interface Facebook {
-	readonly enabled?: boolean | undefined;
-	readonly graphApiVersion?: string | undefined;
-	readonly login?: LoginScopes | undefined;
-	readonly registration?: AppRegistration | undefined;
+	readonly enabled?: boolean;
+	readonly graphApiVersion?: string;
+	readonly login?: LoginScopes;
+	readonly registration?: AppRegistration;
 }
 export interface ForwardProxy {
-	readonly convention?: ("Custom" | "NoProxy") | undefined;
-	readonly customHostHeaderName?: string | undefined;
-	readonly customProtoHeaderName?: string | undefined;
+	readonly convention?: "Custom" | "NoProxy";
+	readonly customHostHeaderName?: string;
+	readonly customProtoHeaderName?: string;
 }
 export interface GitHub {
-	readonly enabled?: boolean | undefined;
-	readonly login?: LoginScopes | undefined;
-	readonly registration?: ClientRegistration | undefined;
+	readonly enabled?: boolean;
+	readonly login?: LoginScopes;
+	readonly registration?: ClientRegistration;
 }
 export interface GithubActionConfiguration {
-	readonly azureCredentials?: AzureCredentials | undefined;
-	readonly contextPath?: string | undefined;
-	readonly image?: string | undefined;
-	readonly os?: string | undefined;
-	readonly publishType?: string | undefined;
-	readonly registryInfo?: RegistryInfo | undefined;
-	readonly runtimeStack?: string | undefined;
-	readonly runtimeVersion?: string | undefined;
+	readonly azureCredentials?: AzureCredentials;
+	readonly contextPath?: string;
+	readonly image?: string;
+	readonly os?: string;
+	readonly publishType?: string;
+	readonly registryInfo?: RegistryInfo;
+	readonly runtimeStack?: string;
+	readonly runtimeVersion?: string;
 }
 export interface GlobalValidation {
-	readonly excludedPaths?: string[] | undefined;
-	readonly redirectToProvider?: string | undefined;
-	readonly unauthenticatedClientAction?: ("AllowAnonymous" | "RedirectToLoginPage" | "Return401") | undefined;
+	readonly excludedPaths?: string[];
+	readonly redirectToProvider?: string;
+	readonly unauthenticatedClientAction?: "AllowAnonymous" | "RedirectToLoginPage" | "Return401";
 }
 export interface Google {
-	readonly enabled?: boolean | undefined;
-	readonly login?: LoginScopes | undefined;
-	readonly registration?: ClientRegistration | undefined;
-	readonly validation?: AllowedAudiencesValidation | undefined;
+	readonly enabled?: boolean;
+	readonly login?: LoginScopes;
+	readonly registration?: ClientRegistration;
+	readonly validation?: AllowedAudiencesValidation;
 }
 export interface HttpScaleRule {
-	readonly auth?: ScaleRuleAuth[] | undefined;
-	readonly metadata?: HttpScaleRuleMetadata | undefined;
+	readonly auth?: ScaleRuleAuth[];
+	readonly metadata?: HttpScaleRuleMetadata;
 }
 export interface HttpScaleRuleMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface HttpSettings {
-	readonly forwardProxy?: ForwardProxy | undefined;
-	readonly requireHttps?: boolean | undefined;
-	readonly routes?: HttpSettingsRoutes | undefined;
+	readonly forwardProxy?: ForwardProxy;
+	readonly requireHttps?: boolean;
+	readonly routes?: HttpSettingsRoutes;
 }
 export interface HttpSettingsRoutes {
-	readonly apiPrefix?: string | undefined;
+	readonly apiPrefix?: string;
 }
 export interface IdentityProviders {
-	readonly apple?: Apple | undefined;
-	readonly azureActiveDirectory?: AzureActiveDirectory | undefined;
-	readonly azureStaticWebApps?: AzureStaticWebApps | undefined;
-	readonly customOpenIdConnectProviders?: IdentityProvidersCustomOpenIdConnectProviders | undefined;
-	readonly facebook?: Facebook | undefined;
-	readonly gitHub?: GitHub | undefined;
-	readonly google?: Google | undefined;
-	readonly twitter?: Twitter | undefined;
+	readonly apple?: Apple;
+	readonly azureActiveDirectory?: AzureActiveDirectory;
+	readonly azureStaticWebApps?: AzureStaticWebApps;
+	readonly customOpenIdConnectProviders?: IdentityProvidersCustomOpenIdConnectProviders;
+	readonly facebook?: Facebook;
+	readonly gitHub?: GitHub;
+	readonly google?: Google;
+	readonly twitter?: Twitter;
 }
 export interface IdentityProvidersCustomOpenIdConnectProviders {
-	readonly "[ key: string ]"?: CustomOpenIdConnectProvider | undefined;
+	readonly [key: string]: CustomOpenIdConnectProvider;
 }
 export interface Ingress {
-	readonly allowInsecure?: boolean | undefined;
-	readonly customDomains?: CustomDomain[] | undefined;
-	readonly external?: boolean | undefined;
-	readonly fqdn?: string | undefined;
-	readonly targetPort?: number | undefined;
-	readonly traffic?: TrafficWeight[] | undefined;
-	readonly transport?: ("auto" | "http" | "http2") | undefined;
+	readonly allowInsecure?: boolean;
+	readonly customDomains?: CustomDomain[];
+	readonly external?: boolean;
+	readonly fqdn?: string;
+	readonly targetPort?: number;
+	readonly traffic?: TrafficWeight[];
+	readonly transport?: "auto" | "http" | "http2";
 }
 export interface JwtClaimChecks {
-	readonly allowedClientApplications?: string[] | undefined;
-	readonly allowedGroups?: string[] | undefined;
+	readonly allowedClientApplications?: string[];
+	readonly allowedGroups?: string[];
 }
 export interface LogAnalyticsConfiguration {
-	readonly customerId?: string | undefined;
-	readonly sharedKey?: string | undefined;
+	readonly customerId?: string;
+	readonly sharedKey?: string;
 }
 export interface Login {
-	readonly allowedExternalRedirectUrls?: string[] | undefined;
-	readonly cookieExpiration?: CookieExpiration | undefined;
-	readonly nonce?: Nonce | undefined;
-	readonly preserveUrlFragmentsForLogins?: boolean | undefined;
-	readonly routes?: LoginRoutes | undefined;
+	readonly allowedExternalRedirectUrls?: string[];
+	readonly cookieExpiration?: CookieExpiration;
+	readonly nonce?: Nonce;
+	readonly preserveUrlFragmentsForLogins?: boolean;
+	readonly routes?: LoginRoutes;
 }
 export interface LoginRoutes {
-	readonly logoutEndpoint?: string | undefined;
+	readonly logoutEndpoint?: string;
 }
 export interface LoginScopes {
-	readonly scopes?: string[] | undefined;
+	readonly scopes?: string[];
 }
 export interface ManagedEnvironmentProperties {
-	readonly appLogsConfiguration?: AppLogsConfiguration | undefined;
-	readonly daprAIConnectionString?: string | undefined;
-	readonly daprAIInstrumentationKey?: string | undefined;
-	readonly defaultDomain?: string | undefined;
-	readonly deploymentErrors?: string | undefined;
+	readonly appLogsConfiguration?: AppLogsConfiguration;
+	readonly daprAIConnectionString?: string;
+	readonly daprAIInstrumentationKey?: string;
+	readonly defaultDomain?: string;
+	readonly deploymentErrors?: string;
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Failed"
-				| "InfrastructureSetupComplete"
-				| "InfrastructureSetupInProgress"
-				| "InitializationInProgress"
-				| "ScheduledForDelete"
-				| "Succeeded"
-				| "UpgradeFailed"
-				| "UpgradeRequested"
-				| "Waiting"
-		  )
-		| undefined;
-	readonly staticIp?: string | undefined;
-	readonly vnetConfiguration?: VnetConfiguration | undefined;
-	readonly zoneRedundant?: boolean | undefined;
+		| "Canceled"
+		| "Failed"
+		| "InfrastructureSetupComplete"
+		| "InfrastructureSetupInProgress"
+		| "InitializationInProgress"
+		| "ScheduledForDelete"
+		| "Succeeded"
+		| "UpgradeFailed"
+		| "UpgradeRequested"
+		| "Waiting";
+	readonly staticIp?: string;
+	readonly vnetConfiguration?: VnetConfiguration;
+	readonly zoneRedundant?: boolean;
 }
 export interface ManagedEnvironmentStorageProperties {
-	readonly azureFile?: AzureFileProperties | undefined;
+	readonly azureFile?: AzureFileProperties;
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: UserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedIdentities;
 }
 export interface Nonce {
-	readonly nonceExpirationInterval?: string | undefined;
-	readonly validateNonce?: boolean | undefined;
+	readonly nonceExpirationInterval?: string;
+	readonly validateNonce?: boolean;
 }
 export interface OpenIdConnectClientCredential {
-	readonly clientSecretSettingName?: string | undefined;
-	readonly method?: "ClientSecretPost" | undefined;
+	readonly clientSecretSettingName?: string;
+	readonly method?: "ClientSecretPost";
 }
 export interface OpenIdConnectConfig {
-	readonly authorizationEndpoint?: string | undefined;
-	readonly certificationUri?: string | undefined;
-	readonly issuer?: string | undefined;
-	readonly tokenEndpoint?: string | undefined;
-	readonly wellKnownOpenIdConfiguration?: string | undefined;
+	readonly authorizationEndpoint?: string;
+	readonly certificationUri?: string;
+	readonly issuer?: string;
+	readonly tokenEndpoint?: string;
+	readonly wellKnownOpenIdConfiguration?: string;
 }
 export interface OpenIdConnectLogin {
-	readonly nameClaimType?: string | undefined;
-	readonly scopes?: string[] | undefined;
+	readonly nameClaimType?: string;
+	readonly scopes?: string[];
 }
 export interface OpenIdConnectRegistration {
-	readonly clientCredential?: OpenIdConnectClientCredential | undefined;
-	readonly clientId?: string | undefined;
-	readonly openIdConnectConfiguration?: OpenIdConnectConfig | undefined;
+	readonly clientCredential?: OpenIdConnectClientCredential;
+	readonly clientId?: string;
+	readonly openIdConnectConfiguration?: OpenIdConnectConfig;
 }
 export interface QueueScaleRule {
-	readonly auth?: ScaleRuleAuth[] | undefined;
-	readonly queueLength?: number | undefined;
-	readonly queueName?: string | undefined;
+	readonly auth?: ScaleRuleAuth[];
+	readonly queueLength?: number;
+	readonly queueName?: string;
 }
 export interface RegistryCredentials {
-	readonly identity?: string | undefined;
-	readonly passwordSecretRef?: string | undefined;
-	readonly server?: string | undefined;
-	readonly username?: string | undefined;
+	readonly identity?: string;
+	readonly passwordSecretRef?: string;
+	readonly server?: string;
+	readonly username?: string;
 }
 export interface RegistryInfo {
-	readonly registryPassword?: string | undefined;
-	readonly registryUrl?: string | undefined;
-	readonly registryUserName?: string | undefined;
+	readonly registryPassword?: string;
+	readonly registryUrl?: string;
+	readonly registryUserName?: string;
 }
 export interface ReplicaContainer {
-	readonly containerId?: string | undefined;
-	readonly execEndpoint?: string | undefined;
-	readonly logStreamEndpoint?: string | undefined;
-	readonly name?: string | undefined;
-	readonly ready?: boolean | undefined;
-	readonly restartCount?: number | undefined;
-	readonly started?: boolean | undefined;
+	readonly containerId?: string;
+	readonly execEndpoint?: string;
+	readonly logStreamEndpoint?: string;
+	readonly name?: string;
+	readonly ready?: boolean;
+	readonly restartCount?: number;
+	readonly started?: boolean;
 }
 export interface ReplicaProperties {
-	readonly containers?: ReplicaContainer[] | undefined;
-	readonly createdTime?: string | undefined;
+	readonly containers?: ReplicaContainer[];
+	readonly createdTime?: string;
 }
 export interface RevisionProperties {
-	readonly active?: boolean | undefined;
-	readonly createdTime?: string | undefined;
-	readonly fqdn?: string | undefined;
-	readonly healthState?: ("Healthy" | "None" | "Unhealthy") | undefined;
-	readonly provisioningError?: string | undefined;
-	readonly provisioningState?:
-		| ("Deprovisioned" | "Deprovisioning" | "Failed" | "Provisioned" | "Provisioning")
-		| undefined;
-	readonly replicas?: number | undefined;
-	readonly template?: Template | undefined;
-	readonly trafficWeight?: number | undefined;
+	readonly active?: boolean;
+	readonly createdTime?: string;
+	readonly fqdn?: string;
+	readonly healthState?: "Healthy" | "None" | "Unhealthy";
+	readonly provisioningError?: string;
+	readonly provisioningState?: "Deprovisioned" | "Deprovisioning" | "Failed" | "Provisioned" | "Provisioning";
+	readonly replicas?: number;
+	readonly template?: Template;
+	readonly trafficWeight?: number;
 }
 export interface Scale {
-	readonly maxReplicas?: number | undefined;
-	readonly minReplicas?: number | undefined;
-	readonly rules?: ScaleRule[] | undefined;
+	readonly maxReplicas?: number;
+	readonly minReplicas?: number;
+	readonly rules?: ScaleRule[];
 }
 export interface ScaleRule {
-	readonly azureQueue?: QueueScaleRule | undefined;
-	readonly custom?: CustomScaleRule | undefined;
-	readonly http?: HttpScaleRule | undefined;
-	readonly name?: string | undefined;
+	readonly azureQueue?: QueueScaleRule;
+	readonly custom?: CustomScaleRule;
+	readonly http?: HttpScaleRule;
+	readonly name?: string;
 }
 export interface ScaleRuleAuth {
-	readonly secretRef?: string | undefined;
-	readonly triggerParameter?: string | undefined;
+	readonly secretRef?: string;
+	readonly triggerParameter?: string;
 }
 export interface Secret {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface SecretsCollection {
 	readonly value: ContainerAppSecret[];
 }
 export interface SourceControlProperties {
-	readonly branch?: string | undefined;
-	readonly githubActionConfiguration?: GithubActionConfiguration | undefined;
-	readonly operationState?: ("Canceled" | "Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly repoUrl?: string | undefined;
+	readonly branch?: string;
+	readonly githubActionConfiguration?: GithubActionConfiguration;
+	readonly operationState?: "Canceled" | "Failed" | "InProgress" | "Succeeded";
+	readonly repoUrl?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Template {
-	readonly containers?: Container[] | undefined;
-	readonly revisionSuffix?: string | undefined;
-	readonly scale?: Scale | undefined;
-	readonly volumes?: Volume[] | undefined;
+	readonly containers?: Container[];
+	readonly revisionSuffix?: string;
+	readonly scale?: Scale;
+	readonly volumes?: Volume[];
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrafficWeight {
-	readonly label?: string | undefined;
-	readonly latestRevision?: boolean | undefined;
-	readonly revisionName?: string | undefined;
-	readonly weight?: number | undefined;
+	readonly label?: string;
+	readonly latestRevision?: boolean;
+	readonly revisionName?: string;
+	readonly weight?: number;
 }
 export interface Twitter {
-	readonly enabled?: boolean | undefined;
-	readonly registration?: TwitterRegistration | undefined;
+	readonly enabled?: boolean;
+	readonly registration?: TwitterRegistration;
 }
 export interface TwitterRegistration {
-	readonly consumerKey?: string | undefined;
-	readonly consumerSecretSettingName?: string | undefined;
+	readonly consumerKey?: string;
+	readonly consumerSecretSettingName?: string;
 }
 export interface UserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface VnetConfiguration {
-	readonly dockerBridgeCidr?: string | undefined;
-	readonly infrastructureSubnetId?: string | undefined;
-	readonly internal?: boolean | undefined;
-	readonly platformReservedCidr?: string | undefined;
-	readonly platformReservedDnsIP?: string | undefined;
-	readonly runtimeSubnetId?: string | undefined;
+	readonly dockerBridgeCidr?: string;
+	readonly infrastructureSubnetId?: string;
+	readonly internal?: boolean;
+	readonly platformReservedCidr?: string;
+	readonly platformReservedDnsIP?: string;
+	readonly runtimeSubnetId?: string;
 }
 export interface Volume {
-	readonly name?: string | undefined;
-	readonly storageName?: string | undefined;
-	readonly storageType?: ("AzureFile" | "EmptyDir") | undefined;
+	readonly name?: string;
+	readonly storageName?: string;
+	readonly storageType?: "AzureFile" | "EmptyDir";
 }
 export interface VolumeMount {
-	readonly mountPath?: string | undefined;
-	readonly volumeName?: string | undefined;
+	readonly mountPath?: string;
+	readonly volumeName?: string;
 }
 export default {
 	containerApps: containerApps,

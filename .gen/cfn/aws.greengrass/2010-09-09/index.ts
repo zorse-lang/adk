@@ -20,8 +20,8 @@ export interface ConnectorDefinitionComponentOutputs {
 }
 export interface ConnectorDefinitionComponentInputs {
 	readonly Name: string;
-	readonly InitialVersion?: (ConnectorDefinitionVersion | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly InitialVersion?: ConnectorDefinitionVersion | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class ConnectorDefinitionVersion
@@ -55,8 +55,8 @@ export interface CoreDefinitionComponentOutputs {
 }
 export interface CoreDefinitionComponentInputs {
 	readonly Name: string;
-	readonly InitialVersion?: (CoreDefinitionVersion | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly InitialVersion?: CoreDefinitionVersion | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class CoreDefinitionVersion
@@ -93,8 +93,8 @@ export interface DeviceDefinitionComponentOutputs {
 }
 export interface DeviceDefinitionComponentInputs {
 	readonly Name: string;
-	readonly InitialVersion?: (DeviceDefinitionVersion | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly InitialVersion?: DeviceDefinitionVersion | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class DeviceDefinitionVersion
@@ -131,8 +131,8 @@ export interface FunctionDefinitionComponentOutputs {
 }
 export interface FunctionDefinitionComponentInputs {
 	readonly Name: string;
-	readonly InitialVersion?: (FunctionDefinitionVersion | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly InitialVersion?: FunctionDefinitionVersion | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class FunctionDefinitionVersion
@@ -147,7 +147,7 @@ export interface FunctionDefinitionVersionComponentOutputs {}
 export interface FunctionDefinitionVersionComponentInputs {
 	readonly FunctionDefinitionId: string;
 	readonly Functions: FunctionInstance[];
-	readonly DefaultConfig?: (DefaultConfig | undefined) | undefined;
+	readonly DefaultConfig?: DefaultConfig | undefined;
 	readonly LogicalId: string;
 }
 export class Group extends CfnResource<GroupComponentInputs> implements GroupComponentOutputs {
@@ -169,9 +169,9 @@ export interface GroupComponentOutputs {
 }
 export interface GroupComponentInputs {
 	readonly Name: string;
-	readonly InitialVersion?: (GroupVersion | undefined) | undefined;
-	readonly RoleArn?: string | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly InitialVersion?: GroupVersion | undefined;
+	readonly RoleArn?: string;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class GroupVersion extends CfnResource<GroupVersionComponentInputs> implements GroupVersionComponentOutputs {
@@ -182,13 +182,13 @@ export class GroupVersion extends CfnResource<GroupVersionComponentInputs> imple
 export interface GroupVersionComponentOutputs {}
 export interface GroupVersionComponentInputs {
 	readonly GroupId: string;
-	readonly ConnectorDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly CoreDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly DeviceDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly FunctionDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly LoggerDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly ResourceDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly SubscriptionDefinitionVersionArn?: (string | undefined) | undefined;
+	readonly ConnectorDefinitionVersionArn?: string | undefined;
+	readonly CoreDefinitionVersionArn?: string | undefined;
+	readonly DeviceDefinitionVersionArn?: string | undefined;
+	readonly FunctionDefinitionVersionArn?: string | undefined;
+	readonly LoggerDefinitionVersionArn?: string | undefined;
+	readonly ResourceDefinitionVersionArn?: string | undefined;
+	readonly SubscriptionDefinitionVersionArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LoggerDefinition
@@ -211,8 +211,8 @@ export interface LoggerDefinitionComponentOutputs {
 }
 export interface LoggerDefinitionComponentInputs {
 	readonly Name: string;
-	readonly InitialVersion?: (LoggerDefinitionVersion | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly InitialVersion?: LoggerDefinitionVersion | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class LoggerDefinitionVersion
@@ -249,8 +249,8 @@ export interface ResourceDefinitionComponentOutputs {
 }
 export interface ResourceDefinitionComponentInputs {
 	readonly Name: string;
-	readonly InitialVersion?: (ResourceDefinitionVersion | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly InitialVersion?: ResourceDefinitionVersion | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class ResourceDefinitionVersion
@@ -287,8 +287,8 @@ export interface SubscriptionDefinitionComponentOutputs {
 }
 export interface SubscriptionDefinitionComponentInputs {
 	readonly Name: string;
-	readonly InitialVersion?: (SubscriptionDefinitionVersion | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly InitialVersion?: SubscriptionDefinitionVersion | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class SubscriptionDefinitionVersion
@@ -308,7 +308,7 @@ export interface SubscriptionDefinitionVersionComponentInputs {
 export interface Connector {
 	readonly ConnectorArn: string;
 	readonly Id: string;
-	readonly Parameters?: (any | undefined) | undefined;
+	readonly Parameters?: any | undefined;
 }
 export interface ConnectorDefinitionVersion {
 	readonly Connectors: Connector[];
@@ -316,7 +316,7 @@ export interface ConnectorDefinitionVersion {
 export interface Core {
 	readonly CertificateArn: string;
 	readonly Id: string;
-	readonly SyncShadow?: (boolean | undefined) | undefined;
+	readonly SyncShadow?: boolean | undefined;
 	readonly ThingArn: string;
 }
 export interface CoreDefinitionVersion {
@@ -325,7 +325,7 @@ export interface CoreDefinitionVersion {
 export interface Device {
 	readonly CertificateArn: string;
 	readonly Id: string;
-	readonly SyncShadow?: (boolean | undefined) | undefined;
+	readonly SyncShadow?: boolean | undefined;
 	readonly ThingArn: string;
 }
 export interface DeviceDefinitionVersion {
@@ -335,14 +335,14 @@ export interface DefaultConfig {
 	readonly Execution: Execution;
 }
 export interface Environment {
-	readonly AccessSysfs?: (boolean | undefined) | undefined;
-	readonly Execution?: (Execution | undefined) | undefined;
-	readonly ResourceAccessPolicies?: (ResourceAccessPolicy[] | undefined) | undefined;
-	readonly Variables?: (any | undefined) | undefined;
+	readonly AccessSysfs?: boolean | undefined;
+	readonly Execution?: Execution | undefined;
+	readonly ResourceAccessPolicies?: ResourceAccessPolicy[] | undefined;
+	readonly Variables?: any | undefined;
 }
 export interface Execution {
-	readonly IsolationMode?: (string | undefined) | undefined;
-	readonly RunAs?: (RunAs | undefined) | undefined;
+	readonly IsolationMode?: string | undefined;
+	readonly RunAs?: RunAs | undefined;
 }
 export interface FunctionInstance {
 	readonly FunctionArn: string;
@@ -350,40 +350,40 @@ export interface FunctionInstance {
 	readonly Id: string;
 }
 export interface FunctionConfiguration {
-	readonly EncodingType?: (string | undefined) | undefined;
-	readonly Environment?: (Environment | undefined) | undefined;
-	readonly ExecArgs?: (string | undefined) | undefined;
-	readonly Executable?: (string | undefined) | undefined;
-	readonly MemorySize?: (number | undefined) | undefined;
-	readonly Pinned?: (boolean | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
+	readonly EncodingType?: string | undefined;
+	readonly Environment?: Environment | undefined;
+	readonly ExecArgs?: string | undefined;
+	readonly Executable?: string | undefined;
+	readonly MemorySize?: number | undefined;
+	readonly Pinned?: boolean | undefined;
+	readonly Timeout?: number | undefined;
 }
 export interface FunctionDefinitionVersion {
-	readonly DefaultConfig?: (DefaultConfig | undefined) | undefined;
+	readonly DefaultConfig?: DefaultConfig | undefined;
 	readonly Functions: FunctionInstance[];
 }
 export interface ResourceAccessPolicy {
-	readonly Permission?: (string | undefined) | undefined;
+	readonly Permission?: string | undefined;
 	readonly ResourceId: string;
 }
 export interface RunAs {
-	readonly Gid?: (number | undefined) | undefined;
-	readonly Uid?: (number | undefined) | undefined;
+	readonly Gid?: number | undefined;
+	readonly Uid?: number | undefined;
 }
 export interface GroupVersion {
-	readonly ConnectorDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly CoreDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly DeviceDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly FunctionDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly LoggerDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly ResourceDefinitionVersionArn?: (string | undefined) | undefined;
-	readonly SubscriptionDefinitionVersionArn?: (string | undefined) | undefined;
+	readonly ConnectorDefinitionVersionArn?: string | undefined;
+	readonly CoreDefinitionVersionArn?: string | undefined;
+	readonly DeviceDefinitionVersionArn?: string | undefined;
+	readonly FunctionDefinitionVersionArn?: string | undefined;
+	readonly LoggerDefinitionVersionArn?: string | undefined;
+	readonly ResourceDefinitionVersionArn?: string | undefined;
+	readonly SubscriptionDefinitionVersionArn?: string | undefined;
 }
 export interface Logger {
 	readonly Component: string;
 	readonly Id: string;
 	readonly Level: string;
-	readonly Space?: (number | undefined) | undefined;
+	readonly Space?: number | undefined;
 	readonly Type: string;
 }
 export interface LoggerDefinitionVersion {
@@ -391,25 +391,23 @@ export interface LoggerDefinitionVersion {
 }
 export interface GroupOwnerSetting {
 	readonly AutoAddGroupOwner: boolean;
-	readonly GroupOwner?: (string | undefined) | undefined;
+	readonly GroupOwner?: string | undefined;
 }
 export interface LocalDeviceResourceData {
-	readonly GroupOwnerSetting?: (GroupOwnerSetting | undefined) | undefined;
+	readonly GroupOwnerSetting?: GroupOwnerSetting | undefined;
 	readonly SourcePath: string;
 }
 export interface LocalVolumeResourceData {
 	readonly DestinationPath: string;
-	readonly GroupOwnerSetting?: (GroupOwnerSetting | undefined) | undefined;
+	readonly GroupOwnerSetting?: GroupOwnerSetting | undefined;
 	readonly SourcePath: string;
 }
 export interface ResourceDataContainer {
-	readonly LocalDeviceResourceData?: (LocalDeviceResourceData | undefined) | undefined;
-	readonly LocalVolumeResourceData?: (LocalVolumeResourceData | undefined) | undefined;
-	readonly S3MachineLearningModelResourceData?: (S3MachineLearningModelResourceData | undefined) | undefined;
-	readonly SageMakerMachineLearningModelResourceData?:
-		| (SageMakerMachineLearningModelResourceData | undefined)
-		| undefined;
-	readonly SecretsManagerSecretResourceData?: (SecretsManagerSecretResourceData | undefined) | undefined;
+	readonly LocalDeviceResourceData?: LocalDeviceResourceData | undefined;
+	readonly LocalVolumeResourceData?: LocalVolumeResourceData | undefined;
+	readonly S3MachineLearningModelResourceData?: S3MachineLearningModelResourceData | undefined;
+	readonly SageMakerMachineLearningModelResourceData?: SageMakerMachineLearningModelResourceData | undefined;
+	readonly SecretsManagerSecretResourceData?: SecretsManagerSecretResourceData | undefined;
 }
 export interface ResourceDefinitionVersion {
 	readonly Resources: ResourceInstance[];
@@ -425,17 +423,17 @@ export interface ResourceInstance {
 }
 export interface S3MachineLearningModelResourceData {
 	readonly DestinationPath: string;
-	readonly OwnerSetting?: (ResourceDownloadOwnerSetting | undefined) | undefined;
+	readonly OwnerSetting?: ResourceDownloadOwnerSetting | undefined;
 	readonly S3Uri: string;
 }
 export interface SageMakerMachineLearningModelResourceData {
 	readonly DestinationPath: string;
-	readonly OwnerSetting?: (ResourceDownloadOwnerSetting | undefined) | undefined;
+	readonly OwnerSetting?: ResourceDownloadOwnerSetting | undefined;
 	readonly SageMakerJobArn: string;
 }
 export interface SecretsManagerSecretResourceData {
 	readonly ARN: string;
-	readonly AdditionalStagingLabelsToDownload?: (string[] | undefined) | undefined;
+	readonly AdditionalStagingLabelsToDownload?: string[] | undefined;
 }
 export interface Subscription {
 	readonly Id: string;

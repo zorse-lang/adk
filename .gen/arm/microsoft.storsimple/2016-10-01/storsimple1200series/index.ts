@@ -14,11 +14,11 @@ export interface managersComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers";
 }
 export interface managersComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagerProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ManagerProperties;
+	readonly tags?: ResourceTags;
 }
 export class managers_accessControlRecords
 	extends ArmResource<managers_accessControlRecordsComponentInputs>
@@ -58,37 +58,34 @@ export interface managers_certificatesComponentOutputs {
 }
 export interface managers_certificatesComponentInputs {
 	readonly contractVersion?:
-		| (
-				| "InvalidVersion"
-				| "V2011_09"
-				| "V2012_02"
-				| "V2012_05"
-				| "V2012_12"
-				| "V2013_04"
-				| "V2013_10"
-				| "V2013_11"
-				| "V2014_04"
-				| "V2014_06"
-				| "V2014_07"
-				| "V2014_09"
-				| "V2014_10"
-				| "V2014_12"
-				| "V2015_01"
-				| "V2015_02"
-				| "V2015_04"
-				| "V2015_05"
-				| "V2015_06"
-				| "V2015_07"
-				| "V2015_08"
-				| "V2015_10"
-				| "V2015_12"
-				| "V2016_01"
-				| "V2016_02"
-				| "V2016_04"
-				| "V2016_05"
-				| "V2016_07"
-		  )
-		| undefined;
+		| "InvalidVersion"
+		| "V2011_09"
+		| "V2012_02"
+		| "V2012_05"
+		| "V2012_12"
+		| "V2013_04"
+		| "V2013_10"
+		| "V2013_11"
+		| "V2014_04"
+		| "V2014_06"
+		| "V2014_07"
+		| "V2014_09"
+		| "V2014_10"
+		| "V2014_12"
+		| "V2015_01"
+		| "V2015_02"
+		| "V2015_04"
+		| "V2015_05"
+		| "V2015_06"
+		| "V2015_07"
+		| "V2015_08"
+		| "V2015_10"
+		| "V2015_12"
+		| "V2016_01"
+		| "V2016_02"
+		| "V2016_04"
+		| "V2016_05"
+		| "V2016_07";
 	readonly name: string;
 	readonly properties: RawCertificateData;
 }
@@ -249,7 +246,7 @@ export interface managers_extendedInformationComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers/extendedInformation";
 }
 export interface managers_extendedInformationComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly properties: ManagerExtendedInfoProperties;
 }
@@ -297,14 +294,14 @@ export interface AccessControlRecordProperties {
 	readonly initiatorName: string;
 }
 export interface AlertSettingsProperties {
-	readonly additionalRecipientEmailList?: string[] | undefined;
+	readonly additionalRecipientEmailList?: string[];
 	readonly alertNotificationCulture: string;
 	readonly emailNotification: "Disabled";
 	readonly notificationToServiceOwners: "Disabled";
 }
 export interface AsymmetricEncryptedSecret {
 	readonly encryptionAlgorithm: "AES256" | "None";
-	readonly encryptionCertificateThumbprint?: string | undefined;
+	readonly encryptionCertificateThumbprint?: string;
 	readonly value: string;
 }
 export interface BackupScheduleGroupProperties {
@@ -315,73 +312,73 @@ export interface ChapProperties {
 }
 export interface FileServerProperties {
 	readonly backupScheduleGroupId: string;
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly domainName: string;
 	readonly storageDomainId: string;
 }
 export interface FileShareProperties {
 	readonly adminUser: string;
 	readonly dataPolicy: "Cloud" | "Invalid" | "Local";
-	readonly description?: string | undefined;
-	readonly localUsedCapacityInBytes?: number | undefined;
+	readonly description?: string;
+	readonly localUsedCapacityInBytes?: number;
 	readonly monitoringStatus: "Disabled";
 	readonly provisionedCapacityInBytes: number;
 	readonly shareStatus: "Offline";
-	readonly usedCapacityInBytes?: number | undefined;
+	readonly usedCapacityInBytes?: number;
 }
 export interface IscsiDiskProperties {
 	readonly accessControlRecords: string[];
 	readonly dataPolicy: "Cloud" | "Invalid" | "Local";
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly diskStatus: "Offline";
-	readonly localUsedCapacityInBytes?: number | undefined;
+	readonly localUsedCapacityInBytes?: number;
 	readonly monitoringStatus: "Disabled";
 	readonly provisionedCapacityInBytes: number;
-	readonly usedCapacityInBytes?: number | undefined;
+	readonly usedCapacityInBytes?: number;
 }
 export interface IscsiServerProperties {
 	readonly backupScheduleGroupId: string;
-	readonly chapId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly reverseChapId?: string | undefined;
+	readonly chapId?: string;
+	readonly description?: string;
+	readonly reverseChapId?: string;
 	readonly storageDomainId: string;
 }
 export interface ManagerExtendedInfoProperties {
 	readonly algorithm: string;
-	readonly encryptionKey?: string | undefined;
-	readonly encryptionKeyThumbprint?: string | undefined;
+	readonly encryptionKey?: string;
+	readonly encryptionKeyThumbprint?: string;
 	readonly integrityKey: string;
-	readonly portalCertificateThumbprint?: string | undefined;
-	readonly version?: string | undefined;
+	readonly portalCertificateThumbprint?: string;
+	readonly version?: string;
 }
 export interface ManagerIntrinsicSettings {
 	readonly type: "GardaV1";
 }
 export interface ManagerProperties {
-	readonly cisIntrinsicSettings?: ManagerIntrinsicSettings | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly sku?: ManagerSku | undefined;
+	readonly cisIntrinsicSettings?: ManagerIntrinsicSettings;
+	readonly provisioningState?: string;
+	readonly sku?: ManagerSku;
 }
 export interface ManagerSku {
 	readonly name: "Standard";
 }
 export interface RawCertificateData {
-	readonly authType?: ("AccessControlService" | "AzureActiveDirectory") | undefined;
+	readonly authType?: "AccessControlService" | "AzureActiveDirectory";
 	readonly certificate: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StorageAccountCredentialProperties {
-	readonly accessKey?: AsymmetricEncryptedSecret | undefined;
+	readonly accessKey?: AsymmetricEncryptedSecret;
 	readonly cloudType: "Azure" | "HP" | "OpenStack" | "S3";
 	readonly enableSSL: "Disabled";
 	readonly endPoint: string;
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly login: string;
 }
 export interface StorageDomainProperties {
-	readonly encryptionKey?: AsymmetricEncryptedSecret | undefined;
+	readonly encryptionKey?: AsymmetricEncryptedSecret;
 	readonly encryptionStatus: "Disabled";
 	readonly storageAccountCredentialIds: string[];
 }

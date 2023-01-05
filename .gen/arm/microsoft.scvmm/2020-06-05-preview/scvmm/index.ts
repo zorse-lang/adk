@@ -17,12 +17,12 @@ export interface availabilitySetsComponentOutputs {
 	readonly type: "Microsoft.ScVmm/availabilitySets";
 }
 export interface availabilitySetsComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
-	readonly location?: string | undefined;
+	readonly extendedLocation?: ExtendedLocation;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AvailabilitySetProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: AvailabilitySetTags | undefined;
+	readonly properties?: AvailabilitySetProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: AvailabilitySetTags;
 }
 export class clouds extends ArmResource<cloudsComponentInputs> implements cloudsComponentOutputs {
 	constructor(entity: ADKEntity, options: cloudsComponentInputs) {
@@ -42,8 +42,8 @@ export interface cloudsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: CloudProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: CloudTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: CloudTags;
 }
 export class virtualMachines
 	extends ArmResource<virtualMachinesComponentInputs>
@@ -66,8 +66,8 @@ export interface virtualMachinesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: VirtualMachineProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: VirtualMachineTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: VirtualMachineTags;
 }
 export class virtualMachineTemplates
 	extends ArmResource<virtualMachineTemplatesComponentInputs>
@@ -90,8 +90,8 @@ export interface virtualMachineTemplatesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: VirtualMachineTemplateProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: VirtualMachineTemplateTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: VirtualMachineTemplateTags;
 }
 export class virtualNetworks
 	extends ArmResource<virtualNetworksComponentInputs>
@@ -114,8 +114,8 @@ export interface virtualNetworksComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: VirtualNetworkProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: VirtualNetworkTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: VirtualNetworkTags;
 }
 export class vmmServers extends ArmResource<vmmServersComponentInputs> implements vmmServersComponentOutputs {
 	constructor(entity: ADKEntity, options: vmmServersComponentInputs) {
@@ -135,8 +135,8 @@ export interface vmmServersComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: VMMServerProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: VMMServerTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: VMMServerTags;
 }
 export class vmmServers_inventoryItems
 	extends ArmResource<vmmServers_inventoryItemsComponentInputs>
@@ -155,200 +155,200 @@ export interface vmmServers_inventoryItemsComponentOutputs {
 	readonly type: "Microsoft.ScVmm/vmmServers/inventoryItems";
 }
 export interface vmmServers_inventoryItemsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
 	readonly properties: InventoryItemProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export interface AvailabilitySetListItem {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
 }
 export interface AvailabilitySetProperties {
-	readonly availabilitySetName?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly vmmServerId?: string | undefined;
+	readonly availabilitySetName?: string;
+	readonly provisioningState?: string;
+	readonly vmmServerId?: string;
 }
 export interface AvailabilitySetTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Checkpoint {
-	readonly checkpointID?: string | undefined;
-	readonly description?: string | undefined;
-	readonly name?: string | undefined;
-	readonly parentCheckpointID?: string | undefined;
+	readonly checkpointID?: string;
+	readonly description?: string;
+	readonly name?: string;
+	readonly parentCheckpointID?: string;
 }
 export interface CloudCapacity {
-	readonly cpuCount?: number | undefined;
-	readonly memoryMB?: number | undefined;
-	readonly vmCount?: number | undefined;
+	readonly cpuCount?: number;
+	readonly memoryMB?: number;
+	readonly vmCount?: number;
 }
 export interface CloudProperties {
-	readonly cloudCapacity?: CloudCapacity | undefined;
-	readonly cloudName?: string | undefined;
-	readonly inventoryItemId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly storageQoSPolicies?: StorageQoSPolicy[] | undefined;
-	readonly uuid?: string | undefined;
-	readonly vmmServerId?: string | undefined;
+	readonly cloudCapacity?: CloudCapacity;
+	readonly cloudName?: string;
+	readonly inventoryItemId?: string;
+	readonly provisioningState?: string;
+	readonly storageQoSPolicies?: StorageQoSPolicy[];
+	readonly uuid?: string;
+	readonly vmmServerId?: string;
 }
 export interface CloudTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ExtendedLocation {
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface HardwareProfile {
-	readonly cpuCount?: number | undefined;
-	readonly dynamicMemoryEnabled?: ("false" | "true") | undefined;
-	readonly dynamicMemoryMaxMB?: number | undefined;
-	readonly dynamicMemoryMinMB?: number | undefined;
-	readonly isHighlyAvailable?: string | undefined;
-	readonly limitCpuForMigration?: ("false" | "true") | undefined;
-	readonly memoryMB?: number | undefined;
+	readonly cpuCount?: number;
+	readonly dynamicMemoryEnabled?: "false" | "true";
+	readonly dynamicMemoryMaxMB?: number;
+	readonly dynamicMemoryMinMB?: number;
+	readonly isHighlyAvailable?: string;
+	readonly limitCpuForMigration?: "false" | "true";
+	readonly memoryMB?: number;
 }
 export interface InventoryItemDetails {
-	readonly inventoryItemId?: string | undefined;
-	readonly inventoryItemName?: string | undefined;
+	readonly inventoryItemId?: string;
+	readonly inventoryItemName?: string;
 }
 export interface InventoryItemProperties {
-	readonly inventoryItemName?: string | undefined;
-	readonly managedResourceId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uuid?: string | undefined;
+	readonly inventoryItemName?: string;
+	readonly managedResourceId?: string;
+	readonly provisioningState?: string;
+	readonly uuid?: string;
 }
 export interface NetworkInterfaces {
-	readonly displayName?: string | undefined;
-	readonly ipv4Addresses?: string[] | undefined;
-	readonly ipv4AddressType?: ("Dynamic" | "Static") | undefined;
-	readonly ipv6Addresses?: string[] | undefined;
-	readonly ipv6AddressType?: ("Dynamic" | "Static") | undefined;
-	readonly macAddress?: string | undefined;
-	readonly macAddressType?: ("Dynamic" | "Static") | undefined;
-	readonly name?: string | undefined;
-	readonly networkName?: string | undefined;
-	readonly nicId?: string | undefined;
-	readonly virtualNetworkId?: string | undefined;
+	readonly displayName?: string;
+	readonly ipv4Addresses?: string[];
+	readonly ipv4AddressType?: "Dynamic" | "Static";
+	readonly ipv6Addresses?: string[];
+	readonly ipv6AddressType?: "Dynamic" | "Static";
+	readonly macAddress?: string;
+	readonly macAddressType?: "Dynamic" | "Static";
+	readonly name?: string;
+	readonly networkName?: string;
+	readonly nicId?: string;
+	readonly virtualNetworkId?: string;
 }
 export interface NetworkProfile {
-	readonly networkInterfaces?: NetworkInterfaces[] | undefined;
+	readonly networkInterfaces?: NetworkInterfaces[];
 }
 export interface OsProfile {
-	readonly adminPassword?: string | undefined;
-	readonly computerName?: string | undefined;
-	readonly osName?: string | undefined;
-	readonly osType?: ("Linux" | "Other" | "Windows") | undefined;
+	readonly adminPassword?: string;
+	readonly computerName?: string;
+	readonly osName?: string;
+	readonly osType?: "Linux" | "Other" | "Windows";
 }
 export interface StorageProfile {
-	readonly disks?: VirtualDisk[] | undefined;
+	readonly disks?: VirtualDisk[];
 }
 export interface StorageQoSPolicy {
-	readonly bandwidthLimit?: number | undefined;
-	readonly id?: string | undefined;
-	readonly iopsMaximum?: number | undefined;
-	readonly iopsMinimum?: number | undefined;
-	readonly name?: string | undefined;
-	readonly policyId?: string | undefined;
+	readonly bandwidthLimit?: number;
+	readonly id?: string;
+	readonly iopsMaximum?: number;
+	readonly iopsMinimum?: number;
+	readonly name?: string;
+	readonly policyId?: string;
 }
 export interface StorageQoSPolicyDetails {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface VirtualDisk {
-	readonly bus?: number | undefined;
-	readonly busType?: string | undefined;
-	readonly createDiffDisk?: ("false" | "true") | undefined;
-	readonly diskId?: string | undefined;
-	readonly diskSizeGB?: number | undefined;
-	readonly displayName?: string | undefined;
-	readonly lun?: number | undefined;
-	readonly maxDiskSizeGB?: number | undefined;
-	readonly name?: string | undefined;
-	readonly storageQoSPolicy?: StorageQoSPolicyDetails | undefined;
-	readonly templateDiskId?: string | undefined;
-	readonly vhdFormatType?: string | undefined;
-	readonly vhdType?: string | undefined;
-	readonly volumeType?: string | undefined;
+	readonly bus?: number;
+	readonly busType?: string;
+	readonly createDiffDisk?: "false" | "true";
+	readonly diskId?: string;
+	readonly diskSizeGB?: number;
+	readonly displayName?: string;
+	readonly lun?: number;
+	readonly maxDiskSizeGB?: number;
+	readonly name?: string;
+	readonly storageQoSPolicy?: StorageQoSPolicyDetails;
+	readonly templateDiskId?: string;
+	readonly vhdFormatType?: string;
+	readonly vhdType?: string;
+	readonly volumeType?: string;
 }
 export interface VirtualMachineProperties {
-	readonly availabilitySets?: AvailabilitySetListItem[] | undefined;
-	readonly checkpoints?: Checkpoint[] | undefined;
-	readonly checkpointType?: string | undefined;
-	readonly cloudId?: string | undefined;
-	readonly generation?: number | undefined;
-	readonly hardwareProfile?: HardwareProfile | undefined;
-	readonly inventoryItemId?: string | undefined;
-	readonly networkProfile?: NetworkProfile | undefined;
-	readonly osProfile?: OsProfile | undefined;
-	readonly powerState?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly storageProfile?: StorageProfile | undefined;
-	readonly templateId?: string | undefined;
-	readonly uuid?: string | undefined;
-	readonly vmmServerId?: string | undefined;
-	readonly vmName?: string | undefined;
+	readonly availabilitySets?: AvailabilitySetListItem[];
+	readonly checkpoints?: Checkpoint[];
+	readonly checkpointType?: string;
+	readonly cloudId?: string;
+	readonly generation?: number;
+	readonly hardwareProfile?: HardwareProfile;
+	readonly inventoryItemId?: string;
+	readonly networkProfile?: NetworkProfile;
+	readonly osProfile?: OsProfile;
+	readonly powerState?: string;
+	readonly provisioningState?: string;
+	readonly storageProfile?: StorageProfile;
+	readonly templateId?: string;
+	readonly uuid?: string;
+	readonly vmmServerId?: string;
+	readonly vmName?: string;
 }
 export interface VirtualMachineTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualMachineTemplateProperties {
-	readonly computerName?: string | undefined;
-	readonly cpuCount?: number | undefined;
-	readonly disks?: VirtualDisk[] | undefined;
-	readonly dynamicMemoryEnabled?: ("false" | "true") | undefined;
-	readonly dynamicMemoryMaxMB?: number | undefined;
-	readonly dynamicMemoryMinMB?: number | undefined;
-	readonly generation?: number | undefined;
-	readonly inventoryItemId?: string | undefined;
-	readonly isCustomizable?: ("false" | "true") | undefined;
-	readonly isHighlyAvailable?: string | undefined;
-	readonly limitCpuForMigration?: ("false" | "true") | undefined;
-	readonly memoryMB?: number | undefined;
-	readonly networkInterfaces?: NetworkInterfaces[] | undefined;
-	readonly osName?: string | undefined;
-	readonly osType?: ("Linux" | "Other" | "Windows") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uuid?: string | undefined;
-	readonly vmmServerId?: string | undefined;
+	readonly computerName?: string;
+	readonly cpuCount?: number;
+	readonly disks?: VirtualDisk[];
+	readonly dynamicMemoryEnabled?: "false" | "true";
+	readonly dynamicMemoryMaxMB?: number;
+	readonly dynamicMemoryMinMB?: number;
+	readonly generation?: number;
+	readonly inventoryItemId?: string;
+	readonly isCustomizable?: "false" | "true";
+	readonly isHighlyAvailable?: string;
+	readonly limitCpuForMigration?: "false" | "true";
+	readonly memoryMB?: number;
+	readonly networkInterfaces?: NetworkInterfaces[];
+	readonly osName?: string;
+	readonly osType?: "Linux" | "Other" | "Windows";
+	readonly provisioningState?: string;
+	readonly uuid?: string;
+	readonly vmmServerId?: string;
 }
 export interface VirtualMachineTemplateTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualNetworkProperties {
-	readonly inventoryItemId?: string | undefined;
-	readonly networkName?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uuid?: string | undefined;
-	readonly vmmServerId?: string | undefined;
+	readonly inventoryItemId?: string;
+	readonly networkName?: string;
+	readonly provisioningState?: string;
+	readonly uuid?: string;
+	readonly vmmServerId?: string;
 }
 export interface VirtualNetworkTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VMMServerProperties {
-	readonly connectionStatus?: string | undefined;
-	readonly credentials?: VMMServerPropertiesCredentials | undefined;
-	readonly errorMessage?: string | undefined;
+	readonly connectionStatus?: string;
+	readonly credentials?: VMMServerPropertiesCredentials;
+	readonly errorMessage?: string;
 	readonly fqdn: string;
-	readonly port?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uuid?: string | undefined;
-	readonly version?: string | undefined;
+	readonly port?: number;
+	readonly provisioningState?: string;
+	readonly uuid?: string;
+	readonly version?: string;
 }
 export interface VMMServerPropertiesCredentials {
-	readonly password?: string | undefined;
-	readonly username?: string | undefined;
+	readonly password?: string;
+	readonly username?: string;
 }
 export interface VMMServerTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	availabilitySets: availabilitySets,

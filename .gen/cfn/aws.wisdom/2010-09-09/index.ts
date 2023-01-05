@@ -14,9 +14,9 @@ export interface AssistantComponentOutputs {
 export interface AssistantComponentInputs {
 	readonly Name: string;
 	readonly Type: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ServerSideEncryptionConfiguration?: (ServerSideEncryptionConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class AssistantAssociation
@@ -39,7 +39,7 @@ export interface AssistantAssociationComponentInputs {
 	readonly AssistantId: string;
 	readonly Association: AssociationData;
 	readonly AssociationType: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class KnowledgeBase extends CfnResource<KnowledgeBaseComponentInputs> implements KnowledgeBaseComponentOutputs {
@@ -56,15 +56,15 @@ export interface KnowledgeBaseComponentOutputs {
 export interface KnowledgeBaseComponentInputs {
 	readonly KnowledgeBaseType: string;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly RenderingConfiguration?: (RenderingConfiguration | undefined) | undefined;
-	readonly ServerSideEncryptionConfiguration?: (ServerSideEncryptionConfiguration | undefined) | undefined;
-	readonly SourceConfiguration?: (SourceConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly RenderingConfiguration?: RenderingConfiguration | undefined;
+	readonly ServerSideEncryptionConfiguration?: ServerSideEncryptionConfiguration | undefined;
+	readonly SourceConfiguration?: SourceConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface ServerSideEncryptionConfiguration {
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
 }
 export interface AssociationData {
 	readonly KnowledgeBaseId: string;
@@ -74,7 +74,7 @@ export interface AppIntegrationsConfiguration {
 	readonly ObjectFields: string[];
 }
 export interface RenderingConfiguration {
-	readonly TemplateUri?: (string | undefined) | undefined;
+	readonly TemplateUri?: string | undefined;
 }
 export interface SourceConfiguration {
 	readonly AppIntegrations: AppIntegrationsConfiguration;

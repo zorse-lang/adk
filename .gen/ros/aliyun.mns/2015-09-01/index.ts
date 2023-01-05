@@ -13,12 +13,12 @@ export interface QueueComponentOutputs {
 }
 export interface QueueComponentInputs {
 	readonly QueueName: any | string;
-	readonly DelaySeconds?: (number | undefined) | undefined;
-	readonly LoggingEnabled?: (boolean | undefined) | undefined;
-	readonly MaximumMessageSize?: (number | undefined) | undefined;
-	readonly MessageRetentionPeriod?: (number | undefined) | undefined;
-	readonly PollingWaitSeconds?: (number | undefined) | undefined;
-	readonly VisibilityTimeout?: (number | undefined) | undefined;
+	readonly DelaySeconds?: number | undefined;
+	readonly LoggingEnabled?: boolean | undefined;
+	readonly MaximumMessageSize?: number | undefined;
+	readonly MessageRetentionPeriod?: number | undefined;
+	readonly PollingWaitSeconds?: number | undefined;
+	readonly VisibilityTimeout?: number | undefined;
 	readonly LogicalId: string;
 }
 export class Subscription extends RosResource<SubscriptionComponentInputs> implements SubscriptionComponentOutputs {
@@ -34,9 +34,9 @@ export interface SubscriptionComponentInputs {
 	readonly Endpoint: string;
 	readonly SubscriptionName: any | string;
 	readonly TopicName: any | string;
-	readonly FilterTag?: (string | undefined) | undefined;
-	readonly NotifyContentFormat?: (string | undefined) | undefined;
-	readonly NotifyStrategy?: (string | undefined) | undefined;
+	readonly FilterTag?: string | undefined;
+	readonly NotifyContentFormat?: string | undefined;
+	readonly NotifyStrategy?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Topic extends RosResource<TopicComponentInputs> implements TopicComponentOutputs {
@@ -52,8 +52,8 @@ export interface TopicComponentOutputs {
 }
 export interface TopicComponentInputs {
 	readonly TopicName: any | string;
-	readonly LoggingEnabled?: (boolean | undefined) | undefined;
-	readonly MaximumMessageSize?: (number | undefined) | undefined;
+	readonly LoggingEnabled?: boolean | undefined;
+	readonly MaximumMessageSize?: number | undefined;
 	readonly LogicalId: string;
 }
 export default {

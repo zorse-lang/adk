@@ -10,14 +10,13 @@ export class ProjectsServiceAccount
 }
 export interface ProjectsServiceAccountComponentOutputs {}
 export interface ProjectsServiceAccountComponentInputs {
-	readonly email_address?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly type: string;
+	readonly email_address?: string;
+	readonly kind?: string;
 	readonly name: string;
 }
 export interface ServiceAccount {
-	readonly email_address?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly email_address?: string;
+	readonly kind?: string;
 }
 export default {
 	ProjectsServiceAccount: ProjectsServiceAccount,

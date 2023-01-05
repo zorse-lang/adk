@@ -18,7 +18,7 @@ export interface recommendationsComponentOutputs {
 }
 export interface recommendationsComponentInputs {
 	readonly name: string;
-	readonly properties?: RecommendationProperties | undefined;
+	readonly properties?: RecommendationProperties;
 }
 export class recommendations_suppressions
 	extends ArmResource<recommendations_suppressionsComponentInputs>
@@ -38,30 +38,30 @@ export interface recommendations_suppressionsComponentOutputs {
 }
 export interface recommendations_suppressionsComponentInputs {
 	readonly name: string;
-	readonly properties?: SuppressionProperties | undefined;
+	readonly properties?: SuppressionProperties;
 }
 export interface RecommendationProperties {
-	readonly category?: ("Cost" | "HighAvailability" | "OperationalExcellence" | "Performance" | "Security") | undefined;
-	readonly impact?: ("High" | "Low" | "Medium") | undefined;
-	readonly impactedField?: string | undefined;
-	readonly impactedValue?: string | undefined;
-	readonly lastUpdated?: string | undefined;
-	readonly metadata?: RecommendationPropertiesMetadata | undefined;
-	readonly recommendationTypeId?: string | undefined;
-	readonly risk?: ("Error" | "None" | "Warning") | undefined;
-	readonly shortDescription?: ShortDescription | undefined;
-	readonly suppressionIds?: string[] | undefined;
+	readonly category?: "Cost" | "HighAvailability" | "OperationalExcellence" | "Performance" | "Security";
+	readonly impact?: "High" | "Low" | "Medium";
+	readonly impactedField?: string;
+	readonly impactedValue?: string;
+	readonly lastUpdated?: string;
+	readonly metadata?: RecommendationPropertiesMetadata;
+	readonly recommendationTypeId?: string;
+	readonly risk?: "Error" | "None" | "Warning";
+	readonly shortDescription?: ShortDescription;
+	readonly suppressionIds?: string[];
 }
 export interface RecommendationPropertiesMetadata {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ShortDescription {
-	readonly problem?: string | undefined;
-	readonly solution?: string | undefined;
+	readonly problem?: string;
+	readonly solution?: string;
 }
 export interface SuppressionProperties {
-	readonly suppressionId?: string | undefined;
-	readonly ttl?: string | undefined;
+	readonly suppressionId?: string;
+	readonly ttl?: string;
 }
 export default {
 	recommendations: recommendations,

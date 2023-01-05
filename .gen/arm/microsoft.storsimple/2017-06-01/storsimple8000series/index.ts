@@ -14,11 +14,11 @@ export interface managersComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers";
 }
 export interface managersComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagerProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ManagerProperties;
+	readonly tags?: ResourceTags;
 }
 export class managers_accessControlRecords
 	extends ArmResource<managers_accessControlRecordsComponentInputs>
@@ -37,7 +37,7 @@ export interface managers_accessControlRecordsComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers/accessControlRecords";
 }
 export interface managers_accessControlRecordsComponentInputs {
-	readonly kind?: "Series8000" | undefined;
+	readonly kind?: "Series8000";
 	readonly name: string;
 	readonly properties: AccessControlRecordProperties;
 }
@@ -58,7 +58,7 @@ export interface managers_bandwidthSettingsComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers/bandwidthSettings";
 }
 export interface managers_bandwidthSettingsComponentInputs {
-	readonly kind?: "Series8000" | undefined;
+	readonly kind?: "Series8000";
 	readonly name: string;
 	readonly properties: BandwidthRateSettingProperties;
 }
@@ -79,7 +79,7 @@ export interface managers_devices_alertSettingsComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers/devices/alertSettings";
 }
 export interface managers_devices_alertSettingsComponentInputs {
-	readonly kind?: "Series8000" | undefined;
+	readonly kind?: "Series8000";
 	readonly name: string;
 	readonly properties: AlertNotificationProperties;
 }
@@ -100,7 +100,7 @@ export interface managers_devices_backupPoliciesComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers/devices/backupPolicies";
 }
 export interface managers_devices_backupPoliciesComponentInputs {
-	readonly kind?: "Series8000" | undefined;
+	readonly kind?: "Series8000";
 	readonly name: string;
 	readonly properties: BackupPolicyProperties;
 }
@@ -127,7 +127,7 @@ export interface managers_devices_backupPolicies_schedulesComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers/devices/backupPolicies/schedules";
 }
 export interface managers_devices_backupPolicies_schedulesComponentInputs {
-	readonly kind?: "Series8000" | undefined;
+	readonly kind?: "Series8000";
 	readonly name: string;
 	readonly properties: BackupScheduleProperties;
 }
@@ -148,7 +148,7 @@ export interface managers_devices_timeSettingsComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers/devices/timeSettings";
 }
 export interface managers_devices_timeSettingsComponentInputs {
-	readonly kind?: "Series8000" | undefined;
+	readonly kind?: "Series8000";
 	readonly name: string;
 	readonly properties: TimeSettingsProperties;
 }
@@ -169,7 +169,7 @@ export interface managers_devices_volumeContainersComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers/devices/volumeContainers";
 }
 export interface managers_devices_volumeContainersComponentInputs {
-	readonly kind?: "Series8000" | undefined;
+	readonly kind?: "Series8000";
 	readonly name: string;
 	readonly properties: VolumeContainerProperties;
 }
@@ -196,7 +196,7 @@ export interface managers_devices_volumeContainers_volumesComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers/devices/volumeContainers/volumes";
 }
 export interface managers_devices_volumeContainers_volumesComponentInputs {
-	readonly kind?: "Series8000" | undefined;
+	readonly kind?: "Series8000";
 	readonly name: string;
 	readonly properties: VolumeProperties;
 }
@@ -217,10 +217,10 @@ export interface managers_extendedInformationComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers/extendedInformation";
 }
 export interface managers_extendedInformationComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: "Series8000" | undefined;
+	readonly etag?: string;
+	readonly kind?: "Series8000";
 	readonly name: string;
-	readonly properties?: ManagerExtendedInfoProperties | undefined;
+	readonly properties?: ManagerExtendedInfoProperties;
 }
 export class managers_storageAccountCredentials
 	extends ArmResource<managers_storageAccountCredentialsComponentInputs>
@@ -239,7 +239,7 @@ export interface managers_storageAccountCredentialsComponentOutputs {
 	readonly type: "Microsoft.StorSimple/managers/storageAccountCredentials";
 }
 export interface managers_storageAccountCredentialsComponentInputs {
-	readonly kind?: "Series8000" | undefined;
+	readonly kind?: "Series8000";
 	readonly name: string;
 	readonly properties: StorageAccountCredentialProperties;
 }
@@ -281,31 +281,31 @@ export function listPublicEncryptionKey(resource: managers): SymmetricEncryptedS
 }
 export interface AccessControlRecordProperties {
 	readonly initiatorName: string;
-	readonly volumeCount?: number | undefined;
+	readonly volumeCount?: number;
 }
 export interface AlertNotificationProperties {
-	readonly additionalRecipientEmailList?: string[] | undefined;
-	readonly alertNotificationCulture?: string | undefined;
+	readonly additionalRecipientEmailList?: string[];
+	readonly alertNotificationCulture?: string;
 	readonly emailNotification: "Disabled";
-	readonly notificationToServiceOwners?: "Disabled" | undefined;
+	readonly notificationToServiceOwners?: "Disabled";
 }
 export interface AsymmetricEncryptedSecret {
 	readonly encryptionAlgorithm: "AES256" | "None";
-	readonly encryptionCertThumbprint?: string | undefined;
+	readonly encryptionCertThumbprint?: string;
 	readonly value: string;
 }
 export interface BackupPolicyProperties {
-	readonly backupPolicyCreationType?: "BySSM" | undefined;
-	readonly lastBackupTime?: string | undefined;
-	readonly nextBackupTime?: string | undefined;
-	readonly scheduledBackupStatus?: "Disabled" | undefined;
-	readonly schedulesCount?: number | undefined;
-	readonly ssmHostName?: string | undefined;
+	readonly backupPolicyCreationType?: "BySSM";
+	readonly lastBackupTime?: string;
+	readonly nextBackupTime?: string;
+	readonly scheduledBackupStatus?: "Disabled";
+	readonly schedulesCount?: number;
+	readonly ssmHostName?: string;
 	readonly volumeIds: string[];
 }
 export interface BackupScheduleProperties {
 	readonly backupType: "CloudSnapshot";
-	readonly lastSuccessfulRun?: string | undefined;
+	readonly lastSuccessfulRun?: string;
 	readonly retentionCount: number;
 	readonly scheduleRecurrence: ScheduleRecurrence;
 	readonly scheduleStatus: "Disabled";
@@ -313,7 +313,7 @@ export interface BackupScheduleProperties {
 }
 export interface BandwidthRateSettingProperties {
 	readonly schedules: BandwidthSchedule[];
-	readonly volumeCount?: number | undefined;
+	readonly volumeCount?: number;
 }
 export interface BandwidthSchedule {
 	readonly days: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[];
@@ -322,106 +322,100 @@ export interface BandwidthSchedule {
 	readonly stop: Time;
 }
 export interface FailoverSet {
-	readonly eligibilityResult?: FailoverSetEligibilityResult | undefined;
-	readonly volumeContainers?: VolumeContainerFailoverMetadata[] | undefined;
+	readonly eligibilityResult?: FailoverSetEligibilityResult;
+	readonly volumeContainers?: VolumeContainerFailoverMetadata[];
 }
 export interface FailoverSetEligibilityResult {
-	readonly errorMessage?: string | undefined;
-	readonly isEligibleForFailover?: boolean | undefined;
+	readonly errorMessage?: string;
+	readonly isEligibleForFailover?: boolean;
 }
 export interface FailoverSetsList {
-	readonly value?: FailoverSet[] | undefined;
+	readonly value?: FailoverSet[];
 }
 export interface FailoverTarget {
-	readonly availableLocalStorageInBytes?: number | undefined;
-	readonly availableTieredStorageInBytes?: number | undefined;
-	readonly dataContainersCount?: number | undefined;
-	readonly deviceId?: string | undefined;
-	readonly deviceLocation?: string | undefined;
-	readonly deviceSoftwareVersion?: string | undefined;
+	readonly availableLocalStorageInBytes?: number;
+	readonly availableTieredStorageInBytes?: number;
+	readonly dataContainersCount?: number;
+	readonly deviceId?: string;
+	readonly deviceLocation?: string;
+	readonly deviceSoftwareVersion?: string;
 	readonly deviceStatus?:
-		| (
-				| "Creating"
-				| "Deactivated"
-				| "Deactivating"
-				| "Deleted"
-				| "MaintenanceMode"
-				| "Offline"
-				| "Online"
-				| "Provisioning"
-				| "ReadyToSetup"
-				| "RequiresAttention"
-		  )
-		| undefined;
-	readonly eligibilityResult?: TargetEligibilityResult | undefined;
-	readonly friendlyDeviceSoftwareVersion?: string | undefined;
-	readonly modelDescription?: string | undefined;
-	readonly volumesCount?: number | undefined;
+		| "Creating"
+		| "Deactivated"
+		| "Deactivating"
+		| "Deleted"
+		| "MaintenanceMode"
+		| "Offline"
+		| "Online"
+		| "Provisioning"
+		| "ReadyToSetup"
+		| "RequiresAttention";
+	readonly eligibilityResult?: TargetEligibilityResult;
+	readonly friendlyDeviceSoftwareVersion?: string;
+	readonly modelDescription?: string;
+	readonly volumesCount?: number;
 }
 export interface FailoverTargetsList {
-	readonly value?: FailoverTarget[] | undefined;
+	readonly value?: FailoverTarget[];
 }
 export interface Key {
 	readonly activationKey: string;
 }
 export interface ListFailoverTargetsRequest {
-	readonly volumeContainers?: string[] | undefined;
+	readonly volumeContainers?: string[];
 }
 export interface ManagerExtendedInfoProperties {
 	readonly algorithm: string;
-	readonly encryptionKey?: string | undefined;
-	readonly encryptionKeyThumbprint?: string | undefined;
+	readonly encryptionKey?: string;
+	readonly encryptionKeyThumbprint?: string;
 	readonly integrityKey: string;
-	readonly portalCertificateThumbprint?: string | undefined;
-	readonly version?: string | undefined;
+	readonly portalCertificateThumbprint?: string;
+	readonly version?: string;
 }
 export interface ManagerIntrinsicSettings {
 	readonly type: "GardaV1";
 }
 export interface ManagerProperties {
-	readonly cisIntrinsicSettings?: ManagerIntrinsicSettings | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly sku?: ManagerSku | undefined;
+	readonly cisIntrinsicSettings?: ManagerIntrinsicSettings;
+	readonly provisioningState?: string;
+	readonly sku?: ManagerSku;
 }
 export interface ManagerSku {
 	readonly name: "Standard";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ScheduleRecurrence {
 	readonly recurrenceType: "Daily" | "Hourly" | "Minutes";
 	readonly recurrenceValue: number;
-	readonly weeklyDaysList?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[]) | undefined;
+	readonly weeklyDaysList?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[];
 }
 export interface StorageAccountCredentialProperties {
-	readonly accessKey?: AsymmetricEncryptedSecret | undefined;
+	readonly accessKey?: AsymmetricEncryptedSecret;
 	readonly endPoint: string;
 	readonly sslStatus: "Disabled";
-	readonly volumesCount?: number | undefined;
+	readonly volumesCount?: number;
 }
 export interface SymmetricEncryptedSecret {
 	readonly encryptionAlgorithm: "AES256" | "None";
 	readonly value: string;
-	readonly valueCertificateThumbprint?: string | undefined;
+	readonly valueCertificateThumbprint?: string;
 }
 export interface TargetEligibilityErrorMessage {
-	readonly message?: string | undefined;
-	readonly resolution?: string | undefined;
+	readonly message?: string;
+	readonly resolution?: string;
 	readonly resultCode?:
-		| (
-				| "LocalToTieredVolumesConversionWarning"
-				| "TargetAndSourceCannotBeSameError"
-				| "TargetInsufficientCapacityError"
-				| "TargetInsufficientLocalVolumeMemoryError"
-				| "TargetInsufficientTieredVolumeMemoryError"
-				| "TargetIsNotOnlineError"
-		  )
-		| undefined;
+		| "LocalToTieredVolumesConversionWarning"
+		| "TargetAndSourceCannotBeSameError"
+		| "TargetInsufficientCapacityError"
+		| "TargetInsufficientLocalVolumeMemoryError"
+		| "TargetInsufficientTieredVolumeMemoryError"
+		| "TargetIsNotOnlineError";
 }
 export interface TargetEligibilityResult {
-	readonly eligibilityStatus?: "Eligible" | undefined;
-	readonly messages?: TargetEligibilityErrorMessage[] | undefined;
+	readonly eligibilityStatus?: "Eligible";
+	readonly messages?: TargetEligibilityErrorMessage[];
 }
 export interface Time {
 	readonly hours: number;
@@ -429,41 +423,41 @@ export interface Time {
 	readonly seconds: number;
 }
 export interface TimeSettingsProperties {
-	readonly primaryTimeServer?: string | undefined;
-	readonly secondaryTimeServer?: string[] | undefined;
+	readonly primaryTimeServer?: string;
+	readonly secondaryTimeServer?: string[];
 	readonly timeZone: string;
 }
 export interface VolumeContainerFailoverMetadata {
-	readonly volumeContainerId?: string | undefined;
-	readonly volumes?: VolumeFailoverMetadata[] | undefined;
+	readonly volumeContainerId?: string;
+	readonly volumes?: VolumeFailoverMetadata[];
 }
 export interface VolumeContainerProperties {
-	readonly bandWidthRateInMbps?: number | undefined;
-	readonly bandwidthSettingId?: string | undefined;
-	readonly encryptionKey?: AsymmetricEncryptedSecret | undefined;
-	readonly encryptionStatus?: "Disabled" | undefined;
-	readonly ownerShipStatus?: "NotOwned" | undefined;
+	readonly bandWidthRateInMbps?: number;
+	readonly bandwidthSettingId?: string;
+	readonly encryptionKey?: AsymmetricEncryptedSecret;
+	readonly encryptionStatus?: "Disabled";
+	readonly ownerShipStatus?: "NotOwned";
 	readonly storageAccountCredentialId: string;
-	readonly totalCloudStorageUsageInBytes?: number | undefined;
-	readonly volumeCount?: number | undefined;
+	readonly totalCloudStorageUsageInBytes?: number;
+	readonly volumeCount?: number;
 }
 export interface VolumeFailoverMetadata {
-	readonly backupCreatedDate?: string | undefined;
-	readonly backupElementId?: string | undefined;
-	readonly backupId?: string | undefined;
-	readonly backupPolicyId?: string | undefined;
-	readonly sizeInBytes?: number | undefined;
-	readonly volumeId?: string | undefined;
-	readonly volumeType?: ("Archival" | "LocallyPinned") | undefined;
+	readonly backupCreatedDate?: string;
+	readonly backupElementId?: string;
+	readonly backupId?: string;
+	readonly backupPolicyId?: string;
+	readonly sizeInBytes?: number;
+	readonly volumeId?: string;
+	readonly volumeType?: "Archival" | "LocallyPinned";
 }
 export interface VolumeProperties {
 	readonly accessControlRecordIds: string[];
-	readonly backupPolicyIds?: string[] | undefined;
-	readonly backupStatus?: "Disabled" | undefined;
+	readonly backupPolicyIds?: string[];
+	readonly backupStatus?: "Disabled";
 	readonly monitoringStatus: "Disabled";
-	readonly operationStatus?: ("Deleting" | "None" | "Restoring") | undefined;
+	readonly operationStatus?: "Deleting" | "None" | "Restoring";
 	readonly sizeInBytes: number;
-	readonly volumeContainerId?: string | undefined;
+	readonly volumeContainerId?: string;
 	readonly volumeStatus: "Offline";
 	readonly volumeType: "Archival" | "LocallyPinned";
 }

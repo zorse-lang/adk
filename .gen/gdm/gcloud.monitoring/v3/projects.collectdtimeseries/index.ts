@@ -10,78 +10,77 @@ export class ProjectsCollectdTimeSeries
 }
 export interface ProjectsCollectdTimeSeriesComponentOutputs {}
 export interface ProjectsCollectdTimeSeriesComponentInputs {
-	readonly collectdPayloads?: CollectdPayload[] | undefined;
-	readonly collectdVersion?: string | undefined;
+	readonly collectdPayloads?: CollectdPayload[];
+	readonly collectdVersion?: string;
 	readonly name: string;
-	readonly resource?: MonitoredResource | undefined;
-	readonly type: string;
+	readonly resource?: MonitoredResource;
 }
 export interface BucketOptions {
-	readonly explicitBuckets?: Explicit | undefined;
-	readonly exponentialBuckets?: Exponential | undefined;
-	readonly linearBuckets?: Linear | undefined;
+	readonly explicitBuckets?: Explicit;
+	readonly exponentialBuckets?: Exponential;
+	readonly linearBuckets?: Linear;
 }
 export interface CollectdPayload {
-	readonly endTime?: string | undefined;
-	readonly metadata?: { [P in string]: TypedValue } | undefined;
-	readonly plugin?: string | undefined;
-	readonly pluginInstance?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly type?: string | undefined;
-	readonly typeInstance?: string | undefined;
-	readonly values?: CollectdValue[] | undefined;
+	readonly endTime?: string;
+	readonly metadata?: { [P in string]: TypedValue };
+	readonly plugin?: string;
+	readonly pluginInstance?: string;
+	readonly startTime?: string;
+	readonly type?: string;
+	readonly typeInstance?: string;
+	readonly values?: CollectdValue[];
 }
 export interface CollectdValue {
-	readonly dataSourceName?: string | undefined;
-	readonly dataSourceType?: string | undefined;
-	readonly value?: TypedValue | undefined;
+	readonly dataSourceName?: string;
+	readonly dataSourceType?: string;
+	readonly value?: TypedValue;
 }
 export interface CreateCollectdTimeSeriesRequest {
-	readonly collectdPayloads?: CollectdPayload[] | undefined;
-	readonly collectdVersion?: string | undefined;
-	readonly resource?: MonitoredResource | undefined;
+	readonly collectdPayloads?: CollectdPayload[];
+	readonly collectdVersion?: string;
+	readonly resource?: MonitoredResource;
 }
 export interface Distribution {
 	readonly bucketCounts: string[];
 	readonly bucketOptions: BucketOptions;
-	readonly count?: string | undefined;
-	readonly exemplars?: Exemplar[] | undefined;
-	readonly mean?: number | undefined;
-	readonly range?: Range | undefined;
-	readonly sumOfSquaredDeviation?: number | undefined;
+	readonly count?: string;
+	readonly exemplars?: Exemplar[];
+	readonly mean?: number;
+	readonly range?: Range;
+	readonly sumOfSquaredDeviation?: number;
 }
 export interface Exemplar {
-	readonly attachments?: Array<{ [P in string]: any }> | undefined;
-	readonly timestamp?: string | undefined;
-	readonly value?: number | undefined;
+	readonly attachments?: Array<{ [P in string]: any }>;
+	readonly timestamp?: string;
+	readonly value?: number;
 }
 export interface Explicit {
-	readonly bounds?: number[] | undefined;
+	readonly bounds?: number[];
 }
 export interface Exponential {
-	readonly growthFactor?: number | undefined;
-	readonly numFiniteBuckets?: number | undefined;
-	readonly scale?: number | undefined;
+	readonly growthFactor?: number;
+	readonly numFiniteBuckets?: number;
+	readonly scale?: number;
 }
 export interface Linear {
-	readonly numFiniteBuckets?: number | undefined;
-	readonly offset?: number | undefined;
-	readonly width?: number | undefined;
+	readonly numFiniteBuckets?: number;
+	readonly offset?: number;
+	readonly width?: number;
 }
 export interface MonitoredResource {
 	readonly labels: { [P in string]: string };
 	readonly type: string;
 }
 export interface Range {
-	readonly max?: number | undefined;
-	readonly min?: number | undefined;
+	readonly max?: number;
+	readonly min?: number;
 }
 export interface TypedValue {
-	readonly boolValue?: boolean | undefined;
-	readonly distributionValue?: Distribution | undefined;
-	readonly doubleValue?: number | undefined;
-	readonly int64Value?: string | undefined;
-	readonly stringValue?: string | undefined;
+	readonly boolValue?: boolean;
+	readonly distributionValue?: Distribution;
+	readonly doubleValue?: number;
+	readonly int64Value?: string;
+	readonly stringValue?: string;
 }
 export default {
 	ProjectsCollectdTimeSeries: ProjectsCollectdTimeSeries,

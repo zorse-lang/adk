@@ -14,11 +14,11 @@ export interface serversComponentOutputs {
 	readonly type: "Microsoft.Sql/servers";
 }
 export interface serversComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServerProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ServerProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class servers_administrators
 	extends ArmResource<servers_administratorsComponentInputs>
@@ -38,7 +38,7 @@ export interface servers_administratorsComponentOutputs {
 }
 export interface servers_administratorsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerAdministratorProperties | undefined;
+	readonly properties?: ServerAdministratorProperties;
 }
 export class servers_advisors
 	extends ArmResource<servers_advisorsComponentInputs>
@@ -57,10 +57,10 @@ export interface servers_advisorsComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/advisors";
 }
 export interface servers_advisorsComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AdvisorProperties | undefined;
+	readonly properties?: AdvisorProperties;
 }
 export class servers_auditingPolicies
 	extends ArmResource<servers_auditingPoliciesComponentInputs>
@@ -79,10 +79,10 @@ export interface servers_auditingPoliciesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/auditingPolicies";
 }
 export interface servers_auditingPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ServerTableAuditingPolicyProperties | undefined;
+	readonly properties?: ServerTableAuditingPolicyProperties;
 }
 export class servers_communicationLinks
 	extends ArmResource<servers_communicationLinksComponentInputs>
@@ -101,10 +101,10 @@ export interface servers_communicationLinksComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/communicationLinks";
 }
 export interface servers_communicationLinksComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ServerCommunicationLinkProperties | undefined;
+	readonly properties?: ServerCommunicationLinkProperties;
 }
 export class servers_connectionPolicies
 	extends ArmResource<servers_connectionPoliciesComponentInputs>
@@ -123,10 +123,10 @@ export interface servers_connectionPoliciesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/connectionPolicies";
 }
 export interface servers_connectionPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ServerConnectionPolicyProperties | undefined;
+	readonly properties?: ServerConnectionPolicyProperties;
 }
 export class servers_databases
 	extends ArmResource<servers_databasesComponentInputs>
@@ -145,11 +145,11 @@ export interface servers_databasesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases";
 }
 export interface servers_databasesComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DatabaseProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DatabaseProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class servers_databases_advisors
 	extends ArmResource<servers_databases_advisorsComponentInputs>
@@ -168,10 +168,10 @@ export interface servers_databases_advisorsComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/advisors";
 }
 export interface servers_databases_advisorsComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AdvisorProperties | undefined;
+	readonly properties?: AdvisorProperties;
 }
 export class servers_databases_auditingPolicies
 	extends ArmResource<servers_databases_auditingPoliciesComponentInputs>
@@ -190,10 +190,10 @@ export interface servers_databases_auditingPoliciesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/auditingPolicies";
 }
 export interface servers_databases_auditingPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DatabaseTableAuditingPolicyProperties | undefined;
+	readonly properties?: DatabaseTableAuditingPolicyProperties;
 }
 export class servers_databases_connectionPolicies
 	extends ArmResource<servers_databases_connectionPoliciesComponentInputs>
@@ -212,10 +212,10 @@ export interface servers_databases_connectionPoliciesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/connectionPolicies";
 }
 export interface servers_databases_connectionPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DatabaseConnectionPolicyProperties | undefined;
+	readonly properties?: DatabaseConnectionPolicyProperties;
 }
 export class servers_databases_dataMaskingPolicies
 	extends ArmResource<servers_databases_dataMaskingPoliciesComponentInputs>
@@ -234,10 +234,10 @@ export interface servers_databases_dataMaskingPoliciesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/dataMaskingPolicies";
 }
 export interface servers_databases_dataMaskingPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DataMaskingPolicyProperties | undefined;
+	readonly properties?: DataMaskingPolicyProperties;
 }
 export class servers_databases_dataMaskingPolicies_rules
 	extends ArmResource<servers_databases_dataMaskingPolicies_rulesComponentInputs>
@@ -256,10 +256,10 @@ export interface servers_databases_dataMaskingPolicies_rulesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/dataMaskingPolicies/rules";
 }
 export interface servers_databases_dataMaskingPolicies_rulesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DataMaskingRuleProperties | undefined;
+	readonly properties?: DataMaskingRuleProperties;
 }
 export class servers_databases_extensions
 	extends ArmResource<servers_databases_extensionsComponentInputs>
@@ -279,7 +279,7 @@ export interface servers_databases_extensionsComponentOutputs {
 }
 export interface servers_databases_extensionsComponentInputs {
 	readonly name: string;
-	readonly properties?: ImportExtensionProperties | undefined;
+	readonly properties?: ImportExtensionProperties;
 }
 export class servers_databases_geoBackupPolicies
 	extends ArmResource<servers_databases_geoBackupPoliciesComponentInputs>
@@ -298,8 +298,8 @@ export interface servers_databases_geoBackupPoliciesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/geoBackupPolicies";
 }
 export interface servers_databases_geoBackupPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: GeoBackupPolicyProperties;
 }
@@ -320,9 +320,9 @@ export interface servers_databases_replicationLinksComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/replicationLinks";
 }
 export interface servers_databases_replicationLinksComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ReplicationLinkProperties | undefined;
+	readonly properties?: ReplicationLinkProperties;
 }
 export class servers_databases_securityAlertPolicies
 	extends ArmResource<servers_databases_securityAlertPoliciesComponentInputs>
@@ -341,10 +341,10 @@ export interface servers_databases_securityAlertPoliciesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/securityAlertPolicies";
 }
 export interface servers_databases_securityAlertPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DatabaseSecurityAlertPolicyProperties | undefined;
+	readonly properties?: DatabaseSecurityAlertPolicyProperties;
 }
 export class servers_databases_serviceTierAdvisors
 	extends ArmResource<servers_databases_serviceTierAdvisorsComponentInputs>
@@ -364,7 +364,7 @@ export interface servers_databases_serviceTierAdvisorsComponentOutputs {
 }
 export interface servers_databases_serviceTierAdvisorsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServiceTierAdvisorProperties | undefined;
+	readonly properties?: ServiceTierAdvisorProperties;
 }
 export class servers_databases_transparentDataEncryption
 	extends ArmResource<servers_databases_transparentDataEncryptionComponentInputs>
@@ -383,9 +383,9 @@ export interface servers_databases_transparentDataEncryptionComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/transparentDataEncryption";
 }
 export interface servers_databases_transparentDataEncryptionComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: TransparentDataEncryptionProperties | undefined;
+	readonly properties?: TransparentDataEncryptionProperties;
 }
 export class servers_disasterRecoveryConfiguration
 	extends ArmResource<servers_disasterRecoveryConfigurationComponentInputs>
@@ -404,9 +404,9 @@ export interface servers_disasterRecoveryConfigurationComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/disasterRecoveryConfiguration";
 }
 export interface servers_disasterRecoveryConfigurationComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DisasterRecoveryConfigurationProperties | undefined;
+	readonly properties?: DisasterRecoveryConfigurationProperties;
 }
 export class servers_elasticPools
 	extends ArmResource<servers_elasticPoolsComponentInputs>
@@ -425,11 +425,11 @@ export interface servers_elasticPoolsComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/elasticPools";
 }
 export interface servers_elasticPoolsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ElasticPoolProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ElasticPoolProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class servers_elasticPools_databases
 	extends ArmResource<servers_elasticPools_databasesComponentInputs>
@@ -448,11 +448,11 @@ export interface servers_elasticPools_databasesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/elasticPools/databases";
 }
 export interface servers_elasticPools_databasesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DatabaseProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DatabaseProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class servers_firewallRules
 	extends ArmResource<servers_firewallRulesComponentInputs>
@@ -471,10 +471,10 @@ export interface servers_firewallRulesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/firewallRules";
 }
 export interface servers_firewallRulesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: FirewallRuleProperties | undefined;
+	readonly properties?: FirewallRuleProperties;
 }
 export class servers_recommendedElasticPools
 	extends ArmResource<servers_recommendedElasticPoolsComponentInputs>
@@ -494,7 +494,7 @@ export interface servers_recommendedElasticPoolsComponentOutputs {
 }
 export interface servers_recommendedElasticPoolsComponentInputs {
 	readonly name: string;
-	readonly properties?: RecommendedElasticPoolPropertiesAutoGenerated | undefined;
+	readonly properties?: RecommendedElasticPoolPropertiesAutoGenerated;
 }
 export class servers_recommendedElasticPools_databases
 	extends ArmResource<servers_recommendedElasticPools_databasesComponentInputs>
@@ -513,11 +513,11 @@ export interface servers_recommendedElasticPools_databasesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/recommendedElasticPools/databases";
 }
 export interface servers_recommendedElasticPools_databasesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DatabaseProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DatabaseProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class servers_recoverableDatabases
 	extends ArmResource<servers_recoverableDatabasesComponentInputs>
@@ -537,7 +537,7 @@ export interface servers_recoverableDatabasesComponentOutputs {
 }
 export interface servers_recoverableDatabasesComponentInputs {
 	readonly name: string;
-	readonly properties?: RecoverableDatabaseProperties | undefined;
+	readonly properties?: RecoverableDatabaseProperties;
 }
 export class servers_restorableDroppedDatabases
 	extends ArmResource<servers_restorableDroppedDatabasesComponentInputs>
@@ -556,9 +556,9 @@ export interface servers_restorableDroppedDatabasesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/restorableDroppedDatabases";
 }
 export interface servers_restorableDroppedDatabasesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RestorableDroppedDatabaseProperties | undefined;
+	readonly properties?: RestorableDroppedDatabaseProperties;
 }
 export class servers_serviceObjectives
 	extends ArmResource<servers_serviceObjectivesComponentInputs>
@@ -578,110 +578,107 @@ export interface servers_serviceObjectivesComponentOutputs {
 }
 export interface servers_serviceObjectivesComponentInputs {
 	readonly name: string;
-	readonly properties?: ServiceObjectiveProperties | undefined;
+	readonly properties?: ServiceObjectiveProperties;
 }
 export interface AdvisorProperties {
-	readonly advisorStatus?: ("GA" | "LimitedPublicPreview" | "PrivatePreview") | undefined;
+	readonly advisorStatus?: "GA" | "LimitedPublicPreview" | "PrivatePreview";
 	readonly autoExecuteValue: "Default" | "Disabled";
-	readonly lastChecked?: string | undefined;
-	readonly recommendationsStatus?: string | undefined;
+	readonly lastChecked?: string;
+	readonly recommendationsStatus?: string;
 }
 export interface Database {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: DatabaseProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: DatabaseProperties;
+	readonly tags?: TrackedResourceTags;
+	readonly type?: string;
 }
 export interface DatabaseConnectionPolicyProperties {
-	readonly proxyDnsName?: string | undefined;
-	readonly proxyPort?: string | undefined;
-	readonly redirectionState?: string | undefined;
-	readonly securityEnabledAccess?: string | undefined;
-	readonly state?: string | undefined;
-	readonly useServerDefault?: string | undefined;
-	readonly visibility?: string | undefined;
+	readonly proxyDnsName?: string;
+	readonly proxyPort?: string;
+	readonly redirectionState?: string;
+	readonly securityEnabledAccess?: string;
+	readonly state?: string;
+	readonly useServerDefault?: string;
+	readonly visibility?: string;
 }
 export interface DatabaseProperties {
-	readonly collation?: string | undefined;
-	readonly containmentState?: number | undefined;
+	readonly collation?: string;
+	readonly containmentState?: number;
 	readonly createMode?:
-		| (
-				| "Copy"
-				| "Default"
-				| "NonReadableSecondary"
-				| "OnlineSecondary"
-				| "PointInTimeRestore"
-				| "Recovery"
-				| "Restore"
-				| "RestoreLongTermRetentionBackup"
-		  )
-		| undefined;
+		| "Copy"
+		| "Default"
+		| "NonReadableSecondary"
+		| "OnlineSecondary"
+		| "PointInTimeRestore"
+		| "Recovery"
+		| "Restore"
+		| "RestoreLongTermRetentionBackup";
 }
 export interface DatabaseSecurityAlertPolicyProperties {
-	readonly disabledAlerts?: string | undefined;
-	readonly emailAccountAdmins?: "Disabled" | undefined;
-	readonly emailAddresses?: string | undefined;
-	readonly retentionDays?: number | undefined;
+	readonly disabledAlerts?: string;
+	readonly emailAccountAdmins?: "Disabled";
+	readonly emailAddresses?: string;
+	readonly retentionDays?: number;
 	readonly state: "Disabled" | "Enabled";
-	readonly storageAccountAccessKey?: string | undefined;
-	readonly storageEndpoint?: string | undefined;
-	readonly useServerDefault?: "Disabled" | undefined;
+	readonly storageAccountAccessKey?: string;
+	readonly storageEndpoint?: string;
+	readonly useServerDefault?: "Disabled";
 }
 export interface DatabaseTableAuditingPolicyProperties {
-	readonly auditingState?: string | undefined;
-	readonly auditLogsTableName?: string | undefined;
-	readonly eventTypesToAudit?: string | undefined;
-	readonly fullAuditLogsTableName?: string | undefined;
-	readonly retentionDays?: string | undefined;
-	readonly storageAccountKey?: string | undefined;
-	readonly storageAccountName?: string | undefined;
-	readonly storageAccountResourceGroupName?: string | undefined;
-	readonly storageAccountSecondaryKey?: string | undefined;
-	readonly storageAccountSubscriptionId?: string | undefined;
-	readonly storageTableEndpoint?: string | undefined;
-	readonly useServerDefault?: string | undefined;
+	readonly auditingState?: string;
+	readonly auditLogsTableName?: string;
+	readonly eventTypesToAudit?: string;
+	readonly fullAuditLogsTableName?: string;
+	readonly retentionDays?: string;
+	readonly storageAccountKey?: string;
+	readonly storageAccountName?: string;
+	readonly storageAccountResourceGroupName?: string;
+	readonly storageAccountSecondaryKey?: string;
+	readonly storageAccountSubscriptionId?: string;
+	readonly storageTableEndpoint?: string;
+	readonly useServerDefault?: string;
 }
 export interface DataMaskingPolicyProperties {
-	readonly applicationPrincipals?: string | undefined;
+	readonly applicationPrincipals?: string;
 	readonly dataMaskingState: "Disabled";
-	readonly exemptPrincipals?: string | undefined;
-	readonly maskingLevel?: string | undefined;
+	readonly exemptPrincipals?: string;
+	readonly maskingLevel?: string;
 }
 export interface DataMaskingRuleProperties {
-	readonly aliasName?: string | undefined;
+	readonly aliasName?: string;
 	readonly columnName: string;
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly maskingFunction: "CCN" | "Default" | "Email" | "Number" | "SSN";
-	readonly numberFrom?: string | undefined;
-	readonly numberTo?: string | undefined;
-	readonly prefixSize?: string | undefined;
-	readonly replacementString?: string | undefined;
-	readonly ruleState?: "Disabled" | undefined;
+	readonly numberFrom?: string;
+	readonly numberTo?: string;
+	readonly prefixSize?: string;
+	readonly replacementString?: string;
+	readonly ruleState?: "Disabled";
 	readonly schemaName: string;
-	readonly suffixSize?: string | undefined;
+	readonly suffixSize?: string;
 	readonly tableName: string;
 }
 export interface DisasterRecoveryConfigurationProperties {
 	readonly autoFailover: "Off" | "On";
 	readonly failoverPolicy: "Automatic" | "Manual";
-	readonly logicalServerName?: string | undefined;
-	readonly partnerLogicalServerName?: string | undefined;
+	readonly logicalServerName?: string;
+	readonly partnerLogicalServerName?: string;
 	readonly partnerServerId: string;
-	readonly role?: ("None" | "Primary" | "Secondary") | undefined;
-	readonly status?: ("Creating" | "Dropping" | "FailingOver" | "Ready") | undefined;
+	readonly role?: "None" | "Primary" | "Secondary";
+	readonly status?: "Creating" | "Dropping" | "FailingOver" | "Ready";
 }
 export interface ElasticPoolProperties {
-	readonly creationDate?: string | undefined;
-	readonly databaseDtuMax?: number | undefined;
-	readonly databaseDtuMin?: number | undefined;
-	readonly dtu?: number | undefined;
-	readonly edition?: ("Basic" | "BusinessCritical" | "GeneralPurpose" | "Premium" | "Standard") | undefined;
-	readonly state?: ("Creating" | "Disabled" | "Ready") | undefined;
-	readonly storageMB?: number | undefined;
-	readonly zoneRedundant?: boolean | undefined;
+	readonly creationDate?: string;
+	readonly databaseDtuMax?: number;
+	readonly databaseDtuMin?: number;
+	readonly dtu?: number;
+	readonly edition?: "Basic" | "BusinessCritical" | "GeneralPurpose" | "Premium" | "Standard";
+	readonly state?: "Creating" | "Disabled" | "Ready";
+	readonly storageMB?: number;
+	readonly zoneRedundant?: boolean;
 }
 export interface FirewallRuleProperties {
 	readonly endIpAddress: string;
@@ -689,101 +686,98 @@ export interface FirewallRuleProperties {
 }
 export interface GeoBackupPolicyProperties {
 	readonly state: "Disabled";
-	readonly storageType?: string | undefined;
+	readonly storageType?: string;
 }
 export interface ImportExtensionProperties {
 	readonly administratorLogin: string;
 	readonly administratorLoginPassword: string;
-	readonly authenticationType?: "ADPassword" | undefined;
+	readonly authenticationType?: "ADPassword";
 	readonly operationMode: "Import";
 	readonly storageKey: string;
 	readonly storageKeyType: "SharedAccessKey";
 	readonly storageUri: string;
 }
 export interface OperationImpact {
-	readonly changeValueAbsolute?: number | undefined;
-	readonly changeValueRelative?: number | undefined;
-	readonly name?: string | undefined;
-	readonly unit?: string | undefined;
+	readonly changeValueAbsolute?: number;
+	readonly changeValueRelative?: number;
+	readonly name?: string;
+	readonly unit?: string;
 }
 export interface RecommendedElasticPoolMetric {
-	readonly dateTime?: string | undefined;
-	readonly dtu?: number | undefined;
-	readonly sizeGB?: number | undefined;
+	readonly dateTime?: string;
+	readonly dtu?: number;
+	readonly sizeGB?: number;
 }
 export interface RecommendedElasticPoolPropertiesAutoGenerated {
-	readonly databaseDtuMax?: number | undefined;
-	readonly databaseDtuMin?: number | undefined;
-	readonly databaseEdition?: ("Basic" | "BusinessCritical" | "GeneralPurpose" | "Premium" | "Standard") | undefined;
-	readonly databases?: Database[] | undefined;
-	readonly dtu?: number | undefined;
-	readonly maxObservedDtu?: number | undefined;
-	readonly maxObservedStorageMB?: number | undefined;
-	readonly metrics?: RecommendedElasticPoolMetric[] | undefined;
-	readonly observationPeriodEnd?: string | undefined;
-	readonly observationPeriodStart?: string | undefined;
-	readonly storageMB?: number | undefined;
+	readonly databaseDtuMax?: number;
+	readonly databaseDtuMin?: number;
+	readonly databaseEdition?: "Basic" | "BusinessCritical" | "GeneralPurpose" | "Premium" | "Standard";
+	readonly databases?: Database[];
+	readonly dtu?: number;
+	readonly maxObservedDtu?: number;
+	readonly maxObservedStorageMB?: number;
+	readonly metrics?: RecommendedElasticPoolMetric[];
+	readonly observationPeriodEnd?: string;
+	readonly observationPeriodStart?: string;
+	readonly storageMB?: number;
 }
 export interface RecommendedIndex {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: RecommendedIndexProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: RecommendedIndexProperties;
+	readonly type?: string;
 }
 export interface RecommendedIndexProperties {
-	readonly action?: ("Create" | "Drop") | undefined;
-	readonly columns?: string[] | undefined;
-	readonly created?: string | undefined;
-	readonly estimatedImpact?: OperationImpact[] | undefined;
-	readonly includedColumns?: string[] | undefined;
-	readonly indexScript?: string | undefined;
-	readonly indexType?: ("CLUSTERED COLUMNSTORE" | "CLUSTERED" | "COLUMNSTORE") | undefined;
-	readonly lastModified?: string | undefined;
-	readonly reportedImpact?: OperationImpact[] | undefined;
-	readonly schema?: string | undefined;
+	readonly action?: "Create" | "Drop";
+	readonly columns?: string[];
+	readonly created?: string;
+	readonly estimatedImpact?: OperationImpact[];
+	readonly includedColumns?: string[];
+	readonly indexScript?: string;
+	readonly indexType?: "CLUSTERED COLUMNSTORE" | "CLUSTERED" | "COLUMNSTORE";
+	readonly lastModified?: string;
+	readonly reportedImpact?: OperationImpact[];
+	readonly schema?: string;
 	readonly state?:
-		| (
-				| "Active"
-				| "Blocked"
-				| "Executing"
-				| "Expired"
-				| "Ignored"
-				| "Pending Revert"
-				| "Pending"
-				| "Reverted"
-				| "Reverting"
-				| "Success"
-		  )
-		| undefined;
-	readonly table?: string | undefined;
+		| "Active"
+		| "Blocked"
+		| "Executing"
+		| "Expired"
+		| "Ignored"
+		| "Pending Revert"
+		| "Pending"
+		| "Reverted"
+		| "Reverting"
+		| "Success";
+	readonly table?: string;
 }
 export interface RecoverableDatabaseProperties {
-	readonly edition?: string | undefined;
-	readonly elasticPoolName?: string | undefined;
-	readonly lastAvailableBackupDate?: string | undefined;
-	readonly serviceLevelObjective?: string | undefined;
+	readonly edition?: string;
+	readonly elasticPoolName?: string;
+	readonly lastAvailableBackupDate?: string;
+	readonly serviceLevelObjective?: string;
 }
 export interface ReplicationLinkProperties {
-	readonly isTerminationAllowed?: boolean | undefined;
-	readonly partnerDatabase?: string | undefined;
-	readonly partnerLocation?: string | undefined;
-	readonly partnerRole?: ("Copy" | "NonReadableSecondary" | "Primary" | "Secondary") | undefined;
-	readonly partnerServer?: string | undefined;
-	readonly percentComplete?: number | undefined;
-	readonly replicationMode?: string | undefined;
-	readonly replicationState?: ("CATCH_UP" | "PENDING" | "SEEDING" | "SUSPENDED") | undefined;
-	readonly role?: ("Copy" | "NonReadableSecondary" | "Primary" | "Secondary") | undefined;
-	readonly startTime?: string | undefined;
+	readonly isTerminationAllowed?: boolean;
+	readonly partnerDatabase?: string;
+	readonly partnerLocation?: string;
+	readonly partnerRole?: "Copy" | "NonReadableSecondary" | "Primary" | "Secondary";
+	readonly partnerServer?: string;
+	readonly percentComplete?: number;
+	readonly replicationMode?: string;
+	readonly replicationState?: "CATCH_UP" | "PENDING" | "SEEDING" | "SUSPENDED";
+	readonly role?: "Copy" | "NonReadableSecondary" | "Primary" | "Secondary";
+	readonly startTime?: string;
 }
 export interface RestorableDroppedDatabaseProperties {
-	readonly creationDate?: string | undefined;
-	readonly databaseName?: string | undefined;
-	readonly deletionDate?: string | undefined;
-	readonly earliestRestoreDate?: string | undefined;
-	readonly edition?: string | undefined;
-	readonly elasticPoolName?: string | undefined;
-	readonly maxSizeBytes?: string | undefined;
-	readonly serviceLevelObjective?: string | undefined;
+	readonly creationDate?: string;
+	readonly databaseName?: string;
+	readonly deletionDate?: string;
+	readonly earliestRestoreDate?: string;
+	readonly edition?: string;
+	readonly elasticPoolName?: string;
+	readonly maxSizeBytes?: string;
+	readonly serviceLevelObjective?: string;
 }
 export interface ServerAdministratorProperties {
 	readonly administratorType: "ActiveDirectory";
@@ -793,152 +787,149 @@ export interface ServerAdministratorProperties {
 }
 export interface ServerCommunicationLinkProperties {
 	readonly partnerServer: string;
-	readonly state?: string | undefined;
+	readonly state?: string;
 }
 export interface ServerConnectionPolicyProperties {
 	readonly connectionType: "Default" | "Proxy";
 }
 export interface ServerProperties {
-	readonly administratorLogin?: string | undefined;
-	readonly administratorLoginPassword?: string | undefined;
-	readonly externalAdministratorLogin?: string | undefined;
-	readonly externalAdministratorSid?: string | undefined;
-	readonly fullyQualifiedDomainName?: string | undefined;
-	readonly state?: "Disabled" | undefined;
-	readonly version?: ("12.0" | "2.0") | undefined;
+	readonly administratorLogin?: string;
+	readonly administratorLoginPassword?: string;
+	readonly externalAdministratorLogin?: string;
+	readonly externalAdministratorSid?: string;
+	readonly fullyQualifiedDomainName?: string;
+	readonly state?: "Disabled";
+	readonly version?: "12.0" | "2.0";
 }
 export interface ServerTableAuditingPolicyProperties {
-	readonly auditingState?: string | undefined;
-	readonly auditLogsTableName?: string | undefined;
-	readonly eventTypesToAudit?: string | undefined;
-	readonly fullAuditLogsTableName?: string | undefined;
-	readonly retentionDays?: string | undefined;
-	readonly storageAccountKey?: string | undefined;
-	readonly storageAccountName?: string | undefined;
-	readonly storageAccountResourceGroupName?: string | undefined;
-	readonly storageAccountSecondaryKey?: string | undefined;
-	readonly storageAccountSubscriptionId?: string | undefined;
-	readonly storageTableEndpoint?: string | undefined;
+	readonly auditingState?: string;
+	readonly auditLogsTableName?: string;
+	readonly eventTypesToAudit?: string;
+	readonly fullAuditLogsTableName?: string;
+	readonly retentionDays?: string;
+	readonly storageAccountKey?: string;
+	readonly storageAccountName?: string;
+	readonly storageAccountResourceGroupName?: string;
+	readonly storageAccountSecondaryKey?: string;
+	readonly storageAccountSubscriptionId?: string;
+	readonly storageTableEndpoint?: string;
 }
 export interface ServiceObjectiveProperties {
-	readonly description?: string | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly isDefault?: boolean | undefined;
-	readonly isSystem?: boolean | undefined;
-	readonly serviceObjectiveName?: string | undefined;
+	readonly description?: string;
+	readonly enabled?: boolean;
+	readonly isDefault?: boolean;
+	readonly isSystem?: boolean;
+	readonly serviceObjectiveName?: string;
 }
 export interface ServiceTierAdvisor {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ServiceTierAdvisorProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ServiceTierAdvisorProperties;
+	readonly type?: string;
 }
 export interface ServiceTierAdvisorProperties {
-	readonly activeTimeRatio?: number | undefined;
-	readonly avgDtu?: number | undefined;
-	readonly confidence?: number | undefined;
-	readonly currentServiceLevelObjective?: string | undefined;
-	readonly currentServiceLevelObjectiveId?: string | undefined;
-	readonly databaseSizeBasedRecommendationServiceLevelObjective?: string | undefined;
-	readonly databaseSizeBasedRecommendationServiceLevelObjectiveId?: string | undefined;
-	readonly disasterPlanBasedRecommendationServiceLevelObjective?: string | undefined;
-	readonly disasterPlanBasedRecommendationServiceLevelObjectiveId?: string | undefined;
-	readonly maxDtu?: number | undefined;
-	readonly maxSizeInGB?: number | undefined;
-	readonly minDtu?: number | undefined;
-	readonly observationPeriodEnd?: string | undefined;
-	readonly observationPeriodStart?: string | undefined;
-	readonly overallRecommendationServiceLevelObjective?: string | undefined;
-	readonly overallRecommendationServiceLevelObjectiveId?: string | undefined;
-	readonly serviceLevelObjectiveUsageMetrics?: SloUsageMetric[] | undefined;
-	readonly usageBasedRecommendationServiceLevelObjective?: string | undefined;
-	readonly usageBasedRecommendationServiceLevelObjectiveId?: string | undefined;
+	readonly activeTimeRatio?: number;
+	readonly avgDtu?: number;
+	readonly confidence?: number;
+	readonly currentServiceLevelObjective?: string;
+	readonly currentServiceLevelObjectiveId?: string;
+	readonly databaseSizeBasedRecommendationServiceLevelObjective?: string;
+	readonly databaseSizeBasedRecommendationServiceLevelObjectiveId?: string;
+	readonly disasterPlanBasedRecommendationServiceLevelObjective?: string;
+	readonly disasterPlanBasedRecommendationServiceLevelObjectiveId?: string;
+	readonly maxDtu?: number;
+	readonly maxSizeInGB?: number;
+	readonly minDtu?: number;
+	readonly observationPeriodEnd?: string;
+	readonly observationPeriodStart?: string;
+	readonly overallRecommendationServiceLevelObjective?: string;
+	readonly overallRecommendationServiceLevelObjectiveId?: string;
+	readonly serviceLevelObjectiveUsageMetrics?: SloUsageMetric[];
+	readonly usageBasedRecommendationServiceLevelObjective?: string;
+	readonly usageBasedRecommendationServiceLevelObjectiveId?: string;
 }
 export interface SloUsageMetric {
-	readonly inRangeTimeRatio?: number | undefined;
+	readonly inRangeTimeRatio?: number;
 	readonly serviceLevelObjective?:
-		| (
-				| "Basic"
-				| "DS100"
-				| "DS1000"
-				| "DS1200"
-				| "DS1500"
-				| "DS200"
-				| "DS2000"
-				| "DS300"
-				| "DS400"
-				| "DS500"
-				| "DS600"
-				| "DW100"
-				| "DW1000"
-				| "DW10000c"
-				| "DW1000c"
-				| "DW1200"
-				| "DW1500"
-				| "DW15000c"
-				| "DW1500c"
-				| "DW200"
-				| "DW2000"
-				| "DW2000c"
-				| "DW2500c"
-				| "DW300"
-				| "DW3000"
-				| "DW30000c"
-				| "DW3000c"
-				| "DW400"
-				| "DW500"
-				| "DW5000c"
-				| "DW600"
-				| "DW6000"
-				| "DW6000c"
-				| "DW7500c"
-				| "ElasticPool"
-				| "Free"
-				| "P1"
-				| "P11"
-				| "P15"
-				| "P2"
-				| "P3"
-				| "P4"
-				| "P6"
-				| "PRS1"
-				| "PRS2"
-				| "PRS4"
-				| "PRS6"
-				| "S0"
-				| "S1"
-				| "S12"
-				| "S2"
-				| "S3"
-				| "S4"
-				| "S6"
-				| "S7"
-				| "S9"
-				| "System"
-				| "System0"
-				| "System1"
-				| "System2"
-				| "System2L"
-				| "System3"
-				| "System3L"
-				| "System4"
-				| "System4L"
-		  )
-		| undefined;
-	readonly serviceLevelObjectiveId?: string | undefined;
+		| "Basic"
+		| "DS100"
+		| "DS1000"
+		| "DS1200"
+		| "DS1500"
+		| "DS200"
+		| "DS2000"
+		| "DS300"
+		| "DS400"
+		| "DS500"
+		| "DS600"
+		| "DW100"
+		| "DW1000"
+		| "DW10000c"
+		| "DW1000c"
+		| "DW1200"
+		| "DW1500"
+		| "DW15000c"
+		| "DW1500c"
+		| "DW200"
+		| "DW2000"
+		| "DW2000c"
+		| "DW2500c"
+		| "DW300"
+		| "DW3000"
+		| "DW30000c"
+		| "DW3000c"
+		| "DW400"
+		| "DW500"
+		| "DW5000c"
+		| "DW600"
+		| "DW6000"
+		| "DW6000c"
+		| "DW7500c"
+		| "ElasticPool"
+		| "Free"
+		| "P1"
+		| "P11"
+		| "P15"
+		| "P2"
+		| "P3"
+		| "P4"
+		| "P6"
+		| "PRS1"
+		| "PRS2"
+		| "PRS4"
+		| "PRS6"
+		| "S0"
+		| "S1"
+		| "S12"
+		| "S2"
+		| "S3"
+		| "S4"
+		| "S6"
+		| "S7"
+		| "S9"
+		| "System"
+		| "System0"
+		| "System1"
+		| "System2"
+		| "System2L"
+		| "System3"
+		| "System3L"
+		| "System4"
+		| "System4L";
+	readonly serviceLevelObjectiveId?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TransparentDataEncryption {
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: TransparentDataEncryptionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: TransparentDataEncryptionProperties;
+	readonly type?: string;
 }
 export interface TransparentDataEncryptionProperties {
-	readonly status?: "Disabled" | undefined;
+	readonly status?: "Disabled";
 }
 export default {
 	servers: servers,

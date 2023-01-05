@@ -17,7 +17,7 @@ export interface AccountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly sku: SKU;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class Accounts_Channels
 	extends ArmResource<Accounts_ChannelsComponentInputs>
@@ -37,7 +37,7 @@ export interface Accounts_ChannelsComponentOutputs {
 }
 export interface Accounts_ChannelsComponentInputs {
 	readonly name: string;
-	readonly properties?: ChannelProperties | undefined;
+	readonly properties?: ChannelProperties;
 }
 export function listChannelTypes(resource: Accounts): ChannelTypeDescriptionList {
 	if (resource.apiVersion !== "2018-09-01-preview") {
@@ -58,35 +58,35 @@ export function listKeys(resource: Accounts): KeyDescriptionList {
 	throw new Error("not implemented");
 }
 export interface ChannelProperties {
-	readonly channelFunctions?: string[] | undefined;
+	readonly channelFunctions?: string[];
 	readonly channelType: string;
-	readonly credentials?: ChannelPropertiesCredentials | undefined;
+	readonly credentials?: ChannelPropertiesCredentials;
 }
 export interface ChannelPropertiesCredentials {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ChannelTypeDescription {
-	readonly channelDescription?: string | undefined;
-	readonly channelFunctions?: string[] | undefined;
-	readonly channelType?: string | undefined;
+	readonly channelDescription?: string;
+	readonly channelFunctions?: string[];
+	readonly channelType?: string;
 }
 export interface ChannelTypeDescriptionList {
-	readonly value?: ChannelTypeDescription[] | undefined;
+	readonly value?: ChannelTypeDescription[];
 }
 export interface KeyDescription {
-	readonly name?: string | undefined;
-	readonly rank?: ("PrimaryKey" | "SecondaryKey") | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly rank?: "PrimaryKey" | "SecondaryKey";
+	readonly value?: string;
 }
 export interface KeyDescriptionList {
-	readonly value?: KeyDescription[] | undefined;
+	readonly value?: KeyDescription[];
 }
 export interface SKU {
 	readonly name: string;
-	readonly tier?: string | undefined;
+	readonly tier?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	Accounts: Accounts,

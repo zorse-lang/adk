@@ -10,7 +10,6 @@ export class MonitoredResourceDescriptors
 }
 export interface MonitoredResourceDescriptorsComponentOutputs {}
 export interface MonitoredResourceDescriptorsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

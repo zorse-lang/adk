@@ -17,11 +17,11 @@ export interface privateDnsZonesComponentOutputs {
 	readonly type: "Microsoft.Network/privateDnsZones";
 }
 export interface privateDnsZonesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PrivateZoneProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: PrivateZoneProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class privateDnsZones_A
 	extends ArmResource<privateDnsZones_AComponentInputs>
@@ -40,9 +40,9 @@ export interface privateDnsZones_AComponentOutputs {
 	readonly type: "Microsoft.Network/privateDnsZones/A";
 }
 export interface privateDnsZones_AComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class privateDnsZones_AAAA
 	extends ArmResource<privateDnsZones_AAAAComponentInputs>
@@ -61,9 +61,9 @@ export interface privateDnsZones_AAAAComponentOutputs {
 	readonly type: "Microsoft.Network/privateDnsZones/AAAA";
 }
 export interface privateDnsZones_AAAAComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class privateDnsZones_CNAME
 	extends ArmResource<privateDnsZones_CNAMEComponentInputs>
@@ -82,9 +82,9 @@ export interface privateDnsZones_CNAMEComponentOutputs {
 	readonly type: "Microsoft.Network/privateDnsZones/CNAME";
 }
 export interface privateDnsZones_CNAMEComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class privateDnsZones_MX
 	extends ArmResource<privateDnsZones_MXComponentInputs>
@@ -103,9 +103,9 @@ export interface privateDnsZones_MXComponentOutputs {
 	readonly type: "Microsoft.Network/privateDnsZones/MX";
 }
 export interface privateDnsZones_MXComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class privateDnsZones_PTR
 	extends ArmResource<privateDnsZones_PTRComponentInputs>
@@ -124,9 +124,9 @@ export interface privateDnsZones_PTRComponentOutputs {
 	readonly type: "Microsoft.Network/privateDnsZones/PTR";
 }
 export interface privateDnsZones_PTRComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class privateDnsZones_SOA
 	extends ArmResource<privateDnsZones_SOAComponentInputs>
@@ -145,9 +145,9 @@ export interface privateDnsZones_SOAComponentOutputs {
 	readonly type: "Microsoft.Network/privateDnsZones/SOA";
 }
 export interface privateDnsZones_SOAComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class privateDnsZones_SRV
 	extends ArmResource<privateDnsZones_SRVComponentInputs>
@@ -166,9 +166,9 @@ export interface privateDnsZones_SRVComponentOutputs {
 	readonly type: "Microsoft.Network/privateDnsZones/SRV";
 }
 export interface privateDnsZones_SRVComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class privateDnsZones_TXT
 	extends ArmResource<privateDnsZones_TXTComponentInputs>
@@ -187,9 +187,9 @@ export interface privateDnsZones_TXTComponentOutputs {
 	readonly type: "Microsoft.Network/privateDnsZones/TXT";
 }
 export interface privateDnsZones_TXTComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RecordSetProperties | undefined;
+	readonly properties?: RecordSetProperties;
 }
 export class privateDnsZones_virtualNetworkLinks
 	extends ArmResource<privateDnsZones_virtualNetworkLinksComponentInputs>
@@ -208,84 +208,84 @@ export interface privateDnsZones_virtualNetworkLinksComponentOutputs {
 	readonly type: "Microsoft.Network/privateDnsZones/virtualNetworkLinks";
 }
 export interface privateDnsZones_virtualNetworkLinksComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VirtualNetworkLinkProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VirtualNetworkLinkProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AaaaRecord {
-	readonly ipv6Address?: string | undefined;
+	readonly ipv6Address?: string;
 }
 export interface ARecord {
-	readonly ipv4Address?: string | undefined;
+	readonly ipv4Address?: string;
 }
 export interface CnameRecord {
-	readonly cname?: string | undefined;
+	readonly cname?: string;
 }
 export interface MxRecord {
-	readonly exchange?: string | undefined;
-	readonly preference?: number | undefined;
+	readonly exchange?: string;
+	readonly preference?: number;
 }
 export interface PrivateZoneProperties {
-	readonly internalId?: string | undefined;
-	readonly maxNumberOfRecordSets?: number | undefined;
-	readonly maxNumberOfVirtualNetworkLinks?: number | undefined;
-	readonly maxNumberOfVirtualNetworkLinksWithRegistration?: number | undefined;
-	readonly numberOfRecordSets?: number | undefined;
-	readonly numberOfVirtualNetworkLinks?: number | undefined;
-	readonly numberOfVirtualNetworkLinksWithRegistration?: number | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly internalId?: string;
+	readonly maxNumberOfRecordSets?: number;
+	readonly maxNumberOfVirtualNetworkLinks?: number;
+	readonly maxNumberOfVirtualNetworkLinksWithRegistration?: number;
+	readonly numberOfRecordSets?: number;
+	readonly numberOfVirtualNetworkLinks?: number;
+	readonly numberOfVirtualNetworkLinksWithRegistration?: number;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PtrRecord {
-	readonly ptrdname?: string | undefined;
+	readonly ptrdname?: string;
 }
 export interface RecordSetProperties {
-	readonly aaaaRecords?: AaaaRecord[] | undefined;
-	readonly aRecords?: ARecord[] | undefined;
-	readonly cnameRecord?: CnameRecord | undefined;
-	readonly fqdn?: string | undefined;
-	readonly isAutoRegistered?: boolean | undefined;
-	readonly metadata?: RecordSetPropertiesMetadata | undefined;
-	readonly mxRecords?: MxRecord[] | undefined;
-	readonly ptrRecords?: PtrRecord[] | undefined;
-	readonly soaRecord?: SoaRecord | undefined;
-	readonly srvRecords?: SrvRecord[] | undefined;
-	readonly ttl?: number | undefined;
-	readonly txtRecords?: TxtRecord[] | undefined;
+	readonly aaaaRecords?: AaaaRecord[];
+	readonly aRecords?: ARecord[];
+	readonly cnameRecord?: CnameRecord;
+	readonly fqdn?: string;
+	readonly isAutoRegistered?: boolean;
+	readonly metadata?: RecordSetPropertiesMetadata;
+	readonly mxRecords?: MxRecord[];
+	readonly ptrRecords?: PtrRecord[];
+	readonly soaRecord?: SoaRecord;
+	readonly srvRecords?: SrvRecord[];
+	readonly ttl?: number;
+	readonly txtRecords?: TxtRecord[];
 }
 export interface RecordSetPropertiesMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SoaRecord {
-	readonly email?: string | undefined;
-	readonly expireTime?: number | undefined;
-	readonly host?: string | undefined;
-	readonly minimumTtl?: number | undefined;
-	readonly refreshTime?: number | undefined;
-	readonly retryTime?: number | undefined;
-	readonly serialNumber?: number | undefined;
+	readonly email?: string;
+	readonly expireTime?: number;
+	readonly host?: string;
+	readonly minimumTtl?: number;
+	readonly refreshTime?: number;
+	readonly retryTime?: number;
+	readonly serialNumber?: number;
 }
 export interface SrvRecord {
-	readonly port?: number | undefined;
-	readonly priority?: number | undefined;
-	readonly target?: string | undefined;
-	readonly weight?: number | undefined;
+	readonly port?: number;
+	readonly priority?: number;
+	readonly target?: string;
+	readonly weight?: number;
 }
 export interface SubResource {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TxtRecord {
-	readonly value?: string[] | undefined;
+	readonly value?: string[];
 }
 export interface VirtualNetworkLinkProperties {
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly registrationEnabled?: boolean | undefined;
-	readonly virtualNetwork?: SubResource | undefined;
-	readonly virtualNetworkLinkState?: ("Completed" | "InProgress") | undefined;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly registrationEnabled?: boolean;
+	readonly virtualNetwork?: SubResource;
+	readonly virtualNetworkLinkState?: "Completed" | "InProgress";
 }
 export default {
 	privateDnsZones: privateDnsZones,

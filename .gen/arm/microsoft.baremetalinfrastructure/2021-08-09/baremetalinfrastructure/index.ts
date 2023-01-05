@@ -17,108 +17,103 @@ export interface bareMetalInstancesComponentOutputs {
 	readonly type: "Microsoft.BareMetalInfrastructure/bareMetalInstances";
 }
 export interface bareMetalInstancesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AzureBareMetalInstanceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: AzureBareMetalInstanceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AzureBareMetalInstanceProperties {
-	readonly azureBareMetalInstanceId?: string | undefined;
-	readonly hardwareProfile?: HardwareProfile | undefined;
-	readonly hwRevision?: string | undefined;
-	readonly networkProfile?: NetworkProfile | undefined;
-	readonly osProfile?: OSProfile | undefined;
-	readonly partnerNodeId?: string | undefined;
-	readonly powerState?: ("restarting" | "started" | "starting" | "stopped" | "stopping" | "unknown") | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating")
-		| undefined;
-	readonly proximityPlacementGroup?: string | undefined;
-	readonly storageProfile?: StorageProfile | undefined;
+	readonly azureBareMetalInstanceId?: string;
+	readonly hardwareProfile?: HardwareProfile;
+	readonly hwRevision?: string;
+	readonly networkProfile?: NetworkProfile;
+	readonly osProfile?: OSProfile;
+	readonly partnerNodeId?: string;
+	readonly powerState?: "restarting" | "started" | "starting" | "stopped" | "stopping" | "unknown";
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating";
+	readonly proximityPlacementGroup?: string;
+	readonly storageProfile?: StorageProfile;
 }
 export interface Disk {
-	readonly diskSizeGB?: number | undefined;
-	readonly lun?: number | undefined;
-	readonly name?: string | undefined;
+	readonly diskSizeGB?: number;
+	readonly lun?: number;
+	readonly name?: string;
 }
 export interface HardwareProfile {
 	readonly azureBareMetalInstanceSize?:
-		| (
-				| "S112"
-				| "S144"
-				| "S144m"
-				| "S192"
-				| "S192m"
-				| "S192xm"
-				| "S224"
-				| "S224m"
-				| "S224om"
-				| "S224oo"
-				| "S224oom"
-				| "S224ooo"
-				| "S384"
-				| "S384m"
-				| "S384xm"
-				| "S384xxm"
-				| "S448"
-				| "S448m"
-				| "S448om"
-				| "S448oo"
-				| "S448oom"
-				| "S448ooo"
-				| "S576m"
-				| "S576xm"
-				| "S672"
-				| "S672m"
-				| "S672om"
-				| "S672oo"
-				| "S672oom"
-				| "S672ooo"
-				| "S72"
-				| "S72m"
-				| "S768"
-				| "S768m"
-				| "S768xm"
-				| "S896"
-				| "S896m"
-				| "S896om"
-				| "S896oo"
-				| "S896oom"
-				| "S896ooo"
-				| "S96"
-				| "S960m"
-		  )
-		| undefined;
-	readonly hardwareType?: ("Cisco_UCS" | "HPE") | undefined;
+		| "S112"
+		| "S144"
+		| "S144m"
+		| "S192"
+		| "S192m"
+		| "S192xm"
+		| "S224"
+		| "S224m"
+		| "S224om"
+		| "S224oo"
+		| "S224oom"
+		| "S224ooo"
+		| "S384"
+		| "S384m"
+		| "S384xm"
+		| "S384xxm"
+		| "S448"
+		| "S448m"
+		| "S448om"
+		| "S448oo"
+		| "S448oom"
+		| "S448ooo"
+		| "S576m"
+		| "S576xm"
+		| "S672"
+		| "S672m"
+		| "S672om"
+		| "S672oo"
+		| "S672oom"
+		| "S672ooo"
+		| "S72"
+		| "S72m"
+		| "S768"
+		| "S768m"
+		| "S768xm"
+		| "S896"
+		| "S896m"
+		| "S896om"
+		| "S896oo"
+		| "S896oom"
+		| "S896ooo"
+		| "S96"
+		| "S960m";
+	readonly hardwareType?: "Cisco_UCS" | "HPE";
 }
 export interface IpAddress {
-	readonly ipAddress?: string | undefined;
+	readonly ipAddress?: string;
 }
 export interface NetworkProfile {
-	readonly circuitId?: string | undefined;
-	readonly networkInterfaces?: IpAddress[] | undefined;
+	readonly circuitId?: string;
+	readonly networkInterfaces?: IpAddress[];
 }
 export interface OSProfile {
-	readonly computerName?: string | undefined;
-	readonly osType?: string | undefined;
-	readonly sshPublicKey?: string | undefined;
-	readonly version?: string | undefined;
+	readonly computerName?: string;
+	readonly osType?: string;
+	readonly sshPublicKey?: string;
+	readonly version?: string;
 }
 export interface StorageProfile {
-	readonly nfsIpAddress?: string | undefined;
-	readonly osDisks?: Disk[] | undefined;
+	readonly nfsIpAddress?: string;
+	readonly osDisks?: Disk[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	bareMetalInstances: bareMetalInstances,

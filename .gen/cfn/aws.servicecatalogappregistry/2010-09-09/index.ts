@@ -13,8 +13,8 @@ export interface ApplicationComponentOutputs {
 }
 export interface ApplicationComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class AttributeGroup extends CfnResource<AttributeGroupComponentInputs> implements AttributeGroupComponentOutputs {
@@ -31,8 +31,8 @@ export interface AttributeGroupComponentOutputs {
 export interface AttributeGroupComponentInputs {
 	readonly Attributes: any;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class AttributeGroupAssociation

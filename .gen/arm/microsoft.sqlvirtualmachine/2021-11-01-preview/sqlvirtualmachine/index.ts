@@ -19,9 +19,9 @@ export interface sqlVirtualMachineGroupsComponentOutputs {
 export interface sqlVirtualMachineGroupsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SqlVirtualMachineGroupProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SqlVirtualMachineGroupProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class sqlVirtualMachineGroups_availabilityGroupListeners
 	extends ArmResource<sqlVirtualMachineGroups_availabilityGroupListenersComponentInputs>
@@ -47,8 +47,8 @@ export interface sqlVirtualMachineGroups_availabilityGroupListenersComponentOutp
 }
 export interface sqlVirtualMachineGroups_availabilityGroupListenersComponentInputs {
 	readonly name: string;
-	readonly properties?: AvailabilityGroupListenerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AvailabilityGroupListenerProperties;
+	readonly systemData?: SystemData;
 }
 export class sqlVirtualMachines
 	extends ArmResource<sqlVirtualMachinesComponentInputs>
@@ -67,192 +67,190 @@ export interface sqlVirtualMachinesComponentOutputs {
 	readonly type: "Microsoft.SqlVirtualMachine/sqlVirtualMachines";
 }
 export interface sqlVirtualMachinesComponentInputs {
-	readonly identity?: ResourceIdentity | undefined;
+	readonly identity?: ResourceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SqlVirtualMachineProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SqlVirtualMachineProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AdditionalFeaturesServerConfigurations {
-	readonly isRServicesEnabled?: boolean | undefined;
+	readonly isRServicesEnabled?: boolean;
 }
 export interface AgConfiguration {
-	readonly replicas?: AgReplica[] | undefined;
+	readonly replicas?: AgReplica[];
 }
 export interface AgReplica {
-	readonly commit?: ("ASYNCHRONOUS_COMMIT" | "SYNCHRONOUS_COMMIT") | undefined;
-	readonly failover?: ("AUTOMATIC" | "MANUAL") | undefined;
-	readonly readableSecondary?: ("ALL" | "NO" | "READ_ONLY") | undefined;
-	readonly role?: ("PRIMARY" | "SECONDARY") | undefined;
-	readonly sqlVirtualMachineInstanceId?: string | undefined;
+	readonly commit?: "ASYNCHRONOUS_COMMIT" | "SYNCHRONOUS_COMMIT";
+	readonly failover?: "AUTOMATIC" | "MANUAL";
+	readonly readableSecondary?: "ALL" | "NO" | "READ_ONLY";
+	readonly role?: "PRIMARY" | "SECONDARY";
+	readonly sqlVirtualMachineInstanceId?: string;
 }
 export interface AssessmentSettings {
-	readonly enable?: boolean | undefined;
-	readonly runImmediately?: boolean | undefined;
-	readonly schedule?: Schedule | undefined;
+	readonly enable?: boolean;
+	readonly runImmediately?: boolean;
+	readonly schedule?: Schedule;
 }
 export interface AutoBackupSettings {
-	readonly backupScheduleType?: ("Automated" | "Manual") | undefined;
-	readonly backupSystemDbs?: boolean | undefined;
-	readonly daysOfWeek?:
-		| ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday"[])
-		| undefined;
-	readonly enable?: boolean | undefined;
-	readonly enableEncryption?: boolean | undefined;
-	readonly fullBackupFrequency?: ("Daily" | "Weekly") | undefined;
-	readonly fullBackupStartTime?: number | undefined;
-	readonly fullBackupWindowHours?: number | undefined;
-	readonly logBackupFrequency?: number | undefined;
-	readonly password?: string | undefined;
-	readonly retentionPeriod?: number | undefined;
-	readonly storageAccessKey?: string | undefined;
-	readonly storageAccountUrl?: string | undefined;
-	readonly storageContainerName?: string | undefined;
+	readonly backupScheduleType?: "Automated" | "Manual";
+	readonly backupSystemDbs?: boolean;
+	readonly daysOfWeek?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday"[];
+	readonly enable?: boolean;
+	readonly enableEncryption?: boolean;
+	readonly fullBackupFrequency?: "Daily" | "Weekly";
+	readonly fullBackupStartTime?: number;
+	readonly fullBackupWindowHours?: number;
+	readonly logBackupFrequency?: number;
+	readonly password?: string;
+	readonly retentionPeriod?: number;
+	readonly storageAccessKey?: string;
+	readonly storageAccountUrl?: string;
+	readonly storageContainerName?: string;
 }
 export interface AutoPatchingSettings {
-	readonly dayOfWeek?: ("Everyday" | "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday") | undefined;
-	readonly enable?: boolean | undefined;
-	readonly maintenanceWindowDuration?: number | undefined;
-	readonly maintenanceWindowStartingHour?: number | undefined;
+	readonly dayOfWeek?: "Everyday" | "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday";
+	readonly enable?: boolean;
+	readonly maintenanceWindowDuration?: number;
+	readonly maintenanceWindowStartingHour?: number;
 }
 export interface AvailabilityGroupListenerProperties {
-	readonly availabilityGroupConfiguration?: AgConfiguration | undefined;
-	readonly availabilityGroupName?: string | undefined;
-	readonly createDefaultAvailabilityGroupIfNotExist?: boolean | undefined;
-	readonly loadBalancerConfigurations?: LoadBalancerConfiguration[] | undefined;
-	readonly port?: number | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly availabilityGroupConfiguration?: AgConfiguration;
+	readonly availabilityGroupName?: string;
+	readonly createDefaultAvailabilityGroupIfNotExist?: boolean;
+	readonly loadBalancerConfigurations?: LoadBalancerConfiguration[];
+	readonly port?: number;
+	readonly provisioningState?: string;
 }
 export interface KeyVaultCredentialSettings {
-	readonly azureKeyVaultUrl?: string | undefined;
-	readonly credentialName?: string | undefined;
-	readonly enable?: boolean | undefined;
-	readonly servicePrincipalName?: string | undefined;
-	readonly servicePrincipalSecret?: string | undefined;
+	readonly azureKeyVaultUrl?: string;
+	readonly credentialName?: string;
+	readonly enable?: boolean;
+	readonly servicePrincipalName?: string;
+	readonly servicePrincipalSecret?: string;
 }
 export interface LoadBalancerConfiguration {
-	readonly loadBalancerResourceId?: string | undefined;
-	readonly privateIpAddress?: PrivateIPAddress | undefined;
-	readonly probePort?: number | undefined;
-	readonly publicIpAddressResourceId?: string | undefined;
-	readonly sqlVirtualMachineInstances?: string[] | undefined;
+	readonly loadBalancerResourceId?: string;
+	readonly privateIpAddress?: PrivateIPAddress;
+	readonly probePort?: number;
+	readonly publicIpAddressResourceId?: string;
+	readonly sqlVirtualMachineInstances?: string[];
 }
 export interface PrivateIPAddress {
-	readonly ipAddress?: string | undefined;
-	readonly subnetResourceId?: string | undefined;
+	readonly ipAddress?: string;
+	readonly subnetResourceId?: string;
 }
 export interface ResourceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
 }
 export interface Schedule {
-	readonly dayOfWeek?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday") | undefined;
-	readonly enable?: boolean | undefined;
-	readonly monthlyOccurrence?: number | undefined;
-	readonly startTime?: string | undefined;
-	readonly weeklyInterval?: number | undefined;
+	readonly dayOfWeek?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday";
+	readonly enable?: boolean;
+	readonly monthlyOccurrence?: number;
+	readonly startTime?: string;
+	readonly weeklyInterval?: number;
 }
 export interface ServerConfigurationsManagementSettings {
-	readonly additionalFeaturesServerConfigurations?: AdditionalFeaturesServerConfigurations | undefined;
-	readonly sqlConnectivityUpdateSettings?: SqlConnectivityUpdateSettings | undefined;
-	readonly sqlInstanceSettings?: SQLInstanceSettings | undefined;
-	readonly sqlStorageUpdateSettings?: SqlStorageUpdateSettings | undefined;
-	readonly sqlWorkloadTypeUpdateSettings?: SqlWorkloadTypeUpdateSettings | undefined;
+	readonly additionalFeaturesServerConfigurations?: AdditionalFeaturesServerConfigurations;
+	readonly sqlConnectivityUpdateSettings?: SqlConnectivityUpdateSettings;
+	readonly sqlInstanceSettings?: SQLInstanceSettings;
+	readonly sqlStorageUpdateSettings?: SqlStorageUpdateSettings;
+	readonly sqlWorkloadTypeUpdateSettings?: SqlWorkloadTypeUpdateSettings;
 }
 export interface SqlConnectivityUpdateSettings {
-	readonly connectivityType?: ("LOCAL" | "PRIVATE" | "PUBLIC") | undefined;
-	readonly port?: number | undefined;
-	readonly sqlAuthUpdatePassword?: string | undefined;
-	readonly sqlAuthUpdateUserName?: string | undefined;
+	readonly connectivityType?: "LOCAL" | "PRIVATE" | "PUBLIC";
+	readonly port?: number;
+	readonly sqlAuthUpdatePassword?: string;
+	readonly sqlAuthUpdateUserName?: string;
 }
 export interface SQLInstanceSettings {
-	readonly collation?: string | undefined;
-	readonly isOptimizeForAdHocWorkloadsEnabled?: boolean | undefined;
-	readonly maxDop?: number | undefined;
-	readonly maxServerMemoryMB?: number | undefined;
-	readonly minServerMemoryMB?: number | undefined;
+	readonly collation?: string;
+	readonly isOptimizeForAdHocWorkloadsEnabled?: boolean;
+	readonly maxDop?: number;
+	readonly maxServerMemoryMB?: number;
+	readonly minServerMemoryMB?: number;
 }
 export interface SQLStorageSettings {
-	readonly defaultFilePath?: string | undefined;
-	readonly luns?: number[] | undefined;
+	readonly defaultFilePath?: string;
+	readonly luns?: number[];
 }
 export interface SqlStorageUpdateSettings {
-	readonly diskConfigurationType?: ("ADD" | "EXTEND" | "NEW") | undefined;
-	readonly diskCount?: number | undefined;
-	readonly startingDeviceId?: number | undefined;
+	readonly diskConfigurationType?: "ADD" | "EXTEND" | "NEW";
+	readonly diskCount?: number;
+	readonly startingDeviceId?: number;
 }
 export interface SQLTempDbSettings {
-	readonly dataFileCount?: number | undefined;
-	readonly dataFileSize?: number | undefined;
-	readonly dataGrowth?: number | undefined;
-	readonly defaultFilePath?: string | undefined;
-	readonly logFileSize?: number | undefined;
-	readonly logGrowth?: number | undefined;
-	readonly luns?: number[] | undefined;
+	readonly dataFileCount?: number;
+	readonly dataFileSize?: number;
+	readonly dataGrowth?: number;
+	readonly defaultFilePath?: string;
+	readonly logFileSize?: number;
+	readonly logGrowth?: number;
+	readonly luns?: number[];
 }
 export interface SqlVirtualMachineGroupProperties {
-	readonly clusterConfiguration?: "Domainful" | undefined;
-	readonly clusterManagerType?: "WSFC" | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly scaleType?: "HA" | undefined;
-	readonly sqlImageOffer?: string | undefined;
-	readonly sqlImageSku?: ("Developer" | "Enterprise") | undefined;
-	readonly wsfcDomainProfile?: WsfcDomainProfile | undefined;
+	readonly clusterConfiguration?: "Domainful";
+	readonly clusterManagerType?: "WSFC";
+	readonly provisioningState?: string;
+	readonly scaleType?: "HA";
+	readonly sqlImageOffer?: string;
+	readonly sqlImageSku?: "Developer" | "Enterprise";
+	readonly wsfcDomainProfile?: WsfcDomainProfile;
 }
 export interface SqlVirtualMachineProperties {
-	readonly assessmentSettings?: AssessmentSettings | undefined;
-	readonly autoBackupSettings?: AutoBackupSettings | undefined;
-	readonly autoPatchingSettings?: AutoPatchingSettings | undefined;
-	readonly keyVaultCredentialSettings?: KeyVaultCredentialSettings | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serverConfigurationsManagementSettings?: ServerConfigurationsManagementSettings | undefined;
-	readonly sqlImageOffer?: string | undefined;
-	readonly sqlImageSku?: ("Developer" | "Enterprise" | "Express" | "Standard" | "Web") | undefined;
-	readonly sqlManagement?: ("Full" | "LightWeight" | "NoAgent") | undefined;
-	readonly sqlServerLicenseType?: ("AHUB" | "DR" | "PAYG") | undefined;
-	readonly sqlVirtualMachineGroupResourceId?: string | undefined;
-	readonly storageConfigurationSettings?: StorageConfigurationSettings | undefined;
-	readonly virtualMachineResourceId?: string | undefined;
-	readonly wsfcDomainCredentials?: WsfcDomainCredentials | undefined;
+	readonly assessmentSettings?: AssessmentSettings;
+	readonly autoBackupSettings?: AutoBackupSettings;
+	readonly autoPatchingSettings?: AutoPatchingSettings;
+	readonly keyVaultCredentialSettings?: KeyVaultCredentialSettings;
+	readonly provisioningState?: string;
+	readonly serverConfigurationsManagementSettings?: ServerConfigurationsManagementSettings;
+	readonly sqlImageOffer?: string;
+	readonly sqlImageSku?: "Developer" | "Enterprise" | "Express" | "Standard" | "Web";
+	readonly sqlManagement?: "Full" | "LightWeight" | "NoAgent";
+	readonly sqlServerLicenseType?: "AHUB" | "DR" | "PAYG";
+	readonly sqlVirtualMachineGroupResourceId?: string;
+	readonly storageConfigurationSettings?: StorageConfigurationSettings;
+	readonly virtualMachineResourceId?: string;
+	readonly wsfcDomainCredentials?: WsfcDomainCredentials;
 }
 export interface SqlWorkloadTypeUpdateSettings {
-	readonly sqlWorkloadType?: ("DW" | "GENERAL" | "OLTP") | undefined;
+	readonly sqlWorkloadType?: "DW" | "GENERAL" | "OLTP";
 }
 export interface StorageConfigurationSettings {
-	readonly diskConfigurationType?: ("ADD" | "EXTEND" | "NEW") | undefined;
-	readonly sqlDataSettings?: SQLStorageSettings | undefined;
-	readonly sqlLogSettings?: SQLStorageSettings | undefined;
-	readonly sqlSystemDbOnDataDisk?: boolean | undefined;
-	readonly sqlTempDbSettings?: SQLTempDbSettings | undefined;
-	readonly storageWorkloadType?: ("DW" | "GENERAL" | "OLTP") | undefined;
+	readonly diskConfigurationType?: "ADD" | "EXTEND" | "NEW";
+	readonly sqlDataSettings?: SQLStorageSettings;
+	readonly sqlLogSettings?: SQLStorageSettings;
+	readonly sqlSystemDbOnDataDisk?: boolean;
+	readonly sqlTempDbSettings?: SQLTempDbSettings;
+	readonly storageWorkloadType?: "DW" | "GENERAL" | "OLTP";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WsfcDomainCredentials {
-	readonly clusterBootstrapAccountPassword?: string | undefined;
-	readonly clusterOperatorAccountPassword?: string | undefined;
-	readonly sqlServiceAccountPassword?: string | undefined;
+	readonly clusterBootstrapAccountPassword?: string;
+	readonly clusterOperatorAccountPassword?: string;
+	readonly sqlServiceAccountPassword?: string;
 }
 export interface WsfcDomainProfile {
-	readonly clusterBootstrapAccount?: string | undefined;
-	readonly clusterOperatorAccount?: string | undefined;
-	readonly domainFqdn?: string | undefined;
-	readonly fileShareWitnessPath?: string | undefined;
-	readonly ouPath?: string | undefined;
-	readonly sqlServiceAccount?: string | undefined;
-	readonly storageAccountPrimaryKey?: string | undefined;
-	readonly storageAccountUrl?: string | undefined;
+	readonly clusterBootstrapAccount?: string;
+	readonly clusterOperatorAccount?: string;
+	readonly domainFqdn?: string;
+	readonly fileShareWitnessPath?: string;
+	readonly ouPath?: string;
+	readonly sqlServiceAccount?: string;
+	readonly storageAccountPrimaryKey?: string;
+	readonly storageAccountUrl?: string;
 }
 export default {
 	sqlVirtualMachineGroups: sqlVirtualMachineGroups,

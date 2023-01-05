@@ -23,7 +23,7 @@ export interface AccessPointComponentOutputs {
 }
 export interface AccessPointComponentInputs {
 	readonly ObjectLambdaConfiguration: ObjectLambdaConfiguration;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
 	readonly LogicalId: string;
 }
 export class AccessPointPolicy
@@ -42,25 +42,25 @@ export interface AccessPointPolicyComponentInputs {
 }
 export interface AwsLambda {
 	readonly FunctionArn: string;
-	readonly FunctionPayload?: (string | undefined) | undefined;
+	readonly FunctionPayload?: string | undefined;
 }
 export interface ContentTransformation {
 	readonly AwsLambda: AwsLambda;
 }
 export interface ObjectLambdaConfiguration {
-	readonly AllowedFeatures?: (string[] | undefined) | undefined;
-	readonly CloudWatchMetricsEnabled?: (boolean | undefined) | undefined;
+	readonly AllowedFeatures?: string[] | undefined;
+	readonly CloudWatchMetricsEnabled?: boolean | undefined;
 	readonly SupportingAccessPoint: string;
 	readonly TransformationConfigurations: TransformationConfiguration[];
 }
 export interface PolicyStatus {
-	readonly IsPublic?: (boolean | undefined) | undefined;
+	readonly IsPublic?: boolean | undefined;
 }
 export interface PublicAccessBlockConfiguration {
-	readonly BlockPublicAcls?: (boolean | undefined) | undefined;
-	readonly BlockPublicPolicy?: (boolean | undefined) | undefined;
-	readonly IgnorePublicAcls?: (boolean | undefined) | undefined;
-	readonly RestrictPublicBuckets?: (boolean | undefined) | undefined;
+	readonly BlockPublicAcls?: boolean | undefined;
+	readonly BlockPublicPolicy?: boolean | undefined;
+	readonly IgnorePublicAcls?: boolean | undefined;
+	readonly RestrictPublicBuckets?: boolean | undefined;
 }
 export interface TransformationConfiguration {
 	readonly Actions: string[];

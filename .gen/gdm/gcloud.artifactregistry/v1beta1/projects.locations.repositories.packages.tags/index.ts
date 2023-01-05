@@ -12,13 +12,12 @@ export interface ProjectsLocationsRepositoriesPackagesTagsComponentOutputs {}
 export interface ProjectsLocationsRepositoriesPackagesTagsComponentInputs {
 	readonly name: string;
 	readonly parent: string;
-	readonly tagId?: string | undefined;
-	readonly version?: string | undefined;
-	readonly type: string;
+	readonly tagId?: string;
+	readonly version?: string;
 }
 export interface Tag {
-	readonly name?: string | undefined;
-	readonly version?: string | undefined;
+	readonly name?: string;
+	readonly version?: string;
 }
 export default {
 	ProjectsLocationsRepositoriesPackagesTags: ProjectsLocationsRepositoriesPackagesTags,

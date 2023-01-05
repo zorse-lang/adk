@@ -10,7 +10,6 @@ export class FoldersTimeSeries
 }
 export interface FoldersTimeSeriesComponentOutputs {}
 export interface FoldersTimeSeriesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

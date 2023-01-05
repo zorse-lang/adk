@@ -13,8 +13,8 @@ export interface AlertComponentInputs {
 	readonly Action: Action;
 	readonly AlertSensitivityThreshold: number;
 	readonly AnomalyDetectorArn: string;
-	readonly AlertDescription?: (string | undefined) | undefined;
-	readonly AlertName?: (string | undefined) | undefined;
+	readonly AlertDescription?: string | undefined;
+	readonly AlertName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class AnomalyDetector
@@ -32,14 +32,14 @@ export interface AnomalyDetectorComponentOutputs {
 export interface AnomalyDetectorComponentInputs {
 	readonly AnomalyDetectorConfig: AnomalyDetectorConfig;
 	readonly MetricSetList: MetricSet[];
-	readonly AnomalyDetectorDescription?: (string | undefined) | undefined;
-	readonly AnomalyDetectorName?: (string | undefined) | undefined;
-	readonly KmsKeyArn?: (string | undefined) | undefined;
+	readonly AnomalyDetectorDescription?: string | undefined;
+	readonly AnomalyDetectorName?: string | undefined;
+	readonly KmsKeyArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Action {
-	readonly LambdaConfiguration?: (LambdaConfiguration | undefined) | undefined;
-	readonly SNSConfiguration?: (SNSConfiguration | undefined) | undefined;
+	readonly LambdaConfiguration?: LambdaConfiguration | undefined;
+	readonly SNSConfiguration?: SNSConfiguration | undefined;
 }
 export interface LambdaConfiguration {
 	readonly LambdaArn: string;
@@ -60,43 +60,43 @@ export interface CloudwatchConfig {
 	readonly RoleArn: string;
 }
 export interface CsvFormatDescriptor {
-	readonly Charset?: (string | undefined) | undefined;
-	readonly ContainsHeader?: (boolean | undefined) | undefined;
-	readonly Delimiter?: (string | undefined) | undefined;
-	readonly FileCompression?: (string | undefined) | undefined;
-	readonly HeaderList?: (string[] | undefined) | undefined;
-	readonly QuoteSymbol?: (string | undefined) | undefined;
+	readonly Charset?: string | undefined;
+	readonly ContainsHeader?: boolean | undefined;
+	readonly Delimiter?: string | undefined;
+	readonly FileCompression?: string | undefined;
+	readonly HeaderList?: string[] | undefined;
+	readonly QuoteSymbol?: string | undefined;
 }
 export interface FileFormatDescriptor {
-	readonly CsvFormatDescriptor?: (CsvFormatDescriptor | undefined) | undefined;
-	readonly JsonFormatDescriptor?: (JsonFormatDescriptor | undefined) | undefined;
+	readonly CsvFormatDescriptor?: CsvFormatDescriptor | undefined;
+	readonly JsonFormatDescriptor?: JsonFormatDescriptor | undefined;
 }
 export interface JsonFormatDescriptor {
-	readonly Charset?: (string | undefined) | undefined;
-	readonly FileCompression?: (string | undefined) | undefined;
+	readonly Charset?: string | undefined;
+	readonly FileCompression?: string | undefined;
 }
 export interface Metric {
 	readonly AggregationFunction: string;
 	readonly MetricName: string;
-	readonly Namespace?: (string | undefined) | undefined;
+	readonly Namespace?: string | undefined;
 }
 export interface MetricSet {
-	readonly DimensionList?: (string[] | undefined) | undefined;
+	readonly DimensionList?: string[] | undefined;
 	readonly MetricList: Metric[];
-	readonly MetricSetDescription?: (string | undefined) | undefined;
-	readonly MetricSetFrequency?: (string | undefined) | undefined;
+	readonly MetricSetDescription?: string | undefined;
+	readonly MetricSetFrequency?: string | undefined;
 	readonly MetricSetName: string;
 	readonly MetricSource: MetricSource;
-	readonly Offset?: (number | undefined) | undefined;
-	readonly TimestampColumn?: (TimestampColumn | undefined) | undefined;
-	readonly Timezone?: (string | undefined) | undefined;
+	readonly Offset?: number | undefined;
+	readonly TimestampColumn?: TimestampColumn | undefined;
+	readonly Timezone?: string | undefined;
 }
 export interface MetricSource {
-	readonly AppFlowConfig?: (AppFlowConfig | undefined) | undefined;
-	readonly CloudwatchConfig?: (CloudwatchConfig | undefined) | undefined;
-	readonly RDSSourceConfig?: (RDSSourceConfig | undefined) | undefined;
-	readonly RedshiftSourceConfig?: (RedshiftSourceConfig | undefined) | undefined;
-	readonly S3SourceConfig?: (S3SourceConfig | undefined) | undefined;
+	readonly AppFlowConfig?: AppFlowConfig | undefined;
+	readonly CloudwatchConfig?: CloudwatchConfig | undefined;
+	readonly RDSSourceConfig?: RDSSourceConfig | undefined;
+	readonly RedshiftSourceConfig?: RedshiftSourceConfig | undefined;
+	readonly S3SourceConfig?: S3SourceConfig | undefined;
 }
 export interface RDSSourceConfig {
 	readonly DBInstanceIdentifier: string;
@@ -120,13 +120,13 @@ export interface RedshiftSourceConfig {
 }
 export interface S3SourceConfig {
 	readonly FileFormatDescriptor: FileFormatDescriptor;
-	readonly HistoricalDataPathList?: (string[] | undefined) | undefined;
+	readonly HistoricalDataPathList?: string[] | undefined;
 	readonly RoleArn: string;
-	readonly TemplatedPathList?: (string[] | undefined) | undefined;
+	readonly TemplatedPathList?: string[] | undefined;
 }
 export interface TimestampColumn {
-	readonly ColumnFormat?: (string | undefined) | undefined;
-	readonly ColumnName?: (string | undefined) | undefined;
+	readonly ColumnFormat?: string | undefined;
+	readonly ColumnName?: string | undefined;
 }
 export interface VpcConfiguration {
 	readonly SecurityGroupIdList: string[];

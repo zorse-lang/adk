@@ -18,7 +18,7 @@ export interface managementGroupsComponentOutputs {
 }
 export interface managementGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: CreateManagementGroupPropertiesOrManagementGroupProperties | undefined;
+	readonly properties?: CreateManagementGroupPropertiesOrManagementGroupProperties;
 }
 export class managementGroups_subscriptions
 	extends ArmResource<managementGroups_subscriptionsComponentInputs>
@@ -40,35 +40,35 @@ export interface managementGroups_subscriptionsComponentInputs {
 	readonly name: string;
 }
 export interface CreateManagementGroupChildInfoOrManagementGroupChildInfo {
-	readonly children?: CreateManagementGroupChildInfoOrManagementGroupChildInfo[] | undefined;
-	readonly displayName?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly roles?: string[] | undefined;
-	readonly type?: ("/subscriptions" | "Microsoft.Management/managementGroups") | undefined;
+	readonly children?: CreateManagementGroupChildInfoOrManagementGroupChildInfo[];
+	readonly displayName?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly roles?: string[];
+	readonly type?: "/subscriptions" | "Microsoft.Management/managementGroups";
 }
 export interface CreateManagementGroupDetailsOrManagementGroupDetails {
-	readonly parent?: CreateParentGroupInfoOrParentGroupInfo | undefined;
-	readonly updatedBy?: string | undefined;
-	readonly updatedTime?: string | undefined;
-	readonly version?: number | undefined;
+	readonly parent?: CreateParentGroupInfoOrParentGroupInfo;
+	readonly updatedBy?: string;
+	readonly updatedTime?: string;
+	readonly version?: number;
 }
 export interface CreateManagementGroupPropertiesOrManagementGroupProperties {
-	readonly children?: CreateManagementGroupChildInfoOrManagementGroupChildInfo[] | undefined;
-	readonly details?: CreateManagementGroupDetailsOrManagementGroupDetails | undefined;
-	readonly displayName?: string | undefined;
-	readonly path?: ManagementGroupPathElement[] | undefined;
-	readonly roles?: string[] | undefined;
-	readonly tenantId?: string | undefined;
+	readonly children?: CreateManagementGroupChildInfoOrManagementGroupChildInfo[];
+	readonly details?: CreateManagementGroupDetailsOrManagementGroupDetails;
+	readonly displayName?: string;
+	readonly path?: ManagementGroupPathElement[];
+	readonly roles?: string[];
+	readonly tenantId?: string;
 }
 export interface CreateParentGroupInfoOrParentGroupInfo {
-	readonly displayName?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly displayName?: string;
+	readonly id?: string;
+	readonly name?: string;
 }
 export interface ManagementGroupPathElement {
-	readonly displayName?: string | undefined;
-	readonly name?: string | undefined;
+	readonly displayName?: string;
+	readonly name?: string;
 }
 export default {
 	managementGroups: managementGroups,

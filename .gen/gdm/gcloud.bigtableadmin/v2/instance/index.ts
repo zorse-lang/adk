@@ -4,20 +4,19 @@ export class Instance extends GdmResource<InstanceComponentInputs> implements In
 	constructor(entity: ADKEntity, options: InstanceComponentInputs) {
 		super(entity, options.name, "bigtableadmin.v2.instance", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly satisfiesPzs?: boolean | undefined;
-	public readonly state?: string | undefined;
+	public readonly createTime?: string;
+	public readonly satisfiesPzs?: boolean;
+	public readonly state?: string;
 }
 export interface InstanceComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly state?: string | undefined;
+	readonly createTime?: string;
+	readonly satisfiesPzs?: boolean;
+	readonly state?: string;
 }
 export interface InstanceComponentInputs {
 	readonly displayName: string;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
-	readonly type: string;
 }
 export default {
 	Instance: Instance,

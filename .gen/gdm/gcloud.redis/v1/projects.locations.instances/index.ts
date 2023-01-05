@@ -7,132 +7,131 @@ export class ProjectsLocationsInstances
 	constructor(entity: ADKEntity, options: ProjectsLocationsInstancesComponentInputs) {
 		super(entity, options.name, "redis.v1.ProjectsLocationsInstances", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly currentLocationId?: string | undefined;
-	public readonly host?: string | undefined;
-	public readonly maintenanceSchedule?: MaintenanceSchedule | undefined;
-	public readonly nodes?: NodeInfo[] | undefined;
-	public readonly persistenceIamIdentity?: string | undefined;
-	public readonly port?: number | undefined;
-	public readonly readEndpoint?: string | undefined;
-	public readonly readEndpointPort?: number | undefined;
-	public readonly serverCaCerts?: TlsCertificate[] | undefined;
-	public readonly state?: string | undefined;
-	public readonly statusMessage?: string | undefined;
+	public readonly createTime?: string;
+	public readonly currentLocationId?: string;
+	public readonly host?: string;
+	public readonly maintenanceSchedule?: MaintenanceSchedule;
+	public readonly nodes?: NodeInfo[];
+	public readonly persistenceIamIdentity?: string;
+	public readonly port?: number;
+	public readonly readEndpoint?: string;
+	public readonly readEndpointPort?: number;
+	public readonly serverCaCerts?: TlsCertificate[];
+	public readonly state?: string;
+	public readonly statusMessage?: string;
 }
 export interface ProjectsLocationsInstancesComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly currentLocationId?: string | undefined;
-	readonly host?: string | undefined;
-	readonly maintenanceSchedule?: MaintenanceSchedule | undefined;
-	readonly nodes?: NodeInfo[] | undefined;
-	readonly persistenceIamIdentity?: string | undefined;
-	readonly port?: number | undefined;
-	readonly readEndpoint?: string | undefined;
-	readonly readEndpointPort?: number | undefined;
-	readonly serverCaCerts?: TlsCertificate[] | undefined;
-	readonly state?: string | undefined;
-	readonly statusMessage?: string | undefined;
+	readonly createTime?: string;
+	readonly currentLocationId?: string;
+	readonly host?: string;
+	readonly maintenanceSchedule?: MaintenanceSchedule;
+	readonly nodes?: NodeInfo[];
+	readonly persistenceIamIdentity?: string;
+	readonly port?: number;
+	readonly readEndpoint?: string;
+	readonly readEndpointPort?: number;
+	readonly serverCaCerts?: TlsCertificate[];
+	readonly state?: string;
+	readonly statusMessage?: string;
 }
 export interface ProjectsLocationsInstancesComponentInputs {
-	readonly alternativeLocationId?: string | undefined;
-	readonly authEnabled?: boolean | undefined;
-	readonly authorizedNetwork?: string | undefined;
-	readonly connectMode?: string | undefined;
-	readonly customerManagedKey?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly alternativeLocationId?: string;
+	readonly authEnabled?: boolean;
+	readonly authorizedNetwork?: string;
+	readonly connectMode?: string;
+	readonly customerManagedKey?: string;
+	readonly displayName?: string;
 	readonly instanceId: string;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly locationId?: string | undefined;
-	readonly maintenancePolicy?: MaintenancePolicy | undefined;
+	readonly labels?: { [P in string]: string };
+	readonly locationId?: string;
+	readonly maintenancePolicy?: MaintenancePolicy;
 	readonly memorySizeGb: number;
 	readonly name: string;
 	readonly parent: string;
-	readonly persistenceConfig?: PersistenceConfig | undefined;
-	readonly readReplicasMode?: string | undefined;
-	readonly redisConfigs?: { [P in string]: string } | undefined;
-	readonly redisVersion?: string | undefined;
-	readonly replicaCount?: number | undefined;
-	readonly reservedIpRange?: string | undefined;
-	readonly secondaryIpRange?: string | undefined;
-	readonly suspensionReasons?: string[] | undefined;
+	readonly persistenceConfig?: PersistenceConfig;
+	readonly readReplicasMode?: string;
+	readonly redisConfigs?: { [P in string]: string };
+	readonly redisVersion?: string;
+	readonly replicaCount?: number;
+	readonly reservedIpRange?: string;
+	readonly secondaryIpRange?: string;
+	readonly suspensionReasons?: string[];
 	readonly tier: string;
-	readonly transitEncryptionMode?: string | undefined;
-	readonly type: string;
+	readonly transitEncryptionMode?: string;
 }
 export interface Instance {
-	readonly alternativeLocationId?: string | undefined;
-	readonly authEnabled?: boolean | undefined;
-	readonly authorizedNetwork?: string | undefined;
-	readonly connectMode?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly currentLocationId?: string | undefined;
-	readonly customerManagedKey?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly host?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly locationId?: string | undefined;
-	readonly maintenancePolicy?: MaintenancePolicy | undefined;
-	readonly maintenanceSchedule?: MaintenanceSchedule | undefined;
+	readonly alternativeLocationId?: string;
+	readonly authEnabled?: boolean;
+	readonly authorizedNetwork?: string;
+	readonly connectMode?: string;
+	readonly createTime?: string;
+	readonly currentLocationId?: string;
+	readonly customerManagedKey?: string;
+	readonly displayName?: string;
+	readonly host?: string;
+	readonly labels?: { [P in string]: string };
+	readonly locationId?: string;
+	readonly maintenancePolicy?: MaintenancePolicy;
+	readonly maintenanceSchedule?: MaintenanceSchedule;
 	readonly memorySizeGb: number;
 	readonly name: string;
-	readonly nodes?: NodeInfo[] | undefined;
-	readonly persistenceConfig?: PersistenceConfig | undefined;
-	readonly persistenceIamIdentity?: string | undefined;
-	readonly port?: number | undefined;
-	readonly readEndpoint?: string | undefined;
-	readonly readEndpointPort?: number | undefined;
-	readonly readReplicasMode?: string | undefined;
-	readonly redisConfigs?: { [P in string]: string } | undefined;
-	readonly redisVersion?: string | undefined;
-	readonly replicaCount?: number | undefined;
-	readonly reservedIpRange?: string | undefined;
-	readonly secondaryIpRange?: string | undefined;
-	readonly serverCaCerts?: TlsCertificate[] | undefined;
-	readonly state?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly suspensionReasons?: string[] | undefined;
+	readonly nodes?: NodeInfo[];
+	readonly persistenceConfig?: PersistenceConfig;
+	readonly persistenceIamIdentity?: string;
+	readonly port?: number;
+	readonly readEndpoint?: string;
+	readonly readEndpointPort?: number;
+	readonly readReplicasMode?: string;
+	readonly redisConfigs?: { [P in string]: string };
+	readonly redisVersion?: string;
+	readonly replicaCount?: number;
+	readonly reservedIpRange?: string;
+	readonly secondaryIpRange?: string;
+	readonly serverCaCerts?: TlsCertificate[];
+	readonly state?: string;
+	readonly statusMessage?: string;
+	readonly suspensionReasons?: string[];
 	readonly tier: string;
-	readonly transitEncryptionMode?: string | undefined;
+	readonly transitEncryptionMode?: string;
 }
 export interface MaintenancePolicy {
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly updateTime?: string | undefined;
-	readonly weeklyMaintenanceWindow?: WeeklyMaintenanceWindow[] | undefined;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly updateTime?: string;
+	readonly weeklyMaintenanceWindow?: WeeklyMaintenanceWindow[];
 }
 export interface MaintenanceSchedule {
-	readonly canReschedule?: boolean | undefined;
-	readonly endTime?: string | undefined;
-	readonly scheduleDeadlineTime?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly canReschedule?: boolean;
+	readonly endTime?: string;
+	readonly scheduleDeadlineTime?: string;
+	readonly startTime?: string;
 }
 export interface NodeInfo {
-	readonly id?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly id?: string;
+	readonly zone?: string;
 }
 export interface PersistenceConfig {
-	readonly persistenceMode?: string | undefined;
-	readonly rdbNextSnapshotTime?: string | undefined;
-	readonly rdbSnapshotPeriod?: string | undefined;
-	readonly rdbSnapshotStartTime?: string | undefined;
+	readonly persistenceMode?: string;
+	readonly rdbNextSnapshotTime?: string;
+	readonly rdbSnapshotPeriod?: string;
+	readonly rdbSnapshotStartTime?: string;
 }
 export interface TimeOfDay {
-	readonly hours?: number | undefined;
-	readonly minutes?: number | undefined;
-	readonly nanos?: number | undefined;
-	readonly seconds?: number | undefined;
+	readonly hours?: number;
+	readonly minutes?: number;
+	readonly nanos?: number;
+	readonly seconds?: number;
 }
 export interface TlsCertificate {
-	readonly cert?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly expireTime?: string | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly sha1Fingerprint?: string | undefined;
+	readonly cert?: string;
+	readonly createTime?: string;
+	readonly expireTime?: string;
+	readonly serialNumber?: string;
+	readonly sha1Fingerprint?: string;
 }
 export interface WeeklyMaintenanceWindow {
 	readonly day: string;
-	readonly duration?: string | undefined;
+	readonly duration?: string;
 	readonly startTime: TimeOfDay;
 }
 export default {

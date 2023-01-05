@@ -20,9 +20,9 @@ export interface AccountComponentOutputs {
 export interface AccountComponentInputs {
 	readonly AccountName: string;
 	readonly Email: string;
-	readonly ParentIds?: (string[] | undefined) | undefined;
-	readonly RoleName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ParentIds?: string[] | undefined;
+	readonly RoleName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class OrganizationalUnit
@@ -42,7 +42,7 @@ export interface OrganizationalUnitComponentOutputs {
 export interface OrganizationalUnitComponentInputs {
 	readonly Name: string;
 	readonly ParentId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Policy extends CfnResource<PolicyComponentInputs> implements PolicyComponentOutputs {
@@ -62,9 +62,9 @@ export interface PolicyComponentInputs {
 	readonly Content: string;
 	readonly Name: string;
 	readonly Type: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TargetIds?: (string[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TargetIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export default {

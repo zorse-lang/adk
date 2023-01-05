@@ -31,25 +31,25 @@ export interface PolicyComponentInputs {
 	readonly RemediationEnabled: boolean;
 	readonly ResourceType: string;
 	readonly SecurityServicePolicyData: SecurityServicePolicyData;
-	readonly DeleteAllPolicyResources?: (boolean | undefined) | undefined;
-	readonly ExcludeMap?: (IEMap | undefined) | undefined;
-	readonly IncludeMap?: (IEMap | undefined) | undefined;
-	readonly ResourcesCleanUp?: (boolean | undefined) | undefined;
-	readonly ResourceTags?: (ResourceTag[] | undefined) | undefined;
-	readonly ResourceTypeList?: (string[] | undefined) | undefined;
-	readonly Tags?: (PolicyTag[] | undefined) | undefined;
+	readonly DeleteAllPolicyResources?: boolean | undefined;
+	readonly ExcludeMap?: IEMap | undefined;
+	readonly IncludeMap?: IEMap | undefined;
+	readonly ResourcesCleanUp?: boolean | undefined;
+	readonly ResourceTags?: ResourceTag[] | undefined;
+	readonly ResourceTypeList?: string[] | undefined;
+	readonly Tags?: PolicyTag[] | undefined;
 	readonly LogicalId: string;
 }
 export interface IEMap {
-	readonly ACCOUNT?: (string[] | undefined) | undefined;
-	readonly ORGUNIT?: (string[] | undefined) | undefined;
+	readonly ACCOUNT?: string[] | undefined;
+	readonly ORGUNIT?: string[] | undefined;
 }
 export interface NetworkFirewallPolicy {
 	readonly FirewallDeploymentModel: string;
 }
 export interface PolicyOption {
-	readonly NetworkFirewallPolicy?: (NetworkFirewallPolicy | undefined) | undefined;
-	readonly ThirdPartyFirewallPolicy?: (ThirdPartyFirewallPolicy | undefined) | undefined;
+	readonly NetworkFirewallPolicy?: NetworkFirewallPolicy | undefined;
+	readonly ThirdPartyFirewallPolicy?: ThirdPartyFirewallPolicy | undefined;
 }
 export interface PolicyTag {
 	readonly Key: string;
@@ -57,11 +57,11 @@ export interface PolicyTag {
 }
 export interface ResourceTag {
 	readonly Key: string;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 }
 export interface SecurityServicePolicyData {
-	readonly ManagedServiceData?: (string | undefined) | undefined;
-	readonly PolicyOption?: (PolicyOption | undefined) | undefined;
+	readonly ManagedServiceData?: string | undefined;
+	readonly PolicyOption?: PolicyOption | undefined;
 	readonly Type: string;
 }
 export interface ThirdPartyFirewallPolicy {

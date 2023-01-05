@@ -7,102 +7,101 @@ export class FutureReservations
 	constructor(entity: ADKEntity, options: FutureReservationsComponentInputs) {
 		super(entity, options.name, "compute.alpha.FutureReservations", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly status?: FutureReservationStatus | undefined;
-	public readonly zone?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly status?: FutureReservationStatus;
+	public readonly zone?: string;
 }
 export interface FutureReservationsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly status?: FutureReservationStatus | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly status?: FutureReservationStatus;
+	readonly zone?: string;
 }
 export interface FutureReservationsComponentInputs {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly name: string;
-	readonly namePrefix?: string | undefined;
-	readonly planningStatus?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly shareSettings?: ShareSettings | undefined;
-	readonly specificSkuProperties?: FutureReservationSpecificSKUProperties | undefined;
-	readonly timeWindow?: FutureReservationTimeWindow | undefined;
-	readonly type: string;
+	readonly namePrefix?: string;
+	readonly planningStatus?: string;
+	readonly requestId?: string;
+	readonly shareSettings?: ShareSettings;
+	readonly specificSkuProperties?: FutureReservationSpecificSKUProperties;
+	readonly timeWindow?: FutureReservationTimeWindow;
 }
 export interface AcceleratorConfig {
-	readonly acceleratorCount?: number | undefined;
-	readonly acceleratorType?: string | undefined;
+	readonly acceleratorCount?: number;
+	readonly acceleratorType?: string;
 }
 export interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk {
-	readonly diskSizeGb?: string | undefined;
-	readonly interface?: string | undefined;
+	readonly diskSizeGb?: string;
+	readonly interface?: string;
 }
 export interface AllocationSpecificSKUAllocationReservedInstanceProperties {
-	readonly guestAccelerators?: AcceleratorConfig[] | undefined;
-	readonly localSsds?: AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk[] | undefined;
-	readonly locationHint?: string | undefined;
-	readonly machineType?: string | undefined;
-	readonly maintenanceFreezeDurationHours?: number | undefined;
-	readonly maintenanceInterval?: string | undefined;
-	readonly minCpuPlatform?: string | undefined;
+	readonly guestAccelerators?: AcceleratorConfig[];
+	readonly localSsds?: AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk[];
+	readonly locationHint?: string;
+	readonly machineType?: string;
+	readonly maintenanceFreezeDurationHours?: number;
+	readonly maintenanceInterval?: string;
+	readonly minCpuPlatform?: string;
 }
 export interface Duration {
-	readonly nanos?: number | undefined;
-	readonly seconds?: string | undefined;
+	readonly nanos?: number;
+	readonly seconds?: string;
 }
 export interface FutureReservation {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly namePrefix?: string | undefined;
-	readonly planningStatus?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly shareSettings?: ShareSettings | undefined;
-	readonly specificSkuProperties?: FutureReservationSpecificSKUProperties | undefined;
-	readonly status?: FutureReservationStatus | undefined;
-	readonly timeWindow?: FutureReservationTimeWindow | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly namePrefix?: string;
+	readonly planningStatus?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly shareSettings?: ShareSettings;
+	readonly specificSkuProperties?: FutureReservationSpecificSKUProperties;
+	readonly status?: FutureReservationStatus;
+	readonly timeWindow?: FutureReservationTimeWindow;
+	readonly zone?: string;
 }
 export interface FutureReservationSpecificSKUProperties {
-	readonly instanceProperties?: AllocationSpecificSKUAllocationReservedInstanceProperties | undefined;
-	readonly sourceInstanceTemplate?: string | undefined;
-	readonly totalCount?: string | undefined;
+	readonly instanceProperties?: AllocationSpecificSKUAllocationReservedInstanceProperties;
+	readonly sourceInstanceTemplate?: string;
+	readonly totalCount?: string;
 }
 export interface FutureReservationStatus {
-	readonly autoCreatedReservations?: string[] | undefined;
-	readonly fulfilledCount?: string | undefined;
-	readonly lockTime?: string | undefined;
-	readonly procurementStatus?: string | undefined;
-	readonly specificSkuProperties?: FutureReservationStatusSpecificSKUProperties | undefined;
+	readonly autoCreatedReservations?: string[];
+	readonly fulfilledCount?: string;
+	readonly lockTime?: string;
+	readonly procurementStatus?: string;
+	readonly specificSkuProperties?: FutureReservationStatusSpecificSKUProperties;
 }
 export interface FutureReservationStatusSpecificSKUProperties {
-	readonly sourceInstanceTemplateId?: string | undefined;
+	readonly sourceInstanceTemplateId?: string;
 }
 export interface FutureReservationTimeWindow {
-	readonly duration?: Duration | undefined;
-	readonly endTime?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly duration?: Duration;
+	readonly endTime?: string;
+	readonly startTime?: string;
 }
 export interface ShareSettings {
-	readonly folderMap?: { [P in string]: ShareSettingsFolderConfig } | undefined;
-	readonly projectMap?: { [P in string]: ShareSettingsProjectConfig } | undefined;
-	readonly projects?: string[] | undefined;
-	readonly shareType?: string | undefined;
+	readonly folderMap?: { [P in string]: ShareSettingsFolderConfig };
+	readonly projectMap?: { [P in string]: ShareSettingsProjectConfig };
+	readonly projects?: string[];
+	readonly shareType?: string;
 }
 export interface ShareSettingsFolderConfig {
-	readonly folderId?: string | undefined;
+	readonly folderId?: string;
 }
 export interface ShareSettingsProjectConfig {
-	readonly projectId?: string | undefined;
+	readonly projectId?: string;
 }
 export default {
 	FutureReservations: FutureReservations,

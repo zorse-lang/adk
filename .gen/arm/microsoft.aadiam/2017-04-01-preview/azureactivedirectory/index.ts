@@ -18,20 +18,20 @@ export interface diagnosticSettingsComponentOutputs {
 }
 export interface diagnosticSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: DiagnosticSettings | undefined;
+	readonly properties?: DiagnosticSettings;
 }
 export interface DiagnosticSettings {
-	readonly eventHubAuthorizationRuleId?: string | undefined;
-	readonly eventHubName?: string | undefined;
-	readonly logs?: LogSettings[] | undefined;
-	readonly serviceBusRuleId?: string | undefined;
-	readonly storageAccountId?: string | undefined;
-	readonly workspaceId?: string | undefined;
+	readonly eventHubAuthorizationRuleId?: string;
+	readonly eventHubName?: string;
+	readonly logs?: LogSettings[];
+	readonly serviceBusRuleId?: string;
+	readonly storageAccountId?: string;
+	readonly workspaceId?: string;
 }
 export interface LogSettings {
-	readonly category?: ("AuditLogs" | "SignInLogs") | undefined;
+	readonly category?: "AuditLogs" | "SignInLogs";
 	readonly enabled: boolean;
-	readonly retentionPolicy?: RetentionPolicy | undefined;
+	readonly retentionPolicy?: RetentionPolicy;
 }
 export interface RetentionPolicy {
 	readonly days: number;

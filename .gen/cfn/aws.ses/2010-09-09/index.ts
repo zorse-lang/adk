@@ -10,13 +10,13 @@ export class ConfigurationSet
 }
 export interface ConfigurationSetComponentOutputs {}
 export interface ConfigurationSetComponentInputs {
-	readonly DeliveryOptions?: (DeliveryOptions | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly ReputationOptions?: (ReputationOptions | undefined) | undefined;
-	readonly SendingOptions?: (SendingOptions | undefined) | undefined;
-	readonly SuppressionOptions?: (SuppressionOptions | undefined) | undefined;
-	readonly TrackingOptions?: (TrackingOptions | undefined) | undefined;
-	readonly VdmOptions?: (VdmOptions | undefined) | undefined;
+	readonly DeliveryOptions?: DeliveryOptions | undefined;
+	readonly Name?: string | undefined;
+	readonly ReputationOptions?: ReputationOptions | undefined;
+	readonly SendingOptions?: SendingOptions | undefined;
+	readonly SuppressionOptions?: SuppressionOptions | undefined;
+	readonly TrackingOptions?: TrackingOptions | undefined;
+	readonly VdmOptions?: VdmOptions | undefined;
 	readonly LogicalId: string;
 }
 export class ConfigurationSetEventDestination
@@ -43,10 +43,10 @@ export class ContactList extends CfnResource<ContactListComponentInputs> impleme
 }
 export interface ContactListComponentOutputs {}
 export interface ContactListComponentInputs {
-	readonly ContactListName?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Topics?: (Topic[] | undefined) | undefined;
+	readonly ContactListName?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Topics?: Topic[] | undefined;
 	readonly LogicalId: string;
 }
 export class DedicatedIpPool
@@ -59,8 +59,8 @@ export class DedicatedIpPool
 }
 export interface DedicatedIpPoolComponentOutputs {}
 export interface DedicatedIpPoolComponentInputs {
-	readonly PoolName?: (string | undefined) | undefined;
-	readonly ScalingMode?: (string | undefined) | undefined;
+	readonly PoolName?: string | undefined;
+	readonly ScalingMode?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EmailIdentity extends CfnResource<EmailIdentityComponentInputs> implements EmailIdentityComponentOutputs {
@@ -84,11 +84,11 @@ export interface EmailIdentityComponentOutputs {
 }
 export interface EmailIdentityComponentInputs {
 	readonly EmailIdentity: string;
-	readonly ConfigurationSetAttributes?: (ConfigurationSetAttributes | undefined) | undefined;
-	readonly DkimAttributes?: (DkimAttributes | undefined) | undefined;
-	readonly DkimSigningAttributes?: (DkimSigningAttributes | undefined) | undefined;
-	readonly FeedbackAttributes?: (FeedbackAttributes | undefined) | undefined;
-	readonly MailFromAttributes?: (MailFromAttributes | undefined) | undefined;
+	readonly ConfigurationSetAttributes?: ConfigurationSetAttributes | undefined;
+	readonly DkimAttributes?: DkimAttributes | undefined;
+	readonly DkimSigningAttributes?: DkimSigningAttributes | undefined;
+	readonly FeedbackAttributes?: FeedbackAttributes | undefined;
+	readonly MailFromAttributes?: MailFromAttributes | undefined;
 	readonly LogicalId: string;
 }
 export class ReceiptFilter extends CfnResource<ReceiptFilterComponentInputs> implements ReceiptFilterComponentOutputs {
@@ -110,7 +110,7 @@ export interface ReceiptRuleComponentOutputs {}
 export interface ReceiptRuleComponentInputs {
 	readonly Rule: Rule;
 	readonly RuleSetName: string;
-	readonly After?: (string | undefined) | undefined;
+	readonly After?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ReceiptRuleSet extends CfnResource<ReceiptRuleSetComponentInputs> implements ReceiptRuleSetComponentOutputs {
@@ -120,7 +120,7 @@ export class ReceiptRuleSet extends CfnResource<ReceiptRuleSetComponentInputs> i
 }
 export interface ReceiptRuleSetComponentOutputs {}
 export interface ReceiptRuleSetComponentInputs {
-	readonly RuleSetName?: (string | undefined) | undefined;
+	readonly RuleSetName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Template extends CfnResource<TemplateComponentInputs> implements TemplateComponentOutputs {
@@ -133,7 +133,7 @@ export interface TemplateComponentOutputs {
 	readonly Id: string;
 }
 export interface TemplateComponentInputs {
-	readonly Template?: (Template | undefined) | undefined;
+	readonly Template?: Template | undefined;
 	readonly LogicalId: string;
 }
 export class VdmAttributes extends CfnResource<VdmAttributesComponentInputs> implements VdmAttributesComponentOutputs {
@@ -146,38 +146,38 @@ export interface VdmAttributesComponentOutputs {
 	readonly VdmAttributesResourceId: string;
 }
 export interface VdmAttributesComponentInputs {
-	readonly DashboardAttributes?: (DashboardAttributes | undefined) | undefined;
-	readonly GuardianAttributes?: (GuardianAttributes | undefined) | undefined;
+	readonly DashboardAttributes?: DashboardAttributes | undefined;
+	readonly GuardianAttributes?: GuardianAttributes | undefined;
 	readonly LogicalId: string;
 }
 export interface DashboardOptions {
 	readonly EngagementMetrics: string;
 }
 export interface DeliveryOptions {
-	readonly SendingPoolName?: (string | undefined) | undefined;
-	readonly TlsPolicy?: (string | undefined) | undefined;
+	readonly SendingPoolName?: string | undefined;
+	readonly TlsPolicy?: string | undefined;
 }
 export interface GuardianOptions {
 	readonly OptimizedSharedDelivery: string;
 }
 export interface ReputationOptions {
-	readonly ReputationMetricsEnabled?: (boolean | undefined) | undefined;
+	readonly ReputationMetricsEnabled?: boolean | undefined;
 }
 export interface SendingOptions {
-	readonly SendingEnabled?: (boolean | undefined) | undefined;
+	readonly SendingEnabled?: boolean | undefined;
 }
 export interface SuppressionOptions {
-	readonly SuppressedReasons?: (string[] | undefined) | undefined;
+	readonly SuppressedReasons?: string[] | undefined;
 }
 export interface TrackingOptions {
-	readonly CustomRedirectDomain?: (string | undefined) | undefined;
+	readonly CustomRedirectDomain?: string | undefined;
 }
 export interface VdmOptions {
-	readonly DashboardOptions?: (DashboardOptions | undefined) | undefined;
-	readonly GuardianOptions?: (GuardianOptions | undefined) | undefined;
+	readonly DashboardOptions?: DashboardOptions | undefined;
+	readonly GuardianOptions?: GuardianOptions | undefined;
 }
 export interface CloudWatchDestination {
-	readonly DimensionConfigurations?: (DimensionConfiguration[] | undefined) | undefined;
+	readonly DimensionConfigurations?: DimensionConfiguration[] | undefined;
 }
 export interface DimensionConfiguration {
 	readonly DefaultDimensionValue: string;
@@ -185,12 +185,12 @@ export interface DimensionConfiguration {
 	readonly DimensionValueSource: string;
 }
 export interface EventDestination {
-	readonly CloudWatchDestination?: (CloudWatchDestination | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly KinesisFirehoseDestination?: (KinesisFirehoseDestination | undefined) | undefined;
+	readonly CloudWatchDestination?: CloudWatchDestination | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly KinesisFirehoseDestination?: KinesisFirehoseDestination | undefined;
 	readonly MatchingEventTypes: string[];
-	readonly Name?: (string | undefined) | undefined;
-	readonly SnsDestination?: (SnsDestination | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly SnsDestination?: SnsDestination | undefined;
 }
 export interface KinesisFirehoseDestination {
 	readonly DeliveryStreamARN: string;
@@ -201,44 +201,44 @@ export interface SnsDestination {
 }
 export interface Topic {
 	readonly DefaultSubscriptionStatus: string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly DisplayName: string;
 	readonly TopicName: string;
 }
 export interface ConfigurationSetAttributes {
-	readonly ConfigurationSetName?: (string | undefined) | undefined;
+	readonly ConfigurationSetName?: string | undefined;
 }
 export interface DkimAttributes {
-	readonly SigningEnabled?: (boolean | undefined) | undefined;
+	readonly SigningEnabled?: boolean | undefined;
 }
 export interface DkimSigningAttributes {
-	readonly DomainSigningPrivateKey?: (string | undefined) | undefined;
-	readonly DomainSigningSelector?: (string | undefined) | undefined;
-	readonly NextSigningKeyLength?: (string | undefined) | undefined;
+	readonly DomainSigningPrivateKey?: string | undefined;
+	readonly DomainSigningSelector?: string | undefined;
+	readonly NextSigningKeyLength?: string | undefined;
 }
 export interface FeedbackAttributes {
-	readonly EmailForwardingEnabled?: (boolean | undefined) | undefined;
+	readonly EmailForwardingEnabled?: boolean | undefined;
 }
 export interface MailFromAttributes {
-	readonly BehaviorOnMxFailure?: (string | undefined) | undefined;
-	readonly MailFromDomain?: (string | undefined) | undefined;
+	readonly BehaviorOnMxFailure?: string | undefined;
+	readonly MailFromDomain?: string | undefined;
 }
 export interface Filter {
 	readonly IpFilter: IpFilter;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
 }
 export interface IpFilter {
 	readonly Cidr: string;
 	readonly Policy: string;
 }
 export interface Action {
-	readonly AddHeaderAction?: (AddHeaderAction | undefined) | undefined;
-	readonly BounceAction?: (BounceAction | undefined) | undefined;
-	readonly LambdaAction?: (LambdaAction | undefined) | undefined;
-	readonly S3Action?: (S3Action | undefined) | undefined;
-	readonly SNSAction?: (SNSAction | undefined) | undefined;
-	readonly StopAction?: (StopAction | undefined) | undefined;
-	readonly WorkmailAction?: (WorkmailAction | undefined) | undefined;
+	readonly AddHeaderAction?: AddHeaderAction | undefined;
+	readonly BounceAction?: BounceAction | undefined;
+	readonly LambdaAction?: LambdaAction | undefined;
+	readonly S3Action?: S3Action | undefined;
+	readonly SNSAction?: SNSAction | undefined;
+	readonly StopAction?: StopAction | undefined;
+	readonly WorkmailAction?: WorkmailAction | undefined;
 }
 export interface AddHeaderAction {
 	readonly HeaderName: string;
@@ -248,51 +248,51 @@ export interface BounceAction {
 	readonly Message: string;
 	readonly Sender: string;
 	readonly SmtpReplyCode: string;
-	readonly StatusCode?: (string | undefined) | undefined;
-	readonly TopicArn?: (string | undefined) | undefined;
+	readonly StatusCode?: string | undefined;
+	readonly TopicArn?: string | undefined;
 }
 export interface LambdaAction {
 	readonly FunctionArn: string;
-	readonly InvocationType?: (string | undefined) | undefined;
-	readonly TopicArn?: (string | undefined) | undefined;
+	readonly InvocationType?: string | undefined;
+	readonly TopicArn?: string | undefined;
 }
 export interface Rule {
-	readonly Actions?: (Action[] | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Recipients?: (string[] | undefined) | undefined;
-	readonly ScanEnabled?: (boolean | undefined) | undefined;
-	readonly TlsPolicy?: (string | undefined) | undefined;
+	readonly Actions?: Action[] | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly Name?: string | undefined;
+	readonly Recipients?: string[] | undefined;
+	readonly ScanEnabled?: boolean | undefined;
+	readonly TlsPolicy?: string | undefined;
 }
 export interface S3Action {
 	readonly BucketName: string;
-	readonly KmsKeyArn?: (string | undefined) | undefined;
-	readonly ObjectKeyPrefix?: (string | undefined) | undefined;
-	readonly TopicArn?: (string | undefined) | undefined;
+	readonly KmsKeyArn?: string | undefined;
+	readonly ObjectKeyPrefix?: string | undefined;
+	readonly TopicArn?: string | undefined;
 }
 export interface SNSAction {
-	readonly Encoding?: (string | undefined) | undefined;
-	readonly TopicArn?: (string | undefined) | undefined;
+	readonly Encoding?: string | undefined;
+	readonly TopicArn?: string | undefined;
 }
 export interface StopAction {
 	readonly Scope: string;
-	readonly TopicArn?: (string | undefined) | undefined;
+	readonly TopicArn?: string | undefined;
 }
 export interface WorkmailAction {
 	readonly OrganizationArn: string;
-	readonly TopicArn?: (string | undefined) | undefined;
+	readonly TopicArn?: string | undefined;
 }
 export interface Template {
-	readonly HtmlPart?: (string | undefined) | undefined;
+	readonly HtmlPart?: string | undefined;
 	readonly SubjectPart: string;
-	readonly TemplateName?: (string | undefined) | undefined;
-	readonly TextPart?: (string | undefined) | undefined;
+	readonly TemplateName?: string | undefined;
+	readonly TextPart?: string | undefined;
 }
 export interface DashboardAttributes {
-	readonly EngagementMetrics?: (string | undefined) | undefined;
+	readonly EngagementMetrics?: string | undefined;
 }
 export interface GuardianAttributes {
-	readonly OptimizedSharedDelivery?: (string | undefined) | undefined;
+	readonly OptimizedSharedDelivery?: string | undefined;
 }
 export default {
 	ConfigurationSet: ConfigurationSet,

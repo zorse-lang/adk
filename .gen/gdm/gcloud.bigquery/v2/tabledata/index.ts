@@ -7,7 +7,6 @@ export class Tabledata extends GdmResource<TabledataComponentInputs> implements 
 }
 export interface TabledataComponentOutputs {}
 export interface TabledataComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

@@ -4,45 +4,44 @@ export class Policies extends GdmResource<PoliciesComponentInputs> implements Po
 	constructor(entity: ADKEntity, options: PoliciesComponentInputs) {
 		super(entity, options.name, "dns.v1alpha2.Policies", options);
 	}
-	public readonly id?: string | undefined;
+	public readonly id?: string;
 }
 export interface PoliciesComponentOutputs {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PoliciesComponentInputs {
-	readonly alternativeNameServerConfig?: PolicyAlternativeNameServerConfig | undefined;
-	readonly clientOperationId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly enableInboundForwarding?: boolean | undefined;
-	readonly enableLogging?: boolean | undefined;
-	readonly kind?: string | undefined;
+	readonly alternativeNameServerConfig?: PolicyAlternativeNameServerConfig;
+	readonly clientOperationId?: string;
+	readonly description?: string;
+	readonly enableInboundForwarding?: boolean;
+	readonly enableLogging?: boolean;
+	readonly kind?: string;
 	readonly name: string;
-	readonly networks?: PolicyNetwork[] | undefined;
-	readonly type: string;
+	readonly networks?: PolicyNetwork[];
 }
 export interface Policy {
-	readonly alternativeNameServerConfig?: PolicyAlternativeNameServerConfig | undefined;
-	readonly description?: string | undefined;
-	readonly enableInboundForwarding?: boolean | undefined;
-	readonly enableLogging?: boolean | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly networks?: PolicyNetwork[] | undefined;
+	readonly alternativeNameServerConfig?: PolicyAlternativeNameServerConfig;
+	readonly description?: string;
+	readonly enableInboundForwarding?: boolean;
+	readonly enableLogging?: boolean;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly networks?: PolicyNetwork[];
 }
 export interface PolicyAlternativeNameServerConfig {
-	readonly kind?: string | undefined;
-	readonly targetNameServers?: PolicyAlternativeNameServerConfigTargetNameServer[] | undefined;
+	readonly kind?: string;
+	readonly targetNameServers?: PolicyAlternativeNameServerConfigTargetNameServer[];
 }
 export interface PolicyAlternativeNameServerConfigTargetNameServer {
-	readonly forwardingPath?: string | undefined;
-	readonly ipv4Address?: string | undefined;
-	readonly ipv6Address?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly forwardingPath?: string;
+	readonly ipv4Address?: string;
+	readonly ipv6Address?: string;
+	readonly kind?: string;
 }
 export interface PolicyNetwork {
-	readonly kind?: string | undefined;
-	readonly networkUrl?: string | undefined;
+	readonly kind?: string;
+	readonly networkUrl?: string;
 }
 export default {
 	Policies: Policies,

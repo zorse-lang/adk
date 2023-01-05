@@ -14,7 +14,7 @@ export interface ProfilePermissionComponentInputs {
 	readonly Principal: string;
 	readonly ProfileName: string;
 	readonly StatementId: string;
-	readonly ProfileVersion?: (string | undefined) | undefined;
+	readonly ProfileVersion?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SigningProfile extends CfnResource<SigningProfileComponentInputs> implements SigningProfileComponentOutputs {
@@ -34,13 +34,13 @@ export interface SigningProfileComponentOutputs {
 }
 export interface SigningProfileComponentInputs {
 	readonly PlatformId: string;
-	readonly SignatureValidityPeriod?: (SignatureValidityPeriod | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly SignatureValidityPeriod?: SignatureValidityPeriod | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface SignatureValidityPeriod {
-	readonly Type?: (string | undefined) | undefined;
-	readonly Value?: (number | undefined) | undefined;
+	readonly Type?: string | undefined;
+	readonly Value?: number | undefined;
 }
 export default {
 	ProfilePermission: ProfilePermission,

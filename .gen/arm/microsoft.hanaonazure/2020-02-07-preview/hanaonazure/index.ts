@@ -16,8 +16,8 @@ export interface sapMonitorsComponentOutputs {
 export interface sapMonitorsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SapMonitorProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SapMonitorProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class sapMonitors_providerInstances
 	extends ArmResource<sapMonitors_providerInstancesComponentInputs>
@@ -37,30 +37,26 @@ export interface sapMonitors_providerInstancesComponentOutputs {
 }
 export interface sapMonitors_providerInstancesComponentInputs {
 	readonly name: string;
-	readonly properties?: ProviderInstanceProperties | undefined;
+	readonly properties?: ProviderInstanceProperties;
 }
 export interface ProviderInstanceProperties {
-	readonly metadata?: string | undefined;
-	readonly properties?: string | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating")
-		| undefined;
-	readonly type?: string | undefined;
+	readonly metadata?: string;
+	readonly properties?: string;
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating";
+	readonly type?: string;
 }
 export interface SapMonitorProperties {
-	readonly enableCustomerAnalytics?: boolean | undefined;
-	readonly logAnalyticsWorkspaceArmId?: string | undefined;
-	readonly logAnalyticsWorkspaceId?: string | undefined;
-	readonly logAnalyticsWorkspaceSharedKey?: string | undefined;
-	readonly managedResourceGroupName?: string | undefined;
-	readonly monitorSubnet?: string | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating")
-		| undefined;
-	readonly sapMonitorCollectorVersion?: string | undefined;
+	readonly enableCustomerAnalytics?: boolean;
+	readonly logAnalyticsWorkspaceArmId?: string;
+	readonly logAnalyticsWorkspaceId?: string;
+	readonly logAnalyticsWorkspaceSharedKey?: string;
+	readonly managedResourceGroupName?: string;
+	readonly monitorSubnet?: string;
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Migrating" | "Succeeded" | "Updating";
+	readonly sapMonitorCollectorVersion?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	sapMonitors: sapMonitors,

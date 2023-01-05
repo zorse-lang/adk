@@ -10,92 +10,91 @@ export class ProjectsUptimeCheckConfigs
 }
 export interface ProjectsUptimeCheckConfigsComponentOutputs {}
 export interface ProjectsUptimeCheckConfigsComponentInputs {
-	readonly checkerType?: string | undefined;
-	readonly contentMatchers?: ContentMatcher[] | undefined;
-	readonly displayName?: string | undefined;
-	readonly httpCheck?: HttpCheck | undefined;
-	readonly internalCheckers?: InternalChecker[] | undefined;
-	readonly isInternal?: boolean | undefined;
-	readonly monitoredResource?: MonitoredResource | undefined;
+	readonly checkerType?: string;
+	readonly contentMatchers?: ContentMatcher[];
+	readonly displayName?: string;
+	readonly httpCheck?: HttpCheck;
+	readonly internalCheckers?: InternalChecker[];
+	readonly isInternal?: boolean;
+	readonly monitoredResource?: MonitoredResource;
 	readonly name: string;
 	readonly parent: string;
-	readonly period?: string | undefined;
-	readonly resourceGroup?: ResourceGroup | undefined;
-	readonly selectedRegions?: string[] | undefined;
-	readonly tcpCheck?: TcpCheck | undefined;
-	readonly timeout?: string | undefined;
-	readonly userLabels?: { [P in string]: string } | undefined;
-	readonly type: string;
+	readonly period?: string;
+	readonly resourceGroup?: ResourceGroup;
+	readonly selectedRegions?: string[];
+	readonly tcpCheck?: TcpCheck;
+	readonly timeout?: string;
+	readonly userLabels?: { [P in string]: string };
 }
 export interface BasicAuthentication {
-	readonly password?: string | undefined;
-	readonly username?: string | undefined;
+	readonly password?: string;
+	readonly username?: string;
 }
 export interface ContentMatcher {
-	readonly content?: string | undefined;
-	readonly jsonPathMatcher?: JsonPathMatcher | undefined;
-	readonly matcher?: string | undefined;
+	readonly content?: string;
+	readonly jsonPathMatcher?: JsonPathMatcher;
+	readonly matcher?: string;
 }
 export interface HttpCheck {
-	readonly acceptedResponseStatusCodes?: ResponseStatusCode[] | undefined;
-	readonly authInfo?: BasicAuthentication | undefined;
-	readonly body?: string | undefined;
-	readonly contentType?: string | undefined;
-	readonly headers?: { [P in string]: string } | undefined;
-	readonly maskHeaders?: boolean | undefined;
-	readonly path?: string | undefined;
-	readonly pingConfig?: PingConfig | undefined;
-	readonly port?: number | undefined;
-	readonly requestMethod?: string | undefined;
-	readonly useSsl?: boolean | undefined;
-	readonly validateSsl?: boolean | undefined;
+	readonly acceptedResponseStatusCodes?: ResponseStatusCode[];
+	readonly authInfo?: BasicAuthentication;
+	readonly body?: string;
+	readonly contentType?: string;
+	readonly headers?: { [P in string]: string };
+	readonly maskHeaders?: boolean;
+	readonly path?: string;
+	readonly pingConfig?: PingConfig;
+	readonly port?: number;
+	readonly requestMethod?: string;
+	readonly useSsl?: boolean;
+	readonly validateSsl?: boolean;
 }
 export interface InternalChecker {
-	readonly displayName?: string | undefined;
-	readonly gcpZone?: string | undefined;
-	readonly name?: string | undefined;
-	readonly network?: string | undefined;
-	readonly peerProjectId?: string | undefined;
-	readonly state?: string | undefined;
+	readonly displayName?: string;
+	readonly gcpZone?: string;
+	readonly name?: string;
+	readonly network?: string;
+	readonly peerProjectId?: string;
+	readonly state?: string;
 }
 export interface JsonPathMatcher {
-	readonly jsonMatcher?: string | undefined;
-	readonly jsonPath?: string | undefined;
+	readonly jsonMatcher?: string;
+	readonly jsonPath?: string;
 }
 export interface MonitoredResource {
 	readonly labels: { [P in string]: string };
 	readonly type: string;
 }
 export interface PingConfig {
-	readonly pingsCount?: number | undefined;
+	readonly pingsCount?: number;
 }
 export interface ResourceGroup {
-	readonly groupId?: string | undefined;
-	readonly resourceType?: string | undefined;
+	readonly groupId?: string;
+	readonly resourceType?: string;
 }
 export interface ResponseStatusCode {
-	readonly statusClass?: string | undefined;
-	readonly statusValue?: number | undefined;
+	readonly statusClass?: string;
+	readonly statusValue?: number;
 }
 export interface TcpCheck {
-	readonly pingConfig?: PingConfig | undefined;
-	readonly port?: number | undefined;
+	readonly pingConfig?: PingConfig;
+	readonly port?: number;
 }
 export interface UptimeCheckConfig {
-	readonly checkerType?: string | undefined;
-	readonly contentMatchers?: ContentMatcher[] | undefined;
-	readonly displayName?: string | undefined;
-	readonly httpCheck?: HttpCheck | undefined;
-	readonly internalCheckers?: InternalChecker[] | undefined;
-	readonly isInternal?: boolean | undefined;
-	readonly monitoredResource?: MonitoredResource | undefined;
-	readonly name?: string | undefined;
-	readonly period?: string | undefined;
-	readonly resourceGroup?: ResourceGroup | undefined;
-	readonly selectedRegions?: string[] | undefined;
-	readonly tcpCheck?: TcpCheck | undefined;
-	readonly timeout?: string | undefined;
-	readonly userLabels?: { [P in string]: string } | undefined;
+	readonly checkerType?: string;
+	readonly contentMatchers?: ContentMatcher[];
+	readonly displayName?: string;
+	readonly httpCheck?: HttpCheck;
+	readonly internalCheckers?: InternalChecker[];
+	readonly isInternal?: boolean;
+	readonly monitoredResource?: MonitoredResource;
+	readonly name?: string;
+	readonly period?: string;
+	readonly resourceGroup?: ResourceGroup;
+	readonly selectedRegions?: string[];
+	readonly tcpCheck?: TcpCheck;
+	readonly timeout?: string;
+	readonly userLabels?: { [P in string]: string };
 }
 export default {
 	ProjectsUptimeCheckConfigs: ProjectsUptimeCheckConfigs,

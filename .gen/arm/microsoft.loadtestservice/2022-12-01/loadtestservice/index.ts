@@ -14,12 +14,12 @@ export interface loadTestsComponentOutputs {
 	readonly type: "Microsoft.LoadTestService/loadTests";
 }
 export interface loadTestsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
+	readonly identity?: ManagedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: LoadTestProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: LoadTestProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class locations_quotas
 	extends ArmResource<locations_quotasComponentInputs>
@@ -39,51 +39,51 @@ export interface locations_quotasComponentOutputs {
 }
 export interface locations_quotasComponentInputs {
 	readonly name: string;
-	readonly properties?: QuotaResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: QuotaResourceProperties;
+	readonly systemData?: SystemData;
 }
 export interface EncryptionProperties {
-	readonly identity?: EncryptionPropertiesIdentity | undefined;
-	readonly keyUrl?: string | undefined;
+	readonly identity?: EncryptionPropertiesIdentity;
+	readonly keyUrl?: string;
 }
 export interface EncryptionPropertiesIdentity {
-	readonly resourceId?: string | undefined;
-	readonly type?: ("SystemAssigned" | "UserAssigned") | undefined;
+	readonly resourceId?: string;
+	readonly type?: "SystemAssigned" | "UserAssigned";
 }
 export interface LoadTestProperties {
-	readonly dataPlaneURI?: string | undefined;
-	readonly description?: string | undefined;
-	readonly encryption?: EncryptionProperties | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleted" | "Failed" | "Succeeded") | undefined;
+	readonly dataPlaneURI?: string;
+	readonly description?: string;
+	readonly encryption?: EncryptionProperties;
+	readonly provisioningState?: "Canceled" | "Deleted" | "Failed" | "Succeeded";
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: UserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedIdentities;
 }
 export interface QuotaResourceProperties {
-	readonly limit?: number | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleted" | "Failed" | "Succeeded") | undefined;
-	readonly usage?: number | undefined;
+	readonly limit?: number;
+	readonly provisioningState?: "Canceled" | "Deleted" | "Failed" | "Succeeded";
+	readonly usage?: number;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	loadTests: loadTests,

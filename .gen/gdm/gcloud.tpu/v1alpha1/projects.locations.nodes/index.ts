@@ -7,77 +7,76 @@ export class ProjectsLocationsNodes
 	constructor(entity: ADKEntity, options: ProjectsLocationsNodesComponentInputs) {
 		super(entity, options.name, "tpu.v1alpha1.ProjectsLocationsNodes", options);
 	}
-	public readonly apiVersion?: string | undefined;
-	public readonly createTime?: string | undefined;
-	public readonly healthDescription?: string | undefined;
-	public readonly ipAddress?: string | undefined;
-	public readonly networkEndpoints?: NetworkEndpoint[] | undefined;
-	public readonly port?: string | undefined;
-	public readonly serviceAccount?: string | undefined;
-	public readonly state?: string | undefined;
-	public readonly symptoms?: Symptom[] | undefined;
+	public readonly apiVersion?: string;
+	public readonly createTime?: string;
+	public readonly healthDescription?: string;
+	public readonly ipAddress?: string;
+	public readonly networkEndpoints?: NetworkEndpoint[];
+	public readonly port?: string;
+	public readonly serviceAccount?: string;
+	public readonly state?: string;
+	public readonly symptoms?: Symptom[];
 }
 export interface ProjectsLocationsNodesComponentOutputs {
-	readonly apiVersion?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly healthDescription?: string | undefined;
-	readonly ipAddress?: string | undefined;
-	readonly networkEndpoints?: NetworkEndpoint[] | undefined;
-	readonly port?: string | undefined;
-	readonly serviceAccount?: string | undefined;
-	readonly state?: string | undefined;
-	readonly symptoms?: Symptom[] | undefined;
+	readonly apiVersion?: string;
+	readonly createTime?: string;
+	readonly healthDescription?: string;
+	readonly ipAddress?: string;
+	readonly networkEndpoints?: NetworkEndpoint[];
+	readonly port?: string;
+	readonly serviceAccount?: string;
+	readonly state?: string;
+	readonly symptoms?: Symptom[];
 }
 export interface ProjectsLocationsNodesComponentInputs {
 	readonly acceleratorType: string;
-	readonly cidrBlock?: string | undefined;
-	readonly description?: string | undefined;
-	readonly health?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly cidrBlock?: string;
+	readonly description?: string;
+	readonly health?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly nodeId?: string | undefined;
+	readonly network?: string;
+	readonly nodeId?: string;
 	readonly parent: string;
-	readonly requestId?: string | undefined;
-	readonly schedulingConfig?: SchedulingConfig | undefined;
+	readonly requestId?: string;
+	readonly schedulingConfig?: SchedulingConfig;
 	readonly tensorflowVersion: string;
-	readonly useServiceNetworking?: boolean | undefined;
-	readonly type: string;
+	readonly useServiceNetworking?: boolean;
 }
 export interface NetworkEndpoint {
-	readonly ipAddress?: string | undefined;
-	readonly port?: number | undefined;
+	readonly ipAddress?: string;
+	readonly port?: number;
 }
 export interface Node {
 	readonly acceleratorType: string;
-	readonly apiVersion?: string | undefined;
-	readonly cidrBlock?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly health?: string | undefined;
-	readonly healthDescription?: string | undefined;
-	readonly ipAddress?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly network?: string | undefined;
-	readonly networkEndpoints?: NetworkEndpoint[] | undefined;
-	readonly port?: string | undefined;
-	readonly schedulingConfig?: SchedulingConfig | undefined;
-	readonly serviceAccount?: string | undefined;
-	readonly state?: string | undefined;
-	readonly symptoms?: Symptom[] | undefined;
+	readonly apiVersion?: string;
+	readonly cidrBlock?: string;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly health?: string;
+	readonly healthDescription?: string;
+	readonly ipAddress?: string;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly network?: string;
+	readonly networkEndpoints?: NetworkEndpoint[];
+	readonly port?: string;
+	readonly schedulingConfig?: SchedulingConfig;
+	readonly serviceAccount?: string;
+	readonly state?: string;
+	readonly symptoms?: Symptom[];
 	readonly tensorflowVersion: string;
-	readonly useServiceNetworking?: boolean | undefined;
+	readonly useServiceNetworking?: boolean;
 }
 export interface SchedulingConfig {
-	readonly preemptible?: boolean | undefined;
-	readonly reserved?: boolean | undefined;
+	readonly preemptible?: boolean;
+	readonly reserved?: boolean;
 }
 export interface Symptom {
-	readonly createTime?: string | undefined;
-	readonly details?: string | undefined;
-	readonly symptomType?: string | undefined;
-	readonly workerId?: string | undefined;
+	readonly createTime?: string;
+	readonly details?: string;
+	readonly symptomType?: string;
+	readonly workerId?: string;
 }
 export default {
 	ProjectsLocationsNodes: ProjectsLocationsNodes,

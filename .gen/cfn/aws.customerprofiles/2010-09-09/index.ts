@@ -13,10 +13,10 @@ export interface DomainComponentOutputs {
 }
 export interface DomainComponentInputs {
 	readonly DomainName: string;
-	readonly DeadLetterQueueUrl?: (string | undefined) | undefined;
-	readonly DefaultEncryptionKey?: (string | undefined) | undefined;
-	readonly DefaultExpirationDays?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DeadLetterQueueUrl?: string | undefined;
+	readonly DefaultEncryptionKey?: string | undefined;
+	readonly DefaultExpirationDays?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Integration extends CfnResource<IntegrationComponentInputs> implements IntegrationComponentOutputs {
@@ -32,11 +32,11 @@ export interface IntegrationComponentOutputs {
 }
 export interface IntegrationComponentInputs {
 	readonly DomainName: string;
-	readonly FlowDefinition?: (FlowDefinition | undefined) | undefined;
-	readonly ObjectTypeName?: (string | undefined) | undefined;
-	readonly ObjectTypeNames?: (ObjectTypeMapping[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Uri?: (string | undefined) | undefined;
+	readonly FlowDefinition?: FlowDefinition | undefined;
+	readonly ObjectTypeName?: string | undefined;
+	readonly ObjectTypeNames?: ObjectTypeMapping[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Uri?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ObjectType extends CfnResource<ObjectTypeComponentInputs> implements ObjectTypeComponentOutputs {
@@ -52,26 +52,26 @@ export interface ObjectTypeComponentOutputs {
 }
 export interface ObjectTypeComponentInputs {
 	readonly DomainName: string;
-	readonly AllowProfileCreation?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EncryptionKey?: (string | undefined) | undefined;
-	readonly ExpirationDays?: (number | undefined) | undefined;
-	readonly Fields?: (FieldMap[] | undefined) | undefined;
-	readonly Keys?: (KeyMap[] | undefined) | undefined;
-	readonly ObjectTypeName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TemplateId?: (string | undefined) | undefined;
+	readonly AllowProfileCreation?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly EncryptionKey?: string | undefined;
+	readonly ExpirationDays?: number | undefined;
+	readonly Fields?: FieldMap[] | undefined;
+	readonly Keys?: KeyMap[] | undefined;
+	readonly ObjectTypeName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TemplateId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface ConnectorOperator {
-	readonly Marketo?: (string | undefined) | undefined;
-	readonly S3?: (string | undefined) | undefined;
-	readonly Salesforce?: (string | undefined) | undefined;
-	readonly ServiceNow?: (string | undefined) | undefined;
-	readonly Zendesk?: (string | undefined) | undefined;
+	readonly Marketo?: string | undefined;
+	readonly S3?: string | undefined;
+	readonly Salesforce?: string | undefined;
+	readonly ServiceNow?: string | undefined;
+	readonly Zendesk?: string | undefined;
 }
 export interface FlowDefinition {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly FlowName: string;
 	readonly KmsArn: string;
 	readonly SourceFlowConfig: SourceFlowConfig;
@@ -79,7 +79,7 @@ export interface FlowDefinition {
 	readonly TriggerConfig: TriggerConfig;
 }
 export interface IncrementalPullConfig {
-	readonly DatetimeTypeFieldName?: (string | undefined) | undefined;
+	readonly DatetimeTypeFieldName?: string | undefined;
 }
 export interface MarketoSourceProperties {
 	readonly Object: string;
@@ -90,43 +90,43 @@ export interface ObjectTypeMapping {
 }
 export interface S3SourceProperties {
 	readonly BucketName: string;
-	readonly BucketPrefix?: (string | undefined) | undefined;
+	readonly BucketPrefix?: string | undefined;
 }
 export interface SalesforceSourceProperties {
-	readonly EnableDynamicFieldUpdate?: (boolean | undefined) | undefined;
-	readonly IncludeDeletedRecords?: (boolean | undefined) | undefined;
+	readonly EnableDynamicFieldUpdate?: boolean | undefined;
+	readonly IncludeDeletedRecords?: boolean | undefined;
 	readonly Object: string;
 }
 export interface ScheduledTriggerProperties {
-	readonly DataPullMode?: (string | undefined) | undefined;
-	readonly FirstExecutionFrom?: (number | undefined) | undefined;
-	readonly ScheduleEndTime?: (number | undefined) | undefined;
+	readonly DataPullMode?: string | undefined;
+	readonly FirstExecutionFrom?: number | undefined;
+	readonly ScheduleEndTime?: number | undefined;
 	readonly ScheduleExpression: string;
-	readonly ScheduleOffset?: (number | undefined) | undefined;
-	readonly ScheduleStartTime?: (number | undefined) | undefined;
-	readonly Timezone?: (string | undefined) | undefined;
+	readonly ScheduleOffset?: number | undefined;
+	readonly ScheduleStartTime?: number | undefined;
+	readonly Timezone?: string | undefined;
 }
 export interface ServiceNowSourceProperties {
 	readonly Object: string;
 }
 export interface SourceConnectorProperties {
-	readonly Marketo?: (MarketoSourceProperties | undefined) | undefined;
-	readonly S3?: (S3SourceProperties | undefined) | undefined;
-	readonly Salesforce?: (SalesforceSourceProperties | undefined) | undefined;
-	readonly ServiceNow?: (ServiceNowSourceProperties | undefined) | undefined;
-	readonly Zendesk?: (ZendeskSourceProperties | undefined) | undefined;
+	readonly Marketo?: MarketoSourceProperties | undefined;
+	readonly S3?: S3SourceProperties | undefined;
+	readonly Salesforce?: SalesforceSourceProperties | undefined;
+	readonly ServiceNow?: ServiceNowSourceProperties | undefined;
+	readonly Zendesk?: ZendeskSourceProperties | undefined;
 }
 export interface SourceFlowConfig {
-	readonly ConnectorProfileName?: (string | undefined) | undefined;
+	readonly ConnectorProfileName?: string | undefined;
 	readonly ConnectorType: string;
-	readonly IncrementalPullConfig?: (IncrementalPullConfig | undefined) | undefined;
+	readonly IncrementalPullConfig?: IncrementalPullConfig | undefined;
 	readonly SourceConnectorProperties: SourceConnectorProperties;
 }
 export interface Task {
-	readonly ConnectorOperator?: (ConnectorOperator | undefined) | undefined;
-	readonly DestinationField?: (string | undefined) | undefined;
+	readonly ConnectorOperator?: ConnectorOperator | undefined;
+	readonly DestinationField?: string | undefined;
 	readonly SourceFields: string[];
-	readonly TaskProperties?: (TaskPropertiesMap[] | undefined) | undefined;
+	readonly TaskProperties?: TaskPropertiesMap[] | undefined;
 	readonly TaskType: string;
 }
 export interface TaskPropertiesMap {
@@ -134,31 +134,31 @@ export interface TaskPropertiesMap {
 	readonly Property: string;
 }
 export interface TriggerConfig {
-	readonly TriggerProperties?: (TriggerProperties | undefined) | undefined;
+	readonly TriggerProperties?: TriggerProperties | undefined;
 	readonly TriggerType: string;
 }
 export interface TriggerProperties {
-	readonly Scheduled?: (ScheduledTriggerProperties | undefined) | undefined;
+	readonly Scheduled?: ScheduledTriggerProperties | undefined;
 }
 export interface ZendeskSourceProperties {
 	readonly Object: string;
 }
 export interface FieldMap {
-	readonly Name?: (string | undefined) | undefined;
-	readonly ObjectTypeField?: (ObjectTypeField | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly ObjectTypeField?: ObjectTypeField | undefined;
 }
 export interface KeyMap {
-	readonly Name?: (string | undefined) | undefined;
-	readonly ObjectTypeKeyList?: (ObjectTypeKey[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly ObjectTypeKeyList?: ObjectTypeKey[] | undefined;
 }
 export interface ObjectTypeField {
-	readonly ContentType?: (string | undefined) | undefined;
-	readonly Source?: (string | undefined) | undefined;
-	readonly Target?: (string | undefined) | undefined;
+	readonly ContentType?: string | undefined;
+	readonly Source?: string | undefined;
+	readonly Target?: string | undefined;
 }
 export interface ObjectTypeKey {
-	readonly FieldNames?: (string[] | undefined) | undefined;
-	readonly StandardIdentifiers?: (string[] | undefined) | undefined;
+	readonly FieldNames?: string[] | undefined;
+	readonly StandardIdentifiers?: string[] | undefined;
 }
 export default {
 	Domain: Domain,

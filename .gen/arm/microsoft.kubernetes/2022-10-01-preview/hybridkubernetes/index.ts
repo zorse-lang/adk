@@ -21,8 +21,8 @@ export interface connectedClustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ConnectedClusterProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export function listClusterUserCredential(
 	resource: connectedClusters,
@@ -37,62 +37,67 @@ export function listClusterUserCredential(
 	throw new Error("not implemented");
 }
 export interface ConnectedClusterIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None";
 }
 export interface ConnectedClusterProperties {
 	readonly agentPublicKeyCertificate: string;
-	readonly agentVersion?: string | undefined;
-	readonly azureHybridBenefit?: ("False" | "NotApplicable" | "True") | undefined;
-	readonly connectivityStatus?: ("Connected" | "Connecting" | "Expired" | "Offline") | undefined;
-	readonly distribution?: string | undefined;
-	readonly distributionVersion?: string | undefined;
-	readonly infrastructure?: string | undefined;
-	readonly kubernetesVersion?: string | undefined;
-	readonly lastConnectivityTime?: string | undefined;
-	readonly managedIdentityCertificateExpirationTime?: string | undefined;
-	readonly miscellaneousProperties?: ConnectedClusterPropertiesMiscellaneousProperties | undefined;
-	readonly offering?: string | undefined;
-	readonly privateLinkScopeResourceId?: string | undefined;
-	readonly privateLinkState?: ("Disabled" | "Enabled") | undefined;
+	readonly agentVersion?: string;
+	readonly azureHybridBenefit?: "False" | "NotApplicable" | "True";
+	readonly connectivityStatus?: "Connected" | "Connecting" | "Expired" | "Offline";
+	readonly distribution?: string;
+	readonly distributionVersion?: string;
+	readonly infrastructure?: string;
+	readonly kubernetesVersion?: string;
+	readonly lastConnectivityTime?: string;
+	readonly managedIdentityCertificateExpirationTime?: string;
+	readonly miscellaneousProperties?: ConnectedClusterPropertiesMiscellaneousProperties;
+	readonly offering?: string;
+	readonly privateLinkScopeResourceId?: string;
+	readonly privateLinkState?: "Disabled" | "Enabled";
 	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleting" | "Failed" | "Provisioning" | "Succeeded" | "Updating")
-		| undefined;
-	readonly totalCoreCount?: number | undefined;
-	readonly totalNodeCount?: number | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Deleting"
+		| "Failed"
+		| "Provisioning"
+		| "Succeeded"
+		| "Updating";
+	readonly totalCoreCount?: number;
+	readonly totalNodeCount?: number;
 }
 export interface ConnectedClusterPropertiesMiscellaneousProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CredentialResult {
-	readonly name?: string | undefined;
-	readonly value?: any | undefined;
+	readonly name?: string;
+	readonly value?: any;
 }
 export interface CredentialResults {
-	readonly hybridConnectionConfig?: HybridConnectionConfig | undefined;
-	readonly kubeconfigs?: CredentialResult[] | undefined;
+	readonly hybridConnectionConfig?: HybridConnectionConfig;
+	readonly kubeconfigs?: CredentialResult[];
 }
 export interface HybridConnectionConfig {
-	readonly expirationTime?: number | undefined;
-	readonly hybridConnectionName?: string | undefined;
-	readonly relay?: string | undefined;
-	readonly token?: string | undefined;
+	readonly expirationTime?: number;
+	readonly hybridConnectionName?: string;
+	readonly relay?: string;
+	readonly token?: string;
 }
 export interface ListClusterUserCredentialProperties {
 	readonly authenticationMethod: "AAD" | "Token";
 	readonly clientProxy: boolean;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	connectedClusters: connectedClusters,

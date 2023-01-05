@@ -10,15 +10,14 @@ export class ProjectsConfigs
 }
 export interface ProjectsConfigsComponentOutputs {}
 export interface ProjectsConfigsComponentInputs {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly requestId?: string | undefined;
-	readonly type: string;
+	readonly requestId?: string;
 }
 export interface RuntimeConfig {
-	readonly description?: string | undefined;
-	readonly name?: string | undefined;
+	readonly description?: string;
+	readonly name?: string;
 }
 export default {
 	ProjectsConfigs: ProjectsConfigs,

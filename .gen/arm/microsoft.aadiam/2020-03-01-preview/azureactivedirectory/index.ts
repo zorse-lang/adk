@@ -17,14 +17,14 @@ export interface privateLinkForAzureAdComponentOutputs {
 	readonly type: "microsoft.aadiam/privateLinkForAzureAd";
 }
 export interface privateLinkForAzureAdComponentInputs {
-	readonly allTenants?: boolean | undefined;
+	readonly allTenants?: boolean;
 	readonly name: string;
-	readonly ownerTenantId?: string | undefined;
-	readonly resourceGroup?: string | undefined;
-	readonly resourceName?: string | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly tags?: PrivateLinkPolicyTags | undefined;
-	readonly tenants?: string[] | undefined;
+	readonly ownerTenantId?: string;
+	readonly resourceGroup?: string;
+	readonly resourceName?: string;
+	readonly subscriptionId?: string;
+	readonly tags?: PrivateLinkPolicyTags;
+	readonly tenants?: string[];
 }
 export class privateLinkForAzureAd_privateLinkResources
 	extends ArmResource<privateLinkForAzureAd_privateLinkResourcesComponentInputs>
@@ -50,14 +50,14 @@ export interface privateLinkForAzureAd_privateLinkResourcesComponentOutputs {
 }
 export interface privateLinkForAzureAd_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export interface PrivateLinkPolicyTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
 }
 export default {
 	privateLinkForAzureAd: privateLinkForAzureAd,

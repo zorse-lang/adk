@@ -16,9 +16,9 @@ export interface instancePoolsComponentOutputs {
 export interface instancePoolsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: InstancePoolProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: InstancePoolProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class locations_longTermRetentionManagedInstances_longTermRetentionDatabases_longTermRetentionManagedInstanceBackups
 	extends ArmResource<locations_longTermRetentionManagedInstances_longTermRetentionDatabases_longTermRetentionManagedInstanceBackupsComponentInputs>
@@ -48,7 +48,7 @@ export interface locations_longTermRetentionManagedInstances_longTermRetentionDa
 }
 export interface locations_longTermRetentionManagedInstances_longTermRetentionDatabases_longTermRetentionManagedInstanceBackupsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedInstanceLongTermRetentionBackupProperties | undefined;
+	readonly properties?: ManagedInstanceLongTermRetentionBackupProperties;
 }
 export class managedInstances
 	extends ArmResource<managedInstancesComponentInputs>
@@ -67,12 +67,12 @@ export interface managedInstancesComponentOutputs {
 	readonly type: "Microsoft.Sql/managedInstances";
 }
 export interface managedInstancesComponentInputs {
-	readonly identity?: ResourceIdentity | undefined;
+	readonly identity?: ResourceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagedInstanceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ManagedInstanceProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class managedInstances_databases
 	extends ArmResource<managedInstances_databasesComponentInputs>
@@ -93,8 +93,8 @@ export interface managedInstances_databasesComponentOutputs {
 export interface managedInstances_databasesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagedDatabaseProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ManagedDatabaseProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class managedInstances_databases_backupLongTermRetentionPolicies
 	extends ArmResource<managedInstances_databases_backupLongTermRetentionPoliciesComponentInputs>
@@ -120,7 +120,7 @@ export interface managedInstances_databases_backupLongTermRetentionPoliciesCompo
 }
 export interface managedInstances_databases_backupLongTermRetentionPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: BaseLongTermRetentionPolicyProperties | undefined;
+	readonly properties?: BaseLongTermRetentionPolicyProperties;
 }
 export class managedInstances_databases_restoreDetails
 	extends ArmResource<managedInstances_databases_restoreDetailsComponentInputs>
@@ -146,7 +146,7 @@ export interface managedInstances_databases_restoreDetailsComponentOutputs {
 }
 export interface managedInstances_databases_restoreDetailsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedDatabaseRestoreDetailsProperties | undefined;
+	readonly properties?: ManagedDatabaseRestoreDetailsProperties;
 }
 export class managedInstances_databases_schemas_tables_columns_sensitivityLabels
 	extends ArmResource<managedInstances_databases_schemas_tables_columns_sensitivityLabelsComponentInputs>
@@ -175,7 +175,7 @@ export interface managedInstances_databases_schemas_tables_columns_sensitivityLa
 }
 export interface managedInstances_databases_schemas_tables_columns_sensitivityLabelsComponentInputs {
 	readonly name: string;
-	readonly properties?: SensitivityLabelProperties | undefined;
+	readonly properties?: SensitivityLabelProperties;
 }
 export class managedInstances_operations
 	extends ArmResource<managedInstances_operationsComponentInputs>
@@ -195,7 +195,7 @@ export interface managedInstances_operationsComponentOutputs {
 }
 export interface managedInstances_operationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedInstanceOperationProperties | undefined;
+	readonly properties?: ManagedInstanceOperationProperties;
 }
 export class managedInstances_vulnerabilityAssessments
 	extends ArmResource<managedInstances_vulnerabilityAssessmentsComponentInputs>
@@ -221,7 +221,7 @@ export interface managedInstances_vulnerabilityAssessmentsComponentOutputs {
 }
 export interface managedInstances_vulnerabilityAssessmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedInstanceVulnerabilityAssessmentProperties | undefined;
+	readonly properties?: ManagedInstanceVulnerabilityAssessmentProperties;
 }
 export class servers_administrators
 	extends ArmResource<servers_administratorsComponentInputs>
@@ -241,7 +241,7 @@ export interface servers_administratorsComponentOutputs {
 }
 export interface servers_administratorsComponentInputs {
 	readonly name: string;
-	readonly properties?: AdministratorProperties | undefined;
+	readonly properties?: AdministratorProperties;
 }
 export class servers_databases_securityAlertPolicies
 	extends ArmResource<servers_databases_securityAlertPoliciesComponentInputs>
@@ -261,7 +261,7 @@ export interface servers_databases_securityAlertPoliciesComponentOutputs {
 }
 export interface servers_databases_securityAlertPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityAlertPolicyProperties | undefined;
+	readonly properties?: SecurityAlertPolicyProperties;
 }
 export class servers_privateEndpointConnections
 	extends ArmResource<servers_privateEndpointConnectionsComponentInputs>
@@ -281,7 +281,7 @@ export interface servers_privateEndpointConnectionsComponentOutputs {
 }
 export interface servers_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class servers_privateLinkResources
 	extends ArmResource<servers_privateLinkResourcesComponentInputs>
@@ -301,7 +301,7 @@ export interface servers_privateLinkResourcesComponentOutputs {
 }
 export interface servers_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export class servers_vulnerabilityAssessments
 	extends ArmResource<servers_vulnerabilityAssessmentsComponentInputs>
@@ -321,19 +321,19 @@ export interface servers_vulnerabilityAssessmentsComponentOutputs {
 }
 export interface servers_vulnerabilityAssessmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerVulnerabilityAssessmentProperties | undefined;
+	readonly properties?: ServerVulnerabilityAssessmentProperties;
 }
 export interface AdministratorProperties {
 	readonly administratorType: "ActiveDirectory";
 	readonly login: string;
 	readonly sid: string;
-	readonly tenantId?: string | undefined;
+	readonly tenantId?: string;
 }
 export interface BaseLongTermRetentionPolicyProperties {
-	readonly monthlyRetention?: string | undefined;
-	readonly weeklyRetention?: string | undefined;
-	readonly weekOfYear?: number | undefined;
-	readonly yearlyRetention?: string | undefined;
+	readonly monthlyRetention?: string;
+	readonly weeklyRetention?: string;
+	readonly weekOfYear?: number;
+	readonly yearlyRetention?: string;
 }
 export interface InstancePoolProperties {
 	readonly licenseType: "BasePrice" | "LicenseIncluded";
@@ -341,161 +341,162 @@ export interface InstancePoolProperties {
 	readonly vCores: number;
 }
 export interface ManagedDatabaseProperties {
-	readonly catalogCollation?: ("DATABASE_DEFAULT" | "SQL_Latin1_General_CP1_CI_AS") | undefined;
-	readonly collation?: string | undefined;
+	readonly catalogCollation?: "DATABASE_DEFAULT" | "SQL_Latin1_General_CP1_CI_AS";
+	readonly collation?: string;
 	readonly createMode?:
-		| ("Default" | "PointInTimeRestore" | "Recovery" | "RestoreExternalBackup" | "RestoreLongTermRetentionBackup")
-		| undefined;
-	readonly creationDate?: string | undefined;
-	readonly defaultSecondaryLocation?: string | undefined;
-	readonly earliestRestorePoint?: string | undefined;
-	readonly failoverGroupId?: string | undefined;
-	readonly longTermRetentionBackupResourceId?: string | undefined;
-	readonly recoverableDatabaseId?: string | undefined;
-	readonly restorableDroppedDatabaseId?: string | undefined;
-	readonly restorePointInTime?: string | undefined;
-	readonly sourceDatabaseId?: string | undefined;
-	readonly status?:
-		| ("Creating" | "Inaccessible" | "Offline" | "Online" | "Restoring" | "Shutdown" | "Updating")
-		| undefined;
-	readonly storageContainerSasToken?: string | undefined;
-	readonly storageContainerUri?: string | undefined;
+		| "Default"
+		| "PointInTimeRestore"
+		| "Recovery"
+		| "RestoreExternalBackup"
+		| "RestoreLongTermRetentionBackup";
+	readonly creationDate?: string;
+	readonly defaultSecondaryLocation?: string;
+	readonly earliestRestorePoint?: string;
+	readonly failoverGroupId?: string;
+	readonly longTermRetentionBackupResourceId?: string;
+	readonly recoverableDatabaseId?: string;
+	readonly restorableDroppedDatabaseId?: string;
+	readonly restorePointInTime?: string;
+	readonly sourceDatabaseId?: string;
+	readonly status?: "Creating" | "Inaccessible" | "Offline" | "Online" | "Restoring" | "Shutdown" | "Updating";
+	readonly storageContainerSasToken?: string;
+	readonly storageContainerUri?: string;
 }
 export interface ManagedDatabaseRestoreDetailsProperties {
-	readonly blockReason?: string | undefined;
-	readonly currentRestoringFileName?: string | undefined;
-	readonly lastRestoredFileName?: string | undefined;
-	readonly lastRestoredFileTime?: string | undefined;
-	readonly lastUploadedFileName?: string | undefined;
-	readonly lastUploadedFileTime?: string | undefined;
-	readonly numberOfFilesDetected?: number | undefined;
-	readonly percentCompleted?: number | undefined;
-	readonly status?: string | undefined;
-	readonly unrestorableFiles?: string[] | undefined;
+	readonly blockReason?: string;
+	readonly currentRestoringFileName?: string;
+	readonly lastRestoredFileName?: string;
+	readonly lastRestoredFileTime?: string;
+	readonly lastUploadedFileName?: string;
+	readonly lastUploadedFileTime?: string;
+	readonly numberOfFilesDetected?: number;
+	readonly percentCompleted?: number;
+	readonly status?: string;
+	readonly unrestorableFiles?: string[];
 }
 export interface ManagedInstanceLongTermRetentionBackupProperties {
-	readonly backupExpirationTime?: string | undefined;
-	readonly backupTime?: string | undefined;
-	readonly databaseDeletionTime?: string | undefined;
-	readonly databaseName?: string | undefined;
-	readonly managedInstanceCreateTime?: string | undefined;
-	readonly managedInstanceName?: string | undefined;
+	readonly backupExpirationTime?: string;
+	readonly backupTime?: string;
+	readonly databaseDeletionTime?: string;
+	readonly databaseName?: string;
+	readonly managedInstanceCreateTime?: string;
+	readonly managedInstanceName?: string;
 }
 export interface ManagedInstanceOperationParametersPair {
-	readonly currentParameters?: UpsertManagedServerOperationParameters | undefined;
-	readonly requestedParameters?: UpsertManagedServerOperationParameters | undefined;
+	readonly currentParameters?: UpsertManagedServerOperationParameters;
+	readonly requestedParameters?: UpsertManagedServerOperationParameters;
 }
 export interface ManagedInstanceOperationProperties {
-	readonly description?: string | undefined;
-	readonly errorCode?: number | undefined;
-	readonly errorDescription?: string | undefined;
-	readonly errorSeverity?: number | undefined;
-	readonly estimatedCompletionTime?: string | undefined;
-	readonly isCancellable?: boolean | undefined;
-	readonly isUserError?: boolean | undefined;
-	readonly managedInstanceName?: string | undefined;
-	readonly operation?: string | undefined;
-	readonly operationFriendlyName?: string | undefined;
-	readonly operationParameters?: ManagedInstanceOperationParametersPair | undefined;
-	readonly operationSteps?: ManagedInstanceOperationSteps | undefined;
-	readonly percentComplete?: number | undefined;
-	readonly startTime?: string | undefined;
-	readonly state?: ("CancelInProgress" | "Cancelled" | "Failed" | "InProgress" | "Pending" | "Succeeded") | undefined;
+	readonly description?: string;
+	readonly errorCode?: number;
+	readonly errorDescription?: string;
+	readonly errorSeverity?: number;
+	readonly estimatedCompletionTime?: string;
+	readonly isCancellable?: boolean;
+	readonly isUserError?: boolean;
+	readonly managedInstanceName?: string;
+	readonly operation?: string;
+	readonly operationFriendlyName?: string;
+	readonly operationParameters?: ManagedInstanceOperationParametersPair;
+	readonly operationSteps?: ManagedInstanceOperationSteps;
+	readonly percentComplete?: number;
+	readonly startTime?: string;
+	readonly state?: "CancelInProgress" | "Cancelled" | "Failed" | "InProgress" | "Pending" | "Succeeded";
 }
 export interface ManagedInstanceOperationSteps {
-	readonly currentStep?: number | undefined;
-	readonly stepsList?: UpsertManagedServerOperationStep[] | undefined;
-	readonly totalSteps?: string | undefined;
+	readonly currentStep?: number;
+	readonly stepsList?: UpsertManagedServerOperationStep[];
+	readonly totalSteps?: string;
 }
 export interface ManagedInstanceProperties {
-	readonly administratorLogin?: string | undefined;
-	readonly administratorLoginPassword?: string | undefined;
-	readonly collation?: string | undefined;
-	readonly dnsZone?: string | undefined;
-	readonly dnsZonePartner?: string | undefined;
-	readonly fullyQualifiedDomainName?: string | undefined;
-	readonly instancePoolId?: string | undefined;
-	readonly licenseType?: ("BasePrice" | "LicenseIncluded") | undefined;
-	readonly maintenanceConfigurationId?: string | undefined;
-	readonly managedInstanceCreateMode?: ("Default" | "PointInTimeRestore") | undefined;
+	readonly administratorLogin?: string;
+	readonly administratorLoginPassword?: string;
+	readonly collation?: string;
+	readonly dnsZone?: string;
+	readonly dnsZonePartner?: string;
+	readonly fullyQualifiedDomainName?: string;
+	readonly instancePoolId?: string;
+	readonly licenseType?: "BasePrice" | "LicenseIncluded";
+	readonly maintenanceConfigurationId?: string;
+	readonly managedInstanceCreateMode?: "Default" | "PointInTimeRestore";
 }
 export interface ManagedInstanceVulnerabilityAssessmentProperties {
-	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties | undefined;
-	readonly storageAccountAccessKey?: string | undefined;
+	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties;
+	readonly storageAccountAccessKey?: string;
 	readonly storageContainerPath: string;
-	readonly storageContainerSasKey?: string | undefined;
+	readonly storageContainerSasKey?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpointProperty | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly privateEndpoint?: PrivateEndpointProperty;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty;
+	readonly provisioningState?: string;
 }
 export interface PrivateEndpointProperty {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
 }
 export interface PrivateLinkServiceConnectionStateProperty {
-	readonly actionsRequired?: string | undefined;
+	readonly actionsRequired?: string;
 	readonly description: string;
 	readonly status: string;
 }
 export interface ResourceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned";
 }
 export interface SecurityAlertPolicyProperties {
-	readonly creationTime?: string | undefined;
-	readonly disabledAlerts?: string[] | undefined;
-	readonly emailAccountAdmins?: boolean | undefined;
-	readonly emailAddresses?: string[] | undefined;
-	readonly retentionDays?: number | undefined;
+	readonly creationTime?: string;
+	readonly disabledAlerts?: string[];
+	readonly emailAccountAdmins?: boolean;
+	readonly emailAddresses?: string[];
+	readonly retentionDays?: number;
 	readonly state: "Disabled" | "Enabled";
-	readonly storageAccountAccessKey?: string | undefined;
-	readonly storageEndpoint?: string | undefined;
+	readonly storageAccountAccessKey?: string;
+	readonly storageEndpoint?: string;
 }
 export interface SensitivityLabelProperties {
-	readonly informationType?: string | undefined;
-	readonly informationTypeId?: string | undefined;
-	readonly isDisabled?: boolean | undefined;
-	readonly labelId?: string | undefined;
-	readonly labelName?: string | undefined;
-	readonly rank?: ("Critical" | "High" | "Low" | "Medium") | undefined;
+	readonly informationType?: string;
+	readonly informationTypeId?: string;
+	readonly isDisabled?: boolean;
+	readonly labelId?: string;
+	readonly labelName?: string;
+	readonly rank?: "Critical" | "High" | "Low" | "Medium";
 }
 export interface ServerVulnerabilityAssessmentProperties {
-	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties | undefined;
-	readonly storageAccountAccessKey?: string | undefined;
+	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties;
+	readonly storageAccountAccessKey?: string;
 	readonly storageContainerPath: string;
-	readonly storageContainerSasKey?: string | undefined;
+	readonly storageContainerSasKey?: string;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
 	readonly name: string;
-	readonly size?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly size?: string;
+	readonly tier?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UpsertManagedServerOperationParameters {
-	readonly family?: string | undefined;
-	readonly storageSizeInGB?: number | undefined;
-	readonly tier?: string | undefined;
-	readonly vCores?: number | undefined;
+	readonly family?: string;
+	readonly storageSizeInGB?: number;
+	readonly tier?: string;
+	readonly vCores?: number;
 }
 export interface UpsertManagedServerOperationStep {
-	readonly name?: string | undefined;
-	readonly order?: number | undefined;
-	readonly status?: ("Canceled" | "Completed" | "Failed" | "InProgress" | "NotStarted" | "SlowedDown") | undefined;
+	readonly name?: string;
+	readonly order?: number;
+	readonly status?: "Canceled" | "Completed" | "Failed" | "InProgress" | "NotStarted" | "SlowedDown";
 }
 export interface VulnerabilityAssessmentRecurringScansProperties {
-	readonly emails?: string[] | undefined;
-	readonly emailSubscriptionAdmins?: boolean | undefined;
-	readonly isEnabled?: boolean | undefined;
+	readonly emails?: string[];
+	readonly emailSubscriptionAdmins?: boolean;
+	readonly isEnabled?: boolean;
 }
 export default {
 	instancePools: instancePools,

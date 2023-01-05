@@ -11,8 +11,8 @@ export class CapacityProvider
 export interface CapacityProviderComponentOutputs {}
 export interface CapacityProviderComponentInputs {
 	readonly AutoScalingGroupProvider: AutoScalingGroupProvider;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Cluster extends CfnResource<ClusterComponentInputs> implements ClusterComponentOutputs {
@@ -25,13 +25,13 @@ export interface ClusterComponentOutputs {
 	readonly Arn: string;
 }
 export interface ClusterComponentInputs {
-	readonly CapacityProviders?: (string[] | undefined) | undefined;
-	readonly ClusterName?: (string | undefined) | undefined;
-	readonly ClusterSettings?: (ClusterSettings[] | undefined) | undefined;
-	readonly Configuration?: (ClusterConfiguration | undefined) | undefined;
-	readonly DefaultCapacityProviderStrategy?: (CapacityProviderStrategyItem[] | undefined) | undefined;
-	readonly ServiceConnectDefaults?: (ServiceConnectDefaults | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CapacityProviders?: string[] | undefined;
+	readonly ClusterName?: string | undefined;
+	readonly ClusterSettings?: ClusterSettings[] | undefined;
+	readonly Configuration?: ClusterConfiguration | undefined;
+	readonly DefaultCapacityProviderStrategy?: CapacityProviderStrategyItem[] | undefined;
+	readonly ServiceConnectDefaults?: ServiceConnectDefaults | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ClusterCapacityProviderAssociations
@@ -73,28 +73,28 @@ export interface ServiceComponentOutputs {
 	readonly ServiceArn: string;
 }
 export interface ServiceComponentInputs {
-	readonly CapacityProviderStrategy?: (CapacityProviderStrategyItem[] | undefined) | undefined;
-	readonly Cluster?: (string | undefined) | undefined;
-	readonly DeploymentConfiguration?: (DeploymentConfiguration | undefined) | undefined;
-	readonly DeploymentController?: (DeploymentController | undefined) | undefined;
-	readonly DesiredCount?: (number | undefined) | undefined;
-	readonly EnableECSManagedTags?: (boolean | undefined) | undefined;
-	readonly EnableExecuteCommand?: (boolean | undefined) | undefined;
-	readonly HealthCheckGracePeriodSeconds?: (number | undefined) | undefined;
-	readonly LaunchType?: (string | undefined) | undefined;
-	readonly LoadBalancers?: (LoadBalancer[] | undefined) | undefined;
-	readonly NetworkConfiguration?: (NetworkConfiguration | undefined) | undefined;
-	readonly PlacementConstraints?: (PlacementConstraint[] | undefined) | undefined;
-	readonly PlacementStrategies?: (PlacementStrategy[] | undefined) | undefined;
-	readonly PlatformVersion?: (string | undefined) | undefined;
-	readonly PropagateTags?: (string | undefined) | undefined;
-	readonly Role?: (string | undefined) | undefined;
-	readonly SchedulingStrategy?: (string | undefined) | undefined;
-	readonly ServiceConnectConfiguration?: (ServiceConnectConfiguration | undefined) | undefined;
-	readonly ServiceName?: (string | undefined) | undefined;
-	readonly ServiceRegistries?: (ServiceRegistry[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TaskDefinition?: (string | undefined) | undefined;
+	readonly CapacityProviderStrategy?: CapacityProviderStrategyItem[] | undefined;
+	readonly Cluster?: string | undefined;
+	readonly DeploymentConfiguration?: DeploymentConfiguration | undefined;
+	readonly DeploymentController?: DeploymentController | undefined;
+	readonly DesiredCount?: number | undefined;
+	readonly EnableECSManagedTags?: boolean | undefined;
+	readonly EnableExecuteCommand?: boolean | undefined;
+	readonly HealthCheckGracePeriodSeconds?: number | undefined;
+	readonly LaunchType?: string | undefined;
+	readonly LoadBalancers?: LoadBalancer[] | undefined;
+	readonly NetworkConfiguration?: NetworkConfiguration | undefined;
+	readonly PlacementConstraints?: PlacementConstraint[] | undefined;
+	readonly PlacementStrategies?: PlacementStrategy[] | undefined;
+	readonly PlatformVersion?: string | undefined;
+	readonly PropagateTags?: string | undefined;
+	readonly Role?: string | undefined;
+	readonly SchedulingStrategy?: string | undefined;
+	readonly ServiceConnectConfiguration?: ServiceConnectConfiguration | undefined;
+	readonly ServiceName?: string | undefined;
+	readonly ServiceRegistries?: ServiceRegistry[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TaskDefinition?: string | undefined;
 	readonly LogicalId: string;
 }
 export class TaskDefinition extends CfnResource<TaskDefinitionComponentInputs> implements TaskDefinitionComponentOutputs {
@@ -107,23 +107,23 @@ export interface TaskDefinitionComponentOutputs {
 	readonly TaskDefinitionArn: string;
 }
 export interface TaskDefinitionComponentInputs {
-	readonly ContainerDefinitions?: (ContainerDefinition[] | undefined) | undefined;
-	readonly Cpu?: (string | undefined) | undefined;
-	readonly EphemeralStorage?: (EphemeralStorage | undefined) | undefined;
-	readonly ExecutionRoleArn?: (string | undefined) | undefined;
-	readonly Family?: (string | undefined) | undefined;
-	readonly InferenceAccelerators?: (InferenceAccelerator[] | undefined) | undefined;
-	readonly IpcMode?: (string | undefined) | undefined;
-	readonly Memory?: (string | undefined) | undefined;
-	readonly NetworkMode?: (string | undefined) | undefined;
-	readonly PidMode?: (string | undefined) | undefined;
-	readonly PlacementConstraints?: (TaskDefinitionPlacementConstraint[] | undefined) | undefined;
-	readonly ProxyConfiguration?: (ProxyConfiguration | undefined) | undefined;
-	readonly RequiresCompatibilities?: (string[] | undefined) | undefined;
-	readonly RuntimePlatform?: (RuntimePlatform | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TaskRoleArn?: (string | undefined) | undefined;
-	readonly Volumes?: (Volume[] | undefined) | undefined;
+	readonly ContainerDefinitions?: ContainerDefinition[] | undefined;
+	readonly Cpu?: string | undefined;
+	readonly EphemeralStorage?: EphemeralStorage | undefined;
+	readonly ExecutionRoleArn?: string | undefined;
+	readonly Family?: string | undefined;
+	readonly InferenceAccelerators?: InferenceAccelerator[] | undefined;
+	readonly IpcMode?: string | undefined;
+	readonly Memory?: string | undefined;
+	readonly NetworkMode?: string | undefined;
+	readonly PidMode?: string | undefined;
+	readonly PlacementConstraints?: TaskDefinitionPlacementConstraint[] | undefined;
+	readonly ProxyConfiguration?: ProxyConfiguration | undefined;
+	readonly RequiresCompatibilities?: string[] | undefined;
+	readonly RuntimePlatform?: RuntimePlatform | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TaskRoleArn?: string | undefined;
+	readonly Volumes?: Volume[] | undefined;
 	readonly LogicalId: string;
 }
 export class TaskSet extends CfnResource<TaskSetComponentInputs> implements TaskSetComponentOutputs {
@@ -139,62 +139,62 @@ export interface TaskSetComponentInputs {
 	readonly Cluster: string;
 	readonly Service: string;
 	readonly TaskDefinition: string;
-	readonly ExternalId?: (string | undefined) | undefined;
-	readonly LaunchType?: (string | undefined) | undefined;
-	readonly LoadBalancers?: (LoadBalancer[] | undefined) | undefined;
-	readonly NetworkConfiguration?: (NetworkConfiguration | undefined) | undefined;
-	readonly PlatformVersion?: (string | undefined) | undefined;
-	readonly Scale?: (Scale | undefined) | undefined;
-	readonly ServiceRegistries?: (ServiceRegistry[] | undefined) | undefined;
+	readonly ExternalId?: string | undefined;
+	readonly LaunchType?: string | undefined;
+	readonly LoadBalancers?: LoadBalancer[] | undefined;
+	readonly NetworkConfiguration?: NetworkConfiguration | undefined;
+	readonly PlatformVersion?: string | undefined;
+	readonly Scale?: Scale | undefined;
+	readonly ServiceRegistries?: ServiceRegistry[] | undefined;
 	readonly LogicalId: string;
 }
 export interface AutoScalingGroupProvider {
 	readonly AutoScalingGroupArn: string;
-	readonly ManagedScaling?: (ManagedScaling | undefined) | undefined;
-	readonly ManagedTerminationProtection?: (string | undefined) | undefined;
+	readonly ManagedScaling?: ManagedScaling | undefined;
+	readonly ManagedTerminationProtection?: string | undefined;
 }
 export interface ManagedScaling {
-	readonly InstanceWarmupPeriod?: (number | undefined) | undefined;
-	readonly MaximumScalingStepSize?: (number | undefined) | undefined;
-	readonly MinimumScalingStepSize?: (number | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
-	readonly TargetCapacity?: (number | undefined) | undefined;
+	readonly InstanceWarmupPeriod?: number | undefined;
+	readonly MaximumScalingStepSize?: number | undefined;
+	readonly MinimumScalingStepSize?: number | undefined;
+	readonly Status?: string | undefined;
+	readonly TargetCapacity?: number | undefined;
 }
 export interface CapacityProviderStrategyItem {
-	readonly Base?: (number | undefined) | undefined;
-	readonly CapacityProvider?: (string | undefined) | undefined;
-	readonly Weight?: (number | undefined) | undefined;
+	readonly Base?: number | undefined;
+	readonly CapacityProvider?: string | undefined;
+	readonly Weight?: number | undefined;
 }
 export interface ClusterConfiguration {
-	readonly ExecuteCommandConfiguration?: (ExecuteCommandConfiguration | undefined) | undefined;
+	readonly ExecuteCommandConfiguration?: ExecuteCommandConfiguration | undefined;
 }
 export interface ClusterSettings {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface ExecuteCommandConfiguration {
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly LogConfiguration?: (ExecuteCommandLogConfiguration | undefined) | undefined;
-	readonly Logging?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly LogConfiguration?: ExecuteCommandLogConfiguration | undefined;
+	readonly Logging?: string | undefined;
 }
 export interface ExecuteCommandLogConfiguration {
-	readonly CloudWatchEncryptionEnabled?: (boolean | undefined) | undefined;
-	readonly CloudWatchLogGroupName?: (string | undefined) | undefined;
-	readonly S3BucketName?: (string | undefined) | undefined;
-	readonly S3EncryptionEnabled?: (boolean | undefined) | undefined;
-	readonly S3KeyPrefix?: (string | undefined) | undefined;
+	readonly CloudWatchEncryptionEnabled?: boolean | undefined;
+	readonly CloudWatchLogGroupName?: string | undefined;
+	readonly S3BucketName?: string | undefined;
+	readonly S3EncryptionEnabled?: boolean | undefined;
+	readonly S3KeyPrefix?: string | undefined;
 }
 export interface ServiceConnectDefaults {
-	readonly Namespace?: (string | undefined) | undefined;
+	readonly Namespace?: string | undefined;
 }
 export interface CapacityProviderStrategy {
-	readonly Base?: (number | undefined) | undefined;
+	readonly Base?: number | undefined;
 	readonly CapacityProvider: string;
-	readonly Weight?: (number | undefined) | undefined;
+	readonly Weight?: number | undefined;
 }
 export interface AwsVpcConfiguration {
-	readonly AssignPublicIp?: (string | undefined) | undefined;
-	readonly SecurityGroups?: (string[] | undefined) | undefined;
+	readonly AssignPublicIp?: string | undefined;
+	readonly SecurityGroups?: string[] | undefined;
 	readonly Subnets: string[];
 }
 export interface DeploymentCircuitBreaker {
@@ -202,33 +202,33 @@ export interface DeploymentCircuitBreaker {
 	readonly Rollback: boolean;
 }
 export interface DeploymentConfiguration {
-	readonly DeploymentCircuitBreaker?: (DeploymentCircuitBreaker | undefined) | undefined;
-	readonly MaximumPercent?: (number | undefined) | undefined;
-	readonly MinimumHealthyPercent?: (number | undefined) | undefined;
+	readonly DeploymentCircuitBreaker?: DeploymentCircuitBreaker | undefined;
+	readonly MaximumPercent?: number | undefined;
+	readonly MinimumHealthyPercent?: number | undefined;
 }
 export interface DeploymentController {
-	readonly Type?: (string | undefined) | undefined;
+	readonly Type?: string | undefined;
 }
 export interface LoadBalancer {
-	readonly ContainerName?: (string | undefined) | undefined;
+	readonly ContainerName?: string | undefined;
 	readonly ContainerPort: number;
-	readonly LoadBalancerName?: (string | undefined) | undefined;
-	readonly TargetGroupArn?: (string | undefined) | undefined;
+	readonly LoadBalancerName?: string | undefined;
+	readonly TargetGroupArn?: string | undefined;
 }
 export interface LogConfiguration {
-	readonly LogDriver?: (string | undefined) | undefined;
-	readonly Options?: ({ [key: string]: string } | undefined) | undefined;
-	readonly SecretOptions?: (Secret[] | undefined) | undefined;
+	readonly LogDriver?: string | undefined;
+	readonly Options?: { [key: string]: string } | undefined;
+	readonly SecretOptions?: Secret[] | undefined;
 }
 export interface NetworkConfiguration {
-	readonly AwsvpcConfiguration?: (AwsVpcConfiguration | undefined) | undefined;
+	readonly AwsvpcConfiguration?: AwsVpcConfiguration | undefined;
 }
 export interface PlacementConstraint {
-	readonly Expression?: (string | undefined) | undefined;
+	readonly Expression?: string | undefined;
 	readonly Type: string;
 }
 export interface PlacementStrategy {
-	readonly Field?: (string | undefined) | undefined;
+	readonly Field?: string | undefined;
 	readonly Type: string;
 }
 export interface Secret {
@@ -236,180 +236,180 @@ export interface Secret {
 	readonly ValueFrom: string;
 }
 export interface ServiceConnectClientAlias {
-	readonly DnsName?: (string | undefined) | undefined;
+	readonly DnsName?: string | undefined;
 	readonly Port: number;
 }
 export interface ServiceConnectConfiguration {
 	readonly Enabled: boolean;
-	readonly LogConfiguration?: (LogConfiguration | undefined) | undefined;
-	readonly Namespace?: (string | undefined) | undefined;
-	readonly Services?: (ServiceConnectService[] | undefined) | undefined;
+	readonly LogConfiguration?: LogConfiguration | undefined;
+	readonly Namespace?: string | undefined;
+	readonly Services?: ServiceConnectService[] | undefined;
 }
 export interface ServiceConnectService {
-	readonly ClientAliases?: (ServiceConnectClientAlias[] | undefined) | undefined;
-	readonly DiscoveryName?: (string | undefined) | undefined;
-	readonly IngressPortOverride?: (number | undefined) | undefined;
+	readonly ClientAliases?: ServiceConnectClientAlias[] | undefined;
+	readonly DiscoveryName?: string | undefined;
+	readonly IngressPortOverride?: number | undefined;
 	readonly PortName: string;
 }
 export interface ServiceRegistry {
-	readonly ContainerName?: (string | undefined) | undefined;
-	readonly ContainerPort?: (number | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly RegistryArn?: (string | undefined) | undefined;
+	readonly ContainerName?: string | undefined;
+	readonly ContainerPort?: number | undefined;
+	readonly Port?: number | undefined;
+	readonly RegistryArn?: string | undefined;
 }
 export interface AuthorizationConfig {
-	readonly AccessPointId?: (string | undefined) | undefined;
-	readonly IAM?: (string | undefined) | undefined;
+	readonly AccessPointId?: string | undefined;
+	readonly IAM?: string | undefined;
 }
 export interface ContainerDefinition {
-	readonly Command?: (string[] | undefined) | undefined;
-	readonly Cpu?: (number | undefined) | undefined;
-	readonly DependsOn?: (ContainerDependency[] | undefined) | undefined;
-	readonly DisableNetworking?: (boolean | undefined) | undefined;
-	readonly DnsSearchDomains?: (string[] | undefined) | undefined;
-	readonly DnsServers?: (string[] | undefined) | undefined;
-	readonly DockerLabels?: ({ [key: string]: string } | undefined) | undefined;
-	readonly DockerSecurityOptions?: (string[] | undefined) | undefined;
-	readonly EntryPoint?: (string[] | undefined) | undefined;
-	readonly Environment?: (KeyValuePair[] | undefined) | undefined;
-	readonly EnvironmentFiles?: (EnvironmentFile[] | undefined) | undefined;
-	readonly Essential?: (boolean | undefined) | undefined;
-	readonly ExtraHosts?: (HostEntry[] | undefined) | undefined;
-	readonly FirelensConfiguration?: (FirelensConfiguration | undefined) | undefined;
-	readonly HealthCheck?: (HealthCheck | undefined) | undefined;
-	readonly Hostname?: (string | undefined) | undefined;
+	readonly Command?: string[] | undefined;
+	readonly Cpu?: number | undefined;
+	readonly DependsOn?: ContainerDependency[] | undefined;
+	readonly DisableNetworking?: boolean | undefined;
+	readonly DnsSearchDomains?: string[] | undefined;
+	readonly DnsServers?: string[] | undefined;
+	readonly DockerLabels?: { [key: string]: string } | undefined;
+	readonly DockerSecurityOptions?: string[] | undefined;
+	readonly EntryPoint?: string[] | undefined;
+	readonly Environment?: KeyValuePair[] | undefined;
+	readonly EnvironmentFiles?: EnvironmentFile[] | undefined;
+	readonly Essential?: boolean | undefined;
+	readonly ExtraHosts?: HostEntry[] | undefined;
+	readonly FirelensConfiguration?: FirelensConfiguration | undefined;
+	readonly HealthCheck?: HealthCheck | undefined;
+	readonly Hostname?: string | undefined;
 	readonly Image: string;
-	readonly Interactive?: (boolean | undefined) | undefined;
-	readonly Links?: (string[] | undefined) | undefined;
-	readonly LinuxParameters?: (LinuxParameters | undefined) | undefined;
-	readonly LogConfiguration?: (LogConfiguration | undefined) | undefined;
-	readonly Memory?: (number | undefined) | undefined;
-	readonly MemoryReservation?: (number | undefined) | undefined;
-	readonly MountPoints?: (MountPoint[] | undefined) | undefined;
+	readonly Interactive?: boolean | undefined;
+	readonly Links?: string[] | undefined;
+	readonly LinuxParameters?: LinuxParameters | undefined;
+	readonly LogConfiguration?: LogConfiguration | undefined;
+	readonly Memory?: number | undefined;
+	readonly MemoryReservation?: number | undefined;
+	readonly MountPoints?: MountPoint[] | undefined;
 	readonly Name: string;
-	readonly PortMappings?: (PortMapping[] | undefined) | undefined;
-	readonly Privileged?: (boolean | undefined) | undefined;
-	readonly PseudoTerminal?: (boolean | undefined) | undefined;
-	readonly ReadonlyRootFilesystem?: (boolean | undefined) | undefined;
-	readonly RepositoryCredentials?: (RepositoryCredentials | undefined) | undefined;
-	readonly ResourceRequirements?: (ResourceRequirement[] | undefined) | undefined;
-	readonly Secrets?: (Secret[] | undefined) | undefined;
-	readonly StartTimeout?: (number | undefined) | undefined;
-	readonly StopTimeout?: (number | undefined) | undefined;
-	readonly SystemControls?: (SystemControl[] | undefined) | undefined;
-	readonly Ulimits?: (Ulimit[] | undefined) | undefined;
-	readonly User?: (string | undefined) | undefined;
-	readonly VolumesFrom?: (VolumeFrom[] | undefined) | undefined;
-	readonly WorkingDirectory?: (string | undefined) | undefined;
+	readonly PortMappings?: PortMapping[] | undefined;
+	readonly Privileged?: boolean | undefined;
+	readonly PseudoTerminal?: boolean | undefined;
+	readonly ReadonlyRootFilesystem?: boolean | undefined;
+	readonly RepositoryCredentials?: RepositoryCredentials | undefined;
+	readonly ResourceRequirements?: ResourceRequirement[] | undefined;
+	readonly Secrets?: Secret[] | undefined;
+	readonly StartTimeout?: number | undefined;
+	readonly StopTimeout?: number | undefined;
+	readonly SystemControls?: SystemControl[] | undefined;
+	readonly Ulimits?: Ulimit[] | undefined;
+	readonly User?: string | undefined;
+	readonly VolumesFrom?: VolumeFrom[] | undefined;
+	readonly WorkingDirectory?: string | undefined;
 }
 export interface ContainerDependency {
-	readonly Condition?: (string | undefined) | undefined;
-	readonly ContainerName?: (string | undefined) | undefined;
+	readonly Condition?: string | undefined;
+	readonly ContainerName?: string | undefined;
 }
 export interface Device {
-	readonly ContainerPath?: (string | undefined) | undefined;
-	readonly HostPath?: (string | undefined) | undefined;
-	readonly Permissions?: (string[] | undefined) | undefined;
+	readonly ContainerPath?: string | undefined;
+	readonly HostPath?: string | undefined;
+	readonly Permissions?: string[] | undefined;
 }
 export interface DockerVolumeConfiguration {
-	readonly Autoprovision?: (boolean | undefined) | undefined;
-	readonly Driver?: (string | undefined) | undefined;
-	readonly DriverOpts?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Labels?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Scope?: (string | undefined) | undefined;
+	readonly Autoprovision?: boolean | undefined;
+	readonly Driver?: string | undefined;
+	readonly DriverOpts?: { [key: string]: string } | undefined;
+	readonly Labels?: { [key: string]: string } | undefined;
+	readonly Scope?: string | undefined;
 }
 export interface EFSVolumeConfiguration {
-	readonly AuthorizationConfig?: (AuthorizationConfig | undefined) | undefined;
+	readonly AuthorizationConfig?: AuthorizationConfig | undefined;
 	readonly FilesystemId: string;
-	readonly RootDirectory?: (string | undefined) | undefined;
-	readonly TransitEncryption?: (string | undefined) | undefined;
-	readonly TransitEncryptionPort?: (number | undefined) | undefined;
+	readonly RootDirectory?: string | undefined;
+	readonly TransitEncryption?: string | undefined;
+	readonly TransitEncryptionPort?: number | undefined;
 }
 export interface EnvironmentFile {
-	readonly Type?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Type?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface EphemeralStorage {
-	readonly SizeInGiB?: (number | undefined) | undefined;
+	readonly SizeInGiB?: number | undefined;
 }
 export interface FirelensConfiguration {
-	readonly Options?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Options?: { [key: string]: string } | undefined;
+	readonly Type?: string | undefined;
 }
 export interface HealthCheck {
-	readonly Command?: (string[] | undefined) | undefined;
-	readonly Interval?: (number | undefined) | undefined;
-	readonly Retries?: (number | undefined) | undefined;
-	readonly StartPeriod?: (number | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
+	readonly Command?: string[] | undefined;
+	readonly Interval?: number | undefined;
+	readonly Retries?: number | undefined;
+	readonly StartPeriod?: number | undefined;
+	readonly Timeout?: number | undefined;
 }
 export interface HostEntry {
-	readonly Hostname?: (string | undefined) | undefined;
-	readonly IpAddress?: (string | undefined) | undefined;
+	readonly Hostname?: string | undefined;
+	readonly IpAddress?: string | undefined;
 }
 export interface HostVolumeProperties {
-	readonly SourcePath?: (string | undefined) | undefined;
+	readonly SourcePath?: string | undefined;
 }
 export interface InferenceAccelerator {
-	readonly DeviceName?: (string | undefined) | undefined;
-	readonly DeviceType?: (string | undefined) | undefined;
+	readonly DeviceName?: string | undefined;
+	readonly DeviceType?: string | undefined;
 }
 export interface KernelCapabilities {
-	readonly Add?: (string[] | undefined) | undefined;
-	readonly Drop?: (string[] | undefined) | undefined;
+	readonly Add?: string[] | undefined;
+	readonly Drop?: string[] | undefined;
 }
 export interface KeyValuePair {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface LinuxParameters {
-	readonly Capabilities?: (KernelCapabilities | undefined) | undefined;
-	readonly Devices?: (Device[] | undefined) | undefined;
-	readonly InitProcessEnabled?: (boolean | undefined) | undefined;
-	readonly MaxSwap?: (number | undefined) | undefined;
-	readonly SharedMemorySize?: (number | undefined) | undefined;
-	readonly Swappiness?: (number | undefined) | undefined;
-	readonly Tmpfs?: (Tmpfs[] | undefined) | undefined;
+	readonly Capabilities?: KernelCapabilities | undefined;
+	readonly Devices?: Device[] | undefined;
+	readonly InitProcessEnabled?: boolean | undefined;
+	readonly MaxSwap?: number | undefined;
+	readonly SharedMemorySize?: number | undefined;
+	readonly Swappiness?: number | undefined;
+	readonly Tmpfs?: Tmpfs[] | undefined;
 }
 export interface MountPoint {
-	readonly ContainerPath?: (string | undefined) | undefined;
-	readonly ReadOnly?: (boolean | undefined) | undefined;
-	readonly SourceVolume?: (string | undefined) | undefined;
+	readonly ContainerPath?: string | undefined;
+	readonly ReadOnly?: boolean | undefined;
+	readonly SourceVolume?: string | undefined;
 }
 export interface PortMapping {
-	readonly AppProtocol?: (string | undefined) | undefined;
-	readonly ContainerPort?: (number | undefined) | undefined;
-	readonly HostPort?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
+	readonly AppProtocol?: string | undefined;
+	readonly ContainerPort?: number | undefined;
+	readonly HostPort?: number | undefined;
+	readonly Name?: string | undefined;
+	readonly Protocol?: string | undefined;
 }
 export interface ProxyConfiguration {
 	readonly ContainerName: string;
-	readonly ProxyConfigurationProperties?: (KeyValuePair[] | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly ProxyConfigurationProperties?: KeyValuePair[] | undefined;
+	readonly Type?: string | undefined;
 }
 export interface RepositoryCredentials {
-	readonly CredentialsParameter?: (string | undefined) | undefined;
+	readonly CredentialsParameter?: string | undefined;
 }
 export interface ResourceRequirement {
 	readonly Type: string;
 	readonly Value: string;
 }
 export interface RuntimePlatform {
-	readonly CpuArchitecture?: (string | undefined) | undefined;
-	readonly OperatingSystemFamily?: (string | undefined) | undefined;
+	readonly CpuArchitecture?: string | undefined;
+	readonly OperatingSystemFamily?: string | undefined;
 }
 export interface SystemControl {
-	readonly Namespace?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Namespace?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface TaskDefinitionPlacementConstraint {
-	readonly Expression?: (string | undefined) | undefined;
+	readonly Expression?: string | undefined;
 	readonly Type: string;
 }
 export interface Tmpfs {
-	readonly ContainerPath?: (string | undefined) | undefined;
-	readonly MountOptions?: (string[] | undefined) | undefined;
+	readonly ContainerPath?: string | undefined;
+	readonly MountOptions?: string[] | undefined;
 	readonly Size: number;
 }
 export interface Ulimit {
@@ -418,18 +418,18 @@ export interface Ulimit {
 	readonly SoftLimit: number;
 }
 export interface Volume {
-	readonly DockerVolumeConfiguration?: (DockerVolumeConfiguration | undefined) | undefined;
-	readonly EFSVolumeConfiguration?: (EFSVolumeConfiguration | undefined) | undefined;
-	readonly Host?: (HostVolumeProperties | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly DockerVolumeConfiguration?: DockerVolumeConfiguration | undefined;
+	readonly EFSVolumeConfiguration?: EFSVolumeConfiguration | undefined;
+	readonly Host?: HostVolumeProperties | undefined;
+	readonly Name?: string | undefined;
 }
 export interface VolumeFrom {
-	readonly ReadOnly?: (boolean | undefined) | undefined;
-	readonly SourceContainer?: (string | undefined) | undefined;
+	readonly ReadOnly?: boolean | undefined;
+	readonly SourceContainer?: string | undefined;
 }
 export interface Scale {
-	readonly Unit?: (string | undefined) | undefined;
-	readonly Value?: (number | undefined) | undefined;
+	readonly Unit?: string | undefined;
+	readonly Value?: number | undefined;
 }
 export default {
 	CapacityProvider: CapacityProvider,

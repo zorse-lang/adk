@@ -34,16 +34,16 @@ export interface BrokerComponentInputs {
 	readonly HostInstanceType: string;
 	readonly PubliclyAccessible: boolean;
 	readonly Users: User[];
-	readonly AuthenticationStrategy?: (string | undefined) | undefined;
-	readonly Configuration?: (ConfigurationId | undefined) | undefined;
-	readonly EncryptionOptions?: (EncryptionOptions | undefined) | undefined;
-	readonly LdapServerMetadata?: (LdapServerMetadata | undefined) | undefined;
-	readonly Logs?: (LogList | undefined) | undefined;
-	readonly MaintenanceWindowStartTime?: (MaintenanceWindow | undefined) | undefined;
-	readonly SecurityGroups?: (string[] | undefined) | undefined;
-	readonly StorageType?: (string | undefined) | undefined;
-	readonly SubnetIds?: (string[] | undefined) | undefined;
-	readonly Tags?: (TagsEntry[] | undefined) | undefined;
+	readonly AuthenticationStrategy?: string | undefined;
+	readonly Configuration?: ConfigurationId | undefined;
+	readonly EncryptionOptions?: EncryptionOptions | undefined;
+	readonly LdapServerMetadata?: LdapServerMetadata | undefined;
+	readonly Logs?: LogList | undefined;
+	readonly MaintenanceWindowStartTime?: MaintenanceWindow | undefined;
+	readonly SecurityGroups?: string[] | undefined;
+	readonly StorageType?: string | undefined;
+	readonly SubnetIds?: string[] | undefined;
+	readonly Tags?: TagsEntry[] | undefined;
 	readonly LogicalId: string;
 }
 export class Configuration extends CfnResource<ConfigurationComponentInputs> implements ConfigurationComponentOutputs {
@@ -64,9 +64,9 @@ export interface ConfigurationComponentInputs {
 	readonly EngineType: string;
 	readonly EngineVersion: string;
 	readonly Name: string;
-	readonly AuthenticationStrategy?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: (TagsEntry[] | undefined) | undefined;
+	readonly AuthenticationStrategy?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: TagsEntry[] | undefined;
 	readonly LogicalId: string;
 }
 export class ConfigurationAssociation
@@ -88,25 +88,25 @@ export interface ConfigurationId {
 	readonly Revision: number;
 }
 export interface EncryptionOptions {
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
 	readonly UseAwsOwnedKey: boolean;
 }
 export interface LdapServerMetadata {
 	readonly Hosts: string[];
 	readonly RoleBase: string;
-	readonly RoleName?: (string | undefined) | undefined;
+	readonly RoleName?: string | undefined;
 	readonly RoleSearchMatching: string;
-	readonly RoleSearchSubtree?: (boolean | undefined) | undefined;
+	readonly RoleSearchSubtree?: boolean | undefined;
 	readonly ServiceAccountPassword: string;
 	readonly ServiceAccountUsername: string;
 	readonly UserBase: string;
-	readonly UserRoleName?: (string | undefined) | undefined;
+	readonly UserRoleName?: string | undefined;
 	readonly UserSearchMatching: string;
-	readonly UserSearchSubtree?: (boolean | undefined) | undefined;
+	readonly UserSearchSubtree?: boolean | undefined;
 }
 export interface LogList {
-	readonly Audit?: (boolean | undefined) | undefined;
-	readonly General?: (boolean | undefined) | undefined;
+	readonly Audit?: boolean | undefined;
+	readonly General?: boolean | undefined;
 }
 export interface MaintenanceWindow {
 	readonly DayOfWeek: string;
@@ -118,8 +118,8 @@ export interface TagsEntry {
 	readonly Value: string;
 }
 export interface User {
-	readonly ConsoleAccess?: (boolean | undefined) | undefined;
-	readonly Groups?: (string[] | undefined) | undefined;
+	readonly ConsoleAccess?: boolean | undefined;
+	readonly Groups?: string[] | undefined;
 	readonly Password: string;
 	readonly Username: string;
 }

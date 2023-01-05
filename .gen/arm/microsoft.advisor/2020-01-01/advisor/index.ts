@@ -15,7 +15,7 @@ export interface configurationsComponentOutputs {
 }
 export interface configurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfigDataProperties | undefined;
+	readonly properties?: ConfigDataProperties;
 }
 export class recommendations
 	extends ArmResource<recommendationsComponentInputs>
@@ -35,7 +35,7 @@ export interface recommendationsComponentOutputs {
 }
 export interface recommendationsComponentInputs {
 	readonly name: string;
-	readonly properties?: RecommendationProperties | undefined;
+	readonly properties?: RecommendationProperties;
 }
 export class recommendations_suppressions
 	extends ArmResource<recommendations_suppressionsComponentInputs>
@@ -55,76 +55,74 @@ export interface recommendations_suppressionsComponentOutputs {
 }
 export interface recommendations_suppressionsComponentInputs {
 	readonly name: string;
-	readonly properties?: SuppressionProperties | undefined;
+	readonly properties?: SuppressionProperties;
 }
 export interface ConfigDataProperties {
-	readonly digests?: DigestConfig[] | undefined;
-	readonly exclude?: boolean | undefined;
-	readonly lowCpuThreshold?: ("10" | "15" | "20" | "5") | undefined;
+	readonly digests?: DigestConfig[];
+	readonly exclude?: boolean;
+	readonly lowCpuThreshold?: "10" | "15" | "20" | "5";
 }
 export interface DigestConfig {
-	readonly actionGroupResourceId?: string | undefined;
-	readonly categories?:
-		| ("Cost" | "HighAvailability" | "OperationalExcellence" | "Performance" | "Security"[])
-		| undefined;
-	readonly frequency?: number | undefined;
-	readonly language?: string | undefined;
-	readonly name?: string | undefined;
-	readonly state?: ("Active" | "Disabled") | undefined;
+	readonly actionGroupResourceId?: string;
+	readonly categories?: "Cost" | "HighAvailability" | "OperationalExcellence" | "Performance" | "Security"[];
+	readonly frequency?: number;
+	readonly language?: string;
+	readonly name?: string;
+	readonly state?: "Active" | "Disabled";
 }
 export interface RecommendationProperties {
-	readonly actions?: RecommendationPropertiesActionsItem[] | undefined;
-	readonly category?: ("Cost" | "HighAvailability" | "OperationalExcellence" | "Performance" | "Security") | undefined;
-	readonly description?: string | undefined;
-	readonly exposedMetadataProperties?: RecommendationPropertiesExposedMetadataProperties | undefined;
-	readonly extendedProperties?: RecommendationPropertiesExtendedProperties | undefined;
-	readonly impact?: ("High" | "Low" | "Medium") | undefined;
-	readonly impactedField?: string | undefined;
-	readonly impactedValue?: string | undefined;
-	readonly label?: string | undefined;
-	readonly lastUpdated?: string | undefined;
-	readonly learnMoreLink?: string | undefined;
-	readonly metadata?: RecommendationPropertiesMetadata | undefined;
-	readonly potentialBenefits?: string | undefined;
-	readonly recommendationTypeId?: string | undefined;
-	readonly remediation?: RecommendationPropertiesRemediation | undefined;
-	readonly resourceMetadata?: ResourceMetadata | undefined;
-	readonly shortDescription?: ShortDescription | undefined;
-	readonly suppressionIds?: string[] | undefined;
+	readonly actions?: RecommendationPropertiesActionsItem[];
+	readonly category?: "Cost" | "HighAvailability" | "OperationalExcellence" | "Performance" | "Security";
+	readonly description?: string;
+	readonly exposedMetadataProperties?: RecommendationPropertiesExposedMetadataProperties;
+	readonly extendedProperties?: RecommendationPropertiesExtendedProperties;
+	readonly impact?: "High" | "Low" | "Medium";
+	readonly impactedField?: string;
+	readonly impactedValue?: string;
+	readonly label?: string;
+	readonly lastUpdated?: string;
+	readonly learnMoreLink?: string;
+	readonly metadata?: RecommendationPropertiesMetadata;
+	readonly potentialBenefits?: string;
+	readonly recommendationTypeId?: string;
+	readonly remediation?: RecommendationPropertiesRemediation;
+	readonly resourceMetadata?: ResourceMetadata;
+	readonly shortDescription?: ShortDescription;
+	readonly suppressionIds?: string[];
 }
 export interface RecommendationPropertiesActionsItem {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface RecommendationPropertiesExposedMetadataProperties {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface RecommendationPropertiesExtendedProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RecommendationPropertiesMetadata {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface RecommendationPropertiesRemediation {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ResourceMetadata {
-	readonly action?: ResourceMetadataAction | undefined;
-	readonly plural?: string | undefined;
-	readonly resourceId?: string | undefined;
-	readonly singular?: string | undefined;
-	readonly source?: string | undefined;
+	readonly action?: ResourceMetadataAction;
+	readonly plural?: string;
+	readonly resourceId?: string;
+	readonly singular?: string;
+	readonly source?: string;
 }
 export interface ResourceMetadataAction {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ShortDescription {
-	readonly problem?: string | undefined;
-	readonly solution?: string | undefined;
+	readonly problem?: string;
+	readonly solution?: string;
 }
 export interface SuppressionProperties {
-	readonly expirationTimeStamp?: string | undefined;
-	readonly suppressionId?: string | undefined;
-	readonly ttl?: string | undefined;
+	readonly expirationTimeStamp?: string;
+	readonly suppressionId?: string;
+	readonly ttl?: string;
 }
 export default {
 	configurations: configurations,

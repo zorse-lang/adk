@@ -9,9 +9,9 @@ export interface DataCatalogComponentOutputs {}
 export interface DataCatalogComponentInputs {
 	readonly Name: string;
 	readonly Type: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Parameters?: ({ [key: string]: string } | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Parameters?: { [key: string]: string } | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class NamedQuery extends CfnResource<NamedQueryComponentInputs> implements NamedQueryComponentOutputs {
@@ -26,9 +26,9 @@ export interface NamedQueryComponentOutputs {
 export interface NamedQueryComponentInputs {
 	readonly Database: string;
 	readonly QueryString: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly WorkGroup?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly WorkGroup?: string | undefined;
 	readonly LogicalId: string;
 }
 export class PreparedStatement
@@ -44,7 +44,7 @@ export interface PreparedStatementComponentInputs {
 	readonly QueryStatement: string;
 	readonly StatementName: string;
 	readonly WorkGroup: string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class WorkGroup extends CfnResource<WorkGroupComponentInputs> implements WorkGroupComponentOutputs {
@@ -60,32 +60,32 @@ export interface WorkGroupComponentOutputs {
 }
 export interface WorkGroupComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly RecursiveDeleteOption?: (boolean | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly WorkGroupConfiguration?: (WorkGroupConfiguration | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly RecursiveDeleteOption?: boolean | undefined;
+	readonly State?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly WorkGroupConfiguration?: WorkGroupConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export interface EncryptionConfiguration {
 	readonly EncryptionOption: string;
-	readonly KmsKey?: (string | undefined) | undefined;
+	readonly KmsKey?: string | undefined;
 }
 export interface EngineVersion {
-	readonly EffectiveEngineVersion?: (string | undefined) | undefined;
-	readonly SelectedEngineVersion?: (string | undefined) | undefined;
+	readonly EffectiveEngineVersion?: string | undefined;
+	readonly SelectedEngineVersion?: string | undefined;
 }
 export interface ResultConfiguration {
-	readonly EncryptionConfiguration?: (EncryptionConfiguration | undefined) | undefined;
-	readonly OutputLocation?: (string | undefined) | undefined;
+	readonly EncryptionConfiguration?: EncryptionConfiguration | undefined;
+	readonly OutputLocation?: string | undefined;
 }
 export interface WorkGroupConfiguration {
-	readonly BytesScannedCutoffPerQuery?: (number | undefined) | undefined;
-	readonly EnforceWorkGroupConfiguration?: (boolean | undefined) | undefined;
-	readonly EngineVersion?: (EngineVersion | undefined) | undefined;
-	readonly PublishCloudWatchMetricsEnabled?: (boolean | undefined) | undefined;
-	readonly RequesterPaysEnabled?: (boolean | undefined) | undefined;
-	readonly ResultConfiguration?: (ResultConfiguration | undefined) | undefined;
+	readonly BytesScannedCutoffPerQuery?: number | undefined;
+	readonly EnforceWorkGroupConfiguration?: boolean | undefined;
+	readonly EngineVersion?: EngineVersion | undefined;
+	readonly PublishCloudWatchMetricsEnabled?: boolean | undefined;
+	readonly RequesterPaysEnabled?: boolean | undefined;
+	readonly ResultConfiguration?: ResultConfiguration | undefined;
 }
 export default {
 	DataCatalog: DataCatalog,

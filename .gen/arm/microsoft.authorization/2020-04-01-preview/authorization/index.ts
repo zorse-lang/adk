@@ -21,19 +21,19 @@ export interface roleAssignmentsComponentInputs {
 	readonly properties: RoleAssignmentPropertiesOrRoleAssignmentPropertiesWithScope;
 }
 export interface RoleAssignmentPropertiesOrRoleAssignmentPropertiesWithScope {
-	readonly canDelegate?: boolean | undefined;
-	readonly condition?: string | undefined;
-	readonly conditionVersion?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdOn?: string | undefined;
-	readonly delegatedManagedIdentityResourceId?: string | undefined;
-	readonly description?: string | undefined;
+	readonly canDelegate?: boolean;
+	readonly condition?: string;
+	readonly conditionVersion?: string;
+	readonly createdBy?: string;
+	readonly createdOn?: string;
+	readonly delegatedManagedIdentityResourceId?: string;
+	readonly description?: string;
 	readonly principalId: string;
-	readonly principalType?: ("ForeignGroup" | "Group" | "ServicePrincipal" | "User") | undefined;
+	readonly principalType?: "ForeignGroup" | "Group" | "ServicePrincipal" | "User";
 	readonly roleDefinitionId: string;
-	readonly scope?: string | undefined;
-	readonly updatedBy?: string | undefined;
-	readonly updatedOn?: string | undefined;
+	readonly scope?: string;
+	readonly updatedBy?: string;
+	readonly updatedOn?: string;
 }
 export default {
 	roleAssignments: roleAssignments,

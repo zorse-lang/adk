@@ -7,7 +7,6 @@ export class Projects extends GdmResource<ProjectsComponentInputs> implements Pr
 }
 export interface ProjectsComponentOutputs {}
 export interface ProjectsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

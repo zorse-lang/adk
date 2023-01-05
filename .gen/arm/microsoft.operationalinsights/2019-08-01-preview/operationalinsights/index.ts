@@ -14,12 +14,12 @@ export interface clustersComponentOutputs {
 	readonly type: "Microsoft.OperationalInsights/clusters";
 }
 export interface clustersComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ClusterProperties;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export class workspaces_dataExports
 	extends ArmResource<workspaces_dataExportsComponentInputs>
@@ -39,7 +39,7 @@ export interface workspaces_dataExportsComponentOutputs {
 }
 export interface workspaces_dataExportsComponentInputs {
 	readonly name: string;
-	readonly properties?: DataExportProperties | undefined;
+	readonly properties?: DataExportProperties;
 }
 export class workspaces_linkedServices
 	extends ArmResource<workspaces_linkedServicesComponentInputs>
@@ -94,53 +94,51 @@ export interface workspaces_linkedStorageAccountsComponentInputs {
 	readonly properties: LinkedStorageAccountsProperties;
 }
 export interface ClusterProperties {
-	readonly clusterId?: string | undefined;
-	readonly keyVaultProperties?: KeyVaultProperties | undefined;
-	readonly nextLink?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "ProvisioningAccount" | "Succeeded")
-		| undefined;
+	readonly clusterId?: string;
+	readonly keyVaultProperties?: KeyVaultProperties;
+	readonly nextLink?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "ProvisioningAccount" | "Succeeded";
 }
 export interface DataExportProperties {
-	readonly createdDate?: string | undefined;
-	readonly dataExportId?: string | undefined;
-	readonly destination?: Destination | undefined;
-	readonly enable?: boolean | undefined;
-	readonly lastModifiedDate?: string | undefined;
+	readonly createdDate?: string;
+	readonly dataExportId?: string;
+	readonly destination?: Destination;
+	readonly enable?: boolean;
+	readonly lastModifiedDate?: string;
 	readonly tableNames: string[];
 }
 export interface Destination {
-	readonly metaData?: DestinationMetaData | undefined;
+	readonly metaData?: DestinationMetaData;
 	readonly resourceId: string;
-	readonly type?: ("EventHub" | "StorageAccount") | undefined;
+	readonly type?: "EventHub" | "StorageAccount";
 }
 export interface DestinationMetaData {
-	readonly eventHubName?: string | undefined;
+	readonly eventHubName?: string;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None";
 }
 export interface KeyVaultProperties {
-	readonly keyName?: string | undefined;
-	readonly keyVaultUri?: string | undefined;
-	readonly keyVersion?: string | undefined;
+	readonly keyName?: string;
+	readonly keyVaultUri?: string;
+	readonly keyVersion?: string;
 }
 export interface LinkedServiceProperties {
-	readonly resourceId?: string | undefined;
-	readonly writeAccessResourceId?: string | undefined;
+	readonly resourceId?: string;
+	readonly writeAccessResourceId?: string;
 }
 export interface LinkedStorageAccountsProperties {
-	readonly dataSourceType?: "AzureWatson" | undefined;
-	readonly storageAccountIds?: string[] | undefined;
+	readonly dataSourceType?: "AzureWatson";
+	readonly storageAccountIds?: string[];
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly name?: "CapacityReservation" | undefined;
+	readonly capacity?: number;
+	readonly name?: "CapacityReservation";
 }
 export default {
 	clusters: clusters,

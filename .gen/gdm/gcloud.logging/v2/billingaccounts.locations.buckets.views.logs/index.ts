@@ -10,7 +10,6 @@ export class BillingAccountsLocationsBucketsViewsLogs
 }
 export interface BillingAccountsLocationsBucketsViewsLogsComponentOutputs {}
 export interface BillingAccountsLocationsBucketsViewsLogsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

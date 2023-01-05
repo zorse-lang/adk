@@ -7,99 +7,98 @@ export class NetworkFirewallPolicies
 	constructor(entity: ADKEntity, options: NetworkFirewallPoliciesComponentInputs) {
 		super(entity, options.name, "compute.alpha.NetworkFirewallPolicies", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly parent?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly ruleTupleCount?: number | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly parent?: string;
+	public readonly region?: string;
+	public readonly ruleTupleCount?: number;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
 }
 export interface NetworkFirewallPoliciesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly parent?: string | undefined;
-	readonly region?: string | undefined;
-	readonly ruleTupleCount?: number | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly parent?: string;
+	readonly region?: string;
+	readonly ruleTupleCount?: number;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
 }
 export interface NetworkFirewallPoliciesComponentInputs {
-	readonly associations?: FirewallPolicyAssociation[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly fingerprint?: string | undefined;
+	readonly associations?: FirewallPolicyAssociation[];
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly fingerprint?: string;
 	readonly name: string;
-	readonly requestId?: string | undefined;
-	readonly rules?: FirewallPolicyRule[] | undefined;
-	readonly shortName?: string | undefined;
-	readonly vpcNetworkScope?: string | undefined;
-	readonly type: string;
+	readonly requestId?: string;
+	readonly rules?: FirewallPolicyRule[];
+	readonly shortName?: string;
+	readonly vpcNetworkScope?: string;
 }
 export interface FirewallPolicy {
-	readonly associations?: FirewallPolicyAssociation[] | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly parent?: string | undefined;
-	readonly region?: string | undefined;
-	readonly rules?: FirewallPolicyRule[] | undefined;
-	readonly ruleTupleCount?: number | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly shortName?: string | undefined;
-	readonly vpcNetworkScope?: string | undefined;
+	readonly associations?: FirewallPolicyAssociation[];
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly parent?: string;
+	readonly region?: string;
+	readonly rules?: FirewallPolicyRule[];
+	readonly ruleTupleCount?: number;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly shortName?: string;
+	readonly vpcNetworkScope?: string;
 }
 export interface FirewallPolicyAssociation {
-	readonly attachmentTarget?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly firewallPolicyId?: string | undefined;
-	readonly name?: string | undefined;
-	readonly shortName?: string | undefined;
+	readonly attachmentTarget?: string;
+	readonly displayName?: string;
+	readonly firewallPolicyId?: string;
+	readonly name?: string;
+	readonly shortName?: string;
 }
 export interface FirewallPolicyRule {
-	readonly action?: string | undefined;
-	readonly description?: string | undefined;
-	readonly direction?: string | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly enableLogging?: boolean | undefined;
-	readonly kind?: string | undefined;
-	readonly match?: FirewallPolicyRuleMatcher | undefined;
-	readonly priority?: number | undefined;
-	readonly ruleName?: string | undefined;
-	readonly ruleTupleCount?: number | undefined;
-	readonly securityProfileGroup?: string | undefined;
-	readonly targetResources?: string[] | undefined;
-	readonly targetSecureTags?: FirewallPolicyRuleSecureTag[] | undefined;
-	readonly targetServiceAccounts?: string[] | undefined;
+	readonly action?: string;
+	readonly description?: string;
+	readonly direction?: string;
+	readonly disabled?: boolean;
+	readonly enableLogging?: boolean;
+	readonly kind?: string;
+	readonly match?: FirewallPolicyRuleMatcher;
+	readonly priority?: number;
+	readonly ruleName?: string;
+	readonly ruleTupleCount?: number;
+	readonly securityProfileGroup?: string;
+	readonly targetResources?: string[];
+	readonly targetSecureTags?: FirewallPolicyRuleSecureTag[];
+	readonly targetServiceAccounts?: string[];
 }
 export interface FirewallPolicyRuleMatcher {
-	readonly destAddressGroups?: string[] | undefined;
-	readonly destFqdns?: string[] | undefined;
-	readonly destIpRanges?: string[] | undefined;
-	readonly destRegionCodes?: string[] | undefined;
-	readonly destThreatIntelligences?: string[] | undefined;
-	readonly layer4Configs?: FirewallPolicyRuleMatcherLayer4Config[] | undefined;
-	readonly srcAddressGroups?: string[] | undefined;
-	readonly srcFqdns?: string[] | undefined;
-	readonly srcIpRanges?: string[] | undefined;
-	readonly srcRegionCodes?: string[] | undefined;
-	readonly srcSecureTags?: FirewallPolicyRuleSecureTag[] | undefined;
-	readonly srcThreatIntelligences?: string[] | undefined;
+	readonly destAddressGroups?: string[];
+	readonly destFqdns?: string[];
+	readonly destIpRanges?: string[];
+	readonly destRegionCodes?: string[];
+	readonly destThreatIntelligences?: string[];
+	readonly layer4Configs?: FirewallPolicyRuleMatcherLayer4Config[];
+	readonly srcAddressGroups?: string[];
+	readonly srcFqdns?: string[];
+	readonly srcIpRanges?: string[];
+	readonly srcRegionCodes?: string[];
+	readonly srcSecureTags?: FirewallPolicyRuleSecureTag[];
+	readonly srcThreatIntelligences?: string[];
 }
 export interface FirewallPolicyRuleMatcherLayer4Config {
-	readonly ipProtocol?: string | undefined;
-	readonly ports?: string[] | undefined;
+	readonly ipProtocol?: string;
+	readonly ports?: string[];
 }
 export interface FirewallPolicyRuleSecureTag {
-	readonly name?: string | undefined;
-	readonly state?: string | undefined;
+	readonly name?: string;
+	readonly state?: string;
 }
 export default {
 	NetworkFirewallPolicies: NetworkFirewallPolicies,

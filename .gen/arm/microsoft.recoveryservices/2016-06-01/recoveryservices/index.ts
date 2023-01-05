@@ -14,13 +14,13 @@ export interface vaultsComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults";
 }
 export interface vaultsComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly identity?: IdentityData | undefined;
+	readonly eTag?: string;
+	readonly identity?: IdentityData;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VaultProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VaultProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class vaults_certificates
 	extends ArmResource<vaults_certificatesComponentInputs>
@@ -40,7 +40,7 @@ export interface vaults_certificatesComponentOutputs {
 }
 export interface vaults_certificatesComponentInputs {
 	readonly name: string;
-	readonly properties?: RawCertificateData | undefined;
+	readonly properties?: RawCertificateData;
 }
 export class vaults_extendedInformation
 	extends ArmResource<vaults_extendedInformationComponentInputs>
@@ -59,65 +59,65 @@ export interface vaults_extendedInformationComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/extendedInformation";
 }
 export interface vaults_extendedInformationComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: VaultExtendedInfo | undefined;
+	readonly properties?: VaultExtendedInfo;
 }
 export interface IdentityData {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned";
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Pending" | "Succeeded") | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Deleting" | "Failed" | "Pending" | "Succeeded";
 }
 export interface PrivateEndpointConnectionVaultProperties {
-	readonly id?: string | undefined;
-	readonly properties?: PrivateEndpointConnection | undefined;
+	readonly id?: string;
+	readonly properties?: PrivateEndpointConnection;
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface RawCertificateData {
-	readonly authType?: ("AAD" | "ACS" | "AccessControlService" | "AzureActiveDirectory" | "Invalid") | undefined;
-	readonly certificate?: any | undefined;
+	readonly authType?: "AAD" | "ACS" | "AccessControlService" | "AzureActiveDirectory" | "Invalid";
+	readonly certificate?: any;
 }
 export interface Sku {
 	readonly name: "RS0" | "Standard";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UpgradeDetails {
-	readonly endTimeUtc?: string | undefined;
-	readonly lastUpdatedTimeUtc?: string | undefined;
-	readonly message?: string | undefined;
-	readonly operationId?: string | undefined;
-	readonly previousResourceId?: string | undefined;
-	readonly startTimeUtc?: string | undefined;
-	readonly status?: ("Failed" | "InProgress" | "Unknown" | "Upgraded") | undefined;
-	readonly triggerType?: ("ForcedUpgrade" | "UserTriggered") | undefined;
-	readonly upgradedResourceId?: string | undefined;
+	readonly endTimeUtc?: string;
+	readonly lastUpdatedTimeUtc?: string;
+	readonly message?: string;
+	readonly operationId?: string;
+	readonly previousResourceId?: string;
+	readonly startTimeUtc?: string;
+	readonly status?: "Failed" | "InProgress" | "Unknown" | "Upgraded";
+	readonly triggerType?: "ForcedUpgrade" | "UserTriggered";
+	readonly upgradedResourceId?: string;
 }
 export interface VaultExtendedInfo {
-	readonly algorithm?: string | undefined;
-	readonly encryptionKey?: string | undefined;
-	readonly encryptionKeyThumbprint?: string | undefined;
-	readonly integrityKey?: string | undefined;
+	readonly algorithm?: string;
+	readonly encryptionKey?: string;
+	readonly encryptionKeyThumbprint?: string;
+	readonly integrityKey?: string;
 }
 export interface VaultProperties {
-	readonly privateEndpointConnections?: PrivateEndpointConnectionVaultProperties[] | undefined;
-	readonly privateEndpointStateForBackup?: ("Enabled" | "None") | undefined;
-	readonly privateEndpointStateForSiteRecovery?: ("Enabled" | "None") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly upgradeDetails?: UpgradeDetails | undefined;
+	readonly privateEndpointConnections?: PrivateEndpointConnectionVaultProperties[];
+	readonly privateEndpointStateForBackup?: "Enabled" | "None";
+	readonly privateEndpointStateForSiteRecovery?: "Enabled" | "None";
+	readonly provisioningState?: string;
+	readonly upgradeDetails?: UpgradeDetails;
 }
 export default {
 	vaults: vaults,

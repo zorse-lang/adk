@@ -18,69 +18,66 @@ export interface locations_alertsComponentOutputs {
 }
 export interface locations_alertsComponentInputs {
 	readonly name: string;
-	readonly properties?: AlertProperties | undefined;
+	readonly properties?: AlertProperties;
 }
 export interface AlertEntity {
-	readonly type?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly type?: string;
+	readonly [key: string]: any;
 }
 export interface AlertExtendedLinks {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AlertExtendedProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AlertProperties {
-	readonly alertDisplayName?: string | undefined;
-	readonly alertType?: string | undefined;
-	readonly alertUri?: string | undefined;
-	readonly compromisedEntity?: string | undefined;
-	readonly correlationKey?: string | undefined;
-	readonly description?: string | undefined;
-	readonly endTimeUtc?: string | undefined;
-	readonly entities?: AlertEntity[] | undefined;
-	readonly extendedLinks?: AlertExtendedLinks[] | undefined;
-	readonly extendedProperties?: AlertExtendedProperties | undefined;
+	readonly alertDisplayName?: string;
+	readonly alertType?: string;
+	readonly alertUri?: string;
+	readonly compromisedEntity?: string;
+	readonly correlationKey?: string;
+	readonly description?: string;
+	readonly endTimeUtc?: string;
+	readonly entities?: AlertEntity[];
+	readonly extendedLinks?: AlertExtendedLinks[];
+	readonly extendedProperties?: AlertExtendedProperties;
 	readonly intent?:
-		| (
-				| "Collection"
-				| "CommandAndControl"
-				| "CredentialAccess"
-				| "DefenseEvasion"
-				| "Discovery"
-				| "Execution"
-				| "Exfiltration"
-				| "Exploitation"
-				| "Impact"
-				| "InitialAccess"
-				| "LateralMovement"
-				| "Persistence"
-				| "PreAttack"
-				| "PrivilegeEscalation"
-				| "Probing"
-				| "Unknown"
-		  )
-		| undefined;
-	readonly isIncident?: boolean | undefined;
-	readonly processingEndTimeUtc?: string | undefined;
-	readonly productComponentName?: string | undefined;
-	readonly productName?: string | undefined;
-	readonly remediationSteps?: string[] | undefined;
-	readonly resourceIdentifiers?: ResourceIdentifier[] | undefined;
-	readonly severity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
-	readonly startTimeUtc?: string | undefined;
-	readonly status?: ("Active" | "Dismissed" | "InProgress" | "Resolved") | undefined;
-	readonly subTechniques?: string[] | undefined;
-	readonly supportingEvidence?: AlertPropertiesSupportingEvidence | undefined;
-	readonly systemAlertId?: string | undefined;
-	readonly techniques?: string[] | undefined;
-	readonly timeGeneratedUtc?: string | undefined;
-	readonly vendorName?: string | undefined;
-	readonly version?: string | undefined;
+		| "Collection"
+		| "CommandAndControl"
+		| "CredentialAccess"
+		| "DefenseEvasion"
+		| "Discovery"
+		| "Execution"
+		| "Exfiltration"
+		| "Exploitation"
+		| "Impact"
+		| "InitialAccess"
+		| "LateralMovement"
+		| "Persistence"
+		| "PreAttack"
+		| "PrivilegeEscalation"
+		| "Probing"
+		| "Unknown";
+	readonly isIncident?: boolean;
+	readonly processingEndTimeUtc?: string;
+	readonly productComponentName?: string;
+	readonly productName?: string;
+	readonly remediationSteps?: string[];
+	readonly resourceIdentifiers?: ResourceIdentifier[];
+	readonly severity?: "High" | "Informational" | "Low" | "Medium";
+	readonly startTimeUtc?: string;
+	readonly status?: "Active" | "Dismissed" | "InProgress" | "Resolved";
+	readonly subTechniques?: string[];
+	readonly supportingEvidence?: AlertPropertiesSupportingEvidence;
+	readonly systemAlertId?: string;
+	readonly techniques?: string[];
+	readonly timeGeneratedUtc?: string;
+	readonly vendorName?: string;
+	readonly version?: string;
 }
 export interface AlertPropertiesSupportingEvidence {
-	readonly type?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly type?: string;
+	readonly [key: string]: any;
 }
 export interface ResourceIdentifier {}
 export default {

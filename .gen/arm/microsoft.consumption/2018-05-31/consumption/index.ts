@@ -15,35 +15,35 @@ export interface pricesheetsComponentOutputs {
 }
 export interface pricesheetsComponentInputs {
 	readonly name: string;
-	readonly properties?: PriceSheetModel | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: PriceSheetModel;
+	readonly tags?: ResourceTags;
 }
 export interface MeterDetails {
-	readonly meterCategory?: string | undefined;
-	readonly meterLocation?: string | undefined;
-	readonly meterName?: string | undefined;
-	readonly meterSubCategory?: string | undefined;
-	readonly pretaxStandardRate?: number | undefined;
-	readonly totalIncludedQuantity?: number | undefined;
-	readonly unit?: string | undefined;
+	readonly meterCategory?: string;
+	readonly meterLocation?: string;
+	readonly meterName?: string;
+	readonly meterSubCategory?: string;
+	readonly pretaxStandardRate?: number;
+	readonly totalIncludedQuantity?: number;
+	readonly unit?: string;
 }
 export interface PriceSheetModel {
-	readonly nextLink?: string | undefined;
-	readonly pricesheets?: PriceSheetProperties[] | undefined;
+	readonly nextLink?: string;
+	readonly pricesheets?: PriceSheetProperties[];
 }
 export interface PriceSheetProperties {
-	readonly billingPeriodId?: string | undefined;
-	readonly currencyCode?: string | undefined;
-	readonly includedQuantity?: number | undefined;
-	readonly meterDetails?: MeterDetails | undefined;
-	readonly meterId?: string | undefined;
-	readonly offerId?: string | undefined;
-	readonly partNumber?: string | undefined;
-	readonly unitOfMeasure?: string | undefined;
-	readonly unitPrice?: number | undefined;
+	readonly billingPeriodId?: string;
+	readonly currencyCode?: string;
+	readonly includedQuantity?: number;
+	readonly meterDetails?: MeterDetails;
+	readonly meterId?: string;
+	readonly offerId?: string;
+	readonly partNumber?: string;
+	readonly unitOfMeasure?: string;
+	readonly unitPrice?: number;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	pricesheets: pricesheets,

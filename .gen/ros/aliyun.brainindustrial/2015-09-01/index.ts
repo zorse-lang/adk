@@ -16,7 +16,7 @@ export interface PidOrganizationComponentOutputs {
 }
 export interface PidOrganizationComponentInputs {
 	readonly PidOrganizationName: any | string;
-	readonly ParentPidOrganizationId?: (any | string) | undefined;
+	readonly ParentPidOrganizationId?: any | string;
 	readonly LogicalId: string;
 }
 export class PidProject extends RosResource<PidProjectComponentInputs> implements PidProjectComponentOutputs {
@@ -31,7 +31,7 @@ export interface PidProjectComponentOutputs {
 export interface PidProjectComponentInputs {
 	readonly PidOrganizationId: any | string;
 	readonly PidProjectName: any | string;
-	readonly PidProjectDesc?: (any | string) | undefined;
+	readonly PidProjectDesc?: any | string;
 	readonly LogicalId: string;
 }
 export default {

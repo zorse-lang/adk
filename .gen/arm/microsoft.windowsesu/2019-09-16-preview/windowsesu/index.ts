@@ -19,21 +19,21 @@ export interface multipleActivationKeysComponentOutputs {
 export interface multipleActivationKeysComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MultipleActivationKeyProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: MultipleActivationKeyProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface MultipleActivationKeyProperties {
-	readonly agreementNumber?: string | undefined;
-	readonly expirationDate?: string | undefined;
-	readonly installedServerNumber?: number | undefined;
-	readonly isEligible?: boolean | undefined;
-	readonly multipleActivationKey?: string | undefined;
-	readonly osType?: ("Windows7" | "WindowsServer2008" | "WindowsServer2008R2") | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly supportType?: ("PremiumAssurance" | "SupplementalServicing") | undefined;
+	readonly agreementNumber?: string;
+	readonly expirationDate?: string;
+	readonly installedServerNumber?: number;
+	readonly isEligible?: boolean;
+	readonly multipleActivationKey?: string;
+	readonly osType?: "Windows7" | "WindowsServer2008" | "WindowsServer2008R2";
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
+	readonly supportType?: "PremiumAssurance" | "SupplementalServicing";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	multipleActivationKeys: multipleActivationKeys,

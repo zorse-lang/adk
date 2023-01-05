@@ -51,18 +51,18 @@ export interface ClusterComponentInputs {
 	readonly ClusterVersion: any | string;
 	readonly InstanceCount: any | number;
 	readonly NetType: any | string;
-	readonly AcceptLanguage?: (string | undefined) | undefined;
-	readonly AclEntryList?: (any | string[]) | undefined;
-	readonly ClusterAliasName?: (any | string) | undefined;
-	readonly ConnectionType?: (any | string) | undefined;
-	readonly DiskType?: (any | string) | undefined;
-	readonly MseVersion?: (any | string) | undefined;
-	readonly PrivateSlbSpecification?: (string | undefined) | undefined;
-	readonly PubNetworkFlow?: (any | string) | undefined;
-	readonly PubSlbSpecification?: (string | undefined) | undefined;
-	readonly RequestPars?: (string | undefined) | undefined;
-	readonly VpcId?: (any | string) | undefined;
-	readonly VSwitchId?: (any | string) | undefined;
+	readonly AcceptLanguage?: string | undefined;
+	readonly AclEntryList?: any | string[];
+	readonly ClusterAliasName?: any | string;
+	readonly ConnectionType?: any | string;
+	readonly DiskType?: any | string;
+	readonly MseVersion?: any | string;
+	readonly PrivateSlbSpecification?: string | undefined;
+	readonly PubNetworkFlow?: any | string;
+	readonly PubSlbSpecification?: string | undefined;
+	readonly RequestPars?: string | undefined;
+	readonly VpcId?: any | string;
+	readonly VSwitchId?: any | string;
 	readonly LogicalId: string;
 }
 export class Gateway extends RosResource<GatewayComponentInputs> implements GatewayComponentOutputs {
@@ -81,11 +81,11 @@ export interface GatewayComponentInputs {
 	readonly Spec: any | string;
 	readonly VpcId: any | string;
 	readonly VSwitchId: any | string;
-	readonly BackupVSwitchId?: (any | string) | undefined;
-	readonly EnterpriseSecurityGroup?: (string | undefined) | undefined;
-	readonly InternetSlbSpec?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly SlbSpec?: (string | undefined) | undefined;
+	readonly BackupVSwitchId?: any | string;
+	readonly EnterpriseSecurityGroup?: string | undefined;
+	readonly InternetSlbSpec?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly SlbSpec?: string | undefined;
 	readonly LogicalId: string;
 }
 export default {

@@ -18,14 +18,14 @@ export interface VpcEndpointComponentOutputs {
 export interface VpcEndpointComponentInputs {
 	readonly SecurityGroupId: string[];
 	readonly VpcId: any | string;
-	readonly EndpointDescription?: (string | undefined) | undefined;
-	readonly EndpointName?: (any | string) | undefined;
-	readonly EndpointType?: (string | undefined) | undefined;
-	readonly ProtectedEnabled?: (boolean | undefined) | undefined;
-	readonly ServiceId?: (any | string) | undefined;
-	readonly ServiceName?: (any | string) | undefined;
-	readonly Zone?: (Zone[] | undefined) | undefined;
-	readonly ZonePrivateIpAddressCount?: (number | undefined) | undefined;
+	readonly EndpointDescription?: string | undefined;
+	readonly EndpointName?: any | string;
+	readonly EndpointType?: string | undefined;
+	readonly ProtectedEnabled?: boolean | undefined;
+	readonly ServiceId?: any | string;
+	readonly ServiceName?: any | string;
+	readonly Zone?: Zone[] | undefined;
+	readonly ZonePrivateIpAddressCount?: number | undefined;
 	readonly LogicalId: string;
 }
 export class VpcEndpointService
@@ -49,14 +49,14 @@ export interface VpcEndpointServiceComponentOutputs {
 	readonly ServiceId: any;
 }
 export interface VpcEndpointServiceComponentInputs {
-	readonly AutoAcceptEnabled?: (boolean | undefined) | undefined;
-	readonly ConnectBandwidth?: (number | undefined) | undefined;
-	readonly Payer?: (string | undefined) | undefined;
-	readonly Resource?: (Resource[] | undefined) | undefined;
-	readonly ServiceDescription?: (any | string) | undefined;
-	readonly ServiceResourceType?: (string | undefined) | undefined;
-	readonly User?: (string[] | undefined) | undefined;
-	readonly ZoneAffinityEnabled?: (boolean | undefined) | undefined;
+	readonly AutoAcceptEnabled?: boolean | undefined;
+	readonly ConnectBandwidth?: number | undefined;
+	readonly Payer?: string | undefined;
+	readonly Resource?: Resource[] | undefined;
+	readonly ServiceDescription?: any | string;
+	readonly ServiceResourceType?: string | undefined;
+	readonly User?: string[] | undefined;
+	readonly ZoneAffinityEnabled?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class VpcEndpointServiceAttachment
@@ -75,9 +75,9 @@ export interface VpcEndpointServiceAttachmentComponentInputs {
 	readonly LogicalId: string;
 }
 export interface Zone {
-	readonly ZoneId?: (string | undefined) | undefined;
-	readonly Ip?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
+	readonly ZoneId?: string | undefined;
+	readonly Ip?: string | undefined;
+	readonly VSwitchId?: string | undefined;
 }
 export interface Resource {
 	readonly ZoneId: string;

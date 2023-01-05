@@ -13,8 +13,8 @@ export interface AccountComponentInputs {
 	readonly AccountName: any | string;
 	readonly AccountPassword: string;
 	readonly DBClusterId: string;
-	readonly AccountDescription?: (string | undefined) | undefined;
-	readonly AccountType?: (any | string) | undefined;
+	readonly AccountDescription?: string | undefined;
+	readonly AccountType?: any | string;
 	readonly LogicalId: string;
 }
 export class DBCluster extends RosResource<DBClusterComponentInputs> implements DBClusterComponentOutputs {
@@ -37,22 +37,22 @@ export interface DBClusterComponentInputs {
 	readonly PayType: string;
 	readonly VPCId: string;
 	readonly VSwitchId: string;
-	readonly ComputeResource?: (string | undefined) | undefined;
-	readonly DBClusterClass?: (string | undefined) | undefined;
-	readonly DBClusterDescription?: (string | undefined) | undefined;
-	readonly DBNodeGroupCount?: (number | undefined) | undefined;
-	readonly DBNodeStorage?: (number | undefined) | undefined;
-	readonly ElasticIOResource?: (number | undefined) | undefined;
-	readonly ExecutorCount?: (number | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodType?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly ComputeResource?: string | undefined;
+	readonly DBClusterClass?: string | undefined;
+	readonly DBClusterDescription?: string | undefined;
+	readonly DBNodeGroupCount?: number | undefined;
+	readonly DBNodeStorage?: number | undefined;
+	readonly ElasticIOResource?: number | undefined;
+	readonly ExecutorCount?: number | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodType?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export default {

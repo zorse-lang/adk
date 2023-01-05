@@ -17,11 +17,11 @@ export interface workspaceCollectionsComponentOutputs {
 	readonly type: "Microsoft.PowerBI/workspaceCollections";
 }
 export interface workspaceCollectionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: any | undefined;
-	readonly sku?: AzureSku | undefined;
-	readonly tags?: CreateWorkspaceCollectionRequestTags | undefined;
+	readonly properties?: any;
+	readonly sku?: AzureSku;
+	readonly tags?: CreateWorkspaceCollectionRequestTags;
 }
 export function listKeys(resource: workspaceCollections): WorkspaceCollectionAccessKeys {
 	if (resource.apiVersion !== "2016-01-29") {
@@ -37,11 +37,11 @@ export interface AzureSku {
 	readonly tier: "Standard";
 }
 export interface CreateWorkspaceCollectionRequestTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WorkspaceCollectionAccessKeys {
-	readonly key1?: string | undefined;
-	readonly key2?: string | undefined;
+	readonly key1?: string;
+	readonly key2?: string;
 }
 export default {
 	workspaceCollections: workspaceCollections,

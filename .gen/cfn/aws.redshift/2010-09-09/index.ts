@@ -21,49 +21,49 @@ export interface ClusterComponentInputs {
 	readonly MasterUsername: string;
 	readonly MasterUserPassword: string;
 	readonly NodeType: string;
-	readonly AllowVersionUpgrade?: (boolean | undefined) | undefined;
-	readonly AquaConfigurationStatus?: (string | undefined) | undefined;
-	readonly AutomatedSnapshotRetentionPeriod?: (number | undefined) | undefined;
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly AvailabilityZoneRelocation?: (boolean | undefined) | undefined;
-	readonly AvailabilityZoneRelocationStatus?: (string | undefined) | undefined;
-	readonly Classic?: (boolean | undefined) | undefined;
-	readonly ClusterIdentifier?: (string | undefined) | undefined;
-	readonly ClusterParameterGroupName?: (string | undefined) | undefined;
-	readonly ClusterSecurityGroups?: (string[] | undefined) | undefined;
-	readonly ClusterSubnetGroupName?: (string | undefined) | undefined;
-	readonly ClusterVersion?: (string | undefined) | undefined;
-	readonly DeferMaintenance?: (boolean | undefined) | undefined;
-	readonly DeferMaintenanceDuration?: (number | undefined) | undefined;
-	readonly DeferMaintenanceEndTime?: (string | undefined) | undefined;
-	readonly DeferMaintenanceStartTime?: (string | undefined) | undefined;
-	readonly DestinationRegion?: (string | undefined) | undefined;
-	readonly ElasticIp?: (string | undefined) | undefined;
-	readonly Encrypted?: (boolean | undefined) | undefined;
-	readonly Endpoint?: (Endpoint | undefined) | undefined;
-	readonly EnhancedVpcRouting?: (boolean | undefined) | undefined;
-	readonly HsmClientCertificateIdentifier?: (string | undefined) | undefined;
-	readonly HsmConfigurationIdentifier?: (string | undefined) | undefined;
-	readonly IamRoles?: (string[] | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly LoggingProperties?: (LoggingProperties | undefined) | undefined;
-	readonly MaintenanceTrackName?: (string | undefined) | undefined;
-	readonly ManualSnapshotRetentionPeriod?: (number | undefined) | undefined;
-	readonly NumberOfNodes?: (number | undefined) | undefined;
-	readonly OwnerAccount?: (string | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly PreferredMaintenanceWindow?: (string | undefined) | undefined;
-	readonly PubliclyAccessible?: (boolean | undefined) | undefined;
-	readonly ResourceAction?: (string | undefined) | undefined;
-	readonly RevisionTarget?: (string | undefined) | undefined;
-	readonly RotateEncryptionKey?: (boolean | undefined) | undefined;
-	readonly SnapshotClusterIdentifier?: (string | undefined) | undefined;
-	readonly SnapshotCopyGrantName?: (string | undefined) | undefined;
-	readonly SnapshotCopyManual?: (boolean | undefined) | undefined;
-	readonly SnapshotCopyRetentionPeriod?: (number | undefined) | undefined;
-	readonly SnapshotIdentifier?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VpcSecurityGroupIds?: (string[] | undefined) | undefined;
+	readonly AllowVersionUpgrade?: boolean | undefined;
+	readonly AquaConfigurationStatus?: string | undefined;
+	readonly AutomatedSnapshotRetentionPeriod?: number | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly AvailabilityZoneRelocation?: boolean | undefined;
+	readonly AvailabilityZoneRelocationStatus?: string | undefined;
+	readonly Classic?: boolean | undefined;
+	readonly ClusterIdentifier?: string | undefined;
+	readonly ClusterParameterGroupName?: string | undefined;
+	readonly ClusterSecurityGroups?: string[] | undefined;
+	readonly ClusterSubnetGroupName?: string | undefined;
+	readonly ClusterVersion?: string | undefined;
+	readonly DeferMaintenance?: boolean | undefined;
+	readonly DeferMaintenanceDuration?: number | undefined;
+	readonly DeferMaintenanceEndTime?: string | undefined;
+	readonly DeferMaintenanceStartTime?: string | undefined;
+	readonly DestinationRegion?: string | undefined;
+	readonly ElasticIp?: string | undefined;
+	readonly Encrypted?: boolean | undefined;
+	readonly Endpoint?: Endpoint | undefined;
+	readonly EnhancedVpcRouting?: boolean | undefined;
+	readonly HsmClientCertificateIdentifier?: string | undefined;
+	readonly HsmConfigurationIdentifier?: string | undefined;
+	readonly IamRoles?: string[] | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly LoggingProperties?: LoggingProperties | undefined;
+	readonly MaintenanceTrackName?: string | undefined;
+	readonly ManualSnapshotRetentionPeriod?: number | undefined;
+	readonly NumberOfNodes?: number | undefined;
+	readonly OwnerAccount?: string | undefined;
+	readonly Port?: number | undefined;
+	readonly PreferredMaintenanceWindow?: string | undefined;
+	readonly PubliclyAccessible?: boolean | undefined;
+	readonly ResourceAction?: string | undefined;
+	readonly RevisionTarget?: string | undefined;
+	readonly RotateEncryptionKey?: boolean | undefined;
+	readonly SnapshotClusterIdentifier?: string | undefined;
+	readonly SnapshotCopyGrantName?: string | undefined;
+	readonly SnapshotCopyManual?: boolean | undefined;
+	readonly SnapshotCopyRetentionPeriod?: number | undefined;
+	readonly SnapshotIdentifier?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VpcSecurityGroupIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class ClusterParameterGroup
@@ -81,8 +81,8 @@ export interface ClusterParameterGroupComponentOutputs {
 export interface ClusterParameterGroupComponentInputs {
 	readonly Description: string;
 	readonly ParameterGroupFamily: string;
-	readonly Parameters?: (Parameter[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Parameters?: Parameter[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ClusterSecurityGroup
@@ -96,7 +96,7 @@ export class ClusterSecurityGroup
 export interface ClusterSecurityGroupComponentOutputs {}
 export interface ClusterSecurityGroupComponentInputs {
 	readonly Description: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ClusterSecurityGroupIngress
@@ -110,9 +110,9 @@ export class ClusterSecurityGroupIngress
 export interface ClusterSecurityGroupIngressComponentOutputs {}
 export interface ClusterSecurityGroupIngressComponentInputs {
 	readonly ClusterSecurityGroupName: string;
-	readonly CIDRIP?: (string | undefined) | undefined;
-	readonly EC2SecurityGroupName?: (string | undefined) | undefined;
-	readonly EC2SecurityGroupOwnerId?: (string | undefined) | undefined;
+	readonly CIDRIP?: string | undefined;
+	readonly EC2SecurityGroupName?: string | undefined;
+	readonly EC2SecurityGroupOwnerId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ClusterSubnetGroup
@@ -130,7 +130,7 @@ export interface ClusterSubnetGroupComponentOutputs {
 export interface ClusterSubnetGroupComponentInputs {
 	readonly Description: string;
 	readonly SubnetIds: string[];
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class EndpointAccess extends CfnResource<EndpointAccessComponentInputs> implements EndpointAccessComponentOutputs {
@@ -157,9 +157,9 @@ export interface EndpointAccessComponentInputs {
 	readonly EndpointName: string;
 	readonly SubnetGroupName: string;
 	readonly VpcSecurityGroupIds: string[];
-	readonly ResourceOwner?: (string | undefined) | undefined;
-	readonly VpcEndpoint?: (VpcEndpoint | undefined) | undefined;
-	readonly VpcSecurityGroups?: (VpcSecurityGroup[] | undefined) | undefined;
+	readonly ResourceOwner?: string | undefined;
+	readonly VpcEndpoint?: VpcEndpoint | undefined;
+	readonly VpcSecurityGroups?: VpcSecurityGroup[] | undefined;
 	readonly LogicalId: string;
 }
 export class EndpointAuthorization
@@ -191,8 +191,8 @@ export interface EndpointAuthorizationComponentOutputs {
 export interface EndpointAuthorizationComponentInputs {
 	readonly Account: string;
 	readonly ClusterIdentifier: string;
-	readonly Force?: (boolean | undefined) | undefined;
-	readonly VpcIds?: (string[] | undefined) | undefined;
+	readonly Force?: boolean | undefined;
+	readonly VpcIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class EventSubscription
@@ -219,13 +219,13 @@ export interface EventSubscriptionComponentOutputs {
 }
 export interface EventSubscriptionComponentInputs {
 	readonly SubscriptionName: string;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly EventCategories?: (string[] | undefined) | undefined;
-	readonly Severity?: (string | undefined) | undefined;
-	readonly SnsTopicArn?: (string | undefined) | undefined;
-	readonly SourceIds?: (string[] | undefined) | undefined;
-	readonly SourceType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly EventCategories?: string[] | undefined;
+	readonly Severity?: string | undefined;
+	readonly SnsTopicArn?: string | undefined;
+	readonly SourceIds?: string[] | undefined;
+	readonly SourceType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ScheduledAction
@@ -244,59 +244,59 @@ export interface ScheduledActionComponentOutputs {
 }
 export interface ScheduledActionComponentInputs {
 	readonly ScheduledActionName: string;
-	readonly Enable?: (boolean | undefined) | undefined;
-	readonly EndTime?: (string | undefined) | undefined;
-	readonly IamRole?: (string | undefined) | undefined;
-	readonly Schedule?: (string | undefined) | undefined;
-	readonly ScheduledActionDescription?: (string | undefined) | undefined;
-	readonly StartTime?: (string | undefined) | undefined;
-	readonly TargetAction?: (ScheduledActionType | undefined) | undefined;
+	readonly Enable?: boolean | undefined;
+	readonly EndTime?: string | undefined;
+	readonly IamRole?: string | undefined;
+	readonly Schedule?: string | undefined;
+	readonly ScheduledActionDescription?: string | undefined;
+	readonly StartTime?: string | undefined;
+	readonly TargetAction?: ScheduledActionType | undefined;
 	readonly LogicalId: string;
 }
 export interface Endpoint {
-	readonly Address?: (string | undefined) | undefined;
-	readonly Port?: (string | undefined) | undefined;
+	readonly Address?: string | undefined;
+	readonly Port?: string | undefined;
 }
 export interface LoggingProperties {
 	readonly BucketName: string;
-	readonly S3KeyPrefix?: (string | undefined) | undefined;
+	readonly S3KeyPrefix?: string | undefined;
 }
 export interface Parameter {
 	readonly ParameterName: string;
 	readonly ParameterValue: string;
 }
 export interface NetworkInterface {
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly NetworkInterfaceId?: (string | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly NetworkInterfaceId?: string | undefined;
+	readonly PrivateIpAddress?: string | undefined;
+	readonly SubnetId?: string | undefined;
 }
 export interface VpcEndpoint {
-	readonly NetworkInterfaces?: (NetworkInterface[] | undefined) | undefined;
-	readonly VpcEndpointId?: (string | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
+	readonly NetworkInterfaces?: NetworkInterface[] | undefined;
+	readonly VpcEndpointId?: string | undefined;
+	readonly VpcId?: string | undefined;
 }
 export interface VpcSecurityGroup {
-	readonly Status?: (string | undefined) | undefined;
-	readonly VpcSecurityGroupId?: (string | undefined) | undefined;
+	readonly Status?: string | undefined;
+	readonly VpcSecurityGroupId?: string | undefined;
 }
 export interface PauseClusterMessage {
 	readonly ClusterIdentifier: string;
 }
 export interface ResizeClusterMessage {
-	readonly Classic?: (boolean | undefined) | undefined;
+	readonly Classic?: boolean | undefined;
 	readonly ClusterIdentifier: string;
-	readonly ClusterType?: (string | undefined) | undefined;
-	readonly NodeType?: (string | undefined) | undefined;
-	readonly NumberOfNodes?: (number | undefined) | undefined;
+	readonly ClusterType?: string | undefined;
+	readonly NodeType?: string | undefined;
+	readonly NumberOfNodes?: number | undefined;
 }
 export interface ResumeClusterMessage {
 	readonly ClusterIdentifier: string;
 }
 export interface ScheduledActionType {
-	readonly PauseCluster?: (PauseClusterMessage | undefined) | undefined;
-	readonly ResizeCluster?: (ResizeClusterMessage | undefined) | undefined;
-	readonly ResumeCluster?: (ResumeClusterMessage | undefined) | undefined;
+	readonly PauseCluster?: PauseClusterMessage | undefined;
+	readonly ResizeCluster?: ResizeClusterMessage | undefined;
+	readonly ResumeCluster?: ResumeClusterMessage | undefined;
 }
 export default {
 	Cluster: Cluster,

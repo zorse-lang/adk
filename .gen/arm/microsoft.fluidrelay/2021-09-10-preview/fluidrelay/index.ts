@@ -17,12 +17,12 @@ export interface fluidRelayServersComponentOutputs {
 	readonly type: "Microsoft.FluidRelay/fluidRelayServers";
 }
 export interface fluidRelayServersComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: FluidRelayServerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: FluidRelayServerProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class fluidRelayServers_fluidRelayContainers
 	extends ArmResource<fluidRelayServers_fluidRelayContainersComponentInputs>
@@ -48,46 +48,46 @@ export interface fluidRelayServers_fluidRelayContainersComponentOutputs {
 }
 export interface fluidRelayServers_fluidRelayContainersComponentInputs {
 	readonly name: string;
-	readonly properties?: FluidRelayContainerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: FluidRelayContainerProperties;
+	readonly systemData?: SystemData;
 }
 export interface FluidRelayContainerProperties {
-	readonly frsContainerId?: string | undefined;
-	readonly frsTenantId?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
+	readonly frsContainerId?: string;
+	readonly frsTenantId?: string;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
 }
 export interface FluidRelayEndpoints {
-	readonly ordererEndpoints?: string[] | undefined;
-	readonly storageEndpoints?: string[] | undefined;
+	readonly ordererEndpoints?: string[];
+	readonly storageEndpoints?: string[];
 }
 export interface FluidRelayServerProperties {
-	readonly fluidRelayEndpoints?: FluidRelayEndpoints | undefined;
-	readonly frsTenantId?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
+	readonly fluidRelayEndpoints?: FluidRelayEndpoints;
+	readonly frsTenantId?: string;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: IdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: IdentityUserAssignedIdentities;
 }
 export interface IdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentitiesValue | undefined;
+	readonly [key: string]: UserAssignedIdentitiesValue;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentitiesValue {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	fluidRelayServers: fluidRelayServers,

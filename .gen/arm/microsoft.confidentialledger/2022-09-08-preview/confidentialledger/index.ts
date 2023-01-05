@@ -14,11 +14,11 @@ export interface ledgersComponentOutputs {
 	readonly type: "Microsoft.ConfidentialLedger/ledgers";
 }
 export interface ledgersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: LedgerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: LedgerProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: Tags;
 }
 export class managedCCFs extends ArmResource<managedCCFsComponentInputs> implements managedCCFsComponentOutputs {
 	constructor(entity: ADKEntity, options: managedCCFsComponentInputs) {
@@ -36,63 +36,59 @@ export interface managedCCFsComponentOutputs {
 export interface managedCCFsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagedCCFProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ManagedCCFProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AADBasedSecurityPrincipal {
-	readonly ledgerRoleName?: ("Administrator" | "Contributor" | "Reader") | undefined;
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly ledgerRoleName?: "Administrator" | "Contributor" | "Reader";
+	readonly principalId?: string;
+	readonly tenantId?: string;
 }
 export interface CertBasedSecurityPrincipal {
-	readonly cert?: string | undefined;
-	readonly ledgerRoleName?: ("Administrator" | "Contributor" | "Reader") | undefined;
+	readonly cert?: string;
+	readonly ledgerRoleName?: "Administrator" | "Contributor" | "Reader";
 }
 export interface DeploymentType {
-	readonly appSourceUri?: string | undefined;
-	readonly languageRuntime?: ("CPP" | "JS") | undefined;
+	readonly appSourceUri?: string;
+	readonly languageRuntime?: "CPP" | "JS";
 }
 export interface LedgerProperties {
-	readonly aadBasedSecurityPrincipals?: AADBasedSecurityPrincipal[] | undefined;
-	readonly certBasedSecurityPrincipals?: CertBasedSecurityPrincipal[] | undefined;
-	readonly identityServiceUri?: string | undefined;
-	readonly ledgerInternalNamespace?: string | undefined;
-	readonly ledgerName?: string | undefined;
-	readonly ledgerType?: ("Private" | "Public" | "Unknown") | undefined;
-	readonly ledgerUri?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
+	readonly aadBasedSecurityPrincipals?: AADBasedSecurityPrincipal[];
+	readonly certBasedSecurityPrincipals?: CertBasedSecurityPrincipal[];
+	readonly identityServiceUri?: string;
+	readonly ledgerInternalNamespace?: string;
+	readonly ledgerName?: string;
+	readonly ledgerType?: "Private" | "Public" | "Unknown";
+	readonly ledgerUri?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating";
 }
 export interface ManagedCCFProperties {
-	readonly appName?: string | undefined;
-	readonly appUri?: string | undefined;
-	readonly deploymentType?: DeploymentType | undefined;
-	readonly identityServiceUri?: string | undefined;
-	readonly memberIdentityCertificates?: MemberIdentityCertificate[] | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
+	readonly appName?: string;
+	readonly appUri?: string;
+	readonly deploymentType?: DeploymentType;
+	readonly identityServiceUri?: string;
+	readonly memberIdentityCertificates?: MemberIdentityCertificate[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating";
 }
 export interface MemberIdentityCertificate {
-	readonly certificate?: string | undefined;
-	readonly encryptionkey?: string | undefined;
-	readonly tags?: any | undefined;
+	readonly certificate?: string;
+	readonly encryptionkey?: string;
+	readonly tags?: any;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Tags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	ledgers: ledgers,

@@ -14,12 +14,12 @@ export interface signalRComponentOutputs {
 	readonly type: "Microsoft.SignalRService/signalR";
 }
 export interface signalRComponentInputs {
-	readonly kind?: ("RawWebSockets" | "SignalR") | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: "RawWebSockets" | "SignalR";
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SignalRProperties | undefined;
-	readonly sku?: ResourceSku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SignalRProperties;
+	readonly sku?: ResourceSku;
+	readonly tags?: TrackedResourceTags;
 }
 export class signalR_privateEndpointConnections
 	extends ArmResource<signalR_privateEndpointConnectionsComponentInputs>
@@ -39,7 +39,7 @@ export interface signalR_privateEndpointConnectionsComponentOutputs {
 }
 export interface signalR_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export function listKeys(resource: signalR): SignalRKeys {
 	if (resource.apiVersion !== "2020-05-01") {
@@ -51,73 +51,80 @@ export function listKeys(resource: signalR): SignalRKeys {
 	throw new Error("not implemented");
 }
 export interface NetworkACL {
-	readonly allow?: ("ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[]) | undefined;
-	readonly deny?: ("ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[]) | undefined;
+	readonly allow?: "ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[];
+	readonly deny?: "ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[];
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointACL {
-	readonly allow?: ("ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[]) | undefined;
-	readonly deny?: ("ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[]) | undefined;
+	readonly allow?: "ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[];
+	readonly deny?: "ClientConnection" | "RESTAPI" | "ServerConnection" | "Trace"[];
 	readonly name: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Moving"
+		| "Running"
+		| "Succeeded"
+		| "Unknown"
+		| "Updating";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface ResourceSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 }
 export interface ServerlessUpstreamSettings {
-	readonly templates?: UpstreamTemplate[] | undefined;
+	readonly templates?: UpstreamTemplate[];
 }
 export interface SignalRCorsSettings {
-	readonly allowedOrigins?: string[] | undefined;
+	readonly allowedOrigins?: string[];
 }
 export interface SignalRFeature {
 	readonly flag: "EnableConnectivityLogs" | "EnableMessagingLogs" | "ServiceMode";
 }
 export interface SignalRFeatureProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SignalRKeys {
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface SignalRNetworkACLs {
-	readonly defaultAction?: ("Allow" | "Deny") | undefined;
-	readonly privateEndpoints?: PrivateEndpointACL[] | undefined;
-	readonly publicNetwork?: NetworkACL | undefined;
+	readonly defaultAction?: "Allow" | "Deny";
+	readonly privateEndpoints?: PrivateEndpointACL[];
+	readonly publicNetwork?: NetworkACL;
 }
 export interface SignalRProperties {
-	readonly cors?: SignalRCorsSettings | undefined;
-	readonly externalIP?: string | undefined;
-	readonly features?: SignalRFeature[] | undefined;
+	readonly cors?: SignalRCorsSettings;
+	readonly externalIP?: string;
+	readonly features?: SignalRFeature[];
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UpstreamTemplate {
-	readonly categoryPattern?: string | undefined;
-	readonly eventPattern?: string | undefined;
-	readonly hubPattern?: string | undefined;
+	readonly categoryPattern?: string;
+	readonly eventPattern?: string;
+	readonly hubPattern?: string;
 	readonly urlTemplate: string;
 }
 export default {

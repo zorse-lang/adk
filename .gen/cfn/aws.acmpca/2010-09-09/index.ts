@@ -16,9 +16,9 @@ export interface CertificateComponentInputs {
 	readonly CertificateSigningRequest: string;
 	readonly SigningAlgorithm: string;
 	readonly Validity: Validity;
-	readonly ApiPassthrough?: (ApiPassthrough | undefined) | undefined;
-	readonly TemplateArn?: (string | undefined) | undefined;
-	readonly ValidityNotBefore?: (Validity | undefined) | undefined;
+	readonly ApiPassthrough?: ApiPassthrough | undefined;
+	readonly TemplateArn?: string | undefined;
+	readonly ValidityNotBefore?: Validity | undefined;
 	readonly LogicalId: string;
 }
 export class CertificateAuthority
@@ -40,11 +40,11 @@ export interface CertificateAuthorityComponentInputs {
 	readonly SigningAlgorithm: string;
 	readonly Subject: Subject;
 	readonly Type: string;
-	readonly CsrExtensions?: (CsrExtensions | undefined) | undefined;
-	readonly KeyStorageSecurityStandard?: (string | undefined) | undefined;
-	readonly RevocationConfiguration?: (RevocationConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly UsageMode?: (string | undefined) | undefined;
+	readonly CsrExtensions?: CsrExtensions | undefined;
+	readonly KeyStorageSecurityStandard?: string | undefined;
+	readonly RevocationConfiguration?: RevocationConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly UsageMode?: string | undefined;
 	readonly LogicalId: string;
 }
 export class CertificateAuthorityActivation
@@ -62,8 +62,8 @@ export interface CertificateAuthorityActivationComponentOutputs {
 export interface CertificateAuthorityActivationComponentInputs {
 	readonly Certificate: string;
 	readonly CertificateAuthorityArn: string;
-	readonly CertificateChain?: (string | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
+	readonly CertificateChain?: string | undefined;
+	readonly Status?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Permission extends CfnResource<PermissionComponentInputs> implements PermissionComponentOutputs {
@@ -76,19 +76,19 @@ export interface PermissionComponentInputs {
 	readonly Actions: string[];
 	readonly CertificateAuthorityArn: string;
 	readonly Principal: string;
-	readonly SourceAccount?: (string | undefined) | undefined;
+	readonly SourceAccount?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface ApiPassthrough {
-	readonly Extensions?: (Extensions | undefined) | undefined;
-	readonly Subject?: (Subject | undefined) | undefined;
+	readonly Extensions?: Extensions | undefined;
+	readonly Subject?: Subject | undefined;
 }
 export interface CustomAttribute {
 	readonly ObjectIdentifier: string;
 	readonly Value: string;
 }
 export interface CustomExtension {
-	readonly Critical?: (boolean | undefined) | undefined;
+	readonly Critical?: boolean | undefined;
 	readonly ObjectIdentifier: string;
 	readonly Value: string;
 }
@@ -97,36 +97,36 @@ export interface EdiPartyName {
 	readonly PartyName: string;
 }
 export interface ExtendedKeyUsage {
-	readonly ExtendedKeyUsageObjectIdentifier?: (string | undefined) | undefined;
-	readonly ExtendedKeyUsageType?: (string | undefined) | undefined;
+	readonly ExtendedKeyUsageObjectIdentifier?: string | undefined;
+	readonly ExtendedKeyUsageType?: string | undefined;
 }
 export interface Extensions {
-	readonly CertificatePolicies?: (PolicyInformation[] | undefined) | undefined;
-	readonly CustomExtensions?: (CustomExtension[] | undefined) | undefined;
-	readonly ExtendedKeyUsage?: (ExtendedKeyUsage[] | undefined) | undefined;
-	readonly KeyUsage?: (KeyUsage | undefined) | undefined;
-	readonly SubjectAlternativeNames?: (GeneralName[] | undefined) | undefined;
+	readonly CertificatePolicies?: PolicyInformation[] | undefined;
+	readonly CustomExtensions?: CustomExtension[] | undefined;
+	readonly ExtendedKeyUsage?: ExtendedKeyUsage[] | undefined;
+	readonly KeyUsage?: KeyUsage | undefined;
+	readonly SubjectAlternativeNames?: GeneralName[] | undefined;
 }
 export interface GeneralName {
-	readonly DirectoryName?: (Subject | undefined) | undefined;
-	readonly DnsName?: (string | undefined) | undefined;
-	readonly EdiPartyName?: (EdiPartyName | undefined) | undefined;
-	readonly IpAddress?: (string | undefined) | undefined;
-	readonly OtherName?: (OtherName | undefined) | undefined;
-	readonly RegisteredId?: (string | undefined) | undefined;
-	readonly Rfc822Name?: (string | undefined) | undefined;
-	readonly UniformResourceIdentifier?: (string | undefined) | undefined;
+	readonly DirectoryName?: Subject | undefined;
+	readonly DnsName?: string | undefined;
+	readonly EdiPartyName?: EdiPartyName | undefined;
+	readonly IpAddress?: string | undefined;
+	readonly OtherName?: OtherName | undefined;
+	readonly RegisteredId?: string | undefined;
+	readonly Rfc822Name?: string | undefined;
+	readonly UniformResourceIdentifier?: string | undefined;
 }
 export interface KeyUsage {
-	readonly CRLSign?: (boolean | undefined) | undefined;
-	readonly DataEncipherment?: (boolean | undefined) | undefined;
-	readonly DecipherOnly?: (boolean | undefined) | undefined;
-	readonly DigitalSignature?: (boolean | undefined) | undefined;
-	readonly EncipherOnly?: (boolean | undefined) | undefined;
-	readonly KeyAgreement?: (boolean | undefined) | undefined;
-	readonly KeyCertSign?: (boolean | undefined) | undefined;
-	readonly KeyEncipherment?: (boolean | undefined) | undefined;
-	readonly NonRepudiation?: (boolean | undefined) | undefined;
+	readonly CRLSign?: boolean | undefined;
+	readonly DataEncipherment?: boolean | undefined;
+	readonly DecipherOnly?: boolean | undefined;
+	readonly DigitalSignature?: boolean | undefined;
+	readonly EncipherOnly?: boolean | undefined;
+	readonly KeyAgreement?: boolean | undefined;
+	readonly KeyCertSign?: boolean | undefined;
+	readonly KeyEncipherment?: boolean | undefined;
+	readonly NonRepudiation?: boolean | undefined;
 }
 export interface OtherName {
 	readonly TypeId: string;
@@ -134,7 +134,7 @@ export interface OtherName {
 }
 export interface PolicyInformation {
 	readonly CertPolicyId: string;
-	readonly PolicyQualifiers?: (PolicyQualifierInfo[] | undefined) | undefined;
+	readonly PolicyQualifiers?: PolicyQualifierInfo[] | undefined;
 }
 export interface PolicyQualifierInfo {
 	readonly PolicyQualifierId: string;
@@ -144,21 +144,21 @@ export interface Qualifier {
 	readonly CpsUri: string;
 }
 export interface Subject {
-	readonly CommonName?: (string | undefined) | undefined;
-	readonly Country?: (string | undefined) | undefined;
-	readonly CustomAttributes?: (CustomAttribute[] | undefined) | undefined;
-	readonly DistinguishedNameQualifier?: (string | undefined) | undefined;
-	readonly GenerationQualifier?: (string | undefined) | undefined;
-	readonly GivenName?: (string | undefined) | undefined;
-	readonly Initials?: (string | undefined) | undefined;
-	readonly Locality?: (string | undefined) | undefined;
-	readonly Organization?: (string | undefined) | undefined;
-	readonly OrganizationalUnit?: (string | undefined) | undefined;
-	readonly Pseudonym?: (string | undefined) | undefined;
-	readonly SerialNumber?: (string | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
-	readonly Surname?: (string | undefined) | undefined;
-	readonly Title?: (string | undefined) | undefined;
+	readonly CommonName?: string | undefined;
+	readonly Country?: string | undefined;
+	readonly CustomAttributes?: CustomAttribute[] | undefined;
+	readonly DistinguishedNameQualifier?: string | undefined;
+	readonly GenerationQualifier?: string | undefined;
+	readonly GivenName?: string | undefined;
+	readonly Initials?: string | undefined;
+	readonly Locality?: string | undefined;
+	readonly Organization?: string | undefined;
+	readonly OrganizationalUnit?: string | undefined;
+	readonly Pseudonym?: string | undefined;
+	readonly SerialNumber?: string | undefined;
+	readonly State?: string | undefined;
+	readonly Surname?: string | undefined;
+	readonly Title?: string | undefined;
 }
 export interface Validity {
 	readonly Type: string;
@@ -169,27 +169,27 @@ export interface AccessDescription {
 	readonly AccessMethod: AccessMethod;
 }
 export interface AccessMethod {
-	readonly AccessMethodType?: (string | undefined) | undefined;
-	readonly CustomObjectIdentifier?: (string | undefined) | undefined;
+	readonly AccessMethodType?: string | undefined;
+	readonly CustomObjectIdentifier?: string | undefined;
 }
 export interface CrlConfiguration {
-	readonly CustomCname?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly ExpirationInDays?: (number | undefined) | undefined;
-	readonly S3BucketName?: (string | undefined) | undefined;
-	readonly S3ObjectAcl?: (string | undefined) | undefined;
+	readonly CustomCname?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly ExpirationInDays?: number | undefined;
+	readonly S3BucketName?: string | undefined;
+	readonly S3ObjectAcl?: string | undefined;
 }
 export interface CsrExtensions {
-	readonly KeyUsage?: (KeyUsage | undefined) | undefined;
-	readonly SubjectInformationAccess?: (AccessDescription[] | undefined) | undefined;
+	readonly KeyUsage?: KeyUsage | undefined;
+	readonly SubjectInformationAccess?: AccessDescription[] | undefined;
 }
 export interface OcspConfiguration {
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly OcspCustomCname?: (string | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly OcspCustomCname?: string | undefined;
 }
 export interface RevocationConfiguration {
-	readonly CrlConfiguration?: (CrlConfiguration | undefined) | undefined;
-	readonly OcspConfiguration?: (OcspConfiguration | undefined) | undefined;
+	readonly CrlConfiguration?: CrlConfiguration | undefined;
+	readonly OcspConfiguration?: OcspConfiguration | undefined;
 }
 export default {
 	Certificate: Certificate,

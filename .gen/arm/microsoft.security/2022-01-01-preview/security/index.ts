@@ -18,7 +18,7 @@ export interface assessments_governanceAssignmentsComponentOutputs {
 }
 export interface assessments_governanceAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: GovernanceAssignmentProperties | undefined;
+	readonly properties?: GovernanceAssignmentProperties;
 }
 export class governanceRules
 	extends ArmResource<governanceRulesComponentInputs>
@@ -38,42 +38,42 @@ export interface governanceRulesComponentOutputs {
 }
 export interface governanceRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: GovernanceRuleProperties | undefined;
+	readonly properties?: GovernanceRuleProperties;
 }
 export interface GovernanceAssignmentAdditionalData {
-	readonly ticketLink?: string | undefined;
-	readonly ticketNumber?: number | undefined;
-	readonly ticketStatus?: string | undefined;
+	readonly ticketLink?: string;
+	readonly ticketNumber?: number;
+	readonly ticketStatus?: string;
 }
 export interface GovernanceAssignmentProperties {
-	readonly additionalData?: GovernanceAssignmentAdditionalData | undefined;
-	readonly governanceEmailNotification?: GovernanceEmailNotification | undefined;
-	readonly isGracePeriod?: boolean | undefined;
-	readonly owner?: string | undefined;
+	readonly additionalData?: GovernanceAssignmentAdditionalData;
+	readonly governanceEmailNotification?: GovernanceEmailNotification;
+	readonly isGracePeriod?: boolean;
+	readonly owner?: string;
 	readonly remediationDueDate: string;
-	readonly remediationEta?: RemediationEta | undefined;
+	readonly remediationEta?: RemediationEta;
 }
 export interface GovernanceEmailNotification {
-	readonly disableManagerEmailNotification?: boolean | undefined;
-	readonly disableOwnerEmailNotification?: boolean | undefined;
+	readonly disableManagerEmailNotification?: boolean;
+	readonly disableOwnerEmailNotification?: boolean;
 }
 export interface GovernanceRuleEmailNotification {
-	readonly disableManagerEmailNotification?: boolean | undefined;
-	readonly disableOwnerEmailNotification?: boolean | undefined;
+	readonly disableManagerEmailNotification?: boolean;
+	readonly disableOwnerEmailNotification?: boolean;
 }
 export interface GovernanceRuleOwnerSource {
-	readonly type?: ("ByTag" | "Manually") | undefined;
-	readonly value?: string | undefined;
+	readonly type?: "ByTag" | "Manually";
+	readonly value?: string;
 }
 export interface GovernanceRuleProperties {
 	readonly conditionSets: any[];
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly displayName: string;
-	readonly governanceEmailNotification?: GovernanceRuleEmailNotification | undefined;
-	readonly isDisabled?: boolean | undefined;
-	readonly isGracePeriod?: boolean | undefined;
+	readonly governanceEmailNotification?: GovernanceRuleEmailNotification;
+	readonly isDisabled?: boolean;
+	readonly isGracePeriod?: boolean;
 	readonly ownerSource: GovernanceRuleOwnerSource;
-	readonly remediationTimeframe?: string | undefined;
+	readonly remediationTimeframe?: string;
 	readonly rulePriority: number;
 	readonly ruleType: "Integrated" | "ServiceNow";
 	readonly sourceResourceType: "Assessments";

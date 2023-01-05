@@ -14,12 +14,12 @@ export interface monitorsComponentOutputs {
 	readonly type: "Dynatrace.Observability/monitors";
 }
 export interface monitorsComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
+	readonly identity?: IdentityProperties;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: MonitorProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class monitors_singleSignOnConfigurations
 	extends ArmResource<monitors_singleSignOnConfigurationsComponentInputs>
@@ -40,7 +40,7 @@ export interface monitors_singleSignOnConfigurationsComponentOutputs {
 export interface monitors_singleSignOnConfigurationsComponentInputs {
 	readonly name: string;
 	readonly properties: DynatraceSingleSignOnProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class monitors_tagRules
 	extends ArmResource<monitors_tagRulesComponentInputs>
@@ -61,7 +61,7 @@ export interface monitors_tagRulesComponentOutputs {
 export interface monitors_tagRulesComponentInputs {
 	readonly name: string;
 	readonly properties: MonitoringTagRulesProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export function listAppServices(resource: monitors): AppServiceListResponse {
 	if (resource.apiVersion !== "2021-09-01") {
@@ -103,230 +103,209 @@ export function listMonitoredResources(resource: monitors): MonitoredResourceLis
 	throw new Error("not implemented");
 }
 export interface AccountInfo {
-	readonly accountId?: string | undefined;
-	readonly regionId?: string | undefined;
+	readonly accountId?: string;
+	readonly regionId?: string;
 }
 export interface AppServiceInfo {
-	readonly autoUpdateSetting?: ("DISABLED" | "ENABLED") | undefined;
+	readonly autoUpdateSetting?: "DISABLED" | "ENABLED";
 	readonly availabilityState?:
-		| (
-				| "CRASHED"
-				| "LOST"
-				| "MONITORED"
-				| "PRE_MONITORED"
-				| "SHUTDOWN"
-				| "UNEXPECTED_SHUTDOWN"
-				| "UNKNOWN"
-				| "UNMONITORED"
-		  )
-		| undefined;
-	readonly hostGroup?: string | undefined;
-	readonly hostName?: string | undefined;
-	readonly logModule?: ("DISABLED" | "ENABLED") | undefined;
-	readonly monitoringType?: ("CLOUD_INFRASTRUCTURE" | "FULL_STACK") | undefined;
-	readonly resourceId?: string | undefined;
+		| "CRASHED"
+		| "LOST"
+		| "MONITORED"
+		| "PRE_MONITORED"
+		| "SHUTDOWN"
+		| "UNEXPECTED_SHUTDOWN"
+		| "UNKNOWN"
+		| "UNMONITORED";
+	readonly hostGroup?: string;
+	readonly hostName?: string;
+	readonly logModule?: "DISABLED" | "ENABLED";
+	readonly monitoringType?: "CLOUD_INFRASTRUCTURE" | "FULL_STACK";
+	readonly resourceId?: string;
 	readonly updateStatus?:
-		| (
-				| "INCOMPATIBLE"
-				| "OUTDATED"
-				| "SCHEDULED"
-				| "SUPPRESSED"
-				| "UNKNOWN"
-				| "UP2DATE"
-				| "UPDATE_IN_PROGRESS"
-				| "UPDATE_PENDING"
-				| "UPDATE_PROBLEM"
-		  )
-		| undefined;
-	readonly version?: string | undefined;
+		| "INCOMPATIBLE"
+		| "OUTDATED"
+		| "SCHEDULED"
+		| "SUPPRESSED"
+		| "UNKNOWN"
+		| "UP2DATE"
+		| "UPDATE_IN_PROGRESS"
+		| "UPDATE_PENDING"
+		| "UPDATE_PROBLEM";
+	readonly version?: string;
 }
 export interface AppServiceListResponse {
-	readonly nextLink?: string | undefined;
-	readonly value?: AppServiceInfo[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: AppServiceInfo[];
 }
 export interface DynatraceEnvironmentProperties {
-	readonly accountInfo?: AccountInfo | undefined;
-	readonly environmentInfo?: EnvironmentInfo | undefined;
-	readonly singleSignOnProperties?: DynatraceSingleSignOnProperties | undefined;
-	readonly userId?: string | undefined;
+	readonly accountInfo?: AccountInfo;
+	readonly environmentInfo?: EnvironmentInfo;
+	readonly singleSignOnProperties?: DynatraceSingleSignOnProperties;
+	readonly userId?: string;
 }
 export interface DynatraceSingleSignOnProperties {
-	readonly aadDomains?: string[] | undefined;
-	readonly enterpriseAppId?: string | undefined;
+	readonly aadDomains?: string[];
+	readonly enterpriseAppId?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly singleSignOnState?: ("Disable" | "Enable" | "Existing" | "Initial") | undefined;
-	readonly singleSignOnUrl?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
+	readonly singleSignOnState?: "Disable" | "Enable" | "Existing" | "Initial";
+	readonly singleSignOnUrl?: string;
 }
 export interface EnvironmentInfo {
-	readonly environmentId?: string | undefined;
-	readonly ingestionKey?: string | undefined;
-	readonly landingURL?: string | undefined;
-	readonly logsIngestionEndpoint?: string | undefined;
+	readonly environmentId?: string;
+	readonly ingestionKey?: string;
+	readonly landingURL?: string;
+	readonly logsIngestionEndpoint?: string;
 }
 export interface FilteringTag {
-	readonly action?: ("Exclude" | "Include") | undefined;
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly action?: "Exclude" | "Include";
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface IdentityProperties {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "SystemAndUserAssigned" | "SystemAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: IdentityPropertiesUserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: IdentityPropertiesUserAssignedIdentities;
 }
 export interface IdentityPropertiesUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface LinkableEnvironmentListResponse {
-	readonly nextLink?: string | undefined;
-	readonly value?: LinkableEnvironmentResponse[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: LinkableEnvironmentResponse[];
 }
 export interface LinkableEnvironmentRequest {
-	readonly region?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly userPrincipal?: string | undefined;
+	readonly region?: string;
+	readonly tenantId?: string;
+	readonly userPrincipal?: string;
 }
 export interface LinkableEnvironmentResponse {
-	readonly environmentId?: string | undefined;
-	readonly environmentName?: string | undefined;
-	readonly planData?: PlanData | undefined;
+	readonly environmentId?: string;
+	readonly environmentName?: string;
+	readonly planData?: PlanData;
 }
 export interface LogRules {
-	readonly filteringTags?: FilteringTag[] | undefined;
-	readonly sendAadLogs?: ("Disabled" | "Enabled") | undefined;
-	readonly sendActivityLogs?: ("Disabled" | "Enabled") | undefined;
-	readonly sendSubscriptionLogs?: ("Disabled" | "Enabled") | undefined;
+	readonly filteringTags?: FilteringTag[];
+	readonly sendAadLogs?: "Disabled" | "Enabled";
+	readonly sendActivityLogs?: "Disabled" | "Enabled";
+	readonly sendSubscriptionLogs?: "Disabled" | "Enabled";
 }
 export interface MetricRules {
-	readonly filteringTags?: FilteringTag[] | undefined;
+	readonly filteringTags?: FilteringTag[];
 }
 export interface MonitoredResource {
-	readonly id?: string | undefined;
-	readonly reasonForLogsStatus?: string | undefined;
-	readonly reasonForMetricsStatus?: string | undefined;
-	readonly sendingLogs?: ("Disabled" | "Enabled") | undefined;
-	readonly sendingMetrics?: ("Disabled" | "Enabled") | undefined;
+	readonly id?: string;
+	readonly reasonForLogsStatus?: string;
+	readonly reasonForMetricsStatus?: string;
+	readonly sendingLogs?: "Disabled" | "Enabled";
+	readonly sendingMetrics?: "Disabled" | "Enabled";
 }
 export interface MonitoredResourceListResponse {
-	readonly nextLink?: string | undefined;
-	readonly value?: MonitoredResource[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: MonitoredResource[];
 }
 export interface MonitoringTagRulesProperties {
-	readonly logRules?: LogRules | undefined;
-	readonly metricRules?: MetricRules | undefined;
+	readonly logRules?: LogRules;
+	readonly metricRules?: MetricRules;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
 }
 export interface MonitorProperties {
-	readonly dynatraceEnvironmentProperties?: DynatraceEnvironmentProperties | undefined;
-	readonly liftrResourceCategory?: ("MonitorLogs" | "Unknown") | undefined;
-	readonly liftrResourcePreference?: number | undefined;
-	readonly marketplaceSubscriptionStatus?: ("Active" | "Suspended") | undefined;
-	readonly monitoringStatus?: ("Disabled" | "Enabled") | undefined;
-	readonly planData?: PlanData | undefined;
+	readonly dynatraceEnvironmentProperties?: DynatraceEnvironmentProperties;
+	readonly liftrResourceCategory?: "MonitorLogs" | "Unknown";
+	readonly liftrResourcePreference?: number;
+	readonly marketplaceSubscriptionStatus?: "Active" | "Suspended";
+	readonly monitoringStatus?: "Disabled" | "Enabled";
+	readonly planData?: PlanData;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly userInfo?: UserInfo | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
+	readonly userInfo?: UserInfo;
 }
 export interface PlanData {
-	readonly billingCycle?: string | undefined;
-	readonly effectiveDate?: string | undefined;
-	readonly planDetails?: string | undefined;
-	readonly usageType?: string | undefined;
+	readonly billingCycle?: string;
+	readonly effectiveDate?: string;
+	readonly planDetails?: string;
+	readonly usageType?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentity {
 	readonly clientId: string;
 	readonly principalId: string;
 }
 export interface UserInfo {
-	readonly country?: string | undefined;
-	readonly emailAddress?: string | undefined;
-	readonly firstName?: string | undefined;
-	readonly lastName?: string | undefined;
-	readonly phoneNumber?: string | undefined;
+	readonly country?: string;
+	readonly emailAddress?: string;
+	readonly firstName?: string;
+	readonly lastName?: string;
+	readonly phoneNumber?: string;
 }
 export interface VMHostsListResponse {
-	readonly nextLink?: string | undefined;
-	readonly value?: VMInfo[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: VMInfo[];
 }
 export interface VMInfo {
-	readonly autoUpdateSetting?: ("DISABLED" | "ENABLED") | undefined;
+	readonly autoUpdateSetting?: "DISABLED" | "ENABLED";
 	readonly availabilityState?:
-		| (
-				| "CRASHED"
-				| "LOST"
-				| "MONITORED"
-				| "PRE_MONITORED"
-				| "SHUTDOWN"
-				| "UNEXPECTED_SHUTDOWN"
-				| "UNKNOWN"
-				| "UNMONITORED"
-		  )
-		| undefined;
-	readonly hostGroup?: string | undefined;
-	readonly hostName?: string | undefined;
-	readonly logModule?: ("DISABLED" | "ENABLED") | undefined;
-	readonly monitoringType?: ("CLOUD_INFRASTRUCTURE" | "FULL_STACK") | undefined;
-	readonly resourceId?: string | undefined;
+		| "CRASHED"
+		| "LOST"
+		| "MONITORED"
+		| "PRE_MONITORED"
+		| "SHUTDOWN"
+		| "UNEXPECTED_SHUTDOWN"
+		| "UNKNOWN"
+		| "UNMONITORED";
+	readonly hostGroup?: string;
+	readonly hostName?: string;
+	readonly logModule?: "DISABLED" | "ENABLED";
+	readonly monitoringType?: "CLOUD_INFRASTRUCTURE" | "FULL_STACK";
+	readonly resourceId?: string;
 	readonly updateStatus?:
-		| (
-				| "INCOMPATIBLE"
-				| "OUTDATED"
-				| "SCHEDULED"
-				| "SUPPRESSED"
-				| "UNKNOWN"
-				| "UP2DATE"
-				| "UPDATE_IN_PROGRESS"
-				| "UPDATE_PENDING"
-				| "UPDATE_PROBLEM"
-		  )
-		| undefined;
-	readonly version?: string | undefined;
+		| "INCOMPATIBLE"
+		| "OUTDATED"
+		| "SCHEDULED"
+		| "SUPPRESSED"
+		| "UNKNOWN"
+		| "UP2DATE"
+		| "UPDATE_IN_PROGRESS"
+		| "UPDATE_PENDING"
+		| "UPDATE_PROBLEM";
+	readonly version?: string;
 }
 export default {
 	monitors: monitors,

@@ -7,140 +7,139 @@ export class ManagedZoneOperations
 	constructor(entity: ADKEntity, options: ManagedZoneOperationsComponentInputs) {
 		super(entity, options.name, "dns.v1beta2.ManagedZoneOperations", options);
 	}
-	public readonly dnsKeyContext?: OperationDnsKeyContext | undefined;
-	public readonly id?: string | undefined;
-	public readonly startTime?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly user?: string | undefined;
-	public readonly zoneContext?: OperationManagedZoneContext | undefined;
+	public readonly dnsKeyContext?: OperationDnsKeyContext;
+	public readonly id?: string;
+	public readonly startTime?: string;
+	public readonly status?: string;
+	public readonly user?: string;
+	public readonly zoneContext?: OperationManagedZoneContext;
 }
 export interface ManagedZoneOperationsComponentOutputs {
-	readonly dnsKeyContext?: OperationDnsKeyContext | undefined;
-	readonly id?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly user?: string | undefined;
-	readonly zoneContext?: OperationManagedZoneContext | undefined;
+	readonly dnsKeyContext?: OperationDnsKeyContext;
+	readonly id?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly user?: string;
+	readonly zoneContext?: OperationManagedZoneContext;
 }
 export interface ManagedZoneOperationsComponentInputs {
-	readonly kind?: string | undefined;
-	readonly type: string;
+	readonly kind?: string;
 	readonly name: string;
 }
 export interface DnsKey {
-	readonly algorithm?: string | undefined;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly digests?: DnsKeyDigest[] | undefined;
-	readonly id?: string | undefined;
-	readonly isActive?: boolean | undefined;
-	readonly keyLength?: number | undefined;
-	readonly keyTag?: number | undefined;
-	readonly kind?: string | undefined;
-	readonly publicKey?: string | undefined;
-	readonly type?: string | undefined;
+	readonly algorithm?: string;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly digests?: DnsKeyDigest[];
+	readonly id?: string;
+	readonly isActive?: boolean;
+	readonly keyLength?: number;
+	readonly keyTag?: number;
+	readonly kind?: string;
+	readonly publicKey?: string;
+	readonly type?: string;
 }
 export interface DnsKeyDigest {
-	readonly digest?: string | undefined;
-	readonly type?: string | undefined;
+	readonly digest?: string;
+	readonly type?: string;
 }
 export interface DnsKeySpec {
-	readonly algorithm?: string | undefined;
-	readonly keyLength?: number | undefined;
-	readonly keyType?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly algorithm?: string;
+	readonly keyLength?: number;
+	readonly keyType?: string;
+	readonly kind?: string;
 }
 export interface ManagedZone {
-	readonly cloudLoggingConfig?: ManagedZoneCloudLoggingConfig | undefined;
-	readonly creationTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly dnsName?: string | undefined;
-	readonly dnssecConfig?: ManagedZoneDnsSecConfig | undefined;
-	readonly forwardingConfig?: ManagedZoneForwardingConfig | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly nameServers?: string[] | undefined;
-	readonly nameServerSet?: string | undefined;
-	readonly peeringConfig?: ManagedZonePeeringConfig | undefined;
-	readonly privateVisibilityConfig?: ManagedZonePrivateVisibilityConfig | undefined;
-	readonly reverseLookupConfig?: ManagedZoneReverseLookupConfig | undefined;
-	readonly serviceDirectoryConfig?: ManagedZoneServiceDirectoryConfig | undefined;
-	readonly visibility?: string | undefined;
+	readonly cloudLoggingConfig?: ManagedZoneCloudLoggingConfig;
+	readonly creationTime?: string;
+	readonly description?: string;
+	readonly dnsName?: string;
+	readonly dnssecConfig?: ManagedZoneDnsSecConfig;
+	readonly forwardingConfig?: ManagedZoneForwardingConfig;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly nameServers?: string[];
+	readonly nameServerSet?: string;
+	readonly peeringConfig?: ManagedZonePeeringConfig;
+	readonly privateVisibilityConfig?: ManagedZonePrivateVisibilityConfig;
+	readonly reverseLookupConfig?: ManagedZoneReverseLookupConfig;
+	readonly serviceDirectoryConfig?: ManagedZoneServiceDirectoryConfig;
+	readonly visibility?: string;
 }
 export interface ManagedZoneCloudLoggingConfig {
-	readonly enableLogging?: boolean | undefined;
-	readonly kind?: string | undefined;
+	readonly enableLogging?: boolean;
+	readonly kind?: string;
 }
 export interface ManagedZoneDnsSecConfig {
-	readonly defaultKeySpecs?: DnsKeySpec[] | undefined;
-	readonly kind?: string | undefined;
-	readonly nonExistence?: string | undefined;
-	readonly state?: string | undefined;
+	readonly defaultKeySpecs?: DnsKeySpec[];
+	readonly kind?: string;
+	readonly nonExistence?: string;
+	readonly state?: string;
 }
 export interface ManagedZoneForwardingConfig {
-	readonly kind?: string | undefined;
-	readonly targetNameServers?: ManagedZoneForwardingConfigNameServerTarget[] | undefined;
+	readonly kind?: string;
+	readonly targetNameServers?: ManagedZoneForwardingConfigNameServerTarget[];
 }
 export interface ManagedZoneForwardingConfigNameServerTarget {
-	readonly forwardingPath?: string | undefined;
-	readonly ipv4Address?: string | undefined;
-	readonly ipv6Address?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly port?: number | undefined;
+	readonly forwardingPath?: string;
+	readonly ipv4Address?: string;
+	readonly ipv6Address?: string;
+	readonly kind?: string;
+	readonly port?: number;
 }
 export interface ManagedZonePeeringConfig {
-	readonly kind?: string | undefined;
-	readonly targetNetwork?: ManagedZonePeeringConfigTargetNetwork | undefined;
+	readonly kind?: string;
+	readonly targetNetwork?: ManagedZonePeeringConfigTargetNetwork;
 }
 export interface ManagedZonePeeringConfigTargetNetwork {
-	readonly deactivateTime?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly networkUrl?: string | undefined;
+	readonly deactivateTime?: string;
+	readonly kind?: string;
+	readonly networkUrl?: string;
 }
 export interface ManagedZonePrivateVisibilityConfig {
-	readonly gkeClusters?: ManagedZonePrivateVisibilityConfigGKECluster[] | undefined;
-	readonly kind?: string | undefined;
-	readonly networks?: ManagedZonePrivateVisibilityConfigNetwork[] | undefined;
+	readonly gkeClusters?: ManagedZonePrivateVisibilityConfigGKECluster[];
+	readonly kind?: string;
+	readonly networks?: ManagedZonePrivateVisibilityConfigNetwork[];
 }
 export interface ManagedZonePrivateVisibilityConfigGKECluster {
-	readonly gkeClusterName?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly gkeClusterName?: string;
+	readonly kind?: string;
 }
 export interface ManagedZonePrivateVisibilityConfigNetwork {
-	readonly kind?: string | undefined;
-	readonly networkUrl?: string | undefined;
+	readonly kind?: string;
+	readonly networkUrl?: string;
 }
 export interface ManagedZoneReverseLookupConfig {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 }
 export interface ManagedZoneServiceDirectoryConfig {
-	readonly kind?: string | undefined;
-	readonly namespace?: ManagedZoneServiceDirectoryConfigNamespace | undefined;
+	readonly kind?: string;
+	readonly namespace?: ManagedZoneServiceDirectoryConfigNamespace;
 }
 export interface ManagedZoneServiceDirectoryConfigNamespace {
-	readonly deletionTime?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly namespaceUrl?: string | undefined;
+	readonly deletionTime?: string;
+	readonly kind?: string;
+	readonly namespaceUrl?: string;
 }
 export interface Operation {
-	readonly dnsKeyContext?: OperationDnsKeyContext | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly type?: string | undefined;
-	readonly user?: string | undefined;
-	readonly zoneContext?: OperationManagedZoneContext | undefined;
+	readonly dnsKeyContext?: OperationDnsKeyContext;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly type?: string;
+	readonly user?: string;
+	readonly zoneContext?: OperationManagedZoneContext;
 }
 export interface OperationDnsKeyContext {
-	readonly newValue?: DnsKey | undefined;
-	readonly oldValue?: DnsKey | undefined;
+	readonly newValue?: DnsKey;
+	readonly oldValue?: DnsKey;
 }
 export interface OperationManagedZoneContext {
-	readonly newValue?: ManagedZone | undefined;
-	readonly oldValue?: ManagedZone | undefined;
+	readonly newValue?: ManagedZone;
+	readonly oldValue?: ManagedZone;
 }
 export default {
 	ManagedZoneOperations: ManagedZoneOperations,

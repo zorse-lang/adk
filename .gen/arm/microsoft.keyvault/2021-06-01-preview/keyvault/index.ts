@@ -14,12 +14,12 @@ export interface managedHSMsComponentOutputs {
 	readonly type: "Microsoft.KeyVault/managedHSMs";
 }
 export interface managedHSMsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ManagedHsmProperties | undefined;
-	readonly sku?: ManagedHsmSku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ManagedHsmResourceTags | undefined;
+	readonly properties?: ManagedHsmProperties;
+	readonly sku?: ManagedHsmSku;
+	readonly systemData?: SystemData;
+	readonly tags?: ManagedHsmResourceTags;
 }
 export class managedHSMs_privateEndpointConnections
 	extends ArmResource<managedHSMs_privateEndpointConnectionsComponentInputs>
@@ -44,13 +44,13 @@ export interface managedHSMs_privateEndpointConnectionsComponentOutputs {
 	readonly type: "Microsoft.KeyVault/managedHSMs/privateEndpointConnections";
 }
 export interface managedHSMs_privateEndpointConnectionsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: MhsmPrivateEndpointConnectionProperties | undefined;
-	readonly sku?: ManagedHsmSku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ManagedHsmResourceTags | undefined;
+	readonly properties?: MhsmPrivateEndpointConnectionProperties;
+	readonly sku?: ManagedHsmSku;
+	readonly systemData?: SystemData;
+	readonly tags?: ManagedHsmResourceTags;
 }
 export class vaults extends ArmResource<vaultsComponentInputs> implements vaultsComponentOutputs {
 	constructor(entity: ADKEntity, options: vaultsComponentInputs) {
@@ -69,8 +69,8 @@ export interface vaultsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: VaultProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: VaultCreateOrUpdateParametersTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: VaultCreateOrUpdateParametersTags;
 }
 export class vaults_accessPolicies
 	extends ArmResource<vaults_accessPoliciesComponentInputs>
@@ -89,7 +89,7 @@ export interface vaults_accessPoliciesComponentOutputs {
 	readonly type: "Microsoft.KeyVault/vaults/accessPolicies";
 }
 export interface vaults_accessPoliciesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: VaultAccessPolicyProperties;
 }
@@ -107,10 +107,10 @@ export interface vaults_keysComponentOutputs {
 	readonly type: "Microsoft.KeyVault/vaults/keys";
 }
 export interface vaults_keysComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: KeyProperties;
-	readonly tags?: KeyCreateParametersTags | undefined;
+	readonly tags?: KeyCreateParametersTags;
 }
 export class vaults_keys_versions
 	extends ArmResource<vaults_keys_versionsComponentInputs>
@@ -129,10 +129,10 @@ export interface vaults_keys_versionsComponentOutputs {
 	readonly type: "Microsoft.KeyVault/vaults/keys/versions";
 }
 export interface vaults_keys_versionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: KeyProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: KeyProperties;
+	readonly tags?: ResourceTags;
 }
 export class vaults_privateEndpointConnections
 	extends ArmResource<vaults_privateEndpointConnectionsComponentInputs>
@@ -151,11 +151,11 @@ export interface vaults_privateEndpointConnectionsComponentOutputs {
 	readonly type: "Microsoft.KeyVault/vaults/privateEndpointConnections";
 }
 export interface vaults_privateEndpointConnectionsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly tags?: ResourceTags;
 }
 export class vaults_secrets extends ArmResource<vaults_secretsComponentInputs> implements vaults_secretsComponentOutputs {
 	constructor(entity: ADKEntity, options: vaults_secretsComponentInputs) {
@@ -171,91 +171,84 @@ export interface vaults_secretsComponentOutputs {
 	readonly type: "Microsoft.KeyVault/vaults/secrets";
 }
 export interface vaults_secretsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: SecretProperties;
-	readonly tags?: SecretCreateOrUpdateParametersTags | undefined;
+	readonly tags?: SecretCreateOrUpdateParametersTags;
 }
 export interface AccessPolicyEntry {
-	readonly applicationId?: string | undefined;
+	readonly applicationId?: string;
 	readonly objectId: string;
 	readonly permissions: Permissions;
 	readonly tenantId: string;
 }
 export interface Action {
-	readonly type?: "notify" | undefined;
+	readonly type?: "notify";
 }
 export interface IPRule {
 	readonly value: string;
 }
 export interface KeyAttributes {
-	readonly created?: number | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly exp?: number | undefined;
-	readonly exportable?: boolean | undefined;
-	readonly nbf?: number | undefined;
-	readonly recoveryLevel?:
-		| ("Purgeable" | "Recoverable" | "Recoverable+ProtectedSubscription" | "Recoverable+Purgeable")
-		| undefined;
-	readonly updated?: number | undefined;
+	readonly created?: number;
+	readonly enabled?: boolean;
+	readonly exp?: number;
+	readonly exportable?: boolean;
+	readonly nbf?: number;
+	readonly recoveryLevel?: "Purgeable" | "Recoverable" | "Recoverable+ProtectedSubscription" | "Recoverable+Purgeable";
+	readonly updated?: number;
 }
 export interface KeyCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface KeyProperties {
-	readonly attributes?: KeyAttributes | undefined;
-	readonly curveName?: ("P-256" | "P-256K" | "P-384" | "P-521") | undefined;
-	readonly keyOps?:
-		| ("decrypt" | "encrypt" | "import" | "release" | "sign" | "unwrapKey" | "verify" | "wrapKey"[])
-		| undefined;
-	readonly keySize?: number | undefined;
-	readonly keyUri?: string | undefined;
-	readonly keyUriWithVersion?: string | undefined;
-	readonly kty?: ("EC" | "EC-HSM" | "RSA" | "RSA-HSM") | undefined;
-	readonly release_policy?: KeyReleasePolicy | undefined;
-	readonly rotationPolicy?: RotationPolicy | undefined;
+	readonly attributes?: KeyAttributes;
+	readonly curveName?: "P-256" | "P-256K" | "P-384" | "P-521";
+	readonly keyOps?: "decrypt" | "encrypt" | "import" | "release" | "sign" | "unwrapKey" | "verify" | "wrapKey"[];
+	readonly keySize?: number;
+	readonly keyUri?: string;
+	readonly keyUriWithVersion?: string;
+	readonly kty?: "EC" | "EC-HSM" | "RSA" | "RSA-HSM";
+	readonly release_policy?: KeyReleasePolicy;
+	readonly rotationPolicy?: RotationPolicy;
 }
 export interface KeyReleasePolicy {
-	readonly contentType?: string | undefined;
-	readonly data?: string | undefined;
+	readonly contentType?: string;
+	readonly data?: string;
 }
 export interface KeyRotationPolicyAttributes {
-	readonly created?: number | undefined;
-	readonly expiryTime?: string | undefined;
-	readonly updated?: number | undefined;
+	readonly created?: number;
+	readonly expiryTime?: string;
+	readonly updated?: number;
 }
 export interface LifetimeAction {
-	readonly action?: Action | undefined;
-	readonly trigger?: Trigger | undefined;
+	readonly action?: Action;
+	readonly trigger?: Trigger;
 }
 export interface ManagedHsmProperties {
-	readonly createMode?: "default" | undefined;
-	readonly enablePurgeProtection?: boolean | undefined;
-	readonly enableSoftDelete?: boolean | undefined;
-	readonly hsmUri?: string | undefined;
-	readonly initialAdminObjectIds?: string[] | undefined;
-	readonly networkAcls?: MhsmNetworkRuleSet | undefined;
-	readonly privateEndpointConnections?: MhsmPrivateEndpointConnectionItem[] | undefined;
+	readonly createMode?: "default";
+	readonly enablePurgeProtection?: boolean;
+	readonly enableSoftDelete?: boolean;
+	readonly hsmUri?: string;
+	readonly initialAdminObjectIds?: string[];
+	readonly networkAcls?: MhsmNetworkRuleSet;
+	readonly privateEndpointConnections?: MhsmPrivateEndpointConnectionItem[];
 	readonly provisioningState?:
-		| (
-				| "Activated"
-				| "Deleting"
-				| "Failed"
-				| "Provisioning"
-				| "Restoring"
-				| "SecurityDomainRestore"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly scheduledPurgeDate?: string | undefined;
-	readonly softDeleteRetentionInDays?: number | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly tenantId?: string | undefined;
+		| "Activated"
+		| "Deleting"
+		| "Failed"
+		| "Provisioning"
+		| "Restoring"
+		| "SecurityDomainRestore"
+		| "Succeeded"
+		| "Updating";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly scheduledPurgeDate?: string;
+	readonly softDeleteRetentionInDays?: number;
+	readonly statusMessage?: string;
+	readonly tenantId?: string;
 }
 export interface ManagedHsmResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ManagedHsmSku {
 	readonly family: "B";
@@ -265,198 +258,183 @@ export interface MhsmipRule {
 	readonly value: string;
 }
 export interface MhsmNetworkRuleSet {
-	readonly bypass?: ("AzureServices" | "None") | undefined;
-	readonly defaultAction?: ("Allow" | "Deny") | undefined;
-	readonly ipRules?: MhsmipRule[] | undefined;
-	readonly virtualNetworkRules?: MhsmVirtualNetworkRule[] | undefined;
+	readonly bypass?: "AzureServices" | "None";
+	readonly defaultAction?: "Allow" | "Deny";
+	readonly ipRules?: MhsmipRule[];
+	readonly virtualNetworkRules?: MhsmVirtualNetworkRule[];
 }
 export interface MhsmPrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface MhsmPrivateEndpointConnectionItem {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly properties?: MhsmPrivateEndpointConnectionProperties | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly properties?: MhsmPrivateEndpointConnectionProperties;
 }
 export interface MhsmPrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: MhsmPrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: MhsmPrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?:
-		| ("Creating" | "Deleting" | "Disconnected" | "Failed" | "Succeeded" | "Updating")
-		| undefined;
+	readonly privateEndpoint?: MhsmPrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: MhsmPrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Creating" | "Deleting" | "Disconnected" | "Failed" | "Succeeded" | "Updating";
 }
 export interface MhsmPrivateLinkServiceConnectionState {
-	readonly actionsRequired?: "None" | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: "None";
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface MhsmVirtualNetworkRule {
 	readonly id: string;
 }
 export interface NetworkRuleSet {
-	readonly bypass?: ("AzureServices" | "None") | undefined;
-	readonly defaultAction?: ("Allow" | "Deny") | undefined;
-	readonly ipRules?: IPRule[] | undefined;
-	readonly virtualNetworkRules?: VirtualNetworkRule[] | undefined;
+	readonly bypass?: "AzureServices" | "None";
+	readonly defaultAction?: "Allow" | "Deny";
+	readonly ipRules?: IPRule[];
+	readonly virtualNetworkRules?: VirtualNetworkRule[];
 }
 export interface Permissions {
 	readonly certificates?:
-		| (
-				| "all"
-				| "backup"
-				| "create"
-				| "delete"
-				| "deleteissuers"
-				| "get"
-				| "getissuers"
-				| "import"
-				| "list"
-				| "listissuers"
-				| "managecontacts"
-				| "manageissuers"
-				| "purge"
-				| "recover"
-				| "restore"
-				| "setissuers"
-				| "update"[]
-		  )
-		| undefined;
+		| "all"
+		| "backup"
+		| "create"
+		| "delete"
+		| "deleteissuers"
+		| "get"
+		| "getissuers"
+		| "import"
+		| "list"
+		| "listissuers"
+		| "managecontacts"
+		| "manageissuers"
+		| "purge"
+		| "recover"
+		| "restore"
+		| "setissuers"
+		| "update"[];
 	readonly keys?:
-		| (
-				| "all"
-				| "backup"
-				| "create"
-				| "decrypt"
-				| "delete"
-				| "encrypt"
-				| "get"
-				| "getrotationpolicy"
-				| "import"
-				| "list"
-				| "purge"
-				| "recover"
-				| "release"
-				| "restore"
-				| "rotate"
-				| "setrotationpolicy"
-				| "sign"
-				| "unwrapKey"
-				| "update"
-				| "verify"
-				| "wrapKey"[]
-		  )
-		| undefined;
-	readonly secrets?:
-		| ("all" | "backup" | "delete" | "get" | "list" | "purge" | "recover" | "restore" | "set"[])
-		| undefined;
+		| "all"
+		| "backup"
+		| "create"
+		| "decrypt"
+		| "delete"
+		| "encrypt"
+		| "get"
+		| "getrotationpolicy"
+		| "import"
+		| "list"
+		| "purge"
+		| "recover"
+		| "release"
+		| "restore"
+		| "rotate"
+		| "setrotationpolicy"
+		| "sign"
+		| "unwrapKey"
+		| "update"
+		| "verify"
+		| "wrapKey"[];
+	readonly secrets?: "all" | "backup" | "delete" | "get" | "list" | "purge" | "recover" | "restore" | "set"[];
 	readonly storage?:
-		| (
-				| "all"
-				| "backup"
-				| "delete"
-				| "deletesas"
-				| "get"
-				| "getsas"
-				| "list"
-				| "listsas"
-				| "purge"
-				| "recover"
-				| "regeneratekey"
-				| "restore"
-				| "set"
-				| "setsas"
-				| "update"[]
-		  )
-		| undefined;
+		| "all"
+		| "backup"
+		| "delete"
+		| "deletesas"
+		| "get"
+		| "getsas"
+		| "list"
+		| "listsas"
+		| "purge"
+		| "recover"
+		| "regeneratekey"
+		| "restore"
+		| "set"
+		| "setsas"
+		| "update"[];
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnectionItem {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?:
-		| ("Creating" | "Deleting" | "Disconnected" | "Failed" | "Succeeded" | "Updating")
-		| undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Creating" | "Deleting" | "Disconnected" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: "None" | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: "None";
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RotationPolicy {
-	readonly attributes?: KeyRotationPolicyAttributes | undefined;
-	readonly lifetimeActions?: LifetimeAction[] | undefined;
+	readonly attributes?: KeyRotationPolicyAttributes;
+	readonly lifetimeActions?: LifetimeAction[];
 }
 export interface SecretAttributes {
-	readonly created?: number | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly exp?: number | undefined;
-	readonly nbf?: number | undefined;
-	readonly updated?: number | undefined;
+	readonly created?: number;
+	readonly enabled?: boolean;
+	readonly exp?: number;
+	readonly nbf?: number;
+	readonly updated?: number;
 }
 export interface SecretCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SecretProperties {
-	readonly attributes?: SecretAttributes | undefined;
-	readonly contentType?: string | undefined;
-	readonly secretUri?: string | undefined;
-	readonly secretUriWithVersion?: string | undefined;
-	readonly value?: string | undefined;
+	readonly attributes?: SecretAttributes;
+	readonly contentType?: string;
+	readonly secretUri?: string;
+	readonly secretUriWithVersion?: string;
+	readonly value?: string;
 }
 export interface Sku {
 	readonly family: "A";
 	readonly name: "premium";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Trigger {
-	readonly timeAfterCreate?: string | undefined;
-	readonly timeBeforeExpiry?: string | undefined;
+	readonly timeAfterCreate?: string;
+	readonly timeBeforeExpiry?: string;
 }
 export interface VaultAccessPolicyProperties {
 	readonly accessPolicies: AccessPolicyEntry[];
 }
 export interface VaultCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VaultProperties {
-	readonly accessPolicies?: AccessPolicyEntry[] | undefined;
-	readonly createMode?: "default" | undefined;
-	readonly enabledForDeployment?: boolean | undefined;
-	readonly enabledForDiskEncryption?: boolean | undefined;
-	readonly enabledForTemplateDeployment?: boolean | undefined;
-	readonly enablePurgeProtection?: boolean | undefined;
-	readonly enableRbacAuthorization?: boolean | undefined;
-	readonly enableSoftDelete?: boolean | undefined;
-	readonly hsmPoolResourceId?: string | undefined;
-	readonly networkAcls?: NetworkRuleSet | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnectionItem[] | undefined;
-	readonly provisioningState?: ("RegisteringDns" | "Succeeded") | undefined;
-	readonly publicNetworkAccess?: string | undefined;
+	readonly accessPolicies?: AccessPolicyEntry[];
+	readonly createMode?: "default";
+	readonly enabledForDeployment?: boolean;
+	readonly enabledForDiskEncryption?: boolean;
+	readonly enabledForTemplateDeployment?: boolean;
+	readonly enablePurgeProtection?: boolean;
+	readonly enableRbacAuthorization?: boolean;
+	readonly enableSoftDelete?: boolean;
+	readonly hsmPoolResourceId?: string;
+	readonly networkAcls?: NetworkRuleSet;
+	readonly privateEndpointConnections?: PrivateEndpointConnectionItem[];
+	readonly provisioningState?: "RegisteringDns" | "Succeeded";
+	readonly publicNetworkAccess?: string;
 	readonly sku: Sku;
-	readonly softDeleteRetentionInDays?: number | undefined;
+	readonly softDeleteRetentionInDays?: number;
 	readonly tenantId: string;
-	readonly vaultUri?: string | undefined;
+	readonly vaultUri?: string;
 }
 export interface VirtualNetworkRule {
 	readonly id: string;
-	readonly ignoreMissingVnetServiceEndpoint?: boolean | undefined;
+	readonly ignoreMissingVnetServiceEndpoint?: boolean;
 }
 export default {
 	managedHSMs: managedHSMs,

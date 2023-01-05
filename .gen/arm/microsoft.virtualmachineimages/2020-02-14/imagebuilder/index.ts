@@ -17,54 +17,52 @@ export interface imageTemplatesComponentInputs {
 	readonly identity: ImageTemplateIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ImageTemplateProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ImageTemplateProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ComponentsVrq145SchemasImagetemplateidentityPropertiesUserassignedidentitiesAdditionalproperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface ImageTemplateCustomizer {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface ImageTemplateDistributor {
-	readonly artifactTags?: ImageTemplateDistributorArtifactTags | undefined;
+	readonly artifactTags?: ImageTemplateDistributorArtifactTags;
 	readonly runOutputName: string;
 }
 export interface ImageTemplateDistributorArtifactTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ImageTemplateIdentity {
-	readonly type?: "None" | undefined;
-	readonly userAssignedIdentities?: ImageTemplateIdentityUserAssignedIdentities | undefined;
+	readonly type?: "None";
+	readonly userAssignedIdentities?: ImageTemplateIdentityUserAssignedIdentities;
 }
 export interface ImageTemplateIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?:
-		| ComponentsVrq145SchemasImagetemplateidentityPropertiesUserassignedidentitiesAdditionalproperties
-		| undefined;
+	readonly [key: string]: ComponentsVrq145SchemasImagetemplateidentityPropertiesUserassignedidentitiesAdditionalproperties;
 }
 export interface ImageTemplateLastRunStatus {
-	readonly endTime?: string | undefined;
-	readonly message?: string | undefined;
-	readonly runState?: ("Canceled" | "Canceling" | "Failed" | "PartiallySucceeded" | "Running") | undefined;
-	readonly runSubState?: ("Building" | "Customizing" | "Distributing") | undefined;
-	readonly startTime?: string | undefined;
+	readonly endTime?: string;
+	readonly message?: string;
+	readonly runState?: "Canceled" | "Canceling" | "Failed" | "PartiallySucceeded" | "Running";
+	readonly runSubState?: "Building" | "Customizing" | "Distributing";
+	readonly startTime?: string;
 }
 export interface ImageTemplateProperties {
-	readonly buildTimeoutInMinutes?: number | undefined;
-	readonly customize?: ImageTemplateCustomizer[] | undefined;
+	readonly buildTimeoutInMinutes?: number;
+	readonly customize?: ImageTemplateCustomizer[];
 	readonly distribute: ImageTemplateDistributor[];
-	readonly lastRunStatus?: ImageTemplateLastRunStatus | undefined;
-	readonly provisioningError?: ProvisioningError | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly lastRunStatus?: ImageTemplateLastRunStatus;
+	readonly provisioningError?: ProvisioningError;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 	readonly source: ImageTemplateSource;
-	readonly vmProfile?: ImageTemplateVmProfile | undefined;
+	readonly vmProfile?: ImageTemplateVmProfile;
 }
 export interface ImageTemplateSource {}
 export interface ImageTemplateVmProfile {
-	readonly osDiskSizeGB?: number | undefined;
-	readonly vmSize?: string | undefined;
-	readonly vnetConfig?: VirtualNetworkConfig | undefined;
+	readonly osDiskSizeGB?: number;
+	readonly vmSize?: string;
+	readonly vnetConfig?: VirtualNetworkConfig;
 }
 export interface PlatformImagePurchasePlan {
 	readonly planName: string;
@@ -72,28 +70,25 @@ export interface PlatformImagePurchasePlan {
 	readonly planPublisher: string;
 }
 export interface ProvisioningError {
-	readonly message?: string | undefined;
+	readonly message?: string;
 	readonly provisioningErrorCode?:
-		| (
-				| "BadCustomizerType"
-				| "BadDistributeType"
-				| "BadManagedImageSource"
-				| "BadPIRSource"
-				| "BadSharedImageDistribute"
-				| "BadSharedImageVersionSource"
-				| "BadSourceType"
-				| "NoCustomizerScript"
-				| "Other"
-				| "ServerError"
-				| "UnsupportedCustomizerType"
-		  )
-		| undefined;
+		| "BadCustomizerType"
+		| "BadDistributeType"
+		| "BadManagedImageSource"
+		| "BadPIRSource"
+		| "BadSharedImageDistribute"
+		| "BadSharedImageVersionSource"
+		| "BadSourceType"
+		| "NoCustomizerScript"
+		| "Other"
+		| "ServerError"
+		| "UnsupportedCustomizerType";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualNetworkConfig {
-	readonly subnetId?: string | undefined;
+	readonly subnetId?: string;
 }
 export default {
 	imageTemplates: imageTemplates,

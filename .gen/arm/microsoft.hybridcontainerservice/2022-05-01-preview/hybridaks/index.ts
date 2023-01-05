@@ -17,15 +17,13 @@ export interface provisionedClustersComponentOutputs {
 	readonly type: "Microsoft.HybridContainerService/provisionedClusters";
 }
 export interface provisionedClustersComponentInputs {
-	readonly extendedLocation?:
-		| ProvisionedClustersExtendedLocationOrProvisionedClustersResponseExtendedLocation
-		| undefined;
-	readonly identity?: ProvisionedClusterIdentity | undefined;
+	readonly extendedLocation?: ProvisionedClustersExtendedLocationOrProvisionedClustersResponseExtendedLocation;
+	readonly identity?: ProvisionedClusterIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ProvisionedClustersAllPropertiesOrProvisionedClustersResponseProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ProvisionedClustersAllPropertiesOrProvisionedClustersResponseProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class provisionedClusters_agentPools
 	extends ArmResource<provisionedClusters_agentPoolsComponentInputs>
@@ -50,12 +48,12 @@ export interface provisionedClusters_agentPoolsComponentOutputs {
 	readonly type: "Microsoft.HybridContainerService/provisionedClusters/agentPools";
 }
 export interface provisionedClusters_agentPoolsComponentInputs {
-	readonly extendedLocation?: AgentPoolExtendedLocation | undefined;
-	readonly location?: string | undefined;
+	readonly extendedLocation?: AgentPoolExtendedLocation;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AgentPoolProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: AgentPoolTags | undefined;
+	readonly properties?: AgentPoolProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: AgentPoolTags;
 }
 export class provisionedClusters_hybridIdentityMetadata
 	extends ArmResource<provisionedClusters_hybridIdentityMetadataComponentInputs>
@@ -82,7 +80,7 @@ export interface provisionedClusters_hybridIdentityMetadataComponentOutputs {
 export interface provisionedClusters_hybridIdentityMetadataComponentInputs {
 	readonly name: string;
 	readonly properties: HybridIdentityMetadataProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class storageSpaces extends ArmResource<storageSpacesComponentInputs> implements storageSpacesComponentOutputs {
 	constructor(entity: ADKEntity, options: storageSpacesComponentInputs) {
@@ -98,12 +96,12 @@ export interface storageSpacesComponentOutputs {
 	readonly type: "Microsoft.HybridContainerService/storageSpaces";
 }
 export interface storageSpacesComponentInputs {
-	readonly extendedLocation?: StorageSpacesExtendedLocation | undefined;
+	readonly extendedLocation?: StorageSpacesExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StorageSpacesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: StorageSpacesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class virtualNetworks
 	extends ArmResource<virtualNetworksComponentInputs>
@@ -122,350 +120,366 @@ export interface virtualNetworksComponentOutputs {
 	readonly type: "Microsoft.HybridContainerService/virtualNetworks";
 }
 export interface virtualNetworksComponentInputs {
-	readonly extendedLocation?: VirtualNetworksExtendedLocation | undefined;
+	readonly extendedLocation?: VirtualNetworksExtendedLocation;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VirtualNetworksProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VirtualNetworksProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AADProfileOrAADProfileResponse {
-	readonly adminGroupObjectIDs?: string[] | undefined;
-	readonly clientAppID?: string | undefined;
-	readonly enableAzureRbac?: boolean | undefined;
-	readonly managed?: boolean | undefined;
-	readonly serverAppID?: string | undefined;
-	readonly serverAppSecret?: string | undefined;
-	readonly tenantID?: string | undefined;
+	readonly adminGroupObjectIDs?: string[];
+	readonly clientAppID?: string;
+	readonly enableAzureRbac?: boolean;
+	readonly managed?: boolean;
+	readonly serverAppID?: string;
+	readonly serverAppSecret?: string;
+	readonly tenantID?: string;
 }
 export interface AddonProfiles {
-	readonly config?: AddonProfilesConfig | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly config?: AddonProfilesConfig;
+	readonly enabled?: boolean;
 }
 export interface AddonProfilesConfig {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AddonStatus {
-	readonly errorMessage?: string | undefined;
-	readonly phase?: string | undefined;
-	readonly ready?: boolean | undefined;
+	readonly errorMessage?: string;
+	readonly phase?: string;
+	readonly ready?: boolean;
 }
 export interface AgentPoolExtendedLocation {
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface AgentPoolProfileNodeLabels {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AgentPoolProperties {
-	readonly availabilityZones?: string[] | undefined;
-	readonly cloudProviderProfile?: CloudProviderProfile | undefined;
-	readonly count?: number | undefined;
-	readonly maxCount?: number | undefined;
-	readonly maxPods?: number | undefined;
-	readonly minCount?: number | undefined;
-	readonly mode?: ("LB" | "System" | "User") | undefined;
-	readonly nodeImageVersion?: string | undefined;
-	readonly nodeLabels?: AgentPoolProfileNodeLabels | undefined;
-	readonly nodeTaints?: string[] | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly status?: AgentPoolProvisioningStatusStatus | undefined;
-	readonly vmSize?: string | undefined;
+	readonly availabilityZones?: string[];
+	readonly cloudProviderProfile?: CloudProviderProfile;
+	readonly count?: number;
+	readonly maxCount?: number;
+	readonly maxPods?: number;
+	readonly minCount?: number;
+	readonly mode?: "LB" | "System" | "User";
+	readonly nodeImageVersion?: string;
+	readonly nodeLabels?: AgentPoolProfileNodeLabels;
+	readonly nodeTaints?: string[];
+	readonly osType?: "Linux" | "Windows";
+	readonly provisioningState?: "Canceled" | "Deleting" | "Failed" | "InProgress" | "Succeeded";
+	readonly status?: AgentPoolProvisioningStatusStatus;
+	readonly vmSize?: string;
 }
 export interface AgentPoolProvisioningStatusError {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface AgentPoolProvisioningStatusStatus {
-	readonly errorMessage?: string | undefined;
-	readonly provisioningStatus?: AgentPoolProvisioningStatusStatusProvisioningStatus | undefined;
-	readonly readyReplicas?: number | undefined;
-	readonly replicas?: number | undefined;
+	readonly errorMessage?: string;
+	readonly provisioningStatus?: AgentPoolProvisioningStatusStatusProvisioningStatus;
+	readonly readyReplicas?: number;
+	readonly replicas?: number;
 }
 export interface AgentPoolProvisioningStatusStatusProvisioningStatus {
-	readonly error?: AgentPoolProvisioningStatusError | undefined;
-	readonly operationId?: string | undefined;
-	readonly phase?: string | undefined;
-	readonly status?: string | undefined;
+	readonly error?: AgentPoolProvisioningStatusError;
+	readonly operationId?: string;
+	readonly phase?: string;
+	readonly status?: string;
 }
 export interface AgentPoolTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ArcAgentProfile {
-	readonly agentAutoUpgrade?: ("Disabled" | "Enabled") | undefined;
-	readonly agentVersion?: string | undefined;
+	readonly agentAutoUpgrade?: "Disabled" | "Enabled";
+	readonly agentVersion?: string;
 }
 export interface ArcAgentStatus {
-	readonly agentVersion?: string | undefined;
-	readonly coreCount?: number | undefined;
-	readonly deploymentState?:
-		| ("deleting" | "failed" | "pending" | "provisioned" | "provisioning" | "upgrading")
-		| undefined;
-	readonly errorMessage?: string | undefined;
-	readonly lastConnectivityTime?: string | undefined;
-	readonly managedIdentityCertificateExpirationTime?: string | undefined;
-	readonly onboardingPublicKey?: string | undefined;
+	readonly agentVersion?: string;
+	readonly coreCount?: number;
+	readonly deploymentState?: "deleting" | "failed" | "pending" | "provisioned" | "provisioning" | "upgrading";
+	readonly errorMessage?: string;
+	readonly lastConnectivityTime?: string;
+	readonly managedIdentityCertificateExpirationTime?: string;
+	readonly onboardingPublicKey?: string;
 }
 export interface CloudProviderProfile {
-	readonly infraNetworkProfile?: CloudProviderProfileInfraNetworkProfile | undefined;
-	readonly infraStorageProfile?: CloudProviderProfileInfraStorageProfile | undefined;
+	readonly infraNetworkProfile?: CloudProviderProfileInfraNetworkProfile;
+	readonly infraStorageProfile?: CloudProviderProfileInfraStorageProfile;
 }
 export interface CloudProviderProfileInfraNetworkProfile {
-	readonly vnetSubnetIds?: string[] | undefined;
+	readonly vnetSubnetIds?: string[];
 }
 export interface CloudProviderProfileInfraStorageProfile {
-	readonly storageSpaceIds?: string[] | undefined;
+	readonly storageSpaceIds?: string[];
 }
 export interface ControlPlaneEndpointProfileControlPlaneEndpoint {
-	readonly hostIP?: string | undefined;
-	readonly port?: string | undefined;
+	readonly hostIP?: string;
+	readonly port?: string;
 }
 export interface ControlPlaneProfile {
-	readonly availabilityZones?: string[] | undefined;
-	readonly cloudProviderProfile?: CloudProviderProfile | undefined;
-	readonly controlPlaneEndpoint?: ControlPlaneEndpointProfileControlPlaneEndpoint | undefined;
-	readonly count?: number | undefined;
-	readonly linuxProfile?: LinuxProfileProperties | undefined;
-	readonly maxCount?: number | undefined;
-	readonly maxPods?: number | undefined;
-	readonly minCount?: number | undefined;
-	readonly mode?: ("LB" | "System" | "User") | undefined;
-	readonly name?: string | undefined;
-	readonly nodeImageVersion?: string | undefined;
-	readonly nodeLabels?: AgentPoolProfileNodeLabels | undefined;
-	readonly nodeTaints?: string[] | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly vmSize?: string | undefined;
+	readonly availabilityZones?: string[];
+	readonly cloudProviderProfile?: CloudProviderProfile;
+	readonly controlPlaneEndpoint?: ControlPlaneEndpointProfileControlPlaneEndpoint;
+	readonly count?: number;
+	readonly linuxProfile?: LinuxProfileProperties;
+	readonly maxCount?: number;
+	readonly maxPods?: number;
+	readonly minCount?: number;
+	readonly mode?: "LB" | "System" | "User";
+	readonly name?: string;
+	readonly nodeImageVersion?: string;
+	readonly nodeLabels?: AgentPoolProfileNodeLabels;
+	readonly nodeTaints?: string[];
+	readonly osType?: "Linux" | "Windows";
+	readonly vmSize?: string;
 }
 export interface HttpProxyConfigOrHttpProxyConfigResponse {
-	readonly httpProxy?: string | undefined;
-	readonly httpsProxy?: string | undefined;
-	readonly noProxy?: string[] | undefined;
-	readonly password?: string | undefined;
-	readonly trustedCa?: string | undefined;
-	readonly username?: string | undefined;
+	readonly httpProxy?: string;
+	readonly httpsProxy?: string;
+	readonly noProxy?: string[];
+	readonly password?: string;
+	readonly trustedCa?: string;
+	readonly username?: string;
 }
 export interface HybridIdentityMetadataProperties {
-	readonly identity?: ProvisionedClusterIdentity | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicKey?: string | undefined;
-	readonly resourceUid?: string | undefined;
+	readonly identity?: ProvisionedClusterIdentity;
+	readonly provisioningState?: string;
+	readonly publicKey?: string;
+	readonly resourceUid?: string;
 }
 export interface LinuxProfileProperties {
-	readonly adminUsername?: string | undefined;
-	readonly ssh?: LinuxProfilePropertiesSsh | undefined;
+	readonly adminUsername?: string;
+	readonly ssh?: LinuxProfilePropertiesSsh;
 }
 export interface LinuxProfilePropertiesSsh {
-	readonly publicKeys?: LinuxProfilePropertiesSshPublicKeysItem[] | undefined;
+	readonly publicKeys?: LinuxProfilePropertiesSshPublicKeysItem[];
 }
 export interface LinuxProfilePropertiesSshPublicKeysItem {
-	readonly keyData?: string | undefined;
+	readonly keyData?: string;
 }
 export interface LoadBalancerProfile {
-	readonly availabilityZones?: string[] | undefined;
-	readonly cloudProviderProfile?: CloudProviderProfile | undefined;
-	readonly count?: number | undefined;
-	readonly linuxProfile?: LinuxProfileProperties | undefined;
-	readonly maxCount?: number | undefined;
-	readonly maxPods?: number | undefined;
-	readonly minCount?: number | undefined;
-	readonly mode?: ("LB" | "System" | "User") | undefined;
-	readonly name?: string | undefined;
-	readonly nodeImageVersion?: string | undefined;
-	readonly nodeLabels?: AgentPoolProfileNodeLabels | undefined;
-	readonly nodeTaints?: string[] | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly vmSize?: string | undefined;
+	readonly availabilityZones?: string[];
+	readonly cloudProviderProfile?: CloudProviderProfile;
+	readonly count?: number;
+	readonly linuxProfile?: LinuxProfileProperties;
+	readonly maxCount?: number;
+	readonly maxPods?: number;
+	readonly minCount?: number;
+	readonly mode?: "LB" | "System" | "User";
+	readonly name?: string;
+	readonly nodeImageVersion?: string;
+	readonly nodeLabels?: AgentPoolProfileNodeLabels;
+	readonly nodeTaints?: string[];
+	readonly osType?: "Linux" | "Windows";
+	readonly vmSize?: string;
 }
 export interface NamedAgentPoolProfile {
-	readonly availabilityZones?: string[] | undefined;
-	readonly cloudProviderProfile?: CloudProviderProfile | undefined;
-	readonly count?: number | undefined;
-	readonly maxCount?: number | undefined;
-	readonly maxPods?: number | undefined;
-	readonly minCount?: number | undefined;
-	readonly mode?: ("LB" | "System" | "User") | undefined;
-	readonly name?: string | undefined;
-	readonly nodeImageVersion?: string | undefined;
-	readonly nodeLabels?: AgentPoolProfileNodeLabels | undefined;
-	readonly nodeTaints?: string[] | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly vmSize?: string | undefined;
+	readonly availabilityZones?: string[];
+	readonly cloudProviderProfile?: CloudProviderProfile;
+	readonly count?: number;
+	readonly maxCount?: number;
+	readonly maxPods?: number;
+	readonly minCount?: number;
+	readonly mode?: "LB" | "System" | "User";
+	readonly name?: string;
+	readonly nodeImageVersion?: string;
+	readonly nodeLabels?: AgentPoolProfileNodeLabels;
+	readonly nodeTaints?: string[];
+	readonly osType?: "Linux" | "Windows";
+	readonly vmSize?: string;
 }
 export interface NetworkProfile {
-	readonly dnsServiceIP?: string | undefined;
-	readonly loadBalancerProfile?: LoadBalancerProfile | undefined;
-	readonly loadBalancerSku?: ("stacked-kube-vip" | "stacked-metallb" | "unmanaged" | "unstacked-haproxy") | undefined;
-	readonly networkPolicy?: ("calico" | "flannel") | undefined;
-	readonly podCidr?: string | undefined;
-	readonly podCidrs?: string[] | undefined;
-	readonly serviceCidr?: string | undefined;
-	readonly serviceCidrs?: string[] | undefined;
+	readonly dnsServiceIP?: string;
+	readonly loadBalancerProfile?: LoadBalancerProfile;
+	readonly loadBalancerSku?: "stacked-kube-vip" | "stacked-metallb" | "unmanaged" | "unstacked-haproxy";
+	readonly networkPolicy?: "calico" | "flannel";
+	readonly podCidr?: string;
+	readonly podCidrs?: string[];
+	readonly serviceCidr?: string;
+	readonly serviceCidrs?: string[];
 }
 export interface ProvisionedClusterIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None";
 }
 export interface ProvisionedClustersAllPropertiesOrProvisionedClustersResponseProperties {
-	readonly aadProfile?: AADProfileOrAADProfileResponse | undefined;
-	readonly addonProfiles?: ProvisionedClustersCommonPropertiesAddonProfiles | undefined;
-	readonly agentPoolProfiles?: NamedAgentPoolProfile[] | undefined;
-	readonly cloudProviderProfile?: CloudProviderProfile | undefined;
-	readonly controlPlane?: ControlPlaneProfile | undefined;
-	readonly enableRbac?: boolean | undefined;
-	readonly features?: ProvisionedClustersCommonPropertiesFeatures | undefined;
-	readonly httpProxyConfig?: HttpProxyConfigOrHttpProxyConfigResponse | undefined;
-	readonly kubernetesVersion?: string | undefined;
-	readonly linuxProfile?: LinuxProfileProperties | undefined;
-	readonly networkProfile?: NetworkProfile | undefined;
-	readonly nodeResourceGroup?: string | undefined;
+	readonly aadProfile?: AADProfileOrAADProfileResponse;
+	readonly addonProfiles?: ProvisionedClustersCommonPropertiesAddonProfiles;
+	readonly agentPoolProfiles?: NamedAgentPoolProfile[];
+	readonly cloudProviderProfile?: CloudProviderProfile;
+	readonly controlPlane?: ControlPlaneProfile;
+	readonly enableRbac?: boolean;
+	readonly features?: ProvisionedClustersCommonPropertiesFeatures;
+	readonly httpProxyConfig?: HttpProxyConfigOrHttpProxyConfigResponse;
+	readonly kubernetesVersion?: string;
+	readonly linuxProfile?: LinuxProfileProperties;
+	readonly networkProfile?: NetworkProfile;
+	readonly nodeResourceGroup?: string;
 	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Created" | "Deleting" | "Failed" | "InProgress" | "Succeeded" | "Updating")
-		| undefined;
-	readonly status?: ProvisionedClustersCommonPropertiesStatus | undefined;
-	readonly windowsProfile?: WindowsProfileOrWindowsProfileResponse | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Deleting"
+		| "Failed"
+		| "InProgress"
+		| "Succeeded"
+		| "Updating";
+	readonly status?: ProvisionedClustersCommonPropertiesStatus;
+	readonly windowsProfile?: WindowsProfileOrWindowsProfileResponse;
 }
 export interface ProvisionedClustersCommonPropertiesAddonProfiles {
-	readonly "[ key: string ]"?: AddonProfiles | undefined;
+	readonly [key: string]: AddonProfiles;
 }
 export interface ProvisionedClustersCommonPropertiesFeatures {
-	readonly arcAgentProfile?: ArcAgentProfile | undefined;
+	readonly arcAgentProfile?: ArcAgentProfile;
 }
 export interface ProvisionedClustersCommonPropertiesStatus {
-	readonly addonStatus?: ProvisionedClustersCommonPropertiesStatusAddonStatus | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly featuresStatus?: ProvisionedClustersCommonPropertiesStatusFeaturesStatus | undefined;
-	readonly provisioningStatus?: ProvisionedClustersCommonPropertiesStatusProvisioningStatus | undefined;
+	readonly addonStatus?: ProvisionedClustersCommonPropertiesStatusAddonStatus;
+	readonly errorMessage?: string;
+	readonly featuresStatus?: ProvisionedClustersCommonPropertiesStatusFeaturesStatus;
+	readonly provisioningStatus?: ProvisionedClustersCommonPropertiesStatusProvisioningStatus;
 }
 export interface ProvisionedClustersCommonPropertiesStatusAddonStatus {
-	readonly "[ key: string ]"?: AddonStatus | undefined;
+	readonly [key: string]: AddonStatus;
 }
 export interface ProvisionedClustersCommonPropertiesStatusFeaturesStatus {
-	readonly arcAgentStatus?: ArcAgentStatus | undefined;
+	readonly arcAgentStatus?: ArcAgentStatus;
 }
 export interface ProvisionedClustersCommonPropertiesStatusProvisioningStatus {
-	readonly error?: ProvisionedClustersCommonPropertiesStatusProvisioningStatusError | undefined;
-	readonly operationId?: string | undefined;
-	readonly phase?: string | undefined;
-	readonly status?: string | undefined;
+	readonly error?: ProvisionedClustersCommonPropertiesStatusProvisioningStatusError;
+	readonly operationId?: string;
+	readonly phase?: string;
+	readonly status?: string;
 }
 export interface ProvisionedClustersCommonPropertiesStatusProvisioningStatusError {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface ProvisionedClustersExtendedLocationOrProvisionedClustersResponseExtendedLocation {
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface StorageSpacesExtendedLocation {
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface StorageSpacesProperties {
-	readonly hciStorageProfile?: StorageSpacesPropertiesHciStorageProfile | undefined;
+	readonly hciStorageProfile?: StorageSpacesPropertiesHciStorageProfile;
 	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Created" | "Deleting" | "Failed" | "InProgress" | "Succeeded" | "Updating")
-		| undefined;
-	readonly status?: StorageSpacesPropertiesStatus | undefined;
-	readonly vmwareStorageProfile?: StorageSpacesPropertiesVmwareStorageProfile | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Deleting"
+		| "Failed"
+		| "InProgress"
+		| "Succeeded"
+		| "Updating";
+	readonly status?: StorageSpacesPropertiesStatus;
+	readonly vmwareStorageProfile?: StorageSpacesPropertiesVmwareStorageProfile;
 }
 export interface StorageSpacesPropertiesHciStorageProfile {
-	readonly mocGroup?: string | undefined;
-	readonly mocLocation?: string | undefined;
-	readonly mocStorageContainer?: string | undefined;
+	readonly mocGroup?: string;
+	readonly mocLocation?: string;
+	readonly mocStorageContainer?: string;
 }
 export interface StorageSpacesPropertiesStatus {
-	readonly provisioningStatus?: StorageSpacesPropertiesStatusProvisioningStatus | undefined;
+	readonly provisioningStatus?: StorageSpacesPropertiesStatusProvisioningStatus;
 }
 export interface StorageSpacesPropertiesStatusProvisioningStatus {
-	readonly error?: StorageSpacesPropertiesStatusProvisioningStatusError | undefined;
-	readonly operationId?: string | undefined;
-	readonly phase?: string | undefined;
-	readonly status?: string | undefined;
+	readonly error?: StorageSpacesPropertiesStatusProvisioningStatusError;
+	readonly operationId?: string;
+	readonly phase?: string;
+	readonly status?: string;
 }
 export interface StorageSpacesPropertiesStatusProvisioningStatusError {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface StorageSpacesPropertiesVmwareStorageProfile {
-	readonly datacenter?: string | undefined;
-	readonly datastore?: string | undefined;
-	readonly folder?: string | undefined;
-	readonly resourcePool?: string | undefined;
+	readonly datacenter?: string;
+	readonly datastore?: string;
+	readonly folder?: string;
+	readonly resourcePool?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualNetworksExtendedLocation {
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface VirtualNetworksProperties {
-	readonly dhcpServers?: string[] | undefined;
-	readonly dnsServers?: string[] | undefined;
-	readonly gateway?: string | undefined;
-	readonly infraVnetProfile?: VirtualNetworksPropertiesInfraVnetProfile | undefined;
-	readonly ipAddressPrefix?: string | undefined;
+	readonly dhcpServers?: string[];
+	readonly dnsServers?: string[];
+	readonly gateway?: string;
+	readonly infraVnetProfile?: VirtualNetworksPropertiesInfraVnetProfile;
+	readonly ipAddressPrefix?: string;
 	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Created" | "Deleting" | "Failed" | "InProgress" | "Succeeded" | "Updating")
-		| undefined;
-	readonly status?: VirtualNetworksPropertiesStatus | undefined;
-	readonly vipPool?: VirtualNetworksPropertiesVipPoolItem[] | undefined;
-	readonly vlanID?: string | undefined;
-	readonly vmipPool?: VirtualNetworksPropertiesVmipPoolItem[] | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Deleting"
+		| "Failed"
+		| "InProgress"
+		| "Succeeded"
+		| "Updating";
+	readonly status?: VirtualNetworksPropertiesStatus;
+	readonly vipPool?: VirtualNetworksPropertiesVipPoolItem[];
+	readonly vlanID?: string;
+	readonly vmipPool?: VirtualNetworksPropertiesVmipPoolItem[];
 }
 export interface VirtualNetworksPropertiesInfraVnetProfile {
-	readonly hci?: VirtualNetworksPropertiesInfraVnetProfileHci | undefined;
-	readonly kubevirt?: VirtualNetworksPropertiesInfraVnetProfileKubevirt | undefined;
-	readonly vmware?: VirtualNetworksPropertiesInfraVnetProfileVmware | undefined;
+	readonly hci?: VirtualNetworksPropertiesInfraVnetProfileHci;
+	readonly kubevirt?: VirtualNetworksPropertiesInfraVnetProfileKubevirt;
+	readonly vmware?: VirtualNetworksPropertiesInfraVnetProfileVmware;
 }
 export interface VirtualNetworksPropertiesInfraVnetProfileHci {
-	readonly mocGroup?: string | undefined;
-	readonly mocLocation?: string | undefined;
-	readonly mocVnetName?: string | undefined;
+	readonly mocGroup?: string;
+	readonly mocLocation?: string;
+	readonly mocVnetName?: string;
 }
 export interface VirtualNetworksPropertiesInfraVnetProfileKubevirt {
-	readonly vnetName?: string | undefined;
+	readonly vnetName?: string;
 }
 export interface VirtualNetworksPropertiesInfraVnetProfileVmware {
-	readonly segmentName?: string | undefined;
+	readonly segmentName?: string;
 }
 export interface VirtualNetworksPropertiesStatus {
-	readonly provisioningStatus?: VirtualNetworksPropertiesStatusProvisioningStatus | undefined;
+	readonly provisioningStatus?: VirtualNetworksPropertiesStatusProvisioningStatus;
 }
 export interface VirtualNetworksPropertiesStatusProvisioningStatus {
-	readonly error?: VirtualNetworksPropertiesStatusProvisioningStatusError | undefined;
-	readonly operationId?: string | undefined;
-	readonly phase?: string | undefined;
-	readonly status?: string | undefined;
+	readonly error?: VirtualNetworksPropertiesStatusProvisioningStatusError;
+	readonly operationId?: string;
+	readonly phase?: string;
+	readonly status?: string;
 }
 export interface VirtualNetworksPropertiesStatusProvisioningStatusError {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface VirtualNetworksPropertiesVipPoolItem {
-	readonly endIP?: string | undefined;
-	readonly startIP?: string | undefined;
+	readonly endIP?: string;
+	readonly startIP?: string;
 }
 export interface VirtualNetworksPropertiesVmipPoolItem {
-	readonly endIP?: string | undefined;
-	readonly startIP?: string | undefined;
+	readonly endIP?: string;
+	readonly startIP?: string;
 }
 export interface WindowsProfileOrWindowsProfileResponse {
-	readonly adminPassword?: string | undefined;
-	readonly adminUsername?: string | undefined;
-	readonly enableCsiProxy?: boolean | undefined;
-	readonly licenseType?: ("None" | "Windows_Server") | undefined;
+	readonly adminPassword?: string;
+	readonly adminUsername?: string;
+	readonly enableCsiProxy?: boolean;
+	readonly licenseType?: "None" | "Windows_Server";
 }
 export default {
 	provisionedClusters: provisionedClusters,

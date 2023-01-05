@@ -14,32 +14,32 @@ export interface budgetsComponentOutputs {
 	readonly type: "Microsoft.Consumption/budgets";
 }
 export interface budgetsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: BudgetProperties | undefined;
+	readonly properties?: BudgetProperties;
 }
 export interface BudgetProperties {
 	readonly amount: number;
 	readonly category: "Cost";
-	readonly currentSpend?: CurrentSpend | undefined;
-	readonly notifications?: BudgetPropertiesNotifications | undefined;
+	readonly currentSpend?: CurrentSpend;
+	readonly notifications?: BudgetPropertiesNotifications;
 	readonly timeGrain: "Annually" | "Monthly" | "Quarterly";
 	readonly timePeriod: BudgetTimePeriod;
 }
 export interface BudgetPropertiesNotifications {
-	readonly "[ key: string ]"?: Notification | undefined;
+	readonly [key: string]: Notification;
 }
 export interface BudgetTimePeriod {
-	readonly endDate?: string | undefined;
+	readonly endDate?: string;
 	readonly startDate: string;
 }
 export interface CurrentSpend {
-	readonly amount?: number | undefined;
-	readonly unit?: string | undefined;
+	readonly amount?: number;
+	readonly unit?: string;
 }
 export interface Notification {
 	readonly contactEmails: string[];
-	readonly contactRoles?: string[] | undefined;
+	readonly contactRoles?: string[];
 	readonly enabled: boolean;
 	readonly operator: "EqualTo" | "GreaterThan" | "GreaterThanOrEqualTo";
 	readonly threshold: number;

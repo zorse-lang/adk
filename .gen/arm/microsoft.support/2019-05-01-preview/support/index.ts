@@ -15,7 +15,7 @@ export interface supportTicketsComponentOutputs {
 }
 export interface supportTicketsComponentInputs {
 	readonly name: string;
-	readonly properties?: SupportTicketDetailsProperties | undefined;
+	readonly properties?: SupportTicketDetailsProperties;
 }
 export class supportTickets_communications
 	extends ArmResource<supportTickets_communicationsComponentInputs>
@@ -35,69 +35,69 @@ export interface supportTickets_communicationsComponentOutputs {
 }
 export interface supportTickets_communicationsComponentInputs {
 	readonly name: string;
-	readonly properties?: CommunicationDetailsProperties | undefined;
+	readonly properties?: CommunicationDetailsProperties;
 }
 export interface CommunicationDetailsProperties {
 	readonly body: string;
-	readonly communicationDirection?: ("inbound" | "outbound") | undefined;
-	readonly communicationType?: ("phone" | "web") | undefined;
-	readonly createdDate?: string | undefined;
-	readonly sender?: string | undefined;
+	readonly communicationDirection?: "inbound" | "outbound";
+	readonly communicationType?: "phone" | "web";
+	readonly createdDate?: string;
+	readonly sender?: string;
 	readonly subject: string;
 }
 export interface ContactProfile {
-	readonly additionalEmailAddresses?: string[] | undefined;
+	readonly additionalEmailAddresses?: string[];
 	readonly country: string;
 	readonly firstName: string;
 	readonly lastName: string;
-	readonly phoneNumber?: string | undefined;
+	readonly phoneNumber?: string;
 	readonly preferredContactMethod: "email" | "phone";
 	readonly preferredSupportLanguage: string;
 	readonly preferredTimeZone: string;
 	readonly primaryEmailAddress: string;
 }
 export interface QuotaChangeRequest {
-	readonly payload?: string | undefined;
-	readonly region?: string | undefined;
+	readonly payload?: string;
+	readonly region?: string;
 }
 export interface QuotaTicketDetails {
-	readonly quotaChangeRequests?: QuotaChangeRequest[] | undefined;
-	readonly quotaChangeRequestSubType?: string | undefined;
-	readonly quotaChangeRequestVersion?: string | undefined;
+	readonly quotaChangeRequests?: QuotaChangeRequest[];
+	readonly quotaChangeRequestSubType?: string;
+	readonly quotaChangeRequestVersion?: string;
 }
 export interface ServiceLevelAgreement {
-	readonly expirationTime?: string | undefined;
-	readonly slaMinutes?: number | undefined;
-	readonly startTime?: string | undefined;
+	readonly expirationTime?: string;
+	readonly slaMinutes?: number;
+	readonly startTime?: string;
 }
 export interface SupportEngineer {
-	readonly emailAddress?: string | undefined;
+	readonly emailAddress?: string;
 }
 export interface SupportTicketDetailsProperties {
 	readonly contactDetails: ContactProfile;
-	readonly createdDate?: string | undefined;
+	readonly createdDate?: string;
 	readonly description: string;
-	readonly enrollmentId?: string | undefined;
-	readonly modifiedDate?: string | undefined;
-	readonly problemClassificationDisplayName?: string | undefined;
+	readonly enrollmentId?: string;
+	readonly modifiedDate?: string;
+	readonly problemClassificationDisplayName?: string;
 	readonly problemClassificationId: string;
-	readonly problemStartTime?: string | undefined;
-	readonly productionOutage?: boolean | undefined;
-	readonly quotaTicketDetails?: QuotaTicketDetails | undefined;
-	readonly require24X7Response?: boolean | undefined;
-	readonly serviceDisplayName?: string | undefined;
+	readonly problemStartTime?: string;
+	readonly productionOutage?: boolean;
+	readonly quotaTicketDetails?: QuotaTicketDetails;
+	readonly require24X7Response?: boolean;
+	readonly serviceDisplayName?: string;
 	readonly serviceId: string;
-	readonly serviceLevelAgreement?: ServiceLevelAgreement | undefined;
+	readonly serviceLevelAgreement?: ServiceLevelAgreement;
 	readonly severity: "critical" | "minimal" | "moderate";
-	readonly status?: string | undefined;
-	readonly supportEngineer?: SupportEngineer | undefined;
-	readonly supportPlanType?: string | undefined;
-	readonly supportTicketId?: string | undefined;
-	readonly technicalTicketDetails?: TechnicalTicketDetails | undefined;
+	readonly status?: string;
+	readonly supportEngineer?: SupportEngineer;
+	readonly supportPlanType?: string;
+	readonly supportTicketId?: string;
+	readonly technicalTicketDetails?: TechnicalTicketDetails;
 	readonly title: string;
 }
 export interface TechnicalTicketDetails {
-	readonly resourceId?: string | undefined;
+	readonly resourceId?: string;
 }
 export default {
 	supportTickets: supportTickets,

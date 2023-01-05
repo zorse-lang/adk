@@ -31,20 +31,15 @@ export abstract class Component {
 	public readonly [Symbols.ComponentHandle]: Component.Handle;
 	/** @param parent the parent Entity this Component is attached to. */
 	constructor(parent: Entity) {
-		const token: any = new Token({
-			registry: parent.system.registry,
-			wrap: this,
-			name: () => {
-				const entity = this[Symbols.ComponentHandle].parent;
-				const type = this.constructor.name;
-				const index = entity.components.length;
-				const name = `${type}${index === 1 ? "" : index}`;
-				return entity.path(name);
-			},
-		});
+		const type = this.constructor.name;
+		const index = parent.components.filter((c) => c.constructor.name === type).length;
+		const name = `${type}${index === 0 ? "" : index + 1}`;
+		const _name = parent.path(name);
+		const opts = { registry: parent.system.registry, data: this };
+		const wrapped: any = Token.Wrap(this, opts, new Token({ name: _name, ...opts }));
 		parent.components.push(this);
-		this[Symbols.ComponentHandle] = new Component.Handle(token, parent);
-		return token;
+		this[Symbols.ComponentHandle] = new Component.Handle(this, parent);
+		return wrapped;
 	}
 	/** @see {@link core.Component.Handle.update} */
 	public async [Symbols.ComponentUpdate](): Promise<void> {
@@ -54,7 +49,11 @@ export abstract class Component {
 		});
 		for (const mapping of mappings) {
 			const { token, v, k } = mapping;
-			v[k] = await this[Symbols.ComponentHandle].parent.system.registry.resolve(token);
+			if (typeof v[k] === typeof "string") {
+				v[k] = await this[Symbols.ComponentHandle].parent.system.registry.resolve(v[k]);
+			} else {
+				v[k] = await this[Symbols.ComponentHandle].parent.system.registry.resolve(token);
+			}
 		}
 	}
 	/** @see {@link core.Component.Handle.render} */
@@ -73,6 +72,10 @@ export namespace Component {
 		 * @param parent Entity that owns the Component
 		 */
 		constructor(private readonly component: Component, public readonly parent: Entity) {}
+		/** Returns the actual Component (not a Token-Proxy) */
+		public get actual(): Component {
+			return this.component;
+		}
 		/**
 		 * Convenient wrapper for the update symbol on a Component.
 		 * Calling this resolves all the {@link core.Token:class}s currently inside the `Component`, recursively.
@@ -95,8 +98,9 @@ export namespace Component {
 			const tokens = this.tokens();
 			for (const token of tokens) {
 				if (token.data instanceof Component) {
-					assert.false(errors.CyclicComponentTokenPair, token.data === this.component, this.component);
-					const dependencyComponent = token.data as Component;
+					const tokenDataHandle = token.data[Symbols.ComponentHandle];
+					const dependencyComponent = tokenDataHandle.actual;
+					assert.false(errors.CyclicComponentTokenPair, dependencyComponent === this.component, this.component);
 					if (out.has(dependencyComponent)) {
 						continue;
 					}
@@ -118,13 +122,18 @@ export namespace Component {
 		 * @note You can use `v[k] = ...` to mutate the `Component`'s state.
 		 */
 		public walk(observe: (token: Token, v: any, k: string) => void): void {
-			_walk(this.component);
-			function _walk(v: any): void {
+			_walk(this.component, this);
+			function _walk(v: any, host: Component.Handle): void {
 				for (const k in v) {
 					if (Token.IsToken(v[k]) && !(v[k] instanceof Component)) {
 						observe(v[k], v, k);
 					} else if (typeof v[k] === "object" || Array.isArray(v[k])) {
-						_walk(v[k]);
+						_walk(v[k], host);
+					} else if (typeof v[k] === "string") {
+						const tokens = host.parent.system.registry.parse(v[k]);
+						for (const token of tokens) {
+							observe(token, v, k);
+						}
 					}
 				}
 			}
@@ -213,7 +222,7 @@ export class Entity {
 		const consumed = new Set<Component>();
 		for (const component of this.components) {
 			Array.from(this.system.scenes)
-				.filter((scene) => scene.filter(component))
+				.filter((scene) => scene.filter(component[Symbols.ComponentHandle].actual))
 				.forEach((scene) => {
 					assert.false(errors.DuplicateComponentScenePair, consumed.has(component));
 					scene.components.add(component);
@@ -279,16 +288,20 @@ export class System {
 		type Frame = { component: Component; scene: Scene };
 		const resolver = new Resolver<Frame>();
 		const sceneComponentPairs: Frame[] = [];
-		const findMappings = (c: Component): Frame[] => sceneComponentPairs.filter((m) => m.component === c);
+		const findMappings = (c: Component): Frame[] =>
+			sceneComponentPairs.filter(
+				(m) => m.component[Symbols.ComponentHandle].actual === c[Symbols.ComponentHandle].actual,
+			);
 		const sceneDependencies = new Map<Scene, Set<Scene>>();
 		for (const scene of this.scenes) {
 			sceneDependencies.set(scene, new Set<Scene>());
 			for (const component of scene.components) {
+				const componentHandle = component[Symbols.ComponentHandle];
 				if (findMappings(component).length === 0) {
-					const mapping = { scene, component };
+					const mapping = { scene, component: componentHandle.actual };
 					sceneComponentPairs.push(mapping);
 					resolver.addIsolated(mapping);
-					for (const dep of component[Symbols.ComponentHandle].dependencies()) {
+					for (const dep of componentHandle.dependencies()) {
 						Array.from(this.scenes)
 							.filter((s) => s !== scene && s.filter(dep))
 							.forEach((depScene) => {

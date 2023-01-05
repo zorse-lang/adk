@@ -17,19 +17,19 @@ export interface networkSecurityPerimetersComponentOutputs {
 	readonly type: "Microsoft.Network/networkSecurityPerimeters";
 }
 export interface networkSecurityPerimetersComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkSecurityPerimeterProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkSecurityPerimeterProperties;
+	readonly tags?: ResourceTags;
 }
 export interface NetworkSecurityPerimeterProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	networkSecurityPerimeters: networkSecurityPerimeters,

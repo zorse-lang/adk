@@ -16,9 +16,9 @@ export interface instancePoolsComponentOutputs {
 export interface instancePoolsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: InstancePoolProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: InstancePoolProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class locations_deletedServers
 	extends ArmResource<locations_deletedServersComponentInputs>
@@ -38,7 +38,7 @@ export interface locations_deletedServersComponentOutputs {
 }
 export interface locations_deletedServersComponentInputs {
 	readonly name: string;
-	readonly properties?: DeletedServerProperties | undefined;
+	readonly properties?: DeletedServerProperties;
 }
 export class locations_instanceFailoverGroups
 	extends ArmResource<locations_instanceFailoverGroupsComponentInputs>
@@ -58,7 +58,7 @@ export interface locations_instanceFailoverGroupsComponentOutputs {
 }
 export interface locations_instanceFailoverGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: InstanceFailoverGroupProperties | undefined;
+	readonly properties?: InstanceFailoverGroupProperties;
 }
 export class locations_longTermRetentionManagedInstances_longTermRetentionDatabases_longTermRetentionManagedInstanceBackups
 	extends ArmResource<locations_longTermRetentionManagedInstances_longTermRetentionDatabases_longTermRetentionManagedInstanceBackupsComponentInputs>
@@ -88,7 +88,7 @@ export interface locations_longTermRetentionManagedInstances_longTermRetentionDa
 }
 export interface locations_longTermRetentionManagedInstances_longTermRetentionDatabases_longTermRetentionManagedInstanceBackupsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedInstanceLongTermRetentionBackupProperties | undefined;
+	readonly properties?: ManagedInstanceLongTermRetentionBackupProperties;
 }
 export class locations_longTermRetentionServers_longTermRetentionDatabases_longTermRetentionBackups
 	extends ArmResource<locations_longTermRetentionServers_longTermRetentionDatabases_longTermRetentionBackupsComponentInputs>
@@ -117,7 +117,7 @@ export interface locations_longTermRetentionServers_longTermRetentionDatabases_l
 }
 export interface locations_longTermRetentionServers_longTermRetentionDatabases_longTermRetentionBackupsComponentInputs {
 	readonly name: string;
-	readonly properties?: LongTermRetentionBackupProperties | undefined;
+	readonly properties?: LongTermRetentionBackupProperties;
 }
 export class locations_serverTrustGroups
 	extends ArmResource<locations_serverTrustGroupsComponentInputs>
@@ -137,7 +137,7 @@ export interface locations_serverTrustGroupsComponentOutputs {
 }
 export interface locations_serverTrustGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerTrustGroupProperties | undefined;
+	readonly properties?: ServerTrustGroupProperties;
 }
 export class locations_timeZones
 	extends ArmResource<locations_timeZonesComponentInputs>
@@ -157,7 +157,7 @@ export interface locations_timeZonesComponentOutputs {
 }
 export interface locations_timeZonesComponentInputs {
 	readonly name: string;
-	readonly properties?: TimeZoneProperties | undefined;
+	readonly properties?: TimeZoneProperties;
 }
 export class locations_usages
 	extends ArmResource<locations_usagesComponentInputs>
@@ -177,7 +177,7 @@ export interface locations_usagesComponentOutputs {
 }
 export interface locations_usagesComponentInputs {
 	readonly name: string;
-	readonly properties?: SubscriptionUsageProperties | undefined;
+	readonly properties?: SubscriptionUsageProperties;
 }
 export class managedInstances
 	extends ArmResource<managedInstancesComponentInputs>
@@ -196,12 +196,12 @@ export interface managedInstancesComponentOutputs {
 	readonly type: "Microsoft.Sql/managedInstances";
 }
 export interface managedInstancesComponentInputs {
-	readonly identity?: ResourceIdentity | undefined;
+	readonly identity?: ResourceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagedInstanceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ManagedInstanceProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class managedInstances_administrators
 	extends ArmResource<managedInstances_administratorsComponentInputs>
@@ -221,7 +221,7 @@ export interface managedInstances_administratorsComponentOutputs {
 }
 export interface managedInstances_administratorsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedInstanceAdministratorProperties | undefined;
+	readonly properties?: ManagedInstanceAdministratorProperties;
 }
 export class managedInstances_azureADOnlyAuthentications
 	extends ArmResource<managedInstances_azureADOnlyAuthenticationsComponentInputs>
@@ -247,7 +247,7 @@ export interface managedInstances_azureADOnlyAuthenticationsComponentOutputs {
 }
 export interface managedInstances_azureADOnlyAuthenticationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedInstanceAzureADOnlyAuthProperties | undefined;
+	readonly properties?: ManagedInstanceAzureADOnlyAuthProperties;
 }
 export class managedInstances_databases
 	extends ArmResource<managedInstances_databasesComponentInputs>
@@ -268,8 +268,8 @@ export interface managedInstances_databasesComponentOutputs {
 export interface managedInstances_databasesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagedDatabaseProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ManagedDatabaseProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class managedInstances_databases_backupLongTermRetentionPolicies
 	extends ArmResource<managedInstances_databases_backupLongTermRetentionPoliciesComponentInputs>
@@ -295,7 +295,7 @@ export interface managedInstances_databases_backupLongTermRetentionPoliciesCompo
 }
 export interface managedInstances_databases_backupLongTermRetentionPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: BaseLongTermRetentionPolicyProperties | undefined;
+	readonly properties?: BaseLongTermRetentionPolicyProperties;
 }
 export class managedInstances_databases_backupShortTermRetentionPolicies
 	extends ArmResource<managedInstances_databases_backupShortTermRetentionPoliciesComponentInputs>
@@ -321,7 +321,7 @@ export interface managedInstances_databases_backupShortTermRetentionPoliciesComp
 }
 export interface managedInstances_databases_backupShortTermRetentionPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedBackupShortTermRetentionPolicyProperties | undefined;
+	readonly properties?: ManagedBackupShortTermRetentionPolicyProperties;
 }
 export class managedInstances_databases_queries
 	extends ArmResource<managedInstances_databases_queriesComponentInputs>
@@ -341,7 +341,7 @@ export interface managedInstances_databases_queriesComponentOutputs {
 }
 export interface managedInstances_databases_queriesComponentInputs {
 	readonly name: string;
-	readonly properties?: QueryProperties | undefined;
+	readonly properties?: QueryProperties;
 }
 export class managedInstances_databases_restoreDetails
 	extends ArmResource<managedInstances_databases_restoreDetailsComponentInputs>
@@ -367,7 +367,7 @@ export interface managedInstances_databases_restoreDetailsComponentOutputs {
 }
 export interface managedInstances_databases_restoreDetailsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedDatabaseRestoreDetailsProperties | undefined;
+	readonly properties?: ManagedDatabaseRestoreDetailsProperties;
 }
 export class managedInstances_databases_schemas
 	extends ArmResource<managedInstances_databases_schemasComponentInputs>
@@ -412,7 +412,7 @@ export interface managedInstances_databases_schemas_tablesComponentOutputs {
 }
 export interface managedInstances_databases_schemas_tablesComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseTableProperties | undefined;
+	readonly properties?: DatabaseTableProperties;
 }
 export class managedInstances_databases_schemas_tables_columns
 	extends ArmResource<managedInstances_databases_schemas_tables_columnsComponentInputs>
@@ -438,7 +438,7 @@ export interface managedInstances_databases_schemas_tables_columnsComponentOutpu
 }
 export interface managedInstances_databases_schemas_tables_columnsComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseColumnProperties | undefined;
+	readonly properties?: DatabaseColumnProperties;
 }
 export class managedInstances_databases_schemas_tables_columns_sensitivityLabels
 	extends ArmResource<managedInstances_databases_schemas_tables_columns_sensitivityLabelsComponentInputs>
@@ -466,9 +466,9 @@ export interface managedInstances_databases_schemas_tables_columns_sensitivityLa
 	readonly type: "Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels";
 }
 export interface managedInstances_databases_schemas_tables_columns_sensitivityLabelsComponentInputs {
-	readonly managedBy?: string | undefined;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly properties?: SensitivityLabelProperties | undefined;
+	readonly properties?: SensitivityLabelProperties;
 }
 export class managedInstances_databases_securityAlertPolicies
 	extends ArmResource<managedInstances_databases_securityAlertPoliciesComponentInputs>
@@ -494,7 +494,7 @@ export interface managedInstances_databases_securityAlertPoliciesComponentOutput
 }
 export interface managedInstances_databases_securityAlertPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityAlertPolicyProperties | undefined;
+	readonly properties?: SecurityAlertPolicyProperties;
 }
 export class managedInstances_databases_transparentDataEncryption
 	extends ArmResource<managedInstances_databases_transparentDataEncryptionComponentInputs>
@@ -520,7 +520,7 @@ export interface managedInstances_databases_transparentDataEncryptionComponentOu
 }
 export interface managedInstances_databases_transparentDataEncryptionComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedTransparentDataEncryptionProperties | undefined;
+	readonly properties?: ManagedTransparentDataEncryptionProperties;
 }
 export class managedInstances_databases_vulnerabilityAssessments
 	extends ArmResource<managedInstances_databases_vulnerabilityAssessmentsComponentInputs>
@@ -546,7 +546,7 @@ export interface managedInstances_databases_vulnerabilityAssessmentsComponentOut
 }
 export interface managedInstances_databases_vulnerabilityAssessmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseVulnerabilityAssessmentProperties | undefined;
+	readonly properties?: DatabaseVulnerabilityAssessmentProperties;
 }
 export class managedInstances_databases_vulnerabilityAssessments_rules_baselines
 	extends ArmResource<managedInstances_databases_vulnerabilityAssessments_rules_baselinesComponentInputs>
@@ -575,7 +575,7 @@ export interface managedInstances_databases_vulnerabilityAssessments_rules_basel
 }
 export interface managedInstances_databases_vulnerabilityAssessments_rules_baselinesComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseVulnerabilityAssessmentRuleBaselineProperties | undefined;
+	readonly properties?: DatabaseVulnerabilityAssessmentRuleBaselineProperties;
 }
 export class managedInstances_databases_vulnerabilityAssessments_scans
 	extends ArmResource<managedInstances_databases_vulnerabilityAssessments_scansComponentInputs>
@@ -601,7 +601,7 @@ export interface managedInstances_databases_vulnerabilityAssessments_scansCompon
 }
 export interface managedInstances_databases_vulnerabilityAssessments_scansComponentInputs {
 	readonly name: string;
-	readonly properties?: VulnerabilityAssessmentScanRecordProperties | undefined;
+	readonly properties?: VulnerabilityAssessmentScanRecordProperties;
 }
 export class managedInstances_distributedAvailabilityGroups
 	extends ArmResource<managedInstances_distributedAvailabilityGroupsComponentInputs>
@@ -627,7 +627,7 @@ export interface managedInstances_distributedAvailabilityGroupsComponentOutputs 
 }
 export interface managedInstances_distributedAvailabilityGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: DistributedAvailabilityGroupProperties | undefined;
+	readonly properties?: DistributedAvailabilityGroupProperties;
 }
 export class managedInstances_dnsAliases
 	extends ArmResource<managedInstances_dnsAliasesComponentInputs>
@@ -646,9 +646,9 @@ export interface managedInstances_dnsAliasesComponentOutputs {
 	readonly type: "Microsoft.Sql/managedInstances/dnsAliases";
 }
 export interface managedInstances_dnsAliasesComponentInputs {
-	readonly createDnsRecord?: boolean | undefined;
+	readonly createDnsRecord?: boolean;
 	readonly name: string;
-	readonly properties?: ManagedServerDnsAliasProperties | undefined;
+	readonly properties?: ManagedServerDnsAliasProperties;
 }
 export class managedInstances_encryptionProtector
 	extends ArmResource<managedInstances_encryptionProtectorComponentInputs>
@@ -667,9 +667,9 @@ export interface managedInstances_encryptionProtectorComponentOutputs {
 	readonly type: "Microsoft.Sql/managedInstances/encryptionProtector";
 }
 export interface managedInstances_encryptionProtectorComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly properties?: ManagedInstanceEncryptionProtectorProperties | undefined;
+	readonly properties?: ManagedInstanceEncryptionProtectorProperties;
 }
 export class managedInstances_endpointCertificates
 	extends ArmResource<managedInstances_endpointCertificatesComponentInputs>
@@ -689,7 +689,7 @@ export interface managedInstances_endpointCertificatesComponentOutputs {
 }
 export interface managedInstances_endpointCertificatesComponentInputs {
 	readonly name: string;
-	readonly properties?: EndpointCertificateProperties | undefined;
+	readonly properties?: EndpointCertificateProperties;
 }
 export class managedInstances_keys
 	extends ArmResource<managedInstances_keysComponentInputs>
@@ -708,9 +708,9 @@ export interface managedInstances_keysComponentOutputs {
 	readonly type: "Microsoft.Sql/managedInstances/keys";
 }
 export interface managedInstances_keysComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly properties?: ManagedInstanceKeyProperties | undefined;
+	readonly properties?: ManagedInstanceKeyProperties;
 }
 export class managedInstances_operations
 	extends ArmResource<managedInstances_operationsComponentInputs>
@@ -730,7 +730,7 @@ export interface managedInstances_operationsComponentOutputs {
 }
 export interface managedInstances_operationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedInstanceOperationProperties | undefined;
+	readonly properties?: ManagedInstanceOperationProperties;
 }
 export class managedInstances_privateEndpointConnections
 	extends ArmResource<managedInstances_privateEndpointConnectionsComponentInputs>
@@ -756,7 +756,7 @@ export interface managedInstances_privateEndpointConnectionsComponentOutputs {
 }
 export interface managedInstances_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedInstancePrivateEndpointConnectionProperties | undefined;
+	readonly properties?: ManagedInstancePrivateEndpointConnectionProperties;
 }
 export class managedInstances_privateLinkResources
 	extends ArmResource<managedInstances_privateLinkResourcesComponentInputs>
@@ -776,7 +776,7 @@ export interface managedInstances_privateLinkResourcesComponentOutputs {
 }
 export interface managedInstances_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedInstancePrivateLinkProperties | undefined;
+	readonly properties?: ManagedInstancePrivateLinkProperties;
 }
 export class managedInstances_recoverableDatabases
 	extends ArmResource<managedInstances_recoverableDatabasesComponentInputs>
@@ -796,7 +796,7 @@ export interface managedInstances_recoverableDatabasesComponentOutputs {
 }
 export interface managedInstances_recoverableDatabasesComponentInputs {
 	readonly name: string;
-	readonly properties?: RecoverableManagedDatabaseProperties | undefined;
+	readonly properties?: RecoverableManagedDatabaseProperties;
 }
 export class managedInstances_restorableDroppedDatabases
 	extends ArmResource<managedInstances_restorableDroppedDatabasesComponentInputs>
@@ -821,10 +821,10 @@ export interface managedInstances_restorableDroppedDatabasesComponentOutputs {
 	readonly type: "Microsoft.Sql/managedInstances/restorableDroppedDatabases";
 }
 export interface managedInstances_restorableDroppedDatabasesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RestorableDroppedManagedDatabaseProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: RestorableDroppedManagedDatabaseProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class managedInstances_restorableDroppedDatabases_backupShortTermRetentionPolicies
 	extends ArmResource<managedInstances_restorableDroppedDatabases_backupShortTermRetentionPoliciesComponentInputs>
@@ -853,7 +853,7 @@ export interface managedInstances_restorableDroppedDatabases_backupShortTermRete
 }
 export interface managedInstances_restorableDroppedDatabases_backupShortTermRetentionPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedBackupShortTermRetentionPolicyProperties | undefined;
+	readonly properties?: ManagedBackupShortTermRetentionPolicyProperties;
 }
 export class managedInstances_securityAlertPolicies
 	extends ArmResource<managedInstances_securityAlertPoliciesComponentInputs>
@@ -873,8 +873,8 @@ export interface managedInstances_securityAlertPoliciesComponentOutputs {
 }
 export interface managedInstances_securityAlertPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityAlertsPolicyProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SecurityAlertsPolicyProperties;
+	readonly systemData?: SystemData;
 }
 export class managedInstances_serverTrustCertificates
 	extends ArmResource<managedInstances_serverTrustCertificatesComponentInputs>
@@ -900,7 +900,7 @@ export interface managedInstances_serverTrustCertificatesComponentOutputs {
 }
 export interface managedInstances_serverTrustCertificatesComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerTrustCertificateProperties | undefined;
+	readonly properties?: ServerTrustCertificateProperties;
 }
 export class managedInstances_sqlAgent
 	extends ArmResource<managedInstances_sqlAgentComponentInputs>
@@ -920,7 +920,7 @@ export interface managedInstances_sqlAgentComponentOutputs {
 }
 export interface managedInstances_sqlAgentComponentInputs {
 	readonly name: string;
-	readonly properties?: SqlAgentConfigurationProperties | undefined;
+	readonly properties?: SqlAgentConfigurationProperties;
 }
 export class managedInstances_vulnerabilityAssessments
 	extends ArmResource<managedInstances_vulnerabilityAssessmentsComponentInputs>
@@ -946,7 +946,7 @@ export interface managedInstances_vulnerabilityAssessmentsComponentOutputs {
 }
 export interface managedInstances_vulnerabilityAssessmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedInstanceVulnerabilityAssessmentProperties | undefined;
+	readonly properties?: ManagedInstanceVulnerabilityAssessmentProperties;
 }
 export class servers extends ArmResource<serversComponentInputs> implements serversComponentOutputs {
 	constructor(entity: ADKEntity, options: serversComponentInputs) {
@@ -962,12 +962,12 @@ export interface serversComponentOutputs {
 	readonly type: "Microsoft.Sql/servers";
 }
 export interface serversComponentInputs {
-	readonly identity?: ResourceIdentity | undefined;
-	readonly kind?: string | undefined;
+	readonly identity?: ResourceIdentity;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServerProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ServerProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class servers_administrators
 	extends ArmResource<servers_administratorsComponentInputs>
@@ -987,7 +987,7 @@ export interface servers_administratorsComponentOutputs {
 }
 export interface servers_administratorsComponentInputs {
 	readonly name: string;
-	readonly properties?: AdministratorProperties | undefined;
+	readonly properties?: AdministratorProperties;
 }
 export class servers_advancedThreatProtectionSettings
 	extends ArmResource<servers_advancedThreatProtectionSettingsComponentInputs>
@@ -1013,8 +1013,8 @@ export interface servers_advancedThreatProtectionSettingsComponentOutputs {
 }
 export interface servers_advancedThreatProtectionSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: AdvancedThreatProtectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AdvancedThreatProtectionProperties;
+	readonly systemData?: SystemData;
 }
 export class servers_advisors
 	extends ArmResource<servers_advisorsComponentInputs>
@@ -1033,10 +1033,10 @@ export interface servers_advisorsComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/advisors";
 }
 export interface servers_advisorsComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AdvisorProperties | undefined;
+	readonly properties?: AdvisorProperties;
 }
 export class servers_auditingSettings
 	extends ArmResource<servers_auditingSettingsComponentInputs>
@@ -1056,7 +1056,7 @@ export interface servers_auditingSettingsComponentOutputs {
 }
 export interface servers_auditingSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerBlobAuditingPolicyProperties | undefined;
+	readonly properties?: ServerBlobAuditingPolicyProperties;
 }
 export class servers_automaticTuning
 	extends ArmResource<servers_automaticTuningComponentInputs>
@@ -1076,7 +1076,7 @@ export interface servers_automaticTuningComponentOutputs {
 }
 export interface servers_automaticTuningComponentInputs {
 	readonly name: string;
-	readonly properties?: AutomaticTuningServerProperties | undefined;
+	readonly properties?: AutomaticTuningServerProperties;
 }
 export class servers_azureADOnlyAuthentications
 	extends ArmResource<servers_azureADOnlyAuthenticationsComponentInputs>
@@ -1096,7 +1096,7 @@ export interface servers_azureADOnlyAuthenticationsComponentOutputs {
 }
 export interface servers_azureADOnlyAuthenticationsComponentInputs {
 	readonly name: string;
-	readonly properties?: AzureADOnlyAuthProperties | undefined;
+	readonly properties?: AzureADOnlyAuthProperties;
 }
 export class servers_connectionPolicies
 	extends ArmResource<servers_connectionPoliciesComponentInputs>
@@ -1115,10 +1115,10 @@ export interface servers_connectionPoliciesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/connectionPolicies";
 }
 export interface servers_connectionPoliciesComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ServerConnectionPolicyProperties | undefined;
+	readonly properties?: ServerConnectionPolicyProperties;
 }
 export class servers_databases
 	extends ArmResource<servers_databasesComponentInputs>
@@ -1135,13 +1135,13 @@ export interface servers_databasesComponentOutputs {
 	readonly id: string;
 }
 export interface servers_databasesComponentInputs {
-	readonly identity?: DatabaseIdentity | undefined;
-	readonly kind?: string | undefined;
+	readonly identity?: DatabaseIdentity;
+	readonly kind?: string;
 	readonly location: string;
-	readonly managedBy?: string | undefined;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly properties?: DatabaseProperties | undefined;
-	readonly sku?: Sku | undefined;
+	readonly properties?: DatabaseProperties;
+	readonly sku?: Sku;
 }
 export class servers_databases_advancedThreatProtectionSettings
 	extends ArmResource<servers_databases_advancedThreatProtectionSettingsComponentInputs>
@@ -1167,8 +1167,8 @@ export interface servers_databases_advancedThreatProtectionSettingsComponentOutp
 }
 export interface servers_databases_advancedThreatProtectionSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: AdvancedThreatProtectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AdvancedThreatProtectionProperties;
+	readonly systemData?: SystemData;
 }
 export class servers_databases_advisors
 	extends ArmResource<servers_databases_advisorsComponentInputs>
@@ -1187,10 +1187,10 @@ export interface servers_databases_advisorsComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/advisors";
 }
 export interface servers_databases_advisorsComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AdvisorProperties | undefined;
+	readonly properties?: AdvisorProperties;
 }
 export class servers_databases_advisors_recommendedActions
 	extends ArmResource<servers_databases_advisors_recommendedActionsComponentInputs>
@@ -1215,10 +1215,10 @@ export interface servers_databases_advisors_recommendedActionsComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/advisors/recommendedActions";
 }
 export interface servers_databases_advisors_recommendedActionsComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RecommendedActionProperties | undefined;
+	readonly properties?: RecommendedActionProperties;
 }
 export class servers_databases_auditingSettings
 	extends ArmResource<servers_databases_auditingSettingsComponentInputs>
@@ -1237,9 +1237,9 @@ export interface servers_databases_auditingSettingsComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/auditingSettings";
 }
 export interface servers_databases_auditingSettingsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly properties?: DatabaseBlobAuditingPolicyProperties | undefined;
+	readonly properties?: DatabaseBlobAuditingPolicyProperties;
 }
 export class servers_databases_automaticTuning
 	extends ArmResource<servers_databases_automaticTuningComponentInputs>
@@ -1259,7 +1259,7 @@ export interface servers_databases_automaticTuningComponentOutputs {
 }
 export interface servers_databases_automaticTuningComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseAutomaticTuningProperties | undefined;
+	readonly properties?: DatabaseAutomaticTuningProperties;
 }
 export class servers_databases_backupLongTermRetentionPolicies
 	extends ArmResource<servers_databases_backupLongTermRetentionPoliciesComponentInputs>
@@ -1285,7 +1285,7 @@ export interface servers_databases_backupLongTermRetentionPoliciesComponentOutpu
 }
 export interface servers_databases_backupLongTermRetentionPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: BaseLongTermRetentionPolicyProperties | undefined;
+	readonly properties?: BaseLongTermRetentionPolicyProperties;
 }
 export class servers_databases_backupShortTermRetentionPolicies
 	extends ArmResource<servers_databases_backupShortTermRetentionPoliciesComponentInputs>
@@ -1311,7 +1311,7 @@ export interface servers_databases_backupShortTermRetentionPoliciesComponentOutp
 }
 export interface servers_databases_backupShortTermRetentionPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: BackupShortTermRetentionPolicyProperties | undefined;
+	readonly properties?: BackupShortTermRetentionPolicyProperties;
 }
 export class servers_databases_dataWarehouseUserActivities
 	extends ArmResource<servers_databases_dataWarehouseUserActivitiesComponentInputs>
@@ -1337,7 +1337,7 @@ export interface servers_databases_dataWarehouseUserActivitiesComponentOutputs {
 }
 export interface servers_databases_dataWarehouseUserActivitiesComponentInputs {
 	readonly name: string;
-	readonly properties?: DataWarehouseUserActivitiesProperties | undefined;
+	readonly properties?: DataWarehouseUserActivitiesProperties;
 }
 export class servers_databases_extendedAuditingSettings
 	extends ArmResource<servers_databases_extendedAuditingSettingsComponentInputs>
@@ -1363,7 +1363,7 @@ export interface servers_databases_extendedAuditingSettingsComponentOutputs {
 }
 export interface servers_databases_extendedAuditingSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExtendedDatabaseBlobAuditingPolicyProperties | undefined;
+	readonly properties?: ExtendedDatabaseBlobAuditingPolicyProperties;
 }
 export class servers_databases_extensions
 	extends ArmResource<servers_databases_extensionsComponentInputs>
@@ -1383,7 +1383,7 @@ export interface servers_databases_extensionsComponentOutputs {
 }
 export interface servers_databases_extensionsComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseExtensionsProperties | undefined;
+	readonly properties?: DatabaseExtensionsProperties;
 }
 export class servers_databases_ledgerDigestUploads
 	extends ArmResource<servers_databases_ledgerDigestUploadsComponentInputs>
@@ -1403,7 +1403,7 @@ export interface servers_databases_ledgerDigestUploadsComponentOutputs {
 }
 export interface servers_databases_ledgerDigestUploadsComponentInputs {
 	readonly name: string;
-	readonly properties?: LedgerDigestUploadsProperties | undefined;
+	readonly properties?: LedgerDigestUploadsProperties;
 }
 export class servers_databases_replicationLinks
 	extends ArmResource<servers_databases_replicationLinksComponentInputs>
@@ -1423,7 +1423,7 @@ export interface servers_databases_replicationLinksComponentOutputs {
 }
 export interface servers_databases_replicationLinksComponentInputs {
 	readonly name: string;
-	readonly properties?: ReplicationLinkProperties | undefined;
+	readonly properties?: ReplicationLinkProperties;
 }
 export class servers_databases_restorePoints
 	extends ArmResource<servers_databases_restorePointsComponentInputs>
@@ -1442,9 +1442,9 @@ export interface servers_databases_restorePointsComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/databases/restorePoints";
 }
 export interface servers_databases_restorePointsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RestorePointProperties | undefined;
+	readonly properties?: RestorePointProperties;
 }
 export class servers_databases_schemas
 	extends ArmResource<servers_databases_schemasComponentInputs>
@@ -1483,7 +1483,7 @@ export interface servers_databases_schemas_tablesComponentOutputs {
 }
 export interface servers_databases_schemas_tablesComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseTableProperties | undefined;
+	readonly properties?: DatabaseTableProperties;
 }
 export class servers_databases_schemas_tables_columns
 	extends ArmResource<servers_databases_schemas_tables_columnsComponentInputs>
@@ -1509,7 +1509,7 @@ export interface servers_databases_schemas_tables_columnsComponentOutputs {
 }
 export interface servers_databases_schemas_tables_columnsComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseColumnProperties | undefined;
+	readonly properties?: DatabaseColumnProperties;
 }
 export class servers_databases_schemas_tables_columns_sensitivityLabels
 	extends ArmResource<servers_databases_schemas_tables_columns_sensitivityLabelsComponentInputs>
@@ -1534,9 +1534,9 @@ export interface servers_databases_schemas_tables_columns_sensitivityLabelsCompo
 	readonly type: "Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels";
 }
 export interface servers_databases_schemas_tables_columns_sensitivityLabelsComponentInputs {
-	readonly managedBy?: string | undefined;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly properties?: SensitivityLabelProperties | undefined;
+	readonly properties?: SensitivityLabelProperties;
 }
 export class servers_databases_securityAlertPolicies
 	extends ArmResource<servers_databases_securityAlertPoliciesComponentInputs>
@@ -1556,8 +1556,8 @@ export interface servers_databases_securityAlertPoliciesComponentOutputs {
 }
 export interface servers_databases_securityAlertPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityAlertsPolicyProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SecurityAlertsPolicyProperties;
+	readonly systemData?: SystemData;
 }
 export class servers_databases_syncGroups
 	extends ArmResource<servers_databases_syncGroupsComponentInputs>
@@ -1577,8 +1577,8 @@ export interface servers_databases_syncGroupsComponentOutputs {
 }
 export interface servers_databases_syncGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: SyncGroupProperties | undefined;
-	readonly sku?: Sku | undefined;
+	readonly properties?: SyncGroupProperties;
+	readonly sku?: Sku;
 }
 export class servers_databases_syncGroups_syncMembers
 	extends ArmResource<servers_databases_syncGroups_syncMembersComponentInputs>
@@ -1604,7 +1604,7 @@ export interface servers_databases_syncGroups_syncMembersComponentOutputs {
 }
 export interface servers_databases_syncGroups_syncMembersComponentInputs {
 	readonly name: string;
-	readonly properties?: SyncMemberProperties | undefined;
+	readonly properties?: SyncMemberProperties;
 }
 export class servers_databases_transparentDataEncryption
 	extends ArmResource<servers_databases_transparentDataEncryptionComponentInputs>
@@ -1630,7 +1630,7 @@ export interface servers_databases_transparentDataEncryptionComponentOutputs {
 }
 export interface servers_databases_transparentDataEncryptionComponentInputs {
 	readonly name: string;
-	readonly properties?: TransparentDataEncryptionProperties | undefined;
+	readonly properties?: TransparentDataEncryptionProperties;
 }
 export class servers_databases_vulnerabilityAssessments
 	extends ArmResource<servers_databases_vulnerabilityAssessmentsComponentInputs>
@@ -1656,7 +1656,7 @@ export interface servers_databases_vulnerabilityAssessmentsComponentOutputs {
 }
 export interface servers_databases_vulnerabilityAssessmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseVulnerabilityAssessmentProperties | undefined;
+	readonly properties?: DatabaseVulnerabilityAssessmentProperties;
 }
 export class servers_databases_vulnerabilityAssessments_rules_baselines
 	extends ArmResource<servers_databases_vulnerabilityAssessments_rules_baselinesComponentInputs>
@@ -1682,7 +1682,7 @@ export interface servers_databases_vulnerabilityAssessments_rules_baselinesCompo
 }
 export interface servers_databases_vulnerabilityAssessments_rules_baselinesComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseVulnerabilityAssessmentRuleBaselineProperties | undefined;
+	readonly properties?: DatabaseVulnerabilityAssessmentRuleBaselineProperties;
 }
 export class servers_databases_vulnerabilityAssessments_scans
 	extends ArmResource<servers_databases_vulnerabilityAssessments_scansComponentInputs>
@@ -1708,7 +1708,7 @@ export interface servers_databases_vulnerabilityAssessments_scansComponentOutput
 }
 export interface servers_databases_vulnerabilityAssessments_scansComponentInputs {
 	readonly name: string;
-	readonly properties?: VulnerabilityAssessmentScanRecordProperties | undefined;
+	readonly properties?: VulnerabilityAssessmentScanRecordProperties;
 }
 export class servers_databases_workloadGroups
 	extends ArmResource<servers_databases_workloadGroupsComponentInputs>
@@ -1728,7 +1728,7 @@ export interface servers_databases_workloadGroupsComponentOutputs {
 }
 export interface servers_databases_workloadGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadGroupProperties | undefined;
+	readonly properties?: WorkloadGroupProperties;
 }
 export class servers_databases_workloadGroups_workloadClassifiers
 	extends ArmResource<servers_databases_workloadGroups_workloadClassifiersComponentInputs>
@@ -1754,7 +1754,7 @@ export interface servers_databases_workloadGroups_workloadClassifiersComponentOu
 }
 export interface servers_databases_workloadGroups_workloadClassifiersComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadClassifierProperties | undefined;
+	readonly properties?: WorkloadClassifierProperties;
 }
 export class servers_devOpsAuditingSettings
 	extends ArmResource<servers_devOpsAuditingSettingsComponentInputs>
@@ -1774,8 +1774,8 @@ export interface servers_devOpsAuditingSettingsComponentOutputs {
 }
 export interface servers_devOpsAuditingSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerDevOpsAuditSettingsProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ServerDevOpsAuditSettingsProperties;
+	readonly systemData?: SystemData;
 }
 export class servers_dnsAliases
 	extends ArmResource<servers_dnsAliasesComponentInputs>
@@ -1795,7 +1795,7 @@ export interface servers_dnsAliasesComponentOutputs {
 }
 export interface servers_dnsAliasesComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerDnsAliasProperties | undefined;
+	readonly properties?: ServerDnsAliasProperties;
 }
 export class servers_elasticPools
 	extends ArmResource<servers_elasticPoolsComponentInputs>
@@ -1812,11 +1812,11 @@ export interface servers_elasticPoolsComponentOutputs {
 	readonly id: string;
 }
 export interface servers_elasticPoolsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ElasticPoolProperties | undefined;
-	readonly sku?: Sku | undefined;
+	readonly properties?: ElasticPoolProperties;
+	readonly sku?: Sku;
 }
 export class servers_encryptionProtector
 	extends ArmResource<servers_encryptionProtectorComponentInputs>
@@ -1835,10 +1835,10 @@ export interface servers_encryptionProtectorComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/encryptionProtector";
 }
 export interface servers_encryptionProtectorComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: EncryptionProtectorProperties | undefined;
+	readonly properties?: EncryptionProtectorProperties;
 }
 export class servers_extendedAuditingSettings
 	extends ArmResource<servers_extendedAuditingSettingsComponentInputs>
@@ -1858,7 +1858,7 @@ export interface servers_extendedAuditingSettingsComponentOutputs {
 }
 export interface servers_extendedAuditingSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExtendedServerBlobAuditingPolicyProperties | undefined;
+	readonly properties?: ExtendedServerBlobAuditingPolicyProperties;
 }
 export class servers_failoverGroups
 	extends ArmResource<servers_failoverGroupsComponentInputs>
@@ -1877,10 +1877,10 @@ export interface servers_failoverGroupsComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/failoverGroups";
 }
 export interface servers_failoverGroupsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: FailoverGroupProperties | undefined;
-	readonly tags?: FailoverGroupTags | undefined;
+	readonly properties?: FailoverGroupProperties;
+	readonly tags?: FailoverGroupTags;
 }
 export class servers_firewallRules
 	extends ArmResource<servers_firewallRulesComponentInputs>
@@ -1900,7 +1900,7 @@ export interface servers_firewallRulesComponentOutputs {
 }
 export interface servers_firewallRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerFirewallRuleProperties | undefined;
+	readonly properties?: ServerFirewallRuleProperties;
 }
 export class servers_ipv6FirewallRules
 	extends ArmResource<servers_ipv6FirewallRulesComponentInputs>
@@ -1920,7 +1920,7 @@ export interface servers_ipv6FirewallRulesComponentOutputs {
 }
 export interface servers_ipv6FirewallRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: IPv6ServerFirewallRuleProperties | undefined;
+	readonly properties?: IPv6ServerFirewallRuleProperties;
 }
 export class servers_jobAgents
 	extends ArmResource<servers_jobAgentsComponentInputs>
@@ -1941,9 +1941,9 @@ export interface servers_jobAgentsComponentOutputs {
 export interface servers_jobAgentsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: JobAgentProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: JobAgentProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class servers_jobAgents_credentials
 	extends ArmResource<servers_jobAgents_credentialsComponentInputs>
@@ -1963,7 +1963,7 @@ export interface servers_jobAgents_credentialsComponentOutputs {
 }
 export interface servers_jobAgents_credentialsComponentInputs {
 	readonly name: string;
-	readonly properties?: JobCredentialProperties | undefined;
+	readonly properties?: JobCredentialProperties;
 }
 export class servers_jobAgents_jobs
 	extends ArmResource<servers_jobAgents_jobsComponentInputs>
@@ -1983,7 +1983,7 @@ export interface servers_jobAgents_jobsComponentOutputs {
 }
 export interface servers_jobAgents_jobsComponentInputs {
 	readonly name: string;
-	readonly properties?: JobProperties | undefined;
+	readonly properties?: JobProperties;
 }
 export class servers_jobAgents_jobs_executions
 	extends ArmResource<servers_jobAgents_jobs_executionsComponentInputs>
@@ -2003,7 +2003,7 @@ export interface servers_jobAgents_jobs_executionsComponentOutputs {
 }
 export interface servers_jobAgents_jobs_executionsComponentInputs {
 	readonly name: string;
-	readonly properties?: JobExecutionProperties | undefined;
+	readonly properties?: JobExecutionProperties;
 }
 export class servers_jobAgents_jobs_executions_steps
 	extends ArmResource<servers_jobAgents_jobs_executions_stepsComponentInputs>
@@ -2023,7 +2023,7 @@ export interface servers_jobAgents_jobs_executions_stepsComponentOutputs {
 }
 export interface servers_jobAgents_jobs_executions_stepsComponentInputs {
 	readonly name: string;
-	readonly properties?: JobExecutionProperties | undefined;
+	readonly properties?: JobExecutionProperties;
 }
 export class servers_jobAgents_jobs_executions_steps_targets
 	extends ArmResource<servers_jobAgents_jobs_executions_steps_targetsComponentInputs>
@@ -2049,7 +2049,7 @@ export interface servers_jobAgents_jobs_executions_steps_targetsComponentOutputs
 }
 export interface servers_jobAgents_jobs_executions_steps_targetsComponentInputs {
 	readonly name: string;
-	readonly properties?: JobExecutionProperties | undefined;
+	readonly properties?: JobExecutionProperties;
 }
 export class servers_jobAgents_jobs_steps
 	extends ArmResource<servers_jobAgents_jobs_stepsComponentInputs>
@@ -2069,7 +2069,7 @@ export interface servers_jobAgents_jobs_stepsComponentOutputs {
 }
 export interface servers_jobAgents_jobs_stepsComponentInputs {
 	readonly name: string;
-	readonly properties?: JobStepProperties | undefined;
+	readonly properties?: JobStepProperties;
 }
 export class servers_jobAgents_jobs_versions
 	extends ArmResource<servers_jobAgents_jobs_versionsComponentInputs>
@@ -2108,7 +2108,7 @@ export interface servers_jobAgents_jobs_versions_stepsComponentOutputs {
 }
 export interface servers_jobAgents_jobs_versions_stepsComponentInputs {
 	readonly name: string;
-	readonly properties?: JobStepProperties | undefined;
+	readonly properties?: JobStepProperties;
 }
 export class servers_jobAgents_targetGroups
 	extends ArmResource<servers_jobAgents_targetGroupsComponentInputs>
@@ -2128,7 +2128,7 @@ export interface servers_jobAgents_targetGroupsComponentOutputs {
 }
 export interface servers_jobAgents_targetGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: JobTargetGroupProperties | undefined;
+	readonly properties?: JobTargetGroupProperties;
 }
 export class servers_keys extends ArmResource<servers_keysComponentInputs> implements servers_keysComponentOutputs {
 	constructor(entity: ADKEntity, options: servers_keysComponentInputs) {
@@ -2144,10 +2144,10 @@ export interface servers_keysComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/keys";
 }
 export interface servers_keysComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ServerKeyProperties | undefined;
+	readonly properties?: ServerKeyProperties;
 }
 export class servers_outboundFirewallRules
 	extends ArmResource<servers_outboundFirewallRulesComponentInputs>
@@ -2167,7 +2167,7 @@ export interface servers_outboundFirewallRulesComponentOutputs {
 }
 export interface servers_outboundFirewallRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: OutboundFirewallRuleProperties | undefined;
+	readonly properties?: OutboundFirewallRuleProperties;
 }
 export class servers_privateEndpointConnections
 	extends ArmResource<servers_privateEndpointConnectionsComponentInputs>
@@ -2187,7 +2187,7 @@ export interface servers_privateEndpointConnectionsComponentOutputs {
 }
 export interface servers_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class servers_privateLinkResources
 	extends ArmResource<servers_privateLinkResourcesComponentInputs>
@@ -2207,7 +2207,7 @@ export interface servers_privateLinkResourcesComponentOutputs {
 }
 export interface servers_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export class servers_restorableDroppedDatabases
 	extends ArmResource<servers_restorableDroppedDatabasesComponentInputs>
@@ -2226,11 +2226,11 @@ export interface servers_restorableDroppedDatabasesComponentOutputs {
 	readonly type: "Microsoft.Sql/servers/restorableDroppedDatabases";
 }
 export interface servers_restorableDroppedDatabasesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RestorableDroppedDatabaseProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: RestorableDroppedDatabaseTags | undefined;
+	readonly properties?: RestorableDroppedDatabaseProperties;
+	readonly sku?: Sku;
+	readonly tags?: RestorableDroppedDatabaseTags;
 }
 export class servers_securityAlertPolicies
 	extends ArmResource<servers_securityAlertPoliciesComponentInputs>
@@ -2250,8 +2250,8 @@ export interface servers_securityAlertPoliciesComponentOutputs {
 }
 export interface servers_securityAlertPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: SecurityAlertsPolicyProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SecurityAlertsPolicyProperties;
+	readonly systemData?: SystemData;
 }
 export class servers_syncAgents
 	extends ArmResource<servers_syncAgentsComponentInputs>
@@ -2271,7 +2271,7 @@ export interface servers_syncAgentsComponentOutputs {
 }
 export interface servers_syncAgentsComponentInputs {
 	readonly name: string;
-	readonly properties?: SyncAgentProperties | undefined;
+	readonly properties?: SyncAgentProperties;
 }
 export class servers_virtualNetworkRules
 	extends ArmResource<servers_virtualNetworkRulesComponentInputs>
@@ -2291,7 +2291,7 @@ export interface servers_virtualNetworkRulesComponentOutputs {
 }
 export interface servers_virtualNetworkRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: VirtualNetworkRuleProperties | undefined;
+	readonly properties?: VirtualNetworkRuleProperties;
 }
 export class servers_vulnerabilityAssessments
 	extends ArmResource<servers_vulnerabilityAssessmentsComponentInputs>
@@ -2311,7 +2311,7 @@ export interface servers_vulnerabilityAssessmentsComponentOutputs {
 }
 export interface servers_vulnerabilityAssessmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerVulnerabilityAssessmentProperties | undefined;
+	readonly properties?: ServerVulnerabilityAssessmentProperties;
 }
 export class virtualClusters
 	extends ArmResource<virtualClustersComponentInputs>
@@ -2330,172 +2330,170 @@ export interface virtualClustersComponentOutputs {
 	readonly type: "Microsoft.Sql/virtualClusters";
 }
 export interface virtualClustersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VirtualClusterProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VirtualClusterProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AdministratorProperties {
 	readonly administratorType: "ActiveDirectory";
-	readonly azureADOnlyAuthentication?: boolean | undefined;
+	readonly azureADOnlyAuthentication?: boolean;
 	readonly login: string;
 	readonly sid: string;
-	readonly tenantId?: string | undefined;
+	readonly tenantId?: string;
 }
 export interface AdvancedThreatProtectionProperties {
-	readonly creationTime?: string | undefined;
+	readonly creationTime?: string;
 	readonly state: "Disabled" | "Enabled";
 }
 export interface AdvisorProperties {
-	readonly advisorStatus?: ("GA" | "LimitedPublicPreview" | "PrivatePreview") | undefined;
+	readonly advisorStatus?: "GA" | "LimitedPublicPreview" | "PrivatePreview";
 	readonly autoExecuteStatus: "Default" | "Disabled";
-	readonly autoExecuteStatusInheritedFrom?: ("Database" | "Default" | "ElasticPool" | "Server") | undefined;
-	readonly lastChecked?: string | undefined;
-	readonly recommendationsStatus?: string | undefined;
-	readonly recommendedActions?: RecommendedAction[] | undefined;
+	readonly autoExecuteStatusInheritedFrom?: "Database" | "Default" | "ElasticPool" | "Server";
+	readonly lastChecked?: string;
+	readonly recommendationsStatus?: string;
+	readonly recommendedActions?: RecommendedAction[];
 }
 export interface AutomaticTuningOptions {
-	readonly actualState?: "Off" | undefined;
-	readonly desiredState?: ("Default" | "Off") | undefined;
-	readonly reasonCode?: number | undefined;
+	readonly actualState?: "Off";
+	readonly desiredState?: "Default" | "Off";
+	readonly reasonCode?: number;
 	readonly reasonDesc?:
-		| ("AutoConfigured" | "Default" | "Disabled" | "InheritedFromServer" | "NotSupported" | "QueryStoreOff")
-		| undefined;
+		| "AutoConfigured"
+		| "Default"
+		| "Disabled"
+		| "InheritedFromServer"
+		| "NotSupported"
+		| "QueryStoreOff";
 }
 export interface AutomaticTuningServerOptions {
-	readonly actualState?: "Off" | undefined;
-	readonly desiredState?: ("Default" | "Off") | undefined;
-	readonly reasonCode?: number | undefined;
-	readonly reasonDesc?: ("AutoConfigured" | "Default") | undefined;
+	readonly actualState?: "Off";
+	readonly desiredState?: "Default" | "Off";
+	readonly reasonCode?: number;
+	readonly reasonDesc?: "AutoConfigured" | "Default";
 }
 export interface AutomaticTuningServerProperties {
-	readonly actualState?: ("Auto" | "Custom") | undefined;
-	readonly desiredState?: ("Auto" | "Custom") | undefined;
-	readonly options?: AutomaticTuningServerPropertiesOptions | undefined;
+	readonly actualState?: "Auto" | "Custom";
+	readonly desiredState?: "Auto" | "Custom";
+	readonly options?: AutomaticTuningServerPropertiesOptions;
 }
 export interface AutomaticTuningServerPropertiesOptions {
-	readonly "[ key: string ]"?: AutomaticTuningServerOptions | undefined;
+	readonly [key: string]: AutomaticTuningServerOptions;
 }
 export interface AzureADOnlyAuthProperties {
 	readonly azureADOnlyAuthentication: boolean;
 }
 export interface BackupShortTermRetentionPolicyProperties {
-	readonly diffBackupIntervalInHours?: number | undefined;
-	readonly retentionDays?: number | undefined;
+	readonly diffBackupIntervalInHours?: number;
+	readonly retentionDays?: number;
 }
 export interface BaseLongTermRetentionPolicyProperties {
-	readonly monthlyRetention?: string | undefined;
-	readonly weeklyRetention?: string | undefined;
-	readonly weekOfYear?: number | undefined;
-	readonly yearlyRetention?: string | undefined;
+	readonly monthlyRetention?: string;
+	readonly weeklyRetention?: string;
+	readonly weekOfYear?: number;
+	readonly yearlyRetention?: string;
 }
 export interface DatabaseAutomaticTuningProperties {
-	readonly actualState?: ("Auto" | "Custom" | "Inherit") | undefined;
-	readonly desiredState?: ("Auto" | "Custom" | "Inherit") | undefined;
-	readonly options?: DatabaseAutomaticTuningPropertiesOptions | undefined;
+	readonly actualState?: "Auto" | "Custom" | "Inherit";
+	readonly desiredState?: "Auto" | "Custom" | "Inherit";
+	readonly options?: DatabaseAutomaticTuningPropertiesOptions;
 }
 export interface DatabaseAutomaticTuningPropertiesOptions {
-	readonly "[ key: string ]"?: AutomaticTuningOptions | undefined;
+	readonly [key: string]: AutomaticTuningOptions;
 }
 export interface DatabaseBlobAuditingPolicyProperties {
-	readonly auditActionsAndGroups?: string[] | undefined;
+	readonly auditActionsAndGroups?: string[];
 }
 export interface DatabaseColumnProperties {
 	readonly columnType?:
-		| (
-				| "bigint"
-				| "binary"
-				| "bit"
-				| "char"
-				| "date"
-				| "datetime"
-				| "datetime2"
-				| "datetimeoffset"
-				| "decimal"
-				| "float"
-				| "geography"
-				| "geometry"
-				| "hierarchyid"
-				| "image"
-				| "int"
-				| "money"
-				| "nchar"
-				| "ntext"
-				| "numeric"
-				| "nvarchar"
-				| "real"
-				| "smalldatetime"
-				| "smallint"
-				| "smallmoney"
-				| "sql_variant"
-				| "sysname"
-				| "text"
-				| "time"
-				| "timestamp"
-				| "tinyint"
-				| "uniqueidentifier"
-				| "varbinary"
-				| "varchar"
-				| "xml"
-		  )
-		| undefined;
-	readonly isComputed?: boolean | undefined;
-	readonly memoryOptimized?: boolean | undefined;
-	readonly temporalType?: ("HistoryTable" | "NonTemporalTable" | "SystemVersionedTemporalTable") | undefined;
+		| "bigint"
+		| "binary"
+		| "bit"
+		| "char"
+		| "date"
+		| "datetime"
+		| "datetime2"
+		| "datetimeoffset"
+		| "decimal"
+		| "float"
+		| "geography"
+		| "geometry"
+		| "hierarchyid"
+		| "image"
+		| "int"
+		| "money"
+		| "nchar"
+		| "ntext"
+		| "numeric"
+		| "nvarchar"
+		| "real"
+		| "smalldatetime"
+		| "smallint"
+		| "smallmoney"
+		| "sql_variant"
+		| "sysname"
+		| "text"
+		| "time"
+		| "timestamp"
+		| "tinyint"
+		| "uniqueidentifier"
+		| "varbinary"
+		| "varchar"
+		| "xml";
+	readonly isComputed?: boolean;
+	readonly memoryOptimized?: boolean;
+	readonly temporalType?: "HistoryTable" | "NonTemporalTable" | "SystemVersionedTemporalTable";
 }
 export interface DatabaseExtensionsProperties {
-	readonly administratorLogin?: string | undefined;
-	readonly administratorLoginPassword?: string | undefined;
-	readonly authenticationType?: string | undefined;
-	readonly databaseEdition?: string | undefined;
-	readonly maxSizeBytes?: string | undefined;
-	readonly networkIsolation?: NetworkIsolationSettings | undefined;
+	readonly administratorLogin?: string;
+	readonly administratorLoginPassword?: string;
+	readonly authenticationType?: string;
+	readonly databaseEdition?: string;
+	readonly maxSizeBytes?: string;
+	readonly networkIsolation?: NetworkIsolationSettings;
 	readonly operationMode: "Export" | "Import" | "PolybaseImport";
-	readonly serviceObjectiveName?: string | undefined;
+	readonly serviceObjectiveName?: string;
 	readonly storageKey: string;
 	readonly storageKeyType: "SharedAccessKey" | "StorageAccessKey";
 	readonly storageUri: string;
 }
 export interface DatabaseIdentity {
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "UserAssigned") | undefined;
-	readonly userAssignedIdentities?: DatabaseIdentityUserAssignedIdentities | undefined;
+	readonly tenantId?: string;
+	readonly type?: "None" | "UserAssigned";
+	readonly userAssignedIdentities?: DatabaseIdentityUserAssignedIdentities;
 }
 export interface DatabaseIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: DatabaseUserIdentity | undefined;
+	readonly [key: string]: DatabaseUserIdentity;
 }
 export interface DatabaseProperties {
-	readonly autoPauseDelay?: number | undefined;
-	readonly catalogCollation?: ("DATABASE_DEFAULT" | "SQL_Latin1_General_CP1_CI_AS") | undefined;
-	readonly collation?: string | undefined;
+	readonly autoPauseDelay?: number;
+	readonly catalogCollation?: "DATABASE_DEFAULT" | "SQL_Latin1_General_CP1_CI_AS";
+	readonly collation?: string;
 	readonly createMode?:
-		| (
-				| "Copy"
-				| "Default"
-				| "OnlineSecondary"
-				| "PointInTimeRestore"
-				| "Recovery"
-				| "Restore"
-				| "RestoreExternalBackup"
-				| "RestoreExternalBackupSecondary"
-				| "RestoreLongTermRetentionBackup"
-				| "Secondary"
-		  )
-		| undefined;
+		| "Copy"
+		| "Default"
+		| "OnlineSecondary"
+		| "PointInTimeRestore"
+		| "Recovery"
+		| "Restore"
+		| "RestoreExternalBackup"
+		| "RestoreExternalBackupSecondary"
+		| "RestoreLongTermRetentionBackup"
+		| "Secondary";
 }
 export interface DatabaseTableProperties {
-	readonly memoryOptimized?: boolean | undefined;
-	readonly temporalType?: ("HistoryTable" | "NonTemporalTable" | "SystemVersionedTemporalTable") | undefined;
+	readonly memoryOptimized?: boolean;
+	readonly temporalType?: "HistoryTable" | "NonTemporalTable" | "SystemVersionedTemporalTable";
 }
 export interface DatabaseUserIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface DatabaseVulnerabilityAssessmentProperties {
-	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties | undefined;
-	readonly storageAccountAccessKey?: string | undefined;
-	readonly storageContainerPath?: string | undefined;
-	readonly storageContainerSasKey?: string | undefined;
+	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties;
+	readonly storageAccountAccessKey?: string;
+	readonly storageContainerPath?: string;
+	readonly storageContainerSasKey?: string;
 }
 export interface DatabaseVulnerabilityAssessmentRuleBaselineItem {
 	readonly result: string[];
@@ -2504,90 +2502,90 @@ export interface DatabaseVulnerabilityAssessmentRuleBaselineProperties {
 	readonly baselineResults: DatabaseVulnerabilityAssessmentRuleBaselineItem[];
 }
 export interface DataWarehouseUserActivitiesProperties {
-	readonly activeQueriesCount?: number | undefined;
+	readonly activeQueriesCount?: number;
 }
 export interface DeletedServerProperties {
-	readonly deletionTime?: string | undefined;
-	readonly fullyQualifiedDomainName?: string | undefined;
-	readonly originalId?: string | undefined;
-	readonly version?: string | undefined;
+	readonly deletionTime?: string;
+	readonly fullyQualifiedDomainName?: string;
+	readonly originalId?: string;
+	readonly version?: string;
 }
 export interface DistributedAvailabilityGroupProperties {
-	readonly distributedAvailabilityGroupId?: string | undefined;
-	readonly lastHardenedLsn?: string | undefined;
-	readonly linkState?: string | undefined;
-	readonly primaryAvailabilityGroupName?: string | undefined;
-	readonly replicationMode?: ("Async" | "Sync") | undefined;
-	readonly secondaryAvailabilityGroupName?: string | undefined;
-	readonly sourceEndpoint?: string | undefined;
-	readonly sourceReplicaId?: string | undefined;
-	readonly targetDatabase?: string | undefined;
-	readonly targetReplicaId?: string | undefined;
+	readonly distributedAvailabilityGroupId?: string;
+	readonly lastHardenedLsn?: string;
+	readonly linkState?: string;
+	readonly primaryAvailabilityGroupName?: string;
+	readonly replicationMode?: "Async" | "Sync";
+	readonly secondaryAvailabilityGroupName?: string;
+	readonly sourceEndpoint?: string;
+	readonly sourceReplicaId?: string;
+	readonly targetDatabase?: string;
+	readonly targetReplicaId?: string;
 }
 export interface ElasticPoolPerDatabaseSettings {
-	readonly maxCapacity?: number | undefined;
-	readonly minCapacity?: number | undefined;
+	readonly maxCapacity?: number;
+	readonly minCapacity?: number;
 }
 export interface ElasticPoolProperties {
-	readonly creationDate?: string | undefined;
-	readonly highAvailabilityReplicaCount?: number | undefined;
-	readonly licenseType?: ("BasePrice" | "LicenseIncluded") | undefined;
-	readonly maintenanceConfigurationId?: string | undefined;
-	readonly maxSizeBytes?: number | undefined;
-	readonly minCapacity?: number | undefined;
-	readonly perDatabaseSettings?: ElasticPoolPerDatabaseSettings | undefined;
-	readonly state?: ("Creating" | "Disabled" | "Ready") | undefined;
-	readonly zoneRedundant?: boolean | undefined;
+	readonly creationDate?: string;
+	readonly highAvailabilityReplicaCount?: number;
+	readonly licenseType?: "BasePrice" | "LicenseIncluded";
+	readonly maintenanceConfigurationId?: string;
+	readonly maxSizeBytes?: number;
+	readonly minCapacity?: number;
+	readonly perDatabaseSettings?: ElasticPoolPerDatabaseSettings;
+	readonly state?: "Creating" | "Disabled" | "Ready";
+	readonly zoneRedundant?: boolean;
 }
 export interface EncryptionProtectorProperties {
-	readonly autoRotationEnabled?: boolean | undefined;
-	readonly serverKeyName?: string | undefined;
+	readonly autoRotationEnabled?: boolean;
+	readonly serverKeyName?: string;
 	readonly serverKeyType: "AzureKeyVault" | "ServiceManaged";
-	readonly subregion?: string | undefined;
-	readonly thumbprint?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly subregion?: string;
+	readonly thumbprint?: string;
+	readonly uri?: string;
 }
 export interface EndpointCertificateProperties {
-	readonly publicBlob?: string | undefined;
+	readonly publicBlob?: string;
 }
 export interface ExtendedDatabaseBlobAuditingPolicyProperties {
-	readonly auditActionsAndGroups?: string[] | undefined;
+	readonly auditActionsAndGroups?: string[];
 }
 export interface ExtendedServerBlobAuditingPolicyProperties {
-	readonly auditActionsAndGroups?: string[] | undefined;
+	readonly auditActionsAndGroups?: string[];
 }
 export interface FailoverGroupProperties {
-	readonly databases?: string[] | undefined;
+	readonly databases?: string[];
 	readonly partnerServers: PartnerInfo[];
-	readonly readOnlyEndpoint?: FailoverGroupReadOnlyEndpoint | undefined;
+	readonly readOnlyEndpoint?: FailoverGroupReadOnlyEndpoint;
 	readonly readWriteEndpoint: FailoverGroupReadWriteEndpoint;
-	readonly replicationRole?: ("Primary" | "Secondary") | undefined;
-	readonly replicationState?: string | undefined;
+	readonly replicationRole?: "Primary" | "Secondary";
+	readonly replicationState?: string;
 }
 export interface FailoverGroupReadOnlyEndpoint {
-	readonly failoverPolicy?: ("Disabled" | "Enabled") | undefined;
+	readonly failoverPolicy?: "Disabled" | "Enabled";
 }
 export interface FailoverGroupReadWriteEndpoint {
 	readonly failoverPolicy: "Automatic" | "Manual";
-	readonly failoverWithDataLossGracePeriodMinutes?: number | undefined;
+	readonly failoverWithDataLossGracePeriodMinutes?: number;
 }
 export interface FailoverGroupTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface InstanceFailoverGroupProperties {
 	readonly managedInstancePairs: ManagedInstancePairInfo[];
 	readonly partnerRegions: PartnerRegionInfo[];
-	readonly readOnlyEndpoint?: InstanceFailoverGroupReadOnlyEndpoint | undefined;
+	readonly readOnlyEndpoint?: InstanceFailoverGroupReadOnlyEndpoint;
 	readonly readWriteEndpoint: InstanceFailoverGroupReadWriteEndpoint;
-	readonly replicationRole?: ("Primary" | "Secondary") | undefined;
-	readonly replicationState?: string | undefined;
+	readonly replicationRole?: "Primary" | "Secondary";
+	readonly replicationState?: string;
 }
 export interface InstanceFailoverGroupReadOnlyEndpoint {
-	readonly failoverPolicy?: ("Disabled" | "Enabled") | undefined;
+	readonly failoverPolicy?: "Disabled" | "Enabled";
 }
 export interface InstanceFailoverGroupReadWriteEndpoint {
 	readonly failoverPolicy: "Automatic" | "Manual";
-	readonly failoverWithDataLossGracePeriodMinutes?: number | undefined;
+	readonly failoverWithDataLossGracePeriodMinutes?: number;
 }
 export interface InstancePoolProperties {
 	readonly licenseType: "BasePrice" | "LicenseIncluded";
@@ -2595,374 +2593,372 @@ export interface InstancePoolProperties {
 	readonly vCores: number;
 }
 export interface IPv6ServerFirewallRuleProperties {
-	readonly endIPv6Address?: string | undefined;
-	readonly startIPv6Address?: string | undefined;
+	readonly endIPv6Address?: string;
+	readonly startIPv6Address?: string;
 }
 export interface JobAgentProperties {
 	readonly databaseId: string;
-	readonly state?: ("Creating" | "Deleting" | "Disabled" | "Ready" | "Updating") | undefined;
+	readonly state?: "Creating" | "Deleting" | "Disabled" | "Ready" | "Updating";
 }
 export interface JobCredentialProperties {
 	readonly password: string;
 	readonly username: string;
 }
 export interface JobExecutionProperties {
-	readonly createTime?: string | undefined;
-	readonly currentAttempts?: number | undefined;
-	readonly currentAttemptStartTime?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly jobExecutionId?: string | undefined;
-	readonly jobVersion?: number | undefined;
-	readonly lastMessage?: string | undefined;
+	readonly createTime?: string;
+	readonly currentAttempts?: number;
+	readonly currentAttemptStartTime?: string;
+	readonly endTime?: string;
+	readonly jobExecutionId?: string;
+	readonly jobVersion?: number;
+	readonly lastMessage?: string;
 	readonly lifecycle?:
-		| (
-				| "Canceled"
-				| "Created"
-				| "Failed"
-				| "InProgress"
-				| "Skipped"
-				| "Succeeded"
-				| "SucceededWithSkipped"
-				| "TimedOut"
-				| "WaitingForChildJobExecutions"
-				| "WaitingForRetry"
-		  )
-		| undefined;
-	readonly provisioningState?: ("Canceled" | "Created" | "Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly startTime?: string | undefined;
-	readonly stepId?: number | undefined;
-	readonly stepName?: string | undefined;
-	readonly target?: JobExecutionTarget | undefined;
+		| "Canceled"
+		| "Created"
+		| "Failed"
+		| "InProgress"
+		| "Skipped"
+		| "Succeeded"
+		| "SucceededWithSkipped"
+		| "TimedOut"
+		| "WaitingForChildJobExecutions"
+		| "WaitingForRetry";
+	readonly provisioningState?: "Canceled" | "Created" | "Failed" | "InProgress" | "Succeeded";
+	readonly startTime?: string;
+	readonly stepId?: number;
+	readonly stepName?: string;
+	readonly target?: JobExecutionTarget;
 }
 export interface JobExecutionTarget {
-	readonly databaseName?: string | undefined;
-	readonly serverName?: string | undefined;
-	readonly type?: ("SqlDatabase" | "SqlElasticPool" | "SqlServer" | "SqlShardMap" | "TargetGroup") | undefined;
+	readonly databaseName?: string;
+	readonly serverName?: string;
+	readonly type?: "SqlDatabase" | "SqlElasticPool" | "SqlServer" | "SqlShardMap" | "TargetGroup";
 }
 export interface JobProperties {
-	readonly description?: string | undefined;
-	readonly schedule?: JobSchedule | undefined;
-	readonly version?: number | undefined;
+	readonly description?: string;
+	readonly schedule?: JobSchedule;
+	readonly version?: number;
 }
 export interface JobSchedule {
-	readonly enabled?: boolean | undefined;
-	readonly endTime?: string | undefined;
-	readonly interval?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly type?: "Once" | undefined;
+	readonly enabled?: boolean;
+	readonly endTime?: string;
+	readonly interval?: string;
+	readonly startTime?: string;
+	readonly type?: "Once";
 }
 export interface JobStepAction {
-	readonly source?: "Inline" | undefined;
-	readonly type?: "TSql" | undefined;
+	readonly source?: "Inline";
+	readonly type?: "TSql";
 	readonly value: string;
 }
 export interface JobStepExecutionOptions {
-	readonly initialRetryIntervalSeconds?: number | undefined;
-	readonly maximumRetryIntervalSeconds?: number | undefined;
-	readonly retryAttempts?: number | undefined;
-	readonly retryIntervalBackoffMultiplier?: number | undefined;
-	readonly timeoutSeconds?: number | undefined;
+	readonly initialRetryIntervalSeconds?: number;
+	readonly maximumRetryIntervalSeconds?: number;
+	readonly retryAttempts?: number;
+	readonly retryIntervalBackoffMultiplier?: number;
+	readonly timeoutSeconds?: number;
 }
 export interface JobStepOutput {
 	readonly credential: string;
 	readonly databaseName: string;
-	readonly resourceGroupName?: string | undefined;
-	readonly schemaName?: string | undefined;
+	readonly resourceGroupName?: string;
+	readonly schemaName?: string;
 	readonly serverName: string;
-	readonly subscriptionId?: string | undefined;
+	readonly subscriptionId?: string;
 	readonly tableName: string;
-	readonly type?: "SqlDatabase" | undefined;
+	readonly type?: "SqlDatabase";
 }
 export interface JobStepProperties {
 	readonly action: JobStepAction;
 	readonly credential: string;
-	readonly executionOptions?: JobStepExecutionOptions | undefined;
-	readonly output?: JobStepOutput | undefined;
-	readonly stepId?: number | undefined;
+	readonly executionOptions?: JobStepExecutionOptions;
+	readonly output?: JobStepOutput;
+	readonly stepId?: number;
 	readonly targetGroup: string;
 }
 export interface JobTarget {
-	readonly databaseName?: string | undefined;
-	readonly elasticPoolName?: string | undefined;
-	readonly membershipType?: "Exclude" | undefined;
-	readonly refreshCredential?: string | undefined;
-	readonly serverName?: string | undefined;
-	readonly shardMapName?: string | undefined;
+	readonly databaseName?: string;
+	readonly elasticPoolName?: string;
+	readonly membershipType?: "Exclude";
+	readonly refreshCredential?: string;
+	readonly serverName?: string;
+	readonly shardMapName?: string;
 	readonly type: "SqlDatabase" | "SqlElasticPool" | "SqlServer" | "SqlShardMap" | "TargetGroup";
 }
 export interface JobTargetGroupProperties {
 	readonly members: JobTarget[];
 }
 export interface LedgerDigestUploadsProperties {
-	readonly digestStorageEndpoint?: string | undefined;
-	readonly state?: "Disabled" | undefined;
+	readonly digestStorageEndpoint?: string;
+	readonly state?: "Disabled";
 }
 export interface LongTermRetentionBackupProperties {
-	readonly backupExpirationTime?: string | undefined;
-	readonly backupStorageRedundancy?: ("Geo" | "GeoZone" | "Local" | "Zone") | undefined;
-	readonly backupTime?: string | undefined;
-	readonly databaseDeletionTime?: string | undefined;
-	readonly databaseName?: string | undefined;
-	readonly requestedBackupStorageRedundancy?: ("Geo" | "GeoZone" | "Local" | "Zone") | undefined;
-	readonly serverCreateTime?: string | undefined;
-	readonly serverName?: string | undefined;
+	readonly backupExpirationTime?: string;
+	readonly backupStorageRedundancy?: "Geo" | "GeoZone" | "Local" | "Zone";
+	readonly backupTime?: string;
+	readonly databaseDeletionTime?: string;
+	readonly databaseName?: string;
+	readonly requestedBackupStorageRedundancy?: "Geo" | "GeoZone" | "Local" | "Zone";
+	readonly serverCreateTime?: string;
+	readonly serverName?: string;
 }
 export interface ManagedBackupShortTermRetentionPolicyProperties {
-	readonly retentionDays?: number | undefined;
+	readonly retentionDays?: number;
 }
 export interface ManagedDatabaseProperties {
-	readonly autoCompleteRestore?: boolean | undefined;
-	readonly catalogCollation?: ("DATABASE_DEFAULT" | "SQL_Latin1_General_CP1_CI_AS") | undefined;
-	readonly collation?: string | undefined;
+	readonly autoCompleteRestore?: boolean;
+	readonly catalogCollation?: "DATABASE_DEFAULT" | "SQL_Latin1_General_CP1_CI_AS";
+	readonly collation?: string;
 	readonly createMode?:
-		| ("Default" | "PointInTimeRestore" | "Recovery" | "RestoreExternalBackup" | "RestoreLongTermRetentionBackup")
-		| undefined;
-	readonly creationDate?: string | undefined;
-	readonly defaultSecondaryLocation?: string | undefined;
-	readonly earliestRestorePoint?: string | undefined;
-	readonly failoverGroupId?: string | undefined;
-	readonly lastBackupName?: string | undefined;
-	readonly longTermRetentionBackupResourceId?: string | undefined;
-	readonly recoverableDatabaseId?: string | undefined;
-	readonly restorableDroppedDatabaseId?: string | undefined;
-	readonly restorePointInTime?: string | undefined;
-	readonly sourceDatabaseId?: string | undefined;
-	readonly status?:
-		| ("Creating" | "Inaccessible" | "Offline" | "Online" | "Restoring" | "Shutdown" | "Updating")
-		| undefined;
-	readonly storageContainerSasToken?: string | undefined;
-	readonly storageContainerUri?: string | undefined;
+		| "Default"
+		| "PointInTimeRestore"
+		| "Recovery"
+		| "RestoreExternalBackup"
+		| "RestoreLongTermRetentionBackup";
+	readonly creationDate?: string;
+	readonly defaultSecondaryLocation?: string;
+	readonly earliestRestorePoint?: string;
+	readonly failoverGroupId?: string;
+	readonly lastBackupName?: string;
+	readonly longTermRetentionBackupResourceId?: string;
+	readonly recoverableDatabaseId?: string;
+	readonly restorableDroppedDatabaseId?: string;
+	readonly restorePointInTime?: string;
+	readonly sourceDatabaseId?: string;
+	readonly status?: "Creating" | "Inaccessible" | "Offline" | "Online" | "Restoring" | "Shutdown" | "Updating";
+	readonly storageContainerSasToken?: string;
+	readonly storageContainerUri?: string;
 }
 export interface ManagedDatabaseRestoreDetailsProperties {
-	readonly blockReason?: string | undefined;
-	readonly currentRestoringFileName?: string | undefined;
-	readonly lastRestoredFileName?: string | undefined;
-	readonly lastRestoredFileTime?: string | undefined;
-	readonly lastUploadedFileName?: string | undefined;
-	readonly lastUploadedFileTime?: string | undefined;
-	readonly numberOfFilesDetected?: number | undefined;
-	readonly percentCompleted?: number | undefined;
-	readonly status?: string | undefined;
-	readonly unrestorableFiles?: string[] | undefined;
+	readonly blockReason?: string;
+	readonly currentRestoringFileName?: string;
+	readonly lastRestoredFileName?: string;
+	readonly lastRestoredFileTime?: string;
+	readonly lastUploadedFileName?: string;
+	readonly lastUploadedFileTime?: string;
+	readonly numberOfFilesDetected?: number;
+	readonly percentCompleted?: number;
+	readonly status?: string;
+	readonly unrestorableFiles?: string[];
 }
 export interface ManagedInstanceAdministratorProperties {
 	readonly administratorType: "ActiveDirectory";
 	readonly login: string;
 	readonly sid: string;
-	readonly tenantId?: string | undefined;
+	readonly tenantId?: string;
 }
 export interface ManagedInstanceAzureADOnlyAuthProperties {
 	readonly azureADOnlyAuthentication: boolean;
 }
 export interface ManagedInstanceEncryptionProtectorProperties {
-	readonly autoRotationEnabled?: boolean | undefined;
-	readonly serverKeyName?: string | undefined;
+	readonly autoRotationEnabled?: boolean;
+	readonly serverKeyName?: string;
 	readonly serverKeyType: "AzureKeyVault" | "ServiceManaged";
-	readonly thumbprint?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly thumbprint?: string;
+	readonly uri?: string;
 }
 export interface ManagedInstanceExternalAdministrator {
-	readonly administratorType?: "ActiveDirectory" | undefined;
-	readonly azureADOnlyAuthentication?: boolean | undefined;
-	readonly login?: string | undefined;
-	readonly principalType?: ("Application" | "Group" | "User") | undefined;
-	readonly sid?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly administratorType?: "ActiveDirectory";
+	readonly azureADOnlyAuthentication?: boolean;
+	readonly login?: string;
+	readonly principalType?: "Application" | "Group" | "User";
+	readonly sid?: string;
+	readonly tenantId?: string;
 }
 export interface ManagedInstanceKeyProperties {
-	readonly autoRotationEnabled?: boolean | undefined;
-	readonly creationDate?: string | undefined;
+	readonly autoRotationEnabled?: boolean;
+	readonly creationDate?: string;
 	readonly serverKeyType: "AzureKeyVault" | "ServiceManaged";
-	readonly thumbprint?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly thumbprint?: string;
+	readonly uri?: string;
 }
 export interface ManagedInstanceLongTermRetentionBackupProperties {
-	readonly backupExpirationTime?: string | undefined;
-	readonly backupStorageRedundancy?: ("Geo" | "GeoZone" | "Local" | "Zone") | undefined;
-	readonly backupTime?: string | undefined;
-	readonly databaseDeletionTime?: string | undefined;
-	readonly databaseName?: string | undefined;
-	readonly managedInstanceCreateTime?: string | undefined;
-	readonly managedInstanceName?: string | undefined;
+	readonly backupExpirationTime?: string;
+	readonly backupStorageRedundancy?: "Geo" | "GeoZone" | "Local" | "Zone";
+	readonly backupTime?: string;
+	readonly databaseDeletionTime?: string;
+	readonly databaseName?: string;
+	readonly managedInstanceCreateTime?: string;
+	readonly managedInstanceName?: string;
 }
 export interface ManagedInstanceOperationParametersPair {
-	readonly currentParameters?: UpsertManagedServerOperationParameters | undefined;
-	readonly requestedParameters?: UpsertManagedServerOperationParameters | undefined;
+	readonly currentParameters?: UpsertManagedServerOperationParameters;
+	readonly requestedParameters?: UpsertManagedServerOperationParameters;
 }
 export interface ManagedInstanceOperationProperties {
-	readonly description?: string | undefined;
-	readonly errorCode?: number | undefined;
-	readonly errorDescription?: string | undefined;
-	readonly errorSeverity?: number | undefined;
-	readonly estimatedCompletionTime?: string | undefined;
-	readonly isCancellable?: boolean | undefined;
-	readonly isUserError?: boolean | undefined;
-	readonly managedInstanceName?: string | undefined;
-	readonly operation?: string | undefined;
-	readonly operationFriendlyName?: string | undefined;
-	readonly operationParameters?: ManagedInstanceOperationParametersPair | undefined;
-	readonly operationSteps?: ManagedInstanceOperationSteps | undefined;
-	readonly percentComplete?: number | undefined;
-	readonly startTime?: string | undefined;
-	readonly state?: ("CancelInProgress" | "Cancelled" | "Failed" | "InProgress" | "Pending" | "Succeeded") | undefined;
+	readonly description?: string;
+	readonly errorCode?: number;
+	readonly errorDescription?: string;
+	readonly errorSeverity?: number;
+	readonly estimatedCompletionTime?: string;
+	readonly isCancellable?: boolean;
+	readonly isUserError?: boolean;
+	readonly managedInstanceName?: string;
+	readonly operation?: string;
+	readonly operationFriendlyName?: string;
+	readonly operationParameters?: ManagedInstanceOperationParametersPair;
+	readonly operationSteps?: ManagedInstanceOperationSteps;
+	readonly percentComplete?: number;
+	readonly startTime?: string;
+	readonly state?: "CancelInProgress" | "Cancelled" | "Failed" | "InProgress" | "Pending" | "Succeeded";
 }
 export interface ManagedInstanceOperationSteps {
-	readonly currentStep?: number | undefined;
-	readonly stepsList?: UpsertManagedServerOperationStepWithEstimatesAndDuration[] | undefined;
-	readonly totalSteps?: string | undefined;
+	readonly currentStep?: number;
+	readonly stepsList?: UpsertManagedServerOperationStepWithEstimatesAndDuration[];
+	readonly totalSteps?: string;
 }
 export interface ManagedInstancePairInfo {
-	readonly partnerManagedInstanceId?: string | undefined;
-	readonly primaryManagedInstanceId?: string | undefined;
+	readonly partnerManagedInstanceId?: string;
+	readonly primaryManagedInstanceId?: string;
 }
 export interface ManagedInstancePecProperty {
-	readonly id?: string | undefined;
-	readonly properties?: ManagedInstancePrivateEndpointConnectionProperties | undefined;
+	readonly id?: string;
+	readonly properties?: ManagedInstancePrivateEndpointConnectionProperties;
 }
 export interface ManagedInstancePrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: ManagedInstancePrivateEndpointProperty | undefined;
-	readonly privateLinkServiceConnectionState?: ManagedInstancePrivateLinkServiceConnectionStateProperty | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly privateEndpoint?: ManagedInstancePrivateEndpointProperty;
+	readonly privateLinkServiceConnectionState?: ManagedInstancePrivateLinkServiceConnectionStateProperty;
+	readonly provisioningState?: string;
 }
 export interface ManagedInstancePrivateEndpointProperty {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ManagedInstancePrivateLinkProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface ManagedInstancePrivateLinkServiceConnectionStateProperty {
-	readonly actionsRequired?: string | undefined;
+	readonly actionsRequired?: string;
 	readonly description: string;
 	readonly status: string;
 }
 export interface ManagedInstanceProperties {
-	readonly administratorLogin?: string | undefined;
-	readonly administratorLoginPassword?: string | undefined;
-	readonly administrators?: ManagedInstanceExternalAdministrator | undefined;
-	readonly collation?: string | undefined;
-	readonly currentBackupStorageRedundancy?: ("Geo" | "GeoZone" | "Local" | "Zone") | undefined;
-	readonly dnsZone?: string | undefined;
-	readonly dnsZonePartner?: string | undefined;
-	readonly fullyQualifiedDomainName?: string | undefined;
-	readonly instancePoolId?: string | undefined;
-	readonly keyId?: string | undefined;
-	readonly licenseType?: ("BasePrice" | "LicenseIncluded") | undefined;
-	readonly maintenanceConfigurationId?: string | undefined;
-	readonly managedInstanceCreateMode?: ("Default" | "PointInTimeRestore") | undefined;
+	readonly administratorLogin?: string;
+	readonly administratorLoginPassword?: string;
+	readonly administrators?: ManagedInstanceExternalAdministrator;
+	readonly collation?: string;
+	readonly currentBackupStorageRedundancy?: "Geo" | "GeoZone" | "Local" | "Zone";
+	readonly dnsZone?: string;
+	readonly dnsZonePartner?: string;
+	readonly fullyQualifiedDomainName?: string;
+	readonly instancePoolId?: string;
+	readonly keyId?: string;
+	readonly licenseType?: "BasePrice" | "LicenseIncluded";
+	readonly maintenanceConfigurationId?: string;
+	readonly managedInstanceCreateMode?: "Default" | "PointInTimeRestore";
 }
 export interface ManagedInstanceVulnerabilityAssessmentProperties {
-	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties | undefined;
-	readonly storageAccountAccessKey?: string | undefined;
+	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties;
+	readonly storageAccountAccessKey?: string;
 	readonly storageContainerPath: string;
-	readonly storageContainerSasKey?: string | undefined;
+	readonly storageContainerSasKey?: string;
 }
 export interface ManagedServerDnsAliasProperties {
-	readonly azureDnsRecord?: string | undefined;
-	readonly publicAzureDnsRecord?: string | undefined;
+	readonly azureDnsRecord?: string;
+	readonly publicAzureDnsRecord?: string;
 }
 export interface ManagedTransparentDataEncryptionProperties {
 	readonly state: "Disabled";
 }
 export interface NetworkIsolationSettings {
-	readonly sqlServerResourceId?: string | undefined;
-	readonly storageAccountResourceId?: string | undefined;
+	readonly sqlServerResourceId?: string;
+	readonly storageAccountResourceId?: string;
 }
 export interface OutboundFirewallRuleProperties {
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface PartnerInfo {
 	readonly id: string;
-	readonly location?: string | undefined;
-	readonly replicationRole?: ("Primary" | "Secondary") | undefined;
+	readonly location?: string;
+	readonly replicationRole?: "Primary" | "Secondary";
 }
 export interface PartnerRegionInfo {
-	readonly location?: string | undefined;
-	readonly replicationRole?: ("Primary" | "Secondary") | undefined;
+	readonly location?: string;
+	readonly replicationRole?: "Primary" | "Secondary";
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly groupIds?: string[] | undefined;
-	readonly privateEndpoint?: PrivateEndpointProperty | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty | undefined;
-	readonly provisioningState?: ("Approving" | "Dropping" | "Failed" | "Ready" | "Rejecting") | undefined;
+	readonly groupIds?: string[];
+	readonly privateEndpoint?: PrivateEndpointProperty;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty;
+	readonly provisioningState?: "Approving" | "Dropping" | "Failed" | "Ready" | "Rejecting";
 }
 export interface PrivateEndpointProperty {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionStateProperty {
-	readonly actionsRequired?: "None" | undefined;
+	readonly actionsRequired?: "None";
 	readonly description: string;
 	readonly status: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface QueryProperties {
-	readonly queryText?: string | undefined;
+	readonly queryText?: string;
 }
 export interface RecommendedAction {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: RecommendedActionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: RecommendedActionProperties;
+	readonly type?: string;
 }
 export interface RecommendedActionErrorInfo {
-	readonly errorCode?: string | undefined;
-	readonly isRetryable?: "No" | undefined;
+	readonly errorCode?: string;
+	readonly isRetryable?: "No";
 }
 export interface RecommendedActionImpactRecord {
-	readonly absoluteValue?: number | undefined;
-	readonly changeValueAbsolute?: number | undefined;
-	readonly changeValueRelative?: number | undefined;
-	readonly dimensionName?: string | undefined;
-	readonly unit?: string | undefined;
+	readonly absoluteValue?: number;
+	readonly changeValueAbsolute?: number;
+	readonly changeValueRelative?: number;
+	readonly dimensionName?: string;
+	readonly unit?: string;
 }
 export interface RecommendedActionImplementationInfo {
-	readonly method?: "AzurePowerShell" | undefined;
-	readonly script?: string | undefined;
+	readonly method?: "AzurePowerShell";
+	readonly script?: string;
 }
 export interface RecommendedActionMetricInfo {
-	readonly metricName?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly timeGrain?: string | undefined;
-	readonly unit?: string | undefined;
-	readonly value?: number | undefined;
+	readonly metricName?: string;
+	readonly startTime?: string;
+	readonly timeGrain?: string;
+	readonly unit?: string;
+	readonly value?: number;
 }
 export interface RecommendedActionProperties {
-	readonly details?: RecommendedActionPropertiesDetails | undefined;
-	readonly errorDetails?: RecommendedActionErrorInfo | undefined;
-	readonly estimatedImpact?: RecommendedActionImpactRecord[] | undefined;
-	readonly executeActionDuration?: string | undefined;
-	readonly executeActionInitiatedBy?: "System" | undefined;
-	readonly executeActionInitiatedTime?: string | undefined;
-	readonly executeActionStartTime?: string | undefined;
-	readonly implementationDetails?: RecommendedActionImplementationInfo | undefined;
-	readonly isArchivedAction?: boolean | undefined;
-	readonly isExecutableAction?: boolean | undefined;
-	readonly isRevertableAction?: boolean | undefined;
-	readonly lastRefresh?: string | undefined;
-	readonly linkedObjects?: string[] | undefined;
-	readonly observedImpact?: RecommendedActionImpactRecord[] | undefined;
-	readonly recommendationReason?: string | undefined;
-	readonly revertActionDuration?: string | undefined;
-	readonly revertActionInitiatedBy?: "System" | undefined;
-	readonly revertActionInitiatedTime?: string | undefined;
-	readonly revertActionStartTime?: string | undefined;
-	readonly score?: number | undefined;
+	readonly details?: RecommendedActionPropertiesDetails;
+	readonly errorDetails?: RecommendedActionErrorInfo;
+	readonly estimatedImpact?: RecommendedActionImpactRecord[];
+	readonly executeActionDuration?: string;
+	readonly executeActionInitiatedBy?: "System";
+	readonly executeActionInitiatedTime?: string;
+	readonly executeActionStartTime?: string;
+	readonly implementationDetails?: RecommendedActionImplementationInfo;
+	readonly isArchivedAction?: boolean;
+	readonly isExecutableAction?: boolean;
+	readonly isRevertableAction?: boolean;
+	readonly lastRefresh?: string;
+	readonly linkedObjects?: string[];
+	readonly observedImpact?: RecommendedActionImpactRecord[];
+	readonly recommendationReason?: string;
+	readonly revertActionDuration?: string;
+	readonly revertActionInitiatedBy?: "System";
+	readonly revertActionInitiatedTime?: string;
+	readonly revertActionStartTime?: string;
+	readonly score?: number;
 	readonly state: RecommendedActionStateInfo;
-	readonly timeSeries?: RecommendedActionMetricInfo[] | undefined;
-	readonly validSince?: string | undefined;
+	readonly timeSeries?: RecommendedActionMetricInfo[];
+	readonly validSince?: string;
 }
 export interface RecommendedActionPropertiesDetails {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface RecommendedActionStateInfo {
-	readonly actionInitiatedBy?: "System" | undefined;
+	readonly actionInitiatedBy?: "System";
 	readonly currentValue:
 		| "Active"
 		| "Error"
@@ -2978,331 +2974,328 @@ export interface RecommendedActionStateInfo {
 		| "Reverting"
 		| "Success"
 		| "Verifying";
-	readonly lastModified?: string | undefined;
+	readonly lastModified?: string;
 }
 export interface RecoverableManagedDatabaseProperties {
-	readonly lastAvailableBackupDate?: string | undefined;
+	readonly lastAvailableBackupDate?: string;
 }
 export interface ReplicationLinkProperties {
-	readonly isTerminationAllowed?: boolean | undefined;
-	readonly linkType?: ("GEO" | "NAMED") | undefined;
-	readonly partnerDatabase?: string | undefined;
-	readonly partnerLocation?: string | undefined;
-	readonly partnerRole?: ("Copy" | "NonReadableSecondary" | "Primary" | "Secondary") | undefined;
-	readonly partnerServer?: string | undefined;
-	readonly percentComplete?: number | undefined;
-	readonly replicationMode?: string | undefined;
-	readonly replicationState?: ("CATCH_UP" | "PENDING" | "SEEDING" | "SUSPENDED") | undefined;
-	readonly role?: ("Copy" | "NonReadableSecondary" | "Primary" | "Secondary") | undefined;
-	readonly startTime?: string | undefined;
+	readonly isTerminationAllowed?: boolean;
+	readonly linkType?: "GEO" | "NAMED";
+	readonly partnerDatabase?: string;
+	readonly partnerLocation?: string;
+	readonly partnerRole?: "Copy" | "NonReadableSecondary" | "Primary" | "Secondary";
+	readonly partnerServer?: string;
+	readonly percentComplete?: number;
+	readonly replicationMode?: string;
+	readonly replicationState?: "CATCH_UP" | "PENDING" | "SEEDING" | "SUSPENDED";
+	readonly role?: "Copy" | "NonReadableSecondary" | "Primary" | "Secondary";
+	readonly startTime?: string;
 }
 export interface ResourceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned") | undefined;
-	readonly userAssignedIdentities?: ResourceIdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned";
+	readonly userAssignedIdentities?: ResourceIdentityUserAssignedIdentities;
 }
 export interface ResourceIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserIdentity | undefined;
+	readonly [key: string]: UserIdentity;
 }
 export interface RestorableDroppedDatabaseProperties {
-	readonly backupStorageRedundancy?: ("Geo" | "GeoZone" | "Local" | "Zone") | undefined;
-	readonly creationDate?: string | undefined;
-	readonly databaseName?: string | undefined;
-	readonly deletionDate?: string | undefined;
-	readonly earliestRestoreDate?: string | undefined;
-	readonly maxSizeBytes?: number | undefined;
+	readonly backupStorageRedundancy?: "Geo" | "GeoZone" | "Local" | "Zone";
+	readonly creationDate?: string;
+	readonly databaseName?: string;
+	readonly deletionDate?: string;
+	readonly earliestRestoreDate?: string;
+	readonly maxSizeBytes?: number;
 }
 export interface RestorableDroppedDatabaseTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RestorableDroppedManagedDatabaseProperties {
-	readonly creationDate?: string | undefined;
-	readonly databaseName?: string | undefined;
-	readonly deletionDate?: string | undefined;
-	readonly earliestRestoreDate?: string | undefined;
+	readonly creationDate?: string;
+	readonly databaseName?: string;
+	readonly deletionDate?: string;
+	readonly earliestRestoreDate?: string;
 }
 export interface RestorePointProperties {
-	readonly earliestRestoreDate?: string | undefined;
-	readonly restorePointCreationDate?: string | undefined;
-	readonly restorePointLabel?: string | undefined;
-	readonly restorePointType?: "CONTINUOUS" | undefined;
+	readonly earliestRestoreDate?: string;
+	readonly restorePointCreationDate?: string;
+	readonly restorePointLabel?: string;
+	readonly restorePointType?: "CONTINUOUS";
 }
 export interface SecurityAlertPolicyProperties {
-	readonly creationTime?: string | undefined;
-	readonly disabledAlerts?: string[] | undefined;
-	readonly emailAccountAdmins?: boolean | undefined;
-	readonly emailAddresses?: string[] | undefined;
-	readonly retentionDays?: number | undefined;
+	readonly creationTime?: string;
+	readonly disabledAlerts?: string[];
+	readonly emailAccountAdmins?: boolean;
+	readonly emailAddresses?: string[];
+	readonly retentionDays?: number;
 	readonly state: "Disabled" | "Enabled";
-	readonly storageAccountAccessKey?: string | undefined;
-	readonly storageEndpoint?: string | undefined;
+	readonly storageAccountAccessKey?: string;
+	readonly storageEndpoint?: string;
 }
 export interface SecurityAlertsPolicyProperties {
-	readonly creationTime?: string | undefined;
-	readonly disabledAlerts?: string[] | undefined;
-	readonly emailAccountAdmins?: boolean | undefined;
-	readonly emailAddresses?: string[] | undefined;
-	readonly retentionDays?: number | undefined;
+	readonly creationTime?: string;
+	readonly disabledAlerts?: string[];
+	readonly emailAccountAdmins?: boolean;
+	readonly emailAddresses?: string[];
+	readonly retentionDays?: number;
 	readonly state: "Disabled";
-	readonly storageAccountAccessKey?: string | undefined;
-	readonly storageEndpoint?: string | undefined;
+	readonly storageAccountAccessKey?: string;
+	readonly storageEndpoint?: string;
 }
 export interface SensitivityLabelProperties {
-	readonly columnName?: string | undefined;
-	readonly informationType?: string | undefined;
-	readonly informationTypeId?: string | undefined;
-	readonly isDisabled?: boolean | undefined;
-	readonly labelId?: string | undefined;
-	readonly labelName?: string | undefined;
-	readonly rank?: ("Critical" | "High" | "Low" | "Medium") | undefined;
-	readonly schemaName?: string | undefined;
-	readonly tableName?: string | undefined;
+	readonly columnName?: string;
+	readonly informationType?: string;
+	readonly informationTypeId?: string;
+	readonly isDisabled?: boolean;
+	readonly labelId?: string;
+	readonly labelName?: string;
+	readonly rank?: "Critical" | "High" | "Low" | "Medium";
+	readonly schemaName?: string;
+	readonly tableName?: string;
 }
 export interface ServerBlobAuditingPolicyProperties {
-	readonly auditActionsAndGroups?: string[] | undefined;
+	readonly auditActionsAndGroups?: string[];
 }
 export interface ServerConnectionPolicyProperties {
 	readonly connectionType: "Default" | "Proxy" | "Redirect";
 }
 export interface ServerDevOpsAuditSettingsProperties {
-	readonly isAzureMonitorTargetEnabled?: boolean | undefined;
+	readonly isAzureMonitorTargetEnabled?: boolean;
 }
 export interface ServerDnsAliasProperties {
-	readonly azureDnsRecord?: string | undefined;
+	readonly azureDnsRecord?: string;
 }
 export interface ServerExternalAdministrator {
-	readonly administratorType?: "ActiveDirectory" | undefined;
-	readonly azureADOnlyAuthentication?: boolean | undefined;
-	readonly login?: string | undefined;
-	readonly principalType?: ("Application" | "Group" | "User") | undefined;
-	readonly sid?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly administratorType?: "ActiveDirectory";
+	readonly azureADOnlyAuthentication?: boolean;
+	readonly login?: string;
+	readonly principalType?: "Application" | "Group" | "User";
+	readonly sid?: string;
+	readonly tenantId?: string;
 }
 export interface ServerFirewallRuleProperties {
-	readonly endIpAddress?: string | undefined;
-	readonly startIpAddress?: string | undefined;
+	readonly endIpAddress?: string;
+	readonly startIpAddress?: string;
 }
 export interface ServerInfo {
 	readonly serverId: string;
 }
 export interface ServerKeyProperties {
-	readonly autoRotationEnabled?: boolean | undefined;
-	readonly creationDate?: string | undefined;
+	readonly autoRotationEnabled?: boolean;
+	readonly creationDate?: string;
 	readonly serverKeyType: "AzureKeyVault" | "ServiceManaged";
-	readonly subregion?: string | undefined;
-	readonly thumbprint?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly subregion?: string;
+	readonly thumbprint?: string;
+	readonly uri?: string;
 }
 export interface ServerPrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly id?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export interface ServerProperties {
-	readonly administratorLogin?: string | undefined;
-	readonly administratorLoginPassword?: string | undefined;
-	readonly administrators?: ServerExternalAdministrator | undefined;
-	readonly federatedClientId?: string | undefined;
-	readonly fullyQualifiedDomainName?: string | undefined;
-	readonly keyId?: string | undefined;
-	readonly minimalTlsVersion?: string | undefined;
-	readonly primaryUserAssignedIdentityId?: string | undefined;
-	readonly privateEndpointConnections?: ServerPrivateEndpointConnection[] | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly restrictOutboundNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly state?: string | undefined;
-	readonly version?: string | undefined;
-	readonly workspaceFeature?: ("Connected" | "Disconnected") | undefined;
+	readonly administratorLogin?: string;
+	readonly administratorLoginPassword?: string;
+	readonly administrators?: ServerExternalAdministrator;
+	readonly federatedClientId?: string;
+	readonly fullyQualifiedDomainName?: string;
+	readonly keyId?: string;
+	readonly minimalTlsVersion?: string;
+	readonly primaryUserAssignedIdentityId?: string;
+	readonly privateEndpointConnections?: ServerPrivateEndpointConnection[];
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly restrictOutboundNetworkAccess?: "Disabled" | "Enabled";
+	readonly state?: string;
+	readonly version?: string;
+	readonly workspaceFeature?: "Connected" | "Disconnected";
 }
 export interface ServerTrustCertificateProperties {
-	readonly certificateName?: string | undefined;
-	readonly publicBlob?: string | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly certificateName?: string;
+	readonly publicBlob?: string;
+	readonly thumbprint?: string;
 }
 export interface ServerTrustGroupProperties {
 	readonly groupMembers: ServerInfo[];
 	readonly trustScopes: "GlobalTransactions" | "ServiceBroker"[];
 }
 export interface ServerVulnerabilityAssessmentProperties {
-	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties | undefined;
-	readonly storageAccountAccessKey?: string | undefined;
+	readonly recurringScans?: VulnerabilityAssessmentRecurringScansProperties;
+	readonly storageAccountAccessKey?: string;
 	readonly storageContainerPath: string;
-	readonly storageContainerSasKey?: string | undefined;
+	readonly storageContainerSasKey?: string;
 }
 export interface ServicePrincipal {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
 	readonly name: string;
-	readonly size?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly size?: string;
+	readonly tier?: string;
 }
 export interface SqlAgentConfigurationProperties {
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface SubscriptionUsageProperties {
-	readonly currentValue?: number | undefined;
-	readonly displayName?: string | undefined;
-	readonly limit?: number | undefined;
-	readonly unit?: string | undefined;
+	readonly currentValue?: number;
+	readonly displayName?: string;
+	readonly limit?: number;
+	readonly unit?: string;
 }
 export interface SyncAgentProperties {
-	readonly expiryTime?: string | undefined;
-	readonly isUpToDate?: boolean | undefined;
-	readonly lastAliveTime?: string | undefined;
-	readonly name?: string | undefined;
-	readonly state?: ("NeverConnected" | "Offline" | "Online") | undefined;
-	readonly syncDatabaseId?: string | undefined;
-	readonly version?: string | undefined;
+	readonly expiryTime?: string;
+	readonly isUpToDate?: boolean;
+	readonly lastAliveTime?: string;
+	readonly name?: string;
+	readonly state?: "NeverConnected" | "Offline" | "Online";
+	readonly syncDatabaseId?: string;
+	readonly version?: string;
 }
 export interface SyncGroupProperties {
-	readonly conflictLoggingRetentionInDays?: number | undefined;
-	readonly conflictResolutionPolicy?: ("HubWin" | "MemberWin") | undefined;
-	readonly enableConflictLogging?: boolean | undefined;
-	readonly hubDatabasePassword?: string | undefined;
-	readonly hubDatabaseUserName?: string | undefined;
-	readonly interval?: number | undefined;
-	readonly lastSyncTime?: string | undefined;
-	readonly privateEndpointName?: string | undefined;
-	readonly schema?: SyncGroupSchema | undefined;
-	readonly syncDatabaseId?: string | undefined;
-	readonly syncState?: ("Error" | "Good" | "NotReady" | "Progressing" | "Warning") | undefined;
-	readonly usePrivateLinkConnection?: boolean | undefined;
+	readonly conflictLoggingRetentionInDays?: number;
+	readonly conflictResolutionPolicy?: "HubWin" | "MemberWin";
+	readonly enableConflictLogging?: boolean;
+	readonly hubDatabasePassword?: string;
+	readonly hubDatabaseUserName?: string;
+	readonly interval?: number;
+	readonly lastSyncTime?: string;
+	readonly privateEndpointName?: string;
+	readonly schema?: SyncGroupSchema;
+	readonly syncDatabaseId?: string;
+	readonly syncState?: "Error" | "Good" | "NotReady" | "Progressing" | "Warning";
+	readonly usePrivateLinkConnection?: boolean;
 }
 export interface SyncGroupSchema {
-	readonly masterSyncMemberName?: string | undefined;
-	readonly tables?: SyncGroupSchemaTable[] | undefined;
+	readonly masterSyncMemberName?: string;
+	readonly tables?: SyncGroupSchemaTable[];
 }
 export interface SyncGroupSchemaTable {
-	readonly columns?: SyncGroupSchemaTableColumn[] | undefined;
-	readonly quotedName?: string | undefined;
+	readonly columns?: SyncGroupSchemaTableColumn[];
+	readonly quotedName?: string;
 }
 export interface SyncGroupSchemaTableColumn {
-	readonly dataSize?: string | undefined;
-	readonly dataType?: string | undefined;
-	readonly quotedName?: string | undefined;
+	readonly dataSize?: string;
+	readonly dataType?: string;
+	readonly quotedName?: string;
 }
 export interface SyncMemberProperties {
-	readonly databaseName?: string | undefined;
-	readonly databaseType?: ("AzureSqlDatabase" | "SqlServerDatabase") | undefined;
-	readonly password?: string | undefined;
-	readonly privateEndpointName?: string | undefined;
-	readonly serverName?: string | undefined;
-	readonly sqlServerDatabaseId?: string | undefined;
-	readonly syncAgentId?: string | undefined;
-	readonly syncDirection?: ("Bidirectional" | "OneWayHubToMember" | "OneWayMemberToHub") | undefined;
-	readonly syncMemberAzureDatabaseResourceId?: string | undefined;
+	readonly databaseName?: string;
+	readonly databaseType?: "AzureSqlDatabase" | "SqlServerDatabase";
+	readonly password?: string;
+	readonly privateEndpointName?: string;
+	readonly serverName?: string;
+	readonly sqlServerDatabaseId?: string;
+	readonly syncAgentId?: string;
+	readonly syncDirection?: "Bidirectional" | "OneWayHubToMember" | "OneWayMemberToHub";
+	readonly syncMemberAzureDatabaseResourceId?: string;
 	readonly syncState?:
-		| (
-				| "DeProvisionFailed"
-				| "DeProvisioned"
-				| "DeProvisioning"
-				| "DisabledBackupRestore"
-				| "DisabledTombstoneCleanup"
-				| "ProvisionFailed"
-				| "Provisioned"
-				| "Provisioning"
-				| "ReprovisionFailed"
-				| "Reprovisioning"
-				| "SyncCancelled"
-				| "SyncCancelling"
-				| "SyncFailed"
-				| "SyncInProgress"
-				| "SyncSucceeded"
-				| "SyncSucceededWithWarnings"
-				| "UnProvisioned"
-				| "UnReprovisioned"
-		  )
-		| undefined;
-	readonly usePrivateLinkConnection?: boolean | undefined;
-	readonly userName?: string | undefined;
+		| "DeProvisionFailed"
+		| "DeProvisioned"
+		| "DeProvisioning"
+		| "DisabledBackupRestore"
+		| "DisabledTombstoneCleanup"
+		| "ProvisionFailed"
+		| "Provisioned"
+		| "Provisioning"
+		| "ReprovisionFailed"
+		| "Reprovisioning"
+		| "SyncCancelled"
+		| "SyncCancelling"
+		| "SyncFailed"
+		| "SyncInProgress"
+		| "SyncSucceeded"
+		| "SyncSucceededWithWarnings"
+		| "UnProvisioned"
+		| "UnReprovisioned";
+	readonly usePrivateLinkConnection?: boolean;
+	readonly userName?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TimeZoneProperties {
-	readonly displayName?: string | undefined;
-	readonly timeZoneId?: string | undefined;
+	readonly displayName?: string;
+	readonly timeZoneId?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TransparentDataEncryptionProperties {
 	readonly state: "Disabled";
 }
 export interface UpsertManagedServerOperationParameters {
-	readonly family?: string | undefined;
-	readonly storageSizeInGB?: number | undefined;
-	readonly tier?: string | undefined;
-	readonly vCores?: number | undefined;
+	readonly family?: string;
+	readonly storageSizeInGB?: number;
+	readonly tier?: string;
+	readonly vCores?: number;
 }
 export interface UpsertManagedServerOperationStepWithEstimatesAndDuration {
-	readonly name?: string | undefined;
-	readonly order?: number | undefined;
-	readonly status?: ("Canceled" | "Completed" | "Failed" | "InProgress" | "NotStarted" | "SlowedDown") | undefined;
-	readonly stepEndTime?: string | undefined;
-	readonly stepStartTime?: string | undefined;
-	readonly timeElapsed?: string | undefined;
+	readonly name?: string;
+	readonly order?: number;
+	readonly status?: "Canceled" | "Completed" | "Failed" | "InProgress" | "NotStarted" | "SlowedDown";
+	readonly stepEndTime?: string;
+	readonly stepStartTime?: string;
+	readonly timeElapsed?: string;
 }
 export interface UserIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface VirtualClusterProperties {
-	readonly childResources?: string[] | undefined;
-	readonly family?: string | undefined;
-	readonly maintenanceConfigurationId?: string | undefined;
-	readonly subnetId?: string | undefined;
+	readonly childResources?: string[];
+	readonly family?: string;
+	readonly maintenanceConfigurationId?: string;
+	readonly subnetId?: string;
 }
 export interface VirtualNetworkRuleProperties {
-	readonly ignoreMissingVnetServiceEndpoint?: boolean | undefined;
-	readonly state?: ("Deleting" | "Failed" | "InProgress" | "Initializing" | "Ready" | "Unknown") | undefined;
+	readonly ignoreMissingVnetServiceEndpoint?: boolean;
+	readonly state?: "Deleting" | "Failed" | "InProgress" | "Initializing" | "Ready" | "Unknown";
 	readonly virtualNetworkSubnetId: string;
 }
 export interface VulnerabilityAssessmentRecurringScansProperties {
-	readonly emails?: string[] | undefined;
-	readonly emailSubscriptionAdmins?: boolean | undefined;
-	readonly isEnabled?: boolean | undefined;
+	readonly emails?: string[];
+	readonly emailSubscriptionAdmins?: boolean;
+	readonly isEnabled?: boolean;
 }
 export interface VulnerabilityAssessmentScanError {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface VulnerabilityAssessmentScanRecordProperties {
-	readonly endTime?: string | undefined;
-	readonly errors?: VulnerabilityAssessmentScanError[] | undefined;
-	readonly numberOfFailedSecurityChecks?: number | undefined;
-	readonly scanId?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly state?: ("Failed" | "FailedToRun" | "InProgress" | "Passed") | undefined;
-	readonly storageContainerPath?: string | undefined;
-	readonly triggerType?: ("OnDemand" | "Recurring") | undefined;
+	readonly endTime?: string;
+	readonly errors?: VulnerabilityAssessmentScanError[];
+	readonly numberOfFailedSecurityChecks?: number;
+	readonly scanId?: string;
+	readonly startTime?: string;
+	readonly state?: "Failed" | "FailedToRun" | "InProgress" | "Passed";
+	readonly storageContainerPath?: string;
+	readonly triggerType?: "OnDemand" | "Recurring";
 }
 export interface WorkloadClassifierProperties {
-	readonly context?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly importance?: string | undefined;
-	readonly label?: string | undefined;
+	readonly context?: string;
+	readonly endTime?: string;
+	readonly importance?: string;
+	readonly label?: string;
 	readonly memberName: string;
-	readonly startTime?: string | undefined;
+	readonly startTime?: string;
 }
 export interface WorkloadGroupProperties {
-	readonly importance?: string | undefined;
+	readonly importance?: string;
 	readonly maxResourcePercent: number;
-	readonly maxResourcePercentPerRequest?: number | undefined;
+	readonly maxResourcePercentPerRequest?: number;
 	readonly minResourcePercent: number;
 	readonly minResourcePercentPerRequest: number;
-	readonly queryExecutionTimeout?: number | undefined;
+	readonly queryExecutionTimeout?: number;
 }
 export default {
 	instancePools: instancePools,

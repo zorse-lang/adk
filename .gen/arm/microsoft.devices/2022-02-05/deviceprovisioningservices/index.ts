@@ -17,13 +17,13 @@ export interface provisioningServicesComponentOutputs {
 	readonly type: "Microsoft.Devices/provisioningServices";
 }
 export interface provisioningServicesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: IotDpsPropertiesDescription;
 	readonly sku: IotDpsSkuInfo;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class provisioningServices_certificates
 	extends ArmResource<provisioningServices_certificatesComponentInputs>
@@ -42,10 +42,10 @@ export interface provisioningServices_certificatesComponentOutputs {
 	readonly type: "Microsoft.Devices/provisioningServices/certificates";
 }
 export interface provisioningServices_certificatesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: CertificateProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CertificateProperties;
+	readonly systemData?: SystemData;
 }
 export class provisioningServices_privateEndpointConnections
 	extends ArmResource<provisioningServices_privateEndpointConnectionsComponentInputs>
@@ -72,7 +72,7 @@ export interface provisioningServices_privateEndpointConnectionsComponentOutputs
 export interface provisioningServices_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
 	readonly properties: PrivateEndpointConnectionProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export function listkeys(resource: provisioningServices): SharedAccessSignatureAuthorizationRuleListResult {
 	if (resource.apiVersion !== "2022-02-05") {
@@ -84,86 +84,83 @@ export function listkeys(resource: provisioningServices): SharedAccessSignatureA
 	throw new Error("not implemented");
 }
 export interface CertificateProperties {
-	readonly certificate?: any | undefined;
-	readonly created?: string | undefined;
-	readonly expiry?: string | undefined;
-	readonly isVerified?: boolean | undefined;
-	readonly subject?: string | undefined;
-	readonly thumbprint?: string | undefined;
-	readonly updated?: string | undefined;
+	readonly certificate?: any;
+	readonly created?: string;
+	readonly expiry?: string;
+	readonly isVerified?: boolean;
+	readonly subject?: string;
+	readonly thumbprint?: string;
+	readonly updated?: string;
 }
 export interface IotDpsPropertiesDescription {
-	readonly allocationPolicy?: ("GeoLatency" | "Hashed" | "Static") | undefined;
-	readonly authorizationPolicies?: SharedAccessSignatureAuthorizationRuleAccessRightsDescription[] | undefined;
-	readonly deviceProvisioningHostName?: string | undefined;
-	readonly enableDataResidency?: boolean | undefined;
-	readonly idScope?: string | undefined;
-	readonly iotHubs?: IotHubDefinitionDescription[] | undefined;
-	readonly ipFilterRules?: IpFilterRule[] | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly serviceOperationsHostName?: string | undefined;
+	readonly allocationPolicy?: "GeoLatency" | "Hashed" | "Static";
+	readonly authorizationPolicies?: SharedAccessSignatureAuthorizationRuleAccessRightsDescription[];
+	readonly deviceProvisioningHostName?: string;
+	readonly enableDataResidency?: boolean;
+	readonly idScope?: string;
+	readonly iotHubs?: IotHubDefinitionDescription[];
+	readonly ipFilterRules?: IpFilterRule[];
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: string;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly serviceOperationsHostName?: string;
 	readonly state?:
-		| (
-				| "Activating"
-				| "ActivationFailed"
-				| "Active"
-				| "Deleted"
-				| "Deleting"
-				| "DeletionFailed"
-				| "FailingOver"
-				| "FailoverFailed"
-				| "Resuming"
-				| "Suspended"
-				| "Suspending"
-				| "Transitioning"
-		  )
-		| undefined;
+		| "Activating"
+		| "ActivationFailed"
+		| "Active"
+		| "Deleted"
+		| "Deleting"
+		| "DeletionFailed"
+		| "FailingOver"
+		| "FailoverFailed"
+		| "Resuming"
+		| "Suspended"
+		| "Suspending"
+		| "Transitioning";
 }
 export interface IotDpsSkuInfo {
-	readonly capacity?: number | undefined;
-	readonly name?: "S1" | undefined;
-	readonly tier?: string | undefined;
+	readonly capacity?: number;
+	readonly name?: "S1";
+	readonly tier?: string;
 }
 export interface IotHubDefinitionDescription {
-	readonly allocationWeight?: number | undefined;
-	readonly applyAllocationPolicy?: boolean | undefined;
+	readonly allocationWeight?: number;
+	readonly applyAllocationPolicy?: boolean;
 	readonly connectionString: string;
 	readonly location: string;
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface IpFilterRule {
 	readonly action: "Accept";
 	readonly filterName: string;
 	readonly ipMask: string;
-	readonly target?: ("all" | "deviceApi") | undefined;
+	readonly target?: "all" | "deviceApi";
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
 	readonly properties: PrivateEndpointConnectionProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
+	readonly actionsRequired?: string;
 	readonly description: string;
 	readonly status: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SharedAccessSignatureAuthorizationRuleAccessRightsDescription {
 	readonly keyName: string;
-	readonly primaryKey?: string | undefined;
+	readonly primaryKey?: string;
 	readonly rights:
 		| "DeviceConnect"
 		| "EnrollmentRead"
@@ -171,19 +168,19 @@ export interface SharedAccessSignatureAuthorizationRuleAccessRightsDescription {
 		| "RegistrationStatusRead"
 		| "RegistrationStatusWrite"
 		| "ServiceConfig";
-	readonly secondaryKey?: string | undefined;
+	readonly secondaryKey?: string;
 }
 export interface SharedAccessSignatureAuthorizationRuleListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: SharedAccessSignatureAuthorizationRuleAccessRightsDescription[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: SharedAccessSignatureAuthorizationRuleAccessRightsDescription[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	provisioningServices: provisioningServices,

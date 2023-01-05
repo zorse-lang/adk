@@ -16,7 +16,7 @@ export interface variablesComponentOutputs {
 export interface variablesComponentInputs {
 	readonly name: string;
 	readonly properties: PolicyVariableProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class variables_values
 	extends ArmResource<variables_valuesComponentInputs>
@@ -37,7 +37,7 @@ export interface variables_valuesComponentOutputs {
 export interface variables_valuesComponentInputs {
 	readonly name: string;
 	readonly properties: PolicyVariableValueProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export interface PolicyVariableColumn {
 	readonly columnName: string;
@@ -53,12 +53,12 @@ export interface PolicyVariableValueProperties {
 	readonly values: PolicyVariableValueColumnValue[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	variables: variables,

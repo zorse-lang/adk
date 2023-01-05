@@ -10,52 +10,51 @@ export class ProjectsRegionsClustersNodeGroups
 }
 export interface ProjectsRegionsClustersNodeGroupsComponentOutputs {}
 export interface ProjectsRegionsClustersNodeGroupsComponentInputs {
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
-	readonly nodeGroupConfig?: InstanceGroupConfig | undefined;
-	readonly nodeGroupId?: string | undefined;
+	readonly nodeGroupConfig?: InstanceGroupConfig;
+	readonly nodeGroupId?: string;
 	readonly parent: string;
-	readonly requestId?: string | undefined;
+	readonly requestId?: string;
 	readonly roles: string[];
-	readonly type: string;
 }
 export interface AcceleratorConfig {
-	readonly acceleratorCount?: number | undefined;
-	readonly acceleratorTypeUri?: string | undefined;
+	readonly acceleratorCount?: number;
+	readonly acceleratorTypeUri?: string;
 }
 export interface DiskConfig {
-	readonly bootDiskSizeGb?: number | undefined;
-	readonly bootDiskType?: string | undefined;
-	readonly localSsdInterface?: string | undefined;
-	readonly numLocalSsds?: number | undefined;
+	readonly bootDiskSizeGb?: number;
+	readonly bootDiskType?: string;
+	readonly localSsdInterface?: string;
+	readonly numLocalSsds?: number;
 }
 export interface InstanceGroupConfig {
-	readonly accelerators?: AcceleratorConfig[] | undefined;
-	readonly diskConfig?: DiskConfig | undefined;
-	readonly imageUri?: string | undefined;
-	readonly instanceNames?: string[] | undefined;
-	readonly instanceReferences?: InstanceReference[] | undefined;
-	readonly isPreemptible?: boolean | undefined;
-	readonly machineTypeUri?: string | undefined;
-	readonly managedGroupConfig?: ManagedGroupConfig | undefined;
-	readonly minCpuPlatform?: string | undefined;
-	readonly numInstances?: number | undefined;
-	readonly preemptibility?: string | undefined;
+	readonly accelerators?: AcceleratorConfig[];
+	readonly diskConfig?: DiskConfig;
+	readonly imageUri?: string;
+	readonly instanceNames?: string[];
+	readonly instanceReferences?: InstanceReference[];
+	readonly isPreemptible?: boolean;
+	readonly machineTypeUri?: string;
+	readonly managedGroupConfig?: ManagedGroupConfig;
+	readonly minCpuPlatform?: string;
+	readonly numInstances?: number;
+	readonly preemptibility?: string;
 }
 export interface InstanceReference {
-	readonly instanceId?: string | undefined;
-	readonly instanceName?: string | undefined;
-	readonly publicEciesKey?: string | undefined;
-	readonly publicKey?: string | undefined;
+	readonly instanceId?: string;
+	readonly instanceName?: string;
+	readonly publicEciesKey?: string;
+	readonly publicKey?: string;
 }
 export interface ManagedGroupConfig {
-	readonly instanceGroupManagerName?: string | undefined;
-	readonly instanceTemplateName?: string | undefined;
+	readonly instanceGroupManagerName?: string;
+	readonly instanceTemplateName?: string;
 }
 export interface NodeGroup {
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly nodeGroupConfig?: InstanceGroupConfig | undefined;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly nodeGroupConfig?: InstanceGroupConfig;
 	readonly roles: string[];
 }
 export default {

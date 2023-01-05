@@ -7,54 +7,53 @@ export class Object extends GdmResource<ObjectComponentInputs> implements Object
 }
 export interface ObjectComponentOutputs {}
 export interface ObjectComponentInputs {
-	readonly acl?: ObjectAccessControl[] | undefined;
-	readonly bucket?: string | undefined;
-	readonly cacheControl?: string | undefined;
-	readonly componentCount?: number | undefined;
-	readonly contentDisposition?: string | undefined;
-	readonly contentEncoding?: string | undefined;
-	readonly contentLanguage?: string | undefined;
-	readonly contentType?: string | undefined;
-	readonly crc32c?: string | undefined;
-	readonly customerEncryption?: { encryptionAlgorithm?: string; keySha256?: string } | undefined;
-	readonly customTime?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly eventBasedHold?: boolean | undefined;
-	readonly generation?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly kmsKeyName?: string | undefined;
-	readonly md5Hash?: string | undefined;
-	readonly mediaLink?: string | undefined;
-	readonly metadata?: { [P in string]: string } | undefined;
-	readonly metageneration?: string | undefined;
+	readonly acl?: ObjectAccessControl[];
+	readonly bucket?: string;
+	readonly cacheControl?: string;
+	readonly componentCount?: number;
+	readonly contentDisposition?: string;
+	readonly contentEncoding?: string;
+	readonly contentLanguage?: string;
+	readonly contentType?: string;
+	readonly crc32c?: string;
+	readonly customerEncryption?: { encryptionAlgorithm?: string; keySha256?: string };
+	readonly customTime?: string;
+	readonly etag?: string;
+	readonly eventBasedHold?: boolean;
+	readonly generation?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly kmsKeyName?: string;
+	readonly md5Hash?: string;
+	readonly mediaLink?: string;
+	readonly metadata?: { [P in string]: string };
+	readonly metageneration?: string;
 	readonly name: string;
-	readonly owner?: { entity?: string; entityId?: string } | undefined;
-	readonly retentionExpirationTime?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly size?: string | undefined;
-	readonly storageClass?: string | undefined;
-	readonly temporaryHold?: boolean | undefined;
-	readonly timeCreated?: string | undefined;
-	readonly timeDeleted?: string | undefined;
-	readonly timeStorageClassUpdated?: string | undefined;
-	readonly updated?: string | undefined;
-	readonly type: string;
+	readonly owner?: { entity?: string; entityId?: string };
+	readonly retentionExpirationTime?: string;
+	readonly selfLink?: string;
+	readonly size?: string;
+	readonly storageClass?: string;
+	readonly temporaryHold?: boolean;
+	readonly timeCreated?: string;
+	readonly timeDeleted?: string;
+	readonly timeStorageClassUpdated?: string;
+	readonly updated?: string;
 }
 export interface ObjectAccessControl {
-	readonly bucket?: string | undefined;
-	readonly domain?: string | undefined;
-	readonly email?: string | undefined;
-	readonly entity?: string | undefined;
-	readonly entityId?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly generation?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly object?: string | undefined;
-	readonly projectTeam?: { projectNumber?: string; team?: string } | undefined;
-	readonly role?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly bucket?: string;
+	readonly domain?: string;
+	readonly email?: string;
+	readonly entity?: string;
+	readonly entityId?: string;
+	readonly etag?: string;
+	readonly generation?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly object?: string;
+	readonly projectTeam?: { projectNumber?: string; team?: string };
+	readonly role?: string;
+	readonly selfLink?: string;
 }
 export default {
 	Object: Object,

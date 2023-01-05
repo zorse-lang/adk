@@ -15,13 +15,13 @@ export interface diskPoolsComponentOutputs {
 }
 export interface diskPoolsComponentInputs {
 	readonly location: string;
-	readonly managedBy?: string | undefined;
-	readonly managedByExtended?: string[] | undefined;
+	readonly managedBy?: string;
+	readonly managedByExtended?: string[];
 	readonly name: string;
 	readonly properties: DiskPoolCreatePropertiesOrDiskPoolProperties;
 	readonly sku: Sku;
-	readonly systemData?: SystemMetadata | undefined;
-	readonly tags?: DiskPoolCreateTags | undefined;
+	readonly systemData?: SystemMetadata;
+	readonly tags?: DiskPoolCreateTags;
 }
 export class diskPools_iscsiTargets
 	extends ArmResource<diskPools_iscsiTargetsComponentInputs>
@@ -40,11 +40,11 @@ export interface diskPools_iscsiTargetsComponentOutputs {
 	readonly type: "Microsoft.StoragePool/diskPools/iscsiTargets";
 }
 export interface diskPools_iscsiTargetsComponentInputs {
-	readonly managedBy?: string | undefined;
-	readonly managedByExtended?: string[] | undefined;
+	readonly managedBy?: string;
+	readonly managedByExtended?: string[];
 	readonly name: string;
 	readonly properties: IscsiTargetCreatePropertiesOrIscsiTargetProperties;
-	readonly systemData?: SystemMetadata | undefined;
+	readonly systemData?: SystemMetadata;
 }
 export interface Acl {
 	readonly initiatorIqn: string;
@@ -54,47 +54,59 @@ export interface Disk {
 	readonly id: string;
 }
 export interface DiskPoolCreatePropertiesOrDiskPoolProperties {
-	readonly additionalCapabilities?: string[] | undefined;
-	readonly availabilityZones?: string[] | undefined;
-	readonly disks?: Disk[] | undefined;
+	readonly additionalCapabilities?: string[];
+	readonly availabilityZones?: string[];
+	readonly disks?: Disk[];
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Invalid" | "Pending" | "Succeeded" | "Updating")
-		| undefined;
-	readonly status?: ("Healthy" | "Invalid" | "Running") | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Invalid"
+		| "Pending"
+		| "Succeeded"
+		| "Updating";
+	readonly status?: "Healthy" | "Invalid" | "Running";
 	readonly subnetId: string;
 }
 export interface DiskPoolCreateTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface IscsiLun {
-	readonly lun?: number | undefined;
+	readonly lun?: number;
 	readonly managedDiskAzureResourceId: string;
 	readonly name: string;
 }
 export interface IscsiTargetCreatePropertiesOrIscsiTargetProperties {
 	readonly aclMode: "Dynamic" | "Static";
-	readonly endpoints?: string[] | undefined;
-	readonly luns?: IscsiLun[] | undefined;
-	readonly port?: number | undefined;
+	readonly endpoints?: string[];
+	readonly luns?: IscsiLun[];
+	readonly port?: number;
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Invalid" | "Pending" | "Succeeded" | "Updating")
-		| undefined;
-	readonly sessions?: string[] | undefined;
-	readonly staticAcls?: Acl[] | undefined;
-	readonly status?: ("Healthy" | "Invalid" | "Running") | undefined;
-	readonly targetIqn?: string | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "Invalid"
+		| "Pending"
+		| "Succeeded"
+		| "Updating";
+	readonly sessions?: string[];
+	readonly staticAcls?: Acl[];
+	readonly status?: "Healthy" | "Invalid" | "Running";
+	readonly targetIqn?: string;
 }
 export interface Sku {
 	readonly name: string;
-	readonly tier?: string | undefined;
+	readonly tier?: string;
 }
 export interface SystemMetadata {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	diskPools: diskPools,

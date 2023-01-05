@@ -14,12 +14,12 @@ export interface anycastEIPComponentOutputs {
 	readonly OrderId: any;
 }
 export interface anycastEIPComponentInputs {
-	readonly Bandwidth?: (number | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly Name?: (any | string) | undefined;
-	readonly ServiceLocation?: (string | undefined) | undefined;
+	readonly Bandwidth?: number | undefined;
+	readonly Description?: string | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly Name?: any | string;
+	readonly ServiceLocation?: string | undefined;
 	readonly LogicalId: string;
 }
 export class anycastEIPAssociation
@@ -50,11 +50,11 @@ export interface BgpGroupComponentOutputs {
 export interface BgpGroupComponentInputs {
 	readonly PeerAsn: number;
 	readonly RouterId: string;
-	readonly AuthKey?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly IsFakeAsn?: (boolean | undefined) | undefined;
-	readonly LocalAsn?: (number | undefined) | undefined;
-	readonly Name?: (any | string) | undefined;
+	readonly AuthKey?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly IsFakeAsn?: boolean | undefined;
+	readonly LocalAsn?: number | undefined;
+	readonly Name?: any | string;
 	readonly LogicalId: string;
 }
 export class BgpNetwork extends RosResource<BgpNetworkComponentInputs> implements BgpNetworkComponentOutputs {
@@ -79,8 +79,8 @@ export interface BgpPeerComponentOutputs {
 }
 export interface BgpPeerComponentInputs {
 	readonly BgpGroupId: string;
-	readonly EnableBfd?: (boolean | undefined) | undefined;
-	readonly PeerIpAddress?: (string | undefined) | undefined;
+	readonly EnableBfd?: boolean | undefined;
+	readonly PeerIpAddress?: string | undefined;
 	readonly LogicalId: string;
 }
 export class CommonBandwidthPackage
@@ -97,14 +97,14 @@ export interface CommonBandwidthPackageComponentOutputs {
 }
 export interface CommonBandwidthPackageComponentInputs {
 	readonly Bandwidth: number;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly ISP?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Ratio?: (number | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly Zone?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly ISP?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Ratio?: number | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly Zone?: string | undefined;
 	readonly LogicalId: string;
 }
 export class CommonBandwidthPackageIp
@@ -140,8 +140,8 @@ export interface CustomerGatewayComponentOutputs {
 }
 export interface CustomerGatewayComponentInputs {
 	readonly IpAddress: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DhcpOptionsSet extends RosResource<DhcpOptionsSetComponentInputs> implements DhcpOptionsSetComponentOutputs {
@@ -154,10 +154,10 @@ export interface DhcpOptionsSetComponentOutputs {
 	readonly DhcpOptionsSetId: any;
 }
 export interface DhcpOptionsSetComponentInputs {
-	readonly DhcpOptionsSetDescription?: (string | undefined) | undefined;
-	readonly DhcpOptionsSetName?: (string | undefined) | undefined;
-	readonly DomainName?: (string | undefined) | undefined;
-	readonly DomainNameServers?: (string[] | undefined) | undefined;
+	readonly DhcpOptionsSetDescription?: string | undefined;
+	readonly DhcpOptionsSetName?: string | undefined;
+	readonly DomainName?: string | undefined;
+	readonly DomainNameServers?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class DhcpOptionsSetAttachment
@@ -188,21 +188,21 @@ export interface EIPComponentOutputs {
 	readonly OrderId: any;
 }
 export interface EIPComponentInputs {
-	readonly AutoPay?: (boolean | undefined) | undefined;
-	readonly Bandwidth?: (number | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly Isp?: (any | string) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Netmode?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
-	readonly PublicIpAddressPoolId?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecurityProtectionTypes?: (string[] | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly AutoPay?: boolean | undefined;
+	readonly Bandwidth?: number | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly Isp?: any | string;
+	readonly Name?: string | undefined;
+	readonly Netmode?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PricingCycle?: string | undefined;
+	readonly PublicIpAddressPoolId?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecurityProtectionTypes?: string[] | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class EIPAssociation extends RosResource<EIPAssociationComponentInputs> implements EIPAssociationComponentOutputs {
@@ -217,8 +217,8 @@ export interface EIPAssociationComponentOutputs {
 export interface EIPAssociationComponentInputs {
 	readonly AllocationId: any | string;
 	readonly InstanceId: string;
-	readonly Mode?: (string | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
+	readonly Mode?: string | undefined;
+	readonly PrivateIpAddress?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EIPPro extends RosResource<EIPProComponentInputs> implements EIPProComponentOutputs {
@@ -237,23 +237,23 @@ export interface EIPProComponentOutputs {
 	readonly OrderId: any;
 }
 export interface EIPProComponentInputs {
-	readonly AutoPay?: (boolean | undefined) | undefined;
-	readonly Bandwidth?: (number | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly InstanceId?: (string | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly IpAddress?: (string | undefined) | undefined;
-	readonly ISP?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Netmode?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
-	readonly PublicIpAddressPoolId?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecurityProtectionTypes?: (string[] | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly AutoPay?: boolean | undefined;
+	readonly Bandwidth?: number | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly InstanceId?: string | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly IpAddress?: string | undefined;
+	readonly ISP?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Netmode?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PricingCycle?: string | undefined;
+	readonly PublicIpAddressPoolId?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecurityProtectionTypes?: string[] | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class EIPSegment extends RosResource<EIPSegmentComponentInputs> implements EIPSegmentComponentOutputs {
@@ -269,10 +269,10 @@ export interface EIPSegmentComponentOutputs {
 }
 export interface EIPSegmentComponentInputs {
 	readonly EipMask: number;
-	readonly Bandwidth?: (number | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly Netmode?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
+	readonly Bandwidth?: number | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly Netmode?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class FlowLog extends RosResource<FlowLogComponentInputs> implements FlowLogComponentOutputs {
@@ -290,8 +290,8 @@ export interface FlowLogComponentInputs {
 	readonly ResourceId: any | string;
 	readonly ResourceType: any | string;
 	readonly TrafficType: any | string;
-	readonly Description?: (any | string) | undefined;
-	readonly FlowLogName?: (any | string) | undefined;
+	readonly Description?: any | string;
+	readonly FlowLogName?: any | string;
 	readonly LogicalId: string;
 }
 export class GrantInstanceToCen
@@ -323,12 +323,12 @@ export interface IpsecServerComponentInputs {
 	readonly ClientIpPool: string;
 	readonly LocalSubnet: string;
 	readonly VpnGatewayId: string;
-	readonly EffectImmediately?: (boolean | undefined) | undefined;
-	readonly IkeConfig?: (IkeConfig | undefined) | undefined;
-	readonly IpsecConfig?: (IpsecConfig | undefined) | undefined;
-	readonly IpsecServerName?: (any | string) | undefined;
-	readonly Psk?: (string | undefined) | undefined;
-	readonly PskEnabled?: (boolean | undefined) | undefined;
+	readonly EffectImmediately?: boolean | undefined;
+	readonly IkeConfig?: IkeConfig | undefined;
+	readonly IpsecConfig?: IpsecConfig | undefined;
+	readonly IpsecServerName?: any | string;
+	readonly Psk?: string | undefined;
+	readonly PskEnabled?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class Ipv6Gateway extends RosResource<Ipv6GatewayComponentInputs> implements Ipv6GatewayComponentOutputs {
@@ -342,10 +342,10 @@ export interface Ipv6GatewayComponentOutputs {
 }
 export interface Ipv6GatewayComponentInputs {
 	readonly VpcId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Spec?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Spec?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class Ipv6InternetBandwidth
@@ -364,8 +364,8 @@ export interface Ipv6InternetBandwidthComponentInputs {
 	readonly Bandwidth: number;
 	readonly Ipv6AddressId: string;
 	readonly Ipv6GatewayId: string;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class NatGateway extends RosResource<NatGatewayComponentInputs> implements NatGatewayComponentOutputs {
@@ -384,19 +384,19 @@ export interface NatGatewayComponentOutputs {
 export interface NatGatewayComponentInputs {
 	readonly VpcId: string;
 	readonly VSwitchId: string;
-	readonly AutoPay?: (boolean | undefined) | undefined;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Duration?: (number | undefined) | undefined;
-	readonly EipBindMode?: (string | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly NatGatewayName?: (string | undefined) | undefined;
-	readonly NatType?: (string | undefined) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly AutoPay?: boolean | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly Duration?: number | undefined;
+	readonly EipBindMode?: string | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly NatGatewayName?: string | undefined;
+	readonly NatType?: string | undefined;
+	readonly NetworkType?: string | undefined;
+	readonly PricingCycle?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class NatIp extends RosResource<NatIpComponentInputs> implements NatIpComponentOutputs {
@@ -413,8 +413,8 @@ export interface NatIpComponentInputs {
 	readonly NatIpCidr: string;
 	readonly NatIpDescription: string;
 	readonly NatIpName: string;
-	readonly NatIp?: (any | string) | undefined;
-	readonly NatIpCidrId?: (string | undefined) | undefined;
+	readonly NatIp?: any | string;
+	readonly NatIpCidrId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkAcl extends RosResource<NetworkAclComponentInputs> implements NetworkAclComponentOutputs {
@@ -430,10 +430,10 @@ export interface NetworkAclComponentOutputs {
 }
 export interface NetworkAclComponentInputs {
 	readonly VpcId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EgressAclEntries?: (EgressAclEntries[] | undefined) | undefined;
-	readonly IngressAclEntries?: (IngressAclEntries[] | undefined) | undefined;
-	readonly NetworkAclName?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly EgressAclEntries?: EgressAclEntries[] | undefined;
+	readonly IngressAclEntries?: IngressAclEntries[] | undefined;
+	readonly NetworkAclName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class NetworkAclAssociation
@@ -462,8 +462,8 @@ export interface PeeringRouterInterfaceBindingComponentOutputs {}
 export interface PeeringRouterInterfaceBindingComponentInputs {
 	readonly OppositeInterfaceId: string;
 	readonly RouterInterfaceId: any | string;
-	readonly OppositeInterfaceOwnerId?: (string | undefined) | undefined;
-	readonly OppositeRouterId?: (string | undefined) | undefined;
+	readonly OppositeInterfaceOwnerId?: string | undefined;
+	readonly OppositeRouterId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class PeeringRouterInterfaceConnection
@@ -495,9 +495,9 @@ export interface RouteTableComponentOutputs {
 }
 export interface RouteTableComponentInputs {
 	readonly VpcId: any | string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly RouteTableName?: (any | string) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly RouteTableName?: any | string;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class RouteTableAssociation
@@ -529,23 +529,23 @@ export interface RouterInterfaceComponentOutputs {
 export interface RouterInterfaceComponentInputs {
 	readonly Role: string;
 	readonly RouterId: string;
-	readonly AccessPointId?: (string | undefined) | undefined;
-	readonly AutoPay?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly HealthCheckSourceIp?: (string | undefined) | undefined;
-	readonly HealthCheckTargetIp?: (string | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly OppositeAccessPointId?: (string | undefined) | undefined;
-	readonly OppositeInterfaceId?: (string | undefined) | undefined;
-	readonly OppositeInterfaceOwnerId?: (string | undefined) | undefined;
-	readonly OppositeRegionId?: (string | undefined) | undefined;
-	readonly OppositeRouterId?: (string | undefined) | undefined;
-	readonly OppositeRouterType?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
-	readonly RouterType?: (string | undefined) | undefined;
-	readonly Spec?: (string | undefined) | undefined;
+	readonly AccessPointId?: string | undefined;
+	readonly AutoPay?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly HealthCheckSourceIp?: string | undefined;
+	readonly HealthCheckTargetIp?: string | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly OppositeAccessPointId?: string | undefined;
+	readonly OppositeInterfaceId?: string | undefined;
+	readonly OppositeInterfaceOwnerId?: string | undefined;
+	readonly OppositeRegionId?: string | undefined;
+	readonly OppositeRouterId?: string | undefined;
+	readonly OppositeRouterType?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PricingCycle?: string | undefined;
+	readonly RouterType?: string | undefined;
+	readonly Spec?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SnatEntry extends RosResource<SnatEntryComponentInputs> implements SnatEntryComponentOutputs {
@@ -560,9 +560,9 @@ export interface SnatEntryComponentOutputs {
 export interface SnatEntryComponentInputs {
 	readonly SnatIp: string;
 	readonly SnatTableId: string;
-	readonly SnatEntryName?: (string | undefined) | undefined;
-	readonly SourceCIDR?: (string | undefined) | undefined;
-	readonly SourceVSwitchIds?: (any[] | undefined) | undefined;
+	readonly SnatEntryName?: string | undefined;
+	readonly SourceCIDR?: string | undefined;
+	readonly SourceVSwitchIds?: any[] | undefined;
 	readonly LogicalId: string;
 }
 export class SslVpnClientCert
@@ -579,7 +579,7 @@ export interface SslVpnClientCertComponentOutputs {
 }
 export interface SslVpnClientCertComponentInputs {
 	readonly SslVpnServerId: string;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SslVpnServer extends RosResource<SslVpnServerComponentInputs> implements SslVpnServerComponentOutputs {
@@ -595,11 +595,11 @@ export interface SslVpnServerComponentInputs {
 	readonly ClientIpPool: string;
 	readonly LocalSubnet: string;
 	readonly VpnGatewayId: string;
-	readonly Cipher?: (string | undefined) | undefined;
-	readonly Compress?: (boolean | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly Proto?: (string | undefined) | undefined;
+	readonly Cipher?: string | undefined;
+	readonly Compress?: boolean | undefined;
+	readonly Name?: string | undefined;
+	readonly Port?: number | undefined;
+	readonly Proto?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VirtualBorderRouter
@@ -624,9 +624,9 @@ export interface VirtualBorderRouterComponentInputs {
 	readonly PeeringSubnetMask: string;
 	readonly PhysicalConnectionId: string;
 	readonly VlanId: number;
-	readonly CircuitCode?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (any | string) | undefined;
+	readonly CircuitCode?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: any | string;
 	readonly LogicalId: string;
 }
 export class VpcPeerConnection
@@ -644,11 +644,11 @@ export interface VpcPeerConnectionComponentOutputs {
 export interface VpcPeerConnectionComponentInputs {
 	readonly AcceptingVpcId: string;
 	readonly VpcId: string;
-	readonly AcceptingAliUid?: (number | undefined) | undefined;
-	readonly AcceptingRegionId?: (string | undefined) | undefined;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly AcceptingAliUid?: number | undefined;
+	readonly AcceptingRegionId?: string | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VpnConnection extends RosResource<VpnConnectionComponentInputs> implements VpnConnectionComponentOutputs {
@@ -669,11 +669,11 @@ export interface VpnConnectionComponentInputs {
 	readonly LocalSubnet: string;
 	readonly RemoteSubnet: string;
 	readonly VpnGatewayId: string;
-	readonly EffectImmediately?: (boolean | undefined) | undefined;
-	readonly HealthCheckConfig?: (HealthCheckConfig | undefined) | undefined;
-	readonly IkeConfig?: (IkeConfig | undefined) | undefined;
-	readonly IpsecConfig?: (IpsecConfig | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly EffectImmediately?: boolean | undefined;
+	readonly HealthCheckConfig?: HealthCheckConfig | undefined;
+	readonly IkeConfig?: IkeConfig | undefined;
+	readonly IpsecConfig?: IpsecConfig | undefined;
+	readonly Name?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VpnGateway extends RosResource<VpnGatewayComponentInputs> implements VpnGatewayComponentOutputs {
@@ -696,16 +696,16 @@ export interface VpnGatewayComponentOutputs {
 export interface VpnGatewayComponentInputs {
 	readonly Bandwidth: number;
 	readonly VpcId: string;
-	readonly AutoPay?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnableIpsec?: (boolean | undefined) | undefined;
-	readonly EnableSsl?: (boolean | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly SslConnections?: (number | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
+	readonly AutoPay?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly EnableIpsec?: boolean | undefined;
+	readonly EnableSsl?: boolean | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly SslConnections?: number | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly VSwitchId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VpnPbrRouteEntry
@@ -724,8 +724,8 @@ export interface VpnPbrRouteEntryComponentInputs {
 	readonly RouteSource: any | string;
 	readonly VpnGatewayId: any | string;
 	readonly Weight: number;
-	readonly Description?: (string | undefined) | undefined;
-	readonly OverlayMode?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly OverlayMode?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VpnRouteEntry extends RosResource<VpnRouteEntryComponentInputs> implements VpnRouteEntryComponentOutputs {
@@ -740,62 +740,62 @@ export interface VpnRouteEntryComponentInputs {
 	readonly RouteDest: any | string;
 	readonly VpnGatewayId: any | string;
 	readonly Weight: number;
-	readonly Description?: (string | undefined) | undefined;
-	readonly OverlayMode?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly OverlayMode?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface Eips {
-	readonly Bandwidth?: (number | undefined) | undefined;
+	readonly Bandwidth?: number | undefined;
 	readonly AllocationId: string;
 }
 export interface IkeConfig {
-	readonly IkeAuthAlg?: (string | undefined) | undefined;
-	readonly LocalId?: (string | undefined) | undefined;
-	readonly IkeEncAlg?: (string | undefined) | undefined;
-	readonly IkeVersion?: (string | undefined) | undefined;
-	readonly IkeMode?: (string | undefined) | undefined;
-	readonly IkeLifetime?: (number | undefined) | undefined;
-	readonly RemoteId?: (string | undefined) | undefined;
-	readonly IkePfs?: (string | undefined) | undefined;
+	readonly IkeAuthAlg?: string | undefined;
+	readonly LocalId?: string | undefined;
+	readonly IkeEncAlg?: string | undefined;
+	readonly IkeVersion?: string | undefined;
+	readonly IkeMode?: string | undefined;
+	readonly IkeLifetime?: number | undefined;
+	readonly RemoteId?: string | undefined;
+	readonly IkePfs?: string | undefined;
 }
 export interface IpsecConfig {
-	readonly IpsecPfs?: (string | undefined) | undefined;
-	readonly IpsecEncAlg?: (string | undefined) | undefined;
-	readonly IpsecAuthAlg?: (string | undefined) | undefined;
-	readonly IpsecLifetime?: (number | undefined) | undefined;
+	readonly IpsecPfs?: string | undefined;
+	readonly IpsecEncAlg?: string | undefined;
+	readonly IpsecAuthAlg?: string | undefined;
+	readonly IpsecLifetime?: number | undefined;
 }
 export interface EgressAclEntries {
 	readonly Policy: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DestinationCidrIp?: (string | undefined) | undefined;
-	readonly EntryType?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly DestinationCidrIp?: string | undefined;
+	readonly EntryType?: string | undefined;
 	readonly Port: string;
 	readonly Protocol: string;
-	readonly NetworkAclEntryName?: (string | undefined) | undefined;
+	readonly NetworkAclEntryName?: string | undefined;
 }
 export interface IngressAclEntries {
 	readonly Policy: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EntryType?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly EntryType?: string | undefined;
 	readonly Port: string;
-	readonly SourceCidrIp?: (string | undefined) | undefined;
+	readonly SourceCidrIp?: string | undefined;
 	readonly Protocol: string;
-	readonly NetworkAclEntryName?: (string | undefined) | undefined;
+	readonly NetworkAclEntryName?: string | undefined;
 }
 export interface Resources {
 	readonly ResourceId: string;
-	readonly ResourceType?: (string | undefined) | undefined;
+	readonly ResourceType?: string | undefined;
 }
 export interface HealthCheckConfig {
-	readonly Enable?: (boolean | undefined) | undefined;
-	readonly Dip?: (boolean | undefined) | undefined;
-	readonly Retry?: (number | undefined) | undefined;
-	readonly Sip?: (string | undefined) | undefined;
-	readonly Interval?: (number | undefined) | undefined;
+	readonly Enable?: boolean | undefined;
+	readonly Dip?: boolean | undefined;
+	readonly Retry?: number | undefined;
+	readonly Sip?: string | undefined;
+	readonly Interval?: number | undefined;
 }
 export default {
 	AnycastEIP: anycastEIP,

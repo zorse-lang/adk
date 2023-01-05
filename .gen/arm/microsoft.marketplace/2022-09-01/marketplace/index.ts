@@ -15,8 +15,8 @@ export interface privateStoresComponentOutputs {
 }
 export interface privateStoresComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateStoreProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateStoreProperties;
+	readonly systemData?: SystemData;
 }
 export class privateStores_adminRequestApprovals
 	extends ArmResource<privateStores_adminRequestApprovalsComponentInputs>
@@ -36,8 +36,8 @@ export interface privateStores_adminRequestApprovalsComponentOutputs {
 }
 export interface privateStores_adminRequestApprovalsComponentInputs {
 	readonly name: string;
-	readonly properties?: AdminRequestApprovalProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AdminRequestApprovalProperties;
+	readonly systemData?: SystemData;
 }
 export class privateStores_collections
 	extends ArmResource<privateStores_collectionsComponentInputs>
@@ -57,8 +57,8 @@ export interface privateStores_collectionsComponentOutputs {
 }
 export interface privateStores_collectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: CollectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CollectionProperties;
+	readonly systemData?: SystemData;
 }
 export class privateStores_collections_offers
 	extends ArmResource<privateStores_collections_offersComponentInputs>
@@ -78,8 +78,8 @@ export interface privateStores_collections_offersComponentOutputs {
 }
 export interface privateStores_collections_offersComponentInputs {
 	readonly name: string;
-	readonly properties?: OfferProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: OfferProperties;
+	readonly systemData?: SystemData;
 }
 export class privateStores_requestApprovals
 	extends ArmResource<privateStores_requestApprovalsComponentInputs>
@@ -99,8 +99,8 @@ export interface privateStores_requestApprovalsComponentOutputs {
 }
 export interface privateStores_requestApprovalsComponentInputs {
 	readonly name: string;
-	readonly properties?: RequestApprovalProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: RequestApprovalProperties;
+	readonly systemData?: SystemData;
 }
 export function listNewPlansNotifications(resource: privateStores): NewPlansNotificationsList {
 	if (resource.apiVersion !== "2022-09-01") {
@@ -133,149 +133,149 @@ export function listSubscriptionsContext(resource: privateStores): Subscriptions
 	throw new Error("not implemented");
 }
 export interface AdminRequestApprovalProperties {
-	readonly adminAction?: ("Approved" | "Rejected") | undefined;
-	readonly administrator?: string | undefined;
-	readonly approvedPlans?: string[] | undefined;
-	readonly collectionIds?: string[] | undefined;
-	readonly comment?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly icon?: string | undefined;
-	readonly offerId?: string | undefined;
-	readonly plans?: PlanRequesterDetails[] | undefined;
-	readonly publisherId?: string | undefined;
+	readonly adminAction?: "Approved" | "Rejected";
+	readonly administrator?: string;
+	readonly approvedPlans?: string[];
+	readonly collectionIds?: string[];
+	readonly comment?: string;
+	readonly displayName?: string;
+	readonly icon?: string;
+	readonly offerId?: string;
+	readonly plans?: PlanRequesterDetails[];
+	readonly publisherId?: string;
 }
 export interface CollectionProperties {
-	readonly allSubscriptions?: boolean | undefined;
-	readonly appliedRules?: Rule[] | undefined;
-	readonly approveAllItems?: boolean | undefined;
-	readonly approveAllItemsModifiedAt?: string | undefined;
-	readonly claim?: string | undefined;
-	readonly collectionId?: string | undefined;
-	readonly collectionName?: string | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly numberOfOffers?: number | undefined;
-	readonly subscriptionsList?: string[] | undefined;
+	readonly allSubscriptions?: boolean;
+	readonly appliedRules?: Rule[];
+	readonly approveAllItems?: boolean;
+	readonly approveAllItemsModifiedAt?: string;
+	readonly claim?: string;
+	readonly collectionId?: string;
+	readonly collectionName?: string;
+	readonly enabled?: boolean;
+	readonly numberOfOffers?: number;
+	readonly subscriptionsList?: string[];
 }
 export interface NewNotifications {
-	readonly displayName?: string | undefined;
-	readonly icon?: string | undefined;
-	readonly isFuturePlansEnabled?: boolean | undefined;
-	readonly messageCode?: number | undefined;
-	readonly offerId?: string | undefined;
-	readonly plans?: PlanNotificationDetails[] | undefined;
+	readonly displayName?: string;
+	readonly icon?: string;
+	readonly isFuturePlansEnabled?: boolean;
+	readonly messageCode?: number;
+	readonly offerId?: string;
+	readonly plans?: PlanNotificationDetails[];
 }
 export interface NewPlansNotificationsList {
-	readonly newPlansNotifications?: NewNotifications[] | undefined;
+	readonly newPlansNotifications?: NewNotifications[];
 }
 export interface NotificationsSettingsProperties {
-	readonly recipients?: Recipient[] | undefined;
-	readonly sendToAllMarketplaceAdmins?: boolean | undefined;
+	readonly recipients?: Recipient[];
+	readonly sendToAllMarketplaceAdmins?: boolean;
 }
 export interface OfferProperties {
-	readonly createdAt?: string | undefined;
-	readonly eTag?: string | undefined;
-	readonly iconFileUris?: OfferPropertiesIconFileUris | undefined;
-	readonly modifiedAt?: string | undefined;
-	readonly offerDisplayName?: string | undefined;
-	readonly plans?: Plan[] | undefined;
-	readonly privateStoreId?: string | undefined;
-	readonly publisherDisplayName?: string | undefined;
-	readonly specificPlanIdsLimitation?: string[] | undefined;
-	readonly uniqueOfferId?: string | undefined;
-	readonly updateSuppressedDueIdempotence?: boolean | undefined;
+	readonly createdAt?: string;
+	readonly eTag?: string;
+	readonly iconFileUris?: OfferPropertiesIconFileUris;
+	readonly modifiedAt?: string;
+	readonly offerDisplayName?: string;
+	readonly plans?: Plan[];
+	readonly privateStoreId?: string;
+	readonly publisherDisplayName?: string;
+	readonly specificPlanIdsLimitation?: string[];
+	readonly uniqueOfferId?: string;
+	readonly updateSuppressedDueIdempotence?: boolean;
 }
 export interface OfferPropertiesIconFileUris {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Plan {
-	readonly accessibility?: ("PrivateSubscriptionOnLevel" | "PrivateTenantOnLevel" | "Public" | "Unknown") | undefined;
-	readonly altStackReference?: string | undefined;
-	readonly planDisplayName?: string | undefined;
-	readonly planId?: string | undefined;
-	readonly skuId?: string | undefined;
-	readonly stackType?: string | undefined;
+	readonly accessibility?: "PrivateSubscriptionOnLevel" | "PrivateTenantOnLevel" | "Public" | "Unknown";
+	readonly altStackReference?: string;
+	readonly planDisplayName?: string;
+	readonly planId?: string;
+	readonly skuId?: string;
+	readonly stackType?: string;
 }
 export interface PlanDetails {
-	readonly justification?: string | undefined;
-	readonly planId?: string | undefined;
-	readonly requestDate?: any | undefined;
-	readonly status?: ("Approved" | "None" | "Pending" | "Rejected") | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly subscriptionName?: string | undefined;
+	readonly justification?: string;
+	readonly planId?: string;
+	readonly requestDate?: any;
+	readonly status?: "Approved" | "None" | "Pending" | "Rejected";
+	readonly subscriptionId?: string;
+	readonly subscriptionName?: string;
 }
 export interface PlanNotificationDetails {
-	readonly planDisplayName?: string | undefined;
-	readonly planId?: string | undefined;
+	readonly planDisplayName?: string;
+	readonly planId?: string;
 }
 export interface PlanRequesterDetails {
-	readonly planDisplayName?: string | undefined;
-	readonly planId?: string | undefined;
-	readonly requesters?: UserRequestDetails[] | undefined;
+	readonly planDisplayName?: string;
+	readonly planId?: string;
+	readonly requesters?: UserRequestDetails[];
 }
 export interface PrivateStoreProperties {
-	readonly availability?: ("disabled" | "enabled") | undefined;
-	readonly branding?: PrivateStorePropertiesBranding | undefined;
-	readonly collectionIds?: string[] | undefined;
-	readonly eTag?: string | undefined;
-	readonly isGov?: boolean | undefined;
-	readonly notificationsSettings?: NotificationsSettingsProperties | undefined;
-	readonly privateStoreId?: string | undefined;
-	readonly privateStoreName?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly availability?: "disabled" | "enabled";
+	readonly branding?: PrivateStorePropertiesBranding;
+	readonly collectionIds?: string[];
+	readonly eTag?: string;
+	readonly isGov?: boolean;
+	readonly notificationsSettings?: NotificationsSettingsProperties;
+	readonly privateStoreId?: string;
+	readonly privateStoreName?: string;
+	readonly tenantId?: string;
 }
 export interface PrivateStorePropertiesBranding {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Recipient {
-	readonly displayName?: string | undefined;
-	readonly emailAddress?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly displayName?: string;
+	readonly emailAddress?: string;
+	readonly principalId?: string;
 }
 export interface RequestApprovalProperties {
-	readonly isClosed?: boolean | undefined;
-	readonly messageCode?: number | undefined;
-	readonly offerDisplayName?: string | undefined;
-	readonly offerId?: string | undefined;
-	readonly plansDetails?: PlanDetails[] | undefined;
-	readonly publisherId?: string | undefined;
+	readonly isClosed?: boolean;
+	readonly messageCode?: number;
+	readonly offerDisplayName?: string;
+	readonly offerId?: string;
+	readonly plansDetails?: PlanDetails[];
+	readonly publisherId?: string;
 }
 export interface Rule {
-	readonly type?: ("PrivateProducts" | "TermsAndCondition") | undefined;
-	readonly value?: string[] | undefined;
+	readonly type?: "PrivateProducts" | "TermsAndCondition";
+	readonly value?: string[];
 }
 export interface StopSellOffersPlansNotificationsList {
-	readonly stopSellNotifications?: StopSellOffersPlansNotificationsListProperties[] | undefined;
+	readonly stopSellNotifications?: StopSellOffersPlansNotificationsListProperties[];
 }
 export interface StopSellOffersPlansNotificationsListProperties {
-	readonly displayName?: string | undefined;
-	readonly icon?: string | undefined;
-	readonly isEntire?: boolean | undefined;
-	readonly messageCode?: number | undefined;
-	readonly offerId?: string | undefined;
-	readonly plans?: PlanNotificationDetails[] | undefined;
-	readonly publicContext?: boolean | undefined;
-	readonly subscriptionsIds?: string[] | undefined;
+	readonly displayName?: string;
+	readonly icon?: string;
+	readonly isEntire?: boolean;
+	readonly messageCode?: number;
+	readonly offerId?: string;
+	readonly plans?: PlanNotificationDetails[];
+	readonly publicContext?: boolean;
+	readonly subscriptionsIds?: string[];
 }
 export interface StopSellSubscriptions {
-	readonly subscriptions?: string[] | undefined;
+	readonly subscriptions?: string[];
 }
 export interface SubscriptionsContextList {
-	readonly subscriptionsIds?: string[] | undefined;
+	readonly subscriptionsIds?: string[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface UserRequestDetails {
-	readonly date?: string | undefined;
-	readonly justification?: string | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly subscriptionName?: string | undefined;
-	readonly user?: string | undefined;
+	readonly date?: string;
+	readonly justification?: string;
+	readonly subscriptionId?: string;
+	readonly subscriptionName?: string;
+	readonly user?: string;
 }
 export default {
 	privateStores: privateStores,

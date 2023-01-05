@@ -7,128 +7,127 @@ export class ProjectsLocationsFunctions
 	constructor(entity: ADKEntity, options: ProjectsLocationsFunctionsComponentInputs) {
 		super(entity, options.name, "cloudfunctions.v2beta.ProjectsLocationsFunctions", options);
 	}
-	public readonly state?: string | undefined;
-	public readonly stateMessages?: GoogleCloudFunctionsV2betaStateMessage[] | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly state?: string;
+	public readonly stateMessages?: GoogleCloudFunctionsV2betaStateMessage[];
+	public readonly updateTime?: string;
 }
 export interface ProjectsLocationsFunctionsComponentOutputs {
-	readonly state?: string | undefined;
-	readonly stateMessages?: GoogleCloudFunctionsV2betaStateMessage[] | undefined;
-	readonly updateTime?: string | undefined;
+	readonly state?: string;
+	readonly stateMessages?: GoogleCloudFunctionsV2betaStateMessage[];
+	readonly updateTime?: string;
 }
 export interface ProjectsLocationsFunctionsComponentInputs {
-	readonly buildConfig?: BuildConfig | undefined;
-	readonly description?: string | undefined;
-	readonly environment?: string | undefined;
-	readonly eventTrigger?: EventTrigger | undefined;
-	readonly functionId?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly buildConfig?: BuildConfig;
+	readonly description?: string;
+	readonly environment?: string;
+	readonly eventTrigger?: EventTrigger;
+	readonly functionId?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
 	readonly parent: string;
-	readonly serviceConfig?: ServiceConfig | undefined;
-	readonly type: string;
+	readonly serviceConfig?: ServiceConfig;
 }
 export interface BuildConfig {
-	readonly build?: string | undefined;
-	readonly buildpackStack?: string | undefined;
-	readonly dockerRegistry?: string | undefined;
-	readonly dockerRepository?: string | undefined;
-	readonly entryPoint?: string | undefined;
-	readonly environmentVariables?: { [P in string]: string } | undefined;
-	readonly runtime?: string | undefined;
-	readonly source?: Source | undefined;
-	readonly sourceProvenance?: SourceProvenance | undefined;
-	readonly workerPool?: string | undefined;
+	readonly build?: string;
+	readonly buildpackStack?: string;
+	readonly dockerRegistry?: string;
+	readonly dockerRepository?: string;
+	readonly entryPoint?: string;
+	readonly environmentVariables?: { [P in string]: string };
+	readonly runtime?: string;
+	readonly source?: Source;
+	readonly sourceProvenance?: SourceProvenance;
+	readonly workerPool?: string;
 }
 export interface EventFilter {
 	readonly attribute: string;
-	readonly operator?: string | undefined;
+	readonly operator?: string;
 	readonly value: string;
 }
 export interface EventTrigger {
-	readonly channel?: string | undefined;
-	readonly eventFilters?: EventFilter[] | undefined;
+	readonly channel?: string;
+	readonly eventFilters?: EventFilter[];
 	readonly eventType: string;
-	readonly pubsubTopic?: string | undefined;
-	readonly retryPolicy?: string | undefined;
-	readonly serviceAccountEmail?: string | undefined;
-	readonly trigger?: string | undefined;
-	readonly triggerRegion?: string | undefined;
+	readonly pubsubTopic?: string;
+	readonly retryPolicy?: string;
+	readonly serviceAccountEmail?: string;
+	readonly trigger?: string;
+	readonly triggerRegion?: string;
 }
 export interface FunctionInstance {
-	readonly buildConfig?: BuildConfig | undefined;
-	readonly description?: string | undefined;
-	readonly environment?: string | undefined;
-	readonly eventTrigger?: EventTrigger | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly serviceConfig?: ServiceConfig | undefined;
-	readonly state?: string | undefined;
-	readonly stateMessages?: GoogleCloudFunctionsV2betaStateMessage[] | undefined;
-	readonly updateTime?: string | undefined;
+	readonly buildConfig?: BuildConfig;
+	readonly description?: string;
+	readonly environment?: string;
+	readonly eventTrigger?: EventTrigger;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly serviceConfig?: ServiceConfig;
+	readonly state?: string;
+	readonly stateMessages?: GoogleCloudFunctionsV2betaStateMessage[];
+	readonly updateTime?: string;
 }
 export interface GoogleCloudFunctionsV2betaStateMessage {
-	readonly message?: string | undefined;
-	readonly severity?: string | undefined;
-	readonly type?: string | undefined;
+	readonly message?: string;
+	readonly severity?: string;
+	readonly type?: string;
 }
 export interface RepoSource {
-	readonly branchName?: string | undefined;
-	readonly commitSha?: string | undefined;
-	readonly dir?: string | undefined;
-	readonly invertRegex?: boolean | undefined;
-	readonly projectId?: string | undefined;
-	readonly repoName?: string | undefined;
-	readonly tagName?: string | undefined;
+	readonly branchName?: string;
+	readonly commitSha?: string;
+	readonly dir?: string;
+	readonly invertRegex?: boolean;
+	readonly projectId?: string;
+	readonly repoName?: string;
+	readonly tagName?: string;
 }
 export interface SecretEnvVar {
-	readonly key?: string | undefined;
-	readonly projectId?: string | undefined;
-	readonly secret?: string | undefined;
-	readonly version?: string | undefined;
+	readonly key?: string;
+	readonly projectId?: string;
+	readonly secret?: string;
+	readonly version?: string;
 }
 export interface SecretVersion {
-	readonly path?: string | undefined;
-	readonly version?: string | undefined;
+	readonly path?: string;
+	readonly version?: string;
 }
 export interface SecretVolume {
-	readonly mountPath?: string | undefined;
-	readonly projectId?: string | undefined;
-	readonly secret?: string | undefined;
-	readonly versions?: SecretVersion[] | undefined;
+	readonly mountPath?: string;
+	readonly projectId?: string;
+	readonly secret?: string;
+	readonly versions?: SecretVersion[];
 }
 export interface ServiceConfig {
-	readonly allTrafficOnLatestRevision?: boolean | undefined;
-	readonly availableCpu?: string | undefined;
-	readonly availableMemory?: string | undefined;
-	readonly environmentVariables?: { [P in string]: string } | undefined;
-	readonly ingressSettings?: string | undefined;
-	readonly maxInstanceCount?: number | undefined;
-	readonly maxInstanceRequestConcurrency?: number | undefined;
-	readonly minInstanceCount?: number | undefined;
-	readonly revision?: string | undefined;
-	readonly secretEnvironmentVariables?: SecretEnvVar[] | undefined;
-	readonly secretVolumes?: SecretVolume[] | undefined;
-	readonly securityLevel?: string | undefined;
-	readonly service?: string | undefined;
-	readonly serviceAccountEmail?: string | undefined;
-	readonly timeoutSeconds?: number | undefined;
-	readonly uri?: string | undefined;
-	readonly vpcConnector?: string | undefined;
-	readonly vpcConnectorEgressSettings?: string | undefined;
+	readonly allTrafficOnLatestRevision?: boolean;
+	readonly availableCpu?: string;
+	readonly availableMemory?: string;
+	readonly environmentVariables?: { [P in string]: string };
+	readonly ingressSettings?: string;
+	readonly maxInstanceCount?: number;
+	readonly maxInstanceRequestConcurrency?: number;
+	readonly minInstanceCount?: number;
+	readonly revision?: string;
+	readonly secretEnvironmentVariables?: SecretEnvVar[];
+	readonly secretVolumes?: SecretVolume[];
+	readonly securityLevel?: string;
+	readonly service?: string;
+	readonly serviceAccountEmail?: string;
+	readonly timeoutSeconds?: number;
+	readonly uri?: string;
+	readonly vpcConnector?: string;
+	readonly vpcConnectorEgressSettings?: string;
 }
 export interface Source {
-	readonly repoSource?: RepoSource | undefined;
-	readonly storageSource?: StorageSource | undefined;
+	readonly repoSource?: RepoSource;
+	readonly storageSource?: StorageSource;
 }
 export interface SourceProvenance {
-	readonly resolvedRepoSource?: RepoSource | undefined;
-	readonly resolvedStorageSource?: StorageSource | undefined;
+	readonly resolvedRepoSource?: RepoSource;
+	readonly resolvedStorageSource?: StorageSource;
 }
 export interface StorageSource {
-	readonly bucket?: string | undefined;
-	readonly generation?: string | undefined;
-	readonly object?: string | undefined;
+	readonly bucket?: string;
+	readonly generation?: string;
+	readonly object?: string;
 }
 export default {
 	ProjectsLocationsFunctions: ProjectsLocationsFunctions,

@@ -15,7 +15,7 @@ export interface agreementsComponentOutputs {
 }
 export interface agreementsComponentInputs {
 	readonly name: string;
-	readonly properties?: DatadogAgreementProperties | undefined;
+	readonly properties?: DatadogAgreementProperties;
 }
 export class monitors extends ArmResource<monitorsComponentInputs> implements monitorsComponentOutputs {
 	constructor(entity: ADKEntity, options: monitorsComponentInputs) {
@@ -31,12 +31,12 @@ export interface monitorsComponentOutputs {
 	readonly type: "Microsoft.Datadog/monitors";
 }
 export interface monitorsComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
+	readonly identity?: IdentityProperties;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MonitorProperties | undefined;
-	readonly sku?: ResourceSku | undefined;
-	readonly tags?: DatadogMonitorResourceTags | undefined;
+	readonly properties?: MonitorProperties;
+	readonly sku?: ResourceSku;
+	readonly tags?: DatadogMonitorResourceTags;
 }
 export class monitors_singleSignOnConfigurations
 	extends ArmResource<monitors_singleSignOnConfigurationsComponentInputs>
@@ -56,7 +56,7 @@ export interface monitors_singleSignOnConfigurationsComponentOutputs {
 }
 export interface monitors_singleSignOnConfigurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: DatadogSingleSignOnProperties | undefined;
+	readonly properties?: DatadogSingleSignOnProperties;
 }
 export class monitors_tagRules
 	extends ArmResource<monitors_tagRulesComponentInputs>
@@ -76,7 +76,7 @@ export interface monitors_tagRulesComponentOutputs {
 }
 export interface monitors_tagRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: MonitoringTagRulesProperties | undefined;
+	readonly properties?: MonitoringTagRulesProperties;
 }
 export function listApiKeys(resource: monitors): DatadogApiKeyListResponse {
 	if (resource.apiVersion !== "2020-02-01-preview") {
@@ -115,161 +115,152 @@ export function listMonitoredResources(resource: monitors): MonitoredResourceLis
 	throw new Error("not implemented");
 }
 export interface DatadogAgreementProperties {
-	readonly accepted?: boolean | undefined;
-	readonly licenseTextLink?: string | undefined;
-	readonly plan?: string | undefined;
-	readonly privacyPolicyLink?: string | undefined;
-	readonly product?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly retrieveDatetime?: string | undefined;
-	readonly signature?: string | undefined;
+	readonly accepted?: boolean;
+	readonly licenseTextLink?: string;
+	readonly plan?: string;
+	readonly privacyPolicyLink?: string;
+	readonly product?: string;
+	readonly publisher?: string;
+	readonly retrieveDatetime?: string;
+	readonly signature?: string;
 }
 export interface DatadogApiKey {
-	readonly created?: string | undefined;
-	readonly createdBy?: string | undefined;
+	readonly created?: string;
+	readonly createdBy?: string;
 	readonly key: string;
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface DatadogApiKeyListResponse {
-	readonly nextLink?: string | undefined;
-	readonly value?: DatadogApiKey[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: DatadogApiKey[];
 }
 export interface DatadogHost {
-	readonly aliases?: string[] | undefined;
-	readonly apps?: string[] | undefined;
-	readonly meta?: DatadogHostMetadata | undefined;
-	readonly name?: string | undefined;
+	readonly aliases?: string[];
+	readonly apps?: string[];
+	readonly meta?: DatadogHostMetadata;
+	readonly name?: string;
 }
 export interface DatadogHostListResponse {
-	readonly nextLink?: string | undefined;
-	readonly value?: DatadogHost[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: DatadogHost[];
 }
 export interface DatadogHostMetadata {
-	readonly agentVersion?: string | undefined;
-	readonly installMethod?: DatadogInstallMethod | undefined;
-	readonly logsAgent?: DatadogLogsAgent | undefined;
+	readonly agentVersion?: string;
+	readonly installMethod?: DatadogInstallMethod;
+	readonly logsAgent?: DatadogLogsAgent;
 }
 export interface DatadogInstallMethod {
-	readonly installerVersion?: string | undefined;
-	readonly tool?: string | undefined;
-	readonly toolVersion?: string | undefined;
+	readonly installerVersion?: string;
+	readonly tool?: string;
+	readonly toolVersion?: string;
 }
 export interface DatadogLogsAgent {
-	readonly transport?: string | undefined;
+	readonly transport?: string;
 }
 export interface DatadogMonitorResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DatadogOrganizationProperties {
-	readonly apiKey?: string | undefined;
-	readonly applicationKey?: string | undefined;
-	readonly enterpriseAppId?: string | undefined;
-	readonly id?: string | undefined;
-	readonly linkingAuthCode?: string | undefined;
-	readonly linkingClientId?: string | undefined;
-	readonly name?: string | undefined;
-	readonly redirectUri?: string | undefined;
+	readonly apiKey?: string;
+	readonly applicationKey?: string;
+	readonly enterpriseAppId?: string;
+	readonly id?: string;
+	readonly linkingAuthCode?: string;
+	readonly linkingClientId?: string;
+	readonly name?: string;
+	readonly redirectUri?: string;
 }
 export interface DatadogSingleSignOnProperties {
-	readonly enterpriseAppId?: string | undefined;
+	readonly enterpriseAppId?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly singleSignOnState?: ("Disable" | "Enable" | "Existing" | "Initial") | undefined;
-	readonly singleSignOnUrl?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
+	readonly singleSignOnState?: "Disable" | "Enable" | "Existing" | "Initial";
+	readonly singleSignOnUrl?: string;
 }
 export interface FilteringTag {
-	readonly action?: ("Exclude" | "Include") | undefined;
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly action?: "Exclude" | "Include";
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface IdentityProperties {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("SystemAssigned" | "UserAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned" | "UserAssigned";
 }
 export interface LinkedResource {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface LinkedResourceListResponse {
-	readonly nextLink?: string | undefined;
-	readonly value?: LinkedResource[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: LinkedResource[];
 }
 export interface LogRules {
-	readonly filteringTags?: FilteringTag[] | undefined;
-	readonly sendAadLogs?: boolean | undefined;
-	readonly sendResourceLogs?: boolean | undefined;
-	readonly sendSubscriptionLogs?: boolean | undefined;
+	readonly filteringTags?: FilteringTag[];
+	readonly sendAadLogs?: boolean;
+	readonly sendResourceLogs?: boolean;
+	readonly sendSubscriptionLogs?: boolean;
 }
 export interface MetricRules {
-	readonly filteringTags?: FilteringTag[] | undefined;
+	readonly filteringTags?: FilteringTag[];
 }
 export interface MonitoredResource {
-	readonly id?: string | undefined;
-	readonly reasonForLogsStatus?: string | undefined;
-	readonly reasonForMetricsStatus?: string | undefined;
-	readonly sendingLogs?: boolean | undefined;
-	readonly sendingMetrics?: boolean | undefined;
+	readonly id?: string;
+	readonly reasonForLogsStatus?: string;
+	readonly reasonForMetricsStatus?: string;
+	readonly sendingLogs?: boolean;
+	readonly sendingMetrics?: boolean;
 }
 export interface MonitoredResourceListResponse {
-	readonly nextLink?: string | undefined;
-	readonly value?: MonitoredResource[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: MonitoredResource[];
 }
 export interface MonitoringTagRulesProperties {
-	readonly logRules?: LogRules | undefined;
-	readonly metricRules?: MetricRules | undefined;
+	readonly logRules?: LogRules;
+	readonly metricRules?: MetricRules;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
 }
 export interface MonitorProperties {
-	readonly datadogOrganizationProperties?: DatadogOrganizationProperties | undefined;
-	readonly liftrResourceCategory?: ("MonitorLogs" | "Unknown") | undefined;
-	readonly liftrResourcePreference?: number | undefined;
-	readonly marketplaceSubscriptionStatus?: ("Active" | "Provisioning" | "Suspended" | "Unsubscribed") | undefined;
-	readonly monitoringStatus?: ("Disabled" | "Enabled") | undefined;
+	readonly datadogOrganizationProperties?: DatadogOrganizationProperties;
+	readonly liftrResourceCategory?: "MonitorLogs" | "Unknown";
+	readonly liftrResourcePreference?: number;
+	readonly marketplaceSubscriptionStatus?: "Active" | "Provisioning" | "Suspended" | "Unsubscribed";
+	readonly monitoringStatus?: "Disabled" | "Enabled";
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly userInfo?: UserInfo | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
+	readonly userInfo?: UserInfo;
 }
 export interface ResourceSku {
 	readonly name: string;
 }
 export interface UserInfo {
-	readonly emailAddress?: string | undefined;
-	readonly name?: string | undefined;
-	readonly phoneNumber?: string | undefined;
+	readonly emailAddress?: string;
+	readonly name?: string;
+	readonly phoneNumber?: string;
 }
 export default {
 	agreements: agreements,

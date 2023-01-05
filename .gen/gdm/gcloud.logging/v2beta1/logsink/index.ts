@@ -4,22 +4,21 @@ export class LogSink extends GdmResource<LogSinkComponentInputs> implements LogS
 	constructor(entity: ADKEntity, options: LogSinkComponentInputs) {
 		super(entity, options.name, "logging.v2beta1.LogSink", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly updateTime?: string | undefined;
-	public readonly writerIdentity?: string | undefined;
+	public readonly createTime?: string;
+	public readonly updateTime?: string;
+	public readonly writerIdentity?: string;
 }
 export interface LogSinkComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly updateTime?: string | undefined;
-	readonly writerIdentity?: string | undefined;
+	readonly createTime?: string;
+	readonly updateTime?: string;
+	readonly writerIdentity?: string;
 }
 export interface LogSinkComponentInputs {
 	readonly destination: string;
-	readonly filter?: string | undefined;
-	readonly includeChildren?: boolean | undefined;
+	readonly filter?: string;
+	readonly includeChildren?: boolean;
 	readonly name: string;
-	readonly outputVersionFormat?: string | undefined;
-	readonly type: string;
+	readonly outputVersionFormat?: string;
 }
 export default {
 	LogSink: LogSink,

@@ -20,10 +20,10 @@ export interface GeofenceCollectionComponentOutputs {
 }
 export interface GeofenceCollectionComponentInputs {
 	readonly CollectionName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly PricingPlan?: (string | undefined) | undefined;
-	readonly PricingPlanDataSource?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly PricingPlan?: string | undefined;
+	readonly PricingPlanDataSource?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Map extends CfnResource<MapComponentInputs> implements MapComponentOutputs {
@@ -46,8 +46,8 @@ export interface MapComponentOutputs {
 export interface MapComponentInputs {
 	readonly Configuration: MapConfiguration;
 	readonly MapName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly PricingPlan?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly PricingPlan?: string | undefined;
 	readonly LogicalId: string;
 }
 export class PlaceIndex extends CfnResource<PlaceIndexComponentInputs> implements PlaceIndexComponentOutputs {
@@ -68,9 +68,9 @@ export interface PlaceIndexComponentOutputs {
 export interface PlaceIndexComponentInputs {
 	readonly DataSource: string;
 	readonly IndexName: string;
-	readonly DataSourceConfiguration?: (DataSourceConfiguration | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly PricingPlan?: (string | undefined) | undefined;
+	readonly DataSourceConfiguration?: DataSourceConfiguration | undefined;
+	readonly Description?: string | undefined;
+	readonly PricingPlan?: string | undefined;
 	readonly LogicalId: string;
 }
 export class RouteCalculator
@@ -94,8 +94,8 @@ export interface RouteCalculatorComponentOutputs {
 export interface RouteCalculatorComponentInputs {
 	readonly CalculatorName: string;
 	readonly DataSource: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly PricingPlan?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly PricingPlan?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Tracker extends CfnResource<TrackerComponentInputs> implements TrackerComponentOutputs {
@@ -115,11 +115,11 @@ export interface TrackerComponentOutputs {
 }
 export interface TrackerComponentInputs {
 	readonly TrackerName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly PositionFiltering?: (string | undefined) | undefined;
-	readonly PricingPlan?: (string | undefined) | undefined;
-	readonly PricingPlanDataSource?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly PositionFiltering?: string | undefined;
+	readonly PricingPlan?: string | undefined;
+	readonly PricingPlanDataSource?: string | undefined;
 	readonly LogicalId: string;
 }
 export class TrackerConsumer
@@ -140,7 +140,7 @@ export interface MapConfiguration {
 	readonly Style: string;
 }
 export interface DataSourceConfiguration {
-	readonly IntendedUse?: (string | undefined) | undefined;
+	readonly IntendedUse?: string | undefined;
 }
 export default {
 	GeofenceCollection: GeofenceCollection,

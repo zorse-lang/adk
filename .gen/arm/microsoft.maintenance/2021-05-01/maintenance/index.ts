@@ -15,8 +15,8 @@ export interface applyUpdatesComponentOutputs {
 }
 export interface applyUpdatesComponentInputs {
 	readonly name: string;
-	readonly properties?: ApplyUpdateProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ApplyUpdateProperties;
+	readonly systemData?: SystemData;
 }
 export class configurationAssignments
 	extends ArmResource<configurationAssignmentsComponentInputs>
@@ -35,10 +35,10 @@ export interface configurationAssignmentsComponentOutputs {
 	readonly type: "Microsoft.Maintenance/configurationAssignments";
 }
 export interface configurationAssignmentsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ConfigurationAssignmentProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConfigurationAssignmentProperties;
+	readonly systemData?: SystemData;
 }
 export class maintenanceConfigurations
 	extends ArmResource<maintenanceConfigurationsComponentInputs>
@@ -57,11 +57,11 @@ export interface maintenanceConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Maintenance/maintenanceConfigurations";
 }
 export interface maintenanceConfigurationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: MaintenanceConfigurationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: MaintenanceConfigurationTags | undefined;
+	readonly properties?: MaintenanceConfigurationProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: MaintenanceConfigurationTags;
 }
 export class publicMaintenanceConfigurations
 	extends ArmResource<publicMaintenanceConfigurationsComponentInputs>
@@ -80,50 +80,48 @@ export interface publicMaintenanceConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Maintenance/publicMaintenanceConfigurations";
 }
 export interface publicMaintenanceConfigurationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: MaintenanceConfigurationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: MaintenanceConfigurationTags | undefined;
+	readonly properties?: MaintenanceConfigurationProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: MaintenanceConfigurationTags;
 }
 export interface ApplyUpdateProperties {
-	readonly lastUpdateTime?: string | undefined;
-	readonly resourceId?: string | undefined;
-	readonly status?: ("Completed" | "InProgress" | "Pending" | "RetryLater" | "RetryNow") | undefined;
+	readonly lastUpdateTime?: string;
+	readonly resourceId?: string;
+	readonly status?: "Completed" | "InProgress" | "Pending" | "RetryLater" | "RetryNow";
 }
 export interface ConfigurationAssignmentProperties {
-	readonly maintenanceConfigurationId?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly maintenanceConfigurationId?: string;
+	readonly resourceId?: string;
 }
 export interface MaintenanceConfigurationProperties {
-	readonly extensionProperties?: MaintenanceConfigurationPropertiesExtensionProperties | undefined;
-	readonly maintenanceScope?:
-		| ("Extension" | "Host" | "InGuestPatch" | "OSImage" | "SQLDB" | "SQLManagedInstance")
-		| undefined;
-	readonly maintenanceWindow?: MaintenanceWindow | undefined;
-	readonly namespace?: string | undefined;
-	readonly visibility?: ("Custom" | "Public") | undefined;
+	readonly extensionProperties?: MaintenanceConfigurationPropertiesExtensionProperties;
+	readonly maintenanceScope?: "Extension" | "Host" | "InGuestPatch" | "OSImage" | "SQLDB" | "SQLManagedInstance";
+	readonly maintenanceWindow?: MaintenanceWindow;
+	readonly namespace?: string;
+	readonly visibility?: "Custom" | "Public";
 }
 export interface MaintenanceConfigurationPropertiesExtensionProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MaintenanceConfigurationTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MaintenanceWindow {
-	readonly duration?: string | undefined;
-	readonly expirationDateTime?: string | undefined;
-	readonly recurEvery?: string | undefined;
-	readonly startDateTime?: string | undefined;
-	readonly timeZone?: string | undefined;
+	readonly duration?: string;
+	readonly expirationDateTime?: string;
+	readonly recurEvery?: string;
+	readonly startDateTime?: string;
+	readonly timeZone?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	applyUpdates: applyUpdates,

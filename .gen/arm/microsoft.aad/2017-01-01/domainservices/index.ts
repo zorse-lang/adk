@@ -14,65 +14,65 @@ export interface domainServicesComponentOutputs {
 	readonly type: "Microsoft.AAD/domainServices";
 }
 export interface domainServicesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DomainServiceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: DomainServiceProperties;
+	readonly tags?: ResourceTags;
 }
 export interface DomainSecuritySettings {
-	readonly ntlmV1?: ("Disabled" | "Enabled") | undefined;
-	readonly syncNtlmPasswords?: ("Disabled" | "Enabled") | undefined;
-	readonly tlsV1?: ("Disabled" | "Enabled") | undefined;
+	readonly ntlmV1?: "Disabled" | "Enabled";
+	readonly syncNtlmPasswords?: "Disabled" | "Enabled";
+	readonly tlsV1?: "Disabled" | "Enabled";
 }
 export interface DomainServiceProperties {
-	readonly deploymentId?: string | undefined;
-	readonly domainControllerIpAddress?: string[] | undefined;
-	readonly domainName?: string | undefined;
-	readonly domainSecuritySettings?: DomainSecuritySettings | undefined;
-	readonly filteredSync?: ("Disabled" | "Enabled") | undefined;
-	readonly healthAlerts?: HealthAlert[] | undefined;
-	readonly healthLastEvaluated?: string | undefined;
-	readonly healthMonitors?: HealthMonitor[] | undefined;
-	readonly ldapsSettings?: LdapsSettings | undefined;
-	readonly notificationSettings?: NotificationSettings | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceStatus?: string | undefined;
-	readonly subnetId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly vnetSiteId?: string | undefined;
+	readonly deploymentId?: string;
+	readonly domainControllerIpAddress?: string[];
+	readonly domainName?: string;
+	readonly domainSecuritySettings?: DomainSecuritySettings;
+	readonly filteredSync?: "Disabled" | "Enabled";
+	readonly healthAlerts?: HealthAlert[];
+	readonly healthLastEvaluated?: string;
+	readonly healthMonitors?: HealthMonitor[];
+	readonly ldapsSettings?: LdapsSettings;
+	readonly notificationSettings?: NotificationSettings;
+	readonly provisioningState?: string;
+	readonly serviceStatus?: string;
+	readonly subnetId?: string;
+	readonly tenantId?: string;
+	readonly vnetSiteId?: string;
 }
 export interface HealthAlert {
-	readonly id?: string | undefined;
-	readonly issue?: string | undefined;
-	readonly lastDetected?: string | undefined;
-	readonly name?: string | undefined;
-	readonly raised?: string | undefined;
-	readonly resolutionUri?: string | undefined;
-	readonly severity?: string | undefined;
+	readonly id?: string;
+	readonly issue?: string;
+	readonly lastDetected?: string;
+	readonly name?: string;
+	readonly raised?: string;
+	readonly resolutionUri?: string;
+	readonly severity?: string;
 }
 export interface HealthMonitor {
-	readonly details?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly details?: string;
+	readonly id?: string;
+	readonly name?: string;
 }
 export interface LdapsSettings {
-	readonly certificateNotAfter?: string | undefined;
-	readonly certificateThumbprint?: string | undefined;
-	readonly externalAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly externalAccessIpAddress?: string | undefined;
-	readonly ldaps?: ("Disabled" | "Enabled") | undefined;
-	readonly pfxCertificate?: string | undefined;
-	readonly pfxCertificatePassword?: string | undefined;
-	readonly publicCertificate?: string | undefined;
+	readonly certificateNotAfter?: string;
+	readonly certificateThumbprint?: string;
+	readonly externalAccess?: "Disabled" | "Enabled";
+	readonly externalAccessIpAddress?: string;
+	readonly ldaps?: "Disabled" | "Enabled";
+	readonly pfxCertificate?: string;
+	readonly pfxCertificatePassword?: string;
+	readonly publicCertificate?: string;
 }
 export interface NotificationSettings {
-	readonly additionalRecipients?: string[] | undefined;
-	readonly notifyDcAdmins?: ("Disabled" | "Enabled") | undefined;
-	readonly notifyGlobalAdmins?: ("Disabled" | "Enabled") | undefined;
+	readonly additionalRecipients?: string[];
+	readonly notifyDcAdmins?: "Disabled" | "Enabled";
+	readonly notifyGlobalAdmins?: "Disabled" | "Enabled";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	domainServices: domainServices,

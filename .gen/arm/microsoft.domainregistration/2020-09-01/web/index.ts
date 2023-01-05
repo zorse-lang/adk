@@ -14,12 +14,12 @@ export interface domainsComponentOutputs {
 	readonly type: "Microsoft.DomainRegistration/domains";
 }
 export interface domainsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DomainProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: DomainProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class domains_domainOwnershipIdentifiers
 	extends ArmResource<domains_domainOwnershipIdentifiersComponentInputs>
@@ -44,10 +44,10 @@ export interface domains_domainOwnershipIdentifiersComponentOutputs {
 	readonly type: "Microsoft.DomainRegistration/domains/domainOwnershipIdentifiers";
 }
 export interface domains_domainOwnershipIdentifiersComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly properties?: DomainOwnershipIdentifierProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DomainOwnershipIdentifierProperties;
+	readonly systemData?: SystemData;
 }
 export class topLevelDomains
 	extends ArmResource<topLevelDomainsComponentInputs>
@@ -66,10 +66,10 @@ export interface topLevelDomainsComponentOutputs {
 	readonly type: "Microsoft.DomainRegistration/topLevelDomains";
 }
 export interface topLevelDomainsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly properties?: TopLevelDomainProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: TopLevelDomainProperties;
+	readonly systemData?: SystemData;
 }
 export function listAgreements(
 	resource: topLevelDomains,
@@ -85,113 +85,111 @@ export function listAgreements(
 }
 export interface Address {
 	readonly address1: string;
-	readonly address2?: string | undefined;
+	readonly address2?: string;
 	readonly city: string;
 	readonly country: string;
 	readonly postalCode: string;
 	readonly state: string;
 }
 export interface Contact {
-	readonly addressMailing?: Address | undefined;
+	readonly addressMailing?: Address;
 	readonly email: string;
-	readonly fax?: string | undefined;
-	readonly jobTitle?: string | undefined;
+	readonly fax?: string;
+	readonly jobTitle?: string;
 	readonly nameFirst: string;
 	readonly nameLast: string;
-	readonly nameMiddle?: string | undefined;
-	readonly organization?: string | undefined;
+	readonly nameMiddle?: string;
+	readonly organization?: string;
 	readonly phone: string;
 }
 export interface DomainOwnershipIdentifierProperties {
-	readonly ownershipId?: string | undefined;
+	readonly ownershipId?: string;
 }
 export interface DomainProperties {
-	readonly authCode?: string | undefined;
-	readonly autoRenew?: boolean | undefined;
+	readonly authCode?: string;
+	readonly autoRenew?: boolean;
 	readonly consent: DomainPurchaseConsent;
 	readonly contactAdmin: Contact;
 	readonly contactBilling: Contact;
 	readonly contactRegistrant: Contact;
 	readonly contactTech: Contact;
-	readonly createdTime?: string | undefined;
-	readonly dnsType?: "AzureDns" | undefined;
-	readonly dnsZoneId?: string | undefined;
+	readonly createdTime?: string;
+	readonly dnsType?: "AzureDns";
+	readonly dnsZoneId?: string;
 	readonly domainNotRenewableReasons?:
-		| ("ExpirationNotInRenewalTimeRange" | "RegistrationStatusNotSupportedForRenewal" | "SubscriptionNotActive"[])
-		| undefined;
-	readonly expirationTime?: string | undefined;
-	readonly lastRenewedTime?: string | undefined;
-	readonly managedHostNames?: HostName[] | undefined;
-	readonly nameServers?: string[] | undefined;
-	readonly privacy?: boolean | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleting" | "Failed" | "InProgress") | undefined;
-	readonly readyForDnsRecordManagement?: boolean | undefined;
+		| "ExpirationNotInRenewalTimeRange"
+		| "RegistrationStatusNotSupportedForRenewal"
+		| "SubscriptionNotActive"[];
+	readonly expirationTime?: string;
+	readonly lastRenewedTime?: string;
+	readonly managedHostNames?: HostName[];
+	readonly nameServers?: string[];
+	readonly privacy?: boolean;
+	readonly provisioningState?: "Canceled" | "Deleting" | "Failed" | "InProgress";
+	readonly readyForDnsRecordManagement?: boolean;
 	readonly registrationStatus?:
-		| (
-				| "Active"
-				| "Awaiting"
-				| "Cancelled"
-				| "Confiscated"
-				| "Disabled"
-				| "Excluded"
-				| "Expired"
-				| "Failed"
-				| "Held"
-				| "JsonConverterFailed"
-				| "Locked"
-				| "Parked"
-				| "Pending"
-				| "Reserved"
-				| "Reverted"
-				| "Suspended"
-				| "Transferred"
-				| "Unknown"
-				| "Unlocked"
-				| "Unparked"
-		  )
-		| undefined;
-	readonly targetDnsType?: "AzureDns" | undefined;
+		| "Active"
+		| "Awaiting"
+		| "Cancelled"
+		| "Confiscated"
+		| "Disabled"
+		| "Excluded"
+		| "Expired"
+		| "Failed"
+		| "Held"
+		| "JsonConverterFailed"
+		| "Locked"
+		| "Parked"
+		| "Pending"
+		| "Reserved"
+		| "Reverted"
+		| "Suspended"
+		| "Transferred"
+		| "Unknown"
+		| "Unlocked"
+		| "Unparked";
+	readonly targetDnsType?: "AzureDns";
 }
 export interface DomainPurchaseConsent {
-	readonly agreedAt?: string | undefined;
-	readonly agreedBy?: string | undefined;
-	readonly agreementKeys?: string[] | undefined;
+	readonly agreedAt?: string;
+	readonly agreedBy?: string;
+	readonly agreementKeys?: string[];
 }
 export interface HostName {
-	readonly azureResourceName?: string | undefined;
-	readonly azureResourceType?: "TrafficManager" | undefined;
-	readonly customHostNameDnsRecordType?: "A" | undefined;
-	readonly hostNameType?: "Managed" | undefined;
-	readonly name?: string | undefined;
-	readonly siteNames?: string[] | undefined;
+	readonly azureResourceName?: string;
+	readonly azureResourceType?: "TrafficManager";
+	readonly customHostNameDnsRecordType?: "A";
+	readonly hostNameType?: "Managed";
+	readonly name?: string;
+	readonly siteNames?: string[];
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TldLegalAgreement {
 	readonly agreementKey: string;
 	readonly content: string;
 	readonly title: string;
-	readonly url?: string | undefined;
+	readonly url?: string;
 }
 export interface TldLegalAgreementCollection {
-	readonly nextLink?: string | undefined;
+	readonly nextLink?: string;
 	readonly value: TldLegalAgreement[];
 }
 export interface TopLevelDomainAgreementOption {
-	readonly forTransfer?: boolean | undefined;
-	readonly includePrivacy?: boolean | undefined;
+	readonly forTransfer?: boolean;
+	readonly includePrivacy?: boolean;
 }
 export interface TopLevelDomainProperties {
-	readonly privacy?: boolean | undefined;
+	readonly privacy?: boolean;
 }
 export default {
 	domains: domains,

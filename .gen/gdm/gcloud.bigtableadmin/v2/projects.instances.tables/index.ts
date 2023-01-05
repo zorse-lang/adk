@@ -7,93 +7,93 @@ export class ProjectsInstancesTables
 	constructor(entity: ADKEntity, options: ProjectsInstancesTablesComponentInputs) {
 		super(entity, options.name, "bigtableadmin.v2.ProjectsInstancesTables", options);
 	}
-	public readonly clusterStates?: { [P in string]: ClusterState } | undefined;
-	public readonly restoreInfo?: RestoreInfo | undefined;
+	public readonly clusterStates?: { [P in string]: ClusterState
+	};
+	public readonly restoreInfo?: RestoreInfo;
 }
 export interface ProjectsInstancesTablesComponentOutputs {
-	readonly clusterStates?: { [P in string]: ClusterState } | undefined;
-	readonly restoreInfo?: RestoreInfo | undefined;
+	readonly clusterStates?: { [P in string]: ClusterState };
+	readonly restoreInfo?: RestoreInfo;
 }
 export interface ProjectsInstancesTablesComponentInputs {
-	readonly columnFamilies?: { [P in string]: ColumnFamily } | undefined;
-	readonly deletionProtection?: boolean | undefined;
-	readonly granularity?: string | undefined;
-	readonly initialSplits?: Split[] | undefined;
+	readonly columnFamilies?: { [P in string]: ColumnFamily };
+	readonly deletionProtection?: boolean;
+	readonly granularity?: string;
+	readonly initialSplits?: Split[];
 	readonly name: string;
 	readonly parent: string;
-	readonly stats?: TableStats | undefined;
+	readonly stats?: TableStats;
 	readonly table: Table;
 	readonly tableId: string;
-	readonly type: string;
 }
 export interface BackupInfo {
-	readonly backup?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly sourceBackup?: string | undefined;
-	readonly sourceTable?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly backup?: string;
+	readonly endTime?: string;
+	readonly sourceBackup?: string;
+	readonly sourceTable?: string;
+	readonly startTime?: string;
 }
 export interface ClusterState {
-	readonly encryptionInfo?: EncryptionInfo[] | undefined;
-	readonly replicationState?: string | undefined;
+	readonly encryptionInfo?: EncryptionInfo[];
+	readonly replicationState?: string;
 }
 export interface ColumnFamily {
-	readonly gcRule?: GcRule | undefined;
-	readonly stats?: ColumnFamilyStats | undefined;
+	readonly gcRule?: GcRule;
+	readonly stats?: ColumnFamilyStats;
 }
 export interface ColumnFamilyStats {
-	readonly averageCellsPerColumn?: number | undefined;
-	readonly averageColumnsPerRow?: number | undefined;
-	readonly logicalDataBytes?: string | undefined;
+	readonly averageCellsPerColumn?: number;
+	readonly averageColumnsPerRow?: number;
+	readonly logicalDataBytes?: string;
 }
 export interface CreateTableRequest {
-	readonly initialSplits?: Split[] | undefined;
+	readonly initialSplits?: Split[];
 	readonly table: Table;
 	readonly tableId: string;
 }
 export interface EncryptionInfo {
-	readonly encryptionStatus?: Status | undefined;
-	readonly encryptionType?: string | undefined;
-	readonly kmsKeyVersion?: string | undefined;
+	readonly encryptionStatus?: Status;
+	readonly encryptionType?: string;
+	readonly kmsKeyVersion?: string;
 }
 export interface GcRule {
-	readonly intersection?: Intersection | undefined;
-	readonly maxAge?: string | undefined;
-	readonly maxNumVersions?: number | undefined;
-	readonly union?: Union | undefined;
+	readonly intersection?: Intersection;
+	readonly maxAge?: string;
+	readonly maxNumVersions?: number;
+	readonly union?: Union;
 }
 export interface Intersection {
-	readonly rules?: GcRule[] | undefined;
+	readonly rules?: GcRule[];
 }
 export interface RestoreInfo {
-	readonly backupInfo?: BackupInfo | undefined;
-	readonly sourceType?: string | undefined;
+	readonly backupInfo?: BackupInfo;
+	readonly sourceType?: string;
 }
 export interface Split {
-	readonly key?: string | undefined;
+	readonly key?: string;
 }
 export interface Status {
-	readonly code?: number | undefined;
-	readonly details?: Array<{ [P in string]: any }> | undefined;
-	readonly message?: string | undefined;
+	readonly code?: number;
+	readonly details?: Array<{ [P in string]: any }>;
+	readonly message?: string;
 }
 export interface Table {
-	readonly clusterStates?: { [P in string]: ClusterState } | undefined;
-	readonly columnFamilies?: { [P in string]: ColumnFamily } | undefined;
-	readonly deletionProtection?: boolean | undefined;
-	readonly granularity?: string | undefined;
-	readonly name?: string | undefined;
-	readonly restoreInfo?: RestoreInfo | undefined;
-	readonly stats?: TableStats | undefined;
+	readonly clusterStates?: { [P in string]: ClusterState };
+	readonly columnFamilies?: { [P in string]: ColumnFamily };
+	readonly deletionProtection?: boolean;
+	readonly granularity?: string;
+	readonly name?: string;
+	readonly restoreInfo?: RestoreInfo;
+	readonly stats?: TableStats;
 }
 export interface TableStats {
-	readonly averageCellsPerColumn?: number | undefined;
-	readonly averageColumnsPerRow?: number | undefined;
-	readonly logicalDataBytes?: string | undefined;
-	readonly rowCount?: string | undefined;
+	readonly averageCellsPerColumn?: number;
+	readonly averageColumnsPerRow?: number;
+	readonly logicalDataBytes?: string;
+	readonly rowCount?: string;
 }
 export interface Union {
-	readonly rules?: GcRule[] | undefined;
+	readonly rules?: GcRule[];
 }
 export default {
 	ProjectsInstancesTables: ProjectsInstancesTables,

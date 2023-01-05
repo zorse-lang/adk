@@ -19,8 +19,8 @@ export interface openShiftClustersComponentOutputs {
 export interface openShiftClustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: OpenShiftClusterProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: OpenShiftClusterProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export function listCredentials(resource: openShiftClusters): OpenShiftClusterCredentials {
 	if (resource.apiVersion !== "2020-04-30") {
@@ -32,62 +32,60 @@ export function listCredentials(resource: openShiftClusters): OpenShiftClusterCr
 	throw new Error("not implemented");
 }
 export interface APIServerProfile {
-	readonly ip?: string | undefined;
-	readonly url?: string | undefined;
-	readonly visibility?: ("Private" | "Public") | undefined;
+	readonly ip?: string;
+	readonly url?: string;
+	readonly visibility?: "Private" | "Public";
 }
 export interface ClusterProfile {
-	readonly domain?: string | undefined;
-	readonly pullSecret?: string | undefined;
-	readonly resourceGroupId?: string | undefined;
-	readonly version?: string | undefined;
+	readonly domain?: string;
+	readonly pullSecret?: string;
+	readonly resourceGroupId?: string;
+	readonly version?: string;
 }
 export interface ConsoleProfile {
-	readonly url?: string | undefined;
+	readonly url?: string;
 }
 export interface IngressProfile {
-	readonly ip?: string | undefined;
-	readonly name?: string | undefined;
-	readonly visibility?: ("Private" | "Public") | undefined;
+	readonly ip?: string;
+	readonly name?: string;
+	readonly visibility?: "Private" | "Public";
 }
 export interface MasterProfile {
-	readonly subnetId?: string | undefined;
-	readonly vmSize?: ("Standard_D2s_v3" | "Standard_D4s_v3" | "Standard_D8s_v3") | undefined;
+	readonly subnetId?: string;
+	readonly vmSize?: "Standard_D2s_v3" | "Standard_D4s_v3" | "Standard_D8s_v3";
 }
 export interface NetworkProfile {
-	readonly podCidr?: string | undefined;
-	readonly serviceCidr?: string | undefined;
+	readonly podCidr?: string;
+	readonly serviceCidr?: string;
 }
 export interface OpenShiftClusterCredentials {
-	readonly kubeadminPassword?: string | undefined;
-	readonly kubeadminUsername?: string | undefined;
+	readonly kubeadminPassword?: string;
+	readonly kubeadminUsername?: string;
 }
 export interface OpenShiftClusterProperties {
-	readonly apiserverProfile?: APIServerProfile | undefined;
-	readonly clusterProfile?: ClusterProfile | undefined;
-	readonly consoleProfile?: ConsoleProfile | undefined;
-	readonly ingressProfiles?: IngressProfile[] | undefined;
-	readonly masterProfile?: MasterProfile | undefined;
-	readonly networkProfile?: NetworkProfile | undefined;
-	readonly provisioningState?:
-		| ("AdminUpdating" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating")
-		| undefined;
-	readonly servicePrincipalProfile?: ServicePrincipalProfile | undefined;
-	readonly workerProfiles?: WorkerProfile[] | undefined;
+	readonly apiserverProfile?: APIServerProfile;
+	readonly clusterProfile?: ClusterProfile;
+	readonly consoleProfile?: ConsoleProfile;
+	readonly ingressProfiles?: IngressProfile[];
+	readonly masterProfile?: MasterProfile;
+	readonly networkProfile?: NetworkProfile;
+	readonly provisioningState?: "AdminUpdating" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly servicePrincipalProfile?: ServicePrincipalProfile;
+	readonly workerProfiles?: WorkerProfile[];
 }
 export interface ServicePrincipalProfile {
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
+	readonly clientId?: string;
+	readonly clientSecret?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WorkerProfile {
-	readonly count?: number | undefined;
-	readonly diskSizeGB?: number | undefined;
-	readonly name?: string | undefined;
-	readonly subnetId?: string | undefined;
-	readonly vmSize?: ("Standard_D2s_v3" | "Standard_D4s_v3" | "Standard_D8s_v3") | undefined;
+	readonly count?: number;
+	readonly diskSizeGB?: number;
+	readonly name?: string;
+	readonly subnetId?: string;
+	readonly vmSize?: "Standard_D2s_v3" | "Standard_D4s_v3" | "Standard_D8s_v3";
 }
 export default {
 	openShiftClusters: openShiftClusters,

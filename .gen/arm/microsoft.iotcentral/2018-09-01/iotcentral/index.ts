@@ -16,25 +16,25 @@ export interface iotAppsComponentOutputs {
 export interface iotAppsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AppProperties | undefined;
+	readonly properties?: AppProperties;
 	readonly sku: AppSkuInfo;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export interface AppProperties {
-	readonly applicationId?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly geography?: string | undefined;
-	readonly state?: ("created" | "suspended") | undefined;
-	readonly subdomain?: string | undefined;
-	readonly template?: string | undefined;
-	readonly tenant?: string | undefined;
-	readonly thumbnailUrl?: string | undefined;
+	readonly applicationId?: string;
+	readonly displayName?: string;
+	readonly geography?: string;
+	readonly state?: "created" | "suspended";
+	readonly subdomain?: string;
+	readonly template?: string;
+	readonly tenant?: string;
+	readonly thumbnailUrl?: string;
 }
 export interface AppSkuInfo {
 	readonly name: "F1" | "S1" | "ST0" | "ST1" | "ST2";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	iotApps: iotApps,

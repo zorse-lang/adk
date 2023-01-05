@@ -4,38 +4,37 @@ export class LogSink extends GdmResource<LogSinkComponentInputs> implements LogS
 	constructor(entity: ADKEntity, options: LogSinkComponentInputs) {
 		super(entity, options.name, "logging.v2.LogSink", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly updateTime?: string | undefined;
-	public readonly writerIdentity?: string | undefined;
+	public readonly createTime?: string;
+	public readonly updateTime?: string;
+	public readonly writerIdentity?: string;
 }
 export interface LogSinkComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly updateTime?: string | undefined;
-	readonly writerIdentity?: string | undefined;
+	readonly createTime?: string;
+	readonly updateTime?: string;
+	readonly writerIdentity?: string;
 }
 export interface LogSinkComponentInputs {
-	readonly bigqueryOptions?: BigQueryOptions | undefined;
-	readonly description?: string | undefined;
+	readonly bigqueryOptions?: BigQueryOptions;
+	readonly description?: string;
 	readonly destination: string;
-	readonly disabled?: boolean | undefined;
-	readonly exclusions?: LogExclusion[] | undefined;
-	readonly filter?: string | undefined;
-	readonly includeChildren?: boolean | undefined;
+	readonly disabled?: boolean;
+	readonly exclusions?: LogExclusion[];
+	readonly filter?: string;
+	readonly includeChildren?: boolean;
 	readonly name: string;
-	readonly outputVersionFormat?: string | undefined;
-	readonly type: string;
+	readonly outputVersionFormat?: string;
 }
 export interface BigQueryOptions {
-	readonly usePartitionedTables?: boolean | undefined;
-	readonly usesTimestampColumnPartitioning?: boolean | undefined;
+	readonly usePartitionedTables?: boolean;
+	readonly usesTimestampColumnPartitioning?: boolean;
 }
 export interface LogExclusion {
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly disabled?: boolean;
 	readonly filter: string;
 	readonly name: string;
-	readonly updateTime?: string | undefined;
+	readonly updateTime?: string;
 }
 export default {
 	LogSink: LogSink,

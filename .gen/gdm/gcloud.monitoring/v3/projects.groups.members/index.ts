@@ -10,7 +10,6 @@ export class ProjectsGroupsMembers
 }
 export interface ProjectsGroupsMembersComponentOutputs {}
 export interface ProjectsGroupsMembersComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

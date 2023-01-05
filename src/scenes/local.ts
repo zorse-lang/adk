@@ -1,4 +1,4 @@
-import { Component, Entity, Scene, Symbols, System, Token, View } from "@zorse/adk/core";
+import { Component, Entity, Scene, Symbols, System, Token, View, assert, errors } from "@zorse/adk/core";
 import { dirname, resolve } from "path";
 
 /** Base class for local {@link core.Component:class}s */
@@ -106,13 +106,16 @@ export class FileSystemScene extends LocalScene {
 		return component instanceof FileSystemComponent;
 	}
 	public async render(view: View): Promise<void> {
-		for (const _out of view.output as Map<string, string>) {
-			await this._fs.promises.mkdir(dirname(_out[0]), { recursive: true });
-			await this._fs.promises.writeFile(_out[0], _out[1]);
+		for (const out of view.output as Map<string, string>) {
+			await this._fs.promises.mkdir(dirname(out[0]), { recursive: true });
+			await this._fs.promises.writeFile(out[0], out[1]);
 		}
 	}
 	public update(token: Token): void {
-		if (token.data instanceof TextFile) {
+		assert.true(errors.NotSupportedYet, token.data instanceof FileSystemComponent);
+		assert.true(errors.NotSupportedYet, this.filter(token.data));
+		const tokenDataHandle = token.data[Symbols.ComponentHandle];
+		if (tokenDataHandle.actual instanceof TextFile) {
 			if (token.resolves<TextFile>((c) => c.lines)) {
 				token.root.reset(() => token.data.content.split("\n"));
 			}

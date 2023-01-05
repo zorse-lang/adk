@@ -14,10 +14,10 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.Automanage/accounts";
 }
 export interface accountsComponentInputs {
-	readonly identity?: AccountIdentity | undefined;
+	readonly identity?: AccountIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class configurationProfileAssignments
 	extends ArmResource<configurationProfileAssignmentsComponentInputs>
@@ -37,7 +37,7 @@ export interface configurationProfileAssignmentsComponentOutputs {
 }
 export interface configurationProfileAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfigurationProfileAssignmentProperties | undefined;
+	readonly properties?: ConfigurationProfileAssignmentProperties;
 }
 export class configurationProfilePreferences
 	extends ArmResource<configurationProfilePreferencesComponentInputs>
@@ -58,47 +58,47 @@ export interface configurationProfilePreferencesComponentOutputs {
 export interface configurationProfilePreferencesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ConfigurationProfilePreferenceProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ConfigurationProfilePreferenceProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AccountIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "None" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None";
 }
 export interface ConfigurationProfileAssignmentCompliance {
-	readonly updateStatus?: ("Created" | "Failed" | "Succeeded") | undefined;
+	readonly updateStatus?: "Created" | "Failed" | "Succeeded";
 }
 export interface ConfigurationProfileAssignmentProperties {
-	readonly accountId?: string | undefined;
-	readonly compliance?: ConfigurationProfileAssignmentCompliance | undefined;
+	readonly accountId?: string;
+	readonly compliance?: ConfigurationProfileAssignmentCompliance;
 	readonly configurationProfile?:
-		| ("Azure virtual machine best practices – Dev/Test" | "Azure virtual machine best practices – Production")
-		| undefined;
-	readonly configurationProfilePreferenceId?: string | undefined;
-	readonly provisioningState?: ("Created" | "Failed" | "Succeeded") | undefined;
-	readonly targetId?: string | undefined;
+		| "Azure virtual machine best practices – Dev/Test"
+		| "Azure virtual machine best practices – Production";
+	readonly configurationProfilePreferenceId?: string;
+	readonly provisioningState?: "Created" | "Failed" | "Succeeded";
+	readonly targetId?: string;
 }
 export interface ConfigurationProfilePreferenceAntiMalware {
-	readonly enableRealTimeProtection?: ("False" | "True") | undefined;
-	readonly exclusions?: any | undefined;
-	readonly runScheduledScan?: ("False" | "True") | undefined;
-	readonly scanDay?: string | undefined;
-	readonly scanTimeInMinutes?: string | undefined;
-	readonly scanType?: ("Full" | "Quick") | undefined;
+	readonly enableRealTimeProtection?: "False" | "True";
+	readonly exclusions?: any;
+	readonly runScheduledScan?: "False" | "True";
+	readonly scanDay?: string;
+	readonly scanTimeInMinutes?: string;
+	readonly scanType?: "Full" | "Quick";
 }
 export interface ConfigurationProfilePreferenceProperties {
-	readonly antiMalware?: ConfigurationProfilePreferenceAntiMalware | undefined;
-	readonly vmBackup?: ConfigurationProfilePreferenceVmBackup | undefined;
+	readonly antiMalware?: ConfigurationProfilePreferenceAntiMalware;
+	readonly vmBackup?: ConfigurationProfilePreferenceVmBackup;
 }
 export interface ConfigurationProfilePreferenceVmBackup {
-	readonly instantRpRetentionRangeInDays?: number | undefined;
-	readonly retentionPolicy?: string | undefined;
-	readonly schedulePolicy?: string | undefined;
-	readonly timeZone?: string | undefined;
+	readonly instantRpRetentionRangeInDays?: number;
+	readonly retentionPolicy?: string;
+	readonly schedulePolicy?: string;
+	readonly timeZone?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	accounts: accounts,

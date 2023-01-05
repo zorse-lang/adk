@@ -10,7 +10,6 @@ export class OrganizationsResourceTypesValues
 }
 export interface OrganizationsResourceTypesValuesComponentOutputs {}
 export interface OrganizationsResourceTypesValuesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

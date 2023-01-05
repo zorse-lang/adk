@@ -16,9 +16,9 @@ export interface clustersComponentOutputs {
 export interface clustersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ClusterProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class clusters_arcSettings
 	extends ArmResource<clusters_arcSettingsComponentInputs>
@@ -38,8 +38,8 @@ export interface clusters_arcSettingsComponentOutputs {
 }
 export interface clusters_arcSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: ArcSettingProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ArcSettingProperties;
+	readonly systemData?: SystemData;
 }
 export class clusters_arcSettings_extensions
 	extends ArmResource<clusters_arcSettings_extensionsComponentInputs>
@@ -59,165 +59,151 @@ export interface clusters_arcSettings_extensionsComponentOutputs {
 }
 export interface clusters_arcSettings_extensionsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ExtensionProperties;
+	readonly systemData?: SystemData;
 }
 export interface ArcSettingProperties {
 	readonly aggregateState?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "InProgress"
-				| "Moving"
-				| "NotSpecified"
-				| "PartiallyConnected"
-				| "PartiallySucceeded"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly arcApplicationClientId?: string | undefined;
-	readonly arcApplicationObjectId?: string | undefined;
-	readonly arcApplicationTenantId?: string | undefined;
-	readonly arcInstanceResourceGroup?: string | undefined;
-	readonly arcServicePrincipalObjectId?: string | undefined;
-	readonly perNodeDetails?: PerNodeState[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "InProgress"
+		| "Moving"
+		| "NotSpecified"
+		| "PartiallyConnected"
+		| "PartiallySucceeded"
+		| "Succeeded"
+		| "Updating";
+	readonly arcApplicationClientId?: string;
+	readonly arcApplicationObjectId?: string;
+	readonly arcApplicationTenantId?: string;
+	readonly arcInstanceResourceGroup?: string;
+	readonly arcServicePrincipalObjectId?: string;
+	readonly perNodeDetails?: PerNodeState[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
 }
 export interface ClusterDesiredProperties {
-	readonly diagnosticLevel?: ("Basic" | "Enhanced" | "Off") | undefined;
-	readonly windowsServerSubscription?: ("Disabled" | "Enabled") | undefined;
+	readonly diagnosticLevel?: "Basic" | "Enhanced" | "Off";
+	readonly windowsServerSubscription?: "Disabled" | "Enabled";
 }
 export interface ClusterNode {
-	readonly coreCount?: number | undefined;
-	readonly id?: number | undefined;
-	readonly manufacturer?: string | undefined;
-	readonly memoryInGiB?: number | undefined;
-	readonly model?: string | undefined;
-	readonly name?: string | undefined;
-	readonly osName?: string | undefined;
-	readonly osVersion?: string | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly windowsServerSubscription?: ("Disabled" | "Enabled") | undefined;
+	readonly coreCount?: number;
+	readonly id?: number;
+	readonly manufacturer?: string;
+	readonly memoryInGiB?: number;
+	readonly model?: string;
+	readonly name?: string;
+	readonly osName?: string;
+	readonly osVersion?: string;
+	readonly serialNumber?: string;
+	readonly windowsServerSubscription?: "Disabled" | "Enabled";
 }
 export interface ClusterProperties {
-	readonly aadApplicationObjectId?: string | undefined;
-	readonly aadClientId?: string | undefined;
-	readonly aadServicePrincipalObjectId?: string | undefined;
-	readonly aadTenantId?: string | undefined;
-	readonly billingModel?: string | undefined;
-	readonly cloudId?: string | undefined;
-	readonly cloudManagementEndpoint?: string | undefined;
-	readonly desiredProperties?: ClusterDesiredProperties | undefined;
-	readonly lastBillingTimestamp?: string | undefined;
-	readonly lastSyncTimestamp?: string | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly registrationTimestamp?: string | undefined;
-	readonly reportedProperties?: ClusterReportedProperties | undefined;
-	readonly serviceEndpoint?: string | undefined;
-	readonly status?:
-		| ("ConnectedRecently" | "Disconnected" | "Error" | "NotConnectedRecently" | "NotYetRegistered")
-		| undefined;
-	readonly trialDaysRemaining?: number | undefined;
+	readonly aadApplicationObjectId?: string;
+	readonly aadClientId?: string;
+	readonly aadServicePrincipalObjectId?: string;
+	readonly aadTenantId?: string;
+	readonly billingModel?: string;
+	readonly cloudId?: string;
+	readonly cloudManagementEndpoint?: string;
+	readonly desiredProperties?: ClusterDesiredProperties;
+	readonly lastBillingTimestamp?: string;
+	readonly lastSyncTimestamp?: string;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
+	readonly registrationTimestamp?: string;
+	readonly reportedProperties?: ClusterReportedProperties;
+	readonly serviceEndpoint?: string;
+	readonly status?: "ConnectedRecently" | "Disconnected" | "Error" | "NotConnectedRecently" | "NotYetRegistered";
+	readonly trialDaysRemaining?: number;
 }
 export interface ClusterReportedProperties {
-	readonly clusterId?: string | undefined;
-	readonly clusterName?: string | undefined;
-	readonly clusterVersion?: string | undefined;
-	readonly diagnosticLevel?: ("Basic" | "Enhanced" | "Off") | undefined;
-	readonly imdsAttestation?: ("Disabled" | "Enabled") | undefined;
-	readonly lastUpdated?: string | undefined;
-	readonly nodes?: ClusterNode[] | undefined;
+	readonly clusterId?: string;
+	readonly clusterName?: string;
+	readonly clusterVersion?: string;
+	readonly diagnosticLevel?: "Basic" | "Enhanced" | "Off";
+	readonly imdsAttestation?: "Disabled" | "Enabled";
+	readonly lastUpdated?: string;
+	readonly nodes?: ClusterNode[];
 }
 export interface ExtensionParameters {
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly protectedSettings?: any | undefined;
-	readonly publisher?: string | undefined;
-	readonly settings?: any | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly forceUpdateTag?: string;
+	readonly protectedSettings?: any;
+	readonly publisher?: string;
+	readonly settings?: any;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface ExtensionProperties {
 	readonly aggregateState?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "InProgress"
-				| "Moving"
-				| "NotSpecified"
-				| "PartiallyConnected"
-				| "PartiallySucceeded"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly extensionParameters?: ExtensionParameters | undefined;
-	readonly perNodeExtensionDetails?: PerNodeExtensionState[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded") | undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "InProgress"
+		| "Moving"
+		| "NotSpecified"
+		| "PartiallyConnected"
+		| "PartiallySucceeded"
+		| "Succeeded"
+		| "Updating";
+	readonly extensionParameters?: ExtensionParameters;
+	readonly perNodeExtensionDetails?: PerNodeExtensionState[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Failed" | "Provisioning" | "Succeeded";
 }
 export interface PerNodeExtensionState {
-	readonly extension?: string | undefined;
-	readonly name?: string | undefined;
+	readonly extension?: string;
+	readonly name?: string;
 	readonly state?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "Moving"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "Moving"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
 }
 export interface PerNodeState {
-	readonly arcInstance?: string | undefined;
-	readonly name?: string | undefined;
+	readonly arcInstance?: string;
+	readonly name?: string;
 	readonly state?:
-		| (
-				| "Canceled"
-				| "Connected"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Disconnected"
-				| "Error"
-				| "Failed"
-				| "Moving"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
+		| "Canceled"
+		| "Connected"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Disconnected"
+		| "Error"
+		| "Failed"
+		| "Moving"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	clusters: clusters,

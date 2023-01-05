@@ -14,10 +14,10 @@ export interface incidentsComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/incidents";
 }
 export interface incidentsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: IncidentProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: IncidentProperties;
+	readonly systemData?: SystemData;
 }
 export class incidents_comments
 	extends ArmResource<incidents_commentsComponentInputs>
@@ -36,10 +36,10 @@ export interface incidents_commentsComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/incidents/comments";
 }
 export interface incidents_commentsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: IncidentCommentProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: IncidentCommentProperties;
+	readonly systemData?: SystemData;
 }
 export class incidents_relations
 	extends ArmResource<incidents_relationsComponentInputs>
@@ -58,10 +58,10 @@ export interface incidents_relationsComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/incidents/relations";
 }
 export interface incidents_relationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RelationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: RelationProperties;
+	readonly systemData?: SystemData;
 }
 export class threatIntelligence_indicators
 	extends ArmResource<threatIntelligence_indicatorsComponentInputs>
@@ -80,11 +80,11 @@ export interface threatIntelligence_indicatorsComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/threatIntelligence/indicators";
 }
 export interface threatIntelligence_indicatorsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly kind: "indicator";
 	readonly name: string;
-	readonly properties?: ThreatIntelligenceIndicatorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ThreatIntelligenceIndicatorProperties;
+	readonly systemData?: SystemData;
 }
 export class watchlists extends ArmResource<watchlistsComponentInputs> implements watchlistsComponentOutputs {
 	constructor(entity: ADKEntity, options: watchlistsComponentInputs) {
@@ -100,10 +100,10 @@ export interface watchlistsComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/watchlists";
 }
 export interface watchlistsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: WatchlistProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: WatchlistProperties;
+	readonly systemData?: SystemData;
 }
 export class watchlists_watchlistItems
 	extends ArmResource<watchlists_watchlistItemsComponentInputs>
@@ -122,193 +122,192 @@ export interface watchlists_watchlistItemsComponentOutputs {
 	readonly type: "Microsoft.SecurityInsights/watchlists/watchlistItems";
 }
 export interface watchlists_watchlistItemsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: WatchlistItemProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: WatchlistItemProperties;
+	readonly systemData?: SystemData;
 }
 export interface ClientInfo {
-	readonly email?: string | undefined;
-	readonly name?: string | undefined;
-	readonly objectId?: string | undefined;
-	readonly userPrincipalName?: string | undefined;
+	readonly email?: string;
+	readonly name?: string;
+	readonly objectId?: string;
+	readonly userPrincipalName?: string;
 }
 export interface EntityCommonPropertiesAdditionalData {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface IncidentAdditionalData {
-	readonly alertProductNames?: string[] | undefined;
-	readonly alertsCount?: number | undefined;
-	readonly bookmarksCount?: number | undefined;
-	readonly commentsCount?: number | undefined;
+	readonly alertProductNames?: string[];
+	readonly alertsCount?: number;
+	readonly bookmarksCount?: number;
+	readonly commentsCount?: number;
 	readonly tactics?:
-		| (
-				| "Collection"
-				| "CommandAndControl"
-				| "CredentialAccess"
-				| "DefenseEvasion"
-				| "Discovery"
-				| "Execution"
-				| "Exfiltration"
-				| "Impact"
-				| "InitialAccess"
-				| "LateralMovement"
-				| "Persistence"
-				| "PrivilegeEscalation"[]
-		  )
-		| undefined;
+		| "Collection"
+		| "CommandAndControl"
+		| "CredentialAccess"
+		| "DefenseEvasion"
+		| "Discovery"
+		| "Execution"
+		| "Exfiltration"
+		| "Impact"
+		| "InitialAccess"
+		| "LateralMovement"
+		| "Persistence"
+		| "PrivilegeEscalation"[];
 }
 export interface IncidentCommentProperties {
-	readonly author?: ClientInfo | undefined;
-	readonly createdTimeUtc?: string | undefined;
-	readonly lastModifiedTimeUtc?: string | undefined;
+	readonly author?: ClientInfo;
+	readonly createdTimeUtc?: string;
+	readonly lastModifiedTimeUtc?: string;
 	readonly message: string;
 }
 export interface IncidentLabel {
 	readonly labelName: string;
-	readonly labelType?: ("System" | "User") | undefined;
+	readonly labelType?: "System" | "User";
 }
 export interface IncidentOwnerInfo {
-	readonly assignedTo?: string | undefined;
-	readonly email?: string | undefined;
-	readonly objectId?: string | undefined;
-	readonly userPrincipalName?: string | undefined;
+	readonly assignedTo?: string;
+	readonly email?: string;
+	readonly objectId?: string;
+	readonly userPrincipalName?: string;
 }
 export interface IncidentProperties {
-	readonly additionalData?: IncidentAdditionalData | undefined;
-	readonly classification?: ("BenignPositive" | "FalsePositive" | "TruePositive" | "Undetermined") | undefined;
-	readonly classificationComment?: string | undefined;
+	readonly additionalData?: IncidentAdditionalData;
+	readonly classification?: "BenignPositive" | "FalsePositive" | "TruePositive" | "Undetermined";
+	readonly classificationComment?: string;
 	readonly classificationReason?:
-		| ("InaccurateData" | "IncorrectAlertLogic" | "SuspiciousActivity" | "SuspiciousButExpected")
-		| undefined;
-	readonly createdTimeUtc?: string | undefined;
-	readonly description?: string | undefined;
-	readonly firstActivityTimeUtc?: string | undefined;
-	readonly incidentNumber?: number | undefined;
-	readonly incidentUrl?: string | undefined;
-	readonly labels?: IncidentLabel[] | undefined;
-	readonly lastActivityTimeUtc?: string | undefined;
-	readonly lastModifiedTimeUtc?: string | undefined;
-	readonly owner?: IncidentOwnerInfo | undefined;
-	readonly relatedAnalyticRuleIds?: string[] | undefined;
+		| "InaccurateData"
+		| "IncorrectAlertLogic"
+		| "SuspiciousActivity"
+		| "SuspiciousButExpected";
+	readonly createdTimeUtc?: string;
+	readonly description?: string;
+	readonly firstActivityTimeUtc?: string;
+	readonly incidentNumber?: number;
+	readonly incidentUrl?: string;
+	readonly labels?: IncidentLabel[];
+	readonly lastActivityTimeUtc?: string;
+	readonly lastModifiedTimeUtc?: string;
+	readonly owner?: IncidentOwnerInfo;
+	readonly relatedAnalyticRuleIds?: string[];
 	readonly severity: "High" | "Informational" | "Low" | "Medium";
 	readonly status: "Active" | "Closed" | "New";
 	readonly title: string;
 }
 export interface RelationProperties {
 	readonly relatedResourceId: string;
-	readonly relatedResourceKind?: string | undefined;
-	readonly relatedResourceName?: string | undefined;
-	readonly relatedResourceType?: string | undefined;
+	readonly relatedResourceKind?: string;
+	readonly relatedResourceName?: string;
+	readonly relatedResourceType?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface ThreatIntelligenceExternalReference {
-	readonly description?: string | undefined;
-	readonly externalId?: string | undefined;
-	readonly hashes?: ThreatIntelligenceExternalReferenceHashes | undefined;
-	readonly sourceName?: string | undefined;
-	readonly url?: string | undefined;
+	readonly description?: string;
+	readonly externalId?: string;
+	readonly hashes?: ThreatIntelligenceExternalReferenceHashes;
+	readonly sourceName?: string;
+	readonly url?: string;
 }
 export interface ThreatIntelligenceExternalReferenceHashes {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ThreatIntelligenceGranularMarkingModel {
-	readonly language?: string | undefined;
-	readonly markingRef?: number | undefined;
-	readonly selectors?: string[] | undefined;
+	readonly language?: string;
+	readonly markingRef?: number;
+	readonly selectors?: string[];
 }
 export interface ThreatIntelligenceIndicatorProperties {
-	readonly additionalData?: EntityCommonPropertiesAdditionalData | undefined;
-	readonly confidence?: number | undefined;
-	readonly created?: string | undefined;
-	readonly createdByRef?: string | undefined;
-	readonly defanged?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly extensions?: ThreatIntelligenceIndicatorPropertiesExtensions | undefined;
-	readonly externalId?: string | undefined;
-	readonly externalLastUpdatedTimeUtc?: string | undefined;
-	readonly externalReferences?: ThreatIntelligenceExternalReference[] | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly granularMarkings?: ThreatIntelligenceGranularMarkingModel[] | undefined;
-	readonly indicatorTypes?: string[] | undefined;
-	readonly killChainPhases?: ThreatIntelligenceKillChainPhase[] | undefined;
-	readonly labels?: string[] | undefined;
-	readonly language?: string | undefined;
-	readonly lastUpdatedTimeUtc?: string | undefined;
-	readonly modified?: string | undefined;
-	readonly objectMarkingRefs?: string[] | undefined;
-	readonly parsedPattern?: ThreatIntelligenceParsedPattern[] | undefined;
-	readonly pattern?: string | undefined;
-	readonly patternType?: string | undefined;
-	readonly patternVersion?: string | undefined;
-	readonly revoked?: boolean | undefined;
-	readonly source?: string | undefined;
-	readonly threatIntelligenceTags?: string[] | undefined;
-	readonly threatTypes?: string[] | undefined;
-	readonly validFrom?: string | undefined;
-	readonly validUntil?: string | undefined;
+	readonly additionalData?: EntityCommonPropertiesAdditionalData;
+	readonly confidence?: number;
+	readonly created?: string;
+	readonly createdByRef?: string;
+	readonly defanged?: boolean;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly extensions?: ThreatIntelligenceIndicatorPropertiesExtensions;
+	readonly externalId?: string;
+	readonly externalLastUpdatedTimeUtc?: string;
+	readonly externalReferences?: ThreatIntelligenceExternalReference[];
+	readonly friendlyName?: string;
+	readonly granularMarkings?: ThreatIntelligenceGranularMarkingModel[];
+	readonly indicatorTypes?: string[];
+	readonly killChainPhases?: ThreatIntelligenceKillChainPhase[];
+	readonly labels?: string[];
+	readonly language?: string;
+	readonly lastUpdatedTimeUtc?: string;
+	readonly modified?: string;
+	readonly objectMarkingRefs?: string[];
+	readonly parsedPattern?: ThreatIntelligenceParsedPattern[];
+	readonly pattern?: string;
+	readonly patternType?: string;
+	readonly patternVersion?: string;
+	readonly revoked?: boolean;
+	readonly source?: string;
+	readonly threatIntelligenceTags?: string[];
+	readonly threatTypes?: string[];
+	readonly validFrom?: string;
+	readonly validUntil?: string;
 }
 export interface ThreatIntelligenceIndicatorPropertiesExtensions {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ThreatIntelligenceKillChainPhase {
-	readonly killChainName?: string | undefined;
-	readonly phaseName?: string | undefined;
+	readonly killChainName?: string;
+	readonly phaseName?: string;
 }
 export interface ThreatIntelligenceParsedPattern {
-	readonly patternTypeKey?: string | undefined;
-	readonly patternTypeValues?: ThreatIntelligenceParsedPatternTypeValue[] | undefined;
+	readonly patternTypeKey?: string;
+	readonly patternTypeValues?: ThreatIntelligenceParsedPatternTypeValue[];
 }
 export interface ThreatIntelligenceParsedPatternTypeValue {
-	readonly value?: string | undefined;
-	readonly valueType?: string | undefined;
+	readonly value?: string;
+	readonly valueType?: string;
 }
 export interface UserInfo {
-	readonly email?: string | undefined;
-	readonly name?: string | undefined;
-	readonly objectId?: string | undefined;
+	readonly email?: string;
+	readonly name?: string;
+	readonly objectId?: string;
 }
 export interface WatchlistItemProperties {
-	readonly created?: string | undefined;
-	readonly createdBy?: UserInfo | undefined;
-	readonly entityMapping?: any | undefined;
-	readonly isDeleted?: boolean | undefined;
+	readonly created?: string;
+	readonly createdBy?: UserInfo;
+	readonly entityMapping?: any;
+	readonly isDeleted?: boolean;
 	readonly itemsKeyValue: any;
-	readonly tenantId?: string | undefined;
-	readonly updated?: string | undefined;
-	readonly updatedBy?: UserInfo | undefined;
-	readonly watchlistItemId?: string | undefined;
-	readonly watchlistItemType?: string | undefined;
+	readonly tenantId?: string;
+	readonly updated?: string;
+	readonly updatedBy?: UserInfo;
+	readonly watchlistItemId?: string;
+	readonly watchlistItemType?: string;
 }
 export interface WatchlistProperties {
-	readonly contentType?: string | undefined;
-	readonly created?: string | undefined;
-	readonly createdBy?: UserInfo | undefined;
-	readonly defaultDuration?: string | undefined;
-	readonly description?: string | undefined;
+	readonly contentType?: string;
+	readonly created?: string;
+	readonly createdBy?: UserInfo;
+	readonly defaultDuration?: string;
+	readonly description?: string;
 	readonly displayName: string;
-	readonly isDeleted?: boolean | undefined;
+	readonly isDeleted?: boolean;
 	readonly itemsSearchKey: string;
-	readonly labels?: string[] | undefined;
-	readonly numberOfLinesToSkip?: number | undefined;
+	readonly labels?: string[];
+	readonly numberOfLinesToSkip?: number;
 	readonly provider: string;
-	readonly rawContent?: string | undefined;
+	readonly rawContent?: string;
 	readonly source: "Local file" | "Remote storage";
-	readonly tenantId?: string | undefined;
-	readonly updated?: string | undefined;
-	readonly updatedBy?: UserInfo | undefined;
-	readonly uploadStatus?: string | undefined;
-	readonly watchlistAlias?: string | undefined;
-	readonly watchlistId?: string | undefined;
-	readonly watchlistType?: string | undefined;
+	readonly tenantId?: string;
+	readonly updated?: string;
+	readonly updatedBy?: UserInfo;
+	readonly uploadStatus?: string;
+	readonly watchlistAlias?: string;
+	readonly watchlistId?: string;
+	readonly watchlistType?: string;
 }
 export default {
 	incidents: incidents,

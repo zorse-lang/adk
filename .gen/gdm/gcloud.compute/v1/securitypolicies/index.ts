@@ -7,118 +7,117 @@ export class SecurityPolicies
 	constructor(entity: ADKEntity, options: SecurityPoliciesComponentInputs) {
 		super(entity, options.name, "compute.v1.SecurityPolicies", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
 }
 export interface SecurityPoliciesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export interface SecurityPoliciesComponentInputs {
-	readonly adaptiveProtectionConfig?: SecurityPolicyAdaptiveProtectionConfig | undefined;
-	readonly advancedOptionsConfig?: SecurityPolicyAdvancedOptionsConfig | undefined;
-	readonly ddosProtectionConfig?: SecurityPolicyDdosProtectionConfig | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
+	readonly adaptiveProtectionConfig?: SecurityPolicyAdaptiveProtectionConfig;
+	readonly advancedOptionsConfig?: SecurityPolicyAdvancedOptionsConfig;
+	readonly ddosProtectionConfig?: SecurityPolicyDdosProtectionConfig;
+	readonly description?: string;
+	readonly fingerprint?: string;
 	readonly name: string;
-	readonly recaptchaOptionsConfig?: SecurityPolicyRecaptchaOptionsConfig | undefined;
-	readonly requestId?: string | undefined;
-	readonly rules?: SecurityPolicyRule[] | undefined;
-	readonly type: string;
-	readonly validateOnly?: boolean | undefined;
+	readonly recaptchaOptionsConfig?: SecurityPolicyRecaptchaOptionsConfig;
+	readonly requestId?: string;
+	readonly rules?: SecurityPolicyRule[];
+	readonly validateOnly?: boolean;
 }
 export interface Expr {
-	readonly description?: string | undefined;
-	readonly expression?: string | undefined;
-	readonly location?: string | undefined;
-	readonly title?: string | undefined;
+	readonly description?: string;
+	readonly expression?: string;
+	readonly location?: string;
+	readonly title?: string;
 }
 export interface SecurityPolicy {
-	readonly adaptiveProtectionConfig?: SecurityPolicyAdaptiveProtectionConfig | undefined;
-	readonly advancedOptionsConfig?: SecurityPolicyAdvancedOptionsConfig | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly ddosProtectionConfig?: SecurityPolicyDdosProtectionConfig | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly recaptchaOptionsConfig?: SecurityPolicyRecaptchaOptionsConfig | undefined;
-	readonly region?: string | undefined;
-	readonly rules?: SecurityPolicyRule[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly type?: string | undefined;
+	readonly adaptiveProtectionConfig?: SecurityPolicyAdaptiveProtectionConfig;
+	readonly advancedOptionsConfig?: SecurityPolicyAdvancedOptionsConfig;
+	readonly creationTimestamp?: string;
+	readonly ddosProtectionConfig?: SecurityPolicyDdosProtectionConfig;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly recaptchaOptionsConfig?: SecurityPolicyRecaptchaOptionsConfig;
+	readonly region?: string;
+	readonly rules?: SecurityPolicyRule[];
+	readonly selfLink?: string;
+	readonly type?: string;
 }
 export interface SecurityPolicyAdaptiveProtectionConfig {
-	readonly layer7DdosDefenseConfig?: SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig | undefined;
+	readonly layer7DdosDefenseConfig?: SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig;
 }
 export interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig {
-	readonly enable?: boolean | undefined;
-	readonly ruleVisibility?: string | undefined;
+	readonly enable?: boolean;
+	readonly ruleVisibility?: string;
 }
 export interface SecurityPolicyAdvancedOptionsConfig {
-	readonly jsonCustomConfig?: SecurityPolicyAdvancedOptionsConfigJsonCustomConfig | undefined;
-	readonly jsonParsing?: string | undefined;
-	readonly logLevel?: string | undefined;
+	readonly jsonCustomConfig?: SecurityPolicyAdvancedOptionsConfigJsonCustomConfig;
+	readonly jsonParsing?: string;
+	readonly logLevel?: string;
 }
 export interface SecurityPolicyAdvancedOptionsConfigJsonCustomConfig {
-	readonly contentTypes?: string[] | undefined;
+	readonly contentTypes?: string[];
 }
 export interface SecurityPolicyDdosProtectionConfig {
-	readonly ddosProtection?: string | undefined;
+	readonly ddosProtection?: string;
 }
 export interface SecurityPolicyRecaptchaOptionsConfig {
-	readonly redirectSiteKey?: string | undefined;
+	readonly redirectSiteKey?: string;
 }
 export interface SecurityPolicyRule {
-	readonly action?: string | undefined;
-	readonly description?: string | undefined;
-	readonly headerAction?: SecurityPolicyRuleHttpHeaderAction | undefined;
-	readonly kind?: string | undefined;
-	readonly match?: SecurityPolicyRuleMatcher | undefined;
-	readonly preview?: boolean | undefined;
-	readonly priority?: number | undefined;
-	readonly rateLimitOptions?: SecurityPolicyRuleRateLimitOptions | undefined;
-	readonly redirectOptions?: SecurityPolicyRuleRedirectOptions | undefined;
+	readonly action?: string;
+	readonly description?: string;
+	readonly headerAction?: SecurityPolicyRuleHttpHeaderAction;
+	readonly kind?: string;
+	readonly match?: SecurityPolicyRuleMatcher;
+	readonly preview?: boolean;
+	readonly priority?: number;
+	readonly rateLimitOptions?: SecurityPolicyRuleRateLimitOptions;
+	readonly redirectOptions?: SecurityPolicyRuleRedirectOptions;
 }
 export interface SecurityPolicyRuleHttpHeaderAction {
-	readonly requestHeadersToAdds?: SecurityPolicyRuleHttpHeaderActionHttpHeaderOption[] | undefined;
+	readonly requestHeadersToAdds?: SecurityPolicyRuleHttpHeaderActionHttpHeaderOption[];
 }
 export interface SecurityPolicyRuleHttpHeaderActionHttpHeaderOption {
-	readonly headerName?: string | undefined;
-	readonly headerValue?: string | undefined;
+	readonly headerName?: string;
+	readonly headerValue?: string;
 }
 export interface SecurityPolicyRuleMatcher {
-	readonly config?: SecurityPolicyRuleMatcherConfig | undefined;
-	readonly expr?: Expr | undefined;
-	readonly versionedExpr?: string | undefined;
+	readonly config?: SecurityPolicyRuleMatcherConfig;
+	readonly expr?: Expr;
+	readonly versionedExpr?: string;
 }
 export interface SecurityPolicyRuleMatcherConfig {
-	readonly srcIpRanges?: string[] | undefined;
+	readonly srcIpRanges?: string[];
 }
 export interface SecurityPolicyRuleRateLimitOptions {
-	readonly banDurationSec?: number | undefined;
-	readonly banThreshold?: SecurityPolicyRuleRateLimitOptionsThreshold | undefined;
-	readonly conformAction?: string | undefined;
-	readonly enforceOnKey?: string | undefined;
-	readonly enforceOnKeyName?: string | undefined;
-	readonly exceedAction?: string | undefined;
-	readonly exceedRedirectOptions?: SecurityPolicyRuleRedirectOptions | undefined;
-	readonly rateLimitThreshold?: SecurityPolicyRuleRateLimitOptionsThreshold | undefined;
+	readonly banDurationSec?: number;
+	readonly banThreshold?: SecurityPolicyRuleRateLimitOptionsThreshold;
+	readonly conformAction?: string;
+	readonly enforceOnKey?: string;
+	readonly enforceOnKeyName?: string;
+	readonly exceedAction?: string;
+	readonly exceedRedirectOptions?: SecurityPolicyRuleRedirectOptions;
+	readonly rateLimitThreshold?: SecurityPolicyRuleRateLimitOptionsThreshold;
 }
 export interface SecurityPolicyRuleRateLimitOptionsThreshold {
-	readonly count?: number | undefined;
-	readonly intervalSec?: number | undefined;
+	readonly count?: number;
+	readonly intervalSec?: number;
 }
 export interface SecurityPolicyRuleRedirectOptions {
-	readonly target?: string | undefined;
-	readonly type?: string | undefined;
+	readonly target?: string;
+	readonly type?: string;
 }
 export default {
 	SecurityPolicies: SecurityPolicies,

@@ -18,7 +18,7 @@ export interface diagnosticSettingsComponentOutputs {
 }
 export interface diagnosticSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: DiagnosticSettings | undefined;
+	readonly properties?: DiagnosticSettings;
 }
 export class diagnosticSettingsCategories
 	extends ArmResource<diagnosticSettingsCategoriesComponentInputs>
@@ -38,31 +38,31 @@ export interface diagnosticSettingsCategoriesComponentOutputs {
 }
 export interface diagnosticSettingsCategoriesComponentInputs {
 	readonly name: string;
-	readonly properties?: DiagnosticSettingsCategory | undefined;
+	readonly properties?: DiagnosticSettingsCategory;
 }
 export interface DiagnosticSettings {
-	readonly eventHubAuthorizationRuleId?: string | undefined;
-	readonly eventHubName?: string | undefined;
-	readonly logAnalyticsDestinationType?: string | undefined;
-	readonly logs?: LogSettings[] | undefined;
-	readonly metrics?: MetricSettings[] | undefined;
-	readonly serviceBusRuleId?: string | undefined;
-	readonly storageAccountId?: string | undefined;
-	readonly workspaceId?: string | undefined;
+	readonly eventHubAuthorizationRuleId?: string;
+	readonly eventHubName?: string;
+	readonly logAnalyticsDestinationType?: string;
+	readonly logs?: LogSettings[];
+	readonly metrics?: MetricSettings[];
+	readonly serviceBusRuleId?: string;
+	readonly storageAccountId?: string;
+	readonly workspaceId?: string;
 }
 export interface DiagnosticSettingsCategory {
-	readonly categoryType?: "Logs" | undefined;
+	readonly categoryType?: "Logs";
 }
 export interface LogSettings {
-	readonly category?: string | undefined;
+	readonly category?: string;
 	readonly enabled: boolean;
-	readonly retentionPolicy?: RetentionPolicy | undefined;
+	readonly retentionPolicy?: RetentionPolicy;
 }
 export interface MetricSettings {
-	readonly category?: string | undefined;
+	readonly category?: string;
 	readonly enabled: boolean;
-	readonly retentionPolicy?: RetentionPolicy | undefined;
-	readonly timeGrain?: string | undefined;
+	readonly retentionPolicy?: RetentionPolicy;
+	readonly timeGrain?: string;
 }
 export interface RetentionPolicy {
 	readonly days: number;

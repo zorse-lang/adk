@@ -10,9 +10,9 @@ export interface AliasComponentInputs {
 	readonly FunctionName: string;
 	readonly FunctionVersion: string;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ProvisionedConcurrencyConfig?: (ProvisionedConcurrencyConfiguration | undefined) | undefined;
-	readonly RoutingConfig?: (AliasRoutingConfiguration | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly ProvisionedConcurrencyConfig?: ProvisionedConcurrencyConfiguration | undefined;
+	readonly RoutingConfig?: AliasRoutingConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export class CodeSigningConfig
@@ -31,8 +31,8 @@ export interface CodeSigningConfigComponentOutputs {
 }
 export interface CodeSigningConfigComponentInputs {
 	readonly AllowedPublishers: AllowedPublishers;
-	readonly CodeSigningPolicies?: (CodeSigningPolicies | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly CodeSigningPolicies?: CodeSigningPolicies | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EventInvokeConfig
@@ -47,9 +47,9 @@ export interface EventInvokeConfigComponentOutputs {}
 export interface EventInvokeConfigComponentInputs {
 	readonly FunctionName: string;
 	readonly Qualifier: string;
-	readonly DestinationConfig?: (DestinationConfig | undefined) | undefined;
-	readonly MaximumEventAgeInSeconds?: (number | undefined) | undefined;
-	readonly MaximumRetryAttempts?: (number | undefined) | undefined;
+	readonly DestinationConfig?: DestinationConfig | undefined;
+	readonly MaximumEventAgeInSeconds?: number | undefined;
+	readonly MaximumRetryAttempts?: number | undefined;
 	readonly LogicalId: string;
 }
 export class EventSourceMapping
@@ -66,27 +66,27 @@ export interface EventSourceMappingComponentOutputs {
 }
 export interface EventSourceMappingComponentInputs {
 	readonly FunctionName: string;
-	readonly AmazonManagedKafkaEventSourceConfig?: (AmazonManagedKafkaEventSourceConfig | undefined) | undefined;
-	readonly BatchSize?: (number | undefined) | undefined;
-	readonly BisectBatchOnFunctionError?: (boolean | undefined) | undefined;
-	readonly DestinationConfig?: (DestinationConfig | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly EventSourceArn?: (string | undefined) | undefined;
-	readonly FilterCriteria?: (FilterCriteria | undefined) | undefined;
-	readonly FunctionResponseTypes?: (string[] | undefined) | undefined;
-	readonly MaximumBatchingWindowInSeconds?: (number | undefined) | undefined;
-	readonly MaximumRecordAgeInSeconds?: (number | undefined) | undefined;
-	readonly MaximumRetryAttempts?: (number | undefined) | undefined;
-	readonly ParallelizationFactor?: (number | undefined) | undefined;
-	readonly Queues?: (string[] | undefined) | undefined;
-	readonly ScalingConfig?: (ScalingConfig | undefined) | undefined;
-	readonly SelfManagedEventSource?: (SelfManagedEventSource | undefined) | undefined;
-	readonly SelfManagedKafkaEventSourceConfig?: (SelfManagedKafkaEventSourceConfig | undefined) | undefined;
-	readonly SourceAccessConfigurations?: (SourceAccessConfiguration[] | undefined) | undefined;
-	readonly StartingPosition?: (string | undefined) | undefined;
-	readonly StartingPositionTimestamp?: (number | undefined) | undefined;
-	readonly Topics?: (string[] | undefined) | undefined;
-	readonly TumblingWindowInSeconds?: (number | undefined) | undefined;
+	readonly AmazonManagedKafkaEventSourceConfig?: AmazonManagedKafkaEventSourceConfig | undefined;
+	readonly BatchSize?: number | undefined;
+	readonly BisectBatchOnFunctionError?: boolean | undefined;
+	readonly DestinationConfig?: DestinationConfig | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly EventSourceArn?: string | undefined;
+	readonly FilterCriteria?: FilterCriteria | undefined;
+	readonly FunctionResponseTypes?: string[] | undefined;
+	readonly MaximumBatchingWindowInSeconds?: number | undefined;
+	readonly MaximumRecordAgeInSeconds?: number | undefined;
+	readonly MaximumRetryAttempts?: number | undefined;
+	readonly ParallelizationFactor?: number | undefined;
+	readonly Queues?: string[] | undefined;
+	readonly ScalingConfig?: ScalingConfig | undefined;
+	readonly SelfManagedEventSource?: SelfManagedEventSource | undefined;
+	readonly SelfManagedKafkaEventSourceConfig?: SelfManagedKafkaEventSourceConfig | undefined;
+	readonly SourceAccessConfigurations?: SourceAccessConfiguration[] | undefined;
+	readonly StartingPosition?: string | undefined;
+	readonly StartingPositionTimestamp?: number | undefined;
+	readonly Topics?: string[] | undefined;
+	readonly TumblingWindowInSeconds?: number | undefined;
 	readonly LogicalId: string;
 }
 export class FunctionInstance extends CfnResource<FunctionComponentInputs> implements FunctionComponentOutputs {
@@ -105,27 +105,27 @@ export interface FunctionComponentOutputs {
 export interface FunctionComponentInputs {
 	readonly Code: Code;
 	readonly Role: string;
-	readonly Architectures?: (string[] | undefined) | undefined;
-	readonly CodeSigningConfigArn?: (string | undefined) | undefined;
-	readonly DeadLetterConfig?: (DeadLetterConfig | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Environment?: (Environment | undefined) | undefined;
-	readonly EphemeralStorage?: (EphemeralStorage | undefined) | undefined;
-	readonly FileSystemConfigs?: (FileSystemConfig[] | undefined) | undefined;
-	readonly FunctionName?: (string | undefined) | undefined;
-	readonly Handler?: (string | undefined) | undefined;
-	readonly ImageConfig?: (ImageConfig | undefined) | undefined;
-	readonly KmsKeyArn?: (string | undefined) | undefined;
-	readonly Layers?: (string[] | undefined) | undefined;
-	readonly MemorySize?: (number | undefined) | undefined;
-	readonly PackageType?: (string | undefined) | undefined;
-	readonly ReservedConcurrentExecutions?: (number | undefined) | undefined;
-	readonly Runtime?: (string | undefined) | undefined;
-	readonly SnapStart?: (SnapStart | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
-	readonly TracingConfig?: (TracingConfig | undefined) | undefined;
-	readonly VpcConfig?: (VpcConfig | undefined) | undefined;
+	readonly Architectures?: string[] | undefined;
+	readonly CodeSigningConfigArn?: string | undefined;
+	readonly DeadLetterConfig?: DeadLetterConfig | undefined;
+	readonly Description?: string | undefined;
+	readonly Environment?: Environment | undefined;
+	readonly EphemeralStorage?: EphemeralStorage | undefined;
+	readonly FileSystemConfigs?: FileSystemConfig[] | undefined;
+	readonly FunctionName?: string | undefined;
+	readonly Handler?: string | undefined;
+	readonly ImageConfig?: ImageConfig | undefined;
+	readonly KmsKeyArn?: string | undefined;
+	readonly Layers?: string[] | undefined;
+	readonly MemorySize?: number | undefined;
+	readonly PackageType?: string | undefined;
+	readonly ReservedConcurrentExecutions?: number | undefined;
+	readonly Runtime?: string | undefined;
+	readonly SnapStart?: SnapStart | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Timeout?: number | undefined;
+	readonly TracingConfig?: TracingConfig | undefined;
+	readonly VpcConfig?: VpcConfig | undefined;
 	readonly LogicalId: string;
 }
 export class LayerVersion extends CfnResource<LayerVersionComponentInputs> implements LayerVersionComponentOutputs {
@@ -136,11 +136,11 @@ export class LayerVersion extends CfnResource<LayerVersionComponentInputs> imple
 export interface LayerVersionComponentOutputs {}
 export interface LayerVersionComponentInputs {
 	readonly Content: Content;
-	readonly CompatibleArchitectures?: (string[] | undefined) | undefined;
-	readonly CompatibleRuntimes?: (string[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly LayerName?: (string | undefined) | undefined;
-	readonly LicenseInfo?: (string | undefined) | undefined;
+	readonly CompatibleArchitectures?: string[] | undefined;
+	readonly CompatibleRuntimes?: string[] | undefined;
+	readonly Description?: string | undefined;
+	readonly LayerName?: string | undefined;
+	readonly LicenseInfo?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LayerVersionPermission
@@ -156,7 +156,7 @@ export interface LayerVersionPermissionComponentInputs {
 	readonly Action: string;
 	readonly LayerVersionArn: string;
 	readonly Principal: string;
-	readonly OrganizationId?: (string | undefined) | undefined;
+	readonly OrganizationId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Permission extends CfnResource<PermissionComponentInputs> implements PermissionComponentOutputs {
@@ -169,11 +169,11 @@ export interface PermissionComponentInputs {
 	readonly Action: string;
 	readonly FunctionName: string;
 	readonly Principal: string;
-	readonly EventSourceToken?: (string | undefined) | undefined;
-	readonly FunctionUrlAuthType?: (string | undefined) | undefined;
-	readonly PrincipalOrgID?: (string | undefined) | undefined;
-	readonly SourceAccount?: (string | undefined) | undefined;
-	readonly SourceArn?: (string | undefined) | undefined;
+	readonly EventSourceToken?: string | undefined;
+	readonly FunctionUrlAuthType?: string | undefined;
+	readonly PrincipalOrgID?: string | undefined;
+	readonly SourceAccount?: string | undefined;
+	readonly SourceArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Url extends CfnResource<UrlComponentInputs> implements UrlComponentOutputs {
@@ -190,9 +190,9 @@ export interface UrlComponentOutputs {
 export interface UrlComponentInputs {
 	readonly AuthType: string;
 	readonly TargetFunctionArn: string;
-	readonly Cors?: (Cors | undefined) | undefined;
-	readonly InvokeMode?: (string | undefined) | undefined;
-	readonly Qualifier?: (string | undefined) | undefined;
+	readonly Cors?: Cors | undefined;
+	readonly InvokeMode?: string | undefined;
+	readonly Qualifier?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Version extends CfnResource<VersionComponentInputs> implements VersionComponentOutputs {
@@ -206,9 +206,9 @@ export interface VersionComponentOutputs {
 }
 export interface VersionComponentInputs {
 	readonly FunctionName: string;
-	readonly CodeSha256?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ProvisionedConcurrencyConfig?: (ProvisionedConcurrencyConfiguration | undefined) | undefined;
+	readonly CodeSha256?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly ProvisionedConcurrencyConfig?: ProvisionedConcurrencyConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export interface AliasRoutingConfiguration {
@@ -228,8 +228,8 @@ export interface CodeSigningPolicies {
 	readonly UntrustedArtifactOnDeployment: string;
 }
 export interface DestinationConfig {
-	readonly OnFailure?: (OnFailure | undefined) | undefined;
-	readonly OnSuccess?: (OnSuccess | undefined) | undefined;
+	readonly OnFailure?: OnFailure | undefined;
+	readonly OnSuccess?: OnSuccess | undefined;
 }
 export interface OnFailure {
 	readonly Destination: string;
@@ -238,42 +238,42 @@ export interface OnSuccess {
 	readonly Destination: string;
 }
 export interface AmazonManagedKafkaEventSourceConfig {
-	readonly ConsumerGroupId?: (string | undefined) | undefined;
+	readonly ConsumerGroupId?: string | undefined;
 }
 export interface Endpoints {
-	readonly KafkaBootstrapServers?: (string[] | undefined) | undefined;
+	readonly KafkaBootstrapServers?: string[] | undefined;
 }
 export interface Filter {
-	readonly Pattern?: (string | undefined) | undefined;
+	readonly Pattern?: string | undefined;
 }
 export interface FilterCriteria {
-	readonly Filters?: (Filter[] | undefined) | undefined;
+	readonly Filters?: Filter[] | undefined;
 }
 export interface ScalingConfig {
-	readonly MaximumConcurrency?: (number | undefined) | undefined;
+	readonly MaximumConcurrency?: number | undefined;
 }
 export interface SelfManagedEventSource {
-	readonly Endpoints?: (Endpoints | undefined) | undefined;
+	readonly Endpoints?: Endpoints | undefined;
 }
 export interface SelfManagedKafkaEventSourceConfig {
-	readonly ConsumerGroupId?: (string | undefined) | undefined;
+	readonly ConsumerGroupId?: string | undefined;
 }
 export interface SourceAccessConfiguration {
-	readonly Type?: (string | undefined) | undefined;
-	readonly URI?: (string | undefined) | undefined;
+	readonly Type?: string | undefined;
+	readonly URI?: string | undefined;
 }
 export interface Code {
-	readonly ImageUri?: (string | undefined) | undefined;
-	readonly S3Bucket?: (string | undefined) | undefined;
-	readonly S3Key?: (string | undefined) | undefined;
-	readonly S3ObjectVersion?: (string | undefined) | undefined;
-	readonly ZipFile?: (string | undefined) | undefined;
+	readonly ImageUri?: string | undefined;
+	readonly S3Bucket?: string | undefined;
+	readonly S3Key?: string | undefined;
+	readonly S3ObjectVersion?: string | undefined;
+	readonly ZipFile?: string | undefined;
 }
 export interface DeadLetterConfig {
-	readonly TargetArn?: (string | undefined) | undefined;
+	readonly TargetArn?: string | undefined;
 }
 export interface Environment {
-	readonly Variables?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Variables?: { [key: string]: string } | undefined;
 }
 export interface EphemeralStorage {
 	readonly Size: number;
@@ -283,36 +283,36 @@ export interface FileSystemConfig {
 	readonly LocalMountPath: string;
 }
 export interface ImageConfig {
-	readonly Command?: (string[] | undefined) | undefined;
-	readonly EntryPoint?: (string[] | undefined) | undefined;
-	readonly WorkingDirectory?: (string | undefined) | undefined;
+	readonly Command?: string[] | undefined;
+	readonly EntryPoint?: string[] | undefined;
+	readonly WorkingDirectory?: string | undefined;
 }
 export interface SnapStart {
 	readonly ApplyOn: string;
 }
 export interface SnapStartResponse {
-	readonly ApplyOn?: (string | undefined) | undefined;
-	readonly OptimizationStatus?: (string | undefined) | undefined;
+	readonly ApplyOn?: string | undefined;
+	readonly OptimizationStatus?: string | undefined;
 }
 export interface TracingConfig {
-	readonly Mode?: (string | undefined) | undefined;
+	readonly Mode?: string | undefined;
 }
 export interface VpcConfig {
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SubnetIds?: (string[] | undefined) | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SubnetIds?: string[] | undefined;
 }
 export interface Content {
 	readonly S3Bucket: string;
 	readonly S3Key: string;
-	readonly S3ObjectVersion?: (string | undefined) | undefined;
+	readonly S3ObjectVersion?: string | undefined;
 }
 export interface Cors {
-	readonly AllowCredentials?: (boolean | undefined) | undefined;
-	readonly AllowHeaders?: (string[] | undefined) | undefined;
-	readonly AllowMethods?: (string[] | undefined) | undefined;
-	readonly AllowOrigins?: (string[] | undefined) | undefined;
-	readonly ExposeHeaders?: (string[] | undefined) | undefined;
-	readonly MaxAge?: (number | undefined) | undefined;
+	readonly AllowCredentials?: boolean | undefined;
+	readonly AllowHeaders?: string[] | undefined;
+	readonly AllowMethods?: string[] | undefined;
+	readonly AllowOrigins?: string[] | undefined;
+	readonly ExposeHeaders?: string[] | undefined;
+	readonly MaxAge?: number | undefined;
 }
 export default {
 	Alias: Alias,

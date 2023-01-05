@@ -4,43 +4,42 @@ export class TargetPools extends GdmResource<TargetPoolsComponentInputs> impleme
 	constructor(entity: ADKEntity, options: TargetPoolsComponentInputs) {
 		super(entity, options.name, "compute.beta.TargetPools", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
 }
 export interface TargetPoolsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export interface TargetPoolsComponentInputs {
-	readonly backupPool?: string | undefined;
-	readonly description?: string | undefined;
-	readonly failoverRatio?: number | undefined;
-	readonly healthChecks?: string[] | undefined;
-	readonly instances?: string[] | undefined;
+	readonly backupPool?: string;
+	readonly description?: string;
+	readonly failoverRatio?: number;
+	readonly healthChecks?: string[];
+	readonly instances?: string[];
 	readonly name: string;
-	readonly requestId?: string | undefined;
-	readonly sessionAffinity?: string | undefined;
-	readonly type: string;
+	readonly requestId?: string;
+	readonly sessionAffinity?: string;
 }
 export interface TargetPool {
-	readonly backupPool?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly failoverRatio?: number | undefined;
-	readonly healthChecks?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly instances?: string[] | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly sessionAffinity?: string | undefined;
+	readonly backupPool?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly failoverRatio?: number;
+	readonly healthChecks?: string[];
+	readonly id?: string;
+	readonly instances?: string[];
+	readonly kind?: string;
+	readonly name?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly sessionAffinity?: string;
 }
 export default {
 	TargetPools: TargetPools,

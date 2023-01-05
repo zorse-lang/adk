@@ -15,7 +15,6 @@ export class ServicesConsumerQuotaMetricsLimitsProducerQuotaPolicies
 }
 export interface ServicesConsumerQuotaMetricsLimitsProducerQuotaPoliciesComponentOutputs {}
 export interface ServicesConsumerQuotaMetricsLimitsProducerQuotaPoliciesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

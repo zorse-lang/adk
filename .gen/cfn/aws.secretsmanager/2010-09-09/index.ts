@@ -9,7 +9,7 @@ export interface ResourcePolicyComponentOutputs {}
 export interface ResourcePolicyComponentInputs {
 	readonly ResourcePolicy: any;
 	readonly SecretId: string;
-	readonly BlockPublicPolicy?: (boolean | undefined) | undefined;
+	readonly BlockPublicPolicy?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class RotationSchedule
@@ -23,10 +23,10 @@ export class RotationSchedule
 export interface RotationScheduleComponentOutputs {}
 export interface RotationScheduleComponentInputs {
 	readonly SecretId: string;
-	readonly HostedRotationLambda?: (HostedRotationLambda | undefined) | undefined;
-	readonly RotateImmediatelyOnUpdate?: (boolean | undefined) | undefined;
-	readonly RotationLambdaARN?: (string | undefined) | undefined;
-	readonly RotationRules?: (RotationRules | undefined) | undefined;
+	readonly HostedRotationLambda?: HostedRotationLambda | undefined;
+	readonly RotateImmediatelyOnUpdate?: boolean | undefined;
+	readonly RotationLambdaARN?: string | undefined;
+	readonly RotationRules?: RotationRules | undefined;
 	readonly LogicalId: string;
 }
 export class Secret extends CfnResource<SecretComponentInputs> implements SecretComponentOutputs {
@@ -36,13 +36,13 @@ export class Secret extends CfnResource<SecretComponentInputs> implements Secret
 }
 export interface SecretComponentOutputs {}
 export interface SecretComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly GenerateSecretString?: (GenerateSecretString | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly ReplicaRegions?: (ReplicaRegion[] | undefined) | undefined;
-	readonly SecretString?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly GenerateSecretString?: GenerateSecretString | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly ReplicaRegions?: ReplicaRegion[] | undefined;
+	readonly SecretString?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class SecretTargetAttachment
@@ -61,36 +61,36 @@ export interface SecretTargetAttachmentComponentInputs {
 	readonly LogicalId: string;
 }
 export interface HostedRotationLambda {
-	readonly ExcludeCharacters?: (string | undefined) | undefined;
-	readonly KmsKeyArn?: (string | undefined) | undefined;
-	readonly MasterSecretArn?: (string | undefined) | undefined;
-	readonly MasterSecretKmsKeyArn?: (string | undefined) | undefined;
-	readonly RotationLambdaName?: (string | undefined) | undefined;
+	readonly ExcludeCharacters?: string | undefined;
+	readonly KmsKeyArn?: string | undefined;
+	readonly MasterSecretArn?: string | undefined;
+	readonly MasterSecretKmsKeyArn?: string | undefined;
+	readonly RotationLambdaName?: string | undefined;
 	readonly RotationType: string;
-	readonly SuperuserSecretArn?: (string | undefined) | undefined;
-	readonly SuperuserSecretKmsKeyArn?: (string | undefined) | undefined;
-	readonly VpcSecurityGroupIds?: (string | undefined) | undefined;
-	readonly VpcSubnetIds?: (string | undefined) | undefined;
+	readonly SuperuserSecretArn?: string | undefined;
+	readonly SuperuserSecretKmsKeyArn?: string | undefined;
+	readonly VpcSecurityGroupIds?: string | undefined;
+	readonly VpcSubnetIds?: string | undefined;
 }
 export interface RotationRules {
-	readonly AutomaticallyAfterDays?: (number | undefined) | undefined;
-	readonly Duration?: (string | undefined) | undefined;
-	readonly ScheduleExpression?: (string | undefined) | undefined;
+	readonly AutomaticallyAfterDays?: number | undefined;
+	readonly Duration?: string | undefined;
+	readonly ScheduleExpression?: string | undefined;
 }
 export interface GenerateSecretString {
-	readonly ExcludeCharacters?: (string | undefined) | undefined;
-	readonly ExcludeLowercase?: (boolean | undefined) | undefined;
-	readonly ExcludeNumbers?: (boolean | undefined) | undefined;
-	readonly ExcludePunctuation?: (boolean | undefined) | undefined;
-	readonly ExcludeUppercase?: (boolean | undefined) | undefined;
-	readonly GenerateStringKey?: (string | undefined) | undefined;
-	readonly IncludeSpace?: (boolean | undefined) | undefined;
-	readonly PasswordLength?: (number | undefined) | undefined;
-	readonly RequireEachIncludedType?: (boolean | undefined) | undefined;
-	readonly SecretStringTemplate?: (string | undefined) | undefined;
+	readonly ExcludeCharacters?: string | undefined;
+	readonly ExcludeLowercase?: boolean | undefined;
+	readonly ExcludeNumbers?: boolean | undefined;
+	readonly ExcludePunctuation?: boolean | undefined;
+	readonly ExcludeUppercase?: boolean | undefined;
+	readonly GenerateStringKey?: string | undefined;
+	readonly IncludeSpace?: boolean | undefined;
+	readonly PasswordLength?: number | undefined;
+	readonly RequireEachIncludedType?: boolean | undefined;
+	readonly SecretStringTemplate?: string | undefined;
 }
 export interface ReplicaRegion {
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
 	readonly Region: string;
 }
 export default {

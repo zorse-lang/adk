@@ -15,7 +15,7 @@ export interface associationsComponentOutputs {
 }
 export interface associationsComponentInputs {
 	readonly name: string;
-	readonly properties?: AssociationProperties | undefined;
+	readonly properties?: AssociationProperties;
 }
 export class resourceProviders
 	extends ArmResource<resourceProvidersComponentInputs>
@@ -36,35 +36,35 @@ export interface resourceProvidersComponentOutputs {
 export interface resourceProvidersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CustomRPManifestProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: CustomRPManifestProperties;
+	readonly tags?: ResourceTags;
 }
 export interface AssociationProperties {
-	readonly provisioningState?: ("Accepted" | "Deleting" | "Failed" | "Running" | "Succeeded") | undefined;
-	readonly targetResourceId?: string | undefined;
+	readonly provisioningState?: "Accepted" | "Deleting" | "Failed" | "Running" | "Succeeded";
+	readonly targetResourceId?: string;
 }
 export interface CustomRPActionRouteDefinition {
 	readonly endpoint: string;
 	readonly name: string;
-	readonly routingType?: "Proxy" | undefined;
+	readonly routingType?: "Proxy";
 }
 export interface CustomRPManifestProperties {
-	readonly actions?: CustomRPActionRouteDefinition[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Deleting" | "Failed" | "Running" | "Succeeded") | undefined;
-	readonly resourceTypes?: CustomRPResourceTypeRouteDefinition[] | undefined;
-	readonly validations?: CustomRPValidations[] | undefined;
+	readonly actions?: CustomRPActionRouteDefinition[];
+	readonly provisioningState?: "Accepted" | "Deleting" | "Failed" | "Running" | "Succeeded";
+	readonly resourceTypes?: CustomRPResourceTypeRouteDefinition[];
+	readonly validations?: CustomRPValidations[];
 }
 export interface CustomRPResourceTypeRouteDefinition {
 	readonly endpoint: string;
 	readonly name: string;
-	readonly routingType?: ("Proxy" | "Proxy,Cache") | undefined;
+	readonly routingType?: "Proxy" | "Proxy,Cache";
 }
 export interface CustomRPValidations {
 	readonly specification: string;
-	readonly validationType?: "Swagger" | undefined;
+	readonly validationType?: "Swagger";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	associations: associations,

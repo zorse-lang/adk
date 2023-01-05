@@ -14,13 +14,13 @@ export interface assignmentsComponentOutputs {
 	readonly type: "Microsoft.Security/assignments";
 }
 export interface assignmentsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AssignmentProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: AssignmentProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: Tags;
 }
 export class standards extends ArmResource<standardsComponentInputs> implements standardsComponentOutputs {
 	constructor(entity: ADKEntity, options: standardsComponentInputs) {
@@ -36,55 +36,55 @@ export interface standardsComponentOutputs {
 	readonly type: "Microsoft.Security/standards";
 }
 export interface standardsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: StandardProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: StandardProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: Tags;
 }
 export interface AssignedComponentItem {
-	readonly key?: string | undefined;
+	readonly key?: string;
 }
 export interface AssignedStandardItem {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface AssignmentProperties {
-	readonly additionalData?: AssignmentPropertiesAdditionalData | undefined;
-	readonly assignedComponent?: AssignedComponentItem | undefined;
-	readonly assignedStandard?: AssignedStandardItem | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly effect?: string | undefined;
-	readonly expiresOn?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly scope?: string | undefined;
+	readonly additionalData?: AssignmentPropertiesAdditionalData;
+	readonly assignedComponent?: AssignedComponentItem;
+	readonly assignedStandard?: AssignedStandardItem;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly effect?: string;
+	readonly expiresOn?: string;
+	readonly metadata?: any;
+	readonly scope?: string;
 }
 export interface AssignmentPropertiesAdditionalData {
-	readonly exemptionCategory?: string | undefined;
+	readonly exemptionCategory?: string;
 }
 export interface StandardComponentProperties {
-	readonly key?: string | undefined;
+	readonly key?: string;
 }
 export interface StandardProperties {
-	readonly category?: string | undefined;
-	readonly components?: StandardComponentProperties[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly standardType?: string | undefined;
-	readonly supportedClouds?: "AWS"[] | undefined;
+	readonly category?: string;
+	readonly components?: StandardComponentProperties[];
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly standardType?: string;
+	readonly supportedClouds?: "AWS"[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Tags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	assignments: assignments,

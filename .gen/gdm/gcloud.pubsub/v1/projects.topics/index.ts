@@ -7,32 +7,31 @@ export class ProjectsTopics extends GdmResource<ProjectsTopicsComponentInputs> i
 }
 export interface ProjectsTopicsComponentOutputs {}
 export interface ProjectsTopicsComponentInputs {
-	readonly kmsKeyName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly messageRetentionDuration?: string | undefined;
-	readonly messageStoragePolicy?: MessageStoragePolicy | undefined;
+	readonly kmsKeyName?: string;
+	readonly labels?: { [P in string]: string };
+	readonly messageRetentionDuration?: string;
+	readonly messageStoragePolicy?: MessageStoragePolicy;
 	readonly name: string;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly schemaSettings?: SchemaSettings | undefined;
-	readonly type: string;
+	readonly satisfiesPzs?: boolean;
+	readonly schemaSettings?: SchemaSettings;
 }
 export interface MessageStoragePolicy {
-	readonly allowedPersistenceRegions?: string[] | undefined;
+	readonly allowedPersistenceRegions?: string[];
 }
 export interface SchemaSettings {
-	readonly encoding?: string | undefined;
-	readonly firstRevisionId?: string | undefined;
-	readonly lastRevisionId?: string | undefined;
+	readonly encoding?: string;
+	readonly firstRevisionId?: string;
+	readonly lastRevisionId?: string;
 	readonly schema: string;
 }
 export interface Topic {
-	readonly kmsKeyName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly messageRetentionDuration?: string | undefined;
-	readonly messageStoragePolicy?: MessageStoragePolicy | undefined;
+	readonly kmsKeyName?: string;
+	readonly labels?: { [P in string]: string };
+	readonly messageRetentionDuration?: string;
+	readonly messageStoragePolicy?: MessageStoragePolicy;
 	readonly name: string;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly schemaSettings?: SchemaSettings | undefined;
+	readonly satisfiesPzs?: boolean;
+	readonly schemaSettings?: SchemaSettings;
 }
 export default {
 	ProjectsTopics: ProjectsTopics,

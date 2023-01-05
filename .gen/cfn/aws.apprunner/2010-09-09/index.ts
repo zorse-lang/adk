@@ -17,9 +17,9 @@ export interface ObservabilityConfigurationComponentOutputs {
 	readonly ObservabilityConfigurationRevision: number;
 }
 export interface ObservabilityConfigurationComponentInputs {
-	readonly ObservabilityConfigurationName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TraceConfiguration?: (TraceConfiguration | undefined) | undefined;
+	readonly ObservabilityConfigurationName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TraceConfiguration?: TraceConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export class Service extends CfnResource<ServiceComponentInputs> implements ServiceComponentOutputs {
@@ -39,14 +39,14 @@ export interface ServiceComponentOutputs {
 }
 export interface ServiceComponentInputs {
 	readonly SourceConfiguration: SourceConfiguration;
-	readonly AutoScalingConfigurationArn?: (string | undefined) | undefined;
-	readonly EncryptionConfiguration?: (EncryptionConfiguration | undefined) | undefined;
-	readonly HealthCheckConfiguration?: (HealthCheckConfiguration | undefined) | undefined;
-	readonly InstanceConfiguration?: (InstanceConfiguration | undefined) | undefined;
-	readonly NetworkConfiguration?: (NetworkConfiguration | undefined) | undefined;
-	readonly ObservabilityConfiguration?: (ServiceObservabilityConfiguration | undefined) | undefined;
-	readonly ServiceName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AutoScalingConfigurationArn?: string | undefined;
+	readonly EncryptionConfiguration?: EncryptionConfiguration | undefined;
+	readonly HealthCheckConfiguration?: HealthCheckConfiguration | undefined;
+	readonly InstanceConfiguration?: InstanceConfiguration | undefined;
+	readonly NetworkConfiguration?: NetworkConfiguration | undefined;
+	readonly ObservabilityConfiguration?: ServiceObservabilityConfiguration | undefined;
+	readonly ServiceName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class VpcConnector extends CfnResource<VpcConnectorComponentInputs> implements VpcConnectorComponentOutputs {
@@ -62,9 +62,9 @@ export interface VpcConnectorComponentOutputs {
 }
 export interface VpcConnectorComponentInputs {
 	readonly Subnets: string[];
-	readonly SecurityGroups?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VpcConnectorName?: (string | undefined) | undefined;
+	readonly SecurityGroups?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VpcConnectorName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class VpcIngressConnection
@@ -86,55 +86,55 @@ export interface VpcIngressConnectionComponentOutputs {
 export interface VpcIngressConnectionComponentInputs {
 	readonly IngressVpcConfiguration: IngressVpcConfiguration;
 	readonly ServiceArn: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VpcIngressConnectionName?: (string | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VpcIngressConnectionName?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface TraceConfiguration {
 	readonly Vendor: string;
 }
 export interface AuthenticationConfiguration {
-	readonly AccessRoleArn?: (string | undefined) | undefined;
-	readonly ConnectionArn?: (string | undefined) | undefined;
+	readonly AccessRoleArn?: string | undefined;
+	readonly ConnectionArn?: string | undefined;
 }
 export interface CodeConfiguration {
-	readonly CodeConfigurationValues?: (CodeConfigurationValues | undefined) | undefined;
+	readonly CodeConfigurationValues?: CodeConfigurationValues | undefined;
 	readonly ConfigurationSource: string;
 }
 export interface CodeConfigurationValues {
-	readonly BuildCommand?: (string | undefined) | undefined;
-	readonly Port?: (string | undefined) | undefined;
+	readonly BuildCommand?: string | undefined;
+	readonly Port?: string | undefined;
 	readonly Runtime: string;
-	readonly RuntimeEnvironmentVariables?: (KeyValuePair[] | undefined) | undefined;
-	readonly StartCommand?: (string | undefined) | undefined;
+	readonly RuntimeEnvironmentVariables?: KeyValuePair[] | undefined;
+	readonly StartCommand?: string | undefined;
 }
 export interface CodeRepository {
-	readonly CodeConfiguration?: (CodeConfiguration | undefined) | undefined;
+	readonly CodeConfiguration?: CodeConfiguration | undefined;
 	readonly RepositoryUrl: string;
 	readonly SourceCodeVersion: SourceCodeVersion;
 }
 export interface EgressConfiguration {
 	readonly EgressType: string;
-	readonly VpcConnectorArn?: (string | undefined) | undefined;
+	readonly VpcConnectorArn?: string | undefined;
 }
 export interface EncryptionConfiguration {
 	readonly KmsKey: string;
 }
 export interface HealthCheckConfiguration {
-	readonly HealthyThreshold?: (number | undefined) | undefined;
-	readonly Interval?: (number | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
-	readonly UnhealthyThreshold?: (number | undefined) | undefined;
+	readonly HealthyThreshold?: number | undefined;
+	readonly Interval?: number | undefined;
+	readonly Path?: string | undefined;
+	readonly Protocol?: string | undefined;
+	readonly Timeout?: number | undefined;
+	readonly UnhealthyThreshold?: number | undefined;
 }
 export interface ImageConfiguration {
-	readonly Port?: (string | undefined) | undefined;
-	readonly RuntimeEnvironmentVariables?: (KeyValuePair[] | undefined) | undefined;
-	readonly StartCommand?: (string | undefined) | undefined;
+	readonly Port?: string | undefined;
+	readonly RuntimeEnvironmentVariables?: KeyValuePair[] | undefined;
+	readonly StartCommand?: string | undefined;
 }
 export interface ImageRepository {
-	readonly ImageConfiguration?: (ImageConfiguration | undefined) | undefined;
+	readonly ImageConfiguration?: ImageConfiguration | undefined;
 	readonly ImageIdentifier: string;
 	readonly ImageRepositoryType: string;
 }
@@ -142,20 +142,20 @@ export interface IngressConfiguration {
 	readonly IsPubliclyAccessible: boolean;
 }
 export interface InstanceConfiguration {
-	readonly Cpu?: (string | undefined) | undefined;
-	readonly InstanceRoleArn?: (string | undefined) | undefined;
-	readonly Memory?: (string | undefined) | undefined;
+	readonly Cpu?: string | undefined;
+	readonly InstanceRoleArn?: string | undefined;
+	readonly Memory?: string | undefined;
 }
 export interface KeyValuePair {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface NetworkConfiguration {
-	readonly EgressConfiguration?: (EgressConfiguration | undefined) | undefined;
-	readonly IngressConfiguration?: (IngressConfiguration | undefined) | undefined;
+	readonly EgressConfiguration?: EgressConfiguration | undefined;
+	readonly IngressConfiguration?: IngressConfiguration | undefined;
 }
 export interface ServiceObservabilityConfiguration {
-	readonly ObservabilityConfigurationArn?: (string | undefined) | undefined;
+	readonly ObservabilityConfigurationArn?: string | undefined;
 	readonly ObservabilityEnabled: boolean;
 }
 export interface SourceCodeVersion {
@@ -163,10 +163,10 @@ export interface SourceCodeVersion {
 	readonly Value: string;
 }
 export interface SourceConfiguration {
-	readonly AuthenticationConfiguration?: (AuthenticationConfiguration | undefined) | undefined;
-	readonly AutoDeploymentsEnabled?: (boolean | undefined) | undefined;
-	readonly CodeRepository?: (CodeRepository | undefined) | undefined;
-	readonly ImageRepository?: (ImageRepository | undefined) | undefined;
+	readonly AuthenticationConfiguration?: AuthenticationConfiguration | undefined;
+	readonly AutoDeploymentsEnabled?: boolean | undefined;
+	readonly CodeRepository?: CodeRepository | undefined;
+	readonly ImageRepository?: ImageRepository | undefined;
 }
 export interface IngressVpcConfiguration {
 	readonly VpcEndpointId: string;

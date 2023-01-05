@@ -7,7 +7,6 @@ export class Channels extends GdmResource<ChannelsComponentInputs> implements Ch
 }
 export interface ChannelsComponentOutputs {}
 export interface ChannelsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

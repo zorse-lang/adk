@@ -11,16 +11,16 @@ export interface PipelineComponentOutputs {
 }
 export interface PipelineComponentInputs {
 	readonly Name: string;
-	readonly NotifyConfig?: (NotifyConfig | undefined) | undefined;
-	readonly Role?: (string | undefined) | undefined;
-	readonly Speed?: (string | undefined) | undefined;
-	readonly SpeedLevel?: (number | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
+	readonly NotifyConfig?: NotifyConfig | undefined;
+	readonly Role?: string | undefined;
+	readonly Speed?: string | undefined;
+	readonly SpeedLevel?: number | undefined;
+	readonly State?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface NotifyConfig {
-	readonly Topic?: (string | undefined) | undefined;
-	readonly QueueName?: (string | undefined) | undefined;
+	readonly Topic?: string | undefined;
+	readonly QueueName?: string | undefined;
 }
 export default {
 	Pipeline: Pipeline,

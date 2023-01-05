@@ -12,6 +12,7 @@ module.exports = {
   testTimeout: 10000,
   verbose: true,
   moduleNameMapper: {
+    "@zorse/adk/clouds/(.*)": "<rootDir>/.gen/$1",
     "@zorse/adk": "<rootDir>/src",
     "@zorse/adk/(.*)": "<rootDir>/src/$1",
   },
@@ -29,10 +30,10 @@ module.exports = {
   coverageReporters: ["html-spa"],
   coverageThreshold: {
     global: {
-      lines: 75,
-      branches: 75,
-      functions: 75,
-      statements: 75,
+      lines: 95,
+      branches: 95,
+      functions: 95,
+      statements: 95,
     },
   },
 };

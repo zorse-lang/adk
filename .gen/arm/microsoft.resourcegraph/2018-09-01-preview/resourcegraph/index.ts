@@ -14,20 +14,20 @@ export interface queriesComponentOutputs {
 	readonly type: "Microsoft.ResourceGraph/queries";
 }
 export interface queriesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: GraphQueryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: GraphQueryProperties;
+	readonly tags?: ResourceTags;
 }
 export interface GraphQueryProperties {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly query: string;
-	readonly resultKind?: "basic" | undefined;
-	readonly timeModified?: string | undefined;
+	readonly resultKind?: "basic";
+	readonly timeModified?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	queries: queries,

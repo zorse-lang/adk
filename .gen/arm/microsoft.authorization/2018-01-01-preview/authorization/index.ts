@@ -38,26 +38,26 @@ export interface roleDefinitionsComponentOutputs {
 }
 export interface roleDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: RoleDefinitionProperties | undefined;
+	readonly properties?: RoleDefinitionProperties;
 }
 export interface Permission {
-	readonly actions?: string[] | undefined;
-	readonly dataActions?: string[] | undefined;
-	readonly notActions?: string[] | undefined;
-	readonly notDataActions?: string[] | undefined;
+	readonly actions?: string[];
+	readonly dataActions?: string[];
+	readonly notActions?: string[];
+	readonly notDataActions?: string[];
 }
 export interface RoleAssignmentPropertiesOrRoleAssignmentPropertiesWithScope {
-	readonly canDelegate?: boolean | undefined;
+	readonly canDelegate?: boolean;
 	readonly principalId: string;
 	readonly roleDefinitionId: string;
-	readonly scope?: string | undefined;
+	readonly scope?: string;
 }
 export interface RoleDefinitionProperties {
-	readonly assignableScopes?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly permissions?: Permission[] | undefined;
-	readonly roleName?: string | undefined;
-	readonly type?: string | undefined;
+	readonly assignableScopes?: string[];
+	readonly description?: string;
+	readonly permissions?: Permission[];
+	readonly roleName?: string;
+	readonly type?: string;
 }
 export default {
 	roleAssignments: roleAssignments,

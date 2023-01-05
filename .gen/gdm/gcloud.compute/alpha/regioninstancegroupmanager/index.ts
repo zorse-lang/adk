@@ -1,150 +1,148 @@
 import { GdmResource, Entity as ADKEntity } from "@zorse/adk";
 
 export interface DistributionPolicy {
-	readonly targetShape?: string | undefined;
-	readonly zones?: DistributionPolicyZoneConfiguration[] | undefined;
+	readonly targetShape?: string;
+	readonly zones?: DistributionPolicyZoneConfiguration[];
 }
 export interface DistributionPolicyZoneConfiguration {
-	readonly zone?: string | undefined;
+	readonly zone?: string;
 }
 export interface FixedOrPercent {
-	readonly calculated?: number | undefined;
-	readonly fixed?: number | undefined;
-	readonly percent?: number | undefined;
+	readonly calculated?: number;
+	readonly fixed?: number;
+	readonly percent?: number;
 }
 export interface InstanceGroupManager {
-	readonly allInstancesConfig?: InstanceGroupManagerAllInstancesConfig | undefined;
-	readonly autoHealingPolicies?: InstanceGroupManagerAutoHealingPolicy[] | undefined;
-	readonly baseInstanceName?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly currentActions?: InstanceGroupManagerActionsSummary | undefined;
-	readonly description?: string | undefined;
-	readonly distributionPolicy?: DistributionPolicy | undefined;
-	readonly failoverAction?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly instanceGroup?: string | undefined;
-	readonly instanceLifecyclePolicy?: InstanceGroupManagerInstanceLifecyclePolicy | undefined;
-	readonly instanceTemplate?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly listManagedInstancesResults?: string | undefined;
-	readonly name?: string | undefined;
-	readonly namedPorts?: NamedPort[] | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly serviceAccount?: string | undefined;
-	readonly standbyPolicy?: InstanceGroupManagerStandbyPolicy | undefined;
-	readonly statefulPolicy?: StatefulPolicy | undefined;
-	readonly status?: InstanceGroupManagerStatus | undefined;
-	readonly targetPools?: string[] | undefined;
-	readonly targetSize?: number | undefined;
-	readonly targetStoppedSize?: number | undefined;
-	readonly targetSuspendedSize?: number | undefined;
-	readonly updatePolicy?: InstanceGroupManagerUpdatePolicy | undefined;
-	readonly versions?: InstanceGroupManagerVersion[] | undefined;
-	readonly zone?: string | undefined;
+	readonly allInstancesConfig?: InstanceGroupManagerAllInstancesConfig;
+	readonly autoHealingPolicies?: InstanceGroupManagerAutoHealingPolicy[];
+	readonly baseInstanceName?: string;
+	readonly creationTimestamp?: string;
+	readonly currentActions?: InstanceGroupManagerActionsSummary;
+	readonly description?: string;
+	readonly distributionPolicy?: DistributionPolicy;
+	readonly failoverAction?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly instanceGroup?: string;
+	readonly instanceLifecyclePolicy?: InstanceGroupManagerInstanceLifecyclePolicy;
+	readonly instanceTemplate?: string;
+	readonly kind?: string;
+	readonly listManagedInstancesResults?: string;
+	readonly name?: string;
+	readonly namedPorts?: NamedPort[];
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly serviceAccount?: string;
+	readonly standbyPolicy?: InstanceGroupManagerStandbyPolicy;
+	readonly statefulPolicy?: StatefulPolicy;
+	readonly status?: InstanceGroupManagerStatus;
+	readonly targetPools?: string[];
+	readonly targetSize?: number;
+	readonly targetStoppedSize?: number;
+	readonly targetSuspendedSize?: number;
+	readonly updatePolicy?: InstanceGroupManagerUpdatePolicy;
+	readonly versions?: InstanceGroupManagerVersion[];
+	readonly zone?: string;
 }
 export interface InstanceGroupManagerActionsSummary {
-	readonly abandoning?: number | undefined;
-	readonly creating?: number | undefined;
-	readonly creatingAtomically?: number | undefined;
-	readonly creatingWithoutRetries?: number | undefined;
-	readonly deleting?: number | undefined;
-	readonly none?: number | undefined;
-	readonly queuing?: number | undefined;
-	readonly recreating?: number | undefined;
-	readonly refreshing?: number | undefined;
-	readonly restarting?: number | undefined;
-	readonly resuming?: number | undefined;
-	readonly starting?: number | undefined;
-	readonly stopping?: number | undefined;
-	readonly suspending?: number | undefined;
-	readonly verifying?: number | undefined;
+	readonly abandoning?: number;
+	readonly creating?: number;
+	readonly creatingAtomically?: number;
+	readonly creatingWithoutRetries?: number;
+	readonly deleting?: number;
+	readonly none?: number;
+	readonly queuing?: number;
+	readonly recreating?: number;
+	readonly refreshing?: number;
+	readonly restarting?: number;
+	readonly resuming?: number;
+	readonly starting?: number;
+	readonly stopping?: number;
+	readonly suspending?: number;
+	readonly verifying?: number;
 }
 export interface InstanceGroupManagerAllInstancesConfig {
-	readonly properties?: InstancePropertiesPatch | undefined;
+	readonly properties?: InstancePropertiesPatch;
 }
 export interface InstanceGroupManagerAutoHealingPolicy {
-	readonly autoHealingTriggers?: InstanceGroupManagerAutoHealingPolicyAutoHealingTriggers | undefined;
-	readonly healthCheck?: string | undefined;
-	readonly initialDelaySec?: number | undefined;
-	readonly maxUnavailable?: FixedOrPercent | undefined;
+	readonly autoHealingTriggers?: InstanceGroupManagerAutoHealingPolicyAutoHealingTriggers;
+	readonly healthCheck?: string;
+	readonly initialDelaySec?: number;
+	readonly maxUnavailable?: FixedOrPercent;
 }
 export interface InstanceGroupManagerAutoHealingPolicyAutoHealingTriggers {
-	readonly onHealthCheck?: string | undefined;
+	readonly onHealthCheck?: string;
 }
 export interface InstanceGroupManagerInstanceLifecyclePolicy {
-	readonly defaultActionOnFailure?: string | undefined;
-	readonly forceUpdateOnRepair?: string | undefined;
-	readonly metadataBasedReadinessSignal?:
-		| InstanceGroupManagerInstanceLifecyclePolicyMetadataBasedReadinessSignal
-		| undefined;
+	readonly defaultActionOnFailure?: string;
+	readonly forceUpdateOnRepair?: string;
+	readonly metadataBasedReadinessSignal?: InstanceGroupManagerInstanceLifecyclePolicyMetadataBasedReadinessSignal;
 }
 export interface InstanceGroupManagerInstanceLifecyclePolicyMetadataBasedReadinessSignal {
-	readonly timeoutSec?: number | undefined;
+	readonly timeoutSec?: number;
 }
 export interface InstanceGroupManagerStandbyPolicy {
-	readonly initialDelaySec?: number | undefined;
+	readonly initialDelaySec?: number;
 }
 export interface InstanceGroupManagerStatus {
-	readonly allInstancesConfig?: InstanceGroupManagerStatusAllInstancesConfig | undefined;
-	readonly autoscaler?: string | undefined;
-	readonly isStable?: boolean | undefined;
-	readonly stateful?: InstanceGroupManagerStatusStateful | undefined;
-	readonly versionTarget?: InstanceGroupManagerStatusVersionTarget | undefined;
+	readonly allInstancesConfig?: InstanceGroupManagerStatusAllInstancesConfig;
+	readonly autoscaler?: string;
+	readonly isStable?: boolean;
+	readonly stateful?: InstanceGroupManagerStatusStateful;
+	readonly versionTarget?: InstanceGroupManagerStatusVersionTarget;
 }
 export interface InstanceGroupManagerStatusAllInstancesConfig {
-	readonly currentRevision?: string | undefined;
-	readonly effective?: boolean | undefined;
+	readonly currentRevision?: string;
+	readonly effective?: boolean;
 }
 export interface InstanceGroupManagerStatusStateful {
-	readonly hasStatefulConfig?: boolean | undefined;
-	readonly isStateful?: boolean | undefined;
-	readonly perInstanceConfigs?: InstanceGroupManagerStatusStatefulPerInstanceConfigs | undefined;
+	readonly hasStatefulConfig?: boolean;
+	readonly isStateful?: boolean;
+	readonly perInstanceConfigs?: InstanceGroupManagerStatusStatefulPerInstanceConfigs;
 }
 export interface InstanceGroupManagerStatusStatefulPerInstanceConfigs {
-	readonly allEffective?: boolean | undefined;
+	readonly allEffective?: boolean;
 }
 export interface InstanceGroupManagerStatusVersionTarget {
-	readonly isReached?: boolean | undefined;
+	readonly isReached?: boolean;
 }
 export interface InstanceGroupManagerUpdatePolicy {
-	readonly instanceRedistributionType?: string | undefined;
-	readonly maxSurge?: FixedOrPercent | undefined;
-	readonly maxUnavailable?: FixedOrPercent | undefined;
-	readonly minimalAction?: string | undefined;
-	readonly minReadySec?: number | undefined;
-	readonly mostDisruptiveAllowedAction?: string | undefined;
-	readonly replacementMethod?: string | undefined;
-	readonly type?: string | undefined;
+	readonly instanceRedistributionType?: string;
+	readonly maxSurge?: FixedOrPercent;
+	readonly maxUnavailable?: FixedOrPercent;
+	readonly minimalAction?: string;
+	readonly minReadySec?: number;
+	readonly mostDisruptiveAllowedAction?: string;
+	readonly replacementMethod?: string;
+	readonly type?: string;
 }
 export interface InstanceGroupManagerVersion {
-	readonly instanceTemplate?: string | undefined;
-	readonly name?: string | undefined;
-	readonly tag?: string | undefined;
-	readonly targetSize?: FixedOrPercent | undefined;
+	readonly instanceTemplate?: string;
+	readonly name?: string;
+	readonly tag?: string;
+	readonly targetSize?: FixedOrPercent;
 }
 export interface InstancePropertiesPatch {
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly metadata?: { [P in string]: string } | undefined;
+	readonly labels?: { [P in string]: string };
+	readonly metadata?: { [P in string]: string };
 }
 export interface NamedPort {
-	readonly name?: string | undefined;
-	readonly port?: number | undefined;
+	readonly name?: string;
+	readonly port?: number;
 }
 export interface StatefulPolicy {
-	readonly preservedState?: StatefulPolicyPreservedState | undefined;
+	readonly preservedState?: StatefulPolicyPreservedState;
 }
 export interface StatefulPolicyPreservedState {
-	readonly disks?: { [P in string]: StatefulPolicyPreservedStateDiskDevice } | undefined;
-	readonly externalIPs?: { [P in string]: StatefulPolicyPreservedStateNetworkIp } | undefined;
-	readonly internalIPs?: { [P in string]: StatefulPolicyPreservedStateNetworkIp } | undefined;
+	readonly disks?: { [P in string]: StatefulPolicyPreservedStateDiskDevice };
+	readonly externalIPs?: { [P in string]: StatefulPolicyPreservedStateNetworkIp };
+	readonly internalIPs?: { [P in string]: StatefulPolicyPreservedStateNetworkIp };
 }
 export interface StatefulPolicyPreservedStateDiskDevice {
-	readonly autoDelete?: string | undefined;
+	readonly autoDelete?: string;
 }
 export interface StatefulPolicyPreservedStateNetworkIp {
-	readonly autoDelete?: string | undefined;
+	readonly autoDelete?: string;
 }
 export default {};

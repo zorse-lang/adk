@@ -3,6 +3,7 @@ import {
 	GeneratedFunction,
 	GeneratedInterface,
 	GeneratedModule,
+	GeneratedProperty,
 	GeneratedUnion,
 	PropertyKind,
 } from "./types";
@@ -27,10 +28,11 @@ function $sym(name: string): string {
 		name = name.replace("Function", "FunctionInstance");
 	}
 	const isArray = name.endsWith("[]");
-	const isOptional = name.endsWith("?");
+	const isOptional = name.endsWith("?") && !name.includes("key:");
 	const baseName = isArray ? name.slice(0, -2) : isOptional ? name.slice(0, -1) : name;
 	if (
-		["string", "number", "boolean", "object", "undefined", "Date", "[ key: string ]"].includes(baseName) ||
+		["string", "number", "boolean", "object", "undefined", "Date"].includes(baseName) ||
+		baseName.includes("key:") ||
 		baseName.includes("|") ||
 		baseName.includes("<") ||
 		(baseName.startsWith("{") && baseName.endsWith("}"))
@@ -44,7 +46,9 @@ function $sym(name: string): string {
 		return SYMBOLS.get(name) as string;
 	}
 	const sanitized = baseName.replace(/[^a-zA-Z0-9_[\]]/g, "_");
-	const symbol = `${sanitized}${isArray ? "[]" : ""}${isOptional ? "?" : ""}`;
+	const sanitizedWrapped = sanitized.includes("|") ? `(${sanitized})` : sanitized;
+	const maybeArray = `${sanitizedWrapped}${isArray ? "[]" : ""}`;
+	const symbol = isOptional ? `${maybeArray} | undefined` : maybeArray;
 	SYMBOLS.set(name, symbol);
 	return symbol;
 }
@@ -52,13 +56,16 @@ function $sym(name: string): string {
 function writeInterface(opts: GeneratedModule, code: CodeMaker, iface: GeneratedInterface) {
 	const { name } = iface;
 	code.openBlock(`export interface ${$sym(name)}`);
+	if (iface.properties.some((p) => p.name.includes("key:") && iface.properties.length > 1)) {
+		const p = iface.properties.find((p) => p.name.includes("key:")) as GeneratedProperty;
+		p.type = "any";
+	}
 	for (const prop of iface.properties) {
 		const { name, type, required } = prop;
-		const optionality = required ? "" : " | undefined";
-		const question = required ? "" : "?";
-		const nameQuoted = name === "*" ? "[ key: string ]" : `"${name}"`;
+		const question = required || name.includes("key:") ? "" : "?";
+		const nameQuoted = name === "*" ? "[ key: string ]" : name.includes("key:") ? name : `"${name}"`;
 		const typeWrapped = name === "*" ? "any" : $sym(type);
-		code.line(`readonly ${nameQuoted}${question}: (${typeWrapped})${optionality};`);
+		code.line(`readonly ${nameQuoted}${question}: ${typeWrapped};`);
 	}
 	code.closeBlock();
 }
@@ -77,11 +84,10 @@ function writeConstruct(opts: GeneratedModule, code: CodeMaker, klass: Generated
 	const output = klass.properties.filter((p) => p.kind === PropertyKind.Output);
 	for (const prop of output) {
 		const { name, type, required } = prop;
-		const optionality = required ? "" : " | undefined";
 		const question = required ? "" : "?";
 		const nameSanitized = name === "*" ? "[ key: string ]" : name;
 		const visibility = name === "*" ? "" : "public readonly ";
-		code.line(`${visibility}${nameSanitized}${question}: (${$sym(type)})${optionality};`);
+		code.line(`${visibility}${nameSanitized}${question}: ${$sym(type)};`);
 	}
 	code.closeBlock();
 

@@ -16,7 +16,7 @@ export interface RuleGroupsNamespaceComponentInputs {
 	readonly Data: string;
 	readonly Name: string;
 	readonly Workspace: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Workspace extends CfnResource<WorkspaceComponentInputs> implements WorkspaceComponentOutputs {
@@ -33,14 +33,14 @@ export interface WorkspaceComponentOutputs {
 	readonly WorkspaceId: string;
 }
 export interface WorkspaceComponentInputs {
-	readonly AlertManagerDefinition?: (string | undefined) | undefined;
-	readonly Alias?: (string | undefined) | undefined;
-	readonly LoggingConfiguration?: (LoggingConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AlertManagerDefinition?: string | undefined;
+	readonly Alias?: string | undefined;
+	readonly LoggingConfiguration?: LoggingConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface LoggingConfiguration {
-	readonly LogGroupArn?: (string | undefined) | undefined;
+	readonly LogGroupArn?: string | undefined;
 }
 export default {
 	RuleGroupsNamespace: RuleGroupsNamespace,

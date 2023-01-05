@@ -17,10 +17,10 @@ export interface storageSyncServicesComponentOutputs {
 	readonly type: "Microsoft.StorageSync/storageSyncServices";
 }
 export interface storageSyncServicesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: StorageSyncServiceProperties | undefined;
-	readonly tags?: StorageSyncServiceCreateParametersTags | undefined;
+	readonly properties?: StorageSyncServiceProperties;
+	readonly tags?: StorageSyncServiceCreateParametersTags;
 }
 export class storageSyncServices_registeredServers
 	extends ArmResource<storageSyncServices_registeredServersComponentInputs>
@@ -39,10 +39,10 @@ export interface storageSyncServices_registeredServersComponentOutputs {
 	readonly type: "Microsoft.StorageSync/storageSyncServices/registeredServers";
 }
 export interface storageSyncServices_registeredServersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RegisteredServerCreateParametersPropertiesOrRegisteredServerProperties | undefined;
-	readonly tags?: RegisteredServerCreateParametersTags | undefined;
+	readonly properties?: RegisteredServerCreateParametersPropertiesOrRegisteredServerProperties;
+	readonly tags?: RegisteredServerCreateParametersTags;
 }
 export class storageSyncServices_syncGroups
 	extends ArmResource<storageSyncServices_syncGroupsComponentInputs>
@@ -61,10 +61,10 @@ export interface storageSyncServices_syncGroupsComponentOutputs {
 	readonly type: "Microsoft.StorageSync/storageSyncServices/syncGroups";
 }
 export interface storageSyncServices_syncGroupsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: any | undefined;
-	readonly tags?: SyncGroupCreateParametersTags | undefined;
+	readonly properties?: any;
+	readonly tags?: SyncGroupCreateParametersTags;
 }
 export class storageSyncServices_syncGroups_cloudEndpoints
 	extends ArmResource<storageSyncServices_syncGroups_cloudEndpointsComponentInputs>
@@ -89,10 +89,10 @@ export interface storageSyncServices_syncGroups_cloudEndpointsComponentOutputs {
 	readonly type: "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints";
 }
 export interface storageSyncServices_syncGroups_cloudEndpointsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: CloudEndpointCreateParametersPropertiesOrCloudEndpointProperties | undefined;
-	readonly tags?: CloudEndpointCreateParametersTags | undefined;
+	readonly properties?: CloudEndpointCreateParametersPropertiesOrCloudEndpointProperties;
+	readonly tags?: CloudEndpointCreateParametersTags;
 }
 export class storageSyncServices_syncGroups_serverEndpoints
 	extends ArmResource<storageSyncServices_syncGroups_serverEndpointsComponentInputs>
@@ -117,10 +117,10 @@ export interface storageSyncServices_syncGroups_serverEndpointsComponentOutputs 
 	readonly type: "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints";
 }
 export interface storageSyncServices_syncGroups_serverEndpointsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ServerEndpointCreateParametersPropertiesOrServerEndpointProperties | undefined;
-	readonly tags?: ServerEndpointCreateParametersTags | undefined;
+	readonly properties?: ServerEndpointCreateParametersPropertiesOrServerEndpointProperties;
+	readonly tags?: ServerEndpointCreateParametersTags;
 }
 export class storageSyncServices_workflows
 	extends ArmResource<storageSyncServices_workflowsComponentInputs>
@@ -140,75 +140,75 @@ export interface storageSyncServices_workflowsComponentOutputs {
 }
 export interface storageSyncServices_workflowsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowProperties | undefined;
+	readonly properties?: WorkflowProperties;
 }
 export interface CloudEndpointCreateParametersPropertiesOrCloudEndpointProperties {
-	readonly backupEnabled?: boolean | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly lastOperationName?: string | undefined;
-	readonly lastWorkflowId?: string | undefined;
-	readonly partnershipId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly storageAccountResourceId?: string | undefined;
-	readonly storageAccountShareName?: string | undefined;
-	readonly storageAccountTenantId?: string | undefined;
+	readonly backupEnabled?: boolean;
+	readonly friendlyName?: string;
+	readonly lastOperationName?: string;
+	readonly lastWorkflowId?: string;
+	readonly partnershipId?: string;
+	readonly provisioningState?: string;
+	readonly storageAccountResourceId?: string;
+	readonly storageAccountShareName?: string;
+	readonly storageAccountTenantId?: string;
 }
 export interface CloudEndpointCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RegisteredServerCreateParametersPropertiesOrRegisteredServerProperties {
-	readonly agentVersion?: string | undefined;
-	readonly clusterId?: string | undefined;
-	readonly clusterName?: string | undefined;
-	readonly discoveryEndpointUri?: string | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly lastHeartBeat?: string | undefined;
-	readonly lastOperationName?: string | undefined;
-	readonly lastWorkflowId?: string | undefined;
-	readonly managementEndpointUri?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceLocation?: string | undefined;
-	readonly serverCertificate?: string | undefined;
-	readonly serverId?: string | undefined;
-	readonly serverManagementtErrorCode?: number | undefined;
-	readonly serverOSVersion?: string | undefined;
-	readonly serverRole?: string | undefined;
-	readonly serviceLocation?: string | undefined;
-	readonly storageSyncServiceUid?: string | undefined;
+	readonly agentVersion?: string;
+	readonly clusterId?: string;
+	readonly clusterName?: string;
+	readonly discoveryEndpointUri?: string;
+	readonly friendlyName?: string;
+	readonly lastHeartBeat?: string;
+	readonly lastOperationName?: string;
+	readonly lastWorkflowId?: string;
+	readonly managementEndpointUri?: string;
+	readonly provisioningState?: string;
+	readonly resourceLocation?: string;
+	readonly serverCertificate?: string;
+	readonly serverId?: string;
+	readonly serverManagementtErrorCode?: number;
+	readonly serverOSVersion?: string;
+	readonly serverRole?: string;
+	readonly serviceLocation?: string;
+	readonly storageSyncServiceUid?: string;
 }
 export interface RegisteredServerCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ServerEndpointCreateParametersPropertiesOrServerEndpointProperties {
-	readonly cloudTiering?: ("off" | "on") | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly lastOperationName?: string | undefined;
-	readonly lastWorkflowId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serverLocalPath?: string | undefined;
-	readonly serverResourceId?: string | undefined;
-	readonly syncStatus?: any | undefined;
-	readonly volumeFreeSpacePercent?: number | undefined;
+	readonly cloudTiering?: "off" | "on";
+	readonly friendlyName?: string;
+	readonly lastOperationName?: string;
+	readonly lastWorkflowId?: string;
+	readonly provisioningState?: string;
+	readonly serverLocalPath?: string;
+	readonly serverResourceId?: string;
+	readonly syncStatus?: any;
+	readonly volumeFreeSpacePercent?: number;
 }
 export interface ServerEndpointCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StorageSyncServiceCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StorageSyncServiceProperties {
-	readonly storageSyncServiceStatus?: number | undefined;
-	readonly storageSyncServiceUid?: string | undefined;
+	readonly storageSyncServiceStatus?: number;
+	readonly storageSyncServiceUid?: string;
 }
 export interface SyncGroupCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WorkflowProperties {
-	readonly lastOperationId?: string | undefined;
-	readonly lastStepName?: string | undefined;
-	readonly operation?: ("cancel" | "do" | "undo") | undefined;
-	readonly status?: ("aborted" | "active" | "expired" | "failed" | "succeeded") | undefined;
-	readonly steps?: string | undefined;
+	readonly lastOperationId?: string;
+	readonly lastStepName?: string;
+	readonly operation?: "cancel" | "do" | "undo";
+	readonly status?: "aborted" | "active" | "expired" | "failed" | "succeeded";
+	readonly steps?: string;
 }
 export default {
 	storageSyncServices: storageSyncServices,

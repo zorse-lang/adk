@@ -14,12 +14,12 @@ export interface clustersComponentOutputs {
 	readonly type: "Microsoft.HDInsight/clusters";
 }
 export interface clustersComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ClusterIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly identity?: ClusterIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ClusterCreatePropertiesOrClusterGetProperties | undefined;
-	readonly tags?: ClusterCreateParametersExtendedTags | undefined;
+	readonly properties?: ClusterCreatePropertiesOrClusterGetProperties;
+	readonly tags?: ClusterCreateParametersExtendedTags;
 }
 export class clusters_applications
 	extends ArmResource<clusters_applicationsComponentInputs>
@@ -38,10 +38,10 @@ export interface clusters_applicationsComponentOutputs {
 	readonly type: "Microsoft.HDInsight/clusters/applications";
 }
 export interface clusters_applicationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ApplicationProperties | undefined;
-	readonly tags?: ApplicationTags | undefined;
+	readonly properties?: ApplicationProperties;
+	readonly tags?: ApplicationTags;
 }
 export function listHosts(resource: clusters): HostInfo[] {
 	if (resource.apiVersion !== "2015-03-01-preview") {
@@ -53,198 +53,196 @@ export function listHosts(resource: clusters): HostInfo[] {
 	throw new Error("not implemented");
 }
 export interface ApplicationGetEndpoint {
-	readonly destinationPort?: number | undefined;
-	readonly location?: string | undefined;
-	readonly privateIPAddress?: string | undefined;
-	readonly publicPort?: number | undefined;
+	readonly destinationPort?: number;
+	readonly location?: string;
+	readonly privateIPAddress?: string;
+	readonly publicPort?: number;
 }
 export interface ApplicationGetHttpsEndpoint {
-	readonly accessModes?: string[] | undefined;
-	readonly destinationPort?: number | undefined;
-	readonly disableGatewayAuth?: boolean | undefined;
-	readonly location?: string | undefined;
-	readonly privateIPAddress?: string | undefined;
-	readonly publicPort?: number | undefined;
-	readonly subDomainSuffix?: string | undefined;
+	readonly accessModes?: string[];
+	readonly destinationPort?: number;
+	readonly disableGatewayAuth?: boolean;
+	readonly location?: string;
+	readonly privateIPAddress?: string;
+	readonly publicPort?: number;
+	readonly subDomainSuffix?: string;
 }
 export interface ApplicationProperties {
-	readonly applicationState?: string | undefined;
-	readonly applicationType?: string | undefined;
-	readonly computeProfile?: ComputeProfile | undefined;
-	readonly createdDate?: string | undefined;
-	readonly errors?: Errors[] | undefined;
-	readonly httpsEndpoints?: ApplicationGetHttpsEndpoint[] | undefined;
-	readonly installScriptActions?: RuntimeScriptAction[] | undefined;
-	readonly marketplaceIdentifier?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly sshEndpoints?: ApplicationGetEndpoint[] | undefined;
-	readonly uninstallScriptActions?: RuntimeScriptAction[] | undefined;
+	readonly applicationState?: string;
+	readonly applicationType?: string;
+	readonly computeProfile?: ComputeProfile;
+	readonly createdDate?: string;
+	readonly errors?: Errors[];
+	readonly httpsEndpoints?: ApplicationGetHttpsEndpoint[];
+	readonly installScriptActions?: RuntimeScriptAction[];
+	readonly marketplaceIdentifier?: string;
+	readonly provisioningState?: string;
+	readonly sshEndpoints?: ApplicationGetEndpoint[];
+	readonly uninstallScriptActions?: RuntimeScriptAction[];
 }
 export interface ApplicationTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Autoscale {
-	readonly capacity?: AutoscaleCapacity | undefined;
-	readonly recurrence?: AutoscaleRecurrence | undefined;
+	readonly capacity?: AutoscaleCapacity;
+	readonly recurrence?: AutoscaleRecurrence;
 }
 export interface AutoscaleCapacity {
-	readonly maxInstanceCount?: number | undefined;
-	readonly minInstanceCount?: number | undefined;
+	readonly maxInstanceCount?: number;
+	readonly minInstanceCount?: number;
 }
 export interface AutoscaleRecurrence {
-	readonly schedule?: AutoscaleSchedule[] | undefined;
-	readonly timeZone?: string | undefined;
+	readonly schedule?: AutoscaleSchedule[];
+	readonly timeZone?: string;
 }
 export interface AutoscaleSchedule {
-	readonly days?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[]) | undefined;
-	readonly timeAndCapacity?: AutoscaleTimeAndCapacity | undefined;
+	readonly days?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[];
+	readonly timeAndCapacity?: AutoscaleTimeAndCapacity;
 }
 export interface AutoscaleTimeAndCapacity {
-	readonly maxInstanceCount?: number | undefined;
-	readonly minInstanceCount?: number | undefined;
-	readonly time?: string | undefined;
+	readonly maxInstanceCount?: number;
+	readonly minInstanceCount?: number;
+	readonly time?: string;
 }
 export interface ClientGroupInfo {
-	readonly groupId?: string | undefined;
-	readonly groupName?: string | undefined;
+	readonly groupId?: string;
+	readonly groupName?: string;
 }
 export interface ClusterCreateParametersExtendedTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ClusterCreatePropertiesOrClusterGetProperties {
-	readonly clusterDefinition?: ClusterDefinition | undefined;
-	readonly clusterHdpVersion?: string | undefined;
-	readonly clusterId?: string | undefined;
-	readonly clusterState?: string | undefined;
-	readonly clusterVersion?: string | undefined;
-	readonly computeIsolationProperties?: ComputeIsolationProperties | undefined;
-	readonly computeProfile?: ComputeProfile | undefined;
-	readonly connectivityEndpoints?: ConnectivityEndpoint[] | undefined;
-	readonly createdDate?: string | undefined;
-	readonly diskEncryptionProperties?: DiskEncryptionProperties | undefined;
-	readonly encryptionInTransitProperties?: EncryptionInTransitProperties | undefined;
-	readonly errors?: Errors[] | undefined;
-	readonly excludedServicesConfig?: ExcludedServicesConfig | undefined;
-	readonly kafkaRestProperties?: KafkaRestProperties | undefined;
-	readonly minSupportedTlsVersion?: string | undefined;
-	readonly networkProperties?: NetworkProperties | undefined;
-	readonly osType?: "Linux" | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleting" | "Failed" | "InProgress") | undefined;
-	readonly quotaInfo?: QuotaInfo | undefined;
-	readonly securityProfile?: SecurityProfile | undefined;
-	readonly storageProfile?: StorageProfile | undefined;
-	readonly tier?: "Premium" | undefined;
+	readonly clusterDefinition?: ClusterDefinition;
+	readonly clusterHdpVersion?: string;
+	readonly clusterId?: string;
+	readonly clusterState?: string;
+	readonly clusterVersion?: string;
+	readonly computeIsolationProperties?: ComputeIsolationProperties;
+	readonly computeProfile?: ComputeProfile;
+	readonly connectivityEndpoints?: ConnectivityEndpoint[];
+	readonly createdDate?: string;
+	readonly diskEncryptionProperties?: DiskEncryptionProperties;
+	readonly encryptionInTransitProperties?: EncryptionInTransitProperties;
+	readonly errors?: Errors[];
+	readonly excludedServicesConfig?: ExcludedServicesConfig;
+	readonly kafkaRestProperties?: KafkaRestProperties;
+	readonly minSupportedTlsVersion?: string;
+	readonly networkProperties?: NetworkProperties;
+	readonly osType?: "Linux";
+	readonly provisioningState?: "Canceled" | "Deleting" | "Failed" | "InProgress";
+	readonly quotaInfo?: QuotaInfo;
+	readonly securityProfile?: SecurityProfile;
+	readonly storageProfile?: StorageProfile;
+	readonly tier?: "Premium";
 }
 export interface ClusterDefinition {
-	readonly blueprint?: string | undefined;
-	readonly componentVersion?: ClusterDefinitionComponentVersion | undefined;
-	readonly configurations?: any | undefined;
-	readonly kind?: string | undefined;
+	readonly blueprint?: string;
+	readonly componentVersion?: ClusterDefinitionComponentVersion;
+	readonly configurations?: any;
+	readonly kind?: string;
 }
 export interface ClusterDefinitionComponentVersion {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ClusterIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: ClusterIdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: ClusterIdentityUserAssignedIdentities;
 }
 export interface ClusterIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?:
-		| ComponentsC51Ht8SchemasClusteridentityPropertiesUserassignedidentitiesAdditionalproperties
-		| undefined;
+	readonly [key: string]: ComponentsC51Ht8SchemasClusteridentityPropertiesUserassignedidentitiesAdditionalproperties;
 }
 export interface ComponentsC51Ht8SchemasClusteridentityPropertiesUserassignedidentitiesAdditionalproperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 }
 export interface ComputeIsolationProperties {
-	readonly enableComputeIsolation?: boolean | undefined;
-	readonly hostSku?: string | undefined;
+	readonly enableComputeIsolation?: boolean;
+	readonly hostSku?: string;
 }
 export interface ComputeProfile {
-	readonly roles?: Role[] | undefined;
+	readonly roles?: Role[];
 }
 export interface ConnectivityEndpoint {
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly port?: number | undefined;
-	readonly privateIPAddress?: string | undefined;
-	readonly protocol?: string | undefined;
+	readonly location?: string;
+	readonly name?: string;
+	readonly port?: number;
+	readonly privateIPAddress?: string;
+	readonly protocol?: string;
 }
 export interface DataDisksGroups {
-	readonly diskSizeGB?: number | undefined;
-	readonly disksPerNode?: number | undefined;
-	readonly storageAccountType?: string | undefined;
+	readonly diskSizeGB?: number;
+	readonly disksPerNode?: number;
+	readonly storageAccountType?: string;
 }
 export interface DiskEncryptionProperties {
-	readonly encryptionAlgorithm?: ("RSA-OAEP" | "RSA-OAEP-256" | "RSA1_5") | undefined;
-	readonly encryptionAtHost?: boolean | undefined;
-	readonly keyName?: string | undefined;
-	readonly keyVersion?: string | undefined;
-	readonly msiResourceId?: string | undefined;
-	readonly vaultUri?: string | undefined;
+	readonly encryptionAlgorithm?: "RSA-OAEP" | "RSA-OAEP-256" | "RSA1_5";
+	readonly encryptionAtHost?: boolean;
+	readonly keyName?: string;
+	readonly keyVersion?: string;
+	readonly msiResourceId?: string;
+	readonly vaultUri?: string;
 }
 export interface EncryptionInTransitProperties {
-	readonly isEncryptionInTransitEnabled?: boolean | undefined;
+	readonly isEncryptionInTransitEnabled?: boolean;
 }
 export interface Errors {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface ExcludedServicesConfig {
-	readonly excludedServicesConfigId?: string | undefined;
-	readonly excludedServicesList?: string | undefined;
+	readonly excludedServicesConfigId?: string;
+	readonly excludedServicesList?: string;
 }
 export interface HardwareProfile {
-	readonly vmSize?: string | undefined;
+	readonly vmSize?: string;
 }
 export interface HostInfo {
-	readonly effectiveDiskEncryptionKeyUrl?: string | undefined;
-	readonly fqdn?: string | undefined;
-	readonly name?: string | undefined;
+	readonly effectiveDiskEncryptionKeyUrl?: string;
+	readonly fqdn?: string;
+	readonly name?: string;
 }
 export interface KafkaRestProperties {
-	readonly clientGroupInfo?: ClientGroupInfo | undefined;
-	readonly configurationOverride?: KafkaRestPropertiesConfigurationOverride | undefined;
+	readonly clientGroupInfo?: ClientGroupInfo;
+	readonly configurationOverride?: KafkaRestPropertiesConfigurationOverride;
 }
 export interface KafkaRestPropertiesConfigurationOverride {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface LinuxOperatingSystemProfile {
-	readonly password?: string | undefined;
-	readonly sshProfile?: SshProfile | undefined;
-	readonly username?: string | undefined;
+	readonly password?: string;
+	readonly sshProfile?: SshProfile;
+	readonly username?: string;
 }
 export interface NetworkProperties {
-	readonly privateLink?: ("Disabled" | "Enabled") | undefined;
-	readonly resourceProviderConnection?: ("Inbound" | "Outbound") | undefined;
+	readonly privateLink?: "Disabled" | "Enabled";
+	readonly resourceProviderConnection?: "Inbound" | "Outbound";
 }
 export interface OsProfile {
-	readonly linuxOperatingSystemProfile?: LinuxOperatingSystemProfile | undefined;
+	readonly linuxOperatingSystemProfile?: LinuxOperatingSystemProfile;
 }
 export interface QuotaInfo {
-	readonly coresUsed?: number | undefined;
+	readonly coresUsed?: number;
 }
 export interface Role {
-	readonly autoscale?: Autoscale | undefined;
-	readonly dataDisksGroups?: DataDisksGroups[] | undefined;
-	readonly encryptDataDisks?: boolean | undefined;
-	readonly hardwareProfile?: HardwareProfile | undefined;
-	readonly minInstanceCount?: number | undefined;
-	readonly name?: string | undefined;
-	readonly osProfile?: OsProfile | undefined;
-	readonly scriptActions?: ScriptAction[] | undefined;
-	readonly targetInstanceCount?: number | undefined;
-	readonly virtualNetworkProfile?: VirtualNetworkProfile | undefined;
-	readonly VMGroupName?: string | undefined;
+	readonly autoscale?: Autoscale;
+	readonly dataDisksGroups?: DataDisksGroups[];
+	readonly encryptDataDisks?: boolean;
+	readonly hardwareProfile?: HardwareProfile;
+	readonly minInstanceCount?: number;
+	readonly name?: string;
+	readonly osProfile?: OsProfile;
+	readonly scriptActions?: ScriptAction[];
+	readonly targetInstanceCount?: number;
+	readonly virtualNetworkProfile?: VirtualNetworkProfile;
+	readonly VMGroupName?: string;
 }
 export interface RuntimeScriptAction {
-	readonly applicationName?: string | undefined;
+	readonly applicationName?: string;
 	readonly name: string;
-	readonly parameters?: string | undefined;
+	readonly parameters?: string;
 	readonly roles: string[];
 	readonly uri: string;
 }
@@ -254,39 +252,39 @@ export interface ScriptAction {
 	readonly uri: string;
 }
 export interface SecurityProfile {
-	readonly aaddsResourceId?: string | undefined;
-	readonly clusterUsersGroupDNs?: string[] | undefined;
-	readonly directoryType?: "ActiveDirectory" | undefined;
-	readonly domain?: string | undefined;
-	readonly domainUsername?: string | undefined;
-	readonly domainUserPassword?: string | undefined;
-	readonly ldapsUrls?: string[] | undefined;
-	readonly msiResourceId?: string | undefined;
-	readonly organizationalUnitDN?: string | undefined;
+	readonly aaddsResourceId?: string;
+	readonly clusterUsersGroupDNs?: string[];
+	readonly directoryType?: "ActiveDirectory";
+	readonly domain?: string;
+	readonly domainUsername?: string;
+	readonly domainUserPassword?: string;
+	readonly ldapsUrls?: string[];
+	readonly msiResourceId?: string;
+	readonly organizationalUnitDN?: string;
 }
 export interface SshProfile {
-	readonly publicKeys?: SshPublicKey[] | undefined;
+	readonly publicKeys?: SshPublicKey[];
 }
 export interface SshPublicKey {
-	readonly certificateData?: string | undefined;
+	readonly certificateData?: string;
 }
 export interface StorageAccount {
-	readonly container?: string | undefined;
-	readonly fileshare?: string | undefined;
-	readonly fileSystem?: string | undefined;
-	readonly isDefault?: boolean | undefined;
-	readonly key?: string | undefined;
-	readonly msiResourceId?: string | undefined;
-	readonly name?: string | undefined;
-	readonly resourceId?: string | undefined;
-	readonly saskey?: string | undefined;
+	readonly container?: string;
+	readonly fileshare?: string;
+	readonly fileSystem?: string;
+	readonly isDefault?: boolean;
+	readonly key?: string;
+	readonly msiResourceId?: string;
+	readonly name?: string;
+	readonly resourceId?: string;
+	readonly saskey?: string;
 }
 export interface StorageProfile {
-	readonly storageaccounts?: StorageAccount[] | undefined;
+	readonly storageaccounts?: StorageAccount[];
 }
 export interface VirtualNetworkProfile {
-	readonly id?: string | undefined;
-	readonly subnet?: string | undefined;
+	readonly id?: string;
+	readonly subnet?: string;
 }
 export default {
 	clusters: clusters,

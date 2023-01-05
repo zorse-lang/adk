@@ -7,23 +7,22 @@ export class Roles extends GdmResource<RolesComponentInputs> implements RolesCom
 }
 export interface RolesComponentOutputs {}
 export interface RolesComponentInputs {
-	readonly deleted?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly includedPermissions?: string[] | undefined;
+	readonly deleted?: boolean;
+	readonly description?: string;
+	readonly etag?: string;
+	readonly includedPermissions?: string[];
 	readonly name: string;
-	readonly stage?: string | undefined;
-	readonly title?: string | undefined;
-	readonly type: string;
+	readonly stage?: string;
+	readonly title?: string;
 }
 export interface Role {
-	readonly deleted?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly includedPermissions?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly stage?: string | undefined;
-	readonly title?: string | undefined;
+	readonly deleted?: boolean;
+	readonly description?: string;
+	readonly etag?: string;
+	readonly includedPermissions?: string[];
+	readonly name?: string;
+	readonly stage?: string;
+	readonly title?: string;
 }
 export default {
 	Roles: Roles,

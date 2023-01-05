@@ -18,14 +18,14 @@ export interface AuthenticationConfiguration {
 	readonly RefreshToken: string;
 }
 export interface Overrides {
-	readonly Manifest?: (any | undefined) | undefined;
+	readonly Manifest?: any | undefined;
 }
 export interface SkillPackage {
-	readonly Overrides?: (Overrides | undefined) | undefined;
+	readonly Overrides?: Overrides | undefined;
 	readonly S3Bucket: string;
-	readonly S3BucketRole?: (string | undefined) | undefined;
+	readonly S3BucketRole?: string | undefined;
 	readonly S3Key: string;
-	readonly S3ObjectVersion?: (string | undefined) | undefined;
+	readonly S3ObjectVersion?: string | undefined;
 }
 export default {
 	Skill: Skill,

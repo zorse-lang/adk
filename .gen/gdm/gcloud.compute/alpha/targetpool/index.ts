@@ -4,32 +4,31 @@ export class TargetPool extends GdmResource<TargetPoolComponentInputs> implement
 	constructor(entity: ADKEntity, options: TargetPoolComponentInputs) {
 		super(entity, options.name, "compute.alpha.targetPool", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly securityPolicy?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly securityPolicy?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
 }
 export interface TargetPoolComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly securityPolicy?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly securityPolicy?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
 }
 export interface TargetPoolComponentInputs {
-	readonly backupPool?: string | undefined;
-	readonly description?: string | undefined;
-	readonly failoverRatio?: number | undefined;
-	readonly healthChecks?: string[] | undefined;
-	readonly instances?: string[] | undefined;
+	readonly backupPool?: string;
+	readonly description?: string;
+	readonly failoverRatio?: number;
+	readonly healthChecks?: string[];
+	readonly instances?: string[];
 	readonly name: string;
-	readonly sessionAffinity?: string | undefined;
-	readonly type: string;
+	readonly sessionAffinity?: string;
 }
 export default {
 	TargetPool: TargetPool,

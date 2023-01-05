@@ -18,7 +18,7 @@ export interface policyAssignmentsComponentOutputs {
 }
 export interface policyAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyAssignmentProperties | undefined;
+	readonly properties?: PolicyAssignmentProperties;
 }
 export class policydefinitions
 	extends ArmResource<policydefinitionsComponentInputs>
@@ -38,17 +38,17 @@ export interface policydefinitionsComponentOutputs {
 }
 export interface policydefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyDefinitionProperties | undefined;
+	readonly properties?: PolicyDefinitionProperties;
 }
 export interface PolicyAssignmentProperties {
-	readonly displayName?: string | undefined;
-	readonly policyDefinitionId?: string | undefined;
-	readonly scope?: string | undefined;
+	readonly displayName?: string;
+	readonly policyDefinitionId?: string;
+	readonly scope?: string;
 }
 export interface PolicyDefinitionProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly policyRule?: any | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly policyRule?: any;
 }
 export default {
 	policyAssignments: policyAssignments,

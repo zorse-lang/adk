@@ -16,30 +16,30 @@ export interface attestationsComponentOutputs {
 export interface attestationsComponentInputs {
 	readonly name: string;
 	readonly properties: AttestationProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export interface AttestationEvidence {
-	readonly description?: string | undefined;
-	readonly sourceUri?: string | undefined;
+	readonly description?: string;
+	readonly sourceUri?: string;
 }
 export interface AttestationProperties {
-	readonly comments?: string | undefined;
-	readonly complianceState?: ("Compliant" | "NonCompliant" | "Unknown") | undefined;
-	readonly evidence?: AttestationEvidence[] | undefined;
-	readonly expiresOn?: string | undefined;
-	readonly lastComplianceStateChangeAt?: string | undefined;
-	readonly owner?: string | undefined;
+	readonly comments?: string;
+	readonly complianceState?: "Compliant" | "NonCompliant" | "Unknown";
+	readonly evidence?: AttestationEvidence[];
+	readonly expiresOn?: string;
+	readonly lastComplianceStateChangeAt?: string;
+	readonly owner?: string;
 	readonly policyAssignmentId: string;
-	readonly policyDefinitionReferenceId?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly policyDefinitionReferenceId?: string;
+	readonly provisioningState?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	attestations: attestations,

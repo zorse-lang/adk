@@ -4,28 +4,27 @@ export class Exclusions extends GdmResource<ExclusionsComponentInputs> implement
 	constructor(entity: ADKEntity, options: ExclusionsComponentInputs) {
 		super(entity, options.name, "logging.v2.Exclusions", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly createTime?: string;
+	public readonly updateTime?: string;
 }
 export interface ExclusionsComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly updateTime?: string;
 }
 export interface ExclusionsComponentInputs {
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
+	readonly description?: string;
+	readonly disabled?: boolean;
 	readonly filter: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly type: string;
 }
 export interface LogExclusion {
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly disabled?: boolean;
 	readonly filter: string;
 	readonly name: string;
-	readonly updateTime?: string | undefined;
+	readonly updateTime?: string;
 }
 export default {
 	Exclusions: Exclusions,

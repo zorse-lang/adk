@@ -7,237 +7,236 @@ export class ProjectsLocationsClustersNodePools
 	constructor(entity: ADKEntity, options: ProjectsLocationsClustersNodePoolsComponentInputs) {
 		super(entity, options.name, "container.v1.ProjectsLocationsClustersNodePools", options);
 	}
-	public readonly instanceGroupUrls?: string[] | undefined;
-	public readonly podIpv4CidrSize?: number | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly statusMessage?: string | undefined;
-	public readonly updateInfo?: UpdateInfo | undefined;
+	public readonly instanceGroupUrls?: string[];
+	public readonly podIpv4CidrSize?: number;
+	public readonly selfLink?: string;
+	public readonly status?: string;
+	public readonly statusMessage?: string;
+	public readonly updateInfo?: UpdateInfo;
 }
 export interface ProjectsLocationsClustersNodePoolsComponentOutputs {
-	readonly instanceGroupUrls?: string[] | undefined;
-	readonly podIpv4CidrSize?: number | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly updateInfo?: UpdateInfo | undefined;
+	readonly instanceGroupUrls?: string[];
+	readonly podIpv4CidrSize?: number;
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly statusMessage?: string;
+	readonly updateInfo?: UpdateInfo;
 }
 export interface ProjectsLocationsClustersNodePoolsComponentInputs {
-	readonly autoscaling?: NodePoolAutoscaling | undefined;
-	readonly clusterId?: string | undefined;
-	readonly conditions?: StatusCondition[] | undefined;
-	readonly config?: NodeConfig | undefined;
-	readonly etag?: string | undefined;
-	readonly initialNodeCount?: number | undefined;
-	readonly locations?: string[] | undefined;
-	readonly management?: NodeManagement | undefined;
-	readonly maxPodsConstraint?: MaxPodsConstraint | undefined;
+	readonly autoscaling?: NodePoolAutoscaling;
+	readonly clusterId?: string;
+	readonly conditions?: StatusCondition[];
+	readonly config?: NodeConfig;
+	readonly etag?: string;
+	readonly initialNodeCount?: number;
+	readonly locations?: string[];
+	readonly management?: NodeManagement;
+	readonly maxPodsConstraint?: MaxPodsConstraint;
 	readonly name: string;
-	readonly networkConfig?: NodeNetworkConfig | undefined;
+	readonly networkConfig?: NodeNetworkConfig;
 	readonly nodePool: NodePool;
 	readonly parent: string;
-	readonly placementPolicy?: PlacementPolicy | undefined;
-	readonly upgradeSettings?: UpgradeSettings | undefined;
-	readonly version?: string | undefined;
-	readonly zone?: string | undefined;
-	readonly type: string;
+	readonly placementPolicy?: PlacementPolicy;
+	readonly upgradeSettings?: UpgradeSettings;
+	readonly version?: string;
+	readonly zone?: string;
 }
 export interface AcceleratorConfig {
-	readonly acceleratorCount?: string | undefined;
-	readonly acceleratorType?: string | undefined;
-	readonly gpuPartitionSize?: string | undefined;
-	readonly gpuSharingConfig?: GPUSharingConfig | undefined;
+	readonly acceleratorCount?: string;
+	readonly acceleratorType?: string;
+	readonly gpuPartitionSize?: string;
+	readonly gpuSharingConfig?: GPUSharingConfig;
 }
 export interface AdvancedMachineFeatures {
-	readonly threadsPerCore?: string | undefined;
+	readonly threadsPerCore?: string;
 }
 export interface AutoUpgradeOptions {
-	readonly autoUpgradeStartTime?: string | undefined;
-	readonly description?: string | undefined;
+	readonly autoUpgradeStartTime?: string;
+	readonly description?: string;
 }
 export interface BlueGreenInfo {
-	readonly blueInstanceGroupUrls?: string[] | undefined;
-	readonly bluePoolDeletionStartTime?: string | undefined;
-	readonly greenInstanceGroupUrls?: string[] | undefined;
-	readonly greenPoolVersion?: string | undefined;
-	readonly phase?: string | undefined;
+	readonly blueInstanceGroupUrls?: string[];
+	readonly bluePoolDeletionStartTime?: string;
+	readonly greenInstanceGroupUrls?: string[];
+	readonly greenPoolVersion?: string;
+	readonly phase?: string;
 }
 export interface BlueGreenSettings {
-	readonly nodePoolSoakDuration?: string | undefined;
-	readonly standardRolloutPolicy?: StandardRolloutPolicy | undefined;
+	readonly nodePoolSoakDuration?: string;
+	readonly standardRolloutPolicy?: StandardRolloutPolicy;
 }
 export interface ConfidentialNodes {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface CreateNodePoolRequest {
-	readonly clusterId?: string | undefined;
+	readonly clusterId?: string;
 	readonly nodePool: NodePool;
-	readonly parent?: string | undefined;
-	readonly projectId?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly parent?: string;
+	readonly projectId?: string;
+	readonly zone?: string;
 }
 export interface EphemeralStorageLocalSsdConfig {
-	readonly localSsdCount?: number | undefined;
+	readonly localSsdCount?: number;
 }
 export interface FastSocket {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface GcfsConfig {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface GPUSharingConfig {
-	readonly gpuSharingStrategy?: string | undefined;
-	readonly maxSharedClientsPerGpu?: string | undefined;
+	readonly gpuSharingStrategy?: string;
+	readonly maxSharedClientsPerGpu?: string;
 }
 export interface LinuxNodeConfig {
-	readonly cgroupMode?: string | undefined;
-	readonly sysctls?: { [P in string]: string } | undefined;
+	readonly cgroupMode?: string;
+	readonly sysctls?: { [P in string]: string };
 }
 export interface LocalNvmeSsdBlockConfig {
-	readonly localSsdCount?: number | undefined;
+	readonly localSsdCount?: number;
 }
 export interface LoggingVariantConfig {
-	readonly variant?: string | undefined;
+	readonly variant?: string;
 }
 export interface MaxPodsConstraint {
-	readonly maxPodsPerNode?: string | undefined;
+	readonly maxPodsPerNode?: string;
 }
 export interface NetworkPerformanceConfig {
-	readonly totalEgressBandwidthTier?: string | undefined;
+	readonly totalEgressBandwidthTier?: string;
 }
 export interface NodeConfig {
-	readonly accelerators?: AcceleratorConfig[] | undefined;
-	readonly advancedMachineFeatures?: AdvancedMachineFeatures | undefined;
-	readonly bootDiskKmsKey?: string | undefined;
-	readonly confidentialNodes?: ConfidentialNodes | undefined;
-	readonly diskSizeGb?: number | undefined;
-	readonly diskType?: string | undefined;
-	readonly ephemeralStorageLocalSsdConfig?: EphemeralStorageLocalSsdConfig | undefined;
-	readonly fastSocket?: FastSocket | undefined;
-	readonly gcfsConfig?: GcfsConfig | undefined;
-	readonly gvnic?: VirtualNIC | undefined;
-	readonly imageType?: string | undefined;
-	readonly kubeletConfig?: NodeKubeletConfig | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly linuxNodeConfig?: LinuxNodeConfig | undefined;
-	readonly localNvmeSsdBlockConfig?: LocalNvmeSsdBlockConfig | undefined;
-	readonly localSsdCount?: number | undefined;
-	readonly loggingConfig?: NodePoolLoggingConfig | undefined;
-	readonly machineType?: string | undefined;
-	readonly metadata?: { [P in string]: string } | undefined;
-	readonly minCpuPlatform?: string | undefined;
-	readonly nodeGroup?: string | undefined;
-	readonly oauthScopes?: string[] | undefined;
-	readonly preemptible?: boolean | undefined;
-	readonly reservationAffinity?: ReservationAffinity | undefined;
-	readonly resourceLabels?: { [P in string]: string } | undefined;
-	readonly sandboxConfig?: SandboxConfig | undefined;
-	readonly serviceAccount?: string | undefined;
-	readonly shieldedInstanceConfig?: ShieldedInstanceConfig | undefined;
-	readonly spot?: boolean | undefined;
-	readonly tags?: string[] | undefined;
-	readonly taints?: NodeTaint[] | undefined;
-	readonly windowsNodeConfig?: WindowsNodeConfig | undefined;
-	readonly workloadMetadataConfig?: WorkloadMetadataConfig | undefined;
+	readonly accelerators?: AcceleratorConfig[];
+	readonly advancedMachineFeatures?: AdvancedMachineFeatures;
+	readonly bootDiskKmsKey?: string;
+	readonly confidentialNodes?: ConfidentialNodes;
+	readonly diskSizeGb?: number;
+	readonly diskType?: string;
+	readonly ephemeralStorageLocalSsdConfig?: EphemeralStorageLocalSsdConfig;
+	readonly fastSocket?: FastSocket;
+	readonly gcfsConfig?: GcfsConfig;
+	readonly gvnic?: VirtualNIC;
+	readonly imageType?: string;
+	readonly kubeletConfig?: NodeKubeletConfig;
+	readonly labels?: { [P in string]: string };
+	readonly linuxNodeConfig?: LinuxNodeConfig;
+	readonly localNvmeSsdBlockConfig?: LocalNvmeSsdBlockConfig;
+	readonly localSsdCount?: number;
+	readonly loggingConfig?: NodePoolLoggingConfig;
+	readonly machineType?: string;
+	readonly metadata?: { [P in string]: string };
+	readonly minCpuPlatform?: string;
+	readonly nodeGroup?: string;
+	readonly oauthScopes?: string[];
+	readonly preemptible?: boolean;
+	readonly reservationAffinity?: ReservationAffinity;
+	readonly resourceLabels?: { [P in string]: string };
+	readonly sandboxConfig?: SandboxConfig;
+	readonly serviceAccount?: string;
+	readonly shieldedInstanceConfig?: ShieldedInstanceConfig;
+	readonly spot?: boolean;
+	readonly tags?: string[];
+	readonly taints?: NodeTaint[];
+	readonly windowsNodeConfig?: WindowsNodeConfig;
+	readonly workloadMetadataConfig?: WorkloadMetadataConfig;
 }
 export interface NodeKubeletConfig {
-	readonly cpuCfsQuota?: boolean | undefined;
-	readonly cpuCfsQuotaPeriod?: string | undefined;
-	readonly cpuManagerPolicy?: string | undefined;
-	readonly podPidsLimit?: string | undefined;
+	readonly cpuCfsQuota?: boolean;
+	readonly cpuCfsQuotaPeriod?: string;
+	readonly cpuManagerPolicy?: string;
+	readonly podPidsLimit?: string;
 }
 export interface NodeManagement {
-	readonly autoRepair?: boolean | undefined;
-	readonly autoUpgrade?: boolean | undefined;
-	readonly upgradeOptions?: AutoUpgradeOptions | undefined;
+	readonly autoRepair?: boolean;
+	readonly autoUpgrade?: boolean;
+	readonly upgradeOptions?: AutoUpgradeOptions;
 }
 export interface NodeNetworkConfig {
-	readonly createPodRange?: boolean | undefined;
-	readonly enablePrivateNodes?: boolean | undefined;
-	readonly networkPerformanceConfig?: NetworkPerformanceConfig | undefined;
-	readonly podIpv4CidrBlock?: string | undefined;
-	readonly podRange?: string | undefined;
+	readonly createPodRange?: boolean;
+	readonly enablePrivateNodes?: boolean;
+	readonly networkPerformanceConfig?: NetworkPerformanceConfig;
+	readonly podIpv4CidrBlock?: string;
+	readonly podRange?: string;
 }
 export interface NodePool {
-	readonly autoscaling?: NodePoolAutoscaling | undefined;
-	readonly conditions?: StatusCondition[] | undefined;
-	readonly config?: NodeConfig | undefined;
-	readonly etag?: string | undefined;
-	readonly initialNodeCount?: number | undefined;
-	readonly instanceGroupUrls?: string[] | undefined;
-	readonly locations?: string[] | undefined;
-	readonly management?: NodeManagement | undefined;
-	readonly maxPodsConstraint?: MaxPodsConstraint | undefined;
-	readonly name?: string | undefined;
-	readonly networkConfig?: NodeNetworkConfig | undefined;
-	readonly placementPolicy?: PlacementPolicy | undefined;
-	readonly podIpv4CidrSize?: number | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly updateInfo?: UpdateInfo | undefined;
-	readonly upgradeSettings?: UpgradeSettings | undefined;
-	readonly version?: string | undefined;
+	readonly autoscaling?: NodePoolAutoscaling;
+	readonly conditions?: StatusCondition[];
+	readonly config?: NodeConfig;
+	readonly etag?: string;
+	readonly initialNodeCount?: number;
+	readonly instanceGroupUrls?: string[];
+	readonly locations?: string[];
+	readonly management?: NodeManagement;
+	readonly maxPodsConstraint?: MaxPodsConstraint;
+	readonly name?: string;
+	readonly networkConfig?: NodeNetworkConfig;
+	readonly placementPolicy?: PlacementPolicy;
+	readonly podIpv4CidrSize?: number;
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly statusMessage?: string;
+	readonly updateInfo?: UpdateInfo;
+	readonly upgradeSettings?: UpgradeSettings;
+	readonly version?: string;
 }
 export interface NodePoolAutoscaling {
-	readonly autoprovisioned?: boolean | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly locationPolicy?: string | undefined;
-	readonly maxNodeCount?: number | undefined;
-	readonly minNodeCount?: number | undefined;
-	readonly totalMaxNodeCount?: number | undefined;
-	readonly totalMinNodeCount?: number | undefined;
+	readonly autoprovisioned?: boolean;
+	readonly enabled?: boolean;
+	readonly locationPolicy?: string;
+	readonly maxNodeCount?: number;
+	readonly minNodeCount?: number;
+	readonly totalMaxNodeCount?: number;
+	readonly totalMinNodeCount?: number;
 }
 export interface NodePoolLoggingConfig {
-	readonly variantConfig?: LoggingVariantConfig | undefined;
+	readonly variantConfig?: LoggingVariantConfig;
 }
 export interface NodeTaint {
-	readonly effect?: string | undefined;
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly effect?: string;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface PlacementPolicy {
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface ReservationAffinity {
-	readonly consumeReservationType?: string | undefined;
-	readonly key?: string | undefined;
-	readonly values?: string[] | undefined;
+	readonly consumeReservationType?: string;
+	readonly key?: string;
+	readonly values?: string[];
 }
 export interface SandboxConfig {
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface ShieldedInstanceConfig {
-	readonly enableIntegrityMonitoring?: boolean | undefined;
-	readonly enableSecureBoot?: boolean | undefined;
+	readonly enableIntegrityMonitoring?: boolean;
+	readonly enableSecureBoot?: boolean;
 }
 export interface StandardRolloutPolicy {
-	readonly batchNodeCount?: number | undefined;
-	readonly batchPercentage?: number | undefined;
-	readonly batchSoakDuration?: string | undefined;
+	readonly batchNodeCount?: number;
+	readonly batchPercentage?: number;
+	readonly batchSoakDuration?: string;
 }
 export interface StatusCondition {
-	readonly canonicalCode?: string | undefined;
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly canonicalCode?: string;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface UpdateInfo {
-	readonly blueGreenInfo?: BlueGreenInfo | undefined;
+	readonly blueGreenInfo?: BlueGreenInfo;
 }
 export interface UpgradeSettings {
-	readonly blueGreenSettings?: BlueGreenSettings | undefined;
-	readonly maxSurge?: number | undefined;
-	readonly maxUnavailable?: number | undefined;
-	readonly strategy?: string | undefined;
+	readonly blueGreenSettings?: BlueGreenSettings;
+	readonly maxSurge?: number;
+	readonly maxUnavailable?: number;
+	readonly strategy?: string;
 }
 export interface VirtualNIC {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface WindowsNodeConfig {
-	readonly osVersion?: string | undefined;
+	readonly osVersion?: string;
 }
 export interface WorkloadMetadataConfig {
-	readonly mode?: string | undefined;
+	readonly mode?: string;
 }
 export default {
 	ProjectsLocationsClustersNodePools: ProjectsLocationsClustersNodePools,

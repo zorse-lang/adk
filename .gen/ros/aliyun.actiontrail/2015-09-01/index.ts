@@ -10,10 +10,10 @@ export interface TrailComponentInputs {
 	readonly Name: any | string;
 	readonly OssBucketName: string;
 	readonly RoleName: string;
-	readonly EventRW?: (string | undefined) | undefined;
-	readonly OssKeyPrefix?: (string | undefined) | undefined;
-	readonly SlsProjectArn?: (string | undefined) | undefined;
-	readonly SlsWriteRoleArn?: (string | undefined) | undefined;
+	readonly EventRW?: string | undefined;
+	readonly OssKeyPrefix?: string | undefined;
+	readonly SlsProjectArn?: string | undefined;
+	readonly SlsWriteRoleArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class TrailLogging extends RosResource<TrailLoggingComponentInputs> implements TrailLoggingComponentOutputs {

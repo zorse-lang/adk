@@ -4,66 +4,65 @@ export class Regions extends GdmResource<RegionsComponentInputs> implements Regi
 	constructor(entity: ADKEntity, options: RegionsComponentInputs) {
 		super(entity, options.name, "compute.alpha.Regions", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly deprecated?: DeprecationStatus | undefined;
-	public readonly description?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly quotas?: Quota[] | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly supportsPzs?: boolean | undefined;
-	public readonly zones?: string[] | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly deprecated?: DeprecationStatus;
+	public readonly description?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly quotas?: Quota[];
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
+	public readonly status?: string;
+	public readonly supportsPzs?: boolean;
+	public readonly zones?: string[];
 }
 export interface RegionsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly deprecated?: DeprecationStatus | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly quotas?: Quota[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly status?: string | undefined;
-	readonly supportsPzs?: boolean | undefined;
-	readonly zones?: string[] | undefined;
+	readonly creationTimestamp?: string;
+	readonly deprecated?: DeprecationStatus;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly quotas?: Quota[];
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly status?: string;
+	readonly supportsPzs?: boolean;
+	readonly zones?: string[];
 }
 export interface RegionsComponentInputs {
 	readonly name: string;
-	readonly type: string;
 }
 export interface DeprecationStatus {
-	readonly deleted?: string | undefined;
-	readonly deprecated?: string | undefined;
-	readonly obsolete?: string | undefined;
-	readonly replacement?: string | undefined;
-	readonly state?: string | undefined;
-	readonly stateOverride?: RolloutPolicy | undefined;
+	readonly deleted?: string;
+	readonly deprecated?: string;
+	readonly obsolete?: string;
+	readonly replacement?: string;
+	readonly state?: string;
+	readonly stateOverride?: RolloutPolicy;
 }
 export interface Quota {
-	readonly limit?: number | undefined;
-	readonly metric?: string | undefined;
-	readonly owner?: string | undefined;
-	readonly usage?: number | undefined;
+	readonly limit?: number;
+	readonly metric?: string;
+	readonly owner?: string;
+	readonly usage?: number;
 }
 export interface Region {
-	readonly creationTimestamp?: string | undefined;
-	readonly deprecated?: DeprecationStatus | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly quotas?: Quota[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
-	readonly status?: string | undefined;
-	readonly supportsPzs?: boolean | undefined;
-	readonly zones?: string[] | undefined;
+	readonly creationTimestamp?: string;
+	readonly deprecated?: DeprecationStatus;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly quotas?: Quota[];
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
+	readonly status?: string;
+	readonly supportsPzs?: boolean;
+	readonly zones?: string[];
 }
 export interface RolloutPolicy {
-	readonly defaultRolloutTime?: string | undefined;
-	readonly locationRolloutPolicies?: { [P in string]: string } | undefined;
+	readonly defaultRolloutTime?: string;
+	readonly locationRolloutPolicies?: { [P in string]: string };
 }
 export default {
 	Regions: Regions,

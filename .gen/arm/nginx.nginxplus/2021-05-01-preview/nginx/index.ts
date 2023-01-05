@@ -17,13 +17,13 @@ export interface nginxDeploymentsComponentOutputs {
 	readonly type: "Nginx.NginxPlus/nginxDeployments";
 }
 export interface nginxDeploymentsComponentInputs {
-	readonly identity?: IdentityProperties | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: IdentityProperties;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NginxDeploymentProperties | undefined;
-	readonly sku?: ResourceSku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: NginxDeploymentTags | undefined;
+	readonly properties?: NginxDeploymentProperties;
+	readonly sku?: ResourceSku;
+	readonly systemData?: SystemData;
+	readonly tags?: NginxDeploymentTags;
 }
 export class nginxDeployments_certificates
 	extends ArmResource<nginxDeployments_certificatesComponentInputs>
@@ -42,11 +42,11 @@ export interface nginxDeployments_certificatesComponentOutputs {
 	readonly type: "Nginx.NginxPlus/nginxDeployments/certificates";
 }
 export interface nginxDeployments_certificatesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NginxCertificateProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: NginxCertificateTags | undefined;
+	readonly properties?: NginxCertificateProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: NginxCertificateTags;
 }
 export class nginxDeployments_configurations
 	extends ArmResource<nginxDeployments_configurationsComponentInputs>
@@ -65,135 +65,126 @@ export interface nginxDeployments_configurationsComponentOutputs {
 	readonly type: "Nginx.NginxPlus/nginxDeployments/configurations";
 }
 export interface nginxDeployments_configurationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NginxConfigurationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: NginxConfigurationTags | undefined;
+	readonly properties?: NginxConfigurationProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: NginxConfigurationTags;
 }
 export interface IdentityProperties {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned" | "UserAssigned") | undefined;
-	readonly userAssignedIdentities?: IdentityPropertiesUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned" | "UserAssigned";
+	readonly userAssignedIdentities?: IdentityPropertiesUserAssignedIdentities;
 }
 export interface IdentityPropertiesUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserIdentityProperties | undefined;
+	readonly [key: string]: UserIdentityProperties;
 }
 export interface NginxCertificateProperties {
-	readonly certificateVirtualPath?: string | undefined;
-	readonly keyVaultSecretId?: string | undefined;
-	readonly keyVirtualPath?: string | undefined;
+	readonly certificateVirtualPath?: string;
+	readonly keyVaultSecretId?: string;
+	readonly keyVirtualPath?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
 }
 export interface NginxCertificateTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NginxConfigurationFile {
-	readonly content?: string | undefined;
-	readonly virtualPath?: string | undefined;
+	readonly content?: string;
+	readonly virtualPath?: string;
 }
 export interface NginxConfigurationPackage {
-	readonly data?: string | undefined;
+	readonly data?: string;
 }
 export interface NginxConfigurationProperties {
-	readonly files?: NginxConfigurationFile[] | undefined;
-	readonly package?: NginxConfigurationPackage | undefined;
-	readonly protectedFiles?: NginxConfigurationFile[] | undefined;
+	readonly files?: NginxConfigurationFile[];
+	readonly package?: NginxConfigurationPackage;
+	readonly protectedFiles?: NginxConfigurationFile[];
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly rootFile?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
+	readonly rootFile?: string;
 }
 export interface NginxConfigurationTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NginxDeploymentProperties {
-	readonly enableDiagnosticsSupport?: boolean | undefined;
-	readonly ipAddress?: string | undefined;
-	readonly logging?: NginxLogging | undefined;
-	readonly managedResourceGroup?: string | undefined;
-	readonly networkProfile?: NginxNetworkProfile | undefined;
-	readonly nginxVersion?: string | undefined;
+	readonly enableDiagnosticsSupport?: boolean;
+	readonly ipAddress?: string;
+	readonly logging?: NginxLogging;
+	readonly managedResourceGroup?: string;
+	readonly networkProfile?: NginxNetworkProfile;
+	readonly nginxVersion?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
 }
 export interface NginxDeploymentTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NginxFrontendIPConfiguration {
-	readonly privateIPAddresses?: NginxPrivateIPAddress[] | undefined;
-	readonly publicIPAddresses?: NginxPublicIPAddress[] | undefined;
+	readonly privateIPAddresses?: NginxPrivateIPAddress[];
+	readonly publicIPAddresses?: NginxPublicIPAddress[];
 }
 export interface NginxLogging {
-	readonly storageAccount?: NginxStorageAccount | undefined;
+	readonly storageAccount?: NginxStorageAccount;
 }
 export interface NginxNetworkInterfaceConfiguration {
-	readonly subnetId?: string | undefined;
+	readonly subnetId?: string;
 }
 export interface NginxNetworkProfile {
-	readonly frontEndIPConfiguration?: NginxFrontendIPConfiguration | undefined;
-	readonly networkInterfaceConfiguration?: NginxNetworkInterfaceConfiguration | undefined;
+	readonly frontEndIPConfiguration?: NginxFrontendIPConfiguration;
+	readonly networkInterfaceConfiguration?: NginxNetworkInterfaceConfiguration;
 }
 export interface NginxPrivateIPAddress {
-	readonly privateIPAddress?: string | undefined;
-	readonly privateIPAllocationMethod?: ("Dynamic" | "Static") | undefined;
-	readonly subnetId?: string | undefined;
+	readonly privateIPAddress?: string;
+	readonly privateIPAllocationMethod?: "Dynamic" | "Static";
+	readonly subnetId?: string;
 }
 export interface NginxPublicIPAddress {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface NginxStorageAccount {
-	readonly accountName?: string | undefined;
-	readonly containerName?: string | undefined;
+	readonly accountName?: string;
+	readonly containerName?: string;
 }
 export interface ResourceSku {
 	readonly name: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface UserIdentityProperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	nginxDeployments: nginxDeployments,

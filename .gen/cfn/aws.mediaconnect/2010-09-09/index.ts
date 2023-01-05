@@ -20,8 +20,8 @@ export interface FlowComponentOutputs {
 export interface FlowComponentInputs {
 	readonly Name: string;
 	readonly Source: Source;
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly SourceFailoverConfig?: (FailoverConfig | undefined) | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly SourceFailoverConfig?: FailoverConfig | undefined;
 	readonly LogicalId: string;
 }
 export class FlowEntitlement
@@ -41,9 +41,9 @@ export interface FlowEntitlementComponentInputs {
 	readonly FlowArn: string;
 	readonly Name: string;
 	readonly Subscribers: string[];
-	readonly DataTransferSubscriberFeePercent?: (number | undefined) | undefined;
-	readonly Encryption?: (Encryption | undefined) | undefined;
-	readonly EntitlementStatus?: (string | undefined) | undefined;
+	readonly DataTransferSubscriberFeePercent?: number | undefined;
+	readonly Encryption?: Encryption | undefined;
+	readonly EntitlementStatus?: string | undefined;
 	readonly LogicalId: string;
 }
 export class FlowOutput extends CfnResource<FlowOutputComponentInputs> implements FlowOutputComponentOutputs {
@@ -58,18 +58,18 @@ export interface FlowOutputComponentOutputs {
 export interface FlowOutputComponentInputs {
 	readonly FlowArn: string;
 	readonly Protocol: string;
-	readonly CidrAllowList?: (string[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Destination?: (string | undefined) | undefined;
-	readonly Encryption?: (Encryption | undefined) | undefined;
-	readonly MaxLatency?: (number | undefined) | undefined;
-	readonly MinLatency?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly RemoteId?: (string | undefined) | undefined;
-	readonly SmoothingLatency?: (number | undefined) | undefined;
-	readonly StreamId?: (string | undefined) | undefined;
-	readonly VpcInterfaceAttachment?: (VpcInterfaceAttachment | undefined) | undefined;
+	readonly CidrAllowList?: string[] | undefined;
+	readonly Description?: string | undefined;
+	readonly Destination?: string | undefined;
+	readonly Encryption?: Encryption | undefined;
+	readonly MaxLatency?: number | undefined;
+	readonly MinLatency?: number | undefined;
+	readonly Name?: string | undefined;
+	readonly Port?: number | undefined;
+	readonly RemoteId?: string | undefined;
+	readonly SmoothingLatency?: number | undefined;
+	readonly StreamId?: string | undefined;
+	readonly VpcInterfaceAttachment?: VpcInterfaceAttachment | undefined;
 	readonly LogicalId: string;
 }
 export class FlowSource extends CfnResource<FlowSourceComponentInputs> implements FlowSourceComponentOutputs {
@@ -88,16 +88,16 @@ export interface FlowSourceComponentOutputs {
 export interface FlowSourceComponentInputs {
 	readonly Description: string;
 	readonly Name: string;
-	readonly Decryption?: (Encryption | undefined) | undefined;
-	readonly EntitlementArn?: (string | undefined) | undefined;
-	readonly FlowArn?: (string | undefined) | undefined;
-	readonly IngestPort?: (number | undefined) | undefined;
-	readonly MaxBitrate?: (number | undefined) | undefined;
-	readonly MaxLatency?: (number | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
-	readonly StreamId?: (string | undefined) | undefined;
-	readonly VpcInterfaceName?: (string | undefined) | undefined;
-	readonly WhitelistCidr?: (string | undefined) | undefined;
+	readonly Decryption?: Encryption | undefined;
+	readonly EntitlementArn?: string | undefined;
+	readonly FlowArn?: string | undefined;
+	readonly IngestPort?: number | undefined;
+	readonly MaxBitrate?: number | undefined;
+	readonly MaxLatency?: number | undefined;
+	readonly Protocol?: string | undefined;
+	readonly StreamId?: string | undefined;
+	readonly VpcInterfaceName?: string | undefined;
+	readonly WhitelistCidr?: string | undefined;
 	readonly LogicalId: string;
 }
 export class FlowVpcInterface
@@ -121,48 +121,48 @@ export interface FlowVpcInterfaceComponentInputs {
 	readonly LogicalId: string;
 }
 export interface Encryption {
-	readonly Algorithm?: (string | undefined) | undefined;
-	readonly ConstantInitializationVector?: (string | undefined) | undefined;
-	readonly DeviceId?: (string | undefined) | undefined;
-	readonly KeyType?: (string | undefined) | undefined;
-	readonly Region?: (string | undefined) | undefined;
-	readonly ResourceId?: (string | undefined) | undefined;
+	readonly Algorithm?: string | undefined;
+	readonly ConstantInitializationVector?: string | undefined;
+	readonly DeviceId?: string | undefined;
+	readonly KeyType?: string | undefined;
+	readonly Region?: string | undefined;
+	readonly ResourceId?: string | undefined;
 	readonly RoleArn: string;
-	readonly SecretArn?: (string | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
+	readonly SecretArn?: string | undefined;
+	readonly Url?: string | undefined;
 }
 export interface FailoverConfig {
-	readonly FailoverMode?: (string | undefined) | undefined;
-	readonly RecoveryWindow?: (number | undefined) | undefined;
-	readonly SourcePriority?: (SourcePriority | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
+	readonly FailoverMode?: string | undefined;
+	readonly RecoveryWindow?: number | undefined;
+	readonly SourcePriority?: SourcePriority | undefined;
+	readonly State?: string | undefined;
 }
 export interface Source {
-	readonly Decryption?: (Encryption | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EntitlementArn?: (string | undefined) | undefined;
-	readonly IngestIp?: (string | undefined) | undefined;
-	readonly IngestPort?: (number | undefined) | undefined;
-	readonly MaxBitrate?: (number | undefined) | undefined;
-	readonly MaxLatency?: (number | undefined) | undefined;
-	readonly MinLatency?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
-	readonly SenderControlPort?: (number | undefined) | undefined;
-	readonly SenderIpAddress?: (string | undefined) | undefined;
-	readonly SourceArn?: (string | undefined) | undefined;
-	readonly SourceIngestPort?: (string | undefined) | undefined;
-	readonly SourceListenerAddress?: (string | undefined) | undefined;
-	readonly SourceListenerPort?: (number | undefined) | undefined;
-	readonly StreamId?: (string | undefined) | undefined;
-	readonly VpcInterfaceName?: (string | undefined) | undefined;
-	readonly WhitelistCidr?: (string | undefined) | undefined;
+	readonly Decryption?: Encryption | undefined;
+	readonly Description?: string | undefined;
+	readonly EntitlementArn?: string | undefined;
+	readonly IngestIp?: string | undefined;
+	readonly IngestPort?: number | undefined;
+	readonly MaxBitrate?: number | undefined;
+	readonly MaxLatency?: number | undefined;
+	readonly MinLatency?: number | undefined;
+	readonly Name?: string | undefined;
+	readonly Protocol?: string | undefined;
+	readonly SenderControlPort?: number | undefined;
+	readonly SenderIpAddress?: string | undefined;
+	readonly SourceArn?: string | undefined;
+	readonly SourceIngestPort?: string | undefined;
+	readonly SourceListenerAddress?: string | undefined;
+	readonly SourceListenerPort?: number | undefined;
+	readonly StreamId?: string | undefined;
+	readonly VpcInterfaceName?: string | undefined;
+	readonly WhitelistCidr?: string | undefined;
 }
 export interface SourcePriority {
 	readonly PrimarySource: string;
 }
 export interface VpcInterfaceAttachment {
-	readonly VpcInterfaceName?: (string | undefined) | undefined;
+	readonly VpcInterfaceName?: string | undefined;
 }
 export default {
 	Flow: Flow,

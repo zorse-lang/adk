@@ -7,76 +7,75 @@ export class ProjectsInstancesDatabases
 	constructor(entity: ADKEntity, options: ProjectsInstancesDatabasesComponentInputs) {
 		super(entity, options.name, "spanner.v1.ProjectsInstancesDatabases", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly databaseDialect?: string | undefined;
-	public readonly defaultLeader?: string | undefined;
-	public readonly earliestVersionTime?: string | undefined;
-	public readonly encryptionConfig?: EncryptionConfig | undefined;
-	public readonly encryptionInfo?: EncryptionInfo[] | undefined;
-	public readonly restoreInfo?: RestoreInfo | undefined;
-	public readonly state?: string | undefined;
-	public readonly versionRetentionPeriod?: string | undefined;
+	public readonly createTime?: string;
+	public readonly databaseDialect?: string;
+	public readonly defaultLeader?: string;
+	public readonly earliestVersionTime?: string;
+	public readonly encryptionConfig?: EncryptionConfig;
+	public readonly encryptionInfo?: EncryptionInfo[];
+	public readonly restoreInfo?: RestoreInfo;
+	public readonly state?: string;
+	public readonly versionRetentionPeriod?: string;
 }
 export interface ProjectsInstancesDatabasesComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly databaseDialect?: string | undefined;
-	readonly defaultLeader?: string | undefined;
-	readonly earliestVersionTime?: string | undefined;
-	readonly encryptionConfig?: EncryptionConfig | undefined;
-	readonly encryptionInfo?: EncryptionInfo[] | undefined;
-	readonly restoreInfo?: RestoreInfo | undefined;
-	readonly state?: string | undefined;
-	readonly versionRetentionPeriod?: string | undefined;
+	readonly createTime?: string;
+	readonly databaseDialect?: string;
+	readonly defaultLeader?: string;
+	readonly earliestVersionTime?: string;
+	readonly encryptionConfig?: EncryptionConfig;
+	readonly encryptionInfo?: EncryptionInfo[];
+	readonly restoreInfo?: RestoreInfo;
+	readonly state?: string;
+	readonly versionRetentionPeriod?: string;
 }
 export interface ProjectsInstancesDatabasesComponentInputs {
 	readonly createStatement: string;
-	readonly extraStatements?: string[] | undefined;
+	readonly extraStatements?: string[];
 	readonly name: string;
 	readonly parent: string;
-	readonly protoDescriptors?: string | undefined;
-	readonly type: string;
+	readonly protoDescriptors?: string;
 }
 export interface BackupInfo {
-	readonly backup?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly sourceDatabase?: string | undefined;
-	readonly versionTime?: string | undefined;
+	readonly backup?: string;
+	readonly createTime?: string;
+	readonly sourceDatabase?: string;
+	readonly versionTime?: string;
 }
 export interface CreateDatabaseRequest {
 	readonly createStatement: string;
-	readonly databaseDialect?: string | undefined;
-	readonly encryptionConfig?: EncryptionConfig | undefined;
-	readonly extraStatements?: string[] | undefined;
-	readonly protoDescriptors?: string | undefined;
+	readonly databaseDialect?: string;
+	readonly encryptionConfig?: EncryptionConfig;
+	readonly extraStatements?: string[];
+	readonly protoDescriptors?: string;
 }
 export interface Database {
-	readonly createTime?: string | undefined;
-	readonly databaseDialect?: string | undefined;
-	readonly defaultLeader?: string | undefined;
-	readonly earliestVersionTime?: string | undefined;
-	readonly encryptionConfig?: EncryptionConfig | undefined;
-	readonly encryptionInfo?: EncryptionInfo[] | undefined;
+	readonly createTime?: string;
+	readonly databaseDialect?: string;
+	readonly defaultLeader?: string;
+	readonly earliestVersionTime?: string;
+	readonly encryptionConfig?: EncryptionConfig;
+	readonly encryptionInfo?: EncryptionInfo[];
 	readonly name: string;
-	readonly restoreInfo?: RestoreInfo | undefined;
-	readonly state?: string | undefined;
-	readonly versionRetentionPeriod?: string | undefined;
+	readonly restoreInfo?: RestoreInfo;
+	readonly state?: string;
+	readonly versionRetentionPeriod?: string;
 }
 export interface EncryptionConfig {
-	readonly kmsKeyName?: string | undefined;
+	readonly kmsKeyName?: string;
 }
 export interface EncryptionInfo {
-	readonly encryptionStatus?: Status | undefined;
-	readonly encryptionType?: string | undefined;
-	readonly kmsKeyVersion?: string | undefined;
+	readonly encryptionStatus?: Status;
+	readonly encryptionType?: string;
+	readonly kmsKeyVersion?: string;
 }
 export interface RestoreInfo {
-	readonly backupInfo?: BackupInfo | undefined;
-	readonly sourceType?: string | undefined;
+	readonly backupInfo?: BackupInfo;
+	readonly sourceType?: string;
 }
 export interface Status {
-	readonly code?: number | undefined;
-	readonly details?: Array<{ [P in string]: any }> | undefined;
-	readonly message?: string | undefined;
+	readonly code?: number;
+	readonly details?: Array<{ [P in string]: any }>;
+	readonly message?: string;
 }
 export default {
 	ProjectsInstancesDatabases: ProjectsInstancesDatabases,

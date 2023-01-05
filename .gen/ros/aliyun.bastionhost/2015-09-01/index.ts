@@ -15,11 +15,11 @@ export interface HostComponentInputs {
 	readonly InstanceId: string;
 	readonly OSType: string;
 	readonly Source: string;
-	readonly Comment?: (string | undefined) | undefined;
-	readonly HostPrivateAddress?: (string | undefined) | undefined;
-	readonly HostPublicAddress?: (string | undefined) | undefined;
-	readonly InstanceRegionId?: (string | undefined) | undefined;
-	readonly SourceInstanceId?: (string | undefined) | undefined;
+	readonly Comment?: string | undefined;
+	readonly HostPrivateAddress?: string | undefined;
+	readonly HostPublicAddress?: string | undefined;
+	readonly InstanceRegionId?: string | undefined;
+	readonly SourceInstanceId?: string | undefined;
 	readonly LogicalId: string;
 }
 export default {

@@ -14,10 +14,10 @@ export interface jobCollectionsComponentOutputs {
 	readonly type: "Microsoft.Scheduler/jobCollections";
 }
 export interface jobCollectionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: JobCollectionProperties | undefined;
-	readonly tags?: JobCollectionDefinitionTags | undefined;
+	readonly properties?: JobCollectionProperties;
+	readonly tags?: JobCollectionDefinitionTags;
 }
 export class jobCollections_jobs
 	extends ArmResource<jobCollections_jobsComponentInputs>
@@ -37,141 +37,141 @@ export interface jobCollections_jobsComponentOutputs {
 }
 export interface jobCollections_jobsComponentInputs {
 	readonly name: string;
-	readonly properties?: JobProperties | undefined;
+	readonly properties?: JobProperties;
 }
 export interface HttpAuthentication {
-	readonly type?: ("ActiveDirectoryOAuth" | "Basic" | "ClientCertificate") | undefined;
+	readonly type?: "ActiveDirectoryOAuth" | "Basic" | "ClientCertificate";
 }
 export interface HttpRequest {
-	readonly authentication?: HttpAuthentication | undefined;
-	readonly body?: string | undefined;
-	readonly headers?: HttpRequestHeaders | undefined;
-	readonly method?: string | undefined;
-	readonly uri?: string | undefined;
+	readonly authentication?: HttpAuthentication;
+	readonly body?: string;
+	readonly headers?: HttpRequestHeaders;
+	readonly method?: string;
+	readonly uri?: string;
 }
 export interface HttpRequestHeaders {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface JobAction {
-	readonly errorAction?: JobErrorAction | undefined;
-	readonly queueMessage?: StorageQueueMessage | undefined;
-	readonly request?: HttpRequest | undefined;
-	readonly retryPolicy?: RetryPolicy | undefined;
-	readonly serviceBusQueueMessage?: ServiceBusQueueMessage | undefined;
-	readonly serviceBusTopicMessage?: ServiceBusTopicMessage | undefined;
-	readonly type?: ("Http" | "Https" | "ServiceBusQueue" | "ServiceBusTopic") | undefined;
+	readonly errorAction?: JobErrorAction;
+	readonly queueMessage?: StorageQueueMessage;
+	readonly request?: HttpRequest;
+	readonly retryPolicy?: RetryPolicy;
+	readonly serviceBusQueueMessage?: ServiceBusQueueMessage;
+	readonly serviceBusTopicMessage?: ServiceBusTopicMessage;
+	readonly type?: "Http" | "Https" | "ServiceBusQueue" | "ServiceBusTopic";
 }
 export interface JobCollectionDefinitionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface JobCollectionProperties {
-	readonly quota?: JobCollectionQuota | undefined;
-	readonly sku?: Sku | undefined;
-	readonly state?: ("Deleted" | "Disabled" | "Enabled") | undefined;
+	readonly quota?: JobCollectionQuota;
+	readonly sku?: Sku;
+	readonly state?: "Deleted" | "Disabled" | "Enabled";
 }
 export interface JobCollectionQuota {
-	readonly maxJobCount?: number | undefined;
-	readonly maxJobOccurrence?: number | undefined;
-	readonly maxRecurrence?: JobMaxRecurrence | undefined;
+	readonly maxJobCount?: number;
+	readonly maxJobOccurrence?: number;
+	readonly maxRecurrence?: JobMaxRecurrence;
 }
 export interface JobErrorAction {
-	readonly queueMessage?: StorageQueueMessage | undefined;
-	readonly request?: HttpRequest | undefined;
-	readonly retryPolicy?: RetryPolicy | undefined;
-	readonly serviceBusQueueMessage?: ServiceBusQueueMessage | undefined;
-	readonly serviceBusTopicMessage?: ServiceBusTopicMessage | undefined;
-	readonly type?: ("Http" | "Https" | "ServiceBusQueue" | "ServiceBusTopic") | undefined;
+	readonly queueMessage?: StorageQueueMessage;
+	readonly request?: HttpRequest;
+	readonly retryPolicy?: RetryPolicy;
+	readonly serviceBusQueueMessage?: ServiceBusQueueMessage;
+	readonly serviceBusTopicMessage?: ServiceBusTopicMessage;
+	readonly type?: "Http" | "Https" | "ServiceBusQueue" | "ServiceBusTopic";
 }
 export interface JobMaxRecurrence {
-	readonly frequency?: ("Day" | "Hour" | "Minute" | "Month") | undefined;
-	readonly interval?: number | undefined;
+	readonly frequency?: "Day" | "Hour" | "Minute" | "Month";
+	readonly interval?: number;
 }
 export interface JobProperties {
-	readonly action?: JobAction | undefined;
-	readonly recurrence?: JobRecurrence | undefined;
-	readonly startTime?: string | undefined;
-	readonly state?: ("Completed" | "Disabled" | "Enabled") | undefined;
-	readonly status?: JobStatus | undefined;
+	readonly action?: JobAction;
+	readonly recurrence?: JobRecurrence;
+	readonly startTime?: string;
+	readonly state?: "Completed" | "Disabled" | "Enabled";
+	readonly status?: JobStatus;
 }
 export interface JobRecurrence {
-	readonly count?: number | undefined;
-	readonly endTime?: string | undefined;
-	readonly frequency?: ("Day" | "Hour" | "Minute" | "Month") | undefined;
-	readonly interval?: number | undefined;
-	readonly schedule?: JobRecurrenceSchedule | undefined;
+	readonly count?: number;
+	readonly endTime?: string;
+	readonly frequency?: "Day" | "Hour" | "Minute" | "Month";
+	readonly interval?: number;
+	readonly schedule?: JobRecurrenceSchedule;
 }
 export interface JobRecurrenceSchedule {
-	readonly hours?: number[] | undefined;
-	readonly minutes?: number[] | undefined;
-	readonly monthDays?: number[] | undefined;
-	readonly monthlyOccurrences?: JobRecurrenceScheduleMonthlyOccurrence[] | undefined;
-	readonly weekDays?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[]) | undefined;
+	readonly hours?: number[];
+	readonly minutes?: number[];
+	readonly monthDays?: number[];
+	readonly monthlyOccurrences?: JobRecurrenceScheduleMonthlyOccurrence[];
+	readonly weekDays?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[];
 }
 export interface JobRecurrenceScheduleMonthlyOccurrence {
-	readonly day?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday") | undefined;
-	readonly Occurrence?: number | undefined;
+	readonly day?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday";
+	readonly Occurrence?: number;
 }
 export interface JobStatus {
-	readonly executionCount?: number | undefined;
-	readonly failureCount?: number | undefined;
-	readonly faultedCount?: number | undefined;
-	readonly lastExecutionTime?: string | undefined;
-	readonly nextExecutionTime?: string | undefined;
+	readonly executionCount?: number;
+	readonly failureCount?: number;
+	readonly faultedCount?: number;
+	readonly lastExecutionTime?: string;
+	readonly nextExecutionTime?: string;
 }
 export interface RetryPolicy {
-	readonly retryCount?: number | undefined;
-	readonly retryInterval?: string | undefined;
-	readonly retryType?: "Fixed" | undefined;
+	readonly retryCount?: number;
+	readonly retryInterval?: string;
+	readonly retryType?: "Fixed";
 }
 export interface ServiceBusAuthentication {
-	readonly sasKey?: string | undefined;
-	readonly sasKeyName?: string | undefined;
-	readonly type?: "NotSpecified" | undefined;
+	readonly sasKey?: string;
+	readonly sasKeyName?: string;
+	readonly type?: "NotSpecified";
 }
 export interface ServiceBusBrokeredMessageProperties {
-	readonly contentType?: string | undefined;
-	readonly correlationId?: string | undefined;
-	readonly forcePersistence?: boolean | undefined;
-	readonly label?: string | undefined;
-	readonly messageId?: string | undefined;
-	readonly partitionKey?: string | undefined;
-	readonly replyTo?: string | undefined;
-	readonly replyToSessionId?: string | undefined;
-	readonly scheduledEnqueueTimeUtc?: string | undefined;
-	readonly sessionId?: string | undefined;
-	readonly timeToLive?: string | undefined;
-	readonly to?: string | undefined;
-	readonly viaPartitionKey?: string | undefined;
+	readonly contentType?: string;
+	readonly correlationId?: string;
+	readonly forcePersistence?: boolean;
+	readonly label?: string;
+	readonly messageId?: string;
+	readonly partitionKey?: string;
+	readonly replyTo?: string;
+	readonly replyToSessionId?: string;
+	readonly scheduledEnqueueTimeUtc?: string;
+	readonly sessionId?: string;
+	readonly timeToLive?: string;
+	readonly to?: string;
+	readonly viaPartitionKey?: string;
 }
 export interface ServiceBusMessageCustomMessageProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ServiceBusQueueMessage {
-	readonly authentication?: ServiceBusAuthentication | undefined;
-	readonly brokeredMessageProperties?: ServiceBusBrokeredMessageProperties | undefined;
-	readonly customMessageProperties?: ServiceBusMessageCustomMessageProperties | undefined;
-	readonly message?: string | undefined;
-	readonly namespace?: string | undefined;
-	readonly queueName?: string | undefined;
-	readonly transportType?: ("AMQP" | "NetMessaging") | undefined;
+	readonly authentication?: ServiceBusAuthentication;
+	readonly brokeredMessageProperties?: ServiceBusBrokeredMessageProperties;
+	readonly customMessageProperties?: ServiceBusMessageCustomMessageProperties;
+	readonly message?: string;
+	readonly namespace?: string;
+	readonly queueName?: string;
+	readonly transportType?: "AMQP" | "NetMessaging";
 }
 export interface ServiceBusTopicMessage {
-	readonly authentication?: ServiceBusAuthentication | undefined;
-	readonly brokeredMessageProperties?: ServiceBusBrokeredMessageProperties | undefined;
-	readonly customMessageProperties?: ServiceBusMessageCustomMessageProperties | undefined;
-	readonly message?: string | undefined;
-	readonly namespace?: string | undefined;
-	readonly topicPath?: string | undefined;
-	readonly transportType?: ("AMQP" | "NetMessaging") | undefined;
+	readonly authentication?: ServiceBusAuthentication;
+	readonly brokeredMessageProperties?: ServiceBusBrokeredMessageProperties;
+	readonly customMessageProperties?: ServiceBusMessageCustomMessageProperties;
+	readonly message?: string;
+	readonly namespace?: string;
+	readonly topicPath?: string;
+	readonly transportType?: "AMQP" | "NetMessaging";
 }
 export interface Sku {
-	readonly name?: ("Free" | "Premium") | undefined;
+	readonly name?: "Free" | "Premium";
 }
 export interface StorageQueueMessage {
-	readonly message?: string | undefined;
-	readonly queueName?: string | undefined;
-	readonly sasToken?: string | undefined;
-	readonly storageAccount?: string | undefined;
+	readonly message?: string;
+	readonly queueName?: string;
+	readonly sasToken?: string;
+	readonly storageAccount?: string;
 }
 export default {
 	jobCollections: jobCollections,

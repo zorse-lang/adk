@@ -14,13 +14,13 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.Maps/accounts";
 }
 export interface accountsComponentInputs {
-	readonly kind?: ("Gen1" | "Gen2") | undefined;
+	readonly kind?: "Gen1" | "Gen2";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MapsAccountProperties | undefined;
+	readonly properties?: MapsAccountProperties;
 	readonly sku: Sku;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class accounts_creators
 	extends ArmResource<accounts_creatorsComponentInputs>
@@ -42,7 +42,7 @@ export interface accounts_creatorsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: CreatorProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export function listKeys(resource: accounts): MapsAccountKeys {
 	if (resource.apiVersion !== "2021-02-01") {
@@ -54,34 +54,34 @@ export function listKeys(resource: accounts): MapsAccountKeys {
 	throw new Error("not implemented");
 }
 export interface CreatorProperties {
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 	readonly storageUnits: number;
 }
 export interface MapsAccountKeys {
-	readonly primaryKey?: string | undefined;
-	readonly primaryKeyLastUpdated?: string | undefined;
-	readonly secondaryKey?: string | undefined;
-	readonly secondaryKeyLastUpdated?: string | undefined;
+	readonly primaryKey?: string;
+	readonly primaryKeyLastUpdated?: string;
+	readonly secondaryKey?: string;
+	readonly secondaryKeyLastUpdated?: string;
 }
 export interface MapsAccountProperties {
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uniqueId?: string | undefined;
+	readonly disableLocalAuth?: boolean;
+	readonly provisioningState?: string;
+	readonly uniqueId?: string;
 }
 export interface Sku {
 	readonly name: "G2" | "S0" | "S1";
-	readonly tier?: string | undefined;
+	readonly tier?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	accounts: accounts,

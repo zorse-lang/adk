@@ -11,7 +11,7 @@ export interface CollectionComponentOutputs {
 }
 export interface CollectionComponentInputs {
 	readonly CollectionId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Project extends CfnResource<ProjectComponentInputs> implements ProjectComponentOutputs {
@@ -46,17 +46,17 @@ export interface StreamProcessorComponentOutputs {
 export interface StreamProcessorComponentInputs {
 	readonly KinesisVideoStream: KinesisVideoStream;
 	readonly RoleArn: string;
-	readonly BoundingBoxRegionsOfInterest?: (BoundingBox[] | undefined) | undefined;
-	readonly ConnectedHomeSettings?: (ConnectedHomeSettings | undefined) | undefined;
-	readonly DataSharingPreference?: (DataSharingPreference | undefined) | undefined;
-	readonly FaceSearchSettings?: (FaceSearchSettings | undefined) | undefined;
-	readonly KinesisDataStream?: (KinesisDataStream | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly NotificationChannel?: (NotificationChannel | undefined) | undefined;
-	readonly PolygonRegionsOfInterest?: (any | undefined) | undefined;
-	readonly S3Destination?: (S3Destination | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly BoundingBoxRegionsOfInterest?: BoundingBox[] | undefined;
+	readonly ConnectedHomeSettings?: ConnectedHomeSettings | undefined;
+	readonly DataSharingPreference?: DataSharingPreference | undefined;
+	readonly FaceSearchSettings?: FaceSearchSettings | undefined;
+	readonly KinesisDataStream?: KinesisDataStream | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly NotificationChannel?: NotificationChannel | undefined;
+	readonly PolygonRegionsOfInterest?: any | undefined;
+	readonly S3Destination?: S3Destination | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface BoundingBox {
@@ -67,14 +67,14 @@ export interface BoundingBox {
 }
 export interface ConnectedHomeSettings {
 	readonly Labels: string[];
-	readonly MinConfidence?: (number | undefined) | undefined;
+	readonly MinConfidence?: number | undefined;
 }
 export interface DataSharingPreference {
 	readonly OptIn: boolean;
 }
 export interface FaceSearchSettings {
 	readonly CollectionId: string;
-	readonly FaceMatchThreshold?: (number | undefined) | undefined;
+	readonly FaceMatchThreshold?: number | undefined;
 }
 export interface KinesisDataStream {
 	readonly Arn: string;
@@ -87,7 +87,7 @@ export interface NotificationChannel {
 }
 export interface S3Destination {
 	readonly BucketName: string;
-	readonly ObjectKeyPrefix?: (string | undefined) | undefined;
+	readonly ObjectKeyPrefix?: string | undefined;
 }
 export default {
 	Collection: Collection,

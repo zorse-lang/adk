@@ -7,8 +7,8 @@ export class Keyspace extends CfnResource<KeyspaceComponentInputs> implements Ke
 }
 export interface KeyspaceComponentOutputs {}
 export interface KeyspaceComponentInputs {
-	readonly KeyspaceName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly KeyspaceName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Table extends CfnResource<TableComponentInputs> implements TableComponentOutputs {
@@ -20,23 +20,23 @@ export interface TableComponentOutputs {}
 export interface TableComponentInputs {
 	readonly KeyspaceName: string;
 	readonly PartitionKeyColumns: Column[];
-	readonly BillingMode?: (BillingMode | undefined) | undefined;
-	readonly ClusteringKeyColumns?: (ClusteringKeyColumn[] | undefined) | undefined;
-	readonly DefaultTimeToLive?: (number | undefined) | undefined;
-	readonly EncryptionSpecification?: (EncryptionSpecification | undefined) | undefined;
-	readonly PointInTimeRecoveryEnabled?: (boolean | undefined) | undefined;
-	readonly RegularColumns?: (Column[] | undefined) | undefined;
-	readonly TableName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly BillingMode?: BillingMode | undefined;
+	readonly ClusteringKeyColumns?: ClusteringKeyColumn[] | undefined;
+	readonly DefaultTimeToLive?: number | undefined;
+	readonly EncryptionSpecification?: EncryptionSpecification | undefined;
+	readonly PointInTimeRecoveryEnabled?: boolean | undefined;
+	readonly RegularColumns?: Column[] | undefined;
+	readonly TableName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface BillingMode {
 	readonly Mode: string;
-	readonly ProvisionedThroughput?: (ProvisionedThroughput | undefined) | undefined;
+	readonly ProvisionedThroughput?: ProvisionedThroughput | undefined;
 }
 export interface ClusteringKeyColumn {
 	readonly Column: Column;
-	readonly OrderBy?: (string | undefined) | undefined;
+	readonly OrderBy?: string | undefined;
 }
 export interface Column {
 	readonly ColumnName: string;
@@ -44,7 +44,7 @@ export interface Column {
 }
 export interface EncryptionSpecification {
 	readonly EncryptionType: string;
-	readonly KmsKeyIdentifier?: (string | undefined) | undefined;
+	readonly KmsKeyIdentifier?: string | undefined;
 }
 export interface ProvisionedThroughput {
 	readonly ReadCapacityUnits: number;

@@ -14,33 +14,33 @@ export interface loadTestsComponentOutputs {
 	readonly type: "Microsoft.LoadTestService/loadTests";
 }
 export interface loadTestsComponentInputs {
-	readonly identity?: SystemAssignedServiceIdentity | undefined;
+	readonly identity?: SystemAssignedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: LoadTestProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: LoadTestProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface LoadTestProperties {
-	readonly dataPlaneURI?: string | undefined;
-	readonly description?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleted" | "Failed" | "Succeeded") | undefined;
+	readonly dataPlaneURI?: string;
+	readonly description?: string;
+	readonly provisioningState?: "Canceled" | "Deleted" | "Failed" | "Succeeded";
 }
 export interface SystemAssignedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	loadTests: loadTests,

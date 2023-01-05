@@ -11,7 +11,7 @@ export interface ReplicationSetComponentOutputs {
 }
 export interface ReplicationSetComponentInputs {
 	readonly Regions: ReplicationRegion[];
-	readonly DeletionProtected?: (boolean | undefined) | undefined;
+	readonly DeletionProtected?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class ResponsePlan extends CfnResource<ResponsePlanComponentInputs> implements ResponsePlanComponentOutputs {
@@ -26,47 +26,47 @@ export interface ResponsePlanComponentOutputs {
 export interface ResponsePlanComponentInputs {
 	readonly IncidentTemplate: IncidentTemplate;
 	readonly Name: string;
-	readonly Actions?: (Action[] | undefined) | undefined;
-	readonly ChatChannel?: (ChatChannel | undefined) | undefined;
-	readonly DisplayName?: (string | undefined) | undefined;
-	readonly Engagements?: (string[] | undefined) | undefined;
-	readonly Integrations?: (Integration[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Actions?: Action[] | undefined;
+	readonly ChatChannel?: ChatChannel | undefined;
+	readonly DisplayName?: string | undefined;
+	readonly Engagements?: string[] | undefined;
+	readonly Integrations?: Integration[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface RegionConfiguration {
 	readonly SseKmsKeyId: string;
 }
 export interface ReplicationRegion {
-	readonly RegionConfiguration?: (RegionConfiguration | undefined) | undefined;
-	readonly RegionName?: (string | undefined) | undefined;
+	readonly RegionConfiguration?: RegionConfiguration | undefined;
+	readonly RegionName?: string | undefined;
 }
 export interface Action {
-	readonly SsmAutomation?: (SsmAutomation | undefined) | undefined;
+	readonly SsmAutomation?: SsmAutomation | undefined;
 }
 export interface ChatChannel {
-	readonly ChatbotSns?: (string[] | undefined) | undefined;
+	readonly ChatbotSns?: string[] | undefined;
 }
 export interface DynamicSsmParameter {
 	readonly Key: string;
 	readonly Value: DynamicSsmParameterValue;
 }
 export interface DynamicSsmParameterValue {
-	readonly Variable?: (string | undefined) | undefined;
+	readonly Variable?: string | undefined;
 }
 export interface IncidentTemplate {
-	readonly DedupeString?: (string | undefined) | undefined;
+	readonly DedupeString?: string | undefined;
 	readonly Impact: number;
-	readonly IncidentTags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly NotificationTargets?: (NotificationTargetItem[] | undefined) | undefined;
-	readonly Summary?: (string | undefined) | undefined;
+	readonly IncidentTags?: { key: string; value: string }[] | undefined;
+	readonly NotificationTargets?: NotificationTargetItem[] | undefined;
+	readonly Summary?: string | undefined;
 	readonly Title: string;
 }
 export interface Integration {
 	readonly PagerDutyConfiguration: PagerDutyConfiguration;
 }
 export interface NotificationTargetItem {
-	readonly SnsTopicArn?: (string | undefined) | undefined;
+	readonly SnsTopicArn?: string | undefined;
 }
 export interface PagerDutyConfiguration {
 	readonly Name: string;
@@ -78,11 +78,11 @@ export interface PagerDutyIncidentConfiguration {
 }
 export interface SsmAutomation {
 	readonly DocumentName: string;
-	readonly DocumentVersion?: (string | undefined) | undefined;
-	readonly DynamicParameters?: (DynamicSsmParameter[] | undefined) | undefined;
-	readonly Parameters?: (SsmParameter[] | undefined) | undefined;
+	readonly DocumentVersion?: string | undefined;
+	readonly DynamicParameters?: DynamicSsmParameter[] | undefined;
+	readonly Parameters?: SsmParameter[] | undefined;
 	readonly RoleArn: string;
-	readonly TargetAccount?: (string | undefined) | undefined;
+	readonly TargetAccount?: string | undefined;
 }
 export interface SsmParameter {
 	readonly Key: string;

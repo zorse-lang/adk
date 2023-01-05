@@ -4,33 +4,32 @@ export class VpnGateway extends GdmResource<VpnGatewayComponentInputs> implement
 	constructor(entity: ADKEntity, options: VpnGatewayComponentInputs) {
 		super(entity, options.name, "compute.alpha.vpnGateway", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
 }
 export interface VpnGatewayComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export interface VpnGatewayComponentInputs {
-	readonly description?: string | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly description?: string;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly stackType?: string | undefined;
-	readonly vpnInterfaces?: VpnGatewayVpnGatewayInterface[] | undefined;
-	readonly type: string;
+	readonly network?: string;
+	readonly stackType?: string;
+	readonly vpnInterfaces?: VpnGatewayVpnGatewayInterface[];
 }
 export interface VpnGatewayVpnGatewayInterface {
-	readonly id?: number | undefined;
-	readonly interconnectAttachment?: string | undefined;
-	readonly ipAddress?: string | undefined;
+	readonly id?: number;
+	readonly interconnectAttachment?: string;
+	readonly ipAddress?: string;
 }
 export default {
 	VpnGateway: VpnGateway,

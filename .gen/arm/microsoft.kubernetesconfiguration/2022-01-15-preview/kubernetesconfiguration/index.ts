@@ -15,29 +15,29 @@ export interface extensionTypesComponentOutputs {
 }
 export interface extensionTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: ExtensionTypeProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ExtensionTypeProperties;
+	readonly systemData?: SystemData;
 }
 export interface ClusterScopeSettings {
-	readonly allowMultipleInstances?: boolean | undefined;
-	readonly defaultReleaseNamespace?: string | undefined;
+	readonly allowMultipleInstances?: boolean;
+	readonly defaultReleaseNamespace?: string;
 }
 export interface ExtensionTypeProperties {
-	readonly clusterTypes?: string[] | undefined;
-	readonly releaseTrains?: string[] | undefined;
-	readonly supportedScopes?: SupportedScopes | undefined;
+	readonly clusterTypes?: string[];
+	readonly releaseTrains?: string[];
+	readonly supportedScopes?: SupportedScopes;
 }
 export interface SupportedScopes {
-	readonly clusterScopeSettings?: ClusterScopeSettings | undefined;
-	readonly defaultScope?: string | undefined;
+	readonly clusterScopeSettings?: ClusterScopeSettings;
+	readonly defaultScope?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	extensionTypes: extensionTypes,

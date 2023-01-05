@@ -11,20 +11,20 @@ export class AutoScaleConfig
 export interface AutoScaleConfigComponentOutputs {}
 export interface AutoScaleConfigComponentInputs {
 	readonly ClusterId: any | string;
-	readonly EnableAutoGrow?: (boolean | undefined) | undefined;
-	readonly EnableAutoShrink?: (boolean | undefined) | undefined;
-	readonly ExcludeNodes?: (string | undefined) | undefined;
-	readonly ExtraNodesGrowRatio?: (number | undefined) | undefined;
-	readonly GrowIntervalInMinutes?: (number | undefined) | undefined;
-	readonly GrowRatio?: (number | undefined) | undefined;
-	readonly GrowTimeoutInMinutes?: (number | undefined) | undefined;
-	readonly ImageId?: (string | undefined) | undefined;
-	readonly MaxNodesInCluster?: (number | undefined) | undefined;
-	readonly Queues?: (Queues[] | undefined) | undefined;
-	readonly ShrinkIdleTimes?: (number | undefined) | undefined;
-	readonly ShrinkIntervalInMinutes?: (number | undefined) | undefined;
-	readonly SpotPriceLimit?: (number | undefined) | undefined;
-	readonly SpotStrategy?: (string | undefined) | undefined;
+	readonly EnableAutoGrow?: boolean | undefined;
+	readonly EnableAutoShrink?: boolean | undefined;
+	readonly ExcludeNodes?: string | undefined;
+	readonly ExtraNodesGrowRatio?: number | undefined;
+	readonly GrowIntervalInMinutes?: number | undefined;
+	readonly GrowRatio?: number | undefined;
+	readonly GrowTimeoutInMinutes?: number | undefined;
+	readonly ImageId?: string | undefined;
+	readonly MaxNodesInCluster?: number | undefined;
+	readonly Queues?: Queues[] | undefined;
+	readonly ShrinkIdleTimes?: number | undefined;
+	readonly ShrinkIntervalInMinutes?: number | undefined;
+	readonly SpotPriceLimit?: number | undefined;
+	readonly SpotStrategy?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Cluster extends RosResource<ClusterComponentInputs> implements ClusterComponentOutputs {
@@ -47,100 +47,100 @@ export interface ClusterComponentInputs {
 	readonly Name: any | string;
 	readonly OsTag: string;
 	readonly VSwitchId: string;
-	readonly AccountType?: (string | undefined) | undefined;
-	readonly AdditionalVolumes?: (AdditionalVolumes[] | undefined) | undefined;
-	readonly Application?: (Application[] | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly AutoRenewPeriod?: (number | undefined) | undefined;
-	readonly ClientVersion?: (string | undefined) | undefined;
-	readonly ComputeEnableHt?: (boolean | undefined) | undefined;
-	readonly ComputeSpotPriceLimit?: (string | undefined) | undefined;
-	readonly ComputeSpotStrategy?: (string | undefined) | undefined;
-	readonly DeployMode?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EcsChargeType?: (string | undefined) | undefined;
-	readonly EcsOrderManagerCount?: (number | undefined) | undefined;
-	readonly EhpcVersion?: (string | undefined) | undefined;
-	readonly HaEnable?: (boolean | undefined) | undefined;
-	readonly ImageId?: (string | undefined) | undefined;
-	readonly ImageOwnerAlias?: (string | undefined) | undefined;
-	readonly InputFileUrl?: (string | undefined) | undefined;
-	readonly IsComputeEss?: (boolean | undefined) | undefined;
-	readonly JobQueue?: (string | undefined) | undefined;
-	readonly KeyPairName?: (string | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly PostInstallScript?: (PostInstallScript[] | undefined) | undefined;
-	readonly RemoteDirectory?: (string | undefined) | undefined;
-	readonly RemoteVisEnable?: (boolean | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SccClusterId?: (string | undefined) | undefined;
-	readonly SchedulerType?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (any | string) | undefined;
-	readonly SecurityGroupName?: (string | undefined) | undefined;
-	readonly SystemDiskLevel?: (string | undefined) | undefined;
-	readonly SystemDiskSize?: (number | undefined) | undefined;
-	readonly SystemDiskType?: (string | undefined) | undefined;
-	readonly VolumeId?: (string | undefined) | undefined;
-	readonly VolumeMountpoint?: (string | undefined) | undefined;
-	readonly VolumeProtocol?: (string | undefined) | undefined;
-	readonly VolumeType?: (string | undefined) | undefined;
-	readonly WithoutElasticIp?: (boolean | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly AccountType?: string | undefined;
+	readonly AdditionalVolumes?: AdditionalVolumes[] | undefined;
+	readonly Application?: Application[] | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly AutoRenewPeriod?: number | undefined;
+	readonly ClientVersion?: string | undefined;
+	readonly ComputeEnableHt?: boolean | undefined;
+	readonly ComputeSpotPriceLimit?: string | undefined;
+	readonly ComputeSpotStrategy?: string | undefined;
+	readonly DeployMode?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly EcsChargeType?: string | undefined;
+	readonly EcsOrderManagerCount?: number | undefined;
+	readonly EhpcVersion?: string | undefined;
+	readonly HaEnable?: boolean | undefined;
+	readonly ImageId?: string | undefined;
+	readonly ImageOwnerAlias?: string | undefined;
+	readonly InputFileUrl?: string | undefined;
+	readonly IsComputeEss?: boolean | undefined;
+	readonly JobQueue?: string | undefined;
+	readonly KeyPairName?: string | undefined;
+	readonly Password?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly PostInstallScript?: PostInstallScript[] | undefined;
+	readonly RemoteDirectory?: string | undefined;
+	readonly RemoteVisEnable?: boolean | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SccClusterId?: string | undefined;
+	readonly SchedulerType?: string | undefined;
+	readonly SecurityGroupId?: any | string;
+	readonly SecurityGroupName?: string | undefined;
+	readonly SystemDiskLevel?: string | undefined;
+	readonly SystemDiskSize?: number | undefined;
+	readonly SystemDiskType?: string | undefined;
+	readonly VolumeId?: string | undefined;
+	readonly VolumeMountpoint?: string | undefined;
+	readonly VolumeProtocol?: string | undefined;
+	readonly VolumeType?: string | undefined;
+	readonly WithoutElasticIp?: boolean | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface DataDisks {
-	readonly DataDiskKMSKeyId?: (string | undefined) | undefined;
-	readonly DataDiskPerformanceLevel?: (string | undefined) | undefined;
-	readonly DataDiskEncrypted?: (boolean | undefined) | undefined;
-	readonly DataDiskDeleteWithInstance?: (boolean | undefined) | undefined;
-	readonly DataDiskSize?: (number | undefined) | undefined;
-	readonly DataDiskCategory?: (string | undefined) | undefined;
+	readonly DataDiskKMSKeyId?: string | undefined;
+	readonly DataDiskPerformanceLevel?: string | undefined;
+	readonly DataDiskEncrypted?: boolean | undefined;
+	readonly DataDiskDeleteWithInstance?: boolean | undefined;
+	readonly DataDiskSize?: number | undefined;
+	readonly DataDiskCategory?: string | undefined;
 }
 export interface InstanceTypes {
 	readonly ZoneId: string;
 	readonly VSwitchId: string;
-	readonly SpotPriceLimit?: (number | undefined) | undefined;
+	readonly SpotPriceLimit?: number | undefined;
 	readonly InstanceType: string;
-	readonly SpotStrategy?: (string | undefined) | undefined;
+	readonly SpotStrategy?: string | undefined;
 }
 export interface Queues {
-	readonly HostNameSuffix?: (string | undefined) | undefined;
-	readonly MinNodesInQueue?: (number | undefined) | undefined;
-	readonly MaxNodesInQueue?: (number | undefined) | undefined;
-	readonly EnableAutoGrow?: (boolean | undefined) | undefined;
-	readonly DataDisks?: (DataDisks[] | undefined) | undefined;
-	readonly SystemDiskSize?: (number | undefined) | undefined;
-	readonly SystemDiskLevel?: (string | undefined) | undefined;
-	readonly QueueImageId?: (string | undefined) | undefined;
-	readonly MinNodesPerCycle?: (number | undefined) | undefined;
-	readonly MaxNodesPerCycle?: (number | undefined) | undefined;
-	readonly EnableAutoShrink?: (boolean | undefined) | undefined;
-	readonly SystemDiskCategory?: (string | undefined) | undefined;
-	readonly HostNamePrefix?: (string | undefined) | undefined;
-	readonly SpotPriceLimit?: (number | undefined) | undefined;
-	readonly InstanceTypes?: (InstanceTypes[] | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly QueueName?: (string | undefined) | undefined;
-	readonly SpotStrategy?: (string | undefined) | undefined;
+	readonly HostNameSuffix?: string | undefined;
+	readonly MinNodesInQueue?: number | undefined;
+	readonly MaxNodesInQueue?: number | undefined;
+	readonly EnableAutoGrow?: boolean | undefined;
+	readonly DataDisks?: DataDisks[] | undefined;
+	readonly SystemDiskSize?: number | undefined;
+	readonly SystemDiskLevel?: string | undefined;
+	readonly QueueImageId?: string | undefined;
+	readonly MinNodesPerCycle?: number | undefined;
+	readonly MaxNodesPerCycle?: number | undefined;
+	readonly EnableAutoShrink?: boolean | undefined;
+	readonly SystemDiskCategory?: string | undefined;
+	readonly HostNamePrefix?: string | undefined;
+	readonly SpotPriceLimit?: number | undefined;
+	readonly InstanceTypes?: InstanceTypes[] | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly QueueName?: string | undefined;
+	readonly SpotStrategy?: string | undefined;
 }
 export interface AdditionalVolumes {
-	readonly VolumeProtocol?: (string | undefined) | undefined;
+	readonly VolumeProtocol?: string | undefined;
 	readonly LocalDirectory: string;
 	readonly VolumeId: string;
-	readonly RemoteDirectory?: (string | undefined) | undefined;
-	readonly VolumeType?: (string | undefined) | undefined;
-	readonly JobQueue?: (string | undefined) | undefined;
+	readonly RemoteDirectory?: string | undefined;
+	readonly VolumeType?: string | undefined;
+	readonly JobQueue?: string | undefined;
 	readonly VolumeMountpoint: string;
-	readonly Location?: (string | undefined) | undefined;
+	readonly Location?: string | undefined;
 }
 export interface Application {
 	readonly Tag: string;
 }
 export interface PostInstallScript {
-	readonly Args?: (string | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
+	readonly Args?: string | undefined;
+	readonly Url?: string | undefined;
 }
 export default {
 	AutoScaleConfig: AutoScaleConfig,

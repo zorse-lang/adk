@@ -7,7 +7,7 @@ export class Hub extends CfnResource<HubComponentInputs> implements HubComponent
 }
 export interface HubComponentOutputs {}
 export interface HubComponentInputs {
-	readonly Tags?: (any | undefined) | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export default {

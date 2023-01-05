@@ -7,39 +7,38 @@ export class ProjectsRegionsJobs
 	constructor(entity: ADKEntity, options: ProjectsRegionsJobsComponentInputs) {
 		super(entity, options.name, "dataproc.v1.ProjectsRegionsJobs", options);
 	}
-	public readonly done?: boolean | undefined;
-	public readonly driverControlFilesUri?: string | undefined;
-	public readonly driverOutputResourceUri?: string | undefined;
-	public readonly jobUuid?: string | undefined;
-	public readonly status?: JobStatus | undefined;
-	public readonly statusHistory?: JobStatus[] | undefined;
-	public readonly yarnApplications?: YarnApplication[] | undefined;
+	public readonly done?: boolean;
+	public readonly driverControlFilesUri?: string;
+	public readonly driverOutputResourceUri?: string;
+	public readonly jobUuid?: string;
+	public readonly status?: JobStatus;
+	public readonly statusHistory?: JobStatus[];
+	public readonly yarnApplications?: YarnApplication[];
 }
 export interface ProjectsRegionsJobsComponentOutputs {
-	readonly done?: boolean | undefined;
-	readonly driverControlFilesUri?: string | undefined;
-	readonly driverOutputResourceUri?: string | undefined;
-	readonly jobUuid?: string | undefined;
-	readonly status?: JobStatus | undefined;
-	readonly statusHistory?: JobStatus[] | undefined;
-	readonly yarnApplications?: YarnApplication[] | undefined;
+	readonly done?: boolean;
+	readonly driverControlFilesUri?: string;
+	readonly driverOutputResourceUri?: string;
+	readonly jobUuid?: string;
+	readonly status?: JobStatus;
+	readonly statusHistory?: JobStatus[];
+	readonly yarnApplications?: YarnApplication[];
 }
 export interface ProjectsRegionsJobsComponentInputs {
-	readonly driverSchedulingConfig?: DriverSchedulingConfig | undefined;
-	readonly hadoopJob?: HadoopJob | undefined;
-	readonly hiveJob?: HiveJob | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly pigJob?: PigJob | undefined;
+	readonly driverSchedulingConfig?: DriverSchedulingConfig;
+	readonly hadoopJob?: HadoopJob;
+	readonly hiveJob?: HiveJob;
+	readonly labels?: { [P in string]: string };
+	readonly pigJob?: PigJob;
 	readonly placement: JobPlacement;
-	readonly prestoJob?: PrestoJob | undefined;
-	readonly pysparkJob?: PySparkJob | undefined;
-	readonly reference?: JobReference | undefined;
-	readonly scheduling?: JobScheduling | undefined;
-	readonly sparkJob?: SparkJob | undefined;
-	readonly sparkRJob?: SparkRJob | undefined;
-	readonly sparkSqlJob?: SparkSqlJob | undefined;
-	readonly trinoJob?: TrinoJob | undefined;
-	readonly type: string;
+	readonly prestoJob?: PrestoJob;
+	readonly pysparkJob?: PySparkJob;
+	readonly reference?: JobReference;
+	readonly scheduling?: JobScheduling;
+	readonly sparkJob?: SparkJob;
+	readonly sparkRJob?: SparkRJob;
+	readonly sparkSqlJob?: SparkSqlJob;
+	readonly trinoJob?: TrinoJob;
 	readonly name: string;
 }
 export interface DriverSchedulingConfig {
@@ -47,139 +46,139 @@ export interface DriverSchedulingConfig {
 	readonly vcores: number;
 }
 export interface HadoopJob {
-	readonly archiveUris?: string[] | undefined;
-	readonly args?: string[] | undefined;
-	readonly fileUris?: string[] | undefined;
-	readonly jarFileUris?: string[] | undefined;
-	readonly loggingConfig?: LoggingConfig | undefined;
-	readonly mainClass?: string | undefined;
-	readonly mainJarFileUri?: string | undefined;
-	readonly properties?: { [P in string]: string } | undefined;
+	readonly archiveUris?: string[];
+	readonly args?: string[];
+	readonly fileUris?: string[];
+	readonly jarFileUris?: string[];
+	readonly loggingConfig?: LoggingConfig;
+	readonly mainClass?: string;
+	readonly mainJarFileUri?: string;
+	readonly properties?: { [P in string]: string };
 }
 export interface HiveJob {
-	readonly continueOnFailure?: boolean | undefined;
-	readonly jarFileUris?: string[] | undefined;
-	readonly properties?: { [P in string]: string } | undefined;
-	readonly queryFileUri?: string | undefined;
-	readonly queryList?: QueryList | undefined;
-	readonly scriptVariables?: { [P in string]: string } | undefined;
+	readonly continueOnFailure?: boolean;
+	readonly jarFileUris?: string[];
+	readonly properties?: { [P in string]: string };
+	readonly queryFileUri?: string;
+	readonly queryList?: QueryList;
+	readonly scriptVariables?: { [P in string]: string };
 }
 export interface Job {
-	readonly done?: boolean | undefined;
-	readonly driverControlFilesUri?: string | undefined;
-	readonly driverOutputResourceUri?: string | undefined;
-	readonly driverSchedulingConfig?: DriverSchedulingConfig | undefined;
-	readonly hadoopJob?: HadoopJob | undefined;
-	readonly hiveJob?: HiveJob | undefined;
-	readonly jobUuid?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly pigJob?: PigJob | undefined;
+	readonly done?: boolean;
+	readonly driverControlFilesUri?: string;
+	readonly driverOutputResourceUri?: string;
+	readonly driverSchedulingConfig?: DriverSchedulingConfig;
+	readonly hadoopJob?: HadoopJob;
+	readonly hiveJob?: HiveJob;
+	readonly jobUuid?: string;
+	readonly labels?: { [P in string]: string };
+	readonly pigJob?: PigJob;
 	readonly placement: JobPlacement;
-	readonly prestoJob?: PrestoJob | undefined;
-	readonly pysparkJob?: PySparkJob | undefined;
-	readonly reference?: JobReference | undefined;
-	readonly scheduling?: JobScheduling | undefined;
-	readonly sparkJob?: SparkJob | undefined;
-	readonly sparkRJob?: SparkRJob | undefined;
-	readonly sparkSqlJob?: SparkSqlJob | undefined;
-	readonly status?: JobStatus | undefined;
-	readonly statusHistory?: JobStatus[] | undefined;
-	readonly trinoJob?: TrinoJob | undefined;
-	readonly yarnApplications?: YarnApplication[] | undefined;
+	readonly prestoJob?: PrestoJob;
+	readonly pysparkJob?: PySparkJob;
+	readonly reference?: JobReference;
+	readonly scheduling?: JobScheduling;
+	readonly sparkJob?: SparkJob;
+	readonly sparkRJob?: SparkRJob;
+	readonly sparkSqlJob?: SparkSqlJob;
+	readonly status?: JobStatus;
+	readonly statusHistory?: JobStatus[];
+	readonly trinoJob?: TrinoJob;
+	readonly yarnApplications?: YarnApplication[];
 }
 export interface JobPlacement {
-	readonly clusterLabels?: { [P in string]: string } | undefined;
+	readonly clusterLabels?: { [P in string]: string };
 	readonly clusterName: string;
-	readonly clusterUuid?: string | undefined;
+	readonly clusterUuid?: string;
 }
 export interface JobReference {
-	readonly jobId?: string | undefined;
-	readonly projectId?: string | undefined;
+	readonly jobId?: string;
+	readonly projectId?: string;
 }
 export interface JobScheduling {
-	readonly maxFailuresPerHour?: number | undefined;
-	readonly maxFailuresTotal?: number | undefined;
+	readonly maxFailuresPerHour?: number;
+	readonly maxFailuresTotal?: number;
 }
 export interface JobStatus {
-	readonly details?: string | undefined;
-	readonly state?: string | undefined;
-	readonly stateStartTime?: string | undefined;
-	readonly substate?: string | undefined;
+	readonly details?: string;
+	readonly state?: string;
+	readonly stateStartTime?: string;
+	readonly substate?: string;
 }
 export interface LoggingConfig {
-	readonly driverLogLevels?: { [P in string]: string } | undefined;
+	readonly driverLogLevels?: { [P in string]: string };
 }
 export interface PigJob {
-	readonly continueOnFailure?: boolean | undefined;
-	readonly jarFileUris?: string[] | undefined;
-	readonly loggingConfig?: LoggingConfig | undefined;
-	readonly properties?: { [P in string]: string } | undefined;
-	readonly queryFileUri?: string | undefined;
-	readonly queryList?: QueryList | undefined;
-	readonly scriptVariables?: { [P in string]: string } | undefined;
+	readonly continueOnFailure?: boolean;
+	readonly jarFileUris?: string[];
+	readonly loggingConfig?: LoggingConfig;
+	readonly properties?: { [P in string]: string };
+	readonly queryFileUri?: string;
+	readonly queryList?: QueryList;
+	readonly scriptVariables?: { [P in string]: string };
 }
 export interface PrestoJob {
-	readonly clientTags?: string[] | undefined;
-	readonly continueOnFailure?: boolean | undefined;
-	readonly loggingConfig?: LoggingConfig | undefined;
-	readonly outputFormat?: string | undefined;
-	readonly properties?: { [P in string]: string } | undefined;
-	readonly queryFileUri?: string | undefined;
-	readonly queryList?: QueryList | undefined;
+	readonly clientTags?: string[];
+	readonly continueOnFailure?: boolean;
+	readonly loggingConfig?: LoggingConfig;
+	readonly outputFormat?: string;
+	readonly properties?: { [P in string]: string };
+	readonly queryFileUri?: string;
+	readonly queryList?: QueryList;
 }
 export interface PySparkJob {
-	readonly archiveUris?: string[] | undefined;
-	readonly args?: string[] | undefined;
-	readonly fileUris?: string[] | undefined;
-	readonly jarFileUris?: string[] | undefined;
-	readonly loggingConfig?: LoggingConfig | undefined;
+	readonly archiveUris?: string[];
+	readonly args?: string[];
+	readonly fileUris?: string[];
+	readonly jarFileUris?: string[];
+	readonly loggingConfig?: LoggingConfig;
 	readonly mainPythonFileUri: string;
-	readonly properties?: { [P in string]: string } | undefined;
-	readonly pythonFileUris?: string[] | undefined;
+	readonly properties?: { [P in string]: string };
+	readonly pythonFileUris?: string[];
 }
 export interface QueryList {
 	readonly queries: string[];
 }
 export interface SparkJob {
-	readonly archiveUris?: string[] | undefined;
-	readonly args?: string[] | undefined;
-	readonly fileUris?: string[] | undefined;
-	readonly jarFileUris?: string[] | undefined;
-	readonly loggingConfig?: LoggingConfig | undefined;
-	readonly mainClass?: string | undefined;
-	readonly mainJarFileUri?: string | undefined;
-	readonly properties?: { [P in string]: string } | undefined;
+	readonly archiveUris?: string[];
+	readonly args?: string[];
+	readonly fileUris?: string[];
+	readonly jarFileUris?: string[];
+	readonly loggingConfig?: LoggingConfig;
+	readonly mainClass?: string;
+	readonly mainJarFileUri?: string;
+	readonly properties?: { [P in string]: string };
 }
 export interface SparkRJob {
-	readonly archiveUris?: string[] | undefined;
-	readonly args?: string[] | undefined;
-	readonly fileUris?: string[] | undefined;
-	readonly loggingConfig?: LoggingConfig | undefined;
+	readonly archiveUris?: string[];
+	readonly args?: string[];
+	readonly fileUris?: string[];
+	readonly loggingConfig?: LoggingConfig;
 	readonly mainRFileUri: string;
-	readonly properties?: { [P in string]: string } | undefined;
+	readonly properties?: { [P in string]: string };
 }
 export interface SparkSqlJob {
-	readonly jarFileUris?: string[] | undefined;
-	readonly loggingConfig?: LoggingConfig | undefined;
-	readonly properties?: { [P in string]: string } | undefined;
-	readonly queryFileUri?: string | undefined;
-	readonly queryList?: QueryList | undefined;
-	readonly scriptVariables?: { [P in string]: string } | undefined;
+	readonly jarFileUris?: string[];
+	readonly loggingConfig?: LoggingConfig;
+	readonly properties?: { [P in string]: string };
+	readonly queryFileUri?: string;
+	readonly queryList?: QueryList;
+	readonly scriptVariables?: { [P in string]: string };
 }
 export interface TrinoJob {
-	readonly clientTags?: string[] | undefined;
-	readonly continueOnFailure?: boolean | undefined;
-	readonly loggingConfig?: LoggingConfig | undefined;
-	readonly outputFormat?: string | undefined;
-	readonly properties?: { [P in string]: string } | undefined;
-	readonly queryFileUri?: string | undefined;
-	readonly queryList?: QueryList | undefined;
+	readonly clientTags?: string[];
+	readonly continueOnFailure?: boolean;
+	readonly loggingConfig?: LoggingConfig;
+	readonly outputFormat?: string;
+	readonly properties?: { [P in string]: string };
+	readonly queryFileUri?: string;
+	readonly queryList?: QueryList;
 }
 export interface YarnApplication {
 	readonly name: string;
 	readonly progress: number;
 	readonly state: string;
-	readonly trackingUrl?: string | undefined;
+	readonly trackingUrl?: string;
 }
 export default {
 	ProjectsRegionsJobs: ProjectsRegionsJobs,

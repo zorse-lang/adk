@@ -19,33 +19,33 @@ export interface diagnosticSettingsComponentOutputs {
 export interface diagnosticSettingsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServiceDiagnosticSettings | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ServiceDiagnosticSettings;
+	readonly tags?: ResourceTags;
 }
 export interface LogSettings {
-	readonly category?: string | undefined;
+	readonly category?: string;
 	readonly enabled: boolean;
-	readonly retentionPolicy?: RetentionPolicy | undefined;
+	readonly retentionPolicy?: RetentionPolicy;
 }
 export interface MetricSettings {
 	readonly enabled: boolean;
-	readonly retentionPolicy?: RetentionPolicy | undefined;
+	readonly retentionPolicy?: RetentionPolicy;
 	readonly timeGrain: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RetentionPolicy {
 	readonly days: number;
 	readonly enabled: boolean;
 }
 export interface ServiceDiagnosticSettings {
-	readonly eventHubAuthorizationRuleId?: string | undefined;
-	readonly logs?: LogSettings[] | undefined;
-	readonly metrics?: MetricSettings[] | undefined;
-	readonly serviceBusRuleId?: string | undefined;
-	readonly storageAccountId?: string | undefined;
-	readonly workspaceId?: string | undefined;
+	readonly eventHubAuthorizationRuleId?: string;
+	readonly logs?: LogSettings[];
+	readonly metrics?: MetricSettings[];
+	readonly serviceBusRuleId?: string;
+	readonly storageAccountId?: string;
+	readonly workspaceId?: string;
 }
 export default {
 	diagnosticSettings: diagnosticSettings,

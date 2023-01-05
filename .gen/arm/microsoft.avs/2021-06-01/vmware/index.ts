@@ -14,11 +14,11 @@ export interface privateCloudsComponentOutputs {
 	readonly type: "Microsoft.AVS/privateClouds";
 }
 export interface privateCloudsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PrivateCloudProperties | undefined;
+	readonly properties?: PrivateCloudProperties;
 	readonly sku: Sku;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class privateClouds_addons
 	extends ArmResource<privateClouds_addonsComponentInputs>
@@ -38,7 +38,7 @@ export interface privateClouds_addonsComponentOutputs {
 }
 export interface privateClouds_addonsComponentInputs {
 	readonly name: string;
-	readonly properties?: AddonProperties | undefined;
+	readonly properties?: AddonProperties;
 }
 export class privateClouds_authorizations
 	extends ArmResource<privateClouds_authorizationsComponentInputs>
@@ -58,7 +58,7 @@ export interface privateClouds_authorizationsComponentOutputs {
 }
 export interface privateClouds_authorizationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExpressRouteAuthorizationProperties | undefined;
+	readonly properties?: ExpressRouteAuthorizationProperties;
 }
 export class privateClouds_cloudLinks
 	extends ArmResource<privateClouds_cloudLinksComponentInputs>
@@ -78,7 +78,7 @@ export interface privateClouds_cloudLinksComponentOutputs {
 }
 export interface privateClouds_cloudLinksComponentInputs {
 	readonly name: string;
-	readonly properties?: CloudLinkProperties | undefined;
+	readonly properties?: CloudLinkProperties;
 }
 export class privateClouds_clusters
 	extends ArmResource<privateClouds_clustersComponentInputs>
@@ -98,7 +98,7 @@ export interface privateClouds_clustersComponentOutputs {
 }
 export interface privateClouds_clustersComponentInputs {
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
+	readonly properties?: ClusterProperties;
 	readonly sku: Sku;
 }
 export class privateClouds_clusters_datastores
@@ -119,7 +119,7 @@ export interface privateClouds_clusters_datastoresComponentOutputs {
 }
 export interface privateClouds_clusters_datastoresComponentInputs {
 	readonly name: string;
-	readonly properties?: DatastoreProperties | undefined;
+	readonly properties?: DatastoreProperties;
 }
 export class privateClouds_globalReachConnections
 	extends ArmResource<privateClouds_globalReachConnectionsComponentInputs>
@@ -139,7 +139,7 @@ export interface privateClouds_globalReachConnectionsComponentOutputs {
 }
 export interface privateClouds_globalReachConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: GlobalReachConnectionProperties | undefined;
+	readonly properties?: GlobalReachConnectionProperties;
 }
 export class privateClouds_hcxEnterpriseSites
 	extends ArmResource<privateClouds_hcxEnterpriseSitesComponentInputs>
@@ -159,7 +159,7 @@ export interface privateClouds_hcxEnterpriseSitesComponentOutputs {
 }
 export interface privateClouds_hcxEnterpriseSitesComponentInputs {
 	readonly name: string;
-	readonly properties?: HcxEnterpriseSiteProperties | undefined;
+	readonly properties?: HcxEnterpriseSiteProperties;
 }
 export class privateClouds_scriptExecutions
 	extends ArmResource<privateClouds_scriptExecutionsComponentInputs>
@@ -179,7 +179,7 @@ export interface privateClouds_scriptExecutionsComponentOutputs {
 }
 export interface privateClouds_scriptExecutionsComponentInputs {
 	readonly name: string;
-	readonly properties?: ScriptExecutionProperties | undefined;
+	readonly properties?: ScriptExecutionProperties;
 }
 export class privateClouds_scriptPackages
 	extends ArmResource<privateClouds_scriptPackagesComponentInputs>
@@ -199,7 +199,7 @@ export interface privateClouds_scriptPackagesComponentOutputs {
 }
 export interface privateClouds_scriptPackagesComponentInputs {
 	readonly name: string;
-	readonly properties?: ScriptPackageProperties | undefined;
+	readonly properties?: ScriptPackageProperties;
 }
 export class privateClouds_scriptPackages_scriptCmdlets
 	extends ArmResource<privateClouds_scriptPackages_scriptCmdletsComponentInputs>
@@ -219,7 +219,7 @@ export interface privateClouds_scriptPackages_scriptCmdletsComponentOutputs {
 }
 export interface privateClouds_scriptPackages_scriptCmdletsComponentInputs {
 	readonly name: string;
-	readonly properties?: ScriptCmdletProperties | undefined;
+	readonly properties?: ScriptCmdletProperties;
 }
 export class privateClouds_workloadNetworks_dhcpConfigurations
 	extends ArmResource<privateClouds_workloadNetworks_dhcpConfigurationsComponentInputs>
@@ -245,7 +245,7 @@ export interface privateClouds_workloadNetworks_dhcpConfigurationsComponentOutpu
 }
 export interface privateClouds_workloadNetworks_dhcpConfigurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadNetworkDhcpEntity | undefined;
+	readonly properties?: WorkloadNetworkDhcpEntity;
 }
 export class privateClouds_workloadNetworks_dnsServices
 	extends ArmResource<privateClouds_workloadNetworks_dnsServicesComponentInputs>
@@ -265,7 +265,7 @@ export interface privateClouds_workloadNetworks_dnsServicesComponentOutputs {
 }
 export interface privateClouds_workloadNetworks_dnsServicesComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadNetworkDnsServiceProperties | undefined;
+	readonly properties?: WorkloadNetworkDnsServiceProperties;
 }
 export class privateClouds_workloadNetworks_dnsZones
 	extends ArmResource<privateClouds_workloadNetworks_dnsZonesComponentInputs>
@@ -285,7 +285,7 @@ export interface privateClouds_workloadNetworks_dnsZonesComponentOutputs {
 }
 export interface privateClouds_workloadNetworks_dnsZonesComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadNetworkDnsZoneProperties | undefined;
+	readonly properties?: WorkloadNetworkDnsZoneProperties;
 }
 export class privateClouds_workloadNetworks_gateways
 	extends ArmResource<privateClouds_workloadNetworks_gatewaysComponentInputs>
@@ -305,7 +305,7 @@ export interface privateClouds_workloadNetworks_gatewaysComponentOutputs {
 }
 export interface privateClouds_workloadNetworks_gatewaysComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadNetworkGatewayProperties | undefined;
+	readonly properties?: WorkloadNetworkGatewayProperties;
 }
 export class privateClouds_workloadNetworks_portMirroringProfiles
 	extends ArmResource<privateClouds_workloadNetworks_portMirroringProfilesComponentInputs>
@@ -331,7 +331,7 @@ export interface privateClouds_workloadNetworks_portMirroringProfilesComponentOu
 }
 export interface privateClouds_workloadNetworks_portMirroringProfilesComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadNetworkPortMirroringProperties | undefined;
+	readonly properties?: WorkloadNetworkPortMirroringProperties;
 }
 export class privateClouds_workloadNetworks_publicIPs
 	extends ArmResource<privateClouds_workloadNetworks_publicIPsComponentInputs>
@@ -351,7 +351,7 @@ export interface privateClouds_workloadNetworks_publicIPsComponentOutputs {
 }
 export interface privateClouds_workloadNetworks_publicIPsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadNetworkPublicIPProperties | undefined;
+	readonly properties?: WorkloadNetworkPublicIPProperties;
 }
 export class privateClouds_workloadNetworks_segments
 	extends ArmResource<privateClouds_workloadNetworks_segmentsComponentInputs>
@@ -371,7 +371,7 @@ export interface privateClouds_workloadNetworks_segmentsComponentOutputs {
 }
 export interface privateClouds_workloadNetworks_segmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadNetworkSegmentProperties | undefined;
+	readonly properties?: WorkloadNetworkSegmentProperties;
 }
 export class privateClouds_workloadNetworks_virtualMachines
 	extends ArmResource<privateClouds_workloadNetworks_virtualMachinesComponentInputs>
@@ -391,7 +391,7 @@ export interface privateClouds_workloadNetworks_virtualMachinesComponentOutputs 
 }
 export interface privateClouds_workloadNetworks_virtualMachinesComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadNetworkVirtualMachineProperties | undefined;
+	readonly properties?: WorkloadNetworkVirtualMachineProperties;
 }
 export class privateClouds_workloadNetworks_vmGroups
 	extends ArmResource<privateClouds_workloadNetworks_vmGroupsComponentInputs>
@@ -411,7 +411,7 @@ export interface privateClouds_workloadNetworks_vmGroupsComponentOutputs {
 }
 export interface privateClouds_workloadNetworks_vmGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkloadNetworkVMGroupProperties | undefined;
+	readonly properties?: WorkloadNetworkVMGroupProperties;
 }
 export function listAdminCredentials(resource: privateClouds): AdminCredentials {
 	if (resource.apiVersion !== "2021-06-01") {
@@ -423,223 +423,215 @@ export function listAdminCredentials(resource: privateClouds): AdminCredentials 
 	throw new Error("not implemented");
 }
 export interface AddonProperties {
-	readonly provisioningState?:
-		| ("Building" | "Cancelled" | "Deleting" | "Failed" | "Succeeded" | "Updating")
-		| undefined;
+	readonly provisioningState?: "Building" | "Cancelled" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface AdminCredentials {
-	readonly nsxtPassword?: string | undefined;
-	readonly nsxtUsername?: string | undefined;
-	readonly vcenterPassword?: string | undefined;
-	readonly vcenterUsername?: string | undefined;
+	readonly nsxtPassword?: string;
+	readonly nsxtUsername?: string;
+	readonly vcenterPassword?: string;
+	readonly vcenterUsername?: string;
 }
 export interface Circuit {
-	readonly expressRouteID?: string | undefined;
-	readonly expressRoutePrivatePeeringID?: string | undefined;
-	readonly primarySubnet?: string | undefined;
-	readonly secondarySubnet?: string | undefined;
+	readonly expressRouteID?: string;
+	readonly expressRoutePrivatePeeringID?: string;
+	readonly primarySubnet?: string;
+	readonly secondarySubnet?: string;
 }
 export interface CloudLinkProperties {
-	readonly linkedCloud?: string | undefined;
-	readonly status?: ("Active" | "Building" | "Deleting" | "Disconnected" | "Failed") | undefined;
+	readonly linkedCloud?: string;
+	readonly status?: "Active" | "Building" | "Deleting" | "Disconnected" | "Failed";
 }
 export interface ClusterProperties {
-	readonly clusterId?: number | undefined;
-	readonly clusterSize?: number | undefined;
-	readonly hosts?: string[] | undefined;
-	readonly provisioningState?: ("Cancelled" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly clusterId?: number;
+	readonly clusterSize?: number;
+	readonly hosts?: string[];
+	readonly provisioningState?: "Cancelled" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface DatastoreProperties {
-	readonly diskPoolVolume?: DiskPoolVolume | undefined;
-	readonly netAppVolume?: NetAppVolume | undefined;
-	readonly provisioningState?:
-		| ("Cancelled" | "Creating" | "Deleting" | "Failed" | "Pending" | "Succeeded" | "Updating")
-		| undefined;
+	readonly diskPoolVolume?: DiskPoolVolume;
+	readonly netAppVolume?: NetAppVolume;
+	readonly provisioningState?: "Cancelled" | "Creating" | "Deleting" | "Failed" | "Pending" | "Succeeded" | "Updating";
 }
 export interface DiskPoolVolume {
 	readonly lunName: string;
-	readonly mountOption?: ("ATTACH" | "MOUNT") | undefined;
-	readonly path?: string | undefined;
+	readonly mountOption?: "ATTACH" | "MOUNT";
+	readonly path?: string;
 	readonly targetId: string;
 }
 export interface Endpoints {
-	readonly hcxCloudManager?: string | undefined;
-	readonly nsxtManager?: string | undefined;
-	readonly vcsa?: string | undefined;
+	readonly hcxCloudManager?: string;
+	readonly nsxtManager?: string;
+	readonly vcsa?: string;
 }
 export interface ExpressRouteAuthorizationProperties {
-	readonly expressRouteAuthorizationId?: string | undefined;
-	readonly expressRouteAuthorizationKey?: string | undefined;
-	readonly provisioningState?: ("Failed" | "Succeeded" | "Updating") | undefined;
+	readonly expressRouteAuthorizationId?: string;
+	readonly expressRouteAuthorizationKey?: string;
+	readonly provisioningState?: "Failed" | "Succeeded" | "Updating";
 }
 export interface GlobalReachConnectionProperties {
-	readonly addressPrefix?: string | undefined;
-	readonly authorizationKey?: string | undefined;
-	readonly circuitConnectionStatus?: ("Connected" | "Connecting" | "Disconnected") | undefined;
-	readonly peerExpressRouteCircuit?: string | undefined;
-	readonly provisioningState?: ("Failed" | "Succeeded" | "Updating") | undefined;
+	readonly addressPrefix?: string;
+	readonly authorizationKey?: string;
+	readonly circuitConnectionStatus?: "Connected" | "Connecting" | "Disconnected";
+	readonly peerExpressRouteCircuit?: string;
+	readonly provisioningState?: "Failed" | "Succeeded" | "Updating";
 }
 export interface HcxEnterpriseSiteProperties {
-	readonly activationKey?: string | undefined;
-	readonly status?: ("Available" | "Consumed" | "Deactivated" | "Deleted") | undefined;
+	readonly activationKey?: string;
+	readonly status?: "Available" | "Consumed" | "Deactivated" | "Deleted";
 }
 export interface IdentitySource {
-	readonly alias?: string | undefined;
-	readonly baseGroupDN?: string | undefined;
-	readonly baseUserDN?: string | undefined;
-	readonly domain?: string | undefined;
-	readonly name?: string | undefined;
-	readonly password?: string | undefined;
-	readonly primaryServer?: string | undefined;
-	readonly secondaryServer?: string | undefined;
-	readonly ssl?: ("Disabled" | "Enabled") | undefined;
-	readonly username?: string | undefined;
+	readonly alias?: string;
+	readonly baseGroupDN?: string;
+	readonly baseUserDN?: string;
+	readonly domain?: string;
+	readonly name?: string;
+	readonly password?: string;
+	readonly primaryServer?: string;
+	readonly secondaryServer?: string;
+	readonly ssl?: "Disabled" | "Enabled";
+	readonly username?: string;
 }
 export interface ManagementCluster {
-	readonly clusterId?: number | undefined;
-	readonly clusterSize?: number | undefined;
-	readonly hosts?: string[] | undefined;
-	readonly provisioningState?: ("Cancelled" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly clusterId?: number;
+	readonly clusterSize?: number;
+	readonly hosts?: string[];
+	readonly provisioningState?: "Cancelled" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface NetAppVolume {
 	readonly id: string;
 }
 export interface PrivateCloudProperties {
-	readonly circuit?: Circuit | undefined;
-	readonly endpoints?: Endpoints | undefined;
-	readonly externalCloudLinks?: string[] | undefined;
-	readonly identitySources?: IdentitySource[] | undefined;
-	readonly internet?: ("Disabled" | "Enabled") | undefined;
-	readonly managementCluster?: ManagementCluster | undefined;
-	readonly managementNetwork?: string | undefined;
+	readonly circuit?: Circuit;
+	readonly endpoints?: Endpoints;
+	readonly externalCloudLinks?: string[];
+	readonly identitySources?: IdentitySource[];
+	readonly internet?: "Disabled" | "Enabled";
+	readonly managementCluster?: ManagementCluster;
+	readonly managementNetwork?: string;
 	readonly networkBlock: string;
-	readonly nsxtCertificateThumbprint?: string | undefined;
-	readonly nsxtPassword?: string | undefined;
-	readonly provisioningNetwork?: string | undefined;
-	readonly provisioningState?:
-		| ("Building" | "Cancelled" | "Deleting" | "Failed" | "Pending" | "Succeeded" | "Updating")
-		| undefined;
-	readonly vcenterCertificateThumbprint?: string | undefined;
-	readonly vcenterPassword?: string | undefined;
-	readonly vmotionNetwork?: string | undefined;
+	readonly nsxtCertificateThumbprint?: string;
+	readonly nsxtPassword?: string;
+	readonly provisioningNetwork?: string;
+	readonly provisioningState?: "Building" | "Cancelled" | "Deleting" | "Failed" | "Pending" | "Succeeded" | "Updating";
+	readonly vcenterCertificateThumbprint?: string;
+	readonly vcenterPassword?: string;
+	readonly vmotionNetwork?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ScriptCmdletProperties {
-	readonly description?: string | undefined;
-	readonly parameters?: ScriptParameter[] | undefined;
-	readonly timeout?: string | undefined;
+	readonly description?: string;
+	readonly parameters?: ScriptParameter[];
+	readonly timeout?: string;
 }
 export interface ScriptExecutionParameter {
 	readonly name: string;
 }
 export interface ScriptExecutionProperties {
-	readonly errors?: string[] | undefined;
-	readonly failureReason?: string | undefined;
-	readonly finishedAt?: string | undefined;
-	readonly hiddenParameters?: ScriptExecutionParameter[] | undefined;
-	readonly information?: string[] | undefined;
-	readonly namedOutputs?: ScriptExecutionPropertiesNamedOutputs | undefined;
-	readonly output?: string[] | undefined;
-	readonly parameters?: ScriptExecutionParameter[] | undefined;
-	readonly provisioningState?:
-		| ("Cancelled" | "Cancelling" | "Deleting" | "Failed" | "Pending" | "Running" | "Succeeded")
-		| undefined;
-	readonly retention?: string | undefined;
-	readonly scriptCmdletId?: string | undefined;
-	readonly startedAt?: string | undefined;
-	readonly submittedAt?: string | undefined;
+	readonly errors?: string[];
+	readonly failureReason?: string;
+	readonly finishedAt?: string;
+	readonly hiddenParameters?: ScriptExecutionParameter[];
+	readonly information?: string[];
+	readonly namedOutputs?: ScriptExecutionPropertiesNamedOutputs;
+	readonly output?: string[];
+	readonly parameters?: ScriptExecutionParameter[];
+	readonly provisioningState?: "Cancelled" | "Cancelling" | "Deleting" | "Failed" | "Pending" | "Running" | "Succeeded";
+	readonly retention?: string;
+	readonly scriptCmdletId?: string;
+	readonly startedAt?: string;
+	readonly submittedAt?: string;
 	readonly timeout: string;
-	readonly warnings?: string[] | undefined;
+	readonly warnings?: string[];
 }
 export interface ScriptExecutionPropertiesNamedOutputs {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ScriptPackageProperties {
-	readonly description?: string | undefined;
-	readonly version?: string | undefined;
+	readonly description?: string;
+	readonly version?: string;
 }
 export interface ScriptParameter {
-	readonly description?: string | undefined;
-	readonly name?: string | undefined;
-	readonly optional?: ("Optional" | "Required") | undefined;
-	readonly type?: ("Bool" | "Credential" | "Float" | "Int" | "SecureString" | "String") | undefined;
-	readonly visibility?: ("Hidden" | "Visible") | undefined;
+	readonly description?: string;
+	readonly name?: string;
+	readonly optional?: "Optional" | "Required";
+	readonly type?: "Bool" | "Credential" | "Float" | "Int" | "SecureString" | "String";
+	readonly visibility?: "Hidden" | "Visible";
 }
 export interface Sku {
 	readonly name: string;
 }
 export interface WorkloadNetworkDhcpEntity {
-	readonly displayName?: string | undefined;
-	readonly provisioningState?: ("Building" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly revision?: number | undefined;
-	readonly segments?: string[] | undefined;
+	readonly displayName?: string;
+	readonly provisioningState?: "Building" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly revision?: number;
+	readonly segments?: string[];
 }
 export interface WorkloadNetworkDnsServiceProperties {
-	readonly defaultDnsZone?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly dnsServiceIp?: string | undefined;
-	readonly fqdnZones?: string[] | undefined;
-	readonly logLevel?: ("DEBUG" | "ERROR" | "FATAL" | "INFO" | "WARNING") | undefined;
-	readonly provisioningState?: ("Building" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly revision?: number | undefined;
-	readonly status?: ("FAILURE" | "SUCCESS") | undefined;
+	readonly defaultDnsZone?: string;
+	readonly displayName?: string;
+	readonly dnsServiceIp?: string;
+	readonly fqdnZones?: string[];
+	readonly logLevel?: "DEBUG" | "ERROR" | "FATAL" | "INFO" | "WARNING";
+	readonly provisioningState?: "Building" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly revision?: number;
+	readonly status?: "FAILURE" | "SUCCESS";
 }
 export interface WorkloadNetworkDnsZoneProperties {
-	readonly displayName?: string | undefined;
-	readonly dnsServerIps?: string[] | undefined;
-	readonly dnsServices?: number | undefined;
-	readonly domain?: string[] | undefined;
-	readonly provisioningState?: ("Building" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly revision?: number | undefined;
-	readonly sourceIp?: string | undefined;
+	readonly displayName?: string;
+	readonly dnsServerIps?: string[];
+	readonly dnsServices?: number;
+	readonly domain?: string[];
+	readonly provisioningState?: "Building" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly revision?: number;
+	readonly sourceIp?: string;
 }
 export interface WorkloadNetworkGatewayProperties {
-	readonly displayName?: string | undefined;
-	readonly path?: string | undefined;
+	readonly displayName?: string;
+	readonly path?: string;
 }
 export interface WorkloadNetworkPortMirroringProperties {
-	readonly destination?: string | undefined;
-	readonly direction?: "INGRESS, EGRESS, BIDIRECTIONAL" | undefined;
-	readonly displayName?: string | undefined;
-	readonly provisioningState?: ("Building" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly revision?: number | undefined;
-	readonly source?: string | undefined;
-	readonly status?: "SUCCESS, FAILURE" | undefined;
+	readonly destination?: string;
+	readonly direction?: "INGRESS, EGRESS, BIDIRECTIONAL";
+	readonly displayName?: string;
+	readonly provisioningState?: "Building" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly revision?: number;
+	readonly source?: string;
+	readonly status?: "SUCCESS, FAILURE";
 }
 export interface WorkloadNetworkPublicIPProperties {
-	readonly displayName?: string | undefined;
-	readonly numberOfPublicIPs?: number | undefined;
-	readonly provisioningState?: ("Building" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly publicIPBlock?: string | undefined;
+	readonly displayName?: string;
+	readonly numberOfPublicIPs?: number;
+	readonly provisioningState?: "Building" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly publicIPBlock?: string;
 }
 export interface WorkloadNetworkSegmentPortVif {
-	readonly portName?: string | undefined;
+	readonly portName?: string;
 }
 export interface WorkloadNetworkSegmentProperties {
-	readonly connectedGateway?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly portVif?: WorkloadNetworkSegmentPortVif[] | undefined;
-	readonly provisioningState?: ("Building" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly revision?: number | undefined;
-	readonly status?: "SUCCESS, FAILURE" | undefined;
-	readonly subnet?: WorkloadNetworkSegmentSubnet | undefined;
+	readonly connectedGateway?: string;
+	readonly displayName?: string;
+	readonly portVif?: WorkloadNetworkSegmentPortVif[];
+	readonly provisioningState?: "Building" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly revision?: number;
+	readonly status?: "SUCCESS, FAILURE";
+	readonly subnet?: WorkloadNetworkSegmentSubnet;
 }
 export interface WorkloadNetworkSegmentSubnet {
-	readonly dhcpRanges?: string[] | undefined;
-	readonly gatewayAddress?: string | undefined;
+	readonly dhcpRanges?: string[];
+	readonly gatewayAddress?: string;
 }
 export interface WorkloadNetworkVirtualMachineProperties {
-	readonly displayName?: string | undefined;
-	readonly vmType?: "REGULAR, EDGE, SERVICE" | undefined;
+	readonly displayName?: string;
+	readonly vmType?: "REGULAR, EDGE, SERVICE";
 }
 export interface WorkloadNetworkVMGroupProperties {
-	readonly displayName?: string | undefined;
-	readonly members?: string[] | undefined;
-	readonly provisioningState?: ("Building" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly revision?: number | undefined;
-	readonly status?: "SUCCESS, FAILURE" | undefined;
+	readonly displayName?: string;
+	readonly members?: string[];
+	readonly provisioningState?: "Building" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly revision?: number;
+	readonly status?: "SUCCESS, FAILURE";
 }
 export default {
 	privateClouds: privateClouds,

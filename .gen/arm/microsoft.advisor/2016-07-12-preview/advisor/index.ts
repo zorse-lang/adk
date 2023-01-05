@@ -17,14 +17,14 @@ export interface recommendations_suppressionsComponentOutputs {
 	readonly type: "Microsoft.Advisor/recommendations/suppressions";
 }
 export interface recommendations_suppressionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly suppressionId?: string | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly ttl?: string | undefined;
+	readonly suppressionId?: string;
+	readonly tags?: ResourceTags;
+	readonly ttl?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	"recommendations/suppressions": recommendations_suppressions,

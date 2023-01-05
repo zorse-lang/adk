@@ -13,7 +13,7 @@ export interface AccountAuditConfigurationComponentInputs {
 	readonly AccountId: string;
 	readonly AuditCheckConfigurations: AuditCheckConfigurations;
 	readonly RoleArn: string;
-	readonly AuditNotificationTargetConfigurations?: (AuditNotificationTargetConfigurations | undefined) | undefined;
+	readonly AuditNotificationTargetConfigurations?: AuditNotificationTargetConfigurations | undefined;
 	readonly LogicalId: string;
 }
 export class Authorizer extends CfnResource<AuthorizerComponentInputs> implements AuthorizerComponentOutputs {
@@ -27,13 +27,13 @@ export interface AuthorizerComponentOutputs {
 }
 export interface AuthorizerComponentInputs {
 	readonly AuthorizerFunctionArn: string;
-	readonly AuthorizerName?: (string | undefined) | undefined;
-	readonly EnableCachingForHttp?: (boolean | undefined) | undefined;
-	readonly SigningDisabled?: (boolean | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TokenKeyName?: (string | undefined) | undefined;
-	readonly TokenSigningPublicKeys?: ({ [key: string]: string } | undefined) | undefined;
+	readonly AuthorizerName?: string | undefined;
+	readonly EnableCachingForHttp?: boolean | undefined;
+	readonly SigningDisabled?: boolean | undefined;
+	readonly Status?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TokenKeyName?: string | undefined;
+	readonly TokenSigningPublicKeys?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class CACertificate extends CfnResource<CACertificateComponentInputs> implements CACertificateComponentOutputs {
@@ -50,12 +50,12 @@ export interface CACertificateComponentOutputs {
 export interface CACertificateComponentInputs {
 	readonly CACertificatePem: string;
 	readonly Status: string;
-	readonly AutoRegistrationStatus?: (string | undefined) | undefined;
-	readonly CertificateMode?: (string | undefined) | undefined;
-	readonly RegistrationConfig?: (RegistrationConfig | undefined) | undefined;
-	readonly RemoveAutoRegistration?: (boolean | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VerificationCertificatePem?: (string | undefined) | undefined;
+	readonly AutoRegistrationStatus?: string | undefined;
+	readonly CertificateMode?: string | undefined;
+	readonly RegistrationConfig?: RegistrationConfig | undefined;
+	readonly RemoveAutoRegistration?: boolean | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VerificationCertificatePem?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Certificate extends CfnResource<CertificateComponentInputs> implements CertificateComponentOutputs {
@@ -71,10 +71,10 @@ export interface CertificateComponentOutputs {
 }
 export interface CertificateComponentInputs {
 	readonly Status: string;
-	readonly CACertificatePem?: (string | undefined) | undefined;
-	readonly CertificateMode?: (string | undefined) | undefined;
-	readonly CertificatePem?: (string | undefined) | undefined;
-	readonly CertificateSigningRequest?: (string | undefined) | undefined;
+	readonly CACertificatePem?: string | undefined;
+	readonly CertificateMode?: string | undefined;
+	readonly CertificatePem?: string | undefined;
+	readonly CertificateSigningRequest?: string | undefined;
 	readonly LogicalId: string;
 }
 export class CustomMetric extends CfnResource<CustomMetricComponentInputs> implements CustomMetricComponentOutputs {
@@ -88,9 +88,9 @@ export interface CustomMetricComponentOutputs {
 }
 export interface CustomMetricComponentInputs {
 	readonly MetricType: string;
-	readonly DisplayName?: (string | undefined) | undefined;
-	readonly MetricName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DisplayName?: string | undefined;
+	readonly MetricName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Dimension extends CfnResource<DimensionComponentInputs> implements DimensionComponentOutputs {
@@ -105,8 +105,8 @@ export interface DimensionComponentOutputs {
 export interface DimensionComponentInputs {
 	readonly StringValues: string[];
 	readonly Type: string;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DomainConfiguration
@@ -126,14 +126,14 @@ export interface DomainConfigurationComponentOutputs {
 	readonly ServerCertificates: Map<string, ServerCertificateSummary>;
 }
 export interface DomainConfigurationComponentInputs {
-	readonly AuthorizerConfig?: (AuthorizerConfig | undefined) | undefined;
-	readonly DomainConfigurationName?: (string | undefined) | undefined;
-	readonly DomainConfigurationStatus?: (string | undefined) | undefined;
-	readonly DomainName?: (string | undefined) | undefined;
-	readonly ServerCertificateArns?: (string[] | undefined) | undefined;
-	readonly ServiceType?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly ValidationCertificateArn?: (string | undefined) | undefined;
+	readonly AuthorizerConfig?: AuthorizerConfig | undefined;
+	readonly DomainConfigurationName?: string | undefined;
+	readonly DomainConfigurationStatus?: string | undefined;
+	readonly DomainName?: string | undefined;
+	readonly ServerCertificateArns?: string[] | undefined;
+	readonly ServiceType?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly ValidationCertificateArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class FleetMetric extends CfnResource<FleetMetricComponentInputs> implements FleetMetricComponentOutputs {
@@ -153,15 +153,15 @@ export interface FleetMetricComponentOutputs {
 }
 export interface FleetMetricComponentInputs {
 	readonly MetricName: string;
-	readonly AggregationField?: (string | undefined) | undefined;
-	readonly AggregationType?: (AggregationType | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly IndexName?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly QueryString?: (string | undefined) | undefined;
-	readonly QueryVersion?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly AggregationField?: string | undefined;
+	readonly AggregationType?: AggregationType | undefined;
+	readonly Description?: string | undefined;
+	readonly IndexName?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly QueryString?: string | undefined;
+	readonly QueryVersion?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Unit?: string | undefined;
 	readonly LogicalId: string;
 }
 export class JobTemplate extends CfnResource<JobTemplateComponentInputs> implements JobTemplateComponentOutputs {
@@ -176,14 +176,14 @@ export interface JobTemplateComponentOutputs {
 export interface JobTemplateComponentInputs {
 	readonly Description: string;
 	readonly JobTemplateId: string;
-	readonly AbortConfig?: (AbortConfig | undefined) | undefined;
-	readonly Document?: (string | undefined) | undefined;
-	readonly DocumentSource?: (string | undefined) | undefined;
-	readonly JobArn?: (string | undefined) | undefined;
-	readonly JobExecutionsRolloutConfig?: (JobExecutionsRolloutConfig | undefined) | undefined;
-	readonly PresignedUrlConfig?: (PresignedUrlConfig | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TimeoutConfig?: (TimeoutConfig | undefined) | undefined;
+	readonly AbortConfig?: AbortConfig | undefined;
+	readonly Document?: string | undefined;
+	readonly DocumentSource?: string | undefined;
+	readonly JobArn?: string | undefined;
+	readonly JobExecutionsRolloutConfig?: JobExecutionsRolloutConfig | undefined;
+	readonly PresignedUrlConfig?: PresignedUrlConfig | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TimeoutConfig?: TimeoutConfig | undefined;
 	readonly LogicalId: string;
 }
 export class Logging extends CfnResource<LoggingComponentInputs> implements LoggingComponentOutputs {
@@ -215,8 +215,8 @@ export interface MitigationActionComponentOutputs {
 export interface MitigationActionComponentInputs {
 	readonly ActionParams: ActionParams;
 	readonly RoleArn: string;
-	readonly ActionName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ActionName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Policy extends CfnResource<PolicyComponentInputs> implements PolicyComponentOutputs {
@@ -232,7 +232,7 @@ export interface PolicyComponentOutputs {
 }
 export interface PolicyComponentInputs {
 	readonly PolicyDocument: any;
-	readonly PolicyName?: (string | undefined) | undefined;
+	readonly PolicyName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class PolicyPrincipalAttachment
@@ -264,12 +264,12 @@ export interface ProvisioningTemplateComponentOutputs {
 export interface ProvisioningTemplateComponentInputs {
 	readonly ProvisioningRoleArn: string;
 	readonly TemplateBody: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly PreProvisioningHook?: (ProvisioningHook | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TemplateName?: (string | undefined) | undefined;
-	readonly TemplateType?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly PreProvisioningHook?: ProvisioningHook | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TemplateName?: string | undefined;
+	readonly TemplateType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ResourceSpecificLogging
@@ -301,9 +301,9 @@ export interface RoleAliasComponentOutputs {
 }
 export interface RoleAliasComponentInputs {
 	readonly RoleArn: string;
-	readonly CredentialDurationSeconds?: (number | undefined) | undefined;
-	readonly RoleAlias?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CredentialDurationSeconds?: number | undefined;
+	readonly RoleAlias?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ScheduledAudit extends CfnResource<ScheduledAuditComponentInputs> implements ScheduledAuditComponentOutputs {
@@ -318,10 +318,10 @@ export interface ScheduledAuditComponentOutputs {
 export interface ScheduledAuditComponentInputs {
 	readonly Frequency: string;
 	readonly TargetCheckNames: string[];
-	readonly DayOfMonth?: (string | undefined) | undefined;
-	readonly DayOfWeek?: (string | undefined) | undefined;
-	readonly ScheduledAuditName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DayOfMonth?: string | undefined;
+	readonly DayOfWeek?: string | undefined;
+	readonly ScheduledAuditName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityProfile
@@ -337,13 +337,13 @@ export interface SecurityProfileComponentOutputs {
 	readonly SecurityProfileArn: string;
 }
 export interface SecurityProfileComponentInputs {
-	readonly AdditionalMetricsToRetainV2?: (MetricToRetain[] | undefined) | undefined;
-	readonly AlertTargets?: ({ [key: string]: AlertTarget } | undefined) | undefined;
-	readonly Behaviors?: (Behavior[] | undefined) | undefined;
-	readonly SecurityProfileDescription?: (string | undefined) | undefined;
-	readonly SecurityProfileName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TargetArns?: (string[] | undefined) | undefined;
+	readonly AdditionalMetricsToRetainV2?: MetricToRetain[] | undefined;
+	readonly AlertTargets?: { [key: string]: AlertTarget } | undefined;
+	readonly Behaviors?: Behavior[] | undefined;
+	readonly SecurityProfileDescription?: string | undefined;
+	readonly SecurityProfileName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TargetArns?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class Thing extends CfnResource<ThingComponentInputs> implements ThingComponentOutputs {
@@ -353,8 +353,8 @@ export class Thing extends CfnResource<ThingComponentInputs> implements ThingCom
 }
 export interface ThingComponentOutputs {}
 export interface ThingComponentInputs {
-	readonly AttributePayload?: (AttributePayload | undefined) | undefined;
-	readonly ThingName?: (string | undefined) | undefined;
+	readonly AttributePayload?: AttributePayload | undefined;
+	readonly ThingName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ThingPrincipalAttachment
@@ -382,8 +382,8 @@ export interface TopicRuleComponentOutputs {
 }
 export interface TopicRuleComponentInputs {
 	readonly TopicRulePayload: TopicRulePayload;
-	readonly RuleName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly RuleName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class TopicRuleDestination
@@ -401,53 +401,53 @@ export interface TopicRuleDestinationComponentOutputs {
 	readonly StatusReason: string;
 }
 export interface TopicRuleDestinationComponentInputs {
-	readonly HttpUrlProperties?: (HttpUrlDestinationSummary | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
-	readonly VpcProperties?: (VpcDestinationProperties | undefined) | undefined;
+	readonly HttpUrlProperties?: HttpUrlDestinationSummary | undefined;
+	readonly Status?: string | undefined;
+	readonly VpcProperties?: VpcDestinationProperties | undefined;
 	readonly LogicalId: string;
 }
 export interface AuditCheckConfiguration {
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
 }
 export interface AuditCheckConfigurations {
-	readonly AuthenticatedCognitoRoleOverlyPermissiveCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly CaCertificateExpiringCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly CaCertificateKeyQualityCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly ConflictingClientIdsCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly DeviceCertificateExpiringCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly DeviceCertificateKeyQualityCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly DeviceCertificateSharedCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly IntermediateCaRevokedForActiveDeviceCertificatesCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly IoTPolicyPotentialMisConfigurationCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly IotPolicyOverlyPermissiveCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly IotRoleAliasAllowsAccessToUnusedServicesCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly IotRoleAliasOverlyPermissiveCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly LoggingDisabledCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly RevokedCaCertificateStillActiveCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly RevokedDeviceCertificateStillActiveCheck?: (AuditCheckConfiguration | undefined) | undefined;
-	readonly UnauthenticatedCognitoRoleOverlyPermissiveCheck?: (AuditCheckConfiguration | undefined) | undefined;
+	readonly AuthenticatedCognitoRoleOverlyPermissiveCheck?: AuditCheckConfiguration | undefined;
+	readonly CaCertificateExpiringCheck?: AuditCheckConfiguration | undefined;
+	readonly CaCertificateKeyQualityCheck?: AuditCheckConfiguration | undefined;
+	readonly ConflictingClientIdsCheck?: AuditCheckConfiguration | undefined;
+	readonly DeviceCertificateExpiringCheck?: AuditCheckConfiguration | undefined;
+	readonly DeviceCertificateKeyQualityCheck?: AuditCheckConfiguration | undefined;
+	readonly DeviceCertificateSharedCheck?: AuditCheckConfiguration | undefined;
+	readonly IntermediateCaRevokedForActiveDeviceCertificatesCheck?: AuditCheckConfiguration | undefined;
+	readonly IoTPolicyPotentialMisConfigurationCheck?: AuditCheckConfiguration | undefined;
+	readonly IotPolicyOverlyPermissiveCheck?: AuditCheckConfiguration | undefined;
+	readonly IotRoleAliasAllowsAccessToUnusedServicesCheck?: AuditCheckConfiguration | undefined;
+	readonly IotRoleAliasOverlyPermissiveCheck?: AuditCheckConfiguration | undefined;
+	readonly LoggingDisabledCheck?: AuditCheckConfiguration | undefined;
+	readonly RevokedCaCertificateStillActiveCheck?: AuditCheckConfiguration | undefined;
+	readonly RevokedDeviceCertificateStillActiveCheck?: AuditCheckConfiguration | undefined;
+	readonly UnauthenticatedCognitoRoleOverlyPermissiveCheck?: AuditCheckConfiguration | undefined;
 }
 export interface AuditNotificationTarget {
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly TargetArn?: (string | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly TargetArn?: string | undefined;
 }
 export interface AuditNotificationTargetConfigurations {
-	readonly Sns?: (AuditNotificationTarget | undefined) | undefined;
+	readonly Sns?: AuditNotificationTarget | undefined;
 }
 export interface RegistrationConfig {
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly TemplateBody?: (string | undefined) | undefined;
-	readonly TemplateName?: (string | undefined) | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly TemplateBody?: string | undefined;
+	readonly TemplateName?: string | undefined;
 }
 export interface AuthorizerConfig {
-	readonly AllowAuthorizerOverride?: (boolean | undefined) | undefined;
-	readonly DefaultAuthorizerName?: (string | undefined) | undefined;
+	readonly AllowAuthorizerOverride?: boolean | undefined;
+	readonly DefaultAuthorizerName?: string | undefined;
 }
 export interface ServerCertificateSummary {
-	readonly ServerCertificateArn?: (string | undefined) | undefined;
-	readonly ServerCertificateStatus?: (string | undefined) | undefined;
-	readonly ServerCertificateStatusDetail?: (string | undefined) | undefined;
+	readonly ServerCertificateArn?: string | undefined;
+	readonly ServerCertificateStatus?: string | undefined;
+	readonly ServerCertificateStatusDetail?: string | undefined;
 }
 export interface AggregationType {
 	readonly Name: string;
@@ -468,30 +468,30 @@ export interface ExponentialRolloutRate {
 	readonly RateIncreaseCriteria: RateIncreaseCriteria;
 }
 export interface JobExecutionsRolloutConfig {
-	readonly ExponentialRolloutRate?: (ExponentialRolloutRate | undefined) | undefined;
-	readonly MaximumPerMinute?: (number | undefined) | undefined;
+	readonly ExponentialRolloutRate?: ExponentialRolloutRate | undefined;
+	readonly MaximumPerMinute?: number | undefined;
 }
 export interface PresignedUrlConfig {
-	readonly ExpiresInSec?: (number | undefined) | undefined;
+	readonly ExpiresInSec?: number | undefined;
 	readonly RoleArn: string;
 }
 export interface RateIncreaseCriteria {
-	readonly NumberOfNotifiedThings?: (number | undefined) | undefined;
-	readonly NumberOfSucceededThings?: (number | undefined) | undefined;
+	readonly NumberOfNotifiedThings?: number | undefined;
+	readonly NumberOfSucceededThings?: number | undefined;
 }
 export interface TimeoutConfig {
 	readonly InProgressTimeoutInMinutes: number;
 }
 export interface ActionParams {
-	readonly AddThingsToThingGroupParams?: (AddThingsToThingGroupParams | undefined) | undefined;
-	readonly EnableIoTLoggingParams?: (EnableIoTLoggingParams | undefined) | undefined;
-	readonly PublishFindingToSnsParams?: (PublishFindingToSnsParams | undefined) | undefined;
-	readonly ReplaceDefaultPolicyVersionParams?: (ReplaceDefaultPolicyVersionParams | undefined) | undefined;
-	readonly UpdateCACertificateParams?: (UpdateCACertificateParams | undefined) | undefined;
-	readonly UpdateDeviceCertificateParams?: (UpdateDeviceCertificateParams | undefined) | undefined;
+	readonly AddThingsToThingGroupParams?: AddThingsToThingGroupParams | undefined;
+	readonly EnableIoTLoggingParams?: EnableIoTLoggingParams | undefined;
+	readonly PublishFindingToSnsParams?: PublishFindingToSnsParams | undefined;
+	readonly ReplaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams | undefined;
+	readonly UpdateCACertificateParams?: UpdateCACertificateParams | undefined;
+	readonly UpdateDeviceCertificateParams?: UpdateDeviceCertificateParams | undefined;
 }
 export interface AddThingsToThingGroupParams {
-	readonly OverrideDynamicGroups?: (boolean | undefined) | undefined;
+	readonly OverrideDynamicGroups?: boolean | undefined;
 	readonly ThingGroupNames: string[];
 }
 export interface EnableIoTLoggingParams {
@@ -511,92 +511,92 @@ export interface UpdateDeviceCertificateParams {
 	readonly Action: string;
 }
 export interface ProvisioningHook {
-	readonly PayloadVersion?: (string | undefined) | undefined;
-	readonly TargetArn?: (string | undefined) | undefined;
+	readonly PayloadVersion?: string | undefined;
+	readonly TargetArn?: string | undefined;
 }
 export interface AlertTarget {
 	readonly AlertTargetArn: string;
 	readonly RoleArn: string;
 }
 export interface Behavior {
-	readonly Criteria?: (BehaviorCriteria | undefined) | undefined;
-	readonly Metric?: (string | undefined) | undefined;
-	readonly MetricDimension?: (MetricDimension | undefined) | undefined;
+	readonly Criteria?: BehaviorCriteria | undefined;
+	readonly Metric?: string | undefined;
+	readonly MetricDimension?: MetricDimension | undefined;
 	readonly Name: string;
-	readonly SuppressAlerts?: (boolean | undefined) | undefined;
+	readonly SuppressAlerts?: boolean | undefined;
 }
 export interface BehaviorCriteria {
-	readonly ComparisonOperator?: (string | undefined) | undefined;
-	readonly ConsecutiveDatapointsToAlarm?: (number | undefined) | undefined;
-	readonly ConsecutiveDatapointsToClear?: (number | undefined) | undefined;
-	readonly DurationSeconds?: (number | undefined) | undefined;
-	readonly MlDetectionConfig?: (MachineLearningDetectionConfig | undefined) | undefined;
-	readonly StatisticalThreshold?: (StatisticalThreshold | undefined) | undefined;
-	readonly Value?: (MetricValue | undefined) | undefined;
+	readonly ComparisonOperator?: string | undefined;
+	readonly ConsecutiveDatapointsToAlarm?: number | undefined;
+	readonly ConsecutiveDatapointsToClear?: number | undefined;
+	readonly DurationSeconds?: number | undefined;
+	readonly MlDetectionConfig?: MachineLearningDetectionConfig | undefined;
+	readonly StatisticalThreshold?: StatisticalThreshold | undefined;
+	readonly Value?: MetricValue | undefined;
 }
 export interface MachineLearningDetectionConfig {
-	readonly ConfidenceLevel?: (string | undefined) | undefined;
+	readonly ConfidenceLevel?: string | undefined;
 }
 export interface MetricDimension {
 	readonly DimensionName: string;
-	readonly Operator?: (string | undefined) | undefined;
+	readonly Operator?: string | undefined;
 }
 export interface MetricToRetain {
 	readonly Metric: string;
-	readonly MetricDimension?: (MetricDimension | undefined) | undefined;
+	readonly MetricDimension?: MetricDimension | undefined;
 }
 export interface MetricValue {
-	readonly Cidrs?: (string[] | undefined) | undefined;
-	readonly Count?: (string | undefined) | undefined;
-	readonly Number?: (number | undefined) | undefined;
-	readonly Numbers?: (number[] | undefined) | undefined;
-	readonly Ports?: (number[] | undefined) | undefined;
-	readonly Strings?: (string[] | undefined) | undefined;
+	readonly Cidrs?: string[] | undefined;
+	readonly Count?: string | undefined;
+	readonly Number?: number | undefined;
+	readonly Numbers?: number[] | undefined;
+	readonly Ports?: number[] | undefined;
+	readonly Strings?: string[] | undefined;
 }
 export interface StatisticalThreshold {
-	readonly Statistic?: (string | undefined) | undefined;
+	readonly Statistic?: string | undefined;
 }
 export interface AttributePayload {
-	readonly Attributes?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Attributes?: { [key: string]: string } | undefined;
 }
 export interface Action {
-	readonly CloudwatchAlarm?: (CloudwatchAlarmAction | undefined) | undefined;
-	readonly CloudwatchLogs?: (CloudwatchLogsAction | undefined) | undefined;
-	readonly CloudwatchMetric?: (CloudwatchMetricAction | undefined) | undefined;
-	readonly DynamoDB?: (DynamoDBAction | undefined) | undefined;
-	readonly DynamoDBv2?: (DynamoDBv2Action | undefined) | undefined;
-	readonly Elasticsearch?: (ElasticsearchAction | undefined) | undefined;
-	readonly Firehose?: (FirehoseAction | undefined) | undefined;
-	readonly Http?: (HttpAction | undefined) | undefined;
-	readonly IotAnalytics?: (IotAnalyticsAction | undefined) | undefined;
-	readonly IotEvents?: (IotEventsAction | undefined) | undefined;
-	readonly IotSiteWise?: (IotSiteWiseAction | undefined) | undefined;
-	readonly Kafka?: (KafkaAction | undefined) | undefined;
-	readonly Kinesis?: (KinesisAction | undefined) | undefined;
-	readonly Lambda?: (LambdaAction | undefined) | undefined;
-	readonly Location?: (LocationAction | undefined) | undefined;
-	readonly OpenSearch?: (OpenSearchAction | undefined) | undefined;
-	readonly Republish?: (RepublishAction | undefined) | undefined;
-	readonly S3?: (S3Action | undefined) | undefined;
-	readonly Sns?: (SnsAction | undefined) | undefined;
-	readonly Sqs?: (SqsAction | undefined) | undefined;
-	readonly StepFunctions?: (StepFunctionsAction | undefined) | undefined;
-	readonly Timestream?: (TimestreamAction | undefined) | undefined;
+	readonly CloudwatchAlarm?: CloudwatchAlarmAction | undefined;
+	readonly CloudwatchLogs?: CloudwatchLogsAction | undefined;
+	readonly CloudwatchMetric?: CloudwatchMetricAction | undefined;
+	readonly DynamoDB?: DynamoDBAction | undefined;
+	readonly DynamoDBv2?: DynamoDBv2Action | undefined;
+	readonly Elasticsearch?: ElasticsearchAction | undefined;
+	readonly Firehose?: FirehoseAction | undefined;
+	readonly Http?: HttpAction | undefined;
+	readonly IotAnalytics?: IotAnalyticsAction | undefined;
+	readonly IotEvents?: IotEventsAction | undefined;
+	readonly IotSiteWise?: IotSiteWiseAction | undefined;
+	readonly Kafka?: KafkaAction | undefined;
+	readonly Kinesis?: KinesisAction | undefined;
+	readonly Lambda?: LambdaAction | undefined;
+	readonly Location?: LocationAction | undefined;
+	readonly OpenSearch?: OpenSearchAction | undefined;
+	readonly Republish?: RepublishAction | undefined;
+	readonly S3?: S3Action | undefined;
+	readonly Sns?: SnsAction | undefined;
+	readonly Sqs?: SqsAction | undefined;
+	readonly StepFunctions?: StepFunctionsAction | undefined;
+	readonly Timestream?: TimestreamAction | undefined;
 }
 export interface AssetPropertyTimestamp {
-	readonly OffsetInNanos?: (string | undefined) | undefined;
+	readonly OffsetInNanos?: string | undefined;
 	readonly TimeInSeconds: string;
 }
 export interface AssetPropertyValue {
-	readonly Quality?: (string | undefined) | undefined;
+	readonly Quality?: string | undefined;
 	readonly Timestamp: AssetPropertyTimestamp;
 	readonly Value: AssetPropertyVariant;
 }
 export interface AssetPropertyVariant {
-	readonly BooleanValue?: (string | undefined) | undefined;
-	readonly DoubleValue?: (string | undefined) | undefined;
-	readonly IntegerValue?: (string | undefined) | undefined;
-	readonly StringValue?: (string | undefined) | undefined;
+	readonly BooleanValue?: string | undefined;
+	readonly DoubleValue?: string | undefined;
+	readonly IntegerValue?: string | undefined;
+	readonly StringValue?: string | undefined;
 }
 export interface CloudwatchAlarmAction {
 	readonly AlarmName: string;
@@ -611,25 +611,25 @@ export interface CloudwatchLogsAction {
 export interface CloudwatchMetricAction {
 	readonly MetricName: string;
 	readonly MetricNamespace: string;
-	readonly MetricTimestamp?: (string | undefined) | undefined;
+	readonly MetricTimestamp?: string | undefined;
 	readonly MetricUnit: string;
 	readonly MetricValue: string;
 	readonly RoleArn: string;
 }
 export interface DynamoDBAction {
 	readonly HashKeyField: string;
-	readonly HashKeyType?: (string | undefined) | undefined;
+	readonly HashKeyType?: string | undefined;
 	readonly HashKeyValue: string;
-	readonly PayloadField?: (string | undefined) | undefined;
-	readonly RangeKeyField?: (string | undefined) | undefined;
-	readonly RangeKeyType?: (string | undefined) | undefined;
-	readonly RangeKeyValue?: (string | undefined) | undefined;
+	readonly PayloadField?: string | undefined;
+	readonly RangeKeyField?: string | undefined;
+	readonly RangeKeyType?: string | undefined;
+	readonly RangeKeyValue?: string | undefined;
 	readonly RoleArn: string;
 	readonly TableName: string;
 }
 export interface DynamoDBv2Action {
-	readonly PutItem?: (PutItemInput | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
+	readonly PutItem?: PutItemInput | undefined;
+	readonly RoleArn?: string | undefined;
 }
 export interface ElasticsearchAction {
 	readonly Endpoint: string;
@@ -639,15 +639,15 @@ export interface ElasticsearchAction {
 	readonly Type: string;
 }
 export interface FirehoseAction {
-	readonly BatchMode?: (boolean | undefined) | undefined;
+	readonly BatchMode?: boolean | undefined;
 	readonly DeliveryStreamName: string;
 	readonly RoleArn: string;
-	readonly Separator?: (string | undefined) | undefined;
+	readonly Separator?: string | undefined;
 }
 export interface HttpAction {
-	readonly Auth?: (HttpAuthorization | undefined) | undefined;
-	readonly ConfirmationUrl?: (string | undefined) | undefined;
-	readonly Headers?: (HttpActionHeader[] | undefined) | undefined;
+	readonly Auth?: HttpAuthorization | undefined;
+	readonly ConfirmationUrl?: string | undefined;
+	readonly Headers?: HttpActionHeader[] | undefined;
 	readonly Url: string;
 }
 export interface HttpActionHeader {
@@ -655,17 +655,17 @@ export interface HttpActionHeader {
 	readonly Value: string;
 }
 export interface HttpAuthorization {
-	readonly Sigv4?: (SigV4Authorization | undefined) | undefined;
+	readonly Sigv4?: SigV4Authorization | undefined;
 }
 export interface IotAnalyticsAction {
-	readonly BatchMode?: (boolean | undefined) | undefined;
+	readonly BatchMode?: boolean | undefined;
 	readonly ChannelName: string;
 	readonly RoleArn: string;
 }
 export interface IotEventsAction {
-	readonly BatchMode?: (boolean | undefined) | undefined;
+	readonly BatchMode?: boolean | undefined;
 	readonly InputName: string;
-	readonly MessageId?: (string | undefined) | undefined;
+	readonly MessageId?: string | undefined;
 	readonly RoleArn: string;
 }
 export interface IotSiteWiseAction {
@@ -675,24 +675,24 @@ export interface IotSiteWiseAction {
 export interface KafkaAction {
 	readonly ClientProperties: { [key: string]: string };
 	readonly DestinationArn: string;
-	readonly Key?: (string | undefined) | undefined;
-	readonly Partition?: (string | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Partition?: string | undefined;
 	readonly Topic: string;
 }
 export interface KinesisAction {
-	readonly PartitionKey?: (string | undefined) | undefined;
+	readonly PartitionKey?: string | undefined;
 	readonly RoleArn: string;
 	readonly StreamName: string;
 }
 export interface LambdaAction {
-	readonly FunctionArn?: (string | undefined) | undefined;
+	readonly FunctionArn?: string | undefined;
 }
 export interface LocationAction {
 	readonly DeviceId: string;
 	readonly Latitude: string;
 	readonly Longitude: string;
 	readonly RoleArn: string;
-	readonly Timestamp?: (Date | undefined) | undefined;
+	readonly Timestamp?: Date | undefined;
 	readonly TrackerName: string;
 }
 export interface OpenSearchAction {
@@ -703,32 +703,32 @@ export interface OpenSearchAction {
 	readonly Type: string;
 }
 export interface PutAssetPropertyValueEntry {
-	readonly AssetId?: (string | undefined) | undefined;
-	readonly EntryId?: (string | undefined) | undefined;
-	readonly PropertyAlias?: (string | undefined) | undefined;
-	readonly PropertyId?: (string | undefined) | undefined;
+	readonly AssetId?: string | undefined;
+	readonly EntryId?: string | undefined;
+	readonly PropertyAlias?: string | undefined;
+	readonly PropertyId?: string | undefined;
 	readonly PropertyValues: AssetPropertyValue[];
 }
 export interface PutItemInput {
 	readonly TableName: string;
 }
 export interface RepublishAction {
-	readonly Headers?: (RepublishActionHeaders | undefined) | undefined;
-	readonly Qos?: (number | undefined) | undefined;
+	readonly Headers?: RepublishActionHeaders | undefined;
+	readonly Qos?: number | undefined;
 	readonly RoleArn: string;
 	readonly Topic: string;
 }
 export interface RepublishActionHeaders {
-	readonly ContentType?: (string | undefined) | undefined;
-	readonly CorrelationData?: (string | undefined) | undefined;
-	readonly MessageExpiry?: (string | undefined) | undefined;
-	readonly PayloadFormatIndicator?: (string | undefined) | undefined;
-	readonly ResponseTopic?: (string | undefined) | undefined;
-	readonly UserProperties?: (User[] | undefined) | undefined;
+	readonly ContentType?: string | undefined;
+	readonly CorrelationData?: string | undefined;
+	readonly MessageExpiry?: string | undefined;
+	readonly PayloadFormatIndicator?: string | undefined;
+	readonly ResponseTopic?: string | undefined;
+	readonly UserProperties?: User[] | undefined;
 }
 export interface S3Action {
 	readonly BucketName: string;
-	readonly CannedAcl?: (string | undefined) | undefined;
+	readonly CannedAcl?: string | undefined;
 	readonly Key: string;
 	readonly RoleArn: string;
 }
@@ -738,22 +738,22 @@ export interface SigV4Authorization {
 	readonly SigningRegion: string;
 }
 export interface SnsAction {
-	readonly MessageFormat?: (string | undefined) | undefined;
+	readonly MessageFormat?: string | undefined;
 	readonly RoleArn: string;
 	readonly TargetArn: string;
 }
 export interface SqsAction {
 	readonly QueueUrl: string;
 	readonly RoleArn: string;
-	readonly UseBase64?: (boolean | undefined) | undefined;
+	readonly UseBase64?: boolean | undefined;
 }
 export interface StepFunctionsAction {
-	readonly ExecutionNamePrefix?: (string | undefined) | undefined;
+	readonly ExecutionNamePrefix?: string | undefined;
 	readonly RoleArn: string;
 	readonly StateMachineName: string;
 }
 export interface Timestamp {
-	readonly Unit?: (string | undefined) | undefined;
+	readonly Unit?: string | undefined;
 	readonly Value: string;
 }
 export interface TimestreamAction {
@@ -761,7 +761,7 @@ export interface TimestreamAction {
 	readonly Dimensions: TimestreamDimension[];
 	readonly RoleArn: string;
 	readonly TableName: string;
-	readonly Timestamp?: (TimestreamTimestamp | undefined) | undefined;
+	readonly Timestamp?: TimestreamTimestamp | undefined;
 }
 export interface TimestreamDimension {
 	readonly Name: string;
@@ -773,10 +773,10 @@ export interface TimestreamTimestamp {
 }
 export interface TopicRulePayload {
 	readonly Actions: Action[];
-	readonly AwsIotSqlVersion?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ErrorAction?: (Action | undefined) | undefined;
-	readonly RuleDisabled?: (boolean | undefined) | undefined;
+	readonly AwsIotSqlVersion?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly ErrorAction?: Action | undefined;
+	readonly RuleDisabled?: boolean | undefined;
 	readonly Sql: string;
 }
 export interface User {
@@ -784,13 +784,13 @@ export interface User {
 	readonly Value: string;
 }
 export interface HttpUrlDestinationSummary {
-	readonly ConfirmationUrl?: (string | undefined) | undefined;
+	readonly ConfirmationUrl?: string | undefined;
 }
 export interface VpcDestinationProperties {
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly SecurityGroups?: (string[] | undefined) | undefined;
-	readonly SubnetIds?: (string[] | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly SecurityGroups?: string[] | undefined;
+	readonly SubnetIds?: string[] | undefined;
+	readonly VpcId?: string | undefined;
 }
 export default {
 	AccountAuditConfiguration: AccountAuditConfiguration,

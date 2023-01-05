@@ -18,12 +18,17 @@ export interface supportProviders_supportPlanTypesComponentOutputs {
 }
 export interface supportProviders_supportPlanTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: CanonicalSupportPlanProperties | undefined;
+	readonly properties?: CanonicalSupportPlanProperties;
 }
 export interface CanonicalSupportPlanProperties {
 	readonly provisioningState?:
-		| ("Cancelled" | "Cancelling" | "Downgrading" | "Failed" | "Purchasing" | "Succeeded" | "Upgrading")
-		| undefined;
+		| "Cancelled"
+		| "Cancelling"
+		| "Downgrading"
+		| "Failed"
+		| "Purchasing"
+		| "Succeeded"
+		| "Upgrading";
 }
 export default {
 	"supportProviders/supportPlanTypes": supportProviders_supportPlanTypes,

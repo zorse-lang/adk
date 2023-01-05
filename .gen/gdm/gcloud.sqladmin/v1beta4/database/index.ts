@@ -7,20 +7,19 @@ export class Database extends GdmResource<DatabaseComponentInputs> implements Da
 }
 export interface DatabaseComponentOutputs {}
 export interface DatabaseComponentInputs {
-	readonly charset?: string | undefined;
-	readonly collation?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly instance?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly charset?: string;
+	readonly collation?: string;
+	readonly etag?: string;
+	readonly instance?: string;
+	readonly kind?: string;
 	readonly name: string;
-	readonly project?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly sqlserverDatabaseDetails?: SqlServerDatabaseDetails | undefined;
-	readonly type: string;
+	readonly project?: string;
+	readonly selfLink?: string;
+	readonly sqlserverDatabaseDetails?: SqlServerDatabaseDetails;
 }
 export interface SqlServerDatabaseDetails {
-	readonly compatibilityLevel?: number | undefined;
-	readonly recoveryModel?: string | undefined;
+	readonly compatibilityLevel?: number;
+	readonly recoveryModel?: string;
 }
 export default {
 	Database: Database,

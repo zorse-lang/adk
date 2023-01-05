@@ -17,14 +17,14 @@ export interface GlobalTableComponentInputs {
 	readonly AttributeDefinitions: AttributeDefinition[];
 	readonly KeySchema: KeySchema[];
 	readonly Replicas: ReplicaSpecification[];
-	readonly BillingMode?: (string | undefined) | undefined;
-	readonly GlobalSecondaryIndexes?: (GlobalSecondaryIndex[] | undefined) | undefined;
-	readonly LocalSecondaryIndexes?: (LocalSecondaryIndex[] | undefined) | undefined;
-	readonly SSESpecification?: (SSESpecification | undefined) | undefined;
-	readonly StreamSpecification?: (StreamSpecification | undefined) | undefined;
-	readonly TableName?: (string | undefined) | undefined;
-	readonly TimeToLiveSpecification?: (TimeToLiveSpecification | undefined) | undefined;
-	readonly WriteProvisionedThroughputSettings?: (WriteProvisionedThroughputSettings | undefined) | undefined;
+	readonly BillingMode?: string | undefined;
+	readonly GlobalSecondaryIndexes?: GlobalSecondaryIndex[] | undefined;
+	readonly LocalSecondaryIndexes?: LocalSecondaryIndex[] | undefined;
+	readonly SSESpecification?: SSESpecification | undefined;
+	readonly StreamSpecification?: StreamSpecification | undefined;
+	readonly TableName?: string | undefined;
+	readonly TimeToLiveSpecification?: TimeToLiveSpecification | undefined;
+	readonly WriteProvisionedThroughputSettings?: WriteProvisionedThroughputSettings | undefined;
 	readonly LogicalId: string;
 }
 export class Table extends CfnResource<TableComponentInputs> implements TableComponentOutputs {
@@ -40,21 +40,21 @@ export interface TableComponentOutputs {
 }
 export interface TableComponentInputs {
 	readonly KeySchema: KeySchema[];
-	readonly AttributeDefinitions?: (AttributeDefinition[] | undefined) | undefined;
-	readonly BillingMode?: (string | undefined) | undefined;
-	readonly ContributorInsightsSpecification?: (ContributorInsightsSpecification | undefined) | undefined;
-	readonly GlobalSecondaryIndexes?: (GlobalSecondaryIndex[] | undefined) | undefined;
-	readonly ImportSourceSpecification?: (ImportSourceSpecification | undefined) | undefined;
-	readonly KinesisStreamSpecification?: (KinesisStreamSpecification | undefined) | undefined;
-	readonly LocalSecondaryIndexes?: (LocalSecondaryIndex[] | undefined) | undefined;
-	readonly PointInTimeRecoverySpecification?: (PointInTimeRecoverySpecification | undefined) | undefined;
-	readonly ProvisionedThroughput?: (ProvisionedThroughput | undefined) | undefined;
-	readonly SSESpecification?: (SSESpecification | undefined) | undefined;
-	readonly StreamSpecification?: (StreamSpecification | undefined) | undefined;
-	readonly TableClass?: (string | undefined) | undefined;
-	readonly TableName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TimeToLiveSpecification?: (TimeToLiveSpecification | undefined) | undefined;
+	readonly AttributeDefinitions?: AttributeDefinition[] | undefined;
+	readonly BillingMode?: string | undefined;
+	readonly ContributorInsightsSpecification?: ContributorInsightsSpecification | undefined;
+	readonly GlobalSecondaryIndexes?: GlobalSecondaryIndex[] | undefined;
+	readonly ImportSourceSpecification?: ImportSourceSpecification | undefined;
+	readonly KinesisStreamSpecification?: KinesisStreamSpecification | undefined;
+	readonly LocalSecondaryIndexes?: LocalSecondaryIndex[] | undefined;
+	readonly PointInTimeRecoverySpecification?: PointInTimeRecoverySpecification | undefined;
+	readonly ProvisionedThroughput?: ProvisionedThroughput | undefined;
+	readonly SSESpecification?: SSESpecification | undefined;
+	readonly StreamSpecification?: StreamSpecification | undefined;
+	readonly TableClass?: string | undefined;
+	readonly TableName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TimeToLiveSpecification?: TimeToLiveSpecification | undefined;
 	readonly LogicalId: string;
 }
 export interface AttributeDefinition {
@@ -64,7 +64,7 @@ export interface AttributeDefinition {
 export interface CapacityAutoScalingSettings {
 	readonly MaxCapacity: number;
 	readonly MinCapacity: number;
-	readonly SeedCapacity?: (number | undefined) | undefined;
+	readonly SeedCapacity?: number | undefined;
 	readonly TargetTrackingScalingPolicyConfiguration: TargetTrackingScalingPolicyConfiguration;
 }
 export interface ContributorInsightsSpecification {
@@ -74,7 +74,7 @@ export interface GlobalSecondaryIndex {
 	readonly IndexName: string;
 	readonly KeySchema: KeySchema[];
 	readonly Projection: Projection;
-	readonly WriteProvisionedThroughputSettings?: (WriteProvisionedThroughputSettings | undefined) | undefined;
+	readonly WriteProvisionedThroughputSettings?: WriteProvisionedThroughputSettings | undefined;
 }
 export interface KeySchema {
 	readonly AttributeName: string;
@@ -86,66 +86,66 @@ export interface LocalSecondaryIndex {
 	readonly Projection: Projection;
 }
 export interface PointInTimeRecoverySpecification {
-	readonly PointInTimeRecoveryEnabled?: (boolean | undefined) | undefined;
+	readonly PointInTimeRecoveryEnabled?: boolean | undefined;
 }
 export interface Projection {
-	readonly NonKeyAttributes?: (string[] | undefined) | undefined;
-	readonly ProjectionType?: (string | undefined) | undefined;
+	readonly NonKeyAttributes?: string[] | undefined;
+	readonly ProjectionType?: string | undefined;
 }
 export interface ReadProvisionedThroughputSettings {
-	readonly ReadCapacityAutoScalingSettings?: (CapacityAutoScalingSettings | undefined) | undefined;
-	readonly ReadCapacityUnits?: (number | undefined) | undefined;
+	readonly ReadCapacityAutoScalingSettings?: CapacityAutoScalingSettings | undefined;
+	readonly ReadCapacityUnits?: number | undefined;
 }
 export interface ReplicaGlobalSecondaryIndexSpecification {
-	readonly ContributorInsightsSpecification?: (ContributorInsightsSpecification | undefined) | undefined;
+	readonly ContributorInsightsSpecification?: ContributorInsightsSpecification | undefined;
 	readonly IndexName: string;
-	readonly ReadProvisionedThroughputSettings?: (ReadProvisionedThroughputSettings | undefined) | undefined;
+	readonly ReadProvisionedThroughputSettings?: ReadProvisionedThroughputSettings | undefined;
 }
 export interface ReplicaSSESpecification {
 	readonly KMSMasterKeyId: string;
 }
 export interface ReplicaSpecification {
-	readonly ContributorInsightsSpecification?: (ContributorInsightsSpecification | undefined) | undefined;
-	readonly GlobalSecondaryIndexes?: (ReplicaGlobalSecondaryIndexSpecification[] | undefined) | undefined;
-	readonly PointInTimeRecoverySpecification?: (PointInTimeRecoverySpecification | undefined) | undefined;
-	readonly ReadProvisionedThroughputSettings?: (ReadProvisionedThroughputSettings | undefined) | undefined;
+	readonly ContributorInsightsSpecification?: ContributorInsightsSpecification | undefined;
+	readonly GlobalSecondaryIndexes?: ReplicaGlobalSecondaryIndexSpecification[] | undefined;
+	readonly PointInTimeRecoverySpecification?: PointInTimeRecoverySpecification | undefined;
+	readonly ReadProvisionedThroughputSettings?: ReadProvisionedThroughputSettings | undefined;
 	readonly Region: string;
-	readonly SSESpecification?: (ReplicaSSESpecification | undefined) | undefined;
-	readonly TableClass?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly SSESpecification?: ReplicaSSESpecification | undefined;
+	readonly TableClass?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 }
 export interface SSESpecification {
 	readonly SSEEnabled: boolean;
-	readonly SSEType?: (string | undefined) | undefined;
+	readonly SSEType?: string | undefined;
 }
 export interface StreamSpecification {
 	readonly StreamViewType: string;
 }
 export interface TargetTrackingScalingPolicyConfiguration {
-	readonly DisableScaleIn?: (boolean | undefined) | undefined;
-	readonly ScaleInCooldown?: (number | undefined) | undefined;
-	readonly ScaleOutCooldown?: (number | undefined) | undefined;
+	readonly DisableScaleIn?: boolean | undefined;
+	readonly ScaleInCooldown?: number | undefined;
+	readonly ScaleOutCooldown?: number | undefined;
 	readonly TargetValue: number;
 }
 export interface TimeToLiveSpecification {
-	readonly AttributeName?: (string | undefined) | undefined;
+	readonly AttributeName?: string | undefined;
 	readonly Enabled: boolean;
 }
 export interface WriteProvisionedThroughputSettings {
-	readonly WriteCapacityAutoScalingSettings?: (CapacityAutoScalingSettings | undefined) | undefined;
+	readonly WriteCapacityAutoScalingSettings?: CapacityAutoScalingSettings | undefined;
 }
 export interface Csv {
-	readonly Delimiter?: (string | undefined) | undefined;
-	readonly HeaderList?: (string[] | undefined) | undefined;
+	readonly Delimiter?: string | undefined;
+	readonly HeaderList?: string[] | undefined;
 }
 export interface ImportSourceSpecification {
-	readonly InputCompressionType?: (string | undefined) | undefined;
+	readonly InputCompressionType?: string | undefined;
 	readonly InputFormat: string;
-	readonly InputFormatOptions?: (InputFormatOptions | undefined) | undefined;
+	readonly InputFormatOptions?: InputFormatOptions | undefined;
 	readonly S3BucketSource: S3BucketSource;
 }
 export interface InputFormatOptions {
-	readonly Csv?: (Csv | undefined) | undefined;
+	readonly Csv?: Csv | undefined;
 }
 export interface KinesisStreamSpecification {
 	readonly StreamArn: string;
@@ -156,8 +156,8 @@ export interface ProvisionedThroughput {
 }
 export interface S3BucketSource {
 	readonly S3Bucket: string;
-	readonly S3BucketOwner?: (string | undefined) | undefined;
-	readonly S3KeyPrefix?: (string | undefined) | undefined;
+	readonly S3BucketOwner?: string | undefined;
+	readonly S3KeyPrefix?: string | undefined;
 }
 export default {
 	GlobalTable: GlobalTable,

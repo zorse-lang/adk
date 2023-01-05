@@ -13,8 +13,8 @@ export interface ScalableTargetComponentInputs {
 	readonly RoleARN: string;
 	readonly ScalableDimension: string;
 	readonly ServiceNamespace: string;
-	readonly ScheduledActions?: (ScheduledAction[] | undefined) | undefined;
-	readonly SuspendedState?: (SuspendedState | undefined) | undefined;
+	readonly ScheduledActions?: ScheduledAction[] | undefined;
+	readonly SuspendedState?: SuspendedState | undefined;
 	readonly LogicalId: string;
 }
 export class ScalingPolicy extends CfnResource<ScalingPolicyComponentInputs> implements ScalingPolicyComponentOutputs {
@@ -26,39 +26,37 @@ export interface ScalingPolicyComponentOutputs {}
 export interface ScalingPolicyComponentInputs {
 	readonly PolicyName: string;
 	readonly PolicyType: string;
-	readonly ResourceId?: (string | undefined) | undefined;
-	readonly ScalableDimension?: (string | undefined) | undefined;
-	readonly ScalingTargetId?: (string | undefined) | undefined;
-	readonly ServiceNamespace?: (string | undefined) | undefined;
-	readonly StepScalingPolicyConfiguration?: (StepScalingPolicyConfiguration | undefined) | undefined;
-	readonly TargetTrackingScalingPolicyConfiguration?:
-		| (TargetTrackingScalingPolicyConfiguration | undefined)
-		| undefined;
+	readonly ResourceId?: string | undefined;
+	readonly ScalableDimension?: string | undefined;
+	readonly ScalingTargetId?: string | undefined;
+	readonly ServiceNamespace?: string | undefined;
+	readonly StepScalingPolicyConfiguration?: StepScalingPolicyConfiguration | undefined;
+	readonly TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export interface ScalableTargetAction {
-	readonly MaxCapacity?: (number | undefined) | undefined;
-	readonly MinCapacity?: (number | undefined) | undefined;
+	readonly MaxCapacity?: number | undefined;
+	readonly MinCapacity?: number | undefined;
 }
 export interface ScheduledAction {
-	readonly EndTime?: (Date | undefined) | undefined;
-	readonly ScalableTargetAction?: (ScalableTargetAction | undefined) | undefined;
+	readonly EndTime?: Date | undefined;
+	readonly ScalableTargetAction?: ScalableTargetAction | undefined;
 	readonly Schedule: string;
 	readonly ScheduledActionName: string;
-	readonly StartTime?: (Date | undefined) | undefined;
-	readonly Timezone?: (string | undefined) | undefined;
+	readonly StartTime?: Date | undefined;
+	readonly Timezone?: string | undefined;
 }
 export interface SuspendedState {
-	readonly DynamicScalingInSuspended?: (boolean | undefined) | undefined;
-	readonly DynamicScalingOutSuspended?: (boolean | undefined) | undefined;
-	readonly ScheduledScalingSuspended?: (boolean | undefined) | undefined;
+	readonly DynamicScalingInSuspended?: boolean | undefined;
+	readonly DynamicScalingOutSuspended?: boolean | undefined;
+	readonly ScheduledScalingSuspended?: boolean | undefined;
 }
 export interface CustomizedMetricSpecification {
-	readonly Dimensions?: (MetricDimension[] | undefined) | undefined;
+	readonly Dimensions?: MetricDimension[] | undefined;
 	readonly MetricName: string;
 	readonly Namespace: string;
 	readonly Statistic: string;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly Unit?: string | undefined;
 }
 export interface MetricDimension {
 	readonly Name: string;
@@ -66,26 +64,26 @@ export interface MetricDimension {
 }
 export interface PredefinedMetricSpecification {
 	readonly PredefinedMetricType: string;
-	readonly ResourceLabel?: (string | undefined) | undefined;
+	readonly ResourceLabel?: string | undefined;
 }
 export interface StepAdjustment {
-	readonly MetricIntervalLowerBound?: (number | undefined) | undefined;
-	readonly MetricIntervalUpperBound?: (number | undefined) | undefined;
+	readonly MetricIntervalLowerBound?: number | undefined;
+	readonly MetricIntervalUpperBound?: number | undefined;
 	readonly ScalingAdjustment: number;
 }
 export interface StepScalingPolicyConfiguration {
-	readonly AdjustmentType?: (string | undefined) | undefined;
-	readonly Cooldown?: (number | undefined) | undefined;
-	readonly MetricAggregationType?: (string | undefined) | undefined;
-	readonly MinAdjustmentMagnitude?: (number | undefined) | undefined;
-	readonly StepAdjustments?: (StepAdjustment[] | undefined) | undefined;
+	readonly AdjustmentType?: string | undefined;
+	readonly Cooldown?: number | undefined;
+	readonly MetricAggregationType?: string | undefined;
+	readonly MinAdjustmentMagnitude?: number | undefined;
+	readonly StepAdjustments?: StepAdjustment[] | undefined;
 }
 export interface TargetTrackingScalingPolicyConfiguration {
-	readonly CustomizedMetricSpecification?: (CustomizedMetricSpecification | undefined) | undefined;
-	readonly DisableScaleIn?: (boolean | undefined) | undefined;
-	readonly PredefinedMetricSpecification?: (PredefinedMetricSpecification | undefined) | undefined;
-	readonly ScaleInCooldown?: (number | undefined) | undefined;
-	readonly ScaleOutCooldown?: (number | undefined) | undefined;
+	readonly CustomizedMetricSpecification?: CustomizedMetricSpecification | undefined;
+	readonly DisableScaleIn?: boolean | undefined;
+	readonly PredefinedMetricSpecification?: PredefinedMetricSpecification | undefined;
+	readonly ScaleInCooldown?: number | undefined;
+	readonly ScaleOutCooldown?: number | undefined;
 	readonly TargetValue: number;
 }
 export default {

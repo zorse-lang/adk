@@ -11,12 +11,11 @@ export class ProjectsLocationsTensorflowVersions
 export interface ProjectsLocationsTensorflowVersionsComponentOutputs {}
 export interface ProjectsLocationsTensorflowVersionsComponentInputs {
 	readonly name: string;
-	readonly version?: string | undefined;
-	readonly type: string;
+	readonly version?: string;
 }
 export interface TensorFlowVersion {
-	readonly name?: string | undefined;
-	readonly version?: string | undefined;
+	readonly name?: string;
+	readonly version?: string;
 }
 export default {
 	ProjectsLocationsTensorflowVersions: ProjectsLocationsTensorflowVersions,

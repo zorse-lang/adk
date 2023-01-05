@@ -16,9 +16,9 @@ export interface workspacesComponentOutputs {
 export interface workspacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ResourceBaseProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ResourceBaseProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_labels
 	extends ArmResource<workspaces_labelsComponentInputs>
@@ -38,59 +38,53 @@ export interface workspaces_labelsComponentOutputs {
 }
 export interface workspaces_labelsComponentInputs {
 	readonly name: string;
-	readonly properties?: LabelResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: LabelResourceProperties;
+	readonly systemData?: SystemData;
 }
 export interface LabelResourceProperties {
-	readonly color?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly color?: string;
+	readonly displayName?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "ConfiguringApplication"
-				| "Creating"
-				| "CreatingArtifacts"
-				| "DeletingArtifacts"
-				| "Failed"
-				| "InstallingApplication"
-				| "MigratingApplicationData"
-				| "NotSpecified"
-				| "ProvisioningResources"
-				| "RunningValidations"
-				| "Succeeded"
-		  )
-		| undefined;
+		| "Accepted"
+		| "Canceled"
+		| "ConfiguringApplication"
+		| "Creating"
+		| "CreatingArtifacts"
+		| "DeletingArtifacts"
+		| "Failed"
+		| "InstallingApplication"
+		| "MigratingApplicationData"
+		| "NotSpecified"
+		| "ProvisioningResources"
+		| "RunningValidations"
+		| "Succeeded";
 }
 export interface ResourceBaseProperties {
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "ConfiguringApplication"
-				| "Creating"
-				| "CreatingArtifacts"
-				| "DeletingArtifacts"
-				| "Failed"
-				| "InstallingApplication"
-				| "MigratingApplicationData"
-				| "NotSpecified"
-				| "ProvisioningResources"
-				| "RunningValidations"
-				| "Succeeded"
-		  )
-		| undefined;
+		| "Accepted"
+		| "Canceled"
+		| "ConfiguringApplication"
+		| "Creating"
+		| "CreatingArtifacts"
+		| "DeletingArtifacts"
+		| "Failed"
+		| "InstallingApplication"
+		| "MigratingApplicationData"
+		| "NotSpecified"
+		| "ProvisioningResources"
+		| "RunningValidations"
+		| "Succeeded";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	workspaces: workspaces,

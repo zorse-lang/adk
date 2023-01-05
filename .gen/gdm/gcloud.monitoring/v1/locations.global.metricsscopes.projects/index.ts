@@ -12,10 +12,9 @@ export interface LocationsGlobalMetricsScopesProjectsComponentOutputs {}
 export interface LocationsGlobalMetricsScopesProjectsComponentInputs {
 	readonly name: string;
 	readonly parent: string;
-	readonly type: string;
 }
 export interface MonitoredProject {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export default {
 	LocationsGlobalMetricsScopesProjects: LocationsGlobalMetricsScopesProjects,

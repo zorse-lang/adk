@@ -14,11 +14,11 @@ export interface workspacesComponentOutputs {
 	readonly type: "Microsoft.OperationalInsights/workspaces";
 }
 export interface workspacesComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WorkspaceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkspaceProperties;
+	readonly tags?: ResourceTags;
 }
 export class workspaces_dataSources
 	extends ArmResource<workspaces_dataSourcesComponentInputs>
@@ -37,7 +37,7 @@ export interface workspaces_dataSourcesComponentOutputs {
 	readonly type: "Microsoft.OperationalInsights/workspaces/dataSources";
 }
 export interface workspaces_dataSourcesComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly kind:
 		| "AzureActivityLog"
 		| "ChangeTrackingCustomRegistry"
@@ -56,7 +56,7 @@ export interface workspaces_dataSourcesComponentInputs {
 		| "WindowsPerformanceCounter";
 	readonly name: string;
 	readonly properties: any;
-	readonly tags?: ProxyResourceTags | undefined;
+	readonly tags?: ProxyResourceTags;
 }
 export class workspaces_linkedServices
 	extends ArmResource<workspaces_linkedServicesComponentInputs>
@@ -88,23 +88,21 @@ export interface LinkedServiceProperties {
 	readonly resourceId: string;
 }
 export interface ProxyResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
 	readonly name: "CapacityReservation" | "Free" | "PerGB2018" | "PerNode" | "Premium" | "Standalone" | "Standard";
 }
 export interface WorkspaceProperties {
-	readonly customerId?: string | undefined;
-	readonly portalUrl?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "ProvisioningAccount" | "Succeeded")
-		| undefined;
-	readonly retentionInDays?: number | undefined;
-	readonly sku?: Sku | undefined;
-	readonly source?: string | undefined;
+	readonly customerId?: string;
+	readonly portalUrl?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "ProvisioningAccount" | "Succeeded";
+	readonly retentionInDays?: number;
+	readonly sku?: Sku;
+	readonly source?: string;
 }
 export default {
 	workspaces: workspaces,

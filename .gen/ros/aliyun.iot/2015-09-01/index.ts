@@ -21,11 +21,11 @@ export interface DeviceComponentOutputs {
 }
 export interface DeviceComponentInputs {
 	readonly ProductKey: any | string;
-	readonly DevEui?: (string | undefined) | undefined;
-	readonly DeviceName?: (any | string) | undefined;
-	readonly IotInstanceId?: (any | string) | undefined;
-	readonly Nickname?: (string | undefined) | undefined;
-	readonly PinCode?: (string | undefined) | undefined;
+	readonly DevEui?: string | undefined;
+	readonly DeviceName?: any | string;
+	readonly IotInstanceId?: any | string;
+	readonly Nickname?: string | undefined;
+	readonly PinCode?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DeviceGroup extends RosResource<DeviceGroupComponentInputs> implements DeviceGroupComponentOutputs {
@@ -39,9 +39,9 @@ export interface DeviceGroupComponentOutputs {
 }
 export interface DeviceGroupComponentInputs {
 	readonly GroupName: string;
-	readonly GroupDesc?: (string | undefined) | undefined;
-	readonly IotInstanceId?: (any | string) | undefined;
-	readonly SuperGroupId?: (string | undefined) | undefined;
+	readonly GroupDesc?: string | undefined;
+	readonly IotInstanceId?: any | string;
+	readonly SuperGroupId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Product extends RosResource<ProductComponentInputs> implements ProductComponentOutputs {
@@ -56,18 +56,18 @@ export interface ProductComponentOutputs {
 export interface ProductComponentInputs {
 	readonly NodeType: number;
 	readonly ProductName: string;
-	readonly AliyunCommodityCode?: (string | undefined) | undefined;
-	readonly AuthType?: (string | undefined) | undefined;
-	readonly CategoryKey?: (string | undefined) | undefined;
-	readonly DataFormat?: (number | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Id2?: (boolean | undefined) | undefined;
-	readonly IotInstanceId?: (any | string) | undefined;
-	readonly JoinPermissionId?: (string | undefined) | undefined;
-	readonly NetType?: (string | undefined) | undefined;
-	readonly ProtocolType?: (string | undefined) | undefined;
-	readonly PublishAuto?: (boolean | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
+	readonly AliyunCommodityCode?: string | undefined;
+	readonly AuthType?: string | undefined;
+	readonly CategoryKey?: string | undefined;
+	readonly DataFormat?: number | undefined;
+	readonly Description?: string | undefined;
+	readonly Id2?: boolean | undefined;
+	readonly IotInstanceId?: any | string;
+	readonly JoinPermissionId?: string | undefined;
+	readonly NetType?: string | undefined;
+	readonly ProtocolType?: string | undefined;
+	readonly PublishAuto?: boolean | undefined;
+	readonly ResourceGroupId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ProductTopic extends RosResource<ProductTopicComponentInputs> implements ProductTopicComponentOutputs {
@@ -83,8 +83,8 @@ export interface ProductTopicComponentInputs {
 	readonly Operation: string;
 	readonly ProductKey: string;
 	readonly TopicShortName: string;
-	readonly Desc?: (string | undefined) | undefined;
-	readonly IotInstanceId?: (string | undefined) | undefined;
+	readonly Desc?: string | undefined;
+	readonly IotInstanceId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Rule extends RosResource<RuleComponentInputs> implements RuleComponentOutputs {
@@ -100,17 +100,17 @@ export interface RuleComponentOutputs {
 }
 export interface RuleComponentInputs {
 	readonly Name: string;
-	readonly DataType?: (string | undefined) | undefined;
-	readonly IotInstanceId?: (string | undefined) | undefined;
-	readonly ProductKey?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly RuleAction?: (RuleAction[] | undefined) | undefined;
-	readonly RuleDesc?: (string | undefined) | undefined;
-	readonly Select?: (string | undefined) | undefined;
-	readonly ShortTopic?: (string | undefined) | undefined;
-	readonly StartRule?: (boolean | undefined) | undefined;
-	readonly TopicType?: (number | undefined) | undefined;
-	readonly Where?: (string | undefined) | undefined;
+	readonly DataType?: string | undefined;
+	readonly IotInstanceId?: string | undefined;
+	readonly ProductKey?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly RuleAction?: RuleAction[] | undefined;
+	readonly RuleDesc?: string | undefined;
+	readonly Select?: string | undefined;
+	readonly ShortTopic?: string | undefined;
+	readonly StartRule?: boolean | undefined;
+	readonly TopicType?: number | undefined;
+	readonly Where?: string | undefined;
 	readonly LogicalId: string;
 }
 export class RuleAction extends RosResource<RuleActionComponentInputs> implements RuleActionComponentOutputs {
@@ -126,12 +126,12 @@ export interface RuleActionComponentInputs {
 	readonly Configuration: string;
 	readonly RuleId: number;
 	readonly Type: string;
-	readonly ErrorActionFlag?: (boolean | undefined) | undefined;
-	readonly IotInstanceId?: (string | undefined) | undefined;
+	readonly ErrorActionFlag?: boolean | undefined;
+	readonly IotInstanceId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface RuleAction {
-	readonly ErrorActionFlag?: (string | undefined) | undefined;
+	readonly ErrorActionFlag?: string | undefined;
 	readonly Type: string;
 	readonly Configuration: string;
 }

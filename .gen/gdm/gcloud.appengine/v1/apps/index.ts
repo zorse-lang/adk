@@ -7,54 +7,53 @@ export class Apps extends GdmResource<AppsComponentInputs> implements AppsCompon
 }
 export interface AppsComponentOutputs {}
 export interface AppsComponentInputs {
-	readonly authDomain?: string | undefined;
-	readonly codeBucket?: string | undefined;
-	readonly databaseType?: string | undefined;
-	readonly defaultBucket?: string | undefined;
-	readonly defaultCookieExpiration?: string | undefined;
-	readonly defaultHostname?: string | undefined;
-	readonly dispatchRules?: UrlDispatchRule[] | undefined;
-	readonly featureSettings?: FeatureSettings | undefined;
-	readonly gcrDomain?: string | undefined;
-	readonly iap?: IdentityAwareProxy | undefined;
-	readonly id?: string | undefined;
-	readonly locationId?: string | undefined;
+	readonly authDomain?: string;
+	readonly codeBucket?: string;
+	readonly databaseType?: string;
+	readonly defaultBucket?: string;
+	readonly defaultCookieExpiration?: string;
+	readonly defaultHostname?: string;
+	readonly dispatchRules?: UrlDispatchRule[];
+	readonly featureSettings?: FeatureSettings;
+	readonly gcrDomain?: string;
+	readonly iap?: IdentityAwareProxy;
+	readonly id?: string;
+	readonly locationId?: string;
 	readonly name: string;
-	readonly serviceAccount?: string | undefined;
-	readonly servingStatus?: string | undefined;
-	readonly type: string;
+	readonly serviceAccount?: string;
+	readonly servingStatus?: string;
 }
 export interface Application {
-	readonly authDomain?: string | undefined;
-	readonly codeBucket?: string | undefined;
-	readonly databaseType?: string | undefined;
-	readonly defaultBucket?: string | undefined;
-	readonly defaultCookieExpiration?: string | undefined;
-	readonly defaultHostname?: string | undefined;
-	readonly dispatchRules?: UrlDispatchRule[] | undefined;
-	readonly featureSettings?: FeatureSettings | undefined;
-	readonly gcrDomain?: string | undefined;
-	readonly iap?: IdentityAwareProxy | undefined;
-	readonly id?: string | undefined;
-	readonly locationId?: string | undefined;
-	readonly name?: string | undefined;
-	readonly serviceAccount?: string | undefined;
-	readonly servingStatus?: string | undefined;
+	readonly authDomain?: string;
+	readonly codeBucket?: string;
+	readonly databaseType?: string;
+	readonly defaultBucket?: string;
+	readonly defaultCookieExpiration?: string;
+	readonly defaultHostname?: string;
+	readonly dispatchRules?: UrlDispatchRule[];
+	readonly featureSettings?: FeatureSettings;
+	readonly gcrDomain?: string;
+	readonly iap?: IdentityAwareProxy;
+	readonly id?: string;
+	readonly locationId?: string;
+	readonly name?: string;
+	readonly serviceAccount?: string;
+	readonly servingStatus?: string;
 }
 export interface FeatureSettings {
-	readonly splitHealthChecks?: boolean | undefined;
-	readonly useContainerOptimizedOs?: boolean | undefined;
+	readonly splitHealthChecks?: boolean;
+	readonly useContainerOptimizedOs?: boolean;
 }
 export interface IdentityAwareProxy {
-	readonly enabled?: boolean | undefined;
-	readonly oauth2ClientId?: string | undefined;
-	readonly oauth2ClientSecret?: string | undefined;
-	readonly oauth2ClientSecretSha256?: string | undefined;
+	readonly enabled?: boolean;
+	readonly oauth2ClientId?: string;
+	readonly oauth2ClientSecret?: string;
+	readonly oauth2ClientSecretSha256?: string;
 }
 export interface UrlDispatchRule {
-	readonly domain?: string | undefined;
-	readonly path?: string | undefined;
-	readonly service?: string | undefined;
+	readonly domain?: string;
+	readonly path?: string;
+	readonly service?: string;
 }
 export default {
 	Apps: Apps,

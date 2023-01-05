@@ -15,13 +15,13 @@ export interface ExperimentComponentInputs {
 	readonly OnlineAbConfig: OnlineAbConfigObject;
 	readonly Project: string;
 	readonly Treatments: TreatmentObject[];
-	readonly Description?: (string | undefined) | undefined;
-	readonly RandomizationSalt?: (string | undefined) | undefined;
-	readonly RemoveSegment?: (boolean | undefined) | undefined;
-	readonly RunningStatus?: (RunningStatusObject | undefined) | undefined;
-	readonly SamplingRate?: (number | undefined) | undefined;
-	readonly Segment?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly RandomizationSalt?: string | undefined;
+	readonly RemoveSegment?: boolean | undefined;
+	readonly RunningStatus?: RunningStatusObject | undefined;
+	readonly SamplingRate?: number | undefined;
+	readonly Segment?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Feature extends CfnResource<FeatureComponentInputs> implements FeatureComponentOutputs {
@@ -37,11 +37,11 @@ export interface FeatureComponentInputs {
 	readonly Name: string;
 	readonly Project: string;
 	readonly Variations: VariationObject[];
-	readonly DefaultVariation?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EntityOverrides?: (EntityOverride[] | undefined) | undefined;
-	readonly EvaluationStrategy?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DefaultVariation?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly EntityOverrides?: EntityOverride[] | undefined;
+	readonly EvaluationStrategy?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Launch extends CfnResource<LaunchComponentInputs> implements LaunchComponentOutputs {
@@ -58,11 +58,11 @@ export interface LaunchComponentInputs {
 	readonly Name: string;
 	readonly Project: string;
 	readonly ScheduledSplitsConfig: StepConfig[];
-	readonly Description?: (string | undefined) | undefined;
-	readonly ExecutionStatus?: (ExecutionStatusObject | undefined) | undefined;
-	readonly MetricMonitors?: (MetricDefinitionObject[] | undefined) | undefined;
-	readonly RandomizationSalt?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly ExecutionStatus?: ExecutionStatusObject | undefined;
+	readonly MetricMonitors?: MetricDefinitionObject[] | undefined;
+	readonly RandomizationSalt?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Project extends CfnResource<ProjectComponentInputs> implements ProjectComponentOutputs {
@@ -76,10 +76,10 @@ export interface ProjectComponentOutputs {
 }
 export interface ProjectComponentInputs {
 	readonly Name: string;
-	readonly AppConfigResource?: (AppConfigResourceObject | undefined) | undefined;
-	readonly DataDelivery?: (DataDeliveryObject | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AppConfigResource?: AppConfigResourceObject | undefined;
+	readonly DataDelivery?: DataDeliveryObject | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Segment extends CfnResource<SegmentComponentInputs> implements SegmentComponentOutputs {
@@ -93,9 +93,9 @@ export interface SegmentComponentOutputs {
 }
 export interface SegmentComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Pattern?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Pattern?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface MetricGoalObject {
@@ -103,21 +103,21 @@ export interface MetricGoalObject {
 	readonly EntityIdKey: string;
 	readonly EventPattern: string;
 	readonly MetricName: string;
-	readonly UnitLabel?: (string | undefined) | undefined;
+	readonly UnitLabel?: string | undefined;
 	readonly ValueKey: string;
 }
 export interface OnlineAbConfigObject {
-	readonly ControlTreatmentName?: (string | undefined) | undefined;
-	readonly TreatmentWeights?: (TreatmentToWeight[] | undefined) | undefined;
+	readonly ControlTreatmentName?: string | undefined;
+	readonly TreatmentWeights?: TreatmentToWeight[] | undefined;
 }
 export interface RunningStatusObject {
-	readonly AnalysisCompleteTime?: (string | undefined) | undefined;
-	readonly DesiredState?: (string | undefined) | undefined;
-	readonly Reason?: (string | undefined) | undefined;
+	readonly AnalysisCompleteTime?: string | undefined;
+	readonly DesiredState?: string | undefined;
+	readonly Reason?: string | undefined;
 	readonly Status: string;
 }
 export interface TreatmentObject {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly Feature: string;
 	readonly TreatmentName: string;
 	readonly Variation: string;
@@ -127,19 +127,19 @@ export interface TreatmentToWeight {
 	readonly Treatment: string;
 }
 export interface EntityOverride {
-	readonly EntityId?: (string | undefined) | undefined;
-	readonly Variation?: (string | undefined) | undefined;
+	readonly EntityId?: string | undefined;
+	readonly Variation?: string | undefined;
 }
 export interface VariationObject {
-	readonly BooleanValue?: (boolean | undefined) | undefined;
-	readonly DoubleValue?: (number | undefined) | undefined;
-	readonly LongValue?: (number | undefined) | undefined;
-	readonly StringValue?: (string | undefined) | undefined;
+	readonly BooleanValue?: boolean | undefined;
+	readonly DoubleValue?: number | undefined;
+	readonly LongValue?: number | undefined;
+	readonly StringValue?: string | undefined;
 	readonly VariationName: string;
 }
 export interface ExecutionStatusObject {
-	readonly DesiredState?: (string | undefined) | undefined;
-	readonly Reason?: (string | undefined) | undefined;
+	readonly DesiredState?: string | undefined;
+	readonly Reason?: string | undefined;
 	readonly Status: string;
 }
 export interface GroupToWeight {
@@ -147,7 +147,7 @@ export interface GroupToWeight {
 	readonly SplitWeight: number;
 }
 export interface LaunchGroupObject {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly Feature: string;
 	readonly GroupName: string;
 	readonly Variation: string;
@@ -156,7 +156,7 @@ export interface MetricDefinitionObject {
 	readonly EntityIdKey: string;
 	readonly EventPattern: string;
 	readonly MetricName: string;
-	readonly UnitLabel?: (string | undefined) | undefined;
+	readonly UnitLabel?: string | undefined;
 	readonly ValueKey: string;
 }
 export interface SegmentOverride {
@@ -166,7 +166,7 @@ export interface SegmentOverride {
 }
 export interface StepConfig {
 	readonly GroupWeights: GroupToWeight[];
-	readonly SegmentOverrides?: (SegmentOverride[] | undefined) | undefined;
+	readonly SegmentOverrides?: SegmentOverride[] | undefined;
 	readonly StartTime: string;
 }
 export interface AppConfigResourceObject {
@@ -174,12 +174,12 @@ export interface AppConfigResourceObject {
 	readonly EnvironmentId: string;
 }
 export interface DataDeliveryObject {
-	readonly LogGroup?: (string | undefined) | undefined;
-	readonly S3?: (S3Destination | undefined) | undefined;
+	readonly LogGroup?: string | undefined;
+	readonly S3?: S3Destination | undefined;
 }
 export interface S3Destination {
 	readonly BucketName: string;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly Prefix?: string | undefined;
 }
 export default {
 	Experiment: Experiment,

@@ -18,8 +18,8 @@ export interface mediaServices_accountFiltersComponentOutputs {
 }
 export interface mediaServices_accountFiltersComponentInputs {
 	readonly name: string;
-	readonly properties?: MediaFilterProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: MediaFilterProperties;
+	readonly systemData?: SystemData;
 }
 export class mediaServices_assets
 	extends ArmResource<mediaServices_assetsComponentInputs>
@@ -39,8 +39,8 @@ export interface mediaServices_assetsComponentOutputs {
 }
 export interface mediaServices_assetsComponentInputs {
 	readonly name: string;
-	readonly properties?: AssetProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AssetProperties;
+	readonly systemData?: SystemData;
 }
 export class mediaServices_assets_assetFilters
 	extends ArmResource<mediaServices_assets_assetFiltersComponentInputs>
@@ -60,8 +60,8 @@ export interface mediaServices_assets_assetFiltersComponentOutputs {
 }
 export interface mediaServices_assets_assetFiltersComponentInputs {
 	readonly name: string;
-	readonly properties?: MediaFilterProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: MediaFilterProperties;
+	readonly systemData?: SystemData;
 }
 export class mediaServices_assets_tracks
 	extends ArmResource<mediaServices_assets_tracksComponentInputs>
@@ -81,7 +81,7 @@ export interface mediaServices_assets_tracksComponentOutputs {
 }
 export interface mediaServices_assets_tracksComponentInputs {
 	readonly name: string;
-	readonly properties?: AssetTrackProperties | undefined;
+	readonly properties?: AssetTrackProperties;
 }
 export class mediaServices_assets_tracks_operationResults
 	extends ArmResource<mediaServices_assets_tracks_operationResultsComponentInputs>
@@ -101,7 +101,7 @@ export interface mediaServices_assets_tracks_operationResultsComponentOutputs {
 }
 export interface mediaServices_assets_tracks_operationResultsComponentInputs {
 	readonly name: string;
-	readonly properties?: AssetTrackProperties | undefined;
+	readonly properties?: AssetTrackProperties;
 }
 export class mediaServices_contentKeyPolicies
 	extends ArmResource<mediaServices_contentKeyPoliciesComponentInputs>
@@ -121,8 +121,8 @@ export interface mediaServices_contentKeyPoliciesComponentOutputs {
 }
 export interface mediaServices_contentKeyPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: ContentKeyPolicyProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ContentKeyPolicyProperties;
+	readonly systemData?: SystemData;
 }
 export class mediaservices_liveEvents
 	extends ArmResource<mediaservices_liveEventsComponentInputs>
@@ -143,9 +143,9 @@ export interface mediaservices_liveEventsComponentOutputs {
 export interface mediaservices_liveEventsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: LiveEventProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: LiveEventProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class mediaservices_liveEvents_liveOutputs
 	extends ArmResource<mediaservices_liveEvents_liveOutputsComponentInputs>
@@ -165,8 +165,8 @@ export interface mediaservices_liveEvents_liveOutputsComponentOutputs {
 }
 export interface mediaservices_liveEvents_liveOutputsComponentInputs {
 	readonly name: string;
-	readonly properties?: LiveOutputProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: LiveOutputProperties;
+	readonly systemData?: SystemData;
 }
 export class mediaservices_liveEvents_liveOutputs_operationLocations
 	extends ArmResource<mediaservices_liveEvents_liveOutputs_operationLocationsComponentInputs>
@@ -192,8 +192,8 @@ export interface mediaservices_liveEvents_liveOutputs_operationLocationsComponen
 }
 export interface mediaservices_liveEvents_liveOutputs_operationLocationsComponentInputs {
 	readonly name: string;
-	readonly properties?: LiveOutputProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: LiveOutputProperties;
+	readonly systemData?: SystemData;
 }
 export class mediaservices_liveEvents_operationLocations
 	extends ArmResource<mediaservices_liveEvents_operationLocationsComponentInputs>
@@ -212,11 +212,11 @@ export interface mediaservices_liveEvents_operationLocationsComponentOutputs {
 	readonly type: "Microsoft.Media/mediaservices/liveEvents/operationLocations";
 }
 export interface mediaservices_liveEvents_operationLocationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: LiveEventProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: LiveEventProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class mediaservices_streamingEndpoints
 	extends ArmResource<mediaservices_streamingEndpointsComponentInputs>
@@ -237,10 +237,10 @@ export interface mediaservices_streamingEndpointsComponentOutputs {
 export interface mediaservices_streamingEndpointsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StreamingEndpointProperties | undefined;
-	readonly sku?: ArmStreamingEndpointCurrentSku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: StreamingEndpointProperties;
+	readonly sku?: ArmStreamingEndpointCurrentSku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class mediaservices_streamingEndpoints_operationLocations
 	extends ArmResource<mediaservices_streamingEndpoints_operationLocationsComponentInputs>
@@ -265,12 +265,12 @@ export interface mediaservices_streamingEndpoints_operationLocationsComponentOut
 	readonly type: "Microsoft.Media/mediaservices/streamingEndpoints/operationLocations";
 }
 export interface mediaservices_streamingEndpoints_operationLocationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: StreamingEndpointProperties | undefined;
-	readonly sku?: ArmStreamingEndpointCurrentSku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: StreamingEndpointProperties;
+	readonly sku?: ArmStreamingEndpointCurrentSku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class mediaServices_streamingLocators
 	extends ArmResource<mediaServices_streamingLocatorsComponentInputs>
@@ -290,8 +290,8 @@ export interface mediaServices_streamingLocatorsComponentOutputs {
 }
 export interface mediaServices_streamingLocatorsComponentInputs {
 	readonly name: string;
-	readonly properties?: StreamingLocatorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: StreamingLocatorProperties;
+	readonly systemData?: SystemData;
 }
 export class mediaServices_streamingPolicies
 	extends ArmResource<mediaServices_streamingPoliciesComponentInputs>
@@ -311,8 +311,8 @@ export interface mediaServices_streamingPoliciesComponentOutputs {
 }
 export interface mediaServices_streamingPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: StreamingPolicyProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: StreamingPolicyProperties;
+	readonly systemData?: SystemData;
 }
 export function listContainerSas(resource: mediaServices_assets, input: ListContainerSasInput): AssetContainerSas {
 	if (resource.apiVersion !== "2022-08-01") {
@@ -351,69 +351,69 @@ export function listStreamingLocators(resource: mediaServices_assets): ListStrea
 	throw new Error("not implemented");
 }
 export interface AkamaiAccessControl {
-	readonly akamaiSignatureHeaderAuthenticationKeyList?: AkamaiSignatureHeaderAuthenticationKey[] | undefined;
+	readonly akamaiSignatureHeaderAuthenticationKeyList?: AkamaiSignatureHeaderAuthenticationKey[];
 }
 export interface AkamaiSignatureHeaderAuthenticationKey {
-	readonly base64Key?: string | undefined;
-	readonly expiration?: string | undefined;
-	readonly identifier?: string | undefined;
+	readonly base64Key?: string;
+	readonly expiration?: string;
+	readonly identifier?: string;
 }
 export interface ArmStreamingEndpointCurrentSku {
-	readonly capacity?: number | undefined;
-	readonly name?: string | undefined;
+	readonly capacity?: number;
+	readonly name?: string;
 }
 export interface AssetContainerSas {
-	readonly assetContainerSasUrls?: string[] | undefined;
+	readonly assetContainerSasUrls?: string[];
 }
 export interface AssetProperties {
-	readonly alternateId?: string | undefined;
-	readonly assetId?: string | undefined;
-	readonly container?: string | undefined;
-	readonly created?: string | undefined;
-	readonly description?: string | undefined;
-	readonly lastModified?: string | undefined;
-	readonly storageAccountName?: string | undefined;
-	readonly storageEncryptionFormat?: ("MediaStorageClientEncryption" | "None") | undefined;
+	readonly alternateId?: string;
+	readonly assetId?: string;
+	readonly container?: string;
+	readonly created?: string;
+	readonly description?: string;
+	readonly lastModified?: string;
+	readonly storageAccountName?: string;
+	readonly storageEncryptionFormat?: "MediaStorageClientEncryption" | "None";
 }
 export interface AssetStreamingLocator {
-	readonly assetName?: string | undefined;
-	readonly created?: string | undefined;
-	readonly defaultContentKeyPolicyName?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly name?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly streamingLocatorId?: string | undefined;
-	readonly streamingPolicyName?: string | undefined;
+	readonly assetName?: string;
+	readonly created?: string;
+	readonly defaultContentKeyPolicyName?: string;
+	readonly endTime?: string;
+	readonly name?: string;
+	readonly startTime?: string;
+	readonly streamingLocatorId?: string;
+	readonly streamingPolicyName?: string;
 }
 export interface AssetTrackProperties {
-	readonly provisioningState?: ("Failed" | "InProgress" | "Succeeded") | undefined;
-	readonly track?: TrackBase | undefined;
+	readonly provisioningState?: "Failed" | "InProgress" | "Succeeded";
+	readonly track?: TrackBase;
 }
 export interface CbcsDrmConfiguration {
-	readonly fairPlay?: StreamingPolicyFairPlayConfiguration | undefined;
-	readonly playReady?: StreamingPolicyPlayReadyConfiguration | undefined;
-	readonly widevine?: StreamingPolicyWidevineConfiguration | undefined;
+	readonly fairPlay?: StreamingPolicyFairPlayConfiguration;
+	readonly playReady?: StreamingPolicyPlayReadyConfiguration;
+	readonly widevine?: StreamingPolicyWidevineConfiguration;
 }
 export interface CencDrmConfiguration {
-	readonly playReady?: StreamingPolicyPlayReadyConfiguration | undefined;
-	readonly widevine?: StreamingPolicyWidevineConfiguration | undefined;
+	readonly playReady?: StreamingPolicyPlayReadyConfiguration;
+	readonly widevine?: StreamingPolicyWidevineConfiguration;
 }
 export interface ClearKeyEncryptionConfiguration {
-	readonly customKeysAcquisitionUrlTemplate?: string | undefined;
+	readonly customKeysAcquisitionUrlTemplate?: string;
 }
 export interface CommonEncryptionCbcs {
-	readonly clearKeyEncryptionConfiguration?: ClearKeyEncryptionConfiguration | undefined;
-	readonly clearTracks?: TrackSelection[] | undefined;
-	readonly contentKeys?: StreamingPolicyContentKeys | undefined;
-	readonly drm?: CbcsDrmConfiguration | undefined;
-	readonly enabledProtocols?: EnabledProtocols | undefined;
+	readonly clearKeyEncryptionConfiguration?: ClearKeyEncryptionConfiguration;
+	readonly clearTracks?: TrackSelection[];
+	readonly contentKeys?: StreamingPolicyContentKeys;
+	readonly drm?: CbcsDrmConfiguration;
+	readonly enabledProtocols?: EnabledProtocols;
 }
 export interface CommonEncryptionCenc {
-	readonly clearKeyEncryptionConfiguration?: ClearKeyEncryptionConfiguration | undefined;
-	readonly clearTracks?: TrackSelection[] | undefined;
-	readonly contentKeys?: StreamingPolicyContentKeys | undefined;
-	readonly drm?: CencDrmConfiguration | undefined;
-	readonly enabledProtocols?: EnabledProtocols | undefined;
+	readonly clearKeyEncryptionConfiguration?: ClearKeyEncryptionConfiguration;
+	readonly clearTracks?: TrackSelection[];
+	readonly contentKeys?: StreamingPolicyContentKeys;
+	readonly drm?: CencDrmConfiguration;
+	readonly enabledProtocols?: EnabledProtocols;
 }
 export interface ContentKeyPolicyConfiguration {}
 export interface ContentKeyPolicyFairPlayOfflineRentalConfiguration {
@@ -422,8 +422,8 @@ export interface ContentKeyPolicyFairPlayOfflineRentalConfiguration {
 }
 export interface ContentKeyPolicyOption {
 	readonly configuration: ContentKeyPolicyConfiguration;
-	readonly name?: string | undefined;
-	readonly policyOptionId?: string | undefined;
+	readonly name?: string;
+	readonly policyOptionId?: string;
 	readonly restriction: ContentKeyPolicyRestriction;
 }
 export interface ContentKeyPolicyPlayReadyContentKeyLocation {}
@@ -433,61 +433,59 @@ export interface ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction {
 }
 export interface ContentKeyPolicyPlayReadyLicense {
 	readonly allowTestDevices: boolean;
-	readonly beginDate?: string | undefined;
+	readonly beginDate?: string;
 	readonly contentKeyLocation: ContentKeyPolicyPlayReadyContentKeyLocation;
 	readonly contentType: "UltraVioletDownload" | "UltraVioletStreaming" | "Unknown" | "Unspecified";
-	readonly expirationDate?: string | undefined;
-	readonly gracePeriod?: string | undefined;
+	readonly expirationDate?: string;
+	readonly gracePeriod?: string;
 	readonly licenseType: "NonPersistent" | "Persistent" | "Unknown";
-	readonly playRight?: ContentKeyPolicyPlayReadyPlayRight | undefined;
-	readonly relativeBeginDate?: string | undefined;
-	readonly relativeExpirationDate?: string | undefined;
-	readonly securityLevel?: ("SL150" | "SL2000" | "SL3000" | "Unknown") | undefined;
+	readonly playRight?: ContentKeyPolicyPlayReadyPlayRight;
+	readonly relativeBeginDate?: string;
+	readonly relativeExpirationDate?: string;
+	readonly securityLevel?: "SL150" | "SL2000" | "SL3000" | "Unknown";
 }
 export interface ContentKeyPolicyPlayReadyPlayRight {
-	readonly agcAndColorStripeRestriction?: number | undefined;
+	readonly agcAndColorStripeRestriction?: number;
 	readonly allowPassingVideoContentToUnknownOutput:
 		| "Allowed"
 		| "AllowedWithVideoConstriction"
 		| "NotAllowed"
 		| "Unknown";
-	readonly analogVideoOpl?: number | undefined;
-	readonly compressedDigitalAudioOpl?: number | undefined;
-	readonly compressedDigitalVideoOpl?: number | undefined;
+	readonly analogVideoOpl?: number;
+	readonly compressedDigitalAudioOpl?: number;
+	readonly compressedDigitalVideoOpl?: number;
 	readonly digitalVideoOnlyContentRestriction: boolean;
-	readonly explicitAnalogTelevisionOutputRestriction?:
-		| ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction
-		| undefined;
-	readonly firstPlayExpiration?: string | undefined;
+	readonly explicitAnalogTelevisionOutputRestriction?: ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction;
+	readonly firstPlayExpiration?: string;
 	readonly imageConstraintForAnalogComponentVideoRestriction: boolean;
 	readonly imageConstraintForAnalogComputerMonitorRestriction: boolean;
-	readonly scmsRestriction?: number | undefined;
-	readonly uncompressedDigitalAudioOpl?: number | undefined;
-	readonly uncompressedDigitalVideoOpl?: number | undefined;
+	readonly scmsRestriction?: number;
+	readonly uncompressedDigitalAudioOpl?: number;
+	readonly uncompressedDigitalVideoOpl?: number;
 }
 export interface ContentKeyPolicyProperties {
-	readonly created?: string | undefined;
-	readonly description?: string | undefined;
-	readonly lastModified?: string | undefined;
+	readonly created?: string;
+	readonly description?: string;
+	readonly lastModified?: string;
 	readonly options: ContentKeyPolicyOption[];
-	readonly policyId?: string | undefined;
+	readonly policyId?: string;
 }
 export interface ContentKeyPolicyRestriction {}
 export interface ContentKeyPolicyRestrictionTokenKey {}
 export interface ContentKeyPolicyTokenClaim {
-	readonly claimType?: string | undefined;
-	readonly claimValue?: string | undefined;
+	readonly claimType?: string;
+	readonly claimValue?: string;
 }
 export interface CrossSiteAccessPolicies {
-	readonly clientAccessPolicy?: string | undefined;
-	readonly crossDomainPolicy?: string | undefined;
+	readonly clientAccessPolicy?: string;
+	readonly crossDomainPolicy?: string;
 }
 export interface DashSettings {
-	readonly role?: string | undefined;
+	readonly role?: string;
 }
 export interface DefaultKey {
-	readonly label?: string | undefined;
-	readonly policyName?: string | undefined;
+	readonly label?: string;
+	readonly policyName?: string;
 }
 export interface EnabledProtocols {
 	readonly dash: boolean;
@@ -496,10 +494,10 @@ export interface EnabledProtocols {
 	readonly smoothStreaming: boolean;
 }
 export interface EnvelopeEncryption {
-	readonly clearTracks?: TrackSelection[] | undefined;
-	readonly contentKeys?: StreamingPolicyContentKeys | undefined;
-	readonly customKeyAcquisitionUrlTemplate?: string | undefined;
-	readonly enabledProtocols?: EnabledProtocols | undefined;
+	readonly clearTracks?: TrackSelection[];
+	readonly contentKeys?: StreamingPolicyContentKeys;
+	readonly customKeyAcquisitionUrlTemplate?: string;
+	readonly enabledProtocols?: EnabledProtocols;
 }
 export interface FilterTrackPropertyCondition {
 	readonly operation: "Equal" | "NotEqual";
@@ -513,220 +511,216 @@ export interface FirstQuality {
 	readonly bitrate: number;
 }
 export interface Hls {
-	readonly fragmentsPerTsSegment?: number | undefined;
+	readonly fragmentsPerTsSegment?: number;
 }
 export interface HlsSettings {
-	readonly characteristics?: string | undefined;
-	readonly default?: boolean | undefined;
-	readonly forced?: boolean | undefined;
+	readonly characteristics?: string;
+	readonly default?: boolean;
+	readonly forced?: boolean;
 }
 export interface IPAccessControl {
-	readonly allow?: IPRange[] | undefined;
+	readonly allow?: IPRange[];
 }
 export interface IPRange {
-	readonly address?: string | undefined;
-	readonly name?: string | undefined;
-	readonly subnetPrefixLength?: number | undefined;
+	readonly address?: string;
+	readonly name?: string;
+	readonly subnetPrefixLength?: number;
 }
 export interface ListContainerSasInput {
-	readonly expiryTime?: string | undefined;
-	readonly permissions?: ("Read" | "ReadWrite" | "ReadWriteDelete") | undefined;
+	readonly expiryTime?: string;
+	readonly permissions?: "Read" | "ReadWrite" | "ReadWriteDelete";
 }
 export interface ListContentKeysResponse {
-	readonly contentKeys?: StreamingLocatorContentKey[] | undefined;
+	readonly contentKeys?: StreamingLocatorContentKey[];
 }
 export interface ListPathsResponse {
-	readonly downloadPaths?: string[] | undefined;
-	readonly streamingPaths?: StreamingPath[] | undefined;
+	readonly downloadPaths?: string[];
+	readonly streamingPaths?: StreamingPath[];
 }
 export interface ListStreamingLocatorsResponse {
-	readonly streamingLocators?: AssetStreamingLocator[] | undefined;
+	readonly streamingLocators?: AssetStreamingLocator[];
 }
 export interface LiveEventEncoding {
-	readonly encodingType?:
-		| ("None" | "PassthroughBasic" | "PassthroughStandard" | "Premium1080p" | "Standard")
-		| undefined;
-	readonly keyFrameInterval?: string | undefined;
-	readonly presetName?: string | undefined;
-	readonly stretchMode?: ("AutoFit" | "AutoSize" | "None") | undefined;
+	readonly encodingType?: "None" | "PassthroughBasic" | "PassthroughStandard" | "Premium1080p" | "Standard";
+	readonly keyFrameInterval?: string;
+	readonly presetName?: string;
+	readonly stretchMode?: "AutoFit" | "AutoSize" | "None";
 }
 export interface LiveEventEndpoint {
-	readonly protocol?: string | undefined;
-	readonly url?: string | undefined;
+	readonly protocol?: string;
+	readonly url?: string;
 }
 export interface LiveEventInput {
-	readonly accessControl?: LiveEventInputAccessControl | undefined;
-	readonly accessToken?: string | undefined;
-	readonly endpoints?: LiveEventEndpoint[] | undefined;
-	readonly keyFrameIntervalDuration?: string | undefined;
+	readonly accessControl?: LiveEventInputAccessControl;
+	readonly accessToken?: string;
+	readonly endpoints?: LiveEventEndpoint[];
+	readonly keyFrameIntervalDuration?: string;
 	readonly streamingProtocol: "FragmentedMP4" | "RTMP";
 }
 export interface LiveEventInputAccessControl {
-	readonly ip?: IPAccessControl | undefined;
+	readonly ip?: IPAccessControl;
 }
 export interface LiveEventInputTrackSelection {
-	readonly operation?: string | undefined;
-	readonly property?: string | undefined;
-	readonly value?: string | undefined;
+	readonly operation?: string;
+	readonly property?: string;
+	readonly value?: string;
 }
 export interface LiveEventOutputTranscriptionTrack {
 	readonly trackName: string;
 }
 export interface LiveEventPreview {
-	readonly accessControl?: LiveEventPreviewAccessControl | undefined;
-	readonly alternativeMediaId?: string | undefined;
-	readonly endpoints?: LiveEventEndpoint[] | undefined;
-	readonly previewLocator?: string | undefined;
-	readonly streamingPolicyName?: string | undefined;
+	readonly accessControl?: LiveEventPreviewAccessControl;
+	readonly alternativeMediaId?: string;
+	readonly endpoints?: LiveEventEndpoint[];
+	readonly previewLocator?: string;
+	readonly streamingPolicyName?: string;
 }
 export interface LiveEventPreviewAccessControl {
-	readonly ip?: IPAccessControl | undefined;
+	readonly ip?: IPAccessControl;
 }
 export interface LiveEventProperties {
-	readonly created?: string | undefined;
-	readonly crossSiteAccessPolicies?: CrossSiteAccessPolicies | undefined;
-	readonly description?: string | undefined;
-	readonly encoding?: LiveEventEncoding | undefined;
-	readonly hostnamePrefix?: string | undefined;
+	readonly created?: string;
+	readonly crossSiteAccessPolicies?: CrossSiteAccessPolicies;
+	readonly description?: string;
+	readonly encoding?: LiveEventEncoding;
+	readonly hostnamePrefix?: string;
 	readonly input: LiveEventInput;
-	readonly lastModified?: string | undefined;
-	readonly preview?: LiveEventPreview | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceState?:
-		| ("Allocating" | "Deleting" | "Running" | "StandBy" | "Starting" | "Stopped" | "Stopping")
-		| undefined;
-	readonly streamOptions?: ("Default" | "LowLatency" | "LowLatencyV2"[]) | undefined;
-	readonly transcriptions?: LiveEventTranscription[] | undefined;
-	readonly useStaticHostname?: boolean | undefined;
+	readonly lastModified?: string;
+	readonly preview?: LiveEventPreview;
+	readonly provisioningState?: string;
+	readonly resourceState?: "Allocating" | "Deleting" | "Running" | "StandBy" | "Starting" | "Stopped" | "Stopping";
+	readonly streamOptions?: "Default" | "LowLatency" | "LowLatencyV2"[];
+	readonly transcriptions?: LiveEventTranscription[];
+	readonly useStaticHostname?: boolean;
 }
 export interface LiveEventTranscription {
-	readonly inputTrackSelection?: LiveEventInputTrackSelection[] | undefined;
-	readonly language?: string | undefined;
-	readonly outputTranscriptionTrack?: LiveEventOutputTranscriptionTrack | undefined;
+	readonly inputTrackSelection?: LiveEventInputTrackSelection[];
+	readonly language?: string;
+	readonly outputTranscriptionTrack?: LiveEventOutputTranscriptionTrack;
 }
 export interface LiveOutputProperties {
 	readonly archiveWindowLength: string;
 	readonly assetName: string;
-	readonly created?: string | undefined;
-	readonly description?: string | undefined;
-	readonly hls?: Hls | undefined;
-	readonly lastModified?: string | undefined;
-	readonly manifestName?: string | undefined;
-	readonly outputSnapTime?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Running") | undefined;
-	readonly rewindWindowLength?: string | undefined;
+	readonly created?: string;
+	readonly description?: string;
+	readonly hls?: Hls;
+	readonly lastModified?: string;
+	readonly manifestName?: string;
+	readonly outputSnapTime?: number;
+	readonly provisioningState?: string;
+	readonly resourceState?: "Creating" | "Deleting" | "Running";
+	readonly rewindWindowLength?: string;
 }
 export interface MediaFilterProperties {
-	readonly firstQuality?: FirstQuality | undefined;
-	readonly presentationTimeRange?: PresentationTimeRange | undefined;
-	readonly tracks?: FilterTrackSelection[] | undefined;
+	readonly firstQuality?: FirstQuality;
+	readonly presentationTimeRange?: PresentationTimeRange;
+	readonly tracks?: FilterTrackSelection[];
 }
 export interface NoEncryption {
-	readonly enabledProtocols?: EnabledProtocols | undefined;
+	readonly enabledProtocols?: EnabledProtocols;
 }
 export interface PresentationTimeRange {
-	readonly endTimestamp?: number | undefined;
-	readonly forceEndTimestamp?: boolean | undefined;
-	readonly liveBackoffDuration?: number | undefined;
-	readonly presentationWindowDuration?: number | undefined;
-	readonly startTimestamp?: number | undefined;
-	readonly timescale?: number | undefined;
+	readonly endTimestamp?: number;
+	readonly forceEndTimestamp?: boolean;
+	readonly liveBackoffDuration?: number;
+	readonly presentationWindowDuration?: number;
+	readonly startTimestamp?: number;
+	readonly timescale?: number;
 }
 export interface StreamingEndpointAccessControl {
-	readonly akamai?: AkamaiAccessControl | undefined;
-	readonly ip?: IPAccessControl | undefined;
+	readonly akamai?: AkamaiAccessControl;
+	readonly ip?: IPAccessControl;
 }
 export interface StreamingEndpointProperties {
-	readonly accessControl?: StreamingEndpointAccessControl | undefined;
-	readonly availabilitySetName?: string | undefined;
-	readonly cdnEnabled?: boolean | undefined;
-	readonly cdnProfile?: string | undefined;
-	readonly cdnProvider?: string | undefined;
-	readonly created?: string | undefined;
-	readonly crossSiteAccessPolicies?: CrossSiteAccessPolicies | undefined;
-	readonly customHostNames?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly freeTrialEndTime?: string | undefined;
-	readonly hostName?: string | undefined;
-	readonly lastModified?: string | undefined;
-	readonly maxCacheAge?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceState?: ("Deleting" | "Running" | "Scaling" | "Starting" | "Stopped" | "Stopping") | undefined;
+	readonly accessControl?: StreamingEndpointAccessControl;
+	readonly availabilitySetName?: string;
+	readonly cdnEnabled?: boolean;
+	readonly cdnProfile?: string;
+	readonly cdnProvider?: string;
+	readonly created?: string;
+	readonly crossSiteAccessPolicies?: CrossSiteAccessPolicies;
+	readonly customHostNames?: string[];
+	readonly description?: string;
+	readonly freeTrialEndTime?: string;
+	readonly hostName?: string;
+	readonly lastModified?: string;
+	readonly maxCacheAge?: number;
+	readonly provisioningState?: string;
+	readonly resourceState?: "Deleting" | "Running" | "Scaling" | "Starting" | "Stopped" | "Stopping";
 	readonly scaleUnits: number;
 }
 export interface StreamingLocatorContentKey {
 	readonly id: string;
-	readonly labelReferenceInStreamingPolicy?: string | undefined;
-	readonly policyName?: string | undefined;
-	readonly tracks?: TrackSelection[] | undefined;
-	readonly type?: ("CommonEncryptionCbcs" | "CommonEncryptionCenc" | "EnvelopeEncryption") | undefined;
-	readonly value?: string | undefined;
+	readonly labelReferenceInStreamingPolicy?: string;
+	readonly policyName?: string;
+	readonly tracks?: TrackSelection[];
+	readonly type?: "CommonEncryptionCbcs" | "CommonEncryptionCenc" | "EnvelopeEncryption";
+	readonly value?: string;
 }
 export interface StreamingLocatorProperties {
-	readonly alternativeMediaId?: string | undefined;
+	readonly alternativeMediaId?: string;
 	readonly assetName: string;
-	readonly contentKeys?: StreamingLocatorContentKey[] | undefined;
-	readonly created?: string | undefined;
-	readonly defaultContentKeyPolicyName?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly filters?: string[] | undefined;
-	readonly startTime?: string | undefined;
-	readonly streamingLocatorId?: string | undefined;
+	readonly contentKeys?: StreamingLocatorContentKey[];
+	readonly created?: string;
+	readonly defaultContentKeyPolicyName?: string;
+	readonly endTime?: string;
+	readonly filters?: string[];
+	readonly startTime?: string;
+	readonly streamingLocatorId?: string;
 	readonly streamingPolicyName: string;
 }
 export interface StreamingPath {
 	readonly encryptionScheme: "CommonEncryptionCbcs" | "CommonEncryptionCenc" | "EnvelopeEncryption" | "NoEncryption";
-	readonly paths?: string[] | undefined;
+	readonly paths?: string[];
 	readonly streamingProtocol: "Dash" | "Download" | "Hls" | "SmoothStreaming";
 }
 export interface StreamingPolicyContentKey {
-	readonly label?: string | undefined;
-	readonly policyName?: string | undefined;
-	readonly tracks?: TrackSelection[] | undefined;
+	readonly label?: string;
+	readonly policyName?: string;
+	readonly tracks?: TrackSelection[];
 }
 export interface StreamingPolicyContentKeys {
-	readonly defaultKey?: DefaultKey | undefined;
-	readonly keyToTrackMappings?: StreamingPolicyContentKey[] | undefined;
+	readonly defaultKey?: DefaultKey;
+	readonly keyToTrackMappings?: StreamingPolicyContentKey[];
 }
 export interface StreamingPolicyFairPlayConfiguration {
 	readonly allowPersistentLicense: boolean;
-	readonly customLicenseAcquisitionUrlTemplate?: string | undefined;
+	readonly customLicenseAcquisitionUrlTemplate?: string;
 }
 export interface StreamingPolicyPlayReadyConfiguration {
-	readonly customLicenseAcquisitionUrlTemplate?: string | undefined;
-	readonly playReadyCustomAttributes?: string | undefined;
+	readonly customLicenseAcquisitionUrlTemplate?: string;
+	readonly playReadyCustomAttributes?: string;
 }
 export interface StreamingPolicyProperties {
-	readonly commonEncryptionCbcs?: CommonEncryptionCbcs | undefined;
-	readonly commonEncryptionCenc?: CommonEncryptionCenc | undefined;
-	readonly created?: string | undefined;
-	readonly defaultContentKeyPolicyName?: string | undefined;
-	readonly envelopeEncryption?: EnvelopeEncryption | undefined;
-	readonly noEncryption?: NoEncryption | undefined;
+	readonly commonEncryptionCbcs?: CommonEncryptionCbcs;
+	readonly commonEncryptionCenc?: CommonEncryptionCenc;
+	readonly created?: string;
+	readonly defaultContentKeyPolicyName?: string;
+	readonly envelopeEncryption?: EnvelopeEncryption;
+	readonly noEncryption?: NoEncryption;
 }
 export interface StreamingPolicyWidevineConfiguration {
-	readonly customLicenseAcquisitionUrlTemplate?: string | undefined;
+	readonly customLicenseAcquisitionUrlTemplate?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackBase {}
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrackPropertyCondition {
 	readonly operation: "Equal" | "Unknown";
 	readonly property: "FourCC" | "Unknown";
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface TrackSelection {
-	readonly trackSelections?: TrackPropertyCondition[] | undefined;
+	readonly trackSelections?: TrackPropertyCondition[];
 }
 export default {
 	"mediaServices/accountFilters": mediaServices_accountFilters,

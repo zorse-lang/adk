@@ -4,201 +4,200 @@ export class RegionUrlMaps extends GdmResource<RegionUrlMapsComponentInputs> imp
 	constructor(entity: ADKEntity, options: RegionUrlMapsComponentInputs) {
 		super(entity, options.name, "compute.v1.RegionUrlMaps", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
 }
 export interface RegionUrlMapsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export interface RegionUrlMapsComponentInputs {
-	readonly defaultRouteAction?: HttpRouteAction | undefined;
-	readonly defaultService?: string | undefined;
-	readonly defaultUrlRedirect?: HttpRedirectAction | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly headerAction?: HttpHeaderAction | undefined;
-	readonly hostRules?: HostRule[] | undefined;
+	readonly defaultRouteAction?: HttpRouteAction;
+	readonly defaultService?: string;
+	readonly defaultUrlRedirect?: HttpRedirectAction;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly headerAction?: HttpHeaderAction;
+	readonly hostRules?: HostRule[];
 	readonly name: string;
-	readonly pathMatchers?: PathMatcher[] | undefined;
-	readonly requestId?: string | undefined;
-	readonly tests?: UrlMapTest[] | undefined;
-	readonly type: string;
+	readonly pathMatchers?: PathMatcher[];
+	readonly requestId?: string;
+	readonly tests?: UrlMapTest[];
 }
 export interface CorsPolicy {
-	readonly allowCredentials?: boolean | undefined;
-	readonly allowHeaders?: string[] | undefined;
-	readonly allowMethods?: string[] | undefined;
-	readonly allowOriginRegexes?: string[] | undefined;
-	readonly allowOrigins?: string[] | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly exposeHeaders?: string[] | undefined;
-	readonly maxAge?: number | undefined;
+	readonly allowCredentials?: boolean;
+	readonly allowHeaders?: string[];
+	readonly allowMethods?: string[];
+	readonly allowOriginRegexes?: string[];
+	readonly allowOrigins?: string[];
+	readonly disabled?: boolean;
+	readonly exposeHeaders?: string[];
+	readonly maxAge?: number;
 }
 export interface Duration {
-	readonly nanos?: number | undefined;
-	readonly seconds?: string | undefined;
+	readonly nanos?: number;
+	readonly seconds?: string;
 }
 export interface HostRule {
-	readonly description?: string | undefined;
-	readonly hosts?: string[] | undefined;
-	readonly pathMatcher?: string | undefined;
+	readonly description?: string;
+	readonly hosts?: string[];
+	readonly pathMatcher?: string;
 }
 export interface HttpFaultAbort {
-	readonly httpStatus?: number | undefined;
-	readonly percentage?: number | undefined;
+	readonly httpStatus?: number;
+	readonly percentage?: number;
 }
 export interface HttpFaultDelay {
-	readonly fixedDelay?: Duration | undefined;
-	readonly percentage?: number | undefined;
+	readonly fixedDelay?: Duration;
+	readonly percentage?: number;
 }
 export interface HttpFaultInjection {
-	readonly abort?: HttpFaultAbort | undefined;
-	readonly delay?: HttpFaultDelay | undefined;
+	readonly abort?: HttpFaultAbort;
+	readonly delay?: HttpFaultDelay;
 }
 export interface HttpHeaderAction {
-	readonly requestHeadersToAdd?: HttpHeaderOption[] | undefined;
-	readonly requestHeadersToRemove?: string[] | undefined;
-	readonly responseHeadersToAdd?: HttpHeaderOption[] | undefined;
-	readonly responseHeadersToRemove?: string[] | undefined;
+	readonly requestHeadersToAdd?: HttpHeaderOption[];
+	readonly requestHeadersToRemove?: string[];
+	readonly responseHeadersToAdd?: HttpHeaderOption[];
+	readonly responseHeadersToRemove?: string[];
 }
 export interface HttpHeaderMatch {
-	readonly exactMatch?: string | undefined;
-	readonly headerName?: string | undefined;
-	readonly invertMatch?: boolean | undefined;
-	readonly prefixMatch?: string | undefined;
-	readonly presentMatch?: boolean | undefined;
-	readonly rangeMatch?: Int64RangeMatch | undefined;
-	readonly regexMatch?: string | undefined;
-	readonly suffixMatch?: string | undefined;
+	readonly exactMatch?: string;
+	readonly headerName?: string;
+	readonly invertMatch?: boolean;
+	readonly prefixMatch?: string;
+	readonly presentMatch?: boolean;
+	readonly rangeMatch?: Int64RangeMatch;
+	readonly regexMatch?: string;
+	readonly suffixMatch?: string;
 }
 export interface HttpHeaderOption {
-	readonly headerName?: string | undefined;
-	readonly headerValue?: string | undefined;
-	readonly replace?: boolean | undefined;
+	readonly headerName?: string;
+	readonly headerValue?: string;
+	readonly replace?: boolean;
 }
 export interface HttpQueryParameterMatch {
-	readonly exactMatch?: string | undefined;
-	readonly name?: string | undefined;
-	readonly presentMatch?: boolean | undefined;
-	readonly regexMatch?: string | undefined;
+	readonly exactMatch?: string;
+	readonly name?: string;
+	readonly presentMatch?: boolean;
+	readonly regexMatch?: string;
 }
 export interface HttpRedirectAction {
-	readonly hostRedirect?: string | undefined;
-	readonly httpsRedirect?: boolean | undefined;
-	readonly pathRedirect?: string | undefined;
-	readonly prefixRedirect?: string | undefined;
-	readonly redirectResponseCode?: string | undefined;
-	readonly stripQuery?: boolean | undefined;
+	readonly hostRedirect?: string;
+	readonly httpsRedirect?: boolean;
+	readonly pathRedirect?: string;
+	readonly prefixRedirect?: string;
+	readonly redirectResponseCode?: string;
+	readonly stripQuery?: boolean;
 }
 export interface HttpRetryPolicy {
-	readonly numRetries?: number | undefined;
-	readonly perTryTimeout?: Duration | undefined;
-	readonly retryConditions?: string[] | undefined;
+	readonly numRetries?: number;
+	readonly perTryTimeout?: Duration;
+	readonly retryConditions?: string[];
 }
 export interface HttpRouteAction {
-	readonly corsPolicy?: CorsPolicy | undefined;
-	readonly faultInjectionPolicy?: HttpFaultInjection | undefined;
-	readonly maxStreamDuration?: Duration | undefined;
-	readonly requestMirrorPolicy?: RequestMirrorPolicy | undefined;
-	readonly retryPolicy?: HttpRetryPolicy | undefined;
-	readonly timeout?: Duration | undefined;
-	readonly urlRewrite?: UrlRewrite | undefined;
-	readonly weightedBackendServices?: WeightedBackendService[] | undefined;
+	readonly corsPolicy?: CorsPolicy;
+	readonly faultInjectionPolicy?: HttpFaultInjection;
+	readonly maxStreamDuration?: Duration;
+	readonly requestMirrorPolicy?: RequestMirrorPolicy;
+	readonly retryPolicy?: HttpRetryPolicy;
+	readonly timeout?: Duration;
+	readonly urlRewrite?: UrlRewrite;
+	readonly weightedBackendServices?: WeightedBackendService[];
 }
 export interface HttpRouteRule {
-	readonly description?: string | undefined;
-	readonly headerAction?: HttpHeaderAction | undefined;
-	readonly matchRules?: HttpRouteRuleMatch[] | undefined;
-	readonly priority?: number | undefined;
-	readonly routeAction?: HttpRouteAction | undefined;
-	readonly service?: string | undefined;
-	readonly urlRedirect?: HttpRedirectAction | undefined;
+	readonly description?: string;
+	readonly headerAction?: HttpHeaderAction;
+	readonly matchRules?: HttpRouteRuleMatch[];
+	readonly priority?: number;
+	readonly routeAction?: HttpRouteAction;
+	readonly service?: string;
+	readonly urlRedirect?: HttpRedirectAction;
 }
 export interface HttpRouteRuleMatch {
-	readonly fullPathMatch?: string | undefined;
-	readonly headerMatches?: HttpHeaderMatch[] | undefined;
-	readonly ignoreCase?: boolean | undefined;
-	readonly metadataFilters?: MetadataFilter[] | undefined;
-	readonly prefixMatch?: string | undefined;
-	readonly queryParameterMatches?: HttpQueryParameterMatch[] | undefined;
-	readonly regexMatch?: string | undefined;
+	readonly fullPathMatch?: string;
+	readonly headerMatches?: HttpHeaderMatch[];
+	readonly ignoreCase?: boolean;
+	readonly metadataFilters?: MetadataFilter[];
+	readonly prefixMatch?: string;
+	readonly queryParameterMatches?: HttpQueryParameterMatch[];
+	readonly regexMatch?: string;
 }
 export interface Int64RangeMatch {
-	readonly rangeEnd?: string | undefined;
-	readonly rangeStart?: string | undefined;
+	readonly rangeEnd?: string;
+	readonly rangeStart?: string;
 }
 export interface MetadataFilter {
-	readonly filterLabels?: MetadataFilterLabelMatch[] | undefined;
-	readonly filterMatchCriteria?: string | undefined;
+	readonly filterLabels?: MetadataFilterLabelMatch[];
+	readonly filterMatchCriteria?: string;
 }
 export interface MetadataFilterLabelMatch {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface PathMatcher {
-	readonly defaultRouteAction?: HttpRouteAction | undefined;
-	readonly defaultService?: string | undefined;
-	readonly defaultUrlRedirect?: HttpRedirectAction | undefined;
-	readonly description?: string | undefined;
-	readonly headerAction?: HttpHeaderAction | undefined;
-	readonly name?: string | undefined;
-	readonly pathRules?: PathRule[] | undefined;
-	readonly routeRules?: HttpRouteRule[] | undefined;
+	readonly defaultRouteAction?: HttpRouteAction;
+	readonly defaultService?: string;
+	readonly defaultUrlRedirect?: HttpRedirectAction;
+	readonly description?: string;
+	readonly headerAction?: HttpHeaderAction;
+	readonly name?: string;
+	readonly pathRules?: PathRule[];
+	readonly routeRules?: HttpRouteRule[];
 }
 export interface PathRule {
-	readonly paths?: string[] | undefined;
-	readonly routeAction?: HttpRouteAction | undefined;
-	readonly service?: string | undefined;
-	readonly urlRedirect?: HttpRedirectAction | undefined;
+	readonly paths?: string[];
+	readonly routeAction?: HttpRouteAction;
+	readonly service?: string;
+	readonly urlRedirect?: HttpRedirectAction;
 }
 export interface RequestMirrorPolicy {
-	readonly backendService?: string | undefined;
+	readonly backendService?: string;
 }
 export interface UrlMap {
-	readonly creationTimestamp?: string | undefined;
-	readonly defaultRouteAction?: HttpRouteAction | undefined;
-	readonly defaultService?: string | undefined;
-	readonly defaultUrlRedirect?: HttpRedirectAction | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly headerAction?: HttpHeaderAction | undefined;
-	readonly hostRules?: HostRule[] | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly pathMatchers?: PathMatcher[] | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly tests?: UrlMapTest[] | undefined;
+	readonly creationTimestamp?: string;
+	readonly defaultRouteAction?: HttpRouteAction;
+	readonly defaultService?: string;
+	readonly defaultUrlRedirect?: HttpRedirectAction;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly headerAction?: HttpHeaderAction;
+	readonly hostRules?: HostRule[];
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly pathMatchers?: PathMatcher[];
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly tests?: UrlMapTest[];
 }
 export interface UrlMapTest {
-	readonly description?: string | undefined;
-	readonly expectedOutputUrl?: string | undefined;
-	readonly expectedRedirectResponseCode?: number | undefined;
-	readonly headers?: UrlMapTestHeader[] | undefined;
-	readonly host?: string | undefined;
-	readonly path?: string | undefined;
-	readonly service?: string | undefined;
+	readonly description?: string;
+	readonly expectedOutputUrl?: string;
+	readonly expectedRedirectResponseCode?: number;
+	readonly headers?: UrlMapTestHeader[];
+	readonly host?: string;
+	readonly path?: string;
+	readonly service?: string;
 }
 export interface UrlMapTestHeader {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface UrlRewrite {
-	readonly hostRewrite?: string | undefined;
-	readonly pathPrefixRewrite?: string | undefined;
+	readonly hostRewrite?: string;
+	readonly pathPrefixRewrite?: string;
 }
 export interface WeightedBackendService {
-	readonly backendService?: string | undefined;
-	readonly headerAction?: HttpHeaderAction | undefined;
-	readonly weight?: number | undefined;
+	readonly backendService?: string;
+	readonly headerAction?: HttpHeaderAction;
+	readonly weight?: number;
 }
 export default {
 	RegionUrlMaps: RegionUrlMaps,

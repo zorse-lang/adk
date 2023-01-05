@@ -14,17 +14,17 @@ export interface CampaignComponentInputs {
 	readonly DialerConfig: DialerConfig;
 	readonly Name: string;
 	readonly OutboundCallConfig: OutboundCallConfig;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface DialerConfig {
-	readonly PredictiveDialerConfig?: (PredictiveDialerConfig | undefined) | undefined;
-	readonly ProgressiveDialerConfig?: (ProgressiveDialerConfig | undefined) | undefined;
+	readonly PredictiveDialerConfig?: PredictiveDialerConfig | undefined;
+	readonly ProgressiveDialerConfig?: ProgressiveDialerConfig | undefined;
 }
 export interface OutboundCallConfig {
 	readonly ConnectContactFlowArn: string;
 	readonly ConnectQueueArn: string;
-	readonly ConnectSourcePhoneNumber?: (string | undefined) | undefined;
+	readonly ConnectSourcePhoneNumber?: string | undefined;
 }
 export interface PredictiveDialerConfig {
 	readonly BandwidthAllocation: number;

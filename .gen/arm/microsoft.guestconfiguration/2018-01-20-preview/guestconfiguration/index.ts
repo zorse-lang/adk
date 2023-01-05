@@ -23,31 +23,31 @@ export interface guestConfigurationAssignmentsComponentOutputs {
 	readonly type: "Microsoft.GuestConfiguration/guestConfigurationAssignments";
 }
 export interface guestConfigurationAssignmentsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: GuestConfigurationAssignmentProperties | undefined;
+	readonly properties?: GuestConfigurationAssignmentProperties;
 }
 export interface ConfigurationParameter {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface ConfigurationParameterList {
-	readonly value?: ConfigurationParameter[] | undefined;
+	readonly value?: ConfigurationParameter[];
 }
 export interface GuestConfigurationAssignmentProperties {
-	readonly assignmentHash?: string | undefined;
-	readonly complianceReason?: string | undefined;
-	readonly complianceStatus?: ("Compliant" | "NotCompliant" | "Pending") | undefined;
-	readonly guestConfiguration?: GuestConfigurationNavigation | undefined;
-	readonly latestReportId?: string | undefined;
-	readonly location?: string | undefined;
-	readonly provisioningState?: "Succeeded" | undefined;
+	readonly assignmentHash?: string;
+	readonly complianceReason?: string;
+	readonly complianceStatus?: "Compliant" | "NotCompliant" | "Pending";
+	readonly guestConfiguration?: GuestConfigurationNavigation;
+	readonly latestReportId?: string;
+	readonly location?: string;
+	readonly provisioningState?: "Succeeded";
 }
 export interface GuestConfigurationNavigation {
-	readonly configurationParameter?: ConfigurationParameterList | undefined;
-	readonly kind?: "DSC" | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly configurationParameter?: ConfigurationParameterList;
+	readonly kind?: "DSC";
+	readonly name?: string;
+	readonly type?: string;
 }
 export default {
 	guestConfigurationAssignments: guestConfigurationAssignments,

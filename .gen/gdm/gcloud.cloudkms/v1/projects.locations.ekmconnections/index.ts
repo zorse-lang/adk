@@ -7,38 +7,37 @@ export class ProjectsLocationsEkmConnections
 	constructor(entity: ADKEntity, options: ProjectsLocationsEkmConnectionsComponentInputs) {
 		super(entity, options.name, "cloudkms.v1.ProjectsLocationsEkmConnections", options);
 	}
-	public readonly createTime?: string | undefined;
+	public readonly createTime?: string;
 }
 export interface ProjectsLocationsEkmConnectionsComponentOutputs {
-	readonly createTime?: string | undefined;
+	readonly createTime?: string;
 }
 export interface ProjectsLocationsEkmConnectionsComponentInputs {
 	readonly ekmConnectionId: string;
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly serviceResolvers?: ServiceResolver[] | undefined;
-	readonly type: string;
+	readonly serviceResolvers?: ServiceResolver[];
 }
 export interface Certificate {
-	readonly issuer?: string | undefined;
-	readonly notAfterTime?: string | undefined;
-	readonly notBeforeTime?: string | undefined;
-	readonly parsed?: boolean | undefined;
+	readonly issuer?: string;
+	readonly notAfterTime?: string;
+	readonly notBeforeTime?: string;
+	readonly parsed?: boolean;
 	readonly rawDer: string;
-	readonly serialNumber?: string | undefined;
-	readonly sha256Fingerprint?: string | undefined;
-	readonly subject?: string | undefined;
-	readonly subjectAlternativeDnsNames?: string[] | undefined;
+	readonly serialNumber?: string;
+	readonly sha256Fingerprint?: string;
+	readonly subject?: string;
+	readonly subjectAlternativeDnsNames?: string[];
 }
 export interface EkmConnection {
-	readonly createTime?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly name?: string | undefined;
-	readonly serviceResolvers?: ServiceResolver[] | undefined;
+	readonly createTime?: string;
+	readonly etag?: string;
+	readonly name?: string;
+	readonly serviceResolvers?: ServiceResolver[];
 }
 export interface ServiceResolver {
-	readonly endpointFilter?: string | undefined;
+	readonly endpointFilter?: string;
 	readonly hostname: string;
 	readonly serverCertificates: Certificate[];
 	readonly serviceDirectoryService: string;

@@ -19,8 +19,8 @@ export interface ResourcePackageComponentInputs {
 	readonly PackageType: string;
 	readonly ProductCode: string;
 	readonly Specification: string;
-	readonly EffectiveDate?: (string | undefined) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
+	readonly EffectiveDate?: string | undefined;
+	readonly PricingCycle?: string | undefined;
 	readonly LogicalId: string;
 }
 export class WaitOrder extends RosResource<WaitOrderComponentInputs> implements WaitOrderComponentOutputs {
@@ -31,8 +31,8 @@ export class WaitOrder extends RosResource<WaitOrderComponentInputs> implements 
 export interface WaitOrderComponentOutputs {}
 export interface WaitOrderComponentInputs {
 	readonly OrderIds: any[];
-	readonly CancelOnDelete?: (boolean | undefined) | undefined;
-	readonly WaitForOrderProduced?: (boolean | undefined) | undefined;
+	readonly CancelOnDelete?: boolean | undefined;
+	readonly WaitForOrderProduced?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export default {

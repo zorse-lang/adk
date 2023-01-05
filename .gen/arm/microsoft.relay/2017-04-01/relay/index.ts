@@ -16,9 +16,9 @@ export interface namespacesComponentOutputs {
 export interface namespacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RelayNamespaceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: RelayNamespaceProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class namespaces_authorizationRules
 	extends ArmResource<namespaces_authorizationRulesComponentInputs>
@@ -58,7 +58,7 @@ export interface namespaces_hybridConnectionsComponentOutputs {
 }
 export interface namespaces_hybridConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: HybridConnectionProperties | undefined;
+	readonly properties?: HybridConnectionProperties;
 }
 export class namespaces_hybridConnections_authorizationRules
 	extends ArmResource<namespaces_hybridConnections_authorizationRulesComponentInputs>
@@ -104,7 +104,7 @@ export interface namespaces_wcfRelaysComponentOutputs {
 }
 export interface namespaces_wcfRelaysComponentInputs {
 	readonly name: string;
-	readonly properties?: WcfRelayProperties | undefined;
+	readonly properties?: WcfRelayProperties;
 }
 export class namespaces_wcfRelays_authorizationRules
 	extends ArmResource<namespaces_wcfRelays_authorizationRulesComponentInputs>
@@ -136,45 +136,45 @@ export function listKeys(resource: namespaces_authorizationRules): AccessKeys {
 	throw new Error("not implemented");
 }
 export interface AccessKeys {
-	readonly keyName?: string | undefined;
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly keyName?: string;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface AuthorizationRuleProperties {
 	readonly rights: "Listen" | "Manage"[];
 }
 export interface HybridConnectionProperties {
-	readonly createdAt?: string | undefined;
-	readonly listenerCount?: number | undefined;
-	readonly requiresClientAuthorization?: boolean | undefined;
-	readonly updatedAt?: string | undefined;
-	readonly userMetadata?: string | undefined;
+	readonly createdAt?: string;
+	readonly listenerCount?: number;
+	readonly requiresClientAuthorization?: boolean;
+	readonly updatedAt?: string;
+	readonly userMetadata?: string;
 }
 export interface RelayNamespaceProperties {
-	readonly createdAt?: string | undefined;
-	readonly metricId?: string | undefined;
-	readonly provisioningState?: ("Created" | "Deleted" | "Failed" | "Succeeded" | "Unknown") | undefined;
-	readonly serviceBusEndpoint?: string | undefined;
-	readonly updatedAt?: string | undefined;
+	readonly createdAt?: string;
+	readonly metricId?: string;
+	readonly provisioningState?: "Created" | "Deleted" | "Failed" | "Succeeded" | "Unknown";
+	readonly serviceBusEndpoint?: string;
+	readonly updatedAt?: string;
 }
 export interface Sku {
 	readonly name: "Standard";
-	readonly tier?: "Standard" | undefined;
+	readonly tier?: "Standard";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WcfRelayProperties {
-	readonly createdAt?: string | undefined;
-	readonly isDynamic?: boolean | undefined;
-	readonly listenerCount?: number | undefined;
-	readonly relayType?: "Http" | undefined;
-	readonly requiresClientAuthorization?: boolean | undefined;
-	readonly requiresTransportSecurity?: boolean | undefined;
-	readonly updatedAt?: string | undefined;
-	readonly userMetadata?: string | undefined;
+	readonly createdAt?: string;
+	readonly isDynamic?: boolean;
+	readonly listenerCount?: number;
+	readonly relayType?: "Http";
+	readonly requiresClientAuthorization?: boolean;
+	readonly requiresTransportSecurity?: boolean;
+	readonly updatedAt?: string;
+	readonly userMetadata?: string;
 }
 export default {
 	namespaces: namespaces,

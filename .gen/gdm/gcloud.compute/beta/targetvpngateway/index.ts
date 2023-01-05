@@ -7,32 +7,31 @@ export class TargetVpnGateway
 	constructor(entity: ADKEntity, options: TargetVpnGatewayComponentInputs) {
 		super(entity, options.name, "compute.beta.targetVpnGateway", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly forwardingRules?: string[] | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly tunnels?: string[] | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly forwardingRules?: string[];
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly status?: string;
+	public readonly tunnels?: string[];
 }
 export interface TargetVpnGatewayComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly forwardingRules?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly tunnels?: string[] | undefined;
+	readonly creationTimestamp?: string;
+	readonly forwardingRules?: string[];
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly tunnels?: string[];
 }
 export interface TargetVpnGatewayComponentInputs {
-	readonly description?: string | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly description?: string;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly type: string;
+	readonly network?: string;
 }
 export default {
 	TargetVpnGateway: TargetVpnGateway,

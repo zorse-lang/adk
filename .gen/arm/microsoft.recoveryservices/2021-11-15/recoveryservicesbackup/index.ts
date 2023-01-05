@@ -17,24 +17,30 @@ export interface vaults_backupstorageconfigComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/backupstorageconfig";
 }
 export interface vaults_backupstorageconfigComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: BackupResourceConfig | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: BackupResourceConfig;
+	readonly tags?: ResourceTags;
 }
 export interface BackupResourceConfig {
-	readonly crossRegionRestoreFlag?: boolean | undefined;
+	readonly crossRegionRestoreFlag?: boolean;
 	readonly storageModelType?:
-		| ("GeoRedundant" | "Invalid" | "LocallyRedundant" | "ReadAccessGeoZoneRedundant" | "ZoneRedundant")
-		| undefined;
+		| "GeoRedundant"
+		| "Invalid"
+		| "LocallyRedundant"
+		| "ReadAccessGeoZoneRedundant"
+		| "ZoneRedundant";
 	readonly storageType?:
-		| ("GeoRedundant" | "Invalid" | "LocallyRedundant" | "ReadAccessGeoZoneRedundant" | "ZoneRedundant")
-		| undefined;
-	readonly storageTypeState?: ("Invalid" | "Locked" | "Unlocked") | undefined;
+		| "GeoRedundant"
+		| "Invalid"
+		| "LocallyRedundant"
+		| "ReadAccessGeoZoneRedundant"
+		| "ZoneRedundant";
+	readonly storageTypeState?: "Invalid" | "Locked" | "Unlocked";
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	"vaults/backupstorageconfig": vaults_backupstorageconfig,

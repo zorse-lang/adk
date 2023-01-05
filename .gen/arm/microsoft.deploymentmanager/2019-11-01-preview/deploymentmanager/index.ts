@@ -19,8 +19,8 @@ export interface artifactSourcesComponentOutputs {
 export interface artifactSourcesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ArtifactSourceProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ArtifactSourceProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class rollouts extends ArmResource<rolloutsComponentInputs> implements rolloutsComponentOutputs {
 	constructor(entity: ADKEntity, options: rolloutsComponentInputs) {
@@ -40,7 +40,7 @@ export interface rolloutsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: RolloutRequestPropertiesOrRolloutProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class serviceTopologies
 	extends ArmResource<serviceTopologiesComponentInputs>
@@ -62,7 +62,7 @@ export interface serviceTopologiesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ServiceTopologyResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class serviceTopologies_services
 	extends ArmResource<serviceTopologies_servicesComponentInputs>
@@ -90,7 +90,7 @@ export interface serviceTopologies_servicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ServiceResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class serviceTopologies_services_serviceUnits
 	extends ArmResource<serviceTopologies_services_serviceUnitsComponentInputs>
@@ -118,7 +118,7 @@ export interface serviceTopologies_services_serviceUnitsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ServiceUnitResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class steps extends ArmResource<stepsComponentInputs> implements stepsComponentOutputs {
 	constructor(entity: ADKEntity, options: stepsComponentInputs) {
@@ -137,48 +137,48 @@ export interface stepsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: StepProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export interface ArtifactSourceProperties {
-	readonly artifactRoot?: string | undefined;
+	readonly artifactRoot?: string;
 	readonly authentication: Authentication;
 	readonly sourceType: string;
 }
 export interface Authentication {}
 export interface CloudErrorBody {
-	readonly code?: string | undefined;
-	readonly details?: CloudErrorBody[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly code?: string;
+	readonly details?: CloudErrorBody[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface HealthCheckStepAttributes {
 	readonly healthyStateDuration: string;
-	readonly maxElasticDuration?: string | undefined;
-	readonly waitDuration?: string | undefined;
+	readonly maxElasticDuration?: string;
+	readonly waitDuration?: string;
 }
 export interface Identity {
 	readonly identityIds: string[];
 	readonly type: string;
 }
 export interface Message {
-	readonly message?: string | undefined;
-	readonly timeStamp?: string | undefined;
+	readonly message?: string;
+	readonly timeStamp?: string;
 }
 export interface PrePostStep {
 	readonly stepId: string;
 }
 export interface ResourceOperation {
-	readonly operationId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceName?: string | undefined;
-	readonly resourceType?: string | undefined;
-	readonly statusCode?: string | undefined;
-	readonly statusMessage?: string | undefined;
+	readonly operationId?: string;
+	readonly provisioningState?: string;
+	readonly resourceName?: string;
+	readonly resourceType?: string;
+	readonly statusCode?: string;
+	readonly statusMessage?: string;
 }
 export interface RestHealthCheck {
 	readonly name: string;
 	readonly request: RestRequest;
-	readonly response?: RestResponse | undefined;
+	readonly response?: RestResponse;
 }
 export interface RestParameters {
 	readonly healthChecks: RestHealthCheck[];
@@ -190,44 +190,44 @@ export interface RestRequest {
 }
 export interface RestRequestAuthentication {}
 export interface RestResponse {
-	readonly regex?: RestResponseRegex | undefined;
-	readonly successStatusCodes?: string[] | undefined;
+	readonly regex?: RestResponseRegex;
+	readonly successStatusCodes?: string[];
 }
 export interface RestResponseRegex {
-	readonly matches?: string[] | undefined;
-	readonly matchQuantifier?: "All" | undefined;
+	readonly matches?: string[];
+	readonly matchQuantifier?: "All";
 }
 export interface RolloutOperationInfo {
-	readonly endTime?: string | undefined;
-	readonly error?: CloudErrorBody | undefined;
-	readonly retryAttempt?: number | undefined;
-	readonly skipSucceededOnRetry?: boolean | undefined;
-	readonly startTime?: string | undefined;
+	readonly endTime?: string;
+	readonly error?: CloudErrorBody;
+	readonly retryAttempt?: number;
+	readonly skipSucceededOnRetry?: boolean;
+	readonly startTime?: string;
 }
 export interface RolloutRequestPropertiesOrRolloutProperties {
-	readonly artifactSourceId?: string | undefined;
+	readonly artifactSourceId?: string;
 	readonly buildVersion: string;
-	readonly operationInfo?: RolloutOperationInfo | undefined;
-	readonly services?: Service[] | undefined;
-	readonly status?: string | undefined;
+	readonly operationInfo?: RolloutOperationInfo;
+	readonly services?: Service[];
+	readonly status?: string;
 	readonly stepGroups: StepGroup[];
 	readonly targetServiceTopologyId: string;
-	readonly totalRetryAttempts?: number | undefined;
+	readonly totalRetryAttempts?: number;
 }
 export interface RolloutStep {
-	readonly messages?: Message[] | undefined;
+	readonly messages?: Message[];
 	readonly name: string;
-	readonly operationInfo?: StepOperationInfo | undefined;
-	readonly resourceOperations?: ResourceOperation[] | undefined;
-	readonly status?: string | undefined;
-	readonly stepGroup?: string | undefined;
+	readonly operationInfo?: StepOperationInfo;
+	readonly resourceOperations?: ResourceOperation[];
+	readonly status?: string;
+	readonly stepGroup?: string;
 }
 export interface SasProperties {
 	readonly sasUri: string;
 }
 export interface Service {
-	readonly name?: string | undefined;
-	readonly serviceUnits?: ServiceUnit[] | undefined;
+	readonly name?: string;
+	readonly serviceUnits?: ServiceUnit[];
 	readonly targetLocation: string;
 	readonly targetSubscriptionId: string;
 }
@@ -236,44 +236,44 @@ export interface ServiceResourceProperties {
 	readonly targetSubscriptionId: string;
 }
 export interface ServiceTopologyResourceProperties {
-	readonly artifactSourceId?: string | undefined;
+	readonly artifactSourceId?: string;
 }
 export interface ServiceUnit {
-	readonly artifacts?: ServiceUnitArtifacts | undefined;
+	readonly artifacts?: ServiceUnitArtifacts;
 	readonly deploymentMode: "Complete";
-	readonly name?: string | undefined;
-	readonly steps?: RolloutStep[] | undefined;
+	readonly name?: string;
+	readonly steps?: RolloutStep[];
 	readonly targetResourceGroup: string;
 }
 export interface ServiceUnitArtifacts {
-	readonly parametersArtifactSourceRelativePath?: string | undefined;
-	readonly parametersUri?: string | undefined;
-	readonly templateArtifactSourceRelativePath?: string | undefined;
-	readonly templateUri?: string | undefined;
+	readonly parametersArtifactSourceRelativePath?: string;
+	readonly parametersUri?: string;
+	readonly templateArtifactSourceRelativePath?: string;
+	readonly templateUri?: string;
 }
 export interface ServiceUnitResourceProperties {
-	readonly artifacts?: ServiceUnitArtifacts | undefined;
+	readonly artifacts?: ServiceUnitArtifacts;
 	readonly deploymentMode: "Complete";
 	readonly targetResourceGroup: string;
 }
 export interface StepGroup {
-	readonly dependsOnStepGroups?: string[] | undefined;
+	readonly dependsOnStepGroups?: string[];
 	readonly deploymentTargetId: string;
 	readonly name: string;
-	readonly postDeploymentSteps?: PrePostStep[] | undefined;
-	readonly preDeploymentSteps?: PrePostStep[] | undefined;
+	readonly postDeploymentSteps?: PrePostStep[];
+	readonly preDeploymentSteps?: PrePostStep[];
 }
 export interface StepOperationInfo {
-	readonly correlationId?: string | undefined;
-	readonly deploymentName?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: CloudErrorBody | undefined;
-	readonly lastUpdatedTime?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly correlationId?: string;
+	readonly deploymentName?: string;
+	readonly endTime?: string;
+	readonly error?: CloudErrorBody;
+	readonly lastUpdatedTime?: string;
+	readonly startTime?: string;
 }
 export interface StepProperties {}
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WaitStepAttributes {
 	readonly duration: string;

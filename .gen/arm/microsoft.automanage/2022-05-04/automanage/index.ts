@@ -15,8 +15,8 @@ export interface bestPracticesComponentOutputs {
 }
 export interface bestPracticesComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfigurationProfileProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConfigurationProfileProperties;
+	readonly systemData?: SystemData;
 }
 export class bestPractices_versions
 	extends ArmResource<bestPractices_versionsComponentInputs>
@@ -36,8 +36,8 @@ export interface bestPractices_versionsComponentOutputs {
 }
 export interface bestPractices_versionsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfigurationProfileProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConfigurationProfileProperties;
+	readonly systemData?: SystemData;
 }
 export class configurationProfileAssignments
 	extends ArmResource<configurationProfileAssignmentsComponentInputs>
@@ -56,10 +56,10 @@ export interface configurationProfileAssignmentsComponentOutputs {
 	readonly type: "Microsoft.Automanage/configurationProfileAssignments";
 }
 export interface configurationProfileAssignmentsComponentInputs {
-	readonly managedBy?: string | undefined;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly properties?: ConfigurationProfileAssignmentProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConfigurationProfileAssignmentProperties;
+	readonly systemData?: SystemData;
 }
 export class configurationProfileAssignments_reports
 	extends ArmResource<configurationProfileAssignments_reportsComponentInputs>
@@ -79,8 +79,8 @@ export interface configurationProfileAssignments_reportsComponentOutputs {
 }
 export interface configurationProfileAssignments_reportsComponentInputs {
 	readonly name: string;
-	readonly properties?: AssignmentReportProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AssignmentReportProperties;
+	readonly systemData?: SystemData;
 }
 export class configurationProfiles
 	extends ArmResource<configurationProfilesComponentInputs>
@@ -101,9 +101,9 @@ export interface configurationProfilesComponentOutputs {
 export interface configurationProfilesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ConfigurationProfileProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ConfigurationProfileProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class configurationProfiles_versions
 	extends ArmResource<configurationProfiles_versionsComponentInputs>
@@ -124,9 +124,9 @@ export interface configurationProfiles_versionsComponentOutputs {
 export interface configurationProfiles_versionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ConfigurationProfileProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ConfigurationProfileProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class servicePrincipals
 	extends ArmResource<servicePrincipalsComponentInputs>
@@ -146,61 +146,61 @@ export interface servicePrincipalsComponentOutputs {
 }
 export interface servicePrincipalsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServicePrincipalProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ServicePrincipalProperties;
+	readonly systemData?: SystemData;
 }
 export interface AssignmentReportProperties {
-	readonly configurationProfile?: string | undefined;
-	readonly duration?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: ErrorDetail | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly reportFormatVersion?: string | undefined;
-	readonly resources?: ReportResource[] | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly type?: string | undefined;
+	readonly configurationProfile?: string;
+	readonly duration?: string;
+	readonly endTime?: string;
+	readonly error?: ErrorDetail;
+	readonly lastModifiedTime?: string;
+	readonly reportFormatVersion?: string;
+	readonly resources?: ReportResource[];
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly type?: string;
 }
 export interface ConfigurationProfileAssignmentProperties {
-	readonly configurationProfile?: string | undefined;
-	readonly status?: string | undefined;
-	readonly targetId?: string | undefined;
+	readonly configurationProfile?: string;
+	readonly status?: string;
+	readonly targetId?: string;
 }
 export interface ConfigurationProfileProperties {
-	readonly configuration?: any | undefined;
+	readonly configuration?: any;
 }
 export interface ErrorAdditionalInfo {
-	readonly info?: any | undefined;
-	readonly type?: string | undefined;
+	readonly info?: any;
+	readonly type?: string;
 }
 export interface ErrorDetail {
-	readonly additionalInfo?: ErrorAdditionalInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ErrorDetail[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: ErrorAdditionalInfo[];
+	readonly code?: string;
+	readonly details?: ErrorDetail[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface ReportResource {
-	readonly error?: ErrorDetail | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly status?: string | undefined;
-	readonly type?: string | undefined;
+	readonly error?: ErrorDetail;
+	readonly id?: string;
+	readonly name?: string;
+	readonly status?: string;
+	readonly type?: string;
 }
 export interface ServicePrincipalProperties {
-	readonly authorizationSet?: boolean | undefined;
-	readonly servicePrincipalId?: string | undefined;
+	readonly authorizationSet?: boolean;
+	readonly servicePrincipalId?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	bestPractices: bestPractices,

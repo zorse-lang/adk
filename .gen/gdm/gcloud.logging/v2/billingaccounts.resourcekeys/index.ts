@@ -10,7 +10,6 @@ export class BillingAccountsResourceKeys
 }
 export interface BillingAccountsResourceKeysComponentOutputs {}
 export interface BillingAccountsResourceKeysComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

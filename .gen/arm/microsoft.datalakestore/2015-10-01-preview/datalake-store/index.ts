@@ -14,11 +14,11 @@ export interface accountsComponentOutputs {
 	readonly type: "Microsoft.DataLakeStore/accounts";
 }
 export interface accountsComponentInputs {
-	readonly identity?: EncryptionIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: EncryptionIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DataLakeStoreAccountProperties | undefined;
-	readonly tags?: DataLakeStoreAccountTags | undefined;
+	readonly properties?: DataLakeStoreAccountProperties;
+	readonly tags?: DataLakeStoreAccountTags;
 }
 export class accounts_firewallRules
 	extends ArmResource<accounts_firewallRulesComponentInputs>
@@ -37,43 +37,49 @@ export interface accounts_firewallRulesComponentOutputs {
 	readonly type: "Microsoft.DataLakeStore/accounts/firewallRules";
 }
 export interface accounts_firewallRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: FirewallRuleProperties | undefined;
+	readonly properties?: FirewallRuleProperties;
 }
 export interface DataLakeStoreAccountProperties {
-	readonly creationTime?: string | undefined;
-	readonly defaultGroup?: string | undefined;
-	readonly encryptionConfig?: EncryptionConfig | undefined;
-	readonly encryptionProvisioningState?: "Creating" | undefined;
-	readonly encryptionState?: "Disabled" | undefined;
-	readonly endpoint?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly defaultGroup?: string;
+	readonly encryptionConfig?: EncryptionConfig;
+	readonly encryptionProvisioningState?: "Creating";
+	readonly encryptionState?: "Disabled";
+	readonly endpoint?: string;
+	readonly lastModifiedTime?: string;
 	readonly provisioningState?:
-		| ("Creating" | "Deleted" | "Deleting" | "Failed" | "Patching" | "Resuming" | "Running" | "Succeeded")
-		| undefined;
-	readonly state?: "active" | undefined;
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "Patching"
+		| "Resuming"
+		| "Running"
+		| "Succeeded";
+	readonly state?: "active";
 }
 export interface DataLakeStoreAccountTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface EncryptionConfig {
-	readonly keyVaultMetaInfo?: KeyVaultMetaInfo | undefined;
-	readonly type?: "ServiceManaged" | undefined;
+	readonly keyVaultMetaInfo?: KeyVaultMetaInfo;
+	readonly type?: "ServiceManaged";
 }
 export interface EncryptionIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface FirewallRuleProperties {
-	readonly endIpAddress?: string | undefined;
-	readonly startIpAddress?: string | undefined;
+	readonly endIpAddress?: string;
+	readonly startIpAddress?: string;
 }
 export interface KeyVaultMetaInfo {
-	readonly encryptionKeyName?: string | undefined;
-	readonly encryptionKeyVersion?: string | undefined;
-	readonly keyVaultResourceId?: string | undefined;
+	readonly encryptionKeyName?: string;
+	readonly encryptionKeyVersion?: string;
+	readonly keyVaultResourceId?: string;
 }
 export default {
 	accounts: accounts,

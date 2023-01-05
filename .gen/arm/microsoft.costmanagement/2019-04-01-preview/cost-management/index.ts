@@ -14,9 +14,9 @@ export interface budgetsComponentOutputs {
 	readonly type: "Microsoft.CostManagement/budgets";
 }
 export interface budgetsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: BudgetProperties | undefined;
+	readonly properties?: BudgetProperties;
 }
 export class views extends ArmResource<viewsComponentInputs> implements viewsComponentOutputs {
 	constructor(entity: ADKEntity, options: viewsComponentInputs) {
@@ -32,46 +32,46 @@ export interface viewsComponentOutputs {
 	readonly type: "Microsoft.CostManagement/views";
 }
 export interface viewsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: ViewProperties | undefined;
+	readonly properties?: ViewProperties;
 }
 export interface BudgetProperties {
 	readonly amount: number;
 	readonly category: "Cost" | "Usage";
-	readonly currentSpend?: CurrentSpend | undefined;
-	readonly filter?: ReportConfigFilter | undefined;
-	readonly notifications?: BudgetPropertiesNotifications | undefined;
+	readonly currentSpend?: CurrentSpend;
+	readonly filter?: ReportConfigFilter;
+	readonly notifications?: BudgetPropertiesNotifications;
 	readonly timeGrain: "Annually" | "Monthly" | "Quarterly";
 	readonly timePeriod: BudgetTimePeriod;
 }
 export interface BudgetPropertiesNotifications {
-	readonly "[ key: string ]"?: Notification | undefined;
+	readonly [key: string]: Notification;
 }
 export interface BudgetTimePeriod {
-	readonly endDate?: string | undefined;
+	readonly endDate?: string;
 	readonly startDate: string;
 }
 export interface CurrentSpend {
-	readonly amount?: number | undefined;
-	readonly unit?: string | undefined;
+	readonly amount?: number;
+	readonly unit?: string;
 }
 export interface KpiProperties {
-	readonly enabled?: boolean | undefined;
-	readonly id?: string | undefined;
-	readonly type?: ("Budget" | "Forecast") | undefined;
+	readonly enabled?: boolean;
+	readonly id?: string;
+	readonly type?: "Budget" | "Forecast";
 }
 export interface Notification {
 	readonly contactEmails: string[];
-	readonly contactGroups?: string[] | undefined;
-	readonly contactRoles?: string[] | undefined;
+	readonly contactGroups?: string[];
+	readonly contactRoles?: string[];
 	readonly enabled: boolean;
 	readonly operator: "EqualTo" | "GreaterThan" | "GreaterThanOrEqualTo";
 	readonly threshold: number;
 }
 export interface PivotProperties {
-	readonly name?: string | undefined;
-	readonly type?: ("Dimension" | "TagKey") | undefined;
+	readonly name?: string;
+	readonly type?: "Dimension" | "TagKey";
 }
 export interface ReportConfigAggregation {
 	readonly function: "Sum";
@@ -83,38 +83,38 @@ export interface ReportConfigComparisonExpression {
 	readonly values: string[];
 }
 export interface ReportConfigDataset {
-	readonly aggregation?: ReportConfigDatasetAggregation | undefined;
-	readonly configuration?: ReportConfigDatasetConfiguration | undefined;
-	readonly filter?: ReportConfigFilter | undefined;
-	readonly granularity?: ("Daily" | "Monthly") | undefined;
-	readonly grouping?: ReportConfigGrouping[] | undefined;
-	readonly sorting?: ReportConfigSorting[] | undefined;
+	readonly aggregation?: ReportConfigDatasetAggregation;
+	readonly configuration?: ReportConfigDatasetConfiguration;
+	readonly filter?: ReportConfigFilter;
+	readonly granularity?: "Daily" | "Monthly";
+	readonly grouping?: ReportConfigGrouping[];
+	readonly sorting?: ReportConfigSorting[];
 }
 export interface ReportConfigDatasetAggregation {
-	readonly "[ key: string ]"?: ReportConfigAggregation | undefined;
+	readonly [key: string]: ReportConfigAggregation;
 }
 export interface ReportConfigDatasetConfiguration {
-	readonly columns?: string[] | undefined;
+	readonly columns?: string[];
 }
 export interface ReportConfigDefinition {
-	readonly dataset?: ReportConfigDataset | undefined;
+	readonly dataset?: ReportConfigDataset;
 	readonly timeframe: "Custom" | "MonthToDate" | "WeekToDate" | "YearToDate";
-	readonly timePeriod?: ReportConfigTimePeriod | undefined;
+	readonly timePeriod?: ReportConfigTimePeriod;
 	readonly type: "Usage";
 }
 export interface ReportConfigFilter {
-	readonly and?: ReportConfigFilter[] | undefined;
-	readonly dimension?: ReportConfigComparisonExpression | undefined;
-	readonly not?: ReportConfigFilter | undefined;
-	readonly or?: ReportConfigFilter[] | undefined;
-	readonly tag?: ReportConfigComparisonExpression | undefined;
+	readonly and?: ReportConfigFilter[];
+	readonly dimension?: ReportConfigComparisonExpression;
+	readonly not?: ReportConfigFilter;
+	readonly or?: ReportConfigFilter[];
+	readonly tag?: ReportConfigComparisonExpression;
 }
 export interface ReportConfigGrouping {
 	readonly name: string;
 	readonly type: "Dimension" | "Tag";
 }
 export interface ReportConfigSorting {
-	readonly direction?: ("Ascending" | "Descending") | undefined;
+	readonly direction?: "Ascending" | "Descending";
 	readonly name: string;
 }
 export interface ReportConfigTimePeriod {
@@ -122,16 +122,16 @@ export interface ReportConfigTimePeriod {
 	readonly to: string;
 }
 export interface ViewProperties {
-	readonly accumulated?: ("false" | "true") | undefined;
-	readonly chart?: ("Area" | "GroupedColumn" | "Line" | "StackedColumn" | "Table") | undefined;
-	readonly createdOn?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly kpis?: KpiProperties[] | undefined;
-	readonly metric?: ("AHUB" | "ActualCost" | "AmortizedCost") | undefined;
-	readonly modifiedOn?: string | undefined;
-	readonly pivots?: PivotProperties[] | undefined;
-	readonly query?: ReportConfigDefinition | undefined;
-	readonly scope?: string | undefined;
+	readonly accumulated?: "false" | "true";
+	readonly chart?: "Area" | "GroupedColumn" | "Line" | "StackedColumn" | "Table";
+	readonly createdOn?: string;
+	readonly displayName?: string;
+	readonly kpis?: KpiProperties[];
+	readonly metric?: "AHUB" | "ActualCost" | "AmortizedCost";
+	readonly modifiedOn?: string;
+	readonly pivots?: PivotProperties[];
+	readonly query?: ReportConfigDefinition;
+	readonly scope?: string;
 }
 export default {
 	budgets: budgets,

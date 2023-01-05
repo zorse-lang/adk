@@ -16,7 +16,7 @@ export interface linkersComponentOutputs {
 export interface linkersComponentInputs {
 	readonly name: string;
 	readonly properties: LinkerProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export function listConfigurations(resource: linkers): SourceConfigurationResult {
 	if (resource.apiVersion !== "2022-05-01") {
@@ -30,50 +30,47 @@ export function listConfigurations(resource: linkers): SourceConfigurationResult
 export interface AuthInfoBase {}
 export interface AzureResourcePropertiesBase {}
 export interface LinkerProperties {
-	readonly authInfo?: AuthInfoBase | undefined;
+	readonly authInfo?: AuthInfoBase;
 	readonly clientType?:
-		| (
-				| "django"
-				| "dotnet"
-				| "go"
-				| "java"
-				| "kafka-springBoot"
-				| "nodejs"
-				| "none"
-				| "php"
-				| "python"
-				| "ruby"
-				| "springBoot"
-		  )
-		| undefined;
-	readonly provisioningState?: string | undefined;
-	readonly scope?: string | undefined;
-	readonly secretStore?: SecretStore | undefined;
-	readonly targetService?: TargetServiceBase | undefined;
-	readonly vNetSolution?: VNetSolution | undefined;
+		| "django"
+		| "dotnet"
+		| "go"
+		| "java"
+		| "kafka-springBoot"
+		| "nodejs"
+		| "none"
+		| "php"
+		| "python"
+		| "ruby"
+		| "springBoot";
+	readonly provisioningState?: string;
+	readonly scope?: string;
+	readonly secretStore?: SecretStore;
+	readonly targetService?: TargetServiceBase;
+	readonly vNetSolution?: VNetSolution;
 }
 export interface SecretInfoBase {}
 export interface SecretStore {
-	readonly keyVaultId?: string | undefined;
+	readonly keyVaultId?: string;
 }
 export interface SourceConfiguration {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface SourceConfigurationResult {
-	readonly configurations?: SourceConfiguration[] | undefined;
+	readonly configurations?: SourceConfiguration[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TargetServiceBase {}
 export interface VNetSolution {
-	readonly type?: ("privateLink" | "serviceEndpoint") | undefined;
+	readonly type?: "privateLink" | "serviceEndpoint";
 }
 export default {
 	linkers: linkers,

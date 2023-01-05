@@ -19,10 +19,10 @@ export interface flexibleServersComponentOutputs {
 export interface flexibleServersComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServerProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ServerProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class flexibleServers_advisors
 	extends ArmResource<flexibleServers_advisorsComponentInputs>
@@ -42,7 +42,7 @@ export interface flexibleServers_advisorsComponentOutputs {
 }
 export interface flexibleServers_advisorsComponentInputs {
 	readonly name: string;
-	readonly properties?: any | undefined;
+	readonly properties?: any;
 }
 export class flexibleServers_configurations
 	extends ArmResource<flexibleServers_configurationsComponentInputs>
@@ -68,8 +68,8 @@ export interface flexibleServers_configurationsComponentOutputs {
 }
 export interface flexibleServers_configurationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfigurationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConfigurationProperties;
+	readonly systemData?: SystemData;
 }
 export class flexibleServers_databases
 	extends ArmResource<flexibleServers_databasesComponentInputs>
@@ -89,8 +89,8 @@ export interface flexibleServers_databasesComponentOutputs {
 }
 export interface flexibleServers_databasesComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabaseProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: DatabaseProperties;
+	readonly systemData?: SystemData;
 }
 export class flexibleServers_firewallRules
 	extends ArmResource<flexibleServers_firewallRulesComponentInputs>
@@ -117,7 +117,7 @@ export interface flexibleServers_firewallRulesComponentOutputs {
 export interface flexibleServers_firewallRulesComponentInputs {
 	readonly name: string;
 	readonly properties: FirewallRuleProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class flexibleServers_queryTexts
 	extends ArmResource<flexibleServers_queryTextsComponentInputs>
@@ -137,90 +137,88 @@ export interface flexibleServers_queryTextsComponentOutputs {
 }
 export interface flexibleServers_queryTextsComponentInputs {
 	readonly name: string;
-	readonly properties?: QueryTextProperties | undefined;
+	readonly properties?: QueryTextProperties;
 }
 export interface Backup {
-	readonly backupRetentionDays?: number | undefined;
-	readonly earliestRestoreDate?: string | undefined;
-	readonly geoRedundantBackup?: ("Disabled" | "Enabled") | undefined;
+	readonly backupRetentionDays?: number;
+	readonly earliestRestoreDate?: string;
+	readonly geoRedundantBackup?: "Disabled" | "Enabled";
 }
 export interface ConfigurationProperties {
-	readonly allowedValues?: string | undefined;
-	readonly dataType?: ("Boolean" | "Enumeration" | "Integer" | "Numeric") | undefined;
-	readonly defaultValue?: string | undefined;
-	readonly description?: string | undefined;
-	readonly documentationLink?: string | undefined;
-	readonly isConfigPendingRestart?: boolean | undefined;
-	readonly isDynamicConfig?: boolean | undefined;
-	readonly isReadOnly?: boolean | undefined;
-	readonly source?: string | undefined;
-	readonly unit?: string | undefined;
-	readonly value?: string | undefined;
+	readonly allowedValues?: string;
+	readonly dataType?: "Boolean" | "Enumeration" | "Integer" | "Numeric";
+	readonly defaultValue?: string;
+	readonly description?: string;
+	readonly documentationLink?: string;
+	readonly isConfigPendingRestart?: boolean;
+	readonly isDynamicConfig?: boolean;
+	readonly isReadOnly?: boolean;
+	readonly source?: string;
+	readonly unit?: string;
+	readonly value?: string;
 }
 export interface DatabaseProperties {
-	readonly charset?: string | undefined;
-	readonly collation?: string | undefined;
+	readonly charset?: string;
+	readonly collation?: string;
 }
 export interface FirewallRuleProperties {
 	readonly endIpAddress: string;
 	readonly startIpAddress: string;
 }
 export interface HighAvailability {
-	readonly mode?: ("Disabled" | "ZoneRedundant") | undefined;
-	readonly standbyAvailabilityZone?: string | undefined;
-	readonly state?:
-		| ("CreatingStandby" | "FailingOver" | "Healthy" | "NotEnabled" | "RemovingStandby" | "ReplicatingData")
-		| undefined;
+	readonly mode?: "Disabled" | "ZoneRedundant";
+	readonly standbyAvailabilityZone?: string;
+	readonly state?: "CreatingStandby" | "FailingOver" | "Healthy" | "NotEnabled" | "RemovingStandby" | "ReplicatingData";
 }
 export interface MaintenanceWindow {
-	readonly customWindow?: string | undefined;
-	readonly dayOfWeek?: number | undefined;
-	readonly startHour?: number | undefined;
-	readonly startMinute?: number | undefined;
+	readonly customWindow?: string;
+	readonly dayOfWeek?: number;
+	readonly startHour?: number;
+	readonly startMinute?: number;
 }
 export interface Network {
-	readonly delegatedSubnetResourceId?: string | undefined;
-	readonly privateDnsZoneArmResourceId?: string | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly delegatedSubnetResourceId?: string;
+	readonly privateDnsZoneArmResourceId?: string;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface QueryTextProperties {
-	readonly queryId?: string | undefined;
-	readonly queryText?: string | undefined;
+	readonly queryId?: string;
+	readonly queryText?: string;
 }
 export interface ServerProperties {
-	readonly administratorLogin?: string | undefined;
-	readonly administratorLoginPassword?: string | undefined;
-	readonly availabilityZone?: string | undefined;
-	readonly backup?: Backup | undefined;
-	readonly createMode?: ("Create" | "Default" | "PointInTimeRestore" | "Update") | undefined;
-	readonly fullyQualifiedDomainName?: string | undefined;
-	readonly highAvailability?: HighAvailability | undefined;
-	readonly maintenanceWindow?: MaintenanceWindow | undefined;
-	readonly minorVersion?: string | undefined;
-	readonly network?: Network | undefined;
-	readonly pointInTimeUTC?: string | undefined;
-	readonly sourceServerResourceId?: string | undefined;
-	readonly state?: ("Disabled" | "Dropping" | "Ready" | "Starting" | "Stopped" | "Stopping" | "Updating") | undefined;
-	readonly storage?: Storage | undefined;
-	readonly version?: ("11" | "12" | "13") | undefined;
+	readonly administratorLogin?: string;
+	readonly administratorLoginPassword?: string;
+	readonly availabilityZone?: string;
+	readonly backup?: Backup;
+	readonly createMode?: "Create" | "Default" | "PointInTimeRestore" | "Update";
+	readonly fullyQualifiedDomainName?: string;
+	readonly highAvailability?: HighAvailability;
+	readonly maintenanceWindow?: MaintenanceWindow;
+	readonly minorVersion?: string;
+	readonly network?: Network;
+	readonly pointInTimeUTC?: string;
+	readonly sourceServerResourceId?: string;
+	readonly state?: "Disabled" | "Dropping" | "Ready" | "Starting" | "Stopped" | "Stopping" | "Updating";
+	readonly storage?: Storage;
+	readonly version?: "11" | "12" | "13";
 }
 export interface Sku {
 	readonly name: string;
 	readonly tier: "Burstable" | "GeneralPurpose" | "MemoryOptimized";
 }
 export interface Storage {
-	readonly storageSizeGB?: number | undefined;
+	readonly storageSizeGB?: number;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	flexibleServers: flexibleServers,

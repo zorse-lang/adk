@@ -18,10 +18,10 @@ export interface components_linkedStorageAccountsComponentOutputs {
 }
 export interface components_linkedStorageAccountsComponentInputs {
 	readonly name: string;
-	readonly properties?: LinkedStorageAccountsProperties | undefined;
+	readonly properties?: LinkedStorageAccountsProperties;
 }
 export interface LinkedStorageAccountsProperties {
-	readonly linkedStorageAccount?: string | undefined;
+	readonly linkedStorageAccount?: string;
 }
 export default {
 	"components/linkedStorageAccounts": components_linkedStorageAccounts,

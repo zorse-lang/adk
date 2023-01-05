@@ -17,11 +17,11 @@ export interface policyAssignmentsComponentOutputs {
 	readonly type: "Microsoft.Authorization/policyAssignments";
 }
 export interface policyAssignmentsComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PolicyAssignmentProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PolicyAssignmentProperties;
+	readonly systemData?: SystemData;
 }
 export class policyDefinitions
 	extends ArmResource<policyDefinitionsComponentInputs>
@@ -41,8 +41,8 @@ export interface policyDefinitionsComponentOutputs {
 }
 export interface policyDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyDefinitionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PolicyDefinitionProperties;
+	readonly systemData?: SystemData;
 }
 export class policySetDefinitions
 	extends ArmResource<policySetDefinitionsComponentInputs>
@@ -62,97 +62,97 @@ export interface policySetDefinitionsComponentOutputs {
 }
 export interface policySetDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicySetDefinitionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PolicySetDefinitionProperties;
+	readonly systemData?: SystemData;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
-	readonly userAssignedIdentities?: IdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
+	readonly userAssignedIdentities?: IdentityUserAssignedIdentities;
 }
 export interface IdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentitiesValue | undefined;
+	readonly [key: string]: UserAssignedIdentitiesValue;
 }
 export interface NonComplianceMessage {
 	readonly message: string;
-	readonly policyDefinitionReferenceId?: string | undefined;
+	readonly policyDefinitionReferenceId?: string;
 }
 export interface ParameterDefinitions {
-	readonly "[ key: string ]"?: ParameterDefinitionsValue | undefined;
+	readonly [key: string]: ParameterDefinitionsValue;
 }
 export interface ParameterDefinitionsValue {
-	readonly allowedValues?: any[] | undefined;
-	readonly defaultValue?: any | undefined;
-	readonly metadata?: ParameterDefinitionsValueMetadata | undefined;
-	readonly type?: ("Array" | "Boolean" | "DateTime" | "Float" | "Integer" | "Object" | "String") | undefined;
+	readonly allowedValues?: any[];
+	readonly defaultValue?: any;
+	readonly metadata?: ParameterDefinitionsValueMetadata;
+	readonly type?: "Array" | "Boolean" | "DateTime" | "Float" | "Integer" | "Object" | "String";
 }
 export interface ParameterDefinitionsValueMetadata {
-	readonly assignPermissions?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly strongType?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly assignPermissions?: boolean;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly strongType?: string;
+	readonly [key: string]: any;
 }
 export interface ParameterValues {
-	readonly "[ key: string ]"?: ParameterValuesValue | undefined;
+	readonly [key: string]: ParameterValuesValue;
 }
 export interface ParameterValuesValue {
-	readonly value?: any | undefined;
+	readonly value?: any;
 }
 export interface PolicyAssignmentProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enforcementMode?: ("Default" | "DoNotEnforce") | undefined;
-	readonly metadata?: any | undefined;
-	readonly nonComplianceMessages?: NonComplianceMessage[] | undefined;
-	readonly notScopes?: string[] | undefined;
-	readonly parameters?: ParameterValues | undefined;
-	readonly policyDefinitionId?: string | undefined;
-	readonly scope?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly enforcementMode?: "Default" | "DoNotEnforce";
+	readonly metadata?: any;
+	readonly nonComplianceMessages?: NonComplianceMessage[];
+	readonly notScopes?: string[];
+	readonly parameters?: ParameterValues;
+	readonly policyDefinitionId?: string;
+	readonly scope?: string;
 }
 export interface PolicyDefinitionGroup {
-	readonly additionalMetadataId?: string | undefined;
-	readonly category?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly additionalMetadataId?: string;
+	readonly category?: string;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly name: string;
 }
 export interface PolicyDefinitionProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly mode?: string | undefined;
-	readonly parameters?: ParameterDefinitions | undefined;
-	readonly policyRule?: any | undefined;
-	readonly policyType?: ("BuiltIn" | "Custom" | "NotSpecified" | "Static") | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly metadata?: any;
+	readonly mode?: string;
+	readonly parameters?: ParameterDefinitions;
+	readonly policyRule?: any;
+	readonly policyType?: "BuiltIn" | "Custom" | "NotSpecified" | "Static";
 }
 export interface PolicyDefinitionReference {
-	readonly groupNames?: string[] | undefined;
-	readonly parameters?: ParameterValues | undefined;
+	readonly groupNames?: string[];
+	readonly parameters?: ParameterValues;
 	readonly policyDefinitionId: string;
-	readonly policyDefinitionReferenceId?: string | undefined;
+	readonly policyDefinitionReferenceId?: string;
 }
 export interface PolicySetDefinitionProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly parameters?: ParameterDefinitions | undefined;
-	readonly policyDefinitionGroups?: PolicyDefinitionGroup[] | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly metadata?: any;
+	readonly parameters?: ParameterDefinitions;
+	readonly policyDefinitionGroups?: PolicyDefinitionGroup[];
 	readonly policyDefinitions: PolicyDefinitionReference[];
-	readonly policyType?: ("BuiltIn" | "Custom" | "NotSpecified" | "Static") | undefined;
+	readonly policyType?: "BuiltIn" | "Custom" | "NotSpecified" | "Static";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface UserAssignedIdentitiesValue {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	policyAssignments: policyAssignments,

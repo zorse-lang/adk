@@ -16,25 +16,25 @@ export interface InstanceComponentOutputs {
 	readonly Port: any;
 }
 export interface InstanceComponentInputs {
-	readonly AutoRenew?: (string | undefined) | undefined;
-	readonly AutoRenewPeriod?: (string | undefined) | undefined;
-	readonly AutoUseCoupon?: (string | undefined) | undefined;
-	readonly BackupPolicy?: (BackupPolicy | undefined) | undefined;
-	readonly Capacity?: (number | undefined) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly Config?: (string | undefined) | undefined;
-	readonly CouponNo?: (string | undefined) | undefined;
-	readonly InstanceClass?: (string | undefined) | undefined;
-	readonly InstanceName?: (any | string) | undefined;
-	readonly NetworkType?: (string | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly Period?: (string | undefined) | undefined;
-	readonly PrivateIpAddress?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VpcPasswordFree?: (boolean | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly AutoRenew?: string | undefined;
+	readonly AutoRenewPeriod?: string | undefined;
+	readonly AutoUseCoupon?: string | undefined;
+	readonly BackupPolicy?: BackupPolicy | undefined;
+	readonly Capacity?: number | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly Config?: string | undefined;
+	readonly CouponNo?: string | undefined;
+	readonly InstanceClass?: string | undefined;
+	readonly InstanceName?: any | string;
+	readonly NetworkType?: string | undefined;
+	readonly Password?: string | undefined;
+	readonly Period?: string | undefined;
+	readonly PrivateIpAddress?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VpcPasswordFree?: boolean | undefined;
+	readonly VSwitchId?: string | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Whitelist extends RosResource<WhitelistComponentInputs> implements WhitelistComponentOutputs {
@@ -46,14 +46,14 @@ export interface WhitelistComponentOutputs {}
 export interface WhitelistComponentInputs {
 	readonly InstanceId: string;
 	readonly SecurityIps: any | string;
-	readonly SecurityIpGroupAttribute?: (any | string) | undefined;
-	readonly SecurityIpGroupName?: (any | string) | undefined;
+	readonly SecurityIpGroupAttribute?: any | string;
+	readonly SecurityIpGroupName?: any | string;
 	readonly LogicalId: string;
 }
 export interface BackupPolicy {
 	readonly PreferredBackupPeriod: string;
 	readonly PreferredBackupTime: string;
-	readonly EnableBackupLog?: (number | undefined) | undefined;
+	readonly EnableBackupLog?: number | undefined;
 }
 export default {
 	Instance: Instance,

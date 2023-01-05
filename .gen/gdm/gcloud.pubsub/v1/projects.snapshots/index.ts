@@ -10,22 +10,21 @@ export class ProjectsSnapshots
 }
 export interface ProjectsSnapshotsComponentOutputs {}
 export interface ProjectsSnapshotsComponentInputs {
-	readonly expireTime?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly expireTime?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
 	readonly subscription: string;
-	readonly topic?: string | undefined;
-	readonly type: string;
+	readonly topic?: string;
 }
 export interface CreateSnapshotRequest {
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly labels?: { [P in string]: string };
 	readonly subscription: string;
 }
 export interface Snapshot {
-	readonly expireTime?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly topic?: string | undefined;
+	readonly expireTime?: string;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly topic?: string;
 }
 export default {
 	ProjectsSnapshots: ProjectsSnapshots,

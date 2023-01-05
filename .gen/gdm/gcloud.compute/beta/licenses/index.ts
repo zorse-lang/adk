@@ -4,44 +4,43 @@ export class Licenses extends GdmResource<LicensesComponentInputs> implements Li
 	constructor(entity: ADKEntity, options: LicensesComponentInputs) {
 		super(entity, options.name, "compute.beta.Licenses", options);
 	}
-	public readonly chargesUseFee?: boolean | undefined;
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly licenseCode?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly chargesUseFee?: boolean;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly licenseCode?: string;
+	public readonly selfLink?: string;
 }
 export interface LicensesComponentOutputs {
-	readonly chargesUseFee?: boolean | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly licenseCode?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly chargesUseFee?: boolean;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly licenseCode?: string;
+	readonly selfLink?: string;
 }
 export interface LicensesComponentInputs {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly name: string;
-	readonly requestId?: string | undefined;
-	readonly resourceRequirements?: LicenseResourceRequirements | undefined;
-	readonly transferable?: boolean | undefined;
-	readonly type: string;
+	readonly requestId?: string;
+	readonly resourceRequirements?: LicenseResourceRequirements;
+	readonly transferable?: boolean;
 }
 export interface License {
-	readonly chargesUseFee?: boolean | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly licenseCode?: string | undefined;
-	readonly name?: string | undefined;
-	readonly resourceRequirements?: LicenseResourceRequirements | undefined;
-	readonly selfLink?: string | undefined;
-	readonly transferable?: boolean | undefined;
+	readonly chargesUseFee?: boolean;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly licenseCode?: string;
+	readonly name?: string;
+	readonly resourceRequirements?: LicenseResourceRequirements;
+	readonly selfLink?: string;
+	readonly transferable?: boolean;
 }
 export interface LicenseResourceRequirements {
-	readonly minGuestCpuCount?: number | undefined;
-	readonly minMemoryMb?: number | undefined;
+	readonly minGuestCpuCount?: number;
+	readonly minMemoryMb?: number;
 }
 export default {
 	Licenses: Licenses,

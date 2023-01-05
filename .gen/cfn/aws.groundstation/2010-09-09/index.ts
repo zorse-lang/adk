@@ -16,7 +16,7 @@ export interface ConfigComponentOutputs {
 export interface ConfigComponentInputs {
 	readonly ConfigData: ConfigData;
 	readonly Name: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DataflowEndpointGroup
@@ -35,7 +35,7 @@ export interface DataflowEndpointGroupComponentOutputs {
 }
 export interface DataflowEndpointGroupComponentInputs {
 	readonly EndpointDetails: EndpointDetails[];
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class MissionProfile extends CfnResource<MissionProfileComponentInputs> implements MissionProfileComponentOutputs {
@@ -56,97 +56,97 @@ export interface MissionProfileComponentInputs {
 	readonly MinimumViableContactDurationSeconds: number;
 	readonly Name: string;
 	readonly TrackingConfigArn: string;
-	readonly ContactPostPassDurationSeconds?: (number | undefined) | undefined;
-	readonly ContactPrePassDurationSeconds?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ContactPostPassDurationSeconds?: number | undefined;
+	readonly ContactPrePassDurationSeconds?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface AntennaDownlinkConfig {
-	readonly SpectrumConfig?: (SpectrumConfig | undefined) | undefined;
+	readonly SpectrumConfig?: SpectrumConfig | undefined;
 }
 export interface AntennaDownlinkDemodDecodeConfig {
-	readonly DecodeConfig?: (DecodeConfig | undefined) | undefined;
-	readonly DemodulationConfig?: (DemodulationConfig | undefined) | undefined;
-	readonly SpectrumConfig?: (SpectrumConfig | undefined) | undefined;
+	readonly DecodeConfig?: DecodeConfig | undefined;
+	readonly DemodulationConfig?: DemodulationConfig | undefined;
+	readonly SpectrumConfig?: SpectrumConfig | undefined;
 }
 export interface AntennaUplinkConfig {
-	readonly SpectrumConfig?: (UplinkSpectrumConfig | undefined) | undefined;
-	readonly TargetEirp?: (Eirp | undefined) | undefined;
-	readonly TransmitDisabled?: (boolean | undefined) | undefined;
+	readonly SpectrumConfig?: UplinkSpectrumConfig | undefined;
+	readonly TargetEirp?: Eirp | undefined;
+	readonly TransmitDisabled?: boolean | undefined;
 }
 export interface ConfigData {
-	readonly AntennaDownlinkConfig?: (AntennaDownlinkConfig | undefined) | undefined;
-	readonly AntennaDownlinkDemodDecodeConfig?: (AntennaDownlinkDemodDecodeConfig | undefined) | undefined;
-	readonly AntennaUplinkConfig?: (AntennaUplinkConfig | undefined) | undefined;
-	readonly DataflowEndpointConfig?: (DataflowEndpointConfig | undefined) | undefined;
-	readonly S3RecordingConfig?: (S3RecordingConfig | undefined) | undefined;
-	readonly TrackingConfig?: (TrackingConfig | undefined) | undefined;
-	readonly UplinkEchoConfig?: (UplinkEchoConfig | undefined) | undefined;
+	readonly AntennaDownlinkConfig?: AntennaDownlinkConfig | undefined;
+	readonly AntennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig | undefined;
+	readonly AntennaUplinkConfig?: AntennaUplinkConfig | undefined;
+	readonly DataflowEndpointConfig?: DataflowEndpointConfig | undefined;
+	readonly S3RecordingConfig?: S3RecordingConfig | undefined;
+	readonly TrackingConfig?: TrackingConfig | undefined;
+	readonly UplinkEchoConfig?: UplinkEchoConfig | undefined;
 }
 export interface DataflowEndpointConfig {
-	readonly DataflowEndpointName?: (string | undefined) | undefined;
-	readonly DataflowEndpointRegion?: (string | undefined) | undefined;
+	readonly DataflowEndpointName?: string | undefined;
+	readonly DataflowEndpointRegion?: string | undefined;
 }
 export interface DecodeConfig {
-	readonly UnvalidatedJSON?: (string | undefined) | undefined;
+	readonly UnvalidatedJSON?: string | undefined;
 }
 export interface DemodulationConfig {
-	readonly UnvalidatedJSON?: (string | undefined) | undefined;
+	readonly UnvalidatedJSON?: string | undefined;
 }
 export interface Eirp {
-	readonly Units?: (string | undefined) | undefined;
-	readonly Value?: (number | undefined) | undefined;
+	readonly Units?: string | undefined;
+	readonly Value?: number | undefined;
 }
 export interface Frequency {
-	readonly Units?: (string | undefined) | undefined;
-	readonly Value?: (number | undefined) | undefined;
+	readonly Units?: string | undefined;
+	readonly Value?: number | undefined;
 }
 export interface FrequencyBandwidth {
-	readonly Units?: (string | undefined) | undefined;
-	readonly Value?: (number | undefined) | undefined;
+	readonly Units?: string | undefined;
+	readonly Value?: number | undefined;
 }
 export interface S3RecordingConfig {
-	readonly BucketArn?: (string | undefined) | undefined;
-	readonly Prefix?: (string | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
+	readonly BucketArn?: string | undefined;
+	readonly Prefix?: string | undefined;
+	readonly RoleArn?: string | undefined;
 }
 export interface SpectrumConfig {
-	readonly Bandwidth?: (FrequencyBandwidth | undefined) | undefined;
-	readonly CenterFrequency?: (Frequency | undefined) | undefined;
-	readonly Polarization?: (string | undefined) | undefined;
+	readonly Bandwidth?: FrequencyBandwidth | undefined;
+	readonly CenterFrequency?: Frequency | undefined;
+	readonly Polarization?: string | undefined;
 }
 export interface TrackingConfig {
-	readonly Autotrack?: (string | undefined) | undefined;
+	readonly Autotrack?: string | undefined;
 }
 export interface UplinkEchoConfig {
-	readonly AntennaUplinkConfigArn?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly AntennaUplinkConfigArn?: string | undefined;
+	readonly Enabled?: boolean | undefined;
 }
 export interface UplinkSpectrumConfig {
-	readonly CenterFrequency?: (Frequency | undefined) | undefined;
-	readonly Polarization?: (string | undefined) | undefined;
+	readonly CenterFrequency?: Frequency | undefined;
+	readonly Polarization?: string | undefined;
 }
 export interface DataflowEndpoint {
-	readonly Address?: (SocketAddress | undefined) | undefined;
-	readonly Mtu?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Address?: SocketAddress | undefined;
+	readonly Mtu?: number | undefined;
+	readonly Name?: string | undefined;
 }
 export interface EndpointDetails {
-	readonly Endpoint?: (DataflowEndpoint | undefined) | undefined;
-	readonly SecurityDetails?: (SecurityDetails | undefined) | undefined;
+	readonly Endpoint?: DataflowEndpoint | undefined;
+	readonly SecurityDetails?: SecurityDetails | undefined;
 }
 export interface SecurityDetails {
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SubnetIds?: (string[] | undefined) | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SubnetIds?: string[] | undefined;
 }
 export interface SocketAddress {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Port?: number | undefined;
 }
 export interface DataflowEdge {
-	readonly Destination?: (string | undefined) | undefined;
-	readonly Source?: (string | undefined) | undefined;
+	readonly Destination?: string | undefined;
+	readonly Source?: string | undefined;
 }
 export default {
 	Config: Config,

@@ -13,10 +13,10 @@ export interface AppComponentInputs {
 	readonly AppTemplateBody: string;
 	readonly Name: string;
 	readonly ResourceMappings: ResourceMapping[];
-	readonly AppAssessmentSchedule?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ResiliencyPolicyArn?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly AppAssessmentSchedule?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly ResiliencyPolicyArn?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class ResiliencyPolicy
@@ -35,23 +35,23 @@ export interface ResiliencyPolicyComponentInputs {
 	readonly Policy: { [key: string]: FailurePolicy };
 	readonly PolicyName: string;
 	readonly Tier: string;
-	readonly DataLocationConstraint?: (string | undefined) | undefined;
-	readonly PolicyDescription?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly DataLocationConstraint?: string | undefined;
+	readonly PolicyDescription?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export interface PhysicalResourceId {
-	readonly AwsAccountId?: (string | undefined) | undefined;
-	readonly AwsRegion?: (string | undefined) | undefined;
+	readonly AwsAccountId?: string | undefined;
+	readonly AwsRegion?: string | undefined;
 	readonly Identifier: string;
 	readonly Type: string;
 }
 export interface ResourceMapping {
-	readonly LogicalStackName?: (string | undefined) | undefined;
+	readonly LogicalStackName?: string | undefined;
 	readonly MappingType: string;
 	readonly PhysicalResourceId: PhysicalResourceId;
-	readonly ResourceName?: (string | undefined) | undefined;
-	readonly TerraformSourceName?: (string | undefined) | undefined;
+	readonly ResourceName?: string | undefined;
+	readonly TerraformSourceName?: string | undefined;
 }
 export interface FailurePolicy {
 	readonly RpoInSecs: number;

@@ -7,7 +7,6 @@ export class Folders extends GdmResource<FoldersComponentInputs> implements Fold
 }
 export interface FoldersComponentOutputs {}
 export interface FoldersComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

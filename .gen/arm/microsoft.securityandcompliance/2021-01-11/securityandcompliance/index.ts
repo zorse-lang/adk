@@ -23,14 +23,14 @@ export interface privateLinkServicesForEDMUploadComponentOutputs {
 	readonly type: "Microsoft.SecurityAndCompliance/privateLinkServicesForEDMUpload";
 }
 export interface privateLinkServicesForEDMUploadComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ServicesResourceIdentity | undefined;
+	readonly etag?: string;
+	readonly identity?: ServicesResourceIdentity;
 	readonly kind: "fhir" | "fhir-R4";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServicesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ServicesResourceTags | undefined;
+	readonly properties?: ServicesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ServicesResourceTags;
 }
 export class privateLinkServicesForEDMUpload_privateEndpointConnections
 	extends ArmResource<privateLinkServicesForEDMUpload_privateEndpointConnectionsComponentInputs>
@@ -56,8 +56,8 @@ export interface privateLinkServicesForEDMUpload_privateEndpointConnectionsCompo
 }
 export interface privateLinkServicesForEDMUpload_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class privateLinkServicesForEDMUpload_privateLinkResources
 	extends ArmResource<privateLinkServicesForEDMUpload_privateLinkResourcesComponentInputs>
@@ -83,8 +83,8 @@ export interface privateLinkServicesForEDMUpload_privateLinkResourcesComponentOu
 }
 export interface privateLinkServicesForEDMUpload_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class privateLinkServicesForM365ComplianceCenter
 	extends ArmResource<privateLinkServicesForM365ComplianceCenterComponentInputs>
@@ -109,14 +109,14 @@ export interface privateLinkServicesForM365ComplianceCenterComponentOutputs {
 	readonly type: "Microsoft.SecurityAndCompliance/privateLinkServicesForM365ComplianceCenter";
 }
 export interface privateLinkServicesForM365ComplianceCenterComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ServicesResourceIdentity | undefined;
+	readonly etag?: string;
+	readonly identity?: ServicesResourceIdentity;
 	readonly kind: "fhir" | "fhir-R4";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServicesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ServicesResourceTags | undefined;
+	readonly properties?: ServicesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ServicesResourceTags;
 }
 export class privateLinkServicesForM365ComplianceCenter_privateEndpointConnections
 	extends ArmResource<privateLinkServicesForM365ComplianceCenter_privateEndpointConnectionsComponentInputs>
@@ -145,8 +145,8 @@ export interface privateLinkServicesForM365ComplianceCenter_privateEndpointConne
 }
 export interface privateLinkServicesForM365ComplianceCenter_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class privateLinkServicesForM365ComplianceCenter_privateLinkResources
 	extends ArmResource<privateLinkServicesForM365ComplianceCenter_privateLinkResourcesComponentInputs>
@@ -175,8 +175,8 @@ export interface privateLinkServicesForM365ComplianceCenter_privateLinkResources
 }
 export interface privateLinkServicesForM365ComplianceCenter_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class privateLinkServicesForM365SecurityCenter
 	extends ArmResource<privateLinkServicesForM365SecurityCenterComponentInputs>
@@ -201,14 +201,14 @@ export interface privateLinkServicesForM365SecurityCenterComponentOutputs {
 	readonly type: "Microsoft.SecurityAndCompliance/privateLinkServicesForM365SecurityCenter";
 }
 export interface privateLinkServicesForM365SecurityCenterComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ServicesResourceIdentity | undefined;
+	readonly etag?: string;
+	readonly identity?: ServicesResourceIdentity;
 	readonly kind: "fhir" | "fhir-R4";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServicesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ServicesResourceTags | undefined;
+	readonly properties?: ServicesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ServicesResourceTags;
 }
 export class privateLinkServicesForM365SecurityCenter_privateEndpointConnections
 	extends ArmResource<privateLinkServicesForM365SecurityCenter_privateEndpointConnectionsComponentInputs>
@@ -237,8 +237,8 @@ export interface privateLinkServicesForM365SecurityCenter_privateEndpointConnect
 }
 export interface privateLinkServicesForM365SecurityCenter_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class privateLinkServicesForM365SecurityCenter_privateLinkResources
 	extends ArmResource<privateLinkServicesForM365SecurityCenter_privateLinkResourcesComponentInputs>
@@ -267,8 +267,8 @@ export interface privateLinkServicesForM365SecurityCenter_privateLinkResourcesCo
 }
 export interface privateLinkServicesForM365SecurityCenter_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class privateLinkServicesForO365ManagementActivityAPI
 	extends ArmResource<privateLinkServicesForO365ManagementActivityAPIComponentInputs>
@@ -293,14 +293,14 @@ export interface privateLinkServicesForO365ManagementActivityAPIComponentOutputs
 	readonly type: "Microsoft.SecurityAndCompliance/privateLinkServicesForO365ManagementActivityAPI";
 }
 export interface privateLinkServicesForO365ManagementActivityAPIComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ServicesResourceIdentity | undefined;
+	readonly etag?: string;
+	readonly identity?: ServicesResourceIdentity;
 	readonly kind: "fhir" | "fhir-R4";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServicesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ServicesResourceTags | undefined;
+	readonly properties?: ServicesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ServicesResourceTags;
 }
 export class privateLinkServicesForO365ManagementActivityAPI_privateEndpointConnections
 	extends ArmResource<privateLinkServicesForO365ManagementActivityAPI_privateEndpointConnectionsComponentInputs>
@@ -329,8 +329,8 @@ export interface privateLinkServicesForO365ManagementActivityAPI_privateEndpoint
 }
 export interface privateLinkServicesForO365ManagementActivityAPI_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class privateLinkServicesForO365ManagementActivityAPI_privateLinkResources
 	extends ArmResource<privateLinkServicesForO365ManagementActivityAPI_privateLinkResourcesComponentInputs>
@@ -359,8 +359,8 @@ export interface privateLinkServicesForO365ManagementActivityAPI_privateLinkReso
 }
 export interface privateLinkServicesForO365ManagementActivityAPI_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class privateLinkServicesForSCCPowershell
 	extends ArmResource<privateLinkServicesForSCCPowershellComponentInputs>
@@ -385,14 +385,14 @@ export interface privateLinkServicesForSCCPowershellComponentOutputs {
 	readonly type: "Microsoft.SecurityAndCompliance/privateLinkServicesForSCCPowershell";
 }
 export interface privateLinkServicesForSCCPowershellComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: ServicesResourceIdentity | undefined;
+	readonly etag?: string;
+	readonly identity?: ServicesResourceIdentity;
 	readonly kind: "fhir" | "fhir-R4";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ServicesProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ServicesResourceTags | undefined;
+	readonly properties?: ServicesProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ServicesResourceTags;
 }
 export class privateLinkServicesForSCCPowershell_privateEndpointConnections
 	extends ArmResource<privateLinkServicesForSCCPowershell_privateEndpointConnectionsComponentInputs>
@@ -421,8 +421,8 @@ export interface privateLinkServicesForSCCPowershell_privateEndpointConnectionsC
 }
 export interface privateLinkServicesForSCCPowershell_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class privateLinkServicesForSCCPowershell_privateLinkResources
 	extends ArmResource<privateLinkServicesForSCCPowershell_privateLinkResourcesComponentInputs>
@@ -448,93 +448,90 @@ export interface privateLinkServicesForSCCPowershell_privateLinkResourcesCompone
 }
 export interface privateLinkServicesForSCCPowershell_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface ServiceAccessPolicyEntry {
 	readonly objectId: string;
 }
 export interface ServiceAuthenticationConfigurationInfo {
-	readonly audience?: string | undefined;
-	readonly authority?: string | undefined;
-	readonly smartProxyEnabled?: boolean | undefined;
+	readonly audience?: string;
+	readonly authority?: string;
+	readonly smartProxyEnabled?: boolean;
 }
 export interface ServiceCorsConfigurationInfo {
-	readonly allowCredentials?: boolean | undefined;
-	readonly headers?: string[] | undefined;
-	readonly maxAge?: number | undefined;
-	readonly methods?: string[] | undefined;
-	readonly origins?: string[] | undefined;
+	readonly allowCredentials?: boolean;
+	readonly headers?: string[];
+	readonly maxAge?: number;
+	readonly methods?: string[];
+	readonly origins?: string[];
 }
 export interface ServiceCosmosDbConfigurationInfo {
-	readonly keyVaultKeyUri?: string | undefined;
-	readonly offerThroughput?: number | undefined;
+	readonly keyVaultKeyUri?: string;
+	readonly offerThroughput?: number;
 }
 export interface ServiceExportConfigurationInfo {
-	readonly storageAccountName?: string | undefined;
+	readonly storageAccountName?: string;
 }
 export interface ServicesProperties {
-	readonly accessPolicies?: ServiceAccessPolicyEntry[] | undefined;
-	readonly authenticationConfiguration?: ServiceAuthenticationConfigurationInfo | undefined;
-	readonly corsConfiguration?: ServiceCorsConfigurationInfo | undefined;
-	readonly cosmosDbConfiguration?: ServiceCosmosDbConfigurationInfo | undefined;
-	readonly exportConfiguration?: ServiceExportConfigurationInfo | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
+	readonly accessPolicies?: ServiceAccessPolicyEntry[];
+	readonly authenticationConfiguration?: ServiceAuthenticationConfigurationInfo;
+	readonly corsConfiguration?: ServiceCorsConfigurationInfo;
+	readonly cosmosDbConfiguration?: ServiceCosmosDbConfigurationInfo;
+	readonly exportConfiguration?: ServiceExportConfigurationInfo;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleting"
-				| "Deprovisioned"
-				| "Failed"
-				| "Succeeded"
-				| "Updating"
-				| "Verifying"
-		  )
-		| undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Deprovisioned"
+		| "Failed"
+		| "Succeeded"
+		| "Updating"
+		| "Verifying";
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface ServicesResourceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
 }
 export interface ServicesResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	privateLinkServicesForEDMUpload: privateLinkServicesForEDMUpload,

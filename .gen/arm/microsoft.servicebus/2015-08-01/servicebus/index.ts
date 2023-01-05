@@ -16,9 +16,9 @@ export interface namespacesComponentOutputs {
 export interface namespacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: NamespaceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: NamespaceCreateOrUpdateParametersTags | undefined;
+	readonly properties?: NamespaceProperties;
+	readonly sku?: Sku;
+	readonly tags?: NamespaceCreateOrUpdateParametersTags;
 }
 export class namespaces_AuthorizationRules
 	extends ArmResource<namespaces_AuthorizationRulesComponentInputs>
@@ -37,9 +37,9 @@ export interface namespaces_AuthorizationRulesComponentOutputs {
 	readonly type: "Microsoft.ServiceBus/namespaces/AuthorizationRules";
 }
 export interface namespaces_AuthorizationRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SharedAccessAuthorizationRuleProperties | undefined;
+	readonly properties?: SharedAccessAuthorizationRuleProperties;
 }
 export class namespaces_queues
 	extends ArmResource<namespaces_queuesComponentInputs>
@@ -60,7 +60,7 @@ export interface namespaces_queuesComponentOutputs {
 export interface namespaces_queuesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: QueueProperties | undefined;
+	readonly properties?: QueueProperties;
 }
 export class namespaces_queues_authorizationRules
 	extends ArmResource<namespaces_queues_authorizationRulesComponentInputs>
@@ -79,9 +79,9 @@ export interface namespaces_queues_authorizationRulesComponentOutputs {
 	readonly type: "Microsoft.ServiceBus/namespaces/queues/authorizationRules";
 }
 export interface namespaces_queues_authorizationRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SharedAccessAuthorizationRuleProperties | undefined;
+	readonly properties?: SharedAccessAuthorizationRuleProperties;
 }
 export class namespaces_topics
 	extends ArmResource<namespaces_topicsComponentInputs>
@@ -102,7 +102,7 @@ export interface namespaces_topicsComponentOutputs {
 export interface namespaces_topicsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: TopicProperties | undefined;
+	readonly properties?: TopicProperties;
 }
 export class namespaces_topics_authorizationRules
 	extends ArmResource<namespaces_topics_authorizationRulesComponentInputs>
@@ -121,9 +121,9 @@ export interface namespaces_topics_authorizationRulesComponentOutputs {
 	readonly type: "Microsoft.ServiceBus/namespaces/topics/authorizationRules";
 }
 export interface namespaces_topics_authorizationRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SharedAccessAuthorizationRuleProperties | undefined;
+	readonly properties?: SharedAccessAuthorizationRuleProperties;
 }
 export class namespaces_topics_subscriptions
 	extends ArmResource<namespaces_topics_subscriptionsComponentInputs>
@@ -144,7 +144,7 @@ export interface namespaces_topics_subscriptionsComponentOutputs {
 export interface namespaces_topics_subscriptionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SubscriptionProperties | undefined;
+	readonly properties?: SubscriptionProperties;
 }
 export function listKeys(resource: namespaces_AuthorizationRules): ResourceListKeys {
 	if (resource.apiVersion !== "2015-08-01") {
@@ -156,123 +156,138 @@ export function listKeys(resource: namespaces_AuthorizationRules): ResourceListK
 	throw new Error("not implemented");
 }
 export interface MessageCountDetails {
-	readonly activeMessageCount?: number | undefined;
-	readonly deadLetterMessageCount?: number | undefined;
-	readonly scheduledMessageCount?: number | undefined;
-	readonly transferDeadLetterMessageCount?: number | undefined;
-	readonly transferMessageCount?: number | undefined;
+	readonly activeMessageCount?: number;
+	readonly deadLetterMessageCount?: number;
+	readonly scheduledMessageCount?: number;
+	readonly transferDeadLetterMessageCount?: number;
+	readonly transferMessageCount?: number;
 }
 export interface NamespaceCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NamespaceProperties {
-	readonly createACSNamespace?: boolean | undefined;
-	readonly createdAt?: string | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceBusEndpoint?: string | undefined;
+	readonly createACSNamespace?: boolean;
+	readonly createdAt?: string;
+	readonly enabled?: boolean;
+	readonly provisioningState?: string;
+	readonly serviceBusEndpoint?: string;
 	readonly status?:
-		| (
-				| "Activating"
-				| "Active"
-				| "Created"
-				| "Creating"
-				| "Disabled"
-				| "Disabling"
-				| "Enabling"
-				| "Failed"
-				| "Removed"
-				| "Removing"
-				| "SoftDeleted"
-				| "SoftDeleting"
-		  )
-		| undefined;
-	readonly updatedAt?: string | undefined;
+		| "Activating"
+		| "Active"
+		| "Created"
+		| "Creating"
+		| "Disabled"
+		| "Disabling"
+		| "Enabling"
+		| "Failed"
+		| "Removed"
+		| "Removing"
+		| "SoftDeleted"
+		| "SoftDeleting";
+	readonly updatedAt?: string;
 }
 export interface QueueProperties {
-	readonly accessedAt?: string | undefined;
-	readonly autoDeleteOnIdle?: string | undefined;
-	readonly countDetails?: MessageCountDetails | undefined;
-	readonly createdAt?: string | undefined;
-	readonly deadLetteringOnMessageExpiration?: boolean | undefined;
-	readonly defaultMessageTimeToLive?: string | undefined;
-	readonly duplicateDetectionHistoryTimeWindow?: string | undefined;
-	readonly enableBatchedOperations?: boolean | undefined;
-	readonly enableExpress?: boolean | undefined;
-	readonly enablePartitioning?: boolean | undefined;
-	readonly entityAvailabilityStatus?: ("Available" | "Limited" | "Renaming" | "Restoring") | undefined;
-	readonly isAnonymousAccessible?: boolean | undefined;
-	readonly lockDuration?: string | undefined;
-	readonly maxDeliveryCount?: number | undefined;
-	readonly maxSizeInMegabytes?: number | undefined;
-	readonly messageCount?: number | undefined;
-	readonly requiresDuplicateDetection?: boolean | undefined;
-	readonly requiresSession?: boolean | undefined;
-	readonly sizeInBytes?: number | undefined;
+	readonly accessedAt?: string;
+	readonly autoDeleteOnIdle?: string;
+	readonly countDetails?: MessageCountDetails;
+	readonly createdAt?: string;
+	readonly deadLetteringOnMessageExpiration?: boolean;
+	readonly defaultMessageTimeToLive?: string;
+	readonly duplicateDetectionHistoryTimeWindow?: string;
+	readonly enableBatchedOperations?: boolean;
+	readonly enableExpress?: boolean;
+	readonly enablePartitioning?: boolean;
+	readonly entityAvailabilityStatus?: "Available" | "Limited" | "Renaming" | "Restoring";
+	readonly isAnonymousAccessible?: boolean;
+	readonly lockDuration?: string;
+	readonly maxDeliveryCount?: number;
+	readonly maxSizeInMegabytes?: number;
+	readonly messageCount?: number;
+	readonly requiresDuplicateDetection?: boolean;
+	readonly requiresSession?: boolean;
+	readonly sizeInBytes?: number;
 	readonly status?:
-		| ("Active" | "Creating" | "Deleting" | "Disabled" | "ReceiveDisabled" | "Renaming" | "Restoring" | "SendDisabled")
-		| undefined;
-	readonly supportOrdering?: boolean | undefined;
-	readonly updatedAt?: string | undefined;
+		| "Active"
+		| "Creating"
+		| "Deleting"
+		| "Disabled"
+		| "ReceiveDisabled"
+		| "Renaming"
+		| "Restoring"
+		| "SendDisabled";
+	readonly supportOrdering?: boolean;
+	readonly updatedAt?: string;
 }
 export interface ResourceListKeys {
-	readonly keyName?: string | undefined;
-	readonly primaryConnectionString?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryConnectionString?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly keyName?: string;
+	readonly primaryConnectionString?: string;
+	readonly primaryKey?: string;
+	readonly secondaryConnectionString?: string;
+	readonly secondaryKey?: string;
 }
 export interface SharedAccessAuthorizationRuleProperties {
 	readonly rights: "Listen" | "Manage"[];
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly name?: ("Basic" | "Premium" | "Standard") | undefined;
+	readonly capacity?: number;
+	readonly name?: "Basic" | "Premium" | "Standard";
 	readonly tier: "Basic" | "Premium" | "Standard";
 }
 export interface SubscriptionProperties {
-	readonly accessedAt?: string | undefined;
-	readonly autoDeleteOnIdle?: string | undefined;
-	readonly countDetails?: MessageCountDetails | undefined;
-	readonly createdAt?: string | undefined;
-	readonly deadLetteringOnFilterEvaluationExceptions?: boolean | undefined;
-	readonly deadLetteringOnMessageExpiration?: boolean | undefined;
-	readonly defaultMessageTimeToLive?: string | undefined;
-	readonly enableBatchedOperations?: boolean | undefined;
-	readonly entityAvailabilityStatus?: ("Available" | "Limited" | "Renaming" | "Restoring") | undefined;
-	readonly isReadOnly?: boolean | undefined;
-	readonly lockDuration?: string | undefined;
-	readonly maxDeliveryCount?: number | undefined;
-	readonly messageCount?: number | undefined;
-	readonly requiresSession?: boolean | undefined;
+	readonly accessedAt?: string;
+	readonly autoDeleteOnIdle?: string;
+	readonly countDetails?: MessageCountDetails;
+	readonly createdAt?: string;
+	readonly deadLetteringOnFilterEvaluationExceptions?: boolean;
+	readonly deadLetteringOnMessageExpiration?: boolean;
+	readonly defaultMessageTimeToLive?: string;
+	readonly enableBatchedOperations?: boolean;
+	readonly entityAvailabilityStatus?: "Available" | "Limited" | "Renaming" | "Restoring";
+	readonly isReadOnly?: boolean;
+	readonly lockDuration?: string;
+	readonly maxDeliveryCount?: number;
+	readonly messageCount?: number;
+	readonly requiresSession?: boolean;
 	readonly status?:
-		| ("Active" | "Creating" | "Deleting" | "Disabled" | "ReceiveDisabled" | "Renaming" | "Restoring" | "SendDisabled")
-		| undefined;
-	readonly updatedAt?: string | undefined;
+		| "Active"
+		| "Creating"
+		| "Deleting"
+		| "Disabled"
+		| "ReceiveDisabled"
+		| "Renaming"
+		| "Restoring"
+		| "SendDisabled";
+	readonly updatedAt?: string;
 }
 export interface TopicProperties {
-	readonly accessedAt?: string | undefined;
-	readonly autoDeleteOnIdle?: string | undefined;
-	readonly countDetails?: MessageCountDetails | undefined;
-	readonly createdAt?: string | undefined;
-	readonly defaultMessageTimeToLive?: string | undefined;
-	readonly duplicateDetectionHistoryTimeWindow?: string | undefined;
-	readonly enableBatchedOperations?: boolean | undefined;
-	readonly enableExpress?: boolean | undefined;
-	readonly enablePartitioning?: boolean | undefined;
-	readonly entityAvailabilityStatus?: ("Available" | "Limited" | "Renaming" | "Restoring") | undefined;
-	readonly filteringMessagesBeforePublishing?: boolean | undefined;
-	readonly isAnonymousAccessible?: boolean | undefined;
-	readonly isExpress?: boolean | undefined;
-	readonly maxSizeInMegabytes?: number | undefined;
-	readonly requiresDuplicateDetection?: boolean | undefined;
-	readonly sizeInBytes?: number | undefined;
+	readonly accessedAt?: string;
+	readonly autoDeleteOnIdle?: string;
+	readonly countDetails?: MessageCountDetails;
+	readonly createdAt?: string;
+	readonly defaultMessageTimeToLive?: string;
+	readonly duplicateDetectionHistoryTimeWindow?: string;
+	readonly enableBatchedOperations?: boolean;
+	readonly enableExpress?: boolean;
+	readonly enablePartitioning?: boolean;
+	readonly entityAvailabilityStatus?: "Available" | "Limited" | "Renaming" | "Restoring";
+	readonly filteringMessagesBeforePublishing?: boolean;
+	readonly isAnonymousAccessible?: boolean;
+	readonly isExpress?: boolean;
+	readonly maxSizeInMegabytes?: number;
+	readonly requiresDuplicateDetection?: boolean;
+	readonly sizeInBytes?: number;
 	readonly status?:
-		| ("Active" | "Creating" | "Deleting" | "Disabled" | "ReceiveDisabled" | "Renaming" | "Restoring" | "SendDisabled")
-		| undefined;
-	readonly subscriptionCount?: number | undefined;
-	readonly supportOrdering?: boolean | undefined;
-	readonly updatedAt?: string | undefined;
+		| "Active"
+		| "Creating"
+		| "Deleting"
+		| "Disabled"
+		| "ReceiveDisabled"
+		| "Renaming"
+		| "Restoring"
+		| "SendDisabled";
+	readonly subscriptionCount?: number;
+	readonly supportOrdering?: boolean;
+	readonly updatedAt?: string;
 }
 export default {
 	namespaces: namespaces,

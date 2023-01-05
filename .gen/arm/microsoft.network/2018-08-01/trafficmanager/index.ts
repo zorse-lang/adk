@@ -18,7 +18,7 @@ export interface trafficManagerGeographicHierarchiesComponentOutputs {
 }
 export interface trafficManagerGeographicHierarchiesComponentInputs {
 	readonly name: string;
-	readonly properties?: GeographicHierarchyProperties | undefined;
+	readonly properties?: GeographicHierarchyProperties;
 }
 export class trafficmanagerprofiles
 	extends ArmResource<trafficmanagerprofilesComponentInputs>
@@ -37,10 +37,10 @@ export interface trafficmanagerprofilesComponentOutputs {
 	readonly type: "Microsoft.Network/trafficmanagerprofiles";
 }
 export interface trafficmanagerprofilesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProfileProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ProfileProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class trafficmanagerprofiles_AzureEndpoints
 	extends ArmResource<trafficmanagerprofiles_AzureEndpointsComponentInputs>
@@ -60,7 +60,7 @@ export interface trafficmanagerprofiles_AzureEndpointsComponentOutputs {
 }
 export interface trafficmanagerprofiles_AzureEndpointsComponentInputs {
 	readonly name: string;
-	readonly properties?: EndpointProperties | undefined;
+	readonly properties?: EndpointProperties;
 }
 export class trafficmanagerprofiles_ExternalEndpoints
 	extends ArmResource<trafficmanagerprofiles_ExternalEndpointsComponentInputs>
@@ -80,7 +80,7 @@ export interface trafficmanagerprofiles_ExternalEndpointsComponentOutputs {
 }
 export interface trafficmanagerprofiles_ExternalEndpointsComponentInputs {
 	readonly name: string;
-	readonly properties?: EndpointProperties | undefined;
+	readonly properties?: EndpointProperties;
 }
 export class trafficmanagerprofiles_heatMaps
 	extends ArmResource<trafficmanagerprofiles_heatMapsComponentInputs>
@@ -100,7 +100,7 @@ export interface trafficmanagerprofiles_heatMapsComponentOutputs {
 }
 export interface trafficmanagerprofiles_heatMapsComponentInputs {
 	readonly name: string;
-	readonly properties?: HeatMapProperties | undefined;
+	readonly properties?: HeatMapProperties;
 }
 export class trafficmanagerprofiles_NestedEndpoints
 	extends ArmResource<trafficmanagerprofiles_NestedEndpointsComponentInputs>
@@ -120,7 +120,7 @@ export interface trafficmanagerprofiles_NestedEndpointsComponentOutputs {
 }
 export interface trafficmanagerprofiles_NestedEndpointsComponentInputs {
 	readonly name: string;
-	readonly properties?: EndpointProperties | undefined;
+	readonly properties?: EndpointProperties;
 }
 export class trafficManagerUserMetricsKeys
 	extends ArmResource<trafficManagerUserMetricsKeysComponentInputs>
@@ -140,110 +140,106 @@ export interface trafficManagerUserMetricsKeysComponentOutputs {
 }
 export interface trafficManagerUserMetricsKeysComponentInputs {
 	readonly name: string;
-	readonly properties?: UserMetricsProperties | undefined;
+	readonly properties?: UserMetricsProperties;
 }
 export interface DnsConfig {
-	readonly fqdn?: string | undefined;
-	readonly relativeName?: string | undefined;
-	readonly ttl?: number | undefined;
+	readonly fqdn?: string;
+	readonly relativeName?: string;
+	readonly ttl?: number;
 }
 export interface Endpoint {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: EndpointProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: EndpointProperties;
+	readonly type?: string;
 }
 export interface EndpointProperties {
-	readonly customHeaders?: EndpointPropertiesCustomHeadersItem[] | undefined;
-	readonly endpointLocation?: string | undefined;
-	readonly endpointMonitorStatus?:
-		| ("CheckingEndpoint" | "Degraded" | "Disabled" | "Inactive" | "Online" | "Stopped")
-		| undefined;
-	readonly endpointStatus?: ("Disabled" | "Enabled") | undefined;
-	readonly geoMapping?: string[] | undefined;
-	readonly minChildEndpoints?: number | undefined;
-	readonly minChildEndpointsIPv4?: number | undefined;
-	readonly minChildEndpointsIPv6?: number | undefined;
-	readonly priority?: number | undefined;
-	readonly subnets?: EndpointPropertiesSubnetsItem[] | undefined;
-	readonly target?: string | undefined;
-	readonly targetResourceId?: string | undefined;
-	readonly weight?: number | undefined;
+	readonly customHeaders?: EndpointPropertiesCustomHeadersItem[];
+	readonly endpointLocation?: string;
+	readonly endpointMonitorStatus?: "CheckingEndpoint" | "Degraded" | "Disabled" | "Inactive" | "Online" | "Stopped";
+	readonly endpointStatus?: "Disabled" | "Enabled";
+	readonly geoMapping?: string[];
+	readonly minChildEndpoints?: number;
+	readonly minChildEndpointsIPv4?: number;
+	readonly minChildEndpointsIPv6?: number;
+	readonly priority?: number;
+	readonly subnets?: EndpointPropertiesSubnetsItem[];
+	readonly target?: string;
+	readonly targetResourceId?: string;
+	readonly weight?: number;
 }
 export interface EndpointPropertiesCustomHeadersItem {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface EndpointPropertiesSubnetsItem {
-	readonly first?: string | undefined;
-	readonly last?: string | undefined;
-	readonly scope?: number | undefined;
+	readonly first?: string;
+	readonly last?: string;
+	readonly scope?: number;
 }
 export interface GeographicHierarchyProperties {
-	readonly geographicHierarchy?: Region | undefined;
+	readonly geographicHierarchy?: Region;
 }
 export interface HeatMapEndpoint {
-	readonly endpointId?: number | undefined;
-	readonly resourceId?: string | undefined;
+	readonly endpointId?: number;
+	readonly resourceId?: string;
 }
 export interface HeatMapProperties {
-	readonly endpoints?: HeatMapEndpoint[] | undefined;
-	readonly endTime?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly trafficFlows?: TrafficFlow[] | undefined;
+	readonly endpoints?: HeatMapEndpoint[];
+	readonly endTime?: string;
+	readonly startTime?: string;
+	readonly trafficFlows?: TrafficFlow[];
 }
 export interface MonitorConfig {
-	readonly customHeaders?: MonitorConfigCustomHeadersItem[] | undefined;
-	readonly expectedStatusCodeRanges?: MonitorConfigExpectedStatusCodeRangesItem[] | undefined;
-	readonly intervalInSeconds?: number | undefined;
-	readonly path?: string | undefined;
-	readonly port?: number | undefined;
-	readonly profileMonitorStatus?: ("CheckingEndpoints" | "Degraded" | "Disabled" | "Inactive" | "Online") | undefined;
-	readonly protocol?: ("HTTP" | "HTTPS" | "TCP") | undefined;
-	readonly timeoutInSeconds?: number | undefined;
-	readonly toleratedNumberOfFailures?: number | undefined;
+	readonly customHeaders?: MonitorConfigCustomHeadersItem[];
+	readonly expectedStatusCodeRanges?: MonitorConfigExpectedStatusCodeRangesItem[];
+	readonly intervalInSeconds?: number;
+	readonly path?: string;
+	readonly port?: number;
+	readonly profileMonitorStatus?: "CheckingEndpoints" | "Degraded" | "Disabled" | "Inactive" | "Online";
+	readonly protocol?: "HTTP" | "HTTPS" | "TCP";
+	readonly timeoutInSeconds?: number;
+	readonly toleratedNumberOfFailures?: number;
 }
 export interface MonitorConfigCustomHeadersItem {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface MonitorConfigExpectedStatusCodeRangesItem {
-	readonly max?: number | undefined;
-	readonly min?: number | undefined;
+	readonly max?: number;
+	readonly min?: number;
 }
 export interface ProfileProperties {
-	readonly allowedEndpointRecordTypes?: ("any" | "DomainName" | "IPv4Address" | "IPv6Address"[]) | undefined;
-	readonly dnsConfig?: DnsConfig | undefined;
-	readonly endpoints?: Endpoint[] | undefined;
-	readonly maxReturn?: number | undefined;
-	readonly monitorConfig?: MonitorConfig | undefined;
-	readonly profileStatus?: ("Disabled" | "Enabled") | undefined;
-	readonly trafficRoutingMethod?:
-		| ("Geographic" | "MultiValue" | "Performance" | "Priority" | "Subnet" | "Weighted")
-		| undefined;
-	readonly trafficViewEnrollmentStatus?: ("Disabled" | "Enabled") | undefined;
+	readonly allowedEndpointRecordTypes?: "any" | "DomainName" | "IPv4Address" | "IPv6Address"[];
+	readonly dnsConfig?: DnsConfig;
+	readonly endpoints?: Endpoint[];
+	readonly maxReturn?: number;
+	readonly monitorConfig?: MonitorConfig;
+	readonly profileStatus?: "Disabled" | "Enabled";
+	readonly trafficRoutingMethod?: "Geographic" | "MultiValue" | "Performance" | "Priority" | "Subnet" | "Weighted";
+	readonly trafficViewEnrollmentStatus?: "Disabled" | "Enabled";
 }
 export interface QueryExperience {
 	readonly endpointId: number;
-	readonly latency?: number | undefined;
+	readonly latency?: number;
 	readonly queryCount: number;
 }
 export interface Region {
-	readonly code?: string | undefined;
-	readonly name?: string | undefined;
-	readonly regions?: Region[] | undefined;
+	readonly code?: string;
+	readonly name?: string;
+	readonly regions?: Region[];
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrafficFlow {
-	readonly latitude?: number | undefined;
-	readonly longitude?: number | undefined;
-	readonly queryExperiences?: QueryExperience[] | undefined;
-	readonly sourceIp?: string | undefined;
+	readonly latitude?: number;
+	readonly longitude?: number;
+	readonly queryExperiences?: QueryExperience[];
+	readonly sourceIp?: string;
 }
 export interface UserMetricsProperties {
-	readonly key?: string | undefined;
+	readonly key?: string;
 }
 export default {
 	trafficManagerGeographicHierarchies: trafficManagerGeographicHierarchies,

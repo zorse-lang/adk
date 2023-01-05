@@ -18,13 +18,13 @@ export interface vmInsightsOnboardingStatusesComponentOutputs {
 }
 export interface vmInsightsOnboardingStatusesComponentInputs {
 	readonly name: string;
-	readonly properties?: VMInsightsOnboardingStatusProperties | undefined;
+	readonly properties?: VMInsightsOnboardingStatusProperties;
 }
 export interface DataContainer {
 	readonly workspace: WorkspaceInfo;
 }
 export interface VMInsightsOnboardingStatusProperties {
-	readonly data?: DataContainer[] | undefined;
+	readonly data?: DataContainer[];
 	readonly dataStatus: "notPresent" | "present";
 	readonly onboardingStatus: "notOnboarded" | "onboarded" | "unknown";
 	readonly resourceId: string;

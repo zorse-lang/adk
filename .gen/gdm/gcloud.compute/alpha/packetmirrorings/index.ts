@@ -7,74 +7,73 @@ export class PacketMirrorings
 	constructor(entity: ADKEntity, options: PacketMirroringsComponentInputs) {
 		super(entity, options.name, "compute.alpha.PacketMirrorings", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
 }
 export interface PacketMirroringsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
 }
 export interface PacketMirroringsComponentInputs {
-	readonly collectorIlb?: PacketMirroringForwardingRuleInfo | undefined;
-	readonly description?: string | undefined;
-	readonly enable?: string | undefined;
-	readonly filter?: PacketMirroringFilter | undefined;
-	readonly mirroredResources?: PacketMirroringMirroredResourceInfo | undefined;
+	readonly collectorIlb?: PacketMirroringForwardingRuleInfo;
+	readonly description?: string;
+	readonly enable?: string;
+	readonly filter?: PacketMirroringFilter;
+	readonly mirroredResources?: PacketMirroringMirroredResourceInfo;
 	readonly name: string;
-	readonly network?: PacketMirroringNetworkInfo | undefined;
-	readonly priority?: number | undefined;
-	readonly requestId?: string | undefined;
-	readonly type: string;
+	readonly network?: PacketMirroringNetworkInfo;
+	readonly priority?: number;
+	readonly requestId?: string;
 }
 export interface PacketMirroring {
-	readonly collectorIlb?: PacketMirroringForwardingRuleInfo | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly enable?: string | undefined;
-	readonly filter?: PacketMirroringFilter | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly mirroredResources?: PacketMirroringMirroredResourceInfo | undefined;
-	readonly name?: string | undefined;
-	readonly network?: PacketMirroringNetworkInfo | undefined;
-	readonly priority?: number | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
+	readonly collectorIlb?: PacketMirroringForwardingRuleInfo;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly enable?: string;
+	readonly filter?: PacketMirroringFilter;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly mirroredResources?: PacketMirroringMirroredResourceInfo;
+	readonly name?: string;
+	readonly network?: PacketMirroringNetworkInfo;
+	readonly priority?: number;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
 }
 export interface PacketMirroringFilter {
-	readonly cidrRanges?: string[] | undefined;
-	readonly direction?: string | undefined;
-	readonly IPProtocols?: string[] | undefined;
+	readonly cidrRanges?: string[];
+	readonly direction?: string;
+	readonly IPProtocols?: string[];
 }
 export interface PacketMirroringForwardingRuleInfo {
-	readonly canonicalUrl?: string | undefined;
-	readonly url?: string | undefined;
+	readonly canonicalUrl?: string;
+	readonly url?: string;
 }
 export interface PacketMirroringMirroredResourceInfo {
-	readonly instances?: PacketMirroringMirroredResourceInfoInstanceInfo[] | undefined;
-	readonly subnetworks?: PacketMirroringMirroredResourceInfoSubnetInfo[] | undefined;
-	readonly tags?: string[] | undefined;
+	readonly instances?: PacketMirroringMirroredResourceInfoInstanceInfo[];
+	readonly subnetworks?: PacketMirroringMirroredResourceInfoSubnetInfo[];
+	readonly tags?: string[];
 }
 export interface PacketMirroringMirroredResourceInfoInstanceInfo {
-	readonly canonicalUrl?: string | undefined;
-	readonly url?: string | undefined;
+	readonly canonicalUrl?: string;
+	readonly url?: string;
 }
 export interface PacketMirroringMirroredResourceInfoSubnetInfo {
-	readonly canonicalUrl?: string | undefined;
-	readonly url?: string | undefined;
+	readonly canonicalUrl?: string;
+	readonly url?: string;
 }
 export interface PacketMirroringNetworkInfo {
-	readonly canonicalUrl?: string | undefined;
-	readonly url?: string | undefined;
+	readonly canonicalUrl?: string;
+	readonly url?: string;
 }
 export default {
 	PacketMirrorings: PacketMirrorings,

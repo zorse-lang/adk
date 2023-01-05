@@ -17,103 +17,100 @@ export interface webServicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: WebServiceProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export interface AssetItem {
-	readonly id?: string | undefined;
-	readonly inputPorts?: AssetItemInputPorts | undefined;
+	readonly id?: string;
+	readonly inputPorts?: AssetItemInputPorts;
 	readonly locationInfo: BlobLocation;
-	readonly metadata?: AssetItemMetadata | undefined;
+	readonly metadata?: AssetItemMetadata;
 	readonly name: string;
-	readonly outputPorts?: AssetItemOutputPorts | undefined;
-	readonly parameters?: ModuleAssetParameter[] | undefined;
+	readonly outputPorts?: AssetItemOutputPorts;
+	readonly parameters?: ModuleAssetParameter[];
 	readonly type: "Module" | "Resource";
 }
 export interface AssetItemInputPorts {
-	readonly "[ key: string ]"?: InputPort | undefined;
+	readonly [key: string]: InputPort;
 }
 export interface AssetItemMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AssetItemOutputPorts {
-	readonly "[ key: string ]"?: OutputPort | undefined;
+	readonly [key: string]: OutputPort;
 }
 export interface BlobLocation {
-	readonly credentials?: string | undefined;
+	readonly credentials?: string;
 	readonly uri: string;
 }
 export interface ColumnSpecification {
-	readonly enum?: any[] | undefined;
+	readonly enum?: any[];
 	readonly format?:
-		| (
-				| "Byte"
-				| "Char"
-				| "Complex128"
-				| "Complex64"
-				| "Date-time"
-				| "Date-timeOffset"
-				| "Double"
-				| "Duration"
-				| "Float"
-				| "Int16"
-				| "Int32"
-				| "Int64"
-				| "Int8"
-				| "Uint16"
-				| "Uint32"
-				| "Uint64"
-				| "Uint8"
-		  )
-		| undefined;
+		| "Byte"
+		| "Char"
+		| "Complex128"
+		| "Complex64"
+		| "Date-time"
+		| "Date-timeOffset"
+		| "Double"
+		| "Duration"
+		| "Float"
+		| "Int16"
+		| "Int32"
+		| "Int64"
+		| "Int8"
+		| "Uint16"
+		| "Uint32"
+		| "Uint64"
+		| "Uint8";
 	readonly type: "Boolean" | "Integer" | "Number" | "String";
-	readonly "x-ms-isnullable"?: boolean | undefined;
-	readonly "x-ms-isordered"?: boolean | undefined;
+	readonly "x-ms-isnullable"?: boolean;
+	readonly "x-ms-isordered"?: boolean;
 }
 export interface CommitmentPlan {
 	readonly id: string;
 }
 export interface DiagnosticsConfiguration {
-	readonly expiry?: string | undefined;
+	readonly expiry?: string;
 	readonly level: "All" | "Error" | "None";
 }
 export interface ExampleRequest {
-	readonly globalParameters?: ExampleRequestGlobalParameters | undefined;
-	readonly inputs?: ExampleRequestInputs | undefined;
+	readonly globalParameters?: ExampleRequestGlobalParameters;
+	readonly inputs?: ExampleRequestInputs;
 }
 export interface ExampleRequestGlobalParameters {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ExampleRequestInputs {
-	readonly "[ key: string ]"?: any[][] | undefined;
+	readonly [key: string]: any[][];
 }
 export interface GraphEdge {
-	readonly sourceNodeId?: string | undefined;
-	readonly sourcePortId?: string | undefined;
-	readonly targetNodeId?: string | undefined;
-	readonly targetPortId?: string | undefined;
+	readonly sourceNodeId?: string;
+	readonly sourcePortId?: string;
+	readonly targetNodeId?: string;
+	readonly targetPortId?: string;
 }
 export interface GraphNode {
-	readonly assetId?: string | undefined;
-	readonly inputId?: string | undefined;
-	readonly outputId?: string | undefined;
-	readonly parameters?: GraphNodeParameters | undefined;
+	readonly assetId?: string;
+	readonly inputId?: string;
+	readonly outputId?: string;
+	readonly parameters?: GraphNodeParameters;
 }
 export interface GraphNodeParameters {
-	readonly "[ key: string ]"?: WebServiceParameter | undefined;
+	readonly [key: string]: WebServiceParameter;
 }
 export interface GraphPackage {
-	readonly edges?: GraphEdge[] | undefined;
-	readonly graphParameters?: GraphPackageGraphParameters | undefined;
-	readonly nodes?: GraphPackageNodes | undefined;
+	readonly edges?: GraphEdge[];
+	readonly graphParameters?: GraphPackageGraphParameters;
+	readonly nodes?: GraphPackageNodes;
 }
 export interface GraphPackageGraphParameters {
-	readonly "[ key: string ]"?: GraphParameter | undefined;
+	readonly [key: string]: GraphParameter;
 }
 export interface GraphPackageNodes {
-	readonly "[ key: string ]"?: GraphNode | undefined;
+	readonly [key: string]: GraphNode;
 }
 export interface GraphParameter {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly links: GraphParameterLink[];
 	readonly type:
 		| "Boolean"
@@ -134,91 +131,91 @@ export interface GraphParameterLink {
 	readonly parameterKey: string;
 }
 export interface InputPort {
-	readonly type?: "Dataset" | undefined;
+	readonly type?: "Dataset";
 }
 export interface MachineLearningWorkspace {
 	readonly id: string;
 }
 export interface ModeValueInfo {
-	readonly interfaceString?: string | undefined;
-	readonly parameters?: ModuleAssetParameter[] | undefined;
+	readonly interfaceString?: string;
+	readonly parameters?: ModuleAssetParameter[];
 }
 export interface ModuleAssetParameter {
-	readonly modeValuesInfo?: ModuleAssetParameterModeValuesInfo | undefined;
-	readonly name?: string | undefined;
-	readonly parameterType?: string | undefined;
+	readonly modeValuesInfo?: ModuleAssetParameterModeValuesInfo;
+	readonly name?: string;
+	readonly parameterType?: string;
 }
 export interface ModuleAssetParameterModeValuesInfo {
-	readonly "[ key: string ]"?: ModeValueInfo | undefined;
+	readonly [key: string]: ModeValueInfo;
 }
 export interface OutputPort {
-	readonly type?: "Dataset" | undefined;
+	readonly type?: "Dataset";
 }
 export interface RealtimeConfiguration {
-	readonly maxConcurrentCalls?: number | undefined;
+	readonly maxConcurrentCalls?: number;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ServiceInputOutputSpecification {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly properties: ServiceInputOutputSpecificationProperties;
-	readonly title?: string | undefined;
+	readonly title?: string;
 	readonly type: string;
 }
 export interface ServiceInputOutputSpecificationProperties {
-	readonly "[ key: string ]"?: TableSpecification | undefined;
+	readonly [key: string]: TableSpecification;
 }
 export interface StorageAccount {
-	readonly key?: string | undefined;
-	readonly name?: string | undefined;
+	readonly key?: string;
+	readonly name?: string;
 }
 export interface TableSpecification {
-	readonly description?: string | undefined;
-	readonly format?: string | undefined;
-	readonly properties?: TableSpecificationProperties | undefined;
-	readonly title?: string | undefined;
+	readonly description?: string;
+	readonly format?: string;
+	readonly properties?: TableSpecificationProperties;
+	readonly title?: string;
 	readonly type: string;
 }
 export interface TableSpecificationProperties {
-	readonly "[ key: string ]"?: ColumnSpecification | undefined;
+	readonly [key: string]: ColumnSpecification;
 }
 export interface WebServiceKeys {
-	readonly primary?: string | undefined;
-	readonly secondary?: string | undefined;
+	readonly primary?: string;
+	readonly secondary?: string;
 }
 export interface WebServiceParameter {
-	readonly certificateThumbprint?: string | undefined;
-	readonly value?: any | undefined;
+	readonly certificateThumbprint?: string;
+	readonly value?: any;
 }
 export interface WebServiceProperties {
-	readonly assets?: WebServicePropertiesAssets | undefined;
-	readonly commitmentPlan?: CommitmentPlan | undefined;
-	readonly createdOn?: string | undefined;
-	readonly description?: string | undefined;
-	readonly diagnostics?: DiagnosticsConfiguration | undefined;
-	readonly exampleRequest?: ExampleRequest | undefined;
-	readonly exposeSampleData?: boolean | undefined;
-	readonly input?: ServiceInputOutputSpecification | undefined;
-	readonly keys?: WebServiceKeys | undefined;
-	readonly machineLearningWorkspace?: MachineLearningWorkspace | undefined;
-	readonly modifiedOn?: string | undefined;
-	readonly output?: ServiceInputOutputSpecification | undefined;
-	readonly parameters?: WebServicePropertiesParameters | undefined;
-	readonly payloadsInBlobStorage?: boolean | undefined;
-	readonly payloadsLocation?: BlobLocation | undefined;
-	readonly provisioningState?: ("Failed" | "Provisioning" | "Succeeded" | "Unknown") | undefined;
-	readonly readOnly?: boolean | undefined;
-	readonly realtimeConfiguration?: RealtimeConfiguration | undefined;
-	readonly storageAccount?: StorageAccount | undefined;
-	readonly swaggerLocation?: string | undefined;
-	readonly title?: string | undefined;
+	readonly assets?: WebServicePropertiesAssets;
+	readonly commitmentPlan?: CommitmentPlan;
+	readonly createdOn?: string;
+	readonly description?: string;
+	readonly diagnostics?: DiagnosticsConfiguration;
+	readonly exampleRequest?: ExampleRequest;
+	readonly exposeSampleData?: boolean;
+	readonly input?: ServiceInputOutputSpecification;
+	readonly keys?: WebServiceKeys;
+	readonly machineLearningWorkspace?: MachineLearningWorkspace;
+	readonly modifiedOn?: string;
+	readonly output?: ServiceInputOutputSpecification;
+	readonly parameters?: WebServicePropertiesParameters;
+	readonly payloadsInBlobStorage?: boolean;
+	readonly payloadsLocation?: BlobLocation;
+	readonly provisioningState?: "Failed" | "Provisioning" | "Succeeded" | "Unknown";
+	readonly readOnly?: boolean;
+	readonly realtimeConfiguration?: RealtimeConfiguration;
+	readonly storageAccount?: StorageAccount;
+	readonly swaggerLocation?: string;
+	readonly title?: string;
 }
 export interface WebServicePropertiesAssets {
-	readonly "[ key: string ]"?: AssetItem | undefined;
+	readonly [key: string]: AssetItem;
 }
 export interface WebServicePropertiesParameters {
-	readonly "[ key: string ]"?: WebServiceParameter | undefined;
+	readonly [key: string]: WebServiceParameter;
 }
 export default {
 	webServices: webServices,

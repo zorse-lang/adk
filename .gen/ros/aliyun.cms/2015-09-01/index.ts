@@ -39,11 +39,11 @@ export interface DynamicTagGroupComponentOutputs {
 export interface DynamicTagGroupComponentInputs {
 	readonly ContactGroupList: string[];
 	readonly TagKey: any | string;
-	readonly EnableInstallAgent?: (boolean | undefined) | undefined;
-	readonly EnableSubscribeEvent?: (boolean | undefined) | undefined;
-	readonly MatchExpress?: (MatchExpress[] | undefined) | undefined;
-	readonly MatchExpressFilterRelation?: (string | undefined) | undefined;
-	readonly TemplateIdList?: (string[] | undefined) | undefined;
+	readonly EnableInstallAgent?: boolean | undefined;
+	readonly EnableSubscribeEvent?: boolean | undefined;
+	readonly MatchExpress?: MatchExpress[] | undefined;
+	readonly MatchExpressFilterRelation?: string | undefined;
+	readonly TemplateIdList?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class EventRule extends RosResource<EventRuleComponentInputs> implements EventRuleComponentOutputs {
@@ -58,10 +58,10 @@ export interface EventRuleComponentOutputs {
 export interface EventRuleComponentInputs {
 	readonly EventPattern: EventPattern[];
 	readonly RuleName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EventType?: (string | undefined) | undefined;
-	readonly GroupId?: (string | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly EventType?: string | undefined;
+	readonly GroupId?: string | undefined;
+	readonly State?: string | undefined;
 	readonly LogicalId: string;
 }
 export class EventRuleTargets
@@ -75,11 +75,11 @@ export class EventRuleTargets
 export interface EventRuleTargetsComponentOutputs {}
 export interface EventRuleTargetsComponentInputs {
 	readonly RuleName: string;
-	readonly ContactParameters?: (ContactParameters[] | undefined) | undefined;
-	readonly FcParameters?: (FcParameters[] | undefined) | undefined;
-	readonly MnsParameters?: (MnsParameters[] | undefined) | undefined;
-	readonly SlsParameters?: (SlsParameters[] | undefined) | undefined;
-	readonly WebhookParameters?: (WebhookParameters[] | undefined) | undefined;
+	readonly ContactParameters?: ContactParameters[] | undefined;
+	readonly FcParameters?: FcParameters[] | undefined;
+	readonly MnsParameters?: MnsParameters[] | undefined;
+	readonly SlsParameters?: SlsParameters[] | undefined;
+	readonly WebhookParameters?: WebhookParameters[] | undefined;
 	readonly LogicalId: string;
 }
 export class GroupMetricRule
@@ -99,14 +99,14 @@ export interface GroupMetricRuleComponentInputs {
 	readonly Namespace: string;
 	readonly RuleId: any | string;
 	readonly RuleName: string;
-	readonly Dimensions?: (string | undefined) | undefined;
-	readonly EffectiveInterval?: (string | undefined) | undefined;
-	readonly EmailSubject?: (string | undefined) | undefined;
-	readonly Interval?: (number | undefined) | undefined;
-	readonly NoEffectiveInterval?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly SilenceTime?: (number | undefined) | undefined;
-	readonly Webhook?: (string | undefined) | undefined;
+	readonly Dimensions?: string | undefined;
+	readonly EffectiveInterval?: string | undefined;
+	readonly EmailSubject?: string | undefined;
+	readonly Interval?: number | undefined;
+	readonly NoEffectiveInterval?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly SilenceTime?: number | undefined;
+	readonly Webhook?: string | undefined;
 	readonly LogicalId: string;
 }
 export class MetricRuleTargets
@@ -142,10 +142,10 @@ export interface MetricRuleTemplateComponentOutputs {
 }
 export interface MetricRuleTemplateComponentInputs {
 	readonly Name: string;
-	readonly AlertTemplates?: (AlertTemplates[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly RestVersion?: (number | undefined) | undefined;
-	readonly TemplateId?: (number | undefined) | undefined;
+	readonly AlertTemplates?: AlertTemplates[] | undefined;
+	readonly Description?: string | undefined;
+	readonly RestVersion?: number | undefined;
+	readonly TemplateId?: number | undefined;
 	readonly LogicalId: string;
 }
 export class MonitorGroup extends RosResource<MonitorGroupComponentInputs> implements MonitorGroupComponentOutputs {
@@ -159,7 +159,7 @@ export interface MonitorGroupComponentOutputs {
 }
 export interface MonitorGroupComponentInputs {
 	readonly GroupName: string;
-	readonly ContactGroups?: (string | undefined) | undefined;
+	readonly ContactGroups?: string | undefined;
 	readonly LogicalId: string;
 }
 export class MonitorGroupInstances
@@ -190,8 +190,8 @@ export interface MonitoringAgentProcessComponentOutputs {
 }
 export interface MonitoringAgentProcessComponentInputs {
 	readonly InstanceId: string;
-	readonly ProcessName?: (string | undefined) | undefined;
-	readonly ProcessUser?: (string | undefined) | undefined;
+	readonly ProcessName?: string | undefined;
+	readonly ProcessUser?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ResourceMetricRule
@@ -209,20 +209,20 @@ export interface ResourceMetricRuleComponentInputs {
 	readonly MetricName: string;
 	readonly Namespace: string;
 	readonly Resources: any;
-	readonly CompositeExpression?: (CompositeExpression | undefined) | undefined;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly EffectiveInterval?: (string | undefined) | undefined;
-	readonly EmailSubject?: (string | undefined) | undefined;
-	readonly Interval?: (number | undefined) | undefined;
-	readonly Labels?: (Labels[] | undefined) | undefined;
-	readonly NoDataPolicy?: (string | undefined) | undefined;
-	readonly NoEffectiveInterval?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly Prometheus?: (Prometheus | undefined) | undefined;
-	readonly RuleId?: (any | string) | undefined;
-	readonly RuleName?: (any | string) | undefined;
-	readonly SilenceTime?: (number | undefined) | undefined;
-	readonly Webhook?: (string | undefined) | undefined;
+	readonly CompositeExpression?: CompositeExpression | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly EffectiveInterval?: string | undefined;
+	readonly EmailSubject?: string | undefined;
+	readonly Interval?: number | undefined;
+	readonly Labels?: Labels[] | undefined;
+	readonly NoDataPolicy?: string | undefined;
+	readonly NoEffectiveInterval?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly Prometheus?: Prometheus | undefined;
+	readonly RuleId?: any | string;
+	readonly RuleName?: any | string;
+	readonly SilenceTime?: number | undefined;
+	readonly Webhook?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SiteMonitor extends RosResource<SiteMonitorComponentInputs> implements SiteMonitorComponentOutputs {
@@ -238,56 +238,56 @@ export interface SiteMonitorComponentInputs {
 	readonly Address: string;
 	readonly TaskName: string;
 	readonly TaskType: string;
-	readonly AlertIds?: (string[] | undefined) | undefined;
-	readonly Interval?: (number | undefined) | undefined;
-	readonly IspCities?: (IspCities[] | undefined) | undefined;
-	readonly OptionsJson?: (string | undefined) | undefined;
+	readonly AlertIds?: string[] | undefined;
+	readonly Interval?: number | undefined;
+	readonly IspCities?: IspCities[] | undefined;
+	readonly OptionsJson?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Channels {
-	readonly Mail?: (string | undefined) | undefined;
-	readonly AliIM?: (string | undefined) | undefined;
-	readonly DingWebHook?: (string | undefined) | undefined;
-	readonly SMS?: (string | undefined) | undefined;
+	readonly Mail?: string | undefined;
+	readonly AliIM?: string | undefined;
+	readonly DingWebHook?: string | undefined;
+	readonly SMS?: string | undefined;
 }
 export interface MatchExpress {
 	readonly TagValue: string;
 	readonly TagValueMatchFunction: string;
 }
 export interface EventPattern {
-	readonly NameList?: (any[] | undefined) | undefined;
-	readonly LevelList?: (any[] | undefined) | undefined;
-	readonly StatusList?: (any[] | undefined) | undefined;
-	readonly EventTypeList?: (any[] | undefined) | undefined;
-	readonly Product?: (string | undefined) | undefined;
+	readonly NameList?: any[] | undefined;
+	readonly LevelList?: any[] | undefined;
+	readonly StatusList?: any[] | undefined;
+	readonly EventTypeList?: any[] | undefined;
+	readonly Product?: string | undefined;
 }
 export interface ContactParameters {
-	readonly ContactGroupName?: (string | undefined) | undefined;
-	readonly Level?: (string | undefined) | undefined;
-	readonly Id?: (string | undefined) | undefined;
+	readonly ContactGroupName?: string | undefined;
+	readonly Level?: string | undefined;
+	readonly Id?: string | undefined;
 }
 export interface FcParameters {
-	readonly FunctionName?: (string | undefined) | undefined;
-	readonly ServiceName?: (string | undefined) | undefined;
-	readonly Region?: (string | undefined) | undefined;
-	readonly Id?: (string | undefined) | undefined;
+	readonly FunctionName?: string | undefined;
+	readonly ServiceName?: string | undefined;
+	readonly Region?: string | undefined;
+	readonly Id?: string | undefined;
 }
 export interface MnsParameters {
-	readonly Region?: (string | undefined) | undefined;
-	readonly Id?: (string | undefined) | undefined;
-	readonly Queue?: (string | undefined) | undefined;
+	readonly Region?: string | undefined;
+	readonly Id?: string | undefined;
+	readonly Queue?: string | undefined;
 }
 export interface SlsParameters {
-	readonly Project?: (string | undefined) | undefined;
-	readonly LogStore?: (string | undefined) | undefined;
-	readonly Region?: (string | undefined) | undefined;
-	readonly Id?: (string | undefined) | undefined;
+	readonly Project?: string | undefined;
+	readonly LogStore?: string | undefined;
+	readonly Region?: string | undefined;
+	readonly Id?: string | undefined;
 }
 export interface WebhookParameters {
-	readonly Id?: (string | undefined) | undefined;
-	readonly Method?: (string | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
+	readonly Id?: string | undefined;
+	readonly Method?: string | undefined;
+	readonly Protocol?: string | undefined;
+	readonly Url?: string | undefined;
 }
 export interface Critical {
 	readonly ComparisonOperator: string;
@@ -296,9 +296,9 @@ export interface Critical {
 	readonly Threshold: number;
 }
 export interface Escalations {
-	readonly Critical?: (Critical | undefined) | undefined;
-	readonly Info?: (Info | undefined) | undefined;
-	readonly Warn?: (Warn | undefined) | undefined;
+	readonly Critical?: Critical | undefined;
+	readonly Info?: Info | undefined;
+	readonly Warn?: Warn | undefined;
 }
 export interface Info {
 	readonly ComparisonOperator: string;
@@ -313,19 +313,19 @@ export interface Warn {
 	readonly Threshold: number;
 }
 export interface Targets {
-	readonly Level?: (string | undefined) | undefined;
+	readonly Level?: string | undefined;
 	readonly Id: string;
 	readonly Arn: string;
 }
 export interface AlertTemplates {
 	readonly MetricName: string;
 	readonly Category: string;
-	readonly Escalations?: (Escalations | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly Webhook?: (string | undefined) | undefined;
+	readonly Escalations?: Escalations | undefined;
+	readonly Period?: number | undefined;
+	readonly Webhook?: string | undefined;
 	readonly Namespace: string;
 	readonly RuleName: string;
-	readonly Selector?: (string | undefined) | undefined;
+	readonly Selector?: string | undefined;
 }
 export interface Instances {
 	readonly InstanceName: string;
@@ -334,15 +334,15 @@ export interface Instances {
 	readonly RegionId: string;
 }
 export interface Annotations {
-	readonly Value?: (string | undefined) | undefined;
-	readonly Key?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
+	readonly Key?: string | undefined;
 }
 export interface CompositeExpression {
 	readonly Times: number;
-	readonly ExpressionRaw?: (string | undefined) | undefined;
-	readonly ExpressionListJoin?: (string | undefined) | undefined;
+	readonly ExpressionRaw?: string | undefined;
+	readonly ExpressionListJoin?: string | undefined;
 	readonly Level: string;
-	readonly ExpressionList?: (ExpressionList[] | undefined) | undefined;
+	readonly ExpressionList?: ExpressionList[] | undefined;
 }
 export interface ExpressionList {
 	readonly MetricName: string;
@@ -352,11 +352,11 @@ export interface ExpressionList {
 	readonly Threshold: string;
 }
 export interface Labels {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface Prometheus {
-	readonly Annotations?: (Annotations[] | undefined) | undefined;
+	readonly Annotations?: Annotations[] | undefined;
 	readonly PromQL: string;
 	readonly Times: number;
 	readonly Level: string;

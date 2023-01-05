@@ -4,86 +4,94 @@
 
 import { assert, errors } from "@zorse/adk/core";
 
+const TOKEN_WRAP_SYMBOL = Symbol();
 const TOKEN_TAG_OPENING = "@@{";
 const TOKEN_TAG_CLOSING = "}@@";
 const TOKEN_NAME_REGEXP = /[^}]+/;
 const TOKEN_FULL_REGEXP = new RegExp(`${TOKEN_TAG_OPENING}(${TOKEN_NAME_REGEXP.source})${TOKEN_TAG_CLOSING}`);
 const TOKEN_LINE_REGEXP = new RegExp(`^${TOKEN_FULL_REGEXP.source}$`);
-
-const normalizeTokenName = (name?: Token.Name): (() => string) => {
-	const getName = name ? (typeof name === "function" ? name : () => name as string) : () => "<token>";
-	return () => getName();
-};
+const _wrappable = (value: any) =>
+	value &&
+	(typeof value === "object" || Array.isArray(value)) &&
+	!Token.IsToken(value) &&
+	!(TOKEN_WRAP_SYMBOL in value);
 
 /**
  * A Token is a value that's not available yet, but has an async resolver that can potentially resolve it later.
  * Token design is inspired by the AWS CDK Token/Lazy system.
  */
 export class Token<ConcreteType = any, UserDataType = any> {
-	private _root: Token;
 	private _data: UserDataType;
+	private _parent?: Token;
 	private _resolver: Token.Resolver<ConcreteType>;
-	public readonly name: () => string;
-	/** Wrap an existing Object and return Tokens wherever its properties are missing (a.k.a Tokenizing the Object) */
-	public constructor(opts: Token.WrapOptions<ConcreteType>);
-	/** Create a new Token object directly */
-	public constructor(opts?: Token.MakeOptions<ConcreteType, UserDataType>);
-	public constructor(opts: Token.Options = {}) {
-		this.name = normalizeTokenName(opts.name);
-		if ("wrap" in opts) {
-			return new Proxy(opts.wrap as any, {
-				get: (target, prop, receiver) => {
+	public readonly name: string;
+	public constructor(opts: Token.Options<ConcreteType, UserDataType> = {}) {
+		this.name = opts.name || "<token>";
+		if (opts.registry?.find(this.name)) {
+			return opts.registry.find(this.name) as any;
+		}
+		this._data = opts.data;
+		this._parent = opts.parent;
+		this._resolver = opts.resolver ? opts.resolver : (): ConcreteType => proxy;
+		const proxy: any = new Proxy(this, {
+			get(target, prop, receiver) {
+				if (prop === Symbol.toPrimitive) {
+					return () => target.serialize();
+				}
+				if (typeof prop === "symbol" || prop in target) {
+					return Token.Wrap(Reflect.get(target, prop, receiver), opts, target);
+				}
+				const name: string = target.name;
+				assert.true(errors.InvalidTokenName, TOKEN_NAME_REGEXP.test(name), TOKEN_NAME_REGEXP.source, name);
+				const nestedTokenName = `${name}["${prop}"]`;
+				const nestedTokenResolver = async () => {
+					const rootValue: any = await target.resolve();
+					return rootValue[prop];
+				};
+				return new Token({
+					name: nestedTokenName,
+					registry: opts.registry,
+					resolver: nestedTokenResolver,
+					parent: target,
+					data: opts.data,
+				});
+			},
+		});
+		opts.registry?.add(proxy);
+		return proxy;
+	}
+	/**
+	 * Wraps the given value so all its properties are Tokens. This is useful for creating a recursive Token from a plain object.
+	 * @param value The value to wrap
+	 * @param opts The options to use for the creations of sub-Tokens
+	 * @param root The root Token that owns this value (used for naming)
+	 * @returns The same object with all its properties wrapped in Tokens
+	 */
+	public static Wrap(value: any, opts?: Token.Options, root?: Token): any {
+		if (_wrappable(value)) {
+			Object.defineProperty(value, TOKEN_WRAP_SYMBOL, { value: true });
+			return new Proxy(value, {
+				get(target, prop, receiver) {
 					if (typeof prop === "symbol" || prop in target) {
-						return Reflect.get(target, prop, receiver);
+						return Token.Wrap(Reflect.get(target, prop, receiver), opts, root);
 					} else {
 						return new Token({
-							name: () => `${this.name()}["${prop}"]`,
-							registry: opts.registry,
-							resolver: opts.resolver,
-							data: opts.wrap,
-							root: this,
+							...opts,
+							name: `${root?.name ?? ""}["${prop}"]`,
 						});
 					}
 				},
-			}) as any;
-		} else {
-			if (opts.registry?.find(this.name())) {
-				return opts.registry.find(this.name()) as any;
-			}
-			this._root = opts.root;
-			this._data = opts.data;
-			this._resolver = opts.resolver ? opts.resolver : (): ConcreteType => proxy;
-			const proxy: any = new Proxy(this, {
-				get(target, prop, receiver) {
-					if (prop === Symbol.toPrimitive) {
-						return () => target.serialize();
-					}
-					if (typeof prop === "symbol" || prop in target) {
-						return Reflect.get(target, prop, receiver);
-					}
-					const name: string = target.name();
-					assert.true(errors.InvalidTokenName, TOKEN_NAME_REGEXP.test(name), TOKEN_NAME_REGEXP.source, name);
-					const nestedTokenName = `${name}["${prop}"]`;
-					const nestedTokenResolver = async () => {
-						const rootValue: any = await target.resolve();
-						return rootValue[prop];
-					};
-					return new Token({
-						name: nestedTokenName,
-						registry: opts.registry,
-						resolver: nestedTokenResolver,
-						data: opts.data,
-						root: target,
-					});
-				},
 			});
-			opts.registry?.add(proxy);
-			return proxy;
+		} else {
+			return value;
 		}
 	}
-	/** Returns the root Token this Token is originated from or "this" */
 	public get root(): Token {
-		return this._root;
+		let iterator: Token;
+		while ((iterator = this._parent)) {
+			return iterator;
+		}
+		return this;
 	}
 	/** Returns the user data associated with this Token */
 	public get data(): UserDataType {
@@ -105,7 +113,12 @@ export class Token<ConcreteType = any, UserDataType = any> {
 	}
 	/** Format is `@@{<name>/child/nested["<string or number>"]...}@@` */
 	public serialize(): string {
-		return `${TOKEN_TAG_OPENING}${this.name()}${TOKEN_TAG_CLOSING}`;
+		return `${TOKEN_TAG_OPENING}${this.name}${TOKEN_TAG_CLOSING}`;
+	}
+	/** Returns the accessors part of this Token's name */
+	public accessors(sep = "/"): string {
+		const accessors = [...this.name.matchAll(/\[[^\]]+\]+/g)].map((match) => JSON.parse(match[0].slice(1, -1)));
+		return accessors.join(sep);
 	}
 	/** Returns `true` if the entire string is a serialized Token */
 	public static IsToken(serialized: string): boolean;
@@ -133,32 +146,24 @@ export class Token<ConcreteType = any, UserDataType = any> {
 		const handler: ProxyHandler<object> = {
 			get(_target, property) {
 				assert.false(errors.InvalidTokenName, typeof property === "symbol", "Symbol");
-				names.push(`"${property as string}"`);
+				names.push(`${property as string}`);
 				return new Proxy({}, handler);
 			},
 		};
 		const proxy = new Proxy({}, handler);
 		cb(proxy as T);
-		const accessors = [...this.name().matchAll(/\[[^\]]+\]+/g)].map((match) => match[0].slice(1, -1));
-		return accessors.join("/").startsWith(names.join("/"));
+		return this.accessors().startsWith(names.join("/"));
 	}
 }
 
 export namespace Token {
-	export type Name = string | (() => string);
-	export type Options = MakeOptions | WrapOptions;
 	export type Resolver<ConcreteType = any> = (token: Token) => ConcreteType | Promise<ConcreteType>;
-	export interface BaseOptions<ConcreteType> {
+	export interface Options<ConcreteType = any, UserDataType = any> {
 		resolver?: Resolver<ConcreteType>;
 		registry?: Registry;
-		root?: Token;
-		name?: Name;
-	}
-	export interface MakeOptions<ConcreteType = any, UserDataType = any> extends BaseOptions<ConcreteType> {
+		parent?: Token;
+		name?: string;
 		data?: UserDataType;
-	}
-	export interface WrapOptions<ConcreteType = any> extends BaseOptions<ConcreteType> {
-		wrap: ConcreteType;
 	}
 
 	/**
@@ -166,12 +171,17 @@ export namespace Token {
 	 * Token Registry can also be used to recursively resolve Tokens and strings associated with them.
 	 */
 	export class Registry {
-		private readonly tokens: Set<Token> = new Set();
+		private readonly tokens = new Map<string, Token>();
 		public add(token: Token): void {
-			this.tokens.add(token);
+			this.tokens.set(token.name, token);
 		}
 		public find(name: string): Token | undefined {
-			return [...this.tokens].find((token) => token.name() === name);
+			return this.tokens.get(name);
+		}
+		public parse(encoded: string): Token[] {
+			const allTokensTags = encoded.matchAll(new RegExp(TOKEN_FULL_REGEXP, "g"));
+			const allTokensNames = new Set([...allTokensTags].map((match) => match[1]));
+			return [...allTokensNames].map((name) => this.find(name)).filter(Boolean);
 		}
 		/**
 		 * Resolves a string. If the entire string is a Token serialized name, it tries to find the token and resolve it.
@@ -187,14 +197,11 @@ export namespace Token {
 		public async resolve(token: Token): Promise<Token | any>;
 		public async resolve(arg: any): Promise<any> {
 			const _resolveString = async (text: string): Promise<string> => {
-				const allTokensTags = text.matchAll(new RegExp(TOKEN_FULL_REGEXP, "g"));
-				const allTokensNames = new Set([...allTokensTags].map((match) => match[1]));
-				for (const name of allTokensNames) {
-					const token = this.find(name);
-					if (token) {
-						const resolved = await token.resolve();
-						text = text.replace(new RegExp(`${TOKEN_TAG_OPENING}${name}${TOKEN_TAG_CLOSING}`, "g"), resolved);
-					}
+				const tokens = this.parse(text);
+				for (const token of tokens) {
+					const resolved = await token.resolve();
+					const replaceTag = `${TOKEN_TAG_OPENING}${token.name}${TOKEN_TAG_CLOSING}`;
+					text = text.split(replaceTag).join(resolved);
 				}
 				return text;
 			};

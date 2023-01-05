@@ -4,48 +4,47 @@ export class Manifests extends GdmResource<ManifestsComponentInputs> implements 
 	constructor(entity: ADKEntity, options: ManifestsComponentInputs) {
 		super(entity, options.name, "deploymentmanager.v2beta.Manifests", options);
 	}
-	public readonly config?: ConfigFile | undefined;
-	public readonly expandedConfig?: string | undefined;
-	public readonly imports?: ImportFile[] | undefined;
-	public readonly insertTime?: string | undefined;
-	public readonly layout?: string | undefined;
-	public readonly manifestSizeBytes?: string | undefined;
-	public readonly manifestSizeLimitBytes?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly config?: ConfigFile;
+	public readonly expandedConfig?: string;
+	public readonly imports?: ImportFile[];
+	public readonly insertTime?: string;
+	public readonly layout?: string;
+	public readonly manifestSizeBytes?: string;
+	public readonly manifestSizeLimitBytes?: string;
+	public readonly selfLink?: string;
 }
 export interface ManifestsComponentOutputs {
-	readonly config?: ConfigFile | undefined;
-	readonly expandedConfig?: string | undefined;
-	readonly imports?: ImportFile[] | undefined;
-	readonly insertTime?: string | undefined;
-	readonly layout?: string | undefined;
-	readonly manifestSizeBytes?: string | undefined;
-	readonly manifestSizeLimitBytes?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly config?: ConfigFile;
+	readonly expandedConfig?: string;
+	readonly imports?: ImportFile[];
+	readonly insertTime?: string;
+	readonly layout?: string;
+	readonly manifestSizeBytes?: string;
+	readonly manifestSizeLimitBytes?: string;
+	readonly selfLink?: string;
 }
 export interface ManifestsComponentInputs {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
-	readonly type: string;
 }
 export interface ConfigFile {
-	readonly content?: string | undefined;
+	readonly content?: string;
 }
 export interface ImportFile {
-	readonly content?: string | undefined;
-	readonly name?: string | undefined;
+	readonly content?: string;
+	readonly name?: string;
 }
 export interface Manifest {
-	readonly config?: ConfigFile | undefined;
-	readonly expandedConfig?: string | undefined;
-	readonly id?: string | undefined;
-	readonly imports?: ImportFile[] | undefined;
-	readonly insertTime?: string | undefined;
-	readonly layout?: string | undefined;
-	readonly manifestSizeBytes?: string | undefined;
-	readonly manifestSizeLimitBytes?: string | undefined;
-	readonly name?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly config?: ConfigFile;
+	readonly expandedConfig?: string;
+	readonly id?: string;
+	readonly imports?: ImportFile[];
+	readonly insertTime?: string;
+	readonly layout?: string;
+	readonly manifestSizeBytes?: string;
+	readonly manifestSizeLimitBytes?: string;
+	readonly name?: string;
+	readonly selfLink?: string;
 }
 export default {
 	Manifests: Manifests,

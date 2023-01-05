@@ -17,20 +17,20 @@ export interface AppComponentOutputs {
 }
 export interface AppComponentInputs {
 	readonly Name: string;
-	readonly AccessToken?: (string | undefined) | undefined;
-	readonly AutoBranchCreationConfig?: (AutoBranchCreationConfig | undefined) | undefined;
-	readonly BasicAuthConfig?: (BasicAuthConfig | undefined) | undefined;
-	readonly BuildSpec?: (string | undefined) | undefined;
-	readonly CustomHeaders?: (string | undefined) | undefined;
-	readonly CustomRules?: (CustomRule[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnableBranchAutoDeletion?: (boolean | undefined) | undefined;
-	readonly EnvironmentVariables?: (EnvironmentVariable[] | undefined) | undefined;
-	readonly IAMServiceRole?: (string | undefined) | undefined;
-	readonly OauthToken?: (string | undefined) | undefined;
-	readonly Platform?: (string | undefined) | undefined;
-	readonly Repository?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AccessToken?: string | undefined;
+	readonly AutoBranchCreationConfig?: AutoBranchCreationConfig | undefined;
+	readonly BasicAuthConfig?: BasicAuthConfig | undefined;
+	readonly BuildSpec?: string | undefined;
+	readonly CustomHeaders?: string | undefined;
+	readonly CustomRules?: CustomRule[] | undefined;
+	readonly Description?: string | undefined;
+	readonly EnableBranchAutoDeletion?: boolean | undefined;
+	readonly EnvironmentVariables?: EnvironmentVariable[] | undefined;
+	readonly IAMServiceRole?: string | undefined;
+	readonly OauthToken?: string | undefined;
+	readonly Platform?: string | undefined;
+	readonly Repository?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Branch extends CfnResource<BranchComponentInputs> implements BranchComponentOutputs {
@@ -47,17 +47,17 @@ export interface BranchComponentOutputs {
 export interface BranchComponentInputs {
 	readonly AppId: string;
 	readonly BranchName: string;
-	readonly BasicAuthConfig?: (BasicAuthConfig | undefined) | undefined;
-	readonly BuildSpec?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnableAutoBuild?: (boolean | undefined) | undefined;
-	readonly EnablePerformanceMode?: (boolean | undefined) | undefined;
-	readonly EnablePullRequestPreview?: (boolean | undefined) | undefined;
-	readonly EnvironmentVariables?: (EnvironmentVariable[] | undefined) | undefined;
-	readonly Framework?: (string | undefined) | undefined;
-	readonly PullRequestEnvironmentName?: (string | undefined) | undefined;
-	readonly Stage?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly BasicAuthConfig?: BasicAuthConfig | undefined;
+	readonly BuildSpec?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly EnableAutoBuild?: boolean | undefined;
+	readonly EnablePerformanceMode?: boolean | undefined;
+	readonly EnablePullRequestPreview?: boolean | undefined;
+	readonly EnvironmentVariables?: EnvironmentVariable[] | undefined;
+	readonly Framework?: string | undefined;
+	readonly PullRequestEnvironmentName?: string | undefined;
+	readonly Stage?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Domain extends CfnResource<DomainComponentInputs> implements DomainComponentOutputs {
@@ -83,33 +83,33 @@ export interface DomainComponentInputs {
 	readonly AppId: string;
 	readonly DomainName: string;
 	readonly SubDomainSettings: SubDomainSetting[];
-	readonly AutoSubDomainCreationPatterns?: string[] | undefined;
-	readonly AutoSubDomainIAMRole?: (string | undefined) | undefined;
-	readonly EnableAutoSubDomain?: boolean | undefined;
+	readonly AutoSubDomainCreationPatterns?: string[];
+	readonly AutoSubDomainIAMRole?: string | undefined;
+	readonly EnableAutoSubDomain?: boolean;
 	readonly LogicalId: string;
 }
 export interface AutoBranchCreationConfig {
-	readonly AutoBranchCreationPatterns?: (string[] | undefined) | undefined;
-	readonly BasicAuthConfig?: (BasicAuthConfig | undefined) | undefined;
-	readonly BuildSpec?: (string | undefined) | undefined;
-	readonly EnableAutoBranchCreation?: (boolean | undefined) | undefined;
-	readonly EnableAutoBuild?: (boolean | undefined) | undefined;
-	readonly EnablePerformanceMode?: (boolean | undefined) | undefined;
-	readonly EnablePullRequestPreview?: (boolean | undefined) | undefined;
-	readonly EnvironmentVariables?: (EnvironmentVariable[] | undefined) | undefined;
-	readonly Framework?: (string | undefined) | undefined;
-	readonly PullRequestEnvironmentName?: (string | undefined) | undefined;
-	readonly Stage?: (string | undefined) | undefined;
+	readonly AutoBranchCreationPatterns?: string[] | undefined;
+	readonly BasicAuthConfig?: BasicAuthConfig | undefined;
+	readonly BuildSpec?: string | undefined;
+	readonly EnableAutoBranchCreation?: boolean | undefined;
+	readonly EnableAutoBuild?: boolean | undefined;
+	readonly EnablePerformanceMode?: boolean | undefined;
+	readonly EnablePullRequestPreview?: boolean | undefined;
+	readonly EnvironmentVariables?: EnvironmentVariable[] | undefined;
+	readonly Framework?: string | undefined;
+	readonly PullRequestEnvironmentName?: string | undefined;
+	readonly Stage?: string | undefined;
 }
 export interface BasicAuthConfig {
-	readonly EnableBasicAuth?: (boolean | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly Username?: (string | undefined) | undefined;
+	readonly EnableBasicAuth?: boolean | undefined;
+	readonly Password?: string | undefined;
+	readonly Username?: string | undefined;
 }
 export interface CustomRule {
-	readonly Condition?: (string | undefined) | undefined;
+	readonly Condition?: string | undefined;
 	readonly Source: string;
-	readonly Status?: (string | undefined) | undefined;
+	readonly Status?: string | undefined;
 	readonly Target: string;
 }
 export interface EnvironmentVariable {

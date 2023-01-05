@@ -14,11 +14,11 @@ export interface controllersComponentOutputs {
 	readonly type: "Microsoft.DevSpaces/controllers";
 }
 export interface controllersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ControllerProperties;
 	readonly sku: Sku;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export function listConnectionDetails(
 	resource: controllers,
@@ -33,18 +33,16 @@ export function listConnectionDetails(
 	throw new Error("not implemented");
 }
 export interface ControllerConnectionDetails {
-	readonly orchestratorSpecificConnectionDetails?: OrchestratorSpecificConnectionDetails | undefined;
+	readonly orchestratorSpecificConnectionDetails?: OrchestratorSpecificConnectionDetails;
 }
 export interface ControllerConnectionDetailsList {
-	readonly connectionDetailsList?: ControllerConnectionDetails[] | undefined;
+	readonly connectionDetailsList?: ControllerConnectionDetails[];
 }
 export interface ControllerProperties {
-	readonly dataPlaneFqdn?: string | undefined;
-	readonly hostSuffix?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Updating")
-		| undefined;
-	readonly targetContainerHostApiServerFqdn?: string | undefined;
+	readonly dataPlaneFqdn?: string;
+	readonly hostSuffix?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly targetContainerHostApiServerFqdn?: string;
 	readonly targetContainerHostCredentialsBase64: string;
 	readonly targetContainerHostResourceId: string;
 }
@@ -54,10 +52,10 @@ export interface ListConnectionDetailsParameters {
 export interface OrchestratorSpecificConnectionDetails {}
 export interface Sku {
 	readonly name: "S1";
-	readonly tier?: "Standard" | undefined;
+	readonly tier?: "Standard";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	controllers: controllers,

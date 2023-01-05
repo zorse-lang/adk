@@ -15,16 +15,16 @@ export interface invoicesComponentOutputs {
 }
 export interface invoicesComponentInputs {
 	readonly name: string;
-	readonly properties?: InvoiceProperties | undefined;
+	readonly properties?: InvoiceProperties;
 }
 export interface DownloadUrl {
-	readonly expiryTime?: string | undefined;
-	readonly url?: string | undefined;
+	readonly expiryTime?: string;
+	readonly url?: string;
 }
 export interface InvoiceProperties {
-	readonly downloadUrl?: DownloadUrl | undefined;
-	readonly invoicePeriodEndDate?: string | undefined;
-	readonly invoicePeriodStartDate?: string | undefined;
+	readonly downloadUrl?: DownloadUrl;
+	readonly invoicePeriodEndDate?: string;
+	readonly invoicePeriodStartDate?: string;
 }
 export default {
 	invoices: invoices,

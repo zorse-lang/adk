@@ -7,48 +7,47 @@ export class ProjectsLocationsBackups
 	constructor(entity: ADKEntity, options: ProjectsLocationsBackupsComponentInputs) {
 		super(entity, options.name, "file.v1beta1.ProjectsLocationsBackups", options);
 	}
-	public readonly capacityGb?: string | undefined;
-	public readonly createTime?: string | undefined;
-	public readonly downloadBytes?: string | undefined;
-	public readonly satisfiesPzs?: boolean | undefined;
-	public readonly sourceInstanceTier?: string | undefined;
-	public readonly state?: string | undefined;
-	public readonly storageBytes?: string | undefined;
+	public readonly capacityGb?: string;
+	public readonly createTime?: string;
+	public readonly downloadBytes?: string;
+	public readonly satisfiesPzs?: boolean;
+	public readonly sourceInstanceTier?: string;
+	public readonly state?: string;
+	public readonly storageBytes?: string;
 }
 export interface ProjectsLocationsBackupsComponentOutputs {
-	readonly capacityGb?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly downloadBytes?: string | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly sourceInstanceTier?: string | undefined;
-	readonly state?: string | undefined;
-	readonly storageBytes?: string | undefined;
+	readonly capacityGb?: string;
+	readonly createTime?: string;
+	readonly downloadBytes?: string;
+	readonly satisfiesPzs?: boolean;
+	readonly sourceInstanceTier?: string;
+	readonly state?: string;
+	readonly storageBytes?: string;
 }
 export interface ProjectsLocationsBackupsComponentInputs {
 	readonly backupId: string;
-	readonly description?: string | undefined;
-	readonly kmsKeyName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly description?: string;
+	readonly kmsKeyName?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
 	readonly parent: string;
-	readonly sourceFileShare?: string | undefined;
-	readonly sourceInstance?: string | undefined;
-	readonly type: string;
+	readonly sourceFileShare?: string;
+	readonly sourceInstance?: string;
 }
 export interface Backup {
-	readonly capacityGb?: string | undefined;
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly downloadBytes?: string | undefined;
-	readonly kmsKeyName?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly sourceFileShare?: string | undefined;
-	readonly sourceInstance?: string | undefined;
-	readonly sourceInstanceTier?: string | undefined;
-	readonly state?: string | undefined;
-	readonly storageBytes?: string | undefined;
+	readonly capacityGb?: string;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly downloadBytes?: string;
+	readonly kmsKeyName?: string;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly satisfiesPzs?: boolean;
+	readonly sourceFileShare?: string;
+	readonly sourceInstance?: string;
+	readonly sourceInstanceTier?: string;
+	readonly state?: string;
+	readonly storageBytes?: string;
 }
 export default {
 	ProjectsLocationsBackups: ProjectsLocationsBackups,

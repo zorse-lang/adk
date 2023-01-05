@@ -15,8 +15,8 @@ export interface agreementsComponentOutputs {
 }
 export interface agreementsComponentInputs {
 	readonly name: string;
-	readonly properties?: ConfluentAgreementProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConfluentAgreementProperties;
+	readonly systemData?: SystemData;
 }
 export class organizations extends ArmResource<organizationsComponentInputs> implements organizationsComponentOutputs {
 	constructor(entity: ADKEntity, options: organizationsComponentInputs) {
@@ -32,21 +32,21 @@ export interface organizationsComponentOutputs {
 	readonly type: "Microsoft.Confluent/organizations";
 }
 export interface organizationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: OrganizationResourceProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: OrganizationResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: OrganizationResourceTags;
 }
 export interface ConfluentAgreementProperties {
-	readonly accepted?: boolean | undefined;
-	readonly licenseTextLink?: string | undefined;
-	readonly plan?: string | undefined;
-	readonly privacyPolicyLink?: string | undefined;
-	readonly product?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly retrieveDatetime?: string | undefined;
-	readonly signature?: string | undefined;
+	readonly accepted?: boolean;
+	readonly licenseTextLink?: string;
+	readonly plan?: string;
+	readonly privacyPolicyLink?: string;
+	readonly product?: string;
+	readonly publisher?: string;
+	readonly retrieveDatetime?: string;
+	readonly signature?: string;
 }
 export interface OfferDetail {
 	readonly id: string;
@@ -54,56 +54,50 @@ export interface OfferDetail {
 	readonly planName: string;
 	readonly publisherId: string;
 	readonly status?:
-		| (
-				| "Failed"
-				| "InProgress"
-				| "PendingFulfillmentStart"
-				| "Reinstated"
-				| "Started"
-				| "Subscribed"
-				| "Succeeded"
-				| "Suspended"
-				| "Unsubscribed"
-				| "Updating"
-		  )
-		| undefined;
+		| "Failed"
+		| "InProgress"
+		| "PendingFulfillmentStart"
+		| "Reinstated"
+		| "Started"
+		| "Subscribed"
+		| "Succeeded"
+		| "Suspended"
+		| "Unsubscribed"
+		| "Updating";
 	readonly termUnit: string;
 }
 export interface OrganizationResourceProperties {
-	readonly createdTime?: string | undefined;
+	readonly createdTime?: string;
 	readonly offerDetail: OfferDetail;
-	readonly organizationId?: string | undefined;
+	readonly organizationId?: string;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly ssoUrl?: string | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Succeeded"
+		| "Updating";
+	readonly ssoUrl?: string;
 	readonly userDetail: UserDetail;
 }
 export interface OrganizationResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface UserDetail {
 	readonly emailAddress: string;
-	readonly firstName?: string | undefined;
-	readonly lastName?: string | undefined;
+	readonly firstName?: string;
+	readonly lastName?: string;
 }
 export default {
 	agreements: agreements,

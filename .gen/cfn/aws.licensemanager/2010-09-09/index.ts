@@ -12,12 +12,12 @@ export interface GrantComponentOutputs {
 	readonly Version: string;
 }
 export interface GrantComponentInputs {
-	readonly AllowedOperations?: (string[] | undefined) | undefined;
-	readonly GrantName?: (string | undefined) | undefined;
-	readonly HomeRegion?: (string | undefined) | undefined;
-	readonly LicenseArn?: (string | undefined) | undefined;
-	readonly Principals?: (string[] | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
+	readonly AllowedOperations?: string[] | undefined;
+	readonly GrantName?: string | undefined;
+	readonly HomeRegion?: string | undefined;
+	readonly LicenseArn?: string | undefined;
+	readonly Principals?: string[] | undefined;
+	readonly Status?: string | undefined;
 	readonly LogicalId: string;
 }
 export class License extends CfnResource<LicenseComponentInputs> implements LicenseComponentOutputs {
@@ -39,10 +39,10 @@ export interface LicenseComponentInputs {
 	readonly LicenseName: string;
 	readonly ProductName: string;
 	readonly Validity: ValidityDateFormat;
-	readonly Beneficiary?: (string | undefined) | undefined;
-	readonly LicenseMetadata?: (Metadata[] | undefined) | undefined;
-	readonly ProductSKU?: (string | undefined) | undefined;
-	readonly Status?: (string | undefined) | undefined;
+	readonly Beneficiary?: string | undefined;
+	readonly LicenseMetadata?: Metadata[] | undefined;
+	readonly ProductSKU?: string | undefined;
+	readonly Status?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface BorrowConfiguration {
@@ -50,21 +50,21 @@ export interface BorrowConfiguration {
 	readonly MaxTimeToLiveInMinutes: number;
 }
 export interface ConsumptionConfiguration {
-	readonly BorrowConfiguration?: (BorrowConfiguration | undefined) | undefined;
-	readonly ProvisionalConfiguration?: (ProvisionalConfiguration | undefined) | undefined;
-	readonly RenewType?: (string | undefined) | undefined;
+	readonly BorrowConfiguration?: BorrowConfiguration | undefined;
+	readonly ProvisionalConfiguration?: ProvisionalConfiguration | undefined;
+	readonly RenewType?: string | undefined;
 }
 export interface Entitlement {
-	readonly AllowCheckIn?: (boolean | undefined) | undefined;
-	readonly MaxCount?: (number | undefined) | undefined;
+	readonly AllowCheckIn?: boolean | undefined;
+	readonly MaxCount?: number | undefined;
 	readonly Name: string;
-	readonly Overage?: (boolean | undefined) | undefined;
+	readonly Overage?: boolean | undefined;
 	readonly Unit: string;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 }
 export interface IssuerData {
 	readonly Name: string;
-	readonly SignKey?: (string | undefined) | undefined;
+	readonly SignKey?: string | undefined;
 }
 export interface Metadata {
 	readonly Name: string;

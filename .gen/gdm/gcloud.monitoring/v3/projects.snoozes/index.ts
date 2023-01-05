@@ -15,10 +15,9 @@ export interface ProjectsSnoozesComponentInputs {
 	readonly interval: TimeInterval;
 	readonly name: string;
 	readonly parent: string;
-	readonly type: string;
 }
 export interface Criteria {
-	readonly policies?: string[] | undefined;
+	readonly policies?: string[];
 }
 export interface Snooze {
 	readonly criteria: Criteria;
@@ -28,7 +27,7 @@ export interface Snooze {
 }
 export interface TimeInterval {
 	readonly endTime: string;
-	readonly startTime?: string | undefined;
+	readonly startTime?: string;
 }
 export default {
 	ProjectsSnoozes: ProjectsSnoozes,

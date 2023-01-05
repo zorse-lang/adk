@@ -17,8 +17,8 @@ export interface AccountComponentOutputs {
 }
 export interface AccountComponentInputs {
 	readonly DisplayName: any | string;
-	readonly FolderId?: (any | string) | undefined;
-	readonly PayerAccountId?: (string | undefined) | undefined;
+	readonly FolderId?: any | string;
+	readonly PayerAccountId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ControlPolicy extends RosResource<ControlPolicyComponentInputs> implements ControlPolicyComponentOutputs {
@@ -38,7 +38,7 @@ export interface ControlPolicyComponentInputs {
 	readonly ControlPolicyName: any | string;
 	readonly EffectScope: any | string;
 	readonly PolicyDocument: any | string;
-	readonly Description?: (any | string) | undefined;
+	readonly Description?: any | string;
 	readonly LogicalId: string;
 }
 export class ControlPolicyAttachment
@@ -75,7 +75,7 @@ export interface FolderComponentOutputs {
 }
 export interface FolderComponentInputs {
 	readonly FolderName: any | string;
-	readonly ParentFolderId?: (any | string) | undefined;
+	readonly ParentFolderId?: any | string;
 	readonly LogicalId: string;
 }
 export class Handshake extends RosResource<HandshakeComponentInputs> implements HandshakeComponentOutputs {
@@ -96,7 +96,7 @@ export interface HandshakeComponentOutputs {
 export interface HandshakeComponentInputs {
 	readonly TargetEntity: any | string;
 	readonly TargetType: any | string;
-	readonly Note?: (any | string) | undefined;
+	readonly Note?: any | string;
 	readonly LogicalId: string;
 }
 export class PolicyAttachment
@@ -171,8 +171,8 @@ export interface ResourceShareComponentOutputs {
 }
 export interface ResourceShareComponentInputs {
 	readonly ResourceShareName: string;
-	readonly Resources?: (Resources[] | undefined) | undefined;
-	readonly Targets?: (string[] | undefined) | undefined;
+	readonly Resources?: Resources[] | undefined;
+	readonly Targets?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export interface Resources {

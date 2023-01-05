@@ -19,32 +19,32 @@ export interface workbooktemplatesComponentOutputs {
 export interface workbooktemplatesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WorkbookTemplateProperties | undefined;
-	readonly tags?: WorkbookTemplateResourceTags | undefined;
+	readonly properties?: WorkbookTemplateProperties;
+	readonly tags?: WorkbookTemplateResourceTags;
 }
 export interface WorkbookTemplateGallery {
-	readonly category?: string | undefined;
-	readonly name?: string | undefined;
-	readonly order?: number | undefined;
-	readonly resourceType?: string | undefined;
-	readonly type?: string | undefined;
+	readonly category?: string;
+	readonly name?: string;
+	readonly order?: number;
+	readonly resourceType?: string;
+	readonly type?: string;
 }
 export interface WorkbookTemplateLocalizedGallery {
-	readonly galleries?: WorkbookTemplateGallery[] | undefined;
-	readonly templateData?: any | undefined;
+	readonly galleries?: WorkbookTemplateGallery[];
+	readonly templateData?: any;
 }
 export interface WorkbookTemplateProperties {
-	readonly author?: string | undefined;
+	readonly author?: string;
 	readonly galleries: WorkbookTemplateGallery[];
-	readonly localized?: WorkbookTemplatePropertiesLocalized | undefined;
-	readonly priority?: number | undefined;
+	readonly localized?: WorkbookTemplatePropertiesLocalized;
+	readonly priority?: number;
 	readonly templateData: any;
 }
 export interface WorkbookTemplatePropertiesLocalized {
-	readonly "[ key: string ]"?: WorkbookTemplateLocalizedGallery[] | undefined;
+	readonly [key: string]: WorkbookTemplateLocalizedGallery[];
 }
 export interface WorkbookTemplateResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	workbooktemplates: workbooktemplates,

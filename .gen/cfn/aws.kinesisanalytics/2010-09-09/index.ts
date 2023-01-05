@@ -8,9 +8,9 @@ export class Application extends CfnResource<ApplicationComponentInputs> impleme
 export interface ApplicationComponentOutputs {}
 export interface ApplicationComponentInputs {
 	readonly Inputs: Input[];
-	readonly ApplicationCode?: (string | undefined) | undefined;
-	readonly ApplicationDescription?: (string | undefined) | undefined;
-	readonly ApplicationName?: (string | undefined) | undefined;
+	readonly ApplicationCode?: string | undefined;
+	readonly ApplicationDescription?: string | undefined;
+	readonly ApplicationName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ApplicationOutput
@@ -46,11 +46,11 @@ export interface CSVMappingParameters {
 	readonly RecordRowDelimiter: string;
 }
 export interface Input {
-	readonly InputParallelism?: (InputParallelism | undefined) | undefined;
-	readonly InputProcessingConfiguration?: (InputProcessingConfiguration | undefined) | undefined;
+	readonly InputParallelism?: InputParallelism | undefined;
+	readonly InputProcessingConfiguration?: InputProcessingConfiguration | undefined;
 	readonly InputSchema: InputSchema;
-	readonly KinesisFirehoseInput?: (KinesisFirehoseInput | undefined) | undefined;
-	readonly KinesisStreamsInput?: (KinesisStreamsInput | undefined) | undefined;
+	readonly KinesisFirehoseInput?: KinesisFirehoseInput | undefined;
+	readonly KinesisStreamsInput?: KinesisStreamsInput | undefined;
 	readonly NamePrefix: string;
 }
 export interface InputLambdaProcessor {
@@ -58,14 +58,14 @@ export interface InputLambdaProcessor {
 	readonly RoleARN: string;
 }
 export interface InputParallelism {
-	readonly Count?: (number | undefined) | undefined;
+	readonly Count?: number | undefined;
 }
 export interface InputProcessingConfiguration {
-	readonly InputLambdaProcessor?: (InputLambdaProcessor | undefined) | undefined;
+	readonly InputLambdaProcessor?: InputLambdaProcessor | undefined;
 }
 export interface InputSchema {
 	readonly RecordColumns: RecordColumn[];
-	readonly RecordEncoding?: (string | undefined) | undefined;
+	readonly RecordEncoding?: string | undefined;
 	readonly RecordFormat: RecordFormat;
 }
 export interface JSONMappingParameters {
@@ -80,20 +80,20 @@ export interface KinesisStreamsInput {
 	readonly RoleARN: string;
 }
 export interface MappingParameters {
-	readonly CSVMappingParameters?: (CSVMappingParameters | undefined) | undefined;
-	readonly JSONMappingParameters?: (JSONMappingParameters | undefined) | undefined;
+	readonly CSVMappingParameters?: CSVMappingParameters | undefined;
+	readonly JSONMappingParameters?: JSONMappingParameters | undefined;
 }
 export interface RecordColumn {
-	readonly Mapping?: (string | undefined) | undefined;
+	readonly Mapping?: string | undefined;
 	readonly Name: string;
 	readonly SqlType: string;
 }
 export interface RecordFormat {
-	readonly MappingParameters?: (MappingParameters | undefined) | undefined;
+	readonly MappingParameters?: MappingParameters | undefined;
 	readonly RecordFormatType: string;
 }
 export interface DestinationSchema {
-	readonly RecordFormatType?: (string | undefined) | undefined;
+	readonly RecordFormatType?: string | undefined;
 }
 export interface KinesisFirehoseOutput {
 	readonly ResourceARN: string;
@@ -109,19 +109,19 @@ export interface LambdaOutput {
 }
 export interface Output {
 	readonly DestinationSchema: DestinationSchema;
-	readonly KinesisFirehoseOutput?: (KinesisFirehoseOutput | undefined) | undefined;
-	readonly KinesisStreamsOutput?: (KinesisStreamsOutput | undefined) | undefined;
-	readonly LambdaOutput?: (LambdaOutput | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly KinesisFirehoseOutput?: KinesisFirehoseOutput | undefined;
+	readonly KinesisStreamsOutput?: KinesisStreamsOutput | undefined;
+	readonly LambdaOutput?: LambdaOutput | undefined;
+	readonly Name?: string | undefined;
 }
 export interface ReferenceDataSource {
 	readonly ReferenceSchema: ReferenceSchema;
-	readonly S3ReferenceDataSource?: (S3ReferenceDataSource | undefined) | undefined;
-	readonly TableName?: (string | undefined) | undefined;
+	readonly S3ReferenceDataSource?: S3ReferenceDataSource | undefined;
+	readonly TableName?: string | undefined;
 }
 export interface ReferenceSchema {
 	readonly RecordColumns: RecordColumn[];
-	readonly RecordEncoding?: (string | undefined) | undefined;
+	readonly RecordEncoding?: string | undefined;
 	readonly RecordFormat: RecordFormat;
 }
 export interface S3ReferenceDataSource {

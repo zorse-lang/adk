@@ -14,12 +14,12 @@ export interface mediaservicesComponentOutputs {
 	readonly type: "Microsoft.Media/mediaservices";
 }
 export interface mediaservicesComponentInputs {
-	readonly identity?: MediaServiceIdentity | undefined;
+	readonly identity?: MediaServiceIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MediaServiceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: MediaServiceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class mediaservices_privateEndpointConnections
 	extends ArmResource<mediaservices_privateEndpointConnectionsComponentInputs>
@@ -39,7 +39,7 @@ export interface mediaservices_privateEndpointConnectionsComponentOutputs {
 }
 export interface mediaservices_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class mediaservices_privateLinkResources
 	extends ArmResource<mediaservices_privateLinkResourcesComponentInputs>
@@ -59,7 +59,7 @@ export interface mediaservices_privateLinkResourcesComponentOutputs {
 }
 export interface mediaservices_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export function listEdgePolicies(resource: mediaservices, input: ListEdgePoliciesInput): EdgePolicies {
 	if (resource.apiVersion !== "2021-05-01") {
@@ -71,81 +71,81 @@ export function listEdgePolicies(resource: mediaservices, input: ListEdgePolicie
 	throw new Error("not implemented");
 }
 export interface AccessControl {
-	readonly defaultAction?: ("Allow" | "Deny") | undefined;
-	readonly ipAllowList?: string[] | undefined;
+	readonly defaultAction?: "Allow" | "Deny";
+	readonly ipAllowList?: string[];
 }
 export interface AccountEncryption {
-	readonly keyVaultProperties?: KeyVaultProperties | undefined;
+	readonly keyVaultProperties?: KeyVaultProperties;
 	readonly type: "CustomerKey" | "SystemKey";
 }
 export interface EdgePolicies {
-	readonly usageDataCollectionPolicy?: EdgeUsageDataCollectionPolicy | undefined;
+	readonly usageDataCollectionPolicy?: EdgeUsageDataCollectionPolicy;
 }
 export interface EdgeUsageDataCollectionPolicy {
-	readonly dataCollectionFrequency?: string | undefined;
-	readonly dataReportingFrequency?: string | undefined;
-	readonly eventHubDetails?: EdgeUsageDataEventHub | undefined;
-	readonly maxAllowedUnreportedUsageDuration?: string | undefined;
+	readonly dataCollectionFrequency?: string;
+	readonly dataReportingFrequency?: string;
+	readonly eventHubDetails?: EdgeUsageDataEventHub;
+	readonly maxAllowedUnreportedUsageDuration?: string;
 }
 export interface EdgeUsageDataEventHub {
-	readonly name?: string | undefined;
-	readonly namespace?: string | undefined;
-	readonly token?: string | undefined;
+	readonly name?: string;
+	readonly namespace?: string;
+	readonly token?: string;
 }
 export interface KeyDelivery {
-	readonly accessControl?: AccessControl | undefined;
+	readonly accessControl?: AccessControl;
 }
 export interface KeyVaultProperties {
-	readonly currentKeyIdentifier?: string | undefined;
-	readonly keyIdentifier?: string | undefined;
+	readonly currentKeyIdentifier?: string;
+	readonly keyIdentifier?: string;
 }
 export interface ListEdgePoliciesInput {
-	readonly deviceId?: string | undefined;
+	readonly deviceId?: string;
 }
 export interface MediaServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned";
 }
 export interface MediaServiceProperties {
-	readonly encryption?: AccountEncryption | undefined;
-	readonly keyDelivery?: KeyDelivery | undefined;
-	readonly mediaServiceId?: string | undefined;
-	readonly storageAccounts?: StorageAccount[] | undefined;
-	readonly storageAuthentication?: ("ManagedIdentity" | "System") | undefined;
+	readonly encryption?: AccountEncryption;
+	readonly keyDelivery?: KeyDelivery;
+	readonly mediaServiceId?: string;
+	readonly storageAccounts?: StorageAccount[];
+	readonly storageAuthentication?: "ManagedIdentity" | "System";
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface StorageAccount {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly type: "Primary" | "Secondary";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	mediaservices: mediaservices,

@@ -17,7 +17,7 @@ export interface workspaces_savedSearchesComponentOutputs {
 	readonly type: "Microsoft.OperationalInsights/workspaces/savedSearches";
 }
 export interface workspaces_savedSearchesComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
 	readonly properties: SavedSearchProperties;
 }
@@ -44,10 +44,10 @@ export interface workspaces_storageInsightConfigsComponentOutputs {
 	readonly type: "Microsoft.OperationalInsights/workspaces/storageInsightConfigs";
 }
 export interface workspaces_storageInsightConfigsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: StorageInsightProperties | undefined;
-	readonly tags?: ProxyResourceTags | undefined;
+	readonly properties?: StorageInsightProperties;
+	readonly tags?: ProxyResourceTags;
 }
 export function listKeys(resource: ArmResource): SharedKeys {
 	if (resource.apiVersion !== "2015-03-20") {
@@ -59,31 +59,31 @@ export function listKeys(resource: ArmResource): SharedKeys {
 	throw new Error("not implemented");
 }
 export interface ProxyResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SavedSearchProperties {
 	readonly category: string;
 	readonly displayName: string;
 	readonly query: string;
-	readonly tags?: Tag[] | undefined;
-	readonly version?: number | undefined;
+	readonly tags?: Tag[];
+	readonly version?: number;
 }
 export interface SharedKeys {
-	readonly primarySharedKey?: string | undefined;
-	readonly secondarySharedKey?: string | undefined;
+	readonly primarySharedKey?: string;
+	readonly secondarySharedKey?: string;
 }
 export interface StorageAccount {
 	readonly id: string;
 	readonly key: string;
 }
 export interface StorageInsightProperties {
-	readonly containers?: string[] | undefined;
-	readonly status?: StorageInsightStatus | undefined;
+	readonly containers?: string[];
+	readonly status?: StorageInsightStatus;
 	readonly storageAccount: StorageAccount;
-	readonly tables?: string[] | undefined;
+	readonly tables?: string[];
 }
 export interface StorageInsightStatus {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly state: "ERROR" | "OK";
 }
 export interface Tag {

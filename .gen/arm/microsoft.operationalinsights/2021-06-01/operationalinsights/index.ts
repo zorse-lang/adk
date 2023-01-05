@@ -14,12 +14,12 @@ export interface clustersComponentOutputs {
 	readonly type: "Microsoft.OperationalInsights/clusters";
 }
 export interface clustersComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
-	readonly sku?: ClusterSku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ClusterProperties;
+	readonly sku?: ClusterSku;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces extends ArmResource<workspacesComponentInputs> implements workspacesComponentOutputs {
 	constructor(entity: ADKEntity, options: workspacesComponentInputs) {
@@ -35,100 +35,114 @@ export interface workspacesComponentOutputs {
 	readonly type: "Microsoft.OperationalInsights/workspaces";
 }
 export interface workspacesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WorkspaceProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: WorkspaceProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AssociatedWorkspace {
-	readonly associateDate?: string | undefined;
-	readonly resourceId?: string | undefined;
-	readonly workspaceId?: string | undefined;
-	readonly workspaceName?: string | undefined;
+	readonly associateDate?: string;
+	readonly resourceId?: string;
+	readonly workspaceId?: string;
+	readonly workspaceName?: string;
 }
 export interface CapacityReservationProperties {
-	readonly lastSkuUpdate?: string | undefined;
-	readonly minCapacity?: number | undefined;
+	readonly lastSkuUpdate?: string;
+	readonly minCapacity?: number;
 }
 export interface ClusterProperties {
-	readonly associatedWorkspaces?: AssociatedWorkspace[] | undefined;
-	readonly billingType?: ("Cluster" | "Workspaces") | undefined;
-	readonly capacityReservationProperties?: CapacityReservationProperties | undefined;
-	readonly clusterId?: string | undefined;
-	readonly createdDate?: string | undefined;
-	readonly isAvailabilityZonesEnabled?: boolean | undefined;
-	readonly isDoubleEncryptionEnabled?: boolean | undefined;
-	readonly keyVaultProperties?: KeyVaultProperties | undefined;
-	readonly lastModifiedDate?: string | undefined;
+	readonly associatedWorkspaces?: AssociatedWorkspace[];
+	readonly billingType?: "Cluster" | "Workspaces";
+	readonly capacityReservationProperties?: CapacityReservationProperties;
+	readonly clusterId?: string;
+	readonly createdDate?: string;
+	readonly isAvailabilityZonesEnabled?: boolean;
+	readonly isDoubleEncryptionEnabled?: boolean;
+	readonly keyVaultProperties?: KeyVaultProperties;
+	readonly lastModifiedDate?: string;
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "ProvisioningAccount" | "Succeeded" | "Updating")
-		| undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "ProvisioningAccount"
+		| "Succeeded"
+		| "Updating";
 }
 export interface ClusterSku {
-	readonly capacity?: number | undefined;
-	readonly name?: "CapacityReservation" | undefined;
+	readonly capacity?: number;
+	readonly name?: "CapacityReservation";
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned";
-	readonly userAssignedIdentities?: IdentityUserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: IdentityUserAssignedIdentities;
 }
 export interface IdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserIdentityProperties | undefined;
+	readonly [key: string]: UserIdentityProperties;
 }
 export interface KeyVaultProperties {
-	readonly keyName?: string | undefined;
-	readonly keyRsaSize?: number | undefined;
-	readonly keyVaultUri?: string | undefined;
-	readonly keyVersion?: string | undefined;
+	readonly keyName?: string;
+	readonly keyRsaSize?: number;
+	readonly keyVaultUri?: string;
+	readonly keyVersion?: string;
 }
 export interface PrivateLinkScopedResource {
-	readonly resourceId?: string | undefined;
-	readonly scopeId?: string | undefined;
+	readonly resourceId?: string;
+	readonly scopeId?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserIdentityProperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface WorkspaceCapping {
-	readonly dailyQuotaGb?: number | undefined;
+	readonly dailyQuotaGb?: number;
 	readonly dataIngestionStatus?:
-		| ("ApproachingQuota" | "ForceOff" | "ForceOn" | "OverQuota" | "RespectQuota" | "SubscriptionSuspended")
-		| undefined;
-	readonly quotaNextResetTime?: string | undefined;
+		| "ApproachingQuota"
+		| "ForceOff"
+		| "ForceOn"
+		| "OverQuota"
+		| "RespectQuota"
+		| "SubscriptionSuspended";
+	readonly quotaNextResetTime?: string;
 }
 export interface WorkspaceFeatures {
-	readonly clusterResourceId?: string | undefined;
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly enableDataExport?: boolean | undefined;
-	readonly enableLogAccessUsingOnlyResourcePermissions?: boolean | undefined;
-	readonly immediatePurgeDataOn30Days?: boolean | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly clusterResourceId?: string;
+	readonly disableLocalAuth?: boolean;
+	readonly enableDataExport?: boolean;
+	readonly enableLogAccessUsingOnlyResourcePermissions?: boolean;
+	readonly immediatePurgeDataOn30Days?: boolean;
+	readonly [key: string]: any;
 }
 export interface WorkspaceProperties {
-	readonly createdDate?: string | undefined;
-	readonly customerId?: string | undefined;
-	readonly features?: WorkspaceFeatures | undefined;
-	readonly forceCmkForQuery?: boolean | undefined;
-	readonly modifiedDate?: string | undefined;
-	readonly privateLinkScopedResources?: PrivateLinkScopedResource[] | undefined;
+	readonly createdDate?: string;
+	readonly customerId?: string;
+	readonly features?: WorkspaceFeatures;
+	readonly forceCmkForQuery?: boolean;
+	readonly modifiedDate?: string;
+	readonly privateLinkScopedResources?: PrivateLinkScopedResource[];
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "ProvisioningAccount" | "Succeeded" | "Updating")
-		| undefined;
-	readonly publicNetworkAccessForIngestion?: ("Disabled" | "Enabled") | undefined;
-	readonly publicNetworkAccessForQuery?: ("Disabled" | "Enabled") | undefined;
-	readonly retentionInDays?: number | undefined;
-	readonly sku?: WorkspaceSku | undefined;
-	readonly workspaceCapping?: WorkspaceCapping | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "ProvisioningAccount"
+		| "Succeeded"
+		| "Updating";
+	readonly publicNetworkAccessForIngestion?: "Disabled" | "Enabled";
+	readonly publicNetworkAccessForQuery?: "Disabled" | "Enabled";
+	readonly retentionInDays?: number;
+	readonly sku?: WorkspaceSku;
+	readonly workspaceCapping?: WorkspaceCapping;
 }
 export interface WorkspaceSku {
-	readonly capacityReservationLevel?: number | undefined;
-	readonly lastSkuUpdate?: string | undefined;
+	readonly capacityReservationLevel?: number;
+	readonly lastSkuUpdate?: string;
 	readonly name:
 		| "CapacityReservation"
 		| "Free"

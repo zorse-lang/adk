@@ -8,7 +8,7 @@ export class Budget extends CfnResource<BudgetComponentInputs> implements Budget
 export interface BudgetComponentOutputs {}
 export interface BudgetComponentInputs {
 	readonly Budget: BudgetData;
-	readonly NotificationsWithSubscribers?: (NotificationWithSubscribers[] | undefined) | undefined;
+	readonly NotificationsWithSubscribers?: NotificationWithSubscribers[] | undefined;
 	readonly LogicalId: string;
 }
 export class BudgetsAction extends CfnResource<BudgetsActionComponentInputs> implements BudgetsActionComponentOutputs {
@@ -28,36 +28,36 @@ export interface BudgetsActionComponentInputs {
 	readonly ExecutionRoleArn: string;
 	readonly NotificationType: string;
 	readonly Subscribers: Subscriber[];
-	readonly ApprovalModel?: (string | undefined) | undefined;
+	readonly ApprovalModel?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface AutoAdjustData {
 	readonly AutoAdjustType: string;
-	readonly HistoricalOptions?: (HistoricalOptions | undefined) | undefined;
+	readonly HistoricalOptions?: HistoricalOptions | undefined;
 }
 export interface BudgetData {
-	readonly AutoAdjustData?: (AutoAdjustData | undefined) | undefined;
-	readonly BudgetLimit?: (Spend | undefined) | undefined;
-	readonly BudgetName?: (string | undefined) | undefined;
+	readonly AutoAdjustData?: AutoAdjustData | undefined;
+	readonly BudgetLimit?: Spend | undefined;
+	readonly BudgetName?: string | undefined;
 	readonly BudgetType: string;
-	readonly CostFilters?: (any | undefined) | undefined;
-	readonly CostTypes?: (CostTypes | undefined) | undefined;
-	readonly PlannedBudgetLimits?: (any | undefined) | undefined;
-	readonly TimePeriod?: (TimePeriod | undefined) | undefined;
+	readonly CostFilters?: any | undefined;
+	readonly CostTypes?: CostTypes | undefined;
+	readonly PlannedBudgetLimits?: any | undefined;
+	readonly TimePeriod?: TimePeriod | undefined;
 	readonly TimeUnit: string;
 }
 export interface CostTypes {
-	readonly IncludeCredit?: (boolean | undefined) | undefined;
-	readonly IncludeDiscount?: (boolean | undefined) | undefined;
-	readonly IncludeOtherSubscription?: (boolean | undefined) | undefined;
-	readonly IncludeRecurring?: (boolean | undefined) | undefined;
-	readonly IncludeRefund?: (boolean | undefined) | undefined;
-	readonly IncludeSubscription?: (boolean | undefined) | undefined;
-	readonly IncludeSupport?: (boolean | undefined) | undefined;
-	readonly IncludeTax?: (boolean | undefined) | undefined;
-	readonly IncludeUpfront?: (boolean | undefined) | undefined;
-	readonly UseAmortized?: (boolean | undefined) | undefined;
-	readonly UseBlended?: (boolean | undefined) | undefined;
+	readonly IncludeCredit?: boolean | undefined;
+	readonly IncludeDiscount?: boolean | undefined;
+	readonly IncludeOtherSubscription?: boolean | undefined;
+	readonly IncludeRecurring?: boolean | undefined;
+	readonly IncludeRefund?: boolean | undefined;
+	readonly IncludeSubscription?: boolean | undefined;
+	readonly IncludeSupport?: boolean | undefined;
+	readonly IncludeTax?: boolean | undefined;
+	readonly IncludeUpfront?: boolean | undefined;
+	readonly UseAmortized?: boolean | undefined;
+	readonly UseBlended?: boolean | undefined;
 }
 export interface HistoricalOptions {
 	readonly BudgetAdjustmentPeriod: number;
@@ -66,7 +66,7 @@ export interface Notification {
 	readonly ComparisonOperator: string;
 	readonly NotificationType: string;
 	readonly Threshold: number;
-	readonly ThresholdType?: (string | undefined) | undefined;
+	readonly ThresholdType?: string | undefined;
 }
 export interface NotificationWithSubscribers {
 	readonly Notification: Notification;
@@ -81,23 +81,23 @@ export interface Subscriber {
 	readonly SubscriptionType: string;
 }
 export interface TimePeriod {
-	readonly End?: (string | undefined) | undefined;
-	readonly Start?: (string | undefined) | undefined;
+	readonly End?: string | undefined;
+	readonly Start?: string | undefined;
 }
 export interface ActionThreshold {
 	readonly Type: string;
 	readonly Value: number;
 }
 export interface Definition {
-	readonly IamActionDefinition?: (IamActionDefinition | undefined) | undefined;
-	readonly ScpActionDefinition?: (ScpActionDefinition | undefined) | undefined;
-	readonly SsmActionDefinition?: (SsmActionDefinition | undefined) | undefined;
+	readonly IamActionDefinition?: IamActionDefinition | undefined;
+	readonly ScpActionDefinition?: ScpActionDefinition | undefined;
+	readonly SsmActionDefinition?: SsmActionDefinition | undefined;
 }
 export interface IamActionDefinition {
-	readonly Groups?: (string[] | undefined) | undefined;
+	readonly Groups?: string[] | undefined;
 	readonly PolicyArn: string;
-	readonly Roles?: (string[] | undefined) | undefined;
-	readonly Users?: (string[] | undefined) | undefined;
+	readonly Roles?: string[] | undefined;
+	readonly Users?: string[] | undefined;
 }
 export interface ScpActionDefinition {
 	readonly PolicyId: string;

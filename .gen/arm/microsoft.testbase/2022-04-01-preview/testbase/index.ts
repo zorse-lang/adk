@@ -17,12 +17,12 @@ export interface testBaseAccountsComponentOutputs {
 	readonly type: "Microsoft.TestBase/testBaseAccounts";
 }
 export interface testBaseAccountsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: TestBaseAccountResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: TestBaseAccountResourceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: Tags;
 }
 export class testBaseAccounts_availableOSs
 	extends ArmResource<testBaseAccounts_availableOSsComponentInputs>
@@ -42,8 +42,8 @@ export interface testBaseAccounts_availableOSsComponentOutputs {
 }
 export interface testBaseAccounts_availableOSsComponentInputs {
 	readonly name: string;
-	readonly properties?: AvailableOSProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AvailableOSProperties;
+	readonly systemData?: SystemData;
 }
 export class testBaseAccounts_customerEvents
 	extends ArmResource<testBaseAccounts_customerEventsComponentInputs>
@@ -63,8 +63,8 @@ export interface testBaseAccounts_customerEventsComponentOutputs {
 }
 export interface testBaseAccounts_customerEventsComponentInputs {
 	readonly name: string;
-	readonly properties?: CustomerEventProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: CustomerEventProperties;
+	readonly systemData?: SystemData;
 }
 export class testBaseAccounts_emailEvents
 	extends ArmResource<testBaseAccounts_emailEventsComponentInputs>
@@ -84,8 +84,8 @@ export interface testBaseAccounts_emailEventsComponentOutputs {
 }
 export interface testBaseAccounts_emailEventsComponentInputs {
 	readonly name: string;
-	readonly properties?: EmailEventProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EmailEventProperties;
+	readonly systemData?: SystemData;
 }
 export class testBaseAccounts_flightingRings
 	extends ArmResource<testBaseAccounts_flightingRingsComponentInputs>
@@ -105,8 +105,8 @@ export interface testBaseAccounts_flightingRingsComponentOutputs {
 }
 export interface testBaseAccounts_flightingRingsComponentInputs {
 	readonly name: string;
-	readonly properties?: FlightingRingProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: FlightingRingProperties;
+	readonly systemData?: SystemData;
 }
 export class testBaseAccounts_packages
 	extends ArmResource<testBaseAccounts_packagesComponentInputs>
@@ -125,12 +125,12 @@ export interface testBaseAccounts_packagesComponentOutputs {
 	readonly type: "Microsoft.TestBase/testBaseAccounts/packages";
 }
 export interface testBaseAccounts_packagesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: PackageProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: PackageProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: Tags;
 }
 export class testBaseAccounts_packages_favoriteProcesses
 	extends ArmResource<testBaseAccounts_packages_favoriteProcessesComponentInputs>
@@ -156,8 +156,8 @@ export interface testBaseAccounts_packages_favoriteProcessesComponentOutputs {
 }
 export interface testBaseAccounts_packages_favoriteProcessesComponentInputs {
 	readonly name: string;
-	readonly properties?: FavoriteProcessProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: FavoriteProcessProperties;
+	readonly systemData?: SystemData;
 }
 export class testBaseAccounts_packages_osUpdates
 	extends ArmResource<testBaseAccounts_packages_osUpdatesComponentInputs>
@@ -183,8 +183,8 @@ export interface testBaseAccounts_packages_osUpdatesComponentOutputs {
 }
 export interface testBaseAccounts_packages_osUpdatesComponentInputs {
 	readonly name: string;
-	readonly properties?: OSUpdateProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: OSUpdateProperties;
+	readonly systemData?: SystemData;
 }
 export class testBaseAccounts_packages_testResults
 	extends ArmResource<testBaseAccounts_packages_testResultsComponentInputs>
@@ -210,8 +210,8 @@ export interface testBaseAccounts_packages_testResultsComponentOutputs {
 }
 export interface testBaseAccounts_packages_testResultsComponentInputs {
 	readonly name: string;
-	readonly properties?: TestResultProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: TestResultProperties;
+	readonly systemData?: SystemData;
 }
 export class testBaseAccounts_packages_testResults_analysisResults
 	extends ArmResource<testBaseAccounts_packages_testResults_analysisResultsComponentInputs>
@@ -237,8 +237,8 @@ export interface testBaseAccounts_packages_testResults_analysisResultsComponentO
 }
 export interface testBaseAccounts_packages_testResults_analysisResultsComponentInputs {
 	readonly name: string;
-	readonly properties?: AnalysisResultSingletonResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AnalysisResultSingletonResourceProperties;
+	readonly systemData?: SystemData;
 }
 export class testBaseAccounts_testSummaries
 	extends ArmResource<testBaseAccounts_testSummariesComponentInputs>
@@ -258,8 +258,8 @@ export interface testBaseAccounts_testSummariesComponentOutputs {
 }
 export interface testBaseAccounts_testSummariesComponentInputs {
 	readonly name: string;
-	readonly properties?: TestSummaryProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: TestSummaryProperties;
+	readonly systemData?: SystemData;
 }
 export class testBaseAccounts_testTypes
 	extends ArmResource<testBaseAccounts_testTypesComponentInputs>
@@ -279,229 +279,228 @@ export interface testBaseAccounts_testTypesComponentOutputs {
 }
 export interface testBaseAccounts_testTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: TestTypeProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: TestTypeProperties;
+	readonly systemData?: SystemData;
 }
 export interface AnalysisResultSingletonResourceProperties {
-	readonly grade?: ("Fail" | "None" | "NotAvailable" | "Pass") | undefined;
+	readonly grade?: "Fail" | "None" | "NotAvailable" | "Pass";
 }
 export interface AvailableOSProperties {
-	readonly insiderChannel?: string | undefined;
-	readonly osId?: string | undefined;
-	readonly osName?: string | undefined;
-	readonly osPlatform?: string | undefined;
-	readonly osUpdateType?: string | undefined;
-	readonly osVersion?: string | undefined;
+	readonly insiderChannel?: string;
+	readonly osId?: string;
+	readonly osName?: string;
+	readonly osPlatform?: string;
+	readonly osUpdateType?: string;
+	readonly osVersion?: string;
 }
 export interface Command {
 	readonly action: "Close" | "Custom" | "Install" | "Launch" | "Uninstall";
-	readonly alwaysRun?: boolean | undefined;
-	readonly applyUpdateBefore?: boolean | undefined;
+	readonly alwaysRun?: boolean;
+	readonly applyUpdateBefore?: boolean;
 	readonly content: string;
 	readonly contentType: "File" | "Inline" | "Path";
-	readonly maxRunTime?: number | undefined;
+	readonly maxRunTime?: number;
 	readonly name: string;
-	readonly restartAfter?: boolean | undefined;
-	readonly runAsInteractive?: boolean | undefined;
-	readonly runElevated?: boolean | undefined;
+	readonly restartAfter?: boolean;
+	readonly runAsInteractive?: boolean;
+	readonly runElevated?: boolean;
 }
 export interface CustomerEventProperties {
 	readonly eventName: string;
 	readonly receivers: NotificationEventReceiver[];
 }
 export interface DistributionGroupListReceiverValue {
-	readonly distributionGroups?: string[] | undefined;
+	readonly distributionGroups?: string[];
 }
 export interface EmailEventProperties {
-	readonly displayName?: string | undefined;
-	readonly eventId?: string | undefined;
-	readonly eventName?: string | undefined;
+	readonly displayName?: string;
+	readonly eventId?: string;
+	readonly eventName?: string;
 }
 export interface FavoriteProcessProperties {
 	readonly actualProcessName: string;
 }
 export interface FlightingRingProperties {
-	readonly actualFlightingRingName?: string | undefined;
+	readonly actualFlightingRingName?: string;
 }
 export interface IdentifiedFailure {
-	readonly category?: ("Infrastructure" | "None" | "OSUpdate" | "Package" | "Unidentified") | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly failureId?: string | undefined;
-	readonly guidance?: string | undefined;
+	readonly category?: "Infrastructure" | "None" | "OSUpdate" | "Package" | "Unidentified";
+	readonly errorMessage?: string;
+	readonly failureId?: string;
+	readonly guidance?: string;
 }
 export interface NotificationEventReceiver {
-	readonly receiverType?: string | undefined;
-	readonly receiverValue?: NotificationReceiverValue | undefined;
+	readonly receiverType?: string;
+	readonly receiverValue?: NotificationReceiverValue;
 }
 export interface NotificationReceiverValue {
-	readonly distributionGroupListReceiverValue?: DistributionGroupListReceiverValue | undefined;
-	readonly subscriptionReceiverValue?: SubscriptionReceiverValue | undefined;
-	readonly userObjectReceiverValue?: UserObjectReceiverValue | undefined;
+	readonly distributionGroupListReceiverValue?: DistributionGroupListReceiverValue;
+	readonly subscriptionReceiverValue?: SubscriptionReceiverValue;
+	readonly userObjectReceiverValue?: UserObjectReceiverValue;
 }
 export interface OSUpdateProperties {
-	readonly buildRevision?: string | undefined;
-	readonly buildVersion?: string | undefined;
-	readonly flightingRing?: string | undefined;
-	readonly osName?: string | undefined;
-	readonly release?: string | undefined;
-	readonly releaseVersionDate?: string | undefined;
-	readonly type?: ("FeatureUpdate" | "SecurityUpdate") | undefined;
+	readonly buildRevision?: string;
+	readonly buildVersion?: string;
+	readonly flightingRing?: string;
+	readonly osName?: string;
+	readonly release?: string;
+	readonly releaseVersionDate?: string;
+	readonly type?: "FeatureUpdate" | "SecurityUpdate";
 }
 export interface OSUpdatesTestSummary {
 	readonly executionStatus?:
-		| ("Completed" | "Failed" | "InProgress" | "Incomplete" | "None" | "NotExecuted" | "Processing" | "Succeeded")
-		| undefined;
-	readonly grade?: ("Fail" | "None" | "NotAvailable" | "Pass") | undefined;
-	readonly osUpdateTestSummaries?: OSUpdateTestSummary[] | undefined;
-	readonly testRunTime?: string | undefined;
+		| "Completed"
+		| "Failed"
+		| "InProgress"
+		| "Incomplete"
+		| "None"
+		| "NotExecuted"
+		| "Processing"
+		| "Succeeded";
+	readonly grade?: "Fail" | "None" | "NotAvailable" | "Pass";
+	readonly osUpdateTestSummaries?: OSUpdateTestSummary[];
+	readonly testRunTime?: string;
 	readonly testStatus?:
-		| (
-				| "Completed"
-				| "DataProcessing"
-				| "InfrastructureFailure"
-				| "None"
-				| "TestAndUpdateFailure"
-				| "TestExecutionInProgress"
-				| "TestFailure"
-				| "UpdateFailure"
-		  )
-		| undefined;
+		| "Completed"
+		| "DataProcessing"
+		| "InfrastructureFailure"
+		| "None"
+		| "TestAndUpdateFailure"
+		| "TestExecutionInProgress"
+		| "TestFailure"
+		| "UpdateFailure";
 }
 export interface OSUpdateTestSummary {
-	readonly buildRevision?: string | undefined;
-	readonly buildVersion?: string | undefined;
+	readonly buildRevision?: string;
+	readonly buildVersion?: string;
 	readonly executionStatus?:
-		| ("Completed" | "Failed" | "InProgress" | "Incomplete" | "None" | "NotExecuted" | "Processing" | "Succeeded")
-		| undefined;
-	readonly flightingRing?: string | undefined;
-	readonly grade?: ("Fail" | "None" | "NotAvailable" | "Pass") | undefined;
-	readonly osName?: string | undefined;
-	readonly releaseName?: string | undefined;
-	readonly releaseVersionDate?: string | undefined;
-	readonly testRunTime?: string | undefined;
+		| "Completed"
+		| "Failed"
+		| "InProgress"
+		| "Incomplete"
+		| "None"
+		| "NotExecuted"
+		| "Processing"
+		| "Succeeded";
+	readonly flightingRing?: string;
+	readonly grade?: "Fail" | "None" | "NotAvailable" | "Pass";
+	readonly osName?: string;
+	readonly releaseName?: string;
+	readonly releaseVersionDate?: string;
+	readonly testRunTime?: string;
 	readonly testStatus?:
-		| (
-				| "Completed"
-				| "DataProcessing"
-				| "InfrastructureFailure"
-				| "None"
-				| "TestAndUpdateFailure"
-				| "TestExecutionInProgress"
-				| "TestFailure"
-				| "UpdateFailure"
-		  )
-		| undefined;
-	readonly testType?: string | undefined;
+		| "Completed"
+		| "DataProcessing"
+		| "InfrastructureFailure"
+		| "None"
+		| "TestAndUpdateFailure"
+		| "TestExecutionInProgress"
+		| "TestFailure"
+		| "UpdateFailure";
+	readonly testType?: string;
 }
 export interface PackageProperties {
 	readonly applicationName: string;
 	readonly blobPath: string;
 	readonly flightingRing: string;
-	readonly isEnabled?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
+	readonly isEnabled?: boolean;
+	readonly lastModifiedTime?: string;
 	readonly packageStatus?:
-		| (
-				| "Deleted"
-				| "Error"
-				| "PreValidationCheckPass"
-				| "Ready"
-				| "Registered"
-				| "Unknown"
-				| "ValidatingPackage"
-				| "ValidationLongerThanUsual"
-				| "VerifyingPackage"
-		  )
-		| undefined;
-	readonly provisioningState?:
-		| ("Cancelled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating")
-		| undefined;
+		| "Deleted"
+		| "Error"
+		| "PreValidationCheckPass"
+		| "Ready"
+		| "Registered"
+		| "Unknown"
+		| "ValidatingPackage"
+		| "ValidationLongerThanUsual"
+		| "VerifyingPackage";
+	readonly provisioningState?: "Cancelled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly targetOSList: TargetOSInfo[];
 	readonly tests: Test[];
-	readonly testTypes?: ("FunctionalTest" | "OutOfBoxTest"[]) | undefined;
-	readonly validationResults?: PackageValidationResult[] | undefined;
+	readonly testTypes?: "FunctionalTest" | "OutOfBoxTest"[];
+	readonly validationResults?: PackageValidationResult[];
 	readonly version: string;
 }
 export interface PackageValidationResult {
-	readonly errors?: string[] | undefined;
-	readonly isValid?: boolean | undefined;
-	readonly validationName?: string | undefined;
+	readonly errors?: string[];
+	readonly isValid?: boolean;
+	readonly validationName?: string;
 }
 export interface RegressionResult {
-	readonly details?: string | undefined;
-	readonly diff?: number | undefined;
-	readonly fileName?: string | undefined;
-	readonly grade?: ("Fail" | "None" | "NotAvailable" | "Pass") | undefined;
-	readonly isRegressed?: boolean | undefined;
+	readonly details?: string;
+	readonly diff?: number;
+	readonly fileName?: string;
+	readonly grade?: "Fail" | "None" | "NotAvailable" | "Pass";
+	readonly isRegressed?: boolean;
 }
 export interface RegressionTestDetails {
-	readonly diff?: number | undefined;
-	readonly isRegressed?: boolean | undefined;
+	readonly diff?: number;
+	readonly isRegressed?: boolean;
 }
 export interface ReliabilityResult {
-	readonly crashCount?: number | undefined;
-	readonly crashRegressionGrade?: ("Fail" | "None" | "NotAvailable" | "Pass") | undefined;
-	readonly crashRegressionTestDetails?: RegressionTestDetails | undefined;
-	readonly fileName?: string | undefined;
-	readonly hangCount?: number | undefined;
-	readonly hangRegressionGrade?: ("Fail" | "None" | "NotAvailable" | "Pass") | undefined;
-	readonly hangRegressionTestDetails?: RegressionTestDetails | undefined;
-	readonly launchCount?: number | undefined;
-	readonly regressionGrade?: ("Fail" | "None" | "NotAvailable" | "Pass") | undefined;
+	readonly crashCount?: number;
+	readonly crashRegressionGrade?: "Fail" | "None" | "NotAvailable" | "Pass";
+	readonly crashRegressionTestDetails?: RegressionTestDetails;
+	readonly fileName?: string;
+	readonly hangCount?: number;
+	readonly hangRegressionGrade?: "Fail" | "None" | "NotAvailable" | "Pass";
+	readonly hangRegressionTestDetails?: RegressionTestDetails;
+	readonly launchCount?: number;
+	readonly regressionGrade?: "Fail" | "None" | "NotAvailable" | "Pass";
 }
 export interface ScriptExecutionResult {
-	readonly endTime?: string | undefined;
-	readonly exitCode?: number | undefined;
-	readonly scriptName?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly stderrLogFileName?: string | undefined;
-	readonly stdoutLogFileName?: string | undefined;
-	readonly timedOut?: boolean | undefined;
+	readonly endTime?: string;
+	readonly exitCode?: number;
+	readonly scriptName?: string;
+	readonly startTime?: string;
+	readonly stderrLogFileName?: string;
+	readonly stdoutLogFileName?: string;
+	readonly timedOut?: boolean;
 }
 export interface SubscriptionReceiverValue {
-	readonly role?: string | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly subscriptionName?: string | undefined;
+	readonly role?: string;
+	readonly subscriptionId?: string;
+	readonly subscriptionName?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Tags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TargetOSInfo {
-	readonly baselineOSs?: string[] | undefined;
+	readonly baselineOSs?: string[];
 	readonly osUpdateType: string;
 	readonly targetOSs: string[];
 }
 export interface Test {
 	readonly commands: Command[];
-	readonly isActive?: boolean | undefined;
+	readonly isActive?: boolean;
 	readonly testType: "FunctionalTest" | "OutOfBoxTest";
-	readonly validationResultId?: string | undefined;
-	readonly validationRunStatus?: ("Failed" | "Passed" | "Pending" | "Unknown") | undefined;
+	readonly validationResultId?: string;
+	readonly validationRunStatus?: "Failed" | "Passed" | "Pending" | "Unknown";
 }
 export interface TestAnalysisResult {
-	readonly blobData?: string | undefined;
-	readonly identifiedFailures?: IdentifiedFailure[] | undefined;
-	readonly testAnalysisStatus?: ("Analyzing" | "Completed" | "Failed" | "None") | undefined;
+	readonly blobData?: string;
+	readonly identifiedFailures?: IdentifiedFailure[];
+	readonly testAnalysisStatus?: "Analyzing" | "Completed" | "Failed" | "None";
 }
 export interface TestBaseAccountResourceProperties {
-	readonly accessLevel?: string | undefined;
-	readonly provisioningState?:
-		| ("Cancelled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating")
-		| undefined;
+	readonly accessLevel?: string;
+	readonly provisioningState?: "Cancelled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly sku: TestBaseAccountSKU;
 }
 export interface TestBaseAccountSKU {
-	readonly capabilities?: TestBaseAccountSKUCapability[] | undefined;
-	readonly locations?: string[] | undefined;
+	readonly capabilities?: TestBaseAccountSKUCapability[];
+	readonly locations?: string[];
 	readonly name: string;
-	readonly resourceType?: string | undefined;
+	readonly resourceType?: string;
 	readonly tier: "Standard";
 }
 export interface TestBaseAccountSKUCapability {
@@ -509,94 +508,98 @@ export interface TestBaseAccountSKUCapability {
 	readonly value: string;
 }
 export interface TestResultAnalysisSummary {
-	readonly analysisStatus?:
-		| ("Available" | "Completed" | "Failed" | "InProgress" | "None" | "NotAvailable" | "Succeeded")
-		| undefined;
-	readonly grade?: ("Fail" | "None" | "NotAvailable" | "Pass") | undefined;
-	readonly name?: string | undefined;
+	readonly analysisStatus?: "Available" | "Completed" | "Failed" | "InProgress" | "None" | "NotAvailable" | "Succeeded";
+	readonly grade?: "Fail" | "None" | "NotAvailable" | "Pass";
+	readonly name?: string;
 }
 export interface TestResultProperties {
-	readonly analysisSummaries?: TestResultAnalysisSummary[] | undefined;
-	readonly applicationName?: string | undefined;
-	readonly applicationVersion?: string | undefined;
-	readonly baselineTestResultId?: string | undefined;
-	readonly buildRevision?: string | undefined;
-	readonly buildVersion?: string | undefined;
+	readonly analysisSummaries?: TestResultAnalysisSummary[];
+	readonly applicationName?: string;
+	readonly applicationVersion?: string;
+	readonly baselineTestResultId?: string;
+	readonly buildRevision?: string;
+	readonly buildVersion?: string;
 	readonly executionStatus?:
-		| ("Completed" | "Failed" | "InProgress" | "Incomplete" | "None" | "NotExecuted" | "Processing" | "Succeeded")
-		| undefined;
-	readonly flightingRing?: string | undefined;
-	readonly grade?: ("Fail" | "None" | "NotAvailable" | "Pass") | undefined;
-	readonly interopMediaType?: string | undefined;
-	readonly interopMediaVersion?: string | undefined;
-	readonly isDownloadDataAvailable?: boolean | undefined;
-	readonly isVideoAvailable?: boolean | undefined;
-	readonly kbNumber?: string | undefined;
-	readonly osName?: string | undefined;
-	readonly packageId?: string | undefined;
-	readonly packageVersion?: string | undefined;
-	readonly releaseName?: string | undefined;
-	readonly releaseVersionDate?: string | undefined;
-	readonly testRunTime?: string | undefined;
+		| "Completed"
+		| "Failed"
+		| "InProgress"
+		| "Incomplete"
+		| "None"
+		| "NotExecuted"
+		| "Processing"
+		| "Succeeded";
+	readonly flightingRing?: string;
+	readonly grade?: "Fail" | "None" | "NotAvailable" | "Pass";
+	readonly interopMediaType?: string;
+	readonly interopMediaVersion?: string;
+	readonly isDownloadDataAvailable?: boolean;
+	readonly isVideoAvailable?: boolean;
+	readonly kbNumber?: string;
+	readonly osName?: string;
+	readonly packageId?: string;
+	readonly packageVersion?: string;
+	readonly releaseName?: string;
+	readonly releaseVersionDate?: string;
+	readonly testRunTime?: string;
 	readonly testStatus?:
-		| (
-				| "Completed"
-				| "DataProcessing"
-				| "InfrastructureFailure"
-				| "None"
-				| "TestAndUpdateFailure"
-				| "TestExecutionInProgress"
-				| "TestFailure"
-				| "UpdateFailure"
-		  )
-		| undefined;
-	readonly testType?: string | undefined;
+		| "Completed"
+		| "DataProcessing"
+		| "InfrastructureFailure"
+		| "None"
+		| "TestAndUpdateFailure"
+		| "TestExecutionInProgress"
+		| "TestFailure"
+		| "UpdateFailure";
+	readonly testType?: string;
 }
 export interface TestSummaryProperties {
-	readonly applicationName?: string | undefined;
-	readonly applicationVersion?: string | undefined;
+	readonly applicationName?: string;
+	readonly applicationVersion?: string;
 	readonly executionStatus?:
-		| ("Completed" | "Failed" | "InProgress" | "Incomplete" | "None" | "NotExecuted" | "Processing" | "Succeeded")
-		| undefined;
-	readonly featureUpdatesTestSummary?: OSUpdatesTestSummary | undefined;
-	readonly grade?: ("Fail" | "None" | "NotAvailable" | "Pass") | undefined;
-	readonly packageId?: string | undefined;
-	readonly packageTags?: Tags | undefined;
-	readonly securityUpdatesTestSummary?: OSUpdatesTestSummary | undefined;
-	readonly testRunTime?: string | undefined;
+		| "Completed"
+		| "Failed"
+		| "InProgress"
+		| "Incomplete"
+		| "None"
+		| "NotExecuted"
+		| "Processing"
+		| "Succeeded";
+	readonly featureUpdatesTestSummary?: OSUpdatesTestSummary;
+	readonly grade?: "Fail" | "None" | "NotAvailable" | "Pass";
+	readonly packageId?: string;
+	readonly packageTags?: Tags;
+	readonly securityUpdatesTestSummary?: OSUpdatesTestSummary;
+	readonly testRunTime?: string;
 	readonly testStatus?:
-		| (
-				| "Completed"
-				| "DataProcessing"
-				| "InfrastructureFailure"
-				| "None"
-				| "TestAndUpdateFailure"
-				| "TestExecutionInProgress"
-				| "TestFailure"
-				| "UpdateFailure"
-		  )
-		| undefined;
-	readonly testSummaryId?: string | undefined;
+		| "Completed"
+		| "DataProcessing"
+		| "InfrastructureFailure"
+		| "None"
+		| "TestAndUpdateFailure"
+		| "TestExecutionInProgress"
+		| "TestFailure"
+		| "UpdateFailure";
+	readonly testSummaryId?: string;
 }
 export interface TestTypeProperties {
-	readonly actualTestTypeName?: string | undefined;
+	readonly actualTestTypeName?: string;
 }
 export interface UserObjectReceiverValue {
-	readonly userObjectIds?: string[] | undefined;
+	readonly userObjectIds?: string[];
 }
 export interface UtilizationBound {
-	readonly percentile?: number | undefined;
-	readonly value?: number | undefined;
+	readonly percentile?: number;
+	readonly value?: number;
 }
 export interface UtilizationEntry {
-	readonly timestamp?: string | undefined;
-	readonly value?: number | undefined;
+	readonly timestamp?: string;
+	readonly value?: number;
 }
 export interface UtilizationResult {
-	readonly lowerBound?: UtilizationBound | undefined;
-	readonly process?: string | undefined;
-	readonly upperBound?: UtilizationBound | undefined;
-	readonly utilization?: UtilizationEntry[] | undefined;
+	readonly lowerBound?: UtilizationBound;
+	readonly process?: string;
+	readonly upperBound?: UtilizationBound;
+	readonly utilization?: UtilizationEntry[];
 }
 export default {
 	testBaseAccounts: testBaseAccounts,

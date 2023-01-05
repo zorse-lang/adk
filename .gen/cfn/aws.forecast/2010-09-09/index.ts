@@ -14,9 +14,9 @@ export interface DatasetComponentInputs {
 	readonly DatasetType: string;
 	readonly Domain: string;
 	readonly Schema: Schema;
-	readonly DataFrequency?: (string | undefined) | undefined;
-	readonly EncryptionConfig?: (EncryptionConfig | undefined) | undefined;
-	readonly Tags?: (TagsItems[] | undefined) | undefined;
+	readonly DataFrequency?: string | undefined;
+	readonly EncryptionConfig?: EncryptionConfig | undefined;
+	readonly Tags?: TagsItems[] | undefined;
 	readonly LogicalId: string;
 }
 export class DatasetGroup extends CfnResource<DatasetGroupComponentInputs> implements DatasetGroupComponentOutputs {
@@ -31,20 +31,20 @@ export interface DatasetGroupComponentOutputs {
 export interface DatasetGroupComponentInputs {
 	readonly DatasetGroupName: string;
 	readonly Domain: string;
-	readonly DatasetArns?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DatasetArns?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface AttributesItems {
-	readonly AttributeName?: (string | undefined) | undefined;
-	readonly AttributeType?: (string | undefined) | undefined;
+	readonly AttributeName?: string | undefined;
+	readonly AttributeType?: string | undefined;
 }
 export interface EncryptionConfig {
-	readonly KmsKeyArn?: (string | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
+	readonly KmsKeyArn?: string | undefined;
+	readonly RoleArn?: string | undefined;
 }
 export interface Schema {
-	readonly Attributes?: (AttributesItems[] | undefined) | undefined;
+	readonly Attributes?: AttributesItems[] | undefined;
 }
 export interface TagsItems {
 	readonly Key: string;

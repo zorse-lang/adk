@@ -4,69 +4,68 @@ export class VpnTunnels extends GdmResource<VpnTunnelsComponentInputs> implement
 	constructor(entity: ADKEntity, options: VpnTunnelsComponentInputs) {
 		super(entity, options.name, "compute.beta.VpnTunnels", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly detailedStatus?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly status?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly detailedStatus?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly status?: string;
 }
 export interface VpnTunnelsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly detailedStatus?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly detailedStatus?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly status?: string;
 }
 export interface VpnTunnelsComponentInputs {
-	readonly description?: string | undefined;
-	readonly ikeVersion?: number | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly localTrafficSelector?: string[] | undefined;
+	readonly description?: string;
+	readonly ikeVersion?: number;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
+	readonly localTrafficSelector?: string[];
 	readonly name: string;
-	readonly peerExternalGateway?: string | undefined;
-	readonly peerExternalGatewayInterface?: number | undefined;
-	readonly peerGcpGateway?: string | undefined;
-	readonly peerIp?: string | undefined;
-	readonly remoteTrafficSelector?: string[] | undefined;
-	readonly requestId?: string | undefined;
-	readonly router?: string | undefined;
-	readonly sharedSecret?: string | undefined;
-	readonly sharedSecretHash?: string | undefined;
-	readonly targetVpnGateway?: string | undefined;
-	readonly vpnGateway?: string | undefined;
-	readonly vpnGatewayInterface?: number | undefined;
-	readonly type: string;
+	readonly peerExternalGateway?: string;
+	readonly peerExternalGatewayInterface?: number;
+	readonly peerGcpGateway?: string;
+	readonly peerIp?: string;
+	readonly remoteTrafficSelector?: string[];
+	readonly requestId?: string;
+	readonly router?: string;
+	readonly sharedSecret?: string;
+	readonly sharedSecretHash?: string;
+	readonly targetVpnGateway?: string;
+	readonly vpnGateway?: string;
+	readonly vpnGatewayInterface?: number;
 }
 export interface VpnTunnel {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly detailedStatus?: string | undefined;
-	readonly id?: string | undefined;
-	readonly ikeVersion?: number | undefined;
-	readonly kind?: string | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly localTrafficSelector?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly peerExternalGateway?: string | undefined;
-	readonly peerExternalGatewayInterface?: number | undefined;
-	readonly peerGcpGateway?: string | undefined;
-	readonly peerIp?: string | undefined;
-	readonly region?: string | undefined;
-	readonly remoteTrafficSelector?: string[] | undefined;
-	readonly router?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly sharedSecret?: string | undefined;
-	readonly sharedSecretHash?: string | undefined;
-	readonly status?: string | undefined;
-	readonly targetVpnGateway?: string | undefined;
-	readonly vpnGateway?: string | undefined;
-	readonly vpnGatewayInterface?: number | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly detailedStatus?: string;
+	readonly id?: string;
+	readonly ikeVersion?: number;
+	readonly kind?: string;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
+	readonly localTrafficSelector?: string[];
+	readonly name?: string;
+	readonly peerExternalGateway?: string;
+	readonly peerExternalGatewayInterface?: number;
+	readonly peerGcpGateway?: string;
+	readonly peerIp?: string;
+	readonly region?: string;
+	readonly remoteTrafficSelector?: string[];
+	readonly router?: string;
+	readonly selfLink?: string;
+	readonly sharedSecret?: string;
+	readonly sharedSecretHash?: string;
+	readonly status?: string;
+	readonly targetVpnGateway?: string;
+	readonly vpnGateway?: string;
+	readonly vpnGatewayInterface?: number;
 }
 export default {
 	VpnTunnels: VpnTunnels,

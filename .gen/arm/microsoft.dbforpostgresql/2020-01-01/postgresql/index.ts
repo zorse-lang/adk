@@ -14,14 +14,14 @@ export interface servers_keysComponentOutputs {
 	readonly type: "Microsoft.DBforPostgreSQL/servers/keys";
 }
 export interface servers_keysComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly name: string;
-	readonly properties?: ServerKeyProperties | undefined;
+	readonly properties?: ServerKeyProperties;
 }
 export interface ServerKeyProperties {
-	readonly creationDate?: string | undefined;
+	readonly creationDate?: string;
 	readonly serverKeyType: "AzureKeyVault";
-	readonly uri?: string | undefined;
+	readonly uri?: string;
 }
 export default {
 	"servers/keys": servers_keys,

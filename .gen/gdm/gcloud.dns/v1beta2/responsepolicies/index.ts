@@ -7,38 +7,37 @@ export class ResponsePolicies
 	constructor(entity: ADKEntity, options: ResponsePoliciesComponentInputs) {
 		super(entity, options.name, "dns.v1beta2.ResponsePolicies", options);
 	}
-	public readonly id?: string | undefined;
+	public readonly id?: string;
 }
 export interface ResponsePoliciesComponentOutputs {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ResponsePoliciesComponentInputs {
-	readonly clientOperationId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly gkeClusters?: ResponsePolicyGKECluster[] | undefined;
-	readonly kind?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly networks?: ResponsePolicyNetwork[] | undefined;
-	readonly responsePolicyName?: string | undefined;
-	readonly type: string;
+	readonly clientOperationId?: string;
+	readonly description?: string;
+	readonly gkeClusters?: ResponsePolicyGKECluster[];
+	readonly kind?: string;
+	readonly labels?: { [P in string]: string };
+	readonly networks?: ResponsePolicyNetwork[];
+	readonly responsePolicyName?: string;
 	readonly name: string;
 }
 export interface ResponsePolicy {
-	readonly description?: string | undefined;
-	readonly gkeClusters?: ResponsePolicyGKECluster[] | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly networks?: ResponsePolicyNetwork[] | undefined;
-	readonly responsePolicyName?: string | undefined;
+	readonly description?: string;
+	readonly gkeClusters?: ResponsePolicyGKECluster[];
+	readonly id?: string;
+	readonly kind?: string;
+	readonly labels?: { [P in string]: string };
+	readonly networks?: ResponsePolicyNetwork[];
+	readonly responsePolicyName?: string;
 }
 export interface ResponsePolicyGKECluster {
-	readonly gkeClusterName?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly gkeClusterName?: string;
+	readonly kind?: string;
 }
 export interface ResponsePolicyNetwork {
-	readonly kind?: string | undefined;
-	readonly networkUrl?: string | undefined;
+	readonly kind?: string;
+	readonly networkUrl?: string;
 }
 export default {
 	ResponsePolicies: ResponsePolicies,

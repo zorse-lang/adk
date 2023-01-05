@@ -17,52 +17,52 @@ export interface guestConfigurationAssignmentsComponentOutputs {
 	readonly type: "Microsoft.GuestConfiguration/guestConfigurationAssignments";
 }
 export interface guestConfigurationAssignmentsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: GuestConfigurationAssignmentProperties | undefined;
+	readonly properties?: GuestConfigurationAssignmentProperties;
 }
 export interface ConfigurationParameter {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface ConfigurationSetting {
-	readonly actionAfterReboot?: ("ContinueConfiguration" | "StopConfiguration") | undefined;
-	readonly allowModuleOverwrite?: boolean | undefined;
-	readonly configurationMode?: ("ApplyAndAutoCorrect" | "ApplyAndMonitor" | "ApplyOnly") | undefined;
-	readonly configurationModeFrequencyMins?: number | undefined;
-	readonly rebootIfNeeded?: boolean | undefined;
-	readonly refreshFrequencyMins?: number | undefined;
+	readonly actionAfterReboot?: "ContinueConfiguration" | "StopConfiguration";
+	readonly allowModuleOverwrite?: boolean;
+	readonly configurationMode?: "ApplyAndAutoCorrect" | "ApplyAndMonitor" | "ApplyOnly";
+	readonly configurationModeFrequencyMins?: number;
+	readonly rebootIfNeeded?: boolean;
+	readonly refreshFrequencyMins?: number;
 }
 export interface GuestConfigurationAssignmentProperties {
-	readonly assignmentHash?: string | undefined;
-	readonly complianceStatus?: ("Compliant" | "NonCompliant" | "Pending") | undefined;
-	readonly context?: string | undefined;
-	readonly guestConfiguration?: GuestConfigurationNavigation | undefined;
-	readonly lastComplianceStatusChecked?: string | undefined;
-	readonly latestReportId?: string | undefined;
-	readonly parameterHash?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Created" | "Failed" | "Succeeded") | undefined;
-	readonly resourceType?: string | undefined;
-	readonly vmssVMList?: VmssvmInfo[] | undefined;
+	readonly assignmentHash?: string;
+	readonly complianceStatus?: "Compliant" | "NonCompliant" | "Pending";
+	readonly context?: string;
+	readonly guestConfiguration?: GuestConfigurationNavigation;
+	readonly lastComplianceStatusChecked?: string;
+	readonly latestReportId?: string;
+	readonly parameterHash?: string;
+	readonly provisioningState?: "Canceled" | "Created" | "Failed" | "Succeeded";
+	readonly resourceType?: string;
+	readonly vmssVMList?: VmssvmInfo[];
 }
 export interface GuestConfigurationNavigation {
-	readonly assignmentType?: ("ApplyAndAutoCorrect" | "ApplyAndMonitor" | "Audit" | "DeployAndAutoCorrect") | undefined;
-	readonly configurationParameter?: ConfigurationParameter[] | undefined;
-	readonly configurationProtectedParameter?: ConfigurationParameter[] | undefined;
-	readonly configurationSetting?: ConfigurationSetting | undefined;
-	readonly contentHash?: string | undefined;
-	readonly contentType?: string | undefined;
-	readonly contentUri?: string | undefined;
-	readonly kind?: "DSC" | undefined;
-	readonly name?: string | undefined;
-	readonly version?: string | undefined;
+	readonly assignmentType?: "ApplyAndAutoCorrect" | "ApplyAndMonitor" | "Audit" | "DeployAndAutoCorrect";
+	readonly configurationParameter?: ConfigurationParameter[];
+	readonly configurationProtectedParameter?: ConfigurationParameter[];
+	readonly configurationSetting?: ConfigurationSetting;
+	readonly contentHash?: string;
+	readonly contentType?: string;
+	readonly contentUri?: string;
+	readonly kind?: "DSC";
+	readonly name?: string;
+	readonly version?: string;
 }
 export interface VmssvmInfo {
-	readonly complianceStatus?: ("Compliant" | "NonCompliant" | "Pending") | undefined;
-	readonly lastComplianceChecked?: string | undefined;
-	readonly latestReportId?: string | undefined;
-	readonly vmId?: string | undefined;
-	readonly vmResourceId?: string | undefined;
+	readonly complianceStatus?: "Compliant" | "NonCompliant" | "Pending";
+	readonly lastComplianceChecked?: string;
+	readonly latestReportId?: string;
+	readonly vmId?: string;
+	readonly vmResourceId?: string;
 }
 export default {
 	guestConfigurationAssignments: guestConfigurationAssignments,

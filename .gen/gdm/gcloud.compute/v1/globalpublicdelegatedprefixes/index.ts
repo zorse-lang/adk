@@ -7,55 +7,54 @@ export class GlobalPublicDelegatedPrefixes
 	constructor(entity: ADKEntity, options: GlobalPublicDelegatedPrefixesComponentInputs) {
 		super(entity, options.name, "compute.v1.GlobalPublicDelegatedPrefixes", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly status?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly status?: string;
 }
 export interface GlobalPublicDelegatedPrefixesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly status?: string;
 }
 export interface GlobalPublicDelegatedPrefixesComponentInputs {
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly ipCidrRange?: string | undefined;
-	readonly isLiveMigration?: boolean | undefined;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly ipCidrRange?: string;
+	readonly isLiveMigration?: boolean;
 	readonly name: string;
-	readonly parentPrefix?: string | undefined;
-	readonly publicDelegatedSubPrefixs?: PublicDelegatedPrefixPublicDelegatedSubPrefix[] | undefined;
-	readonly requestId?: string | undefined;
-	readonly type: string;
+	readonly parentPrefix?: string;
+	readonly publicDelegatedSubPrefixs?: PublicDelegatedPrefixPublicDelegatedSubPrefix[];
+	readonly requestId?: string;
 }
 export interface PublicDelegatedPrefix {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly ipCidrRange?: string | undefined;
-	readonly isLiveMigration?: boolean | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly parentPrefix?: string | undefined;
-	readonly publicDelegatedSubPrefixs?: PublicDelegatedPrefixPublicDelegatedSubPrefix[] | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly ipCidrRange?: string;
+	readonly isLiveMigration?: boolean;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly parentPrefix?: string;
+	readonly publicDelegatedSubPrefixs?: PublicDelegatedPrefixPublicDelegatedSubPrefix[];
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly status?: string;
 }
 export interface PublicDelegatedPrefixPublicDelegatedSubPrefix {
-	readonly delegateeProject?: string | undefined;
-	readonly description?: string | undefined;
-	readonly ipCidrRange?: string | undefined;
-	readonly isAddress?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly region?: string | undefined;
-	readonly status?: string | undefined;
+	readonly delegateeProject?: string;
+	readonly description?: string;
+	readonly ipCidrRange?: string;
+	readonly isAddress?: boolean;
+	readonly name?: string;
+	readonly region?: string;
+	readonly status?: string;
 }
 export default {
 	GlobalPublicDelegatedPrefixes: GlobalPublicDelegatedPrefixes,

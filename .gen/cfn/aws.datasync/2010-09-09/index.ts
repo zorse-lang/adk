@@ -13,11 +13,11 @@ export interface AgentComponentOutputs {
 }
 export interface AgentComponentInputs {
 	readonly ActivationKey: string;
-	readonly AgentName?: (string | undefined) | undefined;
-	readonly SecurityGroupArns?: (string[] | undefined) | undefined;
-	readonly SubnetArns?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VpcEndpointId?: (string | undefined) | undefined;
+	readonly AgentName?: string | undefined;
+	readonly SecurityGroupArns?: string[] | undefined;
+	readonly SubnetArns?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VpcEndpointId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LocationEFS extends CfnResource<LocationEFSComponentInputs> implements LocationEFSComponentOutputs {
@@ -34,11 +34,11 @@ export interface LocationEFSComponentOutputs {
 export interface LocationEFSComponentInputs {
 	readonly Ec2Config: Ec2Config;
 	readonly EfsFilesystemArn: string;
-	readonly AccessPointArn?: (string | undefined) | undefined;
-	readonly FileSystemAccessRoleArn?: (string | undefined) | undefined;
-	readonly InTransitEncryption?: (string | undefined) | undefined;
-	readonly Subdirectory?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AccessPointArn?: string | undefined;
+	readonly FileSystemAccessRoleArn?: string | undefined;
+	readonly InTransitEncryption?: string | undefined;
+	readonly Subdirectory?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LocationFSxLustre
@@ -58,8 +58,8 @@ export interface LocationFSxLustreComponentOutputs {
 export interface LocationFSxLustreComponentInputs {
 	readonly FsxFilesystemArn: string;
 	readonly SecurityGroupArns: string[];
-	readonly Subdirectory?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Subdirectory?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LocationFSxONTAP
@@ -82,8 +82,8 @@ export interface LocationFSxONTAPComponentInputs {
 	readonly Protocol: Protocol;
 	readonly SecurityGroupArns: string[];
 	readonly StorageVirtualMachineArn: string;
-	readonly Subdirectory?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Subdirectory?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LocationFSxOpenZFS
@@ -104,8 +104,8 @@ export interface LocationFSxOpenZFSComponentInputs {
 	readonly FsxFilesystemArn: string;
 	readonly Protocol: Protocol;
 	readonly SecurityGroupArns: string[];
-	readonly Subdirectory?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Subdirectory?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LocationFSxWindows
@@ -127,9 +127,9 @@ export interface LocationFSxWindowsComponentInputs {
 	readonly Password: string;
 	readonly SecurityGroupArns: string[];
 	readonly User: string;
-	readonly Domain?: (string | undefined) | undefined;
-	readonly Subdirectory?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Domain?: string | undefined;
+	readonly Subdirectory?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LocationHDFS extends CfnResource<LocationHDFSComponentInputs> implements LocationHDFSComponentOutputs {
@@ -147,16 +147,16 @@ export interface LocationHDFSComponentInputs {
 	readonly AgentArns: string[];
 	readonly AuthenticationType: string;
 	readonly NameNodes: NameNode[];
-	readonly BlockSize?: (number | undefined) | undefined;
-	readonly KerberosKeytab?: (string | undefined) | undefined;
-	readonly KerberosKrb5Conf?: (string | undefined) | undefined;
-	readonly KerberosPrincipal?: (string | undefined) | undefined;
-	readonly KmsKeyProviderUri?: (string | undefined) | undefined;
-	readonly QopConfiguration?: (QopConfiguration | undefined) | undefined;
-	readonly ReplicationFactor?: (number | undefined) | undefined;
-	readonly SimpleUser?: (string | undefined) | undefined;
-	readonly Subdirectory?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly BlockSize?: number | undefined;
+	readonly KerberosKeytab?: string | undefined;
+	readonly KerberosKrb5Conf?: string | undefined;
+	readonly KerberosPrincipal?: string | undefined;
+	readonly KmsKeyProviderUri?: string | undefined;
+	readonly QopConfiguration?: QopConfiguration | undefined;
+	readonly ReplicationFactor?: number | undefined;
+	readonly SimpleUser?: string | undefined;
+	readonly Subdirectory?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LocationNFS extends CfnResource<LocationNFSComponentInputs> implements LocationNFSComponentOutputs {
@@ -174,8 +174,8 @@ export interface LocationNFSComponentInputs {
 	readonly OnPremConfig: OnPremConfig;
 	readonly ServerHostname: string;
 	readonly Subdirectory: string;
-	readonly MountOptions?: (MountOptions | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly MountOptions?: MountOptions | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LocationObjectStorage
@@ -196,12 +196,12 @@ export interface LocationObjectStorageComponentInputs {
 	readonly AgentArns: string[];
 	readonly BucketName: string;
 	readonly ServerHostname: string;
-	readonly AccessKey?: (string | undefined) | undefined;
-	readonly SecretKey?: (string | undefined) | undefined;
-	readonly ServerPort?: (number | undefined) | undefined;
-	readonly ServerProtocol?: (string | undefined) | undefined;
-	readonly Subdirectory?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AccessKey?: string | undefined;
+	readonly SecretKey?: string | undefined;
+	readonly ServerPort?: number | undefined;
+	readonly ServerProtocol?: string | undefined;
+	readonly Subdirectory?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LocationS3 extends CfnResource<LocationS3ComponentInputs> implements LocationS3ComponentOutputs {
@@ -218,9 +218,9 @@ export interface LocationS3ComponentOutputs {
 export interface LocationS3ComponentInputs {
 	readonly S3BucketArn: string;
 	readonly S3Config: S3Config;
-	readonly S3StorageClass?: (string | undefined) | undefined;
-	readonly Subdirectory?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly S3StorageClass?: string | undefined;
+	readonly Subdirectory?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class LocationSMB extends CfnResource<LocationSMBComponentInputs> implements LocationSMBComponentOutputs {
@@ -240,9 +240,9 @@ export interface LocationSMBComponentInputs {
 	readonly ServerHostname: string;
 	readonly Subdirectory: string;
 	readonly User: string;
-	readonly Domain?: (string | undefined) | undefined;
-	readonly MountOptions?: (MountOptions | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Domain?: string | undefined;
+	readonly MountOptions?: MountOptions | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Task extends CfnResource<TaskComponentInputs> implements TaskComponentOutputs {
@@ -267,13 +267,13 @@ export interface TaskComponentOutputs {
 export interface TaskComponentInputs {
 	readonly DestinationLocationArn: string;
 	readonly SourceLocationArn: string;
-	readonly CloudWatchLogGroupArn?: (string | undefined) | undefined;
-	readonly Excludes?: (FilterRule[] | undefined) | undefined;
-	readonly Includes?: (FilterRule[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Options?: (Options | undefined) | undefined;
-	readonly Schedule?: (TaskSchedule | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CloudWatchLogGroupArn?: string | undefined;
+	readonly Excludes?: FilterRule[] | undefined;
+	readonly Includes?: FilterRule[] | undefined;
+	readonly Name?: string | undefined;
+	readonly Options?: Options | undefined;
+	readonly Schedule?: TaskSchedule | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface Ec2Config {
@@ -284,31 +284,31 @@ export interface NFS {
 	readonly MountOptions: NfsMountOptions;
 }
 export interface NfsMountOptions {
-	readonly Version?: (string | undefined) | undefined;
+	readonly Version?: string | undefined;
 }
 export interface Protocol {
-	readonly NFS?: (NFS | undefined) | undefined;
-	readonly SMB?: (SMB | undefined) | undefined;
+	readonly NFS?: NFS | undefined;
+	readonly SMB?: SMB | undefined;
 }
 export interface SMB {
-	readonly Domain?: (string | undefined) | undefined;
+	readonly Domain?: string | undefined;
 	readonly MountOptions: SmbMountOptions;
 	readonly Password: string;
 	readonly User: string;
 }
 export interface SmbMountOptions {
-	readonly Version?: (string | undefined) | undefined;
+	readonly Version?: string | undefined;
 }
 export interface MountOptions {
-	readonly Version?: (string | undefined) | undefined;
+	readonly Version?: string | undefined;
 }
 export interface NameNode {
 	readonly Hostname: string;
 	readonly Port: number;
 }
 export interface QopConfiguration {
-	readonly DataTransferProtection?: (string | undefined) | undefined;
-	readonly RpcProtection?: (string | undefined) | undefined;
+	readonly DataTransferProtection?: string | undefined;
+	readonly RpcProtection?: string | undefined;
 }
 export interface OnPremConfig {
 	readonly AgentArns: string[];
@@ -317,25 +317,25 @@ export interface S3Config {
 	readonly BucketAccessRoleArn: string;
 }
 export interface FilterRule {
-	readonly FilterType?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly FilterType?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface Options {
-	readonly Atime?: (string | undefined) | undefined;
-	readonly BytesPerSecond?: (number | undefined) | undefined;
-	readonly Gid?: (string | undefined) | undefined;
-	readonly LogLevel?: (string | undefined) | undefined;
-	readonly Mtime?: (string | undefined) | undefined;
-	readonly ObjectTags?: (string | undefined) | undefined;
-	readonly OverwriteMode?: (string | undefined) | undefined;
-	readonly PosixPermissions?: (string | undefined) | undefined;
-	readonly PreserveDeletedFiles?: (string | undefined) | undefined;
-	readonly PreserveDevices?: (string | undefined) | undefined;
-	readonly SecurityDescriptorCopyFlags?: (string | undefined) | undefined;
-	readonly TaskQueueing?: (string | undefined) | undefined;
-	readonly TransferMode?: (string | undefined) | undefined;
-	readonly Uid?: (string | undefined) | undefined;
-	readonly VerifyMode?: (string | undefined) | undefined;
+	readonly Atime?: string | undefined;
+	readonly BytesPerSecond?: number | undefined;
+	readonly Gid?: string | undefined;
+	readonly LogLevel?: string | undefined;
+	readonly Mtime?: string | undefined;
+	readonly ObjectTags?: string | undefined;
+	readonly OverwriteMode?: string | undefined;
+	readonly PosixPermissions?: string | undefined;
+	readonly PreserveDeletedFiles?: string | undefined;
+	readonly PreserveDevices?: string | undefined;
+	readonly SecurityDescriptorCopyFlags?: string | undefined;
+	readonly TaskQueueing?: string | undefined;
+	readonly TransferMode?: string | undefined;
+	readonly Uid?: string | undefined;
+	readonly VerifyMode?: string | undefined;
 }
 export interface TaskSchedule {
 	readonly ScheduleExpression: string;

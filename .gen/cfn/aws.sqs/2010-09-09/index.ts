@@ -12,22 +12,22 @@ export interface QueueComponentOutputs {
 	readonly QueueUrl: string;
 }
 export interface QueueComponentInputs {
-	readonly ContentBasedDeduplication?: (boolean | undefined) | undefined;
-	readonly DeduplicationScope?: (string | undefined) | undefined;
-	readonly DelaySeconds?: (number | undefined) | undefined;
-	readonly FifoQueue?: (boolean | undefined) | undefined;
-	readonly FifoThroughputLimit?: (string | undefined) | undefined;
-	readonly KmsDataKeyReusePeriodSeconds?: (number | undefined) | undefined;
-	readonly KmsMasterKeyId?: (string | undefined) | undefined;
-	readonly MaximumMessageSize?: (number | undefined) | undefined;
-	readonly MessageRetentionPeriod?: (number | undefined) | undefined;
-	readonly QueueName?: string | undefined;
-	readonly ReceiveMessageWaitTimeSeconds?: (number | undefined) | undefined;
-	readonly RedriveAllowPolicy?: (any | undefined) | undefined;
-	readonly RedrivePolicy?: (any | undefined) | undefined;
-	readonly SqsManagedSseEnabled?: (boolean | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VisibilityTimeout?: (number | undefined) | undefined;
+	readonly ContentBasedDeduplication?: boolean | undefined;
+	readonly DeduplicationScope?: string | undefined;
+	readonly DelaySeconds?: number | undefined;
+	readonly FifoQueue?: boolean | undefined;
+	readonly FifoThroughputLimit?: string | undefined;
+	readonly KmsDataKeyReusePeriodSeconds?: number | undefined;
+	readonly KmsMasterKeyId?: string | undefined;
+	readonly MaximumMessageSize?: number | undefined;
+	readonly MessageRetentionPeriod?: number | undefined;
+	readonly QueueName?: string;
+	readonly ReceiveMessageWaitTimeSeconds?: number | undefined;
+	readonly RedriveAllowPolicy?: any | undefined;
+	readonly RedrivePolicy?: any | undefined;
+	readonly SqsManagedSseEnabled?: boolean | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VisibilityTimeout?: number | undefined;
 	readonly LogicalId: string;
 }
 export class QueuePolicy extends CfnResource<QueuePolicyComponentInputs> implements QueuePolicyComponentOutputs {

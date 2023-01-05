@@ -15,8 +15,8 @@ export interface endpointsComponentOutputs {
 }
 export interface endpointsComponentInputs {
 	readonly name: string;
-	readonly properties?: EndpointProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: EndpointProperties;
+	readonly systemData?: SystemData;
 }
 export function listCredentials(resource: endpoints): EndpointAccessResource {
 	if (resource.apiVersion !== "2021-10-06-preview") {
@@ -28,27 +28,27 @@ export function listCredentials(resource: endpoints): EndpointAccessResource {
 	throw new Error("not implemented");
 }
 export interface EndpointAccessResource {
-	readonly relay?: RelayNamespaceAccessProperties | undefined;
+	readonly relay?: RelayNamespaceAccessProperties;
 }
 export interface EndpointProperties {
-	readonly provisioningState?: string | undefined;
-	readonly resourceId?: string | undefined;
+	readonly provisioningState?: string;
+	readonly resourceId?: string;
 	readonly type: "custom" | "default";
 }
 export interface RelayNamespaceAccessProperties {
-	readonly accessKey?: string | undefined;
-	readonly expiresOn?: number | undefined;
+	readonly accessKey?: string;
+	readonly expiresOn?: number;
 	readonly hybridConnectionName: string;
 	readonly namespaceName: string;
 	readonly namespaceNameSuffix: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	endpoints: endpoints,

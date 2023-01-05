@@ -17,12 +17,12 @@ export interface dataBoxEdgeDevicesComponentOutputs {
 	readonly type: "Microsoft.DataBoxEdge/dataBoxEdgeDevices";
 }
 export interface dataBoxEdgeDevicesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DataBoxEdgeDeviceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: DataBoxEdgeDeviceTags | undefined;
+	readonly properties?: DataBoxEdgeDeviceProperties;
+	readonly sku?: Sku;
+	readonly tags?: DataBoxEdgeDeviceTags;
 }
 export class dataBoxEdgeDevices_alerts
 	extends ArmResource<dataBoxEdgeDevices_alertsComponentInputs>
@@ -42,7 +42,7 @@ export interface dataBoxEdgeDevices_alertsComponentOutputs {
 }
 export interface dataBoxEdgeDevices_alertsComponentInputs {
 	readonly name: string;
-	readonly properties?: AlertProperties | undefined;
+	readonly properties?: AlertProperties;
 }
 export class dataBoxEdgeDevices_bandwidthSchedules
 	extends ArmResource<dataBoxEdgeDevices_bandwidthSchedulesComponentInputs>
@@ -94,7 +94,7 @@ export interface dataBoxEdgeDevices_networkSettingsComponentOutputs {
 }
 export interface dataBoxEdgeDevices_networkSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: NetworkSettingsProperties | undefined;
+	readonly properties?: NetworkSettingsProperties;
 }
 export class dataBoxEdgeDevices_orders
 	extends ArmResource<dataBoxEdgeDevices_ordersComponentInputs>
@@ -114,7 +114,7 @@ export interface dataBoxEdgeDevices_ordersComponentOutputs {
 }
 export interface dataBoxEdgeDevices_ordersComponentInputs {
 	readonly name: string;
-	readonly properties?: OrderProperties | undefined;
+	readonly properties?: OrderProperties;
 }
 export class dataBoxEdgeDevices_roles_IOT
 	extends ArmResource<dataBoxEdgeDevices_roles_IOTComponentInputs>
@@ -135,7 +135,7 @@ export interface dataBoxEdgeDevices_roles_IOTComponentOutputs {
 export interface dataBoxEdgeDevices_roles_IOTComponentInputs {
 	readonly name: string;
 	readonly kind: "IOT";
-	readonly properties?: IoTRoleProperties | undefined;
+	readonly properties?: IoTRoleProperties;
 }
 export class dataBoxEdgeDevices_shares
 	extends ArmResource<dataBoxEdgeDevices_sharesComponentInputs>
@@ -301,7 +301,7 @@ export interface dataBoxEdgeDevices_updateSummaryComponentOutputs {
 }
 export interface dataBoxEdgeDevices_updateSummaryComponentInputs {
 	readonly name: string;
-	readonly properties?: UpdateSummaryProperties | undefined;
+	readonly properties?: UpdateSummaryProperties;
 }
 export class dataBoxEdgeDevices_users
 	extends ArmResource<dataBoxEdgeDevices_usersComponentInputs>
@@ -325,37 +325,37 @@ export interface dataBoxEdgeDevices_usersComponentInputs {
 }
 export interface Address {
 	readonly addressLine1: string;
-	readonly addressLine2?: string | undefined;
-	readonly addressLine3?: string | undefined;
+	readonly addressLine2?: string;
+	readonly addressLine3?: string;
 	readonly city: string;
 	readonly country: string;
 	readonly postalCode: string;
 	readonly state: string;
 }
 export interface AlertErrorDetails {
-	readonly errorCode?: string | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly occurrences?: number | undefined;
+	readonly errorCode?: string;
+	readonly errorMessage?: string;
+	readonly occurrences?: number;
 }
 export interface AlertProperties {
-	readonly alertType?: string | undefined;
-	readonly appearedAtDateTime?: string | undefined;
-	readonly detailedInformation?: AlertPropertiesDetailedInformation | undefined;
-	readonly errorDetails?: AlertErrorDetails | undefined;
-	readonly recommendation?: string | undefined;
-	readonly severity?: ("Critical" | "Informational" | "Warning") | undefined;
-	readonly title?: string | undefined;
+	readonly alertType?: string;
+	readonly appearedAtDateTime?: string;
+	readonly detailedInformation?: AlertPropertiesDetailedInformation;
+	readonly errorDetails?: AlertErrorDetails;
+	readonly recommendation?: string;
+	readonly severity?: "Critical" | "Informational" | "Warning";
+	readonly title?: string;
 }
 export interface AlertPropertiesDetailedInformation {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AsymmetricEncryptedSecret {
 	readonly encryptionAlgorithm: "AES256" | "None" | "RSAES_PKCS1_v_1_5";
-	readonly encryptionCertThumbprint?: string | undefined;
+	readonly encryptionCertThumbprint?: string;
 	readonly value: string;
 }
 export interface Authentication {
-	readonly symmetricKey?: SymmetricKey | undefined;
+	readonly symmetricKey?: SymmetricKey;
 }
 export interface AzureContainerInfo {
 	readonly containerName: string;
@@ -379,126 +379,123 @@ export interface ContactDetails {
 	readonly phone: string;
 }
 export interface ContainerProperties {
-	readonly containerStatus?: ("NeedsAttention" | "OK" | "Offline" | "Unknown" | "Updating") | undefined;
-	readonly createdDateTime?: string | undefined;
+	readonly containerStatus?: "NeedsAttention" | "OK" | "Offline" | "Unknown" | "Updating";
+	readonly createdDateTime?: string;
 	readonly dataFormat: "AzureFile" | "BlockBlob" | "PageBlob";
-	readonly refreshDetails?: RefreshDetails | undefined;
+	readonly refreshDetails?: RefreshDetails;
 }
 export interface DataBoxEdgeDeviceProperties {
-	readonly configuredRoleTypes?: ("ASA" | "Cognitive" | "Functions" | "IOT"[]) | undefined;
-	readonly culture?: string | undefined;
+	readonly configuredRoleTypes?: "ASA" | "Cognitive" | "Functions" | "IOT"[];
+	readonly culture?: string;
 	readonly dataBoxEdgeDeviceStatus?:
-		| (
-				| "Disconnected"
-				| "Maintenance"
-				| "NeedsAttention"
-				| "Offline"
-				| "Online"
-				| "PartiallyDisconnected"
-				| "ReadyToSetup"
-		  )
-		| undefined;
-	readonly description?: string | undefined;
-	readonly deviceHcsVersion?: string | undefined;
-	readonly deviceLocalCapacity?: number | undefined;
-	readonly deviceModel?: string | undefined;
-	readonly deviceSoftwareVersion?: string | undefined;
-	readonly deviceType?: "DataBoxEdgeDevice" | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly modelDescription?: string | undefined;
-	readonly nodeCount?: number | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly timeZone?: string | undefined;
+		| "Disconnected"
+		| "Maintenance"
+		| "NeedsAttention"
+		| "Offline"
+		| "Online"
+		| "PartiallyDisconnected"
+		| "ReadyToSetup";
+	readonly description?: string;
+	readonly deviceHcsVersion?: string;
+	readonly deviceLocalCapacity?: number;
+	readonly deviceModel?: string;
+	readonly deviceSoftwareVersion?: string;
+	readonly deviceType?: "DataBoxEdgeDevice";
+	readonly friendlyName?: string;
+	readonly modelDescription?: string;
+	readonly nodeCount?: number;
+	readonly serialNumber?: string;
+	readonly timeZone?: string;
 }
 export interface DataBoxEdgeDeviceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface FileSourceInfo {
 	readonly shareId: string;
 }
 export interface FileTriggerProperties {
-	readonly customContextTag?: string | undefined;
+	readonly customContextTag?: string;
 	readonly sinkInfo: RoleSinkInfo;
 	readonly sourceInfo: FileSourceInfo;
 }
 export interface ImageRepositoryCredential {
 	readonly imageRepositoryUrl: string;
-	readonly password?: AsymmetricEncryptedSecret | undefined;
+	readonly password?: AsymmetricEncryptedSecret;
 	readonly userName: string;
 }
 export interface IoTDeviceInfo {
-	readonly authentication?: Authentication | undefined;
+	readonly authentication?: Authentication;
 	readonly deviceId: string;
 	readonly ioTHostHub: string;
-	readonly ioTHostHubId?: string | undefined;
+	readonly ioTHostHubId?: string;
 }
 export interface IoTEdgeAgentInfo {
 	readonly imageName: string;
-	readonly imageRepository?: ImageRepositoryCredential | undefined;
+	readonly imageRepository?: ImageRepositoryCredential;
 	readonly tag: string;
 }
 export interface IoTRoleProperties {
 	readonly hostPlatform: "Linux" | "Windows";
-	readonly hostPlatformType?: ("KubernetesCluster" | "LinuxVM") | undefined;
+	readonly hostPlatformType?: "KubernetesCluster" | "LinuxVM";
 	readonly ioTDeviceDetails: IoTDeviceInfo;
-	readonly ioTEdgeAgentInfo?: IoTEdgeAgentInfo | undefined;
+	readonly ioTEdgeAgentInfo?: IoTEdgeAgentInfo;
 	readonly ioTEdgeDeviceDetails: IoTDeviceInfo;
 	readonly roleStatus: "Disabled" | "Enabled";
-	readonly shareMappings?: MountPointMap[] | undefined;
+	readonly shareMappings?: MountPointMap[];
 }
 export interface Ipv4Config {
-	readonly gateway?: string | undefined;
-	readonly ipAddress?: string | undefined;
-	readonly subnet?: string | undefined;
+	readonly gateway?: string;
+	readonly ipAddress?: string;
+	readonly subnet?: string;
 }
 export interface Ipv6Config {
-	readonly gateway?: string | undefined;
-	readonly ipAddress?: string | undefined;
-	readonly prefixLength?: number | undefined;
+	readonly gateway?: string;
+	readonly ipAddress?: string;
+	readonly prefixLength?: number;
 }
 export interface MountPointMap {
-	readonly mountPoint?: string | undefined;
-	readonly mountType?: ("HostPath" | "Volume") | undefined;
-	readonly roleId?: string | undefined;
-	readonly roleType?: ("ASA" | "Cognitive" | "Functions" | "IOT") | undefined;
+	readonly mountPoint?: string;
+	readonly mountType?: "HostPath" | "Volume";
+	readonly roleId?: string;
+	readonly roleType?: "ASA" | "Cognitive" | "Functions" | "IOT";
 	readonly shareId: string;
 }
 export interface NetworkAdapter {
-	readonly adapterId?: string | undefined;
-	readonly adapterPosition?: NetworkAdapterPosition | undefined;
-	readonly dhcpStatus?: ("Disabled" | "Enabled") | undefined;
-	readonly dnsServers?: string[] | undefined;
-	readonly index?: number | undefined;
-	readonly ipv4Configuration?: Ipv4Config | undefined;
-	readonly ipv6Configuration?: Ipv6Config | undefined;
-	readonly ipv6LinkLocalAddress?: string | undefined;
-	readonly label?: string | undefined;
-	readonly linkSpeed?: number | undefined;
-	readonly macAddress?: string | undefined;
-	readonly networkAdapterName?: string | undefined;
-	readonly nodeId?: string | undefined;
-	readonly rdmaStatus?: ("Capable" | "Incapable") | undefined;
-	readonly status?: ("Active" | "Inactive") | undefined;
+	readonly adapterId?: string;
+	readonly adapterPosition?: NetworkAdapterPosition;
+	readonly dhcpStatus?: "Disabled" | "Enabled";
+	readonly dnsServers?: string[];
+	readonly index?: number;
+	readonly ipv4Configuration?: Ipv4Config;
+	readonly ipv6Configuration?: Ipv6Config;
+	readonly ipv6LinkLocalAddress?: string;
+	readonly label?: string;
+	readonly linkSpeed?: number;
+	readonly macAddress?: string;
+	readonly networkAdapterName?: string;
+	readonly nodeId?: string;
+	readonly rdmaStatus?: "Capable" | "Incapable";
+	readonly status?: "Active" | "Inactive";
 }
 export interface NetworkAdapterPosition {
-	readonly networkGroup?: ("NonRDMA" | "None" | "RDMA") | undefined;
-	readonly port?: number | undefined;
+	readonly networkGroup?: "NonRDMA" | "None" | "RDMA";
+	readonly port?: number;
 }
 export interface NetworkSettingsProperties {
-	readonly networkAdapters?: NetworkAdapter[] | undefined;
+	readonly networkAdapters?: NetworkAdapter[];
 }
 export interface OrderProperties {
 	readonly contactInformation: ContactDetails;
-	readonly currentStatus?: OrderStatus | undefined;
-	readonly deliveryTrackingInfo?: TrackingInfo[] | undefined;
-	readonly orderHistory?: OrderStatus[] | undefined;
-	readonly returnTrackingInfo?: TrackingInfo[] | undefined;
-	readonly serialNumber?: string | undefined;
+	readonly currentStatus?: OrderStatus;
+	readonly deliveryTrackingInfo?: TrackingInfo[];
+	readonly orderHistory?: OrderStatus[];
+	readonly returnTrackingInfo?: TrackingInfo[];
+	readonly serialNumber?: string;
 	readonly shippingAddress: Address;
 }
 export interface OrderStatus {
-	readonly additionalOrderDetails?: OrderStatusAdditionalOrderDetails | undefined;
-	readonly comments?: string | undefined;
+	readonly additionalOrderDetails?: OrderStatusAdditionalOrderDetails;
+	readonly comments?: string;
 	readonly status:
 		| "Arriving"
 		| "AwaitingFulfilment"
@@ -514,26 +511,26 @@ export interface OrderStatus {
 		| "Shipped"
 		| "ShippedBack"
 		| "Untracked";
-	readonly updateDateTime?: string | undefined;
+	readonly updateDateTime?: string;
 }
 export interface OrderStatusAdditionalOrderDetails {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PeriodicTimerProperties {
-	readonly customContextTag?: string | undefined;
+	readonly customContextTag?: string;
 	readonly sinkInfo: RoleSinkInfo;
 	readonly sourceInfo: PeriodicTimerSourceInfo;
 }
 export interface PeriodicTimerSourceInfo {
 	readonly schedule: string;
 	readonly startTime: string;
-	readonly topic?: string | undefined;
+	readonly topic?: string;
 }
 export interface RefreshDetails {
-	readonly errorManifestFile?: string | undefined;
-	readonly inProgressRefreshJobId?: string | undefined;
-	readonly lastCompletedRefreshJobTimeInUTC?: string | undefined;
-	readonly lastJob?: string | undefined;
+	readonly errorManifestFile?: string;
+	readonly inProgressRefreshJobId?: string;
+	readonly lastCompletedRefreshJobTimeInUTC?: string;
+	readonly lastJob?: string;
 }
 export interface RoleSinkInfo {
 	readonly roleId: string;
@@ -544,89 +541,86 @@ export interface ShareAccessRight {
 }
 export interface ShareProperties {
 	readonly accessProtocol: "NFS" | "SMB";
-	readonly azureContainerInfo?: AzureContainerInfo | undefined;
-	readonly clientAccessRights?: ClientAccessRight[] | undefined;
-	readonly dataPolicy?: ("Cloud" | "Local") | undefined;
-	readonly description?: string | undefined;
+	readonly azureContainerInfo?: AzureContainerInfo;
+	readonly clientAccessRights?: ClientAccessRight[];
+	readonly dataPolicy?: "Cloud" | "Local";
+	readonly description?: string;
 	readonly monitoringStatus: "Disabled" | "Enabled";
-	readonly refreshDetails?: RefreshDetails | undefined;
-	readonly shareMappings?: MountPointMap[] | undefined;
+	readonly refreshDetails?: RefreshDetails;
+	readonly shareMappings?: MountPointMap[];
 	readonly shareStatus: "NeedsAttention" | "OK" | "Offline" | "Unknown" | "Updating";
-	readonly userAccessRights?: UserAccessRight[] | undefined;
+	readonly userAccessRights?: UserAccessRight[];
 }
 export interface Sku {
 	readonly name?:
-		| (
-				| "Edge"
-				| "GPU"
-				| "Gateway"
-				| "TCA_Large"
-				| "TCA_Small"
-				| "TDC"
-				| "TEA_1Node"
-				| "TEA_1Node_Heater"
-				| "TEA_1Node_UPS"
-				| "TEA_1Node_UPS_Heater"
-				| "TEA_4Node_Heater"
-				| "TEA_4Node_UPS_Heater"
-				| "TMA"
-		  )
-		| undefined;
-	readonly tier?: "Standard" | undefined;
+		| "Edge"
+		| "GPU"
+		| "Gateway"
+		| "TCA_Large"
+		| "TCA_Small"
+		| "TDC"
+		| "TEA_1Node"
+		| "TEA_1Node_Heater"
+		| "TEA_1Node_UPS"
+		| "TEA_1Node_UPS_Heater"
+		| "TEA_4Node_Heater"
+		| "TEA_4Node_UPS_Heater"
+		| "TMA";
+	readonly tier?: "Standard";
 }
 export interface StorageAccountCredentialProperties {
-	readonly accountKey?: AsymmetricEncryptedSecret | undefined;
+	readonly accountKey?: AsymmetricEncryptedSecret;
 	readonly accountType: "BlobStorage" | "GeneralPurposeStorage";
 	readonly alias: string;
-	readonly blobDomainName?: string | undefined;
-	readonly connectionString?: string | undefined;
+	readonly blobDomainName?: string;
+	readonly connectionString?: string;
 	readonly sslStatus: "Disabled" | "Enabled";
-	readonly storageAccountId?: string | undefined;
-	readonly userName?: string | undefined;
+	readonly storageAccountId?: string;
+	readonly userName?: string;
 }
 export interface StorageAccountProperties {
-	readonly blobEndpoint?: string | undefined;
-	readonly containerCount?: number | undefined;
-	readonly dataPolicy?: ("Cloud" | "Local") | undefined;
-	readonly description?: string | undefined;
-	readonly storageAccountCredentialId?: string | undefined;
-	readonly storageAccountStatus?: ("NeedsAttention" | "OK" | "Offline" | "Unknown" | "Updating") | undefined;
+	readonly blobEndpoint?: string;
+	readonly containerCount?: number;
+	readonly dataPolicy?: "Cloud" | "Local";
+	readonly description?: string;
+	readonly storageAccountCredentialId?: string;
+	readonly storageAccountStatus?: "NeedsAttention" | "OK" | "Offline" | "Unknown" | "Updating";
 }
 export interface SymmetricKey {
-	readonly connectionString?: AsymmetricEncryptedSecret | undefined;
+	readonly connectionString?: AsymmetricEncryptedSecret;
 }
 export interface TrackingInfo {
-	readonly carrierName?: string | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly trackingId?: string | undefined;
-	readonly trackingUrl?: string | undefined;
+	readonly carrierName?: string;
+	readonly serialNumber?: string;
+	readonly trackingId?: string;
+	readonly trackingUrl?: string;
 }
 export interface UpdateSummaryProperties {
-	readonly deviceLastScannedDateTime?: string | undefined;
-	readonly deviceVersionNumber?: string | undefined;
-	readonly friendlyDeviceVersionName?: string | undefined;
-	readonly inProgressDownloadJobId?: string | undefined;
-	readonly inProgressDownloadJobStartedDateTime?: string | undefined;
-	readonly inProgressInstallJobId?: string | undefined;
-	readonly inProgressInstallJobStartedDateTime?: string | undefined;
-	readonly lastCompletedDownloadJobDateTime?: string | undefined;
-	readonly lastCompletedInstallJobDateTime?: string | undefined;
-	readonly lastCompletedScanJobDateTime?: string | undefined;
-	readonly ongoingUpdateOperation?: ("Download" | "Install" | "None" | "Scan") | undefined;
-	readonly rebootBehavior?: ("NeverReboots" | "RequestReboot" | "RequiresReboot") | undefined;
-	readonly totalNumberOfUpdatesAvailable?: number | undefined;
-	readonly totalNumberOfUpdatesPendingDownload?: number | undefined;
-	readonly totalNumberOfUpdatesPendingInstall?: number | undefined;
-	readonly totalUpdateSizeInBytes?: number | undefined;
-	readonly updateTitles?: string[] | undefined;
+	readonly deviceLastScannedDateTime?: string;
+	readonly deviceVersionNumber?: string;
+	readonly friendlyDeviceVersionName?: string;
+	readonly inProgressDownloadJobId?: string;
+	readonly inProgressDownloadJobStartedDateTime?: string;
+	readonly inProgressInstallJobId?: string;
+	readonly inProgressInstallJobStartedDateTime?: string;
+	readonly lastCompletedDownloadJobDateTime?: string;
+	readonly lastCompletedInstallJobDateTime?: string;
+	readonly lastCompletedScanJobDateTime?: string;
+	readonly ongoingUpdateOperation?: "Download" | "Install" | "None" | "Scan";
+	readonly rebootBehavior?: "NeverReboots" | "RequestReboot" | "RequiresReboot";
+	readonly totalNumberOfUpdatesAvailable?: number;
+	readonly totalNumberOfUpdatesPendingDownload?: number;
+	readonly totalNumberOfUpdatesPendingInstall?: number;
+	readonly totalUpdateSizeInBytes?: number;
+	readonly updateTitles?: string[];
 }
 export interface UserAccessRight {
 	readonly accessType: "Change" | "Custom" | "Read";
 	readonly userId: string;
 }
 export interface UserProperties {
-	readonly encryptedPassword?: AsymmetricEncryptedSecret | undefined;
-	readonly shareAccessRights?: ShareAccessRight[] | undefined;
+	readonly encryptedPassword?: AsymmetricEncryptedSecret;
+	readonly shareAccessRights?: ShareAccessRight[];
 	readonly userType: "ARM" | "LocalManagement" | "Share";
 }
 export type dataBoxEdgeDevices_roles = dataBoxEdgeDevices_roles_IOT;

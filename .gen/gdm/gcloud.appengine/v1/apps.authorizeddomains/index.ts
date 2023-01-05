@@ -10,7 +10,6 @@ export class AppsAuthorizedDomains
 }
 export interface AppsAuthorizedDomainsComponentOutputs {}
 export interface AppsAuthorizedDomainsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

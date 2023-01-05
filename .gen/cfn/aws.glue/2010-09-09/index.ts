@@ -7,10 +7,10 @@ export class Classifier extends CfnResource<ClassifierComponentInputs> implement
 }
 export interface ClassifierComponentOutputs {}
 export interface ClassifierComponentInputs {
-	readonly CsvClassifier?: (CsvClassifier | undefined) | undefined;
-	readonly GrokClassifier?: (GrokClassifier | undefined) | undefined;
-	readonly JsonClassifier?: (JsonClassifier | undefined) | undefined;
-	readonly XMLClassifier?: (XMLClassifier | undefined) | undefined;
+	readonly CsvClassifier?: CsvClassifier | undefined;
+	readonly GrokClassifier?: GrokClassifier | undefined;
+	readonly JsonClassifier?: JsonClassifier | undefined;
+	readonly XMLClassifier?: XMLClassifier | undefined;
 	readonly LogicalId: string;
 }
 export class Connection extends CfnResource<ConnectionComponentInputs> implements ConnectionComponentOutputs {
@@ -33,17 +33,17 @@ export interface CrawlerComponentOutputs {}
 export interface CrawlerComponentInputs {
 	readonly Role: string;
 	readonly Targets: Targets;
-	readonly Classifiers?: (string[] | undefined) | undefined;
-	readonly Configuration?: (string | undefined) | undefined;
-	readonly CrawlerSecurityConfiguration?: (string | undefined) | undefined;
-	readonly DatabaseName?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly RecrawlPolicy?: (RecrawlPolicy | undefined) | undefined;
-	readonly Schedule?: (Schedule | undefined) | undefined;
-	readonly SchemaChangePolicy?: (SchemaChangePolicy | undefined) | undefined;
-	readonly TablePrefix?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly Classifiers?: string[] | undefined;
+	readonly Configuration?: string | undefined;
+	readonly CrawlerSecurityConfiguration?: string | undefined;
+	readonly DatabaseName?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly RecrawlPolicy?: RecrawlPolicy | undefined;
+	readonly Schedule?: Schedule | undefined;
+	readonly SchemaChangePolicy?: SchemaChangePolicy | undefined;
+	readonly TablePrefix?: string | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class DataCatalogEncryptionSettings
@@ -79,20 +79,20 @@ export class DevEndpoint extends CfnResource<DevEndpointComponentInputs> impleme
 export interface DevEndpointComponentOutputs {}
 export interface DevEndpointComponentInputs {
 	readonly RoleArn: string;
-	readonly Arguments?: (any | undefined) | undefined;
-	readonly EndpointName?: (string | undefined) | undefined;
-	readonly ExtraJarsS3Path?: (string | undefined) | undefined;
-	readonly ExtraPythonLibsS3Path?: (string | undefined) | undefined;
-	readonly GlueVersion?: (string | undefined) | undefined;
-	readonly NumberOfNodes?: (number | undefined) | undefined;
-	readonly NumberOfWorkers?: (number | undefined) | undefined;
-	readonly PublicKey?: (string | undefined) | undefined;
-	readonly PublicKeys?: (string[] | undefined) | undefined;
-	readonly SecurityConfiguration?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly WorkerType?: (string | undefined) | undefined;
+	readonly Arguments?: any | undefined;
+	readonly EndpointName?: string | undefined;
+	readonly ExtraJarsS3Path?: string | undefined;
+	readonly ExtraPythonLibsS3Path?: string | undefined;
+	readonly GlueVersion?: string | undefined;
+	readonly NumberOfNodes?: number | undefined;
+	readonly NumberOfWorkers?: number | undefined;
+	readonly PublicKey?: string | undefined;
+	readonly PublicKeys?: string[] | undefined;
+	readonly SecurityConfiguration?: string | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SubnetId?: string | undefined;
+	readonly Tags?: any | undefined;
+	readonly WorkerType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Job extends CfnResource<JobComponentInputs> implements JobComponentOutputs {
@@ -104,24 +104,24 @@ export interface JobComponentOutputs {}
 export interface JobComponentInputs {
 	readonly Command: JobCommand;
 	readonly Role: string;
-	readonly AllocatedCapacity?: (number | undefined) | undefined;
-	readonly Connections?: (ConnectionsList | undefined) | undefined;
-	readonly DefaultArguments?: (any | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ExecutionClass?: (string | undefined) | undefined;
-	readonly ExecutionProperty?: (Execution | undefined) | undefined;
-	readonly GlueVersion?: (string | undefined) | undefined;
-	readonly LogUri?: (string | undefined) | undefined;
-	readonly MaxCapacity?: (number | undefined) | undefined;
-	readonly MaxRetries?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly NonOverridableArguments?: (any | undefined) | undefined;
-	readonly NotificationProperty?: (Notification | undefined) | undefined;
-	readonly NumberOfWorkers?: (number | undefined) | undefined;
-	readonly SecurityConfiguration?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
-	readonly WorkerType?: (string | undefined) | undefined;
+	readonly AllocatedCapacity?: number | undefined;
+	readonly Connections?: ConnectionsList | undefined;
+	readonly DefaultArguments?: any | undefined;
+	readonly Description?: string | undefined;
+	readonly ExecutionClass?: string | undefined;
+	readonly ExecutionProperty?: Execution | undefined;
+	readonly GlueVersion?: string | undefined;
+	readonly LogUri?: string | undefined;
+	readonly MaxCapacity?: number | undefined;
+	readonly MaxRetries?: number | undefined;
+	readonly Name?: string | undefined;
+	readonly NonOverridableArguments?: any | undefined;
+	readonly NotificationProperty?: Notification | undefined;
+	readonly NumberOfWorkers?: number | undefined;
+	readonly SecurityConfiguration?: string | undefined;
+	readonly Tags?: any | undefined;
+	readonly Timeout?: number | undefined;
+	readonly WorkerType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class MLTransform extends CfnResource<MLTransformComponentInputs> implements MLTransformComponentOutputs {
@@ -134,16 +134,16 @@ export interface MLTransformComponentInputs {
 	readonly InputRecordTables: InputRecordTables;
 	readonly Role: string;
 	readonly TransformParameters: TransformParameters;
-	readonly Description?: (string | undefined) | undefined;
-	readonly GlueVersion?: (string | undefined) | undefined;
-	readonly MaxCapacity?: (number | undefined) | undefined;
-	readonly MaxRetries?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly NumberOfWorkers?: (number | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
-	readonly TransformEncryption?: (TransformEncryption | undefined) | undefined;
-	readonly WorkerType?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly GlueVersion?: string | undefined;
+	readonly MaxCapacity?: number | undefined;
+	readonly MaxRetries?: number | undefined;
+	readonly Name?: string | undefined;
+	readonly NumberOfWorkers?: number | undefined;
+	readonly Tags?: any | undefined;
+	readonly Timeout?: number | undefined;
+	readonly TransformEncryption?: TransformEncryption | undefined;
+	readonly WorkerType?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Partition extends CfnResource<PartitionComponentInputs> implements PartitionComponentOutputs {
@@ -170,8 +170,8 @@ export interface RegistryComponentOutputs {
 }
 export interface RegistryComponentInputs {
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Schema extends CfnResource<SchemaComponentInputs> implements SchemaComponentOutputs {
@@ -190,10 +190,10 @@ export interface SchemaComponentInputs {
 	readonly DataFormat: string;
 	readonly Name: string;
 	readonly SchemaDefinition: string;
-	readonly CheckpointVersion?: (SchemaVersion | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Registry?: (Registry | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CheckpointVersion?: SchemaVersion | undefined;
+	readonly Description?: string | undefined;
+	readonly Registry?: Registry | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class SchemaVersion extends CfnResource<SchemaVersionComponentInputs> implements SchemaVersionComponentOutputs {
@@ -260,14 +260,14 @@ export interface TriggerComponentOutputs {}
 export interface TriggerComponentInputs {
 	readonly Actions: Action[];
 	readonly Type: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EventBatchingCondition?: (EventBatchingCondition | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Predicate?: (Predicate | undefined) | undefined;
-	readonly Schedule?: (string | undefined) | undefined;
-	readonly StartOnCreation?: (boolean | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly WorkflowName?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly EventBatchingCondition?: EventBatchingCondition | undefined;
+	readonly Name?: string | undefined;
+	readonly Predicate?: Predicate | undefined;
+	readonly Schedule?: string | undefined;
+	readonly StartOnCreation?: boolean | undefined;
+	readonly Tags?: any | undefined;
+	readonly WorkflowName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Workflow extends CfnResource<WorkflowComponentInputs> implements WorkflowComponentOutputs {
@@ -277,282 +277,282 @@ export class Workflow extends CfnResource<WorkflowComponentInputs> implements Wo
 }
 export interface WorkflowComponentOutputs {}
 export interface WorkflowComponentInputs {
-	readonly DefaultRunProperties?: (any | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly MaxConcurrentRuns?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly DefaultRunProperties?: any | undefined;
+	readonly Description?: string | undefined;
+	readonly MaxConcurrentRuns?: number | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export interface CsvClassifier {
-	readonly AllowSingleColumn?: (boolean | undefined) | undefined;
-	readonly ContainsHeader?: (string | undefined) | undefined;
-	readonly Delimiter?: (string | undefined) | undefined;
-	readonly DisableValueTrimming?: (boolean | undefined) | undefined;
-	readonly Header?: (string[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly QuoteSymbol?: (string | undefined) | undefined;
+	readonly AllowSingleColumn?: boolean | undefined;
+	readonly ContainsHeader?: string | undefined;
+	readonly Delimiter?: string | undefined;
+	readonly DisableValueTrimming?: boolean | undefined;
+	readonly Header?: string[] | undefined;
+	readonly Name?: string | undefined;
+	readonly QuoteSymbol?: string | undefined;
 }
 export interface GrokClassifier {
 	readonly Classification: string;
-	readonly CustomPatterns?: (string | undefined) | undefined;
+	readonly CustomPatterns?: string | undefined;
 	readonly GrokPattern: string;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
 }
 export interface JsonClassifier {
 	readonly JsonPath: string;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
 }
 export interface XMLClassifier {
 	readonly Classification: string;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
 	readonly RowTag: string;
 }
 export interface ConnectionInput {
-	readonly ConnectionProperties?: (any | undefined) | undefined;
+	readonly ConnectionProperties?: any | undefined;
 	readonly ConnectionType: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly MatchCriteria?: (string[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly PhysicalConnectionRequirements?: (PhysicalConnectionRequirements | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly MatchCriteria?: string[] | undefined;
+	readonly Name?: string | undefined;
+	readonly PhysicalConnectionRequirements?: PhysicalConnectionRequirements | undefined;
 }
 export interface PhysicalConnectionRequirements {
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly SecurityGroupIdList?: (string[] | undefined) | undefined;
-	readonly SubnetId?: (string | undefined) | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly SecurityGroupIdList?: string[] | undefined;
+	readonly SubnetId?: string | undefined;
 }
 export interface CatalogTarget {
-	readonly DatabaseName?: (string | undefined) | undefined;
-	readonly Tables?: (string[] | undefined) | undefined;
+	readonly DatabaseName?: string | undefined;
+	readonly Tables?: string[] | undefined;
 }
 export interface DynamoDBTarget {
-	readonly Path?: (string | undefined) | undefined;
+	readonly Path?: string | undefined;
 }
 export interface JdbcTarget {
-	readonly ConnectionName?: (string | undefined) | undefined;
-	readonly Exclusions?: (string[] | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
+	readonly ConnectionName?: string | undefined;
+	readonly Exclusions?: string[] | undefined;
+	readonly Path?: string | undefined;
 }
 export interface MongoDBTarget {
-	readonly ConnectionName?: (string | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
+	readonly ConnectionName?: string | undefined;
+	readonly Path?: string | undefined;
 }
 export interface RecrawlPolicy {
-	readonly RecrawlBehavior?: (string | undefined) | undefined;
+	readonly RecrawlBehavior?: string | undefined;
 }
 export interface S3Target {
-	readonly ConnectionName?: (string | undefined) | undefined;
-	readonly DlqEventQueueArn?: (string | undefined) | undefined;
-	readonly EventQueueArn?: (string | undefined) | undefined;
-	readonly Exclusions?: (string[] | undefined) | undefined;
-	readonly Path?: (string | undefined) | undefined;
-	readonly SampleSize?: (number | undefined) | undefined;
+	readonly ConnectionName?: string | undefined;
+	readonly DlqEventQueueArn?: string | undefined;
+	readonly EventQueueArn?: string | undefined;
+	readonly Exclusions?: string[] | undefined;
+	readonly Path?: string | undefined;
+	readonly SampleSize?: number | undefined;
 }
 export interface Schedule {
-	readonly ScheduleExpression?: (string | undefined) | undefined;
+	readonly ScheduleExpression?: string | undefined;
 }
 export interface SchemaChangePolicy {
-	readonly DeleteBehavior?: (string | undefined) | undefined;
-	readonly UpdateBehavior?: (string | undefined) | undefined;
+	readonly DeleteBehavior?: string | undefined;
+	readonly UpdateBehavior?: string | undefined;
 }
 export interface Targets {
-	readonly CatalogTargets?: (CatalogTarget[] | undefined) | undefined;
-	readonly DynamoDBTargets?: (DynamoDBTarget[] | undefined) | undefined;
-	readonly JdbcTargets?: (JdbcTarget[] | undefined) | undefined;
-	readonly MongoDBTargets?: (MongoDBTarget[] | undefined) | undefined;
-	readonly S3Targets?: (S3Target[] | undefined) | undefined;
+	readonly CatalogTargets?: CatalogTarget[] | undefined;
+	readonly DynamoDBTargets?: DynamoDBTarget[] | undefined;
+	readonly JdbcTargets?: JdbcTarget[] | undefined;
+	readonly MongoDBTargets?: MongoDBTarget[] | undefined;
+	readonly S3Targets?: S3Target[] | undefined;
 }
 export interface ConnectionPasswordEncryption {
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly ReturnConnectionPasswordEncrypted?: (boolean | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly ReturnConnectionPasswordEncrypted?: boolean | undefined;
 }
 export interface DataCatalogEncryptionSettings {
-	readonly ConnectionPasswordEncryption?: (ConnectionPasswordEncryption | undefined) | undefined;
-	readonly EncryptionAtRest?: (EncryptionAtRest | undefined) | undefined;
+	readonly ConnectionPasswordEncryption?: ConnectionPasswordEncryption | undefined;
+	readonly EncryptionAtRest?: EncryptionAtRest | undefined;
 }
 export interface EncryptionAtRest {
-	readonly CatalogEncryptionMode?: (string | undefined) | undefined;
-	readonly SseAwsKmsKeyId?: (string | undefined) | undefined;
+	readonly CatalogEncryptionMode?: string | undefined;
+	readonly SseAwsKmsKeyId?: string | undefined;
 }
 export interface DataLakePrincipal {
-	readonly DataLakePrincipalIdentifier?: (string | undefined) | undefined;
+	readonly DataLakePrincipalIdentifier?: string | undefined;
 }
 export interface DatabaseIdentifier {
-	readonly CatalogId?: (string | undefined) | undefined;
-	readonly DatabaseName?: (string | undefined) | undefined;
+	readonly CatalogId?: string | undefined;
+	readonly DatabaseName?: string | undefined;
 }
 export interface DatabaseInput {
-	readonly CreateTableDefaultPermissions?: (PrincipalPrivileges[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly LocationUri?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Parameters?: (any | undefined) | undefined;
-	readonly TargetDatabase?: (DatabaseIdentifier | undefined) | undefined;
+	readonly CreateTableDefaultPermissions?: PrincipalPrivileges[] | undefined;
+	readonly Description?: string | undefined;
+	readonly LocationUri?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Parameters?: any | undefined;
+	readonly TargetDatabase?: DatabaseIdentifier | undefined;
 }
 export interface PrincipalPrivileges {
-	readonly Permissions?: (string[] | undefined) | undefined;
-	readonly Principal?: (DataLakePrincipal | undefined) | undefined;
+	readonly Permissions?: string[] | undefined;
+	readonly Principal?: DataLakePrincipal | undefined;
 }
 export interface ConnectionsList {
-	readonly Connections?: (string[] | undefined) | undefined;
+	readonly Connections?: string[] | undefined;
 }
 export interface Execution {
-	readonly MaxConcurrentRuns?: (number | undefined) | undefined;
+	readonly MaxConcurrentRuns?: number | undefined;
 }
 export interface JobCommand {
-	readonly Name?: (string | undefined) | undefined;
-	readonly PythonVersion?: (string | undefined) | undefined;
-	readonly ScriptLocation?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly PythonVersion?: string | undefined;
+	readonly ScriptLocation?: string | undefined;
 }
 export interface Notification {
-	readonly NotifyDelayAfter?: (number | undefined) | undefined;
+	readonly NotifyDelayAfter?: number | undefined;
 }
 export interface FindMatchesParameters {
-	readonly AccuracyCostTradeoff?: (number | undefined) | undefined;
-	readonly EnforceProvidedLabels?: (boolean | undefined) | undefined;
-	readonly PrecisionRecallTradeoff?: (number | undefined) | undefined;
+	readonly AccuracyCostTradeoff?: number | undefined;
+	readonly EnforceProvidedLabels?: boolean | undefined;
+	readonly PrecisionRecallTradeoff?: number | undefined;
 	readonly PrimaryKeyColumnName: string;
 }
 export interface GlueTables {
-	readonly CatalogId?: (string | undefined) | undefined;
-	readonly ConnectionName?: (string | undefined) | undefined;
+	readonly CatalogId?: string | undefined;
+	readonly ConnectionName?: string | undefined;
 	readonly DatabaseName: string;
 	readonly TableName: string;
 }
 export interface InputRecordTables {
-	readonly GlueTables?: (GlueTables[] | undefined) | undefined;
+	readonly GlueTables?: GlueTables[] | undefined;
 }
 export interface MLUserDataEncryption {
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
 	readonly MLUserDataEncryptionMode: string;
 }
 export interface TransformEncryption {
-	readonly MLUserDataEncryption?: (MLUserDataEncryption | undefined) | undefined;
-	readonly TaskRunSecurityConfigurationName?: (string | undefined) | undefined;
+	readonly MLUserDataEncryption?: MLUserDataEncryption | undefined;
+	readonly TaskRunSecurityConfigurationName?: string | undefined;
 }
 export interface TransformParameters {
-	readonly FindMatchesParameters?: (FindMatchesParameters | undefined) | undefined;
+	readonly FindMatchesParameters?: FindMatchesParameters | undefined;
 	readonly TransformType: string;
 }
 export interface Column {
-	readonly Comment?: (string | undefined) | undefined;
+	readonly Comment?: string | undefined;
 	readonly Name: string;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Type?: string | undefined;
 }
 export interface Order {
 	readonly Column: string;
-	readonly SortOrder?: (number | undefined) | undefined;
+	readonly SortOrder?: number | undefined;
 }
 export interface PartitionInput {
-	readonly Parameters?: (any | undefined) | undefined;
-	readonly StorageDescriptor?: (StorageDescriptor | undefined) | undefined;
+	readonly Parameters?: any | undefined;
+	readonly StorageDescriptor?: StorageDescriptor | undefined;
 	readonly Values: string[];
 }
 export interface SchemaId {
-	readonly RegistryName?: (string | undefined) | undefined;
-	readonly SchemaArn?: (string | undefined) | undefined;
-	readonly SchemaName?: (string | undefined) | undefined;
+	readonly RegistryName?: string | undefined;
+	readonly SchemaArn?: string | undefined;
+	readonly SchemaName?: string | undefined;
 }
 export interface SchemaReference {
-	readonly SchemaId?: (SchemaId | undefined) | undefined;
-	readonly SchemaVersionId?: (string | undefined) | undefined;
-	readonly SchemaVersionNumber?: (number | undefined) | undefined;
+	readonly SchemaId?: SchemaId | undefined;
+	readonly SchemaVersionId?: string | undefined;
+	readonly SchemaVersionNumber?: number | undefined;
 }
 export interface SerdeInfo {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Parameters?: (any | undefined) | undefined;
-	readonly SerializationLibrary?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Parameters?: any | undefined;
+	readonly SerializationLibrary?: string | undefined;
 }
 export interface SkewedInfo {
-	readonly SkewedColumnNames?: (string[] | undefined) | undefined;
-	readonly SkewedColumnValueLocationMaps?: (any | undefined) | undefined;
-	readonly SkewedColumnValues?: (string[] | undefined) | undefined;
+	readonly SkewedColumnNames?: string[] | undefined;
+	readonly SkewedColumnValueLocationMaps?: any | undefined;
+	readonly SkewedColumnValues?: string[] | undefined;
 }
 export interface StorageDescriptor {
-	readonly BucketColumns?: (string[] | undefined) | undefined;
-	readonly Columns?: (Column[] | undefined) | undefined;
-	readonly Compressed?: (boolean | undefined) | undefined;
-	readonly InputFormat?: (string | undefined) | undefined;
-	readonly Location?: (string | undefined) | undefined;
-	readonly NumberOfBuckets?: (number | undefined) | undefined;
-	readonly OutputFormat?: (string | undefined) | undefined;
-	readonly Parameters?: (any | undefined) | undefined;
-	readonly SchemaReference?: (SchemaReference | undefined) | undefined;
-	readonly SerdeInfo?: (SerdeInfo | undefined) | undefined;
-	readonly SkewedInfo?: (SkewedInfo | undefined) | undefined;
-	readonly SortColumns?: (Order[] | undefined) | undefined;
-	readonly StoredAsSubDirectories?: (boolean | undefined) | undefined;
+	readonly BucketColumns?: string[] | undefined;
+	readonly Columns?: Column[] | undefined;
+	readonly Compressed?: boolean | undefined;
+	readonly InputFormat?: string | undefined;
+	readonly Location?: string | undefined;
+	readonly NumberOfBuckets?: number | undefined;
+	readonly OutputFormat?: string | undefined;
+	readonly Parameters?: any | undefined;
+	readonly SchemaReference?: SchemaReference | undefined;
+	readonly SerdeInfo?: SerdeInfo | undefined;
+	readonly SkewedInfo?: SkewedInfo | undefined;
+	readonly SortColumns?: Order[] | undefined;
+	readonly StoredAsSubDirectories?: boolean | undefined;
 }
 export interface RegistryOptions {
-	readonly Arn?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly Arn?: string | undefined;
+	readonly Name?: string | undefined;
 }
 export interface SchemaVersion {
-	readonly IsLatest?: (boolean | undefined) | undefined;
-	readonly VersionNumber?: (number | undefined) | undefined;
+	readonly IsLatest?: boolean | undefined;
+	readonly VersionNumber?: number | undefined;
 }
 export interface Schema {
-	readonly RegistryName?: (string | undefined) | undefined;
-	readonly SchemaArn?: (string | undefined) | undefined;
-	readonly SchemaName?: (string | undefined) | undefined;
+	readonly RegistryName?: string | undefined;
+	readonly SchemaArn?: string | undefined;
+	readonly SchemaName?: string | undefined;
 }
 export interface CloudWatchEncryption {
-	readonly CloudWatchEncryptionMode?: (string | undefined) | undefined;
-	readonly KmsKeyArn?: (string | undefined) | undefined;
+	readonly CloudWatchEncryptionMode?: string | undefined;
+	readonly KmsKeyArn?: string | undefined;
 }
 export interface EncryptionConfiguration {
-	readonly CloudWatchEncryption?: (CloudWatchEncryption | undefined) | undefined;
-	readonly JobBookmarksEncryption?: (JobBookmarksEncryption | undefined) | undefined;
-	readonly S3Encryptions?: (S3Encryption[] | undefined) | undefined;
+	readonly CloudWatchEncryption?: CloudWatchEncryption | undefined;
+	readonly JobBookmarksEncryption?: JobBookmarksEncryption | undefined;
+	readonly S3Encryptions?: S3Encryption[] | undefined;
 }
 export interface JobBookmarksEncryption {
-	readonly JobBookmarksEncryptionMode?: (string | undefined) | undefined;
-	readonly KmsKeyArn?: (string | undefined) | undefined;
+	readonly JobBookmarksEncryptionMode?: string | undefined;
+	readonly KmsKeyArn?: string | undefined;
 }
 export interface S3Encryption {
-	readonly KmsKeyArn?: (string | undefined) | undefined;
-	readonly S3EncryptionMode?: (string | undefined) | undefined;
+	readonly KmsKeyArn?: string | undefined;
+	readonly S3EncryptionMode?: string | undefined;
 }
 export interface TableIdentifier {
-	readonly CatalogId?: (string | undefined) | undefined;
-	readonly DatabaseName?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly CatalogId?: string | undefined;
+	readonly DatabaseName?: string | undefined;
+	readonly Name?: string | undefined;
 }
 export interface TableInput {
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Owner?: (string | undefined) | undefined;
-	readonly Parameters?: (any | undefined) | undefined;
-	readonly PartitionKeys?: (Column[] | undefined) | undefined;
-	readonly Retention?: (number | undefined) | undefined;
-	readonly StorageDescriptor?: (StorageDescriptor | undefined) | undefined;
-	readonly TableType?: (string | undefined) | undefined;
-	readonly TargetTable?: (TableIdentifier | undefined) | undefined;
-	readonly ViewExpandedText?: (string | undefined) | undefined;
-	readonly ViewOriginalText?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Owner?: string | undefined;
+	readonly Parameters?: any | undefined;
+	readonly PartitionKeys?: Column[] | undefined;
+	readonly Retention?: number | undefined;
+	readonly StorageDescriptor?: StorageDescriptor | undefined;
+	readonly TableType?: string | undefined;
+	readonly TargetTable?: TableIdentifier | undefined;
+	readonly ViewExpandedText?: string | undefined;
+	readonly ViewOriginalText?: string | undefined;
 }
 export interface Action {
-	readonly Arguments?: (any | undefined) | undefined;
-	readonly CrawlerName?: (string | undefined) | undefined;
-	readonly JobName?: (string | undefined) | undefined;
-	readonly NotificationProperty?: (Notification | undefined) | undefined;
-	readonly SecurityConfiguration?: (string | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
+	readonly Arguments?: any | undefined;
+	readonly CrawlerName?: string | undefined;
+	readonly JobName?: string | undefined;
+	readonly NotificationProperty?: Notification | undefined;
+	readonly SecurityConfiguration?: string | undefined;
+	readonly Timeout?: number | undefined;
 }
 export interface Condition {
-	readonly CrawlState?: (string | undefined) | undefined;
-	readonly CrawlerName?: (string | undefined) | undefined;
-	readonly JobName?: (string | undefined) | undefined;
-	readonly LogicalOperator?: (string | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
+	readonly CrawlState?: string | undefined;
+	readonly CrawlerName?: string | undefined;
+	readonly JobName?: string | undefined;
+	readonly LogicalOperator?: string | undefined;
+	readonly State?: string | undefined;
 }
 export interface EventBatchingCondition {
 	readonly BatchSize: number;
-	readonly BatchWindow?: (number | undefined) | undefined;
+	readonly BatchWindow?: number | undefined;
 }
 export interface Predicate {
-	readonly Conditions?: (Condition[] | undefined) | undefined;
-	readonly Logical?: (string | undefined) | undefined;
+	readonly Conditions?: Condition[] | undefined;
+	readonly Logical?: string | undefined;
 }
 export default {
 	Classifier: Classifier,

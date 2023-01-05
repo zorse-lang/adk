@@ -15,10 +15,10 @@ export interface InstanceComponentOutputs {
 }
 export interface InstanceComponentInputs {
 	readonly InstanceName: any | string;
-	readonly ClusterType?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Network?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly ClusterType?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Network?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class SearchIndex extends RosResource<SearchIndexComponentInputs> implements SearchIndexComponentOutputs {
@@ -32,8 +32,8 @@ export interface SearchIndexComponentInputs {
 	readonly IndexName: any | string;
 	readonly InstanceName: string;
 	readonly TableName: string;
-	readonly IndexSetting?: (IndexSetting | undefined) | undefined;
-	readonly IndexSort?: (IndexSort | undefined) | undefined;
+	readonly IndexSetting?: IndexSetting | undefined;
+	readonly IndexSort?: IndexSort | undefined;
 	readonly LogicalId: string;
 }
 export class Table extends RosResource<TableComponentInputs> implements TableComponentOutputs {
@@ -46,12 +46,12 @@ export interface TableComponentInputs {
 	readonly InstanceName: string;
 	readonly PrimaryKey: PrimaryKey[];
 	readonly TableName: any | string;
-	readonly Columns?: (Columns[] | undefined) | undefined;
-	readonly DeviationCellVersionInSec?: (number | undefined) | undefined;
-	readonly MaxVersions?: (number | undefined) | undefined;
-	readonly ReservedThroughput?: (ReservedThroughput | undefined) | undefined;
-	readonly SecondaryIndices?: (SecondaryIndices[] | undefined) | undefined;
-	readonly TimeToLive?: (number | undefined) | undefined;
+	readonly Columns?: Columns[] | undefined;
+	readonly DeviationCellVersionInSec?: number | undefined;
+	readonly MaxVersions?: number | undefined;
+	readonly ReservedThroughput?: ReservedThroughput | undefined;
+	readonly SecondaryIndices?: SecondaryIndices[] | undefined;
+	readonly TimeToLive?: number | undefined;
 	readonly LogicalId: string;
 }
 export class VpcBinder extends RosResource<VpcBinderComponentInputs> implements VpcBinderComponentOutputs {
@@ -71,54 +71,54 @@ export interface VpcBinderComponentInputs {
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface FieldSchemas {
-	readonly IsArray?: (boolean | undefined) | undefined;
-	readonly EnableSortAndAgg?: (boolean | undefined) | undefined;
-	readonly Store?: (boolean | undefined) | undefined;
-	readonly Index?: (boolean | undefined) | undefined;
-	readonly Analyzer?: (string | undefined) | undefined;
-	readonly SubFieldSchemas?: (SubFieldSchemas[] | undefined) | undefined;
+	readonly IsArray?: boolean | undefined;
+	readonly EnableSortAndAgg?: boolean | undefined;
+	readonly Store?: boolean | undefined;
+	readonly Index?: boolean | undefined;
+	readonly Analyzer?: string | undefined;
+	readonly SubFieldSchemas?: SubFieldSchemas[] | undefined;
 	readonly FieldName: string;
 	readonly FieldType: string;
 }
 export interface FieldSort {
-	readonly SortMode?: (string | undefined) | undefined;
-	readonly SortOrder?: (string | undefined) | undefined;
+	readonly SortMode?: string | undefined;
+	readonly SortOrder?: string | undefined;
 	readonly FieldName: string;
 }
 export interface GeoDistanceSort {
 	readonly Points: any[];
-	readonly SortMode?: (string | undefined) | undefined;
-	readonly SortOrder?: (string | undefined) | undefined;
+	readonly SortMode?: string | undefined;
+	readonly SortOrder?: string | undefined;
 	readonly FieldName: string;
 }
 export interface IndexSetting {
-	readonly RoutingFields?: (any[] | undefined) | undefined;
+	readonly RoutingFields?: any[] | undefined;
 }
 export interface IndexSort {
 	readonly Sorters: Sorters[];
 }
 export interface PrimaryKeySort {
-	readonly SortOrder?: (string | undefined) | undefined;
+	readonly SortOrder?: string | undefined;
 }
 export interface ScoreSort {
-	readonly SortOrder?: (string | undefined) | undefined;
+	readonly SortOrder?: string | undefined;
 }
 export interface Sorters {
-	readonly FieldSort?: (FieldSort | undefined) | undefined;
-	readonly PrimaryKeySort?: (PrimaryKeySort | undefined) | undefined;
-	readonly ScoreSort?: (ScoreSort | undefined) | undefined;
-	readonly GeoDistanceSort?: (GeoDistanceSort | undefined) | undefined;
+	readonly FieldSort?: FieldSort | undefined;
+	readonly PrimaryKeySort?: PrimaryKeySort | undefined;
+	readonly ScoreSort?: ScoreSort | undefined;
+	readonly GeoDistanceSort?: GeoDistanceSort | undefined;
 }
 export interface SubFieldSchemas {
-	readonly IsArray?: (boolean | undefined) | undefined;
-	readonly EnableSortAndAgg?: (boolean | undefined) | undefined;
-	readonly Store?: (boolean | undefined) | undefined;
-	readonly Index?: (boolean | undefined) | undefined;
-	readonly Analyzer?: (string | undefined) | undefined;
+	readonly IsArray?: boolean | undefined;
+	readonly EnableSortAndAgg?: boolean | undefined;
+	readonly Store?: boolean | undefined;
+	readonly Index?: boolean | undefined;
+	readonly Analyzer?: string | undefined;
 	readonly FieldName: string;
 	readonly FieldType: string;
 }
@@ -138,7 +138,7 @@ export interface SecondaryIndices {
 	readonly IndexName: string;
 	readonly Columns: string[];
 	readonly PrimaryKeys: string[];
-	readonly IndexType?: (string | undefined) | undefined;
+	readonly IndexType?: string | undefined;
 }
 export interface Vpcs {
 	readonly VpcId: string;

@@ -23,11 +23,11 @@ export interface vaults_backupFabrics_protectionContainersComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers";
 }
 export interface vaults_backupFabrics_protectionContainersComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProtectionContainer | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ProtectionContainer;
+	readonly tags?: ResourceTags;
 }
 export class vaults_backupFabrics_protectionContainers_operationResults
 	extends ArmResource<vaults_backupFabrics_protectionContainers_operationResultsComponentInputs>
@@ -52,11 +52,11 @@ export interface vaults_backupFabrics_protectionContainers_operationResultsCompo
 	readonly type: "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/operationResults";
 }
 export interface vaults_backupFabrics_protectionContainers_operationResultsComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProtectionContainer | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ProtectionContainer;
+	readonly tags?: ResourceTags;
 }
 export class vaults_backupFabrics_protectionContainers_protectedItems
 	extends ArmResource<vaults_backupFabrics_protectionContainers_protectedItemsComponentInputs>
@@ -81,11 +81,11 @@ export interface vaults_backupFabrics_protectionContainers_protectedItemsCompone
 	readonly type: "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems";
 }
 export interface vaults_backupFabrics_protectionContainers_protectedItemsComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProtectedItem | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ProtectedItem;
+	readonly tags?: ResourceTags;
 }
 export class vaults_backupFabrics_protectionContainers_protectedItems_operationResults
 	extends ArmResource<vaults_backupFabrics_protectionContainers_protectedItems_operationResultsComponentInputs>
@@ -113,11 +113,11 @@ export interface vaults_backupFabrics_protectionContainers_protectedItems_operat
 	readonly type: "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/operationResults";
 }
 export interface vaults_backupFabrics_protectionContainers_protectedItems_operationResultsComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProtectedItem | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ProtectedItem;
+	readonly tags?: ResourceTags;
 }
 export class vaults_backupFabrics_protectionContainers_protectedItems_recoveryPoints
 	extends ArmResource<vaults_backupFabrics_protectionContainers_protectedItems_recoveryPointsComponentInputs>
@@ -145,11 +145,11 @@ export interface vaults_backupFabrics_protectionContainers_protectedItems_recove
 	readonly type: "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints";
 }
 export interface vaults_backupFabrics_protectionContainers_protectedItems_recoveryPointsComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: RecoveryPoint | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: RecoveryPoint;
+	readonly tags?: ResourceTags;
 }
 export class vaults_backupJobs
 	extends ArmResource<vaults_backupJobsComponentInputs>
@@ -168,11 +168,11 @@ export interface vaults_backupJobsComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/backupJobs";
 }
 export interface vaults_backupJobsComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: Job | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: Job;
+	readonly tags?: ResourceTags;
 }
 export class vaults_backupPolicies
 	extends ArmResource<vaults_backupPoliciesComponentInputs>
@@ -191,11 +191,11 @@ export interface vaults_backupPoliciesComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/backupPolicies";
 }
 export interface vaults_backupPoliciesComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProtectionPolicy | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ProtectionPolicy;
+	readonly tags?: ResourceTags;
 }
 export class vaults_backupPolicies_operationResults
 	extends ArmResource<vaults_backupPolicies_operationResultsComponentInputs>
@@ -220,199 +220,199 @@ export interface vaults_backupPolicies_operationResultsComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/backupPolicies/operationResults";
 }
 export interface vaults_backupPolicies_operationResultsComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProtectionPolicy | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ProtectionPolicy;
+	readonly tags?: ResourceTags;
 }
 export interface AzureIaaSVMErrorInfo {
-	readonly errorCode?: number | undefined;
-	readonly errorString?: string | undefined;
-	readonly errorTitle?: string | undefined;
-	readonly recommendations?: string[] | undefined;
+	readonly errorCode?: number;
+	readonly errorString?: string;
+	readonly errorTitle?: string;
+	readonly recommendations?: string[];
 }
 export interface AzureIaaSVMJobExtendedInfo {
-	readonly dynamicErrorMessage?: string | undefined;
-	readonly progressPercentage?: number | undefined;
-	readonly propertyBag?: AzureIaaSVMJobExtendedInfoPropertyBag | undefined;
-	readonly tasksList?: AzureIaaSVMJobTaskDetails[] | undefined;
+	readonly dynamicErrorMessage?: string;
+	readonly progressPercentage?: number;
+	readonly propertyBag?: AzureIaaSVMJobExtendedInfoPropertyBag;
+	readonly tasksList?: AzureIaaSVMJobTaskDetails[];
 }
 export interface AzureIaaSVMJobExtendedInfoPropertyBag {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AzureIaaSVMJobTaskDetails {
-	readonly duration?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly instanceId?: string | undefined;
-	readonly progressPercentage?: number | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly taskId?: string | undefined;
+	readonly duration?: string;
+	readonly endTime?: string;
+	readonly instanceId?: string;
+	readonly progressPercentage?: number;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly taskId?: string;
 }
 export interface AzureIaaSVMProtectedItemExtendedInfo {
-	readonly oldestRecoveryPoint?: string | undefined;
-	readonly policyInconsistent?: boolean | undefined;
-	readonly recoveryPointCount?: number | undefined;
+	readonly oldestRecoveryPoint?: string;
+	readonly policyInconsistent?: boolean;
+	readonly recoveryPointCount?: number;
 }
 export interface AzureSqlProtectedItemExtendedInfo {
-	readonly oldestRecoveryPoint?: string | undefined;
-	readonly policyState?: string | undefined;
-	readonly recoveryPointCount?: number | undefined;
+	readonly oldestRecoveryPoint?: string;
+	readonly policyState?: string;
+	readonly recoveryPointCount?: number;
 }
 export interface BEKDetails {
-	readonly secretData?: string | undefined;
-	readonly secretUrl?: string | undefined;
-	readonly secretVaultId?: string | undefined;
+	readonly secretData?: string;
+	readonly secretUrl?: string;
+	readonly secretVaultId?: string;
 }
 export interface DailyRetentionFormat {
-	readonly daysOfTheMonth?: Day[] | undefined;
+	readonly daysOfTheMonth?: Day[];
 }
 export interface DailyRetentionSchedule {
-	readonly retentionDuration?: RetentionDuration | undefined;
-	readonly retentionTimes?: string[] | undefined;
+	readonly retentionDuration?: RetentionDuration;
+	readonly retentionTimes?: string[];
 }
 export interface Day {
-	readonly date?: number | undefined;
-	readonly isLast?: boolean | undefined;
+	readonly date?: number;
+	readonly isLast?: boolean;
 }
 export interface DpmErrorInfo {
-	readonly errorString?: string | undefined;
-	readonly recommendations?: string[] | undefined;
+	readonly errorString?: string;
+	readonly recommendations?: string[];
 }
 export interface DpmJobExtendedInfo {
-	readonly dynamicErrorMessage?: string | undefined;
-	readonly propertyBag?: DpmJobExtendedInfoPropertyBag | undefined;
-	readonly tasksList?: DpmJobTaskDetails[] | undefined;
+	readonly dynamicErrorMessage?: string;
+	readonly propertyBag?: DpmJobExtendedInfoPropertyBag;
+	readonly tasksList?: DpmJobTaskDetails[];
 }
 export interface DpmJobExtendedInfoPropertyBag {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DpmJobTaskDetails {
-	readonly duration?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly taskId?: string | undefined;
+	readonly duration?: string;
+	readonly endTime?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly taskId?: string;
 }
 export interface Job {
-	readonly activityId?: string | undefined;
-	readonly backupManagementType?: ("AzureBackupServer" | "AzureIaasVM" | "AzureSql" | "DPM" | "Invalid") | undefined;
-	readonly endTime?: string | undefined;
-	readonly entityFriendlyName?: string | undefined;
-	readonly operation?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
+	readonly activityId?: string;
+	readonly backupManagementType?: "AzureBackupServer" | "AzureIaasVM" | "AzureSql" | "DPM" | "Invalid";
+	readonly endTime?: string;
+	readonly entityFriendlyName?: string;
+	readonly operation?: string;
+	readonly startTime?: string;
+	readonly status?: string;
 }
 export interface KEKDetails {
-	readonly keyBackupData?: string | undefined;
-	readonly keyUrl?: string | undefined;
-	readonly keyVaultId?: string | undefined;
+	readonly keyBackupData?: string;
+	readonly keyUrl?: string;
+	readonly keyVaultId?: string;
 }
 export interface KeyAndSecretDetails {
-	readonly bekDetails?: BEKDetails | undefined;
-	readonly kekDetails?: KEKDetails | undefined;
+	readonly bekDetails?: BEKDetails;
+	readonly kekDetails?: KEKDetails;
 }
 export interface MabContainerExtendedInfo {
-	readonly backupItems?: string[] | undefined;
+	readonly backupItems?: string[];
 	readonly backupItemType?:
-		| ("AzureSqlDb" | "DPMUnknown" | "Exchange" | "FileFolder" | "Invalid" | "SQLDB" | "Sharepoint")
-		| undefined;
-	readonly lastBackupStatus?: string | undefined;
-	readonly lastRefreshedAt?: string | undefined;
-	readonly policyName?: string | undefined;
+		| "AzureSqlDb"
+		| "DPMUnknown"
+		| "Exchange"
+		| "FileFolder"
+		| "Invalid"
+		| "SQLDB"
+		| "Sharepoint";
+	readonly lastBackupStatus?: string;
+	readonly lastRefreshedAt?: string;
+	readonly policyName?: string;
 }
 export interface MabErrorInfo {
-	readonly errorString?: string | undefined;
-	readonly recommendations?: string[] | undefined;
+	readonly errorString?: string;
+	readonly recommendations?: string[];
 }
 export interface MabFileFolderProtectedItemExtendedInfo {
-	readonly lastRefreshedAt?: string | undefined;
-	readonly oldestRecoveryPoint?: string | undefined;
-	readonly recoveryPointCount?: number | undefined;
+	readonly lastRefreshedAt?: string;
+	readonly oldestRecoveryPoint?: string;
+	readonly recoveryPointCount?: number;
 }
 export interface MabJobExtendedInfo {
-	readonly dynamicErrorMessage?: string | undefined;
-	readonly propertyBag?: MabJobExtendedInfoPropertyBag | undefined;
-	readonly tasksList?: MabJobTaskDetails[] | undefined;
+	readonly dynamicErrorMessage?: string;
+	readonly propertyBag?: MabJobExtendedInfoPropertyBag;
+	readonly tasksList?: MabJobTaskDetails[];
 }
 export interface MabJobExtendedInfoPropertyBag {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MabJobTaskDetails {
-	readonly duration?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly taskId?: string | undefined;
+	readonly duration?: string;
+	readonly endTime?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly taskId?: string;
 }
 export interface MonthlyRetentionSchedule {
-	readonly retentionDuration?: RetentionDuration | undefined;
-	readonly retentionScheduleDaily?: DailyRetentionFormat | undefined;
-	readonly retentionScheduleFormatType?: ("Daily" | "Invalid") | undefined;
-	readonly retentionScheduleWeekly?: WeeklyRetentionFormat | undefined;
-	readonly retentionTimes?: string[] | undefined;
+	readonly retentionDuration?: RetentionDuration;
+	readonly retentionScheduleDaily?: DailyRetentionFormat;
+	readonly retentionScheduleFormatType?: "Daily" | "Invalid";
+	readonly retentionScheduleWeekly?: WeeklyRetentionFormat;
+	readonly retentionTimes?: string[];
 }
 export interface ProtectedItem {
-	readonly backupManagementType?: ("AzureBackupServer" | "AzureIaasVM" | "AzureSql" | "DPM" | "Invalid") | undefined;
-	readonly lastRecoveryPoint?: string | undefined;
-	readonly policyId?: string | undefined;
-	readonly sourceResourceId?: string | undefined;
-	readonly workloadType?:
-		| ("AzureSqlDb" | "DPMUnknown" | "Exchange" | "FileFolder" | "Invalid" | "SQLDB" | "Sharepoint")
-		| undefined;
+	readonly backupManagementType?: "AzureBackupServer" | "AzureIaasVM" | "AzureSql" | "DPM" | "Invalid";
+	readonly lastRecoveryPoint?: string;
+	readonly policyId?: string;
+	readonly sourceResourceId?: string;
+	readonly workloadType?: "AzureSqlDb" | "DPMUnknown" | "Exchange" | "FileFolder" | "Invalid" | "SQLDB" | "Sharepoint";
 }
 export interface ProtectionContainer {
-	readonly backupManagementType?: ("AzureBackupServer" | "AzureIaasVM" | "AzureSql" | "DPM" | "Invalid") | undefined;
-	readonly containerType?: string | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly healthStatus?: string | undefined;
-	readonly registrationStatus?: string | undefined;
+	readonly backupManagementType?: "AzureBackupServer" | "AzureIaasVM" | "AzureSql" | "DPM" | "Invalid";
+	readonly containerType?: string;
+	readonly friendlyName?: string;
+	readonly healthStatus?: string;
+	readonly registrationStatus?: string;
 }
 export interface ProtectionPolicy {
-	readonly protectedItemsCount?: number | undefined;
+	readonly protectedItemsCount?: number;
 }
 export interface RecoveryPoint {}
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RetentionDuration {
-	readonly count?: number | undefined;
-	readonly durationType?: ("Days" | "Invalid" | "Months" | "Weeks") | undefined;
+	readonly count?: number;
+	readonly durationType?: "Days" | "Invalid" | "Months" | "Weeks";
 }
 export interface RetentionPolicy {}
 export interface SchedulePolicy {}
 export interface WeeklyRetentionFormat {
-	readonly daysOfTheWeek?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[]) | undefined;
-	readonly weeksOfTheMonth?: ("First" | "Fourth" | "Last" | "Second"[]) | undefined;
+	readonly daysOfTheWeek?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[];
+	readonly weeksOfTheMonth?: "First" | "Fourth" | "Last" | "Second"[];
 }
 export interface WeeklyRetentionSchedule {
-	readonly daysOfTheWeek?: ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[]) | undefined;
-	readonly retentionDuration?: RetentionDuration | undefined;
-	readonly retentionTimes?: string[] | undefined;
+	readonly daysOfTheWeek?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday"[];
+	readonly retentionDuration?: RetentionDuration;
+	readonly retentionTimes?: string[];
 }
 export interface YearlyRetentionSchedule {
 	readonly monthsOfYear?:
-		| (
-				| "April"
-				| "August"
-				| "December"
-				| "February"
-				| "Invalid"
-				| "January"
-				| "July"
-				| "June"
-				| "March"
-				| "May"
-				| "November"
-				| "October"[]
-		  )
-		| undefined;
-	readonly retentionDuration?: RetentionDuration | undefined;
-	readonly retentionScheduleDaily?: DailyRetentionFormat | undefined;
-	readonly retentionScheduleFormatType?: ("Daily" | "Invalid") | undefined;
-	readonly retentionScheduleWeekly?: WeeklyRetentionFormat | undefined;
-	readonly retentionTimes?: string[] | undefined;
+		| "April"
+		| "August"
+		| "December"
+		| "February"
+		| "Invalid"
+		| "January"
+		| "July"
+		| "June"
+		| "March"
+		| "May"
+		| "November"
+		| "October"[];
+	readonly retentionDuration?: RetentionDuration;
+	readonly retentionScheduleDaily?: DailyRetentionFormat;
+	readonly retentionScheduleFormatType?: "Daily" | "Invalid";
+	readonly retentionScheduleWeekly?: WeeklyRetentionFormat;
+	readonly retentionTimes?: string[];
 }
 export default {
 	"vaults/backupFabrics/protectionContainers": vaults_backupFabrics_protectionContainers,

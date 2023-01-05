@@ -14,12 +14,12 @@ export interface jobsComponentOutputs {
 	readonly type: "Microsoft.ImportExport/jobs";
 }
 export interface jobsComponentInputs {
-	readonly identity?: IdentityDetails | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: IdentityDetails;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: JobDetails | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: any | undefined;
+	readonly properties?: JobDetails;
+	readonly systemData?: SystemData;
+	readonly tags?: any;
 }
 export function listBitLockerKeys(resource: jobs): GetBitLockerKeysResponse {
 	if (resource.apiVersion !== "2021-01-01") {
@@ -32,70 +32,75 @@ export function listBitLockerKeys(resource: jobs): GetBitLockerKeysResponse {
 }
 export interface DeliveryPackageInformation {
 	readonly carrierName: string;
-	readonly driveCount?: number | undefined;
-	readonly shipDate?: string | undefined;
+	readonly driveCount?: number;
+	readonly shipDate?: string;
 	readonly trackingNumber: string;
 }
 export interface DriveBitLockerKey {
-	readonly bitLockerKey?: string | undefined;
-	readonly driveId?: string | undefined;
+	readonly bitLockerKey?: string;
+	readonly driveId?: string;
 }
 export interface DriveStatus {
-	readonly bitLockerKey?: string | undefined;
-	readonly bytesSucceeded?: number | undefined;
-	readonly copyStatus?: string | undefined;
-	readonly driveHeaderHash?: string | undefined;
-	readonly driveId?: string | undefined;
-	readonly errorLogUri?: string | undefined;
-	readonly manifestFile?: string | undefined;
-	readonly manifestHash?: string | undefined;
-	readonly manifestUri?: string | undefined;
-	readonly percentComplete?: number | undefined;
+	readonly bitLockerKey?: string;
+	readonly bytesSucceeded?: number;
+	readonly copyStatus?: string;
+	readonly driveHeaderHash?: string;
+	readonly driveId?: string;
+	readonly errorLogUri?: string;
+	readonly manifestFile?: string;
+	readonly manifestHash?: string;
+	readonly manifestUri?: string;
+	readonly percentComplete?: number;
 	readonly state?:
-		| ("Completed" | "CompletedMoreInfo" | "NeverReceived" | "Received" | "ShippedBack" | "Specified" | "Transferring")
-		| undefined;
-	readonly verboseLogUri?: string | undefined;
+		| "Completed"
+		| "CompletedMoreInfo"
+		| "NeverReceived"
+		| "Received"
+		| "ShippedBack"
+		| "Specified"
+		| "Transferring";
+	readonly verboseLogUri?: string;
 }
 export interface EncryptionKeyDetails {
-	readonly kekType?: ("CustomerManaged" | "MicrosoftManaged") | undefined;
-	readonly kekUrl?: string | undefined;
-	readonly kekVaultResourceID?: string | undefined;
+	readonly kekType?: "CustomerManaged" | "MicrosoftManaged";
+	readonly kekUrl?: string;
+	readonly kekVaultResourceID?: string;
 }
 export interface Export {
-	readonly blobList?: ExportBlobList | undefined;
-	readonly blobListBlobPath?: string | undefined;
+	readonly blobList?: ExportBlobList;
+	readonly blobListBlobPath?: string;
 }
 export interface ExportBlobList {
-	readonly blobPath?: string[] | undefined;
-	readonly blobPathPrefix?: string[] | undefined;
+	readonly blobPath?: string[];
+	readonly blobPathPrefix?: string[];
 }
 export interface GetBitLockerKeysResponse {
-	readonly value?: DriveBitLockerKey[] | undefined;
+	readonly value?: DriveBitLockerKey[];
 }
 export interface IdentityDetails {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "UserAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "UserAssigned";
 }
 export interface JobDetails {
-	readonly backupDriveManifest?: boolean | undefined;
-	readonly cancelRequested?: boolean | undefined;
-	readonly deliveryPackage?: DeliveryPackageInformation | undefined;
-	readonly diagnosticsPath?: string | undefined;
-	readonly driveList?: DriveStatus[] | undefined;
-	readonly encryptionKey?: EncryptionKeyDetails | undefined;
-	readonly export?: Export | undefined;
-	readonly incompleteBlobListUri?: string | undefined;
-	readonly jobType?: string | undefined;
-	readonly logLevel?: string | undefined;
-	readonly percentComplete?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly returnAddress?: ReturnAddress | undefined;
-	readonly returnPackage?: PackageInformation | undefined;
-	readonly returnShipping?: ReturnShipping | undefined;
-	readonly shippingInformation?: ShippingInformation | undefined;
-	readonly state?: string | undefined;
-	readonly storageAccountId?: string | undefined;
+	readonly backupDriveManifest?: boolean;
+	readonly cancelRequested?: boolean;
+	readonly deliveryPackage?: DeliveryPackageInformation;
+	readonly diagnosticsPath?: string;
+	readonly driveList?: DriveStatus[];
+	readonly encryptionKey?: EncryptionKeyDetails;
+	readonly export?: Export;
+	readonly incompleteBlobListUri?: string;
+	readonly jobType?: string;
+	readonly logLevel?: string;
+	readonly percentComplete?: number;
+	readonly provisioningState?: string;
+	readonly returnAddress?: ReturnAddress;
+	readonly returnPackage?: PackageInformation;
+	readonly returnShipping?: ReturnShipping;
+	readonly shippingInformation?: ShippingInformation;
+	readonly state?: string;
+	readonly storageAccountId?: string;
 }
 export interface PackageInformation {
 	readonly carrierName: string;
@@ -110,32 +115,32 @@ export interface ReturnAddress {
 	readonly phone: string;
 	readonly postalCode: string;
 	readonly recipientName: string;
-	readonly stateOrProvince?: string | undefined;
+	readonly stateOrProvince?: string;
 	readonly streetAddress1: string;
-	readonly streetAddress2?: string | undefined;
+	readonly streetAddress2?: string;
 }
 export interface ReturnShipping {
 	readonly carrierAccountNumber: string;
 	readonly carrierName: string;
 }
 export interface ShippingInformation {
-	readonly additionalInformation?: string | undefined;
-	readonly city?: string | undefined;
-	readonly countryOrRegion?: string | undefined;
-	readonly phone?: string | undefined;
-	readonly postalCode?: string | undefined;
-	readonly recipientName?: string | undefined;
-	readonly stateOrProvince?: string | undefined;
-	readonly streetAddress1?: string | undefined;
-	readonly streetAddress2?: string | undefined;
+	readonly additionalInformation?: string;
+	readonly city?: string;
+	readonly countryOrRegion?: string;
+	readonly phone?: string;
+	readonly postalCode?: string;
+	readonly recipientName?: string;
+	readonly stateOrProvince?: string;
+	readonly streetAddress1?: string;
+	readonly streetAddress2?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	jobs: jobs,

@@ -17,10 +17,10 @@ export interface automationAccounts_compilationjobsComponentOutputs {
 	readonly type: "Microsoft.Automation/automationAccounts/compilationjobs";
 }
 export interface automationAccounts_compilationjobsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: DscCompilationJobCreatePropertiesOrDscCompilationJobProperties;
-	readonly tags?: DscCompilationJobCreateParametersTags | undefined;
+	readonly tags?: DscCompilationJobCreateParametersTags;
 }
 export class automationAccounts_nodeConfigurations
 	extends ArmResource<automationAccounts_nodeConfigurationsComponentInputs>
@@ -40,10 +40,8 @@ export interface automationAccounts_nodeConfigurationsComponentOutputs {
 }
 export interface automationAccounts_nodeConfigurationsComponentInputs {
 	readonly name: string;
-	readonly properties?:
-		| DscNodeConfigurationCreateOrUpdateParametersPropertiesOrDscNodeConfigurationProperties
-		| undefined;
-	readonly tags?: DscNodeConfigurationCreateOrUpdateParametersTags | undefined;
+	readonly properties?: DscNodeConfigurationCreateOrUpdateParametersPropertiesOrDscNodeConfigurationProperties;
+	readonly tags?: DscNodeConfigurationCreateOrUpdateParametersTags;
 }
 export class automationAccounts_nodes
 	extends ArmResource<automationAccounts_nodesComponentInputs>
@@ -63,89 +61,86 @@ export interface automationAccounts_nodesComponentOutputs {
 }
 export interface automationAccounts_nodesComponentInputs {
 	readonly name: string;
-	readonly properties?: DscNodeProperties | undefined;
+	readonly properties?: DscNodeProperties;
 }
 export interface ContentHash {
 	readonly algorithm: string;
 	readonly value: string;
 }
 export interface ContentSourceOrDscNodeConfigurationPropertiesSource {
-	readonly hash?: ContentHash | undefined;
-	readonly type?: ("embeddedContent" | "uri") | undefined;
-	readonly value?: string | undefined;
-	readonly version?: string | undefined;
+	readonly hash?: ContentHash;
+	readonly type?: "embeddedContent" | "uri";
+	readonly value?: string;
+	readonly version?: string;
 }
 export interface DscCompilationJobCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DscCompilationJobCreatePropertiesOrDscCompilationJobProperties {
 	readonly configuration: DscConfigurationAssociationProperty;
-	readonly creationTime?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly exception?: string | undefined;
-	readonly incrementNodeConfigurationBuild?: boolean | undefined;
-	readonly jobId?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly lastStatusModifiedTime?: string | undefined;
-	readonly parameters?: DscCompilationJobCreatePropertiesParameters | undefined;
-	readonly provisioningState?: ("Failed" | "Processing" | "Succeeded" | "Suspended") | undefined;
-	readonly runOn?: string | undefined;
-	readonly startedBy?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly creationTime?: string;
+	readonly endTime?: string;
+	readonly exception?: string;
+	readonly incrementNodeConfigurationBuild?: boolean;
+	readonly jobId?: string;
+	readonly lastModifiedTime?: string;
+	readonly lastStatusModifiedTime?: string;
+	readonly parameters?: DscCompilationJobCreatePropertiesParameters;
+	readonly provisioningState?: "Failed" | "Processing" | "Succeeded" | "Suspended";
+	readonly runOn?: string;
+	readonly startedBy?: string;
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Activating"
-				| "Blocked"
-				| "Completed"
-				| "Disconnected"
-				| "Failed"
-				| "New"
-				| "Removing"
-				| "Resuming"
-				| "Running"
-				| "Stopped"
-				| "Stopping"
-				| "Suspended"
-				| "Suspending"
-		  )
-		| undefined;
-	readonly statusDetails?: string | undefined;
+		| "Activating"
+		| "Blocked"
+		| "Completed"
+		| "Disconnected"
+		| "Failed"
+		| "New"
+		| "Removing"
+		| "Resuming"
+		| "Running"
+		| "Stopped"
+		| "Stopping"
+		| "Suspended"
+		| "Suspending";
+	readonly statusDetails?: string;
 }
 export interface DscCompilationJobCreatePropertiesParameters {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DscConfigurationAssociationProperty {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface DscNodeConfigurationAssociationProperty {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface DscNodeConfigurationCreateOrUpdateParametersPropertiesOrDscNodeConfigurationProperties {
 	readonly configuration: DscConfigurationAssociationProperty;
-	readonly creationTime?: string | undefined;
-	readonly incrementNodeConfigurationBuild?: boolean | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly nodeCount?: number | undefined;
+	readonly creationTime?: string;
+	readonly incrementNodeConfigurationBuild?: boolean;
+	readonly lastModifiedTime?: string;
+	readonly nodeCount?: number;
 	readonly source: ContentSourceOrDscNodeConfigurationPropertiesSource;
 }
 export interface DscNodeConfigurationCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DscNodeExtensionHandlerAssociationProperty {
-	readonly name?: string | undefined;
-	readonly version?: string | undefined;
+	readonly name?: string;
+	readonly version?: string;
 }
 export interface DscNodeProperties {
-	readonly accountId?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly extensionHandler?: DscNodeExtensionHandlerAssociationProperty[] | undefined;
-	readonly ip?: string | undefined;
-	readonly lastSeen?: string | undefined;
-	readonly nodeConfiguration?: DscNodeConfigurationAssociationProperty | undefined;
-	readonly nodeId?: string | undefined;
-	readonly registrationTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly totalCount?: number | undefined;
+	readonly accountId?: string;
+	readonly etag?: string;
+	readonly extensionHandler?: DscNodeExtensionHandlerAssociationProperty[];
+	readonly ip?: string;
+	readonly lastSeen?: string;
+	readonly nodeConfiguration?: DscNodeConfigurationAssociationProperty;
+	readonly nodeId?: string;
+	readonly registrationTime?: string;
+	readonly status?: string;
+	readonly totalCount?: number;
 }
 export default {
 	"automationAccounts/compilationjobs": automationAccounts_compilationjobs,

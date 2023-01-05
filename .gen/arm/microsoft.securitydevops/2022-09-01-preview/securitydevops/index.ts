@@ -19,9 +19,9 @@ export interface azureDevOpsConnectorsComponentOutputs {
 export interface azureDevOpsConnectorsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AzureDevOpsConnectorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: AzureDevOpsConnectorProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class azureDevOpsConnectors_orgs
 	extends ArmResource<azureDevOpsConnectors_orgsComponentInputs>
@@ -41,8 +41,8 @@ export interface azureDevOpsConnectors_orgsComponentOutputs {
 }
 export interface azureDevOpsConnectors_orgsComponentInputs {
 	readonly name: string;
-	readonly properties?: AzureDevOpsOrgProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AzureDevOpsOrgProperties;
+	readonly systemData?: SystemData;
 }
 export class azureDevOpsConnectors_orgs_projects
 	extends ArmResource<azureDevOpsConnectors_orgs_projectsComponentInputs>
@@ -68,8 +68,8 @@ export interface azureDevOpsConnectors_orgs_projectsComponentOutputs {
 }
 export interface azureDevOpsConnectors_orgs_projectsComponentInputs {
 	readonly name: string;
-	readonly properties?: AzureDevOpsProjectProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AzureDevOpsProjectProperties;
+	readonly systemData?: SystemData;
 }
 export class azureDevOpsConnectors_orgs_projects_repos
 	extends ArmResource<azureDevOpsConnectors_orgs_projects_reposComponentInputs>
@@ -95,8 +95,8 @@ export interface azureDevOpsConnectors_orgs_projects_reposComponentOutputs {
 }
 export interface azureDevOpsConnectors_orgs_projects_reposComponentInputs {
 	readonly name: string;
-	readonly properties?: AzureDevOpsRepoProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AzureDevOpsRepoProperties;
+	readonly systemData?: SystemData;
 }
 export class gitHubConnectors
 	extends ArmResource<gitHubConnectorsComponentInputs>
@@ -117,9 +117,9 @@ export interface gitHubConnectorsComponentOutputs {
 export interface gitHubConnectorsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: GitHubConnectorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: GitHubConnectorProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class gitHubConnectors_owners
 	extends ArmResource<gitHubConnectors_ownersComponentInputs>
@@ -139,8 +139,8 @@ export interface gitHubConnectors_ownersComponentOutputs {
 }
 export interface gitHubConnectors_ownersComponentInputs {
 	readonly name: string;
-	readonly properties?: GitHubOwnerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: GitHubOwnerProperties;
+	readonly systemData?: SystemData;
 }
 export class gitHubConnectors_owners_repos
 	extends ArmResource<gitHubConnectors_owners_reposComponentInputs>
@@ -166,79 +166,79 @@ export interface gitHubConnectors_owners_reposComponentOutputs {
 }
 export interface gitHubConnectors_owners_reposComponentInputs {
 	readonly name: string;
-	readonly properties?: GitHubRepoProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: GitHubRepoProperties;
+	readonly systemData?: SystemData;
 }
 export interface ActionableRemediation {
-	readonly branchConfiguration?: TargetBranchConfiguration | undefined;
-	readonly categories?: ("Artifacts" | "Code" | "Containers" | "Dependencies" | "IaC" | "Secrets"[]) | undefined;
-	readonly severityLevels?: string[] | undefined;
-	readonly state?: ("Disabled" | "Enabled" | "None") | undefined;
+	readonly branchConfiguration?: TargetBranchConfiguration;
+	readonly categories?: "Artifacts" | "Code" | "Containers" | "Dependencies" | "IaC" | "Secrets"[];
+	readonly severityLevels?: string[];
+	readonly state?: "Disabled" | "Enabled" | "None";
 }
 export interface AuthorizationInfo {
-	readonly code?: string | undefined;
+	readonly code?: string;
 }
 export interface AzureDevOpsConnectorProperties {
-	readonly authorization?: AuthorizationInfo | undefined;
-	readonly orgs?: AzureDevOpsOrgMetadata[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
+	readonly authorization?: AuthorizationInfo;
+	readonly orgs?: AzureDevOpsOrgMetadata[];
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
 }
 export interface AzureDevOpsOrgMetadata {
-	readonly autoDiscovery?: ("Disabled" | "Enabled") | undefined;
-	readonly name?: string | undefined;
-	readonly projects?: AzureDevOpsProjectMetadata[] | undefined;
+	readonly autoDiscovery?: "Disabled" | "Enabled";
+	readonly name?: string;
+	readonly projects?: AzureDevOpsProjectMetadata[];
 }
 export interface AzureDevOpsOrgProperties {
-	readonly autoDiscovery?: ("Disabled" | "Enabled") | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
+	readonly autoDiscovery?: "Disabled" | "Enabled";
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
 }
 export interface AzureDevOpsProjectMetadata {
-	readonly autoDiscovery?: ("Disabled" | "Enabled") | undefined;
-	readonly name?: string | undefined;
-	readonly repos?: string[] | undefined;
+	readonly autoDiscovery?: "Disabled" | "Enabled";
+	readonly name?: string;
+	readonly repos?: string[];
 }
 export interface AzureDevOpsProjectProperties {
-	readonly autoDiscovery?: ("Disabled" | "Enabled") | undefined;
-	readonly orgName?: string | undefined;
-	readonly projectId?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
+	readonly autoDiscovery?: "Disabled" | "Enabled";
+	readonly orgName?: string;
+	readonly projectId?: string;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
 }
 export interface AzureDevOpsRepoProperties {
-	readonly actionableRemediation?: ActionableRemediation | undefined;
-	readonly orgName?: string | undefined;
-	readonly projectName?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
-	readonly repoId?: string | undefined;
-	readonly repoUrl?: string | undefined;
-	readonly visibility?: string | undefined;
+	readonly actionableRemediation?: ActionableRemediation;
+	readonly orgName?: string;
+	readonly projectName?: string;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
+	readonly repoId?: string;
+	readonly repoUrl?: string;
+	readonly visibility?: string;
 }
 export interface GitHubConnectorProperties {
-	readonly code?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
+	readonly code?: string;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
 }
 export interface GitHubOwnerProperties {
-	readonly ownerUrl?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
+	readonly ownerUrl?: string;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
 }
 export interface GitHubRepoProperties {
-	readonly accountId?: number | undefined;
-	readonly ownerName?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Failed" | "Succeeded") | undefined;
-	readonly repoUrl?: string | undefined;
+	readonly accountId?: number;
+	readonly ownerName?: string;
+	readonly provisioningState?: "Canceled" | "Failed" | "Succeeded";
+	readonly repoUrl?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TargetBranchConfiguration {
-	readonly names?: string[] | undefined;
+	readonly names?: string[];
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	azureDevOpsConnectors: azureDevOpsConnectors,

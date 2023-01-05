@@ -8,29 +8,28 @@ export class Notifications extends GdmResource<NotificationsComponentInputs> imp
 export interface NotificationsComponentOutputs {}
 export interface NotificationsComponentInputs {
 	readonly bucket: string;
-	readonly custom_attributes?: { [P in string]: string } | undefined;
-	readonly etag?: string | undefined;
-	readonly event_types?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly object_name_prefix?: string | undefined;
-	readonly payload_format?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly topic?: string | undefined;
-	readonly userProject?: string | undefined;
-	readonly type: string;
+	readonly custom_attributes?: { [P in string]: string };
+	readonly etag?: string;
+	readonly event_types?: string[];
+	readonly id?: string;
+	readonly kind?: string;
+	readonly object_name_prefix?: string;
+	readonly payload_format?: string;
+	readonly selfLink?: string;
+	readonly topic?: string;
+	readonly userProject?: string;
 	readonly name: string;
 }
 export interface Notification {
-	readonly custom_attributes?: { [P in string]: string } | undefined;
-	readonly etag?: string | undefined;
-	readonly event_types?: string[] | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly object_name_prefix?: string | undefined;
-	readonly payload_format?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly topic?: string | undefined;
+	readonly custom_attributes?: { [P in string]: string };
+	readonly etag?: string;
+	readonly event_types?: string[];
+	readonly id?: string;
+	readonly kind?: string;
+	readonly object_name_prefix?: string;
+	readonly payload_format?: string;
+	readonly selfLink?: string;
+	readonly topic?: string;
 }
 export default {
 	Notifications: Notifications,

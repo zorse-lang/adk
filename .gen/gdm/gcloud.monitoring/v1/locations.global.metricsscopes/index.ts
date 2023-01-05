@@ -7,28 +7,27 @@ export class LocationsGlobalMetricsScopes
 	constructor(entity: ADKEntity, options: LocationsGlobalMetricsScopesComponentInputs) {
 		super(entity, options.name, "monitoring.v1.LocationsGlobalMetricsScopes", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly monitoredProjects?: MonitoredProject[] | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly createTime?: string;
+	public readonly monitoredProjects?: MonitoredProject[];
+	public readonly updateTime?: string;
 }
 export interface LocationsGlobalMetricsScopesComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly monitoredProjects?: MonitoredProject[] | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly monitoredProjects?: MonitoredProject[];
+	readonly updateTime?: string;
 }
 export interface LocationsGlobalMetricsScopesComponentInputs {
 	readonly name: string;
-	readonly type: string;
 }
 export interface MetricsScope {
-	readonly createTime?: string | undefined;
-	readonly monitoredProjects?: MonitoredProject[] | undefined;
-	readonly name?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly monitoredProjects?: MonitoredProject[];
+	readonly name?: string;
+	readonly updateTime?: string;
 }
 export interface MonitoredProject {
-	readonly createTime?: string | undefined;
-	readonly name?: string | undefined;
+	readonly createTime?: string;
+	readonly name?: string;
 }
 export default {
 	LocationsGlobalMetricsScopes: LocationsGlobalMetricsScopes,

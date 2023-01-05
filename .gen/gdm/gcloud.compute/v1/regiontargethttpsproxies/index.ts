@@ -7,51 +7,50 @@ export class RegionTargetHttpsProxies
 	constructor(entity: ADKEntity, options: RegionTargetHttpsProxiesComponentInputs) {
 		super(entity, options.name, "compute.v1.RegionTargetHttpsProxies", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
 }
 export interface RegionTargetHttpsProxiesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export interface RegionTargetHttpsProxiesComponentInputs {
-	readonly authorizationPolicy?: string | undefined;
-	readonly certificateMap?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
+	readonly authorizationPolicy?: string;
+	readonly certificateMap?: string;
+	readonly description?: string;
+	readonly fingerprint?: string;
 	readonly name: string;
-	readonly proxyBind?: boolean | undefined;
-	readonly quicOverride?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly serverTlsPolicy?: string | undefined;
-	readonly sslCertificates?: string[] | undefined;
-	readonly sslPolicy?: string | undefined;
-	readonly urlMap?: string | undefined;
-	readonly type: string;
+	readonly proxyBind?: boolean;
+	readonly quicOverride?: string;
+	readonly requestId?: string;
+	readonly serverTlsPolicy?: string;
+	readonly sslCertificates?: string[];
+	readonly sslPolicy?: string;
+	readonly urlMap?: string;
 }
 export interface TargetHttpsProxy {
-	readonly authorizationPolicy?: string | undefined;
-	readonly certificateMap?: string | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly proxyBind?: boolean | undefined;
-	readonly quicOverride?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly serverTlsPolicy?: string | undefined;
-	readonly sslCertificates?: string[] | undefined;
-	readonly sslPolicy?: string | undefined;
-	readonly urlMap?: string | undefined;
+	readonly authorizationPolicy?: string;
+	readonly certificateMap?: string;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly proxyBind?: boolean;
+	readonly quicOverride?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly serverTlsPolicy?: string;
+	readonly sslCertificates?: string[];
+	readonly sslPolicy?: string;
+	readonly urlMap?: string;
 }
 export default {
 	RegionTargetHttpsProxies: RegionTargetHttpsProxies,

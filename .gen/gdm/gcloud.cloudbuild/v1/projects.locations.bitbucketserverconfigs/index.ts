@@ -7,42 +7,41 @@ export class ProjectsLocationsBitbucketServerConfigs
 	constructor(entity: ADKEntity, options: ProjectsLocationsBitbucketServerConfigsComponentInputs) {
 		super(entity, options.name, "cloudbuild.v1.ProjectsLocationsBitbucketServerConfigs", options);
 	}
-	public readonly connectedRepositories?: BitbucketServerRepositoryId[] | undefined;
-	public readonly webhookKey?: string | undefined;
+	public readonly connectedRepositories?: BitbucketServerRepositoryId[];
+	public readonly webhookKey?: string;
 }
 export interface ProjectsLocationsBitbucketServerConfigsComponentOutputs {
-	readonly connectedRepositories?: BitbucketServerRepositoryId[] | undefined;
-	readonly webhookKey?: string | undefined;
+	readonly connectedRepositories?: BitbucketServerRepositoryId[];
+	readonly webhookKey?: string;
 }
 export interface ProjectsLocationsBitbucketServerConfigsComponentInputs {
 	readonly apiKey: string;
-	readonly bitbucketServerConfigId?: string | undefined;
-	readonly createTime?: string | undefined;
+	readonly bitbucketServerConfigId?: string;
+	readonly createTime?: string;
 	readonly hostUri: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly peeredNetwork?: string | undefined;
+	readonly peeredNetwork?: string;
 	readonly secrets: BitbucketServerSecrets;
-	readonly sslCa?: string | undefined;
-	readonly username?: string | undefined;
-	readonly type: string;
+	readonly sslCa?: string;
+	readonly username?: string;
 }
 export interface BitbucketServerConfig {
 	readonly apiKey: string;
-	readonly connectedRepositories?: BitbucketServerRepositoryId[] | undefined;
-	readonly createTime?: string | undefined;
+	readonly connectedRepositories?: BitbucketServerRepositoryId[];
+	readonly createTime?: string;
 	readonly hostUri: string;
-	readonly name?: string | undefined;
-	readonly peeredNetwork?: string | undefined;
+	readonly name?: string;
+	readonly peeredNetwork?: string;
 	readonly secrets: BitbucketServerSecrets;
-	readonly sslCa?: string | undefined;
-	readonly username?: string | undefined;
-	readonly webhookKey?: string | undefined;
+	readonly sslCa?: string;
+	readonly username?: string;
+	readonly webhookKey?: string;
 }
 export interface BitbucketServerRepositoryId {
 	readonly projectKey: string;
 	readonly repoSlug: string;
-	readonly webhookId?: number | undefined;
+	readonly webhookId?: number;
 }
 export interface BitbucketServerSecrets {
 	readonly adminAccessTokenVersionName: string;

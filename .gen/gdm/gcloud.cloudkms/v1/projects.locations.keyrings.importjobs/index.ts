@@ -7,22 +7,22 @@ export class ProjectsLocationsKeyRingsImportJobs
 	constructor(entity: ADKEntity, options: ProjectsLocationsKeyRingsImportJobsComponentInputs) {
 		super(entity, options.name, "cloudkms.v1.ProjectsLocationsKeyRingsImportJobs", options);
 	}
-	public readonly attestation?: KeyOperationAttestation | undefined;
-	public readonly createTime?: string | undefined;
-	public readonly expireEventTime?: string | undefined;
-	public readonly expireTime?: string | undefined;
-	public readonly generateTime?: string | undefined;
-	public readonly publicKey?: WrappingPublicKey | undefined;
-	public readonly state?: string | undefined;
+	public readonly attestation?: KeyOperationAttestation;
+	public readonly createTime?: string;
+	public readonly expireEventTime?: string;
+	public readonly expireTime?: string;
+	public readonly generateTime?: string;
+	public readonly publicKey?: WrappingPublicKey;
+	public readonly state?: string;
 }
 export interface ProjectsLocationsKeyRingsImportJobsComponentOutputs {
-	readonly attestation?: KeyOperationAttestation | undefined;
-	readonly createTime?: string | undefined;
-	readonly expireEventTime?: string | undefined;
-	readonly expireTime?: string | undefined;
-	readonly generateTime?: string | undefined;
-	readonly publicKey?: WrappingPublicKey | undefined;
-	readonly state?: string | undefined;
+	readonly attestation?: KeyOperationAttestation;
+	readonly createTime?: string;
+	readonly expireEventTime?: string;
+	readonly expireTime?: string;
+	readonly generateTime?: string;
+	readonly publicKey?: WrappingPublicKey;
+	readonly state?: string;
 }
 export interface ProjectsLocationsKeyRingsImportJobsComponentInputs {
 	readonly importJobId: string;
@@ -30,32 +30,31 @@ export interface ProjectsLocationsKeyRingsImportJobsComponentInputs {
 	readonly name: string;
 	readonly parent: string;
 	readonly protectionLevel: string;
-	readonly type: string;
 }
 export interface CertificateChains {
-	readonly caviumCerts?: string[] | undefined;
-	readonly googleCardCerts?: string[] | undefined;
-	readonly googlePartitionCerts?: string[] | undefined;
+	readonly caviumCerts?: string[];
+	readonly googleCardCerts?: string[];
+	readonly googlePartitionCerts?: string[];
 }
 export interface ImportJob {
-	readonly attestation?: KeyOperationAttestation | undefined;
-	readonly createTime?: string | undefined;
-	readonly expireEventTime?: string | undefined;
-	readonly expireTime?: string | undefined;
-	readonly generateTime?: string | undefined;
+	readonly attestation?: KeyOperationAttestation;
+	readonly createTime?: string;
+	readonly expireEventTime?: string;
+	readonly expireTime?: string;
+	readonly generateTime?: string;
 	readonly importMethod: string;
-	readonly name?: string | undefined;
+	readonly name?: string;
 	readonly protectionLevel: string;
-	readonly publicKey?: WrappingPublicKey | undefined;
-	readonly state?: string | undefined;
+	readonly publicKey?: WrappingPublicKey;
+	readonly state?: string;
 }
 export interface KeyOperationAttestation {
-	readonly certChains?: CertificateChains | undefined;
-	readonly content?: string | undefined;
-	readonly format?: string | undefined;
+	readonly certChains?: CertificateChains;
+	readonly content?: string;
+	readonly format?: string;
 }
 export interface WrappingPublicKey {
-	readonly pem?: string | undefined;
+	readonly pem?: string;
 }
 export default {
 	ProjectsLocationsKeyRingsImportJobs: ProjectsLocationsKeyRingsImportJobs,

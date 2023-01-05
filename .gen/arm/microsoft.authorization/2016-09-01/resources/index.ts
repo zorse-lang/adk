@@ -18,12 +18,12 @@ export interface locksComponentInputs {
 	readonly properties: ManagementLockProperties;
 }
 export interface ManagementLockOwner {
-	readonly applicationId?: string | undefined;
+	readonly applicationId?: string;
 }
 export interface ManagementLockProperties {
 	readonly level: "CanNotDelete" | "NotSpecified" | "ReadOnly";
-	readonly notes?: string | undefined;
-	readonly owners?: ManagementLockOwner[] | undefined;
+	readonly notes?: string;
+	readonly owners?: ManagementLockOwner[];
 }
 export default {
 	locks: locks,

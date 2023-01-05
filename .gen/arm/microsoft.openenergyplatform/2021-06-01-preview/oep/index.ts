@@ -16,31 +16,29 @@ export interface energyServicesComponentOutputs {
 export interface energyServicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: EnergyServiceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: EnergyServiceTags | undefined;
+	readonly properties?: EnergyServiceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: EnergyServiceTags;
 }
 export interface DataPartitionNames {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface EnergyServiceProperties {
-	readonly authAppId?: string | undefined;
-	readonly dataPartitionNames?: DataPartitionNames[] | undefined;
-	readonly dnsName?: string | undefined;
-	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating")
-		| undefined;
+	readonly authAppId?: string;
+	readonly dataPartitionNames?: DataPartitionNames[];
+	readonly dnsName?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Unknown" | "Updating";
 }
 export interface EnergyServiceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	energyServices: energyServices,

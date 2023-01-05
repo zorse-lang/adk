@@ -19,14 +19,14 @@ export interface CanaryComponentInputs {
 	readonly RuntimeVersion: string;
 	readonly Schedule: Schedule;
 	readonly StartCanaryAfterCreation: boolean;
-	readonly ArtifactConfig?: (ArtifactConfig | undefined) | undefined;
-	readonly DeleteLambdaResourcesOnCanaryDeletion?: (boolean | undefined) | undefined;
-	readonly FailureRetentionPeriod?: (number | undefined) | undefined;
-	readonly RunConfig?: (RunConfig | undefined) | undefined;
-	readonly SuccessRetentionPeriod?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VisualReference?: (VisualReference | undefined) | undefined;
-	readonly VPCConfig?: (VPCConfig | undefined) | undefined;
+	readonly ArtifactConfig?: ArtifactConfig | undefined;
+	readonly DeleteLambdaResourcesOnCanaryDeletion?: boolean | undefined;
+	readonly FailureRetentionPeriod?: number | undefined;
+	readonly RunConfig?: RunConfig | undefined;
+	readonly SuccessRetentionPeriod?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VisualReference?: VisualReference | undefined;
+	readonly VPCConfig?: VPCConfig | undefined;
 	readonly LogicalId: string;
 }
 export class Group extends CfnResource<GroupComponentInputs> implements GroupComponentOutputs {
@@ -40,46 +40,46 @@ export interface GroupComponentOutputs {
 }
 export interface GroupComponentInputs {
 	readonly Name: string;
-	readonly ResourceArns?: (string[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ResourceArns?: string[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface ArtifactConfig {
-	readonly S3Encryption?: (S3Encryption | undefined) | undefined;
+	readonly S3Encryption?: S3Encryption | undefined;
 }
 export interface BaseScreenshot {
-	readonly IgnoreCoordinates?: (string[] | undefined) | undefined;
+	readonly IgnoreCoordinates?: string[] | undefined;
 	readonly ScreenshotName: string;
 }
 export interface Code {
 	readonly Handler: string;
-	readonly S3Bucket?: (string | undefined) | undefined;
-	readonly S3Key?: (string | undefined) | undefined;
-	readonly S3ObjectVersion?: (string | undefined) | undefined;
-	readonly Script?: (string | undefined) | undefined;
+	readonly S3Bucket?: string | undefined;
+	readonly S3Key?: string | undefined;
+	readonly S3ObjectVersion?: string | undefined;
+	readonly Script?: string | undefined;
 }
 export interface RunConfig {
-	readonly ActiveTracing?: (boolean | undefined) | undefined;
-	readonly EnvironmentVariables?: ({ [key: string]: string } | undefined) | undefined;
-	readonly MemoryInMB?: (number | undefined) | undefined;
-	readonly TimeoutInSeconds?: (number | undefined) | undefined;
+	readonly ActiveTracing?: boolean | undefined;
+	readonly EnvironmentVariables?: { [key: string]: string } | undefined;
+	readonly MemoryInMB?: number | undefined;
+	readonly TimeoutInSeconds?: number | undefined;
 }
 export interface S3Encryption {
-	readonly EncryptionMode?: (string | undefined) | undefined;
-	readonly KmsKeyArn?: (string | undefined) | undefined;
+	readonly EncryptionMode?: string | undefined;
+	readonly KmsKeyArn?: string | undefined;
 }
 export interface Schedule {
-	readonly DurationInSeconds?: (string | undefined) | undefined;
+	readonly DurationInSeconds?: string | undefined;
 	readonly Expression: string;
 }
 export interface VPCConfig {
 	readonly SecurityGroupIds: string[];
 	readonly SubnetIds: string[];
-	readonly VpcId?: (string | undefined) | undefined;
+	readonly VpcId?: string | undefined;
 }
 export interface VisualReference {
 	readonly BaseCanaryRunId: string;
-	readonly BaseScreenshots?: (BaseScreenshot[] | undefined) | undefined;
+	readonly BaseScreenshots?: BaseScreenshot[] | undefined;
 }
 export default {
 	Canary: Canary,

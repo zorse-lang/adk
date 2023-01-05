@@ -14,10 +14,10 @@ export interface identitiesComponentOutputs {
 	readonly type: "Microsoft.ManagedIdentity/identities";
 }
 export interface identitiesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SystemAssignedIdentityProperties | undefined;
-	readonly tags?: SystemAssignedIdentityTags | undefined;
+	readonly properties?: SystemAssignedIdentityProperties;
+	readonly tags?: SystemAssignedIdentityTags;
 }
 export class userAssignedIdentities
 	extends ArmResource<userAssignedIdentitiesComponentInputs>
@@ -38,8 +38,8 @@ export interface userAssignedIdentitiesComponentOutputs {
 export interface userAssignedIdentitiesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: UserAssignedIdentityProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: UserAssignedIdentityProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class userAssignedIdentities_federatedIdentityCredentials
 	extends ArmResource<userAssignedIdentities_federatedIdentityCredentialsComponentInputs>
@@ -65,7 +65,7 @@ export interface userAssignedIdentities_federatedIdentityCredentialsComponentOut
 }
 export interface userAssignedIdentities_federatedIdentityCredentialsComponentInputs {
 	readonly name: string;
-	readonly properties?: FederatedIdentityCredentialProperties | undefined;
+	readonly properties?: FederatedIdentityCredentialProperties;
 }
 export function listAssociatedResources(resource: userAssignedIdentities): AssociatedResourcesListResult {
 	if (resource.apiVersion !== "2022-01-31-preview") {
@@ -77,17 +77,17 @@ export function listAssociatedResources(resource: userAssignedIdentities): Assoc
 	throw new Error("not implemented");
 }
 export interface AssociatedResourcesListResult {
-	readonly nextLink?: string | undefined;
-	readonly totalCount?: number | undefined;
-	readonly value?: AzureResource[] | undefined;
+	readonly nextLink?: string;
+	readonly totalCount?: number;
+	readonly value?: AzureResource[];
 }
 export interface AzureResource {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly resourceGroup?: string | undefined;
-	readonly subscriptionDisplayName?: string | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly resourceGroup?: string;
+	readonly subscriptionDisplayName?: string;
+	readonly subscriptionId?: string;
+	readonly type?: string;
 }
 export interface FederatedIdentityCredentialProperties {
 	readonly audiences: string[];
@@ -95,21 +95,21 @@ export interface FederatedIdentityCredentialProperties {
 	readonly subject: string;
 }
 export interface SystemAssignedIdentityProperties {
-	readonly clientId?: string | undefined;
-	readonly clientSecretUrl?: string | undefined;
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly clientId?: string;
+	readonly clientSecretUrl?: string;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 }
 export interface SystemAssignedIdentityTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentityProperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 }
 export default {
 	identities: identities,

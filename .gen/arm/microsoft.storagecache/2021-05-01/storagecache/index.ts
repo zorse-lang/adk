@@ -14,13 +14,13 @@ export interface cachesComponentOutputs {
 	readonly type: "Microsoft.StorageCache/caches";
 }
 export interface cachesComponentInputs {
-	readonly identity?: CacheIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: CacheIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: CacheProperties | undefined;
-	readonly sku?: CacheSku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: CacheTags | undefined;
+	readonly properties?: CacheProperties;
+	readonly sku?: CacheSku;
+	readonly systemData?: SystemData;
+	readonly tags?: CacheTags;
 }
 export class caches_storageTargets
 	extends ArmResource<caches_storageTargetsComponentInputs>
@@ -39,140 +39,135 @@ export interface caches_storageTargetsComponentOutputs {
 	readonly type: "Microsoft.StorageCache/caches/storageTargets";
 }
 export interface caches_storageTargetsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: StorageTargetProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: StorageTargetProperties;
+	readonly systemData?: SystemData;
 }
 export interface BlobNfsTarget {
-	readonly target?: string | undefined;
-	readonly usageModel?: string | undefined;
+	readonly target?: string;
+	readonly usageModel?: string;
 }
 export interface CacheActiveDirectorySettings {
 	readonly cacheNetBiosName: string;
-	readonly credentials?: CacheActiveDirectorySettingsCredentials | undefined;
-	readonly domainJoined?: ("Error" | "No" | "Yes") | undefined;
+	readonly credentials?: CacheActiveDirectorySettingsCredentials;
+	readonly domainJoined?: "Error" | "No" | "Yes";
 	readonly domainName: string;
 	readonly domainNetBiosName: string;
 	readonly primaryDnsIpAddress: string;
-	readonly secondaryDnsIpAddress?: string | undefined;
+	readonly secondaryDnsIpAddress?: string;
 }
 export interface CacheActiveDirectorySettingsCredentials {
 	readonly password: string;
 	readonly username: string;
 }
 export interface CacheDirectorySettings {
-	readonly activeDirectory?: CacheActiveDirectorySettings | undefined;
-	readonly usernameDownload?: CacheUsernameDownloadSettings | undefined;
+	readonly activeDirectory?: CacheActiveDirectorySettings;
+	readonly usernameDownload?: CacheUsernameDownloadSettings;
 }
 export interface CacheEncryptionSettings {
-	readonly keyEncryptionKey?: KeyVaultKeyReference | undefined;
-	readonly rotationToLatestKeyVersionEnabled?: boolean | undefined;
+	readonly keyEncryptionKey?: KeyVaultKeyReference;
+	readonly rotationToLatestKeyVersionEnabled?: boolean;
 }
 export interface CacheHealth {
-	readonly conditions?: Condition[] | undefined;
+	readonly conditions?: Condition[];
 	readonly state?:
-		| (
-				| "Degraded"
-				| "Down"
-				| "Flushing"
-				| "Healthy"
-				| "Stopped"
-				| "Stopping"
-				| "Transitioning"
-				| "Unknown"
-				| "Upgrading"
-		  )
-		| undefined;
-	readonly statusDescription?: string | undefined;
+		| "Degraded"
+		| "Down"
+		| "Flushing"
+		| "Healthy"
+		| "Stopped"
+		| "Stopping"
+		| "Transitioning"
+		| "Unknown"
+		| "Upgrading";
+	readonly statusDescription?: string;
 }
 export interface CacheIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: CacheIdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: CacheIdentityUserAssignedIdentities;
 }
 export interface CacheIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentitiesValue | undefined;
+	readonly [key: string]: UserAssignedIdentitiesValue;
 }
 export interface CacheNetworkSettings {
-	readonly dnsSearchDomain?: string | undefined;
-	readonly dnsServers?: string[] | undefined;
-	readonly mtu?: number | undefined;
-	readonly ntpServer?: string | undefined;
-	readonly utilityAddresses?: string[] | undefined;
+	readonly dnsSearchDomain?: string;
+	readonly dnsServers?: string[];
+	readonly mtu?: number;
+	readonly ntpServer?: string;
+	readonly utilityAddresses?: string[];
 }
 export interface CacheProperties {
-	readonly cacheSizeGB?: number | undefined;
-	readonly directoryServicesSettings?: CacheDirectorySettings | undefined;
-	readonly encryptionSettings?: CacheEncryptionSettings | undefined;
-	readonly health?: CacheHealth | undefined;
-	readonly mountAddresses?: string[] | undefined;
-	readonly networkSettings?: CacheNetworkSettings | undefined;
-	readonly provisioningState?:
-		| ("Cancelled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating")
-		| undefined;
-	readonly securitySettings?: CacheSecuritySettings | undefined;
-	readonly subnet?: string | undefined;
-	readonly upgradeStatus?: CacheUpgradeStatus | undefined;
+	readonly cacheSizeGB?: number;
+	readonly directoryServicesSettings?: CacheDirectorySettings;
+	readonly encryptionSettings?: CacheEncryptionSettings;
+	readonly health?: CacheHealth;
+	readonly mountAddresses?: string[];
+	readonly networkSettings?: CacheNetworkSettings;
+	readonly provisioningState?: "Cancelled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly securitySettings?: CacheSecuritySettings;
+	readonly subnet?: string;
+	readonly upgradeStatus?: CacheUpgradeStatus;
 }
 export interface CacheSecuritySettings {
-	readonly accessPolicies?: NfsAccessPolicy[] | undefined;
+	readonly accessPolicies?: NfsAccessPolicy[];
 }
 export interface CacheSku {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface CacheTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CacheUpgradeStatus {
-	readonly currentFirmwareVersion?: string | undefined;
-	readonly firmwareUpdateDeadline?: string | undefined;
-	readonly firmwareUpdateStatus?: ("available" | "unavailable") | undefined;
-	readonly lastFirmwareUpdate?: string | undefined;
-	readonly pendingFirmwareVersion?: string | undefined;
+	readonly currentFirmwareVersion?: string;
+	readonly firmwareUpdateDeadline?: string;
+	readonly firmwareUpdateStatus?: "available" | "unavailable";
+	readonly lastFirmwareUpdate?: string;
+	readonly pendingFirmwareVersion?: string;
 }
 export interface CacheUsernameDownloadSettings {
-	readonly autoDownloadCertificate?: boolean | undefined;
-	readonly caCertificateURI?: string | undefined;
-	readonly credentials?: CacheUsernameDownloadSettingsCredentials | undefined;
-	readonly encryptLdapConnection?: boolean | undefined;
-	readonly extendedGroups?: boolean | undefined;
-	readonly groupFileURI?: string | undefined;
-	readonly ldapBaseDN?: string | undefined;
-	readonly ldapServer?: string | undefined;
-	readonly requireValidCertificate?: boolean | undefined;
-	readonly userFileURI?: string | undefined;
-	readonly usernameDownloaded?: ("Error" | "No" | "Yes") | undefined;
-	readonly usernameSource?: ("AD" | "File" | "LDAP" | "None") | undefined;
+	readonly autoDownloadCertificate?: boolean;
+	readonly caCertificateURI?: string;
+	readonly credentials?: CacheUsernameDownloadSettingsCredentials;
+	readonly encryptLdapConnection?: boolean;
+	readonly extendedGroups?: boolean;
+	readonly groupFileURI?: string;
+	readonly ldapBaseDN?: string;
+	readonly ldapServer?: string;
+	readonly requireValidCertificate?: boolean;
+	readonly userFileURI?: string;
+	readonly usernameDownloaded?: "Error" | "No" | "Yes";
+	readonly usernameSource?: "AD" | "File" | "LDAP" | "None";
 }
 export interface CacheUsernameDownloadSettingsCredentials {
-	readonly bindDn?: string | undefined;
-	readonly bindPassword?: string | undefined;
+	readonly bindDn?: string;
+	readonly bindPassword?: string;
 }
 export interface ClfsTarget {
-	readonly target?: string | undefined;
+	readonly target?: string;
 }
 export interface Condition {
-	readonly message?: string | undefined;
-	readonly timestamp?: string | undefined;
+	readonly message?: string;
+	readonly timestamp?: string;
 }
 export interface KeyVaultKeyReference {
 	readonly keyUrl: string;
 	readonly sourceVault: KeyVaultKeyReferenceSourceVault;
 }
 export interface KeyVaultKeyReferenceSourceVault {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface NamespaceJunction {
-	readonly namespacePath?: string | undefined;
-	readonly nfsAccessPolicy?: string | undefined;
-	readonly nfsExport?: string | undefined;
-	readonly targetPath?: string | undefined;
+	readonly namespacePath?: string;
+	readonly nfsAccessPolicy?: string;
+	readonly nfsExport?: string;
+	readonly targetPath?: string;
 }
 export interface Nfs3Target {
-	readonly target?: string | undefined;
-	readonly usageModel?: string | undefined;
+	readonly target?: string;
+	readonly usageModel?: string;
 }
 export interface NfsAccessPolicy {
 	readonly accessRules: NfsAccessRule[];
@@ -180,42 +175,40 @@ export interface NfsAccessPolicy {
 }
 export interface NfsAccessRule {
 	readonly access: "no" | "ro" | "rw";
-	readonly anonymousGID?: string | undefined;
-	readonly anonymousUID?: string | undefined;
-	readonly filter?: string | undefined;
-	readonly rootSquash?: boolean | undefined;
+	readonly anonymousGID?: string;
+	readonly anonymousUID?: string;
+	readonly filter?: string;
+	readonly rootSquash?: boolean;
 	readonly scope: "default" | "host" | "network";
-	readonly submountAccess?: boolean | undefined;
-	readonly suid?: boolean | undefined;
+	readonly submountAccess?: boolean;
+	readonly suid?: boolean;
 }
 export interface StorageTargetProperties {
-	readonly blobNfs?: BlobNfsTarget | undefined;
-	readonly clfs?: ClfsTarget | undefined;
-	readonly junctions?: NamespaceJunction[] | undefined;
-	readonly nfs3?: Nfs3Target | undefined;
-	readonly provisioningState?:
-		| ("Cancelled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating")
-		| undefined;
+	readonly blobNfs?: BlobNfsTarget;
+	readonly clfs?: ClfsTarget;
+	readonly junctions?: NamespaceJunction[];
+	readonly nfs3?: Nfs3Target;
+	readonly provisioningState?: "Cancelled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 	readonly targetType: "blobNfs" | "clfs" | "nfs3" | "unknown";
-	readonly unknown?: UnknownTarget | undefined;
+	readonly unknown?: UnknownTarget;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface UnknownProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UnknownTarget {
-	readonly attributes?: UnknownProperties | undefined;
+	readonly attributes?: UnknownProperties;
 }
 export interface UserAssignedIdentitiesValue {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	caches: caches,

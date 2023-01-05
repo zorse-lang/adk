@@ -32,95 +32,95 @@ export interface DomainComponentOutputs {
 	readonly ServiceSoftwareOptionsUpdateStatus: string;
 }
 export interface DomainComponentInputs {
-	readonly AccessPolicies?: (any | undefined) | undefined;
-	readonly AdvancedOptions?: ({ [key: string]: string } | undefined) | undefined;
-	readonly AdvancedSecurityOptions?: (AdvancedSecurityOptionsInput | undefined) | undefined;
-	readonly ClusterConfig?: (ClusterConfig | undefined) | undefined;
-	readonly CognitoOptions?: (CognitoOptions | undefined) | undefined;
-	readonly DomainEndpointOptions?: (DomainEndpointOptions | undefined) | undefined;
-	readonly DomainName?: (string | undefined) | undefined;
-	readonly EBSOptions?: (EBSOptions | undefined) | undefined;
-	readonly EncryptionAtRestOptions?: (EncryptionAtRestOptions | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly LogPublishingOptions?: ({ [key: string]: LogPublishingOption } | undefined) | undefined;
-	readonly NodeToNodeEncryptionOptions?: (NodeToNodeEncryptionOptions | undefined) | undefined;
-	readonly SnapshotOptions?: (SnapshotOptions | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VPCOptions?: (VPCOptions | undefined) | undefined;
+	readonly AccessPolicies?: any | undefined;
+	readonly AdvancedOptions?: { [key: string]: string } | undefined;
+	readonly AdvancedSecurityOptions?: AdvancedSecurityOptionsInput | undefined;
+	readonly ClusterConfig?: ClusterConfig | undefined;
+	readonly CognitoOptions?: CognitoOptions | undefined;
+	readonly DomainEndpointOptions?: DomainEndpointOptions | undefined;
+	readonly DomainName?: string | undefined;
+	readonly EBSOptions?: EBSOptions | undefined;
+	readonly EncryptionAtRestOptions?: EncryptionAtRestOptions | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly LogPublishingOptions?: { [key: string]: LogPublishingOption } | undefined;
+	readonly NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions | undefined;
+	readonly SnapshotOptions?: SnapshotOptions | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VPCOptions?: VPCOptions | undefined;
 	readonly LogicalId: string;
 }
 export interface AdvancedSecurityOptionsInput {
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly InternalUserDatabaseEnabled?: (boolean | undefined) | undefined;
-	readonly MasterUserOptions?: (MasterUserOptions | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly InternalUserDatabaseEnabled?: boolean | undefined;
+	readonly MasterUserOptions?: MasterUserOptions | undefined;
 }
 export interface ClusterConfig {
-	readonly DedicatedMasterCount?: (number | undefined) | undefined;
-	readonly DedicatedMasterEnabled?: (boolean | undefined) | undefined;
-	readonly DedicatedMasterType?: (string | undefined) | undefined;
-	readonly InstanceCount?: (number | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly WarmCount?: (number | undefined) | undefined;
-	readonly WarmEnabled?: (boolean | undefined) | undefined;
-	readonly WarmType?: (string | undefined) | undefined;
-	readonly ZoneAwarenessConfig?: (ZoneAwarenessConfig | undefined) | undefined;
-	readonly ZoneAwarenessEnabled?: (boolean | undefined) | undefined;
+	readonly DedicatedMasterCount?: number | undefined;
+	readonly DedicatedMasterEnabled?: boolean | undefined;
+	readonly DedicatedMasterType?: string | undefined;
+	readonly InstanceCount?: number | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly WarmCount?: number | undefined;
+	readonly WarmEnabled?: boolean | undefined;
+	readonly WarmType?: string | undefined;
+	readonly ZoneAwarenessConfig?: ZoneAwarenessConfig | undefined;
+	readonly ZoneAwarenessEnabled?: boolean | undefined;
 }
 export interface CognitoOptions {
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly IdentityPoolId?: (string | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly UserPoolId?: (string | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly IdentityPoolId?: string | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly UserPoolId?: string | undefined;
 }
 export interface DomainEndpointOptions {
-	readonly CustomEndpoint?: (string | undefined) | undefined;
-	readonly CustomEndpointCertificateArn?: (string | undefined) | undefined;
-	readonly CustomEndpointEnabled?: (boolean | undefined) | undefined;
-	readonly EnforceHTTPS?: (boolean | undefined) | undefined;
-	readonly TLSSecurityPolicy?: (string | undefined) | undefined;
+	readonly CustomEndpoint?: string | undefined;
+	readonly CustomEndpointCertificateArn?: string | undefined;
+	readonly CustomEndpointEnabled?: boolean | undefined;
+	readonly EnforceHTTPS?: boolean | undefined;
+	readonly TLSSecurityPolicy?: string | undefined;
 }
 export interface EBSOptions {
-	readonly EBSEnabled?: (boolean | undefined) | undefined;
-	readonly Iops?: (number | undefined) | undefined;
-	readonly Throughput?: (number | undefined) | undefined;
-	readonly VolumeSize?: (number | undefined) | undefined;
-	readonly VolumeType?: (string | undefined) | undefined;
+	readonly EBSEnabled?: boolean | undefined;
+	readonly Iops?: number | undefined;
+	readonly Throughput?: number | undefined;
+	readonly VolumeSize?: number | undefined;
+	readonly VolumeType?: string | undefined;
 }
 export interface EncryptionAtRestOptions {
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly KmsKeyId?: string | undefined;
 }
 export interface LogPublishingOption {
-	readonly CloudWatchLogsLogGroupArn?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly CloudWatchLogsLogGroupArn?: string | undefined;
+	readonly Enabled?: boolean | undefined;
 }
 export interface MasterUserOptions {
-	readonly MasterUserARN?: (string | undefined) | undefined;
-	readonly MasterUserName?: (string | undefined) | undefined;
-	readonly MasterUserPassword?: (string | undefined) | undefined;
+	readonly MasterUserARN?: string | undefined;
+	readonly MasterUserName?: string | undefined;
+	readonly MasterUserPassword?: string | undefined;
 }
 export interface NodeToNodeEncryptionOptions {
-	readonly Enabled?: (boolean | undefined) | undefined;
+	readonly Enabled?: boolean | undefined;
 }
 export interface ServiceSoftwareOptions {
-	readonly AutomatedUpdateDate?: (string | undefined) | undefined;
-	readonly Cancellable?: (boolean | undefined) | undefined;
-	readonly CurrentVersion?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly NewVersion?: (string | undefined) | undefined;
-	readonly OptionalDeployment?: (boolean | undefined) | undefined;
-	readonly UpdateAvailable?: (boolean | undefined) | undefined;
-	readonly UpdateStatus?: (string | undefined) | undefined;
+	readonly AutomatedUpdateDate?: string | undefined;
+	readonly Cancellable?: boolean | undefined;
+	readonly CurrentVersion?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly NewVersion?: string | undefined;
+	readonly OptionalDeployment?: boolean | undefined;
+	readonly UpdateAvailable?: boolean | undefined;
+	readonly UpdateStatus?: string | undefined;
 }
 export interface SnapshotOptions {
-	readonly AutomatedSnapshotStartHour?: (number | undefined) | undefined;
+	readonly AutomatedSnapshotStartHour?: number | undefined;
 }
 export interface VPCOptions {
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SubnetIds?: (string[] | undefined) | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SubnetIds?: string[] | undefined;
 }
 export interface ZoneAwarenessConfig {
-	readonly AvailabilityZoneCount?: (number | undefined) | undefined;
+	readonly AvailabilityZoneCount?: number | undefined;
 }
 export default {
 	Domain: Domain,

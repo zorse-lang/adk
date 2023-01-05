@@ -4,41 +4,40 @@ export class Firewall extends GdmResource<FirewallComponentInputs> implements Fi
 	constructor(entity: ADKEntity, options: FirewallComponentInputs) {
 		super(entity, options.name, "compute.alpha.firewall", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly selfLinkWithId?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly selfLink?: string;
+	public readonly selfLinkWithId?: string;
 }
 export interface FirewallComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly selfLinkWithId?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly selfLink?: string;
+	readonly selfLinkWithId?: string;
 }
 export interface FirewallComponentInputs {
-	readonly allowed?: Array<{ IPProtocol?: string; ports?: string[] }> | undefined;
-	readonly denied?: Array<{ IPProtocol?: string; ports?: string[] }> | undefined;
-	readonly description?: string | undefined;
-	readonly destinationRanges?: string[] | undefined;
-	readonly direction?: string | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly enableLogging?: boolean | undefined;
-	readonly logConfig?: FirewallLogConfig | undefined;
+	readonly allowed?: Array<{ IPProtocol?: string; ports?: string[] }>;
+	readonly denied?: Array<{ IPProtocol?: string; ports?: string[] }>;
+	readonly description?: string;
+	readonly destinationRanges?: string[];
+	readonly direction?: string;
+	readonly disabled?: boolean;
+	readonly enableLogging?: boolean;
+	readonly logConfig?: FirewallLogConfig;
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly priority?: number | undefined;
-	readonly sourceRanges?: string[] | undefined;
-	readonly sourceServiceAccounts?: string[] | undefined;
-	readonly sourceTags?: string[] | undefined;
-	readonly targetServiceAccounts?: string[] | undefined;
-	readonly targetTags?: string[] | undefined;
-	readonly type: string;
+	readonly network?: string;
+	readonly priority?: number;
+	readonly sourceRanges?: string[];
+	readonly sourceServiceAccounts?: string[];
+	readonly sourceTags?: string[];
+	readonly targetServiceAccounts?: string[];
+	readonly targetTags?: string[];
 }
 export interface FirewallLogConfig {
-	readonly enable?: boolean | undefined;
-	readonly metadata?: string | undefined;
+	readonly enable?: boolean;
+	readonly metadata?: string;
 }
 export default {
 	Firewall: Firewall,

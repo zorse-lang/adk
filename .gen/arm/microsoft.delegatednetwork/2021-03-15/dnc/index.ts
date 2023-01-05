@@ -14,10 +14,10 @@ export interface controllerComponentOutputs {
 	readonly type: "Microsoft.DelegatedNetwork/controller";
 }
 export interface controllerComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DelegatedControllerProperties | undefined;
-	readonly tags?: ControllerResourceTags | undefined;
+	readonly properties?: DelegatedControllerProperties;
+	readonly tags?: ControllerResourceTags;
 }
 export class delegatedSubnets
 	extends ArmResource<delegatedSubnetsComponentInputs>
@@ -36,10 +36,10 @@ export interface delegatedSubnetsComponentOutputs {
 	readonly type: "Microsoft.DelegatedNetwork/delegatedSubnets";
 }
 export interface delegatedSubnetsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DelegatedSubnetProperties | undefined;
-	readonly tags?: DelegatedSubnetResourceTags | undefined;
+	readonly properties?: DelegatedSubnetProperties;
+	readonly tags?: DelegatedSubnetResourceTags;
 }
 export class orchestrators extends ArmResource<orchestratorsComponentInputs> implements orchestratorsComponentOutputs {
 	constructor(entity: ADKEntity, options: orchestratorsComponentInputs) {
@@ -55,55 +55,55 @@ export interface orchestratorsComponentOutputs {
 	readonly type: "Microsoft.DelegatedNetwork/orchestrators";
 }
 export interface orchestratorsComponentInputs {
-	readonly identity?: OrchestratorIdentity | undefined;
+	readonly identity?: OrchestratorIdentity;
 	readonly kind: "Kubernetes";
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: OrchestratorResourceProperties | undefined;
-	readonly tags?: OrchestratorResourceTags | undefined;
+	readonly properties?: OrchestratorResourceProperties;
+	readonly tags?: OrchestratorResourceTags;
 }
 export interface ControllerDetails {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ControllerResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DelegatedControllerProperties {
-	readonly dncAppId?: string | undefined;
-	readonly dncEndpoint?: string | undefined;
-	readonly dncTenantId?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly dncAppId?: string;
+	readonly dncEndpoint?: string;
+	readonly dncTenantId?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Provisioning" | "Succeeded";
+	readonly resourceGuid?: string;
 }
 export interface DelegatedSubnetProperties {
-	readonly controllerDetails?: ControllerDetails | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly resourceGuid?: string | undefined;
-	readonly subnetDetails?: SubnetDetails | undefined;
+	readonly controllerDetails?: ControllerDetails;
+	readonly provisioningState?: "Deleting" | "Failed" | "Provisioning" | "Succeeded";
+	readonly resourceGuid?: string;
+	readonly subnetDetails?: SubnetDetails;
 }
 export interface DelegatedSubnetResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface OrchestratorIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "None" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None";
 }
 export interface OrchestratorResourceProperties {
-	readonly apiServerEndpoint?: string | undefined;
-	readonly clusterRootCA?: string | undefined;
+	readonly apiServerEndpoint?: string;
+	readonly clusterRootCA?: string;
 	readonly controllerDetails: ControllerDetails;
-	readonly orchestratorAppId?: string | undefined;
-	readonly orchestratorTenantId?: string | undefined;
-	readonly privateLinkResourceId?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly resourceGuid?: string | undefined;
+	readonly orchestratorAppId?: string;
+	readonly orchestratorTenantId?: string;
+	readonly privateLinkResourceId?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Provisioning" | "Succeeded";
+	readonly resourceGuid?: string;
 }
 export interface OrchestratorResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SubnetDetails {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export default {
 	controller: controller,

@@ -12,8 +12,8 @@ export interface DomainComponentOutputs {
 export interface DomainComponentInputs {
 	readonly Name: string;
 	readonly ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface ServerSideEncryptionConfiguration {

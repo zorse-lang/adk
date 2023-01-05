@@ -7,7 +7,6 @@ export class FoldersLogs extends GdmResource<FoldersLogsComponentInputs> impleme
 }
 export interface FoldersLogsComponentOutputs {}
 export interface FoldersLogsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

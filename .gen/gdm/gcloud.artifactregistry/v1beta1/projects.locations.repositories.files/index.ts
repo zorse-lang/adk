@@ -10,25 +10,24 @@ export class ProjectsLocationsRepositoriesFiles
 }
 export interface ProjectsLocationsRepositoriesFilesComponentOutputs {}
 export interface ProjectsLocationsRepositoriesFilesComponentInputs {
-	readonly createTime?: string | undefined;
-	readonly hashes?: Hash[] | undefined;
+	readonly createTime?: string;
+	readonly hashes?: Hash[];
 	readonly name: string;
-	readonly owner?: string | undefined;
-	readonly sizeBytes?: string | undefined;
-	readonly updateTime?: string | undefined;
-	readonly type: string;
+	readonly owner?: string;
+	readonly sizeBytes?: string;
+	readonly updateTime?: string;
 }
 export interface File {
-	readonly createTime?: string | undefined;
-	readonly hashes?: Hash[] | undefined;
-	readonly name?: string | undefined;
-	readonly owner?: string | undefined;
-	readonly sizeBytes?: string | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly hashes?: Hash[];
+	readonly name?: string;
+	readonly owner?: string;
+	readonly sizeBytes?: string;
+	readonly updateTime?: string;
 }
 export interface Hash {
-	readonly type?: string | undefined;
-	readonly value?: string | undefined;
+	readonly type?: string;
+	readonly value?: string;
 }
 export default {
 	ProjectsLocationsRepositoriesFiles: ProjectsLocationsRepositoriesFiles,

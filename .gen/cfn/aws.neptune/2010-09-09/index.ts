@@ -14,28 +14,28 @@ export interface DBClusterComponentOutputs {
 	readonly ReadEndpoint: string;
 }
 export interface DBClusterComponentInputs {
-	readonly AssociatedRoles?: (DBClusterRole[] | undefined) | undefined;
-	readonly AvailabilityZones?: (string[] | undefined) | undefined;
-	readonly BackupRetentionPeriod?: (number | undefined) | undefined;
-	readonly DBClusterIdentifier?: (string | undefined) | undefined;
-	readonly DBClusterParameterGroupName?: (string | undefined) | undefined;
-	readonly DBSubnetGroupName?: (string | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly EnableCloudwatchLogsExports?: (string[] | undefined) | undefined;
-	readonly EngineVersion?: (string | undefined) | undefined;
-	readonly IamAuthEnabled?: (boolean | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly Port?: (number | string) | undefined;
-	readonly PreferredBackupWindow?: (string | undefined) | undefined;
-	readonly PreferredMaintenanceWindow?: (string | undefined) | undefined;
-	readonly RestoreToTime?: (string | undefined) | undefined;
-	readonly RestoreType?: (string | undefined) | undefined;
-	readonly SnapshotIdentifier?: (string | undefined) | undefined;
-	readonly SourceDBClusterIdentifier?: (string | undefined) | undefined;
-	readonly StorageEncrypted?: (boolean | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly UseLatestRestorableTime?: (boolean | undefined) | undefined;
-	readonly VpcSecurityGroupIds?: (string[] | undefined) | undefined;
+	readonly AssociatedRoles?: DBClusterRole[] | undefined;
+	readonly AvailabilityZones?: string[] | undefined;
+	readonly BackupRetentionPeriod?: number | undefined;
+	readonly DBClusterIdentifier?: string | undefined;
+	readonly DBClusterParameterGroupName?: string | undefined;
+	readonly DBSubnetGroupName?: string | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly EnableCloudwatchLogsExports?: string[] | undefined;
+	readonly EngineVersion?: string | undefined;
+	readonly IamAuthEnabled?: boolean | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly Port?: number | string;
+	readonly PreferredBackupWindow?: string | undefined;
+	readonly PreferredMaintenanceWindow?: string | undefined;
+	readonly RestoreToTime?: string | undefined;
+	readonly RestoreType?: string | undefined;
+	readonly SnapshotIdentifier?: string | undefined;
+	readonly SourceDBClusterIdentifier?: string | undefined;
+	readonly StorageEncrypted?: boolean | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly UseLatestRestorableTime?: boolean | undefined;
+	readonly VpcSecurityGroupIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBClusterParameterGroup
@@ -51,8 +51,8 @@ export interface DBClusterParameterGroupComponentInputs {
 	readonly Description: string;
 	readonly Family: string;
 	readonly Parameters: any;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBInstance extends CfnResource<DBInstanceComponentInputs> implements DBInstanceComponentOutputs {
@@ -68,16 +68,16 @@ export interface DBInstanceComponentOutputs {
 }
 export interface DBInstanceComponentInputs {
 	readonly DBInstanceClass: string;
-	readonly AllowMajorVersionUpgrade?: (boolean | undefined) | undefined;
-	readonly AutoMinorVersionUpgrade?: (boolean | undefined) | undefined;
-	readonly AvailabilityZone?: (string | undefined) | undefined;
-	readonly DBClusterIdentifier?: (string | undefined) | undefined;
-	readonly DBInstanceIdentifier?: (string | undefined) | undefined;
-	readonly DBParameterGroupName?: (string | undefined) | undefined;
-	readonly DBSnapshotIdentifier?: (string | undefined) | undefined;
-	readonly DBSubnetGroupName?: (string | undefined) | undefined;
-	readonly PreferredMaintenanceWindow?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AllowMajorVersionUpgrade?: boolean | undefined;
+	readonly AutoMinorVersionUpgrade?: boolean | undefined;
+	readonly AvailabilityZone?: string | undefined;
+	readonly DBClusterIdentifier?: string | undefined;
+	readonly DBInstanceIdentifier?: string | undefined;
+	readonly DBParameterGroupName?: string | undefined;
+	readonly DBSnapshotIdentifier?: string | undefined;
+	readonly DBSubnetGroupName?: string | undefined;
+	readonly PreferredMaintenanceWindow?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBParameterGroup
@@ -93,8 +93,8 @@ export interface DBParameterGroupComponentInputs {
 	readonly Description: string;
 	readonly Family: string;
 	readonly Parameters: any;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class DBSubnetGroup extends CfnResource<DBSubnetGroupComponentInputs> implements DBSubnetGroupComponentOutputs {
@@ -106,12 +106,12 @@ export interface DBSubnetGroupComponentOutputs {}
 export interface DBSubnetGroupComponentInputs {
 	readonly DBSubnetGroupDescription: string;
 	readonly SubnetIds: string[];
-	readonly DBSubnetGroupName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DBSubnetGroupName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface DBClusterRole {
-	readonly FeatureName?: (string | undefined) | undefined;
+	readonly FeatureName?: string | undefined;
 	readonly RoleArn: string;
 }
 export default {

@@ -20,9 +20,9 @@ export interface AnomalyMonitorComponentOutputs {
 export interface AnomalyMonitorComponentInputs {
 	readonly MonitorName: string;
 	readonly MonitorType: string;
-	readonly MonitorDimension?: (string | undefined) | undefined;
-	readonly MonitorSpecification?: (string | undefined) | undefined;
-	readonly ResourceTags?: (ResourceTag[] | undefined) | undefined;
+	readonly MonitorDimension?: string | undefined;
+	readonly MonitorSpecification?: string | undefined;
+	readonly ResourceTags?: ResourceTag[] | undefined;
 	readonly LogicalId: string;
 }
 export class AnomalySubscription
@@ -45,7 +45,7 @@ export interface AnomalySubscriptionComponentInputs {
 	readonly Subscribers: Subscriber[];
 	readonly SubscriptionName: string;
 	readonly Threshold: number;
-	readonly ResourceTags?: (ResourceTag[] | undefined) | undefined;
+	readonly ResourceTags?: ResourceTag[] | undefined;
 	readonly LogicalId: string;
 }
 export class CostCategory extends CfnResource<CostCategoryComponentInputs> implements CostCategoryComponentOutputs {
@@ -63,8 +63,8 @@ export interface CostCategoryComponentInputs {
 	readonly Name: string;
 	readonly Rules: string;
 	readonly RuleVersion: string;
-	readonly DefaultValue?: (string | undefined) | undefined;
-	readonly SplitChargeRules?: (string | undefined) | undefined;
+	readonly DefaultValue?: string | undefined;
+	readonly SplitChargeRules?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface ResourceTag {
@@ -73,7 +73,7 @@ export interface ResourceTag {
 }
 export interface Subscriber {
 	readonly Address: string;
-	readonly Status?: (string | undefined) | undefined;
+	readonly Status?: string | undefined;
 	readonly Type: string;
 }
 export default {

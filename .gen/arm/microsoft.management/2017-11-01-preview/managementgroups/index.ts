@@ -17,10 +17,10 @@ export interface managementGroupsComponentOutputs {
 	readonly type: "Microsoft.Management/managementGroups";
 }
 export interface managementGroupsComponentInputs {
-	readonly displayName?: string | undefined;
+	readonly displayName?: string;
 	readonly name: string;
-	readonly parentId?: string | undefined;
-	readonly properties?: ManagementGroupProperties | undefined;
+	readonly parentId?: string;
+	readonly properties?: ManagementGroupProperties;
 }
 export class managementGroups_subscriptions
 	extends ArmResource<managementGroups_subscriptionsComponentInputs>
@@ -42,26 +42,26 @@ export interface managementGroups_subscriptionsComponentInputs {
 	readonly name: string;
 }
 export interface ManagementGroupChildInfo {
-	readonly childId?: string | undefined;
-	readonly children?: ManagementGroupChildInfo[] | undefined;
-	readonly childType?: ("ManagementGroup" | "Subscription") | undefined;
-	readonly displayName?: string | undefined;
+	readonly childId?: string;
+	readonly children?: ManagementGroupChildInfo[];
+	readonly childType?: "ManagementGroup" | "Subscription";
+	readonly displayName?: string;
 }
 export interface ManagementGroupDetails {
-	readonly parent?: ParentGroupInfo | undefined;
-	readonly updatedBy?: string | undefined;
-	readonly updatedTime?: string | undefined;
-	readonly version?: number | undefined;
+	readonly parent?: ParentGroupInfo;
+	readonly updatedBy?: string;
+	readonly updatedTime?: string;
+	readonly version?: number;
 }
 export interface ManagementGroupProperties {
-	readonly children?: ManagementGroupChildInfo[] | undefined;
-	readonly details?: ManagementGroupDetails | undefined;
-	readonly displayName?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly children?: ManagementGroupChildInfo[];
+	readonly details?: ManagementGroupDetails;
+	readonly displayName?: string;
+	readonly tenantId?: string;
 }
 export interface ParentGroupInfo {
-	readonly displayName?: string | undefined;
-	readonly parentId?: string | undefined;
+	readonly displayName?: string;
+	readonly parentId?: string;
 }
 export default {
 	managementGroups: managementGroups,

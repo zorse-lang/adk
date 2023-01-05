@@ -14,8 +14,8 @@ export interface ClusterComponentOutputs {
 	readonly Status: string;
 }
 export interface ClusterComponentInputs {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ControlPanel extends CfnResource<ControlPanelComponentInputs> implements ControlPanelComponentOutputs {
@@ -35,8 +35,8 @@ export interface ControlPanelComponentOutputs {
 }
 export interface ControlPanelComponentInputs {
 	readonly Name: string;
-	readonly ClusterArn?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ClusterArn?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class RoutingControl extends CfnResource<RoutingControlComponentInputs> implements RoutingControlComponentOutputs {
@@ -52,8 +52,8 @@ export interface RoutingControlComponentOutputs {
 }
 export interface RoutingControlComponentInputs {
 	readonly Name: string;
-	readonly ClusterArn?: (string | undefined) | undefined;
-	readonly ControlPanelArn?: (string | undefined) | undefined;
+	readonly ClusterArn?: string | undefined;
+	readonly ControlPanelArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SafetyRule extends CfnResource<SafetyRuleComponentInputs> implements SafetyRuleComponentOutputs {
@@ -71,14 +71,14 @@ export interface SafetyRuleComponentInputs {
 	readonly ControlPanelArn: string;
 	readonly Name: string;
 	readonly RuleConfig: RuleConfig;
-	readonly AssertionRule?: (AssertionRule | undefined) | undefined;
-	readonly GatingRule?: (GatingRule | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssertionRule?: AssertionRule | undefined;
+	readonly GatingRule?: GatingRule | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface ClusterEndpoint {
-	readonly Endpoint?: (string | undefined) | undefined;
-	readonly Region?: (string | undefined) | undefined;
+	readonly Endpoint?: string | undefined;
+	readonly Region?: string | undefined;
 }
 export interface AssertionRule {
 	readonly AssertedControls: string[];

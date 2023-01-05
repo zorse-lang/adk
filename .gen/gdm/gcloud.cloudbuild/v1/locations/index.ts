@@ -7,7 +7,6 @@ export class Locations extends GdmResource<LocationsComponentInputs> implements 
 }
 export interface LocationsComponentOutputs {}
 export interface LocationsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

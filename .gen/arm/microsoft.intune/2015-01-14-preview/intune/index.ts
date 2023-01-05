@@ -14,10 +14,10 @@ export interface locationsComponentOutputs {
 	readonly type: "Microsoft.Intune/locations";
 }
 export interface locationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: LocationProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: LocationProperties;
+	readonly tags?: ResourceTags;
 }
 export class locations_androidPolicies
 	extends ArmResource<locations_androidPoliciesComponentInputs>
@@ -36,10 +36,10 @@ export interface locations_androidPoliciesComponentOutputs {
 	readonly type: "Microsoft.Intune/locations/androidPolicies";
 }
 export interface locations_androidPoliciesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AndroidMAMPolicyProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: AndroidMAMPolicyProperties;
+	readonly tags?: ResourceTags;
 }
 export class locations_androidPolicies_apps
 	extends ArmResource<locations_androidPolicies_appsComponentInputs>
@@ -59,7 +59,7 @@ export interface locations_androidPolicies_appsComponentOutputs {
 }
 export interface locations_androidPolicies_appsComponentInputs {
 	readonly name: string;
-	readonly properties?: MAMPolicyAppOrGroupIdProperties | undefined;
+	readonly properties?: MAMPolicyAppOrGroupIdProperties;
 }
 export class locations_androidPolicies_groups
 	extends ArmResource<locations_androidPolicies_groupsComponentInputs>
@@ -79,7 +79,7 @@ export interface locations_androidPolicies_groupsComponentOutputs {
 }
 export interface locations_androidPolicies_groupsComponentInputs {
 	readonly name: string;
-	readonly properties?: MAMPolicyAppOrGroupIdProperties | undefined;
+	readonly properties?: MAMPolicyAppOrGroupIdProperties;
 }
 export class locations_flaggedUsers
 	extends ArmResource<locations_flaggedUsersComponentInputs>
@@ -98,10 +98,10 @@ export interface locations_flaggedUsersComponentOutputs {
 	readonly type: "Microsoft.Intune/locations/flaggedUsers";
 }
 export interface locations_flaggedUsersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: FlaggedUserProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: FlaggedUserProperties;
+	readonly tags?: ResourceTags;
 }
 export class locations_iosPolicies
 	extends ArmResource<locations_iosPoliciesComponentInputs>
@@ -120,10 +120,10 @@ export interface locations_iosPoliciesComponentOutputs {
 	readonly type: "Microsoft.Intune/locations/iosPolicies";
 }
 export interface locations_iosPoliciesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: IOsmamPolicyProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: IOsmamPolicyProperties;
+	readonly tags?: ResourceTags;
 }
 export class locations_iosPolicies_apps
 	extends ArmResource<locations_iosPolicies_appsComponentInputs>
@@ -143,7 +143,7 @@ export interface locations_iosPolicies_appsComponentOutputs {
 }
 export interface locations_iosPolicies_appsComponentInputs {
 	readonly name: string;
-	readonly properties?: MAMPolicyAppOrGroupIdProperties | undefined;
+	readonly properties?: MAMPolicyAppOrGroupIdProperties;
 }
 export class locations_iosPolicies_groups
 	extends ArmResource<locations_iosPolicies_groupsComponentInputs>
@@ -163,7 +163,7 @@ export interface locations_iosPolicies_groupsComponentOutputs {
 }
 export interface locations_iosPolicies_groupsComponentInputs {
 	readonly name: string;
-	readonly properties?: MAMPolicyAppOrGroupIdProperties | undefined;
+	readonly properties?: MAMPolicyAppOrGroupIdProperties;
 }
 export class locations_statuses
 	extends ArmResource<locations_statusesComponentInputs>
@@ -182,11 +182,11 @@ export interface locations_statusesComponentOutputs {
 	readonly type: "Microsoft.Intune/locations/statuses";
 }
 export interface locations_statusesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly nextlink?: string | undefined;
-	readonly properties?: StatusesProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly nextlink?: string;
+	readonly properties?: StatusesProperties;
+	readonly tags?: ResourceTags;
 }
 export class locations_users_devices
 	extends ArmResource<locations_users_devicesComponentInputs>
@@ -205,34 +205,32 @@ export interface locations_users_devicesComponentOutputs {
 	readonly type: "Microsoft.Intune/locations/users/devices";
 }
 export interface locations_users_devicesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DeviceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: DeviceProperties;
+	readonly tags?: ResourceTags;
 }
 export interface AndroidMAMPolicyProperties {
-	readonly accessRecheckOfflineTimeout?: string | undefined;
-	readonly accessRecheckOnlineTimeout?: string | undefined;
-	readonly appSharingFromLevel?: ("allApps" | "none" | "policyManagedApps") | undefined;
-	readonly appSharingToLevel?: ("allApps" | "none" | "policyManagedApps") | undefined;
-	readonly authentication?: ("notRequired" | "required") | undefined;
-	readonly clipboardSharingLevel?:
-		| ("allApps" | "blocked" | "policyManagedApps" | "policyManagedAppsWithPasteIn")
-		| undefined;
-	readonly dataBackup?: ("allow" | "block") | undefined;
-	readonly description?: string | undefined;
-	readonly deviceCompliance?: ("disable" | "enable") | undefined;
-	readonly fileEncryption?: ("notRequired" | "required") | undefined;
-	readonly fileSharingSaveAs?: ("allow" | "block") | undefined;
+	readonly accessRecheckOfflineTimeout?: string;
+	readonly accessRecheckOnlineTimeout?: string;
+	readonly appSharingFromLevel?: "allApps" | "none" | "policyManagedApps";
+	readonly appSharingToLevel?: "allApps" | "none" | "policyManagedApps";
+	readonly authentication?: "notRequired" | "required";
+	readonly clipboardSharingLevel?: "allApps" | "blocked" | "policyManagedApps" | "policyManagedAppsWithPasteIn";
+	readonly dataBackup?: "allow" | "block";
+	readonly description?: string;
+	readonly deviceCompliance?: "disable" | "enable";
+	readonly fileEncryption?: "notRequired" | "required";
+	readonly fileSharingSaveAs?: "allow" | "block";
 	readonly friendlyName: string;
-	readonly groupStatus?: ("notTargeted" | "targeted") | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly managedBrowser?: ("notRequired" | "required") | undefined;
-	readonly numOfApps?: number | undefined;
-	readonly offlineWipeTimeout?: string | undefined;
-	readonly pin?: ("notRequired" | "required") | undefined;
-	readonly pinNumRetry?: number | undefined;
-	readonly screenCapture?: ("allow" | "block") | undefined;
+	readonly groupStatus?: "notTargeted" | "targeted";
+	readonly lastModifiedTime?: string;
+	readonly managedBrowser?: "notRequired" | "required";
+	readonly numOfApps?: number;
+	readonly offlineWipeTimeout?: string;
+	readonly pin?: "notRequired" | "required";
+	readonly pinNumRetry?: number;
+	readonly screenCapture?: "allow" | "block";
 }
 export interface DeviceProperties {
 	readonly deviceType: string;
@@ -242,34 +240,34 @@ export interface DeviceProperties {
 	readonly userId: string;
 }
 export interface FlaggedUserProperties {
-	readonly errorCount?: number | undefined;
-	readonly friendlyName?: string | undefined;
+	readonly errorCount?: number;
+	readonly friendlyName?: string;
 }
 export interface IOsmamPolicyProperties {
-	readonly accessRecheckOfflineTimeout?: string | undefined;
-	readonly accessRecheckOnlineTimeout?: string | undefined;
-	readonly appSharingFromLevel?: ("allApps" | "none" | "policyManagedApps") | undefined;
-	readonly appSharingToLevel?: ("allApps" | "none" | "policyManagedApps") | undefined;
-	readonly authentication?: ("notRequired" | "required") | undefined;
-	readonly clipboardSharingLevel?:
-		| ("allApps" | "blocked" | "policyManagedApps" | "policyManagedAppsWithPasteIn")
-		| undefined;
-	readonly dataBackup?: ("allow" | "block") | undefined;
-	readonly description?: string | undefined;
-	readonly deviceCompliance?: ("disable" | "enable") | undefined;
+	readonly accessRecheckOfflineTimeout?: string;
+	readonly accessRecheckOnlineTimeout?: string;
+	readonly appSharingFromLevel?: "allApps" | "none" | "policyManagedApps";
+	readonly appSharingToLevel?: "allApps" | "none" | "policyManagedApps";
+	readonly authentication?: "notRequired" | "required";
+	readonly clipboardSharingLevel?: "allApps" | "blocked" | "policyManagedApps" | "policyManagedAppsWithPasteIn";
+	readonly dataBackup?: "allow" | "block";
+	readonly description?: string;
+	readonly deviceCompliance?: "disable" | "enable";
 	readonly fileEncryptionLevel?:
-		| ("afterDeviceRestart" | "deviceLocked" | "deviceLockedExceptFilesOpen" | "useDeviceSettings")
-		| undefined;
-	readonly fileSharingSaveAs?: ("allow" | "block") | undefined;
+		| "afterDeviceRestart"
+		| "deviceLocked"
+		| "deviceLockedExceptFilesOpen"
+		| "useDeviceSettings";
+	readonly fileSharingSaveAs?: "allow" | "block";
 	readonly friendlyName: string;
-	readonly groupStatus?: ("notTargeted" | "targeted") | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly managedBrowser?: ("notRequired" | "required") | undefined;
-	readonly numOfApps?: number | undefined;
-	readonly offlineWipeTimeout?: string | undefined;
-	readonly pin?: ("notRequired" | "required") | undefined;
-	readonly pinNumRetry?: number | undefined;
-	readonly touchId?: ("disable" | "enable") | undefined;
+	readonly groupStatus?: "notTargeted" | "targeted";
+	readonly lastModifiedTime?: string;
+	readonly managedBrowser?: "notRequired" | "required";
+	readonly numOfApps?: number;
+	readonly offlineWipeTimeout?: string;
+	readonly pin?: "notRequired" | "required";
+	readonly pinNumRetry?: number;
+	readonly touchId?: "disable" | "enable";
 }
 export interface LocationProperties {
 	readonly hostName: string;
@@ -278,18 +276,18 @@ export interface MAMPolicyAppOrGroupIdProperties {
 	readonly url: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StatusesProperties {
-	readonly deployedPolicies?: number | undefined;
-	readonly enrolledUsers?: number | undefined;
-	readonly flaggedUsers?: number | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly policyAppliedUsers?: number | undefined;
-	readonly status?: string | undefined;
-	readonly wipeFailedApps?: number | undefined;
-	readonly wipePendingApps?: number | undefined;
-	readonly wipeSucceededApps?: number | undefined;
+	readonly deployedPolicies?: number;
+	readonly enrolledUsers?: number;
+	readonly flaggedUsers?: number;
+	readonly lastModifiedTime?: string;
+	readonly policyAppliedUsers?: number;
+	readonly status?: string;
+	readonly wipeFailedApps?: number;
+	readonly wipePendingApps?: number;
+	readonly wipeSucceededApps?: number;
 }
 export default {
 	locations: locations,

@@ -17,47 +17,45 @@ export interface scheduledActionsComponentOutputs {
 	readonly type: "Microsoft.CostManagement/scheduledActions";
 }
 export interface scheduledActionsComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly kind?: ("Email" | "InsightAlert") | undefined;
+	readonly eTag?: string;
+	readonly kind?: "Email" | "InsightAlert";
 	readonly name: string;
-	readonly properties?: ScheduledActionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ScheduledActionProperties;
+	readonly systemData?: SystemData;
 }
 export interface FileDestination {
-	readonly fileFormats?: "Csv"[] | undefined;
+	readonly fileFormats?: "Csv"[];
 }
 export interface NotificationProperties {
-	readonly message?: string | undefined;
+	readonly message?: string;
 	readonly subject: string;
 	readonly to: string[];
 }
 export interface ScheduledActionProperties {
 	readonly displayName: string;
-	readonly fileDestination?: FileDestination | undefined;
+	readonly fileDestination?: FileDestination;
 	readonly notification: NotificationProperties;
 	readonly schedule: ScheduleProperties;
-	readonly scope?: string | undefined;
+	readonly scope?: string;
 	readonly status: "Disabled" | "Enabled";
 	readonly viewId: string;
 }
 export interface ScheduleProperties {
-	readonly dayOfMonth?: number | undefined;
-	readonly daysOfWeek?:
-		| ("Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday"[])
-		| undefined;
+	readonly dayOfMonth?: number;
+	readonly daysOfWeek?: "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday"[];
 	readonly endDate: string;
 	readonly frequency: "Daily" | "Monthly" | "Weekly";
-	readonly hourOfDay?: number | undefined;
+	readonly hourOfDay?: number;
 	readonly startDate: string;
-	readonly weeksOfMonth?: ("First" | "Fourth" | "Last" | "Second" | "Third"[]) | undefined;
+	readonly weeksOfMonth?: "First" | "Fourth" | "Last" | "Second" | "Third"[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	scheduledActions: scheduledActions,

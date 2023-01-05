@@ -15,9 +15,9 @@ export interface CustomActionTypeComponentInputs {
 	readonly OutputArtifactDetails: ArtifactDetails;
 	readonly Provider: string;
 	readonly Version: string;
-	readonly ConfigurationProperties?: (ConfigurationProperties[] | undefined) | undefined;
-	readonly Settings?: (Settings | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ConfigurationProperties?: ConfigurationProperties[] | undefined;
+	readonly Settings?: Settings | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Pipeline extends CfnResource<PipelineComponentInputs> implements PipelineComponentOutputs {
@@ -32,12 +32,12 @@ export interface PipelineComponentOutputs {
 export interface PipelineComponentInputs {
 	readonly RoleArn: string;
 	readonly Stages: StageDeclaration[];
-	readonly ArtifactStore?: (ArtifactStore | undefined) | undefined;
-	readonly ArtifactStores?: (ArtifactStoreMap[] | undefined) | undefined;
-	readonly DisableInboundStageTransitions?: (StageTransition[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly RestartExecutionOnUpdate?: (boolean | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ArtifactStore?: ArtifactStore | undefined;
+	readonly ArtifactStores?: ArtifactStoreMap[] | undefined;
+	readonly DisableInboundStageTransitions?: StageTransition[] | undefined;
+	readonly Name?: string | undefined;
+	readonly RestartExecutionOnUpdate?: boolean | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Webhook extends CfnResource<WebhookComponentInputs> implements WebhookComponentOutputs {
@@ -56,8 +56,8 @@ export interface WebhookComponentInputs {
 	readonly TargetAction: string;
 	readonly TargetPipeline: string;
 	readonly TargetPipelineVersion: number;
-	readonly Name?: (string | undefined) | undefined;
-	readonly RegisterWithThirdParty?: (boolean | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly RegisterWithThirdParty?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export interface ArtifactDetails {
@@ -65,30 +65,30 @@ export interface ArtifactDetails {
 	readonly MinimumCount: number;
 }
 export interface ConfigurationProperties {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly Key: boolean;
 	readonly Name: string;
-	readonly Queryable?: (boolean | undefined) | undefined;
+	readonly Queryable?: boolean | undefined;
 	readonly Required: boolean;
 	readonly Secret: boolean;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Type?: string | undefined;
 }
 export interface Settings {
-	readonly EntityUrlTemplate?: (string | undefined) | undefined;
-	readonly ExecutionUrlTemplate?: (string | undefined) | undefined;
-	readonly RevisionUrlTemplate?: (string | undefined) | undefined;
-	readonly ThirdPartyConfigurationUrl?: (string | undefined) | undefined;
+	readonly EntityUrlTemplate?: string | undefined;
+	readonly ExecutionUrlTemplate?: string | undefined;
+	readonly RevisionUrlTemplate?: string | undefined;
+	readonly ThirdPartyConfigurationUrl?: string | undefined;
 }
 export interface ActionDeclaration {
 	readonly ActionTypeId: ActionTypeId;
-	readonly Configuration?: (any | undefined) | undefined;
-	readonly InputArtifacts?: (InputArtifact[] | undefined) | undefined;
+	readonly Configuration?: any | undefined;
+	readonly InputArtifacts?: InputArtifact[] | undefined;
 	readonly Name: string;
-	readonly Namespace?: (string | undefined) | undefined;
-	readonly OutputArtifacts?: (OutputArtifact[] | undefined) | undefined;
-	readonly Region?: (string | undefined) | undefined;
-	readonly RoleArn?: (string | undefined) | undefined;
-	readonly RunOrder?: (number | undefined) | undefined;
+	readonly Namespace?: string | undefined;
+	readonly OutputArtifacts?: OutputArtifact[] | undefined;
+	readonly Region?: string | undefined;
+	readonly RoleArn?: string | undefined;
+	readonly RunOrder?: number | undefined;
 }
 export interface ActionTypeId {
 	readonly Category: string;
@@ -97,7 +97,7 @@ export interface ActionTypeId {
 	readonly Version: string;
 }
 export interface ArtifactStore {
-	readonly EncryptionKey?: (EncryptionKey | undefined) | undefined;
+	readonly EncryptionKey?: EncryptionKey | undefined;
 	readonly Location: string;
 	readonly Type: string;
 }
@@ -121,7 +121,7 @@ export interface OutputArtifact {
 }
 export interface StageDeclaration {
 	readonly Actions: ActionDeclaration[];
-	readonly Blockers?: (BlockerDeclaration[] | undefined) | undefined;
+	readonly Blockers?: BlockerDeclaration[] | undefined;
 	readonly Name: string;
 }
 export interface StageTransition {
@@ -129,12 +129,12 @@ export interface StageTransition {
 	readonly StageName: string;
 }
 export interface WebhookAuthConfiguration {
-	readonly AllowedIPRange?: (string | undefined) | undefined;
-	readonly SecretToken?: (string | undefined) | undefined;
+	readonly AllowedIPRange?: string | undefined;
+	readonly SecretToken?: string | undefined;
 }
 export interface WebhookFilterRule {
 	readonly JsonPath: string;
-	readonly MatchEquals?: (string | undefined) | undefined;
+	readonly MatchEquals?: string | undefined;
 }
 export default {
 	CustomActionType: CustomActionType,

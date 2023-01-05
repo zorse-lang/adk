@@ -18,22 +18,22 @@ export interface costAllocationRulesComponentOutputs {
 }
 export interface costAllocationRulesComponentInputs {
 	readonly name: string;
-	readonly properties?: CostAllocationRuleProperties | undefined;
+	readonly properties?: CostAllocationRuleProperties;
 }
 export interface CostAllocationProportion {
 	readonly name: string;
 	readonly percentage: number;
 }
 export interface CostAllocationRuleDetails {
-	readonly sourceResources?: SourceCostAllocationResource[] | undefined;
-	readonly targetResources?: TargetCostAllocationResource[] | undefined;
+	readonly sourceResources?: SourceCostAllocationResource[];
+	readonly targetResources?: TargetCostAllocationResource[];
 }
 export interface CostAllocationRuleProperties {
-	readonly createdDate?: string | undefined;
-	readonly description?: string | undefined;
+	readonly createdDate?: string;
+	readonly description?: string;
 	readonly details: CostAllocationRuleDetails;
 	readonly status: "Active" | "NotActive" | "Processing";
-	readonly updatedDate?: string | undefined;
+	readonly updatedDate?: string;
 }
 export interface SourceCostAllocationResource {
 	readonly name: string;

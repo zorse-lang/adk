@@ -17,9 +17,9 @@ export interface ManagementAssociationsComponentOutputs {
 	readonly type: "Microsoft.OperationsManagement/ManagementAssociations";
 }
 export interface ManagementAssociationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ManagementAssociationProperties | undefined;
+	readonly properties?: ManagementAssociationProperties;
 }
 export class ManagementConfigurations
 	extends ArmResource<ManagementConfigurationsComponentInputs>
@@ -44,9 +44,9 @@ export interface ManagementConfigurationsComponentOutputs {
 	readonly type: "Microsoft.OperationsManagement/ManagementConfigurations";
 }
 export interface ManagementConfigurationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ManagementConfigurationProperties | undefined;
+	readonly properties?: ManagementConfigurationProperties;
 }
 export class solutions extends ArmResource<solutionsComponentInputs> implements solutionsComponentOutputs {
 	constructor(entity: ADKEntity, options: solutionsComponentInputs) {
@@ -62,40 +62,40 @@ export interface solutionsComponentOutputs {
 	readonly type: "Microsoft.OperationsManagement/solutions";
 }
 export interface solutionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly plan?: SolutionPlan | undefined;
-	readonly properties?: SolutionProperties | undefined;
-	readonly tags?: SolutionTags | undefined;
+	readonly plan?: SolutionPlan;
+	readonly properties?: SolutionProperties;
+	readonly tags?: SolutionTags;
 }
 export interface ArmTemplateParameter {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface ManagementAssociationProperties {
 	readonly applicationId: string;
 }
 export interface ManagementConfigurationProperties {
-	readonly applicationId?: string | undefined;
+	readonly applicationId?: string;
 	readonly parameters: ArmTemplateParameter[];
 	readonly parentResourceType: string;
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 	readonly template: any;
 }
 export interface SolutionPlan {
-	readonly name?: string | undefined;
-	readonly product?: string | undefined;
-	readonly promotionCode?: string | undefined;
-	readonly publisher?: string | undefined;
+	readonly name?: string;
+	readonly product?: string;
+	readonly promotionCode?: string;
+	readonly publisher?: string;
 }
 export interface SolutionProperties {
-	readonly containedResources?: string[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly referencedResources?: string[] | undefined;
+	readonly containedResources?: string[];
+	readonly provisioningState?: string;
+	readonly referencedResources?: string[];
 	readonly workspaceResourceId: string;
 }
 export interface SolutionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	ManagementAssociations: ManagementAssociations,

@@ -14,14 +14,14 @@ export interface vaultsComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults";
 }
 export interface vaultsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: IdentityData | undefined;
+	readonly etag?: string;
+	readonly identity?: IdentityData;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: VaultProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VaultProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class vaults_certificates
 	extends ArmResource<vaults_certificatesComponentInputs>
@@ -41,7 +41,7 @@ export interface vaults_certificatesComponentOutputs {
 }
 export interface vaults_certificatesComponentInputs {
 	readonly name: string;
-	readonly properties?: RawCertificateData | undefined;
+	readonly properties?: RawCertificateData;
 }
 export class vaults_extendedInformation
 	extends ArmResource<vaults_extendedInformationComponentInputs>
@@ -60,9 +60,9 @@ export interface vaults_extendedInformationComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/extendedInformation";
 }
 export interface vaults_extendedInformationComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: VaultExtendedInfo | undefined;
+	readonly properties?: VaultExtendedInfo;
 }
 export class vaults_operationResults
 	extends ArmResource<vaults_operationResultsComponentInputs>
@@ -81,152 +81,149 @@ export interface vaults_operationResultsComponentOutputs {
 	readonly type: "Microsoft.RecoveryServices/vaults/operationResults";
 }
 export interface vaults_operationResultsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: IdentityData | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly identity?: IdentityData;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: VaultProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: VaultProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface AzureMonitorAlertSettings {
-	readonly alertsForAllJobFailures?: ("Disabled" | "Enabled") | undefined;
+	readonly alertsForAllJobFailures?: "Disabled" | "Enabled";
 }
 export interface ClassicAlertSettings {
-	readonly alertsForCriticalOperations?: ("Disabled" | "Enabled") | undefined;
+	readonly alertsForCriticalOperations?: "Disabled" | "Enabled";
 }
 export interface CmkKekIdentity {
-	readonly userAssignedIdentity?: string | undefined;
-	readonly useSystemAssignedIdentity?: boolean | undefined;
+	readonly userAssignedIdentity?: string;
+	readonly useSystemAssignedIdentity?: boolean;
 }
 export interface CmkKeyVaultProperties {
-	readonly keyUri?: string | undefined;
+	readonly keyUri?: string;
 }
 export interface IdentityData {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: IdentityDataUserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: IdentityDataUserAssignedIdentities;
 }
 export interface IdentityDataUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserIdentity | undefined;
+	readonly [key: string]: UserIdentity;
 }
 export interface ImmutabilitySettings {
-	readonly state?: ("Disabled" | "Locked" | "Unlocked") | undefined;
+	readonly state?: "Disabled" | "Locked" | "Unlocked";
 }
 export interface MonitoringSettings {
-	readonly azureMonitorAlertSettings?: AzureMonitorAlertSettings | undefined;
-	readonly classicAlertSettings?: ClassicAlertSettings | undefined;
+	readonly azureMonitorAlertSettings?: AzureMonitorAlertSettings;
+	readonly classicAlertSettings?: ClassicAlertSettings;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Pending" | "Succeeded") | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Deleting" | "Failed" | "Pending" | "Succeeded";
 }
 export interface PrivateEndpointConnectionVaultProperties {
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnection | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnection;
+	readonly type?: string;
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface RawCertificateData {
-	readonly authType?: ("AAD" | "ACS" | "AccessControlService" | "AzureActiveDirectory" | "Invalid") | undefined;
-	readonly certificate?: any | undefined;
+	readonly authType?: "AAD" | "ACS" | "AccessControlService" | "AzureActiveDirectory" | "Invalid";
+	readonly certificate?: any;
 }
 export interface SecuritySettings {
-	readonly immutabilitySettings?: ImmutabilitySettings | undefined;
+	readonly immutabilitySettings?: ImmutabilitySettings;
 }
 export interface Sku {
-	readonly capacity?: string | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: string;
+	readonly family?: string;
 	readonly name: "RS0" | "Standard";
-	readonly size?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly size?: string;
+	readonly tier?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UpgradeDetails {
-	readonly endTimeUtc?: string | undefined;
-	readonly lastUpdatedTimeUtc?: string | undefined;
-	readonly message?: string | undefined;
-	readonly operationId?: string | undefined;
-	readonly previousResourceId?: string | undefined;
-	readonly startTimeUtc?: string | undefined;
-	readonly status?: ("Failed" | "InProgress" | "Unknown" | "Upgraded") | undefined;
-	readonly triggerType?: ("ForcedUpgrade" | "UserTriggered") | undefined;
-	readonly upgradedResourceId?: string | undefined;
+	readonly endTimeUtc?: string;
+	readonly lastUpdatedTimeUtc?: string;
+	readonly message?: string;
+	readonly operationId?: string;
+	readonly previousResourceId?: string;
+	readonly startTimeUtc?: string;
+	readonly status?: "Failed" | "InProgress" | "Unknown" | "Upgraded";
+	readonly triggerType?: "ForcedUpgrade" | "UserTriggered";
+	readonly upgradedResourceId?: string;
 }
 export interface UserIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface VaultExtendedInfo {
-	readonly algorithm?: string | undefined;
-	readonly encryptionKey?: string | undefined;
-	readonly encryptionKeyThumbprint?: string | undefined;
-	readonly integrityKey?: string | undefined;
+	readonly algorithm?: string;
+	readonly encryptionKey?: string;
+	readonly encryptionKeyThumbprint?: string;
+	readonly integrityKey?: string;
 }
 export interface VaultProperties {
-	readonly backupStorageVersion?: ("Unassigned" | "V1" | "V2") | undefined;
-	readonly encryption?: VaultPropertiesEncryption | undefined;
-	readonly monitoringSettings?: MonitoringSettings | undefined;
-	readonly moveDetails?: VaultPropertiesMoveDetails | undefined;
+	readonly backupStorageVersion?: "Unassigned" | "V1" | "V2";
+	readonly encryption?: VaultPropertiesEncryption;
+	readonly monitoringSettings?: MonitoringSettings;
+	readonly moveDetails?: VaultPropertiesMoveDetails;
 	readonly moveState?:
-		| (
-				| "CommitFailed"
-				| "CommitTimedout"
-				| "CriticalFailure"
-				| "Failure"
-				| "InProgress"
-				| "MoveSucceeded"
-				| "PartialSuccess"
-				| "PrepareFailed"
-				| "PrepareTimedout"
-				| "Unknown"
-		  )
-		| undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnectionVaultProperties[] | undefined;
-	readonly privateEndpointStateForBackup?: ("Enabled" | "None") | undefined;
-	readonly privateEndpointStateForSiteRecovery?: ("Enabled" | "None") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly redundancySettings?: VaultPropertiesRedundancySettings | undefined;
-	readonly securitySettings?: SecuritySettings | undefined;
-	readonly upgradeDetails?: UpgradeDetails | undefined;
+		| "CommitFailed"
+		| "CommitTimedout"
+		| "CriticalFailure"
+		| "Failure"
+		| "InProgress"
+		| "MoveSucceeded"
+		| "PartialSuccess"
+		| "PrepareFailed"
+		| "PrepareTimedout"
+		| "Unknown";
+	readonly privateEndpointConnections?: PrivateEndpointConnectionVaultProperties[];
+	readonly privateEndpointStateForBackup?: "Enabled" | "None";
+	readonly privateEndpointStateForSiteRecovery?: "Enabled" | "None";
+	readonly provisioningState?: string;
+	readonly redundancySettings?: VaultPropertiesRedundancySettings;
+	readonly securitySettings?: SecuritySettings;
+	readonly upgradeDetails?: UpgradeDetails;
 }
 export interface VaultPropertiesEncryption {
-	readonly infrastructureEncryption?: ("Disabled" | "Enabled") | undefined;
-	readonly kekIdentity?: CmkKekIdentity | undefined;
-	readonly keyVaultProperties?: CmkKeyVaultProperties | undefined;
+	readonly infrastructureEncryption?: "Disabled" | "Enabled";
+	readonly kekIdentity?: CmkKekIdentity;
+	readonly keyVaultProperties?: CmkKeyVaultProperties;
 }
 export interface VaultPropertiesMoveDetails {
-	readonly completionTimeUtc?: string | undefined;
-	readonly operationId?: string | undefined;
-	readonly sourceResourceId?: string | undefined;
-	readonly startTimeUtc?: string | undefined;
-	readonly targetResourceId?: string | undefined;
+	readonly completionTimeUtc?: string;
+	readonly operationId?: string;
+	readonly sourceResourceId?: string;
+	readonly startTimeUtc?: string;
+	readonly targetResourceId?: string;
 }
 export interface VaultPropertiesRedundancySettings {
-	readonly crossRegionRestore?: ("Disabled" | "Enabled") | undefined;
-	readonly standardTierStorageRedundancy?: ("GeoRedundant" | "LocallyRedundant" | "ZoneRedundant") | undefined;
+	readonly crossRegionRestore?: "Disabled" | "Enabled";
+	readonly standardTierStorageRedundancy?: "GeoRedundant" | "LocallyRedundant" | "ZoneRedundant";
 }
 export default {
 	vaults: vaults,

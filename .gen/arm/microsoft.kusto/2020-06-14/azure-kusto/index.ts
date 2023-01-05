@@ -14,13 +14,13 @@ export interface clustersComponentOutputs {
 	readonly type: "Microsoft.Kusto/clusters";
 }
 export interface clustersComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ClusterProperties | undefined;
+	readonly properties?: ClusterProperties;
 	readonly sku: AzureSku;
-	readonly tags?: TrackedResourceTags | undefined;
-	readonly zones?: string[] | undefined;
+	readonly tags?: TrackedResourceTags;
+	readonly zones?: string[];
 }
 export class clusters_attachedDatabaseConfigurations
 	extends ArmResource<clusters_attachedDatabaseConfigurationsComponentInputs>
@@ -39,9 +39,9 @@ export interface clusters_attachedDatabaseConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Kusto/clusters/attachedDatabaseConfigurations";
 }
 export interface clusters_attachedDatabaseConfigurationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: AttachedDatabaseConfigurationProperties | undefined;
+	readonly properties?: AttachedDatabaseConfigurationProperties;
 }
 export class clusters_databases_ReadOnlyFollowing
 	extends ArmResource<clusters_databases_ReadOnlyFollowingComponentInputs>
@@ -60,10 +60,10 @@ export interface clusters_databases_ReadOnlyFollowingComponentOutputs {
 	readonly type: "Microsoft.Kusto/clusters/databases";
 }
 export interface clusters_databases_ReadOnlyFollowingComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly kind: "ReadOnlyFollowing";
-	readonly properties?: ReadOnlyFollowingDatabaseProperties | undefined;
+	readonly properties?: ReadOnlyFollowingDatabaseProperties;
 }
 export class clusters_databases_ReadWrite
 	extends ArmResource<clusters_databases_ReadWriteComponentInputs>
@@ -82,10 +82,10 @@ export interface clusters_databases_ReadWriteComponentOutputs {
 	readonly type: "Microsoft.Kusto/clusters/databases";
 }
 export interface clusters_databases_ReadWriteComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly kind: "ReadWrite";
-	readonly properties?: ReadWriteDatabaseProperties | undefined;
+	readonly properties?: ReadWriteDatabaseProperties;
 }
 export class clusters_databases_dataConnections_EventGrid
 	extends ArmResource<clusters_databases_dataConnections_EventGridComponentInputs>
@@ -104,10 +104,10 @@ export interface clusters_databases_dataConnections_EventGridComponentOutputs {
 	readonly type: "Microsoft.Kusto/clusters/databases/dataConnections";
 }
 export interface clusters_databases_dataConnections_EventGridComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly kind: "EventGrid";
-	readonly properties?: EventGridConnectionProperties | undefined;
+	readonly properties?: EventGridConnectionProperties;
 }
 export class clusters_databases_dataConnections_EventHub
 	extends ArmResource<clusters_databases_dataConnections_EventHubComponentInputs>
@@ -126,10 +126,10 @@ export interface clusters_databases_dataConnections_EventHubComponentOutputs {
 	readonly type: "Microsoft.Kusto/clusters/databases/dataConnections";
 }
 export interface clusters_databases_dataConnections_EventHubComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly kind: "EventHub";
-	readonly properties?: EventHubConnectionProperties | undefined;
+	readonly properties?: EventHubConnectionProperties;
 }
 export class clusters_databases_dataConnections_IotHub
 	extends ArmResource<clusters_databases_dataConnections_IotHubComponentInputs>
@@ -148,10 +148,10 @@ export interface clusters_databases_dataConnections_IotHubComponentOutputs {
 	readonly type: "Microsoft.Kusto/clusters/databases/dataConnections";
 }
 export interface clusters_databases_dataConnections_IotHubComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly kind: "IotHub";
-	readonly properties?: IotHubConnectionProperties | undefined;
+	readonly properties?: IotHubConnectionProperties;
 }
 export class clusters_databases_principalAssignments
 	extends ArmResource<clusters_databases_principalAssignmentsComponentInputs>
@@ -171,7 +171,7 @@ export interface clusters_databases_principalAssignmentsComponentOutputs {
 }
 export interface clusters_databases_principalAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: DatabasePrincipalProperties | undefined;
+	readonly properties?: DatabasePrincipalProperties;
 }
 export class clusters_principalAssignments
 	extends ArmResource<clusters_principalAssignmentsComponentInputs>
@@ -191,7 +191,7 @@ export interface clusters_principalAssignmentsComponentOutputs {
 }
 export interface clusters_principalAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: ClusterPrincipalProperties | undefined;
+	readonly properties?: ClusterPrincipalProperties;
 }
 export function listFollowerDatabases(resource: clusters): FollowerDatabaseListResult {
 	if (resource.apiVersion !== "2020-06-14") {
@@ -221,14 +221,14 @@ export function listPrincipals(resource: ArmResource): DatabasePrincipalListResu
 	throw new Error("not implemented");
 }
 export interface AttachedDatabaseConfigurationProperties {
-	readonly attachedDatabaseNames?: string[] | undefined;
+	readonly attachedDatabaseNames?: string[];
 	readonly clusterResourceId: string;
 	readonly databaseName: string;
 	readonly defaultPrincipalsModificationKind: "None" | "Replace" | "Union";
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
 }
 export interface AzureSku {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name:
 		| "Dev(No SLA)_Standard_D11_v2"
 		| "Dev(No SLA)_Standard_E2a_v4"
@@ -255,172 +255,158 @@ export interface AzureSku {
 }
 export interface ClusterPrincipalProperties {
 	readonly principalId: string;
-	readonly principalName?: string | undefined;
+	readonly principalName?: string;
 	readonly principalType: "App" | "Group" | "User";
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
 	readonly role: "AllDatabasesAdmin" | "AllDatabasesViewer";
-	readonly tenantId?: string | undefined;
-	readonly tenantName?: string | undefined;
+	readonly tenantId?: string;
+	readonly tenantName?: string;
 }
 export interface ClusterProperties {
-	readonly dataIngestionUri?: string | undefined;
-	readonly enableDiskEncryption?: boolean | undefined;
-	readonly enableDoubleEncryption?: boolean | undefined;
-	readonly enablePurge?: boolean | undefined;
-	readonly enableStreamingIngest?: boolean | undefined;
-	readonly keyVaultProperties?: KeyVaultProperties | undefined;
-	readonly languageExtensions?: LanguageExtensionsList | undefined;
-	readonly optimizedAutoscale?: OptimizedAutoscale | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded") | undefined;
+	readonly dataIngestionUri?: string;
+	readonly enableDiskEncryption?: boolean;
+	readonly enableDoubleEncryption?: boolean;
+	readonly enablePurge?: boolean;
+	readonly enableStreamingIngest?: boolean;
+	readonly keyVaultProperties?: KeyVaultProperties;
+	readonly languageExtensions?: LanguageExtensionsList;
+	readonly optimizedAutoscale?: OptimizedAutoscale;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
 	readonly state?:
-		| (
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Running"
-				| "Starting"
-				| "Stopped"
-				| "Stopping"
-				| "Unavailable"
-				| "Updating"
-		  )
-		| undefined;
-	readonly stateReason?: string | undefined;
-	readonly trustedExternalTenants?: TrustedExternalTenant[] | undefined;
-	readonly uri?: string | undefined;
-	readonly virtualNetworkConfiguration?: VirtualNetworkConfiguration | undefined;
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Running"
+		| "Starting"
+		| "Stopped"
+		| "Stopping"
+		| "Unavailable"
+		| "Updating";
+	readonly stateReason?: string;
+	readonly trustedExternalTenants?: TrustedExternalTenant[];
+	readonly uri?: string;
+	readonly virtualNetworkConfiguration?: VirtualNetworkConfiguration;
 }
 export interface ComponentsSgqdofSchemasIdentityPropertiesUserassignedidentitiesAdditionalproperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface DatabasePrincipal {
-	readonly appId?: string | undefined;
-	readonly email?: string | undefined;
-	readonly fqn?: string | undefined;
+	readonly appId?: string;
+	readonly email?: string;
+	readonly fqn?: string;
 	readonly name: string;
 	readonly role: "Admin" | "Ingestor" | "Monitor" | "UnrestrictedViewers" | "User" | "Viewer";
-	readonly tenantName?: string | undefined;
+	readonly tenantName?: string;
 	readonly type: "App" | "Group" | "User";
 }
 export interface DatabasePrincipalListResult {
-	readonly value?: DatabasePrincipal[] | undefined;
+	readonly value?: DatabasePrincipal[];
 }
 export interface DatabasePrincipalProperties {
 	readonly principalId: string;
-	readonly principalName?: string | undefined;
+	readonly principalName?: string;
 	readonly principalType: "App" | "Group" | "User";
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
 	readonly role: "Admin" | "Ingestor" | "Monitor" | "UnrestrictedViewers" | "User" | "Viewer";
-	readonly tenantId?: string | undefined;
-	readonly tenantName?: string | undefined;
+	readonly tenantId?: string;
+	readonly tenantName?: string;
 }
 export interface DatabaseStatistics {
-	readonly size?: number | undefined;
+	readonly size?: number;
 }
 export interface EventGridConnectionProperties {
-	readonly blobStorageEventType?: ("Microsoft.Storage.BlobCreated" | "Microsoft.Storage.BlobRenamed") | undefined;
+	readonly blobStorageEventType?: "Microsoft.Storage.BlobCreated" | "Microsoft.Storage.BlobRenamed";
 	readonly consumerGroup: string;
 	readonly dataFormat?:
-		| (
-				| "APACHEAVRO"
-				| "AVRO"
-				| "CSV"
-				| "JSON"
-				| "MULTIJSON"
-				| "ORC"
-				| "PARQUET"
-				| "PSV"
-				| "RAW"
-				| "SCSV"
-				| "SINGLEJSON"
-				| "SOHSV"
-				| "TSV"
-				| "TSVE"
-				| "TXT"
-				| "W3CLOGFILE"
-		  )
-		| undefined;
+		| "APACHEAVRO"
+		| "AVRO"
+		| "CSV"
+		| "JSON"
+		| "MULTIJSON"
+		| "ORC"
+		| "PARQUET"
+		| "PSV"
+		| "RAW"
+		| "SCSV"
+		| "SINGLEJSON"
+		| "SOHSV"
+		| "TSV"
+		| "TSVE"
+		| "TXT"
+		| "W3CLOGFILE";
 	readonly eventHubResourceId: string;
-	readonly ignoreFirstRecord?: boolean | undefined;
-	readonly mappingRuleName?: string | undefined;
+	readonly ignoreFirstRecord?: boolean;
+	readonly mappingRuleName?: string;
 	readonly storageAccountResourceId: string;
-	readonly tableName?: string | undefined;
+	readonly tableName?: string;
 }
 export interface EventHubConnectionProperties {
-	readonly compression?: ("GZip" | "None") | undefined;
+	readonly compression?: "GZip" | "None";
 	readonly consumerGroup: string;
 	readonly dataFormat?:
-		| (
-				| "APACHEAVRO"
-				| "AVRO"
-				| "CSV"
-				| "JSON"
-				| "MULTIJSON"
-				| "ORC"
-				| "PARQUET"
-				| "PSV"
-				| "RAW"
-				| "SCSV"
-				| "SINGLEJSON"
-				| "SOHSV"
-				| "TSV"
-				| "TSVE"
-				| "TXT"
-				| "W3CLOGFILE"
-		  )
-		| undefined;
+		| "APACHEAVRO"
+		| "AVRO"
+		| "CSV"
+		| "JSON"
+		| "MULTIJSON"
+		| "ORC"
+		| "PARQUET"
+		| "PSV"
+		| "RAW"
+		| "SCSV"
+		| "SINGLEJSON"
+		| "SOHSV"
+		| "TSV"
+		| "TSVE"
+		| "TXT"
+		| "W3CLOGFILE";
 	readonly eventHubResourceId: string;
-	readonly eventSystemProperties?: string[] | undefined;
-	readonly mappingRuleName?: string | undefined;
-	readonly tableName?: string | undefined;
+	readonly eventSystemProperties?: string[];
+	readonly mappingRuleName?: string;
+	readonly tableName?: string;
 }
 export interface FollowerDatabaseDefinition {
 	readonly attachedDatabaseConfigurationName: string;
 	readonly clusterResourceId: string;
-	readonly databaseName?: string | undefined;
+	readonly databaseName?: string;
 }
 export interface FollowerDatabaseListResult {
-	readonly value?: FollowerDatabaseDefinition[] | undefined;
+	readonly value?: FollowerDatabaseDefinition[];
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None";
-	readonly userAssignedIdentities?: IdentityUserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: IdentityUserAssignedIdentities;
 }
 export interface IdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?:
-		| ComponentsSgqdofSchemasIdentityPropertiesUserassignedidentitiesAdditionalproperties
-		| undefined;
+	readonly [key: string]: ComponentsSgqdofSchemasIdentityPropertiesUserassignedidentitiesAdditionalproperties;
 }
 export interface IotHubConnectionProperties {
 	readonly consumerGroup: string;
 	readonly dataFormat?:
-		| (
-				| "APACHEAVRO"
-				| "AVRO"
-				| "CSV"
-				| "JSON"
-				| "MULTIJSON"
-				| "ORC"
-				| "PARQUET"
-				| "PSV"
-				| "RAW"
-				| "SCSV"
-				| "SINGLEJSON"
-				| "SOHSV"
-				| "TSV"
-				| "TSVE"
-				| "TXT"
-				| "W3CLOGFILE"
-		  )
-		| undefined;
-	readonly eventSystemProperties?: string[] | undefined;
+		| "APACHEAVRO"
+		| "AVRO"
+		| "CSV"
+		| "JSON"
+		| "MULTIJSON"
+		| "ORC"
+		| "PARQUET"
+		| "PSV"
+		| "RAW"
+		| "SCSV"
+		| "SINGLEJSON"
+		| "SOHSV"
+		| "TSV"
+		| "TSVE"
+		| "TXT"
+		| "W3CLOGFILE";
+	readonly eventSystemProperties?: string[];
 	readonly iotHubResourceId: string;
-	readonly mappingRuleName?: string | undefined;
+	readonly mappingRuleName?: string;
 	readonly sharedAccessPolicyName: string;
-	readonly tableName?: string | undefined;
+	readonly tableName?: string;
 }
 export interface KeyVaultProperties {
 	readonly keyName: string;
@@ -428,10 +414,10 @@ export interface KeyVaultProperties {
 	readonly keyVersion: string;
 }
 export interface LanguageExtension {
-	readonly languageExtensionName?: ("PYTHON" | "R") | undefined;
+	readonly languageExtensionName?: "PYTHON" | "R";
 }
 export interface LanguageExtensionsList {
-	readonly value?: LanguageExtension[] | undefined;
+	readonly value?: LanguageExtension[];
 }
 export interface OptimizedAutoscale {
 	readonly isEnabled: boolean;
@@ -440,26 +426,26 @@ export interface OptimizedAutoscale {
 	readonly version: number;
 }
 export interface ReadOnlyFollowingDatabaseProperties {
-	readonly attachedDatabaseConfigurationName?: string | undefined;
-	readonly hotCachePeriod?: string | undefined;
-	readonly leaderClusterResourceId?: string | undefined;
-	readonly principalsModificationKind?: ("None" | "Replace" | "Union") | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded") | undefined;
-	readonly softDeletePeriod?: string | undefined;
-	readonly statistics?: DatabaseStatistics | undefined;
+	readonly attachedDatabaseConfigurationName?: string;
+	readonly hotCachePeriod?: string;
+	readonly leaderClusterResourceId?: string;
+	readonly principalsModificationKind?: "None" | "Replace" | "Union";
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
+	readonly softDeletePeriod?: string;
+	readonly statistics?: DatabaseStatistics;
 }
 export interface ReadWriteDatabaseProperties {
-	readonly hotCachePeriod?: string | undefined;
-	readonly isFollowed?: boolean | undefined;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded") | undefined;
-	readonly softDeletePeriod?: string | undefined;
-	readonly statistics?: DatabaseStatistics | undefined;
+	readonly hotCachePeriod?: string;
+	readonly isFollowed?: boolean;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Moving" | "Running" | "Succeeded";
+	readonly softDeletePeriod?: string;
+	readonly statistics?: DatabaseStatistics;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TrustedExternalTenant {
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface VirtualNetworkConfiguration {
 	readonly dataManagementPublicIpId: string;

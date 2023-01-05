@@ -17,14 +17,14 @@ export interface privateLinkForAzureAdComponentOutputs {
 	readonly type: "microsoft.aadiam/privateLinkForAzureAd";
 }
 export interface privateLinkForAzureAdComponentInputs {
-	readonly allTenants?: boolean | undefined;
+	readonly allTenants?: boolean;
 	readonly name: string;
-	readonly ownerTenantId?: string | undefined;
-	readonly resourceGroup?: string | undefined;
-	readonly resourceName?: string | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly tags?: PrivateLinkPolicyTags | undefined;
-	readonly tenants?: string[] | undefined;
+	readonly ownerTenantId?: string;
+	readonly resourceGroup?: string;
+	readonly resourceName?: string;
+	readonly subscriptionId?: string;
+	readonly tags?: PrivateLinkPolicyTags;
+	readonly tenants?: string[];
 }
 export class privateLinkForAzureAd_privateEndpointConnections
 	extends ArmResource<privateLinkForAzureAd_privateEndpointConnectionsComponentInputs>
@@ -50,7 +50,7 @@ export interface privateLinkForAzureAd_privateEndpointConnectionsComponentOutput
 }
 export interface privateLinkForAzureAd_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class privateLinkForAzureAd_privateLinkResources
 	extends ArmResource<privateLinkForAzureAd_privateLinkResourcesComponentInputs>
@@ -70,34 +70,34 @@ export interface privateLinkForAzureAd_privateLinkResourcesComponentOutputs {
 }
 export interface privateLinkForAzureAd_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkConnectionTags?: TagsResource | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Failed" | "Provisioning" | "Succeeded") | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkConnectionTags?: TagsResource;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Failed" | "Provisioning" | "Succeeded";
 }
 export interface PrivateLinkPolicyTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface TagsResource {
-	readonly tags?: TagsResourceTags | undefined;
+	readonly tags?: TagsResourceTags;
 }
 export interface TagsResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	privateLinkForAzureAd: privateLinkForAzureAd,

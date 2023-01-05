@@ -15,10 +15,10 @@ export interface serialPortsComponentOutputs {
 }
 export interface serialPortsComponentInputs {
 	readonly name: string;
-	readonly properties?: SerialPortProperties | undefined;
+	readonly properties?: SerialPortProperties;
 }
 export interface SerialPortProperties {
-	readonly state?: "disabled" | undefined;
+	readonly state?: "disabled";
 }
 export default {
 	serialPorts: serialPorts,

@@ -14,11 +14,11 @@ export interface connectionsComponentOutputs {
 	readonly type: "Microsoft.Web/connections";
 }
 export interface connectionsComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ConnectionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ConnectionProperties;
+	readonly tags?: ResourceTags;
 }
 export class locations_managedApis
 	extends ArmResource<locations_managedApisComponentInputs>
@@ -37,11 +37,11 @@ export interface locations_managedApisComponentOutputs {
 	readonly type: "Microsoft.Web/locations/managedApis";
 }
 export interface locations_managedApisComponentInputs {
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ApiEntityProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ApiEntityProperties;
+	readonly tags?: ResourceTags;
 }
 export function listConnectionKeys(resource: connections, input: ListConnectionKeysInput): ConnectionSecrets {
 	if (resource.apiVersion !== "2015-08-01-preview") {
@@ -62,272 +62,270 @@ export function listConsentLinks(resource: connections, input: ConsentLinkInput)
 	throw new Error("not implemented");
 }
 export interface ApiEntity {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: ApiEntityProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: ApiEntityProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ApiEntityProperties {
-	readonly apiDefinitionUrl?: string | undefined;
-	readonly backendService?: BackendServiceDefinition | undefined;
-	readonly capabilities?: string[] | undefined;
-	readonly changedTime?: string | undefined;
-	readonly connectionParameters?: ApiEntityPropertiesConnectionParameters | undefined;
-	readonly createdTime?: string | undefined;
-	readonly generalInformation?: GeneralApiInformation | undefined;
-	readonly metadata?: any | undefined;
-	readonly name?: string | undefined;
-	readonly path?: string | undefined;
-	readonly policies?: ApiPolicies | undefined;
-	readonly protocols?: string[] | undefined;
-	readonly runtimeUrls?: string[] | undefined;
+	readonly apiDefinitionUrl?: string;
+	readonly backendService?: BackendServiceDefinition;
+	readonly capabilities?: string[];
+	readonly changedTime?: string;
+	readonly connectionParameters?: ApiEntityPropertiesConnectionParameters;
+	readonly createdTime?: string;
+	readonly generalInformation?: GeneralApiInformation;
+	readonly metadata?: any;
+	readonly name?: string;
+	readonly path?: string;
+	readonly policies?: ApiPolicies;
+	readonly protocols?: string[];
+	readonly runtimeUrls?: string[];
 }
 export interface ApiEntityPropertiesConnectionParameters {
-	readonly "[ key: string ]"?: ConnectionParameter | undefined;
+	readonly [key: string]: ConnectionParameter;
 }
 export interface ApiOAuthSettings {
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
-	readonly customParameters?: ApiOAuthSettingsCustomParameters | undefined;
-	readonly identityProvider?: string | undefined;
-	readonly properties?: any | undefined;
-	readonly redirectUrl?: string | undefined;
-	readonly scopes?: string[] | undefined;
+	readonly clientId?: string;
+	readonly clientSecret?: string;
+	readonly customParameters?: ApiOAuthSettingsCustomParameters;
+	readonly identityProvider?: string;
+	readonly properties?: any;
+	readonly redirectUrl?: string;
+	readonly scopes?: string[];
 }
 export interface ApiOAuthSettingsCustomParameters {
-	readonly "[ key: string ]"?: ApiOAuthSettingsParameter | undefined;
+	readonly [key: string]: ApiOAuthSettingsParameter;
 }
 export interface ApiOAuthSettingsParameter {
-	readonly options?: any | undefined;
-	readonly uiDefinition?: any | undefined;
-	readonly value?: string | undefined;
+	readonly options?: any;
+	readonly uiDefinition?: any;
+	readonly value?: string;
 }
 export interface ApiPolicies {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: ApiPoliciesProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: ApiPoliciesProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ApiPoliciesProperties {
-	readonly content?: string | undefined;
+	readonly content?: string;
 }
 export interface ArmPlan {
-	readonly name?: string | undefined;
-	readonly product?: string | undefined;
-	readonly promotionCode?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly version?: string | undefined;
+	readonly name?: string;
+	readonly product?: string;
+	readonly promotionCode?: string;
+	readonly publisher?: string;
+	readonly version?: string;
 }
 export interface BackendServiceDefinition {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: BackendServiceDefinitionProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: BackendServiceDefinitionProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface BackendServiceDefinitionProperties {
-	readonly hostingEnvironmentServiceUrls?: HostingEnvironmentServiceDescriptions[] | undefined;
-	readonly serviceUrl?: string | undefined;
+	readonly hostingEnvironmentServiceUrls?: HostingEnvironmentServiceDescriptions[];
+	readonly serviceUrl?: string;
 }
 export interface ConnectionError {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: ConnectionErrorProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: ConnectionErrorProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ConnectionErrorProperties {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface ConnectionParameter {
-	readonly defaultValue?: any | undefined;
-	readonly oAuthSettings?: ApiOAuthSettings | undefined;
-	readonly type?:
-		| ("array" | "bool" | "connection" | "int" | "oauthSetting" | "object" | "secureobject" | "securestring")
-		| undefined;
-	readonly uiDefinition?: any | undefined;
+	readonly defaultValue?: any;
+	readonly oAuthSettings?: ApiOAuthSettings;
+	readonly type?: "array" | "bool" | "connection" | "int" | "oauthSetting" | "object" | "secureobject" | "securestring";
+	readonly uiDefinition?: any;
 }
 export interface ConnectionProperties {
-	readonly api?: ExpandedParentApiEntity | undefined;
-	readonly changedTime?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly customParameterValues?: ConnectionPropertiesCustomParameterValues | undefined;
-	readonly displayName?: string | undefined;
-	readonly firstExpirationTime?: string | undefined;
-	readonly keywords?: string[] | undefined;
-	readonly metadata?: any | undefined;
-	readonly name?: string | undefined;
-	readonly nonSecretParameterValues?: ConnectionPropertiesNonSecretParameterValues | undefined;
-	readonly parameterValues?: ConnectionPropertiesParameterValues | undefined;
-	readonly statuses?: ConnectionStatus[] | undefined;
-	readonly tenantId?: string | undefined;
+	readonly api?: ExpandedParentApiEntity;
+	readonly changedTime?: string;
+	readonly createdTime?: string;
+	readonly customParameterValues?: ConnectionPropertiesCustomParameterValues;
+	readonly displayName?: string;
+	readonly firstExpirationTime?: string;
+	readonly keywords?: string[];
+	readonly metadata?: any;
+	readonly name?: string;
+	readonly nonSecretParameterValues?: ConnectionPropertiesNonSecretParameterValues;
+	readonly parameterValues?: ConnectionPropertiesParameterValues;
+	readonly statuses?: ConnectionStatus[];
+	readonly tenantId?: string;
 }
 export interface ConnectionPropertiesCustomParameterValues {
-	readonly "[ key: string ]"?: ParameterCustomLoginSettingValues | undefined;
+	readonly [key: string]: ParameterCustomLoginSettingValues;
 }
 export interface ConnectionPropertiesNonSecretParameterValues {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ConnectionPropertiesParameterValues {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ConnectionSecrets {
-	readonly connectionKey?: string | undefined;
-	readonly parameterValues?: ConnectionSecretsParameterValues | undefined;
+	readonly connectionKey?: string;
+	readonly parameterValues?: ConnectionSecretsParameterValues;
 }
 export interface ConnectionSecretsParameterValues {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface ConnectionStatus {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: ConnectionStatusProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: ConnectionStatusProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ConnectionStatusProperties {
-	readonly error?: ConnectionError | undefined;
-	readonly status?: string | undefined;
-	readonly target?: string | undefined;
+	readonly error?: ConnectionError;
+	readonly status?: string;
+	readonly target?: string;
 }
 export interface ConsentLink {
-	readonly displayName?: string | undefined;
-	readonly firstPartyLoginUri?: string | undefined;
-	readonly link?: string | undefined;
-	readonly status?: ("Authenticated" | "Error") | undefined;
+	readonly displayName?: string;
+	readonly firstPartyLoginUri?: string;
+	readonly link?: string;
+	readonly status?: "Authenticated" | "Error";
 }
 export interface ConsentLinkInput {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: ConsentLinkInputProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: ConsentLinkInputProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ConsentLinkInputParameter {
-	readonly objectId?: string | undefined;
-	readonly parameterName?: string | undefined;
-	readonly principalType?: ("ActiveDirectory" | "Connection") | undefined;
-	readonly redirectUrl?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly objectId?: string;
+	readonly parameterName?: string;
+	readonly principalType?: "ActiveDirectory" | "Connection";
+	readonly redirectUrl?: string;
+	readonly tenantId?: string;
 }
 export interface ConsentLinkInputProperties {
-	readonly parameters?: ConsentLinkInputParameter[] | undefined;
+	readonly parameters?: ConsentLinkInputParameter[];
 }
 export interface ConsentLinkPayload {
-	readonly value?: ConsentLink[] | undefined;
+	readonly value?: ConsentLink[];
 }
 export interface CustomLoginSettingValue {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: CustomLoginSettingValueProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: CustomLoginSettingValueProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface CustomLoginSettingValueProperties {
-	readonly option?: string | undefined;
+	readonly option?: string;
 }
 export interface ExpandedParentApiEntity {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: ExpandedParentApiEntityProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: ExpandedParentApiEntityProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ExpandedParentApiEntityProperties {
-	readonly entity?: ResponseMessageEnvelopeApiEntity | undefined;
-	readonly id?: string | undefined;
+	readonly entity?: ResponseMessageEnvelopeApiEntity;
+	readonly id?: string;
 }
 export interface GeneralApiInformation {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: GeneralApiInformationProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: GeneralApiInformationProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface GeneralApiInformationProperties {
-	readonly connectionDisplayName?: string | undefined;
-	readonly connectionPortalUrl?: any | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly iconUrl?: string | undefined;
-	readonly termsOfUseUrl?: string | undefined;
+	readonly connectionDisplayName?: string;
+	readonly connectionPortalUrl?: any;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly iconUrl?: string;
+	readonly termsOfUseUrl?: string;
 }
 export interface HostingEnvironmentServiceDescriptions {
-	readonly hostId?: string | undefined;
-	readonly hostingEnvironmentId?: string | undefined;
-	readonly serviceUrl?: string | undefined;
-	readonly useInternalRouting?: boolean | undefined;
+	readonly hostId?: string;
+	readonly hostingEnvironmentId?: string;
+	readonly serviceUrl?: string;
+	readonly useInternalRouting?: boolean;
 }
 export interface ListConnectionKeysInput {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: ListConnectionKeysInputProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: ListConnectionKeysInputProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ListConnectionKeysInputProperties {
-	readonly validityTimeSpan?: string | undefined;
+	readonly validityTimeSpan?: string;
 }
 export interface ParameterCustomLoginSettingValues {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: ParameterCustomLoginSettingValuesProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: ParameterCustomLoginSettingValuesProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ParameterCustomLoginSettingValuesProperties {
-	readonly customParameters?: ParameterCustomLoginSettingValuesPropertiesCustomParameters | undefined;
+	readonly customParameters?: ParameterCustomLoginSettingValuesPropertiesCustomParameters;
 }
 export interface ParameterCustomLoginSettingValuesPropertiesCustomParameters {
-	readonly "[ key: string ]"?: CustomLoginSettingValue | undefined;
+	readonly [key: string]: CustomLoginSettingValue;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResponseMessageEnvelopeApiEntity {
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly plan?: ArmPlan | undefined;
-	readonly properties?: ApiEntity | undefined;
-	readonly sku?: SkuDescription | undefined;
-	readonly tags?: ResponseMessageEnvelopeApiEntityTags | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly plan?: ArmPlan;
+	readonly properties?: ApiEntity;
+	readonly sku?: SkuDescription;
+	readonly tags?: ResponseMessageEnvelopeApiEntityTags;
+	readonly type?: string;
 }
 export interface ResponseMessageEnvelopeApiEntityTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SkuDescription {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
-	readonly name?: string | undefined;
-	readonly size?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
+	readonly name?: string;
+	readonly size?: string;
+	readonly tier?: string;
 }
 export default {
 	connections: connections,

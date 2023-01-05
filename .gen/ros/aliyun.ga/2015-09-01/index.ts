@@ -17,9 +17,9 @@ export interface AcceleratorComponentInputs {
 	readonly Duration: any | string;
 	readonly PricingCycle: any | string;
 	readonly Spec: any | string;
-	readonly AcceleratorName?: (any | string) | undefined;
-	readonly AutoPay?: (any | string) | undefined;
-	readonly AutoUseCoupon?: (any | string) | undefined;
+	readonly AcceleratorName?: any | string;
+	readonly AutoPay?: any | string;
+	readonly AutoUseCoupon?: any | string;
 	readonly LogicalId: string;
 }
 export class BandwidthPackage
@@ -41,16 +41,16 @@ export interface BandwidthPackageComponentOutputs {
 export interface BandwidthPackageComponentInputs {
 	readonly Bandwidth: any | number;
 	readonly Type: any | string;
-	readonly AutoPay?: (any | boolean) | undefined;
-	readonly AutoUseCoupon?: (any | string) | undefined;
-	readonly BandwidthType?: (any | string) | undefined;
-	readonly BillingType?: (any | string) | undefined;
-	readonly CbnGeographicRegionIdA?: (any | string) | undefined;
-	readonly CbnGeographicRegionIdB?: (any | string) | undefined;
-	readonly ChargeType?: (any | string) | undefined;
-	readonly Duration?: (string | undefined) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
-	readonly Ratio?: (any | string) | undefined;
+	readonly AutoPay?: any | boolean;
+	readonly AutoUseCoupon?: any | string;
+	readonly BandwidthType?: any | string;
+	readonly BillingType?: any | string;
+	readonly CbnGeographicRegionIdA?: any | string;
+	readonly CbnGeographicRegionIdB?: any | string;
+	readonly ChargeType?: any | string;
+	readonly Duration?: string | undefined;
+	readonly PricingCycle?: string | undefined;
+	readonly Ratio?: any | string;
 	readonly LogicalId: string;
 }
 export class BandwidthPackageAcceleratorAddition
@@ -81,17 +81,17 @@ export interface EndpointGroupComponentInputs {
 	readonly EndpointConfigurations: EndpointConfigurations[];
 	readonly EndpointGroupRegion: string;
 	readonly ListenerId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EndpointGroupType?: (string | undefined) | undefined;
-	readonly EndpointRequestProtocol?: (string | undefined) | undefined;
-	readonly HealthCheckEnabled?: (boolean | undefined) | undefined;
-	readonly HealthCheckIntervalSeconds?: (number | undefined) | undefined;
-	readonly HealthCheckPath?: (string | undefined) | undefined;
-	readonly HealthCheckPort?: (number | undefined) | undefined;
-	readonly HealthCheckProtocol?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly ThresholdCount?: (number | undefined) | undefined;
-	readonly TrafficPercentage?: (number | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly EndpointGroupType?: string | undefined;
+	readonly EndpointRequestProtocol?: string | undefined;
+	readonly HealthCheckEnabled?: boolean | undefined;
+	readonly HealthCheckIntervalSeconds?: number | undefined;
+	readonly HealthCheckPath?: string | undefined;
+	readonly HealthCheckPort?: number | undefined;
+	readonly HealthCheckProtocol?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly ThresholdCount?: number | undefined;
+	readonly TrafficPercentage?: number | undefined;
 	readonly LogicalId: string;
 }
 export class IpSets extends RosResource<IpSetsComponentInputs> implements IpSetsComponentOutputs {
@@ -125,24 +125,24 @@ export interface ListenerComponentInputs {
 	readonly AcceleratorId: string;
 	readonly PortRanges: PortRanges[];
 	readonly Protocol: string;
-	readonly Certificates?: (Certificates[] | undefined) | undefined;
-	readonly ClientAffinity?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly ProxyProtocol?: (boolean | undefined) | undefined;
-	readonly SecurityPolicyId?: (string | undefined) | undefined;
-	readonly XForwardedForConfig?: (XForwardedForConfig | undefined) | undefined;
+	readonly Certificates?: Certificates[] | undefined;
+	readonly ClientAffinity?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly ProxyProtocol?: boolean | undefined;
+	readonly SecurityPolicyId?: string | undefined;
+	readonly XForwardedForConfig?: XForwardedForConfig | undefined;
 	readonly LogicalId: string;
 }
 export interface EndpointConfigurations {
-	readonly EnableProxyProtocol?: (boolean | undefined) | undefined;
+	readonly EnableProxyProtocol?: boolean | undefined;
 	readonly Type: string;
 	readonly Endpoint: string;
-	readonly EnableClientIPPreservation?: (boolean | undefined) | undefined;
+	readonly EnableClientIPPreservation?: boolean | undefined;
 	readonly Weight: number;
 }
 export interface AccelerateRegion {
-	readonly IpVersion?: (string | undefined) | undefined;
+	readonly IpVersion?: string | undefined;
 	readonly Bandwidth: number;
 	readonly AccelerateRegionId: string;
 }
@@ -154,11 +154,11 @@ export interface PortRanges {
 	readonly ToPort: number;
 }
 export interface XForwardedForConfig {
-	readonly XForwardedForGaApEnabled?: (boolean | undefined) | undefined;
-	readonly XForwardedForProtoEnabled?: (boolean | undefined) | undefined;
-	readonly XRealIpEnabled?: (boolean | undefined) | undefined;
-	readonly XForwardedForPortEnabled?: (boolean | undefined) | undefined;
-	readonly XForwardedForGaIdEnabled?: (boolean | undefined) | undefined;
+	readonly XForwardedForGaApEnabled?: boolean | undefined;
+	readonly XForwardedForProtoEnabled?: boolean | undefined;
+	readonly XRealIpEnabled?: boolean | undefined;
+	readonly XForwardedForPortEnabled?: boolean | undefined;
+	readonly XForwardedForGaIdEnabled?: boolean | undefined;
 }
 export default {
 	Accelerator: Accelerator,

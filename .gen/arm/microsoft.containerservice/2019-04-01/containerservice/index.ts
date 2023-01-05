@@ -17,11 +17,11 @@ export interface managedClustersComponentOutputs {
 	readonly type: "Microsoft.ContainerService/managedClusters";
 }
 export interface managedClustersComponentInputs {
-	readonly identity?: ManagedClusterIdentity | undefined;
+	readonly identity?: ManagedClusterIdentity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagedClusterProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ManagedClusterProperties;
+	readonly tags?: ResourceTags;
 }
 export class managedClusters_agentPools
 	extends ArmResource<managedClusters_agentPoolsComponentInputs>
@@ -41,7 +41,7 @@ export interface managedClusters_agentPoolsComponentOutputs {
 }
 export interface managedClusters_agentPoolsComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagedClusterAgentPoolProfileProperties | undefined;
+	readonly properties?: ManagedClusterAgentPoolProfileProperties;
 }
 export function listClusterAdminCredential(resource: managedClusters): CredentialResults {
 	if (resource.apiVersion !== "2019-04-01") {
@@ -71,20 +71,20 @@ export function listCredential(resource: ArmResource): ManagedClusterAccessProfi
 	throw new Error("not implemented");
 }
 export interface AccessProfile {
-	readonly kubeConfig?: any | undefined;
+	readonly kubeConfig?: any;
 }
 export interface ContainerServiceLinuxProfile {
 	readonly adminUsername: string;
 	readonly ssh: ContainerServiceSshConfiguration;
 }
 export interface ContainerServiceNetworkProfile {
-	readonly dnsServiceIP?: string | undefined;
-	readonly dockerBridgeCidr?: string | undefined;
-	readonly loadBalancerSku?: ("basic" | "standard") | undefined;
-	readonly networkPlugin?: ("azure" | "kubenet") | undefined;
-	readonly networkPolicy?: ("azure" | "calico") | undefined;
-	readonly podCidr?: string | undefined;
-	readonly serviceCidr?: string | undefined;
+	readonly dnsServiceIP?: string;
+	readonly dockerBridgeCidr?: string;
+	readonly loadBalancerSku?: "basic" | "standard";
+	readonly networkPlugin?: "azure" | "kubenet";
+	readonly networkPolicy?: "azure" | "calico";
+	readonly podCidr?: string;
+	readonly serviceCidr?: string;
 }
 export interface ContainerServiceSshConfiguration {
 	readonly publicKeys: ContainerServiceSshPublicKey[];
@@ -93,46 +93,46 @@ export interface ContainerServiceSshPublicKey {
 	readonly keyData: string;
 }
 export interface CredentialResult {
-	readonly name?: string | undefined;
-	readonly value?: any | undefined;
+	readonly name?: string;
+	readonly value?: any;
 }
 export interface CredentialResults {
-	readonly kubeconfigs?: CredentialResult[] | undefined;
+	readonly kubeconfigs?: CredentialResult[];
 }
 export interface ManagedClusterAADProfile {
 	readonly clientAppID: string;
 	readonly serverAppID: string;
-	readonly serverAppSecret?: string | undefined;
-	readonly tenantID?: string | undefined;
+	readonly serverAppSecret?: string;
+	readonly tenantID?: string;
 }
 export interface ManagedClusterAccessProfile {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: AccessProfile | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: AccessProfile;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ManagedClusterAddonProfile {
-	readonly config?: ManagedClusterAddonProfileConfig | undefined;
+	readonly config?: ManagedClusterAddonProfileConfig;
 	readonly enabled: boolean;
 }
 export interface ManagedClusterAddonProfileConfig {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ManagedClusterAgentPoolProfile {
-	readonly availabilityZones?: string[] | undefined;
+	readonly availabilityZones?: string[];
 	readonly count: number;
-	readonly enableAutoScaling?: boolean | undefined;
-	readonly maxCount?: number | undefined;
-	readonly maxPods?: number | undefined;
-	readonly minCount?: number | undefined;
+	readonly enableAutoScaling?: boolean;
+	readonly maxCount?: number;
+	readonly maxPods?: number;
+	readonly minCount?: number;
 	readonly name: string;
-	readonly orchestratorVersion?: string | undefined;
-	readonly osDiskSizeGB?: number | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly type?: ("AvailabilitySet" | "VirtualMachineScaleSets") | undefined;
+	readonly orchestratorVersion?: string;
+	readonly osDiskSizeGB?: number;
+	readonly osType?: "Linux" | "Windows";
+	readonly provisioningState?: string;
+	readonly type?: "AvailabilitySet" | "VirtualMachineScaleSets";
 	readonly vmSize:
 		| "Standard_A1"
 		| "Standard_A10"
@@ -308,20 +308,20 @@ export interface ManagedClusterAgentPoolProfile {
 		| "Standard_NV12"
 		| "Standard_NV24"
 		| "Standard_NV6";
-	readonly vnetSubnetID?: string | undefined;
+	readonly vnetSubnetID?: string;
 }
 export interface ManagedClusterAgentPoolProfileProperties {
-	readonly availabilityZones?: string[] | undefined;
+	readonly availabilityZones?: string[];
 	readonly count: number;
-	readonly enableAutoScaling?: boolean | undefined;
-	readonly maxCount?: number | undefined;
-	readonly maxPods?: number | undefined;
-	readonly minCount?: number | undefined;
-	readonly orchestratorVersion?: string | undefined;
-	readonly osDiskSizeGB?: number | undefined;
-	readonly osType?: ("Linux" | "Windows") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly type?: ("AvailabilitySet" | "VirtualMachineScaleSets") | undefined;
+	readonly enableAutoScaling?: boolean;
+	readonly maxCount?: number;
+	readonly maxPods?: number;
+	readonly minCount?: number;
+	readonly orchestratorVersion?: string;
+	readonly osDiskSizeGB?: number;
+	readonly osType?: "Linux" | "Windows";
+	readonly provisioningState?: string;
+	readonly type?: "AvailabilitySet" | "VirtualMachineScaleSets";
 	readonly vmSize:
 		| "Standard_A1"
 		| "Standard_A10"
@@ -497,44 +497,44 @@ export interface ManagedClusterAgentPoolProfileProperties {
 		| "Standard_NV12"
 		| "Standard_NV24"
 		| "Standard_NV6";
-	readonly vnetSubnetID?: string | undefined;
+	readonly vnetSubnetID?: string;
 }
 export interface ManagedClusterIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "None" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None";
 }
 export interface ManagedClusterProperties {
-	readonly aadProfile?: ManagedClusterAADProfile | undefined;
-	readonly addonProfiles?: ManagedClusterPropertiesAddonProfiles | undefined;
-	readonly agentPoolProfiles?: ManagedClusterAgentPoolProfile[] | undefined;
-	readonly apiServerAuthorizedIPRanges?: string[] | undefined;
-	readonly dnsPrefix?: string | undefined;
-	readonly enablePodSecurityPolicy?: boolean | undefined;
-	readonly enableRBAC?: boolean | undefined;
-	readonly fqdn?: string | undefined;
-	readonly kubernetesVersion?: string | undefined;
-	readonly linuxProfile?: ContainerServiceLinuxProfile | undefined;
-	readonly maxAgentPools?: number | undefined;
-	readonly networkProfile?: ContainerServiceNetworkProfile | undefined;
-	readonly nodeResourceGroup?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly servicePrincipalProfile?: ManagedClusterServicePrincipalProfile | undefined;
-	readonly windowsProfile?: ManagedClusterWindowsProfile | undefined;
+	readonly aadProfile?: ManagedClusterAADProfile;
+	readonly addonProfiles?: ManagedClusterPropertiesAddonProfiles;
+	readonly agentPoolProfiles?: ManagedClusterAgentPoolProfile[];
+	readonly apiServerAuthorizedIPRanges?: string[];
+	readonly dnsPrefix?: string;
+	readonly enablePodSecurityPolicy?: boolean;
+	readonly enableRBAC?: boolean;
+	readonly fqdn?: string;
+	readonly kubernetesVersion?: string;
+	readonly linuxProfile?: ContainerServiceLinuxProfile;
+	readonly maxAgentPools?: number;
+	readonly networkProfile?: ContainerServiceNetworkProfile;
+	readonly nodeResourceGroup?: string;
+	readonly provisioningState?: string;
+	readonly servicePrincipalProfile?: ManagedClusterServicePrincipalProfile;
+	readonly windowsProfile?: ManagedClusterWindowsProfile;
 }
 export interface ManagedClusterPropertiesAddonProfiles {
-	readonly "[ key: string ]"?: ManagedClusterAddonProfile | undefined;
+	readonly [key: string]: ManagedClusterAddonProfile;
 }
 export interface ManagedClusterServicePrincipalProfile {
 	readonly clientId: string;
-	readonly secret?: string | undefined;
+	readonly secret?: string;
 }
 export interface ManagedClusterWindowsProfile {
-	readonly adminPassword?: string | undefined;
+	readonly adminPassword?: string;
 	readonly adminUsername: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	managedClusters: managedClusters,

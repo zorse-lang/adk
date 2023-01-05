@@ -17,44 +17,44 @@ export interface FrontDoorWebApplicationFirewallPoliciesComponentOutputs {
 	readonly type: "Microsoft.Network/FrontDoorWebApplicationFirewallPolicies";
 }
 export interface FrontDoorWebApplicationFirewallPoliciesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WebApplicationFirewallPolicyProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WebApplicationFirewallPolicyProperties;
+	readonly tags?: ResourceTags;
 }
 export interface CustomRule {
 	readonly action: "Allow" | "Block" | "Log" | "Redirect";
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
+	readonly enabledState?: "Disabled" | "Enabled";
 	readonly matchConditions: MatchCondition[];
-	readonly name?: string | undefined;
+	readonly name?: string;
 	readonly priority: number;
-	readonly rateLimitDurationInMinutes?: number | undefined;
-	readonly rateLimitThreshold?: number | undefined;
+	readonly rateLimitDurationInMinutes?: number;
+	readonly rateLimitThreshold?: number;
 	readonly ruleType: "MatchRule" | "RateLimitRule";
 }
 export interface CustomRuleList {
-	readonly rules?: CustomRule[] | undefined;
+	readonly rules?: CustomRule[];
 }
 export interface FrontendEndpointLink {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface ManagedRuleGroupOverride {
 	readonly ruleGroupName: string;
-	readonly rules?: ManagedRuleOverride[] | undefined;
+	readonly rules?: ManagedRuleOverride[];
 }
 export interface ManagedRuleOverride {
-	readonly action?: ("Allow" | "Block" | "Log" | "Redirect") | undefined;
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
+	readonly action?: "Allow" | "Block" | "Log" | "Redirect";
+	readonly enabledState?: "Disabled" | "Enabled";
 	readonly ruleId: string;
 }
 export interface ManagedRuleSet {
-	readonly ruleGroupOverrides?: ManagedRuleGroupOverride[] | undefined;
+	readonly ruleGroupOverrides?: ManagedRuleGroupOverride[];
 	readonly ruleSetType: string;
 	readonly ruleSetVersion: string;
 }
 export interface ManagedRuleSetList {
-	readonly managedRuleSets?: ManagedRuleSet[] | undefined;
+	readonly managedRuleSets?: ManagedRuleSet[];
 }
 export interface MatchCondition {
 	readonly matchValue: string[];
@@ -67,7 +67,7 @@ export interface MatchCondition {
 		| "RequestHeader"
 		| "RequestMethod"
 		| "RequestUri";
-	readonly negateCondition?: boolean | undefined;
+	readonly negateCondition?: boolean;
 	readonly operator:
 		| "any"
 		| "BeginsWith"
@@ -81,26 +81,26 @@ export interface MatchCondition {
 		| "LessThan"
 		| "LessThanOrEqual"
 		| "RegEx";
-	readonly selector?: string | undefined;
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly selector?: string;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 }
 export interface PolicySettings {
-	readonly customBlockResponseBody?: string | undefined;
-	readonly customBlockResponseStatusCode?: number | undefined;
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
-	readonly mode?: ("Detection" | "Prevention") | undefined;
-	readonly redirectUrl?: string | undefined;
+	readonly customBlockResponseBody?: string;
+	readonly customBlockResponseStatusCode?: number;
+	readonly enabledState?: "Disabled" | "Enabled";
+	readonly mode?: "Detection" | "Prevention";
+	readonly redirectUrl?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WebApplicationFirewallPolicyProperties {
-	readonly customRules?: CustomRuleList | undefined;
-	readonly frontendEndpointLinks?: FrontendEndpointLink[] | undefined;
-	readonly managedRules?: ManagedRuleSetList | undefined;
-	readonly policySettings?: PolicySettings | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling") | undefined;
+	readonly customRules?: CustomRuleList;
+	readonly frontendEndpointLinks?: FrontendEndpointLink[];
+	readonly managedRules?: ManagedRuleSetList;
+	readonly policySettings?: PolicySettings;
+	readonly provisioningState?: string;
+	readonly resourceState?: "Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling";
 }
 export default {
 	FrontDoorWebApplicationFirewallPolicies: FrontDoorWebApplicationFirewallPolicies,

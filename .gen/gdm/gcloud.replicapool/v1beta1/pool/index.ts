@@ -4,116 +4,115 @@ export class Pool extends GdmResource<PoolComponentInputs> implements PoolCompon
 	constructor(entity: ADKEntity, options: PoolComponentInputs) {
 		super(entity, options.name, "replicapool.v1beta1.pool", options);
 	}
-	public readonly currentNumReplicas?: number | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly currentNumReplicas?: number;
+	public readonly selfLink?: string;
 }
 export interface PoolComponentOutputs {
-	readonly currentNumReplicas?: number | undefined;
-	readonly selfLink?: string | undefined;
+	readonly currentNumReplicas?: number;
+	readonly selfLink?: string;
 }
 export interface PoolComponentInputs {
-	readonly autoRestart?: boolean | undefined;
-	readonly baseInstanceName?: string | undefined;
-	readonly description?: string | undefined;
-	readonly healthChecks?: HealthCheck[] | undefined;
-	readonly initialNumReplicas?: number | undefined;
-	readonly labels?: Label[] | undefined;
+	readonly autoRestart?: boolean;
+	readonly baseInstanceName?: string;
+	readonly description?: string;
+	readonly healthChecks?: HealthCheck[];
+	readonly initialNumReplicas?: number;
+	readonly labels?: Label[];
 	readonly name: string;
-	readonly numReplicas?: number | undefined;
-	readonly resourceViews?: string[] | undefined;
-	readonly targetPool?: string | undefined;
-	readonly targetPools?: string[] | undefined;
-	readonly template?: Template | undefined;
-	readonly type: string;
+	readonly numReplicas?: number;
+	readonly resourceViews?: string[];
+	readonly targetPool?: string;
+	readonly targetPools?: string[];
+	readonly template?: Template;
 }
 export interface AccessConfig {
-	readonly name?: string | undefined;
-	readonly natIp?: string | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly natIp?: string;
+	readonly type?: string;
 }
 export interface Action {
-	readonly commands?: string[] | undefined;
-	readonly envVariables?: EnvVariable[] | undefined;
-	readonly timeoutMilliSeconds?: number | undefined;
+	readonly commands?: string[];
+	readonly envVariables?: EnvVariable[];
+	readonly timeoutMilliSeconds?: number;
 }
 export interface DiskAttachment {
-	readonly deviceName?: string | undefined;
-	readonly index?: number | undefined;
+	readonly deviceName?: string;
+	readonly index?: number;
 }
 export interface EnvVariable {
-	readonly hidden?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly hidden?: boolean;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface ExistingDisk {
-	readonly attachment?: DiskAttachment | undefined;
-	readonly source?: string | undefined;
+	readonly attachment?: DiskAttachment;
+	readonly source?: string;
 }
 export interface HealthCheck {
-	readonly checkIntervalSec?: number | undefined;
-	readonly description?: string | undefined;
-	readonly healthyThreshold?: number | undefined;
-	readonly host?: string | undefined;
-	readonly name?: string | undefined;
-	readonly path?: string | undefined;
-	readonly port?: number | undefined;
-	readonly timeoutSec?: number | undefined;
-	readonly unhealthyThreshold?: number | undefined;
+	readonly checkIntervalSec?: number;
+	readonly description?: string;
+	readonly healthyThreshold?: number;
+	readonly host?: string;
+	readonly name?: string;
+	readonly path?: string;
+	readonly port?: number;
+	readonly timeoutSec?: number;
+	readonly unhealthyThreshold?: number;
 }
 export interface Label {
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface Metadata {
-	readonly fingerPrint?: string | undefined;
-	readonly items?: MetadataItem[] | undefined;
+	readonly fingerPrint?: string;
+	readonly items?: MetadataItem[];
 }
 export interface MetadataItem {
-	readonly key?: string | undefined;
-	readonly value?: string | undefined;
+	readonly key?: string;
+	readonly value?: string;
 }
 export interface NetworkInterface {
-	readonly accessConfigs?: AccessConfig[] | undefined;
-	readonly network?: string | undefined;
-	readonly networkIp?: string | undefined;
+	readonly accessConfigs?: AccessConfig[];
+	readonly network?: string;
+	readonly networkIp?: string;
 }
 export interface NewDisk {
-	readonly attachment?: DiskAttachment | undefined;
-	readonly autoDelete?: boolean | undefined;
-	readonly boot?: boolean | undefined;
-	readonly initializeParams?: NewDiskInitializeParams | undefined;
+	readonly attachment?: DiskAttachment;
+	readonly autoDelete?: boolean;
+	readonly boot?: boolean;
+	readonly initializeParams?: NewDiskInitializeParams;
 }
 export interface NewDiskInitializeParams {
-	readonly diskSizeGb?: string | undefined;
-	readonly diskType?: string | undefined;
-	readonly sourceImage?: string | undefined;
+	readonly diskSizeGb?: string;
+	readonly diskType?: string;
+	readonly sourceImage?: string;
 }
 export interface ServiceAccount {
-	readonly email?: string | undefined;
-	readonly scopes?: string[] | undefined;
+	readonly email?: string;
+	readonly scopes?: string[];
 }
 export interface Tag {
-	readonly fingerPrint?: string | undefined;
-	readonly items?: string[] | undefined;
+	readonly fingerPrint?: string;
+	readonly items?: string[];
 }
 export interface Template {
-	readonly action?: Action | undefined;
-	readonly healthChecks?: HealthCheck[] | undefined;
-	readonly version?: string | undefined;
-	readonly vmParams?: VmParams | undefined;
+	readonly action?: Action;
+	readonly healthChecks?: HealthCheck[];
+	readonly version?: string;
+	readonly vmParams?: VmParams;
 }
 export interface VmParams {
-	readonly baseInstanceName?: string | undefined;
-	readonly canIpForward?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly disksToAttach?: ExistingDisk[] | undefined;
-	readonly disksToCreate?: NewDisk[] | undefined;
-	readonly machineType?: string | undefined;
-	readonly metadata?: Metadata | undefined;
-	readonly networkInterfaces?: NetworkInterface[] | undefined;
-	readonly onHostMaintenance?: string | undefined;
-	readonly serviceAccounts?: ServiceAccount[] | undefined;
-	readonly tags?: Tag | undefined;
+	readonly baseInstanceName?: string;
+	readonly canIpForward?: boolean;
+	readonly description?: string;
+	readonly disksToAttach?: ExistingDisk[];
+	readonly disksToCreate?: NewDisk[];
+	readonly machineType?: string;
+	readonly metadata?: Metadata;
+	readonly networkInterfaces?: NetworkInterface[];
+	readonly onHostMaintenance?: string;
+	readonly serviceAccounts?: ServiceAccount[];
+	readonly tags?: Tag;
 }
 export default {
 	Pool: Pool,

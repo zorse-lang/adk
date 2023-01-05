@@ -4,25 +4,24 @@ export class ServiceAccount extends GdmResource<ServiceAccountComponentInputs> i
 	constructor(entity: ADKEntity, options: ServiceAccountComponentInputs) {
 		super(entity, options.name, "iam.v1.serviceAccount", options);
 	}
-	public readonly disabled?: boolean | undefined;
-	public readonly email?: string | undefined;
-	public readonly oauth2ClientId?: string | undefined;
-	public readonly projectId?: string | undefined;
-	public readonly uniqueId?: string | undefined;
+	public readonly disabled?: boolean;
+	public readonly email?: string;
+	public readonly oauth2ClientId?: string;
+	public readonly projectId?: string;
+	public readonly uniqueId?: string;
 }
 export interface ServiceAccountComponentOutputs {
-	readonly disabled?: boolean | undefined;
-	readonly email?: string | undefined;
-	readonly oauth2ClientId?: string | undefined;
-	readonly projectId?: string | undefined;
-	readonly uniqueId?: string | undefined;
+	readonly disabled?: boolean;
+	readonly email?: string;
+	readonly oauth2ClientId?: string;
+	readonly projectId?: string;
+	readonly uniqueId?: string;
 }
 export interface ServiceAccountComponentInputs {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly etag?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly etag?: string;
 	readonly name: string;
-	readonly type: string;
 }
 export default {
 	ServiceAccount: ServiceAccount,

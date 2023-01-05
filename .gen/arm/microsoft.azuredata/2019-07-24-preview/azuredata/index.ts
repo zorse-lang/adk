@@ -19,9 +19,9 @@ export interface sqlServerRegistrationsComponentOutputs {
 export interface sqlServerRegistrationsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SqlServerRegistrationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SqlServerRegistrationProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class sqlServerRegistrations_sqlServers
 	extends ArmResource<sqlServerRegistrations_sqlServersComponentInputs>
@@ -41,30 +41,30 @@ export interface sqlServerRegistrations_sqlServersComponentOutputs {
 }
 export interface sqlServerRegistrations_sqlServersComponentInputs {
 	readonly name: string;
-	readonly properties?: SqlServerProperties | undefined;
+	readonly properties?: SqlServerProperties;
 }
 export interface SqlServerProperties {
-	readonly cores?: number | undefined;
-	readonly edition?: string | undefined;
-	readonly propertyBag?: string | undefined;
-	readonly registrationID?: string | undefined;
-	readonly version?: string | undefined;
+	readonly cores?: number;
+	readonly edition?: string;
+	readonly propertyBag?: string;
+	readonly registrationID?: string;
+	readonly version?: string;
 }
 export interface SqlServerRegistrationProperties {
-	readonly propertyBag?: string | undefined;
-	readonly resourceGroup?: string | undefined;
-	readonly subscriptionId?: string | undefined;
+	readonly propertyBag?: string;
+	readonly resourceGroup?: string;
+	readonly subscriptionId?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("application" | "key" | "managedIdentity" | "user") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("application" | "key" | "managedIdentity" | "user") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "application" | "key" | "managedIdentity" | "user";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "application" | "key" | "managedIdentity" | "user";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	sqlServerRegistrations: sqlServerRegistrations,

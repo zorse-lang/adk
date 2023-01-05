@@ -16,10 +16,10 @@ export interface accountsComponentOutputs {
 export interface accountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MapsAccountProperties | undefined;
+	readonly properties?: MapsAccountProperties;
 	readonly sku: Sku;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: MapsAccountCreateParametersTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: MapsAccountCreateParametersTags;
 }
 export class accounts_creators
 	extends ArmResource<accounts_creatorsComponentInputs>
@@ -40,8 +40,8 @@ export interface accounts_creatorsComponentOutputs {
 export interface accounts_creatorsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CreatorProperties | undefined;
-	readonly tags?: CreatorCreateParametersTags | undefined;
+	readonly properties?: CreatorProperties;
+	readonly tags?: CreatorCreateParametersTags;
 }
 export class accounts_privateAtlases
 	extends ArmResource<accounts_privateAtlasesComponentInputs>
@@ -62,8 +62,8 @@ export interface accounts_privateAtlasesComponentOutputs {
 export interface accounts_privateAtlasesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: PrivateAtlasProperties | undefined;
-	readonly tags?: PrivateAtlasCreateParametersTags | undefined;
+	readonly properties?: PrivateAtlasProperties;
+	readonly tags?: PrivateAtlasCreateParametersTags;
 }
 export function listKeys(resource: accounts): MapsAccountKeys {
 	if (resource.apiVersion !== "2020-02-01-preview") {
@@ -75,39 +75,39 @@ export function listKeys(resource: accounts): MapsAccountKeys {
 	throw new Error("not implemented");
 }
 export interface CreatorCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CreatorProperties {
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface MapsAccountCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface MapsAccountKeys {
-	readonly id?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly id?: string;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface MapsAccountProperties {
-	readonly "x-ms-client-id"?: string | undefined;
+	readonly "x-ms-client-id"?: string;
 }
 export interface PrivateAtlasCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PrivateAtlasProperties {
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface Sku {
 	readonly name: string;
-	readonly tier?: string | undefined;
+	readonly tier?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	accounts: accounts,

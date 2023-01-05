@@ -19,8 +19,8 @@ export interface storageAccountsComponentOutputs {
 export interface storageAccountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StorageAccountPropertiesCreateParametersOrStorageAccountProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: StorageAccountPropertiesCreateParametersOrStorageAccountProperties;
+	readonly tags?: ResourceTags;
 }
 export function listKeys(resource: storageAccounts): StorageAccountKeys {
 	if (resource.apiVersion !== "2015-05-01-preview") {
@@ -32,33 +32,33 @@ export function listKeys(resource: storageAccounts): StorageAccountKeys {
 	throw new Error("not implemented");
 }
 export interface CustomDomain {
-	readonly name?: string | undefined;
-	readonly useSubDomainName?: boolean | undefined;
+	readonly name?: string;
+	readonly useSubDomainName?: boolean;
 }
 export interface Endpoints {
-	readonly blob?: string | undefined;
-	readonly queue?: string | undefined;
-	readonly table?: string | undefined;
+	readonly blob?: string;
+	readonly queue?: string;
+	readonly table?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StorageAccountKeys {
-	readonly key1?: string | undefined;
-	readonly key2?: string | undefined;
+	readonly key1?: string;
+	readonly key2?: string;
 }
 export interface StorageAccountPropertiesCreateParametersOrStorageAccountProperties {
-	readonly accountType?: ("Premium_LRS" | "Standard_GRS" | "Standard_LRS" | "Standard_RAGRS") | undefined;
-	readonly creationTime?: string | undefined;
-	readonly customDomain?: CustomDomain | undefined;
-	readonly lastGeoFailoverTime?: string | undefined;
-	readonly primaryEndpoints?: Endpoints | undefined;
-	readonly primaryLocation?: string | undefined;
-	readonly provisioningState?: ("Creating" | "ResolvingDNS") | undefined;
-	readonly secondaryEndpoints?: Endpoints | undefined;
-	readonly secondaryLocation?: string | undefined;
-	readonly statusOfPrimary?: "Available" | undefined;
-	readonly statusOfSecondary?: "Available" | undefined;
+	readonly accountType?: "Premium_LRS" | "Standard_GRS" | "Standard_LRS" | "Standard_RAGRS";
+	readonly creationTime?: string;
+	readonly customDomain?: CustomDomain;
+	readonly lastGeoFailoverTime?: string;
+	readonly primaryEndpoints?: Endpoints;
+	readonly primaryLocation?: string;
+	readonly provisioningState?: "Creating" | "ResolvingDNS";
+	readonly secondaryEndpoints?: Endpoints;
+	readonly secondaryLocation?: string;
+	readonly statusOfPrimary?: "Available";
+	readonly statusOfSecondary?: "Available";
 }
 export default {
 	storageAccounts: storageAccounts,

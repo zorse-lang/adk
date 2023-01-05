@@ -18,8 +18,8 @@ export interface agreements_offers_plansComponentOutputs {
 }
 export interface agreements_offers_plansComponentInputs {
 	readonly name: string;
-	readonly properties?: AgreementProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AgreementProperties;
+	readonly systemData?: SystemData;
 }
 export class offerTypes_publishers_offers_plans_agreements
 	extends ArmResource<offerTypes_publishers_offers_plans_agreementsComponentInputs>
@@ -45,27 +45,27 @@ export interface offerTypes_publishers_offers_plans_agreementsComponentOutputs {
 }
 export interface offerTypes_publishers_offers_plans_agreementsComponentInputs {
 	readonly name: string;
-	readonly properties?: AgreementProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AgreementProperties;
+	readonly systemData?: SystemData;
 }
 export interface AgreementProperties {
-	readonly accepted?: boolean | undefined;
-	readonly licenseTextLink?: string | undefined;
-	readonly marketplaceTermsLink?: string | undefined;
-	readonly plan?: string | undefined;
-	readonly privacyPolicyLink?: string | undefined;
-	readonly product?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly retrieveDatetime?: string | undefined;
-	readonly signature?: string | undefined;
+	readonly accepted?: boolean;
+	readonly licenseTextLink?: string;
+	readonly marketplaceTermsLink?: string;
+	readonly plan?: string;
+	readonly privacyPolicyLink?: string;
+	readonly product?: string;
+	readonly publisher?: string;
+	readonly retrieveDatetime?: string;
+	readonly signature?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	"agreements/offers/plans": agreements_offers_plans,

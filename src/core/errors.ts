@@ -30,6 +30,8 @@ function no<errT extends Exception, condT = boolean>(
 /** tiny assertion helper */
 export const assert = { true: ok, false: no };
 export namespace errors {
+	/** Thrown when something is not implemented yet */
+	export class NotSupportedYet extends Exception {}
 	/** Thrown when Token names are invalid */
 	export class InvalidTokenName extends Exception {}
 	/** Thrown when a Component points to itself through Token chains */

@@ -19,8 +19,8 @@ export interface storageSyncServicesComponentOutputs {
 export interface storageSyncServicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StorageSyncServiceCreateParametersPropertiesOrStorageSyncServiceProperties | undefined;
-	readonly tags?: StorageSyncServiceCreateParametersTags | undefined;
+	readonly properties?: StorageSyncServiceCreateParametersPropertiesOrStorageSyncServiceProperties;
+	readonly tags?: StorageSyncServiceCreateParametersTags;
 }
 export class storageSyncServices_privateEndpointConnections
 	extends ArmResource<storageSyncServices_privateEndpointConnectionsComponentInputs>
@@ -46,7 +46,7 @@ export interface storageSyncServices_privateEndpointConnectionsComponentOutputs 
 }
 export interface storageSyncServices_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class storageSyncServices_registeredServers
 	extends ArmResource<storageSyncServices_registeredServersComponentInputs>
@@ -66,7 +66,7 @@ export interface storageSyncServices_registeredServersComponentOutputs {
 }
 export interface storageSyncServices_registeredServersComponentInputs {
 	readonly name: string;
-	readonly properties?: RegisteredServerCreateParametersPropertiesOrRegisteredServerProperties | undefined;
+	readonly properties?: RegisteredServerCreateParametersPropertiesOrRegisteredServerProperties;
 }
 export class storageSyncServices_syncGroups
 	extends ArmResource<storageSyncServices_syncGroupsComponentInputs>
@@ -86,7 +86,7 @@ export interface storageSyncServices_syncGroupsComponentOutputs {
 }
 export interface storageSyncServices_syncGroupsComponentInputs {
 	readonly name: string;
-	readonly properties?: any | undefined;
+	readonly properties?: any;
 }
 export class storageSyncServices_syncGroups_cloudEndpoints
 	extends ArmResource<storageSyncServices_syncGroups_cloudEndpointsComponentInputs>
@@ -112,7 +112,7 @@ export interface storageSyncServices_syncGroups_cloudEndpointsComponentOutputs {
 }
 export interface storageSyncServices_syncGroups_cloudEndpointsComponentInputs {
 	readonly name: string;
-	readonly properties?: CloudEndpointCreateParametersPropertiesOrCloudEndpointProperties | undefined;
+	readonly properties?: CloudEndpointCreateParametersPropertiesOrCloudEndpointProperties;
 }
 export class storageSyncServices_syncGroups_serverEndpoints
 	extends ArmResource<storageSyncServices_syncGroups_serverEndpointsComponentInputs>
@@ -138,7 +138,7 @@ export interface storageSyncServices_syncGroups_serverEndpointsComponentOutputs 
 }
 export interface storageSyncServices_syncGroups_serverEndpointsComponentInputs {
 	readonly name: string;
-	readonly properties?: ServerEndpointCreateParametersPropertiesOrServerEndpointProperties | undefined;
+	readonly properties?: ServerEndpointCreateParametersPropertiesOrServerEndpointProperties;
 }
 export class storageSyncServices_workflows
 	extends ArmResource<storageSyncServices_workflowsComponentInputs>
@@ -158,200 +158,205 @@ export interface storageSyncServices_workflowsComponentOutputs {
 }
 export interface storageSyncServices_workflowsComponentInputs {
 	readonly name: string;
-	readonly properties?: WorkflowProperties | undefined;
+	readonly properties?: WorkflowProperties;
 }
 export interface CloudEndpointCreateParametersPropertiesOrCloudEndpointProperties {
-	readonly azureFileShareName?: string | undefined;
-	readonly backupEnabled?: string | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly lastOperationName?: string | undefined;
-	readonly lastWorkflowId?: string | undefined;
-	readonly partnershipId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly storageAccountResourceId?: string | undefined;
-	readonly storageAccountTenantId?: string | undefined;
+	readonly azureFileShareName?: string;
+	readonly backupEnabled?: string;
+	readonly friendlyName?: string;
+	readonly lastOperationName?: string;
+	readonly lastWorkflowId?: string;
+	readonly partnershipId?: string;
+	readonly provisioningState?: string;
+	readonly storageAccountResourceId?: string;
+	readonly storageAccountTenantId?: string;
 }
 export interface CloudTieringCachePerformance {
-	readonly cacheHitBytes?: number | undefined;
-	readonly cacheHitBytesPercent?: number | undefined;
-	readonly cacheMissBytes?: number | undefined;
-	readonly lastUpdatedTimestamp?: string | undefined;
+	readonly cacheHitBytes?: number;
+	readonly cacheHitBytesPercent?: number;
+	readonly cacheMissBytes?: number;
+	readonly lastUpdatedTimestamp?: string;
 }
 export interface CloudTieringDatePolicyStatus {
-	readonly lastUpdatedTimestamp?: string | undefined;
-	readonly tieredFilesMostRecentAccessTimestamp?: string | undefined;
+	readonly lastUpdatedTimestamp?: string;
+	readonly tieredFilesMostRecentAccessTimestamp?: string;
 }
 export interface CloudTieringFilesNotTiering {
-	readonly errors?: FilesNotTieringError[] | undefined;
-	readonly lastUpdatedTimestamp?: string | undefined;
-	readonly totalFileCount?: number | undefined;
+	readonly errors?: FilesNotTieringError[];
+	readonly lastUpdatedTimestamp?: string;
+	readonly totalFileCount?: number;
 }
 export interface CloudTieringSpaceSavings {
-	readonly cachedSizeBytes?: number | undefined;
-	readonly lastUpdatedTimestamp?: string | undefined;
-	readonly spaceSavingsBytes?: number | undefined;
-	readonly spaceSavingsPercent?: number | undefined;
-	readonly totalSizeCloudBytes?: number | undefined;
-	readonly volumeSizeBytes?: number | undefined;
+	readonly cachedSizeBytes?: number;
+	readonly lastUpdatedTimestamp?: string;
+	readonly spaceSavingsBytes?: number;
+	readonly spaceSavingsPercent?: number;
+	readonly totalSizeCloudBytes?: number;
+	readonly volumeSizeBytes?: number;
 }
 export interface CloudTieringVolumeFreeSpacePolicyStatus {
-	readonly currentVolumeFreeSpacePercent?: number | undefined;
-	readonly effectiveVolumeFreeSpacePolicy?: number | undefined;
-	readonly lastUpdatedTimestamp?: string | undefined;
+	readonly currentVolumeFreeSpacePercent?: number;
+	readonly effectiveVolumeFreeSpacePolicy?: number;
+	readonly lastUpdatedTimestamp?: string;
 }
 export interface FilesNotTieringError {
-	readonly errorCode?: number | undefined;
-	readonly fileCount?: number | undefined;
+	readonly errorCode?: number;
+	readonly fileCount?: number;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface RegisteredServerCreateParametersPropertiesOrRegisteredServerProperties {
-	readonly agentVersion?: string | undefined;
-	readonly agentVersionExpirationDate?: string | undefined;
-	readonly agentVersionStatus?: ("Blocked" | "Expired" | "NearExpiry" | "Ok") | undefined;
-	readonly clusterId?: string | undefined;
-	readonly clusterName?: string | undefined;
-	readonly discoveryEndpointUri?: string | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly lastHeartBeat?: string | undefined;
-	readonly lastOperationName?: string | undefined;
-	readonly lastWorkflowId?: string | undefined;
-	readonly managementEndpointUri?: string | undefined;
-	readonly monitoringConfiguration?: string | undefined;
-	readonly monitoringEndpointUri?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceLocation?: string | undefined;
-	readonly serverCertificate?: string | undefined;
-	readonly serverId?: string | undefined;
-	readonly serverManagementErrorCode?: number | undefined;
-	readonly serverOSVersion?: string | undefined;
-	readonly serverRole?: string | undefined;
-	readonly serviceLocation?: string | undefined;
-	readonly storageSyncServiceUid?: string | undefined;
+	readonly agentVersion?: string;
+	readonly agentVersionExpirationDate?: string;
+	readonly agentVersionStatus?: "Blocked" | "Expired" | "NearExpiry" | "Ok";
+	readonly clusterId?: string;
+	readonly clusterName?: string;
+	readonly discoveryEndpointUri?: string;
+	readonly friendlyName?: string;
+	readonly lastHeartBeat?: string;
+	readonly lastOperationName?: string;
+	readonly lastWorkflowId?: string;
+	readonly managementEndpointUri?: string;
+	readonly monitoringConfiguration?: string;
+	readonly monitoringEndpointUri?: string;
+	readonly provisioningState?: string;
+	readonly resourceLocation?: string;
+	readonly serverCertificate?: string;
+	readonly serverId?: string;
+	readonly serverManagementErrorCode?: number;
+	readonly serverOSVersion?: string;
+	readonly serverRole?: string;
+	readonly serviceLocation?: string;
+	readonly storageSyncServiceUid?: string;
 }
 export interface ServerEndpointCloudTieringStatus {
-	readonly cachePerformance?: CloudTieringCachePerformance | undefined;
-	readonly datePolicyStatus?: CloudTieringDatePolicyStatus | undefined;
-	readonly filesNotTiering?: CloudTieringFilesNotTiering | undefined;
-	readonly health?: ("Error" | "Healthy") | undefined;
-	readonly healthLastUpdatedTimestamp?: string | undefined;
-	readonly lastCloudTieringResult?: number | undefined;
-	readonly lastSuccessTimestamp?: string | undefined;
-	readonly lastUpdatedTimestamp?: string | undefined;
-	readonly spaceSavings?: CloudTieringSpaceSavings | undefined;
-	readonly volumeFreeSpacePolicyStatus?: CloudTieringVolumeFreeSpacePolicyStatus | undefined;
+	readonly cachePerformance?: CloudTieringCachePerformance;
+	readonly datePolicyStatus?: CloudTieringDatePolicyStatus;
+	readonly filesNotTiering?: CloudTieringFilesNotTiering;
+	readonly health?: "Error" | "Healthy";
+	readonly healthLastUpdatedTimestamp?: string;
+	readonly lastCloudTieringResult?: number;
+	readonly lastSuccessTimestamp?: string;
+	readonly lastUpdatedTimestamp?: string;
+	readonly spaceSavings?: CloudTieringSpaceSavings;
+	readonly volumeFreeSpacePolicyStatus?: CloudTieringVolumeFreeSpacePolicyStatus;
 }
 export interface ServerEndpointCreateParametersPropertiesOrServerEndpointProperties {
-	readonly cloudTiering?: ("off" | "on") | undefined;
-	readonly cloudTieringStatus?: ServerEndpointCloudTieringStatus | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly initialDownloadPolicy?: ("AvoidTieredFiles" | "NamespaceOnly" | "NamespaceThenModifiedFiles") | undefined;
-	readonly lastOperationName?: string | undefined;
-	readonly lastWorkflowId?: string | undefined;
-	readonly localCacheMode?: ("DownloadNewAndModifiedFiles" | "UpdateLocallyCachedFiles") | undefined;
-	readonly offlineDataTransfer?: ("off" | "on") | undefined;
-	readonly offlineDataTransferShareName?: string | undefined;
-	readonly offlineDataTransferStorageAccountResourceId?: string | undefined;
-	readonly offlineDataTransferStorageAccountTenantId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly recallStatus?: ServerEndpointRecallStatus | undefined;
-	readonly serverLocalPath?: string | undefined;
-	readonly serverResourceId?: string | undefined;
-	readonly syncStatus?: ServerEndpointSyncStatus | undefined;
-	readonly tierFilesOlderThanDays?: number | undefined;
-	readonly volumeFreeSpacePercent?: number | undefined;
+	readonly cloudTiering?: "off" | "on";
+	readonly cloudTieringStatus?: ServerEndpointCloudTieringStatus;
+	readonly friendlyName?: string;
+	readonly initialDownloadPolicy?: "AvoidTieredFiles" | "NamespaceOnly" | "NamespaceThenModifiedFiles";
+	readonly lastOperationName?: string;
+	readonly lastWorkflowId?: string;
+	readonly localCacheMode?: "DownloadNewAndModifiedFiles" | "UpdateLocallyCachedFiles";
+	readonly offlineDataTransfer?: "off" | "on";
+	readonly offlineDataTransferShareName?: string;
+	readonly offlineDataTransferStorageAccountResourceId?: string;
+	readonly offlineDataTransferStorageAccountTenantId?: string;
+	readonly provisioningState?: string;
+	readonly recallStatus?: ServerEndpointRecallStatus;
+	readonly serverLocalPath?: string;
+	readonly serverResourceId?: string;
+	readonly syncStatus?: ServerEndpointSyncStatus;
+	readonly tierFilesOlderThanDays?: number;
+	readonly volumeFreeSpacePercent?: number;
 }
 export interface ServerEndpointFilesNotSyncingError {
-	readonly errorCode?: number | undefined;
-	readonly persistentCount?: number | undefined;
-	readonly transientCount?: number | undefined;
+	readonly errorCode?: number;
+	readonly persistentCount?: number;
+	readonly transientCount?: number;
 }
 export interface ServerEndpointRecallError {
-	readonly count?: number | undefined;
-	readonly errorCode?: number | undefined;
+	readonly count?: number;
+	readonly errorCode?: number;
 }
 export interface ServerEndpointRecallStatus {
-	readonly lastUpdatedTimestamp?: string | undefined;
-	readonly recallErrors?: ServerEndpointRecallError[] | undefined;
-	readonly totalRecallErrorsCount?: number | undefined;
+	readonly lastUpdatedTimestamp?: string;
+	readonly recallErrors?: ServerEndpointRecallError[];
+	readonly totalRecallErrorsCount?: number;
 }
 export interface ServerEndpointSyncActivityStatus {
-	readonly appliedBytes?: number | undefined;
-	readonly appliedItemCount?: number | undefined;
-	readonly perItemErrorCount?: number | undefined;
-	readonly syncMode?:
-		| ("InitialFullDownload" | "InitialUpload" | "NamespaceDownload" | "Regular" | "SnapshotUpload")
-		| undefined;
-	readonly timestamp?: string | undefined;
-	readonly totalBytes?: number | undefined;
-	readonly totalItemCount?: number | undefined;
+	readonly appliedBytes?: number;
+	readonly appliedItemCount?: number;
+	readonly perItemErrorCount?: number;
+	readonly syncMode?: "InitialFullDownload" | "InitialUpload" | "NamespaceDownload" | "Regular" | "SnapshotUpload";
+	readonly timestamp?: string;
+	readonly totalBytes?: number;
+	readonly totalItemCount?: number;
 }
 export interface ServerEndpointSyncSessionStatus {
-	readonly filesNotSyncingErrors?: ServerEndpointFilesNotSyncingError[] | undefined;
-	readonly lastSyncMode?:
-		| ("InitialFullDownload" | "InitialUpload" | "NamespaceDownload" | "Regular" | "SnapshotUpload")
-		| undefined;
-	readonly lastSyncPerItemErrorCount?: number | undefined;
-	readonly lastSyncResult?: number | undefined;
-	readonly lastSyncSuccessTimestamp?: string | undefined;
-	readonly lastSyncTimestamp?: string | undefined;
-	readonly persistentFilesNotSyncingCount?: number | undefined;
-	readonly transientFilesNotSyncingCount?: number | undefined;
+	readonly filesNotSyncingErrors?: ServerEndpointFilesNotSyncingError[];
+	readonly lastSyncMode?: "InitialFullDownload" | "InitialUpload" | "NamespaceDownload" | "Regular" | "SnapshotUpload";
+	readonly lastSyncPerItemErrorCount?: number;
+	readonly lastSyncResult?: number;
+	readonly lastSyncSuccessTimestamp?: string;
+	readonly lastSyncTimestamp?: string;
+	readonly persistentFilesNotSyncingCount?: number;
+	readonly transientFilesNotSyncingCount?: number;
 }
 export interface ServerEndpointSyncStatus {
 	readonly combinedHealth?:
-		| ("Error" | "Healthy" | "NoActivity" | "SyncBlockedForChangeDetectionPostRestore" | "SyncBlockedForRestore")
-		| undefined;
-	readonly downloadActivity?: ServerEndpointSyncActivityStatus | undefined;
+		| "Error"
+		| "Healthy"
+		| "NoActivity"
+		| "SyncBlockedForChangeDetectionPostRestore"
+		| "SyncBlockedForRestore";
+	readonly downloadActivity?: ServerEndpointSyncActivityStatus;
 	readonly downloadHealth?:
-		| ("Error" | "Healthy" | "NoActivity" | "SyncBlockedForChangeDetectionPostRestore" | "SyncBlockedForRestore")
-		| undefined;
-	readonly downloadStatus?: ServerEndpointSyncSessionStatus | undefined;
-	readonly lastUpdatedTimestamp?: string | undefined;
-	readonly offlineDataTransferStatus?: ("Complete" | "InProgress" | "NotRunning" | "Stopping") | undefined;
-	readonly syncActivity?: ("Download" | "Upload" | "UploadAndDownload") | undefined;
-	readonly totalPersistentFilesNotSyncingCount?: number | undefined;
-	readonly uploadActivity?: ServerEndpointSyncActivityStatus | undefined;
+		| "Error"
+		| "Healthy"
+		| "NoActivity"
+		| "SyncBlockedForChangeDetectionPostRestore"
+		| "SyncBlockedForRestore";
+	readonly downloadStatus?: ServerEndpointSyncSessionStatus;
+	readonly lastUpdatedTimestamp?: string;
+	readonly offlineDataTransferStatus?: "Complete" | "InProgress" | "NotRunning" | "Stopping";
+	readonly syncActivity?: "Download" | "Upload" | "UploadAndDownload";
+	readonly totalPersistentFilesNotSyncingCount?: number;
+	readonly uploadActivity?: ServerEndpointSyncActivityStatus;
 	readonly uploadHealth?:
-		| ("Error" | "Healthy" | "NoActivity" | "SyncBlockedForChangeDetectionPostRestore" | "SyncBlockedForRestore")
-		| undefined;
-	readonly uploadStatus?: ServerEndpointSyncSessionStatus | undefined;
+		| "Error"
+		| "Healthy"
+		| "NoActivity"
+		| "SyncBlockedForChangeDetectionPostRestore"
+		| "SyncBlockedForRestore";
+	readonly uploadStatus?: ServerEndpointSyncSessionStatus;
 }
 export interface StorageSyncServiceCreateParametersPropertiesOrStorageSyncServiceProperties {
-	readonly incomingTrafficPolicy?: ("AllowAllTraffic" | "AllowVirtualNetworksOnly") | undefined;
-	readonly lastOperationName?: string | undefined;
-	readonly lastWorkflowId?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly storageSyncServiceStatus?: number | undefined;
-	readonly storageSyncServiceUid?: string | undefined;
+	readonly incomingTrafficPolicy?: "AllowAllTraffic" | "AllowVirtualNetworksOnly";
+	readonly lastOperationName?: string;
+	readonly lastWorkflowId?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: string;
+	readonly storageSyncServiceStatus?: number;
+	readonly storageSyncServiceUid?: string;
 }
 export interface StorageSyncServiceCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WorkflowProperties {
-	readonly lastOperationId?: string | undefined;
-	readonly lastStepName?: string | undefined;
-	readonly operation?: ("cancel" | "do" | "undo") | undefined;
-	readonly status?: ("aborted" | "active" | "expired" | "failed" | "succeeded") | undefined;
-	readonly steps?: string | undefined;
+	readonly lastOperationId?: string;
+	readonly lastStepName?: string;
+	readonly operation?: "cancel" | "do" | "undo";
+	readonly status?: "aborted" | "active" | "expired" | "failed" | "succeeded";
+	readonly steps?: string;
 }
 export default {
 	storageSyncServices: storageSyncServices,

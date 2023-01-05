@@ -15,7 +15,7 @@ export interface remediationsComponentOutputs {
 }
 export interface remediationsComponentInputs {
 	readonly name: string;
-	readonly properties?: RemediationProperties | undefined;
+	readonly properties?: RemediationProperties;
 }
 export function listDeployments(resource: remediations): RemediationDeploymentsListResult {
 	if (resource.apiVersion !== "2018-07-01-preview") {
@@ -27,45 +27,45 @@ export function listDeployments(resource: remediations): RemediationDeploymentsL
 	throw new Error("not implemented");
 }
 export interface ErrorDefinition {
-	readonly additionalInfo?: TypedErrorInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ErrorDefinition[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: TypedErrorInfo[];
+	readonly code?: string;
+	readonly details?: ErrorDefinition[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface RemediationDeployment {
-	readonly createdOn?: string | undefined;
-	readonly deploymentId?: string | undefined;
-	readonly error?: ErrorDefinition | undefined;
-	readonly lastUpdatedOn?: string | undefined;
-	readonly remediatedResourceId?: string | undefined;
-	readonly resourceLocation?: string | undefined;
-	readonly status?: string | undefined;
+	readonly createdOn?: string;
+	readonly deploymentId?: string;
+	readonly error?: ErrorDefinition;
+	readonly lastUpdatedOn?: string;
+	readonly remediatedResourceId?: string;
+	readonly resourceLocation?: string;
+	readonly status?: string;
 }
 export interface RemediationDeploymentsListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: RemediationDeployment[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: RemediationDeployment[];
 }
 export interface RemediationDeploymentSummary {
-	readonly failedDeployments?: number | undefined;
-	readonly successfulDeployments?: number | undefined;
-	readonly totalDeployments?: number | undefined;
+	readonly failedDeployments?: number;
+	readonly successfulDeployments?: number;
+	readonly totalDeployments?: number;
 }
 export interface RemediationFilters {
-	readonly locations?: string[] | undefined;
+	readonly locations?: string[];
 }
 export interface RemediationProperties {
-	readonly createdOn?: string | undefined;
-	readonly deploymentStatus?: RemediationDeploymentSummary | undefined;
-	readonly filters?: RemediationFilters | undefined;
-	readonly lastUpdatedOn?: string | undefined;
-	readonly policyAssignmentId?: string | undefined;
-	readonly policyDefinitionReferenceId?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly createdOn?: string;
+	readonly deploymentStatus?: RemediationDeploymentSummary;
+	readonly filters?: RemediationFilters;
+	readonly lastUpdatedOn?: string;
+	readonly policyAssignmentId?: string;
+	readonly policyDefinitionReferenceId?: string;
+	readonly provisioningState?: string;
 }
 export interface TypedErrorInfo {
-	readonly info?: any | undefined;
-	readonly type?: string | undefined;
+	readonly info?: any;
+	readonly type?: string;
 }
 export default {
 	remediations: remediations,

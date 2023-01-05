@@ -157,15 +157,7 @@ App.prototype.processApi = async function (destinationDirectory: string, restDes
 			if (propertiesProperty) properties.splice(properties.indexOf(propertiesProperty), 1);
 			const typeProperty = properties.find((p) => ["type"].includes(p.name));
 			if (typeProperty) {
-				typeProperty.required = true;
-				typeProperty.kind = PropertyKind.Input;
-			} else {
-				properties.push({
-					name: "type",
-					type: "string",
-					required: true,
-					kind: PropertyKind.Input,
-				});
+				properties.splice(properties.indexOf(typeProperty), 1);
 			}
 			const nameProperty = properties.find((p) => ["name"].includes(p.name));
 			if (nameProperty) {

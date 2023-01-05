@@ -4,23 +4,22 @@ export class AccessPolicies extends GdmResource<AccessPoliciesComponentInputs> i
 	constructor(entity: ADKEntity, options: AccessPoliciesComponentInputs) {
 		super(entity, options.name, "accesscontextmanager.v1.AccessPolicies", options);
 	}
-	public readonly etag?: string | undefined;
+	public readonly etag?: string;
 }
 export interface AccessPoliciesComponentOutputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 }
 export interface AccessPoliciesComponentInputs {
 	readonly name: string;
 	readonly parent: string;
-	readonly scopes?: string[] | undefined;
+	readonly scopes?: string[];
 	readonly title: string;
-	readonly type: string;
 }
 export interface AccessPolicy {
-	readonly etag?: string | undefined;
-	readonly name?: string | undefined;
+	readonly etag?: string;
+	readonly name?: string;
 	readonly parent: string;
-	readonly scopes?: string[] | undefined;
+	readonly scopes?: string[];
 	readonly title: string;
 }
 export default {

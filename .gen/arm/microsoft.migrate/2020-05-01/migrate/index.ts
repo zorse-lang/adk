@@ -17,11 +17,11 @@ export interface migrateProjectsComponentOutputs {
 	readonly type: "Microsoft.Migrate/migrateProjects";
 }
 export interface migrateProjectsComponentInputs {
-	readonly eTag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly eTag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: MigrateProjectProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: MigrateProjectProperties;
+	readonly systemData?: SystemData;
 }
 export class migrateProjects_privateEndpointConnections
 	extends ArmResource<migrateProjects_privateEndpointConnectionsComponentInputs>
@@ -40,92 +40,89 @@ export interface migrateProjects_privateEndpointConnectionsComponentOutputs {
 	readonly type: "Microsoft.Migrate/migrateProjects/privateEndpointConnections";
 }
 export interface migrateProjects_privateEndpointConnectionsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: ConnectionStateRequestBodyPropertiesOrPrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConnectionStateRequestBodyPropertiesOrPrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export interface ConnectionStateRequestBodyPropertiesOrPrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: ResourceId | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Accepted" | "Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly privateEndpoint?: ResourceId;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Accepted" | "Failed" | "InProgress" | "Succeeded";
 }
 export interface MigrateProjectProperties {
-	readonly lastSummaryRefreshedTime?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled" | "NotSpecified") | undefined;
-	readonly refreshSummaryState?: ("Completed" | "Failed" | "InProgress" | "Started") | undefined;
+	readonly lastSummaryRefreshedTime?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly publicNetworkAccess?: "Disabled" | "Enabled" | "NotSpecified";
+	readonly refreshSummaryState?: "Completed" | "Failed" | "InProgress" | "Started";
 	readonly registeredTools?:
-		| (
-				| "AppServiceMigrationAssistant"
-				| "Carbonite"
-				| "CloudSphere"
-				| "Cloudamize"
-				| "CorentTech"
-				| "DataMigrationAssistant"
-				| "DatabaseMigrationService"
-				| "Device42"
-				| "Flexera"
-				| "JetStream"
-				| "Lakeside"
-				| "Movere"
-				| "RackWare"
-				| "ServerAssessment"
-				| "ServerAssessmentV1"
-				| "ServerDiscovery"
-				| "ServerDiscovery_Import"
-				| "ServerMigration"
-				| "ServerMigration_Replication"
-				| "Turbonomic"
-				| "UnifyCloud"
-				| "Unknown"
-				| "Zerto"[]
-		  )
-		| undefined;
-	readonly serviceEndpoint?: string | undefined;
-	readonly summary?: MigrateProjectPropertiesSummary | undefined;
-	readonly utilityStorageAccountId?: string | undefined;
+		| "AppServiceMigrationAssistant"
+		| "Carbonite"
+		| "CloudSphere"
+		| "Cloudamize"
+		| "CorentTech"
+		| "DataMigrationAssistant"
+		| "DatabaseMigrationService"
+		| "Device42"
+		| "Flexera"
+		| "JetStream"
+		| "Lakeside"
+		| "Movere"
+		| "RackWare"
+		| "ServerAssessment"
+		| "ServerAssessmentV1"
+		| "ServerDiscovery"
+		| "ServerDiscovery_Import"
+		| "ServerMigration"
+		| "ServerMigration_Replication"
+		| "Turbonomic"
+		| "UnifyCloud"
+		| "Unknown"
+		| "Zerto"[];
+	readonly serviceEndpoint?: string;
+	readonly summary?: MigrateProjectPropertiesSummary;
+	readonly utilityStorageAccountId?: string;
 }
 export interface MigrateProjectPropertiesSummary {
-	readonly "[ key: string ]"?: ProjectSummary | undefined;
+	readonly [key: string]: ProjectSummary;
 }
 export interface PrivateEndpointConnection {
-	readonly eTag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly type?: string | undefined;
+	readonly eTag?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: ResourceId | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
-	readonly provisioningState?: ("Accepted" | "Failed" | "InProgress" | "Succeeded") | undefined;
+	readonly privateEndpoint?: ResourceId;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
+	readonly provisioningState?: "Accepted" | "Failed" | "InProgress" | "Succeeded";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface ProjectSummary {
-	readonly extendedSummary?: ProjectSummaryExtendedSummary | undefined;
-	readonly instanceType?: string | undefined;
-	readonly lastSummaryRefreshedTime?: string | undefined;
-	readonly refreshSummaryState?: ("Completed" | "Failed" | "InProgress" | "Started") | undefined;
+	readonly extendedSummary?: ProjectSummaryExtendedSummary;
+	readonly instanceType?: string;
+	readonly lastSummaryRefreshedTime?: string;
+	readonly refreshSummaryState?: "Completed" | "Failed" | "InProgress" | "Started";
 }
 export interface ProjectSummaryExtendedSummary {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResourceId {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	migrateProjects: migrateProjects,

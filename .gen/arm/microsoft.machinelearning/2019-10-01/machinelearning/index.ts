@@ -16,9 +16,9 @@ export interface workspacesComponentOutputs {
 export interface workspacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WorkspaceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkspaceProperties;
+	readonly sku?: Sku;
+	readonly tags?: ResourceTags;
 }
 export function listWorkspaceKeys(resource: workspaces): WorkspaceKeysResponse {
 	if (resource.apiVersion !== "2019-10-01") {
@@ -30,27 +30,25 @@ export function listWorkspaceKeys(resource: workspaces): WorkspaceKeysResponse {
 	throw new Error("not implemented");
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
-	readonly name?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly name?: string;
+	readonly tier?: string;
 }
 export interface WorkspaceKeysResponse {
-	readonly primaryToken?: string | undefined;
-	readonly secondaryToken?: string | undefined;
+	readonly primaryToken?: string;
+	readonly secondaryToken?: string;
 }
 export interface WorkspaceProperties {
-	readonly creationTime?: string | undefined;
-	readonly keyVaultIdentifierId?: string | undefined;
+	readonly creationTime?: string;
+	readonly keyVaultIdentifierId?: string;
 	readonly ownerEmail: string;
-	readonly studioEndpoint?: string | undefined;
+	readonly studioEndpoint?: string;
 	readonly userStorageAccountId: string;
-	readonly workspaceId?: string | undefined;
-	readonly workspaceState?:
-		| ("Deleted" | "Disabled" | "Enabled" | "Migrated" | "Registered" | "Unregistered")
-		| undefined;
-	readonly workspaceType?: ("Anonymous" | "Free" | "PaidPremium" | "PaidStandard") | undefined;
+	readonly workspaceId?: string;
+	readonly workspaceState?: "Deleted" | "Disabled" | "Enabled" | "Migrated" | "Registered" | "Unregistered";
+	readonly workspaceType?: "Anonymous" | "Free" | "PaidPremium" | "PaidStandard";
 }
 export default {
 	workspaces: workspaces,

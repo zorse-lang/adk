@@ -40,7 +40,7 @@ export interface ClusterAddonsComponentOutputs {}
 export interface ClusterAddonsComponentInputs {
 	readonly Addons: Addons[];
 	readonly ClusterId: any | string;
-	readonly InstalledIgnore?: (boolean | undefined) | undefined;
+	readonly InstalledIgnore?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class ClusterApplication
@@ -55,7 +55,7 @@ export interface ClusterApplicationComponentOutputs {}
 export interface ClusterApplicationComponentInputs {
 	readonly ClusterId: any | string;
 	readonly YamlContent: string;
-	readonly DefaultNamespace?: (string | undefined) | undefined;
+	readonly DefaultNamespace?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ClusterHelmApplication
@@ -71,8 +71,8 @@ export interface ClusterHelmApplicationComponentInputs {
 	readonly ChartUrl: string;
 	readonly ClusterId: any | string;
 	readonly Name: string;
-	readonly ChartValues?: ({ [key: string]: any } | undefined) | undefined;
-	readonly Namespace?: (string | undefined) | undefined;
+	readonly ChartValues?: { [key: string]: any } | undefined;
+	readonly Namespace?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ClusterNodePool
@@ -90,12 +90,12 @@ export interface ClusterNodePoolComponentOutputs {
 export interface ClusterNodePoolComponentInputs {
 	readonly ClusterId: string;
 	readonly ScalingGroup: ScalingGroup;
-	readonly AutoScaling?: (AutoScaling | undefined) | undefined;
-	readonly Count?: (number | undefined) | undefined;
-	readonly KubernetesConfig?: (KubernetesConfig | undefined) | undefined;
-	readonly Management?: (Management | undefined) | undefined;
-	readonly NodePoolInfo?: (NodePoolInfo | undefined) | undefined;
-	readonly TeeConfig?: (TeeConfig | undefined) | undefined;
+	readonly AutoScaling?: AutoScaling | undefined;
+	readonly Count?: number | undefined;
+	readonly KubernetesConfig?: KubernetesConfig | undefined;
+	readonly Management?: Management | undefined;
+	readonly NodePoolInfo?: NodePoolInfo | undefined;
+	readonly TeeConfig?: TeeConfig | undefined;
 	readonly LogicalId: string;
 }
 export class KubernetesCluster
@@ -134,63 +134,63 @@ export interface KubernetesClusterComponentInputs {
 	readonly Name: string;
 	readonly VpcId: string;
 	readonly WorkerVSwitchIds: any[];
-	readonly Addons?: (Addons[] | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly AutoRenewPeriod?: (number | undefined) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly CisEnabled?: (boolean | undefined) | undefined;
-	readonly CloudMonitorFlags?: (boolean | undefined) | undefined;
-	readonly ContainerCidr?: (string | undefined) | undefined;
-	readonly CpuPolicy?: (string | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly DisableRollback?: (boolean | undefined) | undefined;
-	readonly EndpointPublicAccess?: (boolean | undefined) | undefined;
-	readonly FormatDisk?: (boolean | undefined) | undefined;
-	readonly IsEnterpriseSecurityGroup?: (boolean | undefined) | undefined;
-	readonly KeepInstanceName?: (boolean | undefined) | undefined;
-	readonly KeyPair?: (string | undefined) | undefined;
-	readonly KubernetesVersion?: (string | undefined) | undefined;
-	readonly LoadBalancerSpec?: (string | undefined) | undefined;
-	readonly LoginPassword?: (string | undefined) | undefined;
-	readonly MasterCount?: (number | undefined) | undefined;
-	readonly MasterDataDisk?: (boolean | undefined) | undefined;
-	readonly MasterDataDisks?: (MasterDataDisks[] | undefined) | undefined;
-	readonly MasterSystemDiskCategory?: (string | undefined) | undefined;
-	readonly MasterSystemDiskPerformanceLevel?: (string | undefined) | undefined;
-	readonly MasterSystemDiskSize?: (number | undefined) | undefined;
-	readonly MasterSystemDiskSnapshotPolicyId?: (string | undefined) | undefined;
-	readonly MasterZoneIds?: (string[] | undefined) | undefined;
-	readonly NodeCidrMask?: (string | undefined) | undefined;
-	readonly NodeNameMode?: (string | undefined) | undefined;
-	readonly NodePools?: (NodePools[] | undefined) | undefined;
-	readonly NodePortRange?: (string | undefined) | undefined;
-	readonly NumOfNodes?: (number | undefined) | undefined;
-	readonly OsType?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly Platform?: (string | undefined) | undefined;
-	readonly PodVswitchIds?: (string[] | undefined) | undefined;
-	readonly ProxyMode?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Runtime?: (Runtime | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly ServiceCidr?: (string | undefined) | undefined;
-	readonly SnatEntry?: (boolean | undefined) | undefined;
-	readonly SocEnabled?: (boolean | undefined) | undefined;
-	readonly SshFlags?: (boolean | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly Taint?: any | undefined;
-	readonly TimeoutMins?: (number | undefined) | undefined;
-	readonly TimeZone?: (string | undefined) | undefined;
-	readonly UserCa?: (string | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
-	readonly WorkerDataDisk?: (boolean | undefined) | undefined;
-	readonly WorkerDataDisks?: (WorkerDataDisks[] | undefined) | undefined;
-	readonly WorkerInstanceTypes?: (string[] | undefined) | undefined;
-	readonly WorkerSystemDiskCategory?: (string | undefined) | undefined;
-	readonly WorkerSystemDiskSize?: (number | undefined) | undefined;
-	readonly WorkerSystemDiskSnapshotPolicyId?: (string | undefined) | undefined;
-	readonly WorkerZoneIds?: (string[] | undefined) | undefined;
+	readonly Addons?: Addons[] | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly AutoRenewPeriod?: number | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly CisEnabled?: boolean | undefined;
+	readonly CloudMonitorFlags?: boolean | undefined;
+	readonly ContainerCidr?: string | undefined;
+	readonly CpuPolicy?: string | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly DisableRollback?: boolean | undefined;
+	readonly EndpointPublicAccess?: boolean | undefined;
+	readonly FormatDisk?: boolean | undefined;
+	readonly IsEnterpriseSecurityGroup?: boolean | undefined;
+	readonly KeepInstanceName?: boolean | undefined;
+	readonly KeyPair?: string | undefined;
+	readonly KubernetesVersion?: string | undefined;
+	readonly LoadBalancerSpec?: string | undefined;
+	readonly LoginPassword?: string | undefined;
+	readonly MasterCount?: number | undefined;
+	readonly MasterDataDisk?: boolean | undefined;
+	readonly MasterDataDisks?: MasterDataDisks[] | undefined;
+	readonly MasterSystemDiskCategory?: string | undefined;
+	readonly MasterSystemDiskPerformanceLevel?: string | undefined;
+	readonly MasterSystemDiskSize?: number | undefined;
+	readonly MasterSystemDiskSnapshotPolicyId?: string | undefined;
+	readonly MasterZoneIds?: string[] | undefined;
+	readonly NodeCidrMask?: string | undefined;
+	readonly NodeNameMode?: string | undefined;
+	readonly NodePools?: NodePools[] | undefined;
+	readonly NodePortRange?: string | undefined;
+	readonly NumOfNodes?: number | undefined;
+	readonly OsType?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly Platform?: string | undefined;
+	readonly PodVswitchIds?: string[] | undefined;
+	readonly ProxyMode?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Runtime?: Runtime | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly ServiceCidr?: string | undefined;
+	readonly SnatEntry?: boolean | undefined;
+	readonly SocEnabled?: boolean | undefined;
+	readonly SshFlags?: boolean | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly Taint?: any;
+	readonly TimeoutMins?: number | undefined;
+	readonly TimeZone?: string | undefined;
+	readonly UserCa?: string | undefined;
+	readonly UserData?: string | undefined;
+	readonly WorkerDataDisk?: boolean | undefined;
+	readonly WorkerDataDisks?: WorkerDataDisks[] | undefined;
+	readonly WorkerInstanceTypes?: string[] | undefined;
+	readonly WorkerSystemDiskCategory?: string | undefined;
+	readonly WorkerSystemDiskSize?: number | undefined;
+	readonly WorkerSystemDiskSnapshotPolicyId?: string | undefined;
+	readonly WorkerZoneIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class ManagedEdgeKubernetesCluster
@@ -226,39 +226,39 @@ export interface ManagedEdgeKubernetesClusterComponentOutputs {
 export interface ManagedEdgeKubernetesClusterComponentInputs {
 	readonly Name: string;
 	readonly NumOfNodes: number;
-	readonly Addons?: (Addons[] | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly AutoRenewPeriod?: (number | undefined) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly CloudMonitorFlags?: (boolean | undefined) | undefined;
-	readonly ClusterSpec?: (string | undefined) | undefined;
-	readonly ContainerCidr?: (string | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly DisableRollback?: (boolean | undefined) | undefined;
-	readonly EndpointPublicAccess?: (boolean | undefined) | undefined;
-	readonly IsEnterpriseSecurityGroup?: (boolean | undefined) | undefined;
-	readonly KeyPair?: (string | undefined) | undefined;
-	readonly LoginPassword?: (string | undefined) | undefined;
-	readonly NodeCidrMask?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly Profile?: (string | undefined) | undefined;
-	readonly ProxyMode?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly ServiceCidr?: (string | undefined) | undefined;
-	readonly SnatEntry?: (boolean | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly TimeoutMins?: (number | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VSwitchIds?: (any[] | undefined) | undefined;
-	readonly WorkerDataDisk?: (boolean | undefined) | undefined;
-	readonly WorkerDataDiskCategory?: (string | undefined) | undefined;
-	readonly WorkerDataDisks?: (WorkerDataDisks[] | undefined) | undefined;
-	readonly WorkerDataDiskSize?: (number | undefined) | undefined;
-	readonly WorkerInstanceTypes?: (string[] | undefined) | undefined;
-	readonly WorkerSystemDiskCategory?: (string | undefined) | undefined;
-	readonly WorkerSystemDiskSize?: (number | undefined) | undefined;
-	readonly ZoneIds?: (string[] | undefined) | undefined;
+	readonly Addons?: Addons[] | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly AutoRenewPeriod?: number | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly CloudMonitorFlags?: boolean | undefined;
+	readonly ClusterSpec?: string | undefined;
+	readonly ContainerCidr?: string | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly DisableRollback?: boolean | undefined;
+	readonly EndpointPublicAccess?: boolean | undefined;
+	readonly IsEnterpriseSecurityGroup?: boolean | undefined;
+	readonly KeyPair?: string | undefined;
+	readonly LoginPassword?: string | undefined;
+	readonly NodeCidrMask?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly Profile?: string | undefined;
+	readonly ProxyMode?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly ServiceCidr?: string | undefined;
+	readonly SnatEntry?: boolean | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly TimeoutMins?: number | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VSwitchIds?: any[] | undefined;
+	readonly WorkerDataDisk?: boolean | undefined;
+	readonly WorkerDataDiskCategory?: string | undefined;
+	readonly WorkerDataDisks?: WorkerDataDisks[] | undefined;
+	readonly WorkerDataDiskSize?: number | undefined;
+	readonly WorkerInstanceTypes?: string[] | undefined;
+	readonly WorkerSystemDiskCategory?: string | undefined;
+	readonly WorkerSystemDiskSize?: number | undefined;
+	readonly ZoneIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class ManagedKubernetesCluster
@@ -295,51 +295,51 @@ export interface ManagedKubernetesClusterComponentInputs {
 	readonly Name: string;
 	readonly VpcId: string;
 	readonly VSwitchIds: any[];
-	readonly Addons?: (Addons[] | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly AutoRenewPeriod?: (number | undefined) | undefined;
-	readonly ChargeType?: (string | undefined) | undefined;
-	readonly CisEnabled?: (boolean | undefined) | undefined;
-	readonly CloudMonitorFlags?: (boolean | undefined) | undefined;
-	readonly ClusterSpec?: (string | undefined) | undefined;
-	readonly ContainerCidr?: (string | undefined) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly DisableRollback?: (boolean | undefined) | undefined;
-	readonly EncryptionProviderKey?: (string | undefined) | undefined;
-	readonly EndpointPublicAccess?: (boolean | undefined) | undefined;
-	readonly FormatDisk?: (boolean | undefined) | undefined;
-	readonly IsEnterpriseSecurityGroup?: (boolean | undefined) | undefined;
-	readonly KeepInstanceName?: (boolean | undefined) | undefined;
-	readonly KeyPair?: (string | undefined) | undefined;
-	readonly KubernetesVersion?: (string | undefined) | undefined;
-	readonly LoadBalancerSpec?: (string | undefined) | undefined;
-	readonly LoginPassword?: (string | undefined) | undefined;
-	readonly NodeCidrMask?: (string | undefined) | undefined;
-	readonly NodeNameMode?: (string | undefined) | undefined;
-	readonly NodePools?: (NodePools[] | undefined) | undefined;
-	readonly NumOfNodes?: (number | undefined) | undefined;
-	readonly OsType?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly Platform?: (string | undefined) | undefined;
-	readonly PodVswitchIds?: (string[] | undefined) | undefined;
-	readonly ProxyMode?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Runtime?: (Runtime | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly ServiceCidr?: (string | undefined) | undefined;
-	readonly SnatEntry?: (boolean | undefined) | undefined;
-	readonly SocEnabled?: (boolean | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly Taint?: any | undefined;
-	readonly TimeoutMins?: (number | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
-	readonly WorkerDataDisk?: (boolean | undefined) | undefined;
-	readonly WorkerDataDisks?: (WorkerDataDisks[] | undefined) | undefined;
-	readonly WorkerInstanceTypes?: (string[] | undefined) | undefined;
-	readonly WorkerSystemDiskCategory?: (string | undefined) | undefined;
-	readonly WorkerSystemDiskSize?: (number | undefined) | undefined;
-	readonly ZoneIds?: (string[] | undefined) | undefined;
+	readonly Addons?: Addons[] | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly AutoRenewPeriod?: number | undefined;
+	readonly ChargeType?: string | undefined;
+	readonly CisEnabled?: boolean | undefined;
+	readonly CloudMonitorFlags?: boolean | undefined;
+	readonly ClusterSpec?: string | undefined;
+	readonly ContainerCidr?: string | undefined;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly DisableRollback?: boolean | undefined;
+	readonly EncryptionProviderKey?: string | undefined;
+	readonly EndpointPublicAccess?: boolean | undefined;
+	readonly FormatDisk?: boolean | undefined;
+	readonly IsEnterpriseSecurityGroup?: boolean | undefined;
+	readonly KeepInstanceName?: boolean | undefined;
+	readonly KeyPair?: string | undefined;
+	readonly KubernetesVersion?: string | undefined;
+	readonly LoadBalancerSpec?: string | undefined;
+	readonly LoginPassword?: string | undefined;
+	readonly NodeCidrMask?: string | undefined;
+	readonly NodeNameMode?: string | undefined;
+	readonly NodePools?: NodePools[] | undefined;
+	readonly NumOfNodes?: number | undefined;
+	readonly OsType?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly Platform?: string | undefined;
+	readonly PodVswitchIds?: string[] | undefined;
+	readonly ProxyMode?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Runtime?: Runtime | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly ServiceCidr?: string | undefined;
+	readonly SnatEntry?: boolean | undefined;
+	readonly SocEnabled?: boolean | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly Taint?: any;
+	readonly TimeoutMins?: number | undefined;
+	readonly UserData?: string | undefined;
+	readonly WorkerDataDisk?: boolean | undefined;
+	readonly WorkerDataDisks?: WorkerDataDisks[] | undefined;
+	readonly WorkerInstanceTypes?: string[] | undefined;
+	readonly WorkerSystemDiskCategory?: string | undefined;
+	readonly WorkerSystemDiskSize?: number | undefined;
+	readonly ZoneIds?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class ServerlessKubernetesCluster
@@ -374,97 +374,97 @@ export interface ServerlessKubernetesClusterComponentOutputs {
 }
 export interface ServerlessKubernetesClusterComponentInputs {
 	readonly Name: string;
-	readonly Addons?: (Addons[] | undefined) | undefined;
-	readonly EndpointPublicAccess?: (boolean | undefined) | undefined;
-	readonly KubernetesVersion?: (string | undefined) | undefined;
-	readonly NatGateway?: (boolean | undefined) | undefined;
-	readonly PrivateZone?: (boolean | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly ServiceCidr?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VpcId?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
-	readonly VSwitchIds?: (any[] | undefined) | undefined;
-	readonly ZoneId?: (string | undefined) | undefined;
+	readonly Addons?: Addons[] | undefined;
+	readonly EndpointPublicAccess?: boolean | undefined;
+	readonly KubernetesVersion?: string | undefined;
+	readonly NatGateway?: boolean | undefined;
+	readonly PrivateZone?: boolean | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly ServiceCidr?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly VpcId?: string | undefined;
+	readonly VSwitchId?: string | undefined;
+	readonly VSwitchIds?: any[] | undefined;
+	readonly ZoneId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Addons {
-	readonly Version?: (string | undefined) | undefined;
-	readonly Config?: (string | undefined) | undefined;
+	readonly Version?: string | undefined;
+	readonly Config?: string | undefined;
 	readonly Name: string;
 }
 export interface AutoScaling {
-	readonly EipBandwidth?: (number | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
-	readonly IsBondEip?: (boolean | undefined) | undefined;
-	readonly MinInstances?: (number | undefined) | undefined;
+	readonly EipBandwidth?: number | undefined;
+	readonly Type?: string | undefined;
+	readonly IsBondEip?: boolean | undefined;
+	readonly MinInstances?: number | undefined;
 	readonly Enable: boolean;
-	readonly MaxInstances?: (number | undefined) | undefined;
-	readonly EipInternetChargeType?: (string | undefined) | undefined;
+	readonly MaxInstances?: number | undefined;
+	readonly EipInternetChargeType?: string | undefined;
 }
 export interface DataDisks {
-	readonly Category?: (string | undefined) | undefined;
-	readonly Encrypted?: (boolean | undefined) | undefined;
-	readonly PerformanceLevel?: (string | undefined) | undefined;
-	readonly Size?: (number | undefined) | undefined;
-	readonly AutoSnapshotPolicyId?: (string | undefined) | undefined;
+	readonly Category?: string | undefined;
+	readonly Encrypted?: boolean | undefined;
+	readonly PerformanceLevel?: string | undefined;
+	readonly Size?: number | undefined;
+	readonly AutoSnapshotPolicyId?: string | undefined;
 }
 export interface KubernetesConfig {
-	readonly CpuPolicy?: (string | undefined) | undefined;
+	readonly CpuPolicy?: string | undefined;
 	readonly Runtime: string;
-	readonly CmsEnabled?: (boolean | undefined) | undefined;
-	readonly UserData?: (string | undefined) | undefined;
-	readonly NodeNameMode?: (string | undefined) | undefined;
+	readonly CmsEnabled?: boolean | undefined;
+	readonly UserData?: string | undefined;
+	readonly NodeNameMode?: string | undefined;
 	readonly RuntimeVersion: string;
-	readonly Labels?: (Labels[] | undefined) | undefined;
-	readonly Unschedulable?: (boolean | undefined) | undefined;
-	readonly Taints?: (Taints[] | undefined) | undefined;
+	readonly Labels?: Labels[] | undefined;
+	readonly Unschedulable?: boolean | undefined;
+	readonly Taints?: Taints[] | undefined;
 }
 export interface Labels {
 	readonly Value: string;
 	readonly Key: string;
 }
 export interface Management {
-	readonly UpgradeConfig?: (UpgradeConfig | undefined) | undefined;
-	readonly AutoRepair?: (boolean | undefined) | undefined;
+	readonly UpgradeConfig?: UpgradeConfig | undefined;
+	readonly AutoRepair?: boolean | undefined;
 	readonly Enable: boolean;
 }
 export interface NodePoolInfo {
-	readonly ResourceGroupId?: (string | undefined) | undefined;
+	readonly ResourceGroupId?: string | undefined;
 	readonly Name: string;
 }
 export interface ScalingGroup {
-	readonly SpotInstanceRemedy?: (boolean | undefined) | undefined;
-	readonly Platform?: (string | undefined) | undefined;
-	readonly DataDisks?: (DataDisks[] | undefined) | undefined;
+	readonly SpotInstanceRemedy?: boolean | undefined;
+	readonly Platform?: string | undefined;
+	readonly DataDisks?: DataDisks[] | undefined;
 	readonly SystemDiskSize: number;
-	readonly CompensateWithOnDemand?: (boolean | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly OnDemandPercentageAboveBaseCapacity?: (number | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly OnDemandBaseCapacity?: (number | undefined) | undefined;
-	readonly SystemDiskPerformanceLevel?: (string | undefined) | undefined;
-	readonly ImageId?: (string | undefined) | undefined;
-	readonly SpotPriceLimit?: (SpotPriceLimit[] | undefined) | undefined;
+	readonly CompensateWithOnDemand?: boolean | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly OnDemandPercentageAboveBaseCapacity?: number | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly OnDemandBaseCapacity?: number | undefined;
+	readonly SystemDiskPerformanceLevel?: string | undefined;
+	readonly ImageId?: string | undefined;
+	readonly SpotPriceLimit?: SpotPriceLimit[] | undefined;
 	readonly InstanceTypes: string[];
-	readonly ZoneIds?: (string[] | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly SpotStrategy?: (string | undefined) | undefined;
-	readonly LoginPassword?: (string | undefined) | undefined;
-	readonly MultiAzPolicy?: (string | undefined) | undefined;
-	readonly AutoRenewPeriod?: (number | undefined) | undefined;
-	readonly ScalingPolicy?: (string | undefined) | undefined;
-	readonly KeyPair?: (string | undefined) | undefined;
+	readonly ZoneIds?: string[] | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly SpotStrategy?: string | undefined;
+	readonly LoginPassword?: string | undefined;
+	readonly MultiAzPolicy?: string | undefined;
+	readonly AutoRenewPeriod?: number | undefined;
+	readonly ScalingPolicy?: string | undefined;
+	readonly KeyPair?: string | undefined;
 	readonly VSwitchIds: string[];
-	readonly SecurityGroupId?: (string | undefined) | undefined;
-	readonly SpotInstancePools?: (number | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly SystemDiskCategory?: (string | undefined) | undefined;
-	readonly InternetMaxBandwidthOut?: (number | undefined) | undefined;
-	readonly RdsInstances?: (string[] | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
+	readonly SecurityGroupId?: string | undefined;
+	readonly SpotInstancePools?: number | undefined;
+	readonly Period?: number | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly SystemDiskCategory?: string | undefined;
+	readonly InternetMaxBandwidthOut?: number | undefined;
+	readonly RdsInstances?: string[] | undefined;
+	readonly PeriodUnit?: string | undefined;
 }
 export interface SpotPriceLimit {
 	readonly PriceLimit: number;
@@ -476,30 +476,30 @@ export interface Tags {
 }
 export interface Taints {
 	readonly Value: string;
-	readonly Effect?: (string | undefined) | undefined;
+	readonly Effect?: string | undefined;
 	readonly Key: string;
 }
 export interface TeeConfig {
 	readonly TeeEnable: boolean;
 }
 export interface UpgradeConfig {
-	readonly AutoUpgrade?: (boolean | undefined) | undefined;
-	readonly SurgePercentage?: (number | undefined) | undefined;
-	readonly Surge?: (number | undefined) | undefined;
-	readonly MaxUnavailable?: (number | undefined) | undefined;
+	readonly AutoUpgrade?: boolean | undefined;
+	readonly SurgePercentage?: number | undefined;
+	readonly Surge?: number | undefined;
+	readonly MaxUnavailable?: number | undefined;
 }
 export interface MasterDataDisks {
 	readonly Category: string;
 	readonly Size: number;
 }
 export interface NodePools {
-	readonly NodePoolInfo?: (NodePoolInfo | undefined) | undefined;
-	readonly KubernetesConfig?: (KubernetesConfig | undefined) | undefined;
-	readonly Count?: (number | undefined) | undefined;
+	readonly NodePoolInfo?: NodePoolInfo | undefined;
+	readonly KubernetesConfig?: KubernetesConfig | undefined;
+	readonly Count?: number | undefined;
 	readonly ScalingGroup: ScalingGroup;
 }
 export interface Runtime {
-	readonly Version?: (string | undefined) | undefined;
+	readonly Version?: string | undefined;
 	readonly Name: string;
 }
 export interface ScalingGroupTags {

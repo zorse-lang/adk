@@ -14,10 +14,10 @@ export interface mediaservicesComponentOutputs {
 	readonly type: "Microsoft.Media/mediaservices";
 }
 export interface mediaservicesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: MediaServiceProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: MediaServiceProperties;
+	readonly tags?: ResourceTags;
 }
 export function listKeys(resource: mediaservices): ServiceKeys {
 	if (resource.apiVersion !== "2015-10-01") {
@@ -29,22 +29,22 @@ export function listKeys(resource: mediaservices): ServiceKeys {
 	throw new Error("not implemented");
 }
 export interface ApiEndpoint {
-	readonly endpoint?: string | undefined;
-	readonly majorVersion?: string | undefined;
+	readonly endpoint?: string;
+	readonly majorVersion?: string;
 }
 export interface MediaServiceProperties {
-	readonly apiEndpoints?: ApiEndpoint[] | undefined;
-	readonly storageAccounts?: StorageAccount[] | undefined;
+	readonly apiEndpoints?: ApiEndpoint[];
+	readonly storageAccounts?: StorageAccount[];
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ServiceKeys {
-	readonly primaryAuthEndpoint?: string | undefined;
-	readonly primaryKey?: string | undefined;
-	readonly scope?: string | undefined;
-	readonly secondaryAuthEndpoint?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryAuthEndpoint?: string;
+	readonly primaryKey?: string;
+	readonly scope?: string;
+	readonly secondaryAuthEndpoint?: string;
+	readonly secondaryKey?: string;
 }
 export interface StorageAccount {
 	readonly id: string;

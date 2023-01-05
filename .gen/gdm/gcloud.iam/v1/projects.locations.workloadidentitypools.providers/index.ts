@@ -7,46 +7,45 @@ export class ProjectsLocationsWorkloadIdentityPoolsProviders
 	constructor(entity: ADKEntity, options: ProjectsLocationsWorkloadIdentityPoolsProvidersComponentInputs) {
 		super(entity, options.name, "iam.v1.ProjectsLocationsWorkloadIdentityPoolsProviders", options);
 	}
-	public readonly state?: string | undefined;
+	public readonly state?: string;
 }
 export interface ProjectsLocationsWorkloadIdentityPoolsProvidersComponentOutputs {
-	readonly state?: string | undefined;
+	readonly state?: string;
 }
 export interface ProjectsLocationsWorkloadIdentityPoolsProvidersComponentInputs {
-	readonly attributeCondition?: string | undefined;
-	readonly attributeMapping?: { [P in string]: string } | undefined;
-	readonly aws?: Aws | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly displayName?: string | undefined;
+	readonly attributeCondition?: string;
+	readonly attributeMapping?: { [P in string]: string };
+	readonly aws?: Aws;
+	readonly description?: string;
+	readonly disabled?: boolean;
+	readonly displayName?: string;
 	readonly name: string;
-	readonly oidc?: Oidc | undefined;
+	readonly oidc?: Oidc;
 	readonly parent: string;
-	readonly saml?: Saml | undefined;
+	readonly saml?: Saml;
 	readonly workloadIdentityPoolProviderId: string;
-	readonly type: string;
 }
 export interface Aws {
 	readonly accountId: string;
 }
 export interface Oidc {
-	readonly allowedAudiences?: string[] | undefined;
+	readonly allowedAudiences?: string[];
 	readonly issuerUri: string;
 }
 export interface Saml {
 	readonly idpMetadataXml: string;
 }
 export interface WorkloadIdentityPoolProvider {
-	readonly attributeCondition?: string | undefined;
-	readonly attributeMapping?: { [P in string]: string } | undefined;
-	readonly aws?: Aws | undefined;
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly displayName?: string | undefined;
-	readonly name?: string | undefined;
-	readonly oidc?: Oidc | undefined;
-	readonly saml?: Saml | undefined;
-	readonly state?: string | undefined;
+	readonly attributeCondition?: string;
+	readonly attributeMapping?: { [P in string]: string };
+	readonly aws?: Aws;
+	readonly description?: string;
+	readonly disabled?: boolean;
+	readonly displayName?: string;
+	readonly name?: string;
+	readonly oidc?: Oidc;
+	readonly saml?: Saml;
+	readonly state?: string;
 }
 export default {
 	ProjectsLocationsWorkloadIdentityPoolsProviders: ProjectsLocationsWorkloadIdentityPoolsProviders,

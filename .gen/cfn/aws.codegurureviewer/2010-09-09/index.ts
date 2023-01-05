@@ -15,10 +15,10 @@ export interface RepositoryAssociationComponentOutputs {
 export interface RepositoryAssociationComponentInputs {
 	readonly Name: string;
 	readonly Type: string;
-	readonly BucketName?: (string | undefined) | undefined;
-	readonly ConnectionArn?: (string | undefined) | undefined;
-	readonly Owner?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly BucketName?: string | undefined;
+	readonly ConnectionArn?: string | undefined;
+	readonly Owner?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export default {

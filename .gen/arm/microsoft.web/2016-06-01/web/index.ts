@@ -17,11 +17,11 @@ export interface connectionGatewaysComponentOutputs {
 	readonly type: "Microsoft.Web/connectionGateways";
 }
 export interface connectionGatewaysComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ConnectionGatewayDefinitionProperties | undefined;
-	readonly tags?: TagsDictionary | undefined;
+	readonly properties?: ConnectionGatewayDefinitionProperties;
+	readonly tags?: TagsDictionary;
 }
 export class connections extends ArmResource<connectionsComponentInputs> implements connectionsComponentOutputs {
 	constructor(entity: ADKEntity, options: connectionsComponentInputs) {
@@ -37,11 +37,11 @@ export interface connectionsComponentOutputs {
 	readonly type: "Microsoft.Web/connections";
 }
 export interface connectionsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ApiConnectionDefinitionProperties | undefined;
-	readonly tags?: TagsDictionary | undefined;
+	readonly properties?: ApiConnectionDefinitionProperties;
+	readonly tags?: TagsDictionary;
 }
 export class customApis extends ArmResource<customApisComponentInputs> implements customApisComponentOutputs {
 	constructor(entity: ADKEntity, options: customApisComponentInputs) {
@@ -57,11 +57,11 @@ export interface customApisComponentOutputs {
 	readonly type: "Microsoft.Web/customApis";
 }
 export interface customApisComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: CustomApiPropertiesDefinition | undefined;
-	readonly tags?: TagsDictionary | undefined;
+	readonly properties?: CustomApiPropertiesDefinition;
+	readonly tags?: TagsDictionary;
 }
 export class locations_connectionGatewayInstallations
 	extends ArmResource<locations_connectionGatewayInstallationsComponentInputs>
@@ -80,11 +80,11 @@ export interface locations_connectionGatewayInstallationsComponentOutputs {
 	readonly type: "Microsoft.Web/locations/connectionGatewayInstallations";
 }
 export interface locations_connectionGatewayInstallationsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ConnectionGatewayInstallationDefinitionProperties | undefined;
-	readonly tags?: TagsDictionary | undefined;
+	readonly properties?: ConnectionGatewayInstallationDefinitionProperties;
+	readonly tags?: TagsDictionary;
 }
 export class locations_managedApis
 	extends ArmResource<locations_managedApisComponentInputs>
@@ -103,11 +103,11 @@ export interface locations_managedApisComponentOutputs {
 	readonly type: "Microsoft.Web/locations/managedApis";
 }
 export interface locations_managedApisComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ApiResourceProperties | undefined;
-	readonly tags?: TagsDictionary | undefined;
+	readonly properties?: ApiResourceProperties;
+	readonly tags?: TagsDictionary;
 }
 export function listConsentLinks(resource: connections, input: ListConsentLinksDefinition): ConsentLinkCollection {
 	if (resource.apiVersion !== "2016-06-01") {
@@ -128,198 +128,196 @@ export function listWsdlInterfaces(resource: ArmResource, input: WsdlDefinition)
 	throw new Error("not implemented");
 }
 export interface ApiConnectionDefinitionProperties {
-	readonly api?: ApiReference | undefined;
-	readonly changedTime?: string | undefined;
-	readonly createdTime?: string | undefined;
-	readonly customParameterValues?: ApiConnectionDefinitionPropertiesCustomParameterValues | undefined;
-	readonly displayName?: string | undefined;
-	readonly nonSecretParameterValues?: ApiConnectionDefinitionPropertiesNonSecretParameterValues | undefined;
-	readonly parameterValues?: ApiConnectionDefinitionPropertiesParameterValues | undefined;
-	readonly statuses?: ConnectionStatusDefinition[] | undefined;
-	readonly testLinks?: ApiConnectionTestLink[] | undefined;
+	readonly api?: ApiReference;
+	readonly changedTime?: string;
+	readonly createdTime?: string;
+	readonly customParameterValues?: ApiConnectionDefinitionPropertiesCustomParameterValues;
+	readonly displayName?: string;
+	readonly nonSecretParameterValues?: ApiConnectionDefinitionPropertiesNonSecretParameterValues;
+	readonly parameterValues?: ApiConnectionDefinitionPropertiesParameterValues;
+	readonly statuses?: ConnectionStatusDefinition[];
+	readonly testLinks?: ApiConnectionTestLink[];
 }
 export interface ApiConnectionDefinitionPropertiesCustomParameterValues {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ApiConnectionDefinitionPropertiesNonSecretParameterValues {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ApiConnectionDefinitionPropertiesParameterValues {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ApiConnectionTestLink {
-	readonly method?: string | undefined;
-	readonly requestUri?: string | undefined;
+	readonly method?: string;
+	readonly requestUri?: string;
 }
 export interface ApiOAuthSettings {
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
-	readonly customParameters?: ApiOAuthSettingsCustomParameters | undefined;
-	readonly identityProvider?: string | undefined;
-	readonly properties?: any | undefined;
-	readonly redirectUrl?: string | undefined;
-	readonly scopes?: string[] | undefined;
+	readonly clientId?: string;
+	readonly clientSecret?: string;
+	readonly customParameters?: ApiOAuthSettingsCustomParameters;
+	readonly identityProvider?: string;
+	readonly properties?: any;
+	readonly redirectUrl?: string;
+	readonly scopes?: string[];
 }
 export interface ApiOAuthSettingsCustomParameters {
-	readonly "[ key: string ]"?: ApiOAuthSettingsParameter | undefined;
+	readonly [key: string]: ApiOAuthSettingsParameter;
 }
 export interface ApiOAuthSettingsParameter {
-	readonly options?: any | undefined;
-	readonly uiDefinition?: any | undefined;
-	readonly value?: string | undefined;
+	readonly options?: any;
+	readonly uiDefinition?: any;
+	readonly value?: string;
 }
 export interface ApiReference {
-	readonly brandColor?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly iconUri?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly swagger?: any | undefined;
-	readonly type?: string | undefined;
+	readonly brandColor?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly iconUri?: string;
+	readonly id?: string;
+	readonly name?: string;
+	readonly swagger?: any;
+	readonly type?: string;
 }
 export interface ApiResourceBackendService {
-	readonly serviceUrl?: string | undefined;
+	readonly serviceUrl?: string;
 }
 export interface ApiResourceDefinitions {
-	readonly modifiedSwaggerUrl?: string | undefined;
-	readonly originalSwaggerUrl?: string | undefined;
+	readonly modifiedSwaggerUrl?: string;
+	readonly originalSwaggerUrl?: string;
 }
 export interface ApiResourceGeneralInformation {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly iconUrl?: string | undefined;
-	readonly releaseTag?: string | undefined;
-	readonly termsOfUseUrl?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly iconUrl?: string;
+	readonly releaseTag?: string;
+	readonly termsOfUseUrl?: string;
 }
 export interface ApiResourceMetadata {
-	readonly apiType?: ("NotSpecified" | "Rest" | "Soap") | undefined;
-	readonly brandColor?: string | undefined;
-	readonly connectionType?: string | undefined;
-	readonly hideKey?: string | undefined;
-	readonly source?: string | undefined;
-	readonly tags?: TagsDictionary | undefined;
-	readonly wsdlImportMethod?: ("NotSpecified" | "SoapPassThrough" | "SoapToRest") | undefined;
-	readonly wsdlService?: WsdlService | undefined;
+	readonly apiType?: "NotSpecified" | "Rest" | "Soap";
+	readonly brandColor?: string;
+	readonly connectionType?: string;
+	readonly hideKey?: string;
+	readonly source?: string;
+	readonly tags?: TagsDictionary;
+	readonly wsdlImportMethod?: "NotSpecified" | "SoapPassThrough" | "SoapToRest";
+	readonly wsdlService?: WsdlService;
 }
 export interface ApiResourcePolicies {
-	readonly content?: string | undefined;
-	readonly contentLink?: string | undefined;
+	readonly content?: string;
+	readonly contentLink?: string;
 }
 export interface ApiResourceProperties {
-	readonly apiDefinitions?: ApiResourceDefinitions | undefined;
-	readonly apiDefinitionUrl?: string | undefined;
-	readonly backendService?: ApiResourceBackendService | undefined;
-	readonly capabilities?: string[] | undefined;
-	readonly connectionParameters?: ApiResourcePropertiesConnectionParameters | undefined;
-	readonly generalInformation?: ApiResourceGeneralInformation | undefined;
-	readonly metadata?: ApiResourceMetadata | undefined;
-	readonly name?: string | undefined;
-	readonly policies?: ApiResourcePolicies | undefined;
-	readonly runtimeUrls?: string[] | undefined;
-	readonly swagger?: any | undefined;
+	readonly apiDefinitions?: ApiResourceDefinitions;
+	readonly apiDefinitionUrl?: string;
+	readonly backendService?: ApiResourceBackendService;
+	readonly capabilities?: string[];
+	readonly connectionParameters?: ApiResourcePropertiesConnectionParameters;
+	readonly generalInformation?: ApiResourceGeneralInformation;
+	readonly metadata?: ApiResourceMetadata;
+	readonly name?: string;
+	readonly policies?: ApiResourcePolicies;
+	readonly runtimeUrls?: string[];
+	readonly swagger?: any;
 }
 export interface ApiResourcePropertiesConnectionParameters {
-	readonly "[ key: string ]"?: ConnectionParameter | undefined;
+	readonly [key: string]: ConnectionParameter;
 }
 export interface ConnectionError {
-	readonly etag?: string | undefined;
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ConnectionErrorProperties | undefined;
-	readonly tags?: TagsDictionary | undefined;
-	readonly type?: string | undefined;
+	readonly etag?: string;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly properties?: ConnectionErrorProperties;
+	readonly tags?: TagsDictionary;
+	readonly type?: string;
 }
 export interface ConnectionErrorProperties {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface ConnectionGatewayDefinitionProperties {
-	readonly backendUri?: string | undefined;
-	readonly connectionGatewayInstallation?: ConnectionGatewayReference | undefined;
-	readonly contactInformation?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly machineName?: string | undefined;
-	readonly status?: any | undefined;
+	readonly backendUri?: string;
+	readonly connectionGatewayInstallation?: ConnectionGatewayReference;
+	readonly contactInformation?: string[];
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly machineName?: string;
+	readonly status?: any;
 }
 export interface ConnectionGatewayInstallationDefinitionProperties {
-	readonly backendUri?: string | undefined;
-	readonly connectionGateway?: ConnectionGatewayReference | undefined;
-	readonly contactInformation?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly machineName?: string | undefined;
-	readonly status?: any | undefined;
+	readonly backendUri?: string;
+	readonly connectionGateway?: ConnectionGatewayReference;
+	readonly contactInformation?: string[];
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly machineName?: string;
+	readonly status?: any;
 }
 export interface ConnectionGatewayReference {
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly location?: string;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface ConnectionParameter {
-	readonly oAuthSettings?: ApiOAuthSettings | undefined;
-	readonly type?:
-		| ("array" | "bool" | "connection" | "int" | "oauthSetting" | "object" | "secureobject" | "securestring")
-		| undefined;
+	readonly oAuthSettings?: ApiOAuthSettings;
+	readonly type?: "array" | "bool" | "connection" | "int" | "oauthSetting" | "object" | "secureobject" | "securestring";
 }
 export interface ConnectionStatusDefinition {
-	readonly error?: ConnectionError | undefined;
-	readonly status?: string | undefined;
-	readonly target?: string | undefined;
+	readonly error?: ConnectionError;
+	readonly status?: string;
+	readonly target?: string;
 }
 export interface ConsentLinkCollection {
-	readonly value?: ConsentLinkDefinition[] | undefined;
+	readonly value?: ConsentLinkDefinition[];
 }
 export interface ConsentLinkDefinition {
-	readonly displayName?: string | undefined;
-	readonly firstPartyLoginUri?: string | undefined;
-	readonly link?: string | undefined;
-	readonly status?: ("Authenticated" | "Error" | "Unauthenticated") | undefined;
+	readonly displayName?: string;
+	readonly firstPartyLoginUri?: string;
+	readonly link?: string;
+	readonly status?: "Authenticated" | "Error" | "Unauthenticated";
 }
 export interface ConsentLinkParameterDefinition {
-	readonly objectId?: string | undefined;
-	readonly parameterName?: string | undefined;
-	readonly redirectUrl?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly objectId?: string;
+	readonly parameterName?: string;
+	readonly redirectUrl?: string;
+	readonly tenantId?: string;
 }
 export interface CustomApiPropertiesDefinition {
-	readonly apiDefinitions?: ApiResourceDefinitions | undefined;
-	readonly apiType?: ("NotSpecified" | "Rest" | "Soap") | undefined;
-	readonly backendService?: ApiResourceBackendService | undefined;
-	readonly brandColor?: string | undefined;
-	readonly capabilities?: string[] | undefined;
-	readonly connectionParameters?: CustomApiPropertiesDefinitionConnectionParameters | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly iconUri?: string | undefined;
-	readonly runtimeUrls?: string[] | undefined;
-	readonly swagger?: any | undefined;
-	readonly wsdlDefinition?: WsdlDefinition | undefined;
+	readonly apiDefinitions?: ApiResourceDefinitions;
+	readonly apiType?: "NotSpecified" | "Rest" | "Soap";
+	readonly backendService?: ApiResourceBackendService;
+	readonly brandColor?: string;
+	readonly capabilities?: string[];
+	readonly connectionParameters?: CustomApiPropertiesDefinitionConnectionParameters;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly iconUri?: string;
+	readonly runtimeUrls?: string[];
+	readonly swagger?: any;
+	readonly wsdlDefinition?: WsdlDefinition;
 }
 export interface CustomApiPropertiesDefinitionConnectionParameters {
-	readonly "[ key: string ]"?: ConnectionParameter | undefined;
+	readonly [key: string]: ConnectionParameter;
 }
 export interface ListConsentLinksDefinition {
-	readonly parameters?: ConsentLinkParameterDefinition[] | undefined;
+	readonly parameters?: ConsentLinkParameterDefinition[];
 }
 export interface TagsDictionary {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WsdlDefinition {
-	readonly content?: string | undefined;
-	readonly importMethod?: ("NotSpecified" | "SoapPassThrough" | "SoapToRest") | undefined;
-	readonly service?: WsdlService | undefined;
-	readonly url?: string | undefined;
+	readonly content?: string;
+	readonly importMethod?: "NotSpecified" | "SoapPassThrough" | "SoapToRest";
+	readonly service?: WsdlService;
+	readonly url?: string;
 }
 export interface WsdlService {
-	readonly endpointQualifiedNames?: string[] | undefined;
+	readonly endpointQualifiedNames?: string[];
 	readonly qualifiedName: string;
 }
 export interface WsdlServiceCollection {
-	readonly value?: WsdlService[] | undefined;
+	readonly value?: WsdlService[];
 }
 export default {
 	connectionGateways: connectionGateways,

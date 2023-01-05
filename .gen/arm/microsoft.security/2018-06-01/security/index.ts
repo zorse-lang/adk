@@ -15,10 +15,10 @@ export interface pricingsComponentOutputs {
 }
 export interface pricingsComponentInputs {
 	readonly name: string;
-	readonly properties?: PricingProperties | undefined;
+	readonly properties?: PricingProperties;
 }
 export interface PricingProperties {
-	readonly freeTrialRemainingTime?: string | undefined;
+	readonly freeTrialRemainingTime?: string;
 	readonly pricingTier: "Free" | "Standard";
 }
 export default {

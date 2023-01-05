@@ -14,12 +14,12 @@ export interface domainServicesComponentOutputs {
 	readonly type: "Microsoft.AAD/domainServices";
 }
 export interface domainServicesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DomainServiceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: DomainServiceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class Microsoft_Aad_domainServices_ouContainer
 	extends ArmResource<Microsoft_Aad_domainServices_ouContainerComponentInputs>
@@ -38,127 +38,127 @@ export interface Microsoft_Aad_domainServices_ouContainerComponentOutputs {
 	readonly type: "Microsoft.Aad/domainServices/ouContainer";
 }
 export interface Microsoft_Aad_domainServices_ouContainerComponentInputs {
-	readonly accountName?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly accountName?: string;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly password?: string | undefined;
-	readonly properties?: OuContainerProperties | undefined;
-	readonly spn?: string | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly password?: string;
+	readonly properties?: OuContainerProperties;
+	readonly spn?: string;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export interface ContainerAccount {
-	readonly accountName?: string | undefined;
-	readonly password?: string | undefined;
-	readonly spn?: string | undefined;
+	readonly accountName?: string;
+	readonly password?: string;
+	readonly spn?: string;
 }
 export interface DomainSecuritySettings {
-	readonly kerberosArmoring?: ("Disabled" | "Enabled") | undefined;
-	readonly kerberosRc4Encryption?: ("Disabled" | "Enabled") | undefined;
-	readonly ntlmV1?: ("Disabled" | "Enabled") | undefined;
-	readonly syncKerberosPasswords?: ("Disabled" | "Enabled") | undefined;
-	readonly syncNtlmPasswords?: ("Disabled" | "Enabled") | undefined;
-	readonly syncOnPremPasswords?: ("Disabled" | "Enabled") | undefined;
-	readonly tlsV1?: ("Disabled" | "Enabled") | undefined;
+	readonly kerberosArmoring?: "Disabled" | "Enabled";
+	readonly kerberosRc4Encryption?: "Disabled" | "Enabled";
+	readonly ntlmV1?: "Disabled" | "Enabled";
+	readonly syncKerberosPasswords?: "Disabled" | "Enabled";
+	readonly syncNtlmPasswords?: "Disabled" | "Enabled";
+	readonly syncOnPremPasswords?: "Disabled" | "Enabled";
+	readonly tlsV1?: "Disabled" | "Enabled";
 }
 export interface DomainServiceProperties {
-	readonly deploymentId?: string | undefined;
-	readonly domainConfigurationType?: string | undefined;
-	readonly domainName?: string | undefined;
-	readonly domainSecuritySettings?: DomainSecuritySettings | undefined;
-	readonly filteredSync?: ("Disabled" | "Enabled") | undefined;
-	readonly ldapsSettings?: LdapsSettings | undefined;
-	readonly migrationProperties?: MigrationProperties | undefined;
-	readonly notificationSettings?: NotificationSettings | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly replicaSets?: ReplicaSet[] | undefined;
-	readonly resourceForestSettings?: ResourceForestSettings | undefined;
-	readonly sku?: string | undefined;
-	readonly syncOwner?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly version?: number | undefined;
+	readonly deploymentId?: string;
+	readonly domainConfigurationType?: string;
+	readonly domainName?: string;
+	readonly domainSecuritySettings?: DomainSecuritySettings;
+	readonly filteredSync?: "Disabled" | "Enabled";
+	readonly ldapsSettings?: LdapsSettings;
+	readonly migrationProperties?: MigrationProperties;
+	readonly notificationSettings?: NotificationSettings;
+	readonly provisioningState?: string;
+	readonly replicaSets?: ReplicaSet[];
+	readonly resourceForestSettings?: ResourceForestSettings;
+	readonly sku?: string;
+	readonly syncOwner?: string;
+	readonly tenantId?: string;
+	readonly version?: number;
 }
 export interface ForestTrust {
-	readonly friendlyName?: string | undefined;
-	readonly remoteDnsIps?: string | undefined;
-	readonly trustDirection?: string | undefined;
-	readonly trustedDomainFqdn?: string | undefined;
-	readonly trustPassword?: string | undefined;
+	readonly friendlyName?: string;
+	readonly remoteDnsIps?: string;
+	readonly trustDirection?: string;
+	readonly trustedDomainFqdn?: string;
+	readonly trustPassword?: string;
 }
 export interface HealthAlert {
-	readonly id?: string | undefined;
-	readonly issue?: string | undefined;
-	readonly lastDetected?: string | undefined;
-	readonly name?: string | undefined;
-	readonly raised?: string | undefined;
-	readonly resolutionUri?: string | undefined;
-	readonly severity?: string | undefined;
+	readonly id?: string;
+	readonly issue?: string;
+	readonly lastDetected?: string;
+	readonly name?: string;
+	readonly raised?: string;
+	readonly resolutionUri?: string;
+	readonly severity?: string;
 }
 export interface HealthMonitor {
-	readonly details?: string | undefined;
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly details?: string;
+	readonly id?: string;
+	readonly name?: string;
 }
 export interface LdapsSettings {
-	readonly certificateNotAfter?: string | undefined;
-	readonly certificateThumbprint?: string | undefined;
-	readonly externalAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly ldaps?: ("Disabled" | "Enabled") | undefined;
-	readonly pfxCertificate?: string | undefined;
-	readonly pfxCertificatePassword?: string | undefined;
-	readonly publicCertificate?: string | undefined;
+	readonly certificateNotAfter?: string;
+	readonly certificateThumbprint?: string;
+	readonly externalAccess?: "Disabled" | "Enabled";
+	readonly ldaps?: "Disabled" | "Enabled";
+	readonly pfxCertificate?: string;
+	readonly pfxCertificatePassword?: string;
+	readonly publicCertificate?: string;
 }
 export interface MigrationProgress {
-	readonly completionPercentage?: number | undefined;
-	readonly progressMessage?: string | undefined;
+	readonly completionPercentage?: number;
+	readonly progressMessage?: string;
 }
 export interface MigrationProperties {
-	readonly migrationProgress?: MigrationProgress | undefined;
-	readonly oldSubnetId?: string | undefined;
-	readonly oldVnetSiteId?: string | undefined;
+	readonly migrationProgress?: MigrationProgress;
+	readonly oldSubnetId?: string;
+	readonly oldVnetSiteId?: string;
 }
 export interface NotificationSettings {
-	readonly additionalRecipients?: string[] | undefined;
-	readonly notifyDcAdmins?: ("Disabled" | "Enabled") | undefined;
-	readonly notifyGlobalAdmins?: ("Disabled" | "Enabled") | undefined;
+	readonly additionalRecipients?: string[];
+	readonly notifyDcAdmins?: "Disabled" | "Enabled";
+	readonly notifyGlobalAdmins?: "Disabled" | "Enabled";
 }
 export interface OuContainerProperties {
-	readonly accounts?: ContainerAccount[] | undefined;
-	readonly containerId?: string | undefined;
-	readonly deploymentId?: string | undefined;
-	readonly distinguishedName?: string | undefined;
-	readonly domainName?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceStatus?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly accounts?: ContainerAccount[];
+	readonly containerId?: string;
+	readonly deploymentId?: string;
+	readonly distinguishedName?: string;
+	readonly domainName?: string;
+	readonly provisioningState?: string;
+	readonly serviceStatus?: string;
+	readonly tenantId?: string;
 }
 export interface ReplicaSet {
-	readonly domainControllerIpAddress?: string[] | undefined;
-	readonly externalAccessIpAddress?: string | undefined;
-	readonly healthAlerts?: HealthAlert[] | undefined;
-	readonly healthLastEvaluated?: string | undefined;
-	readonly healthMonitors?: HealthMonitor[] | undefined;
-	readonly location?: string | undefined;
-	readonly replicaSetId?: string | undefined;
-	readonly serviceStatus?: string | undefined;
-	readonly subnetId?: string | undefined;
-	readonly vnetSiteId?: string | undefined;
+	readonly domainControllerIpAddress?: string[];
+	readonly externalAccessIpAddress?: string;
+	readonly healthAlerts?: HealthAlert[];
+	readonly healthLastEvaluated?: string;
+	readonly healthMonitors?: HealthMonitor[];
+	readonly location?: string;
+	readonly replicaSetId?: string;
+	readonly serviceStatus?: string;
+	readonly subnetId?: string;
+	readonly vnetSiteId?: string;
 }
 export interface ResourceForestSettings {
-	readonly resourceForest?: string | undefined;
-	readonly settings?: ForestTrust[] | undefined;
+	readonly resourceForest?: string;
+	readonly settings?: ForestTrust[];
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	domainServices: domainServices,

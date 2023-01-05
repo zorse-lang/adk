@@ -14,10 +14,10 @@ export interface frontDoorsComponentOutputs {
 	readonly type: "Microsoft.Network/frontDoors";
 }
 export interface frontDoorsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: FrontDoorProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: FrontDoorProperties;
+	readonly tags?: ResourceTags;
 }
 export class frontDoors_frontendEndpoints
 	extends ArmResource<frontDoors_frontendEndpointsComponentInputs>
@@ -37,7 +37,7 @@ export interface frontDoors_frontendEndpointsComponentOutputs {
 }
 export interface frontDoors_frontendEndpointsComponentInputs {
 	readonly name: string;
-	readonly properties?: FrontendEndpointProperties | undefined;
+	readonly properties?: FrontendEndpointProperties;
 }
 export class frontDoors_rulesEngines
 	extends ArmResource<frontDoors_rulesEnginesComponentInputs>
@@ -57,172 +57,167 @@ export interface frontDoors_rulesEnginesComponentOutputs {
 }
 export interface frontDoors_rulesEnginesComponentInputs {
 	readonly name: string;
-	readonly properties?: RulesEngineProperties | undefined;
+	readonly properties?: RulesEngineProperties;
 }
 export interface Backend {
-	readonly address?: string | undefined;
-	readonly backendHostHeader?: string | undefined;
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
-	readonly httpPort?: number | undefined;
-	readonly httpsPort?: number | undefined;
-	readonly priority?: number | undefined;
-	readonly privateEndpointStatus?: ("Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout") | undefined;
-	readonly privateLinkAlias?: string | undefined;
-	readonly privateLinkApprovalMessage?: string | undefined;
-	readonly weight?: number | undefined;
+	readonly address?: string;
+	readonly backendHostHeader?: string;
+	readonly enabledState?: "Disabled" | "Enabled";
+	readonly httpPort?: number;
+	readonly httpsPort?: number;
+	readonly priority?: number;
+	readonly privateEndpointStatus?: "Approved" | "Disconnected" | "Pending" | "Rejected" | "Timeout";
+	readonly privateLinkAlias?: string;
+	readonly privateLinkApprovalMessage?: string;
+	readonly weight?: number;
 }
 export interface BackendPool {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: BackendPoolProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: BackendPoolProperties;
+	readonly type?: string;
 }
 export interface BackendPoolProperties {
-	readonly backends?: Backend[] | undefined;
-	readonly healthProbeSettings?: SubResource | undefined;
-	readonly loadBalancingSettings?: SubResource | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling") | undefined;
+	readonly backends?: Backend[];
+	readonly healthProbeSettings?: SubResource;
+	readonly loadBalancingSettings?: SubResource;
+	readonly resourceState?: "Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling";
 }
 export interface BackendPoolsSettings {
-	readonly enforceCertificateNameCheck?: ("Disabled" | "Enabled") | undefined;
-	readonly sendRecvTimeoutSeconds?: number | undefined;
+	readonly enforceCertificateNameCheck?: "Disabled" | "Enabled";
+	readonly sendRecvTimeoutSeconds?: number;
 }
 export interface CacheConfiguration {
-	readonly cacheDuration?: string | undefined;
-	readonly dynamicCompression?: ("Disabled" | "Enabled") | undefined;
-	readonly queryParameters?: string | undefined;
-	readonly queryParameterStripDirective?: ("StripAll" | "StripAllExcept" | "StripNone" | "StripOnly") | undefined;
+	readonly cacheDuration?: string;
+	readonly dynamicCompression?: "Disabled" | "Enabled";
+	readonly queryParameters?: string;
+	readonly queryParameterStripDirective?: "StripAll" | "StripAllExcept" | "StripNone" | "StripOnly";
 }
 export interface CustomHttpsConfiguration {
 	readonly certificateSource: "AzureKeyVault" | "FrontDoor";
-	readonly frontDoorCertificateSourceParameters?: FrontDoorCertificateSourceParameters | undefined;
-	readonly keyVaultCertificateSourceParameters?: KeyVaultCertificateSourceParameters | undefined;
+	readonly frontDoorCertificateSourceParameters?: FrontDoorCertificateSourceParameters;
+	readonly keyVaultCertificateSourceParameters?: KeyVaultCertificateSourceParameters;
 	readonly minimumTlsVersion: "1.0" | "1.2";
 	readonly protocolType: "ServerNameIndication";
 }
 export interface FrontDoorCertificateSourceParameters {
-	readonly certificateType?: "Dedicated" | undefined;
+	readonly certificateType?: "Dedicated";
 }
 export interface FrontDoorProperties {
-	readonly backendPools?: BackendPool[] | undefined;
-	readonly backendPoolsSettings?: BackendPoolsSettings | undefined;
-	readonly cname?: string | undefined;
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
-	readonly friendlyName?: string | undefined;
-	readonly frontdoorId?: string | undefined;
-	readonly frontendEndpoints?: FrontendEndpoint[] | undefined;
-	readonly healthProbeSettings?: HealthProbeSettingsModel[] | undefined;
-	readonly loadBalancingSettings?: LoadBalancingSettingsModel[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling") | undefined;
-	readonly routingRules?: RoutingRule[] | undefined;
-	readonly rulesEngines?: RulesEngine[] | undefined;
+	readonly backendPools?: BackendPool[];
+	readonly backendPoolsSettings?: BackendPoolsSettings;
+	readonly cname?: string;
+	readonly enabledState?: "Disabled" | "Enabled";
+	readonly friendlyName?: string;
+	readonly frontdoorId?: string;
+	readonly frontendEndpoints?: FrontendEndpoint[];
+	readonly healthProbeSettings?: HealthProbeSettingsModel[];
+	readonly loadBalancingSettings?: LoadBalancingSettingsModel[];
+	readonly provisioningState?: string;
+	readonly resourceState?: "Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling";
+	readonly routingRules?: RoutingRule[];
+	readonly rulesEngines?: RulesEngine[];
 }
 export interface FrontendEndpoint {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: FrontendEndpointProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: FrontendEndpointProperties;
+	readonly type?: string;
 }
 export interface FrontendEndpointProperties {
-	readonly customHttpsConfiguration?: CustomHttpsConfiguration | undefined;
-	readonly customHttpsProvisioningState?: ("Disabled" | "Disabling" | "Enabled" | "Enabling" | "Failed") | undefined;
+	readonly customHttpsConfiguration?: CustomHttpsConfiguration;
+	readonly customHttpsProvisioningState?: "Disabled" | "Disabling" | "Enabled" | "Enabling" | "Failed";
 	readonly customHttpsProvisioningSubstate?:
-		| (
-				| "CertificateDeleted"
-				| "CertificateDeployed"
-				| "DeletingCertificate"
-				| "DeployingCertificate"
-				| "DomainControlValidationRequestApproved"
-				| "DomainControlValidationRequestRejected"
-				| "DomainControlValidationRequestTimedOut"
-				| "IssuingCertificate"
-				| "PendingDomainControlValidationREquestApproval"
-				| "SubmittingDomainControlValidationRequest"
-		  )
-		| undefined;
-	readonly hostName?: string | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling") | undefined;
-	readonly sessionAffinityEnabledState?: ("Disabled" | "Enabled") | undefined;
-	readonly sessionAffinityTtlSeconds?: number | undefined;
-	readonly webApplicationFirewallPolicyLink?:
-		| FrontendEndpointUpdateParametersWebApplicationFirewallPolicyLink
-		| undefined;
+		| "CertificateDeleted"
+		| "CertificateDeployed"
+		| "DeletingCertificate"
+		| "DeployingCertificate"
+		| "DomainControlValidationRequestApproved"
+		| "DomainControlValidationRequestRejected"
+		| "DomainControlValidationRequestTimedOut"
+		| "IssuingCertificate"
+		| "PendingDomainControlValidationREquestApproval"
+		| "SubmittingDomainControlValidationRequest";
+	readonly hostName?: string;
+	readonly resourceState?: "Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling";
+	readonly sessionAffinityEnabledState?: "Disabled" | "Enabled";
+	readonly sessionAffinityTtlSeconds?: number;
+	readonly webApplicationFirewallPolicyLink?: FrontendEndpointUpdateParametersWebApplicationFirewallPolicyLink;
 }
 export interface FrontendEndpointUpdateParametersWebApplicationFirewallPolicyLink {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface HeaderAction {
 	readonly headerActionType: "Append" | "Delete" | "Overwrite";
 	readonly headerName: string;
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface HealthProbeSettingsModel {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: HealthProbeSettingsProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: HealthProbeSettingsProperties;
+	readonly type?: string;
 }
 export interface HealthProbeSettingsProperties {
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
-	readonly healthProbeMethod?: ("GET" | "HEAD") | undefined;
-	readonly intervalInSeconds?: number | undefined;
-	readonly path?: string | undefined;
-	readonly protocol?: ("Http" | "Https") | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling") | undefined;
+	readonly enabledState?: "Disabled" | "Enabled";
+	readonly healthProbeMethod?: "GET" | "HEAD";
+	readonly intervalInSeconds?: number;
+	readonly path?: string;
+	readonly protocol?: "Http" | "Https";
+	readonly resourceState?: "Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling";
 }
 export interface KeyVaultCertificateSourceParameters {
-	readonly secretName?: string | undefined;
-	readonly secretVersion?: string | undefined;
-	readonly vault?: KeyVaultCertificateSourceParametersVault | undefined;
+	readonly secretName?: string;
+	readonly secretVersion?: string;
+	readonly vault?: KeyVaultCertificateSourceParametersVault;
 }
 export interface KeyVaultCertificateSourceParametersVault {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface LoadBalancingSettingsModel {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: LoadBalancingSettingsProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: LoadBalancingSettingsProperties;
+	readonly type?: string;
 }
 export interface LoadBalancingSettingsProperties {
-	readonly additionalLatencyMilliseconds?: number | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling") | undefined;
-	readonly sampleSize?: number | undefined;
-	readonly successfulSamplesRequired?: number | undefined;
+	readonly additionalLatencyMilliseconds?: number;
+	readonly resourceState?: "Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling";
+	readonly sampleSize?: number;
+	readonly successfulSamplesRequired?: number;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RouteConfiguration {}
 export interface RoutingRule {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: RoutingRuleProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: RoutingRuleProperties;
+	readonly type?: string;
 }
 export interface RoutingRuleProperties {
-	readonly acceptedProtocols?: ("Http" | "Https"[]) | undefined;
-	readonly enabledState?: ("Disabled" | "Enabled") | undefined;
-	readonly frontendEndpoints?: SubResource[] | undefined;
-	readonly patternsToMatch?: string[] | undefined;
-	readonly resourceState?: ("Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling") | undefined;
-	readonly routeConfiguration?: RouteConfiguration | undefined;
-	readonly rulesEngine?: SubResource | undefined;
+	readonly acceptedProtocols?: "Http" | "Https"[];
+	readonly enabledState?: "Disabled" | "Enabled";
+	readonly frontendEndpoints?: SubResource[];
+	readonly patternsToMatch?: string[];
+	readonly resourceState?: "Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling";
+	readonly routeConfiguration?: RouteConfiguration;
+	readonly rulesEngine?: SubResource;
 }
 export interface RulesEngine {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: RulesEngineProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: RulesEngineProperties;
+	readonly type?: string;
 }
 export interface RulesEngineAction {
-	readonly requestHeaderActions?: HeaderAction[] | undefined;
-	readonly responseHeaderActions?: HeaderAction[] | undefined;
-	readonly routeConfigurationOverride?: RouteConfiguration | undefined;
+	readonly requestHeaderActions?: HeaderAction[];
+	readonly responseHeaderActions?: HeaderAction[];
+	readonly routeConfigurationOverride?: RouteConfiguration;
 }
 export interface RulesEngineMatchCondition {
-	readonly negateCondition?: boolean | undefined;
+	readonly negateCondition?: boolean;
 	readonly rulesEngineMatchValue: string[];
 	readonly rulesEngineMatchVariable:
 		| "IsMobile"
@@ -249,22 +244,22 @@ export interface RulesEngineMatchCondition {
 		| "IPMatch"
 		| "LessThan"
 		| "LessThanOrEqual";
-	readonly selector?: string | undefined;
-	readonly transforms?: ("Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[]) | undefined;
+	readonly selector?: string;
+	readonly transforms?: "Lowercase" | "RemoveNulls" | "Trim" | "Uppercase" | "UrlDecode" | "UrlEncode"[];
 }
 export interface RulesEngineProperties {
-	readonly resourceState?: ("Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling") | undefined;
-	readonly rules?: RulesEngineRule[] | undefined;
+	readonly resourceState?: "Creating" | "Deleting" | "Disabled" | "Disabling" | "Enabled" | "Enabling";
+	readonly rules?: RulesEngineRule[];
 }
 export interface RulesEngineRule {
 	readonly action: RulesEngineAction;
-	readonly matchConditions?: RulesEngineMatchCondition[] | undefined;
-	readonly matchProcessingBehavior?: ("Continue" | "Stop") | undefined;
+	readonly matchConditions?: RulesEngineMatchCondition[];
+	readonly matchProcessingBehavior?: "Continue" | "Stop";
 	readonly name: string;
 	readonly priority: number;
 }
 export interface SubResource {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export default {
 	frontDoors: frontDoors,

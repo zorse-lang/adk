@@ -18,32 +18,32 @@ export interface InferenceSchedulerComponentInputs {
 	readonly DataUploadFrequency: string;
 	readonly ModelName: string;
 	readonly RoleArn: string;
-	readonly DataDelayOffsetInMinutes?: (number | undefined) | undefined;
-	readonly InferenceSchedulerName?: (string | undefined) | undefined;
-	readonly ServerSideKmsKeyId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DataDelayOffsetInMinutes?: number | undefined;
+	readonly InferenceSchedulerName?: string | undefined;
+	readonly ServerSideKmsKeyId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface DataInputConfiguration {
-	readonly InferenceInputNameConfiguration?: (InputNameConfiguration | undefined) | undefined;
-	readonly InputTimeZoneOffset?: (string | undefined) | undefined;
+	readonly InferenceInputNameConfiguration?: InputNameConfiguration | undefined;
+	readonly InputTimeZoneOffset?: string | undefined;
 	readonly S3InputConfiguration: S3InputConfiguration;
 }
 export interface DataOutputConfiguration {
-	readonly KmsKeyId?: (string | undefined) | undefined;
+	readonly KmsKeyId?: string | undefined;
 	readonly S3OutputConfiguration: S3OutputConfiguration;
 }
 export interface InputNameConfiguration {
-	readonly ComponentTimestampDelimiter?: (string | undefined) | undefined;
-	readonly TimestampFormat?: (string | undefined) | undefined;
+	readonly ComponentTimestampDelimiter?: string | undefined;
+	readonly TimestampFormat?: string | undefined;
 }
 export interface S3InputConfiguration {
 	readonly Bucket: string;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly Prefix?: string | undefined;
 }
 export interface S3OutputConfiguration {
 	readonly Bucket: string;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly Prefix?: string | undefined;
 }
 export default {
 	InferenceScheduler: InferenceScheduler,

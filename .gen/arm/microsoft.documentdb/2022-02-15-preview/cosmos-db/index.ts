@@ -17,11 +17,11 @@ export interface cassandraClustersComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/cassandraClusters";
 }
 export interface cassandraClustersComponentInputs {
-	readonly identity?: ManagedCassandraManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedCassandraManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ClusterResourceProperties | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: ClusterResourceProperties;
+	readonly tags?: Tags;
 }
 export class cassandraClusters_backups
 	extends ArmResource<cassandraClusters_backupsComponentInputs>
@@ -41,7 +41,7 @@ export interface cassandraClusters_backupsComponentOutputs {
 }
 export interface cassandraClusters_backupsComponentInputs {
 	readonly name: string;
-	readonly properties?: BackupResourceProperties | undefined;
+	readonly properties?: BackupResourceProperties;
 }
 export class cassandraClusters_dataCenters
 	extends ArmResource<cassandraClusters_dataCentersComponentInputs>
@@ -61,7 +61,7 @@ export interface cassandraClusters_dataCentersComponentOutputs {
 }
 export interface cassandraClusters_dataCentersComponentInputs {
 	readonly name: string;
-	readonly properties?: DataCenterResourceProperties | undefined;
+	readonly properties?: DataCenterResourceProperties;
 }
 export class databaseAccounts
 	extends ArmResource<databaseAccountsComponentInputs>
@@ -80,13 +80,13 @@ export interface databaseAccountsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts";
 }
 export interface databaseAccountsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly kind?: ("GlobalDocumentDB" | "MongoDB" | "Parse") | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly kind?: "GlobalDocumentDB" | "MongoDB" | "Parse";
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: DatabaseAccountCreateUpdatePropertiesOrDatabaseAccountGetProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: Tags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_cassandraKeyspaces
 	extends ArmResource<databaseAccounts_cassandraKeyspacesComponentInputs>
@@ -111,11 +111,11 @@ export interface databaseAccounts_cassandraKeyspacesComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces";
 }
 export interface databaseAccounts_cassandraKeyspacesComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: CassandraKeyspaceCreateUpdatePropertiesOrCassandraKeyspaceGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_cassandraKeyspaces_tables
 	extends ArmResource<databaseAccounts_cassandraKeyspaces_tablesComponentInputs>
@@ -140,11 +140,11 @@ export interface databaseAccounts_cassandraKeyspaces_tablesComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables";
 }
 export interface databaseAccounts_cassandraKeyspaces_tablesComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: CassandraTableCreateUpdatePropertiesOrCassandraTableGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_cassandraKeyspaces_tables_throughputSettings
 	extends ArmResource<databaseAccounts_cassandraKeyspaces_tables_throughputSettingsComponentInputs>
@@ -172,11 +172,11 @@ export interface databaseAccounts_cassandraKeyspaces_tables_throughputSettingsCo
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/throughputSettings";
 }
 export interface databaseAccounts_cassandraKeyspaces_tables_throughputSettingsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputSettingsUpdatePropertiesOrThroughputSettingsGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_cassandraKeyspaces_throughputSettings
 	extends ArmResource<databaseAccounts_cassandraKeyspaces_throughputSettingsComponentInputs>
@@ -201,11 +201,11 @@ export interface databaseAccounts_cassandraKeyspaces_throughputSettingsComponent
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/throughputSettings";
 }
 export interface databaseAccounts_cassandraKeyspaces_throughputSettingsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputSettingsUpdatePropertiesOrThroughputSettingsGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_cassandraKeyspaces_views
 	extends ArmResource<databaseAccounts_cassandraKeyspaces_viewsComponentInputs>
@@ -230,11 +230,11 @@ export interface databaseAccounts_cassandraKeyspaces_viewsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/views";
 }
 export interface databaseAccounts_cassandraKeyspaces_viewsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: CassandraViewCreateUpdatePropertiesOrCassandraViewGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_cassandraKeyspaces_views_throughputSettings
 	extends ArmResource<databaseAccounts_cassandraKeyspaces_views_throughputSettingsComponentInputs>
@@ -259,11 +259,11 @@ export interface databaseAccounts_cassandraKeyspaces_views_throughputSettingsCom
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/views/throughputSettings";
 }
 export interface databaseAccounts_cassandraKeyspaces_views_throughputSettingsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputSettingsUpdatePropertiesOrThroughputSettingsGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_dataTransferJobs
 	extends ArmResource<databaseAccounts_dataTransferJobsComponentInputs>
@@ -308,11 +308,11 @@ export interface databaseAccounts_graphsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/graphs";
 }
 export interface databaseAccounts_graphsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: GraphResourceCreateUpdatePropertiesOrGraphResourceGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_gremlinDatabases
 	extends ArmResource<databaseAccounts_gremlinDatabasesComponentInputs>
@@ -337,11 +337,11 @@ export interface databaseAccounts_gremlinDatabasesComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases";
 }
 export interface databaseAccounts_gremlinDatabasesComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: GremlinDatabaseCreateUpdatePropertiesOrGremlinDatabaseGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_gremlinDatabases_graphs
 	extends ArmResource<databaseAccounts_gremlinDatabases_graphsComponentInputs>
@@ -366,11 +366,11 @@ export interface databaseAccounts_gremlinDatabases_graphsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs";
 }
 export interface databaseAccounts_gremlinDatabases_graphsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: GremlinGraphCreateUpdatePropertiesOrGremlinGraphGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_gremlinDatabases_graphs_throughputSettings
 	extends ArmResource<databaseAccounts_gremlinDatabases_graphs_throughputSettingsComponentInputs>
@@ -395,11 +395,11 @@ export interface databaseAccounts_gremlinDatabases_graphs_throughputSettingsComp
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/throughputSettings";
 }
 export interface databaseAccounts_gremlinDatabases_graphs_throughputSettingsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputSettingsUpdatePropertiesOrThroughputSettingsGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_gremlinDatabases_throughputSettings
 	extends ArmResource<databaseAccounts_gremlinDatabases_throughputSettingsComponentInputs>
@@ -424,11 +424,11 @@ export interface databaseAccounts_gremlinDatabases_throughputSettingsComponentOu
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/throughputSettings";
 }
 export interface databaseAccounts_gremlinDatabases_throughputSettingsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputSettingsUpdatePropertiesOrThroughputSettingsGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_mongodbDatabases
 	extends ArmResource<databaseAccounts_mongodbDatabasesComponentInputs>
@@ -453,11 +453,11 @@ export interface databaseAccounts_mongodbDatabasesComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases";
 }
 export interface databaseAccounts_mongodbDatabasesComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: MongoDBDatabaseCreateUpdatePropertiesOrMongoDBDatabaseGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_mongodbDatabases_collections
 	extends ArmResource<databaseAccounts_mongodbDatabases_collectionsComponentInputs>
@@ -482,11 +482,11 @@ export interface databaseAccounts_mongodbDatabases_collectionsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections";
 }
 export interface databaseAccounts_mongodbDatabases_collectionsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: MongoDBCollectionCreateUpdatePropertiesOrMongoDBCollectionGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_mongodbDatabases_collections_throughputSettings
 	extends ArmResource<databaseAccounts_mongodbDatabases_collections_throughputSettingsComponentInputs>
@@ -514,11 +514,11 @@ export interface databaseAccounts_mongodbDatabases_collections_throughputSetting
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/throughputSettings";
 }
 export interface databaseAccounts_mongodbDatabases_collections_throughputSettingsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputSettingsUpdatePropertiesOrThroughputSettingsGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_mongodbDatabases_throughputSettings
 	extends ArmResource<databaseAccounts_mongodbDatabases_throughputSettingsComponentInputs>
@@ -543,11 +543,11 @@ export interface databaseAccounts_mongodbDatabases_throughputSettingsComponentOu
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/throughputSettings";
 }
 export interface databaseAccounts_mongodbDatabases_throughputSettingsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputSettingsUpdatePropertiesOrThroughputSettingsGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_mongodbRoleDefinitions
 	extends ArmResource<databaseAccounts_mongodbRoleDefinitionsComponentInputs>
@@ -573,7 +573,7 @@ export interface databaseAccounts_mongodbRoleDefinitionsComponentOutputs {
 }
 export interface databaseAccounts_mongodbRoleDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: MongoRoleDefinitionResource | undefined;
+	readonly properties?: MongoRoleDefinitionResource;
 }
 export class databaseAccounts_mongodbUserDefinitions
 	extends ArmResource<databaseAccounts_mongodbUserDefinitionsComponentInputs>
@@ -599,7 +599,7 @@ export interface databaseAccounts_mongodbUserDefinitionsComponentOutputs {
 }
 export interface databaseAccounts_mongodbUserDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: MongoUserDefinitionResource | undefined;
+	readonly properties?: MongoUserDefinitionResource;
 }
 export class databaseAccounts_notebookWorkspaces
 	extends ArmResource<databaseAccounts_notebookWorkspacesComponentInputs>
@@ -625,7 +625,7 @@ export interface databaseAccounts_notebookWorkspacesComponentOutputs {
 }
 export interface databaseAccounts_notebookWorkspacesComponentInputs {
 	readonly name: string;
-	readonly properties?: NotebookWorkspaceProperties | undefined;
+	readonly properties?: NotebookWorkspaceProperties;
 }
 export class databaseAccounts_privateEndpointConnections
 	extends ArmResource<databaseAccounts_privateEndpointConnectionsComponentInputs>
@@ -651,7 +651,7 @@ export interface databaseAccounts_privateEndpointConnectionsComponentOutputs {
 }
 export interface databaseAccounts_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class databaseAccounts_privateLinkResources
 	extends ArmResource<databaseAccounts_privateLinkResourcesComponentInputs>
@@ -677,7 +677,7 @@ export interface databaseAccounts_privateLinkResourcesComponentOutputs {
 }
 export interface databaseAccounts_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export class databaseAccounts_services
 	extends ArmResource<databaseAccounts_servicesComponentInputs>
@@ -697,7 +697,7 @@ export interface databaseAccounts_servicesComponentOutputs {
 }
 export interface databaseAccounts_servicesComponentInputs {
 	readonly name: string;
-	readonly properties?: ServiceResourceCreateUpdatePropertiesOrServiceResourceProperties | undefined;
+	readonly properties?: ServiceResourceCreateUpdatePropertiesOrServiceResourceProperties;
 }
 export class databaseAccounts_sqlDatabases
 	extends ArmResource<databaseAccounts_sqlDatabasesComponentInputs>
@@ -716,11 +716,11 @@ export interface databaseAccounts_sqlDatabasesComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases";
 }
 export interface databaseAccounts_sqlDatabasesComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: SqlDatabaseCreateUpdatePropertiesOrSqlDatabaseGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_sqlDatabases_clientEncryptionKeys
 	extends ArmResource<databaseAccounts_sqlDatabases_clientEncryptionKeysComponentInputs>
@@ -771,11 +771,11 @@ export interface databaseAccounts_sqlDatabases_containersComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers";
 }
 export interface databaseAccounts_sqlDatabases_containersComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: SqlContainerCreateUpdatePropertiesOrSqlContainerGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_sqlDatabases_containers_storedProcedures
 	extends ArmResource<databaseAccounts_sqlDatabases_containers_storedProceduresComponentInputs>
@@ -800,11 +800,11 @@ export interface databaseAccounts_sqlDatabases_containers_storedProceduresCompon
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/storedProcedures";
 }
 export interface databaseAccounts_sqlDatabases_containers_storedProceduresComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: SqlStoredProcedureCreateUpdatePropertiesOrSqlStoredProcedureGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_sqlDatabases_containers_throughputSettings
 	extends ArmResource<databaseAccounts_sqlDatabases_containers_throughputSettingsComponentInputs>
@@ -829,11 +829,11 @@ export interface databaseAccounts_sqlDatabases_containers_throughputSettingsComp
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/throughputSettings";
 }
 export interface databaseAccounts_sqlDatabases_containers_throughputSettingsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputSettingsUpdatePropertiesOrThroughputSettingsGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_sqlDatabases_containers_triggers
 	extends ArmResource<databaseAccounts_sqlDatabases_containers_triggersComponentInputs>
@@ -858,11 +858,11 @@ export interface databaseAccounts_sqlDatabases_containers_triggersComponentOutpu
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/triggers";
 }
 export interface databaseAccounts_sqlDatabases_containers_triggersComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: SqlTriggerCreateUpdatePropertiesOrSqlTriggerGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_sqlDatabases_containers_userDefinedFunctions
 	extends ArmResource<databaseAccounts_sqlDatabases_containers_userDefinedFunctionsComponentInputs>
@@ -890,11 +890,11 @@ export interface databaseAccounts_sqlDatabases_containers_userDefinedFunctionsCo
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/userDefinedFunctions";
 }
 export interface databaseAccounts_sqlDatabases_containers_userDefinedFunctionsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: SqlUserDefinedFunctionCreateUpdatePropertiesOrSqlUserDefinedFunctionGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_sqlDatabases_throughputSettings
 	extends ArmResource<databaseAccounts_sqlDatabases_throughputSettingsComponentInputs>
@@ -919,11 +919,11 @@ export interface databaseAccounts_sqlDatabases_throughputSettingsComponentOutput
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/throughputSettings";
 }
 export interface databaseAccounts_sqlDatabases_throughputSettingsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputSettingsUpdatePropertiesOrThroughputSettingsGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_sqlRoleAssignments
 	extends ArmResource<databaseAccounts_sqlRoleAssignmentsComponentInputs>
@@ -949,7 +949,7 @@ export interface databaseAccounts_sqlRoleAssignmentsComponentOutputs {
 }
 export interface databaseAccounts_sqlRoleAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: SqlRoleAssignmentResource | undefined;
+	readonly properties?: SqlRoleAssignmentResource;
 }
 export class databaseAccounts_sqlRoleDefinitions
 	extends ArmResource<databaseAccounts_sqlRoleDefinitionsComponentInputs>
@@ -975,7 +975,7 @@ export interface databaseAccounts_sqlRoleDefinitionsComponentOutputs {
 }
 export interface databaseAccounts_sqlRoleDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: SqlRoleDefinitionResource | undefined;
+	readonly properties?: SqlRoleDefinitionResource;
 }
 export class databaseAccounts_tables
 	extends ArmResource<databaseAccounts_tablesComponentInputs>
@@ -994,11 +994,11 @@ export interface databaseAccounts_tablesComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/tables";
 }
 export interface databaseAccounts_tablesComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: TableCreateUpdatePropertiesOrTableGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class databaseAccounts_tables_throughputSettings
 	extends ArmResource<databaseAccounts_tables_throughputSettingsComponentInputs>
@@ -1023,11 +1023,11 @@ export interface databaseAccounts_tables_throughputSettingsComponentOutputs {
 	readonly type: "Microsoft.DocumentDB/databaseAccounts/tables/throughputSettings";
 }
 export interface databaseAccounts_tables_throughputSettingsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedServiceIdentity;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ThroughputSettingsUpdatePropertiesOrThroughputSettingsGetProperties;
-	readonly tags?: Tags | undefined;
+	readonly tags?: Tags;
 }
 export class locations extends ArmResource<locationsComponentInputs> implements locationsComponentOutputs {
 	constructor(entity: ADKEntity, options: locationsComponentInputs) {
@@ -1044,7 +1044,7 @@ export interface locationsComponentOutputs {
 }
 export interface locationsComponentInputs {
 	readonly name: string;
-	readonly properties?: LocationProperties | undefined;
+	readonly properties?: LocationProperties;
 }
 export function listConnectionInfo(
 	resource: databaseAccounts_notebookWorkspaces,
@@ -1076,92 +1076,92 @@ export function listKeys(resource: databaseAccounts): DatabaseAccountListKeysRes
 	throw new Error("not implemented");
 }
 export interface AnalyticalStorageConfiguration {
-	readonly schemaType?: ("FullFidelity" | "WellDefined") | undefined;
+	readonly schemaType?: "FullFidelity" | "WellDefined";
 }
 export interface ApiProperties {
-	readonly serverVersion?: ("3.2" | "3.6" | "4.0" | "4.2") | undefined;
+	readonly serverVersion?: "3.2" | "3.6" | "4.0" | "4.2";
 }
 export interface AuthenticationMethodLdapProperties {
-	readonly searchBaseDistinguishedName?: string | undefined;
-	readonly searchFilterTemplate?: string | undefined;
-	readonly serverCertificates?: Certificate[] | undefined;
-	readonly serverHostname?: string | undefined;
-	readonly serverPort?: number | undefined;
-	readonly serviceUserDistinguishedName?: string | undefined;
-	readonly serviceUserPassword?: string | undefined;
+	readonly searchBaseDistinguishedName?: string;
+	readonly searchFilterTemplate?: string;
+	readonly serverCertificates?: Certificate[];
+	readonly serverHostname?: string;
+	readonly serverPort?: number;
+	readonly serviceUserDistinguishedName?: string;
+	readonly serviceUserPassword?: string;
 }
 export interface AutoscaleSettings {
-	readonly maxThroughput?: number | undefined;
+	readonly maxThroughput?: number;
 }
 export interface AutoscaleSettingsResource {
-	readonly autoUpgradePolicy?: AutoUpgradePolicyResource | undefined;
+	readonly autoUpgradePolicy?: AutoUpgradePolicyResource;
 	readonly maxThroughput: number;
-	readonly targetMaxThroughput?: number | undefined;
+	readonly targetMaxThroughput?: number;
 }
 export interface AutoUpgradePolicyResource {
-	readonly throughputPolicy?: ThroughputPolicyResource | undefined;
+	readonly throughputPolicy?: ThroughputPolicyResource;
 }
 export interface BackupPolicy {
-	readonly migrationState?: BackupPolicyMigrationState | undefined;
+	readonly migrationState?: BackupPolicyMigrationState;
 }
 export interface BackupPolicyMigrationState {
-	readonly startTime?: string | undefined;
-	readonly status?: ("Completed" | "Failed" | "InProgress" | "Invalid") | undefined;
-	readonly targetType?: ("Continuous" | "Periodic") | undefined;
+	readonly startTime?: string;
+	readonly status?: "Completed" | "Failed" | "InProgress" | "Invalid";
+	readonly targetType?: "Continuous" | "Periodic";
 }
 export interface BackupResourceProperties {
-	readonly timestamp?: string | undefined;
+	readonly timestamp?: string;
 }
 export interface Capability {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface Capacity {
-	readonly totalThroughputLimit?: number | undefined;
+	readonly totalThroughputLimit?: number;
 }
 export interface CassandraKeyspaceCreateUpdatePropertiesOrCassandraKeyspaceGetProperties {
-	readonly options?: CreateUpdateOptionsOrCassandraKeyspaceGetPropertiesOptions | undefined;
+	readonly options?: CreateUpdateOptionsOrCassandraKeyspaceGetPropertiesOptions;
 	readonly resource: CassandraKeyspaceResourceOrCassandraKeyspaceGetPropertiesResource;
 }
 export interface CassandraKeyspaceResourceOrCassandraKeyspaceGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
 	readonly id: string;
 }
 export interface CassandraPartitionKey {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface CassandraSchema {
-	readonly clusterKeys?: ClusterKey[] | undefined;
-	readonly columns?: Column[] | undefined;
-	readonly partitionKeys?: CassandraPartitionKey[] | undefined;
+	readonly clusterKeys?: ClusterKey[];
+	readonly columns?: Column[];
+	readonly partitionKeys?: CassandraPartitionKey[];
 }
 export interface CassandraTableCreateUpdatePropertiesOrCassandraTableGetProperties {
-	readonly options?: CreateUpdateOptionsOrCassandraTableGetPropertiesOptions | undefined;
+	readonly options?: CreateUpdateOptionsOrCassandraTableGetPropertiesOptions;
 	readonly resource: CassandraTableResourceOrCassandraTableGetPropertiesResource;
 }
 export interface CassandraTableResourceOrCassandraTableGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
-	readonly analyticalStorageTtl?: number | undefined;
-	readonly defaultTtl?: number | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
+	readonly analyticalStorageTtl?: number;
+	readonly defaultTtl?: number;
 	readonly id: string;
-	readonly schema?: CassandraSchema | undefined;
+	readonly schema?: CassandraSchema;
 }
 export interface CassandraViewCreateUpdatePropertiesOrCassandraViewGetProperties {
-	readonly options?: CreateUpdateOptionsOrCassandraViewGetPropertiesOptions | undefined;
+	readonly options?: CreateUpdateOptionsOrCassandraViewGetPropertiesOptions;
 	readonly resource: CassandraViewResourceOrCassandraViewGetPropertiesResource;
 }
 export interface CassandraViewResourceOrCassandraViewGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
 	readonly id: string;
 	readonly viewDefinition: string;
 }
 export interface Certificate {
-	readonly pem?: string | undefined;
+	readonly pem?: string;
 }
 export interface ClientEncryptionIncludedPath {
 	readonly clientEncryptionKeyId: string;
@@ -1173,565 +1173,563 @@ export interface ClientEncryptionKeyCreateUpdatePropertiesOrClientEncryptionKeyG
 	readonly resource: ClientEncryptionKeyResourceOrClientEncryptionKeyGetPropertiesResource;
 }
 export interface ClientEncryptionKeyResourceOrClientEncryptionKeyGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
-	readonly encryptionAlgorithm?: string | undefined;
-	readonly id?: string | undefined;
-	readonly keyWrapMetadata?: KeyWrapMetadata | undefined;
-	readonly wrappedDataEncryptionKey?: any | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
+	readonly encryptionAlgorithm?: string;
+	readonly id?: string;
+	readonly keyWrapMetadata?: KeyWrapMetadata;
+	readonly wrappedDataEncryptionKey?: any;
 }
 export interface ClientEncryptionPolicy {
 	readonly includedPaths: ClientEncryptionIncludedPath[];
-	readonly policyFormatVersion?: number | undefined;
+	readonly policyFormatVersion?: number;
 }
 export interface ClusterKey {
-	readonly name?: string | undefined;
-	readonly orderBy?: string | undefined;
+	readonly name?: string;
+	readonly orderBy?: string;
 }
 export interface ClusterResourceProperties {
-	readonly authenticationMethod?: ("Cassandra" | "Ldap" | "None") | undefined;
-	readonly cassandraAuditLoggingEnabled?: boolean | undefined;
-	readonly cassandraVersion?: string | undefined;
-	readonly clientCertificates?: Certificate[] | undefined;
-	readonly clusterNameOverride?: string | undefined;
-	readonly deallocated?: boolean | undefined;
-	readonly delegatedManagementSubnetId?: string | undefined;
-	readonly externalGossipCertificates?: Certificate[] | undefined;
-	readonly externalSeedNodes?: SeedNode[] | undefined;
-	readonly gossipCertificates?: Certificate[] | undefined;
-	readonly hoursBetweenBackups?: number | undefined;
-	readonly initialCassandraAdminPassword?: string | undefined;
-	readonly prometheusEndpoint?: SeedNode | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly repairEnabled?: boolean | undefined;
-	readonly restoreFromBackupId?: string | undefined;
-	readonly seedNodes?: SeedNode[] | undefined;
+	readonly authenticationMethod?: "Cassandra" | "Ldap" | "None";
+	readonly cassandraAuditLoggingEnabled?: boolean;
+	readonly cassandraVersion?: string;
+	readonly clientCertificates?: Certificate[];
+	readonly clusterNameOverride?: string;
+	readonly deallocated?: boolean;
+	readonly delegatedManagementSubnetId?: string;
+	readonly externalGossipCertificates?: Certificate[];
+	readonly externalSeedNodes?: SeedNode[];
+	readonly gossipCertificates?: Certificate[];
+	readonly hoursBetweenBackups?: number;
+	readonly initialCassandraAdminPassword?: string;
+	readonly prometheusEndpoint?: SeedNode;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly repairEnabled?: boolean;
+	readonly restoreFromBackupId?: string;
+	readonly seedNodes?: SeedNode[];
 }
 export interface Column {
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface CompositePath {
-	readonly order?: ("ascending" | "descending") | undefined;
-	readonly path?: string | undefined;
+	readonly order?: "ascending" | "descending";
+	readonly path?: string;
 }
 export interface ConflictResolutionPolicy {
-	readonly conflictResolutionPath?: string | undefined;
-	readonly conflictResolutionProcedure?: string | undefined;
-	readonly mode?: ("Custom" | "LastWriterWins") | undefined;
+	readonly conflictResolutionPath?: string;
+	readonly conflictResolutionProcedure?: string;
+	readonly mode?: "Custom" | "LastWriterWins";
 }
 export interface ConsistencyPolicy {
 	readonly defaultConsistencyLevel: "BoundedStaleness" | "ConsistentPrefix" | "Eventual" | "Session";
-	readonly maxIntervalInSeconds?: number | undefined;
-	readonly maxStalenessPrefix?: number | undefined;
+	readonly maxIntervalInSeconds?: number;
+	readonly maxStalenessPrefix?: number;
 }
 export interface ContainerPartitionKey {
-	readonly kind?: ("Hash" | "MultiHash" | "Range") | undefined;
-	readonly paths?: string[] | undefined;
-	readonly systemKey?: boolean | undefined;
-	readonly version?: number | undefined;
+	readonly kind?: "Hash" | "MultiHash" | "Range";
+	readonly paths?: string[];
+	readonly systemKey?: boolean;
+	readonly version?: number;
 }
 export interface ContinuousModeProperties {
-	readonly tier?: ("Continuous30Days" | "Continuous7Days") | undefined;
+	readonly tier?: "Continuous30Days" | "Continuous7Days";
 }
 export interface CorsPolicy {
-	readonly allowedHeaders?: string | undefined;
-	readonly allowedMethods?: string | undefined;
+	readonly allowedHeaders?: string;
+	readonly allowedMethods?: string;
 	readonly allowedOrigins: string;
-	readonly exposedHeaders?: string | undefined;
-	readonly maxAgeInSeconds?: number | undefined;
+	readonly exposedHeaders?: string;
+	readonly maxAgeInSeconds?: number;
 }
 export interface CreateUpdateOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface CreateUpdateOptionsOrCassandraKeyspaceGetPropertiesOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface CreateUpdateOptionsOrCassandraTableGetPropertiesOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface CreateUpdateOptionsOrCassandraViewGetPropertiesOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface CreateUpdateOptionsOrGraphResourceGetPropertiesOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface CreateUpdateOptionsOrGremlinDatabaseGetPropertiesOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface CreateUpdateOptionsOrGremlinGraphGetPropertiesOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface CreateUpdateOptionsOrMongoDBCollectionGetPropertiesOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface CreateUpdateOptionsOrMongoDBDatabaseGetPropertiesOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface CreateUpdateOptionsOrSqlContainerGetPropertiesOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface CreateUpdateOptionsOrSqlDatabaseGetPropertiesOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface CreateUpdateOptionsOrTableGetPropertiesOptions {
-	readonly autoscaleSettings?: AutoscaleSettings | undefined;
-	readonly throughput?: number | undefined;
+	readonly autoscaleSettings?: AutoscaleSettings;
+	readonly throughput?: number;
 }
 export interface DatabaseAccountConnectionString {
-	readonly connectionString?: string | undefined;
-	readonly description?: string | undefined;
+	readonly connectionString?: string;
+	readonly description?: string;
 }
 export interface DatabaseAccountCreateUpdatePropertiesOrDatabaseAccountGetProperties {
-	readonly analyticalStorageConfiguration?: AnalyticalStorageConfiguration | undefined;
-	readonly apiProperties?: ApiProperties | undefined;
-	readonly backupPolicy?: BackupPolicy | undefined;
-	readonly capabilities?: Capability[] | undefined;
-	readonly capacity?: Capacity | undefined;
-	readonly connectorOffer?: "Small" | undefined;
-	readonly consistencyPolicy?: ConsistencyPolicy | undefined;
-	readonly cors?: CorsPolicy[] | undefined;
-	readonly createMode?: ("Default" | "Restore") | undefined;
+	readonly analyticalStorageConfiguration?: AnalyticalStorageConfiguration;
+	readonly apiProperties?: ApiProperties;
+	readonly backupPolicy?: BackupPolicy;
+	readonly capabilities?: Capability[];
+	readonly capacity?: Capacity;
+	readonly connectorOffer?: "Small";
+	readonly consistencyPolicy?: ConsistencyPolicy;
+	readonly cors?: CorsPolicy[];
+	readonly createMode?: "Default" | "Restore";
 	readonly databaseAccountOfferType: "Standard";
-	readonly defaultIdentity?: string | undefined;
-	readonly diagnosticLogSettings?: DiagnosticLogSettings | undefined;
-	readonly disableKeyBasedMetadataWriteAccess?: boolean | undefined;
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly documentEndpoint?: string | undefined;
-	readonly enableAnalyticalStorage?: boolean | undefined;
-	readonly enableAutomaticFailover?: boolean | undefined;
-	readonly enableCassandraConnector?: boolean | undefined;
-	readonly enableFreeTier?: boolean | undefined;
-	readonly enableMaterializedViews?: boolean | undefined;
-	readonly enableMultipleWriteLocations?: boolean | undefined;
-	readonly failoverPolicies?: FailoverPolicy[] | undefined;
-	readonly instanceId?: string | undefined;
-	readonly ipRules?: IpAddressOrRange[] | undefined;
-	readonly isVirtualNetworkFilterEnabled?: boolean | undefined;
-	readonly keyVaultKeyUri?: string | undefined;
+	readonly defaultIdentity?: string;
+	readonly diagnosticLogSettings?: DiagnosticLogSettings;
+	readonly disableKeyBasedMetadataWriteAccess?: boolean;
+	readonly disableLocalAuth?: boolean;
+	readonly documentEndpoint?: string;
+	readonly enableAnalyticalStorage?: boolean;
+	readonly enableAutomaticFailover?: boolean;
+	readonly enableCassandraConnector?: boolean;
+	readonly enableFreeTier?: boolean;
+	readonly enableMaterializedViews?: boolean;
+	readonly enableMultipleWriteLocations?: boolean;
+	readonly failoverPolicies?: FailoverPolicy[];
+	readonly instanceId?: string;
+	readonly ipRules?: IpAddressOrRange[];
+	readonly isVirtualNetworkFilterEnabled?: boolean;
+	readonly keyVaultKeyUri?: string;
 	readonly locations: Location[];
-	readonly networkAclBypass?: "AzureServices" | undefined;
-	readonly networkAclBypassResourceIds?: string[] | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly readLocations?: Location[] | undefined;
-	readonly restoreParameters?: RestoreParameters | undefined;
-	readonly virtualNetworkRules?: VirtualNetworkRule[] | undefined;
-	readonly writeLocations?: Location[] | undefined;
+	readonly networkAclBypass?: "AzureServices";
+	readonly networkAclBypassResourceIds?: string[];
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: string;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly readLocations?: Location[];
+	readonly restoreParameters?: RestoreParameters;
+	readonly virtualNetworkRules?: VirtualNetworkRule[];
+	readonly writeLocations?: Location[];
 }
 export interface DatabaseAccountListConnectionStringsResult {
-	readonly connectionStrings?: DatabaseAccountConnectionString[] | undefined;
+	readonly connectionStrings?: DatabaseAccountConnectionString[];
 }
 export interface DatabaseAccountListKeysResult {
-	readonly primaryMasterKey?: string | undefined;
-	readonly primaryReadonlyMasterKey?: string | undefined;
-	readonly secondaryMasterKey?: string | undefined;
-	readonly secondaryReadonlyMasterKey?: string | undefined;
+	readonly primaryMasterKey?: string;
+	readonly primaryReadonlyMasterKey?: string;
+	readonly secondaryMasterKey?: string;
+	readonly secondaryReadonlyMasterKey?: string;
 }
 export interface DatabaseRestoreResource {
-	readonly collectionNames?: string[] | undefined;
-	readonly databaseName?: string | undefined;
+	readonly collectionNames?: string[];
+	readonly databaseName?: string;
 }
 export interface DataCenterResourceProperties {
-	readonly authenticationMethodLdapProperties?: AuthenticationMethodLdapProperties | undefined;
-	readonly availabilityZone?: boolean | undefined;
-	readonly backupStorageCustomerKeyUri?: string | undefined;
-	readonly base64EncodedCassandraYamlFragment?: string | undefined;
-	readonly dataCenterLocation?: string | undefined;
-	readonly delegatedSubnetId?: string | undefined;
-	readonly diskCapacity?: number | undefined;
-	readonly diskSku?: string | undefined;
-	readonly managedDiskCustomerKeyUri?: string | undefined;
-	readonly nodeCount?: number | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly seedNodes?: SeedNode[] | undefined;
-	readonly sku?: string | undefined;
+	readonly authenticationMethodLdapProperties?: AuthenticationMethodLdapProperties;
+	readonly availabilityZone?: boolean;
+	readonly backupStorageCustomerKeyUri?: string;
+	readonly base64EncodedCassandraYamlFragment?: string;
+	readonly dataCenterLocation?: string;
+	readonly delegatedSubnetId?: string;
+	readonly diskCapacity?: number;
+	readonly diskSku?: string;
+	readonly managedDiskCustomerKeyUri?: string;
+	readonly nodeCount?: number;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly seedNodes?: SeedNode[];
+	readonly sku?: string;
 }
 export interface DataTransferDataSourceSink {}
 export interface DataTransferJobProperties {
 	readonly destination: DataTransferDataSourceSink;
-	readonly error?: ErrorResponse | undefined;
-	readonly jobName?: string | undefined;
-	readonly lastUpdatedUtcTime?: string | undefined;
-	readonly processedCount?: number | undefined;
+	readonly error?: ErrorResponse;
+	readonly jobName?: string;
+	readonly lastUpdatedUtcTime?: string;
+	readonly processedCount?: number;
 	readonly source: DataTransferDataSourceSink;
-	readonly status?: string | undefined;
-	readonly totalCount?: number | undefined;
-	readonly workerCount?: number | undefined;
+	readonly status?: string;
+	readonly totalCount?: number;
+	readonly workerCount?: number;
 }
 export interface DiagnosticLogSettings {
-	readonly enableFullTextQuery?: ("False" | "None") | undefined;
+	readonly enableFullTextQuery?: "False" | "None";
 }
 export interface ErrorResponse {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface ExcludedPath {
-	readonly path?: string | undefined;
+	readonly path?: string;
 }
 export interface FailoverPolicy {
-	readonly failoverPriority?: number | undefined;
-	readonly id?: string | undefined;
-	readonly locationName?: string | undefined;
+	readonly failoverPriority?: number;
+	readonly id?: string;
+	readonly locationName?: string;
 }
 export interface GraphResourceCreateUpdatePropertiesOrGraphResourceGetProperties {
-	readonly options?: CreateUpdateOptionsOrGraphResourceGetPropertiesOptions | undefined;
+	readonly options?: CreateUpdateOptionsOrGraphResourceGetPropertiesOptions;
 	readonly resource: GraphResourceOrGraphResourceGetPropertiesResource;
 }
 export interface GraphResourceOrGraphResourceGetPropertiesResource {
 	readonly id: string;
 }
 export interface GremlinDatabaseCreateUpdatePropertiesOrGremlinDatabaseGetProperties {
-	readonly options?: CreateUpdateOptionsOrGremlinDatabaseGetPropertiesOptions | undefined;
+	readonly options?: CreateUpdateOptionsOrGremlinDatabaseGetPropertiesOptions;
 	readonly resource: GremlinDatabaseResourceOrGremlinDatabaseGetPropertiesResource;
 }
 export interface GremlinDatabaseResourceOrGremlinDatabaseGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
 	readonly id: string;
 }
 export interface GremlinDatabaseRestoreResource {
-	readonly databaseName?: string | undefined;
-	readonly graphNames?: string[] | undefined;
+	readonly databaseName?: string;
+	readonly graphNames?: string[];
 }
 export interface GremlinGraphCreateUpdatePropertiesOrGremlinGraphGetProperties {
-	readonly options?: CreateUpdateOptionsOrGremlinGraphGetPropertiesOptions | undefined;
+	readonly options?: CreateUpdateOptionsOrGremlinGraphGetPropertiesOptions;
 	readonly resource: GremlinGraphResourceOrGremlinGraphGetPropertiesResource;
 }
 export interface GremlinGraphResourceOrGremlinGraphGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
-	readonly conflictResolutionPolicy?: ConflictResolutionPolicy | undefined;
-	readonly defaultTtl?: number | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
+	readonly conflictResolutionPolicy?: ConflictResolutionPolicy;
+	readonly defaultTtl?: number;
 	readonly id: string;
-	readonly indexingPolicy?: IndexingPolicy | undefined;
-	readonly partitionKey?: ContainerPartitionKey | undefined;
-	readonly uniqueKeyPolicy?: UniqueKeyPolicy | undefined;
+	readonly indexingPolicy?: IndexingPolicy;
+	readonly partitionKey?: ContainerPartitionKey;
+	readonly uniqueKeyPolicy?: UniqueKeyPolicy;
 }
 export interface IncludedPath {
-	readonly indexes?: Indexes[] | undefined;
-	readonly path?: string | undefined;
+	readonly indexes?: Indexes[];
+	readonly path?: string;
 }
 export interface Indexes {
-	readonly dataType?: ("LineString" | "MultiPolygon" | "Number" | "Point" | "Polygon" | "String") | undefined;
-	readonly kind?: ("Hash" | "Range" | "Spatial") | undefined;
-	readonly precision?: number | undefined;
+	readonly dataType?: "LineString" | "MultiPolygon" | "Number" | "Point" | "Polygon" | "String";
+	readonly kind?: "Hash" | "Range" | "Spatial";
+	readonly precision?: number;
 }
 export interface IndexingPolicy {
-	readonly automatic?: boolean | undefined;
-	readonly compositeIndexes?: CompositePath[][] | undefined;
-	readonly excludedPaths?: ExcludedPath[] | undefined;
-	readonly includedPaths?: IncludedPath[] | undefined;
-	readonly indexingMode?: ("consistent" | "lazy" | "none") | undefined;
-	readonly spatialIndexes?: SpatialSpec[] | undefined;
+	readonly automatic?: boolean;
+	readonly compositeIndexes?: CompositePath[][];
+	readonly excludedPaths?: ExcludedPath[];
+	readonly includedPaths?: IncludedPath[];
+	readonly indexingMode?: "consistent" | "lazy" | "none";
+	readonly spatialIndexes?: SpatialSpec[];
 }
 export interface IpAddressOrRange {
-	readonly ipAddressOrRange?: string | undefined;
+	readonly ipAddressOrRange?: string;
 }
 export interface KeyWrapMetadata {
-	readonly algorithm?: string | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
-	readonly value?: string | undefined;
+	readonly algorithm?: string;
+	readonly name?: string;
+	readonly type?: string;
+	readonly value?: string;
 }
 export interface Location {
-	readonly documentEndpoint?: string | undefined;
-	readonly failoverPriority?: number | undefined;
-	readonly id?: string | undefined;
-	readonly isZoneRedundant?: boolean | undefined;
-	readonly locationName?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly documentEndpoint?: string;
+	readonly failoverPriority?: number;
+	readonly id?: string;
+	readonly isZoneRedundant?: boolean;
+	readonly locationName?: string;
+	readonly provisioningState?: string;
 }
 export interface LocationProperties {
-	readonly backupStorageRedundancies?: ("Geo" | "Local" | "Zone"[]) | undefined;
-	readonly isResidencyRestricted?: boolean | undefined;
-	readonly status?: string | undefined;
-	readonly supportsAvailabilityZone?: boolean | undefined;
+	readonly backupStorageRedundancies?: "Geo" | "Local" | "Zone"[];
+	readonly isResidencyRestricted?: boolean;
+	readonly status?: string;
+	readonly supportsAvailabilityZone?: boolean;
 }
 export interface ManagedCassandraManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned") | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned";
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned,UserAssigned") | undefined;
-	readonly userAssignedIdentities?: ManagedServiceIdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned";
+	readonly userAssignedIdentities?: ManagedServiceIdentityUserAssignedIdentities;
 }
 export interface ManagedServiceIdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?:
-		| Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties
-		| undefined;
+	readonly [key: string]: Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties;
 }
 export interface MongoDBCollectionCreateUpdatePropertiesOrMongoDBCollectionGetProperties {
-	readonly options?: CreateUpdateOptionsOrMongoDBCollectionGetPropertiesOptions | undefined;
+	readonly options?: CreateUpdateOptionsOrMongoDBCollectionGetPropertiesOptions;
 	readonly resource: MongoDBCollectionResourceOrMongoDBCollectionGetPropertiesResource;
 }
 export interface MongoDBCollectionResourceOrMongoDBCollectionGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
-	readonly analyticalStorageTtl?: number | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
+	readonly analyticalStorageTtl?: number;
 	readonly id: string;
-	readonly indexes?: MongoIndex[] | undefined;
-	readonly shardKey?: ShardKeys | undefined;
+	readonly indexes?: MongoIndex[];
+	readonly shardKey?: ShardKeys;
 }
 export interface MongoDBDatabaseCreateUpdatePropertiesOrMongoDBDatabaseGetProperties {
-	readonly options?: CreateUpdateOptionsOrMongoDBDatabaseGetPropertiesOptions | undefined;
+	readonly options?: CreateUpdateOptionsOrMongoDBDatabaseGetPropertiesOptions;
 	readonly resource: MongoDBDatabaseResourceOrMongoDBDatabaseGetPropertiesResource;
 }
 export interface MongoDBDatabaseResourceOrMongoDBDatabaseGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
 	readonly id: string;
 }
 export interface MongoIndex {
-	readonly key?: MongoIndexKeys | undefined;
-	readonly options?: MongoIndexOptions | undefined;
+	readonly key?: MongoIndexKeys;
+	readonly options?: MongoIndexOptions;
 }
 export interface MongoIndexKeys {
-	readonly keys?: string[] | undefined;
+	readonly keys?: string[];
 }
 export interface MongoIndexOptions {
-	readonly expireAfterSeconds?: number | undefined;
-	readonly unique?: boolean | undefined;
+	readonly expireAfterSeconds?: number;
+	readonly unique?: boolean;
 }
 export interface MongoRoleDefinitionResource {
-	readonly databaseName?: string | undefined;
-	readonly privileges?: Privilege[] | undefined;
-	readonly roleName?: string | undefined;
-	readonly roles?: Role[] | undefined;
-	readonly type?: "BuiltInRole" | undefined;
+	readonly databaseName?: string;
+	readonly privileges?: Privilege[];
+	readonly roleName?: string;
+	readonly roles?: Role[];
+	readonly type?: "BuiltInRole";
 }
 export interface MongoUserDefinitionResource {
-	readonly customData?: string | undefined;
-	readonly databaseName?: string | undefined;
-	readonly mechanisms?: string | undefined;
-	readonly password?: string | undefined;
-	readonly roles?: Role[] | undefined;
-	readonly userName?: string | undefined;
+	readonly customData?: string;
+	readonly databaseName?: string;
+	readonly mechanisms?: string;
+	readonly password?: string;
+	readonly roles?: Role[];
+	readonly userName?: string;
 }
 export interface NotebookWorkspaceConnectionInfoResult {
-	readonly authToken?: string | undefined;
-	readonly notebookServerEndpoint?: string | undefined;
+	readonly authToken?: string;
+	readonly notebookServerEndpoint?: string;
 }
 export interface NotebookWorkspaceProperties {
-	readonly notebookServerEndpoint?: string | undefined;
-	readonly status?: string | undefined;
+	readonly notebookServerEndpoint?: string;
+	readonly status?: string;
 }
 export interface PeriodicModeProperties {
-	readonly backupIntervalInMinutes?: number | undefined;
-	readonly backupRetentionIntervalInHours?: number | undefined;
-	readonly backupStorageRedundancy?: ("Geo" | "Local" | "Zone") | undefined;
+	readonly backupIntervalInMinutes?: number;
+	readonly backupRetentionIntervalInHours?: number;
+	readonly backupStorageRedundancy?: "Geo" | "Local" | "Zone";
 }
 export interface Permission {
-	readonly dataActions?: string[] | undefined;
-	readonly notDataActions?: string[] | undefined;
+	readonly dataActions?: string[];
+	readonly notDataActions?: string[];
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly groupId?: string | undefined;
-	readonly privateEndpoint?: PrivateEndpointProperty | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly groupId?: string;
+	readonly privateEndpoint?: PrivateEndpointProperty;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty;
+	readonly provisioningState?: string;
 }
 export interface PrivateEndpointProperty {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionStateProperty {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: string | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: string;
 }
 export interface Privilege {
-	readonly actions?: string[] | undefined;
-	readonly resource?: PrivilegeResource | undefined;
+	readonly actions?: string[];
+	readonly resource?: PrivilegeResource;
 }
 export interface PrivilegeResource {
-	readonly collection?: string | undefined;
-	readonly db?: string | undefined;
+	readonly collection?: string;
+	readonly db?: string;
 }
 export interface RestoreParameters {
-	readonly databasesToRestore?: DatabaseRestoreResource[] | undefined;
-	readonly gremlinDatabasesToRestore?: GremlinDatabaseRestoreResource[] | undefined;
-	readonly restoreMode?: "PointInTime" | undefined;
-	readonly restoreSource?: string | undefined;
-	readonly restoreTimestampInUtc?: string | undefined;
-	readonly tablesToRestore?: string[] | undefined;
+	readonly databasesToRestore?: DatabaseRestoreResource[];
+	readonly gremlinDatabasesToRestore?: GremlinDatabaseRestoreResource[];
+	readonly restoreMode?: "PointInTime";
+	readonly restoreSource?: string;
+	readonly restoreTimestampInUtc?: string;
+	readonly tablesToRestore?: string[];
 }
 export interface Role {
-	readonly db?: string | undefined;
-	readonly role?: string | undefined;
+	readonly db?: string;
+	readonly role?: string;
 }
 export interface SeedNode {
-	readonly ipAddress?: string | undefined;
+	readonly ipAddress?: string;
 }
 export interface ServiceResourceCreateUpdatePropertiesOrServiceResourceProperties {
-	readonly creationTime?: string | undefined;
-	readonly instanceCount?: number | undefined;
-	readonly instanceSize?: ("Cosmos.D16s" | "Cosmos.D4s" | "Cosmos.D8s") | undefined;
-	readonly status?: ("Creating" | "Deleting" | "Error" | "Running" | "Stopped" | "Updating") | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly creationTime?: string;
+	readonly instanceCount?: number;
+	readonly instanceSize?: "Cosmos.D16s" | "Cosmos.D4s" | "Cosmos.D8s";
+	readonly status?: "Creating" | "Deleting" | "Error" | "Running" | "Stopped" | "Updating";
+	readonly [key: string]: any;
 }
 export interface ShardKeys {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SpatialSpec {
-	readonly path?: string | undefined;
-	readonly types?: ("LineString" | "MultiPolygon" | "Point" | "Polygon"[]) | undefined;
+	readonly path?: string;
+	readonly types?: "LineString" | "MultiPolygon" | "Point" | "Polygon"[];
 }
 export interface SqlContainerCreateUpdatePropertiesOrSqlContainerGetProperties {
-	readonly options?: CreateUpdateOptionsOrSqlContainerGetPropertiesOptions | undefined;
+	readonly options?: CreateUpdateOptionsOrSqlContainerGetPropertiesOptions;
 	readonly resource: SqlContainerResourceOrSqlContainerGetPropertiesResource;
 }
 export interface SqlContainerResourceOrSqlContainerGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
-	readonly analyticalStorageTtl?: number | undefined;
-	readonly clientEncryptionPolicy?: ClientEncryptionPolicy | undefined;
-	readonly conflictResolutionPolicy?: ConflictResolutionPolicy | undefined;
-	readonly defaultTtl?: number | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
+	readonly analyticalStorageTtl?: number;
+	readonly clientEncryptionPolicy?: ClientEncryptionPolicy;
+	readonly conflictResolutionPolicy?: ConflictResolutionPolicy;
+	readonly defaultTtl?: number;
 	readonly id: string;
-	readonly indexingPolicy?: IndexingPolicy | undefined;
-	readonly partitionKey?: ContainerPartitionKey | undefined;
-	readonly uniqueKeyPolicy?: UniqueKeyPolicy | undefined;
+	readonly indexingPolicy?: IndexingPolicy;
+	readonly partitionKey?: ContainerPartitionKey;
+	readonly uniqueKeyPolicy?: UniqueKeyPolicy;
 }
 export interface SqlDatabaseCreateUpdatePropertiesOrSqlDatabaseGetProperties {
-	readonly options?: CreateUpdateOptionsOrSqlDatabaseGetPropertiesOptions | undefined;
+	readonly options?: CreateUpdateOptionsOrSqlDatabaseGetPropertiesOptions;
 	readonly resource: SqlDatabaseResourceOrSqlDatabaseGetPropertiesResource;
 }
 export interface SqlDatabaseResourceOrSqlDatabaseGetPropertiesResource {
-	readonly _colls?: string | undefined;
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
-	readonly _users?: string | undefined;
+	readonly _colls?: string;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
+	readonly _users?: string;
 	readonly id: string;
 }
 export interface SqlRoleAssignmentResource {
-	readonly principalId?: string | undefined;
-	readonly roleDefinitionId?: string | undefined;
-	readonly scope?: string | undefined;
+	readonly principalId?: string;
+	readonly roleDefinitionId?: string;
+	readonly scope?: string;
 }
 export interface SqlRoleDefinitionResource {
-	readonly assignableScopes?: string[] | undefined;
-	readonly permissions?: Permission[] | undefined;
-	readonly roleName?: string | undefined;
-	readonly type?: "BuiltInRole" | undefined;
+	readonly assignableScopes?: string[];
+	readonly permissions?: Permission[];
+	readonly roleName?: string;
+	readonly type?: "BuiltInRole";
 }
 export interface SqlStoredProcedureCreateUpdatePropertiesOrSqlStoredProcedureGetProperties {
-	readonly options?: CreateUpdateOptions | undefined;
+	readonly options?: CreateUpdateOptions;
 	readonly resource: SqlStoredProcedureResourceOrSqlStoredProcedureGetPropertiesResource;
 }
 export interface SqlStoredProcedureResourceOrSqlStoredProcedureGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
-	readonly body?: string | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
+	readonly body?: string;
 	readonly id: string;
 }
 export interface SqlTriggerCreateUpdatePropertiesOrSqlTriggerGetProperties {
-	readonly options?: CreateUpdateOptions | undefined;
+	readonly options?: CreateUpdateOptions;
 	readonly resource: SqlTriggerResourceOrSqlTriggerGetPropertiesResource;
 }
 export interface SqlTriggerResourceOrSqlTriggerGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
-	readonly body?: string | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
+	readonly body?: string;
 	readonly id: string;
-	readonly triggerOperation?: ("All" | "Create" | "Delete" | "Replace" | "Update") | undefined;
-	readonly triggerType?: ("Post" | "Pre") | undefined;
+	readonly triggerOperation?: "All" | "Create" | "Delete" | "Replace" | "Update";
+	readonly triggerType?: "Post" | "Pre";
 }
 export interface SqlUserDefinedFunctionCreateUpdatePropertiesOrSqlUserDefinedFunctionGetProperties {
-	readonly options?: CreateUpdateOptions | undefined;
+	readonly options?: CreateUpdateOptions;
 	readonly resource: SqlUserDefinedFunctionResourceOrSqlUserDefinedFunctionGetPropertiesResource;
 }
 export interface SqlUserDefinedFunctionResourceOrSqlUserDefinedFunctionGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
-	readonly body?: string | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
+	readonly body?: string;
 	readonly id: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TableCreateUpdatePropertiesOrTableGetProperties {
-	readonly options?: CreateUpdateOptionsOrTableGetPropertiesOptions | undefined;
+	readonly options?: CreateUpdateOptionsOrTableGetPropertiesOptions;
 	readonly resource: TableResourceOrTableGetPropertiesResource;
 }
 export interface TableResourceOrTableGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
 	readonly id: string;
 }
 export interface Tags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ThroughputPolicyResource {
-	readonly incrementPercent?: number | undefined;
-	readonly isEnabled?: boolean | undefined;
+	readonly incrementPercent?: number;
+	readonly isEnabled?: boolean;
 }
 export interface ThroughputSettingsResourceOrThroughputSettingsGetPropertiesResource {
-	readonly _etag?: string | undefined;
-	readonly _rid?: string | undefined;
-	readonly _ts?: number | undefined;
-	readonly autoscaleSettings?: AutoscaleSettingsResource | undefined;
-	readonly minimumThroughput?: string | undefined;
-	readonly offerReplacePending?: string | undefined;
-	readonly throughput?: number | undefined;
+	readonly _etag?: string;
+	readonly _rid?: string;
+	readonly _ts?: number;
+	readonly autoscaleSettings?: AutoscaleSettingsResource;
+	readonly minimumThroughput?: string;
+	readonly offerReplacePending?: string;
+	readonly throughput?: number;
 }
 export interface ThroughputSettingsUpdatePropertiesOrThroughputSettingsGetProperties {
 	readonly resource: ThroughputSettingsResourceOrThroughputSettingsGetPropertiesResource;
 }
 export interface UniqueKey {
-	readonly paths?: string[] | undefined;
+	readonly paths?: string[];
 }
 export interface UniqueKeyPolicy {
-	readonly uniqueKeys?: UniqueKey[] | undefined;
+	readonly uniqueKeys?: UniqueKey[];
 }
 export interface VirtualNetworkRule {
-	readonly id?: string | undefined;
-	readonly ignoreMissingVNetServiceEndpoint?: boolean | undefined;
+	readonly id?: string;
+	readonly ignoreMissingVNetServiceEndpoint?: boolean;
 }
 export default {
 	cassandraClusters: cassandraClusters,

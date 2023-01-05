@@ -12,7 +12,7 @@ export interface AliasComponentOutputs {
 export interface AliasComponentInputs {
 	readonly Name: string;
 	readonly RoutingStrategy: RoutingStrategy;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Build extends CfnResource<BuildComponentInputs> implements BuildComponentOutputs {
@@ -22,10 +22,10 @@ export class Build extends CfnResource<BuildComponentInputs> implements BuildCom
 }
 export interface BuildComponentOutputs {}
 export interface BuildComponentInputs {
-	readonly Name?: (string | undefined) | undefined;
-	readonly OperatingSystem?: (string | undefined) | undefined;
-	readonly StorageLocation?: (S3Location | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly OperatingSystem?: string | undefined;
+	readonly StorageLocation?: S3Location | undefined;
+	readonly Version?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Fleet extends CfnResource<FleetComponentInputs> implements FleetComponentOutputs {
@@ -39,26 +39,26 @@ export interface FleetComponentOutputs {
 }
 export interface FleetComponentInputs {
 	readonly Name: string;
-	readonly AnywhereConfiguration?: (anywhereConfiguration | undefined) | undefined;
-	readonly BuildId?: (string | undefined) | undefined;
-	readonly CertificateConfiguration?: (CertificateConfiguration | undefined) | undefined;
-	readonly ComputeType?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly DesiredEC2Instances?: (number | undefined) | undefined;
-	readonly EC2InboundPermissions?: (IpPermission[] | undefined) | undefined;
-	readonly EC2InstanceType?: (string | undefined) | undefined;
-	readonly FleetType?: (string | undefined) | undefined;
-	readonly InstanceRoleARN?: (string | undefined) | undefined;
-	readonly Locations?: (LocationConfiguration[] | undefined) | undefined;
-	readonly MaxSize?: (number | undefined) | undefined;
-	readonly MetricGroups?: (string[] | undefined) | undefined;
-	readonly MinSize?: (number | undefined) | undefined;
-	readonly NewGameSessionProtectionPolicy?: (string | undefined) | undefined;
-	readonly PeerVpcAwsAccountId?: (string | undefined) | undefined;
-	readonly PeerVpcId?: (string | undefined) | undefined;
-	readonly ResourceCreationLimitPolicy?: (ResourceCreationLimitPolicy | undefined) | undefined;
-	readonly RuntimeConfiguration?: (RuntimeConfiguration | undefined) | undefined;
-	readonly ScriptId?: (string | undefined) | undefined;
+	readonly AnywhereConfiguration?: anywhereConfiguration | undefined;
+	readonly BuildId?: string | undefined;
+	readonly CertificateConfiguration?: CertificateConfiguration | undefined;
+	readonly ComputeType?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly DesiredEC2Instances?: number | undefined;
+	readonly EC2InboundPermissions?: IpPermission[] | undefined;
+	readonly EC2InstanceType?: string | undefined;
+	readonly FleetType?: string | undefined;
+	readonly InstanceRoleARN?: string | undefined;
+	readonly Locations?: LocationConfiguration[] | undefined;
+	readonly MaxSize?: number | undefined;
+	readonly MetricGroups?: string[] | undefined;
+	readonly MinSize?: number | undefined;
+	readonly NewGameSessionProtectionPolicy?: string | undefined;
+	readonly PeerVpcAwsAccountId?: string | undefined;
+	readonly PeerVpcId?: string | undefined;
+	readonly ResourceCreationLimitPolicy?: ResourceCreationLimitPolicy | undefined;
+	readonly RuntimeConfiguration?: RuntimeConfiguration | undefined;
+	readonly ScriptId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class GameServerGroup
@@ -80,14 +80,14 @@ export interface GameServerGroupComponentInputs {
 	readonly InstanceDefinitions: InstanceDefinition[];
 	readonly LaunchTemplate: LaunchTemplate;
 	readonly RoleArn: string;
-	readonly AutoScalingPolicy?: (AutoScalingPolicy | undefined) | undefined;
-	readonly BalancingStrategy?: (string | undefined) | undefined;
-	readonly DeleteOption?: (string | undefined) | undefined;
-	readonly GameServerProtectionPolicy?: (string | undefined) | undefined;
-	readonly MaxSize?: (number | undefined) | undefined;
-	readonly MinSize?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VpcSubnets?: (string[] | undefined) | undefined;
+	readonly AutoScalingPolicy?: AutoScalingPolicy | undefined;
+	readonly BalancingStrategy?: string | undefined;
+	readonly DeleteOption?: string | undefined;
+	readonly GameServerProtectionPolicy?: string | undefined;
+	readonly MaxSize?: number | undefined;
+	readonly MinSize?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VpcSubnets?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class GameSessionQueue
@@ -106,14 +106,14 @@ export interface GameSessionQueueComponentOutputs {
 }
 export interface GameSessionQueueComponentInputs {
 	readonly Name: string;
-	readonly CustomEventData?: (string | undefined) | undefined;
-	readonly Destinations?: (Destination[] | undefined) | undefined;
-	readonly FilterConfiguration?: (FilterConfiguration | undefined) | undefined;
-	readonly NotificationTarget?: (string | undefined) | undefined;
-	readonly PlayerLatencyPolicies?: (PlayerLatencyPolicy[] | undefined) | undefined;
-	readonly PriorityConfiguration?: (PriorityConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TimeoutInSeconds?: (number | undefined) | undefined;
+	readonly CustomEventData?: string | undefined;
+	readonly Destinations?: Destination[] | undefined;
+	readonly FilterConfiguration?: FilterConfiguration | undefined;
+	readonly NotificationTarget?: string | undefined;
+	readonly PlayerLatencyPolicies?: PlayerLatencyPolicy[] | undefined;
+	readonly PriorityConfiguration?: PriorityConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TimeoutInSeconds?: number | undefined;
 	readonly LogicalId: string;
 }
 export class Location extends CfnResource<LocationComponentInputs> implements LocationComponentOutputs {
@@ -127,7 +127,7 @@ export interface LocationComponentOutputs {
 }
 export interface LocationComponentInputs {
 	readonly LocationName: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class MatchmakingConfiguration
@@ -149,17 +149,17 @@ export interface MatchmakingConfigurationComponentInputs {
 	readonly Name: string;
 	readonly RequestTimeoutSeconds: number;
 	readonly RuleSetName: string;
-	readonly AcceptanceTimeoutSeconds?: (number | undefined) | undefined;
-	readonly AdditionalPlayerCount?: (number | undefined) | undefined;
-	readonly BackfillMode?: (string | undefined) | undefined;
-	readonly CustomEventData?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly FlexMatchMode?: (string | undefined) | undefined;
-	readonly GameProperties?: (Game[] | undefined) | undefined;
-	readonly GameSessionData?: (string | undefined) | undefined;
-	readonly GameSessionQueueArns?: (string[] | undefined) | undefined;
-	readonly NotificationTarget?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AcceptanceTimeoutSeconds?: number | undefined;
+	readonly AdditionalPlayerCount?: number | undefined;
+	readonly BackfillMode?: string | undefined;
+	readonly CustomEventData?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly FlexMatchMode?: string | undefined;
+	readonly GameProperties?: Game[] | undefined;
+	readonly GameSessionData?: string | undefined;
+	readonly GameSessionQueueArns?: string[] | undefined;
+	readonly NotificationTarget?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class MatchmakingRuleSet
@@ -179,7 +179,7 @@ export interface MatchmakingRuleSetComponentOutputs {
 export interface MatchmakingRuleSetComponentInputs {
 	readonly Name: string;
 	readonly RuleSetBody: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Script extends CfnResource<ScriptComponentInputs> implements ScriptComponentOutputs {
@@ -195,20 +195,20 @@ export interface ScriptComponentOutputs {
 }
 export interface ScriptComponentInputs {
 	readonly StorageLocation: S3Location;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Version?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface RoutingStrategy {
-	readonly FleetId?: (string | undefined) | undefined;
-	readonly Message?: (string | undefined) | undefined;
+	readonly FleetId?: string | undefined;
+	readonly Message?: string | undefined;
 	readonly Type: string;
 }
 export interface S3Location {
 	readonly Bucket: string;
 	readonly Key: string;
-	readonly ObjectVersion?: (string | undefined) | undefined;
+	readonly ObjectVersion?: string | undefined;
 	readonly RoleArn: string;
 }
 export interface anywhereConfiguration {
@@ -230,51 +230,51 @@ export interface LocationCapacity {
 }
 export interface LocationConfiguration {
 	readonly Location: string;
-	readonly LocationCapacity?: (LocationCapacity | undefined) | undefined;
+	readonly LocationCapacity?: LocationCapacity | undefined;
 }
 export interface ResourceCreationLimitPolicy {
-	readonly NewGameSessionsPerCreator?: (number | undefined) | undefined;
-	readonly PolicyPeriodInMinutes?: (number | undefined) | undefined;
+	readonly NewGameSessionsPerCreator?: number | undefined;
+	readonly PolicyPeriodInMinutes?: number | undefined;
 }
 export interface RuntimeConfiguration {
-	readonly GameSessionActivationTimeoutSeconds?: (number | undefined) | undefined;
-	readonly MaxConcurrentGameSessionActivations?: (number | undefined) | undefined;
-	readonly ServerProcesses?: (ServerProcess[] | undefined) | undefined;
+	readonly GameSessionActivationTimeoutSeconds?: number | undefined;
+	readonly MaxConcurrentGameSessionActivations?: number | undefined;
+	readonly ServerProcesses?: ServerProcess[] | undefined;
 }
 export interface ServerProcess {
 	readonly ConcurrentExecutions: number;
 	readonly LaunchPath: string;
-	readonly Parameters?: (string | undefined) | undefined;
+	readonly Parameters?: string | undefined;
 }
 export interface AutoScalingPolicy {
-	readonly EstimatedInstanceWarmup?: (number | undefined) | undefined;
+	readonly EstimatedInstanceWarmup?: number | undefined;
 	readonly TargetTrackingConfiguration: TargetTrackingConfiguration;
 }
 export interface InstanceDefinition {
 	readonly InstanceType: string;
-	readonly WeightedCapacity?: (string | undefined) | undefined;
+	readonly WeightedCapacity?: string | undefined;
 }
 export interface LaunchTemplate {
-	readonly LaunchTemplateId?: (string | undefined) | undefined;
-	readonly LaunchTemplateName?: (string | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly LaunchTemplateId?: string | undefined;
+	readonly LaunchTemplateName?: string | undefined;
+	readonly Version?: string | undefined;
 }
 export interface TargetTrackingConfiguration {
 	readonly TargetValue: number;
 }
 export interface Destination {
-	readonly DestinationArn?: (string | undefined) | undefined;
+	readonly DestinationArn?: string | undefined;
 }
 export interface FilterConfiguration {
-	readonly AllowedLocations?: (string[] | undefined) | undefined;
+	readonly AllowedLocations?: string[] | undefined;
 }
 export interface PlayerLatencyPolicy {
-	readonly MaximumIndividualPlayerLatencyMilliseconds?: (number | undefined) | undefined;
-	readonly PolicyDurationSeconds?: (number | undefined) | undefined;
+	readonly MaximumIndividualPlayerLatencyMilliseconds?: number | undefined;
+	readonly PolicyDurationSeconds?: number | undefined;
 }
 export interface PriorityConfiguration {
-	readonly LocationOrder?: (string[] | undefined) | undefined;
-	readonly PriorityOrder?: (string[] | undefined) | undefined;
+	readonly LocationOrder?: string[] | undefined;
+	readonly PriorityOrder?: string[] | undefined;
 }
 export interface Game {
 	readonly Key: string;

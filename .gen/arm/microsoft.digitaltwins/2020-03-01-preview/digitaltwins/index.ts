@@ -19,9 +19,9 @@ export interface digitalTwinsInstancesComponentOutputs {
 export interface digitalTwinsInstancesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DigitalTwinsProperties | undefined;
-	readonly sku?: DigitalTwinsSkuInfo | undefined;
-	readonly tags?: DigitalTwinsResourceTags | undefined;
+	readonly properties?: DigitalTwinsProperties;
+	readonly sku?: DigitalTwinsSkuInfo;
+	readonly tags?: DigitalTwinsResourceTags;
 }
 export class digitalTwinsInstances_endpoints
 	extends ArmResource<digitalTwinsInstances_endpointsComponentInputs>
@@ -47,24 +47,24 @@ export interface digitalTwinsInstances_endpointsComponentOutputs {
 }
 export interface digitalTwinsInstances_endpointsComponentInputs {
 	readonly name: string;
-	readonly properties?: DigitalTwinsEndpointResourceProperties | undefined;
+	readonly properties?: DigitalTwinsEndpointResourceProperties;
 }
 export interface DigitalTwinsEndpointResourceProperties {
-	readonly createdTime?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleting" | "Failed" | "Provisioning" | "Succeeded") | undefined;
-	readonly tags?: DigitalTwinsEndpointResourcePropertiesTags | undefined;
+	readonly createdTime?: string;
+	readonly provisioningState?: "Canceled" | "Deleting" | "Failed" | "Provisioning" | "Succeeded";
+	readonly tags?: DigitalTwinsEndpointResourcePropertiesTags;
 }
 export interface DigitalTwinsEndpointResourcePropertiesTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DigitalTwinsProperties {
-	readonly createdTime?: string | undefined;
-	readonly hostName?: string | undefined;
-	readonly lastUpdatedTime?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleting" | "Failed" | "Provisioning" | "Succeeded") | undefined;
+	readonly createdTime?: string;
+	readonly hostName?: string;
+	readonly lastUpdatedTime?: string;
+	readonly provisioningState?: "Canceled" | "Deleting" | "Failed" | "Provisioning" | "Succeeded";
 }
 export interface DigitalTwinsResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DigitalTwinsSkuInfo {
 	readonly name: "F1";

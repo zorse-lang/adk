@@ -18,7 +18,7 @@ export interface dataPolicyManifestsComponentOutputs {
 }
 export interface dataPolicyManifestsComponentInputs {
 	readonly name: string;
-	readonly properties?: DataPolicyManifestProperties | undefined;
+	readonly properties?: DataPolicyManifestProperties;
 }
 export class policyAssignments
 	extends ArmResource<policyAssignmentsComponentInputs>
@@ -37,10 +37,10 @@ export interface policyAssignmentsComponentOutputs {
 	readonly type: "Microsoft.Authorization/policyAssignments";
 }
 export interface policyAssignmentsComponentInputs {
-	readonly identity?: Identity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: Identity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: PolicyAssignmentProperties | undefined;
+	readonly properties?: PolicyAssignmentProperties;
 }
 export class policyDefinitions
 	extends ArmResource<policyDefinitionsComponentInputs>
@@ -60,7 +60,7 @@ export interface policyDefinitionsComponentOutputs {
 }
 export interface policyDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyDefinitionProperties | undefined;
+	readonly properties?: PolicyDefinitionProperties;
 }
 export class policySetDefinitions
 	extends ArmResource<policySetDefinitionsComponentInputs>
@@ -80,132 +80,130 @@ export interface policySetDefinitionsComponentOutputs {
 }
 export interface policySetDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicySetDefinitionProperties | undefined;
+	readonly properties?: PolicySetDefinitionProperties;
 }
 export interface Alias {
-	readonly defaultMetadata?: AliasPathMetadata | undefined;
-	readonly defaultPath?: string | undefined;
-	readonly defaultPattern?: AliasPattern | undefined;
-	readonly name?: string | undefined;
-	readonly paths?: AliasPath[] | undefined;
-	readonly type?: ("Mask" | "NotSpecified") | undefined;
+	readonly defaultMetadata?: AliasPathMetadata;
+	readonly defaultPath?: string;
+	readonly defaultPattern?: AliasPattern;
+	readonly name?: string;
+	readonly paths?: AliasPath[];
+	readonly type?: "Mask" | "NotSpecified";
 }
 export interface AliasPath {
-	readonly apiVersions?: string[] | undefined;
-	readonly metadata?: AliasPathMetadata | undefined;
-	readonly path?: string | undefined;
-	readonly pattern?: AliasPattern | undefined;
+	readonly apiVersions?: string[];
+	readonly metadata?: AliasPathMetadata;
+	readonly path?: string;
+	readonly pattern?: AliasPattern;
 }
 export interface AliasPathMetadata {
-	readonly attributes?: ("Modifiable" | "None") | undefined;
-	readonly type?:
-		| ("any" | "Array" | "Boolean" | "Integer" | "NotSpecified" | "Number" | "Object" | "String")
-		| undefined;
+	readonly attributes?: "Modifiable" | "None";
+	readonly type?: "any" | "Array" | "Boolean" | "Integer" | "NotSpecified" | "Number" | "Object" | "String";
 }
 export interface AliasPattern {
-	readonly phrase?: string | undefined;
-	readonly type?: "Extract" | undefined;
-	readonly variable?: string | undefined;
+	readonly phrase?: string;
+	readonly type?: "Extract";
+	readonly variable?: string;
 }
 export interface DataEffect {
-	readonly detailsSchema?: any | undefined;
-	readonly name?: string | undefined;
+	readonly detailsSchema?: any;
+	readonly name?: string;
 }
 export interface DataManifestCustomResourceFunctionDefinition {
-	readonly allowCustomProperties?: boolean | undefined;
-	readonly defaultProperties?: string[] | undefined;
-	readonly fullyQualifiedResourceType?: string | undefined;
-	readonly name?: string | undefined;
+	readonly allowCustomProperties?: boolean;
+	readonly defaultProperties?: string[];
+	readonly fullyQualifiedResourceType?: string;
+	readonly name?: string;
 }
 export interface DataManifestResourceFunctionsDefinition {
-	readonly custom?: DataManifestCustomResourceFunctionDefinition[] | undefined;
-	readonly standard?: string[] | undefined;
+	readonly custom?: DataManifestCustomResourceFunctionDefinition[];
+	readonly standard?: string[];
 }
 export interface DataPolicyManifestProperties {
-	readonly effects?: DataEffect[] | undefined;
-	readonly fieldValues?: string[] | undefined;
-	readonly isBuiltInOnly?: boolean | undefined;
-	readonly namespaces?: string[] | undefined;
-	readonly policyMode?: string | undefined;
-	readonly resourceFunctions?: DataManifestResourceFunctionsDefinition | undefined;
-	readonly resourceTypeAliases?: ResourceTypeAliases[] | undefined;
+	readonly effects?: DataEffect[];
+	readonly fieldValues?: string[];
+	readonly isBuiltInOnly?: boolean;
+	readonly namespaces?: string[];
+	readonly policyMode?: string;
+	readonly resourceFunctions?: DataManifestResourceFunctionsDefinition;
+	readonly resourceTypeAliases?: ResourceTypeAliases[];
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "None" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None";
 }
 export interface NonComplianceMessage {
 	readonly message: string;
-	readonly policyDefinitionReferenceId?: string | undefined;
+	readonly policyDefinitionReferenceId?: string;
 }
 export interface ParameterDefinitions {
-	readonly "[ key: string ]"?: ParameterDefinitionsValue | undefined;
+	readonly [key: string]: ParameterDefinitionsValue;
 }
 export interface ParameterDefinitionsValue {
-	readonly allowedValues?: any[] | undefined;
-	readonly defaultValue?: any | undefined;
-	readonly metadata?: ParameterDefinitionsValueMetadata | undefined;
-	readonly type?: ("Array" | "Boolean" | "DateTime" | "Float" | "Integer" | "Object" | "String") | undefined;
+	readonly allowedValues?: any[];
+	readonly defaultValue?: any;
+	readonly metadata?: ParameterDefinitionsValueMetadata;
+	readonly type?: "Array" | "Boolean" | "DateTime" | "Float" | "Integer" | "Object" | "String";
 }
 export interface ParameterDefinitionsValueMetadata {
-	readonly assignPermissions?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly strongType?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly assignPermissions?: boolean;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly strongType?: string;
+	readonly [key: string]: any;
 }
 export interface ParameterValues {
-	readonly "[ key: string ]"?: ParameterValuesValue | undefined;
+	readonly [key: string]: ParameterValuesValue;
 }
 export interface ParameterValuesValue {
-	readonly value?: any | undefined;
+	readonly value?: any;
 }
 export interface PolicyAssignmentProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enforcementMode?: ("Default" | "DoNotEnforce") | undefined;
-	readonly metadata?: any | undefined;
-	readonly nonComplianceMessages?: NonComplianceMessage[] | undefined;
-	readonly notScopes?: string[] | undefined;
-	readonly parameters?: ParameterValues | undefined;
-	readonly policyDefinitionId?: string | undefined;
-	readonly scope?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly enforcementMode?: "Default" | "DoNotEnforce";
+	readonly metadata?: any;
+	readonly nonComplianceMessages?: NonComplianceMessage[];
+	readonly notScopes?: string[];
+	readonly parameters?: ParameterValues;
+	readonly policyDefinitionId?: string;
+	readonly scope?: string;
 }
 export interface PolicyDefinitionGroup {
-	readonly additionalMetadataId?: string | undefined;
-	readonly category?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly additionalMetadataId?: string;
+	readonly category?: string;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly name: string;
 }
 export interface PolicyDefinitionProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly mode?: string | undefined;
-	readonly parameters?: ParameterDefinitions | undefined;
-	readonly policyRule?: any | undefined;
-	readonly policyType?: ("BuiltIn" | "Custom" | "NotSpecified" | "Static") | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly metadata?: any;
+	readonly mode?: string;
+	readonly parameters?: ParameterDefinitions;
+	readonly policyRule?: any;
+	readonly policyType?: "BuiltIn" | "Custom" | "NotSpecified" | "Static";
 }
 export interface PolicyDefinitionReference {
-	readonly groupNames?: string[] | undefined;
-	readonly parameters?: ParameterValues | undefined;
+	readonly groupNames?: string[];
+	readonly parameters?: ParameterValues;
 	readonly policyDefinitionId: string;
-	readonly policyDefinitionReferenceId?: string | undefined;
+	readonly policyDefinitionReferenceId?: string;
 }
 export interface PolicySetDefinitionProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly parameters?: ParameterDefinitions | undefined;
-	readonly policyDefinitionGroups?: PolicyDefinitionGroup[] | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly metadata?: any;
+	readonly parameters?: ParameterDefinitions;
+	readonly policyDefinitionGroups?: PolicyDefinitionGroup[];
 	readonly policyDefinitions: PolicyDefinitionReference[];
-	readonly policyType?: ("BuiltIn" | "Custom" | "NotSpecified" | "Static") | undefined;
+	readonly policyType?: "BuiltIn" | "Custom" | "NotSpecified" | "Static";
 }
 export interface ResourceTypeAliases {
-	readonly aliases?: Alias[] | undefined;
-	readonly resourceType?: string | undefined;
+	readonly aliases?: Alias[];
+	readonly resourceType?: string;
 }
 export default {
 	dataPolicyManifests: dataPolicyManifests,

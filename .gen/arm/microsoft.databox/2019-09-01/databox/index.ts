@@ -18,7 +18,7 @@ export interface jobsComponentInputs {
 	readonly name: string;
 	readonly properties: JobProperties;
 	readonly sku: Sku;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export function listCredentials(resource: jobs): UnencryptedCredentialsList {
 	if (resource.apiVersion !== "2019-09-01") {
@@ -30,225 +30,216 @@ export function listCredentials(resource: jobs): UnencryptedCredentialsList {
 	throw new Error("not implemented");
 }
 export interface AccountCredentialDetails {
-	readonly accountConnectionString?: string | undefined;
-	readonly accountName?: string | undefined;
-	readonly dataDestinationType?: "ManagedDisk" | undefined;
-	readonly shareCredentialDetails?: ShareCredentialDetails[] | undefined;
+	readonly accountConnectionString?: string;
+	readonly accountName?: string;
+	readonly dataDestinationType?: "ManagedDisk";
+	readonly shareCredentialDetails?: ShareCredentialDetails[];
 }
 export interface ApplianceNetworkConfiguration {
-	readonly macAddress?: string | undefined;
-	readonly name?: string | undefined;
+	readonly macAddress?: string;
+	readonly name?: string;
 }
 export interface ContactDetails {
 	readonly contactName: string;
 	readonly emailList: string[];
-	readonly mobile?: string | undefined;
-	readonly notificationPreference?: NotificationPreference[] | undefined;
+	readonly mobile?: string;
+	readonly notificationPreference?: NotificationPreference[];
 	readonly phone: string;
-	readonly phoneExtension?: string | undefined;
+	readonly phoneExtension?: string;
 }
 export interface CopyLogDetails {}
 export interface CopyProgress {
-	readonly accountId?: string | undefined;
-	readonly bytesSentToCloud?: number | undefined;
-	readonly dataDestinationType?: "ManagedDisk" | undefined;
-	readonly filesErroredOut?: number | undefined;
-	readonly filesProcessed?: number | undefined;
-	readonly invalidFileBytesUploaded?: number | undefined;
-	readonly invalidFilesProcessed?: number | undefined;
-	readonly renamedContainerCount?: number | undefined;
-	readonly storageAccountName?: string | undefined;
-	readonly totalBytesToProcess?: number | undefined;
-	readonly totalFilesToProcess?: number | undefined;
+	readonly accountId?: string;
+	readonly bytesSentToCloud?: number;
+	readonly dataDestinationType?: "ManagedDisk";
+	readonly filesErroredOut?: number;
+	readonly filesProcessed?: number;
+	readonly invalidFileBytesUploaded?: number;
+	readonly invalidFilesProcessed?: number;
+	readonly renamedContainerCount?: number;
+	readonly storageAccountName?: string;
+	readonly totalBytesToProcess?: number;
+	readonly totalFilesToProcess?: number;
 }
 export interface DataBoxDiskCopyProgress {
-	readonly bytesCopied?: number | undefined;
-	readonly percentComplete?: number | undefined;
-	readonly serialNumber?: string | undefined;
+	readonly bytesCopied?: number;
+	readonly percentComplete?: number;
+	readonly serialNumber?: string;
 	readonly status?:
-		| (
-				| "Completed"
-				| "CompletedWithErrors"
-				| "DeviceFormatted"
-				| "DeviceMetadataModified"
-				| "Failed"
-				| "HardwareError"
-				| "InProgress"
-				| "NotReturned"
-				| "NotStarted"
-				| "StorageAccountNotAccessible"
-		  )
-		| undefined;
+		| "Completed"
+		| "CompletedWithErrors"
+		| "DeviceFormatted"
+		| "DeviceMetadataModified"
+		| "Failed"
+		| "HardwareError"
+		| "InProgress"
+		| "NotReturned"
+		| "NotStarted"
+		| "StorageAccountNotAccessible";
 }
 export interface DataBoxDiskJobDetailsDisksAndSizeDetails {
-	readonly "[ key: string ]"?: number | undefined;
+	readonly [key: string]: number;
 }
 export interface DataBoxDiskJobDetailsPreferredDisks {
-	readonly "[ key: string ]"?: number | undefined;
+	readonly [key: string]: number;
 }
 export interface DataBoxHeavySecret {
-	readonly accountCredentialDetails?: AccountCredentialDetails[] | undefined;
-	readonly devicePassword?: string | undefined;
-	readonly deviceSerialNumber?: string | undefined;
-	readonly encodedValidationCertPubKey?: string | undefined;
-	readonly networkConfigurations?: ApplianceNetworkConfiguration[] | undefined;
+	readonly accountCredentialDetails?: AccountCredentialDetails[];
+	readonly devicePassword?: string;
+	readonly deviceSerialNumber?: string;
+	readonly encodedValidationCertPubKey?: string;
+	readonly networkConfigurations?: ApplianceNetworkConfiguration[];
 }
 export interface DataBoxSecret {
-	readonly accountCredentialDetails?: AccountCredentialDetails[] | undefined;
-	readonly devicePassword?: string | undefined;
-	readonly deviceSerialNumber?: string | undefined;
-	readonly encodedValidationCertPubKey?: string | undefined;
-	readonly networkConfigurations?: ApplianceNetworkConfiguration[] | undefined;
+	readonly accountCredentialDetails?: AccountCredentialDetails[];
+	readonly devicePassword?: string;
+	readonly deviceSerialNumber?: string;
+	readonly encodedValidationCertPubKey?: string;
+	readonly networkConfigurations?: ApplianceNetworkConfiguration[];
 }
 export interface DcAccessSecurityCode {
-	readonly forwardDCAccessCode?: string | undefined;
-	readonly reverseDCAccessCode?: string | undefined;
+	readonly forwardDCAccessCode?: string;
+	readonly reverseDCAccessCode?: string;
 }
 export interface DestinationAccountDetails {
-	readonly accountId?: string | undefined;
-	readonly sharePassword?: string | undefined;
+	readonly accountId?: string;
+	readonly sharePassword?: string;
 }
 export interface DiskSecret {
-	readonly bitLockerKey?: string | undefined;
-	readonly diskSerialNumber?: string | undefined;
+	readonly bitLockerKey?: string;
+	readonly diskSerialNumber?: string;
 }
 export interface Error {
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly message?: string;
 }
 export interface JobDeliveryInfo {
-	readonly scheduledDateTime?: string | undefined;
+	readonly scheduledDateTime?: string;
 }
 export interface JobDetails {
-	readonly chainOfCustodySasKey?: string | undefined;
+	readonly chainOfCustodySasKey?: string;
 	readonly contactDetails: ContactDetails;
-	readonly copyLogDetails?: CopyLogDetails[] | undefined;
-	readonly deliveryPackage?: PackageShippingDetails | undefined;
+	readonly copyLogDetails?: CopyLogDetails[];
+	readonly deliveryPackage?: PackageShippingDetails;
 	readonly destinationAccountDetails: DestinationAccountDetails[];
-	readonly errorDetails?: JobErrorDetails[] | undefined;
-	readonly expectedDataSizeInTeraBytes?: number | undefined;
-	readonly jobStages?: JobStages[] | undefined;
-	readonly preferences?: Preferences | undefined;
-	readonly returnPackage?: PackageShippingDetails | undefined;
-	readonly reverseShipmentLabelSasKey?: string | undefined;
+	readonly errorDetails?: JobErrorDetails[];
+	readonly expectedDataSizeInTeraBytes?: number;
+	readonly jobStages?: JobStages[];
+	readonly preferences?: Preferences;
+	readonly returnPackage?: PackageShippingDetails;
+	readonly reverseShipmentLabelSasKey?: string;
 	readonly shippingAddress: ShippingAddress;
 }
 export interface JobErrorDetails {
-	readonly errorCode?: number | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly exceptionMessage?: string | undefined;
-	readonly recommendedAction?: string | undefined;
+	readonly errorCode?: number;
+	readonly errorMessage?: string;
+	readonly exceptionMessage?: string;
+	readonly recommendedAction?: string;
 }
 export interface JobProperties {
-	readonly cancellationReason?: string | undefined;
-	readonly deliveryInfo?: JobDeliveryInfo | undefined;
-	readonly deliveryType?: "NonScheduled" | undefined;
-	readonly details?: JobDetails | undefined;
-	readonly error?: Error | undefined;
-	readonly isCancellable?: boolean | undefined;
-	readonly isCancellableWithoutFee?: boolean | undefined;
-	readonly isDeletable?: boolean | undefined;
-	readonly isShippingAddressEditable?: boolean | undefined;
-	readonly startTime?: string | undefined;
+	readonly cancellationReason?: string;
+	readonly deliveryInfo?: JobDeliveryInfo;
+	readonly deliveryType?: "NonScheduled";
+	readonly details?: JobDetails;
+	readonly error?: Error;
+	readonly isCancellable?: boolean;
+	readonly isCancellableWithoutFee?: boolean;
+	readonly isDeletable?: boolean;
+	readonly isShippingAddressEditable?: boolean;
+	readonly startTime?: string;
 	readonly status?:
-		| (
-				| "Aborted"
-				| "AtAzureDC"
-				| "Cancelled"
-				| "Completed"
-				| "CompletedWithErrors"
-				| "CompletedWithWarnings"
-				| "DataCopy"
-				| "Delivered"
-				| "DeviceOrdered"
-				| "DevicePrepared"
-				| "Dispatched"
-				| "Failed_IssueDetectedAtAzureDC"
-				| "Failed_IssueReportedAtCustomer"
-				| "PickedUp"
-				| "ReadyToDispatchFromAzureDC"
-		  )
-		| undefined;
+		| "Aborted"
+		| "AtAzureDC"
+		| "Cancelled"
+		| "Completed"
+		| "CompletedWithErrors"
+		| "CompletedWithWarnings"
+		| "DataCopy"
+		| "Delivered"
+		| "DeviceOrdered"
+		| "DevicePrepared"
+		| "Dispatched"
+		| "Failed_IssueDetectedAtAzureDC"
+		| "Failed_IssueReportedAtCustomer"
+		| "PickedUp"
+		| "ReadyToDispatchFromAzureDC";
 }
 export interface JobSecrets {
-	readonly dcAccessSecurityCode?: DcAccessSecurityCode | undefined;
+	readonly dcAccessSecurityCode?: DcAccessSecurityCode;
 }
 export interface JobStages {
-	readonly displayName?: string | undefined;
-	readonly errorDetails?: JobErrorDetails[] | undefined;
-	readonly jobStageDetails?: any | undefined;
+	readonly displayName?: string;
+	readonly errorDetails?: JobErrorDetails[];
+	readonly jobStageDetails?: any;
 	readonly stageName?:
-		| (
-				| "Aborted"
-				| "AtAzureDC"
-				| "Cancelled"
-				| "Completed"
-				| "CompletedWithErrors"
-				| "CompletedWithWarnings"
-				| "DataCopy"
-				| "Delivered"
-				| "DeviceOrdered"
-				| "DevicePrepared"
-				| "Dispatched"
-				| "Failed_IssueDetectedAtAzureDC"
-				| "Failed_IssueReportedAtCustomer"
-				| "PickedUp"
-				| "ReadyToDispatchFromAzureDC"
-		  )
-		| undefined;
-	readonly stageStatus?: ("Cancelled" | "Cancelling" | "Failed" | "InProgress" | "None" | "Succeeded") | undefined;
-	readonly stageTime?: string | undefined;
+		| "Aborted"
+		| "AtAzureDC"
+		| "Cancelled"
+		| "Completed"
+		| "CompletedWithErrors"
+		| "CompletedWithWarnings"
+		| "DataCopy"
+		| "Delivered"
+		| "DeviceOrdered"
+		| "DevicePrepared"
+		| "Dispatched"
+		| "Failed_IssueDetectedAtAzureDC"
+		| "Failed_IssueReportedAtCustomer"
+		| "PickedUp"
+		| "ReadyToDispatchFromAzureDC";
+	readonly stageStatus?: "Cancelled" | "Cancelling" | "Failed" | "InProgress" | "None" | "Succeeded";
+	readonly stageTime?: string;
 }
 export interface NotificationPreference {
 	readonly sendNotification: boolean;
 	readonly stageName: "AtAzureDC" | "DataCopy" | "Delivered" | "DevicePrepared" | "Dispatched";
 }
 export interface PackageShippingDetails {
-	readonly carrierName?: string | undefined;
-	readonly trackingId?: string | undefined;
-	readonly trackingUrl?: string | undefined;
+	readonly carrierName?: string;
+	readonly trackingId?: string;
+	readonly trackingUrl?: string;
 }
 export interface Preferences {
-	readonly preferredDataCenterRegion?: string[] | undefined;
-	readonly transportPreferences?: TransportPreferences | undefined;
+	readonly preferredDataCenterRegion?: string[];
+	readonly transportPreferences?: TransportPreferences;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ShareCredentialDetails {
-	readonly password?: string | undefined;
-	readonly shareName?: string | undefined;
-	readonly shareType?: ("AzureFile" | "BlockBlob" | "HCS" | "ManagedDisk" | "PageBlob") | undefined;
-	readonly supportedAccessProtocols?: "NFS"[] | undefined;
-	readonly userName?: string | undefined;
+	readonly password?: string;
+	readonly shareName?: string;
+	readonly shareType?: "AzureFile" | "BlockBlob" | "HCS" | "ManagedDisk" | "PageBlob";
+	readonly supportedAccessProtocols?: "NFS"[];
+	readonly userName?: string;
 }
 export interface ShippingAddress {
-	readonly addressType?: ("Commercial" | "None") | undefined;
-	readonly city?: string | undefined;
-	readonly companyName?: string | undefined;
+	readonly addressType?: "Commercial" | "None";
+	readonly city?: string;
+	readonly companyName?: string;
 	readonly country: string;
 	readonly postalCode: string;
-	readonly stateOrProvince?: string | undefined;
+	readonly stateOrProvince?: string;
 	readonly streetAddress1: string;
-	readonly streetAddress2?: string | undefined;
-	readonly streetAddress3?: string | undefined;
-	readonly zipExtendedCode?: string | undefined;
+	readonly streetAddress2?: string;
+	readonly streetAddress3?: string;
+	readonly zipExtendedCode?: string;
 }
 export interface Sku {
-	readonly displayName?: string | undefined;
-	readonly family?: string | undefined;
+	readonly displayName?: string;
+	readonly family?: string;
 	readonly name: "DataBox" | "DataBoxDisk";
 }
 export interface TransportPreferences {
 	readonly preferredShipmentType: "CustomerManaged";
 }
 export interface UnencryptedCredentials {
-	readonly jobName?: string | undefined;
-	readonly jobSecrets?: JobSecrets | undefined;
+	readonly jobName?: string;
+	readonly jobSecrets?: JobSecrets;
 }
 export interface UnencryptedCredentialsList {
-	readonly nextLink?: string | undefined;
-	readonly value?: UnencryptedCredentials[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: UnencryptedCredentials[];
 }
 export default {
 	jobs: jobs,

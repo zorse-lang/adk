@@ -10,24 +10,23 @@ export class ProjectsMonitoredResourceDescriptors
 }
 export interface ProjectsMonitoredResourceDescriptorsComponentOutputs {}
 export interface ProjectsMonitoredResourceDescriptorsComponentInputs {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly labels: LabelDescriptor[];
-	readonly launchStage?: string | undefined;
+	readonly launchStage?: string;
 	readonly name: string;
-	readonly type: string;
 }
 export interface LabelDescriptor {
-	readonly description?: string | undefined;
-	readonly key?: string | undefined;
-	readonly valueType?: string | undefined;
+	readonly description?: string;
+	readonly key?: string;
+	readonly valueType?: string;
 }
 export interface MonitoredResourceDescriptor {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly labels: LabelDescriptor[];
-	readonly launchStage?: string | undefined;
-	readonly name?: string | undefined;
+	readonly launchStage?: string;
+	readonly name?: string;
 	readonly type: string;
 }
 export default {

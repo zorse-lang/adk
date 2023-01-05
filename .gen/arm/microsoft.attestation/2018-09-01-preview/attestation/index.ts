@@ -20,39 +20,39 @@ export interface attestationProvidersComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: AttestationServiceCreationSpecificParamsOrStatusResult;
-	readonly tags?: AttestationServiceCreationParamsTags | undefined;
+	readonly tags?: AttestationServiceCreationParamsTags;
 }
 export interface AttestationServiceCreationParamsTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface AttestationServiceCreationSpecificParamsOrStatusResult {
-	readonly attestationPolicy?: string | undefined;
-	readonly attestUri?: string | undefined;
-	readonly policySigningCertificates?: JsonWebKeySet | undefined;
-	readonly status?: ("Error" | "NotReady" | "Ready") | undefined;
-	readonly trustModel?: string | undefined;
+	readonly attestationPolicy?: string;
+	readonly attestUri?: string;
+	readonly policySigningCertificates?: JsonWebKeySet;
+	readonly status?: "Error" | "NotReady" | "Ready";
+	readonly trustModel?: string;
 }
 export interface JsonWebKey {
-	readonly alg?: string | undefined;
-	readonly crv?: string | undefined;
-	readonly d?: string | undefined;
-	readonly dp?: string | undefined;
-	readonly dq?: string | undefined;
-	readonly e?: string | undefined;
-	readonly k?: string | undefined;
-	readonly kid?: string | undefined;
+	readonly alg?: string;
+	readonly crv?: string;
+	readonly d?: string;
+	readonly dp?: string;
+	readonly dq?: string;
+	readonly e?: string;
+	readonly k?: string;
+	readonly kid?: string;
 	readonly kty: string;
-	readonly n?: string | undefined;
-	readonly p?: string | undefined;
-	readonly q?: string | undefined;
-	readonly qi?: string | undefined;
-	readonly use?: string | undefined;
-	readonly x?: string | undefined;
-	readonly x5c?: string[] | undefined;
-	readonly y?: string | undefined;
+	readonly n?: string;
+	readonly p?: string;
+	readonly q?: string;
+	readonly qi?: string;
+	readonly use?: string;
+	readonly x?: string;
+	readonly x5c?: string[];
+	readonly y?: string;
 }
 export interface JsonWebKeySet {
-	readonly keys?: JsonWebKey[] | undefined;
+	readonly keys?: JsonWebKey[];
 }
 export default {
 	attestationProviders: attestationProviders,

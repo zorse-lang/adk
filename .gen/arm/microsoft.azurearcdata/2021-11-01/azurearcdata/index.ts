@@ -17,12 +17,12 @@ export interface dataControllersComponentOutputs {
 	readonly type: "Microsoft.AzureArcData/dataControllers";
 }
 export interface dataControllersComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: DataControllerProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class sqlManagedInstances
 	extends ArmResource<sqlManagedInstancesComponentInputs>
@@ -41,13 +41,13 @@ export interface sqlManagedInstancesComponentOutputs {
 	readonly type: "Microsoft.AzureArcData/sqlManagedInstances";
 }
 export interface sqlManagedInstancesComponentInputs {
-	readonly extendedLocation?: ExtendedLocation | undefined;
+	readonly extendedLocation?: ExtendedLocation;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: SqlManagedInstanceProperties;
-	readonly sku?: SqlManagedInstanceSku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly sku?: SqlManagedInstanceSku;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class sqlServerInstances
 	extends ArmResource<sqlServerInstancesComponentInputs>
@@ -68,131 +68,131 @@ export interface sqlServerInstancesComponentOutputs {
 export interface sqlServerInstancesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SqlServerInstanceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SqlServerInstanceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface BasicLoginInformation {
-	readonly password?: string | undefined;
-	readonly username?: string | undefined;
+	readonly password?: string;
+	readonly username?: string;
 }
 export interface DataControllerProperties {
-	readonly basicLoginInformation?: BasicLoginInformation | undefined;
-	readonly clusterId?: string | undefined;
-	readonly extensionId?: string | undefined;
-	readonly infrastructure?: ("alibaba" | "aws" | "azure" | "gcp" | "onpremises") | undefined;
-	readonly k8sRaw?: any | undefined;
-	readonly lastUploadedDate?: string | undefined;
-	readonly logAnalyticsWorkspaceConfig?: LogAnalyticsWorkspaceConfig | undefined;
-	readonly logsDashboardCredential?: BasicLoginInformation | undefined;
-	readonly metricsDashboardCredential?: BasicLoginInformation | undefined;
-	readonly onPremiseProperty?: OnPremiseProperty | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly uploadServicePrincipal?: UploadServicePrincipal | undefined;
-	readonly uploadWatermark?: UploadWatermark | undefined;
+	readonly basicLoginInformation?: BasicLoginInformation;
+	readonly clusterId?: string;
+	readonly extensionId?: string;
+	readonly infrastructure?: "alibaba" | "aws" | "azure" | "gcp" | "onpremises";
+	readonly k8sRaw?: any;
+	readonly lastUploadedDate?: string;
+	readonly logAnalyticsWorkspaceConfig?: LogAnalyticsWorkspaceConfig;
+	readonly logsDashboardCredential?: BasicLoginInformation;
+	readonly metricsDashboardCredential?: BasicLoginInformation;
+	readonly onPremiseProperty?: OnPremiseProperty;
+	readonly provisioningState?: string;
+	readonly uploadServicePrincipal?: UploadServicePrincipal;
+	readonly uploadWatermark?: UploadWatermark;
 }
 export interface ExtendedLocation {
-	readonly name?: string | undefined;
-	readonly type?: "CustomLocation" | undefined;
+	readonly name?: string;
+	readonly type?: "CustomLocation";
 }
 export interface K8SResourceRequirements {
-	readonly limits?: K8SResourceRequirementsLimits | undefined;
-	readonly requests?: K8SResourceRequirementsRequests | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly limits?: K8SResourceRequirementsLimits;
+	readonly requests?: K8SResourceRequirementsRequests;
+	readonly [key: string]: any;
 }
 export interface K8SResourceRequirementsLimits {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface K8SResourceRequirementsRequests {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface K8SScheduling {
-	readonly default?: K8SSchedulingOptions | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly default?: K8SSchedulingOptions;
+	readonly [key: string]: any;
 }
 export interface K8SSchedulingOptions {
-	readonly resources?: K8SResourceRequirements | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly resources?: K8SResourceRequirements;
+	readonly [key: string]: any;
 }
 export interface LogAnalyticsWorkspaceConfig {
-	readonly primaryKey?: string | undefined;
-	readonly workspaceId?: string | undefined;
+	readonly primaryKey?: string;
+	readonly workspaceId?: string;
 }
 export interface OnPremiseProperty {
 	readonly id: string;
 	readonly publicSigningKey: string;
-	readonly signingCertificateThumbprint?: string | undefined;
+	readonly signingCertificateThumbprint?: string;
 }
 export interface SqlManagedInstanceK8SRaw {
-	readonly spec?: SqlManagedInstanceK8SSpec | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly spec?: SqlManagedInstanceK8SSpec;
+	readonly [key: string]: any;
 }
 export interface SqlManagedInstanceK8SSpec {
-	readonly replicas?: number | undefined;
-	readonly scheduling?: K8SScheduling | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly replicas?: number;
+	readonly scheduling?: K8SScheduling;
+	readonly [key: string]: any;
 }
 export interface SqlManagedInstanceProperties {
-	readonly admin?: string | undefined;
-	readonly basicLoginInformation?: BasicLoginInformation | undefined;
-	readonly clusterId?: string | undefined;
-	readonly dataControllerId?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly extensionId?: string | undefined;
-	readonly k8sRaw?: SqlManagedInstanceK8SRaw | undefined;
-	readonly lastUploadedDate?: string | undefined;
-	readonly licenseType?: ("BasePrice" | "DisasterRecovery" | "LicenseIncluded") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly startTime?: string | undefined;
+	readonly admin?: string;
+	readonly basicLoginInformation?: BasicLoginInformation;
+	readonly clusterId?: string;
+	readonly dataControllerId?: string;
+	readonly endTime?: string;
+	readonly extensionId?: string;
+	readonly k8sRaw?: SqlManagedInstanceK8SRaw;
+	readonly lastUploadedDate?: string;
+	readonly licenseType?: "BasePrice" | "DisasterRecovery" | "LicenseIncluded";
+	readonly provisioningState?: string;
+	readonly startTime?: string;
 }
 export interface SqlManagedInstanceSku {
-	readonly capacity?: number | undefined;
-	readonly dev?: boolean | undefined;
-	readonly family?: string | undefined;
+	readonly capacity?: number;
+	readonly dev?: boolean;
+	readonly family?: string;
 	readonly name: "vCore";
-	readonly size?: string | undefined;
-	readonly tier?: "BusinessCritical" | undefined;
+	readonly size?: string;
+	readonly tier?: "BusinessCritical";
 }
 export interface SqlServerInstanceProperties {
-	readonly azureDefenderStatus?: ("Protected" | "Unknown" | "Unprotected") | undefined;
-	readonly azureDefenderStatusLastUpdated?: string | undefined;
-	readonly collation?: string | undefined;
+	readonly azureDefenderStatus?: "Protected" | "Unknown" | "Unprotected";
+	readonly azureDefenderStatusLastUpdated?: string;
+	readonly collation?: string;
 	readonly containerResourceId: string;
-	readonly createTime?: string | undefined;
-	readonly currentVersion?: string | undefined;
-	readonly edition?: ("Developer" | "Enterprise" | "Evaluation" | "Express" | "Standard" | "Web") | undefined;
-	readonly instanceName?: string | undefined;
-	readonly licenseType?: ("Free" | "HADR" | "Paid" | "Undefined") | undefined;
-	readonly patchLevel?: string | undefined;
-	readonly productId?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly createTime?: string;
+	readonly currentVersion?: string;
+	readonly edition?: "Developer" | "Enterprise" | "Evaluation" | "Express" | "Standard" | "Web";
+	readonly instanceName?: string;
+	readonly licenseType?: "Free" | "HADR" | "Paid" | "Undefined";
+	readonly patchLevel?: string;
+	readonly productId?: string;
+	readonly provisioningState?: string;
 	readonly status: "Connected" | "Disconnected" | "Unknown";
-	readonly tcpDynamicPorts?: string | undefined;
-	readonly tcpStaticPorts?: string | undefined;
-	readonly vCore?: string | undefined;
-	readonly version?: ("SQL Server 2016" | "SQL Server 2017" | "SQL Server 2019") | undefined;
+	readonly tcpDynamicPorts?: string;
+	readonly tcpStaticPorts?: string;
+	readonly vCore?: string;
+	readonly version?: "SQL Server 2016" | "SQL Server 2017" | "SQL Server 2019";
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UploadServicePrincipal {
-	readonly authority?: string | undefined;
-	readonly clientId?: string | undefined;
-	readonly clientSecret?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly authority?: string;
+	readonly clientId?: string;
+	readonly clientSecret?: string;
+	readonly tenantId?: string;
 }
 export interface UploadWatermark {
-	readonly logs?: string | undefined;
-	readonly metrics?: string | undefined;
-	readonly usages?: string | undefined;
+	readonly logs?: string;
+	readonly metrics?: string;
+	readonly usages?: string;
 }
 export default {
 	dataControllers: dataControllers,

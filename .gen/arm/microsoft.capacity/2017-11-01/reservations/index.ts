@@ -17,9 +17,9 @@ export interface reservationOrdersComponentOutputs {
 	readonly type: "Microsoft.Capacity/reservationOrders";
 }
 export interface reservationOrdersComponentInputs {
-	readonly etag?: number | undefined;
+	readonly etag?: number;
 	readonly name: string;
-	readonly properties?: ReservationOrderProperties | undefined;
+	readonly properties?: ReservationOrderProperties;
 }
 export class reservationOrders_reservations
 	extends ArmResource<reservationOrders_reservationsComponentInputs>
@@ -38,160 +38,145 @@ export interface reservationOrders_reservationsComponentOutputs {
 	readonly type: "Microsoft.Capacity/reservationOrders/reservations";
 }
 export interface reservationOrders_reservationsComponentInputs {
-	readonly etag?: number | undefined;
-	readonly kind?: "Microsoft.Compute" | undefined;
+	readonly etag?: number;
+	readonly kind?: "Microsoft.Compute";
 	readonly location?:
-		| (
-				| "australiaeast"
-				| "australiasoutheast"
-				| "brazilsouth"
-				| "canadacentral"
-				| "canadaeast"
-				| "centralindia"
-				| "centralus"
-				| "eastasia"
-				| "eastus"
-				| "eastus2"
-				| "japaneast"
-				| "japanwest"
-				| "northcentralus"
-				| "northeurope"
-				| "southcentralus"
-				| "southeastasia"
-				| "southindia"
-				| "uksouth"
-				| "ukwest"
-				| "westcentralus"
-				| "westeurope"
-				| "westindia"
-				| "westus"
-				| "westus2"
-		  )
-		| undefined;
+		| "australiaeast"
+		| "australiasoutheast"
+		| "brazilsouth"
+		| "canadacentral"
+		| "canadaeast"
+		| "centralindia"
+		| "centralus"
+		| "eastasia"
+		| "eastus"
+		| "eastus2"
+		| "japaneast"
+		| "japanwest"
+		| "northcentralus"
+		| "northeurope"
+		| "southcentralus"
+		| "southeastasia"
+		| "southindia"
+		| "uksouth"
+		| "ukwest"
+		| "westcentralus"
+		| "westeurope"
+		| "westindia"
+		| "westus"
+		| "westus2";
 	readonly name: string;
-	readonly properties?: ReservationProperties | undefined;
-	readonly sku?: SkuName | undefined;
+	readonly properties?: ReservationProperties;
+	readonly sku?: SkuName;
 }
 export interface ExtendedStatusInfo {
-	readonly message?: string | undefined;
+	readonly message?: string;
 	readonly statusCode?:
-		| (
-				| "Active"
-				| "Expired"
-				| "Merged"
-				| "None"
-				| "PaymentInstrumentError"
-				| "Pending"
-				| "PurchaseError"
-				| "Split"
-				| "Succeeded"
-		  )
-		| undefined;
+		| "Active"
+		| "Expired"
+		| "Merged"
+		| "None"
+		| "PaymentInstrumentError"
+		| "Pending"
+		| "PurchaseError"
+		| "Split"
+		| "Succeeded";
 }
 export interface ReservationMergeProperties {
-	readonly mergeDestination?: string | undefined;
-	readonly mergeSources?: string[] | undefined;
+	readonly mergeDestination?: string;
+	readonly mergeSources?: string[];
 }
 export interface ReservationOrderProperties {
-	readonly createdDateTime?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly expiryDate?: string | undefined;
-	readonly originalQuantity?: number | undefined;
+	readonly createdDateTime?: string;
+	readonly displayName?: string;
+	readonly expiryDate?: string;
+	readonly originalQuantity?: number;
 	readonly provisioningState?:
-		| (
-				| "BillingFailed"
-				| "Cancelled"
-				| "ConfirmedBilling"
-				| "ConfirmedResourceHold"
-				| "Created"
-				| "Creating"
-				| "Expired"
-				| "Failed"
-				| "Merged"
-				| "PendingBilling"
-				| "PendingResourceHold"
-				| "Processing"
-				| "Split"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly requestDateTime?: string | undefined;
-	readonly reservations?: ReservationResponse[] | undefined;
-	readonly term?: ("P1Y" | "P3Y") | undefined;
+		| "BillingFailed"
+		| "Cancelled"
+		| "ConfirmedBilling"
+		| "ConfirmedResourceHold"
+		| "Created"
+		| "Creating"
+		| "Expired"
+		| "Failed"
+		| "Merged"
+		| "PendingBilling"
+		| "PendingResourceHold"
+		| "Processing"
+		| "Split"
+		| "Succeeded";
+	readonly requestDateTime?: string;
+	readonly reservations?: ReservationResponse[];
+	readonly term?: "P1Y" | "P3Y";
 }
 export interface ReservationProperties {
-	readonly appliedScopes?: string[] | undefined;
-	readonly appliedScopeType?: ("Shared" | "Single") | undefined;
-	readonly displayName?: string | undefined;
-	readonly effectiveDateTime?: string | undefined;
-	readonly expiryDate?: string | undefined;
-	readonly extendedStatusInfo?: ExtendedStatusInfo | undefined;
-	readonly lastUpdatedDateTime?: string | undefined;
-	readonly mergeProperties?: ReservationMergeProperties | undefined;
+	readonly appliedScopes?: string[];
+	readonly appliedScopeType?: "Shared" | "Single";
+	readonly displayName?: string;
+	readonly effectiveDateTime?: string;
+	readonly expiryDate?: string;
+	readonly extendedStatusInfo?: ExtendedStatusInfo;
+	readonly lastUpdatedDateTime?: string;
+	readonly mergeProperties?: ReservationMergeProperties;
 	readonly provisioningState?:
-		| (
-				| "BillingFailed"
-				| "Cancelled"
-				| "ConfirmedBilling"
-				| "ConfirmedResourceHold"
-				| "Created"
-				| "Creating"
-				| "Expired"
-				| "Failed"
-				| "Merged"
-				| "PendingBilling"
-				| "PendingResourceHold"
-				| "Processing"
-				| "Split"
-				| "Succeeded"
-		  )
-		| undefined;
-	readonly quantity?: number | undefined;
-	readonly splitProperties?: ReservationSplitProperties | undefined;
+		| "BillingFailed"
+		| "Cancelled"
+		| "ConfirmedBilling"
+		| "ConfirmedResourceHold"
+		| "Created"
+		| "Creating"
+		| "Expired"
+		| "Failed"
+		| "Merged"
+		| "PendingBilling"
+		| "PendingResourceHold"
+		| "Processing"
+		| "Split"
+		| "Succeeded";
+	readonly quantity?: number;
+	readonly splitProperties?: ReservationSplitProperties;
 }
 export interface ReservationResponse {
-	readonly etag?: number | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: "Microsoft.Compute" | undefined;
+	readonly etag?: number;
+	readonly id?: string;
+	readonly kind?: "Microsoft.Compute";
 	readonly location?:
-		| (
-				| "australiaeast"
-				| "australiasoutheast"
-				| "brazilsouth"
-				| "canadacentral"
-				| "canadaeast"
-				| "centralindia"
-				| "centralus"
-				| "eastasia"
-				| "eastus"
-				| "eastus2"
-				| "japaneast"
-				| "japanwest"
-				| "northcentralus"
-				| "northeurope"
-				| "southcentralus"
-				| "southeastasia"
-				| "southindia"
-				| "uksouth"
-				| "ukwest"
-				| "westcentralus"
-				| "westeurope"
-				| "westindia"
-				| "westus"
-				| "westus2"
-		  )
-		| undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ReservationProperties | undefined;
-	readonly sku?: SkuName | undefined;
-	readonly type?: string | undefined;
+		| "australiaeast"
+		| "australiasoutheast"
+		| "brazilsouth"
+		| "canadacentral"
+		| "canadaeast"
+		| "centralindia"
+		| "centralus"
+		| "eastasia"
+		| "eastus"
+		| "eastus2"
+		| "japaneast"
+		| "japanwest"
+		| "northcentralus"
+		| "northeurope"
+		| "southcentralus"
+		| "southeastasia"
+		| "southindia"
+		| "uksouth"
+		| "ukwest"
+		| "westcentralus"
+		| "westeurope"
+		| "westindia"
+		| "westus"
+		| "westus2";
+	readonly name?: string;
+	readonly properties?: ReservationProperties;
+	readonly sku?: SkuName;
+	readonly type?: string;
 }
 export interface ReservationSplitProperties {
-	readonly splitDestinations?: string[] | undefined;
-	readonly splitSource?: string | undefined;
+	readonly splitDestinations?: string[];
+	readonly splitSource?: string;
 }
 export interface SkuName {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export default {
 	reservationOrders: reservationOrders,

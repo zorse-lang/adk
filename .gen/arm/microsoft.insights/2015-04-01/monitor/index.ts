@@ -20,39 +20,39 @@ export interface autoscalesettingsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: AutoscaleSetting;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export interface AutoscaleNotification {
-	readonly email?: EmailNotification | undefined;
+	readonly email?: EmailNotification;
 	readonly operation: "Scale";
-	readonly webhooks?: WebhookNotification[] | undefined;
+	readonly webhooks?: WebhookNotification[];
 }
 export interface AutoscaleProfile {
 	readonly capacity: ScaleCapacity;
-	readonly fixedDate?: TimeWindow | undefined;
+	readonly fixedDate?: TimeWindow;
 	readonly name: string;
-	readonly recurrence?: Recurrence | undefined;
+	readonly recurrence?: Recurrence;
 	readonly rules: ScaleRule[];
 }
 export interface AutoscaleSetting {
-	readonly enabled?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly notifications?: AutoscaleNotification[] | undefined;
+	readonly enabled?: boolean;
+	readonly name?: string;
+	readonly notifications?: AutoscaleNotification[];
 	readonly profiles: AutoscaleProfile[];
-	readonly targetResourceLocation?: string | undefined;
-	readonly targetResourceUri?: string | undefined;
+	readonly targetResourceLocation?: string;
+	readonly targetResourceUri?: string;
 }
 export interface EmailNotification {
-	readonly customEmails?: string[] | undefined;
-	readonly sendToSubscriptionAdministrator?: boolean | undefined;
-	readonly sendToSubscriptionCoAdministrators?: boolean | undefined;
+	readonly customEmails?: string[];
+	readonly sendToSubscriptionAdministrator?: boolean;
+	readonly sendToSubscriptionCoAdministrators?: boolean;
 }
 export interface MetricTrigger {
-	readonly dimensions?: ScaleRuleMetricDimension[] | undefined;
-	readonly dividePerInstance?: boolean | undefined;
+	readonly dimensions?: ScaleRuleMetricDimension[];
+	readonly dividePerInstance?: boolean;
 	readonly metricName: string;
-	readonly metricNamespace?: string | undefined;
-	readonly metricResourceLocation?: string | undefined;
+	readonly metricNamespace?: string;
+	readonly metricResourceLocation?: string;
 	readonly metricResourceUri: string;
 	readonly operator: "Equals" | "GreaterThan" | "GreaterThanOrEqual" | "LessThan" | "LessThanOrEqual";
 	readonly statistic: "Average" | "Count" | "Max" | "Min";
@@ -72,13 +72,13 @@ export interface RecurrentSchedule {
 	readonly timeZone: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ScaleAction {
 	readonly cooldown: string;
 	readonly direction: "Decrease" | "Increase";
 	readonly type: "ChangeCount" | "ExactCount" | "PercentChangeCount";
-	readonly value?: string | undefined;
+	readonly value?: string;
 }
 export interface ScaleCapacity {
 	readonly default: string;
@@ -97,14 +97,14 @@ export interface ScaleRuleMetricDimension {
 export interface TimeWindow {
 	readonly end: string;
 	readonly start: string;
-	readonly timeZone?: string | undefined;
+	readonly timeZone?: string;
 }
 export interface WebhookNotification {
-	readonly properties?: WebhookNotificationProperties | undefined;
-	readonly serviceUri?: string | undefined;
+	readonly properties?: WebhookNotificationProperties;
+	readonly serviceUri?: string;
 }
 export interface WebhookNotificationProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	autoscalesettings: autoscalesettings,

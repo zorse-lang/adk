@@ -11,10 +11,10 @@ export interface AccessControlComponentOutputs {
 }
 export interface AccessControlComponentInputs {
 	readonly AclName: string;
-	readonly AclEntrys?: (AclEntrys[] | undefined) | undefined;
-	readonly AddressIPVersion?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly AclEntrys?: AclEntrys[] | undefined;
+	readonly AddressIPVersion?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class BackendServerAttachment
@@ -28,9 +28,9 @@ export class BackendServerAttachment
 export interface BackendServerAttachmentComponentOutputs {}
 export interface BackendServerAttachmentComponentInputs {
 	readonly LoadBalancerId: any | string;
-	readonly BackendServerList?: (string[] | undefined) | undefined;
-	readonly BackendServers?: (BackendServers[] | any) | undefined;
-	readonly BackendServerWeightList?: (any[] | undefined) | undefined;
+	readonly BackendServerList?: string[] | undefined;
+	readonly BackendServers?: BackendServers[] | any;
+	readonly BackendServerWeightList?: any[] | undefined;
 	readonly LogicalId: string;
 }
 export class BackendServerToVServerGroupAddition
@@ -60,13 +60,13 @@ export interface CertificateComponentOutputs {
 }
 export interface CertificateComponentInputs {
 	readonly Certificate: string;
-	readonly AliCloudCertificateId?: (string | undefined) | undefined;
-	readonly AliCloudCertificateName?: (string | undefined) | undefined;
-	readonly CertificateName?: (string | undefined) | undefined;
-	readonly CertificateType?: (string | undefined) | undefined;
-	readonly PrivateKey?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
+	readonly AliCloudCertificateId?: string | undefined;
+	readonly AliCloudCertificateName?: string | undefined;
+	readonly CertificateName?: string | undefined;
+	readonly CertificateType?: string | undefined;
+	readonly PrivateKey?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
 	readonly LogicalId: string;
 }
 export class DomainExtension
@@ -102,24 +102,24 @@ export interface ListenerComponentInputs {
 	readonly ListenerPort: number;
 	readonly LoadBalancerId: any | string;
 	readonly Protocol: string;
-	readonly AclId?: (string | undefined) | undefined;
-	readonly AclStatus?: (string | undefined) | undefined;
-	readonly AclType?: (string | undefined) | undefined;
-	readonly BackendServerPort?: (number | undefined) | undefined;
-	readonly CACertificateId?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnableHttp2?: (string | undefined) | undefined;
-	readonly HealthCheck?: (HealthCheck | undefined) | undefined;
-	readonly HttpConfig?: (HttpConfig | undefined) | undefined;
-	readonly IdleTimeout?: (number | undefined) | undefined;
-	readonly MasterSlaveServerGroupId?: (string | undefined) | undefined;
-	readonly Persistence?: (Persistence | undefined) | undefined;
-	readonly PortRange?: (PortRange[] | undefined) | undefined;
-	readonly RequestTimeout?: (number | undefined) | undefined;
-	readonly Scheduler?: (string | undefined) | undefined;
-	readonly ServerCertificateId?: (string | undefined) | undefined;
-	readonly StartListener?: (boolean | undefined) | undefined;
-	readonly VServerGroupId?: (string | undefined) | undefined;
+	readonly AclId?: string | undefined;
+	readonly AclStatus?: string | undefined;
+	readonly AclType?: string | undefined;
+	readonly BackendServerPort?: number | undefined;
+	readonly CACertificateId?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly EnableHttp2?: string | undefined;
+	readonly HealthCheck?: HealthCheck | undefined;
+	readonly HttpConfig?: HttpConfig | undefined;
+	readonly IdleTimeout?: number | undefined;
+	readonly MasterSlaveServerGroupId?: string | undefined;
+	readonly Persistence?: Persistence | undefined;
+	readonly PortRange?: PortRange[] | undefined;
+	readonly RequestTimeout?: number | undefined;
+	readonly Scheduler?: string | undefined;
+	readonly ServerCertificateId?: string | undefined;
+	readonly StartListener?: boolean | undefined;
+	readonly VServerGroupId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LoadBalancer extends RosResource<LoadBalancerComponentInputs> implements LoadBalancerComponentOutputs {
@@ -140,28 +140,28 @@ export interface LoadBalancerComponentOutputs {
 	readonly IpAddress: any;
 }
 export interface LoadBalancerComponentInputs {
-	readonly AddressIPVersion?: (string | undefined) | undefined;
-	readonly AddressType?: (any | string) | undefined;
-	readonly AutoPay?: (boolean | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly AutoRenewPeriod?: (number | undefined) | undefined;
-	readonly Bandwidth?: (any | number) | undefined;
-	readonly DeletionProtection?: (boolean | undefined) | undefined;
-	readonly Duration?: (number | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly LoadBalancerName?: (any | string) | undefined;
-	readonly LoadBalancerSpec?: (any | string) | undefined;
-	readonly MasterZoneId?: (any | string) | undefined;
-	readonly ModificationProtectionReason?: (string | undefined) | undefined;
-	readonly ModificationProtectionStatus?: (string | undefined) | undefined;
-	readonly PayType?: (any | string) | undefined;
-	readonly PricingCycle?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (any | string) | undefined;
-	readonly SlaveZoneId?: (any | string) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly VpcId?: (any | string) | undefined;
-	readonly VSwitchId?: (any | string) | undefined;
+	readonly AddressIPVersion?: string | undefined;
+	readonly AddressType?: any | string;
+	readonly AutoPay?: boolean | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly AutoRenewPeriod?: number | undefined;
+	readonly Bandwidth?: any | number;
+	readonly DeletionProtection?: boolean | undefined;
+	readonly Duration?: number | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly InternetChargeType?: string | undefined;
+	readonly LoadBalancerName?: any | string;
+	readonly LoadBalancerSpec?: any | string;
+	readonly MasterZoneId?: any | string;
+	readonly ModificationProtectionReason?: string | undefined;
+	readonly ModificationProtectionStatus?: string | undefined;
+	readonly PayType?: any | string;
+	readonly PricingCycle?: string | undefined;
+	readonly ResourceGroupId?: any | string;
+	readonly SlaveZoneId?: any | string;
+	readonly Tags?: Tags[] | undefined;
+	readonly VpcId?: any | string;
+	readonly VSwitchId?: any | string;
 	readonly LogicalId: string;
 }
 export class LoadBalancerClone
@@ -178,15 +178,15 @@ export interface LoadBalancerCloneComponentOutputs {
 }
 export interface LoadBalancerCloneComponentInputs {
 	readonly SourceLoadBalancerId: string;
-	readonly BackendServers?: (BackendServers[] | undefined) | undefined;
-	readonly BackendServersPolicy?: (string | undefined) | undefined;
-	readonly InstanceChargeType?: (string | undefined) | undefined;
-	readonly LoadBalancerName?: (string | undefined) | undefined;
-	readonly LoadBalancerSpec?: (string | undefined) | undefined;
-	readonly ResourceGroupId?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly TagsPolicy?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
+	readonly BackendServers?: BackendServers[] | undefined;
+	readonly BackendServersPolicy?: string | undefined;
+	readonly InstanceChargeType?: string | undefined;
+	readonly LoadBalancerName?: string | undefined;
+	readonly LoadBalancerSpec?: string | undefined;
+	readonly ResourceGroupId?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly TagsPolicy?: string | undefined;
+	readonly VSwitchId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class MasterSlaveServerGroup
@@ -204,7 +204,7 @@ export interface MasterSlaveServerGroupComponentOutputs {
 export interface MasterSlaveServerGroupComponentInputs {
 	readonly LoadBalancerId: string;
 	readonly MasterSlaveBackendServers: MasterSlaveBackendServers[];
-	readonly MasterSlaveServerGroupName?: (string | undefined) | undefined;
+	readonly MasterSlaveServerGroupName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Rule extends RosResource<RuleComponentInputs> implements RuleComponentOutputs {
@@ -234,68 +234,68 @@ export interface VServerGroupComponentOutputs {
 export interface VServerGroupComponentInputs {
 	readonly LoadBalancerId: string;
 	readonly VServerGroupName: string;
-	readonly BackendServers?: (BackendServers[] | any) | undefined;
+	readonly BackendServers?: BackendServers[] | any;
 	readonly LogicalId: string;
 }
 export interface AclEntrys {
 	readonly entry: string;
-	readonly comment?: (string | undefined) | undefined;
+	readonly comment?: string | undefined;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface BackendServers {
-	readonly Type?: (string | undefined) | undefined;
+	readonly Type?: string | undefined;
 	readonly ServerId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ServerIp?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly ServerIp?: string | undefined;
 	readonly Weight: number;
 }
 export interface HealthCheck {
-	readonly HttpCode?: (string | undefined) | undefined;
-	readonly Switch?: (string | undefined) | undefined;
-	readonly UnhealthyThreshold?: (number | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
-	readonly HealthCheckMethod?: (string | undefined) | undefined;
-	readonly HealthyThreshold?: (number | undefined) | undefined;
-	readonly Port?: (number | undefined) | undefined;
-	readonly Domain?: (string | undefined) | undefined;
-	readonly URI?: (string | undefined) | undefined;
-	readonly HealthCheckType?: (string | undefined) | undefined;
-	readonly Interval?: (number | undefined) | undefined;
+	readonly HttpCode?: string | undefined;
+	readonly Switch?: string | undefined;
+	readonly UnhealthyThreshold?: number | undefined;
+	readonly Timeout?: number | undefined;
+	readonly HealthCheckMethod?: string | undefined;
+	readonly HealthyThreshold?: number | undefined;
+	readonly Port?: number | undefined;
+	readonly Domain?: string | undefined;
+	readonly URI?: string | undefined;
+	readonly HealthCheckType?: string | undefined;
+	readonly Interval?: number | undefined;
 }
 export interface HttpConfig {
-	readonly ListenerForward?: (string | undefined) | undefined;
-	readonly ForwardPort?: (number | undefined) | undefined;
+	readonly ListenerForward?: string | undefined;
+	readonly ForwardPort?: number | undefined;
 }
 export interface Persistence {
-	readonly XForwardedFor_SLBID?: (string | undefined) | undefined;
-	readonly CookieTimeout?: (number | undefined) | undefined;
-	readonly Cookie?: (string | undefined) | undefined;
-	readonly StickySession?: (string | undefined) | undefined;
-	readonly PersistenceTimeout?: (number | undefined) | undefined;
-	readonly XForwardedFor_SLBPORT?: (string | undefined) | undefined;
-	readonly XForwardedFor?: (string | undefined) | undefined;
-	readonly XForwardedFor_ClientSrcPort?: (string | undefined) | undefined;
-	readonly XForwardedFor_proto?: (string | undefined) | undefined;
-	readonly StickySessionType?: (string | undefined) | undefined;
-	readonly XForwardedFor_SLBIP?: (string | undefined) | undefined;
+	readonly XForwardedFor_SLBID?: string | undefined;
+	readonly CookieTimeout?: number | undefined;
+	readonly Cookie?: string | undefined;
+	readonly StickySession?: string | undefined;
+	readonly PersistenceTimeout?: number | undefined;
+	readonly XForwardedFor_SLBPORT?: string | undefined;
+	readonly XForwardedFor?: string | undefined;
+	readonly XForwardedFor_ClientSrcPort?: string | undefined;
+	readonly XForwardedFor_proto?: string | undefined;
+	readonly StickySessionType?: string | undefined;
+	readonly XForwardedFor_SLBIP?: string | undefined;
 }
 export interface PortRange {
 	readonly StartPort: number;
 	readonly EndPort: number;
 }
 export interface MasterSlaveBackendServers {
-	readonly ServerType?: (string | undefined) | undefined;
+	readonly ServerType?: string | undefined;
 	readonly ServerId: string;
 	readonly Port: number;
 	readonly Weight: number;
 }
 export interface RuleList {
 	readonly VServerGroupId: string;
-	readonly Domain?: (string | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
+	readonly Domain?: string | undefined;
+	readonly Url?: string | undefined;
 	readonly RuleName: string;
 }
 export default {

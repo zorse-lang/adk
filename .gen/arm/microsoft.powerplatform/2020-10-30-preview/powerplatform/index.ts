@@ -16,9 +16,9 @@ export interface accountsComponentOutputs {
 export interface accountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: AccountProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: AccountProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class enterprisePolicies
 	extends ArmResource<enterprisePoliciesComponentInputs>
@@ -37,13 +37,13 @@ export interface enterprisePoliciesComponentOutputs {
 	readonly type: "Microsoft.PowerPlatform/enterprisePolicies";
 }
 export interface enterprisePoliciesComponentInputs {
-	readonly identity?: EnterprisePolicyIdentity | undefined;
+	readonly identity?: EnterprisePolicyIdentity;
 	readonly kind: "Encryption" | "Identity" | "Lockbox" | "NetworkInjection" | "PrivateEndpoint";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: Properties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: Properties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class enterprisePolicies_privateEndpointConnections
 	extends ArmResource<enterprisePolicies_privateEndpointConnectionsComponentInputs>
@@ -69,8 +69,8 @@ export interface enterprisePolicies_privateEndpointConnectionsComponentOutputs {
 }
 export interface enterprisePolicies_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class enterprisePolicies_privateLinkResources
 	extends ArmResource<enterprisePolicies_privateLinkResourcesComponentInputs>
@@ -96,80 +96,80 @@ export interface enterprisePolicies_privateLinkResourcesComponentOutputs {
 }
 export interface enterprisePolicies_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
 }
 export interface AccountProperties {
-	readonly description?: string | undefined;
-	readonly systemId?: string | undefined;
+	readonly description?: string;
+	readonly systemId?: string;
 }
 export interface EnterprisePolicyIdentity {
-	readonly systemAssignedIdentityPrincipalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "None" | undefined;
+	readonly systemAssignedIdentityPrincipalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None";
 }
 export interface KeyProperties {
-	readonly name?: string | undefined;
-	readonly version?: string | undefined;
+	readonly name?: string;
+	readonly version?: string;
 }
 export interface KeyVaultProperties {
-	readonly id?: string | undefined;
-	readonly key?: KeyProperties | undefined;
+	readonly id?: string;
+	readonly key?: KeyProperties;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionsRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionsRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface Properties {
-	readonly encryption?: PropertiesEncryption | undefined;
-	readonly lockbox?: PropertiesLockbox | undefined;
-	readonly networkInjection?: PropertiesNetworkInjection | undefined;
-	readonly systemId?: string | undefined;
+	readonly encryption?: PropertiesEncryption;
+	readonly lockbox?: PropertiesLockbox;
+	readonly networkInjection?: PropertiesNetworkInjection;
+	readonly systemId?: string;
 }
 export interface PropertiesEncryption {
-	readonly keyVault?: KeyVaultProperties | undefined;
-	readonly state?: ("Disabled" | "Enabled" | "NotConfigured") | undefined;
+	readonly keyVault?: KeyVaultProperties;
+	readonly state?: "Disabled" | "Enabled" | "NotConfigured";
 }
 export interface PropertiesLockbox {
-	readonly state?: ("Disabled" | "Enabled" | "NotConfigured") | undefined;
+	readonly state?: "Disabled" | "Enabled" | "NotConfigured";
 }
 export interface PropertiesNetworkInjection {
-	readonly virtualNetworks?: VirtualNetworkPropertiesList | undefined;
+	readonly virtualNetworks?: VirtualNetworkPropertiesList;
 }
 export interface SubnetProperties {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VirtualNetworkProperties {
-	readonly id?: string | undefined;
-	readonly subnet?: SubnetProperties | undefined;
+	readonly id?: string;
+	readonly subnet?: SubnetProperties;
 }
 export interface VirtualNetworkPropertiesList {
-	readonly nextLink?: string | undefined;
-	readonly value?: VirtualNetworkProperties[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: VirtualNetworkProperties[];
 }
 export default {
 	accounts: accounts,

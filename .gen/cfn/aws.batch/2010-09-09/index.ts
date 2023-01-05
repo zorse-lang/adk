@@ -14,15 +14,15 @@ export interface ComputeEnvironmentComponentOutputs {
 }
 export interface ComputeEnvironmentComponentInputs {
 	readonly Type: string;
-	readonly ComputeEnvironmentName?: (string | undefined) | undefined;
-	readonly ComputeResources?: (ComputeResources | undefined) | undefined;
-	readonly EksConfiguration?: (EksConfiguration | undefined) | undefined;
-	readonly ReplaceComputeEnvironment?: (boolean | undefined) | undefined;
-	readonly ServiceRole?: (string | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
-	readonly UnmanagedvCpus?: (number | undefined) | undefined;
-	readonly UpdatePolicy?: (UpdatePolicy | undefined) | undefined;
+	readonly ComputeEnvironmentName?: string | undefined;
+	readonly ComputeResources?: ComputeResources | undefined;
+	readonly EksConfiguration?: EksConfiguration | undefined;
+	readonly ReplaceComputeEnvironment?: boolean | undefined;
+	readonly ServiceRole?: string | undefined;
+	readonly State?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
+	readonly UnmanagedvCpus?: number | undefined;
+	readonly UpdatePolicy?: UpdatePolicy | undefined;
 	readonly LogicalId: string;
 }
 export class JobDefinition extends CfnResource<JobDefinitionComponentInputs> implements JobDefinitionComponentOutputs {
@@ -33,17 +33,17 @@ export class JobDefinition extends CfnResource<JobDefinitionComponentInputs> imp
 export interface JobDefinitionComponentOutputs {}
 export interface JobDefinitionComponentInputs {
 	readonly Type: string;
-	readonly ContainerProperties?: (ContainerProperties | undefined) | undefined;
-	readonly EksProperties?: (EksProperties | undefined) | undefined;
-	readonly JobDefinitionName?: (string | undefined) | undefined;
-	readonly NodeProperties?: (NodeProperties | undefined) | undefined;
-	readonly Parameters?: (any | undefined) | undefined;
-	readonly PlatformCapabilities?: (string[] | undefined) | undefined;
-	readonly PropagateTags?: (boolean | undefined) | undefined;
-	readonly RetryStrategy?: (RetryStrategy | undefined) | undefined;
-	readonly SchedulingPriority?: (number | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
-	readonly Timeout?: (Timeout | undefined) | undefined;
+	readonly ContainerProperties?: ContainerProperties | undefined;
+	readonly EksProperties?: EksProperties | undefined;
+	readonly JobDefinitionName?: string | undefined;
+	readonly NodeProperties?: NodeProperties | undefined;
+	readonly Parameters?: any | undefined;
+	readonly PlatformCapabilities?: string[] | undefined;
+	readonly PropagateTags?: boolean | undefined;
+	readonly RetryStrategy?: RetryStrategy | undefined;
+	readonly SchedulingPriority?: number | undefined;
+	readonly Tags?: any | undefined;
+	readonly Timeout?: Timeout | undefined;
 	readonly LogicalId: string;
 }
 export class JobQueue extends CfnResource<JobQueueComponentInputs> implements JobQueueComponentOutputs {
@@ -58,10 +58,10 @@ export interface JobQueueComponentOutputs {
 export interface JobQueueComponentInputs {
 	readonly ComputeEnvironmentOrder: ComputeEnvironmentOrder[];
 	readonly Priority: number;
-	readonly JobQueueName?: (string | undefined) | undefined;
-	readonly SchedulingPolicyArn?: (string | undefined) | undefined;
-	readonly State?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly JobQueueName?: string | undefined;
+	readonly SchedulingPolicyArn?: string | undefined;
+	readonly State?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class SchedulingPolicy
@@ -77,34 +77,34 @@ export interface SchedulingPolicyComponentOutputs {
 	readonly Arn: string;
 }
 export interface SchedulingPolicyComponentInputs {
-	readonly FairsharePolicy?: (FairsharePolicy | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly FairsharePolicy?: FairsharePolicy | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export interface ComputeResources {
-	readonly AllocationStrategy?: (string | undefined) | undefined;
-	readonly BidPercentage?: (number | undefined) | undefined;
-	readonly DesiredvCpus?: (number | undefined) | undefined;
-	readonly Ec2Configuration?: (Ec2ConfigurationObject[] | undefined) | undefined;
-	readonly Ec2KeyPair?: (string | undefined) | undefined;
-	readonly ImageId?: (string | undefined) | undefined;
-	readonly InstanceRole?: (string | undefined) | undefined;
-	readonly InstanceTypes?: (string[] | undefined) | undefined;
-	readonly LaunchTemplate?: (LaunchTemplateSpecification | undefined) | undefined;
+	readonly AllocationStrategy?: string | undefined;
+	readonly BidPercentage?: number | undefined;
+	readonly DesiredvCpus?: number | undefined;
+	readonly Ec2Configuration?: Ec2ConfigurationObject[] | undefined;
+	readonly Ec2KeyPair?: string | undefined;
+	readonly ImageId?: string | undefined;
+	readonly InstanceRole?: string | undefined;
+	readonly InstanceTypes?: string[] | undefined;
+	readonly LaunchTemplate?: LaunchTemplateSpecification | undefined;
 	readonly MaxvCpus: number;
-	readonly MinvCpus?: (number | undefined) | undefined;
-	readonly PlacementGroup?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SpotIamFleetRole?: (string | undefined) | undefined;
+	readonly MinvCpus?: number | undefined;
+	readonly PlacementGroup?: string | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SpotIamFleetRole?: string | undefined;
 	readonly Subnets: string[];
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly Type: string;
-	readonly UpdateToLatestImageVersion?: (boolean | undefined) | undefined;
+	readonly UpdateToLatestImageVersion?: boolean | undefined;
 }
 export interface Ec2ConfigurationObject {
-	readonly ImageIdOverride?: (string | undefined) | undefined;
-	readonly ImageKubernetesVersion?: (string | undefined) | undefined;
+	readonly ImageIdOverride?: string | undefined;
+	readonly ImageKubernetesVersion?: string | undefined;
 	readonly ImageType: string;
 }
 export interface EksConfiguration {
@@ -112,121 +112,121 @@ export interface EksConfiguration {
 	readonly KubernetesNamespace: string;
 }
 export interface LaunchTemplateSpecification {
-	readonly LaunchTemplateId?: (string | undefined) | undefined;
-	readonly LaunchTemplateName?: (string | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly LaunchTemplateId?: string | undefined;
+	readonly LaunchTemplateName?: string | undefined;
+	readonly Version?: string | undefined;
 }
 export interface UpdatePolicy {
-	readonly JobExecutionTimeoutMinutes?: (number | undefined) | undefined;
-	readonly TerminateJobsOnUpdate?: (boolean | undefined) | undefined;
+	readonly JobExecutionTimeoutMinutes?: number | undefined;
+	readonly TerminateJobsOnUpdate?: boolean | undefined;
 }
 export interface AuthorizationConfig {
-	readonly AccessPointId?: (string | undefined) | undefined;
-	readonly Iam?: (string | undefined) | undefined;
+	readonly AccessPointId?: string | undefined;
+	readonly Iam?: string | undefined;
 }
 export interface ContainerProperties {
-	readonly Command?: (string[] | undefined) | undefined;
-	readonly Environment?: (Environment[] | undefined) | undefined;
-	readonly ExecutionRoleArn?: (string | undefined) | undefined;
-	readonly FargatePlatformConfiguration?: (FargatePlatformConfiguration | undefined) | undefined;
+	readonly Command?: string[] | undefined;
+	readonly Environment?: Environment[] | undefined;
+	readonly ExecutionRoleArn?: string | undefined;
+	readonly FargatePlatformConfiguration?: FargatePlatformConfiguration | undefined;
 	readonly Image: string;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly JobRoleArn?: (string | undefined) | undefined;
-	readonly LinuxParameters?: (LinuxParameters | undefined) | undefined;
-	readonly LogConfiguration?: (LogConfiguration | undefined) | undefined;
-	readonly Memory?: (number | undefined) | undefined;
-	readonly MountPoints?: (MountPoints[] | undefined) | undefined;
-	readonly NetworkConfiguration?: (NetworkConfiguration | undefined) | undefined;
-	readonly Privileged?: (boolean | undefined) | undefined;
-	readonly ReadonlyRootFilesystem?: (boolean | undefined) | undefined;
-	readonly ResourceRequirements?: (ResourceRequirement[] | undefined) | undefined;
-	readonly Secrets?: (Secret[] | undefined) | undefined;
-	readonly Ulimits?: (Ulimit[] | undefined) | undefined;
-	readonly User?: (string | undefined) | undefined;
-	readonly Vcpus?: (number | undefined) | undefined;
-	readonly Volumes?: (Volumes[] | undefined) | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly JobRoleArn?: string | undefined;
+	readonly LinuxParameters?: LinuxParameters | undefined;
+	readonly LogConfiguration?: LogConfiguration | undefined;
+	readonly Memory?: number | undefined;
+	readonly MountPoints?: MountPoints[] | undefined;
+	readonly NetworkConfiguration?: NetworkConfiguration | undefined;
+	readonly Privileged?: boolean | undefined;
+	readonly ReadonlyRootFilesystem?: boolean | undefined;
+	readonly ResourceRequirements?: ResourceRequirement[] | undefined;
+	readonly Secrets?: Secret[] | undefined;
+	readonly Ulimits?: Ulimit[] | undefined;
+	readonly User?: string | undefined;
+	readonly Vcpus?: number | undefined;
+	readonly Volumes?: Volumes[] | undefined;
 }
 export interface Device {
-	readonly ContainerPath?: (string | undefined) | undefined;
-	readonly HostPath?: (string | undefined) | undefined;
-	readonly Permissions?: (string[] | undefined) | undefined;
+	readonly ContainerPath?: string | undefined;
+	readonly HostPath?: string | undefined;
+	readonly Permissions?: string[] | undefined;
 }
 export interface EfsVolumeConfiguration {
-	readonly AuthorizationConfig?: (AuthorizationConfig | undefined) | undefined;
+	readonly AuthorizationConfig?: AuthorizationConfig | undefined;
 	readonly FileSystemId: string;
-	readonly RootDirectory?: (string | undefined) | undefined;
-	readonly TransitEncryption?: (string | undefined) | undefined;
-	readonly TransitEncryptionPort?: (number | undefined) | undefined;
+	readonly RootDirectory?: string | undefined;
+	readonly TransitEncryption?: string | undefined;
+	readonly TransitEncryptionPort?: number | undefined;
 }
 export interface EksContainer {
-	readonly Args?: (string[] | undefined) | undefined;
-	readonly Command?: (string[] | undefined) | undefined;
-	readonly Env?: (EksContainerEnvironmentVariable[] | undefined) | undefined;
+	readonly Args?: string[] | undefined;
+	readonly Command?: string[] | undefined;
+	readonly Env?: EksContainerEnvironmentVariable[] | undefined;
 	readonly Image: string;
-	readonly ImagePullPolicy?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Resources?: (Resources | undefined) | undefined;
-	readonly SecurityContext?: (SecurityContext | undefined) | undefined;
-	readonly VolumeMounts?: (EksContainerVolumeMount[] | undefined) | undefined;
+	readonly ImagePullPolicy?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Resources?: Resources | undefined;
+	readonly SecurityContext?: SecurityContext | undefined;
+	readonly VolumeMounts?: EksContainerVolumeMount[] | undefined;
 }
 export interface EksContainerEnvironmentVariable {
 	readonly Name: string;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 }
 export interface EksContainerVolumeMount {
-	readonly MountPath?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly ReadOnly?: (boolean | undefined) | undefined;
+	readonly MountPath?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly ReadOnly?: boolean | undefined;
 }
 export interface EksProperties {
-	readonly PodProperties?: (PodProperties | undefined) | undefined;
+	readonly PodProperties?: PodProperties | undefined;
 }
 export interface EksVolume {
-	readonly EmptyDir?: (EmptyDir | undefined) | undefined;
-	readonly HostPath?: (HostPath | undefined) | undefined;
+	readonly EmptyDir?: EmptyDir | undefined;
+	readonly HostPath?: HostPath | undefined;
 	readonly Name: string;
-	readonly Secret?: (Secret | undefined) | undefined;
+	readonly Secret?: Secret | undefined;
 }
 export interface EmptyDir {
-	readonly Medium?: (string | undefined) | undefined;
-	readonly SizeLimit?: (string | undefined) | undefined;
+	readonly Medium?: string | undefined;
+	readonly SizeLimit?: string | undefined;
 }
 export interface Environment {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface EvaluateOnExit {
 	readonly Action: string;
-	readonly OnExitCode?: (string | undefined) | undefined;
-	readonly OnReason?: (string | undefined) | undefined;
-	readonly OnStatusReason?: (string | undefined) | undefined;
+	readonly OnExitCode?: string | undefined;
+	readonly OnReason?: string | undefined;
+	readonly OnStatusReason?: string | undefined;
 }
 export interface FargatePlatformConfiguration {
-	readonly PlatformVersion?: (string | undefined) | undefined;
+	readonly PlatformVersion?: string | undefined;
 }
 export interface HostPath {
-	readonly Path?: (string | undefined) | undefined;
+	readonly Path?: string | undefined;
 }
 export interface LinuxParameters {
-	readonly Devices?: (Device[] | undefined) | undefined;
-	readonly InitProcessEnabled?: (boolean | undefined) | undefined;
-	readonly MaxSwap?: (number | undefined) | undefined;
-	readonly SharedMemorySize?: (number | undefined) | undefined;
-	readonly Swappiness?: (number | undefined) | undefined;
-	readonly Tmpfs?: (Tmpfs[] | undefined) | undefined;
+	readonly Devices?: Device[] | undefined;
+	readonly InitProcessEnabled?: boolean | undefined;
+	readonly MaxSwap?: number | undefined;
+	readonly SharedMemorySize?: number | undefined;
+	readonly Swappiness?: number | undefined;
+	readonly Tmpfs?: Tmpfs[] | undefined;
 }
 export interface LogConfiguration {
 	readonly LogDriver: string;
-	readonly Options?: (any | undefined) | undefined;
-	readonly SecretOptions?: (Secret[] | undefined) | undefined;
+	readonly Options?: any | undefined;
+	readonly SecretOptions?: Secret[] | undefined;
 }
 export interface MountPoints {
-	readonly ContainerPath?: (string | undefined) | undefined;
-	readonly ReadOnly?: (boolean | undefined) | undefined;
-	readonly SourceVolume?: (string | undefined) | undefined;
+	readonly ContainerPath?: string | undefined;
+	readonly ReadOnly?: boolean | undefined;
+	readonly SourceVolume?: string | undefined;
 }
 export interface NetworkConfiguration {
-	readonly AssignPublicIp?: (string | undefined) | undefined;
+	readonly AssignPublicIp?: string | undefined;
 }
 export interface NodeProperties {
 	readonly MainNode: number;
@@ -234,45 +234,45 @@ export interface NodeProperties {
 	readonly NumNodes: number;
 }
 export interface NodeRange {
-	readonly Container?: (ContainerProperties | undefined) | undefined;
+	readonly Container?: ContainerProperties | undefined;
 	readonly TargetNodes: string;
 }
 export interface PodProperties {
-	readonly Containers?: (EksContainer[] | undefined) | undefined;
-	readonly DnsPolicy?: (string | undefined) | undefined;
-	readonly HostNetwork?: (boolean | undefined) | undefined;
-	readonly ServiceAccountName?: (string | undefined) | undefined;
-	readonly Volumes?: (EksVolume[] | undefined) | undefined;
+	readonly Containers?: EksContainer[] | undefined;
+	readonly DnsPolicy?: string | undefined;
+	readonly HostNetwork?: boolean | undefined;
+	readonly ServiceAccountName?: string | undefined;
+	readonly Volumes?: EksVolume[] | undefined;
 }
 export interface ResourceRequirement {
-	readonly Type?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Type?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface Resources {
-	readonly Limits?: (any | undefined) | undefined;
-	readonly Requests?: (any | undefined) | undefined;
+	readonly Limits?: any | undefined;
+	readonly Requests?: any | undefined;
 }
 export interface RetryStrategy {
-	readonly Attempts?: (number | undefined) | undefined;
-	readonly EvaluateOnExit?: (EvaluateOnExit[] | undefined) | undefined;
+	readonly Attempts?: number | undefined;
+	readonly EvaluateOnExit?: EvaluateOnExit[] | undefined;
 }
 export interface Secret {
 	readonly Name: string;
 	readonly ValueFrom: string;
 }
 export interface SecurityContext {
-	readonly Privileged?: (boolean | undefined) | undefined;
-	readonly ReadOnlyRootFilesystem?: (boolean | undefined) | undefined;
-	readonly RunAsGroup?: (number | undefined) | undefined;
-	readonly RunAsNonRoot?: (boolean | undefined) | undefined;
-	readonly RunAsUser?: (number | undefined) | undefined;
+	readonly Privileged?: boolean | undefined;
+	readonly ReadOnlyRootFilesystem?: boolean | undefined;
+	readonly RunAsGroup?: number | undefined;
+	readonly RunAsNonRoot?: boolean | undefined;
+	readonly RunAsUser?: number | undefined;
 }
 export interface Timeout {
-	readonly AttemptDurationSeconds?: (number | undefined) | undefined;
+	readonly AttemptDurationSeconds?: number | undefined;
 }
 export interface Tmpfs {
 	readonly ContainerPath: string;
-	readonly MountOptions?: (string[] | undefined) | undefined;
+	readonly MountOptions?: string[] | undefined;
 	readonly Size: number;
 }
 export interface Ulimit {
@@ -281,25 +281,25 @@ export interface Ulimit {
 	readonly SoftLimit: number;
 }
 export interface Volumes {
-	readonly EfsVolumeConfiguration?: (EfsVolumeConfiguration | undefined) | undefined;
-	readonly Host?: (VolumesHost | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly EfsVolumeConfiguration?: EfsVolumeConfiguration | undefined;
+	readonly Host?: VolumesHost | undefined;
+	readonly Name?: string | undefined;
 }
 export interface VolumesHost {
-	readonly SourcePath?: (string | undefined) | undefined;
+	readonly SourcePath?: string | undefined;
 }
 export interface ComputeEnvironmentOrder {
 	readonly ComputeEnvironment: string;
 	readonly Order: number;
 }
 export interface FairsharePolicy {
-	readonly ComputeReservation?: (number | undefined) | undefined;
-	readonly ShareDecaySeconds?: (number | undefined) | undefined;
-	readonly ShareDistribution?: (ShareAttributes[] | undefined) | undefined;
+	readonly ComputeReservation?: number | undefined;
+	readonly ShareDecaySeconds?: number | undefined;
+	readonly ShareDistribution?: ShareAttributes[] | undefined;
 }
 export interface ShareAttributes {
-	readonly ShareIdentifier?: (string | undefined) | undefined;
-	readonly WeightFactor?: (number | undefined) | undefined;
+	readonly ShareIdentifier?: string | undefined;
+	readonly WeightFactor?: number | undefined;
 }
 export default {
 	ComputeEnvironment: ComputeEnvironment,

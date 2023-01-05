@@ -23,26 +23,26 @@ export interface EnvironmentComponentOutputs {
 }
 export interface EnvironmentComponentInputs {
 	readonly Name: string;
-	readonly DataBundles?: (string[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly FederationMode?: (string | undefined) | undefined;
-	readonly FederationParameters?: (FederationParameters | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly SuperuserParameters?: (SuperuserParameters | undefined) | undefined;
+	readonly DataBundles?: string[] | undefined;
+	readonly Description?: string | undefined;
+	readonly FederationMode?: string | undefined;
+	readonly FederationParameters?: FederationParameters | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly SuperuserParameters?: SuperuserParameters | undefined;
 	readonly LogicalId: string;
 }
 export interface FederationParameters {
-	readonly ApplicationCallBackURL?: (string | undefined) | undefined;
-	readonly AttributeMap?: (any | undefined) | undefined;
-	readonly FederationProviderName?: (string | undefined) | undefined;
-	readonly FederationURN?: (string | undefined) | undefined;
-	readonly SamlMetadataDocument?: (string | undefined) | undefined;
-	readonly SamlMetadataURL?: (string | undefined) | undefined;
+	readonly ApplicationCallBackURL?: string | undefined;
+	readonly AttributeMap?: any | undefined;
+	readonly FederationProviderName?: string | undefined;
+	readonly FederationURN?: string | undefined;
+	readonly SamlMetadataDocument?: string | undefined;
+	readonly SamlMetadataURL?: string | undefined;
 }
 export interface SuperuserParameters {
-	readonly EmailAddress?: (string | undefined) | undefined;
-	readonly FirstName?: (string | undefined) | undefined;
-	readonly LastName?: (string | undefined) | undefined;
+	readonly EmailAddress?: string | undefined;
+	readonly FirstName?: string | undefined;
+	readonly LastName?: string | undefined;
 }
 export default {
 	Environment: Environment,

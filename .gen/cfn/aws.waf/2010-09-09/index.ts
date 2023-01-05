@@ -8,7 +8,7 @@ export class ByteMatchSet extends CfnResource<ByteMatchSetComponentInputs> imple
 export interface ByteMatchSetComponentOutputs {}
 export interface ByteMatchSetComponentInputs {
 	readonly Name: string;
-	readonly ByteMatchTuples?: (ByteMatchTuple[] | undefined) | undefined;
+	readonly ByteMatchTuples?: ByteMatchTuple[] | undefined;
 	readonly LogicalId: string;
 }
 export class IPSet extends CfnResource<IPSetComponentInputs> implements IPSetComponentOutputs {
@@ -19,7 +19,7 @@ export class IPSet extends CfnResource<IPSetComponentInputs> implements IPSetCom
 export interface IPSetComponentOutputs {}
 export interface IPSetComponentInputs {
 	readonly Name: string;
-	readonly IPSetDescriptors?: (IPSetDescriptor[] | undefined) | undefined;
+	readonly IPSetDescriptors?: IPSetDescriptor[] | undefined;
 	readonly LogicalId: string;
 }
 export class Rule extends CfnResource<RuleComponentInputs> implements RuleComponentOutputs {
@@ -31,7 +31,7 @@ export interface RuleComponentOutputs {}
 export interface RuleComponentInputs {
 	readonly MetricName: string;
 	readonly Name: string;
-	readonly Predicates?: (Predicate[] | undefined) | undefined;
+	readonly Predicates?: Predicate[] | undefined;
 	readonly LogicalId: string;
 }
 export class SizeConstraintSet
@@ -59,7 +59,7 @@ export class SqlInjectionMatchSet
 export interface SqlInjectionMatchSetComponentOutputs {}
 export interface SqlInjectionMatchSetComponentInputs {
 	readonly Name: string;
-	readonly SqlInjectionMatchTuples?: (SqlInjectionMatchTuple[] | undefined) | undefined;
+	readonly SqlInjectionMatchTuples?: SqlInjectionMatchTuple[] | undefined;
 	readonly LogicalId: string;
 }
 export class WebACL extends CfnResource<WebACLComponentInputs> implements WebACLComponentOutputs {
@@ -72,7 +72,7 @@ export interface WebACLComponentInputs {
 	readonly DefaultAction: WafAction;
 	readonly MetricName: string;
 	readonly Name: string;
-	readonly Rules?: (ActivatedRule[] | undefined) | undefined;
+	readonly Rules?: ActivatedRule[] | undefined;
 	readonly LogicalId: string;
 }
 export class XssMatchSet extends CfnResource<XssMatchSetComponentInputs> implements XssMatchSetComponentOutputs {
@@ -89,12 +89,12 @@ export interface XssMatchSetComponentInputs {
 export interface ByteMatchTuple {
 	readonly FieldToMatch: FieldToMatch;
 	readonly PositionalConstraint: string;
-	readonly TargetString?: (string | undefined) | undefined;
-	readonly TargetStringBase64?: (string | undefined) | undefined;
+	readonly TargetString?: string | undefined;
+	readonly TargetStringBase64?: string | undefined;
 	readonly TextTransformation: string;
 }
 export interface FieldToMatch {
-	readonly Data?: (string | undefined) | undefined;
+	readonly Data?: string | undefined;
 	readonly Type: string;
 }
 export interface IPSetDescriptor {
@@ -117,7 +117,7 @@ export interface SqlInjectionMatchTuple {
 	readonly TextTransformation: string;
 }
 export interface ActivatedRule {
-	readonly Action?: (WafAction | undefined) | undefined;
+	readonly Action?: WafAction | undefined;
 	readonly Priority: number;
 	readonly RuleId: string;
 }

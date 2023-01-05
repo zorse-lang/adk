@@ -7,67 +7,66 @@ export class ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions
 	constructor(entity: ADKEntity, options: ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsComponentInputs) {
 		super(entity, options.name, "cloudkms.v1.ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions", options);
 	}
-	public readonly algorithm?: string | undefined;
-	public readonly attestation?: KeyOperationAttestation | undefined;
-	public readonly createTime?: string | undefined;
-	public readonly destroyEventTime?: string | undefined;
-	public readonly destroyTime?: string | undefined;
-	public readonly generateTime?: string | undefined;
-	public readonly importFailureReason?: string | undefined;
-	public readonly importJob?: string | undefined;
-	public readonly importTime?: string | undefined;
-	public readonly protectionLevel?: string | undefined;
-	public readonly reimportEligible?: boolean | undefined;
+	public readonly algorithm?: string;
+	public readonly attestation?: KeyOperationAttestation;
+	public readonly createTime?: string;
+	public readonly destroyEventTime?: string;
+	public readonly destroyTime?: string;
+	public readonly generateTime?: string;
+	public readonly importFailureReason?: string;
+	public readonly importJob?: string;
+	public readonly importTime?: string;
+	public readonly protectionLevel?: string;
+	public readonly reimportEligible?: boolean;
 }
 export interface ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsComponentOutputs {
-	readonly algorithm?: string | undefined;
-	readonly attestation?: KeyOperationAttestation | undefined;
-	readonly createTime?: string | undefined;
-	readonly destroyEventTime?: string | undefined;
-	readonly destroyTime?: string | undefined;
-	readonly generateTime?: string | undefined;
-	readonly importFailureReason?: string | undefined;
-	readonly importJob?: string | undefined;
-	readonly importTime?: string | undefined;
-	readonly protectionLevel?: string | undefined;
-	readonly reimportEligible?: boolean | undefined;
+	readonly algorithm?: string;
+	readonly attestation?: KeyOperationAttestation;
+	readonly createTime?: string;
+	readonly destroyEventTime?: string;
+	readonly destroyTime?: string;
+	readonly generateTime?: string;
+	readonly importFailureReason?: string;
+	readonly importJob?: string;
+	readonly importTime?: string;
+	readonly protectionLevel?: string;
+	readonly reimportEligible?: boolean;
 }
 export interface ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsComponentInputs {
-	readonly externalProtectionLevelOptions?: ExternalProtectionLevelOptions | undefined;
+	readonly externalProtectionLevelOptions?: ExternalProtectionLevelOptions;
 	readonly name: string;
 	readonly parent: string;
-	readonly state?: string | undefined;
-	readonly type: string;
+	readonly state?: string;
 }
 export interface CertificateChains {
-	readonly caviumCerts?: string[] | undefined;
-	readonly googleCardCerts?: string[] | undefined;
-	readonly googlePartitionCerts?: string[] | undefined;
+	readonly caviumCerts?: string[];
+	readonly googleCardCerts?: string[];
+	readonly googlePartitionCerts?: string[];
 }
 export interface CryptoKeyVersion {
-	readonly algorithm?: string | undefined;
-	readonly attestation?: KeyOperationAttestation | undefined;
-	readonly createTime?: string | undefined;
-	readonly destroyEventTime?: string | undefined;
-	readonly destroyTime?: string | undefined;
-	readonly externalProtectionLevelOptions?: ExternalProtectionLevelOptions | undefined;
-	readonly generateTime?: string | undefined;
-	readonly importFailureReason?: string | undefined;
-	readonly importJob?: string | undefined;
-	readonly importTime?: string | undefined;
-	readonly name?: string | undefined;
-	readonly protectionLevel?: string | undefined;
-	readonly reimportEligible?: boolean | undefined;
-	readonly state?: string | undefined;
+	readonly algorithm?: string;
+	readonly attestation?: KeyOperationAttestation;
+	readonly createTime?: string;
+	readonly destroyEventTime?: string;
+	readonly destroyTime?: string;
+	readonly externalProtectionLevelOptions?: ExternalProtectionLevelOptions;
+	readonly generateTime?: string;
+	readonly importFailureReason?: string;
+	readonly importJob?: string;
+	readonly importTime?: string;
+	readonly name?: string;
+	readonly protectionLevel?: string;
+	readonly reimportEligible?: boolean;
+	readonly state?: string;
 }
 export interface ExternalProtectionLevelOptions {
-	readonly ekmConnectionKeyPath?: string | undefined;
-	readonly externalKeyUri?: string | undefined;
+	readonly ekmConnectionKeyPath?: string;
+	readonly externalKeyUri?: string;
 }
 export interface KeyOperationAttestation {
-	readonly certChains?: CertificateChains | undefined;
-	readonly content?: string | undefined;
-	readonly format?: string | undefined;
+	readonly certChains?: CertificateChains;
+	readonly content?: string;
+	readonly format?: string;
 }
 export default {
 	ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions: ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions,

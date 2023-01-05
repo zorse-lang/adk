@@ -14,12 +14,12 @@ export interface machinesComponentOutputs {
 	readonly type: "Microsoft.HybridCompute/machines";
 }
 export interface machinesComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MachineProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: MachineProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class machines_extensions
 	extends ArmResource<machines_extensionsComponentInputs>
@@ -40,9 +40,9 @@ export interface machines_extensionsComponentOutputs {
 export interface machines_extensionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: MachineExtensionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: MachineExtensionProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class privateLinkScopes
 	extends ArmResource<privateLinkScopesComponentInputs>
@@ -63,9 +63,9 @@ export interface privateLinkScopesComponentOutputs {
 export interface privateLinkScopesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: HybridComputePrivateLinkScopeProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: PrivateLinkScopesResourceTags | undefined;
+	readonly properties?: HybridComputePrivateLinkScopeProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: PrivateLinkScopesResourceTags;
 }
 export class privateLinkScopes_privateEndpointConnections
 	extends ArmResource<privateLinkScopes_privateEndpointConnectionsComponentInputs>
@@ -91,8 +91,8 @@ export interface privateLinkScopes_privateEndpointConnectionsComponentOutputs {
 }
 export interface privateLinkScopes_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly systemData?: SystemData;
 }
 export class privateLinkScopes_privateLinkResources
 	extends ArmResource<privateLinkScopes_privateLinkResourcesComponentInputs>
@@ -118,128 +118,128 @@ export interface privateLinkScopes_privateLinkResourcesComponentOutputs {
 }
 export interface privateLinkScopes_privateLinkResourcesComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PrivateLinkResourceProperties;
+	readonly systemData?: SystemData;
 }
 export interface DetectedProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ErrorAdditionalInfo {
-	readonly info?: any | undefined;
-	readonly type?: string | undefined;
+	readonly info?: any;
+	readonly type?: string;
 }
 export interface ErrorDetail {
-	readonly additionalInfo?: ErrorAdditionalInfo[] | undefined;
-	readonly code?: string | undefined;
-	readonly details?: ErrorDetail[] | undefined;
-	readonly message?: string | undefined;
-	readonly target?: string | undefined;
+	readonly additionalInfo?: ErrorAdditionalInfo[];
+	readonly code?: string;
+	readonly details?: ErrorDetail[];
+	readonly message?: string;
+	readonly target?: string;
 }
 export interface HybridComputePrivateLinkScopeProperties {
-	readonly privateEndpointConnections?: PrivateEndpointConnectionDataModel[] | undefined;
-	readonly privateLinkScopeId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
+	readonly privateEndpointConnections?: PrivateEndpointConnectionDataModel[];
+	readonly privateLinkScopeId?: string;
+	readonly provisioningState?: string;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: "SystemAssigned" | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "SystemAssigned";
 }
 export interface LocationData {
-	readonly city?: string | undefined;
-	readonly countryOrRegion?: string | undefined;
-	readonly district?: string | undefined;
+	readonly city?: string;
+	readonly countryOrRegion?: string;
+	readonly district?: string;
 	readonly name: string;
 }
 export interface MachineExtensionInstanceView {
-	readonly name?: string | undefined;
-	readonly status?: MachineExtensionInstanceViewStatus | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly name?: string;
+	readonly status?: MachineExtensionInstanceViewStatus;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface MachineExtensionInstanceViewStatus {
-	readonly code?: string | undefined;
-	readonly displayStatus?: string | undefined;
-	readonly level?: ("Error" | "Info" | "Warning") | undefined;
-	readonly message?: string | undefined;
-	readonly time?: string | undefined;
+	readonly code?: string;
+	readonly displayStatus?: string;
+	readonly level?: "Error" | "Info" | "Warning";
+	readonly message?: string;
+	readonly time?: string;
 }
 export interface MachineExtensionProperties {
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly instanceView?: MachineExtensionInstanceView | undefined;
-	readonly protectedSettings?: any | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly publisher?: string | undefined;
-	readonly settings?: any | undefined;
-	readonly type?: string | undefined;
-	readonly typeHandlerVersion?: string | undefined;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly forceUpdateTag?: string;
+	readonly instanceView?: MachineExtensionInstanceView;
+	readonly protectedSettings?: any;
+	readonly provisioningState?: string;
+	readonly publisher?: string;
+	readonly settings?: any;
+	readonly type?: string;
+	readonly typeHandlerVersion?: string;
 }
 export interface MachineProperties {
-	readonly adFqdn?: string | undefined;
-	readonly agentVersion?: string | undefined;
-	readonly clientPublicKey?: string | undefined;
-	readonly detectedProperties?: DetectedProperties | undefined;
-	readonly displayName?: string | undefined;
-	readonly dnsFqdn?: string | undefined;
-	readonly domainName?: string | undefined;
-	readonly errorDetails?: ErrorDetail[] | undefined;
-	readonly extensions?: MachineExtensionInstanceView[] | undefined;
-	readonly lastStatusChange?: string | undefined;
-	readonly locationData?: LocationData | undefined;
-	readonly machineFqdn?: string | undefined;
-	readonly osName?: string | undefined;
-	readonly osProfile?: OSProfile | undefined;
-	readonly osSku?: string | undefined;
-	readonly osVersion?: string | undefined;
-	readonly parentClusterResourceId?: string | undefined;
-	readonly privateLinkScopeResourceId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly status?: ("Connected" | "Disconnected" | "Error") | undefined;
-	readonly vmId?: string | undefined;
-	readonly vmUuid?: string | undefined;
+	readonly adFqdn?: string;
+	readonly agentVersion?: string;
+	readonly clientPublicKey?: string;
+	readonly detectedProperties?: DetectedProperties;
+	readonly displayName?: string;
+	readonly dnsFqdn?: string;
+	readonly domainName?: string;
+	readonly errorDetails?: ErrorDetail[];
+	readonly extensions?: MachineExtensionInstanceView[];
+	readonly lastStatusChange?: string;
+	readonly locationData?: LocationData;
+	readonly machineFqdn?: string;
+	readonly osName?: string;
+	readonly osProfile?: OSProfile;
+	readonly osSku?: string;
+	readonly osVersion?: string;
+	readonly parentClusterResourceId?: string;
+	readonly privateLinkScopeResourceId?: string;
+	readonly provisioningState?: string;
+	readonly status?: "Connected" | "Disconnected" | "Error";
+	readonly vmId?: string;
+	readonly vmUuid?: string;
 }
 export interface OSProfile {
-	readonly computerName?: string | undefined;
+	readonly computerName?: string;
 }
 export interface PrivateEndpointConnectionDataModel {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpointProperty | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly privateEndpoint?: PrivateEndpointProperty;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionStateProperty;
+	readonly provisioningState?: string;
 }
 export interface PrivateEndpointProperty {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateLinkResourceProperties {
-	readonly groupId?: string | undefined;
-	readonly requiredMembers?: string[] | undefined;
-	readonly requiredZoneNames?: string[] | undefined;
+	readonly groupId?: string;
+	readonly requiredMembers?: string[];
+	readonly requiredZoneNames?: string[];
 }
 export interface PrivateLinkScopesResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface PrivateLinkServiceConnectionStateProperty {
-	readonly actionsRequired?: string | undefined;
+	readonly actionsRequired?: string;
 	readonly description: string;
 	readonly status: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	machines: machines,

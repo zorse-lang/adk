@@ -16,9 +16,9 @@ export interface namespacesComponentOutputs {
 export interface namespacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RelayNamespaceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: RelayNamespaceProperties;
+	readonly sku?: Sku;
+	readonly tags?: TrackedResourceTags;
 }
 export class namespaces_networkRuleSets
 	extends ArmResource<namespaces_networkRuleSetsComponentInputs>
@@ -38,7 +38,7 @@ export interface namespaces_networkRuleSetsComponentOutputs {
 }
 export interface namespaces_networkRuleSetsComponentInputs {
 	readonly name: string;
-	readonly properties?: NetworkRuleSetProperties | undefined;
+	readonly properties?: NetworkRuleSetProperties;
 }
 export class namespaces_privateEndpointConnections
 	extends ArmResource<namespaces_privateEndpointConnectionsComponentInputs>
@@ -59,45 +59,50 @@ export interface namespaces_privateEndpointConnectionsComponentOutputs {
 export interface namespaces_privateEndpointConnectionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface NetworkRuleSetProperties {
-	readonly defaultAction?: ("Allow" | "Deny") | undefined;
-	readonly ipRules?: NWRuleSetIpRules[] | undefined;
+	readonly defaultAction?: "Allow" | "Deny";
+	readonly ipRules?: NWRuleSetIpRules[];
 }
 export interface NWRuleSetIpRules {
-	readonly action?: "Allow" | undefined;
-	readonly ipMask?: string | undefined;
+	readonly action?: "Allow";
+	readonly ipMask?: string;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
-	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
+	readonly privateLinkServiceConnectionState?: PrivateLinkServiceConnectionState;
 	readonly provisioningState?:
-		| ("Creating" | "Deleting" | "DeletingByProxy" | "Succeeded" | "Unknown" | "Updating" | "UpdatingByProxy")
-		| undefined;
+		| "Creating"
+		| "Deleting"
+		| "DeletingByProxy"
+		| "Succeeded"
+		| "Unknown"
+		| "Updating"
+		| "UpdatingByProxy";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly actionRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface RelayNamespaceProperties {
-	readonly createdAt?: string | undefined;
-	readonly metricId?: string | undefined;
-	readonly provisioningState?: ("Created" | "Deleted" | "Failed" | "Succeeded" | "Unknown") | undefined;
-	readonly serviceBusEndpoint?: string | undefined;
-	readonly updatedAt?: string | undefined;
+	readonly createdAt?: string;
+	readonly metricId?: string;
+	readonly provisioningState?: "Created" | "Deleted" | "Failed" | "Succeeded" | "Unknown";
+	readonly serviceBusEndpoint?: string;
+	readonly updatedAt?: string;
 }
 export interface Sku {
 	readonly name: "Standard";
-	readonly tier?: "Standard" | undefined;
+	readonly tier?: "Standard";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	namespaces: namespaces,

@@ -10,7 +10,6 @@ export class FoldersResourceTypesValues
 }
 export interface FoldersResourceTypesValuesComponentOutputs {}
 export interface FoldersResourceTypesValuesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

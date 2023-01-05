@@ -14,12 +14,12 @@ export interface serviceComponentOutputs {
 	readonly type: "Microsoft.ApiManagement/service";
 }
 export interface serviceComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ApiManagementServiceProperties;
 	readonly sku: ApiManagementServiceSkuProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class service_apis extends ArmResource<service_apisComponentInputs> implements service_apisComponentOutputs {
 	constructor(entity: ADKEntity, options: service_apisComponentInputs) {
@@ -35,16 +35,16 @@ export interface service_apisComponentOutputs {
 	readonly type: "Microsoft.ApiManagement/service/apis";
 }
 export interface service_apisComponentInputs {
-	readonly authenticationSettings?: AuthenticationSettingsContract | undefined;
-	readonly content?: any | undefined;
-	readonly description?: string | undefined;
+	readonly authenticationSettings?: AuthenticationSettingsContract;
+	readonly content?: any;
+	readonly description?: string;
 	readonly name: string;
 	readonly path: string;
 	readonly protocols: "Http"[];
-	readonly requestId?: string | undefined;
+	readonly requestId?: string;
 	readonly serviceUrl: string;
-	readonly statusCode?: ("Accepted" | "Conflict" | "Continue" | "Created" | "NotFound") | undefined;
-	readonly subscriptionKeyParameterNames?: SubscriptionKeyParameterNamesContract | undefined;
+	readonly statusCode?: "Accepted" | "Conflict" | "Continue" | "Created" | "NotFound";
+	readonly subscriptionKeyParameterNames?: SubscriptionKeyParameterNamesContract;
 }
 export class service_apis_operations
 	extends ArmResource<service_apis_operationsComponentInputs>
@@ -63,12 +63,12 @@ export interface service_apis_operationsComponentOutputs {
 	readonly type: "Microsoft.ApiManagement/service/apis/operations";
 }
 export interface service_apis_operationsComponentInputs {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly method: string;
 	readonly name: string;
-	readonly request?: RequestContract | undefined;
-	readonly responses?: ResultContract[] | undefined;
-	readonly templateParameters?: ParameterContract[] | undefined;
+	readonly request?: RequestContract;
+	readonly responses?: ResultContract[];
+	readonly templateParameters?: ParameterContract[];
 	readonly urlTemplate: string;
 }
 export class service_authorizationServers
@@ -89,21 +89,21 @@ export interface service_authorizationServersComponentOutputs {
 }
 export interface service_authorizationServersComponentInputs {
 	readonly authorizationEndpoint: string;
-	readonly authorizationMethods?: ("DELETE" | "GET" | "HEAD" | "OPTIONS" | "PATCH" | "POST" | "PUT"[]) | undefined;
-	readonly bearerTokenSendingMethods?: "authorizationHeader"[] | undefined;
-	readonly clientAuthenticationMethod?: "Basic"[] | undefined;
+	readonly authorizationMethods?: "DELETE" | "GET" | "HEAD" | "OPTIONS" | "PATCH" | "POST" | "PUT"[];
+	readonly bearerTokenSendingMethods?: "authorizationHeader"[];
+	readonly clientAuthenticationMethod?: "Basic"[];
 	readonly clientId: string;
 	readonly clientRegistrationEndpoint: string;
-	readonly clientSecret?: string | undefined;
-	readonly defaultScope?: string | undefined;
-	readonly description?: string | undefined;
+	readonly clientSecret?: string;
+	readonly defaultScope?: string;
+	readonly description?: string;
 	readonly grantTypes: "authorizationCode" | "clientCredentials" | "implicit"[];
 	readonly name: string;
-	readonly resourceOwnerPassword?: string | undefined;
-	readonly resourceOwnerUsername?: string | undefined;
-	readonly supportState?: boolean | undefined;
-	readonly tokenBodyParameters?: TokenBodyParameterContract[] | undefined;
-	readonly tokenEndpoint?: string | undefined;
+	readonly resourceOwnerPassword?: string;
+	readonly resourceOwnerUsername?: string;
+	readonly supportState?: boolean;
+	readonly tokenBodyParameters?: TokenBodyParameterContract[];
+	readonly tokenEndpoint?: string;
 }
 export class service_backends
 	extends ArmResource<service_backendsComponentInputs>
@@ -122,20 +122,20 @@ export interface service_backendsComponentOutputs {
 	readonly type: "Microsoft.ApiManagement/service/backends";
 }
 export interface service_backendsComponentInputs {
-	readonly certificate?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly header?: BackendCredentialsContractHeader | undefined;
+	readonly certificate?: string[];
+	readonly description?: string;
+	readonly header?: BackendCredentialsContractHeader;
 	readonly name: string;
 	readonly parameter: string;
-	readonly password?: string | undefined;
-	readonly properties?: BackendProperties | undefined;
+	readonly password?: string;
+	readonly properties?: BackendProperties;
 	readonly protocol: "http" | "soap";
-	readonly query?: BackendCredentialsContractQuery | undefined;
-	readonly resourceId?: string | undefined;
+	readonly query?: BackendCredentialsContractQuery;
+	readonly resourceId?: string;
 	readonly scheme: string;
-	readonly title?: string | undefined;
+	readonly title?: string;
 	readonly url: string;
-	readonly username?: string | undefined;
+	readonly username?: string;
 }
 export class service_certificates
 	extends ArmResource<service_certificatesComponentInputs>
@@ -155,11 +155,11 @@ export interface service_certificatesComponentOutputs {
 }
 export interface service_certificatesComponentInputs {
 	readonly data: string;
-	readonly expirationDate?: string | undefined;
+	readonly expirationDate?: string;
 	readonly name: string;
 	readonly password: string;
-	readonly subject?: string | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly subject?: string;
+	readonly thumbprint?: string;
 }
 export class service_groups extends ArmResource<service_groupsComponentInputs> implements service_groupsComponentOutputs {
 	constructor(entity: ADKEntity, options: service_groupsComponentInputs) {
@@ -175,9 +175,9 @@ export interface service_groupsComponentOutputs {
 	readonly type: "Microsoft.ApiManagement/service/groups";
 }
 export interface service_groupsComponentInputs {
-	readonly builtIn?: boolean | undefined;
-	readonly description?: string | undefined;
-	readonly externalId?: string | undefined;
+	readonly builtIn?: boolean;
+	readonly description?: string;
+	readonly externalId?: string;
 	readonly name: string;
 }
 export class service_groups_users
@@ -216,7 +216,7 @@ export interface service_identityProvidersComponentOutputs {
 	readonly type: "Microsoft.ApiManagement/service/identityProviders";
 }
 export interface service_identityProvidersComponentInputs {
-	readonly allowedTenants?: string[] | undefined;
+	readonly allowedTenants?: string[];
 	readonly clientId: string;
 	readonly clientSecret: string;
 	readonly name: string;
@@ -239,8 +239,8 @@ export interface service_loggersComponentOutputs {
 }
 export interface service_loggersComponentInputs {
 	readonly credentials: LoggerCreateParametersCredentials;
-	readonly description?: string | undefined;
-	readonly isBuffered?: boolean | undefined;
+	readonly description?: string;
+	readonly isBuffered?: boolean;
 	readonly name: string;
 }
 export class service_openidConnectProviders
@@ -261,8 +261,8 @@ export interface service_openidConnectProvidersComponentOutputs {
 }
 export interface service_openidConnectProvidersComponentInputs {
 	readonly clientId: string;
-	readonly clientSecret?: string | undefined;
-	readonly description?: string | undefined;
+	readonly clientSecret?: string;
+	readonly description?: string;
 	readonly metadataEndpoint: string;
 	readonly name: string;
 }
@@ -283,13 +283,13 @@ export interface service_productsComponentOutputs {
 	readonly type: "Microsoft.ApiManagement/service/products";
 }
 export interface service_productsComponentInputs {
-	readonly approvalRequired?: boolean | undefined;
-	readonly description?: string | undefined;
+	readonly approvalRequired?: boolean;
+	readonly description?: string;
 	readonly name: string;
-	readonly state?: "NotPublished" | undefined;
-	readonly subscriptionRequired?: boolean | undefined;
-	readonly subscriptionsLimit?: number | undefined;
-	readonly terms?: string | undefined;
+	readonly state?: "NotPublished";
+	readonly subscriptionRequired?: boolean;
+	readonly subscriptionsLimit?: number;
+	readonly terms?: string;
 }
 export class service_products_apis
 	extends ArmResource<service_products_apisComponentInputs>
@@ -347,8 +347,8 @@ export interface service_propertiesComponentOutputs {
 }
 export interface service_propertiesComponentInputs {
 	readonly name: string;
-	readonly secret?: boolean | undefined;
-	readonly tags?: string[] | undefined;
+	readonly secret?: boolean;
+	readonly tags?: string[];
 	readonly value: string;
 }
 export class service_subscriptions
@@ -368,17 +368,17 @@ export interface service_subscriptionsComponentOutputs {
 	readonly type: "Microsoft.ApiManagement/service/subscriptions";
 }
 export interface service_subscriptionsComponentInputs {
-	readonly createdDate?: string | undefined;
-	readonly endDate?: string | undefined;
-	readonly expirationDate?: string | undefined;
+	readonly createdDate?: string;
+	readonly endDate?: string;
+	readonly expirationDate?: string;
 	readonly name: string;
-	readonly notificationDate?: string | undefined;
-	readonly primaryKey?: string | undefined;
+	readonly notificationDate?: string;
+	readonly primaryKey?: string;
 	readonly productId: string;
-	readonly secondaryKey?: string | undefined;
-	readonly startDate?: string | undefined;
-	readonly state?: ("Active" | "Cancelled" | "Expired" | "Rejected" | "Submitted") | undefined;
-	readonly stateComment?: string | undefined;
+	readonly secondaryKey?: string;
+	readonly startDate?: string;
+	readonly state?: "Active" | "Cancelled" | "Expired" | "Rejected" | "Submitted";
+	readonly stateComment?: string;
 	readonly userId: string;
 }
 export class service_tenant extends ArmResource<service_tenantComponentInputs> implements service_tenantComponentOutputs {
@@ -413,58 +413,58 @@ export interface service_usersComponentOutputs {
 export interface service_usersComponentInputs {
 	readonly email: string;
 	readonly firstName: string;
-	readonly identities?: UserIdentityContract[] | undefined;
+	readonly identities?: UserIdentityContract[];
 	readonly lastName: string;
 	readonly name: string;
-	readonly note?: string | undefined;
+	readonly note?: string;
 	readonly password: string;
-	readonly registrationDate?: string | undefined;
-	readonly state?: "Active" | undefined;
+	readonly registrationDate?: string;
+	readonly state?: "Active";
 }
 export interface AdditionalRegion {
 	readonly location: string;
 	readonly skuType: "Developer" | "Premium";
-	readonly skuUnitCount?: number | undefined;
-	readonly staticIPs?: string[] | undefined;
-	readonly vpnconfiguration?: VirtualNetworkConfiguration | undefined;
+	readonly skuUnitCount?: number;
+	readonly staticIPs?: string[];
+	readonly vpnconfiguration?: VirtualNetworkConfiguration;
 }
 export interface ApiManagementServiceProperties {
-	readonly additionalLocations?: AdditionalRegion[] | undefined;
-	readonly addresserEmail?: string | undefined;
-	readonly createdAtUtc?: string | undefined;
-	readonly customProperties?: ApiManagementServicePropertiesCustomProperties | undefined;
-	readonly hostnameConfigurations?: HostnameConfiguration[] | undefined;
-	readonly managementApiUrl?: string | undefined;
-	readonly portalUrl?: string | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly additionalLocations?: AdditionalRegion[];
+	readonly addresserEmail?: string;
+	readonly createdAtUtc?: string;
+	readonly customProperties?: ApiManagementServicePropertiesCustomProperties;
+	readonly hostnameConfigurations?: HostnameConfiguration[];
+	readonly managementApiUrl?: string;
+	readonly portalUrl?: string;
+	readonly provisioningState?: string;
 	readonly publisherEmail: string;
 	readonly publisherName: string;
-	readonly runtimeUrl?: string | undefined;
-	readonly scmUrl?: string | undefined;
-	readonly staticIPs?: string[] | undefined;
-	readonly targetProvisioningState?: string | undefined;
-	readonly vpnconfiguration?: VirtualNetworkConfiguration | undefined;
-	readonly vpnType?: ("External" | "Internal") | undefined;
+	readonly runtimeUrl?: string;
+	readonly scmUrl?: string;
+	readonly staticIPs?: string[];
+	readonly targetProvisioningState?: string;
+	readonly vpnconfiguration?: VirtualNetworkConfiguration;
+	readonly vpnType?: "External" | "Internal";
 }
 export interface ApiManagementServicePropertiesCustomProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ApiManagementServiceSkuProperties {
-	readonly capacity?: number | undefined;
+	readonly capacity?: number;
 	readonly name: "Developer" | "Premium";
 }
 export interface AuthenticationSettingsContract {
-	readonly oAuth2?: OAuth2AuthenticationSettingsContract | undefined;
+	readonly oAuth2?: OAuth2AuthenticationSettingsContract;
 }
 export interface BackendCredentialsContractHeader {
-	readonly "[ key: string ]"?: string[] | undefined;
+	readonly [key: string]: string[];
 }
 export interface BackendCredentialsContractQuery {
-	readonly "[ key: string ]"?: string[] | undefined;
+	readonly [key: string]: string[];
 }
 export interface BackendProperties {
-	readonly skipCertificateChainValidation?: boolean | undefined;
-	readonly skipCertificateNameValidation?: boolean | undefined;
+	readonly skipCertificateChainValidation?: boolean;
+	readonly skipCertificateNameValidation?: boolean;
 }
 export interface CertificateInformation {
 	readonly expiry: string;
@@ -477,55 +477,55 @@ export interface HostnameConfiguration {
 	readonly type: "Management" | "Portal" | "Proxy";
 }
 export interface LoggerCreateParametersCredentials {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface OAuth2AuthenticationSettingsContract {
-	readonly authorizationServerId?: string | undefined;
-	readonly scope?: string | undefined;
+	readonly authorizationServerId?: string;
+	readonly scope?: string;
 }
 export interface ParameterContract {
-	readonly defaultValue?: string | undefined;
-	readonly description?: string | undefined;
+	readonly defaultValue?: string;
+	readonly description?: string;
 	readonly name: string;
-	readonly required?: boolean | undefined;
+	readonly required?: boolean;
 	readonly type: string;
-	readonly values?: string[] | undefined;
+	readonly values?: string[];
 }
 export interface RepresentationContract {
 	readonly contentType: string;
-	readonly sample?: string | undefined;
+	readonly sample?: string;
 }
 export interface RequestContract {
-	readonly description?: string | undefined;
-	readonly headers?: ParameterContract[] | undefined;
-	readonly queryParameters?: ParameterContract[] | undefined;
-	readonly representations?: RepresentationContract[] | undefined;
+	readonly description?: string;
+	readonly headers?: ParameterContract[];
+	readonly queryParameters?: ParameterContract[];
+	readonly representations?: RepresentationContract[];
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResultContract {
-	readonly description?: string | undefined;
-	readonly representations?: RepresentationContract[] | undefined;
+	readonly description?: string;
+	readonly representations?: RepresentationContract[];
 	readonly statusCode: number;
 }
 export interface SubscriptionKeyParameterNamesContract {
-	readonly header?: string | undefined;
-	readonly query?: string | undefined;
+	readonly header?: string;
+	readonly query?: string;
 }
 export interface TokenBodyParameterContract {
 	readonly name: string;
 	readonly value: string;
 }
 export interface UserIdentityContract {
-	readonly id?: string | undefined;
-	readonly provider?: string | undefined;
+	readonly id?: string;
+	readonly provider?: string;
 }
 export interface VirtualNetworkConfiguration {
-	readonly location?: string | undefined;
-	readonly subnetname?: string | undefined;
-	readonly subnetResourceId?: string | undefined;
-	readonly vnetid?: string | undefined;
+	readonly location?: string;
+	readonly subnetname?: string;
+	readonly subnetResourceId?: string;
+	readonly vnetid?: string;
 }
 export default {
 	service: service,

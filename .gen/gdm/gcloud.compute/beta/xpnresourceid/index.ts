@@ -7,8 +7,7 @@ export class XpnResourceId extends GdmResource<XpnResourceIdComponentInputs> imp
 }
 export interface XpnResourceIdComponentOutputs {}
 export interface XpnResourceIdComponentInputs {
-	readonly id?: string | undefined;
-	readonly type: string;
+	readonly id?: string;
 	readonly name: string;
 }
 export default {

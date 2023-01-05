@@ -18,7 +18,7 @@ export interface eventSubscriptionsComponentOutputs {
 }
 export interface eventSubscriptionsComponentInputs {
 	readonly name: string;
-	readonly properties?: EventSubscriptionProperties | undefined;
+	readonly properties?: EventSubscriptionProperties;
 }
 export class topics extends ArmResource<topicsComponentInputs> implements topicsComponentOutputs {
 	constructor(entity: ADKEntity, options: topicsComponentInputs) {
@@ -36,8 +36,8 @@ export interface topicsComponentOutputs {
 export interface topicsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: TopicProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: TopicProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export class topicTypes extends ArmResource<topicTypesComponentInputs> implements topicTypesComponentOutputs {
 	constructor(entity: ADKEntity, options: topicTypesComponentInputs) {
@@ -54,7 +54,7 @@ export interface topicTypesComponentOutputs {
 }
 export interface topicTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: TopicTypeProperties | undefined;
+	readonly properties?: TopicTypeProperties;
 }
 export function listKeys(resource: topics): TopicSharedAccessKeys {
 	if (resource.apiVersion !== "2017-06-15-preview") {
@@ -66,43 +66,43 @@ export function listKeys(resource: topics): TopicSharedAccessKeys {
 	throw new Error("not implemented");
 }
 export interface EventSubscriptionDestination {
-	readonly endpointType?: "WebHook" | undefined;
-	readonly properties?: EventSubscriptionDestinationProperties | undefined;
+	readonly endpointType?: "WebHook";
+	readonly properties?: EventSubscriptionDestinationProperties;
 }
 export interface EventSubscriptionDestinationProperties {
-	readonly endpointBaseUrl?: string | undefined;
-	readonly endpointUrl?: string | undefined;
+	readonly endpointBaseUrl?: string;
+	readonly endpointUrl?: string;
 }
 export interface EventSubscriptionFilter {
-	readonly includedEventTypes?: string[] | undefined;
-	readonly isSubjectCaseSensitive?: boolean | undefined;
-	readonly subjectBeginsWith?: string | undefined;
-	readonly subjectEndsWith?: string | undefined;
+	readonly includedEventTypes?: string[];
+	readonly isSubjectCaseSensitive?: boolean;
+	readonly subjectBeginsWith?: string;
+	readonly subjectEndsWith?: string;
 }
 export interface EventSubscriptionProperties {
-	readonly destination?: EventSubscriptionDestination | undefined;
-	readonly filter?: EventSubscriptionFilter | undefined;
-	readonly labels?: string[] | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly topic?: string | undefined;
+	readonly destination?: EventSubscriptionDestination;
+	readonly filter?: EventSubscriptionFilter;
+	readonly labels?: string[];
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly topic?: string;
 }
 export interface TopicProperties {
-	readonly endpoint?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly endpoint?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface TopicSharedAccessKeys {
-	readonly key1?: string | undefined;
-	readonly key2?: string | undefined;
+	readonly key1?: string;
+	readonly key2?: string;
 }
 export interface TopicTypeProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly provider?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly resourceRegionType?: ("GlobalResource" | "RegionalResource") | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly provider?: string;
+	readonly provisioningState?: "Canceled" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly resourceRegionType?: "GlobalResource" | "RegionalResource";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	eventSubscriptions: eventSubscriptions,

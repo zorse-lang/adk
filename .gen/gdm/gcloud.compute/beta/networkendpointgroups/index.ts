@@ -7,94 +7,93 @@ export class NetworkEndpointGroups
 	constructor(entity: ADKEntity, options: NetworkEndpointGroupsComponentInputs) {
 		super(entity, options.name, "compute.beta.NetworkEndpointGroups", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly size?: number | undefined;
-	public readonly zone?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly size?: number;
+	public readonly zone?: string;
 }
 export interface NetworkEndpointGroupsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly size?: number | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly size?: number;
+	readonly zone?: string;
 }
 export interface NetworkEndpointGroupsComponentInputs {
-	readonly annotations?: { [P in string]: string } | undefined;
-	readonly appEngine?: NetworkEndpointGroupAppEngine | undefined;
-	readonly cloudFunction?: NetworkEndpointGroupCloudFunction | undefined;
-	readonly cloudRun?: NetworkEndpointGroupCloudRun | undefined;
-	readonly defaultPort?: number | undefined;
-	readonly description?: string | undefined;
-	readonly loadBalancer?: NetworkEndpointGroupLbNetworkEndpointGroup | undefined;
+	readonly annotations?: { [P in string]: string };
+	readonly appEngine?: NetworkEndpointGroupAppEngine;
+	readonly cloudFunction?: NetworkEndpointGroupCloudFunction;
+	readonly cloudRun?: NetworkEndpointGroupCloudRun;
+	readonly defaultPort?: number;
+	readonly description?: string;
+	readonly loadBalancer?: NetworkEndpointGroupLbNetworkEndpointGroup;
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly networkEndpointType?: string | undefined;
-	readonly pscData?: NetworkEndpointGroupPscData | undefined;
-	readonly pscTargetService?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly serverlessDeployment?: NetworkEndpointGroupServerlessDeployment | undefined;
-	readonly subnetwork?: string | undefined;
-	readonly type: string;
+	readonly network?: string;
+	readonly networkEndpointType?: string;
+	readonly pscData?: NetworkEndpointGroupPscData;
+	readonly pscTargetService?: string;
+	readonly requestId?: string;
+	readonly serverlessDeployment?: NetworkEndpointGroupServerlessDeployment;
+	readonly subnetwork?: string;
 }
 export interface NetworkEndpointGroup {
-	readonly annotations?: { [P in string]: string } | undefined;
-	readonly appEngine?: NetworkEndpointGroupAppEngine | undefined;
-	readonly cloudFunction?: NetworkEndpointGroupCloudFunction | undefined;
-	readonly cloudRun?: NetworkEndpointGroupCloudRun | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly defaultPort?: number | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly loadBalancer?: NetworkEndpointGroupLbNetworkEndpointGroup | undefined;
-	readonly name?: string | undefined;
-	readonly network?: string | undefined;
-	readonly networkEndpointType?: string | undefined;
-	readonly pscData?: NetworkEndpointGroupPscData | undefined;
-	readonly pscTargetService?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly serverlessDeployment?: NetworkEndpointGroupServerlessDeployment | undefined;
-	readonly size?: number | undefined;
-	readonly subnetwork?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly annotations?: { [P in string]: string };
+	readonly appEngine?: NetworkEndpointGroupAppEngine;
+	readonly cloudFunction?: NetworkEndpointGroupCloudFunction;
+	readonly cloudRun?: NetworkEndpointGroupCloudRun;
+	readonly creationTimestamp?: string;
+	readonly defaultPort?: number;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly loadBalancer?: NetworkEndpointGroupLbNetworkEndpointGroup;
+	readonly name?: string;
+	readonly network?: string;
+	readonly networkEndpointType?: string;
+	readonly pscData?: NetworkEndpointGroupPscData;
+	readonly pscTargetService?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly serverlessDeployment?: NetworkEndpointGroupServerlessDeployment;
+	readonly size?: number;
+	readonly subnetwork?: string;
+	readonly zone?: string;
 }
 export interface NetworkEndpointGroupAppEngine {
-	readonly service?: string | undefined;
-	readonly urlMask?: string | undefined;
-	readonly version?: string | undefined;
+	readonly service?: string;
+	readonly urlMask?: string;
+	readonly version?: string;
 }
 export interface NetworkEndpointGroupCloudFunction {
-	readonly function?: string | undefined;
-	readonly urlMask?: string | undefined;
+	readonly function?: string;
+	readonly urlMask?: string;
 }
 export interface NetworkEndpointGroupCloudRun {
-	readonly service?: string | undefined;
-	readonly tag?: string | undefined;
-	readonly urlMask?: string | undefined;
+	readonly service?: string;
+	readonly tag?: string;
+	readonly urlMask?: string;
 }
 export interface NetworkEndpointGroupLbNetworkEndpointGroup {
-	readonly defaultPort?: number | undefined;
-	readonly network?: string | undefined;
-	readonly subnetwork?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly defaultPort?: number;
+	readonly network?: string;
+	readonly subnetwork?: string;
+	readonly zone?: string;
 }
 export interface NetworkEndpointGroupPscData {
-	readonly consumerPscAddress?: string | undefined;
-	readonly pscConnectionId?: string | undefined;
-	readonly pscConnectionStatus?: string | undefined;
+	readonly consumerPscAddress?: string;
+	readonly pscConnectionId?: string;
+	readonly pscConnectionStatus?: string;
 }
 export interface NetworkEndpointGroupServerlessDeployment {
-	readonly platform?: string | undefined;
-	readonly resource?: string | undefined;
-	readonly urlMask?: string | undefined;
-	readonly version?: string | undefined;
+	readonly platform?: string;
+	readonly resource?: string;
+	readonly urlMask?: string;
+	readonly version?: string;
 }
 export default {
 	NetworkEndpointGroups: NetworkEndpointGroups,

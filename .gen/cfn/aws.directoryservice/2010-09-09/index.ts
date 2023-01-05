@@ -15,10 +15,10 @@ export interface MicrosoftADComponentInputs {
 	readonly Name: string;
 	readonly Password: string;
 	readonly VpcSettings: VpcSettings;
-	readonly CreateAlias?: (boolean | undefined) | undefined;
-	readonly Edition?: (string | undefined) | undefined;
-	readonly EnableSso?: (boolean | undefined) | undefined;
-	readonly ShortName?: (string | undefined) | undefined;
+	readonly CreateAlias?: boolean | undefined;
+	readonly Edition?: string | undefined;
+	readonly EnableSso?: boolean | undefined;
+	readonly ShortName?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SimpleAD extends CfnResource<SimpleADComponentInputs> implements SimpleADComponentOutputs {
@@ -37,10 +37,10 @@ export interface SimpleADComponentInputs {
 	readonly Password: string;
 	readonly Size: string;
 	readonly VpcSettings: VpcSettings;
-	readonly CreateAlias?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnableSso?: (boolean | undefined) | undefined;
-	readonly ShortName?: (string | undefined) | undefined;
+	readonly CreateAlias?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly EnableSso?: boolean | undefined;
+	readonly ShortName?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface VpcSettings {

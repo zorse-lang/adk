@@ -7,26 +7,25 @@ export class ProjectsSchemas
 	constructor(entity: ADKEntity, options: ProjectsSchemasComponentInputs) {
 		super(entity, options.name, "pubsub.v1.ProjectsSchemas", options);
 	}
-	public readonly revisionCreateTime?: string | undefined;
-	public readonly revisionId?: string | undefined;
+	public readonly revisionCreateTime?: string;
+	public readonly revisionId?: string;
 }
 export interface ProjectsSchemasComponentOutputs {
-	readonly revisionCreateTime?: string | undefined;
-	readonly revisionId?: string | undefined;
+	readonly revisionCreateTime?: string;
+	readonly revisionId?: string;
 }
 export interface ProjectsSchemasComponentInputs {
-	readonly definition?: string | undefined;
+	readonly definition?: string;
 	readonly name: string;
 	readonly parent: string;
-	readonly schemaId?: string | undefined;
-	readonly type: string;
+	readonly schemaId?: string;
 }
 export interface Schema {
-	readonly definition?: string | undefined;
+	readonly definition?: string;
 	readonly name: string;
-	readonly revisionCreateTime?: string | undefined;
-	readonly revisionId?: string | undefined;
-	readonly type?: string | undefined;
+	readonly revisionCreateTime?: string;
+	readonly revisionId?: string;
+	readonly type?: string;
 }
 export default {
 	ProjectsSchemas: ProjectsSchemas,

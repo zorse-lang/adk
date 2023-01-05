@@ -38,38 +38,38 @@ export interface roleDefinitionsComponentOutputs {
 }
 export interface roleDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: RoleDefinitionProperties | undefined;
+	readonly properties?: RoleDefinitionProperties;
 }
 export interface Permission {
-	readonly actions?: string[] | undefined;
-	readonly dataActions?: string[] | undefined;
-	readonly notActions?: string[] | undefined;
-	readonly notDataActions?: string[] | undefined;
+	readonly actions?: string[];
+	readonly dataActions?: string[];
+	readonly notActions?: string[];
+	readonly notDataActions?: string[];
 }
 export interface RoleAssignmentProperties {
-	readonly condition?: string | undefined;
-	readonly conditionVersion?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdOn?: string | undefined;
-	readonly delegatedManagedIdentityResourceId?: string | undefined;
-	readonly description?: string | undefined;
+	readonly condition?: string;
+	readonly conditionVersion?: string;
+	readonly createdBy?: string;
+	readonly createdOn?: string;
+	readonly delegatedManagedIdentityResourceId?: string;
+	readonly description?: string;
 	readonly principalId: string;
-	readonly principalType?: ("Device" | "ForeignGroup" | "Group" | "ServicePrincipal" | "User") | undefined;
+	readonly principalType?: "Device" | "ForeignGroup" | "Group" | "ServicePrincipal" | "User";
 	readonly roleDefinitionId: string;
-	readonly scope?: string | undefined;
-	readonly updatedBy?: string | undefined;
-	readonly updatedOn?: string | undefined;
+	readonly scope?: string;
+	readonly updatedBy?: string;
+	readonly updatedOn?: string;
 }
 export interface RoleDefinitionProperties {
-	readonly assignableScopes?: string[] | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdOn?: string | undefined;
-	readonly description?: string | undefined;
-	readonly permissions?: Permission[] | undefined;
-	readonly roleName?: string | undefined;
-	readonly type?: string | undefined;
-	readonly updatedBy?: string | undefined;
-	readonly updatedOn?: string | undefined;
+	readonly assignableScopes?: string[];
+	readonly createdBy?: string;
+	readonly createdOn?: string;
+	readonly description?: string;
+	readonly permissions?: Permission[];
+	readonly roleName?: string;
+	readonly type?: string;
+	readonly updatedBy?: string;
+	readonly updatedOn?: string;
 }
 export default {
 	roleAssignments: roleAssignments,

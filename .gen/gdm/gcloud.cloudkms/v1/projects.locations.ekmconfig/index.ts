@@ -10,7 +10,6 @@ export class ProjectsLocationsEkmConfig
 }
 export interface ProjectsLocationsEkmConfigComponentOutputs {}
 export interface ProjectsLocationsEkmConfigComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

@@ -10,7 +10,6 @@ export class OperationsProjectsOperations
 }
 export interface OperationsProjectsOperationsComponentOutputs {}
 export interface OperationsProjectsOperationsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

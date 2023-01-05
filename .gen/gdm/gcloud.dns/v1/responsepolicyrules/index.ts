@@ -10,82 +10,81 @@ export class ResponsePolicyRules
 }
 export interface ResponsePolicyRulesComponentOutputs {}
 export interface ResponsePolicyRulesComponentInputs {
-	readonly behavior?: string | undefined;
-	readonly clientOperationId?: string | undefined;
-	readonly dnsName?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly localData?: ResponsePolicyRuleLocalData | undefined;
+	readonly behavior?: string;
+	readonly clientOperationId?: string;
+	readonly dnsName?: string;
+	readonly kind?: string;
+	readonly localData?: ResponsePolicyRuleLocalData;
 	readonly responsePolicy: string;
-	readonly ruleName?: string | undefined;
-	readonly type: string;
+	readonly ruleName?: string;
 	readonly name: string;
 }
 export interface ResourceRecordSet {
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly routingPolicy?: RRSetRoutingPolicy | undefined;
-	readonly rrdatas?: string[] | undefined;
-	readonly signatureRrdatas?: string[] | undefined;
-	readonly ttl?: number | undefined;
-	readonly type?: string | undefined;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly routingPolicy?: RRSetRoutingPolicy;
+	readonly rrdatas?: string[];
+	readonly signatureRrdatas?: string[];
+	readonly ttl?: number;
+	readonly type?: string;
 }
 export interface ResponsePolicyRule {
-	readonly behavior?: string | undefined;
-	readonly dnsName?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly localData?: ResponsePolicyRuleLocalData | undefined;
-	readonly ruleName?: string | undefined;
+	readonly behavior?: string;
+	readonly dnsName?: string;
+	readonly kind?: string;
+	readonly localData?: ResponsePolicyRuleLocalData;
+	readonly ruleName?: string;
 }
 export interface ResponsePolicyRuleLocalData {
-	readonly localDatas?: ResourceRecordSet[] | undefined;
+	readonly localDatas?: ResourceRecordSet[];
 }
 export interface RRSetRoutingPolicy {
-	readonly geo?: RRSetRoutingPolicyGeoPolicy | undefined;
-	readonly kind?: string | undefined;
-	readonly primaryBackup?: RRSetRoutingPolicyPrimaryBackupPolicy | undefined;
-	readonly wrr?: RRSetRoutingPolicyWrrPolicy | undefined;
+	readonly geo?: RRSetRoutingPolicyGeoPolicy;
+	readonly kind?: string;
+	readonly primaryBackup?: RRSetRoutingPolicyPrimaryBackupPolicy;
+	readonly wrr?: RRSetRoutingPolicyWrrPolicy;
 }
 export interface RRSetRoutingPolicyGeoPolicy {
-	readonly enableFencing?: boolean | undefined;
-	readonly items?: RRSetRoutingPolicyGeoPolicyGeoPolicyItem[] | undefined;
-	readonly kind?: string | undefined;
+	readonly enableFencing?: boolean;
+	readonly items?: RRSetRoutingPolicyGeoPolicyGeoPolicyItem[];
+	readonly kind?: string;
 }
 export interface RRSetRoutingPolicyGeoPolicyGeoPolicyItem {
-	readonly healthCheckedTargets?: RRSetRoutingPolicyHealthCheckTargets | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
-	readonly rrdatas?: string[] | undefined;
-	readonly signatureRrdatas?: string[] | undefined;
+	readonly healthCheckedTargets?: RRSetRoutingPolicyHealthCheckTargets;
+	readonly kind?: string;
+	readonly location?: string;
+	readonly rrdatas?: string[];
+	readonly signatureRrdatas?: string[];
 }
 export interface RRSetRoutingPolicyHealthCheckTargets {
-	readonly internalLoadBalancers?: RRSetRoutingPolicyLoadBalancerTarget[] | undefined;
+	readonly internalLoadBalancers?: RRSetRoutingPolicyLoadBalancerTarget[];
 }
 export interface RRSetRoutingPolicyLoadBalancerTarget {
-	readonly ipAddress?: string | undefined;
-	readonly ipProtocol?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly loadBalancerType?: string | undefined;
-	readonly networkUrl?: string | undefined;
-	readonly port?: string | undefined;
-	readonly project?: string | undefined;
-	readonly region?: string | undefined;
+	readonly ipAddress?: string;
+	readonly ipProtocol?: string;
+	readonly kind?: string;
+	readonly loadBalancerType?: string;
+	readonly networkUrl?: string;
+	readonly port?: string;
+	readonly project?: string;
+	readonly region?: string;
 }
 export interface RRSetRoutingPolicyPrimaryBackupPolicy {
-	readonly backupGeoTargets?: RRSetRoutingPolicyGeoPolicy | undefined;
-	readonly kind?: string | undefined;
-	readonly primaryTargets?: RRSetRoutingPolicyHealthCheckTargets | undefined;
-	readonly trickleTraffic?: number | undefined;
+	readonly backupGeoTargets?: RRSetRoutingPolicyGeoPolicy;
+	readonly kind?: string;
+	readonly primaryTargets?: RRSetRoutingPolicyHealthCheckTargets;
+	readonly trickleTraffic?: number;
 }
 export interface RRSetRoutingPolicyWrrPolicy {
-	readonly items?: RRSetRoutingPolicyWrrPolicyWrrPolicyItem[] | undefined;
-	readonly kind?: string | undefined;
+	readonly items?: RRSetRoutingPolicyWrrPolicyWrrPolicyItem[];
+	readonly kind?: string;
 }
 export interface RRSetRoutingPolicyWrrPolicyWrrPolicyItem {
-	readonly healthCheckedTargets?: RRSetRoutingPolicyHealthCheckTargets | undefined;
-	readonly kind?: string | undefined;
-	readonly rrdatas?: string[] | undefined;
-	readonly signatureRrdatas?: string[] | undefined;
-	readonly weight?: number | undefined;
+	readonly healthCheckedTargets?: RRSetRoutingPolicyHealthCheckTargets;
+	readonly kind?: string;
+	readonly rrdatas?: string[];
+	readonly signatureRrdatas?: string[];
+	readonly weight?: number;
 }
 export default {
 	ResponsePolicyRules: ResponsePolicyRules,

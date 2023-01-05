@@ -16,17 +16,17 @@ export interface registriesComponentOutputs {
 export interface registriesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: RegistryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: RegistryProperties;
+	readonly tags?: ResourceTags;
 }
 export interface RegistryProperties {
-	readonly adminUserEnabled?: boolean | undefined;
-	readonly creationDate?: string | undefined;
-	readonly loginServer?: string | undefined;
+	readonly adminUserEnabled?: boolean;
+	readonly creationDate?: string;
+	readonly loginServer?: string;
 	readonly storageAccount: StorageAccountProperties;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StorageAccountProperties {
 	readonly accessKey: string;

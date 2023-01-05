@@ -8,7 +8,7 @@ export class ByteMatchSet extends CfnResource<ByteMatchSetComponentInputs> imple
 export interface ByteMatchSetComponentOutputs {}
 export interface ByteMatchSetComponentInputs {
 	readonly Name: string;
-	readonly ByteMatchTuples?: (ByteMatchTuple[] | undefined) | undefined;
+	readonly ByteMatchTuples?: ByteMatchTuple[] | undefined;
 	readonly LogicalId: string;
 }
 export class GeoMatchSet extends CfnResource<GeoMatchSetComponentInputs> implements GeoMatchSetComponentOutputs {
@@ -19,7 +19,7 @@ export class GeoMatchSet extends CfnResource<GeoMatchSetComponentInputs> impleme
 export interface GeoMatchSetComponentOutputs {}
 export interface GeoMatchSetComponentInputs {
 	readonly Name: string;
-	readonly GeoMatchConstraints?: (GeoMatchConstraint[] | undefined) | undefined;
+	readonly GeoMatchConstraints?: GeoMatchConstraint[] | undefined;
 	readonly LogicalId: string;
 }
 export class IPSet extends CfnResource<IPSetComponentInputs> implements IPSetComponentOutputs {
@@ -30,7 +30,7 @@ export class IPSet extends CfnResource<IPSetComponentInputs> implements IPSetCom
 export interface IPSetComponentOutputs {}
 export interface IPSetComponentInputs {
 	readonly Name: string;
-	readonly IPSetDescriptors?: (IPSetDescriptor[] | undefined) | undefined;
+	readonly IPSetDescriptors?: IPSetDescriptor[] | undefined;
 	readonly LogicalId: string;
 }
 export class RateBasedRule extends CfnResource<RateBasedRuleComponentInputs> implements RateBasedRuleComponentOutputs {
@@ -44,7 +44,7 @@ export interface RateBasedRuleComponentInputs {
 	readonly Name: string;
 	readonly RateKey: string;
 	readonly RateLimit: number;
-	readonly MatchPredicates?: (Predicate[] | undefined) | undefined;
+	readonly MatchPredicates?: Predicate[] | undefined;
 	readonly LogicalId: string;
 }
 export class RegexPatternSet
@@ -70,7 +70,7 @@ export interface RuleComponentOutputs {}
 export interface RuleComponentInputs {
 	readonly MetricName: string;
 	readonly Name: string;
-	readonly Predicates?: (Predicate[] | undefined) | undefined;
+	readonly Predicates?: Predicate[] | undefined;
 	readonly LogicalId: string;
 }
 export class SizeConstraintSet
@@ -84,7 +84,7 @@ export class SizeConstraintSet
 export interface SizeConstraintSetComponentOutputs {}
 export interface SizeConstraintSetComponentInputs {
 	readonly Name: string;
-	readonly SizeConstraints?: (SizeConstraint[] | undefined) | undefined;
+	readonly SizeConstraints?: SizeConstraint[] | undefined;
 	readonly LogicalId: string;
 }
 export class SqlInjectionMatchSet
@@ -98,7 +98,7 @@ export class SqlInjectionMatchSet
 export interface SqlInjectionMatchSetComponentOutputs {}
 export interface SqlInjectionMatchSetComponentInputs {
 	readonly Name: string;
-	readonly SqlInjectionMatchTuples?: (SqlInjectionMatchTuple[] | undefined) | undefined;
+	readonly SqlInjectionMatchTuples?: SqlInjectionMatchTuple[] | undefined;
 	readonly LogicalId: string;
 }
 export class WebACL extends CfnResource<WebACLComponentInputs> implements WebACLComponentOutputs {
@@ -111,7 +111,7 @@ export interface WebACLComponentInputs {
 	readonly DefaultAction: Action;
 	readonly MetricName: string;
 	readonly Name: string;
-	readonly Rules?: (Rule[] | undefined) | undefined;
+	readonly Rules?: Rule[] | undefined;
 	readonly LogicalId: string;
 }
 export class WebACLAssociation
@@ -136,18 +136,18 @@ export class XssMatchSet extends CfnResource<XssMatchSetComponentInputs> impleme
 export interface XssMatchSetComponentOutputs {}
 export interface XssMatchSetComponentInputs {
 	readonly Name: string;
-	readonly XssMatchTuples?: (XssMatchTuple[] | undefined) | undefined;
+	readonly XssMatchTuples?: XssMatchTuple[] | undefined;
 	readonly LogicalId: string;
 }
 export interface ByteMatchTuple {
 	readonly FieldToMatch: FieldToMatch;
 	readonly PositionalConstraint: string;
-	readonly TargetString?: (string | undefined) | undefined;
-	readonly TargetStringBase64?: (string | undefined) | undefined;
+	readonly TargetString?: string | undefined;
+	readonly TargetStringBase64?: string | undefined;
 	readonly TextTransformation: string;
 }
 export interface FieldToMatch {
-	readonly Data?: (string | undefined) | undefined;
+	readonly Data?: string | undefined;
 	readonly Type: string;
 }
 export interface GeoMatchConstraint {

@@ -7,9 +7,8 @@ export class RuntimeConfig extends GdmResource<RuntimeConfigComponentInputs> imp
 }
 export interface RuntimeConfigComponentOutputs {}
 export interface RuntimeConfigComponentInputs {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly name: string;
-	readonly type: string;
 }
 export default {
 	RuntimeConfig: RuntimeConfig,

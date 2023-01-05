@@ -17,11 +17,11 @@ export interface certificateOrdersComponentOutputs {
 	readonly type: "Microsoft.CertificateRegistration/certificateOrders";
 }
 export interface certificateOrdersComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CertificateOrderProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: CertificateOrderProperties;
+	readonly tags?: ResourceTags;
 }
 export class certificateOrders_certificates
 	extends ArmResource<certificateOrders_certificatesComponentInputs>
@@ -46,93 +46,87 @@ export interface certificateOrders_certificatesComponentOutputs {
 	readonly type: "Microsoft.CertificateRegistration/certificateOrders/certificates";
 }
 export interface certificateOrders_certificatesComponentInputs {
-	readonly kind?: string | undefined;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: CertificateOrderCertificateProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: CertificateOrderCertificateProperties;
+	readonly tags?: ResourceTags;
 }
 export interface CertificateDetails {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: CertificateDetailsProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: CertificateDetailsProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface CertificateDetailsProperties {
-	readonly issuer?: string | undefined;
-	readonly notAfter?: string | undefined;
-	readonly notBefore?: string | undefined;
-	readonly rawData?: string | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly signatureAlgorithm?: string | undefined;
-	readonly subject?: string | undefined;
-	readonly thumbprint?: string | undefined;
-	readonly version?: number | undefined;
+	readonly issuer?: string;
+	readonly notAfter?: string;
+	readonly notBefore?: string;
+	readonly rawData?: string;
+	readonly serialNumber?: string;
+	readonly signatureAlgorithm?: string;
+	readonly subject?: string;
+	readonly thumbprint?: string;
+	readonly version?: number;
 }
 export interface CertificateOrderCertificate {
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly id?: string;
+	readonly kind?: string;
 	readonly location: string;
-	readonly name?: string | undefined;
-	readonly properties?: CertificateOrderCertificateProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly name?: string;
+	readonly properties?: CertificateOrderCertificateProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface CertificateOrderCertificateProperties {
-	readonly keyVaultId?: string | undefined;
-	readonly keyVaultSecretName?: string | undefined;
+	readonly keyVaultId?: string;
+	readonly keyVaultSecretName?: string;
 	readonly provisioningState?:
-		| (
-				| "AzureServiceUnauthorizedToAccessKeyVault"
-				| "CertificateOrderFailed"
-				| "Initialized"
-				| "KeyVaultDoesNotExist"
-				| "KeyVaultSecretDoesNotExist"
-				| "OperationNotPermittedOnKeyVault"
-				| "Succeeded"
-				| "Unknown"
-				| "UnknownError"
-		  )
-		| undefined;
+		| "AzureServiceUnauthorizedToAccessKeyVault"
+		| "CertificateOrderFailed"
+		| "Initialized"
+		| "KeyVaultDoesNotExist"
+		| "KeyVaultSecretDoesNotExist"
+		| "OperationNotPermittedOnKeyVault"
+		| "Succeeded"
+		| "Unknown"
+		| "UnknownError";
 }
 export interface CertificateOrderProperties {
-	readonly autoRenew?: boolean | undefined;
-	readonly certificates?: CertificateOrderPropertiesCertificates | undefined;
-	readonly csr?: string | undefined;
-	readonly distinguishedName?: string | undefined;
-	readonly domainVerificationToken?: string | undefined;
-	readonly expirationTime?: string | undefined;
-	readonly intermediate?: CertificateDetails | undefined;
-	readonly keySize?: number | undefined;
-	readonly lastCertificateIssuanceTime?: string | undefined;
-	readonly productType?: "StandardDomainValidatedSsl" | undefined;
-	readonly provisioningState?: ("Canceled" | "Deleting" | "Failed" | "InProgress") | undefined;
-	readonly root?: CertificateDetails | undefined;
-	readonly serialNumber?: string | undefined;
-	readonly signedCertificate?: CertificateDetails | undefined;
+	readonly autoRenew?: boolean;
+	readonly certificates?: CertificateOrderPropertiesCertificates;
+	readonly csr?: string;
+	readonly distinguishedName?: string;
+	readonly domainVerificationToken?: string;
+	readonly expirationTime?: string;
+	readonly intermediate?: CertificateDetails;
+	readonly keySize?: number;
+	readonly lastCertificateIssuanceTime?: string;
+	readonly productType?: "StandardDomainValidatedSsl";
+	readonly provisioningState?: "Canceled" | "Deleting" | "Failed" | "InProgress";
+	readonly root?: CertificateDetails;
+	readonly serialNumber?: string;
+	readonly signedCertificate?: CertificateDetails;
 	readonly status?:
-		| (
-				| "Canceled"
-				| "Denied"
-				| "Expired"
-				| "Issued"
-				| "NotSubmitted"
-				| "PendingRekey"
-				| "Pendingissuance"
-				| "Pendingrevocation"
-				| "Revoked"
-		  )
-		| undefined;
-	readonly validityInYears?: number | undefined;
+		| "Canceled"
+		| "Denied"
+		| "Expired"
+		| "Issued"
+		| "NotSubmitted"
+		| "PendingRekey"
+		| "Pendingissuance"
+		| "Pendingrevocation"
+		| "Revoked";
+	readonly validityInYears?: number;
 }
 export interface CertificateOrderPropertiesCertificates {
-	readonly "[ key: string ]"?: CertificateOrderCertificate | undefined;
+	readonly [key: string]: CertificateOrderCertificate;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	certificateOrders: certificateOrders,

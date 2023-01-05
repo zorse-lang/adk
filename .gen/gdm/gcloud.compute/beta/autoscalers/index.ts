@@ -4,108 +4,108 @@ export class Autoscalers extends GdmResource<AutoscalersComponentInputs> impleme
 	constructor(entity: ADKEntity, options: AutoscalersComponentInputs) {
 		super(entity, options.name, "compute.beta.Autoscalers", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly recommendedSize?: number | undefined;
-	public readonly region?: string | undefined;
-	public readonly scalingScheduleStatus?: { [P in string]: ScalingScheduleStatus } | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly status?: string | undefined;
-	public readonly statusDetails?: AutoscalerStatusDetails[] | undefined;
-	public readonly zone?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly recommendedSize?: number;
+	public readonly region?: string;
+	public readonly scalingScheduleStatus?: { [P in string]: ScalingScheduleStatus
+	};
+	public readonly selfLink?: string;
+	public readonly status?: string;
+	public readonly statusDetails?: AutoscalerStatusDetails[];
+	public readonly zone?: string;
 }
 export interface AutoscalersComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly recommendedSize?: number | undefined;
-	readonly region?: string | undefined;
-	readonly scalingScheduleStatus?: { [P in string]: ScalingScheduleStatus } | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusDetails?: AutoscalerStatusDetails[] | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly recommendedSize?: number;
+	readonly region?: string;
+	readonly scalingScheduleStatus?: { [P in string]: ScalingScheduleStatus };
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly statusDetails?: AutoscalerStatusDetails[];
+	readonly zone?: string;
 }
 export interface AutoscalersComponentInputs {
-	readonly autoscalingPolicy?: AutoscalingPolicy | undefined;
-	readonly description?: string | undefined;
+	readonly autoscalingPolicy?: AutoscalingPolicy;
+	readonly description?: string;
 	readonly name: string;
-	readonly requestId?: string | undefined;
-	readonly target?: string | undefined;
-	readonly type: string;
+	readonly requestId?: string;
+	readonly target?: string;
 }
 export interface Autoscaler {
-	readonly autoscalingPolicy?: AutoscalingPolicy | undefined;
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly recommendedSize?: number | undefined;
-	readonly region?: string | undefined;
-	readonly scalingScheduleStatus?: { [P in string]: ScalingScheduleStatus } | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusDetails?: AutoscalerStatusDetails[] | undefined;
-	readonly target?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly autoscalingPolicy?: AutoscalingPolicy;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly recommendedSize?: number;
+	readonly region?: string;
+	readonly scalingScheduleStatus?: { [P in string]: ScalingScheduleStatus };
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly statusDetails?: AutoscalerStatusDetails[];
+	readonly target?: string;
+	readonly zone?: string;
 }
 export interface AutoscalerStatusDetails {
-	readonly message?: string | undefined;
-	readonly type?: string | undefined;
+	readonly message?: string;
+	readonly type?: string;
 }
 export interface AutoscalingPolicy {
-	readonly coolDownPeriodSec?: number | undefined;
-	readonly cpuUtilization?: AutoscalingPolicyCpuUtilization | undefined;
-	readonly customMetricUtilizations?: AutoscalingPolicyCustomMetricUtilization[] | undefined;
-	readonly loadBalancingUtilization?: AutoscalingPolicyLoadBalancingUtilization | undefined;
-	readonly maxNumReplicas?: number | undefined;
-	readonly minNumReplicas?: number | undefined;
-	readonly mode?: string | undefined;
-	readonly scaleDownControl?: AutoscalingPolicyScaleDownControl | undefined;
-	readonly scaleInControl?: AutoscalingPolicyScaleInControl | undefined;
-	readonly scalingSchedules?: { [P in string]: AutoscalingPolicyScalingSchedule } | undefined;
+	readonly coolDownPeriodSec?: number;
+	readonly cpuUtilization?: AutoscalingPolicyCpuUtilization;
+	readonly customMetricUtilizations?: AutoscalingPolicyCustomMetricUtilization[];
+	readonly loadBalancingUtilization?: AutoscalingPolicyLoadBalancingUtilization;
+	readonly maxNumReplicas?: number;
+	readonly minNumReplicas?: number;
+	readonly mode?: string;
+	readonly scaleDownControl?: AutoscalingPolicyScaleDownControl;
+	readonly scaleInControl?: AutoscalingPolicyScaleInControl;
+	readonly scalingSchedules?: { [P in string]: AutoscalingPolicyScalingSchedule };
 }
 export interface AutoscalingPolicyCpuUtilization {
-	readonly predictiveMethod?: string | undefined;
-	readonly utilizationTarget?: number | undefined;
+	readonly predictiveMethod?: string;
+	readonly utilizationTarget?: number;
 }
 export interface AutoscalingPolicyCustomMetricUtilization {
-	readonly filter?: string | undefined;
-	readonly metric?: string | undefined;
-	readonly singleInstanceAssignment?: number | undefined;
-	readonly utilizationTarget?: number | undefined;
-	readonly utilizationTargetType?: string | undefined;
+	readonly filter?: string;
+	readonly metric?: string;
+	readonly singleInstanceAssignment?: number;
+	readonly utilizationTarget?: number;
+	readonly utilizationTargetType?: string;
 }
 export interface AutoscalingPolicyLoadBalancingUtilization {
-	readonly utilizationTarget?: number | undefined;
+	readonly utilizationTarget?: number;
 }
 export interface AutoscalingPolicyScaleDownControl {
-	readonly maxScaledDownReplicas?: FixedOrPercent | undefined;
-	readonly timeWindowSec?: number | undefined;
+	readonly maxScaledDownReplicas?: FixedOrPercent;
+	readonly timeWindowSec?: number;
 }
 export interface AutoscalingPolicyScaleInControl {
-	readonly maxScaledInReplicas?: FixedOrPercent | undefined;
-	readonly timeWindowSec?: number | undefined;
+	readonly maxScaledInReplicas?: FixedOrPercent;
+	readonly timeWindowSec?: number;
 }
 export interface AutoscalingPolicyScalingSchedule {
-	readonly description?: string | undefined;
-	readonly disabled?: boolean | undefined;
-	readonly durationSec?: number | undefined;
-	readonly minRequiredReplicas?: number | undefined;
-	readonly schedule?: string | undefined;
-	readonly timeZone?: string | undefined;
+	readonly description?: string;
+	readonly disabled?: boolean;
+	readonly durationSec?: number;
+	readonly minRequiredReplicas?: number;
+	readonly schedule?: string;
+	readonly timeZone?: string;
 }
 export interface FixedOrPercent {
-	readonly calculated?: number | undefined;
-	readonly fixed?: number | undefined;
-	readonly percent?: number | undefined;
+	readonly calculated?: number;
+	readonly fixed?: number;
+	readonly percent?: number;
 }
 export interface ScalingScheduleStatus {
-	readonly lastStartTime?: string | undefined;
-	readonly nextStartTime?: string | undefined;
-	readonly state?: string | undefined;
+	readonly lastStartTime?: string;
+	readonly nextStartTime?: string;
+	readonly state?: string;
 }
 export default {
 	Autoscalers: Autoscalers,

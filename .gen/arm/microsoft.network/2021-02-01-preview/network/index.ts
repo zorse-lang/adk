@@ -17,12 +17,12 @@ export interface networkManagersComponentOutputs {
 	readonly type: "Microsoft.Network/networkManagers";
 }
 export interface networkManagersComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkManagerProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkManagerProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class networkManagers_connectivityConfigurations
 	extends ArmResource<networkManagers_connectivityConfigurationsComponentInputs>
@@ -47,10 +47,10 @@ export interface networkManagers_connectivityConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Network/networkManagers/connectivityConfigurations";
 }
 export interface networkManagers_connectivityConfigurationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ConnectivityConfigurationProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: ConnectivityConfigurationProperties;
+	readonly systemData?: SystemData;
 }
 export class networkManagers_networkGroups
 	extends ArmResource<networkManagers_networkGroupsComponentInputs>
@@ -69,10 +69,10 @@ export interface networkManagers_networkGroupsComponentOutputs {
 	readonly type: "Microsoft.Network/networkManagers/networkGroups";
 }
 export interface networkManagers_networkGroupsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: NetworkGroupProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: NetworkGroupProperties;
+	readonly systemData?: SystemData;
 }
 export class networkManagers_securityAdminConfigurations
 	extends ArmResource<networkManagers_securityAdminConfigurationsComponentInputs>
@@ -97,10 +97,10 @@ export interface networkManagers_securityAdminConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Network/networkManagers/securityAdminConfigurations";
 }
 export interface networkManagers_securityAdminConfigurationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: SecurityConfigurationPropertiesFormat | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SecurityConfigurationPropertiesFormat;
+	readonly systemData?: SystemData;
 }
 export class networkManagers_securityAdminConfigurations_ruleCollections
 	extends ArmResource<networkManagers_securityAdminConfigurations_ruleCollectionsComponentInputs>
@@ -125,10 +125,10 @@ export interface networkManagers_securityAdminConfigurations_ruleCollectionsComp
 	readonly type: "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections";
 }
 export interface networkManagers_securityAdminConfigurations_ruleCollectionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RuleCollectionPropertiesFormat | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: RuleCollectionPropertiesFormat;
+	readonly systemData?: SystemData;
 }
 export class networkManagers_securityAdminConfigurations_ruleCollections_rules_Custom
 	extends ArmResource<networkManagers_securityAdminConfigurations_ruleCollections_rules_CustomComponentInputs>
@@ -156,11 +156,11 @@ export interface networkManagers_securityAdminConfigurations_ruleCollections_rul
 	readonly type: "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/rules";
 }
 export interface networkManagers_securityAdminConfigurations_ruleCollections_rules_CustomComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "Custom";
-	readonly properties?: AdminPropertiesFormat | undefined;
+	readonly properties?: AdminPropertiesFormat;
 }
 export class networkManagers_securityAdminConfigurations_ruleCollections_rules_Default
 	extends ArmResource<networkManagers_securityAdminConfigurations_ruleCollections_rules_DefaultComponentInputs>
@@ -188,11 +188,11 @@ export interface networkManagers_securityAdminConfigurations_ruleCollections_rul
 	readonly type: "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/rules";
 }
 export interface networkManagers_securityAdminConfigurations_ruleCollections_rules_DefaultComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "Default";
-	readonly properties?: DefaultAdminPropertiesFormat | undefined;
+	readonly properties?: DefaultAdminPropertiesFormat;
 }
 export class networkManagers_securityUserConfigurations
 	extends ArmResource<networkManagers_securityUserConfigurationsComponentInputs>
@@ -217,10 +217,10 @@ export interface networkManagers_securityUserConfigurationsComponentOutputs {
 	readonly type: "Microsoft.Network/networkManagers/securityUserConfigurations";
 }
 export interface networkManagers_securityUserConfigurationsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: SecurityConfigurationPropertiesFormat | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: SecurityConfigurationPropertiesFormat;
+	readonly systemData?: SystemData;
 }
 export class networkManagers_securityUserConfigurations_ruleCollections
 	extends ArmResource<networkManagers_securityUserConfigurations_ruleCollectionsComponentInputs>
@@ -245,10 +245,10 @@ export interface networkManagers_securityUserConfigurations_ruleCollectionsCompo
 	readonly type: "Microsoft.Network/networkManagers/securityUserConfigurations/ruleCollections";
 }
 export interface networkManagers_securityUserConfigurations_ruleCollectionsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: RuleCollectionPropertiesFormat | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: RuleCollectionPropertiesFormat;
+	readonly systemData?: SystemData;
 }
 export class networkManagers_securityUserConfigurations_ruleCollections_rules_Custom
 	extends ArmResource<networkManagers_securityUserConfigurations_ruleCollections_rules_CustomComponentInputs>
@@ -276,11 +276,11 @@ export interface networkManagers_securityUserConfigurations_ruleCollections_rule
 	readonly type: "Microsoft.Network/networkManagers/securityUserConfigurations/ruleCollections/rules";
 }
 export interface networkManagers_securityUserConfigurations_ruleCollections_rules_CustomComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "Custom";
-	readonly properties?: UserRulePropertiesFormat | undefined;
+	readonly properties?: UserRulePropertiesFormat;
 }
 export class networkManagers_securityUserConfigurations_ruleCollections_rules_Default
 	extends ArmResource<networkManagers_securityUserConfigurations_ruleCollections_rules_DefaultComponentInputs>
@@ -308,11 +308,11 @@ export interface networkManagers_securityUserConfigurations_ruleCollections_rule
 	readonly type: "Microsoft.Network/networkManagers/securityUserConfigurations/ruleCollections/rules";
 }
 export interface networkManagers_securityUserConfigurations_ruleCollections_rules_DefaultComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 	readonly kind: "Default";
-	readonly properties?: DefaultUserRulePropertiesFormat | undefined;
+	readonly properties?: DefaultUserRulePropertiesFormat;
 }
 export class networkSecurityPerimeters
 	extends ArmResource<networkSecurityPerimetersComponentInputs>
@@ -331,10 +331,10 @@ export interface networkSecurityPerimetersComponentOutputs {
 	readonly type: "Microsoft.Network/networkSecurityPerimeters";
 }
 export interface networkSecurityPerimetersComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NetworkSecurityPerimeterProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NetworkSecurityPerimeterProperties;
+	readonly tags?: ResourceTags;
 }
 export class networkSecurityPerimeters_linkReferences
 	extends ArmResource<networkSecurityPerimeters_linkReferencesComponentInputs>
@@ -359,9 +359,9 @@ export interface networkSecurityPerimeters_linkReferencesComponentOutputs {
 	readonly type: "Microsoft.Network/networkSecurityPerimeters/linkReferences";
 }
 export interface networkSecurityPerimeters_linkReferencesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: NspLinkReferenceProperties | undefined;
+	readonly properties?: NspLinkReferenceProperties;
 }
 export class networkSecurityPerimeters_links
 	extends ArmResource<networkSecurityPerimeters_linksComponentInputs>
@@ -380,9 +380,9 @@ export interface networkSecurityPerimeters_linksComponentOutputs {
 	readonly type: "Microsoft.Network/networkSecurityPerimeters/links";
 }
 export interface networkSecurityPerimeters_linksComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: NspLinkProperties | undefined;
+	readonly properties?: NspLinkProperties;
 }
 export class networkSecurityPerimeters_profiles
 	extends ArmResource<networkSecurityPerimeters_profilesComponentInputs>
@@ -401,10 +401,10 @@ export interface networkSecurityPerimeters_profilesComponentOutputs {
 	readonly type: "Microsoft.Network/networkSecurityPerimeters/profiles";
 }
 export interface networkSecurityPerimeters_profilesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NspProfileProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NspProfileProperties;
+	readonly tags?: ResourceTags;
 }
 export class networkSecurityPerimeters_profiles_accessRules
 	extends ArmResource<networkSecurityPerimeters_profiles_accessRulesComponentInputs>
@@ -429,10 +429,10 @@ export interface networkSecurityPerimeters_profiles_accessRulesComponentOutputs 
 	readonly type: "Microsoft.Network/networkSecurityPerimeters/profiles/accessRules";
 }
 export interface networkSecurityPerimeters_profiles_accessRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NspAccessRuleProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NspAccessRuleProperties;
+	readonly tags?: ResourceTags;
 }
 export class networkSecurityPerimeters_resourceAssociations
 	extends ArmResource<networkSecurityPerimeters_resourceAssociationsComponentInputs>
@@ -457,10 +457,10 @@ export interface networkSecurityPerimeters_resourceAssociationsComponentOutputs 
 	readonly type: "Microsoft.Network/networkSecurityPerimeters/resourceAssociations";
 }
 export interface networkSecurityPerimeters_resourceAssociationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: NspAssociationProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: NspAssociationProperties;
+	readonly tags?: ResourceTags;
 }
 export function listActiveConnectivityConfigurations(
 	resource: networkManagers,
@@ -555,287 +555,287 @@ export function listNetworkManagerEffectiveSecurityAdminRules(
 	throw new Error("not implemented");
 }
 export interface ActiveBaseSecurityAdminRule {
-	readonly commitTime?: string | undefined;
-	readonly configurationDescription?: string | undefined;
-	readonly configurationDisplayName?: string | undefined;
-	readonly id?: string | undefined;
-	readonly region?: string | undefined;
-	readonly ruleCollectionAppliesToGroups?: NetworkManagerSecurityGroupItem[] | undefined;
-	readonly ruleCollectionDescription?: string | undefined;
-	readonly ruleCollectionDisplayName?: string | undefined;
-	readonly ruleGroups?: ConfigurationGroup[] | undefined;
+	readonly commitTime?: string;
+	readonly configurationDescription?: string;
+	readonly configurationDisplayName?: string;
+	readonly id?: string;
+	readonly region?: string;
+	readonly ruleCollectionAppliesToGroups?: NetworkManagerSecurityGroupItem[];
+	readonly ruleCollectionDescription?: string;
+	readonly ruleCollectionDisplayName?: string;
+	readonly ruleGroups?: ConfigurationGroup[];
 }
 export interface ActiveBaseSecurityUserRule {
-	readonly commitTime?: string | undefined;
-	readonly configurationDescription?: string | undefined;
-	readonly configurationDisplayName?: string | undefined;
-	readonly id?: string | undefined;
-	readonly region?: string | undefined;
-	readonly ruleCollectionAppliesToGroups?: NetworkManagerSecurityGroupItem[] | undefined;
-	readonly ruleCollectionDescription?: string | undefined;
-	readonly ruleCollectionDisplayName?: string | undefined;
-	readonly ruleGroups?: ConfigurationGroup[] | undefined;
+	readonly commitTime?: string;
+	readonly configurationDescription?: string;
+	readonly configurationDisplayName?: string;
+	readonly id?: string;
+	readonly region?: string;
+	readonly ruleCollectionAppliesToGroups?: NetworkManagerSecurityGroupItem[];
+	readonly ruleCollectionDescription?: string;
+	readonly ruleCollectionDisplayName?: string;
+	readonly ruleGroups?: ConfigurationGroup[];
 }
 export interface ActiveConfigurationParameter {
-	readonly regions?: string[] | undefined;
-	readonly skipToken?: string | undefined;
+	readonly regions?: string[];
+	readonly skipToken?: string;
 }
 export interface ActiveConnectivityConfiguration {
-	readonly commitTime?: string | undefined;
-	readonly configurationGroups?: ConfigurationGroup[] | undefined;
-	readonly id?: string | undefined;
-	readonly properties?: ConnectivityConfigurationProperties | undefined;
-	readonly region?: string | undefined;
+	readonly commitTime?: string;
+	readonly configurationGroups?: ConfigurationGroup[];
+	readonly id?: string;
+	readonly properties?: ConnectivityConfigurationProperties;
+	readonly region?: string;
 }
 export interface ActiveConnectivityConfigurationsListResult {
-	readonly skipToken?: string | undefined;
-	readonly value?: ActiveConnectivityConfiguration[] | undefined;
+	readonly skipToken?: string;
+	readonly value?: ActiveConnectivityConfiguration[];
 }
 export interface ActiveSecurityAdminRulesListResult {
-	readonly skipToken?: string | undefined;
-	readonly value?: ActiveBaseSecurityAdminRule[] | undefined;
+	readonly skipToken?: string;
+	readonly value?: ActiveBaseSecurityAdminRule[];
 }
 export interface ActiveSecurityUserRulesListResult {
-	readonly skipToken?: string | undefined;
-	readonly value?: ActiveBaseSecurityUserRule[] | undefined;
+	readonly skipToken?: string;
+	readonly value?: ActiveBaseSecurityUserRule[];
 }
 export interface AddressPrefixItem {
-	readonly addressPrefix?: string | undefined;
-	readonly addressPrefixType?: ("IPPrefix" | "ServiceTag") | undefined;
+	readonly addressPrefix?: string;
+	readonly addressPrefixType?: "IPPrefix" | "ServiceTag";
 }
 export interface AdminPropertiesFormat {
 	readonly access: "Allow" | "AlwaysAllow" | "Deny";
-	readonly description?: string | undefined;
-	readonly destinationPortRanges?: string[] | undefined;
-	readonly destinations?: AddressPrefixItem[] | undefined;
+	readonly description?: string;
+	readonly destinationPortRanges?: string[];
+	readonly destinations?: AddressPrefixItem[];
 	readonly direction: "Inbound" | "Outbound";
-	readonly displayName?: string | undefined;
-	readonly priority?: number | undefined;
+	readonly displayName?: string;
+	readonly priority?: number;
 	readonly protocol: "Ah" | "any" | "Esp" | "Icmp" | "Tcp" | "Udp";
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly sourcePortRanges?: string[] | undefined;
-	readonly sources?: AddressPrefixItem[] | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly sourcePortRanges?: string[];
+	readonly sources?: AddressPrefixItem[];
 }
 export interface ConfigurationGroup {
-	readonly id?: string | undefined;
-	readonly properties?: NetworkGroupProperties | undefined;
+	readonly id?: string;
+	readonly properties?: NetworkGroupProperties;
 }
 export interface ConnectivityConfigurationProperties {
-	readonly appliesToGroups?: ConnectivityGroupItem[] | undefined;
+	readonly appliesToGroups?: ConnectivityGroupItem[];
 	readonly connectivityTopology: "HubAndSpoke" | "Mesh";
-	readonly deleteExistingPeering?: ("False" | "True") | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly hubs?: Hub[] | undefined;
-	readonly isGlobal?: ("False" | "True") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly deleteExistingPeering?: "False" | "True";
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly hubs?: Hub[];
+	readonly isGlobal?: "False" | "True";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface ConnectivityGroupItem {
-	readonly groupConnectivity?: ("DirectlyConnected" | "None") | undefined;
-	readonly isGlobal?: ("False" | "True") | undefined;
-	readonly networkGroupId?: string | undefined;
-	readonly useHubGateway?: ("False" | "True") | undefined;
+	readonly groupConnectivity?: "DirectlyConnected" | "None";
+	readonly isGlobal?: "False" | "True";
+	readonly networkGroupId?: string;
+	readonly useHubGateway?: "False" | "True";
 }
 export interface DefaultAdminPropertiesFormat {
-	readonly access?: ("Allow" | "AlwaysAllow" | "Deny") | undefined;
-	readonly description?: string | undefined;
-	readonly destinationPortRanges?: string[] | undefined;
-	readonly destinations?: AddressPrefixItem[] | undefined;
-	readonly direction?: ("Inbound" | "Outbound") | undefined;
-	readonly displayName?: string | undefined;
-	readonly flag?: string | undefined;
-	readonly priority?: number | undefined;
-	readonly protocol?: ("Ah" | "any" | "Esp" | "Icmp" | "Tcp" | "Udp") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly sourcePortRanges?: string[] | undefined;
-	readonly sources?: AddressPrefixItem[] | undefined;
+	readonly access?: "Allow" | "AlwaysAllow" | "Deny";
+	readonly description?: string;
+	readonly destinationPortRanges?: string[];
+	readonly destinations?: AddressPrefixItem[];
+	readonly direction?: "Inbound" | "Outbound";
+	readonly displayName?: string;
+	readonly flag?: string;
+	readonly priority?: number;
+	readonly protocol?: "Ah" | "any" | "Esp" | "Icmp" | "Tcp" | "Udp";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly sourcePortRanges?: string[];
+	readonly sources?: AddressPrefixItem[];
 }
 export interface DefaultUserRulePropertiesFormat {
-	readonly description?: string | undefined;
-	readonly destinationPortRanges?: string[] | undefined;
-	readonly destinations?: AddressPrefixItem[] | undefined;
-	readonly direction?: ("Inbound" | "Outbound") | undefined;
-	readonly displayName?: string | undefined;
-	readonly flag?: string | undefined;
-	readonly protocol?: ("Ah" | "any" | "Esp" | "Icmp" | "Tcp" | "Udp") | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly sourcePortRanges?: string[] | undefined;
-	readonly sources?: AddressPrefixItem[] | undefined;
+	readonly description?: string;
+	readonly destinationPortRanges?: string[];
+	readonly destinations?: AddressPrefixItem[];
+	readonly direction?: "Inbound" | "Outbound";
+	readonly displayName?: string;
+	readonly flag?: string;
+	readonly protocol?: "Ah" | "any" | "Esp" | "Icmp" | "Tcp" | "Udp";
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly sourcePortRanges?: string[];
+	readonly sources?: AddressPrefixItem[];
 }
 export interface EffectiveBaseSecurityAdminRule {
-	readonly configurationDescription?: string | undefined;
-	readonly configurationDisplayName?: string | undefined;
-	readonly id?: string | undefined;
-	readonly ruleCollectionAppliesToGroups?: NetworkManagerSecurityGroupItem[] | undefined;
-	readonly ruleCollectionDescription?: string | undefined;
-	readonly ruleCollectionDisplayName?: string | undefined;
-	readonly ruleGroups?: ConfigurationGroup[] | undefined;
+	readonly configurationDescription?: string;
+	readonly configurationDisplayName?: string;
+	readonly id?: string;
+	readonly ruleCollectionAppliesToGroups?: NetworkManagerSecurityGroupItem[];
+	readonly ruleCollectionDescription?: string;
+	readonly ruleCollectionDisplayName?: string;
+	readonly ruleGroups?: ConfigurationGroup[];
 }
 export interface EffectiveConnectivityConfiguration {
-	readonly configurationGroups?: ConfigurationGroup[] | undefined;
-	readonly id?: string | undefined;
-	readonly properties?: ConnectivityConfigurationProperties | undefined;
+	readonly configurationGroups?: ConfigurationGroup[];
+	readonly id?: string;
+	readonly properties?: ConnectivityConfigurationProperties;
 }
 export interface EffectiveVirtualNetwork {
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly membershipType?: ("Dynamic" | "Static") | undefined;
+	readonly id?: string;
+	readonly location?: string;
+	readonly membershipType?: "Dynamic" | "Static";
 }
 export interface EffectiveVirtualNetworksListResult {
-	readonly skipToken?: string | undefined;
-	readonly value?: EffectiveVirtualNetwork[] | undefined;
+	readonly skipToken?: string;
+	readonly value?: EffectiveVirtualNetwork[];
 }
 export interface EffectiveVirtualNetworksParameter {
-	readonly conditionalMembers?: string | undefined;
-	readonly skipToken?: string | undefined;
+	readonly conditionalMembers?: string;
+	readonly skipToken?: string;
 }
 export interface GroupMembersItem {
-	readonly resourceId?: string | undefined;
+	readonly resourceId?: string;
 }
 export interface Hub {
-	readonly resourceId?: string | undefined;
-	readonly resourceType?: string | undefined;
+	readonly resourceId?: string;
+	readonly resourceType?: string;
 }
 export interface NetworkGroupProperties {
-	readonly conditionalMembership?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly groupMembers?: GroupMembersItem[] | undefined;
-	readonly memberType?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly conditionalMembership?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly groupMembers?: GroupMembersItem[];
+	readonly memberType?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface NetworkManagerDeploymentStatus {
-	readonly commitTime?: string | undefined;
-	readonly configurationIds?: string[] | undefined;
-	readonly deploymentStatus?: ("Deployed" | "Deploying" | "Failed" | "NotStarted") | undefined;
-	readonly deploymentType?: ("Connectivity" | "SecurityAdmin" | "SecurityUser") | undefined;
-	readonly errorMessage?: string | undefined;
-	readonly region?: string | undefined;
+	readonly commitTime?: string;
+	readonly configurationIds?: string[];
+	readonly deploymentStatus?: "Deployed" | "Deploying" | "Failed" | "NotStarted";
+	readonly deploymentType?: "Connectivity" | "SecurityAdmin" | "SecurityUser";
+	readonly errorMessage?: string;
+	readonly region?: string;
 }
 export interface NetworkManagerDeploymentStatusListResult {
-	readonly skipToken?: string | undefined;
-	readonly value?: NetworkManagerDeploymentStatus[] | undefined;
+	readonly skipToken?: string;
+	readonly value?: NetworkManagerDeploymentStatus[];
 }
 export interface NetworkManagerDeploymentStatusParameter {
-	readonly deploymentTypes?: ("Connectivity" | "SecurityAdmin" | "SecurityUser"[]) | undefined;
-	readonly regions?: string[] | undefined;
-	readonly skipToken?: string | undefined;
+	readonly deploymentTypes?: "Connectivity" | "SecurityAdmin" | "SecurityUser"[];
+	readonly regions?: string[];
+	readonly skipToken?: string;
 }
 export interface NetworkManagerEffectiveConnectivityConfigurationListResult {
-	readonly skipToken?: string | undefined;
-	readonly value?: EffectiveConnectivityConfiguration[] | undefined;
+	readonly skipToken?: string;
+	readonly value?: EffectiveConnectivityConfiguration[];
 }
 export interface NetworkManagerEffectiveSecurityAdminRulesListResult {
-	readonly skipToken?: string | undefined;
-	readonly value?: EffectiveBaseSecurityAdminRule[] | undefined;
+	readonly skipToken?: string;
+	readonly value?: EffectiveBaseSecurityAdminRule[];
 }
 export interface NetworkManagerProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly networkManagerScopeAccesses?: ("Connectivity" | "SecurityAdmin" | "SecurityUser"[]) | undefined;
-	readonly networkManagerScopes?: NetworkManagerPropertiesNetworkManagerScopes | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly networkManagerScopeAccesses?: "Connectivity" | "SecurityAdmin" | "SecurityUser"[];
+	readonly networkManagerScopes?: NetworkManagerPropertiesNetworkManagerScopes;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface NetworkManagerPropertiesNetworkManagerScopes {
-	readonly managementGroups?: string[] | undefined;
-	readonly subscriptions?: string[] | undefined;
+	readonly managementGroups?: string[];
+	readonly subscriptions?: string[];
 }
 export interface NetworkManagerSecurityGroupItem {
-	readonly networkGroupId?: string | undefined;
+	readonly networkGroupId?: string;
 }
 export interface NetworkSecurityPerimeterProperties {
-	readonly perimeterGuid?: string | undefined;
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly perimeterGuid?: string;
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface NspAccessRuleProperties {
-	readonly addressPrefixes?: string[] | undefined;
-	readonly direction?: ("Inbound" | "Outbound") | undefined;
-	readonly fullyQualifiedDomainNames?: string[] | undefined;
-	readonly networkSecurityPerimeters?: PerimeterBasedAccessRule[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly subscriptions?: SubscriptionId[] | undefined;
+	readonly addressPrefixes?: string[];
+	readonly direction?: "Inbound" | "Outbound";
+	readonly fullyQualifiedDomainNames?: string[];
+	readonly networkSecurityPerimeters?: PerimeterBasedAccessRule[];
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly subscriptions?: SubscriptionId[];
 }
 export interface NspAssociationProperties {
-	readonly accessMode?: ("Audit" | "Enforced" | "Learning") | undefined;
-	readonly hasProvisioningIssues?: string | undefined;
-	readonly privateLinkResource?: SubResource | undefined;
-	readonly profile?: SubResource | undefined;
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly accessMode?: "Audit" | "Enforced" | "Learning";
+	readonly hasProvisioningIssues?: string;
+	readonly privateLinkResource?: SubResource;
+	readonly profile?: SubResource;
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface NspLinkProperties {
-	readonly autoApprovedRemotePerimeterResourceId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly localInboundProfiles?: string[] | undefined;
-	readonly localOutboundProfiles?: string[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly remoteInboundProfiles?: string[] | undefined;
-	readonly remoteOutboundProfiles?: string[] | undefined;
-	readonly remotePerimeterGuid?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly autoApprovedRemotePerimeterResourceId?: string;
+	readonly description?: string;
+	readonly localInboundProfiles?: string[];
+	readonly localOutboundProfiles?: string[];
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly remoteInboundProfiles?: string[];
+	readonly remoteOutboundProfiles?: string[];
+	readonly remotePerimeterGuid?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface NspLinkReferenceProperties {
-	readonly description?: string | undefined;
-	readonly localInboundProfiles?: string[] | undefined;
-	readonly localOutboundProfiles?: string[] | undefined;
-	readonly provisioningState?: ("Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly remoteInboundProfiles?: string[] | undefined;
-	readonly remoteOutboundProfiles?: string[] | undefined;
-	readonly remotePerimeterGuid?: string | undefined;
-	readonly remotePerimeterResourceId?: string | undefined;
-	readonly status?: ("Approved" | "Disconnected" | "Pending" | "Rejected") | undefined;
+	readonly description?: string;
+	readonly localInboundProfiles?: string[];
+	readonly localOutboundProfiles?: string[];
+	readonly provisioningState?: "Accepted" | "Creating" | "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly remoteInboundProfiles?: string[];
+	readonly remoteOutboundProfiles?: string[];
+	readonly remotePerimeterGuid?: string;
+	readonly remotePerimeterResourceId?: string;
+	readonly status?: "Approved" | "Disconnected" | "Pending" | "Rejected";
 }
 export interface NspProfileProperties {
-	readonly accessRulesVersion?: string | undefined;
-	readonly diagnosticSettingsVersion?: string | undefined;
+	readonly accessRulesVersion?: string;
+	readonly diagnosticSettingsVersion?: string;
 }
 export interface PerimeterBasedAccessRule {
-	readonly id?: string | undefined;
-	readonly location?: string | undefined;
-	readonly perimeterGuid?: string | undefined;
+	readonly id?: string;
+	readonly location?: string;
+	readonly perimeterGuid?: string;
 }
 export interface QueryRequestOptions {
-	readonly skipToken?: string | undefined;
+	readonly skipToken?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RuleCollectionPropertiesFormat {
-	readonly appliesToGroups?: NetworkManagerSecurityGroupItem[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly appliesToGroups?: NetworkManagerSecurityGroupItem[];
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface SecurityConfigurationPropertiesFormat {
-	readonly deleteExistingNSGs?: ("False" | "True") | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly securityType?: ("AdminPolicy" | "UserPolicy") | undefined;
+	readonly deleteExistingNSGs?: "False" | "True";
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly securityType?: "AdminPolicy" | "UserPolicy";
 }
 export interface SubResource {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface SubscriptionId {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface UserRulePropertiesFormat {
-	readonly description?: string | undefined;
-	readonly destinationPortRanges?: string[] | undefined;
-	readonly destinations?: AddressPrefixItem[] | undefined;
+	readonly description?: string;
+	readonly destinationPortRanges?: string[];
+	readonly destinations?: AddressPrefixItem[];
 	readonly direction: "Inbound" | "Outbound";
-	readonly displayName?: string | undefined;
+	readonly displayName?: string;
 	readonly protocol: "Ah" | "any" | "Esp" | "Icmp" | "Tcp" | "Udp";
-	readonly provisioningState?: ("Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
-	readonly sourcePortRanges?: string[] | undefined;
-	readonly sources?: AddressPrefixItem[] | undefined;
+	readonly provisioningState?: "Deleting" | "Failed" | "Succeeded" | "Updating";
+	readonly sourcePortRanges?: string[];
+	readonly sources?: AddressPrefixItem[];
 }
 export type networkManagers_securityAdminConfigurations_ruleCollections_rules =
 	| networkManagers_securityAdminConfigurations_ruleCollections_rules_Custom

@@ -10,102 +10,101 @@ export class ProjectsAlertPolicies
 }
 export interface ProjectsAlertPoliciesComponentOutputs {}
 export interface ProjectsAlertPoliciesComponentInputs {
-	readonly alertStrategy?: AlertStrategy | undefined;
-	readonly combiner?: string | undefined;
-	readonly conditions?: Condition[] | undefined;
-	readonly creationRecord?: MutationRecord | undefined;
-	readonly displayName?: string | undefined;
-	readonly documentation?: Documentation | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly mutationRecord?: MutationRecord | undefined;
+	readonly alertStrategy?: AlertStrategy;
+	readonly combiner?: string;
+	readonly conditions?: Condition[];
+	readonly creationRecord?: MutationRecord;
+	readonly displayName?: string;
+	readonly documentation?: Documentation;
+	readonly enabled?: boolean;
+	readonly mutationRecord?: MutationRecord;
 	readonly name: string;
-	readonly notificationChannels?: string[] | undefined;
-	readonly userLabels?: { [P in string]: string } | undefined;
-	readonly validity?: Status | undefined;
-	readonly type: string;
+	readonly notificationChannels?: string[];
+	readonly userLabels?: { [P in string]: string };
+	readonly validity?: Status;
 }
 export interface Aggregation {
-	readonly alignmentPeriod?: string | undefined;
-	readonly crossSeriesReducer?: string | undefined;
-	readonly groupByFields?: string[] | undefined;
-	readonly perSeriesAligner?: string | undefined;
+	readonly alignmentPeriod?: string;
+	readonly crossSeriesReducer?: string;
+	readonly groupByFields?: string[];
+	readonly perSeriesAligner?: string;
 }
 export interface AlertPolicy {
-	readonly alertStrategy?: AlertStrategy | undefined;
-	readonly combiner?: string | undefined;
-	readonly conditions?: Condition[] | undefined;
-	readonly creationRecord?: MutationRecord | undefined;
-	readonly displayName?: string | undefined;
-	readonly documentation?: Documentation | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly mutationRecord?: MutationRecord | undefined;
+	readonly alertStrategy?: AlertStrategy;
+	readonly combiner?: string;
+	readonly conditions?: Condition[];
+	readonly creationRecord?: MutationRecord;
+	readonly displayName?: string;
+	readonly documentation?: Documentation;
+	readonly enabled?: boolean;
+	readonly mutationRecord?: MutationRecord;
 	readonly name: string;
-	readonly notificationChannels?: string[] | undefined;
-	readonly userLabels?: { [P in string]: string } | undefined;
-	readonly validity?: Status | undefined;
+	readonly notificationChannels?: string[];
+	readonly userLabels?: { [P in string]: string };
+	readonly validity?: Status;
 }
 export interface AlertStrategy {
-	readonly autoClose?: string | undefined;
+	readonly autoClose?: string;
 	readonly notificationRateLimit: NotificationRateLimit;
 }
 export interface Condition {
-	readonly conditionAbsent?: MetricAbsence | undefined;
-	readonly conditionMatchedLog?: LogMatch | undefined;
-	readonly conditionMonitoringQueryLanguage?: MonitoringQueryLanguageCondition | undefined;
-	readonly conditionThreshold?: MetricThreshold | undefined;
-	readonly displayName?: string | undefined;
+	readonly conditionAbsent?: MetricAbsence;
+	readonly conditionMatchedLog?: LogMatch;
+	readonly conditionMonitoringQueryLanguage?: MonitoringQueryLanguageCondition;
+	readonly conditionThreshold?: MetricThreshold;
+	readonly displayName?: string;
 	readonly name: string;
 }
 export interface Documentation {
-	readonly content?: string | undefined;
-	readonly mimeType?: string | undefined;
+	readonly content?: string;
+	readonly mimeType?: string;
 }
 export interface ForecastOptions {
 	readonly forecastHorizon: string;
 }
 export interface LogMatch {
 	readonly filter: string;
-	readonly labelExtractors?: { [P in string]: string } | undefined;
+	readonly labelExtractors?: { [P in string]: string };
 }
 export interface MetricAbsence {
-	readonly aggregations?: Aggregation[] | undefined;
-	readonly duration?: string | undefined;
+	readonly aggregations?: Aggregation[];
+	readonly duration?: string;
 	readonly filter: string;
-	readonly trigger?: Trigger | undefined;
+	readonly trigger?: Trigger;
 }
 export interface MetricThreshold {
-	readonly aggregations?: Aggregation[] | undefined;
-	readonly comparison?: string | undefined;
-	readonly denominatorAggregations?: Aggregation[] | undefined;
-	readonly denominatorFilter?: string | undefined;
-	readonly duration?: string | undefined;
-	readonly evaluationMissingData?: string | undefined;
+	readonly aggregations?: Aggregation[];
+	readonly comparison?: string;
+	readonly denominatorAggregations?: Aggregation[];
+	readonly denominatorFilter?: string;
+	readonly duration?: string;
+	readonly evaluationMissingData?: string;
 	readonly filter: string;
-	readonly forecastOptions?: ForecastOptions | undefined;
-	readonly thresholdValue?: number | undefined;
-	readonly trigger?: Trigger | undefined;
+	readonly forecastOptions?: ForecastOptions;
+	readonly thresholdValue?: number;
+	readonly trigger?: Trigger;
 }
 export interface MonitoringQueryLanguageCondition {
-	readonly duration?: string | undefined;
-	readonly evaluationMissingData?: string | undefined;
-	readonly query?: string | undefined;
-	readonly trigger?: Trigger | undefined;
+	readonly duration?: string;
+	readonly evaluationMissingData?: string;
+	readonly query?: string;
+	readonly trigger?: Trigger;
 }
 export interface MutationRecord {
-	readonly mutatedBy?: string | undefined;
-	readonly mutateTime?: string | undefined;
+	readonly mutatedBy?: string;
+	readonly mutateTime?: string;
 }
 export interface NotificationRateLimit {
-	readonly period?: string | undefined;
+	readonly period?: string;
 }
 export interface Status {
-	readonly code?: number | undefined;
-	readonly details?: Array<{ [P in string]: any }> | undefined;
-	readonly message?: string | undefined;
+	readonly code?: number;
+	readonly details?: Array<{ [P in string]: any }>;
+	readonly message?: string;
 }
 export interface Trigger {
-	readonly count?: number | undefined;
-	readonly percent?: number | undefined;
+	readonly count?: number;
+	readonly percent?: number;
 }
 export default {
 	ProjectsAlertPolicies: ProjectsAlertPolicies,

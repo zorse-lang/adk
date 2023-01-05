@@ -4,33 +4,32 @@ export class Waiter extends GdmResource<WaiterComponentInputs> implements Waiter
 	constructor(entity: ADKEntity, options: WaiterComponentInputs) {
 		super(entity, options.name, "runtimeconfig.v1beta1.waiter", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly done?: boolean | undefined;
-	public readonly error?: Status | undefined;
+	public readonly createTime?: string;
+	public readonly done?: boolean;
+	public readonly error?: Status;
 }
 export interface WaiterComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly done?: boolean | undefined;
-	readonly error?: Status | undefined;
+	readonly createTime?: string;
+	readonly done?: boolean;
+	readonly error?: Status;
 }
 export interface WaiterComponentInputs {
-	readonly failure?: EndCondition | undefined;
+	readonly failure?: EndCondition;
 	readonly name: string;
-	readonly success?: EndCondition | undefined;
-	readonly timeout?: string | undefined;
-	readonly type: string;
+	readonly success?: EndCondition;
+	readonly timeout?: string;
 }
 export interface Cardinality {
-	readonly number?: number | undefined;
-	readonly path?: string | undefined;
+	readonly number?: number;
+	readonly path?: string;
 }
 export interface EndCondition {
-	readonly cardinality?: Cardinality | undefined;
+	readonly cardinality?: Cardinality;
 }
 export interface Status {
-	readonly code?: number | undefined;
-	readonly details?: Array<{ [P in string]: any }> | undefined;
-	readonly message?: string | undefined;
+	readonly code?: number;
+	readonly details?: Array<{ [P in string]: any }>;
+	readonly message?: string;
 }
 export default {
 	Waiter: Waiter,

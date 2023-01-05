@@ -17,21 +17,21 @@ export interface scheduledQueryRulesComponentOutputs {
 	readonly type: "Microsoft.Insights/scheduledQueryRules";
 }
 export interface scheduledQueryRulesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: string;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: LogSearchRule;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export interface Action {}
 export interface AzNsActionGroup {
-	readonly actionGroup?: string[] | undefined;
-	readonly customWebhookPayload?: string | undefined;
-	readonly emailSubject?: string | undefined;
+	readonly actionGroup?: string[];
+	readonly customWebhookPayload?: string;
+	readonly emailSubject?: string;
 }
 export interface Criteria {
-	readonly dimensions?: Dimension[] | undefined;
+	readonly dimensions?: Dimension[];
 	readonly metricName: string;
 }
 export interface Dimension {
@@ -40,41 +40,39 @@ export interface Dimension {
 	readonly values: string[];
 }
 export interface LogMetricTrigger {
-	readonly metricColumn?: string | undefined;
-	readonly metricTriggerType?: ("Consecutive" | "Total") | undefined;
-	readonly threshold?: number | undefined;
-	readonly thresholdOperator?:
-		| ("Equal" | "GreaterThan" | "GreaterThanOrEqual" | "LessThan" | "LessThanOrEqual")
-		| undefined;
+	readonly metricColumn?: string;
+	readonly metricTriggerType?: "Consecutive" | "Total";
+	readonly threshold?: number;
+	readonly thresholdOperator?: "Equal" | "GreaterThan" | "GreaterThanOrEqual" | "LessThan" | "LessThanOrEqual";
 }
 export interface LogSearchRule {
 	readonly action: Action;
-	readonly autoMitigate?: boolean | undefined;
-	readonly createdWithApiVersion?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly enabled?: ("false" | "true") | undefined;
-	readonly isLegacyLogAnalyticsRule?: boolean | undefined;
-	readonly lastUpdatedTime?: string | undefined;
-	readonly provisioningState?: ("Canceled" | "Deploying" | "Failed" | "Succeeded") | undefined;
-	readonly schedule?: Schedule | undefined;
+	readonly autoMitigate?: boolean;
+	readonly createdWithApiVersion?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly enabled?: "false" | "true";
+	readonly isLegacyLogAnalyticsRule?: boolean;
+	readonly lastUpdatedTime?: string;
+	readonly provisioningState?: "Canceled" | "Deploying" | "Failed" | "Succeeded";
+	readonly schedule?: Schedule;
 	readonly source: Source;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Schedule {
 	readonly frequencyInMinutes: number;
 	readonly timeWindowInMinutes: number;
 }
 export interface Source {
-	readonly authorizedResources?: string[] | undefined;
+	readonly authorizedResources?: string[];
 	readonly dataSourceId: string;
-	readonly query?: string | undefined;
-	readonly queryType?: "ResultCount" | undefined;
+	readonly query?: string;
+	readonly queryType?: "ResultCount";
 }
 export interface TriggerCondition {
-	readonly metricTrigger?: LogMetricTrigger | undefined;
+	readonly metricTrigger?: LogMetricTrigger;
 	readonly threshold: number;
 	readonly thresholdOperator: "Equal" | "GreaterThan" | "GreaterThanOrEqual" | "LessThan" | "LessThanOrEqual";
 }

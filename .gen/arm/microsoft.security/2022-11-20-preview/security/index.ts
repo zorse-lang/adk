@@ -15,14 +15,14 @@ export interface apiCollectionsComponentOutputs {
 }
 export interface apiCollectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: ApiCollectionProperties | undefined;
+	readonly properties?: ApiCollectionProperties;
 }
 export interface ApiCollectionProperties {
-	readonly additionalData?: ApiCollectionPropertiesAdditionalData | undefined;
-	readonly displayName?: string | undefined;
+	readonly additionalData?: ApiCollectionPropertiesAdditionalData;
+	readonly displayName?: string;
 }
 export interface ApiCollectionPropertiesAdditionalData {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	apiCollections: apiCollections,

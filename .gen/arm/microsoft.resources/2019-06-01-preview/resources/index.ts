@@ -16,9 +16,9 @@ export interface templateSpecsComponentOutputs {
 export interface templateSpecsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: TemplateSpecProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TemplateSpecTags | undefined;
+	readonly properties?: TemplateSpecProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TemplateSpecTags;
 }
 export class templateSpecs_versions
 	extends ArmResource<templateSpecs_versionsComponentInputs>
@@ -40,43 +40,43 @@ export interface templateSpecs_versionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: TemplateSpecVersionProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TemplateSpecVersionTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TemplateSpecVersionTags;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TemplateSpecArtifact {
 	readonly path: string;
 }
 export interface TemplateSpecProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly versions?: TemplateSpecPropertiesVersions | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly versions?: TemplateSpecPropertiesVersions;
 }
 export interface TemplateSpecPropertiesVersions {
-	readonly "[ key: string ]"?: TemplateSpecVersionInfo | undefined;
+	readonly [key: string]: TemplateSpecVersionInfo;
 }
 export interface TemplateSpecTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TemplateSpecVersionInfo {
-	readonly description?: string | undefined;
-	readonly timeCreated?: string | undefined;
-	readonly timeModified?: string | undefined;
+	readonly description?: string;
+	readonly timeCreated?: string;
+	readonly timeModified?: string;
 }
 export interface TemplateSpecVersionProperties {
-	readonly artifacts?: TemplateSpecArtifact[] | undefined;
-	readonly description?: string | undefined;
-	readonly template?: any | undefined;
+	readonly artifacts?: TemplateSpecArtifact[];
+	readonly description?: string;
+	readonly template?: any;
 }
 export interface TemplateSpecVersionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	templateSpecs: templateSpecs,

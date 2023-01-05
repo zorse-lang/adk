@@ -18,28 +18,28 @@ export interface billingPeriods_Microsoft_ConsumptionComponentOutputs {
 }
 export interface billingPeriods_Microsoft_ConsumptionComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagementGroupAggregatedCostProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ManagementGroupAggregatedCostProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ManagementGroupAggregatedCostProperties {
-	readonly azureCharges?: number | undefined;
-	readonly billingPeriodId?: string | undefined;
-	readonly chargesBilledSeparately?: number | undefined;
-	readonly children?: ManagementGroupAggregatedCostResult[] | undefined;
-	readonly currency?: string | undefined;
-	readonly marketplaceCharges?: number | undefined;
-	readonly usageEnd?: string | undefined;
-	readonly usageStart?: string | undefined;
+	readonly azureCharges?: number;
+	readonly billingPeriodId?: string;
+	readonly chargesBilledSeparately?: number;
+	readonly children?: ManagementGroupAggregatedCostResult[];
+	readonly currency?: string;
+	readonly marketplaceCharges?: number;
+	readonly usageEnd?: string;
+	readonly usageStart?: string;
 }
 export interface ManagementGroupAggregatedCostResult {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: ManagementGroupAggregatedCostProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: ManagementGroupAggregatedCostProperties;
+	readonly tags?: ResourceTags;
+	readonly type?: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	"billingPeriods/Microsoft.Consumption": billingPeriods_Microsoft_Consumption,

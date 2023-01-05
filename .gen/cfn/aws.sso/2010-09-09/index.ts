@@ -26,7 +26,7 @@ export class InstanceAccessControlAttributeConfiguration
 export interface InstanceAccessControlAttributeConfigurationComponentOutputs {}
 export interface InstanceAccessControlAttributeConfigurationComponentInputs {
 	readonly InstanceArn: string;
-	readonly AccessControlAttributes?: (AccessControlAttribute[] | undefined) | undefined;
+	readonly AccessControlAttributes?: AccessControlAttribute[] | undefined;
 	readonly LogicalId: string;
 }
 export class PermissionSet extends CfnResource<PermissionSetComponentInputs> implements PermissionSetComponentOutputs {
@@ -41,14 +41,14 @@ export interface PermissionSetComponentOutputs {
 export interface PermissionSetComponentInputs {
 	readonly InstanceArn: string;
 	readonly Name: string;
-	readonly CustomerManagedPolicyReferences?: (CustomerManagedPolicyReference[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InlinePolicy?: (any | undefined) | undefined;
-	readonly ManagedPolicies?: (string[] | undefined) | undefined;
-	readonly PermissionsBoundary?: (PermissionsBoundary | undefined) | undefined;
-	readonly RelayStateType?: (string | undefined) | undefined;
-	readonly SessionDuration?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CustomerManagedPolicyReferences?: CustomerManagedPolicyReference[] | undefined;
+	readonly Description?: string | undefined;
+	readonly InlinePolicy?: any | undefined;
+	readonly ManagedPolicies?: string[] | undefined;
+	readonly PermissionsBoundary?: PermissionsBoundary | undefined;
+	readonly RelayStateType?: string | undefined;
+	readonly SessionDuration?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface AccessControlAttribute {
@@ -60,11 +60,11 @@ export interface AccessControlAttributeValue {
 }
 export interface CustomerManagedPolicyReference {
 	readonly Name: string;
-	readonly Path?: (string | undefined) | undefined;
+	readonly Path?: string | undefined;
 }
 export interface PermissionsBoundary {
-	readonly CustomerManagedPolicyReference?: (CustomerManagedPolicyReference | undefined) | undefined;
-	readonly ManagedPolicyArn?: (string | undefined) | undefined;
+	readonly CustomerManagedPolicyReference?: CustomerManagedPolicyReference | undefined;
+	readonly ManagedPolicyArn?: string | undefined;
 }
 export default {
 	Assignment: Assignment,

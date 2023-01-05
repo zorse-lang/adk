@@ -7,47 +7,46 @@ export class ProjectsInstances
 	constructor(entity: ADKEntity, options: ProjectsInstancesComponentInputs) {
 		super(entity, options.name, "bigtableadmin.v2.ProjectsInstances", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly satisfiesPzs?: boolean | undefined;
-	public readonly state?: string | undefined;
+	public readonly createTime?: string;
+	public readonly satisfiesPzs?: boolean;
+	public readonly state?: string;
 }
 export interface ProjectsInstancesComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly state?: string | undefined;
+	readonly createTime?: string;
+	readonly satisfiesPzs?: boolean;
+	readonly state?: string;
 }
 export interface ProjectsInstancesComponentInputs {
 	readonly clusters: { [P in string]: Cluster };
 	readonly displayName: string;
 	readonly instance: Instance;
 	readonly instanceId: string;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
 	readonly parent: string;
-	readonly type: string;
 }
 export interface AutoscalingLimits {
 	readonly maxServeNodes: number;
 	readonly minServeNodes: number;
 }
 export interface AutoscalingTargets {
-	readonly cpuUtilizationPercent?: number | undefined;
-	readonly storageUtilizationGibPerNode?: number | undefined;
+	readonly cpuUtilizationPercent?: number;
+	readonly storageUtilizationGibPerNode?: number;
 }
 export interface Cluster {
-	readonly clusterConfig?: ClusterConfig | undefined;
-	readonly defaultStorageType?: string | undefined;
-	readonly encryptionConfig?: EncryptionConfig | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly serveNodes?: number | undefined;
+	readonly clusterConfig?: ClusterConfig;
+	readonly defaultStorageType?: string;
+	readonly encryptionConfig?: EncryptionConfig;
+	readonly location?: string;
+	readonly name?: string;
+	readonly serveNodes?: number;
 }
 export interface ClusterAutoscalingConfig {
 	readonly autoscalingLimits: AutoscalingLimits;
 	readonly autoscalingTargets: AutoscalingTargets;
 }
 export interface ClusterConfig {
-	readonly clusterAutoscalingConfig?: ClusterAutoscalingConfig | undefined;
+	readonly clusterAutoscalingConfig?: ClusterAutoscalingConfig;
 }
 export interface CreateInstanceRequest {
 	readonly clusters: { [P in string]: Cluster };
@@ -56,16 +55,16 @@ export interface CreateInstanceRequest {
 	readonly parent: string;
 }
 export interface EncryptionConfig {
-	readonly kmsKeyName?: string | undefined;
+	readonly kmsKeyName?: string;
 }
 export interface Instance {
-	readonly createTime?: string | undefined;
+	readonly createTime?: string;
 	readonly displayName: string;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly satisfiesPzs?: boolean | undefined;
-	readonly state?: string | undefined;
-	readonly type?: string | undefined;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly satisfiesPzs?: boolean;
+	readonly state?: string;
+	readonly type?: string;
 }
 export default {
 	ProjectsInstances: ProjectsInstances,

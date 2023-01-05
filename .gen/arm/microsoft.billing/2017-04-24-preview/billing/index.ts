@@ -15,7 +15,7 @@ export interface billingPeriodsComponentOutputs {
 }
 export interface billingPeriodsComponentInputs {
 	readonly name: string;
-	readonly properties?: BillingPeriodProperties | undefined;
+	readonly properties?: BillingPeriodProperties;
 }
 export class invoices extends ArmResource<invoicesComponentInputs> implements invoicesComponentOutputs {
 	constructor(entity: ADKEntity, options: invoicesComponentInputs) {
@@ -32,22 +32,22 @@ export interface invoicesComponentOutputs {
 }
 export interface invoicesComponentInputs {
 	readonly name: string;
-	readonly properties?: InvoiceProperties | undefined;
+	readonly properties?: InvoiceProperties;
 }
 export interface BillingPeriodProperties {
-	readonly billingPeriodEndDate?: string | undefined;
-	readonly billingPeriodStartDate?: string | undefined;
-	readonly invoiceIds?: string[] | undefined;
+	readonly billingPeriodEndDate?: string;
+	readonly billingPeriodStartDate?: string;
+	readonly invoiceIds?: string[];
 }
 export interface DownloadUrl {
-	readonly expiryTime?: string | undefined;
-	readonly url?: string | undefined;
+	readonly expiryTime?: string;
+	readonly url?: string;
 }
 export interface InvoiceProperties {
-	readonly billingPeriodIds?: string[] | undefined;
-	readonly downloadUrl?: DownloadUrl | undefined;
-	readonly invoicePeriodEndDate?: string | undefined;
-	readonly invoicePeriodStartDate?: string | undefined;
+	readonly billingPeriodIds?: string[];
+	readonly downloadUrl?: DownloadUrl;
+	readonly invoicePeriodEndDate?: string;
+	readonly invoicePeriodStartDate?: string;
 }
 export default {
 	billingPeriods: billingPeriods,

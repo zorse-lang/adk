@@ -7,20 +7,19 @@ export class ProjectsGroups extends GdmResource<ProjectsGroupsComponentInputs> i
 }
 export interface ProjectsGroupsComponentOutputs {}
 export interface ProjectsGroupsComponentInputs {
-	readonly displayName?: string | undefined;
-	readonly filter?: string | undefined;
-	readonly isCluster?: boolean | undefined;
+	readonly displayName?: string;
+	readonly filter?: string;
+	readonly isCluster?: boolean;
 	readonly name: string;
-	readonly parentName?: string | undefined;
-	readonly validateOnly?: boolean | undefined;
-	readonly type: string;
+	readonly parentName?: string;
+	readonly validateOnly?: boolean;
 }
 export interface Group {
-	readonly displayName?: string | undefined;
-	readonly filter?: string | undefined;
-	readonly isCluster?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly parentName?: string | undefined;
+	readonly displayName?: string;
+	readonly filter?: string;
+	readonly isCluster?: boolean;
+	readonly name?: string;
+	readonly parentName?: string;
 }
 export default {
 	ProjectsGroups: ProjectsGroups,

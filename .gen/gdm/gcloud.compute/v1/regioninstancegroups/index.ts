@@ -7,53 +7,52 @@ export class RegionInstanceGroups
 	constructor(entity: ADKEntity, options: RegionInstanceGroupsComponentInputs) {
 		super(entity, options.name, "compute.v1.RegionInstanceGroups", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly fingerprint?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly network?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly size?: number | undefined;
-	public readonly subnetwork?: string | undefined;
-	public readonly zone?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly fingerprint?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly network?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
+	public readonly size?: number;
+	public readonly subnetwork?: string;
+	public readonly zone?: string;
 }
 export interface RegionInstanceGroupsComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly network?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly size?: number | undefined;
-	readonly subnetwork?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly network?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly size?: number;
+	readonly subnetwork?: string;
+	readonly zone?: string;
 }
 export interface RegionInstanceGroupsComponentInputs {
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly name: string;
-	readonly namedPorts?: NamedPort[] | undefined;
-	readonly type: string;
+	readonly namedPorts?: NamedPort[];
 }
 export interface InstanceGroup {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly fingerprint?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly namedPorts?: NamedPort[] | undefined;
-	readonly network?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly size?: number | undefined;
-	readonly subnetwork?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly fingerprint?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly name?: string;
+	readonly namedPorts?: NamedPort[];
+	readonly network?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly size?: number;
+	readonly subnetwork?: string;
+	readonly zone?: string;
 }
 export interface NamedPort {
-	readonly name?: string | undefined;
-	readonly port?: number | undefined;
+	readonly name?: string;
+	readonly port?: number;
 }
 export default {
 	RegionInstanceGroups: RegionInstanceGroups,

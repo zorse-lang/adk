@@ -120,7 +120,7 @@ export interface blueprints_versionsComponentOutputs {
 }
 export interface blueprints_versionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PublishedBlueprintProperties | undefined;
+	readonly properties?: PublishedBlueprintProperties;
 }
 export class blueprints_versions_artifacts_policyAssignment
 	extends ArmResource<blueprints_versions_artifacts_policyAssignmentComponentInputs>
@@ -141,7 +141,7 @@ export interface blueprints_versions_artifacts_policyAssignmentComponentOutputs 
 export interface blueprints_versions_artifacts_policyAssignmentComponentInputs {
 	readonly name: string;
 	readonly kind: "policyAssignment";
-	readonly properties?: PolicyAssignmentArtifactProperties | undefined;
+	readonly properties?: PolicyAssignmentArtifactProperties;
 }
 export class blueprints_versions_artifacts_roleAssignment
 	extends ArmResource<blueprints_versions_artifacts_roleAssignmentComponentInputs>
@@ -162,7 +162,7 @@ export interface blueprints_versions_artifacts_roleAssignmentComponentOutputs {
 export interface blueprints_versions_artifacts_roleAssignmentComponentInputs {
 	readonly name: string;
 	readonly kind: "roleAssignment";
-	readonly properties?: RoleAssignmentArtifactProperties | undefined;
+	readonly properties?: RoleAssignmentArtifactProperties;
 }
 export class blueprints_versions_artifacts_template
 	extends ArmResource<blueprints_versions_artifacts_templateComponentInputs>
@@ -183,125 +183,122 @@ export interface blueprints_versions_artifacts_templateComponentOutputs {
 export interface blueprints_versions_artifacts_templateComponentInputs {
 	readonly name: string;
 	readonly kind: "template";
-	readonly properties?: TemplateArtifactProperties | undefined;
+	readonly properties?: TemplateArtifactProperties;
 }
 export interface AssignmentLockSettings {
-	readonly mode?: ("AllResources" | "None") | undefined;
+	readonly mode?: "AllResources" | "None";
 }
 export interface AssignmentProperties {
-	readonly blueprintId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly locks?: AssignmentLockSettings | undefined;
+	readonly blueprintId?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly locks?: AssignmentLockSettings;
 	readonly parameters: ParameterValueCollection;
 	readonly provisioningState?:
-		| (
-				| "canceled"
-				| "cancelling"
-				| "creating"
-				| "deleting"
-				| "deploying"
-				| "failed"
-				| "locking"
-				| "succeeded"
-				| "validating"
-				| "waiting"
-		  )
-		| undefined;
+		| "canceled"
+		| "cancelling"
+		| "creating"
+		| "deleting"
+		| "deploying"
+		| "failed"
+		| "locking"
+		| "succeeded"
+		| "validating"
+		| "waiting";
 	readonly resourceGroups: ResourceGroupValueCollection;
-	readonly status?: AssignmentStatus | undefined;
+	readonly status?: AssignmentStatus;
 }
 export interface AssignmentStatus {
-	readonly lastModified?: string | undefined;
-	readonly timeCreated?: string | undefined;
+	readonly lastModified?: string;
+	readonly timeCreated?: string;
 }
 export interface BlueprintProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly layout?: any | undefined;
-	readonly parameters?: ParameterDefinitionCollection | undefined;
-	readonly resourceGroups?: ResourceGroupDefinitionCollection | undefined;
-	readonly status?: BlueprintStatus | undefined;
-	readonly targetScope?: ("managementGroup" | "subscription") | undefined;
-	readonly versions?: any | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly layout?: any;
+	readonly parameters?: ParameterDefinitionCollection;
+	readonly resourceGroups?: ResourceGroupDefinitionCollection;
+	readonly status?: BlueprintStatus;
+	readonly targetScope?: "managementGroup" | "subscription";
+	readonly versions?: any;
 }
 export interface BlueprintStatus {
-	readonly lastModified?: string | undefined;
-	readonly timeCreated?: string | undefined;
+	readonly lastModified?: string;
+	readonly timeCreated?: string;
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "UserAssigned";
 }
 export interface ParameterDefinition {
-	readonly allowedValues?: any[] | undefined;
-	readonly defaultValue?: any | undefined;
-	readonly metadata?: ParameterDefinitionMetadata | undefined;
+	readonly allowedValues?: any[];
+	readonly defaultValue?: any;
+	readonly metadata?: ParameterDefinitionMetadata;
 	readonly type: "array" | "bool" | "int" | "object" | "secureObject" | "secureString" | "string";
 }
 export interface ParameterDefinitionCollection {
-	readonly "[ key: string ]"?: ParameterDefinition | undefined;
+	readonly [key: string]: ParameterDefinition;
 }
 export interface ParameterDefinitionMetadata {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly strongType?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly strongType?: string;
 }
 export interface ParameterValueBase {
-	readonly description?: string | undefined;
+	readonly description?: string;
 }
 export interface ParameterValueCollection {
-	readonly "[ key: string ]"?: ParameterValueBase | undefined;
+	readonly [key: string]: ParameterValueBase;
 }
 export interface PolicyAssignmentArtifactProperties {
-	readonly dependsOn?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly dependsOn?: string[];
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly parameters: ParameterValueCollection;
 	readonly policyDefinitionId: string;
-	readonly resourceGroup?: string | undefined;
+	readonly resourceGroup?: string;
 }
 export interface PublishedBlueprintProperties {
-	readonly blueprintName?: string | undefined;
-	readonly changeNotes?: string | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly parameters?: ParameterDefinitionCollection | undefined;
-	readonly resourceGroups?: ResourceGroupDefinitionCollection | undefined;
-	readonly status?: BlueprintStatus | undefined;
-	readonly targetScope?: ("managementGroup" | "subscription") | undefined;
+	readonly blueprintName?: string;
+	readonly changeNotes?: string;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly parameters?: ParameterDefinitionCollection;
+	readonly resourceGroups?: ResourceGroupDefinitionCollection;
+	readonly status?: BlueprintStatus;
+	readonly targetScope?: "managementGroup" | "subscription";
 }
 export interface ResourceGroupDefinition {
-	readonly dependsOn?: string[] | undefined;
-	readonly location?: string | undefined;
-	readonly metadata?: ParameterDefinitionMetadata | undefined;
-	readonly name?: string | undefined;
+	readonly dependsOn?: string[];
+	readonly location?: string;
+	readonly metadata?: ParameterDefinitionMetadata;
+	readonly name?: string;
 }
 export interface ResourceGroupDefinitionCollection {
-	readonly "[ key: string ]"?: ResourceGroupDefinition | undefined;
+	readonly [key: string]: ResourceGroupDefinition;
 }
 export interface ResourceGroupValue {
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
+	readonly location?: string;
+	readonly name?: string;
 }
 export interface ResourceGroupValueCollection {
-	readonly "[ key: string ]"?: ResourceGroupValue | undefined;
+	readonly [key: string]: ResourceGroupValue;
 }
 export interface RoleAssignmentArtifactProperties {
-	readonly dependsOn?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly dependsOn?: string[];
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly principalIds: any;
-	readonly resourceGroup?: string | undefined;
+	readonly resourceGroup?: string;
 	readonly roleDefinitionId: string;
 }
 export interface TemplateArtifactProperties {
-	readonly dependsOn?: string[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
+	readonly dependsOn?: string[];
+	readonly description?: string;
+	readonly displayName?: string;
 	readonly parameters: ParameterValueCollection;
-	readonly resourceGroup?: string | undefined;
+	readonly resourceGroup?: string;
 	readonly template: any;
 }
 export type blueprints_artifacts =

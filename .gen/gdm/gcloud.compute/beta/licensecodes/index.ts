@@ -4,43 +4,42 @@ export class LicenseCodes extends GdmResource<LicenseCodesComponentInputs> imple
 	constructor(entity: ADKEntity, options: LicenseCodesComponentInputs) {
 		super(entity, options.name, "compute.beta.LicenseCodes", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly description?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly licenseAlias?: LicenseCodeLicenseAlias[] | undefined;
-	public readonly selfLink?: string | undefined;
-	public readonly state?: string | undefined;
-	public readonly transferable?: boolean | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly description?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly licenseAlias?: LicenseCodeLicenseAlias[];
+	public readonly selfLink?: string;
+	public readonly state?: string;
+	public readonly transferable?: boolean;
 }
 export interface LicenseCodesComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly licenseAlias?: LicenseCodeLicenseAlias[] | undefined;
-	readonly selfLink?: string | undefined;
-	readonly state?: string | undefined;
-	readonly transferable?: boolean | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly licenseAlias?: LicenseCodeLicenseAlias[];
+	readonly selfLink?: string;
+	readonly state?: string;
+	readonly transferable?: boolean;
 }
 export interface LicenseCodesComponentInputs {
 	readonly name: string;
-	readonly type: string;
 }
 export interface LicenseCode {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly licenseAlias?: LicenseCodeLicenseAlias[] | undefined;
-	readonly name?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly state?: string | undefined;
-	readonly transferable?: boolean | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly licenseAlias?: LicenseCodeLicenseAlias[];
+	readonly name?: string;
+	readonly selfLink?: string;
+	readonly state?: string;
+	readonly transferable?: boolean;
 }
 export interface LicenseCodeLicenseAlias {
-	readonly description?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly description?: string;
+	readonly selfLink?: string;
 }
 export default {
 	LicenseCodes: LicenseCodes,

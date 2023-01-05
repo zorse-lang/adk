@@ -4,63 +4,62 @@ export class LogMetric extends GdmResource<LogMetricComponentInputs> implements 
 	constructor(entity: ADKEntity, options: LogMetricComponentInputs) {
 		super(entity, options.name, "logging.v2beta1.LogMetric", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly metricDescriptor?: MetricDescriptor | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly createTime?: string;
+	public readonly metricDescriptor?: MetricDescriptor;
+	public readonly updateTime?: string;
 }
 export interface LogMetricComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly metricDescriptor?: MetricDescriptor | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly metricDescriptor?: MetricDescriptor;
+	readonly updateTime?: string;
 }
 export interface LogMetricComponentInputs {
-	readonly bucketOptions?: BucketOptions | undefined;
-	readonly description?: string | undefined;
+	readonly bucketOptions?: BucketOptions;
+	readonly description?: string;
 	readonly filter: string;
-	readonly labelExtractors?: { [P in string]: string } | undefined;
+	readonly labelExtractors?: { [P in string]: string };
 	readonly name: string;
-	readonly valueExtractor?: string | undefined;
-	readonly version?: string | undefined;
-	readonly type: string;
+	readonly valueExtractor?: string;
+	readonly version?: string;
 }
 export interface BucketOptions {
-	readonly explicitBuckets?: Explicit | undefined;
-	readonly exponentialBuckets?: Exponential | undefined;
-	readonly linearBuckets?: Linear | undefined;
+	readonly explicitBuckets?: Explicit;
+	readonly exponentialBuckets?: Exponential;
+	readonly linearBuckets?: Linear;
 }
 export interface Explicit {
-	readonly bounds?: number[] | undefined;
+	readonly bounds?: number[];
 }
 export interface Exponential {
-	readonly growthFactor?: number | undefined;
-	readonly numFiniteBuckets?: number | undefined;
-	readonly scale?: number | undefined;
+	readonly growthFactor?: number;
+	readonly numFiniteBuckets?: number;
+	readonly scale?: number;
 }
 export interface LabelDescriptor {
-	readonly description?: string | undefined;
-	readonly key?: string | undefined;
-	readonly valueType?: string | undefined;
+	readonly description?: string;
+	readonly key?: string;
+	readonly valueType?: string;
 }
 export interface Linear {
-	readonly numFiniteBuckets?: number | undefined;
-	readonly offset?: number | undefined;
-	readonly width?: number | undefined;
+	readonly numFiniteBuckets?: number;
+	readonly offset?: number;
+	readonly width?: number;
 }
 export interface MetricDescriptor {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly labels?: LabelDescriptor[] | undefined;
-	readonly metadata?: MetricDescriptorMetadata | undefined;
-	readonly metricKind?: string | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
-	readonly unit?: string | undefined;
-	readonly valueType?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly labels?: LabelDescriptor[];
+	readonly metadata?: MetricDescriptorMetadata;
+	readonly metricKind?: string;
+	readonly name?: string;
+	readonly type?: string;
+	readonly unit?: string;
+	readonly valueType?: string;
 }
 export interface MetricDescriptorMetadata {
-	readonly ingestDelay?: string | undefined;
-	readonly launchStage?: string | undefined;
-	readonly samplePeriod?: string | undefined;
+	readonly ingestDelay?: string;
+	readonly launchStage?: string;
+	readonly samplePeriod?: string;
 }
 export default {
 	LogMetric: LogMetric,

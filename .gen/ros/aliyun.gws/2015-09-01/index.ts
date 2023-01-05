@@ -12,9 +12,9 @@ export interface ClusterComponentOutputs {
 export interface ClusterComponentInputs {
 	readonly ClusterType: string;
 	readonly VpcId: string;
-	readonly Name?: (any | string) | undefined;
-	readonly Policy?: (Policy | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
+	readonly Name?: any | string;
+	readonly Policy?: Policy | undefined;
+	readonly VSwitchId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Instance extends RosResource<InstanceComponentInputs> implements InstanceComponentOutputs {
@@ -37,16 +37,16 @@ export interface InstanceComponentInputs {
 	readonly SystemDiskCategory: string;
 	readonly SystemDiskSize: number;
 	readonly WorkMode: string;
-	readonly AllocatePublicAddress?: (boolean | undefined) | undefined;
-	readonly AppList?: (AppList[] | undefined) | undefined;
-	readonly AutoRenew?: (boolean | undefined) | undefined;
-	readonly InstanceChargeType?: (any | string) | undefined;
-	readonly InternetChargeType?: (string | undefined) | undefined;
-	readonly InternetMaxBandwidthOut?: (number | undefined) | undefined;
-	readonly Name?: (any | string) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly PeriodUnit?: (string | undefined) | undefined;
-	readonly VSwitchId?: (string | undefined) | undefined;
+	readonly AllocatePublicAddress?: boolean | undefined;
+	readonly AppList?: AppList[] | undefined;
+	readonly AutoRenew?: boolean | undefined;
+	readonly InstanceChargeType?: any | string;
+	readonly InternetChargeType?: string | undefined;
+	readonly InternetMaxBandwidthOut?: number | undefined;
+	readonly Name?: any | string;
+	readonly Period?: number | undefined;
+	readonly PeriodUnit?: string | undefined;
+	readonly VSwitchId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Policy {
@@ -56,9 +56,9 @@ export interface Policy {
 	readonly Watermark: string;
 }
 export interface AppList {
-	readonly AppArgs?: (string | undefined) | undefined;
-	readonly AppPath?: (string | undefined) | undefined;
-	readonly AppName?: (string | undefined) | undefined;
+	readonly AppArgs?: string | undefined;
+	readonly AppPath?: string | undefined;
+	readonly AppName?: string | undefined;
 }
 export default {
 	Cluster: Cluster,

@@ -14,16 +14,16 @@ export interface guestUsagesComponentOutputs {
 	readonly type: "Microsoft.AzureActiveDirectory/guestUsages";
 }
 export interface guestUsagesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: GuestUsagesResourceProperties | undefined;
-	readonly tags?: GuestUsagesResourceTags | undefined;
+	readonly properties?: GuestUsagesResourceProperties;
+	readonly tags?: GuestUsagesResourceTags;
 }
 export interface GuestUsagesResourceProperties {
-	readonly tenantId?: string | undefined;
+	readonly tenantId?: string;
 }
 export interface GuestUsagesResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	guestUsages: guestUsages,

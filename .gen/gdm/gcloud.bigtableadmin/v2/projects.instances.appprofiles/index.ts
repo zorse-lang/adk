@@ -11,28 +11,27 @@ export class ProjectsInstancesAppProfiles
 export interface ProjectsInstancesAppProfilesComponentOutputs {}
 export interface ProjectsInstancesAppProfilesComponentInputs {
 	readonly appProfileId: string;
-	readonly description?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly ignoreWarnings?: boolean | undefined;
-	readonly multiClusterRoutingUseAny?: MultiClusterRoutingUseany | undefined;
+	readonly description?: string;
+	readonly etag?: string;
+	readonly ignoreWarnings?: boolean;
+	readonly multiClusterRoutingUseAny?: MultiClusterRoutingUseany;
 	readonly name: string;
 	readonly parent: string;
-	readonly singleClusterRouting?: SingleClusterRouting | undefined;
-	readonly type: string;
+	readonly singleClusterRouting?: SingleClusterRouting;
 }
 export interface AppProfile {
-	readonly description?: string | undefined;
-	readonly etag?: string | undefined;
-	readonly multiClusterRoutingUseAny?: MultiClusterRoutingUseany | undefined;
-	readonly name?: string | undefined;
-	readonly singleClusterRouting?: SingleClusterRouting | undefined;
+	readonly description?: string;
+	readonly etag?: string;
+	readonly multiClusterRoutingUseAny?: MultiClusterRoutingUseany;
+	readonly name?: string;
+	readonly singleClusterRouting?: SingleClusterRouting;
 }
 export interface MultiClusterRoutingUseany {
-	readonly clusterIds?: string[] | undefined;
+	readonly clusterIds?: string[];
 }
 export interface SingleClusterRouting {
-	readonly allowTransactionalWrites?: boolean | undefined;
-	readonly clusterId?: string | undefined;
+	readonly allowTransactionalWrites?: boolean;
+	readonly clusterId?: string;
 }
 export default {
 	ProjectsInstancesAppProfiles: ProjectsInstancesAppProfiles,

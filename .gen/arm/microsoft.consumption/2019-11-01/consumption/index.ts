@@ -14,9 +14,9 @@ export interface budgetsComponentOutputs {
 	readonly type: "Microsoft.Consumption/budgets";
 }
 export interface budgetsComponentInputs {
-	readonly eTag?: string | undefined;
+	readonly eTag?: string;
 	readonly name: string;
-	readonly properties?: BudgetProperties | undefined;
+	readonly properties?: BudgetProperties;
 }
 export class credits extends ArmResource<creditsComponentInputs> implements creditsComponentOutputs {
 	constructor(entity: ADKEntity, options: creditsComponentInputs) {
@@ -32,10 +32,10 @@ export interface creditsComponentOutputs {
 	readonly type: "Microsoft.Consumption/credits";
 }
 export interface creditsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: CreditSummaryProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: CreditSummaryProperties;
+	readonly tags?: ResourceTags;
 }
 export class pricesheets extends ArmResource<pricesheetsComponentInputs> implements pricesheetsComponentOutputs {
 	constructor(entity: ADKEntity, options: pricesheetsComponentInputs) {
@@ -51,14 +51,14 @@ export interface pricesheetsComponentOutputs {
 	readonly type: "Microsoft.Consumption/pricesheets";
 }
 export interface pricesheetsComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: PriceSheetModel | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: PriceSheetModel;
+	readonly tags?: ResourceTags;
 }
 export interface Amount {
-	readonly currency?: string | undefined;
-	readonly value?: number | undefined;
+	readonly currency?: string;
+	readonly value?: number;
 }
 export interface BudgetComparisonExpression {
 	readonly name: string;
@@ -66,88 +66,88 @@ export interface BudgetComparisonExpression {
 	readonly values: string[];
 }
 export interface BudgetFilter {
-	readonly and?: BudgetFilterProperties[] | undefined;
-	readonly dimensions?: BudgetComparisonExpression | undefined;
-	readonly not?: BudgetFilterProperties | undefined;
-	readonly tags?: BudgetComparisonExpression | undefined;
+	readonly and?: BudgetFilterProperties[];
+	readonly dimensions?: BudgetComparisonExpression;
+	readonly not?: BudgetFilterProperties;
+	readonly tags?: BudgetComparisonExpression;
 }
 export interface BudgetFilterProperties {
-	readonly dimensions?: BudgetComparisonExpression | undefined;
-	readonly tags?: BudgetComparisonExpression | undefined;
+	readonly dimensions?: BudgetComparisonExpression;
+	readonly tags?: BudgetComparisonExpression;
 }
 export interface BudgetProperties {
 	readonly amount: number;
 	readonly category: "Cost";
-	readonly currentSpend?: CurrentSpend | undefined;
-	readonly filter?: BudgetFilter | undefined;
-	readonly forecastSpend?: ForecastSpend | undefined;
-	readonly notifications?: BudgetPropertiesNotifications | undefined;
+	readonly currentSpend?: CurrentSpend;
+	readonly filter?: BudgetFilter;
+	readonly forecastSpend?: ForecastSpend;
+	readonly notifications?: BudgetPropertiesNotifications;
 	readonly timeGrain: "Annually" | "BillingAnnual" | "BillingMonth" | "BillingQuarter" | "Monthly" | "Quarterly";
 	readonly timePeriod: BudgetTimePeriod;
 }
 export interface BudgetPropertiesNotifications {
-	readonly "[ key: string ]"?: Notification | undefined;
+	readonly [key: string]: Notification;
 }
 export interface BudgetTimePeriod {
-	readonly endDate?: string | undefined;
+	readonly endDate?: string;
 	readonly startDate: string;
 }
 export interface CreditBalanceSummary {
-	readonly currentBalance?: Amount | undefined;
-	readonly estimatedBalance?: Amount | undefined;
+	readonly currentBalance?: Amount;
+	readonly estimatedBalance?: Amount;
 }
 export interface CreditSummaryProperties {
-	readonly balanceSummary?: CreditBalanceSummary | undefined;
-	readonly expiredCredit?: Amount | undefined;
-	readonly pendingCreditAdjustments?: Amount | undefined;
-	readonly pendingEligibleCharges?: Amount | undefined;
+	readonly balanceSummary?: CreditBalanceSummary;
+	readonly expiredCredit?: Amount;
+	readonly pendingCreditAdjustments?: Amount;
+	readonly pendingEligibleCharges?: Amount;
 }
 export interface CurrentSpend {
-	readonly amount?: number | undefined;
-	readonly unit?: string | undefined;
+	readonly amount?: number;
+	readonly unit?: string;
 }
 export interface ForecastSpend {
-	readonly amount?: number | undefined;
-	readonly unit?: string | undefined;
+	readonly amount?: number;
+	readonly unit?: string;
 }
 export interface MeterDetails {
-	readonly meterCategory?: string | undefined;
-	readonly meterLocation?: string | undefined;
-	readonly meterName?: string | undefined;
-	readonly meterSubCategory?: string | undefined;
-	readonly pretaxStandardRate?: number | undefined;
-	readonly serviceName?: string | undefined;
-	readonly serviceTier?: string | undefined;
-	readonly totalIncludedQuantity?: number | undefined;
-	readonly unit?: string | undefined;
+	readonly meterCategory?: string;
+	readonly meterLocation?: string;
+	readonly meterName?: string;
+	readonly meterSubCategory?: string;
+	readonly pretaxStandardRate?: number;
+	readonly serviceName?: string;
+	readonly serviceTier?: string;
+	readonly totalIncludedQuantity?: number;
+	readonly unit?: string;
 }
 export interface Notification {
 	readonly contactEmails: string[];
-	readonly contactGroups?: string[] | undefined;
-	readonly contactRoles?: string[] | undefined;
+	readonly contactGroups?: string[];
+	readonly contactRoles?: string[];
 	readonly enabled: boolean;
 	readonly operator: "EqualTo" | "GreaterThan" | "GreaterThanOrEqualTo";
 	readonly threshold: number;
-	readonly thresholdType?: ("Actual" | "Forecasted") | undefined;
+	readonly thresholdType?: "Actual" | "Forecasted";
 }
 export interface PriceSheetModel {
-	readonly download?: MeterDetails | undefined;
-	readonly nextLink?: string | undefined;
-	readonly pricesheets?: PriceSheetProperties[] | undefined;
+	readonly download?: MeterDetails;
+	readonly nextLink?: string;
+	readonly pricesheets?: PriceSheetProperties[];
 }
 export interface PriceSheetProperties {
-	readonly billingPeriodId?: string | undefined;
-	readonly currencyCode?: string | undefined;
-	readonly includedQuantity?: number | undefined;
-	readonly meterDetails?: MeterDetails | undefined;
-	readonly meterId?: string | undefined;
-	readonly offerId?: string | undefined;
-	readonly partNumber?: string | undefined;
-	readonly unitOfMeasure?: string | undefined;
-	readonly unitPrice?: number | undefined;
+	readonly billingPeriodId?: string;
+	readonly currencyCode?: string;
+	readonly includedQuantity?: number;
+	readonly meterDetails?: MeterDetails;
+	readonly meterId?: string;
+	readonly offerId?: string;
+	readonly partNumber?: string;
+	readonly unitOfMeasure?: string;
+	readonly unitPrice?: number;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	budgets: budgets,

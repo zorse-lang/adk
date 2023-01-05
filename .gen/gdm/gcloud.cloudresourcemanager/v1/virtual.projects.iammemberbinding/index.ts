@@ -10,44 +10,43 @@ export class VirtualProjectsIamMemberBinding
 }
 export interface VirtualProjectsIamMemberBindingComponentOutputs {}
 export interface VirtualProjectsIamMemberBindingComponentInputs {
-	readonly auditConfigs?: AuditConfig[] | undefined;
-	readonly bindings?: Binding[] | undefined;
-	readonly etag?: string | undefined;
+	readonly auditConfigs?: AuditConfig[];
+	readonly bindings?: Binding[];
+	readonly etag?: string;
 	readonly policy: Policy;
 	readonly resource: string;
-	readonly updateMask?: string | undefined;
-	readonly version?: number | undefined;
-	readonly type: string;
+	readonly updateMask?: string;
+	readonly version?: number;
 	readonly name: string;
 }
 export interface AuditConfig {
-	readonly auditLogConfigs?: AuditLogConfig[] | undefined;
-	readonly service?: string | undefined;
+	readonly auditLogConfigs?: AuditLogConfig[];
+	readonly service?: string;
 }
 export interface AuditLogConfig {
-	readonly exemptedMembers?: string[] | undefined;
-	readonly logType?: string | undefined;
+	readonly exemptedMembers?: string[];
+	readonly logType?: string;
 }
 export interface Binding {
-	readonly condition?: Expr | undefined;
-	readonly members?: string[] | undefined;
-	readonly role?: string | undefined;
+	readonly condition?: Expr;
+	readonly members?: string[];
+	readonly role?: string;
 }
 export interface Expr {
-	readonly description?: string | undefined;
-	readonly expression?: string | undefined;
-	readonly location?: string | undefined;
-	readonly title?: string | undefined;
+	readonly description?: string;
+	readonly expression?: string;
+	readonly location?: string;
+	readonly title?: string;
 }
 export interface Policy {
-	readonly auditConfigs?: AuditConfig[] | undefined;
-	readonly bindings?: Binding[] | undefined;
-	readonly etag?: string | undefined;
-	readonly version?: number | undefined;
+	readonly auditConfigs?: AuditConfig[];
+	readonly bindings?: Binding[];
+	readonly etag?: string;
+	readonly version?: number;
 }
 export interface SetIamPolicyRequest {
 	readonly policy: Policy;
-	readonly updateMask?: string | undefined;
+	readonly updateMask?: string;
 }
 export default {
 	VirtualProjectsIamMemberBinding: VirtualProjectsIamMemberBinding,

@@ -24,14 +24,14 @@ export interface KeyComponentOutputs {
 }
 export interface KeyComponentInputs {
 	readonly KeyPolicy: any;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly EnableKeyRotation?: (boolean | undefined) | undefined;
-	readonly KeySpec?: (string | undefined) | undefined;
-	readonly KeyUsage?: (string | undefined) | undefined;
-	readonly MultiRegion?: (boolean | undefined) | undefined;
-	readonly PendingWindowInDays?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly EnableKeyRotation?: boolean | undefined;
+	readonly KeySpec?: string | undefined;
+	readonly KeyUsage?: string | undefined;
+	readonly MultiRegion?: boolean | undefined;
+	readonly PendingWindowInDays?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ReplicaKey extends CfnResource<ReplicaKeyComponentInputs> implements ReplicaKeyComponentOutputs {
@@ -48,10 +48,10 @@ export interface ReplicaKeyComponentOutputs {
 export interface ReplicaKeyComponentInputs {
 	readonly KeyPolicy: any;
 	readonly PrimaryKeyArn: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly PendingWindowInDays?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly PendingWindowInDays?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export default {

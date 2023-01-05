@@ -7,70 +7,69 @@ export class ProjectsZonesOperations
 	constructor(entity: ADKEntity, options: ProjectsZonesOperationsComponentInputs) {
 		super(entity, options.name, "container.v1beta1.ProjectsZonesOperations", options);
 	}
-	public readonly endTime?: string | undefined;
-	public readonly location?: string | undefined;
-	public readonly progress?: OperationProgress | undefined;
-	public readonly startTime?: string | undefined;
-	public readonly statusMessage?: string | undefined;
+	public readonly endTime?: string;
+	public readonly location?: string;
+	public readonly progress?: OperationProgress;
+	public readonly startTime?: string;
+	public readonly statusMessage?: string;
 }
 export interface ProjectsZonesOperationsComponentOutputs {
-	readonly endTime?: string | undefined;
-	readonly location?: string | undefined;
-	readonly progress?: OperationProgress | undefined;
-	readonly startTime?: string | undefined;
-	readonly statusMessage?: string | undefined;
+	readonly endTime?: string;
+	readonly location?: string;
+	readonly progress?: OperationProgress;
+	readonly startTime?: string;
+	readonly statusMessage?: string;
 }
 export interface ProjectsZonesOperationsComponentInputs {
-	readonly clusterConditions?: StatusCondition[] | undefined;
-	readonly detail?: string | undefined;
-	readonly error?: Status | undefined;
+	readonly clusterConditions?: StatusCondition[];
+	readonly detail?: string;
+	readonly error?: Status;
 	readonly name: string;
-	readonly nodepoolConditions?: StatusCondition[] | undefined;
-	readonly operationType?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly status?: string | undefined;
-	readonly targetLink?: string | undefined;
-	readonly zone?: string | undefined;
-	readonly type: string;
+	readonly nodepoolConditions?: StatusCondition[];
+	readonly operationType?: string;
+	readonly selfLink?: string;
+	readonly status?: string;
+	readonly targetLink?: string;
+	readonly zone?: string;
 }
 export interface Metric {
-	readonly doubleValue?: number | undefined;
-	readonly intValue?: string | undefined;
+	readonly doubleValue?: number;
+	readonly intValue?: string;
 	readonly name: string;
-	readonly stringValue?: string | undefined;
+	readonly stringValue?: string;
 }
 export interface Operation {
-	readonly clusterConditions?: StatusCondition[] | undefined;
-	readonly detail?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly error?: Status | undefined;
-	readonly location?: string | undefined;
-	readonly name?: string | undefined;
-	readonly nodepoolConditions?: StatusCondition[] | undefined;
-	readonly operationType?: string | undefined;
-	readonly progress?: OperationProgress | undefined;
-	readonly selfLink?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly statusMessage?: string | undefined;
-	readonly targetLink?: string | undefined;
-	readonly zone?: string | undefined;
+	readonly clusterConditions?: StatusCondition[];
+	readonly detail?: string;
+	readonly endTime?: string;
+	readonly error?: Status;
+	readonly location?: string;
+	readonly name?: string;
+	readonly nodepoolConditions?: StatusCondition[];
+	readonly operationType?: string;
+	readonly progress?: OperationProgress;
+	readonly selfLink?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly statusMessage?: string;
+	readonly targetLink?: string;
+	readonly zone?: string;
 }
 export interface OperationProgress {
-	readonly metrics?: Metric[] | undefined;
-	readonly name?: string | undefined;
-	readonly stages?: OperationProgress[] | undefined;
-	readonly status?: string | undefined;
+	readonly metrics?: Metric[];
+	readonly name?: string;
+	readonly stages?: OperationProgress[];
+	readonly status?: string;
 }
 export interface Status {
-	readonly code?: number | undefined;
-	readonly details?: Array<{ [P in string]: any }> | undefined;
-	readonly message?: string | undefined;
+	readonly code?: number;
+	readonly details?: Array<{ [P in string]: any }>;
+	readonly message?: string;
 }
 export interface StatusCondition {
-	readonly canonicalCode?: string | undefined;
-	readonly code?: string | undefined;
-	readonly message?: string | undefined;
+	readonly canonicalCode?: string;
+	readonly code?: string;
+	readonly message?: string;
 }
 export default {
 	ProjectsZonesOperations: ProjectsZonesOperations,

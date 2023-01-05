@@ -7,7 +7,6 @@ export class Tiers extends GdmResource<TiersComponentInputs> implements TiersCom
 }
 export interface TiersComponentOutputs {}
 export interface TiersComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

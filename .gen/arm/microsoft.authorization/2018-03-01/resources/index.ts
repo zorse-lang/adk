@@ -18,8 +18,8 @@ export interface policyAssignmentsComponentOutputs {
 }
 export interface policyAssignmentsComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyAssignmentProperties | undefined;
-	readonly sku?: PolicySku | undefined;
+	readonly properties?: PolicyAssignmentProperties;
+	readonly sku?: PolicySku;
 }
 export class policyDefinitions
 	extends ArmResource<policyDefinitionsComponentInputs>
@@ -39,7 +39,7 @@ export interface policyDefinitionsComponentOutputs {
 }
 export interface policyDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicyDefinitionProperties | undefined;
+	readonly properties?: PolicyDefinitionProperties;
 }
 export class policySetDefinitions
 	extends ArmResource<policySetDefinitionsComponentInputs>
@@ -59,41 +59,41 @@ export interface policySetDefinitionsComponentOutputs {
 }
 export interface policySetDefinitionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PolicySetDefinitionProperties | undefined;
+	readonly properties?: PolicySetDefinitionProperties;
 }
 export interface PolicyAssignmentProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly notScopes?: string[] | undefined;
-	readonly parameters?: any | undefined;
-	readonly policyDefinitionId?: string | undefined;
-	readonly scope?: string | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly metadata?: any;
+	readonly notScopes?: string[];
+	readonly parameters?: any;
+	readonly policyDefinitionId?: string;
+	readonly scope?: string;
 }
 export interface PolicyDefinitionProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly mode?: ("All" | "Indexed" | "NotSpecified") | undefined;
-	readonly parameters?: any | undefined;
-	readonly policyRule?: any | undefined;
-	readonly policyType?: ("BuiltIn" | "Custom" | "NotSpecified") | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly metadata?: any;
+	readonly mode?: "All" | "Indexed" | "NotSpecified";
+	readonly parameters?: any;
+	readonly policyRule?: any;
+	readonly policyType?: "BuiltIn" | "Custom" | "NotSpecified";
 }
 export interface PolicyDefinitionReference {
-	readonly parameters?: any | undefined;
-	readonly policyDefinitionId?: string | undefined;
+	readonly parameters?: any;
+	readonly policyDefinitionId?: string;
 }
 export interface PolicySetDefinitionProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly parameters?: any | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly metadata?: any;
+	readonly parameters?: any;
 	readonly policyDefinitions: PolicyDefinitionReference[];
-	readonly policyType?: ("BuiltIn" | "Custom" | "NotSpecified") | undefined;
+	readonly policyType?: "BuiltIn" | "Custom" | "NotSpecified";
 }
 export interface PolicySku {
 	readonly name: string;
-	readonly tier?: string | undefined;
+	readonly tier?: string;
 }
 export default {
 	policyAssignments: policyAssignments,

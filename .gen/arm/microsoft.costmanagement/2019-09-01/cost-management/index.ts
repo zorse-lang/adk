@@ -15,13 +15,13 @@ export interface exportsComponentOutputs {
 }
 export interface exportsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExportProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ExportProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ExportDeliveryDestination {
 	readonly container: string;
 	readonly resourceId: string;
-	readonly rootFolderPath?: string | undefined;
+	readonly rootFolderPath?: string;
 }
 export interface ExportDeliveryInfo {
 	readonly destination: ExportDeliveryDestination;
@@ -29,17 +29,17 @@ export interface ExportDeliveryInfo {
 export interface ExportProperties {
 	readonly definition: QueryDefinition;
 	readonly deliveryInfo: ExportDeliveryInfo;
-	readonly format?: "Csv" | undefined;
-	readonly schedule?: ExportSchedule | undefined;
+	readonly format?: "Csv";
+	readonly schedule?: ExportSchedule;
 }
 export interface ExportRecurrencePeriod {
 	readonly from: string;
-	readonly to?: string | undefined;
+	readonly to?: string;
 }
 export interface ExportSchedule {
 	readonly recurrence: "Annually" | "Daily" | "Monthly" | "Weekly";
-	readonly recurrencePeriod?: ExportRecurrencePeriod | undefined;
-	readonly status?: ("Active" | "Inactive") | undefined;
+	readonly recurrencePeriod?: ExportRecurrencePeriod;
+	readonly status?: "Active" | "Inactive";
 }
 export interface QueryAggregation {
 	readonly function: "Sum";
@@ -51,21 +51,21 @@ export interface QueryComparisonExpression {
 	readonly values: string[];
 }
 export interface QueryDataset {
-	readonly aggregation?: QueryDatasetAggregation | undefined;
-	readonly configuration?: QueryDatasetConfiguration | undefined;
-	readonly filter?: QueryFilter | undefined;
-	readonly granularity?: ("Daily" | "Hourly") | undefined;
-	readonly grouping?: QueryGrouping[] | undefined;
-	readonly sorting?: QuerySortingConfiguration[] | undefined;
+	readonly aggregation?: QueryDatasetAggregation;
+	readonly configuration?: QueryDatasetConfiguration;
+	readonly filter?: QueryFilter;
+	readonly granularity?: "Daily" | "Hourly";
+	readonly grouping?: QueryGrouping[];
+	readonly sorting?: QuerySortingConfiguration[];
 }
 export interface QueryDatasetAggregation {
-	readonly "[ key: string ]"?: QueryAggregation | undefined;
+	readonly [key: string]: QueryAggregation;
 }
 export interface QueryDatasetConfiguration {
-	readonly columns?: string[] | undefined;
+	readonly columns?: string[];
 }
 export interface QueryDefinition {
-	readonly dataset?: QueryDataset | undefined;
+	readonly dataset?: QueryDataset;
 	readonly timeframe:
 		| "Custom"
 		| "MonthToDate"
@@ -74,30 +74,30 @@ export interface QueryDefinition {
 		| "TheLastYear"
 		| "WeekToDate"
 		| "YearToDate";
-	readonly timePeriod?: QueryTimePeriod | undefined;
+	readonly timePeriod?: QueryTimePeriod;
 	readonly type: "Usage";
 }
 export interface QueryFilter {
-	readonly and?: QueryFilter[] | undefined;
-	readonly dimension?: QueryComparisonExpression | undefined;
-	readonly not?: QueryFilter | undefined;
-	readonly or?: QueryFilter[] | undefined;
-	readonly tag?: QueryComparisonExpression | undefined;
+	readonly and?: QueryFilter[];
+	readonly dimension?: QueryComparisonExpression;
+	readonly not?: QueryFilter;
+	readonly or?: QueryFilter[];
+	readonly tag?: QueryComparisonExpression;
 }
 export interface QueryGrouping {
 	readonly name: string;
 	readonly type: "Dimension" | "Tag";
 }
 export interface QuerySortingConfiguration {
-	readonly name?: string | undefined;
-	readonly querySortingDirection?: ("Ascending" | "Descending") | undefined;
+	readonly name?: string;
+	readonly querySortingDirection?: "Ascending" | "Descending";
 }
 export interface QueryTimePeriod {
 	readonly from: string;
 	readonly to: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	exports: exports,

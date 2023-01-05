@@ -7,9 +7,9 @@ export class Application extends CfnResource<ApplicationComponentInputs> impleme
 }
 export interface ApplicationComponentOutputs {}
 export interface ApplicationComponentInputs {
-	readonly ApplicationName?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly ResourceLifecycleConfig?: (ApplicationResourceLifecycleConfig | undefined) | undefined;
+	readonly ApplicationName?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig | undefined;
 	readonly LogicalId: string;
 }
 export class ApplicationVersion
@@ -27,7 +27,7 @@ export interface ApplicationVersionComponentOutputs {
 export interface ApplicationVersionComponentInputs {
 	readonly ApplicationName: string;
 	readonly SourceBundle: SourceBundle;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ConfigurationTemplate
@@ -41,12 +41,12 @@ export class ConfigurationTemplate
 export interface ConfigurationTemplateComponentOutputs {}
 export interface ConfigurationTemplateComponentInputs {
 	readonly ApplicationName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnvironmentId?: (string | undefined) | undefined;
-	readonly OptionSettings?: (ConfigurationOptionSetting[] | undefined) | undefined;
-	readonly PlatformArn?: (string | undefined) | undefined;
-	readonly SolutionStackName?: (string | undefined) | undefined;
-	readonly SourceConfiguration?: (SourceConfiguration | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly EnvironmentId?: string | undefined;
+	readonly OptionSettings?: ConfigurationOptionSetting[] | undefined;
+	readonly PlatformArn?: string | undefined;
+	readonly SolutionStackName?: string | undefined;
+	readonly SourceConfiguration?: SourceConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export class Environment extends CfnResource<EnvironmentComponentInputs> implements EnvironmentComponentOutputs {
@@ -60,36 +60,36 @@ export interface EnvironmentComponentOutputs {
 }
 export interface EnvironmentComponentInputs {
 	readonly ApplicationName: string;
-	readonly CNAMEPrefix?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnvironmentName?: (string | undefined) | undefined;
-	readonly OperationsRole?: (string | undefined) | undefined;
-	readonly OptionSettings?: (OptionSetting[] | undefined) | undefined;
-	readonly PlatformArn?: (string | undefined) | undefined;
-	readonly SolutionStackName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TemplateName?: (string | undefined) | undefined;
-	readonly Tier?: (Tier | undefined) | undefined;
-	readonly VersionLabel?: (string | undefined) | undefined;
+	readonly CNAMEPrefix?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly EnvironmentName?: string | undefined;
+	readonly OperationsRole?: string | undefined;
+	readonly OptionSettings?: OptionSetting[] | undefined;
+	readonly PlatformArn?: string | undefined;
+	readonly SolutionStackName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TemplateName?: string | undefined;
+	readonly Tier?: Tier | undefined;
+	readonly VersionLabel?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface ApplicationResourceLifecycleConfig {
-	readonly ServiceRole?: (string | undefined) | undefined;
-	readonly VersionLifecycleConfig?: (ApplicationVersionLifecycleConfig | undefined) | undefined;
+	readonly ServiceRole?: string | undefined;
+	readonly VersionLifecycleConfig?: ApplicationVersionLifecycleConfig | undefined;
 }
 export interface ApplicationVersionLifecycleConfig {
-	readonly MaxAgeRule?: (MaxAgeRule | undefined) | undefined;
-	readonly MaxCountRule?: (MaxCountRule | undefined) | undefined;
+	readonly MaxAgeRule?: MaxAgeRule | undefined;
+	readonly MaxCountRule?: MaxCountRule | undefined;
 }
 export interface MaxAgeRule {
-	readonly DeleteSourceFromS3?: (boolean | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly MaxAgeInDays?: (number | undefined) | undefined;
+	readonly DeleteSourceFromS3?: boolean | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly MaxAgeInDays?: number | undefined;
 }
 export interface MaxCountRule {
-	readonly DeleteSourceFromS3?: (boolean | undefined) | undefined;
-	readonly Enabled?: (boolean | undefined) | undefined;
-	readonly MaxCount?: (number | undefined) | undefined;
+	readonly DeleteSourceFromS3?: boolean | undefined;
+	readonly Enabled?: boolean | undefined;
+	readonly MaxCount?: number | undefined;
 }
 export interface SourceBundle {
 	readonly S3Bucket: string;
@@ -98,8 +98,8 @@ export interface SourceBundle {
 export interface ConfigurationOptionSetting {
 	readonly Namespace: string;
 	readonly OptionName: string;
-	readonly ResourceName?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly ResourceName?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface SourceConfiguration {
 	readonly ApplicationName: string;
@@ -108,13 +108,13 @@ export interface SourceConfiguration {
 export interface OptionSetting {
 	readonly Namespace: string;
 	readonly OptionName: string;
-	readonly ResourceName?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly ResourceName?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface Tier {
-	readonly Name?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
-	readonly Version?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
+	readonly Type?: string | undefined;
+	readonly Version?: string | undefined;
 }
 export default {
 	Application: Application,

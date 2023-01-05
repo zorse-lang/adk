@@ -13,66 +13,66 @@ export interface FilterComponentInputs {
 	readonly FilterAction: string;
 	readonly FilterCriteria: FilterCriteria;
 	readonly Name: string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface DateFilter {
-	readonly EndInclusive?: (number | undefined) | undefined;
-	readonly StartInclusive?: (number | undefined) | undefined;
+	readonly EndInclusive?: number | undefined;
+	readonly StartInclusive?: number | undefined;
 }
 export interface FilterCriteria {
-	readonly AwsAccountId?: (StringFilter[] | undefined) | undefined;
-	readonly ComponentId?: (StringFilter[] | undefined) | undefined;
-	readonly ComponentType?: (StringFilter[] | undefined) | undefined;
-	readonly Ec2InstanceImageId?: (StringFilter[] | undefined) | undefined;
-	readonly Ec2InstanceSubnetId?: (StringFilter[] | undefined) | undefined;
-	readonly Ec2InstanceVpcId?: (StringFilter[] | undefined) | undefined;
-	readonly EcrImageArchitecture?: (StringFilter[] | undefined) | undefined;
-	readonly EcrImageHash?: (StringFilter[] | undefined) | undefined;
-	readonly EcrImagePushedAt?: (DateFilter[] | undefined) | undefined;
-	readonly EcrImageRegistry?: (StringFilter[] | undefined) | undefined;
-	readonly EcrImageRepositoryName?: (StringFilter[] | undefined) | undefined;
-	readonly EcrImageTags?: (StringFilter[] | undefined) | undefined;
-	readonly FindingArn?: (StringFilter[] | undefined) | undefined;
-	readonly FindingStatus?: (StringFilter[] | undefined) | undefined;
-	readonly FindingType?: (StringFilter[] | undefined) | undefined;
-	readonly FirstObservedAt?: (DateFilter[] | undefined) | undefined;
-	readonly InspectorScore?: (NumberFilter[] | undefined) | undefined;
-	readonly LastObservedAt?: (DateFilter[] | undefined) | undefined;
-	readonly NetworkProtocol?: (StringFilter[] | undefined) | undefined;
-	readonly PortRange?: (PortRangeFilter[] | undefined) | undefined;
-	readonly RelatedVulnerabilities?: (StringFilter[] | undefined) | undefined;
-	readonly ResourceId?: (StringFilter[] | undefined) | undefined;
-	readonly ResourceTags?: (MapFilter[] | undefined) | undefined;
-	readonly ResourceType?: (StringFilter[] | undefined) | undefined;
-	readonly Severity?: (StringFilter[] | undefined) | undefined;
-	readonly Title?: (StringFilter[] | undefined) | undefined;
-	readonly UpdatedAt?: (DateFilter[] | undefined) | undefined;
-	readonly VendorSeverity?: (StringFilter[] | undefined) | undefined;
-	readonly VulnerabilityId?: (StringFilter[] | undefined) | undefined;
-	readonly VulnerabilitySource?: (StringFilter[] | undefined) | undefined;
-	readonly VulnerablePackages?: (PackageFilter[] | undefined) | undefined;
+	readonly AwsAccountId?: StringFilter[] | undefined;
+	readonly ComponentId?: StringFilter[] | undefined;
+	readonly ComponentType?: StringFilter[] | undefined;
+	readonly Ec2InstanceImageId?: StringFilter[] | undefined;
+	readonly Ec2InstanceSubnetId?: StringFilter[] | undefined;
+	readonly Ec2InstanceVpcId?: StringFilter[] | undefined;
+	readonly EcrImageArchitecture?: StringFilter[] | undefined;
+	readonly EcrImageHash?: StringFilter[] | undefined;
+	readonly EcrImagePushedAt?: DateFilter[] | undefined;
+	readonly EcrImageRegistry?: StringFilter[] | undefined;
+	readonly EcrImageRepositoryName?: StringFilter[] | undefined;
+	readonly EcrImageTags?: StringFilter[] | undefined;
+	readonly FindingArn?: StringFilter[] | undefined;
+	readonly FindingStatus?: StringFilter[] | undefined;
+	readonly FindingType?: StringFilter[] | undefined;
+	readonly FirstObservedAt?: DateFilter[] | undefined;
+	readonly InspectorScore?: NumberFilter[] | undefined;
+	readonly LastObservedAt?: DateFilter[] | undefined;
+	readonly NetworkProtocol?: StringFilter[] | undefined;
+	readonly PortRange?: PortRangeFilter[] | undefined;
+	readonly RelatedVulnerabilities?: StringFilter[] | undefined;
+	readonly ResourceId?: StringFilter[] | undefined;
+	readonly ResourceTags?: MapFilter[] | undefined;
+	readonly ResourceType?: StringFilter[] | undefined;
+	readonly Severity?: StringFilter[] | undefined;
+	readonly Title?: StringFilter[] | undefined;
+	readonly UpdatedAt?: DateFilter[] | undefined;
+	readonly VendorSeverity?: StringFilter[] | undefined;
+	readonly VulnerabilityId?: StringFilter[] | undefined;
+	readonly VulnerabilitySource?: StringFilter[] | undefined;
+	readonly VulnerablePackages?: PackageFilter[] | undefined;
 }
 export interface MapFilter {
 	readonly Comparison: string;
-	readonly Key?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface NumberFilter {
-	readonly LowerInclusive?: (number | undefined) | undefined;
-	readonly UpperInclusive?: (number | undefined) | undefined;
+	readonly LowerInclusive?: number | undefined;
+	readonly UpperInclusive?: number | undefined;
 }
 export interface PackageFilter {
-	readonly Architecture?: (StringFilter | undefined) | undefined;
-	readonly Epoch?: (NumberFilter | undefined) | undefined;
-	readonly Name?: (StringFilter | undefined) | undefined;
-	readonly Release?: (StringFilter | undefined) | undefined;
-	readonly SourceLayerHash?: (StringFilter | undefined) | undefined;
-	readonly Version?: (StringFilter | undefined) | undefined;
+	readonly Architecture?: StringFilter | undefined;
+	readonly Epoch?: NumberFilter | undefined;
+	readonly Name?: StringFilter | undefined;
+	readonly Release?: StringFilter | undefined;
+	readonly SourceLayerHash?: StringFilter | undefined;
+	readonly Version?: StringFilter | undefined;
 }
 export interface PortRangeFilter {
-	readonly BeginInclusive?: (number | undefined) | undefined;
-	readonly EndInclusive?: (number | undefined) | undefined;
+	readonly BeginInclusive?: number | undefined;
+	readonly EndInclusive?: number | undefined;
 }
 export interface StringFilter {
 	readonly Comparison: string;

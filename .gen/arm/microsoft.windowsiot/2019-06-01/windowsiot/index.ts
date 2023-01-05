@@ -14,21 +14,21 @@ export interface deviceServicesComponentOutputs {
 	readonly type: "Microsoft.WindowsIoT/deviceServices";
 }
 export interface deviceServicesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: DeviceServiceProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DeviceServiceProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface DeviceServiceProperties {
-	readonly adminDomainName?: string | undefined;
-	readonly billingDomainName?: string | undefined;
-	readonly notes?: string | undefined;
-	readonly quantity?: number | undefined;
-	readonly startDate?: string | undefined;
+	readonly adminDomainName?: string;
+	readonly billingDomainName?: string;
+	readonly notes?: string;
+	readonly quantity?: number;
+	readonly startDate?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	deviceServices: deviceServices,

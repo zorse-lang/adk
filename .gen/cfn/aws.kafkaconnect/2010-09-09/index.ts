@@ -19,9 +19,9 @@ export interface ConnectorComponentInputs {
 	readonly KafkaConnectVersion: string;
 	readonly Plugins: Plugin[];
 	readonly ServiceExecutionRoleArn: string;
-	readonly ConnectorDescription?: (string | undefined) | undefined;
-	readonly LogDelivery?: (LogDelivery | undefined) | undefined;
-	readonly WorkerConfiguration?: (WorkerConfiguration | undefined) | undefined;
+	readonly ConnectorDescription?: string | undefined;
+	readonly LogDelivery?: LogDelivery | undefined;
+	readonly WorkerConfiguration?: WorkerConfiguration | undefined;
 	readonly LogicalId: string;
 }
 export interface ApacheKafkaCluster {
@@ -36,19 +36,19 @@ export interface AutoScaling {
 	readonly ScaleOutPolicy: ScaleOutPolicy;
 }
 export interface Capacity {
-	readonly AutoScaling?: (AutoScaling | undefined) | undefined;
-	readonly ProvisionedCapacity?: (ProvisionedCapacity | undefined) | undefined;
+	readonly AutoScaling?: AutoScaling | undefined;
+	readonly ProvisionedCapacity?: ProvisionedCapacity | undefined;
 }
 export interface CloudWatchLogsLogDelivery {
 	readonly Enabled: boolean;
-	readonly LogGroup?: (string | undefined) | undefined;
+	readonly LogGroup?: string | undefined;
 }
 export interface CustomPlugin {
 	readonly CustomPluginArn: string;
 	readonly Revision: number;
 }
 export interface FirehoseLogDelivery {
-	readonly DeliveryStream?: (string | undefined) | undefined;
+	readonly DeliveryStream?: string | undefined;
 	readonly Enabled: boolean;
 }
 export interface KafkaCluster {
@@ -67,13 +67,13 @@ export interface Plugin {
 	readonly CustomPlugin: CustomPlugin;
 }
 export interface ProvisionedCapacity {
-	readonly McuCount?: (number | undefined) | undefined;
+	readonly McuCount?: number | undefined;
 	readonly WorkerCount: number;
 }
 export interface S3LogDelivery {
-	readonly Bucket?: (string | undefined) | undefined;
+	readonly Bucket?: string | undefined;
 	readonly Enabled: boolean;
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly Prefix?: string | undefined;
 }
 export interface ScaleInPolicy {
 	readonly CpuUtilizationPercentage: number;
@@ -90,9 +90,9 @@ export interface WorkerConfiguration {
 	readonly WorkerConfigurationArn: string;
 }
 export interface WorkerLogDelivery {
-	readonly CloudWatchLogs?: (CloudWatchLogsLogDelivery | undefined) | undefined;
-	readonly Firehose?: (FirehoseLogDelivery | undefined) | undefined;
-	readonly S3?: (S3LogDelivery | undefined) | undefined;
+	readonly CloudWatchLogs?: CloudWatchLogsLogDelivery | undefined;
+	readonly Firehose?: FirehoseLogDelivery | undefined;
+	readonly S3?: S3LogDelivery | undefined;
 }
 export default {
 	Connector: Connector,

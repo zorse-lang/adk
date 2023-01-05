@@ -15,39 +15,39 @@ export interface emergingIssuesComponentOutputs {
 }
 export interface emergingIssuesComponentInputs {
 	readonly name: string;
-	readonly properties?: EmergingIssue | undefined;
+	readonly properties?: EmergingIssue;
 }
 export interface EmergingIssue {
-	readonly refreshTimestamp?: string | undefined;
-	readonly statusActiveEvents?: StatusActiveEvent[] | undefined;
-	readonly statusBanners?: StatusBanner[] | undefined;
+	readonly refreshTimestamp?: string;
+	readonly statusActiveEvents?: StatusActiveEvent[];
+	readonly statusBanners?: StatusBanner[];
 }
 export interface EmergingIssueImpact {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly regions?: ImpactedRegion[] | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly regions?: ImpactedRegion[];
 }
 export interface ImpactedRegion {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
 }
 export interface StatusActiveEvent {
-	readonly cloud?: string | undefined;
-	readonly description?: string | undefined;
-	readonly impacts?: EmergingIssueImpact[] | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly published?: boolean | undefined;
-	readonly severity?: ("Error" | "Information" | "Warning") | undefined;
-	readonly stage?: ("Active" | "Archived" | "Resolve") | undefined;
-	readonly startTime?: string | undefined;
-	readonly title?: string | undefined;
-	readonly trackingId?: string | undefined;
+	readonly cloud?: string;
+	readonly description?: string;
+	readonly impacts?: EmergingIssueImpact[];
+	readonly lastModifiedTime?: string;
+	readonly published?: boolean;
+	readonly severity?: "Error" | "Information" | "Warning";
+	readonly stage?: "Active" | "Archived" | "Resolve";
+	readonly startTime?: string;
+	readonly title?: string;
+	readonly trackingId?: string;
 }
 export interface StatusBanner {
-	readonly cloud?: string | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly message?: string | undefined;
-	readonly title?: string | undefined;
+	readonly cloud?: string;
+	readonly lastModifiedTime?: string;
+	readonly message?: string;
+	readonly title?: string;
 }
 export default {
 	emergingIssues: emergingIssues,

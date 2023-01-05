@@ -14,10 +14,10 @@ export interface applicationsComponentOutputs {
 	readonly type: "Microsoft.ServiceFabricMesh/applications";
 }
 export interface applicationsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ApplicationResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class applications_services
 	extends ArmResource<applications_servicesComponentInputs>
@@ -37,7 +37,7 @@ export interface applications_servicesComponentOutputs {
 }
 export interface applications_servicesComponentInputs {
 	readonly name: string;
-	readonly properties?: ServiceResourceProperties | undefined;
+	readonly properties?: ServiceResourceProperties;
 }
 export class networks extends ArmResource<networksComponentInputs> implements networksComponentOutputs {
 	constructor(entity: ADKEntity, options: networksComponentInputs) {
@@ -53,10 +53,10 @@ export interface networksComponentOutputs {
 	readonly type: "Microsoft.ServiceFabricMesh/networks";
 }
 export interface networksComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: NetworkResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class volumes extends ArmResource<volumesComponentInputs> implements volumesComponentOutputs {
 	constructor(entity: ADKEntity, options: volumesComponentInputs) {
@@ -72,160 +72,160 @@ export interface volumesComponentOutputs {
 	readonly type: "Microsoft.ServiceFabricMesh/volumes";
 }
 export interface volumesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: VolumeResourceProperties;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export interface ApplicationResourceProperties {
-	readonly debugParams?: string | undefined;
-	readonly description?: string | undefined;
-	readonly diagnostics?: DiagnosticsDescription | undefined;
-	readonly healthState?: ("Error" | "Invalid" | "Ok" | "Unknown" | "Warning") | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceNames?: string[] | undefined;
-	readonly services?: ServiceResourceDescription[] | undefined;
-	readonly status?: ("Creating" | "Deleting" | "Failed" | "Invalid" | "Ready" | "Upgrading") | undefined;
-	readonly statusDetails?: string | undefined;
-	readonly unhealthyEvaluation?: string | undefined;
+	readonly debugParams?: string;
+	readonly description?: string;
+	readonly diagnostics?: DiagnosticsDescription;
+	readonly healthState?: "Error" | "Invalid" | "Ok" | "Unknown" | "Warning";
+	readonly provisioningState?: string;
+	readonly serviceNames?: string[];
+	readonly services?: ServiceResourceDescription[];
+	readonly status?: "Creating" | "Deleting" | "Failed" | "Invalid" | "Ready" | "Upgrading";
+	readonly statusDetails?: string;
+	readonly unhealthyEvaluation?: string;
 }
 export interface ContainerCodePackageProperties {
-	readonly commands?: string[] | undefined;
-	readonly diagnostics?: DiagnosticsRef | undefined;
-	readonly endpoints?: EndpointProperties[] | undefined;
-	readonly entrypoint?: string | undefined;
-	readonly environmentVariables?: EnvironmentVariable[] | undefined;
+	readonly commands?: string[];
+	readonly diagnostics?: DiagnosticsRef;
+	readonly endpoints?: EndpointProperties[];
+	readonly entrypoint?: string;
+	readonly environmentVariables?: EnvironmentVariable[];
 	readonly image: string;
-	readonly imageRegistryCredential?: ImageRegistryCredential | undefined;
-	readonly instanceView?: ContainerInstanceView | undefined;
-	readonly labels?: ContainerLabel[] | undefined;
+	readonly imageRegistryCredential?: ImageRegistryCredential;
+	readonly instanceView?: ContainerInstanceView;
+	readonly labels?: ContainerLabel[];
 	readonly name: string;
 	readonly resources: ResourceRequirements;
-	readonly settings?: Setting[] | undefined;
-	readonly volumeRefs?: ContainerVolume[] | undefined;
+	readonly settings?: Setting[];
+	readonly volumeRefs?: ContainerVolume[];
 }
 export interface ContainerEvent {
-	readonly count?: number | undefined;
-	readonly firstTimestamp?: string | undefined;
-	readonly lastTimestamp?: string | undefined;
-	readonly message?: string | undefined;
-	readonly name?: string | undefined;
-	readonly type?: string | undefined;
+	readonly count?: number;
+	readonly firstTimestamp?: string;
+	readonly lastTimestamp?: string;
+	readonly message?: string;
+	readonly name?: string;
+	readonly type?: string;
 }
 export interface ContainerInstanceView {
-	readonly currentState?: ContainerState | undefined;
-	readonly events?: ContainerEvent[] | undefined;
-	readonly previousState?: ContainerState | undefined;
-	readonly restartCount?: number | undefined;
+	readonly currentState?: ContainerState;
+	readonly events?: ContainerEvent[];
+	readonly previousState?: ContainerState;
+	readonly restartCount?: number;
 }
 export interface ContainerLabel {
 	readonly name: string;
 	readonly value: string;
 }
 export interface ContainerState {
-	readonly detailStatus?: string | undefined;
-	readonly exitCode?: string | undefined;
-	readonly finishTime?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly state?: string | undefined;
+	readonly detailStatus?: string;
+	readonly exitCode?: string;
+	readonly finishTime?: string;
+	readonly startTime?: string;
+	readonly state?: string;
 }
 export interface ContainerVolume {
 	readonly destinationPath: string;
 	readonly name: string;
-	readonly readOnly?: boolean | undefined;
+	readonly readOnly?: boolean;
 }
 export interface DiagnosticsDescription {
-	readonly defaultSinkRefs?: string[] | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly sinks?: DiagnosticsSinkProperties[] | undefined;
+	readonly defaultSinkRefs?: string[];
+	readonly enabled?: boolean;
+	readonly sinks?: DiagnosticsSinkProperties[];
 }
 export interface DiagnosticsRef {
-	readonly enabled?: boolean | undefined;
-	readonly sinkRefs?: string[] | undefined;
+	readonly enabled?: boolean;
+	readonly sinkRefs?: string[];
 }
 export interface DiagnosticsSinkProperties {
-	readonly description?: string | undefined;
-	readonly name?: string | undefined;
+	readonly description?: string;
+	readonly name?: string;
 }
 export interface EndpointProperties {
 	readonly name: string;
-	readonly port?: number | undefined;
+	readonly port?: number;
 }
 export interface EnvironmentVariable {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface ImageRegistryCredential {
-	readonly password?: string | undefined;
+	readonly password?: string;
 	readonly server: string;
 	readonly username: string;
 }
 export interface IngressConfig {
-	readonly layer4?: Layer4IngressConfig[] | undefined;
-	readonly publicIPAddress?: string | undefined;
-	readonly qosLevel?: "Bronze" | undefined;
+	readonly layer4?: Layer4IngressConfig[];
+	readonly publicIPAddress?: string;
+	readonly qosLevel?: "Bronze";
 }
 export interface Layer4IngressConfig {
-	readonly applicationName?: string | undefined;
-	readonly endpointName?: string | undefined;
-	readonly name?: string | undefined;
-	readonly publicPort?: number | undefined;
-	readonly serviceName?: string | undefined;
+	readonly applicationName?: string;
+	readonly endpointName?: string;
+	readonly name?: string;
+	readonly publicPort?: number;
+	readonly serviceName?: string;
 }
 export interface NetworkRef {
-	readonly name?: string | undefined;
+	readonly name?: string;
 }
 export interface NetworkResourceProperties {
 	readonly addressPrefix: string;
-	readonly description?: string | undefined;
-	readonly ingressConfig?: IngressConfig | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly description?: string;
+	readonly ingressConfig?: IngressConfig;
+	readonly provisioningState?: string;
 }
 export interface ResourceLimits {
-	readonly cpu?: number | undefined;
-	readonly memoryInGB?: number | undefined;
+	readonly cpu?: number;
+	readonly memoryInGB?: number;
 }
 export interface ResourceRequests {
 	readonly cpu: number;
 	readonly memoryInGB: number;
 }
 export interface ResourceRequirements {
-	readonly limits?: ResourceLimits | undefined;
+	readonly limits?: ResourceLimits;
 	readonly requests: ResourceRequests;
 }
 export interface ServiceResourceDescription {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
 	readonly properties: ServiceResourceProperties;
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface ServiceResourceProperties {
 	readonly codePackages: ContainerCodePackageProperties[];
-	readonly description?: string | undefined;
-	readonly diagnostics?: DiagnosticsRef | undefined;
-	readonly healthState?: ("Error" | "Invalid" | "Ok" | "Unknown" | "Warning") | undefined;
-	readonly networkRefs?: NetworkRef[] | undefined;
+	readonly description?: string;
+	readonly diagnostics?: DiagnosticsRef;
+	readonly healthState?: "Error" | "Invalid" | "Ok" | "Unknown" | "Warning";
+	readonly networkRefs?: NetworkRef[];
 	readonly osType: "Linux" | "Windows";
-	readonly replicaCount?: number | undefined;
-	readonly status?: ("Active" | "Creating" | "Deleting" | "Failed" | "Unknown" | "Upgrading") | undefined;
+	readonly replicaCount?: number;
+	readonly status?: "Active" | "Creating" | "Deleting" | "Failed" | "Unknown" | "Upgrading";
 }
 export interface Setting {
-	readonly name?: string | undefined;
-	readonly value?: string | undefined;
+	readonly name?: string;
+	readonly value?: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface VolumeProviderParametersAzureFile {
-	readonly accountKey?: string | undefined;
+	readonly accountKey?: string;
 	readonly accountName: string;
 	readonly shareName: string;
 }
 export interface VolumeResourceProperties {
-	readonly azureFileParameters?: VolumeProviderParametersAzureFile | undefined;
-	readonly description?: string | undefined;
+	readonly azureFileParameters?: VolumeProviderParametersAzureFile;
+	readonly description?: string;
 	readonly provider: "SFAzureFile";
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export default {
 	applications: applications,

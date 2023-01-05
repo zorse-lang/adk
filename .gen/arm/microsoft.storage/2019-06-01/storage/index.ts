@@ -17,13 +17,13 @@ export interface storageAccountsComponentOutputs {
 	readonly type: "Microsoft.Storage/storageAccounts";
 }
 export interface storageAccountsComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly kind: "BlobStorage" | "BlockBlobStorage" | "FileStorage" | "Storage" | "StorageV2";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: StorageAccountPropertiesCreateParametersOrStorageAccountProperties | undefined;
+	readonly properties?: StorageAccountPropertiesCreateParametersOrStorageAccountProperties;
 	readonly sku: Sku;
-	readonly tags?: StorageAccountCreateParametersTags | undefined;
+	readonly tags?: StorageAccountCreateParametersTags;
 }
 export class storageAccounts_blobServices
 	extends ArmResource<storageAccounts_blobServicesComponentInputs>
@@ -43,8 +43,8 @@ export interface storageAccounts_blobServicesComponentOutputs {
 }
 export interface storageAccounts_blobServicesComponentInputs {
 	readonly name: string;
-	readonly properties?: BlobServicePropertiesProperties | undefined;
-	readonly sku?: Sku | undefined;
+	readonly properties?: BlobServicePropertiesProperties;
+	readonly sku?: Sku;
 }
 export class storageAccounts_blobServices_containers
 	extends ArmResource<storageAccounts_blobServices_containersComponentInputs>
@@ -63,9 +63,9 @@ export interface storageAccounts_blobServices_containersComponentOutputs {
 	readonly type: "Microsoft.Storage/storageAccounts/blobServices/containers";
 }
 export interface storageAccounts_blobServices_containersComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: ContainerProperties | undefined;
+	readonly properties?: ContainerProperties;
 }
 export class storageAccounts_blobServices_containers_immutabilityPolicies
 	extends ArmResource<storageAccounts_blobServices_containers_immutabilityPoliciesComponentInputs>
@@ -90,7 +90,7 @@ export interface storageAccounts_blobServices_containers_immutabilityPoliciesCom
 	readonly type: "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies";
 }
 export interface storageAccounts_blobServices_containers_immutabilityPoliciesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
 	readonly properties: ImmutabilityPolicyProperty;
 }
@@ -112,7 +112,7 @@ export interface storageAccounts_encryptionScopesComponentOutputs {
 }
 export interface storageAccounts_encryptionScopesComponentInputs {
 	readonly name: string;
-	readonly properties?: EncryptionScopeProperties | undefined;
+	readonly properties?: EncryptionScopeProperties;
 }
 export class storageAccounts_fileServices
 	extends ArmResource<storageAccounts_fileServicesComponentInputs>
@@ -132,8 +132,8 @@ export interface storageAccounts_fileServicesComponentOutputs {
 }
 export interface storageAccounts_fileServicesComponentInputs {
 	readonly name: string;
-	readonly properties?: FileServicePropertiesProperties | undefined;
-	readonly sku?: Sku | undefined;
+	readonly properties?: FileServicePropertiesProperties;
+	readonly sku?: Sku;
 }
 export class storageAccounts_fileServices_shares
 	extends ArmResource<storageAccounts_fileServices_sharesComponentInputs>
@@ -152,9 +152,9 @@ export interface storageAccounts_fileServices_sharesComponentOutputs {
 	readonly type: "Microsoft.Storage/storageAccounts/fileServices/shares";
 }
 export interface storageAccounts_fileServices_sharesComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly name: string;
-	readonly properties?: FileShareProperties | undefined;
+	readonly properties?: FileShareProperties;
 }
 export class storageAccounts_inventoryPolicies
 	extends ArmResource<storageAccounts_inventoryPoliciesComponentInputs>
@@ -174,8 +174,8 @@ export interface storageAccounts_inventoryPoliciesComponentOutputs {
 }
 export interface storageAccounts_inventoryPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: BlobInventoryPolicyProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: BlobInventoryPolicyProperties;
+	readonly systemData?: SystemData;
 }
 export class storageAccounts_managementPolicies
 	extends ArmResource<storageAccounts_managementPoliciesComponentInputs>
@@ -195,7 +195,7 @@ export interface storageAccounts_managementPoliciesComponentOutputs {
 }
 export interface storageAccounts_managementPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: ManagementPolicyProperties | undefined;
+	readonly properties?: ManagementPolicyProperties;
 }
 export class storageAccounts_objectReplicationPolicies
 	extends ArmResource<storageAccounts_objectReplicationPoliciesComponentInputs>
@@ -215,7 +215,7 @@ export interface storageAccounts_objectReplicationPoliciesComponentOutputs {
 }
 export interface storageAccounts_objectReplicationPoliciesComponentInputs {
 	readonly name: string;
-	readonly properties?: ObjectReplicationPolicyProperties | undefined;
+	readonly properties?: ObjectReplicationPolicyProperties;
 }
 export class storageAccounts_privateEndpointConnections
 	extends ArmResource<storageAccounts_privateEndpointConnectionsComponentInputs>
@@ -235,7 +235,7 @@ export interface storageAccounts_privateEndpointConnectionsComponentOutputs {
 }
 export interface storageAccounts_privateEndpointConnectionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
+	readonly properties?: PrivateEndpointConnectionProperties;
 }
 export class storageAccounts_queueServices
 	extends ArmResource<storageAccounts_queueServicesComponentInputs>
@@ -255,7 +255,7 @@ export interface storageAccounts_queueServicesComponentOutputs {
 }
 export interface storageAccounts_queueServicesComponentInputs {
 	readonly name: string;
-	readonly properties?: QueueServicePropertiesProperties | undefined;
+	readonly properties?: QueueServicePropertiesProperties;
 }
 export class storageAccounts_queueServices_queues
 	extends ArmResource<storageAccounts_queueServices_queuesComponentInputs>
@@ -275,7 +275,7 @@ export interface storageAccounts_queueServices_queuesComponentOutputs {
 }
 export interface storageAccounts_queueServices_queuesComponentInputs {
 	readonly name: string;
-	readonly properties?: QueueProperties | undefined;
+	readonly properties?: QueueProperties;
 }
 export class storageAccounts_tableServices
 	extends ArmResource<storageAccounts_tableServicesComponentInputs>
@@ -295,7 +295,7 @@ export interface storageAccounts_tableServicesComponentOutputs {
 }
 export interface storageAccounts_tableServicesComponentInputs {
 	readonly name: string;
-	readonly properties?: TableServicePropertiesProperties | undefined;
+	readonly properties?: TableServicePropertiesProperties;
 }
 export class storageAccounts_tableServices_tables
 	extends ArmResource<storageAccounts_tableServices_tablesComponentInputs>
@@ -315,7 +315,7 @@ export interface storageAccounts_tableServices_tablesComponentOutputs {
 }
 export interface storageAccounts_tableServices_tablesComponentInputs {
 	readonly name: string;
-	readonly properties?: TableProperties | undefined;
+	readonly properties?: TableProperties;
 }
 export function listAccountSas(resource: storageAccounts, input: AccountSasParameters): ListAccountSasResponse {
 	if (resource.apiVersion !== "2019-06-01") {
@@ -345,14 +345,14 @@ export function listServiceSas(resource: storageAccounts, input: ServiceSasParam
 	throw new Error("not implemented");
 }
 export interface AccountSasParameters {
-	readonly keyToSign?: string | undefined;
+	readonly keyToSign?: string;
 	readonly signedExpiry: string;
-	readonly signedIp?: string | undefined;
+	readonly signedIp?: string;
 	readonly signedPermission: "a" | "c" | "d" | "l" | "p" | "r" | "u" | "w";
-	readonly signedProtocol?: "https" | undefined;
+	readonly signedProtocol?: "https";
 	readonly signedResourceTypes: "c" | "o" | "s";
 	readonly signedServices: "b" | "f" | "q" | "t";
-	readonly signedStart?: string | undefined;
+	readonly signedStart?: string;
 }
 export interface ActiveDirectoryProperties {
 	readonly azureStorageSid: string;
@@ -363,7 +363,7 @@ export interface ActiveDirectoryProperties {
 	readonly netBiosDomainName: string;
 }
 export interface AzureFilesIdentityBasedAuthentication {
-	readonly activeDirectoryProperties?: ActiveDirectoryProperties | undefined;
+	readonly activeDirectoryProperties?: ActiveDirectoryProperties;
 	readonly directoryServiceOptions: "AADDS" | "AD" | "None";
 }
 export interface BlobInventoryPolicyDefinition {
@@ -371,12 +371,12 @@ export interface BlobInventoryPolicyDefinition {
 }
 export interface BlobInventoryPolicyFilter {
 	readonly blobTypes: string[];
-	readonly includeBlobVersions?: boolean | undefined;
-	readonly includeSnapshots?: boolean | undefined;
-	readonly prefixMatch?: string[] | undefined;
+	readonly includeBlobVersions?: boolean;
+	readonly includeSnapshots?: boolean;
+	readonly prefixMatch?: string[];
 }
 export interface BlobInventoryPolicyProperties {
-	readonly lastModifiedTime?: string | undefined;
+	readonly lastModifiedTime?: string;
 	readonly policy: BlobInventoryPolicySchema;
 }
 export interface BlobInventoryPolicyRule {
@@ -399,46 +399,46 @@ export interface BlobRestoreRange {
 	readonly startRange: string;
 }
 export interface BlobRestoreStatus {
-	readonly failureReason?: string | undefined;
-	readonly parameters?: BlobRestoreParameters | undefined;
-	readonly restoreId?: string | undefined;
-	readonly status?: ("Complete" | "Failed" | "InProgress") | undefined;
+	readonly failureReason?: string;
+	readonly parameters?: BlobRestoreParameters;
+	readonly restoreId?: string;
+	readonly status?: "Complete" | "Failed" | "InProgress";
 }
 export interface BlobServicePropertiesProperties {
-	readonly automaticSnapshotPolicyEnabled?: boolean | undefined;
-	readonly changeFeed?: ChangeFeed | undefined;
-	readonly containerDeleteRetentionPolicy?: DeleteRetentionPolicy | undefined;
-	readonly cors?: CorsRules | undefined;
-	readonly defaultServiceVersion?: string | undefined;
-	readonly deleteRetentionPolicy?: DeleteRetentionPolicy | undefined;
-	readonly isVersioningEnabled?: boolean | undefined;
-	readonly lastAccessTimeTrackingPolicy?: LastAccessTimeTrackingPolicy | undefined;
-	readonly restorePolicy?: RestorePolicyProperties | undefined;
+	readonly automaticSnapshotPolicyEnabled?: boolean;
+	readonly changeFeed?: ChangeFeed;
+	readonly containerDeleteRetentionPolicy?: DeleteRetentionPolicy;
+	readonly cors?: CorsRules;
+	readonly defaultServiceVersion?: string;
+	readonly deleteRetentionPolicy?: DeleteRetentionPolicy;
+	readonly isVersioningEnabled?: boolean;
+	readonly lastAccessTimeTrackingPolicy?: LastAccessTimeTrackingPolicy;
+	readonly restorePolicy?: RestorePolicyProperties;
 }
 export interface ChangeFeed {
-	readonly enabled?: boolean | undefined;
-	readonly retentionInDays?: number | undefined;
+	readonly enabled?: boolean;
+	readonly retentionInDays?: number;
 }
 export interface ContainerProperties {
-	readonly defaultEncryptionScope?: string | undefined;
-	readonly deleted?: boolean | undefined;
-	readonly deletedTime?: string | undefined;
-	readonly denyEncryptionScopeOverride?: boolean | undefined;
-	readonly hasImmutabilityPolicy?: boolean | undefined;
-	readonly hasLegalHold?: boolean | undefined;
-	readonly immutabilityPolicy?: ImmutabilityPolicyProperties | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly leaseDuration?: ("Fixed" | "Infinite") | undefined;
-	readonly leaseState?: ("Available" | "Breaking" | "Broken" | "Expired" | "Leased") | undefined;
-	readonly leaseStatus?: ("Locked" | "Unlocked") | undefined;
-	readonly legalHold?: LegalHoldProperties | undefined;
-	readonly metadata?: ContainerPropertiesMetadata | undefined;
-	readonly publicAccess?: ("Blob" | "Container") | undefined;
-	readonly remainingRetentionDays?: number | undefined;
-	readonly version?: string | undefined;
+	readonly defaultEncryptionScope?: string;
+	readonly deleted?: boolean;
+	readonly deletedTime?: string;
+	readonly denyEncryptionScopeOverride?: boolean;
+	readonly hasImmutabilityPolicy?: boolean;
+	readonly hasLegalHold?: boolean;
+	readonly immutabilityPolicy?: ImmutabilityPolicyProperties;
+	readonly lastModifiedTime?: string;
+	readonly leaseDuration?: "Fixed" | "Infinite";
+	readonly leaseState?: "Available" | "Breaking" | "Broken" | "Expired" | "Leased";
+	readonly leaseStatus?: "Locked" | "Unlocked";
+	readonly legalHold?: LegalHoldProperties;
+	readonly metadata?: ContainerPropertiesMetadata;
+	readonly publicAccess?: "Blob" | "Container";
+	readonly remainingRetentionDays?: number;
+	readonly version?: string;
 }
 export interface ContainerPropertiesMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CorsRule {
 	readonly allowedHeaders: string[];
@@ -448,156 +448,156 @@ export interface CorsRule {
 	readonly maxAgeInSeconds: number;
 }
 export interface CorsRules {
-	readonly corsRules?: CorsRule[] | undefined;
+	readonly corsRules?: CorsRule[];
 }
 export interface CustomDomain {
 	readonly name: string;
-	readonly useSubDomainName?: boolean | undefined;
+	readonly useSubDomainName?: boolean;
 }
 export interface DateAfterCreation {
 	readonly daysAfterCreationGreaterThan: number;
 }
 export interface DateAfterModification {
-	readonly daysAfterLastAccessTimeGreaterThan?: number | undefined;
-	readonly daysAfterModificationGreaterThan?: number | undefined;
+	readonly daysAfterLastAccessTimeGreaterThan?: number;
+	readonly daysAfterModificationGreaterThan?: number;
 }
 export interface DeleteRetentionPolicy {
-	readonly days?: number | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly days?: number;
+	readonly enabled?: boolean;
 }
 export interface Encryption {
 	readonly keySource: "Microsoft.Keyvault" | "Microsoft.Storage";
-	readonly keyvaultproperties?: KeyVaultProperties | undefined;
-	readonly requireInfrastructureEncryption?: boolean | undefined;
-	readonly services?: EncryptionServices | undefined;
+	readonly keyvaultproperties?: KeyVaultProperties;
+	readonly requireInfrastructureEncryption?: boolean;
+	readonly services?: EncryptionServices;
 }
 export interface EncryptionScopeKeyVaultProperties {
-	readonly keyUri?: string | undefined;
+	readonly keyUri?: string;
 }
 export interface EncryptionScopeProperties {
-	readonly creationTime?: string | undefined;
-	readonly keyVaultProperties?: EncryptionScopeKeyVaultProperties | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly source?: ("Microsoft.KeyVault" | "Microsoft.Storage") | undefined;
-	readonly state?: ("Disabled" | "Enabled") | undefined;
+	readonly creationTime?: string;
+	readonly keyVaultProperties?: EncryptionScopeKeyVaultProperties;
+	readonly lastModifiedTime?: string;
+	readonly source?: "Microsoft.KeyVault" | "Microsoft.Storage";
+	readonly state?: "Disabled" | "Enabled";
 }
 export interface EncryptionService {
-	readonly enabled?: boolean | undefined;
-	readonly keyType?: ("Account" | "Service") | undefined;
-	readonly lastEnabledTime?: string | undefined;
+	readonly enabled?: boolean;
+	readonly keyType?: "Account" | "Service";
+	readonly lastEnabledTime?: string;
 }
 export interface EncryptionServices {
-	readonly blob?: EncryptionService | undefined;
-	readonly file?: EncryptionService | undefined;
-	readonly queue?: EncryptionService | undefined;
-	readonly table?: EncryptionService | undefined;
+	readonly blob?: EncryptionService;
+	readonly file?: EncryptionService;
+	readonly queue?: EncryptionService;
+	readonly table?: EncryptionService;
 }
 export interface Endpoints {
-	readonly blob?: string | undefined;
-	readonly dfs?: string | undefined;
-	readonly file?: string | undefined;
-	readonly internetEndpoints?: StorageAccountInternetEndpoints | undefined;
-	readonly microsoftEndpoints?: StorageAccountMicrosoftEndpoints | undefined;
-	readonly queue?: string | undefined;
-	readonly table?: string | undefined;
-	readonly web?: string | undefined;
+	readonly blob?: string;
+	readonly dfs?: string;
+	readonly file?: string;
+	readonly internetEndpoints?: StorageAccountInternetEndpoints;
+	readonly microsoftEndpoints?: StorageAccountMicrosoftEndpoints;
+	readonly queue?: string;
+	readonly table?: string;
+	readonly web?: string;
 }
 export interface FileServicePropertiesProperties {
-	readonly cors?: CorsRules | undefined;
-	readonly shareDeleteRetentionPolicy?: DeleteRetentionPolicy | undefined;
+	readonly cors?: CorsRules;
+	readonly shareDeleteRetentionPolicy?: DeleteRetentionPolicy;
 }
 export interface FileShareProperties {
-	readonly accessTier?: ("Cool" | "Hot" | "Premium" | "TransactionOptimized") | undefined;
-	readonly accessTierChangeTime?: string | undefined;
-	readonly accessTierStatus?: string | undefined;
-	readonly deleted?: boolean | undefined;
-	readonly deletedTime?: string | undefined;
-	readonly enabledProtocols?: ("NFS" | "SMB") | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly metadata?: FileSharePropertiesMetadata | undefined;
-	readonly remainingRetentionDays?: number | undefined;
-	readonly rootSquash?: ("AllSquash" | "NoRootSquash" | "RootSquash") | undefined;
-	readonly shareQuota?: number | undefined;
-	readonly shareUsageBytes?: number | undefined;
-	readonly version?: string | undefined;
+	readonly accessTier?: "Cool" | "Hot" | "Premium" | "TransactionOptimized";
+	readonly accessTierChangeTime?: string;
+	readonly accessTierStatus?: string;
+	readonly deleted?: boolean;
+	readonly deletedTime?: string;
+	readonly enabledProtocols?: "NFS" | "SMB";
+	readonly lastModifiedTime?: string;
+	readonly metadata?: FileSharePropertiesMetadata;
+	readonly remainingRetentionDays?: number;
+	readonly rootSquash?: "AllSquash" | "NoRootSquash" | "RootSquash";
+	readonly shareQuota?: number;
+	readonly shareUsageBytes?: number;
+	readonly version?: string;
 }
 export interface FileSharePropertiesMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface GeoReplicationStats {
-	readonly canFailover?: boolean | undefined;
-	readonly lastSyncTime?: string | undefined;
-	readonly status?: ("Bootstrap" | "Live" | "Unavailable") | undefined;
+	readonly canFailover?: boolean;
+	readonly lastSyncTime?: string;
+	readonly status?: "Bootstrap" | "Live" | "Unavailable";
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "SystemAssigned";
 }
 export interface ImmutabilityPolicyProperties {
-	readonly etag?: string | undefined;
-	readonly properties?: ImmutabilityPolicyProperty | undefined;
-	readonly updateHistory?: UpdateHistoryProperty[] | undefined;
+	readonly etag?: string;
+	readonly properties?: ImmutabilityPolicyProperty;
+	readonly updateHistory?: UpdateHistoryProperty[];
 }
 export interface ImmutabilityPolicyProperty {
-	readonly allowProtectedAppendWrites?: boolean | undefined;
-	readonly immutabilityPeriodSinceCreationInDays?: number | undefined;
-	readonly state?: ("Locked" | "Unlocked") | undefined;
+	readonly allowProtectedAppendWrites?: boolean;
+	readonly immutabilityPeriodSinceCreationInDays?: number;
+	readonly state?: "Locked" | "Unlocked";
 }
 export interface IPRule {
-	readonly action?: "Allow" | undefined;
+	readonly action?: "Allow";
 	readonly value: string;
 }
 export interface KeyVaultProperties {
-	readonly currentVersionedKeyIdentifier?: string | undefined;
-	readonly keyname?: string | undefined;
-	readonly keyvaulturi?: string | undefined;
-	readonly keyversion?: string | undefined;
-	readonly lastKeyRotationTimestamp?: string | undefined;
+	readonly currentVersionedKeyIdentifier?: string;
+	readonly keyname?: string;
+	readonly keyvaulturi?: string;
+	readonly keyversion?: string;
+	readonly lastKeyRotationTimestamp?: string;
 }
 export interface LastAccessTimeTrackingPolicy {
-	readonly blobType?: string[] | undefined;
+	readonly blobType?: string[];
 	readonly enable: boolean;
-	readonly name?: "AccessTimeTracking" | undefined;
-	readonly trackingGranularityInDays?: number | undefined;
+	readonly name?: "AccessTimeTracking";
+	readonly trackingGranularityInDays?: number;
 }
 export interface LegalHoldProperties {
-	readonly hasLegalHold?: boolean | undefined;
-	readonly tags?: TagProperty[] | undefined;
+	readonly hasLegalHold?: boolean;
+	readonly tags?: TagProperty[];
 }
 export interface ListAccountSasResponse {
-	readonly accountSasToken?: string | undefined;
+	readonly accountSasToken?: string;
 }
 export interface ListServiceSasResponse {
-	readonly serviceSasToken?: string | undefined;
+	readonly serviceSasToken?: string;
 }
 export interface ManagementPolicyAction {
-	readonly baseBlob?: ManagementPolicyBaseBlob | undefined;
-	readonly snapshot?: ManagementPolicySnapShot | undefined;
-	readonly version?: ManagementPolicyVersion | undefined;
+	readonly baseBlob?: ManagementPolicyBaseBlob;
+	readonly snapshot?: ManagementPolicySnapShot;
+	readonly version?: ManagementPolicyVersion;
 }
 export interface ManagementPolicyBaseBlob {
-	readonly delete?: DateAfterModification | undefined;
-	readonly enableAutoTierToHotFromCool?: boolean | undefined;
-	readonly tierToArchive?: DateAfterModification | undefined;
-	readonly tierToCool?: DateAfterModification | undefined;
+	readonly delete?: DateAfterModification;
+	readonly enableAutoTierToHotFromCool?: boolean;
+	readonly tierToArchive?: DateAfterModification;
+	readonly tierToCool?: DateAfterModification;
 }
 export interface ManagementPolicyDefinition {
 	readonly actions: ManagementPolicyAction;
-	readonly filters?: ManagementPolicyFilter | undefined;
+	readonly filters?: ManagementPolicyFilter;
 }
 export interface ManagementPolicyFilter {
-	readonly blobIndexMatch?: TagFilter[] | undefined;
+	readonly blobIndexMatch?: TagFilter[];
 	readonly blobTypes: string[];
-	readonly prefixMatch?: string[] | undefined;
+	readonly prefixMatch?: string[];
 }
 export interface ManagementPolicyProperties {
-	readonly lastModifiedTime?: string | undefined;
+	readonly lastModifiedTime?: string;
 	readonly policy: ManagementPolicySchema;
 }
 export interface ManagementPolicyRule {
 	readonly definition: ManagementPolicyDefinition;
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 	readonly name: string;
 	readonly type: "Lifecycle";
 }
@@ -605,97 +605,97 @@ export interface ManagementPolicySchema {
 	readonly rules: ManagementPolicyRule[];
 }
 export interface ManagementPolicySnapShot {
-	readonly delete?: DateAfterCreation | undefined;
-	readonly tierToArchive?: DateAfterCreation | undefined;
-	readonly tierToCool?: DateAfterCreation | undefined;
+	readonly delete?: DateAfterCreation;
+	readonly tierToArchive?: DateAfterCreation;
+	readonly tierToCool?: DateAfterCreation;
 }
 export interface ManagementPolicyVersion {
-	readonly delete?: DateAfterCreation | undefined;
-	readonly tierToArchive?: DateAfterCreation | undefined;
-	readonly tierToCool?: DateAfterCreation | undefined;
+	readonly delete?: DateAfterCreation;
+	readonly tierToArchive?: DateAfterCreation;
+	readonly tierToCool?: DateAfterCreation;
 }
 export interface NetworkRuleSet {
-	readonly bypass?: ("AzureServices" | "Logging" | "Metrics" | "None") | undefined;
+	readonly bypass?: "AzureServices" | "Logging" | "Metrics" | "None";
 	readonly defaultAction: "Allow";
-	readonly ipRules?: IPRule[] | undefined;
-	readonly virtualNetworkRules?: VirtualNetworkRule[] | undefined;
+	readonly ipRules?: IPRule[];
+	readonly virtualNetworkRules?: VirtualNetworkRule[];
 }
 export interface ObjectReplicationPolicyFilter {
-	readonly minCreationTime?: string | undefined;
-	readonly prefixMatch?: string[] | undefined;
+	readonly minCreationTime?: string;
+	readonly prefixMatch?: string[];
 }
 export interface ObjectReplicationPolicyProperties {
 	readonly destinationAccount: string;
-	readonly enabledTime?: string | undefined;
-	readonly policyId?: string | undefined;
-	readonly rules?: ObjectReplicationPolicyRule[] | undefined;
+	readonly enabledTime?: string;
+	readonly policyId?: string;
+	readonly rules?: ObjectReplicationPolicyRule[];
 	readonly sourceAccount: string;
 }
 export interface ObjectReplicationPolicyRule {
 	readonly destinationContainer: string;
-	readonly filters?: ObjectReplicationPolicyFilter | undefined;
-	readonly ruleId?: string | undefined;
+	readonly filters?: ObjectReplicationPolicyFilter;
+	readonly ruleId?: string;
 	readonly sourceContainer: string;
 }
 export interface PrivateEndpoint {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface PrivateEndpointConnection {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: PrivateEndpointConnectionProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: PrivateEndpointConnectionProperties;
+	readonly type?: string;
 }
 export interface PrivateEndpointConnectionProperties {
-	readonly privateEndpoint?: PrivateEndpoint | undefined;
+	readonly privateEndpoint?: PrivateEndpoint;
 	readonly privateLinkServiceConnectionState: PrivateLinkServiceConnectionState;
-	readonly provisioningState?: ("Creating" | "Deleting" | "Failed" | "Succeeded") | undefined;
+	readonly provisioningState?: "Creating" | "Deleting" | "Failed" | "Succeeded";
 }
 export interface PrivateLinkServiceConnectionState {
-	readonly actionRequired?: string | undefined;
-	readonly description?: string | undefined;
-	readonly status?: ("Approved" | "Pending" | "Rejected") | undefined;
+	readonly actionRequired?: string;
+	readonly description?: string;
+	readonly status?: "Approved" | "Pending" | "Rejected";
 }
 export interface QueueProperties {
-	readonly approximateMessageCount?: number | undefined;
-	readonly metadata?: QueuePropertiesMetadata | undefined;
+	readonly approximateMessageCount?: number;
+	readonly metadata?: QueuePropertiesMetadata;
 }
 export interface QueuePropertiesMetadata {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface QueueServicePropertiesProperties {
-	readonly cors?: CorsRules | undefined;
+	readonly cors?: CorsRules;
 }
 export interface RestorePolicyProperties {
-	readonly days?: number | undefined;
+	readonly days?: number;
 	readonly enabled: boolean;
-	readonly lastEnabledTime?: string | undefined;
-	readonly minRestoreTime?: string | undefined;
+	readonly lastEnabledTime?: string;
+	readonly minRestoreTime?: string;
 }
 export interface RoutingPreference {
-	readonly publishInternetEndpoints?: boolean | undefined;
-	readonly publishMicrosoftEndpoints?: boolean | undefined;
-	readonly routingChoice?: ("InternetRouting" | "MicrosoftRouting") | undefined;
+	readonly publishInternetEndpoints?: boolean;
+	readonly publishMicrosoftEndpoints?: boolean;
+	readonly routingChoice?: "InternetRouting" | "MicrosoftRouting";
 }
 export interface ServiceSasParameters {
 	readonly canonicalizedResource: string;
-	readonly endPk?: string | undefined;
-	readonly endRk?: string | undefined;
-	readonly keyToSign?: string | undefined;
-	readonly rscc?: string | undefined;
-	readonly rscd?: string | undefined;
-	readonly rsce?: string | undefined;
-	readonly rscl?: string | undefined;
-	readonly rsct?: string | undefined;
-	readonly signedExpiry?: string | undefined;
-	readonly signedIdentifier?: string | undefined;
-	readonly signedIp?: string | undefined;
-	readonly signedPermission?: ("a" | "c" | "d" | "l" | "p" | "r" | "u" | "w") | undefined;
-	readonly signedProtocol?: "https" | undefined;
-	readonly signedResource?: ("b" | "c" | "f" | "s") | undefined;
-	readonly signedStart?: string | undefined;
-	readonly startPk?: string | undefined;
-	readonly startRk?: string | undefined;
+	readonly endPk?: string;
+	readonly endRk?: string;
+	readonly keyToSign?: string;
+	readonly rscc?: string;
+	readonly rscd?: string;
+	readonly rsce?: string;
+	readonly rscl?: string;
+	readonly rsct?: string;
+	readonly signedExpiry?: string;
+	readonly signedIdentifier?: string;
+	readonly signedIp?: string;
+	readonly signedPermission?: "a" | "c" | "d" | "l" | "p" | "r" | "u" | "w";
+	readonly signedProtocol?: "https";
+	readonly signedResource?: "b" | "c" | "f" | "s";
+	readonly signedStart?: string;
+	readonly startPk?: string;
+	readonly startRk?: string;
 }
 export interface Sku {
 	readonly name:
@@ -707,73 +707,73 @@ export interface Sku {
 		| "Standard_RAGRS"
 		| "Standard_RAGZRS"
 		| "Standard_ZRS";
-	readonly tier?: "Premium" | undefined;
+	readonly tier?: "Premium";
 }
 export interface StorageAccountCreateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface StorageAccountInternetEndpoints {
-	readonly blob?: string | undefined;
-	readonly dfs?: string | undefined;
-	readonly file?: string | undefined;
-	readonly web?: string | undefined;
+	readonly blob?: string;
+	readonly dfs?: string;
+	readonly file?: string;
+	readonly web?: string;
 }
 export interface StorageAccountKey {
-	readonly keyName?: string | undefined;
-	readonly permissions?: "Full" | undefined;
-	readonly value?: string | undefined;
+	readonly keyName?: string;
+	readonly permissions?: "Full";
+	readonly value?: string;
 }
 export interface StorageAccountListKeysResult {
-	readonly keys?: StorageAccountKey[] | undefined;
+	readonly keys?: StorageAccountKey[];
 }
 export interface StorageAccountMicrosoftEndpoints {
-	readonly blob?: string | undefined;
-	readonly dfs?: string | undefined;
-	readonly file?: string | undefined;
-	readonly queue?: string | undefined;
-	readonly table?: string | undefined;
-	readonly web?: string | undefined;
+	readonly blob?: string;
+	readonly dfs?: string;
+	readonly file?: string;
+	readonly queue?: string;
+	readonly table?: string;
+	readonly web?: string;
 }
 export interface StorageAccountPropertiesCreateParametersOrStorageAccountProperties {
-	readonly accessTier?: "Cool" | undefined;
-	readonly allowBlobPublicAccess?: boolean | undefined;
-	readonly allowSharedKeyAccess?: boolean | undefined;
-	readonly azureFilesIdentityBasedAuthentication?: AzureFilesIdentityBasedAuthentication | undefined;
-	readonly blobRestoreStatus?: BlobRestoreStatus | undefined;
-	readonly creationTime?: string | undefined;
-	readonly customDomain?: CustomDomain | undefined;
-	readonly encryption?: Encryption | undefined;
-	readonly failoverInProgress?: boolean | undefined;
-	readonly geoReplicationStats?: GeoReplicationStats | undefined;
-	readonly isHnsEnabled?: boolean | undefined;
-	readonly largeFileSharesState?: ("Disabled" | "Enabled") | undefined;
-	readonly lastGeoFailoverTime?: string | undefined;
-	readonly minimumTlsVersion?: ("TLS1_0" | "TLS1_1" | "TLS1_2") | undefined;
-	readonly networkAcls?: NetworkRuleSet | undefined;
-	readonly primaryEndpoints?: Endpoints | undefined;
-	readonly primaryLocation?: string | undefined;
-	readonly privateEndpointConnections?: PrivateEndpointConnection[] | undefined;
-	readonly provisioningState?: ("Creating" | "ResolvingDNS") | undefined;
-	readonly routingPreference?: RoutingPreference | undefined;
-	readonly secondaryEndpoints?: Endpoints | undefined;
-	readonly secondaryLocation?: string | undefined;
-	readonly statusOfPrimary?: "available" | undefined;
-	readonly statusOfSecondary?: "available" | undefined;
-	readonly supportsHttpsTrafficOnly?: boolean | undefined;
+	readonly accessTier?: "Cool";
+	readonly allowBlobPublicAccess?: boolean;
+	readonly allowSharedKeyAccess?: boolean;
+	readonly azureFilesIdentityBasedAuthentication?: AzureFilesIdentityBasedAuthentication;
+	readonly blobRestoreStatus?: BlobRestoreStatus;
+	readonly creationTime?: string;
+	readonly customDomain?: CustomDomain;
+	readonly encryption?: Encryption;
+	readonly failoverInProgress?: boolean;
+	readonly geoReplicationStats?: GeoReplicationStats;
+	readonly isHnsEnabled?: boolean;
+	readonly largeFileSharesState?: "Disabled" | "Enabled";
+	readonly lastGeoFailoverTime?: string;
+	readonly minimumTlsVersion?: "TLS1_0" | "TLS1_1" | "TLS1_2";
+	readonly networkAcls?: NetworkRuleSet;
+	readonly primaryEndpoints?: Endpoints;
+	readonly primaryLocation?: string;
+	readonly privateEndpointConnections?: PrivateEndpointConnection[];
+	readonly provisioningState?: "Creating" | "ResolvingDNS";
+	readonly routingPreference?: RoutingPreference;
+	readonly secondaryEndpoints?: Endpoints;
+	readonly secondaryLocation?: string;
+	readonly statusOfPrimary?: "available";
+	readonly statusOfSecondary?: "available";
+	readonly supportsHttpsTrafficOnly?: boolean;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TableProperties {
-	readonly tableName?: string | undefined;
+	readonly tableName?: string;
 }
 export interface TableServicePropertiesProperties {
-	readonly cors?: CorsRules | undefined;
+	readonly cors?: CorsRules;
 }
 export interface TagFilter {
 	readonly name: string;
@@ -781,24 +781,24 @@ export interface TagFilter {
 	readonly value: string;
 }
 export interface TagProperty {
-	readonly objectIdentifier?: string | undefined;
-	readonly tag?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly timestamp?: string | undefined;
-	readonly upn?: string | undefined;
+	readonly objectIdentifier?: string;
+	readonly tag?: string;
+	readonly tenantId?: string;
+	readonly timestamp?: string;
+	readonly upn?: string;
 }
 export interface UpdateHistoryProperty {
-	readonly immutabilityPeriodSinceCreationInDays?: number | undefined;
-	readonly objectIdentifier?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly timestamp?: string | undefined;
-	readonly update?: ("extend" | "lock" | "put") | undefined;
-	readonly upn?: string | undefined;
+	readonly immutabilityPeriodSinceCreationInDays?: number;
+	readonly objectIdentifier?: string;
+	readonly tenantId?: string;
+	readonly timestamp?: string;
+	readonly update?: "extend" | "lock" | "put";
+	readonly upn?: string;
 }
 export interface VirtualNetworkRule {
-	readonly action?: "Allow" | undefined;
+	readonly action?: "Allow";
 	readonly id: string;
-	readonly state?: ("deprovisioning" | "failed" | "networkSourceDeleted" | "provisioning") | undefined;
+	readonly state?: "deprovisioning" | "failed" | "networkSourceDeleted" | "provisioning";
 }
 export default {
 	storageAccounts: storageAccounts,

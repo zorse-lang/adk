@@ -18,7 +18,7 @@ export interface resourceProviders_locations_serviceLimitsComponentOutputs {
 }
 export interface resourceProviders_locations_serviceLimitsComponentInputs {
 	readonly name: string;
-	readonly properties?: QuotaProperties | undefined;
+	readonly properties?: QuotaProperties;
 }
 export class resourceProviders_locations_serviceLimitsRequests
 	extends ArmResource<resourceProviders_locations_serviceLimitsRequestsComponentInputs>
@@ -44,35 +44,35 @@ export interface resourceProviders_locations_serviceLimitsRequestsComponentOutpu
 }
 export interface resourceProviders_locations_serviceLimitsRequestsComponentInputs {
 	readonly name: string;
-	readonly properties?: QuotaRequestProperties | undefined;
+	readonly properties?: QuotaRequestProperties;
 }
 export interface QuotaProperties {
-	readonly currentValue?: number | undefined;
-	readonly limit?: number | undefined;
-	readonly name?: ResourceName | undefined;
-	readonly properties?: any | undefined;
-	readonly quotaPeriod?: string | undefined;
-	readonly resourceType?: ("dedicated" | "lowPriority" | "serviceSpecific" | "shared" | "standard") | undefined;
-	readonly unit?: string | undefined;
+	readonly currentValue?: number;
+	readonly limit?: number;
+	readonly name?: ResourceName;
+	readonly properties?: any;
+	readonly quotaPeriod?: string;
+	readonly resourceType?: "dedicated" | "lowPriority" | "serviceSpecific" | "shared" | "standard";
+	readonly unit?: string;
 }
 export interface QuotaRequestProperties {
-	readonly message?: string | undefined;
-	readonly provisioningState?: ("Accepted" | "Failed" | "InProgress" | "Invalid" | "Succeeded") | undefined;
-	readonly requestSubmitTime?: string | undefined;
-	readonly value?: SubRequest[] | undefined;
+	readonly message?: string;
+	readonly provisioningState?: "Accepted" | "Failed" | "InProgress" | "Invalid" | "Succeeded";
+	readonly requestSubmitTime?: string;
+	readonly value?: SubRequest[];
 }
 export interface ResourceName {
-	readonly localizedValue?: string | undefined;
-	readonly value?: string | undefined;
+	readonly localizedValue?: string;
+	readonly value?: string;
 }
 export interface SubRequest {
-	readonly limit?: number | undefined;
-	readonly message?: string | undefined;
-	readonly name?: ResourceName | undefined;
-	readonly provisioningState?: ("Accepted" | "Failed" | "InProgress" | "Invalid" | "Succeeded") | undefined;
-	readonly resourceType?: string | undefined;
-	readonly subRequestId?: string | undefined;
-	readonly unit?: string | undefined;
+	readonly limit?: number;
+	readonly message?: string;
+	readonly name?: ResourceName;
+	readonly provisioningState?: "Accepted" | "Failed" | "InProgress" | "Invalid" | "Succeeded";
+	readonly resourceType?: string;
+	readonly subRequestId?: string;
+	readonly unit?: string;
 }
 export default {
 	"resourceProviders/locations/serviceLimits": resourceProviders_locations_serviceLimits,

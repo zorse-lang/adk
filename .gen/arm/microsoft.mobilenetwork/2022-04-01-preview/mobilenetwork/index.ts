@@ -17,8 +17,8 @@ export interface mobileNetworksComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: MobileNetworkPropertiesFormat;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class mobileNetworks_dataNetworks
 	extends ArmResource<mobileNetworks_dataNetworksComponentInputs>
@@ -39,9 +39,9 @@ export interface mobileNetworks_dataNetworksComponentOutputs {
 export interface mobileNetworks_dataNetworksComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: DataNetworkPropertiesFormat | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: DataNetworkPropertiesFormat;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class mobileNetworks_services
 	extends ArmResource<mobileNetworks_servicesComponentInputs>
@@ -63,8 +63,8 @@ export interface mobileNetworks_servicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: ServicePropertiesFormat;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class mobileNetworks_simPolicies
 	extends ArmResource<mobileNetworks_simPoliciesComponentInputs>
@@ -86,8 +86,8 @@ export interface mobileNetworks_simPoliciesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: SimPolicyPropertiesFormat;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class mobileNetworks_sites
 	extends ArmResource<mobileNetworks_sitesComponentInputs>
@@ -108,9 +108,9 @@ export interface mobileNetworks_sitesComponentOutputs {
 export interface mobileNetworks_sitesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: SitePropertiesFormat | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: SitePropertiesFormat;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class mobileNetworks_slices
 	extends ArmResource<mobileNetworks_slicesComponentInputs>
@@ -132,8 +132,8 @@ export interface mobileNetworks_slicesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: SlicePropertiesFormat;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class packetCoreControlPlanes
 	extends ArmResource<packetCoreControlPlanesComponentInputs>
@@ -152,12 +152,12 @@ export interface packetCoreControlPlanesComponentOutputs {
 	readonly type: "Microsoft.MobileNetwork/packetCoreControlPlanes";
 }
 export interface packetCoreControlPlanesComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
+	readonly identity?: ManagedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: PacketCoreControlPlanePropertiesFormat;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class packetCoreControlPlanes_packetCoreDataPlanes
 	extends ArmResource<packetCoreControlPlanes_packetCoreDataPlanesComponentInputs>
@@ -185,8 +185,8 @@ export interface packetCoreControlPlanes_packetCoreDataPlanesComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: PacketCoreDataPlanePropertiesFormat;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class packetCoreControlPlanes_packetCoreDataPlanes_attachedDataNetworks
 	extends ArmResource<packetCoreControlPlanes_packetCoreDataPlanes_attachedDataNetworksComponentInputs>
@@ -217,8 +217,8 @@ export interface packetCoreControlPlanes_packetCoreDataPlanes_attachedDataNetwor
 	readonly location: string;
 	readonly name: string;
 	readonly properties: AttachedDataNetworkPropertiesFormat;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class packetCoreControlPlaneVersions
 	extends ArmResource<packetCoreControlPlaneVersionsComponentInputs>
@@ -244,8 +244,8 @@ export interface packetCoreControlPlaneVersionsComponentOutputs {
 }
 export interface packetCoreControlPlaneVersionsComponentInputs {
 	readonly name: string;
-	readonly properties?: PacketCoreControlPlaneVersionPropertiesFormat | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: PacketCoreControlPlaneVersionPropertiesFormat;
+	readonly systemData?: SystemData;
 }
 export class simGroups extends ArmResource<simGroupsComponentInputs> implements simGroupsComponentOutputs {
 	constructor(entity: ADKEntity, options: simGroupsComponentInputs) {
@@ -261,12 +261,12 @@ export interface simGroupsComponentOutputs {
 	readonly type: "Microsoft.MobileNetwork/simGroups";
 }
 export interface simGroupsComponentInputs {
-	readonly identity?: ManagedServiceIdentity | undefined;
+	readonly identity?: ManagedServiceIdentity;
 	readonly location: string;
 	readonly name: string;
 	readonly properties: SimGroupPropertiesFormat;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class simGroups_sims extends ArmResource<simGroups_simsComponentInputs> implements simGroups_simsComponentOutputs {
 	constructor(entity: ADKEntity, options: simGroups_simsComponentInputs) {
@@ -284,7 +284,7 @@ export interface simGroups_simsComponentOutputs {
 export interface simGroups_simsComponentInputs {
 	readonly name: string;
 	readonly properties: SimPropertiesFormat;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export function listSimIds(resource: mobileNetworks): SimIdListResult {
 	if (resource.apiVersion !== "2022-04-01-preview") {
@@ -300,13 +300,11 @@ export interface Ambr {
 	readonly uplink: string;
 }
 export interface AttachedDataNetworkPropertiesFormat {
-	readonly dnsAddresses?: string[] | undefined;
-	readonly naptConfiguration?: NaptConfiguration | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
-	readonly userEquipmentAddressPoolPrefix?: string[] | undefined;
-	readonly userEquipmentStaticAddressPoolPrefix?: string[] | undefined;
+	readonly dnsAddresses?: string[];
+	readonly naptConfiguration?: NaptConfiguration;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
+	readonly userEquipmentAddressPoolPrefix?: string[];
+	readonly userEquipmentStaticAddressPoolPrefix?: string[];
 	readonly userPlaneDataInterface: InterfaceProperties;
 }
 export interface AttachedDataNetworkResourceId {
@@ -322,73 +320,67 @@ export interface CustomLocationResourceId {
 	readonly id: string;
 }
 export interface DataNetworkConfiguration {
-	readonly "5qi"?: number | undefined;
-	readonly additionalAllowedSessionTypes?: ("IPv4" | "IPv6"[]) | undefined;
-	readonly allocationAndRetentionPriorityLevel?: number | undefined;
+	readonly "5qi"?: number;
+	readonly additionalAllowedSessionTypes?: "IPv4" | "IPv6"[];
+	readonly allocationAndRetentionPriorityLevel?: number;
 	readonly allowedServices: ServiceResourceId[];
 	readonly dataNetwork: DataNetworkResourceId;
-	readonly defaultSessionType?: ("IPv4" | "IPv6") | undefined;
-	readonly preemptionCapability?: ("MayPreempt" | "NotPreempt") | undefined;
-	readonly preemptionVulnerability?: ("NotPreemptable" | "Preemptable") | undefined;
+	readonly defaultSessionType?: "IPv4" | "IPv6";
+	readonly preemptionCapability?: "MayPreempt" | "NotPreempt";
+	readonly preemptionVulnerability?: "NotPreemptable" | "Preemptable";
 	readonly sessionAmbr: Ambr;
 }
 export interface DataNetworkPropertiesFormat {
-	readonly description?: string | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
+	readonly description?: string;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
 }
 export interface DataNetworkResourceId {
 	readonly id: string;
 }
 export interface InterfaceProperties {
-	readonly ipv4Address?: string | undefined;
-	readonly ipv4Gateway?: string | undefined;
-	readonly ipv4Subnet?: string | undefined;
-	readonly name?: string | undefined;
+	readonly ipv4Address?: string;
+	readonly ipv4Gateway?: string;
+	readonly ipv4Subnet?: string;
+	readonly name?: string;
 }
 export interface KeyVaultCertificate {
-	readonly certificateUrl?: string | undefined;
+	readonly certificateUrl?: string;
 }
 export interface KeyVaultKey {
-	readonly keyUrl?: string | undefined;
+	readonly keyUrl?: string;
 }
 export interface LocalDiagnosticsAccessConfiguration {
-	readonly httpsServerCertificate?: KeyVaultCertificate | undefined;
+	readonly httpsServerCertificate?: KeyVaultCertificate;
 }
 export interface ManagedServiceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: UserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedIdentities;
 }
 export interface MobileNetworkPropertiesFormat {
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
 	readonly publicLandMobileNetworkIdentifier: PlmnId;
-	readonly serviceKey?: string | undefined;
+	readonly serviceKey?: string;
 }
 export interface MobileNetworkResourceId {
 	readonly id: string;
 }
 export interface NaptConfiguration {
-	readonly enabled?: ("Disabled" | "Enabled") | undefined;
-	readonly pinholeLimits?: number | undefined;
-	readonly pinholeTimeouts?: PinholeTimeouts | undefined;
-	readonly portRange?: PortRange | undefined;
-	readonly portReuseHoldTime?: PortReuseHoldTimes | undefined;
+	readonly enabled?: "Disabled" | "Enabled";
+	readonly pinholeLimits?: number;
+	readonly pinholeTimeouts?: PinholeTimeouts;
+	readonly portRange?: PortRange;
+	readonly portReuseHoldTime?: PortReuseHoldTimes;
 }
 export interface PacketCoreControlPlanePropertiesFormat {
 	readonly controlPlaneAccessInterface: InterfaceProperties;
-	readonly coreNetworkTechnology?: ("5GC" | "EPC") | undefined;
-	readonly interopSettings?: any | undefined;
-	readonly localDiagnosticsAccess?: LocalDiagnosticsAccessConfiguration | undefined;
+	readonly coreNetworkTechnology?: "5GC" | "EPC";
+	readonly interopSettings?: any;
+	readonly localDiagnosticsAccess?: LocalDiagnosticsAccessConfiguration;
 	readonly mobileNetwork: MobileNetworkResourceId;
-	readonly platform?: PlatformConfiguration | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
+	readonly platform?: PlatformConfiguration;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
 	readonly sku:
 		| "EdgeSite2GBPS"
 		| "EdgeSite3GBPS"
@@ -397,47 +389,41 @@ export interface PacketCoreControlPlanePropertiesFormat {
 		| "FlagshipStarterPackage"
 		| "LargePackage"
 		| "MediumPackage";
-	readonly version?: string | undefined;
+	readonly version?: string;
 }
 export interface PacketCoreControlPlaneVersionPropertiesFormat {
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
-	readonly recommendedVersion?: ("NotRecommended" | "Recommended") | undefined;
-	readonly versionState?:
-		| ("Active" | "Deprecated" | "Preview" | "Unknown" | "Validating" | "ValidationFailed")
-		| undefined;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
+	readonly recommendedVersion?: "NotRecommended" | "Recommended";
+	readonly versionState?: "Active" | "Deprecated" | "Preview" | "Unknown" | "Validating" | "ValidationFailed";
 }
 export interface PacketCoreDataPlanePropertiesFormat {
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
 	readonly userPlaneAccessInterface: InterfaceProperties;
 }
 export interface PccRuleConfiguration {
 	readonly ruleName: string;
 	readonly rulePrecedence: number;
-	readonly ruleQosPolicy?: PccRuleQosPolicy | undefined;
+	readonly ruleQosPolicy?: PccRuleQosPolicy;
 	readonly serviceDataFlowTemplates: ServiceDataFlowTemplate[];
-	readonly trafficControl?: ("Blocked" | "Enabled") | undefined;
+	readonly trafficControl?: "Blocked" | "Enabled";
 }
 export interface PccRuleQosPolicy {
-	readonly "5qi"?: number | undefined;
-	readonly allocationAndRetentionPriorityLevel?: number | undefined;
-	readonly guaranteedBitRate?: Ambr | undefined;
+	readonly "5qi"?: number;
+	readonly allocationAndRetentionPriorityLevel?: number;
+	readonly guaranteedBitRate?: Ambr;
 	readonly maximumBitRate: Ambr;
-	readonly preemptionCapability?: ("MayPreempt" | "NotPreempt") | undefined;
-	readonly preemptionVulnerability?: ("NotPreemptable" | "Preemptable") | undefined;
+	readonly preemptionCapability?: "MayPreempt" | "NotPreempt";
+	readonly preemptionVulnerability?: "NotPreemptable" | "Preemptable";
 }
 export interface PinholeTimeouts {
-	readonly icmp?: number | undefined;
-	readonly tcp?: number | undefined;
-	readonly udp?: number | undefined;
+	readonly icmp?: number;
+	readonly tcp?: number;
+	readonly udp?: number;
 }
 export interface PlatformConfiguration {
-	readonly azureStackEdgeDevice?: AzureStackEdgeDeviceResourceId | undefined;
-	readonly connectedCluster?: ConnectedClusterResourceId | undefined;
-	readonly customLocation?: CustomLocationResourceId | undefined;
+	readonly azureStackEdgeDevice?: AzureStackEdgeDeviceResourceId;
+	readonly connectedCluster?: ConnectedClusterResourceId;
+	readonly customLocation?: CustomLocationResourceId;
 	readonly type: "AKS-HCI" | "BaseVM";
 }
 export interface PlmnId {
@@ -445,56 +431,50 @@ export interface PlmnId {
 	readonly mnc: string;
 }
 export interface PortRange {
-	readonly maxPort?: number | undefined;
-	readonly minPort?: number | undefined;
+	readonly maxPort?: number;
+	readonly minPort?: number;
 }
 export interface PortReuseHoldTimes {
-	readonly tcp?: number | undefined;
-	readonly udp?: number | undefined;
+	readonly tcp?: number;
+	readonly udp?: number;
 }
 export interface QosPolicy {
-	readonly "5qi"?: number | undefined;
-	readonly allocationAndRetentionPriorityLevel?: number | undefined;
+	readonly "5qi"?: number;
+	readonly allocationAndRetentionPriorityLevel?: number;
 	readonly maximumBitRate: Ambr;
-	readonly preemptionCapability?: ("MayPreempt" | "NotPreempt") | undefined;
-	readonly preemptionVulnerability?: ("NotPreemptable" | "Preemptable") | undefined;
+	readonly preemptionCapability?: "MayPreempt" | "NotPreempt";
+	readonly preemptionVulnerability?: "NotPreemptable" | "Preemptable";
 }
 export interface ServiceDataFlowTemplate {
 	readonly direction: "Bidirectional" | "Downlink" | "Uplink";
-	readonly ports?: string[] | undefined;
+	readonly ports?: string[];
 	readonly protocol: string[];
 	readonly remoteIpList: string[];
 	readonly templateName: string;
 }
 export interface ServicePropertiesFormat {
 	readonly pccRules: PccRuleConfiguration[];
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
 	readonly servicePrecedence: number;
-	readonly serviceQosPolicy?: QosPolicy | undefined;
+	readonly serviceQosPolicy?: QosPolicy;
 }
 export interface ServiceResourceId {
 	readonly id: string;
 }
 export interface SimGroupPropertiesFormat {
-	readonly encryptionKey?: KeyVaultKey | undefined;
-	readonly mobileNetwork?: MobileNetworkResourceId | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
+	readonly encryptionKey?: KeyVaultKey;
+	readonly mobileNetwork?: MobileNetworkResourceId;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
 }
 export interface SimIdListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: SubResource[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: SubResource[];
 }
 export interface SimPolicyPropertiesFormat {
 	readonly defaultSlice: SliceResourceId;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
-	readonly registrationTimer?: number | undefined;
-	readonly rfspIndex?: number | undefined;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
+	readonly registrationTimer?: number;
+	readonly rfspIndex?: number;
 	readonly sliceConfigurations: SliceConfiguration[];
 	readonly ueAmbr: Ambr;
 }
@@ -502,31 +482,27 @@ export interface SimPolicyResourceId {
 	readonly id: string;
 }
 export interface SimPropertiesFormat {
-	readonly authenticationKey?: string | undefined;
-	readonly deviceType?: string | undefined;
-	readonly integratedCircuitCardIdentifier?: string | undefined;
+	readonly authenticationKey?: string;
+	readonly deviceType?: string;
+	readonly integratedCircuitCardIdentifier?: string;
 	readonly internationalMobileSubscriberIdentity: string;
-	readonly operatorKeyCode?: string | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
-	readonly simPolicy?: SimPolicyResourceId | undefined;
-	readonly simState?: ("Disabled" | "Enabled" | "Invalid") | undefined;
-	readonly staticIpConfiguration?: SimStaticIpProperties[] | undefined;
+	readonly operatorKeyCode?: string;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
+	readonly simPolicy?: SimPolicyResourceId;
+	readonly simState?: "Disabled" | "Enabled" | "Invalid";
+	readonly staticIpConfiguration?: SimStaticIpProperties[];
 }
 export interface SimStaticIpProperties {
-	readonly attachedDataNetwork?: AttachedDataNetworkResourceId | undefined;
-	readonly slice?: SliceResourceId | undefined;
-	readonly staticIp?: SimStaticIpPropertiesStaticIp | undefined;
+	readonly attachedDataNetwork?: AttachedDataNetworkResourceId;
+	readonly slice?: SliceResourceId;
+	readonly staticIp?: SimStaticIpPropertiesStaticIp;
 }
 export interface SimStaticIpPropertiesStaticIp {
-	readonly ipv4Address?: string | undefined;
+	readonly ipv4Address?: string;
 }
 export interface SitePropertiesFormat {
-	readonly networkFunctions?: SubResource[] | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
+	readonly networkFunctions?: SubResource[];
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
 }
 export interface SliceConfiguration {
 	readonly dataNetworkConfigurations: DataNetworkConfiguration[];
@@ -534,39 +510,37 @@ export interface SliceConfiguration {
 	readonly slice: SliceResourceId;
 }
 export interface SlicePropertiesFormat {
-	readonly description?: string | undefined;
-	readonly provisioningState?:
-		| ("Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown")
-		| undefined;
+	readonly description?: string;
+	readonly provisioningState?: "Accepted" | "Canceled" | "Deleted" | "Deleting" | "Failed" | "Succeeded" | "Unknown";
 	readonly snssai: Snssai;
 }
 export interface SliceResourceId {
 	readonly id: string;
 }
 export interface Snssai {
-	readonly sd?: string | undefined;
+	readonly sd?: string;
 	readonly sst: number;
 }
 export interface SubResource {
 	readonly id: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export default {
 	mobileNetworks: mobileNetworks,

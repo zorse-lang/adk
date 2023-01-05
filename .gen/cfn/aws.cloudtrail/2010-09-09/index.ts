@@ -16,14 +16,14 @@ export interface EventDataStoreComponentOutputs {
 	readonly UpdatedTimestamp: string;
 }
 export interface EventDataStoreComponentInputs {
-	readonly AdvancedEventSelectors?: (AdvancedEventSelector[] | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly MultiRegionEnabled?: (boolean | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly OrganizationEnabled?: (boolean | undefined) | undefined;
-	readonly RetentionPeriod?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TerminationProtectionEnabled?: (boolean | undefined) | undefined;
+	readonly AdvancedEventSelectors?: AdvancedEventSelector[] | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly MultiRegionEnabled?: boolean | undefined;
+	readonly Name?: string | undefined;
+	readonly OrganizationEnabled?: boolean | undefined;
+	readonly RetentionPeriod?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TerminationProtectionEnabled?: boolean | undefined;
 	readonly LogicalId: string;
 }
 export class Trail extends CfnResource<TrailComponentInputs> implements TrailComponentOutputs {
@@ -40,46 +40,46 @@ export interface TrailComponentOutputs {
 export interface TrailComponentInputs {
 	readonly IsLogging: boolean;
 	readonly S3BucketName: string;
-	readonly CloudWatchLogsLogGroupArn?: (string | undefined) | undefined;
-	readonly CloudWatchLogsRoleArn?: (string | undefined) | undefined;
-	readonly EnableLogFileValidation?: (boolean | undefined) | undefined;
-	readonly EventSelectors?: (EventSelector[] | undefined) | undefined;
-	readonly IncludeGlobalServiceEvents?: (boolean | undefined) | undefined;
-	readonly InsightSelectors?: (InsightSelector[] | undefined) | undefined;
-	readonly IsMultiRegionTrail?: (boolean | undefined) | undefined;
-	readonly IsOrganizationTrail?: (boolean | undefined) | undefined;
-	readonly KMSKeyId?: (string | undefined) | undefined;
-	readonly S3KeyPrefix?: (string | undefined) | undefined;
-	readonly SnsTopicName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TrailName?: (string | undefined) | undefined;
+	readonly CloudWatchLogsLogGroupArn?: string | undefined;
+	readonly CloudWatchLogsRoleArn?: string | undefined;
+	readonly EnableLogFileValidation?: boolean | undefined;
+	readonly EventSelectors?: EventSelector[] | undefined;
+	readonly IncludeGlobalServiceEvents?: boolean | undefined;
+	readonly InsightSelectors?: InsightSelector[] | undefined;
+	readonly IsMultiRegionTrail?: boolean | undefined;
+	readonly IsOrganizationTrail?: boolean | undefined;
+	readonly KMSKeyId?: string | undefined;
+	readonly S3KeyPrefix?: string | undefined;
+	readonly SnsTopicName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TrailName?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface AdvancedEventSelector {
 	readonly FieldSelectors: AdvancedFieldSelector[];
-	readonly Name?: (string | undefined) | undefined;
+	readonly Name?: string | undefined;
 }
 export interface AdvancedFieldSelector {
-	readonly EndsWith?: (string[] | undefined) | undefined;
-	readonly Equals?: (string[] | undefined) | undefined;
+	readonly EndsWith?: string[] | undefined;
+	readonly Equals?: string[] | undefined;
 	readonly Field: string;
-	readonly NotEndsWith?: (string[] | undefined) | undefined;
-	readonly NotEquals?: (string[] | undefined) | undefined;
-	readonly NotStartsWith?: (string[] | undefined) | undefined;
-	readonly StartsWith?: (string[] | undefined) | undefined;
+	readonly NotEndsWith?: string[] | undefined;
+	readonly NotEquals?: string[] | undefined;
+	readonly NotStartsWith?: string[] | undefined;
+	readonly StartsWith?: string[] | undefined;
 }
 export interface DataResource {
 	readonly Type: string;
-	readonly Values?: (string[] | undefined) | undefined;
+	readonly Values?: string[] | undefined;
 }
 export interface EventSelector {
-	readonly DataResources?: (DataResource[] | undefined) | undefined;
-	readonly ExcludeManagementEventSources?: (string[] | undefined) | undefined;
-	readonly IncludeManagementEvents?: (boolean | undefined) | undefined;
-	readonly ReadWriteType?: (string | undefined) | undefined;
+	readonly DataResources?: DataResource[] | undefined;
+	readonly ExcludeManagementEventSources?: string[] | undefined;
+	readonly IncludeManagementEvents?: boolean | undefined;
+	readonly ReadWriteType?: string | undefined;
 }
 export interface InsightSelector {
-	readonly InsightType?: (string | undefined) | undefined;
+	readonly InsightType?: string | undefined;
 }
 export default {
 	EventDataStore: EventDataStore,

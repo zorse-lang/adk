@@ -55,10 +55,10 @@ export class Group extends RosResource<GroupComponentInputs> implements GroupCom
 export interface GroupComponentOutputs {}
 export interface GroupComponentInputs {
 	readonly GroupName: any | string;
-	readonly Comments?: (string | undefined) | undefined;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly Policies?: (Policies[] | undefined) | undefined;
-	readonly PolicyAttachments?: (PolicyAttachments | undefined) | undefined;
+	readonly Comments?: string | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly Policies?: Policies[] | undefined;
+	readonly PolicyAttachments?: PolicyAttachments | undefined;
 	readonly LogicalId: string;
 }
 export class ManagedPolicy extends RosResource<ManagedPolicyComponentInputs> implements ManagedPolicyComponentOutputs {
@@ -69,12 +69,12 @@ export class ManagedPolicy extends RosResource<ManagedPolicyComponentInputs> imp
 export interface ManagedPolicyComponentOutputs {}
 export interface ManagedPolicyComponentInputs {
 	readonly PolicyName: any | string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Groups?: (any[] | undefined) | undefined;
-	readonly PolicyDocument?: (PolicyDocument | undefined) | undefined;
-	readonly PolicyDocumentUnchecked?: ({ [key: string]: any } | undefined) | undefined;
-	readonly Roles?: (any[] | undefined) | undefined;
-	readonly Users?: (any[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Groups?: any[] | undefined;
+	readonly PolicyDocument?: PolicyDocument | undefined;
+	readonly PolicyDocumentUnchecked?: { [key: string]: any } | undefined;
+	readonly Roles?: any[] | undefined;
+	readonly Users?: any[] | undefined;
 	readonly LogicalId: string;
 }
 export class RamAccountAlias
@@ -104,11 +104,11 @@ export interface RoleComponentOutputs {
 export interface RoleComponentInputs {
 	readonly AssumeRolePolicyDocument: AssumeRolePolicyDocument;
 	readonly RoleName: any | string;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly MaxSessionDuration?: (number | undefined) | undefined;
-	readonly Policies?: (Policies[] | undefined) | undefined;
-	readonly PolicyAttachments?: (PolicyAttachments | undefined) | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly MaxSessionDuration?: number | undefined;
+	readonly Policies?: Policies[] | undefined;
+	readonly PolicyAttachments?: PolicyAttachments | undefined;
 	readonly LogicalId: string;
 }
 export class SAMLProvider extends RosResource<SAMLProviderComponentInputs> implements SAMLProviderComponentOutputs {
@@ -124,9 +124,9 @@ export interface SAMLProviderComponentOutputs {
 }
 export interface SAMLProviderComponentInputs {
 	readonly SAMLProviderName: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly SAMLMetadataDocument?: (string | undefined) | undefined;
-	readonly SAMLMetadataDocumentURL?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly SAMLMetadataDocument?: string | undefined;
+	readonly SAMLMetadataDocumentURL?: string | undefined;
 	readonly LogicalId: string;
 }
 export class SecurityPreference
@@ -144,13 +144,13 @@ export interface SecurityPreferenceComponentOutputs {
 	readonly EnableSaveMfaTicket: any;
 }
 export interface SecurityPreferenceComponentInputs {
-	readonly AllowUserToChangePassword?: (any | boolean) | undefined;
-	readonly AllowUserToManageAccessKeys?: (any | boolean) | undefined;
-	readonly AllowUserToManageMFADevices?: (boolean | undefined) | undefined;
-	readonly AllowUserToManagePublicKeys?: (any | boolean) | undefined;
-	readonly EnableSaveMFATicket?: (boolean | undefined) | undefined;
-	readonly LoginNetworkMasks?: (any | string) | undefined;
-	readonly LoginSessionDuration?: (any | number) | undefined;
+	readonly AllowUserToChangePassword?: any | boolean;
+	readonly AllowUserToManageAccessKeys?: any | boolean;
+	readonly AllowUserToManageMFADevices?: boolean | undefined;
+	readonly AllowUserToManagePublicKeys?: any | boolean;
+	readonly EnableSaveMFATicket?: boolean | undefined;
+	readonly LoginNetworkMasks?: any | string;
+	readonly LoginSessionDuration?: any | number;
 	readonly LogicalId: string;
 }
 export class User extends RosResource<UserComponentInputs> implements UserComponentOutputs {
@@ -168,15 +168,15 @@ export interface UserComponentOutputs {
 }
 export interface UserComponentInputs {
 	readonly UserName: any | string;
-	readonly Comments?: (string | undefined) | undefined;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly DisplayName?: (string | undefined) | undefined;
-	readonly Email?: (string | undefined) | undefined;
-	readonly Groups?: (any[] | undefined) | undefined;
-	readonly LoginProfile?: (LoginProfile | undefined) | undefined;
-	readonly MobilePhone?: (string | undefined) | undefined;
-	readonly Policies?: (Policies[] | undefined) | undefined;
-	readonly PolicyAttachments?: (PolicyAttachments | undefined) | undefined;
+	readonly Comments?: string | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly DisplayName?: string | undefined;
+	readonly Email?: string | undefined;
+	readonly Groups?: any[] | undefined;
+	readonly LoginProfile?: LoginProfile | undefined;
+	readonly MobilePhone?: string | undefined;
+	readonly Policies?: Policies[] | undefined;
+	readonly PolicyAttachments?: PolicyAttachments | undefined;
 	readonly LogicalId: string;
 }
 export class UserToGroupAddition
@@ -194,66 +194,66 @@ export interface UserToGroupAdditionComponentInputs {
 	readonly LogicalId: string;
 }
 export interface Policies {
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly PolicyName: string;
 	readonly PolicyDocument: PolicyDocument;
 }
 export interface PolicyAttachments {
-	readonly Custom?: (string[] | undefined) | undefined;
-	readonly System?: (string[] | undefined) | undefined;
+	readonly Custom?: string[] | undefined;
+	readonly System?: string[] | undefined;
 }
 export interface PolicyDocument {
 	readonly Version: string;
 	readonly Statement: Statement[];
 }
 export interface Statement {
-	readonly Condition?: ({ [key: string]: any } | undefined) | undefined;
-	readonly Action?: (any[] | undefined) | undefined;
-	readonly Resource?: (any[] | undefined) | undefined;
-	readonly Effect?: (string | undefined) | undefined;
+	readonly Condition?: { [key: string]: any } | undefined;
+	readonly Action?: any[] | undefined;
+	readonly Resource?: any[] | undefined;
+	readonly Effect?: string | undefined;
 }
 export interface AssumeRolePolicyDocument {
 	readonly Version: string;
 	readonly Statement: Statement[];
 }
 export interface Condition {
-	readonly NumericNotEquals?: ({ [key: string]: any } | undefined) | undefined;
-	readonly StringEquals?: ({ [key: string]: any } | undefined) | undefined;
-	readonly StringLike?: ({ [key: string]: any } | undefined) | undefined;
-	readonly NumericLessThanEquals?: ({ [key: string]: any } | undefined) | undefined;
-	readonly StringNotEquals?: ({ [key: string]: any } | undefined) | undefined;
-	readonly StringNotEqualsIgnoreCase?: ({ [key: string]: any } | undefined) | undefined;
-	readonly NumericLessThan?: ({ [key: string]: any } | undefined) | undefined;
-	readonly NumericGreaterThan?: ({ [key: string]: any } | undefined) | undefined;
-	readonly DateLessThanEquals?: ({ [key: string]: any } | undefined) | undefined;
-	readonly DateGreaterThanEquals?: ({ [key: string]: any } | undefined) | undefined;
-	readonly NumericEquals?: ({ [key: string]: any } | undefined) | undefined;
-	readonly DateLessThan?: ({ [key: string]: any } | undefined) | undefined;
-	readonly DateNotEquals?: ({ [key: string]: any } | undefined) | undefined;
-	readonly StringNotLike?: ({ [key: string]: any } | undefined) | undefined;
-	readonly NotIpAddress?: ({ [key: string]: any } | undefined) | undefined;
-	readonly StringEqualsIgnoreCase?: ({ [key: string]: any } | undefined) | undefined;
-	readonly Bool?: ({ [key: string]: any } | undefined) | undefined;
-	readonly DateEquals?: ({ [key: string]: any } | undefined) | undefined;
-	readonly DateGreaterThan?: ({ [key: string]: any } | undefined) | undefined;
-	readonly NumericGreaterThanEquals?: ({ [key: string]: any } | undefined) | undefined;
-	readonly IpAddress?: ({ [key: string]: any } | undefined) | undefined;
+	readonly NumericNotEquals?: { [key: string]: any } | undefined;
+	readonly StringEquals?: { [key: string]: any } | undefined;
+	readonly StringLike?: { [key: string]: any } | undefined;
+	readonly NumericLessThanEquals?: { [key: string]: any } | undefined;
+	readonly StringNotEquals?: { [key: string]: any } | undefined;
+	readonly StringNotEqualsIgnoreCase?: { [key: string]: any } | undefined;
+	readonly NumericLessThan?: { [key: string]: any } | undefined;
+	readonly NumericGreaterThan?: { [key: string]: any } | undefined;
+	readonly DateLessThanEquals?: { [key: string]: any } | undefined;
+	readonly DateGreaterThanEquals?: { [key: string]: any } | undefined;
+	readonly NumericEquals?: { [key: string]: any } | undefined;
+	readonly DateLessThan?: { [key: string]: any } | undefined;
+	readonly DateNotEquals?: { [key: string]: any } | undefined;
+	readonly StringNotLike?: { [key: string]: any } | undefined;
+	readonly NotIpAddress?: { [key: string]: any } | undefined;
+	readonly StringEqualsIgnoreCase?: { [key: string]: any } | undefined;
+	readonly Bool?: { [key: string]: any } | undefined;
+	readonly DateEquals?: { [key: string]: any } | undefined;
+	readonly DateGreaterThan?: { [key: string]: any } | undefined;
+	readonly NumericGreaterThanEquals?: { [key: string]: any } | undefined;
+	readonly IpAddress?: { [key: string]: any } | undefined;
 }
 export interface PolicyDocumentStatement {
-	readonly Condition?: ({ [key: string]: any } | undefined) | undefined;
-	readonly Action?: (any[] | undefined) | undefined;
-	readonly Resource?: (any[] | undefined) | undefined;
-	readonly Effect?: (string | undefined) | undefined;
+	readonly Condition?: { [key: string]: any } | undefined;
+	readonly Action?: any[] | undefined;
+	readonly Resource?: any[] | undefined;
+	readonly Effect?: string | undefined;
 }
 export interface Principal {
-	readonly Service?: (any[] | undefined) | undefined;
-	readonly Federated?: (any[] | undefined) | undefined;
-	readonly RAM?: (any[] | undefined) | undefined;
+	readonly Service?: any[] | undefined;
+	readonly Federated?: any[] | undefined;
+	readonly RAM?: any[] | undefined;
 }
 export interface LoginProfile {
-	readonly PasswordResetRequired?: (boolean | undefined) | undefined;
-	readonly MFABindRequired?: (boolean | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
+	readonly PasswordResetRequired?: boolean | undefined;
+	readonly MFABindRequired?: boolean | undefined;
+	readonly Password?: string | undefined;
 }
 export default {
 	AccessKey: AccessKey,

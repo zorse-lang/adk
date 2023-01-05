@@ -22,9 +22,9 @@ export interface TopicComponentInputs {
 	readonly ProjectName: any | string;
 	readonly RecordType: string;
 	readonly TopicName: any | string;
-	readonly Lifecycle?: (number | undefined) | undefined;
-	readonly RecordSchema?: (string | undefined) | undefined;
-	readonly ShardCount?: (number | undefined) | undefined;
+	readonly Lifecycle?: number | undefined;
+	readonly RecordSchema?: string | undefined;
+	readonly ShardCount?: number | undefined;
 	readonly LogicalId: string;
 }
 export default {

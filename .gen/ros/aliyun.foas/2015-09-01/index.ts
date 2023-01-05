@@ -26,8 +26,8 @@ export interface ClusterComponentInputs {
 	readonly Description: string;
 	readonly OssBucket: string;
 	readonly VSwitchId: string;
-	readonly Order?: (Order | undefined) | undefined;
-	readonly OrderId?: (any | string) | undefined;
+	readonly Order?: Order | undefined;
+	readonly OrderId?: any | string;
 	readonly LogicalId: string;
 }
 export class Project extends RosResource<ProjectComponentInputs> implements ProjectComponentOutputs {
@@ -43,17 +43,17 @@ export interface ProjectComponentInputs {
 	readonly DeployType: string;
 	readonly ManagerIds: string;
 	readonly Name: string;
-	readonly ClusterId?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly OrderId?: (string | undefined) | undefined;
+	readonly ClusterId?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly OrderId?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface Order {
-	readonly PayModel?: (string | undefined) | undefined;
-	readonly Period?: (number | undefined) | undefined;
-	readonly MasterNumber?: (number | undefined) | undefined;
+	readonly PayModel?: string | undefined;
+	readonly Period?: number | undefined;
+	readonly MasterNumber?: number | undefined;
 	readonly MasterSpec: string;
-	readonly SlaveNumber?: (number | undefined) | undefined;
+	readonly SlaveNumber?: number | undefined;
 	readonly SlaveSpec: string;
 }
 export default {

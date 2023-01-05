@@ -16,65 +16,65 @@ export interface workflowsComponentOutputs {
 export interface workflowsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WorkflowProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: WorkflowProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface ACR {
-	readonly acrRegistryName?: string | undefined;
-	readonly acrRepositoryName?: string | undefined;
-	readonly acrResourceGroup?: string | undefined;
-	readonly acrSubscriptionId?: string | undefined;
+	readonly acrRegistryName?: string;
+	readonly acrRepositoryName?: string;
+	readonly acrResourceGroup?: string;
+	readonly acrSubscriptionId?: string;
 }
 export interface DeploymentProperties {
-	readonly helmChartPath?: string | undefined;
-	readonly helmValues?: string | undefined;
-	readonly kubeManifestLocations?: string[] | undefined;
-	readonly manifestType?: ("helm" | "kube") | undefined;
-	readonly overrides?: DeploymentPropertiesOverrides | undefined;
+	readonly helmChartPath?: string;
+	readonly helmValues?: string;
+	readonly kubeManifestLocations?: string[];
+	readonly manifestType?: "helm" | "kube";
+	readonly overrides?: DeploymentPropertiesOverrides;
 }
 export interface DeploymentPropertiesOverrides {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface GitHubWorkflowProfile {
-	readonly acr?: ACR | undefined;
-	readonly aksResourceId?: string | undefined;
-	readonly authStatus?: ("Authorized" | "Error" | "NotFound") | undefined;
-	readonly branchName?: string | undefined;
-	readonly deploymentProperties?: DeploymentProperties | undefined;
-	readonly dockerBuildContext?: string | undefined;
-	readonly dockerfile?: string | undefined;
-	readonly lastWorkflowRun?: WorkflowRun | undefined;
-	readonly namespace?: string | undefined;
-	readonly oidcCredentials?: GitHubWorkflowProfileOidcCredentials | undefined;
-	readonly prStatus?: ("merged" | "removed" | "submitted" | "unknown") | undefined;
-	readonly prURL?: string | undefined;
-	readonly pullNumber?: number | undefined;
-	readonly repositoryName?: string | undefined;
-	readonly repositoryOwner?: string | undefined;
+	readonly acr?: ACR;
+	readonly aksResourceId?: string;
+	readonly authStatus?: "Authorized" | "Error" | "NotFound";
+	readonly branchName?: string;
+	readonly deploymentProperties?: DeploymentProperties;
+	readonly dockerBuildContext?: string;
+	readonly dockerfile?: string;
+	readonly lastWorkflowRun?: WorkflowRun;
+	readonly namespace?: string;
+	readonly oidcCredentials?: GitHubWorkflowProfileOidcCredentials;
+	readonly prStatus?: "merged" | "removed" | "submitted" | "unknown";
+	readonly prURL?: string;
+	readonly pullNumber?: number;
+	readonly repositoryName?: string;
+	readonly repositoryOwner?: string;
 }
 export interface GitHubWorkflowProfileOidcCredentials {
-	readonly azureClientId?: string | undefined;
-	readonly azureTenantId?: string | undefined;
+	readonly azureClientId?: string;
+	readonly azureTenantId?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WorkflowProperties {
-	readonly githubWorkflowProfile?: GitHubWorkflowProfile | undefined;
+	readonly githubWorkflowProfile?: GitHubWorkflowProfile;
 }
 export interface WorkflowRun {
-	readonly lastRunAt?: string | undefined;
-	readonly succeeded?: boolean | undefined;
-	readonly workflowRunURL?: string | undefined;
+	readonly lastRunAt?: string;
+	readonly succeeded?: boolean;
+	readonly workflowRunURL?: string;
 }
 export default {
 	workflows: workflows,

@@ -10,7 +10,6 @@ export class ProjectsInstancesBackupOperations
 }
 export interface ProjectsInstancesBackupOperationsComponentOutputs {}
 export interface ProjectsInstancesBackupOperationsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

@@ -7,28 +7,27 @@ export class ProjectsLocationsRepositoriesPackagesVersions
 	constructor(entity: ADKEntity, options: ProjectsLocationsRepositoriesPackagesVersionsComponentInputs) {
 		super(entity, options.name, "artifactregistry.v1beta1.ProjectsLocationsRepositoriesPackagesVersions", options);
 	}
-	public readonly relatedTags?: Tag[] | undefined;
+	public readonly relatedTags?: Tag[];
 }
 export interface ProjectsLocationsRepositoriesPackagesVersionsComponentOutputs {
-	readonly relatedTags?: Tag[] | undefined;
+	readonly relatedTags?: Tag[];
 }
 export interface ProjectsLocationsRepositoriesPackagesVersionsComponentInputs {
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
+	readonly createTime?: string;
+	readonly description?: string;
 	readonly name: string;
-	readonly updateTime?: string | undefined;
-	readonly type: string;
+	readonly updateTime?: string;
 }
 export interface Tag {
-	readonly name?: string | undefined;
-	readonly version?: string | undefined;
+	readonly name?: string;
+	readonly version?: string;
 }
 export interface Version {
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly name?: string | undefined;
-	readonly relatedTags?: Tag[] | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly name?: string;
+	readonly relatedTags?: Tag[];
+	readonly updateTime?: string;
 }
 export default {
 	ProjectsLocationsRepositoriesPackagesVersions: ProjectsLocationsRepositoriesPackagesVersions,

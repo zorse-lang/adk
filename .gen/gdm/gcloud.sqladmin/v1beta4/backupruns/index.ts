@@ -7,40 +7,39 @@ export class BackupRuns extends GdmResource<BackupRunsComponentInputs> implement
 }
 export interface BackupRunsComponentOutputs {}
 export interface BackupRunsComponentInputs {
-	readonly description?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly enqueuedTime?: string | undefined;
-	readonly error?: OperationError | undefined;
-	readonly id?: string | undefined;
-	readonly instance?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly type: string;
-	readonly windowStartTime?: string | undefined;
+	readonly description?: string;
+	readonly endTime?: string;
+	readonly enqueuedTime?: string;
+	readonly error?: OperationError;
+	readonly id?: string;
+	readonly instance?: string;
+	readonly kind?: string;
+	readonly location?: string;
+	readonly selfLink?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly windowStartTime?: string;
 	readonly name: string;
 }
 export interface BackupRun {
-	readonly description?: string | undefined;
-	readonly endTime?: string | undefined;
-	readonly enqueuedTime?: string | undefined;
-	readonly error?: OperationError | undefined;
-	readonly id?: string | undefined;
-	readonly instance?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly status?: string | undefined;
-	readonly type?: string | undefined;
-	readonly windowStartTime?: string | undefined;
+	readonly description?: string;
+	readonly endTime?: string;
+	readonly enqueuedTime?: string;
+	readonly error?: OperationError;
+	readonly id?: string;
+	readonly instance?: string;
+	readonly kind?: string;
+	readonly location?: string;
+	readonly selfLink?: string;
+	readonly startTime?: string;
+	readonly status?: string;
+	readonly type?: string;
+	readonly windowStartTime?: string;
 }
 export interface OperationError {
-	readonly code?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly message?: string | undefined;
+	readonly code?: string;
+	readonly kind?: string;
+	readonly message?: string;
 }
 export default {
 	BackupRuns: BackupRuns,

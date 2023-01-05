@@ -18,28 +18,28 @@ export interface trafficmanagerprofiles_heatMapsComponentOutputs {
 }
 export interface trafficmanagerprofiles_heatMapsComponentInputs {
 	readonly name: string;
-	readonly properties?: HeatMapProperties | undefined;
+	readonly properties?: HeatMapProperties;
 }
 export interface HeatMapEndpoint {
-	readonly endpointId?: number | undefined;
-	readonly resourceId?: string | undefined;
+	readonly endpointId?: number;
+	readonly resourceId?: string;
 }
 export interface HeatMapProperties {
-	readonly endpoints?: HeatMapEndpoint[] | undefined;
-	readonly endTime?: string | undefined;
-	readonly startTime?: string | undefined;
-	readonly trafficFlows?: TrafficFlow[] | undefined;
+	readonly endpoints?: HeatMapEndpoint[];
+	readonly endTime?: string;
+	readonly startTime?: string;
+	readonly trafficFlows?: TrafficFlow[];
 }
 export interface QueryExperience {
 	readonly endpointId: number;
-	readonly latency?: number | undefined;
+	readonly latency?: number;
 	readonly queryCount: number;
 }
 export interface TrafficFlow {
-	readonly latitude?: number | undefined;
-	readonly longitude?: number | undefined;
-	readonly queryExperiences?: QueryExperience[] | undefined;
-	readonly sourceIp?: string | undefined;
+	readonly latitude?: number;
+	readonly longitude?: number;
+	readonly queryExperiences?: QueryExperience[];
+	readonly sourceIp?: string;
 }
 export default {
 	"trafficmanagerprofiles/heatMaps": trafficmanagerprofiles_heatMaps,

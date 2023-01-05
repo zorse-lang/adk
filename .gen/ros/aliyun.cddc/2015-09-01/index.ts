@@ -43,13 +43,13 @@ export interface DedicatedHostComponentInputs {
 	readonly PaymentType: any | string;
 	readonly VSwitchId: any | string;
 	readonly ZoneId: any | string;
-	readonly AutoRenew?: (any | string) | undefined;
-	readonly HostName?: (any | string) | undefined;
-	readonly ImageCategory?: (any | string) | undefined;
-	readonly OsPassword?: (string | undefined) | undefined;
-	readonly Period?: (string | undefined) | undefined;
-	readonly Tags?: (Tags[] | undefined) | undefined;
-	readonly UsedTime?: (string | undefined) | undefined;
+	readonly AutoRenew?: any | string;
+	readonly HostName?: any | string;
+	readonly ImageCategory?: any | string;
+	readonly OsPassword?: string | undefined;
+	readonly Period?: string | undefined;
+	readonly Tags?: Tags[] | undefined;
+	readonly UsedTime?: string | undefined;
 	readonly LogicalId: string;
 }
 export class DedicatedHostGroup
@@ -97,18 +97,18 @@ export interface DedicatedHostGroupComponentOutputs {
 export interface DedicatedHostGroupComponentInputs {
 	readonly Engine: any | string;
 	readonly VpcId: any | string;
-	readonly AllocationPolicy?: (any | string) | undefined;
-	readonly CpuAllocationRatio?: (any | number) | undefined;
-	readonly DedicatedHostGroupDesc?: (any | string) | undefined;
-	readonly DiskAllocationRatio?: (any | number) | undefined;
-	readonly HostReplacePolicy?: (any | string) | undefined;
-	readonly MemAllocationRatio?: (any | number) | undefined;
-	readonly OpenPermission?: (any | string) | undefined;
+	readonly AllocationPolicy?: any | string;
+	readonly CpuAllocationRatio?: any | number;
+	readonly DedicatedHostGroupDesc?: any | string;
+	readonly DiskAllocationRatio?: any | number;
+	readonly HostReplacePolicy?: any | string;
+	readonly MemAllocationRatio?: any | number;
+	readonly OpenPermission?: any | string;
 	readonly LogicalId: string;
 }
 export interface Tags {
-	readonly TagKey?: (string | undefined) | undefined;
-	readonly TagValue?: (string | undefined) | undefined;
+	readonly TagKey?: string | undefined;
+	readonly TagValue?: string | undefined;
 }
 export default {
 	DedicatedHost: DedicatedHost,

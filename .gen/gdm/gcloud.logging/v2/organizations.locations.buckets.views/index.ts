@@ -7,40 +7,39 @@ export class OrganizationsLocationsBucketsViews
 	constructor(entity: ADKEntity, options: OrganizationsLocationsBucketsViewsComponentInputs) {
 		super(entity, options.name, "logging.v2.OrganizationsLocationsBucketsViews", options);
 	}
-	public readonly createTime?: string | undefined;
-	public readonly schema?: TableSchema | undefined;
-	public readonly updateTime?: string | undefined;
+	public readonly createTime?: string;
+	public readonly schema?: TableSchema;
+	public readonly updateTime?: string;
 }
 export interface OrganizationsLocationsBucketsViewsComponentOutputs {
-	readonly createTime?: string | undefined;
-	readonly schema?: TableSchema | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly schema?: TableSchema;
+	readonly updateTime?: string;
 }
 export interface OrganizationsLocationsBucketsViewsComponentInputs {
-	readonly description?: string | undefined;
-	readonly filter?: string | undefined;
+	readonly description?: string;
+	readonly filter?: string;
 	readonly name: string;
 	readonly parent: string;
 	readonly viewId: string;
-	readonly type: string;
 }
 export interface LogView {
-	readonly createTime?: string | undefined;
-	readonly description?: string | undefined;
-	readonly filter?: string | undefined;
-	readonly name?: string | undefined;
-	readonly schema?: TableSchema | undefined;
-	readonly updateTime?: string | undefined;
+	readonly createTime?: string;
+	readonly description?: string;
+	readonly filter?: string;
+	readonly name?: string;
+	readonly schema?: TableSchema;
+	readonly updateTime?: string;
 }
 export interface TableFieldSchema {
-	readonly description?: string | undefined;
-	readonly fields?: TableFieldSchema[] | undefined;
-	readonly mode?: string | undefined;
+	readonly description?: string;
+	readonly fields?: TableFieldSchema[];
+	readonly mode?: string;
 	readonly name: string;
 	readonly type: string;
 }
 export interface TableSchema {
-	readonly fields?: TableFieldSchema[] | undefined;
+	readonly fields?: TableFieldSchema[];
 }
 export default {
 	OrganizationsLocationsBucketsViews: OrganizationsLocationsBucketsViews,

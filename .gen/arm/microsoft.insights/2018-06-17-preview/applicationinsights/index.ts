@@ -14,24 +14,24 @@ export interface workbooksComponentOutputs {
 	readonly type: "microsoft.insights/workbooks";
 }
 export interface workbooksComponentInputs {
-	readonly kind?: ("shared" | "user") | undefined;
-	readonly location?: string | undefined;
+	readonly kind?: "shared" | "user";
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WorkbookProperties | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: WorkbookProperties;
+	readonly tags?: ResourceTags;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface WorkbookProperties {
 	readonly category: string;
 	readonly displayName: string;
 	readonly serializedData: string;
-	readonly sourceId?: string | undefined;
-	readonly tags?: string[] | undefined;
-	readonly timeModified?: string | undefined;
-	readonly userId?: string | undefined;
-	readonly version?: string | undefined;
+	readonly sourceId?: string;
+	readonly tags?: string[];
+	readonly timeModified?: string;
+	readonly userId?: string;
+	readonly version?: string;
 }
 export default {
 	workbooks: workbooks,

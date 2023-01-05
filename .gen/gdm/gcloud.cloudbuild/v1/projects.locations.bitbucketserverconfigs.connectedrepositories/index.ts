@@ -10,7 +10,6 @@ export class ProjectsLocationsBitbucketServerConfigsConnectedRepositories
 }
 export interface ProjectsLocationsBitbucketServerConfigsConnectedRepositoriesComponentOutputs {}
 export interface ProjectsLocationsBitbucketServerConfigsConnectedRepositoriesComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

@@ -20,12 +20,12 @@ export interface ComponentComponentInputs {
 	readonly Overrides: any;
 	readonly Properties: { [key: string]: Component };
 	readonly Variants: ComponentVariant[];
-	readonly Children?: (ComponentChild[] | undefined) | undefined;
-	readonly CollectionProperties?: ({ [key: string]: ComponentDataConfiguration } | undefined) | undefined;
-	readonly Events?: ({ [key: string]: ComponentEvent } | undefined) | undefined;
-	readonly SchemaVersion?: (string | undefined) | undefined;
-	readonly SourceId?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Children?: ComponentChild[] | undefined;
+	readonly CollectionProperties?: { [key: string]: ComponentDataConfiguration } | undefined;
+	readonly Events?: { [key: string]: ComponentEvent } | undefined;
+	readonly SchemaVersion?: string | undefined;
+	readonly SourceId?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class Form extends CfnResource<FormComponentInputs> implements FormComponentOutputs {
@@ -45,10 +45,10 @@ export interface FormComponentInputs {
 	readonly SchemaVersion: string;
 	readonly SectionalElements: { [key: string]: SectionalElement };
 	readonly Style: FormStyle;
-	readonly AppId?: (string | undefined) | undefined;
-	readonly Cta?: (FormCTA | undefined) | undefined;
-	readonly EnvironmentName?: (string | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly AppId?: string | undefined;
+	readonly Cta?: FormCTA | undefined;
+	readonly EnvironmentName?: string | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export class Theme extends CfnResource<ThemeComponentInputs> implements ThemeComponentOutputs {
@@ -71,85 +71,85 @@ export interface ThemeComponentOutputs {
 export interface ThemeComponentInputs {
 	readonly Name: string;
 	readonly Values: ThemeValues[];
-	readonly Overrides?: (ThemeValues[] | undefined) | undefined;
-	readonly Tags?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Overrides?: ThemeValues[] | undefined;
+	readonly Tags?: { [key: string]: string } | undefined;
 	readonly LogicalId: string;
 }
 export interface ActionParameters {
-	readonly Anchor?: (Component | undefined) | undefined;
-	readonly Fields?: ({ [key: string]: Component } | undefined) | undefined;
-	readonly Global?: (Component | undefined) | undefined;
-	readonly Id?: (Component | undefined) | undefined;
-	readonly Model?: (string | undefined) | undefined;
-	readonly State?: (MutationActionSetStateParameter | undefined) | undefined;
-	readonly Target?: (Component | undefined) | undefined;
-	readonly Type?: (Component | undefined) | undefined;
-	readonly Url?: (Component | undefined) | undefined;
+	readonly Anchor?: Component | undefined;
+	readonly Fields?: { [key: string]: Component } | undefined;
+	readonly Global?: Component | undefined;
+	readonly Id?: Component | undefined;
+	readonly Model?: string | undefined;
+	readonly State?: MutationActionSetStateParameter | undefined;
+	readonly Target?: Component | undefined;
+	readonly Type?: Component | undefined;
+	readonly Url?: Component | undefined;
 }
 export interface ComponentBindingPropertiesValue {
-	readonly BindingProperties?: (ComponentBindingPropertiesValueProperties | undefined) | undefined;
-	readonly DefaultValue?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly BindingProperties?: ComponentBindingPropertiesValueProperties | undefined;
+	readonly DefaultValue?: string | undefined;
+	readonly Type?: string | undefined;
 }
 export interface ComponentBindingPropertiesValueProperties {
-	readonly Bucket?: (string | undefined) | undefined;
-	readonly DefaultValue?: (string | undefined) | undefined;
-	readonly Field?: (string | undefined) | undefined;
-	readonly Key?: (string | undefined) | undefined;
-	readonly Model?: (string | undefined) | undefined;
-	readonly Predicates?: (Predicate[] | undefined) | undefined;
-	readonly UserAttribute?: (string | undefined) | undefined;
+	readonly Bucket?: string | undefined;
+	readonly DefaultValue?: string | undefined;
+	readonly Field?: string | undefined;
+	readonly Key?: string | undefined;
+	readonly Model?: string | undefined;
+	readonly Predicates?: Predicate[] | undefined;
+	readonly UserAttribute?: string | undefined;
 }
 export interface ComponentChild {
-	readonly Children?: (ComponentChild[] | undefined) | undefined;
+	readonly Children?: ComponentChild[] | undefined;
 	readonly ComponentType: string;
-	readonly Events?: ({ [key: string]: ComponentEvent } | undefined) | undefined;
+	readonly Events?: { [key: string]: ComponentEvent } | undefined;
 	readonly Name: string;
 	readonly Properties: { [key: string]: Component };
 }
 export interface ComponentCondition {
-	readonly Else?: (Component | undefined) | undefined;
-	readonly Field?: (string | undefined) | undefined;
-	readonly Operand?: (string | undefined) | undefined;
-	readonly OperandType?: (string | undefined) | undefined;
-	readonly Operator?: (string | undefined) | undefined;
-	readonly Property?: (string | undefined) | undefined;
-	readonly Then?: (Component | undefined) | undefined;
+	readonly Else?: Component | undefined;
+	readonly Field?: string | undefined;
+	readonly Operand?: string | undefined;
+	readonly OperandType?: string | undefined;
+	readonly Operator?: string | undefined;
+	readonly Property?: string | undefined;
+	readonly Then?: Component | undefined;
 }
 export interface ComponentDataConfiguration {
-	readonly Identifiers?: (string[] | undefined) | undefined;
+	readonly Identifiers?: string[] | undefined;
 	readonly Model: string;
-	readonly Predicate?: (Predicate | undefined) | undefined;
-	readonly Sort?: (Sort[] | undefined) | undefined;
+	readonly Predicate?: Predicate | undefined;
+	readonly Sort?: Sort[] | undefined;
 }
 export interface ComponentEvent {
-	readonly Action?: (string | undefined) | undefined;
-	readonly Parameters?: (ActionParameters | undefined) | undefined;
+	readonly Action?: string | undefined;
+	readonly Parameters?: ActionParameters | undefined;
 }
 export interface Component {
-	readonly BindingProperties?: (ComponentPropertyBindingProperties | undefined) | undefined;
-	readonly Bindings?: ({ [key: string]: FormBindingElement } | undefined) | undefined;
-	readonly CollectionBindingProperties?: (ComponentPropertyBindingProperties | undefined) | undefined;
-	readonly ComponentName?: (string | undefined) | undefined;
-	readonly Concat?: (Component[] | undefined) | undefined;
-	readonly Condition?: (ComponentCondition | undefined) | undefined;
-	readonly Configured?: (boolean | undefined) | undefined;
-	readonly DefaultValue?: (string | undefined) | undefined;
-	readonly Event?: (string | undefined) | undefined;
-	readonly ImportedValue?: (string | undefined) | undefined;
-	readonly Model?: (string | undefined) | undefined;
-	readonly Property?: (string | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
-	readonly UserAttribute?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly BindingProperties?: ComponentPropertyBindingProperties | undefined;
+	readonly Bindings?: { [key: string]: FormBindingElement } | undefined;
+	readonly CollectionBindingProperties?: ComponentPropertyBindingProperties | undefined;
+	readonly ComponentName?: string | undefined;
+	readonly Concat?: Component[] | undefined;
+	readonly Condition?: ComponentCondition | undefined;
+	readonly Configured?: boolean | undefined;
+	readonly DefaultValue?: string | undefined;
+	readonly Event?: string | undefined;
+	readonly ImportedValue?: string | undefined;
+	readonly Model?: string | undefined;
+	readonly Property?: string | undefined;
+	readonly Type?: string | undefined;
+	readonly UserAttribute?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface ComponentPropertyBindingProperties {
-	readonly Field?: (string | undefined) | undefined;
+	readonly Field?: string | undefined;
 	readonly Property: string;
 }
 export interface ComponentVariant {
-	readonly Overrides?: (any | undefined) | undefined;
-	readonly VariantValues?: ({ [key: string]: string } | undefined) | undefined;
+	readonly Overrides?: any | undefined;
+	readonly VariantValues?: { [key: string]: string } | undefined;
 }
 export interface FormBindingElement {
 	readonly Element: string;
@@ -161,98 +161,98 @@ export interface MutationActionSetStateParameter {
 	readonly Set: Component;
 }
 export interface Predicate {
-	readonly And?: (Predicate[] | undefined) | undefined;
-	readonly Field?: (string | undefined) | undefined;
-	readonly Operand?: (string | undefined) | undefined;
-	readonly Operator?: (string | undefined) | undefined;
-	readonly Or?: (Predicate[] | undefined) | undefined;
+	readonly And?: Predicate[] | undefined;
+	readonly Field?: string | undefined;
+	readonly Operand?: string | undefined;
+	readonly Operator?: string | undefined;
+	readonly Or?: Predicate[] | undefined;
 }
 export interface Sort {
 	readonly Direction: string;
 	readonly Field: string;
 }
 export interface FieldConfig {
-	readonly Excluded?: (boolean | undefined) | undefined;
-	readonly InputType?: (FieldInputConfig | undefined) | undefined;
-	readonly Label?: (string | undefined) | undefined;
-	readonly Position?: (FieldPosition | undefined) | undefined;
-	readonly Validations?: (FieldValidationConfiguration[] | undefined) | undefined;
+	readonly Excluded?: boolean | undefined;
+	readonly InputType?: FieldInputConfig | undefined;
+	readonly Label?: string | undefined;
+	readonly Position?: FieldPosition | undefined;
+	readonly Validations?: FieldValidationConfiguration[] | undefined;
 }
 export interface FieldInputConfig {
-	readonly DefaultChecked?: (boolean | undefined) | undefined;
-	readonly DefaultCountryCode?: (string | undefined) | undefined;
-	readonly DefaultValue?: (string | undefined) | undefined;
-	readonly DescriptiveText?: (string | undefined) | undefined;
-	readonly MaxValue?: (number | undefined) | undefined;
-	readonly MinValue?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Placeholder?: (string | undefined) | undefined;
-	readonly ReadOnly?: (boolean | undefined) | undefined;
-	readonly Required?: (boolean | undefined) | undefined;
-	readonly Step?: (number | undefined) | undefined;
+	readonly DefaultChecked?: boolean | undefined;
+	readonly DefaultCountryCode?: string | undefined;
+	readonly DefaultValue?: string | undefined;
+	readonly DescriptiveText?: string | undefined;
+	readonly MaxValue?: number | undefined;
+	readonly MinValue?: number | undefined;
+	readonly Name?: string | undefined;
+	readonly Placeholder?: string | undefined;
+	readonly ReadOnly?: boolean | undefined;
+	readonly Required?: boolean | undefined;
+	readonly Step?: number | undefined;
 	readonly Type: string;
-	readonly Value?: (string | undefined) | undefined;
-	readonly ValueMappings?: (ValueMappings | undefined) | undefined;
+	readonly Value?: string | undefined;
+	readonly ValueMappings?: ValueMappings | undefined;
 }
 export interface FieldPosition {
-	readonly Below?: (string | undefined) | undefined;
-	readonly Fixed?: (string | undefined) | undefined;
-	readonly RightOf?: (string | undefined) | undefined;
+	readonly Below?: string | undefined;
+	readonly Fixed?: string | undefined;
+	readonly RightOf?: string | undefined;
 }
 export interface FieldValidationConfiguration {
-	readonly NumValues?: (number[] | undefined) | undefined;
-	readonly StrValues?: (string[] | undefined) | undefined;
+	readonly NumValues?: number[] | undefined;
+	readonly StrValues?: string[] | undefined;
 	readonly Type: string;
-	readonly ValidationMessage?: (string | undefined) | undefined;
+	readonly ValidationMessage?: string | undefined;
 }
 export interface FormButton {
-	readonly Children?: (string | undefined) | undefined;
-	readonly Excluded?: (boolean | undefined) | undefined;
-	readonly Position?: (FieldPosition | undefined) | undefined;
+	readonly Children?: string | undefined;
+	readonly Excluded?: boolean | undefined;
+	readonly Position?: FieldPosition | undefined;
 }
 export interface FormCTA {
-	readonly Cancel?: (FormButton | undefined) | undefined;
-	readonly Clear?: (FormButton | undefined) | undefined;
-	readonly Position?: (string | undefined) | undefined;
-	readonly Submit?: (FormButton | undefined) | undefined;
+	readonly Cancel?: FormButton | undefined;
+	readonly Clear?: FormButton | undefined;
+	readonly Position?: string | undefined;
+	readonly Submit?: FormButton | undefined;
 }
 export interface FormDataTypeConfig {
 	readonly DataSourceType: string;
 	readonly DataTypeName: string;
 }
 export interface FormInputValue {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 }
 export interface FormStyle {
-	readonly HorizontalGap?: (FormStyleConfig | undefined) | undefined;
-	readonly OuterPadding?: (FormStyleConfig | undefined) | undefined;
-	readonly VerticalGap?: (FormStyleConfig | undefined) | undefined;
+	readonly HorizontalGap?: FormStyleConfig | undefined;
+	readonly OuterPadding?: FormStyleConfig | undefined;
+	readonly VerticalGap?: FormStyleConfig | undefined;
 }
 export interface FormStyleConfig {
-	readonly TokenReference?: (string | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly TokenReference?: string | undefined;
+	readonly Value?: string | undefined;
 }
 export interface SectionalElement {
-	readonly Level?: (number | undefined) | undefined;
-	readonly Orientation?: (string | undefined) | undefined;
-	readonly Position?: (FieldPosition | undefined) | undefined;
-	readonly Text?: (string | undefined) | undefined;
+	readonly Level?: number | undefined;
+	readonly Orientation?: string | undefined;
+	readonly Position?: FieldPosition | undefined;
+	readonly Text?: string | undefined;
 	readonly Type: string;
 }
 export interface ValueMapping {
-	readonly DisplayValue?: (FormInputValue | undefined) | undefined;
+	readonly DisplayValue?: FormInputValue | undefined;
 	readonly Value: FormInputValue;
 }
 export interface ValueMappings {
 	readonly Values: ValueMapping[];
 }
 export interface ThemeValue {
-	readonly Children?: (ThemeValues[] | undefined) | undefined;
-	readonly Value?: (string | undefined) | undefined;
+	readonly Children?: ThemeValues[] | undefined;
+	readonly Value?: string | undefined;
 }
 export interface ThemeValues {
-	readonly Key?: (string | undefined) | undefined;
-	readonly Value?: (ThemeValue | undefined) | undefined;
+	readonly Key?: string | undefined;
+	readonly Value?: ThemeValue | undefined;
 }
 export default {
 	Component: Component,

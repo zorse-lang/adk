@@ -17,13 +17,13 @@ export interface managedClustersComponentOutputs {
 	readonly type: "Microsoft.ServiceFabric/managedClusters";
 }
 export interface managedClustersComponentInputs {
-	readonly etag?: string | undefined;
+	readonly etag?: string;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ManagedClusterProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: ManagedClusterProperties;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class managedclusters_applications
 	extends ArmResource<managedclusters_applicationsComponentInputs>
@@ -42,12 +42,12 @@ export interface managedclusters_applicationsComponentOutputs {
 	readonly type: "Microsoft.ServiceFabric/managedclusters/applications";
 }
 export interface managedclusters_applicationsComponentInputs {
-	readonly identity?: ManagedIdentity | undefined;
-	readonly location?: string | undefined;
+	readonly identity?: ManagedIdentity;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ApplicationResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ProxyResourceTags | undefined;
+	readonly properties?: ApplicationResourceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ProxyResourceTags;
 }
 export class managedclusters_applications_services
 	extends ArmResource<managedclusters_applications_servicesComponentInputs>
@@ -72,11 +72,11 @@ export interface managedclusters_applications_servicesComponentOutputs {
 	readonly type: "Microsoft.ServiceFabric/managedclusters/applications/services";
 }
 export interface managedclusters_applications_servicesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ServiceResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ProxyResourceTags | undefined;
+	readonly properties?: ServiceResourceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ProxyResourceTags;
 }
 export class managedclusters_applicationTypes
 	extends ArmResource<managedclusters_applicationTypesComponentInputs>
@@ -101,11 +101,11 @@ export interface managedclusters_applicationTypesComponentOutputs {
 	readonly type: "Microsoft.ServiceFabric/managedclusters/applicationTypes";
 }
 export interface managedclusters_applicationTypesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ApplicationTypeResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ProxyResourceTags | undefined;
+	readonly properties?: ApplicationTypeResourceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ProxyResourceTags;
 }
 export class managedclusters_applicationTypes_versions
 	extends ArmResource<managedclusters_applicationTypes_versionsComponentInputs>
@@ -130,11 +130,11 @@ export interface managedclusters_applicationTypes_versionsComponentOutputs {
 	readonly type: "Microsoft.ServiceFabric/managedclusters/applicationTypes/versions";
 }
 export interface managedclusters_applicationTypes_versionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ApplicationTypeVersionResourceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ProxyResourceTags | undefined;
+	readonly properties?: ApplicationTypeVersionResourceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ProxyResourceTags;
 }
 export class managedClusters_nodeTypes
 	extends ArmResource<managedClusters_nodeTypesComponentInputs>
@@ -154,69 +154,69 @@ export interface managedClusters_nodeTypesComponentOutputs {
 }
 export interface managedClusters_nodeTypesComponentInputs {
 	readonly name: string;
-	readonly properties?: NodeTypeProperties | undefined;
-	readonly sku?: NodeTypeSku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ManagedProxyResourceTags | undefined;
+	readonly properties?: NodeTypeProperties;
+	readonly sku?: NodeTypeSku;
+	readonly systemData?: SystemData;
+	readonly tags?: ManagedProxyResourceTags;
 }
 export interface ApplicationHealthPolicy {
 	readonly considerWarningAsError: boolean;
-	readonly defaultServiceTypeHealthPolicy?: ServiceTypeHealthPolicy | undefined;
+	readonly defaultServiceTypeHealthPolicy?: ServiceTypeHealthPolicy;
 	readonly maxPercentUnhealthyDeployedApplications: number;
-	readonly serviceTypeHealthPolicyMap?: ServiceTypeHealthPolicyMap | undefined;
+	readonly serviceTypeHealthPolicyMap?: ServiceTypeHealthPolicyMap;
 }
 export interface ApplicationParameterList {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ApplicationResourceProperties {
-	readonly managedIdentities?: ApplicationUserAssignedIdentity[] | undefined;
-	readonly parameters?: ApplicationParameterList | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly upgradePolicy?: ApplicationUpgradePolicy | undefined;
-	readonly version?: string | undefined;
+	readonly managedIdentities?: ApplicationUserAssignedIdentity[];
+	readonly parameters?: ApplicationParameterList;
+	readonly provisioningState?: string;
+	readonly upgradePolicy?: ApplicationUpgradePolicy;
+	readonly version?: string;
 }
 export interface ApplicationTypeResourceProperties {
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface ApplicationTypeVersionResourceProperties {
 	readonly appPackageUrl: string;
-	readonly provisioningState?: string | undefined;
+	readonly provisioningState?: string;
 }
 export interface ApplicationTypeVersionsCleanupPolicy {
 	readonly maxUnusedVersionsToKeep: number;
 }
 export interface ApplicationUpgradePolicy {
-	readonly applicationHealthPolicy?: ApplicationHealthPolicy | undefined;
-	readonly forceRestart?: boolean | undefined;
-	readonly instanceCloseDelayDuration?: number | undefined;
-	readonly recreateApplication?: boolean | undefined;
-	readonly rollingUpgradeMonitoringPolicy?: RollingUpgradeMonitoringPolicy | undefined;
-	readonly upgradeMode?: ("Monitored" | "UnmonitoredAuto") | undefined;
-	readonly upgradeReplicaSetCheckTimeout?: number | undefined;
+	readonly applicationHealthPolicy?: ApplicationHealthPolicy;
+	readonly forceRestart?: boolean;
+	readonly instanceCloseDelayDuration?: number;
+	readonly recreateApplication?: boolean;
+	readonly rollingUpgradeMonitoringPolicy?: RollingUpgradeMonitoringPolicy;
+	readonly upgradeMode?: "Monitored" | "UnmonitoredAuto";
+	readonly upgradeReplicaSetCheckTimeout?: number;
 }
 export interface ApplicationUserAssignedIdentity {
 	readonly name: string;
 	readonly principalId: string;
 }
 export interface AzureActiveDirectory {
-	readonly clientApplication?: string | undefined;
-	readonly clusterApplication?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly clientApplication?: string;
+	readonly clusterApplication?: string;
+	readonly tenantId?: string;
 }
 export interface ClientCertificate {
-	readonly commonName?: string | undefined;
+	readonly commonName?: string;
 	readonly isAdmin: boolean;
-	readonly issuerThumbprint?: string | undefined;
-	readonly thumbprint?: string | undefined;
+	readonly issuerThumbprint?: string;
+	readonly thumbprint?: string;
 }
 export interface EndpointRangeDescription {
 	readonly endPort: number;
 	readonly startPort: number;
 }
 export interface FrontendConfiguration {
-	readonly ipAddressType?: ("IPv4" | "IPv6") | undefined;
-	readonly loadBalancerBackendAddressPoolId?: string | undefined;
-	readonly loadBalancerInboundNatPoolId?: string | undefined;
+	readonly ipAddressType?: "IPv4" | "IPv6";
+	readonly loadBalancerBackendAddressPoolId?: string;
+	readonly loadBalancerInboundNatPoolId?: string;
 }
 export interface IPTag {
 	readonly ipTagType: string;
@@ -225,143 +225,135 @@ export interface IPTag {
 export interface LoadBalancingRule {
 	readonly backendPort: number;
 	readonly frontendPort: number;
-	readonly probePort?: number | undefined;
+	readonly probePort?: number;
 	readonly probeProtocol: "http" | "https" | "tcp";
-	readonly probeRequestPath?: string | undefined;
+	readonly probeRequestPath?: string;
 	readonly protocol: "tcp" | "udp";
 }
 export interface ManagedClusterProperties {
-	readonly addonFeatures?: ("BackupRestoreService" | "DnsService" | "ResourceMonitorService"[]) | undefined;
-	readonly adminPassword?: string | undefined;
+	readonly addonFeatures?: "BackupRestoreService" | "DnsService" | "ResourceMonitorService"[];
+	readonly adminPassword?: string;
 	readonly adminUserName: string;
-	readonly allowRdpAccess?: boolean | undefined;
-	readonly applicationTypeVersionsCleanupPolicy?: ApplicationTypeVersionsCleanupPolicy | undefined;
-	readonly auxiliarySubnets?: Subnet[] | undefined;
-	readonly azureActiveDirectory?: AzureActiveDirectory | undefined;
-	readonly clientConnectionPort?: number | undefined;
-	readonly clients?: ClientCertificate[] | undefined;
-	readonly clusterCertificateThumbprints?: string[] | undefined;
-	readonly clusterCodeVersion?: string | undefined;
-	readonly clusterId?: string | undefined;
-	readonly clusterState?:
-		| ("BaselineUpgrade" | "Deploying" | "Ready" | "UpgradeFailed" | "Upgrading" | "WaitingForNodes")
-		| undefined;
-	readonly clusterUpgradeCadence?: ("Wave0" | "Wave1" | "Wave2") | undefined;
-	readonly clusterUpgradeMode?: ("Automatic" | "Manual") | undefined;
+	readonly allowRdpAccess?: boolean;
+	readonly applicationTypeVersionsCleanupPolicy?: ApplicationTypeVersionsCleanupPolicy;
+	readonly auxiliarySubnets?: Subnet[];
+	readonly azureActiveDirectory?: AzureActiveDirectory;
+	readonly clientConnectionPort?: number;
+	readonly clients?: ClientCertificate[];
+	readonly clusterCertificateThumbprints?: string[];
+	readonly clusterCodeVersion?: string;
+	readonly clusterId?: string;
+	readonly clusterState?: "BaselineUpgrade" | "Deploying" | "Ready" | "UpgradeFailed" | "Upgrading" | "WaitingForNodes";
+	readonly clusterUpgradeCadence?: "Wave0" | "Wave1" | "Wave2";
+	readonly clusterUpgradeMode?: "Automatic" | "Manual";
 	readonly dnsName: string;
-	readonly enableAutoOSUpgrade?: boolean | undefined;
-	readonly enableIpv6?: boolean | undefined;
-	readonly enableServicePublicIP?: boolean | undefined;
-	readonly fabricSettings?: SettingsSectionDescription[] | undefined;
-	readonly fqdn?: string | undefined;
-	readonly httpGatewayConnectionPort?: number | undefined;
-	readonly ipTags?: IPTag[] | undefined;
-	readonly ipv4Address?: string | undefined;
-	readonly ipv6Address?: string | undefined;
-	readonly loadBalancingRules?: LoadBalancingRule[] | undefined;
-	readonly networkSecurityRules?: NetworkSecurityRule[] | undefined;
+	readonly enableAutoOSUpgrade?: boolean;
+	readonly enableIpv6?: boolean;
+	readonly enableServicePublicIP?: boolean;
+	readonly fabricSettings?: SettingsSectionDescription[];
+	readonly fqdn?: string;
+	readonly httpGatewayConnectionPort?: number;
+	readonly ipTags?: IPTag[];
+	readonly ipv4Address?: string;
+	readonly ipv6Address?: string;
+	readonly loadBalancingRules?: LoadBalancingRule[];
+	readonly networkSecurityRules?: NetworkSecurityRule[];
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "None"
-				| "Other"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly serviceEndpoints?: ServiceEndpoint[] | undefined;
-	readonly subnetId?: string | undefined;
-	readonly zonalResiliency?: boolean | undefined;
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "None"
+		| "Other"
+		| "Succeeded"
+		| "Updating";
+	readonly serviceEndpoints?: ServiceEndpoint[];
+	readonly subnetId?: string;
+	readonly zonalResiliency?: boolean;
 }
 export interface ManagedIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: UserAssignedIdentityMap | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: UserAssignedIdentityMap;
 }
 export interface ManagedProxyResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NetworkSecurityRule {
 	readonly access: "allow" | "deny";
-	readonly description?: string | undefined;
-	readonly destinationAddressPrefix?: string | undefined;
-	readonly destinationAddressPrefixes?: string[] | undefined;
-	readonly destinationPortRange?: string | undefined;
-	readonly destinationPortRanges?: string[] | undefined;
+	readonly description?: string;
+	readonly destinationAddressPrefix?: string;
+	readonly destinationAddressPrefixes?: string[];
+	readonly destinationPortRange?: string;
+	readonly destinationPortRanges?: string[];
 	readonly direction: "inbound" | "outbound";
 	readonly name: string;
 	readonly priority: number;
 	readonly protocol: "ah" | "esp" | "http" | "https" | "icmp" | "tcp" | "udp";
-	readonly sourceAddressPrefix?: string | undefined;
-	readonly sourceAddressPrefixes?: string[] | undefined;
-	readonly sourcePortRange?: string | undefined;
-	readonly sourcePortRanges?: string[] | undefined;
+	readonly sourceAddressPrefix?: string;
+	readonly sourceAddressPrefixes?: string[];
+	readonly sourcePortRange?: string;
+	readonly sourcePortRanges?: string[];
 }
 export interface NodeTypeProperties {
-	readonly additionalDataDisks?: VmssDataDisk[] | undefined;
-	readonly applicationPorts?: EndpointRangeDescription | undefined;
-	readonly capacities?: NodeTypePropertiesCapacities | undefined;
-	readonly dataDiskLetter?: string | undefined;
-	readonly dataDiskSizeGB?: number | undefined;
-	readonly dataDiskType?: ("Premium_LRS" | "StandardSSD_LRS" | "Standard_LRS") | undefined;
-	readonly enableAcceleratedNetworking?: boolean | undefined;
-	readonly enableEncryptionAtHost?: boolean | undefined;
-	readonly ephemeralPorts?: EndpointRangeDescription | undefined;
-	readonly frontendConfigurations?: FrontendConfiguration[] | undefined;
+	readonly additionalDataDisks?: VmssDataDisk[];
+	readonly applicationPorts?: EndpointRangeDescription;
+	readonly capacities?: NodeTypePropertiesCapacities;
+	readonly dataDiskLetter?: string;
+	readonly dataDiskSizeGB?: number;
+	readonly dataDiskType?: "Premium_LRS" | "StandardSSD_LRS" | "Standard_LRS";
+	readonly enableAcceleratedNetworking?: boolean;
+	readonly enableEncryptionAtHost?: boolean;
+	readonly ephemeralPorts?: EndpointRangeDescription;
+	readonly frontendConfigurations?: FrontendConfiguration[];
 	readonly isPrimary: boolean;
-	readonly isStateless?: boolean | undefined;
-	readonly multiplePlacementGroups?: boolean | undefined;
-	readonly networkSecurityRules?: NetworkSecurityRule[] | undefined;
-	readonly placementProperties?: NodeTypePropertiesPlacementProperties | undefined;
+	readonly isStateless?: boolean;
+	readonly multiplePlacementGroups?: boolean;
+	readonly networkSecurityRules?: NetworkSecurityRule[];
+	readonly placementProperties?: NodeTypePropertiesPlacementProperties;
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "None"
-				| "Other"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly useDefaultPublicLoadBalancer?: boolean | undefined;
-	readonly useTempDataDisk?: boolean | undefined;
-	readonly vmExtensions?: VmssExtension[] | undefined;
-	readonly vmImageOffer?: string | undefined;
-	readonly vmImagePublisher?: string | undefined;
-	readonly vmImageSku?: string | undefined;
-	readonly vmImageVersion?: string | undefined;
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "None"
+		| "Other"
+		| "Succeeded"
+		| "Updating";
+	readonly useDefaultPublicLoadBalancer?: boolean;
+	readonly useTempDataDisk?: boolean;
+	readonly vmExtensions?: VmssExtension[];
+	readonly vmImageOffer?: string;
+	readonly vmImagePublisher?: string;
+	readonly vmImageSku?: string;
+	readonly vmImageVersion?: string;
 	readonly vmInstanceCount: number;
-	readonly vmManagedIdentity?: VmManagedIdentity | undefined;
-	readonly vmSecrets?: VaultSecretGroup[] | undefined;
-	readonly vmSize?: string | undefined;
+	readonly vmManagedIdentity?: VmManagedIdentity;
+	readonly vmSecrets?: VaultSecretGroup[];
+	readonly vmSize?: string;
 }
 export interface NodeTypePropertiesCapacities {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NodeTypePropertiesPlacementProperties {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NodeTypeSku {
 	readonly capacity: number;
-	readonly name?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly name?: string;
+	readonly tier?: string;
 }
 export interface Partition {}
 export interface ProxyResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RollingUpgradeMonitoringPolicy {
 	readonly failureAction: "Manual" | "Rollback";
@@ -382,34 +374,34 @@ export interface ServiceCorrelation {
 	readonly serviceName: string;
 }
 export interface ServiceEndpoint {
-	readonly locations?: string[] | undefined;
+	readonly locations?: string[];
 	readonly service: string;
 }
 export interface ServiceLoadMetric {
-	readonly defaultLoad?: number | undefined;
+	readonly defaultLoad?: number;
 	readonly name: string;
-	readonly primaryDefaultLoad?: number | undefined;
-	readonly secondaryDefaultLoad?: number | undefined;
-	readonly weight?: ("High" | "Low" | "Medium" | "Zero") | undefined;
+	readonly primaryDefaultLoad?: number;
+	readonly secondaryDefaultLoad?: number;
+	readonly weight?: "High" | "Low" | "Medium" | "Zero";
 }
 export interface ServicePlacementPolicy {}
 export interface ServiceResourceProperties {
-	readonly correlationScheme?: ServiceCorrelation[] | undefined;
-	readonly defaultMoveCost?: ("High" | "Low" | "Medium" | "Zero") | undefined;
+	readonly correlationScheme?: ServiceCorrelation[];
+	readonly defaultMoveCost?: "High" | "Low" | "Medium" | "Zero";
 	readonly partitionDescription: Partition;
-	readonly placementConstraints?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly scalingPolicies?: ScalingPolicy[] | undefined;
-	readonly serviceLoadMetrics?: ServiceLoadMetric[] | undefined;
-	readonly servicePackageActivationMode?: ("ExclusiveProcess" | "SharedProcess") | undefined;
-	readonly servicePlacementPolicies?: ServicePlacementPolicy[] | undefined;
+	readonly placementConstraints?: string;
+	readonly provisioningState?: string;
+	readonly scalingPolicies?: ScalingPolicy[];
+	readonly serviceLoadMetrics?: ServiceLoadMetric[];
+	readonly servicePackageActivationMode?: "ExclusiveProcess" | "SharedProcess";
+	readonly servicePlacementPolicies?: ServicePlacementPolicy[];
 	readonly serviceTypeName: string;
 }
 export interface ServiceTypeHealthPolicy {
 	readonly maxPercentUnhealthyPartitionsPerService: number;
 }
 export interface ServiceTypeHealthPolicyMap {
-	readonly "[ key: string ]"?: ServiceTypeHealthPolicy | undefined;
+	readonly [key: string]: ServiceTypeHealthPolicy;
 }
 export interface SettingsParameterDescription {
 	readonly name: string;
@@ -423,29 +415,29 @@ export interface Sku {
 	readonly name: "Basic" | "Standard";
 }
 export interface Subnet {
-	readonly enableIpv6?: boolean | undefined;
+	readonly enableIpv6?: boolean;
 	readonly name: string;
-	readonly networkSecurityGroupId?: string | undefined;
-	readonly privateEndpointNetworkPolicies?: ("disabled" | "enabled") | undefined;
-	readonly privateLinkServiceNetworkPolicies?: ("disabled" | "enabled") | undefined;
+	readonly networkSecurityGroupId?: string;
+	readonly privateEndpointNetworkPolicies?: "disabled" | "enabled";
+	readonly privateLinkServiceNetworkPolicies?: "disabled" | "enabled";
 }
 export interface SubResource {
-	readonly id?: string | undefined;
+	readonly id?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: string | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: string | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: string;
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: string;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface UserAssignedIdentityMap {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface VaultCertificate {
 	readonly certificateStore: string;
@@ -456,7 +448,7 @@ export interface VaultSecretGroup {
 	readonly vaultCertificates: VaultCertificate[];
 }
 export interface VmManagedIdentity {
-	readonly userAssignedIdentities?: string[] | undefined;
+	readonly userAssignedIdentities?: string[];
 }
 export interface VmssDataDisk {
 	readonly diskLetter: string;
@@ -469,13 +461,13 @@ export interface VmssExtension {
 	readonly properties: VmssExtensionProperties;
 }
 export interface VmssExtensionProperties {
-	readonly autoUpgradeMinorVersion?: boolean | undefined;
-	readonly forceUpdateTag?: string | undefined;
-	readonly protectedSettings?: any | undefined;
-	readonly provisionAfterExtensions?: string[] | undefined;
-	readonly provisioningState?: string | undefined;
+	readonly autoUpgradeMinorVersion?: boolean;
+	readonly forceUpdateTag?: string;
+	readonly protectedSettings?: any;
+	readonly provisionAfterExtensions?: string[];
+	readonly provisioningState?: string;
 	readonly publisher: string;
-	readonly settings?: any | undefined;
+	readonly settings?: any;
 	readonly type: string;
 	readonly typeHandlerVersion: string;
 }

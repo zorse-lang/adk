@@ -17,17 +17,17 @@ export interface ClusterComponentInputs {
 	readonly IAMRoleARN: string;
 	readonly NodeType: string;
 	readonly ReplicationFactor: number;
-	readonly AvailabilityZones?: (string[] | undefined) | undefined;
-	readonly ClusterEndpointEncryptionType?: (string | undefined) | undefined;
-	readonly ClusterName?: (string | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly NotificationTopicARN?: (string | undefined) | undefined;
-	readonly ParameterGroupName?: (string | undefined) | undefined;
-	readonly PreferredMaintenanceWindow?: (string | undefined) | undefined;
-	readonly SecurityGroupIds?: (string[] | undefined) | undefined;
-	readonly SSESpecification?: (SSESpecification | undefined) | undefined;
-	readonly SubnetGroupName?: (string | undefined) | undefined;
-	readonly Tags?: (any | undefined) | undefined;
+	readonly AvailabilityZones?: string[] | undefined;
+	readonly ClusterEndpointEncryptionType?: string | undefined;
+	readonly ClusterName?: string | undefined;
+	readonly Description?: string | undefined;
+	readonly NotificationTopicARN?: string | undefined;
+	readonly ParameterGroupName?: string | undefined;
+	readonly PreferredMaintenanceWindow?: string | undefined;
+	readonly SecurityGroupIds?: string[] | undefined;
+	readonly SSESpecification?: SSESpecification | undefined;
+	readonly SubnetGroupName?: string | undefined;
+	readonly Tags?: any | undefined;
 	readonly LogicalId: string;
 }
 export class ParameterGroup extends CfnResource<ParameterGroupComponentInputs> implements ParameterGroupComponentOutputs {
@@ -37,9 +37,9 @@ export class ParameterGroup extends CfnResource<ParameterGroupComponentInputs> i
 }
 export interface ParameterGroupComponentOutputs {}
 export interface ParameterGroupComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly ParameterGroupName?: (string | undefined) | undefined;
-	readonly ParameterNameValues?: (any | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly ParameterGroupName?: string | undefined;
+	readonly ParameterNameValues?: any | undefined;
 	readonly LogicalId: string;
 }
 export class SubnetGroup extends CfnResource<SubnetGroupComponentInputs> implements SubnetGroupComponentOutputs {
@@ -50,12 +50,12 @@ export class SubnetGroup extends CfnResource<SubnetGroupComponentInputs> impleme
 export interface SubnetGroupComponentOutputs {}
 export interface SubnetGroupComponentInputs {
 	readonly SubnetIds: string[];
-	readonly Description?: (string | undefined) | undefined;
-	readonly SubnetGroupName?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly SubnetGroupName?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface SSESpecification {
-	readonly SSEEnabled?: (boolean | undefined) | undefined;
+	readonly SSEEnabled?: boolean | undefined;
 }
 export default {
 	Cluster: Cluster,

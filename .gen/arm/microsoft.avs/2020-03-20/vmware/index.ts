@@ -14,11 +14,11 @@ export interface privateCloudsComponentOutputs {
 	readonly type: "Microsoft.AVS/privateClouds";
 }
 export interface privateCloudsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: PrivateCloudProperties;
 	readonly sku: Sku;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly tags?: TrackedResourceTags;
 }
 export class privateClouds_authorizations
 	extends ArmResource<privateClouds_authorizationsComponentInputs>
@@ -38,7 +38,7 @@ export interface privateClouds_authorizationsComponentOutputs {
 }
 export interface privateClouds_authorizationsComponentInputs {
 	readonly name: string;
-	readonly properties?: ExpressRouteAuthorizationProperties | undefined;
+	readonly properties?: ExpressRouteAuthorizationProperties;
 }
 export class privateClouds_clusters
 	extends ArmResource<privateClouds_clustersComponentInputs>
@@ -79,7 +79,7 @@ export interface privateClouds_hcxEnterpriseSitesComponentOutputs {
 }
 export interface privateClouds_hcxEnterpriseSitesComponentInputs {
 	readonly name: string;
-	readonly properties?: HcxEnterpriseSiteProperties | undefined;
+	readonly properties?: HcxEnterpriseSiteProperties;
 }
 export function listAdminCredentials(resource: privateClouds): AdminCredentials {
 	if (resource.apiVersion !== "2020-03-20") {
@@ -91,78 +91,76 @@ export function listAdminCredentials(resource: privateClouds): AdminCredentials 
 	throw new Error("not implemented");
 }
 export interface AdminCredentials {
-	readonly nsxtPassword?: string | undefined;
-	readonly nsxtUsername?: string | undefined;
-	readonly vcenterPassword?: string | undefined;
-	readonly vcenterUsername?: string | undefined;
+	readonly nsxtPassword?: string;
+	readonly nsxtUsername?: string;
+	readonly vcenterPassword?: string;
+	readonly vcenterUsername?: string;
 }
 export interface Circuit {
-	readonly expressRouteID?: string | undefined;
-	readonly expressRoutePrivatePeeringID?: string | undefined;
-	readonly primarySubnet?: string | undefined;
-	readonly secondarySubnet?: string | undefined;
+	readonly expressRouteID?: string;
+	readonly expressRoutePrivatePeeringID?: string;
+	readonly primarySubnet?: string;
+	readonly secondarySubnet?: string;
 }
 export interface ClusterProperties {
-	readonly clusterId?: number | undefined;
-	readonly clusterSize?: number | undefined;
-	readonly hosts?: string[] | undefined;
-	readonly provisioningState?: ("Cancelled" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly clusterId?: number;
+	readonly clusterSize?: number;
+	readonly hosts?: string[];
+	readonly provisioningState?: "Cancelled" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface Endpoints {
-	readonly hcxCloudManager?: string | undefined;
-	readonly nsxtManager?: string | undefined;
-	readonly vcsa?: string | undefined;
+	readonly hcxCloudManager?: string;
+	readonly nsxtManager?: string;
+	readonly vcsa?: string;
 }
 export interface ExpressRouteAuthorizationProperties {
-	readonly expressRouteAuthorizationId?: string | undefined;
-	readonly expressRouteAuthorizationKey?: string | undefined;
-	readonly provisioningState?: ("Failed" | "Succeeded" | "Updating") | undefined;
+	readonly expressRouteAuthorizationId?: string;
+	readonly expressRouteAuthorizationKey?: string;
+	readonly provisioningState?: "Failed" | "Succeeded" | "Updating";
 }
 export interface HcxEnterpriseSiteProperties {
-	readonly activationKey?: string | undefined;
-	readonly status?: ("Available" | "Consumed" | "Deactivated" | "Deleted") | undefined;
+	readonly activationKey?: string;
+	readonly status?: "Available" | "Consumed" | "Deactivated" | "Deleted";
 }
 export interface IdentitySource {
-	readonly alias?: string | undefined;
-	readonly baseGroupDN?: string | undefined;
-	readonly baseUserDN?: string | undefined;
-	readonly domain?: string | undefined;
-	readonly name?: string | undefined;
-	readonly password?: string | undefined;
-	readonly primaryServer?: string | undefined;
-	readonly secondaryServer?: string | undefined;
-	readonly ssl?: ("Disabled" | "Enabled") | undefined;
-	readonly username?: string | undefined;
+	readonly alias?: string;
+	readonly baseGroupDN?: string;
+	readonly baseUserDN?: string;
+	readonly domain?: string;
+	readonly name?: string;
+	readonly password?: string;
+	readonly primaryServer?: string;
+	readonly secondaryServer?: string;
+	readonly ssl?: "Disabled" | "Enabled";
+	readonly username?: string;
 }
 export interface ManagementCluster {
-	readonly clusterId?: number | undefined;
-	readonly clusterSize?: number | undefined;
-	readonly hosts?: string[] | undefined;
-	readonly provisioningState?: ("Cancelled" | "Deleting" | "Failed" | "Succeeded" | "Updating") | undefined;
+	readonly clusterId?: number;
+	readonly clusterSize?: number;
+	readonly hosts?: string[];
+	readonly provisioningState?: "Cancelled" | "Deleting" | "Failed" | "Succeeded" | "Updating";
 }
 export interface PrivateCloudProperties {
-	readonly circuit?: Circuit | undefined;
-	readonly endpoints?: Endpoints | undefined;
-	readonly identitySources?: IdentitySource[] | undefined;
-	readonly internet?: ("Disabled" | "Enabled") | undefined;
-	readonly managementCluster?: ManagementCluster | undefined;
-	readonly managementNetwork?: string | undefined;
+	readonly circuit?: Circuit;
+	readonly endpoints?: Endpoints;
+	readonly identitySources?: IdentitySource[];
+	readonly internet?: "Disabled" | "Enabled";
+	readonly managementCluster?: ManagementCluster;
+	readonly managementNetwork?: string;
 	readonly networkBlock: string;
-	readonly nsxtCertificateThumbprint?: string | undefined;
-	readonly nsxtPassword?: string | undefined;
-	readonly provisioningNetwork?: string | undefined;
-	readonly provisioningState?:
-		| ("Building" | "Cancelled" | "Deleting" | "Failed" | "Pending" | "Succeeded" | "Updating")
-		| undefined;
-	readonly vcenterCertificateThumbprint?: string | undefined;
-	readonly vcenterPassword?: string | undefined;
-	readonly vmotionNetwork?: string | undefined;
+	readonly nsxtCertificateThumbprint?: string;
+	readonly nsxtPassword?: string;
+	readonly provisioningNetwork?: string;
+	readonly provisioningState?: "Building" | "Cancelled" | "Deleting" | "Failed" | "Pending" | "Succeeded" | "Updating";
+	readonly vcenterCertificateThumbprint?: string;
+	readonly vcenterPassword?: string;
+	readonly vmotionNetwork?: string;
 }
 export interface Sku {
 	readonly name: string;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	privateClouds: privateClouds,

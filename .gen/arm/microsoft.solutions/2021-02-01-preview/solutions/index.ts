@@ -17,13 +17,13 @@ export interface applicationDefinitionsComponentOutputs {
 	readonly type: "Microsoft.Solutions/applicationDefinitions";
 }
 export interface applicationDefinitionsComponentInputs {
-	readonly location?: string | undefined;
-	readonly managedBy?: string | undefined;
+	readonly location?: string;
+	readonly managedBy?: string;
 	readonly name: string;
 	readonly properties: ApplicationDefinitionProperties;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class applications extends ArmResource<applicationsComponentInputs> implements applicationsComponentOutputs {
 	constructor(entity: ADKEntity, options: applicationsComponentInputs) {
@@ -39,16 +39,16 @@ export interface applicationsComponentOutputs {
 	readonly type: "Microsoft.Solutions/applications";
 }
 export interface applicationsComponentInputs {
-	readonly identity?: Identity | undefined;
+	readonly identity?: Identity;
 	readonly kind: string;
-	readonly location?: string | undefined;
-	readonly managedBy?: string | undefined;
+	readonly location?: string;
+	readonly managedBy?: string;
 	readonly name: string;
-	readonly plan?: Plan | undefined;
+	readonly plan?: Plan;
 	readonly properties: ApplicationProperties;
-	readonly sku?: Sku | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly sku?: Sku;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export class jitRequests extends ArmResource<jitRequestsComponentInputs> implements jitRequestsComponentOutputs {
 	constructor(entity: ADKEntity, options: jitRequestsComponentInputs) {
@@ -64,11 +64,11 @@ export interface jitRequestsComponentOutputs {
 	readonly type: "Microsoft.Solutions/jitRequests";
 }
 export interface jitRequestsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: JitRequestProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: ResourceTags | undefined;
+	readonly properties?: JitRequestProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: ResourceTags;
 }
 export function listAllowedUpgradePlans(resource: applications): AllowedUpgradePlansResult {
 	if (resource.apiVersion !== "2021-02-01-preview") {
@@ -89,7 +89,7 @@ export function listTokens(resource: applications, input: ListTokenRequest): Man
 	throw new Error("not implemented");
 }
 export interface AllowedUpgradePlansResult {
-	readonly value?: Plan[] | undefined;
+	readonly value?: Plan[];
 }
 export interface ApplicationArtifact {
 	readonly name: "Authorizations" | "CustomRoleDefinition" | "NotSpecified" | "ViewDefinition";
@@ -101,12 +101,12 @@ export interface ApplicationAuthorization {
 	readonly roleDefinitionId: string;
 }
 export interface ApplicationBillingDetailsDefinition {
-	readonly resourceUsageId?: string | undefined;
+	readonly resourceUsageId?: string;
 }
 export interface ApplicationClientDetails {
-	readonly applicationId?: string | undefined;
-	readonly oid?: string | undefined;
-	readonly puid?: string | undefined;
+	readonly applicationId?: string;
+	readonly oid?: string;
+	readonly puid?: string;
 }
 export interface ApplicationDefinitionArtifact {
 	readonly name: "ApplicationResourceTemplate" | "CreateUiDefinition" | "MainTemplateParameters" | "NotSpecified";
@@ -114,33 +114,33 @@ export interface ApplicationDefinitionArtifact {
 	readonly uri: string;
 }
 export interface ApplicationDefinitionProperties {
-	readonly artifacts?: ApplicationDefinitionArtifact[] | undefined;
-	readonly authorizations?: ApplicationAuthorization[] | undefined;
-	readonly createUiDefinition?: any | undefined;
-	readonly deploymentPolicy?: ApplicationDeploymentPolicy | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly isEnabled?: boolean | undefined;
-	readonly lockingPolicy?: ApplicationPackageLockingPolicyDefinition | undefined;
+	readonly artifacts?: ApplicationDefinitionArtifact[];
+	readonly authorizations?: ApplicationAuthorization[];
+	readonly createUiDefinition?: any;
+	readonly deploymentPolicy?: ApplicationDeploymentPolicy;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly isEnabled?: boolean;
+	readonly lockingPolicy?: ApplicationPackageLockingPolicyDefinition;
 	readonly lockLevel: "CanNotDelete" | "None";
-	readonly mainTemplate?: any | undefined;
-	readonly managementPolicy?: ApplicationManagementPolicy | undefined;
-	readonly notificationPolicy?: ApplicationNotificationPolicy | undefined;
-	readonly packageFileUri?: string | undefined;
-	readonly policies?: ApplicationPolicy[] | undefined;
-	readonly storageAccountId?: string | undefined;
+	readonly mainTemplate?: any;
+	readonly managementPolicy?: ApplicationManagementPolicy;
+	readonly notificationPolicy?: ApplicationNotificationPolicy;
+	readonly packageFileUri?: string;
+	readonly policies?: ApplicationPolicy[];
+	readonly storageAccountId?: string;
 }
 export interface ApplicationDeploymentPolicy {
 	readonly deploymentMode: "Complete" | "Incremental" | "NotSpecified";
 }
 export interface ApplicationJitAccessPolicy {
 	readonly jitAccessEnabled: boolean;
-	readonly jitApprovalMode?: ("AutoApprove" | "ManualApprove" | "NotSpecified") | undefined;
-	readonly jitApprovers?: JitApproverDefinition[] | undefined;
-	readonly maximumJitAccessDuration?: string | undefined;
+	readonly jitApprovalMode?: "AutoApprove" | "ManualApprove" | "NotSpecified";
+	readonly jitApprovers?: JitApproverDefinition[];
+	readonly maximumJitAccessDuration?: string;
 }
 export interface ApplicationManagementPolicy {
-	readonly mode?: ("Managed" | "NotSpecified" | "Unmanaged") | undefined;
+	readonly mode?: "Managed" | "NotSpecified" | "Unmanaged";
 }
 export interface ApplicationNotificationEndpoint {
 	readonly uri: string;
@@ -149,68 +149,65 @@ export interface ApplicationNotificationPolicy {
 	readonly notificationEndpoints: ApplicationNotificationEndpoint[];
 }
 export interface ApplicationPackageContact {
-	readonly contactName?: string | undefined;
+	readonly contactName?: string;
 	readonly email: string;
 	readonly phone: string;
 }
 export interface ApplicationPackageLockingPolicyDefinition {
-	readonly allowedActions?: string[] | undefined;
-	readonly allowedDataActions?: string[] | undefined;
+	readonly allowedActions?: string[];
+	readonly allowedDataActions?: string[];
 }
 export interface ApplicationPackageSupportUrls {
-	readonly governmentCloud?: string | undefined;
-	readonly publicAzure?: string | undefined;
+	readonly governmentCloud?: string;
+	readonly publicAzure?: string;
 }
 export interface ApplicationPolicy {
-	readonly name?: string | undefined;
-	readonly parameters?: string | undefined;
-	readonly policyDefinitionId?: string | undefined;
+	readonly name?: string;
+	readonly parameters?: string;
+	readonly policyDefinitionId?: string;
 }
 export interface ApplicationProperties {
-	readonly applicationDefinitionId?: string | undefined;
-	readonly artifacts?: ApplicationArtifact[] | undefined;
-	readonly authorizations?: ApplicationAuthorization[] | undefined;
-	readonly billingDetails?: ApplicationBillingDetailsDefinition | undefined;
-	readonly createdBy?: ApplicationClientDetails | undefined;
-	readonly customerSupport?: ApplicationPackageContact | undefined;
-	readonly jitAccessPolicy?: ApplicationJitAccessPolicy | undefined;
-	readonly managedResourceGroupId?: string | undefined;
-	readonly managementMode?: ("Managed" | "NotSpecified" | "Unmanaged") | undefined;
-	readonly outputs?: any | undefined;
-	readonly parameters?: any | undefined;
+	readonly applicationDefinitionId?: string;
+	readonly artifacts?: ApplicationArtifact[];
+	readonly authorizations?: ApplicationAuthorization[];
+	readonly billingDetails?: ApplicationBillingDetailsDefinition;
+	readonly createdBy?: ApplicationClientDetails;
+	readonly customerSupport?: ApplicationPackageContact;
+	readonly jitAccessPolicy?: ApplicationJitAccessPolicy;
+	readonly managedResourceGroupId?: string;
+	readonly managementMode?: "Managed" | "NotSpecified" | "Unmanaged";
+	readonly outputs?: any;
+	readonly parameters?: any;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly publisherTenantId?: string | undefined;
-	readonly supportUrls?: ApplicationPackageSupportUrls | undefined;
-	readonly updatedBy?: ApplicationClientDetails | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Ready"
+		| "Running"
+		| "Succeeded"
+		| "Updating";
+	readonly publisherTenantId?: string;
+	readonly supportUrls?: ApplicationPackageSupportUrls;
+	readonly updatedBy?: ApplicationClientDetails;
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
-	readonly type?: ("None" | "SystemAssigned" | "SystemAssigned, UserAssigned") | undefined;
-	readonly userAssignedIdentities?: IdentityUserAssignedIdentities | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
+	readonly type?: "None" | "SystemAssigned" | "SystemAssigned, UserAssigned";
+	readonly userAssignedIdentities?: IdentityUserAssignedIdentities;
 }
 export interface IdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedResourceIdentity | undefined;
+	readonly [key: string]: UserAssignedResourceIdentity;
 }
 export interface JitApproverDefinition {
-	readonly displayName?: string | undefined;
+	readonly displayName?: string;
 	readonly id: string;
-	readonly type?: ("group" | "user") | undefined;
+	readonly type?: "group" | "user";
 }
 export interface JitAuthorizationPolicies {
 	readonly principalId: string;
@@ -218,30 +215,33 @@ export interface JitAuthorizationPolicies {
 }
 export interface JitRequestProperties {
 	readonly applicationResourceId: string;
-	readonly createdBy?: ApplicationClientDetails | undefined;
+	readonly createdBy?: ApplicationClientDetails;
 	readonly jitAuthorizationPolicies: JitAuthorizationPolicies[];
 	readonly jitRequestState?:
-		| ("Approved" | "Canceled" | "Denied" | "Expired" | "Failed" | "NotSpecified" | "Pending" | "Timeout")
-		| undefined;
+		| "Approved"
+		| "Canceled"
+		| "Denied"
+		| "Expired"
+		| "Failed"
+		| "NotSpecified"
+		| "Pending"
+		| "Timeout";
 	readonly jitSchedulingPolicy: JitSchedulingPolicy;
 	readonly provisioningState?:
-		| (
-				| "Accepted"
-				| "Canceled"
-				| "Created"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "NotSpecified"
-				| "Ready"
-				| "Running"
-				| "Succeeded"
-				| "Updating"
-		  )
-		| undefined;
-	readonly publisherTenantId?: string | undefined;
-	readonly updatedBy?: ApplicationClientDetails | undefined;
+		| "Accepted"
+		| "Canceled"
+		| "Created"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "NotSpecified"
+		| "Ready"
+		| "Running"
+		| "Succeeded"
+		| "Updating";
+	readonly publisherTenantId?: string;
+	readonly updatedBy?: ApplicationClientDetails;
 }
 export interface JitSchedulingPolicy {
 	readonly duration: string;
@@ -249,50 +249,50 @@ export interface JitSchedulingPolicy {
 	readonly type: "NotSpecified" | "Once" | "Recurring";
 }
 export interface ListTokenRequest {
-	readonly authorizationAudience?: string | undefined;
-	readonly userAssignedIdentities?: string[] | undefined;
+	readonly authorizationAudience?: string;
+	readonly userAssignedIdentities?: string[];
 }
 export interface ManagedIdentityToken {
-	readonly accessToken?: string | undefined;
-	readonly authorizationAudience?: string | undefined;
-	readonly expiresIn?: string | undefined;
-	readonly expiresOn?: string | undefined;
-	readonly notBefore?: string | undefined;
-	readonly resourceId?: string | undefined;
-	readonly tokenType?: string | undefined;
+	readonly accessToken?: string;
+	readonly authorizationAudience?: string;
+	readonly expiresIn?: string;
+	readonly expiresOn?: string;
+	readonly notBefore?: string;
+	readonly resourceId?: string;
+	readonly tokenType?: string;
 }
 export interface ManagedIdentityTokenResult {
-	readonly value?: ManagedIdentityToken[] | undefined;
+	readonly value?: ManagedIdentityToken[];
 }
 export interface Plan {
 	readonly name: string;
 	readonly product: string;
-	readonly promotionCode?: string | undefined;
+	readonly promotionCode?: string;
 	readonly publisher: string;
 	readonly version: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly family?: string | undefined;
-	readonly model?: string | undefined;
+	readonly capacity?: number;
+	readonly family?: string;
+	readonly model?: string;
 	readonly name: string;
-	readonly size?: string | undefined;
-	readonly tier?: string | undefined;
+	readonly size?: string;
+	readonly tier?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface UserAssignedResourceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 }
 export default {
 	applicationDefinitions: applicationDefinitions,

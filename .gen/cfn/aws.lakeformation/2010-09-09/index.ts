@@ -14,9 +14,9 @@ export interface DataCellsFilterComponentInputs {
 	readonly Name: string;
 	readonly TableCatalogId: string;
 	readonly TableName: string;
-	readonly ColumnNames?: (string[] | undefined) | undefined;
-	readonly ColumnWildcard?: (ColumnWildcard | undefined) | undefined;
-	readonly RowFilter?: (RowFilter | undefined) | undefined;
+	readonly ColumnNames?: string[] | undefined;
+	readonly ColumnWildcard?: ColumnWildcard | undefined;
+	readonly RowFilter?: RowFilter | undefined;
 	readonly LogicalId: string;
 }
 export class DataLakeSettings
@@ -29,8 +29,8 @@ export class DataLakeSettings
 }
 export interface DataLakeSettingsComponentOutputs {}
 export interface DataLakeSettingsComponentInputs {
-	readonly Admins?: (DataLakePrincipal[] | undefined) | undefined;
-	readonly TrustedResourceOwners?: (string[] | undefined) | undefined;
+	readonly Admins?: DataLakePrincipal[] | undefined;
+	readonly TrustedResourceOwners?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class Permissions extends CfnResource<PermissionsComponentInputs> implements PermissionsComponentOutputs {
@@ -42,8 +42,8 @@ export interface PermissionsComponentOutputs {}
 export interface PermissionsComponentInputs {
 	readonly DataLakePrincipal: DataLakePrincipal;
 	readonly Resource: Resource;
-	readonly Permissions?: (string[] | undefined) | undefined;
-	readonly PermissionsWithGrantOption?: (string[] | undefined) | undefined;
+	readonly Permissions?: string[] | undefined;
+	readonly PermissionsWithGrantOption?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class PrincipalPermissions
@@ -65,7 +65,7 @@ export interface PrincipalPermissionsComponentInputs {
 	readonly PermissionsWithGrantOption: string[];
 	readonly Principal: DataLakePrincipal;
 	readonly Resource: Resource;
-	readonly Catalog?: (string | undefined) | undefined;
+	readonly Catalog?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Resource extends CfnResource<ResourceComponentInputs> implements ResourceComponentOutputs {
@@ -77,7 +77,7 @@ export interface ResourceComponentOutputs {}
 export interface ResourceComponentInputs {
 	readonly ResourceArn: string;
 	readonly UseServiceLinkedRole: boolean;
-	readonly RoleArn?: (string | undefined) | undefined;
+	readonly RoleArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Tag extends CfnResource<TagComponentInputs> implements TagComponentOutputs {
@@ -89,7 +89,7 @@ export interface TagComponentOutputs {}
 export interface TagComponentInputs {
 	readonly TagKey: string;
 	readonly TagValues: string[];
-	readonly CatalogId?: (string | undefined) | undefined;
+	readonly CatalogId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class TagAssociation extends CfnResource<TagAssociationComponentInputs> implements TagAssociationComponentOutputs {
@@ -109,42 +109,42 @@ export interface TagAssociationComponentInputs {
 	readonly LogicalId: string;
 }
 export interface ColumnWildcard {
-	readonly ExcludedColumnNames?: (string[] | undefined) | undefined;
+	readonly ExcludedColumnNames?: string[] | undefined;
 }
 export interface RowFilter {
-	readonly AllRowsWildcard?: (any | undefined) | undefined;
-	readonly FilterExpression?: (string | undefined) | undefined;
+	readonly AllRowsWildcard?: any | undefined;
+	readonly FilterExpression?: string | undefined;
 }
 export interface DataLakePrincipal {
-	readonly DataLakePrincipalIdentifier?: (string | undefined) | undefined;
+	readonly DataLakePrincipalIdentifier?: string | undefined;
 }
 export interface DataLocationResource {
-	readonly CatalogId?: (string | undefined) | undefined;
-	readonly S3Resource?: (string | undefined) | undefined;
+	readonly CatalogId?: string | undefined;
+	readonly S3Resource?: string | undefined;
 }
 export interface DatabaseResource {
-	readonly CatalogId?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly CatalogId?: string | undefined;
+	readonly Name?: string | undefined;
 }
 export interface Resource {
-	readonly DataLocationResource?: (DataLocationResource | undefined) | undefined;
-	readonly DatabaseResource?: (DatabaseResource | undefined) | undefined;
-	readonly TableResource?: (TableResource | undefined) | undefined;
-	readonly TableWithColumnsResource?: (TableWithColumnsResource | undefined) | undefined;
+	readonly DataLocationResource?: DataLocationResource | undefined;
+	readonly DatabaseResource?: DatabaseResource | undefined;
+	readonly TableResource?: TableResource | undefined;
+	readonly TableWithColumnsResource?: TableWithColumnsResource | undefined;
 }
 export interface TableResource {
-	readonly CatalogId?: (string | undefined) | undefined;
-	readonly DatabaseName?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly TableWildcard?: (TableWildcard | undefined) | undefined;
+	readonly CatalogId?: string | undefined;
+	readonly DatabaseName?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly TableWildcard?: TableWildcard | undefined;
 }
 export interface TableWildcard {}
 export interface TableWithColumnsResource {
-	readonly CatalogId?: (string | undefined) | undefined;
-	readonly ColumnNames?: (string[] | undefined) | undefined;
-	readonly ColumnWildcard?: (ColumnWildcard | undefined) | undefined;
-	readonly DatabaseName?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
+	readonly CatalogId?: string | undefined;
+	readonly ColumnNames?: string[] | undefined;
+	readonly ColumnWildcard?: ColumnWildcard | undefined;
+	readonly DatabaseName?: string | undefined;
+	readonly Name?: string | undefined;
 }
 export interface DataCellsFilterResource {
 	readonly DatabaseName: string;
@@ -153,8 +153,8 @@ export interface DataCellsFilterResource {
 	readonly TableName: string;
 }
 export interface LFTag {
-	readonly TagKey?: (string | undefined) | undefined;
-	readonly TagValues?: (string[] | undefined) | undefined;
+	readonly TagKey?: string | undefined;
+	readonly TagValues?: string[] | undefined;
 }
 export interface LFTagKeyResource {
 	readonly CatalogId: string;

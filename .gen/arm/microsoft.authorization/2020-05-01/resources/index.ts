@@ -16,7 +16,7 @@ export interface locksComponentOutputs {
 export interface locksComponentInputs {
 	readonly name: string;
 	readonly properties: ManagementLockProperties;
-	readonly systemData?: SystemData | undefined;
+	readonly systemData?: SystemData;
 }
 export class privateLinkAssociations
 	extends ArmResource<privateLinkAssociationsComponentInputs>
@@ -36,7 +36,7 @@ export interface privateLinkAssociationsComponentOutputs {
 }
 export interface privateLinkAssociationsComponentInputs {
 	readonly name: string;
-	readonly properties?: PrivateLinkAssociationPropertiesOrPrivateLinkAssociationPropertiesExpanded | undefined;
+	readonly properties?: PrivateLinkAssociationPropertiesOrPrivateLinkAssociationPropertiesExpanded;
 }
 export class resourceManagementPrivateLinks
 	extends ArmResource<resourceManagementPrivateLinksComponentInputs>
@@ -55,34 +55,34 @@ export interface resourceManagementPrivateLinksComponentOutputs {
 	readonly type: "Microsoft.Authorization/resourceManagementPrivateLinks";
 }
 export interface resourceManagementPrivateLinksComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ResourceManagementPrivateLinkEndpointConnections | undefined;
+	readonly properties?: ResourceManagementPrivateLinkEndpointConnections;
 }
 export interface ManagementLockOwner {
-	readonly applicationId?: string | undefined;
+	readonly applicationId?: string;
 }
 export interface ManagementLockProperties {
 	readonly level: "CanNotDelete" | "NotSpecified" | "ReadOnly";
-	readonly notes?: string | undefined;
-	readonly owners?: ManagementLockOwner[] | undefined;
+	readonly notes?: string;
+	readonly owners?: ManagementLockOwner[];
 }
 export interface PrivateLinkAssociationPropertiesOrPrivateLinkAssociationPropertiesExpanded {
-	readonly privateLink?: string | undefined;
-	readonly publicNetworkAccess?: ("Disabled" | "Enabled") | undefined;
-	readonly scope?: string | undefined;
-	readonly tenantID?: string | undefined;
+	readonly privateLink?: string;
+	readonly publicNetworkAccess?: "Disabled" | "Enabled";
+	readonly scope?: string;
+	readonly tenantID?: string;
 }
 export interface ResourceManagementPrivateLinkEndpointConnections {
-	readonly privateEndpointConnections?: string[] | undefined;
+	readonly privateEndpointConnections?: string[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export default {
 	locks: locks,

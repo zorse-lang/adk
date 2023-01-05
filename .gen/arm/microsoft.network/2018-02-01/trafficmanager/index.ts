@@ -18,7 +18,7 @@ export interface trafficManagerGeographicHierarchiesComponentOutputs {
 }
 export interface trafficManagerGeographicHierarchiesComponentInputs {
 	readonly name: string;
-	readonly properties?: GeographicHierarchyProperties | undefined;
+	readonly properties?: GeographicHierarchyProperties;
 }
 export class trafficmanagerprofiles
 	extends ArmResource<trafficmanagerprofilesComponentInputs>
@@ -37,62 +37,60 @@ export interface trafficmanagerprofilesComponentOutputs {
 	readonly type: "Microsoft.Network/trafficmanagerprofiles";
 }
 export interface trafficmanagerprofilesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: ProfileProperties | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: ProfileProperties;
+	readonly tags?: TrackedResourceTags;
 }
 export interface DnsConfig {
-	readonly fqdn?: string | undefined;
-	readonly relativeName?: string | undefined;
-	readonly ttl?: number | undefined;
+	readonly fqdn?: string;
+	readonly relativeName?: string;
+	readonly ttl?: number;
 }
 export interface Endpoint {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: EndpointProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: EndpointProperties;
+	readonly type?: string;
 }
 export interface EndpointProperties {
-	readonly endpointLocation?: string | undefined;
-	readonly endpointMonitorStatus?:
-		| ("CheckingEndpoint" | "Degraded" | "Disabled" | "Inactive" | "Online" | "Stopped")
-		| undefined;
-	readonly endpointStatus?: ("Disabled" | "Enabled") | undefined;
-	readonly geoMapping?: string[] | undefined;
-	readonly minChildEndpoints?: number | undefined;
-	readonly priority?: number | undefined;
-	readonly target?: string | undefined;
-	readonly targetResourceId?: string | undefined;
-	readonly weight?: number | undefined;
+	readonly endpointLocation?: string;
+	readonly endpointMonitorStatus?: "CheckingEndpoint" | "Degraded" | "Disabled" | "Inactive" | "Online" | "Stopped";
+	readonly endpointStatus?: "Disabled" | "Enabled";
+	readonly geoMapping?: string[];
+	readonly minChildEndpoints?: number;
+	readonly priority?: number;
+	readonly target?: string;
+	readonly targetResourceId?: string;
+	readonly weight?: number;
 }
 export interface GeographicHierarchyProperties {
-	readonly geographicHierarchy?: Region | undefined;
+	readonly geographicHierarchy?: Region;
 }
 export interface MonitorConfig {
-	readonly intervalInSeconds?: number | undefined;
-	readonly path?: string | undefined;
-	readonly port?: number | undefined;
-	readonly profileMonitorStatus?: ("CheckingEndpoints" | "Degraded" | "Disabled" | "Inactive" | "Online") | undefined;
-	readonly protocol?: ("HTTP" | "HTTPS" | "TCP") | undefined;
-	readonly timeoutInSeconds?: number | undefined;
-	readonly toleratedNumberOfFailures?: number | undefined;
+	readonly intervalInSeconds?: number;
+	readonly path?: string;
+	readonly port?: number;
+	readonly profileMonitorStatus?: "CheckingEndpoints" | "Degraded" | "Disabled" | "Inactive" | "Online";
+	readonly protocol?: "HTTP" | "HTTPS" | "TCP";
+	readonly timeoutInSeconds?: number;
+	readonly toleratedNumberOfFailures?: number;
 }
 export interface ProfileProperties {
-	readonly dnsConfig?: DnsConfig | undefined;
-	readonly endpoints?: Endpoint[] | undefined;
-	readonly monitorConfig?: MonitorConfig | undefined;
-	readonly profileStatus?: ("Disabled" | "Enabled") | undefined;
-	readonly trafficRoutingMethod?: ("Geographic" | "Performance" | "Priority" | "Weighted") | undefined;
-	readonly trafficViewEnrollmentStatus?: ("Disabled" | "Enabled") | undefined;
+	readonly dnsConfig?: DnsConfig;
+	readonly endpoints?: Endpoint[];
+	readonly monitorConfig?: MonitorConfig;
+	readonly profileStatus?: "Disabled" | "Enabled";
+	readonly trafficRoutingMethod?: "Geographic" | "Performance" | "Priority" | "Weighted";
+	readonly trafficViewEnrollmentStatus?: "Disabled" | "Enabled";
 }
 export interface Region {
-	readonly code?: string | undefined;
-	readonly name?: string | undefined;
-	readonly regions?: Region[] | undefined;
+	readonly code?: string;
+	readonly name?: string;
+	readonly regions?: Region[];
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	trafficManagerGeographicHierarchies: trafficManagerGeographicHierarchies,

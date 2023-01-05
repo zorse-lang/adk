@@ -1,4 +1,4 @@
-import { Component, Entity, Scene, Symbols } from "@zorse/adk/core";
+import { Component, Entity, Scene, Symbols, Token, assert, errors } from "@zorse/adk/core";
 
 /** Base class for cloud {@link core.Component:class}s */
 export abstract class CloudComponent extends Component {}
@@ -107,6 +107,13 @@ export class AwsScene extends CloudScene {
 	public filter(component: Component): boolean {
 		return component instanceof CfnComponent;
 	}
+	public update(token: Token): void {
+		assert.true(errors.NotSupportedYet, token.data instanceof CfnResource);
+		assert.true(errors.NotSupportedYet, this.filter(token.data));
+		const component = token.data as CfnResource;
+		const logicalId = Object.keys(component)[0];
+		token.reset(() => ({ "Fn::GetAtt": [logicalId, token.accessors()] }));
+	}
 }
 
 /** @see {@link scenes.AwsScene:class} */
@@ -125,6 +132,13 @@ export class RosScene extends CloudScene {
 	}
 	public filter(component: Component): boolean {
 		return component instanceof RosComponent;
+	}
+	public update(token: Token): void {
+		assert.true(errors.NotSupportedYet, token.data instanceof RosResource);
+		assert.true(errors.NotSupportedYet, this.filter(token.data));
+		const component = token.data as RosResource;
+		const logicalId = Object.keys(component)[0];
+		token.reset(() => ({ "Fn::GetAtt": [logicalId, token.accessors()] }));
 	}
 }
 
@@ -145,6 +159,12 @@ export class GdmScene extends CloudScene {
 	public filter(component: Component): boolean {
 		return component instanceof GdmComponent;
 	}
+	public update(token: Token): void {
+		const component = token.data as GdmResource;
+		assert.true(errors.NotSupportedYet, component instanceof GdmResource);
+		assert.true(errors.NotSupportedYet, this.filter(token.data));
+		token.reset(() => `$(ref.${component.name}.${token.accessors(".")})`);
+	}
 }
 
 /** @see {@link scenes.GdmScene:class} */
@@ -161,6 +181,12 @@ export class ArmScene extends CloudScene {
 	}
 	public filter(component: Component): boolean {
 		return component instanceof ArmComponent;
+	}
+	public update(token: Token): void {
+		assert.true(errors.NotSupportedYet, token.data instanceof ArmResource);
+		assert.true(errors.NotSupportedYet, this.filter(token.data));
+		const component = token.data as ArmResource;
+		token.reset(() => `[reference(resourceId('${component.type}', '${component.name}')).${token.accessors()}]`);
 	}
 }
 

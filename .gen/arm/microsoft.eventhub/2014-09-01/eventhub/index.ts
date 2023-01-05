@@ -16,9 +16,9 @@ export interface namespacesComponentOutputs {
 export interface namespacesComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: NamespaceProperties | undefined;
-	readonly sku?: Sku | undefined;
-	readonly tags?: NamespaceCreateOrUpdateParametersTags | undefined;
+	readonly properties?: NamespaceProperties;
+	readonly sku?: Sku;
+	readonly tags?: NamespaceCreateOrUpdateParametersTags;
 }
 export class namespaces_AuthorizationRules
 	extends ArmResource<namespaces_AuthorizationRulesComponentInputs>
@@ -37,9 +37,9 @@ export interface namespaces_AuthorizationRulesComponentOutputs {
 	readonly type: "Microsoft.EventHub/namespaces/AuthorizationRules";
 }
 export interface namespaces_AuthorizationRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SharedAccessAuthorizationRuleProperties | undefined;
+	readonly properties?: SharedAccessAuthorizationRuleProperties;
 }
 export class namespaces_eventhubs
 	extends ArmResource<namespaces_eventhubsComponentInputs>
@@ -60,7 +60,7 @@ export interface namespaces_eventhubsComponentOutputs {
 export interface namespaces_eventhubsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: EventHubProperties | undefined;
+	readonly properties?: EventHubProperties;
 }
 export class namespaces_eventhubs_authorizationRules
 	extends ArmResource<namespaces_eventhubs_authorizationRulesComponentInputs>
@@ -79,9 +79,9 @@ export interface namespaces_eventhubs_authorizationRulesComponentOutputs {
 	readonly type: "Microsoft.EventHub/namespaces/eventhubs/authorizationRules";
 }
 export interface namespaces_eventhubs_authorizationRulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SharedAccessAuthorizationRuleProperties | undefined;
+	readonly properties?: SharedAccessAuthorizationRuleProperties;
 }
 export class namespaces_eventhubs_consumergroups
 	extends ArmResource<namespaces_eventhubs_consumergroupsComponentInputs>
@@ -102,57 +102,60 @@ export interface namespaces_eventhubs_consumergroupsComponentOutputs {
 export interface namespaces_eventhubs_consumergroupsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: ConsumerGroupProperties | undefined;
+	readonly properties?: ConsumerGroupProperties;
 }
 export interface ConsumerGroupProperties {
-	readonly createdAt?: string | undefined;
-	readonly eventHubPath?: string | undefined;
-	readonly updatedAt?: string | undefined;
-	readonly userMetadata?: string | undefined;
+	readonly createdAt?: string;
+	readonly eventHubPath?: string;
+	readonly updatedAt?: string;
+	readonly userMetadata?: string;
 }
 export interface EventHubProperties {
-	readonly createdAt?: string | undefined;
-	readonly messageRetentionInDays?: number | undefined;
-	readonly partitionCount?: number | undefined;
-	readonly partitionIds?: string[] | undefined;
+	readonly createdAt?: string;
+	readonly messageRetentionInDays?: number;
+	readonly partitionCount?: number;
+	readonly partitionIds?: string[];
 	readonly status?:
-		| ("Active" | "Creating" | "Deleting" | "Disabled" | "ReceiveDisabled" | "Renaming" | "Restoring" | "SendDisabled")
-		| undefined;
-	readonly updatedAt?: string | undefined;
+		| "Active"
+		| "Creating"
+		| "Deleting"
+		| "Disabled"
+		| "ReceiveDisabled"
+		| "Renaming"
+		| "Restoring"
+		| "SendDisabled";
+	readonly updatedAt?: string;
 }
 export interface NamespaceCreateOrUpdateParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface NamespaceProperties {
-	readonly createdAt?: string | undefined;
-	readonly enabled?: boolean | undefined;
-	readonly metricId?: string | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly serviceBusEndpoint?: string | undefined;
+	readonly createdAt?: string;
+	readonly enabled?: boolean;
+	readonly metricId?: string;
+	readonly provisioningState?: string;
+	readonly serviceBusEndpoint?: string;
 	readonly status?:
-		| (
-				| "Activating"
-				| "Active"
-				| "Created"
-				| "Creating"
-				| "Disabled"
-				| "Disabling"
-				| "Enabling"
-				| "Failed"
-				| "Removed"
-				| "Removing"
-				| "SoftDeleted"
-				| "SoftDeleting"
-		  )
-		| undefined;
-	readonly updatedAt?: string | undefined;
+		| "Activating"
+		| "Active"
+		| "Created"
+		| "Creating"
+		| "Disabled"
+		| "Disabling"
+		| "Enabling"
+		| "Failed"
+		| "Removed"
+		| "Removing"
+		| "SoftDeleted"
+		| "SoftDeleting";
+	readonly updatedAt?: string;
 }
 export interface SharedAccessAuthorizationRuleProperties {
 	readonly rights: "Listen" | "Manage"[];
 }
 export interface Sku {
-	readonly capacity?: number | undefined;
-	readonly name?: ("Basic" | "Standard") | undefined;
+	readonly capacity?: number;
+	readonly name?: "Basic" | "Standard";
 	readonly tier: "Basic" | "Premium" | "Standard";
 }
 export default {

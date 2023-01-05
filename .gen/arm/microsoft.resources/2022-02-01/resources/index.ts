@@ -17,11 +17,11 @@ export interface builtInTemplateSpecsComponentOutputs {
 	readonly type: "Microsoft.Resources/builtInTemplateSpecs";
 }
 export interface builtInTemplateSpecsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: TemplateSpecProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TemplateSpecTags | undefined;
+	readonly properties?: TemplateSpecProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TemplateSpecTags;
 }
 export class builtInTemplateSpecs_versions
 	extends ArmResource<builtInTemplateSpecs_versionsComponentInputs>
@@ -40,11 +40,11 @@ export interface builtInTemplateSpecs_versionsComponentOutputs {
 	readonly type: "Microsoft.Resources/builtInTemplateSpecs/versions";
 }
 export interface builtInTemplateSpecs_versionsComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: TemplateSpecVersionProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TemplateSpecVersionTags | undefined;
+	readonly properties?: TemplateSpecVersionProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TemplateSpecVersionTags;
 }
 export class templateSpecs extends ArmResource<templateSpecsComponentInputs> implements templateSpecsComponentOutputs {
 	constructor(entity: ADKEntity, options: templateSpecsComponentInputs) {
@@ -62,9 +62,9 @@ export interface templateSpecsComponentOutputs {
 export interface templateSpecsComponentInputs {
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: TemplateSpecProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TemplateSpecTags | undefined;
+	readonly properties?: TemplateSpecProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TemplateSpecTags;
 }
 export class templateSpecs_versions
 	extends ArmResource<templateSpecs_versionsComponentInputs>
@@ -86,47 +86,47 @@ export interface templateSpecs_versionsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: TemplateSpecVersionProperties;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TemplateSpecVersionTags | undefined;
+	readonly systemData?: SystemData;
+	readonly tags?: TemplateSpecVersionTags;
 }
 export interface LinkedTemplateArtifact {
 	readonly path: string;
 	readonly template: any;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TemplateSpecProperties {
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly metadata?: any | undefined;
-	readonly versions?: TemplateSpecPropertiesVersions | undefined;
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly metadata?: any;
+	readonly versions?: TemplateSpecPropertiesVersions;
 }
 export interface TemplateSpecPropertiesVersions {
-	readonly "[ key: string ]"?: TemplateSpecVersionInfo | undefined;
+	readonly [key: string]: TemplateSpecVersionInfo;
 }
 export interface TemplateSpecTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface TemplateSpecVersionInfo {
-	readonly description?: string | undefined;
-	readonly timeCreated?: string | undefined;
-	readonly timeModified?: string | undefined;
+	readonly description?: string;
+	readonly timeCreated?: string;
+	readonly timeModified?: string;
 }
 export interface TemplateSpecVersionProperties {
-	readonly description?: string | undefined;
-	readonly linkedTemplates?: LinkedTemplateArtifact[] | undefined;
-	readonly mainTemplate?: any | undefined;
-	readonly metadata?: any | undefined;
-	readonly uiFormDefinition?: any | undefined;
+	readonly description?: string;
+	readonly linkedTemplates?: LinkedTemplateArtifact[];
+	readonly mainTemplate?: any;
+	readonly metadata?: any;
+	readonly uiFormDefinition?: any;
 }
 export interface TemplateSpecVersionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	builtInTemplateSpecs: builtInTemplateSpecs,

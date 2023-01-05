@@ -7,21 +7,20 @@ export class Liens extends GdmResource<LiensComponentInputs> implements LiensCom
 }
 export interface LiensComponentOutputs {}
 export interface LiensComponentInputs {
-	readonly createTime?: string | undefined;
+	readonly createTime?: string;
 	readonly name: string;
-	readonly origin?: string | undefined;
-	readonly parent?: string | undefined;
-	readonly reason?: string | undefined;
-	readonly restrictions?: string[] | undefined;
-	readonly type: string;
+	readonly origin?: string;
+	readonly parent?: string;
+	readonly reason?: string;
+	readonly restrictions?: string[];
 }
 export interface Lien {
-	readonly createTime?: string | undefined;
-	readonly name?: string | undefined;
-	readonly origin?: string | undefined;
-	readonly parent?: string | undefined;
-	readonly reason?: string | undefined;
-	readonly restrictions?: string[] | undefined;
+	readonly createTime?: string;
+	readonly name?: string;
+	readonly origin?: string;
+	readonly parent?: string;
+	readonly reason?: string;
+	readonly restrictions?: string[];
 }
 export default {
 	Liens: Liens,

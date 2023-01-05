@@ -18,7 +18,7 @@ export interface ingestionSettingsComponentOutputs {
 }
 export interface ingestionSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: any | undefined;
+	readonly properties?: any;
 }
 export function listConnectionStrings(resource: ingestionSettings): ConnectionStrings {
 	if (resource.apiVersion !== "2021-01-15-preview") {
@@ -42,11 +42,11 @@ export interface ConnectionStrings {
 	readonly value: IngestionConnectionString[];
 }
 export interface IngestionConnectionString {
-	readonly location?: string | undefined;
-	readonly value?: string | undefined;
+	readonly location?: string;
+	readonly value?: string;
 }
 export interface IngestionSettingToken {
-	readonly token?: string | undefined;
+	readonly token?: string;
 }
 export default {
 	ingestionSettings: ingestionSettings,

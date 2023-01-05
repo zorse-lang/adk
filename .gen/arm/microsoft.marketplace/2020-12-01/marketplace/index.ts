@@ -18,8 +18,8 @@ export interface privateStores_adminRequestApprovalsComponentOutputs {
 }
 export interface privateStores_adminRequestApprovalsComponentInputs {
 	readonly name: string;
-	readonly properties?: AdminRequestApprovalProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: AdminRequestApprovalProperties;
+	readonly systemData?: SystemData;
 }
 export class privateStores_requestApprovals
 	extends ArmResource<privateStores_requestApprovalsComponentInputs>
@@ -39,50 +39,50 @@ export interface privateStores_requestApprovalsComponentOutputs {
 }
 export interface privateStores_requestApprovalsComponentInputs {
 	readonly name: string;
-	readonly properties?: RequestApprovalProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: RequestApprovalProperties;
+	readonly systemData?: SystemData;
 }
 export interface AdminRequestApprovalProperties {
-	readonly adminAction?: ("Approved" | "Rejected") | undefined;
-	readonly administrator?: string | undefined;
-	readonly approvedPlans?: string[] | undefined;
-	readonly comment?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly offerId?: string | undefined;
-	readonly plans?: PlanRequesterDetails[] | undefined;
-	readonly publisherId?: string | undefined;
+	readonly adminAction?: "Approved" | "Rejected";
+	readonly administrator?: string;
+	readonly approvedPlans?: string[];
+	readonly comment?: string;
+	readonly displayName?: string;
+	readonly offerId?: string;
+	readonly plans?: PlanRequesterDetails[];
+	readonly publisherId?: string;
 }
 export interface PlanDetails {
-	readonly justification?: string | undefined;
-	readonly planId?: string | undefined;
-	readonly requestDate?: any | undefined;
-	readonly status?: ("Approved" | "None" | "Pending" | "Rejected") | undefined;
+	readonly justification?: string;
+	readonly planId?: string;
+	readonly requestDate?: any;
+	readonly status?: "Approved" | "None" | "Pending" | "Rejected";
 }
 export interface PlanRequesterDetails {
-	readonly planDisplayName?: string | undefined;
-	readonly planId?: string | undefined;
-	readonly requesters?: UserRequestDetails[] | undefined;
+	readonly planDisplayName?: string;
+	readonly planId?: string;
+	readonly requesters?: UserRequestDetails[];
 }
 export interface RequestApprovalProperties {
-	readonly isClosed?: boolean | undefined;
-	readonly messageCode?: number | undefined;
-	readonly offerDisplayName?: string | undefined;
-	readonly offerId?: string | undefined;
-	readonly plansDetails?: PlanDetails[] | undefined;
-	readonly publisherId?: string | undefined;
+	readonly isClosed?: boolean;
+	readonly messageCode?: number;
+	readonly offerDisplayName?: string;
+	readonly offerId?: string;
+	readonly plansDetails?: PlanDetails[];
+	readonly publisherId?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface UserRequestDetails {
-	readonly date?: string | undefined;
-	readonly justification?: string | undefined;
-	readonly user?: string | undefined;
+	readonly date?: string;
+	readonly justification?: string;
+	readonly user?: string;
 }
 export default {
 	"privateStores/adminRequestApprovals": privateStores_adminRequestApprovals,

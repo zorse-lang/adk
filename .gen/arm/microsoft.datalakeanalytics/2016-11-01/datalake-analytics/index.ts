@@ -17,7 +17,7 @@ export interface accountsComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: CreateDataLakeAnalyticsAccountPropertiesOrDataLakeAnalyticsAccountProperties;
-	readonly tags?: CreateDataLakeAnalyticsAccountParametersTags | undefined;
+	readonly tags?: CreateDataLakeAnalyticsAccountParametersTags;
 }
 export class accounts_computePolicies
 	extends ArmResource<accounts_computePoliciesComponentInputs>
@@ -57,7 +57,7 @@ export interface accounts_dataLakeStoreAccountsComponentOutputs {
 }
 export interface accounts_dataLakeStoreAccountsComponentInputs {
 	readonly name: string;
-	readonly properties?: AddDataLakeStorePropertiesOrDataLakeStoreAccountInformationProperties | undefined;
+	readonly properties?: AddDataLakeStorePropertiesOrDataLakeStoreAccountInformationProperties;
 }
 export class accounts_firewallRules
 	extends ArmResource<accounts_firewallRulesComponentInputs>
@@ -123,7 +123,7 @@ export interface accounts_storageAccounts_containersComponentOutputs {
 }
 export interface accounts_storageAccounts_containersComponentInputs {
 	readonly name: string;
-	readonly properties?: StorageContainerProperties | undefined;
+	readonly properties?: StorageContainerProperties;
 }
 export function listSasTokens(resource: accounts_storageAccounts_containers): SasTokenInformationListResult {
 	if (resource.apiVersion !== "2016-11-01") {
@@ -135,108 +135,99 @@ export function listSasTokens(resource: accounts_storageAccounts_containers): Sa
 	throw new Error("not implemented");
 }
 export interface AddDataLakeStorePropertiesOrDataLakeStoreAccountInformationProperties {
-	readonly suffix?: string | undefined;
+	readonly suffix?: string;
 }
 export interface AddDataLakeStoreWithAccountParametersOrDataLakeStoreAccountInformation {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
-	readonly properties?: AddDataLakeStorePropertiesOrDataLakeStoreAccountInformationProperties | undefined;
-	readonly type?: string | undefined;
+	readonly properties?: AddDataLakeStorePropertiesOrDataLakeStoreAccountInformationProperties;
+	readonly type?: string;
 }
 export interface AddStorageAccountPropertiesOrStorageAccountInformationProperties {
 	readonly accessKey: string;
-	readonly suffix?: string | undefined;
+	readonly suffix?: string;
 }
 export interface AddStorageAccountWithAccountParametersOrStorageAccountInformation {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
 	readonly properties: AddStorageAccountPropertiesOrStorageAccountInformationProperties;
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface CreateComputePolicyWithAccountParametersOrComputePolicy {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
 	readonly properties: CreateOrUpdateComputePolicyPropertiesOrComputePolicyProperties;
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface CreateDataLakeAnalyticsAccountParametersTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface CreateDataLakeAnalyticsAccountPropertiesOrDataLakeAnalyticsAccountProperties {
-	readonly accountId?: string | undefined;
-	readonly computePolicies?: CreateComputePolicyWithAccountParametersOrComputePolicy[] | undefined;
-	readonly creationTime?: string | undefined;
+	readonly accountId?: string;
+	readonly computePolicies?: CreateComputePolicyWithAccountParametersOrComputePolicy[];
+	readonly creationTime?: string;
 	readonly currentTier?:
-		| (
-				| "Commitment_100000AUHours"
-				| "Commitment_10000AUHours"
-				| "Commitment_1000AUHours"
-				| "Commitment_100AUHours"
-				| "Commitment_500000AUHours"
-				| "Commitment_50000AUHours"
-				| "Commitment_5000AUHours"
-				| "Commitment_500AUHours"
-		  )
-		| undefined;
+		| "Commitment_100000AUHours"
+		| "Commitment_10000AUHours"
+		| "Commitment_1000AUHours"
+		| "Commitment_100AUHours"
+		| "Commitment_500000AUHours"
+		| "Commitment_50000AUHours"
+		| "Commitment_5000AUHours"
+		| "Commitment_500AUHours";
 	readonly dataLakeStoreAccounts: AddDataLakeStoreWithAccountParametersOrDataLakeStoreAccountInformation[];
-	readonly debugDataAccessLevel?: ("All" | "Customer") | undefined;
+	readonly debugDataAccessLevel?: "All" | "Customer";
 	readonly defaultDataLakeStoreAccount: string;
-	readonly endpoint?: string | undefined;
-	readonly firewallAllowAzureIps?: "Disabled" | undefined;
-	readonly firewallRules?: CreateFirewallRuleWithAccountParametersOrFirewallRule[] | undefined;
-	readonly firewallState?: "Disabled" | undefined;
-	readonly hiveMetastores?: HiveMetastore[] | undefined;
-	readonly lastModifiedTime?: string | undefined;
-	readonly maxActiveJobCountPerUser?: number | undefined;
-	readonly maxDegreeOfParallelism?: number | undefined;
-	readonly maxDegreeOfParallelismPerJob?: number | undefined;
-	readonly maxJobCount?: number | undefined;
-	readonly maxJobRunningTimeInMin?: number | undefined;
-	readonly maxQueuedJobCountPerUser?: number | undefined;
-	readonly minPriorityPerJob?: number | undefined;
+	readonly endpoint?: string;
+	readonly firewallAllowAzureIps?: "Disabled";
+	readonly firewallRules?: CreateFirewallRuleWithAccountParametersOrFirewallRule[];
+	readonly firewallState?: "Disabled";
+	readonly hiveMetastores?: HiveMetastore[];
+	readonly lastModifiedTime?: string;
+	readonly maxActiveJobCountPerUser?: number;
+	readonly maxDegreeOfParallelism?: number;
+	readonly maxDegreeOfParallelismPerJob?: number;
+	readonly maxJobCount?: number;
+	readonly maxJobRunningTimeInMin?: number;
+	readonly maxQueuedJobCountPerUser?: number;
+	readonly minPriorityPerJob?: number;
 	readonly newTier?:
-		| (
-				| "Commitment_100000AUHours"
-				| "Commitment_10000AUHours"
-				| "Commitment_1000AUHours"
-				| "Commitment_100AUHours"
-				| "Commitment_500000AUHours"
-				| "Commitment_50000AUHours"
-				| "Commitment_5000AUHours"
-				| "Commitment_500AUHours"
-		  )
-		| undefined;
+		| "Commitment_100000AUHours"
+		| "Commitment_10000AUHours"
+		| "Commitment_1000AUHours"
+		| "Commitment_100AUHours"
+		| "Commitment_500000AUHours"
+		| "Commitment_50000AUHours"
+		| "Commitment_5000AUHours"
+		| "Commitment_500AUHours";
 	readonly provisioningState?:
-		| (
-				| "Canceled"
-				| "Creating"
-				| "Deleted"
-				| "Deleting"
-				| "Failed"
-				| "Patching"
-				| "Resuming"
-				| "Running"
-				| "Succeeded"
-				| "Suspending"
-		  )
-		| undefined;
-	readonly publicDataLakeStoreAccounts?: DataLakeStoreAccountInformation[] | undefined;
-	readonly queryStoreRetention?: number | undefined;
-	readonly state?: "Active" | undefined;
-	readonly storageAccounts?: AddStorageAccountWithAccountParametersOrStorageAccountInformation[] | undefined;
-	readonly systemMaxDegreeOfParallelism?: number | undefined;
-	readonly systemMaxJobCount?: number | undefined;
-	readonly virtualNetworkRules?: VirtualNetworkRule[] | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleted"
+		| "Deleting"
+		| "Failed"
+		| "Patching"
+		| "Resuming"
+		| "Running"
+		| "Succeeded"
+		| "Suspending";
+	readonly publicDataLakeStoreAccounts?: DataLakeStoreAccountInformation[];
+	readonly queryStoreRetention?: number;
+	readonly state?: "Active";
+	readonly storageAccounts?: AddStorageAccountWithAccountParametersOrStorageAccountInformation[];
+	readonly systemMaxDegreeOfParallelism?: number;
+	readonly systemMaxJobCount?: number;
+	readonly virtualNetworkRules?: VirtualNetworkRule[];
 }
 export interface CreateFirewallRuleWithAccountParametersOrFirewallRule {
-	readonly id?: string | undefined;
+	readonly id?: string;
 	readonly name: string;
 	readonly properties: CreateOrUpdateFirewallRulePropertiesOrFirewallRuleProperties;
-	readonly type?: string | undefined;
+	readonly type?: string;
 }
 export interface CreateOrUpdateComputePolicyPropertiesOrComputePolicyProperties {
-	readonly maxDegreeOfParallelismPerJob?: number | undefined;
-	readonly minPriorityPerJob?: number | undefined;
+	readonly maxDegreeOfParallelismPerJob?: number;
+	readonly minPriorityPerJob?: number;
 	readonly objectId: string;
 	readonly objectType: "Group" | "ServicePrincipal" | "User";
 }
@@ -245,47 +236,47 @@ export interface CreateOrUpdateFirewallRulePropertiesOrFirewallRuleProperties {
 	readonly startIpAddress: string;
 }
 export interface DataLakeStoreAccountInformation {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: DataLakeStoreAccountInformationProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: DataLakeStoreAccountInformationProperties;
+	readonly type?: string;
 }
 export interface DataLakeStoreAccountInformationProperties {
-	readonly suffix?: string | undefined;
+	readonly suffix?: string;
 }
 export interface HiveMetastore {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: HiveMetastoreProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: HiveMetastoreProperties;
+	readonly type?: string;
 }
 export interface HiveMetastoreProperties {
-	readonly databaseName?: string | undefined;
-	readonly nestedResourceProvisioningState?: ("Canceled" | "Failed") | undefined;
-	readonly password?: string | undefined;
-	readonly runtimeVersion?: string | undefined;
-	readonly serverUri?: string | undefined;
-	readonly userName?: string | undefined;
+	readonly databaseName?: string;
+	readonly nestedResourceProvisioningState?: "Canceled" | "Failed";
+	readonly password?: string;
+	readonly runtimeVersion?: string;
+	readonly serverUri?: string;
+	readonly userName?: string;
 }
 export interface SasTokenInformation {
-	readonly accessToken?: string | undefined;
+	readonly accessToken?: string;
 }
 export interface SasTokenInformationListResult {
-	readonly nextLink?: string | undefined;
-	readonly value?: SasTokenInformation[] | undefined;
+	readonly nextLink?: string;
+	readonly value?: SasTokenInformation[];
 }
 export interface StorageContainerProperties {
-	readonly lastModifiedTime?: string | undefined;
+	readonly lastModifiedTime?: string;
 }
 export interface VirtualNetworkRule {
-	readonly id?: string | undefined;
-	readonly name?: string | undefined;
-	readonly properties?: VirtualNetworkRuleProperties | undefined;
-	readonly type?: string | undefined;
+	readonly id?: string;
+	readonly name?: string;
+	readonly properties?: VirtualNetworkRuleProperties;
+	readonly type?: string;
 }
 export interface VirtualNetworkRuleProperties {
-	readonly subnetId?: string | undefined;
-	readonly virtualNetworkRuleState?: ("Active" | "Failed") | undefined;
+	readonly subnetId?: string;
+	readonly virtualNetworkRuleState?: "Active" | "Failed";
 }
 export default {
 	accounts: accounts,

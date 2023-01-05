@@ -10,7 +10,6 @@ export class ProjectsLocations
 }
 export interface ProjectsLocationsComponentOutputs {}
 export interface ProjectsLocationsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

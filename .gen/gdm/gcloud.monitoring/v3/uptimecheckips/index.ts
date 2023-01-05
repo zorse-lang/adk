@@ -7,7 +7,6 @@ export class UptimeCheckIps extends GdmResource<UptimeCheckIpsComponentInputs> i
 }
 export interface UptimeCheckIpsComponentOutputs {}
 export interface UptimeCheckIpsComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

@@ -14,14 +14,14 @@ export interface workbooksComponentOutputs {
 	readonly type: "Microsoft.Insights/workbooks";
 }
 export interface workbooksComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: WorkbookResourceIdentity | undefined;
-	readonly kind?: "shared" | undefined;
+	readonly etag?: string;
+	readonly identity?: WorkbookResourceIdentity;
+	readonly kind?: "shared";
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WorkbookProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: WorkbookProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class workbooks_revisions
 	extends ArmResource<workbooks_revisionsComponentInputs>
@@ -40,51 +40,51 @@ export interface workbooks_revisionsComponentOutputs {
 	readonly type: "Microsoft.Insights/workbooks/revisions";
 }
 export interface workbooks_revisionsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: WorkbookResourceIdentity | undefined;
-	readonly kind?: "shared" | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly identity?: WorkbookResourceIdentity;
+	readonly kind?: "shared";
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: WorkbookProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: WorkbookProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserAssignedIdentities {
-	readonly "[ key: string ]"?: UserAssignedIdentity | undefined;
+	readonly [key: string]: UserAssignedIdentity;
 }
 export interface UserAssignedIdentity {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface WorkbookProperties {
 	readonly category: string;
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly displayName: string;
-	readonly revision?: string | undefined;
+	readonly revision?: string;
 	readonly serializedData: string;
-	readonly sourceId?: string | undefined;
-	readonly storageUri?: string | undefined;
-	readonly tags?: string[] | undefined;
-	readonly timeModified?: string | undefined;
-	readonly userId?: string | undefined;
-	readonly version?: string | undefined;
+	readonly sourceId?: string;
+	readonly storageUri?: string;
+	readonly tags?: string[];
+	readonly timeModified?: string;
+	readonly userId?: string;
+	readonly version?: string;
 }
 export interface WorkbookResourceIdentity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned" | "SystemAssigned,UserAssigned" | "UserAssigned";
-	readonly userAssignedIdentities?: UserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: UserAssignedIdentities;
 }
 export default {
 	workbooks: workbooks,

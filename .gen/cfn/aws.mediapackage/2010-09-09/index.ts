@@ -18,8 +18,8 @@ export interface AssetComponentInputs {
 	readonly PackagingGroupId: string;
 	readonly SourceArn: string;
 	readonly SourceRoleArn: string;
-	readonly ResourceId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ResourceId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Channel extends CfnResource<ChannelComponentInputs> implements ChannelComponentOutputs {
@@ -35,10 +35,10 @@ export interface ChannelComponentOutputs {
 }
 export interface ChannelComponentInputs {
 	readonly Id: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EgressAccessLogs?: (LogConfiguration | undefined) | undefined;
-	readonly IngressAccessLogs?: (LogConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly EgressAccessLogs?: LogConfiguration | undefined;
+	readonly IngressAccessLogs?: LogConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class OriginEndpoint extends CfnResource<OriginEndpointComponentInputs> implements OriginEndpointComponentOutputs {
@@ -55,18 +55,18 @@ export interface OriginEndpointComponentOutputs {
 export interface OriginEndpointComponentInputs {
 	readonly ChannelId: string;
 	readonly Id: string;
-	readonly Authorization?: (Authorization | undefined) | undefined;
-	readonly CmafPackage?: (CmafPackage | undefined) | undefined;
-	readonly DashPackage?: (DashPackage | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly HlsPackage?: (HlsPackage | undefined) | undefined;
-	readonly ManifestName?: (string | undefined) | undefined;
-	readonly MssPackage?: (MssPackage | undefined) | undefined;
-	readonly Origination?: (string | undefined) | undefined;
-	readonly StartoverWindowSeconds?: (number | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly TimeDelaySeconds?: (number | undefined) | undefined;
-	readonly Whitelist?: (string[] | undefined) | undefined;
+	readonly Authorization?: Authorization | undefined;
+	readonly CmafPackage?: CmafPackage | undefined;
+	readonly DashPackage?: DashPackage | undefined;
+	readonly Description?: string | undefined;
+	readonly HlsPackage?: HlsPackage | undefined;
+	readonly ManifestName?: string | undefined;
+	readonly MssPackage?: MssPackage | undefined;
+	readonly Origination?: string | undefined;
+	readonly StartoverWindowSeconds?: number | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly TimeDelaySeconds?: number | undefined;
+	readonly Whitelist?: string[] | undefined;
 	readonly LogicalId: string;
 }
 export class PackagingConfiguration
@@ -84,11 +84,11 @@ export interface PackagingConfigurationComponentOutputs {
 export interface PackagingConfigurationComponentInputs {
 	readonly Id: string;
 	readonly PackagingGroupId: string;
-	readonly CmafPackage?: (CmafPackage | undefined) | undefined;
-	readonly DashPackage?: (DashPackage | undefined) | undefined;
-	readonly HlsPackage?: (HlsPackage | undefined) | undefined;
-	readonly MssPackage?: (MssPackage | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly CmafPackage?: CmafPackage | undefined;
+	readonly DashPackage?: DashPackage | undefined;
+	readonly HlsPackage?: HlsPackage | undefined;
+	readonly MssPackage?: MssPackage | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class PackagingGroup extends CfnResource<PackagingGroupComponentInputs> implements PackagingGroupComponentOutputs {
@@ -104,9 +104,9 @@ export interface PackagingGroupComponentOutputs {
 }
 export interface PackagingGroupComponentInputs {
 	readonly Id: string;
-	readonly Authorization?: (Authorization | undefined) | undefined;
-	readonly EgressAccessLogs?: (LogConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Authorization?: Authorization | undefined;
+	readonly EgressAccessLogs?: LogConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface EgressEndpoint {
@@ -114,126 +114,126 @@ export interface EgressEndpoint {
 	readonly Url: string;
 }
 export interface HlsIngest {
-	readonly ingestEndpoints?: (IngestEndpoint[] | undefined) | undefined;
+	readonly ingestEndpoints?: IngestEndpoint[] | undefined;
 }
 export interface IngestEndpoint {
-	readonly Id?: (string | undefined) | undefined;
-	readonly Password?: (string | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
-	readonly Username?: (string | undefined) | undefined;
+	readonly Id?: string | undefined;
+	readonly Password?: string | undefined;
+	readonly Url?: string | undefined;
+	readonly Username?: string | undefined;
 }
 export interface LogConfiguration {
-	readonly LogGroupName?: (string | undefined) | undefined;
+	readonly LogGroupName?: string | undefined;
 }
 export interface Authorization {
 	readonly CdnIdentifierSecret: string;
 	readonly SecretsRoleArn: string;
 }
 export interface CmafEncryption {
-	readonly ConstantInitializationVector?: (string | undefined) | undefined;
-	readonly EncryptionMethod?: (string | undefined) | undefined;
-	readonly KeyRotationIntervalSeconds?: (number | undefined) | undefined;
+	readonly ConstantInitializationVector?: string | undefined;
+	readonly EncryptionMethod?: string | undefined;
+	readonly KeyRotationIntervalSeconds?: number | undefined;
 	readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 export interface CmafPackage {
-	readonly Encryption?: (CmafEncryption | undefined) | undefined;
-	readonly HlsManifests?: (HlsManifest[] | undefined) | undefined;
-	readonly SegmentDurationSeconds?: (number | undefined) | undefined;
-	readonly SegmentPrefix?: (string | undefined) | undefined;
-	readonly StreamSelection?: (StreamSelection | undefined) | undefined;
+	readonly Encryption?: CmafEncryption | undefined;
+	readonly HlsManifests?: HlsManifest[] | undefined;
+	readonly SegmentDurationSeconds?: number | undefined;
+	readonly SegmentPrefix?: string | undefined;
+	readonly StreamSelection?: StreamSelection | undefined;
 }
 export interface DashEncryption {
-	readonly KeyRotationIntervalSeconds?: (number | undefined) | undefined;
+	readonly KeyRotationIntervalSeconds?: number | undefined;
 	readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 export interface DashPackage {
-	readonly AdTriggers?: (string[] | undefined) | undefined;
-	readonly AdsOnDeliveryRestrictions?: (string | undefined) | undefined;
-	readonly Encryption?: (DashEncryption | undefined) | undefined;
-	readonly IncludeIframeOnlyStream?: (boolean | undefined) | undefined;
-	readonly ManifestLayout?: (string | undefined) | undefined;
-	readonly ManifestWindowSeconds?: (number | undefined) | undefined;
-	readonly MinBufferTimeSeconds?: (number | undefined) | undefined;
-	readonly MinUpdatePeriodSeconds?: (number | undefined) | undefined;
-	readonly PeriodTriggers?: (string[] | undefined) | undefined;
-	readonly Profile?: (string | undefined) | undefined;
-	readonly SegmentDurationSeconds?: (number | undefined) | undefined;
-	readonly SegmentTemplateFormat?: (string | undefined) | undefined;
-	readonly StreamSelection?: (StreamSelection | undefined) | undefined;
-	readonly SuggestedPresentationDelaySeconds?: (number | undefined) | undefined;
-	readonly UtcTiming?: (string | undefined) | undefined;
-	readonly UtcTimingUri?: (string | undefined) | undefined;
+	readonly AdTriggers?: string[] | undefined;
+	readonly AdsOnDeliveryRestrictions?: string | undefined;
+	readonly Encryption?: DashEncryption | undefined;
+	readonly IncludeIframeOnlyStream?: boolean | undefined;
+	readonly ManifestLayout?: string | undefined;
+	readonly ManifestWindowSeconds?: number | undefined;
+	readonly MinBufferTimeSeconds?: number | undefined;
+	readonly MinUpdatePeriodSeconds?: number | undefined;
+	readonly PeriodTriggers?: string[] | undefined;
+	readonly Profile?: string | undefined;
+	readonly SegmentDurationSeconds?: number | undefined;
+	readonly SegmentTemplateFormat?: string | undefined;
+	readonly StreamSelection?: StreamSelection | undefined;
+	readonly SuggestedPresentationDelaySeconds?: number | undefined;
+	readonly UtcTiming?: string | undefined;
+	readonly UtcTimingUri?: string | undefined;
 }
 export interface EncryptionContractConfiguration {
 	readonly PresetSpeke20Audio: string;
 	readonly PresetSpeke20Video: string;
 }
 export interface HlsEncryption {
-	readonly ConstantInitializationVector?: (string | undefined) | undefined;
-	readonly EncryptionMethod?: (string | undefined) | undefined;
-	readonly KeyRotationIntervalSeconds?: (number | undefined) | undefined;
-	readonly RepeatExtXKey?: (boolean | undefined) | undefined;
+	readonly ConstantInitializationVector?: string | undefined;
+	readonly EncryptionMethod?: string | undefined;
+	readonly KeyRotationIntervalSeconds?: number | undefined;
+	readonly RepeatExtXKey?: boolean | undefined;
 	readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 export interface HlsManifest {
-	readonly AdMarkers?: (string | undefined) | undefined;
-	readonly AdTriggers?: (string[] | undefined) | undefined;
-	readonly AdsOnDeliveryRestrictions?: (string | undefined) | undefined;
+	readonly AdMarkers?: string | undefined;
+	readonly AdTriggers?: string[] | undefined;
+	readonly AdsOnDeliveryRestrictions?: string | undefined;
 	readonly Id: string;
-	readonly IncludeIframeOnlyStream?: (boolean | undefined) | undefined;
-	readonly ManifestName?: (string | undefined) | undefined;
-	readonly PlaylistType?: (string | undefined) | undefined;
-	readonly PlaylistWindowSeconds?: (number | undefined) | undefined;
-	readonly ProgramDateTimeIntervalSeconds?: (number | undefined) | undefined;
-	readonly Url?: (string | undefined) | undefined;
+	readonly IncludeIframeOnlyStream?: boolean | undefined;
+	readonly ManifestName?: string | undefined;
+	readonly PlaylistType?: string | undefined;
+	readonly PlaylistWindowSeconds?: number | undefined;
+	readonly ProgramDateTimeIntervalSeconds?: number | undefined;
+	readonly Url?: string | undefined;
 }
 export interface HlsPackage {
-	readonly AdMarkers?: (string | undefined) | undefined;
-	readonly AdTriggers?: (string[] | undefined) | undefined;
-	readonly AdsOnDeliveryRestrictions?: (string | undefined) | undefined;
-	readonly Encryption?: (HlsEncryption | undefined) | undefined;
-	readonly IncludeDvbSubtitles?: (boolean | undefined) | undefined;
-	readonly IncludeIframeOnlyStream?: (boolean | undefined) | undefined;
-	readonly PlaylistType?: (string | undefined) | undefined;
-	readonly PlaylistWindowSeconds?: (number | undefined) | undefined;
-	readonly ProgramDateTimeIntervalSeconds?: (number | undefined) | undefined;
-	readonly SegmentDurationSeconds?: (number | undefined) | undefined;
-	readonly StreamSelection?: (StreamSelection | undefined) | undefined;
-	readonly UseAudioRenditionGroup?: (boolean | undefined) | undefined;
+	readonly AdMarkers?: string | undefined;
+	readonly AdTriggers?: string[] | undefined;
+	readonly AdsOnDeliveryRestrictions?: string | undefined;
+	readonly Encryption?: HlsEncryption | undefined;
+	readonly IncludeDvbSubtitles?: boolean | undefined;
+	readonly IncludeIframeOnlyStream?: boolean | undefined;
+	readonly PlaylistType?: string | undefined;
+	readonly PlaylistWindowSeconds?: number | undefined;
+	readonly ProgramDateTimeIntervalSeconds?: number | undefined;
+	readonly SegmentDurationSeconds?: number | undefined;
+	readonly StreamSelection?: StreamSelection | undefined;
+	readonly UseAudioRenditionGroup?: boolean | undefined;
 }
 export interface MssEncryption {
 	readonly SpekeKeyProvider: SpekeKeyProvider;
 }
 export interface MssPackage {
-	readonly Encryption?: (MssEncryption | undefined) | undefined;
-	readonly ManifestWindowSeconds?: (number | undefined) | undefined;
-	readonly SegmentDurationSeconds?: (number | undefined) | undefined;
-	readonly StreamSelection?: (StreamSelection | undefined) | undefined;
+	readonly Encryption?: MssEncryption | undefined;
+	readonly ManifestWindowSeconds?: number | undefined;
+	readonly SegmentDurationSeconds?: number | undefined;
+	readonly StreamSelection?: StreamSelection | undefined;
 }
 export interface SpekeKeyProvider {
-	readonly CertificateArn?: (string | undefined) | undefined;
-	readonly EncryptionContractConfiguration?: (EncryptionContractConfiguration | undefined) | undefined;
+	readonly CertificateArn?: string | undefined;
+	readonly EncryptionContractConfiguration?: EncryptionContractConfiguration | undefined;
 	readonly ResourceId: string;
 	readonly RoleArn: string;
 	readonly SystemIds: string[];
 	readonly Url: string;
 }
 export interface StreamSelection {
-	readonly MaxVideoBitsPerSecond?: (number | undefined) | undefined;
-	readonly MinVideoBitsPerSecond?: (number | undefined) | undefined;
-	readonly StreamOrder?: (string | undefined) | undefined;
+	readonly MaxVideoBitsPerSecond?: number | undefined;
+	readonly MinVideoBitsPerSecond?: number | undefined;
+	readonly StreamOrder?: string | undefined;
 }
 export interface DashManifest {
-	readonly ManifestLayout?: (string | undefined) | undefined;
-	readonly ManifestName?: (string | undefined) | undefined;
-	readonly MinBufferTimeSeconds?: (number | undefined) | undefined;
-	readonly Profile?: (string | undefined) | undefined;
-	readonly ScteMarkersSource?: (string | undefined) | undefined;
-	readonly StreamSelection?: (StreamSelection | undefined) | undefined;
+	readonly ManifestLayout?: string | undefined;
+	readonly ManifestName?: string | undefined;
+	readonly MinBufferTimeSeconds?: number | undefined;
+	readonly Profile?: string | undefined;
+	readonly ScteMarkersSource?: string | undefined;
+	readonly StreamSelection?: StreamSelection | undefined;
 }
 export interface MssManifest {
-	readonly ManifestName?: (string | undefined) | undefined;
-	readonly StreamSelection?: (StreamSelection | undefined) | undefined;
+	readonly ManifestName?: string | undefined;
+	readonly StreamSelection?: StreamSelection | undefined;
 }
 export default {
 	Asset: Asset,

@@ -4,48 +4,47 @@ export class VpnGateways extends GdmResource<VpnGatewaysComponentInputs> impleme
 	constructor(entity: ADKEntity, options: VpnGatewaysComponentInputs) {
 		super(entity, options.name, "compute.alpha.VpnGateways", options);
 	}
-	public readonly creationTimestamp?: string | undefined;
-	public readonly id?: string | undefined;
-	public readonly kind?: string | undefined;
-	public readonly region?: string | undefined;
-	public readonly selfLink?: string | undefined;
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly region?: string;
+	public readonly selfLink?: string;
 }
 export interface VpnGatewaysComponentOutputs {
-	readonly creationTimestamp?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
 }
 export interface VpnGatewaysComponentInputs {
-	readonly description?: string | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
+	readonly description?: string;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
 	readonly name: string;
-	readonly network?: string | undefined;
-	readonly requestId?: string | undefined;
-	readonly stackType?: string | undefined;
-	readonly vpnInterfaces?: VpnGatewayVpnGatewayInterface[] | undefined;
-	readonly type: string;
+	readonly network?: string;
+	readonly requestId?: string;
+	readonly stackType?: string;
+	readonly vpnInterfaces?: VpnGatewayVpnGatewayInterface[];
 }
 export interface VpnGateway {
-	readonly creationTimestamp?: string | undefined;
-	readonly description?: string | undefined;
-	readonly id?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly labelFingerprint?: string | undefined;
-	readonly labels?: { [P in string]: string } | undefined;
-	readonly name?: string | undefined;
-	readonly network?: string | undefined;
-	readonly region?: string | undefined;
-	readonly selfLink?: string | undefined;
-	readonly stackType?: string | undefined;
-	readonly vpnInterfaces?: VpnGatewayVpnGatewayInterface[] | undefined;
+	readonly creationTimestamp?: string;
+	readonly description?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly labelFingerprint?: string;
+	readonly labels?: { [P in string]: string };
+	readonly name?: string;
+	readonly network?: string;
+	readonly region?: string;
+	readonly selfLink?: string;
+	readonly stackType?: string;
+	readonly vpnInterfaces?: VpnGatewayVpnGatewayInterface[];
 }
 export interface VpnGatewayVpnGatewayInterface {
-	readonly id?: number | undefined;
-	readonly interconnectAttachment?: string | undefined;
-	readonly ipAddress?: string | undefined;
+	readonly id?: number;
+	readonly interconnectAttachment?: string;
+	readonly ipAddress?: string;
 }
 export default {
 	VpnGateways: VpnGateways,

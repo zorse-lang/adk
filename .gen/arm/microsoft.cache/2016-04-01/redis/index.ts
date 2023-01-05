@@ -17,7 +17,7 @@ export interface RedisComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: RedisCreatePropertiesOrRedisResourceProperties;
-	readonly tags?: ResourceTags | undefined;
+	readonly tags?: ResourceTags;
 }
 export class Redis_firewallRules
 	extends ArmResource<Redis_firewallRulesComponentInputs>
@@ -56,7 +56,7 @@ export interface Redis_patchSchedulesComponentOutputs {
 	readonly type: "Microsoft.Cache/Redis/patchSchedules";
 }
 export interface Redis_patchSchedulesComponentInputs {
-	readonly location?: string | undefined;
+	readonly location?: string;
 	readonly name: string;
 	readonly properties: ScheduleEntries;
 }
@@ -70,43 +70,43 @@ export function listKeys(resource: Redis): RedisAccessKeys {
 	throw new Error("not implemented");
 }
 export interface RedisAccessKeys {
-	readonly primaryKey?: string | undefined;
-	readonly secondaryKey?: string | undefined;
+	readonly primaryKey?: string;
+	readonly secondaryKey?: string;
 }
 export interface RedisCreatePropertiesOrRedisResourceProperties {
-	readonly accessKeys?: RedisAccessKeys | undefined;
-	readonly enableNonSslPort?: boolean | undefined;
-	readonly hostName?: string | undefined;
-	readonly port?: number | undefined;
-	readonly provisioningState?: string | undefined;
-	readonly redisConfiguration?: RedisPropertiesRedisConfiguration | undefined;
-	readonly redisVersion?: string | undefined;
-	readonly shardCount?: number | undefined;
+	readonly accessKeys?: RedisAccessKeys;
+	readonly enableNonSslPort?: boolean;
+	readonly hostName?: string;
+	readonly port?: number;
+	readonly provisioningState?: string;
+	readonly redisConfiguration?: RedisPropertiesRedisConfiguration;
+	readonly redisVersion?: string;
+	readonly shardCount?: number;
 	readonly sku: Sku;
-	readonly sslPort?: number | undefined;
-	readonly staticIP?: string | undefined;
-	readonly subnetId?: string | undefined;
-	readonly tenantSettings?: RedisPropertiesTenantSettings | undefined;
+	readonly sslPort?: number;
+	readonly staticIP?: string;
+	readonly subnetId?: string;
+	readonly tenantSettings?: RedisPropertiesTenantSettings;
 }
 export interface RedisFirewallRuleProperties {
 	readonly endIP: string;
 	readonly startIP: string;
 }
 export interface RedisPropertiesRedisConfiguration {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface RedisPropertiesTenantSettings {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface ScheduleEntries {
 	readonly scheduleEntries: ScheduleEntry[];
 }
 export interface ScheduleEntry {
 	readonly dayOfWeek: "Everyday" | "Friday" | "Monday" | "Saturday" | "Sunday" | "Thursday" | "Tuesday" | "Wednesday";
-	readonly maintenanceWindow?: string | undefined;
+	readonly maintenanceWindow?: string;
 	readonly startHourUtc: number;
 }
 export interface Sku {

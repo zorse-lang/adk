@@ -14,13 +14,13 @@ export interface workspacesComponentOutputs {
 	readonly type: "Microsoft.OperationalInsights/workspaces";
 }
 export interface workspacesComponentInputs {
-	readonly etag?: string | undefined;
-	readonly identity?: Identity | undefined;
+	readonly etag?: string;
+	readonly identity?: Identity;
 	readonly location: string;
 	readonly name: string;
-	readonly properties?: WorkspaceProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: TrackedResourceTags | undefined;
+	readonly properties?: WorkspaceProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: TrackedResourceTags;
 }
 export class workspaces_tables
 	extends ArmResource<workspaces_tablesComponentInputs>
@@ -40,128 +40,137 @@ export interface workspaces_tablesComponentOutputs {
 }
 export interface workspaces_tablesComponentInputs {
 	readonly name: string;
-	readonly properties?: TableProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: TableProperties;
+	readonly systemData?: SystemData;
 }
 export interface Column {
-	readonly dataTypeHint?: ("armPath" | "guid" | "ip" | "uri") | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly isDefaultDisplay?: boolean | undefined;
-	readonly isHidden?: boolean | undefined;
-	readonly name?: string | undefined;
-	readonly type?: ("boolean" | "dateTime" | "dynamic" | "guid" | "int" | "long" | "real" | "string") | undefined;
+	readonly dataTypeHint?: "armPath" | "guid" | "ip" | "uri";
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly isDefaultDisplay?: boolean;
+	readonly isHidden?: boolean;
+	readonly name?: string;
+	readonly type?: "boolean" | "dateTime" | "dynamic" | "guid" | "int" | "long" | "real" | "string";
 }
 export interface Identity {
-	readonly principalId?: string | undefined;
-	readonly tenantId?: string | undefined;
+	readonly principalId?: string;
+	readonly tenantId?: string;
 	readonly type: "None" | "SystemAssigned";
-	readonly userAssignedIdentities?: IdentityUserAssignedIdentities | undefined;
+	readonly userAssignedIdentities?: IdentityUserAssignedIdentities;
 }
 export interface IdentityUserAssignedIdentities {
-	readonly "[ key: string ]"?: UserIdentityProperties | undefined;
+	readonly [key: string]: UserIdentityProperties;
 }
 export interface PrivateLinkScopedResource {
-	readonly resourceId?: string | undefined;
-	readonly scopeId?: string | undefined;
+	readonly resourceId?: string;
+	readonly scopeId?: string;
 }
 export interface RestoredLogs {
-	readonly azureAsyncOperationId?: string | undefined;
-	readonly endRestoreTime?: string | undefined;
-	readonly sourceTable?: string | undefined;
-	readonly startRestoreTime?: string | undefined;
+	readonly azureAsyncOperationId?: string;
+	readonly endRestoreTime?: string;
+	readonly sourceTable?: string;
+	readonly startRestoreTime?: string;
 }
 export interface ResultStatistics {
-	readonly ingestedRecords?: number | undefined;
-	readonly progress?: number | undefined;
-	readonly scannedGb?: number | undefined;
+	readonly ingestedRecords?: number;
+	readonly progress?: number;
+	readonly scannedGb?: number;
 }
 export interface Schema {
-	readonly categories?: string[] | undefined;
-	readonly columns?: Column[] | undefined;
-	readonly description?: string | undefined;
-	readonly displayName?: string | undefined;
-	readonly labels?: string[] | undefined;
-	readonly name?: string | undefined;
-	readonly solutions?: string[] | undefined;
-	readonly source?: ("customer" | "microsoft") | undefined;
-	readonly standardColumns?: Column[] | undefined;
-	readonly tableSubType?: ("any" | "Classic" | "DataCollectionRuleBased") | undefined;
-	readonly tableType?: ("CustomLog" | "Microsoft" | "RestoredLogs" | "SearchResults") | undefined;
+	readonly categories?: string[];
+	readonly columns?: Column[];
+	readonly description?: string;
+	readonly displayName?: string;
+	readonly labels?: string[];
+	readonly name?: string;
+	readonly solutions?: string[];
+	readonly source?: "customer" | "microsoft";
+	readonly standardColumns?: Column[];
+	readonly tableSubType?: "any" | "Classic" | "DataCollectionRuleBased";
+	readonly tableType?: "CustomLog" | "Microsoft" | "RestoredLogs" | "SearchResults";
 }
 export interface SearchResults {
-	readonly azureAsyncOperationId?: string | undefined;
-	readonly description?: string | undefined;
-	readonly endSearchTime?: string | undefined;
-	readonly limit?: number | undefined;
-	readonly query?: string | undefined;
-	readonly sourceTable?: string | undefined;
-	readonly startSearchTime?: string | undefined;
+	readonly azureAsyncOperationId?: string;
+	readonly description?: string;
+	readonly endSearchTime?: string;
+	readonly limit?: number;
+	readonly query?: string;
+	readonly sourceTable?: string;
+	readonly startSearchTime?: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface TableProperties {
-	readonly archiveRetentionInDays?: number | undefined;
-	readonly lastPlanModifiedDate?: string | undefined;
-	readonly plan?: ("Analytics" | "Basic") | undefined;
-	readonly provisioningState?: ("InProgress" | "Succeeded" | "Updating") | undefined;
-	readonly restoredLogs?: RestoredLogs | undefined;
-	readonly resultStatistics?: ResultStatistics | undefined;
-	readonly retentionInDays?: number | undefined;
-	readonly retentionInDaysAsDefault?: boolean | undefined;
-	readonly schema?: Schema | undefined;
-	readonly searchResults?: SearchResults | undefined;
-	readonly totalRetentionInDays?: number | undefined;
-	readonly totalRetentionInDaysAsDefault?: boolean | undefined;
+	readonly archiveRetentionInDays?: number;
+	readonly lastPlanModifiedDate?: string;
+	readonly plan?: "Analytics" | "Basic";
+	readonly provisioningState?: "InProgress" | "Succeeded" | "Updating";
+	readonly restoredLogs?: RestoredLogs;
+	readonly resultStatistics?: ResultStatistics;
+	readonly retentionInDays?: number;
+	readonly retentionInDaysAsDefault?: boolean;
+	readonly schema?: Schema;
+	readonly searchResults?: SearchResults;
+	readonly totalRetentionInDays?: number;
+	readonly totalRetentionInDaysAsDefault?: boolean;
 }
 export interface TrackedResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface UserIdentityProperties {
-	readonly clientId?: string | undefined;
-	readonly principalId?: string | undefined;
+	readonly clientId?: string;
+	readonly principalId?: string;
 }
 export interface WorkspaceCapping {
-	readonly dailyQuotaGb?: number | undefined;
+	readonly dailyQuotaGb?: number;
 	readonly dataIngestionStatus?:
-		| ("ApproachingQuota" | "ForceOff" | "ForceOn" | "OverQuota" | "RespectQuota" | "SubscriptionSuspended")
-		| undefined;
-	readonly quotaNextResetTime?: string | undefined;
+		| "ApproachingQuota"
+		| "ForceOff"
+		| "ForceOn"
+		| "OverQuota"
+		| "RespectQuota"
+		| "SubscriptionSuspended";
+	readonly quotaNextResetTime?: string;
 }
 export interface WorkspaceFeatures {
-	readonly clusterResourceId?: string | undefined;
-	readonly disableLocalAuth?: boolean | undefined;
-	readonly enableDataExport?: boolean | undefined;
-	readonly enableLogAccessUsingOnlyResourcePermissions?: boolean | undefined;
-	readonly immediatePurgeDataOn30Days?: boolean | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly clusterResourceId?: string;
+	readonly disableLocalAuth?: boolean;
+	readonly enableDataExport?: boolean;
+	readonly enableLogAccessUsingOnlyResourcePermissions?: boolean;
+	readonly immediatePurgeDataOn30Days?: boolean;
+	readonly [key: string]: any;
 }
 export interface WorkspaceProperties {
-	readonly createdDate?: string | undefined;
-	readonly customerId?: string | undefined;
-	readonly defaultDataCollectionRuleResourceId?: string | undefined;
-	readonly features?: WorkspaceFeatures | undefined;
-	readonly forceCmkForQuery?: boolean | undefined;
-	readonly modifiedDate?: string | undefined;
-	readonly privateLinkScopedResources?: PrivateLinkScopedResource[] | undefined;
+	readonly createdDate?: string;
+	readonly customerId?: string;
+	readonly defaultDataCollectionRuleResourceId?: string;
+	readonly features?: WorkspaceFeatures;
+	readonly forceCmkForQuery?: boolean;
+	readonly modifiedDate?: string;
+	readonly privateLinkScopedResources?: PrivateLinkScopedResource[];
 	readonly provisioningState?:
-		| ("Canceled" | "Creating" | "Deleting" | "Failed" | "ProvisioningAccount" | "Succeeded" | "Updating")
-		| undefined;
-	readonly publicNetworkAccessForIngestion?: ("Disabled" | "Enabled") | undefined;
-	readonly publicNetworkAccessForQuery?: ("Disabled" | "Enabled") | undefined;
-	readonly retentionInDays?: number | undefined;
-	readonly sku?: WorkspaceSku | undefined;
-	readonly workspaceCapping?: WorkspaceCapping | undefined;
+		| "Canceled"
+		| "Creating"
+		| "Deleting"
+		| "Failed"
+		| "ProvisioningAccount"
+		| "Succeeded"
+		| "Updating";
+	readonly publicNetworkAccessForIngestion?: "Disabled" | "Enabled";
+	readonly publicNetworkAccessForQuery?: "Disabled" | "Enabled";
+	readonly retentionInDays?: number;
+	readonly sku?: WorkspaceSku;
+	readonly workspaceCapping?: WorkspaceCapping;
 }
 export interface WorkspaceSku {
-	readonly capacityReservationLevel?: number | undefined;
-	readonly lastSkuUpdate?: string | undefined;
+	readonly capacityReservationLevel?: number;
+	readonly lastSkuUpdate?: string;
 	readonly name:
 		| "CapacityReservation"
 		| "Free"

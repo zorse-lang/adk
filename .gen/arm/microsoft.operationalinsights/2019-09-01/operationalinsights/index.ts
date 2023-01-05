@@ -17,7 +17,7 @@ export interface queryPacksComponentInputs {
 	readonly location: string;
 	readonly name: string;
 	readonly properties: LogAnalyticsQueryPackProperties;
-	readonly tags?: QueryPacksResourceTags | undefined;
+	readonly tags?: QueryPacksResourceTags;
 }
 export class queryPacks_queries
 	extends ArmResource<queryPacks_queriesComponentInputs>
@@ -37,45 +37,45 @@ export interface queryPacks_queriesComponentOutputs {
 }
 export interface queryPacks_queriesComponentInputs {
 	readonly name: string;
-	readonly properties?: LogAnalyticsQueryPackQueryProperties | undefined;
-	readonly systemData?: SystemData | undefined;
+	readonly properties?: LogAnalyticsQueryPackQueryProperties;
+	readonly systemData?: SystemData;
 }
 export interface LogAnalyticsQueryPackProperties {
-	readonly provisioningState?: string | undefined;
-	readonly queryPackId?: string | undefined;
-	readonly timeCreated?: string | undefined;
-	readonly timeModified?: string | undefined;
+	readonly provisioningState?: string;
+	readonly queryPackId?: string;
+	readonly timeCreated?: string;
+	readonly timeModified?: string;
 }
 export interface LogAnalyticsQueryPackQueryProperties {
-	readonly author?: string | undefined;
+	readonly author?: string;
 	readonly body: string;
-	readonly description?: string | undefined;
+	readonly description?: string;
 	readonly displayName: string;
-	readonly id?: string | undefined;
-	readonly properties?: any | undefined;
-	readonly related?: LogAnalyticsQueryPackQueryPropertiesRelated | undefined;
-	readonly tags?: LogAnalyticsQueryPackQueryPropertiesTags | undefined;
-	readonly timeCreated?: string | undefined;
-	readonly timeModified?: string | undefined;
+	readonly id?: string;
+	readonly properties?: any;
+	readonly related?: LogAnalyticsQueryPackQueryPropertiesRelated;
+	readonly tags?: LogAnalyticsQueryPackQueryPropertiesTags;
+	readonly timeCreated?: string;
+	readonly timeModified?: string;
 }
 export interface LogAnalyticsQueryPackQueryPropertiesRelated {
-	readonly categories?: string[] | undefined;
-	readonly resourceTypes?: string[] | undefined;
-	readonly solutions?: string[] | undefined;
+	readonly categories?: string[];
+	readonly resourceTypes?: string[];
+	readonly solutions?: string[];
 }
 export interface LogAnalyticsQueryPackQueryPropertiesTags {
-	readonly "[ key: string ]"?: string[] | undefined;
+	readonly [key: string]: string[];
 }
 export interface QueryPacksResourceTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("application" | "key" | "managedIdentity" | "user") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("application" | "key" | "managedIdentity" | "user") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "application" | "key" | "managedIdentity" | "user";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "application" | "key" | "managedIdentity" | "user";
 }
 export default {
 	queryPacks: queryPacks,

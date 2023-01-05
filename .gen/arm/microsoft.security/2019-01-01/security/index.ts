@@ -18,7 +18,7 @@ export interface advancedThreatProtectionSettingsComponentOutputs {
 }
 export interface advancedThreatProtectionSettingsComponentInputs {
 	readonly name: string;
-	readonly properties?: AdvancedThreatProtectionProperties | undefined;
+	readonly properties?: AdvancedThreatProtectionProperties;
 }
 export class locations_alerts
 	extends ArmResource<locations_alertsComponentInputs>
@@ -38,7 +38,7 @@ export interface locations_alertsComponentOutputs {
 }
 export interface locations_alertsComponentInputs {
 	readonly name: string;
-	readonly properties?: AlertProperties | undefined;
+	readonly properties?: AlertProperties;
 }
 export class settings_DataExportSettings
 	extends ArmResource<settings_DataExportSettingsComponentInputs>
@@ -59,46 +59,46 @@ export interface settings_DataExportSettingsComponentOutputs {
 export interface settings_DataExportSettingsComponentInputs {
 	readonly name: string;
 	readonly kind: "DataExportSettings";
-	readonly properties?: DataExportSettingProperties | undefined;
+	readonly properties?: DataExportSettingProperties;
 }
 export interface AdvancedThreatProtectionProperties {
-	readonly isEnabled?: boolean | undefined;
+	readonly isEnabled?: boolean;
 }
 export interface AlertConfidenceReason {
-	readonly reason?: string | undefined;
-	readonly type?: string | undefined;
+	readonly reason?: string;
+	readonly type?: string;
 }
 export interface AlertEntity {
-	readonly type?: string | undefined;
-	readonly "[ key: string ]"?: any | undefined;
+	readonly type?: string;
+	readonly [key: string]: any;
 }
 export interface AlertExtendedProperties {
-	readonly "[ key: string ]"?: any | undefined;
+	readonly [key: string]: any;
 }
 export interface AlertProperties {
-	readonly actionTaken?: string | undefined;
-	readonly alertDisplayName?: string | undefined;
-	readonly alertName?: string | undefined;
-	readonly associatedResource?: string | undefined;
-	readonly canBeInvestigated?: boolean | undefined;
-	readonly compromisedEntity?: string | undefined;
-	readonly confidenceReasons?: AlertConfidenceReason[] | undefined;
-	readonly confidenceScore?: number | undefined;
-	readonly correlationKey?: string | undefined;
-	readonly description?: string | undefined;
-	readonly detectedTimeUtc?: string | undefined;
-	readonly entities?: AlertEntity[] | undefined;
-	readonly extendedProperties?: AlertExtendedProperties | undefined;
-	readonly instanceId?: string | undefined;
-	readonly isIncident?: boolean | undefined;
-	readonly remediationSteps?: string | undefined;
-	readonly reportedSeverity?: ("High" | "Informational" | "Low" | "Medium") | undefined;
-	readonly reportedTimeUtc?: string | undefined;
-	readonly state?: string | undefined;
-	readonly subscriptionId?: string | undefined;
-	readonly systemSource?: string | undefined;
-	readonly vendorName?: string | undefined;
-	readonly workspaceArmId?: string | undefined;
+	readonly actionTaken?: string;
+	readonly alertDisplayName?: string;
+	readonly alertName?: string;
+	readonly associatedResource?: string;
+	readonly canBeInvestigated?: boolean;
+	readonly compromisedEntity?: string;
+	readonly confidenceReasons?: AlertConfidenceReason[];
+	readonly confidenceScore?: number;
+	readonly correlationKey?: string;
+	readonly description?: string;
+	readonly detectedTimeUtc?: string;
+	readonly entities?: AlertEntity[];
+	readonly extendedProperties?: AlertExtendedProperties;
+	readonly instanceId?: string;
+	readonly isIncident?: boolean;
+	readonly remediationSteps?: string;
+	readonly reportedSeverity?: "High" | "Informational" | "Low" | "Medium";
+	readonly reportedTimeUtc?: string;
+	readonly state?: string;
+	readonly subscriptionId?: string;
+	readonly systemSource?: string;
+	readonly vendorName?: string;
+	readonly workspaceArmId?: string;
 }
 export interface DataExportSettingProperties {
 	readonly enabled: boolean;

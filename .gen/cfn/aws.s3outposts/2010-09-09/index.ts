@@ -13,7 +13,7 @@ export interface AccessPointComponentInputs {
 	readonly Bucket: string;
 	readonly Name: string;
 	readonly VpcConfiguration: VpcConfiguration;
-	readonly Policy?: (any | undefined) | undefined;
+	readonly Policy?: any | undefined;
 	readonly LogicalId: string;
 }
 export class Bucket extends CfnResource<BucketComponentInputs> implements BucketComponentOutputs {
@@ -28,8 +28,8 @@ export interface BucketComponentOutputs {
 export interface BucketComponentInputs {
 	readonly BucketName: string;
 	readonly OutpostId: string;
-	readonly LifecycleConfiguration?: (LifecycleConfiguration | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly LifecycleConfiguration?: LifecycleConfiguration | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class BucketPolicy extends CfnResource<BucketPolicyComponentInputs> implements BucketPolicyComponentOutputs {
@@ -66,23 +66,23 @@ export interface EndpointComponentInputs {
 	readonly OutpostId: string;
 	readonly SecurityGroupId: string;
 	readonly SubnetId: string;
-	readonly AccessType?: (string | undefined) | undefined;
-	readonly CustomerOwnedIpv4Pool?: (string | undefined) | undefined;
+	readonly AccessType?: string | undefined;
+	readonly CustomerOwnedIpv4Pool?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface VpcConfiguration {
-	readonly VpcId?: (string | undefined) | undefined;
+	readonly VpcId?: string | undefined;
 }
 export interface AbortIncompleteMultipartUpload {
 	readonly DaysAfterInitiation: number;
 }
 export interface Filter {
-	readonly AndOperator?: (FilterAndOperator | undefined) | undefined;
-	readonly Prefix?: (string | undefined) | undefined;
-	readonly Tag?: (FilterTag | undefined) | undefined;
+	readonly AndOperator?: FilterAndOperator | undefined;
+	readonly Prefix?: string | undefined;
+	readonly Tag?: FilterTag | undefined;
 }
 export interface FilterAndOperator {
-	readonly Prefix?: (string | undefined) | undefined;
+	readonly Prefix?: string | undefined;
 	readonly Tags: FilterTag[];
 }
 export interface FilterTag {
@@ -93,11 +93,11 @@ export interface LifecycleConfiguration {
 	readonly Rules: Rule[];
 }
 export interface Rule {
-	readonly AbortIncompleteMultipartUpload?: (AbortIncompleteMultipartUpload | undefined) | undefined;
-	readonly ExpirationDate?: (string | undefined) | undefined;
-	readonly ExpirationInDays?: (number | undefined) | undefined;
-	readonly Filter?: (Filter | undefined) | undefined;
-	readonly Id?: (string | undefined) | undefined;
+	readonly AbortIncompleteMultipartUpload?: AbortIncompleteMultipartUpload | undefined;
+	readonly ExpirationDate?: string | undefined;
+	readonly ExpirationInDays?: number | undefined;
+	readonly Filter?: Filter | undefined;
+	readonly Id?: string | undefined;
 	readonly Status: string;
 }
 export interface NetworkInterface {

@@ -9,10 +9,10 @@ export interface AliasComponentOutputs {}
 export interface AliasComponentInputs {
 	readonly AliasName: any | string;
 	readonly ServiceName: any | string;
-	readonly AdditionalVersion?: (string | undefined) | undefined;
-	readonly AdditionalWeight?: (number | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly VersionId?: (any | string) | undefined;
+	readonly AdditionalVersion?: string | undefined;
+	readonly AdditionalWeight?: number | undefined;
+	readonly Description?: string | undefined;
+	readonly VersionId?: any | string;
 	readonly LogicalId: string;
 }
 export class CustomDomain extends RosResource<CustomDomainComponentInputs> implements CustomDomainComponentOutputs {
@@ -27,9 +27,9 @@ export interface CustomDomainComponentOutputs {
 export interface CustomDomainComponentInputs {
 	readonly DomainName: any | string;
 	readonly Protocol: string;
-	readonly ApiVersion?: (string | undefined) | undefined;
-	readonly CertConfig?: (CertConfig | undefined) | undefined;
-	readonly RouteConfig?: (RouteConfig | undefined) | undefined;
+	readonly ApiVersion?: string | undefined;
+	readonly CertConfig?: CertConfig | undefined;
+	readonly RouteConfig?: RouteConfig | undefined;
 	readonly LogicalId: string;
 }
 export class FunctionInstance extends RosResource<FunctionComponentInputs> implements FunctionComponentOutputs {
@@ -50,18 +50,18 @@ export interface FunctionComponentInputs {
 	readonly Handler: string;
 	readonly Runtime: string;
 	readonly ServiceName: any | string;
-	readonly AsyncConfiguration?: (AsyncConfiguration | undefined) | undefined;
-	readonly CAPort?: (number | undefined) | undefined;
-	readonly Code?: (Code | undefined) | undefined;
-	readonly CustomContainerConfig?: (CustomContainerConfig | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly EnvironmentVariables?: ({ [key: string]: any } | undefined) | undefined;
-	readonly InitializationTimeout?: (number | undefined) | undefined;
-	readonly Initializer?: (string | undefined) | undefined;
-	readonly InstanceConcurrency?: (number | undefined) | undefined;
-	readonly InstanceType?: (string | undefined) | undefined;
-	readonly MemorySize?: (number | undefined) | undefined;
-	readonly Timeout?: (number | undefined) | undefined;
+	readonly AsyncConfiguration?: AsyncConfiguration | undefined;
+	readonly CAPort?: number | undefined;
+	readonly Code?: Code | undefined;
+	readonly CustomContainerConfig?: CustomContainerConfig | undefined;
+	readonly Description?: string | undefined;
+	readonly EnvironmentVariables?: { [key: string]: any } | undefined;
+	readonly InitializationTimeout?: number | undefined;
+	readonly Initializer?: string | undefined;
+	readonly InstanceConcurrency?: number | undefined;
+	readonly InstanceType?: string | undefined;
+	readonly MemorySize?: number | undefined;
+	readonly Timeout?: number | undefined;
 	readonly LogicalId: string;
 }
 export class FunctionInvoker
@@ -81,12 +81,12 @@ export interface FunctionInvokerComponentOutputs {
 export interface FunctionInvokerComponentInputs {
 	readonly FunctionName: string;
 	readonly ServiceName: string;
-	readonly Async?: (boolean | undefined) | undefined;
-	readonly CheckError?: (boolean | undefined) | undefined;
-	readonly Event?: (string | undefined) | undefined;
-	readonly ExecuteVersion?: (number | undefined) | undefined;
-	readonly Qualifier?: (string | undefined) | undefined;
-	readonly ServiceRegionId?: (string | undefined) | undefined;
+	readonly Async?: boolean | undefined;
+	readonly CheckError?: boolean | undefined;
+	readonly Event?: string | undefined;
+	readonly ExecuteVersion?: number | undefined;
+	readonly Qualifier?: string | undefined;
+	readonly ServiceRegionId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Layer extends RosResource<LayerComponentInputs> implements LayerComponentOutputs {
@@ -104,7 +104,7 @@ export interface LayerComponentInputs {
 	readonly Code: Code;
 	readonly CompatibleRuntime: string[];
 	readonly LayerName: any | string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export class ProvisionConfig
@@ -143,16 +143,16 @@ export interface ServiceComponentOutputs {
 }
 export interface ServiceComponentInputs {
 	readonly ServiceName: any | string;
-	readonly DeletionForce?: (boolean | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
-	readonly InternetAccess?: (any | boolean) | undefined;
-	readonly LogConfig?: (LogConfig | undefined) | undefined;
-	readonly NasConfig?: (NasConfig | undefined) | undefined;
-	readonly Role?: (any | string) | undefined;
-	readonly Tags?: (Tags[] | any) | undefined;
-	readonly TracingConfig?: (TracingConfig | undefined) | undefined;
-	readonly VpcBindings?: (string[] | undefined) | undefined;
-	readonly VpcConfig?: (VpcConfig | undefined) | undefined;
+	readonly DeletionForce?: boolean | undefined;
+	readonly Description?: string | undefined;
+	readonly InternetAccess?: any | boolean;
+	readonly LogConfig?: LogConfig | undefined;
+	readonly NasConfig?: NasConfig | undefined;
+	readonly Role?: any | string;
+	readonly Tags?: Tags[] | any;
+	readonly TracingConfig?: TracingConfig | undefined;
+	readonly VpcBindings?: string[] | undefined;
+	readonly VpcConfig?: VpcConfig | undefined;
 	readonly LogicalId: string;
 }
 export class Trigger extends RosResource<TriggerComponentInputs> implements TriggerComponentOutputs {
@@ -170,9 +170,9 @@ export interface TriggerComponentInputs {
 	readonly TriggerConfig: { [key: string]: any };
 	readonly TriggerName: any | string;
 	readonly TriggerType: string;
-	readonly InvocationRole?: (string | undefined) | undefined;
-	readonly Qualifier?: (string | undefined) | undefined;
-	readonly SourceArn?: (string | undefined) | undefined;
+	readonly InvocationRole?: string | undefined;
+	readonly Qualifier?: string | undefined;
+	readonly SourceArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Version extends RosResource<VersionComponentInputs> implements VersionComponentOutputs {
@@ -186,7 +186,7 @@ export interface VersionComponentOutputs {
 }
 export interface VersionComponentInputs {
 	readonly ServiceName: any | string;
-	readonly Description?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
 	readonly LogicalId: string;
 }
 export interface CertConfig {
@@ -201,36 +201,36 @@ export interface Routes {
 	readonly Path: string;
 	readonly FunctionName: string;
 	readonly ServiceName: string;
-	readonly Qualifier?: (string | undefined) | undefined;
+	readonly Qualifier?: string | undefined;
 }
 export interface AsyncConfiguration {
-	readonly Destination?: (Destination | undefined) | undefined;
-	readonly MaxAsyncEventAgeInSeconds?: (number | undefined) | undefined;
-	readonly StatefulInvocation?: (boolean | undefined) | undefined;
-	readonly MaxAsyncRetryAttempts?: (number | undefined) | undefined;
+	readonly Destination?: Destination | undefined;
+	readonly MaxAsyncEventAgeInSeconds?: number | undefined;
+	readonly StatefulInvocation?: boolean | undefined;
+	readonly MaxAsyncRetryAttempts?: number | undefined;
 }
 export interface Code {
-	readonly SourceCode?: (string | undefined) | undefined;
-	readonly ZipFile?: (string | undefined) | undefined;
-	readonly OssObjectName?: (string | undefined) | undefined;
-	readonly OssBucketName?: (string | undefined) | undefined;
+	readonly SourceCode?: string | undefined;
+	readonly ZipFile?: string | undefined;
+	readonly OssObjectName?: string | undefined;
+	readonly OssBucketName?: string | undefined;
 }
 export interface CustomContainerConfig {
-	readonly Args?: (string | undefined) | undefined;
-	readonly InstanceId?: (string | undefined) | undefined;
-	readonly Command?: (string | undefined) | undefined;
-	readonly AccelerationType?: (string | undefined) | undefined;
+	readonly Args?: string | undefined;
+	readonly InstanceId?: string | undefined;
+	readonly Command?: string | undefined;
+	readonly AccelerationType?: string | undefined;
 	readonly Image: string;
 }
 export interface Destination {
-	readonly OnSuccess?: (string | undefined) | undefined;
-	readonly OnFailure?: (string | undefined) | undefined;
+	readonly OnSuccess?: string | undefined;
+	readonly OnFailure?: string | undefined;
 }
 export interface LogConfig {
-	readonly Project?: (string | undefined) | undefined;
-	readonly LogBeginRule?: (string | undefined) | undefined;
-	readonly Logstore?: (string | undefined) | undefined;
-	readonly EnableRequestMetrics?: (boolean | undefined) | undefined;
+	readonly Project?: string | undefined;
+	readonly LogBeginRule?: string | undefined;
+	readonly Logstore?: string | undefined;
+	readonly EnableRequestMetrics?: boolean | undefined;
 }
 export interface MountPoints {
 	readonly ServerAddr: string;
@@ -242,12 +242,12 @@ export interface NasConfig {
 	readonly GroupId: number;
 }
 export interface Tags {
-	readonly Value?: (string | undefined) | undefined;
+	readonly Value?: string | undefined;
 	readonly Key: string;
 }
 export interface TracingConfig {
-	readonly Type?: (string | undefined) | undefined;
-	readonly Params?: ({ [key: string]: any } | undefined) | undefined;
+	readonly Type?: string | undefined;
+	readonly Params?: { [key: string]: any } | undefined;
 }
 export interface VpcConfig {
 	readonly VpcId: string;

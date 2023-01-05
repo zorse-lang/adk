@@ -13,10 +13,10 @@ export interface SignalingChannelComponentOutputs {
 	readonly Arn: string;
 }
 export interface SignalingChannelComponentInputs {
-	readonly MessageTtlSeconds?: (number | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly MessageTtlSeconds?: number | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Type?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Stream extends CfnResource<StreamComponentInputs> implements StreamComponentOutputs {
@@ -29,12 +29,12 @@ export interface StreamComponentOutputs {
 	readonly Arn: string;
 }
 export interface StreamComponentInputs {
-	readonly DataRetentionInHours?: (number | undefined) | undefined;
-	readonly DeviceName?: (string | undefined) | undefined;
-	readonly KmsKeyId?: (string | undefined) | undefined;
-	readonly MediaType?: (string | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly DataRetentionInHours?: number | undefined;
+	readonly DeviceName?: string | undefined;
+	readonly KmsKeyId?: string | undefined;
+	readonly MediaType?: string | undefined;
+	readonly Name?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export default {

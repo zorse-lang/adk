@@ -17,159 +17,159 @@ export interface securityConnectorsComponentOutputs {
 	readonly type: "Microsoft.Security/securityConnectors";
 }
 export interface securityConnectorsComponentInputs {
-	readonly etag?: string | undefined;
-	readonly kind?: string | undefined;
-	readonly location?: string | undefined;
+	readonly etag?: string;
+	readonly kind?: string;
+	readonly location?: string;
 	readonly name: string;
-	readonly properties?: SecurityConnectorProperties | undefined;
-	readonly systemData?: SystemData | undefined;
-	readonly tags?: Tags | undefined;
+	readonly properties?: SecurityConnectorProperties;
+	readonly systemData?: SystemData;
+	readonly tags?: Tags;
 }
 export interface AwsOrganizationalData {}
 export interface CloudOffering {
-	readonly description?: string | undefined;
+	readonly description?: string;
 }
 export interface CspmMonitorAwsOfferingNativeCloudConnection {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface CspmMonitorGcpOfferingNativeCloudConnection {
-	readonly serviceAccountEmailAddress?: string | undefined;
-	readonly workloadIdentityProviderId?: string | undefined;
+	readonly serviceAccountEmailAddress?: string;
+	readonly workloadIdentityProviderId?: string;
 }
 export interface DefenderCspmAwsOfferingVmScanners {
-	readonly configuration?: DefenderCspmAwsOfferingVmScannersConfiguration | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly configuration?: DefenderCspmAwsOfferingVmScannersConfiguration;
+	readonly enabled?: boolean;
 }
 export interface DefenderCspmAwsOfferingVmScannersConfiguration {
-	readonly cloudRoleArn?: string | undefined;
-	readonly exclusionTags?: DefenderCspmAwsOfferingVmScannersConfigurationExclusionTags | undefined;
-	readonly scanningMode?: "Default" | undefined;
+	readonly cloudRoleArn?: string;
+	readonly exclusionTags?: DefenderCspmAwsOfferingVmScannersConfigurationExclusionTags;
+	readonly scanningMode?: "Default";
 }
 export interface DefenderCspmAwsOfferingVmScannersConfigurationExclusionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DefenderFoDatabasesAwsOfferingArcAutoProvisioning {
-	readonly cloudRoleArn?: string | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly cloudRoleArn?: string;
+	readonly enabled?: boolean;
 }
 export interface DefenderFoDatabasesAwsOfferingRds {
-	readonly cloudRoleArn?: string | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly cloudRoleArn?: string;
+	readonly enabled?: boolean;
 }
 export interface DefenderForContainersAwsOfferingCloudWatchToKinesis {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface DefenderForContainersAwsOfferingContainerVulnerabilityAssessment {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface DefenderForContainersAwsOfferingContainerVulnerabilityAssessmentTask {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface DefenderForContainersAwsOfferingKinesisToS3 {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface DefenderForContainersAwsOfferingKubernetesScubaReader {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface DefenderForContainersAwsOfferingKubernetesService {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface DefenderForContainersGcpOfferingDataPipelineNativeCloudConnection {
-	readonly serviceAccountEmailAddress?: string | undefined;
-	readonly workloadIdentityProviderId?: string | undefined;
+	readonly serviceAccountEmailAddress?: string;
+	readonly workloadIdentityProviderId?: string;
 }
 export interface DefenderForContainersGcpOfferingNativeCloudConnection {
-	readonly serviceAccountEmailAddress?: string | undefined;
-	readonly workloadIdentityProviderId?: string | undefined;
+	readonly serviceAccountEmailAddress?: string;
+	readonly workloadIdentityProviderId?: string;
 }
 export interface DefenderForDatabasesGcpOfferingArcAutoProvisioning {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface DefenderForDatabasesGcpOfferingDefenderForDatabasesArcAutoProvisioning {
-	readonly serviceAccountEmailAddress?: string | undefined;
-	readonly workloadIdentityProviderId?: string | undefined;
+	readonly serviceAccountEmailAddress?: string;
+	readonly workloadIdentityProviderId?: string;
 }
 export interface DefenderForServersAwsOfferingArcAutoProvisioning {
-	readonly cloudRoleArn?: string | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly cloudRoleArn?: string;
+	readonly enabled?: boolean;
 }
 export interface DefenderForServersAwsOfferingDefenderForServers {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface DefenderForServersAwsOfferingMdeAutoProvisioning {
-	readonly configuration?: any | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly configuration?: any;
+	readonly enabled?: boolean;
 }
 export interface DefenderForServersAwsOfferingSubPlan {
-	readonly type?: ("P1" | "P2") | undefined;
+	readonly type?: "P1" | "P2";
 }
 export interface DefenderForServersAwsOfferingVaAutoProvisioning {
-	readonly configuration?: DefenderForServersAwsOfferingVaAutoProvisioningConfiguration | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly configuration?: DefenderForServersAwsOfferingVaAutoProvisioningConfiguration;
+	readonly enabled?: boolean;
 }
 export interface DefenderForServersAwsOfferingVaAutoProvisioningConfiguration {
-	readonly type?: ("Qualys" | "TVM") | undefined;
+	readonly type?: "Qualys" | "TVM";
 }
 export interface DefenderForServersAwsOfferingVmScanners {
-	readonly configuration?: DefenderForServersAwsOfferingVmScannersConfiguration | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly configuration?: DefenderForServersAwsOfferingVmScannersConfiguration;
+	readonly enabled?: boolean;
 }
 export interface DefenderForServersAwsOfferingVmScannersConfiguration {
-	readonly cloudRoleArn?: string | undefined;
-	readonly exclusionTags?: DefenderForServersAwsOfferingVmScannersConfigurationExclusionTags | undefined;
-	readonly scanningMode?: "Default" | undefined;
+	readonly cloudRoleArn?: string;
+	readonly exclusionTags?: DefenderForServersAwsOfferingVmScannersConfigurationExclusionTags;
+	readonly scanningMode?: "Default";
 }
 export interface DefenderForServersAwsOfferingVmScannersConfigurationExclusionTags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export interface DefenderForServersGcpOfferingArcAutoProvisioning {
-	readonly enabled?: boolean | undefined;
+	readonly enabled?: boolean;
 }
 export interface DefenderForServersGcpOfferingDefenderForServers {
-	readonly serviceAccountEmailAddress?: string | undefined;
-	readonly workloadIdentityProviderId?: string | undefined;
+	readonly serviceAccountEmailAddress?: string;
+	readonly workloadIdentityProviderId?: string;
 }
 export interface DefenderForServersGcpOfferingMdeAutoProvisioning {
-	readonly configuration?: any | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly configuration?: any;
+	readonly enabled?: boolean;
 }
 export interface DefenderForServersGcpOfferingSubPlan {
-	readonly type?: ("P1" | "P2") | undefined;
+	readonly type?: "P1" | "P2";
 }
 export interface DefenderForServersGcpOfferingVaAutoProvisioning {
-	readonly configuration?: DefenderForServersGcpOfferingVaAutoProvisioningConfiguration | undefined;
-	readonly enabled?: boolean | undefined;
+	readonly configuration?: DefenderForServersGcpOfferingVaAutoProvisioningConfiguration;
+	readonly enabled?: boolean;
 }
 export interface DefenderForServersGcpOfferingVaAutoProvisioningConfiguration {
-	readonly type?: ("Qualys" | "TVM") | undefined;
+	readonly type?: "Qualys" | "TVM";
 }
 export interface EnvironmentData {}
 export interface GcpOrganizationalData {}
 export interface GcpProjectDetails {
-	readonly projectId?: string | undefined;
-	readonly projectNumber?: string | undefined;
-	readonly workloadIdentityPoolId?: string | undefined;
+	readonly projectId?: string;
+	readonly projectNumber?: string;
+	readonly workloadIdentityPoolId?: string;
 }
 export interface InformationProtectionAwsOfferingInformationProtection {
-	readonly cloudRoleArn?: string | undefined;
+	readonly cloudRoleArn?: string;
 }
 export interface SecurityConnectorProperties {
-	readonly environmentData?: EnvironmentData | undefined;
-	readonly environmentName?: ("AWS" | "Azure" | "AzureDevOps" | "GCP" | "Github") | undefined;
-	readonly hierarchyIdentifier?: string | undefined;
-	readonly hierarchyIdentifierTrialEndDate?: string | undefined;
-	readonly offerings?: CloudOffering[] | undefined;
+	readonly environmentData?: EnvironmentData;
+	readonly environmentName?: "AWS" | "Azure" | "AzureDevOps" | "GCP" | "Github";
+	readonly hierarchyIdentifier?: string;
+	readonly hierarchyIdentifierTrialEndDate?: string;
+	readonly offerings?: CloudOffering[];
 }
 export interface SystemData {
-	readonly createdAt?: string | undefined;
-	readonly createdBy?: string | undefined;
-	readonly createdByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
-	readonly lastModifiedAt?: string | undefined;
-	readonly lastModifiedBy?: string | undefined;
-	readonly lastModifiedByType?: ("Application" | "Key" | "ManagedIdentity" | "User") | undefined;
+	readonly createdAt?: string;
+	readonly createdBy?: string;
+	readonly createdByType?: "Application" | "Key" | "ManagedIdentity" | "User";
+	readonly lastModifiedAt?: string;
+	readonly lastModifiedBy?: string;
+	readonly lastModifiedByType?: "Application" | "Key" | "ManagedIdentity" | "User";
 }
 export interface Tags {
-	readonly "[ key: string ]"?: string | undefined;
+	readonly [key: string]: string;
 }
 export default {
 	securityConnectors: securityConnectors,

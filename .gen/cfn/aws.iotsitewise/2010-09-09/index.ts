@@ -31,10 +31,10 @@ export interface AssetComponentOutputs {
 export interface AssetComponentInputs {
 	readonly AssetModelId: string;
 	readonly AssetName: string;
-	readonly AssetDescription?: (string | undefined) | undefined;
-	readonly AssetHierarchies?: (AssetHierarchy[] | undefined) | undefined;
-	readonly AssetProperties?: (Asset[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssetDescription?: string | undefined;
+	readonly AssetHierarchies?: AssetHierarchy[] | undefined;
+	readonly AssetProperties?: Asset[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class AssetModel extends CfnResource<AssetModelComponentInputs> implements AssetModelComponentOutputs {
@@ -50,11 +50,11 @@ export interface AssetModelComponentOutputs {
 }
 export interface AssetModelComponentInputs {
 	readonly AssetModelName: string;
-	readonly AssetModelCompositeModels?: (AssetModelCompositeModel[] | undefined) | undefined;
-	readonly AssetModelDescription?: (string | undefined) | undefined;
-	readonly AssetModelHierarchies?: (AssetModelHierarchy[] | undefined) | undefined;
-	readonly AssetModelProperties?: (AssetModel[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssetModelCompositeModels?: AssetModelCompositeModel[] | undefined;
+	readonly AssetModelDescription?: string | undefined;
+	readonly AssetModelHierarchies?: AssetModelHierarchy[] | undefined;
+	readonly AssetModelProperties?: AssetModel[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Dashboard extends CfnResource<DashboardComponentInputs> implements DashboardComponentOutputs {
@@ -72,8 +72,8 @@ export interface DashboardComponentInputs {
 	readonly DashboardDefinition: string;
 	readonly DashboardDescription: string;
 	readonly DashboardName: string;
-	readonly ProjectId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly ProjectId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Gateway extends CfnResource<GatewayComponentInputs> implements GatewayComponentOutputs {
@@ -88,8 +88,8 @@ export interface GatewayComponentOutputs {
 export interface GatewayComponentInputs {
 	readonly GatewayName: string;
 	readonly GatewayPlatform: GatewayPlatform;
-	readonly GatewayCapabilitySummaries?: (GatewayCapabilitySummary[] | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly GatewayCapabilitySummaries?: GatewayCapabilitySummary[] | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Portal extends CfnResource<PortalComponentInputs> implements PortalComponentOutputs {
@@ -111,11 +111,11 @@ export interface PortalComponentInputs {
 	readonly PortalContactEmail: string;
 	readonly PortalName: string;
 	readonly RoleArn: string;
-	readonly Alarms?: (Alarms | undefined) | undefined;
-	readonly NotificationSenderEmail?: (string | undefined) | undefined;
-	readonly PortalAuthMode?: (string | undefined) | undefined;
-	readonly PortalDescription?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Alarms?: Alarms | undefined;
+	readonly NotificationSenderEmail?: string | undefined;
+	readonly PortalAuthMode?: string | undefined;
+	readonly PortalDescription?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Project extends CfnResource<ProjectComponentInputs> implements ProjectComponentOutputs {
@@ -132,48 +132,48 @@ export interface ProjectComponentOutputs {
 export interface ProjectComponentInputs {
 	readonly PortalId: string;
 	readonly ProjectName: string;
-	readonly AssetIds?: (string[] | undefined) | undefined;
-	readonly ProjectDescription?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AssetIds?: string[] | undefined;
+	readonly ProjectDescription?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface AccessPolicyIdentity {
-	readonly IamRole?: (IamRole | undefined) | undefined;
-	readonly IamUser?: (IamUser | undefined) | undefined;
-	readonly User?: (User | undefined) | undefined;
+	readonly IamRole?: IamRole | undefined;
+	readonly IamUser?: IamUser | undefined;
+	readonly User?: User | undefined;
 }
 export interface AccessPolicyResource {
-	readonly Portal?: (Portal | undefined) | undefined;
-	readonly Project?: (Project | undefined) | undefined;
+	readonly Portal?: Portal | undefined;
+	readonly Project?: Project | undefined;
 }
 export interface IamRole {
-	readonly arn?: (string | undefined) | undefined;
+	readonly arn?: string | undefined;
 }
 export interface IamUser {
-	readonly arn?: (string | undefined) | undefined;
+	readonly arn?: string | undefined;
 }
 export interface Portal {
-	readonly id?: (string | undefined) | undefined;
+	readonly id?: string | undefined;
 }
 export interface Project {
-	readonly id?: (string | undefined) | undefined;
+	readonly id?: string | undefined;
 }
 export interface User {
-	readonly id?: (string | undefined) | undefined;
+	readonly id?: string | undefined;
 }
 export interface AssetHierarchy {
 	readonly ChildAssetId: string;
 	readonly LogicalId: string;
 }
 export interface Asset {
-	readonly Alias?: (string | undefined) | undefined;
+	readonly Alias?: string | undefined;
 	readonly LogicalId: string;
-	readonly NotificationState?: (string | undefined) | undefined;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly NotificationState?: string | undefined;
+	readonly Unit?: string | undefined;
 }
 export interface AssetModelCompositeModel {
-	readonly CompositeModelProperties?: (AssetModel[] | undefined) | undefined;
-	readonly Description?: (string | undefined) | undefined;
+	readonly CompositeModelProperties?: AssetModel[] | undefined;
+	readonly Description?: string | undefined;
 	readonly Name: string;
 	readonly Type: string;
 }
@@ -184,14 +184,14 @@ export interface AssetModelHierarchy {
 }
 export interface AssetModel {
 	readonly DataType: string;
-	readonly DataTypeSpec?: (string | undefined) | undefined;
+	readonly DataTypeSpec?: string | undefined;
 	readonly LogicalId: string;
 	readonly Name: string;
 	readonly Type: PropertyType;
-	readonly Unit?: (string | undefined) | undefined;
+	readonly Unit?: string | undefined;
 }
 export interface Attribute {
-	readonly DefaultValue?: (string | undefined) | undefined;
+	readonly DefaultValue?: string | undefined;
 }
 export interface ExpressionVariable {
 	readonly Name: string;
@@ -203,12 +203,12 @@ export interface Metric {
 	readonly Window: MetricWindow;
 }
 export interface MetricWindow {
-	readonly Tumbling?: (TumblingWindow | undefined) | undefined;
+	readonly Tumbling?: TumblingWindow | undefined;
 }
 export interface PropertyType {
-	readonly Attribute?: (Attribute | undefined) | undefined;
-	readonly Metric?: (Metric | undefined) | undefined;
-	readonly Transform?: (Transform | undefined) | undefined;
+	readonly Attribute?: Attribute | undefined;
+	readonly Metric?: Metric | undefined;
+	readonly Transform?: Transform | undefined;
 	readonly TypeName: string;
 }
 export interface Transform {
@@ -217,19 +217,19 @@ export interface Transform {
 }
 export interface TumblingWindow {
 	readonly Interval: string;
-	readonly Offset?: (string | undefined) | undefined;
+	readonly Offset?: string | undefined;
 }
 export interface VariableValue {
-	readonly HierarchyLogicalId?: (string | undefined) | undefined;
+	readonly HierarchyLogicalId?: string | undefined;
 	readonly PropertyLogicalId: string;
 }
 export interface GatewayCapabilitySummary {
-	readonly CapabilityConfiguration?: (string | undefined) | undefined;
+	readonly CapabilityConfiguration?: string | undefined;
 	readonly CapabilityNamespace: string;
 }
 export interface GatewayPlatform {
-	readonly Greengrass?: (Greengrass | undefined) | undefined;
-	readonly GreengrassV2?: (GreengrassV2 | undefined) | undefined;
+	readonly Greengrass?: Greengrass | undefined;
+	readonly GreengrassV2?: GreengrassV2 | undefined;
 }
 export interface Greengrass {
 	readonly GroupArn: string;
@@ -238,8 +238,8 @@ export interface GreengrassV2 {
 	readonly CoreDeviceThingName: string;
 }
 export interface Alarms {
-	readonly AlarmRoleArn?: (string | undefined) | undefined;
-	readonly NotificationLambdaArn?: (string | undefined) | undefined;
+	readonly AlarmRoleArn?: string | undefined;
+	readonly NotificationLambdaArn?: string | undefined;
 }
 export default {
 	AccessPolicy: AccessPolicy,

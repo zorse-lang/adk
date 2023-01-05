@@ -7,7 +7,6 @@ export class V1 extends GdmResource<V1ComponentInputs> implements V1ComponentOut
 }
 export interface V1ComponentOutputs {}
 export interface V1ComponentInputs {
-	readonly type: string;
 	readonly name: string;
 }
 export default {

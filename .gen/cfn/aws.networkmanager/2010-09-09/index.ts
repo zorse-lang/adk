@@ -41,7 +41,7 @@ export interface ConnectAttachmentComponentInputs {
 	readonly EdgeLocation: string;
 	readonly Options: ConnectAttachmentOptions;
 	readonly TransportAttachmentId: string;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class ConnectPeer extends CfnResource<ConnectPeerComponentInputs> implements ConnectPeerComponentOutputs {
@@ -72,12 +72,12 @@ export interface ConnectPeerComponentOutputs {
 	readonly State: string;
 }
 export interface ConnectPeerComponentInputs {
-	readonly BgpOptions?: (BgpOptions | undefined) | undefined;
-	readonly ConnectAttachmentId?: (string | undefined) | undefined;
-	readonly CoreNetworkAddress?: (string | undefined) | undefined;
-	readonly InsideCidrBlocks?: (string[] | undefined) | undefined;
-	readonly PeerAddress?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly BgpOptions?: BgpOptions | undefined;
+	readonly ConnectAttachmentId?: string | undefined;
+	readonly CoreNetworkAddress?: string | undefined;
+	readonly InsideCidrBlocks?: string[] | undefined;
+	readonly PeerAddress?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class CoreNetwork extends CfnResource<CoreNetworkComponentInputs> implements CoreNetworkComponentOutputs {
@@ -103,9 +103,9 @@ export interface CoreNetworkComponentOutputs {
 }
 export interface CoreNetworkComponentInputs {
 	readonly GlobalNetworkId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly PolicyDocument?: (any | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly PolicyDocument?: any | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class CustomerGatewayAssociation
@@ -121,7 +121,7 @@ export interface CustomerGatewayAssociationComponentInputs {
 	readonly CustomerGatewayArn: string;
 	readonly DeviceId: string;
 	readonly GlobalNetworkId: string;
-	readonly LinkId?: (string | undefined) | undefined;
+	readonly LinkId?: string | undefined;
 	readonly LogicalId: string;
 }
 export class Device extends CfnResource<DeviceComponentInputs> implements DeviceComponentOutputs {
@@ -137,14 +137,14 @@ export interface DeviceComponentOutputs {
 }
 export interface DeviceComponentInputs {
 	readonly GlobalNetworkId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Location?: (Location | undefined) | undefined;
-	readonly Model?: (string | undefined) | undefined;
-	readonly SerialNumber?: (string | undefined) | undefined;
-	readonly SiteId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
-	readonly Vendor?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Location?: Location | undefined;
+	readonly Model?: string | undefined;
+	readonly SerialNumber?: string | undefined;
+	readonly SiteId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Type?: string | undefined;
+	readonly Vendor?: string | undefined;
 	readonly LogicalId: string;
 }
 export class GlobalNetwork extends CfnResource<GlobalNetworkComponentInputs> implements GlobalNetworkComponentOutputs {
@@ -159,8 +159,8 @@ export interface GlobalNetworkComponentOutputs {
 	readonly Id: string;
 }
 export interface GlobalNetworkComponentInputs {
-	readonly Description?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class Link extends CfnResource<LinkComponentInputs> implements LinkComponentOutputs {
@@ -178,10 +178,10 @@ export interface LinkComponentInputs {
 	readonly Bandwidth: Bandwidth;
 	readonly GlobalNetworkId: string;
 	readonly SiteId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Provider?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly Type?: (string | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Provider?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly Type?: string | undefined;
 	readonly LogicalId: string;
 }
 export class LinkAssociation
@@ -212,9 +212,9 @@ export interface SiteComponentOutputs {
 }
 export interface SiteComponentInputs {
 	readonly GlobalNetworkId: string;
-	readonly Description?: (string | undefined) | undefined;
-	readonly Location?: (Location | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Description?: string | undefined;
+	readonly Location?: Location | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export class SiteToSiteVpnAttachment
@@ -256,9 +256,9 @@ export interface SiteToSiteVpnAttachmentComponentOutputs {
 	readonly UpdatedAt: string;
 }
 export interface SiteToSiteVpnAttachmentComponentInputs {
-	readonly CoreNetworkId?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
-	readonly VpnConnectionArn?: (string | undefined) | undefined;
+	readonly CoreNetworkId?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
+	readonly VpnConnectionArn?: string | undefined;
 	readonly LogicalId: string;
 }
 export class TransitGatewayRegistration
@@ -314,55 +314,55 @@ export interface VpcAttachmentComponentInputs {
 	readonly CoreNetworkId: string;
 	readonly SubnetArns: string[];
 	readonly VpcArn: string;
-	readonly Options?: (VpcOptions | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly Options?: VpcOptions | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 	readonly LogicalId: string;
 }
 export interface ConnectAttachmentOptions {
-	readonly Protocol?: (string | undefined) | undefined;
+	readonly Protocol?: string | undefined;
 }
 export interface ProposedSegmentChange {
-	readonly AttachmentPolicyRuleNumber?: (number | undefined) | undefined;
-	readonly SegmentName?: (string | undefined) | undefined;
-	readonly Tags?: ({ key: string; value: string }[] | undefined) | undefined;
+	readonly AttachmentPolicyRuleNumber?: number | undefined;
+	readonly SegmentName?: string | undefined;
+	readonly Tags?: { key: string; value: string }[] | undefined;
 }
 export interface BgpOptions {
-	readonly PeerAsn?: (number | undefined) | undefined;
+	readonly PeerAsn?: number | undefined;
 }
 export interface ConnectPeerBgpConfiguration {
-	readonly CoreNetworkAddress?: (string | undefined) | undefined;
-	readonly CoreNetworkAsn?: (number | undefined) | undefined;
-	readonly PeerAddress?: (string | undefined) | undefined;
-	readonly PeerAsn?: (number | undefined) | undefined;
+	readonly CoreNetworkAddress?: string | undefined;
+	readonly CoreNetworkAsn?: number | undefined;
+	readonly PeerAddress?: string | undefined;
+	readonly PeerAsn?: number | undefined;
 }
 export interface ConnectPeerConfiguration {
-	readonly BgpConfigurations?: (ConnectPeerBgpConfiguration[] | undefined) | undefined;
-	readonly CoreNetworkAddress?: (string | undefined) | undefined;
-	readonly InsideCidrBlocks?: (string[] | undefined) | undefined;
-	readonly PeerAddress?: (string | undefined) | undefined;
-	readonly Protocol?: (string | undefined) | undefined;
+	readonly BgpConfigurations?: ConnectPeerBgpConfiguration[] | undefined;
+	readonly CoreNetworkAddress?: string | undefined;
+	readonly InsideCidrBlocks?: string[] | undefined;
+	readonly PeerAddress?: string | undefined;
+	readonly Protocol?: string | undefined;
 }
 export interface CoreNetworkEdge {
-	readonly Asn?: (number | undefined) | undefined;
-	readonly EdgeLocation?: (string | undefined) | undefined;
-	readonly InsideCidrBlocks?: (string[] | undefined) | undefined;
+	readonly Asn?: number | undefined;
+	readonly EdgeLocation?: string | undefined;
+	readonly InsideCidrBlocks?: string[] | undefined;
 }
 export interface CoreNetworkSegment {
-	readonly EdgeLocations?: (string[] | undefined) | undefined;
-	readonly Name?: (string | undefined) | undefined;
-	readonly SharedSegments?: (string[] | undefined) | undefined;
+	readonly EdgeLocations?: string[] | undefined;
+	readonly Name?: string | undefined;
+	readonly SharedSegments?: string[] | undefined;
 }
 export interface Location {
-	readonly Address?: (string | undefined) | undefined;
-	readonly Latitude?: (string | undefined) | undefined;
-	readonly Longitude?: (string | undefined) | undefined;
+	readonly Address?: string | undefined;
+	readonly Latitude?: string | undefined;
+	readonly Longitude?: string | undefined;
 }
 export interface Bandwidth {
-	readonly DownloadSpeed?: (number | undefined) | undefined;
-	readonly UploadSpeed?: (number | undefined) | undefined;
+	readonly DownloadSpeed?: number | undefined;
+	readonly UploadSpeed?: number | undefined;
 }
 export interface VpcOptions {
-	readonly Ipv6Support?: (boolean | undefined) | undefined;
+	readonly Ipv6Support?: boolean | undefined;
 }
 export default {
 	ConnectAttachment: ConnectAttachment,
