@@ -33,6 +33,12 @@ export abstract class ArmResource<PropsType = void> extends ArmComponent {
 		public readonly properties?: PropsType,
 	) {
 		super(entity);
+		this.properties = Token.Wrap(properties, {
+			data: this[Symbols.ComponentHandle].actual,
+			name: `${this.name}["${Token.NameOf<ArmResource>((r) => r.properties)}"]`,
+			registry: this[Symbols.ComponentHandle].parent.system.registry,
+			parent: new Token({ name: this.name }),
+		});
 	}
 	public [Symbols.ComponentRender](output: ArmScene.Template) {
 		output.set(this.name, this[Symbols.ComponentHandle].serialize());
@@ -55,6 +61,12 @@ export abstract class GdmResource<PropsType = void> extends GdmComponent {
 		public readonly properties?: PropsType,
 	) {
 		super(entity);
+		this.properties = Token.Wrap(properties, {
+			data: this[Symbols.ComponentHandle].actual,
+			name: `${this.name}["${Token.NameOf<GdmResource>((r) => r.properties)}"]`,
+			registry: this[Symbols.ComponentHandle].parent.system.registry,
+			parent: new Token({ name: this.name }),
+		});
 	}
 	public [Symbols.ComponentRender](output: GdmScene.Template) {
 		output.set(this.name, this[Symbols.ComponentHandle].serialize());
@@ -72,7 +84,15 @@ export abstract class CfnResource<PropsType = void> extends CfnComponent {
 	 */
 	constructor(entity: Entity, LogicalId: string, Type: string, Properties?: PropsType) {
 		super(entity);
-		(this as any)[LogicalId] = { Type, Properties };
+		(this as any)[LogicalId] = Token.Wrap(
+			{ Type, Properties },
+			{
+				data: this[Symbols.ComponentHandle].actual,
+				name: LogicalId,
+				registry: this[Symbols.ComponentHandle].parent.system.registry,
+				parent: new Token({ name: LogicalId }),
+			},
+		);
 	}
 	public async [Symbols.ComponentRender](output: AwsScene.Template) {
 		output.Resources.push(this[Symbols.ComponentHandle].serialize());
@@ -90,7 +110,15 @@ export abstract class RosResource<PropsType = void> extends RosComponent {
 	 */
 	constructor(entity: Entity, LogicalId: string, Type: string, Properties?: PropsType) {
 		super(entity);
-		(this as any)[LogicalId] = { Type, Properties };
+		(this as any)[LogicalId] = Token.Wrap(
+			{ Type, Properties },
+			{
+				data: this[Symbols.ComponentHandle].actual,
+				name: LogicalId,
+				registry: this[Symbols.ComponentHandle].parent.system.registry,
+				parent: new Token({ name: LogicalId }),
+			},
+		);
 	}
 	public [Symbols.ComponentRender](output: RosScene.Template) {
 		output.Resources.push(this[Symbols.ComponentHandle].serialize());

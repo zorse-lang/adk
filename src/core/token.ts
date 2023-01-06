@@ -4,6 +4,7 @@
 
 import { assert, errors } from "@zorse/adk/core";
 
+const TOKEN_DEFAULT_SEP = "/";
 const TOKEN_WRAP_SYMBOL = Symbol();
 const TOKEN_TAG_OPENING = "@@{";
 const TOKEN_TAG_CLOSING = "}@@";
@@ -18,12 +19,13 @@ const _wrappable = (value: any) =>
 
 /**
  * A Token is a value that's not available yet, but has an async resolver that can potentially resolve it later.
- * Token design is inspired by the AWS CDK Token/Lazy system.
+ * Token design is inspired by the AWS CDK Token/Lazy system. Tokens kinda mimic what CoRoutines do for Unity3D.
  */
 export class Token<ConcreteType = any, UserDataType = any> {
 	private _data: UserDataType;
 	private _parent?: Token;
 	private _resolver: Token.Resolver<ConcreteType>;
+	/** Optional name associated with this token. @default "<token>" */
 	public readonly name: string;
 	public constructor(opts: Token.Options<ConcreteType, UserDataType> = {}) {
 		this.name = opts.name || "<token>";
@@ -38,8 +40,14 @@ export class Token<ConcreteType = any, UserDataType = any> {
 				if (prop === Symbol.toPrimitive) {
 					return () => target.serialize();
 				}
-				if (typeof prop === "symbol" || prop in target) {
-					return Token.Wrap(Reflect.get(target, prop, receiver), opts, target);
+				if (typeof prop === "symbol" || prop === "then" || prop.startsWith("to")) {
+					return Reflect.get(target, prop, receiver);
+				}
+				if (prop in target) {
+					return Token.Wrap(Reflect.get(target, prop, receiver), {
+						...opts,
+						parent: proxy,
+					});
 				}
 				const name: string = target.name;
 				assert.true(errors.InvalidTokenName, TOKEN_NAME_REGEXP.test(name), TOKEN_NAME_REGEXP.source, name);
@@ -63,21 +71,22 @@ export class Token<ConcreteType = any, UserDataType = any> {
 	/**
 	 * Wraps the given value so all its properties are Tokens. This is useful for creating a recursive Token from a plain object.
 	 * @param value The value to wrap
-	 * @param opts The options to use for the creations of sub-Tokens
-	 * @param root The root Token that owns this value (used for naming)
+	 * @param opts The options to use for the creation of sub-Tokens
 	 * @returns The same object with all its properties wrapped in Tokens
 	 */
-	public static Wrap(value: any, opts?: Token.Options, root?: Token): any {
+	public static Wrap(value: any, opts?: Token.Options): any {
 		if (_wrappable(value)) {
 			Object.defineProperty(value, TOKEN_WRAP_SYMBOL, { value: true });
 			return new Proxy(value, {
 				get(target, prop, receiver) {
-					if (typeof prop === "symbol" || prop in target) {
-						return Token.Wrap(Reflect.get(target, prop, receiver), opts, root);
+					if (typeof prop === "symbol" || prop === "then" || prop.startsWith("to")) {
+						return Reflect.get(target, prop, receiver);
+					} else if (prop in target) {
+						return Token.Wrap(Reflect.get(target, prop, receiver), opts);
 					} else {
 						return new Token({
 							...opts,
-							name: `${root?.name ?? ""}["${prop}"]`,
+							name: `${opts?.name ?? ""}["${prop}"]`,
 						});
 					}
 				},
@@ -87,11 +96,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 		}
 	}
 	public get root(): Token {
-		let iterator: Token;
-		while ((iterator = this._parent)) {
-			return iterator;
-		}
-		return this;
+		return !this._parent ? this : this._parent.root;
 	}
 	/** Returns the user data associated with this Token */
 	public get data(): UserDataType {
@@ -116,7 +121,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 		return `${TOKEN_TAG_OPENING}${this.name}${TOKEN_TAG_CLOSING}`;
 	}
 	/** Returns the accessors part of this Token's name */
-	public accessors(sep = "/"): string {
+	public accessors(sep = TOKEN_DEFAULT_SEP): string {
 		const accessors = [...this.name.matchAll(/\[[^\]]+\]+/g)].map((match) => JSON.parse(match[0].slice(1, -1)));
 		return accessors.join(sep);
 	}
@@ -140,8 +145,17 @@ export class Token<ConcreteType = any, UserDataType = any> {
 	 * ```
 	 */
 	public resolves<T = any>(cb?: (obj: T) => void): boolean {
-		// neat trick picked up from:
-		// https://github.com/PinkChampagne17/ts-nameof-proxy
+		const name = Token.NameOf(cb);
+		return this.accessors().startsWith(name);
+	}
+	/**
+	 * Helper to get the string name of a property. This is useful for creating Tokens.
+	 * @see https://github.com/PinkChampagne17/ts-nameof-proxy
+	 * @param cb The callback that accesses the property
+	 * @param sep The separator to use for nested properties
+	 * @returns The name of the property
+	 */
+	public static NameOf<T>(cb: (obj: T) => void, sep = TOKEN_DEFAULT_SEP): string {
 		const names: string[] = [];
 		const handler: ProxyHandler<object> = {
 			get(_target, property) {
@@ -152,7 +166,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 		};
 		const proxy = new Proxy({}, handler);
 		cb(proxy as T);
-		return this.accessors().startsWith(names.join("/"));
+		return names.join(sep);
 	}
 }
 
