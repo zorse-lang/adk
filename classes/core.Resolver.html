@@ -15,7 +15,13 @@
 <li><a href="../modules.html">ADK - v1.0.0</a></li>
 <li><a href="../modules/core.html">core</a></li>
 <li><a href="core.Resolver.html">Resolver</a></li></ul>
-<h1>Class Resolver&lt;T&gt;</h1></div> 
+<h1>Class Resolver&lt;T&gt;</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>A 2D basic dependency resolver.
+You can be creative and turn a 2D dependency resolver into a 3D, 4D, 5D, etc. dependency resolvers
+by grouping dependencies into a single object. That&#39;s how the <a href="core.System.html">System</a> composes
+<a href="core.Scene.html">Scene</a>s and <a href="core.Entity.html">Entity</a>es.</p>
+</div></section> 
 <section class="tsd-panel tsd-type-parameters">
 <h4>Type Parameters</h4>
 <ul class="tsd-type-parameters">
@@ -26,7 +32,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">Resolver</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/e372728/src/core/resolver.ts#L3">src/core/resolver.ts:3</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/8cc23dc/src/core/resolver.ts#L9">src/core/resolver.ts:9</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -67,7 +73,7 @@
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>members</span><a href="#members" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">members<span class="tsd-signature-symbol">:</span> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" class="tsd-signature-type external" target="_blank">Map</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">, </span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" class="tsd-signature-type external" target="_blank">Set</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/e372728/src/core/resolver.ts#L4">src/core/resolver.ts:4</a></li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/8cc23dc/src/core/resolver.ts#L10">src/core/resolver.ts:10</a></li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="resolve" class="tsd-anchor"></a>
@@ -75,50 +81,68 @@
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="resolve.resolve-1">resolve<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><a href="#resolve.resolve-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Solves the dependency graph and returns a list of clusters.</p>
+
+<h3>Returns</h3><p>A list of clusters. Each cluster is a list of members that are dependent on each other.</p>
+</div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/e372728/src/core/resolver.ts#L5">src/core/resolver.ts:5</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/8cc23dc/src/core/resolver.ts#L15">src/core/resolver.ts:15</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="addIsolated" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Isolated</span><a href="#addIsolated" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="addIsolated.addIsolated-1">add<wbr/>Isolated<span class="tsd-signature-symbol">(</span>member<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#addIsolated.addIsolated-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Adds an isolated member to the dependency graph. A member without any dependencies.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>member: <span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span></h5></li></ul></div>
+<h5>member: <span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span></h5>
+<div class="tsd-comment tsd-typography"><p>The member to add.</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/e372728/src/core/resolver.ts#L33">src/core/resolver.ts:33</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/8cc23dc/src/core/resolver.ts#L47">src/core/resolver.ts:47</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="addDependency" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Dependency</span><a href="#addDependency" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="addDependency.addDependency-1">add<wbr/>Dependency<span class="tsd-signature-symbol">(</span>dependent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span>, <span class="tsd-signature-symbol">...</span>dependency<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#addDependency.addDependency-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Adds a dependent pair to the dependency graph.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>dependent: <span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span></h5></li>
+<h5>dependent: <span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span></h5>
+<div class="tsd-comment tsd-typography"><p>The dependent member.</p>
+</div></li>
 <li>
-<h5><code class="tsd-tag ts-flagRest">Rest</code> <span class="tsd-signature-symbol">...</span>dependency: <span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">[]</span></h5></li></ul></div>
+<h5><code class="tsd-tag ts-flagRest">Rest</code> <span class="tsd-signature-symbol">...</span>dependency: <span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">[]</span></h5>
+<div class="tsd-comment tsd-typography"><p>The dependency member.</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/e372728/src/core/resolver.ts#L38">src/core/resolver.ts:38</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/8cc23dc/src/core/resolver.ts#L57">src/core/resolver.ts:57</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getDependencies" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Dependencies</span><a href="#getDependencies" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 <li class="tsd-signature tsd-anchor-link" id="getDependencies.getDependencies-1">get<wbr/>Dependencies<span class="tsd-signature-symbol">(</span>dependent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" class="tsd-signature-type external" target="_blank">Set</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">&gt;</span><a href="#getDependencies.getDependencies-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Recursively gets all dependencies of a single member.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>dependent: <span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span></h5></li></ul></div>
+<h5>dependent: <span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span></h5>
+<div class="tsd-comment tsd-typography"><p>The dependent member.</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" class="tsd-signature-type external" target="_blank">Set</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/e372728/src/core/resolver.ts#L46">src/core/resolver.ts:46</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/8cc23dc/src/core/resolver.ts#L69">src/core/resolver.ts:69</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private"><a id="_getDependencies" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>_get<wbr/>Dependencies</span><a href="#_getDependencies" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
@@ -133,7 +157,7 @@
 <h5>out: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" class="tsd-signature-type external" target="_blank">Set</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">T</span><span class="tsd-signature-symbol">&gt;</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/e372728/src/core/resolver.ts#L51">src/core/resolver.ts:51</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/zorse-lang/adk/blob/8cc23dc/src/core/resolver.ts#L74">src/core/resolver.ts:74</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tree">
 <div class="tree-settings">
