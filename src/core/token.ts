@@ -171,12 +171,19 @@ export class Token<ConcreteType = any, UserDataType = any> {
 }
 
 export namespace Token {
+	/** Resolver callback of a {@link core.Token:class} */
 	export type Resolver<ConcreteType = any> = (token: Token) => ConcreteType | Promise<ConcreteType>;
+	/** Options to create a {@link core.Token:class} */
 	export interface Options<ConcreteType = any, UserDataType = any> {
+		/** The resolver callback of this Token */
 		resolver?: Resolver<ConcreteType>;
+		/** Registry that's keeping track of Tokens */
 		registry?: Registry;
+		/** The parent Token of this Token, used in naming of sub-Tokens */
 		parent?: Token;
+		/** The name of this Token @default "<token>" */
 		name?: string;
+		/** User data associated with this Token */
 		data?: UserDataType;
 	}
 
@@ -186,12 +193,15 @@ export namespace Token {
 	 */
 	export class Registry {
 		private readonly tokens = new Map<string, Token>();
+		/** Adds a {@link core.Token:class} to the registry */
 		public add(token: Token): void {
 			this.tokens.set(token.name, token);
 		}
+		/** Finds a {@link core.Token:class} by its name */
 		public find(name: string): Token | undefined {
 			return this.tokens.get(name);
 		}
+		/** Parses all the {@link core.Token:class}s encoded in a string and returns them */
 		public parse(encoded: string): Token[] {
 			const allTokensTags = encoded.matchAll(new RegExp(TOKEN_FULL_REGEXP, "g"));
 			const allTokensNames = new Set([...allTokensTags].map((match) => match[1]));
