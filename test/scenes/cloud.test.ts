@@ -92,7 +92,7 @@ describe("Cloud Scene tests", () => {
 					{
 						name: "Bucket2",
 						type: "storage.v1.Buckets",
-						properties: { kind: "$(ref.Bucket1.kind)", name: "Bucket2" },
+						properties: { kind: "$(ref.Bucket1.properties.kind)", name: "Bucket2" },
 					},
 				],
 			},

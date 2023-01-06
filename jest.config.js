@@ -36,4 +36,6 @@ module.exports = {
       statements: 95,
     },
   },
+  detectLeaks: true,
+  errorOnDeprecated: true,
 };

@@ -35,8 +35,8 @@ export abstract class Component {
 		const index = parent.components.filter((c) => c.constructor.name === type).length;
 		const name = `${type}${index === 0 ? "" : index + 1}`;
 		const _name = parent.path(name);
-		const opts = { registry: parent.system.registry, data: this };
-		const wrapped: any = Token.Wrap(this, opts, new Token({ name: _name, ...opts }));
+		const opts = { registry: parent.system.registry, data: this, name: _name };
+		const wrapped: any = Token.Wrap(this, opts);
 		parent.components.push(this);
 		this[Symbols.ComponentHandle] = new Component.Handle(this, parent);
 		return wrapped;
