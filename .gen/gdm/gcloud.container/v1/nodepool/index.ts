@@ -23,6 +23,7 @@ export interface NodePoolComponentInputs {
 	readonly autoscaling?: NodePoolAutoscaling;
 	readonly conditions?: StatusCondition[];
 	readonly config?: NodeConfig;
+	readonly etag?: string;
 	readonly initialNodeCount?: number;
 	readonly locations?: string[];
 	readonly management?: NodeManagement;
@@ -60,6 +61,9 @@ export interface BlueGreenSettings {
 export interface ConfidentialNodes {
 	readonly enabled?: boolean;
 }
+export interface EphemeralStorageLocalSsdConfig {
+	readonly localSsdCount?: number;
+}
 export interface FastSocket {
 	readonly enabled?: boolean;
 }
@@ -73,6 +77,9 @@ export interface GPUSharingConfig {
 export interface LinuxNodeConfig {
 	readonly cgroupMode?: string;
 	readonly sysctls?: { [P in string]: string };
+}
+export interface LocalNvmeSsdBlockConfig {
+	readonly localSsdCount?: number;
 }
 export interface LoggingVariantConfig {
 	readonly variant?: string;
@@ -90,6 +97,7 @@ export interface NodeConfig {
 	readonly confidentialNodes?: ConfidentialNodes;
 	readonly diskSizeGb?: number;
 	readonly diskType?: string;
+	readonly ephemeralStorageLocalSsdConfig?: EphemeralStorageLocalSsdConfig;
 	readonly fastSocket?: FastSocket;
 	readonly gcfsConfig?: GcfsConfig;
 	readonly gvnic?: VirtualNIC;
@@ -97,6 +105,7 @@ export interface NodeConfig {
 	readonly kubeletConfig?: NodeKubeletConfig;
 	readonly labels?: { [P in string]: string };
 	readonly linuxNodeConfig?: LinuxNodeConfig;
+	readonly localNvmeSsdBlockConfig?: LocalNvmeSsdBlockConfig;
 	readonly localSsdCount?: number;
 	readonly loggingConfig?: NodePoolLoggingConfig;
 	readonly machineType?: string;
@@ -113,6 +122,7 @@ export interface NodeConfig {
 	readonly spot?: boolean;
 	readonly tags?: string[];
 	readonly taints?: NodeTaint[];
+	readonly windowsNodeConfig?: WindowsNodeConfig;
 	readonly workloadMetadataConfig?: WorkloadMetadataConfig;
 }
 export interface NodeKubeletConfig {
@@ -186,6 +196,9 @@ export interface UpgradeSettings {
 }
 export interface VirtualNIC {
 	readonly enabled?: boolean;
+}
+export interface WindowsNodeConfig {
+	readonly osVersion?: string;
 }
 export interface WorkloadMetadataConfig {
 	readonly mode?: string;

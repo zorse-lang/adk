@@ -52,6 +52,7 @@ export interface ClusterComponentInputs {
 	readonly description?: string;
 	readonly enableKubernetesAlpha?: boolean;
 	readonly enableTpu?: boolean;
+	readonly etag?: string;
 	readonly identityServiceConfig?: IdentityServiceConfig;
 	readonly initialClusterVersion?: string;
 	readonly initialNodeCount?: number;
@@ -197,6 +198,9 @@ export interface DNSConfig {
 	readonly clusterDnsDomain?: string;
 	readonly clusterDnsScope?: string;
 }
+export interface EphemeralStorageLocalSsdConfig {
+	readonly localSsdCount?: number;
+}
 export interface FastSocket {
 	readonly enabled?: boolean;
 }
@@ -257,6 +261,9 @@ export interface LegacyAbac {
 export interface LinuxNodeConfig {
 	readonly cgroupMode?: string;
 	readonly sysctls?: { [P in string]: string };
+}
+export interface LocalNvmeSsdBlockConfig {
+	readonly localSsdCount?: number;
 }
 export interface LoggingComponentConfig {
 	readonly enableComponents?: string[];
@@ -340,6 +347,7 @@ export interface NodeConfig {
 	readonly confidentialNodes?: ConfidentialNodes;
 	readonly diskSizeGb?: number;
 	readonly diskType?: string;
+	readonly ephemeralStorageLocalSsdConfig?: EphemeralStorageLocalSsdConfig;
 	readonly fastSocket?: FastSocket;
 	readonly gcfsConfig?: GcfsConfig;
 	readonly gvnic?: VirtualNIC;
@@ -347,6 +355,7 @@ export interface NodeConfig {
 	readonly kubeletConfig?: NodeKubeletConfig;
 	readonly labels?: { [P in string]: string };
 	readonly linuxNodeConfig?: LinuxNodeConfig;
+	readonly localNvmeSsdBlockConfig?: LocalNvmeSsdBlockConfig;
 	readonly localSsdCount?: number;
 	readonly loggingConfig?: NodePoolLoggingConfig;
 	readonly machineType?: string;
@@ -363,6 +372,7 @@ export interface NodeConfig {
 	readonly spot?: boolean;
 	readonly tags?: string[];
 	readonly taints?: NodeTaint[];
+	readonly windowsNodeConfig?: WindowsNodeConfig;
 	readonly workloadMetadataConfig?: WorkloadMetadataConfig;
 }
 export interface NodeConfigDefaults {
@@ -391,6 +401,7 @@ export interface NodePool {
 	readonly autoscaling?: NodePoolAutoscaling;
 	readonly conditions?: StatusCondition[];
 	readonly config?: NodeConfig;
+	readonly etag?: string;
 	readonly initialNodeCount?: number;
 	readonly instanceGroupUrls?: string[];
 	readonly locations?: string[];
@@ -518,6 +529,9 @@ export interface VerticalPodAutoscaling {
 }
 export interface VirtualNIC {
 	readonly enabled?: boolean;
+}
+export interface WindowsNodeConfig {
+	readonly osVersion?: string;
 }
 export interface WorkloadIdentityConfig {
 	readonly workloadPool?: string;
