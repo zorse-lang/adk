@@ -24,7 +24,6 @@ export interface GeneratedInterface {
 
 export interface GeneratedConstruct extends GeneratedInterface {
 	initializer: string;
-	interface?: string;
 }
 
 export interface GeneratedFunction {

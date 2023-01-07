@@ -7,10 +7,10 @@ Mixed and multi provider infrastructure as code automation and framework.
 - [x] Local Filesystem
 - [x] AWS CloudFormation
 - [x] Azure Resource Manager
+- [x] Kubernetes Resource Model
 - [x] Google Cloud Deployment Manager
 - [x] Alibaba Cloud Resource Orchestration Service
 - [ ] HashiCorp Terraform (planned)
-- [ ] Kubernetes (planned)
 - [ ] Github (planned)
 
 ## Render Pipeline

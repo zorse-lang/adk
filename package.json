@@ -7,13 +7,15 @@
     "generate": "npm-run-all generate:*",
     "generate:clean": "rm -rf .gen",
     "generate:deps_git": "git-dependency install",
-    "generate:deps_npm": "npm install --prefix=git_modules/gdm-generator-util --ignore-scripts",
+    "generate:deps_npm_gdm": "npm install --prefix=git_modules/gdm-generator-util --ignore-scripts --force",
+    "generate:deps_npm_krm": "npm install --prefix=git_modules/krm-generator-util --ignore-scripts --force",
     "generate:patch_npm": "patch-package",
     "generate:patch_git": "sh patches/generator-patches.sh",
     "generate:arm": "npx tsx gen/arm.ts",
     "generate:cfn": "npx tsx gen/cfn.ts",
     "generate:gdm": "npx tsx gen/gdm.ts",
     "generate:ros": "npx tsx gen/ros.ts",
+    "generate:krm": "npx tsx gen/krm.ts",
     "generate:verify": "tsc --noEmit",
     "generate:format": "npm run format",
     "generate:lint": "npx eslint .gen --fix",
@@ -47,12 +49,14 @@
   "gitDependencies": {
     "gdm-generator-util": "https://github.com/Maxim-Mazurok/google-api-typings-generator.git#f9dcd23",
     "arm-generator-util": "https://github.com/Azure/bicep-types-az.git#776bea8",
-    "cfn-generator-util": "https://github.com/aws/aws-cdk.git#30f1ae4"
+    "cfn-generator-util": "https://github.com/aws/aws-cdk.git#30f1ae4",
+    "krm-generator-util": "https://github.com/cdk8s-team/cdk8s-cli.git#29b149a"
   },
   "devDependencies": {
     "@alicloud/ros-cdk-spec": "^1.0.13",
     "@aws-cdk/cfnspec": "^2.55.1",
     "@aws-cdk/core": "^1.183.0",
+    "@phenomnomnominal/tsquery": "^5.0.0",
     "@types/glob": "^8.0.0",
     "@types/jest": "^29.2.4",
     "@types/js-yaml": "^4.0.5",
