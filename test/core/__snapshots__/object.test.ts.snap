@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Object model tests should be able to compose Bidirectional scenes 1`] = `
+[
+  {
+    "Components": [
+      {
+        "properties": {
+          "hello": "@@{Entity_789/Component_8/moreFictionalProperty}@@",
+        },
+      },
+      {
+        "properties": {
+          "hello": "@@{Entity_789/Component_7/someFictionalProperty}@@",
+        },
+      },
+      {
+        "properties": {},
+      },
+      {
+        "properties": {},
+      },
+      {
+        "properties": {},
+      },
+      {
+        "properties": {},
+      },
+      {
+        "properties": {},
+      },
+    ],
+  },
+  {
+    "Components": [
+      {
+        "properties": {},
+      },
+      {
+        "properties": {},
+      },
+      {
+        "properties": {},
+      },
+      {
+        "moreFictionalProperty": "@@{Entity_789/Component_9/someFictionalProperty}@@",
+        "properties": {},
+      },
+    ],
+  },
+  {
+    "Components": [
+      {
+        "properties": {
+          "hello": "@@{Entity_012/Component_1/someFictionalProperty}@@",
+          "world": "@@{Entity_012/Component_2/someFictionalProperty}@@",
+        },
+      },
+      {
+        "properties": {},
+      },
+      {
+        "properties": {},
+      },
+    ],
+  },
+  {
+    "Components": [
+      {
+        "properties": {},
+        "someFictionalProperty": "@@{Entity_012/Component_0/moreFictionalProperty}@@",
+      },
+    ],
+  },
+  {
+    "Components": [
+      {
+        "properties": {
+          "hello": "@@{Entity_EFGHI/Component_E/someFictionalProperty}@@",
+          "world": "@@{Entity_EFGHI/Component_G/someFictionalProperty}@@",
+        },
+      },
+      {
+        "properties": {},
+      },
+      {
+        "properties": {
+          "hello": "@@{Entity_EFGHI/Component_I/someFictionalProperty}@@",
+          "world": "@@{Entity_EFGHI/Component_H/someFictionalProperty}@@",
+        },
+      },
+      {
+        "properties": {},
+      },
+      {
+        "properties": {},
+      },
+    ],
+  },
+  {
+    "Components": [
+      {
+        "properties": {
+          "hello": "@@{Entity_bcdef/Component_c/someFictionalProperty}@@",
+        },
+      },
+      {
+        "properties": {
+          "hello": "@@{Entity_bcdef/Component_d/someFictionalProperty}@@",
+        },
+      },
+      {
+        "properties": {
+          "hello": "@@{Entity_bcdef/Component_e/someFictionalProperty}@@",
+        },
+      },
+      {
+        "properties": {
+          "hello": "@@{Entity_bcdef/Component_f/someFictionalProperty}@@",
+        },
+      },
+      {
+        "moreFictionalProperty": "@@{Entity_EFGHI/Component_F/someFictionalProperty}@@",
+        "properties": {},
+      },
+    ],
+  },
+  {
+    "Components": [
+      {
+        "properties": {},
+      },
+      {
+        "properties": {},
+      },
+      {
+        "properties": {},
+      },
+      {
+        "properties": {},
+      },
+      {
+        "properties": {
+          "hello": "@@{Entity_ABC/Component_A/someFictionalProperty}@@",
+          "world": "@@{Entity_ABC/Component_C/someFictionalProperty}@@",
+        },
+        "someFictionalProperty": "@@{Entity_bcdef/Component_b/moreFictionalProperty}@@",
+      },
+    ],
+  },
+]
+`;
+
+exports[`Object model tests should be able to render basic components 1`] = `
+{
+  "Components": [
+    {
+      "properties": {
+        "hello": "world",
+      },
+    },
+    {
+      "properties": {
+        "hello": "example",
+      },
+    },
+    {
+      "properties": {
+        "hello": "world",
+      },
+    },
+    {
+      "properties": {
+        "hello": "sample",
+      },
+    },
+  ],
+}
+`;
+
+exports[`Object model tests should be able to render components with string embedded tokens 1`] = `
+[
+  {
+    "Components": [
+      {
+        "properties": {
+          "token": "prefix-@@{TokenName}@@",
+        },
+      },
+    ],
+  },
+]
+`;
+
+exports[`Object model tests should be able to render components with tokens 1`] = `
+{
+  "Components": [
+    {
+      "properties": {
+        "token": "@@{TokenName}@@",
+      },
+    },
+  ],
+}
+`;
+
+exports[`Object model tests should be able to resolve components with tokens 1`] = `
+{
+  "Components": [
+    {
+      "properties": {
+        "token": "some value",
+      },
+    },
+    {
+      "properties": {
+        "token": "@@{unresolved}@@",
+      },
+    },
+  ],
+}
+`;

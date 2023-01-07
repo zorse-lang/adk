@@ -32,14 +32,14 @@ describe("Object model tests", () => {
 		new DebugComponent(otherEntity, { hello: "sample" });
 		const scene = new DebugScene(system);
 		await system.compose();
-		expect(scene.gizmos()).toEqual({
-			Components: [
-				{ properties: { hello: "world" } },
-				{ properties: { hello: "example" } },
-				{ properties: { hello: "world" } },
-				{ properties: { hello: "sample" } },
-			],
-		});
+		expect(scene.gizmos()).toMatchSnapshot();
+	});
+
+	it("should return the root entity as its own root", async () => {
+		const system = new ECS.System();
+		const entity = new ECS.Entity(system);
+		expect(system.root).toBe(system.root.root());
+		expect(entity.root()).toBe(system.root.root());
 	});
 
 	it("should be able to render components with tokens", async () => {
@@ -48,9 +48,7 @@ describe("Object model tests", () => {
 		new DebugComponent(entity, { token: new Token({ name: "TokenName" }) });
 		const scene = new DebugScene(system);
 		await system.compose();
-		expect(scene.gizmos()).toEqual({
-			Components: [{ properties: { token: "@@{TokenName}@@" } }],
-		});
+		expect(scene.gizmos()).toMatchSnapshot();
 	});
 
 	it("should be able to render components with string embedded tokens", async () => {
@@ -60,7 +58,7 @@ describe("Object model tests", () => {
 		new DebugComponent(entity, { token: `prefix-${token}` });
 		new DebugScene(system);
 		const composition = await system.compose();
-		expect(composition.gizmos()).toEqual([{ Components: [{ properties: { token: "prefix-@@{TokenName}@@" } }] }]);
+		expect(composition.gizmos()).toMatchSnapshot();
 	});
 
 	it("should be able to resolve components with tokens", async () => {
@@ -77,9 +75,7 @@ describe("Object model tests", () => {
 		});
 		const scene = new DebugScene(system);
 		await system.compose();
-		expect(scene.gizmos()).toEqual({
-			Components: [{ properties: { token: "some value" } }, { properties: { token: "@@{unresolved}@@" } }],
-		});
+		expect(scene.gizmos()).toMatchSnapshot();
 	});
 
 	it("should report path to a nested Entity", async () => {
@@ -88,7 +84,7 @@ describe("Object model tests", () => {
 		const nested = new ECS.Entity(entity);
 		new DebugScene(system);
 		await system.compose();
-		expect(nested.path()).toEqual("Entity/Entity");
+		expect(nested.path({ noroot: true })).toEqual("Entity/Entity");
 	});
 
 	it("should report path to a nested Custom Entity", async () => {
@@ -99,7 +95,7 @@ describe("Object model tests", () => {
 		const nested = new CustomEntity2(entity);
 		new DebugScene(system);
 		await system.compose();
-		expect(nested.path()).toEqual("CustomEntity1/CustomEntity2");
+		expect(nested.path({ noroot: true })).toEqual("CustomEntity1/CustomEntity2");
 	});
 
 	it("should return Tokens if Components accesses are undefined", async () => {
@@ -108,12 +104,12 @@ describe("Object model tests", () => {
 		const component1 = new DebugComponent(entity, { existing: 235 });
 		const value1 = (component1 as any).random;
 		expect(value1).toBeInstanceOf(Token);
-		expect(value1.name).toBe('Entity/DebugComponent["random"]');
+		expect((value1 as Token).path()).toBe("Entity/DebugComponent/random");
 		const resolved1 = await (value1 as Token).resolve();
 		expect(resolved1).toBe(value1);
 		const component2 = new DebugComponent(entity, { other: { value: "example" } });
 		const value2 = (component2 as any).other.random[0];
-		expect(value2.name).toBe('Entity/DebugComponent2["other"]["random"]["0"]');
+		expect((value2 as Token).path()).toBe("Entity/DebugComponent2/other/random/0");
 		expect(value2).toBeInstanceOf(Token);
 		const resolved2 = await (value2 as Token).resolve();
 		expect(`${resolved2}`).toBe(`${value2}`);
@@ -289,88 +285,7 @@ describe("Object model tests", () => {
 		const scene3 = new Scene3(system);
 
 		const composition = await system.compose();
-		const expected = [
-			{
-				Components: [
-					{ properties: { hello: '@@{Entity_789/Component_8["moreFictionalProperty"]}@@' } },
-					{ properties: { hello: '@@{Entity_789/Component_7["someFictionalProperty"]}@@' } },
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {} },
-				],
-			},
-			{
-				Components: [
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {}, moreFictionalProperty: '@@{Entity_789/Component_9["someFictionalProperty"]}@@' },
-				],
-			},
-			{
-				Components: [
-					{
-						properties: {
-							hello: '@@{Entity_012/Component_1["someFictionalProperty"]}@@',
-							world: '@@{Entity_012/Component_2["someFictionalProperty"]}@@',
-						},
-					},
-					{ properties: {} },
-					{ properties: {} },
-				],
-			},
-			{
-				Components: [
-					{ properties: {}, someFictionalProperty: '@@{Entity_012/Component_0["moreFictionalProperty"]}@@' },
-				],
-			},
-			{
-				Components: [
-					{
-						properties: {
-							hello: '@@{Entity_EFGHI/Component_E["someFictionalProperty"]}@@',
-							world: '@@{Entity_EFGHI/Component_G["someFictionalProperty"]}@@',
-						},
-					},
-					{ properties: {} },
-					{
-						properties: {
-							hello: '@@{Entity_EFGHI/Component_I["someFictionalProperty"]}@@',
-							world: '@@{Entity_EFGHI/Component_H["someFictionalProperty"]}@@',
-						},
-					},
-					{ properties: {} },
-					{ properties: {} },
-				],
-			},
-			{
-				Components: [
-					{ properties: { hello: '@@{Entity_bcdef/Component_c["someFictionalProperty"]}@@' } },
-					{ properties: { hello: '@@{Entity_bcdef/Component_d["someFictionalProperty"]}@@' } },
-					{ properties: { hello: '@@{Entity_bcdef/Component_e["someFictionalProperty"]}@@' } },
-					{ properties: { hello: '@@{Entity_bcdef/Component_f["someFictionalProperty"]}@@' } },
-					{ properties: {}, moreFictionalProperty: '@@{Entity_EFGHI/Component_F["someFictionalProperty"]}@@' },
-				],
-			},
-			{
-				Components: [
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {} },
-					{ properties: {} },
-					{
-						properties: {
-							hello: '@@{Entity_ABC/Component_A["someFictionalProperty"]}@@',
-							world: '@@{Entity_ABC/Component_C["someFictionalProperty"]}@@',
-						},
-						someFictionalProperty: '@@{Entity_bcdef/Component_b["moreFictionalProperty"]}@@',
-					},
-				],
-			},
-		];
 		expect(composition.scenes).toEqual([scene3, scene2, scene1]);
-		expect(composition.gizmos()).toEqual(expected);
+		expect(composition.gizmos()).toMatchSnapshot();
 	});
 });

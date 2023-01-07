@@ -116,9 +116,7 @@ export class FileSystemScene extends LocalScene {
 		assert.true(errors.NotSupportedYet, this.filter(token.data));
 		const tokenDataHandle = token.data[Symbols.ComponentHandle];
 		if (tokenDataHandle.actual instanceof TextFile) {
-			if (token.resolves<TextFile>((c) => c.lines)) {
-				token.root.reset(() => token.data.content.split("\n"));
-			}
+			token.query<TextFile>((c) => c.lines)?.reset(() => token.data.content.split("\n"));
 		}
 	}
 }

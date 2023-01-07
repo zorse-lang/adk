@@ -1,4 +1,4 @@
-import { assert, errors } from "@zorse/adk/core";
+import { assert, errors } from "./errors";
 
 /**
  * A 2D basic dependency resolver.

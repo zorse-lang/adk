@@ -16,25 +16,7 @@ describe("Cloud Scene tests", () => {
 		new AWSBucket(entity, { LogicalId: "Bucket2", BucketName: bucket1.Arn });
 		const composition = await system.compose();
 		const result = composition.gizmos();
-		const expected = [
-			{
-				Components: [
-					{
-						Bucket1: {
-							Type: "AWS::S3::Bucket",
-							Properties: { LogicalId: "Bucket1" },
-						},
-					},
-					{
-						Bucket2: {
-							Type: "AWS::S3::Bucket",
-							Properties: { LogicalId: "Bucket2", BucketName: { "Fn::GetAtt": ["Bucket1", "Arn"] } },
-						},
-					},
-				],
-			},
-		];
-		expect(result).toEqual(expected);
+		expect(result).toMatchSnapshot();
 	});
 
 	it("should be able to compose basic ROS templates", async () => {
@@ -45,25 +27,7 @@ describe("Cloud Scene tests", () => {
 		new ROSBucket(entity, { LogicalId: "Bucket2", BucketName: bucket1.DomainName });
 		const composition = await system.compose();
 		const result = composition.gizmos();
-		const expected = [
-			{
-				Components: [
-					{
-						Bucket1: {
-							Type: "ALIYUN::OSS::Bucket",
-							Properties: { LogicalId: "Bucket1", BucketName: "test-bucket1" },
-						},
-					},
-					{
-						Bucket2: {
-							Type: "ALIYUN::OSS::Bucket",
-							Properties: { LogicalId: "Bucket2", BucketName: { "Fn::GetAtt": ["Bucket1", "DomainName"] } },
-						},
-					},
-				],
-			},
-		];
-		expect(result).toEqual(expected);
+		expect(result).toMatchSnapshot();
 	});
 
 	it("should be able to compose basic GDM templates", async () => {
@@ -81,23 +45,7 @@ describe("Cloud Scene tests", () => {
 		});
 		const composition = await system.compose();
 		const result = composition.gizmos();
-		const expected = [
-			{
-				Components: [
-					{
-						name: "Bucket1",
-						type: "storage.v1.Buckets",
-						properties: { name: "Bucket1", storageClass: "STANDARD", location: "US" },
-					},
-					{
-						name: "Bucket2",
-						type: "storage.v1.Buckets",
-						properties: { kind: "$(ref.Bucket1.properties.kind)", name: "Bucket2" },
-					},
-				],
-			},
-		];
-		expect(result).toEqual(expected);
+		expect(result).toMatchSnapshot();
 	});
 
 	it("should be able to compose basic ARM templates", async () => {
@@ -119,30 +67,6 @@ describe("Cloud Scene tests", () => {
 		});
 		const composition = await system.compose();
 		const result = composition.gizmos();
-		const expected = [
-			{
-				Components: [
-					{
-						name: "Bucket1",
-						type: "Microsoft.Storage/storageAccounts",
-						apiVersion: "2022-09-01",
-						properties: { name: "Bucket1", location: "westus", sku: { name: "Standard_LRS" }, kind: "BlobStorage" },
-					},
-					{
-						name: "Bucket2",
-						type: "Microsoft.Storage/storageAccounts",
-						apiVersion: "2022-09-01",
-						properties: {
-							name: "Bucket2",
-							location: "westus",
-							sku: { name: "Standard_LRS" },
-							kind: "BlobStorage",
-							tags: { "test-tag": "tag-[reference(resourceId('Microsoft.Storage/storageAccounts', 'Bucket1')).id]" },
-						},
-					},
-				],
-			},
-		];
-		expect(result).toEqual(expected);
+		expect(result).toMatchSnapshot();
 	});
 });

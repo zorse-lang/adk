@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cloud Scene tests should be able to compose basic ARM templates 1`] = `
+[
+  {
+    "Components": [
+      {
+        "apiVersion": "2022-09-01",
+        "name": "Bucket1",
+        "properties": {
+          "kind": "BlobStorage",
+          "location": "westus",
+          "name": "Bucket1",
+          "sku": {
+            "name": "Standard_LRS",
+          },
+        },
+        "type": "Microsoft.Storage/storageAccounts",
+      },
+      {
+        "apiVersion": "2022-09-01",
+        "name": "Bucket2",
+        "properties": {
+          "kind": "BlobStorage",
+          "location": "westus",
+          "name": "Bucket2",
+          "sku": {
+            "name": "Standard_LRS",
+          },
+          "tags": {
+            "test-tag": "tag-[reference(resourceId('Microsoft.Storage/storageAccounts', 'Bucket1')).id]",
+          },
+        },
+        "type": "Microsoft.Storage/storageAccounts",
+      },
+    ],
+  },
+]
+`;
+
+exports[`Cloud Scene tests should be able to compose basic CFN templates 1`] = `
+[
+  {
+    "Components": [
+      {
+        "Bucket1": {
+          "Properties": {
+            "LogicalId": "Bucket1",
+          },
+          "Type": "AWS::S3::Bucket",
+        },
+      },
+      {
+        "Bucket2": {
+          "Properties": {
+            "BucketName": {
+              "Fn::GetAtt": [
+                "Bucket1",
+                "Arn",
+              ],
+            },
+            "LogicalId": "Bucket2",
+          },
+          "Type": "AWS::S3::Bucket",
+        },
+      },
+    ],
+  },
+]
+`;
+
+exports[`Cloud Scene tests should be able to compose basic GDM templates 1`] = `
+[
+  {
+    "Components": [
+      {
+        "name": "Bucket1",
+        "properties": {
+          "location": "US",
+          "name": "Bucket1",
+          "storageClass": "STANDARD",
+        },
+        "type": "storage.v1.Buckets",
+      },
+      {
+        "name": "Bucket2",
+        "properties": {
+          "kind": "$(ref.Bucket1.properties.kind)",
+          "name": "Bucket2",
+        },
+        "type": "storage.v1.Buckets",
+      },
+    ],
+  },
+]
+`;
+
+exports[`Cloud Scene tests should be able to compose basic ROS templates 1`] = `
+[
+  {
+    "Components": [
+      {
+        "Bucket1": {
+          "Properties": {
+            "BucketName": "test-bucket1",
+            "LogicalId": "Bucket1",
+          },
+          "Type": "ALIYUN::OSS::Bucket",
+        },
+      },
+      {
+        "Bucket2": {
+          "Properties": {
+            "BucketName": {
+              "Fn::GetAtt": [
+                "Bucket1",
+                "DomainName",
+              ],
+            },
+            "LogicalId": "Bucket2",
+          },
+          "Type": "ALIYUN::OSS::Bucket",
+        },
+      },
+    ],
+  },
+]
+`;

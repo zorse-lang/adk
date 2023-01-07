@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Local Scene tests should be able to create empty files with no parameters 1`] = `
+[
+  {
+    "Components": [
+      {
+        "content": "",
+        "directory": "/",
+        "name": "empty.txt",
+      },
+      {
+        "data": {},
+        "directory": ".",
+        "name": "empty.json",
+      },
+    ],
+  },
+]
+`;
+
+exports[`Local Scene tests should be able to create folders 1`] = `
+[
+  {
+    "Components": [
+      {
+        "directory": ".",
+        "gitkeep": false,
+        "name": "test",
+      },
+      {
+        "directory": ".",
+        "gitkeep": true,
+        "name": "test2",
+      },
+    ],
+  },
+]
+`;
+
+exports[`Local Scene tests should be able to write a JSON file that contains line of another text file 1`] = `
+[
+  {
+    "Components": [
+      {
+        "content": "Hello World
+This is Line 2
+This is Line 3.",
+        "directory": ".",
+        "name": "test.txt",
+      },
+      {
+        "data": {
+          "lineTwo": "This is Line 2",
+        },
+        "directory": ".",
+        "name": "test.json",
+      },
+    ],
+  },
+]
+`;

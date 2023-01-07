@@ -2,7 +2,9 @@
 // mechanic which was introduced in ES6. As a result of using Proxies, the implementation is light. This implementation
 // heavily relies on TypeScript's type system for safety.
 
-import { assert, errors } from "@zorse/adk/core";
+import { assert, errors } from "./errors";
+
+import { Tree } from "./tree";
 
 const TOKEN_DEFAULT_SEP = "/";
 const TOKEN_WRAP_SYMBOL = Symbol();
@@ -21,19 +23,18 @@ const _wrappable = (value: any) =>
  * A Token is a value that's not available yet, but has an async resolver that can potentially resolve it later.
  * Token design is inspired by the AWS CDK Token/Lazy system. Tokens kinda mimic what CoRoutines do for Unity3D.
  */
-export class Token<ConcreteType = any, UserDataType = any> {
+export class Token<ConcreteType = any, UserDataType = any> extends Tree {
 	private _data: UserDataType;
-	private _parent?: Token;
 	private _resolver: Token.Resolver<ConcreteType>;
 	/** Optional name associated with this token. @default "<token>" */
 	public readonly name: string;
 	public constructor(opts: Token.Options<ConcreteType, UserDataType> = {}) {
-		this.name = opts.name || "<token>";
-		if (opts.registry?.find(this.name)) {
-			return opts.registry.find(this.name) as any;
+		super(opts.parent, opts.name || "<token>");
+		assert.true(errors.InvalidTokenName, TOKEN_NAME_REGEXP.test(this.name), TOKEN_NAME_REGEXP.source, this.name);
+		if (opts.registry?.find(this.path())) {
+			return opts.registry.find(this.path()) as any;
 		}
 		this._data = opts.data;
-		this._parent = opts.parent;
 		this._resolver = opts.resolver ? opts.resolver : (): ConcreteType => proxy;
 		const proxy: any = new Proxy(this, {
 			get(target, prop, receiver) {
@@ -49,18 +50,15 @@ export class Token<ConcreteType = any, UserDataType = any> {
 						parent: proxy,
 					});
 				}
-				const name: string = target.name;
-				assert.true(errors.InvalidTokenName, TOKEN_NAME_REGEXP.test(name), TOKEN_NAME_REGEXP.source, name);
-				const nestedTokenName = `${name}["${prop}"]`;
 				const nestedTokenResolver = async () => {
 					const rootValue: any = await target.resolve();
 					return rootValue[prop];
 				};
 				return new Token({
-					name: nestedTokenName,
+					name: prop,
 					registry: opts.registry,
 					resolver: nestedTokenResolver,
-					parent: target,
+					parent: proxy,
 					data: opts.data,
 				});
 			},
@@ -74,7 +72,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 	 * @param opts The options to use for the creation of sub-Tokens
 	 * @returns The same object with all its properties wrapped in Tokens
 	 */
-	public static Wrap(value: any, opts?: Token.Options): any {
+	public static Wrap(value: any, opts: Token.Options = {}): any {
 		if (_wrappable(value)) {
 			Object.defineProperty(value, TOKEN_WRAP_SYMBOL, { value: true });
 			return new Proxy(value, {
@@ -82,21 +80,23 @@ export class Token<ConcreteType = any, UserDataType = any> {
 					if (typeof prop === "symbol" || prop === "then" || prop.startsWith("to")) {
 						return Reflect.get(target, prop, receiver);
 					} else if (prop in target) {
-						return Token.Wrap(Reflect.get(target, prop, receiver), opts);
-					} else {
-						return new Token({
+						const _nestedValue: any = Reflect.get(target, prop, receiver);
+						const _nestedResolver = () => Reflect.get(target, prop, receiver);
+						const _nestedRootToken = new Token({
 							...opts,
-							name: `${opts?.name ?? ""}["${prop}"]`,
+							name: prop,
+							parent: opts.parent,
+							resolver: _nestedResolver,
 						});
+						return Token.Wrap(_nestedValue, { ...opts, parent: _nestedRootToken });
+					} else {
+						return new Token({ ...opts, name: prop });
 					}
 				},
 			});
 		} else {
 			return value;
 		}
-	}
-	public get root(): Token {
-		return !this._parent ? this : this._parent.root;
 	}
 	/** Returns the user data associated with this Token */
 	public get data(): UserDataType {
@@ -118,12 +118,7 @@ export class Token<ConcreteType = any, UserDataType = any> {
 	}
 	/** Format is `@@{<name>/child/nested["<string or number>"]...}@@` */
 	public serialize(): string {
-		return `${TOKEN_TAG_OPENING}${this.name}${TOKEN_TAG_CLOSING}`;
-	}
-	/** Returns the accessors part of this Token's name */
-	public accessors(sep = TOKEN_DEFAULT_SEP): string {
-		const accessors = [...this.name.matchAll(/\[[^\]]+\]+/g)].map((match) => JSON.parse(match[0].slice(1, -1)));
-		return accessors.join(sep);
+		return `${TOKEN_TAG_OPENING}${this.path()}${TOKEN_TAG_CLOSING}`;
 	}
 	/** Returns `true` if the entire string is a serialized Token */
 	public static IsToken(serialized: string): boolean;
@@ -137,16 +132,26 @@ export class Token<ConcreteType = any, UserDataType = any> {
 		);
 	}
 	/**
-	 * Helper function that returns `true` if a certain path can be resolved by this token or its child tokens.
+	 * Queries for the accessor used on `obj` in the given callback (`cb`) up the Token tree.
 	 * You can use this in your {@link core.Scene:class}s to do per-{@link core.Scene:class} updates of Tokens.
 	 * @example
 	 * ```typescript
-	 * token.resolves<ComponentType>((c) => c.tokenProperty)
+	 * token.query<ComponentType>((c) => c.tokenProperty)
 	 * ```
 	 */
-	public resolves<T = any>(cb?: (obj: T) => void): boolean {
+	public query<T = any>(cb?: (obj: T) => void): Token | undefined {
 		const name = Token.NameOf(cb);
-		return this.accessors().startsWith(name);
+		const root = this.path({ noroot: true });
+		if (root.startsWith(name)) {
+			let parent: Token = this;
+			while (parent.parent) {
+				if (parent.path({ noroot: true }) === name) {
+					return parent;
+				}
+
+				parent = parent.parent as Token;
+			}
+		}
 	}
 	/**
 	 * Helper to get the string name of a property. This is useful for creating Tokens.
@@ -195,7 +200,7 @@ export namespace Token {
 		private readonly tokens = new Map<string, Token>();
 		/** Adds a {@link core.Token:class} to the registry */
 		public add(token: Token): void {
-			this.tokens.set(token.name, token);
+			this.tokens.set(token.path(), token);
 		}
 		/** Finds a {@link core.Token:class} by its name */
 		public find(name: string): Token | undefined {
@@ -224,7 +229,7 @@ export namespace Token {
 				const tokens = this.parse(text);
 				for (const token of tokens) {
 					const resolved = await token.resolve();
-					const replaceTag = `${TOKEN_TAG_OPENING}${token.name}${TOKEN_TAG_CLOSING}`;
+					const replaceTag = `${TOKEN_TAG_OPENING}${token.path()}${TOKEN_TAG_CLOSING}`;
 					text = text.split(replaceTag).join(resolved);
 				}
 				return text;

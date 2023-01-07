@@ -33,12 +33,14 @@ export abstract class ArmResource<PropsType = void> extends ArmComponent {
 		public readonly properties?: PropsType,
 	) {
 		super(entity);
-		this.properties = Token.Wrap(properties, {
+		const rootToken = this[Symbols.ComponentHandle].token;
+		const opts = {
 			data: this[Symbols.ComponentHandle].actual,
-			name: `${this.name}["${Token.NameOf<ArmResource>((r) => r.properties)}"]`,
-			registry: this[Symbols.ComponentHandle].parent.system.registry,
-			parent: new Token({ name: this.name }),
-		});
+			name: Token.NameOf<ArmResource>((r) => r.properties),
+			registry: this[Symbols.ComponentHandle].entity.system.registry,
+		};
+		const propertiesRootToken = new Token({ ...opts, parent: rootToken });
+		this.properties = Token.Wrap(properties, { ...opts, parent: propertiesRootToken });
 	}
 	public [Symbols.ComponentRender](output: ArmScene.Template) {
 		output.set(this.name, this[Symbols.ComponentHandle].serialize());
@@ -61,12 +63,14 @@ export abstract class GdmResource<PropsType = void> extends GdmComponent {
 		public readonly properties?: PropsType,
 	) {
 		super(entity);
-		this.properties = Token.Wrap(properties, {
+		const rootToken = this[Symbols.ComponentHandle].token;
+		const opts = {
 			data: this[Symbols.ComponentHandle].actual,
-			name: `${this.name}["${Token.NameOf<GdmResource>((r) => r.properties)}"]`,
-			registry: this[Symbols.ComponentHandle].parent.system.registry,
-			parent: new Token({ name: this.name }),
-		});
+			name: Token.NameOf<GdmResource>((r) => r.properties),
+			registry: this[Symbols.ComponentHandle].entity.system.registry,
+		};
+		const propertiesRootToken = new Token({ ...opts, parent: rootToken });
+		this.properties = Token.Wrap(properties, { ...opts, parent: propertiesRootToken });
 	}
 	public [Symbols.ComponentRender](output: GdmScene.Template) {
 		output.set(this.name, this[Symbols.ComponentHandle].serialize());
@@ -84,15 +88,14 @@ export abstract class CfnResource<PropsType = void> extends CfnComponent {
 	 */
 	constructor(entity: Entity, LogicalId: string, Type: string, Properties?: PropsType) {
 		super(entity);
-		(this as any)[LogicalId] = Token.Wrap(
-			{ Type, Properties },
-			{
-				data: this[Symbols.ComponentHandle].actual,
-				name: LogicalId,
-				registry: this[Symbols.ComponentHandle].parent.system.registry,
-				parent: new Token({ name: LogicalId }),
-			},
-		);
+		const rootToken = this[Symbols.ComponentHandle].token;
+		const opts = {
+			name: LogicalId,
+			data: this[Symbols.ComponentHandle].actual,
+			registry: this[Symbols.ComponentHandle].entity.system.registry,
+		};
+		const propertiesRootToken = new Token({ ...opts, parent: rootToken });
+		(this as any)[LogicalId] = Token.Wrap({ Type, Properties }, { ...opts, parent: propertiesRootToken });
 	}
 	public async [Symbols.ComponentRender](output: AwsScene.Template) {
 		output.Resources.push(this[Symbols.ComponentHandle].serialize());
@@ -110,15 +113,14 @@ export abstract class RosResource<PropsType = void> extends RosComponent {
 	 */
 	constructor(entity: Entity, LogicalId: string, Type: string, Properties?: PropsType) {
 		super(entity);
-		(this as any)[LogicalId] = Token.Wrap(
-			{ Type, Properties },
-			{
-				data: this[Symbols.ComponentHandle].actual,
-				name: LogicalId,
-				registry: this[Symbols.ComponentHandle].parent.system.registry,
-				parent: new Token({ name: LogicalId }),
-			},
-		);
+		const rootToken = this[Symbols.ComponentHandle].token;
+		const opts = {
+			name: LogicalId,
+			data: this[Symbols.ComponentHandle].actual,
+			registry: this[Symbols.ComponentHandle].entity.system.registry,
+		};
+		const propertiesRootToken = new Token({ ...opts, parent: rootToken });
+		(this as any)[LogicalId] = Token.Wrap({ Type, Properties }, { ...opts, parent: propertiesRootToken });
 	}
 	public [Symbols.ComponentRender](output: RosScene.Template) {
 		output.Resources.push(this[Symbols.ComponentHandle].serialize());
@@ -140,7 +142,7 @@ export class AwsScene extends CloudScene {
 		assert.true(errors.NotSupportedYet, this.filter(token.data));
 		const component = token.data as CfnResource;
 		const logicalId = Object.keys(component)[0];
-		token.reset(() => ({ "Fn::GetAtt": [logicalId, token.accessors()] }));
+		token.reset(() => ({ "Fn::GetAtt": [logicalId, token.path({ noroot: true })] }));
 	}
 }
 
@@ -166,7 +168,7 @@ export class RosScene extends CloudScene {
 		assert.true(errors.NotSupportedYet, this.filter(token.data));
 		const component = token.data as RosResource;
 		const logicalId = Object.keys(component)[0];
-		token.reset(() => ({ "Fn::GetAtt": [logicalId, token.accessors()] }));
+		token.reset(() => ({ "Fn::GetAtt": [logicalId, token.path({ noroot: true })] }));
 	}
 }
 
@@ -191,7 +193,7 @@ export class GdmScene extends CloudScene {
 		const component = token.data as GdmResource;
 		assert.true(errors.NotSupportedYet, component instanceof GdmResource);
 		assert.true(errors.NotSupportedYet, this.filter(token.data));
-		token.reset(() => `$(ref.${component.name}.${token.accessors(".")})`);
+		token.reset(() => `$(ref.${component.name}.${token.path({ noroot: true, sep: "." })})`);
 	}
 }
 
@@ -214,7 +216,9 @@ export class ArmScene extends CloudScene {
 		assert.true(errors.NotSupportedYet, token.data instanceof ArmResource);
 		assert.true(errors.NotSupportedYet, this.filter(token.data));
 		const component = token.data as ArmResource;
-		token.reset(() => `[reference(resourceId('${component.type}', '${component.name}')).${token.accessors()}]`);
+		token.reset(
+			() => `[reference(resourceId('${component.type}', '${component.name}')).${token.path({ noroot: true })}]`,
+		);
 	}
 }
 
