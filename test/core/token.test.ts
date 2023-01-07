@@ -93,7 +93,7 @@ describe("Token-Tech tests", () => {
 		});
 		it("should be root of itself at root level", () => {
 			const token = new Token();
-			expect(token.root).toBe(token);
+			expect(token.root()).toBe(token);
 		});
 	});
 });

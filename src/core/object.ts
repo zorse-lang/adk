@@ -1,4 +1,8 @@
-import { Resolver, Token, assert, errors } from "@zorse/adk/core";
+import { assert, errors } from "./errors";
+
+import { Resolver } from "./resolver";
+import { Token } from "./token";
+import { Tree } from "./tree";
 
 /**
  * Symbols that represent methods of {@link core.Component:class} is called. These are Symbols so they do
@@ -29,16 +33,24 @@ export class Symbols {
 export abstract class Component {
 	/** @see {@link core.Component.Handle} */
 	public readonly [Symbols.ComponentHandle]: Component.Handle;
-	/** @param parent the parent Entity this Component is attached to. */
-	constructor(parent: Entity) {
+	/** @param entity the Entity this Component is attached to. */
+	constructor(entity: Entity) {
 		const type = this.constructor.name;
-		const index = parent.components.filter((c) => c.constructor.name === type).length;
+		const index = entity.components.filter((c) => c.constructor.name === type).length;
 		const name = `${type}${index === 0 ? "" : index + 1}`;
-		const _name = parent.path(name);
-		const opts = { registry: parent.system.registry, data: this, name: _name };
-		const wrapped: any = Token.Wrap(this, opts);
-		parent.components.push(this);
-		this[Symbols.ComponentHandle] = new Component.Handle(this, parent);
+		const _path = entity.path({ noroot: true, reverse: true });
+		const rootToken = new Token({
+			data: this,
+			name: `${_path}/${name}`,
+			registry: entity.system.registry,
+		});
+		const wrapped: any = Token.Wrap(this, {
+			registry: entity.system.registry,
+			parent: rootToken,
+			data: this,
+		});
+		entity.components.push(this);
+		this[Symbols.ComponentHandle] = new Component.Handle(this, entity, rootToken);
 		return wrapped;
 	}
 	/** @see {@link core.Component.Handle.update} */
@@ -50,9 +62,9 @@ export abstract class Component {
 		for (const mapping of mappings) {
 			const { token, v, k } = mapping;
 			if (typeof v[k] === typeof "string") {
-				v[k] = await this[Symbols.ComponentHandle].parent.system.registry.resolve(v[k]);
+				v[k] = await this[Symbols.ComponentHandle].entity.system.registry.resolve(v[k]);
 			} else {
-				v[k] = await this[Symbols.ComponentHandle].parent.system.registry.resolve(token);
+				v[k] = await this[Symbols.ComponentHandle].entity.system.registry.resolve(token);
 			}
 		}
 	}
@@ -69,9 +81,9 @@ export namespace Component {
 	export class Handle {
 		/**
 		 * @param component Component to create a Handle for
-		 * @param parent Entity that owns the Component
+		 * @param entity Entity that owns the Component
 		 */
-		constructor(private readonly component: Component, public readonly parent: Entity) {}
+		constructor(private readonly component: Component, public readonly entity: Entity, public readonly token: Token) {}
 		/** Returns the actual Component (not a Token-Proxy) */
 		public get actual(): Component {
 			return this.component;
@@ -130,7 +142,7 @@ export namespace Component {
 					} else if (typeof v[k] === "object" || Array.isArray(v[k])) {
 						_walk(v[k], host);
 					} else if (typeof v[k] === "string") {
-						const tokens = host.parent.system.registry.parse(v[k]);
+						const tokens = host.entity.system.registry.parse(v[k]);
 						for (const token of tokens) {
 							observe(token, v, k);
 						}
@@ -161,15 +173,11 @@ export namespace Component {
  *
  * @see {@link core.System:class} for detail on how Entities are rendered.
  */
-export class Entity {
+export class Entity extends Tree {
 	/** Name of the entity, does not need to be unique */
 	public readonly name: string;
 	/** The {@link core.System:class} this Entity is attached to */
 	public readonly system: System;
-	/** The top-most parent is always the {@link core.System:class} this Entity is attached to */
-	public readonly parent: Entity | System;
-	/** Children of this Entity (other Entities) */
-	public readonly children = new Set<Entity>();
 	/** Components attached to this Entity */
 	public readonly components = new Array<Component>();
 	/**
@@ -179,41 +187,16 @@ export class Entity {
 	 * is called and `userData` attached to the Token is a {@link core.Component:class}
 	 */
 	public constructor(parent: Entity | System, name?: string) {
-		const type = this.constructor.name;
 		const parentEntity: Entity = parent instanceof Entity ? parent : parent.root;
-		if (name) {
-			this.name = name;
-		} else {
-			const count = [...parentEntity.children].filter((c) => c.constructor.name === type).length;
-			this.name = `${type}${count === 0 ? "" : count + 1}`;
-		}
-		parentEntity?.children.add(this);
-		this.parent = parent;
-		const _findSystem = (): System => {
-			let iterator = this.parent;
-			while (iterator instanceof Entity) {
-				iterator = iterator.parent;
-			}
-			return iterator as System;
-		};
-		this.system = _findSystem();
-	}
-	/** Returns the path of this Entity, which is the path of its parent Entity slash its own name */
-	public path(suffix?: string): string {
-		const path = [this.name];
-		let iterator = this.parent;
-		while (iterator instanceof Entity) {
-			path.push(iterator.name);
-			iterator = iterator.parent;
-		}
-		return path.reverse().concat(suffix).filter(Boolean).join("/");
+		super(parentEntity, name);
+		this.system = parent instanceof System ? parent : parent.system;
 	}
 	/** Entity update calls {@link core.Component.Handle.update} on all attached {@link core.Component:class}s plus its children. */
 	public async update(): Promise<void> {
 		for (const component of this.components) {
 			await component[Symbols.ComponentHandle].update();
 		}
-		for (const child of this.children) {
+		for (const child of this.children() as Entity[]) {
 			await child.update();
 		}
 	}
@@ -229,7 +212,7 @@ export class Entity {
 					consumed.add(component);
 				});
 		}
-		for (const child of this.children) {
+		for (const child of this.children() as Entity[]) {
 			child.render();
 		}
 	}
