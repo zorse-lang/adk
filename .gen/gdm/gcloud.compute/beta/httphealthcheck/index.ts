@@ -1,24 +1,34 @@
 import { GdmResource, Entity as ADKEntity } from "@zorse/adk";
 
-export class HTTPHealthCheck
-	extends GdmResource<HTTPHealthCheckComponentInputs>
-	implements HTTPHealthCheckComponentOutputs
+export class HttpHealthCheck
+	extends GdmResource<HttpHealthCheckComponentInputs>
+	implements HttpHealthCheckComponentOutputs
 {
-	constructor(entity: ADKEntity, options: HTTPHealthCheckComponentInputs) {
+	constructor(entity: ADKEntity, options: HttpHealthCheckComponentInputs) {
 		super(entity, options.name, "compute.beta.httpHealthCheck", options);
 	}
+	public readonly creationTimestamp?: string;
+	public readonly id?: string;
+	public readonly kind?: string;
+	public readonly selfLink?: string;
 }
-export interface HTTPHealthCheckComponentOutputs {}
-export interface HTTPHealthCheckComponentInputs {
+export interface HttpHealthCheckComponentOutputs {
+	readonly creationTimestamp?: string;
+	readonly id?: string;
+	readonly kind?: string;
+	readonly selfLink?: string;
+}
+export interface HttpHealthCheckComponentInputs {
+	readonly checkIntervalSec?: number;
+	readonly description?: string;
+	readonly healthyThreshold?: number;
 	readonly host?: string;
-	readonly port?: number;
-	readonly portName?: string;
-	readonly portSpecification?: string;
-	readonly proxyHeader?: string;
-	readonly requestPath?: string;
-	readonly response?: string;
 	readonly name: string;
+	readonly port?: number;
+	readonly requestPath?: string;
+	readonly timeoutSec?: number;
+	readonly unhealthyThreshold?: number;
 }
 export default {
-	HTTPHealthCheck: HTTPHealthCheck,
+	HttpHealthCheck: HttpHealthCheck,
 };

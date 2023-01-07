@@ -233,7 +233,6 @@ async function main() {
 			schemas[schema.name] = schema;
 			Object.keys(schemas).forEach((k) => {
 				if (k.startsWith("#")) {
-					// rome-ignore lint:
 					delete schemas[k];
 				} else {
 					schemas[k].id = schemas[k].id.replace(/^#/, "");

@@ -14,6 +14,32 @@ export abstract class CfnComponent extends CloudComponent {}
 export abstract class GdmComponent extends CloudComponent {}
 /** Base class for Alibaba {@link core.Component:class}s */
 export abstract class RosComponent extends CloudComponent {}
+/** Base class for Kubernetes {@link core.Component:class}s */
+export abstract class KrmComponent extends CloudComponent {}
+
+/** Base class for Kubernetes Resource Model (KRM) resources. */
+export abstract class KrmResource<PropsType = void> extends KrmComponent {
+	/**
+	 * @param entity The {@link core.Entity:class} this component is attached to.
+	 * @param name The name of the resource.
+	 * @param type The resource type.
+	 * @param apiVersion The resource API version.
+	 * @param properties The resource properties.
+	 * @see https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/syntax
+	 */
+	constructor(
+		entity: Entity,
+		public readonly apiVersion: string,
+		public readonly kind: string,
+		properties?: PropsType,
+	) {
+		super(entity);
+		Object.assign(this, properties);
+	}
+	public [Symbols.ComponentRender](output: any) {
+		throw new Error("not implemented yet.");
+	}
+}
 
 /** Base class for Azure Resource Manager (ARM) resources. */
 export abstract class ArmResource<PropsType = void> extends ArmComponent {
