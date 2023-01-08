@@ -1,7 +1,7 @@
 /** A general purpose Tree implementation */
 export class Tree {
 	/** The name of the tree. Defaults to type name of the class plus count of same type of Tree in the parent Tree. */
-	public readonly _name?: string;
+	private readonly _name?: string;
 	/** The parent Tree. Lack of a parent indicates this is a root tree */
 	public readonly parent?: Tree;
 	// Children are Trees themselves (subtrees)
@@ -28,7 +28,10 @@ export class Tree {
 	public root(): Tree {
 		return this.parent ? this.parent.root() : this;
 	}
-	/** Returns the path of the tree from root to this tree. */
+	/**
+	 * Returns the path of the tree from root to this tree.
+	 * @param opts The options to use. This modifies the way the path is returned.
+	 */
 	public path(opts: Tree.PathOptions = {}): string {
 		opts = { ...TREE_DEFAULT_OPTIONS, ...opts };
 		const _path = this.parent ? `${this.parent.path(opts)}${opts.sep}${this._name}` : opts.noroot ? "" : this._name;
@@ -36,12 +39,17 @@ export class Tree {
 		const _maybeReversed = opts.reverse ? paths.reverse().join(opts.sep) : paths.join(opts.sep);
 		return _maybeReversed;
 	}
-	/** Returns the children of the tree. */
+	/**
+	 * Returns the immutable list of children of the tree.
+	 * If you modify this array, it does not affect the Tree.
+	 * Instead use Tree's {@link core.Tree.constructor} to modify the Tree by adding new subtrees.
+	 */
 	public children(): Tree[] {
 		return [...this._children];
 	}
 }
 
+/** @see {@link core.Tree:class} */
 export namespace Tree {
 	export interface PathOptions {
 		/** The separator to use between each tree name. Defaults to `/` */

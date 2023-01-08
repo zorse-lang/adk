@@ -1,9 +1,9 @@
 import { Component, Entity, Scene, Symbols, Token, assert, errors } from "@zorse/adk/core";
 
-/** Base class for cloud {@link core.Component:class}s */
+/** Base class for cloud {@link core.Component:class}s @noInheritDoc */
 export abstract class CloudComponent extends Component {}
 
-/** Base class for cloud {@link core.Scene:class}s */
+/** Base class for cloud {@link core.Scene:class}s @noInheritDoc */
 export abstract class CloudScene extends Scene {}
 
 /** Base class for Azure {@link core.Component:class}s */

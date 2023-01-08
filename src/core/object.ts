@@ -172,6 +172,7 @@ export namespace Component {
  * {@link core.Component:class}s are the building blocks of an Entity and describe the state of the Entity.
  *
  * @see {@link core.System:class} for detail on how Entities are rendered.
+ * @noInheritDoc
  */
 export class Entity extends Tree {
 	/** Name of the entity, does not need to be unique */

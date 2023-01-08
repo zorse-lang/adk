@@ -22,11 +22,12 @@ const _wrappable = (value: any) =>
 /**
  * A Token is a value that's not available yet, but has an async resolver that can potentially resolve it later.
  * Token design is inspired by the AWS CDK Token/Lazy system. Tokens kinda mimic what CoRoutines do for Unity3D.
+ * @noInheritDoc
  */
 export class Token<ConcreteType = any, UserDataType = any> extends Tree {
 	private _data: UserDataType;
 	private _resolver: Token.Resolver<ConcreteType>;
-	/** Optional name associated with this token. @default "<token>" */
+	/** Optional name associated with this token. @default `"<token>"` */
 	public readonly name: string;
 	public constructor(opts: Token.Options<ConcreteType, UserDataType> = {}) {
 		super(opts.parent, opts.name || "<token>");
@@ -175,6 +176,7 @@ export class Token<ConcreteType = any, UserDataType = any> extends Tree {
 	}
 }
 
+/** @see {@link core.Token:class} */
 export namespace Token {
 	/** Resolver callback of a {@link core.Token:class} */
 	export type Resolver<ConcreteType = any> = (token: Token) => ConcreteType | Promise<ConcreteType>;
