@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="191px" preserveAspectRatio="none" style="width:274px;height:191px;background:#00000000;" version="1.1" viewBox="0 0 274 191" width="274px" zoomAndPan="magnify"><defs><filter height="300%" id="fnu62myxejx2b" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[5d8791e0b0f57b17cd74ab5b0f357d8a]
+class RosScene--><rect codeLine="4" fill="#FEFECE" filter="url(#fnu62myxejx2b)" height="78.4141" id="RosScene" style="stroke:#A80036;stroke-width:1.5;" width="253" x="7" y="99"/><ellipse cx="98.25" cy="115" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M101.2188,120.6406 Q100.6406,120.9375 100,121.0781 Q99.3594,121.2344 98.6563,121.2344 Q96.1563,121.2344 94.8281,119.5938 Q93.5156,117.9375 93.5156,114.8125 Q93.5156,111.6875 94.8281,110.0313 Q96.1563,108.375 98.6563,108.375 Q99.3594,108.375 100,108.5313 Q100.6563,108.6875 101.2188,108.9844 L101.2188,111.7031 Q100.5938,111.125 100,110.8594 Q99.4063,110.5781 98.7813,110.5781 Q97.4375,110.5781 96.75,111.6563 Q96.0625,112.7188 96.0625,114.8125 Q96.0625,116.9063 96.75,117.9844 Q97.4375,119.0469 98.7813,119.0469 Q99.4063,119.0469 100,118.7813 Q100.5938,118.5 101.2188,117.9219 L101.2188,120.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="62" x="118.75" y="119.1543">RosScene</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="259" y1="131" y2="131"/><ellipse cx="18" cy="142" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108" x="27" y="145.2104">empty() : Template</text><ellipse cx="18" cy="154.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="227" x="27" y="158.0151">filter(component: Component) : boolean</text><ellipse cx="18" cy="167.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="221" x="27" y="170.8198">update(token: Token&lt;any, any&gt;) : void</text><!--MD5=[effa4f851d4b5ff2cb787c330b681cb8]
+class CloudScene--><rect codeLine="9" fill="#FEFECE" filter="url(#fnu62myxejx2b)" height="32" id="CloudScene" style="stroke:#A80036;stroke-width:1.5;" width="106" x="80.5" y="7"/><ellipse cx="95.5" cy="23" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M95.6094,18.3438 L94.4531,23.4219 L96.7813,23.4219 L95.6094,18.3438 Z M94.125,16.1094 L97.1094,16.1094 L100.4688,28.5 L98.0156,28.5 L97.25,25.4375 L93.9688,25.4375 L93.2188,28.5 L90.7813,28.5 L94.125,16.1094 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="109.5" y="27.1543">CloudScene</text><!--MD5=[73fc246f228ee7038096cd574ebf572b]
+reverse link CloudScene to RosScene--><path codeLine="11" d="M133.5,59.36 C133.5,71.86 133.5,85.98 133.5,98.72 " fill="none" id="CloudScene-backto-RosScene" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="126.5,59.24,133.5,39.24,140.5,59.24,126.5,59.24" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9cc3102de97a87cb93e40a8c7d6977b7]
+@startuml
+skinparam BackgroundColor transparent
+hide empty methods
+hide empty fields
+class "RosScene" {
+    +empty() : Template
+    +filter(component: Component) : boolean
+    +update(token: Token<any, any>) : void
+}
+abstract class "CloudScene" {
+}
+"CloudScene" <|- - "RosScene"
+@enduml
+
+PlantUML version 1.2021.14(Fri Nov 12 16:46:50 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

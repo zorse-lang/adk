@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="199px" preserveAspectRatio="none" style="width:267px;height:199px;background:#00000000;" version="1.1" viewBox="0 0 267 199" width="267px" zoomAndPan="magnify"><defs><filter height="300%" id="fk130omqejil5" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[3afa36d044ff9f68846a6bbed94d267f]
+class KrmResource<PropsType>--><rect codeLine="4" fill="#FEFECE" filter="url(#fk130omqejil5)" height="86.4141" id="KrmResource&lt;PropsType&gt;" style="stroke:#A80036;stroke-width:1.5;" width="246" x="7" y="99"/><ellipse cx="43.6" cy="115" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M43.7094,110.3438 L42.5531,115.4219 L44.8813,115.4219 L43.7094,110.3438 Z M42.225,108.1094 L45.2094,108.1094 L48.5688,120.5 L46.1156,120.5 L45.35,117.4375 L42.0688,117.4375 L41.3188,120.5 L38.8813,120.5 L42.225,108.1094 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="166" x="62.4" y="119.1543">KrmResource&lt;PropsType&gt;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="252" y1="131" y2="131"/><ellipse cx="18" cy="142" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="105" x="27" y="145.2104">apiVersion : string</text><ellipse cx="18" cy="154.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="68" x="27" y="158.0151">kind : string</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="252" y1="164.6094" y2="164.6094"/><ellipse cx="18" cy="175.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="220" x="27" y="178.8198">[ComponentRender](output: any) : void</text><!--MD5=[6413748563b32f3a33cdb07aa07d17f9]
+class KrmComponent--><rect codeLine="9" fill="#FEFECE" filter="url(#fk130omqejil5)" height="32" id="KrmComponent" style="stroke:#A80036;stroke-width:1.5;" width="128" x="66" y="7"/><ellipse cx="81" cy="23" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M81.1094,18.3438 L79.9531,23.4219 L82.2813,23.4219 L81.1094,18.3438 Z M79.625,16.1094 L82.6094,16.1094 L85.9688,28.5 L83.5156,28.5 L82.75,25.4375 L79.4688,25.4375 L78.7188,28.5 L76.2813,28.5 L79.625,16.1094 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="96" x="95" y="27.1543">KrmComponent</text><!--MD5=[3e8425f3090252c8dca92130a0908a3a]
+reverse link KrmComponent to KrmResource<PropsType>--><path codeLine="11" d="M130,59.35 C130,71.84 130,86.01 130,99 " fill="none" id="KrmComponent-backto-KrmResource&lt;PropsType&gt;" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="123,59.3,130,39.3,137,59.3,123,59.3" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2b061e24143356a5b9f5e4a4abfd8292]
+@startuml
+skinparam BackgroundColor transparent
+hide empty methods
+hide empty fields
+abstract class "KrmResource<PropsType>" {
+    +apiVersion : string
+    +kind : string
+    +[ComponentRender](output: any) : void
+}
+abstract class "KrmComponent" {
+}
+"KrmComponent" <|- - "KrmResource<PropsType>"
+@enduml
+
+PlantUML version 1.2021.14(Fri Nov 12 16:46:50 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
