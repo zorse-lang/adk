@@ -14,6 +14,7 @@ module.exports = {
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/no-var-requires": "off",
     "no-mixed-spaces-and-tabs": "off",
   },
 };

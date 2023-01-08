@@ -15,9 +15,16 @@ module.exports = {
   includeVersion: true,
   hideGenerator: true,
   navigationLinks: { "GitHub Repository": repository.url.split("+").pop() },
-  plugin: ["typedoc-theme-hierarchy", "typedoc-plugin-mermaid", "typedoc-plugin-mdn-links", "typedoc-umlclass"],
+  plugin: [
+    "typedoc-theme-hierarchy",
+    "typedoc-plugin-mermaid",
+    "typedoc-plugin-mdn-links",
+    "typedoc-umlclass",
+    "typedoc-plugin-no-inherit",
+  ],
   sort: "kind",
   treatWarningsAsErrors: true,
+  excludePrivate: true,
   umlClassDiagram: {
     type: "detailed",
     location: "local",

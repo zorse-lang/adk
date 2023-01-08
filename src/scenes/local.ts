@@ -1,10 +1,10 @@
 import { Component, Entity, Scene, Symbols, System, Token, View, assert, errors } from "@zorse/adk/core";
 import { dirname, resolve } from "path";
 
-/** Base class for local {@link core.Component:class}s */
+/** Base class for local {@link core.Component:class}s @noInheritDoc */
 export abstract class LocalComponent extends Component {}
 
-/** Base class for local {@link core.Scene:class}s */
+/** Base class for local {@link core.Scene:class}s @noInheritDoc */
 export abstract class LocalScene extends Scene {}
 
 /** Base options to create a FileSystem {@link core.Component:class} with */
