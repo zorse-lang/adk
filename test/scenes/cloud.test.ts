@@ -2,10 +2,10 @@ import * as ECS from "@zorse/adk/core/object";
 
 import { ArmScene, AwsScene, GdmScene, RosScene } from "@zorse/adk/scenes";
 
-import { storageAccounts as ARMBucket } from "@zorse/adk/clouds/arm/microsoft.storage/2022-09-01/storage";
-import { Bucket as AWSBucket } from "@zorse/adk/clouds/cfn/aws.s3/2010-09-09";
-import { Buckets as GDMBucket } from "@zorse/adk/clouds/gdm/gcloud.storage/v1/buckets";
-import { Bucket as ROSBucket } from "@zorse/adk/clouds/ros/aliyun.oss/2015-09-01";
+import { storageAccounts as ARMBucket } from "@zorse/adk/scenes/arm/microsoft.storage/2022-09-01/storage";
+import { Bucket as AWSBucket } from "@zorse/adk/scenes/cfn/aws.s3/2010-09-09";
+import { Buckets as GDMBucket } from "@zorse/adk/scenes/gdm/gcloud.storage/v1/buckets";
+import { Bucket as ROSBucket } from "@zorse/adk/scenes/ros/aliyun.oss/2015-09-01";
 
 describe("Cloud Scene tests", () => {
 	it("should be able to compose basic CFN templates", async () => {

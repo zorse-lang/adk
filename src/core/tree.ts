@@ -1,7 +1,7 @@
 /** A general purpose Tree implementation */
 export class Tree {
 	/** The name of the tree. Defaults to type name of the class plus count of same type of Tree in the parent Tree. */
-	public readonly _name?: string;
+	private readonly _name?: string;
 	/** The parent Tree. Lack of a parent indicates this is a root tree */
 	public readonly parent?: Tree;
 	// Children are Trees themselves (subtrees)
