@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="225px" preserveAspectRatio="none" style="width:467px;height:225px;background:#00000000;" version="1.1" viewBox="0 0 467 225" width="467px" zoomAndPan="magnify"><defs><filter height="300%" id="fdhow4stxzub9" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[0c171e237ff83db24e9f100ecdf7129c]
+class FileSystemOptions--><rect codeLine="4" fill="#FEFECE" filter="url(#fdhow4stxzub9)" height="65.6094" id="FileSystemOptions" style="stroke:#A80036;stroke-width:1.5;" width="144" x="159" y="7"/><ellipse cx="174" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M169.9219,18.7656 L169.9219,16.6094 L177.3125,16.6094 L177.3125,18.7656 L174.8438,18.7656 L174.8438,26.8438 L177.3125,26.8438 L177.3125,29 L169.9219,29 L169.9219,26.8438 L172.3906,26.8438 L172.3906,18.7656 L169.9219,18.7656 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="112" x="188" y="27.1543">FileSystemOptions</text><line style="stroke:#A80036;stroke-width:1.5;" x1="160" x2="302" y1="39" y2="39"/><ellipse cx="170" cy="50" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="179" y="53.2104">location : string</text><ellipse cx="170" cy="62.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="179" y="66.0151">name : string</text><!--MD5=[b4c50975a76324a165b81644437ddac2]
+class TextFileOptions--><rect codeLine="8" fill="#FEFECE" filter="url(#fdhow4stxzub9)" height="78.4141" id="TextFileOptions" style="stroke:#A80036;stroke-width:1.5;" width="126" x="7" y="133"/><ellipse cx="22" cy="149" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M17.9219,144.7656 L17.9219,142.6094 L25.3125,142.6094 L25.3125,144.7656 L22.8438,144.7656 L22.8438,152.8438 L25.3125,152.8438 L25.3125,155 L17.9219,155 L17.9219,152.8438 L20.3906,152.8438 L20.3906,144.7656 L17.9219,144.7656 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="94" x="36" y="153.1543">TextFileOptions</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="132" y1="165" y2="165"/><ellipse cx="18" cy="176" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="87" x="27" y="179.2104">content : string</text><ellipse cx="18" cy="188.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="27" y="192.0151">location : string</text><ellipse cx="18" cy="201.6094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="27" y="204.8198">name : string</text><!--MD5=[a14c3948acd501988ed11bf9b7cf421b]
+class JsonFileOptions--><rect codeLine="14" fill="#FEFECE" filter="url(#fdhow4stxzub9)" height="78.4141" id="JsonFileOptions" style="stroke:#A80036;stroke-width:1.5;" width="125" x="168.5" y="133"/><ellipse cx="183.5" cy="149" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M179.4219,144.7656 L179.4219,142.6094 L186.8125,142.6094 L186.8125,144.7656 L184.3438,144.7656 L184.3438,152.8438 L186.8125,152.8438 L186.8125,155 L179.4219,155 L179.4219,152.8438 L181.8906,152.8438 L181.8906,144.7656 L179.4219,144.7656 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93" x="197.5" y="153.1543">JsonFileOptions</text><line style="stroke:#A80036;stroke-width:1.5;" x1="169.5" x2="292.5" y1="165" y2="165"/><ellipse cx="179.5" cy="176" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="188.5" y="179.2104">data : any</text><ellipse cx="179.5" cy="188.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="188.5" y="192.0151">location : string</text><ellipse cx="179.5" cy="201.6094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="188.5" y="204.8198">name : string</text><!--MD5=[05b5d61bde9cdc4ecb8c601afeb69303]
+class FolderOptions--><rect codeLine="20" fill="#FEFECE" filter="url(#fdhow4stxzub9)" height="78.4141" id="FolderOptions" style="stroke:#A80036;stroke-width:1.5;" width="124" x="329" y="133"/><ellipse cx="347.15" cy="149" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M343.0719,144.7656 L343.0719,142.6094 L350.4625,142.6094 L350.4625,144.7656 L347.9938,144.7656 L347.9938,152.8438 L350.4625,152.8438 L350.4625,155 L343.0719,155 L343.0719,152.8438 L345.5406,152.8438 L345.5406,144.7656 L343.0719,144.7656 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="85" x="361.85" y="153.1543">FolderOptions</text><line style="stroke:#A80036;stroke-width:1.5;" x1="330" x2="452" y1="165" y2="165"/><ellipse cx="340" cy="176" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="349" y="179.2104">gitkeep : boolean</text><ellipse cx="340" cy="188.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="349" y="192.0151">location : string</text><ellipse cx="340" cy="201.6094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="349" y="204.8198">name : string</text><!--MD5=[05da1779db9ed938a27ad6f9fa1f40ee]
+reverse link FileSystemOptions to TextFileOptions--><path codeLine="13" d="M175.54,85.78 C156.6,101.08 135.6,118.03 117.35,132.76 " fill="none" id="FileSystemOptions-backto-TextFileOptions" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="171.24,80.25,191.2,73.13,180.04,91.15,171.24,80.25" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a25f069732e36596cc83796a9384f35c]
+reverse link FileSystemOptions to JsonFileOptions--><path codeLine="19" d="M231,93.51 C231,106.64 231,120.47 231,132.76 " fill="none" id="FileSystemOptions-backto-JsonFileOptions" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="224,93.13,231,73.13,238,93.13,224,93.13" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c4640d7746db37bfa77834f7106c726a]
+reverse link FileSystemOptions to FolderOptions--><path codeLine="25" d="M286.11,85.78 C304.94,101.08 325.81,118.03 343.94,132.76 " fill="none" id="FileSystemOptions-backto-FolderOptions" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="281.66,91.18,270.55,73.13,290.49,80.31,281.66,91.18" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[0a9c4e64610ea84652be15a95867c836]
+@startuml
+skinparam BackgroundColor transparent
+hide empty methods
+hide empty fields
+interface "FileSystemOptions" {
+    +location : string
+    +name : string
+}
+interface "TextFileOptions" {
+    +content : string
+    +location : string
+    +name : string
+}
+"FileSystemOptions" <|- - "TextFileOptions"
+interface "JsonFileOptions" {
+    +data : any
+    +location : string
+    +name : string
+}
+"FileSystemOptions" <|- - "JsonFileOptions"
+interface "FolderOptions" {
+    +gitkeep : boolean
+    +location : string
+    +name : string
+}
+"FileSystemOptions" <|- - "FolderOptions"
+@enduml
+
+PlantUML version 1.2021.14(Fri Nov 12 16:46:50 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
