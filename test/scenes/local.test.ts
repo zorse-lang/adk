@@ -40,7 +40,7 @@ describe("Local Scene tests", () => {
 		const system = new ECS.System();
 		new FileSystemScene(system, fs as any);
 		const entity = new ECS.Entity(system);
-		new TextFile(entity, { name: "empty.txt", directory: "/" });
+		new TextFile(entity, { name: "empty.txt", location: "/" });
 		new JsonFile(entity, { name: "empty.json" });
 		const composition = await system.compose();
 		const result = composition.gizmos();

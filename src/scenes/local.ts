@@ -9,26 +9,26 @@ export abstract class LocalScene extends Scene {}
 
 /** Base options to create a FileSystem {@link core.Component:class} with */
 export interface FileSystemOptions {
-	/** The directory this {@link core.Component:class} is located in on the physical file system. @defaultValue `"."` */
-	readonly directory?: string;
+	/** The location this {@link core.Component:class} is located in on the physical file system. @defaultValue `"."` */
+	readonly location?: string;
 	/** The name of this {@link core.Component:class} on the physical file system, with the extension */
 	readonly name: string;
 }
 
-/** Represents "something on the disk". At minimum it has a name and a directory it's located in */
+/** Represents "something on the disk". At minimum it has a name and a location it's located in */
 export abstract class FileSystemComponent extends LocalComponent {
 	/** Name of the "thing" on disk */
 	public name: string;
-	/** Directory the "thing" is located in on disk @defaultValue `"."` */
-	public directory: string;
+	/** Location the "thing" is located in on disk @defaultValue `"."` */
+	public location: string;
 	public constructor(parent: Entity, options: FileSystemOptions) {
 		super(parent);
 		this.name = options.name;
-		this.directory = options.directory ?? ".";
+		this.location = options.location ?? ".";
 	}
 	/** Absolute physical path to the component */
 	get path(): string {
-		return resolve(this.directory, this.name);
+		return resolve(this.location, this.name);
 	}
 }
 
