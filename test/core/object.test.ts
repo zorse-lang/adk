@@ -103,14 +103,14 @@ describe("Object model tests", () => {
 		const entity = new ECS.Entity(system);
 		const component1 = new DebugComponent(entity, { existing: 235 });
 		const value1 = (component1 as any).random;
-		expect(value1).toBeInstanceOf(Token);
+		expect(Token.IsToken(value1)).toBeTruthy();
 		expect((value1 as Token).path()).toBe("Entity/DebugComponent/random");
 		const resolved1 = await (value1 as Token).resolve();
 		expect(resolved1).toBe(value1);
 		const component2 = new DebugComponent(entity, { other: { value: "example" } });
 		const value2 = (component2 as any).other.random[0];
 		expect((value2 as Token).path()).toBe("Entity/DebugComponent2/other/random/0");
-		expect(value2).toBeInstanceOf(Token);
+		expect(Token.IsToken(value2)).toBeTruthy();
 		const resolved2 = await (value2 as Token).resolve();
 		expect(`${resolved2}`).toBe(`${value2}`);
 		expect(component1.properties.existing).toBe(235);

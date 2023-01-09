@@ -8,6 +8,7 @@ import { Tree } from "./tree";
 
 const TOKEN_DEFAULT_SEP = "/";
 const TOKEN_WRAP_SYMBOL = Symbol();
+const TOKEN_MADE_SYMBOL = Symbol();
 const TOKEN_TAG_OPENING = "@@{";
 const TOKEN_TAG_CLOSING = "}@@";
 const TOKEN_NAME_REGEXP = /[^}]+/;
@@ -21,14 +22,15 @@ const _wrappable = (value: any) =>
 
 /**
  * A Token is a value that's not available yet, but has an async resolver that can potentially resolve it later.
- * Token design is inspired by the AWS CDK Token/Lazy system. Tokens kinda mimic what CoRoutines do for Unity3D.
+ * You can use Tokens to "record" accesses to an object or method calls on it, recursively and strongly typed.
+ * Once the Token is resolved, it will return the value it was resolved to.
  * @noInheritDoc
  */
 export class Token<ConcreteType = any, UserDataType = any> extends Tree {
 	private _data: UserDataType;
 	private _resolver: Token.Resolver<ConcreteType>;
 	/** Optional name associated with this token. @default `"<token>"` */
-	public readonly name: string;
+	private readonly name: string;
 	public constructor(opts: Token.Options<ConcreteType, UserDataType> = {}) {
 		super(opts.parent, opts.name || "<token>");
 		assert.true(errors.InvalidTokenName, TOKEN_NAME_REGEXP.test(this.name), TOKEN_NAME_REGEXP.source, this.name);
@@ -36,36 +38,56 @@ export class Token<ConcreteType = any, UserDataType = any> extends Tree {
 			return opts.registry.find(this.path()) as any;
 		}
 		this._data = opts.data;
-		this._resolver = opts.resolver ? opts.resolver : (): ConcreteType => proxy;
-		const proxy: any = new Proxy(this, {
-			get(target, prop, receiver) {
+		this._resolver = opts.resolver ? opts.resolver : (): ConcreteType => _finalProxy;
+		const _tokenInstance = this;
+		const _function = function (...args: any[]) {
+			const nestedTokenResolver = async () => {
+				const context = await opts.parent.resolve();
+				const rootValue: any = await _tokenInstance.resolve();
+				return rootValue.apply(context, args);
+			};
+			return new Token({
+				name: `(${JSON.stringify(args).slice(1, -1)})`,
+				registry: opts.registry,
+				resolver: nestedTokenResolver,
+				parent: _finalProxy,
+				data: opts.data,
+			});
+		};
+		Object.defineProperty(_function, TOKEN_MADE_SYMBOL, { value: true });
+		const _finalProxy: any = new Proxy(_function, {
+			set(_proxyFunction, prop, value) {
+				(_tokenInstance as any)[prop] = value;
+				return true;
+			},
+			get(_proxyFunction, prop, receiver) {
 				if (prop === Symbol.toPrimitive) {
-					return () => target.serialize();
+					return () => _tokenInstance.serialize();
 				}
 				if (typeof prop === "symbol" || prop === "then" || prop.startsWith("to")) {
-					return Reflect.get(target, prop, receiver);
+					return Reflect.get(_tokenInstance, prop, receiver);
 				}
-				if (prop in target) {
-					return Token.Wrap(Reflect.get(target, prop, receiver), {
+				if (prop in _tokenInstance) {
+					return Token.Wrap(Reflect.get(_tokenInstance, prop, receiver), {
 						...opts,
-						parent: proxy,
+						parent: _finalProxy,
 					});
 				}
 				const nestedTokenResolver = async () => {
-					const rootValue: any = await target.resolve();
+					const rootValue: any = await _tokenInstance.resolve();
 					return rootValue[prop];
 				};
 				return new Token({
 					name: prop,
 					registry: opts.registry,
 					resolver: nestedTokenResolver,
-					parent: proxy,
+					parent: _finalProxy,
 					data: opts.data,
 				});
 			},
 		});
-		opts.registry?.add(proxy);
-		return proxy;
+		opts.registry?.add(_finalProxy);
+		return _finalProxy;
 	}
 	/**
 	 * Wraps the given value so all its properties are Tokens. This is useful for creating a recursive Token from a plain object.
@@ -73,28 +95,22 @@ export class Token<ConcreteType = any, UserDataType = any> extends Tree {
 	 * @param opts The options to use for the creation of sub-Tokens
 	 * @returns The same object with all its properties wrapped in Tokens
 	 */
-	public static Wrap(value: any, opts: Token.Options = {}): any {
+	public static Wrap<T = any>(value: T, opts: Token.Options = {}): T {
 		if (_wrappable(value)) {
 			Object.defineProperty(value, TOKEN_WRAP_SYMBOL, { value: true });
-			return new Proxy(value, {
+			return new Proxy(value as any, {
 				get(target, prop, receiver) {
 					if (typeof prop === "symbol" || prop === "then" || prop.startsWith("to")) {
 						return Reflect.get(target, prop, receiver);
 					} else if (prop in target) {
 						const _nestedValue: any = Reflect.get(target, prop, receiver);
-						const _nestedResolver = () => Reflect.get(target, prop, receiver);
-						const _nestedRootToken = new Token({
-							...opts,
-							name: prop,
-							parent: opts.parent,
-							resolver: _nestedResolver,
-						});
+						const _nestedRootToken = new Token({ ...opts, name: prop, parent: opts.parent });
 						return Token.Wrap(_nestedValue, { ...opts, parent: _nestedRootToken });
 					} else {
 						return new Token({ ...opts, name: prop });
 					}
 				},
-			});
+			}) as any;
 		} else {
 			return value;
 		}
@@ -129,6 +145,7 @@ export class Token<ConcreteType = any, UserDataType = any> extends Tree {
 		const maybeSerialized = any;
 		return (
 			(typeof maybeSerialized === "object" && maybeSerialized instanceof Token) ||
+			(typeof maybeSerialized === "function" && TOKEN_MADE_SYMBOL in maybeSerialized) ||
 			(typeof maybeSerialized === "string" && TOKEN_LINE_REGEXP.test(maybeSerialized))
 		);
 	}
@@ -173,6 +190,30 @@ export class Token<ConcreteType = any, UserDataType = any> extends Tree {
 		const proxy = new Proxy({}, handler);
 		cb(proxy as T);
 		return names.join(sep);
+	}
+	/**
+	 * Helper cast utility from input to Token.
+	 * @param value object to cast to Token
+	 * @returns Token representing this object
+	 */
+	public static of<T = any>(value: T) {
+		assert.true(errors.NotToken, Token.IsToken(value), value);
+		return value as unknown as Token<T>;
+	}
+	/**
+	 * Helper cast utility from Token to input.
+	 * @returns what the resolver is supposed to resolve to.
+	 */
+	public to<T = any>() {
+		return this as unknown as T;
+	}
+	/**
+	 * Helper utility to construct and cast at the same time
+	 * @returns a fictional JS value that's represented by a Token
+	 */
+	public static Make<T = any, U = any>(options?: Token.Options<T, U>): T & Token<T> {
+		const token = new Token(options);
+		return token.to<T & Token<T>>();
 	}
 }
 
@@ -244,7 +285,7 @@ export namespace Token {
 					return val;
 				}
 			};
-			if (arg instanceof Token) {
+			if (arg instanceof Token || (typeof arg === "function" && TOKEN_MADE_SYMBOL in arg)) {
 				return await _resolveToken(arg);
 			} else {
 				if (Token.IsToken(arg)) {

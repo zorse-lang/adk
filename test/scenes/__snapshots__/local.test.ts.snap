@@ -6,12 +6,12 @@ exports[`Local Scene tests should be able to create empty files with no paramete
     "Components": [
       {
         "content": "",
-        "directory": "/",
+        "location": "/",
         "name": "empty.txt",
       },
       {
         "data": {},
-        "directory": ".",
+        "location": ".",
         "name": "empty.json",
       },
     ],
@@ -24,13 +24,13 @@ exports[`Local Scene tests should be able to create folders 1`] = `
   {
     "Components": [
       {
-        "directory": ".",
         "gitkeep": false,
+        "location": ".",
         "name": "test",
       },
       {
-        "directory": ".",
         "gitkeep": true,
+        "location": ".",
         "name": "test2",
       },
     ],
@@ -46,14 +46,14 @@ exports[`Local Scene tests should be able to write a JSON file that contains lin
         "content": "Hello World
 This is Line 2
 This is Line 3.",
-        "directory": ".",
+        "location": ".",
         "name": "test.txt",
       },
       {
         "data": {
           "lineTwo": "This is Line 2",
         },
-        "directory": ".",
+        "location": ".",
         "name": "test.json",
       },
     ],
