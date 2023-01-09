@@ -4,6 +4,7 @@ Mixed and multi provider infrastructure as code automation and framework.
 
 ## Builtin Scenes
 
+- [x] Git Repository
 - [x] Local Filesystem
 - [x] AWS CloudFormation
 - [x] Azure Resource Manager
@@ -11,7 +12,6 @@ Mixed and multi provider infrastructure as code automation and framework.
 - [x] Google Cloud Deployment Manager
 - [x] Alibaba Cloud Resource Orchestration Service
 - [ ] HashiCorp Terraform (planned)
-- [ ] Github (planned)
 
 ## Render Pipeline
 

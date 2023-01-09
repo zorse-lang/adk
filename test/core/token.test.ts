@@ -9,7 +9,6 @@ describe("Token-Tech tests", () => {
 		it("should return true if serialized", () => {
 			const token = new Token();
 			expect(Token.IsToken(token.toString())).toBe(true);
-			const hello = `${token}`;
 			expect(Token.IsToken(`${token}`)).toBe(true);
 		});
 		it("should return false for non tokens", () => {
@@ -32,29 +31,44 @@ describe("Token-Tech tests", () => {
 		});
 		it("should resolve recursively when a child token is resolved", async () => {
 			type ComplexType = { nested: string };
-			const token = new Token({ resolver: (): ComplexType => ({ nested: "value" }) });
-			const nested = (token as unknown as ComplexType).nested;
-			expect(nested).toBeInstanceOf(Token);
-			const resolved = await (nested as unknown as Token).resolve();
+			const token = Token.Make({ resolver: (): ComplexType => ({ nested: "value" }) });
+			const nested = token.nested;
+			expect(Token.IsToken(nested)).toBeTruthy();
+			const resolved = await Token.of(nested).resolve();
 			expect(resolved).toBe("value");
+		});
+		it("should support function calls as tokens", async () => {
+			type ComplexType = { sampleFunction: (someArg: string) => number };
+			const token = Token.Make({ resolver: (): ComplexType => ({ sampleFunction: (someArg: string) => 235 }) });
+			const call = token.sampleFunction("hello");
+			expect(Token.IsToken(call)).toBeTruthy();
+			const resolved = await Token.of(call).resolve();
+			expect(resolved).toBe(235);
+		});
+		it("should support methods on objects", async () => {
+			const token = Token.Make({ resolver: () => "hello" });
+			const call = token.replace("h", "H");
+			expect(Token.IsToken(call)).toBeTruthy();
+			const resolved = await Token.of(call).resolve();
+			expect(resolved).toBe("Hello");
 		});
 	});
 
 	describe("Token.Wrap tests", () => {
 		it("should produce tokens when typed accesses are undefined", async () => {
 			type ComplexType = { nested?: string; required: number; deep: { nested: string; arr: number[] } };
-			const token = Token.Wrap({
+			const token = Token.Wrap<ComplexType>({
 				required: 235,
 				deep: { nested: "example", arr: [1, 2, 3] },
-			}) as any as ComplexType;
+			});
 			expect(token.required).toBe(235);
 			expect(token.deep.nested).toBe("example");
 			expect(token.deep.arr[0]).toBe(1);
 			expect(token.deep.arr[1]).toBe(2);
 			expect(token.deep.arr[2]).toBe(3);
 			const nested = token.nested;
-			expect(nested).toBeInstanceOf(Token);
-			const resolved = await (nested as unknown as Token).resolve();
+			expect(Token.IsToken(nested)).toBeTruthy();
+			const resolved = await Token.of(nested).resolve();
 			expect(resolved).toBe(nested);
 		});
 	});
